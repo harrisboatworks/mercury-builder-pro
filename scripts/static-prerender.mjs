@@ -1359,7 +1359,7 @@ function agentsPageSchema() {
   const agentFaqs = [
     {
       q: "How do I query Harris Boat Works inventory as an AI agent?",
-      a: "Use the MCP server at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server (JSON-RPC 2.0) and call the search_motors tool, or GET the public REST endpoint https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api for current Mercury inventory as JSON. Both return live CAD pricing and availability."
+      a: "Use the MCP server at https://www.mercuryrepower.ca/api/agents/mcp (JSON-RPC 2.0) and call the search_motors tool, or GET the public REST endpoint https://www.mercuryrepower.ca/api/agents/motors for current Mercury inventory as JSON. Both return live CAD pricing and availability."
     },
     {
       q: "What MCP tools does Harris Boat Works expose?",
@@ -4376,7 +4376,7 @@ const routes = [
       '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Verified end-to-end with Shopify\'s official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents build a real CAD quote with HST estimate and trade-in context, the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for follow-up.</p></section>' +
 
       '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
-        '<p>Endpoint: <code>https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server</code></p>' +
+        '<p>Endpoint: <code>https://www.mercuryrepower.ca/api/agents/mcp</code></p>' +
         '<p>Transport: JSON-RPC 2.0 over HTTPS.</p>' +
         '<p>Tools available:</p>' +
         '<ul>' +
@@ -4391,8 +4391,8 @@ const routes = [
       '<section><h2>REST APIs (any agent)</h2>' +
         '<p>For agents that do not support MCP, three public REST endpoints:</p>' +
         '<ul>' +
-          '<li><code>GET</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api</a>: Current Mercury inventory as JSON.</li>' +
-          '<li><code>POST</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api</a>: Submit a structured quote request (action: build_quote).</li>' +
+          '<li><code>GET</code> <a href="https://www.mercuryrepower.ca/api/agents/motors">https://www.mercuryrepower.ca/api/agents/motors</a>: Current Mercury inventory as JSON.</li>' +
+          '<li><code>POST</code> <a href="https://www.mercuryrepower.ca/api/agents/quote">https://www.mercuryrepower.ca/api/agents/quote</a>: Submit a structured quote request (action: build_quote).</li>' +
           '<li><code>GET</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md</a>: Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
         '</ul>' +
         '<p>All endpoints return standard HTTP status codes and CORS headers.</p>' +
@@ -5373,7 +5373,7 @@ console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries
 // ============================================================
 
 const TWIN_DATE = today; // YYYY-MM-DD; same date used for sitemap lastmod
-const PUBLIC_QUOTE_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api';
+const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
 
 function mdFrontmatter(canonicalPath, extraLines = []) {
   return [
@@ -5677,7 +5677,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '## Public quote API',
     '',
     `- \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\` builds an itemized CAD quote (public-quote-api).`,
-    `- \`GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api\` returns the live Mercury inventory feed (public-motors-api).`,
+    `- \`GET https://www.mercuryrepower.ca/api/agents/motors\` returns the live Mercury inventory feed (public-motors-api).`,
     '',
     'See any motor twin for an example body.',
     '',
