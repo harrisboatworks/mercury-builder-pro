@@ -622,11 +622,36 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
   ].join('\n') + '\n';
 }
 
+// Live-rate token values pulled from the single source of truth
+// (src/lib/finance.ts). Applied to every markdown twin so AI crawlers
+// never see literal {{LIVE_RATE}} / {{LIVE_RATE_PCT}} placeholders.
+function loadLiveRateTokens() {
+  const dumpScript = `
+    import { formatFinancingRate, formatFinancingRatePercent } from '../src/lib/finance.ts';
+    process.stdout.write(JSON.stringify({ rate: formatFinancingRate(), pct: formatFinancingRatePercent() }));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.live-rate-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const LIVE_RATE_TOKENS = loadLiveRateTokens();
+function substituteLiveRateTokens(text) {
+  if (!text) return text;
+  return String(text)
+    .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
+    .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
+}
+
 function writePublicMd(relPath, content) {
   const outFile = join(PUBLIC, relPath.replace(/^\//, ''));
   mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, content, 'utf8');
+  writeFileSync(outFile, substituteLiveRateTokens(content), 'utf8');
 }
+
 
 // Top 12 high-intent blog posts to mirror as markdown twins.
 // Order = display order in catalog.md "Guides" section.
