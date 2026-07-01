@@ -45,6 +45,9 @@ const payloadSchema = z.object({
   penalty_applied: z.boolean().optional().default(false),
   penalty_factor: z.number().nullable().optional(),
   penalty_reason: z.string().max(120).nullable().optional(),
+  // Honeypot — real frontend never sets `website`. If a bot fills it we
+  // return 200 with a fake success (no insert, no downstream side-effects).
+  website: z.string().max(500).optional().nullable(),
 });
 
 function newSessionId(): string {
@@ -70,8 +73,43 @@ serve(async (req) => {
     }
 
     const p = parsed.data;
+
+    // Honeypot — silently accept-and-drop if `website` is filled.
+    if (p.website && p.website.trim().length > 0) {
+      console.warn('[submit-quote-lead] honeypot triggered, dropping submission', {
+        ip: getClientIdentifier(req),
+        email: p.customer_email,
+      });
+      return new Response(
+        JSON.stringify({ success: true, quoteId: null, anonymousSessionId: null }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+      );
+    }
+
+    // Rate limit: 5 submissions / hour by IP AND by email.
+    const ipOk = await checkRateLimit(req, {
+      action: 'submit_quote_lead_ip',
+      maxAttempts: 5,
+      windowMinutes: 60,
+    });
+    if (!ipOk) {
+      console.warn('[submit-quote-lead] rate-limited by IP', getClientIdentifier(req));
+      return rateLimitedResponse(corsHeaders, 60 * 60);
+    }
+    const emailOk = await checkRateLimit(req, {
+      identifier: `email:${p.customer_email.toLowerCase()}`,
+      action: 'submit_quote_lead_email',
+      maxAttempts: 5,
+      windowMinutes: 60,
+    });
+    if (!emailOk) {
+      console.warn('[submit-quote-lead] rate-limited by email', p.customer_email);
+      return rateLimitedResponse(corsHeaders, 60 * 60);
+    }
+
     const userId = p.user_id ?? null;
     const sessionId = userId ? null : (p.anonymous_session_id || newSessionId());
+
 
     const insertRow = {
       user_id: userId,
