@@ -27861,6 +27861,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Whitby boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
+
 # Mercury Dealer for Whitby: Short Drive, Long Relationship
 
 Whitby sits in that Durham Region sweet spot, far enough east to have cleared most of the GTA congestion, close enough to Rice Lake that a trip up here isn't a production.
