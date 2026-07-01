@@ -23827,9 +23827,7 @@ Mercury outboard pricing in Ontario depends on horsepower, controls, prop, riggi
 
 > **Quick estimate:** Try our Repower Cost Estimator for your specific HP and setup. Free, instant CAD ballpark.
 
-\`\`\`hbw-cost
-{"title":"What goes into a repower price","items":[{"label":"Mercury outboard (bare motor)","note":"Posted CAD price"},{"label":"Controls & rigging","note":"Quoted per boat"},{"label":"Installation labour","note":"Quoted per boat"},{"label":"13% HST","note":"On the total"}],"note":"We post the motor price publicly; rigging and install are quoted for your specific boat."}
-\`\`\`
+![Mercury outboard from-prices at Harris Boat Works — 75, 90, 115, 150 and 250 HP starting prices in writing](/blog-visuals/mercury-from-prices-hbw-ontario.png)
 
 ## Pricing by HP category
 
