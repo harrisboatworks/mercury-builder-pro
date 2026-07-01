@@ -27704,6 +27704,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Pickering boaters drive to Harris Boat Works — about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
+
 # Mercury Dealer for Pickering: You're Closer Than You Think
 
 Pickering is where the GTA starts to thin out. You're already east of the Don Valley, already past most of the traffic that makes the rest of the GTA's relationship with cottage country complicated.
@@ -27858,6 +27860,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Whitby boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
 
 # Mercury Dealer for Whitby: Short Drive, Long Relationship
 
@@ -28174,6 +28178,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 40 minutes northeast of Oshawa via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Oshawa boaters drive to Harris Boat Works — about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
 
 # Mercury Dealer for Oshawa: We're Basically Durham Region
 
@@ -32595,6 +32601,8 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes southeast of Lindsay via Highway 35 south to Highway 7A east, then County Road 28 south. We handle Mercury outboard sales, repowers, parts, and service. For Kawartha Lakes boaters, Lindsay is the regional hub, and HBW is the closest Mercury Premier dealer with full repower capacity. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
+
+![Why Lindsay boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-lindsay-worth-the-drive.png)
 
 ## Lindsay is the Kawartha Lakes hub
 
