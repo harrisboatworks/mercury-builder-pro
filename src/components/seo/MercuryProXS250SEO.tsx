@@ -61,11 +61,15 @@ export const PRO_XS_250_VARIANTS: ProXS250Variant[] = [
   },
 ];
 
+const _minHbw = Math.min(...PRO_XS_250_VARIANTS.map((v) => v.hbwPrice));
+const _maxHbw = Math.max(...PRO_XS_250_VARIANTS.map((v) => v.hbwPrice));
+const _fmt = (n: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
+
 export const PRO_XS_250_FAQ = [
   {
     question: 'What does a Mercury Pro XS 250 cost in Canada?',
     answer:
-      'At Harris Boat Works, the Pro XS 250 runs from $34,848 CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to $37,741 CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.',
+      `At Harris Boat Works, the Pro XS 250 runs from ${_fmt(_minHbw)} CAD for the 250 ELPT Pro XS (20-inch shaft, mechanical remote) to ${_fmt(_maxHbw)} CAD for the 250 EXLPT Pro XS DTS (25-inch shaft, Digital Throttle & Shift). Prices are CAD, current pricing, confirm in the quote builder.`,
   },
   {
     question: 'Is the Pro XS 250 in stock?',
