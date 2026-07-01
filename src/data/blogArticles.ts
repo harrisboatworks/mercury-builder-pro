@@ -28016,6 +28016,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Ajax boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower, real pricing, and service](/blog-visuals/mercury-dealer-ajax-worth-the-drive.png)
+
 # Mercury Dealer for Ajax: 45 Minutes and Worth Every One
 
 Ajax is well-positioned for Rice Lake. You're already east of the worst GTA traffic, already close to the 401 corridor that runs you straight to Highway 115. At approximately 45 minutes, we're not asking you to rearrange your day.
@@ -28338,6 +28340,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes north of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Bowmanville boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
 
 # Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 
@@ -32297,6 +32301,8 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW, for many Cobourg addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
 
+![Why Cobourg boaters drive to Harris Boat Works — about 25 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-cobourg-worth-the-drive.png)
+
 ## Cobourg has Lake Ontario shoreline, but most local boating happens north
 
 The Cobourg waterfront has a real boating community, the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
@@ -32440,6 +32446,8 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     content: `## Quick Answer
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 30 minutes north of Port Hope via County Road 28 north, then County Road 18 east to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Port Hope is one of the closer markets to HBW, for most Port Hope addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
+
+![Why Port Hope boaters drive to Harris Boat Works — about 30 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-port-hope-worth-the-drive.png)
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 
