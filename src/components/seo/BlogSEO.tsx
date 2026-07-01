@@ -18,9 +18,16 @@ export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
-  // Use seoTitle verbatim when set (sized to ≤60 chars incl. its own brand suffix).
-  // Only fall back to "{title} | Harris Boat Works Blog" when seoTitle is absent.
-  const renderedTitle = article.seoTitle || `${article.title} | Harris Boat Works Blog`;
+  // Head <title> uses the article's `title` field (kept in sync with the H1).
+  // Append " | Harris Boat Works" only if the combined length stays ≤65 chars;
+  // otherwise use the bare title so search results don't get truncated. This
+  // intentionally ignores the legacy `seoTitle` field, which drifted out of
+  // sync with the shorter, updated `title` values.
+  const BRAND_SUFFIX = ' | Harris Boat Works';
+  const renderedTitle =
+    (article.title + BRAND_SUFFIX).length <= 65
+      ? article.title + BRAND_SUFFIX
+      : article.title;
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
