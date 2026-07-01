@@ -13,6 +13,10 @@ interface RelatedGuidesProps {
   /** Optional override heading. Defaults to "Related guides". */
   heading?: string;
   className?: string;
+  /** Slugs to exclude (e.g. already linked in article body). */
+  excludeSlugs?: string[];
+  /** Minimum links required to render (default 1). */
+  minLinks?: number;
 }
 
 /**
@@ -32,12 +36,17 @@ export function RelatedGuides({
   max = 5,
   heading = 'Related guides',
   className = '',
+  excludeSlugs = [],
+  minLinks = 1,
 }: RelatedGuidesProps) {
   const cluster = getClusterForSlug(currentSlug);
   if (!cluster) return null;
 
-  const slugs = getRelatedSlugs(currentSlug, max);
-  if (slugs.length === 0) return null;
+  const exclude = new Set(excludeSlugs);
+  const slugs = getRelatedSlugs(currentSlug, max + exclude.size)
+    .filter((s) => !exclude.has(s))
+    .slice(0, max);
+  if (slugs.length < minLinks) return null;
 
   return (
     <aside
