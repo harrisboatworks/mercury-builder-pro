@@ -147,6 +147,13 @@ export function markdownToNoscriptHtml(input: string | undefined | null): string
   if (!input) return '';
   let s = String(input);
 
+  // Substitute live-rate tokens ({{LIVE_RATE}}, {{LIVE_RATE_PCT}}) from the
+  // single source of truth in src/lib/finance.ts so prerendered noscript HTML
+  // matches the client-rendered output. Must run before HTML-escaping.
+  s = substituteLiveRateTokens(s);
+
+
+
   // Strip author footer
   s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
   s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
