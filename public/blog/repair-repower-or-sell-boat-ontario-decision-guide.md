@@ -142,7 +142,7 @@ Probably sell. Even if the boat is fine, the question is whether this is the boa
 
 ## What we do at Harris Boat Works
 
-We see this decision multiple times per week, especially in spring and fall. When a customer comes in with a repair estimate that feels uncomfortably big, the first conversation we have is the framework above. We're a Mercury Premier dealer and a Legend Boats dealer, so we're not neutral: we'd rather sell you a new motor or a new boat than do a $3,000 repair. But we'd much rather give you honest advice and have you come back to us for the next repower than push you into a decision that doesn't fit your situation.
+We see this decision multiple times per week, especially in spring and fall. When a customer comes in with a repair estimate that feels uncomfortably big, the first conversation we have is the framework above. We're a Mercury Platinum dealer and a Legend Boats dealer, so we're not neutral: we'd rather sell you a new motor or a new boat than do a $3,000 repair. But we'd much rather give you honest advice and have you come back to us for the next repower than push you into a decision that doesn't fit your situation.
 
 For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/repower-vs-new-boat) decision guide covers that side of the conversation.
 
@@ -162,7 +162,7 @@ For a structured conversation on your specific boat, motor, and budget, email in
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 [Ready to price it out? Build your live CAD quote](/quote/motor-selection "cta")
 

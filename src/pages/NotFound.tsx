@@ -92,7 +92,7 @@ const NotFound = () => {
           <div className="h-px w-16 bg-repower-navy-900/15 mx-auto mb-6" />
 
           <p className="font-sans text-sm text-repower-navy-900/55 max-w-[52ch] mx-auto">
-            Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.<br />
+            Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer.<br />
             5369 Harris Boat Works Rd, Gores Landing, Rice Lake, Ontario.
           </p>
         </div>

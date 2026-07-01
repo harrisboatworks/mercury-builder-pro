@@ -1209,7 +1209,7 @@ if (event.type === 'filter_motors') {
               Browse Mercury boats and outboards in Canada and build your repower quote in about 3 minutes. A real person at HBW reviews every quote and emails you back within 1 business day.
             </p>
             <div className="text-[12px] font-medium text-[#050E1C]/65 border-t border-[#050E1C]/10 pt-3">
-              Harris Boat Works · Mercury dealer since 1965, current Premier tier · Family-owned since 1947 · Gores Landing, ON
+              Harris Boat Works · Mercury dealer since 1965, current Platinum tier · Family-owned since 1947 · Gores Landing, ON
             </div>
           </div>
         </div>

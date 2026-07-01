@@ -14,7 +14,7 @@ keyword: "mercury dealer ajax"
 
 # Mercury Dealer for Ajax, Harris Boat Works (Gores Landing, ON)
 
-For Ajax boaters, Harris Boat Works is the closest Mercury Premier Dealer with live CAD pricing and a transparent build process, about 75 minutes east on the 401, family-owned since 1947.
+For Ajax boaters, Harris Boat Works is the closest Mercury Platinum Dealer with live CAD pricing and a transparent build process, about 75 minutes east on the 401, family-owned since 1947.
 
 ## Factbox
 

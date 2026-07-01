@@ -47,7 +47,7 @@ export default function RepowerTradeIn() {
       ]}
       whyHbwIntro="Mercury trades come into our used inventory or get refurbished, which usually means a stronger number than a wholesale-only buyer."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
         { icon: <Repeat className="h-5 w-5" aria-hidden="true" />, title: 'Mercury trade-ins standard', description: 'Other brands case-by-case.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Refurb and resale in-house', description: 'Lets us offer competitive trade values.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Drop with the new motor pickup', description: 'Pickup-only at Gores Landing.' },
@@ -103,7 +103,7 @@ export default function RepowerTradeIn() {
           </ul>
 
           <h3>What outboards does Harris Boat Works take in trade?</h3>
-          <p>Anything Mercury, every time. We've been a Mercury dealer since 1965 (current Premier tier). Mercury trade-ins go into our used inventory or get refurbished and resold, which is why we can usually give you a stronger number than a wholesale-only buyer. Other brands (Yamaha, Honda, Suzuki, Evinrude) considered case-by-case. What we don't take: cracked blocks, badly corroded mid-sections, severe saltwater damage past resale.</p>
+          <p>Anything Mercury, every time. We've been a Mercury dealer since 1965 (current Platinum tier). Mercury trade-ins go into our used inventory or get refurbished and resold, which is why we can usually give you a stronger number than a wholesale-only buyer. Other brands (Yamaha, Honda, Suzuki, Evinrude) considered case-by-case. What we don't take: cracked blocks, badly corroded mid-sections, severe saltwater damage past resale.</p>
 
           <h3>How do I find out what my old motor is worth?</h3>
           <p>Submit 6 inputs: brand, model, HP, year, shaft length, condition. Photos help (cowl plate, powerhead, lower unit). CAD figure in your inbox within 1 business day. Submissions before noon usually get answered same day.</p>

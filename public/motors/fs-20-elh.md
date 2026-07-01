@@ -19,7 +19,7 @@ price_cad: 4873
 # 20 ELH FourStroke
 
 Mercury FourStroke 20 HP outboard motor (model 1A20311LK).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

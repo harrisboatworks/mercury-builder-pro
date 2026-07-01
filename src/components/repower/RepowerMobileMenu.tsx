@@ -171,7 +171,7 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
         {/* Footer */}
         <div className="mt-10 pt-8 border-t border-[#F5F1EA]/10 text-center">
           <p className="font-sans text-[10px] uppercase tracking-[0.28em] text-[#C9A24A] mb-2">
-            Mercury Premier Dealer · Since 1947
+            Mercury Platinum Dealer · Since 1947
           </p>
           <p className="font-sans text-xs text-[#F5F1EA]/55 leading-relaxed">
             5369 Harris Boat Works Rd<br />

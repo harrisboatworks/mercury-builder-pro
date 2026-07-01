@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake"
-description: "Mercury Premier dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage..."
+description: "Mercury Platinum dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage..."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake
 
-> Mercury Premier dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage...
+> Mercury Platinum dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401 and 115. Mercury repower, sales, parts, and winter storage...
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-ajax-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Ajax via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Ajax via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
@@ -56,7 +56,7 @@ Durham Region buyers tend to be experienced boaters. They've owned boats, dealt 
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, installation, in Canadian dollars, in about three minutes. No form, no callback, no process to get through. You see what it costs. You make a decision. For [the full Mercury price list](/pricing-reference) without building a quote, see our published price reference.
 
-## Mercury Premier, Rice Lake Since 1947
+## Mercury Platinum, Rice Lake Since 1947
 
 Top dealer tier in Mercury's program. Third-generation family marina, on Rice Lake since 1947. The model here runs on repeat customers and referrals, not a sales floor quota. Ajax is close enough that a bad experience would find its way back to us quickly. That keeps the conversation honest.
 
@@ -71,7 +71,7 @@ Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest c
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging conversation shapes how the motor performs, we don't skip it.
 
 **Mercury parts and service**
-Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. Ajax customers who boat on Rice Lake or the Kawarthas find year-round storage here makes logistical sense, the boat's already close to the water.
@@ -107,10 +107,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Related guides
 
-- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Premier dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
-- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Premier dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
-- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Premier dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
-- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury Premier dealer for Whitby customers - Harris Boat Works on Rice Lake is about 45 minutes north via.
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Platinum dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
+- [Mercury Dealer for Oshawa: 40 Minutes to Rice Lake](/blog/mercury-dealer-oshawa-ontario-hbw): Mercury Platinum dealer for Oshawa customers - Harris Boat Works on Rice Lake is about 40 minutes via the 401.
+- [Mercury Dealer for Pickering: 50 Minutes from Rice Lake](/blog/mercury-dealer-pickering-ontario-hbw): Mercury Platinum dealer for Pickering customers - Harris Boat Works on Rice Lake is about 50 minutes.
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury Platinum dealer for Whitby customers - Harris Boat Works on Rice Lake is about 45 minutes north via.
 
 ## The HBW Promise
 
@@ -121,7 +121,7 @@ You see the price before you leave Ajax. The rigging gets discussed before we or
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 ---
 
@@ -133,7 +133,7 @@ The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. It'
 
 Why Ajax boaters choose HBW for repower:
 
-- **Mercury Premier-level rigging depth.** A 115 HP repower involves controls, harness, gauge, and prop matching. Smaller dealers do this work but slower; we do it daily.
+- **Mercury Platinum-level rigging depth.** A 115 HP repower involves controls, harness, gauge, and prop matching. Smaller dealers do this work but slower; we do it daily.
 - **One-trip storage + service.** Many Ajax customers store at HBW over winter, get spring commissioning, and trailer back to Lake Ontario for the season. One drive, one trusted shop, no May scheduling friction.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -155,7 +155,7 @@ About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One 
 
 ### Why drive to Rice Lake from Ajax?
 
-Mercury Premier tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.
+Mercury Platinum tier (top dealer level), transparent CAD pricing online, no high-pressure dealer culture, family marina since 1947.
 
 ### Can I use HBW as my primary Mercury dealer?
 

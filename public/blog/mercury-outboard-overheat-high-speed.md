@@ -98,7 +98,7 @@ The motor is trying to protect itself. Listen to it.
 
 If you've cleared the intakes and you're still overheating at speed, or you'd rather not pull the gearcase yourself, bring it in. We diagnose cooling problems off the symptom pattern, and "cool at idle, hot at speed" tells us where to start. Put in a service request at hbw.wiki/service and we'll get it on the bench before it costs you a powerhead.
 
-<!-- Canonical anchor: Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. -->
+<!-- Canonical anchor: Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer. -->
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON

@@ -19,7 +19,7 @@ price_cad: 28122
 # 200 ELPT ProXS
 
 Mercury ProXS 200 HP outboard motor (model 12000039A).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)"
-description: "Mercury vs Honda outboards from an Ontario Mercury Premier dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake."
+description: "Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake."
 category: "Buying Guide"
 date_published: 2026-05-28
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)
 
-> Mercury vs Honda outboards from an Ontario Mercury Premier dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake.
+> Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-28  
@@ -29,7 +29,7 @@ content_type: blog_article
 
 > **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda often gets the nod for refinement and quiet running in the 9.9 to 90 HP range; Mercury wins on Ontario service network density, Pro XS performance, and lineup breadth above 350 HP. On Rice Lake, HBW is the only Mercury dealer, which usually settles the math.
 
-- Mercury Premier Dealer
+- Mercury Platinum Dealer
 - Family-owned since 1947
 - Mercury dealer since 1965
 - Gores Landing, ON
@@ -90,7 +90,7 @@ In 2026, both Mercury and Honda offer extended warranty programs that can reach 
 
 **Mercury warranty stack (2026):** 3 years standard limited (with 3 years corrosion concurrent) + up to 5 years Mercury Product Protection (MPP) extended = up to 8 years total coverage. MPP is a separate extended-coverage purchase, not part of the standard warranty.
 
-The maximum coverage period is now equal. The bigger practical question is where you take the motor in year 5 when something needs attention. If your local Honda dealer has changed hands or closed, your warranty is worth less. If your local Mercury Premier dealer is HBW, your warranty is worth what it should be.
+The maximum coverage period is now equal. The bigger practical question is where you take the motor in year 5 when something needs attention. If your local Honda dealer has changed hands or closed, your warranty is worth less. If your local Mercury Platinum dealer is HBW, your warranty is worth what it should be.
 
 ## Mercury PGM-FI vs Honda PGM-FI cold-start
 
@@ -130,7 +130,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 **Quote builder:** mercuryrepower.ca
 **Service requests:** hbw.wiki/service
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Platinum Dealer. The only Mercury dealer on Rice Lake.
 
 ## FAQs
 

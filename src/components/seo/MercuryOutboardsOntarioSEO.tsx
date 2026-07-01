@@ -7,15 +7,15 @@ import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOn
 export const ONTARIO_HUB_FAQ = [
   {
     question: "Where can I buy Mercury outboards in Ontario?",
-    answer: "Harris Boat Works is a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario, family-owned since 1947, Mercury dealer since 1965. We carry the Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, and ProKicker trolling motors. Build a quote at mercuryrepower.ca/quote/motor-selection."
+    answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario, family-owned since 1947, Mercury dealer since 1965. We carry the Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, and ProKicker trolling motors. Build a quote at mercuryrepower.ca/quote/motor-selection."
   },
   {
     question: "What Mercury motor lines are sold at Harris Boat Works?",
     answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, and ProKicker (9.9 / 15 HP) for trolling. Mercury FourStroke V8 (250–300 HP) and Mercury Verado are available by special order, contact us directly for a quote."
   },
   {
-    question: "Is Harris Boat Works a Mercury Premier dealer?",
-    answer: "Yes. Mercury Marine Premier Dealer status, Mercury's top dealer tier in North America. Awarded for sales volume, technician certification, warranty CSI scores, and parts availability. Re-qualified annually."
+    question: "Is Harris Boat Works a Mercury Platinum dealer?",
+    answer: "Yes. Mercury Marine Platinum Dealer status, Mercury's top dealer tier in North America. Awarded for sales volume, technician certification, warranty CSI scores, and parts availability. Re-qualified annually."
   },
   {
     question: "What areas of Ontario does Harris Boat Works serve?",
@@ -35,7 +35,7 @@ export const ONTARIO_HUB_FAQ = [
   },
   {
     question: "Do you ship Mercury motors across Ontario?",
-    answer: "No, pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Premier status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install."
+    answer: "No, pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Platinum status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install."
   },
   {
     question: "Do you take trade-ins on Mercury outboard purchases?",
@@ -56,7 +56,7 @@ export function MercuryOutboardsOntarioSEO() {
         "@id": `${SITE_URL}/mercury-outboards-ontario#webpage`,
         "url": `${SITE_URL}/mercury-outboards-ontario`,
         "name": "Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Mercury Dealer Since 1965",
-        "description": "Mercury Marine outboards in Ontario, full lineup (portable, FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Premier Dealer on Rice Lake, family-owned since 1947.",
+        "description": "Mercury Marine outboards in Ontario, full lineup (portable, FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -74,8 +74,8 @@ export function MercuryOutboardsOntarioSEO() {
       {
         "@type": ["LocalBusiness", "AutomotiveBusiness"],
         "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness`,
-        "name": "Harris Boat Works, Mercury Premier Dealer",
-        "description": "Mercury Marine Premier Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
+        "name": "Harris Boat Works, Mercury Platinum Dealer",
+        "description": "Mercury Marine Platinum Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
         "url": `${SITE_URL}/mercury-outboards-ontario`,
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
@@ -102,7 +102,7 @@ export function MercuryOutboardsOntarioSEO() {
           { "@type": "Place", "name": "Rice Lake" }
         ],
         "award": [
-          "Mercury Marine Premier Dealer",
+          "Mercury Marine Platinum Dealer",
           "Authorized Legend Boats Dealer"
         ],
         "knowsAbout": [
@@ -133,22 +133,22 @@ export function MercuryOutboardsOntarioSEO() {
       <title>Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Mercury Dealer Since 1965</title>
       <meta
         name="description"
-        content="Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Premier Dealer on Rice Lake, family-owned since 1947."
+        content="Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947."
       />
       <meta
         name="keywords"
-        content="Mercury outboards Ontario, Mercury dealer Ontario, Mercury Premier dealer, Mercury Rice Lake, buy Mercury outboard Kawarthas, Mercury dealer GTA, Mercury Cobourg, Mercury Peterborough, Mercury Northumberland"
+        content="Mercury outboards Ontario, Mercury dealer Ontario, Mercury Platinum dealer, Mercury Rice Lake, buy Mercury outboard Kawarthas, Mercury dealer GTA, Mercury Cobourg, Mercury Peterborough, Mercury Northumberland"
       />
       <link rel="canonical" href={`${SITE_URL}/mercury-outboards-ontario`} />
 
       <meta property="og:title" content="Mercury Outboards Ontario, Full Lineup at Harris Boat Works" />
-      <meta property="og:description" content="Mercury Premier Dealer on Rice Lake. Full lineup, real CAD pricing online." />
+      <meta property="og:description" content="Mercury Platinum Dealer on Rice Lake. Full lineup, real CAD pricing online." />
       <meta property="og:url" content={`${SITE_URL}/mercury-outboards-ontario`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Outboards Ontario" />
-      <meta name="twitter:description" content="Full Mercury lineup, real CAD pricing, Premier Dealer." />
+      <meta name="twitter:description" content="Full Mercury lineup, real CAD pricing, Platinum Dealer." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

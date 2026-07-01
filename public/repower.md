@@ -38,7 +38,7 @@ Through **December 31, 2026** the headline program is **TD Auto Finance "Always 
 
 ## Key Facts
 
-- Family-owned since 1947, Mercury dealer since 1965, current Premier tier
+- Family-owned since 1947, Mercury dealer since 1965, current Platinum tier
 - Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - Timeline: 3 to 8 weeks from deposit to pickup
 - Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)

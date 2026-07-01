@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Pro XS vs FourStroke vs Verado: Which Do You Actually Need? (2026)"
-description: "Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Premier dealer on Rice Lake walks you through which one actually fits your boat."
+description: "Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Platinum dealer on Rice Lake walks you through which one actually fits your boat."
 category: "Mercury Motors"
 date_published: 2026-05-26
 date_modified: 2026-06-19
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Pro XS vs FourStroke vs Verado: Which Do You Actually Need? (2026)
 
-> Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Premier dealer on Rice Lake walks you through which one actually fits your boat.
+> Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Platinum dealer on Rice Lake walks you through which one actually fits your boat.
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  

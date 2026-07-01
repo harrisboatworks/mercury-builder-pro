@@ -14,7 +14,7 @@ keyword: "mercury dealer oshawa"
 
 # Mercury Dealer for Oshawa, Harris Boat Works (Gores Landing, ON)
 
-For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Premier Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.
+For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Platinum Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.
 
 ## Factbox
 

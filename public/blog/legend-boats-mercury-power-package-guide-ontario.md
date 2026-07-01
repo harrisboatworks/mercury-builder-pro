@@ -184,13 +184,13 @@ Plan on **5-8% on top of the listed price** for HST and reasonable optional equi
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Why Buy a Legend at HBW Specifically
 
 A few things that aren't on the Legend website:
 
-**Mercury repower path is built-in.** Every Legend ships with a Mercury outboard, and we're a Mercury Premier dealer. When the original engine eventually needs replacement (10-15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
+**Mercury repower path is built-in.** Every Legend ships with a Mercury outboard, and we're a Mercury Platinum dealer. When the original engine eventually needs replacement (10-15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
 
 **On-water service.** We're at Gores Landing on Rice Lake. If your Legend needs warranty work or service, you don't have to trailer it 90 minutes to a dealer in another county. Drop it at our slip, pick it up running.
 

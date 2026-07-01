@@ -103,7 +103,7 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
           <div className="pt-4 border-t border-border text-center text-sm text-muted-foreground">
             <p className="font-medium text-foreground">Harris Boat Works</p>
             <p>5369 Harris Boat Works Rd, Gores Landing, ON</p>
-            <p className="text-xs mt-1 text-primary">Mercury Premier Dealer</p>
+            <p className="text-xs mt-1 text-primary">Mercury Platinum Dealer</p>
           </div>
         </div>
       </div>

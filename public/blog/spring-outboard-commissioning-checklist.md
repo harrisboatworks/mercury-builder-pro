@@ -209,7 +209,7 @@ The biggest install consideration on CC repowers: digital throttle and shift int
 The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Platinum Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
 - [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
@@ -231,7 +231,7 @@ Schedule at **[hbw.wiki/service](https://hbw.wiki/service)**.
 Book before April if May timing matters. Questions first? Call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON
+Harris Boat Works | Since 1947 | Mercury Marine Platinum Dealer | Gores Landing, ON
 
 ## FAQs
 

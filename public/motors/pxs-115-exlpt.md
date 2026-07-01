@@ -19,7 +19,7 @@ price_cad: 17842
 # 115 EXLPT ProXS
 
 Mercury ProXS 115 HP outboard motor (model 1117F231D).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

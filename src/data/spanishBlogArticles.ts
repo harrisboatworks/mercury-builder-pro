@@ -25,7 +25,7 @@ Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrod
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Platinum y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -134,13 +134,13 @@ Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de 
 
 ## ¿Por qué considerar a Harris Boat Works?
 
-Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** vía 401E + Hwy 115N. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Premier y concesionario Legend Boats.
+Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** vía 401E + Hwy 115N. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Platinum y concesionario Legend Boats.
 
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
 - 78 años de operación continua en Rice Lake
-- Acceso a partes Mercury con prioridad de concesionario Premier
+- Acceso a partes Mercury con prioridad de concesionario Platinum
 - Técnicos certificados Mercury
 
 Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
@@ -392,7 +392,7 @@ La preparación invernal de un motor Mercury en Ontario cubre seis pasos esencia
 
 El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Platinum y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
 
 ---
 
@@ -647,7 +647,7 @@ El configurador incluye opciones de rigging, controles, y hélice, para que el p
 
 ## Sobre Harris Boat Works
 
-Harris Boat Works es un negocio familiar desde 1947 en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury Marine Premier, el nivel más alto de certificación Mercury, lo que significa acceso prioritario a partes, técnicos certificados, y manejo directo de garantías con Mercury.
+Harris Boat Works es un negocio familiar desde 1947 en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury Marine Platinum, el nivel más alto de certificación Mercury, lo que significa acceso prioritario a partes, técnicos certificados, y manejo directo de garantías con Mercury.
 
 Vendemos aproximadamente **65 motores Mercury nuevos al año**. Sabemos qué funciona en estos lagos.
 
@@ -714,7 +714,7 @@ Si su casco está en buen estado y el problema es el motor, remotorizar. Un bote
 
 Cada primavera, miles de propietarios de botes en Ontario se enfrentan a la misma decisión: el motor está fallando, ¿vale la pena reemplazarlo, o es momento de comprar un bote nuevo?
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y también vendemos botes nuevos Legend Boats. No tenemos interés en empujarle hacia ninguna de las dos opciones: nuestro objetivo es que tome la decisión correcta para su situación.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Platinum y también vendemos botes nuevos Legend Boats. No tenemos interés en empujarle hacia ninguna de las dos opciones: nuestro objetivo es que tome la decisión correcta para su situación.
 
 ---
 
@@ -744,7 +744,7 @@ Remotorizar significa conservar una embarcación que ya conoce y en la que conf�
 
 Los motores Mercury FourStroke actuales están disponibles de 2.5 a 300 HP. Son más económicos en combustible, más silenciosos y más confiables que la generación anterior. Si su motor tiene 15 años o más, notará la diferencia desde la primera salida.
 
-Como concesionario Mercury Premier, Harris Boat Works tiene acceso a la gama: FourStroke estándar y Pro XS para pescadores. Verado está disponible bajo pedido especial y para servicio técnico.
+Como concesionario Mercury Platinum, Harris Boat Works tiene acceso a la gama: FourStroke estándar y Pro XS para pescadores. Verado está disponible bajo pedido especial y para servicio técnico.
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 

@@ -202,7 +202,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 | Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
 | Launch ramp | 2-lane concrete; $20/day or $200/season |
 | Rentals | 9-boat fleet for day trips |
-| Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
+| Mercury service | Platinum dealer; for engine repairs, we only service Mercury and Mercruiser |
 
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 

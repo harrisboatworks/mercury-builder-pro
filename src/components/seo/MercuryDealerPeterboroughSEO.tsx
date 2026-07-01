@@ -5,7 +5,7 @@ import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOn
 const PETERBOROUGH_FAQ = [
   {
     question: "Is there a Mercury dealer near Peterborough, Ontario?",
-    answer: "Yes, Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947."
+    answer: "Yes, Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947."
   },
   {
     question: "Do you serve Peterborough customers for Mercury repower and service?",
@@ -34,7 +34,7 @@ export function MercuryDealerPeterboroughSEO() {
         "@id": `${SITE_URL}/mercury-dealer-peterborough#webpage`,
         "url": `${SITE_URL}/mercury-dealer-peterborough`,
         "name": "Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South",
-        "description": "Mercury Marine Premier Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.",
+        "description": "Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
@@ -85,7 +85,7 @@ export function MercuryDealerPeterboroughSEO() {
       <title>Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South</title>
       <meta
         name="description"
-        content="Mercury Marine Premier Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters."
+        content="Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters."
       />
       <meta
         name="keywords"
@@ -94,13 +94,13 @@ export function MercuryDealerPeterboroughSEO() {
       <link rel="canonical" href={`${SITE_URL}/mercury-dealer-peterborough`} />
 
       <meta property="og:title" content="Mercury Dealer Peterborough Ontario | Harris Boat Works" />
-      <meta property="og:description" content="Mercury Premier Dealer 35 min south of Peterborough on Rice Lake. Family-owned since 1947." />
+      <meta property="og:description" content="Mercury Platinum Dealer 35 min south of Peterborough on Rice Lake. Family-owned since 1947." />
       <meta property="og:url" content={`${SITE_URL}/mercury-dealer-peterborough`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Dealer Peterborough Ontario" />
-      <meta name="twitter:description" content="Mercury Premier Dealer 35 min from Peterborough." />
+      <meta name="twitter:description" content="Mercury Platinum Dealer 35 min from Peterborough." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

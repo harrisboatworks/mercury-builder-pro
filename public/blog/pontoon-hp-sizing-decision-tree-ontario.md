@@ -287,7 +287,7 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 
 ---
 
-*Harris Boat Works. Mercury Marine Premier Dealer. Gores Landing, ON, est. 1947*
+*Harris Boat Works. Mercury Marine Platinum Dealer. Gores Landing, ON, est. 1947*
 
 ---
 

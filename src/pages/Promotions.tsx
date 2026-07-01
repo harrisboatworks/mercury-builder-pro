@@ -316,7 +316,7 @@ export default function Promotions() {
     },
     { 
       question: "Is this a third-party warranty?", 
-      answer: "No. This is factory-backed Mercury coverage. Your warranty is honoured at any authorized Mercury dealer, and Harris Boat Works handles all warranty service in-house as a Premier Dealer." 
+      answer: "No. This is factory-backed Mercury coverage. Your warranty is honoured at any authorized Mercury dealer, and Harris Boat Works handles all warranty service in-house as a Platinum Dealer." 
     },
     { 
       question: "Does this apply to repowers?", 

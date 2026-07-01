@@ -162,8 +162,8 @@ Full spring commissioning checklist is at [/blog/spring-outboard-commissioning-c
 
 ## Related guides
 
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
-- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): A Mercury Premier dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each.
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
+- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each.
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
 - [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
 
@@ -182,7 +182,7 @@ Submit a storage request at **[hbw.wiki/service](https://hbw.wiki/service)**. In
 Questions first? Call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier Dealer | Since 1947
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
 
 ## FAQs
 

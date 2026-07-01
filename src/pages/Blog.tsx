@@ -12,7 +12,7 @@ const EN_STRINGS: BlogHubStrings = {
   trustItems: [
     'Family marina since 1947',
     'Mercury dealer since 1965',
-    'Mercury Premier Dealer',
+    'Mercury Platinum Dealer',
     'Water-tested on Rice Lake',
   ],
   intentHeading: 'What do you need?',

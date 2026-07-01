@@ -211,14 +211,14 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 ---
 
-*Harris Boat Works, est. 1947. Mercury Marine Premier Dealer. Gores Landing, Ontario.*
+*Harris Boat Works, est. 1947. Mercury Marine Platinum Dealer. Gores Landing, Ontario.*
 *905-342-2153 | [harrisboatworks.ca](https://www.harrisboatworks.ca)*
 
 ---
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Get the printable guide
 

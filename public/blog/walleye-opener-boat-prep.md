@@ -184,7 +184,7 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
 [Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
-Mercury Premier dealer. Est. 1947.
+Mercury Platinum dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---

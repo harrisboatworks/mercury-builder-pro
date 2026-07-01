@@ -208,7 +208,7 @@ A few Ontario-specific notes that make DTS hit different here.
 **Email:** info@harrisboatworks.ca (send motor cowl plate photo + helm controls photo for a same-day yes/no)
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
+Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.
 
 ## Related guides
 

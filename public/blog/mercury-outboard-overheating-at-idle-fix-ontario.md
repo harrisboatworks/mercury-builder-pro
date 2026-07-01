@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer"
-description: "Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier dealer - water pump impeller, intake debris, thermostat..."
+title: "Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer"
+description: "Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum dealer - water pump impeller, intake debris, thermostat..."
 category: "Troubleshooting"
 date_published: 2026-05-11
 date_modified: 2026-05-27
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer
+# Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer
 
-> Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier dealer - water pump impeller, intake debris, thermostat...
+> Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Platinum dealer - water pump impeller, intake debris, thermostat...
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
@@ -176,7 +176,7 @@ Two related guides in the same cluster:
 ---
 
 **Overheating at idle needs to be looked at before your next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 

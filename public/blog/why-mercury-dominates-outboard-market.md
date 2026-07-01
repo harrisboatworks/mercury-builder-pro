@@ -76,7 +76,7 @@ Live CAD pricing on every Mercury we sell is at [mercuryrepower.ca](https://www.
 
 If you want to talk through whether Mercury is the right answer for your specific boat and use case, call 905-342-2153.
 
-Harris Boat Works. Mercury dealer since 1965, Mercury Premier dealer today.
+Harris Boat Works. Mercury dealer since 1965, Mercury Platinum dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -105,7 +105,7 @@ Mechanically, all three brands make reliable modern four-stroke outboards. The p
 
 ### Why does HBW sell only Mercury?
 
-We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Premier dealer relationship today.
+We have been a Mercury dealer since 1965. Three generations of expertise, Mercury-specific parts inventory, Mercury tooling, and a Mercury Platinum dealer relationship today.
 
 ### Why do most aluminum boats sold in Ontario come Mercury-rigged?
 

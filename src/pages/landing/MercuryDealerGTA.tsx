@@ -14,7 +14,7 @@ import { ChevronRight, MapPin, Clock, Award, Phone } from 'lucide-react';
 const facts = [
   { icon: Clock, label: '~90 min east of Toronto' },
   { icon: MapPin, label: 'Gores Landing, Rice Lake' },
-  { icon: Award, label: 'Mercury Premier Dealer' },
+  { icon: Award, label: 'Mercury Platinum Dealer' },
   { icon: Phone, label: '(905) 342-2153' }
 ];
 

@@ -37,7 +37,7 @@ The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outb
 
 "Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80, 100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 115 FourStroke is one of the motors we sell and service most. Here's an honest look at where it makes sense, and where it doesn't.
+Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Platinum dealer. The 115 FourStroke is one of the motors we sell and service most. Here's an honest look at where it makes sense, and where it doesn't.
 
 ---
 

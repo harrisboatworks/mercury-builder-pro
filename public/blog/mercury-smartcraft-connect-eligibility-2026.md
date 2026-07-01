@@ -212,7 +212,7 @@ Three reasons SmartCraft Connect lands harder in Ontario than in some markets.
 **Email:** info@harrisboatworks.ca (send your Mercury serial number for a same-day yes/no)
 **Quote a repower if you need to switch motors:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
+Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Platinum Dealer.
 ## Related guides
 
 - [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.

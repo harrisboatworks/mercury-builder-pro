@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 const COBOURG_FAQ = [
   {
     question: "Where can I buy a Mercury outboard near Cobourg, Ontario?",
-    answer: "Harris Boat Works in Gores Landing, about 20 minutes north of Cobourg on Rice Lake, is the closest Mercury Marine Premier Dealer. Mercury dealer since 1965, family-owned since 1947. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0."
+    answer: "Harris Boat Works in Gores Landing, about 20 minutes north of Cobourg on Rice Lake, is the closest Mercury Marine Platinum Dealer. Mercury dealer since 1965, family-owned since 1947. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0."
   },
   {
     question: "How far is Harris Boat Works from Cobourg?",
@@ -33,7 +33,7 @@ export function MercuryDealerCobourgSEO() {
         "@id": `${SITE_URL}/mercury-dealer-cobourg#webpage`,
         "url": `${SITE_URL}/mercury-dealer-cobourg`,
         "name": "Mercury Dealer Cobourg Ontario | Harris Boat Works, 20 Min North",
-        "description": "Mercury Marine Premier Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.",
+        "description": "Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA",
@@ -84,7 +84,7 @@ export function MercuryDealerCobourgSEO() {
       <title>Mercury Dealer Cobourg Ontario | Harris Boat Works, 20 Min North</title>
       <meta
         name="description"
-        content="Mercury Marine Premier Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County."
+        content="Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County."
       />
       <meta
         name="keywords"
@@ -93,13 +93,13 @@ export function MercuryDealerCobourgSEO() {
       <link rel="canonical" href={`${SITE_URL}/mercury-dealer-cobourg`} />
 
       <meta property="og:title" content="Mercury Dealer Cobourg Ontario | Harris Boat Works" />
-      <meta property="og:description" content="Mercury Premier Dealer 20 min north of Cobourg. Family-owned since 1947." />
+      <meta property="og:description" content="Mercury Platinum Dealer 20 min north of Cobourg. Family-owned since 1947." />
       <meta property="og:url" content={`${SITE_URL}/mercury-dealer-cobourg`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Dealer Cobourg Ontario" />
-      <meta name="twitter:description" content="Mercury Premier Dealer 20 min from Cobourg." />
+      <meta name="twitter:description" content="Mercury Platinum Dealer 20 min from Cobourg." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

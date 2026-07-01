@@ -24,7 +24,7 @@ export const PRO_XS_FAQ = [
   },
   {
     question: "What HP Pro XS models does Harris Boat Works carry?",
-    answer: "We stock the full Pro XS lineup in CAD pricing: 115 HP (ELPT and EXLPT), 150 HP (ELPT and EXLPT), 200 HP (ELPT), and 250 HP (ELPT). All in stock, real prices online. Mercury Premier Dealer, full warranty registration at pickup."
+    answer: "We stock the full Pro XS lineup in CAD pricing: 115 HP (ELPT and EXLPT), 150 HP (ELPT and EXLPT), 200 HP (ELPT), and 250 HP (ELPT). All in stock, real prices online. Mercury Platinum Dealer, full warranty registration at pickup."
   },
   {
     question: "Pro XS vs FourStroke, which should I buy?",
@@ -61,7 +61,7 @@ export function MercuryProXSSEO() {
         "@id": `${SITE_URL}/mercury-pro-xs#webpage`,
         "url": `${SITE_URL}/mercury-pro-xs`,
         "name": "Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works",
-        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -81,7 +81,7 @@ export function MercuryProXSSEO() {
         "@id": `${SITE_URL}/mercury-pro-xs#productgroup`,
         "productGroupID": "mercury-pro-xs-outboard-series",
         "name": "Mercury Pro XS Outboard Series",
-        "description": "Mercury Pro XS high-performance FourStroke outboard motors, 115–250 HP, available at Harris Boat Works (Mercury Premier Dealer, Ontario).",
+        "description": "Mercury Pro XS high-performance FourStroke outboard motors, 115–250 HP, available at Harris Boat Works (Mercury Platinum Dealer, Ontario).",
         "brand": { "@type": "Brand", "name": "Mercury Marine" },
         "url": `${SITE_URL}/mercury-pro-xs`,
         "variesBy": ["horsepower"],
@@ -122,7 +122,7 @@ export function MercuryProXSSEO() {
       <title>Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW</title>
       <meta
         name="description"
-        content="Mercury Pro XS performance outboards 115–250 HP in stock. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965."
+        content="Mercury Pro XS performance outboards 115–250 HP in stock. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965."
       />
       <meta
         name="keywords"
@@ -131,7 +131,7 @@ export function MercuryProXSSEO() {
       <link rel="canonical" href={`${SITE_URL}/mercury-pro-xs`} />
 
       <meta property="og:title" content="Mercury Pro XS Outboards 115–250 HP, Real CAD Pricing" />
-      <meta property="og:description" content="Pro XS performance lineup at Harris Boat Works. Mercury Premier Dealer, Rice Lake." />
+      <meta property="og:description" content="Pro XS performance lineup at Harris Boat Works. Mercury Platinum Dealer, Rice Lake." />
       <meta property="og:url" content={`${SITE_URL}/mercury-pro-xs`} />
       <meta property="og:type" content="product.group" />
 

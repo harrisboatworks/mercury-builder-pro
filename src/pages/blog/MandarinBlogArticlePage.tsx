@@ -269,7 +269,7 @@ export default function MandarinBlogArticlePage() {
 
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Premier Dealer · Rice Lake, Ontario" />
+            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
           </div>
 
           {/* FAQ Section */}

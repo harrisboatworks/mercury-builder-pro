@@ -74,7 +74,7 @@ export default function MaintenanceHub() {
       ]}
       whyHbwIntro="Mercury-certified service from a Mercury-only shop."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Premier dealer technicians', description: 'Mercury-certified, factory-trained.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Platinum dealer technicians', description: 'Mercury-certified, factory-trained.' },
         { icon: <Users className="h-5 w-5" aria-hidden="true" />, title: '60 years of service experience', description: 'Three generations of HBW techs.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Computer diagnostic for modern Mercurys', description: 'Fault code reading on post-2010 EFI motors.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Full marina services', description: 'Storage, hauling, parts, electronics integration.' },

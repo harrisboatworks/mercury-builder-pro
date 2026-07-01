@@ -15,7 +15,7 @@ import {
 import { Anchor, Phone, Award, MapPin, Calendar, Wrench } from 'lucide-react';
 
 const TRUST_ROW = [
-  { icon: Award, label: 'Mercury Premier Dealer' },
+  { icon: Award, label: 'Mercury Platinum Dealer' },
   { icon: Calendar, label: 'Family-owned since 1947' },
   { icon: Wrench, label: 'Mercury dealer since 1965' },
   { icon: MapPin, label: 'Pickup in Gores Landing' },
@@ -269,7 +269,7 @@ export default function LocationDetail() {
             {location.slug === 'peterborough-mercury-dealer' && (
               <div className="mt-8 space-y-2">
                 <p className="text-sm font-semibold text-repower-cream">
-                  Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
+                  Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer.
                 </p>
                 <p className="text-xs text-repower-cream/70">
                   311 Google reviews, 4.6 stars.

@@ -12,7 +12,7 @@ description: "A step-by-step look at how a GTA boater repowers a boat at Harris 
 category: "Mercury Outboards"
 date_published: 2026-05-19
 date_modified: 2026-06-26
-keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Premier repower dealer Ontario"]
+keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Platinum repower dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -33,7 +33,7 @@ content_type: blog_article
 
 You've decided to repower. Maybe your old motor is on its last legs; maybe a fuel-system rebuild costs as much as a fresh new Mercury. Either way, you're in the GTA and need to figure out: **how does this actually work logistically when the dealer is 90 minutes away?**
 
-This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Premier dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
+This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Platinum dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
 
 ![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
 
@@ -147,7 +147,7 @@ Repower wins by $25,000-$50,000 on most current boats. Exceptions: hulls in genu
 
 A Toronto repower at a GTA Mercury dealer is theoretically possible. Here's why most GTA customers end up at HBW:
 
-**1. Mercury Premier dealer expertise on rigging.** Modern Mercurys (V6 V8 SmartCraft, DTS, joystick) require factory-level rigging knowledge. Lower-tier dealers often work fine on standard FourStrokes, less reliably on premium variants.
+**1. Mercury Platinum dealer expertise on rigging.** Modern Mercurys (V6 V8 SmartCraft, DTS, joystick) require factory-level rigging knowledge. Lower-tier dealers often work fine on standard FourStrokes, less reliably on premium variants.
 
 **2. The configurator + transparent pricing.** GTA repowers at "call for quote" dealers often surface as $3,000-$5,000 more than equivalent rigged at HBW. The math works in our favour.
 
@@ -193,7 +193,7 @@ If you're planning a repower, **start the configurator now and book your slot. I
 
 ## What we see at HBW
 
-GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. The reason isn't always price (though we are competitive). It's the install package: Premier dealer paperwork, proper rigging photos, and a labour rate that runs $40-60/hr below downtown Toronto marine shops.
+GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. The reason isn't always price (though we are competitive). It's the install package: Platinum dealer paperwork, proper rigging photos, and a labour rate that runs $40-60/hr below downtown Toronto marine shops.
 
 The drive is about an hour from Markham, 90 minutes from Mississauga. Most repower customers drop off Friday afternoon, pick up Tuesday or Wednesday of the following week. We do not offer pickup or delivery -- drop-off only.
 

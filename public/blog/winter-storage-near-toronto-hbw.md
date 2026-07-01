@@ -114,9 +114,9 @@ source: Whitby
 
 Three reasons GTA boat owners specifically choose HBW for winter storage:
 
-### 1. The boat is at a Mercury Premier dealer all winter
+### 1. The boat is at a Mercury Platinum dealer all winter
 
-Why this matters: any service work that needs doing is already on a Mercury Premier dealer's site. No "I'll bring it in next year." Our shop is closed roughly December 1 to April 1, so the work itself happens once we reopen in early April, but the boat is already here, already diagnosed, and already on the schedule.
+Why this matters: any service work that needs doing is already on a Mercury Platinum dealer's site. No "I'll bring it in next year." Our shop is closed roughly December 1 to April 1, so the work itself happens once we reopen in early April, but the boat is already here, already diagnosed, and already on the schedule.
 
 A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it is stored, we identify needed work and quote. They approve over the winter by phone or email (when the order book is open and winter promo pricing is live). The work happens as soon as we reopen in early April. Boat ready for spring with all maintenance current.
 
@@ -205,7 +205,7 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruis
 
 ## Related guides
 
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
 - [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
 - [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
 - [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.

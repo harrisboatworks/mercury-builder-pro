@@ -213,19 +213,19 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ---
 
 **By Jay Harris**
 3rd-Generation Owner, Harris Boat Works
-Mercury Premier Dealer · Rice Lake, Ontario
+Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 
 ::cta
 variant: banner
 heading: Stop comparing. Start pricing.
-body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
+body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Platinum dealer, transparent pricing, Rice Lake since 1947.
 primaryLabel: Build Your Quote
 primaryHref: /quote/motor-selection
 phone: 905-342-2153

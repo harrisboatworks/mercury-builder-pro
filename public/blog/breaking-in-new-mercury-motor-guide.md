@@ -181,7 +181,7 @@ The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meaning
 
 Two related guides in the same cluster:
 - [Mercury Outboard Won](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
+- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Platinum Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ---
 
@@ -221,7 +221,7 @@ Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 perfor
 
 ### What is the Mercury factory warranty on a new outboard motor?
 
-New Mercury FourStroke outboards come with a 3-year limited factory warranty for recreational use, covering manufacturing defects in materials and workmanship. The warranty does not cover damage from improper use, neglect, or failure to follow the break-in and maintenance schedule in the owner's manual. Keeping service records including proof of the 20-hour oil change is important for any potential warranty claim. Harris Boat Works, as a Mercury Premier dealer, can perform warranty service directly.
+New Mercury FourStroke outboards come with a 3-year limited factory warranty for recreational use, covering manufacturing defects in materials and workmanship. The warranty does not cover damage from improper use, neglect, or failure to follow the break-in and maintenance schedule in the owner's manual. Keeping service records including proof of the 20-hour oil change is important for any potential warranty claim. Harris Boat Works, as a Mercury Platinum dealer, can perform warranty service directly.
 
 ### Should I use a fuel stabilizer in my new Mercury motor right away?
 

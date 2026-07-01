@@ -37,7 +37,7 @@ Your Mercruiser sterndrive does not need mystery. It needs the right maintenance
 
 Around here, most expensive I/O problems come from the same few places: missed winterization, old bellows, water intrusion, tired manifolds and risers, or a drive that has been quietly asking for help since Labour Day. The boat usually gave warnings. They were just easy to ignore when the weather was nice.
 
-Harris Boat Works is a family-owned Rice Lake marina established in 1947 and a Mercury Marine Premier Dealer in Gores Landing, Ontario. We service Mercruiser sterndrives, winterize them, store them, and when the repair bill stops making sense, we'll tell you that too. No scare tactics. Boats already cost enough without adding drama.
+Harris Boat Works is a family-owned Rice Lake marina established in 1947 and a Mercury Marine Platinum Dealer in Gores Landing, Ontario. We service Mercruiser sterndrives, winterize them, store them, and when the repair bill stops making sense, we'll tell you that too. No scare tactics. Boats already cost enough without adding drama.
 
 ---
 
@@ -234,8 +234,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Related guides
 
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
 - [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
 

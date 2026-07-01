@@ -111,7 +111,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
     },
     {
       question: "Is this a third-party warranty?",
-      answer: "No. This is factory-backed Mercury coverage. Your warranty is honoured at any authorized Mercury dealer, and Harris Boat Works handles all warranty service in-house as a Premier Dealer."
+      answer: "No. This is factory-backed Mercury coverage. Your warranty is honoured at any authorized Mercury dealer, and Harris Boat Works handles all warranty service in-house as a Platinum Dealer."
     },
     {
       question: "Does this apply to repowers?",
@@ -145,7 +145,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         "@id": `${SITE_URL}/promotions`,
         "url": `${SITE_URL}/promotions`,
         "name": `${mainPromo.name} | Harris Boat Works`,
-        "description": "Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. Premier Dealer (Mercury dealer since 1965).",
+        "description": "Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. Platinum Dealer (Mercury dealer since 1965).",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -178,11 +178,11 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
     <Helmet>
       <title>7-Year Mercury Warranty on Every New Outboard | HBW</title>
       <meta name="description" content="7 years of factory-backed warranty on every new Mercury outboard at Harris Boat Works. Straight Mercury coverage, no third-party contract." />
-      <meta name="keywords" content="Mercury 7 year warranty, Mercury outboard warranty, Harris Boat Works, Mercury dealer Ontario, boat motor warranty, Mercury Premier Dealer, repower warranty" />
+      <meta name="keywords" content="Mercury 7 year warranty, Mercury outboard warranty, Harris Boat Works, Mercury dealer Ontario, boat motor warranty, Mercury Platinum Dealer, repower warranty" />
       <link rel="canonical" href={`${SITE_URL}/promotions`} />
       
       <meta property="og:title" content="7-Year Factory-Backed Warranty | Harris Boat Works" />
-      <meta property="og:description" content="Get 7 years of zero-worry boating with a new Mercury outboard. Factory-backed coverage from a Premier Dealer (Mercury dealer since 1965)." />
+      <meta property="og:description" content="Get 7 years of zero-worry boating with a new Mercury outboard. Factory-backed coverage from a Platinum Dealer (Mercury dealer since 1965)." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/promotions`} />
       

@@ -33,7 +33,7 @@ The 150-300 HP Mercury range is where a lot of boaters either get the motor exac
 
 The first thing to clear up: the current Mercury 150 Pro XS is an inline-4, not a V6. The V6 Pro XS family starts at 175 HP, and the 300 Pro XS moves into V8 territory. That matters because you are not just comparing horsepower. You are comparing weight, torque, rigging, hull fit, handling, fuel use, and whether the boat will actually feel better on Rice Lake or just sound better in a spec sheet.
 
-Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, and a Mercury Marine Premier Dealer. We sell and rig these motors, so this guide is built around the real customer question: which one makes sense for your boat, your water, and your budget?
+Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, and a Mercury Marine Platinum Dealer. We sell and rig these motors, so this guide is built around the real customer question: which one makes sense for your boat, your water, and your budget?
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 

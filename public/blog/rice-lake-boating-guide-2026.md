@@ -133,7 +133,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
-For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
+For Mercury service, parts, or repower questions, we're a Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
 
 ---
 
@@ -169,7 +169,7 @@ If you need a Mercury motor or repower, build a quote at **[mercuryrepower.ca](h
 
 For service, parts, or rentals, contact us at **[harrisboatworks.ca](https://www.harrisboatworks.ca)** or **905-342-2153**.
 
-Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier Dealer | Since 1947
+Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Platinum Dealer | Since 1947
 
 ---
 

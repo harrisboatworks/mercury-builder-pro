@@ -1371,11 +1371,11 @@ export const MotorSelection = ({
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-border" />
 
-            {/* Premier Dealer Heritage */}
+            {/* Platinum Dealer Heritage */}
             <div className="credential-group flex items-center gap-3">
               <img src={harrisLogo} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-10 md:h-16 w-auto" />
               <div className="text-left">
-                <p className="font-semibold text-foreground">Premier Mercury Dealer</p>
+                <p className="font-semibold text-foreground">Platinum Mercury Dealer</p>
                 <p className="text-sm text-muted-foreground">Family Owned Since 1947 • Serving Rice Lake Area</p>
               </div>
             </div>

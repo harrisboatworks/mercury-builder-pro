@@ -70,7 +70,7 @@ export default function RepowerCost() {
       ]}
       whyHbwIntro="Mercury-only since 1965, family-owned since 1947, and we water-test every motor on Rice Lake before pickup."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
         { icon: <DollarSign className="h-5 w-5" aria-hidden="true" />, title: 'Transparent CAD pricing', description: 'Live quote builder, no loss leaders.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'In-house rigging and warranty', description: 'Same techs price and rig your motor.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Gores Landing, ON', description: '5369 Harris Boat Works Rd. Pickup only.' },
@@ -145,7 +145,7 @@ export default function RepowerCost() {
             <li>Pro XS installed: $19,000 to $40,000 CAD (2026) depending on HP and controls</li>
             <li>Financing OAC, current rates live on the quote builder</li>
             <li>Deposit to lock the order: $200 / $500 / $1,000 by HP class</li>
-            <li>Mercury dealer since 1965, current Premier tier</li>
+            <li>Mercury dealer since 1965, current Platinum tier</li>
             <li>Pickup-only at Gores Landing, ON</li>
           </ul>
 
@@ -172,7 +172,7 @@ export default function RepowerCost() {
           <p>Yes. Financing OAC through Mercury and partner lenders, with current rates and your monthly payment posted live on the quote builder. Sample math is illustrative only. Deposit tiers are $200 portable, $500 mid-range, $1,000 big-block / Pro XS / Verado. Full detail on the <Link to="/repower/financing">financing page</Link>.</p>
 
           <h3>Why transparent pricing</h3>
-          <p>We sell Mercury only and we've been a Mercury dealer since 1965 (current Premier tier). No loss-leader motor prices propped up by surprise rigging fees. Every quote shows the motor, the rigging line items, and the total in CAD before HST.</p>
+          <p>We sell Mercury only and we've been a Mercury dealer since 1965 (current Platinum tier). No loss-leader motor prices propped up by surprise rigging fees. Every quote shows the motor, the rigging line items, and the total in CAD before HST.</p>
 
           <h3>Can I get a written quote without driving out?</h3>
           <p>Yes. The configurator produces a written CAD breakdown by email in about three minutes. A tech follows up to confirm anything specific to your hull.</p>

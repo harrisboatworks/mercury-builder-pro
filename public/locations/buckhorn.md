@@ -14,7 +14,7 @@ keyword: "mercury repower buckhorn"
 
 # Buckhorn Mercury Repower
 
-Harris Boat Works is roughly 70 minutes south of Buckhorn in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 28 and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Buckhorn sits in the northern Kawarthas on Lower Buckhorn Lake, cottage country with a strong mix of pontoon and runabout repowers. Customers drive to Gores Landing for pickup. There is no shipping. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is roughly 70 minutes south of Buckhorn in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 28 and County Road 9. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Buckhorn sits in the northern Kawarthas on Lower Buckhorn Lake, cottage country with a strong mix of pontoon and runabout repowers. Customers drive to Gores Landing for pickup. There is no shipping. Typical full repower: $11,000–$40,000 CAD.
 
 ## Factbox
 

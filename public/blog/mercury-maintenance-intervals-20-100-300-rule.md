@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know"
-description: "A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario."
+description: "A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario."
 category: "Service & Maintenance"
 date_published: 2026-05-12
 date_modified: 2026-05-12
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know
 
-> A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario.
+> A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
@@ -207,7 +207,7 @@ Two related guides in the same cluster:
 - [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network and Mercury Product Protection details.
 
 **Due for service?** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Or build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 

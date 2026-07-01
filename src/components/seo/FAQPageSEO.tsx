@@ -12,7 +12,7 @@ export function FAQPageSEO() {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/faq#faqpage`,
         "name": "Mercury Outboard Repower FAQ, Harris Boat Works",
-        "description": "Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario's Mercury Marine Premier Dealer.",
+        "description": "Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario's Mercury Marine Platinum Dealer.",
         "url": `${SITE_URL}/faq`,
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -77,7 +77,7 @@ export function FAQPageSEO() {
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower FAQ, Harris Boat Works" />
-      <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Premier Dealer since 1947." />
+      <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
       <meta property="og:url" content={`${SITE_URL}/faq`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />

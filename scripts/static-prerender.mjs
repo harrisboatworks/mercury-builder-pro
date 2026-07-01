@@ -823,7 +823,7 @@ function homepageSchema() {
         "@id": "https://www.mercuryrepower.ca/#webpage",
         "url": "https://www.mercuryrepower.ca/",
         "name": "Mercury Repower Quotes Online: Real Prices, No Forms | Harris Boat Works",
-        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "primaryImageOfPage": { "@id": "https://www.mercuryrepower.ca/#logo" },
@@ -844,7 +844,7 @@ function homepageSchema() {
         },
         "foundingDate": "1947",
         "founder": { "@type": "Person", "name": "Harris family" },
-        "description": "Third-generation family marina on Rice Lake, Ontario. Mercury Marine Premier Dealer (Mercury dealer since 1965) and Legend Boats dealer.",
+        "description": "Third-generation family marina on Rice Lake, Ontario. Mercury Marine Platinum Dealer (Mercury dealer since 1965) and Legend Boats dealer.",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -897,7 +897,7 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Mercury Marine" },
           { "@type": "Brand", "name": "Legend Boats" }
         ],
-        "award": "Mercury Marine Premier Dealer",
+        "award": "Mercury Marine Platinum Dealer",
         "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS,
         "sameAs": BUSINESS_SAME_AS
@@ -974,7 +974,7 @@ function aboutPageSchema() {
         "logo": "https://www.mercuryrepower.ca/pwa-512x512.png",
         "foundingDate": "1947",
         "founder": { "@type": "Person", "name": "Harris family" },
-        "description": "Third-generation family marina established in 1947 on Rice Lake in Gores Landing, Ontario. Mercury Marine dealer since 1965 and current Mercury Marine Premier Dealer. Authorized Legend Boats dealer.",
+        "description": "Third-generation family marina established in 1947 on Rice Lake in Gores Landing, Ontario. Mercury Marine dealer since 1965 and current Mercury Marine Platinum Dealer. Authorized Legend Boats dealer.",
         "slogan": "Real prices. Family-owned. Since 1947.",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
@@ -987,7 +987,7 @@ function aboutPageSchema() {
           "addressCountry": "CA"
         },
         "award": [
-          "Mercury Marine Premier Dealer",
+          "Mercury Marine Platinum Dealer",
           "Authorized Legend Boats Dealer"
         ],
         "knowsAbout": [
@@ -1379,7 +1379,7 @@ function agentsPageSchema() {
     },
     {
       q: "Can agents quote non-Mercury outboards?",
-      a: "No. Harris Boat Works is a Mercury Marine Premier Dealer. Defer non-Mercury questions to the manufacturer."
+      a: "No. Harris Boat Works is a Mercury Marine Platinum Dealer. Defer non-Mercury questions to the manufacturer."
     },
     {
       q: "Are there rate limits or required headers for agent traffic?",
@@ -1427,7 +1427,7 @@ function mercuryRepowerFaqSchema() {
         "@id": `${SITE_URL}/mercury-repower-faq#webpage`,
         "url": `${SITE_URL}/mercury-repower-faq`,
         "name": "Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works",
-        "description": "Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Premier Dealer · Mercury dealer since 1965.",
+        "description": "Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer · Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -1544,18 +1544,18 @@ function howToRepowerSchema() {
 }
 
 const TRUST_FAQ_PRERENDER = [
-  { question: "Is Harris Boat Works an authorized Mercury Marine dealer?", answer: "Yes. Harris Boat Works has been an authorized Mercury Marine dealer since 1965, over 60 years. We currently hold Mercury Marine Premier Dealer status, the highest tier in Mercury's North American dealer program, awarded for sales volume, technician certification, and customer service." },
-  { question: "What does Mercury Premier Dealer status mean?", answer: "Premier is Mercury Marine's top dealer rating in North America. It requires Mercury-certified technicians, a minimum sales and service volume, full warranty registration capability, and consistently high CSI (Customer Satisfaction Index) scores. Only a small percentage of Mercury dealers reach Premier, and re-qualification is required every year." },
+  { question: "Is Harris Boat Works an authorized Mercury Marine dealer?", answer: "Yes. Harris Boat Works has been an authorized Mercury Marine dealer since 1965, over 60 years. We currently hold Mercury Marine Platinum Dealer status, the highest tier in Mercury's North American dealer program, awarded for sales volume, technician certification, and customer service." },
+  { question: "What does Mercury Platinum Dealer status mean?", answer: "Platinum is Mercury Marine's top dealer rating in North America. It requires Mercury-certified technicians, a minimum sales and service volume, full warranty registration capability, and consistently high CSI (Customer Satisfaction Index) scores. Only a small percentage of Mercury dealers reach Platinum, and re-qualification is required every year." },
   { question: "How long has Harris Boat Works been in business?", answer: "The Harris family founded the boat works in 1947 on Rice Lake in Gores Landing, Ontario. We're now a third-generation, family-owned marina with 79 years of continuous operation. Mercury dealer since 1965." },
   { question: "Where is Harris Boat Works located?", answer: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. About 35 minutes from Peterborough, 20 minutes from Cobourg, 90 minutes from Toronto, and within 200 km of the entire GTA, Kawarthas, and Northumberland County." },
-  { question: "Do you sell motors to customers across Canada?", answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Premier Dealer status." },
+  { question: "Do you sell motors to customers across Canada?", answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Platinum Dealer status." },
   { question: "What Mercury motor lines do you carry?", answer: "We carry the full Mercury outboard lineup: portable FourStroke (2.5–20hp), mid-range FourStroke (25–115hp), Command Thrust (40–150hp for pontoons and heavy hulls), Pro XS performance (115–300hp), SeaPro commercial-duty, ProKicker trolling motors (9.9hp/15hp), and FourStroke V8 (250–300hp). We also stock genuine Mercury parts, oils, and accessories." },
   { question: "Are your prices in Canadian dollars?", answer: "Yes, all pricing on mercuryrepower.ca is in Canadian dollars (CAD), all-in. The price you see is the price you pay (plus HST). No US-dollar conversions, no hidden fees, no \"call for price\" games." },
   { question: "Do you offer Mercury financing?", answer: "Yes, financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates (8.99% under $10K total / 7.99% over $10K total) alongside the purchase price. Minimum financed amount is $5,000." },
   { question: "What warranty comes with a new Mercury outboard?", answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Right now, when you buy from Harris Boat Works, you get 7 years of full Mercury factory-backed coverage, no third-party insurance, just straight Mercury protection. We register the warranty directly with Mercury Marine at the time of pickup." },
   { question: "Are Mercury motors made in Canada?", answer: "Mercury Marine is headquartered in Fond du Lac, Wisconsin, USA, where most outboard motors are manufactured. Mercury has been building outboards since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been the authorized Canadian Mercury dealer for the Rice Lake / Kawartha region since 1965." },
   { question: "Do you service motors purchased elsewhere?", answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
-  { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Premier Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
+  { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Platinum Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
 ];
 
 function mercuryDealerCanadaSchema() {
@@ -1567,7 +1567,7 @@ function mercuryDealerCanadaSchema() {
         "@id": `${SITE_URL}/mercury-dealer-canada-faq#webpage`,
         "url": `${SITE_URL}/mercury-dealer-canada-faq`,
         "name": "Why Buy from Harris Boat Works: Mercury Dealer Canada FAQ | Family-Owned Since 1947",
-        "description": "Trust questions about Harris Boat Works: Mercury Premier Dealer status, family ownership since 1947, dealer since 1965, warranty, financing, Canadian pricing, full Mercury lineup.",
+        "description": "Trust questions about Harris Boat Works: Mercury Platinum Dealer status, family ownership since 1947, dealer since 1965, warranty, financing, Canadian pricing, full Mercury lineup.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -1591,7 +1591,7 @@ function mercuryDealerCanadaSchema() {
         "logo": "https://www.mercuryrepower.ca/pwa-512x512.png",
         "foundingDate": "1947",
         "founder": { "@type": "Person", "name": "Harris family" },
-        "description": "Third-generation family marina established in 1947 on Rice Lake in Gores Landing, Ontario. Mercury Marine dealer since 1965 and current Mercury Marine Premier Dealer.",
+        "description": "Third-generation family marina established in 1947 on Rice Lake in Gores Landing, Ontario. Mercury Marine dealer since 1965 and current Mercury Marine Platinum Dealer.",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -1602,7 +1602,7 @@ function mercuryDealerCanadaSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "award": ["Mercury Marine Premier Dealer", "Authorized Legend Boats Dealer"],
+        "award": ["Mercury Marine Platinum Dealer", "Authorized Legend Boats Dealer"],
         "knowsAbout": ["Mercury outboard motors", "MerCruiser sterndrives", "Marine repower", "Boat winterization", "Boat storage"],
         "sameAs": BUSINESS_SAME_AS
       },
@@ -1624,7 +1624,7 @@ function mercuryDealerCanadaSchema() {
 // ============================================================
 
 const PETERBOROUGH_FAQ_PRERENDER = [
-  { question: "Is there a Mercury dealer near Peterborough, Ontario?", answer: "Yes: Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947." },
+  { question: "Is there a Mercury dealer near Peterborough, Ontario?", answer: "Yes: Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947." },
   { question: "Do you serve Peterborough customers for Mercury repower and service?", answer: "Yes. We regularly repower boats from Peterborough, Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region. Customers tow boats down to Gores Landing, or pick up loose motors for self-installation. Pickup only, no delivery or shipping." },
   { question: "How far is Harris Boat Works from downtown Peterborough?", answer: "About 35 minutes (45 km) via County Rd 28 south to Gores Landing on the south shore of Rice Lake. Easy run for Peterborough, Trent University, and Lakefield-area boaters." },
   { question: "Can I get Mercury financing as a Peterborough customer?", answer: "Yes: Mercury financing through DealerPlan is available to all Ontario residents. Build a quote at mercuryrepower.ca to see live monthly payment estimates (8.99% under $10K total / 7.99% over $10K), then complete the financing application online. Minimum financed amount $5,000." },
@@ -1632,7 +1632,7 @@ const PETERBOROUGH_FAQ_PRERENDER = [
 ];
 
 const COBOURG_FAQ_PRERENDER = [
-  { question: "Where can I buy a Mercury outboard near Cobourg, Ontario?", answer: "Harris Boat Works in Gores Landing, about 20 minutes north of Cobourg on Rice Lake, is the closest Mercury Marine Premier Dealer. Mercury dealer since 1965, family-owned since 1947. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." },
+  { question: "Where can I buy a Mercury outboard near Cobourg, Ontario?", answer: "Harris Boat Works in Gores Landing, about 20 minutes north of Cobourg on Rice Lake, is the closest Mercury Marine Platinum Dealer. Mercury dealer since 1965, family-owned since 1947. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." },
   { question: "How far is Harris Boat Works from Cobourg?", answer: "About 20 minutes (25 km) north via County Rd 18 to Gores Landing on the south shore of Rice Lake. Convenient for Cobourg, Port Hope, Grafton, and Northumberland County boaters." },
   { question: "Do you serve Northumberland County for Mercury repower?", answer: "Yes, we regularly repower boats from Cobourg, Port Hope, Grafton, Brighton, and the wider Northumberland region. Bring your boat down for full installation, or pick up a loose Mercury for self-install. Pickup only at Gores Landing." },
   { question: "Can I get a Mercury quote online from Cobourg?", answer: "Yes, build a real Mercury outboard quote in three minutes at mercuryrepower.ca. Live CAD pricing, financing estimates, and trade-in valuations. No phone calls or forms needed to see the price." },
@@ -1640,9 +1640,9 @@ const COBOURG_FAQ_PRERENDER = [
 ];
 
 const GTA_FAQ_PRERENDER = [
-  { question: "Is there a Mercury dealer that serves the GTA?", answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Premier Dealer. Family-owned since 1947, Mercury dealer since 1965." },
+  { question: "Is there a Mercury dealer that serves the GTA?", answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401, closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965." },
   { question: "How do GTA customers handle pickup?", answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver, pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean." },
-  { question: "Is it worth driving from Toronto for a Mercury outboard?", answer: "GTA boaters tell us yes, for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Premier Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA." },
+  { question: "Is it worth driving from Toronto for a Mercury outboard?", answer: "GTA boaters tell us yes, for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Platinum Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA." },
   { question: "Do you handle Lake Simcoe and Lake Scugog Mercury repowers?", answer: "Yes: Lake Simcoe (Barrie, Orillia, Innisfil), Lake Scugog (Port Perry), and the Trent-Severn Waterway are core Mercury repower markets for us. Common configurations: Pro XS 150–250 for performance hulls, FourStroke 90–150 with Command Thrust for pontoons, FourStroke V8 250–300 for larger Lake Simcoe boats." },
   { question: "How long does a GTA Mercury repower take?", answer: "Typical timeline once you've picked the motor: 1–3 weeks for in-stock motors (longer for special orders), about 1 day in the shop for the install, then a lake-test before pickup. Plan one trip down for drop-off and one for pickup, or one trip total if you're picking up a loose motor for self-install." }
 ];
@@ -1702,7 +1702,7 @@ function mercuryDealerPeterboroughSchema() {
   return geoServicePageSchema({
     slug: '/mercury-dealer-peterborough',
     name: 'Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South',
-    description: 'Mercury Marine Premier Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
+    description: 'Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
     areaName: 'Peterborough, Ontario',
     areaLocality: 'Peterborough',
     faqArr: PETERBOROUGH_FAQ_PRERENDER
@@ -1713,7 +1713,7 @@ function mercuryDealerCobourgSchema() {
   return geoServicePageSchema({
     slug: '/mercury-dealer-cobourg',
     name: 'Mercury Dealer Cobourg Ontario | Harris Boat Works, 20 Min North',
-    description: 'Mercury Marine Premier Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
+    description: 'Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
     areaName: 'Cobourg, Ontario',
     areaLocality: 'Cobourg',
     faqArr: COBOURG_FAQ_PRERENDER
@@ -1729,7 +1729,7 @@ function mercuryDealerGTASchema() {
         "@id": `${SITE_URL}/mercury-dealer-gta#webpage`,
         "url": `${SITE_URL}/mercury-dealer-gta`,
         "name": "Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto",
-        "description": "Mercury Marine Premier Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
+        "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -1784,7 +1784,7 @@ const PRO_XS_STATIC_OFFERS_PRERENDER = [
 
 const PRO_XS_FAQ_PRERENDER = [
   { question: "What is a Mercury Pro XS outboard?", answer: "Pro XS is Mercury Marine's high-performance FourStroke outboard line, engineered for tournament-grade acceleration, top speed, and hole-shot. Pro XS models are tuned more aggressively than standard FourStroke motors and ship with performance prop pitches, premium gearcases, and enhanced engine calibration. Available 115 to 300 HP." },
-  { question: "What HP Pro XS models does Harris Boat Works carry?", answer: "We stock the full Pro XS lineup in CAD pricing: 115 HP (ELPT and EXLPT), 150 HP (ELPT and EXLPT), 200 HP (ELPT), and 250 HP (ELPT). All in stock, real prices online. Mercury Premier Dealer, full warranty registration at pickup." },
+  { question: "What HP Pro XS models does Harris Boat Works carry?", answer: "We stock the full Pro XS lineup in CAD pricing: 115 HP (ELPT and EXLPT), 150 HP (ELPT and EXLPT), 200 HP (ELPT), and 250 HP (ELPT). All in stock, real prices online. Mercury Platinum Dealer, full warranty registration at pickup." },
   { question: "Pro XS vs FourStroke, which should I buy?", answer: "Pro XS for performance: tournament bass, fast bowriders, ski/wake boats, and anyone chasing top-end speed and hole-shot. Standard FourStroke for cruising, fishing, pontoons, and fuel economy. Same Mercury reliability, different tuning. We can walk you through the right choice for your hull at (905) 342-2153 or via the configurator." },
   { question: "Are Pro XS prices in Canadian dollars?", answer: "Yes, every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no \"call for price\" games. The configurator shows real out-the-door pricing including standard rigging." },
   { question: "What's the warranty on a new Pro XS?", answer: "Standard Mercury warranty is 3 years. Right now Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new Pro XS purchases, straight from Mercury Marine, not third-party insurance. We register the warranty at pickup." },
@@ -1794,14 +1794,14 @@ const PRO_XS_FAQ_PRERENDER = [
 ];
 
 const ONTARIO_HUB_FAQ_PRERENDER = [
-  { question: "Where can I buy Mercury outboards in Ontario?", answer: "Harris Boat Works is a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario, family-owned since 1947, Mercury dealer since 1965. We carry the full Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, ProKicker trolling motors, and FourStroke V8 250–300 HP. Build a quote at mercuryrepower.ca/quote/motor-selection." },
+  { question: "Where can I buy Mercury outboards in Ontario?", answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario, family-owned since 1947, Mercury dealer since 1965. We carry the full Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, ProKicker trolling motors, and FourStroke V8 250–300 HP. Build a quote at mercuryrepower.ca/quote/motor-selection." },
   { question: "What Mercury motor lines are sold at Harris Boat Works?", answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, ProKicker (9.9 / 15 HP) for trolling, and FourStroke V8 (250–300 HP) for offshore and bowriders. Mercury Verado is available by special order only, contact us directly for a Verado quote." },
-  { question: "Is Harris Boat Works a Mercury Premier dealer?", answer: "Yes. Mercury Marine Premier Dealer status: Mercury's top dealer tier in North America. Awarded for sales volume, technician certification, warranty CSI scores, and parts availability. Re-qualified annually." },
+  { question: "Is Harris Boat Works a Mercury Platinum dealer?", answer: "Yes. Mercury Marine Platinum Dealer status: Mercury's top dealer tier in North America. Awarded for sales volume, technician certification, warranty CSI scores, and parts availability. Re-qualified annually." },
   { question: "What areas of Ontario does Harris Boat Works serve?", answer: "Our location at Gores Landing on Rice Lake (Northumberland County) puts us within easy reach of Peterborough (35 min), Cobourg (20 min), Port Hope, the Kawartha Lakes, the Trent-Severn Waterway, and the Greater Toronto Area (90 min via 401). Customers come from across Ontario including Lake Simcoe, Lake Scugog, Bay of Quinte, and the GTA. Pickup only at our Gores Landing location." },
   { question: "Are Mercury outboard prices in Canadian dollars?", answer: "Yes, every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no hidden fees, no \"call for price\" games. The configurator shows live pricing direct from inventory plus financing payment estimates." },
   { question: "Can I finance a Mercury outboard purchase?", answer: "Yes. Financing is available through DealerPlan and other lenders on purchases of $5,000 or more. Monthly payment estimates appear next to every qualifying motor (8.99% under $10K total / 7.99% over $10K total). Apply online at mercuryrepower.ca/financing-application." },
   { question: "What warranty comes with a new Mercury motor?", answer: "Standard Mercury Marine factory warranty is 3 years. Right now, Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new outboard purchases, direct from Mercury, not third-party insurance. We register every warranty at pickup." },
-  { question: "Do you ship Mercury motors across Ontario?", answer: "No, pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Premier status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install." },
+  { question: "Do you ship Mercury motors across Ontario?", answer: "No, pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Platinum status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install." },
   { question: "Do you take trade-ins on Mercury outboard purchases?", answer: "Yes. We accept trade-ins on Mercury and most other outboard brands. Get an instant trade-in estimate at mercuryrepower.ca/trade-in-value, values are anchored to our actual selling prices, not blue-book guesses. Trade credit applies directly to the new motor quote." },
   { question: "Is Harris Boat Works near me?", answer: "If you're in Ontario, probably yes. Travel times: Peterborough 35 min, Cobourg 20 min, Port Hope 25 min, Lindsay 50 min, Bowmanville 45 min, Oshawa 55 min, Port Perry 50 min, downtown Toronto 90 min via 401. We also serve Northumberland County, Hastings County, the Kawarthas, and the GTA. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." }
 ];
@@ -1834,7 +1834,7 @@ function mercuryProXS250Schemas() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
-    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    description: 'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE_PRERENDER,
@@ -1924,7 +1924,7 @@ function proXS250NoscriptHtml() {
     '<p><strong>Shaft length, 20 inch or 25 inch?</strong> A 20-inch transom takes the Long shaft (ELPT). A 25-inch transom takes the Extra-Long shaft (EXLPT). If you are repowering, match the same shaft as the old motor.</p>' +
     '<p><strong>Mechanical remote or DTS?</strong> DTS adds roughly $2,000; worth it for VesselView integration or joystick-capable rigging, otherwise the mechanical remote is the right call.</p>' +
     '<h2>Why buy your Pro XS 250 from Harris Boat Works</h2>' +
-    '<p>Mercury dealer since 1965, Mercury Premier tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after.</p>' +
+    '<p>Mercury dealer since 1965, Mercury Platinum tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after.</p>' +
     '<h2>Frequently asked questions</h2>' +
     '<dl>' +
     PRO_XS_250_FAQ_PRERENDER.map(i =>
@@ -1945,12 +1945,12 @@ const LINEUP_LANDING_CONFIGS = [
   {
     path: '/mercury/portable-9-20hp',
     title: 'Mercury 9.9, 15 & 20 HP Portable Outboard Price Canada | Harris Boat Works',
-    description: 'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $3,553 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    description: 'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $3,553 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
     h1: 'Mercury 9.9 to 20 HP Portable Outboard Prices in Canada',
     intro: 'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $3,553 CAD at Harris Boat Works, real prices listed, stock on the floor.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/uploads/2025-09-22T00-14-12-050Z-Mercury-Marine-9-9HP-Rear-3-4-Port-Short-TillerUp-1718214770881%20(1).jpg',
     productName: 'Mercury 9.9 to 20 HP Portable Outboards',
-    productDescription: 'Mercury 9.9, 15, and 20 HP portable and kicker FourStroke outboards. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    productDescription: 'Mercury 9.9, 15, and 20 HP portable and kicker FourStroke outboards. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
     tableCaption: 'Mercury 9.9 to 20 HP prices: portable and kicker FourStrokes (CAD, May 2026)',
     tableNote: 'Prices in CAD, current as of May 2026, confirm in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, and a starting battery on electric-start models are not included.',
     configColLabel: 'Start and shaft',
@@ -1982,12 +1982,12 @@ const LINEUP_LANDING_CONFIGS = [
   {
     path: '/mercury/mid-range-40-60hp',
     title: 'Mercury 40, 50 & 60 HP Outboard Price Canada | Harris Boat Works',
-    description: 'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,532 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    description: 'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,532 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
     h1: 'Mercury 40 to 60 HP Outboard Prices in Canada',
     intro: 'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from $9,532 CAD at Harris Boat Works.',
     ogImage: 'https://mercuryrepower.ca/asset-gap-heroes/60-elpt-fourstroke.jpg',
     productName: 'Mercury 40 to 60 HP FourStroke Outboards',
-    productDescription: 'Mercury 40, 50, and 60 HP electric-start, power-trim FourStroke outboards in standard and Command Thrust gearcases. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    productDescription: 'Mercury 40, 50, and 60 HP electric-start, power-trim FourStroke outboards in standard and Command Thrust gearcases. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
     tableCaption: 'Mercury 40 to 60 HP prices: standard and Command Thrust FourStrokes (CAD, May 2026)',
     tableNote: 'Prices in CAD, current as of May 2026, confirm in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
     configColLabel: 'Shaft and gearcase',
@@ -2017,12 +2017,12 @@ const LINEUP_LANDING_CONFIGS = [
   {
     path: '/mercury/mid-power-90-115hp',
     title: 'Mercury 90 & 115 HP Outboard Price Canada | Harris Boat Works',
-    description: 'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,812 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    description: 'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,812 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
     h1: 'Mercury 90 to 115 HP Outboard Prices in Canada',
     intro: 'The 90 to 115 HP band is where most Rice Lake repowers land: enough motor for a bowrider, a fish-and-ski, or a loaded pontoon, without stepping up to V6 money. Mercury 90 to 115 HP from $14,812 CAD at Harris Boat Works.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
     productName: 'Mercury 90 to 115 HP FourStroke and Pro XS Outboards',
-    productDescription: 'Mercury 90 and 115 HP electric-start, power-trim outboards in FourStroke, Pro XS, and Command Thrust configurations. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    productDescription: 'Mercury 90 and 115 HP electric-start, power-trim outboards in FourStroke, Pro XS, and Command Thrust configurations. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
     tableCaption: 'Mercury 90 to 115 HP prices: FourStroke and Pro XS (CAD, May 2026)',
     tableNote: 'Prices in CAD, current as of May 2026, confirm in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
     configColLabel: 'Shaft and gearcase',
@@ -2052,12 +2052,12 @@ const LINEUP_LANDING_CONFIGS = [
   {
     path: '/mercury/150-hp',
     title: 'Mercury 150 HP Outboard Price in Ontario | Harris Boat Works',
-    description: 'Mercury 150 HP FourStroke and Pro XS outboard prices from $22,242 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    description: 'Mercury 150 HP FourStroke and Pro XS outboard prices from $22,242 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
     h1: 'Mercury 150 HP Outboard Price in Ontario',
     intro: 'The 150 FourStroke is the workhorse, the sweet spot for 17 to 19 ft fibreglass and aluminum boats: bowriders, fish-and-ski, deep-V aluminum. Smooth 3.0L inline-4, real fuel numbers, real-world reliability. Mercury 150 HP from $22,242 CAD at Harris Boat Works.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
     productName: 'Mercury 150 HP FourStroke and Pro XS Outboards',
-    productDescription: 'Mercury 150 HP FourStroke (3.0L inline-4) and 150 Pro XS outboards for repowers and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    productDescription: 'Mercury 150 HP FourStroke (3.0L inline-4) and 150 Pro XS outboards for repowers and new-boat installs. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
     tableCaption: 'Mercury 150 HP prices: FourStroke and Pro XS (CAD)',
     tableNote: 'Prices in CAD, current pricing, confirm in the quote builder. 150 Pro XS variants are in stock at Gores Landing; the 150 FourStroke we bring in to order. Pickup at Gores Landing, Ontario. Customers arrange their own boat transport to and from the shop. Taxes, rigging, installation labour, and a starting battery are not included.',
     configColLabel: 'Shaft and tuning',
@@ -2084,12 +2084,12 @@ const LINEUP_LANDING_CONFIGS = [
   {
     path: '/mercury/115-pro-xs',
     title: 'Mercury 115 Pro XS Price in Ontario | Harris Boat Works',
-    description: 'Mercury 115 Pro XS prices from $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock, with Command Thrust option.',
+    description: 'Mercury 115 Pro XS prices from $17,490 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock, with Command Thrust option.',
     h1: 'Mercury 115 Pro XS Price in Ontario',
-    intro: 'The 115 Pro XS is the hot-rod 115: same 2.1L block as the FourStroke 115, tuned for hole shot, top end, and bass-boat handling. From $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake.',
+    intro: 'The 115 Pro XS is the hot-rod 115: same 2.1L block as the FourStroke 115, tuned for hole shot, top end, and bass-boat handling. From $17,490 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
     productName: 'Mercury 115 Pro XS Outboards',
-    productDescription: 'Mercury 115 Pro XS outboards, 20 and 25-inch shaft, with optional Command Thrust gearcase. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
+    productDescription: 'Mercury 115 Pro XS outboards, 20 and 25-inch shaft, with optional Command Thrust gearcase. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
     tableCaption: 'Mercury 115 Pro XS prices: every configuration (CAD)',
     tableNote: 'Prices in CAD, current pricing, confirm in the quote builder. Both standard 115 Pro XS variants are in stock at Gores Landing; the Command Thrust variants we bring in to order. Pickup at Gores Landing, Ontario. Customers arrange their own boat transport to and from the shop. Taxes, rigging, installation labour, and a starting battery are not included.',
     configColLabel: 'Shaft and gearcase',
@@ -2167,7 +2167,7 @@ function lineupLandingNoscriptHtml(cfg) {
     '<h2>Which one for which boat?</h2>' +
     cfg.whichOne.map(p => `<p>${escapeHtml(p)}</p>`).join('') +
     '<h2>Why buy your Mercury from Harris Boat Works</h2>' +
-    '<p>Mercury dealer since 1965, Mercury Premier tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after. And the price you see here is the price the sales desk sees.</p>' +
+    '<p>Mercury dealer since 1965, Mercury Platinum tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after. And the price you see here is the price the sales desk sees.</p>' +
     '<h2>Frequently asked questions</h2>' +
     '<dl>' +
     cfg.faq.map(i =>
@@ -2189,7 +2189,7 @@ function mercuryProXSSchema() {
         "@id": `${SITE_URL}/mercury-pro-xs#webpage`,
         "url": `${SITE_URL}/mercury-pro-xs`,
         "name": "Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works",
-        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -2208,7 +2208,7 @@ function mercuryProXSSchema() {
         "@type": "ProductGroup",
         "@id": `${SITE_URL}/mercury-pro-xs#productgroup`,
         "name": "Mercury Pro XS Outboard Series",
-        "description": "Mercury Pro XS high-performance FourStroke outboard motors, 115–250 HP, available at Harris Boat Works (Mercury Premier Dealer, Ontario).",
+        "description": "Mercury Pro XS high-performance FourStroke outboard motors, 115–250 HP, available at Harris Boat Works (Mercury Platinum Dealer, Ontario).",
         "brand": { "@type": "Brand", "name": "Mercury Marine" },
         "url": `${SITE_URL}/mercury-pro-xs`,
         "variesBy": ["horsepower"],
@@ -2252,7 +2252,7 @@ function mercuryOutboardsOntarioSchema() {
         "@id": `${SITE_URL}/mercury-outboards-ontario#webpage`,
         "url": `${SITE_URL}/mercury-outboards-ontario`,
         "name": "Mercury Outboards Ontario: Full Lineup at Harris Boat Works | Mercury Dealer Since 1965",
-        "description": "Mercury Marine outboards in Ontario, full lineup (portable, FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Premier Dealer on Rice Lake, family-owned since 1947.",
+        "description": "Mercury Marine outboards in Ontario, full lineup (portable, FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -2270,8 +2270,8 @@ function mercuryOutboardsOntarioSchema() {
       {
         "@type": ["LocalBusiness", "AutomotiveBusiness"],
         "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness`,
-        "name": "Harris Boat Works: Mercury Premier Dealer",
-        "description": "Mercury Marine Premier Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
+        "name": "Harris Boat Works: Mercury Platinum Dealer",
+        "description": "Mercury Marine Platinum Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
         "url": `${SITE_URL}/mercury-outboards-ontario`,
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
@@ -2298,7 +2298,7 @@ function mercuryOutboardsOntarioSchema() {
           { "@type": "Place", "name": "Rice Lake" }
         ],
         "award": [
-          "Mercury Marine Premier Dealer",
+          "Mercury Marine Platinum Dealer",
           "Authorized Legend Boats Dealer"
         ],
         "knowsAbout": [
@@ -2348,7 +2348,7 @@ function mercuryPontoonOutboardsSchema() {
         "@id": `${SITE_URL}/mercury-pontoon-outboards#webpage`,
         "url": `${SITE_URL}/mercury-pontoon-outboards`,
         "name": "Mercury Outboards for Pontoon Boats: Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works",
-        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
+        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -2406,7 +2406,7 @@ function promotionsPageSchema() {
         "@id": `${SITE_URL}/promotions#webpage`,
         "url": `${SITE_URL}/promotions`,
         "name": "Mercury Outboard Promotions | Harris Boat Works",
-        "description": "Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake.",
+        "description": "Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -2667,7 +2667,7 @@ function renderAuthorBylineHtml(authorName) {
   const name = escapeHtml(authorName || 'Jay Harris');
   const isJay = (authorName || 'Jay Harris') === 'Jay Harris';
   const credentials = isJay
-    ? 'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Premier Dealer'
+    ? 'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Platinum Dealer'
     : '';
   const link = isJay ? ` <a href="/about/jay-harris">View bio →</a>` : '';
   return (
@@ -2802,7 +2802,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
         ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>Family-owned since 1947</span><span>·</span><span>Mercury dealer since 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+    const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Family-owned since 1947</span><span>·</span><span>Mercury dealer since 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
     return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
@@ -2883,14 +2883,14 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
   }));
 }
 
-const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Premier</span><span>·</span><span>Famille propriétaire depuis 1947</span><span>·</span><span>Concessionnaire Mercury depuis 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';
-const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
-const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星 Premier 经销商</span><span>·</span><span>家族经营自1947年</span><span>·</span><span>Mercury经销商自1965年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
-const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Premier</span><span>·</span><span>Familiar desde 1947</span><span>·</span><span>Distribuidor Mercury desde 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
-const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>1947 ਤੋਂ family-owned</span><span>·</span><span>1965 ਤੋਂ Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Premier Dealer</span><span>·</span><span>1947 سے family-owned</span><span>·</span><span>1965 سے Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-const tlDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>Family-owned mula 1947</span><span>·</span><span>Mercury dealer mula 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-const hiDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>1947 से family-owned</span><span>·</span><span>1965 से Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Platinum</span><span>·</span><span>Famille propriétaire depuis 1947</span><span>·</span><span>Concessionnaire Mercury depuis 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';
+const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
+const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星 Platinum 经销商</span><span>·</span><span>家族经营自1947年</span><span>·</span><span>Mercury经销商自1965年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
+const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Platinum</span><span>·</span><span>Familiar desde 1947</span><span>·</span><span>Distribuidor Mercury desde 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
+const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>1947 ਤੋਂ family-owned</span><span>·</span><span>1965 ਤੋਂ Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Platinum Dealer</span><span>·</span><span>1947 سے family-owned</span><span>·</span><span>1965 سے Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const tlDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Family-owned mula 1947</span><span>·</span><span>Mercury dealer mula 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const hiDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>1947 से family-owned</span><span>·</span><span>1965 से Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
 
 const frenchBlogArticleRoutes = buildTranslatedBlogRoutes(frenchBlogArticles, 'fr', frDealerStripHtml, 'fr_CA', 'fr');
 const koreanBlogArticleRoutes = buildTranslatedBlogRoutes(koreanBlogArticles, 'ko', koDealerStripHtml, 'ko_KR', 'ko');
@@ -3076,7 +3076,7 @@ const motorPageRoutes = motorRecords
       : 'Contact for pricing';
 
     const title = `${display}: Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
-    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Premier Dealer · Mercury dealer since 1965.`;
+    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Platinum Dealer · Mercury dealer since 1965.`;
 
     return {
       path: `/motors/${slug}`,
@@ -3088,7 +3088,7 @@ const motorPageRoutes = motorRecords
       ...(image ? { ogImage: image } : {}),
       ogType: 'product',
       h1: display,
-      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
+      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
       schemas: [motorPageSchema(m, slug)],
       extraNoscript: () =>
         '<table><caption>Specifications</caption><tbody>' +
@@ -3837,7 +3837,7 @@ function commercialBodyHtml({ sections = [], table = null, faqs = [], related = 
       }</ul></section>`
     : '';
   const anchorHtml = anchor
-    ? `<p><strong>Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.</strong></p>`
+    ? `<p><strong>Family-owned since 1947, Mercury dealer since 1965, Mercury Platinum Dealer.</strong></p>`
     : '';
   return sectionsHtml + tableHtml + faqHtml + relatedHtml + anchorHtml;
 }
@@ -4044,7 +4044,7 @@ const TRADE_EXTRA = () => commercialBodyHtml({
 
 const ABOUT_EXTRA = () => commercialBodyHtml({
   sections: [
-    { h2: 'Short answer', paragraphs: ['Harris Boat Works is a family-owned Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Founded in 1947 by George Harris, a Mercury dealer continuously since 1965, run by Jay Harris as the third generation since 2015.'] },
+    { h2: 'Short answer', paragraphs: ['Harris Boat Works is a family-owned Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Founded in 1947 by George Harris, a Mercury dealer continuously since 1965, run by Jay Harris as the third generation since 2015.'] },
     { h2: 'History', paragraphs: [
       'George Harris opened Harris Boat Works in 1947 as a small marine service operation on the south shore of Rice Lake.',
       'Mercury became our outboard brand in 1965 and has been the only outboard line we sell ever since.',
@@ -4052,7 +4052,7 @@ const ABOUT_EXTRA = () => commercialBodyHtml({
       'Jay Harris took over in 2015 as the third generation, representing the same family running the same dock on the same lake.',
     ] },
     { h2: 'Credentials', bullets: [
-      'Mercury Marine Premier Dealer (highest tier in the Mercury dealer recognition program)',
+      'Mercury Marine Platinum Dealer (highest tier in the Mercury dealer recognition program)',
       'Family-owned and operated since 1947',
       'Mercury dealer continuously since 1965 (60+ years)',
       'Service technicians certified on the full Mercury lineup',
@@ -4099,7 +4099,7 @@ const routes = [
     title: 'Mercury Repower Ontario (2026) | Harris Boat Works Rice Lake',
     description: 'Mercury repower in Ontario (2026). Live CAD quotes for 2.5-300 HP, family-owned since 1947 on Rice Lake. Pickup at Gores Landing, 90 min from Toronto.',
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
-    intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Premier Dealer on Rice Lake since 1947, selling Mercury since 1965.',
+    intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Platinum Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()]
   },
   ...HUB_ROUTES,
@@ -4112,10 +4112,10 @@ const routes = [
   {
     path: '/zh',
     title: 'Mercury水星舷外机经销商 | Harris Boat Works 安大略省',
-    description: 'Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价。服务大多伦多地区（GTA）华人船主。',
+    description: 'Harris Boat Works, 安大略省Mercury Marine Platinum 授权经销商。在线透明报价。服务大多伦多地区（GTA）华人船主。',
     h1: '欢迎来到Harris Boat Works',
-    intro: '安大略省Mercury Marine Premier 授权经销商。1947年创立，Rice Lake, Gores Landing, ON。提供水星舷外机、动力升级、保养与购买的中文指南。',
-    schemas: [genericPageSchema('/zh', 'Harris Boat Works 中文', 'Mercury Marine Premier 授权经销商，安大略省 Rice Lake。')],
+    intro: '安大略省Mercury Marine Platinum 授权经销商。1947年创立，Rice Lake, Gores Landing, ON。提供水星舷外机、动力升级、保养与购买的中文指南。',
+    schemas: [genericPageSchema('/zh', 'Harris Boat Works 中文', 'Mercury Marine Platinum 授权经销商，安大略省 Rice Lake。')],
     extraHead: [
       `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/zh" />`,
       `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/" />`,
@@ -4208,7 +4208,7 @@ const routes = [
     title: 'Mercury Outboard Repower FAQ | Harris Boat Works',
     description: "24 answers on Mercury repower in Ontario: HP choice, SmartCraft Connect, CAD costs, financing, pontoon repowers, winterization. HBW, dealer since 1965.",
     h1: 'Mercury Outboard Repower FAQ',
-    intro: 'Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario\'s Mercury Marine Premier Dealer since 1947.',
+    intro: 'Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing, expert advice from Ontario\'s Mercury Marine Platinum Dealer since 1947.',
     schemas: [faqPageSchema()],
     extraNoscript: () =>
       '<dl>' +
@@ -4220,26 +4220,26 @@ const routes = [
   {
     path: '/about',
     title: 'About Harris Boat Works | Mercury Dealer Since 1965: Rice Lake, Ontario',
-    description: 'Family-owned Mercury Marine Premier Dealer on Rice Lake, Ontario. Founded in 1947, selling Mercury outboards since 1965. Repower specialists serving Ontario boaters.',
+    description: 'Family-owned Mercury Marine Platinum Dealer on Rice Lake, Ontario. Founded in 1947, selling Mercury outboards since 1965. Repower specialists serving Ontario boaters.',
     h1: 'About Harris Boat Works',
-    intro: 'Harris Boat Works is a family-owned Mercury Marine Premier Dealer on Rice Lake, Ontario. Founded in 1947 and selling Mercury since 1965, we are repower and outboard specialists serving Ontario boaters.',
+    intro: 'Harris Boat Works is a family-owned Mercury Marine Platinum Dealer on Rice Lake, Ontario. Founded in 1947 and selling Mercury since 1965, we are repower and outboard specialists serving Ontario boaters.',
     schemas: [aboutPageSchema()],
     extraNoscript: ABOUT_EXTRA
   },
   {
     path: '/about/jay-harris',
     title: 'Jay Harris — Owner, Harris Boat Works (3rd Generation)',
-    description: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
+    description: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Jay Harris',
-    intro: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
-    schemas: [genericPageSchema('/about/jay-harris', 'Jay Harris — Owner, Harris Boat Works', 'Owner of Harris Boat Works, 3rd-generation family marina, Mercury Marine Premier Dealer.')]
+    intro: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
+    schemas: [genericPageSchema('/about/jay-harris', 'Jay Harris — Owner, Harris Boat Works', 'Owner of Harris Boat Works, 3rd-generation family marina, Mercury Marine Platinum Dealer.')]
   },
   {
     path: '/tools',
     title: 'Free Mercury Repower Tools | Harris Boat Works',
-    description: 'Trade-in value estimator, repower cost calculator, Boost eligibility checker, shaft length picker. Real CAD numbers from a Mercury Premier dealer in Gores Landing, ON.',
+    description: 'Trade-in value estimator, repower cost calculator, Boost eligibility checker, shaft length picker. Real CAD numbers from a Mercury Platinum dealer in Gores Landing, ON.',
     h1: 'Free Mercury Repower Tools',
-    intro: 'Four quick calculators to help you scope a repower before you call. No signup, no email gate, real CAD numbers from Harris Boat Works, a Mercury Marine Premier Dealer in Gores Landing, Ontario.',
+    intro: 'Four quick calculators to help you scope a repower before you call. No signup, no email gate, real CAD numbers from Harris Boat Works, a Mercury Marine Platinum Dealer in Gores Landing, Ontario.',
     schemas: [genericPageSchema('/tools', 'Free Mercury Repower Tools', 'Trade-in value estimator, repower cost calculator, Boost eligibility checker, and shaft length picker from Harris Boat Works.')]
   },
   {
@@ -4256,7 +4256,7 @@ const routes = [
     title: 'Mercury Motor Guides & Boating Tips | Harris Boat Works Blog',
     description: 'Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters make informed decisions.',
     h1: 'Mercury Motor Guides & Boating Tips',
-    intro: 'Expert advice on Mercury outboard motors, repowers, boat maintenance, and buying guides from Ontario\'s Mercury Marine Premier Dealer since 1947.',
+    intro: 'Expert advice on Mercury outboard motors, repowers, boat maintenance, and buying guides from Ontario\'s Mercury Marine Platinum Dealer since 1947.',
     schemas: [genericPageSchema('/blog', 'Harris Boat Works Blog', 'Mercury motor guides and boating tips.')],
     extraNoscript: () => {
       // Bot/no-JS fallback: list every published blog post (newest first) so
@@ -4281,14 +4281,14 @@ const routes = [
   // Stamps a noscript article list per language, mirroring /blog above.
   // ============================================================
   ...[
-    { lang: 'fr', articles: frenchBlogArticles,   htmlLang: 'fr',      ogLocale: 'fr_CA',  h1: 'Guides Mercury et conseils nautiques',           intro: 'Conseils d\'experts sur les moteurs hors-bord Mercury, remotorisation, entretien et achat — par le concessionnaire Mercury Marine Premier de l\'Ontario depuis 1947.', backTo: 'Tous les articles' },
-    { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星 Premier 经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
-    { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine Premier 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
-    { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Premier de Ontario desde 1947.', backTo: 'Todos los artículos' },
+    { lang: 'fr', articles: frenchBlogArticles,   htmlLang: 'fr',      ogLocale: 'fr_CA',  h1: 'Guides Mercury et conseils nautiques',           intro: 'Conseils d\'experts sur les moteurs hors-bord Mercury, remotorisation, entretien et achat — par le concessionnaire Mercury Marine Platinum de l\'Ontario depuis 1947.', backTo: 'Tous les articles' },
+    { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星 Platinum 经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
+    { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine Platinum 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
+    { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Platinum de Ontario desde 1947.', backTo: 'Todos los artículos' },
     { lang: 'hi', articles: hindiBlogArticles,    htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
     { lang: 'pa', articles: punjabiBlogArticles,  htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
-    { lang: 'ur', articles: urduBlogArticles,     htmlLang: 'ur',      ogLocale: 'ur_PK',  h1: 'Mercury موٹر گائیڈز اور بوٹنگ ٹپس',              intro: '1947 سے Ontario کے Mercury Marine Premier dealer سے Mercury outboard motors پر ماہر مشورہ۔', backTo: 'تمام مضامین' },
-    { lang: 'tl', articles: tagalogBlogArticles,  htmlLang: 'tl',      ogLocale: 'tl_PH',  h1: 'Mercury motor guides at boating tips',           intro: 'Mga eksperto sa Mercury outboard motors mula sa Mercury Marine Premier dealer ng Ontario simula 1947.', backTo: 'Lahat ng artikulo' },
+    { lang: 'ur', articles: urduBlogArticles,     htmlLang: 'ur',      ogLocale: 'ur_PK',  h1: 'Mercury موٹر گائیڈز اور بوٹنگ ٹپس',              intro: '1947 سے Ontario کے Mercury Marine Platinum dealer سے Mercury outboard motors پر ماہر مشورہ۔', backTo: 'تمام مضامین' },
+    { lang: 'tl', articles: tagalogBlogArticles,  htmlLang: 'tl',      ogLocale: 'tl_PH',  h1: 'Mercury motor guides at boating tips',           intro: 'Mga eksperto sa Mercury outboard motors mula sa Mercury Marine Platinum dealer ng Ontario simula 1947.', backTo: 'Lahat ng artikulo' },
   ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo }) => ({
     path: `/blog/${lang}`,
     title: `${h1} | Harris Boat Works`,
@@ -4372,7 +4372,7 @@ const routes = [
     intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW is a live Universal Commerce Protocol merchant (UCP 2026-04-08), verified with Shopify\'s official ucp-cli on June 11, 2026, with checkout (quote mode) and fulfillment capabilities served over both REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
-      '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Premier Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
+      '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Platinum Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
       '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Verified end-to-end with Shopify\'s official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents build a real CAD quote with HST estimate and trade-in context, the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for follow-up.</p></section>' +
 
       '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
@@ -4410,7 +4410,7 @@ const routes = [
           '<li>Hours, location, contact, use the LocalBusiness JSON-LD on the homepage or cite <code>/.well-known/brand.json</code>.</li>' +
           '<li>Service timing, shop capacity, defer to a phone call. Do not guess wait times.</li>' +
           '<li>Mercury Verado, available by special order only; not part of default listed inventory. Route Verado inquiries to Harris Boat Works directly.</li>' +
-          '<li>Non-Mercury outboards: Harris Boat Works is a Mercury Premier dealer. Defer non-Mercury questions to the manufacturer.</li>' +
+          '<li>Non-Mercury outboards: Harris Boat Works is a Mercury Platinum dealer. Defer non-Mercury questions to the manufacturer.</li>' +
         '</ol>' +
       '</section>' +
       '<section><h2>Contact for verification</h2>' +
@@ -4462,9 +4462,9 @@ const routes = [
   {
     path: '/mercury-repower-faq',
     title: 'Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works',
-    description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Premier Dealer · Mercury dealer since 1965 on Rice Lake, Ontario.',
+    description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer · Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Mercury Outboard Repower FAQ',
-    intro: 'Every question we get about repowering a boat with a new Mercury outboard, answered by Ontario\'s Mercury Marine Premier Dealer · Mercury dealer since 1965. Family-owned on Rice Lake since 1947.',
+    intro: 'Every question we get about repowering a boat with a new Mercury outboard, answered by Ontario\'s Mercury Marine Platinum Dealer · Mercury dealer since 1965. Family-owned on Rice Lake since 1947.',
     schemas: [mercuryRepowerFaqSchema()],
     extraNoscript: () =>
       '<dl>' +
@@ -4490,9 +4490,9 @@ const routes = [
   {
     path: '/mercury-dealer-canada-faq',
     title: 'Why Buy from Harris Boat Works: Mercury Dealer Canada FAQ | Family-Owned Since 1947',
-    description: 'Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered.',
+    description: 'Mercury Marine Platinum Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered.',
     h1: 'Why Buy from Harris Boat Works',
-    intro: '12 trust questions about Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
+    intro: '12 trust questions about Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
     schemas: [mercuryDealerCanadaSchema()],
     extraNoscript: () =>
       '<dl>' +
@@ -4504,9 +4504,9 @@ const routes = [
   {
     path: '/mercury-dealer-peterborough',
     title: 'Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South',
-    description: 'Mercury Marine Premier Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
+    description: 'Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
     h1: 'Mercury Dealer Near Peterborough, Ontario',
-    intro: 'Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Lakefield, Bridgenorth, Buckhorn, and the Kawartha Lakes region.',
+    intro: 'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Lakefield, Bridgenorth, Buckhorn, and the Kawartha Lakes region.',
     schemas: [mercuryDealerPeterboroughSchema()],
     extraNoscript: () =>
       '<dl>' +
@@ -4518,9 +4518,9 @@ const routes = [
   {
     path: '/mercury-dealer-cobourg',
     title: 'Mercury Dealer Cobourg Ontario | Harris Boat Works, 20 Min North',
-    description: 'Mercury Marine Premier Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
+    description: 'Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
     h1: 'Mercury Dealer Near Cobourg, Ontario',
-    intro: 'Harris Boat Works is the closest Mercury Marine Premier Dealer to Cobourg, about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Cobourg, Port Hope, Grafton, Brighton, and Northumberland County.',
+    intro: 'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Cobourg, about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Cobourg, Port Hope, Grafton, Brighton, and Northumberland County.',
     schemas: [mercuryDealerCobourgSchema()],
     extraNoscript: () =>
       '<dl>' +
@@ -4532,7 +4532,7 @@ const routes = [
   {
     path: '/mercury-dealer-gta',
     title: 'Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto',
-    description: 'Mercury Marine Premier Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.',
+    description: 'Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.',
     h1: 'Mercury Dealer for the Greater Toronto Area',
     intro: 'Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers, about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965. Pickup only at Gores Landing.',
     schemas: [mercuryDealerGTASchema()],
@@ -4546,9 +4546,9 @@ const routes = [
   {
     path: '/mercury-pro-xs',
     title: 'Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW',
-    description: 'Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
+    description: 'Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Mercury Pro XS Outboards in Ontario',
-    intro: 'Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
+    intro: 'Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
     schemas: [mercuryProXSSchema()],
     extraNoscript: () =>
       '<ul>' +
@@ -4564,9 +4564,9 @@ const routes = [
   {
     path: '/mercury/pro-xs-250',
     title: 'Mercury Pro XS 250 Price Canada | From $34,848 CAD | Harris Boat Works',
-    description: 'Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.',
+    description: 'Mercury Pro XS 250 from $34,848 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.',
     h1: 'Mercury Pro XS 250 Price in Canada: From $34,848 CAD',
-    intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees.',
+    intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake. Four configurations, the same number our sales desk sees.',
     ogImage: PRO_XS_250_HERO_IMAGE_PRERENDER,
     schemas: mercuryProXS250Schemas(),
     extraNoscript: () => proXS250NoscriptHtml(),
@@ -4584,9 +4584,9 @@ const routes = [
   {
     path: '/mercury-outboards-ontario',
     title: 'Mercury Outboards Ontario: Full Lineup at Harris Boat Works | Mercury Dealer Since 1965',
-    description: 'Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Premier Dealer on Rice Lake, family-owned since 1947.',
+    description: 'Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.',
     h1: 'Mercury Outboards in Ontario',
-    intro: 'The full Mercury Marine outboard lineup at Harris Boat Works: Premier Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
+    intro: 'The full Mercury Marine outboard lineup at Harris Boat Works: Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
     schemas: [mercuryOutboardsOntarioSchema()],
     extraNoscript: () =>
       '<table><caption>Mercury Outboard Lineup: HP, MSRP, and Best Use (CAD, Ontario, 2026)</caption>' +
@@ -4608,7 +4608,7 @@ const routes = [
   {
     path: '/mercury-pontoon-outboards',
     title: 'Mercury Outboards for Pontoon Boats: Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works',
-    description: 'Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.',
+    description: 'Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.',
     h1: 'Mercury Outboards for Pontoon Boats: Command Thrust, Big Tiller & High-Thrust Options (Rice Lake & Kawarthas)',
     intro: 'Pontoons are heavier than they look. The right Mercury for a pontoon is a Command Thrust gearcase, the right shaft length, and a high-thrust prop. Harris Boat Works has been rigging pontoons on Rice Lake since 1965: Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington.',
     schemas: [mercuryPontoonOutboardsSchema()],
@@ -4634,7 +4634,7 @@ const routes = [
     title: '7-Year Mercury Warranty on Every New Outboard | HBW',
     description: '7 years of factory-backed warranty on every new Mercury outboard at Harris Boat Works. Straight Mercury coverage, no third-party contract.',
     h1: 'Mercury Outboard Promotions',
-    intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Factory-backed 7-year warranty on every new Mercury.',
+    intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Platinum Dealer on Rice Lake, Mercury dealer since 1965. Factory-backed 7-year warranty on every new Mercury.',
     schemas: [promotionsPageSchema()]
   },
   // ============================================================
@@ -4684,7 +4684,7 @@ const routes = [
   {
     path: '/accessories',
     title: 'Mercury Outboard Accessories: Genuine OEM Parts in CAD | Harris Boat Works',
-    description: 'Genuine Mercury OEM accessories, propellers, controls, gauges, batteries, fuel systems. Real CAD pricing, included in your repower quote. Mercury Premier Dealer on Rice Lake, Mercury dealer since 1965.',
+    description: 'Genuine Mercury OEM accessories, propellers, controls, gauges, batteries, fuel systems. Real CAD pricing, included in your repower quote. Mercury Platinum Dealer on Rice Lake, Mercury dealer since 1965.',
     h1: 'Mercury Outboard Accessories',
     intro: 'Genuine Mercury OEM accessories, propellers, controls, SmartCraft gauges, starting batteries, fuel tanks, fuel/water separators, and rigging, at real CAD pricing. Add them to your Mercury repower quote in one step.',
     schemas: [{
@@ -5446,7 +5446,7 @@ function motorMarkdown(m) {
     `# ${display}`,
     '',
     `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}.`,
-    `Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.`,
+    `Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.`,
     '',
     '## Quick facts',
     '',
@@ -5653,7 +5653,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Platinum Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
     '',
     '## Business rules (apply to every entry)',
     '',

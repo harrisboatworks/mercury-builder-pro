@@ -19,7 +19,7 @@ price_cad: 12342
 # 60 ELPT Command Thrust FourStroke
 
 Mercury FourStroke 60 HP outboard motor (model 1F60453GZ).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

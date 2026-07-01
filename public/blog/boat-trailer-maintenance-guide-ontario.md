@@ -176,7 +176,7 @@ A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in On
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
+By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
 ## Related guides
 
 - [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
