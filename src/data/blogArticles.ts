@@ -14182,6 +14182,8 @@ Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. 
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
 
+![Mercury vs Suzuki outboard — a fair Ontario dealer comparison of reliability, fuel economy, local dealer network, parts, and best-fit owner](/blog-visuals/mercury-vs-suzuki-fair-comparison.png)
+
 ## The bottom line for Ontario freshwater
 
 Both Mercury and Suzuki build mechanically reliable four-stroke outboards in 2026, and a well-maintained example of either will outlast most hulls. The decision in Ontario rarely turns on the motor. It turns on service access: how far you are from an authorized dealer with parts on the shelf when something goes wrong in late June. In the Kawarthas and Rice Lake region that factor favours Mercury heavily; in a region with strong Suzuki dealer coverage, it may not. Match the brand to your service map, not to the spec sheet.
@@ -16061,7 +16063,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Mercury repower process timeline at HBW (diagram)](/lovable-uploads/diagram-repower-process-timeline.png)
+![What happens during a Mercury repower at Harris Boat Works — six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
 
 ## Quick Answer
 
