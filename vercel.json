@@ -414,8 +414,24 @@
       "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
     },
     {
+      "source": "/api/agents/motors/:path*",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api/:path*"
+    },
+    {
       "source": "/api/agents/quote",
       "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api"
+    },
+    {
+      "source": "/api/agents/quote/:path*",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api/:path*"
+    },
+    {
+      "source": "/api/agents/inventory",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
+    },
+    {
+      "source": "/api/agents/pricing",
+      "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
     },
     {
       "source": "/api/agents/mcp",
