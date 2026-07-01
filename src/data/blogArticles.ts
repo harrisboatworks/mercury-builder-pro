@@ -1,4 +1,6 @@
-export interface HowToStep {
+![Mercury 75 vs 90 vs 115 HP outboard comparison — best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+
+*Same 2.1L block. Same 359 lb. The difference is fit.*export interface HowToStep {
   name: string;
   text: string;
   image?: string;
