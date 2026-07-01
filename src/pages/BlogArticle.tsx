@@ -522,6 +522,22 @@ export default function BlogArticle() {
             />
           )}
 
+          {/* Cluster-driven related guides (deduped against in-body links) */}
+          <RelatedGuides
+            currentSlug={article.slug}
+            max={5}
+            minLinks={2}
+            excludeSlugs={Array.from(
+              new Set(
+                Array.from(article.content.matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(
+                  (m) => m[1]
+                )
+              )
+            )}
+          />
+
+
+
 
           {/* Share Section */}
           <div className="mt-14 pt-10 border-t border-repower-navy-900/10">
