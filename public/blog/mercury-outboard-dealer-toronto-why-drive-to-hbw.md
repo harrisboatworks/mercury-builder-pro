@@ -12,7 +12,7 @@ description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat 
 category: "Mercury Outboards"
 date_published: 2026-05-12
 date_modified: 2026-06-26
-keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Platinum dealer Toronto","drive to Mercury dealer Ontario"]
+keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Premier dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -43,14 +43,14 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 The GTA has Mercury dealers. They're not all the same.
 
-**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Platinum status requires:
+**Mercury's dealer tier system** ranks dealers from entry-level service through Platinum (the top tier). Premier status requires:
 - Factory-trained technicians on every Mercury family (FourStroke, Pro XS, Verado, SeaPro)
 - Full diagnostic equipment (G3 software, $3,000+ kit)
 - Stocked parts inventory for the most common service work
 - Demonstrated annual sales + service volumes
 - Clean Customer Satisfaction Index (CSI) scores
 
-**There are around 45 authorized Mercury dealers across Ontario. Of those, only a handful hold Platinum status.** Most GTA dealers are a tier below, they sell Mercurys, but they don't have the same diagnostic depth or service infrastructure.
+**There are around 45 authorized Mercury dealers across Ontario. Of those, only a handful hold Premier status.** Most GTA dealers are a tier below, they sell Mercurys, but they don't have the same diagnostic depth or service infrastructure.
 
 That tier difference shows up in three specific ways for buyers:
 
@@ -73,7 +73,7 @@ But the math changes when you factor in:
 **The number of trips.** Most boat owners visit their Mercury dealer 1-3 times a year (annual service, occasional repair). At 90 minutes one-way, that's 9 hours of total drive time annually. Vs maybe 3 hours of urban-dealer trips. **Net: 6 extra hours per year.** Over 10 years of motor ownership, 60 hours of driving, about 3 weekend days total.
 
 **What 60 hours of driving buys you over 10 years:**
-- Platinum-tier diagnostics on every visit
+- Premier-tier diagnostics on every visit
 - A documented service history with one shop, one set of techs
 - Mercury Product Protection (MPP) extended warranty processed by the same dealer that sold you the motor
 - Trade-in value when you upgrade (we keep records)
@@ -160,7 +160,7 @@ Honest take, because not every GTA buyer should drive to HBW:
 - **You'll only own the boat 2-3 years.** Long-term service relationship matters less.
 - **You can't trailer or arrange transport.** Logistics matter.
 
-The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boats you'll own 5+ years**, **anyone with a specific Mercury Platinum service need** (diagnostic complexity, warranty work, MPP-eligible servicing).
+The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boats you'll own 5+ years**, **anyone with a specific Mercury Premier service need** (diagnostic complexity, warranty work, MPP-eligible servicing).
 
 ---
 
@@ -196,11 +196,11 @@ Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing vari
 
 ### Why drive to HBW vs a closer Mercury dealer?
 
-Three things: Mercury Platinum dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
+Three things: Mercury Premier dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
 
 ### Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?
 
-Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Platinum dealers.
+Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Premier dealers.
 
 ### Do you offer pickup or delivery for GTA buyers?
 

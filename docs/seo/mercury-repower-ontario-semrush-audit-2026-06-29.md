@@ -125,7 +125,7 @@ Ordered by impact × ease. Moves 1, 2, and 8 are the fastest wins.
 
 **Why:** 6 referring domains, 373 of 379 from a single site. This caps how high anything can rank regardless of content.
 **Goal:** 25 new referring domains in 90 days.
-**Do:** Mercury Marine dealer locator, Legend Boats dealer locator, Northumberland Tourism, Kawarthas Northumberland, Cobourg / Port Hope / Gores Landing chambers, local fishing clubs, marine guides, Trent-Severn boater forums, a press release on Platinum Dealer status, sponsorships of local fishing tournaments.
+**Do:** Mercury Marine dealer locator, Legend Boats dealer locator, Northumberland Tourism, Kawarthas Northumberland, Cobourg / Port Hope / Gores Landing chambers, local fishing clubs, marine guides, Trent-Severn boater forums, a press release on Premier Dealer status, sponsorships of local fishing tournaments.
 
 ### Move 8 — Stop cannibalization
 

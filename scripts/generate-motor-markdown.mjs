@@ -101,7 +101,7 @@ price_cad: ${m.price_cad}
 # ${m.title}
 
 Mercury ${m.family} ${m.horsepower} HP outboard motor (model ${m.model_number}).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

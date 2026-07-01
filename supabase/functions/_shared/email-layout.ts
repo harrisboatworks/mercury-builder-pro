@@ -129,7 +129,7 @@ export function buildEmail(opts: BuildEmailOptions): string {
             <img src="${MERCURY_LOGO_URL}" alt="Mercury Marine" width="140" height="27" style="display:block;border:0;outline:none;width:140px;height:27px;max-width:140px;opacity:0.85;" />
           </td></tr>
         </table>
-        <p style="margin:0 0 6px 0;font-family:${SANS};font-size:9px;letter-spacing:2.5px;color:${GOLD};text-align:center;font-weight:700;text-transform:uppercase;">Mercury Platinum Dealer</p>
+        <p style="margin:0 0 6px 0;font-family:${SANS};font-size:9px;letter-spacing:2.5px;color:${GOLD};text-align:center;font-weight:700;text-transform:uppercase;">Mercury Premier Dealer</p>
         <div style="height:1px;background:rgba(255,255,255,0.12);line-height:1px;font-size:1px;margin:18px 0;">&nbsp;</div>
         <p style="margin:0 0 6px 0;font-family:${SERIF};font-size:15px;line-height:1.6;color:#ffffff;text-align:center;letter-spacing:2px;text-transform:uppercase;">Harris Boat Works</p>
         <p style="margin:0 0 10px 0;font-family:${SANS};font-size:12px;line-height:1.6;color:#cbd5e1;text-align:center;">5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</p>

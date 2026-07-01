@@ -35,7 +35,7 @@ There's a moment with every small-motor customer where the conversation lands on
 
 It's a fair question. The Mercury 9.9 HP and 15 HP FourStroke tiller models share more than they don't. Same block. Same gearcase. Same external dimensions. Same shape, same colour, same controls. From across the parking lot, you can't tell them apart.
 
-So here's the honest take from a Mercury Platinum dealer that sells both. There are three reasons to pick the 9.9, three reasons to pick the 15, and a couple of edge cases that make the call obvious. By the end of this guide, you'll know which one belongs on your transom.
+So here's the honest take from a Mercury Premier dealer that sells both. There are three reasons to pick the 9.9, three reasons to pick the 15, and a couple of edge cases that make the call obvious. By the end of this guide, you'll know which one belongs on your transom.
 
 ## Who This Is For
 
@@ -172,7 +172,7 @@ As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short
 
 ## Why Buy From HBW
 
-HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Platinum Dealer, which means our service techs are factory-certified on every motor we sell.
+HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Premier Dealer, which means our service techs are factory-certified on every motor we sell.
 
 We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown Toronto, on the south shore of Rice Lake. We pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
 
@@ -237,7 +237,7 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 
 ### What warranty comes with a new Mercury 9.9 or 15?
 
-3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Platinum Protection is available at purchase. See our Mercury extended warranty guide for details.
+3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Premier Protection is available at purchase. See our Mercury extended warranty guide for details.
 
 ## Next steps
 

@@ -1371,7 +1371,7 @@ export const MotorSelection = ({
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-border" />
 
-            {/* Platinum Dealer Heritage */}
+            {/* Premier Dealer Heritage */}
             <div className="credential-group flex items-center gap-3">
               <img src={harrisLogo} alt="Harris Boat Works Since 1947 logo" loading="lazy" className="h-10 md:h-16 w-auto" />
               <div className="text-left">

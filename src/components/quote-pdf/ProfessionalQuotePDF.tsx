@@ -601,7 +601,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
           <View style={styles.headerRight}>
             <Text style={styles.quoteTitle}>Your Mercury Motor Quote</Text>
-            <Text style={styles.dealerText}>Mercury Marine Platinum Dealer</Text>
+            <Text style={styles.dealerText}>Mercury Marine Premier Dealer</Text>
           </View>
         </View>
 

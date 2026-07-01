@@ -14,7 +14,7 @@ keyword: "mercury repower roseneath"
 
 # Mercury Repower for Roseneath Boaters, Ontario
 
-Harris Boat Works is 15 minutes west of Roseneath along the south shore of Rice Lake. Roseneath sits near the east end of the lake; HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. We share Rice Lake. Every Mercury we rig is water-tested on the same lake you boat on, then picked up at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.
+Harris Boat Works is 15 minutes west of Roseneath along the south shore of Rice Lake. Roseneath sits near the east end of the lake; HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. We share Rice Lake. Every Mercury we rig is water-tested on the same lake you boat on, then picked up at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.
 
 ## Factbox
 

@@ -12,7 +12,7 @@ description: "Mercury Product Protection Platinum extends factory warranty up to
 category: "Warranty & Protection"
 date_published: 2026-05-13
 date_modified: 2026-05-13
-keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Platinum coverage","outboard warranty cost"]
+keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Premier coverage","outboard warranty cost"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -56,9 +56,9 @@ item3Accent: true
 item4Label: Big block (225 to 400 HP), 3-year extension
 item4Value: $1,500 - $3,200
 item4Note: V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
-item5Label: HBW Platinum dealer discount
+item5Label: HBW Premier dealer discount
 item5Value: 10% off
-item5Note: We're a Mercury Marine Platinum dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
+item5Note: We're a Mercury Marine Premier dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
 totalLabel: Reality check
 totalValue: Coverage costs less than one bad day
 caveat: Pricing is illustrative and subject to [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
@@ -80,7 +80,7 @@ Two tiers exist: **Gold** (mechanical failures only) and **Platinum** (mechanica
 
 **On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Platinum does.
 
-For the price difference between the two tiers (typically $200-$400 across most HP bands), Platinum is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
+For the price difference between the two tiers (typically $200-$400 across most HP bands), Premier is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
 
 ## What Platinum Actually Covers
 
@@ -184,7 +184,7 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Premier almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
 
 ## Transferability and Resale Value
 
@@ -202,7 +202,7 @@ If you bought the warranty at HBW but you are broken down at a marina near Algon
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## How to Get a Quote
 
@@ -213,19 +213,19 @@ HBW customers (motor purchased from us), mention this in the notes field and we 
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-By Harris Boat Works, Mercury Platinum Dealer, family marina since 1947 on Rice Lake.
+By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
 ## Related guides
 
-- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Platinum dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
+- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
 - [The 7-Year Mercury Warranty at HBW, Explained (Ends June 14, 2026)](/blog/mercury-7-year-warranty-hbw-exclusive-explained): Current promo explainer. Every new Mercury at HBW carries 7 years of factory-backed coverage through June 14, 2026.
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
+- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 
 ### What is the difference between Mercury Gold and Platinum coverage?
 
-Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Platinum is the right call. HBW sells Platinum exclusively.
+Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Premier is the right call. HBW sells Platinum exclusively.
 
 ### When do I need to buy Mercury Product Protection?
 

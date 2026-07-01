@@ -14,7 +14,7 @@ keyword: "mercury repower port hope"
 
 # Mercury Repower near Port Hope, Ontario
 
-Harris Boat Works is 30 minutes north of Port Hope in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 32 km on county roads. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Like Cobourg, Port Hope has many residents who keep boats or cottages on Rice Lake, and we're their closest Mercury repower shop. No shipping or delivery. Customers drive to Gores Landing for pickup after we rig, install, and water-test on Rice Lake. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is 30 minutes north of Port Hope in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 32 km on county roads. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Like Cobourg, Port Hope has many residents who keep boats or cottages on Rice Lake, and we're their closest Mercury repower shop. No shipping or delivery. Customers drive to Gores Landing for pickup after we rig, install, and water-test on Rice Lake. Typical full repower: $11,000–$40,000 CAD.
 
 ## Factbox
 

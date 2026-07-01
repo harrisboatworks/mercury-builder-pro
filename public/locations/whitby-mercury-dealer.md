@@ -14,7 +14,7 @@ keyword: "mercury dealer whitby"
 
 # Mercury Dealer for Whitby, Harris Boat Works (Gores Landing, ON)
 
-Harris Boat Works is the Mercury Platinum Dealer most Whitby boaters drive to, about 70 minutes east on the 401. Live CAD pricing online, full Mercury lineup, and a clean pickup process at our Gores Landing shop.
+Harris Boat Works is the Mercury Premier Dealer most Whitby boaters drive to, about 70 minutes east on the 401. Live CAD pricing online, full Mercury lineup, and a clean pickup process at our Gores Landing shop.
 
 ## Factbox
 

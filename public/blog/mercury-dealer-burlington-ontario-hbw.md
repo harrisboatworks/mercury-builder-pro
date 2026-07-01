@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake"
-description: "Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage..."
+description: "Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage..."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake
 
-> Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage...
+> Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage...
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
@@ -45,9 +45,9 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows in
 
 The customers who find this meaningful are the ones who've already done the research and just want a fair, transparent number. They're not looking to be sold. They're looking to buy.
 
-## Mercury Platinum, Not All Dealers Are the Same
+## Mercury Premier, Not All Dealers Are the Same
 
-Mercury authorizes dealers at different tiers. Platinum is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Platinum dealer and a lower-tier dealer can show up in resolution time and technical depth.
+Mercury authorizes dealers at different tiers. Premier is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
 Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
 
@@ -72,7 +72,7 @@ Harris Boat Works isn't trying to be a high-volume GTA dealer. We're a third-gen
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's the part that determines how the motor performs on your specific hull.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For Burlington customers with boats on Lake Ontario or Burlington Bay, local storage will likely make more geographic sense unless you're running inland.
@@ -109,10 +109,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Related guides
 
-- [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
+- [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
-- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
-- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
+- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Premier dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
+- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 
 ## The HBW Promise
 
@@ -123,7 +123,7 @@ That's been true since 1947. It's still true.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 ---
 
@@ -137,7 +137,7 @@ Why Burlington boaters still drive to HBW:
 
 - **Same-day round-trips work.** Drop the boat off in the morning, head home; we'll call when it's ready.
 - **Annual repower or winterization trip.** Many Burlington customers trailer their boat to HBW once or twice a year for repower work or winterization + storage, then back to a Burlington-area marina for the season.
-- **Mercury Platinum-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
+- **Mercury Premier-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -158,7 +158,7 @@ About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on you
 
 ### Is there a closer Mercury dealer to Burlington?
 
-Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Platinum-tier service and transparent online CAD pricing.
+Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.
 
 ### Can I quote and order remotely?
 

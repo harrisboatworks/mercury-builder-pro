@@ -14,8 +14,8 @@ export default function FrenchBlogArticle() {
       {
         "@type": "Article",
         "@id": `${url}#article`,
-        "headline": "Concessionnaire Mercury Platinum en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works",
-        "description": "Harris Boat Works est concessionnaire Mercury Marine Platinum à Gores Landing, Ontario. Prix transparents, techniciens certifiés, service pour plaisanciers francophones du Québec et de l'Ontario.",
+        "headline": "Concessionnaire Mercury Premier en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works",
+        "description": "Harris Boat Works est concessionnaire Mercury Marine Premier à Gores Landing, Ontario. Prix transparents, techniciens certifiés, service pour plaisanciers francophones du Québec et de l'Ontario.",
         "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "datePublished": "2026-04-12",
@@ -34,7 +34,7 @@ export default function FrenchBlogArticle() {
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
             { "@type": "ListItem", "position": 2, "name": "Français", "item": `${SITE_URL}/fr` },
-            { "@type": "ListItem", "position": 3, "name": "Concessionnaire Mercury Platinum", "item": url }
+            { "@type": "ListItem", "position": 3, "name": "Concessionnaire Mercury Premier", "item": url }
           ]
         }
       },
@@ -90,12 +90,12 @@ export default function FrenchBlogArticle() {
   return (
     <div className="min-h-screen bg-background" lang="fr">
       <Helmet>
-        <title>Concessionnaire Mercury Platinum Ontario | Harris Boat Works</title>
-        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Platinum à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury, service pour plaisanciers francophones." />
+        <title>Concessionnaire Mercury Premier Ontario | Harris Boat Works</title>
+        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Premier à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury, service pour plaisanciers francophones." />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="fr-CA" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <meta property="og:title" content="Concessionnaire Mercury Platinum en Ontario" />
+        <meta property="og:title" content="Concessionnaire Mercury Premier en Ontario" />
         <meta property="og:description" content="Pourquoi les plaisanciers francophones choisissent Harris Boat Works pour leurs moteurs Mercury." />
         <meta property="og:url" content={url} />
         <meta property="og:locale" content="fr_CA" />
@@ -117,7 +117,7 @@ export default function FrenchBlogArticle() {
 
         <article className="prose prose-lg max-w-none text-foreground">
           <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
-            Concessionnaire Mercury Platinum en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works
+            Concessionnaire Mercury Premier en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works
           </h1>
           <p className="text-muted-foreground text-sm mb-8">Publié par Harris Boat Works | Gores Landing, Ontario</p>
 
@@ -125,11 +125,11 @@ export default function FrenchBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">Réponse rapide</h2>
             <p className="text-foreground text-sm">
-              Harris Boat Works est concessionnaire <strong>Mercury Marine Platinum</strong> à Gores Landing, en Ontario, le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
+              Harris Boat Works est concessionnaire <strong>Mercury Marine Premier</strong> à Gores Landing, en Ontario, le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
             </p>
           </div>
 
-          <h2>Ce que veut dire « concessionnaire Mercury Platinum »</h2>
+          <h2>Ce que veut dire « concessionnaire Mercury Premier »</h2>
           <p>Le réseau de concessionnaires Mercury Marine est divisé en niveaux. Le statut <strong>Platinum</strong> est le plus élevé.</p>
           <p><strong>Accès prioritaire aux pièces.</strong> Un concessionnaire Platinum a un accès privilégié à l'inventaire Mercury. Moins d'attente, moins de délais sur l'eau.</p>
           <p><strong>Techniciens certifiés Mercury.</strong> Notre atelier est staffé de mécaniciens qui ont suivi la formation Mercury officielle.</p>

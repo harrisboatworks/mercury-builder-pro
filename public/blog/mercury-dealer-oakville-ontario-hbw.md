@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake"
-description: "Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage for..."
+description: "Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage for..."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake
 
-> Mercury Platinum dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage for...
+> Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage for...
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oakville-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Platinum Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Oakville via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
 
@@ -53,7 +53,7 @@ If you build a quote, look at the number, and decide to buy from a closer Oakvil
 
 ## The Repower Question Specific to Oakville
 
-A lot of Oakville-area boaters are on Lake Ontario, Burlington Bay, or the Hamilton waterfront. Big water, larger boats, often larger motors. If you're considering a repower on a bigger hull, a significant horsepower upgrade, twin-engine setup, or a complex rigging job, Mercury Platinum certification matters more than on a simple single-motor swap.
+A lot of Oakville-area boaters are on Lake Ontario, Burlington Bay, or the Hamilton waterfront. Big water, larger boats, often larger motors. If you're considering a repower on a bigger hull, a significant horsepower upgrade, twin-engine setup, or a complex rigging job, Mercury Premier certification matters more than on a simple single-motor swap.
 
 The technical depth on harder jobs is where Platinum certification shows up. And the rigging conversation on a bigger, heavier hull has more variables than a standard 60 HP swap on a 16-foot aluminum. We're experienced with both.
 
@@ -72,7 +72,7 @@ Harris Boat Works has been in Gores Landing since 1947. Jay Harris's grandfather
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For larger and more complex setups, the rigging conversation is especially important, don't skip it.
 
 **Mercury parts and service**
-Platinum-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
+Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
 Outdoor with shrinkwrap. No indoor. For most Oakville customers, local storage will make more logistical sense unless you're regularly on inland lakes or the Kawarthas.
@@ -111,10 +111,10 @@ This is the trip that most rewards preparation:
 
 ## Related guides
 
-- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Platinum dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
+- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
 - [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
-- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Platinum dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
-- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Platinum dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
+- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Premier dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
+- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 
 ## The HBW Promise
 
@@ -125,7 +125,7 @@ That's been the deal since 1947.
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Call or text:** 905-342-2153
-**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+**Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 ---
 
@@ -137,7 +137,7 @@ The drive to Rice Lake is 110 minutes via the QEW east through Toronto, 401 east
 
 Why Oakville boaters drive to HBW for repower:
 
-- **Mercury Platinum-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
+- **Mercury Premier-level rigging.** For a $15,000-$25,000 repower investment, the drive is justified when local dealers can't match the install depth.
 - **One-time annual trip.** Many Oakville customers trailer up once for repower or major service, then run lighter maintenance closer to home.
 - **Transparent CAD pricing.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before deciding, the configurator works without a phone call and shows real dealer pricing, not MSRP.
 
@@ -160,7 +160,7 @@ About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on you
 
 ### Is the drive worth it for a Mercury dealer?
 
-Oakville customers cite three reasons: transparent online CAD pricing, Mercury Platinum-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities.
+Oakville customers cite three reasons: transparent online CAD pricing, Mercury Premier-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities.
 
 ### Can I do most of the buying process remotely?
 

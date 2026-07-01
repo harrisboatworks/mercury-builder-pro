@@ -216,7 +216,7 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
-*Harris Boat Works. Est. 1947. Gores Landing, ON. Mercury Platinum Dealer*
+*Harris Boat Works. Est. 1947. Gores Landing, ON. Mercury Premier Dealer*
 
 ---
 

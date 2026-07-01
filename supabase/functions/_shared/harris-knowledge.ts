@@ -29,7 +29,7 @@ export const HARRIS_AWARDS = [
     significance: "This award recognizes exceptional customer service, technical expertise, and overall customer experience."
   },
   {
-    name: "Mercury Platinum Dealer",
+    name: "Mercury Premier Dealer",
     description: "Authorized to sell the complete Mercury Marine lineup",
     significance: "Full access to Mercury's entire product range and factory support."
   }

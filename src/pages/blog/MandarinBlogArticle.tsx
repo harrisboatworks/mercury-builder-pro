@@ -121,7 +121,7 @@ export default function MandarinBlogArticle() {
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
             <h2 className="text-lg font-medium text-foreground mb-2">快速答案</h2>
             <p className="text-foreground text-sm">
-              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine Platinum 授权经销商，提供全透明在线报价——在 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
+              如果您在安大略省拥有一艘船，但发动机已经老旧、故障频繁，换新发动机（Repower）通常比换一艘新船划算得多。Harris Boat Works 是 Mercury Marine Premier 授权经销商，提供全透明在线报价——在 <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> 即可查看真实加元价格。
             </p>
           </div>
 
@@ -220,7 +220,7 @@ export default function MandarinBlogArticle() {
         <BlogCTA category="Repower" slug="mercury-repower-guide-gta" variant="banner" />
 
         <footer className="text-center text-xs text-muted-foreground">
-          <p>Harris Boat Works, 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine Platinum 授权经销商。</p>
+          <p>Harris Boat Works, 1947年至今，三代家族经营，安大略省Rice Lake。Mercury Marine Premier 授权经销商。</p>
         </footer>
       </main>
 

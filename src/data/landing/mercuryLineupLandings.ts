@@ -66,7 +66,7 @@ export const PORTABLE_9_20HP: LandingConfig = {
   slug: '/mercury/portable-9-20hp',
   metaTitle: 'Mercury 9.9, 15 & 20 HP Portable Outboard Price Canada | Harris Boat Works',
   metaDescription:
-    'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $2,999 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $2,999 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/portable-9-20hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/uploads/2025-09-22T00-14-12-050Z-Mercury-Marine-9-9HP-Rear-3-4-Port-Short-TillerUp-1718214770881%20(1).jpg',
@@ -74,11 +74,11 @@ export const PORTABLE_9_20HP: LandingConfig = {
   h1: 'Mercury 9.9 to 20 HP Portable Outboard Prices in Canada',
   heroLead:
     'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $2,999 CAD at Harris Boat Works, real prices listed, stock on the floor.',
-  heroEyebrow: 'Mercury Platinum Dealer, Rice Lake',
+  heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 9.9 to 20 HP Portable Outboards',
   productDescription:
-    'Mercury 9.9, 15, and 20 HP portable and kicker FourStroke outboards for kickers, tenders, and small fishing boats. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+    'Mercury 9.9, 15, and 20 HP portable and kicker FourStroke outboards for kickers, tenders, and small fishing boats. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
 
   tableTitle: 'Mercury 9.9 to 20 HP prices: portable and kicker FourStrokes',
   tableNote:
@@ -136,18 +136,18 @@ export const MID_RANGE_40_60HP: LandingConfig = {
   slug: '/mercury/mid-range-40-60hp',
   metaTitle: 'Mercury 40, 50 & 60 HP Outboard Price Canada | Harris Boat Works',
   metaDescription:
-    'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,438 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,438 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/mid-range-40-60hp',
   ogImage: 'https://mercuryrepower.ca/asset-gap-heroes/60-elpt-fourstroke.jpg',
 
   h1: 'Mercury 40 to 60 HP Outboard Prices in Canada',
   heroLead:
     'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from $9,438 CAD at Harris Boat Works.',
-  heroEyebrow: 'Mercury Platinum Dealer, Rice Lake',
+  heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 40 to 60 HP FourStroke Outboards',
   productDescription:
-    'Mercury 40, 50, and 60 HP electric-start, power-trim FourStroke outboards in standard and Command Thrust gearcases. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+    'Mercury 40, 50, and 60 HP electric-start, power-trim FourStroke outboards in standard and Command Thrust gearcases. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
 
   tableTitle: 'Mercury 40 to 60 HP prices: standard and Command Thrust FourStrokes',
   tableNote:
@@ -204,7 +204,7 @@ export const MID_POWER_90_115HP: LandingConfig = {
   slug: '/mercury/mid-power-90-115hp',
   metaTitle: 'Mercury 90 & 115 HP Outboard Price Canada | Harris Boat Works',
   metaDescription:
-    'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,960 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,960 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/mid-power-90-115hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -212,11 +212,11 @@ export const MID_POWER_90_115HP: LandingConfig = {
   h1: 'Mercury 90 to 115 HP Outboard Prices in Canada',
   heroLead:
     'The 90 to 115 HP band is where most Rice Lake repowers land: enough motor for a bowrider, a fish-and-ski, or a loaded pontoon, without stepping up to V6 money. Mercury 90 to 115 HP from $14,960 CAD at Harris Boat Works.',
-  heroEyebrow: 'Mercury Platinum Dealer, Rice Lake',
+  heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 90 to 115 HP FourStroke and Pro XS Outboards',
   productDescription:
-    'Mercury 90 and 115 HP electric-start, power-trim outboards in FourStroke, Pro XS, and Command Thrust configurations. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+    'Mercury 90 and 115 HP electric-start, power-trim outboards in FourStroke, Pro XS, and Command Thrust configurations. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
 
   tableTitle: 'Mercury 90 to 115 HP prices: FourStroke and Pro XS',
   tableNote:
@@ -281,7 +281,7 @@ export const HP_150: LandingConfig = {
   slug: '/mercury/150-hp',
   metaTitle: 'Mercury 150 HP Outboard Price in Ontario | Harris Boat Works',
   metaDescription:
-    'Mercury 150 HP FourStroke and Pro XS outboard prices from $22,242 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 150 HP FourStroke and Pro XS outboard prices from $22,242 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
   canonical: 'https://www.mercuryrepower.ca/mercury/150-hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -289,11 +289,11 @@ export const HP_150: LandingConfig = {
   h1: 'Mercury 150 HP Outboard Price in Ontario',
   heroLead:
     'The 150 FourStroke is the workhorse, the sweet spot for 17 to 19 ft fibreglass and aluminum boats: bowriders, fish-and-ski, deep-V aluminum. Smooth 3.0L inline-4, real fuel numbers, real-world reliability. Mercury 150 HP from $22,242 CAD at Harris Boat Works.',
-  heroEyebrow: 'Mercury Platinum Dealer, Rice Lake',
+  heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 150 HP FourStroke and Pro XS Outboards',
   productDescription:
-    'Mercury 150 HP FourStroke (3.0L inline-4) and 150 Pro XS outboards for repowers and new-boat installs. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+    'Mercury 150 HP FourStroke (3.0L inline-4) and 150 Pro XS outboards for repowers and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
 
   tableTitle: 'Mercury 150 HP prices: FourStroke and Pro XS',
   tableNote:
@@ -349,19 +349,19 @@ export const PRO_XS_115: LandingConfig = {
   slug: '/mercury/115-pro-xs',
   metaTitle: 'Mercury 115 Pro XS Price in Ontario | Harris Boat Works',
   metaDescription:
-    'Mercury 115 Pro XS prices from $17,490 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock, with Command Thrust option.',
+    'Mercury 115 Pro XS prices from $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock, with Command Thrust option.',
   canonical: 'https://www.mercuryrepower.ca/mercury/115-pro-xs',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
 
   h1: 'Mercury 115 Pro XS Price in Ontario',
   heroLead:
-    'The 115 Pro XS is the hot-rod 115: same 2.1L block as the FourStroke 115, tuned for hole shot, top end, and bass-boat handling. From $17,490 CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake.',
-  heroEyebrow: 'Mercury Platinum Dealer, Rice Lake',
+    'The 115 Pro XS is the hot-rod 115: same 2.1L block as the FourStroke 115, tuned for hole shot, top end, and bass-boat handling. From $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake.',
+  heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 115 Pro XS Outboards',
   productDescription:
-    'Mercury 115 Pro XS outboards, 20 and 25-inch shaft, with optional Command Thrust gearcase. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+    'Mercury 115 Pro XS outboards, 20 and 25-inch shaft, with optional Command Thrust gearcase. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
 
   tableTitle: 'Mercury 115 Pro XS prices: every configuration',
   tableNote:

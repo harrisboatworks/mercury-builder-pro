@@ -37,7 +37,7 @@ The Mercury 90 HP FourStroke is the default pick for most 16, 18 ft aluminum fis
 
 We sell more Mercury motors in the 75, 115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16, 20 ft range.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Platinum dealer. The 90 FourStroke is a motor we know well, and one we're honest about when it's the wrong call.
+Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 90 FourStroke is a motor we know well, and one we're honest about when it's the wrong call.
 
 ---
 

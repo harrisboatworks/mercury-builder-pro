@@ -1248,7 +1248,7 @@ IMPORTANT: Always check the specific motor's operation manual for exact MCA (Mar
 For specific battery recommendations for a particular motor, say:
 "For exact battery specs, I'd check your motor's manual or give us a call - (905) 342-2153. Battery requirements can vary by model."
 
-## MERCURY PLATINUM WARRANTY (Extended Protection)
+## MERCURY PREMIER WARRANTY (Extended Protection)
 
 ### What Harris Boat Works Offers
 - We sell **Platinum only** - Mercury's highest tier of extended protection

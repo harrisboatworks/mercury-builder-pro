@@ -40,7 +40,7 @@ export interface CaseStudyLongForm {
 }
 
 const VISIT_BASE =
-  'Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 · Phone (905) 342-2153 · Family-owned since 1947 · Mercury Platinum Dealer, selling Mercury since 1965.';
+  'Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 · Phone (905) 342-2153 · Family-owned since 1947 · Mercury Premier Dealer, selling Mercury since 1965.';
 
 export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
   {
@@ -256,12 +256,12 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         },
       ],
       visit:
-        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965. Every Boost retrofit gets rigged and water-tested by the same techs who wrote the quote.`,
+        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965. Every Boost retrofit gets rigged and water-tested by the same techs who wrote the quote.`,
       related: [
         { label: 'Pricing Reference', href: '/pricing-reference' },
         { label: 'Rice Lake Mercury Repower', href: '/locations/rice-lake-mercury-repower' },
         {
-          label: 'Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965',
+          label: 'Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965',
           href: 'https://www.harrisboatworks.ca/aboutus',
           external: true,
         },
@@ -486,12 +486,12 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         },
       ],
       visit:
-        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965. Verado is the one repower we always price honestly on lead time, the build window is part of the quote.`,
+        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965. Verado is the one repower we always price honestly on lead time, the build window is part of the quote.`,
       related: [
         { label: 'Pricing Reference', href: '/pricing-reference' },
         { label: 'How To Repower A Boat', href: '/how-to-repower-a-boat' },
         {
-          label: 'Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965',
+          label: 'Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965',
           href: 'https://www.harrisboatworks.ca/aboutus',
           external: true,
         },
@@ -834,12 +834,12 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         },
       ],
       visit:
-        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965. Twin-to-single is one of the most consequential repower decisions we walk customers through, and we walk through it honestly.`,
+        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965. Twin-to-single is one of the most consequential repower decisions we walk customers through, and we walk through it honestly.`,
       related: [
         { label: 'Pricing Reference', href: '/pricing-reference' },
         { label: 'Trade In Value', href: '/trade-in-value' },
         {
-          label: 'Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965',
+          label: 'Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965',
           href: 'https://www.harrisboatworks.ca/aboutus',
           external: true,
         },

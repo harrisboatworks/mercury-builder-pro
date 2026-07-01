@@ -24,7 +24,7 @@ export function BlogMasthead() {
       <p className="mt-4 font-sans text-[12px] uppercase tracking-[0.16em] text-repower-navy-900/45">
         Family marina on Rice Lake since 1947
         <span aria-hidden="true" className="mx-2 text-repower-navy-900/25">·</span>
-        Mercury Platinum Dealer
+        Mercury Premier Dealer
       </p>
 
       {/* Language editions: quiet text links under the masthead */}

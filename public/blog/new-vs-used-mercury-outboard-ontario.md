@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
-description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Platinum dealer who sells both."
+description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-06-10
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # New vs Used Mercury Outboard in Ontario, by the Numbers
 
-> New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Platinum dealer who sells both.
+> New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both.
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
@@ -110,7 +110,7 @@ Customers we steer toward used: occasional weekenders who do not log many hours,
 
 ## What we do at Harris Boat Works
 
-We are a Mercury Platinum dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $13,000 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
+We are a Mercury Premier dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $13,000 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
 
 If you are weighing this decision and want a second set of eyes, drop us an email at info@harrisboatworks.ca with the boat's specs, the used motor's documented history (if you have it), and a rough budget. We will tell you what we would do in your situation.
 
@@ -118,14 +118,14 @@ If you are looking at a used boat package and want a structured inspection befor
 
 ## Related guides
 
-- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Platinum dealer's straight take on which hull material fits which kind of.
+- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of.
 - [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
-- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Platinum dealer's honest take.
-- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Platinum dealer's honest take on which hull fits which Ontario boater. Family.
+- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take.
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family.
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 > Related guide: [When selling the boat is the right answer](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
 
@@ -161,7 +161,7 @@ Yes, always, if you are spending more than a few thousand dollars. A compression
 
 ### Is buying new from a US dealer cheaper than buying from a Canadian dealer?
 
-Once you factor in cross-border duties, exchange rates, and the loss of Canadian warranty support (Mercury's warranty network is region-specific), the answer is almost always no. Plus a Mercury Platinum dealer in Canada is who you will need for service, parts, and warranty work for the next decade. Buying from outside the region creates problems that the price difference does not solve.
+Once you factor in cross-border duties, exchange rates, and the loss of Canadian warranty support (Mercury's warranty network is region-specific), the answer is almost always no. Plus a Mercury Premier dealer in Canada is who you will need for service, parts, and warranty work for the next decade. Buying from outside the region creates problems that the price difference does not solve.
 
 ## Next steps
 

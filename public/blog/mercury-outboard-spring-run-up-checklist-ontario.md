@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario"
-description: "Boring spring checks prevent expensive May surprises. A Mercury Platinum dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
+description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
 
-> Boring spring checks prevent expensive May surprises. A Mercury Platinum dealer's step-by-step run-up checklist for Ontario boaters opening up their boat.
+> Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat.
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  

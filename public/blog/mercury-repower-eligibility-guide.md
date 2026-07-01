@@ -181,7 +181,7 @@ Most repower conversations start with the eligibility check. If your boat passes
 
 If you are unsure on any of the checks, particularly transom integrity or hull condition, book an in-person assessment at [hbw.wiki/service](https://hbw.wiki/service). We will walk through it with you. No charge for the eligibility conversation.
 
-Harris Boat Works, Gores Landing, Ontario. Mercury Platinum dealer. Mercury dealer since 1965, family marina since 1947.
+Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. Mercury dealer since 1965, family marina since 1947.
 
 Phone: (905) 342-2153
 Text: (647) 952-2153

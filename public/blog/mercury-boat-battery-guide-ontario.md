@@ -287,10 +287,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Related guides
 
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Platinum dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
 - [Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how.
 - [Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)](/blog/winter-storage-near-toronto-hbw): An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included.
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
 
 ## FAQs
 

@@ -14,7 +14,7 @@ keyword: "mercury repower hastings"
 
 # Mercury Repower for Hastings, Ontario Boaters
 
-Harris Boat Works is 25–30 minutes from Hastings, around the Rice Lake shoreline to Gores Landing, ON. Distance is roughly 30 km by road. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Hastings sits at the northeast end of Rice Lake, where the Trent-Severn Waterway runs north, many Hastings boaters run the Trent system. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.
+Harris Boat Works is 25–30 minutes from Hastings, around the Rice Lake shoreline to Gores Landing, ON. Distance is roughly 30 km by road. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Hastings sits at the northeast end of Rice Lake, where the Trent-Severn Waterway runs north, many Hastings boaters run the Trent system. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.
 
 ## Factbox
 

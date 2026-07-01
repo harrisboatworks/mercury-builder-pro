@@ -48,7 +48,7 @@ const boundary = (city: string) =>
 
 const TRUST_FACTS = [
   'Family-owned in Gores Landing since 1947',
-  'Mercury Marine Platinum Dealer (top customer-satisfaction tier)',
+  'Mercury Marine Premier Dealer (top customer-satisfaction tier)',
   'Authorized Mercury dealer since 1965, Mercury is our only outboard brand',
   'Live CAD pricing online, no "call for price"',
   'Every installed repower is lake-tested on Rice Lake before pickup',
@@ -68,7 +68,7 @@ export const locations: LocationPageData[] = [
     slug: 'rice-lake-mercury-repower',
     title: 'Harris Boat Works: Mercury Repower on Rice Lake, Gores Landing ON',
     metaDescription:
-      'Harris Boat Works on Rice Lake: Mercury Platinum Dealer in Gores Landing, family-owned since 1947, Mercury dealer since 1965. Live CAD pricing, pickup only, lake-tested.',
+      'Harris Boat Works on Rice Lake: Mercury Premier Dealer in Gores Landing, family-owned since 1947, Mercury dealer since 1965. Live CAD pricing, pickup only, lake-tested.',
     region: 'Rice Lake',
     regionType: 'region',
     keyword: 'mercury repower rice lake',
@@ -92,8 +92,8 @@ export const locations: LocationPageData[] = [
     ],
     relatedCaseStudySlugs: ['bass-boat-150-to-150-pro-xs', 'walkaround-cuddy-90-to-115-efi', 'aluminum-fishing-60-to-90-fourstroke'],
     faqs: [
-      { question: 'Where is Harris Boat Works located?', answer: 'Harris Boat Works is at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. We are a Mercury Marine Platinum Dealer, family-owned since 1947 and an authorized Mercury dealer since 1965. Pickup only, no shipping.' },
-      { question: 'Is Harris Boat Works on Rice Lake?', answer: 'Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake, the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.' },
+      { question: 'Where is Harris Boat Works located?', answer: 'Harris Boat Works is at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. We are a Mercury Marine Premier Dealer, family-owned since 1947 and an authorized Mercury dealer since 1965. Pickup only, no shipping.' },
+      { question: 'Is Harris Boat Works on Rice Lake?', answer: 'Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake, the closest Mercury Marine Premier Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.' },
       { question: 'Can I get a Mercury repower quote in CAD before driving here?', answer: 'Yes. Build a complete itemized Mercury repower quote at /quote/motor-selection, motor, controls, propeller, install, financing, and trade-in credit. The price you see is the price you pay.' },
       { question: 'Do you ship or deliver outboards?', answer: 'No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver, strict industry-wide fraud-prevention policy.' },
     ],
@@ -104,14 +104,14 @@ export const locations: LocationPageData[] = [
     slug: 'peterborough-mercury-dealer',
     title: 'Mercury Dealer Near Peterborough, Harris Boat Works (35 min south)',
     metaDescription:
-      'Peterborough customers’ closest Mercury Platinum Dealer. About 35 minutes south on Rice Lake. Live CAD pricing online, pickup at Gores Landing.',
+      'Peterborough customers’ closest Mercury Premier Dealer. About 35 minutes south on Rice Lake. Live CAD pricing online, pickup at Gores Landing.',
     region: 'Peterborough',
     regionType: 'city',
     keyword: 'mercury dealer peterborough',
     driveTime: 'about 35 minutes south of Peterborough',
     driveRoute: 'County Rd 28 South → Bewdley → Gores Landing',
     intro:
-      'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on the shore of Rice Lake. Peterborough boaters have been buying Mercury outboards from us for over 60 years.',
+      'Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, about 35 minutes south on the shore of Rice Lake. Peterborough boaters have been buying Mercury outboards from us for over 60 years.',
     localContext: [
       'Easy access for Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes',
       'Customers commonly trailer down from Stoney, Chemong, Buckhorn, and Pigeon Lake',
@@ -140,7 +140,7 @@ export const locations: LocationPageData[] = [
     slug: 'kawartha-lakes-mercury-outboards',
     title: 'Mercury Outboards for the Kawartha Lakes, Harris Boat Works',
     metaDescription:
-      'Mercury outboards and repowers for Kawartha Lakes boaters. Live CAD pricing, Mercury Platinum Dealer, pickup at Gores Landing on Rice Lake.',
+      'Mercury outboards and repowers for Kawartha Lakes boaters. Live CAD pricing, Mercury Premier Dealer, pickup at Gores Landing on Rice Lake.',
     region: 'Kawartha Lakes',
     regionType: 'region',
     keyword: 'kawartha lakes outboard motor',
@@ -212,14 +212,14 @@ export const locations: LocationPageData[] = [
     slug: 'whitby-mercury-dealer',
     title: 'Mercury Dealer for Whitby, Harris Boat Works (Gores Landing, ON)',
     metaDescription:
-      'Whitby buyers’ Mercury Platinum Dealer. About 70 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
+      'Whitby buyers’ Mercury Premier Dealer. About 70 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
     region: 'Whitby',
     regionType: 'city',
     keyword: 'mercury dealer whitby',
     driveTime: 'about 70 minutes east of Whitby via Hwy 401',
     driveRoute: 'Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing',
     intro:
-      'Harris Boat Works is the Mercury Platinum Dealer most Whitby boaters drive to, about 70 minutes east on the 401. Live CAD pricing online, full Mercury lineup, and a clean pickup process at our Gores Landing shop.',
+      'Harris Boat Works is the Mercury Premier Dealer most Whitby boaters drive to, about 70 minutes east on the 401. Live CAD pricing online, full Mercury lineup, and a clean pickup process at our Gores Landing shop.',
     localContext: [
       'Whitby boaters commonly launch on Lake Ontario, Lake Scugog, and Lake Simcoe',
       'Many trailer cottage boats up to Rice Lake or the Kawarthas, short trip to our shop on the way',
@@ -248,14 +248,14 @@ export const locations: LocationPageData[] = [
     slug: 'ajax-mercury-dealer',
     title: 'Mercury Dealer for Ajax, Harris Boat Works (Gores Landing, ON)',
     metaDescription:
-      'Ajax buyers’ Mercury Platinum Dealer. About 75 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
+      'Ajax buyers’ Mercury Premier Dealer. About 75 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
     region: 'Ajax',
     regionType: 'city',
     keyword: 'mercury dealer ajax',
     driveTime: 'about 75 minutes east of Ajax via Hwy 401',
     driveRoute: 'Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing',
     intro:
-      'For Ajax boaters, Harris Boat Works is the closest Mercury Platinum Dealer with live CAD pricing and a transparent build process, about 75 minutes east on the 401, family-owned since 1947.',
+      'For Ajax boaters, Harris Boat Works is the closest Mercury Premier Dealer with live CAD pricing and a transparent build process, about 75 minutes east on the 401, family-owned since 1947.',
     localContext: [
       'Ajax boaters commonly fish Lake Ontario and trailer to Lake Scugog or Rice Lake',
       'Cottage owners north of the city often handle repowers through Harris Boat Works on the way to camp',
@@ -283,7 +283,7 @@ export const locations: LocationPageData[] = [
     slug: 'pickering-mercury-dealer',
     title: 'Mercury Dealer for Pickering, Harris Boat Works (Gores Landing, ON)',
     metaDescription:
-      'Pickering buyers’ Mercury Platinum Dealer. About 80 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
+      'Pickering buyers’ Mercury Premier Dealer. About 80 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
     region: 'Pickering',
     regionType: 'city',
     keyword: 'mercury dealer pickering',
@@ -318,14 +318,14 @@ export const locations: LocationPageData[] = [
     slug: 'oshawa-mercury-dealer',
     title: 'Mercury Dealer for Oshawa, Harris Boat Works (Gores Landing, ON)',
     metaDescription:
-      'Oshawa buyers’ Mercury Platinum Dealer. About 60 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
+      'Oshawa buyers’ Mercury Premier Dealer. About 60 minutes east via 401. Live CAD pricing online, pickup at Gores Landing on Rice Lake.',
     region: 'Oshawa',
     regionType: 'city',
     keyword: 'mercury dealer oshawa',
     driveTime: 'about 60 minutes east of Oshawa via Hwy 401',
     driveRoute: 'Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing',
     intro:
-      'For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Platinum Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.',
+      'For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Premier Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.',
     localContext: [
       'Oshawa boaters commonly fish Lake Ontario and Lake Scugog',
       'Many own cottages on Rice Lake, Scugog, or in the Kawarthas, pickup en route',
@@ -353,14 +353,14 @@ export const locations: LocationPageData[] = [
     slug: 'bowmanville-courtice-mercury-dealer',
     title: 'Mercury Dealer for Bowmanville & Courtice, Harris Boat Works',
     metaDescription:
-      'Bowmanville and Courtice buyers’ Mercury Platinum Dealer. About 50 minutes east via 401. Live CAD pricing, pickup at Gores Landing on Rice Lake.',
+      'Bowmanville and Courtice buyers’ Mercury Premier Dealer. About 50 minutes east via 401. Live CAD pricing, pickup at Gores Landing on Rice Lake.',
     region: 'Bowmanville & Courtice',
     regionType: 'city',
     keyword: 'mercury dealer bowmanville',
     driveTime: 'about 50 minutes east of Bowmanville / Courtice via Hwy 401',
     driveRoute: 'Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing',
     intro:
-      'Bowmanville and Courtice are the closest Durham communities to Harris Boat Works, about 50 minutes east on the 401. Mercury Platinum Dealer, family-owned since 1947, live CAD pricing online.',
+      'Bowmanville and Courtice are the closest Durham communities to Harris Boat Works, about 50 minutes east on the 401. Mercury Premier Dealer, family-owned since 1947, live CAD pricing online.',
     localContext: [
       'Convenient cottage-country access via Rice Lake, Scugog, and the Kawarthas',
       'Lake Ontario boaters in Newcastle and Bowmanville commonly fish out of Port Darlington',
@@ -397,7 +397,7 @@ export const locations: LocationPageData[] = [
     driveTime: 'about 90 minutes east of downtown Toronto via Hwy 401',
     driveRoute: 'Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing',
     intro:
-      'For Greater Toronto Area boaters, Harris Boat Works is the Mercury Platinum Dealer worth the drive, about 90 minutes east on the 401, with live CAD pricing online and an itemized quote you can read before you leave the city.',
+      'For Greater Toronto Area boaters, Harris Boat Works is the Mercury Premier Dealer worth the drive, about 90 minutes east on the 401, with live CAD pricing online and an itemized quote you can read before you leave the city.',
     localContext: [
       'GTA boaters use Lake Ontario, Lake Simcoe, Lake Scugog, and the Kawarthas',
       'Many GTA cottagers pick up motors on the way to Rice Lake, the Kawarthas, or the Trent, Severn',
@@ -420,7 +420,7 @@ export const locations: LocationPageData[] = [
       { question: 'How far is Harris Boat Works from Toronto?', answer: 'About 90 minutes east of downtown via Hwy 401, exit at Cobourg, then County Rd 18 north to Gores Landing on Rice Lake.' },
       { question: 'Do you deliver Mercury outboards to the GTA?', answer: 'No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver, strict industry-wide fraud-prevention policy.' },
       { question: 'Do you do mobile service in the GTA?', answer: 'No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing. We do not perform on-site installs, driveway service, or marina visits in any GTA city.' },
-      { question: 'Why would a GTA buyer drive to Rice Lake?', answer: 'For real CAD pricing online, Mercury-only expertise since 1965, Platinum-tier customer-satisfaction status, and a clean pickup walk-through that protects your warranty registration.' },
+      { question: 'Why would a GTA buyer drive to Rice Lake?', answer: 'For real CAD pricing online, Mercury-only expertise since 1965, Premier-tier customer-satisfaction status, and a clean pickup walk-through that protects your warranty registration.' },
       { question: 'Can I finance a Mercury motor as a GTA customer?', answer: 'Yes, financing is available on outboards $5,000+ in CAD. Build a quote and finance options appear with the price.' },
     ],
     pickupPolicy: PICKUP_POLICY,
@@ -439,7 +439,7 @@ export const locations: LocationPageData[] = [
     driveTime: 'about 50–80 minutes east of Durham communities via Hwy 401',
     driveRoute: 'Hwy 401 East → Cobourg → County Rd 18 North → Gores Landing',
     intro:
-      'Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, use Harris Boat Works as their Mercury Platinum Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.',
+      'Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, use Harris Boat Works as their Mercury Premier Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.',
     localContext: [
       'Customers boat on Lake Ontario, Lake Scugog, Rice Lake, and the Kawarthas',
       'Closest Durham community is Bowmanville (~50 min); furthest is Pickering (~80 min)',

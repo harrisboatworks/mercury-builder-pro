@@ -111,7 +111,7 @@ export function MercuryProXS250SEO() {
     '@type': 'Product',
     name: 'Mercury Pro XS 250 Outboard Motor',
     description:
-      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Platinum Dealer Harris Boat Works on Rice Lake, Ontario.',
+      'Mercury Pro XS 250 four-stroke V8 outboard motor for repower and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     category: 'Outboard Motor',
     image: PRO_XS_250_HERO_IMAGE,
@@ -153,8 +153,8 @@ export function MercuryProXS250SEO() {
   }).format(fromPrice);
   const titleStr = `Mercury Pro XS 250 Price Canada | From ${fromPriceStr} CAD | Harris Boat Works`;
   const shortTitle = `Mercury Pro XS 250 Price Canada | From ${fromPriceStr} CAD`;
-  const metaDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.`;
-  const ogDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Platinum Dealer on Rice Lake, Ontario. Real prices, in stock.`;
+  const metaDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.`;
+  const ogDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.`;
 
   return (
     <Helmet>

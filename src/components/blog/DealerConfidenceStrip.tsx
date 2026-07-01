@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
  */
 export function DealerConfidenceStrip() {
   const items = [
-    { label: 'Mercury Platinum Dealer' },
+    { label: 'Mercury Premier Dealer' },
     { label: 'Family-owned since 1947' },
     { label: 'Mercury dealer since 1965' },
     { label: 'Gores Landing, ON' },

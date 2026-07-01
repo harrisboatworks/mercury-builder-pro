@@ -12,7 +12,7 @@ description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha an
 category: "Repower"
 date_published: 2026-05-15
 date_modified: 2026-05-15
-keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V6","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Platinum dealer Ontario"]
+keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V6","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -177,7 +177,7 @@ Honest counter-positioning. Pro XS is the wrong answer if:
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Platinum Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 > Related guide: [Boat trim basics for Rice Lake](/blog/boat-trim-explained-rice-lake-ontario).
 
@@ -193,7 +193,7 @@ For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepow
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
-Mercury Marine Platinum Dealer. Established 1947.
+Mercury Marine Premier Dealer. Established 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
@@ -202,7 +202,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
-- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Platinum dealer for Peterborough, ~35 minutes south via Highway 28.
+- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 
@@ -232,7 +232,7 @@ Often yes, but the transom and stringers have to be sound. We see a lot of 1990s
 
 ### What's the warranty on a Mercury Pro XS?
 
-Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Platinum coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Platinum dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work.
+Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Platinum coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Premier dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work.
 
 ### Does HBW finance repowers?
 
