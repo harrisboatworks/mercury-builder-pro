@@ -201,7 +201,7 @@ Phone: 905-342-2153
 
 **Title:** Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너 완벽 매뉴얼 
 **Meta Title:** Mercury 선외기 겨울 보관 가이드 | Harris Boat Works 온타리오 
-**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) Platinum 딜러. 
+**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 딜러. 
 **Slug:** ko/mercury-outboard-winterization-guide 
 **Language:** Korean (한국어) 
 

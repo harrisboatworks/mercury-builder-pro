@@ -140,7 +140,7 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
 - 78 años de operación continua en Rice Lake
-- Acceso a partes Mercury con prioridad de concesionario Platinum
+- Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
 Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.

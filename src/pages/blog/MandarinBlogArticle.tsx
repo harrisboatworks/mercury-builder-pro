@@ -144,7 +144,7 @@ export default function MandarinBlogArticle() {
             <li><strong>燃油效率</strong>, 最新一代Mercury发动机在同级别中领先</li>
             <li><strong>可靠性</strong>, Mercury发动机以耐用著称，许多船主使用十五年以上</li>
             <li><strong>完善的零件网络</strong>, 正品零件，快速获取</li>
-            <li><strong>厂家保修</strong>, 完整厂家保修，Platinum 经销商确保保修全额有效</li>
+            <li><strong>厂家保修</strong>, 完整厂家保修，Premier 经销商确保保修全额有效</li>
           </ul>
 
           <h2>透明定价：不需要"谈价格"</h2>

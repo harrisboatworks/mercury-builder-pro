@@ -14200,7 +14200,7 @@ What we hear that actually predicts motor longevity is not the brand. It is the 
 
 The real difference between Mercury and Suzuki in Ontario is not the motor itself. It is the service network behind it.
 
-Mercury has the deepest dealer network in Ontario by a wide margin. Platinum and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
+Mercury has the deepest dealer network in Ontario by a wide margin. Premier and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
 
 Suzuki's Canadian dealer footprint is smaller. In the Rice Lake and Kawarthas region specifically, finding an active Suzuki marine service dealer within a comparable proximity to HBW is not easy. That gap is not a knock on Suzuki, it is a market fact. It matters most in the moment the motor needs service, which is usually the moment you cannot afford to drive 90 minutes each way to drop it off.
 
@@ -20400,7 +20400,7 @@ What's actually available to a GTA boater needing Mercury service:
 
 **2. General-purpose marinas.** Multi-brand service shops. Some excellent, some marginal. Mercury isn't their primary specialty in most cases. Pros: nearby. Cons: variable Mercury expertise, may not have G3 diagnostic software, sometimes long parts delays for Mercury-specific items.
 
-**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Platinum.
+**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Premier.
 
 **4. Mercury Premier dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
 
@@ -20469,7 +20469,7 @@ For a complex problem (intermittent stalls, occasional fault codes, weird perfor
 
 ### 2. Factory-trained techs (not just trained, factory-trained)
 
-Mercury runs ongoing certification programs for dealer techs. To stay Platinum, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
+Mercury runs ongoing certification programs for dealer techs. To stay Premier, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -23923,7 +23923,7 @@ Mercury dealer certification runs Bronze, Silver, Gold, and Platinum. Platinum r
 
 For the motor price itself, Premier and Bronze dealers are generally within a few hundred dollars of each other. The difference shows up in warranty work, complex diagnostics, repower expertise, parts availability, and what happens when something goes wrong three years after the sale.
 
-Harris Boat Works has been a Mercury dealer since 1965. We've been Platinum for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
+Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for over a decade. Some GTA customers drive 90 minutes to Gores Landing to buy here. That's not because we're the lowest price on every single model. It's because when we quote something, that's the price, and when you need service, you're not starting over with a stranger.
 
 ## Mercury promotional pricing and bonus warranty
 
@@ -28970,7 +28970,7 @@ Phone: 905-342-2153
 
 **Title:** Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너 완벽 매뉴얼 
 **Meta Title:** Mercury 선외기 겨울 보관 가이드 | Harris Boat Works 온타리오 
-**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) Platinum 딜러. 
+**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 딜러. 
 **Slug:** ko/mercury-outboard-winterization-guide 
 **Language:** Korean (한국어) 
 

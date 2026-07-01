@@ -51,7 +51,7 @@ What we hear that actually predicts motor longevity is not the brand. It is the 
 
 The real difference between Mercury and Suzuki in Ontario is not the motor itself. It is the service network behind it.
 
-Mercury has the deepest dealer network in Ontario by a wide margin. Platinum and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
+Mercury has the deepest dealer network in Ontario by a wide margin. Premier and authorized service dealers are concentrated through the Kawarthas, the GTA, the cottage corridors, and most provincial population centres. Parts are usually on a dealer shelf or one day away. A Mercury motor that needs warranty work in late June, the worst week of the season to be down, can usually get diagnosed and either fixed or queued within days, not weeks.
 
 Suzuki's Canadian dealer footprint is smaller. In the Rice Lake and Kawarthas region specifically, finding an active Suzuki marine service dealer within a comparable proximity to HBW is not easy. That gap is not a knock on Suzuki, it is a market fact. It matters most in the moment the motor needs service, which is usually the moment you cannot afford to drive 90 minutes each way to drop it off.
 

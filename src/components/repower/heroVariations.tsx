@@ -89,7 +89,7 @@ export const HERO_VARIATIONS: HeroVariation[] = [
     stats: [
       { n: String(GOOGLE_REVIEWS_FALLBACK.totalReviews), l: 'Google reviews' },
       { n: GOOGLE_REVIEWS_FALLBACK.rating.toFixed(1), l: 'star rating' },
-      { n: 'Platinum', l: 'Mercury dealer' },
+      { n: 'Premier', l: 'Mercury dealer' },
     ],
     ctaLabel: 'See My Mercury Price',
   },
