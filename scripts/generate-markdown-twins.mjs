@@ -1071,10 +1071,14 @@ const locationTwinSummaries = locations.map(loc => {
 // Blog twins, generate one .md for EVERY sitemap-eligible blog article
 // (including scheduled future-dated posts). llms.txt advertises these as
 // the AI-friendly clean ingestion path; they must exist for every URL.
+// Cluster-driven related-guides data (loaded once, used per twin).
+const blogClusterData = loadBlogClusterData();
+console.log(`[markdown-twins] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
+
 const blogTwinSummaries = [];
 for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
-  writePublicMd(path, blogMarkdown(article));
+  writePublicMd(path, blogMarkdown(article, blogClusterData));
   blogTwinSummaries.push({ path, title: article.title });
 }
 // Note: previously a curated BLOG_TWIN_SLUGS sanity check ran here. Removed
