@@ -12487,6 +12487,9 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 For most 17, 19 ft hulls, the Mercury 115 FourStroke is the right call, lighter, cheaper, and fully capable for typical Ontario family use. The 150 earns its price on 18, 22 ft hulls, active watersports, or any boat that loads heavy. Both sit inside the same service footprint. Stay inside your capacity plate. Compare installed pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
+![Mercury 115 Pro XS vs 150 FourStroke comparison — best boat, ideal use, and Harris Boat Works pricing from $17,490](/blog-visuals/mercury-115-vs-150-comparison.png)
+
+
 ::decision-card
 heading: Should you choose Mercury 115 or 150 HP?
 eyebrow: Honest power pick
