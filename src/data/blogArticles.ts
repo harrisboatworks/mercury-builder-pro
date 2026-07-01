@@ -4629,9 +4629,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
-\`\`\`hbw-comparison
-{"title":"Mercury 75 vs 90 vs 115","columns":["75 FourStroke","90 FourStroke","115 Pro XS"],"rows":[{"label":"Best boat","values":["16-18 ft aluminum","Bowriders, mid aluminum","Heavier rigs, fish-and-ski, pontoons"]},{"label":"Feel","values":["Light, efficient","Smooth all-rounder","Quick, strong"]},{"label":"HBW price (CAD)","values":["$14,476","$14,960","$17,490"]}],"note":"HBW selling price, bare motor, CAD. Confirm in the quote builder."}
-\`\`\`
+![Mercury 75 vs 90 vs 115 HP outboard comparison — best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+
+*Same 2.1L block. Same 359 lb. The difference is fit.*
 
 \`\`\`hbw-decision
 {"title":"Which HP for your boat?","nodes":[{"q":"Boat under 18 ft, lighter aluminum?","yes":"75 FourStroke","no":"next"},{"q":"Bowrider or mid-size aluminum, family use?","yes":"90 FourStroke","no":"next"},{"q":"Heavier rig, fish-and-ski, pontoon, or want performance?","yes":"115 Pro XS","no":"Call us, we'll size it"}]}
