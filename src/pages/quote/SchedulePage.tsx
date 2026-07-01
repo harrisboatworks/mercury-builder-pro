@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { ScheduleConsultation } from '@/components/quote-builder/ScheduleConsultation';
 import { useQuote } from '@/contexts/QuoteContext';
+import { PageTransition } from '@/components/ui/page-transition';
 import { ArrowLeft } from 'lucide-react';
 
 export default function SchedulePage() {
@@ -33,13 +34,12 @@ export default function SchedulePage() {
 
   const quoteData = getQuoteData();
 
-  // NOTE: PageTransition was previously wrapping this page. It animates
-  // opacity from 0 → 1 on mount; in production a small fraction of sessions
-  // get stuck at opacity:0, leaving the form invisible while it is present
-  // in the DOM. Render the page directly with explicit opacity:1 so the
-  // contact form is always visible on this critical conversion step.
+  // PageTransition is now safe: its resting opacity is 1 (see
+  // src/components/ui/page-transition.tsx — inline style + onAnimationComplete
+  // + 400ms safety net + iOS/reduced-motion opt-out). The prior inline
+  // opacity:1 workaround here is no longer needed.
   return (
-    <div style={{ opacity: 1 }}>
+    <PageTransition>
       <QuoteLayout>
         <div className="max-w-[1100px] mx-auto px-6 md:px-14 py-14 md:py-20 space-y-10">
           <button
@@ -71,7 +71,7 @@ export default function SchedulePage() {
             <div className="h-px bg-repower-navy-900/10 mt-10 max-w-[200px] mx-auto" />
           </div>
 
-          <div className="bg-white border border-repower-navy-900/10 p-6 md:p-10" style={{ opacity: 1 }}>
+          <div className="bg-white border border-repower-navy-900/10 p-6 md:p-10">
             <ScheduleConsultation
               quoteData={quoteData}
               onBack={handleBack}
@@ -80,6 +80,6 @@ export default function SchedulePage() {
           </div>
         </div>
       </QuoteLayout>
-    </div>
+    </PageTransition>
   );
 }
