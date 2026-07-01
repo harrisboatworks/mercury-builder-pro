@@ -30001,7 +30001,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Flowchart showing boat storage options at Harris Boat Works, comparing shrinkwrap, home storage, and in-water wintering.](/lovable-uploads/kawartha-boat-storage-decision-map.png)
+![Three ways to store your boat on Rice Lake — at home DIY, HBW outdoor shrinkwrap, or indoor elsewhere, compared on cost and effort](/blog-visuals/boat-storage-3-ways-rice-lake.png)
 
 ## What good boat storage actually includes
 
