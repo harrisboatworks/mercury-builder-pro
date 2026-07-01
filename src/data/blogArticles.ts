@@ -27704,6 +27704,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Pickering boaters drive to Harris Boat Works — about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
+
 # Mercury Dealer for Pickering: You're Closer Than You Think
 
 Pickering is where the GTA starts to thin out. You're already east of the Don Valley, already past most of the traffic that makes the rest of the GTA's relationship with cottage country complicated.
