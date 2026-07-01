@@ -28016,6 +28016,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Ajax boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower, real pricing, and service](/blog-visuals/mercury-dealer-ajax-worth-the-drive.png)
+
 # Mercury Dealer for Ajax: 45 Minutes and Worth Every One
 
 Ajax is well-positioned for Rice Lake. You're already east of the worst GTA traffic, already close to the 401 corridor that runs you straight to Highway 115. At approximately 45 minutes, we're not asking you to rearrange your day.
