@@ -12367,7 +12367,7 @@ Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world
 
 *Last reviewed: 2026-05-28*
 
-A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Premier dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take. Build a Mercury quote at [mercuryrepower.
+A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Premier dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
 
 
 
@@ -12737,7 +12737,7 @@ Yes, you can finance a Mercury outboard or a full repower through us, with $0 do
 
 Money is the part of a repower nobody likes to ask about at the counter, so people circle it. They'll spend twenty minutes on props and shaft length and then mumble "and, uh, do you guys do financing?" on the way out the door. Yes. We do. And it's a lot simpler and a lot less painful than most people expect.
 
-Here is the whole thing laid out plainly: how the financing works, what the rate actually is right now, what your monthly payment looks like, the fine print we'd rather you hear from us, and how to start. No games. Build a real quote with your monthly payment at [mercuryrepower.
+Here is the whole thing laid out plainly: how the financing works, what the rate actually is right now, what your monthly payment looks like, the fine print we'd rather you hear from us, and how to start. No games.
 
 
 
@@ -34670,7 +34670,7 @@ This page does the math. Real Mercury repower price tiers, Ontario tax treatment
 
 Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
 
-This page does the math. Real Mercury repower price tiers, Ontario tax treatment, the actual lender path we use, current rates, and the monthly payment numbers we'd quote you. Build a real quote at [mercuryrepower.
+This page does the math. Real Mercury repower price tiers, Ontario tax treatment, the actual lender path we use, current rates, and the monthly payment numbers we'd quote you.
 
 
 
