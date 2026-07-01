@@ -100,11 +100,16 @@ for (const file of USER_FACING_FILES) {
 const STALE_YEAR_RX = /\b(2024|2025)\b/g;
 // Whitelist patterns: any one matching means the year is intentional.
 // 1) Preceded by a historical/connector word in EN, ES, FR.
-const HISTORICAL_WORD_RX = /\b(?:since|in|during|from|by|of|before|after|early|late|mid|spring|summer|fall|winter|season|desde|depuis|del|en|le|du|de)\s*$/i;
+const HISTORICAL_WORD_RX = /\b(?:since|in|during|from|by|of|before|after|early|late|mid|through|throughout|until|acquired|founded|established|spring|summer|fall|winter|season|desde|depuis|del|en|le|du|de)\s*$/i;
 // 2) Preceded by a month-day phrase (e.g. "December 31, ", "31 de diciembre de ").
 const MONTH_NAMES = '(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janvier|fevrier|f\u00e9vrier|mars|avril|mai|juin|juillet|aout|ao\u00fbt|septembre|octobre|novembre|decembre|d\u00e9cembre)';
-const MONTH_DAY_PREFIX_RX = new RegExp(`(?:${MONTH_NAMES})\\.?\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*$|\\d{1,2}\\s+de\\s+\\w+\\s+de\\s*$`, 'i');
-const MODEL_CONTEXT_RX = /^[\s,.'"-]*(?:Mercury|FourStroke|Pro\s*XS|Verado|SeaPro|Avator|lineup|model|models|season|release|launch)\b/i;
+const MONTH_DAY_PREFIX_RX = new RegExp(`(?:${MONTH_NAMES})\\.?\\s+(?:\\d{1,2}(?:st|nd|rd|th)?,?\\s*)?$|\\d{1,2}\\s+de\\s+\\w+\\s+de\\s*$`, 'i');
+const MODEL_CONTEXT_RX = /^[\s,.'"-]*(?:Mercury|FourStroke|Pro\s*XS|Verado|SeaPro|Avator|lineup|model|models|season|release|launch|recall|shift-?shaft|rebrand|spring|summer|fall|winter|or\s+(?:newer|later|earlier|older))\b/i;
+// 4) CJK year suffix immediately after the year (Korean 년 / Chinese-Japanese 年)
+//    — "2025년 가을" / "2024 年规则" are explicit dated references, not stale claims.
+const CJK_YEAR_SUFFIX_RX = /^\s*(?:년|年)/;
+// 5) Standalone parenthetical year "(2024)" — citation/annotation style.
+const PAREN_YEAR = (before, after) => /\(\s*$/.test(before) && /^\s*\)/.test(after);
 const staleYearLeaks = [];
 
 function extractProseChunks(src) {
@@ -158,6 +163,8 @@ for (const file of BLOG_FILES) {
       if (HISTORICAL_WORD_RX.test(before)) continue;
       if (MONTH_DAY_PREFIX_RX.test(before)) continue;
       if (MODEL_CONTEXT_RX.test(after)) continue;
+      if (CJK_YEAR_SUFFIX_RX.test(after)) continue;
+      if (PAREN_YEAR(before, after)) continue;
       // Skip if part of an ISO-like date (YYYY-MM-DD) - that's data, not prose claim
       if (/^[-/]\d/.test(after) || /\d[-/]$/.test(before)) continue;
       const line = lineNumberFor(src, ch.absStart + m.index);

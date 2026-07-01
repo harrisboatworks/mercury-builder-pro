@@ -5496,7 +5496,7 @@ Most Kawartha boaters who run the numbers land on the repower. As of 2026, a rep
 ::pull-quote
 quote: My old Johnson 90 finally let go on the Trent-Severn last August. Jay walked me through the new vs used math, and the new Mercury was actually the cheaper play once I ran **5 years out**. Should have done it in 2022.
 attribution: Brian K.
-source: HBW Bewdley repower customer, 2025
+source: HBW Bewdley repower customer (2025)
 ::
 
 The boaters who regret a repower are almost always the ones who put a new motor on a hull with a soft transom. That is why the transom check comes first, and why we do one before quoting anything.
@@ -10809,7 +10809,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 
 - Canada Revenue Agency, Luxury Tax Notice LTN5 (luxury tax on subject vessels no longer payable as of November 5, 2025). [canada.ca](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/luxury-tax.html)
 - NMMA, U.S. new powerboat retail sales (2024-2025 unit data).
-- Bank of Canada, policy rate (2025 series of cuts).
+- Bank of Canada, policy rate (series of cuts in 2025).
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -14923,7 +14923,7 @@ Here is an honest read on the market from a third-generation family marina that 
 
 This is the factor most buyers underestimate. Most major outboard manufacturers, Mercury, Yamaha, Suzuki, assemble or source components in the United States. Most aluminum fishing boat brands have North American manufacturing with significant U.S. content. Even boats assembled in Canada use U.S.-sourced components.
 
-When the Canadian dollar weakens against the U.S. dollar, boat prices in Canada rise, not immediately, but within one to two model cycles. The 2024, 2025 dollar movements have already been reflected in 2026 pricing for most dealers.
+When the Canadian dollar weakens against the U.S. dollar, boat prices in Canada rise, not immediately, but within one to two model cycles. The 2024-2025 dollar movements have already been reflected in 2026 pricing for most dealers.
 
 Trade tariff changes between Canada and the U.S. add another variable. The details of what applies to marine goods in 2026 are evolving. The practical takeaway: if tariff exposure increases further, 2026 prices are a floor, not a peak. Waiting for prices to drop on the assumption of tariff resolution assumes a political outcome that is not certain.
 
