@@ -2617,9 +2617,9 @@ We're a third-generation family shop, on this dock since 1947 and a Mercury deal
 
 ![Mercury FourStroke vs Pro XS vs Verado outboard family comparison — HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
 
-\`\`\`hbw-quote
-{"quote":"Same block, different attitude. The Pro XS just wants to run.","attribution":"Jay Harris, Harris Boat Works"}
-\`\`\`
+> Same block, different attitude. The Pro XS just wants to run.
+>
+> — Jay Harris, Harris Boat Works
 
 ## Who this is for
 
@@ -4631,9 +4631,12 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 
 *Same 2.1L block. Same 359 lb. The difference is fit.*
 
-\`\`\`hbw-decision
-{"title":"Which HP for your boat?","nodes":[{"q":"Boat under 18 ft, lighter aluminum?","yes":"75 FourStroke","no":"next"},{"q":"Bowrider or mid-size aluminum, family use?","yes":"90 FourStroke","no":"next"},{"q":"Heavier rig, fish-and-ski, pontoon, or want performance?","yes":"115 Pro XS","no":"Call us, we'll size it"}]}
-\`\`\`
+**Which one is right for you?**
+
+- Boat under 18 ft, lighter aluminum → **75 FourStroke**
+- Bowrider or mid-size aluminum, family use → **90 FourStroke**
+- Heavier rig, fish-and-ski, pontoon, or want performance → **115 Pro XS**
+- Not sure? Call us and we'll size it.
 
 ## Is Upgrading From 75 to 90 HP Worth It?
 
