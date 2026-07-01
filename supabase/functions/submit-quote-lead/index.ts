@@ -2,9 +2,16 @@
 // step of the quote builder. Lets ANONYMOUS visitors (not just logged-in
 // users) submit a quote so the team can follow up. The frontend still
 // fires hot-lead webhooks, customer/admin emails, and admin SMS itself.
+//
+// Abuse protection:
+//   - Honeypot: if the payload's `website` field is non-empty, silently
+//     accept-and-drop (200 with fake success). Real frontend never sets it.
+//   - Rate limit: 5 submissions / hour by IP AND 5 / hour by email,
+//     via _shared/rate-limit.ts (fails open on DB errors).
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
+import { checkRateLimit, rateLimitedResponse, getClientIdentifier } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
