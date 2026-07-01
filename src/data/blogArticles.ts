@@ -26513,6 +26513,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Richmond Hill boaters drive to Harris Boat Works — about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
+
 # Why Richmond Hill Customers Drive to Rice Lake for Their Mercury
 
 There are Mercury dealers closer to Richmond Hill. We know the map. We're not trying to pretend otherwise.
