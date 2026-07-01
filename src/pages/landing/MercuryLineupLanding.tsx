@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { MercuryLineupLandingSEO } from '@/components/seo/MercuryLineupLandingSEO';
+import { MercuryLineupLandingSEO, formatFromPriceCAD, unifyPriceCopy } from '@/components/seo/MercuryLineupLandingSEO';
 import { ALL_SEGMENTS, type LandingConfig } from '@/data/landing/mercuryLineupLandings';
 import { ChevronRight, Phone, ShieldCheck, Wrench, Award } from 'lucide-react';
 
@@ -24,6 +24,12 @@ function formatCAD(n: number): string {
 // Reusable landing page that mirrors the Pro XS 250 structure for every
 // /mercury/* HP-band page. All copy comes from the LandingConfig.
 export default function MercuryLineupLanding({ config }: { config: LandingConfig }) {
+  // Unify any hardcoded "$X,XXX CAD" in visible hero copy to the same live
+  // min-price the JSON-LD schema uses (Math.min of variants[].hbwPrice).
+  const fromPriceStr = formatFromPriceCAD(config.variants);
+  const h1 = unifyPriceCopy(config.h1, fromPriceStr);
+  const heroLead = unifyPriceCopy(config.heroLead, fromPriceStr);
+
   return (
     <div className="min-h-screen bg-repower-paper">
       <MercuryLineupLandingSEO config={config} />
@@ -38,7 +44,7 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
             <li><ChevronRight className="h-4 w-4" /></li>
             <li><Link to="/mercury-outboards-ontario" className="hover:text-foreground">Mercury Outboards</Link></li>
             <li><ChevronRight className="h-4 w-4" /></li>
-            <li className="text-foreground" aria-current="page">{config.h1}</li>
+            <li className="text-foreground" aria-current="page">{h1}</li>
           </ol>
         </nav>
 
@@ -50,11 +56,12 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
               {config.heroEyebrow}
             </div>
             <h1 className="text-3xl md:text-5xl font-semibold text-foreground mb-4 leading-tight">
-              {config.h1}
+              {h1}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              {config.heroLead}
+              {heroLead}
             </p>
+
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg">
                 <Link to={config.primaryCta?.to ?? '/quote/motor-selection'}>
