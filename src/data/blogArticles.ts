@@ -9209,9 +9209,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 50: December 14, 2026
   {
     slug: '2026-mercury-model-preview',
-    title: 'Mercury 2026 Model Preview: Ontario Guide',
+    title: 'Mercury 2027 Outboard Preview Guide',
     seoTitle: 'Mercury 2027 Outboard Preview: What is New',
-    description: 'Mercury\'s 2027 model year flips July 1, 2026. What we know is changing, what isn\'t, and how to decide between buying current 2026 or waiting for 2027.',
+    description: 'Mercury\'s 2027 model year is here as of July 1, 2026. What we know is changing, what isn\'t, and how to decide between remaining 2026 stock or the new 2027 lineup.',
     image: '/lovable-uploads/2027_Mercury_Preview.png',
     imageAlt: 'Black Mercury outboard on a Harris pontoon boat on an Ontario lake for the 2027 model year preview.',
     author: 'Harris Boat Works',
@@ -9236,7 +9236,7 @@ Honest answer, before we get into the details: for most repower customers, the m
 
 ## Quick recommendation
 
-If you need the motor on the water this summer or next spring, build a quote on the current 2026 lineup and lock it in. Pricing is set, inventory is real, and our 7-year warranty bonus (HBW-exclusive) is active on every new Mercury. Spring 2027 install slots fill before Christmas. If you're 12+ months out and the 2027 spec sheet might change your decision, watch the announcements and revisit. Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+If you need the motor on the water this summer or next spring, build a quote on the current 2027 lineup and lock it in. Pricing is set, inventory is real, and our 7-year warranty bonus (HBW-exclusive) is active on every new Mercury. Spring 2027 install slots fill before Christmas. If you're 12+ months out and the 2027 spec sheet might change your decision, watch the announcements and revisit. Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## What Actually Changes at the Model Year Flip
 
@@ -30746,7 +30746,7 @@ The less obvious benefit is **known maintenance horizon**. With a new motor you 
 - Impeller, plugs, and gearcase service have a documented baseline
 - If something fails inside the warranty period, it is the manufacturer's problem
 
-The third benefit is **current technology**. The 2026 Mercury lineup includes refinements in EFI calibration, SmartCraft integration, and noise reduction that did not exist on motors built before 2020. If you care about the smoothness and fuel economy of the new engines, you can feel the difference in a 30-second test drive.
+The third benefit is **current technology**. The 2027 Mercury lineup includes refinements in EFI calibration, SmartCraft integration, and noise reduction that did not exist on motors built before 2020. If you care about the smoothness and fuel economy of the new engines, you can feel the difference in a 30-second test drive.
 
 The downside is the price. A new Mercury 90 FourStroke ELPT installed and rigged on a typical Ontario aluminum boat lands in the $13,000 to $15,000 range depending on the package. New 115s go higher. That is real money to write a cheque for in May.
 
