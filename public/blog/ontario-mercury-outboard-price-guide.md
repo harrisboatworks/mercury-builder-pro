@@ -120,7 +120,7 @@ Ready to compare a 150 against a 200? Build both configurations on [mercuryrepow
 
 ## What's different about buying Mercury at a Premier dealer
 
-Mercury dealer certification runs Bronze, Silver, Gold, and Platinum. Platinum requires factory training across every Mercury family, full G3 diagnostic equipment, demonstrated service volumes, stocked parts inventory, and top-tier Customer Satisfaction Index scores.
+Mercury dealer certification runs Bronze, Silver, Gold, and Premier. Premier requires factory training across every Mercury family, full G3 diagnostic equipment, demonstrated service volumes, stocked parts inventory, and top-tier Customer Satisfaction Index scores.
 
 For the motor price itself, Premier and Bronze dealers are generally within a few hundred dollars of each other. The difference shows up in warranty work, complex diagnostics, repower expertise, parts availability, and what happens when something goes wrong three years after the sale.
 

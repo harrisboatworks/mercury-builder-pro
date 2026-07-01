@@ -19427,7 +19427,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 The motor is the same. The warranty terms are the same. What's different is the dealer.
 
-A Mercury Premier dealer (the highest tier) has factory-trained technicians, full diagnostic equipment, and guaranteed parts availability. **Warranty claims processed by Premier dealers go through faster**. Mercury's internal escalation system treats Platinum-flagged claims as higher priority.
+A Mercury Premier dealer (the highest tier) has factory-trained technicians, full diagnostic equipment, and guaranteed parts availability. **Warranty claims processed by Premier dealers go through faster**. Mercury's internal escalation system treats Premier-flagged claims as higher priority.
 
 We've been a Mercury dealer in Ontario since 1965. Every new Mercury we sell gets registered at point of sale, documented in our service file, and supported by the same shop for the full warranty life. If something breaks, you don't have to explain who did the rigging or whether the break-in service was done, it's all in our records.
 
@@ -19897,7 +19897,7 @@ If you Google "best Mercury dealer Ontario," you get a list of 30-40 dealers and
 
 Three things actually matter when evaluating an Ontario Mercury dealer:
 
-1. **Mercury dealer tier** (basic → gold → Platinum)
+1. **Mercury dealer tier** (basic → gold → Premier)
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
@@ -20075,7 +20075,7 @@ Premier status requires factory training on every Mercury family (FourStroke, Pr
 Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request.
 
 **How do I find out if a dealer is Mercury Premier?**
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
+Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier.
 
 **Why does dealer tier matter for me as a recreational boater?**
 For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Premier tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't.
@@ -20105,13 +20105,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: "What makes a Mercury Premier dealer different from a regular dealer?", answer: "Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario." },
       { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request." },
-      { question: "How do I find out if a dealer is Mercury Premier?", answer: "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum." },
+      { question: "How do I find out if a dealer is Mercury Premier?", answer: "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier." },
       { question: "Why does dealer tier matter for me as a recreational boater?", answer: "For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Premier tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't." },
       { question: "Should I drive farther for a better dealer?", answer: "For one-time large purchases (repowers, MPP-eligible motors, complex installs): yes, the drive time pays off. For routine work on simple motors: no, local-distance is fine. The decision frame is \"how often will I visit this dealer over the next 10 years?\"" },
       { question: "What's the average age of Mercury dealers in Ontario?", answer: "Mixed. Some have been in business 50+ years; others opened recently. Longevity isn't everything but it correlates with Mercury-knowledge depth and post-sale service quality." },
       { question: "Can I get a Mercury repower at any authorized dealer?", answer: "Technically yes. In practice, Premier dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity." },
       { question: "What is the best Mercury dealer near Peterborough?", answer: "It depends what you value, but Harris Boat Works, about 35 minutes south of Peterborough via Highway 28 in Gores Landing, is a Mercury Premier Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965." },
-      { question: "What does Mercury Premier Dealer status mean?", answer: "Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965." },
+      { question: "What does Mercury Premier Dealer status mean?", answer: "Premier is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965." },
     ],
   },
   {
@@ -20400,7 +20400,7 @@ What's actually available to a GTA boater needing Mercury service:
 
 **2. General-purpose marinas.** Multi-brand service shops. Some excellent, some marginal. Mercury isn't their primary specialty in most cases. Pros: nearby. Cons: variable Mercury expertise, may not have G3 diagnostic software, sometimes long parts delays for Mercury-specific items.
 
-**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Premier.
+**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Premier.** Most GTA dealers are basic-to-gold tier; few are Premier.
 
 **4. Mercury Premier dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
 
@@ -23919,7 +23919,7 @@ Ready to compare a 150 against a 200? Build both configurations on [mercuryrepow
 
 ## What's different about buying Mercury at a Premier dealer
 
-Mercury dealer certification runs Bronze, Silver, Gold, and Platinum. Platinum requires factory training across every Mercury family, full G3 diagnostic equipment, demonstrated service volumes, stocked parts inventory, and top-tier Customer Satisfaction Index scores.
+Mercury dealer certification runs Bronze, Silver, Gold, and Premier. Premier requires factory training across every Mercury family, full G3 diagnostic equipment, demonstrated service volumes, stocked parts inventory, and top-tier Customer Satisfaction Index scores.
 
 For the motor price itself, Premier and Bronze dealers are generally within a few hundred dollars of each other. The difference shows up in warranty work, complex diagnostics, repower expertise, parts availability, and what happens when something goes wrong three years after the sale.
 
@@ -26535,7 +26535,7 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 ## Why Platinum Status Matters More Than Location
 
-Richmond Hill has Mercury dealers. Not all of them are Platinum. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
+Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
 On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
 
@@ -26715,7 +26715,7 @@ We have that conversation honestly. Our repower decision guide on mercuryrepower
 
 A Mississauga customer who's seriously considering a repower and can't get a straight answer closer to home, that's the customer who tends to make the drive.
 
-## Platinum Tier on the Harder Jobs
+## Premier Tier on the Harder Jobs
 
 Mercury Premier is the top tier in their dealer program. It means deeper parts inventory, higher levels of technical training, and full warranty authorization. For a standard motor sale, tier may not matter much. For a complex repower, a warranty issue, or a technical diagnostic on an unusual setup, it matters. There aren't many Premier dealers in Ontario, and most of them aren't in the GTA.
 
@@ -27373,7 +27373,7 @@ The customers who find this meaningful are the ones who've already done the rese
 
 Mercury authorizes dealers at different tiers. Premier is the top level. It's not just a sign on the wall, it reflects ongoing training requirements, parts depth, and full warranty authorization. When the job gets complicated, a technical diagnostic, a warranty claim on a newer motor, a complex twin-engine rig, the difference between a Premier dealer and a lower-tier dealer can show up in resolution time and technical depth.
 
-Burlington has Mercury dealers. Not all of them are Platinum. That's worth knowing.
+Burlington has Mercury dealers. Not all of them are Premier. That's worth knowing.
 
 ## Burlington Buyers on Inland Lakes
 

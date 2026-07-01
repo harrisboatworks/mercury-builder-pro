@@ -49,7 +49,7 @@ What's actually available to a GTA boater needing Mercury service:
 
 **2. General-purpose marinas.** Multi-brand service shops. Some excellent, some marginal. Mercury isn't their primary specialty in most cases. Pros: nearby. Cons: variable Mercury expertise, may not have G3 diagnostic software, sometimes long parts delays for Mercury-specific items.
 
-**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Platinum.** Most GTA dealers are basic-to-gold tier; few are Premier.
+**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Premier.** Most GTA dealers are basic-to-gold tier; few are Premier.
 
 **4. Mercury Premier dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
 

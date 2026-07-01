@@ -49,7 +49,7 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 ## Why Platinum Status Matters More Than Location
 
-Richmond Hill has Mercury dealers. Not all of them are Platinum. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
+Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
 On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
 

@@ -35,7 +35,7 @@ If you Google "best Mercury dealer Ontario," you get a list of 30-40 dealers and
 
 Three things actually matter when evaluating an Ontario Mercury dealer:
 
-1. **Mercury dealer tier** (basic → gold → Platinum)
+1. **Mercury dealer tier** (basic → gold → Premier)
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
@@ -216,7 +216,7 @@ Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing
 
 ### How do I find out if a dealer is Mercury Premier?
 
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
+Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier.
 
 ### Why does dealer tier matter for me as a recreational boater?
 
@@ -240,7 +240,7 @@ It depends what you value, but Harris Boat Works, about 35 minutes south of Pete
 
 ### What does Mercury Premier Dealer status mean?
 
-Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965.
+Premier is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965.
 
 ## Next steps
 

@@ -3086,7 +3086,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How do I find out if a dealer is Mercury Premier?",
-        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum."
+        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier."
       },
       {
         "q": "Why does dealer tier matter for me as a recreational boater?",

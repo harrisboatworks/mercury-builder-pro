@@ -55,7 +55,7 @@ We have that conversation honestly. Our repower decision guide on mercuryrepower
 
 A Mississauga customer who's seriously considering a repower and can't get a straight answer closer to home, that's the customer who tends to make the drive.
 
-## Platinum Tier on the Harder Jobs
+## Premier Tier on the Harder Jobs
 
 Mercury Premier is the top tier in their dealer program. It means deeper parts inventory, higher levels of technical training, and full warranty authorization. For a standard motor sale, tier may not matter much. For a complex repower, a warranty issue, or a technical diagnostic on an unusual setup, it matters. There aren't many Premier dealers in Ontario, and most of them aren't in the GTA.
 
