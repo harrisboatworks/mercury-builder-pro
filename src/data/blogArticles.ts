@@ -19679,6 +19679,8 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 ---
 
+![Why Toronto boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
+
 ## The Toronto Dealer Reality
 
 The GTA has Mercury dealers. They're not all the same.
@@ -26337,6 +26339,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Markham boaters drive to Harris Boat Works — about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
+
 # Why Markham Customers Make the Drive to Rice Lake
 
 Markham has Mercury dealers closer to home. We know that. We're not pretending distance doesn't exist.
@@ -26510,6 +26514,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 75 minutes north of Richmond Hill via Highway 404 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Richmond Hill boaters drive to Harris Boat Works — about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
 
 # Why Richmond Hill Customers Drive to Rice Lake for Their Mercury
 
@@ -26858,6 +26864,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 80 minutes north of Vaughan via Highway 400 and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
 ---
+
+![Why Vaughan boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
 
 # Mercury Dealer for Vaughan: Why the Drive North Makes Sense
 
