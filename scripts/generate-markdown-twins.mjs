@@ -671,7 +671,50 @@ const BLOG_TWIN_SLUGS = [
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
 
-function blogMarkdown(article) {
+// Load cluster-driven related-guides data (mirrors static-prerender aside).
+// Emits: { relatedBySlug: {slug: string[]}, contexts: {slug: string}, titles: {slug: string} }
+function loadBlogClusterData() {
+  const dumpScript = `
+    import { blogClusters, blogClusterContexts, getRelatedSlugs } from '../src/data/blogClusters.ts';
+    import { blogArticles } from '../src/data/blogArticles.ts';
+    const titleBySlug = Object.fromEntries(blogArticles.map(a => [a.slug, a.title]));
+    const relatedBySlug = {};
+    for (const c of blogClusters) {
+      const all = [c.pillar, ...c.spokes];
+      for (const s of all) relatedBySlug[s] = getRelatedSlugs(s, 8);
+    }
+    process.stdout.write(JSON.stringify({ relatedBySlug, contexts: blogClusterContexts, titles: titleBySlug }));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-clusters-twins-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
+// Build the "## Related guides" markdown section for a given slug using the
+// same data + dedupe rules as the prerender aside: exclude slugs already
+// linked in body, cap at 5, skip if fewer than 2 remain.
+function renderRelatedGuidesMarkdown(slug, contentMarkdown, clusterData) {
+  const siblings = clusterData.relatedBySlug[slug];
+  if (!siblings || siblings.length === 0) return '';
+  const linkedInBody = new Set(
+    Array.from((contentMarkdown || '').matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(m => m[1])
+  );
+  const picked = siblings.filter(s => !linkedInBody.has(s)).slice(0, 5);
+  if (picked.length < 2) return '';
+  const lines = ['## Related guides', ''];
+  for (const s of picked) {
+    const title = clusterData.titles[s] || s;
+    const ctx = clusterData.contexts[s];
+    lines.push(ctx ? `- [${title}](/blog/${s}), ${ctx}` : `- [${title}](/blog/${s})`);
+  }
+  return lines.join('\n');
+}
+
+function blogMarkdown(article, clusterData) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const extra = [
     `title: ${JSON.stringify(article.title)}`,
@@ -689,6 +732,11 @@ function blogMarkdown(article) {
     : '_(no FAQs)_';
   const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
   const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
+  // Cluster-driven related-guides section (single source of truth after the
+  // 2026-07-01 removal of hard-coded in-content Related guides blocks).
+  const relatedGuidesMd = clusterData
+    ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
+    : '';
 
   return [
     mdFrontmatter(`/blog/${article.slug}.md`, extra, lastUpdated),
@@ -708,6 +756,8 @@ function blogMarkdown(article) {
     '',
     faqMd,
     '',
+    relatedGuidesMd,
+    relatedGuidesMd ? '' : null,
     '## Next steps',
     '',
     `- Build a quote: ${SITE_URL}/quote/motor-selection`,
@@ -723,7 +773,7 @@ function blogMarkdown(article) {
     '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
     '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
     '',
-  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+  ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
 function pricingReferenceMarkdown(motorRecords) {
   const fmtCAD = (n) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
