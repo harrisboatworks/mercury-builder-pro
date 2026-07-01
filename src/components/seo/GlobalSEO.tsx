@@ -64,8 +64,15 @@ export function GlobalSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1456,
-          "longitude": -78.2542
+          "latitude": 44.121684,
+          "longitude": -78.241502
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "313",
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "areaServed": [
           {
