@@ -2830,7 +2830,7 @@ const dedupedBlogArticles = blogArticles.filter(a => {
 // Build blog article route configs.
 const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   path: `/blog/${article.slug}`,
-  title: article.seoTitle || `${article.title} | Harris Boat Works Blog`,
+  title: buildBlogHeadTitle(article.title),
   description: article.description,
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
