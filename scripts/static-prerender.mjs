@@ -5994,7 +5994,7 @@ if (motorTwinSummaries.length > 0) {
   verifyMd({
     relPath: motorTwinSummaries[0].path,
     label: 'Sample motor twin',
-    requireSubstrings: ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api'],
+    requireSubstrings: ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote'],
   });
 }
 
