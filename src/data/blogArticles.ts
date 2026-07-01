@@ -19274,9 +19274,7 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ---
 
-\`\`\`hbw-stat
-{"stat":"3-year","label":"standard Mercury factory warranty","sub":"Extended coverage available"}
-\`\`\`
+![Mercury outboard warranty in Canada — 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
 
 \`\`\`hbw-comparison
 {"title":"Warranty coverage","columns":["Standard","Extended (optional)"],"rows":[{"label":"Term","values":["3 years","Several more years"]},{"label":"Cost","values":["Included","Add-on, quoted"]},{"label":"Best for","values":["Most buyers","High-hour / long-keep owners"]}],"note":"Any active Mercury bonus-warranty promotion is confirmed at quote time."}
@@ -32153,9 +32151,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Full details on our [Peterborough location page](/locations/peterborough-mercury-dealer). Family-owned since 1947, Mercury dealer since 1965.
 
-\`\`\`hbw-map
-{"origin":"Peterborough","destination":"Harris Boat Works, Gores Landing","driveTime":"about 25 minutes","note":"South to Rice Lake"}
-\`\`\`
+![Why Peterborough boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
 \`\`\`hbw-stat
 {"stat":"1947","label":"family-owned on Rice Lake since","sub":"Mercury dealer since 1965 · Mercury Premier Dealer"}
