@@ -28341,6 +28341,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
+![Why Bowmanville boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
+
 # Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 
 Let's be clear about the geography: Bowmanville is the closest significant town to us on the 401 corridor. At approximately 35 minutes north via Highway 115 and County Road 28, we're not a destination for you, we're a nearby option.
