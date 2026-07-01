@@ -27,14 +27,14 @@ content_type: blog_article
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
-> **Quick answer:** HBW has been on Rice Lake in the Kawarthas, Ontario since 1947 and a Mercury dealer since 1965. Three generations of the Harris family, a current Mercury Marine Platinum Dealer, and the only Mercury dealer on the lake. We post installed pricing online, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
+> **Quick answer:** HBW has been on Rice Lake in the Kawarthas, Ontario since 1947 and a Mercury dealer since 1965. Three generations of the Harris family, a current Mercury Marine Premier Dealer, and the only Mercury dealer on the lake. We post installed pricing online, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
-Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Platinum dealer, the highest tier Mercury awards, which gives our customers factory-direct support, priority parts access, and a shop built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
+Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the highest tier Mercury awards, which gives our customers factory-direct support, priority parts access, and a shop built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
 
 **Build a quote on any Mercury at /quote/motor-selection, or call us at (905) 342-2153.**
 
 ## Quick recommendation
-If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Platinum dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
+If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
 
 We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
 
@@ -47,17 +47,17 @@ My grandfather George founded Harris Boat Works in 1947 and ran it until 1978. H
 
 That is not a sales line. It's just how it worked out.
 
-### 2. Mercury Platinum dealer status
-Mercury rates dealers in tiers based on volume, service quality, customer satisfaction, and operational standards. Platinum is the top tier, and it's not decorative.
+### 2. Mercury Premier dealer status
+Mercury rates dealers in tiers based on volume, service quality, customer satisfaction, and operational standards. Premier is the top tier, and it's not decorative.
 
-What Platinum status gives our customers:
+What Premier status gives our customers:
 - Priority parts allocation during high-demand periods
 - Earlier access to new product launches
 - Factory-direct technical support for complex service issues
 - Mercury-certified technician training at the highest levels
 - Faster warranty claim processing
 
-Our Mercury-only focus is part of why we maintain Platinum status.
+Our Mercury-only focus is part of why we maintain Premier status.
 
 ### 3. Exclusive Mercury focus
 We sell Mercury exclusively. No Yamaha. No Honda. No Suzuki.
@@ -112,7 +112,7 @@ Ready to talk repower? Call (905) 342-2153 or build a quote at /quote/motor-sele
 Mercury sets MSRP. Dealer pricing is competitive across the network. Our pricing is in line with other Mercury dealers. We compete on service quality, expertise, and long-term relationships.
 
 ### "Can I get a better deal at a multi-brand dealer?"
-Sometimes nominally on motor price, but the long-term math usually favors HBW. Our parts inventory, service speed, and Platinum-level support often save more than a small upfront price difference.
+Sometimes nominally on motor price, but the long-term math usually favors HBW. Our parts inventory, service speed, and Premier-level support often save more than a small upfront price difference.
 
 ### "Do you handle non-Mercury motors?"
 Some non-Mercury service we handle. But our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer.
@@ -144,9 +144,9 @@ If the work falls outside our core, we'll tell you that and point you toward a s
 
 Since 1965. The marina itself was founded in 1947, and the Harris family has owned and run it for three generations in Gores Landing on Rice Lake.
 
-### What is a Mercury Platinum dealer?
+### What is a Mercury Premier dealer?
 
-Platinum is the highest tier in Mercury's dealer rating system, awarded on volume, service quality, customer satisfaction, and operational standards. It gives our customers priority parts access, factory-direct technical support, and faster warranty processing.
+Premier is the highest tier in Mercury's dealer rating system, awarded on volume, service quality, customer satisfaction, and operational standards. It gives our customers priority parts access, factory-direct technical support, and faster warranty processing.
 
 ### Why does Harris Boat Works only sell Mercury?
 

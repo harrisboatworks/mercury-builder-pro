@@ -19,7 +19,7 @@ price_cad: 6144
 # 25 ELPT FourStroke
 
 Mercury FourStroke 25 HP outboard motor (model 1A25413BK).
-Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer · Mercury dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 

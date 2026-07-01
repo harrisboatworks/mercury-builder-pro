@@ -12,7 +12,7 @@ description: "A frank look at what \"best Mercury dealer in Ontario\" actually m
 category: "Mercury Outboards"
 date_published: 2026-05-13
 date_modified: 2026-06-07
-keywords: ["best Mercury dealer Ontario","Mercury Platinum dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
+keywords: ["best Mercury dealer Ontario","Mercury Premier dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -35,15 +35,15 @@ If you Google "best Mercury dealer Ontario," you get a list of 30-40 dealers and
 
 Three things actually matter when evaluating an Ontario Mercury dealer:
 
-1. **Mercury dealer tier** (basic → gold → Platinum)
+1. **Mercury dealer tier** (basic → gold → Premier)
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
-Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Premier dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
 
 ## Near Peterborough or the Kawarthas?
 
-A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 35 minutes south of Peterborough via Highway 28 on Rice Lake's south shore, and the case for making the drive is simple: Mercury Platinum Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
+A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 35 minutes south of Peterborough via Highway 28 on Rice Lake's south shore, and the case for making the drive is simple: Mercury Premier Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
 
 ---
 
@@ -61,9 +61,9 @@ A lot of this search traffic is really asking "who should I trust near Peterboro
 
 **Gold / advanced dealer:** higher tech training, more diagnostic capability. Can handle most warranty work.
 
-**Platinum dealer:** the top tier. Factory-trained on every Mercury family (FourStroke, Pro XS, Verado, SeaPro, Avator), full G3 diagnostic kit, stocked parts inventory, demonstrated annual sales + service volumes, top-tier CSI scores. **There are a small number of Platinum dealers in Ontario.**
+**Premier dealer:** the top tier. Factory-trained on every Mercury family (FourStroke, Pro XS, Verado, SeaPro, Avator), full G3 diagnostic kit, stocked parts inventory, demonstrated annual sales + service volumes, top-tier CSI scores. **There are a small number of Premier dealers in Ontario.**
 
-For most casual purchases (small motors, kicker motors, basic service), basic-tier dealers work fine. **For repower, complex diagnostic work, or warranty-heavy service, Platinum tier is meaningfully better.**
+For most casual purchases (small motors, kicker motors, basic service), basic-tier dealers work fine. **For repower, complex diagnostic work, or warranty-heavy service, Premier tier is meaningfully better.**
 
 ---
 
@@ -71,10 +71,10 @@ For most casual purchases (small motors, kicker motors, basic service), basic-ti
 
 Here's the gap in Mercury's public communication: **Mercury's dealer locator at mercurymarine.com doesn't show tier**. You see "authorized dealer" and that's it.
 
-So a 1-tech mobile mechanic who got Mercury authorization 5 years ago and a 40-year Platinum dealer with 15 factory-trained techs both look identical in Mercury's locator. **The only way to know is to ask the dealer directly.**
+So a 1-tech mobile mechanic who got Mercury authorization 5 years ago and a 40-year Premier dealer with 15 factory-trained techs both look identical in Mercury's locator. **The only way to know is to ask the dealer directly.**
 
 Questions to ask any Mercury dealer:
-- "Are you Mercury Platinum certified?" (Yes = factory training current)
+- "Are you Mercury Premier certified?" (Yes = factory training current)
 - "Do you have G3 diagnostic software?" (Yes = serious diagnostic capability)
 - "How many Mercury-trained techs do you have on staff?" (more = better service-bandwidth)
 - "What's your typical service turnaround?" (1-3 days = healthy, 2-4 weeks = capacity-strained)
@@ -116,7 +116,7 @@ A real "best Mercury dealer" comparison should evaluate:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Tier:** Mercury Platinum vs. lower
+**Tier:** Mercury Premier vs. lower
 **Diagnostic capability:** G3 software present + multiple trained techs
 **Service backlog:** healthy throughput (1-3 day turnarounds) vs. capacity-strained
 **Pricing transparency:** all-in published quotes vs. "call for pricing"
@@ -132,7 +132,7 @@ Score any dealer (including HBW) on those 9 criteria. The picture becomes clear.
 
 ## What HBW Brings Specifically
 
-We're not the only Mercury Platinum dealer in Ontario. We are not necessarily the right answer for every boater.
+We're not the only Mercury Premier dealer in Ontario. We are not necessarily the right answer for every boater.
 
 What we're good at:
 - **Mercury repowers** (volume + transparency + sea-trial expertise)
@@ -162,7 +162,7 @@ Some honest cases where HBW isn't the best dealer:
 - **You only want walk-in service.** If you'd never drive to a Mercury dealer for service, HBW won't be the dealer you visit.
 - **You prefer high-pressure sales tactics or "deal of the week" pricing.** We don't do those.
 
-Real talk: we lose business to dealers closer to GTA buyers all the time, especially for small-motor purchases. That's fine. The customers we serve well are the ones who specifically value Platinum-tier expertise, transparent pricing, and a service relationship.
+Real talk: we lose business to dealers closer to GTA buyers all the time, especially for small-motor purchases. That's fine. The customers we serve well are the ones who specifically value Premier-tier expertise, transparent pricing, and a service relationship.
 
 ---
 
@@ -176,7 +176,7 @@ The customer profile we're a clear best-fit for:
 - **MPP extended warranty buyers** wanting their warranty processed at the dealer that sold the motor
 - **Ontario commercial operators** (guides, charters, rentals) needing SeaPro tier support
 - **Anyone who values transparent pricing** over "call for quote"
-- **Rice Lake / Kawartha-area boat owners** wanting a Mercury Platinum dealer in their service area
+- **Rice Lake / Kawartha-area boat owners** wanting a Mercury Premier dealer in their service area
 - **GTA owners wanting bundled storage + service relationship** (one shop handles everything off-season)
 
 If 2-3 of those describe you, we're worth the conversation.
@@ -187,7 +187,7 @@ If 2-3 of those describe you, we're worth the conversation.
 
 Five-question checklist for any dealer:
 
-1. **"Are you Mercury Platinum certified?"** Yes = factory-current on every Mercury family. Anything else means lower-tier service capability.
+1. **"Are you Mercury Premier certified?"** Yes = factory-current on every Mercury family. Anything else means lower-tier service capability.
 2. **"Show me your most recent rigging quote for a [boat type] with a [motor HP]."** Transparent dealers can do this. Opaque dealers say "we'll get you a quote."
 3. **"What's your service backlog?"** Healthy: 1-3 day turnarounds. Strained: 2-4+ weeks. Strained dealers either over-promise on timing or you wait.
 4. **"What's your trade-in process?"** Honest dealers walk you through their valuation method. Opaque dealers say "bring it in and we'll see."
@@ -206,21 +206,21 @@ A dealer that gives a clear, specific answer to all 5 in under 10 minutes is a r
 
 ## FAQs
 
-### What makes a Mercury Platinum dealer different from a regular dealer?
+### What makes a Mercury Premier dealer different from a regular dealer?
 
-Platinum status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Platinum dealers in Ontario.
+Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario.
 
 ### Is Mercury motor pricing the same at all Ontario dealers?
 
 Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request.
 
-### How do I find out if a dealer is Mercury Platinum?
+### How do I find out if a dealer is Mercury Premier?
 
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Platinum dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum.
+Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier.
 
 ### Why does dealer tier matter for me as a recreational boater?
 
-For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Platinum tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't.
+For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Premier tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't.
 
 ### Should I drive farther for a better dealer?
 
@@ -232,15 +232,15 @@ Mixed. Some have been in business 50+ years; others opened recently. Longevity i
 
 ### Can I get a Mercury repower at any authorized dealer?
 
-Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
+Technically yes. In practice, Premier dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
 
 ### What is the best Mercury dealer near Peterborough?
 
-It depends what you value, but Harris Boat Works, about 35 minutes south of Peterborough via Highway 28 in Gores Landing, is a Mercury Platinum Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965.
+It depends what you value, but Harris Boat Works, about 35 minutes south of Peterborough via Highway 28 in Gores Landing, is a Mercury Premier Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965.
 
-### What does Mercury Platinum Dealer status mean?
+### What does Mercury Premier Dealer status mean?
 
-Platinum is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Platinum status and has been a Mercury dealer since 1965.
+Premier is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965.
 
 ## Next steps
 

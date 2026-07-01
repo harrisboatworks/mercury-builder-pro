@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise"
-description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap, winterization."
+description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization."
 category: "Service & Maintenance"
 date_published: 2026-05-15
 date_modified: 2026-05-15
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise
 
-> Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap, winterization.
+> Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
@@ -192,7 +192,7 @@ For storage quotes, winterization bookings, and spring commissioning, the fastes
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
-Mercury Marine Platinum Dealer. Established 1947.
+Mercury Marine Premier Dealer. Established 1947.
 
 ## What we see at HBW
 
@@ -205,7 +205,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ## Related guides
 
 - [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
-- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each.
+- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): A Mercury Premier dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each.
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
 - [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
 

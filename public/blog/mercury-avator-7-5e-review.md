@@ -116,7 +116,7 @@ If the Avator 7.5e fits the job, it is one of the cleanest, quietest motors we i
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, family-owned since 1947. A Mercury Platinum Dealer, selling Mercury since 1965.
+Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Mercury since 1965.
 
 **Related guides:**
 - [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)

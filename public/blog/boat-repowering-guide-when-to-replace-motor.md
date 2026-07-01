@@ -230,7 +230,7 @@ New Mercury motors come with a 3-year factory limited warranty. Current promotio
 
 ### What warranty comes with a Mercury repower?
 
-A Mercury outboard installed as a repower comes with the standard Mercury 3-year limited warranty for recreational use, covering defects in materials and workmanship, regardless of the hull's age. Annual service at an authorized Mercury dealer is required to maintain warranty validity. Extended protection plans are available at time of repower. At Harris Boat Works, as a Mercury Platinum dealer and Certified Repower Center, warranty service and claims are handled directly, no need to deal with Mercury independently.
+A Mercury outboard installed as a repower comes with the standard Mercury 3-year limited warranty for recreational use, covering defects in materials and workmanship, regardless of the hull's age. Annual service at an authorized Mercury dealer is required to maintain warranty validity. Extended protection plans are available at time of repower. At Harris Boat Works, as a Mercury Premier dealer and Certified Repower Center, warranty service and claims are handled directly, no need to deal with Mercury independently.
 
 ### How long should a Mercury outboard last before it needs repowering?
 

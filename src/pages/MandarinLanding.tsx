@@ -13,8 +13,8 @@ export default function MandarinLanding() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/zh#webpage`,
         "url": `${SITE_URL}/zh`,
-        "name": "欢迎来到Harris Boat Works, 安大略省Mercury Platinum 授权经销商",
-        "description": "Harris Boat Works, 安大略省Mercury Marine Platinum 授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
+        "name": "欢迎来到Harris Boat Works, 安大略省Mercury Premier 授权经销商",
+        "description": "Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
         "inLanguage": "zh-Hans",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -79,13 +79,13 @@ export default function MandarinLanding() {
     <div className="min-h-screen bg-background" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机经销商 | Harris Boat Works 安大略省</title>
-        <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine Platinum 授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
+        <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
         <link rel="canonical" href={`${SITE_URL}/zh`} />
         <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
         <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
         <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
-        <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury Platinum 授权经销商" />
-        <meta property="og:description" content="安大略省Mercury Marine Platinum 授权经销商。在线透明报价。" />
+        <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury Premier 授权经销商" />
+        <meta property="og:description" content="安大略省Mercury Marine Premier 授权经销商。在线透明报价。" />
         <meta property="og:url" content={`${SITE_URL}/zh`} />
         <meta property="og:locale" content="zh_CN" />
         <meta property="og:type" content="website" />
@@ -100,7 +100,7 @@ export default function MandarinLanding() {
             欢迎来到Harris Boat Works
           </h1>
           <p className="text-lg text-primary font-medium mb-2">
-            安大略省Mercury Platinum 授权经销商
+            安大略省Mercury Premier 授权经销商
           </p>
           <p className="text-sm text-muted-foreground">
             Harris Boat Works · 1947年创立 · Rice Lake, Gores Landing, ON · 905-342-2153
@@ -131,7 +131,7 @@ export default function MandarinLanding() {
               Harris Boat Works 于1947年创立，至今已有三代家族经营，是安大略省历史最悠久的独立船坞之一。我们位于Rice Lake湖畔的Gores Landing小镇，距多伦多市中心约1.5小时车程。
             </p>
             <p>
-              我们是 <strong>Mercury Marine Platinum 授权经销商</strong>——这是Mercury厂家授予经销商的最高级别认证，代表最全面的零件库存、最高标准的技术培训，以及完整的厂家质保支持。
+              我们是 <strong>Mercury Marine Premier 授权经销商</strong>——这是Mercury厂家授予经销商的最高级别认证，代表最全面的零件库存、最高标准的技术培训，以及完整的厂家质保支持。
             </p>
           </div>
         </section>
@@ -224,7 +224,7 @@ export default function MandarinLanding() {
           <h2 className="text-2xl font-light text-foreground mb-4">为什么选择Harris Boat Works</h2>
           <div className="space-y-3 text-foreground text-sm">
             <p><strong>透明定价，没有套路。</strong> mercuryrepower.ca 上显示的价格，就是真实价格。所有顾客看到的完全一样。</p>
-            <p><strong>Mercury Platinum 经销商。</strong> Mercury厂家的最高级别认证。</p>
+            <p><strong>Mercury Premier 经销商。</strong> Mercury厂家的最高级别认证。</p>
             <p><strong>78年家族信任。</strong> 自1947年起，三代家族经营。</p>
             <p><strong>Rice Lake本地专家。</strong> 了解安大略省内陆湖区的水上条件和使用环境。</p>
           </div>

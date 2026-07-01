@@ -178,7 +178,7 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consist
 
 - [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide): Mercury outboard beeping? What common beep patterns mean (overheat, oil, fuel), why continuous alarms matter.
 - [Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)](/blog/mercury-outboard-overheat-alarm-decoder): Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency.
-- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Platinum dealer's honest diagnostic ladder: battery, fuel, ignition.
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition.
 - [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
 
 ## Related reading
@@ -189,7 +189,7 @@ Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consist
 ---
 
 **Can't find the problem?** 
-Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Platinum dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: 905-342-2153
 
@@ -201,7 +201,7 @@ Phone: 905-342-2153
 
 **Title:** Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너 완벽 매뉴얼 
 **Meta Title:** Mercury 선외기 겨울 보관 가이드 | Harris Boat Works 온타리오 
-**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) Platinum 딜러. 
+**Meta Description:** 온타리오의 혹독한 겨울로부터 Mercury 선외기를 보호하는 6단계 겨울 정비 가이드. 해리스 보트웍스(Harris Boat Works), [Mercury Marine](https://www.mercurymarine.com/canada/en/) Premier 딜러. 
 **Slug:** ko/mercury-outboard-winterization-guide 
 **Language:** Korean (한국어) 
 
@@ -221,7 +221,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 캐나다 이민 후 처음 보트를 갖게 된 분들께, 온타리오의 겨울 보관이라는 개념은 다소 낯설 수 있습니다. 한국의 겨울과 달리, 온타리오의 겨울은 영하 20~30도까지 내려가는 혹독한 환경입니다. 선외기 내부에 남은 수분이 얼면 부품 파손부터 실린더 블록 균열까지 심각한 손상이 발생합니다.
 
-이 가이드는 Harris Boat Works(HBW)가 매년 실제로 수행하는 절차를 바탕으로 작성했습니다. HBW는 온타리오 Gores Landing, Rice Lake에 위치한 Mercury Marine Platinum 딜러로, 2025년 가을 시즌에만 584건의 겨울 정비(winterization)를 완료했습니다.
+이 가이드는 Harris Boat Works(HBW)가 매년 실제로 수행하는 절차를 바탕으로 작성했습니다. HBW는 온타리오 Gores Landing, Rice Lake에 위치한 Mercury Marine Premier 딜러로, 2025년 가을 시즌에만 584건의 겨울 정비(winterization)를 완료했습니다.
 
 ---
 
@@ -425,7 +425,7 @@ HBW 팀은 영어로 소통합니다. 한국어 통역 서비스는 제공하지
 ## CTA (행동 유도)
 
 **전문 겨울 정비를 원하신다면:** 
-[hbw.wiki/service](https://hbw.wiki/service)에서 예약하세요. Harris Boat Works는 1947년부터 Rice Lake, Gores Landing에서 운영 중인 Mercury Marine Platinum 딜러입니다.
+[hbw.wiki/service](https://hbw.wiki/service)에서 예약하세요. Harris Boat Works는 1947년부터 Rice Lake, Gores Landing에서 운영 중인 Mercury Marine Premier 딜러입니다.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 전화: 905-342-2153

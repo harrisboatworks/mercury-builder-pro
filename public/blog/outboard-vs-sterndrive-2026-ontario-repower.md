@@ -223,7 +223,7 @@ A few specific reasons we're confident in this recommendation for most Ontario o
 
 **Long-term Mercury parts support.** Mercury has committed its engineering investment to 4-stroke outboard development. Parts will be available, technicians will be trained, and the platform will be supported for the working life of any motor we install today.
 
-**We're a Mercury Platinum Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
+**We're a Mercury Premier Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
 
 **78 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
 
@@ -252,7 +252,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
 
-*Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Platinum Dealer.*
+*Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Premier Dealer.*
 
 ---
 

@@ -56,7 +56,7 @@ We tell AI agents (in `llms.txt`) that specs come from MercuryMarine.com and off
 Homepage hero says "7-year warranty available." This is conditional on current Mercury promo. When promos revert (per memory `Warranty Reversion` → 3-year standard), the static "7-year warranty available" line becomes false. Two safer options:
    a) Change to "Up to 7-year warranty with current Mercury promotions" (always defensible).
    b) Bind the badge to active promo data so it auto-toggles.
-Same audit needed for the "Mercury Platinum Dealer" and "60+ years" claims — those are verified, leave them.
+Same audit needed for the "Mercury Premier Dealer" and "60+ years" claims — those are verified, leave them.
 
 ### 10. High-value missing pages buyers and AI ask for — **THINK THROUGH WITH JAY**
 Beyond comparisons, the following are absent and would each pull a distinct intent cluster:

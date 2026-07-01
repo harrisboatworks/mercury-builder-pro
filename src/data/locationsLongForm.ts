@@ -36,7 +36,7 @@ const PICKUP_POLICY =
 const boundary = (city: string) =>
   `Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in ${city}. Customers from ${city} bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.`;
 const VISIT =
-  "Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 · Phone (905) 342-2153 · Family-owned since 1947 · Mercury Platinum Dealer, selling Mercury since 1965.";
+  "Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 · Phone (905) 342-2153 · Family-owned since 1947 · Mercury Premier Dealer, selling Mercury since 1965.";
 
 interface SpecInput {
   slug: string;
@@ -73,7 +73,7 @@ function toLocation(s: SpecInput): LocationPageData {
     popularHpRanges: ['9.9–25 HP tiller', '60–115 HP family and pontoon', '150–225 HP Pro XS'],
     whyChooseUs: [
       'Family-owned in Gores Landing since 1947',
-      'Mercury Marine Platinum Dealer',
+      'Mercury Marine Premier Dealer',
       'Authorized Mercury dealer since 1965',
       'Every installed repower is lake-tested on Rice Lake before pickup',
     ],
@@ -108,19 +108,19 @@ const SPECS: SpecInput[] = [
     slug: 'port-hope',
     title: 'Mercury Repower near Port Hope, Ontario',
     metaDescription:
-      'Mercury repower 30 min north of Port Hope in Gores Landing. Mercury Platinum Dealer. Quote, rig, Rice Lake water test, pickup at HBW.',
+      'Mercury repower 30 min north of Port Hope in Gores Landing. Mercury Premier Dealer. Quote, rig, Rice Lake water test, pickup at HBW.',
     region: 'Port Hope',
     driveTime: 'about 30 minutes north of Port Hope',
     lat: 43.9498,
     lng: -78.2920,
     h1: 'Mercury Repower near Port Hope, Ontario',
     intro:
-      "Harris Boat Works is 30 minutes north of Port Hope in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 32 km on county roads. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Like Cobourg, Port Hope has many residents who keep boats or cottages on Rice Lake, and we're their closest Mercury repower shop. No shipping or delivery. Customers drive to Gores Landing for pickup after we rig, install, and water-test on Rice Lake. Typical full repower: $11,000–$40,000 CAD.",
+      "Harris Boat Works is 30 minutes north of Port Hope in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 32 km on county roads. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Like Cobourg, Port Hope has many residents who keep boats or cottages on Rice Lake, and we're their closest Mercury repower shop. No shipping or delivery. Customers drive to Gores Landing for pickup after we rig, install, and water-test on Rice Lake. Typical full repower: $11,000–$40,000 CAD.",
     keyFacts: [
       'Drive time: ~30 min north to Gores Landing',
       'Distance: ~32 km on county roads',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Typical full repower: $11,000–$40,000 CAD',
       'County tie: Port Hope and Gores Landing are both in Northumberland County',
     ],
@@ -176,19 +176,19 @@ const SPECS: SpecInput[] = [
     slug: 'bewdley',
     title: 'Mercury Repower for Bewdley Boaters, Ontario',
     metaDescription:
-      'Mercury repower 15 min east of Bewdley along Rice Lake. Mercury Platinum Dealer, same-lake water test, pickup in Gores Landing.',
+      'Mercury repower 15 min east of Bewdley along Rice Lake. Mercury Premier Dealer, same-lake water test, pickup in Gores Landing.',
     region: 'Bewdley',
     driveTime: 'about 15 minutes east of Bewdley along Rice Lake',
     lat: 44.0833,
     lng: -78.3500,
     h1: 'Mercury Repower for Bewdley Boaters, Ontario',
     intro:
-      'Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice Lake. Bewdley sits at the west end of the lake, and HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We\'re a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. We share your lake. Every Mercury we rig gets water-tested on Rice Lake before pickup at Gores Landing. No shipping or delivery to Bewdley. Typical full repower: $11,000–$40,000 CAD depending on HP.',
+      'Harris Boat Works is 15 minutes east of Bewdley along the south shore of Rice Lake. Bewdley sits at the west end of the lake, and HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We\'re a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. We share your lake. Every Mercury we rig gets water-tested on Rice Lake before pickup at Gores Landing. No shipping or delivery to Bewdley. Typical full repower: $11,000–$40,000 CAD depending on HP.',
     keyFacts: [
       'Drive time: ~15 min east along Rice Lake shore',
       'Distance: ~15 km by road on County Road 9',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Same lake: Rice Lake, ~30 km long, south shore',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -196,7 +196,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How far is Harris Boat Works from Bewdley?',
         paragraphs: [
-          "Bewdley is the west-end town on Rice Lake. We're the mid-south-shore village. Door-to-door is roughly 15 km, about 15 minutes by road depending on the season. For Bewdley boaters, this is one of the shortest drives to a Mercury Platinum repower shop anywhere, and we're on the same lake your boat already runs on.",
+          "Bewdley is the west-end town on Rice Lake. We're the mid-south-shore village. Door-to-door is roughly 15 km, about 15 minutes by road depending on the season. For Bewdley boaters, this is one of the shortest drives to a Mercury Premier repower shop anywhere, and we're on the same lake your boat already runs on.",
           "That shared geography is the whole point. We've rigged a lot of boats for Bewdley customers since 1965. The west end of Rice Lake has its own chop pattern, its own weed lines, its own shallow shoulders. We know that water because we run boats across it.",
         ],
       },
@@ -244,27 +244,27 @@ const SPECS: SpecInput[] = [
     slug: 'gores-landing',
     title: 'Mercury Repower in Gores Landing, Ontario',
     metaDescription:
-      'Mercury Platinum Dealer in Gores Landing on Rice Lake. The village marina, family-owned since 1947. Pickup at the shop after the lake test.',
+      'Mercury Premier Dealer in Gores Landing on Rice Lake. The village marina, family-owned since 1947. Pickup at the shop after the lake test.',
     region: 'Gores Landing',
     driveTime: 'local to Gores Landing, under 5 minutes or walking',
     lat: 44.1147,
     lng: -78.2564,
     h1: 'Mercury Repower in Gores Landing, Ontario',
     intro:
-      "Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina, family-owned since 1947 and a Mercury Platinum Dealer, selling Mercury since 1965. For most Gores Landing customers the trip is a walk, a five-minute truck ride, or no drive at all if the boat is already at our dock. Every Mercury we rig is water-tested on Rice Lake before pickup. No shipping. Typical full repower: $11,000–$40,000 CAD.",
+      "Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina, family-owned since 1947 and a Mercury Premier Dealer, selling Mercury since 1965. For most Gores Landing customers the trip is a walk, a five-minute truck ride, or no drive at all if the boat is already at our dock. Every Mercury we rig is water-tested on Rice Lake before pickup. No shipping. Typical full repower: $11,000–$40,000 CAD.",
     keyFacts: [
       'Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0',
       'Coordinates: 44.1147, -78.2564',
       'Drive time within Gores Landing: under 5 min, or walk',
       'Family-owned since 1947 (three generations)',
-      'Mercury Platinum Dealer, selling Mercury since 1965',
+      'Mercury Premier Dealer, selling Mercury since 1965',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
     sections: [
       {
         heading: 'What does Harris Boat Works mean to Gores Landing?',
         paragraphs: [
-          "Gores Landing is a village of a few hundred people on the south shore of Rice Lake. We're not the new shop in town, we're the shop that has been here since 1947. Three generations of the same family have rigged motors out of this address. We have been a Mercury dealer since 1965, and today we hold Mercury's Platinum Dealer tier.",
+          "Gores Landing is a village of a few hundred people on the south shore of Rice Lake. We're not the new shop in town, we're the shop that has been here since 1947. Three generations of the same family have rigged motors out of this address. We have been a Mercury dealer since 1965, and today we hold Mercury's Premier Dealer tier.",
           "For locals, the repower conversation is short. You know where the shop is. You know who works the bench. We know what your boat is and probably the last motor we put on it. We treat repower customers as adults, that's the only way to run a shop in a village this small for three generations.",
         ],
       },
@@ -272,7 +272,7 @@ const SPECS: SpecInput[] = [
         heading: 'How long has Harris Boat Works been in Gores Landing?',
         paragraphs: [
           'Family-owned since 1947. A Mercury dealer since 1965. Three generations have run the marina out of 5369 Harris Boat Works Rd, on the same south-shore patch of Rice Lake.',
-          'The combination matters. Mercury Platinum Dealer status is the top dealer tier, re-earned every year on training, sales, service, and customer satisfaction. Selling and servicing Mercury since 1965 means generations of techs here have stayed current with each new Mercury platform, from carbureted two-strokes through current FourStroke V8, Pro XS V8 4.6L, and Verado V10 architecture.',
+          'The combination matters. Mercury Premier Dealer status is the top dealer tier, re-earned every year on training, sales, service, and customer satisfaction. Selling and servicing Mercury since 1965 means generations of techs here have stayed current with each new Mercury platform, from carbureted two-strokes through current FourStroke V8, Pro XS V8 4.6L, and Verado V10 architecture.',
         ],
       },
       {
@@ -294,17 +294,17 @@ const SPECS: SpecInput[] = [
     faqs: [
       { question: 'Where exactly is Harris Boat Works in Gores Landing?', answer: "5369 Harris Boat Works Rd, on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina." },
       { question: 'Do you deliver Mercury motors inside Gores Landing?', answer: "No. We're pickup-only at the shop, even for local customers. The motor is rigged, propped, and water-tested on Rice Lake before you pick up at our dock." },
-      { question: 'How long has Harris Boat Works been in Gores Landing?', answer: "The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Platinum Dealer tier today." },
+      { question: 'How long has Harris Boat Works been in Gores Landing?', answer: "The shop has been family-owned since 1947, three generations. We have sold Mercury since 1965 and hold Mercury's Premier Dealer tier today." },
       { question: 'Can I bring my boat to you by water from somewhere else in the village?', answer: "Yes. If your current motor still runs, you can bring the boat to our docks under its own power for the repower drop-off. Otherwise it's a short tow." },
       { question: 'What HP Mercury do Gores Landing boats run?', answer: 'Locals run the full range. Tiller FourStroke 9.9–25 HP on tinnies, mid-range FourStroke 60–115 HP on runabouts, Pro XS 175 HP on bass boats and pontoons. Big-block FourStroke 150–200 HP on heavier fiberglass.' },
     ],
     visitExtra:
-      "We're the repower side of Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965. The same techs who write your quote are the ones who rig and water-test the motor on Rice Lake.",
+      "We're the repower side of Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965. The same techs who write your quote are the ones who rig and water-test the motor on Rice Lake.",
     related: [
       { label: 'Pricing Reference', href: '/pricing-reference' },
       { label: 'Rice Lake Mercury Repower', href: '/locations/rice-lake-mercury-repower' },
       { label: 'Bewdley', href: '/locations/bewdley' },
-      { label: 'Harris Boat Works in Gores Landing, Mercury Platinum Dealer, selling Mercury since 1965', href: 'https://www.harrisboatworks.ca' },
+      { label: 'Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965', href: 'https://www.harrisboatworks.ca' },
     ],
   },
 
@@ -313,19 +313,19 @@ const SPECS: SpecInput[] = [
     slug: 'roseneath',
     title: 'Mercury Repower for Roseneath Boaters, Ontario',
     metaDescription:
-      'Mercury repower 15 min west of Roseneath along Rice Lake. Mercury Platinum Dealer, same-lake water test, pickup in Gores Landing.',
+      'Mercury repower 15 min west of Roseneath along Rice Lake. Mercury Premier Dealer, same-lake water test, pickup in Gores Landing.',
     region: 'Roseneath',
     driveTime: 'about 15 minutes west of Roseneath along Rice Lake',
     lat: 44.1167,
     lng: -78.0833,
     h1: 'Mercury Repower for Roseneath Boaters, Ontario',
     intro:
-      "Harris Boat Works is 15 minutes west of Roseneath along the south shore of Rice Lake. Roseneath sits near the east end of the lake; HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. We share Rice Lake. Every Mercury we rig is water-tested on the same lake you boat on, then picked up at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.",
+      "Harris Boat Works is 15 minutes west of Roseneath along the south shore of Rice Lake. Roseneath sits near the east end of the lake; HBW sits in Gores Landing, mid-south shore, roughly 15 km by road. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. We share Rice Lake. Every Mercury we rig is water-tested on the same lake you boat on, then picked up at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.",
     keyFacts: [
       'Drive time: ~15 min west along Rice Lake shore',
       'Distance: ~15 km by road on County Road 9',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Same lake: Rice Lake, ~30 km long, south shore',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -333,7 +333,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How far is Harris Boat Works from Roseneath?',
         paragraphs: [
-          "Roseneath is the east-end community on Rice Lake. We're mid-south-shore. Door-to-door is roughly 15 km, about 15 minutes by road. For Roseneath boaters this is one of the shortest drives to a Mercury Platinum repower shop in the area, and the water test happens on the lake your boat already lives on.",
+          "Roseneath is the east-end community on Rice Lake. We're mid-south-shore. Door-to-door is roughly 15 km, about 15 minutes by road. For Roseneath boaters this is one of the shortest drives to a Mercury Premier repower shop in the area, and the water test happens on the lake your boat already lives on.",
           "The east end of Rice Lake has its own character. Different chop direction, different weed lines, different fishing patterns running toward the Trent system. We've rigged boats for east-end customers since 1965, and that local knowledge shows up most clearly in the prop call. The same motor with a different prop runs noticeably better on a boat that lives on the east end versus one based further west.",
         ],
       },
@@ -381,19 +381,19 @@ const SPECS: SpecInput[] = [
     slug: 'hastings',
     title: 'Mercury Repower for Hastings, Ontario Boaters',
     metaDescription:
-      'Mercury repower 25–30 min from Hastings around Rice Lake. Mercury Platinum Dealer. Trent-system boaters welcome. Pickup at Gores Landing.',
+      'Mercury repower 25–30 min from Hastings around Rice Lake. Mercury Premier Dealer. Trent-system boaters welcome. Pickup at Gores Landing.',
     region: 'Hastings',
     driveTime: 'about 25–30 minutes around Rice Lake from Hastings',
     lat: 44.3033,
     lng: -77.9483,
     h1: 'Mercury Repower for Hastings, Ontario Boaters',
     intro:
-      "Harris Boat Works is 25–30 minutes from Hastings, around the Rice Lake shoreline to Gores Landing, ON. Distance is roughly 30 km by road. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Hastings sits at the northeast end of Rice Lake, where the Trent-Severn Waterway runs north, many Hastings boaters run the Trent system. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.",
+      "Harris Boat Works is 25–30 minutes from Hastings, around the Rice Lake shoreline to Gores Landing, ON. Distance is roughly 30 km by road. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Hastings sits at the northeast end of Rice Lake, where the Trent-Severn Waterway runs north, many Hastings boaters run the Trent system. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD depending on HP.",
     keyFacts: [
       'Drive time: ~25–30 min around Rice Lake',
       'Distance: ~30 km by road',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Typical full repower: $11,000–$40,000 CAD',
       'Waterway: Trent-Severn runs north out of Hastings',
     ],
@@ -449,19 +449,19 @@ const SPECS: SpecInput[] = [
     slug: 'lakefield',
     title: 'Mercury Repower for Lakefield, Ontario Boaters',
     metaDescription:
-      'Mercury repower 45 min south of Lakefield in Gores Landing. Mercury Platinum Dealer. Stony Lake boats welcome. Pickup after Rice Lake water test.',
+      'Mercury repower 45 min south of Lakefield in Gores Landing. Mercury Premier Dealer. Stony Lake boats welcome. Pickup after Rice Lake water test.',
     region: 'Lakefield',
     driveTime: 'about 45 minutes south of Lakefield',
     lat: 44.4283,
     lng: -78.2667,
     h1: 'Mercury Repower for Lakefield, Ontario Boaters',
     intro:
-      "Harris Boat Works is 45 minutes south of Lakefield in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 45 km through Peterborough. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Lakefield sits in the northern Kawarthas near Stony Lake, big-water territory with bigger boats and heavier repowers. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD, often at the higher end for Stony Lake hulls.",
+      "Harris Boat Works is 45 minutes south of Lakefield in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 45 km through Peterborough. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lakefield sits in the northern Kawarthas near Stony Lake, big-water territory with bigger boats and heavier repowers. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD, often at the higher end for Stony Lake hulls.",
     keyFacts: [
       'Drive time: ~45 min south to Gores Landing',
       'Distance: ~45 km via Peterborough',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Typical full repower: $11,000–$40,000 CAD',
       'Common segment: Stony Lake big-block and Pro XS V8 4.6L hulls',
     ],
@@ -470,7 +470,7 @@ const SPECS: SpecInput[] = [
         heading: 'How far is Harris Boat Works from Lakefield?',
         paragraphs: [
           'Lakefield sits north of Peterborough, on the Otonabee at the gateway to Stony Lake and the northern Kawarthas. The drive south to Gores Landing runs roughly 45 km, about 45 minutes through Peterborough on Highway 28 and out County Road 9.',
-          "The drive is honest. We're not pretending it's a quick trip. Lakefield customers pick HBW because they want a Mercury Platinum Dealer that's been rigging motors since 1965, a shop where the same techs who write the quote are the ones who do the water test, and a place that treats a Stony Lake hull seriously.",
+          "The drive is honest. We're not pretending it's a quick trip. Lakefield customers pick HBW because they want a Mercury Premier Dealer that's been rigging motors since 1965, a shop where the same techs who write the quote are the ones who do the water test, and a place that treats a Stony Lake hull seriously.",
         ],
       },
       {
@@ -517,19 +517,19 @@ const SPECS: SpecInput[] = [
     slug: 'bridgenorth',
     title: 'Bridgenorth Mercury Repower',
     metaDescription:
-      'Mercury Platinum Dealer, 40 min south of Bridgenorth. Chemong Lake pontoon repowers, water-tested on Rice Lake, pickup at Gores Landing.',
+      'Mercury Premier Dealer, 40 min south of Bridgenorth. Chemong Lake pontoon repowers, water-tested on Rice Lake, pickup at Gores Landing.',
     region: 'Bridgenorth',
     driveTime: 'about 40 minutes south of Bridgenorth',
     lat: 44.3833,
     lng: -78.3833,
     h1: 'Bridgenorth Mercury Repower',
     intro:
-      'Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 40 km through Peterborough. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Bridgenorth sits on Chemong Lake, a strong pontoon and family-boat lake, a natural fit for Mercury FourStroke and Pro XS repowers. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is 40 minutes south of Bridgenorth in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 40 km through Peterborough. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Bridgenorth sits on Chemong Lake, a strong pontoon and family-boat lake, a natural fit for Mercury FourStroke and Pro XS repowers. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'Drive time: ~40 min south to Gores Landing',
       'Distance: ~40 km via Peterborough',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Common Chemong fit: FourStroke 90–150 HP and Pro XS 175 HP',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -552,7 +552,7 @@ const SPECS: SpecInput[] = [
         heading: 'Where do Bridgenorth boaters launch?',
         paragraphs: [
           'Chemong Lake has public access points serving Bridgenorth and the surrounding north-Peterborough belt. We do not single out a specific ramp here, fees and conditions change. Chemong is part of the broader Kawartha chain and connects through the Trent-Severn system, so Bridgenorth boaters who want to run the chain do that regularly.',
-          'For the repower side, none of that changes how we rig the motor. The water test happens on Rice Lake, not Chemong, but the prop is picked for your hull, your load, and your home lake. Different lake, same Mercury Platinum process.',
+          'For the repower side, none of that changes how we rig the motor. The water test happens on Rice Lake, not Chemong, but the prop is picked for your hull, your load, and your home lake. Different lake, same Mercury Premier process.',
         ],
       },
       {
@@ -584,19 +584,19 @@ const SPECS: SpecInput[] = [
     slug: 'lindsay',
     title: 'Lindsay Mercury Repower',
     metaDescription:
-      'Mercury Platinum Dealer, ~60 min east of Lindsay. Sturgeon, Scugog, Cameron repowers welcome. Pickup at Gores Landing.',
+      'Mercury Premier Dealer, ~60 min east of Lindsay. Sturgeon, Scugog, Cameron repowers welcome. Pickup at Gores Landing.',
     region: 'Lindsay',
     driveTime: 'about 60 minutes east of Lindsay',
     lat: 44.3550,
     lng: -78.7414,
     h1: 'Lindsay Mercury Repower',
     intro:
-      'Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 7A and County Road 9. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Lindsay is the largest town in Kawartha Lakes municipality, serving boaters on Sturgeon, Scugog, Cameron, and Balsam. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is roughly 60 minutes east of Lindsay in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 7A and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lindsay is the largest town in Kawartha Lakes municipality, serving boaters on Sturgeon, Scugog, Cameron, and Balsam. We rig, install, and water-test every Mercury on Rice Lake before pickup at Gores Landing. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'Drive time: ~60 min east to Gores Landing',
       'Distance: ~70 km via Highway 7A and County Road 9',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Lindsay is the largest town in Kawartha Lakes municipality',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -605,7 +605,7 @@ const SPECS: SpecInput[] = [
         heading: 'How far is Harris Boat Works from Lindsay?',
         paragraphs: [
           'Lindsay sits on the Scugog River, in the heart of Kawartha Lakes municipality. The drive east to Gores Landing runs roughly 70 km, about 60 minutes via Highway 7A and County Road 9, and brings you to our shop on the south shore of Rice Lake.',
-          'This is one of the longer drives in our regular service area, and we are direct about that. Lindsay customers pick us because they want a Mercury Platinum Dealer with a real water test and a shop that has been rigging motors since 1965. An hour each way is reasonable when one team handles the whole job (motor, controls, cables, prop setup, and a verified on-water run) and there is no third party in the middle.',
+          'This is one of the longer drives in our regular service area, and we are direct about that. Lindsay customers pick us because they want a Mercury Premier Dealer with a real water test and a shop that has been rigging motors since 1965. An hour each way is reasonable when one team handles the whole job (motor, controls, cables, prop setup, and a verified on-water run) and there is no third party in the middle.',
         ],
       },
       {
@@ -651,19 +651,19 @@ const SPECS: SpecInput[] = [
     slug: 'bobcaygeon',
     title: 'Bobcaygeon Mercury Repower',
     metaDescription:
-      'Mercury Platinum Dealer, ~75 min south of Bobcaygeon. Pigeon, Sturgeon, Buckhorn repowers welcome. Pickup at Gores Landing.',
+      'Mercury Premier Dealer, ~75 min south of Bobcaygeon. Pigeon, Sturgeon, Buckhorn repowers welcome. Pickup at Gores Landing.',
     region: 'Bobcaygeon',
     driveTime: 'about 75 minutes south of Bobcaygeon',
     lat: 44.5400,
     lng: -78.5483,
     h1: 'Bobcaygeon Mercury Repower',
     intro:
-      'Harris Boat Works is roughly 75 minutes south of Bobcaygeon in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 80 km. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Bobcaygeon sits between Pigeon and Sturgeon Lakes in the central Kawarthas, major boating country. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake before pickup at Gores Landing. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is roughly 75 minutes south of Bobcaygeon in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 80 km. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Bobcaygeon sits between Pigeon and Sturgeon Lakes in the central Kawarthas, major boating country. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake before pickup at Gores Landing. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'Drive time: ~75 min south to Gores Landing',
       'Distance: ~80 km',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Boating anchor: Pigeon, Sturgeon, Buckhorn corridor on the Trent-Severn',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -672,7 +672,7 @@ const SPECS: SpecInput[] = [
         heading: 'How far is Harris Boat Works from Bobcaygeon?',
         paragraphs: [
           'Bobcaygeon sits between Pigeon Lake to the south and Sturgeon Lake to the north, on the lift lock that connects the two. The drive south to Gores Landing runs roughly 80 km and takes around 75 minutes, depending on the season and the route.',
-          'That is a real drive, and we are not going to dress it up. Bobcaygeon customers come to us because they want a Mercury Platinum Dealer, a water test on a real lake, and a shop where the same techs who built the quote are the ones who rig and run the boat off the dock. Bobcaygeon is destination boating country, the boat is central to the cottage week, and that usually makes the trip easier to justify.',
+          'That is a real drive, and we are not going to dress it up. Bobcaygeon customers come to us because they want a Mercury Premier Dealer, a water test on a real lake, and a shop where the same techs who built the quote are the ones who rig and run the boat off the dock. Bobcaygeon is destination boating country, the boat is central to the cottage week, and that usually makes the trip easier to justify.',
         ],
       },
       {
@@ -701,7 +701,7 @@ const SPECS: SpecInput[] = [
       { question: 'How far is Harris Boat Works from Bobcaygeon?', answer: 'About 75 minutes south, roughly 80 km, to Gores Landing on the south shore of Rice Lake.' },
       { question: 'Do you deliver Mercury motors to Bobcaygeon or Pigeon Lake cottages?', answer: 'No. We are pickup-only at Gores Landing. We rig and water-test on Rice Lake, then you drive south to pick up.' },
       { question: 'What HP Mercury is common for Pigeon and Sturgeon Lake boats?', answer: 'Cruising boats run mid-range FourStroke 90–150 HP. Performance pontoons and bigger fiberglass run Pro XS V8 4.6L 175–250 HP, often with the Boost option for 25 extra horsepower on demand.' },
-      { question: 'Why drive 75 minutes for a repower?', answer: 'Because we are a Mercury Platinum Dealer, selling Mercury since 1965, every motor gets water-tested on Rice Lake before pickup, and the same techs who write your quote are the ones who do the install.' },
+      { question: 'Why drive 75 minutes for a repower?', answer: 'Because we are a Mercury Premier Dealer, selling Mercury since 1965, every motor gets water-tested on Rice Lake before pickup, and the same techs who write your quote are the ones who do the install.' },
       { question: 'Is Bobcaygeon far enough away that I should book early?', answer: 'Yes. If you want the boat ready for spring, January to April is the best booking window. Ice-out on Rice Lake is usually mid-April.' },
     ],
     visitExtra:
@@ -718,19 +718,19 @@ const SPECS: SpecInput[] = [
     slug: 'buckhorn',
     title: 'Buckhorn Mercury Repower',
     metaDescription:
-      'Mercury Platinum Dealer, ~70 min south of Buckhorn. Northern Kawartha cottage repowers. Pickup at Gores Landing on Rice Lake.',
+      'Mercury Premier Dealer, ~70 min south of Buckhorn. Northern Kawartha cottage repowers. Pickup at Gores Landing on Rice Lake.',
     region: 'Buckhorn',
     driveTime: 'about 70 minutes south of Buckhorn',
     lat: 44.5500,
     lng: -78.3333,
     h1: 'Buckhorn Mercury Repower',
     intro:
-      'Harris Boat Works is roughly 70 minutes south of Buckhorn in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 28 and County Road 9. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Buckhorn sits in the northern Kawarthas on Lower Buckhorn Lake, cottage country with a strong mix of pontoon and runabout repowers. Customers drive to Gores Landing for pickup. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is roughly 70 minutes south of Buckhorn in Gores Landing, ON, on the south shore of Rice Lake. The drive is around 70 km via Highway 28 and County Road 9. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Buckhorn sits in the northern Kawarthas on Lower Buckhorn Lake, cottage country with a strong mix of pontoon and runabout repowers. Customers drive to Gores Landing for pickup. There is no shipping. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'Drive time: ~70 min south to Gores Landing',
       'Distance: ~70 km via Highway 28 and County Road 9',
       'HBW coordinates: 44.1147, -78.2564',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Water anchor: Lower Buckhorn Lake on the Trent-Severn',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -753,7 +753,7 @@ const SPECS: SpecInput[] = [
         heading: 'Where do Buckhorn boaters launch?',
         paragraphs: [
           'Buckhorn is part of the Trent-Severn corridor, with public access on Lower Buckhorn Lake and adjoining lakes. We are not singling out a specific ramp here, fees and conditions change, and the Trent-Severn Waterway is the right source for waterway and lock information.',
-          'The water test for every Mercury we rig happens on Rice Lake, an hour south of Buckhorn. Different lake, same Mercury Platinum process. The prop call gets made for your hull and your home water, not ours.',
+          'The water test for every Mercury we rig happens on Rice Lake, an hour south of Buckhorn. Different lake, same Mercury Premier process. The prop call gets made for your hull and your home water, not ours.',
         ],
       },
       {
@@ -785,19 +785,19 @@ const SPECS: SpecInput[] = [
     slug: 'northumberland-county',
     title: 'Northumberland County Mercury Repower',
     metaDescription:
-      'Mercury Platinum Dealer, based in Gores Landing on Rice Lake. All of Northumberland County within ~30 min. Pickup at our dock.',
+      'Mercury Premier Dealer, based in Gores Landing on Rice Lake. All of Northumberland County within ~30 min. Pickup at our dock.',
     region: 'Northumberland County',
     driveTime: 'all county residents within ~30 minutes of Gores Landing',
     lat: 44.0000,
     lng: -78.1000,
     h1: 'Northumberland County Mercury Repower',
     intro:
-      'Harris Boat Works is the Mercury repower shop inside Northumberland County. We sit in Gores Landing, ON, on the south shore of Rice Lake, at 5369 Harris Boat Works Rd. Every Northumberland resident (Cobourg, Port Hope, Hastings, Brighton, Bewdley, Gores Landing) is within a 30-minute drive. We are a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is the Mercury repower shop inside Northumberland County. We sit in Gores Landing, ON, on the south shore of Rice Lake, at 5369 Harris Boat Works Rd. Every Northumberland resident (Cobourg, Port Hope, Hastings, Brighton, Bewdley, Gores Landing) is within a 30-minute drive. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'County: Northumberland, Ontario',
       'HBW coordinates: 44.1147, -78.2564',
       'All county residents within ~30 min of Gores Landing',
-      'Family-owned since 1947, Mercury Platinum Dealer, selling Mercury since 1965',
+      'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Primary lake anchor: Rice Lake',
       'Typical full repower: $11,000–$40,000 CAD',
     ],
@@ -806,7 +806,7 @@ const SPECS: SpecInput[] = [
         heading: 'Is Harris Boat Works in Northumberland County?',
         paragraphs: [
           'Yes. Gores Landing is in Northumberland County, on the south shore of Rice Lake, and we are the village marina. The county wraps from Lake Ontario in the south (Cobourg, Port Hope, Brighton) up to Rice Lake in the north (Bewdley, Gores Landing, Roseneath, Hastings on the county line). Most of it is within 30 minutes of our dock.',
-          "For in-county residents, we are usually the closest Mercury Platinum repower option. Three generations of the same family have rigged motors out of this address since 1947. We have been a Mercury dealer since 1965, and today we hold Mercury's Platinum Dealer tier.",
+          "For in-county residents, we are usually the closest Mercury Premier repower option. Three generations of the same family have rigged motors out of this address since 1947. We have been a Mercury dealer since 1965, and today we hold Mercury's Premier Dealer tier.",
         ],
       },
       {

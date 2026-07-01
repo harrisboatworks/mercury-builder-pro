@@ -13,8 +13,8 @@ export default function FrenchLanding() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/fr#webpage`,
         "url": `${SITE_URL}/fr`,
-        "name": "Bienvenue chez Harris Boat Works, Concessionnaire Mercury Platinum en Ontario",
-        "description": "Concessionnaire Mercury Marine Platinum à Gores Landing, Ontario. Prix transparents en ligne, techniciens certifiés, service en anglais avec assistance pour clients francophones.",
+        "name": "Bienvenue chez Harris Boat Works, Concessionnaire Mercury Premier en Ontario",
+        "description": "Concessionnaire Mercury Marine Premier à Gores Landing, Ontario. Prix transparents en ligne, techniciens certifiés, service en anglais avec assistance pour clients francophones.",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -35,7 +35,7 @@ export default function FrenchLanding() {
             "name": "Êtes-vous un concessionnaire Mercury au Canada?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Harris Boat Works est un concessionnaire Mercury Marine Platinum au Canada, basé à Gores Landing en Ontario, sur le lac Rice. Concessionnaire Mercury depuis 1965, marina familiale depuis 1947. On vend la gamme complète Mercury de 2,5 HP à 600 HP avec prix transparents en dollars canadiens à mercuryrepower.ca."
+              "text": "Oui. Harris Boat Works est un concessionnaire Mercury Marine Premier au Canada, basé à Gores Landing en Ontario, sur le lac Rice. Concessionnaire Mercury depuis 1965, marina familiale depuis 1947. On vend la gamme complète Mercury de 2,5 HP à 600 HP avec prix transparents en dollars canadiens à mercuryrepower.ca."
             }
           },
           {
@@ -86,14 +86,14 @@ export default function FrenchLanding() {
   return (
     <div className="min-h-screen bg-background" lang="fr">
       <Helmet>
-        <title>Concessionnaire Mercury Platinum Ontario | Harris Boat Works</title>
-        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Marine Platinum à Gores Landing, Ontario. Prix transparents en ligne à mercuryrepower.ca. Service pour plaisanciers francophones." />
+        <title>Concessionnaire Mercury Premier Ontario | Harris Boat Works</title>
+        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Marine Premier à Gores Landing, Ontario. Prix transparents en ligne à mercuryrepower.ca. Service pour plaisanciers francophones." />
         <link rel="canonical" href={`${SITE_URL}/fr`} />
         <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
         <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
         <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
-        <meta property="og:title" content="Bienvenue chez Harris Boat Works, Concessionnaire Mercury Platinum" />
-        <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Platinum en Ontario." />
+        <meta property="og:title" content="Bienvenue chez Harris Boat Works, Concessionnaire Mercury Premier" />
+        <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Premier en Ontario." />
         <meta property="og:url" content={`${SITE_URL}/fr`} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="website" />
@@ -108,7 +108,7 @@ export default function FrenchLanding() {
             Bienvenue chez Harris Boat Works
           </h1>
           <p className="text-lg text-primary font-medium mb-2">
-            Concessionnaire Mercury Platinum en Ontario
+            Concessionnaire Mercury Premier en Ontario
           </p>
           <p className="text-muted-foreground font-light italic">
             Une chose d'abord : notre équipe travaille principalement en anglais. Mais on est sincèrement heureux de vous accueillir, et on va faire tout ce qu'on peut pour vous aider.
@@ -130,7 +130,7 @@ export default function FrenchLanding() {
               Harris Boat Works est une marina familiale de troisième génération établie en 1947 à Gores Landing, en Ontario, sur le lac Rice. Depuis presque 80 ans, on sert des plaisanciers de partout en Ontario et au-delà.
             </p>
             <p>
-              On est concessionnaire <strong>Mercury Marine Platinum</strong>, le niveau le plus élevé du réseau Mercury. Ça veut dire : accès complet aux pièces, techniciens certifiés, garanties honorées, et une relation directe avec Mercury Marine. Quand Mercury Canada recommande un concessionnaire de confiance dans notre région, ils envoient les clients chez nous.
+              On est concessionnaire <strong>Mercury Marine Premier</strong>, le niveau le plus élevé du réseau Mercury. Ça veut dire : accès complet aux pièces, techniciens certifiés, garanties honorées, et une relation directe avec Mercury Marine. Quand Mercury Canada recommande un concessionnaire de confiance dans notre région, ils envoient les clients chez nous.
             </p>
           </div>
         </section>
@@ -205,7 +205,7 @@ export default function FrenchLanding() {
           <h2 className="text-2xl font-light text-foreground mb-4">Pourquoi choisir Harris Boat Works</h2>
           <div className="space-y-3 text-foreground">
             <p><strong>Les prix sont transparents.</strong> mercuryrepower.ca montre les vrais prix, en temps réel. Vous pouvez comparer avant même de nous appeler.</p>
-            <p><strong>Concessionnaire Mercury Platinum.</strong> Le niveau le plus élevé du réseau Mercury en Amérique du Nord.</p>
+            <p><strong>Concessionnaire Mercury Premier.</strong> Le niveau le plus élevé du réseau Mercury en Amérique du Nord.</p>
             <p><strong>Mercury nous recommande.</strong> Quand des clients contactent Mercury Canada dans notre région, Mercury les dirige souvent vers nous.</p>
             <p><strong>Marina de lac.</strong> Le lac Rice et les Kawarthas, à moins de trois heures de Montréal.</p>
           </div>
@@ -267,7 +267,7 @@ export default function FrenchLanding() {
         <nav className="mt-8 text-center space-y-2">
           <p className="text-sm font-medium text-foreground mb-3">📖 Articles en français</p>
           <div className="flex flex-col gap-1.5">
-            <Link to="/blog/fr/concessionnaire-mercury-platinum-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Platinum en Ontario →</Link>
+            <Link to="/blog/fr/concessionnaire-mercury-platinum-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Premier en Ontario →</Link>
             <Link to="/blog/fr/prix-remotorisation-mercury-ontario" className="text-primary hover:underline text-sm">Combien coûte une remotorisation Mercury? →</Link>
             <Link to="/blog/fr/mercury-115-vs-150-hp-comparaison" className="text-primary hover:underline text-sm">Mercury 115 vs 150 HP : Quel moteur choisir? →</Link>
             <Link to="/blog/fr/hivernisation-moteur-mercury-ontario" className="text-primary hover:underline text-sm">Guide d'hivernisation de votre moteur Mercury →</Link>

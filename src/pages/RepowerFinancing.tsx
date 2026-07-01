@@ -19,7 +19,7 @@ export default function RepowerFinancing() {
       phoneNumber="(905) 342-2153"
       directAnswer={
         <>
-          Harris Boat Works arranges Mercury repower financing on approved credit (OAC) through Mercury and partner lenders. Current rates, terms (typically 36 to 84 months), and your estimated monthly payment are posted live on the quote builder. Deposits are $200 for portable, $500 for mid-range, and $1,000 for big-block, Pro XS, and Verado. Trade-in value can reduce what you finance. Applications start with a phone call to (905) 342-2153. Mercury dealer since 1965, current Platinum tier.
+          Harris Boat Works arranges Mercury repower financing on approved credit (OAC) through Mercury and partner lenders. Current rates, terms (typically 36 to 84 months), and your estimated monthly payment are posted live on the quote builder. Deposits are $200 for portable, $500 for mid-range, and $1,000 for big-block, Pro XS, and Verado. Trade-in value can reduce what you finance. Applications start with a phone call to (905) 342-2153. Mercury dealer since 1965, current Premier tier.
         </>
       }
       table={{
@@ -53,7 +53,7 @@ export default function RepowerFinancing() {
       ]}
       whyHbwIntro="Financing handled in-house by phone so you can ask real questions about rate, term, and how trade-in shifts the math."
       whyHbw={[
-        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Platinum tier.' },
+        { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Mercury dealer since 1965', description: 'Current Premier tier.' },
         { icon: <CreditCard className="h-5 w-5" aria-hidden="true" />, title: 'OAC through Mercury and partners', description: 'Tier-based rates, typical terms 36 to 84 months.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Same shop rigs your motor', description: 'No handoff between sales and service.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Pickup at Gores Landing', description: '5369 Harris Boat Works Rd.' },
@@ -99,7 +99,7 @@ export default function RepowerFinancing() {
             <li>Deposit tiers: $200 portable, $500 mid-range, $1,000 big-block / Pro XS / Verado</li>
             <li>Sample math (illustrative, 2026): $15,000 over 60 months runs mid-$200s to low-$300s per month at current rate tiers</li>
             <li>Applications by phone: (905) 342-2153</li>
-            <li>Mercury dealer since 1965 (current Platinum tier); financing through Mercury and partner lenders</li>
+            <li>Mercury dealer since 1965 (current Premier tier); financing through Mercury and partner lenders</li>
           </ul>
 
           <h3>Can I finance a Mercury repower?</h3>

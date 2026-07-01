@@ -12,7 +12,7 @@ description: "Step-by-step guide to towing your boat from the GTA to Harris Boat
 category: "Service & Maintenance"
 date_published: 2026-05-15
 date_modified: 2026-05-15
-keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Platinum dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
+keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
 author: Harris Boat Works
 content_type: blog_article
 ---
@@ -35,7 +35,7 @@ content_type: blog_article
 
 Most GTA boaters have done the math: 90 minutes of highway vs. 6 weeks of "we'll have to send it out" at the city shop. The drive wins.
 
-HBW is the closest full-service Mercury Marine Platinum dealer east of the GTA. For boats with Mercury motors needing real service, the trade-off is straightforward. Repowers, warranty work, and SmartCraft diagnostics specifically benefit from a Platinum-tier shop on the same property where the boat can be stored, winterized, and launched.
+HBW is the closest full-service Mercury Marine Premier dealer east of the GTA. For boats with Mercury motors needing real service, the trade-off is straightforward. Repowers, warranty work, and SmartCraft diagnostics specifically benefit from a Premier-tier shop on the same property where the boat can be stored, winterized, and launched.
 
 We're not asking you to drive farther because we like making you work. We're asking because the alternative, a shop that changes oil but sends every real job out, costs you more time and money in the long run. At least that's what our GTA customers tell us after their first visit.
 
@@ -146,7 +146,7 @@ Most customers pick up on a Saturday morning and are on the water by afternoon. 
 
 ## More from HBW on Rice Lake and the Kawarthas
 
-- [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario), full-service marina since 1947: slips, launch, storage, and Mercury Platinum service
+- [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario), full-service marina since 1947: slips, launch, storage, and Mercury Premier service
 - [Boat Storage Kawartha Lakes](/blog/boat-storage-kawartha-lakes), winter and summer storage for Rice Lake, Pigeon, Sturgeon, Buckhorn, and Stoney
 - [Rice Lake Boat Rentals from Toronto & GTA](/blog/rice-lake-boat-rentals-from-toronto-gta), day rentals and cottage boat access from the city
 
@@ -155,16 +155,16 @@ For marina slips, rentals, and general information: [harrisboatworks.ca](https:/
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
-Mercury Marine Platinum Dealer. Established 1947.
+Mercury Marine Premier Dealer. Established 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 ## Related guides
 
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Platinum dealer. Shrinkwrap.
+- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
 - [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
 - [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
+- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
 
 ## FAQs
 
@@ -198,7 +198,7 @@ Yes, and many customers do. If you're doing a multi-stage job, say, diagnostics 
 
 ### What's the catch, why is this not common in the GTA?
 
-There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-focused operations. They do launches, hauls, and basic oil changes. When a job needs Mercury-specific diagnostics, warranty paperwork, or a full repower rigging, they send the motor out to a specialist shop, sometimes hundreds of kilometres away, and mark up the price. We're that specialist shop, but we're on the water instead of in an industrial park. The 'catch' is that you have to drive 60-90 minutes. The trade-off is that the work gets done by a Platinum dealer on the same property where your boat can be stored, winterized, and launched. For most Mercury owners, the math works.
+There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-focused operations. They do launches, hauls, and basic oil changes. When a job needs Mercury-specific diagnostics, warranty paperwork, or a full repower rigging, they send the motor out to a specialist shop, sometimes hundreds of kilometres away, and mark up the price. We're that specialist shop, but we're on the water instead of in an industrial park. The 'catch' is that you have to drive 60-90 minutes. The trade-off is that the work gets done by a Premier dealer on the same property where your boat can be stored, winterized, and launched. For most Mercury owners, the math works.
 
 ## Next steps
 

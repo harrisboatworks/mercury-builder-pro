@@ -48,7 +48,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Rigging cost if switching brand | n/a (already on brand) | $2,000 to $3,000 CAD | $2,000 to $3,000 CAD |
 | Resale in Ontario | Strong | Strong | Strong, smaller buyer pool |
 
-**Conflict-of-interest reminder:** HBW is a Mercury Platinum dealer. We don't sell Yamaha or Honda and we don't service them. This table reflects our honest read of the Ontario market, but the Mercury column is the brand we know best by a wide margin.
+**Conflict-of-interest reminder:** HBW is a Mercury Premier dealer. We don't sell Yamaha or Honda and we don't service them. This table reflects our honest read of the Ontario market, but the Mercury column is the brand we know best by a wide margin.
 
 ## Let us be honest about who is writing this
 
@@ -187,7 +187,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
 ## Related guides
 
 - [Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?](/blog/mercury-9-9-vs-15-hp-tiller-ontario): Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote.
-- [Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026): Mercury vs Honda outboards from an Ontario Mercury Platinum dealer. Where Honda actually wins, where Mercury.
+- [Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026): Mercury vs Honda outboards from an Ontario Mercury Premier dealer. Where Honda actually wins, where Mercury.
 - [Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)](/blog/mercury-vs-yamaha-outboards-ontario): Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging.
 - [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want.
 
@@ -227,7 +227,7 @@ Mercury dealer network in Canada is the deepest, parts supply is most consistent
 
 ### Why is HBW only a Mercury dealer?
 
-We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Platinum dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.
+We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, factory tooling, and Mercury Premier dealer relationship today comes from decades of Mercury-only work. For engine repairs, we only service Mercury and Mercruiser.
 
 ## Next steps
 

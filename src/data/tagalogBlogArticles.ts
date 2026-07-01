@@ -285,7 +285,7 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
 
 Isipin mo na parang kotse ang outboard motor: kahit ilang beses mo lang ginamit sa isang summer, kailangan pa rin ng regular na maintenance para umandar nang maayos. Ang tubig sa lawa ay may dumi at minerals na pwedeng makasira sa cooling system. ‘Yung impeller, isang rubber part na parang water pump, natutuyo at nababasag kung hindi napapalitan taon-taon. Ang lower unit oil ay pwedeng mag-contaminate ng tubig, kaya sa annual service ay dini-drain namin at pinapalitan. Pati spark plugs, fuel filter, at timing ay chini-check para iwas biglaang tigil ng makina sa gitna ng lawa.
 
-Sa HBW, sanay na sanay kami sa Mercury outboards. Bilang Mercury Marine Platinum Dealer, certified technicians ang gumagawa ng service ayon sa latest standards ng Mercury. Kapag nagpa-taunang serbisyo ka sa amin, hindi lang basic lang ang ginagawa, ini-inspect din namin ang propeller, steering system, at electrical para siguradong handa ang bangka sa susunod mong labas.
+Sa HBW, sanay na sanay kami sa Mercury outboards. Bilang Mercury Marine Premier Dealer, certified technicians ang gumagawa ng service ayon sa latest standards ng Mercury. Kapag nagpa-taunang serbisyo ka sa amin, hindi lang basic lang ang ginagawa, ini-inspect din namin ang propeller, steering system, at electrical para siguradong handa ang bangka sa susunod mong labas.
 
 ## Ang Winterization: Hindi Ito Optional sa Ontario
 
@@ -329,7 +329,7 @@ Hindi mo kailangang maghintay ng malaking sira bago pumunta sa shop. Mas mainam 
 - May oil leak o usok na hindi normal.
 - Hindi consistent ang shifting ng gears.
 
-Dahil Mercury Platinum Dealer kami na may halos 60 taon nang karanasan, alam namin ang mga common issues ng Mercury outboards, pati na ang mga bagong four-stroke models. May direct access kami sa technical support ng Mercury at sa genuine parts. Ibig sabihin, mas mabilis at mas tama ang diagnosis.
+Dahil Mercury Premier Dealer kami na may halos 60 taon nang karanasan, alam namin ang mga common issues ng Mercury outboards, pati na ang mga bagong four-stroke models. May direct access kami sa technical support ng Mercury at sa genuine parts. Ibig sabihin, mas mabilis at mas tama ang diagnosis.
 
 Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warranty pa ang motor mo, hindi ka dapat magpagawa sa hindi certified, baka ma-void ang warranty. Sa HBW, authorized warranty center kami.
 

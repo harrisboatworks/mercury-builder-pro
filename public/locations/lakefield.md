@@ -14,7 +14,7 @@ keyword: "mercury repower lakefield"
 
 # Mercury Repower for Lakefield, Ontario Boaters
 
-Harris Boat Works is 45 minutes south of Lakefield in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 45 km through Peterborough. We're a Mercury Platinum Dealer, selling Mercury since 1965 and family-owned since 1947. Lakefield sits in the northern Kawarthas near Stony Lake, big-water territory with bigger boats and heavier repowers. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD, often at the higher end for Stony Lake hulls.
+Harris Boat Works is 45 minutes south of Lakefield in Gores Landing, ON, on the south shore of Rice Lake. The drive is roughly 45 km through Peterborough. We're a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Lakefield sits in the northern Kawarthas near Stony Lake, big-water territory with bigger boats and heavier repowers. We rig, install, and water-test on Rice Lake before pickup at Gores Landing. No shipping. Typical full repower: $11,000–$40,000 CAD, often at the higher end for Stony Lake hulls.
 
 ## Factbox
 

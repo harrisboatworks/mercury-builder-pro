@@ -194,7 +194,7 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
           </h2>
           <div className="text-muted-foreground leading-relaxed space-y-4">
             <p>
-              We have been a Mercury dealer since 1965 and hold Mercury&rsquo;s Platinum tier today. Third-generation family business, on the same Rice Lake dock since 1947. We sell the motor, we rig it, we water-test it, and we service it every season after.
+              We have been a Mercury dealer since 1965 and hold Mercury&rsquo;s Premier tier today. Third-generation family business, on the same Rice Lake dock since 1947. We sell the motor, we rig it, we water-test it, and we service it every season after.
             </p>
             <p>
               And the price you see here is the price the sales desk sees. No phone tag, no &ldquo;call for quote,&rdquo; no number inflated so it can be discounted back. Most dealers will not put a price online. We do.

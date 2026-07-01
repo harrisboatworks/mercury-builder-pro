@@ -14,7 +14,7 @@ import { ChevronRight, MapPin, Clock, Award, Phone } from 'lucide-react';
 const facts = [
   { icon: Clock, label: '~35 min south of Peterborough' },
   { icon: MapPin, label: 'Gores Landing, Rice Lake' },
-  { icon: Award, label: 'Mercury Platinum Dealer' },
+  { icon: Award, label: 'Mercury Premier Dealer' },
   { icon: Phone, label: '(905) 342-2153' }
 ];
 
@@ -39,7 +39,7 @@ export default function MercuryDealerPeterborough() {
             Mercury Dealer Near Peterborough, Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
