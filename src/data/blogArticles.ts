@@ -19679,6 +19679,8 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 ---
 
+![Why Toronto boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
+
 ## The Toronto Dealer Reality
 
 The GTA has Mercury dealers. They're not all the same.
