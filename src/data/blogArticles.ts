@@ -13146,6 +13146,8 @@ Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or pu
 
 ## How HBW financing actually works
 
+**Current promotional rate (as of July 2026):** TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026. Financing minimum $5,000 before tax. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
+
 We don't lend the money ourselves, and we're not a bank. We work with a marine-and-powersports financing broker (DealerPlan, out of Peterborough) who shops your application across Canadian lenders, primarily TD Auto Finance, with National Bank and RBC in the mix. The broker's job is to find you the best approval, not to push one bank.
 
 What that means for you in practice:
