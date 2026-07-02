@@ -10094,7 +10094,7 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
 **Does the HBW 7-year warranty bonus depend on when I buy?**
-No. The 7-year program (Mercury's 3-year factory + HBW's 4-year bonus) applies to every new Mercury we sell, regardless of when in the year you buy. It's not a promotional add-on, it's structural to how HBW sells Mercurys. Full details: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
 
 ## Ready to See Your Number?
 
@@ -10138,7 +10138,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'Does the HBW 7-year warranty bonus depend on when I buy?',
-        answer: 'No. The 7-year program (Mercury\'s 3-year factory + HBW\'s 4-year bonus) applies to every new Mercury we sell, regardless of when in the year you buy. It\'s not a promotional add-on, it\'s structural to how HBW sells Mercurys. Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.'
+        answer: 'No. As of July 2026, the 7-year program (Mercury\'s 3-year factory + HBW\'s 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.'
       }
     ]
   },
