@@ -31,7 +31,9 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
   const isRentalGuide = s === 'rice-lake-boat-rental-guide-2026';
   const isRentalLicence = s === 'boat-rental-licence-ontario-guide';
   const isRentalFirstTime = s === 'first-time-boat-rental-rice-lake-guide';
-  if (isRentalShared || isRentalGuide || isRentalLicence || isRentalFirstTime || (isRentalGta && variant === 'inline')) {
+  const isRentalGroup = s === 'group-boat-rentals-rice-lake';
+  const isRentalVsOwn = s === 'renting-vs-owning-boat-ontario-math';
+  if (isRentalShared || isRentalGuide || isRentalLicence || isRentalFirstTime || isRentalGroup || ((isRentalGta || isRentalVsOwn) && variant === 'inline')) {
     return {
       title: 'Book a boat on Rice Lake',
       description:
