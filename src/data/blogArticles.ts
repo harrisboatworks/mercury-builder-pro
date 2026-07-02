@@ -16767,7 +16767,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-Rice Lake is a 32-km long shallow lake on the Trent-Severn Waterway, about 80 minutes northeast of Toronto. The water is generally 6–10 ft deep with heavy summer weed growth and a sunken 19th-century railway across the middle (chartplotters mark it, slow down across the lake until you know the crossing). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing. Trent-Severn lockage is free June 19 – September 7, 2026.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, about 80 minutes northeast of Toronto. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing.
 
 ---
 
