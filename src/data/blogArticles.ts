@@ -19480,7 +19480,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, the current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts.
+That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, as of July 2026 the current HBW Exclusive promotion brings total factory-backed coverage to 7 years (3 standard + 4 free extension) on every eligible new Mercury outboard purchased through December 31, 2026, after which the bonus years revert to the 3-year standard. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts.
 
 ---
 
