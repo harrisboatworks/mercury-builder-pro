@@ -19458,7 +19458,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-05-23*
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models, often extended to 5 or 7 with current promotions. Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance. Current promo terms at mercuryrepower.ca.
+> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions). Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
