@@ -672,7 +672,8 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         },
         {
           heading: 'Why upgrade to Command Thrust at the same HP?',
-          paragraphs: [ Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC)."Command Thrust is Mercury's heavy-hull gearcase. The horsepower rating stays at 60. What changes is the gearcase under the powerhead, a larger-diameter torpedo, larger gears, and a high-thrust prop with more blade area. The motor turns a lower gear ratio, which means each prop revolution moves more water.",
+          paragraphs: [
+            "Command Thrust is Mercury's heavy-hull gearcase. The horsepower rating stays at 60. What changes is the gearcase under the powerhead, a larger-diameter torpedo, larger gears, and a high-thrust prop with more blade area. The motor turns a lower gear ratio, which means each prop revolution moves more water.",
             'The practical result is more hole shot and more low-end pull at the cost of a small top-end drop. On the same 18-foot deep-V, a Command Thrust 60 cuts hole shot time roughly in half, from 10 seconds to 5 seconds in our typical test loads. The boat sits at a better trim attitude on plane. Heavy boat behaviour (fighting wakes, climbing back on plane, holding plane at lower RPM) all gets noticeably better.',
             'Top end gives up roughly 2–3 mph compared with the standard 60, depending on prop pitch. For a heavy fishing or family aluminum that does 95% of its work between idle and cruise, that trade is a clear win.',
             'The other reason owners pick Command Thrust over jumping to bigger HP: insurance, transom rating, and resale. Staying at the rated 60 HP keeps the boat inside its design envelope and inside the insurance class it was rated for.',
