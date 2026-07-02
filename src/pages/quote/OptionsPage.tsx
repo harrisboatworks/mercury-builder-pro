@@ -35,7 +35,9 @@ export default function OptionsPage() {
 
   const isElectricStart = hasElectricStart(state.motor?.model || '');
   const [batteryChoice, setBatteryChoice] = useState<boolean | null>(
-    state.looseMotorBattery?.wantsBattery ?? null
+    state.looseMotorBattery?.decision === 'later'
+      ? null
+      : state.looseMotorBattery?.wantsBattery ?? null
   );
 
   const { data: categorizedOptions, isLoading } = useMotorOptions(
@@ -108,10 +110,14 @@ export default function OptionsPage() {
   }, [localSelectedIds, categorizedOptions, dispatch]);
 
   useEffect(() => {
-    if (isElectricStart && batteryChoice !== null) {
+    if (isElectricStart) {
       dispatch({
         type: 'SET_LOOSE_MOTOR_BATTERY',
-        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST },
+        payload: {
+          wantsBattery: batteryChoice === true,
+          batteryCost: BATTERY_COST,
+          decision: batteryChoice === true ? 'add' : batteryChoice === false ? 'own' : 'later',
+        },
       });
     }
   }, [batteryChoice, isElectricStart, dispatch]);
@@ -150,13 +156,17 @@ export default function OptionsPage() {
         isIncluded: opt.is_included,
       }));
     dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
-    const batteryPayload = isElectricStart && batteryChoice !== null
-      ? { wantsBattery: batteryChoice, batteryCost: BATTERY_COST }
+    const batteryPayload = isElectricStart
+      ? {
+          wantsBattery: batteryChoice === true,
+          batteryCost: BATTERY_COST,
+          decision: batteryChoice === true ? 'add' : batteryChoice === false ? 'own' : 'later',
+        }
       : state.looseMotorBattery;
-    if (isElectricStart && batteryChoice !== null) {
+    if (isElectricStart) {
       dispatch({
         type: 'SET_LOOSE_MOTOR_BATTERY',
-        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST },
+        payload: batteryPayload,
       });
     }
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });

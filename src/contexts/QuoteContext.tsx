@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useMemo, useState } from 'react';
 import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
 import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
+import { trackEvent } from '@/lib/analytics';
 
 interface WarrantyConfig {
   extendedYears: number;
@@ -51,6 +52,7 @@ export interface FrozenPricing {
 interface LooseMotorBattery {
   wantsBattery: boolean;
   batteryCost: number;
+  decision?: 'add' | 'own' | 'later';
 }
 
 interface QuoteState {
@@ -246,9 +248,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
           const durationS = startTs ? Math.round((nowMs - startTs) / 1000) : 0;
           sessionStorage.setItem(`mr_step_start_${action.payload + 1}`, String(nowMs));
           const qid = sessionStorage.getItem('mr_quote_id');
-          (window as any).dataLayer = (window as any).dataLayer || [];
-          (window as any).dataLayer.push({
-            event: 'quote_step_complete',
+          trackEvent('quote_step_complete', {
             step_number: action.payload,
             step_name: stepNames[action.payload] || `step_${action.payload}`,
             step_duration_seconds: durationS,
