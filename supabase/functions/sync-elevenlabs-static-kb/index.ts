@@ -321,9 +321,10 @@ serve(async (req) => {
       throw new Error("ELEVENLABS_API_KEY not configured");
     }
 
-    // Parse request body for optional document selection + debug flag
+    // Parse request body for optional document selection + debug flag + promptReplacements
     let selectedDocs: string[] | null = null;
     let debug = false;
+    let promptReplacements: Array<{ find: string; replace: string }> = [];
     try {
       const body = await req.json();
       if (body?.documents && Array.isArray(body.documents)) {
@@ -332,9 +333,13 @@ serve(async (req) => {
       if (body?.debug === true) {
         debug = true;
       }
+      if (Array.isArray(body?.promptReplacements)) {
+        promptReplacements = body.promptReplacements;
+      }
     } catch {
       // No body or invalid JSON - sync all documents
     }
+
 
     // Fetch current agent config up-front (used for debug + baseline)
     const agentConfigBefore = await getAgentConfig();
