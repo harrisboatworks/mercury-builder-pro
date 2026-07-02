@@ -247,13 +247,8 @@ export default function BlogArticle() {
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 
-      {/* Floating Share Bar */}
-      <FloatingShareBar
-        url={articleUrl}
-        title={article.title}
-        description={cleanDescription}
-        articleSlug={article.slug}
-      />
+      {/* Floating share bar removed — byline BlogShareButtons covers all posts. */}
+
 
       <main className="container mx-auto px-6 md:px-14 py-10 md:py-14">
         {/* Breadcrumb */}
