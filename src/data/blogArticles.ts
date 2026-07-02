@@ -19956,7 +19956,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Rice Lake Boat Rentals from Toronto',
     seoTitle: "Rice Lake Boat Rentals from Toronto and the GTA",
     description: "A Rice Lake rental day from the GTA: drive time, what's included, what to bring, and how to book online with Harris Boat Works.",
-    image: '/lovable-uploads/hero-rice-lake-boat-rentals-toronto.png',
+    image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
     dateModified: '2026-06-26',
