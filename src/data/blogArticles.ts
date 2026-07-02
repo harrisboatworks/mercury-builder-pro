@@ -214,7 +214,14 @@ That last line is the entire economics of this post. The annual drain is the che
 - **DIY refill from the top hole.** Gearcases fill from the BOTTOM screw up, until oil appears at the vent. Filled from the top, you trap air and run a half-empty case.
 - **Wrong washers back on the screws.** The little gaskets on drain and vent screws are sealing parts, not decoration. Reuse flattened ones and you've built your own leak.
 
+**Watch Mercury's official gear lube change:**
+
+https://www.youtube.com/watch?v=BBbQVH5j0W0
+
+*Video: Mercury 40-300hp FourStroke Maintenance: Changing Gear Lube (Mercury Marine official).*
+
 ---
+
 
 ## What HBW checks before your gearcase goes back in the water
 
@@ -270,7 +277,7 @@ If your oil looked wrong, or nobody's looked in over a year, that's the whole bo
     slug: "mercury-water-pump-replacement-cost-ontario",
     title: "Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)",
     description: "What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.",
-    image: "/lovable-uploads/hero-water-pump-cost.webp",
+    image: "/lovable-uploads/hero-mercury-90-shop-shot.png",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-07-02",
@@ -313,6 +320,12 @@ The water pump lives at the top of your gearcase, driven by the driveshaft. Gett
 3. Replace the impeller, and in most cases the wear plate, gaskets, and O-rings around it
 4. Inspect the housing liner; replace if scored
 5. Reassemble, torque, and water-test
+
+**Watch the whole job, start to finish:**
+
+https://www.youtube.com/watch?v=AQIV2UddocM
+
+*Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). This is the real sequence our techs follow; the video shows why the labour is the cost.*
 
 That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" during other gearcase work saves real money.
 
@@ -460,7 +473,14 @@ Mercury's 100-hour and annual service list for a FourStroke, in plain terms:
 
 The bundling logic is simple: the annual service and winterization share most of the same labour. Doing them together is one bill instead of two.
 
+**Watch Mercury's official oil change walkthrough:**
+
+https://www.youtube.com/watch?v=ABeIIfXeB0Q
+
+*Video: Mercury 40-60hp FourStroke Maintenance: Changing Engine Oil (Mercury Marine official). The 75-300hp version is [here](https://www.youtube.com/watch?v=7DlXFotIfLo).*
+
 ---
+
 
 ## Real Numbers From Our Counter
 
@@ -4324,15 +4344,21 @@ Mercury Premier Dealer · Rice Lake, Ontario
     imageAlt: 'Man operating a bass boat with a Mercury outboard on a calm lake to demonstrate the 10-hour engine break-in process.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-06-12',
+    dateModified: '2026-07-02',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `_Last updated: May 27, 2026_
+    content: `_Last updated: 2026-07-02_
 
 ---
 
 > **Quick answer:** Mercury's break-in covers roughly the first 10 hours, vary throttle, avoid sustained wide-open throttle in the first hour or two, then gradually open it up with continued variation. Follow the 20-hour oil change on FourStrokes; it flushes the metal particles produced during ring seating. Check the owner's manual for your specific motor model's guidance. Book your 20-hour service at [hbw.wiki/service](https://hbw.wiki/service).
+
+**Mercury's own engine care primer for new owners:**
+
+https://www.youtube.com/watch?v=ydFfxwUz5yc
+
+*Video: Engine Care Basics for New Owners (Mercury Marine official).*
 
 ---
 
@@ -14397,7 +14423,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-05-04',
+    dateModified: '2026-07-02',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14413,6 +14439,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
+
+**Watch Mercury's official winterization checklist first:**
+
+https://www.youtube.com/watch?v=YGuQjF6vuao
+
+*Video: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine official).*
 
 ---
 
