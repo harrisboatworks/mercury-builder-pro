@@ -410,11 +410,14 @@ export default function BlogArticle() {
                 c = c.replace(/^##\s+CTA\s*$/gim, '');
                 // Rename "## Internal Links" → "## Related reading" (keep list).
                 c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
-                // Suppress inline `## Frequently Asked Questions` (or FAQ/FAQs)
-                // section when faqs[] is populated — accordion below replaces it.
+                // Suppress inline FAQ-style sections when faqs[] is populated —
+                // the accordion below replaces them. Uses the global flag so
+                // articles that (historically) duplicated their FAQ block get
+                // BOTH copies stripped, and matches common variants:
+                // "Frequently Asked Questions", "FAQ", "FAQs", "Common questions".
                 if (article.faqs && article.faqs.length > 0) {
                   c = c.replace(
-                    /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
+                    /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
                     '\n',
                   );
                 }
