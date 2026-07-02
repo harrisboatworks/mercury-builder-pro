@@ -345,7 +345,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           paragraphs: [
             'All-in lands between $13,000 and $16,000 CAD. The Mercury 90 FourStroke EFI sits in the $8,000–$14,000 mid-range FourStroke band, and the new controls, cables, prop, removal of the old 2-stroke, fuel system work, and water test build the rest. Trade-in on an old 2-stroke depends heavily on brand and condition, older Mercury Sport trade-ins still carry some resale value.',
             'Discontinued legacy 2-strokes have less trade value but we still take them case by case.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. For the full pricing picture, see our Mercury repower cost guide.',
+            'Financing is 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. For the full pricing picture, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -576,7 +576,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $4,500 and $6,500 CAD. The Avator 7.5e and a single Mercury lithium pack are the bulk of it. The bracket, helm gauge, install labour, and water test make up the rest. A second battery, common for serious walleye anglers, adds about $1,000–$1,500 on top.',
-            'Financing is available, 8.99% APR under $10,000 on approved credit. A $200 deposit holds the order. For broader context, see the Mercury repower cost guide or read about Rice Lake repower work.',
+            'Financing is available, 8.99% APR under $10,000 on approved credit. A $200 deposit holds the order. For broader context, see the Mercury repower cost guide or read about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
