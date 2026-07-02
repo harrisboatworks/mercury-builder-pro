@@ -10771,13 +10771,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-06-03',
+    dateModified: '2026-07-02',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury outboard price 2026', 'mercury promotions', 'mercury dealer pricing', 'best time buy outboard', 'mercury financing options'],
     content: `
-*Last reviewed: 2026-06-03*
+*Last reviewed: 2026-07-02*
 
 > **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
