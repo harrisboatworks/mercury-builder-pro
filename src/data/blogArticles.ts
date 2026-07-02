@@ -5892,7 +5892,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15, 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
+The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
@@ -5918,7 +5918,7 @@ On a typical day at HBW, we'll trial a motor two or three times with different p
 
 **2. Trim**
 
-Running flat at cruise (no trim up) is one of the easiest fuel economy mistakes to make and one of the easiest to fix. Properly trimmed, the bow lifts slightly and the hull rides efficiently through the water rather than plowing. The fuel economy difference between flat and properly trimmed is typically 10, 20% at cruise speeds.
+Running flat at cruise (no trim up) is one of the easiest fuel economy mistakes to make and one of the easiest to fix. Properly trimmed, the bow lifts slightly and the hull rides efficiently through the water rather than plowing. The fuel economy difference between flat and properly trimmed is typically 10 to 20% at cruise speeds.
 
 The right trim angle is the one where the motor is working least to maintain your target speed. If you're not in the habit of adjusting trim as speed and load change, start there.
 
@@ -6037,13 +6037,13 @@ The most common fuel-economy callback at our shop is a 4-blade prop running the 
 Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
 
 **How much does the right prop actually matter?** 
-Significantly. A mismatched prop can reduce fuel economy by 15, 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
+Significantly. A mismatched prop can reduce fuel economy by 15 to 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
 
 **Should I run higher octane fuel for better economy?** 
 Mercury FourStrokes are designed to run on regular octane fuel (87 AKI). Unless your owner's manual specifies otherwise, higher octane doesn't improve fuel economy.
 
 **Does trim really make a meaningful difference?** 
-Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10, 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
+Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10 to 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
 
 **What's the best cruise RPM for fuel economy?** 
 It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency range that your dealer or owner's manual can identify. The goal is to find the RPM where you're making acceptable speed without the motor working unnecessarily hard.
@@ -9443,7 +9443,7 @@ Mercury makes two flavours at most horsepower ratings: **FourStroke** (the stand
 
 **FourStroke is quieter.** Conversation-quiet at cruise. Pro XS has a sportier exhaust note that sounds great for five minutes and gets old over a six-hour day with kids in the boat.
 
-**FourStroke gets better fuel economy.** Roughly 10, 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
+**FourStroke gets better fuel economy.** Roughly 10 to 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
 
 **FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end. The FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
@@ -9459,7 +9459,7 @@ For everyone else, pulling tubes occasionally, cruising to dinner, hauling the k
 
 The most common mistake we see on family runabouts: the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.
 
-A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80, 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
+A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80 to 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
 
 **The rule:** Look at your boat's max HP rating on the capacity plate (usually near the helm). For family use with full crew and gear, don't go more than 25 HP below max. If your boat is rated 115 HP max, run a 90, 115 HP motor.
 
@@ -24925,7 +24925,7 @@ Cruising, towing a tube, swimming, occasional fishing, the 90 handles all of it 
 
 ### Repowers replacing 70, 90 HP two-strokes
 
-Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20, 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
+Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20 to 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
 
 ---
 
@@ -25000,7 +25000,7 @@ No. The Pro XS is a different tuning, higher RPM ceiling, sport gearcase, more a
 Yes, it's not optional. A short shaft on a 20" transom puts the prop too shallow to cool the motor properly. We measure every transom that comes through the shop.
 
 **How much does the 90 HP save on fuel vs. an old two-stroke?** 
-Typically 20, 30% less fuel for the same day on the water. The exact number depends on the old motor's condition and how you use the boat.
+Typically 20 to 30% less fuel for the same day on the water. The exact number depends on the old motor's condition and how you use the boat.
 
 **Is the 90 CT the same motor as the 90 standard?** 
 Same powerhead. Different gearcase. Different SKU, different price, different prop size, and often a different recommendation depending on your hull.
@@ -25138,7 +25138,7 @@ The most common repower candidates for the 115 ELPT are older 115 OptiMax, 115, 
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25, 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
+The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25 to 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
 
 ---
 
@@ -25203,7 +25203,7 @@ No. Different family, different block, different cylinder architecture, differen
 When the pontoon is 20, 24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
 
 **What fuel savings can I expect repowering from an old two-stroke?** 
-Typically 25, 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
+Typically 25 to 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
 
 **Does the 115 Pro XS come in Command Thrust?** 
 No, the Pro XS uses a sport gearcase designed for performance applications, not the CT gearcase. If you're shopping between Pro XS and standard FourStroke, use the quote builder to compare both.
