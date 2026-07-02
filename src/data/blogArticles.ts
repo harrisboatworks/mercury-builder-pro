@@ -31106,7 +31106,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury dealer peterborough', 'peterborough mercury outboard', 'mercury premier dealer ontario', 'kawartha mercury repower'],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Full details on our [Peterborough location page](/locations/peterborough-mercury-dealer). Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 35 minutes south of Peterborough via Highway 28. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
 
 ![Why Peterborough boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
