@@ -218,6 +218,16 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-first-time-boat-rental.webp</image:loc>
+      <image:title><![CDATA[First Time Renting a Boat? What We Tell Every Renter at Our Dock]]></image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -1189,7 +1199,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
