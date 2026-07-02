@@ -1973,7 +1973,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
     slug: 'how-to-choose-right-horsepower-boat',
     title: 'How to Choose the Right Boat Horsepower',
     seoTitle: "How to Choose the Right Boat Horsepower (2026)",
-    description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.",
+    description: "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap.",
     image: '/lovable-uploads/hero-how-to-choose-horsepower.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
