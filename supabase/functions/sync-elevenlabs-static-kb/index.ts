@@ -117,13 +117,117 @@ async function getAgentConfig(): Promise<any> {
   return await response.json();
 }
 
-// Attach documents to the agent's knowledge base
-async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: string }>): Promise<void> {
+// Trigger RAG index computation for a document
+async function triggerRagIndex(documentId: string): Promise<void> {
+  const response = await fetch(
+    `https://api.elevenlabs.io/v1/convai/knowledge-base/${documentId}/rag-index`,
+    {
+      method: "POST",
+      headers: {
+        "xi-api-key": ELEVENLABS_API_KEY!,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ model: "e5_mistral_7b_instruct" }),
+    }
+  );
+  if (!response.ok) {
+    const error = await response.text();
+    // 409/400 often mean "already indexing/indexed" — log & continue to poll
+    console.warn(`triggerRagIndex ${documentId} non-ok:`, response.status, error);
+  }
+}
+
+// Poll the RAG index status for a document. Returns true when ready.
+async function getRagIndexStatus(documentId: string): Promise<string> {
+  const response = await fetch(
+    `https://api.elevenlabs.io/v1/convai/knowledge-base/${documentId}/rag-index`,
+    {
+      method: "GET",
+      headers: { "xi-api-key": ELEVENLABS_API_KEY! },
+    }
+  );
+  if (!response.ok) return "unknown";
+  const data = await response.json();
+  // Response shape varies; look for common status fields
+  const indexes = Array.isArray(data) ? data : (data.indexes ?? [data]);
+  // Return the "best" status across models
+  for (const idx of indexes) {
+    const status = (idx?.status ?? idx?.rag_index_status ?? "").toString().toLowerCase();
+    if (status === "succeeded" || status === "ready" || status === "success" || status === "created") {
+      return "ready";
+    }
+  }
+  // If any status indicated failure, surface it
+  for (const idx of indexes) {
+    const status = (idx?.status ?? idx?.rag_index_status ?? "").toString().toLowerCase();
+    if (status === "failed" || status === "error") return "failed";
+  }
+  return "pending";
+}
+
+// Wait for all documents to have ready RAG indexes
+async function waitForRagIndexes(
+  documentIds: string[],
+  { intervalMs = 2500, timeoutMs = 90_000 }: { intervalMs?: number; timeoutMs?: number } = {}
+): Promise<{ ready: string[]; notReady: string[] }> {
+  const ready = new Set<string>();
+  const started = Date.now();
+  while (Date.now() - started < timeoutMs) {
+    const pending = documentIds.filter(id => !ready.has(id));
+    if (pending.length === 0) break;
+    for (const id of pending) {
+      const status = await getRagIndexStatus(id);
+      console.log(`RAG index status ${id}: ${status}`);
+      if (status === "ready") ready.add(id);
+      if (status === "failed") {
+        return { ready: [...ready], notReady: documentIds.filter(d => !ready.has(d)) };
+      }
+    }
+    if (ready.size === documentIds.length) break;
+    await new Promise(r => setTimeout(r, intervalMs));
+  }
+  return {
+    ready: [...ready],
+    notReady: documentIds.filter(d => !ready.has(d)),
+  };
+}
+
+// Apply exact-string find/replace to a prompt. Returns updated text + report.
+function applyPromptReplacements(
+  prompt: string,
+  replacements: Array<{ find: string; replace: string }>
+): { updated: string; report: Array<{ find: string; status: "applied" | "not_found"; count?: number }> } {
+  let updated = prompt;
+  const report: Array<{ find: string; status: "applied" | "not_found"; count?: number }> = [];
+  for (const r of replacements) {
+    if (!r || typeof r.find !== "string" || typeof r.replace !== "string" || r.find.length === 0) {
+      report.push({ find: String(r?.find ?? ""), status: "not_found" });
+      continue;
+    }
+    if (!updated.includes(r.find)) {
+      report.push({ find: r.find, status: "not_found" });
+      continue;
+    }
+    let count = 0;
+    // Replace all occurrences (exact string, no regex)
+    while (updated.includes(r.find)) {
+      updated = updated.replace(r.find, r.replace);
+      count++;
+      if (count > 1000) break; // safety
+    }
+    report.push({ find: r.find, status: "applied", count });
+  }
+  return { updated, report };
+}
+
+// Attach documents to the agent's knowledge base (optionally repair prompt).
+async function attachDocumentsToAgent(
+  newDocuments: Array<{ id: string; name: string }>,
+  agentConfig: any,
+  updatedPromptText?: string | null,
+): Promise<void> {
   console.log(`Attaching ${newDocuments.length} documents to agent...`);
-  
-  // Get current agent config to preserve existing documents
-  const agentConfig = await getAgentConfig();
-  
+
   // Get existing knowledge base documents
   const existingKB = agentConfig.conversation_config?.agent?.prompt?.knowledge_base || [];
   console.log(`Agent has ${existingKB.length} existing KB documents`);
@@ -146,9 +250,6 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
   
   console.log(`Preserving ${preservedDocs.length} non-static documents`);
   
-  // Merge: preserved docs + new static docs. All entries must carry
-  // usage_mode="auto" — large text docs cannot be prompt-injected, and
-  // the agent must have RAG enabled for auto-mode retrieval to work.
   const normalizedPreserved = preservedDocs.map((doc: any) => ({
     type: doc.type ?? "text",
     name: doc.name,
@@ -168,7 +269,19 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
 
   console.log(`Updating agent with ${mergedKB.length} total KB documents (usage_mode=auto, rag enabled)`);
 
-  // Update the agent with merged knowledge base + RAG enabled
+  const promptPayload: Record<string, unknown> = {
+    knowledge_base: mergedKB,
+    rag: {
+      enabled: true,
+      embedding_model: "e5_mistral_7b_instruct",
+      max_documents_length: 50000,
+      max_vector_distance: 0.6,
+    },
+  };
+  if (typeof updatedPromptText === "string") {
+    promptPayload.prompt = updatedPromptText;
+  }
+
   const updateResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${ELEVENLABS_AGENT_ID}`, {
     method: "PATCH",
     headers: {
@@ -178,15 +291,7 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
     body: JSON.stringify({
       conversation_config: {
         agent: {
-          prompt: {
-            knowledge_base: mergedKB,
-            rag: {
-              enabled: true,
-              embedding_model: "e5_mistral_7b_instruct",
-              max_documents_length: 50000,
-              max_vector_distance: 0.6,
-            },
-          },
+          prompt: promptPayload,
         },
       },
     }),
@@ -200,6 +305,7 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
 
   console.log("Successfully attached documents to agent");
 }
+
 
 serve(async (req) => {
   // Handle CORS
