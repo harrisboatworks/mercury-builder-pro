@@ -24,6 +24,17 @@ export default function CaseStudyDetail() {
   // ----- LONG-FORM RENDER -----
   if (lf) {
     const heroImageAbs = study.heroImage.startsWith('/') ? `${SITE_URL}${study.heroImage}` : study.heroImage;
+    const lfFaqs = lf.faqs.map((f) => ({
+      question: substituteLiveRateTokens(f.question),
+      answer: substituteLiveRateTokens(f.answer),
+    }));
+    const lfSections = lf.sections.map((sec) => ({
+      heading: sec.heading,
+      paragraphs: sec.paragraphs.map(substituteLiveRateTokens),
+    }));
+    const lfIntro = substituteLiveRateTokens(lf.intro);
+    const lfQuickAnswer = substituteLiveRateTokens(lf.quickAnswer);
+    const lfVisit = substituteLiveRateTokens(lf.visit);
 
     const jsonLdGraph = {
       '@context': 'https://schema.org',
@@ -44,7 +55,7 @@ export default function CaseStudyDetail() {
         {
           '@type': 'FAQPage',
           '@id': `${url}#faq`,
-          mainEntity: lf.faqs.map((f) => ({
+          mainEntity: lfFaqs.map((f) => ({
             '@type': 'Question',
             name: f.question,
             acceptedAnswer: { '@type': 'Answer', text: f.answer },
