@@ -269,7 +269,7 @@ export default function LocationDetail() {
                 <p className="text-sm font-semibold text-repower-gold uppercase tracking-wider mb-2">
                   Quick answer
                 </p>
-                <p className="text-repower-cream/90 leading-relaxed">{lf.quickAnswer}</p>
+                <p className="text-repower-cream/90 leading-relaxed">{lfQuickAnswer}</p>
               </div>
             )}
 
