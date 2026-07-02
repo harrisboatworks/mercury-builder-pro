@@ -473,7 +473,14 @@ Mercury's 100-hour and annual service list for a FourStroke, in plain terms:
 
 The bundling logic is simple: the annual service and winterization share most of the same labour. Doing them together is one bill instead of two.
 
+**Watch Mercury's official oil change walkthrough:**
+
+https://www.youtube.com/watch?v=ABeIIfXeB0Q
+
+*Video: Mercury 40-60hp FourStroke Maintenance: Changing Engine Oil (Mercury Marine official). The 75-300hp version is [here](https://www.youtube.com/watch?v=7DlXFotIfLo).*
+
 ---
+
 
 ## Real Numbers From Our Counter
 
