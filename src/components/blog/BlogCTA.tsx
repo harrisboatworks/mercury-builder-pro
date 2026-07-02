@@ -106,10 +106,11 @@ export function BlogCTA({ category, slug, variant = 'banner', className = '' }: 
 
   const button = (
     <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors">
-      {cta.title}
+      {cta.buttonLabel ?? cta.title}
       <ArrowRight className="h-4 w-4" />
     </span>
   );
+
 
   const wrapperClass =
     variant === 'inline'
