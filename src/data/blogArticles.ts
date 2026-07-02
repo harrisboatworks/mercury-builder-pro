@@ -4344,15 +4344,21 @@ Mercury Premier Dealer · Rice Lake, Ontario
     imageAlt: 'Man operating a bass boat with a Mercury outboard on a calm lake to demonstrate the 10-hour engine break-in process.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-06-12',
+    dateModified: '2026-07-02',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `_Last updated: May 27, 2026_
+    content: `_Last updated: 2026-07-02_
 
 ---
 
 > **Quick answer:** Mercury's break-in covers roughly the first 10 hours, vary throttle, avoid sustained wide-open throttle in the first hour or two, then gradually open it up with continued variation. Follow the 20-hour oil change on FourStrokes; it flushes the metal particles produced during ring seating. Check the owner's manual for your specific motor model's guidance. Book your 20-hour service at [hbw.wiki/service](https://hbw.wiki/service).
+
+**Mercury's own engine care primer for new owners:**
+
+https://www.youtube.com/watch?v=ydFfxwUz5yc
+
+*Video: Engine Care Basics for New Owners (Mercury Marine official).*
 
 ---
 
