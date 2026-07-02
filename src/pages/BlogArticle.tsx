@@ -11,7 +11,7 @@ import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
 import { AuthorByline } from '@/components/blog/AuthorByline';
-import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
+// FloatingShareBar removed — byline BlogShareButtons is the sole share UI.
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
 import { isRepowerHubSlug } from '@/data/blogClusters';
