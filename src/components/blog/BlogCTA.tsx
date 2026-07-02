@@ -28,7 +28,9 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
   // rentals CTA everywhere else. The shared-access post uses rentals for both.
   const isRentalGta = s === 'rice-lake-boat-rentals-from-toronto-gta';
   const isRentalShared = s === 'boat-rentals-shared-access-booming-2026';
-  if (isRentalShared || (isRentalGta && variant === 'inline')) {
+  const isRentalGuide = s === 'rice-lake-boat-rental-guide-2026';
+  const isRentalLicence = s === 'boat-rental-licence-ontario-guide';
+  if (isRentalShared || isRentalGuide || isRentalLicence || (isRentalGta && variant === 'inline')) {
     return {
       title: 'Book a boat on Rice Lake',
       description:
