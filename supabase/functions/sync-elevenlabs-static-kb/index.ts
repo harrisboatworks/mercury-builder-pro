@@ -428,11 +428,18 @@ serve(async (req) => {
       }
       const { ready, notReady } = await waitForRagIndexes(
         createdDocuments.map(d => d.id),
-        { intervalMs: 2500, timeoutMs: 90_000 }
+        { intervalMs: 2500, timeoutMs: 150_000 }
       );
       console.log(`RAG indexing done. ready=${ready.length} notReady=${notReady.length}`);
       ragNotReady = notReady;
+      if (notReady.length === 0) {
+        // Grace sleep — ElevenLabs sometimes reports "ready" a beat before the
+        // agent PATCH endpoint accepts the doc. 3s buffer avoids rag_index_not_ready.
+        console.log("RAG ready — 3s grace sleep before agent PATCH");
+        await new Promise(r => setTimeout(r, 3000));
+      }
     }
+
 
     // Apply prompt replacements (if any) against the pre-fetched agent config
     let promptReport: Array<{ find: string; status: "applied" | "not_found"; count?: number }> = [];
