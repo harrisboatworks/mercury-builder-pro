@@ -19965,7 +19965,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["Rice Lake boat rentals", "boat rentals near Toronto", "Kawarthas pontoon rentals", "family boat rental Ontario", "day trip boat rental GTA", "pontoon rental Toronto"],
     content: `# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
-*Last reviewed: 2026-05-10*
+*Last reviewed: 2026-06-26*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
 
