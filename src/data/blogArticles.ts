@@ -2330,7 +2330,7 @@ If winterization is done correctly, the motor mostly takes care of itself over w
 - Indoor temperature: heated indoor is best, unheated indoor is fine, outdoor is hardest on the motor
 - Mid-winter check: a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
 
-We offer indoor and outdoor storage at HBW. For pricing, [contact us](/contact).
+We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contact).
 
 ## Common maintenance mistakes
 
