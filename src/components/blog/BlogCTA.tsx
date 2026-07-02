@@ -98,7 +98,7 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
 }
 
 export function BlogCTA({ category, slug, variant = 'banner', className = '' }: BlogCTAProps) {
-  const cta = pickCTA(category, slug);
+  const cta = pickCTA(category, slug, variant);
 
   const button = (
     <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors">
