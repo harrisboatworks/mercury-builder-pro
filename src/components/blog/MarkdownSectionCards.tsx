@@ -352,8 +352,21 @@ function buildYouTubeDirective(attrs: string): string | null {
   return `\n\n:::youtube-embed\nid: ${id}${title ? `\ntitle: ${title}` : ''}\n:::\n\n`;
 }
 
+/**
+ * Convert a paragraph containing ONLY a bare YouTube URL (watch or youtu.be)
+ * into a `:::youtube-embed` directive. Runs before iframe rewriter.
+ */
+function rewriteYouTubeUrlParagraphs(md: string): string {
+  const urlRx =
+    /(^|\n\n)[ \t]*(?:https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([A-Za-z0-9_-]{6,})[^\s\n]*|https?:\/\/youtu\.be\/([A-Za-z0-9_-]{6,})[^\s\n]*)[ \t]*(?=\n\n|\n?$)/g;
+  return md.replace(urlRx, (_m, lead, id1, id2) => {
+    const id = id1 || id2;
+    return `${lead}:::youtube-embed\nid: ${id}\n:::`;
+  });
+}
+
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeEmbeds(
+  return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeUrlParagraphs(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
