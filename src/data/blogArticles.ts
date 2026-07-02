@@ -131,6 +131,282 @@ export function getSitemapEligibleArticles(): BlogArticle[] {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "milky-gearcase-oil-meaning-cost-ontario",
+    title: "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)",
+    description: "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance.",
+    image: "/lovable-uploads/hero-milky-gearcase-oil.webp",
+    author: "Jay Harris",
+    datePublished: "2026-07-02",
+    dateModified: "2026-07-02",
+    publishDate: "2026-07-02",
+    category: "Service",
+    readTime: "~7 min read",
+    keywords: ["milky gearcase oil", "water in lower unit oil", "gearcase oil change ontario", "outboard gear oil milky", "lower unit seal replacement cost"],
+    faqs: [
+      { question: "What does milky gearcase oil mean?", answer: "Water has gotten into your lower unit and emulsified with the gear oil, almost always past a worn prop shaft, driveshaft, or shift shaft seal. It needs a pressure test to locate the leak and a reseal, and the earlier it's caught, the cheaper it stays." },
+      { question: "Can I just change the oil and keep boating?", answer: "For a weekend, maybe. But the leak that let water in is still there, and continued running on emulsified oil wears gears and bearings. In fall it's worse: trapped water freezes and can crack the case. Fix the seal; don't refresh the milkshake." },
+      { question: "How much does a gearcase pressure test cost?", answer: "The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbw.wiki/service." },
+      { question: "What causes gearcase seals to fail?", answer: "Fishing line wrapped behind the prop is the classic killer; age, impact, and corrosion do the rest. Pulling the prop periodically to check for line is the cheapest prevention there is, and it's part of every annual service." },
+      { question: "How often should gearcase oil be changed?", answer: "Every 100 hours or annually, whichever comes first, which for most Ontario boats means every fall as part of the winterize-and-service. The change doubles as your yearly water-intrusion check; skipping it means nobody's watching the one gauge that matters." },
+      { question: "Is milky oil covered by warranty?", answer: "Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbw.wiki/service." }
+    ],
+    content: `# Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)
+
+*Last reviewed: 2026-07-02*
+
+> **Quick answer:** Milky or coffee-coloured gearcase oil means water is getting into your lower unit, usually past a worn seal. Caught at the annual oil change, it's typically a pressure test and a seal job. Ignored for a season, water can destroy gears and bearings, and gearcases cost thousands. Our shop has pressure-tested 364 gearcases; most started as a milky drain. Book at hbw.wiki/service.
+
+There's a ten-second moment in every gearcase oil change that matters more than the oil itself: watching what comes out.
+
+Amber and clean means all good. Dark but oily means it did its job. And milky, like coffee with too much cream, means water got in where water must never be. Across 7,417 gearcase jobs in our system since 2013, that drain-plug moment is where the expensive problems announce themselves cheaply.
+
+Here's how to read it, what fixing it costs, and why this is the single best argument for the annual service.
+
+---
+
+## Who this is for
+
+You just drained your lower unit and the oil looks wrong. Or a shop told you "there's water in your gear oil" and you want to know how bad that is before approving anything. Or you're deciding whether the annual gearcase oil change is skippable. (It isn't, and this post is why.)
+
+---
+
+## What Gearcase Oil Does (and Why Water Kills It)
+
+Your lower unit is a sealed box of precision gears, bearings, and shafts spinning in a bath of gear oil. Three seals keep the lake out: prop shaft, driveshaft, and shift shaft. When one wears (fishing line wrapped at the prop is a classic cause), water seeps in.
+
+Water and gear oil don't mix; they emulsify into that milky mess. Emulsified oil doesn't lubricate properly, and worse, water rusts bearings and gear faces from the inside. In winter, trapped water freezes and expands inside a case that has no room for expansion.
+
+That's the whole story of why every winterize-and-service includes a gearcase drain: it's a lubricant change AND the annual pressure check on your seals, disguised as one boring line item.
+
+---
+
+## Reading the Drain: The Three Colours
+
+| What drains out | What it means | What happens next |
+|---|---|---|
+| Amber / clean | Seals healthy | Refill, done, see you next fall |
+| Dark, oily, no cream | Normal used oil | Refill, done; it worked for a living |
+| Milky, creamy, or water first | Water intrusion past a seal | Pressure test to find the leak, then reseal |
+| Metal glitter on the drain screw magnet | Wear or damage inside | Deeper inspection before it grows |
+
+The magnet on the drain screw is the second tell: fine grey paste is normal wear, but visible flakes or chunks mean the gearcase is eating itself.
+
+---
+
+## What Fixing It Costs
+
+Real talk from our work orders, with the usual caveat that rates are as of summer 2026 and confirmed when you book:
+
+- **Caught at the annual service:** the drain itself is already part of your winterize-and-service (see the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario) for those all-in numbers). Finding milk adds the diagnostic step, not a crisis.
+- **The pressure test:** the gearcase gets pressurized and vacuum-checked to find which seal leaks. It's careful work, and we've done 364 of them; time and cost are quoted when you book.
+- **The reseal:** parts are modest (seal kits are not the expensive part); the labour depends on which seal and whether the prop shaft or driveshaft has to come out. Quoted per motor once the test points at the culprit.
+- **The ignored case:** water run all season, or frozen over winter, can mean gears, bearings, or a complete gearcase. On common Mercury families that's a four-figure repair that started as a two-figure seal.
+
+That last line is the entire economics of this post. The annual drain is the cheapest gearcase insurance that exists.
+
+---
+
+## Common mistakes
+
+- **Topping up milky oil and carrying on.** The water is still in there, and so is the leak. You've refreshed the emulsion, not fixed anything.
+- **Skipping the drain because "it shifted fine all summer."** Milky oil shifts fine right up until the bearings pit.
+- **Fishing line left at the prop.** Pull your prop a few times a season and check the shaft; a line wrap slices the prop shaft seal quietly. Our [propeller guide](/blog/mercury-propeller-selection-guide) covers the prop-off routine.
+- **DIY refill from the top hole.** Gearcases fill from the BOTTOM screw up, until oil appears at the vent. Filled from the top, you trap air and run a half-empty case.
+- **Wrong washers back on the screws.** The little gaskets on drain and vent screws are sealing parts, not decoration. Reuse flattened ones and you've built your own leak.
+
+---
+
+## What HBW checks before your gearcase goes back in the water
+
+Every gearcase drain at our shop gets the same eyes: oil colour read before it hits the pan, the drain-screw magnet checked, and anything suspicious written on your file with a recommendation. Milk means a pressure test before refill, because refilling a leaking case just schedules a bigger bill. That discipline across 7,417 gearcase jobs is why our customers' lower units mostly die of old age instead of drowning.
+
+---
+
+## Frequently Asked Questions
+
+**What does milky gearcase oil mean?**
+Water has gotten into your lower unit and emulsified with the gear oil, almost always past a worn prop shaft, driveshaft, or shift shaft seal. It needs a pressure test to locate the leak and a reseal, and the earlier it's caught, the cheaper it stays.
+
+**Can I just change the oil and keep boating?**
+For a weekend, maybe. But the leak that let water in is still there, and continued running on emulsified oil wears gears and bearings. In fall it's worse: trapped water freezes and can crack the case. Fix the seal; don't refresh the milkshake.
+
+**How much does a gearcase pressure test cost?**
+The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns "there's water in it somewhere" into a precise, priced repair instead of a guess. Start at hbw.wiki/service.
+
+**What causes gearcase seals to fail?**
+Fishing line wrapped behind the prop is the classic killer; age, impact, and corrosion do the rest. Pulling the prop periodically to check for line is the cheapest prevention there is, and it's part of every annual service.
+
+**How often should gearcase oil be changed?**
+Every 100 hours or annually, whichever comes first, which for most Ontario boats means every fall as part of the winterize-and-service. The change doubles as your yearly water-intrusion check; skipping it means nobody's watching the one gauge that matters.
+
+**Is milky oil covered by warranty?**
+Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+## Ready to Get That Drain Checked?
+
+If your oil looked wrong, or nobody's looked in over a year, that's the whole booking reason.
+
+**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+**Related guides:**
+- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
+- [Mercury Water Pump Replacement Cost](/blog/mercury-water-pump-replacement-cost-ontario)
+- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
+
+---
+
+## Sources
+
+- HBW service records, Rice Lake: 7,417 gearcase jobs and 364 gearcase pressure tests, 2013-2026
+- Mercury Marine gearcase lubrication specifications (your owner's manual governs your model)
+`,
+  },
+  {
+    slug: "mercury-water-pump-replacement-cost-ontario",
+    title: "Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)",
+    description: "What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.",
+    image: "/lovable-uploads/hero-water-pump-cost.webp",
+    author: "Jay Harris",
+    datePublished: "2026-07-02",
+    dateModified: "2026-07-02",
+    publishDate: "2026-07-02",
+    category: "Service",
+    readTime: "~7 min read",
+    keywords: ["mercury water pump replacement cost", "outboard impeller replacement cost ontario", "water pump kit cost mercury", "weak telltale outboard", "outboard water pump service"],
+    faqs: [
+      { question: "How much does a Mercury water pump replacement cost in Ontario?", answer: "At our shop the median dedicated job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST; a full kit with housing costs more and is quoted by model. Current rates are confirmed when you book at hbw.wiki/service." },
+      { question: "How often should the water pump be serviced?", answer: "Follow your interval: for most Mercury outboards that's every 300 hours or 3 years for the pump service, with the impeller inspected sooner if the telltale weakens. Our maintenance intervals guide lays out the schedule." },
+      { question: "Can I replace just the impeller and skip the kit?", answer: "When the housing liner is smooth and gaskets are healthy, impeller-and-wear-plate is the standard, honest job. Once the liner is scored or the motor has missed intervals, the kit is cheaper than doing the labour twice. We tell you which one your motor actually needs." },
+      { question: "Is a weak telltale always the water pump?", answer: "No; the telltale outlet itself clogs with debris easily, and thermostat and poppet issues mimic pump problems. Our overheating at high speed guide walks the checks in order before anyone spends money." },
+      { question: "Can I do the water pump myself?", answer: "Handy owners with a shop manual manage it, and the parts are affordable. The traps are shift-linkage alignment, driveshaft seal damage on reinstall, and torque on the housing. If any of that reads like a foreign language, two hours of shop labour is cheap tuition avoided." },
+      { question: "When's the best time to book it?", answer: "Fall, bundled with your winterize-and-service while the shop's already working on the motor, or early spring before the rush. Mid-July, when everyone's pump fails at once, is the expensive time to need one." }
+    ],
+    content: `# Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)
+
+*Last reviewed: 2026-07-02*
+
+> **Quick answer:** At our Rice Lake shop, the median dedicated water pump job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST (as of summer 2026, confirmed when you book); full kits with housing run higher by model. It's the cooling system's only moving part and the cheapest insurance an outboard can buy. Book at hbw.wiki/service.
+
+Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) answered WHEN water pumps fail, with 766 jobs of evidence. The question people ask next at the counter is simpler: what does it cost to just do it?
+
+Here are the real numbers from 112 dedicated water pump jobs since 2023, plus what's actually inside that bill and when "impeller" quietly becomes "impeller, kit, and thermostat."
+
+---
+
+## Who this is for
+
+Your impeller is on its interval, your telltale stream is weaker than last season, or an overheat alarm has you reading our [overheating guide](/blog/mercury-outboard-overheat-high-speed). Either way, you want the number before you book. If you're unsure whether it's due at all, the [impeller timing post](/blog/mercury-impeller-replacement-when-they-fail) settles that first.
+
+---
+
+## What the Job Actually Involves
+
+The water pump lives at the top of your gearcase, driven by the driveshaft. Getting to it means:
+
+1. Drop the lower unit (bolts, shift linkage, driveshaft alignment)
+2. Remove the pump housing
+3. Replace the impeller, and in most cases the wear plate, gaskets, and O-rings around it
+4. Inspect the housing liner; replace if scored
+5. Reassemble, torque, and water-test
+
+That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" during other gearcase work saves real money.
+
+---
+
+## The Real Numbers
+
+From our completed work orders (2023 to present, before HST; as of July 2026, confirmed when you book):
+
+| Line | Median at our counter | Notes |
+|---|---|---|
+| Labour | ~$210 (about 2 hours) | Drop lower unit, replace pump components, reassemble, test |
+| Pump parts on the median job | ~$76 | Impeller plus gaskets/wear items on the median job |
+| Full pump kit with housing | Higher, by model | Quoted per motor when the liner is scored |
+| Indicative all-in | Labour + parts medians land near $300 | Derived, before HST; V6/V8 and corroded hardware run higher |
+
+What moves it up: a scored housing (full kit instead of impeller-and-plate), seized lower unit bolts on saltwater or neglected motors, a thermostat added while the cooling system is open, and any surprise the [gearcase drain](/blog/milky-gearcase-oil-meaning-cost-ontario) reveals while the unit is off.
+
+What keeps it down: bundling. If your motor is already in for its [annual winterize-and-service](/blog/mercury-100-hour-service-cost-ontario), the lower unit conversation is already half-done.
+
+---
+
+## Impeller Only, or the Full Kit?
+
+The honest version of the counter conversation:
+
+- **Impeller and wear plate** is the standard job when the housing liner is smooth and the motor's been maintained on schedule.
+- **The full kit** (housing or liner included) is the right call when the liner shows scoring, usually from an impeller that ran dry or disintegrated, or on motors past their second impeller interval.
+- **Fragments matter.** If an old impeller went to pieces, the missing blades are somewhere in your cooling passages, and the job includes finding them. This is the expensive version of "I'll do it next year."
+
+We put it on your file either way: what we found, what we installed, and when the next one's due.
+
+---
+
+## Common mistakes
+
+- **Waiting for the failure.** An impeller dies of heat in July, not politely in the driveway. The [766-job dataset](/blog/mercury-impeller-replacement-when-they-fail) shows midsummer is exactly when neglected pumps quit.
+- **Judging by the telltale alone.** A strong stream is necessary, not sufficient; rubber ages on the calendar even when the stream looks fine. Interval beats vibes.
+- **Running dry "just for a second."** A few seconds without water can take years off an impeller. Muffs on before the key, every time.
+- **Skipping the wear plate and gaskets to save a few dollars.** The labour is the cost; reusing worn sealing parts against fresh rubber is how a two-year job becomes an annual one.
+
+---
+
+## What HBW checks before your motor goes back on the water
+
+Every pump job here ends the same way: reassembled to torque, run on water, telltale verified strong, and the interval noted on your file so the next one is planned instead of discovered. It's a small job done carefully, which is the entire point of it; 112 of them since 2023 and the come-backs are the motors we haven't met yet.
+
+---
+
+## Frequently Asked Questions
+
+**How much does a Mercury water pump replacement cost in Ontario?**
+At our shop the median dedicated job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST; a full kit with housing costs more and is quoted by model. Current rates are confirmed when you book at hbw.wiki/service.
+
+**How often should the water pump be serviced?**
+Follow your interval: for most Mercury outboards that's every 300 hours or 3 years for the pump service, with the impeller inspected sooner if the telltale weakens. Our [maintenance intervals guide](/blog/mercury-maintenance-intervals-20-100-300-rule) lays out the schedule.
+
+**Can I replace just the impeller and skip the kit?**
+When the housing liner is smooth and gaskets are healthy, impeller-and-wear-plate is the standard, honest job. Once the liner is scored or the motor has missed intervals, the kit is cheaper than doing the labour twice. We tell you which one your motor actually needs.
+
+**Is a weak telltale always the water pump?**
+No; the telltale outlet itself clogs with debris easily, and thermostat and poppet issues mimic pump problems. Our [overheating at high speed guide](/blog/mercury-outboard-overheat-high-speed) walks the checks in order before anyone spends money.
+
+**Can I do the water pump myself?**
+Handy owners with a shop manual manage it, and the parts are affordable. The traps are shift-linkage alignment, driveshaft seal damage on reinstall, and torque on the housing. If any of that reads like a foreign language, two hours of shop labour is cheap tuition avoided.
+
+**When's the best time to book it?**
+Fall, bundled with your winterize-and-service while the shop's already working on the motor, or early spring before the rush. Mid-July, when everyone's pump fails at once, is the expensive time to need one.
+
+---
+
+## Ready to Book the Pump?
+
+Tell us the motor, the hours, and the last time anyone was in there.
+
+**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+**Related guides:**
+- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
+- [Mercury Outboard Overheating at High Speed](/blog/mercury-outboard-overheat-high-speed)
+- [Milky Gearcase Oil: What It Means and Costs](/blog/milky-gearcase-oil-meaning-cost-ontario)
+- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
+
+---
+
+## Sources
+
+- HBW service records, Rice Lake: 112 dedicated water pump jobs, 2023-2026 (medians before HST)
+- Mercury Marine maintenance schedules (your owner's manual governs your model)
+`,
+  },
+  {
     slug: "mercury-100-hour-service-cost-ontario",
     title: "Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)",
     description: "Real Ontario numbers for a Mercury 100-hour or annual service, from 4,160 work orders: flat-rate labour by HP class, median parts, and what's included.",
