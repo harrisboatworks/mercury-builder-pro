@@ -3290,8 +3290,8 @@ function caseStudyDetailSchema(study) {
       "@id": `${url}#faq`,
       mainEntity: lf.faqs.map((f) => ({
         "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
+        name: substituteLiveRateTokens(f.question),
+        acceptedAnswer: { "@type": "Answer", text: substituteLiveRateTokens(f.answer) },
       })),
     });
   }
@@ -3374,8 +3374,8 @@ function locationDetailSchema(loc) {
         "@id": `${url}#faq`,
         mainEntity: loc.faqs.map((f) => ({
           "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
+          name: substituteLiveRateTokens(f.question),
+          acceptedAnswer: { "@type": "Answer", text: substituteLiveRateTokens(f.answer) },
         })),
       },
       {
