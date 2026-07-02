@@ -583,7 +583,7 @@ export const ProfessionalQuotePDF: React.FC<ProfessionalQuotePDFProps> = ({ quot
               <Text style={styles.footerText}>
                 Gore's Landing, Ontario | Phone: 705-XXX-XXXX{'\n'}
                 Email: info@harrisboatworks.com | Service: service@harrisboatworks.com{'\n'}
-                Hours: Mon-Fri 8AM-6PM, Sat 8AM-4PM, Sun by appointment
+                Hours (in-season Apr–Oct): Mon–Sat 8AM–5PM, Sun 9AM–4PM. Closed Dec 1 – Apr 1.
               </Text>
             </View>
             <View style={styles.footerRight}>

@@ -373,7 +373,7 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
                     <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.phone}</p>
-                    <p className="text-sm text-repower-navy-900/60">Monday - Saturday, 8 AM - 5 PM</p>
+                    <p className="text-sm text-repower-navy-900/60">Mon–Sat 8 AM – 5 PM · Sun 9 AM – 4 PM (in-season)</p>
                   </div>
                 </div>
 

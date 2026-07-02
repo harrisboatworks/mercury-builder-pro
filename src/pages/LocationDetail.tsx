@@ -170,6 +170,16 @@ export default function LocationDetail() {
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '08:00',
+            closes: '17:00',
+            validFrom: '2026-04-01',
+            validThrough: '2026-11-30',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Sunday',
+            opens: '09:00',
+            closes: '16:00',
             validFrom: '2026-04-01',
             validThrough: '2026-11-30',
           },
