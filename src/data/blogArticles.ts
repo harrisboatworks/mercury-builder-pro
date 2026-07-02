@@ -33586,7 +33586,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     image: '/lovable-uploads/hero-mercury-warranty-shop-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-06-07',
+    dateModified: '2026-07-02',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '9 min read',
