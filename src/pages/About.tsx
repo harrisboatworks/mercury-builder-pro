@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     question: "What are your hours of operation?",
-    answer: "We're open Monday through Friday from 8:00 AM to 5:00 PM, and Saturday from 9:00 AM to 2:00 PM. We're closed on Sundays and statutory holidays."
+    answer: "In-season (April through October) we're open Monday through Saturday, 8:00 AM to 5:00 PM, and Sunday 9:00 AM to 4:00 PM. The marina is closed for winter from December 1 to April 1."
   },
   {
     question: "What brands do you carry?",
