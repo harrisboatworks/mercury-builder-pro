@@ -406,10 +406,6 @@ serve(async (req) => {
       }
     }
 
-    // Attach all created documents to the agent BEFORE deleting anything
-    let attachError: string | null = null;
-    if (createdDocuments.length > 0) {
-      try {
     // Trigger + await RAG indexing for all newly created docs BEFORE PATCHing agent
     let ragNotReady: string[] = [];
     if (createdDocuments.length > 0) {
