@@ -146,19 +146,29 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
   
   console.log(`Preserving ${preservedDocs.length} non-static documents`);
   
-  // Merge: preserved docs + new static docs
+  // Merge: preserved docs + new static docs. All entries must carry
+  // usage_mode="auto" — large text docs cannot be prompt-injected, and
+  // the agent must have RAG enabled for auto-mode retrieval to work.
+  const normalizedPreserved = preservedDocs.map((doc: any) => ({
+    type: doc.type ?? "text",
+    name: doc.name,
+    id: doc.id,
+    usage_mode: "auto",
+  }));
+
   const mergedKB = [
-    ...preservedDocs,
+    ...normalizedPreserved,
     ...newDocuments.map(d => ({
       type: "text",
       name: d.name,
       id: d.id,
+      usage_mode: "auto",
     })),
   ];
-  
-  console.log(`Updating agent with ${mergedKB.length} total KB documents`);
-  
-  // Update the agent with merged knowledge base
+
+  console.log(`Updating agent with ${mergedKB.length} total KB documents (usage_mode=auto, rag enabled)`);
+
+  // Update the agent with merged knowledge base + RAG enabled
   const updateResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${ELEVENLABS_AGENT_ID}`, {
     method: "PATCH",
     headers: {
@@ -170,6 +180,12 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
         agent: {
           prompt: {
             knowledge_base: mergedKB,
+            rag: {
+              enabled: true,
+              embedding_model: "e5_mistral_7b_instruct",
+              max_documents_length: 50000,
+              max_vector_distance: 0.6,
+            },
           },
         },
       },
@@ -178,7 +194,7 @@ async function attachDocumentsToAgent(newDocuments: Array<{ id: string; name: st
 
   if (!updateResponse.ok) {
     const error = await updateResponse.text();
-    console.error("Failed to update agent with KB documents:", error);
+    console.error("ELEVENLABS_STATIC_KB_ATTACH_FAILED", "Failed to update agent with KB documents:", error);
     throw new Error(`Failed to attach documents to agent: ${error}`);
   }
 
