@@ -14423,7 +14423,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-05-04',
+    dateModified: '2026-07-02',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
