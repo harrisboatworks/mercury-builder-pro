@@ -12466,6 +12466,12 @@ Worth knowing, because people assume it's either/or: our financing and our exten
 
 We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry the largest Mercury parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
 
+## Related guides
+
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario](/blog/mercury-outboard-monthly-payment-ontario-2026)
+
 ## Ready to see your real number?
 
 The fastest way to know what a Mercury or a full repower costs you per month is to build a quote, it takes a few minutes and uses today's live rate on your actual motor and price. Or call and talk to a person who's financed hundreds of these and will tell you straight whether to finance or pay cash.
