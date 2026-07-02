@@ -28814,7 +28814,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     slug: "best-marina-rice-lake-ontario",
     title: "Rice Lake's Full-Service Marina Since 1947",
     seoTitle: 'Best Marina on Rice Lake, Ontario (2026) | Harris Boat Works',
-    description: 'The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service.',
+    description: "The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals.",
     image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
