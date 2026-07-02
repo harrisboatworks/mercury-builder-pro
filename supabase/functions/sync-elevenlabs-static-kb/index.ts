@@ -215,16 +215,27 @@ serve(async (req) => {
       throw new Error("ELEVENLABS_API_KEY not configured");
     }
 
-    // Parse request body for optional document selection
+    // Parse request body for optional document selection + debug flag
     let selectedDocs: string[] | null = null;
+    let debug = false;
     try {
       const body = await req.json();
-      if (body.documents && Array.isArray(body.documents)) {
+      if (body?.documents && Array.isArray(body.documents)) {
         selectedDocs = body.documents;
+      }
+      if (body?.debug === true) {
+        debug = true;
       }
     } catch {
       // No body or invalid JSON - sync all documents
     }
+
+    // Fetch current agent config up-front (used for debug + baseline)
+    const agentConfigBefore = await getAgentConfig();
+    const currentPromptText: string =
+      agentConfigBefore?.conversation_config?.agent?.prompt?.prompt ?? "";
+    const currentKB: Array<{ id: string; name: string; type?: string }> =
+      agentConfigBefore?.conversation_config?.agent?.prompt?.knowledge_base ?? [];
 
     // Get list of existing documents to check for updates
     const existingDocs = await listKnowledgeBaseDocuments();
@@ -232,10 +243,11 @@ serve(async (req) => {
 
     const results: SyncResult[] = [];
     const createdDocuments: Array<{ id: string; name: string }> = [];
+    // Docs we intend to delete *after* a successful agent PATCH
+    const oldDocsToDelete: Array<{ id: string; name: string }> = [];
 
-    // Process each document
+    // Process each document: generate + create new. Do NOT delete old yet.
     for (const [key, docConfig] of Object.entries(KB_DOCUMENTS)) {
-      // Skip if specific documents were requested and this isn't one of them
       if (selectedDocs && !selectedDocs.includes(key)) {
         console.log(`Skipping ${docConfig.name} (not in selection)`);
         continue;
@@ -243,28 +255,25 @@ serve(async (req) => {
 
       try {
         console.log(`\nProcessing: ${docConfig.name}`);
-        
-        // Generate the document content (may be sync or async; promo doc needs Supabase)
+
         const gen = docConfig.generator as (sb?: any) => string | Promise<string>;
         const content = await Promise.resolve(
           docConfig.requiresSupabase ? gen(supabaseAdmin) : gen()
         );
         console.log(`Generated ${content.length} characters`);
 
-        // Check if document already exists (by name match)
-        const existing = existingDocs.find(d => 
+        // Identify (but don't yet delete) the existing doc for this slot
+        const existing = existingDocs.find(d =>
           d.name.toLowerCase().includes(key.replace('_', ' ')) ||
           d.name.toLowerCase() === docConfig.name.toLowerCase()
         );
-
         if (existing) {
-          console.log(`Found existing document: ${existing.name} (${existing.id}) - deleting...`);
-          await deleteKnowledgeBaseDocument(existing.id);
+          console.log(`Marking existing document for post-attach deletion: ${existing.name} (${existing.id})`);
+          oldDocsToDelete.push(existing);
         }
 
-        // Create new document
+        // Create new document first
         const documentId = await createKnowledgeBaseDocument(content, docConfig.name);
-
         if (documentId) {
           createdDocuments.push({ id: documentId, name: docConfig.name });
         }
@@ -286,35 +295,62 @@ serve(async (req) => {
       }
     }
 
-    // Attach all created documents to the agent
+    // Attach all created documents to the agent BEFORE deleting anything
+    let attachError: string | null = null;
     if (createdDocuments.length > 0) {
       try {
         await attachDocumentsToAgent(createdDocuments);
         console.log(`Successfully attached ${createdDocuments.length} documents to agent`);
       } catch (error) {
-        console.error("Failed to attach documents to agent:", error);
-        // Don't fail the whole operation, but note it in response
-        return new Response(
-          JSON.stringify({
-            success: false,
-            message: `Created ${createdDocuments.length} documents but failed to attach to agent: ${error.message}`,
-            results,
-            documentsProcessed: results.length,
-            successCount: results.filter(r => r.success).length,
-            failCount: results.filter(r => !r.success).length,
-          }),
-          {
-            status: 500,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          }
-        );
+        attachError = (error as Error).message;
+        console.error("ELEVENLABS_STATIC_KB_ATTACH_FAILED", "Failed to attach documents to agent:", attachError);
       }
+    }
+
+    // If the PATCH failed, DO NOT delete old docs — the agent must keep
+    // pointing at working documents. Also try to clean up the newly created
+    // (now orphaned) docs so we don't accumulate junk.
+    if (attachError) {
+      for (const doc of createdDocuments) {
+        try { await deleteKnowledgeBaseDocument(doc.id); } catch (_) { /* best effort */ }
+      }
+      return new Response(
+        JSON.stringify({
+          success: false,
+          marker: "ELEVENLABS_STATIC_KB_ATTACH_FAILED",
+          message: `Created ${createdDocuments.length} documents but failed to attach to agent: ${attachError}`,
+          results,
+          documentsProcessed: results.length,
+          successCount: results.filter(r => r.success).length,
+          failCount: results.filter(r => !r.success).length,
+          ...(debug ? {
+            debug: {
+              currentPromptTextPreview: currentPromptText.slice(0, 5000),
+              currentPromptTextLength: currentPromptText.length,
+              currentKnowledgeBase: currentKB.map(d => ({ id: d.id, name: d.name, type: d.type })),
+            },
+          } : {}),
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    // PATCH succeeded — now it's safe to delete the replaced old docs
+    const deletionResults: Array<{ id: string; name: string; deleted: boolean }> = [];
+    for (const doc of oldDocsToDelete) {
+      // Guard: skip if this id happens to also be in the newly attached set
+      if (createdDocuments.some(nd => nd.id === doc.id)) continue;
+      const ok = await deleteKnowledgeBaseDocument(doc.id);
+      deletionResults.push({ id: doc.id, name: doc.name, deleted: ok });
     }
 
     const successCount = results.filter(r => r.success).length;
     const failCount = results.filter(r => !r.success).length;
 
-    console.log(`\nSync complete: ${successCount} success, ${failCount} failed`);
+    console.log(`\nSync complete: ${successCount} success, ${failCount} failed, ${deletionResults.filter(d => d.deleted).length} old docs deleted`);
 
     return new Response(
       JSON.stringify({
@@ -324,6 +360,14 @@ serve(async (req) => {
         documentsProcessed: results.length,
         successCount,
         failCount,
+        oldDocsDeleted: deletionResults,
+        ...(debug ? {
+          debug: {
+            currentPromptTextPreview: currentPromptText.slice(0, 5000),
+            currentPromptTextLength: currentPromptText.length,
+            currentKnowledgeBase: currentKB.map(d => ({ id: d.id, name: d.name, type: d.type })),
+          },
+        } : {}),
       }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
