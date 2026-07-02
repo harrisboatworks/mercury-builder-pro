@@ -15,11 +15,31 @@ interface CTAConfig {
   description: string;
   href: string;
   external?: boolean;
+  buttonLabel?: string;
 }
 
-function pickCTA(category = '', slug = ''): CTAConfig {
+
+function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAConfig {
   const cat = category.toLowerCase();
   const s = slug.toLowerCase();
+
+  // Rentals: route to Harris rentals booking. For the GTA post we allow ONE
+  // motor-pricing CTA at the very end (variant === 'banner') and use the
+  // rentals CTA everywhere else. The shared-access post uses rentals for both.
+  const isRentalGta = s === 'rice-lake-boat-rentals-from-toronto-gta';
+  const isRentalShared = s === 'boat-rentals-shared-access-booming-2026';
+  if (isRentalShared || (isRentalGta && variant === 'inline')) {
+    return {
+      title: 'Book a boat on Rice Lake',
+      description:
+        "Nine boats, live availability, life jackets included. Book online and you're on the water in minutes.",
+      href: 'https://harrisboatworks.ca/rentals',
+      external: true,
+      buttonLabel: 'Check Availability',
+    };
+  }
+
+
 
   // Trade-in
   if (s.includes('trade-in') || cat.includes('trade')) {
@@ -82,14 +102,15 @@ function pickCTA(category = '', slug = ''): CTAConfig {
 }
 
 export function BlogCTA({ category, slug, variant = 'banner', className = '' }: BlogCTAProps) {
-  const cta = pickCTA(category, slug);
+  const cta = pickCTA(category, slug, variant);
 
   const button = (
     <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors">
-      {cta.title}
+      {cta.buttonLabel ?? cta.title}
       <ArrowRight className="h-4 w-4" />
     </span>
   );
+
 
   const wrapperClass =
     variant === 'inline'

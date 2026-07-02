@@ -37,13 +37,13 @@ Electric outboards aren't a someday thing. Mercury's Avator line is here, we're 
 
 Mercury names the Avator models by power output in watts, which trips people up. Here's the translation:
 
-| Model | Power at prop | Feels like (gas) | Best for |
+| Model | Power at prop | Best for | Rough gas feel (guide only) |
 |---|---|---|---|
-| Avator 7.5e | 750W | ~3.5 hp | Canoes, dinghies, small tenders, trolling |
-| Avator 20e | 2.2 kW | ~5 hp | Small fishing boats, inflatables |
-| Avator 35e | 3.7 kW | ~9.9 hp | Small fishing boats, light tenders |
-| Avator 75e | 7.5 kW | 10 hp (prop-shaft rating) | Small pontoons, larger tenders |
-| Avator 110e | 11 kW | 15 hp (prop-shaft rating) | Pontoons, day boats |
+| Avator 7.5e | 750W | Canoes, dinghies, small tenders, trolling | ~3.5 hp |
+| Avator 20e | 2.2 kW | Small fishing boats, inflatables | ~5 hp |
+| Avator 35e | 3.7 kW | Small fishing boats, light tenders | ~9.9 hp |
+| Avator 75e | 7.5 kW | Small pontoons, larger tenders | 10 hp (prop-shaft rating) |
+| Avator 110e | 11 kW | Pontoons, day boats | 15 hp (prop-shaft rating) |
 
 One quirk worth knowing: the first three figures are Mercury's gas-equivalent comparisons, while the 75e and 110e numbers are Mercury's literal prop-shaft conversions (7,500 watts converts to 10 hp). Electric motors deliver all their torque instantly, so a 75e pulls a bigger boat off the line far harder than "10 hp" suggests. Treat the column as a guide, not a spec.
 

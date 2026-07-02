@@ -183,8 +183,36 @@ export function BlogHub({
   const latest = filtered.filter((a) => a.slug !== featured?.slug).slice(0, 6);
   const isFilteredView = Boolean(query.trim() || intent);
 
-  const sectionFor = (key: IntentKey, limit = 3) =>
-    sorted.filter((a) => a.slug !== featured?.slug && matchesIntent(a, key)).slice(0, limit);
+  // Rails: strict category-field mapping. Newest-first is inherited from `sorted`.
+  // Dedupes across rails via a running usedSlugs set so no post appears in
+  // multiple rails on the page (Latest guides section excepted).
+  const STRICT_CATEGORY_MAP: Record<IntentKey, string[]> = {
+    repower: ['Repower'],
+    choose: [
+      'Buying Guide',
+      'Buying Guides',
+      'Mercury Buying Guides',
+      'Mercury Outboards',
+      'Warranty & Protection',
+    ],
+    trouble: ['Service', 'Service & Maintenance', 'Troubleshooting', 'Winterization'],
+    local: ['Rice Lake & Local', 'Local Guides', 'Boating Lifestyle', 'Lifestyle'],
+  };
+  const railUsed = new Set<string>();
+  const sectionFor = (key: IntentKey, limit = 3) => {
+    const allow = new Set(STRICT_CATEGORY_MAP[key] || []);
+    const picks = sorted
+      .filter(
+        (a) =>
+          a.slug !== featured?.slug &&
+          allow.has(a.category || '') &&
+          !railUsed.has(a.slug),
+      )
+      .slice(0, limit);
+    picks.forEach((p) => railUsed.add(p.slug));
+    return picks;
+  };
+
 
   const intentDefs: {
     key: IntentKey;
