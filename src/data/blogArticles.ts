@@ -32702,7 +32702,6 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 
 | Spec | Avator 7.5e | FourStroke 3.5 | FourStroke 5 |
 |---|---|---|---|
-| Equivalent thrust | ~3.5 HP gas portable | 3.5 HP | 5 HP |
 | Output | 750 W at prop | n/a | n/a |
 | Weight (motor only) | ~22 kg | ~18 kg | ~26 kg |
 | Battery weight | ~14 kg | n/a | n/a |
@@ -32712,6 +32711,8 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
 | Installed price (CAD) | $4,500 to $6,500 | $1,800 to $2,400 | $2,200 to $2,800 |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
+| Rough gas feel (guide only) | ~3.5 HP gas portable | 3.5 HP | 5 HP |
+
 
 The Avator costs more the day you buy it. It earns that back three ways: no fuel, no annual oil change, and silence. It is still a niche pick. For most repower customers a gas portable is the right tool and the smaller cheque. For fishing, and for anyone who values quiet water, the Avator is worth every dollar of the difference.
 
