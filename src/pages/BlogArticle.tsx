@@ -331,7 +331,7 @@ export default function BlogArticle() {
               </div>
               <BlogShareButtons
                 url={articleUrl}
-                title={article.seoTitle ?? article.title}
+                title={article.title}
                 description={cleanDescription}
                 image={article.image}
                 variant="inline"
