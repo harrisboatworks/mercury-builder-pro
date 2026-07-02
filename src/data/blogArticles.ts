@@ -134,7 +134,7 @@ export const blogArticles: BlogArticle[] = [
     slug: "rice-lake-boat-rental-guide-2026",
     title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
     description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 9-boat fleet, what's included, real fuel costs, licence rules, and how booking works.",
-    image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.png",
+    image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-07-02",
@@ -189,7 +189,7 @@ Capacity is per boat and it's a hard limit. If your group is bigger, book two bo
 
 **Check-in.** Show photo ID and a boat operator's card (permanent or temporary) for whoever's driving. We process a $1,000 damage deposit hold on a credit card; it's an authorization, not a charge. Staff fit life jackets for everyone, then the driver gets a boat orientation and a lake map.
 
-![Life jackets fitted and laid out on a pontoon at the Harris Boat Works rental dock](/lovable-uploads/inline-rental-lifejackets-checkin.png)
+![Life jackets fitted and laid out on a pontoon at the Harris Boat Works rental dock](/lovable-uploads/inline-rental-lifejackets-checkin.webp)
 
 **Return.** Back at the dock, unloaded, by your return time. We refuel the boat, check it over, settle the fuel, and release the deposit hold. Fair warning on timing: late returns run $5 per minute, so plan your last swim accordingly.
 
@@ -301,7 +301,7 @@ Pick your boat and date, and the booking system shows you live availability and 
     slug: "boat-rental-licence-ontario-guide",
     title: "Do You Need a Licence to Rent a Boat in Ontario? (2026)",
     description: "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake.",
-    image: "/lovable-uploads/hero-boat-rental-licence-ontario.png",
+    image: "/lovable-uploads/hero-boat-rental-licence-ontario.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-07-02",
