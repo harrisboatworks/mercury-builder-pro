@@ -3414,7 +3414,7 @@ const caseStudyDetailRoutes = caseStudies.map((s) => {
     schemas: [caseStudyDetailSchema(s)],
     extraNoscript: () => {
       if (lf) {
-        return (
+        return substituteLiveRateTokens(
           (s.heroImage ? `<p><img src="${escapeHtml(s.heroImage)}" alt="${escapeHtml(lf.heroAlt ?? lf.h1)}" /></p>` : '') +
           `<p><em>Last reviewed: ${escapeHtml(lf.lastReviewed)}</em></p>` +
           `<blockquote><strong>Quick answer:</strong> ${escapeHtml(lf.quickAnswer)}</blockquote>` +
@@ -3452,7 +3452,7 @@ const locationDetailRoutes = locations.map((loc) => {
     h1,
     intro: loc.intro,
     schemas: [locationDetailSchema(loc)],
-    extraNoscript: () =>
+    extraNoscript: () => substituteLiveRateTokens(
       (lf?.heroImage ? `<p><img src="${escapeHtml(lf.heroImage)}" alt="${escapeHtml(lf.heroAlt ?? h1)}" /></p>` : '') +
       (lf?.lastReviewed ? `<p><em>Last reviewed: ${escapeHtml(lf.lastReviewed)}</em></p>` : '') +
       (lf?.quickAnswer ? `<blockquote><strong>Quick answer:</strong> ${escapeHtml(lf.quickAnswer)}</blockquote>` : '') +
@@ -3464,7 +3464,8 @@ const locationDetailRoutes = locations.map((loc) => {
       `<section><h2>Recommended next steps</h2><ul>${loc.recommendedLinks.map((l) => `<li><a href="${escapeHtml(l.href)}">${escapeHtml(l.label)}</a></li>`).join('')}</ul></section>` +
       `<section><h2>FAQ</h2><dl>${loc.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
       (lf?.visit ? `<section><h2>Visit Harris Boat Works</h2><p>${escapeHtml(lf.visit)}</p></section>` : '') +
-      `<p><a href="/locations">← All Mercury pickup areas</a></p>`,
+      `<p><a href="/locations">← All Mercury pickup areas</a></p>`
+    ),
   };
 });
 
