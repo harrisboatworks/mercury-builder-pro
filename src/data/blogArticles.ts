@@ -16541,7 +16541,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-If the overheat alarm is sounding right now: throttle back to idle, check the tell-tale water stream, and assess from there. No stream means the water pump has failed or the intake is blocked, shut down immediately. A strong stream with an alarm may be a sensor or thermostat issue, idle toward shore. When in doubt, shut it down. Running an overheated motor to try to get home is how a relatively small repair becomes an engine replacement.
+If the overheat alarm is sounding: throttle to idle, shift to neutral, and check the tell-tale water stream. No stream means the pump failed or the intake is blocked, shut down immediately. A strong stream with an alarm points to a sensor or thermostat, idle toward shore. When in doubt, shut it down. Running an overheated motor turns a small repair into an engine replacement.
 
 ::diagnostic-flow
 heading: Mercury overheating? Run this checklist before damage gets expensive
