@@ -130,7 +130,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       { question: 'How far is Harris Boat Works from the Kawartha Lakes?', answer: 'Most Kawartha towns are 45–60 minutes from Gores Landing by road. Lakefield runs about 45 minutes, Lindsay about 60, Bobcaygeon around 75, Buckhorn around 70.' },
       { question: 'Do you deliver Mercury motors to Kawartha cottages?', answer: "No. We're pickup-only at Gores Landing. We rig the motor, water-test it on Rice Lake, and you drive to us for pickup." },
       { question: 'What HP Mercury is most common for Kawartha boats?', answer: 'Pontoons and family runabouts on Pigeon, Sturgeon, and Buckhorn typically repower with Mercury FourStroke 90–150 HP or Pro XS 175–225 HP. Big-block FourStrokes show up on heavier boats. Smaller tiller setups on Cameron and Balsam often land in the 9.9–25 HP range.' },
-      { question: 'Can Kawartha Lakes customers finance a Mercury repower?', answer: 'Yes. Financing is available on approved credit, at 7.99% APR over $10,000 and 8.99% APR under $10,000. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block or Pro XS.' },
+      { question: 'Can Kawartha Lakes customers finance a Mercury repower?', answer: 'Yes. Financing is available on approved credit, at 7.99% APR over $10,000 and 8.99% APR under $10,000. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block or Pro XS. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).' },
     ],
     visit: VISIT,
     related: [
@@ -278,7 +278,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
         heading: 'How does pickup work for Cobourg customers?',
         paragraphs: [
           "You drive north to Gores Landing, about 25 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Cobourg. The boat gets rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Most repowers wrap in 1–3 weeks once the motor lands.",
-          "Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, and $1,000 for big-block or Pro XS. For ranges by HP, see the Mercury repower cost guide, or read the Rice Lake repower page for the water-test detail.",
+          "Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, and $1,000 for big-block or Pro XS. For ranges by HP, see the Mercury repower cost guide, or read the Rice Lake repower page for the water-test detail. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).",
         ],
       },
     ],
@@ -289,7 +289,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       { question: 'Do you deliver Mercury motors to Cobourg?', answer: "No. We're pickup-only at Gores Landing. We rig and water-test on Rice Lake, then you drive 25 minutes north to pick up." },
       { question: 'Do many Cobourg boaters use Rice Lake?', answer: 'Yes. A lot of Cobourg residents own cottages or keep boats on Rice Lake. The lake is roughly 25 minutes north of town and we sit on its south shore.' },
       { question: 'What HP Mercury is most common for Cobourg customers?', answer: 'Cobourg customers running Rice Lake typically repower with Mercury FourStroke 60–115 HP for runabouts and aluminum boats, Pro XS 115–175 HP for bass boats and faster hulls.' },
-      { question: 'Can Cobourg customers finance a Mercury repower?', answer: 'Yes. Financing terms are 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits run $200 portable, $500 mid-range, $1,000 big-block or Pro XS.' },
+      { question: 'Can Cobourg customers finance a Mercury repower?', answer: 'Yes. Financing terms are 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits run $200 portable, $500 mid-range, $1,000 big-block or Pro XS. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).' },
     ],
     visit: VISIT,
     related: [
