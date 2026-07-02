@@ -9503,13 +9503,13 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 
 | Motor | All-In (CAD, before HST) |
 |---|---|
-| 90 HP FourStroke | $15,500, $18,500 |
-| 115 HP FourStroke | $17,500, $22,500 |
-| 150 HP FourStroke | $23,000, $30,000 |
-| 175 HP V6 FourStroke | $26,000, $32,500 |
-| 200 HP V6 FourStroke | $28,000, $35,000 |
+| 90 HP FourStroke | $15,500 to $18,500 |
+| 115 HP FourStroke | $17,500 to $22,500 |
+| 150 HP FourStroke | $23,000 to $30,000 |
+| 175 HP V6 FourStroke | $26,000 to $32,500 |
+| 200 HP V6 FourStroke | $28,000 to $35,000 |
 
-"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500, $5,000 depending on age and condition, applies against the total.
+"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
 ### What We Do
 
@@ -12174,7 +12174,7 @@ source: HBW Customer, Lakefield 2026
 
 ## Full Article
 
-The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L V6. More displacement, more cylinders, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000, $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
+The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L V6. More displacement, more cylinders, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000 to $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
 
 Whether that difference is worth paying comes down to three questions: What hull are you putting it on? How do you use it? How do you load it?
 
@@ -12188,9 +12188,9 @@ The Mercury 115 EXLPT FourStroke handles:
 - Any boat rated to 115 HP maximum on the capacity plate
 - Budget-conscious repowers where 115 HP genuinely fits the use case
 
-The 115 is plenty motor for the most common Ontario use cases. The savings against the 150 (roughly $4,000, $6,000 CAD) can buy a kicker motor, better electronics, or a stainless prop, all of which move real-world performance on the existing motor more than the HP step-up does.
+The 115 is plenty motor for the most common Ontario use cases. The savings against the 150 (roughly $4,000 to $6,000 CAD) can buy a kicker motor, better electronics, or a stainless prop, all of which move real-world performance on the existing motor more than the HP step-up does.
 
-Most 115 EXLPT repowers at HBW land in the $17,000, $22,000 CAD range all-in, before HST.
+Most 115 EXLPT repowers at HBW land in the $17,000 to $22,000 CAD range all-in, before HST.
 
 ### When the 150 Earns Its Price
 
@@ -12204,7 +12204,7 @@ The Mercury 150 EXLPT FourStroke is the right call when:
 
 The 150's hole shot when loaded is meaningfully better than the 115. The difference in plane time matters when you're pulling skiers or running with a full crew. Mid-range cruising performance is significantly stronger.
 
-Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, before HST.
+Most 150 EXLPT repowers at HBW land in the $23,000 to $36,000 CAD range all-in, before HST.
 
 ### Side-by-Side: Mercury 115 vs. 150 FourStroke
 
@@ -12218,7 +12218,7 @@ Most 150 EXLPT repowers at HBW land in the $23,000, $36,000 CAD range all-in, be
 | Fuel economy at cruise | Excellent | Very good |
 | Tow rating (typical hull) | Light tubing, one to two skiers | Two skiers, full tubing, wakeboarding |
 | Best fit | 17, 19 ft aluminum, 18, 20 ft pontoons (cruising) | 18, 22 ft hulls, pontoons with water sports, loaded fishing |
-| All-in price (CAD, before HST) | $17,000, $22,000 | $23,000, $36,000 |
+| All-in price (CAD, before HST) | $17,000 to $22,000 | $23,000 to $36,000 |
 
 ### What About the 150 Pro XS?
 
@@ -13496,7 +13496,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Trade in your old motor.** Even a dead motor has aluminum and parts value. Trade-in credit reduces the amount you're financing or paying outright.
 
-**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500, $1,000 CAD versus $2,000, $3,000 for a brand conversion.
+**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500 to $1,000 CAD versus $2,000 to $3,000 for a brand conversion.
 
 **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop works fine for most boaters and costs considerably less than stainless.
 
@@ -14752,14 +14752,14 @@ For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 
 | Scenario | Cost (CAD, before HST) |
 |---|---|
-| 90, 115 HP repower on existing hull | $17,000, $22,000 |
-| 150, 200 HP repower on existing hull | $23,000, $36,000 |
-| 250, 300 HP repower on existing hull | $35,000, $40,000 |
-| New comparable aluminum package (90, 115 HP) | $50,000, $70,000 |
-| New comparable fiberglass package (150, 200 HP) | $65,000, $90,000 |
-| New comparable pontoon package (115, 150 HP) | $55,000, $75,000 |
+| 90, 115 HP repower on existing hull | $17,000 to $22,000 |
+| 150, 200 HP repower on existing hull | $23,000 to $36,000 |
+| 250, 300 HP repower on existing hull | $35,000 to $40,000 |
+| New comparable aluminum package (90, 115 HP) | $50,000 to $70,000 |
+| New comparable fiberglass package (150, 200 HP) | $65,000 to $90,000 |
+| New comparable pontoon package (115, 150 HP) | $55,000 to $75,000 |
 
-The repower path typically saves $25,000, $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
+The repower path typically saves $25,000 to $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
 ### When to Repower, The Clear Yes
 
@@ -14820,7 +14820,7 @@ We give an honest recommendation. Sometimes the right answer is "your motor stil
 ## FAQs
 
 **Should I repower or buy a new boat?** 
-Depends on hull condition and use case. For most boaters with a 5, 20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000, $50,000 CAD and gives you most of the new-boat experience. For hulls with structural issues or use mismatch, replacement makes more sense.
+Depends on hull condition and use case. For most boaters with a 5, 20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000 to $50,000 CAD and gives you most of the new-boat experience. For hulls with structural issues or use mismatch, replacement makes more sense.
 
 **How long does a typical aluminum hull last?** 
 Properly maintained aluminum hulls regularly last 30, 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water.
@@ -15332,7 +15332,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500, $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -15383,7 +15383,7 @@ Console-mounted lever on most boats. Mercury Digital Throttle and Shift (DTS) on
 **Steering** 
 Three types: cable steering (standard under 90 HP, simple, inexpensive), hydraulic steering (standard at 90 HP and up, more comfortable, less maintenance), and power-assist (premium on bigger motors). Cable-to-hydraulic upgrades are common during repowers and are worth doing while the dash is open.
 
-Hydraulic steering conversion costs $1,650, $3,500 CAD depending on motor HP and helm complexity.
+Hydraulic steering conversion costs $1,650 to $3,500 CAD depending on motor HP and helm complexity.
 
 **Wiring harness** 
 Connects motor to controls, gauges, and battery. Mercury standardized harness connectors across motor families around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
@@ -15398,17 +15398,17 @@ Heavier cable for higher-HP motors. Battery switch and dual-battery selectors re
 Fuel line, primer bulb, fuel filter. Typically replaced during a repower regardless of apparent condition, fuel system age affects new motor reliability, and these parts are cheap insurance.
 
 **Propeller** 
-Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 or 4-blade ($800, $2,000 CAD) for 150 HP and up. We test props during sea trial of every repower and swap until the motor reaches its rated WOT RPM range.
+Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 or 4-blade ($800 to $2,000 CAD) for 150 HP and up. We test props during sea trial of every repower and swap until the motor reaches its rated WOT RPM range.
 
 ### 2026 Rigging Cost Ranges by Scenario
 
 | Scenario | Rigging Cost (CAD, before HST) |
 |---|---|
-| Mercury-to-Mercury, post-2010 controls in good shape | $500, $1,500 |
-| Mercury-to-Mercury, older/worn rigging needing replacement | $1,500, $3,000 |
-| Brand conversion (Evinrude, Yamaha, Honda to Mercury) | Add $1,500, $3,000 over standard |
-| Cable to hydraulic steering upgrade | Add $1,650, $3,500 |
-| Full new re-rig (everything new) | $2,500, $6,000 |
+| Mercury-to-Mercury, post-2010 controls in good shape | $500 to $1,500 |
+| Mercury-to-Mercury, older/worn rigging needing replacement | $1,500 to $3,000 |
+| Brand conversion (Evinrude, Yamaha, Honda to Mercury) | Add $1,500 to $3,000 over standard |
+| Cable to hydraulic steering upgrade | Add $1,650 to $3,500 |
+| Full new re-rig (everything new) | $2,500 to $6,000 |
 
 These ranges are before prop and installation labour. The live configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) builds rigging into the all-in quote.
 
@@ -15418,7 +15418,7 @@ Five things move your quote up or down the range:
 
 **1. Existing rigging condition.** A 5-year-old Mercury rerig with controls and harness in good shape stays at the low end. A 25-year-old boat with cracked cables and corroded connectors hits the high end.
 
-**2. Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500, $3,000 because every control system component swaps.
+**2. Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500 to $3,000 because every control system component swaps.
 
 **3. Steering type and upgrade decisions.** Keeping existing cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is already open. Future upgrades to hydraulic are more expensive and disruptive than doing it during the current job.
 
@@ -15439,7 +15439,7 @@ Five things move your quote up or down the range:
 | Battery cables | Inspected, replaced as needed | Inspected, replaced as needed |
 | Fuel hose | Replaced | Replaced |
 | Propeller | New, sized for new motor | New, sized for new motor |
-| Total rigging premium | Baseline | +$1,500, $3,000 CAD |
+| Total rigging premium | Baseline | +$1,500 to $3,000 CAD |
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -15464,7 +15464,7 @@ The walk-around is free. The findings determine where in the range your quote la
 
 **Skipping the prop conversation.** A new motor with a wrong prop loses meaningful performance and fuel economy. The right prop is part of rigging.
 
-**Underestimating brand conversion cost.** "I'm just switching from Yamaha to Mercury" sounds simple. The actual rigging difference is $1,500, $3,000 over standard. Budget for it.
+**Underestimating brand conversion cost.** "I'm just switching from Yamaha to Mercury" sounds simple. The actual rigging difference is $1,500 to $3,000 over standard. Budget for it.
 
 **Forgetting the steering upgrade math.** If your cable steering is at end of life and you know you'll upgrade eventually, the cheapest moment is during the repower, the dash is already open.
 
@@ -15488,7 +15488,7 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
 
 **How much does Mercury rigging cost in Ontario?** 
-Mercury-to-Mercury on post-2010 controls in good condition: $500, $1,500 CAD. Brand conversion or full re-rig: $2,500, $6,000 CAD. Hydraulic steering upgrade adds $1,650, $3,500 CAD. All before HST.
+Mercury-to-Mercury on post-2010 controls in good condition: $500 to $1,500 CAD. Brand conversion or full re-rig: $2,500 to $6,000 CAD. Hydraulic steering upgrade adds $1,650 to $3,500 CAD. All before HST.
 
 **Is rigging included in the quote from mercuryrepower.ca?** 
 Yes. The configurator builds the rigging cost into the all-in installed price.
@@ -15497,7 +15497,7 @@ Yes. The configurator builds the rigging cost into the all-in installed price.
 Mercury-to-Mercury repowers with post-2010 controls in good condition usually carry over. We assess during the hull walk-around.
 
 **Why does a brand conversion cost more to rig?** 
-Evinrude, Yamaha, and Honda controls, harnesses, and wiring are not compatible with Mercury. The entire control system needs to swap, adding $1,500, $3,000 CAD to the rigging bill.
+Evinrude, Yamaha, and Honda controls, harnesses, and wiring are not compatible with Mercury. The entire control system needs to swap, adding $1,500 to $3,000 CAD to the rigging bill.
 
 **When should I upgrade from cable to hydraulic steering?** 
 Hydraulic steering is standard at 90 HP and up. If your existing cable steering is worn or you're stepping up in HP, the repower is the least expensive time to upgrade, the dash is already open.
@@ -23239,7 +23239,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     description: 'What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario.',
     content: `### Quick Answer
 
-A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000, $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
+A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
 
@@ -23263,12 +23263,12 @@ Three patterns come up most often at Harris Boat Works:
 
 | HP Class | Typical Controls | Typical Steering | Typical Gauges | Typical Wiring | Rigging Est. (CAD) |
 |---|---|---|---|---|---|
-| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500, $2,500 |
-| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000, $3,000 |
-| 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500, $4,000 |
-| 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500, $5,500 |
-| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500, $6,500 |
-| 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000, $7,500 |
+| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
+| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
+| 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500 to $4,000 |
+| 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500 to $5,500 |
+| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
+| 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
 
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
 
@@ -23280,13 +23280,13 @@ These are typical configurations. Specific boat, helm, console, and budget chang
 
 Single lever that mounts on top of the helm console. Push forward for forward gear, pull back for reverse. Includes neutral lock, throttle-only mode, trim/tilt switches, and kill switch lanyard. The standard setup for runabouts, bowriders, fishing boats, and most pontoons with a console.
 
-**Binnacle Gen II Single Lever (mechanical):** CAD $700, $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
+**Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400, $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
 
 ### Side-Mount Controls
 
-Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400, $800.
+Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400 to $800.
 
 ### DTS (Digital Throttle & Shift)
 
@@ -23298,15 +23298,15 @@ Mercury's electronic control system. Replaces mechanical throttle and shift cabl
 
 ### Cable Steering
 
-Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300, $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
+Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300 to $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
 
 ### Hydraulic Steering
 
-Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500, $2,500 for a complete kit plus CAD $300, $500 install labor.
+Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500 to $2,500 for a complete kit plus CAD $300 to $500 install labor.
 
 ### Power-Assist Hydraulic
 
-Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500, $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
+Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
 
 ---
 
@@ -23337,15 +23337,15 @@ whenInDoubt: If you'll see this boat in five years, the digital path is the chea
 
 ### Analog Gauges
 
-Mechanical needles for tach, fuel level, and trim. CAD $400, $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
+Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
 ### SmartCraft Connect (Mercury VesselView Mobile)
 
-Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300, $500 for the module and SmartCraft tach.
+Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300 to $500 for the module and SmartCraft tach.
 
 ### VesselView
 
-Mercury's color touchscreen displays, the hardwired version of what SmartCraft Connect does over Bluetooth. VesselView 4: CAD $700, $900. VesselView 7: CAD $1,200, $1,500. VesselView 9: CAD $1,800, $2,400, the sweet spot for most V6 repowers. VesselView 12: CAD $2,500, $3,200. Integrates with chartplotters, fuel tanks, and autopilots.
+Mercury's color touchscreen displays, the hardwired version of what SmartCraft Connect does over Bluetooth. VesselView 4: CAD $700 to $900. VesselView 7: CAD $1,200 to $1,500. VesselView 9: CAD $1,800 to $2,400, the sweet spot for most V6 repowers. VesselView 12: CAD $2,500 to $3,200. Integrates with chartplotters, fuel tanks, and autopilots.
 
 ---
 
@@ -23353,13 +23353,13 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ## Wiring and Battery Setup
 
-**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400, $700.
+**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700, $1,200.
+**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
 
-**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200, $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
+**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
 
 ---
 
@@ -23375,8 +23375,8 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 These are starting points. Hull weight and intended use change the correct pitch. Wrong pitch: motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
 
-**Aluminum:** CAD $200, $500. Cheaper but flexes at higher loads. 
-**Stainless:** CAD $500, $1,200. Holds shape, lasts longer, recovers better after a strike.
+**Aluminum:** CAD $200 to $500. Cheaper but flexes at higher loads. 
+**Stainless:** CAD $500 to $1,200. Holds shape, lasts longer, recovers better after a strike.
 
 ---
 
@@ -23397,7 +23397,7 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 **Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, [Mercury Canada](https://www.mercurymarine.com/canada/en/) warranty registration.
 
-**Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200, $400).
+**Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200 to $400).
 
 **Not part of a standard quote:** Trolling motors, fishfinders, stereos, trailer work, cosmetic restoration.
 
@@ -23436,10 +23436,10 @@ The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy sw
 ## FAQs
 
 **How much does Mercury rigging cost in Ontario?** 
-For a typical mid-range repower (60, 115 HP), expect CAD $2,000, $4,000 in rigging above the motor price. For a V6 repower (150, 225 HP), expect CAD $3,500, $7,500. These ranges include controls, steering, gauges, wiring, and prop.
+For a typical mid-range repower (60, 115 HP), expect CAD $2,000 to $4,000 in rigging above the motor price. For a V6 repower (150, 225 HP), expect CAD $3,500 to $7,500. These ranges include controls, steering, gauges, wiring, and prop.
 
 **Do I need DTS on a single-engine V6?** 
-No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save CAD $1,500, $2,500. DTS is the right call for twin-engine setups, V8+ motors, or when you want seamless VesselView integration.
+No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save CAD $1,500 to $2,500. DTS is the right call for twin-engine setups, V8+ motors, or when you want seamless VesselView integration.
 
 **Is hydraulic steering worth it at 90 HP?** 
 Usually not on a typical fishing boat. Cable steering at 90 HP is fine. Exception: fast bowrider or anyone who finds cable tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
@@ -23693,7 +23693,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 2.07:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
 
-The CT upgrade costs about $300, $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
+The CT upgrade costs about $300 to $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
 
 If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, skip the CT and save the money.
 
@@ -23713,13 +23713,13 @@ All prices in CAD, before HST, before any trade-in credit.
 
 | Configuration | All-In Installed (Motor + Rigging + Controls + Prop) |
 |---|---:|
-| 40 ELPT FourStroke | roughly $11,000, $12,500 |
-| 60 ELPT FourStroke | roughly $13,500, $15,000 |
-| 60 ELPT Command Thrust | roughly $14,000, $15,500 |
+| 40 ELPT FourStroke | roughly $11,000 to $12,500 |
+| 60 ELPT FourStroke | roughly $13,500 to $15,000 |
+| 60 ELPT Command Thrust | roughly $14,000 to $15,500 |
 
-Install and rigging in this class typically adds $1,500, $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling. For [current Mercury motor pricing](/pricing-reference) on every HP class, see our full reference.
+Install and rigging in this class typically adds $1,500 to $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling. For [current Mercury motor pricing](/pricing-reference) on every HP class, see our full reference.
 
-A working older motor typically adds $1,000, $3,000 in trade-in credit depending on age, hours, and condition. It's worth asking.
+A working older motor typically adds $1,000 to $3,000 in trade-in credit depending on age, hours, and condition. It's worth asking.
 
 ---
 
@@ -23747,7 +23747,7 @@ The 60 ELPT Command Thrust at minimum. If the pontoon is a tritoon, or you regul
 Rarely. CT is designed for flat-bottom, heavy-hull applications like pontoons. An aluminum fishing boat that runs at speed benefits more from the standard gearcase's lower drag.
 
 **How much more does the 60 cost than the 40?** 
-About $2,602 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500, $3,000 on top of either.
+About $2,602 CAD difference in dealer selling price. The 60 CT over the 40 is about $2,940. Install and rigging run $1,500 to $3,000 on top of either.
 
 **Can I check what my capacity plate says online?** 
 The capacity plate is physical, on the inner transom of your boat. If you're unsure what it says, pull the boat out and look. The HP limit on that plate is not negotiable.
@@ -24761,7 +24761,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## The Price, What HBW Has Published
 
-As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
+As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
 
 **Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
 
