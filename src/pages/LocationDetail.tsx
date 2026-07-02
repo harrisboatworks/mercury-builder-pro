@@ -356,10 +356,10 @@ export default function LocationDetail() {
         </section>
 
         {/* LONG-FORM BODY SECTIONS */}
-        {lf?.sections && lf.sections.length > 0 && (
+        {lfSections && lfSections.length > 0 && (
           <section className="container mx-auto px-4 py-16 max-w-3xl">
             <div className="prose prose-lg max-w-none">
-              {lf.sections.map((sec) => (
+              {lfSections.map((sec) => (
                 <div key={sec.heading} className="mb-10">
                   <h2 className="text-2xl font-semibold text-foreground mb-4">{sec.heading}</h2>
                   {sec.paragraphs.map((p, idx) =>
@@ -380,13 +380,13 @@ export default function LocationDetail() {
         )}
 
         {/* WHAT WE SEE AT HBW — From the Shop card */}
-        {lf?.whatWeSeeAtHBW && (
+        {lfWhatWeSee && (
           <section className="container mx-auto px-4 pb-4 max-w-3xl">
             <div className="rounded-xl border-l-4 border-repower-gold bg-repower-cream/40 p-6 md:p-8">
               <h2 className="text-xl font-semibold text-foreground mb-3">
                 What we see at HBW
               </h2>
-              <p className="text-foreground/85 leading-relaxed">{lf.whatWeSeeAtHBW}</p>
+              <p className="text-foreground/85 leading-relaxed">{lfWhatWeSee}</p>
             </div>
           </section>
         )}
