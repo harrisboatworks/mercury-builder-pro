@@ -137,8 +137,9 @@ async function triggerRagIndex(documentId: string): Promise<void> {
   }
 }
 
-// Poll the RAG index status for a document. Returns true when ready.
-async function getRagIndexStatus(documentId: string): Promise<string> {
+// Poll the RAG index status for a document. Returns "ready" | "failed" | "pending" | "unknown".
+// Optional `debugLog` triggers a raw JSON dump of the response (used for one pending doc per poll).
+async function getRagIndexStatus(documentId: string, debugLog = false): Promise<string> {
   const response = await fetch(
     `https://api.elevenlabs.io/v1/convai/knowledge-base/${documentId}/rag-index`,
     {
@@ -148,19 +149,27 @@ async function getRagIndexStatus(documentId: string): Promise<string> {
   );
   if (!response.ok) return "unknown";
   const data = await response.json();
+  if (debugLog) {
+    console.log(`RAG index raw status for ${documentId}:`, JSON.stringify(data));
+  }
   // Response shape varies; look for common status fields
   const indexes = Array.isArray(data) ? data : (data.indexes ?? [data]);
-  // Return the "best" status across models
+  // Ready statuses: strictly terminal-success values. "created" means the index
+  // record exists but is still computing — do NOT treat it as ready.
+  const READY = new Set(["succeeded", "ready", "success"]);
+  const PENDING = new Set(["created", "creating", "processing", "pending", "in_progress", "running", "queued"]);
+  const FAILED = new Set(["failed", "error"]);
   for (const idx of indexes) {
     const status = (idx?.status ?? idx?.rag_index_status ?? "").toString().toLowerCase();
-    if (status === "succeeded" || status === "ready" || status === "success" || status === "created") {
-      return "ready";
-    }
+    if (READY.has(status)) return "ready";
   }
-  // If any status indicated failure, surface it
   for (const idx of indexes) {
     const status = (idx?.status ?? idx?.rag_index_status ?? "").toString().toLowerCase();
-    if (status === "failed" || status === "error") return "failed";
+    if (FAILED.has(status)) return "failed";
+  }
+  for (const idx of indexes) {
+    const status = (idx?.status ?? idx?.rag_index_status ?? "").toString().toLowerCase();
+    if (PENDING.has(status)) return "pending";
   }
   return "pending";
 }
@@ -168,15 +177,18 @@ async function getRagIndexStatus(documentId: string): Promise<string> {
 // Wait for all documents to have ready RAG indexes
 async function waitForRagIndexes(
   documentIds: string[],
-  { intervalMs = 2500, timeoutMs = 90_000 }: { intervalMs?: number; timeoutMs?: number } = {}
+  { intervalMs = 2500, timeoutMs = 150_000 }: { intervalMs?: number; timeoutMs?: number } = {}
 ): Promise<{ ready: string[]; notReady: string[] }> {
   const ready = new Set<string>();
   const started = Date.now();
   while (Date.now() - started < timeoutMs) {
     const pending = documentIds.filter(id => !ready.has(id));
     if (pending.length === 0) break;
+    let loggedRawThisCycle = false;
     for (const id of pending) {
-      const status = await getRagIndexStatus(id);
+      const shouldLogRaw = !loggedRawThisCycle;
+      const status = await getRagIndexStatus(id, shouldLogRaw);
+      if (shouldLogRaw) loggedRawThisCycle = true;
       console.log(`RAG index status ${id}: ${status}`);
       if (status === "ready") ready.add(id);
       if (status === "failed") {
@@ -191,6 +203,7 @@ async function waitForRagIndexes(
     notReady: documentIds.filter(d => !ready.has(d)),
   };
 }
+
 
 // Apply exact-string find/replace to a prompt. Returns updated text + report.
 function applyPromptReplacements(
@@ -415,11 +428,18 @@ serve(async (req) => {
       }
       const { ready, notReady } = await waitForRagIndexes(
         createdDocuments.map(d => d.id),
-        { intervalMs: 2500, timeoutMs: 90_000 }
+        { intervalMs: 2500, timeoutMs: 150_000 }
       );
       console.log(`RAG indexing done. ready=${ready.length} notReady=${notReady.length}`);
       ragNotReady = notReady;
+      if (notReady.length === 0) {
+        // Grace sleep — ElevenLabs sometimes reports "ready" a beat before the
+        // agent PATCH endpoint accepts the doc. 3s buffer avoids rag_index_not_ready.
+        console.log("RAG ready — 3s grace sleep before agent PATCH");
+        await new Promise(r => setTimeout(r, 3000));
+      }
     }
+
 
     // Apply prompt replacements (if any) against the pre-fetched agent config
     let promptReport: Array<{ find: string; status: "applied" | "not_found"; count?: number }> = [];
