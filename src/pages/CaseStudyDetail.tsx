@@ -4,6 +4,7 @@ import { SITE_URL } from '@/lib/site';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
+import { substituteLiveRateTokens } from '@/lib/finance';
 
 export default function CaseStudyDetail() {
   const { slug } = useParams<{ slug: string }>();
