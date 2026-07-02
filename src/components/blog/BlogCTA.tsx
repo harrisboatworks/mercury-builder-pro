@@ -35,8 +35,10 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
         "Nine boats, live availability, life jackets included. Book online and you're on the water in minutes.",
       href: 'https://harrisboatworks.ca/rentals',
       external: true,
+      buttonLabel: 'Check Availability',
     };
   }
+
 
 
   // Trade-in
