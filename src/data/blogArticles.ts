@@ -214,7 +214,14 @@ That last line is the entire economics of this post. The annual drain is the che
 - **DIY refill from the top hole.** Gearcases fill from the BOTTOM screw up, until oil appears at the vent. Filled from the top, you trap air and run a half-empty case.
 - **Wrong washers back on the screws.** The little gaskets on drain and vent screws are sealing parts, not decoration. Reuse flattened ones and you've built your own leak.
 
+**Watch Mercury's official gear lube change:**
+
+https://www.youtube.com/watch?v=BBbQVH5j0W0
+
+*Video: Mercury 40-300hp FourStroke Maintenance: Changing Gear Lube (Mercury Marine official).*
+
 ---
+
 
 ## What HBW checks before your gearcase goes back in the water
 
