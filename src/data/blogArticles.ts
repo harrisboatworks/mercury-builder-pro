@@ -20622,6 +20622,25 @@ The rental experience is a useful gut-check on what kind of boat owner you'd be.
 
 ---
 
+## What the Whole Day Actually Costs
+
+The itinerary above is the fun math. Here's the money math, all in, so nobody's surprised at the dock:
+
+| Line item | What to budget | Notes |
+|---|---|---|
+| Boat rental | Live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) | Varies by boat and day; pontoons book out summer weekends, reserve ahead |
+| Fuel (paid at return) | $15 to $75 fishing, $60 to $100 full cruising day | You pay for what you burn; wind and throttle habit decide it |
+| Damage deposit | $1,000 hold, refunded | Credit card authorization, not a charge |
+| Boating licence | One-time, 15% off with code HARRIS15 | Online at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); it never expires |
+| Bait | $5 a dozen worms ($10 for two) | At our dock; BJ Tackle in Bewdley for everything else |
+| Lunch and treats | Your call | Gores Landing and Bewdley both have options; ice cream stops are mandatory with kids aboard |
+
+Split a pontoon between two families and the per-person cost is one of the cheaper full days out you can buy, with no lineups and a lake instead of a parking lot. The licence is a one-time cost that covers every boating day you'll ever have in Canada.
+
+One planning note that saves money: fuel burn is mostly throttle habit. A day of cruising between anchor stops burns far less than a day of end-to-end laps of the lake. Pick two or three destinations, not ten.
+
+---
+
 ## Frequently Asked Questions
 
 **How long does it take to drive from Toronto to Rice Lake?**
