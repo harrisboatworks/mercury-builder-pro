@@ -277,7 +277,7 @@ If your oil looked wrong, or nobody's looked in over a year, that's the whole bo
     slug: "mercury-water-pump-replacement-cost-ontario",
     title: "Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)",
     description: "What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.",
-    image: "/lovable-uploads/hero-water-pump-cost.webp",
+    image: "/lovable-uploads/hero-mercury-90-shop-shot.png",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-07-02",
