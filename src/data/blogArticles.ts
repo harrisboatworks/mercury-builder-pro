@@ -4387,7 +4387,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Prop selection during the sea-trial to confirm performance
 - PCL update as part of the project
 - Service log entry for warranty support and resale value
-- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026) for qualified buyers
+- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
 - Trade-in evaluation for old motors
 
 We don't push repowers that aren't needed. Sometimes a customer comes in with a motor that has seasons of life left. We tell them that, and they go fish.
@@ -4433,7 +4433,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'What is a Mercury Premier dealer?', answer: 'Premier is the highest tier in Mercury\'s dealer rating system, awarded on volume, service quality, customer satisfaction, and operational standards. It gives our customers priority parts access, factory-direct technical support, and faster warranty processing.' },
       { question: 'Why does Harris Boat Works only sell Mercury?', answer: 'Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water.' },
       { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 90 minutes east of Toronto and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
-      { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026) for qualified buyers.' },
+      { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.' },
       { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.' },
@@ -10094,7 +10094,7 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
 **Does the HBW 7-year warranty bonus depend on when I buy?**
-No. The 7-year program (Mercury's 3-year factory + HBW's 4-year bonus) applies to every new Mercury we sell, regardless of when in the year you buy. It's not a promotional add-on, it's structural to how HBW sells Mercurys. Full details: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
 
 ## Ready to See Your Number?
 
@@ -10138,7 +10138,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'Does the HBW 7-year warranty bonus depend on when I buy?',
-        answer: 'No. The 7-year program (Mercury\'s 3-year factory + HBW\'s 4-year bonus) applies to every new Mercury we sell, regardless of when in the year you buy. It\'s not a promotional add-on, it\'s structural to how HBW sells Mercurys. Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.'
+        answer: 'No. As of July 2026, the 7-year program (Mercury\'s 3-year factory + HBW\'s 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.'
       }
     ]
   },
@@ -10771,13 +10771,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-06-03',
+    dateModified: '2026-07-02',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury outboard price 2026', 'mercury promotions', 'mercury dealer pricing', 'best time buy outboard', 'mercury financing options'],
     content: `
-*Last reviewed: 2026-06-03*
+*Last reviewed: 2026-07-02*
 
 > **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
@@ -10898,11 +10898,11 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Harris Boat Works Current Offer (HBW Exclusive, ends June 14, 2026)**:
-- 7 years total factory-backed warranty on every new Mercury outboard purchased by June 14, 2026
-- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years
+**Harris Boat Works Current Offer (HBW Exclusive, runs through December 31, 2026 as of July 2026)**:
+- 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
+- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
+- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
@@ -10911,11 +10911,11 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 
 ### Financing Your Mercury
 
-**Mercury Marine Credit**:
-- Factory financing option
-- Competitive rates
-- Promotional periods available
-- Integrated with purchase
+**Current promotional financing (as of July 2026)**:
+- TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
+- Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
+- Financing minimum $5,000 before tax
+- Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions)
 
 **Typical Terms**:
 - 12-84 month terms
@@ -10989,7 +10989,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Are there current promotions available?',
-        answer: 'Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury\'s 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See /promotions for the latest.'
+        answer: 'Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. As of July 2026, the current HBW Exclusive brings every eligible new Mercury to 7 years of total factory-backed warranty (Mercury\'s 3-year factory base + 4 promotional bonus years / free extension), running through December 31, 2026. See [current promotions](https://www.mercuryrepower.ca/promotions) for the latest.'
       },
       {
         question: 'Can I negotiate below advertised price?',
@@ -13146,6 +13146,8 @@ Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or pu
 
 ## How HBW financing actually works
 
+**Current promotional rate (as of July 2026):** TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026. Financing minimum $5,000 before tax. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
+
 We don't lend the money ourselves, and we're not a bank. We work with a marine-and-powersports financing broker (DealerPlan, out of Peterborough) who shops your application across Canadian lenders, primarily TD Auto Finance, with National Bank and RBC in the mix. The broker's job is to find you the best approval, not to push one bank.
 
 What that means for you in practice:
@@ -13252,7 +13254,7 @@ The fastest way to know what a Mercury or a full repower costs you per month is 
       { question: 'Can I finance a Mercury outboard in Ontario?', answer: 'Yes. We arrange financing through Canadian marine lenders, primarily TD Auto Finance, with $0 down and terms up to 120 months. Most pre-qualifications come back in under 24 hours. Build a quote with your payment at mercuryrepower.ca or call 905-342-2153.' },
       { question: "What's the current financing rate?", answer: "The standing rate is shown live in the article (sourced from the same engine that drives our quote builder's monthly-payment math) and is in effect through December 31, 2026. The live rate and any active seasonal Mercury Canada promotions are always shown current in our quote builder and on mercuryrepower.ca/promotions, so you're never working off an old number." },
       { question: 'What\'s the difference between the standing rate and a "promo rate"?', answer: 'The standing rate is what we quote every day. A promo rate is a separate, time-limited Mercury Canada offer (sometimes as low as 2.99% or 4.9%) that appears seasonally on certain models. When a promo is active and beats the standing rate, we use it; when it expires, it\'s gone. Check the promotions page for what\'s live today.' },
-      { question: 'Is there a down payment?', answer: 'No. You can finance the full out-the-door price with HST included, $0 down. The minimum amount to finance is $5,000.' },
+      { question: 'Is there a down payment?', answer: 'Down payment requirements vary by lender and approval; many customers finance the full out-the-door price with HST included and $0 down. The loan minimum is $5,000 before tax.' },
       { question: 'Are there any fees?', answer: "Yes, one: the DealerPlan financing fee of $349, added after tax on financed deals. We tell you before you sign. There's no penalty for paying the loan down early." },
       { question: 'How long can I finance for?', answer: "Up to 120 months. Longer terms lower the monthly payment but cost more interest overall. They're popular on larger repowers (250 hp and up). Pick the shortest term you're comfortable with." },
       { question: 'Can I finance a full repower, not just the motor?', answer: "Yes. Motor, rigging, controls, and installation can all go into the financed amount. Tell us the boat and we'll quote the whole job." },
@@ -19458,7 +19460,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-05-23*
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models, often extended to 5 or 7 with current promotions. Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance. Current promo terms at mercuryrepower.ca.
+> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions). Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
@@ -19478,7 +19480,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, the current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts.
+That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, as of July 2026 the current HBW Exclusive promotion brings total factory-backed coverage to 7 years (3 standard + 4 free extension) on every eligible new Mercury outboard purchased through December 31, 2026, after which the bonus years revert to the 3-year standard. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts.
 
 ---
 
@@ -23984,7 +23986,7 @@ Mercury Canada runs promotions through the season: spring repower season (March-
 
 Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see the financing guide for terms.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. Promotional bonus warranty years may be stacked on top of the base during active promo windows. Check current active promotions at mercuryrepower.ca/promotions or call us.
+Mercury's standard warranty in Canada is 3 years, concurrent. Promo terms change, but as of July 2026 HBW's current offer is 7 years total coverage (3 standard + 4 free extension) through December 31, 2026. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
 ## About the author
 
@@ -24019,7 +24021,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
       { question: 'What\'s the difference between MSRP and dealer price?', answer: 'MSRP is Mercury Canada\'s suggested retail. Dealer price is what we actually sell for, at or below MSRP. Harris Boat Works publishes both numbers next to every motor so you can see exactly what the difference is.' },
       { question: 'Does the motor price include installation?', answer: 'No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.' },
       { question: 'Can I buy Mercury cheaper in the US?', answer: 'Sometimes the headline price looks lower. But cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings, and then some. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers.' },
-      { question: 'How long is the Mercury warranty?', answer: 'Standard is 3 years, concurrent, in Canada. Mercury and dealer promotions may stack bonus warranty years on top of the base during active promo windows. Current promotions are reflected in pricing at mercuryrepower.ca and listed at /promotions.' },
+      { question: 'How long is the Mercury warranty?', answer: 'Standard is 3 years, concurrent, in Canada. Promo terms change, but as of July 2026 HBW\'s current offer is 7 years total coverage (3 standard + 4 free) through December 31, 2026. What\'s active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).' },
       { question: 'Can I order any model, or only what\'s in stock?', answer: 'Both. In-stock means physically at our shop in Gores Landing. Available-to-order means we request it from Mercury Canada, typically 1-4 weeks depending on the model.' },
       { question: 'Are these prices final?', answer: 'The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at pickup, before HST.' }
     ]
@@ -25666,7 +25668,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Will a 90 plane my pontoon?", answer: "Depends on the pontoon size, hull style, load, and prop. A 90 CT will plane a typical 18 to 22 ft cottage pontoon with a normal load. A 24 ft tri-toon with eight people aboard is asking for a 115 CT or 150." },
       { question: "Does the Mercury 90 need a battery?", answer: "Yes. The 90 ELPT is electric start. You need a marine starting battery (Group 24 or 27 typical, depending on the boat)." },
       { question: "Is the 90 fuel injected?", answer: "Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier starting, cleaner running, better fuel economy than the old carbureted two-strokes most of these motors are replacing." },
-      { question: "What's the warranty?", answer: "3-year factory warranty as standard. Mercury runs a 3-year promotional bonus warranty most of the year that brings it to 6 years total. Ask us about current promo status when you quote." },
+      { question: "What's the warranty?", answer: "3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
     ],
     content: `### Quick Answer
 
@@ -25838,7 +25840,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What's the difference between the 115 FourStroke and the 115 Pro XS?", answer: "Same 2.1L powerhead, different tuning. The Pro XS is calibrated for hole-shot and high-RPM performance with a sport gearcase. The standard FourStroke is the daily-driver tuning." },
       { question: "Is the 115 enough for a 19 ft aluminum boat?", answer: "For most 19 ft aluminum fishing boats with normal loads, yes. If you regularly run heavy (four people, full livewell, kicker, batteries, multiple tackle stations), the 115 is at the edge of what it can comfortably do." },
       { question: "Will a 115 plane my 22 ft pontoon?", answer: "With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is the standard answer for 20-22 ft pontoons. 24 ft and up, you want the 150 V6." },
-      { question: "What's the warranty?", answer: "3-year factory warranty as standard. Mercury runs a 3-year promotional bonus warranty most of the year, bringing it to 6 years total. Ask us about current promo status." },
+      { question: "What's the warranty?", answer: "3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
       { question: "Is the 115 fuel injected?", answer: "Yes. All Mercury 115 HP FourStrokes use EFI. Significantly cleaner running and more fuel-efficient than the older OptiMax and two-stroke 115s most of these motors are replacing." },
       { question: "Does the 115 work with SmartCraft gauges?", answer: "Yes. Full SmartCraft integration is available. NMEA 2000, VesselView mobile, Active Trim. Common upgrade during repower." },
       { question: "Can I get a 115 HP in counter-rotation?", answer: "Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because twin 115s are unusual on Rice Lake boats, but available for the right application." },
@@ -33586,39 +33588,39 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     image: '/lovable-uploads/hero-mercury-warranty-shop-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-06-07',
+    dateModified: '2026-07-02',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '9 min read',
     keywords: ['mercury 7 year warranty', 'mercury warranty promo', 'hbw exclusive warranty', 'mercury warranty ontario', 'mercury limited warranty canada', 'mercury warranty explained'],
     relatedSlugs: ['mercury-outboard-warranty-canada-2026', 'mercury-extended-warranty-platinum-ontario', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'Did the 7-year HBW Exclusive promotion end?', answer: 'Yes. The 7-year HBW Exclusive promotion ended June 14, 2026. New Mercury outboards purchased after that date carry the standard 3-year factory warranty. For current offers, see mercuryrepower.ca/promotions.' },
-      { question: 'How long is the Mercury warranty at HBW right now?', answer: "Every new Mercury outboard from Harris Boat Works carries 3 years of factory-backed coverage as standard: Mercury's 3-year limited warranty, with 3 years of corrosion coverage running concurrently. Extended coverage is available through Mercury Product Protection. The 7-year HBW Exclusive promotion ended June 14, 2026. Confirm current terms at mercuryrepower.ca/promotions when we quote." },
-      { question: 'Was the 7 years from Mercury or from HBW?', answer: "The coverage was factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years were a promotion HBW ran on every new Mercury we sold through June 14, 2026, not a third-party service contract and not an aftermarket add-on. Mercury's own consumer Get 7 program had also ended. The standard factory warranty today is 3 years." },
+      { question: 'Is the 7-year HBW Exclusive promotion still available?', answer: 'Yes. As of July 2026 the 7-year HBW Exclusive is active and runs through December 31, 2026. Every eligible new Mercury outboard purchased through HBW carries 3 years of standard Mercury factory warranty plus a 4-year free extension, for 7 years of total factory-backed coverage. Confirm current terms at [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).' },
+      { question: 'How long is the Mercury warranty at HBW right now?', answer: "As of July 2026, every eligible new Mercury outboard from Harris Boat Works carries 7 years of total factory-backed coverage: Mercury's 3-year limited warranty plus a 4-year free extension under the HBW Exclusive promotion, running through December 31, 2026. Corrosion coverage runs concurrently with the base 3 years. Extended coverage beyond 7 years is available through Mercury Product Protection. Confirm current terms at [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions) when we quote." },
+      { question: 'Is the 7 years from Mercury or from HBW?', answer: "The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every eligible new Mercury we sell through December 31, 2026 (as of July 2026), not a third-party service contract and not an aftermarket add-on. See [current promotions](https://www.mercuryrepower.ca/promotions)." },
       { question: 'What does the Mercury factory warranty cover?', answer: 'Manufacturing defects in the powerhead, lower unit, mid-section, electronics, cooling, and starting and charging systems. Parts and labour are both covered at any authorized Mercury dealer in Canada, including HBW. Coverage is non-declining.' },
       { question: 'What is not covered?', answer: 'Routine maintenance (oil, filters, plugs), wear items (impellers, anodes, props), damage from misuse, neglect, improper fuel, freeze damage from skipped winterization, running aground, non-Mercury parts, or unauthorized modifications.' },
       { question: 'Do I need to service the motor at HBW to keep it valid?', answer: 'No. You can service the motor at any authorized Mercury dealer in Canada. Keep service records to support any warranty claim. We service customers who bought elsewhere too.' },
       { question: 'Does the warranty transfer if I sell the boat?', answer: 'The Mercury Limited Warranty has provisions for transfer to a second owner. Promotional bonus-year transfer terms depend on the specific motor and offer at purchase. We confirm transfer terms at quote.' },
-      { question: 'How is this different from Mercury Product Protection (MPP)?', answer: "MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after the factory warranty ends. The 7-year HBW Exclusive promotion (ended June 14, 2026) was included in the purchase price; MPP is an optional add-on you buy on top of the standard 3-year factory warranty." },
-      { question: 'Does TD financing at {{LIVE_RATE_PCT}} still apply?', answer: 'Yes. TD financing at {{LIVE_RATE_PCT}} is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.' },
+      { question: 'How is this different from Mercury Product Protection (MPP)?', answer: "MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after factory-backed coverage ends. The 7-year HBW Exclusive promotion (active through December 31, 2026 as of July 2026) is included in the purchase price; MPP is an optional add-on you buy on top of that." },
+      { question: 'Does TD financing at {{LIVE_RATE_PCT}} still apply?', answer: 'Yes. TD "Always On" financing at {{LIVE_RATE_PCT}} APR (OAC) runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW (as of July 2026), and stacks with the 7-year warranty promotion. Confirm current terms at [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).' },
     ],
-    content: `<!-- PROMO-EXPIRY-DONE: HBW Exclusive 7-yr promo ended 2026-06-14. Post converted to evergreen 3-year warranty explainer on 2026-06-15. -->
+    content: `<!-- PROMO-STATUS: HBW Exclusive 7-yr promo was extended past the original 2026-06-14 end date and is ACTIVE through 2026-12-31 as of 2026-07-02. -->
 
-*Last reviewed: 2026-06-07*
+*Last reviewed: 2026-07-02*
 
-> **Quick answer:** The 7-year HBW Exclusive promotion ended June 14, 2026. Every new Mercury outboard from Harris Boat Works now carries the standard 3 years of factory-backed coverage: Mercury's 3-year limited warranty, with 3 years of corrosion coverage running concurrently (not stacked). Extended coverage is available separately through Mercury Product Protection. For the latest offers, check [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), and build a quote any time at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** The 7-year HBW Exclusive promotion is active as of July 2026 and runs through December 31, 2026. Every eligible new Mercury outboard from Harris Boat Works comes with 3 years of standard Mercury factory warranty plus a 4-year free extension, for 7 years of total factory-backed coverage. Corrosion coverage runs concurrently with the base 3 years (not stacked). Coverage beyond 7 years is available separately through Mercury Product Protection. For the latest offers, check [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), and build a quote any time at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 When customers ask about Mercury's warranty, the question they usually mean is: "If something goes wrong, am I going to pay for it?" The honest answer has two parts: what Mercury covers contractually (the base), and what HBW or Mercury may be offering on top of that at any given time (a promotion). This post separates the two so you know what is locked in for the life of the motor versus what is tied to a promotional window.
 
-## The 7-year promotion (ended June 14, 2026)
+## The 7-year promotion (active through December 31, 2026)
 
-From April through June 14, 2026, Harris Boat Works ran an HBW Exclusive promotion that added 4 promotional bonus years on top of Mercury's 3-year factory base, for 7 years of total factory-backed coverage on every new Mercury we sold. That promotion has ended.
+As of July 2026, Harris Boat Works is running an HBW Exclusive promotion that adds 4 promotional bonus years on top of Mercury's 3-year factory base, for 7 years of total factory-backed coverage on every eligible new Mercury we sell. The offer was previously scheduled to end June 14, 2026 and has been extended through December 31, 2026. After that date, coverage reverts to the standard Mercury 3-year factory warranty unless a further promotion is announced.
 
-- **Standard coverage today:** every new Mercury outboard carries Mercury's 3-year factory limited warranty.
-- **Same factory terms.** The factory warranty covers the parts and systems described below, honoured across Mercury's authorized-dealer network, parts and labour both covered, non-declining.
-- **Extended coverage is separate.** Mercury Product Protection (MPP) is a paid extended program you can add on top of the factory warranty. Ask us to quote it with your motor.
-- **TD financing at {{LIVE_RATE_PCT}} still applies.** That program runs through December 31, 2026 on qualifying motors. OAC.
+- **Coverage today:** every eligible new Mercury outboard purchased through HBW carries 7 years of total factory-backed coverage (Mercury's 3-year limited warranty plus a 4-year free extension).
+- **Same factory terms.** The bonus years cover the same parts and systems described below, honoured across Mercury's authorized-dealer network, parts and labour both covered, non-declining.
+- **Extended coverage is separate.** Mercury Product Protection (MPP) is a paid extended program you can add on top for coverage beyond 7 years. Ask us to quote it with your motor.
+- **TD "Always On" financing at {{LIVE_RATE_PCT}} APR (OAC) stacks.** That program runs through December 31, 2026 on qualifying motors (as of July 2026).
 
 For current promotions, the source of truth is [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions). Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call **(905) 342-2153**.
 
@@ -33718,14 +33720,14 @@ Not by itself. A promotional bonus can close the gap between "repair again" and 
 
 ## Frequently Asked Questions
 
-**Did the 7-year HBW Exclusive promotion end?**
-Yes. The 7-year HBW Exclusive promotion ended June 14, 2026. New Mercury outboards purchased after that date carry the standard 3-year factory warranty. For current offers, see mercuryrepower.ca/promotions.
+**Is the 7-year HBW Exclusive promotion still available?**
+Yes. As of July 2026, the 7-year HBW Exclusive is active and runs through December 31, 2026. Every eligible new Mercury outboard purchased through HBW carries 3 years of standard Mercury factory warranty plus a 4-year free extension. For current offers, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
 
 **How long is the Mercury warranty at HBW right now?**
-Every new Mercury outboard from Harris Boat Works carries 3 years of factory-backed coverage as standard: Mercury's 3-year limited warranty, with 3 years of corrosion coverage running concurrently. Extended coverage is available through Mercury Product Protection.
+As of July 2026, every eligible new Mercury outboard from Harris Boat Works carries 7 years of total factory-backed coverage: Mercury's 3-year limited warranty plus a 4-year free extension under the HBW Exclusive promotion, running through December 31, 2026. Extended coverage beyond 7 years is available through Mercury Product Protection.
 
-**Was the 7 years from Mercury or from HBW?**
-The coverage was factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years were a promotion HBW ran on every new Mercury we sold through June 14, 2026. Mercury's own consumer Get 7 program had also ended. The standard factory warranty today is 3 years.
+**Is the 7 years from Mercury or from HBW?**
+The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every eligible new Mercury we sell through December 31, 2026 (as of July 2026). See [current promotions](https://www.mercuryrepower.ca/promotions).
 
 **What does the Mercury factory warranty cover?**
 Manufacturing defects in the powerhead, lower unit, electronics, and major components, including both parts and labour at authorized Mercury dealers like HBW. Coverage is non-declining.
@@ -33734,10 +33736,10 @@ Manufacturing defects in the powerhead, lower unit, electronics, and major compo
 Routine maintenance (oil, filters, plugs), wear items (impellers, anodes, props), damage from misuse, neglect, improper fuel, freeze damage from skipped winterization, running aground, non-Mercury parts, or unauthorized modifications.
 
 **How is this different from MPP?**
-MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after the factory warranty ends. The 7-year HBW Exclusive promotion (ended June 14, 2026) was included in the purchase price; MPP is optional and stacks on top of the standard 3-year factory warranty.
+MPP is Mercury's paid extended service program, sold through dealers and quoted at time of sale. It picks up after factory-backed coverage ends. The 7-year HBW Exclusive promotion (active through December 31, 2026 as of July 2026) is included in the purchase price; MPP is optional and stacks on top for coverage beyond 7 years.
 
 **Does TD financing at {{LIVE_RATE_PCT}} still apply?**
-Yes. TD financing at {{LIVE_RATE_PCT}} is a separate program that runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW. The 7-year warranty promotion that previously stacked with it ended June 14, 2026.
+Yes. TD "Always On" financing at {{LIVE_RATE_PCT}} APR (OAC) runs through December 31, 2026 on qualifying Mercury outboards purchased through HBW (as of July 2026), and stacks with the 7-year warranty promotion. Confirm current terms at [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions).
 
 ---
 
@@ -33748,7 +33750,7 @@ Yes. TD financing at {{LIVE_RATE_PCT}} is a separate program that runs through D
 
 ## Ready to repower with a new Mercury?
 
-Every new Mercury comes with the standard 3-year factory warranty, with extended coverage available through Mercury Product Protection. For current promotions, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or call **(905) 342-2153**.
+As of July 2026, every eligible new Mercury purchased through HBW comes with 7 years of total factory-backed coverage (3 standard + 4 free) through December 31, 2026, with extended coverage available through Mercury Product Protection. For current promotions, see [mercuryrepower.ca/promotions](https://www.mercuryrepower.ca/promotions), build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or call **(905) 342-2153**.
 
 **Phone:** (905) 342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -34216,7 +34218,7 @@ A Mercury repower in Ontario finances through the TD 'Always On' {{LIVE_RATE}} p
 
 7,490 runs about ## Quick answer
 
-20/month, and a 150 Pro XS at A Mercury repower in Ontario finances through the TD 'Always On' {{LIVE_RATE}} program (OAC). A Mercury 115 Pro XS at $17,490 runs about $120/month, and a 150 Pro XS at $24,349 runs about $167/month, on a 240-month amortization basis. No down payment is required for qualified buyers. The program ends December 31, 2026, after which rates resume at 7.99% APR.
+20/month, and a 150 Pro XS at A Mercury repower in Ontario finances through the TD 'Always On' {{LIVE_RATE}} program (OAC). A Mercury 115 Pro XS at $17,490 runs about $120/month, and a 150 Pro XS at $24,349 runs about $167/month, on a 240-month amortization basis. No down payment is required for qualified buyers. The program ends December 31, 2026, after which standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)).
 
 *Last reviewed: 2026-06-02*
 
@@ -34224,7 +34226,7 @@ Every repower customer asks the same question before they ask for a quote: what 
 
 This page does the math. Real Mercury repower price tiers, Ontario tax treatment, the actual lender path we use, current rates, and the monthly payment numbers we'd quote you.4,349 runs about ## Quick answer
 
-67/month, on a 240-month amortization basis. No down payment is required for qualified buyers. The program ends December 31, 2026, after which rates resume at 7.99% APR.
+67/month, on a 240-month amortization basis. No down payment is required for qualified buyers. The program ends December 31, 2026, after which standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)).
 
 *Last reviewed: 2026-06-02*
 
@@ -34238,7 +34240,7 @@ HBW arranges Mercury repower financing through **Dealerplan Peterborough**, our 
 
 A common misconception: Sheffield Financial is a Mercury Marine financing partner in the United States. Sheffield is NOT available in Canada. The HBW Canadian equivalent is TD Auto Finance through Dealerplan Peterborough.
 
-**HBW's current standard rate is {{LIVE_RATE}} through the Mercury TD "Always On" program, available through Dec 31, 2026 (OAC).** After the program ends on Jan 1, 2027, tiered rates resume from 7.99% APR. Mercury Canada also runs additional limited-time promotional rates (2.99%, 4.9%) through partner lenders during specific campaign windows.
+**HBW's current standard rate is {{LIVE_RATE}} through the Mercury TD "Always On" program, available through Dec 31, 2026 (OAC).** After the program ends on Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up. Mercury Canada has at times run short promotional rates (2.99% and 4.9% have both appeared in past years); anything currently active is on the [promotions page](https://www.mercuryrepower.ca/promotions) (as of July 2026).
 
 **What this financing path gives you:**
 - Fixed APR (no rate changes during the term)
@@ -34265,7 +34267,7 @@ The tables below show principal-only monthly payments (HST paid separately at cl
 
 ## Amortization scenarios: active TD {{LIVE_RATE_PCT}} program vs. post-promo 7.99% legacy
 
-The primary column below is the **active TD "Always On" {{LIVE_RATE}} program** (240-month amortization basis, 60-month contract with balloon). The secondary column shows the **post-Dec 31, 2026 legacy 7.99% APR** scenario for context: what payments will look like once the TD program ends and tiered rates resume.
+The primary column below is the **active TD "Always On" {{LIVE_RATE}} program** (240-month amortization basis, 60-month contract with balloon; as of July 2026, see [current promotions](https://www.mercuryrepower.ca/promotions)). The secondary column shows a **post-Dec 31, 2026 legacy 7.99% APR** scenario for context; standard tiered rates after the promo are 8.99% APR under $10,000 and 7.99% APR at $10,000 and up.
 
 Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
@@ -34278,7 +34280,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 | Mercury 150 Pro XS | $24,349 | **$167/mo** | $295.29/mo (120 mo) |
 | Mercury 250 V8 Pro XS | $42,000 | **$288/mo** | $509.35/mo (120 mo) |
 
-*All amounts in CAD. HST not included in principal. Primary rate: {{LIVE_RATE}} (TD Always On program through Dec 31, 2026, 240-month amortization basis, 60-month contract with balloon). Secondary rate: 7.99% APR tiered legacy, resumes Jan 1, 2027.*
+*All amounts in CAD. HST not included in principal. Primary rate: {{LIVE_RATE}} (TD Always On program through Dec 31, 2026, 240-month amortization basis, 60-month contract with balloon). Secondary rate: standard tiered legacy resuming Jan 1, 2027 (8.99% APR under $10,000, 7.99% APR at $10,000 and up).*
 
 ## The HBW on-water repower test
 
@@ -34292,7 +34294,7 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 - claim: I'll pull from my line of credit instead.
   rebuttal: HELOC at prime + 2-3% is materially higher than the active TD {{LIVE_RATE}} program, plus variable-rate risk. A fixed {{LIVE_RATE_PCT}} loan with no prepayment penalty is usually cleaner.
 - claim: I want zero interest financing.
-  rebuttal: The active TD Always On {{LIVE_RATE}} (OAC) is the headline rate through Dec 31, 2026. Mercury Canada also runs occasional 2.99% / 4.9% campaigns that require strong credit. Outside those windows and after Jan 1, 2027, tiered rates resume from 7.99% APR.
+  rebuttal: The active TD Always On {{LIVE_RATE}} (OAC) is the headline rate through Dec 31, 2026 (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)). Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the promotions page. Outside those windows and after Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up.
 - claim: I'll finance through my own bank to get a lower rate.
   rebuttal: Possible, but TD {{LIVE_RATE}} via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
 :::
@@ -34302,7 +34304,7 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 | Lender / Path | Rate context | Down required |
 |---|---|---|
 | **TD Auto Finance via Dealerplan (HBW) - active program** | **{{LIVE_RATE}} (TD Always On, OAC) through Dec 31, 2026** | $0 |
-| TD Auto Finance via Dealerplan (HBW) - post-promo from Jan 1, 2027 | Tiered legacy rates from 7.99% APR | $0 |
+| TD Auto Finance via Dealerplan (HBW) - post-promo from Jan 1, 2027 | Tiered legacy rates: 8.99% APR under $10,000, 7.99% APR at $10,000+ | $0 |
 | **National Bank via Dealerplan (HBW)** | Similar to TD; eligible for active {{LIVE_RATE_PCT}} program | $0 |
 | **RBC via Dealerplan (HBW)** | Similar profile | $0 |
 | **Direct bank marine loan** | Prime + spread | 10-20% typical |
@@ -34317,7 +34319,7 @@ Through December 31, 2026, Mercury Marine Canada's TD "Always On" program is the
 - **Amortization up to 240 months** (20-year payment basis)
 - **Eligible: new Mercury outboards only**
 
-Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). On Jan 1, 2027, tiered rates auto-revert to 7.99% APR legacy.
+Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). On Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)).
 
 ### What the 240-month amortization actually means
 
@@ -34356,7 +34358,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 `,
     faqs: [
-      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's current standard rate is {{LIVE_RATE}} (OAC) through the Mercury TD \"Always On\" program, active through Dec 31, 2026 and arranged through Dealerplan Peterborough on TD Auto Finance (also National Bank and RBC). After Jan 1, 2027, tiered rates resume from 7.99% APR. Additional promotional rates of 2.99% to 4.9% are sometimes available through Mercury Canada's partner-lender program." },
+      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's current standard rate is {{LIVE_RATE}} (OAC) through the Mercury TD \"Always On\" program, active through Dec 31, 2026 and arranged through Dealerplan Peterborough on TD Auto Finance (also National Bank and RBC). After Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up. Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the [promotions page](https://www.mercuryrepower.ca/promotions) (as of July 2026)." },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "No. Through Dealerplan Peterborough, financing is available with $0 down for qualified buyers." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Yes. The TD Auto Finance and National Bank marine loan products arranged through Dealerplan Peterborough have no prepayment penalty." },
       { question: "How long does the approval take?", answer: "Pre-approval typically returns in under 24 hours from application submission. Credit decisions are available 7 days a week." },
