@@ -249,7 +249,7 @@ Family-owned on Rice Lake since 1947.`
       { question: "Can I keep boating if the telltale stream is weak?", answer: "We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not." },
       { question: "Why do more impellers fail in summer than in spring?", answer: "In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes." },
       { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test in cold water is the easiest exam an impeller will face all year. It catches a dead pump, but a marginal one with set or cracked vanes can pass in May and let go in July. That's exactly the pattern our 12 years of shop records show." },
-      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury and Mercruiser parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service." }
+      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service." }
     ],
     content: `## Quick answer
 
@@ -3559,7 +3559,7 @@ Harris Boat Works has sold and serviced Mercury outboards since 1965. Three gene
 **Build a quote on any Mercury at /quote/motor-selection, or call us at (905) 342-2153.**
 
 ## Quick recommendation
-If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
+If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury parts inventory in Ontario.
 
 We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
 
@@ -3591,7 +3591,7 @@ Other brands aren't bad motors. The depth-vs-breadth tradeoff just strongly favo
 
 The expertise compounds over time:
 - Three generations of technicians have learned only Mercury
-- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock the largest Mercury and Mercruiser parts inventory in Ontario
+- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock the largest Mercury parts inventory in Ontario
 - Training investments focus on Mercury
 - Customer expectations are calibrated to Mercury
 
@@ -12065,7 +12065,7 @@ Mercury issued a shift-shaft recall in 2025 that received significant attention 
 
 ## What HBW has on the shelf
 
-**HBW has one of the deepest Mercury and Mercruiser parts inventories in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
+**HBW has largest Mercury parts inventory in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
 
 ## The HBW on-water test
 
@@ -12098,7 +12098,7 @@ Thinking about switching from Yamaha to Mercury? We handle the full conversion i
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. One of the deepest Mercury and Mercruiser parts inventories in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
 
 ## Sources
 
@@ -12464,7 +12464,7 @@ Worth knowing, because people assume it's either/or: our financing and our exten
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry the largest Mercury and Mercruiser parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
+We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry the largest Mercury parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
 
 ## Ready to see your real number?
 
@@ -14369,7 +14369,7 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
+HBW has the largest Mercury parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
 ## Common mistakes (the things we push back on)
 
@@ -14406,7 +14406,7 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 **Email:** info@harrisboatworks.ca  
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
 
 ## Sources
 
@@ -19021,7 +19021,7 @@ HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 **Email:** info@harrisboatworks.ca  
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. Mercury CDS equipped.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario. Mercury CDS equipped.
 
 ## Sources
 
@@ -33735,7 +33735,7 @@ For Mercury owners on Rice Lake: drop the boat at our dock, walk home, pick it u
 
 ## What HBW has on the shelf
 
-We keep one of the larger Mercury and Mercruiser parts inventories in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
+We keep largest Mercury parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
 
 ## The 8-year warranty conversation
 
@@ -33974,7 +33974,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show y
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
 
 ---
 
@@ -34005,7 +34005,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
     description: 'Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through.',
     content: `*Last reviewed: 2026-05-28*
 
-> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury and Mercruiser parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
+> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 
 The Trent-Severn Waterway is 386 km of locks, lakes, and rivers that draws thousands of recreational boaters every summer. Most transits go smoothly. But a meaningful percentage of transit boats have a mechanical issue somewhere along the route. When that happens 30 km from any town, your options matter.
 
@@ -34017,7 +34017,7 @@ We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice 
 
 HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
-- **The largest Mercury and Mercruiser parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
+- **The largest Mercury parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
 - **Full Mercury service capability.** Mercury CDS (Computer Diagnostic System) at our workstation. Mercury Premier dealer credential. Mercury authorized warranty service. Most mid-season repairs handled same-day.
 - **On-water towing capability.** If you break down on Rice Lake or hit the Rice Lake Railroad submerged tracks (this happens to first-time visitors), we can come out and tow you in.
 - **Fuel dock with ethanol-free 89.** For boats that need clean fuel mid-transit, particularly older 2-stroke motors that don't tolerate E10 well.
@@ -34058,7 +34058,7 @@ The mix of boats doing the full TSW transit is more varied than people expect.
 
 ## Parts inventory: what's on our shelf
 
-Specific competitive fact: **HBW has the largest Mercury and Mercruiser parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
+Specific competitive fact: **HBW has the largest Mercury parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
 
 Common transit-related parts we stock:
 
@@ -34163,7 +34163,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 **Email:** info@harrisboatworks.ca
 **Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
 
 ---
 
@@ -34180,7 +34180,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
       { question: "Does HBW provide on-water towing on Rice Lake?", answer: "Yes. We provide on-water towing assistance for breakdowns on Rice Lake or for boats that have hit the Rice Lake Railroad submerged tracks. Call 905-342-2153 for tow dispatch. We do not provide tow service away from Rice Lake." },
       { question: "Is HBW directly on the Trent-Severn Waterway?", answer: "Yes. HBW is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. Rice Lake is part of the Trent-Severn Waterway. Our dock is accessible by water for transit boats." },
       { question: "Does HBW have a fuel dock?", answer: "Yes. We have a fuel dock with ethanol-free 89 octane available. For boats with older 2-stroke motors or owners who prefer non-ethanol fuel for storage and transit reliability, this is one of the few options on the Rice Lake portion of the TSW." },
-      { question: "What parts does HBW keep on the shelf for transit boats?", answer: "We have the largest Mercury and Mercruiser parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone." },
+      { question: "What parts does HBW keep on the shelf for transit boats?", answer: "We have the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone." },
       { question: "What's the 2026 Trent-Severn season and free lockage?", answer: "2026 full opening is anticipated May 29. Canada Strong Pass free lockage runs June 19 through September 7, 2026. Confirm current dates with Parks Canada before your transit." },
       { question: "Does HBW service non-Mercury outboards or inboards on transit boats?", answer: "We service Mercury outboards and Mercruiser sterndrives exclusively. We do not service Yamaha, Honda, or other-brand outboards, or full inboard installations. For parts that cross brands (fuel filters, hoses, batteries), our shelf depth may still help." },
       { question: "Do I need a kicker for the full Trent-Severn transit?", answer: "Not strictly required, but recommended for the full Trent-to-Severn transit. Roughly 10% of transit boats run with a kicker. For boats that break down mid-transit far from any service stop, a kicker is genuinely useful insurance." }
@@ -34326,7 +34326,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
 
 **Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153.`,
     image: '/lovable-uploads/hero-mercury-salmon-lake-ontario-2026.png',
@@ -34398,7 +34398,7 @@ Engine, controls, gauges, prop. Of those four, the engine and prop are mandatory
 | Trim tabs, electronics, radio | Yes | All carry over. |
 | Capacity plate max HP | Yes | Manufacturer maximum is unchanged. |
 
-The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries one of the larger Mercury and Mercruiser parts inventories in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
+The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries largest Mercury parts inventory in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
 
 ## What does a Yamaha-to-Mercury swap actually cost in Ontario?
 
