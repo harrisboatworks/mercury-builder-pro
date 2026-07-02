@@ -2264,14 +2264,8 @@ The annual maintenance budget for a typical Mercury repower is small compared to
 We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Stick to the seasonal cycle below and your Mercury will outlast the rest of the boat.
 
 ## What changes the maintenance picture
-:::image-placeholder
-slug: annual-mercury-service-cycle
-type: infographic
-aspect: 1:1
-description: Circular diagram showing the four-part seasonal Mercury service cycle
-prompt: Photorealistic editorial circular infographic. Title: "Annual Mercury Service Cycle". Circular flow with 4 quadrants: Spring (April-May) Commissioning, Summer (July) Mid-Season Check, Fall (Oct-Nov) Winterization, Winter Storage. Each quadrant has icon, season label, and 1-line task description. Center: small Mercury cowl icon. Mercury black/red color scheme, cream background. No people. 1080x1080. [STYLE ANCHOR]
-image: /lovable-uploads/annual-mercury-service-cycle.png
-:::
+
+
 
 Five things move how often and how aggressively you should service:
 
