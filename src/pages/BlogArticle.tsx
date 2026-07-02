@@ -250,7 +250,7 @@ export default function BlogArticle() {
       {/* Floating Share Bar */}
       <FloatingShareBar
         url={articleUrl}
-        title={article.seoTitle ?? article.title}
+        title={article.title}
         description={cleanDescription}
         articleSlug={article.slug}
       />
