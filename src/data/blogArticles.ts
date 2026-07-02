@@ -14440,6 +14440,12 @@ You can winterize your own Mercury outboard if you're comfortable with fogging o
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
 
+**Watch Mercury's official winterization checklist first:**
+
+https://www.youtube.com/watch?v=YGuQjF6vuao
+
+*Video: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine official).*
+
 ---
 
 ::diagnostic-flow
