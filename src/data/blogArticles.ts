@@ -20436,7 +20436,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-06-26',
+    dateModified: '2026-07-02',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
