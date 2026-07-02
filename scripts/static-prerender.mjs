@@ -4561,6 +4561,9 @@ const routes = [
   },
   {
     path: '/mercury-repower-faq',
+    // Consolidates with /faq — same faqCategories dataset; both routes kept
+    // for internal linking, but the canonical points at /faq.
+    canonical: '/faq',
     title: 'Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works',
     description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Premier Dealer · Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Mercury Outboard Repower FAQ',
@@ -5118,8 +5121,12 @@ function stamp(route) {
     html = html.replace(/<\/head>/i, `${metaDesc}\n  </head>`);
   }
 
-  // canonical
-  const canonical = `<link data-rh="true" rel="canonical" href="${SITE_URL}${route.path === '/' ? '' : route.path}" />`;
+  // canonical (route.canonical wins so pages that consolidate duplicates —
+  // e.g. /mercury-repower-faq → /faq — can point crawlers at the kept URL)
+  const canonicalHref = route.canonical
+    ? (route.canonical.startsWith('http') ? route.canonical : `${SITE_URL}${route.canonical}`)
+    : `${SITE_URL}${route.path === '/' ? '' : route.path}`;
+  const canonical = `<link data-rh="true" rel="canonical" href="${canonicalHref}" />`;
   if (/<link\s+rel=["']canonical["'][^>]*>/i.test(html)) {
     html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/i, canonical);
   } else {
