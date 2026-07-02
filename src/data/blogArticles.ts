@@ -25668,7 +25668,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Will a 90 plane my pontoon?", answer: "Depends on the pontoon size, hull style, load, and prop. A 90 CT will plane a typical 18 to 22 ft cottage pontoon with a normal load. A 24 ft tri-toon with eight people aboard is asking for a 115 CT or 150." },
       { question: "Does the Mercury 90 need a battery?", answer: "Yes. The 90 ELPT is electric start. You need a marine starting battery (Group 24 or 27 typical, depending on the boat)." },
       { question: "Is the 90 fuel injected?", answer: "Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier starting, cleaner running, better fuel economy than the old carbureted two-strokes most of these motors are replacing." },
-      { question: "What's the warranty?", answer: "3-year factory warranty as standard. Mercury runs a 3-year promotional bonus warranty most of the year that brings it to 6 years total. Ask us about current promo status when you quote." },
+      { question: "What's the warranty?", answer: "3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
     ],
     content: `### Quick Answer
 
@@ -25840,7 +25840,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What's the difference between the 115 FourStroke and the 115 Pro XS?", answer: "Same 2.1L powerhead, different tuning. The Pro XS is calibrated for hole-shot and high-RPM performance with a sport gearcase. The standard FourStroke is the daily-driver tuning." },
       { question: "Is the 115 enough for a 19 ft aluminum boat?", answer: "For most 19 ft aluminum fishing boats with normal loads, yes. If you regularly run heavy (four people, full livewell, kicker, batteries, multiple tackle stations), the 115 is at the edge of what it can comfortably do." },
       { question: "Will a 115 plane my 22 ft pontoon?", answer: "With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is the standard answer for 20-22 ft pontoons. 24 ft and up, you want the 150 V6." },
-      { question: "What's the warranty?", answer: "3-year factory warranty as standard. Mercury runs a 3-year promotional bonus warranty most of the year, bringing it to 6 years total. Ask us about current promo status." },
+      { question: "What's the warranty?", answer: "3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
       { question: "Is the 115 fuel injected?", answer: "Yes. All Mercury 115 HP FourStrokes use EFI. Significantly cleaner running and more fuel-efficient than the older OptiMax and two-stroke 115s most of these motors are replacing." },
       { question: "Does the 115 work with SmartCraft gauges?", answer: "Yes. Full SmartCraft integration is available. NMEA 2000, VesselView mobile, Active Trim. Common upgrade during repower." },
       { question: "Can I get a 115 HP in counter-rotation?", answer: "Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because twin 115s are unusual on Rice Lake boats, but available for the right application." },
