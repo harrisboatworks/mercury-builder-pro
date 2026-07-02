@@ -10898,11 +10898,11 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Harris Boat Works Current Offer (HBW Exclusive, ends June 14, 2026)**:
-- 7 years total factory-backed warranty on every new Mercury outboard purchased by June 14, 2026
-- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years
+**Harris Boat Works Current Offer (HBW Exclusive, runs through December 31, 2026 as of July 2026)**:
+- 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
+- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
+- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
@@ -10911,11 +10911,11 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 
 ### Financing Your Mercury
 
-**Mercury Marine Credit**:
-- Factory financing option
-- Competitive rates
-- Promotional periods available
-- Integrated with purchase
+**Current promotional financing (as of July 2026)**:
+- TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
+- Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
+- Financing minimum $5,000 before tax
+- Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions)
 
 **Typical Terms**:
 - 12-84 month terms
