@@ -410,7 +410,42 @@ serve(async (req) => {
     let attachError: string | null = null;
     if (createdDocuments.length > 0) {
       try {
-        await attachDocumentsToAgent(createdDocuments);
+    // Trigger + await RAG indexing for all newly created docs BEFORE PATCHing agent
+    let ragNotReady: string[] = [];
+    if (createdDocuments.length > 0) {
+      console.log(`Triggering RAG index for ${createdDocuments.length} new documents...`);
+      for (const d of createdDocuments) {
+        try { await triggerRagIndex(d.id); } catch (e) { console.warn(`triggerRagIndex threw for ${d.id}:`, e); }
+      }
+      const { ready, notReady } = await waitForRagIndexes(
+        createdDocuments.map(d => d.id),
+        { intervalMs: 2500, timeoutMs: 90_000 }
+      );
+      console.log(`RAG indexing done. ready=${ready.length} notReady=${notReady.length}`);
+      ragNotReady = notReady;
+    }
+
+    // Apply prompt replacements (if any) against the pre-fetched agent config
+    let promptReport: Array<{ find: string; status: "applied" | "not_found"; count?: number }> = [];
+    let updatedPromptText: string | null = null;
+    if (promptReplacements.length > 0) {
+      const { updated, report } = applyPromptReplacements(currentPromptText, promptReplacements);
+      promptReport = report;
+      // Only send prompt in PATCH if at least one replacement actually applied
+      if (report.some(r => r.status === "applied")) {
+        updatedPromptText = updated;
+      }
+    }
+    const replacementsApplied = promptReport.filter(r => r.status === "applied").length;
+
+    // Attach all created documents to the agent BEFORE deleting anything
+    let attachError: string | null = null;
+    if (ragNotReady.length > 0) {
+      attachError = `RAG index not ready for ${ragNotReady.length} document(s): ${ragNotReady.join(", ")}`;
+      console.error("ELEVENLABS_STATIC_KB_ATTACH_FAILED", attachError);
+    } else if (createdDocuments.length > 0 || updatedPromptText !== null) {
+      try {
+        await attachDocumentsToAgent(createdDocuments, agentConfigBefore, updatedPromptText);
         console.log(`Successfully attached ${createdDocuments.length} documents to agent`);
       } catch (error) {
         attachError = (error as Error).message;
@@ -434,6 +469,9 @@ serve(async (req) => {
           documentsProcessed: results.length,
           successCount: results.filter(r => r.success).length,
           failCount: results.filter(r => !r.success).length,
+          ragNotReady,
+          promptReplacements: promptReport,
+          replacementsApplied,
           ...(debug ? {
             debug: {
               currentPromptTextPreview: currentPromptText.slice(0, 5000),
@@ -461,7 +499,7 @@ serve(async (req) => {
     const successCount = results.filter(r => r.success).length;
     const failCount = results.filter(r => !r.success).length;
 
-    console.log(`\nSync complete: ${successCount} success, ${failCount} failed, ${deletionResults.filter(d => d.deleted).length} old docs deleted`);
+    console.log(`\nSync complete: ${successCount} success, ${failCount} failed, ${deletionResults.filter(d => d.deleted).length} old docs deleted, ${replacementsApplied} prompt replacements applied`);
 
     return new Response(
       JSON.stringify({
@@ -472,6 +510,8 @@ serve(async (req) => {
         successCount,
         failCount,
         oldDocsDeleted: deletionResults,
+        promptReplacements: promptReport,
+        replacementsApplied,
         ...(debug ? {
           debug: {
             currentPromptTextPreview: currentPromptText.slice(0, 5000),
@@ -484,6 +524,7 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
+
 
   } catch (error) {
     console.error("Static KB sync error:", error);
