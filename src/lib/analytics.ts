@@ -1,6 +1,6 @@
 /**
- * Phase-1 analytics helper. Pushes events into window.dataLayer for GTM
- * to read later. Currently a no-op if dataLayer isn't initialized (SSR/prerender).
+ * Phase-1 analytics helper. Sends events through direct gtag.js and mirrors them
+ * into window.dataLayer for debugging. Currently a no-op on SSR/prerender.
  *
  * NEVER push PII: no email, no full phone, no full name, no full postal code.
  */
@@ -8,6 +8,7 @@
 declare global {
   interface Window {
     dataLayer: Array<Record<string, any>>;
+    gtag?: (command: 'event', eventName: string, params?: Record<string, any>) => void;
   }
 }
 
@@ -44,11 +45,15 @@ export function uuidv4(): string {
   return `${h.slice(0, 4).join('')}-${h.slice(4, 6).join('')}-${h.slice(6, 8).join('')}-${h.slice(8, 10).join('')}-${h.slice(10, 16).join('')}`;
 }
 
-/** Push an event to the dataLayer. Safe no-op on server. */
+/** Send an analytics event. Safe no-op on server. */
 export function trackEvent(name: string, params?: Record<string, any>): void {
   if (typeof window === 'undefined') return;
+  const eventParams = params || {};
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', name, eventParams);
+  }
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: name, ...(params || {}) });
+  window.dataLayer.push({ event: name, ...eventParams });
 }
 
 export function getDeviceType(): DeviceType {
