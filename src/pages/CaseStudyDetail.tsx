@@ -4,6 +4,7 @@ import { SITE_URL } from '@/lib/site';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
+import { substituteLiveRateTokens } from '@/lib/finance';
 
 export default function CaseStudyDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -23,6 +24,17 @@ export default function CaseStudyDetail() {
   // ----- LONG-FORM RENDER -----
   if (lf) {
     const heroImageAbs = study.heroImage.startsWith('/') ? `${SITE_URL}${study.heroImage}` : study.heroImage;
+    const lfFaqs = lf.faqs.map((f) => ({
+      question: substituteLiveRateTokens(f.question),
+      answer: substituteLiveRateTokens(f.answer),
+    }));
+    const lfSections = lf.sections.map((sec) => ({
+      heading: sec.heading,
+      paragraphs: sec.paragraphs.map(substituteLiveRateTokens),
+    }));
+    const lfIntro = substituteLiveRateTokens(lf.intro);
+    const lfQuickAnswer = substituteLiveRateTokens(lf.quickAnswer);
+    const lfVisit = substituteLiveRateTokens(lf.visit);
 
     const jsonLdGraph = {
       '@context': 'https://schema.org',
@@ -43,7 +55,7 @@ export default function CaseStudyDetail() {
         {
           '@type': 'FAQPage',
           '@id': `${url}#faq`,
-          mainEntity: lf.faqs.map((f) => ({
+          mainEntity: lfFaqs.map((f) => ({
             '@type': 'Question',
             name: f.question,
             acceptedAnswer: { '@type': 'Answer', text: f.answer },
@@ -102,10 +114,10 @@ export default function CaseStudyDetail() {
               <p className="text-sm font-semibold text-repower-gold uppercase tracking-wider mb-2">
                 Quick answer
               </p>
-              <p className="text-foreground/85 leading-relaxed">{lf.quickAnswer}</p>
+              <p className="text-foreground/85 leading-relaxed">{lfQuickAnswer}</p>
             </div>
 
-            <p className="mt-6 text-lg text-foreground/85 leading-relaxed">{lf.intro}</p>
+            <p className="mt-6 text-lg text-foreground/85 leading-relaxed">{lfIntro}</p>
           </section>
 
           {/* KEY FACTS */}
@@ -125,7 +137,7 @@ export default function CaseStudyDetail() {
 
           {/* BODY SECTIONS */}
           <section className="container mx-auto px-4 py-10 max-w-3xl">
-            {lf.sections.map((sec) => (
+            {lfSections.map((sec) => (
               <div key={sec.heading} className="mb-10">
                 <h2 className="text-2xl font-semibold text-foreground mb-4">{sec.heading}</h2>
                 {sec.paragraphs.map((p, idx) => (
@@ -139,7 +151,7 @@ export default function CaseStudyDetail() {
           <section className="container mx-auto px-4 pb-12 max-w-3xl">
             <h2 className="text-2xl font-semibold text-foreground mb-6">Frequently Asked Questions</h2>
             <div className="space-y-5">
-              {lf.faqs.map((f) => (
+              {lfFaqs.map((f) => (
                 <div key={f.question}>
                   <h3 className="font-semibold text-foreground mb-2">{f.question}</h3>
                   <p className="text-foreground/85 leading-relaxed">{f.answer}</p>
@@ -151,10 +163,11 @@ export default function CaseStudyDetail() {
           {/* VISIT */}
           <section className="container mx-auto px-4 pb-12 max-w-3xl">
             <h2 className="text-2xl font-semibold text-foreground mb-4">Visit Harris Boat Works</h2>
-            {lf.visit.split('\n\n').map((p, i) => (
+            {lfVisit.split('\n\n').map((p, i) => (
               <p key={i} className="text-foreground/85 leading-relaxed mb-4">{p}</p>
             ))}
           </section>
+
 
           {/* RELATED */}
           <section className="container mx-auto px-4 pb-20 max-w-3xl">

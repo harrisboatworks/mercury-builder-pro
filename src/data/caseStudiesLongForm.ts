@@ -116,7 +116,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $17,000 and $20,000 CAD. The 115 Pro XS Command Thrust sits in the $15,000–$18,000 motor band, and the rigging, controls, prop set, removal, fuel system, and water test build the rest. A clean Mercury 90 FourStroke trade-in can take several thousand off depending on hours and year, fill the trade form and we email a CAD figure within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit, 8.99% APR under $10,000. For full pricing context see our Mercury repower cost guide, or read more about Rice Lake repower work.',
+            'Financing is 7.99% APR over $10,000 on approved credit, 8.99% APR under $10,000. For full pricing context see our Mercury repower cost guide, or read more about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -139,7 +139,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Is there financing for this kind of repower?',
           answer:
-            'Yes. Over $10,000 the rate is 7.99% APR on approved credit. A $500 deposit holds the order. Full terms come through the quote and you confirm them before motor allocation.',
+            'Yes. Over $10,000 the rate is 7.99% APR on approved credit. A $500 deposit holds the order. Full terms come through the quote and you confirm them before motor allocation. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         },
       ],
       visit:
@@ -229,7 +229,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $22,000 and $26,000 CAD. The 200 Pro XS V8 motor sits in the $18,000–$22,000 band, Boost adds $1,200–$1,800, and rigging, controls, prop set, removal, and water test build the rest. A clean 175 V6 trade-in can take several thousand off, fill the trade form and we email a CAD number within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See the Mercury repower cost guide for the broader pricing context, or read more about Rice Lake repower work.',
+            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See the Mercury repower cost guide for the broader pricing context, or read more about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -345,7 +345,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           paragraphs: [
             'All-in lands between $13,000 and $16,000 CAD. The Mercury 90 FourStroke EFI sits in the $8,000–$14,000 mid-range FourStroke band, and the new controls, cables, prop, removal of the old 2-stroke, fuel system work, and water test build the rest. Trade-in on an old 2-stroke depends heavily on brand and condition, older Mercury Sport trade-ins still carry some resale value.',
             'Discontinued legacy 2-strokes have less trade value but we still take them case by case.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. For the full pricing picture, see our Mercury repower cost guide.',
+            'Financing is 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. For the full pricing picture, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -459,7 +459,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $32,000 and $38,000 CAD. The 300 V8 Verado itself sits in the $25,000+ premium band, the helm and DTS package adds several thousand, and the rigging, controls, prop set, removal, and water test build the rest. A clean older Verado can take a meaningful amount off via trade, fill the form and we email a CAD figure within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the build slot. See our repower cost guide for full context, or read the repower process for what the 8–14 week window actually looks like.',
+            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the build slot. See our repower cost guide for full context, or read the repower process for what the 8–14 week window actually looks like. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -482,7 +482,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Is there financing for a $35,000 repower?',
           answer:
-            'Yes. The rate is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. We do not finalize the build slot until the deposit is in and the credit is approved.',
+            'Yes. The rate is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. We do not finalize the build slot until the deposit is in and the credit is approved. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         },
       ],
       visit:
@@ -576,7 +576,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $4,500 and $6,500 CAD. The Avator 7.5e and a single Mercury lithium pack are the bulk of it. The bracket, helm gauge, install labour, and water test make up the rest. A second battery, common for serious walleye anglers, adds about $1,000–$1,500 on top.',
-            'Financing is available, 8.99% APR under $10,000 on approved credit. A $200 deposit holds the order. For broader context, see the Mercury repower cost guide or read about Rice Lake repower work.',
+            'Financing is available, 8.99% APR under $10,000 on approved credit. A $200 deposit holds the order. For broader context, see the Mercury repower cost guide or read about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -691,7 +691,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $10,000 and $13,000 CAD. The Mercury 60 Command Thrust sits a little higher than a standard 60 because of the bigger gearcase. The new controls, prop, removal, fuel system check, and water test build the rest. Trade-in on a clean standard 60 takes a few thousand off, fill the form and we email a CAD figure within one business day.',
-            'Financing is 8.99% APR under $10,000, 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. See our cost guide for full pricing.',
+            'Financing is 8.99% APR under $10,000, 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. See our cost guide for full pricing. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],
@@ -807,7 +807,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           paragraphs: [
             'All-in lands between $35,000 and $42,000 CAD before trade. The motor itself sits in the $25,000–$28,000 band for Verado 300 or slightly lower for Pro XS 300 V8 4.6L. The DTS helm package, new steering, transom rework, controls, prop set, removal of two old motors, and water test build the rest.',
             'Trade-in on two 25-year-old 115 FourStrokes depends heavily on condition, clean, running motors with reasonable hours can take meaningful dollars off. Fill the trade-in form and we email a CAD figure within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See our cost guide for full repower pricing.',
+            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See our cost guide for full repower pricing. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
       ],

@@ -5,6 +5,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { COMPANY_INFO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getLocationBySlug } from '@/data/locations';
+import { substituteLiveRateTokens } from '@/lib/finance';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -110,8 +111,18 @@ export default function LocationDetail() {
   const pageTitle = lf ? `${lf.h1} | Harris Boat Works` : location.title;
   const metaDesc = lf?.metaDescription ?? location.metaDescription;
   const canonical = lf?.canonical ?? url;
-  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6);
-  const faqs = (lf?.faqs ?? location.faqs).slice(0, lf ? 8 : 4);
+  const contextBullets = (lf?.keyFacts ?? location.localContext).slice(0, 6).map(substituteLiveRateTokens);
+  const faqs = (lf?.faqs ?? location.faqs).slice(0, lf ? 8 : 4).map((f) => ({
+    question: substituteLiveRateTokens(f.question),
+    answer: substituteLiveRateTokens(f.answer),
+  }));
+  const lfSections = lf?.sections?.map((sec) => ({
+    heading: sec.heading,
+    paragraphs: sec.paragraphs.map(substituteLiveRateTokens),
+  }));
+  const lfQuickAnswer = lf?.quickAnswer ? substituteLiveRateTokens(lf.quickAnswer) : undefined;
+  const lfWhatWeSee = lf?.whatWeSeeAtHBW ? substituteLiveRateTokens(lf.whatWeSeeAtHBW) : undefined;
+  const lfVisit = lf?.visit ? substituteLiveRateTokens(lf.visit) : undefined;
   const useCases = USE_CASES_BY_SLUG[location.slug] ?? DEFAULT_USE_CASES;
   const telHref = `tel:${COMPANY_INFO.contact.phone.replace(/[^0-9+]/g, '')}`;
 
@@ -258,7 +269,7 @@ export default function LocationDetail() {
                 <p className="text-sm font-semibold text-repower-gold uppercase tracking-wider mb-2">
                   Quick answer
                 </p>
-                <p className="text-repower-cream/90 leading-relaxed">{lf.quickAnswer}</p>
+                <p className="text-repower-cream/90 leading-relaxed">{lfQuickAnswer}</p>
               </div>
             )}
 
@@ -345,10 +356,10 @@ export default function LocationDetail() {
         </section>
 
         {/* LONG-FORM BODY SECTIONS */}
-        {lf?.sections && lf.sections.length > 0 && (
+        {lfSections && lfSections.length > 0 && (
           <section className="container mx-auto px-4 py-16 max-w-3xl">
             <div className="prose prose-lg max-w-none">
-              {lf.sections.map((sec) => (
+              {lfSections.map((sec) => (
                 <div key={sec.heading} className="mb-10">
                   <h2 className="text-2xl font-semibold text-foreground mb-4">{sec.heading}</h2>
                   {sec.paragraphs.map((p, idx) =>
@@ -369,13 +380,13 @@ export default function LocationDetail() {
         )}
 
         {/* WHAT WE SEE AT HBW — From the Shop card */}
-        {lf?.whatWeSeeAtHBW && (
+        {lfWhatWeSee && (
           <section className="container mx-auto px-4 pb-4 max-w-3xl">
             <div className="rounded-xl border-l-4 border-repower-gold bg-repower-cream/40 p-6 md:p-8">
               <h2 className="text-xl font-semibold text-foreground mb-3">
                 What we see at HBW
               </h2>
-              <p className="text-foreground/85 leading-relaxed">{lf.whatWeSeeAtHBW}</p>
+              <p className="text-foreground/85 leading-relaxed">{lfWhatWeSee}</p>
             </div>
           </section>
         )}

@@ -1514,34 +1514,37 @@ function agentsPageSchema() {
 // ============================================================
 
 function mercuryRepowerFaqSchema() {
+  // The /mercury-repower-faq route renders the same faqItems as /faq.
+  // Point all URLs (webpage, breadcrumb, FAQPage) at /faq so Google
+  // consolidates the duplicate routes into a single canonical FAQ page.
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/mercury-repower-faq#webpage`,
-        "url": `${SITE_URL}/mercury-repower-faq`,
+        "@id": `${SITE_URL}/faq#webpage`,
+        "url": `${SITE_URL}/faq`,
         "name": "Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works",
         "description": "Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Premier Dealer · Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
-        "breadcrumb": { "@id": `${SITE_URL}/mercury-repower-faq#breadcrumb` },
-        "mainEntity": { "@id": `${SITE_URL}/mercury-repower-faq#faqpage` }
+        "breadcrumb": { "@id": `${SITE_URL}/faq#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}/faq#faqpage` }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/mercury-repower-faq#breadcrumb`,
+        "@id": `${SITE_URL}/faq#breadcrumb`,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
-          { "@type": "ListItem", "position": 2, "name": "Mercury Repower FAQ", "item": `${SITE_URL}/mercury-repower-faq` }
+          { "@type": "ListItem", "position": 2, "name": "Mercury Repower FAQ", "item": `${SITE_URL}/faq` }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": `${SITE_URL}/mercury-repower-faq#faqpage`,
+        "@id": `${SITE_URL}/faq#faqpage`,
         "name": "Mercury Outboard Repower FAQ",
-        "url": `${SITE_URL}/mercury-repower-faq`,
+        "url": `${SITE_URL}/faq`,
         "mainEntity": faqItems.map(i => ({
           "@type": "Question",
           "name": i.question,
@@ -3290,8 +3293,8 @@ function caseStudyDetailSchema(study) {
       "@id": `${url}#faq`,
       mainEntity: lf.faqs.map((f) => ({
         "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
+        name: substituteLiveRateTokens(f.question),
+        acceptedAnswer: { "@type": "Answer", text: substituteLiveRateTokens(f.answer) },
       })),
     });
   }
@@ -3374,8 +3377,8 @@ function locationDetailSchema(loc) {
         "@id": `${url}#faq`,
         mainEntity: loc.faqs.map((f) => ({
           "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
+          name: substituteLiveRateTokens(f.question),
+          acceptedAnswer: { "@type": "Answer", text: substituteLiveRateTokens(f.answer) },
         })),
       },
       {
@@ -3414,7 +3417,7 @@ const caseStudyDetailRoutes = caseStudies.map((s) => {
     schemas: [caseStudyDetailSchema(s)],
     extraNoscript: () => {
       if (lf) {
-        return (
+        return substituteLiveRateTokens(
           (s.heroImage ? `<p><img src="${escapeHtml(s.heroImage)}" alt="${escapeHtml(lf.heroAlt ?? lf.h1)}" /></p>` : '') +
           `<p><em>Last reviewed: ${escapeHtml(lf.lastReviewed)}</em></p>` +
           `<blockquote><strong>Quick answer:</strong> ${escapeHtml(lf.quickAnswer)}</blockquote>` +
@@ -3452,7 +3455,7 @@ const locationDetailRoutes = locations.map((loc) => {
     h1,
     intro: loc.intro,
     schemas: [locationDetailSchema(loc)],
-    extraNoscript: () =>
+    extraNoscript: () => substituteLiveRateTokens(
       (lf?.heroImage ? `<p><img src="${escapeHtml(lf.heroImage)}" alt="${escapeHtml(lf.heroAlt ?? h1)}" /></p>` : '') +
       (lf?.lastReviewed ? `<p><em>Last reviewed: ${escapeHtml(lf.lastReviewed)}</em></p>` : '') +
       (lf?.quickAnswer ? `<blockquote><strong>Quick answer:</strong> ${escapeHtml(lf.quickAnswer)}</blockquote>` : '') +
@@ -3464,7 +3467,8 @@ const locationDetailRoutes = locations.map((loc) => {
       `<section><h2>Recommended next steps</h2><ul>${loc.recommendedLinks.map((l) => `<li><a href="${escapeHtml(l.href)}">${escapeHtml(l.label)}</a></li>`).join('')}</ul></section>` +
       `<section><h2>FAQ</h2><dl>${loc.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
       (lf?.visit ? `<section><h2>Visit Harris Boat Works</h2><p>${escapeHtml(lf.visit)}</p></section>` : '') +
-      `<p><a href="/locations">← All Mercury pickup areas</a></p>`,
+      `<p><a href="/locations">← All Mercury pickup areas</a></p>`
+    ),
   };
 });
 
@@ -4557,6 +4561,9 @@ const routes = [
   },
   {
     path: '/mercury-repower-faq',
+    // Consolidates with /faq — same faqCategories dataset; both routes kept
+    // for internal linking, but the canonical points at /faq.
+    canonical: '/faq',
     title: 'Mercury Outboard Repower FAQ: Every Question Answered | Harris Boat Works',
     description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Premier Dealer · Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Mercury Outboard Repower FAQ',
@@ -5114,8 +5121,12 @@ function stamp(route) {
     html = html.replace(/<\/head>/i, `${metaDesc}\n  </head>`);
   }
 
-  // canonical
-  const canonical = `<link data-rh="true" rel="canonical" href="${SITE_URL}${route.path === '/' ? '' : route.path}" />`;
+  // canonical (route.canonical wins so pages that consolidate duplicates —
+  // e.g. /mercury-repower-faq → /faq — can point crawlers at the kept URL)
+  const canonicalHref = route.canonical
+    ? (route.canonical.startsWith('http') ? route.canonical : `${SITE_URL}${route.canonical}`)
+    : `${SITE_URL}${route.path === '/' ? '' : route.path}`;
+  const canonical = `<link data-rh="true" rel="canonical" href="${canonicalHref}" />`;
   if (/<link\s+rel=["']canonical["'][^>]*>/i.test(html)) {
     html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/i, canonical);
   } else {
