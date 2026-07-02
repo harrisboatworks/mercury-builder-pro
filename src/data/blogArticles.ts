@@ -23207,6 +23207,7 @@ Three ways to get a real price:
 - **Talk to us:** Call 905-342-2153 or submit a service request at hbw.wiki/service.
 
 We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. But we rig every motor in our shop, and every install includes an on-water test on Rice Lake before pickup. No exceptions.
+
 ---
 
 `,
