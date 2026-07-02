@@ -62,7 +62,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       {
         "@type": "BlogPosting",
         "@id": `${url}#article`,
-        "headline": article.seoTitle ?? article.title,
+        "headline": sanitizeForSchema(article.title),
         "description": cleanDescription,
         "image": `${SITE_URL}${article.image}`,
         "author": /troubleshoot|alarm|wont-start|overheating|winterization|smartcraft-alarm|service-cost|electrical/.test(article.slug)
