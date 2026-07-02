@@ -131,6 +131,301 @@ export function getSitemapEligibleArticles(): BlogArticle[] {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "renting-vs-owning-boat-ontario-math",
+    title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)",
+    description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses.",
+    image: "/lovable-uploads/hero-renting-vs-owning-boat.webp",
+    author: "Jay Harris",
+    datePublished: "2026-07-02",
+    dateModified: "2026-07-02",
+    publishDate: "2026-07-02",
+    category: "Boating Lifestyle",
+    readTime: "~8 min read",
+    keywords: ["renting vs owning a boat", "is buying a boat worth it ontario", "boat rental vs ownership cost", "should i buy a boat", "cost of owning a boat ontario"],
+    faqs: [
+      { question: "Is it cheaper to rent or buy a boat in Ontario?", answer: "For a handful of days a season, renting is far cheaper because ownership's fixed costs (insurance, storage, winterization, depreciation) run whether you boat or not. Heavy users flip the math: the more real boat days you log per year, the cheaper owning gets per day. Count your honest days first." },
+      { question: "How many times a year should I boat before buying makes sense?", answer: "There's no magic number, because it depends on the boat and your costs. The principle: renting wins at low usage, owning wins at high usage, and the crossover sits where YOUR ownership buckets divided by YOUR honest days beats a rental day. In between, decide on lifestyle: spontaneity favours owning; flexibility and zero hassle favour renting." },
+      { question: "What ownership costs do first-time buyers forget?", answer: "Winterization, storage, spring commissioning, and depreciation. The purchase price gets all the attention, but the annual carry is what surprises people. Our [total cost of ownership guide](/blog/total-cost-of-owning-a-boat-ontario-2026) itemizes all of it with current Ontario ranges." },
+      { question: "Can renting help me decide what boat to buy?", answer: "It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures." },
+      { question: "If I decide to buy, when's the smart time to do it?", answer: "Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side." },
+      { question: "What's the cheapest way to get on Rice Lake this summer?", answer: "A rental day, split with another family. No fixed costs, safety gear included, and the marina handles everything. Book a morning slot, pack your own lunch, and the per-person cost beats most day trips out of the city. Live rates: [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)." },
+    ],
+    content: `# Renting vs Owning a Boat in Ontario: The Honest Math (2026)
+
+*Last reviewed: 2026-07-02*
+
+> **Quick answer:** Owning wins if you're on the water most weekends and the boat is part of how you live. Renting wins if you boat a handful of days a season, because a rental day carries zero fixed costs while ownership costs run whether you launch or not. We sell boats AND rent them, so run the worksheet below before you decide. Rentals: harrisboatworks.ca/rentals.
+
+We're a marina that sells boats, services boats, stores boats, and rents boats. Whichever way you go, we're fine.
+
+That makes us one of the few places you'll get this comparison without a thumb on the scale. Most "rent vs buy" articles are written by whoever profits from one answer. Our honest version: the right answer is math plus personality, and people keep doing the math while skipping the personality part.
+
+Here's both.
+
+---
+
+## Who this is for
+
+You've rented a boat once or twice (or you're about to), the day was great, and someone in the truck on the way home said "we should just buy one." This is the conversation to have before you're standing in a showroom. If you already own and you're weighing repairs against replacement, that's a different guide: [repair, repower, or sell](/blog/repair-repower-or-sell-boat-ontario-decision-guide).
+
+---
+
+## The Cost Structure Is the Whole Argument
+
+Renting and owning aren't two prices for the same thing. They're two completely different cost structures:
+
+**Renting is 100% variable cost.** You pay for the days you boat. Zero days on the water = zero dollars. Every cost item (rental rate, fuel, worms) exists only when you're actually using it.
+
+**Owning is mostly fixed cost.** The purchase or financing payment, insurance, storage, winterization, spring commissioning, and depreciation all run whether you boat 60 days or 6. The only truly variable costs of ownership are fuel and wear.
+
+That's why the same boat budget can be brilliant for one family and painful for another. The question is never "which is cheaper." It's "how many days will you actually use it," answered honestly.
+
+---
+
+## The Ownership Cost Buckets (What Owners Actually Pay)
+
+These buckets come from real invoices at our service counter, not imagination. Season-by-season, an Ontario boat owner carries:
+
+| Bucket | What it is | Where to see real numbers |
+|---|---|---|
+| Purchase or payment | The boat itself, financed or not | Live packages at [mercuryrepower.ca](https://mercuryrepower.ca) |
+| Insurance | Liability at minimum, hull if financed | Our [boat insurance guide](/blog/boat-insurance-ontario-guide-2026) |
+| Winterization | Motor protection before freeze-up, non-negotiable | [Winterization cost guide](/blog/boat-winterization-cost-ontario-2026) |
+| Storage | Outdoor shrinkwrapped for the winter | [Kawartha storage guide](/blog/boat-storage-kawartha-lakes) |
+| Spring commissioning | De-winterize, checks, launch | [Spring checklist](/blog/spring-outboard-commissioning-checklist) |
+| Maintenance | Impellers, oil, plugs, the 100-hour service | [Maintenance intervals guide](/blog/mercury-maintenance-intervals-20-100-300-rule) |
+| Depreciation | The quiet one nobody budgets | Real, especially in years 1 to 5 |
+
+For the full add-up, our [total cost of owning a boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026) guide walks every line with current ranges.
+
+A rental day has exactly none of those buckets in it. It has a rate you saw before booking, fuel you burned, and worms.
+
+---
+
+## The Worksheet: Five Minutes, Honest Inputs
+
+1. **Count your realistic boat days.** Not aspirational days. Look at last summer's calendar: how many days did you have free, at the lake, with weather? Most families who don't live on the water are surprised how small the honest number is; cottagers and retirees land several times higher.
+2. **Price a rental season.** Multiply your realistic days by a rental day (live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) plus fuel). That's your total annual boating cost as a renter. It ends there.
+3. **Price an ownership season.** Add YOUR numbers for the buckets above, using the linked guides. Include the payment if you'd finance.
+4. **Divide ownership cost by your boat days.** That's your true cost per day on the water as an owner.
+5. **Compare.** And then read the next section, because the spreadsheet isn't the whole story.
+
+The pattern is simple: the fewer genuine boat days you log, the more renting wins on money, and the more days, the more owning wins. The middle is where the personality part decides.
+
+---
+
+## What the Spreadsheet Misses (Both Directions)
+
+**Things that quietly favour renting:**
+
+- The boat is always ready, fuelled, and working. Mechanical surprises are our problem, not your Saturday's.
+- You can match the boat to the day: fishing boat for the guys' weekend, cruise pontoon for the family day.
+- No towing, no launch-day logistics, no trailer licence plate to renew.
+- Try different lakes and boats before committing to anything.
+
+**Things that quietly favour owning:**
+
+- Spontaneity. The 7 pm Tuesday cruise because the lake looks perfect. Renters plan; owners just go.
+- The boat becomes the family gathering place. Three generations of our customers prove this one.
+- Your gear stays aboard. Your setup, your electronics, your rod holders.
+- Equity. Ownership costs real money, but some of it comes back at resale or trade-in. Rental money is spent.
+
+**The smart hybrid:** rent for a season or two, learn what you actually like (pontoon vs fishing boat, how many days you really use), then buy the right boat the first time. Those rental seasons aren't wasted money; they're cheap research that prevents an expensive wrong boat.
+
+---
+
+## What HBW checks before you buy from us
+
+If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. Since 1947 we've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
+
+---
+
+## Frequently Asked Questions
+
+**Is it cheaper to rent or buy a boat in Ontario?**
+For a handful of days a season, renting is far cheaper because ownership's fixed costs (insurance, storage, winterization, depreciation) run whether you boat or not. Heavy users flip the math: the more real boat days you log per year, the cheaper owning gets per day. Count your honest days first.
+
+**How many times a year should I boat before buying makes sense?**
+There's no magic number, because it depends on the boat and your costs. The principle: renting wins at low usage, owning wins at high usage, and the crossover sits where YOUR ownership buckets divided by YOUR honest days beats a rental day. In between, decide on lifestyle: spontaneity favours owning; flexibility and zero hassle favour renting.
+
+**What ownership costs do first-time buyers forget?**
+Winterization, storage, spring commissioning, and depreciation. The purchase price gets all the attention, but the annual carry is what surprises people. Our [total cost of ownership guide](/blog/total-cost-of-owning-a-boat-ontario-2026) itemizes all of it with current Ontario ranges.
+
+**Can renting help me decide what boat to buy?**
+It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures.
+
+**If I decide to buy, when's the smart time to do it?**
+Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side.
+
+**What's the cheapest way to get on Rice Lake this summer?**
+A rental day, split with another family. No fixed costs, safety gear included, and the marina handles everything. Book a morning slot, pack your own lunch, and the per-person cost beats most day trips out of the city. Live rates: [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+
+---
+
+## Ready to Run Your Numbers?
+
+Rent a day and count how much you loved it, or price the ownership side with a real quote. We're the same phone number either way.
+
+**Rent:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Price a boat and motor:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+
+**Related guides:**
+- [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)
+- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
+- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada)
+- [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
+
+---
+
+## Sources
+
+- [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
+- HBW service and storage records, Rice Lake (2025 season)
+`,
+  },
+  {
+    slug: "group-boat-rentals-rice-lake",
+    title: "Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out",
+    description: "Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends.",
+    image: "/lovable-uploads/hero-group-boat-rentals.webp",
+    author: "Jay Harris",
+    datePublished: "2026-07-02",
+    dateModified: "2026-07-02",
+    publishDate: "2026-07-02",
+    category: "Boating Lifestyle",
+    readTime: "~8 min read",
+    keywords: ["group boat rental rice lake", "family reunion boat rental ontario", "rent multiple boats", "pontoon rental for large group", "fishing weekend boat rental kawarthas"],
+    faqs: [
+      { question: "Can we rent multiple boats at once on Rice Lake?", answer: "Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in." },
+      { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore." },
+      { question: "Can our group have a BBQ at the marina?", answer: "Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity." },
+      { question: "Can we keep rental boats at our cottage for a reunion weekend?", answer: "Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you." },
+      { question: "Do we need a licence for every boat we rent?", answer: "Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. The online course takes about 3 hours at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (HARRIS15 saves 15%). Non-Canadian visitors complete a renter's checklist waiver instead." },
+      { question: "Can we bring alcohol for a celebration on the water?", answer: "No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Rice Lake is rigorous with severe penalties. Celebrate on land after the boats are back; the lake is plenty of fun sober." },
+    ],
+    content: `# Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
+
+*Last reviewed: 2026-07-02*
+
+> **Quick answer:** For groups bigger than one boat's capacity, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book the fleet at harrisboatworks.ca/rentals.
+
+Every July, some brave soul organizes the family reunion. Twenty-two people, four coolers, one group chat that's been chaos since March.
+
+The good news: a multi-boat day on Rice Lake is one of the easiest big-group activities to actually pull off, because the lake does the entertaining and the dock setup is simple.
+
+Here's how the groups that have a great day set it up, and the three rules that catch organizers off guard.
+
+---
+
+## Who this is for
+
+Family reunions, cottage weekends with two or three families, fishing trips with the work crew, birthdays, bachelor and bachelorette days (sober ones, see the alcohol rule), and any group that won't fit on one boat. If you're six people or fewer, one pontoon does it: start with the [fleet guide](/blog/rice-lake-boat-rental-guide-2026).
+
+---
+
+## The Three Rules That Surprise Group Organizers
+
+**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. Twelve people can't "mostly fit" on one pontoon. The fix is simple: book two boats. Groups do it all summer.
+
+**2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
+
+**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. The online course takes about 3 hours, so get every designated driver through it the week before: [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat), code HARRIS15 for 15% off. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+
+---
+
+## Picking Your Fleet
+
+Mix boats by what each sub-group wants to do:
+
+| Group | Boats to book | Why |
+|---|---|---|
+| Big family day (10 to 16) | Two cruise pontoons | Everyone swims, cruises, anchors together for lunch |
+| Fishing weekend (4 to 8) | Two ProSport fishing boats, or one plus a fishing pontoon | Split up, hit different spots, compare catches at dinner |
+| Two-family cottage crew | One cruise pontoon + one fishing boat | Anglers leave at 8 am, families launch at 10 |
+| Reunion with elders and toddlers | Cruise pontoons | Stable, shaded, easy boarding, room for the stroller crowd |
+
+Every pontoon has a Bluetooth stereo; every boat carries fitted life jackets for your whole roster, kid sizes included. Live availability for the whole fleet is in the [booking system](https://harrisboatworks.ca/rentals); summer weekends book out, so lock multiple boats in early.
+
+---
+
+## Running a Multi-Boat Day Without Herding Cats
+
+- **Stagger the check-in.** Send one organized person per boat to the office with that boat's driver. Everyone else stays at the vehicles until life-jacket fitting. Twenty-two people in the office at 8 am helps nobody.
+- **Pick a lunch anchorage before you launch.** "Meet at the west end around noon" beats fourteen phone calls from the middle of the lake. Your dock orientation includes a lake map; mark it together.
+- **Convoy through the marked passes.** The old rail causeway between Harwood and Hiawatha hides rock just under the surface, and the buoyed passes are the only way through. Lead boat goes first, everyone follows the same line.
+- **Trade passengers at anchor, not underway.** Kids always want to switch boats. The lunch anchorage is the time.
+- **Agree on a hard return time.** Boats need to be back, unloaded, and cleared by the return time on the agreement, because late returns run $5 a minute, per boat.
+
+---
+
+## Food, Shore Time, and the Alcohol Rule
+
+**BBQs are welcome on site**, in designated areas only, never on or near the boats. A shore lunch between morning and afternoon cruising works great; just remember rule two: shore time is for your boats' people, not extra guests.
+
+**Alcohol is prohibited on all rental boats, full stop.** Ontario treats a boat like a car, the OPP patrol Rice Lake seriously, and the penalties are severe. For the group planning a celebration: boat dry all day, then raise a glass on dry land once the boats are back. The groups that ignore this rule don't rent twice.
+
+**Washrooms:** four on site, key at the office.
+
+---
+
+## Cottage Weekends: The Multi-Day Move
+
+For reunions based at a rented cottage, multi-day rentals change the game: keep the boats at your cottage dock for the whole stay and use them whenever you like, outside normal rental hours included (lights required after dark). You're responsible for the boats while they're in your care, and everything else about the day works the same. One booking, a whole weekend of shuttle runs, sunset cruises, and 7 am fishing before the kids wake up.
+
+---
+
+## What HBW checks before your group leaves the dock
+
+Group send-offs get the same treatment as every rental, multiplied: every boat fuelled and checked that morning, life jackets fitted to every person on your roster (we help sort the kid sizes), safety kits counted per boat, and each driver gets the orientation, the map, and the causeway briefing. We've been launching family gatherings onto this lake since 1947; the ten minutes at the dock is why group days end with plans for next year instead of stories about the rocks.
+
+---
+
+## Frequently Asked Questions
+
+**Can we rent multiple boats at once on Rice Lake?**
+Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in.
+
+**How many people fit on a rental pontoon?**
+Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore.
+
+**Can our group have a BBQ at the marina?**
+Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity.
+
+**Can we keep rental boats at our cottage for a reunion weekend?**
+Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you.
+
+**Do we need a licence for every boat we rent?**
+Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. The online course takes about 3 hours at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (HARRIS15 saves 15%). Non-Canadian visitors complete a renter's checklist waiver instead.
+
+**Can we bring alcohol for a celebration on the water?**
+No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Rice Lake is rigorous with severe penalties. Celebrate on land after the boats are back; the lake is plenty of fun sober.
+
+---
+
+## Ready to Book the Fleet?
+
+Get your headcount, pick your boats, and get each driver licensed this week. The group chat will doubt you; the photos will vindicate you.
+
+**Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Planning a big group? Text:** 647-952-2153 **or call:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+**Related guides:**
+- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
+- [Do You Need a Licence to Rent a Boat in Ontario?](/blog/boat-rental-licence-ontario-guide)
+- [First Time Renting a Boat?](/blog/first-time-boat-rental-rice-lake-guide)
+- [Rice Lake Boat Rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta)
+
+---
+
+## Sources
+
+- [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+`,
+  },
+  {
     slug: "first-time-boat-rental-rice-lake-guide",
     title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock",
     description: "Never driven a boat? Here's the exact orientation we give every first-time renter at our Rice Lake dock: driving, docking, wind, and what to do if something goes wrong.",
