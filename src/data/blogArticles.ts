@@ -13233,7 +13233,7 @@ Don't skip the prop shaft. A prop that corrodes onto the shaft over winter is a 
 
 The battery should not overwinter in the boat. Cold temperatures accelerate discharge in lead-acid batteries, and a discharged battery can freeze and be permanently damaged.
 
-Remove the battery and store it in a cool, dry, frost-free location. Put it on a battery tender (trickle charger designed for long-term storage), this maintains charge without overcharging and dramatically extends battery life.
+Leave the battery in the boat, disconnected (or on a maintainer). The killer is parasitic drain from leaving it connected, not the cold. If you have shore power at storage, a smart maintainer will further extend battery life.
 
 A battery that stored properly over winter starts spring at full capacity. A battery that sat in a cold boat all winter may start the season already compromised.
 
@@ -13339,7 +13339,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { name: 'Refill with fresh gear lube', text: 'Use only Mercury High-Performance Gear Lube. Pump fresh lube into the bottom drain hole until lube comes out the top vent hole. Quickly install and tighten the vent screw, then the drain screw, both with new gaskets. Skipping this step destroys the gears in 30 minutes of operation in spring.' },
       { name: 'Clear the cooling system', text: 'Run the motor on muffs (or in water) for one or two minutes to confirm cooling water flow. Disconnect the water source while the motor is still running for 10 to 15 seconds. Tilt the motor up to drain residual water from cooling passages. Confirm no water is dripping from anywhere it should not be.' },
       { name: 'Apply corrosion protection and final touches', text: 'Replace spark plugs if over a year old or showing wear; use anti-seize on the threads. Lubricate steering, throttle, and shift cable pivot points with marine grease. Check anodes and replace if more than 30% depleted.' },
-      { name: 'Disconnect battery and store the motor', text: 'Disconnect and remove the battery. Store it on a wood block in an insulated indoor space (basement, garage) and trickle charge once a month. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor) with the motor vertical to prevent water pooling.' },
+      { name: 'Disconnect battery and store the motor', text: 'Leave the battery in the boat, disconnected (or on a maintainer). The killer is parasitic drain from leaving it connected, not the cold. If you have power access, a trickle/maintainer charger further extends life. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor) with the motor vertical to prevent water pooling.' },
     ],
     howToTotalTime: 'PT2H',
     howToTools: ['Marine fogging oil', 'Fuel stabilizer', 'Gear lube', 'Corrosion guard', 'Wrench set'],
@@ -15297,7 +15297,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What about delivery, taxes, and trade-in?',
-        answer: 'Pricing on the configurator is in CAD before HST. HST (13%) is added at quote completion. Trade-in valuation is handled separately at [/trade-in-value](/trade-in-value). Delivery is pickup at HBW in Gores Landing for most customers.'
+        answer: 'Pricing on the configurator is in CAD before HST. HST (13%) is added at quote completion. Trade-in valuation is handled separately at [/trade-in-value](/trade-in-value). Pickup only at HBW in Gores Landing, for all customers, no exceptions.'
       },
       {
         question: 'Should I demand pricing from a dealer who hides it?',
@@ -19273,7 +19273,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["best Mercury dealer Ontario", "Mercury Premier dealer Canada", "Mercury outboard specialist Ontario", "certified Mercury dealer GTA", "top Mercury dealer Ontario"],
     content: `## Quick answer
 
-What makes HBW different in Ontario: transparent installed pricing online, three generations of Mercury experience since 1947, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
+What makes HBW different in Ontario: transparent installed pricing online, family-owned since 1947 and a Mercury dealer since 1965, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
 
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)
 
@@ -22566,7 +22566,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Why does my boat battery die over the winter?', answer: 'Parasitic drain. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario\'s winter storage window. Turn the master switch to OFF, never leave it on Both, and use a smart maintainer if you have power access in storage.' },
       { question: 'Should I leave my battery switch on "Both" for storage?', answer: 'Never. With the switch on Both, any parasitic draw pulls from both banks simultaneously, doubling your drain exposure. Turn it to OFF for storage. Also never switch directly from 1 to 2 while the engine is running: switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.' },
       { question: 'When should I replace my marine battery?', answer: 'Most marine batteries last 4 to 7 years. Replace when resting voltage is below 12.2V after a full charge, the battery fails a load test, you see swelling, cracking, or electrolyte leakage, or it is more than 7 years old and spring no-starts are getting more frequent. Voltage alone lies: a battery can read 12.6V at rest and collapse to 8V under starter load.' },
-      { question: 'What is the right way to store a marine battery for winter?', answer: 'Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don\'t have power access, remove the battery and store it indoors on a wood shelf or mat, above freezing.' },
+      { question: 'What is the right way to store a marine battery for winter?', answer: 'Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don\'t have power access, leave the battery in the boat but disconnect it. Parasitic drain from staying connected is the failure mode, not the cold.' },
     ],
     content: `# The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
 
@@ -22726,7 +22726,7 @@ A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah batte
 
 1. **Turn the master switch OFF.** Breaks the circuit, stops all parasitic drain. Note: if your boat has an auto bilge pump, verify whether your switch keeps the bilge circuit live, know what you're turning off.
 2. **Disconnect the negative terminal.** Fallback if the switch doesn't fully isolate.
-3. **Remove the battery and store it indoors.** Best option for boats without power access in storage.
+3. **Leave the battery in the boat, disconnected.** Parasitic drain from staying connected is what kills batteries over winter, not the cold. A maintainer helps if you have power at storage.
 
 ---
 
@@ -22735,7 +22735,7 @@ A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah batte
 **Before storage:**
 - Bring the battery to a full charge before putting it away, never store it at 50%.
 - Turn the master switch to OFF.
-- If you won't have access to check on it, remove the battery and bring it inside.
+- If you won't have access to check on it, leave the battery in the boat but disconnect it. Cold is not the failure mode; parasitic drain is.
 
 **Storing in place with power access:**
 - Connect a **battery maintainer** (smart charger or float charger), not a regular trickle charger. A trickle charger runs a constant low current that will overcharge a battery over 5 months. A smart maintainer monitors voltage and charges only when needed.
@@ -23120,13 +23120,13 @@ We got tired of that. So did our customers.
 
 Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Premier dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
 
-Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at delivery. No surprises.
+Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
 
 ## How Mercury outboard pricing actually works in Canada
 
 Mercury sets a Manufacturer's Suggested Retail Price (MSRP) for every model. Dealer selling prices land at or below that number. HBW publishes both side by side: what Mercury says it's worth, and what we actually charge.
 
-We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at delivery, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." If a Mercury Canada promo is active that lowers the number further, you see it in the configurator the same day.
+We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at pickup, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." If a Mercury Canada promo is active that lowers the number further, you see it in the configurator the same day.
 
 Some dealers post MSRP and call it a "price." We don't.
 
@@ -23229,7 +23229,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
       { question: 'Can I buy Mercury cheaper in the US?', answer: 'Sometimes the headline price looks lower. But cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings, and then some. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers.' },
       { question: 'How long is the Mercury warranty?', answer: 'Standard is 3 years, concurrent, in Canada. Mercury and dealer promotions may stack bonus warranty years on top of the base during active promo windows. Current promotions are reflected in pricing at mercuryrepower.ca and listed at /promotions.' },
       { question: 'Can I order any model, or only what\'s in stock?', answer: 'Both. In-stock means physically at our shop in Gores Landing. Available-to-order means we request it from Mercury Canada, typically 1-4 weeks depending on the model.' },
-      { question: 'Are these prices final?', answer: 'The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at delivery, before HST.' }
+      { question: 'Are these prices final?', answer: 'The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at pickup, before HST.' }
     ]
   },
   {
@@ -25431,7 +25431,7 @@ Tiered by engine. Typical 4-stroke outboard 90 to 150 HP at HBW. Smaller and lar
 | Spark plugs (new, installed) | $60 to $140 | 4 plugs typical on inline 4-cyl, more on V6/V8. OEM Mercury plugs only. |
 | Crankcase oil + filter change | $80 to $150 | Full evacuation while warm. Old oil out, fresh Mercury oil in. |
 | Lower-unit gear oil change + inspection | $50 to $90 | Milky oil means a seal failure caught in fall, not in spring at the launch. |
-| Cooling system drain + battery prep | $50 to $90 | All water out of block. Battery pulled to heated storage on a smart charger. |
+| Cooling system drain + battery prep | $50 to $90 | All water out of block. Battery left in the boat, disconnected (or on a maintainer). |
 | **Typical 90 to 150 HP all-in** | **$330 to $630 CAD** | Before HST. |
 
 9.9 HP tiller is lower (about a 90 min job). 250 HP V8 Verado is higher (about a 3 hr job). Sterndrive is its own tier. Request a real quote at [hbw.wiki/service](https://hbw.wiki/service).
@@ -28898,7 +28898,7 @@ Mercury Marine Premier status is the top tier of Mercury's dealer program. It is
 - **Parts on hand, not on order.** Premier dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
 - **Warranty work in-house.** If your Mercury is under factory warranty or covered by Mercury Product Protection, we open and close the claim ourselves. Nothing gets trucked to a third shop. Same for recall work.
 - **Repower capacity.** New motor, rigging, controls, gauges, and propeller all happen in one bay with one work order. The motor and the rigging kit come from the same parts counter.
-- **Year-round service availability.** April through November is in-season service. December through March is the winter service window for repowers, rebuilds, and major projects so the boat is ready when the lake opens.
+- **Year-round service availability.** April through November is when install and service work happens. The marina is closed December 1 to April 1; winter is booking, planning, and reserving spring slots. Boats booked in fall or over the winter get the earliest spring install slots.
 
 A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. The full-service Mercury model on Rice Lake exists so a Friday-afternoon problem does not eat a long weekend, and so the same shop that sold you the motor is still the shop fixing it in year seven.
 
@@ -29025,7 +29025,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "Can I store my boat at HBW if I keep it on Pigeon / Sturgeon / Buckhorn?",
-        answer: "Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (15–20 min), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch, the boat is already winterized, wrapped, and sitting on a lake that connects to the Trent-Severn Waterway. You pick it up in April, commission it on-site, and launch the same day instead of hauling it home, finding the battery, and discovering the tarp didn't survive the winter."
+        answer: "Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (about 45 min by road), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch, the boat is already winterized, wrapped, and sitting on a lake that connects to the Trent-Severn Waterway. You pick it up in April, commission it on-site, and launch the same day instead of hauling it home, finding the battery, and discovering the tarp didn't survive the winter."
       },
       {
         question: "When should I book winter storage?",
@@ -29119,7 +29119,7 @@ HBW is based on Rice Lake in Gores Landing, but our storage customers come from 
 | Lake | Approx. drive from Gores Landing | Notes |
 |------|----------------------------------|-------|
 | Rice Lake | On-site | Our home lake; launch from our property |
-| Pigeon Lake | 15–20 min | Popular with families; easy haul via County Rd 18 |
+| Pigeon Lake | about 45 min by road | Popular with families; easy haul via County Rd 18 |
 | Sturgeon Lake | 20–25 min | Good walleye and bass; close to Lindsay |
 | Buckhorn Lake | 30–35 min | Part of the Trent-Severn; lots of cottagers |
 | Stoney Lake | 25–30 min | Clear water, great fishing, slightly longer haul |
@@ -30935,7 +30935,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       { question: "Can I use household electrical tape for marine connections?", answer: "Not as a permanent solution. Electrical tape degrades from UV, humidity, and heat. For permanent connections use adhesive-lined heat-shrink. Tape is fine for a one-trip emergency fix only." },
       { question: "Why does my electrical system seem fine in summer but fail in spring?", answer: "Winter storage creates the perfect conditions for corrosion: temperature swings cause condensation cycles, the boat sits dormant so any moisture trapped in connections can't dry, and rodents sometimes chew through wiring undetected. Spring is when the accumulated damage shows up." },
       { question: "What's a \"stray current\" and should I worry about it?", answer: "Stray current is small amounts of DC current leaking from your electrical system into the surrounding water through metal hull components. In saltwater this causes rapid galvanic corrosion. In freshwater the effect is milder but still real. Properly grounded and isolated systems eliminate the risk." },
-      { question: "Should I disconnect the battery for winter storage?", answer: "At minimum, turn the battery switch to OFF. Better is to remove the battery entirely and store it in a heated space, on a trickle charger. A battery left in an unheated boat through an Ontario winter is more likely to fail next spring than one stored in a warm garage." },
+      { question: "Should I disconnect the battery for winter storage?", answer: "Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and pull the negative cable). Parasitic drain from staying connected is what kills a battery over the winter, not the Ontario cold. A trickle/maintainer charger further extends life if you have shore power at storage." },
     ],
     content: `# Boat Electrical Safety Checklist for Ontario Freshwater Boats
 
