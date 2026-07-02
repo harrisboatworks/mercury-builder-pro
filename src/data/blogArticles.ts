@@ -33584,7 +33584,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     slug: 'mercury-7-year-warranty-hbw-exclusive-explained',
     seoTitle: 'Mercury Outboard Warranty at HBW, Explained (Standard 3-Year Factory Coverage) | Mercuryrepower.ca',
     title: 'Mercury 7-Year Warranty Offer, Explained',
-    description: 'Mercury factory warranty from HBW explained: 3 years standard coverage, how extended coverage works, and what the 7-year HBW Exclusive offer included.',
+    description: 'Mercury factory warranty from HBW explained: 3 years standard, and the 7-year HBW Exclusive offer (3+4) that\'s active through December 31, 2026.',
     image: '/lovable-uploads/hero-mercury-warranty-shop-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
