@@ -16754,7 +16754,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "rice-lake-boating-guide-2026",
     title: 'Rice Lake Boating Guide 2026',
     seoTitle: "Rice Lake Boating Guide 2026: Launches and Hazards",
-    description: "A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches compared, and what makes this lake different. By.",
+    description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access.",
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
