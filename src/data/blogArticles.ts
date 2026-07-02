@@ -321,6 +321,12 @@ The water pump lives at the top of your gearcase, driven by the driveshaft. Gett
 4. Inspect the housing liner; replace if scored
 5. Reassemble, torque, and water-test
 
+**Watch the whole job, start to finish:**
+
+https://www.youtube.com/watch?v=AQIV2UddocM
+
+*Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). This is the real sequence our techs follow; the video shows why the labour is the cost.*
+
 That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" during other gearcase work saves real money.
 
 ---
