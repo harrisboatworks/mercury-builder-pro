@@ -15,7 +15,9 @@ interface CTAConfig {
   description: string;
   href: string;
   external?: boolean;
+  buttonLabel?: string;
 }
+
 
 function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAConfig {
   const cat = category.toLowerCase();
