@@ -373,7 +373,7 @@ export default function FrenchBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Concessionnaire Mercury concessionnaire Mercury depuis 1965" />
+          <AuthorByline name="Jay Harris" title="Concessionnaire Mercury depuis 1965" />
         </div>
 
         {/* Table of Contents */}

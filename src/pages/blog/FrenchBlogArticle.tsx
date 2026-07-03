@@ -157,7 +157,7 @@ export default function FrenchBlogArticle() {
 
           <h2>Une marina de famille depuis 1947</h2>
           <p>
-            Harris Boat Works est une entreprise familiale de troisième génération, fondée en 1947 à Gores Landing, sur le lac Rice. Ça fait 78 ans qu'on sert les mêmes familles, et leurs enfants et petits-enfants.
+            Harris Boat Works est une entreprise familiale de troisième génération, fondée en 1947 à Gores Landing, sur le lac Rice. Ça fait 79 ans qu'on sert les mêmes familles, et leurs enfants et petits-enfants.
           </p>
           <p>
             Le lac Rice et les Kawarthas sont à moins de trois heures de Montréal. Pour un plaisancier du Québec ou de l'est de l'Ontario, on est bien situés.
