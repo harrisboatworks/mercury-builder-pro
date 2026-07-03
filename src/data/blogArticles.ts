@@ -6957,14 +6957,20 @@ October through March. Off-season ordering gets you the best motor availability 
 
 ## Ready to Repower?
 
-Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to build a quote.
+Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to [build a quote](/quote/motor-selection).
 
 Or call **905-342-2153**. We will start with the hull walk-around, work through the right motor for how you actually boat, and give you a line-item quote before anything is ordered.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurator:** [Build Your Quote](/quote/motor-selection)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+### Keep reading
+
+- [HBW Boat Repower Guide](/repower): the full cluster on cost, process, and brand conversions
+- [Mercury Price List (CAD)](/pricing-reference): every model we sell, motor-only pricing
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad): line-item cost breakdown by HP class
 
 ---
 
