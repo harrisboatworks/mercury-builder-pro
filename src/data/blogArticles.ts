@@ -6834,6 +6834,8 @@ Before we order anything, we look at the boat. Every HBW repower starts with a h
 
 Then we build a line-item quote. Motor, rigging, prop, labour, HST, all visible before you decide. No "call for pricing," no estimate that quietly grows by pickup. If something changes mid-job, a surprise behind the dash or a fuel line that needs replacing, we call before we proceed. You can build the starting quote yourself at mercuryrepower.ca in a few minutes. The walk-around adds the hull-specific items on top.
 
+> **Ready to see real numbers for your boat?** [Build your repower quote](/quote/motor-selection) with live Canadian pricing in about two minutes, then a person at HBW reviews it before you hear back. Pickup only at Gores Landing.
+
 ---
 
 ## Step 5: Ordering and Lead Times
