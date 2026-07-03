@@ -146,7 +146,9 @@ export default function LocationDetail() {
         ],
       },
       {
-        '@type': 'LocalBusiness',
+        '@type': location.slug === 'rice-lake-mercury-repower'
+          ? ['LocalBusiness', 'BoatDealer']
+          : 'LocalBusiness',
         '@id': `${url}#localbusiness`,
         name: COMPANY_INFO.name,
         url,
@@ -186,7 +188,12 @@ export default function LocationDetail() {
         ],
         // Sales catchment only, represents where customers travel from to pick up at Gores Landing.
         // Sales catchment only. All work happens at Gores Landing.
-        areaServed: location.slug === 'peterborough-mercury-dealer'
+        areaServed: location.slug === 'rice-lake-mercury-repower'
+          ? ['Rice Lake', 'Kawarthas', 'Northumberland'].map((n) => ({
+              '@type': 'AdministrativeArea',
+              name: n,
+            }))
+          : location.slug === 'peterborough-mercury-dealer'
           ? ['Peterborough', 'Kawartha Lakes', 'Otonabee Region', 'Rice Lake'].map((n) => ({
               '@type': 'AdministrativeArea',
               name: n,

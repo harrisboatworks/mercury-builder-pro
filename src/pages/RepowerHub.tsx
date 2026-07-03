@@ -133,7 +133,13 @@ export default function RepowerHub() {
           >
             full Mercury price list
           </Link>
-          {' '}for every model in CAD.
+          {' '}for every model in CAD.{' '}
+          <Link
+            to="/blog/repair-repower-or-sell-boat-ontario-decision-guide"
+            className="font-semibold text-repower-gold underline-offset-4 hover:underline"
+          >
+            Not sure repowering is right for you?
+          </Link>
         </>
       }
       table={{

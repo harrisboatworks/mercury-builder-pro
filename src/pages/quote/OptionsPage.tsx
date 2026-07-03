@@ -160,7 +160,7 @@ export default function OptionsPage() {
       ? {
           wantsBattery: batteryChoice === true,
           batteryCost: BATTERY_COST,
-          decision: batteryChoice === true ? 'add' : batteryChoice === false ? 'own' : 'later',
+          decision: (batteryChoice === true ? 'add' : batteryChoice === false ? 'own' : 'later') as 'add' | 'later' | 'own',
         }
       : state.looseMotorBattery;
     if (isElectricStart) {

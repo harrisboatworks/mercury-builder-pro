@@ -42,6 +42,26 @@ const FAQS = [
     answer:
       'Reserve your motor with a refundable deposit on the summary page, $200 for motors under 75 HP, $500 for 75–199 HP, $1,000 for 200 HP and up. Deposits are fully refundable within 7 days, and the balance is paid at pickup at Gores Landing.',
   },
+  {
+    question: 'Can I get a Mercury outboard quote online in Ontario?',
+    answer:
+      'Yes. Use our online form to get a Mercury outboard quote. We serve boat owners across Ontario. You bring your boat to our marina in Gores Landing for installation.',
+  },
+  {
+    question: 'Is the online quote a real price?',
+    answer:
+      'Yes, the online quote is a real price. It includes the motor, rigging, and installation at our marina. There are no hidden fees.',
+  },
+  {
+    question: 'Do you deliver motors or offer shipping?',
+    answer:
+      'No, we do not ship or deliver motors. You bring your boat to our Gores Landing marina on Rice Lake and we install the new Mercury outboard here.',
+  },
+  {
+    question: 'How long does the quote process take?',
+    answer:
+      'We aim for a quick turnaround. You submit your information and you will hear back from us promptly.',
+  },
 ];
 
 export function MotorSelectionFAQ() {
