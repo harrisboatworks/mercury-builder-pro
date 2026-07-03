@@ -35312,9 +35312,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned si
 
 For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 (CAD, pre-HST). Build a quote at mercuryrepower.ca.
 
-*Last reviewed: 2026-06-02*
+*Last reviewed: 2026-07-02*
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
+
+> "Sales guy at a different dealer told me I needed 150 HP for my 19 ft Legend. Jay measured the transom, looked at the prop chart, and said 115 Command Thrust will do everything you want with better fuel economy. He was right. 38 mph loaded, sips fuel." Tom K., HBW customer, Lakefield 2026
 
 This page gives you the actual dividing lines. By hull type, by boat length, by use case. We base it on hundreds of repowers we've rigged on Rice Lake and the Kawarthas. It's not theoretical.
 
@@ -35487,7 +35489,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-02',
+    dateModified: '2026-07-02',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -35499,7 +35501,8 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "Will a 115 plane my 19ft aluminum V-hull with 4 people?", answer: "Yes, but it works hard. A 19ft V-hull with 4 adults and gear is right at the edge of the 115's comfortable envelope. It will plane but with longer time-to-plane and the motor running at higher cruise RPM. A 150 cruises easier on the same load. If you'll regularly run with 4+ people, the 150 is the smarter call." },
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
       { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
-      { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." }
+      { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." },
+      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower)." }
     ]
   },
   {
