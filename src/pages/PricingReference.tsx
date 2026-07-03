@@ -98,8 +98,8 @@ export default function PricingReference() {
 
         <BlogInlineCTA
           variant="inline"
-          heading="Want the all-in installed number?"
-          body="Prices shown are for the motor itself. Your real installed cost depends on rigging, controls, and your boat. Build a quote for the all-in number on your repower."
+          heading="These are our real CAD prices. Want an itemized quote for your boat?"
+          body="The table below shows motor-only pricing. Your installed number depends on rigging, controls, and your boat. Build a quote in about two minutes and a person here reviews it."
           primaryLabel="Build Your Quote"
           primaryHref="/quote/motor-selection"
         />
