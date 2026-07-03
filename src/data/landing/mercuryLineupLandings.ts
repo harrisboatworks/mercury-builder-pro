@@ -281,35 +281,47 @@ export const MID_POWER_90_115HP: LandingConfig = {
 // ============================================================================
 // Page 4: Mercury 150 HP (FourStroke + Pro XS)
 // ============================================================================
+const HP_150_VARIANTS: LandingVariant[] = [
+  { name: '150L FourStroke', hp: '150', config: '20-inch (Long) shaft, mechanical remote', msrp: 24780, hbwPrice: 22242, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1150F13ED' },
+  { name: '150XL FourStroke', hp: '150', config: '25-inch (XL) shaft, mechanical remote', msrp: 24915, hbwPrice: 22363, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1150F23ED' },
+  { name: '150 ELPT Pro XS', hp: '150', config: '20-inch (Long) shaft, Pro XS tune', msrp: 27125, hbwPrice: 24349, availability: 'InStock', availabilityLabel: 'In stock', sku: '1152F131D' },
+  { name: '150 EXLPT Pro XS', hp: '150', config: '25-inch (XL) shaft, Pro XS tune', msrp: 27265, hbwPrice: 24475, availability: 'InStock', availabilityLabel: 'In stock', sku: '1152F231D' },
+];
+
+// Prices derived from the same variants array that feeds the Product+Offer
+// JSON-LD schema, so FAQ answers, intro copy, and structured data can never
+// drift from the live pricelist source.
+const HP_150_FS_MIN = Math.min(...HP_150_VARIANTS.filter((v) => v.name.includes('FourStroke')).map((v) => v.hbwPrice));
+const HP_150_PROXS_MIN = Math.min(...HP_150_VARIANTS.filter((v) => v.name.includes('Pro XS')).map((v) => v.hbwPrice));
+const fmtCAD150 = (n: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
+
 export const HP_150: LandingConfig = {
   slug: '/mercury/150-hp',
-  metaTitle: 'Mercury 150 HP Outboard Price in Ontario | Harris Boat Works',
+  metaTitle: 'Mercury 150 HP Pro XS Price Canada | Live CAD Pricing | Harris Boat Works',
   metaDescription:
-    'Mercury 150 HP FourStroke and Pro XS outboard prices from $22,242 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'See current Mercury 150 HP Pro XS pricing in Canadian dollars, pulled live from our dealer pricelist. Mercury Premier Dealer since 1965, family owned since 1947.',
   canonical: 'https://www.mercuryrepower.ca/mercury/150-hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
 
   h1: 'Mercury 150 HP Outboard Price in Ontario',
   heroLead:
-    'The 150 FourStroke is the workhorse, the sweet spot for 17 to 19 ft fibreglass and aluminum boats: bowriders, fish-and-ski, deep-V aluminum. Smooth 3.0L inline-4, real fuel numbers, real-world reliability. Mercury 150 HP from $22,242 CAD at Harris Boat Works.',
+    `The 150 FourStroke is the workhorse, the sweet spot for 17 to 19 ft fibreglass and aluminum boats: bowriders, fish-and-ski, deep-V aluminum. Smooth 3.0L inline-4, real fuel numbers, real-world reliability. Mercury 150 HP from ${fmtCAD150(HP_150_FS_MIN)} CAD at Harris Boat Works.`,
   heroEyebrow: 'Mercury Premier Dealer, Rice Lake',
 
   productName: 'Mercury 150 HP FourStroke and Pro XS Outboards',
   productDescription:
     'Mercury 150 HP FourStroke (3.0L inline-4) and 150 Pro XS outboards for repowers and new-boat installs. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
 
+  pricingIntro:
+    'The current price for a Mercury 150 Pro XS in Canada is shown below, pulled live from our dealer pricing feed. Harris Boat Works is a Mercury Premier Dealer, family owned since 1947. We have sold and serviced Mercury outboards since 1965. All prices shown are in Canadian dollars and reflect what you would pay at our dealership.',
+
   tableTitle: 'Mercury 150 HP prices: FourStroke and Pro XS',
   tableNote:
     'Prices in CAD, current pricing, confirm in the quote builder. 150 Pro XS variants are in stock at Gores Landing; the 150 FourStroke we bring in to order. Pickup at Gores Landing, Ontario. Customers arrange their own boat transport to and from the shop. Taxes, rigging, installation labour, and a starting battery are not included.',
   modelColLabel: 'Model',
   configColLabel: 'Shaft and tuning',
-  variants: [
-    { name: '150L FourStroke', hp: '150', config: '20-inch (Long) shaft, mechanical remote', msrp: 24780, hbwPrice: 22242, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1150F13ED' },
-    { name: '150XL FourStroke', hp: '150', config: '25-inch (XL) shaft, mechanical remote', msrp: 24915, hbwPrice: 22363, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1150F23ED' },
-    { name: '150 ELPT Pro XS', hp: '150', config: '20-inch (Long) shaft, Pro XS tune', msrp: 27125, hbwPrice: 24349, availability: 'InStock', availabilityLabel: 'In stock', sku: '1152F131D' },
-    { name: '150 EXLPT Pro XS', hp: '150', config: '25-inch (XL) shaft, Pro XS tune', msrp: 27265, hbwPrice: 24475, availability: 'InStock', availabilityLabel: 'In stock', sku: '1152F231D' },
-  ],
+  variants: HP_150_VARIANTS,
 
   includedTitle: 'What is included in the price',
   includedItems: [
@@ -333,11 +345,11 @@ export const HP_150: LandingConfig = {
   ],
 
   faq: [
-    { question: 'What does a Mercury 150 HP cost in Canada?', answer: 'At Harris Boat Works, the 150L FourStroke is $22,242 CAD and the 150 ELPT Pro XS is $24,349 CAD. The 25-inch XL versions are slightly more. Prices are CAD, current at time of listing, confirm in the quote builder.' },
-    { question: 'Will a 150 HP Mercury fit my boat?', answer: 'It fits most 17 to 19 ft fibreglass bowriders, runabouts, aluminum deep-Vs, and lighter pontoons. Check your boat capacity plate for max HP, and match the shaft length (20 or 25 inch) to your transom. Send us the boat details and we will size it properly.' },
-    { question: 'Should I get the FourStroke 150 or the Pro XS 150?', answer: 'Choose the FourStroke 150 for a smooth, quiet, fuel-efficient family motor. Choose the Pro XS 150 for stronger hole shot and top end on a performance rig or bass boat. Same 3.0L block, different tune.' },
-    { question: 'How long does a 150 HP repower take?', answer: 'Most 150 HP repowers run 2 to 3 weeks from confirmed order to water-ready. Spring (April and May) books up fast because every shop in Ontario is busy. Plan ahead.' },
-    { question: 'Do you deliver the motor or pick up my boat?', answer: 'No. Pickup is at Gores Landing, and customers arrange their own boat transport to and from the shop. We rig, install, and water-test on our dock.' },
+    { question: 'What is the current Mercury 150 Pro XS price range in Canada?', answer: `The price for a new Mercury 150 Pro XS starts at ${fmtCAD150(HP_150_PROXS_MIN)} CAD at Harris Boat Works. Final cost varies with rigging and options. Use our live quote tool for an exact total on your setup.` },
+    { question: "What's the difference between Mercury 150 FourStroke and 150 Pro XS pricing?", answer: `The Pro XS is typically priced higher than the standard 150 FourStroke due to its performance components and heavier-duty gearcase. The 150 FourStroke starts at ${fmtCAD150(HP_150_FS_MIN)} CAD and the 150 Pro XS starts at ${fmtCAD150(HP_150_PROXS_MIN)} CAD. Both prices are Canadian dollars from our current pricelist.` },
+    { question: "What's included in the price?", answer: 'The price includes the outboard engine and standard factory warranty. Rigging and installation are additional. Customers bring their own boat to our Rice Lake yard, we do not offer pickup or delivery.' },
+    { question: 'Do you offer financing?', answer: 'Yes, financing is available through third-party lenders based on credit approval. Contact us for current terms and rates, since they change.' },
+    { question: 'How do I get an exact quote?', answer: 'Use our live quote tool or call the shop. Tell us your boat model and rigging needs and we will generate a firm quote from the current Mercury Canada pricelist.' },
   ],
 
   finalCtaHeading: 'Build your 150 HP Mercury quote in two minutes',
@@ -345,6 +357,7 @@ export const HP_150: LandingConfig = {
 
   primaryCta: { label: 'Build My 150 HP Quote', to: '/quote?model=150-hp' },
 };
+
 
 // ============================================================================
 // Page 5: Mercury 115 Pro XS (dedicated model page)
