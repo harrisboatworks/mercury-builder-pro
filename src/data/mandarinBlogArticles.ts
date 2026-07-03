@@ -207,8 +207,6 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
 item5En: 60 to 90 minutes from GTA via 401 + 115
 item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 item6En: Mercury dealer since 1965
@@ -450,8 +448,6 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
 item5En: 60 to 90 minutes from GTA via 401 + 115
 item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 item6En: Mercury dealer since 1965
@@ -1215,8 +1211,6 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
 item5En: 60 to 90 minutes from GTA via 401 + 115
 item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 item6En: Mercury dealer since 1965
@@ -1379,8 +1373,6 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
 item5En: 60 to 90 minutes from GTA via 401 + 115
 item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 item6En: Mercury dealer since 1965
@@ -1569,8 +1561,6 @@ item1En: Family-run since 1947
 item1Zh: 1947 年至今, 三代家族经营
 item2En: Mercury Premier Dealer
 item2Zh: 水星 Premier 认证经销商
-item3En: Mandarin service available
-item3Zh: 提供普通话沟通服务
 item4En: Transparent itemized quotes
 item4Zh: 报价透明, 逐项列明
 item5En: Full-service Mercury shop
@@ -1687,8 +1677,6 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
 item5En: 60 to 90 minutes from GTA via 401 + 115
 item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 item6En: Mercury dealer since 1965
@@ -2102,8 +2090,6 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: Bilingual quote support available
-item4Zh: 提供双语报价支持
 item5En: 60 to 90 minutes from GTA via 401 + 115
 item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 item6En: Mercury dealer since 1965
