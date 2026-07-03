@@ -57,7 +57,11 @@ export interface LandingConfig {
 
   /** Optional override for the primary CTA used by both hero and final CTA. */
   primaryCta?: { label: string; to: string };
+
+  /** Optional per-page intro paragraph rendered above the pricing table. */
+  pricingIntro?: string;
 }
+
 
 // ============================================================================
 // Page 1: Portable 9.9 – 20 HP
