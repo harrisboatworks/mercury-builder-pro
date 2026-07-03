@@ -126,7 +126,23 @@ Optional add-ons available separately or as a package:
 - Bilge clean-out
 - Pre-booked spring commissioning
 
+## Mercury outboard specifics
+
+If you have a Mercury outboard, some winterization steps are specific to that brand. Mercury engines need the right fogging oil, a gearcase oil change, and a careful flush to prevent corrosion over winter. Here is exactly what a Mercury outboard needs before freeze-up.
+
+- **Engine flush.** 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris from the cooling passages before the motor sits all winter.
+- **Fogging with Mercury Storage Seal.** Cylinders fogged until the engine smokes and stalls. Partial fogging means partial protection.
+- **Gearcase (lower unit) oil change.** Old oil out, gearcase inspected for water intrusion (milky oil flags a seal failure), refilled with Mercury High Performance gear oil.
+- **Fuel stabilizer.** Mercury Quickstor added to the fuel and run through the entire fuel system, including injectors or carbs.
+- **Lower unit oil inspection.** Magnetic drain plug checked for metal shavings, seals looked over before spring launch.
+- **Water pump inspection.** Impeller condition checked; a tired impeller is a summer overheat waiting to happen.
+- **Spark plug check or replacement.** Plugs pulled, cylinders fogged individually, plugs reinstalled or replaced if they are at interval.
+- **Battery removal.** Battery pulled from the boat, terminals cleaned, stored on a smart charger in a space that stays above freezing.
+
+Winterization is fall service only. Book your appointment before our December 1 closure (the marina is closed December 1 to April 1) to make sure your Mercury outboard is prepped before freeze-up.
+
 ## Storage options at HBW
+
 
 We offer outdoor winter storage at HBW with shrinkwrap. We do not offer indoor heated storage. For indoor heated, we will point you to the right options in the region rather than pretend we have it.
 
