@@ -100,6 +100,7 @@ export default function FrenchBlogArticle() {
         <meta property="og:url" content={url} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
+        <meta property="og:image" content={`${SITE_URL}/lovable-uploads/hero-best-mercury-dealer-ontario.png`} />
         <meta property="article:published_time" content="2026-04-12" />
         <meta property="article:author" content="Harris Boat Works" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
@@ -119,7 +120,13 @@ export default function FrenchBlogArticle() {
           <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
             Concessionnaire Mercury Premier en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works
           </h1>
-          <p className="text-muted-foreground text-sm mb-8">Publié par Harris Boat Works | Gores Landing, Ontario</p>
+          <p className="text-muted-foreground text-sm mb-6">Publié par Harris Boat Works | Gores Landing, Ontario</p>
+          <img
+            src="/lovable-uploads/hero-best-mercury-dealer-ontario.webp"
+            alt="Harris Boat Works, concessionnaire Mercury Premier à Gores Landing, Ontario."
+            className="w-full h-64 md:h-80 object-cover rounded-xl mb-8"
+            loading="eager"
+          />
 
           {/* Quick answer */}
           <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
