@@ -93,9 +93,13 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
             {config.tableTitle}
           </h2>
+          {config.pricingIntro && (
+            <p className="text-foreground leading-relaxed mb-4">{config.pricingIntro}</p>
+          )}
           <p className="text-muted-foreground mb-6">
             Real CAD pricing on every configuration in this HP band. Pick what fits your transom.
           </p>
+
 
           <Card className="overflow-hidden">
             <div className="overflow-x-auto">
