@@ -20,6 +20,10 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 _Last updated 2026-06-30._
 
+All prices shown on this page are live from our current Mercury pricelist feed, updated regularly. Every figure is in Canadian dollars and reflects the dealer price at our Rice Lake yard.
+
+
+
 ## How to use this page
 
 - These are the Mercury outboards available for online quoting on mercuryrepower.ca. Some are **in stock** and some are **available to order**, the Status column tells you which.
