@@ -6,7 +6,7 @@
  */
 export const FR_TO_EN_SLUG: Record<string, string> = {
   'prix-remotorisation-mercury-ontario': 'mercury-repower-cost-ontario-2026-cad',
-  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
   'hivernisation-moteur-mercury-ontario': 'diy-mercury-outboard-winterization-guide',
   'remotorisation-vs-bateau-neuf': 'boat-repowering-guide-when-to-replace-motor',
   'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting',

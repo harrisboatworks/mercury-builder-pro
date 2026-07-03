@@ -38,7 +38,7 @@ For Greater Toronto Area boaters, Harris Boat Works is the Mercury Premier Deale
 - [Pickering customers](https://www.mercuryrepower.ca/locations/pickering-mercury-dealer)
 - [Oshawa customers](https://www.mercuryrepower.ca/locations/oshawa-mercury-dealer)
 - [Bowmanville & Courtice customers](https://www.mercuryrepower.ca/locations/bowmanville-courtice-mercury-dealer)
-- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 
 ## Related case studies
 

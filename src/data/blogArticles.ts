@@ -6074,7 +6074,7 @@ Pro XS is the right call when:
 
 For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) for the full FourStroke vs Pro XS picture.
 
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the next step-up question
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the next step-up question
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
@@ -10898,7 +10898,7 @@ The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Pri
 
 Two related guides in the same cluster:
 - [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 
 ---
 
@@ -10927,7 +10927,7 @@ Motor, rigging (controls, harness, gauges), prop, and installation. We quote all
 ## Internal Links
 
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
 
 ---
@@ -12623,7 +12623,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
   {
     slug: 'mercury-boost-software-upgrade-eligibility-2026',
-    relatedSlugs: ['mercury-boost-upgrade-150hp-pontoon-analysis', 'mercury-115-vs-150-hp-outboard-ontario', 'mercury-115-hp-fourstroke-review-ontario'],
+    relatedSlugs: ['mercury-boost-upgrade-150hp-pontoon-analysis', 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', 'mercury-115-hp-fourstroke-review-ontario'],
     title: 'Mercury Boost Software Eligibility 2026',
     seoTitle: 'Is Your Mercury Eligible for the 2026 Boost Upgrade?',
     description: 'Mercury Boost is dealer-installed software offering up to 21% faster mid-range acceleration on select FourStroke, Pro XS, Verado engines.',
@@ -13481,236 +13481,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "Is Mercury more expensive than Yamaha?", answer: "Comparable HP at comparable trim. Pricing varies by model, current promotions, and market conditions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario." },
       { question: "Which has better fuel economy, Mercury or Yamaha?", answer: "Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient. Prop selection and operating discipline matter much more than brand for fuel economy." },
       { question: "What is the most popular outboard in Ontario, Mercury or Yamaha?", answer: "Mercury, by a significant margin. Mercury is the dominant brand on Ontario freshwater. Yamaha is well-represented but has a smaller market share than Mercury locally." }
-    ]
-  },
-  {
-    slug: 'mercury-115-vs-150-hp-outboard-ontario',
-    relatedSlugs: ['mercury-115-hp-fourstroke-review-ontario', 'mercury-boost-software-upgrade-eligibility-2026', 'fourstroke-vs-pro-xs', "hbw-on-water-load-test-mercury-repower-advantage-2026"],
-    title: 'Mercury 115 vs 150 HP: Which Fits Your Boat?',
-    seoTitle: 'Mercury 115 vs 150 HP Outboard (2026 Ontario)',
-    description: 'Mercury 115 vs 150 HP for Ontario boats: real CAD prices, weight, fuel burn, transom fit, and which one your hull actually needs. Honest dealer take.',
-    image: '/lovable-uploads/hero-mercury-115-vs-150-comparison.png',
-    author: 'Harris Boat Works',
-    datePublished: '2026-04-19',
-    dateModified: '2026-05-04',
-    category: 'Buying Guide',
-    readTime: '14 min read',
-    keywords: ['mercury 115 vs 150 hp', 'mercury 115 Pro XS', 'mercury 150 Pro XS', 'mercury 115 FourStroke review', 'mercury 150 FourStroke specs', 'which outboard for Ontario boat', 'mercury outboard comparison', 'Pro XS vs FourStroke'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario
-
----
-
-## Quick Answer
-
-For most 17, 19 ft hulls, the Mercury 115 FourStroke is the right call, lighter, cheaper, and fully capable for typical Ontario family use. The 150 earns its price on 18, 22 ft hulls, active watersports, or any boat that loads heavy. Both sit inside the same service footprint. Stay inside your capacity plate. Compare installed pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
-
-![Mercury 115 Pro XS vs 150 FourStroke comparison — best boat, ideal use, and Harris Boat Works pricing from $17,490](/blog-visuals/mercury-115-vs-150-comparison.png)
-
-::decision-card
-heading: Should you choose Mercury 115 or 150 HP?
-eyebrow: Honest power pick
-subhead: The decision usually comes down to boat length, what you tow, and your capacity plate.
-leftLabel: Choose 115 HP if
-leftCriteria:
-  - Your boat is 17 to 19 ft and rated for 115
-  - Most use is casual cruising, fishing, and light watersports
-  - Hole shot and top speed are not your priority
-  - You would rather spend the budget gap on accessories or storage
-leftOutcome: Pick 115 (FourStroke or Pro XS)
-leftVariant: recommended
-rightLabel: Choose 150 HP if
-rightCriteria:
-  - Your boat is 19 to 22 ft and the capacity plate allows 150
-  - You tow tubes, wakeboarders, or skiers regularly
-  - You want stronger hole shot with a full load of people and gear
-  - You are repowering an older 150 and a like-for-like swap simplifies rigging
-rightOutcome: Pick 150 (FourStroke or Pro XS)
-rightVariant: alternative
-whenInDoubt: Check your boat's capacity plate first. If the rated max is 115, you cannot go higher. If rated 150 and the boat is over 19 ft, the extra power usually pays off the price difference within a season or two of resale value.
-::
-
-::pull-quote
-quote: Sales guy at a different dealer told me I needed 150 HP for my 19 ft Legend. Jay measured the transom, looked at the prop chart, and said **115 Command Thrust will do everything you want with better fuel economy**. He was right. 38 mph loaded, sips fuel.
-attribution: Tom K.
-source: HBW Customer, Lakefield 2026
-::
-
----
-
-![Mercury 115 vs 150 horsepower decision matrix for Ontario fishing boats, pontoons, family runabouts, load, and budget](/lovable-uploads/mercury-115-vs-150-decision-matrix-ontario.png)
-
-## Full Article
-
-The step from 115 to 150 HP is bigger than the numbers suggest. The 115 FourStroke is a 2.1L inline 4-cylinder engine. The 150 FourStroke is a 3.0L V6. More displacement, more cylinders, heavier motor, meaningfully more torque, especially at the hole shot. The price difference is roughly $4,000 to $6,000 CAD all-in. For [Mercury outboard prices from 2.5 to 300 HP](/pricing-reference), see our full reference.
-
-Whether that difference is worth paying comes down to three questions: What hull are you putting it on? How do you use it? How do you load it?
-
-### When the 115 Is the Right Call
-
-The Mercury 115 EXLPT FourStroke handles:
-
-- 17, 19 ft aluminum console boats used for family fishing or mixed recreation
-- 18, 20 ft pontoons used primarily for cruising and light fishing (no active water sports)
-- Light fiberglass runabouts up to 19 ft
-- Any boat rated to 115 HP maximum on the capacity plate
-- Budget-conscious repowers where 115 HP genuinely fits the use case
-
-The 115 is plenty motor for the most common Ontario use cases. The savings against the 150 (roughly $4,000 to $6,000 CAD) can buy a kicker motor, better electronics, or a stainless prop, all of which move real-world performance on the existing motor more than the HP step-up does.
-
-Most 115 EXLPT repowers at HBW land in the $17,000 to $22,000 CAD range all-in, before HST.
-
-### When the 150 Earns Its Price
-
-The Mercury 150 EXLPT FourStroke is the right call when:
-
-- Hull is 18, 22 ft (aluminum, fiberglass, or pontoon)
-- Active water sports are part of the use: tubing, skiing, wakeboarding, regularly, not just occasionally
-- Loading is heavy (family of five plus gear, multiple coolers, heavy fishing tackle)
-- Bigger water is the regular destination (Lake Ontario, Bay of Quinte, larger Trent-Severn lakes)
-- You're doing serious morning runs to fishing spots and time matters
-
-The 150's hole shot when loaded is meaningfully better than the 115. The difference in plane time matters when you're pulling skiers or running with a full crew. Mid-range cruising performance is significantly stronger.
-
-Most 150 EXLPT repowers at HBW land in the $23,000 to $36,000 CAD range all-in, before HST.
-
-### Side-by-Side: Mercury 115 vs. 150 FourStroke
-
-![Side-by-side card comparison: Mercury 115 HP ($17,083, 359 lb, 4-cyl 2.1L) vs 150 HP ($22,242, 455 lb, V6 3.0L) with best-use hull sizes and activities.](/lovable-uploads/inline/115-vs-150-hp.svg)
-
-| Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
-|---|---|---|
-| Engine type | Inline 4-cyl, 2.1L | V6, 3.0L |
-| Weight (XL shaft) | ~163 kg / 359 lb | ~206 kg / 455 lb |
-| Hole shot (loaded) | Adequate | Strong |
-| Fuel economy at cruise | Excellent | Very good |
-| Tow rating (typical hull) | Light tubing, one to two skiers | Two skiers, full tubing, wakeboarding |
-| Best fit | 17, 19 ft aluminum, 18, 20 ft pontoons (cruising) | 18, 22 ft hulls, pontoons with water sports, loaded fishing |
-| All-in price (CAD, before HST) | $17,000 to $22,000 | $23,000 to $36,000 |
-
-### What About the 150 Pro XS?
-
-Mercury also makes a 150 Pro XS, tuned for performance applications with a sport gearcase and higher RPM ceiling. This motor is the right call for tournament-level bass fishing where acceleration to morning spots matters, or performance hulls run hard.
-
-For typical recreational use, family fishing, cruising, casual water sports, the FourStroke 150 is the better value. The Pro XS earns its premium on tournament applications.
-
-![Mercury 115 HP and 150 HP FourStroke side-by-side on identical transoms](/lovable-uploads/inline/inline-115-vs-150-comparison.png)
-
-### The Mistakes We See Every Season
-
-**Buying 115 HP to save money on a hull that wants 150.** A 22 ft pontoon at 115 HP feels underpowered when loaded. The customer trades up within a couple seasons at full price. Should have bought the 150 the first time.
-
-**Buying 150 HP when 115 was plenty.** A 17 ft aluminum used for solo fishing at 150 HP is overkill. The motor outpowers the hull's typical use. The savings on the 115 are better spent on a kicker or electronics.
-
-**Picking on top speed alone.** Most recreational use happens at cruise. Hole shot and load handling matter more than peak speed for typical Ontario boating.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-**Skipping Command Thrust on pontoons.** Both the 115 and 150 have Command Thrust gearcase options. On pontoons, Command Thrust is usually the right call regardless of HP class, it moves performance on the hole shot meaningfully.
-
----
-
----
-
-## What we see at HBW
-
-The 115 versus 150 question is the most-quoted comparison at our shop. Customers walk in expecting to save by going with the 115. By the time we add controls, props, and rigging, the spread is usually only $1,500-$2,500 installed. For a 19-foot pontoon or a 20-foot bowrider, the extra HP pays off in two-up cruising and tube-pulling.
-
-The exception: aluminum tinnies under 17 feet. There the 115 is the better match. Lighter on the transom, easier on fuel, and matches the hull's design max.
-
----
-
----
-
-## Related at HBW
-
-The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide)
-
----
-
-*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
-
-## FAQs
-
-**Is the Mercury 150 worth the extra money over the 115?** 
-For 18, 22 ft hulls, water sports, or heavy loading: yes. For 17, 19 ft hulls used for family fishing without active water sports: the 115 is plenty, and the savings are well-spent on accessories.
-
-**What HP do I need for a 19, 20 ft pontoon?** 
-For cruising and fishing without water sports, 115 HP Command Thrust is plenty. For active water sports or heavy family loading, 150 HP is the better fit.
-
-**Can I tube and ski with a Mercury 115?** 
-Light tubing and one to two beginners, yes. Consistent wakeboarding with a full boat requires the 150 or higher. The 115 is marginal for active water sports with heavy loading.
-
-**What's the fuel economy difference between 115 and 150?** 
-At cruise, the 115 is more efficient. The 150 is slightly less efficient but very good. At full load on a heavy hull, the 150 is sometimes more efficient than the 115 because it's working less hard.
-
-**Can I run a Mercury 150 on a boat rated up to 115 HP?** 
-No. The capacity plate sets the legal and warranty-backed ceiling. Exceeding it creates compliance, insurance, and liability problems. We won't quote a motor above your capacity plate.
-
-**How long does a Mercury 150 last with proper maintenance?** 
-Modern Mercury 150 FourStrokes properly maintained are typically good for 1,500, 2,000+ hours of running time. For a recreational boater, that often translates to well over a decade of useful life.
-
-**Will my 115 controls and rigging work with a 150?** 
-Mercury-to-Mercury repowers from 115 to 150 often keep existing post-2010 controls. Heavier-gauge wiring and updated steering may be needed for the 150. We assess this during the hull walk-around.
-
----
-
-## Internal Links
-
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts)
-- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
-
----
-
-## About the author
-
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-## CTA
-
-Ready to pick your motor? Build a quote for the 115 or 150 at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration including rigging and prop.
-
-Not sure which HP is right for your hull? Call **905-342-2153**. We rig boats in this HP class every week and can give you the honest answer for your specific boat and use case.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
-    faqs: [
-      {
-        question: 'What is the difference between Mercury Pro XS and FourStroke?',
-        answer: 'The Pro XS is a performance-tuned variant with aggressive throttle calibration, lighter weight, a sport gearcase for higher top-end speed, and Advanced Range Optimization for fuel efficiency. The standard FourStroke prioritizes smooth power delivery and is available with Command Thrust for low-speed applications like pontoons.'
-      },
-      {
-        question: 'How much does a Mercury 115 Pro XS cost in Canada?',
-        answer: 'The 115 Pro XS runs approximately $500-$1,000 more than the standard 115 FourStroke. Build a current quote at mercuryrepower.ca for exact pricing, it varies by shaft length and controls package.'
-      },
-      {
-        question: 'Is the Mercury 150 Pro XS worth the extra money?',
-        answer: 'For fishing boats, absolutely. The lighter weight, faster hole shot, and 3-5 mph top speed advantage make a real difference on the water. For pontoons or family bowriders, stick with the standard FourStroke or Command Thrust instead.'
-      },
-      {
-        question: 'Can I get a Mercury Pro XS with Command Thrust?',
-        answer: 'No. Pro XS uses a sport gearcase optimized for speed. Command Thrust uses a high-thrust gearcase optimized for low-speed torque. They serve opposite purposes. Choose Pro XS for fishing performance, Command Thrust for pontoons and heavy boats.'
-      },
-      {
-        question: 'How much does the Mercury 150 FourStroke weigh vs the 150 Pro XS?',
-        answer: 'The Mercury 150 FourStroke weighs approximately 456 lbs dry. The 150 Pro XS weighs approximately 445 lbs, about 11 lbs lighter. Both use the same 3.0L displacement.'
-      },
-      {
-        question: 'Is the Mercury 150 worth the extra money over the 115?',
-        answer: 'For most Ontario boats in the 18-22ft range, yes. The price gap is typically $2,500-$3,500, and the 150 handles heavier loads, planes more easily, and runs at lower throttle percentages, less wear over time.'
-      },
-      {
-        question: 'What is Command Thrust on Mercury outboards?',
-        answer: 'Command Thrust is a Mercury gearcase designed for higher low-end torque, using a different gear ratio and four-blade high-thrust propeller. Best for pontoons, heavier boats, or trolling applications. Available on FourStroke models, not Pro XS.'
-      },
-      {
-        question: 'How long does a Mercury 115 or 150 last?',
-        answer: 'With proper maintenance, Mercury FourStroke and Pro XS motors commonly reach 2,000-3,000 hours. At 60-80 hours per year (typical Ontario use), that\'s 25-40 seasons.'
-      }
     ]
   },
   {
@@ -14931,7 +14701,7 @@ No. Tiller motors 20 HP and under are drop-in installs. Hang it on the transom, 
 
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 
 ---
 
@@ -16430,7 +16200,7 @@ Mercury's roadmap points toward more upgrades. Whether future upgrades stack wit
 ## Internal Links
 
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 
 ---
@@ -23933,7 +23703,7 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 
 ---
@@ -26422,7 +26192,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: "mercury-115-hp-fourstroke-review-ontario",
-    relatedSlugs: ['mercury-115-vs-150-hp-outboard-ontario', 'mercury-90-hp-fourstroke-review-ontario', 'fourstroke-vs-pro-xs'],
+    relatedSlugs: ['mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', 'mercury-90-hp-fourstroke-review-ontario', 'fourstroke-vs-pro-xs'],
     title: 'Mercury 115 HP FourStroke Review',
     seoTitle: 'Mercury 115 HP FourStroke Review (Ontario 2026)',
     description: 'Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense.',
@@ -33316,7 +33086,7 @@ The other observation: customers consistently under-spec horsepower when they ow
 - [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide)
 - [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-vs-standard-gearcase)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
@@ -33471,7 +33241,7 @@ The other observation: Pro XS V6 buyers consistently report they wish they'd gon
 - [Mercury FourStroke Buyer Guide](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
 - [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
-- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 - [Bass Boat Mercury Motor Buying Guide](/blog/bass-boat-mercury-motor-buying-guide)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
@@ -35312,9 +35082,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned si
 
 For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 (CAD, pre-HST). Build a quote at mercuryrepower.ca.
 
-*Last reviewed: 2026-06-02*
+*Last reviewed: 2026-07-02*
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
+
+> "Sales guy at a different dealer told me I needed 150 HP for my 19 ft Legend. Jay measured the transom, looked at the prop chart, and said 115 Command Thrust will do everything you want with better fuel economy. He was right. 38 mph loaded, sips fuel." Tom K., HBW customer, Lakefield 2026
 
 This page gives you the actual dividing lines. By hull type, by boat length, by use case. We base it on hundreds of repowers we've rigged on Rice Lake and the Kawarthas. It's not theoretical.
 
@@ -35487,7 +35259,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-02',
+    dateModified: '2026-07-02',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -35499,7 +35271,8 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "Will a 115 plane my 19ft aluminum V-hull with 4 people?", answer: "Yes, but it works hard. A 19ft V-hull with 4 adults and gear is right at the edge of the 115's comfortable envelope. It will plane but with longer time-to-plane and the motor running at higher cruise RPM. A 150 cruises easier on the same load. If you'll regularly run with 4+ people, the 150 is the smarter call." },
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
       { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
-      { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." }
+      { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." },
+      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower)." }
     ]
   },
   {

@@ -33,7 +33,7 @@ Bowmanville and Courtice are the closest Durham communities to Harris Boat Works
 
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Best Mercury outboards for pontoons](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats)
-- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [How to repower your boat, step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
 
 ## Related case studies

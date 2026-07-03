@@ -166,7 +166,7 @@ The other observation: customers consistently under-spec horsepower when they ow
 - [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide)
 - [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-vs-standard-gearcase)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)

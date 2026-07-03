@@ -131,7 +131,7 @@ Tell us the boat (make, length, what you do with it) and we'll tell you straight
 **Related guides:**
 - [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
 - [Best Mercury Outboard for a Pontoon](/blog/best-mercury-outboard-pontoon-boats)
-- [Mercury 115 vs 150 HP](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Best Mercury Dealer in Ontario: The HBW Difference](/blog/best-mercury-dealer-ontario-hbw-difference)
 
 ## Sources

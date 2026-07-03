@@ -32,7 +32,7 @@ For Ajax boaters, Harris Boat Works is the closest Mercury Premier Dealer with l
 ## Recommended links
 
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
-- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Best Mercury outboards for pontoons](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats)
 - [How to repower your boat, step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
 

@@ -38,7 +38,7 @@ export const mandarinBlogArticles: BlogArticle[] = [
 
 **距离合理。** 多伦多到莱斯湖大约 1 至 1.5 小时车程，401 高速直达。比北上 Muskoka 近，比南下 Lake Ontario 选择多。
 
-**价格透明。** 莱斯湖地区的冬储价格通常比 GTA 地区船坞便宜 30-40%。同样的船，同样的收缩膜质量，价格差能省下数百加元一个冬季。
+**价格透明。** HBW 的加元价格公开发布，您可以自行对比。详见 [Mercury 加元定价参考](/pricing-reference)。同样的船，同样的收缩膜质量，我们把报价和明细写清楚，您自己判断是否值得。
 
 **Mercury 服务一体化。** 大部分 GTA 华人船主的 Mercury 引擎都在 HBW 做服务。冬储时同时安排冬化保养，省去开春再来一趟的麻烦。
 
@@ -1528,7 +1528,7 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     category: 'HBW 中文介绍',
     readTime: '5 分钟',
     keywords: ['Harris Boat Works 中文', 'GTA 华人船主', 'Mercury Dealer Ontario 中文', 'Rice Lake marina 中文', 'MercuryRepower.ca 中文'],
-    content: `> **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury Premier 认证经销商。距离多伦多 1-1.5 小时车程,服务价格比 GTA 同类船坞便宜 30-40%,Mercury 维修和冬储一体化。团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件——我们会耐心沟通、尽力配合 (info@harrisboatworks.ca)。HBW 客户自送自取,不提供取送服务。
+    content: `> **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury Premier 认证经销商。距离多伦多 1-1.5 小时车程,加元价格公开发布、您可以自行对比 (详见 [Mercury 加元定价参考](/pricing-reference))，Mercury 维修和冬储一体化。团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件，我们会耐心沟通、尽力配合 (info@harrisboatworks.ca)。HBW 客户自送自取,不提供取送服务。
 
 ## 三代华人船主的选择
 
@@ -1540,7 +1540,7 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
 
 ## 2. 价格透明
 
-GTA 地区船坞的成本结构 (土地、人工、商业租金) 决定了他们必须收高价。莱斯湖地区船坞的同等服务通常便宜 30-40%。同样的船,同样的收缩膜质量,价格差能省下数百加元一个冬季。
+HBW 把加元价格公开发布，您可以自行对比同类船坞的报价。详见 [Mercury 加元定价参考](/pricing-reference)。同样的船,同样的收缩膜质量,我们把报价和明细写清楚,您自己判断是否值得。
 
 ## 3. Mercury Premier 认证
 

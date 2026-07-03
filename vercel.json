@@ -48,6 +48,16 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-115-vs-150-hp-outboard-ontario",
+      "destination": "/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-115-vs-150-hp-outboard-ontario.md",
+      "destination": "/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado",
       "destination": "/blog/fourstroke-vs-pro-xs",
       "statusCode": 301
