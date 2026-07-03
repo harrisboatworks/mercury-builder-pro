@@ -81,7 +81,7 @@ export const blogClusters: BlogCluster[] = [
     spokes: [
       "boat-motor-size-calculator-guide",
       "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026",
-      "mercury-115-vs-150-hp-outboard-ontario",
+      "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026",
       "mercury-75-vs-90-vs-115-comparison",
       "mercury-40-vs-60-hp-outboard-ontario",
       "mercury-9-9-vs-15-hp-tiller-ontario",
@@ -329,7 +329,7 @@ export const blogClusterContexts: Record<string, string> = {
   "how-to-choose-right-horsepower-boat": "matching HP to boat size and use",
   "boat-motor-size-calculator-guide": "sizing calculator walkthrough",
   "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026": "the 115 vs 150 decision, dealer take",
-  "mercury-115-vs-150-hp-outboard-ontario": "115 vs 150 in Ontario conditions",
+  "mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026": "115 vs 150 in Ontario conditions",
   "mercury-75-vs-90-vs-115-comparison": "mid-range Mercury head-to-head",
   "mercury-40-vs-60-hp-outboard-ontario": "40 vs 60 HP for Ontario boats",
   "mercury-9-9-vs-15-hp-tiller-ontario": "9.9 vs 15 HP tiller comparison",

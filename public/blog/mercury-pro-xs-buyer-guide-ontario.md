@@ -147,7 +147,7 @@ The other observation: Pro XS V6 buyers consistently report they wish they'd gon
 - [Mercury FourStroke Buyer Guide](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
 - [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
-- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 - [Bass Boat Mercury Motor Buying Guide](/blog/bass-boat-mercury-motor-buying-guide)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)

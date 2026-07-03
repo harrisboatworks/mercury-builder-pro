@@ -148,7 +148,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury Repower Guide: Cost, Timeline & When It's Worth It](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md)
 - [Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md)
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md)
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md)
 - [Mercury Outboard & Boat Repower Financing in Ontario (2026): Rates, Payments, and How It Actually Works](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md)
 - [What's the Cheapest Mercury Outboard in Canada in 2027? (Full Price Guide by HP)](https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md)
 - [Evinrude to Mercury Repower: The Ontario Guide (2026)](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md)

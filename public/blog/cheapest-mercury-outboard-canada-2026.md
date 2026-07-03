@@ -161,7 +161,7 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 ## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 
 ---
 

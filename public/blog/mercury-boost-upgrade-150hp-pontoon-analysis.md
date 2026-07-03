@@ -148,7 +148,7 @@ primaryHref: /pricing-reference
 
 ## Related reading
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 
 ---

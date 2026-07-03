@@ -6074,7 +6074,7 @@ Pro XS is the right call when:
 
 For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) for the full FourStroke vs Pro XS picture.
 
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the next step-up question
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the next step-up question
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
@@ -10898,7 +10898,7 @@ The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Pri
 
 Two related guides in the same cluster:
 - [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 
 ---
 
@@ -10927,7 +10927,7 @@ Motor, rigging (controls, harness, gauges), prop, and installation. We quote all
 ## Internal Links
 
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
 
 ---
@@ -12623,7 +12623,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
   {
     slug: 'mercury-boost-software-upgrade-eligibility-2026',
-    relatedSlugs: ['mercury-boost-upgrade-150hp-pontoon-analysis', 'mercury-115-vs-150-hp-outboard-ontario', 'mercury-115-hp-fourstroke-review-ontario'],
+    relatedSlugs: ['mercury-boost-upgrade-150hp-pontoon-analysis', 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', 'mercury-115-hp-fourstroke-review-ontario'],
     title: 'Mercury Boost Software Eligibility 2026',
     seoTitle: 'Is Your Mercury Eligible for the 2026 Boost Upgrade?',
     description: 'Mercury Boost is dealer-installed software offering up to 21% faster mid-range acceleration on select FourStroke, Pro XS, Verado engines.',
@@ -14701,7 +14701,7 @@ No. Tiller motors 20 HP and under are drop-in installs. Hang it on the transom, 
 
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 
 ---
 
@@ -16200,7 +16200,7 @@ Mercury's roadmap points toward more upgrades. Whether future upgrades stack wit
 ## Internal Links
 
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
 
 ---
@@ -23703,7 +23703,7 @@ You'll see real Mercury models, real configurations, and real pricing, no "call 
 The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 
 ---
@@ -26192,7 +26192,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: "mercury-115-hp-fourstroke-review-ontario",
-    relatedSlugs: ['mercury-115-vs-150-hp-outboard-ontario', 'mercury-90-hp-fourstroke-review-ontario', 'fourstroke-vs-pro-xs'],
+    relatedSlugs: ['mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', 'mercury-90-hp-fourstroke-review-ontario', 'fourstroke-vs-pro-xs'],
     title: 'Mercury 115 HP FourStroke Review',
     seoTitle: 'Mercury 115 HP FourStroke Review (Ontario 2026)',
     description: 'Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense.',
@@ -33086,7 +33086,7 @@ The other observation: customers consistently under-spec horsepower when they ow
 - [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide)
 - [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-vs-standard-gearcase)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
@@ -33241,7 +33241,7 @@ The other observation: Pro XS V6 buyers consistently report they wish they'd gon
 - [Mercury FourStroke Buyer Guide](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
 - [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
-- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 - [Bass Boat Mercury Motor Buying Guide](/blog/bass-boat-mercury-motor-buying-guide)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)

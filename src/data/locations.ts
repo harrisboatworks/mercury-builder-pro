@@ -56,7 +56,7 @@ const TRUST_FACTS = [
 
 const QUOTE_LINK: LocationLink = { label: 'Build a Mercury quote (CAD, itemized)', href: '/quote/motor-selection' };
 const REPOWER_LINK: LocationLink = { label: 'Mercury repower cost guide (Ontario, CAD)', href: '/blog/mercury-repower-cost-ontario-2026-cad' };
-const COMPARE_LINK: LocationLink = { label: 'Compare 115 vs 150 HP for Ontario boats', href: '/blog/mercury-115-vs-150-hp-outboard-ontario' };
+const COMPARE_LINK: LocationLink = { label: 'Compare 115 vs 150 HP for Ontario boats', href: '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026' };
 const PONTOON_LINK: LocationLink = { label: 'Best Mercury outboards for pontoons', href: '/blog/best-mercury-outboard-pontoon-boats' };
 const HOWTO_LINK: LocationLink = { label: 'How to repower your boat, step by step', href: '/how-to-repower-a-boat' };
 const PROXS_LINK: LocationLink = { label: 'Mercury Pro XS lineup', href: '/mercury-pro-xs' };

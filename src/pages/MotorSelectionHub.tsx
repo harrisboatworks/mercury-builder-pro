@@ -64,7 +64,7 @@ export default function MotorSelectionHub() {
           cards: [
             { title: 'How to Choose the Right Horsepower for Your Boat', description: 'HP sizing fundamentals by hull and use case.', to: '/blog/how-to-choose-right-horsepower-boat' },
             { title: 'Mercury 75 vs 90 vs 115 Comparison', description: 'Mid-range FourStroke head-to-head.', to: '/blog/mercury-75-vs-90-vs-115-comparison' },
-            { title: 'Mercury 115 vs 150 HP for Ontario Boats', description: 'When to step up to 150 HP.', to: '/blog/mercury-115-vs-150-hp-outboard-ontario' },
+            { title: 'Mercury 115 vs 150 HP for Ontario Boats', description: 'When to step up to 150 HP.', to: '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026' },
           ],
         },
         {

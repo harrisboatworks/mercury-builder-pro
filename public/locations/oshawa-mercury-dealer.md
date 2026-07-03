@@ -33,7 +33,7 @@ For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercur
 
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Mercury Pro XS lineup](https://www.mercuryrepower.ca/mercury-pro-xs)
-- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
+- [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [How to repower your boat, step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
 
 ## Related case studies

@@ -46,7 +46,7 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
       deny.add('mercury-boost-upgrade-150hp-pontoon-analysis');
       deny.add('center-console-mercury-motor-guide');
       deny.add('best-mercury-outboard-lake-ontario-salmon-trout');
-      deny.add('mercury-115-vs-150-hp-outboard-ontario');
+      deny.add('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
     }
     if (isKickerClass) {
       deny.add('mercury-repower-cost-ontario-2026-cad');
@@ -84,13 +84,13 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
         out.push('best-mercury-outboard-pontoon-boats');
       } else if (hp >= 90 && hp <= 115) {
         out.push('best-mercury-outboard-pontoon-boats');
-        out.push('mercury-115-vs-150-hp-outboard-ontario');
+        out.push('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
       } else if (hp >= 115 && hp <= 150) {
-        out.push('mercury-115-vs-150-hp-outboard-ontario');
+        out.push('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
         out.push('best-mercury-outboard-pontoon-boats');
       } else if (hp >= 150 && hp <= 200) {
         out.push('mercury-150-300hp-pro-xs-performance-guide');
-        out.push('mercury-115-vs-150-hp-outboard-ontario');
+        out.push('mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026');
       } else if (hp >= 200 && hp <= 300) {
         out.push('mercury-150-300hp-pro-xs-performance-guide');
         out.push('center-console-mercury-motor-guide');
