@@ -176,10 +176,10 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Build a Mercury Outboard Quote - 2.5 to 600 HP | HBW</title>
+      <title>Mercury Outboard Quote Online: Live CAD Pricing | Harris Boat Works Ontario</title>
       <meta
         name="description"
-        content={`Browse Mercury boats and outboards in Canada: FourStroke, Pro XS, SeaPro, ProKicker from $${minPrice.toLocaleString()} to $${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing, Harris Boat Works, Mercury dealer since 1965.`}
+        content="Get a Mercury outboard quote online with live CAD pricing. No obligation. You bring your boat to our Gores Landing marina and we handle the install."
       />
       <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
 

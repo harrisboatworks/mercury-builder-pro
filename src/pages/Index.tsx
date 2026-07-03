@@ -259,6 +259,9 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
+                <p className="text-repower-cream/85 text-sm md:text-base leading-relaxed mb-3 max-w-[65ch]">
+                  Get an <Link to="/quote/motor-selection" className="underline hover:text-repower-gold">online Mercury outboard quote</Link> for your boat. We provide live CAD pricing on motors and installation at our Gores Landing marina. No obligation.
+                </p>
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   <RepowerCta to="/quote/motor-selection" variant="primary" size="md">
                     Build a Mercury outboard quote <ChevronRight className="h-4 w-4" />

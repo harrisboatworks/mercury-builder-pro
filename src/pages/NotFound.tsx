@@ -6,7 +6,7 @@ import { Helmet } from "@/lib/helmet";
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    gtag?: (command: 'event', eventName: string, params?: Record<string, any>) => void;
   }
 }
 
