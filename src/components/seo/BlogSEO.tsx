@@ -18,14 +18,14 @@ export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
-  // Head <title> uses the article's `title` field (kept in sync with the H1).
-  // Append " | Harris Boat Works" only if the combined length stays ≤65 chars;
-  // otherwise use the bare title so search results don't get truncated. This
-  // intentionally ignores the legacy `seoTitle` field, which drifted out of
-  // sync with the shorter, updated `title` values.
+  // Head <title> prefers the article's explicit `seoTitle` when provided (so the
+  // <title> tag can be tuned independently of the on-page H1). Otherwise it
+  // falls back to `article.title` and appends " | Harris Boat Works" only when
+  // the combined length stays <=65 chars, to avoid SERP truncation.
   const BRAND_SUFFIX = ' | Harris Boat Works';
-  const renderedTitle =
-    (article.title + BRAND_SUFFIX).length <= 65
+  const renderedTitle = article.seoTitle
+    ? article.seoTitle
+    : (article.title + BRAND_SUFFIX).length <= 65
       ? article.title + BRAND_SUFFIX
       : article.title;
 

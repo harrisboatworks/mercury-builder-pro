@@ -4053,8 +4053,8 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
-    title: 'Boat Repowering Guide: When to Replace Your Motor (2026)',
-    seoTitle: "Boat Repower Guide: When to Replace, Ontario Costs | HBW",
+    title: 'When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.',
+    seoTitle: "When to Replace Your Boat Motor: Repowering Guide | Harris Boat Works",
     description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
@@ -4068,7 +4068,7 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
 
 > **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
 
-The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection). If you are wondering when it is time to replace your motor, read our guide first and then get a [boat repower in Ontario](/repower) from the team at Harris Boat Works.
 
 ## Repower now, wait, or hold? at a glance
 
@@ -6727,7 +6727,7 @@ There is a moment every boat owner on these lakes eventually meets. The motor th
 
 The math usually frames itself as one question: new boat, or new motor? That is the wrong question, or at least an incomplete one. The real question is whether the hull under you is still good. If it is, you do not need a new boat. You need a repower.
 
-Harris Boat Works has been rigging and repowering boats on the south shore of Rice Lake for three generations. This guide walks through the whole thing: how to tell if your hull is worth it, how to pick the right Mercury, what the install actually involves, and how we handle it. If you would rather skip to a number, build a live quote at **mercuryrepower.ca**.
+Harris Boat Works has been rigging and repowering boats on the south shore of Rice Lake for three generations. This guide walks through the whole thing: how to tell if your hull is worth it, how to pick the right Mercury, what the install actually involves, and how we handle it. If you would rather skip to a number, build a live quote at **mercuryrepower.ca**. For a broader overview across the province, our Kawarthas guide covers the local process, and you can check current [boat engine repower cost](/repower) and options on our main repower page.
 
 ---
 
