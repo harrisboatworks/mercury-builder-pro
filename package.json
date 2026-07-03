@@ -12,6 +12,7 @@
     "rewrite:agent-urls": "node scripts/rewrite-agent-urls.mjs",
     "check:blog-assets": "node scripts/check-blog-asset-existence.mjs",
     "check:blog-articles": "tsx scripts/validate-blog-articles.ts",
+    "growth:check": "node scripts/growth-agent-live-check.mjs",
     "check:blog-timeline-facts": "node scripts/check-blog-timeline-facts.mjs",
     "check:pricing-reference-copy": "node scripts/check-pricing-reference-copy.mjs",
     "check:pricing-drift": "node scripts/check-blog-pricing-drift.mjs",

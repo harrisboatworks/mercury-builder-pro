@@ -661,7 +661,7 @@ const BLOG_TWIN_SLUGS = [
   'mercury-repower-cost-ontario-2026-cad',
   'mercury-vs-yamaha-outboards-ontario',
   'mercury-vs-yamaha-vs-honda-reliability-2026',
-  'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
   'mercury-outboard-financing-ontario-2026',
   'cheapest-mercury-outboard-canada-2026',
   'evinrude-to-mercury-repower-ontario-guide',
@@ -1130,4 +1130,3 @@ if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || lo
 }
 
 console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${blogTwinSummaries.length} blog guides, 1 catalog, 1 pricing-reference`);
-

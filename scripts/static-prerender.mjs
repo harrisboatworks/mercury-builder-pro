@@ -2720,7 +2720,7 @@ const BLOG_TABLE_FALLBACKS = {
     '<tr><th scope="row">9.9EH FourStroke</th><td>9.9</td><td>$3,690</td><td>$3,399</td></tr>' +
     '<tr><th scope="row">9.9ELH FourStroke</th><td>9.9</td><td>$4,435</td><td>$3,399</td></tr>' +
     '</tbody></table>',
-  'mercury-115-vs-150-hp-outboard-ontario':
+  'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026':
     '<table><caption>Mercury 115 HP vs 150 HP FourStroke: Side-by-Side Comparison</caption>' +
     '<thead><tr><th scope="col">Spec</th><th scope="col">Mercury 115 HP FourStroke</th><th scope="col">Mercury 150 HP FourStroke</th></tr></thead>' +
     '<tbody>' +
@@ -2782,7 +2782,7 @@ function renderAuthorBylineHtml(authorName) {
 // ============================================================
 const FR_TO_EN_SLUG = {
   'prix-remotorisation-mercury-ontario': 'mercury-repower-cost-ontario-2026-cad',
-  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-115-vs-150-hp-comparaison': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
   'hivernisation-moteur-mercury-ontario': 'diy-mercury-outboard-winterization-guide',
   'remotorisation-vs-bateau-neuf': 'boat-repowering-guide-when-to-replace-motor',
   'mercury-hors-bord-ne-demarre-pas-depannage': 'mercury-outboard-wont-start-troubleshooting',
@@ -2801,7 +2801,7 @@ const FR_TO_EN_SLUG = {
   'poids-moteur-hors-bord-mercury': 'mercury-outboard-weight-chart',
 };
 const ZH_TO_EN_SLUG = {
-  'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
   // Retired slugs (per vercel.json 301s) remapped to canonical zh targets:
   'gta-chinese-rice-lake-winter-storage-complete-guide': 'diy-mercury-outboard-winterization-guide',
   'mercury-repower-guide-gta': 'repower-vs-new-boat',
@@ -3743,7 +3743,7 @@ const HUB_DEFS = [
       { heading: 'HP class selection', cards: [
         { title: 'How to Choose the Right Horsepower for Your Boat', to: '/blog/how-to-choose-right-horsepower-boat' },
         { title: 'Mercury 75 vs 90 vs 115 Comparison', to: '/blog/mercury-75-vs-90-vs-115-comparison' },
-        { title: 'Mercury 115 vs 150 HP for Ontario Boats', to: '/blog/mercury-115-vs-150-hp-outboard-ontario' },
+        { title: 'Mercury 115 vs 150 HP for Ontario Boats', to: '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026' },
       ]},
       { heading: 'Motor family selection', cards: [
         { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
@@ -5740,7 +5740,7 @@ const CATALOG_BLOG_TWIN_SLUGS = [
   'mercury-repower-cost-ontario-2026-cad',
   'mercury-vs-yamaha-outboards-ontario',
   'mercury-vs-yamaha-vs-honda-reliability-2026',
-  'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
   'mercury-outboard-financing-ontario-2026',
   'cheapest-mercury-outboard-canada-2026',
   'evinrude-to-mercury-repower-ontario-guide',
@@ -5979,7 +5979,7 @@ const tableRoutes = [
   '/repower', '/mercury-outboards-ontario', '/mercury-pontoon-outboards',
   '/blog/mercury-repower-cost-ontario-2026-cad',
   '/blog/cheapest-mercury-outboard-canada-2026',
-  '/blog/mercury-115-vs-150-hp-outboard-ontario',
+  '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
 ];
 for (const r of tableRoutes) {
   const p = join(DIST, r.replace(/^\//, ''), 'index.html');
