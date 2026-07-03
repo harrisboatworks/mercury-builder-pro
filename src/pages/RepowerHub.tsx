@@ -93,18 +93,26 @@ export default function RepowerHub() {
   return (
     <HubPage
       path="/repower"
-      metaTitle="Mercury Repower Ontario: Cost, Process & Live Quote 2027 | HBW"
+      metaTitle="Boat Repower in Ontario | Mercury Outboard Repowering | Harris Boat Works"
       metaDescription="Mercury repower in Ontario: real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       breadcrumbName="Boat Repower Guide"
       lastReviewedISO="2026-06-12"
       lastReviewedLabel="June 2026"
-      h1="Mercury Repower Ontario: Cost, Process and Live Quote for 2027"
+      h1="Boat Repower in Ontario. Mercury Outboard Repowering by Harris Boat Works."
       subhead="Real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       primaryCTA={{ label: 'Build Your Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
 
       directAnswer={
         <>
+          <p className="mb-4">
+            If you are looking for a boat repower in Ontario, you have come to
+            the right place. Harris Boat Works has been a Mercury Premier
+            Dealer since 1965, family-owned since 1947. We handle every boat
+            engine repower from start to finish, right here at our marina on
+            Rice Lake. Bring your boat to Gores Landing and we will get you
+            back on the water with a new Mercury outboard.
+          </p>
           A boat repower means replacing your existing outboard with a new
           Mercury on your current boat. For most Ontario freshwater customers
           in 2027, a full boat engine repower lands between $11,000 and
