@@ -342,6 +342,7 @@ const aiAccessChecks = await Promise.all(
     AI_ACCESS_USER_AGENTS.map((userAgent) => fetchAiAccessCheck(path, userAgent)),
   ),
 );
+const aiTxtContentAssertion = await fetchAiTxtContentAssertion(SITE_URL);
 const sitemap = results.find((result) => result.path === "/sitemap.xml");
 let sitemapUrls = null;
 if (sitemap?.status === 200) {
