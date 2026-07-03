@@ -281,6 +281,57 @@ async function fetchAiAccessCheck(path, userAgent) {
   }
 }
 
+async function fetchAiTxtContentAssertion(siteUrl) {
+  const started = Date.now();
+  const aiTxtUrl = new URL("/.well-known/ai.txt", siteUrl).toString();
+  const forbiddenPatterns = [
+    { pattern: /supabase/i, label: "supabase" },
+    { pattern: /platinum/i, label: "Platinum" },
+  ];
+  try {
+    const response = await fetch(`${aiTxtUrl}?growth-check=${Date.now()}`, {
+      redirect: "follow",
+      headers: { "User-Agent": "MercuryRepower-GrowthAgentLiveCheck/1.0" },
+    });
+    const text = await response.text();
+    if (!response.ok) {
+      return {
+        url: aiTxtUrl,
+        ok: false,
+        required: true,
+        reachable: false,
+        status: response.status,
+        elapsedMs: Date.now() - started,
+        failures: [`ai.txt returned ${response.status}`],
+      };
+    }
+    const failures = forbiddenPatterns
+      .filter(({ pattern }) => pattern.test(text))
+      .map(({ label }) => `ai.txt contains forbidden token "${label}"`);
+    return {
+      url: response.url,
+      ok: failures.length === 0,
+      required: true,
+      reachable: true,
+      status: response.status,
+      elapsedMs: Date.now() - started,
+      bytes: text.length,
+      failures,
+    };
+  } catch (error) {
+    return {
+      url: aiTxtUrl,
+      ok: false,
+      required: true,
+      reachable: false,
+      status: 0,
+      elapsedMs: Date.now() - started,
+      failures: [error.message],
+      error: error.message,
+    };
+  }
+}
+
 const results = await Promise.all(CHECKS.map(fetchCheck));
 const robotsAssertions = await Promise.all([
   fetchRobotsAssertion(SITE_URL, true),
