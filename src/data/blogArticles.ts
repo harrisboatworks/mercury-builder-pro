@@ -20420,6 +20420,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 What makes HBW different in Ontario: transparent installed pricing online, family-owned since 1947 and a Mercury dealer since 1965, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
 
+## Areas we serve
+
+Ontario boaters drive to Gores Landing from across the province. The closest catchments are the GTA and Durham, the Kawarthas, and Northumberland County. If you are pricing a repower or a new Mercury, start with the dealer page for your area: [Peterborough](/blog/mercury-dealer-peterborough-ontario-hbw), [Oshawa](/blog/mercury-dealer-oshawa-ontario-hbw), [Whitby](/blog/mercury-dealer-whitby-ontario-hbw), [Pickering](/blog/mercury-dealer-pickering-ontario-hbw), or [Cobourg](/blog/mercury-dealer-cobourg-ontario-hbw). For a broader GTA and Durham pickup overview, see our [Durham and GTA Mercury pickup page](/locations/durham-gta-mercury-pickup). Honest drive-time framing, not fabricated claims. You bring the boat to us at Gores Landing.
+
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)
 
 *Last reviewed: 2026-06-07*
