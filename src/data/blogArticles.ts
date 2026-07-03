@@ -6834,6 +6834,8 @@ Before we order anything, we look at the boat. Every HBW repower starts with a h
 
 Then we build a line-item quote. Motor, rigging, prop, labour, HST, all visible before you decide. No "call for pricing," no estimate that quietly grows by pickup. If something changes mid-job, a surprise behind the dash or a fuel line that needs replacing, we call before we proceed. You can build the starting quote yourself at mercuryrepower.ca in a few minutes. The walk-around adds the hull-specific items on top.
 
+> **Ready to see real numbers for your boat?** [Build your repower quote](/quote/motor-selection) with live Canadian pricing in about two minutes, then a person at HBW reviews it before you hear back. Pickup only at Gores Landing.
+
 ---
 
 ## Step 5: Ordering and Lead Times
@@ -6955,14 +6957,20 @@ October through March. Off-season ordering gets you the best motor availability 
 
 ## Ready to Repower?
 
-Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to build a quote.
+Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to [build a quote](/quote/motor-selection).
 
 Or call **905-342-2153**. We will start with the hull walk-around, work through the right motor for how you actually boat, and give you a line-item quote before anything is ordered.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurator:** [Build Your Quote](/quote/motor-selection)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+### Keep reading
+
+- [HBW Boat Repower Guide](/repower): the full cluster on cost, process, and brand conversions
+- [Mercury Price List (CAD)](/pricing-reference): every model we sell, motor-only pricing
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad): line-item cost breakdown by HP class
 
 ---
 

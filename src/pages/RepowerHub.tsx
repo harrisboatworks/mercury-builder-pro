@@ -299,6 +299,14 @@ export default function RepowerHub() {
           </ul>
           <p>What's not in the price: trailer work, hull repair, gel-coat or aluminum patching at the transom, fuel tank replacement if your old tank is shot. We will flag any of that during the inspection and quote it separately, never bake it into the motor price as a surprise.</p>
 
+          <BlogInlineCTA
+            variant="inline"
+            heading="Ready to see real numbers for your boat?"
+            body="Build your repower quote in about two minutes with live Canadian pricing. A person here reviews it before you hear back."
+            primaryLabel="Build My Repower Quote"
+            primaryHref="/quote/motor-selection"
+          />
+
           <h3>How long does a Mercury repower take?</h3>
           <p>Most repowers take 3 to 8 weeks from deposit to pickup. The variable is Mercury's lead time, not our bench. FourStrokes ship out of the factory in 2 to 4 weeks. Pro XS runs 3 to 6 weeks. Verado is the slow lane at 6 to 12 weeks because it's special-order.</p>
           <p>Once the motor lands at Gores Landing, the rigging and water test sit on the bench for roughly 3 to 5 working days. We'll call you the morning the water test passes and set a pickup time.</p>
