@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Boat Repowering Guide: When to Replace Your Motor (2026)"
+title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners."
 description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Boat Repowering Guide: When to Replace Your Motor (2026)
+# When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.
 
 > When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.
 
