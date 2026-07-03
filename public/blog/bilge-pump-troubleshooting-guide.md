@@ -233,7 +233,8 @@ You don't need to pull the boat to check this. From the dock, in order:
 
 - **Assuming a silent pump means a dead pump.** Almost always the switch or a connector. Test the manual override first.
 - **Running the pump dry to "test" it.** This can damage the impeller and motor in seconds. Test with the float arm, never a dry cycle.
-- **Cleaning a corroded connector instead of replacing it.** Corrosion inside a crimped connector doesn't fully clean out. It comes back faster the second time.
+  - **Cleaning a corroded connector instead of replacing it.** Corrosion inside a crimped connector doesn't fully clean out. It comes back faster the second time.
+  - **Using wire nuts instead of proper marine connectors.** Wire nuts aren't rated for a wet, vibrating environment. They back out and corrode fast. Every splice in a bilge circuit should be a heat-shrink butt connector or a soldered joint with heat-shrink over it, never a twist-on wire nut.
 - **Relying only on auto and never testing manual.** If you've never tested manual mode, you won't know the system is broken until the day you actually need it.
 - **Leaving the boat in the water all season with a loose-fitting cover.** Rain pooling under a loose cover cycles the bilge pump repeatedly and drains the battery.
 - **Routing wiring low in the bilge.** Every bilge connection should sit as high above the normal water level as practical, to cut down on corrosion exposure.
