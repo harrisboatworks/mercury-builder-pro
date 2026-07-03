@@ -4053,8 +4053,8 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
-    title: 'Boat Repowering Guide: When to Replace Your Motor (2026)',
-    seoTitle: "Boat Repower Guide: When to Replace, Ontario Costs | HBW",
+    title: 'When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.',
+    seoTitle: "When to Replace Your Boat Motor: Repowering Guide | Harris Boat Works",
     description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
