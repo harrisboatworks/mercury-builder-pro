@@ -37059,6 +37059,8 @@ That's the legal floor, not a target. On Rice Lake, where boats sit in the water
 
 Most small to mid-size boats use three components working together.
 
+![How a boat bilge pump system works: battery, fuse, helm switch, float switch, and pump](/lovable-uploads/bilge-pump-system-diagram.png)
+
 ### 1. The Pump
 
 An electric centrifugal submersible pump, the most common type by far, sits at the lowest point of the hull. When power is applied, an internal motor spins an impeller at high speed. The spinning impeller flings water outward and out the discharge port, and as water leaves, it draws more in through the intake. That cycle keeps running as long as power is supplied and water is present.
@@ -37140,6 +37142,9 @@ Bilge pumps are rated in gallons per hour (GPH) at the pump itself, not accounti
 
 A practical sizing guide for Ontario recreational boats:
 
+![Bilge pump sizing chart by boat length in GPH](/lovable-uploads/bilge-pump-sizing-chart.png)
+
+
 | Boat length | Recommended capacity | Typical setup |
 |---|---|---|
 | Under 16 ft | 500-800 GPH | 1 pump |
@@ -37185,6 +37190,8 @@ You don't need to pull the boat to check this. From the dock, in order:
 ---
 
 ## Step-by-Step Troubleshooting Flowchart
+
+![Bilge pump troubleshooting flowchart: manual override test, float switch test, and next steps](/lovable-uploads/bilge-pump-troubleshooting-flowchart.png)
 
 **Pump won't run at all, manual or auto:**
 1. Check the fuse or breaker. Blown? Replace it.
