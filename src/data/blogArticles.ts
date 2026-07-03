@@ -34802,9 +34802,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     relatedSlugs: ["mercury-boost-software-upgrade-eligibility-2026", "mercury-pro-xs-buyer-guide-ontario", "mercury-150-300hp-pro-xs-performance-guide", "mercury-outboard-monthly-payment-ontario-2026", "mercury-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     content: `> **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. It improves mid-range acceleration by 5 to 21 percent depending on motor and hull, without changing peak rated horsepower. Realistic Canadian retail is roughly $300 to $500 CAD, plus install. Eligibility is limited to specific 175 to 300 HP FourStroke, Pro XS, and Verado serial ranges.
 
-
-See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
-
 # Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
 **Published:** 2026-05-28 | **Updated:** 2026-05-29 (factual corrections)
