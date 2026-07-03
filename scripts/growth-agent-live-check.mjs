@@ -281,6 +281,57 @@ async function fetchAiAccessCheck(path, userAgent) {
   }
 }
 
+async function fetchAiTxtContentAssertion(siteUrl) {
+  const started = Date.now();
+  const aiTxtUrl = new URL("/.well-known/ai.txt", siteUrl).toString();
+  const forbiddenPatterns = [
+    { pattern: /supabase/i, label: "supabase" },
+    { pattern: /platinum/i, label: "Platinum" },
+  ];
+  try {
+    const response = await fetch(`${aiTxtUrl}?growth-check=${Date.now()}`, {
+      redirect: "follow",
+      headers: { "User-Agent": "MercuryRepower-GrowthAgentLiveCheck/1.0" },
+    });
+    const text = await response.text();
+    if (!response.ok) {
+      return {
+        url: aiTxtUrl,
+        ok: false,
+        required: true,
+        reachable: false,
+        status: response.status,
+        elapsedMs: Date.now() - started,
+        failures: [`ai.txt returned ${response.status}`],
+      };
+    }
+    const failures = forbiddenPatterns
+      .filter(({ pattern }) => pattern.test(text))
+      .map(({ label }) => `ai.txt contains forbidden token "${label}"`);
+    return {
+      url: response.url,
+      ok: failures.length === 0,
+      required: true,
+      reachable: true,
+      status: response.status,
+      elapsedMs: Date.now() - started,
+      bytes: text.length,
+      failures,
+    };
+  } catch (error) {
+    return {
+      url: aiTxtUrl,
+      ok: false,
+      required: true,
+      reachable: false,
+      status: 0,
+      elapsedMs: Date.now() - started,
+      failures: [error.message],
+      error: error.message,
+    };
+  }
+}
+
 const results = await Promise.all(CHECKS.map(fetchCheck));
 const robotsAssertions = await Promise.all([
   fetchRobotsAssertion(SITE_URL, true),
@@ -291,6 +342,7 @@ const aiAccessChecks = await Promise.all(
     AI_ACCESS_USER_AGENTS.map((userAgent) => fetchAiAccessCheck(path, userAgent)),
   ),
 );
+const aiTxtContentAssertion = await fetchAiTxtContentAssertion(SITE_URL);
 const sitemap = results.find((result) => result.path === "/sitemap.xml");
 let sitemapUrls = null;
 if (sitemap?.status === 200) {
@@ -307,17 +359,23 @@ const hardFailures = results.filter((result) => {
 const robotsFailures = robotsAssertions.filter((result) => result.required && result.reachable && !result.ok);
 const externalRobotsWarnings = robotsAssertions.filter((result) => !result.required && result.reachable && !result.ok);
 const aiAccessFailures = aiAccessChecks.filter((result) => !result.ok);
+const aiTxtContentFailures = aiTxtContentAssertion.ok ? [] : [aiTxtContentAssertion];
 
 const output = {
   site: SITE_URL,
   checkedAt: new Date().toISOString(),
   sitemapUrls,
-  ok: hardFailures.length === 0 && robotsFailures.length === 0 && aiAccessFailures.length === 0,
-  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures],
+  ok:
+    hardFailures.length === 0 &&
+    robotsFailures.length === 0 &&
+    aiAccessFailures.length === 0 &&
+    aiTxtContentFailures.length === 0,
+  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures, ...aiTxtContentFailures],
   results,
   robotsAssertions,
   externalRobotsWarnings,
   aiAccessChecks,
+  aiTxtContentAssertion,
   searchFocus: [
     "Mercury outboard prices Ontario",
     "Mercury repower cost Ontario",
