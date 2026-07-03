@@ -108,13 +108,6 @@ The single biggest mistake we see is owners stretching too hard on a two-tube po
 
 The Command Thrust upgrade pays for itself in customer satisfaction. We have never had a pontoon customer regret choosing CT. We have had multiple wish they'd added it the first time.
 
-## Related guides
-
-- [Best Mercury for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats): For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The.
-- [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats): Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load.
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
-- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use): For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90.
-
 ## Ready to repower your pontoon?
 
 Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'll match you with the right motor for your pontoon. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947. The same techs who write your quote are the ones who rig and water-test the motor on Rice Lake.
@@ -124,14 +117,6 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 
 ---
-
-**Related guides:**
-
-- [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-vs-standard-gearcase)
-- [Command Thrust on Pontoons (deep dive)](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Mercury Boost 150 HP Pontoon Analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis)
-- [Best Pontoon Boats for Rice Lake & Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use)
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 
 ## FAQs
 
@@ -158,6 +143,14 @@ On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets 
 ### Can a Mercury Avator electric work on a pontoon?
 
 The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 

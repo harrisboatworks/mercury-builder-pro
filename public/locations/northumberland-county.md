@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/northumberland-county
-last_updated: 2026-06-30
+last_updated: 2026-07-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -59,7 +59,7 @@ Most Northumberland repowers are for Rice Lake boats: FourStroke 60–115 HP for
 
 ### Can Northumberland County customers finance a repower?
 
-Yes. Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote.
+Yes. Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).
 
 ## Notes
 

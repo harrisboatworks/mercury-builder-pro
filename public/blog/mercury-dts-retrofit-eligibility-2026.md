@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)"
-description: "Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and the..."
+title: "Mercury DTS Retrofit Eligibility 2026"
+description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
 date_modified: 2026-05-28
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)
+# Mercury DTS Retrofit Eligibility 2026
 
-> Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and the...
+> Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower.
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
@@ -210,13 +210,6 @@ A few Ontario-specific notes that make DTS hit different here.
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
 
-## Related guides
-
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
-- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026): Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop.
-- [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026): Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro.
-- [Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)](/blog/mercury-boost-cost-canada-2026): What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb.
-
 ## FAQs
 
 ### Does my motor already have DTS without me knowing?
@@ -250,6 +243,14 @@ Email the motor serial number from your cowl plate to info@harrisboatworks.ca. W
 ### Are current Verado motors supercharged like older Verados?
 
 No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercharged. The old inline-6 Verado was supercharged, but Mercury moved away from that architecture years ago. Current Verados come standard with DTS at all HP classes in the family.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

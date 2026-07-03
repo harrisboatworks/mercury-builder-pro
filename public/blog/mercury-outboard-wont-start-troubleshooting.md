@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
-description: "Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
+description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)
 
-> Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW.
+> Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW.
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
@@ -27,11 +27,15 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
-> **Quick answer:** Most Mercury no-start calls in Ontario come down to one of three families: battery and power (weak battery, switch off, bad ground), fuel system (stale or phase-separated gas, clogged 10-micron filter, VST issues), or ignition (fouled plugs after winter storage). Before calling, check the kill switch is fully snapped on, the shifter is truly in neutral, and the battery switch is in the right position. If those three are clean and the motor still cranks but won't fire, you're into fuel or ignition. Call HBW at 905-342-2153.
+## Quick answer
+
+Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Call HBW at 905-342-2153.
+
+![Mercury outboard won't start — dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
-This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop.
+This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop. calls in Ontario come down to one of three families: battery and power (weak battery, switch off, bad ground), fuel system (stale or phase-separated gas, clogged 10-micron filter, VST issues), or ignition (fouled plugs after winter storage).
 
 ## The three "stupid easy" things to check first
 
@@ -118,7 +122,7 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
+HBW has the largest Mercury parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
 ## Common mistakes (the things we push back on)
 
@@ -151,7 +155,7 @@ HBW has the largest Mercury and Mercruiser parts inventory in Ontario. Most no-s
 **Email:** info@harrisboatworks.ca  
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
 
 ## Sources
 
@@ -161,19 +165,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - HBW shop-floor data: 2026 spring service-ticket distribution
 
 ---
-
-**Related guides:**
-- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-
-## Related guides
-
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier.
-- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency.
-- [Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)](/blog/outboard-overheating-emergency-guide): A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60.
-- [Mercury Outboard Won't Start After Sitting? Here's the Ontario Boater's Checklist](/blog/mercury-outboard-wont-start-after-sitting): Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent.
 
 ## FAQs
 
@@ -204,6 +195,14 @@ On Mercury EFI 75-115 HP, most cranks-but-won't-fire tickets come back with clea
 ### What is the most common reason a Mercury outboard won't start?
 
 Fuel. In our own service records (537 no-start and rough-running jobs since 2013), about half traced to fuel problems: stale or phase-separated gas, water in the tank, or a clogged filter. Electrical causes (battery, grounds, connections) were close behind at just under half, with fouled spark plugs involved in about a quarter. Start with fuel and power before suspecting anything expensive.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

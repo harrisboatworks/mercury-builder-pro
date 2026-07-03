@@ -27,13 +27,15 @@ content_type: blog_article
 **Read time:** 14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide
 
-> **Quick answer:** Evinrude stopped building outboards in 2020, and six years on, parts and service support keep thinning. For most Evinrude owners with a sound hull they plan to keep, switching to Mercury is the right move. The conversion costs a one-time rigging premium because the whole control system swaps, but you pay it once. Build a quote at mercuryrepower.ca.
+## Quick answer
+
+Evinrude stopped building outboards in 2020, and six years on, parts and service support keep thinning. For most Evinrude owners with a sound hull they plan to keep, switching to Mercury is the right move. The conversion costs a one-time rigging premium because the whole control system swaps, but you pay it once. Build a quote at mercuryrepower.ca.
 
 Evinrude stopped making outboards in May 2020. It has been six years. Parts are getting harder to find, the technicians who know these motors are aging out, and resale value is sliding. The Evinrude owners who switched in 2022 and 2023 got ahead of the problem. The owners switching now are still making the right call. They are just doing it a little later.
 
 This guide gives you the honest math: why the switch matters now, what the conversion actually involves, and, just as important, when you should not switch yet. Harris Boat Works does Evinrude-to-Mercury conversions every month, and some of our best conversations are the ones where we talk someone out of a repower they do not need this year.
 
-If you are already decided, build a quote at **mercuryrepower.ca**, configured for your hull in a few minutes.
+If you are already decided, build a quote at **mercuryrepower.ca**, configured for your hull in a few minutes. Still weighing options? Start with our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) first.
 
 ---
 
@@ -155,13 +157,6 @@ The boat does not leave until it passes the sea-trial. That is how a marina that
 
 ---
 
-## Related guides
-
-- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower): Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD.
-- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-- [The HBW On-Water Load Test (Why Every Mercury Repower Gets Real-Water Verification Before Delivery, 2026)](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from.
-- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Premier dealer. Honest framework on when the swap is worth.
-
 ## Ready to Switch?
 
 Build a live quote at **mercuryrepower.ca**: motor, rigging, install, an all-in Canadian number before you ever talk to us.
@@ -189,13 +184,6 @@ Or call **905-342-2153**. We do Evinrude-to-Mercury conversions every month, and
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ---
-
-**Related guides:**
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
-- [Boat Hull Replacement vs Repower: The Honest Decision](/blog/boat-hull-replacement-vs-repower-decision)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
-- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026)
 
 ## FAQs
 
@@ -238,6 +226,14 @@ The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanica
 ### Are Evinrude and Johnson outboards still made?
 
 No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been manufactured under that name since the early 2000s. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and Mercruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 

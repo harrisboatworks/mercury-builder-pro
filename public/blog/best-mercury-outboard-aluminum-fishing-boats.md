@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)"
+title: "Best Mercury for Aluminum Boats 2026"
 description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide."
 category: "Buying Guide"
 date_published: 2026-01-12
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)
+# Best Mercury for Aluminum Boats 2026
 
 > The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide.
 
@@ -198,6 +198,14 @@ Switching from an older two-stroke to a current Mercury FourStroke EFI is immedi
 ### What's the best Mercury outboard for a Lund 1675 in Ontario?
 
 The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For primarily calm inland lake fishing, the Mercury 60HP Command Thrust is a strong alternative, slightly less top-end but better for shallow bays and weed fishing. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
+
+## Related guides
+
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake"
+title: "Mercury Dealer Peterborough HBW"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28."
 category: "Dealer Locations"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake
+# Mercury Dealer Peterborough HBW
 
 > Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
@@ -29,7 +29,11 @@ content_type: blog_article
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough via Highway 28 South to County Road 9, then County Road 18 into Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote at the kitchen table before you make the drive. Full details on our [Peterborough location page](/locations/peterborough-mercury-dealer). Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 35 minutes south of Peterborough via Highway 28. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
+
+See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+
+![Why Peterborough boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
 ## The short answer for Peterborough boaters
 
@@ -109,12 +113,7 @@ If you have a specific service issue, submit a request at hbw.wiki/service. That
 
 For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
 
-## Related guides
-
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18.
-- [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
+**Start from home:** build your itemized Mercury quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), then pick up at Gores Landing.
 
 ## FAQs
 
@@ -129,6 +128,14 @@ About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 
 ### Is Harris Boat Works a Mercury Premier dealer?
 
 Yes. Harris Boat Works holds Mercury's Premier dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947.
+
+## Related guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
 
 ## Next steps
 

@@ -97,13 +97,6 @@ Scope. The 7.5e is small, and it cannot be wished into something bigger. It will
 
 Every happy Avator owner we have rigged bought it for the right reason. They wanted a silent kicker, or a clean little motor for a tender, and that is exactly what they got. The disappointed electric-outboard stories we hear, almost always a motor bought somewhere else, are the same story every time: someone asked a small electric to do a big gas motor's day. Match it to the task and the Avator is quiet, simple, and close to maintenance-free. We rig it, water-test it on Rice Lake, and hand it back at Gores Landing.
 
-## Related guides
-
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders.
-- [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario): Mercury Avator electric outboards (7.5e, 20e, 35e) for small boats and cottages in Ontario. How they work.
-- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-
 ## Ready to rig an Avator?
 
 If the Avator 7.5e fits the job, it is one of the cleanest, quietest motors we install. Call us and we will talk through battery configuration, mounting, and whether it should pair with a gas main motor.
@@ -117,11 +110,6 @@ If the Avator 7.5e fits the job, it is one of the cleanest, quietest motors we i
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Mercury since 1965.
-
-**Related guides:**
-- [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
-- [Mercury Repower Cost in Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 
 ## FAQs
 
@@ -148,6 +136,14 @@ A standard 120V household outlet charges the 1 kWh battery in roughly four hours
 ### Is the Avator covered under Mercury's warranty?
 
 Yes. The Avator carries Mercury's Limited Warranty, and a promotional coverage extension is usually running. We confirm the exact current terms when we quote you.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

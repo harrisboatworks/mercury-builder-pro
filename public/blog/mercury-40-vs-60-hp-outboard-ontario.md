@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)"
+title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)
+# Mercury 40 vs 60 HP Ontario Guide
 
 > Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.
 
@@ -139,7 +139,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 2.07:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
 
-The CT upgrade costs about $300, $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
+The CT upgrade costs about $300 to $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
 
 If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, skip the CT and save the money.
 
@@ -159,13 +159,13 @@ All prices in CAD, before HST, before any trade-in credit.
 
 | Configuration | All-In Installed (Motor + Rigging + Controls + Prop) |
 |---|---:|
-| 40 ELPT FourStroke | roughly $11,000, $12,500 |
-| 60 ELPT FourStroke | roughly $13,500, $15,000 |
-| 60 ELPT Command Thrust | roughly $14,000, $15,500 |
+| 40 ELPT FourStroke | roughly $11,000 to $12,500 |
+| 60 ELPT FourStroke | roughly $13,500 to $15,000 |
+| 60 ELPT Command Thrust | roughly $14,000 to $15,500 |
 
-Install and rigging in this class typically adds $1,500, $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling. For [current Mercury motor pricing](/pricing-reference) on every HP class, see our full reference.
+Install and rigging in this class typically adds $1,500 to $3,000 over the motor price, depending on what the boat needs: controls, gauges, fuel lines, prop, battery cabling. For [current Mercury motor pricing](/pricing-reference) on every HP class, see our full reference.
 
-A working older motor typically adds $1,000, $3,000 in trade-in credit depending on age, hours, and condition. It's worth asking.
+A working older motor typically adds $1,000 to $3,000 in trade-in credit depending on age, hours, and condition. It's worth asking.
 
 ---
 
@@ -179,13 +179,6 @@ And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP i
 
 ---
 
-## Related guides
-
-- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
-- [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
-- [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
-
 *Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Ready to Spec Your 40 or 60 Repower?
@@ -197,9 +190,6 @@ Have a specific boat situation? Call us at 905-342-2153. Or submit a service req
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---
-
-*Related guides: Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Ontario Mercury Outboard Price Guide | Should I repower or buy a new boat?*
-
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
@@ -236,6 +226,14 @@ Yes. A change in motor HP is a change in the boat's record and triggers a PCL up
 ### How long does a Mercury 40 or 60 last?
 
 Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150 hours per year) and proper maintenance, which is 15-25+ seasons for most cottage owners. The variables that shorten life are skipped impeller replacements, gear lube neglect, and stale ethanol fuel. Our maintenance interval guide covers the schedule.
+
+## Related guides
+
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
 
 ## Next steps
 

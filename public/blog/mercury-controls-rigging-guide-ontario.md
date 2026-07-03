@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class"
+title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class
+# Mercury Controls Rigging Guide 2026
 
 > What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario.
 
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ### Quick Answer
 
-A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000, $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
+A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
 
@@ -53,12 +53,12 @@ Three patterns come up most often at Harris Boat Works:
 
 | HP Class | Typical Controls | Typical Steering | Typical Gauges | Typical Wiring | Rigging Est. (CAD) |
 |---|---|---|---|---|---|
-| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500, $2,500 |
-| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000, $3,000 |
-| 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500, $4,000 |
-| 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500, $5,500 |
-| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500, $6,500 |
-| 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000, $7,500 |
+| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
+| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
+| 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500 to $4,000 |
+| 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500 to $5,500 |
+| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
+| 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
 
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
 
@@ -70,13 +70,13 @@ These are typical configurations. Specific boat, helm, console, and budget chang
 
 Single lever that mounts on top of the helm console. Push forward for forward gear, pull back for reverse. Includes neutral lock, throttle-only mode, trim/tilt switches, and kill switch lanyard. The standard setup for runabouts, bowriders, fishing boats, and most pontoons with a console.
 
-**Binnacle Gen II Single Lever (mechanical):** CAD $700, $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
+**Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400, $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
 
 ### Side-Mount Controls
 
-Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400, $800.
+Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400 to $800.
 
 ### DTS (Digital Throttle & Shift)
 
@@ -88,15 +88,15 @@ Mercury's electronic control system. Replaces mechanical throttle and shift cabl
 
 ### Cable Steering
 
-Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300, $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
+Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300 to $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
 
 ### Hydraulic Steering
 
-Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500, $2,500 for a complete kit plus CAD $300, $500 install labor.
+Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500 to $2,500 for a complete kit plus CAD $300 to $500 install labor.
 
 ### Power-Assist Hydraulic
 
-Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500, $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
+Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
 
 ---
 
@@ -127,15 +127,15 @@ whenInDoubt: If you'll see this boat in five years, the digital path is the chea
 
 ### Analog Gauges
 
-Mechanical needles for tach, fuel level, and trim. CAD $400, $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
+Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
 ### SmartCraft Connect (Mercury VesselView Mobile)
 
-Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300, $500 for the module and SmartCraft tach.
+Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300 to $500 for the module and SmartCraft tach.
 
 ### VesselView
 
-Mercury's color touchscreen displays, the hardwired version of what SmartCraft Connect does over Bluetooth. VesselView 4: CAD $700, $900. VesselView 7: CAD $1,200, $1,500. VesselView 9: CAD $1,800, $2,400, the sweet spot for most V6 repowers. VesselView 12: CAD $2,500, $3,200. Integrates with chartplotters, fuel tanks, and autopilots.
+Mercury's color touchscreen displays, the hardwired version of what SmartCraft Connect does over Bluetooth. VesselView 4: CAD $700 to $900. VesselView 7: CAD $1,200 to $1,500. VesselView 9: CAD $1,800 to $2,400, the sweet spot for most V6 repowers. VesselView 12: CAD $2,500 to $3,200. Integrates with chartplotters, fuel tanks, and autopilots.
 
 ---
 
@@ -143,13 +143,13 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ## Wiring and Battery Setup
 
-**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400, $700.
+**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700, $1,200.
+**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
 
-**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200, $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
+**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
 
 ---
 
@@ -165,8 +165,8 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 These are starting points. Hull weight and intended use change the correct pitch. Wrong pitch: motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
 
-**Aluminum:** CAD $200, $500. Cheaper but flexes at higher loads. 
-**Stainless:** CAD $500, $1,200. Holds shape, lasts longer, recovers better after a strike.
+**Aluminum:** CAD $200 to $500. Cheaper but flexes at higher loads. 
+**Stainless:** CAD $500 to $1,200. Holds shape, lasts longer, recovers better after a strike.
 
 ---
 
@@ -187,7 +187,7 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 **Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, [Mercury Canada](https://www.mercurymarine.com/canada/en/) warranty registration.
 
-**Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200, $400).
+**Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200 to $400).
 
 **Not part of a standard quote:** Trolling motors, fishfinders, stereos, trailer work, cosmetic restoration.
 
@@ -222,13 +222,6 @@ The controls-and-rigging audit is the first thing we do on every repower quote. 
 The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
 ---
-
-## Related guides
-
-- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
-- [Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)](/blog/mercury-smartcraft-connect-guide-ontario): Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for.
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
-- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
 
 ## Related reading
 - Mercury SmartCraft Connect Guide Ontario
@@ -293,6 +286,14 @@ Both. Mercury's financing programs apply to the full repower package, motor plus
 ### Does HBW handle the trade-in on my old motor?
 
 Yes. If your old Mercury is in workable condition we'll value it at trade-in time. Non-Mercury motors get evaluated case-by-case (we sell some on consignment, others go to recycling). The trade-in credit is a separate line on your quote.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

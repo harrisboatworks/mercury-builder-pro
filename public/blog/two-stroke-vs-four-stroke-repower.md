@@ -111,13 +111,6 @@ Solid hull, boat still fits your life? Repower. You keep the boat you trust and 
 
 The happiest repower customers walked in expecting the trade, not just the upgrade. They wanted the quiet idle and the smaller fuel bill, and they already knew the transom would carry a little more weight. The repowers that disappoint are the ones where somebody skipped the transom check or never touched the prop, and a great motor ends up feeling wrong on a boat it should have transformed. That is why the transom inspection and the Rice Lake water test are not add-ons here. They are the job. The same crew that quotes your repower is the crew that rigs it and runs it off our dock.
 
-## Related guides
-
-- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide): An honest guide to switching from Evinrude to Mercury in Ontario: why it matters now, what the conversion.
-- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Premier dealer. Honest framework on when the swap is worth.
-- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take.
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
-
 ## Ready to plan your 2-stroke repower?
 
 If your 2-stroke is on borrowed time, the winter planning window is where to start. Call us or build a quote and we will size the right FourStroke for your hull, transom and rigging check included.
@@ -131,11 +124,6 @@ If your 2-stroke is on borrowed time, the winter planning window is where to sta
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Mercury since 1965.
-
-**Related guides:**
-- [Mercury Repower Cost in Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
-- [Evinrude to Mercury Repower Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ## FAQs
 
@@ -162,6 +150,14 @@ We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case 
 ### How much does a 2-stroke to 4-stroke repower cost?
 
 Installed at Harris Boat Works, a full repower runs $11,000 to $24,000 CAD for most jobs, depending on horsepower. That includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup at Gores Landing.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

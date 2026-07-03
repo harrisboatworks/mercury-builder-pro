@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)"
-description: "Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads."
+title: "Best Mercury for Lake Ontario Salmon"
+description: "Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells."
 category: "Fishing & Local"
 date_published: 2026-04-22
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)
+# Best Mercury for Lake Ontario Salmon
 
-> Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads.
+> Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells.
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
@@ -142,13 +142,6 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 
 ---
 
-## Related guides
-
-- [Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing): A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the.
-- [Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)](/blog/lake-ontario-salmon-mercury-setup-guide-2026): Lake Ontario salmon trolling setup from an Ontario Mercury Premier dealer. Real numbers on alternator.
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
-
 ## Related reading
 - [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
@@ -207,6 +200,14 @@ For a 22 to 25 ft setup with 250 to 300 HP V8 FourStroke + 15 HP ProKicker, $35,
 ### Should I consider a sport fisher hull for Lake Ontario?
 
 For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full electronics, downriggers) are purpose-built for Lake Ontario. Higher cost but optimized for the use.
+
+## Related guides
+
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
+- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide"
+title: "Used Boat Walkaround Ontario Guide"
 description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order."
 category: "Buying Guide"
 date_published: 2026-03-16
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
+# Used Boat Walkaround Ontario Guide
 
 > A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order.
 
@@ -226,13 +226,6 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury): Match Mercury HP to your pontoon size, tubes, and passenger count. Pricing from $13,000 CAD installed on Rice.
-
 ## FAQs
 
 ### How long should a used boat walkaround inspection take?
@@ -258,6 +251,14 @@ Stomp test. Walk the full floor from transom to bow, pressing firmly with each s
 ### What about the boat I just looked at? Can HBW help me decide?
 
 Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbw.wiki/service if you want a second set of eyes on what you're looking at.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 

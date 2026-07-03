@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake"
-description: "Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes northeast - handles Mercury repowers, sales, parts, and winter..."
+title: "Mercury Dealer Brampton Ontario HBW"
+description: "Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake
+# Mercury Dealer Brampton Ontario HBW
 
-> Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes northeast - handles Mercury repowers, sales, parts, and winter...
+> Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon.
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -29,7 +29,11 @@ content_type: blog_article
 
 > **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 95 minutes northeast of Brampton via Highway 410 to Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
+See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+
 ---
+
+![Why Brampton boaters drive to Harris Boat Works — about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
 
 # Mercury Dealer for Brampton: What Makes the Drive Northeast Worth It
 
@@ -105,13 +109,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ---
 
-## Related guides
-
-- [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
-- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Premier dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
-- [Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-burlington-ontario-hbw): Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
-- [Mercury Dealer for Markham: Why GTA Customers Drive to Rice Lake for Their Repower](/blog/mercury-dealer-markham-ontario-hbw): Looking for a Mercury Premier dealer near Markham? Harris Boat Works on Rice Lake - 70 minutes north -.
-
 ## The HBW Promise
 
 You see the price before you make the drive. We have the rigging conversation before we order anything. We do the job right. You get on the water with a motor that performs the way it's supposed to.
@@ -141,13 +138,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-**Related guides:**
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-
 ## FAQs
 
 ### How far is HBW from Brampton?
@@ -161,6 +151,14 @@ Yes. Caledon is within the same drive time as Brampton. We have customers across
 ### Why drive 95 minutes for a Mercury dealer?
 
 Brampton customers cite transparent online CAD pricing, Mercury Premier-tier technical depth, and a no-pressure family-marina conversation.
+
+## Related guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 

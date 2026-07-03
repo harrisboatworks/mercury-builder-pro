@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)"
+title: "Mercury Boost 150 HP Pontoon Guide"
 description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation."
 category: "Performance"
 date_published: 2026-04-30
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)
+# Mercury Boost 150 HP Pontoon Guide
 
 > For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation.
 
@@ -43,7 +43,7 @@ Mercury Boost is a software-only upgrade that increases the maximum output of ce
 
 That's interesting. What's equally interesting is what it tells us about where Mercury's upgrade roadmap is heading, more software, more granularity, more options after you buy the motor.
 
-For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding. If you're weighing Boost against jumping a full HP class, run the [repower vs new boat math](/repower) first, the installed-cost gap to the next motor up is usually smaller than Boost shoppers expect.
+For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding. If you're weighing Boost against jumping a full HP class, run the [repower vs new boat math](/repower) first, the installed-cost gap to the next motor up is usually smaller than Boost shoppers expect. You can also [get a 150 HP quote](/quote/motor-selection) in about three minutes to compare live installed pricing before deciding on Boost.
 
 ### What Boost Actually Is
 
@@ -139,13 +139,6 @@ primaryHref: /pricing-reference
 
 ---
 
-## Related guides
-
-- [The Best Mercury Outboard for Ski and Wakeboard Boats. Real-World Picks (2026)](/blog/best-mercury-for-ski-wakeboard-boats): An HBW guide to the best Mercury outboards for ski and wakeboard boats, what hole shot really means, when Pro.
-- [Best Mercury for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats): For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The.
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
-- [Mercury Command Thrust on a Pontoon: Worth the Money?](/blog/mercury-command-thrust-guide-pontoon-boats): Command Thrust adds about $400-$700 CAD over standard. On a pontoon, it pays for itself in hole shot and load.
-
 ## Related reading
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
@@ -214,6 +207,14 @@ After. Confirm your propeller is correctly sized and pitched for your load befor
 ### Is Mercury Boost available in Ontario?
 
 Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Premier dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Mercury dealer since 1965. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor's serial number ready when you call.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

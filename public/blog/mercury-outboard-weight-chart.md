@@ -27,7 +27,11 @@ content_type: blog_article
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
-> **Quick answer:** Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
+## Quick answer
+
+Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
+
+![Mercury outboard dry weight by HP class — 9.9 HP 85 lb, 60 HP 247 lb, 115 HP 359 lb, 150 HP 455 lb, 250 V8 527 lb (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
 
 ## Mercury Outboard Weight Chart: 2.5 to 300 HP
 
@@ -129,6 +133,14 @@ It depends on the family. The 200 HP FourStroke (3.4L V6) is 475 lb (216 kg) dry
 ### How much does a 300 hp Mercury outboard weigh?
 
 The 300 HP Mercury FourStroke V8 is 527 lb (239 kg) dry, and the 300 HP Pro XS V8 is lighter at 505 lb (229 kg), both for the lightest configuration. Longer shafts and rigging add weight.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

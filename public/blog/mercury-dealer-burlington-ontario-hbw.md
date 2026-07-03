@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake"
-description: "Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage..."
+title: "Mercury Dealer Burlington Ontario HBW"
+description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
 category: "Service Area"
 date_published: 2026-05-11
 date_modified: 2026-05-11
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Dealer for Burlington: Mercury Repower and Sales from Rice Lake
+# Mercury Dealer Burlington Ontario HBW
 
-> Mercury Premier dealer serving Burlington. Harris Boat Works on Rice Lake - about 110 minutes northeast - handles Mercury repowers, sales, parts, and winter storage...
+> Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington.
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
@@ -29,7 +29,11 @@ content_type: blog_article
 
 > **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 110 minutes northeast of Burlington via the QEW east, Highway 401, and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and Mercruiser.
 
+See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+
 ---
+
+![Why Burlington boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
 
 # Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
 
@@ -107,13 +111,6 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ---
 
-## Related guides
-
-- [Mercury Dealer for Oakville: Mercury Repower and Sales from Rice Lake](/blog/mercury-dealer-oakville-ontario-hbw): Mercury Premier dealer serving Oakville. Harris Boat Works on Rice Lake - about 110 minutes northeast -.
-- [Mercury Dealer for Richmond Hill: Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-richmond-hill-ontario-hbw): Looking for a Mercury dealer near Richmond Hill? Harris Boat Works on Rice Lake - about 75 minutes north -.
-- [Mercury Dealer for Vaughan: Mercury Repower, Sales, and Service from Rice Lake](/blog/mercury-dealer-vaughan-ontario-hbw): Looking for a Mercury Premier dealer near Vaughan? Harris Boat Works on Rice Lake - about 80 minutes north -.
-- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
-
 ## The HBW Promise
 
 The price is at [mercuryrepower.ca](https://www.mercuryrepower.ca) before any conversation starts. The rigging gets done right, not fast. The job is finished the way Mercury intended it to be done.
@@ -143,13 +140,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-**Related guides:**
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Toronto to Rice Lake Drive-In Process](/blog/toronto-to-rice-lake-drive-in-process)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-
 ## FAQs
 
 ### How far is HBW from Burlington?
@@ -163,6 +153,14 @@ Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to 
 ### Can I quote and order remotely?
 
 Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, and coordinate delivery and install logistics from there.
+
+## Related guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 

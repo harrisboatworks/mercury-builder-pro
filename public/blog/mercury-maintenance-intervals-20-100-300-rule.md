@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know"
+title: "Mercury Maintenance: The 20/100/300 Rule"
 description: "A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario."
 category: "Service & Maintenance"
 date_published: 2026-05-12
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know
+# Mercury Maintenance: The 20/100/300 Rule
 
 > A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario.
 
@@ -190,7 +190,7 @@ The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meaning
 
 Two related guides in the same cluster:
 - [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
-- [Mercury Outboard Won](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Mercury Outboard Won\](/blog/mercury-outboard-wont-start-troubleshooting)
 
 ---
 
@@ -237,6 +237,14 @@ Mercury SmartCraft motors store true engine hours inside the engine's ECU, indep
 ### How much does Verado service really cost?
 
 A Verado 300 at 300 hours, full timing belt + supercharger inspection (older I6 only) + complete impeller kit + lube and consumables, will run $1,500–$2,500 in Ontario depending on what additional parts come up during inspection. It's the most expensive Mercury service tier, and the one that protects the most expensive motor.
+
+## Related guides
+
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 
 ## Next steps
 

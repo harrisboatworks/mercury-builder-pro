@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Best Outboard Motors for Ontario's Small Lakes and Cottage Country"
+title: "Best Outboards for Ontario Small Lakes"
 description: "Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage lake applications across Ontario."
 category: "Buying Guide"
 date_published: 2026-04-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Best Outboard Motors for Ontario's Small Lakes and Cottage Country
+# Best Outboards for Ontario Small Lakes
 
 > Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage lake applications across Ontario.
 
@@ -123,8 +123,6 @@ Contact us about electric options
 
 **See also:** [Best Mercury Outboard for Rice Lake, Ontario Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
-## Related guides
-
 - [Best Mercury Outboard for Rice Lake, Ontario (in the Kawarthas) Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing). Lake Simcoe walleye picks
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout). Lake Ontario salmon and trout setups
@@ -149,6 +147,13 @@ For cottage boats on smaller lakes, absolutely. A 9.9HP on a 14ft aluminum provi
 ### Are Mercury electric outboards available?
 
 Yes. Mercury's Avator electric line includes models from 7.5e to 110e. Contact us for current availability, pricing, and to discuss whether electric suits your cottage lake application.
+
+## Related guides
+
+- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
 
 ## Next steps
 

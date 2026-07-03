@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?"
+title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
+# Mercury 9.9 vs 15 HP Tiller for Ontario
 
 > Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca.
 
@@ -176,13 +176,6 @@ HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell bo
 
 We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown Toronto, on the south shore of Rice Lake. We pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
 
-## Related guides
-
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-- [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
-- [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
-- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want.
-
 ## Ready to Pick One?
 
 If your capacity plate caps at 9.9 or you're on an HP-restricted lake, the 9.9 EFI FourStroke is the right call. Tournament kicker shoppers and weight-sensitive sailboat owners, also the 9.9. For everyone else, the 15 EFI FourStroke is the better all-around buy.
@@ -196,14 +189,6 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-
-- [Mercury 40 vs 60 HP Comparison](https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario)
-- [Mercury FourStroke Buyer Guide Ontario](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Mercury Command Thrust Guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Outboard Shaft Length Guide](https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide)
-- [Mercury Extended Warranty Platinum Ontario](https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario)
 
 ## FAQs
 
@@ -238,6 +223,14 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 ### What warranty comes with a new Mercury 9.9 or 15?
 
 3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Premier Protection is available at purchase. See our Mercury extended warranty guide for details.
+
+## Related guides
+
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
 
 ## Next steps
 

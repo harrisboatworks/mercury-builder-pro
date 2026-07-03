@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Winterization Cost in Ontario (2026 CAD) | HBW"
+title: "Mercury Winterization Cost Ontario"
 description: "Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works."
 category: "Service & Pricing"
 date_published: 2026-05-11
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Winterization Cost in Ontario (2026 CAD) | HBW
+# Mercury Winterization Cost Ontario
 
 > Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works.
 
@@ -28,8 +28,6 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-winterization-service-cost-ontario
 
 Winterization is fall service only. Book your appointment before our December 1 closure to get your Mercury outboard prepped for Ontario winter. For the complete cost breakdown and Mercury-specific service details, see our updated guide: [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026). That guide covers general winterization steps plus the exact service items your Mercury outboard needs, with live pricing from our shop.
-
-
 
 ## FAQs
 
@@ -60,6 +58,14 @@ August or September is ideal. October still works. The week before freeze-up is 
 ### Do I have to use HBW for winterization to use HBW for storage?
 
 No. You can DIY winterization and book just shrinkwrap + storage. Or DIY everything and book just storage. HBW will work with whatever has already been done.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 
 ## Next steps
 

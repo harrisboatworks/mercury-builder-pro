@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)"
+title: "Boat Trailering Mistakes to Avoid, Ontario"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug."
 category: "Boating Lifestyle"
 date_published: 2026-02-28
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
+# Boat Trailering Mistakes to Avoid, Ontario
 
 > Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug.
 
@@ -222,13 +222,6 @@ We do Mercury repowers and full electrical service at Harris Boat Works. If your
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
-- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake): A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy.
-- [Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide](/blog/rice-lake-boat-rentals-from-toronto-gta): A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris.
-- [The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide](/blog/used-boat-walkaround-inspection-ontario): A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to.
-
 ## FAQs
 
 ### What is the right tongue weight for a boat trailer?
@@ -254,6 +247,14 @@ An outboard hanging freely on the transom is not built to absorb highway vibrati
 ### What should I do at the launch ramp before launching?
 
 Back in slowly until the bunks are just below the surface and the boat floats. Trailer wheel bearings and surge brakes are not meant to be dunked, especially hot from a highway drive, so keep hubs and brakes above the waterline. Install the drain plug before the boat comes off the trailer, never at the ramp. Then ignore any lineup behind you and take your time.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 
 ## Next steps
 

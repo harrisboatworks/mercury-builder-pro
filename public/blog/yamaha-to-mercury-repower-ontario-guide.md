@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Premier Dealer (2026)"
+title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"
 date_published: 2026-05-28
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Yamaha to Mercury Repower in Ontario: Honest Guide from a Mercury Premier Dealer (2026)
+# Yamaha to Mercury Repower: Ontario Guide
 
 > Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table.
 
@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
-> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
+## Quick answer
+
+A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
 
 - Mercury Premier Dealer
 - Family-owned since 1947
@@ -39,7 +41,7 @@ We do Yamaha-to-Mercury repowers every spring at HBW. The customer is almost alw
 
 ## Why people switch from Yamaha to Mercury
 
-The brand swap is not a casual decision. It costs more than a same-brand repower because the controls and rigging do not carry over. The customers who pull the trigger usually have one of four reasons.
+The brand swap is not a casual decision. It costs more than a same-brand repower because the controls and rigging do not carry over. The customers who pull the trigger usually have one of four reasons. If you have not yet decided that repower is the right call at all, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) before pricing a brand switch.
 
 **HBW is the only Mercury dealer on Rice Lake. We are also the only brand-name outboard service of any kind on the lake.** If you live on Rice Lake or boat here regularly, a Yamaha-to-Mercury swap is also a swap to local service for the life of the motor. That changes the math.
 
@@ -68,7 +70,7 @@ Engine, controls, gauges, prop. Of those four, the engine and prop are mandatory
 | Trim tabs, electronics, radio | Yes | All carry over. |
 | Capacity plate max HP | Yes | Manufacturer maximum is unchanged. |
 
-The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries one of the larger Mercury and Mercruiser parts inventories in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
+The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries largest Mercury parts inventory in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
 
 ## What does a Yamaha-to-Mercury swap actually cost in Ontario?
 
@@ -164,8 +166,6 @@ A few notes specific to where we do business.
 
 **Kicker pairings.** Mercury's 9.9 / 15 / 25 ProKicker lineup is a common choice for Ontario salmon, walleye, and lake trout trolling. If your main motor is Mercury, the kicker pairing is seamless. If your main is Yamaha and you want a Mercury kicker, the pairing is still possible but requires more rigging integration.
 
-## Related guides
-
 - [Honda to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide) - the same swap math for Honda owners
 - [Evinrude to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide) - orphaned-brand repower path
 - [Mercury vs Yamaha Outboards Ontario](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario) - the brand comparison before the swap
@@ -181,6 +181,8 @@ A few notes specific to where we do business.
 **Service booking:** hbw.wiki/service
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
+
+**Want the side-by-side math?** Build your Mercury quote with trade-in at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and compare it against staying with Yamaha.
 
 ## FAQs
 
@@ -203,6 +205,14 @@ No. Yamaha Command Link gauges read Yamaha-specific data streams. They will not 
 ### What is the trade-in value of a clean Yamaha F90?
 
 Depends on year, hours, condition, and current market. We take Yamaha in trade against Mercury repowers regularly. Send us serial number, hour count, and condition photos (cowl off, lower unit, transom mount) and we will quote a trade value within one business day. A clean low-hour Yamaha F90 retains real value in the Ontario used market.
+
+## Related guides
+
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

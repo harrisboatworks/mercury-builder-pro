@@ -142,8 +142,6 @@ If you don't actively use the performance, you're paying premium for something t
 
 The other observation: Pro XS V6 buyers consistently report they wish they'd gone one HP class higher. The 200 buyer wishes they had a 225, the 225 wishes for a 250, etc. The Pro XS family rewards horsepower headroom. If you're already committing to Pro XS, lean toward the upper end of your boat's capacity rating.
 
-## Related guides
-
 - [Mercury FourStroke Buyer Guide](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers)
 - [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
@@ -191,6 +189,14 @@ Slightly. Pro XS tuning produces a more "sport" exhaust character. Most owners d
 ### Should I buy Pro XS new or used?
 
 Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 
 ## Next steps
 

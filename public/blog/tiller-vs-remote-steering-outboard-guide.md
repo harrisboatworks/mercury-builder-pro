@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
-description: "Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control."
+description: "Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups."
 category: "Buying Guide"
 date_published: 2026-04-06
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)
 
-> Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control.
+> Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
@@ -235,6 +235,14 @@ Hydraulic steering is worth it for motors 115HP and above, where cable steering 
 ### Which Mercury tiller motor is best for a 16-foot aluminum boat on a Kawartha lake?
 
 For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI Command Thrust in tiller is the most popular choice. The Command Thrust version has higher prop thrust than the standard 60HP, which helps get heavier loads on plane quickly, useful when carrying two or three people plus gear. It also handles the variable conditions on Kawartha lakes well: enough power for open-water runs, manageable at slow speed in the weeds, and reliable EFI cold-starts every morning.
+
+## Related guides
+
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

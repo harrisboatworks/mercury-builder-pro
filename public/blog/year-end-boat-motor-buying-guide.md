@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)"
+title: "Best Time to Buy Boat Motor Ontario"
 description: "When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math."
 category: "Buying Guide"
 date_published: 2026-05-24
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)
+# Best Time to Buy Boat Motor Ontario
 
 > When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math.
 
@@ -125,13 +125,6 @@ Honest version: the right month to buy is the month you actually need the boat o
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [Mercury 2027 Outboard Preview](/blog/2026-mercury-model-preview)
-- [Mercury 7-Year Warranty HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained)
-- [Mercury Repower Cost in Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Trading In Your Boat or Motor in Ontario](/blog/boat-motor-trade-in-guide)
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
-
 ## FAQs
 
 ### Is year-end actually the cheapest time to buy?
@@ -164,7 +157,15 @@ We book spring install slots from October onward. The booking is tied to your qu
 
 ### Does the HBW 7-year warranty bonus depend on when I buy?
 
-No. The 7-year program (Mercury's 3-year factory + HBW's 4-year bonus) applies to every new Mercury we sell, regardless of when in the year you buy. It's not a promotional add-on, it's structural to how HBW sells Mercurys. Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.
+No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 
 ## Next steps
 

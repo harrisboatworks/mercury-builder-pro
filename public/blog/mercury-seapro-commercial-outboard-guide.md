@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use"
+title: "Mercury SeaPro Commercial Outboard Guide"
 description: "An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs."
 category: "Buying Guide"
 date_published: 2026-04-20
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use
+# Mercury SeaPro Commercial Outboard Guide
 
 > An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs.
 
@@ -183,6 +183,14 @@ Yes. Mercury Product Protection extended coverage is available for SeaPro motors
 ### What's the difference between SeaPro and Pro XS?
 
 Different applications. Pro XS is the performance variant (higher RPM, sport gearcase, lighter). SeaPro is the commercial-duty variant (heavier construction, longer service intervals). Some Mercury motors are available in both Pro XS and SeaPro versions.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

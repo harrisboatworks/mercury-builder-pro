@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters"
+title: "Aluminum vs Fiberglass Hull Ontario"
 description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater."
 category: "Buying Guides"
 date_published: 2026-05-16
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
+# Aluminum vs Fiberglass Hull Ontario
 
 > Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater.
 
@@ -111,13 +111,6 @@ For a Rice Lake / Kawarthas primary boater, the aluminum recommendation wins mos
 
 Email info@harrisboatworks.ca with what you are trying to do on the water and we will tell you which side of the line you fall on.
 
-## Related guides
-
-- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family.
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
-- [How to Read Your Boat's Capacity Plate (Ontario Guide)](/blog/how-to-read-boat-capacity-plate-ontario): What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three.
-- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take.
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
@@ -156,6 +149,14 @@ Same rules either way: match the motor to the capacity plate maximum, factor in 
 ### Is buying a used aluminum boat safer than buying a used fiberglass boat?
 
 Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable Used Boat Walkaround Guide walks through the 13-page checklist we use ourselves.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 

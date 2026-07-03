@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard & Boat Repower Financing in Ontario (2026): Rates, Payments, and How It Actually Works"
+title: "Mercury Outboard Financing Ontario (2026): Rates"
 description: "How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print."
 category: "Financing & Value"
 date_published: 2026-04-20
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard & Boat Repower Financing in Ontario (2026): Rates, Payments, and How It Actually Works
+# Mercury Outboard Financing Ontario (2026): Rates
 
 > How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print.
 
@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
-> **Quick answer:** Yes, you can finance a Mercury outboard or a full repower through us, with $0 down and terms up to 120 months. We arrange it through Canadian marine lenders, primarily TD Auto Finance, and most people get a pre-qualification answer in under a day. The current financing rate is {{LIVE_RATE}} (OAC). Build a real quote with your monthly payment at [mercuryrepower.ca](https://mercuryrepower.ca), or call 905-342-2153.
+## Quick answer
+
+Yes, you can finance a Mercury outboard or a full repower through us, with $0 down and terms up to 120 months. We arrange it through Canadian marine lenders, primarily TD Auto Finance, and most people get a pre-qualification answer in under a day. The current financing rate is 5.48% APR (OAC).
 
 Money is the part of a repower nobody likes to ask about at the counter, so people circle it. They'll spend twenty minutes on props and shaft length and then mumble "and, uh, do you guys do financing?" on the way out the door. Yes. We do. And it's a lot simpler and a lot less painful than most people expect.
 
@@ -38,6 +40,8 @@ Here is the whole thing laid out plainly: how the financing works, what the rate
 Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province we can deliver or you can pick up.
 
 ## How HBW financing actually works
+
+**Current promotional rate (as of July 2026):** TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026. Financing minimum $5,000 before tax. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
 
 We don't lend the money ourselves, and we're not a bank. We work with a marine-and-powersports financing broker (DealerPlan, out of Peterborough) who shops your application across Canadian lenders, primarily TD Auto Finance, with National Bank and RBC in the mix. The broker's job is to find you the best approval, not to push one bank.
 
@@ -55,11 +59,11 @@ You apply once, the broker does the shopping, and you get an answer. That's the 
 
 This is where most financing articles get vague, so let's be specific.
 
-The current standing financing rate we quote is {{LIVE_RATE}} on approved credit. That is the headline rate, the one your payment math runs on right now, not a special you have to qualify for or a teaser that jumps later this year. It's good through December 31, 2026, and unless it's renewed it reverts to a higher posted rate (7.99% APR) on January 1, 2027. So if you're on the fence and the math works, doing it inside 2026 locks the better number.
+The current standing financing rate we quote is 5.48% APR on approved credit. That is the headline rate, the one your payment math runs on right now, not a special you have to qualify for or a teaser that jumps later this year. It's good through December 31, 2026, and unless it's renewed it reverts to a higher posted rate (7.99% APR) on January 1, 2027. So if you're on the fence and the math works, doing it inside 2026 locks the better number.
 
 Now, the word "promo rate" gets thrown around a lot, so here's the honest distinction:
 
-- The standing rate ({{LIVE_RATE}}) is what we quote day in, day out. Always on.
+- The standing rate (5.48% APR) is what we quote day in, day out. Always on.
 - A true promo rate is a separate, time-limited offer, usually a seasonal Mercury Canada financing promotion (you'll sometimes see rates like 2.99% or 4.9% advertised). These come and go with the season and the model. When one is active and beats the standing rate, we use it. When it's expired, it's gone, and quoting an expired promo helps nobody.
 
 The practical takeaway: the rate you see in our quote builder and on our promotions page is the live one. We don't bury an old number in a blog post and let it rot. Which brings us to the question everyone actually has.
@@ -68,7 +72,7 @@ The practical takeaway: the rate you see in our quote builder and on our promoti
 
 Fair, because half the financing pages on the internet are quoting rates from two years ago. Here's how we keep it honest:
 
-- The rate shown above ({{LIVE_RATE}}) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
+- The rate shown above (5.48% APR) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
 - Active seasonal promotions live on one page: [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). If Mercury Canada has something running that beats the standing rate, that's where it shows up, current and dated.
 - A real quote locks today's number. The second you build a quote at mercuryrepower.ca, the rate and payment you see are today's, for your actual motor and price, not a guess.
 
@@ -124,7 +128,13 @@ Worth knowing, because people assume it's either/or: our financing and our exten
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry the largest Mercury and Mercruiser parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
+We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry the largest Mercury parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
+
+## Related guides
+
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Outboard Monthly Payment Ontario](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
 ## Ready to see your real number?
 
@@ -151,7 +161,7 @@ The standing rate is what we quote every day. A promo rate is a separate, time-l
 
 ### Is there a down payment?
 
-No. You can finance the full out-the-door price with HST included, $0 down. The minimum amount to finance is $5,000.
+Down payment requirements vary by lender and approval; many customers finance the full out-the-door price with HST included and $0 down. The loan minimum is $5,000 before tax.
 
 ### Are there any fees?
 
@@ -172,6 +182,14 @@ No. Financing and extended-warranty coverage are separate programs and stack. Yo
 ### Should I finance through you or my own bank?
 
 Whichever is cheaper. Our marine financing is fast and competitive, but if your bank or a HELOC beats it, take it, we won't push back. We'd rather you're on the right terms.
+
+## Related guides
+
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
 
 ## Next steps
 

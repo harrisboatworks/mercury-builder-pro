@@ -88,14 +88,14 @@ For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 
 | Scenario | Cost (CAD, before HST) |
 |---|---|
-| 90, 115 HP repower on existing hull | $17,000, $22,000 |
-| 150, 200 HP repower on existing hull | $23,000, $36,000 |
-| 250, 300 HP repower on existing hull | $35,000, $40,000 |
-| New comparable aluminum package (90, 115 HP) | $50,000, $70,000 |
-| New comparable fiberglass package (150, 200 HP) | $65,000, $90,000 |
-| New comparable pontoon package (115, 150 HP) | $55,000, $75,000 |
+| 90, 115 HP repower on existing hull | $17,000 to $22,000 |
+| 150, 200 HP repower on existing hull | $23,000 to $36,000 |
+| 250, 300 HP repower on existing hull | $35,000 to $40,000 |
+| New comparable aluminum package (90, 115 HP) | $50,000 to $70,000 |
+| New comparable fiberglass package (150, 200 HP) | $65,000 to $90,000 |
+| New comparable pontoon package (115, 150 HP) | $55,000 to $75,000 |
 
-The repower path typically saves $25,000, $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
+The repower path typically saves $25,000 to $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
 ### When to Repower, The Clear Yes
 
@@ -153,13 +153,6 @@ We give an honest recommendation. Sometimes the right answer is "your motor stil
 
 ---
 
-## Related guides
-
-- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
-- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring.
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
-
 ## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
@@ -215,6 +208,14 @@ Beyond the motor, older hulls commonly require: wiring inspection and possible r
 ### Does repowering a boat affect its resale value?
 
 A repower with a new Mercury FourStroke typically increases a boat's resale value relative to the same hull with an aging original motor. Buyers in the used market know what an old high-hour motor adds to their maintenance risk, a low-hour new motor on a sound hull is a genuinely attractive proposition. The value increase from a repower typically doesn't equal the full cost of the motor, but it narrows the gap. A boat repowered with a well-regarded brand like Mercury and documented with service records commands a meaningful premium over an identical hull with an original, high-hour motor.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

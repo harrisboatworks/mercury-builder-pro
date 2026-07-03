@@ -29,7 +29,7 @@ content_type: blog_article
 
 > **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. [Start your Mercury repower](/repower), motor, rigging, and labour priced in CAD at mercuryrepower.ca.
 
-The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection). If you are wondering when it is time to replace your motor, read our guide first and then get a [boat repower in Ontario](/repower) from the team at Harris Boat Works.
 
 ## Repower now, wait, or hold? at a glance
 
@@ -172,8 +172,6 @@ For new motors (under 8 years), repair almost always makes sense unless the dama
 
 We do this math with customers at HBW. Not every problem is a repower trigger. Some are.
 
-## Related guides
-
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion
@@ -251,6 +249,13 @@ You should not attempt a DIY repower if you want to maintain your Mercury warran
 ### What's the repower vs. repair decision framework I should use?
 
 The clearest framework compares the repair estimate to the motor's current market value: under 30 percent of the motor's value leans repair, 30-60 percent depends on the health of the rest of the motor, and over 60 percent leans repower in almost all cases. Apply this logic iteratively, if significant repair spending has already occurred in the past two seasons and another major expense is looming, the total repair spending matters. A powerhead replacement on an older 90HP two-stroke costing $3,000-$5,000 for a motor worth $1,500-$2,500 on the used market is the clearest repower signal. Parts availability issues and extending lead times are also strong signals. For the full framework, see our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide). Harris Boat Works can give an honest assessment of where any motor sits on this spectrum.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

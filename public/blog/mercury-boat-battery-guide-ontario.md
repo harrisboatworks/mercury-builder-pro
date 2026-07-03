@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)"
-description: "Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and spring startup, so you're not stranded on May 24..."
+title: "Mercury Boat Battery Guide Ontario"
+description: "Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend."
 category: "Service"
 date_published: 2026-04-01
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
+# Mercury Boat Battery Guide Ontario
 
-> Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and spring startup, so you're not stranded on May 24...
+> Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend.
 
 **Category:** Service  
 **Published:** 2026-04-01  
@@ -183,7 +183,7 @@ A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah batte
 
 1. **Turn the master switch OFF.** Breaks the circuit, stops all parasitic drain. Note: if your boat has an auto bilge pump, verify whether your switch keeps the bilge circuit live, know what you're turning off.
 2. **Disconnect the negative terminal.** Fallback if the switch doesn't fully isolate.
-3. **Remove the battery and store it indoors.** Best option for boats without power access in storage.
+3. **Leave the battery in the boat, disconnected.** Parasitic drain from staying connected is what kills batteries over winter, not the cold. A maintainer helps if you have power at storage.
 
 ---
 
@@ -192,7 +192,7 @@ A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah batte
 **Before storage:**
 - Bring the battery to a full charge before putting it away, never store it at 50%.
 - Turn the master switch to OFF.
-- If you won't have access to check on it, remove the battery and bring it inside.
+- If you won't have access to check on it, leave the battery in the boat but disconnect it. Cold is not the failure mode; parasitic drain is.
 
 **Storing in place with power access:**
 - Connect a **battery maintainer** (smart charger or float charger), not a regular trickle charger. A trickle charger runs a constant low current that will overcharge a battery over 5 months. A smart maintainer monitors voltage and charges only when needed.
@@ -285,13 +285,6 @@ Harris Boat Works. Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
-- [Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how.
-- [Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)](/blog/winter-storage-near-toronto-hbw): An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included.
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
-
 ## FAQs
 
 ### What size battery does a Mercury outboard need?
@@ -316,7 +309,15 @@ Most marine batteries last 4 to 7 years. Replace when resting voltage is below 1
 
 ### What is the right way to store a marine battery for winter?
 
-Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don't have power access, remove the battery and store it indoors on a wood shelf or mat, above freezing.
+Bring the battery to a full charge before storage, never store at 50 percent. Turn the master switch OFF. If you have power access, connect a smart battery maintainer, not a regular trickle charger which will overcharge over 5 months. Check voltage monthly and recharge below 12.4V. If you don't have power access, leave the battery in the boat but disconnect it. Parasitic drain from staying connected is the failure mode, not the cold.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

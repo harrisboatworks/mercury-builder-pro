@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "How Your Mercury Warranty Works After a Repower"
-description: "What does your Mercury warranty actually cover after a repower? How long, what's included, what voids it, and what a Mercury Premier dealer means for your coverage."
+description: "What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains."
 category: "Warranty & Protection"
 date_published: 2026-06-06
 date_modified: 2026-06-06
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How Your Mercury Warranty Works After a Repower
 
-> What does your Mercury warranty actually cover after a repower? How long, what's included, what voids it, and what a Mercury Premier dealer means for your coverage.
+> What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains.
 
 **Category:** Warranty & Protection  
 **Published:** 2026-06-06  
@@ -110,12 +110,6 @@ Mercury warranty is tied to the motor's serial number, not to the dealership whe
 
 **Questions about warranty coverage on a specific motor?**
 Call us at 905-342-2153 or build your repower quote, warranty terms are listed with each motor, at [mercuryrepower.ca](https://mercuryrepower.ca).
-## Related guides
-
-- [Mercury Extended Warranty (Platinum): What It Covers and Why Ontario Boaters Buy It](/blog/mercury-extended-warranty-platinum-ontario): Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND.
-- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): All-in Mercury repower cost in Ontario for 2026 - planning ranges by HP class, line-item quote breakdown, and.
-- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
 
 ## FAQs
 
@@ -138,6 +132,12 @@ Mercury warranty is tied to the motor's serial number, not the dealership where 
 ### How do I make a Mercury warranty claim?
 
 Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wiki/service. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim.
+
+## Related guides
+
+- [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026), Mercury warranty terms in Canada
+- [Mercury 7-Year Warranty Offer, Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained), the 7-year warranty explained
+- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Platinum extended coverage
 
 ## Next steps
 

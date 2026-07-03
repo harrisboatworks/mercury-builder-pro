@@ -31,6 +31,10 @@ content_type: blog_article
 
 Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 25 minutes north of Cobourg via County Road 18. We handle Mercury outboard sales, repowers, parts, and service. Cobourg is one of the closer markets to HBW, for many Cobourg addresses we're the nearest Mercury Premier dealer in any direction. Installed pricing is published online at mercuryrepower.ca. Family-owned since 1947, Mercury dealer since 1965.
 
+See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+
+![Why Cobourg boaters drive to Harris Boat Works — about 25 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-cobourg-worth-the-drive.png)
+
 ## Cobourg has Lake Ontario shoreline, but most local boating happens north
 
 The Cobourg waterfront has a real boating community, the harbour, the sailing club, the day-cruisers and small powerboats running out of the inner harbour. What it doesn't have, geographically, is a deep inland boating market within town limits. Most of Cobourg's serious recreational boating happens north, on Rice Lake and the Kawartha system, where the cottage country actually starts.
@@ -109,12 +113,7 @@ If you have a service issue, submit a request at hbw.wiki/service. That routes d
 
 For a motor purchase conversation, call: 905-342-2153.
 
-## Related guides
-
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.
-- [Mercury Dealer for Lindsay: 45 Minutes Southeast to Rice Lake](/blog/mercury-dealer-lindsay-ontario-hbw): Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35. Sturgeon Lake.
-- [Mercury Dealer for Northumberland County: HBW Is Your Local Mercury Premier Shop](/blog/mercury-dealer-northumberland-county-hbw): Harris Boat Works is the Mercury Premier dealer serving Northumberland County since 1947. Rice Lake.
-- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
+**Start from home:** build your itemized Mercury quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), then pick up at Gores Landing.
 
 ## FAQs
 
@@ -137,6 +136,14 @@ No. HBW does not offer pickup or delivery. Customers bring the boat to us. We ha
 ### Will HBW honour my Mercury warranty if I bought the motor elsewhere?
 
 Yes. The Mercury Canada warranty network honours coverage at any authorized Mercury dealer regardless of where the motor was originally purchased. Bring the purchase paperwork and we register the work in Mercury's central system.
+
+## Related guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 

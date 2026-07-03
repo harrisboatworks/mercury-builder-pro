@@ -218,8 +218,6 @@ Typically when motor is installed and ready for water test. Review payment terms
 
 **[Start Your Order](/quote)**
 
-## Related guides
-
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
@@ -244,6 +242,14 @@ Yes, but warranty may require dealer installation. DIY installation also means y
 ### What if there is a problem during water test?
 
 Issues found during water test are addressed before handover. This is exactly why we test - any problems are warranty covered and fixed before you take delivery.
+
+## Related guides
+
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

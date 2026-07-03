@@ -35,7 +35,7 @@ content_type: blog_article
 
 There's a moment most boat owners eventually meet. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
-The math usually frames itself as one question: new boat, or new motor? That is the wrong question, or at least an incomplete one. The real question is whether the hull under you is still good. If it is, you do not need a new boat. You need a repower. This post walks through the honest math.
+The math usually frames itself as one question: new boat, or new motor? That is the wrong question, or at least an incomplete one. The real question is whether the hull under you is still good. If it is, you do not need a new boat. You need a repower. This post walks through the honest math. For the full three-way framework covering repair as a fourth option, start with our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), the primary reference this post builds on.
 
 ## When does repowering save real money?
 
@@ -127,13 +127,6 @@ If the answer is "a new motor," repower. If the answer is "more space," or "I ne
 
 We would rather lose a $15,000 motor sale than have you regret the upgrade because the boat itself is still the wrong boat. Most dealers will not ask this question because the wrong answer costs them a sale.
 
-## Related guides
-
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
-- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament.
-
 ## Ready to do the math on your boat?
 
 Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947. Same techs, same shop, since 1947.
@@ -143,14 +136,6 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 
 ---
-
-**Related guides:**
-
-- [Repair, Repower, or Sell? The Honest Decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide)
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [The 7-Year Mercury Warranty at HBW, Explained (Ends June 14, 2026)](/blog/mercury-7-year-warranty-hbw-exclusive-explained)
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury)
 
 ## FAQs
 
@@ -193,6 +178,14 @@ The Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has C
 ### What is the trade-in option?
 
 Two paths. Trade in the whole boat and put the value toward a different package with a current Mercury on it. Or trade in just the old motor, an old motor with life left in it has real value, typically $1,000 to $3,000 off the repower depending on age, hours, and condition. HBW assesses both paths.
+
+## Related guides
+
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
 
 ## Next steps
 

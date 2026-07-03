@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Insurance in Ontario: What You Actually Need (2026)"
-description: "Ontario boat insurance basics. Liability vs hull coverage, what is covered vs not, real annual premium ranges by boat type, and why insurance + extended warranty..."
+description: "Ontario boat insurance basics: liability vs hull coverage, what is covered, and real annual premiums by boat type. Plain-language guide."
 category: "Boating"
 date_published: 2026-05-13
 date_modified: 2026-05-14
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Insurance in Ontario: What You Actually Need (2026)
 
-> Ontario boat insurance basics. Liability vs hull coverage, what is covered vs not, real annual premium ranges by boat type, and why insurance + extended warranty...
+> Ontario boat insurance basics: liability vs hull coverage, what is covered, and real annual premiums by boat type. Plain-language guide.
 
 **Category:** Boating  
 **Published:** 2026-05-13  
@@ -161,12 +161,6 @@ We recommend both for any motor worth $5,000+.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
-## Related guides
-
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
-- [What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)](/blog/total-cost-of-owning-a-boat-ontario-2026): A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage.
-- [What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)](/blog/outboard-trade-in-value-ontario-hbw): Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by.
 
 ## FAQs
 
@@ -189,6 +183,14 @@ Most policies cover storage at any approved location. Outdoor storage without pr
 ### Can I insure my boat through Mercury or HBW?
 
 No. Insurance is sold by licensed brokers. We can recommend you find a marine specialist broker, but we do not write policies.
+
+## Related guides
+
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
 ## Next steps
 

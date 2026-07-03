@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide"
+title: "Repair, Repower or Sell? Ontario Decision Guide"
 description: "When a Mercury outboard hits a major repair decision, owners face three real options."
 category: "Buying Guides"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide
+# Repair, Repower or Sell? Ontario Decision Guide
 
 > When a Mercury outboard hits a major repair decision, owners face three real options.
 
@@ -32,6 +32,17 @@ content_type: blog_article
 ## Quick answer
 
 When a major repair bill lands on an aging Mercury outboard, you have three real options. **Repair:** fix the specific problem and keep the existing motor. Makes sense when the rest of the motor is solid and the repair is well under the cost of a repower. **Repower:** replace the motor entirely with a new or recent Mercury. Makes sense when the existing motor has multiple aging components and the boat itself is worth keeping. **Sell:** sell the boat as-is with full disclosure of the issue, or sell after a partial repair, and put the proceeds toward a different setup. Makes sense when the boat itself no longer fits the owner's life. The honest answer for most Ontario boaters is: repair if the bill is under 30 percent of the motor's value, repower if the bill is over 60 percent of the motor's value and the boat is in good shape, and sell when the boat is no longer matching how you actually use the water.
+
+## At a glance: repair vs repower vs sell vs buy new
+
+If you want the framework in a single view, this table summarizes the ranges and thresholds discussed throughout this guide. The rule of thumb: compare the repair bill against the motor's current market value, and consider whether the hull itself is still the right boat for how you use the water today.
+
+| Option | Cost band | Boat condition threshold | When it wins |
+|---|---|---|---|
+| Repair | Under 30 percent of motor's current value | Motor otherwise solid, hull sound | Fault is a single well-defined item and the rest of the motor has life left |
+| Repower | Roughly 30 to 60 percent leans repower depending on age, over 60 percent leans repower in almost all cases | Hull worth keeping, capacity plate still fits your needs | Multiple aging components on the motor, or you want another 10-plus seasons on a hull you like |
+| Sell as-is | Whatever the market bears after honest disclosure | Boat no longer matches how you use the water | The hull is the wrong size, wrong layout, or wrong lake for your current life |
+| Buy new | Full new-package pricing | Existing hull is tired or you have outgrown it | The hull is at end of life or your needs have changed enough that a fresh package makes sense |
 
 ## The framework
 
@@ -146,13 +157,6 @@ We see this decision multiple times per week, especially in spring and fall. Whe
 
 For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/repower-vs-new-boat) decision guide covers that side of the conversation.
 
-## Related guides
-
-- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury dealer's honest take.
-- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
-- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury dealer's straight take on which hull material fits which kind of.
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
-
 ## Sources
 
 - Mercury Marine Canada warranty policy ([mercurymarine.com/ca/en/owner-resources/warranty-information](https://www.mercurymarine.com/ca/en/owner-resources/warranty-information/))
@@ -191,6 +195,14 @@ Yes, significantly. Spring (March-May) is the best time to sell a boat in Ontari
 ### Will Harris Boat Works tell me the truth if repair is the better answer?
 
 Yes. We are not a parts-volume shop. We make our long-term business by being honest about what makes sense, even when "honest" means we're not the ones doing the work.
+
+## Related guides
+
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

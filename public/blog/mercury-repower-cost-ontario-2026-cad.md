@@ -133,19 +133,9 @@ Rather talk first? Call 905-342-2153. We answer the phone.
 
 ---
 
-**Related guides:**
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
-
 See live CAD pricing for every Mercury we stock at the [Mercury pricing reference](/pricing-reference).
-## Related guides
 
-- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026): What does a Mercury outboard repower cost per month in Ontario? Verified amortization tables. Active Mercury.
-- [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
-- [Honda to Mercury Repower in Ontario: When the Swap Makes Sense (2026)](/blog/honda-to-mercury-repower-ontario-guide): Honda to Mercury repower from an Ontario Mercury Premier dealer. Honest framework on when the swap is worth.
-- [Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)](/blog/mercury-repower-eligibility-guide): Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull.
+**Ready for your real number?** Build a complete itemized repower quote, motor, controls, prop, install, and trade-in, in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## FAQs
 
@@ -176,6 +166,14 @@ We give you a trade-in credit, even on non-running motors. Aluminum and parts ha
 ### Do you finance repowers?
 
 Yes. Mercury financing through HBW is available on most jobs. For current rate and term details, see the financing guide on mercuryrepower.ca.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

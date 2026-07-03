@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About"
+title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About
+# Mercury 9.9 EFI Review Ontario
 
 > The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.
 
@@ -106,7 +106,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## The Price, What HBW Has Published
 
-As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069, $3,875 CAD range.
+As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
 
 **Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
 
@@ -152,13 +152,6 @@ The 5-amp alternator option is the one upgrade we always recommend -- charges th
 
 ---
 
-## Related guides
-
-- [Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters](/blog/mercury-115-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the.
-- [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
-- [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
-- [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario): Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage.
-
 ## Related reading
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Controls & Rigging Guide Ontario
@@ -179,13 +172,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ---
 
 ---
-
-**Related guides:**
-- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ## FAQs
 
@@ -220,6 +206,14 @@ No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and
 ### Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?
 
 Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/lakefield
-last_updated: 2026-06-30
+last_updated: 2026-07-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -60,7 +60,7 @@ Yes. Many Lakefield customers drop the boat with us during the quoting visit and
 
 ### Can Lakefield customers finance a Mercury repower?
 
-Yes. Financing is 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 portable, $500 mid-range, $1,000 big-block, Pro XS, or special-order Verado.
+Yes. Financing is 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 portable, $500 mid-range, $1,000 big-block, Pro XS, or special-order Verado. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).
 
 ## Notes
 

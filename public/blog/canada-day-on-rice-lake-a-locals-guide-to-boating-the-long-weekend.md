@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Canada Day on Rice Lake: A Local's Guide to Boating the Long Weekend"
+title: "Canada Day on Rice Lake: Boating Guide"
 description: "A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works."
 category: "Local Guide"
 date_published: 2026-06-29
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Canada Day on Rice Lake: A Local's Guide to Boating the Long Weekend
+# Canada Day on Rice Lake: Boating Guide
 
 > A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works.
 
@@ -102,7 +102,6 @@ If you're trailering from out of town, book your accommodations or camping early
 
 We're a third-generation family marina, this business has been part of Rice Lake since 1947, and we want every family that launches here to have the same love for this lake that we do. Swing by the marina, grab some ethanol-free fuel, and enjoy the best weekend of the summer.
 
-## Related Guides
 - [Mercury 9.9 ProKicker: Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario)
 - [Trolling Motor vs Kicker on Rice Lake](/blog/electric-trolling-motor-kicker-guide)
@@ -129,6 +128,14 @@ Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fue
 ### Does Harris Boat Works service all brands of outboards?
 
 For engine repairs, we only service Mercury and Mercruiser products. You can book service at hbw.wiki/service. For repower quotes, we specialize in Mercury outboards and provide an on-water test for every repower.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
 
 ## Next steps
 

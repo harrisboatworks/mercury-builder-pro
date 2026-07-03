@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)"
+title: "Mercury for Center Console Boats Ontario"
 description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
 category: "Buying Guide"
 date_published: 2026-03-23
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)
+# Mercury for Center Console Boats Ontario
 
 > The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length.
 
@@ -225,6 +225,14 @@ Joystick Piloting uses electronic shift and throttle across both motors to let y
 ### Is a center console a good choice for Lake Ontario salmon fishing?
 
 Yes, for the right hull size. A 20 to 24 ft trailerable center console is one of the most practical platforms for Lake Ontario salmon. A 22-foot hull with a 200 to 250 HP V8 is the most capable all-around trailerable salmon setup in Ontario.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
 
 ## Next steps
 

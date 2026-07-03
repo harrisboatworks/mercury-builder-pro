@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)"
+title: "Docking a Boat in Wind: Rice Lake Guide"
 description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake."
 category: "Boating Lifestyle"
 date_published: 2026-03-21
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)
+# Docking a Boat in Wind: Rice Lake Guide
 
 > A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake.
 
@@ -255,6 +255,14 @@ A spring line is a mid-ship line running forward to a dock cleat. In a side-tie 
 ### When should I abort a docking attempt?
 
 If your approach is off by more than 4 feet at 8 feet out, abort. The geometry is not fixing itself, and throttling through a bad approach is how damage happens. Back out, circle wide, and come in again, 90 seconds total. The most experienced boaters on Rice Lake abort regularly. It is a tool, not a failure.
+
+## Related guides
+
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
 
 ## Next steps
 

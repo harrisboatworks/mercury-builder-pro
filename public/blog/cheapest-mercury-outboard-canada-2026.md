@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "What's the Cheapest Mercury Outboard in Canada in 2027? (Full Price Guide by HP)"
-description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
+title: "Cheapest Mercury Outboards in Canada (2026)"
+description: "The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits."
 category: "Buying Guide"
 date_published: 2026-04-23
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# What's the Cheapest Mercury Outboard in Canada in 2027? (Full Price Guide by HP)
+# Cheapest Mercury Outboards in Canada (2026)
 
-> The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats.
+> The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
@@ -123,7 +123,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Trade in your old motor.** Even a dead motor has aluminum and parts value. Trade-in credit reduces the amount you're financing or paying outright.
 
-**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500, $1,000 CAD versus $2,000, $3,000 for a brand conversion.
+**Mercury-to-Mercury repower.** Most existing controls and cables can stay. Rigging holds to $500 to $1,000 CAD versus $2,000 to $3,000 for a brand conversion.
 
 **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop works fine for most boaters and costs considerably less than stainless.
 
@@ -150,13 +150,6 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 *Prices reflect HBW's current 2027 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
 
 ---
-
-## Related guides
-
-- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
-- [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
 
 ## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
@@ -213,6 +206,14 @@ No. Tiller motors 20 HP and under are drop-in installs. You hang it on the trans
 ### What is the cheapest Mercury repower I can do on a 16-foot aluminum?
 
 A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).
+
+## Related guides
+
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
 
 ## Next steps
 

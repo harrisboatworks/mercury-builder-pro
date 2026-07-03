@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)"
+title: "Boat Motor Trade-In Ontario Guide"
 description: "Free instant trade-in estimator, the 13% HST math, real 2026 Ontario trade values, and how the swap actually works at HBW."
 category: "Buying Guide"
 date_published: 2026-03-10
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Trading In Your Boat or Motor in Ontario (2026 Values, HST Math, HBW Process)
+# Boat Motor Trade-In Ontario Guide
 
 > Free instant trade-in estimator, the 13% HST math, real 2026 Ontario trade values, and how the swap actually works at HBW.
 
@@ -157,13 +157,6 @@ Two minutes from now you can have a real trade-in value for your motor.
 **Build your repower quote with trade:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
 **Call us if your situation is non-standard:** 905-342-2153
 
-**Related guides:**
-- [Outboard Trade-In Value Ontario 2026](/blog/outboard-trade-in-value-ontario-hbw)
-- [Mercury Repower Cost in Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Outboard Rigging Costs](/blog/mercury-outboard-rigging-costs-ontario)
-- [What Happens to Your Old Motor When You Repower (HST and Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario)
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-
 ## FAQs
 
 ### How much does the HST savings actually work out to?
@@ -197,6 +190,14 @@ Yes. Brand doesn't matter on the trade side, condition and HP class do. Honda an
 ### What happens to my old motor after the trade?
 
 Depends on the motor. Newer, low-hour, popular HP class usually goes to our reconditioning bench, gets a service, and lists on our used inventory. Higher-end motors sometimes go to our consignment line. Older or rougher motors go to the parts pool. We don't crush working motors. There's a market for almost everything.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)"
+title: "How to Trim a Boat: Mercury Outboard Guide"
 description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained."
 category: "Mercury Outboards"
 date_published: 2026-02-22
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)
+# How to Trim a Boat: Mercury Outboard Guide
 
 > Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained.
 
@@ -194,13 +194,6 @@ Questions about Active Trim or whether your boat is rigged for it? Build a quote
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
-- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
-- [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
-
 ## FAQs
 
 ### What does trim do on a Mercury outboard?
@@ -222,6 +215,14 @@ Active Trim automates trim adjustment based on engine RPM along a programmed tri
 ### What is the difference between engine trim and trim tabs?
 
 Engine trim adjusts the angle of the outboard itself, changing thrust direction and bow angle. Trim tabs are small hydraulic fins on the transom, one each side, that push water down to lift the stern and let you correct side-to-side lean independently of the engine. They work together: engine trim plus trim tabs gives you full control of hull attitude in any condition.
+
+## Related guides
+
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
+- [Mercury SmartCraft Connect Guide 2026](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
 
 ## Next steps
 

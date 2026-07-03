@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)"
+title: "Used Outboard Buying Guide Ontario"
 description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test."
 category: "Buying Guide"
 date_published: 2026-05-07
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)
+# Used Outboard Buying Guide Ontario
 
 > What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test.
 
@@ -175,13 +175,6 @@ We will tell you which one you are looking at, even when the honest answer point
 
 ---
 
-## Related guides
-
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
-- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders.
-
 ## Ready to Decide?
 
 If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about 90 seconds.
@@ -211,13 +204,6 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ---
 
-**Related guides:**
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Outboard Trade-In Value in Ontario](/blog/outboard-trade-in-value-ontario-hbw)
-- [How to Read Your Boat Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
-- [How to Read a Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-
 ## FAQs
 
 ### How many hours is too many on a used Mercury?
@@ -243,6 +229,14 @@ On any used outboard worth real money, yes. Make the offer conditional on it. Th
 ### Do you service older Mercury outboards?
 
 Yes. We are a full-service Mercury Premier dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they do not, we will tell you straight, rather than take your money on a motor that is beyond saving.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 

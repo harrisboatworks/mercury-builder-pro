@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Propeller Selection Guide: Which Prop for Your Hull (2026)"
+title: "Mercury Propeller Selection Guide 2026"
 description: "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm."
 category: "Technical Reference"
 date_published: 2026-05-27
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Propeller Selection Guide: Which Prop for Your Hull (2026)
+# Mercury Propeller Selection Guide 2026
 
 > Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.
 
@@ -197,6 +197,14 @@ Yes. Command Thrust uses a larger-diameter gearcase designed for 4-blade props w
 ### How do I know if my prop is over-pitched or under-pitched?
 
 Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot reach its rated RPM and runs loaded. Under-pitched: WOT RPM is above the manufacturer's spec range. The motor over-revs and loses efficiency. Correctly pitched: WOT RPM lands in the middle of the spec band under normal load. Each step of pitch is worth 150 to 200 RPM.
+
+## Related guides
+
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 

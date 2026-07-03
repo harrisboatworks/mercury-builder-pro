@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Walleye Opener Boat Prep Checklist (2026)"
-description: "The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season."
+description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Walleye Opener Boat Prep Checklist (2026)
 
-> The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season.
+> Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake.
 
 **Category:** Tips  
 **Published:** 2026-05-01  
@@ -163,13 +163,6 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 
 ---
 
-## Related guides
-
-- [Trading In Your Boat Motor: How to Get the Best Value](/blog/boat-motor-trade-in-guide): Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and.
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency.
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide): Prop selection moves your Mercury's MPG more than HP class does. The 5 levers that actually change fuel burn.
-- [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
-
 ## Related reading
 - Spring Outboard Commissioning Checklist
 - Mercury 9.9 EFI Review, kicker options
@@ -230,6 +223,14 @@ For Rice Lake and local Kawartha customers, yes, we can arrange hauling and serv
 ### What's the most common opener morning failure?
 
 Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 
 ## Next steps
 

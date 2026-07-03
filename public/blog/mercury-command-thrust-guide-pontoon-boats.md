@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
-description: "Command Thrust adds a modest amount over the standard gearcase on a pontoon. Pricing moves, so call us for the current adder. On a pontoon, it pays for itself in hole..."
+description: "Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Command Thrust on a Pontoon: Worth the Money?
 
-> Command Thrust adds a modest amount over the standard gearcase on a pontoon. Pricing moves, so call us for the current adder. On a pontoon, it pays for itself in hole...
+> Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -190,6 +190,14 @@ No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command T
 ### How long does a Command Thrust gearcase last?
 
 Properly maintained, the same lifespan as the motor itself (1,500 to 2,000+ hours). The internal components are heavier-duty than the standard gearcase. Annual gearcase lube replacement during winterization is critical for longevity.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 

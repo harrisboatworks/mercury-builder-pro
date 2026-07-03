@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Extended Warranty (Platinum): What It Covers and Why Ontario Boaters Buy It"
+title: "Mercury Extended Warranty Ontario"
 description: "Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP."
 category: "Warranty & Protection"
 date_published: 2026-05-13
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Extended Warranty (Platinum): What It Covers and Why Ontario Boaters Buy It
+# Mercury Extended Warranty Ontario
 
 > Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP.
 
@@ -214,12 +214,6 @@ HBW customers (motor purchased from us), mention this in the notes field and we 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
-## Related guides
-
-- [Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying](/blog/mercury-outboard-warranty-canada-2026): A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually.
-- [The 7-Year Mercury Warranty at HBW, Explained (Ends June 14, 2026)](/blog/mercury-7-year-warranty-hbw-exclusive-explained): Current promo explainer. Every new Mercury at HBW carries 7 years of factory-backed coverage through June 14, 2026.
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [Mercury Dealer for Peterborough: Why Otonabee + Kawartha Boaters Drive to Rice Lake](/blog/mercury-dealer-peterborough-ontario-hbw): Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
 
 ## FAQs
 
@@ -246,6 +240,11 @@ No. Oil changes, impellers, plugs, anodes, propeller wear, those are maintenance
 ### I bought my motor from HBW. How do I get the 10% discount?
 
 Mention it in the notes field on the quote form at /warranty. We verify the original purchase from our records and apply the discount before sending the final quote.
+
+## Related guides
+
+- [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026), Mercury warranty terms in Canada
+- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
 
 ## Next steps
 

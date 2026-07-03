@@ -105,12 +105,6 @@ If you've cleared the intakes and you're still overheating at speed, or you'd ra
 **Service:** hbw.wiki/service
 **Configurator:** mercuryrepower.ca
 
-**Related guides:**
-- [Mercury Outboard Overheating at Idle: The Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
-
 ## FAQs
 
 ### Why does my Mercury overheat at high speed but not at idle?
@@ -132,6 +126,14 @@ Don't. Even a few minutes at temperature can warp components or cook the powerhe
 ### Is a high-speed overheat an emergency?
 
 Treat it like one. It won't strand you the way a dead motor will, but continuing to run hot is how a manageable repair becomes an engine replacement. Get off the throttle and get it diagnosed before the next hard run.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

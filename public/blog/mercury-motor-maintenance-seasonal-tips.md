@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)"
+title: "Mercury Motor Seasonal Care Ontario"
 description: "Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 CAD winterization mistake to avoid."
 category: "Maintenance"
 date_published: 2024-05-20
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
+# Mercury Motor Seasonal Care Ontario
 
 > Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 CAD winterization mistake to avoid.
 
@@ -42,13 +42,6 @@ The annual maintenance budget for a typical Mercury repower is small compared to
 We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Stick to the seasonal cycle below and your Mercury will outlast the rest of the boat.
 
 ## What changes the maintenance picture
-
-slug: annual-mercury-service-cycle
-type: infographic
-aspect: 1:1
-description: Circular diagram showing the four-part seasonal Mercury service cycle
-prompt: Photorealistic editorial circular infographic. Title: "Annual Mercury Service Cycle". Circular flow with 4 quadrants: Spring (April-May) Commissioning, Summer (July) Mid-Season Check, Fall (Oct-Nov) Winterization, Winter Storage. Each quadrant has icon, season label, and 1-line task description. Center: small Mercury cowl icon. Mercury black/red color scheme, cream background. No people. 1080x1080. [STYLE ANCHOR]
-image: /lovable-uploads/annual-mercury-service-cycle.png
 
 Five things move how often and how aggressively you should service:
 
@@ -113,7 +106,7 @@ If winterization is done correctly, the motor mostly takes care of itself over w
 - Indoor temperature: heated indoor is best, unheated indoor is fine, outdoor is hardest on the motor
 - Mid-winter check: a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
 
-We offer indoor and outdoor storage at HBW. For pricing, [contact us](/contact).
+We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contact).
 
 ## Common maintenance mistakes
 
@@ -169,8 +162,6 @@ For typical recreational use (50 to 150 hours per season) on a modern FourStroke
 For motors running heavy hours (200+ per season), shorten the calendar intervals proportionally. For commercial-duty SeaPro motors, follow Mercury's heavy-duty service schedule.
 
 For exact intervals on your specific motor model, the Mercury owner's manual is the authoritative source. We follow Mercury's published schedules at HBW.
-
-## Related guides
 
 - [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do at spring service
 - [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026), winterization pricing and what's included
@@ -245,6 +236,13 @@ Doing your own winterization does not automatically void your Mercury warranty, 
 ### What does annual Mercury outboard service cost in Ontario?
 
 Professional annual service for a Mercury outboard at a certified dealer in Ontario typically runs $350-$700 for a single engine in the 60-150HP range, not including parts. The service covers oil and filter, gear lube, spark plugs, fuel filter, full inspection, and system checks. Water pump impeller replacement adds $150-$350 in parts and labour. Spring commissioning runs an additional $150-$300 if done professionally. For exact service pricing at Harris Boat Works, call 905-342-2153 or request service at hbw.wiki/service.
+
+## Related guides
+
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
 
 ## Next steps
 

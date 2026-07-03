@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust"
+title: "Harris Boat Works Mercury Dealer Ontario"
 description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service."
 category: "About Us"
 date_published: 2026-05-04
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust
+# Harris Boat Works Mercury Dealer Ontario
 
 > Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service.
 
@@ -34,7 +34,7 @@ Harris Boat Works has sold and serviced Mercury outboards since 1965. Three gene
 **Build a quote on any Mercury at /quote/motor-selection, or call us at (905) 342-2153.**
 
 ## Quick recommendation
-If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
+If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury parts inventory in Ontario.
 
 We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
 
@@ -66,7 +66,7 @@ Other brands aren't bad motors. The depth-vs-breadth tradeoff just strongly favo
 
 The expertise compounds over time:
 - Three generations of technicians have learned only Mercury
-- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock the largest Mercury and Mercruiser parts inventory in Ontario
+- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock the largest Mercury parts inventory in Ontario
 - Training investments focus on Mercury
 - Customer expectations are calibrated to Mercury
 
@@ -97,7 +97,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 - Prop selection during the sea-trial to confirm performance
 - PCL update as part of the project
 - Service log entry for warranty support and resale value
-- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026) for qualified buyers
+- Repower financing at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers
 - Trade-in evaluation for old motors
 
 We don't push repowers that aren't needed. Sometimes a customer comes in with a motor that has seasons of life left. We tell them that, and they go fish.
@@ -131,8 +131,8 @@ Founded 1947. Mercury dealership since 1965. Three generations of family ownersh
 - Most non-Mercury repowers
 
 If the work falls outside our core, we'll tell you that and point you toward a shop that's better set up for it. We'd rather you get the right service than take a job we can't deliver at our standard.
-
 ## Related guides
+
 - [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution)
 - [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [Why Boat Rentals and Shared Access Are Booming in 2026](/blog/boat-rentals-shared-access-booming-2026)
@@ -158,7 +158,7 @@ Gores Landing, Ontario, on the south shore of Rice Lake, roughly 90 minutes east
 
 ### Does Harris Boat Works offer financing?
 
-Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026) for qualified buyers.
+Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.
 
 ### Does Harris Boat Works offer boat storage?
 
@@ -179,6 +179,14 @@ Jay Harris, the third-generation owner. The Harris family has operated the marin
 ### How do I get in touch with Harris Boat Works?
 
 Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also build a live quote at /quote/motor-selection.
+
+## Related guides
+
+- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
+- [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
+- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
 
 ## Next steps
 

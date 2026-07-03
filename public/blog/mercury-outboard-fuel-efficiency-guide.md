@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15, 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
+The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
@@ -57,7 +57,7 @@ On a typical day at HBW, we'll trial a motor two or three times with different p
 
 **2. Trim**
 
-Running flat at cruise (no trim up) is one of the easiest fuel economy mistakes to make and one of the easiest to fix. Properly trimmed, the bow lifts slightly and the hull rides efficiently through the water rather than plowing. The fuel economy difference between flat and properly trimmed is typically 10, 20% at cruise speeds.
+Running flat at cruise (no trim up) is one of the easiest fuel economy mistakes to make and one of the easiest to fix. Properly trimmed, the bow lifts slightly and the hull rides efficiently through the water rather than plowing. The fuel economy difference between flat and properly trimmed is typically 10 to 20% at cruise speeds.
 
 The right trim angle is the one where the motor is working least to maintain your target speed. If you're not in the habit of adjusting trim as speed and load change, start there.
 
@@ -170,13 +170,6 @@ The most common fuel-economy callback at our shop is a 4-blade prop running the 
 
 ---
 
-## Related guides
-
-- [Trading In Your Boat Motor: How to Get the Best Value](/blog/boat-motor-trade-in-guide): Learn how to maximize trade-in value when upgrading your outboard motor. Tips for preparation, timing, and.
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency.
-- [Mercury Propeller Selection Guide (2026 Ontario)](/blog/mercury-propeller-selection-guide): A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its.
-- [Making the Most of Ontario's Short Boating Season](/blog/ontario-boating-season-tips): Maximize your time on Ontario waters. Tips for extending your season, shoulder-season boating, and getting.
-
 ## Related reading
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
@@ -233,6 +226,14 @@ Four-strokes burn noticeably less fuel than carburetted two-strokes of the same 
 ### What are the best fuel efficiency tips for outboard motors?
 
 In order of impact: get the prop right so the motor reaches the middle of its rated wide-open RPM band, trim the bow up at cruise so the hull rides clean, keep the hull and prop free of weed and growth, drop unnecessary weight, and settle on your motor's efficient cruise RPM instead of running flat out. Prop and trim deliver the most gain by far. Most fuel-economy complaints we see at Harris Boat Works turn out to be setup problems, not engine problems. For a prop check or sea trial, reach us at 905-342-2153.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

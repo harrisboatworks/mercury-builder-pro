@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History"
+title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History
+# Read Mercury Outboard Serial Number
 
 > A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features.
 
@@ -242,13 +242,6 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
-- [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
-- [The 7-Year Mercury Warranty at HBW, Explained (Ends June 14, 2026)](/blog/mercury-7-year-warranty-hbw-exclusive-explained): Current promo explainer. Every new Mercury at HBW carries 7 years of factory-backed coverage through June 14, 2026.
-
 ## FAQs
 
 ### My motor's plate is unreadable. Is the motor worthless?
@@ -270,6 +263,14 @@ Mercury's been doing this since the '60s, the codes go back to before computer-f
 ### Is the model number the same as the serial number?
 
 No. The **model number** is the configuration (115ELPT). The **serial number** is the unique production identifier (0T123456). Both are on the plate; both matter; they answer different questions.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

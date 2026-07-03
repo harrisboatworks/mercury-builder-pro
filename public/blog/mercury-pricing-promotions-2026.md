@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-06-03
+last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-06-03
+date_modified: 2026-07-02
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last updated:** 2026-06-03  
+**Last updated:** 2026-07-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -146,11 +146,11 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Harris Boat Works Current Offer (HBW Exclusive, ends June 14, 2026)**:
-- 7 years total factory-backed warranty on every new Mercury outboard purchased by June 14, 2026
-- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years
+**Harris Boat Works Current Offer (HBW Exclusive, runs through December 31, 2026 as of July 2026)**:
+- 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
+- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current offers](/promotions)
+- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
@@ -159,11 +159,11 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 
 ### Financing Your Mercury
 
-**Mercury Marine Credit**:
-- Factory financing option
-- Competitive rates
-- Promotional periods available
-- Integrated with purchase
+**Current promotional financing (as of July 2026)**:
+- TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
+- Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
+- Financing minimum $5,000 before tax
+- Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions)
 
 **Typical Terms**:
 - 12-84 month terms
@@ -227,8 +227,6 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
-## Related guides
-
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026), financing basics for Ontario buyers
 - [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
@@ -240,7 +238,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Are there current promotions available?
 
-Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. The current HBW Exclusive brings every new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years), available through June 14, 2026. See /promotions for the latest.
+Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. As of July 2026, the current HBW Exclusive brings every eligible new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years / free extension), running through December 31, 2026. See [current promotions](https://www.mercuryrepower.ca/promotions) for the latest.
 
 ### Can I negotiate below advertised price?
 
@@ -253,6 +251,14 @@ Compare both. Mercury promotional rates may beat bank rates. However, your credi
 ### Why are rigged prices so different from MSRP?
 
 MSRP is motor only. Rigging (controls, gauges, prop, wiring, installation) adds $2,000-5,000+ depending on configuration. Always ask for rigged and installed pricing for accurate comparison.
+
+## Related guides
+
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
 
 ## Next steps
 

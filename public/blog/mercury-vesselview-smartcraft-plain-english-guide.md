@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide"
+title: "Mercury VesselView SmartCraft Guide"
 description: "Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake."
 category: "Tech & Features"
 date_published: 2026-05-15
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide
+# Mercury VesselView SmartCraft Guide
 
 > Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake.
 
@@ -164,13 +164,6 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview): Preview of 2027 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers.
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [How to Break In a New Mercury Outboard (10-Hour Guide)](/blog/breaking-in-new-mercury-motor-guide): The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service.
-- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency.
-
 ## FAQs
 
 ### Do I need cell service for VesselView Mobile / Mercury Marine App?
@@ -196,6 +189,14 @@ The dash display (VesselView 502, 703, 903) is a hard-wired Mercury MFD. The Mob
 ### Can I do this myself?
 
 The phone app pairing, yes, straightforward. The module install requires running wires, plugging into the engine harness, and (sometimes) configuring through Mercury's diagnostic tool. It's doable for an experienced DIY-er, but if you mis-wire it you can throw fault codes that take a dealer to clear. Up to you.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

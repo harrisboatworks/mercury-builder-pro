@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake"
+title: "Boat Service Near Toronto HBW Reach"
 description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't."
 category: "Service"
 date_published: 2026-05-15
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
+# Boat Service Near Toronto HBW Reach
 
 > A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't.
 
@@ -192,13 +192,6 @@ For boats that **store with us through winter**, this collapses entirely. Octobe
 
 ---
 
-## Related guides
-
-- [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
-- [Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how.
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
-- [Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)](/blog/winter-storage-near-toronto-hbw): An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included.
-
 ## FAQs
 
 ### How long does a Mercury annual service take at HBW?
@@ -232,6 +225,14 @@ Phone us. We'll prioritize active failures over routine work when we can. Mid-su
 ### Can I drop off a boat for "annual service plus winter storage" in one trip?
 
 Yes, that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring.
+
+## Related guides
+
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
 
 ## Next steps
 

@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)"
-description: "Don't guess on horsepower. Your boat's capacity plate is the legal ceiling, and it's not optional. How to read it, what it means for your repower, and how to pick the..."
+title: "Capacity Plate and Repower HP: What's Allowed"
+description: "How to read your boat's capacity plate before a repower: max HP rules, what's legal in Ontario, insurance implications, and smart HP choices."
 category: "Repower"
 date_published: 2026-06-06
 date_modified: 2026-06-06
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)
+# Capacity Plate and Repower HP: What's Allowed
 
-> Don't guess on horsepower. Your boat's capacity plate is the legal ceiling, and it's not optional. How to read it, what it means for your repower, and how to pick the...
+> How to read your boat's capacity plate before a repower: max HP rules, what's legal in Ontario, insurance implications, and smart HP choices.
 
 **Category:** Repower  
 **Published:** 2026-06-06  
@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 
-> **Quick answer:** Your boat's capacity plate is the legal ceiling for outboard horsepower in Canada, not a suggestion. Read the maximum horsepower, weight, and persons capacity printed on the plate, then match the motor to how you actually use the boat and the real condition of the transom.
+## Quick answer
+
+Your boat's capacity plate is the legal ceiling for outboard horsepower in Canada, not a suggestion. Read the maximum horsepower, weight, and persons capacity printed on the plate, then match the motor to how you actually use the boat and the real condition of the transom.
 
 ## The capacity plate tells you the ceiling. You still have to pick the right floor.
 
@@ -113,12 +115,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 **Ready to figure out the right motor for your hull?**
 Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
-## Related guides
-
-- [From Orphan to On-Water: Converting a 2-Stroke Evinrude/Johnson to a Modern Mercury 4-Stroke](/blog/evinrude-to-mercury-repower-ontario-guide): Evinrude stopped making outboards in 2020. If you're still running a two-stroke Evinrude or Johnson, here's.
-- [What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)](/blog/repower-old-motor-trade-in-hst-disposal-ontario): Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and.
-- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
 
 ## FAQs
 
@@ -133,6 +129,14 @@ No. The maximum horsepower on the capacity plate is the legal ceiling, not a sug
 ### Should I always repower to the maximum rated horsepower?
 
 Not necessarily. Maximum rated horsepower means the hull was engineered to handle that power, not that it's the right choice for your use, fuel costs, or your hull's actual condition. Transom condition, how you use the boat, and the heavier weight of modern four-strokes all matter. Harris Boat Works matches the motor to the hull and the use, and inspects the transom before every repower.
+
+## Related guides
+
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 
 ## Next steps
 

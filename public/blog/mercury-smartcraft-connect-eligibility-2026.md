@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)"
-description: "Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and the motors that won't connect."
+title: "Mercury SmartCraft Connect Eligibility 2026"
+description: "Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect."
 category: "Mercury Technology"
 date_published: 2026-05-27
 date_modified: 2026-06-19
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)
+# Mercury SmartCraft Connect Eligibility 2026
 
-> Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and the motors that won't connect.
+> Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect.
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
@@ -213,12 +213,6 @@ Three reasons SmartCraft Connect lands harder in Ontario than in some markets.
 **Quote a repower if you need to switch motors:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
-## Related guides
-
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
-- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026): Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop.
-- [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
-- [Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)](/blog/mercury-boost-cost-canada-2026): What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb.
 
 ## FAQs
 
@@ -253,6 +247,14 @@ The path is a repower to a current Mercury FourStroke or Pro XS. Most repower cu
 ### Does Connect work on Mercury Avator electric outboards?
 
 Yes, but with a different gateway module than the gas Connect path. The customer experience in the Mercury Marine app is the same. Ask HBW for the Avator-specific install part.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

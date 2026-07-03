@@ -140,8 +140,6 @@ If yes to most, repower makes sense.
 
 **[Start Your Repower Conversation](/quote)**
 
-## Related guides
-
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
@@ -166,6 +164,14 @@ Lake testing happens in spring when the marina reopens and conditions allow. Our
 ### Can I do anything to prepare my boat for repower?
 
 Clean out the boat, document any electrical issues, gather all paperwork, and ensure transom access. A clean, accessible boat speeds the install when we reopen in spring.
+
+## Related guides
+
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

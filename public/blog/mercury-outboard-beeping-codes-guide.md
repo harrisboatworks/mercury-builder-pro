@@ -253,6 +253,14 @@ Modern Mercury FourStrokes use the same warning logic: one key-on test beep, int
 
 A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usually points to a low oil level in the oil reservoir or a water-in-fuel signal from the fuel-water separator. Check the oil reservoir and the separator first, read the SmartCraft gauge if equipped, and check your owner's manual, since patterns vary by model and year.
 
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

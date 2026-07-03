@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup"
+title: "Mercury 90 HP FourStroke Review"
 description: "An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup
+# Mercury 90 HP FourStroke Review
 
 > An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call.
 
@@ -76,7 +76,7 @@ Cruising, towing a tube, swimming, occasional fishing, the 90 handles all of it 
 
 ### Repowers replacing 70, 90 HP two-strokes
 
-Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20, 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
+Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20 to 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
 
 ---
 
@@ -137,13 +137,6 @@ If you buy from us, we're also the ones servicing it. For engine repairs, we onl
 
 ---
 
-## Related guides
-
-- [Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters](/blog/mercury-115-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the.
-- [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
-- [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
-- [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](/blog/mercury-avator-7-5e-review): Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on.
-
 *Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Build a Quote
@@ -155,20 +148,10 @@ Questions? Call 905-342-2153 or submit a service request at hbw.wiki/service.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---
-
-*Related guides: Mercury 75 HP FourStroke, why we don't stock it | Mercury 115 HP FourStroke review | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
-
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ---
-
-**Related guides:**
-- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ## FAQs
 
@@ -198,7 +181,15 @@ Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier startin
 
 ### What's the warranty?
 
-3-year factory warranty as standard. Mercury runs a 3-year promotional bonus warranty most of the year that brings it to 6 years total. Ask us about current promo status when you quote.
+3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

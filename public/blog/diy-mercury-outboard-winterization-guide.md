@@ -1,29 +1,29 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-05-04
+last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)"
-description: "Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work."
+title: "DIY Mercury Outboard Winterization"
+description: "Winterize your Mercury outboard yourself: stabilize fuel, fog engine, drain gearcase, refill lube, clear cooling system. Ontario dealer's complete DIY."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-05-04
+date_modified: 2026-07-02
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)
+# DIY Mercury Outboard Winterization
 
-> Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work.
+> Winterize your Mercury outboard yourself: stabilize fuel, fog engine, drain gearcase, refill lube, clear cooling system. Ontario dealer's complete DIY.
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-07-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -36,6 +36,12 @@ content_type: blog_article
 You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
+
+**Watch Mercury's official winterization checklist first:**
+
+https://www.youtube.com/watch?v=YGuQjF6vuao
+
+*Video: How To Winterize Your Outboard | Winterization Checklist (Mercury Marine official).*
 
 ---
 
@@ -70,9 +76,7 @@ source: HBW Customer, Peterborough 2026
 
 ---
 
-![Six-step winterization guide for Mercury outboards: stabilize fuel, flush cooling, fog engine, drain gearcase, store battery, cover. Critical steps highlighted.](/lovable-uploads/inline/diy-winterization-steps.svg)
-
-## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
+![Six-step winterization guide for Mercury outboards: stabilize fuel, flush cooling, fog engine, drain gearcase, store battery, cover. Critical steps highlighted.](/lovable-uploads/inline/diy-winterization-steps.svg)\n\n## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
 Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
 
@@ -193,7 +197,7 @@ Don't skip the prop shaft. A prop that corrodes onto the shaft over winter is a 
 
 The battery should not overwinter in the boat. Cold temperatures accelerate discharge in lead-acid batteries, and a discharged battery can freeze and be permanently damaged.
 
-Remove the battery and store it in a cool, dry, frost-free location. Put it on a battery tender (trickle charger designed for long-term storage), this maintains charge without overcharging and dramatically extends battery life.
+Leave the battery in the boat, disconnected (or on a maintainer). The killer is parasitic drain from leaving it connected, not the cold. If you have shore power at storage, a smart maintainer will further extend battery life.
 
 A battery that stored properly over winter starts spring at full capacity. A battery that sat in a cold boat all winter may start the season already compromised.
 
@@ -308,6 +312,13 @@ Mercury's warranty does not require dealer-performed maintenance to remain valid
 ### What's the difference between winterizing a two-stroke and a four-stroke Mercury?
 
 The core process is similar, cooling flush, fuel stabilization, fogging, lower unit drain, battery service. The main differences: two-stroke carbureted engines need the carb bowl drained or run dry as part of fuel system prep, since fuel sitting in a float bowl over winter is prone to varnishing. Four-stroke EFI engines need fuel stabilizer circulated through the injection system by running the engine after treatment. Four-strokes also require an oil check (and oil change if due) as part of the service. At HBW, our 40-200 HP 2-stroke winterization rate is $206.89 vs. $337.84 for a 40-60 HP 4-stroke, the difference reflects the additional steps involved.
+
+## Related guides
+
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
 
 ## Next steps
 

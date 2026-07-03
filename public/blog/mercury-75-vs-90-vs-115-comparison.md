@@ -33,6 +33,17 @@ content_type: blog_article
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
+![Mercury 75 vs 90 vs 115 HP outboard comparison — best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+
+*Same 2.1L block. Same 359 lb. The difference is fit.*
+
+**Which one is right for you?**
+
+- Boat under 18 ft, lighter aluminum → **75 FourStroke**
+- Bowrider or mid-size aluminum, family use → **90 FourStroke**
+- Heavier rig, fish-and-ski, pontoon, or want performance → **115 Pro XS**
+- Not sure? Call us and we'll size it.
+
 ## Is Upgrading From 75 to 90 HP Worth It?
 
 For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The jump from a Mercury 75 to a 90 runs about $1,500 to $2,500 more installed, and for that you get 5 to 10 mph more top end, a noticeably better hole shot with a load, and a motor you won't outgrow in two seasons. Over a 60-month term at TD's 5.48% APR, that price difference works out to roughly $30 to $50 a month. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you won't second-guess.
@@ -189,8 +200,6 @@ Pro XS is the right call when:
 
 For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) for the full FourStroke vs Pro XS picture.
 
-## Related guides
-
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the next step-up question
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
@@ -252,7 +261,7 @@ Yes. The current Mercury 75, 90, and 115 are all FourStroke (four-stroke) EFI mo
 
 ### How much does a new 90 HP Mercury motor cost installed in Ontario?
 
-Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. Live pricing at mercuryrepower.ca.
+Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. See our [current pricing](/pricing-reference) reference, or [see Ontario repower cost](/repower) for a full installed breakdown.
 
 ### How fast will a 75 HP push a 17-foot boat?
 
@@ -277,6 +286,14 @@ For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourS
 ### Is it worth upgrading from a Mercury 75 to a 90 HP outboard?
 
 For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 costs roughly $1,500 to $2,500 more installed and gives you 5 to 10 mph more top end and a much better hole shot under load, on the same 2.1L block and mounting footprint. If you usually run light and solo, the 75 is plenty.
+
+## Related guides
+
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
+- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
+- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 
 ## Next steps
 

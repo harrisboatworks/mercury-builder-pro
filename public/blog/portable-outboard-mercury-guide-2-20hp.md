@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
-description: "Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats."
+description: "Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular."
 category: "Buying Guide"
 date_published: 2026-04-27
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
 
-> Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats.
+> Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-27  
@@ -191,6 +191,14 @@ Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limit
 ### Do portable outboards need winterization?
 
 Yes. Follow the same winterization procedures as larger motors: stabilize fuel, fog if stored long-term, store upright. Don't let ice form inside.
+
+## Related guides
+
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

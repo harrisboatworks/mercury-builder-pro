@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Trent-Severn Mercury Dealer Survival Guide (HBW Rice Lake, 2026)"
-description: "Doing the Trent-Severn? HBW on Rice Lake has the largest Mercury and Mercruiser parts inventory in Ontario, on-water towing assistance, and full Mercury service."
+title: "Trent-Severn Mercury Dealer Guide"
+description: "Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through."
 category: "Trent-Severn / Local"
 date_published: 2026-05-28
 date_modified: 2026-05-28
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Trent-Severn Mercury Dealer Survival Guide (HBW Rice Lake, 2026)
+# Trent-Severn Mercury Dealer Guide
 
-> Doing the Trent-Severn? HBW on Rice Lake has the largest Mercury and Mercruiser parts inventory in Ontario, on-water towing assistance, and full Mercury service.
+> Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through.
 
 **Category:** Trent-Severn / Local  
 **Published:** 2026-05-28  
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 
-> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury and Mercruiser parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
+> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 
 The Trent-Severn Waterway is 386 km of locks, lakes, and rivers that draws thousands of recreational boaters every summer. Most transits go smoothly. But a meaningful percentage of transit boats have a mechanical issue somewhere along the route. When that happens 30 km from any town, your options matter.
 
@@ -39,7 +39,7 @@ We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice 
 
 HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
-- **The largest Mercury and Mercruiser parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
+- **The largest Mercury parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
 - **Full Mercury service capability.** Mercury CDS (Computer Diagnostic System) at our workstation. Mercury Premier dealer credential. Mercury authorized warranty service. Most mid-season repairs handled same-day.
 - **On-water towing capability.** If you break down on Rice Lake or hit the Rice Lake Railroad submerged tracks (this happens to first-time visitors), we can come out and tow you in.
 - **Fuel dock with ethanol-free 89.** For boats that need clean fuel mid-transit, particularly older 2-stroke motors that don't tolerate E10 well.
@@ -80,7 +80,7 @@ The mix of boats doing the full TSW transit is more varied than people expect.
 
 ## Parts inventory: what's on our shelf
 
-Specific competitive fact: **HBW has the largest Mercury and Mercruiser parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
+Specific competitive fact: **HBW has the largest Mercury parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
 
 Common transit-related parts we stock:
 
@@ -181,23 +181,9 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 **Email:** info@harrisboatworks.ca
 **Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
 
 ---
-
-**Related guides:**
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
-- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
-
-## Related guides
-
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
-- [Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake](/blog/mercury-dealer-ajax-ontario-hbw): Mercury Premier dealer for Ajax customers - Harris Boat Works on Rice Lake is about 45 minutes via the 401.
-- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury Premier dealer for Bowmanville customers - Harris Boat Works on Rice Lake is about 35 minutes via.
-- [Mercury Dealer for Brampton: Mercury Repower and Service from Rice Lake](/blog/mercury-dealer-brampton-ontario-hbw): Mercury Premier dealer for Brampton-area customers. Harris Boat Works on Rice Lake - about 95 minutes.
 
 ## FAQs
 
@@ -215,7 +201,7 @@ Yes. We have a fuel dock with ethanol-free 89 octane available. For boats with o
 
 ### What parts does HBW keep on the shelf for transit boats?
 
-We have the largest Mercury and Mercruiser parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone.
+We have the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone.
 
 ### What's the 2026 Trent-Severn season and free lockage?
 
@@ -228,6 +214,14 @@ We service Mercury outboards and Mercruiser sterndrives exclusively. We do not s
 ### Do I need a kicker for the full Trent-Severn transit?
 
 Not strictly required, but recommended for the full Trent-to-Severn transit. Roughly 10% of transit boats run with a kicker. For boats that break down mid-transit far from any service stop, a kicker is genuinely useful insurance.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 
 ## Next steps
 

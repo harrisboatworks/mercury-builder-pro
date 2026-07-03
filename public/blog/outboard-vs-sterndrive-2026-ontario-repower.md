@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard"
+title: "Outboard vs Sterndrive 2026 Ontario"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends."
 category: "Mercury Outboards"
 date_published: 2026-03-05
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
+# Outboard vs Sterndrive 2026 Ontario
 
 > Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends.
 
@@ -289,6 +289,14 @@ Yes. If you have a sterndrive and you want to keep it, we support that decision.
 ### Why are outboards better for Ontario freshwater than sterndrives?
 
 Modern 4-stroke outboards trim up in seconds, which lets you pick through shallow Kawartha bays and rocky shoals that put an outdrive at risk. They tilt fully out of the water for cleaner storage, have no bellows or gimbal bearing to fail, run on extended service intervals, and Mercury's V6 and V8 FourStrokes are measurably more fuel-efficient than most carbureted or early EFI sterndrives at cruise.
+
+## Related guides
+
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

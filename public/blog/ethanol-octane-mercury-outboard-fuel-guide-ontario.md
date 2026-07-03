@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide"
+title: "Ethanol Octane Mercury Fuel Guide"
 description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season."
 category: "Service"
 date_published: 2026-04-11
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
+# Ethanol Octane Mercury Fuel Guide
 
 > Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.
 
@@ -251,13 +251,6 @@ Harris Boat Works. Gores Landing, ON, est. 1947
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-## Related guides
-
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
-- [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
-- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
-- [Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)](/blog/bad-used-boats-to-avoid-ontario): An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's.
-
 ## FAQs
 
 ### What octane does a Mercury outboard need?
@@ -283,6 +276,14 @@ Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is 
 ### What are the signs of a fuel system problem on a Mercury outboard?
 
 Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won't pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 

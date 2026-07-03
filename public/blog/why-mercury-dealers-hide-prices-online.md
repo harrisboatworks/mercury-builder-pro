@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)"
+title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)
+# Why Mercury Dealers Hide Prices (HBW Doesn't)
 
 > Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call.
 
@@ -124,13 +124,6 @@ For about 95% of recreational customers, the motor selection page is the source 
 
 ---
 
-## Related guides
-
-- [The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)](/blog/best-mercury-for-family-runabouts): A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by.
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026): All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability.
-- [What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)](/blog/total-cost-of-owning-a-boat-ontario-2026): A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage.
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
-
 ## Related reading
 - Mercury Repower Cost Ontario 2026
 - Mercury Controls & Rigging Guide Ontario
@@ -145,13 +138,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ---
 
 ---
-
-**Related guides:**
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
-- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide)
-- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
 
 ## FAQs
 
@@ -181,7 +167,7 @@ For HBW, yes. Pricing is verified annually after Mercury's July 1 model year cha
 
 ### What about delivery, taxes, and trade-in?
 
-Pricing on the configurator is in CAD before HST. HST (13%) is added at quote completion. Trade-in valuation is handled separately at [/trade-in-value](/trade-in-value). Delivery is pickup at HBW in Gores Landing for most customers.
+Pricing on the configurator is in CAD before HST. HST (13%) is added at quote completion. Trade-in valuation is handled separately at [/trade-in-value](/trade-in-value). Pickup only at HBW in Gores Landing, for all customers, no exceptions.
 
 ### Should I demand pricing from a dealer who hides it?
 
@@ -194,6 +180,14 @@ Tell us. We'll match or explain the difference. Our pricing is in line with the 
 ### How do I tell if a dealer's quote is fair without published prices?
 
 Build a quote at HBW first. Use that as your reference. Then go look at other dealers. The dealers who can't beat or match a transparent quote are the ones who depend on you not knowing.
+
+## Related guides
+
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
 ## Next steps
 

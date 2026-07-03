@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-06-12
+last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-06-12
+date_modified: 2026-07-02
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,13 +23,19 @@ content_type: blog_article
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-07-02  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
 ---
 
 > **Quick answer:** Mercury's break-in covers roughly the first 10 hours, vary throttle, avoid sustained wide-open throttle in the first hour or two, then gradually open it up with continued variation. Follow the 20-hour oil change on FourStrokes; it flushes the metal particles produced during ring seating. Check the owner's manual for your specific motor model's guidance. Book your 20-hour service at [hbw.wiki/service](https://hbw.wiki/service).
+
+**Mercury's own engine care primer for new owners:**
+
+https://www.youtube.com/watch?v=ydFfxwUz5yc
+
+*Video: Engine Care Basics for New Owners (Mercury Marine official).*
 
 ---
 
@@ -39,7 +45,7 @@ Run a 10-hour break-in. Vary the RPM constantly (no holding one speed), keep it 
 
 ## Why break-in actually matters
 
-The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test.) The hour-by-hour breakdown is below.
+The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test. For what a new motor costs before you buy, see [current pricing](/pricing-reference).) The hour-by-hour breakdown is below.
 
 ![Infographic timeline for Mercury outboard break-in: RPM guidelines from hour 1 through the 20-hour service interval.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
 *The whole procedure on one card. Details below.*
@@ -180,7 +186,7 @@ Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2
 The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Mercury Outboard Won](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Mercury Outboard Won\](/blog/mercury-outboard-wont-start-troubleshooting)
 - [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 
 ---
@@ -226,6 +232,14 @@ New Mercury FourStroke outboards come with a 3-year limited factory warranty for
 ### Should I use a fuel stabilizer in my new Mercury motor right away?
 
 You don't need to add fuel stabilizer during normal break-in use. Stabilizer is for storage, when the motor will sit unused for 30 days or more. If you're actively completing break-in, you're running fresh fuel through the system regularly, which is ideal. Where stabilizer matters for a new motor is at the end of the first season: add it to the fuel tank before storage, run the motor briefly to circulate it through the fuel system, and then store. This prevents fuel degradation in the carb or injectors over the winter.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 
 ## Next steps
 

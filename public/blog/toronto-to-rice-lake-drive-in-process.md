@@ -159,12 +159,6 @@ Mercury Marine Premier Dealer. Established 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
-## Related guides
-
-- [Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise](/blog/boat-storage-kawartha-lakes): Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap.
-- [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
-- [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule): A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone.
 
 ## FAQs
 
@@ -199,6 +193,14 @@ Yes, and many customers do. If you're doing a multi-stage job, say, diagnostics 
 ### What's the catch, why is this not common in the GTA?
 
 There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-focused operations. They do launches, hauls, and basic oil changes. When a job needs Mercury-specific diagnostics, warranty paperwork, or a full repower rigging, they send the motor out to a specialist shop, sometimes hundreds of kilometres away, and mark up the price. We're that specialist shop, but we're on the water instead of in an industrial park. The 'catch' is that you have to drive 60-90 minutes. The trade-off is that the work gets done by a Premier dealer on the same property where your boat can be stored, winterized, and launched. For most Mercury owners, the math works.
+
+## Related guides
+
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Is Your Pontoon Eligible for Mercury Command Thrust? (2026)"
-description: "Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop diameter, and HP class checks all in one place."
+description: "Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks."
 category: "Mercury Technology"
 date_published: 2026-05-28
 date_modified: 2026-05-28
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Is Your Pontoon Eligible for Mercury Command Thrust? (2026)
 
-> Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop diameter, and HP class checks all in one place.
+> Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks.
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
@@ -218,13 +218,6 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 - Mercury Marine official Command Thrust gearcase demo (YouTube): [Watch the Mercury demo](https://www.youtube.com/watch?v=pZFDAetHRIQ)
 
-## Related guides
-
-- [Mercury Command Thrust: Complete Guide to the 9.9 to 115 HP Lineup (2026)](/blog/mercury-command-thrust-complete-guide-2026): Mercury Command Thrust complete guide for 2026. All HP classes from 9.9 ProKicker to 115 FourStroke plus Pro.
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026): Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5-21% on.
-- [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
-- [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026): Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro.
-
 ## FAQs
 
 ### Is Command Thrust worth it on a 22-foot pontoon?
@@ -258,6 +251,14 @@ No. CT is a Mercury factory option installed at build time. Mercury's standard w
 ### Do I need a special prop for Command Thrust?
 
 Yes. Command Thrust uses a different prop shaft and a larger prop diameter than standard gearcase. The prop you have on a standard gearcase will not fit a CT gearcase, and vice versa. Prop selection for CT is part of the install conversation at HBW.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 

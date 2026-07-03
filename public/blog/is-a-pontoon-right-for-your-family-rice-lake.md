@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)"
-description: "Is a pontoon the right boat for your family on Rice Lake? An honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon, from a..."
+title: "Is a Pontoon Right for Your Family?"
+description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
 date_modified: 2026-06-19
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
+# Is a Pontoon Right for Your Family?
 
-> Is a pontoon the right boat for your family on Rice Lake? An honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon, from a...
+> Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon.
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
@@ -136,13 +136,6 @@ Tell us how your family actually spends a day on the water, who is aboard, wheth
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-**Related guides:**
-- [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use)
-- [Pontoon vs V-Hull: Which Is Right for You](/blog/pontoon-vs-v-hull-comparison-ontario)
-- [Best Mercury Outboard for a Pontoon](/blog/best-mercury-outboard-pontoon-boats)
-- [Mercury Command Thrust on a Pontoon: Worth It?](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Pontoon HP Sizing Decision Tree](/blog/pontoon-hp-sizing-decision-tree-ontario)
-
 ## Sources
 
 - Mercury Marine and HBW rigging experience: pontoon horsepower and Command Thrust gearcase guidance.
@@ -178,6 +171,14 @@ Pricing depends on the boat and the Mercury motor you choose. Build a real quote
 ### Can I rent a pontoon before I buy one?
 
 Yes, and we recommend it. Rent one for a weekend, use it the way your family actually would, and you will know if it is the right boat before you spend a dollar on buying. See our boat rentals at harrisboatworks.ca/rentals.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
 
 ## Next steps
 

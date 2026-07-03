@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Ontario Cottage Boat Motor Repower Guide (2026)"
-description: "For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new."
+description: "Ontario cottage repower guide: replacing old motor with Mercury often beats buying new. Typical costs $17,000-$30,000 CAD vs $50,000-$90,000 for new packages."
 category: "Repowering"
 date_published: 2026-02-02
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Ontario Cottage Boat Motor Repower Guide (2026)
 
-> For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new.
+> Ontario cottage repower guide: replacing old motor with Mercury often beats buying new. Typical costs $17,000-$30,000 CAD vs $50,000-$90,000 for new packages.
 
 **Category:** Repowering  
 **Published:** 2026-02-02  
@@ -138,20 +138,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-**Related guides:**
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
-- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario)
-- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
-
-## Related guides
-
-- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor): When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a.
-- [Complete Guide to Repowering Your Boat in the Kawarthas (2026)](/blog/complete-guide-boat-repower-kawarthas): A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what.
-- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of.
-- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-
 ## FAQs
 
 ### Should I repower my cottage boat or buy new?
@@ -189,6 +175,14 @@ Usually no. Old Evinrudes and older Mercurys have limited practical value as bac
 ### Can HBW haul my cottage boat from the lake?
 
 For Rice Lake and surrounding Kawartha-area cottages, yes. Call us to sort out the logistics.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 
 ## Next steps
 

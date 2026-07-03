@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)"
+title: "Mercury SmartCraft Alarm Codes Ontario"
 description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns."
 category: "Troubleshooting"
 date_published: 2026-02-06
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)
+# Mercury SmartCraft Alarm Codes Ontario
 
 > Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns.
 
@@ -127,7 +127,7 @@ HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 **Email:** info@harrisboatworks.ca  
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury and Mercruiser parts inventory in Ontario. Mercury CDS equipped.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario. Mercury CDS equipped.
 
 ## Sources
 
@@ -137,19 +137,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - HBW shop-floor data: 2026 spring service-ticket distribution
 
 ---
-
-**Related guides:**
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Maintenance Intervals (20/100/300 Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-
-## Related guides
-
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier.
-- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition.
-- [Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)](/blog/outboard-overheating-emergency-guide): A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60.
-- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide): Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies.
 
 ## FAQs
 
@@ -176,6 +163,14 @@ Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the tellta
 ### Are current Mercury Verado V8 and V10 outboards supercharged?
 
 No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

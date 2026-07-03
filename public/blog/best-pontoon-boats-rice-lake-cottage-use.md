@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
-description: "For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust."
+description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with Mercury 90 to 150 hp Command Thrust. Practical advice from an Ontario dealer."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Pontoon Boats for Rice Lake Cottage Use (2026)
 
-> For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust.
+> Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with Mercury 90 to 150 hp Command Thrust. Practical advice from an Ontario dealer.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -202,6 +202,14 @@ Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Fu
 ### Does HBW handle pontoon service and storage?
 
 Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 
