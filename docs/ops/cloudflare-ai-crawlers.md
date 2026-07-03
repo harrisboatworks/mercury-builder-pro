@@ -16,16 +16,14 @@ Cloudflare account: `Harrisboatworks@hotmail.com's Account`
 Zone: `mercuryrepower.ca`
 Zone ID: `124284915495a5976a44376e0785276e`
 
-Dashboard/API state on 2026-07-03:
+Dashboard state on 2026-07-03:
 
-- `Security > Bots` / bot management: `ai_bots_protection=disabled`
-- AI categories: `ai_training=disabled`, `ai_search=disabled`, `ai_user=disabled`
-- Crawler protection: `crawler_protection=disabled`
-- Managed robots.txt: `is_robots_txt_managed=false`, `cf_robots_variant=off`
-- Custom firewall/filter rules: none returned by `/firewall/rules` or `/filters`
-- Zone WAF setting: `waf=off`
+- `Security > Settings > Bot traffic > Configure AI bot policies`: Search, Agent, and Training are all `Allow (do not block)`.
+- `Security > Settings > Bot traffic > Block AI bots [Deprecating on September 15]`: `Blocks AI Bots scope: Do not block (off)`.
+- `AI Crawl Control > Signals`: `www.mercuryrepower.ca/robots.txt` and `mercuryrepower.ca/robots.txt` return `200 OK`; Content Signals are `Not set`; Robots.txt violations shows `No violations found`.
+- `Security > Security rules`: Custom rules `0/5`, Rate limiting rules `0/1`, Managed rules not created.
 
-Connector access note, 2026-07-03: the reconnected Cloudflare connector can list the `mercuryrepower.ca` zone, but the current token returned authorization errors for `/bot_management`, `/settings/waf`, `/firewall/rules`, `/filters`, and custom ruleset endpoints. Keep the connector/API token scoped to read Bot Management, WAF, Firewall Rules, Filters, and Rulesets so future runs can prove dashboard state as well as live HTTP behavior.
+Connector access note, 2026-07-03: the Cloudflare connector can list the `mercuryrepower.ca` zone, but the current token returned authorization errors for `/bot_management`, `/settings/waf`, `/firewall/rules`, `/filters`, and custom ruleset endpoints. Browser-dashboard verification was completed through the logged-in Chrome profile. Keep the connector/API token scoped to read Bot Management, WAF, Firewall Rules, Filters, and Rulesets if future runs should prove the same state without browser control.
 
 The repo `public/robots.txt` is the source of truth for Mercury robots policy.
 
