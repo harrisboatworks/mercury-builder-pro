@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "What Happens During a Mercury Repower (Step-by-Step Process)"
-description: "A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking..."
+description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-06-12
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Happens During a Mercury Repower (Step-by-Step Process)
 
-> A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking...
+> What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off.
 
 **Category:** Repower  
 **Published:** 2026-05-05  
@@ -31,7 +31,7 @@ content_type: blog_article
 
 ---
 
-![Mercury repower process timeline at HBW (diagram)](/lovable-uploads/diagram-repower-process-timeline.png)
+![What happens during a Mercury repower at Harris Boat Works — six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
 
 ## Quick Answer
 
@@ -250,6 +250,14 @@ We stand behind the work. Call us. Common post-pickup issues are minor (loose co
 ### When should I book a repower for a spring launch?
 
 Motor lead times vary by model and season, and spring is busy. If you are planning a spring launch, the time to book is well before ice-out, not the week before. Start with a quote at mercuryrepower.ca and contact us to confirm availability for your slot.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

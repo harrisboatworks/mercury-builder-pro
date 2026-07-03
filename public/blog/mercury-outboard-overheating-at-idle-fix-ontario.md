@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer"
-description: "Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier dealer - water pump impeller, intake debris, thermostat..."
+title: "Mercury Overheating at Idle Fix"
+description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
 date_modified: 2026-05-27
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer
+# Mercury Overheating at Idle Fix
 
-> Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier dealer - water pump impeller, intake debris, thermostat...
+> Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors.
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
@@ -204,6 +204,14 @@ No. Engines need to reach operating temp to combust properly. A deleted thermost
 ### Did I damage the powerhead by overheating?
 
 Depends on duration and how you responded. If you got the alarm, throttled to idle, and shut down within a few minutes - usually fine. If you kept running through the alarm, you may have damaged head gasket, rings, or valves. We can pressure-test to confirm.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

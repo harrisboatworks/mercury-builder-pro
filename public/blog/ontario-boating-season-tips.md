@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)"
+title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
+# Ontario Boating Season Tips 2026
 
 > How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between.
 
@@ -146,14 +146,6 @@ The work that makes the season feel easy happens between seasons. Booked once, p
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Outboard Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario)
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026)
-- [Late-Season Boating Safety](/blog/late-season-boating-safety)
-- [Pleasure Craft Licence Update for Repower Ontario](/blog/pleasure-craft-licence-update-repower-ontario)
-
 ## FAQs
 
 ### When does Ontario boating season actually start?
@@ -187,6 +179,14 @@ Yes, two: late spring (mid-April through early May) before the water warms up, a
 ### How does HBW handle seasonal trade-in timing for repowers?
 
 Fall is the busiest trade-in window because customers swap before winter storage. Trade values are slightly stronger in spring, but the install timing is worse. Most customers trade when the new motor is being installed. Numbers don't move much either way, build the trade estimate for your specific motor.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 
 ## Next steps
 

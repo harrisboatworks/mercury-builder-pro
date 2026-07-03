@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?"
-description: "Mercury Boost is a dealer-installed software calibration Mercury rates at up to 21% faster mid-range acceleration on select FourStroke, Pro XS, and special-order..."
+title: "Mercury Boost Software Eligibility 2026"
+description: "Mercury Boost is dealer-installed software offering up to 21% faster mid-range acceleration on select FourStroke, Pro XS, Verado engines."
 category: "Mercury Technology"
 date_published: 2026-04-14
 date_modified: 2026-06-19
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?
+# Mercury Boost Software Eligibility 2026
 
-> Mercury Boost is a dealer-installed software calibration Mercury rates at up to 21% faster mid-range acceleration on select FourStroke, Pro XS, and special-order...
+> Mercury Boost is dealer-installed software offering up to 21% faster mid-range acceleration on select FourStroke, Pro XS, Verado engines.
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
@@ -140,13 +140,6 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 
 ---
 
-## Related guides
-
-- [Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)](/blog/mercury-boost-cost-canada-2026): What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb.
-- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026): Find out if your pontoon needs Mercury Command Thrust. Hull weight, transom height, tube count, prop.
-- [Is Your Mercury Outboard Eligible for DTS (Digital Throttle & Shift) Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026): Find out if your Mercury outboard supports DTS (Digital Throttle & Shift) retrofit. Covers Verado, Pro XS.
-- [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026): Find out if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro.
-
 ## Related reading
 - Mercury SmartCraft Connect Guide Ontario
 - Mercury Controls & Rigging Guide Ontario
@@ -163,12 +156,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ---
 
 ---
-
-**Related guides:**
-- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
-- [Mercury 150-300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide)
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
 
 ## FAQs
 
@@ -211,6 +198,14 @@ If your Mercury engine falls outside the current Boost eligibility criteria, the
 ### Can Mercury Boost be reversed if I don't like the result?
 
 In theory, yes. Boost is a software calibration and Mercury dealers have the tools to apply and modify software-based updates. However, Mercury has not published a standard reversal procedure, and returning to the factory calibration would require a return visit to a certified dealer. In practice, the 5 to 21% mid-range acceleration improvement is almost universally regarded as positive, the calibration doesn't change how the engine feels at cruise or at wide-open throttle, only in the mid-range RPM band. If you're considering Boost, it's not a risky experiment, it's a factory-approved update with a straightforward performance outcome.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)"
+title: "Mercury Repower Eligibility: 5-Check Guide"
 description: "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours."
 category: "Repower Decision"
 date_published: 2026-05-27
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Is My Boat Eligible for a Mercury Repower? The 5-Check Eligibility Guide (2026)
+# Mercury Repower Eligibility: 5-Check Guide
 
 > Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.
 
@@ -215,6 +215,14 @@ Hard stops: rotted transom requiring structural rebuild, waterlogged foam or sig
 ### Do I need to inspect the boat before getting a repower quote?
 
 You do not need a formal inspection before requesting a quote. The CAD configurator at mercuryrepower.ca runs in under 5 minutes and gives you the all-in repower number. The hull eligibility check happens at the dealer level before the work commits. If you are not confident in the five checks yourself, book an in-person assessment at HBW. No charge for the eligibility conversation.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 

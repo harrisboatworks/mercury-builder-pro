@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan"
+title: "Trent-Severn Waterway 2026 Guide"
 description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat."
 category: "Lifestyle"
 date_published: 2026-05-08
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
+# Trent-Severn Waterway 2026 Guide
 
 > 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.
 
@@ -208,13 +208,6 @@ Call 905-342-2153 before heading out if you need a slip or want to confirm fuel 
 
 ---
 
-## Related guides
-
-- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
-- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-- [Trent-Severn Mercury Dealer Survival Guide (HBW Rice Lake, 2026)](/blog/trent-severn-mercury-dealer-survival-guide-2026): Doing the Trent-Severn? HBW on Rice Lake has the largest Mercury and Mercruiser parts inventory in Ontario.
-
 ## Related reading
 - Walleye Opener Boat Prep Checklist
 - Mercury SmartCraft Connect Guide Ontario
@@ -231,12 +224,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ---
 
 ---
-
-**Related guides:**
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-- [Mercury Outboard Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [HBW On-Water Load Test: Mercury Repower Advantage 2026](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026)
-- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
 
 ## FAQs
 
@@ -259,6 +246,14 @@ The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal s
 ### Is fuel cash-only at lockstations?
 
 Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 
 ## Next steps
 

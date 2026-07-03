@@ -215,6 +215,14 @@ Planning-level CAD ranges as of June 2026 (HBW dealer selling price): 150 Pro XS
 
 Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosion coverage running concurrently (not stacked). Extended coverage available through Mercury Product Protection.
 
+## Related guides
+
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
+- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario), buying a used outboard in Ontario
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

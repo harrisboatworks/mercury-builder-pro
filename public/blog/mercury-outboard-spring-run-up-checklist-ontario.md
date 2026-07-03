@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario"
+title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario
+# Mercury Spring Run-Up Checklist
 
 > Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat.
 
@@ -107,13 +107,6 @@ If you want a structured walk-through of any step, email info@harrisboatworks.ca
 
 For engine repairs, we only service Mercury and Mercruiser.
 
-## Related guides
-
-- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
-- [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
-- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist): Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling.
-- [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
-
 ## Sources
 
 - Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
@@ -151,6 +144,14 @@ Mercury's recommendation is every 3 years or 300 hours of use. In Ontario freshw
 ### What's the worst spring issue you've ever seen?
 
 A customer who didn't check anything, didn't watch for telltale water, and ran for 10 minutes at cruise with a failed impeller. The motor overheated, the head warped, the powerhead seized. Total damage estimated at $7,500. The whole disaster was preventable with a 30-second look at the pee-hole.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 
 ## Next steps
 

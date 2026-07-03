@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)"
-description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included, the transport math, and why most serious owners..."
+title: "Winter Boat Storage Near Toronto HBW"
+description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land."
 category: "Winterization"
 date_published: 2026-05-17
 date_modified: 2026-06-26
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
+# Winter Boat Storage Near Toronto HBW
 
-> An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included, the transport math, and why most serious owners...
+> An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land.
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
@@ -203,13 +203,6 @@ Current 2026 HBW pricing (CAD before HST):
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
 
-## Related guides
-
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
-- [The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)](/blog/mercury-boat-battery-guide-ontario): Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and.
-- [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math.
-- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-
 ## FAQs
 
 ### How much does winter boat storage cost in the GTA?
@@ -247,6 +240,14 @@ Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted 
 ### Is the boat insured during winter storage?
 
 Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats, that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 
 ## Next steps
 

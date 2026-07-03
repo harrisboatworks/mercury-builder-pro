@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)"
-description: "Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario."
+title: "How to Choose the Right Boat Horsepower"
+description: "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap."
 category: "Buying Guide"
 date_published: 2024-06-15
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# How to Choose the Right Horsepower for Your Boat (2026 Guide)
+# How to Choose the Right Boat Horsepower
 
-> Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada. What makes Mercury the default choice in Ontario.
+> How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap.
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
@@ -244,6 +244,14 @@ A kicker motor, typically 9.9 HP, makes sense if you do a lot of trolling. Most 
 ### How much HP do I need to pull a tube or water skier?
 
 To pull a tube with one or two riders, most 16-18 ft boats need a minimum of 75 HP, with 90-115 HP more comfortable. Water skiing requires a minimum of around 20 mph, 90 HP is a reasonable floor, with 115 HP providing more confidence. Wakeboarding generally requires more power than waterskiing due to heavier loads. If watersports are a primary use, err toward the higher end of your boat's HP range, and confirm your hull's transom rating supports sustained watersport use.
+
+## Related guides
+
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes"
-description: "A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches compared, and what makes this lake different. By."
+title: "Rice Lake Boating Guide 2026"
+description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
 date_modified: 2026-05-10
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
+# Rice Lake Boating Guide 2026
 
-> A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches compared, and what makes this lake different. By.
+> Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access.
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-Rice Lake is a 32-km long shallow lake on the Trent-Severn Waterway, about 80 minutes northeast of Toronto. The water is generally 6–10 ft deep with heavy summer weed growth and a sunken 19th-century railway across the middle (chartplotters mark it, slow down across the lake until you know the crossing). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing. Trent-Severn lockage is free June 19 – September 7, 2026.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, about 80 minutes northeast of Toronto. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing.
 
 ---
 
@@ -147,13 +147,6 @@ The good news: the lake is small enough that you can learn the hazards in a seas
 
 ---
 
-## Related guides
-
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
-- [Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan](/blog/trent-severn-waterway-boating-guide-2026): 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a.
-- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario): The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury.
-
 ## Related reading
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 - [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
@@ -207,6 +200,14 @@ Opening day (second Saturday of May) is usually solid. The week after is often t
 ### Do you sell fishing licences at HBW?
 
 No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licence online at the [Ontario fishing licence site](https://www.ontario.ca/page/get-fishing-licence) before you head out. Most anglers do this from their phone the night before. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)
+
+## Related guides
+
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
+- [Boat Trim Explained Rice Lake](/blog/boat-trim-explained-rice-lake-ontario), boat trim explained
 
 ## Next steps
 

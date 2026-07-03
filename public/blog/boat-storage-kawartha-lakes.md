@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise"
+title: "Boat Storage Rice Lake Kawarthas"
 description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization."
 category: "Service & Maintenance"
 date_published: 2026-05-15
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Boat Storage on Rice Lake and the Kawarthas, Without the Spring Surprise
+# Boat Storage Rice Lake Kawarthas
 
 > Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization.
 
@@ -31,7 +31,7 @@ content_type: blog_article
 
 ---
 
-![Flowchart showing boat storage options at Harris Boat Works, comparing shrinkwrap, home storage, and in-water wintering.](/lovable-uploads/kawartha-boat-storage-decision-map.png)
+![Three ways to store your boat on Rice Lake — at home DIY, HBW outdoor shrinkwrap, or indoor elsewhere, compared on cost and effort](/blog-visuals/boat-storage-3-ways-rice-lake.png)
 
 ## What good boat storage actually includes
 
@@ -102,7 +102,7 @@ HBW is based on Rice Lake in Gores Landing, but our storage customers come from 
 | Lake | Approx. drive from Gores Landing | Notes |
 |------|----------------------------------|-------|
 | Rice Lake | On-site | Our home lake; launch from our property |
-| Pigeon Lake | 15–20 min | Popular with families; easy haul via County Rd 18 |
+| Pigeon Lake | about 45 min by road | Popular with families; easy haul via County Rd 18 |
 | Sturgeon Lake | 20–25 min | Good walleye and bass; close to Lindsay |
 | Buckhorn Lake | 30–35 min | Part of the Trent-Severn; lots of cottagers |
 | Stoney Lake | 25–30 min | Clear water, great fishing, slightly longer haul |
@@ -202,12 +202,6 @@ The pattern we see year over year: customers underbook in October, then panic-ca
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
-## Related guides
-
-- [Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included.
-- [Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): A Mercury Premier dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each.
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service.
-- [The Ontario Boater's Guide to Mercruiser Sterndrives: Maintenance, Repairs, and Repower](/blog/mercruiser-sterndrive-guide-ontario): Ontario guide to Mercruiser sterndrive maintenance, winterization, repairs, and repower options from Harris.
 
 ## FAQs
 
@@ -225,7 +219,7 @@ Pricing depends on boat length, whether you bundle winterization and spring comm
 
 ### Can I store my boat at HBW if I keep it on Pigeon / Sturgeon / Buckhorn?
 
-Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (15–20 min), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch, the boat is already winterized, wrapped, and sitting on a lake that connects to the Trent-Severn Waterway. You pick it up in April, commission it on-site, and launch the same day instead of hauling it home, finding the battery, and discovering the tarp didn't survive the winter.
+Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (about 45 min by road), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch, the boat is already winterized, wrapped, and sitting on a lake that connects to the Trent-Severn Waterway. You pick it up in April, commission it on-site, and launch the same day instead of hauling it home, finding the battery, and discovering the tarp didn't survive the winter.
 
 ### When should I book winter storage?
 
@@ -242,6 +236,14 @@ Yes, and we recommend it. Spring commissioning is the reverse of winterization: 
 ### What if my boat isn't a Mercury, can I still store it?
 
 Yes. We store and winterize all makes of outboard-powered boats. Our service shop specializes in Mercury and Mercruiser engine work, but storage and general winterization aren't brand-specific. If your boat has a Yamaha, Honda, Suzuki, or Evinrude outboard, we can still winterize it, store it, and commission it in spring. We just won't be the right shop for major engine repairs on non-Mercury motors, for that, we can recommend a qualified mechanic.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 
 ## Next steps
 

@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)"
-description: "A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline, transport. From the dealer that does this every..."
+title: "Mercury Repower GTA Toronto Guide"
+description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week."
 category: "Mercury Outboards"
 date_published: 2026-05-19
 date_modified: 2026-06-26
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
+# Mercury Repower GTA Toronto Guide
 
-> A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline, transport. From the dealer that does this every...
+> How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  
@@ -199,13 +199,6 @@ The drive is about an hour from Markham, 90 minutes from Mississauga. Most repow
 
 ---
 
-## Related guides
-
-- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
-- [Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)](/blog/mercury-smartcraft-connect-guide-ontario): Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for.
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
-- [Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class](/blog/mercury-controls-rigging-guide-ontario): What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in.
-
 ## FAQs
 
 ### How much does a Mercury repower cost in the GTA?
@@ -243,6 +236,14 @@ Yes, twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Sa
 ### What's the trade-in value on my current motor?
 
 Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 12-year-old 90 HP with high hours trades for $1,500-$2,500. The configurator estimates based on your motor's specs.
+
+## Related guides
+
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 

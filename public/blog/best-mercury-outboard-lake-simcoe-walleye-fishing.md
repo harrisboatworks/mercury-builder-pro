@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)"
+title: "Mercury Setup for Simcoe Walleye 2026"
 description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup."
 category: "Fishing & Local"
 date_published: 2026-04-21
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)
+# Mercury Setup for Simcoe Walleye 2026
 
 > A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup.
 
@@ -127,8 +127,6 @@ For specific pricing, [build a quote](https://mercuryrepower.ca).
 
 Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
-## Related guides
-
 - [Recommended Mercury Outboard for Rice Lake Fishing](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing) - Rice Lake-specific setup
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide) - kicker setup
 - [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026) - Simcoe HP class step-up
@@ -192,6 +190,14 @@ For pure cruising and family use, yes for some operators. For walleye fishing, d
 ### What electronics do I need for Simcoe walleye fishing?
 
 GPS chartplotter, sonar capable of 80+ ft depths, side imaging useful for structure. Garmin, Lowrance, Humminbird, and Raymarine all make units that work. Modern Mercury motors integrate with all four.
+
+## Related guides
+
+- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
+- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 
 ## Next steps
 

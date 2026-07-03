@@ -95,13 +95,6 @@ Three patterns from rigging fishing boats every spring on Rice Lake.
 
 **The Avator on a fishing pontoon is one of our happiest customer rigs.** Quiet enough to drift up on walleye in 8 feet of water, light enough not to throw the trim off, charges off the cottage outlet overnight. For the right customer it is a real upgrade over a gas kicker.
 
-## Related guides
-
-- [Boat Motor Size Guide: How to Calculate the Right HP for Your Boat](/blog/boat-motor-size-calculator-guide): Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and.
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/mercury-outboard-financing-ontario-2026): Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a.
-- [How to Choose the Right Horsepower for Your Boat (2026 Guide)](/blog/how-to-choose-right-horsepower-boat): Mercury Marine builds outboards from 2.5 HP to 600 HP, with one of the largest dealer networks in Canada.
-- [How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History](/blog/how-to-read-mercury-outboard-serial-number): A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft.
-
 ## Ready to rig your fishing boat?
 
 Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. Same techs, same shop, since 1947.
@@ -111,14 +104,6 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 
 ---
-
-**Related guides:**
-
-- [Mercury Avator 7.5e Review: Electric Outboard](/blog/mercury-avator-7-5e-review)
-- [Mercury 9.9 ProKicker on Rice Lake](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide)
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury)
 
 ## FAQs
 
@@ -145,6 +130,14 @@ Not usually. We plumb the kicker into the boat's main fuel supply through a wate
 ### Will Harris Boat Works rig both motors together?
 
 Yes. We install main and kicker, wire the tie-bar linkage for synchronized steering, integrate the fuel system, and water test the combination on Rice Lake before pickup at Gores Landing.
+
+## Related guides
+
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 
 ## Next steps
 

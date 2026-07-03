@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury FourStroke Buyer Guide for Ontario (2026)"
-description: "The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations."
+description: "Mercury FourStroke buyer guide for Ontario: 2.5-300 hp coverage, HP recommendations by boat, prices, options, install considerations."
 category: "Buying Guide"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury FourStroke Buyer Guide for Ontario (2026)
 
-> The canonical Mercury FourStroke buyer guide for Ontario. 2.5-300 HP coverage, which HP for which boat, prices, options, install considerations.
+> Mercury FourStroke buyer guide for Ontario: 2.5-300 hp coverage, HP recommendations by boat, prices, options, install considerations.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
@@ -161,8 +161,6 @@ Our standard repower includes a rigging assessment. If the controls are tired, w
 
 The other observation: customers consistently under-spec horsepower when they own their first boat, and over-spec on the second one. Match the motor to your actual use case, not the spec sheet aspirations.
 
-## Related guides
-
 - [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
@@ -211,6 +209,14 @@ Prop matching is part of the install. The right prop depends on hull, weight, in
 ### Does Mercury warranty come with a new FourStroke?
 
 Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 
 ## Next steps
 

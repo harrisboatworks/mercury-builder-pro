@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)"
+title: "Old Motor Trade-In, HST and Disposal in Ontario"
 description: "Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and responsible disposal, all explained honestly."
 category: "Repower"
 date_published: 2026-06-06
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# What Happens to Your Old Motor When You Repower (Trade-In, HST Credit, Disposal)
+# Old Motor Trade-In, HST and Disposal in Ontario
 
 > Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and responsible disposal, all explained honestly.
 
@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
 
-> **Quick answer:** Your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction (which affects your HST), or disposed of properly if it's beyond any trade value. Most customers do a combination of all three. We inspect every trade-in and give you a number upfront, before you commit.
+## Quick answer
+
+Your old outboard can be traded in toward the new motor, used to reduce the taxable amount of the transaction (which affects your HST), or disposed of properly if it's beyond any trade value. Most customers do a combination of all three. We inspect every trade-in and give you a number upfront, before you commit.
 
 ## Your old motor doesn't have to be your problem
 
@@ -121,12 +123,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 **Ready to see what your old motor is worth and what a new Mercury will cost you?**
 Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call us at 905-342-2153.
-## Related guides
-
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
-- [How to Pick the Right Horsepower When You Repower (Reading Your Capacity Plate)](/blog/repower-horsepower-capacity-plate-guide): Don't guess on horsepower. Your boat's capacity plate is the legal ceiling, and it's not optional. How to.
-- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
-- [Mercury Pro XS Repower for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers): Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust.
 
 ## FAQs
 
@@ -149,6 +145,14 @@ No. We take used motors as trade-ins against a repower or new motor purchase, bu
 ### Does a repower include an on-water test?
 
 Yes. Every repower at Harris Boat Works gets an on-water test on Rice Lake before pickup. No exceptions.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 

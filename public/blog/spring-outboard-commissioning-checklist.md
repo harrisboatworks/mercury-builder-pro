@@ -271,6 +271,13 @@ Most of the commissioning checklist is DIY-friendly: battery check, fuel line in
 
 Yes. Ethanol-blended fuel (E10) can cause issues if it wasn't treated before storage. Ethanol absorbs moisture, and fuel sitting over winter can phase-separate into an ethanol/water layer that won't combust properly and can damage fuel system components. Prevention: use fuel stabilizer at storage, and ideally drain the fuel system before long storage. In spring, if you're starting with old untreated fuel, drain and replace it. Most Mercury EFI four-strokes are rated for E10, do not use E15 or higher.
 
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

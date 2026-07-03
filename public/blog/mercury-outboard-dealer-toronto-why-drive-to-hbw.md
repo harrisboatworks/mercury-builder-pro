@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)"
-description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math, the price difference, and what you actually get fo..."
+title: "Mercury Dealer Toronto: Why Drive to HBW"
+description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip."
 category: "Mercury Outboards"
 date_published: 2026-05-12
 date_modified: 2026-06-26
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
+# Mercury Dealer Toronto: Why Drive to HBW
 
-> A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake. The drive-time math, the price difference, and what you actually get fo...
+> A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-12  
@@ -38,6 +38,8 @@ Honest answer: you wouldn't, if the local option was equivalent. The story most 
 This post is the version of that comparison we'd run through with a GTA buyer who's about to pick a dealer. We're a Mercury dealer in Ontario since 1965, third-generation family business since 1947, and we sell Mercury motors to GTA buyers every week. Here's why.
 
 ---
+
+![Why Toronto boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
 
 ## The Toronto Dealer Reality
 
@@ -177,13 +179,6 @@ We've had customers turn a 90-minute "go pick up your motor" drive into a full-d
 
 ---
 
-## Related guides
-
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
-- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
-- [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
-- [Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)](/blog/mercury-repower-gta-toronto-destination): A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline.
-
 ## FAQs
 
 ### How long does it take to drive from Toronto to Harris Boat Works?
@@ -221,6 +216,14 @@ Yes. Saturday + Sunday hours during boating season (May-October), plus weekday b
 ### Do you do warranty work for motors purchased at other dealers?
 
 Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario.
+
+## Related guides
+
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
 
 ## Next steps
 

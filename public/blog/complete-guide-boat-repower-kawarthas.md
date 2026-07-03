@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)"
+title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Complete Guide to Repowering Your Boat in the Kawarthas (2026)
+# Boat Repower in the Kawarthas: Complete Guide
 
 > A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves.
 
@@ -27,13 +27,15 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
-> **Quick answer:** A repower means a new Mercury on your existing hull. For most Kawartha boats with a sound hull and transom, it is the smart move: you keep the boat you know and spend a fraction of the cost of new. A clean install runs one to two days of shop time, two to four weeks from order to pickup. Build your quote at mercuryrepower.ca.
+## Quick answer
+
+A repower means a new Mercury on your existing hull. For most Kawartha boats with a sound hull and transom, it is the smart move: you keep the boat you know and spend a fraction of the cost of new. A clean install runs one to two days of shop time, two to four weeks from order to pickup. Build your quote at mercuryrepower.ca.
 
 There is a moment every boat owner on these lakes eventually meets. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
 The math usually frames itself as one question: new boat, or new motor? That is the wrong question, or at least an incomplete one. The real question is whether the hull under you is still good. If it is, you do not need a new boat. You need a repower.
 
-Harris Boat Works has been rigging and repowering boats on the south shore of Rice Lake for three generations. This guide walks through the whole thing: how to tell if your hull is worth it, how to pick the right Mercury, what the install actually involves, and how we handle it. If you would rather skip to a number, build a live quote at **mercuryrepower.ca**.
+Harris Boat Works has been rigging and repowering boats on the south shore of Rice Lake for three generations. This guide walks through the whole thing: how to tell if your hull is worth it, how to pick the right Mercury, what the install actually involves, and how we handle it. If you would rather skip to a number, build a live quote at **mercuryrepower.ca**. For a broader overview across the province, our Kawarthas guide covers the local process, and you can check current [boat engine repower cost](/repower) and options on our main repower page.
 
 ---
 
@@ -52,7 +54,7 @@ Most Kawartha boaters who run the numbers land on the repower. As of 2026, a rep
 ::pull-quote
 quote: My old Johnson 90 finally let go on the Trent-Severn last August. Jay walked me through the new vs used math, and the new Mercury was actually the cheaper play once I ran **5 years out**. Should have done it in 2022.
 attribution: Brian K.
-source: HBW Bewdley repower customer, 2025
+source: HBW Bewdley repower customer (2025)
 ::
 
 The boaters who regret a repower are almost always the ones who put a new motor on a hull with a soft transom. That is why the transom check comes first, and why we do one before quoting anything.
@@ -140,6 +142,8 @@ Before we order anything, we look at the boat. Every HBW repower starts with a h
 
 Then we build a line-item quote. Motor, rigging, prop, labour, HST, all visible before you decide. No "call for pricing," no estimate that quietly grows by pickup. If something changes mid-job, a surprise behind the dash or a fuel line that needs replacing, we call before we proceed. You can build the starting quote yourself at mercuryrepower.ca in a few minutes. The walk-around adds the hull-specific items on top.
 
+> **Ready to see real numbers for your boat?** [Build your repower quote](/quote/motor-selection) with live Canadian pricing in about two minutes, then a person at HBW reviews it before you hear back. Pickup only at Gores Landing.
+
 ---
 
 ## Step 5: Ordering and Lead Times
@@ -225,23 +229,22 @@ Mercury offers competitive repower financing for qualified buyers, and HBW proce
 
 ---
 
-## Related guides
-
-- [Boat Repowering Guide: When to Replace Your Motor (2026)](/blog/boat-repowering-guide-when-to-replace-motor): When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a.
-- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide): For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually.
-- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of.
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull.
-
 ## Ready to Repower?
 
-Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to build a quote.
+Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to [build a quote](/quote/motor-selection).
 
 Or call **905-342-2153**. We will start with the hull walk-around, work through the right motor for how you actually boat, and give you a line-item quote before anything is ordered.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Configurator:** [Build Your Quote](/quote/motor-selection)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+### Keep reading
+
+- [HBW Boat Repower Guide](/repower): the full cluster on cost, process, and brand conversions
+- [Mercury Price List (CAD)](/pricing-reference): every model we sell, motor-only pricing
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad): line-item cost breakdown by HP class
 
 ---
 
@@ -261,13 +264,6 @@ Or call **905-342-2153**. We will start with the hull walk-around, work through 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ---
-
-**Related guides:**
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Repair, Repower, or Sell? The Honest Decision](/blog/repair-repower-or-sell-boat-ontario-decision-guide)
-- [Evinrude to Mercury Repower Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [DTS vs Mechanical Controls for Your Repower](/blog/mercury-dts-vs-mechanical-controls-ontario-repower)
 
 ## FAQs
 
@@ -306,6 +302,14 @@ Trade-in credit. Even a dead motor carries aluminum and parts value, and that cr
 ### When is the best time to book a repower?
 
 October through March. Off-season ordering gets you the best motor availability and first pick of spring install slots. Our shop is closed roughly December 1 to April 1, install work happens once we reopen in early April. Spring slots fill by March.
+
+## Related guides
+
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 

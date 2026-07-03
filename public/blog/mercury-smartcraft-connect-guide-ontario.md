@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)"
-description: "Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for 4-strokes 40 HP+ from 2004, install options, real-world payback..."
+title: "Mercury SmartCraft Connect Guide 2026"
+description: "Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows."
 category: "Mercury Outboards"
 date_published: 2026-05-09
 date_modified: 2026-05-30
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)
+# Mercury SmartCraft Connect Guide 2026
 
-> Mercury SmartCraft Connect Mobile (formerly VesselView Mobile) for Ontario boaters: compatibility for 4-strokes 40 HP+ from 2004, install options, real-world payback...
+> Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
@@ -198,7 +198,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-## Related guides
 - [Mercury VesselView and SmartCraft in plain English](/blog/mercury-vesselview-smartcraft-plain-english-guide)
 - [Mercury FourStroke buyer guide (Ontario)](/blog/mercury-fourstroke-buyer-guide-ontario)
 - [Best Mercury outboard for Rice Lake fishing](/blog/best-mercury-outboard-rice-lake-fishing)
@@ -233,6 +232,14 @@ The module talks to your phone over Bluetooth and Wi-Fi, not directly to a chart
 ### How do I check Mercury Boost eligibility?
 
 The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harris Boat Works can also check with Mercury diagnostic tools using your serial number.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

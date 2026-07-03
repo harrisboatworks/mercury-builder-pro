@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier"
-description: "Real Mercury outboard prices in Ontario for 2026 - CAD pricing by HP tier, model code decoder, what is included vs not, and how MSRP and dealer pricing work at a..."
+title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
+description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
 date_modified: 2026-06-02
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier
+# Mercury Outboard Prices Ontario (2026): CAD Guide
 
-> Real Mercury outboard prices in Ontario for 2026 - CAD pricing by HP tier, model code decoder, what is included vs not, and how MSRP and dealer pricing work at a...
+> Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
@@ -32,6 +32,8 @@ content_type: blog_article
 Mercury outboard pricing in Ontario depends on horsepower, controls, prop, rigging, installation, HST, and the boat itself. Harris Boat Works publishes current Mercury quote guidance at mercuryrepower.ca with MSRP and dealer pricing side by side. Use the price bands in this article for planning only, refresh real numbers from the live quote configurator before you commit.
 
 > **Quick estimate:** Try our Repower Cost Estimator for your specific HP and setup. Free, instant CAD ballpark.
+
+![Mercury outboard from-prices at Harris Boat Works — 75, 90, 115, 150 and 250 HP starting prices in writing](/blog-visuals/mercury-from-prices-hbw-ontario.png)
 
 ## Pricing by HP category
 
@@ -60,13 +62,13 @@ We got tired of that. So did our customers.
 
 Harris Boat Works is a third-generation family marina, on Rice Lake since 1947, and a current Mercury Marine Premier dealer. Every Mercury quote should be clear about what is included and what is not. We publish MSRP and dealer pricing side by side on every motor in the lineup at mercuryrepower.ca.
 
-Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at delivery. No surprises.
+Here's what motor-only pricing usually does not include: HST (13% in Ontario), controls (typically $700-$1,500 depending on type), a prop ($400-$900 for aluminum or stainless), rigging and installation ($1,200-$3,500 for mid-range, $2,500-$5,000 for V6), and sea trial. Those are quoted separately, and the quote you get from us is the invoice at pickup. No surprises.
 
 ## How Mercury outboard pricing actually works in Canada
 
 Mercury sets a Manufacturer's Suggested Retail Price (MSRP) for every model. Dealer selling prices land at or below that number. HBW publishes both side by side: what Mercury says it's worth, and what we actually charge.
 
-We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at delivery, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." If a Mercury Canada promo is active that lowers the number further, you see it in the configurator the same day.
+We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at pickup, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." If a Mercury Canada promo is active that lowers the number further, you see it in the configurator the same day.
 
 Some dealers post MSRP and call it a "price." We don't.
 
@@ -130,9 +132,9 @@ Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for o
 
 Mercury Canada runs promotions through the season: spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see the financing guide for terms.
+Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see the financing guide for terms.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. Promotional bonus warranty years may be stacked on top of the base during active promo windows. Check current active promotions at mercuryrepower.ca/promotions or call us.
+Mercury's standard warranty in Canada is 3 years, concurrent. Promo terms change, but as of July 2026 HBW's current offer is 7 years total coverage (3 standard + 4 free extension) through December 31, 2026. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
 ## About the author
 
@@ -148,22 +150,7 @@ Three ways to get a real price:
 
 We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. But we rig every motor in our shop, and every install includes an on-water test on Rice Lake before pickup. No exceptions.
 
-*Related guides: Mercury 40 vs 60 HP for Ontario boats | Mercury 90 HP FourStroke review | Mercury 115 HP FourStroke review | Should I repower or buy a new boat? | Mercury Outboard Financing in Ontario (2026)*
-
 ---
-
-**Related guides:**
-- [Mercury Outboard Monthly Payment Ontario 2026](/blog/mercury-outboard-monthly-payment-ontario-2026)
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
-- [Outboard Trade-In Value Ontario (HBW)](/blog/outboard-trade-in-value-ontario-hbw)
-
-## Related guides
-
-- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower): Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026.
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): A frank look at what "best Mercury dealer in Ontario" actually means, what to look for, and why Harris Boat.
-- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
-- [Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)](/blog/mercury-40-vs-60-hp-outboard-ontario): Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability.
 
 ## FAQs
 
@@ -193,7 +180,7 @@ Sometimes the headline price looks lower. But cross-border duty, brokerage, ship
 
 ### How long is the Mercury warranty?
 
-Standard is 3 years, concurrent, in Canada. Mercury and dealer promotions may stack bonus warranty years on top of the base during active promo windows. Current promotions are reflected in pricing at mercuryrepower.ca and listed at /promotions.
+Standard is 3 years, concurrent, in Canada. Promo terms change, but as of July 2026 HBW's current offer is 7 years total coverage (3 standard + 4 free) through December 31, 2026. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
 ### Can I order any model, or only what's in stock?
 
@@ -201,7 +188,15 @@ Both. In-stock means physically at our shop in Gores Landing. Available-to-order
 
 ### Are these prices final?
 
-The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at delivery, before HST.
+The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at pickup, before HST.
+
+## Related guides
+
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 9.9 ProKicker for Rice Lake Walleye Fishing: The Complete 2026 Guide"
+title: "Mercury ProKicker for Rice Lake Walleye"
 description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 9.9 ProKicker for Rice Lake Walleye Fishing: The Complete 2026 Guide
+# Mercury ProKicker for Rice Lake Walleye
 
 > Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips.
 
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
-> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca.
+> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local pickup details.
 
 Let us skip the preamble. If you fish Rice Lake for walleye, you need a kicker motor. That is the whole answer.
 
@@ -174,13 +174,6 @@ HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. Th
 
 ---
 
-## Related guides
-
-- [Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)](/blog/best-mercury-outboard-rice-lake-fishing): A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken.
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook): An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the.
-- [Recommended Mercury Outboard Setup for Lake Simcoe Walleye Fishing (2026)](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing): A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the.
-- [How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)](/blog/trailer-boat-toronto-to-rice-lake-guide): A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what.
-
 ## Ready to Add a ProKicker?
 
 Live pricing, motor only or fully installed, is at **mercuryrepower.ca**. The quote tool shows actual HBW pricing in Canadian dollars, not MSRP.
@@ -203,13 +196,6 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
 *Motor specifications and configurations are current as of May 2026. Confirm the exact model, shaft length, and pricing for your boat with HBW before purchase. Your owner's manual is the final word on service intervals.*
 
 ---
-
-**Related guides:**
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [Kicker Motor vs Electric Trolling Motor](/blog/electric-trolling-motor-kicker-guide)
-- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Mercury 9.9 EFI Review](/blog/mercury-9-9-efi-review-ontario)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 
 ## FAQs
 
@@ -248,6 +234,14 @@ Yes. We service any Mercury or MerCruiser regardless of where it was bought. Boo
 ### Does the ProKicker work on the Trent-Severn?
 
 Yes. It is used for trolling on the connecting lakes and as a backup motor on cruising routes, and it gives precise low-speed control on lock approaches.
+
+## Related guides
+
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
+- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
+- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 
 ## Next steps
 

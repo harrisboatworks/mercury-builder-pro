@@ -108,13 +108,6 @@ When customers come to us at Harris Boat Works for a repower, the capacity plate
 2. **Existing motor exceeds the rated max** (often a private-sale boat with a "previous owner upgraded"). This is a problem we have to solve before the repower. Sometimes the plate was correct and the previous owner ignored it. Sometimes the plate was replaced with a higher-rated one (legitimate but rare). We will not install a new motor that pushes the hull over its rated capacity, full stop, because that is an insurance, warranty, and safety problem for the customer.
 3. **No plate, hull is older.** We use the Transport Canada formula above as a baseline and have an honest conversation with the owner about realistic HP. Sometimes that means a smaller motor than the customer wanted. Sometimes it means we recommend a different boat.
 
-## Related guides
-
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
-- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of.
-- [Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower): Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take.
-- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario): New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells.
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
@@ -155,6 +148,14 @@ No, you are within Transport Canada's rules for boats of that era. The complianc
 ### What is the difference between "maximum persons" and "maximum load" on the plate?
 
 Maximum persons is the headcount limit. Maximum load is the total weight limit (people + motor + fuel + gear). You can hit max persons without hitting max load if everyone is small and there is no extra gear. You can hit max load with fewer people if the motor and fuel are heavy. Both numbers are independent limits and either one is binding.
+
+## Related guides
+
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 
 ## Next steps
 

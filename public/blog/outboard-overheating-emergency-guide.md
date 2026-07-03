@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)"
+title: "Mercury Overheating Emergency Guide"
 description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"
 date_published: 2026-05-09
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)
+# Mercury Overheating Emergency Guide
 
 > A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock.
 
@@ -31,7 +31,7 @@ content_type: blog_article
 
 ## Quick Answer
 
-If the overheat alarm is sounding right now: throttle back to idle, check the tell-tale water stream, and assess from there. No stream means the water pump has failed or the intake is blocked, shut down immediately. A strong stream with an alarm may be a sensor or thermostat issue, idle toward shore. When in doubt, shut it down. Running an overheated motor to try to get home is how a relatively small repair becomes an engine replacement.
+If the overheat alarm is sounding: throttle to idle, shift to neutral, and check the tell-tale water stream. No stream means the pump failed or the intake is blocked, shut down immediately. A strong stream with an alarm points to a sensor or thermostat, idle toward shore. When in doubt, shut it down. Running an overheated motor turns a small repair into an engine replacement.
 
 ::diagnostic-flow
 heading: Mercury overheating? Run this checklist before damage gets expensive
@@ -167,13 +167,6 @@ If you suspect a cooling system problem, book before your next run: [hbw.wiki/se
 
 ---
 
-## Related guides
-
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario): Mercury outboard overheating at idle but fine at speed? The actual diagnostic flow from a Mercury Premier.
-- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): Mercury outboard won't start? Ontario Premier dealer's honest diagnostic ladder: battery, fuel, ignition.
-- [Mercury SmartCraft Alarm Codes Complete Reference (Ontario Dealer Guide, 2026)](/blog/mercury-smartcraft-alarm-codes-encyclopedia): Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency.
-- [Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)](/blog/mercury-outboard-overheat-alarm-decoder): Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. real heat, on-water emergency.
-
 ## Related reading
 - [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
@@ -214,6 +207,14 @@ Not directly, overheating is a cooling-side problem, not a fuel-side one. But et
 ### My boat is on the water and I'm panicking. What do I do?
 
 Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. **905-342-2153** if you're in our area. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

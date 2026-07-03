@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "How Ontario Boat Owners Accidentally Make Their Service Bills Bigger"
+title: "Avoid Bigger Service Bills Ontario"
 description: "The shop-floor truth: most expensive Mercury repairs start as small ignored problems."
 category: "Maintenance"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# How Ontario Boat Owners Accidentally Make Their Service Bills Bigger
+# Avoid Bigger Service Bills Ontario
 
 > The shop-floor truth: most expensive Mercury repairs start as small ignored problems.
 
@@ -137,13 +137,6 @@ Worth being explicit about: there are services some marinas push that we don't t
 
 If you want a structured pre-season inspection on your specific boat, our service intake is at hbw.wiki/service. We'll tell you what's actually worth doing and what isn't.
 
-## Related guides
-
-- [Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario): Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up.
-- [Boat Electrical Safety Checklist for Ontario Freshwater Boats](/blog/boat-electrical-safety-checklist-ontario-freshwater): Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners.
-- [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
-- [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
-
 ## Sources
 
 - Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
@@ -184,6 +177,14 @@ It can be, if you follow Mercury's published procedure carefully and have the ri
 ### What's the most common "small problem becomes big problem" we see at HBW?
 
 Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable.
+
+## Related guides
+
+- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Mercury Winterization Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 
 ## Next steps
 

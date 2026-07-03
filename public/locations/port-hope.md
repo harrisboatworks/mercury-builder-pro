@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/port-hope
-last_updated: 2026-06-30
+last_updated: 2026-07-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -60,7 +60,7 @@ Yes. Fill out the trade-in form and we email a CAD figure within one business da
 
 ### Can I finance a Mercury repower from Port Hope?
 
-Yes. Financing is 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote.
+Yes. Financing is 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).
 
 ## Notes
 

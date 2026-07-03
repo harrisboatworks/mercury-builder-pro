@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)"
-description: "Lake Ontario salmon trolling setup from an Ontario Mercury Premier dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and..."
+title: "Lake Ontario Salmon Mercury Setup"
+description: "Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
 date_modified: 2026-06-12
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Lake Ontario Salmon Mercury Setup Guide (Ontario Dealer, 2026)
+# Lake Ontario Salmon Mercury Setup
 
-> Lake Ontario salmon trolling setup from an Ontario Mercury Premier dealer. Real numbers on alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, and...
+> Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20.
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
@@ -147,8 +147,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 | "I have a 9.9 but I want auto-trolling speed" | SmartCraft Troll Control candidate |
 | "When can you get me in?" | 905-342-2153 |
 
-## Related guides
-
 - [Best Mercury Outboard for Lake Ontario Salmon and Trout](https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout) - motor selection deep-dive
 - [Mercury ProKicker Rice Lake Fishing Guide](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide) - kicker setup details
 - [Electric Trolling Motor and Kicker Guide](https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide) - trolling power options
@@ -164,7 +162,9 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. 15-20 minutes from Port Hope and Cobourg. Largest Mercury parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
+
+**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153.
 
 ## FAQs
 
@@ -199,6 +199,14 @@ For modern Lake Ontario salmon rigs, we generally recommend an Automatic Chargin
 ### Which Fisheries Management Zone is Lake Ontario in?
 
 FMZ 20. Confirm current Lake Ontario regulations directly with the Ontario MNRF Fishing Regulations Summary each season.
+
+## Related guides
+
+- [Best Mercury for Rice Lake Fishing 2026](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
+- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
 
 ## Next steps
 

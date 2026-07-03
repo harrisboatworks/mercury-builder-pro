@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)"
-description: "Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging, resale - honest comparison from a Mercury dealer since 1965..."
+title: "Mercury vs Yamaha Outboards: Honest Comparison"
+description: "Mercury vs Yamaha outboards for Ontario boaters: an honest comparison of reliability, parts, service network, and pricing from a Rice Lake dealer."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-30
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury vs Yamaha Outboards (Honest Ontario Dealer Comparison, 2026)
+# Mercury vs Yamaha Outboards: Honest Comparison
 
-> Mercury vs Yamaha outboards for Ontario freshwater (2026). Dealer density, parts speed, factory-rigging, resale - honest comparison from a Mercury dealer since 1965...
+> Mercury vs Yamaha outboards for Ontario boaters: an honest comparison of reliability, parts, service network, and pricing from a Rice Lake dealer.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario
 
-> **Quick answer:** Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world performance and reliability difference between equivalent motors is small. For Ontario cottage owners, the more important question is service network: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind on Rice Lake. For boaters in the Kawarthas, the practical service-availability question matters more than spec-sheet comparisons. Build a Mercury quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+## Quick answer
+
+Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world performance and reliability difference between equivalent motors is small. For Ontario cottage owners, the more important question is service network: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind on Rice Lake. For boaters in the Kawarthas, the practical service-availability question matters more than spec-sheet comparisons. Build a Mercury quote at mercuryrepower.ca.
 
 A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Premier dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
 
@@ -84,7 +86,7 @@ Mercury issued a shift-shaft recall in 2025 that received significant attention 
 
 ## What HBW has on the shelf
 
-**HBW has one of the deepest Mercury and Mercruiser parts inventories in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
+**HBW has largest Mercury parts inventory in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
 
 ## The HBW on-water test
 
@@ -115,7 +117,7 @@ Thinking about switching from Yamaha to Mercury? We handle the full conversion i
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. One of the deepest Mercury and Mercruiser parts inventories in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
 
 ## Sources
 
@@ -123,8 +125,6 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Yamaha Marine Canada lineup: [yamaha-motor.ca](https://www.yamaha-motor.ca/)
 - HBW shop-floor service data 2026
 - Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only
-
-## Related guides
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury Pro XS Buyer Guide (Ontario)](/blog/mercury-pro-xs-buyer-guide-ontario)
@@ -164,6 +164,14 @@ Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient
 ### What is the most popular outboard in Ontario, Mercury or Yamaha?
 
 Mercury, by a significant margin. Mercury is the dominant brand on Ontario freshwater. Yamaha is well-represented but has a smaller market share than Mercury locally.
+
+## Related guides
+
+- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
+- [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
+- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
+- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)"
+title: "Best Mercury for Family Runabout 2026"
 description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)
+# Best Mercury for Family Runabout 2026
 
 > A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case.
 
@@ -84,7 +84,7 @@ Mercury makes two flavours at most horsepower ratings: **FourStroke** (the stand
 
 **FourStroke is quieter.** Conversation-quiet at cruise. Pro XS has a sportier exhaust note that sounds great for five minutes and gets old over a six-hour day with kids in the boat.
 
-**FourStroke gets better fuel economy.** Roughly 10, 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
+**FourStroke gets better fuel economy.** Roughly 10 to 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
 
 **FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end. The FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
@@ -100,7 +100,7 @@ For everyone else, pulling tubes occasionally, cruising to dinner, hauling the k
 
 The most common mistake we see on family runabouts: the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.
 
-A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80, 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
+A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80 to 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
 
 **The rule:** Look at your boat's max HP rating on the capacity plate (usually near the helm). For family use with full crew and gear, don't go more than 25 HP below max. If your boat is rated 115 HP max, run a 90, 115 HP motor.
 
@@ -144,13 +144,13 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 
 | Motor | All-In (CAD, before HST) |
 |---|---|
-| 90 HP FourStroke | $15,500, $18,500 |
-| 115 HP FourStroke | $17,500, $22,500 |
-| 150 HP FourStroke | $23,000, $30,000 |
-| 175 HP V6 FourStroke | $26,000, $32,500 |
-| 200 HP V6 FourStroke | $28,000, $35,000 |
+| 90 HP FourStroke | $15,500 to $18,500 |
+| 115 HP FourStroke | $17,500 to $22,500 |
+| 150 HP FourStroke | $23,000 to $30,000 |
+| 175 HP V6 FourStroke | $26,000 to $32,500 |
+| 200 HP V6 FourStroke | $28,000 to $35,000 |
 
-"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500, $5,000 depending on age and condition, applies against the total.
+"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
 ### What We Do
 
@@ -216,6 +216,14 @@ Significantly. Modern Mercury 4-strokes are conversation-quiet at cruise; old 2-
 ### How much should fuel cost on a typical family Saturday?
 
 $80-$300 depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 

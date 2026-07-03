@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)"
-description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs."
+title: "Mercury Overheat Alarm Decoder: Beep Meanings"
+description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury."
 category: "Service & Troubleshooting"
 date_published: 2026-05-27
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
+# Mercury Overheat Alarm Decoder: Beep Meanings
 
-> Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs.
+> Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-27  
@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 
-> **Quick answer:** A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
+## Quick answer
+
+A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
 
 # Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
 
@@ -188,6 +190,14 @@ Mercury recommends impeller replacement every two seasons of normal use, or annu
 ### Do overheat alarm patterns mean the same thing on every Mercury motor?
 
 No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCraft-equipped. A 2005 carbureted 2-stroke does not produce alarms the same way as a current EFI FourStroke or Verado. The patterns described on this page reflect what HBW techs see most often on Ontario Mercury motors. Always cross-reference with your operator manual and any display message.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

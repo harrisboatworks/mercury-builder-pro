@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)"
-description: "Mercury vs Honda outboards from an Ontario Mercury Premier dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake."
+title: "Mercury vs Honda Ontario 2026"
+description: "Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup."
 category: "Buying Guide"
 date_published: 2026-05-28
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury vs Honda Outboards (Honest Ontario Dealer Comparison, 2026)
+# Mercury vs Honda Ontario 2026
 
-> Mercury vs Honda outboards from an Ontario Mercury Premier dealer. Where Honda actually wins, where Mercury wins, and the local service reality on Rice Lake.
+> Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-28  
@@ -80,7 +80,7 @@ For Mercury owners on Rice Lake: drop the boat at our dock, walk home, pick it u
 
 ## What HBW has on the shelf
 
-We keep one of the larger Mercury and Mercruiser parts inventories in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
+We keep largest Mercury parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
 
 ## The 8-year warranty conversation
 
@@ -115,8 +115,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 - claim: I'll save money buying Honda and getting it serviced wherever.
   rebuttal: Honda parts and service availability is genuinely thinner in our region. Plan for it before you buy.
 
-## Related guides
-
 - [Honda to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide) - the brand-swap math
 - [Mercury vs Yamaha Outboards Ontario](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario) - the other comparison buyers ask about
 - [Mercury vs Yamaha vs Honda Reliability 2026](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026) - three-brand reliability breakdown
@@ -131,6 +129,8 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 **Service requests:** hbw.wiki/service
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake.
+
+**Comparing real numbers beats comparing brochures.** Build a Mercury quote for your boat at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## FAQs
 
@@ -157,6 +157,14 @@ Yes. Mercury 350 Verado V8 is the direct equivalent. Mercury also offers 400 HP 
 ### Can I switch from Honda to Mercury on my existing boat?
 
 Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower because controls, harness, gauges, and prop all change. See our Honda to Mercury Repower Ontario Guide for the full math.
+
+## Related guides
+
+- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
+- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
+- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
 
 ## Next steps
 

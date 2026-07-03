@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)"
+title: "Best Mercury for Rice Lake Fishing 2026"
 description: "A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup."
 category: "Buying Guide"
 date_published: 2026-02-09
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)
+# Best Mercury for Rice Lake Fishing 2026
 
 > A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup.
 
@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
-> **Quick answer:** For Rice Lake's shallow, weedy, troll-heavy walleye fishing, the proven setup is a Mercury 60-90 HP FourStroke main paired with a Mercury 9.9 ProKicker. The kicker runs the slow 1-2 mph trolling speed walleye demand; the FourStroke handles the afternoon wind on the ride home. Match horsepower to your hull's capacity plate, not the minimum. Build a quote at mercuryrepower.ca.
+> **Quick answer:** For Rice Lake's shallow, weedy, troll-heavy walleye fishing, the proven setup is a Mercury 60-90 HP FourStroke main paired with a Mercury 9.9 ProKicker. The kicker runs the slow 1-2 mph trolling speed walleye demand; the FourStroke handles the afternoon wind on the ride home. Match horsepower to your hull's capacity plate, not the minimum. Build a quote at mercuryrepower.ca or see [Mercury repower on Rice Lake](/locations/rice-lake-mercury-repower).
 
 My grandfather built cedar strip canoes and boats on Rice Lake's south shore. My dad spent his career as the mechanic, repairing and rigging Mercury outboards. I run the marina now. Three generations, same dock, same lake.
 
@@ -312,13 +312,6 @@ The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. 
 
 ---
 
-## Related guides
-
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a.
-- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use): For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90.
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas): Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and.
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats): The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60.
-
 ## Ready to Build Your Rice Lake Setup?
 
 If you fish Rice Lake, the right motor comes down to a match between your hull, your fishing style, and this specific water. We have been making that match here for three generations.
@@ -343,13 +336,6 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
 *Fishing regulations are current as of May 2026, based on Ontario FMZ 17 (SF-2025/17). Always verify season dates, size limits, and possession limits at ontario.ca/fishing before your trip.*
 
 ---
-
-**Related guides:**
-- [Mercury 9.9 ProKicker: Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
 
 ## FAQs
 
@@ -388,6 +374,14 @@ Typically 60-90 HP. Check the capacity plate first, because that is the ceiling.
 ### Is there a free fishing weekend in 2026?
 
 Yes. Father's Day Weekend (June 20-21) and Family Fishing Week (June 27 to July 5). No licence required during either.
+
+## Related guides
+
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
+- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
+- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 
 ## Next steps
 

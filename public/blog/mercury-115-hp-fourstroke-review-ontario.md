@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters"
-description: "An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the same 2.1L block as the 75 and 90, tuned hot."
+title: "Mercury 115 HP FourStroke Review"
+description: "Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
 date_modified: 2026-05-10
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 115 HP FourStroke Review: The Lightest 115 HP Available, and Why That Matters
+# Mercury 115 HP FourStroke Review
 
-> An honest Ontario buyer's guide to the Mercury 115 HP FourStroke. Mercury's headline mid-range motor with the same 2.1L block as the 75 and 90, tuned hot.
+> Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
@@ -114,7 +114,7 @@ The most common repower candidates for the 115 ELPT are older 115 OptiMax, 115, 
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25, 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
+The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25 to 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
 
 ---
 
@@ -162,13 +162,6 @@ If you buy from us, we service it. For engine repairs, we only work on Mercury a
 
 ---
 
-## Related guides
-
-- [Mercury 75 HP FourStroke: Why HBW Doesn't Stock It (And Why You Probably Want the 90 Instead)](/blog/mercury-75-hp-fourstroke-review-ontario): An honest answer from an Ontario Mercury dealer. We don't sell the 75 HP FourStroke. Here's why, what it.
-- [Mercury 90 HP FourStroke Review: The Sweet Spot of Mercury's Mid-Range Lineup](/blog/mercury-90-hp-fourstroke-review-ontario): An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's.
-- [Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About](/blog/mercury-9-9-efi-review-ontario): The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario.
-- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-
 *Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
 
 ## Build a Quote
@@ -180,20 +173,10 @@ Questions about which version fits your boat? Call 905-342-2153 or submit a serv
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---
-
-*Related guides: Mercury 90 HP FourStroke review | Mercury 75 HP FourStroke, why we don't stock it | Mercury 40 vs 60 HP | Ontario Mercury Outboard Price Guide*
-
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
 ---
-
-**Related guides:**
-- [Mercury 115 vs 150 HP: Honest Ontario Dealer Guide 2026](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury FourStroke Buyer Guide Ontario](/blog/mercury-fourstroke-buyer-guide-ontario)
-- [Mercury Pro XS Buyer Guide Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ## FAQs
 
@@ -215,7 +198,7 @@ With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is th
 
 ### What's the warranty?
 
-3-year factory warranty as standard. Mercury runs a 3-year promotional bonus warranty most of the year, bringing it to 6 years total. Ask us about current promo status.
+3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
 
 ### Is the 115 fuel injected?
 
@@ -228,6 +211,14 @@ Yes. Full SmartCraft integration is available. NMEA 2000, VesselView mobile, Act
 ### Can I get a 115 HP in counter-rotation?
 
 Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because twin 115s are unusual on Rice Lake boats, but available for the right application.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 
 ## Next steps
 

@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Boat Motor Size Guide: How to Calculate the Right HP for Your Boat"
+title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
 category: "Buying Guide"
 date_published: 2026-05-11
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Boat Motor Size Guide: How to Calculate the Right HP for Your Boat
+# Boat Motor HP Size Guide Ontario
 
 > Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection.
 
@@ -205,6 +205,14 @@ Engines lose about 3% power per 1,000 feet elevation. At sea level (Ontario), th
 ### Should I size for today or future needs?
 
 Consider future use within reason. If you're planning to add watersports or more passengers, size up now. It's cheaper than repowering in 2 years.
+
+## Related guides
+
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
+- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/lindsay
-last_updated: 2026-06-30
+last_updated: 2026-07-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -55,7 +55,7 @@ Mid-range Mercury FourStroke 90–150 HP is common on cruising pontoons and runa
 
 ### Can I finance a Mercury repower if I live in Lindsay?
 
-Yes. Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote.
+Yes. Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).
 
 ### Do Lindsay customers usually boat on more than one lake?
 

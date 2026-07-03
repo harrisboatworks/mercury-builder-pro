@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 2027 Outboard Preview: What's Changing, What's Not, and How to Decide"
-description: "Mercury's 2027 model year flips July 1, 2026. What we know is changing, what isn't, and how to decide between buying current 2026 or waiting for 2027."
+title: "Mercury 2027 Outboard Preview Guide"
+description: "Mercury's 2027 model year is here as of July 1, 2026. What we know is changing, what isn't, and how to decide between remaining 2026 stock or the new 2027 lineup."
 category: "Buying Guide"
 date_published: 2026-05-13
 date_modified: 2026-05-13
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury 2027 Outboard Preview: What's Changing, What's Not, and How to Decide
+# Mercury 2027 Outboard Preview Guide
 
-> Mercury's 2027 model year flips July 1, 2026. What we know is changing, what isn't, and how to decide between buying current 2026 or waiting for 2027.
+> Mercury's 2027 model year is here as of July 1, 2026. What we know is changing, what isn't, and how to decide between remaining 2026 stock or the new 2027 lineup.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
@@ -39,7 +39,7 @@ Honest answer, before we get into the details: for most repower customers, the m
 
 ## Quick recommendation
 
-If you need the motor on the water this summer or next spring, build a quote on the current 2026 lineup and lock it in. Pricing is set, inventory is real, and our 7-year warranty bonus (HBW-exclusive) is active on every new Mercury. Spring 2027 install slots fill before Christmas. If you're 12+ months out and the 2027 spec sheet might change your decision, watch the announcements and revisit. Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+If you need the motor on the water this summer or next spring, build a quote on the current 2027 lineup and lock it in. Pricing is set, inventory is real, and our 7-year warranty bonus (HBW-exclusive) is active on every new Mercury. Spring 2027 install slots fill before Christmas. If you're 12+ months out and the 2027 spec sheet might change your decision, watch the announcements and revisit. Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## What Actually Changes at the Model Year Flip
 
@@ -144,14 +144,6 @@ The model year flip doesn't change the basic question: what motor do you want, w
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained)
-- [Mercury Boost Software Upgrade Eligibility (2026)](/blog/mercury-boost-software-upgrade-eligibility-2026)
-- [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026)
-- [Mercury Pro XS Buyer Guide for Ontario](/blog/mercury-pro-xs-buyer-guide-ontario)
-- [Mercury Pricing and Promotions 2026](/blog/mercury-pricing-promotions-2026)
-- [FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
-
 ## FAQs
 
 ### When does Mercury officially release the 2027 lineup?
@@ -185,6 +177,14 @@ Yes, once Mercury releases 2027 pricing and order books open (typically late sum
 ### Should I trade in my old motor before July 1?
 
 The HST math is the same on either side of the flip. The slight argument for trading before July 1 is that your old motor goes onto our reconditioning bench while the 2026 vs 2027 talk is still active, which sometimes means a stronger resale margin on our end and a slightly better offer to you. Marginal effect, not a deal-breaker. Most customers trade when the new motor is being installed, not in anticipation of the flip.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

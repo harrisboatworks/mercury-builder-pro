@@ -1,29 +1,29 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-06-26
+last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide"
-description: "A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s..."
+title: "Rice Lake Boat Rentals from Toronto"
+description: "A Rice Lake rental day from the GTA: drive time, what's included, what to bring, and how to book online with Harris Boat Works."
 category: "Boating Lifestyle"
 date_published: 2026-05-16
-date_modified: 2026-06-26
+date_modified: 2026-07-02
 keywords: ["Rice Lake boat rentals","boat rentals near Toronto","Kawarthas pontoon rentals","family boat rental Ontario","day trip boat rental GTA","pontoon rental Toronto"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide
+# Rice Lake Boat Rentals from Toronto
 
-> A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s...
+> A Rice Lake rental day from the GTA: drive time, what's included, what to bring, and how to book online with Harris Boat Works.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-05-16  
-**Last updated:** 2026-06-26  
+**Last updated:** 2026-07-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta
 
@@ -206,12 +206,24 @@ The rental experience is a useful gut-check on what kind of boat owner you'd be.
 
 ---
 
-## Related guides
+## What the Whole Day Actually Costs
 
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
-- [Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)](/blog/docking-boat-in-wind-rice-lake): A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy.
-- [10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)](/blog/boat-trailering-mistakes-ontario): Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires.
-- [Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake](/blog/boat-service-near-toronto-hbw-reach): A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that.
+The itinerary above is the fun math. Here's the money math, all in, so nobody's surprised at the dock:
+
+| Line item | What to budget | Notes |
+|---|---|---|
+| Boat rental | Live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) | Varies by boat and day; pontoons book out summer weekends, reserve ahead |
+| Fuel (paid at return) | $15 to $75 fishing, $60 to $100 full cruising day | You pay for what you burn; wind and throttle habit decide it |
+| Damage deposit | $1,000 hold, refunded | Credit card authorization, not a charge |
+| Boating licence | One-time, 15% off with code HARRIS15 | Online at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); it never expires |
+| Bait | $5 a dozen worms ($10 for two) | At our dock; BJ Tackle in Bewdley for everything else |
+| Lunch and treats | Your call | Gores Landing and Bewdley both have options; ice cream stops are mandatory with kids aboard |
+
+Split a pontoon between two families and the per-person cost is one of the cheaper full days out you can buy, with no lineups and a lake instead of a parking lot. The licence is a one-time cost that covers every boating day you'll ever have in Canada.
+
+One planning note that saves money: fuel burn is mostly throttle habit. A day of cruising between anchor stops burns far less than a day of end-to-end laps of the lake. Pick two or three destinations, not ten.
+
+---
 
 ## FAQs
 
@@ -250,6 +262,14 @@ Yes. Pontoons typically have swim ladders. The 16-ft fishing boats don't, but yo
 ### Do you offer multi-day rentals?
 
 Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day rentals for cottagers staying in the area without their own boat.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
 
 ## Next steps
 

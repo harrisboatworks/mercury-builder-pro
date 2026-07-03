@@ -27,7 +27,9 @@ content_type: blog_article
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail
 
-> **Quick answer:** An impeller that survives the spring check can still die in July. In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. If your telltale stream weakens or an overheat alarm sounds, ease off and get it checked. Replacement is usually same-day work at HBW in Gores Landing. Book at [hbw.wiki/service](https://hbw.wiki/service).
+## Quick answer
+
+An impeller that survives the spring check can still die in July. In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. If your telltale stream weakens or an overheat alarm sounds, ease off and get it checked. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
 
 Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
 
@@ -113,12 +115,6 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 
-**Related guides:**
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-- [The Mercury 20/100/300 Maintenance Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips)
-
 ## FAQs
 
 ### How often should a Mercury outboard impeller be replaced?
@@ -143,7 +139,15 @@ Only sometimes. A short idle test in cold water is the easiest exam an impeller 
 
 ### Does HBW stock Mercury impellers and water pump kits?
 
-Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury and Mercruiser parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service.
+Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

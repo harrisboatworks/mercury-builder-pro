@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)"
+title: "Common Pontoon Problems on Rice Lake"
 description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion."
 category: "Boating Lifestyle"
 date_published: 2026-02-12
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)
+# Common Pontoon Problems on Rice Lake
 
 > The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion.
 
@@ -225,7 +225,7 @@ Call us at 905-342-2153 or request service online. We'll give you a straight ans
 The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer](/blog/best-boats-rice-lake-under-30000)
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer\](/blog/best-boats-rice-lake-under-30000)
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)](/blog/mercury-prokicker-rice-lake-fishing-guide)
 
 ---
@@ -253,6 +253,14 @@ Aluminum, moisture, dissimilar metals, and marine electrical current are an idea
 ### Do I need ethanol-free fuel in a pontoon outboard?
 
 For any outboard that sits more than a few weeks, yes. Ethanol absorbs moisture, phase-separates from the gasoline, and leaves gum and varnish in carburettors and fuel injectors. Harris Boat Works sells ethanol-free fuel for this reason. Use fresh fuel at the start of every season and run stabilizer through the system before any storage period longer than 30 days.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 

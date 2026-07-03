@@ -7,7 +7,7 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Boat Trim Explained for Rice Lake Boaters, Without the Jargon"
+title: "Boat Trim Explained Rice Lake"
 description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer."
 category: "How-To"
 date_published: 2026-05-17
@@ -17,7 +17,7 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Boat Trim Explained for Rice Lake Boaters, Without the Jargon
+# Boat Trim Explained Rice Lake
 
 > How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer.
 
@@ -112,13 +112,6 @@ When customers buy a new boat from us, we run through the trim basics on the lau
 
 If you'd like a structured run-through of trim on your specific boat, email info@harrisboatworks.ca and we can usually walk you through it in 5 minutes. For the broader boat handling conversation, our [Docking in Wind on Rice Lake](/blog/docking-boat-in-wind-rice-lake) post covers another piece of the same skill set.
 
-## Related guides
-
-- [How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)](/blog/how-to-trim-boat-mercury-outboard): Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice.
-- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake): The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and.
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
-
 ## Sources
 
 - Mercury Marine outboard operation guide (dealer technical reference, 2026)
@@ -156,6 +149,14 @@ A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate
 ### Can the wrong trim damage my motor?
 
 Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 
 ## Next steps
 

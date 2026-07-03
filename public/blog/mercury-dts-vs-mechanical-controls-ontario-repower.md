@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know"
-description: "Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take on which fits which Ontario repower project."
+title: "Mercury DTS vs Mechanical Ontario"
+description: "Mercury Digital Throttle and Shift vs mechanical controls: compatibility, cost, and feel, plus when mechanical is still the right choice."
 category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
+# Mercury DTS vs Mechanical Ontario
 
-> Mercury Digital Throttle & Shift or traditional mechanical controls? A Mercury Premier dealer's honest take on which fits which Ontario repower project.
+> Mercury Digital Throttle and Shift vs mechanical controls: compatibility, cost, and feel, plus when mechanical is still the right choice.
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
@@ -121,13 +121,6 @@ We install both systems regularly. When a customer comes in for a repower, the f
 
 For an honest cost-benefit conversation on your specific boat, email info@harrisboatworks.ca with your hull details, current control setup, and target Mercury model. We'll tell you what we'd do in your situation.
 
-## Related guides
-
-- [Repair, Repower, or Sell the Boat? An Honest Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): When a Mercury outboard hits a major repair decision, owners face three real options. A Mercury Premier.
-- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
-- [Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters](/blog/aluminum-vs-fiberglass-hull-ontario): Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of.
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
-
 ## Sources
 
 - Mercury Marine SmartCraft and DTS technical documentation ([mercurymarine.com/ca/en/owner-resources](https://www.mercurymarine.com/ca/en/owner-resources/))
@@ -166,6 +159,14 @@ Yes. The control system is independent of propeller choice. Whatever prop is cor
 ### Is there a fuel economy difference?
 
 Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system.
+
+## Related guides
+
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 
 ## Next steps
 

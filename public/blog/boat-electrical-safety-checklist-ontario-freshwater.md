@@ -7,8 +7,8 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Boat Electrical Safety Checklist for Ontario Freshwater Boats"
-description: "Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners: corrosion, fuses, bilge pump, battery switch, amateur wiring..."
+title: "Boat Electrical Safety Ontario"
+description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-06-09
@@ -17,9 +17,9 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Boat Electrical Safety Checklist for Ontario Freshwater Boats
+# Boat Electrical Safety Ontario
 
-> Marine electrical work goes wrong slowly. An Ontario marina's plain-English checklist for boat owners: corrosion, fuses, bilge pump, battery switch, amateur wiring...
+> Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps.
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
@@ -160,13 +160,6 @@ For a structured electrical inspection or to fix a known issue, our service inta
 
 For engine repairs, we only service Mercury and Mercruiser.
 
-## Related guides
-
-- [How Ontario Boat Owners Accidentally Make Their Service Bills Bigger](/blog/accidentally-increase-boat-service-bills-ontario): The shop-floor truth: most expensive Mercury repairs start as small ignored problems. An Ontario marina's.
-- [Mercury Outboard Sat All Winter? Spring Run-Up Checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario): Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up.
-- [Boat Trailer Maintenance: The Guide Nobody Writes (Ontario 2026)](/blog/boat-trailer-maintenance-guide-ontario): Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights, bunks.
-- [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026): Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD.
-
 ## Sources
 
 - ABYC E-11 marine electrical standards
@@ -206,7 +199,15 @@ Stray current is small amounts of DC current leaking from your electrical system
 
 ### Should I disconnect the battery for winter storage?
 
-At minimum, turn the battery switch to OFF. Better is to remove the battery entirely and store it in a heated space, on a trickle charger. A battery left in an unheated boat through an Ontario winter is more likely to fail next spring than one stored in a warm garage.
+Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and pull the negative cable). Parasitic drain from staying connected is what kills a battery over the winter, not the Ontario cold. A trickle/maintainer charger further extends life if you have shore power at storage.
+
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 
 ## Next steps
 

@@ -108,6 +108,14 @@ The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or a
 
 It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.
 
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

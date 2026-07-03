@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 
-> **Quick answer:** Rice Lake still fishes well in 2026, but the smart move is to adjust your expectations. Smallmouth bass (season opens June 20), muskellunge (opens June 6) and crappie are the strong bets right now. Walleye (opens May 9) are still in the lake but harder to box, with many fish falling outside the 35 to 50 cm keeper slot. Always confirm current regulations at ontario.ca before you launch.
+> **Quick answer:** Rice Lake still fishes well in 2026, but the smart move is to adjust your expectations. Smallmouth bass (season opens June 20), muskellunge (opens June 6) and crappie are the strong bets right now. Walleye (opens May 9) are still in the lake but harder to box, with many fish falling outside the 35 to 50 cm keeper slot. Always confirm current regulations at ontario.ca before you launch. If you are planning a repower on the lake, see [Mercury repower on Rice Lake](/locations/rice-lake-mercury-repower).
 
 Rice Lake earned its name as a walleye lake in an era most of today's anglers never fished. The 1970s reputation still pulls people in. The 2026 reality is more interesting, and more honest, than the brochure version.
 
@@ -205,13 +205,6 @@ What is left in the meantime is anglers doing their part. Release the over-slot 
 
 And here is the thing worth remembering: the bass, the muskie, the crappie and the pike are all in good shape. The lake is still worth every trip. It is simply asking you to be a slightly different angler than the one who grew up on walleye stories. Learn the railway drop-offs. Find the crappie schools. Photograph a big muskie and let it swim. That is the 2026 Rice Lake experience, and it is a good one.
 
-## Related guides
-
-- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
-- [Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water](/blog/boat-rentals-shared-access-booming-2026): The boat rental market is surging across North America. Here's why shared boating is exploding, what's.
-- [Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan](/blog/trent-severn-waterway-boating-guide-2026): 2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a.
-- [Best Mercury Outboard for Rice Lake Fishing: A Local's Complete Guide (2026)](/blog/best-mercury-outboard-rice-lake-fishing): A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken.
-
 ## Sources
 
 - Ontario Ministry of Natural Resources, Fisheries Management Zone 17 regulations summary: seasons, limits and sanctuaries (ontario.ca)
@@ -231,13 +224,6 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 **Phone:** 905-342-2153
 **Build a quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [Mercury 9.9 ProKicker Guide for Rice Lake Anglers](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Electric Trolling Motor vs Kicker Motor](/blog/electric-trolling-motor-kicker-guide)
-- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas)
 
 ## FAQs
 
@@ -272,6 +258,14 @@ No. Ontario fishing licences and the Outdoors Card are sold through the province
 ### Can I fish Rice Lake without a licence in 2026?
 
 Ontario has licence-free fishing weekends on May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days.
+
+## Related guides
+
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
+- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
+- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 
 ## Next steps
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Rice Lake's Full-Service Marina Since 1947"
-description: "The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service."
+description: "The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals."
 category: "Rice Lake & Local"
 date_published: 2026-05-16
 date_modified: 2026-05-16
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Rice Lake's Full-Service Marina Since 1947
 
-> The best full-service marina on Rice Lake, Ontario. Family-owned since 1947 in Gores Landing. Mercury Premier dealer, full storage, service.
+> The full-service marina on Rice Lake, Ontario: family-owned since 1947 in Gores Landing, Mercury Premier dealer, storage, service, and rentals.
 
 **Category:** Rice Lake & Local  
 **Published:** 2026-05-16  
@@ -91,7 +91,7 @@ Mercury Marine Premier status is the top tier of Mercury's dealer program. It is
 - **Parts on hand, not on order.** Premier dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
 - **Warranty work in-house.** If your Mercury is under factory warranty or covered by Mercury Product Protection, we open and close the claim ourselves. Nothing gets trucked to a third shop. Same for recall work.
 - **Repower capacity.** New motor, rigging, controls, gauges, and propeller all happen in one bay with one work order. The motor and the rigging kit come from the same parts counter.
-- **Year-round service availability.** April through November is in-season service. December through March is the winter service window for repowers, rebuilds, and major projects so the boat is ready when the lake opens.
+- **Year-round service availability.** April through November is when install and service work happens. The marina is closed December 1 to April 1; winter is booking, planning, and reserving spring slots. Boats booked in fall or over the winter get the earliest spring install slots.
 
 A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. The full-service Mercury model on Rice Lake exists so a Friday-afternoon problem does not eat a long weekend, and so the same shop that sold you the motor is still the shop fixing it in year seven.
 
@@ -173,12 +173,6 @@ What sets us apart is not fancy amenities. It is the depth on the service side: 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
-## Related guides
-
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario): How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide.
-- [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution): The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on.
-- [Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors](/blog/rice-lake-boat-launch-guide): A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours.
-- [Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes](/blog/rice-lake-boating-guide-2026): A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches.
 
 ## FAQs
 
@@ -213,6 +207,14 @@ One property, one phone number, every service a Mercury-powered boat needs acros
 ### Can I bring my boat from outside the Kawarthas for service?
 
 Yes, and a lot of customers do. We service Mercury and Mercruiser boats brought in from across the GTA, Northumberland, Peterborough, and the broader Kawarthas. Drop-off is straightforward: book a service slot, trailer the boat to Gores Landing, leave it with us. For larger jobs (repowers, full diagnostic work, winter storage bundles) we plan the timeline so you only need to drive out once or twice. Submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number.
+
+## Related guides
+
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
+- [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
 
 ## Next steps
 

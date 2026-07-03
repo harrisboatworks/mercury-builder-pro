@@ -108,16 +108,9 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 
 - Canada Revenue Agency, Luxury Tax Notice LTN5 (luxury tax on subject vessels no longer payable as of November 5, 2025). [canada.ca](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/luxury-tax.html)
 - NMMA, U.S. new powerboat retail sales (2024-2025 unit data).
-- Bank of Canada, policy rate (2025 series of cuts).
+- Bank of Canada, policy rate (series of cuts in 2025).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-## Related guides
-
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada): Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and.
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat): Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from.
-- [Should I Repower or Buy a New Boat? An Honest Cost Comparison (Ontario, 2026)](/blog/repower-vs-new-boat): Repower vs buy new boat: a Mercury Premier dealer's honest decision guide. Real costs, hull-condition.
-- [Boat Hull Replacement vs Repower: The Honest Decision (2026)](/blog/boat-hull-replacement-vs-repower-decision): For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury.
 
 ## FAQs
 
@@ -140,6 +133,14 @@ New unit sales dropped as the post-COVID surge corrected, but overall boating ex
 ### Is Mercury allocation healthy for 2026?
 
 From our position as a Mercury Premier dealer, new motor allocation is healthy.
+
+## Related guides
+
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
+- [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
 ## Next steps
 

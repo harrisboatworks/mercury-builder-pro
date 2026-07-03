@@ -120,12 +120,12 @@ For larger Avator setups (35e and up), an extension cord becomes impractical. Vo
 
 The other common situation: cottagers who add Avator without consulting their cottage electrical capacity. The first big charge cycle blows a breaker, the panel needs upgrading, and the project that was supposed to be "buy a quiet electric motor" becomes "rewire the cottage." Have an electrician check your panel capacity before you commit.
 
-## Related guides
-
 - [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario)
 - [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
 - [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
 - [Boat Electrical Safety Checklist](/blog/boat-electrical-safety-checklist-ontario-freshwater)
+
+**Questions about Avator?** Call 905-342-2153 or email info@harrisboatworks.ca and we'll give you a straight answer for your setup.
 
 ## FAQs
 
@@ -160,6 +160,14 @@ Slightly. Frequent 240V fast charging reduces battery lifecycle compared to slow
 ### What happens if the cottage loses power overnight while charging?
 
 Charging stops, the battery stays at whatever level it reached. When power returns, the charger picks back up. No damage to the battery from power interruption.
+
+## Related guides
+
+- [Mercury FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 
