@@ -6727,7 +6727,7 @@ There is a moment every boat owner on these lakes eventually meets. The motor th
 
 The math usually frames itself as one question: new boat, or new motor? That is the wrong question, or at least an incomplete one. The real question is whether the hull under you is still good. If it is, you do not need a new boat. You need a repower.
 
-Harris Boat Works has been rigging and repowering boats on the south shore of Rice Lake for three generations. This guide walks through the whole thing: how to tell if your hull is worth it, how to pick the right Mercury, what the install actually involves, and how we handle it. If you would rather skip to a number, build a live quote at **mercuryrepower.ca**.
+Harris Boat Works has been rigging and repowering boats on the south shore of Rice Lake for three generations. This guide walks through the whole thing: how to tell if your hull is worth it, how to pick the right Mercury, what the install actually involves, and how we handle it. If you would rather skip to a number, build a live quote at **mercuryrepower.ca**. For a broader overview across the province, our Kawarthas guide covers the local process, and you can check current [boat engine repower cost](/repower) and options on our main repower page.
 
 ---
 
