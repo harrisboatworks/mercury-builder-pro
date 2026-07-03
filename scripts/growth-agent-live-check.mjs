@@ -359,17 +359,23 @@ const hardFailures = results.filter((result) => {
 const robotsFailures = robotsAssertions.filter((result) => result.required && result.reachable && !result.ok);
 const externalRobotsWarnings = robotsAssertions.filter((result) => !result.required && result.reachable && !result.ok);
 const aiAccessFailures = aiAccessChecks.filter((result) => !result.ok);
+const aiTxtContentFailures = aiTxtContentAssertion.ok ? [] : [aiTxtContentAssertion];
 
 const output = {
   site: SITE_URL,
   checkedAt: new Date().toISOString(),
   sitemapUrls,
-  ok: hardFailures.length === 0 && robotsFailures.length === 0 && aiAccessFailures.length === 0,
-  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures],
+  ok:
+    hardFailures.length === 0 &&
+    robotsFailures.length === 0 &&
+    aiAccessFailures.length === 0 &&
+    aiTxtContentFailures.length === 0,
+  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures, ...aiTxtContentFailures],
   results,
   robotsAssertions,
   externalRobotsWarnings,
   aiAccessChecks,
+  aiTxtContentAssertion,
   searchFocus: [
     "Mercury outboard prices Ontario",
     "Mercury repower cost Ontario",
