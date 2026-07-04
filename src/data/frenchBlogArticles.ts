@@ -501,86 +501,46 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     slug: 'remotorisation-vs-bateau-neuf',
     title: 'Remotorisation ou achat d\'un bateau neuf : Quelle est la meilleure option?',
     seoTitle: 'Remotorisation ou bateau neuf : que choisir?',
-    description: 'Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur Mercury neuf ou acheter un nouveau bateau.',
+    description: "Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-07-04',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
     keywords: ['remotorisation vs bateau neuf', 'changer moteur ou acheter nouveau bateau', 'remotorisation avantages', 'repower vs new boat'],
-    content: `### Réponse rapide
+    content: `> **Réponse rapide :** Si votre coque est en bon état et que le problème vient du moteur, remotorisez. Une remotorisation coûte souvent 20 à 40 % du prix d'un bateau neuf équivalent. Si la coque est compromise ou si vous souhaitez un type d'embarcation complètement différent, l'achat d'un bateau neuf est la bonne option. Ni l'une ni l'autre n'est toujours la meilleure : tout dépend de votre situation.
 
-Si votre coque est en bon état et que le problème vient du moteur, remotoriser. Une remotorisation coûte souvent 20 à 40 % du prix d'un nouveau bateau équivalent. Si la coque est compromise ou si vous souhaitez un type d'embarcation différent, l'achat d'un nouveau bateau a du sens. Aucune des deux options n'est toujours la bonne, ça dépend de votre situation.
-
----
-
-### Remotorisation ou achat d'un bateau neuf ?
-
-La question se pose souvent au printemps : le moteur lâche, ou tient à peine. Faut-il investir dans un moteur neuf, ou repartir de zéro avec un nouveau bateau ?
-
-Harris Boat Works vend des bateaux neufs (Legend Boats) et des moteurs Mercury. Nous n'avons pas intérêt à vous pousser vers l'une ou l'autre option, notre objectif est que vous fassiez le bon choix pour votre situation. Nous ferions la même chose avec un voisin.
-
----
+Harris Boat Works, entreprise familiale depuis 1947, vend des bateaux neufs (Legend Boats) et des moteurs Mercury. Nous n'avons aucun intérêt à vous pousser dans une direction. Notre objectif est que vous preniez la décision la plus sensée pour vous, comme on le ferait avec un voisin.
 
 ## Ce que la remotorisation vous offre
 
-### Un coût souvent bien inférieur au neuf
-
-Un nouveau bateau avec moteur coûte souvent entre 40 000 $ et 100 000 $ CAD ou plus, selon la taille et la catégorie. Une remotorisation peut se faire pour une fraction de ce budget. La différence est réelle et substantielle, et dans la plupart des cas, elle vous laisse l'argent en poche pour autre chose.
-
-Pour voir exactement combien coûterait une remotorisation pour votre embarcation, utilisez le configurateur sur mercuryrepower.ca. Vous entrez le type d'embarcation, choisissez la puissance, et voyez le coût en temps réel, sans « appelez-nous pour un prix. »
-
-### Votre coque a de la valeur
-
-Une coque en aluminium bien entretenue peut durer 30 à 40 ans facilement. Une coque en fibre de verre bien entretenue peut durer plusieurs décennies. Ce qui vieillit le plus vite, c'est le moteur, surtout si l'entretien a été irrégulier.
-
-Remotoriser, c'est conserver une embarcation que vous connaissez et en qui vous avez confiance, avec un moteur neuf sous garantie. C'est aussi éviter les démarches liées à un nouveau bateau : nouvelle immatriculation, nouveau financement, nouvel assureur, revente de l'ancien.
-
-### La technologie Mercury actuelle, sur votre embarcation
-
-Les moteurs Mercury FourStroke actuels sont disponibles de 2,5 à 300 HP. Ils sont plus économiques en carburant, plus silencieux et plus fiables que la génération précédente. Si votre moteur a 15 ans ou plus, la différence se sentira dès la première sortie.
-
-En tant que concessionnaire Mercury Premier, Harris Boat Works a accès à toute la gamme : FourStroke standard et Pro XS pour les pêcheurs. Le Verado est disponible sur commande spéciale et pour le service.
-
-### Un délai souvent plus court
-
-En Ontario, la saison de navigation s'étend grosso modo de mai à octobre. Commander un nouveau bateau peut prendre des mois, surtout avec des préférences précises. Une remotorisation bien planifiée peut souvent se faire en quelques semaines, et vous remettre à l'eau pour la saison en cours.
-
----
+- **Un coût bien inférieur au neuf.** Un bateau neuf complet coûte souvent entre 40 000 $ et 100 000 $ CA et plus. Une remotorisation se chiffre généralement entre 20 et 40 % de ce montant, ce qui laisse une marge confortable pour d'autres projets. Pour connaître le prix exact de votre projet, utilisez le configurateur en ligne sur [mercuryrepower.ca](https://www.mercuryrepower.ca). Vous sélectionnez le type d'embarcation et la puissance, et vous obtenez un prix en dollars canadiens en temps réel, pas de « appelez-nous pour un prix ».
+- **Votre coque a de la valeur.** Une coque en aluminium bien entretenue peut durer facilement 30 à 40 ans; une coque en fibre de verre, plusieurs décennies. Le moteur, lui, vieillit plus vite. Remotoriser, c'est garder une embarcation que vous connaissez, avec un moteur neuf sous garantie Mercury. Vous évitez aussi les tracas administratifs : pas de revente, pas de nouvelle immatriculation, pas de changement d'assureur. Et nous nous occupons de la mise à jour de votre permis d'embarcation de plaisance, sans frais supplémentaires.
+- **La technologie Mercury actuelle, sur votre bateau.** Harris Boat Works propose les gammes FourStroke (2,5 à 300 HP) et Pro XS (pour les pêcheurs). Les moteurs Verado sont disponibles sur commande spéciale pour les applications haute performance. Comparé à un moteur de 15 ans ou plus, un moteur Mercury récent est généralement plus silencieux, plus facile à vivre et plus efficace, vous le sentirez dès la première sortie.
+- **Un délai souvent plus court.** La saison de navigation en Ontario s'étend en gros de mai à octobre. Commander un bateau neuf peut prendre des mois, surtout avec des configurations précises. Une remotorisation bien préparée se réalise généralement en quelques semaines, ce qui vous remet à l'eau pour la saison en cours.
 
 ## Quand le bateau neuf a du sens
 
-**La coque est endommagée ou structurellement compromise.** 
-Délaminage avancé, réparations multiples, intégrité structurelle douteuse. Installer un moteur neuf sur une coque problématique ne règle pas le vrai problème.
-
-**Vous voulez un type d'embarcation complètement différent.** 
-La remotorisation ne change pas la forme du bateau. Si vous passez d'un runabout à un ponton, ou d'un bateau de pêche ouvert à un bateau familial avec cabine, il faut un nouveau bateau.
-
-**Financer un tout-en-un est plus simple pour vous.** 
-Pour certains acheteurs, financer un nouveau bateau avec moteur intégré dans un seul prêt est plus accessible ou plus simple à gérer. C'est une réalité pratique qui compte.
-
-**Le bateau a atteint la fin de sa vie utile.** 
-À un certain point, âge, usure et entretien différé font qu'une coque a fait son temps, même si elle n'a pas de défaut évident.
-
----
+- **La coque est endommagée ou structurellement compromise.** Délaminage avancé, multiples réparations, tableau arrière douteux. Installer un moteur neuf sur une coque fatiguée ne règle pas le vrai problème.
+- **Vous voulez un type d'embarcation complètement différent.** Une remotorisation ne change pas la forme du bateau. Si vous passez d'un runabout à un ponton, ou d'une embarcation de pêche ouverte à un bateau familial avec cabine, un nouveau bateau s'impose.
+- **Le financement tout-en-un est plus simple pour vous.** Pour certains acheteurs, regrouper le bateau et le moteur dans un seul prêt est plus accessible à gérer. C'est une réalité pratique qui compte.
+- **Le bateau a atteint la fin de sa vie utile.** Âge, usure générale ou entretien irrégulier font qu'une coque a fait son temps, même sans défaut apparent.
 
 ## Comment prendre la décision
 
-**Étape 1 : Faire évaluer la coque.** 
-Un technicien expérimenté examine la coque, le tableau arrière, le plancher et le câblage existant. Chez Harris Boat Works, nous évaluons la coque avant de recommander quoi que ce soit. Si la remotorisation n'est pas la bonne décision, on vous le dit, même si ça nous coûte une vente.
+### Étape 1 : Faire évaluer la coque
+Un technicien expérimenté examine la coque, le tableau arrière, le plancher et le câblage. Chez Harris Boat Works, nous inspectons la coque avant toute recommandation. Si la remotorisation n'est pas justifiée, on vous le dit, même si cela nous coûte une vente.
 
-**Étape 2 : Obtenir un prix réel de remotorisation.** 
-Rendez-vous sur mercuryrepower.ca. En quelques minutes, vous avez un prix en dollars canadiens pour votre projet de remotorisation, avec les vraies options, le vrai coût, sans engagement.
+### Étape 2 : Obtenir un prix réel de remotorisation
+Allez sur [mercuryrepower.ca](https://www.mercuryrepower.ca). En quelques minutes, vous aurez un prix en dollars canadiens pour votre projet, avec les vraies options et le coût réel, sans engagement.
 
-**Étape 3 : Comparer avec un bateau neuf équivalent.** 
-Consultez l'inventaire à harrisboatworks.ca pour voir les bateaux neufs disponibles et leurs prix. Comparez les deux chemins côte à côte, honnêtement.
+### Étape 3 : Comparer avec un bateau neuf équivalent
+Consultez l'inventaire de bateaux neufs sur [harrisboatworks.ca](https://www.harrisboatworks.ca). Mettez les deux chemins côte à côte, remotorisation et achat neuf, pour comparer honnêtement.
 
-**Étape 4 : Se demander honnêtement si vous aimez votre embarcation actuelle.** 
-Si la réponse est oui, et que la coque est saine, remotoriser est probablement le bon choix. Si la réponse est non, si le format ne vous convient plus, si la taille ne correspond plus à votre famille, alors c'est peut-être l'occasion de changer.
-
----
+### Étape 4 : Vous demander si vous aimez votre bateau actuel
+Si la réponse est oui et que la coque est saine, la remotorisation est probablement le bon choix. Si la taille ou le type d'embarcation ne conviennent plus à vos besoins, c'est peut-être le moment de changer.
 
 ## Résumé : remotorisation ou bateau neuf ?
 
@@ -594,65 +554,43 @@ Si la réponse est oui, et que la coque est saine, remotoriser est probablement 
 | Besoin de naviguer cette saison | Remotorisation (délai plus court) |
 | L'embarcation a atteint sa fin de vie | Bateau neuf |
 
----
-
 ## Guides connexes
-
-- [Combien coûte une remotorisation Mercury en Ontario?](/blog/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
-- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
-
-## Foire aux questions
-
-**Combien coûte une remotorisation Mercury en Ontario ?** 
-Le coût varie selon la puissance du moteur, la longueur de l'arbre, le câblage nécessaire, l'hélice et la main-d'œuvre. Obtenez un prix précis pour votre embarcation sur mercuryrepower.ca, disponible 24 h/24, en dollars canadiens, sans barrière linguistique.
-
-**Comment savoir si ma coque vaut la peine d'être remotoisée ?** 
-Faites évaluer la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant toute recommandation. Si la remotorisation n'est pas justifiée, nous vous le disons.
-
-**Puis-je voir les bateaux neufs chez Harris Boat Works ?** 
-Oui. Nous sommes concessionnaire Legend Boats. Consultez l'inventaire à harrisboatworks.ca.
-
-**L'équipe parle-t-elle français ?** 
-Notre personnel répond en anglais. Vous pouvez nous envoyer vos demandes via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
-
-**Faut-il se déplacer à Gores Landing pour obtenir un devis ?** 
-Non, le configurateur sur mercuryrepower.ca vous donne un prix en temps réel sans déplacement. Pour les projets complexes, une visite peut être utile pour évaluer la coque et le câblage existant.
-
-**Quelle est la saison de navigation en Ontario ?** 
-Grosso modo de mai à octobre, environ six mois. C'est une raison de plus de ne pas attendre trop longtemps si vous avez un projet de remotorisation ou d'achat.
-
----
+- [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario)
+- [Remotorisation Mercury dans la GTA](/blog/fr/remotorisation-mercury-gta-toronto)
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Entretien d'une remorque de bateau](/blog/fr/entretien-remorque-bateau-ontario)
 
 ## Prêt à voir les chiffres ?
 
-**Prix de remotorisation en ligne :** mercuryrepower.ca, configurez votre projet et obtenez un vrai prix en quelques minutes.
-
-**Magasiner un bateau neuf :** harrisboatworks.ca, inventaire Legend Boats.
-
-**Demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
-
-**Téléphone :** 905-342-2153
-
-**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (1 h 30 à l'est de Toronto; moins de 3 heures de Montréal).
-
----
-
-*Guides connexes (en anglais) : Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 115 HP FourStroke review*
----`,
+Prix de remotorisation en ligne : **mercuryrepower.ca**
+Magasiner un bateau neuf : **harrisboatworks.ca**
+Demande de service : **hbw.wiki/service**
+Téléphone : **905-342-2153**
+En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; moins de 3 heures de Montréal)`,
     faqs: [
       {
-        question: 'La remotorisation coûte-t-elle toujours moins cher qu\'un bateau neuf?',
-        answer: 'Dans la grande majorité des cas, oui , à condition que la coque soit en bon état. Le coût d\'une remotorisation représente souvent 20 à 40 % du prix d\'un bateau neuf équivalent.'
+        question: "Combien coûte une remotorisation Mercury en Ontario?",
+        answer: "Le coût varie selon la puissance du moteur, la longueur de l'arbre, le câblage nécessaire, l'hélice et la main-d'oeuvre. Obtenez un prix précis pour votre embarcation sur mercuryrepower.ca, disponible 24 h/24, en dollars canadiens, sans engagement."
       },
       {
-        question: 'Comment savoir si ma coque est encore bonne?',
-        answer: 'Un technicien expérimenté peut évaluer l\'état de votre coque. Chez Harris Boat Works, on fait ça régulièrement pour nos clients.'
+        question: "Comment savoir si ma coque vaut la peine d'être remotorisée?",
+        answer: "Faites évaluer la coque par un technicien expérimenté avant de décider. Chez Harris Boat Works, nous évaluons la coque avant toute recommandation. Si la remotorisation n'est pas justifiée, nous vous le disons."
       },
       {
-        question: 'Puis-je garder mon immatriculation actuelle?',
-        answer: 'Oui. Avec une remotorisation, votre embarcation reste la même , vous gardez votre numéro d\'immatriculation et vos assurances.'
+        question: "Puis-je voir les bateaux neufs chez Harris Boat Works?",
+        answer: "Oui, nous sommes concessionnaire Legend Boats. Consultez l'inventaire complet à harrisboatworks.ca."
+      },
+      {
+        question: "L'équipe parle-t-elle français?",
+        answer: "L'équipe travaille principalement en anglais. Vous pouvez soumettre vos demandes en français via hbw.wiki/service; nous ferons notre possible pour communiquer efficacement."
+      },
+      {
+        question: "Faut-il se déplacer à Gores Landing pour obtenir un devis?",
+        answer: "Non, le configurateur sur mercuryrepower.ca vous donne un prix en temps réel, sans déplacement. Pour les projets complexes, une visite peut être utile pour évaluer la coque et le câblage existant."
+      },
+      {
+        question: "Quelle est la saison de navigation en Ontario?",
+        answer: "Grosso modo de mai à octobre, soit environ six mois. Une raison de plus de ne pas attendre si vous avez un projet de remotorisation ou d'achat."
       }
     ]
   },
