@@ -444,6 +444,13 @@ const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPa
   ...options,
 });
 
+const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
+
 // -----------------------------------------------------------------
 // Head <title> for blog articles.
 // Uses the article's short `title` field (kept in sync with the H1).
@@ -488,13 +495,6 @@ function substituteLiveRateTokens(text) {
     .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
 }
-const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
-  cwd: ROOT,
-  encoding: 'utf8',
-  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
-  ...options,
-});
-
 async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -636,7 +636,7 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
+    const out = runViteNode(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
