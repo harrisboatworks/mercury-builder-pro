@@ -434,9 +434,17 @@ const MIN_BYTES = 4 * 1024;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
+const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
 const shellPath = (path) => JSON.stringify(path);
 const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
+
+const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
   cwd: ROOT,
   encoding: 'utf8',
   timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
@@ -628,7 +636,7 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
+    const out = runViteNode(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
     try { rmSync(tmpFile); } catch {}
