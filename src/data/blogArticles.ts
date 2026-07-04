@@ -33214,7 +33214,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     title: 'Mercury Avator Electric Outboard Range on Rice Lake (2026)',
     seoTitle: 'Mercury Avator Range Rice Lake | Ontario Electric Outboard',
     description: 'How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage.',
-    image: '/lovable-uploads/hero-avator-range-rice-lake.png',
+    image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-06-09',
