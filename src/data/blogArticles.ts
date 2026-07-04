@@ -28571,7 +28571,7 @@ Top tier in Mercury's dealer program. Harris Boat Works has been on Rice Lake si
 ## What Harris Boat Works Handles for Bowmanville Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what fits your hull, your load, and how you actually use the boat.
+FourStroke and Pro XS. Verado and SeaPro available by special order. Honest conversation about what fits your hull, your load, and how you actually use the boat.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Bowmanville customers, we can realistically handle your complete annual service cycle, it's 35 minutes.
