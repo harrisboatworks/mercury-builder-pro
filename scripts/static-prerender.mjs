@@ -434,7 +434,6 @@ const MIN_BYTES = 4 * 1024;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
-const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
 const shellPath = (path) => JSON.stringify(path);
 const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPath(file)}`, {
@@ -488,13 +487,6 @@ function substituteLiveRateTokens(text) {
     .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
 }
-const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
-  cwd: ROOT,
-  encoding: 'utf8',
-  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
-  ...options,
-});
-
 async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -830,7 +822,7 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
   // the entire zh-CN sitemap to silently empty out without anyone noticing.
   // We'd rather a red Vercel deploy than a silent multilingual SEO blackout.
   try {
-    const out = runViteNode(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
+    const out = runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 });
     const parsed = JSON.parse(out);
     if (!Array.isArray(parsed)) {
       throw new Error(`[static-prerender] ${exportName} loader did not return an array`);
