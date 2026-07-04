@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-05-04
+last_updated: 2026-07-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Pleasure Craft Licence Update During Repower (Ontario 2026)"
-description: "Update your Pleasure Craft Licence when repowering in Ontario. Free online update takes 10-15 minutes. PCL stays with boat, motor specs change."
+description: "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge."
 category: "Canadian Boating Regulations"
 date_published: 2026-04-15
-date_modified: 2026-05-04
+date_modified: 2026-07-04
 keywords: ["pleasure craft licence update","PCL repower Ontario","Transport Canada boat licence","update boat registration after repower","PCL rules 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,11 +19,11 @@ content_type: blog_article
 
 # Pleasure Craft Licence Update During Repower (Ontario 2026)
 
-> Update your Pleasure Craft Licence when repowering in Ontario. Free online update takes 10-15 minutes. PCL stays with boat, motor specs change.
+> How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge.
 
 **Category:** Canadian Boating Regulations  
 **Published:** 2026-04-15  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-07-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
