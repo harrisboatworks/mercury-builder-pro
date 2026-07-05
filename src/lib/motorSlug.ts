@@ -38,6 +38,7 @@ export interface MotorSlugInput {
   family?: string | null;
   motor_type?: string | null;
   horsepower?: number | null;
+  hp?: number | string | null;
 }
 
 // Canonical motor slug — must match public-motors-api output and the
@@ -46,8 +47,11 @@ export interface MotorSlugInput {
 export function motorSlug(row: MotorSlugInput): string {
   const family = row.family || detectFamily(row.model_display || row.model, row.motor_type, null);
   const display = row.model_display || row.model || '';
-  return slugify(`${family}-${row.horsepower}hp-${display}`);
+  const hpRaw = row.horsepower ?? row.hp ?? '';
+  const hp = typeof hpRaw === 'string' ? parseFloat(hpRaw) || hpRaw : hpRaw;
+  return slugify(`${family}-${hp}hp-${display}`);
 }
+
 
 export const MOTOR_SITE_URL = 'https://www.mercuryrepower.ca';
 
