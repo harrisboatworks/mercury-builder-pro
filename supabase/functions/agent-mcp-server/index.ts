@@ -164,10 +164,11 @@ async function searchMotors(supabase: any, args: any) {
   const { data, error } = await q;
   if (error) throw new Error(error.message);
 
+  const wantFamilyKey = args.family ? familyKey(args.family) : null;
   return (data || [])
     .filter((m: any) => !(m.model_display || "").toLowerCase().includes("verado"))
     .filter((m: any) =>
-      args.family ? (m.family || "").toLowerCase() === args.family.toLowerCase() : true
+      wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
     .map((m: any) => ({
       id: m.id,
@@ -192,15 +193,23 @@ async function getMotor(supabase: any, args: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model, model_display, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
+      "id, model, model_display, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
     )
-    .neq("availability", "Exclude")
-    .limit(1);
-  if (args.id) q = q.eq("id", args.id);
+    .neq("availability", "Exclude");
+  if (args.id) q = q.eq("id", args.id).limit(1);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
-  const m = data?.[0];
+  let m: any = null;
+  if (args.id) {
+    m = data?.[0] ?? null;
+  } else if (args.slug) {
+    const wanted = String(args.slug).toLowerCase();
+    m = (data || [])
+      .filter((r: any) => !(r.model_display || "").toLowerCase().includes("verado"))
+      .find((r: any) => motorSlug(r) === wanted) ?? null;
+  }
   if (!m) return null;
+
   return {
     id: m.id,
     modelDisplay: m.model_display || m.model,
