@@ -3,33 +3,43 @@ import { Link2, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { toast } from 'sonner';
+import { motorShareUrl, type MotorSlugInput } from '@/lib/motorSlug';
 
 interface ShareLinkButtonProps {
+  // Preferred: pass the full motor row so we build the canonical
+  // /motors/{slug} URL that matches public-motors-api and MotorPage.
+  motor?: MotorSlugInput | null;
+  // Legacy fallbacks — kept for callers that only have modelKey/model.
+  // These produce a non-canonical slug that may 404; prefer `motor`.
   modelKey?: string | null;
   modelFallback?: string;
   className?: string;
   size?: 'sm' | 'md';
 }
 
-function buildSlug(modelKey: string): string {
-  return modelKey
-    .toLowerCase()
-    .replace(/[_\s]+/g, '-')       // underscores & spaces → dashes
-    .replace(/[^a-z0-9-]/g, '')    // strip non-alphanumeric
-    .replace(/-+/g, '-')           // collapse multiple dashes
-    .replace(/^-|-$/g, '');        // trim leading/trailing dashes
-}
-
-export function ShareLinkButton({ modelKey, modelFallback, className, size = 'sm' }: ShareLinkButtonProps) {
+export function ShareLinkButton({ motor, modelKey, modelFallback, className, size = 'sm' }: ShareLinkButtonProps) {
   const [copied, setCopied] = useState(false);
-  const source = modelKey || modelFallback;
-  if (!source) return null;
+  const hasMotor = !!(motor && motor.horsepower);
+  if (!hasMotor && !modelKey && !modelFallback) return null;
 
   const handleClick = async (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
-    const slug = buildSlug(source);
-    const url = `${window.location.origin}/motors/${slug}`;
+
+    let url: string;
+    if (hasMotor) {
+      url = motorShareUrl(motor!);
+    } else {
+      // Legacy path — best-effort, not guaranteed to match canonical route.
+      const source = (modelKey || modelFallback)!;
+      const slug = source
+        .toLowerCase()
+        .replace(/[_\s]+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      url = `https://www.mercuryrepower.ca/motors/${slug}`;
+    }
 
     const showSuccess = () => {
       setCopied(true);
