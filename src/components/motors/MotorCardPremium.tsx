@@ -266,7 +266,7 @@ export default function MotorCardPremium({
               <div className="absolute bottom-4 left-4 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" style={{ opacity: isMobile ? 1 : undefined }}>
                 {motor && (
                   <>
-                    <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} size="sm" />
+                    <ShareLinkButton motor={motor as any} modelKey={motor.model_key} modelFallback={motor.model} size="sm" />
                     <AskQuestionButton motor={motor} />
                     <VoiceChatButton motor={motor} size="sm" />
                   </>
