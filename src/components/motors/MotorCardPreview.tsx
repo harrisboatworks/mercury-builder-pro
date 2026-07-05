@@ -553,7 +553,7 @@ function MotorCardPreviewInner({
                     />
                   </div>
                   <AskQuestionButton motor={motor} />
-                  <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} size="sm" />
+                  <ShareLinkButton motor={motor as any} modelKey={motor.model_key} modelFallback={motor.model} size="sm" />
                 </div>
 
               )}
