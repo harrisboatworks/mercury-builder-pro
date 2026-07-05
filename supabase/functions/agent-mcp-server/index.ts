@@ -24,7 +24,9 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, mcp-session-id",
 };
 
-const SITE_URL = "https://mercuryrepower.ca";
+import { familyKey, motorSlug } from "../_shared/motor-slug.ts";
+
+const SITE_URL = "https://www.mercuryrepower.ca";
 const QUOTE_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-quote-api`;
 const MOTORS_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-motors-api`;
 
