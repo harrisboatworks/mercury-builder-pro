@@ -19,7 +19,7 @@ interface ShareLinkButtonProps {
 
 export function ShareLinkButton({ motor, modelKey, modelFallback, className, size = 'sm' }: ShareLinkButtonProps) {
   const [copied, setCopied] = useState(false);
-  const hasMotor = !!(motor && motor.horsepower);
+  const hasMotor = !!(motor && (motor.horsepower || (motor as any).hp));
   if (!hasMotor && !modelKey && !modelFallback) return null;
 
   const handleClick = async (e: React.MouseEvent) => {
