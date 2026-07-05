@@ -40,7 +40,8 @@ export function familyKey(family: string | null | undefined): string {
 }
 
 // Canonical motor slug matching public-motors-api output and the
-// /motors/{slug}.md markdown twins.
+// /motors/{slug}.md markdown twins. Uses the raw DB family value (e.g. "ProXS")
+// when present so the slug does not drift from the markdown filenames.
 export function motorSlug(row: {
   model?: string | null;
   model_display?: string | null;
@@ -48,7 +49,8 @@ export function motorSlug(row: {
   motor_type?: string | null;
   horsepower?: number | null;
 }): string {
-  const family = detectFamily(row.model_display || row.model, row.motor_type, row.family);
+  const family = row.family || detectFamily(row.model_display || row.model, row.motor_type, null);
   const display = row.model_display || row.model || "";
   return slugify(`${family}-${row.horsepower}hp-${display}`);
 }
+
