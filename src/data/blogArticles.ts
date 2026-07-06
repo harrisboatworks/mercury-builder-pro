@@ -3879,13 +3879,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'fourstroke-vs-pro-xs',
-    seoTitle: 'Mercury Pro XS vs FourStroke vs Verado: Which Do You Need?',
-    title: 'Mercury FourStroke vs Pro XS vs Verado',
-    description: "Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Premier dealer on Rice Lake walks you through which one actually fits your boat.",
+    seoTitle: 'Mercury Pro XS vs Verado vs FourStroke Compared',
+    title: 'Mercury Pro XS vs Verado vs FourStroke Compared',
+    description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.",
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Jay Harris',
     datePublished: '2026-05-26',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-06',
     publishDate: '2026-06-19',
     category: 'Mercury Motors',
     readTime: '~9 min read',
@@ -3898,7 +3898,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I repower my boat with a Verado?', answer: "On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Tell us your boat and how you use it and we'll point you straight. Build a starting quote at mercuryrepower.ca." },
       { question: 'Is the Pro XS a lot louder than the FourStroke?', answer: "The V8 Pro XS engines are tuned for a throatier startup note on purpose, because the performance crowd likes it. At cruise it's not a problem. If your priority is the quietest possible ride, that's the Verado's whole job." },
       { question: 'Which one holds its resale value best?', answer: "All three Mercury families hold value well in Ontario, partly because the local service network is strong. Pro XS does carry a year-dependent factor on used valuations versus a standard FourStroke. If you're weighing trade-in down the road, ask us to run real numbers on your specific motor." },
-      { question: 'Which Mercury does HBW recommend for a first boat?', answer: "For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide or call and we'll talk it through." }
+      { question: 'Which Mercury does HBW recommend for a first boat?', answer: "For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide or call and we'll talk it through." },
+      { question: 'Is the Mercury Pro XS a four-stroke?', answer: "Yes. Pro XS is a four-stroke Mercury outboard, built on the same core engineering as FourStroke but tuned for performance: more RPM at the top end, hole-shot spark tuning, and a bit less weight. It runs on regular 87 octane, same as FourStroke." },
+      { question: 'Is the Mercury Verado a four-stroke?', answer: "Yes. The current Mercury Verado V8, V10, and V12 outboards are naturally aspirated four-stroke engines, not supercharged like the old inline-six Verado. They're built for quiet, smooth, premium operation on bigger boats." },
+      { question: 'What is the actual difference between Mercury Pro XS and FourStroke?', answer: "Same core block, different tuning. FourStroke is built for efficiency, quiet running, and value across the widest horsepower range. Pro XS is tuned for hole shot and top speed, with a higher RPM ceiling and performance gearcase options. Neither is a lesser engine; they're built for different jobs." }
     ],
     content: `## Quick answer
 
