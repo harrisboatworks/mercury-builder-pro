@@ -182,6 +182,18 @@ All three Mercury families hold value well in Ontario, partly because the local 
 
 For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide or call and we'll talk it through.
 
+### Is the Mercury Pro XS a four-stroke?
+
+Yes. Pro XS is a four-stroke Mercury outboard, built on the same core engineering as FourStroke but tuned for performance: more RPM at the top end, hole-shot spark tuning, and a bit less weight. It runs on regular 87 octane, same as FourStroke.
+
+### Is the Mercury Verado a four-stroke?
+
+Yes. The current Mercury Verado V8, V10, and V12 outboards are naturally aspirated four-stroke engines, not supercharged like the old inline-six Verado. They're built for quiet, smooth, premium operation on bigger boats.
+
+### What is the actual difference between Mercury Pro XS and FourStroke?
+
+Same core block, different tuning. FourStroke is built for efficiency, quiet running, and value across the widest horsepower range. Pro XS is tuned for hole shot and top speed, with a higher RPM ceiling and performance gearcase options. Neither is a lesser engine; they're built for different jobs.
+
 ## Related guides
 
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
