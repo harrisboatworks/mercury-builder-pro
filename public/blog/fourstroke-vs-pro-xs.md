@@ -17,13 +17,13 @@ author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury FourStroke vs Pro XS vs Verado
+# Mercury Pro XS vs Verado vs FourStroke Compared
 
-> Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Premier dealer on Rice Lake walks you through which one actually fits your boat.
+> Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-07-06
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
