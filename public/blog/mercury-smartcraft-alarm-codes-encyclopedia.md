@@ -47,12 +47,10 @@ Mercury's warning horn uses repeated patterns to communicate without a display. 
 
 | Beep pattern | What it means | What to do |
 |---|---|---|
-| **1 continuous tone** | Engine in Guardian mode, severe fault | Reduce throttle to idle, return to dock, do not continue running |
-| **4 beeps every 2 minutes** | Water in fuel | Stop, check fuel filter, drain water, refill |
-| **6 beeps over 6 seconds, then silence** | Overheating warning | Shut down immediately, do not run |
-| **3 short beeps every 2 minutes** | Low oil pressure (4-stroke) | Stop, check oil level, do not run |
-| **1 beep, repeating** | Low oil reservoir (2-stroke Optimax / DFI) | Add 2-stroke oil to remote tank |
-| **2 short beeps** | Engine has entered limit/Guardian mode | Reduce throttle, motor will let you idle home |
+| **One beep at key-on** | Normal system test; the horn confirms it is working | None |
+| **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
+| **Continuous tone** | Serious fault: overheat, critically low oil, oil pump failure, engine overspeed, or a sensor out of range. Engine Guardian activates and limits power | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
+| **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
 Patterns vary slightly by engine family and model year. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
 
@@ -81,7 +79,7 @@ April and May are our highest-volume service months. The alarms cluster predicta
 
 **#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
 
-## Optimax DFI Code 13 / 14: the float-magnet problem
+## Optimax DFI oil alarm: the float-magnet problem
 
 Mercury Optimax DFI engines have a 2-stroke oil reservoir with a float that has an embedded magnet. When the magnet separates from the float body (known issue on older Optimax), the sensor reads "low oil" even though the reservoir is full.
 
@@ -142,7 +140,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ### What is the most common Mercury alarm code at spring first-start?
 
-Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free).
+Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free).
 
 ### Does HBW have Mercury CDS dealer software?
 
@@ -152,7 +150,7 @@ Yes. HBW is a Mercury Premier Dealer with Mercury CDS (Computer Diagnostic Syste
 
 Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed.
 
-### My Optimax keeps firing a Code 13 or 14 oil alarm but the tank is full. What's wrong?
+### My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?
 
 The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement.
 
