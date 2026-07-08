@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail.md
-last_updated: 2026-06-10
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "When to Replace Your Mercury Impeller: What 766 Jobs Show"
 description: "More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs."
 category: "Service & Troubleshooting"
 date_published: 2026-06-09
-date_modified: 2026-06-10
+date_modified: 2026-07-07
 keywords: ["mercury impeller replacement","outboard impeller failure symptoms","when to replace boat impeller","weak telltale stream","overheat alarm mercury"]
 author: Harris Boat Works
 content_type: blog_article

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026.md
-last_updated: 2026-05-28
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn Mercury Dealer Guide"
 description: "Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through."
 category: "Trent-Severn / Local"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-07-07
 keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","on-water boat towing Rice Lake","Canada Strong Pass 2026","Trent-Severn transit"]
 author: Harris Boat Works
 content_type: blog_article
