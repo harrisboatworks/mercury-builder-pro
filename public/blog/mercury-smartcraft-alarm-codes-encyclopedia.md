@@ -49,10 +49,10 @@ Mercury's warning horn uses repeated patterns to communicate without a display. 
 |---|---|---|
 | **One beep at key-on** | Normal system test; the horn confirms it is working | None |
 | **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
-| **Continuous tone** | Serious fault: overheat, critically low oil, oil pump failure, engine overspeed, or a sensor out of range. Engine Guardian activates and limits power | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
+| **Continuous tone** | Serious or critical fault such as overheat, critically low oil, or oil pump failure. Engine Guardian may limit power. Horn strategy varies by engine family and year; some newer engines use a six-second horn instead, and overspeed protection can cut power with no horn at all | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
 | **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
-Patterns vary slightly by engine family and model year. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
+Patterns vary by engine family and model year. Some small EFI FourStroke models (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, while many current SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
 
 ## Top 10 alarm codes we see at HBW (by service frequency)
 
@@ -79,16 +79,13 @@ April and May are our highest-volume service months. The alarms cluster predicta
 
 **#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
 
-## Optimax DFI oil alarm: the float-magnet problem
+## Optimax DFI oil alarms: Fault 13, 14, and the float problem
 
-Mercury Optimax DFI engines have a 2-stroke oil reservoir with a float that has an embedded magnet. When the magnet separates from the float body (known issue on older Optimax), the sensor reads "low oil" even though the reservoir is full.
+On the SmartCraft fault list, Fault 13 (Low Oil) means the remote 2-stroke oil tank is low, Fault 14 (Critical Low Oil) means the engine-mounted oil tank is critically low and needs an immediate refill, and Fault 18 is a separate oil pump fault. Older gauges may just read LOW OIL or RESERVE OIL LOW.
 
-**Cause priority order:**
-1. Float magnet separation (most common, especially on older Optimax)
-2. Actual low oil supply
-3. Sensor wiring or connector fault (least common)
+False or incorrect Optimax low-oil alarms have a longer cause list than most owners realize. Per Mercury's service manual, the possibilities include unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank (the manual's remedy for a failed float is oil tank replacement). Float-magnet separation is one of the causes we see, not the only one, and confirming it requires eyes on the float assembly.
 
-Fix: replace the float assembly. We have the parts on the shelf.
+Fix depends on the cause: purge and inspect the oil delivery lines and cap first, verify the outlet filter and check valve, and if the float itself is failed the manual calls for oil tank replacement. We have common Optimax float and oil-tank parts on the shelf.
 
 ## Verado and V8 FourStroke post-winterization codes
 
