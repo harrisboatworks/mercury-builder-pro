@@ -4562,7 +4562,7 @@ Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](h
     faqs: [
       {
         question: 'When is the first oil change on a new Mercury outboard?',
-        answer: 'Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. At HBW we recommend an early oil change around 20 hours after break-in as dealer best practice, because that first oil carries the most metal from break-in. Check the manual for your specific model. Book at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.'
+        answer: 'Mercury\'s published schedule for most current FourStrokes is oil and filter at 100 hours or annually. At HBW we recommend an early oil change around 20 hours after break-in as dealer best practice, because that first oil carries the most metal from break-in. Check the manual for your specific model. Book at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.'
       },
       {
         question: 'What happens if I don\'t break in my Mercury motor properly?',
