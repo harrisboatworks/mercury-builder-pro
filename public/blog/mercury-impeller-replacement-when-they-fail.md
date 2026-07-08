@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Quick answer
 
-The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. That pattern is why our service records (766 impeller and water pump jobs since 2014) show June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
+The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
 
 Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
 
