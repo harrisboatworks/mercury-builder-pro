@@ -139,7 +139,7 @@ Only sometimes. A short idle test in cold water is the easiest exam an impeller 
 
 ### Does HBW stock Mercury impellers and water pump kits?
 
-Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service.
+Yes. We stock Mercury and Mercruiser water pump kits in depth as part of probably the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service.
 
 ## Related guides
 

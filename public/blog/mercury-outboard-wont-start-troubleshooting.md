@@ -122,7 +122,7 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-HBW has the largest Mercury parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
+HBW has probably the largest Mercury parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
 
 ## Common mistakes (the things we push back on)
 
@@ -155,7 +155,7 @@ HBW has the largest Mercury parts inventory in Ontario. Most no-start customers 
 **Email:** info@harrisboatworks.ca  
 **Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 
 ## Sources
 

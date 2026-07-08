@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 
-> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
+> **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have probably the largest Mercury parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 
 The Trent-Severn Waterway is 386 km of locks, lakes, and rivers that draws thousands of recreational boaters every summer. Most transits go smoothly. But a meaningful percentage of transit boats have a mechanical issue somewhere along the route. When that happens 30 km from any town, your options matter.
 
@@ -39,7 +39,7 @@ We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice 
 
 HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
-- **The largest Mercury parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
+- **Probably the largest Mercury parts inventory in Ontario.** This is genuinely a competitive claim. For Mercury outboards and Mercruiser sterndrives, most spring service parts and a deep selection of legacy parts are on our shelf.
 - **Full Mercury service capability.** Mercury CDS (Computer Diagnostic System) at our workstation. Mercury Premier dealer credential. Mercury authorized warranty service. Most mid-season repairs handled same-day.
 - **On-water towing capability.** If you break down on Rice Lake or hit the Rice Lake Railroad submerged tracks (this happens to first-time visitors), we can come out and tow you in.
 - **Fuel dock with ethanol-free 89.** For boats that need clean fuel mid-transit, particularly older 2-stroke motors that don't tolerate E10 well.
@@ -80,7 +80,7 @@ The mix of boats doing the full TSW transit is more varied than people expect.
 
 ## Parts inventory: what's on our shelf
 
-Specific competitive fact: **HBW has the largest Mercury parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
+Specific competitive fact: **HBW has probably the largest Mercury parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
 
 Common transit-related parts we stock:
 
@@ -181,7 +181,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 **Email:** info@harrisboatworks.ca
 **Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
 
 ---
 
@@ -201,7 +201,7 @@ Yes. We have a fuel dock with ethanol-free 89 octane available. For boats with o
 
 ### What parts does HBW keep on the shelf for transit boats?
 
-We have the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone.
+We have probably the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirmed by phone.
 
 ### What's the 2026 Trent-Severn season and free lockage?
 

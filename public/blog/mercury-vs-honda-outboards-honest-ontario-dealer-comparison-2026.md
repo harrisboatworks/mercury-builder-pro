@@ -80,7 +80,7 @@ For Mercury owners on Rice Lake: drop the boat at our dock, walk home, pick it u
 
 ## What HBW has on the shelf
 
-We keep largest Mercury parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
+We keep probably the largest Mercury parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
 
 ## The 8-year warranty conversation
 
