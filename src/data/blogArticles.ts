@@ -1595,7 +1595,7 @@ Family-owned on Rice Lake since 1947.`
     readTime: '7 min read',
     keywords: ["mercury impeller replacement","outboard impeller failure symptoms","when to replace boat impeller","weak telltale stream","overheat alarm mercury"],
     faqs: [
-      { question: "How often should a Mercury outboard impeller be replaced?", answer: "Your operator's manual is the source of truth for your model and hours. As a practical matter, many Rice Lake boaters run a two-to-three-season rhythm, and our shop data suggests the schedule matters less than the warning signs: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of the calendar." },
+      { question: "How often should a Mercury outboard impeller be replaced?", answer: "Mercury's schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour major service as mandatory replacement; on Rice Lake treat those as outer limits (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for your model and hours, but the warning signs still override the calendar: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of when it was last done." },
       { question: "What are the signs of a failing impeller?", answer: "In the order we see them: a weaker-than-usual telltale stream, an overheat alarm at high throttle while idle seems fine, then an alarm at idle or no stream at all. On weedy water like Rice Lake, always clear the intake first; a weed-wrapped lower unit mimics a dead impeller." },
       { question: "Can I keep boating if the telltale stream is weak?", answer: "We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not." },
       { question: "Why do more impellers fail in summer than in spring?", answer: "In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes." },
@@ -1604,7 +1604,7 @@ Family-owned on Rice Lake since 1947.`
     ],
     content: `## Quick answer
 
-An impeller that survives the spring check can still die in July. In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. If your telltale stream weakens or an overheat alarm sounds, ease off and get it checked. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
+The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
 
 Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
 

@@ -23,13 +23,13 @@ content_type: blog_article
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-06-09  
-**Last updated:** 2026-06-10  
+**Last updated:** 2026-07-07  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail
 
 ## Quick answer
 
-An impeller that survives the spring check can still die in July. In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. If your telltale stream weakens or an overheat alarm sounds, ease off and get it checked. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
+The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
 
 Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
 
@@ -119,7 +119,7 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
 
 ### How often should a Mercury outboard impeller be replaced?
 
-Your operator's manual is the source of truth for your model and hours. As a practical matter, many Rice Lake boaters run a two-to-three-season rhythm, and our shop data suggests the schedule matters less than the warning signs: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of the calendar.
+Mercury's schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour major service as mandatory replacement; on Rice Lake treat those as outer limits (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for your model and hours, but the warning signs still override the calendar: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of when it was last done.
 
 ### What are the signs of a failing impeller?
 
