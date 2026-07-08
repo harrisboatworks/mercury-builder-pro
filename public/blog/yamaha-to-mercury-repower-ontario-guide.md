@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-09
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-06-09
+date_modified: 2026-07-07
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -70,7 +70,7 @@ Engine, controls, gauges, prop. Of those four, the engine and prop are mandatory
 | Trim tabs, electronics, radio | Yes | All carry over. |
 | Capacity plate max HP | Yes | Manufacturer maximum is unchanged. |
 
-The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries largest Mercury parts inventory in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
+The takeaway: motor, controls, cables/harness, gauges, prop are the "must replace" list. Everything else depends on condition and HP class. HBW carries probably the largest Mercury parts inventory in Ontario, so most rigging components and repower-stage parts are on the shelf, not on order.
 
 ## What does a Yamaha-to-Mercury swap actually cost in Ontario?
 

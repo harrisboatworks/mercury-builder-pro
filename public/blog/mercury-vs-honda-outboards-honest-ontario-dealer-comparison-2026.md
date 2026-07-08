@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md
-last_updated: 2026-06-09
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Honda Ontario 2026"
 description: "Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup."
 category: "Buying Guide"
 date_published: 2026-05-28
-date_modified: 2026-06-09
+date_modified: 2026-07-07
 keywords: ["Mercury vs Honda","Mercury vs Honda outboards","Honda BF vs Mercury","Honda Marine dealer Ontario","Mercury Honda comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -80,7 +80,7 @@ For Mercury owners on Rice Lake: drop the boat at our dock, walk home, pick it u
 
 ## What HBW has on the shelf
 
-We keep largest Mercury parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
+We keep probably the largest Mercury parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
 
 ## The 8-year warranty conversation
 

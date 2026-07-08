@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-05-30
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha Outboards: Honest Comparison"
 description: "Mercury vs Yamaha outboards for Ontario boaters: an honest comparison of reliability, parts, service network, and pricing from a Rice Lake dealer."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-05-30
+date_modified: 2026-07-07
 keywords: ["Mercury vs Yamaha outboard","Mercury vs Yamaha Ontario","Mercury or Yamaha which is better","Yamaha to Mercury repower","best outboard motor Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -86,7 +86,7 @@ Mercury issued a shift-shaft recall in 2025 that received significant attention 
 
 ## What HBW has on the shelf
 
-**HBW has largest Mercury parts inventory in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
+**HBW has probably the largest Mercury parts inventory in Ontario.** For Mercury owners, common spring service parts and most warranty parts are on our shelf in stock.
 
 ## The HBW on-water test
 
@@ -117,7 +117,7 @@ Thinking about switching from Yamaha to Mercury? We handle the full conversion i
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Largest Mercury parts inventory in Ontario.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 
 ## Sources
 

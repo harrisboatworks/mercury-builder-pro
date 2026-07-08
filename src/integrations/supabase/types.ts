@@ -110,6 +110,96 @@ export type Database = {
         }
         Relationships: []
       }
+      board_customer_comms: {
+        Row: {
+          awaiting_customer: boolean
+          callback_due_at: string | null
+          channels_seen: string[]
+          comm_key: string
+          customer_id: number
+          customer_phone: string | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          last_summary: string | null
+          recording_url: string | null
+          ro_no: string | null
+          updated_at: string
+        }
+        Insert: {
+          awaiting_customer?: boolean
+          callback_due_at?: string | null
+          channels_seen?: string[]
+          comm_key: string
+          customer_id: number
+          customer_phone?: string | null
+          last_channel?: string | null
+          last_contact_at?: string | null
+          last_direction?: string | null
+          last_summary?: string | null
+          recording_url?: string | null
+          ro_no?: string | null
+          updated_at?: string
+        }
+        Update: {
+          awaiting_customer?: boolean
+          callback_due_at?: string | null
+          channels_seen?: string[]
+          comm_key?: string
+          customer_id?: number
+          customer_phone?: string | null
+          last_channel?: string | null
+          last_contact_at?: string | null
+          last_direction?: string | null
+          last_summary?: string | null
+          recording_url?: string | null
+          ro_no?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      board_snapshots: {
+        Row: {
+          captured_at: string
+          customer_id: number | null
+          date_in: string | null
+          days_in_shop: number | null
+          lane: string
+          last_modified_at: string | null
+          promised_date: string | null
+          ro_no: string
+          snapshot_date: string
+          status: string | null
+          synced_at: string | null
+        }
+        Insert: {
+          captured_at?: string
+          customer_id?: number | null
+          date_in?: string | null
+          days_in_shop?: number | null
+          lane: string
+          last_modified_at?: string | null
+          promised_date?: string | null
+          ro_no: string
+          snapshot_date: string
+          status?: string | null
+          synced_at?: string | null
+        }
+        Update: {
+          captured_at?: string
+          customer_id?: number | null
+          date_in?: string | null
+          days_in_shop?: number | null
+          lane?: string
+          last_modified_at?: string | null
+          promised_date?: string | null
+          ro_no?: string
+          snapshot_date?: string
+          status?: string | null
+          synced_at?: string | null
+        }
+        Relationships: []
+      }
       chat_conversations: {
         Row: {
           channel: string
@@ -4129,6 +4219,90 @@ export type Database = {
         }
         Relationships: []
       }
+      twilio_messages: {
+        Row: {
+          account_sid_tail: string | null
+          body: string | null
+          customer_id: number | null
+          customer_name: string | null
+          customer_phone: string | null
+          date_created: string | null
+          date_sent: string | null
+          date_updated: string | null
+          direction: string
+          error_code: string | null
+          from_number: string | null
+          hbw_number: string
+          match_candidates: Json
+          match_method: string | null
+          match_status: string
+          message_sid: string
+          num_media: number
+          num_segments: number | null
+          raw_payload: Json
+          ro_link_method: string | null
+          ro_no: string | null
+          status: string | null
+          synced_at: string
+          to_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          account_sid_tail?: string | null
+          body?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          date_created?: string | null
+          date_sent?: string | null
+          date_updated?: string | null
+          direction: string
+          error_code?: string | null
+          from_number?: string | null
+          hbw_number: string
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          message_sid: string
+          num_media?: number
+          num_segments?: number | null
+          raw_payload?: Json
+          ro_link_method?: string | null
+          ro_no?: string | null
+          status?: string | null
+          synced_at?: string
+          to_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          account_sid_tail?: string | null
+          body?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          date_created?: string | null
+          date_sent?: string | null
+          date_updated?: string | null
+          direction?: string
+          error_code?: string | null
+          from_number?: string | null
+          hbw_number?: string
+          match_candidates?: Json
+          match_method?: string | null
+          match_status?: string
+          message_sid?: string
+          num_media?: number
+          num_segments?: number | null
+          raw_payload?: Json
+          ro_link_method?: string | null
+          ro_no?: string | null
+          status?: string | null
+          synced_at?: string
+          to_number?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       ucp_checkout_sessions: {
         Row: {
           agent_profile_url: string | null
@@ -4531,6 +4705,71 @@ export type Database = {
       }
     }
     Views: {
+      board_customer_comms_effective: {
+        Row: {
+          awaiting_customer: boolean | null
+          callback_due_at: string | null
+          channels_seen: string[] | null
+          comm_key: string | null
+          comm_ro_no: string | null
+          customer_id: number | null
+          customer_phone: string | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          last_summary: string | null
+          ro_no: string | null
+          updated_at: string | null
+          used_customer_fallback: boolean | null
+        }
+        Relationships: []
+      }
+      board_ro_aging: {
+        Row: {
+          customer_id: number | null
+          date_in: string | null
+          days_in_lane: number | null
+          days_in_shop: number | null
+          first_lane_date: string | null
+          lane: string | null
+          ro_no: string | null
+          snapshot_date: string | null
+          stalled: boolean | null
+          stalled_days: number | null
+          status: string | null
+        }
+        Relationships: []
+      }
+      board_service_status: {
+        Row: {
+          awaiting_customer: boolean | null
+          callback_due_at: string | null
+          cashout_ready: boolean | null
+          cashout_reason: string | null
+          channels_seen: string[] | null
+          customer_id: number | null
+          customer_name: string | null
+          date_in: string | null
+          days_in_lane: number | null
+          days_in_shop: number | null
+          dead_reason: string | null
+          first_lane_date: string | null
+          lane: string | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          last_modified_date: string | null
+          last_summary: string | null
+          likely_dead: boolean | null
+          promised_date: string | null
+          ro_no: string | null
+          stalled: boolean | null
+          stalled_days: number | null
+          status: string | null
+          used_customer_fallback: boolean | null
+        }
+        Relationships: []
+      }
       counter_sales: {
         Row: {
           cashier_name: string | null
@@ -5219,6 +5458,7 @@ export type Database = {
           table_name: string
         }[]
       }
+      board_service_lane: { Args: { p_status: string }; Returns: string }
       bulk_upsert_deals: { Args: { payload: Json }; Returns: number }
       bulk_upsert_open_ros: { Args: { payload: Json }; Returns: number }
       bulk_upsert_parts_invoices: { Args: { payload: Json }; Returns: number }
@@ -5245,6 +5485,13 @@ export type Database = {
           subject: string
           summary: string
           transcript_excerpt: string
+        }[]
+      }
+      capture_board_snapshot: {
+        Args: { p_snapshot_date?: string }
+        Returns: {
+          inserted_count: number
+          snapshot_date: string
         }[]
       }
       check_rate_limit: {
@@ -5819,6 +6066,7 @@ export type Database = {
           rpc: string
         }[]
       }
+      hbw_call_board_summary: { Args: { p_summary: string }; Returns: string }
       hbw_call_transcription_phone_candidates: {
         Args: { p_phones: string[] }
         Returns: {
@@ -5834,6 +6082,33 @@ export type Database = {
       hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
       hbw_phone_digits_match: {
         Args: { p_phone: string; p_query_digits: string }
+        Returns: boolean
+      }
+      hbw_twilio_board_awaiting_customer: {
+        Args: { p_body: string; p_direction: string }
+        Returns: boolean
+      }
+      hbw_twilio_board_summary:
+        | { Args: { p_direction: string }; Returns: string }
+        | { Args: { p_body: string; p_direction: string }; Returns: string }
+      hbw_twilio_customer_candidates: {
+        Args: { p_customer_phone: string }
+        Returns: {
+          cell_phone: string
+          customer_id: number
+          customer_name: string
+        }[]
+      }
+      hbw_twilio_pick_open_ro: {
+        Args: { p_body: string; p_customer_id: number; p_date_sent: string }
+        Returns: {
+          link_method: string
+          ro_no: string
+        }[]
+      }
+      hbw_twilio_sms_body_clean: { Args: { p_body: string }; Returns: string }
+      hbw_twilio_sms_is_low_value_notice: {
+        Args: { p_body: string; p_direction: string }
         Returns: boolean
       }
       is_admin: { Args: never; Returns: boolean }
@@ -6238,6 +6513,34 @@ export type Database = {
           matched_customer_name: string
           normalized_phones: string[]
           received_at: string
+        }[]
+      }
+      upsert_hbw_twilio_message: {
+        Args: {
+          p_account_sid?: string
+          p_body?: string
+          p_date_created?: string
+          p_date_sent?: string
+          p_date_updated?: string
+          p_direction?: string
+          p_error_code?: string
+          p_from_number?: string
+          p_gateway_secret: string
+          p_message_sid: string
+          p_num_media?: number
+          p_num_segments?: number
+          p_raw_payload?: Json
+          p_status?: string
+          p_to_number?: string
+        }
+        Returns: {
+          board_published: boolean
+          customer_id: number
+          customer_name: string
+          inserted: boolean
+          match_status: string
+          message_sid: string
+          ro_no: string
         }[]
       }
       validate_customer_data_ownership: {
