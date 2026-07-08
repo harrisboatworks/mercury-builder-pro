@@ -64,13 +64,13 @@ A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal
 
 | Pattern | When it happens | What it can mean | What to do |
 |---|---|---|---|
-| Single beep at key-on | Startup | Normal system self-check, alarm system is working | None |
+| A brief horn at key-on | Startup | Normal self-test; the horn sounds momentarily to confirm it is working | None |
 | Continuous alarm at cruise | Underway | Real heat (overheat), overspeed, or engine protection | Reduce throttle, check tell-tale stream, check display, shut down if it persists |
 | Continuous alarm + power reduction | Underway | Guardian mode, ECM is protecting the engine | Do not override. Reduce load. Investigate the trigger on shore. |
 | Four-beep pattern (repeating) | Varies by motor + year | Advisory-level alert: low oil, water in fuel, or other | Check display/SmartCraft message; confirm against the owner's manual for your specific motor |
 | Intermittent beeping | Varies | Sensor or wiring fault, alarm may be lying | Diagnostic needed. Note what RPM/condition triggers it before service. |
-| Alarm at WOT only | At wide-open throttle | Poppet valve or cooling restriction at high pressure | Check water pressure at speed; possible service issue |
-| Alarm briefly after shutdown | Heat-soak | Normal if motor ran hard, heat trapped in head before water-jacket cools | Usually clears on its own as motor cools |
+| Alarm at WOT only | At wide-open throttle | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Check water pressure at speed; possible service issue |
+| Alarm briefly after shutdown | Heat-soak | Normal if it clears as the motor cools and does not return; if it recurs, diagnose it | Wait for the motor to cool and confirm it does not come back; if it does, book a diagnostic |
 
 The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or call (905) 342-2153.
 
@@ -116,11 +116,11 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 **Important:** The patterns below describe common Mercury alarm behaviours. Exact patterns vary by motor model, year, and rigging configuration. Always cross-reference with your specific motor's operator's manual and, where available, any SmartCraft or VesselView display messages. Do not assume a pattern has the same meaning across different motors.
 
-### Single Beep at Key-On
+### A brief horn at key-on
 
-**Typical meaning:** Normal system self-check. Most Mercury motors produce a single beep at key-on as confirmation the alarm system is functional.
+**Typical meaning:** Normal self-test. Current Mercury manuals describe the warning horn sounding momentarily at key-on to confirm the alarm system is functional.
 
-**What to do:** If it's a single beep that stops and doesn't recur during operation, this is typically normal.
+**What to do:** If the horn sounds briefly at key-on and does not recur during operation, this is typically normal.
 
 ### Four Beeps, Repeated (Every 1-3 Minutes)
 
@@ -168,7 +168,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Older vs. Newer Motors
 
-Older Mercury 2-strokes had simpler alarm systems, typically a continuous alarm for overheating or oil. Newer Mercury FourStrokes and Verado models have more sophisticated ECM systems with multi-pattern alarms and full SmartCraft integration. The alarm behaviour on a 2005 carbureted 2-stroke is genuinely different from a current EFI FourStroke.
+Older Mercury 2-strokes had simpler alarm systems, typically a continuous alarm for overheating or oil. Newer Mercury FourStrokes and Verado models have more sophisticated ECM systems with multi-pattern alarms and full SmartCraft integration. The alarm behaviour on a 2005 carbureted 2-stroke is genuinely different from a current EFI FourStroke. Some small EFI FourStrokes (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, and many current SmartCraft engines use a six-second horn rather than repeating beep counts; overspeed protection on newer motors can even cut power with no horn at all.
 
 If you're not sure what generation of alarm system your motor uses, the operator's manual will have the alarm section, or a dealer can look up the system for your specific motor and year.
 
@@ -231,7 +231,7 @@ If it was a single key-on test, that may be normal. If it was a repeated or cont
 
 ### Is a single beep at key-on normal?
 
-Yes. Most Mercury motors produce a single beep at key-on as a confirmation that the alarm system is working. If it does not recur during operation, no action is needed.
+Yes. Current Mercury manuals describe a brief horn at key-on as a self-test confirming the alarm system is working. If it does not recur during operation, no action is needed.
 
 ### What is Guardian mode and how do I know if I am in it?
 
@@ -243,7 +243,7 @@ Bring the exact beep pattern (count, frequency, duration), whether power was red
 
 ### How do I read Mercury outboard alarm codes without a SmartCraft display?
 
-Without SmartCraft you read the alarm by its beep pattern: count the beeps, note how often they repeat, and whether the motor lost power. A continuous beep means overheat or low oil pressure, a beep pattern every two minutes points to oil level or water in fuel. A dealer can pull the exact fault codes from the engine computer at the shop.
+Without SmartCraft you read the alarm by its beep pattern: count the beeps, note how often they repeat, and whether the motor lost power. A continuous or long horn usually signals a serious fault such as overheat or low oil pressure; a beep pattern every two minutes points to oil level or water in fuel. A dealer can pull the exact fault codes from the engine computer at the shop.
 
 ### Are beep codes different on a Mercury 4-stroke?
 

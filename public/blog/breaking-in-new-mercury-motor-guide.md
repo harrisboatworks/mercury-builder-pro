@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-07-02
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-07-02
+date_modified: 2026-07-07
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-07-02  
+**Last updated:** 2026-07-07  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
@@ -195,7 +195,7 @@ Two related guides in the same cluster:
 
 ### When is the first oil change on a new Mercury outboard?
 
-At 20 hours. The break-in period is the first 10 hours, and the 20-hour first service (oil and filter change) is the one that matters most for the motor's long-term health and warranty record. Book it at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.
+Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. At HBW we recommend an early oil change around 20 hours after break-in as dealer best practice, because that first oil carries the most metal from break-in. Check the manual for your specific model. Book at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.
 
 ### What happens if I don't break in my Mercury motor properly?
 
