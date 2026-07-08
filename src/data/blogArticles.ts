@@ -2569,7 +2569,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-07',
     publishDate: '2026-05-27',
     category: 'Service & Troubleshooting',
     readTime: '~9 min read',
@@ -2588,18 +2588,17 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: 'My overheat alarm went off after I shut the motor down. Is something wrong?', answer: 'Usually no. Heat soak is normal after running the motor hard. Trapped heat in the cylinder head pushes the sensor above threshold for a brief period before the water jacket cools things off. If the alarm clears within 5 to 10 minutes of shutdown and does not return on the next run, the motor is likely fine. If it persists or returns immediately, book a diagnostic.' },
       { question: 'My tell-tale stream is strong but the alarm is still sounding. What is wrong?', answer: 'Strong tell-tale flow plus an overheat alarm leans toward a sensor or wiring fault rather than real heat. The motor is not actually hot but the sensor is reporting that it is. This still needs a diagnostic. Sensor faults are usually a straightforward fix at the dealer, but do not assume, circulation can still be blocked at the head while flowing fine at the tell-tale.' },
       { question: 'Can a clogged cooling intake cause a Mercury overheat alarm?', answer: 'Yes, and it is the most common cause we see at HBW. Weeds, sand, or debris caught in the cooling water intake on the lower unit will restrict water flow and trigger the alarm. This is especially common on Rice Lake and Kawarthas shallow bays. Lifting the motor and clearing the intake fixes it on the water. If the alarm returns, the impeller may also have been damaged.' },
-      { question: 'How often should the impeller be replaced to prevent overheating?', answer: 'Mercury recommends impeller replacement every two seasons of normal use, or annually for motors that see high hours or commercial use. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later.' },
+      { question: 'How often should the impeller be replaced to prevent overheating?', answer: "Mercury's schedule calls for impeller inspection at the 100-hour or annual service and replacement at the 300-hour service; on Rice Lake and the Kawarthas we treat those as outer limits, and hard-used motors often need it sooner. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later." },
       { question: 'Do overheat alarm patterns mean the same thing on every Mercury motor?', answer: 'No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCraft-equipped. A 2005 carbureted 2-stroke does not produce alarms the same way as a current EFI FourStroke or Verado. The patterns described on this page reflect what HBW techs see most often on Ontario Mercury motors. Always cross-reference with your operator manual and any display message.' },
     ],
     content: `## Quick answer
 
 A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
 
-# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
+## Every Pattern, What It Means, and What to Do
 
 *Last updated: May 27, 2026*
 
-> A Mercury outboard overheat alarm means one of two things: the cylinder head temperature sensor hit its protection threshold, or Guardian mode detected a condition the ECM wants to shut down before it costs you a powerhead. They sound the same. They need different responses. A continuous alarm at cruise usually means real heat. Check the tell-tale stream, drop throttle, head for shore. A continuous alarm at key-on after a hot shutdown is often heat soak and harmless. Alarm plus power reduction is Guardian mode: do not override it. The pattern tells you where to look.
 
 ## Why Overheat Alarms Require Different Responses
 
@@ -2634,14 +2633,9 @@ Important: alarm patterns and what they indicate vary by motor model, year, rigg
 
 *Quick-reference card summarising the Mercury alarm patterns above: single beep at key-on (normal self-check), continuous alarm at cruise (overheat or overspeed), continuous alarm with power reduction (Guardian mode), repeating four-beep advisory (low oil, water in fuel, or other), intermittent beeping (sensor or wiring fault), alarm at wide-open throttle only (poppet valve or cooling restriction), and a brief alarm after shutdown (heat soak). Each row lists the likely meaning and the immediate action.*
 
-:::image-placeholder
-slug: overheat-alarm-pattern-decoder
-type: diagram
-aspect: 4:5
-description: Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions
-prompt: HBW-designed SVG decision flow. 1080x1350. [STYLE ANCHOR]
-image: /lovable-uploads/overheat-alarm-pattern-decoder.svg
-:::
+![Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions](/lovable-uploads/overheat-alarm-pattern-decoder.svg)
+
+*Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions.*
 
 ## The On-Water Emergency Protocol
 
@@ -2675,7 +2669,7 @@ When the motor is genuinely running hot, the cause is almost always one of these
 
 **1. Intake blockage.** Weeds, sand, a plastic bag, or debris caught in the cooling water intake screen on the lower unit. This is the most common cause on Rice Lake and the Kawarthas, especially in shallow weedy bays. Lifting the motor and clearing the intake fixes it on the water.
 
-**2. Impeller failure.** The rubber impeller in the water pump (in the lower unit) wears out, loses blades, or hardens. Impellers should be replaced every two seasons of normal use, or annually if the motor sees high hours. A failed impeller will cause overheating at higher RPMs first, then at all RPMs as it gets worse.
+**2. Impeller failure.** The rubber impeller in the water pump (in the lower unit) wears out, loses blades, or hardens. Mercury's maintenance schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour service as replacement; on weedy, silty water like Rice Lake we suggest not stretching those limits, and many of our customers replace every two to three seasons. A failed impeller will cause overheating at higher RPMs first, then at all RPMs as it gets worse.
 
 **3. Thermostat failure.** A thermostat stuck closed restricts cooling water flow to the head. Symptoms come on gradually. The motor runs cooler at idle and overheats at cruise. Thermostat replacement is a straightforward service job.
 
@@ -4509,7 +4503,7 @@ Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2
 
 ## Related at HBW
 
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
+The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
 - [Mercury Outboard Won\\](/blog/mercury-outboard-wont-start-troubleshooting)
@@ -12220,7 +12214,7 @@ whenInDoubt: Buyers who pick Pro XS for the badge usually find a FourStroke woul
 
 Who it is for: bass anglers, walleye tournament competitors, anyone who wants to get to the other end of the lake as fast as possible.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
 
 Pro XS is tuned for performance. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke HP. In the Ontario tournament fishing world, Pro XS is the standard.
 
@@ -16156,7 +16150,7 @@ For a 22-foot tritoon hauling four adults and full gear, none of those scenarios
 
 The reason Boost matters beyond its 2026 performance gains is what it signals.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
 
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 
@@ -20103,12 +20097,10 @@ Mercury's warning horn uses repeated patterns to communicate without a display. 
 
 | Beep pattern | What it means | What to do |
 |---|---|---|
-| **1 continuous tone** | Engine in Guardian mode, severe fault | Reduce throttle to idle, return to dock, do not continue running |
-| **4 beeps every 2 minutes** | Water in fuel | Stop, check fuel filter, drain water, refill |
-| **6 beeps over 6 seconds, then silence** | Overheating warning | Shut down immediately, do not run |
-| **3 short beeps every 2 minutes** | Low oil pressure (4-stroke) | Stop, check oil level, do not run |
-| **1 beep, repeating** | Low oil reservoir (2-stroke Optimax / DFI) | Add 2-stroke oil to remote tank |
-| **2 short beeps** | Engine has entered limit/Guardian mode | Reduce throttle, motor will let you idle home |
+| **One beep at key-on** | Normal system test; the horn confirms it is working | None |
+| **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
+| **Continuous tone** | Serious fault: overheat, critically low oil, oil pump failure, engine overspeed, or a sensor out of range. Engine Guardian activates and limits power | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
+| **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
 Patterns vary slightly by engine family and model year. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
 
@@ -20137,7 +20129,7 @@ April and May are our highest-volume service months. The alarms cluster predicta
 
 **#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
 
-## Optimax DFI Code 13 / 14: the float-magnet problem
+## Optimax DFI oil alarm: the float-magnet problem
 
 Mercury Optimax DFI engines have a 2-stroke oil reservoir with a float that has an embedded magnet. When the magnet separates from the float body (known issue on older Optimax), the sensor reads "low oil" even though the reservoir is full.
 
@@ -20198,10 +20190,10 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 `,
     faqs: [
-      { question: "What is the most common Mercury alarm code at spring first-start?", answer: "Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free)." },
+      { question: "What is the most common Mercury alarm code at spring first-start?", answer: "Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free)." },
       { question: "Does HBW have Mercury CDS dealer software?", answer: "Yes. HBW is a Mercury Premier Dealer with Mercury CDS (Computer Diagnostic System). CDS plugs into the SmartCraft network and provides live engine data, fault code reading, fault clearing, and parameter adjustment that the owner-side SmartCraft Connect Mobile app cannot." },
       { question: "Is VesselView Mobile still available?", answer: "Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed." },
-      { question: "My Optimax keeps firing a Code 13 or 14 oil alarm but the tank is full. What's wrong?", answer: "The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement." },
+      { question: "My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?", answer: "The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement." },
       { question: "Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?", answer: "Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. Diagnosis at HBW includes intake cleaning before assuming impeller failure." },
       { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production." }
     ],
@@ -27863,7 +27855,7 @@ The actual fix at the shop, after the impeller test, is usually a five-minute ho
 
 ## Related at HBW
 
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
+The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
 - [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)
@@ -28682,7 +28674,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Hand touching a warning icon on a Mercury VesselView display to troubleshoot outboard alarm codes.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-07',
     publishDate: '2026-05-11',
     category: 'Service & Troubleshooting',
     readTime: '6 min',
@@ -28812,7 +28804,7 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
 
 ## What to Do When the Alarm Sounds
 
@@ -28856,7 +28848,7 @@ This information cuts diagnostic time significantly.
 
 ## Related at HBW
 
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
+The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
 - [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)

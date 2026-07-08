@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder.md
-last_updated: 2026-06-09
+last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheat Alarm Decoder: Beep Meanings"
 description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury."
 category: "Service & Troubleshooting"
 date_published: 2026-05-27
-date_modified: 2026-06-09
+date_modified: 2026-07-07
 keywords: ["mercury overheat alarm","mercury outboard overheating","mercury guardian mode","smartcraft alarm codes","mercury alarm patterns","mercury tell-tale stream","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -31,9 +31,8 @@ content_type: blog_article
 
 A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
 
-# Mercury Outboard Overheat Alarm: Every Pattern, What It Means, and What to Do (2026)
+## Every Pattern, What It Means, and What to Do
 
-> A Mercury outboard overheat alarm means one of two things: the cylinder head temperature sensor hit its protection threshold, or Guardian mode detected a condition the ECM wants to shut down before it costs you a powerhead. They sound the same. They need different responses. A continuous alarm at cruise usually means real heat. Check the tell-tale stream, drop throttle, head for shore. A continuous alarm at key-on after a hot shutdown is often heat soak and harmless. Alarm plus power reduction is Guardian mode: do not override it. The pattern tells you where to look.
 
 ## Why Overheat Alarms Require Different Responses
 
@@ -68,12 +67,9 @@ Important: alarm patterns and what they indicate vary by motor model, year, rigg
 
 *Quick-reference card summarising the Mercury alarm patterns above: single beep at key-on (normal self-check), continuous alarm at cruise (overheat or overspeed), continuous alarm with power reduction (Guardian mode), repeating four-beep advisory (low oil, water in fuel, or other), intermittent beeping (sensor or wiring fault), alarm at wide-open throttle only (poppet valve or cooling restriction), and a brief alarm after shutdown (heat soak). Each row lists the likely meaning and the immediate action.*
 
-slug: overheat-alarm-pattern-decoder
-type: diagram
-aspect: 4:5
-description: Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions
-prompt: HBW-designed SVG decision flow. 1080x1350. [STYLE ANCHOR]
-image: /lovable-uploads/overheat-alarm-pattern-decoder.svg
+![Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions](/lovable-uploads/overheat-alarm-pattern-decoder.svg)
+
+*Mercury overheat alarm decoder: decision flow showing tell-tale check, Guardian mode, and three colour-coded actions.*
 
 ## The On-Water Emergency Protocol
 
@@ -107,7 +103,7 @@ When the motor is genuinely running hot, the cause is almost always one of these
 
 **1. Intake blockage.** Weeds, sand, a plastic bag, or debris caught in the cooling water intake screen on the lower unit. This is the most common cause on Rice Lake and the Kawarthas, especially in shallow weedy bays. Lifting the motor and clearing the intake fixes it on the water.
 
-**2. Impeller failure.** The rubber impeller in the water pump (in the lower unit) wears out, loses blades, or hardens. Impellers should be replaced every two seasons of normal use, or annually if the motor sees high hours. A failed impeller will cause overheating at higher RPMs first, then at all RPMs as it gets worse.
+**2. Impeller failure.** The rubber impeller in the water pump (in the lower unit) wears out, loses blades, or hardens. Mercury's maintenance schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour service as replacement; on weedy, silty water like Rice Lake we suggest not stretching those limits, and many of our customers replace every two to three seasons. A failed impeller will cause overheating at higher RPMs first, then at all RPMs as it gets worse.
 
 **3. Thermostat failure.** A thermostat stuck closed restricts cooling water flow to the head. Symptoms come on gradually. The motor runs cooler at idle and overheats at cruise. Thermostat replacement is a straightforward service job.
 
@@ -185,7 +181,7 @@ Yes, and it is the most common cause we see at HBW. Weeds, sand, or debris caugh
 
 ### How often should the impeller be replaced to prevent overheating?
 
-Mercury recommends impeller replacement every two seasons of normal use, or annually for motors that see high hours or commercial use. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later.
+Mercury's schedule calls for impeller inspection at the 100-hour or annual service and replacement at the 300-hour service; on Rice Lake and the Kawarthas we treat those as outer limits, and hard-used motors often need it sooner. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later.
 
 ### Do overheat alarm patterns mean the same thing on every Mercury motor?
 
