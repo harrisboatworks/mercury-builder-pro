@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-27  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-07  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 
@@ -42,7 +42,7 @@ There are four scenarios that produce alarm behaviour HBW customers call us abou
 
 1. **Real heat.** The motor is actually running hot. The cylinder head temperature is above the protection threshold. This needs immediate action.
 2. **Guardian mode.** The ECM has detected a condition that could damage the motor and is deliberately reducing power output. The alarm is paired with a noticeable drop in RPM or throttle response.
-3. **Heat soak.** The motor was shut down after running hard. Trapped heat in the cylinder head pushes the temperature sensor above threshold for a brief period before the water jacket cools things off. Usually clears on its own.
+3. **Heat soak.** A one-time key-on alarm after a hot shutdown can be heat soak if it clears as the motor cools AND does not come back; if it returns, logs a fault, or happens under load, treat it as real.
 4. **Sensor or wiring fault.** The temperature sensor or its wiring is reporting a heat condition that is not real. The alarm is lying.
 
 All four sound the same to the operator. The distinction lives in the pattern, when it happens, and what the engine is doing at the time. That is what the rest of this page is about.
@@ -56,7 +56,7 @@ Work through this in order. Most alarms fall into one of these patterns:
 | Continuous alarm at cruise | Underway, mid-RPM or higher | Real heat (overheat) | High | Reduce throttle, check tell-tale stream, head for shore at idle |
 | Continuous alarm at startup / key-on | Right after a hot shutdown | Heat soak (usually) | Low | Wait 5 to 10 minutes for motor to cool, restart, confirm it clears |
 | Alarm + power reduction (Guardian mode) | Any RPM, sudden drop in power | ECM-detected protective shutdown | High | Do not override. Reduce load. Diagnose on shore before running hard again. |
-| Alarm only at WOT | At wide-open throttle, clears at cruise RPM | Poppet valve or cooling restriction at high pressure | Medium | Check water pressure. Possible service issue. Schedule diagnostic. |
+| Alarm only at WOT | At wide-open throttle, clears at cruise RPM | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Medium | Check water pressure. Possible service issue. Schedule diagnostic. |
 | Intermittent / random alarm | No clear correlation with RPM or load | Sensor fault or wiring issue | Medium | Diagnostic needed. Note exact conditions before service. |
 | Alarm with no power reduction and tell-tale flowing strong | At cruise | Possible sensor fault (alarm lying) | Medium | Diagnose, do not assume. Real heat is still possible if sensor reads high but circulation has stopped at the head. |
 | Alarm at idle only | Idle in shallow / weedy water | Cooling intake restriction | Medium | Lift motor, clear intake, restart |
@@ -77,7 +77,7 @@ If an alarm sounds while you are underway, work through these steps in order. Th
 
 **Step 1, Reduce throttle.** Drop to idle or no-wake immediately. Do not keep the motor under load with a warning alarm sounding. Whatever is wrong gets worse the longer you run it hot.
 
-**Step 2, Check the tell-tale stream.** Look at the cooling water stream coming out of the back of the motor. Is it flowing strong, weak, intermittent, or stopped? Strong flow plus alarm often points to a sensor fault. No flow plus alarm points to real heat and a circulation problem.
+**Step 2, Check the tell-tale stream.** Look at the cooling water stream coming out of the back of the motor. Is it flowing strong, weak, intermittent, or stopped? A strong telltale only proves the indicator circuit has flow. Mercury's guidance is that an engine that keeps overheating with a steady telltale needs service; compare live SmartCraft temperature and actual head temperature before calling it a sensor. No flow plus alarm points to real heat and a circulation problem.
 
 **Step 3, Check the display.** If you have SmartCraft, VesselView, or any gauge with engine monitoring, look at it now. Note the exact message or fault code shown. Take a photo. This is the single most useful piece of information you can bring to a technician.
 
@@ -95,17 +95,17 @@ If the head reads cool but the alarm is sounding: sensor fault, wiring issue, or
 
 If the head reads hot: real heat. The problem is somewhere in the cooling system. The next section covers what that usually is.
 
-If you do not have an IR gun: the tell-tale stream is your best on-water proxy. Strong, steady flow at cruise RPM with no alarm before, then an alarm with no change in flow, leans sensor fault. Flow that weakened or stopped leans real heat.
+If you do not have an IR gun: the tell-tale stream is your best on-water proxy. Strong, steady flow at cruise RPM with no alarm before, then an alarm with no change in flow, leans sensor fault. Flow that weakened or stopped leans real heat. Confirm with live SmartCraft or CDS data; an IR reading on a painted head is a sanity check, not a diagnosis.
 
 ## The Four Most Common Causes of Real Overheating
 
-When the motor is genuinely running hot, the cause is almost always one of these four. Listed in order of how often we see them at HBW:
+When the motor is genuinely running hot, the cause is almost always one of the first three below (the fourth means the alarm is lying, it is not a real-heat cause). Listed in order of how often we see them at HBW. Less common real causes include low water pressure at wide-open throttle, poppet or pressure-valve faults where fitted, plugged passages, and engine height or aerated water pickup.
 
 **1. Intake blockage.** Weeds, sand, a plastic bag, or debris caught in the cooling water intake screen on the lower unit. This is the most common cause on Rice Lake and the Kawarthas, especially in shallow weedy bays. Lifting the motor and clearing the intake fixes it on the water.
 
-**2. Impeller failure.** The rubber impeller in the water pump (in the lower unit) wears out, loses blades, or hardens. Mercury's maintenance schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour service as replacement; on weedy, silty water like Rice Lake we suggest not stretching those limits, and many of our customers replace every two to three seasons. A failed impeller will cause overheating at higher RPMs first, then at all RPMs as it gets worse.
+**2. Impeller failure.** The rubber impeller in the water pump (in the lower unit) wears out, loses blades, or hardens. Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On weedy, silty water like Rice Lake we treat that as an outer limit; many of our customers go every two to three seasons. A failed impeller will cause overheating at higher RPMs first, then at all RPMs as it gets worse.
 
-**3. Thermostat failure.** A thermostat stuck closed restricts cooling water flow to the head. Symptoms come on gradually. The motor runs cooler at idle and overheats at cruise. Thermostat replacement is a straightforward service job.
+**3. Thermostat stuck closed.** Shows up as warm-up or idle overheating on thermostat-controlled systems, because thermostats control water flow at low rpm; cruise-only overheating points more toward water pressure, impeller, poppet valve, or intake problems (the poppet valve controls flow at higher rpm). Thermostats are tested in heated water and replaced if they fail to open at spec.
 
 **4. Temperature sensor fault.** The sensor reports a higher temperature than the head actually is. The motor is not in danger but the alarm is real. This is also a straightforward diagnostic and fix at the dealer.
 
@@ -169,11 +169,11 @@ Guardian mode pairs an alarm with a noticeable drop in RPM or throttle response.
 
 ### My overheat alarm went off after I shut the motor down. Is something wrong?
 
-Usually no. Heat soak is normal after running the motor hard. Trapped heat in the cylinder head pushes the sensor above threshold for a brief period before the water jacket cools things off. If the alarm clears within 5 to 10 minutes of shutdown and does not return on the next run, the motor is likely fine. If it persists or returns immediately, book a diagnostic.
+A one-time key-on alarm after a hot shutdown can be heat soak if it clears as the motor cools AND does not come back on the next run. If it returns, logs a fault, or happens under load, treat it as real and book a diagnostic.
 
 ### My tell-tale stream is strong but the alarm is still sounding. What is wrong?
 
-Strong tell-tale flow plus an overheat alarm leans toward a sensor or wiring fault rather than real heat. The motor is not actually hot but the sensor is reporting that it is. This still needs a diagnostic. Sensor faults are usually a straightforward fix at the dealer, but do not assume, circulation can still be blocked at the head while flowing fine at the tell-tale.
+A strong tell-tale only proves the indicator circuit has flow. Mercury's guidance is that an engine that keeps overheating with a steady tell-tale still needs service; compare live SmartCraft temperature and actual head temperature before calling it a sensor. Sensor faults are usually a straightforward fix at the dealer, but do not assume, circulation can still be blocked at the head while flowing fine at the tell-tale.
 
 ### Can a clogged cooling intake cause a Mercury overheat alarm?
 
@@ -181,7 +181,7 @@ Yes, and it is the most common cause we see at HBW. Weeds, sand, or debris caugh
 
 ### How often should the impeller be replaced to prevent overheating?
 
-Mercury's schedule calls for impeller inspection at the 100-hour or annual service and replacement at the 300-hour service; on Rice Lake and the Kawarthas we treat those as outer limits, and hard-used motors often need it sooner. An impeller that has hardened or lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates. The 20-hour first service on a new motor does not include impeller replacement; that comes later.
+Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On weedy, silty water like Rice Lake we treat that as an outer limit; many of our customers go every two to three seasons. A hardened impeller or one that has lost blades will cause overheating at higher RPMs first, then at all RPMs as it deteriorates.
 
 ### Do overheat alarm patterns mean the same thing on every Mercury motor?
 

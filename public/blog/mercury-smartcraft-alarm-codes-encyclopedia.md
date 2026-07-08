@@ -49,14 +49,14 @@ Mercury's warning horn uses repeated patterns to communicate without a display. 
 |---|---|---|
 | **One beep at key-on** | Normal system test; the horn confirms it is working | None |
 | **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
-| **Continuous tone** | Serious fault: overheat, critically low oil, oil pump failure, engine overspeed, or a sensor out of range. Engine Guardian activates and limits power | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
+| **Continuous tone** | Serious or critical fault such as overheat, critically low oil, or oil pump failure. Engine Guardian may limit power. Horn strategy varies by engine family and year; some newer engines use a six-second horn instead, and overspeed protection can cut power with no horn at all | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
 | **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
-Patterns vary slightly by engine family and model year. For exact pattern decoding on your specific motor, the owner's manual is the source of truth.
+Patterns vary by engine family and model year. Some small EFI FourStroke models (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, while many current SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
 
-## Top 10 alarm codes we see at HBW (by service frequency)
+## The 10 alarms we see most at HBW (shop frequency, not Mercury's code order)
 
-This is our actual order based on service tickets, not a generic Mercury list. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
+These are ranked by what comes through our service bays, not by Mercury's SmartCraft fault numbers; on the official list Fault 1 is Critical High Voltage, Fault 2 Critical Low Voltage, Fault 3 Water Pressure, Fault 4 Critical Overtemp, and Water in Fuel sits at Fault 23. This is our actual order based on service tickets, not a generic Mercury list. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
 
 1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
 2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
@@ -71,29 +71,26 @@ This is our actual order based on service tickets, not a generic Mercury list. W
 
 ## Spring first-start patterns every May
 
-April and May are our highest-volume service months. The alarms cluster predictably.
+April and May are our highest-volume service months. The alarms cluster predictably (our shop pattern, not an official Mercury ranking).
 
 **#1: Water in Fuel (4 beeps every 2 minutes).** Phase separation from E10 fuel that sat for 5-6 months. Fix: drain the water-separating filter, refill with fresh fuel (ideally HBW's ethanol-free 89), restart.
 
-**#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: load test, replace if below 11.5 V at rest.
+**#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: charge it first, then load or conductance test; replace it if it fails rated capacity or cannot hold charge, or if it does not meet Mercury's spec for the motor (a 150 FourStroke calls for 1000 MCA / 800 CCA; V10 and V12 Verado require AGM or lithium marine cranking batteries).
 
 **#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
 
-## Optimax DFI oil alarm: the float-magnet problem
+## Optimax DFI oil alarms: Fault 13, 14, and the float problem
 
-Mercury Optimax DFI engines have a 2-stroke oil reservoir with a float that has an embedded magnet. When the magnet separates from the float body (known issue on older Optimax), the sensor reads "low oil" even though the reservoir is full.
+On the SmartCraft fault list, Fault 13 (Low Oil) means the remote 2-stroke oil tank is low, Fault 14 (Critical Low Oil) means the engine-mounted oil tank is critically low and needs an immediate refill, and Fault 18 is a separate oil pump fault. Older gauges may just read LOW OIL or RESERVE OIL LOW.
 
-**Cause priority order:**
-1. Float magnet separation (most common, especially on older Optimax)
-2. Actual low oil supply
-3. Sensor wiring or connector fault (least common)
+False or incorrect Optimax low-oil alarms have a longer cause list than most owners realize. Per Mercury's service manual, the possibilities include unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank (the manual's remedy for a failed float is oil tank replacement). Float-magnet separation is one of the causes we see, not the only one, and confirming it requires eyes on the float assembly.
 
-Fix: replace the float assembly. We have the parts on the shelf.
+Fix depends on the cause: purge and inspect the oil delivery lines and cap first, verify the outlet filter and check valve, and if the float itself is failed the manual calls for oil tank replacement. We have common Optimax float and oil-tank parts on the shelf.
 
 ## Verado and V8 FourStroke post-winterization codes
 
 - **Low battery voltage / undervoltage codes:** Verado V8/V10/V12 and current V8 FourStroke draw significant power. Battery that survived storage on a smaller motor may not have enough cranking reserve for a Verado.
-- **Water in fuel / fuel quality alarms:** same E10 phase-separation, but Verado's higher fuel-system pressure is more sensitive to contamination.
+- **Water in fuel / fuel quality alarms:** same E10 phase-separation; water or contaminants in the fuel must be filtered and drained promptly, because continued running with water in fuel can damage the engine.
 - **Fuel-pressure / fuel-system Guardian faults:** low-pressure or high-pressure fuel pump weakness, fuel rail pressure sensor drift, or fuel filter restriction.
 
 Note: any older Verado content referencing "supercharger codes" is out of date.
@@ -106,7 +103,7 @@ Note: any older Verado content referencing "supercharger codes" is out of date.
 
 ## SmartCraft Connect Mobile (formerly VesselView Mobile)
 
-Mercury rebranded VesselView Mobile as **SmartCraft Connect Mobile** in 2026. Same product, same functionality. If you have the older app installed, it still works. New downloads should search for "SmartCraft Connect Mobile."
+Mercury has superseded VesselView Mobile with **SmartCraft Connect Mobile**. Legacy VesselView Mobile modules keep using the VesselView Mobile app; the new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works. For new SmartCraft Connect hardware, use the Mercury Marine app.
 
 HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
@@ -148,11 +145,11 @@ Yes. HBW is a Mercury Premier Dealer with Mercury CDS (Computer Diagnostic Syste
 
 ### Is VesselView Mobile still available?
 
-Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed.
+Mercury has superseded VesselView Mobile with SmartCraft Connect Mobile. Legacy VesselView Mobile hardware still uses the VesselView Mobile app, but new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works.
 
 ### My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?
 
-The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement.
+False or incorrect Optimax low-oil alarms can come from several causes per Mercury's service manual: unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank. Float-magnet separation is one of the causes we see, not the only one. Diagnosis starts with the delivery lines and cap; if the float itself is failed the manual's remedy is oil tank replacement.
 
 ### Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?
 

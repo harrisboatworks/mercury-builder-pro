@@ -69,7 +69,7 @@ Rice Lake is shallow, warm, and famously weedy. That's why the fishing is good, 
 
 Weeds wrap the lower unit and starve the water intake. A choked intake means the impeller runs partially dry, and a rubber impeller running dry destroys itself in seconds, not minutes. By midsummer the weed beds are at full height, exactly when the June-July spike hits. Late summer adds a second hazard: lower water means more sand and silt through the pump, which works like grinding paste on the housing and wear plate.
 
-If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour major service as mandatory impeller replacement; on Rice Lake, treat those as outer limits.
+If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure; on Rice Lake, treat that as an outer limit.
 
 ## The Warning Signs, in the Order We See Them
 
@@ -77,7 +77,7 @@ If you boat the Kawarthas, your impeller lives a harder life than the same part 
 2. **The overheat alarm sounds at high throttle.** The pump keeps up at idle but can't feed the motor under load. See our [beep and alarm codes guide](/blog/mercury-outboard-beeping-codes-guide) for what the patterns mean.
 3. **The alarm sounds at idle, or the stream stops.** The pump is done. Shut down, tilt the motor, check the intake for weeds, and call before running it again. If the motor has overheated badly, see the [overheating emergency guide](/blog/outboard-overheating-emergency-guide).
 
-A weed-wrapped intake mimics a dead impeller. On Rice Lake, always clear the lower unit and re-check the stream before assuming the worst.
+Not every failure announces itself in this order; a telltale can keep flowing while water pressure is already down, which is why the alarm matters more than the stream. A weed-wrapped intake mimics a dead impeller. On Rice Lake, always clear the lower unit and re-check the stream before assuming the worst.
 
 ## If the Alarm Sounds on the Water
 
@@ -119,7 +119,7 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
 
 ### How often should a Mercury outboard impeller be replaced?
 
-Mercury's schedule treats the 100-hour or annual service as the impeller inspection point and the 300-hour major service as mandatory replacement; on Rice Lake treat those as outer limits (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for your model and hours, but the warning signs still override the calendar: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of when it was last done.
+Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On Rice Lake, treat that as an outer limit (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for your model and hours, but the warning signs still override the calendar: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of when it was last done.
 
 ### What are the signs of a failing impeller?
 
