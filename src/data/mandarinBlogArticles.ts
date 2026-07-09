@@ -2,9 +2,6 @@ import { BlogArticle } from './blogArticles';
 
 import newImmigrantHero from '@/assets/blog/new-immigrant-boat-guide-hero.png';
 import chineseFamilyMultiGen from '@/assets/blog/chinese-family-legend-multigen.jpg';
-import zhWinterizationHero from '@/assets/blog/zh-winterization-hero.png';
-import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
-import zhPcocHero from '@/assets/blog/zh-pcoc-hero.png';
 
 // SHARED HONESTY NOTE — language support disclosure (Simplified Chinese).
 // This is canon — never imply Chinese-speaking staff or interpreters on staff.
@@ -4534,7 +4531,7 @@ HBW 网站说明提供 boat rentals、boat sales、service、repair、winterizat
     title: '安省船主冬季保养和冬储清单：第一次过冬怎么做',
     seoTitle: '安省 船 冬季保养 中文 (2026 第一次过冬指南)',
     description: '第一次在安省过冬的船主指南：为什么必须冬化（结冰会裂缸体）、完整冬化清单、DIY vs 经销商服务、什么时候预订（9-11 月）、HBW 在 Gores Landing 的冬储服务（12 月 1 日至 4 月 1 日停业）。',
-    image: zhWinterizationHero,
+    image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',
@@ -4646,7 +4643,7 @@ quote: ${ZH_LANGUAGE_NOTE}
     title: '多伦多华人第一次租船钓鱼：证件、安全和当天流程',
     seoTitle: 'Rice Lake 租船 中文 多伦多 (第一次完整流程)',
     description: '多伦多华人第一次到 Rice Lake 租船钓鱼的完整指南：需要带什么证件、租船安全检查清单（不一定需要 PCOC）、当天到达流程、安全简报、安省钓鱼证（与船证分开）、从万锦/士嘉堡的驾车路线（约 90 分钟）。',
-    image: zhFirstRentalHero,
+    image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',
@@ -4769,7 +4766,7 @@ ${ZH_LANGUAGE_NOTE}
     title: 'PCOC、PCL、钓鱼证区别：安省新手别搞混',
     seoTitle: '安省 船牌 中文 PCOC vs PCL vs 钓鱼证',
     description: '安省新手常把三个证件搞混：PCOC（船只操作员卡，终身有效，开动力船必须）、PCL（船只牌照，船身的注册号，免费，换引擎要更新）、安省钓鱼证（独立系统，由 MNRF 管理）。三者对比表 + 官方申请链接。',
-    image: zhPcocHero,
+    image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',

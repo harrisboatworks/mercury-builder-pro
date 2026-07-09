@@ -20,9 +20,7 @@
  */
 import { BlogArticle } from './blogArticles';
 
-import zhWinterizationHero from '@/assets/blog/zh-winterization-hero.png';
 import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
-import zhPcocHero from '@/assets/blog/zh-pcoc-hero.png';
 
 export const ZH_HANT_LANGUAGE_NOTE =
   '我們專門為華人朋友準備了這些中文指南——因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務，不過別擔心——歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。';
@@ -42,7 +40,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
     title: '安省船主冬季保養和冬儲清單：第一次過冬怎麼做',
     seoTitle: '安省 船 冬季保養 繁體 (2026 第一次過冬指南)',
     description: '第一次在安省過冬的船主指南：為什麼必須冬化（結冰會裂缸體）、完整冬化清單、DIY vs 經銷商服務、什麼時候預訂（9-11 月）、HBW 在 Gores Landing 的冬儲服務（12 月 1 日至 4 月 1 日停業）。',
-    image: zhWinterizationHero,
+    image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',
@@ -141,7 +139,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     title: '多倫多華人第一次租船釣魚：證件、安全和當天流程',
     seoTitle: 'Rice Lake 租船 繁體 多倫多 (第一次完整流程)',
     description: '多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：需要帶甚麼證件、租船安全檢查清單（不一定需要 PCOC）、當天到達流程、安全簡報、安省釣魚證（與船證分開）、從萬錦/士嘉堡的駕車路線（約 90 分鐘）。',
-    image: zhFirstRentalHero,
+    image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',
@@ -220,7 +218,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     title: 'PCOC、PCL、釣魚證區別：安省新手別搞混',
     seoTitle: '安省 船牌 繁體 PCOC vs PCL vs 釣魚證',
     description: '安省新手常把三個證件搞混：PCOC（船隻操作員卡，終身有效，開動力船必須）、PCL（船隻牌照，船身的註冊號，免費，換引擎要更新）、安省釣魚證（獨立系統，由 MNRF 管理）。三者對比表 + 官方申請連結。',
-    image: zhPcocHero,
+    image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',
