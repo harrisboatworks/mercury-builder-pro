@@ -145,8 +145,6 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 **Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
 
 **Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
@@ -197,29 +195,23 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## Common Rigging Mistakes
 
-1. **Reusing old controls to save money.** Old cables can be stiff or corroded. A failed binnacle mid-season costs more in towing and service than a new one.
-2. **Skipping the gauge upgrade on a SmartCraft motor.** A 2026 Mercury 150 connected to 1998 analog gauges uses about 15% of the data the motor produces.
-3. **Underspeccing steering on a V6.** Cable steering on 150 HP technically works. After three hours, you know it is wrong.
-4. **Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow.
-5. **Single battery on a boat with electronics.** A single battery running chartplotter, fishfinder, stereo, and starter can leave you stranded.
+The three big ones, reusing tired controls, skipping the gauge upgrade, and underspeccing steering on a V6, are covered at the top of this guide. Two more we see every season:
+
+**Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow. Sea trial it.
+
+**Single battery on a boat full of electronics.** A single battery running the chartplotter, fishfinder, stereo, and starter can leave you stranded. See the wiring section above for when dual-battery makes sense.
 
 ---
 
 ## What we see at HBW
 
-Pricing in our quote book moves three or four times a year. Mercury Canada bulletins drive most of it, and dealer programs (Spring Boost, Buy-and-Win, etc.) layer on top. The number a customer sees on a competitor's website is usually MSRP without HST, without controls, without rigging, without install, and without prop. Half our first conversations are clarifying what is actually included.
+The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
 
-Real installed cost on a 90 FourStroke on a fishing boat with existing controls usually lands $11,500 to $13,500 all-in. Same motor on a pontoon getting a SmartCraft display and a new prop ends up $13,500 to $15,500. We quote the installed number, not the box-only number.
+The exception: identical replacement (a 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
+
+It's also why we quote the installed number, not the box-only number. The price on a competitor's website is usually MSRP without HST, controls, rigging, install, or prop. Half our first conversations are clarifying what's actually included.
 
 ---
-
----
-
-## What we see at HBW
-
-The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting "drop-in install" is how customers end up with surprise add-ons mid-job.
-
-The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
 ---
 
