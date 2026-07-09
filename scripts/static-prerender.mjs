@@ -4734,10 +4734,10 @@ const routes = [
   },
   {
     path: '/promotions',
-    title: '7-Year Mercury Warranty on Every New Outboard | HBW',
-    description: '7 years of factory-backed warranty on every new Mercury outboard at Harris Boat Works. Straight Mercury coverage, no third-party contract.',
+    title: 'Mercury Outboard Promotions & Financing Offers | Harris Boat Works',
+    description: 'Current Mercury outboard promotions, rebates, and financing offers from Harris Boat Works, Mercury Premier Dealer on Rice Lake. Updated as offers change.',
     h1: 'Mercury Outboard Promotions',
-    intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Factory-backed 7-year warranty on every new Mercury.',
+    intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965.',
     schemas: [promotionsPageSchema()]
   },
   // ============================================================
