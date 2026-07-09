@@ -35316,33 +35316,20 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 - Normal RPM operation, normal cooling, no alarms
 - Charging system holding voltage at cruise
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: I'll just buy the impeller in the next town.
-  rebuttal: Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
-- claim: It ran fine in the driveway.
-  rebuttal: Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
-- claim: I don't need a kicker, I'll just call for a tow.
-  rebuttal: Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
-- claim: I'll do my service in the spring, the TSW is the test.
-  rebuttal: A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
-:::
+- **I'll just buy the impeller in the next town.** Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
+- **It ran fine in the driveway.** Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
+- **I don't need a kicker, I'll just call for a tow.** Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
+- **I'll do my service in the spring, the TSW is the test.** A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
 
 ## Customer language we hear
 
-:::customer-voice
-- quote: I'm doing the Trent-Severn this year
-  response: preventive service conversation
-- quote: I broke down on Rice Lake, can you help?
-  response: on-water towing question
-- quote: I think I hit the railroad
-  response: confirmed, lower unit inspection priority
-- quote: My motor is overheating coming into the lock
-  response: impeller, intake, or thermostat
-- quote: When can you get me in?
-  response: priority for transit boats; we work them in as best we can
-:::
+- **"I'm doing the Trent-Severn this year"** preventive service conversation.
+- **"I broke down on Rice Lake, can you help?"** on-water towing question.
+- **"I think I hit the railroad"** confirmed, lower unit inspection priority.
+- **"My motor is overheating coming into the lock"** impeller, intake, or thermostat.
+- **"When can you get me in?"** priority for transit boats; we work them in as best we can. Call 905-342-2153.
 
 ## Ready for HBW to look at it before, during, or after your transit?
 
