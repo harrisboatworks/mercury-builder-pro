@@ -9114,7 +9114,7 @@ Here's the actual process if you trade through us:
 4. **Decommission and swap.** We pull the old motor, transfer your old controls if compatible, install the new motor, rig and test. Old motor goes to our reconditioning bench or to the consignment line, depending on what makes sense.
 5. **You leave on the new rig.** Same-day swap is common for like-for-like HP. If we're upgrading HP or changing rigging type (mechanical to DTS, for example), it's typically a 1-3 day shop visit.
 
-If you're outside the immediate Kawarthas, we coordinate pickup and delivery for repowers regularly. GTA and east Toronto customers drive up routinely. We've handled trades from as far as Ottawa and Niagara.
+Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. GTA and east Toronto customers trailer up routinely, and we have handled trades from as far as Ottawa and Niagara.
 
 ## When to Use the Estimator vs Call Us
 
@@ -9126,7 +9126,7 @@ Call us if:
 - You're trading a boat-and-motor package and want both lines itemized.
 - You have a higher-end motor (150 HP+, under 5 years, low hours) and want to compare a straight trade against consignment.
 - You want the firm number tied directly to a specific new motor configuration before deciding.
-- You're outside the immediate Kawarthas and want to coordinate pickup or delivery.
+- You're driving in from outside the Kawarthas and want to sort out timing before you trailer the boat over.
 
 The estimator gets you 80% of the way to a real number. The call is for the last 20% or the situations where the math is more complicated than a standard repower.
 
@@ -9662,7 +9662,7 @@ Usually sunrise for Zone 17. Confirm current year regulations, some lakes have s
 If it is over four to five years old, yes. A weak battery causes hard starts, stresses the starter motor, and fails on the worst possible morning. The cost of a new battery is nothing compared to a lost opener.
 
 **Can HBW pick up my boat for opener prep?** 
-For Rice Lake and local Kawartha customers, yes. Contact us to arrange hauling and service: [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
+No. Service is drop-off: you trailer the boat to us at Gores Landing and most opener-prep jobs turn around fast. Book at [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
 
 ---
 
@@ -9733,7 +9733,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can HBW pick up my boat for opener prep?',
-        answer: 'For Rice Lake and local Kawartha customers, yes, we can arrange hauling and service. [Contact us](/contact) to schedule.'
+        answer: 'No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. [Contact us](/contact) to book a service slot.'
       },
       {
         question: 'What\'s the most common opener morning failure?',
@@ -13441,7 +13441,7 @@ Here is the whole thing laid out plainly: how the financing works, what the rate
 
 ## Who this is for
 
-Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province we can deliver or you can pick up.
+Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers are willing to trailer to us at Gores Landing (service is drop-off only).
 
 ## How HBW financing actually works
 
@@ -13532,7 +13532,7 @@ Worth knowing, because people assume it's either/or: our financing and our exten
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry probably the largest Mercury parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
+We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry probably the largest Mercury parts inventory in Ontario, and we rig, sea-trial, and service everything we sell right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
 
 ## Related guides
 
@@ -26987,7 +26987,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is there a Mercury dealer near Mississauga?', answer: 'Mississauga has several Mercury dealers in the broader GTA. Harris Boat Works on Rice Lake is the closest Premier-tier dealer for west-GTA customers willing to make the 90-minute drive northeast.' },
       { question: 'How long is the drive from Mississauga to Harris Boat Works?', answer: 'About 90 minutes outside rush hour, longer in traffic. The route is Highway 401 east to Highway 115 east, then County Road 28 north into Gores Landing.' },
       { question: 'Why drive that far for a Mercury dealer?', answer: 'Mississauga customers cite three reasons: transparent online CAD pricing (no call-for-quote), Mercury Premier-tier technical depth, and a family-marina no-pressure conversation instead of the high-volume GTA dealer experience.' },
-      { question: 'Can I get a quote and place a Mercury order without visiting?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, and we can coordinate delivery / install / sea-trial logistics from there.' },
+      { question: 'Can I get a quote and place a Mercury order without visiting?', answer: 'Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and sea-trial, then trailer it home.' },
     ],
   },
 
@@ -27441,7 +27441,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'How far is HBW from Oakville?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Oakville.' },
       { question: 'Is the drive worth it for a Mercury dealer?', answer: 'Oakville customers cite three reasons: transparent online CAD pricing, Mercury Premier-tier technical depth, and the no-pressure family-marina conversation. Whether the drive is worth it depends on your priorities.' },
-      { question: 'Can I do most of the buying process remotely?', answer: 'Yes. Quote online, confirm by phone or text, and coordinate delivery / install / sea-trial from there. Most Oakville customers do 90% remotely.' },
+      { question: 'Can I do most of the buying process remotely?', answer: 'Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.' },
     ],
   },
   {
@@ -27593,7 +27593,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
       { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing." },
-      { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, and coordinate delivery and install logistics from there.' },
+      { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling.' },
     ],
   },
 
