@@ -379,6 +379,90 @@ export type Database = {
         }
         Relationships: []
       }
+      customer_comms_events: {
+        Row: {
+          board_summary: string | null
+          body_preview: string | null
+          channel: string
+          created_at: string
+          customer_email: string | null
+          customer_id: number | null
+          customer_phone: string | null
+          direction: string
+          event_key: string
+          id: string
+          match_method: string | null
+          match_status: string
+          occurred_at: string
+          provider: string | null
+          provider_ids: Json
+          provider_message_id: string | null
+          provider_status: string | null
+          provider_thread_id: string | null
+          raw_payload: Json
+          ro_no: string | null
+          source: string | null
+          status: string | null
+          subject: string | null
+          template_type: string | null
+          updated_at: string
+        }
+        Insert: {
+          board_summary?: string | null
+          body_preview?: string | null
+          channel: string
+          created_at?: string
+          customer_email?: string | null
+          customer_id?: number | null
+          customer_phone?: string | null
+          direction: string
+          event_key: string
+          id?: string
+          match_method?: string | null
+          match_status?: string
+          occurred_at: string
+          provider?: string | null
+          provider_ids?: Json
+          provider_message_id?: string | null
+          provider_status?: string | null
+          provider_thread_id?: string | null
+          raw_payload?: Json
+          ro_no?: string | null
+          source?: string | null
+          status?: string | null
+          subject?: string | null
+          template_type?: string | null
+          updated_at?: string
+        }
+        Update: {
+          board_summary?: string | null
+          body_preview?: string | null
+          channel?: string
+          created_at?: string
+          customer_email?: string | null
+          customer_id?: number | null
+          customer_phone?: string | null
+          direction?: string
+          event_key?: string
+          id?: string
+          match_method?: string | null
+          match_status?: string
+          occurred_at?: string
+          provider?: string | null
+          provider_ids?: Json
+          provider_message_id?: string | null
+          provider_status?: string | null
+          provider_thread_id?: string | null
+          raw_payload?: Json
+          ro_no?: string | null
+          source?: string | null
+          status?: string | null
+          subject?: string | null
+          template_type?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       customer_contact_overrides: {
         Row: {
           active: boolean
@@ -3523,6 +3607,42 @@ export type Database = {
         }
         Relationships: []
       }
+      shop_notes: {
+        Row: {
+          author: string
+          created_at: string
+          id: string
+          job_ref: number | null
+          note_text: string
+          ro_no: string
+          void_reason: string | null
+          voided_at: string | null
+          voided_by: string | null
+        }
+        Insert: {
+          author: string
+          created_at?: string
+          id?: string
+          job_ref?: number | null
+          note_text: string
+          ro_no: string
+          void_reason?: string | null
+          voided_at?: string | null
+          voided_by?: string | null
+        }
+        Update: {
+          author?: string
+          created_at?: string
+          id?: string
+          job_ref?: number | null
+          note_text?: string
+          ro_no?: string
+          void_reason?: string | null
+          voided_at?: string | null
+          voided_by?: string | null
+        }
+        Relationships: []
+      }
       sin_audit_log: {
         Row: {
           action: string
@@ -5293,6 +5413,38 @@ export type Database = {
         }
         Relationships: []
       }
+      service_status_board_v2: {
+        Row: {
+          awaiting_reply: boolean | null
+          board_summary: string | null
+          boat_motor: string | null
+          comm_at: string | null
+          comm_channel: string | null
+          comm_direction: string | null
+          customer_name: string | null
+          date_in: string | null
+          days_in_shop: number | null
+          jobs: string | null
+          lane: string | null
+          lane_order: number | null
+          last_channel: string | null
+          last_contact_at: string | null
+          last_direction: string | null
+          latest_shop_note_at: string | null
+          latest_shop_note_author: string | null
+          latest_shop_note_job_ref: number | null
+          latest_shop_note_text: string | null
+          notified: boolean | null
+          notify_at: string | null
+          notify_channels: string | null
+          ro_no: string | null
+          source_synced_at: string | null
+          stage_label: string | null
+          status: string | null
+          summary_raw: string | null
+        }
+        Relationships: []
+      }
       unit_inventory: {
         Row: {
           beam: number | null
@@ -6079,6 +6231,45 @@ export type Database = {
           province: string
         }[]
       }
+      hbw_comms_clean_text: {
+        Args: { p_max?: number; p_value: string }
+        Returns: string
+      }
+      hbw_comms_infer_ro_no: {
+        Args: { p_body: string; p_subject: string }
+        Returns: string
+      }
+      hbw_customer_comms_board_summary: {
+        Args: {
+          p_body_preview: string
+          p_channel: string
+          p_direction: string
+          p_subject: string
+          p_template_type: string
+        }
+        Returns: string
+      }
+      hbw_customer_comms_is_ro_complete_template: {
+        Args: {
+          p_body_preview: string
+          p_channel: string
+          p_direction: string
+          p_subject: string
+        }
+        Returns: boolean
+      }
+      hbw_customer_comms_pick_customer_for_email: {
+        Args: { p_email: string }
+        Returns: number
+      }
+      hbw_customer_comms_pick_customer_for_ro: {
+        Args: { p_ro_no: string }
+        Returns: number
+      }
+      hbw_customer_comms_pick_ro_for_customer: {
+        Args: { p_customer_id: number; p_occurred_at: string }
+        Returns: string
+      }
       hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
       hbw_phone_digits_match: {
         Args: { p_phone: string; p_query_digits: string }
@@ -6482,6 +6673,43 @@ export type Database = {
       update_brochure_models_bulk_v2: {
         Args: { p_rows: Json }
         Returns: number
+      }
+      upsert_customer_comms_event: {
+        Args: {
+          p_body_preview?: string
+          p_channel?: string
+          p_customer_email?: string
+          p_customer_id?: number
+          p_customer_phone?: string
+          p_direction?: string
+          p_event_key?: string
+          p_gateway_secret: string
+          p_match_method?: string
+          p_match_status?: string
+          p_occurred_at?: string
+          p_provider?: string
+          p_provider_ids?: Json
+          p_provider_message_id?: string
+          p_provider_status?: string
+          p_provider_thread_id?: string
+          p_raw_payload?: Json
+          p_ro_no?: string
+          p_source?: string
+          p_status?: string
+          p_subject?: string
+          p_template_type?: string
+        }
+        Returns: {
+          board_published: boolean
+          channel: string
+          customer_id: number
+          direction: string
+          event_key: string
+          id: string
+          match_status: string
+          occurred_at: string
+          ro_no: string
+        }[]
       }
       upsert_hbw_call_transcription: {
         Args: {
