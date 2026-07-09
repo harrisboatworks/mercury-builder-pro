@@ -20,9 +20,7 @@
  */
 import { BlogArticle } from './blogArticles';
 
-import zhWinterizationHero from '@/assets/blog/zh-winterization-hero.png';
 import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
-import zhPcocHero from '@/assets/blog/zh-pcoc-hero.png';
 
 export const ZH_HANT_LANGUAGE_NOTE =
   '我們專門為華人朋友準備了這些中文指南——因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務，不過別擔心——歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。';

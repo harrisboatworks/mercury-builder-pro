@@ -2,9 +2,6 @@ import { BlogArticle } from './blogArticles';
 
 import newImmigrantHero from '@/assets/blog/new-immigrant-boat-guide-hero.png';
 import chineseFamilyMultiGen from '@/assets/blog/chinese-family-legend-multigen.jpg';
-import zhWinterizationHero from '@/assets/blog/zh-winterization-hero.png';
-import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
-import zhPcocHero from '@/assets/blog/zh-pcoc-hero.png';
 
 // SHARED HONESTY NOTE — language support disclosure (Simplified Chinese).
 // This is canon — never imply Chinese-speaking staff or interpreters on staff.

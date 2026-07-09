@@ -2,9 +2,6 @@
 // Edit drafts in /mnt/user-uploads and re-run the script rather than editing
 // this file by hand. Native review status carried via the `nativeReview` field.
 import type { BlogArticle } from './blogArticles';
-import hero_hero_07_tl_family_fishing from '@/assets/blog/hero-07-tl-family-fishing.png';
-import hero_hero_08_tl_rental_rules from '@/assets/blog/hero-08-tl-rental-rules.png';
-import hero_hero_09_tl_service from '@/assets/blog/hero-09-tl-service.png';
 
 /** Language-support FAQ answer reused wherever the "service in this language?" note appears. */
 export const TL_LANGUAGE_NOTE = `Sa totoo lang, English ang ginagamit ng team namin kapag nagse-serve. Ginawa namin ang guide na ito sa Tagalog para makatulong sa komunidad, pero sa marina mismo, English ang salita. Huwag mag-alala: magdala ng kaibigan o pamilya na marunong, o gumamit ng translation app. Magiging matiyaga kami at magkakaintindihan tayo.`;

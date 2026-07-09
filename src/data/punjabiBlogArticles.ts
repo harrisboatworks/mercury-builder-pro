@@ -2,9 +2,6 @@
 // Edit drafts in /mnt/user-uploads and re-run the script rather than editing
 // this file by hand. Native review status carried via the `nativeReview` field.
 import type { BlogArticle } from './blogArticles';
-import hero_hero_01_pa_fishing_licence from '@/assets/blog/hero-01-pa-fishing-licence.png';
-import hero_hero_02_pa_pcoc_rental from '@/assets/blog/hero-02-pa-pcoc-rental.png';
-import hero_hero_03_pa_mercury_prices from '@/assets/blog/hero-03-pa-mercury-prices.png';
 
 /** Language-support FAQ answer reused wherever the "service in this language?" note appears. */
 export const PA_LANGUAGE_NOTE = `honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।`;
