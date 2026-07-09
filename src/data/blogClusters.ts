@@ -218,8 +218,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-75-hp-fourstroke-review-ontario",
       "mercury-9-9-efi-review-ontario",
       "mercury-outboard-weight-chart",
-      "mercury-2026-outboard-lineup-ontario",
-      "2026-mercury-model-preview",
+      "mercury-outboard-lineup-ontario",
       "mercury-seapro-commercial-outboard-guide",
       "mercury-avator-electric-boating-ontario",
       "mercury-avator-7-5e-review",
@@ -434,8 +433,6 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-75-hp-fourstroke-review-ontario": "75 HP FourStroke review",
   "mercury-9-9-efi-review-ontario": "9.9 EFI review for Ontario",
   "mercury-outboard-weight-chart": "Mercury outboard weight chart",
-  "mercury-2026-outboard-lineup-ontario": "2026 Mercury lineup for Ontario",
-  "2026-mercury-model-preview": "preview of the 2026 Mercury models",
   "mercury-seapro-commercial-outboard-guide": "SeaPro commercial-duty guide",
   "mercury-avator-electric-boating-ontario": "Mercury Avator electric outboards",
   "mercury-avator-7-5e-review": "Avator 7.5e review",
@@ -481,6 +478,7 @@ export const blogClusterContexts: Record<string, string> = {
   "boat-trim-explained-rice-lake-ontario": "boat trim explained",
   "trent-severn-waterway-boating-guide-2026": "boating the Trent-Severn Waterway",
   "trent-severn-mercury-dealer-survival-guide-2026": "Trent-Severn Mercury survival guide",
+  "mercury-outboard-lineup-ontario": "Mercury outboard lineup for Ontario (2027 model year)",
 };
 
 // Reverse lookup: slug -> cluster
