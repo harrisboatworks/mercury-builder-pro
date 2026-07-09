@@ -107,14 +107,11 @@ Mercury has superseded VesselView Mobile with **SmartCraft Connect Mobile**. Leg
 
 HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-- **I cleared the code and it went away, so it's fixed.**  
-  A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
-- **My buddy's Mercury had the same code and it was X.**  
-  Different engine families display the same code number for different faults. Verify before parts shop.
-- **I shut off the alarm by holding the horn button.**  
-  Silencing is not resolution.
+- **I cleared the code and it went away, so it's fixed.** A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
+- **My buddy's Mercury had the same code and it was X.** Different engine families display the same code number for different faults. Verify before parts shop.
+- **I shut off the alarm by holding the horn button.** Silencing is not resolution.
 
 ## Ready for HBW to look at it?
 

@@ -20143,16 +20143,11 @@ Mercury has superseded VesselView Mobile with **SmartCraft Connect Mobile**. Leg
 
 HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: I cleared the code and it went away, so it's fixed.
-  rebuttal: A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
-- claim: My buddy's Mercury had the same code and it was X.
-  rebuttal: Different engine families display the same code number for different faults. Verify before parts shop.
-- claim: I shut off the alarm by holding the horn button.
-  rebuttal: Silencing is not resolution.
-:::
+- **I cleared the code and it went away, so it's fixed.** A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
+- **My buddy's Mercury had the same code and it was X.** Different engine families display the same code number for different faults. Verify before parts shop.
+- **I shut off the alarm by holding the horn button.** Silencing is not resolution.
 
 ## Ready for HBW to look at it?
 
@@ -34589,18 +34584,12 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
 Repowers are the highest-risk install in our shop. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: I will use Sheffield Financial like I saw on Mercury's US website.
-  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at {{LIVE_RATE}} under the TD Always On program through Dec 31, 2026.
-- claim: I'll pull from my line of credit instead.
-  rebuttal: HELOC at prime + 2-3% is materially higher than the active TD {{LIVE_RATE}} program, plus variable-rate risk. A fixed {{LIVE_RATE_PCT}} loan with no prepayment penalty is usually cleaner.
-- claim: I want zero interest financing.
-  rebuttal: The active TD Always On {{LIVE_RATE}} (OAC) is the headline rate through Dec 31, 2026 (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)). Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the promotions page. Outside those windows and after Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up.
-- claim: I'll finance through my own bank to get a lower rate.
-  rebuttal: Possible, but TD {{LIVE_RATE}} via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
-:::
+- **I will use Sheffield Financial like I saw on Mercury's US website.** Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at {{LIVE_RATE}} under the TD Always On program through Dec 31, 2026.
+- **I'll pull from my line of credit instead.** HELOC at prime + 2-3% is materially higher than the active TD {{LIVE_RATE}} program, plus variable-rate risk. A fixed {{LIVE_RATE_PCT}} loan with no prepayment penalty is usually cleaner.
+- **I want zero interest financing.** The active TD Always On {{LIVE_RATE}} (OAC) is the headline rate through Dec 31, 2026 (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)). Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the promotions page. Outside those windows and after Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up.
+- **I'll finance through my own bank to get a lower rate.** Possible, but TD {{LIVE_RATE}} via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
 
 ## Other Canadian financing options
 
@@ -35147,36 +35136,21 @@ If you're being quoted a Command Thrust motor on a V-hull, ask the dealer specif
 
 Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: More HP is always better.
-  rebuttal: No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
-- claim: I'll get the 150 because resale is better.
-  rebuttal: Marginal. A 115 in good condition resells well. A 150 in good condition resells well. The delta isn't enough to justify the up-front price difference for most owners.
-- claim: Command Thrust gives me more low-end on my V-hull.
-  rebuttal: Slightly, at the cost of top end. For an aluminum V-hull, the standard gearcase is the engineering-correct choice. Don't let a dealer talk you into CT unless your hull legitimately needs it.
-- claim: I'll prop it for top speed.
-  rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
-- claim: My buddy has a 150 on the same boat and it's faster.
-  rebuttal: Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,900 decision on one anecdote.
-:::
+- **More HP is always better.** No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
+- **I'll get the 150 because resale is better.** Marginal. A 115 in good condition resells well. A 150 in good condition resells well. The delta isn't enough to justify the up-front price difference for most owners.
+- **Command Thrust gives me more low-end on my V-hull.** Slightly, at the cost of top end. For an aluminum V-hull, the standard gearcase is the engineering-correct choice. Don't let a dealer talk you into CT unless your hull legitimately needs it.
+- **I'll prop it for top speed.** Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
+- **My buddy has a 150 on the same boat and it's faster.** Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,900 decision on one anecdote.
 
 ## Customer language we hear
 
-:::customer-voice
-- quote: I want to do some tubing this summer
-  response: If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
-- quote: Can we waterski with this?
-  response: 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
-- quote: I'm planning to fish tournaments
-  response: Bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom.
-- quote: Just for cruising the cottage
-  response: If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
-- quote: When can you get me in?
-  response: 905-342-2153
-  isCTA: true
-:::
+- **"I want to do some tubing this summer"** If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
+- **"Can we waterski with this?"** 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
+- **"I'm planning to fish tournaments"** Bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom.
+- **"Just for cruising the cottage"** If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
+- **"When can you get me in?"** Call 905-342-2153.
 
 ## Ready to talk repower?
 
@@ -35342,33 +35316,20 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 - Normal RPM operation, normal cooling, no alarms
 - Charging system holding voltage at cruise
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: I'll just buy the impeller in the next town.
-  rebuttal: Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
-- claim: It ran fine in the driveway.
-  rebuttal: Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
-- claim: I don't need a kicker, I'll just call for a tow.
-  rebuttal: Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
-- claim: I'll do my service in the spring, the TSW is the test.
-  rebuttal: A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
-:::
+- **I'll just buy the impeller in the next town.** Not every town on the TSW has a Mercury or Mercruiser dealer with parts on the shelf. Bring spares (impeller, fuel filter, plugs) or know who has them.
+- **It ran fine in the driveway.** Most transit boats started the transit running fine. The transit itself produces conditions (long-duration use, varied fuel, lock idling, weed exposure) that surface latent issues.
+- **I don't need a kicker, I'll just call for a tow.** Tow service on the TSW outside of major hubs can be slow or unavailable. A kicker is cheap insurance and we install them year-round.
+- **I'll do my service in the spring, the TSW is the test.** A 386 km transit is not the time to discover whether your impeller survived winter. Test before the trip.
 
 ## Customer language we hear
 
-:::customer-voice
-- quote: I'm doing the Trent-Severn this year
-  response: preventive service conversation
-- quote: I broke down on Rice Lake, can you help?
-  response: on-water towing question
-- quote: I think I hit the railroad
-  response: confirmed, lower unit inspection priority
-- quote: My motor is overheating coming into the lock
-  response: impeller, intake, or thermostat
-- quote: When can you get me in?
-  response: priority for transit boats; we work them in as best we can
-:::
+- **"I'm doing the Trent-Severn this year"** preventive service conversation.
+- **"I broke down on Rice Lake, can you help?"** on-water towing question.
+- **"I think I hit the railroad"** confirmed, lower unit inspection priority.
+- **"My motor is overheating coming into the lock"** impeller, intake, or thermostat.
+- **"When can you get me in?"** priority for transit boats; we work them in as best we can. Call 905-342-2153.
 
 ## Ready for HBW to look at it before, during, or after your transit?
 
