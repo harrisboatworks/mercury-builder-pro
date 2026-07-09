@@ -742,6 +742,12 @@ function blogMarkdown(article, clusterData) {
   const faqBlock = faqs.length
     ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
+  const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
+  const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
+  const relatedGuidesMd = clusterData
+    ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
+    : '';
+
 
   return [
     mdFrontmatter(`/blog/${article.slug}.md`, extra, lastUpdated),
