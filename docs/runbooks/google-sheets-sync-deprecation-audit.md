@@ -1,6 +1,6 @@
 # Audit: Google Sheets Inventory Sync — Deprecate in Favor of Lightspeed
 
-**Status:** Step A + Step B executed in production on 2026-05-01. Step C repo hard-removal completed on 2026-07-08 and reverified on 2026-07-09 after the retired Vercel cron route produced fresh runtime errors on 2026-07-06.
+**Status:** Retired end to end. Step A + Step B executed in production on 2026-05-01; Step C repo and production cleanup completed and verified on 2026-07-09.
 **Date:** 2026-05-01; Step C updates 2026-07-08 and 2026-07-09
 **Trigger:** Jay confirmed Lightspeed is now the source of truth for inventory.
 
@@ -11,7 +11,8 @@
 - ✅ **Step A done:** `cron.job` id 33 (`google-sheets-inventory-daily`, schedule `0 6 * * *`) set `active = false`.
 - ✅ **Step B done:** `public.google_sheets_config.auto_sync_enabled = false`. `last_sync` remains `2026-04-07 06:00:07.63+00`.
 - ✅ **Step C repo removal done:** Vercel route `api/cron/google-sheets-sync.ts` removed, Vercel cron entry removed, deployable Supabase function source/config removed, an idempotent cleanup migration added to unschedule the database cron, and the admin Google Sheets sync panel hidden by removing the dashboard tab/import.
-- ⏸ **Still production-owned:** Vercel production must deploy this repo diff so the retired route and cron config disappear from the live deployment, the cleanup migration must be applied/verified so the database cron is absent, and the deployed Edge Function should be deleted or verified unreachable. Optional only: dropping `public.google_sheets_config` after confirming no production admin workflow references it. `motor_models` data was not touched.
+- ✅ **Step C production cleanup done:** Vercel production deployment `dpl_DfH3Y6PK1129Gf6jy1XUZCM2GjCp` is `READY` on commit `fad15172`; the retired route returns Vercel `404 NOT_FOUND`; the database cron is absent; and the deployed Edge Function was deleted and returns 404. `motor_models` data was not touched.
+- ℹ️ **Historical config retained:** `public.google_sheets_config` remains with auto-sync disabled. It is not part of any deployable admin or sync path and can be dropped separately if historical configuration retention is no longer useful.
 
 **Earlier production verification from the May audit:**
 - `public-motors-api` returns 200, 25 motors, all pass catalog rules.
@@ -111,7 +112,7 @@ The `api/cron/google-sheets-sync.ts` Vercel route should also be removed in Step
 
 ---
 
-## Step C — Repo Hard Removal Completed 2026-07-08
+## Step C — Hard Removal Completed 2026-07-09
 
 Jay approved finishing Step C after a fresh 2026-07-06 Vercel runtime error on `/api/cron/google-sheets-sync` showed the retired cron route was still generating operational noise.
 
@@ -124,9 +125,11 @@ Completed repo changes:
 5. Removed the `GoogleSheetsSyncPanel` admin component and the `Google Sheets` tab/import from `UnifiedInventoryDashboard`.
 6. Kept `src/pages/AdminStockSync.tsx` visible because it is now Lightspeed-only and invokes `sync-lightspeed-inventory`, not the retired Sheets function.
 
-Remaining production cleanup checklist:
+Production completion verification (2026-07-09):
 
-1. Deploy this repo diff to Vercel production and verify Vercel no longer has a cron entry for `/api/cron/google-sheets-sync`.
-2. Apply the cleanup migration and verify `cron.job` no longer has `google-sheets-inventory-daily`.
-3. Delete the deployed Supabase Edge Function `sync-google-sheets-inventory` or verify it is unreachable.
-4. Optionally drop `public.google_sheets_config` after confirming no production admin workflow references it.
+1. Merged GitHub PR #29 as commit `fad15172a06442b19663441af9a75278431c25a7`.
+2. Vercel production deployment `dpl_DfH3Y6PK1129Gf6jy1XUZCM2GjCp` completed with status `READY` and the production aliases attached.
+3. `GET https://www.mercuryrepower.ca/api/cron/google-sheets-sync` returns HTTP 404 with `x-vercel-error: NOT_FOUND`.
+4. Supabase migration `20260709180641_unschedule_google_sheets_inventory_sync` applied successfully.
+5. `SELECT ... FROM cron.job WHERE jobname = 'google-sheets-inventory-daily'` returns no rows.
+6. Deployed Edge Function `sync-google-sheets-inventory` was deleted; the function list has no matching slug and its endpoint returns HTTP 404.
