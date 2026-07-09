@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 
-> **Quick answer:** The best Mercury dealer in Ontario is the one with Premier certification, real diagnostic capability, and pricing you can see before you call. HBW checks all three: Mercury Premier Dealer, family-owned since 1947, Mercury dealer since 1965, with transparent all-in pricing published online. Compare any dealer on those criteria, then try the configurator at mercuryrepower.ca.
+> **Quick answer:** The best Mercury dealer in Ontario is the one with Premier tier certification, real diagnostic capability, and pricing you can see before you call. HBW holds Premier status, family-owned since 1947, Mercury dealer since 1965, and publishes all-in pricing online. Score any dealer, including us, on those three criteria. Try the configurator at mercuryrepower.ca.
 
 ## Quick answer
 

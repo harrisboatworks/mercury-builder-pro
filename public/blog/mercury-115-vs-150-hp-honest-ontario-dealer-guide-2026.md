@@ -27,7 +27,7 @@ content_type: blog_article
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
-> **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices as of July 2026: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
+> **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
 
 ## Quick answer
 
@@ -69,9 +69,9 @@ Our most popular models in these two HP classes:
 
 | Model | HBW Sell Price (CAD, pre-HST) | Notes |
 |---|---|---|
-| Mercury 115 ELPT FourStroke | starts around $14,500 | Standard 115, good for most 18ft V-hulls |
+| Mercury 115 ELPT FourStroke | starts around $17,083 | Standard 115, good for most 18ft V-hulls |
 | Mercury 115 ELPT Pro XS FourStroke | **$17,490** | Our most popular 115, performance variant |
-| Mercury 150 L FourStroke | starts around $20,500 | Standard 150 |
+| Mercury 150 L FourStroke | starts around $22,242 | Standard 150 |
 | Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
 Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
