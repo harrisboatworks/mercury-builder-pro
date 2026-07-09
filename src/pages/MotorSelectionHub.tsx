@@ -71,7 +71,7 @@ export default function MotorSelectionHub() {
           heading: 'Motor family selection',
           cards: [
             { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', description: 'Family-by-family Mercury overview.', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
-            { title: 'Mercury 2026 Outboard Lineup Ontario', description: 'Full 2026 Mercury lineup snapshot.', to: '/blog/mercury-2026-outboard-lineup-ontario' },
+            { title: 'Mercury Outboard Lineup for Ontario (2027 MY)', description: 'Full Mercury 2027 model year lineup snapshot.', to: '/blog/mercury-outboard-lineup-ontario' },
             { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', description: 'Tiller and portable picks.', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
           ],
         },

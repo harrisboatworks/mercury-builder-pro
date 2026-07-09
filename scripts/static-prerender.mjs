@@ -2790,7 +2790,7 @@ const FR_TO_EN_SLUG = {
   'entretien-remorque-bateau-ontario': 'boat-trailer-maintenance-guide-ontario',
   'guide-assurance-bateau-ontario-2026': 'boat-insurance-ontario-guide-2026',
   'garantie-prolongee-mercury-platinum-ontario': 'mercury-extended-warranty-platinum-ontario',
-  'gamme-mercury-hors-bord-2026-ontario': 'mercury-2026-outboard-lineup-ontario',
+  'gamme-mercury-hors-bord-2026-ontario': 'mercury-outboard-lineup-ontario',
   'peche-lac-rice-ontario-guide-plaisanciers': 'rice-lake-boating-guide-2026',
   'permis-bateau-ontario-carte-conducteur-embarcation': 'pleasure-craft-licence-update-repower-ontario',
   'remotorisation-mercury-gta-toronto': 'mercury-repower-gta-toronto-destination',
@@ -3747,7 +3747,7 @@ const HUB_DEFS = [
       ]},
       { heading: 'Motor family selection', cards: [
         { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
-        { title: 'Mercury 2026 Outboard Lineup Ontario', to: '/blog/mercury-2026-outboard-lineup-ontario' },
+        { title: 'Mercury Outboard Lineup for Ontario (2027 MY)', to: '/blog/mercury-outboard-lineup-ontario' },
         { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
       ]},
       { heading: 'Boat-type matching', cards: [

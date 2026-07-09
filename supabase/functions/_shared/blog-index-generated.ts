@@ -352,7 +352,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How often should a Mercury outboard impeller be replaced?",
-        "a": "Your operator's manual is the source of truth for your model and hours. As a practical matter, many Rice Lake boaters run a two-to-three-season rhythm, and our shop data suggests the schedule matters less than the warning signs: a weakening telltale stream or an overheat alarm means the impeller's time is up regardles…"
+        "a": "Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On Rice Lake, treat that as an outer limit (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for yo…"
       },
       {
         "q": "What are the signs of a failing impeller?",
@@ -528,11 +528,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "My overheat alarm went off after I shut the motor down. Is something wrong?",
-        "a": "Usually no. Heat soak is normal after running the motor hard. Trapped heat in the cylinder head pushes the sensor above threshold for a brief period before the water jacket cools things off. If the alarm clears within 5 to 10 minutes of shutdown and does not return on the next run, the motor is likely fine. If it pers…"
+        "a": "A one-time key-on alarm after a hot shutdown can be heat soak if it clears as the motor cools AND does not come back on the next run. If it returns, logs a fault, or happens under load, treat it as real and book a diagnostic."
       },
       {
         "q": "My tell-tale stream is strong but the alarm is still sounding. What is wrong?",
-        "a": "Strong tell-tale flow plus an overheat alarm leans toward a sensor or wiring fault rather than real heat. The motor is not actually hot but the sensor is reporting that it is. This still needs a diagnostic. Sensor faults are usually a straightforward fix at the dealer, but do not assume, circulation can still be block…"
+        "a": "A strong tell-tale only proves the indicator circuit has flow. Mercury's guidance is that an engine that keeps overheating with a steady tell-tale still needs service; compare live SmartCraft temperature and actual head temperature before calling it a sensor. Sensor faults are usually a straightforward fix at the deal…"
       }
     ]
   },
@@ -702,8 +702,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "fourstroke-vs-pro-xs",
-    "title": "Mercury FourStroke vs Pro XS vs Verado",
-    "description": "Pro XS, FourStroke, or Verado? Same horsepower, three personalities. A Mercury Premier dealer on Rice Lake walks you through which one actually fits your boat.",
+    "title": "Mercury Pro XS vs Verado vs FourStroke Compared",
+    "description": "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.",
     "category": "Mercury Motors",
     "publishDate": "2026-06-19",
     "keywords": [
@@ -780,7 +780,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "When is the first oil change on a new Mercury outboard?",
-        "a": "At 20 hours. The break-in period is the first 10 hours, and the 20-hour first service (oil and filter change) is the one that matters most for the motor's long-term health and warranty record. Book it at hbw.wiki/service; HBW is at Gores Landing on Rice Lake."
+        "a": "Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. At HBW we recommend an early oil change around 20 hours after break-in as dealer best practice, because that first oil carries the most metal from break-in. Check the manual for your specific model. Book at hbw.wiki/s…"
       },
       {
         "q": "What happens if I don't break in my Mercury motor properly?",
@@ -1642,38 +1642,6 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ]
   },
   {
-    "slug": "2026-mercury-model-preview",
-    "title": "Mercury 2027 Outboard Preview Guide",
-    "description": "Mercury's 2027 model year is here as of July 1, 2026. What we know is changing, what isn't, and how to decide between remaining 2026 stock or the new 2027 lineup.",
-    "category": "Buying Guide",
-    "publishDate": "2026-05-13",
-    "keywords": [
-      "2027 mercury outboard",
-      "mercury model year change",
-      "buy 2026 or wait 2027 mercury",
-      "mercury preview ontario",
-      "mercury repower 2027"
-    ],
-    "faqs": [
-      {
-        "q": "When does Mercury officially release the 2027 lineup?",
-        "a": "Mercury's model year flips July 1, 2026. Official 2027 announcements and dealer-facing spec sheets typically follow over the summer. Physical 2027 inventory usually ships starting late summer or early fall, depending on the model. For HBW customers, the practical date is when we can place a 2027 order with confirmed p…"
-      },
-      {
-        "q": "Will Mercury 2026 motors go on closeout when 2027 arrives?",
-        "a": "Sometimes. Mercury's promotional calendar varies year to year. There may be a 2026 closeout incentive in late summer, there may not. We'll quote what's available at the time. If a closeout is active, we apply it transparently in the quote. Don't pre-bet on a closeout, build your quote on current pricing and let any in…"
-      },
-      {
-        "q": "Is a 2026 Mercury still \"current\" after July 1?",
-        "a": "Mechanically and warranty-wise, yes. A new Mercury 2026 sold after July 1 still carries the standard 3-year factory warranty starting from your purchase date, plus HBW's 4 years of bonus coverage. The 2026 designation matters for resale framing (it'll show as \"previous gen\" on used listings 5 years from now) but does…"
-      },
-      {
-        "q": "Will the HBW 7-year warranty bonus carry into 2027 model year motors?",
-        "a": "We'd expect so, the program is HBW's bonus, not Mercury's, and it applies to every new Mercury we sell. We'll confirm formally when 2027 pricing rolls out. If you want certainty on the warranty side, locking a 2026 quote now removes the variable."
-      }
-    ]
-  },
-  {
     "slug": "year-end-boat-motor-buying-guide",
     "title": "Best Time to Buy Boat Motor Ontario",
     "description": "When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math.",
@@ -1973,37 +1941,34 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ]
   },
   {
-    "slug": "mercury-2026-outboard-lineup-ontario",
-    "title": "Mercury 2026 Outboard Lineup for Ontario Boaters",
-    "description": "Mercury 2026 lineup: FourStroke 2.5-300 hp, Pro XS 115-300 hp, SeaPro 25-300 hp, Verado 250-600+ hp, Avator electric. Ontario dealer overview.",
+    "slug": "mercury-outboard-lineup-ontario",
+    "title": "Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)",
+    "description": "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.",
     "category": "Buying Guide",
-    "publishDate": "2026-02-06",
+    "publishDate": "2026-07-09",
     "keywords": [
-      "mercury 2026 lineup",
-      "mercury outboard models",
-      "mercury fourstroke 2026",
-      "mercury verado v10",
-      "avator electric outboard",
-      "mercury outboard ontario",
-      "rice lake outboard motor",
+      "mercury outboard lineup",
+      "mercury 2027 outboards",
+      "mercury outboard models ontario",
+      "mercury fourstroke vs pro xs",
       "mercury dealer ontario"
     ],
     "faqs": [
       {
-        "q": "What is the best Mercury motor for a fishing boat on Rice Lake?",
-        "a": "For most 14 to 18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 40 to 115 HP range is the right fit. Adding a 9.9 HP ProKicker for dedicated trolling is a popular setup."
+        "q": "What Mercury outboards does Harris Boat Works stock for the 2027 model year?",
+        "a": "We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca."
       },
       {
-        "q": "What is the difference between Mercury FourStroke and Mercury Pro XS?",
-        "a": "FourStroke is tuned for efficiency, smooth cruise, and versatility. Pro XS is tuned for performance: faster hole shot, higher top-end RPM, stronger acceleration. For most Ontario cottage and casual fishing use, FourStroke is the better all-around fit."
+        "q": "Is a 2026-built Mercury still worth buying after the July 1 flip?",
+        "a": "Yes. It's mechanically identical to early 2027 stock, carries the same 3-year factory warranty starting from your purchase date, and full parts and service continuity. The \"previous gen\" label matters slightly for resale framing years from now, not for how the motor runs."
       },
       {
-        "q": "Is the Mercury Verado relevant for Ontario inland boating?",
-        "a": "For most Ontario inland lakes (Rice Lake, Kawarthas, Lake Simcoe), no. Verado is engineered for offshore applications. For typical inland fishing and family boats, a FourStroke up to 300 HP handles the job."
+        "q": "When will 2027 Mercury pricing be available?",
+        "a": "Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers."
       },
       {
-        "q": "What Mercury motors does Harris Boat Works stock for 2026?",
-        "a": "We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special-order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor."
+        "q": "What's the best Mercury for a fishing boat on Rice Lake?",
+        "a": "For most 14 to 18 ft fishing boats, a FourStroke in the 40 to 115 hp range. A popular setup adds a 9.9 hp ProKicker for dedicated trolling. If you fish tournaments and run hard, that's where Pro XS starts to earn its price."
       }
     ]
   },
@@ -2111,7 +2076,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "pleasure-craft-licence-update-repower-ontario",
     "title": "Pleasure Craft Licence Update During Repower (Ontario 2026)",
-    "description": "Update your Pleasure Craft Licence when repowering in Ontario. Free online update takes 10-15 minutes. PCL stays with boat, motor specs change.",
+    "description": "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how Harris Boat Works handles it at no charge.",
     "category": "Canadian Boating Regulations",
     "publishDate": "2026-04-15",
     "keywords": [
@@ -2559,7 +2524,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is the first thing to check if my Mercury outboard won't start in spring?",
-        "a": "Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6 to 12.8 V) and look for stale or phase-separat…"
+        "a": "Before anything else: kill switch clip fully seated, shifter clicked into true neutral, battery switch on the right bank. Those three send a surprising number of people home happy without opening a toolbox. Still nothing? Put a meter on the battery, then pull a fuel sample from the bottom of the tank."
       },
       {
         "q": "At what battery voltage should I replace instead of recharge?",
@@ -2567,7 +2532,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How fast does E10 fuel go bad in storage?",
-        "a": "Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. Use HBW's ethanol-free 89 fuel to avoid the issue entirely."
+        "a": "Under lab conditions, 60-90 days sealed. On a real boat with a vented tank and a bit of water already aboard, we've pulled separated fuel three weeks after fill-up. Stabilize at every layup, or skip the problem and run our ethanol-free 89."
       },
       {
         "q": "Does HBW sell ethanol-free fuel at the dock?",
@@ -3202,7 +3167,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is the most common Mercury alarm code at spring first-start?",
-        "a": "Water in Fuel (the 4-beeps-every-2-minutes Guardian alert) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with…"
+        "a": "Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh…"
       },
       {
         "q": "Does HBW have Mercury CDS dealer software?",
@@ -3210,11 +3175,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is VesselView Mobile still available?",
-        "a": "Yes, but Mercury rebranded it as SmartCraft Connect Mobile in 2026. Same product, same functionality. The older app still works if you have it installed."
+        "a": "Mercury has superseded VesselView Mobile with SmartCraft Connect Mobile. Legacy VesselView Mobile hardware still uses the VesselView Mobile app, but new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works."
       },
       {
-        "q": "My Optimax keeps firing a Code 13 or 14 oil alarm but the tank is full. What's wrong?",
-        "a": "The most likely cause is float-magnet separation in the engine-mounted 2-stroke oil reservoir. The float still functions, but the magnet that triggers the sensor has detached from the float body. The sensor reads 'low oil' even though the reservoir is full. Fix is float assembly replacement."
+        "q": "My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?",
+        "a": "False or incorrect Optimax low-oil alarms can come from several causes per Mercury's service manual: unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank. Float-magnet se…"
       }
     ]
   },
@@ -4252,7 +4217,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I get a quote and place a Mercury order without visiting?",
-        "a": "Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, and we can coordinate delivery / install / sea-trial logistics from there."
+        "a": "Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and sea-trial, then trailer it home."
       }
     ]
   },
@@ -4333,7 +4298,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I do most of the buying process remotely?",
-        "a": "Yes. Quote online, confirm by phone or text, and coordinate delivery / install / sea-trial from there. Most Oakville customers do 90% remotely."
+        "a": "Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely."
       }
     ]
   },
@@ -4360,7 +4325,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I quote and order remotely?",
-        "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, and coordinate delivery and install logistics from there."
+        "a": "Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling."
       }
     ]
   },
@@ -4559,7 +4524,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is a single beep at key-on normal?",
-        "a": "Yes. Most Mercury motors produce a single beep at key-on as a confirmation that the alarm system is working. If it does not recur during operation, no action is needed."
+        "a": "Yes. Current Mercury manuals describe a brief horn at key-on as a self-test confirming the alarm system is working. If it does not recur during operation, no action is needed."
       }
     ]
   },
@@ -4973,7 +4938,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-dts-vs-mechanical-controls-ontario-repower",
     "title": "Mercury DTS vs Mechanical Ontario",
-    "description": "Mercury Digital Throttle and Shift vs mechanical controls: compatibility, cost, and feel, plus when mechanical is still the right choice.",
+    "description": "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works.",
     "category": "Buying Guides",
     "publishDate": "2026-05-17",
     "keywords": [
@@ -5101,7 +5066,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "repair-repower-or-sell-boat-ontario-decision-guide",
     "title": "Repair, Repower or Sell? Ontario Decision Guide",
-    "description": "When a Mercury outboard hits a major repair decision, owners face three real options.",
+    "description": "Repair, repower or sell your boat? A practical Ontario guide to comparing costs and hull condition, from the repower specialists at Harris Boat Works.",
     "category": "Buying Guides",
     "publishDate": "2026-05-17",
     "keywords": [
@@ -5409,7 +5374,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-avator-vs-torqeedo",
     "title": "Mercury Avator vs Torqeedo Ontario",
-    "description": "Mercury Avator vs Torqeedo electric outboards: dealer network, service support, models, and which suits cottage use. Honest Ontario Premier dealer comparison.",
+    "description": "Mercury Avator vs Torqeedo compared for Ontario boaters: power, batteries, charging, service and CAD pricing from Harris Boat Works on Rice Lake.",
     "category": "Electric Boating",
     "publishDate": "2026-05-17",
     "keywords": [
@@ -5530,39 +5495,6 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       {
         "q": "How much does the Avator 7.5e cost installed?",
         "a": "Including the motor, battery, and mounting, expect roughly $4,500 to $6,500 CAD installed at Harris Boat Works, depending on battery configuration. Pickup only at Gores Landing."
-      }
-    ]
-  },
-  {
-    "slug": "mercury-7-year-warranty-hbw-exclusive-explained",
-    "title": "Mercury 7-Year Warranty Offer, Explained",
-    "description": "Mercury factory warranty from HBW explained: 3 years standard, and the 7-year HBW Exclusive offer (3+4) that's active through December 31, 2026.",
-    "category": "Buying Guide",
-    "publishDate": "2026-05-25",
-    "keywords": [
-      "mercury 7 year warranty",
-      "mercury warranty promo",
-      "hbw exclusive warranty",
-      "mercury warranty ontario",
-      "mercury limited warranty canada",
-      "mercury warranty explained"
-    ],
-    "faqs": [
-      {
-        "q": "Is the 7-year HBW Exclusive promotion still available?",
-        "a": "Yes. As of July 2026 the 7-year HBW Exclusive is active and runs through December 31, 2026. Every eligible new Mercury outboard purchased through HBW carries 3 years of standard Mercury factory warranty plus a 4-year free extension, for 7 years of total factory-backed coverage. Confirm current terms at [mercuryrepower…"
-      },
-      {
-        "q": "How long is the Mercury warranty at HBW right now?",
-        "a": "As of July 2026, every eligible new Mercury outboard from Harris Boat Works carries 7 years of total factory-backed coverage: Mercury's 3-year limited warranty plus a 4-year free extension under the HBW Exclusive promotion, running through December 31, 2026. Corrosion coverage runs concurrently with the base 3 years.…"
-      },
-      {
-        "q": "Is the 7 years from Mercury or from HBW?",
-        "a": "The coverage is factory-backed Mercury warranty work, handled by Mercury and its authorized dealer network. The 4 bonus years are a promotion HBW runs on every eligible new Mercury we sell through December 31, 2026 (as of July 2026), not a third-party service contract and not an aftermarket add-on. See [current promot…"
-      },
-      {
-        "q": "What does the Mercury factory warranty cover?",
-        "a": "Manufacturing defects in the powerhead, lower unit, mid-section, electronics, cooling, and starting and charging systems. Parts and labour are both covered at any authorized Mercury dealer in Canada, including HBW. Coverage is non-declining."
       }
     ]
   },
@@ -5834,7 +5766,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What parts does HBW keep on the shelf for transit boats?",
-        "a": "We have the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can be confirm…"
+        "a": "We have probably the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can b…"
       }
     ]
   },
@@ -6227,6 +6159,72 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       {
         "q": "How long can I run my Mercury while it's overheating?",
         "a": "Don't. Even a few minutes at temperature can warp components or cook the powerhead. Throttle back to idle the moment the alarm sounds, confirm you have water flow, and limp in. A repair is a fraction of the cost of a new powerhead."
+      }
+    ]
+  },
+  {
+    "slug": "bilge-pump-troubleshooting-guide",
+    "title": "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them",
+    "description": "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW.",
+    "category": "Service & Troubleshooting",
+    "publishDate": "2026-07-03",
+    "keywords": [
+      "bilge pump troubleshooting",
+      "float switch not working",
+      "bilge pump won't turn on",
+      "how to size a bilge pump",
+      "bilge pump wiring corrosion"
+    ],
+    "faqs": [
+      {
+        "q": "Why didn't my bilge pump turn on when there was water in the boat?",
+        "a": "The most common cause is a float switch that's stuck, worn out, or no longer getting power through a corroded connector. The pump motor itself is usually fine. Test the manual override at the helm first. If it runs, the motor is good and the problem is in the float switch circuit."
+      },
+      {
+        "q": "What's the difference between the manual and automatic bilge pump switch?",
+        "a": "Manual runs the pump on demand from the helm, useful for testing or clearing water you can see. Automatic relies on the float switch to trigger the pump on its own, which is what protects the boat when you're not on board."
+      },
+      {
+        "q": "Can I test my float switch without hauling the boat?",
+        "a": "Yes. With the helm switch set to auto, gently lift the float arm by hand to where rising water would push it. The pump should start within a second or two. If it doesn't, the problem is in the switch circuit."
+      },
+      {
+        "q": "Is it safe to run my bilge pump dry to see if it works?",
+        "a": "No. Bilge pumps are built to move water, and running one dry can damage the impeller or motor within seconds. Test with the float arm and a small amount of water, not a dry run."
+      }
+    ]
+  },
+  {
+    "slug": "mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat",
+    "title": "Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?",
+    "description": "A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value.",
+    "category": "Repower",
+    "publishDate": "2026-07-06",
+    "keywords": [
+      "Mercury 90",
+      "Mercury 115",
+      "Ontario boating",
+      "repower",
+      "aluminum boat",
+      "Mercury FourStroke",
+      "Outboard Comparison"
+    ],
+    "faqs": [
+      {
+        "q": "Can I put a 115 hp engine on a boat rated for 90 hp?",
+        "a": "No. Never exceed the maximum horsepower rating on your boat's capacity plate. Doing so is illegal under Canadian regulations, voids your insurance, and creates a serious safety risk. If your boat is rated for a 90 hp maximum, you must choose a 90 hp outboard."
+      },
+      {
+        "q": "Is the Mercury 115 FourStroke just a tuned 90?",
+        "a": "Essentially, yes. The 90 hp and 115 hp FourStroke share the same 2.1L block and many internal components. Differences in ECM tuning, camshaft design, and throttle-body size allow the 115 to deliver more power, but the core engine is nearly identical in weight and dimensions."
+      },
+      {
+        "q": "How much fuel will I save by choosing the 90 hp over the 115?",
+        "a": "At typical cruising speeds the difference is minor, often within half a litre per hour. Both motors are efficient four-strokes. The 115 may use slightly more fuel at wide-open throttle, but its ability to plane at lower RPM with heavy loads can offset that in real-world use."
+      },
+      {
+        "q": "Do both engines come with Command Thrust?",
+        "a": "Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine."
       }
     ]
   }

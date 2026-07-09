@@ -751,16 +751,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/blog/2026-mercury-model-preview</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/2027_Mercury_Preview.png</image:loc>
-      <image:title><![CDATA[Mercury 2027 Outboard Preview Guide]]></image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -851,17 +841,17 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png</image:loc>
-      <image:title><![CDATA[Mercury 2026 Outboard Lineup for Ontario Boaters]]></image:title>
+      <image:title><![CDATA[Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)]]></image:title>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario" />
     <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario</loc>
@@ -2384,9 +2374,9 @@
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario" />
     <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator</loc>
