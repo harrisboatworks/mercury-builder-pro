@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-06-05
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Honda to Mercury Repower: Ontario Guide"
 description: "Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-06-05
+date_modified: 2026-07-09
 keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Premier dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-05  
+**Last updated:** 2026-07-09  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
+
+> **Quick answer:** Switching from Honda to Mercury makes sense for two reasons: Ontario service access, where Mercury has roughly three times Honda's dealer footprint, and lineup match above 60 HP. The brand swap adds $1,800 to $3,500 in rigging for controls, gauges, harness, and prop. Below 25 HP, your Honda kicker is usually worth keeping. Build a quote at mercuryrepower.ca.
 
 ## Quick answer
 

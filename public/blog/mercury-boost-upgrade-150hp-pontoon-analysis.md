@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-06-09
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost 150 HP Pontoon Guide"
 description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-06-09
+date_modified: 2026-07-09
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
+
+> **Quick answer:** For most 150 HP pontoon owners, Mercury Boost is not worth the money. It is a dealer-installed software upgrade that improves low and mid-range torque and hole shot, not top speed, so lightly loaded pontoons feel little change. Heavy loads and larger tritoons are the exception. Check your prop first, then run the eligibility check at mercuryrepower.ca.
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 

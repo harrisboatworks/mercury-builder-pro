@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-06-09
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Hull Replacement vs Repower: The Honest Decision (2026)"
 description: "For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half."
 category: "Repower"
 date_published: 2026-04-29
-date_modified: 2026-06-09
+date_modified: 2026-07-09
 keywords: ["repower vs new boat","boat hull replacement","when to repower outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Repower  
 **Published:** 2026-04-29  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-09  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
+
+> **Quick answer:** If the hull is sound and the motor is tired, repower; if the hull is rotting, structurally compromised, or undersized for how you use it, replace the boat. On a solid hull, a repower typically saves $25,000 to $50,000 CAD against a comparable new package. Not sure which you have? We do free hull walk-arounds at HBW. Build a quote at mercuryrepower.ca.
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 

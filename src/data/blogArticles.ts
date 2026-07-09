@@ -15550,12 +15550,16 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: 'Mercury outboard motors on display at Harris Boat Works showroom to help customers decide on 2026 boat buying options.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-28',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-09',
     publishDate: '2026-04-28',
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['buy boat canada 2026', 'boat market canada', 'best time to buy boat'],
-    content: `### Quick Answer
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** 2026 is a functional year to buy a boat in Canada, not a deal year. Inventory has recovered, lead times are normal, and prices sit above 2019 levels with little sign of dropping. If your hull is sound, a Mercury repower is often better value than buying new. Build a repower quote at mercuryrepower.ca.
+
+### Quick Answer
 
 2026 is a functional year to buy a boat in Canada, not a deal year, but not a bad year either. Inventory has recovered from the pandemic shortage. Lead times are normal. Prices are higher than 2019 and are not likely to drop meaningfully. If you have a sound hull, a Mercury repower may be the better value than buying new. Build a configured repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
@@ -15768,12 +15772,16 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 90hp outboard on an aluminum hull in a service shop, illustrating a successful repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-29',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-09',
     publishDate: '2026-04-29',
     category: 'Repower',
     readTime: '12 min read',
     keywords: ['repower vs new boat', 'boat hull replacement', 'when to repower outboard'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** If the hull is sound and the motor is tired, repower; if the hull is rotting, structurally compromised, or undersized for how you use it, replace the boat. On a solid hull, a repower typically saves $25,000 to $50,000 CAD against a comparable new package. Not sure which you have? We do free hull walk-arounds at HBW. Build a quote at mercuryrepower.ca.
+
+**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
 ---
 
@@ -15989,12 +15997,16 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury technician servicing a pontoon outboard motor while a customer consults with a service advisor at Harris Boat Works.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-30',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-09',
     publishDate: '2026-04-30',
     category: 'Performance',
     readTime: '12 min read',
     keywords: ['mercury boost upgrade pontoon', 'mercury boost 150hp', 'mercury software upgrade'],
-    content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** For most 150 HP pontoon owners, Mercury Boost is not worth the money. It is a dealer-installed software upgrade that improves low and mid-range torque and hole shot, not top speed, so lightly loaded pontoons feel little change. Heavy loads and larger tritoons are the exception. Check your prop first, then run the eligibility check at mercuryrepower.ca.
+
+**Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
 ---
 
@@ -20338,12 +20350,16 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-06-07',
+    dateModified: '2026-07-09',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
     readTime: '12 min read',
     keywords: ["best Mercury dealer Ontario", "Mercury Premier dealer Canada", "Mercury outboard specialist Ontario", "certified Mercury dealer GTA", "top Mercury dealer Ontario"],
-    content: `## Quick answer
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** The best Mercury dealer in Ontario is the one with Premier certification, real diagnostic capability, and pricing you can see before you call. HBW checks all three: Mercury Premier Dealer, family-owned since 1947, Mercury dealer since 1965, with transparent all-in pricing published online. Compare any dealer on those criteria, then try the configurator at mercuryrepower.ca.
+
+## Quick answer
 
 What makes HBW different in Ontario: transparent installed pricing online, family-owned since 1947 and a Mercury dealer since 1965, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
 
@@ -24332,7 +24348,11 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     title: 'Mercury Controls Rigging Guide 2026',
     seoTitle: 'Mercury Controls and Rigging Guide (2026)',
     description: 'What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario.',
-    content: `### Quick Answer
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** Controls, steering, gauges, wiring, and prop add roughly $2,000 to $6,000+ to a Mercury repower, depending on HP class. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect; 150 to 225 HP V6s add power-assist steering, VesselView, and dual batteries. Build a configured quote at mercuryrepower.ca.
+
+### Quick Answer
 
 A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
@@ -24605,7 +24625,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-40-vs-60-hp-comparison.png',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-05-09',
+    dateModified: '2026-07-09',
     publishDate: '2026-05-09',
     category: 'Mercury Outboards',
     readTime: '~10 min read',
@@ -24650,7 +24670,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
         answer: 'Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150 hours per year) and proper maintenance, which is 15-25+ seasons for most cottage owners. The variables that shorten life are skipped impeller replacements, gear lube neglect, and stale ethanol fuel. Our maintenance interval guide covers the schedule.',
       },
     ],
-    content: `### Quick Answer
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** For a 15 or 16 ft aluminum fishing boat with two adults, the Mercury 40 HP is enough. The 60 is the smarter long-term pick if you add a third person, tow a tube, or want loaded headroom, and the price gap is about $2,602. On pontoons under 20 ft, most customers land on the 60 Command Thrust. Build a quote at mercuryrepower.ca.
+
+### Quick Answer
 
 For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
 
@@ -24847,7 +24871,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trade-in-value-service-bay.png',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-06-02',
+    dateModified: '2026-07-09',
     publishDate: '2026-05-09',
     category: 'Buying Guide',
     readTime: '~10 min read',
@@ -24860,7 +24884,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I trade in a motor from a different brand than what I am buying?', answer: 'Yes. We will trade any brand and apply the credit toward a new Mercury repower.' },
       { question: 'How do you actually sell traded motors?', answer: 'Some go to other customers looking for used motors. Some go to boat brokers or used marine dealers. Some are parted out if they are high-hour or non-running.' },
     ],
-    content: `# What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** There is no blue book for outboards. Trade-in value comes down to brand, hours, age, condition, and service history, with Mercury and Yamaha 4-strokes holding value best. In Ontario, the trade credit also reduces the taxable amount of your new motor, a 13% HST saving most customers miss. Get a preliminary number in minutes at mercuryrepower.ca.
+
+# What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
 ## Quick answer
 There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -34731,14 +34759,13 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned si
     description: 'Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust.',
     image: '/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero.jpg',
     imageAlt: 'Aluminum V-hull fishing boat powered by a Mercury FourStroke outboard on a calm Ontario lake at golden hour.',
-    content: `## Quick answer
+    content: `*Last reviewed: 2026-07-09*
 
-Should you buy a Mercury 115 hp or 150 hp outboard? The honest answer from a Mercury Premier Dealer: it depends on your boat and how you use it. This guide skips the spec sheet and gives you real Ontario boating scenarios, fishing the Kawarthas, family days on Rice Lake, running bigger water. Here is the dealer-tested breakdown.
+> **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices as of July 2026: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
 
+## Quick answer
 
 For 18ft aluminum V-hull boats, Mercury 115 HP is the right call. For 19 to 20ft aluminum V-hull boats, step up to 150 HP. For pontoons 18 to 20ft, the Mercury 60 Command Thrust is actually the right answer, not 115 or 150. For pontoons 22 to 24ft (especially tritoons), 150 HP. HBW current sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 (CAD, pre-HST). Build a quote at mercuryrepower.ca.
-
-*Last reviewed: 2026-07-02*
 
 The 115 vs 150 question is the most common repower decision we see at HBW. Customer has an aluminum V-hull, an aging 115 or 90, and is trying to figure out whether the next motor should match what they have or jump up a tier. Most online answers fall back on "depends on the boat" without giving you actual dividing lines.
 
@@ -34900,7 +34927,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-07',
+    dateModified: '2026-07-09',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -35258,7 +35285,11 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     title: 'Yamaha to Mercury Repower: Ontario Guide',
     seoTitle: 'Yamaha to Mercury Repower Ontario Guide 2026 | Harris Boat Works',
     description: 'Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table.',
-    content: `## Quick answer
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, controls, harness, gauges, and prop; the fuel tank, steering, and most electronics usually carry over. Expect a brand-swap rigging premium of roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The swap makes the most sense when Mercury service is closer than your nearest Yamaha dealer. Build a quote at mercuryrepower.ca.
+
+## Quick answer
 
 A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
 
@@ -35419,7 +35450,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-07',
+    dateModified: '2026-07-09',
     category: 'Repower Guide',
     readTime: '11 min read',
     keywords: ["Yamaha to Mercury repower", "Yamaha to Mercury Ontario", "brand swap outboard repower", "Mercury repower cost Ontario", "Yamaha Command Link Mercury", "Yamaha F150 to Mercury 150", "Mercury Premier dealer Ontario", "Yamaha trade-in Mercury"],
@@ -35437,7 +35468,11 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     title: 'Honda to Mercury Repower: Ontario Guide',
     seoTitle: 'Honda to Mercury Repower Ontario Guide 2026 | Harris Boat Works',
     description: 'Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.',
-    content: `## Quick answer
+    content: `*Last reviewed: 2026-07-09*
+
+> **Quick answer:** Switching from Honda to Mercury makes sense for two reasons: Ontario service access, where Mercury has roughly three times Honda's dealer footprint, and lineup match above 60 HP. The brand swap adds $1,800 to $3,500 in rigging for controls, gauges, harness, and prop. Below 25 HP, your Honda kicker is usually worth keeping. Build a quote at mercuryrepower.ca.
+
+## Quick answer
 
 Honda outboards are excellent in the 9.9-50 HP class. Switching to Mercury makes sense for two reasons: Ontario dealer-network access (Mercury has 3x more service points) and HP-class match above 60 HP. Brand swap costs $1,800-$3,500 extra in rigging (controls, gauges, harness, prop). Email info@harrisboatworks.ca with your Honda specs for a same-day side-by-side quote.
 
@@ -35576,7 +35611,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
     image: '/lovable-uploads/hero-on-water-load-test.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-05',
+    dateModified: '2026-07-09',
     category: 'Repower Guide',
     readTime: '10 min read',
     keywords: ["Honda to Mercury repower", "Honda to Mercury Ontario", "Honda BF250 Mercury", "brand swap outboard repower", "Mercury repower cost Ontario", "Honda BF dealer Ontario", "Honda vs Mercury Ontario", "Mercury Premier dealer"],
