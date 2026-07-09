@@ -239,6 +239,18 @@ function cleanBlogContent(content, hasFaqs) {
   // The inner block content is kept verbatim as plain markdown so AI agents
   // reading the twin don't see raw fence markup as junk.
   c = c.replace(/^:::[a-z-]*\s*$/gim, '');
+  // Rewrite YAML-ish claim/rebuttal and quote/response bullet blocks
+  // (used in "Common mistakes" and "Customer language we hear" sections)
+  // into rich markdown bullets so the twin renders the content instead of
+  // dropping it as unparseable pseudo-YAML.
+  c = c.replace(
+    /^-\s*claim:\s*(.+)\n\s+rebuttal:\s*(.+)$/gm,
+    '- **$1**  \n  $2',
+  );
+  c = c.replace(
+    /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
+    '- **"$1"**  \n  $2',
+  );
   if (hasFaqs) {
     c = c.replace(
       /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
