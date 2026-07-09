@@ -22,7 +22,7 @@ export const hindiBlogArticles: Wave1Article[] = [
     title: 'Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein',
     seoTitle: 'Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein',
     description: 'PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।',
-    image: hero_hero_10_hi_licences,
+    image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-06-12',
