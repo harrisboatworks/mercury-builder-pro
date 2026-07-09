@@ -365,37 +365,8 @@ function rewriteYouTubeUrlParagraphs(md: string): string {
   });
 }
 
-/**
- * Rewrite YAML-ish bullet blocks used inside "Common mistakes" and
- * "Customer language we hear" sections into rich markdown bullets so
- * ReactMarkdown renders them meaningfully instead of dropping them.
- *
- * Input:
- *   - claim: X
- *     rebuttal: Y
- *   - quote: X
- *     response: Y
- *
- * Output:
- *   - **X**
- *     Y
- *   - **"X"**
- *     Y
- */
-function rewriteStructuredBullets(md: string): string {
-  let out = md.replace(
-    /^-\s*claim:\s*(.+)\n\s+rebuttal:\s*(.+)$/gm,
-    '- **$1**  \n  $2',
-  );
-  out = out.replace(
-    /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
-    '- **"$1"**  \n  $2',
-  );
-  return out;
-}
-
 function preprocessSpecialBlocks(md: string): string {
-  return rewriteStructuredBullets(rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeUrlParagraphs(rewriteYouTubeEmbeds(
+  return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeUrlParagraphs(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
       rewriteWalkaroundLeadCapture(
         rewritePullQuote(
@@ -409,7 +380,7 @@ function preprocessSpecialBlocks(md: string): string {
         ),
       ),
     ),
-  )))))));
+  ))))));
 }
 
 /**
