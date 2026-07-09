@@ -101,7 +101,7 @@ This matters specifically right now because:
 2. We don't know whether Mercury's 2027 program will offer the same standard 3-year base, or whether there'll be a 2027 promotional adder. Locking in 2026 + HBW's 7 years removes that variable.
 3. The math on a 7-year cover-everything window is significant if you're keeping the boat long-term. The cost of one big-ticket service event after year 3 is more than most owners realize until they're staring at the quote.
 
-Full details on the program: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+Full details on the program: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
 
 ## Pricing and Trade-In Through the Flip
 
