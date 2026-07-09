@@ -15498,7 +15498,7 @@ Mercury uses primarily NGK spark plugs across the FourStroke and Pro XS lineup. 
 ### Step 5: EFI fault code scan (this is us)
 
 On EFI motors 40-115 HP, many "cranks but won't fire" tickets come back with **clean fault memory** with no code stored. The actual cause is typically:
-- Low system voltage (below 10.5 V during crank, no injector fire)
+- Low system voltage during crank
 - Poor grounds or corroded battery cables
 - Low-pressure fuel pump weak or failed
 - VST (Vapour Separator Tank) contaminated with water or debris
