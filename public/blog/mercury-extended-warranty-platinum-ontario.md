@@ -72,7 +72,7 @@ source: HBW Customer, Bewdley 2026
 
 ## What Mercury Product Protection Is
 
-Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. Current promotions can extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) and our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. Current promotions can extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
@@ -240,11 +240,6 @@ No. Oil changes, impellers, plugs, anodes, propeller wear, those are maintenance
 ### I bought my motor from HBW. How do I get the 10% discount?
 
 Mention it in the notes field on the quote form at /warranty. We verify the original purchase from our records and apply the discount before sending the final quote.
-
-## Related guides
-
-- [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026), Mercury warranty terms in Canada
-- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
 
 ## Next steps
 

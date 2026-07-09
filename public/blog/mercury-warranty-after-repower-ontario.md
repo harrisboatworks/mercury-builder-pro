@@ -136,7 +136,6 @@ Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wik
 ## Related guides
 
 - [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026), Mercury warranty terms in Canada
-- [Mercury 7-Year Warranty Offer, Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained), the 7-year warranty explained
 - [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Platinum extended coverage
 
 ## Next steps

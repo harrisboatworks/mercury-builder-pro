@@ -150,7 +150,7 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 - 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
 - Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current promotions](https://www.mercuryrepower.ca/promotions)
+- See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders

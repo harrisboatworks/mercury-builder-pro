@@ -79,7 +79,12 @@
     },
     {
       "source": "/blog/mercury-6-year-warranty-explained",
-      "destination": "/blog/mercury-7-year-warranty-hbw-exclusive-explained",
+      "destination": "/promotions",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-7-year-warranty-hbw-exclusive-explained",
+      "destination": "/promotions",
       "statusCode": 301
     },
     {
