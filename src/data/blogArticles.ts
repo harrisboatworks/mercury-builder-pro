@@ -15440,7 +15440,7 @@ Most Mercury no-start calls come down to battery and power (weak battery, switch
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
-This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop. calls in Ontario come down to one of three families: battery and power (weak battery, switch off, bad ground), fuel system (stale or phase-separated gas, clogged 10-micron filter, VST issues), or ignition (fouled plugs after winter storage).
+This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop.
 
 ## The three "stupid easy" things to check first
 
@@ -15498,7 +15498,7 @@ Mercury uses primarily NGK spark plugs across the FourStroke and Pro XS lineup. 
 ### Step 5: EFI fault code scan (this is us)
 
 On EFI motors 40-115 HP, many "cranks but won't fire" tickets come back with **clean fault memory** with no code stored. The actual cause is typically:
-- Low system voltage (below 10.5 V during crank, no injector fire)
+- Low system voltage during crank
 - Poor grounds or corroded battery cables
 - Low-pressure fuel pump weak or failed
 - VST (Vapour Separator Tank) contaminated with water or debris
@@ -15527,36 +15527,22 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-HBW has probably the largest Mercury parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
+Most no-start customers are running again the same day they bring the boat in.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: I'll just buy a new battery, that has to be it.
-  rebuttal: Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
-- claim: I sprayed starting fluid in it.
-  rebuttal: Starting fluid can damage EFI fuel rails. Don't use it on outboards. Tell us if you did.
-- claim: It ran fine last fall.
-  rebuttal: Most no-start tickets ran fine last fall. The motor sat for 6 months. "Ran fine in fall" doesn't help us diagnose "won't start in May."
-:::
+- **Starting fluid in an EFI four-stroke.** Ether is for old carbureted tractors, not fuel-injected Mercurys. It washes the cylinders dry and can score them. Never.
+- **Cranking until the starter smokes.** Ten seconds of crank, then rest. Thirty-second crank marathons cook starters and flatten batteries, and now you have two problems.
+- **Throwing parts at it.** New plugs into a tank of phase-separated gas fouls the new plugs. Diagnose in order: power, fuel, spark. That's the whole ladder above.
+- **"Freshening up" bad gas.** Topping a half tank of separated E10 with fresh fuel doesn't fix it. The water-ethanol layer is still sitting on the pickup. Drain it.
+- **Jump-starting from a running truck.** Voltage spikes and modern engine computers are a bad mix. Charge the battery properly or swap in a good one.
 
 ## Customer language we hear
 
-:::customer-voice
-- quote: She sat all winter and won't fire
-  response: battery + fuel + plugs
-- quote: Just clicks
-  response: battery or starter solenoid
-- quote: I think I've got bad gas
-  response: phase separation or stale fuel
-- quote: Cranks but won't catch
-  response: fuel delivery or ignition
-- quote: The pee stream looks weak
-  response: impeller (different problem)
-- quote: When can you get me in?
-  response: call us at 905-342-2153
-  isCTA: true
-:::
+- **"It cranks fine."** About half the time it doesn't. Slow, laboured cranking sounds normal to an owner who's used to it. Voltage test settles it in ten seconds.
+- **"The gas is fresh."** Fresh from the jerry can you filled last October counts as stale. If it sat over winter with ethanol in it, it's a suspect.
+- **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail. Nothing has to "break" for a no-start.
+- **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
 ## Ready for HBW to look at it?
 
@@ -15590,7 +15576,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     faqs: [
       {
         question: 'What is the first thing to check if my Mercury outboard won\'t start in spring?',
-        answer: 'Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6 to 12.8 V) and look for stale or phase-separated fuel.'
+        answer: 'Before anything else: kill switch clip fully seated, shifter clicked into true neutral, battery switch on the right bank. Those three send a surprising number of people home happy without opening a toolbox. Still nothing? Put a meter on the battery, then pull a fuel sample from the bottom of the tank.'
       },
       {
         question: 'At what battery voltage should I replace instead of recharge?',
@@ -15598,7 +15584,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'How fast does E10 fuel go bad in storage?',
-        answer: 'Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. Use HBW\'s ethanol-free 89 fuel to avoid the issue entirely.'
+        answer: 'Under lab conditions, 60-90 days sealed. On a real boat with a vented tank and a bit of water already aboard, we\'ve pulled separated fuel three weeks after fill-up. Stabilize at every layup, or skip the problem and run our ethanol-free 89.'
       },
       {
         question: 'Does HBW sell ethanol-free fuel at the dock?',
@@ -15610,11 +15596,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'What\'s the most common EFI fault code on no-start tickets?',
-        answer: 'On Mercury EFI 75-115 HP, most cranks-but-won\'t-fire tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don\'t trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data.'
+        answer: 'Usually there isn\'t one, and that\'s the trap. On Mercury EFI 40-115 HP, the scanner shows clean memory because the real culprits, sagging crank voltage, corroded grounds, a tired low-pressure pump, don\'t set codes. Live data through Mercury CDS is what finds them, which is why this step is a shop visit.'
       },
       {
         question: 'What is the most common reason a Mercury outboard won\'t start?',
-        answer: 'Fuel. In our own service records (537 no-start and rough-running jobs since 2013), about half traced to fuel problems: stale or phase-separated gas, water in the tank, or a clogged filter. Electrical causes (battery, grounds, connections) were close behind at just under half, with fouled spark plugs involved in about a quarter. Start with fuel and power before suspecting anything expensive.'
+        answer: 'Fuel, by a nose over electrical. Our own 537-job history since 2013 splits roughly half fuel, just under half electrical, a quarter spark plugs, and 14 lonely kill switches. Cheap stuff first: that\'s not a slogan, it\'s what the data says.'
       }
     ]
   },

@@ -68,7 +68,7 @@ Premier is Mercury's top dealer tier. It means we carry deeper parts inventory, 
 ## What Harris Boat Works Handles for Brampton Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have a real conversation about what fits your hull and your use case, not just push what's in stock.
+FourStroke and Pro XS. Verado and SeaPro available by special order. We'll have a real conversation about what fits your hull and your use case, not just push what's in stock.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. Nothing gets skipped.

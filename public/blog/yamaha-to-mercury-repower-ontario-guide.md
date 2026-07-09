@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-07  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 

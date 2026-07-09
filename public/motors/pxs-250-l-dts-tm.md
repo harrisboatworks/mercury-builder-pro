@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/pxs-250-l-dts-tm
-last_updated: 2026-07-04
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false

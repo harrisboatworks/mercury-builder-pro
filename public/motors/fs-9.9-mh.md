@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fs-9.9-mh
-last_updated: 2026-07-04
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false

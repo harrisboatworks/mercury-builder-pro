@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-07-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 

@@ -70,7 +70,7 @@ Harris Boat Works isn't trying to be a high-volume GTA dealer. We're a third-gen
 ## What Harris Boat Works Handles for Burlington Customers
 
 **Mercury outboard sales**
-2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have a straight conversation about what makes sense for your application, not just what's in stock.
+FourStroke and Pro XS. Verado and SeaPro available by special order. We'll have a straight conversation about what makes sense for your application, not just what's in stock.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's the part that determines how the motor performs on your specific hull.
