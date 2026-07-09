@@ -65,7 +65,7 @@ The difference shows up when you load the boat. A standard 115 HP gearcase on a 
 
 The upgrade typically adds $800 to $1,500 CAD over the standard motor at the same horsepower (2026 ranges). On any pontoon 22 feet and up, that is the easiest "yes" upgrade we recommend. On many pontoons, the right horsepower with the wrong gearcase still does a worse job than the right Command Thrust package. That's why we almost never separate horsepower from gearcase when talking pontoons.
 
-For when Command Thrust is NOT worth it on lighter boats, see our [Command Thrust vs Standard Gearcase guide](/blog/mercury-command-thrust-vs-standard-gearcase) and the pontoon-specific [Command Thrust on Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats) deep dive.
+For when Command Thrust is NOT worth it on lighter boats, see our [Command Thrust vs Standard Gearcase guide](/blog/mercury-command-thrust-complete-guide-2026) and the pontoon-specific [Command Thrust on Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats) deep dive.
 
 ## When is Pro XS with Boost the right pick for a pontoon?
 

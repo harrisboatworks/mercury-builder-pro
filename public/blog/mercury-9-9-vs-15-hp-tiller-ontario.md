@@ -132,7 +132,7 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 **Weight matters more, aft.** Sailboats are sensitive to transom weight. The 15 lb penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
 
-**Command Thrust may be worth it.** The Command Thrust gearcase option puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-vs-standard-gearcase).
+**Command Thrust may be worth it.** The Command Thrust gearcase option puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
 ## Fuel Economy: The Difference Is Smaller Than You'd Expect
 

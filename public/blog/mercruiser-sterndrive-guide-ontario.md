@@ -31,7 +31,7 @@ content_type: blog_article
 
 > **Quick answer:** Mercruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
 
-Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
+Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
 
 Your Mercruiser sterndrive does not need mystery. It needs the right maintenance, especially before an Ontario winter gets involved.
 

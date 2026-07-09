@@ -113,9 +113,9 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 
 ## Guides connexes
 
-- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
-- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
+- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
 ## Foire aux questions
 
@@ -287,9 +287,9 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 
 ## Guides connexes
 
-- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
-- [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
-- [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
+- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
+- [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
+- [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
 
 ## Foire aux questions
 
@@ -431,10 +431,10 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 
 ## Guides connexes
 
-- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
-- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
+- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 
 ## Questions fréquentes
 
@@ -704,8 +704,8 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 
 ## Guides connexes
 
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 
 ## Questions fréquentes
 
@@ -865,10 +865,10 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 
 ## Guides connexes
 
-- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
-- [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
-- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
+- [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
 ## Questions fréquentes
 
@@ -1070,10 +1070,10 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 
 ## Guides connexes
 
-- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/fr/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
 ## Foire aux questions
 
@@ -1096,7 +1096,7 @@ Un non-démarrage intermittent est souvent un problème de connexion : une borne
 
 ## Liens internes
 
-- [Hivernisation du moteur Mercury en Ontario](/blog/hivernisation-moteur-mercury-ontario)
+- [Hivernisation du moteur Mercury en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario)
 
 ---
 
@@ -1348,10 +1348,10 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 
 ## Guides connexes
 
-- [Combien coûte une remotorisation Mercury en Ontario?](/blog/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
-- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
+- [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
+- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)](/blog/fr/surchauffe-moteur-mercury-guide-urgence): Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe.
 
 ## Foire aux questions
 
@@ -1499,10 +1499,10 @@ Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversat
 
 ## Guides connexes
 
-- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
-- [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
-- [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
+- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
+- [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
+- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
 
 ## Questions fréquentes
 
@@ -1657,9 +1657,9 @@ Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les 
 
 ## Guides connexes
 
-- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
 ## Questions fréquentes
 
@@ -1842,10 +1842,10 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 
 ## Guides connexes
 
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
-- [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
-- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
+- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 
 ## Questions fréquentes
 
@@ -2010,8 +2010,8 @@ Si vous soupçonnez un problème du système de refroidissement, prenez rendez-v
 
 ## Guides connexes
 
-- [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
-- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
+- [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
+- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 
 ## Questions fréquentes
 
@@ -2203,10 +2203,10 @@ Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 
 Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
 
-- [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
-- [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
-- [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
-- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
+- [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario](/blog/fr/hivernisation-moteur-mercury-ontario): Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du.
+- [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
+- [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
+- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 
 `,
     faqs: [
@@ -2274,7 +2274,7 @@ Une police maritime standard en Ontario couvre :
 
 Exclusions courantes à lire attentivement avant de signer :
 
-- **Bris mécanique**, moteur qui se grippe à cause d'usure ou d'entretien sauté. (C'est ce que la garantie prolongée couvre, voir notre [guide de garantie prolongée Mercury](/blog/garantie-prolongee-mercury-platinum-ontario).)
+- **Bris mécanique**, moteur qui se grippe à cause d'usure ou d'entretien sauté. (C'est ce que la garantie prolongée couvre, voir notre [guide de garantie prolongée Mercury](/blog/fr/garantie-prolongee-mercury-platinum-ontario).)
 - **Défauts de fabrication**, couverts par la garantie d'usine, pas l'assurance.
 - **Course ou usage commercial**, les polices standard d'embarcations de plaisance excluent les tournois avec bourses, les nolisements et le travail commercial.
 - **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans housse annule certaines couvertures de coque.
@@ -2337,7 +2337,7 @@ Les remotorisations surtout, plusieurs clients oublient de mettre à jour leur p
 L'assurance couvre les accidents, le vol, les dommages météo et la responsabilité. La garantie prolongée couvre les défaillances mécaniques et électriques dues à des défauts de matériaux ou de fabrication. Elles ne se chevauchent pas.
 
 - **Frapper un billot et endommager votre arbre d'hélice?** Assurance.
-- **L'ECU meurt à 4 ans, 200 heures?** Garantie prolongée (si vous avez acheté Platinum, voir notre [guide de garantie](/blog/garantie-prolongee-mercury-platinum-ontario)).
+- **L'ECU meurt à 4 ans, 200 heures?** Garantie prolongée (si vous avez acheté Platinum, voir notre [guide de garantie](/blog/fr/garantie-prolongee-mercury-platinum-ontario)).
 - **Bateau volé dans votre entrée?** Assurance.
 - **Défaillance d'engrenages d'embase à 3 ans?** Garantie d'usine (si encore active) ou garantie prolongée.
 
@@ -2350,10 +2350,10 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
 
-- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
-- [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
-- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)](/blog/fr/entretien-remorque-bateau-ontario): Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements.
+- [Permis de conduire une embarcation au Canada : Ce que vous devez savoir](/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation): Guide complet sur la Carte de conducteur d'embarcation de plaisance (CCEP) au Canada : qui en a besoin.
+- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
 `,
     faqs: [
@@ -2545,10 +2545,10 @@ Clients HBW (moteur acheté chez nous), mentionnez-le dans le champ notes et nou
 Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
 
-- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers](/blog/peche-lac-rice-ontario-guide-plaisanciers): Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et.
-- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
-- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
+- [Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers](/blog/fr/peche-lac-rice-ontario-guide-plaisanciers): Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et.
+- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
+- [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
 `,
     faqs: [
@@ -2649,10 +2649,10 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
 
 ## Guides connexes
 
-- [Combien coûte une remotorisation Mercury en Ontario?](/blog/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
-- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
-- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
+- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
+- [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
+- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 
 `,
     faqs: [

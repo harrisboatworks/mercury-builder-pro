@@ -166,7 +166,7 @@ The other observation: customers consistently under-spec horsepower when they ow
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
 - [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
 - [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide)
-- [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-vs-standard-gearcase)
+- [Mercury Command Thrust vs Standard Gearcase](/blog/mercury-command-thrust-complete-guide-2026)
 - [How to Read Your Boat's Capacity Plate](/blog/how-to-read-boat-capacity-plate-ontario)
 - [Mercury ProKicker Guide for Rice Lake Fishing](/blog/mercury-prokicker-rice-lake-fishing-guide)
 
@@ -208,7 +208,7 @@ Prop matching is part of the install. The right prop depends on hull, weight, in
 
 ### Does Mercury warranty come with a new FourStroke?
 
-Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-warranty-what-you-need-to-know) for details.
+Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) for details.
 
 ## Related guides
 

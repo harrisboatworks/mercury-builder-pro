@@ -233,7 +233,7 @@ Questions? Call 905-342-2153.
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 ---
 
-If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standard gearcase guide](/blog/mercury-command-thrust-vs-standard-gearcase) covers when CT makes sense.
+If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standard gearcase guide](/blog/mercury-command-thrust-complete-guide-2026) covers when CT makes sense.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

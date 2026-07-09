@@ -120,7 +120,7 @@ Mercury repowers in Ontario typically run **$11,000 to $40,000 CAD all-in** depe
 
 A comparable new boat package (hull, motor, trailer, standard rigging) costs significantly more than the repower-only figure. If the repower lands well under the new-boat-package number and the hull is sound, the math usually works.
 
-The detailed break-even calculation lives on a separate page: [Repower vs. Buy New: Canadian Break-Even Math](/blog/repower-vs-buy-new-canadian-break-even). This page does not duplicate that work; it just confirms that the cost threshold is one of the five eligibility checks.
+The detailed break-even calculation lives on a separate page: [Repower vs. Buy New: Canadian Break-Even Math](/blog/repower-vs-new-boat). This page does not duplicate that work; it just confirms that the cost threshold is one of the five eligibility checks.
 
 ## The Eligibility Decision Table
 

@@ -175,7 +175,7 @@ Bring us your boat info, make, model, year, length, and how you actually use it,
 
 ## Related posts
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
 - [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)

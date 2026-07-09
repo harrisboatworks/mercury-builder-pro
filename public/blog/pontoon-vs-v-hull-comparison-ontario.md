@@ -64,7 +64,7 @@ A pontoon is a great platform if your fishing is family fishing, lake-trolling f
 Wide gates, low freeboard, and step-up access mean pontoon entry is dignified at any age. For aging boaters or families with little kids, this is a real quality-of-life issue people only appreciate after they hit 60.
 
 ### Slow-speed cruising fuel economy
-At cruising speed (15-20 mph / 24-32 km/h), a pontoon with a properly-sized Mercury (often a [Command Thrust gearcase](/blog/mercury-command-thrust-vs-standard-gearcase) on the 90-150 HP class) sips fuel. Modern tritoons with the right power package are surprisingly efficient when you are not trying to wakeboard with them.
+At cruising speed (15-20 mph / 24-32 km/h), a pontoon with a properly-sized Mercury (often a [Command Thrust gearcase](/blog/mercury-command-thrust-complete-guide-2026) on the 90-150 HP class) sips fuel. Modern tritoons with the right power package are surprisingly efficient when you are not trying to wakeboard with them.
 
 ## Where V-hulls win
 

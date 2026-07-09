@@ -134,7 +134,7 @@ We quote both paths (retrofit vs new motor) at HBW. Call 905-342-2153 if you wan
 ## Related posts
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
 
 ---
