@@ -139,14 +139,6 @@ Most no-start customers are running again the same day they bring the boat in.
 - **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail. Nothing has to "break" for a no-start.
 - **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
-## Ready for HBW to look at it?
-
-**Phone:** 905-342-2153  
-**Email:** info@harrisboatworks.ca  
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
-
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
-
 ## Sources
 
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
@@ -160,7 +152,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ### What is the first thing to check if my Mercury outboard won't start in spring?
 
-Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6 to 12.8 V) and look for stale or phase-separated fuel.
+Before anything else: kill switch clip fully seated, shifter clicked into true neutral, battery switch on the right bank. Those three send a surprising number of people home happy without opening a toolbox. Still nothing? Put a meter on the battery, then pull a fuel sample from the bottom of the tank.
 
 ### At what battery voltage should I replace instead of recharge?
 
@@ -168,7 +160,7 @@ For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a p
 
 ### How fast does E10 fuel go bad in storage?
 
-Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. Use HBW's ethanol-free 89 fuel to avoid the issue entirely.
+Under lab conditions, 60-90 days sealed. On a real boat with a vented tank and a bit of water already aboard, we've pulled separated fuel three weeks after fill-up. Stabilize at every layup, or skip the problem and run our ethanol-free 89.
 
 ### Does HBW sell ethanol-free fuel at the dock?
 
@@ -180,11 +172,19 @@ No. Diagnostic time is billed at our standard service rate. Most no-start ticket
 
 ### What's the most common EFI fault code on no-start tickets?
 
-On Mercury EFI 75-115 HP, most cranks-but-won't-fire tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don't trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data.
+Usually there isn't one, and that's the trap. On Mercury EFI 40-115 HP, the scanner shows clean memory because the real culprits, sagging crank voltage, corroded grounds, a tired low-pressure pump, don't set codes. Live data through Mercury CDS is what finds them, which is why this step is a shop visit.
 
 ### What is the most common reason a Mercury outboard won't start?
 
-Fuel. In our own service records (537 no-start and rough-running jobs since 2013), about half traced to fuel problems: stale or phase-separated gas, water in the tank, or a clogged filter. Electrical causes (battery, grounds, connections) were close behind at just under half, with fouled spark plugs involved in about a quarter. Start with fuel and power before suspecting anything expensive.
+Fuel, by a nose over electrical. Our own 537-job history since 2013 splits roughly half fuel, just under half electrical, a quarter spark plugs, and 14 lonely kill switches. Cheap stuff first: that's not a slogan, it's what the data says.
+
+## Ready for HBW to look at it?
+
+**Phone:** 905-342-2153  
+**Email:** info@harrisboatworks.ca  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 
 ## Related guides
 
