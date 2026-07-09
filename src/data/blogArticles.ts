@@ -20215,7 +20215,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["best Mercury dealer Ontario", "Mercury Premier dealer Canada", "Mercury outboard specialist Ontario", "certified Mercury dealer GTA", "top Mercury dealer Ontario"],
     content: `*Last reviewed: 2026-07-09*
 
-> **Quick answer:** The best Mercury dealer in Ontario is the one with Premier certification, real diagnostic capability, and pricing you can see before you call. HBW checks all three: Mercury Premier Dealer, family-owned since 1947, Mercury dealer since 1965, with transparent all-in pricing published online. Compare any dealer on those criteria, then try the configurator at mercuryrepower.ca.
+> **Quick answer:** The best Mercury dealer in Ontario is the one with Premier tier certification, real diagnostic capability, and pricing you can see before you call. HBW holds Premier status, family-owned since 1947, Mercury dealer since 1965, and publishes all-in pricing online. Score any dealer, including us, on those three criteria. Try the configurator at mercuryrepower.ca.
 
 ## Quick answer
 
@@ -34619,7 +34619,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned si
     imageAlt: 'Aluminum V-hull fishing boat powered by a Mercury FourStroke outboard on a calm Ontario lake at golden hour.',
     content: `*Last reviewed: 2026-07-09*
 
-> **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices as of July 2026: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
+> **Quick answer:** For an 18 ft aluminum V-hull, the Mercury 115 is the right call; at 19 to 20 ft, step up to the 150. Pontoons 18 to 20 ft are usually best with the 60 Command Thrust, while 22 to 24 ft tritoons want the 150. HBW sell prices: 115 Pro XS $17,490, 150 Pro XS $24,349 CAD pre-HST. Build a quote at mercuryrepower.ca.
 
 ## Quick answer
 
@@ -34661,9 +34661,9 @@ Our most popular models in these two HP classes:
 
 | Model | HBW Sell Price (CAD, pre-HST) | Notes |
 |---|---|---|
-| Mercury 115 ELPT FourStroke | starts around $14,500 | Standard 115, good for most 18ft V-hulls |
+| Mercury 115 ELPT FourStroke | starts around $17,083 | Standard 115, good for most 18ft V-hulls |
 | Mercury 115 ELPT Pro XS FourStroke | **$17,490** | Our most popular 115, performance variant |
-| Mercury 150 L FourStroke | starts around $20,500 | Standard 150 |
+| Mercury 150 L FourStroke | starts around $22,242 | Standard 150 |
 | Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
 Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
