@@ -20,7 +20,6 @@ import { spanishBlogArticles } from '../src/data/spanishBlogArticles';
 
 // Default set: the 6 hero swaps from the last batch update.
 const DEFAULT_SLUGS = [
-  'mercury-7-year-warranty-hbw-exclusive-explained',
   'best-mercury-outboard-lake-simcoe-walleye-fishing',
   'lake-ontario-salmon-mercury-setup-guide-2026',
   'mercury-boost-software-upgrade-eligibility-2026',
