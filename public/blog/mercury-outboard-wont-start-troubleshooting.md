@@ -124,30 +124,20 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 
 Most no-start customers are running again the same day they bring the boat in.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-- claim: I'll just buy a new battery, that has to be it.
-  rebuttal: Often the issue is the battery cable, the ground point, or the battery switch. A new battery doesn't fix a corroded ground.
-- claim: I sprayed starting fluid in it.
-  rebuttal: Starting fluid can damage EFI fuel rails. Don't use it on outboards. Tell us if you did.
-- claim: It ran fine last fall.
-  rebuttal: Most no-start tickets ran fine last fall. The motor sat for 6 months. "Ran fine in fall" doesn't help us diagnose "won't start in May."
+- **Starting fluid in an EFI four-stroke.** Ether is for old carbureted tractors, not fuel-injected Mercurys. It washes the cylinders dry and can score them. Never.
+- **Cranking until the starter smokes.** Ten seconds of crank, then rest. Thirty-second crank marathons cook starters and flatten batteries, and now you have two problems.
+- **Throwing parts at it.** New plugs into a tank of phase-separated gas fouls the new plugs. Diagnose in order: power, fuel, spark. That's the whole ladder above.
+- **"Freshening up" bad gas.** Topping a half tank of separated E10 with fresh fuel doesn't fix it. The water-ethanol layer is still sitting on the pickup. Drain it.
+- **Jump-starting from a running truck.** Voltage spikes and modern engine computers are a bad mix. Charge the battery properly or swap in a good one.
 
 ## Customer language we hear
 
-- quote: She sat all winter and won't fire
-  response: battery + fuel + plugs
-- quote: Just clicks
-  response: battery or starter solenoid
-- quote: I think I've got bad gas
-  response: phase separation or stale fuel
-- quote: Cranks but won't catch
-  response: fuel delivery or ignition
-- quote: The pee stream looks weak
-  response: impeller (different problem)
-- quote: When can you get me in?
-  response: call us at 905-342-2153
-  isCTA: true
+- **"It cranks fine."** About half the time it doesn't. Slow, laboured cranking sounds normal to an owner who's used to it. Voltage test settles it in ten seconds.
+- **"The gas is fresh."** Fresh from the jerry can you filled last October counts as stale. If it sat over winter with ethanol in it, it's a suspect.
+- **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail. Nothing has to "break" for a no-start.
+- **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
 ## Ready for HBW to look at it?
 
