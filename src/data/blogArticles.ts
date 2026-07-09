@@ -15527,7 +15527,7 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-HBW has probably the largest Mercury parts inventory in Ontario. Most no-start customers are running again the same day they bring the boat in.
+Most no-start customers are running again the same day they bring the boat in.
 
 ## Common mistakes (the things we push back on)
 
