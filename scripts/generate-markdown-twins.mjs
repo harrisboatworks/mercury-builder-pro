@@ -739,15 +739,8 @@ function blogMarkdown(article, clusterData) {
     `content_type: blog_article`,
   ];
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
-  const faqMd = faqs.length
-    ? faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n')
-    : '_(no FAQs)_';
-  const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
-  const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
-  // Cluster-driven related-guides section (single source of truth after the
-  // 2026-07-01 removal of hard-coded in-content Related guides blocks).
-  const relatedGuidesMd = clusterData
-    ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
+  const faqBlock = faqs.length
+    ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
     : '';
 
   return [
@@ -764,10 +757,7 @@ function blogMarkdown(article, clusterData) {
     '',
     cleanedContent,
     '',
-    '## FAQs',
-    '',
-    faqMd,
-    '',
+    faqBlock || null,
     relatedGuidesMd,
     relatedGuidesMd ? '' : null,
     '## Next steps',
