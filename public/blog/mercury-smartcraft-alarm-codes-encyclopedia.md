@@ -109,12 +109,12 @@ HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
 
 ## Common mistakes (the things we push back on)
 
-- claim: I cleared the code and it went away, so it's fixed.
-  rebuttal: A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
-- claim: My buddy's Mercury had the same code and it was X.
-  rebuttal: Different engine families display the same code number for different faults. Verify before parts shop.
-- claim: I shut off the alarm by holding the horn button.
-  rebuttal: Silencing is not resolution.
+- **I cleared the code and it went away, so it's fixed.**  
+  A code clears when you turn off the key, but if the cause isn't addressed, it fires again.
+- **My buddy's Mercury had the same code and it was X.**  
+  Different engine families display the same code number for different faults. Verify before parts shop.
+- **I shut off the alarm by holding the horn button.**  
+  Silencing is not resolution.
 
 ## Ready for HBW to look at it?
 

@@ -99,14 +99,14 @@ Repowers are the highest-risk install in our shop. At HBW we water-test every re
 
 ## Common mistakes (the things we push back on)
 
-- claim: I will use Sheffield Financial like I saw on Mercury's US website.
-  rebuttal: Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at 5.48% APR under the TD Always On program through Dec 31, 2026.
-- claim: I'll pull from my line of credit instead.
-  rebuttal: HELOC at prime + 2-3% is materially higher than the active TD 5.48% APR program, plus variable-rate risk. A fixed 5.48% loan with no prepayment penalty is usually cleaner.
-- claim: I want zero interest financing.
-  rebuttal: The active TD Always On 5.48% APR (OAC) is the headline rate through Dec 31, 2026 (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)). Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the promotions page. Outside those windows and after Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up.
-- claim: I'll finance through my own bank to get a lower rate.
-  rebuttal: Possible, but TD 5.48% APR via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
+- **I will use Sheffield Financial like I saw on Mercury's US website.**  
+  Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at 5.48% APR under the TD Always On program through Dec 31, 2026.
+- **I'll pull from my line of credit instead.**  
+  HELOC at prime + 2-3% is materially higher than the active TD 5.48% APR program, plus variable-rate risk. A fixed 5.48% loan with no prepayment penalty is usually cleaner.
+- **I want zero interest financing.**  
+  The active TD Always On 5.48% APR (OAC) is the headline rate through Dec 31, 2026 (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)). Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the promotions page. Outside those windows and after Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up.
+- **I'll finance through my own bank to get a lower rate.**  
+  Possible, but TD 5.48% APR via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
 
 ## Other Canadian financing options
 

@@ -239,6 +239,18 @@ function cleanBlogContent(content, hasFaqs) {
   // The inner block content is kept verbatim as plain markdown so AI agents
   // reading the twin don't see raw fence markup as junk.
   c = c.replace(/^:::[a-z-]*\s*$/gim, '');
+  // Rewrite YAML-ish claim/rebuttal and quote/response bullet blocks
+  // (used in "Common mistakes" and "Customer language we hear" sections)
+  // into rich markdown bullets so the twin renders the content instead of
+  // dropping it as unparseable pseudo-YAML.
+  c = c.replace(
+    /^-\s*claim:\s*(.+)\n\s+rebuttal:\s*(.+)$/gm,
+    '- **$1**  \n  $2',
+  );
+  c = c.replace(
+    /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
+    '- **"$1"**  \n  $2',
+  );
   if (hasFaqs) {
     c = c.replace(
       /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
@@ -727,16 +739,15 @@ function blogMarkdown(article, clusterData) {
     `content_type: blog_article`,
   ];
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
-  const faqMd = faqs.length
-    ? faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n')
-    : '_(no FAQs)_';
+  const faqBlock = faqs.length
+    ? ['## FAQs', '', faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n'), ''].join('\n')
+    : '';
   const cleanedContent = cleanBlogContent(article.content, faqs.length > 0);
   const lastUpdated = article.dateModified || article.datePublished || TWIN_DATE;
-  // Cluster-driven related-guides section (single source of truth after the
-  // 2026-07-01 removal of hard-coded in-content Related guides blocks).
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
+
 
   return [
     mdFrontmatter(`/blog/${article.slug}.md`, extra, lastUpdated),
@@ -752,10 +763,7 @@ function blogMarkdown(article, clusterData) {
     '',
     cleanedContent,
     '',
-    '## FAQs',
-    '',
-    faqMd,
-    '',
+    faqBlock || null,
     relatedGuidesMd,
     relatedGuidesMd ? '' : null,
     '## Next steps',
@@ -1125,7 +1133,7 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
-if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## FAQs', '## Next steps']);
+if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
 
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {
