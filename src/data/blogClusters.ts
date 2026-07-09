@@ -445,7 +445,7 @@ export const blogClusterContexts: Record<string, string> = {
   // Cluster 10 — Warranty & Protection
   "mercury-outboard-warranty-canada-2026": "Mercury warranty terms in Canada",
   "mercury-warranty-after-repower-ontario": "how warranty works after a repower",
-  "mercury-7-year-warranty-hbw-exclusive-explained": "the 7-year warranty explained",
+  
   "mercury-extended-warranty-platinum-ontario": "Product Protection Platinum extended coverage",
   // Cluster 11 — Dealer & Destination
   "best-mercury-dealer-ontario-hbw-difference": "what makes HBW different",
