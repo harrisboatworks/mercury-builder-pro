@@ -1385,8 +1385,9 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
     // For cards whose eyebrow/auto-title already names the section,
     // suppress the original markdown H2 inside the body to avoid a
     // duplicate heading stacking under the card title.
+    const isShortAnswer = section.kind === 'short-answer';
     const suppressInnerHeading =
-      isDealerNote || isLocalContext || isCommonMistakes;
+      isDealerNote || isLocalContext || isCommonMistakes || isShortAnswer;
     const bodyMd = suppressInnerHeading ? section.body : headingMd;
     return (
       <aside

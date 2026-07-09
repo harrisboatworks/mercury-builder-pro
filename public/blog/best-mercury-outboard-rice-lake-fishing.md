@@ -312,6 +312,8 @@ The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. 
 
 ---
 
+---
+
 ## Ready to Build Your Rice Lake Setup?
 
 If you fish Rice Lake, the right motor comes down to a match between your hull, your fishing style, and this specific water. We have been making that match here for three generations.

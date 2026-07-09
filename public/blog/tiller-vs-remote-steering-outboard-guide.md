@@ -43,7 +43,7 @@ leftCriteria:
   - You run a 14-18 ft aluminum tin boat (Lund WC, Princecraft Holiday, Legend Tin)
   - You like having open deck space in the front of the boat
   - You don't need bilge gauges, fancy electronics, or a wheel
-  - 20 to 60 HP range, no bigger
+  - 20 to 60 HP sweet spot; Advanced Tiller available up to 115 HP
 leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.
 leftVariant: alternative
 rightLabel: Remote helm
@@ -63,7 +63,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Factor | Tiller | Remote (helm) |
 |---|---|---|
 | Best hull length | 14-18 ft aluminum | 16-22 ft+ |
-| HP range | 20-60 HP (no bigger) | 60 HP+, especially 90 HP+ |
+| HP range | 20-60 HP sweet spot; Advanced Tiller available up to 115 HP | 60 HP+, especially 90 HP+ |
 | Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
@@ -122,8 +122,6 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 
 ---
 
-::walkaround-lead-capture
-
 ## The crossover zone: 14–16 ft hulls, 25–40 HP
 
 This is where it gets honest:
@@ -143,8 +141,6 @@ This is where it gets honest:
 We see customers go either way on this size class. The deciding factor is almost always use case, solo fishing often stays tiller; family use usually goes remote.
 
 ---
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Tiller variants
 
@@ -173,14 +169,11 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Common mistakes
 
-- **Buying tiller on a console boat.**  
-  Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
-- **Buying remote on a small tin boat.**  
-  Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
-- **Underestimating the physical demand of a high-HP tiller.**  
-  A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
-- **Forgetting the steering type decision.**  
-  Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
+**Buying tiller for a console boat.** The console exists for the helm. Driving a console boat from the transom is awkward every single trip.
+
+**Planning to "convert later."** The conversion runs $500-$1,500+ in parts and labour. Speccing remote at repower time is always cheaper.
+
+**Going tiller on more horsepower than your arm wants.** Above 60 HP, a full day on the handle is work. That's remote territory for most people.
 
 ---
 

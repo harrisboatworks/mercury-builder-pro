@@ -119,7 +119,7 @@ step5Label: First water trial
 step5Question: Does the motor reach its rated WOT RPM with normal load?
 step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
 escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is typically $200 to $350 depending on motor size. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
+escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
 ::
 
 ### Step 5, Lubrication
@@ -196,9 +196,7 @@ Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if M
 
 ## What we see at HBW
 
-Center-console repowers in Ontario are dominated by Verado V8 and V10. Most CC customers on Lake Ontario, Bay of Quinte, or Georgian Bay want twin Verado 250s or 300s. Single-engine Pro XS works on smaller (20-foot) CCs but most owners eventually upgrade to twin power for redundancy.
-
-The biggest install consideration on CC repowers: digital throttle and shift integration. SmartCraft Connect or VesselView Mobile usually goes in at the same time. Plan for an extra 2-3 days on the install schedule for the wiring and calibration.
+The spring no-starts that fill our May schedule almost all trace back to the same three things: untreated fuel that sat all winter, batteries that quietly died in storage, and impellers past their interval. None of them are expensive to catch in March. All of them are expensive to discover on launch day. If the boat sat outside uncovered, add mouse damage to the list. We find chewed harnesses every spring.
 
 ---
 
@@ -226,9 +224,9 @@ Two related guides in the same cluster:
 
 ## Ready to Book Spring Service?
 
-Schedule at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
-Book before April if May timing matters. Questions first? Call **905-342-2153**.
+Want the boat ready for the long weekend? Get on the schedule now. Questions first? Call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON
@@ -253,7 +251,7 @@ The primary indicator is milky or coffee-coloured gear oil when you remove the d
 
 ### How much does professional spring commissioning cost in Ontario?
 
-Professional spring commissioning at an authorized Mercury dealer typically runs $150-$350 CAD depending on scope, motor size, and what's found during inspection. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, call 905-342-2153 or request service at hbw.wiki/service.
+Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, call 905-342-2153 or request service at hbw.wiki/service.
 
 ### What's the best time to book spring commissioning near Rice Lake or the Kawarthas?
 
@@ -261,7 +259,7 @@ Book in February or March. By mid-April, most service departments near Rice Lake
 
 ### Should I replace the water pump impeller every spring?
 
-You don't need to replace the impeller every spring, but it should be inspected regularly and replaced every 2-3 years or 200-300 hours of operation. The impeller is a rubber pump inside the lower unit that circulates cooling water, it degrades even when not in use. A failed impeller means no cooling water and an overheated motor. If your motor sat unused for more than a season, or you're unsure when it was last changed, replace it this spring.
+You don't need to replace the impeller every spring, but it should be inspected regularly and replaced on Mercury's interval of every 200 hours or 3 years, whichever comes first. The impeller is a rubber pump inside the lower unit that circulates cooling water, it degrades even when not in use. A failed impeller means no cooling water and an overheated motor. If your motor sat unused for more than a season, or you're unsure when it was last changed, replace it this spring.
 
 ### Can I do spring commissioning myself, or do I need a dealer?
 

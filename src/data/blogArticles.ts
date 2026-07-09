@@ -6603,34 +6603,6 @@ The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. 
 
 ---
 
-## Frequently Asked Questions
-
-**What is the best Mercury outboard for Rice Lake fishing?**
-For the lake's walleye-and-troll style of fishing, a Mercury 60-90 HP FourStroke main paired with a 9.9 ProKicker is the proven setup. The FourStroke handles travel and afternoon wind; the ProKicker runs the slow trolling speed walleye demand. Bass, muskie, and tournament setups call for more horsepower. See the table above.
-
-**Do I need a kicker motor for Rice Lake walleye?**
-For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective walleye presentation here. The Mercury 9.9 ProKicker is the standard on Rice Lake fishing boats. It runs the right speed, quietly, for hours.
-
-**What is the walleye slot limit on Rice Lake?**
-Keep walleye between 35 cm and 50 cm only. Fish outside that range, too small or too big, must be released immediately. The sport licence limit is 4 fish per day within the slot.
-
-**When does walleye season open on Rice Lake in 2026?**
-May 9, 2026 (the second Saturday in May), running to November 15. Muskie opens June 6, bass opens June 20, and channel catfish opens April 25.
-
-**When does bass season open on Rice Lake in 2026?**
-June 20, 2026. Catch-and-release is permitted before the opener; keeping fish is not. Bass season runs to December 15.
-
-**What can I fish year-round on Rice Lake?**
-Crappie, yellow perch, sunfish, and northern pike are open all year with no closed season.
-
-**What is the sunken railway on Rice Lake?**
-The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tick Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.
-
-**What horsepower do I need for a 16 ft aluminum boat on Rice Lake?**
-Typically 60-90 HP. Check the capacity plate first, because that is the ceiling. Your actual use sets the right point within the range. A solo walleye angler needs a different answer than a full family running into afternoon wind.
-
-**Is there a free fishing weekend in 2026?**
-Yes. Father's Day Weekend (June 20-21) and Family Fishing Week (June 27 to July 5). No licence required during either.
 
 ---
 
@@ -7249,13 +7221,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Tips',
     readTime: '9 min read',
     keywords: ['outboard fuel efficiency', 'mercury mpg', 'boat fuel economy', 'save fuel boating', 'outboard consumption'],
-    content: `**Language:** English 
+    content: `## Quick Answer
 
----
-
-## Quick Answer
-
-The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
+The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 25% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
@@ -7348,8 +7316,6 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
@@ -7394,19 +7360,17 @@ The most common fuel-economy callback at our shop is a 4-blade prop running the 
 
 ---
 
-## Frequently Asked Questions
+## Quick answers from the shop floor
 
 **Does a bigger motor always burn more fuel?** 
 Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
 
 **How much does the right prop actually matter?** 
-Significantly. A mismatched prop can reduce fuel economy by 15 to 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
+More than anything else on this list. It is the single biggest efficiency lever on the boat, bigger than horsepower class, and it also affects holeshot, top speed, and engine longevity. The WOT RPM test above is how you check yours.
 
-**Should I run higher octane fuel for better economy?** 
-Mercury FourStrokes are designed to run on regular octane fuel (87 AKI). Unless your owner's manual specifies otherwise, higher octane doesn't improve fuel economy.
 
 **Does trim really make a meaningful difference?** 
-Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10 to 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
+Yes, and it costs nothing. Trimming out at cruise lets the hull run clean instead of plowing, and a SmartCraft fuel gauge shows the difference in real time. If you never touch the trim switch after the holeshot, you're leaving fuel money on the table.
 
 **What's the best cruise RPM for fuel economy?** 
 It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency range that your dealer or owner's manual can identify. The goal is to find the RPM where you're making acceptable speed without the motor working unnecessarily hard.
@@ -7780,7 +7744,7 @@ step5Label: First water trial
 step5Question: Does the motor reach its rated WOT RPM with normal load?
 step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
 escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is typically $200 to $350 depending on motor size. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
+escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
 ::
 
 ### Step 5, Lubrication
@@ -7857,9 +7821,7 @@ Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if M
 
 ## What we see at HBW
 
-Center-console repowers in Ontario are dominated by Verado V8 and V10. Most CC customers on Lake Ontario, Bay of Quinte, or Georgian Bay want twin Verado 250s or 300s. Single-engine Pro XS works on smaller (20-foot) CCs but most owners eventually upgrade to twin power for redundancy.
-
-The biggest install consideration on CC repowers: digital throttle and shift integration. SmartCraft Connect or VesselView Mobile usually goes in at the same time. Plan for an extra 2-3 days on the install schedule for the wiring and calibration.
+The spring no-starts that fill our May schedule almost all trace back to the same three things: untreated fuel that sat all winter, batteries that quietly died in storage, and impellers past their interval. None of them are expensive to catch in March. All of them are expensive to discover on launch day. If the boat sat outside uncovered, add mouse damage to the list. We find chewed harnesses every spring.
 
 ---
 
@@ -7880,17 +7842,10 @@ Two related guides in the same cluster:
 **How long does spring commissioning take at a shop?**
 Most straightforward Mercury FourStroke commissioning jobs are a 2–4 hour shop visit. If we find issues, impeller replacement, fuel system work, battery swap, add time. Books faster if you've brought us the full service history.
 
-**Can I do spring commissioning myself?**
-Most of this checklist is accessible to a competent DIY boater with basic tools. The exceptions are anything involving computer diagnostics on SmartCraft systems, and seal work if the gearcase shows contamination.
 
 **What if I skipped fall winterization?**
 It depends on your winter. If the motor was stored indoors and Ontario had a mild winter, you may be fine. If it was outdoors in a hard freeze without fogging or water purging, you need a diagnostic before you run it. Come in and let us look at it.
 
-**How much does spring commissioning cost at HBW?**
-Current pricing is at [hbw.wiki/service](https://hbw.wiki/service). Rates are based on engine type and the scope of work. There's no flat number because the job varies.
-
-**Should I replace the impeller every spring?**
-Mercury recommends every 200 hours or 3 years. If you don't know the last replacement date, replace it. The impeller is a small part. An overheated motor is a much larger problem.
 
 **You mentioned ethanol-free fuel, where can I get it near Rice Lake?**
 We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. It's at the pump when you launch.
@@ -7910,9 +7865,9 @@ We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. I
 
 ## Ready to Book Spring Service?
 
-Schedule at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
-Book before April if May timing matters. Questions first? Call **905-342-2153**.
+Want the boat ready for the long weekend? Get on the schedule now. Questions first? Call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON`,
@@ -7949,7 +7904,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
       },
       {
         question: 'How much does professional spring commissioning cost in Ontario?',
-        answer: 'Professional spring commissioning at an authorized Mercury dealer typically runs $150-$350 CAD depending on scope, motor size, and what\'s found during inspection. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, call 905-342-2153 or request service at hbw.wiki/service.'
+        answer: 'Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, call 905-342-2153 or request service at hbw.wiki/service.'
       },
       {
         question: 'What\'s the best time to book spring commissioning near Rice Lake or the Kawarthas?',
@@ -7957,7 +7912,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
       },
       {
         question: 'Should I replace the water pump impeller every spring?',
-        answer: 'You don\'t need to replace the impeller every spring, but it should be inspected regularly and replaced every 2-3 years or 200-300 hours of operation. The impeller is a rubber pump inside the lower unit that circulates cooling water, it degrades even when not in use. A failed impeller means no cooling water and an overheated motor. If your motor sat unused for more than a season, or you\'re unsure when it was last changed, replace it this spring.'
+        answer: 'You don\'t need to replace the impeller every spring, but it should be inspected regularly and replaced on Mercury\'s interval of every 200 hours or 3 years, whichever comes first. The impeller is a rubber pump inside the lower unit that circulates cooling water, it degrades even when not in use. A failed impeller means no cooling water and an overheated motor. If your motor sat unused for more than a season, or you\'re unsure when it was last changed, replace it this spring.'
       },
       {
         question: 'Can I do spring commissioning myself, or do I need a dealer?',
@@ -8002,7 +7957,7 @@ leftCriteria:
   - You run a 14-18 ft aluminum tin boat (Lund WC, Princecraft Holiday, Legend Tin)
   - You like having open deck space in the front of the boat
   - You don't need bilge gauges, fancy electronics, or a wheel
-  - 20 to 60 HP range, no bigger
+  - 20 to 60 HP sweet spot; Advanced Tiller available up to 115 HP
 leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.
 leftVariant: alternative
 rightLabel: Remote helm
@@ -8022,7 +7977,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Factor | Tiller | Remote (helm) |
 |---|---|---|
 | Best hull length | 14-18 ft aluminum | 16-22 ft+ |
-| HP range | 20-60 HP (no bigger) | 60 HP+, especially 90 HP+ |
+| HP range | 20-60 HP sweet spot; Advanced Tiller available up to 115 HP | 60 HP+, especially 90 HP+ |
 | Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
@@ -8081,8 +8036,6 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 
 ---
 
-::walkaround-lead-capture
-
 ## The crossover zone: 14–16 ft hulls, 25–40 HP
 
 This is where it gets honest:
@@ -8102,8 +8055,6 @@ This is where it gets honest:
 We see customers go either way on this size class. The deciding factor is almost always use case, solo fishing often stays tiller; family use usually goes remote.
 
 ---
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Tiller variants
 
@@ -8132,16 +8083,11 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Common mistakes
 
-:::mythbuster
-- claim: Buying tiller on a console boat.
-  rebuttal: Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
-- claim: Buying remote on a small tin boat.
-  rebuttal: Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
-- claim: Underestimating the physical demand of a high-HP tiller.
-  rebuttal: A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
-- claim: Forgetting the steering type decision.
-  rebuttal: Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
-:::
+**Buying tiller for a console boat.** The console exists for the helm. Driving a console boat from the transom is awkward every single trip.
+
+**Planning to "convert later."** The conversion runs $500-$1,500+ in parts and labour. Speccing remote at repower time is always cheaper.
+
+**Going tiller on more horsepower than your arm wants.** Above 60 HP, a full day on the handle is work. That's remote territory for most people.
 
 ---
 
@@ -8162,30 +8108,22 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricin
 ## FAQ
 
 **Should I get a tiller or remote-control Mercury?**
-Boats under 14 ft and small fishing applications: tiller. Console boats over 16 ft and family use: remote. The 14–16 ft crossover zone depends on use case, solo fishing often stays tiller; family use goes remote.
+If the boat has a console and a windshield, go remote. If it's a bench-seat tin, go tiller. In the 14-16 ft middle ground, think about who's usually aboard: a solo angler working from the transom is a tiller case, a boat that regularly carries the family is a remote case.
 
-**What's the biggest tiller Mercury available?**
-Mercury makes tiller variants up to about 60 HP in select models. Above 60 HP, remote control is the standard. Tiller at high HP is physically demanding and uncommon.
 
 **Is tiller cheaper than remote control?**
 Yes, typically by the cost of rigging cables, helm controls, and console hardware. The savings are meaningful on small to mid-HP motors.
 
-**Can I convert from tiller to remote control later?**
-Yes, but it's a significant project, new helm controls, new rigging cables, possibly a new console structure. Most cost-effective to make this decision at the time of a planned repower.
 
 **Can I troll with a tiller motor?**
 Yes, easily. Tiller is actually preferred for trolling because direct speed and direction control is highly responsive. The 9.9 ProKicker tiller is the classic Ontario walleye fishing setup.
 
-**What's Digital Throttle and Shift?**
-DTS is Mercury's electronic throttle and shift system, replaces cable controls with electronic actuation. Smoother operation, no cable wear. Available on higher-HP Mercury motors, generally 150 HP and up.
 
 **Does a tiller motor have throttle and shift integrated?**
 Yes. The tiller arm includes throttle (rotating handle) and shift (forward, neutral, reverse selector), integrated into the arm.
 
 **Can I add a tiller kicker to a remote-control main motor boat?**
 Common configuration. The main motor uses remote control from the helm; the kicker is a separate tiller motor for trolling speed control. Works well for fishing boats.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
       {
@@ -24512,8 +24450,6 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 **Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 **Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
 
 **Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
@@ -24564,48 +24500,24 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## Common Rigging Mistakes
 
-1. **Reusing old controls to save money.** Old cables can be stiff or corroded. A failed binnacle mid-season costs more in towing and service than a new one.
-2. **Skipping the gauge upgrade on a SmartCraft motor.** A 2026 Mercury 150 connected to 1998 analog gauges uses about 15% of the data the motor produces.
-3. **Underspeccing steering on a V6.** Cable steering on 150 HP technically works. After three hours, you know it is wrong.
-4. **Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow.
-5. **Single battery on a boat with electronics.** A single battery running chartplotter, fishfinder, stereo, and starter can leave you stranded.
+The three big ones, reusing tired controls, skipping the gauge upgrade, and underspeccing steering on a V6, are covered at the top of this guide. Two more we see every season:
+
+**Picking prop pitch by guessing.** Wrong pitch is the most common reason a "perfectly good motor" feels slow. Sea trial it.
+
+**Single battery on a boat full of electronics.** A single battery running the chartplotter, fishfinder, stereo, and starter can leave you stranded. See the wiring section above for when dual-battery makes sense.
 
 ---
 
 ## What we see at HBW
 
-Pricing in our quote book moves three or four times a year. Mercury Canada bulletins drive most of it, and dealer programs (Spring Boost, Buy-and-Win, etc.) layer on top. The number a customer sees on a competitor's website is usually MSRP without HST, without controls, without rigging, without install, and without prop. Half our first conversations are clarifying what is actually included.
+The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting a drop-in install is how customers end up with surprise add-ons mid-job.
 
-Real installed cost on a 90 FourStroke on a fishing boat with existing controls usually lands $11,500 to $13,500 all-in. Same motor on a pontoon getting a SmartCraft display and a new prop ends up $13,500 to $15,500. We quote the installed number, not the box-only number.
+The exception: identical replacement (a 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
 
----
-
----
-
-## What we see at HBW
-
-The controls-and-rigging audit is the first thing we do on every repower quote. 6 out of 10 motors that look "fine to keep the existing controls" actually need new cables, new shift linkage, or a fresh harness. Skipping the audit and quoting "drop-in install" is how customers end up with surprise add-ons mid-job.
-
-The exception: identical replacement (e.g., 60 EFI for a 60 EFI). Carbon-copy swaps re-use existing rigging cleanly. Anything jumping HP class or family triggers the full audit.
+It's also why we quote the installed number, not the box-only number. The price on a competitor's website is usually MSRP without HST, controls, rigging, install, or prop. Half our first conversations are clarifying what's actually included.
 
 ---
 
-## FAQs
-
-**How much does Mercury rigging cost in Ontario?** 
-For a typical mid-range repower (60, 115 HP), expect CAD $2,000 to $4,000 in rigging above the motor price. For a V6 repower (150, 225 HP), expect CAD $3,500 to $7,500. These ranges include controls, steering, gauges, wiring, and prop.
-
-**Do I need DTS on a single-engine V6?** 
-No. Mechanical controls work fine on a single-engine 150, 225 HP motor and save CAD $1,500 to $2,500. DTS is the right call for twin-engine setups, V8+ motors, or when you want seamless VesselView integration.
-
-**Is hydraulic steering worth it at 90 HP?** 
-Usually not on a typical fishing boat. Cable steering at 90 HP is fine. Exception: fast bowrider or anyone who finds cable tiring. For 115 HP and up, hydraulic is almost always worth the upgrade.
-
-**How long does a full rigging install take?** 
-Mid-range single-engine (60-115 HP): typically 1, 2 shop days once the motor is in. V6 with full electronics: 2-4 days.
-
-**Does HBW handle trade-ins on the old motor?** 
-Yes. Old Mercury motors in workable condition are valued at trade-in. Non-Mercury motors evaluated case-by-case.
 
 ---
 
