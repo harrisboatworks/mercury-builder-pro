@@ -6311,12 +6311,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
-    dateModified: '2026-05-23',
+    dateModified: '2026-07-09',
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['rice lake fishing guide', 'rice lake walleye', 'rice lake fishing regulations 2026', 'rice lake muskie', 'mercury 9.9 prokicker walleye', 'best mercury outboard rice lake fishing'],
-    content: `*Last reviewed: 2026-05-23*
+    content: `*Last reviewed: 2026-07-09*
 
 > **Quick answer:** For Rice Lake's shallow, weedy, troll-heavy walleye fishing, the proven setup is a Mercury 60-90 HP FourStroke main paired with a Mercury 9.9 ProKicker. The kicker runs the slow 1-2 mph trolling speed walleye demand; the FourStroke handles the afternoon wind on the ride home. Match horsepower to your hull's capacity plate, not the minimum. Build a quote at mercuryrepower.ca or see [Mercury repower on Rice Lake](/locations/rice-lake-mercury-repower).
 
@@ -7216,7 +7216,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 6.5 GPH fuel flow at 4200 RPM and 28 MPH.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
-    dateModified: '2026-06-15',
+    dateModified: '2026-07-09',
     publishDate: '2026-03-16',
     category: 'Tips',
     readTime: '9 min read',
@@ -7647,7 +7647,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-spring-commissioning-checklist.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-30',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-09',
     publishDate: '2026-03-30',
     category: 'Maintenance',
     readTime: '9 min read',
@@ -7934,12 +7934,12 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
     imageAlt: 'Comparison of tiller-steer outboard on an aluminum boat versus remote steering at a console on a bass boat.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-09',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['tiller vs remote outboard', 'tiller steering boat', 'outboard remote steering', 'boat steering options', 'mercury tiller motor'],
-    content: `**Last reviewed:** 2026-05-07
+    content: `**Last reviewed:** 2026-07-09
 
 ---
 
@@ -24548,7 +24548,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-05-08',
+    dateModified: '2026-07-09',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
