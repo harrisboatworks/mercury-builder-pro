@@ -10452,7 +10452,7 @@ This matters specifically right now because:
 2. We don't know whether Mercury's 2027 program will offer the same standard 3-year base, or whether there'll be a 2027 promotional adder. Locking in 2026 + HBW's 7 years removes that variable.
 3. The math on a 7-year cover-everything window is significant if you're keeping the boat long-term. The cost of one big-ticket service event after year 3 is more than most owners realize until they're staring at the quote.
 
-Full details on the program: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+Full details on the program: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
 
 ## Pricing and Trade-In Through the Flip
 
@@ -10685,7 +10685,7 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
 **Does the HBW 7-year warranty bonus depend on when I buy?**
-No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury 7-Year Warranty: HBW Exclusive Explained](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
 
 ## Ready to See Your Number?
 
@@ -11493,7 +11493,7 @@ Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back
 - 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
 - Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
 - Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
-- See the [7-year HBW Exclusive explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) and [current promotions](https://www.mercuryrepower.ca/promotions)
+- See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
@@ -19849,7 +19849,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, as of July 2026 the current HBW Exclusive promotion brings total factory-backed coverage to 7 years (3 standard + 4 free extension) on every eligible new Mercury outboard purchased through December 31, 2026, after which the bonus years revert to the 3-year standard. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts.
+That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, as of July 2026 the current HBW Exclusive promotion brings total factory-backed coverage to 7 years (3 standard + 4 free extension) on every eligible new Mercury outboard purchased through December 31, 2026, after which the bonus years revert to the 3-year standard. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for what that promo actually covers and when it reverts.
 
 ---
 
@@ -29720,7 +29720,7 @@ source: HBW Customer, Bewdley 2026
 
 ## What Mercury Product Protection Is
 
-Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. Current promotions can extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) and our [current promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained).
+Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. Current promotions can extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
@@ -34030,7 +34030,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
     category: 'Buying Guide',
     readTime: '11 min read',
     keywords: ['repower vs new boat', 'mercury repower math', 'should i repower or buy new', 'repower cost ontario', 'hull worth repowering', 'transom rebuild cost'],
-    relatedSlugs: ['repair-repower-or-sell-boat-ontario-decision-guide', 'mercury-repower-cost-ontario-2026-cad', 'mercury-7-year-warranty-hbw-exclusive-explained', 'best-pontoon-outboard-2026-mercury', 'complete-guide-boat-repower-kawarthas'],
+    relatedSlugs: ['repair-repower-or-sell-boat-ontario-decision-guide', 'mercury-repower-cost-ontario-2026-cad', 'mercury-outboard-warranty-canada-2026', 'best-pontoon-outboard-2026-mercury', 'complete-guide-boat-repower-kawarthas'],
     faqs: [
       { question: 'When does repowering save money compared to buying new?', answer: 'Almost always, if the hull is sound. A Mercury repower at $11,000 to $40,000 CAD installed (2026 ranges) is typically a third to a quarter of the cost of a comparable new boat with a new motor. A comparable new package often adds another $25,000 to $50,000 over that. Repower keeps you in the boat you already know.' },
       { question: 'When does buying a new boat make more sense?', answer: 'When the transom is rotted beyond reasonable repair, when the hull has structural cracks or rotted stringers, when the boat design is too dated for your current use, or when you simply want change. Honest assessment matters.' },
@@ -34105,7 +34105,7 @@ If the boat passes hull inspection, repower math almost always wins. Our [comple
 
 ## What does a typical Mercury repower include?
 
-When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. The current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [Mercury current-promo explainer](/blog/mercury-7-year-warranty-hbw-exclusive-explained) for what that promo actually covers and when it reverts. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
+When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. The current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for what that promo actually covers and when it reverts. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
 
 ## How long will a repowered boat last and how do I decide?
 
