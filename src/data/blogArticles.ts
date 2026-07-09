@@ -15584,7 +15584,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'How fast does E10 fuel go bad in storage?',
-        answer: 'Lab estimates say phase separation from atmospheric moisture alone takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as three weeks. Use HBW\'s ethanol-free 89 fuel to avoid the issue entirely.'
+        answer: 'Under lab conditions, 60-90 days sealed. On a real boat with a vented tank and a bit of water already aboard, we\'ve pulled separated fuel three weeks after fill-up. Stabilize at every layup, or skip the problem and run our ethanol-free 89.'
       },
       {
         question: 'Does HBW sell ethanol-free fuel at the dock?',
