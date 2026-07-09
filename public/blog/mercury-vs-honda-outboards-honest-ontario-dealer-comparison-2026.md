@@ -106,14 +106,14 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Mythbuster
 
-- claim: Honda is more reliable than Mercury.
-  rebuttal: Both brands build reliable motors in 2026. The real-world reliability difference at modern model years is small. The bigger reliability factor is local service network access.
-- claim: Mercury Verado is supercharged so it has more issues.
-  rebuttal: No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
-- claim: Honda tops out at 250 HP.
-  rebuttal: Honda BF350 V8 launched in Canada in early 2024 and is in market. Mercury still has more lineup above 350 HP, including 400 HP Verado, 450R, and 600 HP V12, but the 250 HP cap line is out of date.
-- claim: I'll save money buying Honda and getting it serviced wherever.
-  rebuttal: Honda parts and service availability is genuinely thinner in our region. Plan for it before you buy.
+- **Honda is more reliable than Mercury.**  
+  Both brands build reliable motors in 2026. The real-world reliability difference at modern model years is small. The bigger reliability factor is local service network access.
+- **Mercury Verado is supercharged so it has more issues.**  
+  No. Current Verado V8, V10, and V12 are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+- **Honda tops out at 250 HP.**  
+  Honda BF350 V8 launched in Canada in early 2024 and is in market. Mercury still has more lineup above 350 HP, including 400 HP Verado, 450R, and 600 HP V12, but the 250 HP cap line is out of date.
+- **I'll save money buying Honda and getting it serviced wherever.**  
+  Honda parts and service availability is genuinely thinner in our region. Plan for it before you buy.
 
 - [Honda to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide) - the brand-swap math
 - [Mercury vs Yamaha Outboards Ontario](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario) - the other comparison buyers ask about

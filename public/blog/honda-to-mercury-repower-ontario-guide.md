@@ -130,14 +130,14 @@ Not a one-to-one performance guarantee. Prop and load conditions affect ranking.
 
 ## Common mistakes (the things we push back on)
 
-- claim: Mercury Verado is supercharged and faster than Honda.
-  rebuttal: Wrong on the supercharged part for current Verado. CURRENT Mercury Verado V8/V10/V12 (250-600 HP) is naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Don't make the brand switch based on a marketing claim that doesn't match the current product.
-- claim: My Honda is old and Honda is unreliable now.
-  rebuttal: Honda's reliability reputation is intact. If your specific motor is old and tired, the issue is age, not brand. A new Mercury will be more reliable than your old Honda, but a new Honda would also be more reliable than your old Honda. Brand isn't doing the work here.
-- claim: I'll skip the new gauges to save money.
-  rebuttal: Honda gauges don't read Mercury data. Skipping new gauges leaves you with non-functional instruments. Build the gauge cost into your decision.
-- claim: Honda has a 5-year warranty so Mercury must have a worse warranty.
-  rebuttal: Mercury Canada offers 3 years limited + 3 years corrosion CONCURRENT (not additive: both run for the same 3-year period). Honda's specific warranty terms in Canada vary by model and year. Verify both before assuming. Don't pivot brands on warranty math without checking the actual current numbers.
+- **Mercury Verado is supercharged and faster than Honda.**  
+  Wrong on the supercharged part for current Verado. CURRENT Mercury Verado V8/V10/V12 (250-600 HP) is naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production. Don't make the brand switch based on a marketing claim that doesn't match the current product.
+- **My Honda is old and Honda is unreliable now.**  
+  Honda's reliability reputation is intact. If your specific motor is old and tired, the issue is age, not brand. A new Mercury will be more reliable than your old Honda, but a new Honda would also be more reliable than your old Honda. Brand isn't doing the work here.
+- **I'll skip the new gauges to save money.**  
+  Honda gauges don't read Mercury data. Skipping new gauges leaves you with non-functional instruments. Build the gauge cost into your decision.
+- **Honda has a 5-year warranty so Mercury must have a worse warranty.**  
+  Mercury Canada offers 3 years limited + 3 years corrosion CONCURRENT (not additive: both run for the same 3-year period). Honda's specific warranty terms in Canada vary by model and year. Verify both before assuming. Don't pivot brands on warranty math without checking the actual current numbers.
 
 ## When to switch + how to start
 
