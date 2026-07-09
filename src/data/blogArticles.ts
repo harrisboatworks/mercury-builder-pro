@@ -7985,7 +7985,7 @@ leftCriteria:
   - You run a 14-18 ft aluminum tin boat (Lund WC, Princecraft Holiday, Legend Tin)
   - You like having open deck space in the front of the boat
   - You don't need bilge gauges, fancy electronics, or a wheel
-  - 20 to 60 HP range, no bigger
+  - 20 to 60 HP sweet spot; Advanced Tiller available up to 115 HP
 leftOutcome: Cheapest, lightest, fewer parts to break. Perfect for back-trolling and casting. Mercury 20-60 HP tiller, $4,500-$9,500 installed.
 leftVariant: alternative
 rightLabel: Remote helm
@@ -8005,7 +8005,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Factor | Tiller | Remote (helm) |
 |---|---|---|
 | Best hull length | 14-18 ft aluminum | 16-22 ft+ |
-| HP range | 20-60 HP (no bigger) | 60 HP+, especially 90 HP+ |
+| HP range | 20-60 HP sweet spot; Advanced Tiller available up to 115 HP | 60 HP+, especially 90 HP+ |
 | Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
@@ -8064,8 +8064,6 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 
 ---
 
-::walkaround-lead-capture
-
 ## The crossover zone: 14–16 ft hulls, 25–40 HP
 
 This is where it gets honest:
@@ -8085,8 +8083,6 @@ This is where it gets honest:
 We see customers go either way on this size class. The deciding factor is almost always use case, solo fishing often stays tiller; family use usually goes remote.
 
 ---
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## Tiller variants
 
@@ -8115,16 +8111,11 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Common mistakes
 
-:::mythbuster
-- claim: Buying tiller on a console boat.
-  rebuttal: Customer has a console boat but picks tiller to save money. The console becomes useless and the tiller is awkward to reach from it. Remote was the right answer.
-- claim: Buying remote on a small tin boat.
-  rebuttal: Adding console and remote rigging to a 12-foot tin boat. The cost is disproportionate to the motor price and the functionality is worse than tiller.
-- claim: Underestimating the physical demand of a high-HP tiller.
-  rebuttal: A 60 HP tiller can be physically demanding to operate, especially at higher speeds. Some customers underestimate this and regret the choice.
-- claim: Forgetting the steering type decision.
-  rebuttal: Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower, not after.
-:::
+**Buying tiller for a console boat.** The console exists for the helm. Driving a console boat from the transom is awkward every single trip.
+
+**Planning to "convert later."** The conversion runs $500-$1,500+ in parts and labour. Speccing remote at repower time is always cheaper.
+
+**Going tiller on more horsepower than your arm wants.** Above 60 HP, a full day on the handle is work. That's remote territory for most people.
 
 ---
 
@@ -8145,30 +8136,22 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricin
 ## FAQ
 
 **Should I get a tiller or remote-control Mercury?**
-Boats under 14 ft and small fishing applications: tiller. Console boats over 16 ft and family use: remote. The 14–16 ft crossover zone depends on use case, solo fishing often stays tiller; family use goes remote.
+If the boat has a console and a windshield, go remote. If it's a bench-seat tin, go tiller. In the 14-16 ft middle ground, think about who's usually aboard: a solo angler working from the transom is a tiller case, a boat that regularly carries the family is a remote case.
 
-**What's the biggest tiller Mercury available?**
-Mercury makes tiller variants up to about 60 HP in select models. Above 60 HP, remote control is the standard. Tiller at high HP is physically demanding and uncommon.
 
 **Is tiller cheaper than remote control?**
 Yes, typically by the cost of rigging cables, helm controls, and console hardware. The savings are meaningful on small to mid-HP motors.
 
-**Can I convert from tiller to remote control later?**
-Yes, but it's a significant project, new helm controls, new rigging cables, possibly a new console structure. Most cost-effective to make this decision at the time of a planned repower.
 
 **Can I troll with a tiller motor?**
 Yes, easily. Tiller is actually preferred for trolling because direct speed and direction control is highly responsive. The 9.9 ProKicker tiller is the classic Ontario walleye fishing setup.
 
-**What's Digital Throttle and Shift?**
-DTS is Mercury's electronic throttle and shift system, replaces cable controls with electronic actuation. Smoother operation, no cable wear. Available on higher-HP Mercury motors, generally 150 HP and up.
 
 **Does a tiller motor have throttle and shift integrated?**
 Yes. The tiller arm includes throttle (rotating handle) and shift (forward, neutral, reverse selector), integrated into the arm.
 
 **Can I add a tiller kicker to a remote-control main motor boat?**
 Common configuration. The main motor uses remote control from the helm; the kicker is a separate tiller motor for trolling speed control. Works well for fishing boats.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
       {
