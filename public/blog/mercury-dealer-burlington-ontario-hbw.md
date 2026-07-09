@@ -152,7 +152,7 @@ Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to 
 
 ### Can I quote and order remotely?
 
-Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, and coordinate delivery and install logistics from there.
+Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling.
 
 ## Related guides
 
