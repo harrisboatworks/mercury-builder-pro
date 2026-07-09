@@ -15576,7 +15576,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     faqs: [
       {
         question: 'What is the first thing to check if my Mercury outboard won\'t start in spring?',
-        answer: 'Check the kill switch is fully engaged, the shifter is in neutral, and the battery switch is in the right position. These three issues account for a meaningful percentage of spring no-start walk-ins at HBW. If those are clean, check battery voltage at rest (should be 12.6 to 12.8 V) and look for stale or phase-separated fuel.'
+        answer: 'Before anything else: kill switch clip fully seated, shifter clicked into true neutral, battery switch on the right bank. Those three send a surprising number of people home happy without opening a toolbox. Still nothing? Put a meter on the battery, then pull a fuel sample from the bottom of the tank.'
       },
       {
         question: 'At what battery voltage should I replace instead of recharge?',
