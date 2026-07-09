@@ -6603,34 +6603,6 @@ The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. 
 
 ---
 
-## Frequently Asked Questions
-
-**What is the best Mercury outboard for Rice Lake fishing?**
-For the lake's walleye-and-troll style of fishing, a Mercury 60-90 HP FourStroke main paired with a 9.9 ProKicker is the proven setup. The FourStroke handles travel and afternoon wind; the ProKicker runs the slow trolling speed walleye demand. Bass, muskie, and tournament setups call for more horsepower. See the table above.
-
-**Do I need a kicker motor for Rice Lake walleye?**
-For proper walleye trolling, yes. Main motors at idle run too fast and too loud for an effective walleye presentation here. The Mercury 9.9 ProKicker is the standard on Rice Lake fishing boats. It runs the right speed, quietly, for hours.
-
-**What is the walleye slot limit on Rice Lake?**
-Keep walleye between 35 cm and 50 cm only. Fish outside that range, too small or too big, must be released immediately. The sport licence limit is 4 fish per day within the slot.
-
-**When does walleye season open on Rice Lake in 2026?**
-May 9, 2026 (the second Saturday in May), running to November 15. Muskie opens June 6, bass opens June 20, and channel catfish opens April 25.
-
-**When does bass season open on Rice Lake in 2026?**
-June 20, 2026. Catch-and-release is permitted before the opener; keeping fish is not. Bass season runs to December 15.
-
-**What can I fish year-round on Rice Lake?**
-Crappie, yellow perch, sunfish, and northern pike are open all year with no closed season.
-
-**What is the sunken railway on Rice Lake?**
-The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tick Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.
-
-**What horsepower do I need for a 16 ft aluminum boat on Rice Lake?**
-Typically 60-90 HP. Check the capacity plate first, because that is the ceiling. Your actual use sets the right point within the range. A solo walleye angler needs a different answer than a full family running into afternoon wind.
-
-**Is there a free fishing weekend in 2026?**
-Yes. Father's Day Weekend (June 20-21) and Family Fishing Week (June 27 to July 5). No licence required during either.
 
 ---
 
