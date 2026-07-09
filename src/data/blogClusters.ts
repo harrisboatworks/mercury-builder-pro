@@ -234,7 +234,6 @@ export const blogClusters: BlogCluster[] = [
     pillar: "mercury-outboard-warranty-canada-2026",
     spokes: [
       "mercury-warranty-after-repower-ontario",
-      "mercury-7-year-warranty-hbw-exclusive-explained",
       "mercury-extended-warranty-platinum-ontario",
     ],
   },
