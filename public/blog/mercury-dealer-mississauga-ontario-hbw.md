@@ -164,7 +164,7 @@ Mississauga customers cite three reasons: transparent online CAD pricing (no cal
 
 ### Can I get a quote and place a Mercury order without visiting?
 
-Yes. Build a quote at mercuryrepower.ca/quote, confirm by phone or text, and we can coordinate delivery / install / sea-trial logistics from there.
+Yes. Build a quote at mercuryrepower.ca/quote and confirm by phone or text. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling), so you trailer the boat to us for install and sea-trial, then trailer it home.
 
 ## Related guides
 
