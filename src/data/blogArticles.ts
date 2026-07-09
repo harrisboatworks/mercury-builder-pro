@@ -15600,7 +15600,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'What is the most common reason a Mercury outboard won\'t start?',
-        answer: 'Fuel. In our own service records (537 no-start and rough-running jobs since 2013), about half traced to fuel problems: stale or phase-separated gas, water in the tank, or a clogged filter. Electrical causes (battery, grounds, connections) were close behind at just under half, with fouled spark plugs involved in about a quarter. Start with fuel and power before suspecting anything expensive.'
+        answer: 'Fuel, by a nose over electrical. Our own 537-job history since 2013 splits roughly half fuel, just under half electrical, a quarter spark plugs, and 14 lonely kill switches. Cheap stuff first: that\'s not a slogan, it\'s what the data says.'
       }
     ]
   },
