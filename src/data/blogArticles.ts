@@ -35136,36 +35136,21 @@ If you're being quoted a Command Thrust motor on a V-hull, ask the dealer specif
 
 Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
-## Common mistakes (the things we push back on)
+## Common mistakes
 
-:::mythbuster
-- claim: More HP is always better.
-  rebuttal: No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
-- claim: I'll get the 150 because resale is better.
-  rebuttal: Marginal. A 115 in good condition resells well. A 150 in good condition resells well. The delta isn't enough to justify the up-front price difference for most owners.
-- claim: Command Thrust gives me more low-end on my V-hull.
-  rebuttal: Slightly, at the cost of top end. For an aluminum V-hull, the standard gearcase is the engineering-correct choice. Don't let a dealer talk you into CT unless your hull legitimately needs it.
-- claim: I'll prop it for top speed.
-  rebuttal: Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
-- claim: My buddy has a 150 on the same boat and it's faster.
-  rebuttal: Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,900 decision on one anecdote.
-:::
+- **More HP is always better.** No. Overpowering a boat creates capacity-plate compliance issues, insurance complications, and shortens hull life. Stay within the capacity-plate maximum HP rating. If you want more boat, get more boat.
+- **I'll get the 150 because resale is better.** Marginal. A 115 in good condition resells well. A 150 in good condition resells well. The delta isn't enough to justify the up-front price difference for most owners.
+- **Command Thrust gives me more low-end on my V-hull.** Slightly, at the cost of top end. For an aluminum V-hull, the standard gearcase is the engineering-correct choice. Don't let a dealer talk you into CT unless your hull legitimately needs it.
+- **I'll prop it for top speed.** Most customers prop wrong. Prop pitch should be set so the motor reaches WOT RPM within Mercury's recommended range (typically 5,500 to 6,000 RPM for FourStroke, 6,000 to 6,400 for Pro XS) under typical load. We dial this in at our dock.
+- **My buddy has a 150 on the same boat and it's faster.** Maybe. Or your buddy's boat is set up differently, has a different prop, runs at different load, or you're comparing perceived speed vs measured speed. Don't make a $6,900 decision on one anecdote.
 
 ## Customer language we hear
 
-:::customer-voice
-- quote: I want to do some tubing this summer
-  response: If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
-- quote: Can we waterski with this?
-  response: 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
-- quote: I'm planning to fish tournaments
-  response: Bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom.
-- quote: Just for cruising the cottage
-  response: If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
-- quote: When can you get me in?
-  response: 905-342-2153
-  isCTA: true
-:::
+- **"I want to do some tubing this summer"** If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
+- **"Can we waterski with this?"** 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
+- **"I'm planning to fish tournaments"** Bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom.
+- **"Just for cruising the cottage"** If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
+- **"When can you get me in?"** Call 905-342-2153.
 
 ## Ready to talk repower?
 
