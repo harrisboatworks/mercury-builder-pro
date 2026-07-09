@@ -495,7 +495,7 @@ export default function Promotions() {
       </section>
 
       {/* FAQ Section, only when promos are active */}
-      {hasActivePromos && (
+      {hasActivePromos && promotionFaqs.length > 0 && (
         <section className="bg-white py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
           <div className="max-w-[880px] mx-auto">
             <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-center text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
