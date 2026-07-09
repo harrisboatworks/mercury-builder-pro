@@ -112,13 +112,13 @@ Price difference between the two at 115 HP is small, roughly **$400** ($17,083 d
 
 ### Things to know about the V6 and V8 tier
 
-**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 455 lbs vs. the V6 200 FourStroke at roughly 475 lbs). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the inline-4 supercharged Verado 200 sits around 510 lbs, and older Yamaha 200-class V6 motors typically land in the 525-560 lb range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
+**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 455 lbs vs. the V6 200 FourStroke at roughly 475 lbs). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 510 lbs, and older Yamaha 200-class V6 motors typically land in the 525-560 lb range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
 
 **All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 150 HP FourStroke repower at Harris Boat Works typically lands at **$25,000-$28,000 all-in**, before HST and before any trade-in credit. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
 
 Ready to compare a 150 against a 200? Build both configurations on [mercuryrepower.ca](https://www.mercuryrepower.ca), motor, rigging, prop, and install all in one quote.
 
-**Verado is special order.** If you're looking at a V8, V10, or V12 Verado, naturally aspirated or supercharged, 250-600 HP, call us directly at 905-342-2153. We'll quote it properly.
+**Verado is special order.** If you're looking at a V8, V10, or V12 Verado (250-600 HP, all naturally aspirated), call us directly at 905-342-2153. We'll quote it properly.
 
 ## What's different about buying Mercury at a Premier dealer
 
