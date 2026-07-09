@@ -1055,11 +1055,5 @@
       "image/avif",
       "image/webp"
     ]
-  },
-  "crons": [
-    {
-      "path": "/api/cron/google-sheets-sync",
-      "schedule": "0 6 * * 1"
-    }
-  ]
+  }
 }

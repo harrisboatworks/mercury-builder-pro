@@ -54,9 +54,6 @@ verify_jwt = false
 [functions.send-saved-quote-email]
 verify_jwt = false
 
-[functions.sync-google-sheets-inventory]
-verify_jwt = false
-
 [functions.trigger-zapier-webhooks]
 verify_jwt = false
 
