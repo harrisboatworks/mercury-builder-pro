@@ -218,7 +218,7 @@ Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blo
 
 ### Can HBW pick up my boat for opener prep?
 
-For Rice Lake and local Kawartha customers, yes, we can arrange hauling and service. [Contact us](/contact) to schedule.
+No. Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. [Contact us](/contact) to book a service slot.
 
 ### What's the most common opener morning failure?
 

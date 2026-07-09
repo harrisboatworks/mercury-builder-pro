@@ -37,7 +37,7 @@ Here is the whole thing laid out plainly: how the financing works, what the rate
 
 ## Who this is for
 
-Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province we can deliver or you can pick up.
+Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers are willing to trailer to us at Gores Landing (service is drop-off only).
 
 ## How HBW financing actually works
 
@@ -128,7 +128,7 @@ Worth knowing, because people assume it's either/or: our financing and our exten
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry probably the largest Mercury parts inventory in Ontario, and we rig, deliver, and service everything we sell right here on Rice Lake. Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
+We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry probably the largest Mercury parts inventory in Ontario, and we rig, sea-trial, and service everything we sell right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
 
 ## Related guides
 

@@ -133,7 +133,7 @@ Here's the actual process if you trade through us:
 4. **Decommission and swap.** We pull the old motor, transfer your old controls if compatible, install the new motor, rig and test. Old motor goes to our reconditioning bench or to the consignment line, depending on what makes sense.
 5. **You leave on the new rig.** Same-day swap is common for like-for-like HP. If we're upgrading HP or changing rigging type (mechanical to DTS, for example), it's typically a 1-3 day shop visit.
 
-If you're outside the immediate Kawarthas, we coordinate pickup and delivery for repowers regularly. GTA and east Toronto customers drive up routinely. We've handled trades from as far as Ottawa and Niagara.
+Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. GTA and east Toronto customers trailer up routinely, and we have handled trades from as far as Ottawa and Niagara.
 
 ## When to Use the Estimator vs Call Us
 
@@ -145,7 +145,7 @@ Call us if:
 - You're trading a boat-and-motor package and want both lines itemized.
 - You have a higher-end motor (150 HP+, under 5 years, low hours) and want to compare a straight trade against consignment.
 - You want the firm number tied directly to a specific new motor configuration before deciding.
-- You're outside the immediate Kawarthas and want to coordinate pickup or delivery.
+- You're driving in from outside the Kawarthas and want to sort out timing before you trailer the boat over.
 
 The estimator gets you 80% of the way to a real number. The call is for the last 20% or the situations where the math is more complicated than a standard repower.
 
