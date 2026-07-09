@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-06-09
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-06-09
+date_modified: 2026-07-09
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 

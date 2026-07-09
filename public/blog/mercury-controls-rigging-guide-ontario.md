@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-05-08
+date_modified: 2026-07-09
 keywords: ["mercury rigging","boat controls","hydraulic steering","vesselview","ontario repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last updated:** 2026-05-08  
+**Last updated:** 2026-07-09  
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
