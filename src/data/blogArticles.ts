@@ -15440,7 +15440,7 @@ Most Mercury no-start calls come down to battery and power (weak battery, switch
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
-This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop. calls in Ontario come down to one of three families: battery and power (weak battery, switch off, bad ground), fuel system (stale or phase-separated gas, clogged 10-micron filter, VST issues), or ignition (fouled plugs after winter storage).
+This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop.
 
 ## The three "stupid easy" things to check first
 
