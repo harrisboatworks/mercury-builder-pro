@@ -126,7 +126,7 @@ export default function MercuryProXS() {
           {[
             { icon: Zap, title: 'Hole-shot tuned', body: 'Aggressive calibration and performance gearcase for elite acceleration off the line.' },
             { icon: Gauge, title: 'Top-end speed', body: 'Tournament-grade engine timing and prop pitches built for maximum WOT.' },
-            { icon: Award, title: '7-year warranty', body: 'Full Mercury factory-backed coverage at pickup, direct from Mercury, no third-party.' },
+            { icon: Award, title: '3-year factory warranty', body: 'Standard Mercury Marine factory-backed coverage on every new Pro XS. Bonus extensions offered from time to time; see /promotions.' },
           ].map(({ icon: Icon, title, body }) => (
             <Card key={title} className="p-6 text-center">
               <Icon className="h-8 w-8 text-primary mx-auto mb-3" />
