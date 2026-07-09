@@ -29,7 +29,6 @@ import {
   Eye,
   MoreHorizontal,
   Image,
-  FileText,
   Video,
   Settings
 } from 'lucide-react';
@@ -37,7 +36,6 @@ import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
 import { MotorManualOverride } from './MotorManualOverride';
 import { MotorMediaDialog } from './MotorMediaDialog';
-import { GoogleSheetsSyncPanel } from './GoogleSheetsSyncPanel';
 
 // Interfaces
 interface MotorInventoryData {
@@ -818,10 +816,6 @@ export function UnifiedInventoryDashboard() {
             <Activity className="w-4 h-4 mr-2" />
             Live Inventory
           </TabsTrigger>
-          <TabsTrigger value="sheets">
-            <FileText className="w-4 h-4 mr-2" />
-            Google Sheets
-          </TabsTrigger>
           <TabsTrigger value="sync">
             <Zap className="w-4 h-4 mr-2" />
             Sync Status
@@ -1209,11 +1203,6 @@ export function UnifiedInventoryDashboard() {
             </div>
           </CardContent>
         </Card>
-      </TabsContent>
-
-      {/* Google Sheets Sync Tab */}
-      <TabsContent value="sheets" className="space-y-6">
-        <GoogleSheetsSyncPanel />
       </TabsContent>
 
       {/* Sync Status Tab */}
