@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
@@ -139,6 +139,14 @@ Most no-start customers are running again the same day they bring the boat in.
 - **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail. Nothing has to "break" for a no-start.
 - **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
+## Ready for HBW to look at it?
+
+**Phone:** 905-342-2153  
+**Email:** info@harrisboatworks.ca  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
+
 ## Sources
 
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
@@ -177,14 +185,6 @@ Usually there isn't one, and that's the trap. On Mercury EFI 40-115 HP, the scan
 ### What is the most common reason a Mercury outboard won't start?
 
 Fuel, by a nose over electrical. Our own 537-job history since 2013 splits roughly half fuel, just under half electrical, a quarter spark plugs, and 14 lonely kill switches. Cheap stuff first: that's not a slogan, it's what the data says.
-
-## Ready for HBW to look at it?
-
-**Phone:** 905-342-2153  
-**Email:** info@harrisboatworks.ca  
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
-
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 
 ## Related guides
 

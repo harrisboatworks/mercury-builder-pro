@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/verado-v8-special-order-repower
-last_updated: 2026-07-04
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false

@@ -33,7 +33,6 @@ A Mercury overheat alarm means one of four things: real heat, Guardian mode, hea
 
 ## Every Pattern, What It Means, and What to Do
 
-
 ## Why Overheat Alarms Require Different Responses
 
 An overheat alarm on a Mercury outboard is not a single condition. It is the engine management system telling you that something in the cooling system, the temperature sensor circuit, or the broader engine-protection logic has tripped a threshold. The response depends on which one.

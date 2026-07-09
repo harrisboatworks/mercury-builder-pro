@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Trent-Severn / Local  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last updated:** 2026-07-07  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 

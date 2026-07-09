@@ -107,7 +107,7 @@ For a 22-foot tritoon hauling four adults and full gear, none of those scenarios
 
 The reason Boost matters beyond its 2026 performance gains is what it signals.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
 
 Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
 

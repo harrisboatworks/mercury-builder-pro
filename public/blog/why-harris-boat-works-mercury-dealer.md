@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** About Us  
 **Published:** 2026-05-04  
-**Last updated:** 2026-06-26  
+**Last updated:** 2026-07-07  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
