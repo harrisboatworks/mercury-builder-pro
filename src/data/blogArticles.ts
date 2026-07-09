@@ -7249,13 +7249,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Tips',
     readTime: '9 min read',
     keywords: ['outboard fuel efficiency', 'mercury mpg', 'boat fuel economy', 'save fuel boating', 'outboard consumption'],
-    content: `**Language:** English 
+    content: `## Quick Answer
 
----
-
-## Quick Answer
-
-The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 20% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
+The biggest fuel efficiency lever on a Mercury outboard is prop selection, a correctly pitched prop at the right WOT RPM band can make a 15 to 25% difference in economy compared to a mismatched one. After prop: trim discipline, hull cleanliness, and cruise speed selection. Engine horsepower class matters less than most owners assume. Modern Mercury FourStrokes are efficient when set up correctly. Setup problems masquerade as engine problems constantly.
 
 ---
 
@@ -7348,8 +7344,6 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
@@ -7394,19 +7388,17 @@ The most common fuel-economy callback at our shop is a 4-blade prop running the 
 
 ---
 
-## Frequently Asked Questions
+## Quick answers from the shop floor
 
 **Does a bigger motor always burn more fuel?** 
 Not necessarily at cruise. A larger motor running at lower RPM to maintain the same speed can burn similar amounts of fuel to a smaller motor working harder. The bigger factor is whether either motor is correctly matched to the hull with the right prop.
 
 **How much does the right prop actually matter?** 
-Significantly. A mismatched prop can reduce fuel economy by 15 to 25% compared to a correctly pitched one on the same motor and hull. It also affects performance, acceleration, and engine longevity.
+More than anything else on this list. It is the single biggest efficiency lever on the boat, bigger than horsepower class, and it also affects holeshot, top speed, and engine longevity. The WOT RPM test above is how you check yours.
 
-**Should I run higher octane fuel for better economy?** 
-Mercury FourStrokes are designed to run on regular octane fuel (87 AKI). Unless your owner's manual specifies otherwise, higher octane doesn't improve fuel economy.
 
 **Does trim really make a meaningful difference?** 
-Yes. The difference between a boat running flat and a boat trimmed for cruise can be 10 to 20% in fuel economy. It's one of the cheapest efficiency gains available, since it costs nothing.
+Yes, and it costs nothing. Trimming out at cruise lets the hull run clean instead of plowing, and a SmartCraft fuel gauge shows the difference in real time. If you never touch the trim switch after the holeshot, you're leaving fuel money on the table.
 
 **What's the best cruise RPM for fuel economy?** 
 It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency range that your dealer or owner's manual can identify. The goal is to find the RPM where you're making acceptable speed without the motor working unnecessarily hard.
