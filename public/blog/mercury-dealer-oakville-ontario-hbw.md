@@ -154,7 +154,7 @@ Oakville customers cite three reasons: transparent online CAD pricing, Mercury P
 
 ### Can I do most of the buying process remotely?
 
-Yes. Quote online, confirm by phone or text, and coordinate delivery / install / sea-trial from there. Most Oakville customers do 90% remotely.
+Yes. Quote online, confirm by phone or text, then trailer the boat to us for install and sea-trial. Service is drop-off at Gores Landing (we do not pick up, deliver, or arrange hauling). Most Oakville customers do 90% remotely.
 
 ## Related guides
 

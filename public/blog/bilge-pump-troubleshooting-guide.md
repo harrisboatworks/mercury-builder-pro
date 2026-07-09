@@ -363,7 +363,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
 - [Bilge Pumps: The Unsung Heroes of the Boating World](https://www.legendboats.com/?blog=bilge-pumps-the-unsung-heroes-of-the-boating-world), Legend Boats
 - [The great SVB bilge pump test](https://www.svb24.com/en/guide/the-great-svb-bilge-pump-test-a-comparison-of-the-10-best-electric-bilge-pumps.html), SVB24
 - [What size bilge pump do I need?](https://support.jamestowndistributors.com/hc/en-us/articles/360055503513-What-size-bilge-pump-do-I-need), Jamestown Distributors
-- [How to Choose the Right Bilge Pump for Your Boat](https://www.freshwatersystems.com/blogs/blog/how-to-choose-the-right-bilge-pump-for-your-boat), Fresh Water Systems
+- [How to Choose the Right Bilge Pump for Your Boat](https://www.freshwatersystems.com/blogs/blog/bilge-pump-troubleshooting-guide), Fresh Water Systems
 - [Double Duty: backup bilge pumps and high-water alarms](https://www.boatus.com/expert-advice/expert-advice-archive/2026/february/double-duty/), BoatUS
 
 ## FAQs

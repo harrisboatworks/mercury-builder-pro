@@ -193,7 +193,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 ---
 
 ## Related posts
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits which use case
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), which family fits which use case
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the often-overlooked variable
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
