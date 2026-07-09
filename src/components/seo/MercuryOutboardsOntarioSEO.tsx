@@ -31,7 +31,7 @@ export const ONTARIO_HUB_FAQ = [
   },
   {
     question: "What warranty comes with a new Mercury motor?",
-    answer: "Standard Mercury Marine factory warranty is 3 years. Right now, Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new outboard purchases, direct from Mercury, not third-party insurance. We register every warranty at pickup."
+    answer: "Standard Mercury Marine factory warranty is 3 years. Bonus warranty extensions are offered from time to time at Harris Boat Works; check mercuryrepower.ca/promotions for current offers. We register every warranty at pickup."
   },
   {
     question: "Do you ship Mercury motors across Ontario?",

@@ -36,7 +36,7 @@ export const PRO_XS_FAQ = [
   },
   {
     question: "What's the warranty on a new Pro XS?",
-    answer: "Standard Mercury warranty is 3 years. Right now Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new Pro XS purchases, straight from Mercury Marine, not third-party insurance. We register the warranty at pickup."
+    answer: "Every new Mercury Pro XS comes with the standard 3-year Mercury Marine factory warranty. Bonus warranty extensions are offered from time to time; check mercuryrepower.ca/promotions for current offers. We register the warranty at pickup."
   },
   {
     question: "Can I finance a Pro XS purchase?",
@@ -61,7 +61,7 @@ export function MercuryProXSSEO() {
         "@id": `${SITE_URL}/mercury-pro-xs#webpage`,
         "url": `${SITE_URL}/mercury-pro-xs`,
         "name": "Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works",
-        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 3-year factory warranty, financing available. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -122,7 +122,7 @@ export function MercuryProXSSEO() {
       <title>Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW</title>
       <meta
         name="description"
-        content="Mercury Pro XS performance outboards 115–250 HP in stock. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965."
+        content="Mercury Pro XS performance outboards 115–250 HP in stock. Real CAD pricing, 3-year factory warranty, financing available. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965."
       />
       <meta
         name="keywords"
@@ -137,7 +137,7 @@ export function MercuryProXSSEO() {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Pro XS Outboards in Ontario" />
-      <meta name="twitter:description" content="115–250 HP Pro XS, real CAD pricing, 7-year warranty." />
+      <meta name="twitter:description" content="115–250 HP Pro XS, real CAD pricing, 3-year factory warranty." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

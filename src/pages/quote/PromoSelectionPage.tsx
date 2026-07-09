@@ -252,13 +252,17 @@ export default function PromoSelectionPage() {
               className="text-3xl md:text-5xl font-bold text-foreground mb-4"
               style={{ opacity: 1 }}
             >
-              7-Year Factory-Backed Warranty
+              {(activePromo.warranty_extra_years ?? 0) > 0
+                ? `${3 + (activePromo.warranty_extra_years ?? 0)}-Year Factory-Backed Warranty`
+                : (activePromo.bonus_title || activePromo.name || 'Current Mercury Promotion')}
             </motion.h1>
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Every new Mercury outboard from Harris Boat Works comes with 7 years of factory warranty.
-              Mercury stopped running promos, so we're running our own.
+              {(activePromo.warranty_extra_years ?? 0) > 0
+                ? `Every new Mercury outboard from Harris Boat Works during this promotion comes with ${3 + (activePromo.warranty_extra_years ?? 0)} years of factory warranty.`
+                : (activePromo.bonus_description || 'Choose the bonus that works best for you.')}
             </p>
+
 
             {/* Warranty Badge - Included with Shimmer Effect, no opacity animation */}
             <div className="relative inline-flex items-center gap-4 bg-repower-cream backdrop-blur-sm border border-repower-gold/30 rounded-xl px-6 py-4 mb-10 overflow-hidden">

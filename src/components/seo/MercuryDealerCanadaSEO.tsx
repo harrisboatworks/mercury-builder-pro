@@ -38,7 +38,7 @@ const TRUST_FAQ = [
   },
   {
     question: "What warranty comes with a new Mercury outboard?",
-    answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Right now, when you buy from Harris Boat Works, you get 7 years of full Mercury factory-backed coverage, no third-party insurance, just straight Mercury protection. We register the warranty directly with Mercury Marine at the time of pickup."
+    answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Bonus warranty extensions are offered from time to time at Harris Boat Works; check mercuryrepower.ca/promotions for current offers. We register every warranty directly with Mercury Marine at the time of pickup."
   },
   {
     question: "Are Mercury motors made in Canada?",
@@ -128,7 +128,7 @@ export function MercuryDealerCanadaSEO() {
       <title>Why Buy from Harris Boat Works, Mercury Dealer Canada FAQ | Family-Owned Since 1947</title>
       <meta
         name="description"
-        content="Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered."
+        content="Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 3-year factory warranty, full Mercury lineup, financing available. 12 trust questions answered."
       />
       <meta
         name="keywords"
