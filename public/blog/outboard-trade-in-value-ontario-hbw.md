@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-06-02
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Trade-In Value in Ontario (2026)"
 description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST."
 category: "Buying Guide"
 date_published: 2026-05-09
-date_modified: 2026-06-02
+date_modified: 2026-07-09
 keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth","boat motor trade in value Canada","trade in old outboard for repower","outboard trade vs private sale"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Buying Guide  
 **Published:** 2026-05-09  
-**Last updated:** 2026-06-02  
+**Last updated:** 2026-07-09  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
+
+> **Quick answer:** There is no blue book for outboards. Trade-in value comes down to brand, hours, age, condition, and service history, with Mercury and Yamaha 4-strokes holding value best. In Ontario, the trade credit also reduces the taxable amount of your new motor, a 13% HST saving most customers miss. Get a preliminary number in minutes at mercuryrepower.ca.
 
 # What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 

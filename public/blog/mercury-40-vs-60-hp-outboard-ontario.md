@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-05-09
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-05-09
+date_modified: 2026-07-09
 keywords: ["Mercury 40 vs 60 HP","Mercury 60 HP FourStroke review","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,9 +23,11 @@ content_type: blog_article
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last updated:** 2026-05-09  
+**Last updated:** 2026-07-09  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
+
+> **Quick answer:** For a 15 or 16 ft aluminum fishing boat with two adults, the Mercury 40 HP is enough. The 60 is the smarter long-term pick if you add a third person, tow a tube, or want loaded headroom, and the price gap is about $2,602. On pontoons under 20 ft, most customers land on the 60 Command Thrust. Build a quote at mercuryrepower.ca.
 
 ### Quick Answer
 

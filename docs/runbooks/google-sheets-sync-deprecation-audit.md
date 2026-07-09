@@ -121,7 +121,7 @@ Completed repo changes:
 1. Removed `api/cron/google-sheets-sync.ts`.
 2. Removed the `/api/cron/google-sheets-sync` entry from `vercel.json`.
 3. Removed the deployable `supabase/functions/sync-google-sheets-inventory` source and `supabase/config.toml` function entry.
-4. Added `supabase/migrations/20260709180641_unschedule_google_sheets_inventory_sync.sql`, matching the live migration history version, to unschedule `google-sheets-inventory-daily` without rewriting historical migrations.
+4. Added `supabase/migrations/20260708120000_unschedule_google_sheets_inventory_sync.sql` to unschedule `google-sheets-inventory-daily` without rewriting historical migrations.
 5. Removed the `GoogleSheetsSyncPanel` admin component and the `Google Sheets` tab/import from `UnifiedInventoryDashboard`.
 6. Kept `src/pages/AdminStockSync.tsx` visible because it is now Lightspeed-only and invokes `sync-lightspeed-inventory`, not the retired Sheets function.
 
