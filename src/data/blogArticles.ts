@@ -15596,7 +15596,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'What\'s the most common EFI fault code on no-start tickets?',
-        answer: 'On Mercury EFI 75-115 HP, most cranks-but-won\'t-fire tickets come back with clean fault memory. No code stored. The actual causes are low system voltage, weak battery, poor grounds, or low-pressure fuel pump issues that don\'t trigger a stored EFI code. This is why we plug in Mercury CDS for live diagnostic data.'
+        answer: 'Usually there isn\'t one, and that\'s the trap. On Mercury EFI 40-115 HP, the scanner shows clean memory because the real culprits, sagging crank voltage, corroded grounds, a tired low-pressure pump, don\'t set codes. Live data through Mercury CDS is what finds them, which is why this step is a shop visit.'
       },
       {
         question: 'What is the most common reason a Mercury outboard won\'t start?',
