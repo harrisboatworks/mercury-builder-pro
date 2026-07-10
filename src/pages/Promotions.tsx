@@ -25,6 +25,7 @@ import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDRateCardImage } from '@/components/promotions/TDRateCardImage';
+import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
 import { formatFinancingRate } from '@/lib/finance';
 
 const TD_RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
