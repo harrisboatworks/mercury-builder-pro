@@ -59,7 +59,7 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
             transition={{ delay: 0.1 }}
             className="font-sans text-[17px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed"
           >
-            In addition to 7 years of factory coverage, choose the bonus that works best for you.
+            Choose the active Mercury bonus that works best for you. Standard factory warranty and promotion eligibility are confirmed on your quote.
           </motion.p>
         </div>
 

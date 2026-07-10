@@ -15,6 +15,7 @@ date_modified: 2026-07-06
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Pro XS vs Verado vs FourStroke Compared
@@ -39,11 +40,11 @@ Here's the thing most people miss: at the same horsepower, FourStroke, Pro XS, a
 
 We're a third-generation family shop, on this dock since 1947 and a Mercury dealer since 1965. We sell FourStroke and Pro XS, and we service all three. So we don't have a dog in the "talk you into the expensive one" fight. Let's sort out which one actually belongs on your transom.
 
-![Mercury FourStroke vs Pro XS vs Verado outboard family comparison — HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
+![Mercury FourStroke vs Pro XS vs Verado outboard family comparison: HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
-> — Jay Harris, Harris Boat Works
+>: Jay Harris, Harris Boat Works
 
 ## Who this is for
 

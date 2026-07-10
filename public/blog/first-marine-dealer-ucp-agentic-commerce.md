@@ -15,6 +15,7 @@ date_modified: 2026-06-12
 keywords: ["universal commerce protocol","UCP marine dealer","AI agent Mercury quote","agentic commerce Ontario","ChatGPT buy outboard","Shopify ucp-cli","Harris Boat Works UCP"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Quote via AI at Harris Boat Works

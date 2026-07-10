@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Walleye Opener Boat Prep Checklist (2026)

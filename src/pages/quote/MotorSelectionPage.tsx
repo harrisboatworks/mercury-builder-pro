@@ -71,7 +71,7 @@ function PromoBannerConditional() {
   const endLabel = promo.end_date
     ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
     : 'Ends May 17, 2026';
-  const title = promo.bonus_title || promo.name || 'Get 7 Years of Zero-Worry Boating';
+  const title = promo.bonus_title || promo.name || 'Current Mercury Promotion';
   const handleDismiss = () => {
     localStorage.setItem(PROMO_DISMISS_KEY, 'true');
     setDismissed(true);

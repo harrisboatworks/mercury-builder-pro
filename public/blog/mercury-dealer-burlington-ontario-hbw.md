@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer burlington","mercury repower burlington","mercury outboard burlington ontario","boat motor service burlington hamilton"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Burlington Ontario HBW
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Burlington boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
+![Why Burlington boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
 
 # Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
 

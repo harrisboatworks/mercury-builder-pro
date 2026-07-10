@@ -15,6 +15,7 @@ date_modified: 2026-06-19
 keywords: ["mercury smartcraft connect eligibility","smartcraft connect compatibility","is my mercury smartcraft compatible","mercury connect mobile eligibility","smartcraft connect motor requirements","smartcraft compatible mercury models"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury SmartCraft Connect Eligibility 2026

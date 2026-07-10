@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Boat Battery Guide Ontario

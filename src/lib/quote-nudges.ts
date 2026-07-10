@@ -95,10 +95,10 @@ export const EXPERT_NUDGES = {
   },
 
   promoSelection: [
-    "These offers are the same ones Mercury runs for their dealer fleet.",
-    "The 7-year warranty covers parts AND labour. Real coverage.",
-    "Choose rebate, financing, or deferred payments. All include warranty.",
-    "All options include the same 7-year factory warranty.",
+    "Promotion terms come from the live Mercury offer shown on this page.",
+    "Mercury's standard Canadian factory warranty is 3 years.",
+    "Financing and bonus-warranty eligibility are confirmed separately.",
+    "Your final quote will list every active benefit in writing.",
   ],
 
   packageSelection: [

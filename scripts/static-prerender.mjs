@@ -1650,7 +1650,7 @@ const TRUST_FAQ_PRERENDER = [
   { question: "What Mercury motor lines do you carry?", answer: "We carry the full Mercury outboard lineup: portable FourStroke (2.5–20hp), mid-range FourStroke (25–115hp), Command Thrust (40–150hp for pontoons and heavy hulls), Pro XS performance (115–300hp), SeaPro commercial-duty, ProKicker trolling motors (9.9hp/15hp), and FourStroke V8 (250–300hp). We also stock genuine Mercury parts, oils, and accessories." },
   { question: "Are your prices in Canadian dollars?", answer: "Yes, all pricing on mercuryrepower.ca is in Canadian dollars (CAD), all-in. The price you see is the price you pay (plus HST). No US-dollar conversions, no hidden fees, no \"call for price\" games." },
   { question: "Do you offer Mercury financing?", answer: "Yes, financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates (8.99% under $10K total / 7.99% over $10K total) alongside the purchase price. Minimum financed amount is $5,000." },
-  { question: "What warranty comes with a new Mercury outboard?", answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Right now, when you buy from Harris Boat Works, you get 7 years of full Mercury factory-backed coverage, no third-party insurance, just straight Mercury protection. We register the warranty directly with Mercury Marine at the time of pickup." },
+  { question: "What warranty comes with a new Mercury outboard?", answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Bonus warranty coverage applies only while an eligible promotion is active. Harris Boat Works registers the warranty directly with Mercury Marine at pickup." },
   { question: "Are Mercury motors made in Canada?", answer: "Mercury Marine is headquartered in Fond du Lac, Wisconsin, USA, where most outboard motors are manufactured. Mercury has been building outboards since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been the authorized Canadian Mercury dealer for the Rice Lake / Kawartha region since 1965." },
   { question: "Do you service motors purchased elsewhere?", answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
   { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Premier Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
@@ -1885,7 +1885,7 @@ const PRO_XS_FAQ_PRERENDER = [
   { question: "What HP Pro XS models does Harris Boat Works carry?", answer: "We stock the full Pro XS lineup in CAD pricing: 115 HP (ELPT and EXLPT), 150 HP (ELPT and EXLPT), 200 HP (ELPT), and 250 HP (ELPT). All in stock, real prices online. Mercury Premier Dealer, full warranty registration at pickup." },
   { question: "Pro XS vs FourStroke, which should I buy?", answer: "Pro XS for performance: tournament bass, fast bowriders, ski/wake boats, and anyone chasing top-end speed and hole-shot. Standard FourStroke for cruising, fishing, pontoons, and fuel economy. Same Mercury reliability, different tuning. We can walk you through the right choice for your hull at (905) 342-2153 or via the configurator." },
   { question: "Are Pro XS prices in Canadian dollars?", answer: "Yes, every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no \"call for price\" games. The configurator shows real out-the-door pricing including standard rigging." },
-  { question: "What's the warranty on a new Pro XS?", answer: "Standard Mercury warranty is 3 years. Right now Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new Pro XS purchases, straight from Mercury Marine, not third-party insurance. We register the warranty at pickup." },
+  { question: "What's the warranty on a new Pro XS?", answer: "Standard Mercury warranty is 3 years. Bonus coverage applies only while an eligible promotion is active. Harris Boat Works registers the warranty at pickup." },
   { question: "Can I finance a Pro XS purchase?", answer: "Yes, financing is available through DealerPlan and other lenders. Estimated monthly payments are shown alongside each motor at mercuryrepower.ca (8.99% under $10K total / 7.99% over $10K total). Minimum financed amount is $5,000." },
   { question: "How do I take delivery of a Pro XS from Harris Boat Works?", answer: "Pickup only at our Gores Landing location on Rice Lake. Two paths: (1) bring your boat for full installation including controls, prop, and lake test, or (2) pick up the loose motor for self-install. We do not ship motors. Pickup ensures every customer gets a personal walk-through and clean Mercury warranty registration." },
   { question: "Where can I see current Pro XS inventory and pricing?", answer: "Build a quote at mercuryrepower.ca/quote/motor-selection, filter by Pro XS family. Live CAD pricing, in-stock indicators, and monthly payment estimates update directly from our inventory." }
@@ -1898,7 +1898,7 @@ const ONTARIO_HUB_FAQ_PRERENDER = [
   { question: "What areas of Ontario does Harris Boat Works serve?", answer: "Our location at Gores Landing on Rice Lake (Northumberland County) puts us within easy reach of Peterborough (35 min), Cobourg (20 min), Port Hope, the Kawartha Lakes, the Trent-Severn Waterway, and the Greater Toronto Area (90 min via 401). Customers come from across Ontario including Lake Simcoe, Lake Scugog, Bay of Quinte, and the GTA. Pickup only at our Gores Landing location." },
   { question: "Are Mercury outboard prices in Canadian dollars?", answer: "Yes, every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no hidden fees, no \"call for price\" games. The configurator shows live pricing direct from inventory plus financing payment estimates." },
   { question: "Can I finance a Mercury outboard purchase?", answer: "Yes. Financing is available through DealerPlan and other lenders on purchases of $5,000 or more. Monthly payment estimates appear next to every qualifying motor (8.99% under $10K total / 7.99% over $10K total). Apply online at mercuryrepower.ca/financing-application." },
-  { question: "What warranty comes with a new Mercury motor?", answer: "Standard Mercury Marine factory warranty is 3 years. Right now, Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new outboard purchases, direct from Mercury, not third-party insurance. We register every warranty at pickup." },
+  { question: "What warranty comes with a new Mercury motor?", answer: "Standard Mercury Marine factory warranty is 3 years. Bonus coverage applies only while an eligible promotion is active. Harris Boat Works registers every warranty at pickup." },
   { question: "Do you ship Mercury motors across Ontario?", answer: "No, pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Premier status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install." },
   { question: "Do you take trade-ins on Mercury outboard purchases?", answer: "Yes. We accept trade-ins on Mercury and most other outboard brands. Get an instant trade-in estimate at mercuryrepower.ca/trade-in-value, values are anchored to our actual selling prices, not blue-book guesses. Trade credit applies directly to the new motor quote." },
   { question: "Is Harris Boat Works near me?", answer: "If you're in Ontario, probably yes. Travel times: Peterborough 35 min, Cobourg 20 min, Port Hope 25 min, Lindsay 50 min, Bowmanville 45 min, Oshawa 55 min, Port Perry 50 min, downtown Toronto 90 min via 401. We also serve Northumberland County, Hastings County, the Kawarthas, and the GTA. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." }
@@ -2287,7 +2287,7 @@ function mercuryProXSSchema() {
         "@id": `${SITE_URL}/mercury-pro-xs#webpage`,
         "url": `${SITE_URL}/mercury-pro-xs`,
         "name": "Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works",
-        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "description": "Mercury Pro XS performance outboards 115–250 HP at Harris Boat Works. Real CAD pricing, 3-year standard warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -3199,7 +3199,7 @@ const motorPageRoutes = motorRecords
         (modelNo ? `<tr><th scope="row">Model number</th><td>${escapeHtml(modelNo)}</td></tr>` : '') +
         `<tr><th scope="row">Price (CAD)</th><td>${escapeHtml(priceStr)}</td></tr>` +
         `<tr><th scope="row">Availability</th><td>${inStock ? 'In stock' : 'Special order'}</td></tr>` +
-        `<tr><th scope="row">Warranty</th><td>3-year factory; up to 7 years available</td></tr>` +
+        `<tr><th scope="row">Warranty</th><td>3-year factory warranty; bonus coverage only while an eligible promotion is active</td></tr>` +
         `<tr><th scope="row">Pickup</th><td>Gores Landing, ON (no shipping)</td></tr>` +
         '</tbody></table>' +
         `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this motor →</a></p>`,
@@ -4385,8 +4385,8 @@ const routes = [
     { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星 Premier 经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
     { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine Premier 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
     { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Premier de Ontario desde 1947.', backTo: 'Todos los artículos' },
-    { lang: 'hi', articles: hindiBlogArticles,    htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine प्लेटिनम डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
-    { lang: 'pa', articles: punjabiBlogArticles,  htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine ਪਲੈਟੀਨਮ ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
+    { lang: 'hi', articles: hindiBlogArticles,    htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine Premier डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
+    { lang: 'pa', articles: punjabiBlogArticles,  htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine Premier ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
     { lang: 'ur', articles: urduBlogArticles,     htmlLang: 'ur',      ogLocale: 'ur_PK',  h1: 'Mercury موٹر گائیڈز اور بوٹنگ ٹپس',              intro: '1947 سے Ontario کے Mercury Marine Premier dealer سے Mercury outboard motors پر ماہر مشورہ۔', backTo: 'تمام مضامین' },
     { lang: 'tl', articles: tagalogBlogArticles,  htmlLang: 'tl',      ogLocale: 'tl_PH',  h1: 'Mercury motor guides at boating tips',           intro: 'Mga eksperto sa Mercury outboard motors mula sa Mercury Marine Premier dealer ng Ontario simula 1947.', backTo: 'Lahat ng artikulo' },
   ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo }) => ({
@@ -4593,7 +4593,7 @@ const routes = [
   {
     path: '/mercury-dealer-canada-faq',
     title: 'Why Buy from Harris Boat Works: Mercury Dealer Canada FAQ | Family-Owned Since 1947',
-    description: 'Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered.',
+    description: 'Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 3-year standard warranty, full Mercury lineup, financing available. 12 trust questions answered.',
     h1: 'Why Buy from Harris Boat Works',
     intro: '12 trust questions about Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
     schemas: [mercuryDealerCanadaSchema()],
@@ -4649,7 +4649,7 @@ const routes = [
   {
     path: '/mercury-pro-xs',
     title: 'Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW',
-    description: 'Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
+    description: 'Mercury Pro XS performance outboards 115–250 HP at Harris Boat Works. Real CAD pricing, 3-year standard warranty, financing. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Mercury Pro XS Outboards in Ontario',
     intro: 'Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
     schemas: [mercuryProXSSchema()],
@@ -5503,7 +5503,7 @@ function motorBestFit(family, hp) {
   if (family === 'Pro XS') return 'Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.';
   if (family === 'SeaPro') return 'Commercial users, guides, and high-hour applications where a heavier-duty drivetrain matters.';
   if (family === 'Racing') return 'Specialty performance and competition use only. Confirm rigging compatibility with dealer.';
-  if (family === 'Verado') return 'Larger center-consoles and powerboats where supercharged smoothness is preferred. Special-order only.';
+  if (family === 'Verado') return 'Larger center-consoles and powerboats where quiet, refined naturally aspirated power is preferred. Special-order only.';
   if (hp <= 9.9) return 'Small tenders, canoes, sailboat kickers, and very light fishing setups.';
   if (hp <= 30) return 'Small aluminum fishing boats, jon boats, and light tiller setups.';
   if (hp <= 60) return 'Mid-size aluminum fishing boats 14–18 ft and small pontoons.';
@@ -5516,7 +5516,7 @@ function motorNotIdeal(family, hp) {
   if (family === 'Pro XS') return 'Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.';
   if (family === 'SeaPro') return 'Recreational-only owners with light annual hours: FourStroke offers better value for typical use.';
   if (family === 'Racing') return 'Any general recreational use, these are not appropriate for typical pontoons, fishing, or family boats.';
-  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path: Verado is supercharged and special-order only.';
+  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path: Verado is premium, naturally aspirated, and special-order only.';
   if (hp <= 9.9) return 'Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.';
   if (hp <= 30) return 'Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.';
   if (hp <= 60) return 'Heavy pontoons over 22 ft or fiberglass family boats, consider 90–115 HP.';
@@ -5613,8 +5613,8 @@ function motorMarkdown(m) {
     isVerado
       ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.'
       : null,
-    '- Financing available on totals over $5,000 CAD (tiered: 8.99% under $10K, 7.99% over $10K).',
-    '- Standard 3-year Mercury factory warranty; up to 7 years available on select promotions.',
+    `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
+    '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
   ].filter(l => l !== null);
 
@@ -5769,7 +5769,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
     '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
-    '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
+    `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
     '## What we do NOT offer (negative definitions)',
@@ -5812,7 +5812,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Guides (Blog)',
     '',
-    'Selected high-intent buyer guides. Full blog index (HTML) at ' + SITE_URL + '/blog.',
+    'Complete AI-readable guide index. Full blog index (HTML) at ' + SITE_URL + '/blog.',
     '',
     blogTwins.length
       ? blogTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n')
@@ -5855,21 +5855,24 @@ const locationTwinSummaries = locations.map(loc => {
   return { path, title: loc.title };
 });
 
-// Build blog twin summaries (twins themselves are written by
-// scripts/generate-markdown-twins.mjs into public/blog/{slug}.md before Vite
-// build; we only need link metadata here for the catalog Guides section).
-// First-wins dedupe so a duplicate slug cannot override the canonical entry.
-const blogBySlugForCatalog = new Map();
-for (const a of blogArticles) {
-  if (!blogBySlugForCatalog.has(a.slug)) blogBySlugForCatalog.set(a.slug, a);
-}
-const catalogBlogTwinSummaries = CATALOG_BLOG_TWIN_SLUGS
-  .map(slug => {
-    const a = blogBySlugForCatalog.get(slug);
-    if (!a) return null;
-    return { path: `/blog/${slug}.md`, title: a.title };
-  })
-  .filter(Boolean);
+// Build a complete catalog of every publicly visible Markdown twin, including
+// translated routes. AI agents should not have to discover 252 of 265 guides
+// indirectly through the XML sitemap.
+const catalogBlogTwinSummaries = [
+  ...visibleEnglishArticles.map(a => ({ path: `/blog/${a.slug}.md`, title: a.title })),
+  ...[
+    ['fr', 'fr-CA', visibleFrenchArticles],
+    ['ko', 'ko-KR', visibleKoreanArticles],
+    ['zh', 'zh-CN', visibleMandarinArticles],
+    ['es', 'es', visibleSpanishArticles],
+    ['pa', 'pa', visiblePunjabiArticles],
+    ['ur', 'ur', visibleUrduArticles],
+    ['tl', 'tl', visibleTagalogArticles],
+    ['hi', 'hi', visibleHindiArticles],
+  ].flatMap(([prefix, language, articles]) =>
+    articles.map(a => ({ path: `/blog/${prefix}/${a.slug}.md`, title: `${a.title} [${language}]` }))
+  ),
+];
 
 writeMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, catalogBlogTwinSummaries));
 

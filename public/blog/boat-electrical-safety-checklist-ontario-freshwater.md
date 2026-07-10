@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Electrical Safety Ontario

@@ -15,6 +15,7 @@ date_modified: 2026-05-13
 keywords: ["shrinkwrap vs indoor boat storage Ontario","winter boat storage Rice Lake","boat shrinkwrap cost Ontario 2026","heated indoor boat storage Ontario","what happens if you don't winterize"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Shrinkwrap vs Indoor Boat Storage Ontario

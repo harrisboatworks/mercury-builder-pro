@@ -15,6 +15,7 @@ date_modified: 2026-06-26
 keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Premier dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Toronto: Why Drive to HBW
@@ -39,7 +40,7 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 ---
 
-![Why Toronto boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
+![Why Toronto boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
 
 ## The Toronto Dealer Reality
 

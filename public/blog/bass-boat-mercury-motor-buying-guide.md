@@ -15,6 +15,7 @@ date_modified: 2026-06-03
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Choosing the Right Mercury for Your Bass Boat (Ontario 2026)

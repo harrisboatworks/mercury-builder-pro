@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury dealer northumberland county","northumberland mercury premier","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Northumberland HBW

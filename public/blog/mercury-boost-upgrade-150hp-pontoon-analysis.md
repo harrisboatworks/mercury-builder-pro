@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Boost 150 HP Pontoon Guide

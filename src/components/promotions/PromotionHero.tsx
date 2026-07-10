@@ -9,9 +9,13 @@ interface PromotionHeroProps {
   endDate?: string | null;
   bonusTitle?: string | null;
   bonusDescription?: string | null;
+  bonusYears?: number;
 }
 
-export function PromotionHero({ endDate, bonusTitle, bonusDescription }: PromotionHeroProps) {
+export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYears = 0 }: PromotionHeroProps) {
+  const hasBonusWarranty = bonusYears > 0;
+  const totalWarrantyYears = 3 + bonusYears;
+
   return (
     <section className="relative bg-repower-paper text-repower-navy-900 py-20 md:py-28 px-6 md:px-14">
       <div className="relative max-w-5xl mx-auto">
@@ -37,7 +41,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-5 flex items-center justify-center gap-3"
         >
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
-          Mercury stopped running promos, so we're running our own.
+          Current Mercury offer at Harris Boat Works
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
         </motion.p>
 
@@ -49,7 +53,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           className="font-display font-bold text-repower-navy-900 text-center mb-6"
           style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
         >
-          Get <em className="not-italic italic text-repower-mercury-red">7 Years</em> of Coverage
+          {bonusTitle || 'Current Mercury Offer'}
         </motion.h1>
 
         {/* Subhead */}
@@ -59,43 +63,45 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           transition={{ duration: 0.5, delay: 0.15 }}
           className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto text-center leading-relaxed mb-12"
         >
-          {bonusDescription ||
-            'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance, straight Mercury protection from a Premier Dealer (Mercury dealer since 1965).'}
+          {bonusDescription || 'See the current Mercury offer, eligibility, and terms. Harris Boat Works confirms all promotion details before purchase.'}
         </motion.p>
 
-        {/* Promo image, framed */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-12"
-        >
-          <div className="bg-white border border-repower-navy-900/10 p-4 md:p-6 max-w-3xl mx-auto">
-            <img
-              src={harris7YearWarranty}
-              alt="Harris Boat Works, Get 7 Years Factory-Backed Warranty on every new Mercury"
-              className="w-full h-auto"
-            />
-          </div>
-        </motion.div>
+        {hasBonusWarranty && (
+          <>
+            {/* Promo image, shown only when the active database offer includes bonus warranty years. */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-12"
+            >
+              <div className="bg-white border border-repower-navy-900/10 p-4 md:p-6 max-w-3xl mx-auto">
+                <img
+                  src={harris7YearWarranty}
+                  alt={`Harris Boat Works, ${totalWarrantyYears} years of factory-backed Mercury coverage`}
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
 
-        {/* Warranty callout, on cream */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.25 }}
-          className="bg-repower-cream border-l-2 border-repower-gold p-6 md:p-8 max-w-3xl mx-auto flex items-start gap-5 mb-10"
-        >
-          <Shield className="w-7 h-7 text-repower-gold shrink-0 mt-0.5" strokeWidth={1.75} />
-          <div>
-            <div className="font-display font-semibold text-[18px] text-repower-navy-900 tracking-tight">
-              7 Years Factory Warranty
-            </div>
-            <div className="font-sans text-[14px] text-repower-navy-900/65 mt-1">
-              3 years standard + 4 years FREE extension
-            </div>
-          </div>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.25 }}
+              className="bg-repower-cream border-l-2 border-repower-gold p-6 md:p-8 max-w-3xl mx-auto flex items-start gap-5 mb-10"
+            >
+              <Shield className="w-7 h-7 text-repower-gold shrink-0 mt-0.5" strokeWidth={1.75} />
+              <div>
+                <div className="font-display font-semibold text-[18px] text-repower-navy-900 tracking-tight">
+                  {totalWarrantyYears} Years Factory-Backed Coverage
+                </div>
+                <div className="font-sans text-[14px] text-repower-navy-900/65 mt-1">
+                  3 years standard + {bonusYears} promotional bonus years
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
 
         {/* Countdown */}
         {endDate && (

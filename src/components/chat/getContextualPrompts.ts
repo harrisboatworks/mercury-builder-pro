@@ -34,7 +34,7 @@ export function getContextualPrompts(
   if (currentPage.includes('/quote/package-selection')) {
     return [
       "What's the difference between packages?",
-      "Is the 7-year warranty worth it?",
+      "Is extended warranty worth it?",
       "What's covered under Complete?",
       "What does Premium add?"
     ];
@@ -280,7 +280,8 @@ export function getContextualPromptsWithPromo(
       return basePrompts;
     }
     
-    const promoQuestion = "Tell me about the 7-year warranty";
+    const totalCoverageYears = 3 + activePromo.warranty_extra_years;
+    const promoQuestion = `Tell me about the ${totalCoverageYears}-year warranty`;
     // Insert promo question at position 2 (after first two page-specific questions)
     return [
       ...basePrompts.slice(0, 2),
@@ -395,8 +396,8 @@ export function getPageWelcomeMessage(
   }
   
   if (currentPage.includes('/promotions')) {
-    const promoMsg = activePromo?.warranty_extra_years && activePromo.warranty_extra_years >= 4
-      ? " The 7-year warranty deal is on right now!"
+    const promoMsg = activePromo?.warranty_extra_years && activePromo.warranty_extra_years > 0
+      ? ` A ${3 + activePromo.warranty_extra_years}-year warranty offer is active right now!`
       : "";
     return `Hey! Looking at the current deals?${promoMsg} I can help you find the best one.`;
   }

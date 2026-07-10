@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Premier dealer"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Honda to Mercury Repower: Ontario Guide

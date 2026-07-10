@@ -15,6 +15,7 @@ date_modified: 2026-05-04
 keywords: ["mercury marine market share","best outboard brand","mercury vs yamaha","mercury verado v12","mercury innovation","mercury prokicker"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Why Mercury Dominates the Outboard Market in 2026

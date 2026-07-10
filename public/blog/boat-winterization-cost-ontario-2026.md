@@ -15,6 +15,7 @@ date_modified: 2026-05-04
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Winterization Cost Ontario 2026

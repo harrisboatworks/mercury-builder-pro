@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["licence to rent a boat ontario","boat rental licence ontario","pcoc for rental boat","boating licence rice lake","temporary boat licence ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Do You Need a Licence to Rent a Boat in Ontario? (2026)

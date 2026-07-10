@@ -15,6 +15,7 @@ date_modified: 2026-05-07
 keywords: ["mercury seapro","commercial outboard","guide motor","heavy duty outboard","commercial boat motor","SeaPro vs FourStroke","commercial outboard motor","guide boat outboard","SeaPro 200 hour service","charter boat motor"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury SeaPro Commercial Outboard Guide

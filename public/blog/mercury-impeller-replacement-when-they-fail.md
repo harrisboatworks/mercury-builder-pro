@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["mercury impeller replacement","outboard impeller failure symptoms","when to replace boat impeller","weak telltale stream","overheat alarm mercury"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # When to Replace Your Mercury Impeller: What 766 Jobs Show

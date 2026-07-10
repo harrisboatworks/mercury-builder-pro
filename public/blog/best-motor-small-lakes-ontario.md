@@ -15,6 +15,7 @@ date_modified: 2026-04-17
 keywords: ["small lake motor","cottage lake outboard","hp restricted lake","electric motor limit lake","ontario lake motor"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Outboards for Ontario Small Lakes

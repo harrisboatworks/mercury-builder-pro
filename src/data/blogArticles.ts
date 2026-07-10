@@ -3911,11 +3911,11 @@ Here's the thing most people miss: at the same horsepower, FourStroke, Pro XS, a
 
 We're a third-generation family shop, on this dock since 1947 and a Mercury dealer since 1965. We sell FourStroke and Pro XS, and we service all three. So we don't have a dog in the "talk you into the expensive one" fight. Let's sort out which one actually belongs on your transom.
 
-![Mercury FourStroke vs Pro XS vs Verado outboard family comparison — HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
+![Mercury FourStroke vs Pro XS vs Verado outboard family comparison: HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
-> — Jay Harris, Harris Boat Works
+>: Jay Harris, Harris Boat Works
 
 ## Who this is for
 
@@ -5903,7 +5903,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
-![Mercury 75 vs 90 vs 115 HP outboard comparison — best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+![Mercury 75 vs 90 vs 115 HP outboard comparison: best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
 
 *Same 2.1L block. Same 359 lb. The difference is fit.*
 
@@ -10355,7 +10355,7 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Trade values through the calendar.** Used outboard trade values are stronger in the buying months (spring to early summer) when private resale demand peaks. They soften slightly in winter, maybe 5-10% on most HP classes, because the resale market quiets. The HST savings on the trade work the same way year-round.
 
-**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). HBW's 7-year warranty bonus is active year-round, not seasonal.
+**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Bonus warranty programs are time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
 
 ## What Year-End Specifically Looks Like at HBW
 
@@ -10380,7 +10380,7 @@ These are the patterns we see across hundreds of repower conversations a year.
 - **Waiting until April to "see what's available."** By April, the popular HP classes are spoken for through opener. You can still buy, but the install slot is the constraint, not the motor.
 - **Chasing a perfect deal indefinitely.** The customer who waited 18 months for a $1,500 closeout missed two summers of running the boat. The math on lost lake time rarely beats the savings.
 - **Treating "spring" as one big window.** March is not the same as May. The earlier in spring you buy, the better the slot and the cleaner the trade. By May, you're in crisis-install territory.
-- **Underestimating the 7-year warranty value.** The HBW 7-year program adds real long-term value that doesn't show up in the upfront price. A motor with 7 years of cover-everything coverage costs more total over the life of the boat without it.
+- **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Bonus coverage can add value when an eligible promotion is active, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
 - **Ignoring the trade math.** The HST savings on the trade-in scale with the new motor price. Bigger motor, bigger HST savings. Customers who buy the small motor "to save money" sometimes leave more on the table in HST than they save in cash.
 
 ## Pricing and Install Timing Together: The Two Levers
@@ -10419,7 +10419,7 @@ Late April through early June. Demand is at peak, inventory is tightest, and the
 It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you're chasing a specific feature or just want the motor. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **What's actually negotiable on a new Mercury purchase?**
-The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. The HBW 7-year warranty bonus is included on every new Mercury we sell, no negotiation needed. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
+The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
 
 **Should I wait for the Toronto International Boat Show?**
 Depends on what you're hoping to find. The show is good for browsing the full lineup in person, comparing brands, and catching Mercury's January promotional pricing on display. If you've already built a quote and just want to confirm, the show might not add much beyond a vibe check. If you haven't started shopping yet, the show is a productive way to compress a few weeks of research into a weekend.
@@ -10427,8 +10427,8 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 **How does HBW handle install scheduling for spring delivery?**
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
-**Does the HBW 7-year warranty bonus depend on when I buy?**
-No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
+**Does bonus warranty coverage depend on when I buy?**
+Yes. Mercury's standard Canadian warranty is 3 years. Bonus warranty coverage applies only when the purchase and motor meet an active promotion's dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: [Mercury Outboard Warranty in Canada](/blog/mercury-outboard-warranty-canada-2026).
 
 ## Ready to See Your Number?
 
@@ -10460,7 +10460,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'What\'s actually negotiable on a new Mercury purchase?',
-        answer: 'The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. The HBW 7-year warranty bonus is included on every new Mercury we sell, no negotiation needed. The thing that\'s not negotiable is the install slot if it\'s not available, you can\'t buy time we don\'t have.'
+        answer: 'The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury\'s standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that\'s not negotiable is the install slot if it\'s not available, you can\'t buy time we don\'t have.'
       },
       {
         question: 'Should I wait for the Toronto International Boat Show?',
@@ -10471,8 +10471,8 @@ Honest version: the right month to buy is the month you actually need the boat o
         answer: 'We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.'
       },
       {
-        question: 'Does the HBW 7-year warranty bonus depend on when I buy?',
-        answer: 'No. As of July 2026, the 7-year program (Mercury\'s 3-year factory + HBW\'s 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.'
+        question: 'Does bonus warranty coverage depend on when I buy?',
+        answer: 'Yes. Mercury\'s standard Canadian warranty is 3 years. Bonus warranty coverage applies only when the purchase and motor meet an active promotion\'s dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions).'
       }
     ]
   },
@@ -11232,10 +11232,9 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Harris Boat Works Current Offer (HBW Exclusive, runs through December 31, 2026 as of July 2026)**:
-- 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
-- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
-- Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
+**Current warranty position (verified July 2026)**:
+- Mercury's standard Canadian limited factory warranty is 3 years
+- Bonus warranty coverage applies only when a current promotion explicitly includes it
 - See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
@@ -11323,7 +11322,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Are there current promotions available?',
-        answer: 'Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. As of July 2026, the current HBW Exclusive brings every eligible new Mercury to 7 years of total factory-backed warranty (Mercury\'s 3-year factory base + 4 promotional bonus years / free extension), running through December 31, 2026. See [current promotions](https://www.mercuryrepower.ca/promotions) for the latest.'
+        answer: 'Mercury promotions change over time. The standard Canadian warranty is 3 years, while the current TD financing offer runs separately. See [current promotions](https://www.mercuryrepower.ca/promotions) for the live offer and eligibility.'
       },
       {
         question: 'Can I negotiate below advertised price?',
@@ -11895,7 +11894,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-lineup-ontario',
     title: 'Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)',
     description: "Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.",
-    image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
+    image: '/lovable-uploads/hero-mercury-motor-families.webp',
     imageAlt: 'Mercury outboard motors on a Harris Boat Works dock representing the 2027 model year lineup for Ontario boaters.',
     author: 'Jay Harris',
     datePublished: '2026-07-09',
@@ -12428,7 +12427,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
     videoAssetUrl: '/__l5e/assets-v1/aa07895e-5481-4c59-9cf4-43b2832e072c/mercury-boost-demo.mp4',
-    videoAssetTitle: 'Mercury Boost — official demo',
+    videoAssetTitle: 'Mercury Boost: official demo',
     videoAssetCaption: "Mercury's official demonstration of the Boost software upgrade in action.",
     content: `_Last updated: May 27, 2026_
 
@@ -13378,7 +13377,7 @@ If you're not sure, the pre-qualification is free and fast and doesn't commit yo
 
 ## Financing and your warranty stack together
 
-Worth knowing, because people assume it's either/or: our financing and our extended-coverage offers are separate programs. You can finance the motor and take the current extended warranty (we almost always have one running, like the 7-year coverage offer). One doesn't cancel the other. Ask us to put both on the quote.
+Worth knowing, because people assume it's either/or: financing and bonus-coverage offers are separate programs. If an eligible bonus-warranty promotion is active, financing does not automatically cancel it, but the terms of both offers still control. Ask us to confirm every active benefit on the quote.
 
 ## Common mistakes
 
@@ -14564,7 +14563,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Ontario dealer density (Kawarthas + GTA) | High | Moderate | Lower |
 | Freshwater reputation | Excellent | Excellent | Excellent |
 | Standard warranty | 3 years | 3 years | 3 years |
-| Extended warranty program | Mercury Product Protection (Gold / Platinum) | Yamaha YES | Honda Protection Plan |
+| Extended warranty program | Mercury Product Protection (Gold / Premier) | Yamaha YES | Honda Protection Plan |
 | SmartCraft / digital integration | Yes (current/full lineup) | Yes (proprietary) | Yes (proprietary) |
 | Software upgrade roadmap (Boost-style retrofits) | Yes | Limited | Limited |
 | Parts shelf availability (Ontario) | Strong | Strong | Moderate |
@@ -14740,7 +14739,7 @@ Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. 
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
 
-![Mercury vs Suzuki outboard — a fair Ontario dealer comparison of reliability, fuel economy, local dealer network, parts, and best-fit owner](/blog-visuals/mercury-vs-suzuki-fair-comparison.png)
+![Mercury vs Suzuki outboard: a fair Ontario dealer comparison of reliability, fuel economy, local dealer network, parts, and best-fit owner](/blog-visuals/mercury-vs-suzuki-fair-comparison.png)
 
 ## The bottom line for Ontario freshwater
 
@@ -15232,7 +15231,7 @@ Most Mercury no-start calls come down to battery and power (weak battery, switch
 
 *Last reviewed: 2026-07-09*
 
-![Mercury outboard won't start — dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
+![Mercury outboard won't start: dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
@@ -16539,7 +16538,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![What happens during a Mercury repower at Harris Boat Works — six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
+![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
 
 ## Quick Answer
 
@@ -19637,7 +19636,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-05-23*
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions). Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance.
+> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires registered ownership and service-interval compliance.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
@@ -19645,7 +19644,7 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ---
 
-![Mercury outboard warranty in Canada — 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
+![Mercury outboard warranty in Canada: 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
 
 ## The Two Standard Warranties (Both 3 Years, Both Start Day One)
 
@@ -19657,7 +19656,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, as of July 2026 the current HBW Exclusive promotion brings total factory-backed coverage to 7 years (3 standard + 4 free extension) on every eligible new Mercury outboard purchased through December 31, 2026, after which the bonus years revert to the 3-year standard. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for what that promo actually covers and when it reverts.
+That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Bonus warranty promotions sometimes extend that base for eligible purchases, but those offers are time-limited. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
 
 ---
 
@@ -20012,7 +20011,7 @@ This post is the version of that comparison we'd run through with a GTA buyer wh
 
 ---
 
-![Why Toronto boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
+![Why Toronto boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
 
 ## The Toronto Dealer Reality
 
@@ -24058,7 +24057,7 @@ Mercury outboard pricing in Ontario depends on horsepower, controls, prop, riggi
 
 > **Quick estimate:** Try our Repower Cost Estimator for your specific HP and setup. Free, instant CAD ballpark.
 
-![Mercury outboard from-prices at Harris Boat Works — 75, 90, 115, 150 and 250 HP starting prices in writing](/blog-visuals/mercury-from-prices-hbw-ontario.png)
+![Mercury outboard from-prices at Harris Boat Works: 75, 90, 115, 150 and 250 HP starting prices in writing](/blog-visuals/mercury-from-prices-hbw-ontario.png)
 
 ## Pricing by HP category
 
@@ -24159,7 +24158,7 @@ Mercury Canada runs promotions through the season: spring repower season (March-
 
 Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see the financing guide for terms.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. Promo terms change, but as of July 2026 HBW's current offer is 7 years total coverage (3 standard + 4 free extension) through December 31, 2026. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
+Mercury's standard warranty in Canada is 3 years, concurrent. Bonus warranty terms change and apply only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
 ## About the author
 
@@ -24194,7 +24193,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
       { question: 'What\'s the difference between MSRP and dealer price?', answer: 'MSRP is Mercury Canada\'s suggested retail. Dealer price is what we actually sell for, at or below MSRP. Harris Boat Works publishes both numbers next to every motor so you can see exactly what the difference is.' },
       { question: 'Does the motor price include installation?', answer: 'No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and sea trial are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.' },
       { question: 'Can I buy Mercury cheaper in the US?', answer: 'Sometimes the headline price looks lower. But cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings, and then some. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers.' },
-      { question: 'How long is the Mercury warranty?', answer: 'Standard is 3 years, concurrent, in Canada. Promo terms change, but as of July 2026 HBW\'s current offer is 7 years total coverage (3 standard + 4 free) through December 31, 2026. What\'s active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).' },
+      { question: 'How long is the Mercury warranty?', answer: 'Standard is 3 years, concurrent, in Canada. Bonus coverage applies only when an eligible promotion is active. What\'s active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).' },
       { question: 'Can I order any model, or only what\'s in stock?', answer: 'Both. In-stock means physically at our shop in Gores Landing. Available-to-order means we request it from Mercury Canada, typically 1-4 weeks depending on the model.' },
       { question: 'Are these prices final?', answer: 'The dealer price shown is the motor price. Final out-the-door price depends on controls, prop, rigging, and accessories. Use the quote builder at mercuryrepower.ca to generate a complete line-item quote. That number is the invoice at pickup, before HST.' }
     ]
@@ -25826,7 +25825,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Will a 90 plane my pontoon?", answer: "Depends on the pontoon size, hull style, load, and prop. A 90 CT will plane a typical 18 to 22 ft cottage pontoon with a normal load. A 24 ft tri-toon with eight people aboard is asking for a 115 CT or 150." },
       { question: "Does the Mercury 90 need a battery?", answer: "Yes. The 90 ELPT is electric start. You need a marine starting battery (Group 24 or 27 typical, depending on the boat)." },
       { question: "Is the 90 fuel injected?", answer: "Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier starting, cleaner running, better fuel economy than the old carbureted two-strokes most of these motors are replacing." },
-      { question: "What's the warranty?", answer: "3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
+      { question: "What's the warranty?", answer: "3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
     ],
     content: `### Quick Answer
 
@@ -25998,7 +25997,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What's the difference between the 115 FourStroke and the 115 Pro XS?", answer: "Same 2.1L powerhead, different tuning. The Pro XS is calibrated for hole-shot and high-RPM performance with a sport gearcase. The standard FourStroke is the daily-driver tuning." },
       { question: "Is the 115 enough for a 19 ft aluminum boat?", answer: "For most 19 ft aluminum fishing boats with normal loads, yes. If you regularly run heavy (four people, full livewell, kicker, batteries, multiple tackle stations), the 115 is at the edge of what it can comfortably do." },
       { question: "Will a 115 plane my 22 ft pontoon?", answer: "With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is the standard answer for 20-22 ft pontoons. 24 ft and up, you want the 150 V6." },
-      { question: "What's the warranty?", answer: "3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
+      { question: "What's the warranty?", answer: "3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
       { question: "Is the 115 fuel injected?", answer: "Yes. All Mercury 115 HP FourStrokes use EFI. Significantly cleaner running and more fuel-efficient than the older OptiMax and two-stroke 115s most of these motors are replacing." },
       { question: "Does the 115 work with SmartCraft gauges?", answer: "Yes. Full SmartCraft integration is available. NMEA 2000, VesselView mobile, Active Trim. Common upgrade during repower." },
       { question: "Can I get a 115 HP in counter-rotation?", answer: "Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because twin 115s are unusual on Rice Lake boats, but available for the right application." },
@@ -26397,7 +26396,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Markham boaters drive to Harris Boat Works — about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
+![Why Markham boaters drive to Harris Boat Works: about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
 
 # Why Markham Customers Make the Drive to Rice Lake
 
@@ -26567,7 +26566,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Richmond Hill boaters drive to Harris Boat Works — about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
+![Why Richmond Hill boaters drive to Harris Boat Works: about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
 
 # Why Richmond Hill Customers Drive to Rice Lake for Their Mercury
 
@@ -26729,7 +26728,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Mississauga boaters drive to Harris Boat Works — about 90 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-mississauga-worth-the-drive.png)
+![Why Mississauga boaters drive to Harris Boat Works: about 90 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-mississauga-worth-the-drive.png)
 
 # Mercury Dealer for Mississauga: When the Drive Is the Point
 
@@ -26895,7 +26894,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Vaughan boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
+![Why Vaughan boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
 
 # Mercury Dealer for Vaughan: Why the Drive North Makes Sense
 
@@ -27043,7 +27042,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Brampton boaters drive to Harris Boat Works — about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
+![Why Brampton boaters drive to Harris Boat Works: about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
 
 # Mercury Dealer for Brampton: What Makes the Drive Northeast Worth It
 
@@ -27193,7 +27192,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Oakville boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oakville-worth-the-drive.png)
+![Why Oakville boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oakville-worth-the-drive.png)
 
 # Mercury Dealer for Oakville: The Drive That Makes Sense When the Answers Get Clearer
 
@@ -27347,7 +27346,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Burlington boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
+![Why Burlington boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-burlington-worth-the-drive.png)
 
 # Mercury Dealer for Burlington: Why Some Customers Drive Past Hamilton to Come to Rice Lake
 
@@ -27701,7 +27700,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Pickering boaters drive to Harris Boat Works — about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
+![Why Pickering boaters drive to Harris Boat Works: about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
 
 # Mercury Dealer for Pickering: You're Closer Than You Think
 
@@ -27847,7 +27846,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Whitby boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
+![Why Whitby boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
 
 # Mercury Dealer for Whitby: Short Drive, Long Relationship
 
@@ -27995,7 +27994,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Ajax boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower, real pricing, and service](/blog-visuals/mercury-dealer-ajax-worth-the-drive.png)
+![Why Ajax boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower, real pricing, and service](/blog-visuals/mercury-dealer-ajax-worth-the-drive.png)
 
 # Mercury Dealer for Ajax: 45 Minutes and Worth Every One
 
@@ -28143,7 +28142,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Oshawa boaters drive to Harris Boat Works — about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
+![Why Oshawa boaters drive to Harris Boat Works: about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
 
 # Mercury Dealer for Oshawa: We're Basically Durham Region
 
@@ -28300,7 +28299,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Bowmanville boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
+![Why Bowmanville boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
 
 # Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 
@@ -29433,7 +29432,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
 
 - **Hit a deadhead and damage your prop shaft?** Insurance.
-- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Platinum, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
+- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Premier, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
 - **Boat stolen from your driveway?** Insurance.
 - **Lower unit gear failure at 3 years old?** Factory warranty (if still active) or extended warranty.
 
@@ -29457,28 +29456,28 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
   },
   {
     slug: 'mercury-extended-warranty-platinum-ontario',
-    seoTitle: 'Mercury Extended Warranty Platinum (Ontario 2026)',
+    seoTitle: 'Mercury Extended Warranty Premier (Ontario 2026)',
     title: 'Mercury Extended Warranty Ontario',
-    description: 'Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP.',
+    description: 'Mercury Product Protection Premier extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP.',
     image: '/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario.png',
-    imageAlt: 'Mercury FourStroke cowling and Platinum Product Protection brochure on a shop workbench for extended warranty coverage.',
+    imageAlt: 'Mercury FourStroke cowling and Premier Product Protection brochure on a shop workbench for extended warranty coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-05-13',
     publishDate: '2026-05-13',
     category: 'Warranty & Protection',
     readTime: '~12 min read',
-    keywords: ['Mercury extended warranty', 'Mercury Product Protection', 'Platinum warranty', 'Mercury warranty Ontario', 'extended motor warranty', 'Mercury Premier coverage', 'outboard warranty cost'],
+    keywords: ['Mercury extended warranty', 'Mercury Product Protection', 'Premier warranty', 'Mercury warranty Ontario', 'extended motor warranty', 'Mercury Premier coverage', 'outboard warranty cost'],
     relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
     content: `## Quick Answer
 
-**Mercury Product Protection (Platinum) extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Platinum exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
+**Mercury Product Protection (Premier) extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Premier exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
 
 - **Covers what your factory warranty covers, for years longer**: up to 8 years total (3-year factory + 5-year extended)
 - **Includes electrical** (Gold does not), alternator, ECU, sensors, harness, accessories
 - **Transferable** to next owner, adds resale value
 - **Honoured at 3,600+ Mercury dealers** across the US and Canada
-- **HBW exclusive**: 10% off Platinum for customers who purchased their motor from HBW
+- **HBW exclusive**: 10% off Premier for customers who purchased their motor from HBW
 
 [Get a quote on /warranty](https://www.harrisboatworks.ca/warranty), transparent CAD pricing by HP and term.
 
@@ -29519,13 +29518,13 @@ Your new Mercury comes with a 3-year factory limited warranty against defects in
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
-Two tiers exist: **Gold** (mechanical failures only) and **Platinum** (mechanical + electrical + accessories). HBW sells Platinum exclusively. Here is why:
+Two tiers exist: **Gold** (mechanical failures only) and **Premier** (mechanical + electrical + accessories). HBW sells Premier exclusively. Here is why:
 
-**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Platinum does.
+**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Premier does.
 
 For the price difference between the two tiers (typically $200-$400 across most HP bands), Premier is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
 
-## What Platinum Actually Covers
+## What Premier Actually Covers
 
 **Engine internals (mechanical):**
 - Cylinder block, cylinder head, crankshaft, camshaft
@@ -29609,9 +29608,9 @@ We verify eligibility using your engine model and serial number. Takes about 10 
 
 Taxes and registration fees extra. Final pricing confirmed at registration with Mercury.
 
-**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Platinum coverage tier. This is our way of saying thanks for buying the motor here.
+**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Premier coverage tier. This is our way of saying thanks for buying the motor here.
 
-## When Platinum Makes Financial Sense
+## When Premier Makes Financial Sense
 
 The honest math:
 
@@ -29631,9 +29630,9 @@ For Ontario boaters who plan to keep their motor 5+ years, Premier almost always
 
 ## Transferability and Resale Value
 
-Platinum coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
+Premier coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
 
-A 5-year-old Mercury 150 HP with active Platinum coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
+A 5-year-old Mercury 150 HP with active Premier coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
 
 The motor must transfer to another recreational user (not commercial, not a dealer-purchased trade-in) for the warranty to follow it.
 
@@ -29662,7 +29661,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
 
 `,
     faqs: [
-      { question: 'What is the difference between Mercury Gold and Platinum coverage?', answer: 'Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Premier is the right call. HBW sells Platinum exclusively.' },
+      { question: 'What is the difference between Mercury Gold and Premier coverage?', answer: 'Gold covers mechanical failures only. Premier adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Premier is the right call. HBW sells Premier exclusively.' },
       { question: 'When do I need to buy Mercury Product Protection?', answer: 'Before your 3-year factory warranty expires. Once you have enrolled, the extended coverage takes over the day factory warranty ends. Mercury allows enrollment within 4 model years of the engine.' },
       { question: 'Is Mercury Product Protection transferable when I sell my boat?', answer: 'Yes. Transferable to a subsequent recreational-use buyer within 30 days of sale. Adds 10-15% to resale value because the new owner inherits ongoing factory protection.' },
       { question: 'What is the deductible?', answer: '$50 per claim.' },
@@ -29908,7 +29907,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![Three ways to store your boat on Rice Lake — at home DIY, HBW outdoor shrinkwrap, or indoor elsewhere, compared on cost and effort](/blog-visuals/boat-storage-3-ways-rice-lake.png)
+![Three ways to store your boat on Rice Lake: at home DIY, HBW outdoor shrinkwrap, or indoor elsewhere, compared on cost and effort](/blog-visuals/boat-storage-3-ways-rice-lake.png)
 
 ## What good boat storage actually includes
 
@@ -30341,7 +30340,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "What's the warranty on a Mercury Pro XS?",
-        answer: "Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Platinum coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Premier dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work."
+        answer: "Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Premier coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Premier dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work."
       },
       {
         question: "Does HBW finance repowers?",
@@ -31983,7 +31982,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
-![Why Peterborough boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
+![Why Peterborough boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
 ## The short answer for Peterborough boaters
 
@@ -32122,7 +32121,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
-![Why Cobourg boaters drive to Harris Boat Works — about 25 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-cobourg-worth-the-drive.png)
+![Why Cobourg boaters drive to Harris Boat Works: about 25 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-cobourg-worth-the-drive.png)
 
 ## Cobourg has Lake Ontario shoreline, but most local boating happens north
 
@@ -32259,7 +32258,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
-![Why Port Hope boaters drive to Harris Boat Works — about 30 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-port-hope-worth-the-drive.png)
+![Why Port Hope boaters drive to Harris Boat Works: about 30 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-port-hope-worth-the-drive.png)
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 
@@ -32399,7 +32398,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
-![Why Lindsay boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-lindsay-worth-the-drive.png)
+![Why Lindsay boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-lindsay-worth-the-drive.png)
 
 ## Lindsay is the Kawartha Lakes hub
 
@@ -32670,7 +32669,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
       { question: "What's the price difference between a 75 and a 90 FourStroke?", answer: "Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases." },
       { question: "Can I tow water-ski with a FourStroke?", answer: "Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama." },
       { question: "How do I match the prop to a new FourStroke?", answer: "Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed." },
-      { question: "Does Mercury warranty come with a new FourStroke?", answer: "Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) for details." },
+      { question: "Does Mercury warranty come with a new FourStroke?", answer: "Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Premier) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) for details." },
     ],
     content: `## Quick Answer
 
@@ -32841,7 +32840,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
       { question: "What's the most popular Pro XS in Ontario?", answer: "The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water." },
       { question: "Does Pro XS use the same powerhead as FourStroke?", answer: "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8." },
       { question: "Can I get Command Thrust on a Pro XS?", answer: "Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges." },
-      { question: "Does Pro XS warranty match FourStroke?", answer: "Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way." },
+      { question: "Does Pro XS warranty match FourStroke?", answer: "Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Premier) extension applies the same way." },
       { question: "Can I repower from a FourStroke to a Pro XS?", answer: "Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up." },
       { question: "Is Pro XS louder than FourStroke?", answer: "Slightly. Pro XS tuning produces a more \"sport\" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option." },
       { question: "Should I buy Pro XS new or used?", answer: "Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder." },
@@ -33900,7 +33899,7 @@ If the boat passes hull inspection, repower math almost always wins. Our [comple
 
 ## What does a typical Mercury repower include?
 
-When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. The current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for what that promo actually covers and when it reverts. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
+When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. Bonus warranty coverage applies only when an eligible promotion is active; confirm the live offer on our [promotions page](/promotions). Our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) explains the base warranty and optional protection. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
 
 ## How long will a repowered boat last and how do I decide?
 
@@ -36104,7 +36103,7 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
 
 Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
 
-![Mercury outboard dry weight by HP class — 9.9 HP 85 lb, 60 HP 247 lb, 115 HP 359 lb, 150 HP 455 lb, 250 V8 527 lb (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
+![Mercury outboard dry weight by HP class: 9.9 HP 85 lb, 60 HP 247 lb, 115 HP 359 lb, 150 HP 455 lb, 250 V8 527 lb (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
 
 *Last reviewed: 2026-06-22*
 

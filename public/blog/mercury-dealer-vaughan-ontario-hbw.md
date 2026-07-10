@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer vaughan","mercury repower vaughan","mercury outboard vaughan ontario","boat motor dealer vaughan woodbridge maple"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Vaughan Ontario HBW
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Vaughan boaters drive to Harris Boat Works — about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
+![Why Vaughan boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-vaughan-worth-the-drive.png)
 
 # Mercury Dealer for Vaughan: Why the Drive North Makes Sense
 

@@ -15,6 +15,7 @@ date_modified: 2026-05-16
 keywords: ["best marina rice lake ontario","rice lake marina","harris boat works","gores landing marina","mercury dealer rice lake","rice lake boat slips","rice lake boat launch","rice lake winter storage"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Rice Lake's Full-Service Marina Since 1947

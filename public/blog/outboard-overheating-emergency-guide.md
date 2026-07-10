@@ -15,6 +15,7 @@ date_modified: 2026-05-09
 keywords: ["outboard overheating what to do","Mercury outboard overheating","Mercury impeller replacement","tell-tale water stream weak","Rice Lake weed intake clog","outboard overheat alarm"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Overheating Emergency Guide

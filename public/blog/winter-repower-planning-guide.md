@@ -15,6 +15,7 @@ date_modified: 2026-04-27
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Winter Repower Planning: Get Ready for Spring

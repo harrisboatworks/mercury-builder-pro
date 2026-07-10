@@ -15,6 +15,7 @@ date_modified: 2026-05-28
 keywords: ["mercury command thrust pontoon eligibility","command thrust for pontoon","is command thrust worth it pontoon","mercury command thrust compatibility","tritoon command thrust eligibility","command thrust gearcase pontoon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Is Your Pontoon Eligible for Mercury Command Thrust? (2026)

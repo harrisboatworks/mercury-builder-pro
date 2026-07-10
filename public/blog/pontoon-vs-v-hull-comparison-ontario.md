@@ -15,6 +15,7 @@ date_modified: 2026-05-16
 keywords: ["pontoon vs v-hull","pontoon vs fishing boat ontario","pontoon boat ontario","v-hull boat comparison","which boat type ontario","rice lake boat type","legend pontoon vs legend v-hull"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Pontoon vs V-Hull, Honestly Compared for Ontario Boaters

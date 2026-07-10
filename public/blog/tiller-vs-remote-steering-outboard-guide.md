@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)

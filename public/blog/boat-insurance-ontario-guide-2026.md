@@ -15,6 +15,7 @@ date_modified: 2026-05-14
 keywords: ["boat insurance Ontario","marine insurance","boat insurance cost","liability coverage boats","agreed value boat insurance","Ontario boat liability","pleasure craft insurance"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Insurance in Ontario: What You Actually Need (2026)
@@ -151,7 +152,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
 
 - **Hit a deadhead and damage your prop shaft?** Insurance.
-- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Platinum, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
+- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Premier, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
 - **Boat stolen from your driveway?** Insurance.
 - **Lower unit gear failure at 3 years old?** Factory warranty (if still active) or extended warranty.
 

@@ -15,6 +15,7 @@ date_modified: 2026-05-15
 keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Toronto to Rice Lake: How HBW Drive-In Service Works

@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["boat trim explained rice lake ontario","boat trim explained rice lake ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Trim Explained Rice Lake

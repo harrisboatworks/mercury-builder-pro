@@ -15,6 +15,7 @@ date_modified: 2026-02-06
 keywords: ["boat rental rice lake","boat rental market 2026","boat club vs ownership","rice lake boat rental","harris boat works rentals"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Rentals Shared Access 2026 Ontario

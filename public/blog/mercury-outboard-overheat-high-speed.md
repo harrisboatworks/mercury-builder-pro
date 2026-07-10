@@ -15,6 +15,7 @@ date_modified: 2026-06-29
 keywords: ["Mercury outboard overheating at high speed","Mercury overheat alarm high RPM","poppet valve Mercury overheating","outboard overheats at speed not idle","Mercury water pump impeller"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Overheating at High Speed: What to Check

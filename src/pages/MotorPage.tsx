@@ -412,7 +412,7 @@ export default function MotorPage() {
                     {motor.start_type && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Start</th><td className="py-2">{motor.start_type}</td></tr>}
                     {motor.control_type && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Control</th><td className="py-2">{motor.control_type}</td></tr>}
                     {modelNo && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Model #</th><td className="py-2">{modelNo}</td></tr>}
-                    <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Warranty</th><td className="py-2">3-year factory + bonus coverage available (up to 7 years)</td></tr>
+                    <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Warranty</th><td className="py-2">3-year factory warranty; bonus coverage only while an eligible promotion is active</td></tr>
                     <tr><th scope="row" className="text-left py-2 pr-4 font-medium">Pickup</th><td className="py-2">Gores Landing, ON (no shipping)</td></tr>
                   </tbody>
                 </table>

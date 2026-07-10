@@ -15,6 +15,7 @@ date_modified: 2026-05-25
 keywords: ["mercury kicker setup","mercury 9.9 prokicker","mercury avator kicker","main and kicker pairing","bow electric trolling motor","tie bar steering","kicker bracket installation"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Main + Trolling Motor: How to Pair Them

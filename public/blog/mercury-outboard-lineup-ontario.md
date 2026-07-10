@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["mercury outboard lineup","mercury 2027 outboards","mercury outboard models ontario","mercury fourstroke vs pro xs","mercury dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)

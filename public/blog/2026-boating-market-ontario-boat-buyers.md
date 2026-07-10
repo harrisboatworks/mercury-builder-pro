@@ -15,6 +15,7 @@ date_modified: 2026-02-06
 keywords: ["2026 boating market","ontario boat buying","boat market forecast","luxury tax boats canada","boat dealer inventory","used boat market"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)

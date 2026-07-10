@@ -15,6 +15,7 @@ date_modified: 2026-05-09
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Trent-Severn Waterway 2026 Guide

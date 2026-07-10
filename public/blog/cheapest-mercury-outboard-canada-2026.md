@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Cheapest Mercury Outboards in Canada (2026)

@@ -15,6 +15,7 @@ date_modified: 2026-05-15
 keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V6","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Pro XS Repower for Rice Lake & Kawartha Anglers
@@ -226,7 +227,7 @@ Often yes, but the transom and stringers have to be sound. We see a lot of 1990s
 
 ### What's the warranty on a Mercury Pro XS?
 
-Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Platinum coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Premier dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work.
+Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Premier coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Premier dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work.
 
 ### Does HBW finance repowers?
 

@@ -15,6 +15,7 @@ date_modified: 2026-05-27
 keywords: ["mercury repower eligibility","is my boat worth repowering","transom inspection","boat capacity plate","mercury repower cost ontario","repower vs buy new","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Repower Eligibility: 5-Check Guide

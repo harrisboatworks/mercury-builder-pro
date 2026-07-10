@@ -154,8 +154,8 @@ Programmatic quotes: \`POST ${PUBLIC_QUOTE_API}\`
 
 ## Notes
 
-- Financing available on totals over $5,000 CAD (tiered: 8.99% under $10K, 7.99% over $10K).
-- Standard 3-year Mercury factory warranty; up to 7 years available on select promotions.
+- Financing is available on eligible totals over $5,000 CAD. Confirm the current rate and terms at https://www.mercuryrepower.ca/promotions.
+- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
 `;
 }

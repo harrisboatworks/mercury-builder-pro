@@ -15,6 +15,7 @@ date_modified: 2026-05-23
 keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury Product Protection MPP","Mercury corrosion warranty","Mercury warranty transfer used motor","Mercury warranty Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Warranty Canada 2026
@@ -29,7 +30,7 @@ content_type: blog_article
 
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions). Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance.
+> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires registered ownership and service-interval compliance.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
@@ -37,7 +38,7 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ---
 
-![Mercury outboard warranty in Canada — 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
+![Mercury outboard warranty in Canada: 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
 
 ## The Two Standard Warranties (Both 3 Years, Both Start Day One)
 
@@ -49,7 +50,7 @@ Every new Mercury outboard sold in Canada includes:
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Mercury's the floor of the category, not the ceiling. On top of the 3-year factory base, as of July 2026 the current HBW Exclusive promotion brings total factory-backed coverage to 7 years (3 standard + 4 free extension) on every eligible new Mercury outboard purchased through December 31, 2026, after which the bonus years revert to the 3-year standard. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for what that promo actually covers and when it reverts.
+That said, three years of full Mercury factory coverage is genuinely excellent for the marine industry. Most competing brands offer two to three years on similar terms. Bonus warranty promotions sometimes extend that base for eligible purchases, but those offers are time-limited. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
 
 ---
 
@@ -249,7 +250,7 @@ Not directly. But if Mercury determines a fuel-system failure was caused by etha
 ## Related guides
 
 - [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
-- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Platinum extended coverage
+- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Premier extended coverage
 
 ## Next steps
 

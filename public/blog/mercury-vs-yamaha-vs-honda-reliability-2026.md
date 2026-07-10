@@ -15,6 +15,7 @@ date_modified: 2026-05-27
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury vs Yamaha vs Honda: Reliability 2026
@@ -41,7 +42,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Ontario dealer density (Kawarthas + GTA) | High | Moderate | Lower |
 | Freshwater reputation | Excellent | Excellent | Excellent |
 | Standard warranty | 3 years | 3 years | 3 years |
-| Extended warranty program | Mercury Product Protection (Gold / Platinum) | Yamaha YES | Honda Protection Plan |
+| Extended warranty program | Mercury Product Protection (Gold / Premier) | Yamaha YES | Honda Protection Plan |
 | SmartCraft / digital integration | Yes (current/full lineup) | Yes (proprietary) | Yes (proprietary) |
 | Software upgrade roadmap (Boost-style retrofits) | Yes | Limited | Limited |
 | Parts shelf availability (Ontario) | Strong | Strong | Moderate |

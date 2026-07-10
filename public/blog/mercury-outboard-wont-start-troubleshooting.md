@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)
@@ -31,7 +32,7 @@ content_type: blog_article
 
 Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Call HBW at 905-342-2153.
 
-![Mercury outboard won't start — dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
+![Mercury outboard won't start: dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 

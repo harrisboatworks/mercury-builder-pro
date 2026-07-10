@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Common Pontoon Problems on Rice Lake

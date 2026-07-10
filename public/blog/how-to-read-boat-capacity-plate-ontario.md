@@ -15,6 +15,7 @@ date_modified: 2026-05-16
 keywords: ["boat capacity plate","capacity plate ontario","transport canada compliance notice","boat maximum horsepower","boat capacity decoder","boat hin number","used boat inspection ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # How to Read Your Boat's Capacity Plate (Ontario Guide)

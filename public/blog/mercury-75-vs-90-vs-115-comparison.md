@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)
@@ -33,7 +34,7 @@ content_type: blog_article
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
 
-![Mercury 75 vs 90 vs 115 HP outboard comparison — best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+![Mercury 75 vs 90 vs 115 HP outboard comparison: best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
 
 *Same 2.1L block. Same 359 lb. The difference is fit.*
 

@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Trailering Mistakes to Avoid, Ontario

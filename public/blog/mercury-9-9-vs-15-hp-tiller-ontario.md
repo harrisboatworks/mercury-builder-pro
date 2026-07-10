@@ -15,6 +15,7 @@ date_modified: 2026-05-18
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 9.9 vs 15 HP Tiller for Ontario

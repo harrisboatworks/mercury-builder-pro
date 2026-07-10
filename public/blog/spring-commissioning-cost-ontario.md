@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["spring commissioning cost","boat spring startup cost ontario","de-winterize boat cost","spring boat service ontario","boat launch preparation cost"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)

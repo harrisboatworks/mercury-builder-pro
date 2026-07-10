@@ -15,6 +15,7 @@ date_modified: 2026-05-10
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Outdoor Boat Storage Rice Lake

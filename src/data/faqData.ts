@@ -159,7 +159,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'What is Mercury\'s warranty on new outboards?',
-        answer: 'New Mercury outboard motors come with a standard 3-year limited warranty covering defects in materials and workmanship. Right now, when you buy any new Mercury from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, no third-party insurance, just straight Mercury protection from a Premier Dealer (Mercury dealer since 1965). Check <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> or contact us for details.'
+        answer: 'New Mercury outboard motors come with a standard 3-year limited warranty covering defects in materials and workmanship. Bonus warranty coverage applies only while an eligible promotion is active. Check <a href="https://www.mercuryrepower.ca/promotions" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">the current promotions page</a> or contact us for the live terms.'
       },
       {
         question: 'Where are Mercury outboards made?',

@@ -15,6 +15,7 @@ date_modified: 2026-05-10
 keywords: ["mercury 115 hp review","mercury 115 hp fourstroke","mercury 115 elpt ontario","mercury 115 ct command thrust","115 hp pontoon","mercury 115 vs 150","mercury 115 fourstroke vs proxs"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 115 HP FourStroke Review
@@ -198,7 +199,7 @@ With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is th
 
 ### What's the warranty?
 
-3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
+3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
 
 ### Is the 115 fuel injected?
 

@@ -15,6 +15,7 @@ date_modified: 2026-05-10
 keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Where to Launch Boat on Rice Lake

@@ -15,6 +15,7 @@ date_modified: 2026-05-24
 keywords: ["best time to buy boat motor","when to buy mercury outboard","year end boat motor deals","boat motor buying calendar ontario","winter boat motor pricing"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Time to Buy Boat Motor Ontario
@@ -65,7 +66,7 @@ The calendar isn't random. Each window reflects something real about how Mercury
 
 **Trade values through the calendar.** Used outboard trade values are stronger in the buying months (spring to early summer) when private resale demand peaks. They soften slightly in winter, maybe 5-10% on most HP classes, because the resale market quiets. The HST savings on the trade work the same way year-round.
 
-**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). HBW's 7-year warranty bonus is active year-round, not seasonal.
+**Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Bonus warranty programs are time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
 
 ## What Year-End Specifically Looks Like at HBW
 
@@ -90,7 +91,7 @@ These are the patterns we see across hundreds of repower conversations a year.
 - **Waiting until April to "see what's available."** By April, the popular HP classes are spoken for through opener. You can still buy, but the install slot is the constraint, not the motor.
 - **Chasing a perfect deal indefinitely.** The customer who waited 18 months for a $1,500 closeout missed two summers of running the boat. The math on lost lake time rarely beats the savings.
 - **Treating "spring" as one big window.** March is not the same as May. The earlier in spring you buy, the better the slot and the cleaner the trade. By May, you're in crisis-install territory.
-- **Underestimating the 7-year warranty value.** The HBW 7-year program adds real long-term value that doesn't show up in the upfront price. A motor with 7 years of cover-everything coverage costs more total over the life of the boat without it.
+- **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Bonus coverage can add value when an eligible promotion is active, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
 - **Ignoring the trade math.** The HST savings on the trade-in scale with the new motor price. Bigger motor, bigger HST savings. Customers who buy the small motor "to save money" sometimes leave more on the table in HST than they save in cash.
 
 ## Pricing and Install Timing Together: The Two Levers
@@ -145,7 +146,7 @@ It can. If you wait until August, you might catch a 2026 closeout discount or ge
 
 ### What's actually negotiable on a new Mercury purchase?
 
-The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. The HBW 7-year warranty bonus is included on every new Mercury we sell, no negotiation needed. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
+The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
 
 ### Should I wait for the Toronto International Boat Show?
 
@@ -155,9 +156,9 @@ Depends on what you're hoping to find. The show is good for browsing the full li
 
 We book spring install slots from October onward. The booking is tied to your quote and a deposit. Our shop is closed roughly December 1 to April 1, but we order motors and lock pricing all winter. As soon as we reopen in early April we begin install and water-test work in the order quotes were booked. By opener, your boat is ready to go. The customers who book in October typically get the slot they want. The customers who book in March take whatever slot is left.
 
-### Does the HBW 7-year warranty bonus depend on when I buy?
+### Does bonus warranty coverage depend on when I buy?
 
-No. As of July 2026, the 7-year program (Mercury's 3-year factory + HBW's 4-year free extension) applies to every eligible new Mercury we sell through December 31, 2026, regardless of when in the year you buy. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions). Full details: Mercury 7-Year Warranty: HBW Exclusive Explained.
+Yes. Mercury's standard Canadian warranty is 3 years. Bonus warranty coverage applies only when the purchase and motor meet an active promotion's dates and eligibility rules. Confirm current terms at [current promotions](https://www.mercuryrepower.ca/promotions).
 
 ## Related guides
 

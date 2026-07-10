@@ -15,6 +15,7 @@ date_modified: 2026-04-22
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Ontario Boating Season Tips 2026

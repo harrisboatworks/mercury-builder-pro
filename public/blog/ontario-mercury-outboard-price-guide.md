@@ -15,6 +15,7 @@ date_modified: 2026-06-02
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Prices Ontario (2026): CAD Guide
@@ -33,7 +34,7 @@ Mercury outboard pricing in Ontario depends on horsepower, controls, prop, riggi
 
 > **Quick estimate:** Try our Repower Cost Estimator for your specific HP and setup. Free, instant CAD ballpark.
 
-![Mercury outboard from-prices at Harris Boat Works — 75, 90, 115, 150 and 250 HP starting prices in writing](/blog-visuals/mercury-from-prices-hbw-ontario.png)
+![Mercury outboard from-prices at Harris Boat Works: 75, 90, 115, 150 and 250 HP starting prices in writing](/blog-visuals/mercury-from-prices-hbw-ontario.png)
 
 ## Pricing by HP category
 
@@ -134,7 +135,7 @@ Mercury Canada runs promotions through the season: spring repower season (March-
 
 Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see the financing guide for terms.
 
-Mercury's standard warranty in Canada is 3 years, concurrent. Promo terms change, but as of July 2026 HBW's current offer is 7 years total coverage (3 standard + 4 free extension) through December 31, 2026. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
+Mercury's standard warranty in Canada is 3 years, concurrent. Bonus warranty terms change and apply only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
 ## About the author
 
@@ -180,7 +181,7 @@ Sometimes the headline price looks lower. But cross-border duty, brokerage, ship
 
 ### How long is the Mercury warranty?
 
-Standard is 3 years, concurrent, in Canada. Promo terms change, but as of July 2026 HBW's current offer is 7 years total coverage (3 standard + 4 free) through December 31, 2026. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
+Standard is 3 years, concurrent, in Canada. Bonus coverage applies only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
 ### Can I order any model, or only what's in stock?
 

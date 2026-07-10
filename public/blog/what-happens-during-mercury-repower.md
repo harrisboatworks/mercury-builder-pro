@@ -15,6 +15,7 @@ date_modified: 2026-06-12
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # What Happens During a Mercury Repower (Step-by-Step Process)
@@ -31,7 +32,7 @@ content_type: blog_article
 
 ---
 
-![What happens during a Mercury repower at Harris Boat Works — six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
+![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water sea trial, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
 
 ## Quick Answer
 

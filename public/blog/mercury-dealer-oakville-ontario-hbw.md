@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer oakville","mercury repower oakville","mercury outboard oakville ontario","boat motor service oakville"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Oakville Ontario HBW
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Oakville boaters drive to Harris Boat Works — about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oakville-worth-the-drive.png)
+![Why Oakville boaters drive to Harris Boat Works: about 110 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oakville-worth-the-drive.png)
 
 # Mercury Dealer for Oakville: The Drive That Makes Sense When the Answers Get Clearer
 

@@ -15,6 +15,7 @@ date_modified: 2026-05-27
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)

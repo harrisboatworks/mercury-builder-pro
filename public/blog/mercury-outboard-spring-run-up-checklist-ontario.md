@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Spring Run-Up Checklist

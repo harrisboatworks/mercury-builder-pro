@@ -15,6 +15,7 @@ date_modified: 2026-07-03
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them

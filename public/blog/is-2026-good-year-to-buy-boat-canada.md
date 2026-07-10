@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["buy boat canada 2026","boat market canada","best time to buy boat"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Is 2026 a Good Year to Buy a Boat in Canada?

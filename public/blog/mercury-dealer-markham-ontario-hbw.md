@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer markham","mercury repower markham","mercury outboard markham ontario","boat motor dealer markham","harris boat works markham customers"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Markham Ontario HBW
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Markham boaters drive to Harris Boat Works — about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
+![Why Markham boaters drive to Harris Boat Works: about 70 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-markham-worth-the-drive.png)
 
 # Why Markham Customers Make the Drive to Rice Lake
 

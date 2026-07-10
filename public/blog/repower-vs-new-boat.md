@@ -15,6 +15,7 @@ date_modified: 2026-06-12
 keywords: ["repower vs new boat","mercury repower math","should i repower or buy new","repower cost ontario","hull worth repowering","transom rebuild cost"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Repower vs Buy New Boat: The Honest Math
@@ -87,7 +88,7 @@ If the boat passes hull inspection, repower math almost always wins. Our [comple
 
 ## What does a typical Mercury repower include?
 
-When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. The current HBW Exclusive promotion brings total factory-backed coverage to 7 years on every new Mercury outboard purchased through June 14, 2026, after which the bonus years revert to the 3-year standard. See our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for what that promo actually covers and when it reverts. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
+When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. Bonus warranty coverage applies only when an eligible promotion is active; confirm the live offer on our [promotions page](/promotions). Our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) explains the base warranty and optional protection. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
 
 ## How long will a repowered boat last and how do I decide?
 

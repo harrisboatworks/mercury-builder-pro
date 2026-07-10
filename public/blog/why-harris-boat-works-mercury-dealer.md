@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["mercury dealer ontario","harris boat works","mercury outboard dealer","mercury sales peterborough","trusted boat dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Harris Boat Works Mercury Dealer Ontario

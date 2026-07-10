@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["mercury outboard financing Ontario","boat repower financing Ontario","finance boat motor Ontario","mercury financing rate 2026","mercury outboard monthly payment"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Financing Ontario (2026): Rates
@@ -116,7 +117,7 @@ If you're not sure, the pre-qualification is free and fast and doesn't commit yo
 
 ## Financing and your warranty stack together
 
-Worth knowing, because people assume it's either/or: our financing and our extended-coverage offers are separate programs. You can finance the motor and take the current extended warranty (we almost always have one running, like the 7-year coverage offer). One doesn't cancel the other. Ask us to put both on the quote.
+Worth knowing, because people assume it's either/or: financing and bonus-coverage offers are separate programs. If an eligible bonus-warranty promotion is active, financing does not automatically cancel it, but the terms of both offers still control. Ask us to confirm every active benefit on the quote.
 
 ## Common mistakes
 

@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Mercury for Aluminum Boats 2026

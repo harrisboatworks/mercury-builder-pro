@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Outboard vs Sterndrive 2026 Ontario

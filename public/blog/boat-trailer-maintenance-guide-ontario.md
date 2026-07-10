@@ -15,6 +15,7 @@ date_modified: 2026-05-14
 keywords: ["boat trailer maintenance","trailer bearings","boat trailer Ontario","trailer service cost","trailer bearing repack","ST tires","boat trailer brakes","trailer winterization"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Trailer Maintenance Ontario

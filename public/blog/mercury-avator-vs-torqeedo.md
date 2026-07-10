@@ -15,6 +15,7 @@ date_modified: 2026-07-04
 keywords: ["mercury avator vs torqeedo","electric outboard comparison ontario","avator torqeedo","electric outboard dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Avator vs Torqeedo Ontario

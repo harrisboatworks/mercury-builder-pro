@@ -15,6 +15,7 @@ date_modified: 2026-06-22
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Weight Chart (2.5 to 300 HP)
@@ -31,7 +32,7 @@ content_type: blog_article
 
 Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
 
-![Mercury outboard dry weight by HP class — 9.9 HP 85 lb, 60 HP 247 lb, 115 HP 359 lb, 150 HP 455 lb, 250 V8 527 lb (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
+![Mercury outboard dry weight by HP class: 9.9 HP 85 lb, 60 HP 247 lb, 115 HP 359 lb, 150 HP 455 lb, 250 V8 527 lb (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
 
 ## Mercury Outboard Weight Chart: 2.5 to 300 HP
 

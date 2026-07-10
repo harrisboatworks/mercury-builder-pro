@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["spring boat commissioning","outboard commissioning","spring boat startup","mercury spring maintenance","boat season prep"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Spring Outboard Commissioning Checklist (2026 Ontario)

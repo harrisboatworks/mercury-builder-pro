@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury FourStroke Buyer Guide for Ontario (2026)
@@ -208,7 +209,7 @@ Prop matching is part of the install. The right prop depends on hull, weight, in
 
 ### Does Mercury warranty come with a new FourStroke?
 
-Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Platinum) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) for details.
+Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Premier) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) for details.
 
 ## Related guides
 

@@ -15,6 +15,7 @@ date_modified: 2026-06-06
 keywords: ["repower pontoon","repower aluminum fishing boat","repower v-hull","mercury repower hull types","rice lake repower"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Pontoon vs Aluminum vs V-Hull Repower

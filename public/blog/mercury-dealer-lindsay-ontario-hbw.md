@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury dealer lindsay","kawartha lakes mercury","lindsay mercury premier","sturgeon lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Lindsay Ontario HBW
@@ -33,7 +34,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
-![Why Lindsay boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-lindsay-worth-the-drive.png)
+![Why Lindsay boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-lindsay-worth-the-drive.png)
 
 ## Lindsay is the Kawartha Lakes hub
 

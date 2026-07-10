@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # How to Break In a New Mercury Outboard (10-Hour Guide)

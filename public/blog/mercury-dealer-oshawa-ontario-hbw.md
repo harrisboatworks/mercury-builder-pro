@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer oshawa","mercury repower oshawa","mercury outboard oshawa ontario","boat motor service durham region oshawa"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer for Oshawa: 40 Minutes to Rice Lake
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Oshawa boaters drive to Harris Boat Works — about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
+![Why Oshawa boaters drive to Harris Boat Works: about 40 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-oshawa-worth-the-drive.png)
 
 # Mercury Dealer for Oshawa: We're Basically Durham Region
 

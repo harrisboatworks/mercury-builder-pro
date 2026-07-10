@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # First Time Renting a Boat? What We Tell Every Renter at Our Dock
