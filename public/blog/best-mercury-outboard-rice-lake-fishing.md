@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["rice lake fishing guide","rice lake walleye","rice lake fishing regulations 2026","rice lake muskie","mercury 9.9 prokicker walleye","best mercury outboard rice lake fishing"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Mercury for Rice Lake Fishing 2026

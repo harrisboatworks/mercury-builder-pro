@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth","boat motor trade in value Canada","trade in old outboard for repower","outboard trade vs private sale"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Outboard Trade-In Value in Ontario (2026)

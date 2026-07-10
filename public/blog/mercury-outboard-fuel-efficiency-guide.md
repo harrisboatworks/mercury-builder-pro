@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Fuel Economy: How to Get Better MPG

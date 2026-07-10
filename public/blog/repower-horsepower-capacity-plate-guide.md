@@ -15,6 +15,7 @@ date_modified: 2026-06-06
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Capacity Plate and Repower HP: What's Allowed

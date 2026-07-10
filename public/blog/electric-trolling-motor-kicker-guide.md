@@ -15,6 +15,7 @@ date_modified: 2026-05-07
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Electric Trolling Motor vs Kicker Guide

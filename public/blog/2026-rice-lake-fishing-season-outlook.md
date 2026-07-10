@@ -15,6 +15,7 @@ date_modified: 2026-05-23
 keywords: ["rice lake fishing","rice lake fishing guide 2026","rice lake walleye","rice lake bass fishing","rice lake muskie fishing","FMZ 17 fishing regulations","rice lake ontario fishing"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Rice Lake Ontario Fishing Guide 2026

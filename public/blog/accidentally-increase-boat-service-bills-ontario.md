@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["accidentally increase boat service bills ontario","accidentally increase boat service bills ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Avoid Bigger Service Bills Ontario

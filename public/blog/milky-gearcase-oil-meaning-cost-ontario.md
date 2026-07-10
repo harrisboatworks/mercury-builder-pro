@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)

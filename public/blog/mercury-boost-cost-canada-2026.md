@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["Mercury Boost","Mercury Boost worth it","Mercury Boost cost","Pro XS Boost","Verado Boost","Mercury Boost software"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Boost Cost Canada 2026

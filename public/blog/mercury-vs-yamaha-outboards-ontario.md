@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["Mercury vs Yamaha outboard","Mercury vs Yamaha Ontario","Mercury or Yamaha which is better","Yamaha to Mercury repower","best outboard motor Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury vs Yamaha Outboards: Honest Comparison

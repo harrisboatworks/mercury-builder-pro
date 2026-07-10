@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer whitby","mercury repower whitby","mercury outboard whitby ontario","boat motor service durham region"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Whitby boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
+![Why Whitby boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-whitby-worth-the-drive.png)
 
 # Mercury Dealer for Whitby: Short Drive, Long Relationship
 

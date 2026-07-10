@@ -15,6 +15,7 @@ date_modified: 2026-05-19
 keywords: ["mercury outboard ordering process","how to order mercury","mercury repower timeline","ordering outboard motor","mercury installation process"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Ordering Your Mercury: What to Expect

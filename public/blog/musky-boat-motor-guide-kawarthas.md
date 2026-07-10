@@ -15,6 +15,7 @@ date_modified: 2026-04-06
 keywords: ["musky boat motor","kawartha musky fishing","musky boat setup","mercury for musky","musky fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Motors for Kawartha Musky Fishing

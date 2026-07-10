@@ -15,6 +15,7 @@ date_modified: 2026-05-04
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Pontoon Boats for Rice Lake Cottage Use (2026)

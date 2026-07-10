@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Bad Used Boats to Avoid Ontario

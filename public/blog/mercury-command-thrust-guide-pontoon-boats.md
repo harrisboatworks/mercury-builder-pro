@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury command thrust","command thrust pontoon","mercury gearcase","pontoon repower","mercury fourstroke pontoon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Command Thrust on a Pontoon: Worth the Money?

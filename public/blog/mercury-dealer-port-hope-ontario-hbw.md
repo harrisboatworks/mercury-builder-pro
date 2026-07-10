@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury dealer port hope","port hope mercury outboard","ganaraska mercury dealer","northumberland mercury premier"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake
@@ -33,7 +34,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice La
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
-![Why Port Hope boaters drive to Harris Boat Works — about 30 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-port-hope-worth-the-drive.png)
+![Why Port Hope boaters drive to Harris Boat Works: about 30 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-port-hope-worth-the-drive.png)
 
 ## Port Hope has the Ganaraska River and Lake Ontario, but most local boating happens inland
 

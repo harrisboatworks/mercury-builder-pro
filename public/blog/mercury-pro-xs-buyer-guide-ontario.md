@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury pro xs buyer guide","mercury pro xs ontario","mercury pro xs pricing","mercury performance outboard"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Pro XS Buyer Guide for Ontario (2026)
@@ -176,7 +177,7 @@ Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Hig
 
 ### Does Pro XS warranty match FourStroke?
 
-Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Platinum) extension applies the same way.
+Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Premier) extension applies the same way.
 
 ### Can I repower from a FourStroke to a Pro XS?
 

@@ -15,6 +15,7 @@ date_modified: 2026-06-02
 keywords: ["Harris Boat Works since 1947","third generation marina Ontario","historic Rice Lake marina","trusted boat dealer Ontario","family marina since 1947","Mercury dealer history Canada"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Harris Boat Works: On Rice Lake Since 1947

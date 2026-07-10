@@ -15,6 +15,7 @@ date_modified: 2026-07-04
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury DTS vs Mechanical Ontario

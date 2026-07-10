@@ -15,6 +15,7 @@ date_modified: 2026-05-23
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury ProKicker for Rice Lake Walleye

@@ -15,6 +15,7 @@ date_modified: 2026-06-19
 keywords: ["Evinrude to Mercury repower","Evinrude to Mercury conversion","replace Evinrude outboard Ontario","Evinrude discontinued repower","Evinrude E-TEC repower"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Evinrude to Mercury Repower: The Ontario Guide (2026)

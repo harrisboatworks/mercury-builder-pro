@@ -15,6 +15,7 @@ date_modified: 2026-05-30
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury SmartCraft Connect Guide 2026

@@ -14,9 +14,16 @@ const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
+const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
 const shellPath = (path) => JSON.stringify(path);
 const runTsx = (file, options = {}) => execSync(`${shellPath(TSX_BIN)} ${shellPath(file)}`, {
+  cwd: ROOT,
+  encoding: 'utf8',
+  timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
+  ...options,
+});
+const runViteNode = (file, options = {}) => execSync(`${shellPath(VITE_NODE_BIN)} ${shellPath(file)}`, {
   cwd: ROOT,
   encoding: 'utf8',
   timeout: BUILD_SUBPROCESS_TIMEOUT_MS,
@@ -78,6 +85,45 @@ function loadBlogArticles() {
   writeFileSync(tmpFile, dumpScript);
   try {
     return JSON.parse(runTsx(tmpFile, { maxBuffer: 64 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
+function loadLocalizedBlogArticles() {
+  const dumpScript = `
+    import { frenchBlogArticles } from '../src/data/frenchBlogArticles.ts';
+    import { koreanBlogArticles } from '../src/data/koreanBlogArticles.ts';
+    import { mandarinBlogArticles } from '../src/data/mandarinBlogArticles.ts';
+    import { spanishBlogArticles } from '../src/data/spanishBlogArticles.ts';
+    import { punjabiBlogArticles } from '../src/data/punjabiBlogArticles.ts';
+    import { urduBlogArticles } from '../src/data/urduBlogArticles.ts';
+    import { tagalogBlogArticles } from '../src/data/tagalogBlogArticles.ts';
+    import { hindiBlogArticles } from '../src/data/hindiBlogArticles.ts';
+    import { getCleanDescription } from '../src/lib/strip-markdown.ts';
+
+    const todayYmd = new Date().toISOString().slice(0, 10);
+    const visible = (a) => a && a.slug && a.hidden !== true && a.visible !== false &&
+      String(a.publishDate || a.datePublished || '').slice(0, 10) <= todayYmd;
+    const clean = (items) => (items || []).filter(visible).map(a => ({
+      ...a,
+      description: getCleanDescription(a),
+    }));
+    process.stdout.write(JSON.stringify([
+      { prefix: 'fr', language: 'fr-CA', articles: clean(frenchBlogArticles) },
+      { prefix: 'ko', language: 'ko-KR', articles: clean(koreanBlogArticles) },
+      { prefix: 'zh', language: 'zh-CN', articles: clean(mandarinBlogArticles) },
+      { prefix: 'es', language: 'es', articles: clean(spanishBlogArticles) },
+      { prefix: 'pa', language: 'pa', articles: clean(punjabiBlogArticles) },
+      { prefix: 'ur', language: 'ur', articles: clean(urduBlogArticles) },
+      { prefix: 'tl', language: 'tl', articles: clean(tagalogBlogArticles) },
+      { prefix: 'hi', language: 'hi', articles: clean(hindiBlogArticles) },
+    ]));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.localized-blog-twins-dump.ts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runViteNode(tmpFile, { maxBuffer: 64 * 1024 * 1024 }));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
@@ -264,7 +310,7 @@ function motorBestFit(family, hp) {
   if (family === 'Pro XS') return 'Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.';
   if (family === 'SeaPro') return 'Commercial users, guides, and high-hour applications where a heavier-duty drivetrain matters.';
   if (family === 'Racing') return 'Specialty performance and competition use only. Confirm rigging compatibility with dealer.';
-  if (family === 'Verado') return 'Larger center-consoles and powerboats where supercharged smoothness is preferred. Special-order only.';
+  if (family === 'Verado') return 'Larger center-consoles and powerboats where quiet, refined naturally aspirated power is preferred. Special-order only.';
   if (hp <= 9.9) return 'Small tenders, canoes, sailboat kickers, and very light fishing setups.';
   if (hp <= 30) return 'Small aluminum fishing boats, jon boats, and light tiller setups.';
   if (hp <= 60) return 'Mid-size aluminum fishing boats 14–18 ft and small pontoons.';
@@ -277,7 +323,7 @@ function motorNotIdeal(family, hp) {
   if (family === 'Pro XS') return 'Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.';
   if (family === 'SeaPro') return 'Recreational-only owners with light annual hours: FourStroke offers better value for typical use.';
   if (family === 'Racing') return 'Any general recreational use, these are not appropriate for typical pontoons, fishing, or family boats.';
-  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path: Verado is supercharged and special-order only.';
+  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path: Verado is premium, naturally aspirated, and special-order only.';
   if (hp <= 9.9) return 'Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.';
   if (hp <= 30) return 'Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.';
   if (hp <= 60) return 'Heavy pontoons over 22 ft or fiberglass family boats, consider 90–115 HP.';
@@ -369,8 +415,8 @@ function motorMarkdown(m) {
     '## Notes',
     '',
     isVerado ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.' : null,
-    '- Financing available on totals over $5,000 CAD (tiered: 8.99% under $10K, 7.99% over $10K).',
-    '- Standard 3-year Mercury factory warranty; up to 7 years available on select promotions.',
+    `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
+    '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
@@ -582,7 +628,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
     '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
-    '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
+    `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
     '## What we do NOT offer (negative definitions)',
@@ -726,8 +772,8 @@ function renderRelatedGuidesMarkdown(slug, contentMarkdown, clusterData) {
   return lines.join('\n');
 }
 
-function blogMarkdown(article, clusterData) {
-  const url = `${SITE_URL}/blog/${article.slug}`;
+function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'en-CA') {
+  const url = `${SITE_URL}${routePrefix}/${article.slug}`;
   const extra = [
     `title: ${JSON.stringify(article.title)}`,
     `description: ${JSON.stringify(article.description)}`,
@@ -737,6 +783,7 @@ function blogMarkdown(article, clusterData) {
     `keywords: ${JSON.stringify(article.keywords || [])}`,
     `author: Harris Boat Works`,
     `content_type: blog_article`,
+    `language: ${language}`,
   ];
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const faqBlock = faqs.length
@@ -750,7 +797,7 @@ function blogMarkdown(article, clusterData) {
 
 
   return [
-    mdFrontmatter(`/blog/${article.slug}.md`, extra, lastUpdated),
+    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated),
     `# ${article.title}`,
     '',
     `> ${article.description}`,
@@ -1023,9 +1070,9 @@ function cleanMarkdownDir(relDir) {
   const dir = join(PUBLIC, relDir);
   if (!existsSync(dir)) return;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (entry.isFile() && entry.name.endsWith('.md')) {
-      rmSync(join(dir, entry.name), { force: true });
-    }
+    const entryPath = join(dir, entry.name);
+    if (entry.isDirectory()) cleanMarkdownDir(join(relDir, entry.name));
+    else if (entry.isFile() && entry.name.endsWith('.md')) rmSync(entryPath, { force: true });
   }
 }
 
@@ -1048,6 +1095,7 @@ const motorRecords = await loadMotors();
 // (both in-stock and available-to-order motors), not just public-motors-api.
 const quoteBuilderMotorRecords = await loadAllQuoteBuilderMotors();
 const blogArticlesAll = loadBlogArticles();
+const localizedBlogGroups = loadLocalizedBlogArticles();
 
 rmSync(join(PUBLIC, 'catalog.md'), { force: true });
 for (const dir of ['motors', 'case-studies', 'locations', 'blog']) {
@@ -1092,6 +1140,14 @@ for (const article of blogArticlesAll) {
   writePublicMd(path, blogMarkdown(article, blogClusterData));
   blogTwinSummaries.push({ path, title: article.title });
 }
+
+for (const group of localizedBlogGroups) {
+  for (const article of group.articles) {
+    const path = `/blog/${group.prefix}/${article.slug}.md`;
+    writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
+    blogTwinSummaries.push({ path, title: `${article.title} [${group.language}]` });
+  }
+}
 // Note: previously a curated BLOG_TWIN_SLUGS sanity check ran here. Removed
 // because every sitemap-eligible article now generates a twin above.
 console.log(`[markdown-twins] wrote ${blogTwinSummaries.length} blog twins`);
@@ -1134,6 +1190,9 @@ if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample mo
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
 if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+const localizedTwinSummaries = blogTwinSummaries.filter(t => /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\//.test(t.path));
+if (localizedTwinSummaries.length === 0) throw new Error('[markdown-twins] Refusing build with zero localized blog twins');
+verifyPublicMd(localizedTwinSummaries[0].path, 'sample localized blog twin', ['canonical:', 'language:', 'content_type: blog_article', '## Next steps']);
 
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {

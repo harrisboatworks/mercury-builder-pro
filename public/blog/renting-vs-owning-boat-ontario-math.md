@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Renting vs Owning a Boat in Ontario: The Honest Math (2026)

@@ -15,6 +15,7 @@ date_modified: 2026-05-04
 keywords: ["mercury motor maintenance","outboard winterization","boat motor service","mercury service schedule","outboard maintenance tips"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Motor Seasonal Care Ontario

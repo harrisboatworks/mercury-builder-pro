@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # How to Choose the Right Boat Horsepower

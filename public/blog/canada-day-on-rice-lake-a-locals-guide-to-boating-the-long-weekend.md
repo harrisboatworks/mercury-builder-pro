@@ -15,6 +15,7 @@ date_modified: 2026-06-29
 keywords: ["Rice Lake","Canada Day","boating","fishing","Ontario boating"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Canada Day on Rice Lake: Boating Guide

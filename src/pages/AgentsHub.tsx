@@ -441,8 +441,8 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
               within 7 days for in-stock motors. Special-order deposits are non-refundable.
             </li>
             <li>
-              <strong>Warranty:</strong> Standard 3-year Mercury warranty. Promotional bonuses (e.g. "Get 7")
-              revert to standard 3-year if the promo ends.
+              <strong>Warranty:</strong> Standard 3-year Mercury warranty. Promotional bonus years apply only
+              while an eligible promotion is active.
             </li>
           </ul>
         </section>

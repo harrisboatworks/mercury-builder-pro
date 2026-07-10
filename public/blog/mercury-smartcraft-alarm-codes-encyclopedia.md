@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury SmartCraft Alarm Codes Ontario

@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["mercury water pump replacement cost","outboard impeller replacement cost ontario","water pump kit cost mercury","weak telltale outboard","outboard water pump service"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)

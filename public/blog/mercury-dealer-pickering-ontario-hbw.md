@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer pickering","mercury repower pickering","mercury outboard pickering ontario","boat motor dealer pickering"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer for Pickering: 50 Minutes from Rice Lake
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Pickering boaters drive to Harris Boat Works — about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
+![Why Pickering boaters drive to Harris Boat Works: about 50 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-pickering-worth-the-drive.png)
 
 # Mercury Dealer for Pickering: You're Closer Than You Think
 

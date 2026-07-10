@@ -88,6 +88,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-7-year-warranty-hbw-exclusive-explained.md",
+      "destination": "/promotions",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-2026-outboard-lineup-ontario",
       "destination": "/blog/mercury-outboard-lineup-ontario",
       "statusCode": 301

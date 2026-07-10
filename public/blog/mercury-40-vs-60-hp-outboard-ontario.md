@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["Mercury 40 vs 60 HP","Mercury 60 HP FourStroke review","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 40 vs 60 HP Ontario Guide

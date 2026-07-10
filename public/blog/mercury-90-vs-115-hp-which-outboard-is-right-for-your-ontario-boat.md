@@ -15,6 +15,7 @@ date_modified: 2026-07-06
 keywords: ["Mercury 90","Mercury 115","Ontario boating","repower","aluminum boat","Mercury FourStroke","Outboard Comparison"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?

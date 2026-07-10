@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # 2026 Mercury Buying: Pricing, Promotions and Smart Timing
@@ -146,10 +147,9 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Note: [Mercury Marine](https://www.mercurymarine.com/canada/en/) has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Harris Boat Works Current Offer (HBW Exclusive, runs through December 31, 2026 as of July 2026)**:
-- 7 years total factory-backed warranty on every eligible new Mercury outboard purchased through December 31, 2026
-- Structure: Mercury's 3-year factory limited warranty + 4 promotional bonus years (free extension)
-- Included in the purchase price; reverts to the 3-year factory standard after the deadline unless a new promotion is announced
+**Current warranty position (verified July 2026)**:
+- Mercury's standard Canadian limited factory warranty is 3 years
+- Bonus warranty coverage applies only when a current promotion explicitly includes it
 - See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
@@ -238,7 +238,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Are there current promotions available?
 
-Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. As of July 2026, the current HBW Exclusive brings every eligible new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years / free extension), running through December 31, 2026. See [current promotions](https://www.mercuryrepower.ca/promotions) for the latest.
+Mercury promotions change over time. The standard Canadian warranty is 3 years, while the current TD financing offer runs separately. See [current promotions](https://www.mercuryrepower.ca/promotions) for the live offer and eligibility.
 
 ### Can I negotiate below advertised price?
 

@@ -15,6 +15,7 @@ date_modified: 2026-05-24
 keywords: ["2-stroke vs 4-stroke repower","2-stroke to 4-stroke Mercury","Mercury FourStroke repower Ontario","replace 2-stroke outboard","Mercury repower cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # 2-Stroke vs 4-Stroke Repower: What to Know

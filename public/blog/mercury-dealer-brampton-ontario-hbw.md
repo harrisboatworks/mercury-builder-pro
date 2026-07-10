@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer brampton","mercury repower brampton","mercury outboard brampton ontario","boat motor dealer brampton caledon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Brampton Ontario HBW
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Brampton boaters drive to Harris Boat Works — about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
+![Why Brampton boaters drive to Harris Boat Works: about 95 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-brampton-worth-the-drive.png)
 
 # Mercury Dealer for Brampton: What Makes the Drive Northeast Worth It
 

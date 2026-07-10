@@ -443,7 +443,7 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-outboard-warranty-canada-2026": "Mercury warranty terms in Canada",
   "mercury-warranty-after-repower-ontario": "how warranty works after a repower",
   
-  "mercury-extended-warranty-platinum-ontario": "Product Protection Platinum extended coverage",
+  "mercury-extended-warranty-platinum-ontario": "Product Protection Premier extended coverage",
   // Cluster 11 — Dealer & Destination
   "best-mercury-dealer-ontario-hbw-difference": "what makes HBW different",
   "mercury-outboard-dealer-toronto-why-drive-to-hbw": "why Toronto buyers drive to HBW",

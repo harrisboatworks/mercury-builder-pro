@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury avator range","avator electric outboard rice lake","mercury electric outboard ontario","avator cottage range"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Avator Electric Outboard Range on Rice Lake (2026)

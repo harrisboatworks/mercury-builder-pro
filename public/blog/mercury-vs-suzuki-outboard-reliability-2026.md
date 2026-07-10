@@ -15,6 +15,7 @@ date_modified: 2026-06-10
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury vs Suzuki Outboards: Reliability 2026
@@ -37,7 +38,7 @@ Harris Boat Works is a Mercury Marine Premier dealer in Gores Landing, Ontario. 
 
 This page reflects our honest read of the Ontario market from a Mercury dealer's perspective. The Suzuki content below comes from public information, customer-side reports we hear when prospective customers describe what they were quoted elsewhere, and observed market behaviour in the Kawartha and Rice Lake region. If you want a Suzuki dealer's view of Suzuki, ask a Suzuki dealer.
 
-![Mercury vs Suzuki outboard — a fair Ontario dealer comparison of reliability, fuel economy, local dealer network, parts, and best-fit owner](/blog-visuals/mercury-vs-suzuki-fair-comparison.png)
+![Mercury vs Suzuki outboard: a fair Ontario dealer comparison of reliability, fuel economy, local dealer network, parts, and best-fit owner](/blog-visuals/mercury-vs-suzuki-fair-comparison.png)
 
 ## The bottom line for Ontario freshwater
 

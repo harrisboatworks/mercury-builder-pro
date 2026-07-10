@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["best Mercury outboard for Lake Simcoe fishing","Lake Simcoe fishing guide 2026","Lake Simcoe walleye fishing","Lake Simcoe lake trout fishing","Lake Simcoe fishing regulations 2026"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Setup for Simcoe Walleye 2026

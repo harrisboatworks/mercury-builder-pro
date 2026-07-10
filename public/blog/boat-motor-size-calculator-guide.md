@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Motor HP Size Guide Ontario

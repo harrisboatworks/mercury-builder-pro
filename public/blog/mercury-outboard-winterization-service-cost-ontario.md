@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury outboard winterization cost ontario","boat winterization price kawartha","shrinkwrap cost ontario per foot","mercury winterization service cost","boat storage rice lake price","harris boat works winterization"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Winterization Cost Ontario

@@ -15,6 +15,7 @@ date_modified: 2026-05-15
 keywords: ["boat storage Kawartha Lakes","winter boat storage Rice Lake","boat storage Gores Landing","shrinkwrap storage Kawarthas","boat winterization Ontario","spring commissioning Rice Lake","Harris Boat Works storage","outdoor boat storage Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Storage Rice Lake Kawarthas
@@ -31,7 +32,7 @@ content_type: blog_article
 
 ---
 
-![Three ways to store your boat on Rice Lake — at home DIY, HBW outdoor shrinkwrap, or indoor elsewhere, compared on cost and effort](/blog-visuals/boat-storage-3-ways-rice-lake.png)
+![Three ways to store your boat on Rice Lake: at home DIY, HBW outdoor shrinkwrap, or indoor elsewhere, compared on cost and effort](/blog-visuals/boat-storage-3-ways-rice-lake.png)
 
 ## What good boat storage actually includes
 

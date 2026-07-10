@@ -15,6 +15,7 @@ date_modified: 2026-05-21
 keywords: ["Legend Boats Mercury package Ontario","Legend XT Series 2026","Legend pontoon Mercury","Legend boats Rice Lake dealer","Legend Halo pontoon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Legend Boats Mercury Packages Ontario

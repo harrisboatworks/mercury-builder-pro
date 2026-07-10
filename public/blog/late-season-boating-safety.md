@@ -15,6 +15,7 @@ date_modified: 2026-05-05
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Cold-Water Boating Safety in Ontario: What to Know

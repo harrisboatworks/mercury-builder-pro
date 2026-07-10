@@ -15,6 +15,7 @@ date_modified: 2026-06-10
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.

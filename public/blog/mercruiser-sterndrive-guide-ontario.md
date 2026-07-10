@@ -15,6 +15,7 @@ date_modified: 2026-05-14
 keywords: ["Mercruiser sterndrive Ontario","Mercruiser bellows replacement Ontario","sterndrive winterization Ontario","Mercruiser repower cost","sterndrive to outboard conversion","Mercruiser Alpha Bravo maintenance"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercruiser Sterndrive Ontario Guide

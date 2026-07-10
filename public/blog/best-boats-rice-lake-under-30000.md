@@ -15,6 +15,7 @@ date_modified: 2026-05-04
 keywords: ["best boat rice lake","boats under 30000 ontario","rice lake fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)

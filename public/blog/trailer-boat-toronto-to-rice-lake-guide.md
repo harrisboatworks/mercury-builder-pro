@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Trailering a Boat: Toronto to Rice Lake

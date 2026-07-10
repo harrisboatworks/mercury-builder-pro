@@ -15,6 +15,7 @@ date_modified: 2026-05-27
 keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Propeller Selection Guide 2026

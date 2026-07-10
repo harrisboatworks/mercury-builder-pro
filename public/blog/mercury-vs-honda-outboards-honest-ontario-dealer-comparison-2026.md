@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["Mercury vs Honda","Mercury vs Honda outboards","Honda BF vs Mercury","Honda Marine dealer Ontario","Mercury Honda comparison"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury vs Honda Ontario 2026

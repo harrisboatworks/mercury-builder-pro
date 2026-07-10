@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Yamaha to Mercury Repower: Ontario Guide

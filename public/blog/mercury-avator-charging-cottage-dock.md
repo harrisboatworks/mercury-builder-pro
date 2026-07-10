@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Charging a Mercury Avator at Your Cottage Dock (2026)

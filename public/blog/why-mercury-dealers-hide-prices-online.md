@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Why Mercury Dealers Hide Prices (HBW Doesn't)

@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)

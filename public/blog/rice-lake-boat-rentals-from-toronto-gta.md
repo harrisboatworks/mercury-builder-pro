@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["Rice Lake boat rentals","boat rentals near Toronto","Kawarthas pontoon rentals","family boat rental Ontario","day trip boat rental GTA","pontoon rental Toronto"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Rice Lake Boat Rentals from Toronto

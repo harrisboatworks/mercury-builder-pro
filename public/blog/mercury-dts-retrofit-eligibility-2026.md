@@ -15,6 +15,7 @@ date_modified: 2026-05-28
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury DTS Retrofit Eligibility 2026

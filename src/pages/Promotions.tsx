@@ -348,6 +348,9 @@ export default function Promotions() {
   const promotionFaqs = [...warrantyFaqs, ...chooseOneFaqs];
 
   const hasActivePromos = promotions.length > 0;
+  const mainIsTDAlwaysOn = /td|always on|financ/i.test(
+    `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`,
+  );
 
   return (
     <div className="min-h-screen bg-repower-paper">
@@ -356,7 +359,14 @@ export default function Promotions() {
       <div className="pt-[64px] lg:pt-[72px]" />
 
       {/* Hero Section, only when promos are active */}
-      {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} bonusTitle={mainPromotion?.bonus_title} bonusDescription={mainPromotion?.bonus_description} />}
+      {hasActivePromos && (
+        <PromotionHero
+          endDate={mainPromotion?.end_date}
+          bonusTitle={mainPromotion?.bonus_title}
+          bonusDescription={mainPromotion?.bonus_description}
+          bonusYears={bonusYears}
+        />
+      )}
 
       {/* No DB promo active: lead with the TD Always-On financing offer as the active promotion */}
       {!loading && !hasActivePromos && isTDAlwaysOnActive() && (
@@ -413,7 +423,7 @@ export default function Promotions() {
       )}
 
       {/* Mercury TD "Always On" Financing, only show the standalone card if a DB promo is also active (so TD sits as a sibling). Otherwise the hero above already presents it. */}
-      {hasActivePromos && <TDAlwaysOnCard />}
+      {hasActivePromos && !mainIsTDAlwaysOn && <TDAlwaysOnCard />}
 
       {/* Full Rebate Matrix Table with Interactive Calculator */}
       {rebateMatrix.length > 0 && (

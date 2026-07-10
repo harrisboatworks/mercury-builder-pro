@@ -15,6 +15,7 @@ date_modified: 2026-06-06
 keywords: ["mercury warranty repower","mercury premier dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # How Your Mercury Warranty Works After a Repower
@@ -136,7 +137,7 @@ Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wik
 ## Related guides
 
 - [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026), Mercury warranty terms in Canada
-- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Platinum extended coverage
+- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Premier extended coverage
 
 ## Next steps
 

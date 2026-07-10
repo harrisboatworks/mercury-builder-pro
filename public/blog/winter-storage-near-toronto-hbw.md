@@ -15,6 +15,7 @@ date_modified: 2026-06-26
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Winter Boat Storage Near Toronto HBW

@@ -15,6 +15,7 @@ date_modified: 2026-05-10
 keywords: ["mercury 90 hp review","mercury 90 hp fourstroke","mercury 90 elpt ontario","mercury 90 ct command thrust","90 hp pontoon","90 hp aluminum boat"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 90 HP FourStroke Review
@@ -181,7 +182,7 @@ Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier startin
 
 ### What's the warranty?
 
-3-year factory warranty as standard. As of July 2026, HBW's current promotion brings eligible new outboards to 7 years total (3 standard + 4 free extension) through December 31, 2026; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
+3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
 
 ## Related guides
 

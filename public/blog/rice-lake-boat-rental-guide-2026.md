@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)

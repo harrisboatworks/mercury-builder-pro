@@ -602,7 +602,7 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-07-10',
     publishDate: '2026-04-12',
     category: 'Destination',
     readTime: '7 min',
@@ -705,7 +705,7 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 ## Guides connexes
 
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 
 ## Questions fréquentes
 
@@ -1411,7 +1411,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-10',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '7 min',
@@ -1501,7 +1501,7 @@ Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversat
 
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 - [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
 
 ## Questions fréquentes
@@ -1702,7 +1702,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-10',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '10 min',
@@ -1845,7 +1845,7 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 
 ## Questions fréquentes
 
@@ -2226,7 +2226,7 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
     imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-10',
     publishDate: '2026-05-13',
     category: 'Assurance',
     readTime: '9 min',
@@ -2337,7 +2337,7 @@ Les remotorisations surtout, plusieurs clients oublient de mettre à jour leur p
 L'assurance couvre les accidents, le vol, les dommages météo et la responsabilité. La garantie prolongée couvre les défaillances mécaniques et électriques dues à des défauts de matériaux ou de fabrication. Elles ne se chevauchent pas.
 
 - **Frapper un billot et endommager votre arbre d'hélice?** Assurance.
-- **L'ECU meurt à 4 ans, 200 heures?** Garantie prolongée (si vous avez acheté Platinum, voir notre [guide de garantie](/blog/fr/garantie-prolongee-mercury-platinum-ontario)).
+- **L'ECU meurt à 4 ans, 200 heures?** Garantie prolongée (si vous avez acheté Premier, voir notre [guide de garantie](/blog/fr/garantie-prolongee-mercury-platinum-ontario)).
 - **Bateau volé dans votre entrée?** Assurance.
 - **Défaillance d'engrenages d'embase à 3 ans?** Garantie d'usine (si encore active) ou garantie prolongée.
 
@@ -2367,28 +2367,28 @@ Par Harris Boat Works, concessionnaire [Mercury Marine](https://www.mercurymarin
   {
     slug: 'garantie-prolongee-mercury-platinum-ontario',
     seoTitle: 'Garantie prolongée Mercury Premier (Ontario 2026)',
-    title: "Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent",
-    description: "Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP. Les clients HBW obtiennent 10 % de rabais.",
+    title: "Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent",
+    description: "Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP. Les clients HBW obtiennent 10 % de rabais.",
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-10',
     publishDate: '2026-05-13',
     category: 'Garantie',
     readTime: '12 min',
-    keywords: ['garantie prolongée Mercury', 'Mercury Product Protection', 'garantie Platinum', 'garantie Mercury Ontario', 'garantie moteur prolongée', 'couverture Mercury Premier'],
+    keywords: ['garantie prolongée Mercury', 'Mercury Product Protection', 'garantie Premier', 'garantie Mercury Ontario', 'garantie moteur prolongée', 'couverture Mercury Premier'],
     relatedSlugs: ['prix-remotorisation-mercury-ontario'],
     content: `## Réponse rapide
 
-**Mercury Product Protection (Platinum) prolonge votre garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques, incluant l'ECU, les capteurs, l'alternateur, le câblage, les jauges et les commandes. HBW vend exclusivement Platinum parce que l'exclusion électrique sur Gold est l'endroit où les moteurs Mercury modernes échouent le plus chèrement. 10 % de rabais sur la garantie prolongée Platinum pour les clients ayant acheté leur moteur chez Harris Boat Works.**
+**Mercury Product Protection (Premier) prolonge votre garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques, incluant l'ECU, les capteurs, l'alternateur, le câblage, les jauges et les commandes. HBW vend exclusivement Premier parce que l'exclusion électrique sur Gold est l'endroit où les moteurs Mercury modernes échouent le plus chèrement. 10 % de rabais sur la garantie prolongée Premier pour les clients ayant acheté leur moteur chez Harris Boat Works.**
 
 - **Couvre ce que votre garantie d'usine couvre, pendant des années de plus**, jusqu'à 8 ans au total (3 ans d'usine + 5 ans prolongé)
 - **Inclut l'électrique** (Gold ne le fait pas), alternateur, ECU, capteurs, faisceau, accessoires
 - **Transférable** au prochain propriétaire, ajoute de la valeur à la revente
 - **Honoré chez plus de 3 600 concessionnaires Mercury** aux États-Unis et au Canada
-- **Exclusivité HBW** : 10 % de rabais sur Platinum pour les clients ayant acheté leur moteur chez HBW
+- **Exclusivité HBW** : 10 % de rabais sur Premier pour les clients ayant acheté leur moteur chez HBW
 
-Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://www.mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Platinum actuelle par HP et durée.
+Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://www.mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Premier actuelle par HP et durée.
 
 > **Note importante :** les détails de couverture, les prix et l'admissibilité peuvent changer selon le moteur, la date d'achat et le programme Mercury en vigueur. HBW confirme toujours la couverture exacte au moment de la soumission, et toutes les figures dans ce guide doivent être validées avec Mercury Canada avant achat.
 
@@ -2400,15 +2400,15 @@ Votre nouveau Mercury vient avec une garantie limitée d'usine de 3 ans contre l
 
 Ce n'est pas une police d'assurance tierce. Ce n'est pas un ajout après-vente. Elle est administrée à 100 % par [Mercury Marine](https://www.mercurymarine.com/canada/en/), en utilisant des pièces Mercury et Quicksilver authentiques, effectuée par des concessionnaires Mercury autorisés, mêmes normes d'usine que votre garantie d'origine.
 
-Deux niveaux existent : **Gold** (défaillances mécaniques seulement) et **Platinum** (mécaniques + électriques + accessoires). HBW vend Platinum exclusivement. Voici pourquoi :
+Deux niveaux existent : **Gold** (défaillances mécaniques seulement) et **Premier** (mécaniques + électriques + accessoires). HBW vend Premier exclusivement. Voici pourquoi :
 
-**Sur les hors-bord Mercury modernes (2017+), la plupart des défaillances coûteuses sont électriques.** Remplacement d'ECU sur un Pro XS V6 : 2 500 $ à 3 500 $ en pièces avant la main-d'œuvre. Cascade de défaillances de capteurs SmartCraft : 1 200 $ et plus. Alternateur et régulateur de tension sur un Verado : 1 800 $ et plus. Gold ne couvre rien de cela. Platinum oui.
+**Sur les hors-bord Mercury modernes (2017+), la plupart des défaillances coûteuses sont électriques.** Remplacement d'ECU sur un Pro XS V6 : 2 500 $ à 3 500 $ en pièces avant la main-d'œuvre. Cascade de défaillances de capteurs SmartCraft : 1 200 $ et plus. Alternateur et régulateur de tension sur un Verado : 1 800 $ et plus. Gold ne couvre rien de cela. Premier oui.
 
 Pour la différence de prix entre les deux niveaux (typiquement 200 $ à 400 $ à travers la plupart des plages de HP), Premier est le choix évident.
 
 ---
 
-## Ce que Platinum couvre réellement
+## Ce que Premier couvre réellement
 
 **Composants internes du moteur (mécaniques) :**
 - Bloc cylindre, culasse, vilebrequin, arbre à cames
@@ -2492,11 +2492,11 @@ Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de
 
 Taxes et frais d'enregistrement en sus. Tarification finale confirmée à l'enregistrement avec Mercury.
 
-**Exclusivité HBW** : 10 % de rabais sur la garantie prolongée Platinum pour les clients ayant acheté leur moteur chez Harris Boat Works.
+**Exclusivité HBW** : 10 % de rabais sur la garantie prolongée Premier pour les clients ayant acheté leur moteur chez Harris Boat Works.
 
 ---
 
-## Quand Platinum a un sens financier
+## Quand Premier a un sens financier
 
 Le calcul honnête :
 
@@ -2518,9 +2518,9 @@ Pour les plaisanciers ontariens qui prévoient garder leur moteur 5 ans ou plus,
 
 ## Transférabilité et valeur de revente
 
-La couverture Platinum est transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Cela compte à la revente.
+La couverture Premier est transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Cela compte à la revente.
 
-Un Mercury 150 HP de 5 ans avec couverture Platinum active jusqu'à l'année 8 se vend pour 10 à 15 % de plus que le même moteur sans couverture. L'acheteur sait qu'il a une protection d'usine pour les 3 prochaines années.
+Un Mercury 150 HP de 5 ans avec couverture Premier active jusqu'à l'année 8 se vend pour 10 à 15 % de plus que le même moteur sans couverture. L'acheteur sait qu'il a une protection d'usine pour les 3 prochaines années.
 
 ---
 
@@ -2552,7 +2552,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina 
 
 `,
     faqs: [
-      { question: "Quelle est la différence entre les couvertures Mercury Gold et Platinum?", answer: "Gold couvre seulement les défaillances mécaniques. Platinum ajoute la couverture électrique et accessoires (ECU, capteurs, alternateur, câblage, jauges, commandes). Sur les hors-bord Mercury modernes où la plupart des défaillances coûteuses sont électriques, Premier est le bon choix. HBW vend exclusivement Platinum." },
+      { question: "Quelle est la différence entre les couvertures Mercury Gold et Premier?", answer: "Gold couvre seulement les défaillances mécaniques. Premier ajoute la couverture électrique et accessoires (ECU, capteurs, alternateur, câblage, jauges, commandes). Sur les hors-bord Mercury modernes où la plupart des défaillances coûteuses sont électriques, Premier est le bon choix. HBW vend exclusivement Premier." },
       { question: "Quand dois-je acheter Mercury Product Protection?", answer: "Avant l'expiration de votre garantie d'usine de 3 ans. Une fois inscrit, la couverture prolongée prend le relais le jour où la garantie d'usine se termine. Mercury permet l'inscription dans les 4 années modèles du moteur." },
       { question: "Mercury Product Protection est-elle transférable quand je vends mon bateau?", answer: "Oui. Transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Ajoute 10 à 15 % à la valeur de revente parce que le nouveau propriétaire hérite de la protection d'usine continue." },
       { question: "Quelle est la franchise?", answer: "50 $ par réclamation." },
@@ -2568,7 +2568,7 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina 
     image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-10',
     publishDate: '2026-05-13',
     category: "Guide d'achat",
     readTime: '10 min',
@@ -2652,7 +2652,7 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
 - [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
 - [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
-- [Garantie prolongée Mercury (Platinum) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Platinum prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
 
 `,
     faqs: [

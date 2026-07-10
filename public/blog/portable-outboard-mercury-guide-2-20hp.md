@@ -15,6 +15,7 @@ date_modified: 2026-05-04
 keywords: ["portable outboard","small boat motor","dinghy motor","mercury portable","tender motor"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)

@@ -15,6 +15,7 @@ date_modified: 2026-05-23
 keywords: ["used outboard buying guide Ontario","how to inspect a used outboard","used Mercury outboard checklist","buying a used boat motor","outboard compression test"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Used Outboard Buying Guide Ontario

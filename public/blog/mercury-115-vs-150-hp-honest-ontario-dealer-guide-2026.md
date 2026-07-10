@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["Mercury 115 vs 150 HP","Mercury 115 Pro XS price","Mercury 150 Pro XS price","Mercury 115 vs 150 pontoon","Mercury Command Thrust V-hull","Mercury 115 CT","Mercury outboard Ontario","Mercury Premier dealer Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)

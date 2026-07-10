@@ -15,6 +15,7 @@ date_modified: 2026-05-28
 keywords: ["mercury command thrust guide","mercury command thrust models","what is command thrust mercury","command thrust vs standard gearcase","mercury 9.9 prokicker","mercury 115 command thrust","pro xs command thrust","seapro command thrust"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Command Thrust Guide 2026

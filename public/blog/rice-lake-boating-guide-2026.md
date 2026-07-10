@@ -15,6 +15,7 @@ date_modified: 2026-05-10
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Rice Lake Boating Guide 2026

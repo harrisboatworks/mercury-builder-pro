@@ -15,6 +15,7 @@ date_modified: 2026-05-19
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Cost of Owning a Boat Ontario 2026

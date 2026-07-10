@@ -15,6 +15,7 @@ date_modified: 2026-05-12
 keywords: ["Mercury maintenance intervals 20 100 300","Mercury 100 hour service Ontario","Mercury break-in service","Mercury 300 hour major service","Mercury annual service cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Maintenance: The 20/100/300 Rule

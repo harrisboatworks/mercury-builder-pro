@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["best Mercury dealer Ontario","Mercury Premier dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)

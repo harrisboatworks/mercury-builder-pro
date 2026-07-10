@@ -15,6 +15,7 @@ date_modified: 2026-07-09
 keywords: ["repower vs new boat","boat hull replacement","when to repower outboard"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Boat Hull Replacement vs Repower: The Honest Decision (2026)

@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer ajax","mercury repower ajax","mercury outboard ajax ontario","boat motor service durham region ajax"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer for Ajax: 45 Minutes Northeast to Rice Lake
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Ajax boaters drive to Harris Boat Works — about 45 minutes to Gores Landing on Rice Lake for Mercury repower, real pricing, and service](/blog-visuals/mercury-dealer-ajax-worth-the-drive.png)
+![Why Ajax boaters drive to Harris Boat Works: about 45 minutes to Gores Landing on Rice Lake for Mercury repower, real pricing, and service](/blog-visuals/mercury-dealer-ajax-worth-the-drive.png)
 
 # Mercury Dealer for Ajax: 45 Minutes and Worth Every One
 

@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Outboard Beep & Alarm Codes: What Each Means

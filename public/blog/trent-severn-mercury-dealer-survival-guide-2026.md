@@ -15,6 +15,7 @@ date_modified: 2026-07-07
 keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","on-water boat towing Rice Lake","Canada Strong Pass 2026","Trent-Severn transit"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Trent-Severn Mercury Dealer Guide

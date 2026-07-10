@@ -15,6 +15,7 @@ date_modified: 2026-07-02
 keywords: ["mercury 100 hour service cost","outboard annual service cost ontario","mercury service cost","100 hour service what's included","boat motor service cost ontario"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)

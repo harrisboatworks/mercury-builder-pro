@@ -15,6 +15,7 @@ date_modified: 2026-06-09
 keywords: ["Mercury repower water test","Mercury outboard sea trial","on-water dealer test","Mercury repower quality check","HBW Rice Lake water test","Mercury dealer verification process","Mercury Premier dealer Rice Lake","Mercury prop selection WOT RPM"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # HBW On-Water Load Test: Mercury Repower

@@ -15,6 +15,7 @@ date_modified: 2026-06-19
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Is a Pontoon Right for Your Family?

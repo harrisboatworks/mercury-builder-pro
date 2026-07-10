@@ -15,6 +15,7 @@ date_modified: 2026-05-15
 keywords: ["Mercury VesselView SmartCraft guide","Mercury Marine App","SmartCraft Connect installation","Active Trim Mercury","Digital Throttle and Shift","VesselView Mobile replacement"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury VesselView SmartCraft Guide

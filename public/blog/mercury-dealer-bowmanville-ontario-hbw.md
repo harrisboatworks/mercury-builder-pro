@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Bowmanville boaters drive to Harris Boat Works — about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
+![Why Bowmanville boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
 
 # Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 

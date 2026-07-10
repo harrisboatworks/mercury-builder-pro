@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury dealer richmond hill","mercury repower richmond hill","mercury outboard richmond hill ontario","boat motor dealer aurora newmarket","harris boat works richmond hill customers"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Dealer Richmond Hill HBW
@@ -33,7 +34,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Richmond Hill boaters drive to Harris Boat Works — about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
+![Why Richmond Hill boaters drive to Harris Boat Works: about 75 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-richmond-hill-worth-the-drive.png)
 
 # Why Richmond Hill Customers Drive to Rice Lake for Their Mercury
 

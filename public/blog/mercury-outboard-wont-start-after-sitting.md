@@ -15,6 +15,7 @@ date_modified: 2026-05-11
 keywords: ["mercury outboard wont start after sitting","mercury outboard stale fuel","mercury outboard spring no start","outboard wont start after winter storage"]
 author: Harris Boat Works
 content_type: blog_article
+language: en-CA
 ---
 
 # Mercury Won't Start After Sitting: Fixes
