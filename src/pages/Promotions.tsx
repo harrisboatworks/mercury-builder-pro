@@ -25,7 +25,8 @@ import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
-import { formatFinancingRate } from '@/lib/finance';
+
+
 
 
 
