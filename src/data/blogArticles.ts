@@ -20227,8 +20227,6 @@ Ontario boaters drive to Gores Landing from across the province. The closest cat
 
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)
 
-*Last reviewed: 2026-06-07*
-
 If you Google "best Mercury dealer Ontario," you get a list of 30-40 dealers and zero way to compare them. The provincial dealer network is Mercury-authorized, but **Mercury's authorization is just the floor, what separates dealers is everything they do above that floor.**
 
 Three things actually matter when evaluating an Ontario Mercury dealer:
@@ -24955,7 +24953,6 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.
 > **Want a number right now?** Try our [Trade-In Value Estimator](/trade-in-value). Same fields, instant CAD ballpark. Or call us at [(905) 342-2153](tel:+19053422153) and we'll walk it through with you.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-*Last reviewed: 2026-05-11.*
 
 ---
 
@@ -35157,7 +35154,6 @@ A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, har
 - Gores Landing, ON
 - Quote builder available
 
-*Last reviewed: 2026-06-09*
 
 We do Yamaha-to-Mercury repowers every spring at HBW. The customer is almost always a long-time Yamaha owner whose motor is either tired, costly to repair, or no longer making the local Yamaha dealer easy to reach. This guide walks through exactly what changes, exactly what it costs, what stays the same, and what you give up vs what you gain. We try to be honest about both. We sell Mercury, but we also know Yamaha makes good motors. The right answer depends on your boat and your local service network.
 
@@ -35334,7 +35330,6 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
 
 Honda outboards are excellent in the 9.9-50 HP class. Switching to Mercury makes sense for two reasons: Ontario dealer-network access (Mercury has 3x more service points) and HP-class match above 60 HP. Brand swap costs $1,800-$3,500 extra in rigging (controls, gauges, harness, prop). Email info@harrisboatworks.ca with your Honda specs for a same-day side-by-side quote.
 
-*Last reviewed: 2026-06-05*
 
 Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Premier), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't. Before pricing a brand switch, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) to confirm repower is the right call at all.
 
