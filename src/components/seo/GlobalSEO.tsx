@@ -1,6 +1,17 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import googlePlaces from '@/data/google-places-cache.json';
+
+const LIVE_AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: googlePlaces.ratingValue,
+  reviewCount: googlePlaces.reviewCount,
+  bestRating: "5",
+};
+const LIVE_OPENING_HOURS = Array.isArray(googlePlaces.openingHoursSpecification)
+  ? googlePlaces.openingHoursSpecification
+  : [];
 
 export function GlobalSEO() {
   // Site-wide JSON-LD only. Page-level nodes (WebPage, Service, FAQPage, etc.)
@@ -67,13 +78,8 @@ export function GlobalSEO() {
           "latitude": 44.121684,
           "longitude": -78.241502
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.7",
-          "reviewCount": "313",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
+        "aggregateRating": LIVE_AGGREGATE_RATING,
+        "openingHoursSpecification": LIVE_OPENING_HOURS,
         "areaServed": [
           {
             "@type": "Place",

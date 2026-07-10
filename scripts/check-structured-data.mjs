@@ -27,7 +27,7 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
-const DIST = 'dist';
+const DIST = process.env.SCHEMA_DIST || 'dist';
 const SRC_PRERENDER = 'scripts/static-prerender.mjs';
 const SRC_SEO_GLOB_DIRS = ['src/components/seo', 'src/pages/landing', 'src/pages'];
 
@@ -92,12 +92,20 @@ function isServiceOffer(offer) {
 function validateHtmlFile(file) {
   const html = readFileSync(file, 'utf8');
   const blocks = extractJsonLd(html);
+  const aggregateRatingOwners = new Map();
   blocks.forEach((raw, i) => {
     let parsed;
     try { parsed = JSON.parse(raw); }
     catch (e) {
       errors.push(`${file} block[${i}]: JSON parse error — ${e.message.slice(0, 100)}`);
       return;
+    }
+    const topLevelNodes = Array.isArray(parsed?.['@graph']) ? parsed['@graph'] : [parsed];
+    for (const node of topLevelNodes) {
+      if (!node || typeof node !== 'object' || !node['@id'] || !node.aggregateRating) continue;
+      const owners = aggregateRatingOwners.get(node['@id']) || [];
+      owners.push(i);
+      aggregateRatingOwners.set(node['@id'], owners);
     }
     walkSchema(parsed, (node, type, parentType) => {
       const req = REQUIRED_FIELDS[type];
@@ -121,6 +129,13 @@ function validateHtmlFile(file) {
       }
     });
   });
+  for (const [id, ownerBlocks] of aggregateRatingOwners) {
+    if (ownerBlocks.length < 2) continue;
+    errors.push(
+      `${file}: schema entity "${id}" declares aggregateRating in multiple JSON-LD blocks ` +
+      `(${ownerBlocks.join(', ')}). Google requires one aggregate rating per entity.`
+    );
+  }
 }
 
 const htmlFiles = walkDir(DIST, '.html');
@@ -169,6 +184,45 @@ function extractSchemaIdentifiers(text) {
 const prerenderSrc = readFileSafe(SRC_PRERENDER);
 const prerenderIds = extractSchemaIdentifiers(prerenderSrc);
 const seoFiles = collectSeoFiles();
+
+// GlobalSEO renders on every hydrated route. Route-specific SEO components
+// may reference its LocalBusiness @id, but must not define that entity again.
+// A duplicate LocalBusiness definition on /contact caused Google to merge two
+// aggregateRating values and reject the page's Review snippet items in July 2026.
+function extractLiteralSchemaDefinitions(text) {
+  const definitions = [];
+  const typeRe = /"@type"\s*:\s*(?:"([^"]+)"|\[([^\]]+)\])/g;
+  let match;
+  while ((match = typeRe.exec(text)) !== null) {
+    const types = match[1]
+      ? [match[1]]
+      : [...match[2].matchAll(/"([^"]+)"/g)].map(typeMatch => typeMatch[1]);
+    const tail = text.slice(typeRe.lastIndex, typeRe.lastIndex + 300);
+    const idMatch = /"@id"\s*:\s*"([^"]+)"/.exec(tail);
+    const nextTypeIndex = tail.search(/"@type"\s*:/);
+    if (!idMatch || (nextTypeIndex !== -1 && idMatch.index > nextTypeIndex)) continue;
+    definitions.push({ id: idMatch[1], types });
+  }
+  return definitions;
+}
+
+const globalSeoFile = 'src/components/seo/GlobalSEO.tsx';
+const globallyOwnedIds = new Set(
+  extractLiteralSchemaDefinitions(readFileSafe(globalSeoFile))
+    .filter(def => def.types.includes('LocalBusiness'))
+    .map(def => def.id)
+);
+
+for (const seoFile of seoFiles) {
+  if (seoFile === globalSeoFile) continue;
+  for (const definition of extractLiteralSchemaDefinitions(readFileSafe(seoFile))) {
+    if (!globallyOwnedIds.has(definition.id)) continue;
+    errors.push(
+      `GLOBAL-ENTITY-OWNERSHIP: ${seoFile} redeclares "${definition.id}", which is owned by ${globalSeoFile}. ` +
+      `Reference the global @id instead so hydration cannot merge conflicting entity properties.`
+    );
+  }
+}
 
 const duplicates = []; // { name|id, file }
 

@@ -1,17 +1,5 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
-import googlePlaces from '@/data/google-places-cache.json';
-
-const LIVE_AGGREGATE_RATING = {
-  "@type": "AggregateRating",
-  ratingValue: googlePlaces.ratingValue,
-  reviewCount: googlePlaces.reviewCount,
-  bestRating: "5",
-};
-const LIVE_OPENING_HOURS = Array.isArray(googlePlaces.openingHoursSpecification)
-  ? googlePlaces.openingHoursSpecification
-  : [];
 
 export function ContactPageSEO() {
   const structuredData = {
@@ -26,55 +14,6 @@ export function ContactPageSEO() {
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA"
-      },
-      {
-        "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://www.mercuryrepower.ca/#localbusiness",
-        "name": "Harris Boat Works",
-        "image": "https://www.mercuryrepower.ca/pwa-512x512.png",
-        "url": "https://www.harrisboatworks.ca/",
-        "telephone": "+1-905-342-2153",
-        "email": "info@harrisboatworks.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 44.1456,
-          "longitude": -78.2542
-        },
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "telephone": "+1-905-342-2153",
-            "email": "info@harrisboatworks.ca",
-            "areaServed": "CA",
-            "availableLanguage": "English"
-          },
-          {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "telephone": "+1-647-952-2153",
-            "contactOption": "TollFree",
-            "areaServed": "CA",
-            "availableLanguage": "English"
-          }
-        ],
-        "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Rice Lake" },
-          { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
-          { "@type": "State", "name": "Ontario" },
-          { "@type": "Country", "name": "Canada" }
-        ],
-        "sameAs": BUSINESS_SAME_AS,
-        "aggregateRating": LIVE_AGGREGATE_RATING,
-        "openingHoursSpecification": LIVE_OPENING_HOURS
       }
     ]
   };
