@@ -12,8 +12,7 @@ export function RepowerHero() {
     <section className="relative bg-repower-paper pt-28 md:pt-32 pb-20 md:pb-28 px-6 md:px-14 border-b border-repower-navy-900/10">
       <div className="max-w-[1400px] mx-auto">
         <p
-          className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-5 flex items-center gap-3"
-          style={{ letterSpacing: '0.22em' }}
+          className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-5 flex items-center gap-3"
         >
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" aria-hidden="true" />
           Mercury Outboard Repower · Ontario

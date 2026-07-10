@@ -18,7 +18,7 @@ export function QuotePageShell({ eyebrow, title, subhead, children, className }:
             {eyebrow && (
               <div className="flex items-center gap-3 mb-4">
                 <span className="block h-px w-8 bg-repower-mercury-red/70" aria-hidden />
-                <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-repower-mercury-red">
+                <span className="font-sans text-[13px] md:text-sm font-semibold uppercase tracking-[0.24em] text-repower-mercury-red">
                   {eyebrow}
                 </span>
               </div>

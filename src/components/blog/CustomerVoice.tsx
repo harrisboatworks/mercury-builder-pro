@@ -41,7 +41,7 @@ export function CustomerVoice({ items, heading }: CustomerVoiceProps) {
       <header className="mb-8 text-center md:text-left">
         <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
           <span aria-hidden="true" className="h-px w-8 bg-repower-mercury-red" />
-          <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+          <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
             Real questions from the shop floor
           </p>
         </div>

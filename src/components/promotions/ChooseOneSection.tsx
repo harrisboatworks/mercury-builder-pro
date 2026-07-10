@@ -37,7 +37,7 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-5 inline-flex items-center gap-3"
+            className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-5 inline-flex items-center gap-3"
           >
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Choose Your Bonus

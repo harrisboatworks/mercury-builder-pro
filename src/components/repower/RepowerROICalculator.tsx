@@ -153,7 +153,7 @@ export function RepowerROICalculator() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="mb-10">
-        <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+        <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
           Interactive Calculator
         </p>
@@ -278,7 +278,7 @@ export function RepowerROICalculator() {
 
         {/* Results Panel */}
         <div className="bg-repower-cream border border-repower-navy-900/10 rounded-none p-6 md:p-8">
-          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-6 flex items-center gap-3">
+          <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-6 flex items-center gap-3">
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Cost Comparison
           </p>

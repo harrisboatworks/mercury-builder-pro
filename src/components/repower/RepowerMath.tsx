@@ -13,8 +13,7 @@ export function RepowerMath() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-14 py-20 md:py-[120px]">
         <div className="max-w-3xl mb-10 md:mb-14">
           <p
-            className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3"
-            style={{ letterSpacing: '0.22em' }}
+            className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3"
           >
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" aria-hidden="true" />
             The Repower Math

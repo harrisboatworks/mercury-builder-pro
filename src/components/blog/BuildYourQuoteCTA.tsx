@@ -14,7 +14,7 @@ export function BuildYourQuoteCTA({ className = '' }: { className?: string }) {
     >
       <div className="flex items-center gap-3 mb-3">
         <span className="h-px w-8 bg-repower-mercury-red" />
-        <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
+        <span className="font-sans text-[13px] md:text-sm font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
           Ready when you are
         </span>
       </div>

@@ -120,7 +120,7 @@ function ArticleCard({
         )}
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.2em]">
+        <span className="font-sans text-[13px] md:text-sm font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
           {article.category || 'Guide'}
         </span>
         <h3
@@ -402,7 +402,7 @@ export function BlogHub({
                     </span>
                   </div>
                   <div className="lg:col-span-5 p-6 lg:p-8 lg:pr-10">
-                    <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.22em]">
+                    <span className="font-sans text-[13px] md:text-sm font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
                       {featured.category}
                     </span>
                     <h3

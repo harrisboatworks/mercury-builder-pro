@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export function BlogMasthead() {
   return (
     <header className="max-w-[880px] mx-auto text-center mb-12 md:mb-16">
-      <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.3em] text-repower-mercury-red mb-6">
+      <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-6">
         Harris Boat Works Journal
       </p>
       <h1

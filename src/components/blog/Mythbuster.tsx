@@ -29,7 +29,7 @@ export function Mythbuster({ items, heading = 'Common mistakes' }: MythbusterPro
         </h2>
         <div className="mt-3 flex items-center gap-3">
           <span aria-hidden="true" className="h-px w-8 bg-repower-navy-900/30" />
-          <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-navy-900/70">
+          <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-navy-900/70">
             What customers get wrong and why
           </p>
         </div>

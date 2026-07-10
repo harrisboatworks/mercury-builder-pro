@@ -38,7 +38,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYear
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.05 }}
-          className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-5 flex items-center justify-center gap-3"
+          className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-5 flex items-center justify-center gap-3"
         >
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
           Current Mercury offer at Harris Boat Works

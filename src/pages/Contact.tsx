@@ -143,7 +143,7 @@ export default function Contact() {
           <div className="text-center mb-14 max-w-[880px] mx-auto">
             <div className="flex items-center justify-center gap-3 mb-5">
               <span className="h-px w-8 bg-repower-mercury-red" />
-              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+              <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
                 Get in Touch
               </p>
             </div>

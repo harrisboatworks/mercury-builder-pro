@@ -49,7 +49,7 @@ const NotFound = () => {
         <div className="max-w-[760px] mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-5">
             <span className="h-px w-8 bg-repower-mercury-red" />
-            <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
               404, page not found
             </p>
           </div>

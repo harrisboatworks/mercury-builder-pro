@@ -235,7 +235,7 @@ export default function Index() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
+                <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
                   Why repower
                 </p>
                 <h2 className="font-display font-bold tracking-tight text-2xl md:text-5xl text-repower-cream mb-3 md:mb-5 leading-[1.1]" style={{ letterSpacing: '-0.02em', textWrap: 'balance' }}>
@@ -295,7 +295,7 @@ export default function Index() {
           <section className="py-12 md:py-20 bg-repower-navy-800 border-t border-repower-cream/10">
             <div className="container mx-auto px-4">
               <div className="text-center mb-10">
-                <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
+                <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
                   Customers
                 </p>
                 <h2

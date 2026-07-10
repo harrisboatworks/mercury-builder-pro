@@ -290,7 +290,7 @@ export default function BlogArticle() {
           <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-repower-mercury-red" />
-              <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
+              <span className="font-sans text-[13px] md:text-sm font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
                 {article.category}
               </span>
             </div>

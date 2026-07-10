@@ -1174,7 +1174,7 @@ function splitIntoH2Sections(markdown: string): { preamble: string; sections: Se
 }
 
 const eyebrowBase =
-  'block text-[11px] font-semibold uppercase tracking-[0.18em] mb-2';
+  'block text-[13px] md:text-sm font-semibold uppercase tracking-[0.24em] mb-2';
 
 const cardConfig: Record<
   Exclude<CardKind, null>,
