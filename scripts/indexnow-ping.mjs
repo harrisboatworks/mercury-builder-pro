@@ -23,7 +23,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const HOST = 'www.mercuryrepower.ca';
 const SITE = `https://${HOST}`;
-const KEY = '49bc7cd00f19df4a2f94c8d0b3d227a9';
+// Keep this aligned with supabase/functions/_shared/indexnow.ts. The previous
+// 49bc... file was publicly reachable but not registered with IndexNow, so
+// production deploys received UserForbiddedToAccessSite (HTTP 403).
+const KEY = '03999430e4bae3d7d7be108f62646dbf';
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
 const USER_AGENT = `mercuryrepower-indexnow/1.0 (+${SITE})`;
