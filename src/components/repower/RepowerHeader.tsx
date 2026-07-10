@@ -43,13 +43,13 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-16 lg:h-[72px] ${
           isSolid
-            ? 'bg-[#050E1C] border-b border-[#F5F1EA]/10 py-3'
-            : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
+            ? 'bg-[#050E1C] border-b border-[#F5F1EA]/10'
+            : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-4 md:gap-6 min-[1500px]:gap-8">
+        <div className="max-w-[1400px] mx-auto h-full px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-4 md:gap-6 min-[1500px]:gap-8">
           {/* Logo lockup, always horizontal */}
           <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 shrink-0">
             <img src={harrisLogo} alt="Harris Boat Works" className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto shrink-0" />
