@@ -9,6 +9,25 @@ import { componentTagger } from "lovable-tagger";
 // import { VitePWA } from "vite-plugin-pwa";
 import { writeFileSync } from "fs";
 
+const buildId =
+  process.env.VERCEL_GIT_COMMIT_SHA ||
+  process.env.GITHUB_SHA ||
+  `local-${Date.now().toString(36)}`;
+
+function buildVersionPlugin(): Plugin {
+  return {
+    name: 'emit-build-version',
+    apply: 'build',
+    generateBundle() {
+      this.emitFile({
+        type: 'asset',
+        fileName: 'version.json',
+        source: JSON.stringify({ buildId }),
+      });
+    },
+  };
+}
+
 // Sitemap and RSS generation plugin
 function sitemapPlugin(): Plugin {
   return {
@@ -40,6 +59,8 @@ export default defineConfig(({ mode }) => ({
   define: {
     // Build-time date stamp (YYYY-MM-DD) for visible "Page last updated" labels.
     __BUILD_DATE__: JSON.stringify(new Date().toISOString().split('T')[0]),
+    // Unique deploy identifier used to refresh long-lived mobile browser tabs.
+    __APP_BUILD_ID__: JSON.stringify(buildId),
   },
   optimizeDeps: {
     include: [
@@ -55,6 +76,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     mode === 'production' && sitemapPlugin(),
+    mode === 'production' && buildVersionPlugin(),
     // VitePWA disabled — see note at top of file.
   ].filter(Boolean),
   resolve: {
