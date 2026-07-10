@@ -23,3 +23,6 @@ declare module '*.webp' {
 
 // Injected at build time via vite.config.ts `define` (YYYY-MM-DD).
 declare const __BUILD_DATE__: string;
+
+// Injected at build time and mirrored in /version.json.
+declare const __APP_BUILD_ID__: string;
