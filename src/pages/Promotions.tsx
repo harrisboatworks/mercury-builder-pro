@@ -24,12 +24,11 @@ import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
 import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
-import { TDRateCardImage } from '@/components/promotions/TDRateCardImage';
-import { formatFinancingRate } from '@/lib/finance';
+import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
 
-const TD_RATE_CARD_IMAGE = '/lovable-uploads/td-financing-2026-rate-card.jpg';
-const TD_RATE_CARD_ALT =
-  `Mercury TD Always On financing offer: ${formatFinancingRate()} up to 240-month amortization through December 31, 2026`;
+
+
+
 
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
@@ -359,7 +358,11 @@ export default function Promotions() {
       <div className="pt-[64px] lg:pt-[72px]" />
 
       {/* Hero Section, only when promos are active */}
-      {hasActivePromos && (
+      {hasActivePromos && mainIsTDAlwaysOn && (
+        <TDFinancingHero endDate={mainPromotion?.end_date} />
+      )}
+
+      {hasActivePromos && !mainIsTDAlwaysOn && (
         <PromotionHero
           endDate={mainPromotion?.end_date}
           bonusTitle={mainPromotion?.bonus_title}
@@ -370,51 +373,7 @@ export default function Promotions() {
 
       {/* No DB promo active: lead with the TD Always-On financing offer as the active promotion */}
       {!loading && !hasActivePromos && isTDAlwaysOnActive() && (
-        <section className="relative py-16 md:py-24 px-6 md:px-14 overflow-hidden bg-repower-navy-900">
-          <div className="relative max-w-[1100px] mx-auto">
-            <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-3 mb-6">
-                  <span className="h-px w-8 bg-repower-mercury-red" />
-                  <span className="font-sans text-[11px] font-semibold tracking-[0.24em] uppercase text-repower-mercury-red">Active Mercury Offer</span>
-                </div>
-
-                <h1 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
-                  Low-Rate TD Financing on Your Mercury Repower
-                </h1>
-                <p className="font-sans text-base md:text-lg text-white/75 mb-6 leading-relaxed">
-                  {formatFinancingRate()}, terms up to 240 months, through December 31, 2026. Plus the standard 3-year factory warranty on every new Mercury.
-                </p>
-
-
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
-                  <Link to="/financing-application">
-                    <Button size="lg" className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep min-w-[200px] w-full sm:w-auto">
-                      Apply for Financing
-                    </Button>
-                  </Link>
-                  <Link to="/quote/motor-selection">
-                    <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10 min-w-[200px] w-full sm:w-auto">
-                      Build Your Quote
-                    </Button>
-                  </Link>
-                </div>
-
-                <p className="font-sans text-xs md:text-sm text-white/55 leading-relaxed max-w-md">
-                  Not all customers will qualify. Approval depends on TD's credit review.
-                </p>
-              </div>
-
-              <div className="order-first md:order-last">
-                <TDRateCardImage
-                  src={TD_RATE_CARD_IMAGE}
-                  alt={TD_RATE_CARD_ALT}
-                  className="w-full h-auto rounded-md shadow-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <TDFinancingHero />
       )}
 
       {/* Choose One Section */}
