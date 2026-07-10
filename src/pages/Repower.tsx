@@ -69,7 +69,7 @@ export default function Repower() {
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Warning Signs
             </p>
@@ -112,7 +112,7 @@ export default function Repower() {
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               The Big Question
             </p>
@@ -170,7 +170,7 @@ export default function Repower() {
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Mercury Technology
             </p>
@@ -215,7 +215,7 @@ export default function Repower() {
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 inline-flex items-center gap-3">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 inline-flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Reference
             </p>
@@ -249,7 +249,7 @@ export default function Repower() {
             ].map((s) => (
               <div key={s.eyebrow} className="bg-repower-navy-900 p-8 md:p-12 motion-safe:animate-fade-in">
                 <s.Icon className={`w-7 h-7 ${s.color} mb-6`} strokeWidth={1.75} />
-                <p className={`font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] ${s.color} mb-3`}>
+                <p className={`font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] ${s.color} mb-3`}>
                   {s.eyebrow}
                 </p>
                 <h3 className="font-display font-bold text-[clamp(22px,2.4vw,32px)] text-repower-cream mb-4 tracking-[-0.02em] leading-[1.1]">
@@ -280,7 +280,7 @@ export default function Repower() {
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Transparent Pricing
             </p>
@@ -389,7 +389,7 @@ export default function Repower() {
       {/* Service Area */}
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 inline-flex items-center gap-3">
+          <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 inline-flex items-center gap-3">
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Service Area
           </p>
@@ -427,7 +427,7 @@ export default function Repower() {
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Customer Stories
             </p>

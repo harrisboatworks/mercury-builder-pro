@@ -25,7 +25,7 @@ export function RepowerFAQRestyled() {
     <section className="bg-repower-paper">
       <div className="mx-auto max-w-[1100px] px-6 md:px-14 py-20 md:py-[140px]">
         <div className="max-w-3xl mb-14 md:mb-20">
-          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
+          <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Frequently Asked
           </p>

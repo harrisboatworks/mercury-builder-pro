@@ -59,7 +59,7 @@ export default function ToolsIndex() {
           <header className="mb-10 md:mb-12">
             <div className="flex items-center gap-3 mb-4">
               <span className="block h-px w-8 bg-repower-mercury-red/70" aria-hidden />
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-repower-mercury-red">
+              <span className="font-sans text-[13px] md:text-sm font-semibold uppercase tracking-[0.24em] text-repower-mercury-red">
                 Free Tools
               </span>
             </div>
@@ -117,7 +117,7 @@ export default function ToolsIndex() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="block h-px w-8 bg-repower-mercury-red/70" aria-hidden />
-                  <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-repower-mercury-red">
+                  <span className="font-sans text-[13px] md:text-sm font-semibold uppercase tracking-[0.24em] text-repower-mercury-red">
                     Tool
                   </span>
                 </div>

@@ -133,7 +133,7 @@ export default function QuoteSuccessPage() {
           {/* Eyebrow + H1 */}
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-8 bg-repower-mercury-red" />
-            <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
               Received
             </p>
             <span className="h-px w-8 bg-repower-mercury-red" />

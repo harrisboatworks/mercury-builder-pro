@@ -30,7 +30,7 @@ export function TDFinancingHero({ endDate }: TDFinancingHeroProps) {
           <div>
             <div className="inline-flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-repower-mercury-red" />
-              <span className="font-sans text-[11px] font-semibold tracking-[0.24em] uppercase text-repower-mercury-red">
+              <span className="font-sans text-[13px] md:text-sm font-semibold tracking-[0.24em] uppercase text-repower-mercury-red">
                 Ready to Repower Sales Event
               </span>
             </div>

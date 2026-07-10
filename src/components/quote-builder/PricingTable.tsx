@@ -62,7 +62,7 @@ export function PricingTable({
   return (
     <div className="rounded-[12px] border border-repower-navy-900/10 bg-white p-8">
       <div className="mb-6 space-y-2">
-        <div className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-repower-mercury-red">
+        <div className="font-sans text-[13px] md:text-sm font-semibold uppercase tracking-[0.24em] text-repower-mercury-red">
           Pricing Breakdown
         </div>
         {motorName && (

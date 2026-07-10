@@ -112,7 +112,7 @@ export function HowItWorksCard({
           <div className="h-9 w-9 md:h-10 md:w-10 shrink-0 rounded-full border border-[#C9A24A]/40 bg-[#C9A24A]/10 text-[#C9A24A] flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A24A]/20 group-hover:border-[#C9A24A]/70">
             <Icon className="h-4 w-4" />
           </div>
-          <span className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.24em] text-[#C9A24A]">
+          <span className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-[#C9A24A]">
             Step {stepNumber}
           </span>
         </div>

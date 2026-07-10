@@ -35,7 +35,7 @@ export function BlogCard({ article }: BlogCardProps) {
         )}
       </div>
       <div className="p-5">
-        <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.2em]">
+        <span className="font-sans text-[13px] md:text-sm font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
           {article.category}
         </span>
         <h3 className="mt-2 font-display text-lg font-semibold text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors line-clamp-2" style={{ letterSpacing: '-0.015em' }}>
