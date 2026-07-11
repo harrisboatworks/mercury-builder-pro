@@ -400,6 +400,8 @@ export type Database = {
           provider_status: string | null
           provider_thread_id: string | null
           raw_payload: Json
+          response_required: boolean
+          response_required_reason: string | null
           ro_no: string | null
           source: string | null
           status: string | null
@@ -427,6 +429,8 @@ export type Database = {
           provider_status?: string | null
           provider_thread_id?: string | null
           raw_payload?: Json
+          response_required?: boolean
+          response_required_reason?: string | null
           ro_no?: string | null
           source?: string | null
           status?: string | null
@@ -454,6 +458,8 @@ export type Database = {
           provider_status?: string | null
           provider_thread_id?: string | null
           raw_payload?: Json
+          response_required?: boolean
+          response_required_reason?: string | null
           ro_no?: string | null
           source?: string | null
           status?: string | null
@@ -5416,6 +5422,9 @@ export type Database = {
       service_status_board_v2: {
         Row: {
           awaiting_reply: boolean | null
+          awaiting_reply_channel: string | null
+          awaiting_reply_reason: string | null
+          awaiting_reply_since: string | null
           board_summary: string | null
           boat_motor: string | null
           comm_at: string | null
@@ -6268,6 +6277,16 @@ export type Database = {
       }
       hbw_customer_comms_pick_ro_for_customer: {
         Args: { p_customer_id: number; p_occurred_at: string }
+        Returns: string
+      }
+      hbw_customer_comms_response_required_reason: {
+        Args: {
+          p_body_preview: string
+          p_channel: string
+          p_direction: string
+          p_subject: string
+          p_template_type: string
+        }
         Returns: string
       }
       hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
