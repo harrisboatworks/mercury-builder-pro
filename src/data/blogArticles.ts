@@ -598,7 +598,7 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
       { question: "What's included in a spring startup?", answer: "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. It's about an hour on a properly winterized boat." },
       { question: "Do I need spring commissioning if I winterized properly?", answer: "The fall work is what makes spring cheap, but the startup still matters: batteries, fuel, and rubber parts all age over five months. An hour of checks before your first family outing is how you find the small problem before it becomes the stranded-Saturday problem." },
       { question: "Can I do spring commissioning myself?", answer: "Most of it, yes; our spring checklist walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes." },
-      { question: "When should I book spring service?", answer: "Before the rush. Our marina reopens April 1 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair." },
+      { question: "When should I book spring service?", answer: "Before the rush. Our marina reopens April 6 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair." },
       { question: "Why is my neighbour's spring bill huge and mine isn't?", answer: "Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, unfogged cylinders, connected batteries. The winterization cost guide shows what the fall side costs; it's the cheaper side." }
     ],
     content: `# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
@@ -681,7 +681,7 @@ The fall work is what makes spring cheap, but the startup still matters: batteri
 Most of it, yes; our [spring checklist](/blog/spring-outboard-commissioning-checklist) walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes.
 
 **When should I book spring service?**
-Before the rush. Our marina reopens April 1 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair.
+Before the rush. Our marina reopens April 6 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair.
 
 **Why is my neighbour's spring bill huge and mine isn't?**
 Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, unfogged cylinders, connected batteries. The [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) shows what the fall side costs; it's the cheaper side.
