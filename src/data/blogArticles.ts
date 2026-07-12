@@ -29425,7 +29425,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
 
 `,
     faqs: [
-      { question: 'What is the difference between Mercury Gold and Premier coverage?', answer: 'Gold covers mechanical failures only. Premier adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Premier is the right call. HBW sells Premier exclusively.' },
+      { question: 'What is the difference between Mercury Gold and Platinum coverage?', answer: 'Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Platinum is the right call. HBW sells Platinum exclusively.' },
       { question: 'When do I need to buy Mercury Product Protection?', answer: 'Before your 3-year factory warranty expires. Once you have enrolled, the extended coverage takes over the day factory warranty ends. Mercury allows enrollment within 4 model years of the engine.' },
       { question: 'Is Mercury Product Protection transferable when I sell my boat?', answer: 'Yes. Transferable to a subsequent recreational-use buyer within 30 days of sale. Adds 10-15% to resale value because the new owner inherits ongoing factory protection.' },
       { question: 'What is the deductible?', answer: '$50 per claim.' },
