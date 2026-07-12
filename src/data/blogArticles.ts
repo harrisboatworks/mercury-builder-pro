@@ -33282,7 +33282,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
   },
   {
     slug: 'mercury-avator-7-5e-review',
-    seoTitle: 'Mercury Avator 7.5e: Prix CAD, Review & Range (2026) | Mercuryrepower.ca',
+    seoTitle: 'Mercury Avator 7.5e: Review, Price CAD & Range (2026) | Mercuryrepower.ca',
     title: 'Mercury Avator 7.5e: Review, Price CAD, and Range (2026)',
     description: 'Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake.',
     image: '/lovable-uploads/avator-7-5e-hero-real.jpg',
