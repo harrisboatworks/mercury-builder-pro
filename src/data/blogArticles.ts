@@ -15081,7 +15081,7 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 ---
 
 ::pull-quote
-quote: Pull the boat from Mississauga to Rice Lake every Friday in summer, hour and ten minutes door to ramp. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+quote: Pull the boat from downtown Toronto to Rice Lake every Friday in summer, about 90 minutes door to ramp via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
 attribution: Jamal R.
 source: Mississauga
 ::
