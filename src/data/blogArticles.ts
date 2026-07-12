@@ -15016,7 +15016,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['trailer boat toronto rice lake', 'ontario trailer rules', 'boat launch rice lake'],
     content: `## Quick Answer
 
-Trailering a boat from Toronto to Rice Lake takes about 80–90 minutes via Highway 401 east, Highway 115 north, and County Road 28 north into Gores Landing. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
+Trailering a boat from Toronto to Rice Lake takes about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
 
 ---
 
