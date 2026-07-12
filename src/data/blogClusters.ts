@@ -141,7 +141,6 @@ export const blogClusters: BlogCluster[] = [
     pillar: "mercury-maintenance-intervals-20-100-300-rule",
     spokes: [
       "mercury-motor-maintenance-seasonal-tips",
-      "mercury-outboard-winterization-service-cost-ontario",
       "diy-mercury-outboard-winterization-guide",
       "boat-winterization-cost-ontario-2026",
       "winter-boat-storage-shrinkwrap-vs-indoor-ontario",
@@ -371,7 +370,6 @@ export const blogClusterContexts: Record<string, string> = {
   // Cluster 6 — Maintenance, Service & Seasonal
   "mercury-maintenance-intervals-20-100-300-rule": "the 20/100/300 maintenance rule",
   "mercury-motor-maintenance-seasonal-tips": "seasonal maintenance tips",
-  "mercury-outboard-winterization-service-cost-ontario": "what winterization service costs",
   "diy-mercury-outboard-winterization-guide": "DIY winterization steps",
   "boat-winterization-cost-ontario-2026": "boat winterization cost in Ontario",
   "winter-boat-storage-shrinkwrap-vs-indoor-ontario": "shrink-wrap vs indoor winter storage",
