@@ -54,7 +54,7 @@ const SEASONAL_POSTS: Record<string, number[]> = {
   // Winterization (Sep–Dec)
   'boat-winterization-cost-ontario-2026':                [9, 10, 11, 12],
   'diy-mercury-outboard-winterization-guide':            [9, 10, 11, 12],
-  'mercury-outboard-winterization-service-cost-ontario': [9, 10, 11, 12],
+  
   // Winter storage (Sep–Mar)
   'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [9, 10, 11, 12, 1, 2, 3],
   'outdoor-boat-storage-shrinkwrap-rice-lake':        [9, 10, 11, 12, 1, 2, 3],
