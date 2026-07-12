@@ -26345,33 +26345,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
   },
 
-  {
-    slug: 'mercury-outboard-winterization-service-cost-ontario',
-    relatedSlugs: ['spring-outboard-commissioning-checklist', 'winter-boat-storage-shrinkwrap-vs-indoor-ontario', 'diy-mercury-outboard-winterization-guide'],
-    title: 'Mercury Winterization Cost Ontario',
-    seoTitle: 'Boat Winterization Cost Ontario (2026) | Mercury Outboard Service',
-    description: 'Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works.',
-    image: '/lovable-uploads/hero-mercury-winterization-service-cost.png',
-    author: 'Jay Harris',
-    datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
-    publishDate: '2026-05-11',
-    category: 'Service & Pricing',
-    readTime: '7 min',
-    keywords: ['mercury outboard winterization cost ontario', 'boat winterization price kawartha', 'shrinkwrap cost ontario per foot', 'mercury winterization service cost', 'boat storage rice lake price', 'harris boat works winterization'],
-    content: `Winterization is fall service only. Book your appointment before our December 1 closure to get your Mercury outboard prepped for Ontario winter. For the complete cost breakdown and Mercury-specific service details, see our updated guide: [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026). That guide covers general winterization steps plus the exact service items your Mercury outboard needs, with live pricing from our shop.
-`,
 
-    faqs: [
-      { question: 'How much does Mercury outboard winterization cost in Ontario?', answer: 'It depends on the motor. A small 9.9 HP 4-stroke is a different job than a 250 HP V8 Verado, and a sterndrive is different again. HBW tiers winterization pricing by engine type because the work varies. Live rates are on the HBW winter storage page.' },
-      { question: 'What is included in HBW winterization?', answer: 'Engine flush, fuel stabilizer, fogging until the engine smokes and stalls, new spark plugs, full oil + filter change, lower-unit gear oil change with water-intrusion inspection, cooling system drain, and battery prep. Every step on every motor.' },
-      { question: 'Can I just buy shrinkwrap without winterization?', answer: 'Yes. HBW does shrinkwrap-only for customers who handle their own winterization or store at home. $20/ft in our shop, $25/ft outdoors at the lot. Common with cottage owners who tow the boat home to store on their own property.' },
-      { question: 'Does HBW offer indoor heated storage?', answer: 'No. HBW is outdoor only on a fenced, monitored lot with shrinkwrap. If you specifically need indoor heated, we point customers to other shops in the area honestly rather than upsell on something we do not offer.' },
-      { question: 'What is the boat size limit at HBW for winter storage?', answer: '30 feet. Boats over 30 feet are outside the current HBW storage capacity.' },
-      { question: 'When should I book winterization and storage?', answer: 'August or September is ideal. October still works. The week before freeze-up is when calls stack up and slots disappear. Earlier is always better.' },
-      { question: 'Do I have to use HBW for winterization to use HBW for storage?', answer: 'No. You can DIY winterization and book just shrinkwrap + storage. Or DIY everything and book just storage. HBW will work with whatever has already been done.' },
-    ],
-  },
 
 
   {
