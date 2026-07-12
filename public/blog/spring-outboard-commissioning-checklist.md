@@ -208,7 +208,7 @@ The spring no-starts that fill our May schedule almost all trace back to the sam
 The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/boat-winterization-cost-ontario-2026)
 - [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
 
 ---

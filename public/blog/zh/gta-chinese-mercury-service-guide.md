@@ -168,7 +168,7 @@ source: Richmond Hill
 
 技术上可以，参考 [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)（英文）。但要做完整需要：合适的工具（齿轮油泵、fogging oil、防冻液、扭矩扳手）、室内或避雪存储空间、以及对 Mercury 冷却系统的基本理解。GTA 公寓住户基本没有这个条件。**多数 GTA 华人船主选择 HBW 冬储，避免春天踩坑。**
 
-如果你想了解冬储的合理价格区间，可以参考 [Mercury Winterization Service Cost Ontario](/blog/mercury-outboard-winterization-service-cost-ontario)（英文）。
+如果你想了解冬储的合理价格区间，可以参考 [Mercury Winterization Service Cost Ontario](/blog/boat-winterization-cost-ontario-2026)（英文）。
 
 ---
 

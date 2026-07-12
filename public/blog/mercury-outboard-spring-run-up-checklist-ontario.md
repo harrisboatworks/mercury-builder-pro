@@ -152,7 +152,7 @@ A customer who didn't check anything, didn't watch for telltale water, and ran f
 
 - [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
-- [mercury-outboard-winterization-service-cost-ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [mercury-outboard-winterization-service-cost-ontario](/blog/boat-winterization-cost-ontario-2026), what winterization service costs
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 

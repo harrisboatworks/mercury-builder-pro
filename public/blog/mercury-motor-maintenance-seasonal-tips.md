@@ -240,7 +240,7 @@ Professional annual service for a Mercury outboard at a certified dealer in Onta
 
 ## Related guides
 
-- [mercury-outboard-winterization-service-cost-ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
+- [mercury-outboard-winterization-service-cost-ontario](/blog/boat-winterization-cost-ontario-2026), what winterization service costs
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 - [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto

@@ -189,7 +189,7 @@ Walleye return to accessible depths as the water drops below 60°F. The Gores La
 
 Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with a tube or swimbait, can produce the biggest fish of the year. Bass season does not close until December 15.
 
-**Motor note:** November fishing means cold mornings, heavier clothing, and conditions that do not forgive an unreliable motor. Book fall lay-up or [winterization](/blog/mercury-outboard-winterization-service-cost-ontario) in October, before availability disappears.
+**Motor note:** November fishing means cold mornings, heavier clothing, and conditions that do not forgive an unreliable motor. Book fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026) in October, before availability disappears.
 
 ### December to Ice-Up: Season Close and Winterization
 
