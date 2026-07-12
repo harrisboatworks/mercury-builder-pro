@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 /**
  * End-to-end-ish integration test for the "Choose your bonus" step.
  *
