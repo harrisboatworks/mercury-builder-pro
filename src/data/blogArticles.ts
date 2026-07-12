@@ -30900,7 +30900,7 @@ Yes, with proper preparation. Drain all water, cover with shrinkwrap or a qualit
 Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boat is a non-issue; a bare-aluminum-deck boat in October is genuinely cold. Most modern aluminum fishing boats have carpet or rubber matting that solves this.
 
 **What's the right Mercury for an aluminum vs a fiberglass boat?**
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on heavier loads or pontoons. Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
+Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on pontoons and workboats (not on planing V-hulls). Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
 
 **Is buying a used aluminum boat safer than buying a used fiberglass boat?**
 Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) walks through the 13-page checklist we use ourselves.
