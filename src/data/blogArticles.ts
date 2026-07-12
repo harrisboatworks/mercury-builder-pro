@@ -29282,13 +29282,13 @@ Your new Mercury comes with a 3-year factory limited warranty against defects in
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
-Two tiers exist: **Gold** (mechanical failures only) and **Premier** (mechanical + electrical + accessories). HBW sells Premier exclusively. Here is why:
+Two tiers exist: **Gold** (mechanical failures only) and **Platinum** (mechanical + electrical + accessories). HBW sells Platinum exclusively. Here is why:
 
-**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Premier does.
+**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Platinum does.
 
-For the price difference between the two tiers (typically $200-$400 across most HP bands), Premier is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
+For the price difference between the two tiers (typically $200-$400 across most HP bands), Platinum is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
 
-## What Premier Actually Covers
+## What Platinum Actually Covers
 
 **Engine internals (mechanical):**
 - Cylinder block, cylinder head, crankshaft, camshaft
