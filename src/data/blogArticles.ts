@@ -29372,9 +29372,9 @@ We verify eligibility using your engine model and serial number. Takes about 10 
 
 Taxes and registration fees extra. Final pricing confirmed at registration with Mercury.
 
-**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Premier coverage tier. This is our way of saying thanks for buying the motor here.
+**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Platinum coverage tier. This is our way of saying thanks for buying the motor here.
 
-## When Premier Makes Financial Sense
+## When Platinum Makes Financial Sense
 
 The honest math:
 
