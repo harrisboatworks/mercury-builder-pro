@@ -186,15 +186,15 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 The full topic hub: **[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)
-- [Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
+- [[Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard](/blog/outboard-vs-sterndrive-2026-ontario-repower)](/blog/outboard-vs-sterndrive-2026-ontario-repower)
+- [[Evinrude to Mercury Repower in Ontario (2026 Guide)](/blog/evinrude-to-mercury-repower-ontario-guide)](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---
 
 ## Related reading
 - [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
+- [[Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)](/blog/mercury-outboard-rigging-costs-ontario)
+- [[Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)](/blog/boat-hull-replacement-vs-repower-decision)
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
 
 ---

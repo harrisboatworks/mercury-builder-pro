@@ -50,13 +50,13 @@ The 115 Pro XS shares the FourStroke 2.1L powerhead with different tuning. The 1
 
 ## Who actually needs Pro XS in Ontario
 
-The honest answer: **not most Ontario boaters.** For cruising, family fishing, casual pontoon use, and cottage runabouts, FourStroke does the job better, more efficient, quieter, smoother. The Pro XS premium only earns its money when you genuinely use the performance.
+The honest answer: **not most Ontario boaters.** For cruising, family fishing, casual pontoon use, and cottage runabouts, [FourStroke does the job better](/blog/fourstroke-vs-pro-xs), more efficient, quieter, smoother. The Pro XS premium only earns its money when you genuinely use the performance.
 
 The Ontario customers who do benefit from Pro XS:
 
-**Tournament bass anglers.** Run-times matter. Hole-shot acceleration matters. Top-end speed matters. The 175-200 Pro XS V6 is the dominant tournament setup in Ontario bass boat circles.
+**Tournament bass anglers.** Run-times matter. Hole-shot acceleration matters. Top-end speed matters. The 175-200 Pro XS V6 is [the dominant tournament setup in Ontario bass boat circles](/blog/bass-boat-mercury-motor-buying-guide).
 
-**Serious walleye anglers running larger waters.** Lake Simcoe, Bay of Quinte, Lake Nipissing, big-water fishing where you need to move between spots fast and want to outrun afternoon weather. 150 Pro XS or 175-200 Pro XS V6 common.
+**Serious walleye anglers running larger waters.** [Lake Simcoe, Bay of Quinte, Lake Nipissing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), big-water fishing where you need to move between spots fast and want to outrun afternoon weather. 150 Pro XS or 175-200 Pro XS V6 common.
 
 **Performance pontoon owners.** Triple-tube pontoons running 200-300 HP for water sports or fast cruising. Pro XS V6 or V8 setups.
 
@@ -75,7 +75,7 @@ The 115 Pro XS is the entry into the Pro XS family. It uses the same 2.1L powerh
 - RPM limit higher than FourStroke 115
 - Slightly different sound (more "boat sport" character)
 
-The 115 Pro XS is available with Command Thrust gearcase, which is the right choice for performance pontoon setups in this HP range.
+The 115 Pro XS is [available with Command Thrust gearcase](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), which is the right choice for performance pontoon setups in this HP range.
 
 The honest take: most 16-19 ft Ontario boats don't need the Pro XS premium over a 115 FourStroke. The buyers who do benefit are those running serious fishing tournaments or performance pontoons in the 115 HP class. For everyone else, the 115 FourStroke is the smarter spend.
 
@@ -89,7 +89,7 @@ The 150 Pro XS shares some service intervals with the FourStroke 150 but with mo
 
 ## The V6 family: 175 / 200 / 225 Pro XS
 
-The 175, 200, and 225 Pro XS share Mercury's 3.4L V6 powerhead. This engine family is the dominant performance fishing motor in Ontario bass boat tournaments and serious walleye applications on larger waters.
+The 175, 200, and 225 Pro XS share Mercury's 3.4L V6 powerhead. This engine family is [the dominant performance fishing motor](/blog/mercury-150-300hp-pro-xs-performance-guide) in Ontario bass boat tournaments and serious walleye applications on larger waters.
 
 Within this family, the differences are calibration and prop matching, same physical engine, different RPM ceilings and tuning. The 200 is the most-installed of the three on Ontario tournament boats.
 

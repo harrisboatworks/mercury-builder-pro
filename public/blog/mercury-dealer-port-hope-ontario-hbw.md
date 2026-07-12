@@ -48,14 +48,14 @@ The Port Hope customer pattern looks like Cobourg's, with more weight toward the
 
 **The cottage owner**, has a property somewhere on Rice Lake or in the Kawarthas, keeps the boat at the cottage, drives up from Port Hope on weekends. Wants a dealer that knows the lake and is closer than the GTA.
 
-**The salmon fisherman**, Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. Mercury 9.9 ProKickers are common in this crowd.
+**The salmon fisherman**, Ganaraska River runs serious salmon traffic in fall. Port Hope anglers who own a boat often have a second boat or trailer-portable rig for Lake Ontario or Rice Lake. [Mercury 9.9 ProKickers are common in this crowd](/blog/mercury-prokicker-rice-lake-fishing-guide).
 
 **The town-based boater**, keeps the boat in Port Hope or trailers from town, mixes Lake Ontario and inland trips. Wants Mercury service that doesn't require a road trip into the GTA.
 
 For all three groups, the pattern is:
 - Spring commissioning
 - Mid-season service (impellers, fuel system, SmartCraft work)
-- Repower decisions when the old motor is past mid-life
+- [Repower decisions when the old motor is past mid-life](/blog/mercury-repower-cost-ontario-2026-cad)
 - Fall winterization + storage
 - Trade-in valuations when upgrading
 
@@ -63,7 +63,7 @@ For all three groups, the pattern is:
 
 Port Hope has a few general boat shops. What it doesn't have within town limits is a Mercury Premier dealer.
 
-Premier is Mercury's top dealer tier, parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
+[Premier is Mercury's top dealer tier](/blog/best-mercury-dealer-ontario-hbw-difference), parts inventory depth, technical training, warranty authorization, full SmartCraft diagnostic equipment. For routine service (oil changes, props, basic seasonal work) any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, the dealer tier shows up in resolution speed and parts availability.
 
 For Port Hope customers with newer Mercury outboards under warranty, the closer Premier dealer typically wins the long-term service relationship.
 

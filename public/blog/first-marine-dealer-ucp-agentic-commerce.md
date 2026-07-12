@@ -64,7 +64,7 @@ To our knowledge, we\u2019re the first marine dealer in North America with a liv
 If you\u2019re using a UCP-aware assistant (and that list grows weekly), here\u2019s what works today:
 
 - **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
-- **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, trading in a 75 HP Mercury from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [Ontario rates and monthly payment guide](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
+- **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [Ontario rates and monthly payment guide](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
 - **Get handed back to the dealer.** Every checkout session returns a `continue_url` that drops you into our live quote flow with everything pre-filled, so you can review, save, or call us at (905) 342-2153.
 - **Register the quote.** If you let your assistant share your name and email, the quote is registered with the dealership and a human at HBW can follow up. Optional. Skipping it still gets you a working quote.
 
@@ -85,7 +85,7 @@ If you\u2019d expect those guardrails from a 1947 family marina, you\u2019d be r
 
 Two reasons.
 
-**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We\u2019ve been doing that for a while; UCP just makes it machine-readable. The dealer who hides his price list from humans is going to hide it from agents too, and the agents will notice.
+**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We\u2019ve been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
 
 **The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That\u2019s a future we like.
 
@@ -95,7 +95,7 @@ There is zero hype in any of this. The page you\u2019re reading is honest about 
 
 At Google Marketing Live 2026, Google's SVP of Knowledge and Information, Nick Fox, sat down with Semafor's Ben Smith and described where Google sees search and shopping heading. Three things he said matter directly to what we built. Fox discussed the Unified Commerce Platform and the move toward frictionless discovery-to-checkout experiences, where a shopper goes from a question to a completed purchase without bouncing between sites and phone calls. He made the case that the web's lasting value is human expertise and first-hand experience, the kind of content AI summaries draw from rather than replace. And he described search itself becoming conversational, with people asking long, specific, multi-sentence questions instead of typing keywords.
 
-That is the direction we bet on. Harris Boat Works is already live on UCP, which means the frictionless quote-to-checkout flow Google described on the GML stage is not a future roadmap item here. You can build a real Mercury repower quote online today, priced for your boat, with no phone tag. The full interview is on YouTube: [Google Marketing Live 2026 interview with Nick Fox](https://youtu.be/IG6zdqR6Xck)
+That is the direction we bet on. Harris Boat Works is already live on UCP, which means the frictionless quote-to-checkout flow Google described on the GML stage is not a future roadmap item here. You can [build a real Mercury repower quote online today](/blog/mercury-repower-cost-ontario-2026-cad), priced for your boat, with no phone tag. The full interview is on YouTube: [Google Marketing Live 2026 interview with Nick Fox](https://youtu.be/IG6zdqR6Xck)
 
 ## Try it
 

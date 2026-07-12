@@ -36,7 +36,7 @@ If your motor turns out to be compatible, you also need a gateway module (one-ti
 
 ## Quick eligibility check
 
-The fastest way to confirm: find your Mercury serial number, email it to info@harrisboatworks.ca, and we'll reply same-day with a yes or no. The table below covers 95 percent of cases.
+The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-mercury-outboard-serial-number), email it to info@harrisboatworks.ca, and we'll reply same-day with a yes or no. The table below covers 95 percent of cases.
 
 | Motor class | Compatible? | Notes |
 |---|---|---|
@@ -116,7 +116,7 @@ Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017. S
 
 ### What you can do if your motor isn't eligible
 
-If your motor is on the no list and you want SmartCraft Connect specifically, the path is a repower. Most of our customers who repower from an Optimax or pre-2004 FourStroke to a current Mercury FourStroke pick up SmartCraft Connect on the new motor day-one as a side benefit of the repower. We can quote the swap at mercuryrepower.ca or by phone at 905-342-2153.
+If your motor is on the no list and you want SmartCraft Connect specifically, [the path is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Most of our customers who repower from an Optimax or pre-2004 FourStroke to a current Mercury FourStroke pick up SmartCraft Connect on the new motor day-one as a side benefit of the repower. We can quote the swap at mercuryrepower.ca or by phone at 905-342-2153.
 
 ## How to find your Mercury serial number to confirm eligibility
 
@@ -203,7 +203,7 @@ Three reasons SmartCraft Connect lands harder in Ontario than in some markets.
 
 **Lake variety.** Going from Rice Lake to the Trent-Severn to Lake Simcoe to the Kawarthas in one summer is normal. Cellular coverage is patchy in chunks of all of those. The app caches when you're out of coverage and syncs when you're back. You don't lose engine data when you cross a dead zone.
 
-**Ethanol-free fuel checks.** Most of our customers run ethanol-free fuel from our dock or other premium-fuel sources. The fuel flow data in the app makes it easier to confirm you're getting the burn rate you'd expect from premium gas. If you suddenly see consumption climb 15 percent for no reason, that's a flag worth catching.
+**Ethanol-free fuel checks.** Most of our customers [run ethanol-free fuel from our dock](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario) or other premium-fuel sources. The fuel flow data in the app makes it easier to confirm you're getting the burn rate you'd expect from premium gas. If you suddenly see consumption climb 15 percent for no reason, that's a flag worth catching.
 
 **Service interval discipline.** Ontario boating season is short. April to October if you're lucky. Easy to miss a 100-hour service or annual maintenance because life. The app's push reminders close that gap. When you see "100-hour service due in 8 hours of run time" pop up on your way home from the lake, you book it.
 
@@ -253,9 +253,9 @@ Yes, but with a different gateway module than the gas Connect path. The customer
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

@@ -42,12 +42,12 @@ But freshwater does not mean trouble-free. Neglect, ethanol pump gas, skipped se
 
 A few questions to ask by text before you spend a Saturday on a motor that was never worth the drive:
 
-1. **What year and model?** Ask for a photo of the data plate. It carries the year, horsepower, and serial number. On Mercury outboards the plate is usually on the transom bracket, and the serial is also stamped on the powerhead.
+1. **What year and model?** Ask for a photo of the data plate. It carries the year, horsepower, and serial number. On Mercury outboards the plate is usually on the transom bracket, and [the serial is also stamped on the powerhead](/blog/how-to-read-mercury-outboard-serial-number).
 2. **How many hours?** Modern Mercurys have an hour meter. A photo, not a guess.
 3. **Freshwater or salt?** Even one season in salt makes it a different motor.
 4. **Any recent work?** What, when, and who. Service records, or it did not happen.
 5. **Why are they selling?** Honest sellers have a real answer. "Long story" is an answer too, just not the one you want.
-6. **Any warranty left?** Mercury's standard limited warranty can transfer with documentation. If the motor is under three years old, ask for the original receipt and the dealer registration.
+6. **Any warranty left?** [Mercury's standard limited warranty can transfer with documentation](/blog/mercury-outboard-warranty-canada-2026). If the motor is under three years old, ask for the original receipt and the dealer registration.
 
 If a seller cannot tell you the year, the hours, or the use history, you are buying a mystery. Price it like one, or walk away.
 
@@ -84,7 +84,7 @@ Crack the lower drain plug on the side of the lower unit. A few drops will come 
 | Colour | What it means |
 |---|---|
 | Clear amber or brown | Normal. Carry on. |
-| Milky or creamy white | Water past the gearcase seals. A lower unit rebuild is in your future. Walk. |
+| [Milky or creamy white](/blog/milky-gearcase-oil-meaning-cost-ontario) | Water past the gearcase seals. A lower unit rebuild is in your future. Walk. |
 | Black with a burnt smell | Long-overdue service, and possible clutch dog wear |
 | Metal flakes or shavings | Internal gear damage. Walk. |
 
@@ -134,7 +134,7 @@ A seller who refuses an on-water test is telling you something. Listen.
 
 ## Ontario-Specific Problems to Know
 
-**Ethanol damage.** Ontario regular pump gas carries up to 10 percent ethanol, which degrades fuel lines, dries out carburettor diaphragms, and absorbs water during storage. HBW sells ethanol-free marine gas at Gores Landing for exactly this reason. A motor stored over several winters with ethanol pump gas in the system often has soft fuel lines and a gummed-up carb.
+**Ethanol damage.** [Ontario regular pump gas carries up to 10 percent ethanol](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), which degrades fuel lines, dries out carburettor diaphragms, and absorbs water during storage. HBW sells ethanol-free marine gas at Gores Landing for exactly this reason. A motor stored over several winters with ethanol pump gas in the system often has soft fuel lines and a gummed-up carb.
 
 **Winter freeze damage.** A motor that was not properly winterized in Ontario may have frozen. A cracked block, a blown welch plug, or a hairline crack in a cylinder head does not show up on a casual walk-around. A pressure test catches it. A cold-running test will not.
 

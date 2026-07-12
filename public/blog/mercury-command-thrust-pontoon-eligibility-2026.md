@@ -56,7 +56,7 @@ If your boat doesn't fit one of these neatly, send us details and we'll work thr
 
 ## What Command Thrust actually does (and what it doesn't)
 
-Before checking eligibility it helps to know what you're buying. Command Thrust is a Mercury gearcase option, not a separate motor. The same Mercury FourStroke powerhead bolts on top, but the lower unit is taller, the gears are heavier, and the prop diameter is roughly one inch bigger.
+Before checking eligibility it helps to know what you're buying. [Command Thrust is a Mercury gearcase option, not a separate motor](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull). The same Mercury FourStroke powerhead bolts on top, but the lower unit is taller, the gears are heavier, and the prop diameter is roughly one inch bigger.
 
 The bigger prop and lower gear ratio convert horsepower into pushing force rather than top-end speed. On a heavy pontoon, this means:
 
@@ -142,7 +142,7 @@ Rather than list every model and year here (Mercury changes things), we recommen
 
 This is the most common question we get at the shop. The honest answer: technically yes, practically no.
 
-The Command Thrust gearcase, driveshaft, water pump, and prop are all different from the standard parts. Converting a non-CT motor to CT means buying all those parts and the labor to swap them. Once you add up the parts cost and labor, you're usually within striking distance of trading the entire motor in toward a new Command Thrust model.
+The Command Thrust gearcase, driveshaft, water pump, and prop are all different from the standard parts. Converting a non-CT motor to CT means buying all those parts and the labor to swap them. Once you add up the parts cost and labor, you're usually within striking distance of [trading the entire motor in toward a new Command Thrust model](/blog/mercury-repower-cost-ontario-2026-cad).
 
 When a retrofit MIGHT make sense:
 - Your existing motor is fairly new (last 2 to 3 years), low hours, otherwise excellent condition
@@ -199,7 +199,7 @@ whenInDoubt: Probably yes if you have an 18 to 20 ft twin tube with moderate loa
 
 A few things that make Command Thrust hit different in Ontario than in other markets.
 
-**Pontoon population is high.** Rice Lake, the Kawarthas, Lake Simcoe, and Lake Scugog all have heavy pontoon traffic. The use case skews toward loaded family days, fishing parties, and shoreline navigation rather than open-water cruising. That use case favours Command Thrust.
+**Pontoon population is high.** Rice Lake, the Kawarthas, Lake Simcoe, and Lake Scugog all have [heavy pontoon traffic](/blog/best-mercury-outboard-pontoon-boats). The use case skews toward loaded family days, fishing parties, and shoreline navigation rather than open-water cruising. That use case favours Command Thrust.
 
 **Cottage hauling.** Many Ontario pontoon owners use the boat to move building materials, propane tanks, generators, and supplies to cottage properties. CT's pushing power matters here more than top speed.
 
@@ -256,10 +256,10 @@ Yes. Command Thrust uses a different prop shaft and a larger prop diameter than 
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 

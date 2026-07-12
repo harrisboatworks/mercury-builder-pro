@@ -78,7 +78,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 45 minutes, the year-round storage relationship makes a lot of sense, boat stays here, we commission it in spring, you pick it up when Rice Lake is ready.
+Outdoor with shrinkwrap. No indoor. At 45 minutes, [the year-round storage relationship makes a lot of sense](/blog/winter-storage-near-toronto-hbw), boat stays here, we commission it in spring, you pick it up when Rice Lake is ready.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Whitby.
@@ -130,7 +130,7 @@ The drive to Rice Lake is 45 minutes via the 401 east and Highway 115 north. Cle
 
 Why Whitby boaters are a strong repower market:
 
-- **Mature fleet.** Whitby's long-established marina community means many older Mercury (and other-brand) motors due for repower. We see steady annual volume from the area.
+- **Mature fleet.** Whitby's long-established marina community means [many older Mercury (and other-brand) motors due for repower](/blog/mercury-repower-cost-ontario-2026-cad). We see steady annual volume from the area.
 - **Proximity makes it practical.** 45 minutes is reasonable for a multi-thousand-dollar repower investment, closer than most central Toronto dealers once you factor in 401 traffic.
 - **Mercury Premier-level depth.** A clean install at HBW vs a rushed install elsewhere is the difference between 10 trouble-free years and a recurring warranty problem.
 

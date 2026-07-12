@@ -73,7 +73,7 @@ For older Mercurys, the model code usually reads as horsepower + letter combinat
 
 Example: `115ELPT` reads as 115 HP, Electric start, Long shaft, Power Trim.
 
-Two identical-looking Mercury 90 HP FourStrokes can use **completely different parts** depending on which serial number range they fall into. Mercury revises components mid-year, mid-production-run, even mid-month. The model number tells you the spec; the serial tells you which production run you have.
+[Two identical-looking Mercury 90 HP FourStrokes](/blog/mercury-90-hp-fourstroke-review-ontario) can use **completely different parts** depending on which serial number range they fall into. Mercury revises components mid-year, mid-production-run, even mid-month. The model number tells you the spec; the serial tells you which production run you have.
 
 If you're ordering parts, planning service, checking warranty, or looking up bulletins, start with **both** numbers in hand.
 
@@ -98,7 +98,7 @@ If the bracket plate is missing or unreadable (rust, paint over, theft), there's
 ### 3. Inside the cowling (newer models)
 2018+ Mercurys often have a sticker inside or under the cowling with the serial in a more readable location. Pull the cowl, check the inner walls.
 
-If all three are missing or unreadable, the motor's been parted out, replaced, or had its identity stripped. That's a flag for any used buyer.
+If all three are missing or unreadable, the motor's been parted out, replaced, or had its identity stripped. That's [a flag for any used buyer](/blog/used-outboard-buying-guide-ontario).
 
 ---
 
@@ -183,7 +183,7 @@ Mercury's official parts catalog uses the serial to give you the right exploded 
 Mercury issues service bulletins by serial range, known issues, recommended fixes, sometimes free recall work. A dealer pulls these against your serial to see if anything applies.
 
 ### 3. Warranty status
-Standard warranty registration, extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. We can confirm what you have left.
+[Standard warranty registration](/blog/mercury-outboard-warranty-canada-2026), extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. We can confirm what you have left.
 
 ### 4. Engine hours (on SmartCraft motors)
 Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Can't be tampered with, and it doesn't care if the dashboard meter was disconnected.
@@ -202,7 +202,7 @@ Before you hand over money for a private-sale Mercury, do this:
 3. **We pull:** model year, original spec, outstanding service bulletins, warranty status, and any service history we can find on it.
 4. **You get a report**, what the motor really is, what it's worth, what's already been done, and what's overdue.
 
-If you're considering a full pre-purchase inspection (compression, gearcase pressure, on-water test), the serial-number research is the first 5 minutes of that. Sometimes the research alone tells you to walk away.
+If you're considering [a full pre-purchase inspection](/blog/used-boat-walkaround-inspection-ontario) (compression, gearcase pressure, on-water test), the serial-number research is the first 5 minutes of that. Sometimes the research alone tells you to walk away.
 
 This whole exercise, for a private buyer about to spend $4,000 to $14,000 on a used motor, should be table stakes. We do it every week.
 

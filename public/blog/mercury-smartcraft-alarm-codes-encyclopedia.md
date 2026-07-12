@@ -44,7 +44,7 @@ That single question routes the call. The display text tells us the system invol
 
 ## Mercury beep code patterns (what the horn is telling you)
 
-Mercury's warning horn uses repeated patterns to communicate without a display. Even if your VesselView screen is off, the horn alone can tell you what's happening.
+[Mercury's warning horn uses repeated patterns](/blog/mercury-outboard-beeping-codes-guide) to communicate without a display. Even if your VesselView screen is off, the horn alone can tell you what's happening.
 
 | Beep pattern | What it means | What to do |
 |---|---|---|
@@ -61,7 +61,7 @@ These are ranked by what comes through our service bays, not by Mercury's SmartC
 
 1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
 2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
-3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. Phase separation from stored E10 fuel, condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
+3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. [Phase separation from stored E10 fuel](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
 4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
 5. **Low oil level (2-stroke).** For Optimax DFI owners, the remote oil tank reading low or sensor reading low. Often a float-magnet separation issue, not actual low oil.
 6. **Low oil pressure (4-stroke).** Actual low oil, bypass valve issue, or sensor fault. On a 4-stroke this is serious. Shut down.
@@ -106,7 +106,7 @@ Note: any older Verado content referencing "supercharger codes" is out of date.
 
 Mercury has superseded VesselView Mobile with **SmartCraft Connect Mobile**. Legacy VesselView Mobile modules keep using the VesselView Mobile app; the new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works. For new SmartCraft Connect hardware, use the Mercury Marine app.
 
-HBW uses SmartCraft Connect Mobile internally for customer-side diagnostics.
+HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-ontario) internally for customer-side diagnostics.
 
 ## Common mistakes
 
@@ -161,9 +161,9 @@ No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are a
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

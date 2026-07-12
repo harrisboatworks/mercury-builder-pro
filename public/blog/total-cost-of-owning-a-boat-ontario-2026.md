@@ -72,7 +72,7 @@ If you trailer instead of slipping, **substitute launch fees**: HBW is $20/day o
 
 ## 2. Insurance
 
-Boat insurance is **not legally required** in Ontario, but most marinas (including HBW) require proof of insurance to dock, and lenders require it as a condition of financing. So in practice, it's required.
+Boat insurance is **not legally required** in Ontario, but [most marinas (including HBW) require proof of insurance to dock](/blog/boat-insurance-ontario-guide-2026), and lenders require it as a condition of financing. So in practice, it's required.
 
 **Ontario rates:**
 
@@ -109,7 +109,7 @@ In Ontario, you don't get to skip [winter storage](/blog/boat-storage-kawartha-l
 
 **Annual budget for 21-ft outdoor + winterized:** ~$1,000-$1,200 all-in at HBW.
 
-**The "what if I skip it" cost:** A cracked engine block from a missed winterization runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
+**The "what if I skip it" cost:** [A cracked engine block from a missed winterization](/blog/boat-winterization-cost-ontario-2026) runs **$5,000-$10,000+**. Skipped winterization is the most expensive way to save $400.
 
 ---
 
@@ -214,7 +214,7 @@ Reasonable 10-year planning numbers for the 20-ft, $40K example:
 **Net cost over 10 years (cash-bought):** ~$50,000-$60,000.
 **Net cost over 10 years (financed):** ~$70,000-$85,000.
 
-That's why people repower. A $20,000 Mercury repower on a 15-year-old hull resets the engine clock and extends the boat's useful life another 10-15 years, for about half the cost of buying new.
+That's why people repower. [A $20,000 Mercury repower on a 15-year-old hull](/blog/mercury-repower-cost-ontario-2026-cad) resets the engine clock and extends the boat's useful life another 10-15 years, for about half the cost of buying new.
 
 ---
 
@@ -238,7 +238,7 @@ Boats are not cheap. They are also worth it for the right reasons.
 
 If you're considering ownership and the math above feels manageable, great. Welcome to the lake.
 
-If the math feels stretched, we have **rentals**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 

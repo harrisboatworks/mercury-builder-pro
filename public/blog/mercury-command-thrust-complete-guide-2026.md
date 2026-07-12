@@ -44,7 +44,7 @@ A Command Thrust gearcase has three engineered changes vs the standard gearcase:
 2. **Larger-diameter four-blade propeller.** Roughly 20 percent more blade surface area than the standard three-blade prop, with a lower pitch range. The bigger blade plus lower pitch is what converts horsepower into pushing force.
 3. **Lower gear ratio (numerically higher).** More torque multiplication at the prop. Faster acceleration with heavy loads, but lower top-end speed than the standard gearcase at the same RPM.
 
-The three changes work together. You cannot get the benefit by swapping just the prop on a standard gearcase. You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
+The three changes work together. You cannot get the benefit by [swapping just the prop on a standard gearcase](/blog/mercury-propeller-selection-guide). You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
 
 Mercury Marine's own gearcase comparison demo shows the size difference clearly. Worth a minute if you want to see the parts side by side before reading further:
 
@@ -64,8 +64,8 @@ Mercury Marine's own gearcase comparison demo shows the size difference clearly.
 **What it does NOT do:**
 - Does not add horsepower. A 90 HP Command Thrust makes the same peak HP as a 90 HP standard.
 - Does not increase top speed. On most boats, you give up 2 to 4 MPH at WOT because the prop is geared for thrust, not speed.
-- Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, the standard gearcase usually outperforms CT in top end and fuel.
-- Does not retrofit easily. The gearcase, driveshaft, water pump, and prop are all different parts. Converting a non-CT motor to CT means swapping the entire lower unit, which is usually within striking distance of trading the entire motor.
+- Does not work miracles on light boats. On a 14 ft tinny or a light cruising pontoon, [the standard gearcase usually outperforms CT](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) in top end and fuel.
+- Does not retrofit easily. The gearcase, driveshaft, water pump, and prop are all different parts. Converting a non-CT motor to CT means swapping the entire lower unit, which is usually within striking distance of [trading the entire motor](/blog/mercury-repower-cost-ontario-2026-cad).
 
 That last point is the most common misconception at the shop. People with an existing standard-gearcase motor often ask if we can "add Command Thrust." The honest answer is rarely yes. For the full retrofit decision, see our [Mercury Command Thrust pontoon eligibility post](/blog/mercury-command-thrust-pontoon-eligibility-2026).
 
@@ -120,7 +120,7 @@ For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/
 
 ### Pontoons (the biggest CT use case)
 
-Pontoons are where Command Thrust earns its reputation. The combination of heavy displacement, flat draft, and family-loaded weight (8 people, coolers, water toys, cottage gear) is exactly what CT was engineered for.
+[Pontoons are where Command Thrust earns its reputation](/blog/mercury-command-thrust-guide-pontoon-boats). The combination of heavy displacement, flat draft, and family-loaded weight (8 people, coolers, water toys, cottage gear) is exactly what CT was engineered for.
 
 - **20+ ft twin tube pontoon:** plan on CT unless the boat is rarely loaded.
 - **Tritoon any HP:** plan on CT. The third tube means more drag and CT's thrust overcomes it cleanly.

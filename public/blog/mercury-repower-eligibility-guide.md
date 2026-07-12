@@ -174,11 +174,11 @@ Most repowers stay within the same HP class as the original motor. Some customer
 
 Content in the same repower-decision cluster:
 
-- [Should I Repower or Buy a New Boat?](/blog/repower-vs-new-boat), narrative companion to this eligibility check
-- [How to Repower a Boat](/how-to-repower-a-boat), the 7-step process page once eligibility is confirmed
+- [[Should I Repower or Buy a New Boat?](/blog/repower-vs-new-boat)](/blog/repower-vs-new-boat), narrative companion to this eligibility check
+- [[How to Repower a Boat](/blog/what-happens-during-mercury-repower)](/how-to-repower-a-boat), the 7-step process page once eligibility is confirmed
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), CAD pricing by HP class
 - [How to Read a Boat Capacity Plate (Ontario)](/blog/how-to-read-boat-capacity-plate-ontario), Check 3 detail
-- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide), matching motor to transom height
+- [[Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide)](/blog/outboard-shaft-length-guide), matching motor to transom height
 
 Most repower conversations start with the eligibility check. If your boat passes the five checks above, the next step is a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca). The configurator handles hull matching, HP class, prop selection, and a real CAD all-in number in under 5 minutes.
 
@@ -225,7 +225,7 @@ You do not need a formal inspection before requesting a quote. The CAD configura
 - [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

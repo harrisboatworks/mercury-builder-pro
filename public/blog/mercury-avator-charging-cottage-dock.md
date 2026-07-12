@@ -49,7 +49,7 @@ For a cottage with existing dock or boathouse power, the setup is usually straig
 - **Standard 110V outlet**: 3-4 hours from empty to full
 - **240V charging**: not applicable for this model (single integrated battery, 110V charger only)
 
-For typical cottage use (a few hours on the water, then dock for the night), the 7.5e's overnight 110V charge is comfortable.
+For typical cottage use (a few hours on the water, then dock for the night), [the 7.5e's overnight 110V charge](/blog/mercury-avator-7-5e-review) is comfortable.
 
 ### Avator 20e and 35e (external 2,300 Wh packs, up to 3-4 packs)
 
@@ -74,7 +74,7 @@ Most Ontario cottages were built with electrical service designed for cottage lo
 
 **60A service cottage**: usually enough for Avator 7.5e or single-pack 20e/35e charging. Larger multi-pack setups may push the panel limits when running other loads simultaneously.
 
-**Off-grid or remote cottage**: Avator generally doesn't work without shore power. Solar charging is theoretically possible but the math rarely works out for serious use. Plan on a gas outboard for off-grid cottages.
+**Off-grid or remote cottage**: Avator generally doesn't work without shore power. Solar charging is theoretically possible but the math rarely works out for serious use. [Plan on a gas outboard for off-grid cottages](/blog/portable-outboard-mercury-guide-2-20hp).
 
 A marine electrician can assess your cottage panel and tell you what your realistic Avator charging options are. Worth the $200-300 consultation before buying a large Avator setup.
 
@@ -105,11 +105,11 @@ This pattern works fine with overnight charging for most Avator models. The sing
 
 ## Cold weather and off-season charging
 
-Avator batteries lose meaningful capacity in cold weather. Late-season operation (October-November on Ontario lakes) means reduced range and slower charging.
+Avator batteries lose meaningful capacity in cold weather. Late-season operation (October-November on Ontario lakes) means [reduced range and slower charging](/blog/mercury-avator-range-rice-lake-cottage).
 
 For off-season storage (December-March), Mercury recommends storing battery packs at 50-80% charge in a heated space. Don't leave packs at the cottage through winter, battery degradation in cold storage is real.
 
-This is one of the practical differences from gas: a gas outboard can sit at the cottage through winter (properly winterized). An Avator setup means battery packs come home to a heated garage every fall.
+This is one of [the practical differences from gas](/blog/mercury-avator-electric-boating-ontario): a gas outboard can sit at the cottage through winter (properly winterized). An Avator setup means battery packs come home to a heated garage every fall.
 
 ## What we see at HBW
 

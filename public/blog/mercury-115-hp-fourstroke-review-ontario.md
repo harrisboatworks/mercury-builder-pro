@@ -91,7 +91,7 @@ This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**
 | Aluminum fishing boat | Rarely |
 | Fibreglass runabout | No, standard gearcase |
 
-CT gives you more low-end pulling power and hole-shot at the cost of some top-end speed. On a flat-bottom pontoon hull, that trade-off is worth it every time. On an aluminum fishing boat that runs at speed, the standard gearcase's lower drag profile is the better fit.
+CT gives you [more low-end pulling power and hole-shot](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) at the cost of some top-end speed. On a flat-bottom pontoon hull, that trade-off is worth it every time. On an aluminum fishing boat that runs at speed, the standard gearcase's lower drag profile is the better fit.
 
 ---
 
@@ -103,7 +103,7 @@ A 16 ft boat with two anglers is the 90's job. When the hull is a 17, 20 ft Lund
 
 ### Mid-to-large pontoons, 20, 24 ft
 
-This is where the 115 CT earns its keep. A 22 ft pontoon with a full family load and a cooler deserves at least 90 CT. The 115 CT is the right answer if the pontoon is a tritoon, if you tow tubes, or if the boat simply sits heavy.
+This is where the 115 CT earns its keep. [A 22 ft pontoon with a full family load](/blog/best-mercury-outboard-pontoon-boats) and a cooler deserves at least 90 CT. The 115 CT is the right answer if the pontoon is a tritoon, if you tow tubes, or if the boat simply sits heavy.
 
 ### Family runabouts that do a bit of everything
 
@@ -111,7 +111,7 @@ Cruise, fish, tow a tube, watersports occasionally, the 115 handles all of it wi
 
 ### Repowers from older two-strokes
 
-The most common repower candidates for the 115 ELPT are older 115 OptiMax, 115, 150 OMC, and 90, 115 Yamaha two-strokes. Occasionally a boat that had a 150 V6 but found it was more motor than needed steps down to the 115.
+[The most common repower candidates](/blog/mercury-repower-cost-ontario-2026-cad) for the 115 ELPT are older 115 OptiMax, 115, 150 OMC, and 90, 115 Yamaha two-strokes. Occasionally a boat that had a 150 V6 but found it was more motor than needed steps down to the 115.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -123,7 +123,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## Where the 115 HP FourStroke Is the Wrong Call
 
-**Bass-boat hole-shot.** The 115 ELPT FourStroke is tuned for fuel economy, smooth cruising, and reliability, not snapping off the dock. If you want strong acceleration on a 19 ft fishing rig, the 115 Pro XS is the different motor you're looking for.
+**Bass-boat hole-shot.** The 115 ELPT FourStroke is tuned for fuel economy, smooth cruising, and reliability, not snapping off the dock. If you want strong acceleration on a 19 ft fishing rig, [the 115 Pro XS is the different motor you're looking for](/blog/mercury-pro-xs-buyer-guide-ontario).
 
 **Heavy tritoons, 24+ ft pontoons with full loads, or houseboats.** These applications need 150 V6 or higher. The 115 will push them, but it'll work harder than it should over its service life.
 
@@ -145,7 +145,7 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 | Best hull range | 16, 18 ft aluminum, mid pontoons | 17, 20 ft aluminum, mid-large pontoons | 19, 22 ft, larger platforms |
 | Price vs. 115 | Less |, | More (~$5,000+ more) |
 
-**90 vs. 115:** Tuning, not a different motor. No weight change. Price difference is real but modest. If the boat regularly carries four people and full gear, the 115 is worth it.
+**[90 vs. 115](/blog/mercury-75-vs-90-vs-115-comparison):** Tuning, not a different motor. No weight change. Price difference is real but modest. If the boat regularly carries four people and full gear, the 115 is worth it.
 
 **115 vs. 150:** Completely different family. The 150 is a V6, heavier by about 100 lbs, in a different price bracket. Don't let someone talk you into a 150 for a hull that fits the 115, and don't settle for the 115 on a hull that genuinely needs the 150.
 
@@ -217,9 +217,9 @@ Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because 
 
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 
 ## Next steps
 

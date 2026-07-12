@@ -42,7 +42,7 @@ We are a Mercury Marine Premier dealer. That matters for how warranty claims are
 
 Mercury's warranty covers defects in materials and workmanship on the outboard motor. This means: if something fails because of how the motor was made or assembled, Mercury covers it.
 
-Current Mercury FourStroke outboards carry a 3-year factory limited warranty for recreational use. Current promotions can extend total factory-backed coverage on top of that base; see [current offers](/promotions) for what is active right now. Straight Mercury coverage, no third-party contract.
+Current Mercury FourStroke outboards carry a [3-year factory limited warranty](/blog/mercury-outboard-warranty-canada-2026) for recreational use. Current promotions can extend total factory-backed coverage on top of that base; see [current offers](/promotions) for what is active right now. Straight Mercury coverage, no third-party contract.
 
 The warranty covers:
 
@@ -60,7 +60,7 @@ The warranty does **not** cover:
 
 ## What "rigged by a Mercury dealer" means for your warranty
 
-Mercury's warranty is tied to proper installation. When a repower is done by a certified Mercury dealer, using Mercury-approved rigging standards, correct shaft length, proper controls, and correct mounting, the warranty is registered correctly and there are no gaps.
+Mercury's warranty is tied to proper installation. [When a repower is done by a certified Mercury dealer](/blog/what-happens-during-mercury-repower), using Mercury-approved rigging standards, correct shaft length, proper controls, and correct mounting, the warranty is registered correctly and there are no gaps.
 
 When a motor is purchased elsewhere and self-installed, or installed by a shop that isn't a Mercury dealer, warranty claims can be complicated by questions about whether the installation met Mercury's standards.
 
@@ -72,7 +72,7 @@ We're a Mercury Premier dealer. Premier is Mercury's top dealer service tier. Fo
 
 Mercury offers extended warranty programs beyond the factory coverage period.
 
-Mercury's extended-coverage program is Mercury Product Protection (MPP). Terms and pricing vary by model and are quoted at the time of sale. Current promotions may also extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) for what is active right now.
+Mercury's extended-coverage program is [Mercury Product Protection (MPP)](/blog/mercury-extended-warranty-platinum-ontario). Terms and pricing vary by model and are quoted at the time of sale. Current promotions may also extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) for what is active right now.
 
 Extended warranty coverage is easiest to add at the time of the repower, before the motor is first registered. Ask about this when you're building your quote.
 
@@ -80,7 +80,7 @@ Extended warranty coverage is easiest to add at the time of the repower, before 
 
 ## Break-in period: what it is and why it matters for warranty
 
-Mercury FourStroke outboards have a break-in period, a set of operating hours during which you avoid running the motor at wide-open throttle continuously.
+Mercury FourStroke outboards have [a break-in period](/blog/breaking-in-new-mercury-motor-guide), a set of operating hours during which you avoid running the motor at wide-open throttle continuously.
 
 The exact procedure is in your owner's manual and varies by model, but the shape is consistent: vary your throttle and avoid sustained wide-open throttle through the first 10 hours, with the gentlest treatment in the first hour. We walk you through your motor's specific procedure at pickup.
 
@@ -133,11 +133,6 @@ Mercury warranty is tied to the motor's serial number, not the dealership where 
 ### How do I make a Mercury warranty claim?
 
 Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wiki/service. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim.
-
-## Related guides
-
-- [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026), Mercury warranty terms in Canada
-- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Premier extended coverage
 
 ## Next steps
 

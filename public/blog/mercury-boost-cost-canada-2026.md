@@ -92,7 +92,7 @@ This is where the early online rumour mill got it most wrong. Per Mercury Marine
 
 If anyone tells you Boost is available for your 300R, 400R, or V10, ask them to show you the serial-number range in Mercury's published eligibility list. If they can't produce it, walk. The list above is the official one as of Feb 2026.
 
-**The single most common Ontario motor that IS eligible:** the **200 HP and 250 HP V8 Pro XS** on a modern bass or multi-species rig built from late 2024 onward. That serial-number window matters.
+**The single most common Ontario motor that IS eligible:** the **[200 HP and 250 HP V8 Pro XS](/blog/mercury-150-300hp-pro-xs-performance-guide)** on a modern bass or multi-species rig built from late 2024 onward. That serial-number window matters.
 
 ---
 
@@ -143,7 +143,7 @@ This is the question we hear most. **"Is Boost a way to skip buying a bigger mot
 - Boost does not let you plane a heavier boat at lower RPM.
 - Boost improves **how quickly you reach WOT**, not what WOT actually is.
 
-If your boat is underpowered (won't hold plane with passengers, runs out of breath up-current, can't push the load you need), Boost won't fix that. You need more cubic inches.
+If your boat is underpowered (won't hold plane with passengers, runs out of breath up-current, can't push the load you need), Boost won't fix that. [You need more cubic inches](/blog/mercury-repower-cost-ontario-2026-cad).
 
 If your boat has enough motor but you wish the punch out of corners was sharper, Boost might be the better spend than a re-prop.
 
@@ -153,8 +153,8 @@ The honest framing: **Boost is a response tuning upgrade, not a power upgrade.**
 
 ## When Boost makes sense (checklist)
 
-- Your motor is on the official Mercury eligible list (check serial number)
-- You run a tournament, ski, or wakeboard-style boat where hole-shot matters
+- Your motor is [on the official Mercury eligible list](/blog/mercury-boost-software-upgrade-eligibility-2026) (check serial number)
+- You run a tournament, [ski, or wakeboard-style boat where hole-shot matters](/blog/best-mercury-for-ski-wakeboard-boats)
 - Canadian price lands in line with the official Mercury Canada MAP when published
 - You already have enough peak HP for your hull and load
 

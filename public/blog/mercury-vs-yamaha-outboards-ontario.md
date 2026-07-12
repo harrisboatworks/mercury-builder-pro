@@ -51,7 +51,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 ## The Rice Lake service-network reality
 
-**HBW is the only Mercury dealer on Rice Lake.** We are also the only brand-name outboard service of any kind on Rice Lake. There is no Yamaha dealer on Rice Lake. There is no Honda dealer.
+**HBW is [the only Mercury dealer on Rice Lake](/blog/best-mercury-dealer-ontario-hbw-difference).** We are also the only brand-name outboard service of any kind on Rice Lake. There is no Yamaha dealer on Rice Lake. There is no Honda dealer.
 
 For Rice Lake boaters, the practical brand choice is: own a Mercury and have it serviced at HBW on the lake, or own any other brand and drive 30+ minutes for service. That choice usually decides the conversation before any spec sheet comes out.
 
@@ -59,7 +59,7 @@ For boaters in the broader Kawarthas, the service-network math still favours Mer
 
 ## What Mercury and Yamaha both do well
 
-Both brands build genuinely good motors in 2026. Modern 4-stroke EFI engineering with reliable cold-start performance. 5-year or 8-year extended warranty options available. Comparable fuel economy at equivalent HP ratings. Similar real-world reliability in the 9.9 to 250 HP class.
+[Both brands build genuinely good motors](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) in 2026. Modern 4-stroke EFI engineering with reliable cold-start performance. 5-year or 8-year extended warranty options available. Comparable fuel economy at equivalent HP ratings. Similar real-world reliability in the 9.9 to 250 HP class.
 
 If you removed the brand badges and asked owners to compare a 2026 Mercury 150 FourStroke to a 2026 Yamaha F150 on the same boat, most couldn't reliably tell which was which on perceived performance.
 
@@ -69,7 +69,7 @@ If you removed the brand badges and asked owners to compare a 2026 Mercury 150 F
 
 **Lineup breadth.** Yamaha tops out at 425 HP (XTO Offshore). Mercury runs from 2.5 HP portables through 600 HP Verado V12. For the 250 to 600 HP range, Mercury's lineup is broader.
 
-**Pro XS performance lineup.** Yamaha's SHO is strong but doesn't span the same breadth as Mercury Pro XS.
+**Pro XS performance lineup.** Yamaha's SHO is strong but doesn't span the same breadth as [Mercury Pro XS](/blog/mercury-pro-xs-buyer-guide-ontario).
 
 **Parts availability in Canada.** Mercury parts ship from Canadian distribution. Yamaha parts often route through US distribution.
 
@@ -97,9 +97,9 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions. T
 
 ## Brand-switching from Yamaha to Mercury
 
-Customers who switch from Yamaha to Mercury usually do so for one of three reasons: their existing Yamaha is at end of life, their local Yamaha dealer is too far away, or they're planning a multi-engine setup with Mercury Joystick Piloting.
+[Customers who switch from Yamaha to Mercury](/blog/yamaha-to-mercury-repower-ontario-guide) usually do so for one of three reasons: their existing Yamaha is at end of life, their local Yamaha dealer is too far away, or they're planning a multi-engine setup with Mercury Joystick Piloting.
 
-The brand-swap cost above a same-brand repower runs roughly $1,800 to $3,500 depending on what you have rigged today.
+[The brand-swap cost above a same-brand repower](/blog/mercury-repower-cost-ontario-2026-cad) runs roughly $1,800 to $3,500 depending on what you have rigged today.
 
 ## Common mistakes (the things we push back on)
 
@@ -171,10 +171,10 @@ Mercury, by a significant margin. Mercury is the dominant brand on Ontario fresh
 ## Related guides
 
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
-- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
 - [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
 - [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 
 ## Next steps
 

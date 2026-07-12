@@ -97,10 +97,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 For about 95% of recreational customers, the motor selection page is the source of truth. But there are situations where the phone adds real value:
 
-- **Brand conversions from Evinrude or Yamaha:** Switching brands can add $1,500 to $3,000 in rigging above standard repower costs. Worth a call.
+- **Brand conversions from Evinrude or Yamaha:** [Switching brands can add $1,500 to $3,000 in rigging](/blog/yamaha-to-mercury-repower-ontario-guide) above standard repower costs. Worth a call.
 - **Twin or triple engine setups:** Multi-engine rigging is complex. Motors can be quoted online, but rigging benefits from a real conversation.
 - **Verado V12 600:** Special-order territory. Less than 1% of customers.
-- **Commercial (SeaPro) applications:** Commercial use cycles differ from recreational, and the conversation is worth having.
+- **[Commercial (SeaPro) applications](/blog/mercury-seapro-commercial-outboard-guide):** Commercial use cycles differ from recreational, and the conversation is worth having.
 
 ---
 
@@ -126,9 +126,9 @@ For about 95% of recreational customers, the motor selection page is the source 
 ---
 
 ## Related reading
-- Mercury Repower Cost Ontario 2026
-- Mercury Controls & Rigging Guide Ontario
-- Mercury Outboard Financing Ontario 2026
+- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Controls & Rigging Guide Ontario](/blog/mercury-controls-rigging-guide-ontario)
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026)
 
 **See the number before you call.** 
 Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
@@ -185,10 +185,10 @@ Build a quote at HBW first. Use that as your reference. Then go look at other de
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
 - [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
 
 ## Next steps
 

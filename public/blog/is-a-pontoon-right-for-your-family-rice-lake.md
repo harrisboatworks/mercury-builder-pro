@@ -58,7 +58,7 @@ We would rather you hear this from us than find out in July.
 
 **It is not a dedicated watersports boat.** You can tube behind a properly powered pontoon, and plenty of families do. But for serious skiing, wakeboarding, or teenagers who want to get launched off a tube, a dedicated ski or wake boat will always do it better. A pontoon is a compromise here, a good one with enough power, but a compromise.
 
-**Wind and chop.** Rice Lake is calm a lot of the time, but it is a long lake and it can build a real chop when the wind comes up in the afternoon. A two-tube pontoon gets pushed around and pounds more in that slop than a deep-V hull does. It is rarely dangerous, but it is less comfortable.
+**Wind and chop.** Rice Lake is calm a lot of the time, but it is a long lake and it can build a real chop when the wind comes up in the afternoon. A two-tube pontoon gets pushed around and pounds more in that slop than [a deep-V hull](/blog/pontoon-vs-v-hull-comparison-ontario) does. It is rarely dangerous, but it is less comfortable.
 
 **Speed.** Even a strong pontoon is not fast by runabout standards. If your idea of fun is a quick, sporty ride, a pontoon will feel sluggish.
 
@@ -76,7 +76,7 @@ Towing a tube takes roughly one horsepower for every 40 pounds you are pulling, 
 - **Comfortable all-day tubing, a loaded boat, bigger kids:** you want 115 hp and up.
 - **Skiing, wakeboarding, teenagers who want speed and air:** 150 hp and up, and ideally a tritoon (more on that below).
 
-The most common regret we see is not overpowering. It is underpowering. A family buys the smallest motor to save money, loads six people and a cooler aboard, and then cannot get a tube up out of the water on a windy day. Buy the power for what you will actually do, including the teenager years coming.
+The most common regret we see is not overpowering. It is underpowering. A family buys the smallest motor to save money, loads six people and a cooler aboard, and then cannot get a tube up out of the water on a windy day. [Buy the power for what you will actually do](/blog/pontoon-hp-sizing-decision-tree-ontario), including the teenager years coming.
 
 ## Two tubes or three? The tritoon question
 
@@ -88,7 +88,7 @@ If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoo
 
 ## How much horsepower on Rice Lake
 
-For most family pontoons in the 18 to 22 foot range we rig Mercury FourStroke power in the 90 to 150 hp band, usually with the **Command Thrust** gearcase. Command Thrust is a bigger gearcase with more low-end grunt, and it is exactly right for a heavy, load-carrying pontoon. (Worth knowing: Command Thrust belongs on pontoons and heavy work boats, not on standard V-hulls. Some dealers mis-rig it onto V-hulls claiming more torque. That is the wrong application, and it is the kind of thing we will steer you away from.)
+For most family pontoons in the 18 to 22 foot range we rig [Mercury FourStroke power](/blog/best-mercury-outboard-pontoon-boats) in the 90 to 150 hp band, usually with the **Command Thrust** gearcase. [Command Thrust](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) is a bigger gearcase with more low-end grunt, and it is exactly right for a heavy, load-carrying pontoon. (Worth knowing: Command Thrust belongs on pontoons and heavy work boats, not on standard V-hulls. Some dealers mis-rig it onto V-hulls claiming more torque. That is the wrong application, and it is the kind of thing we will steer you away from.)
 
 | Your family's main use | Boat | Mercury power |
 |---|---|---|
@@ -123,7 +123,7 @@ We carry **Legend** pontoons, a Canadian company headquartered in Whitefish, Ont
 
 ## The smartest move before you buy: rent one
 
-Here is the advantage of buying from a marina that also rents. You do not have to gamble on a major purchase. Take a pontoon out for a weekend on Rice Lake with your actual family, your actual cooler, and your actual kids on a tube. You will know within an afternoon whether it fits your life. We would rather you rent first and buy the right boat than buy fast and wish you had gone bigger on power. See our [Rice Lake pontoon rentals](https://harrisboatworks.ca/rentals).
+Here is the advantage of buying from [a marina that also rents](/blog/rice-lake-boat-rental-guide-2026). You do not have to gamble on a major purchase. Take a pontoon out for a weekend on Rice Lake with your actual family, your actual cooler, and your actual kids on a tube. You will know within an afternoon whether it fits your life. We would rather you rent first and buy the right boat than buy fast and wish you had gone bigger on power. See our [Rice Lake pontoon rentals](https://harrisboatworks.ca/rentals).
 
 ## Ready to find the right boat for your family?
 

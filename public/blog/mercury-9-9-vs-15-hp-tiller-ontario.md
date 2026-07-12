@@ -91,7 +91,7 @@ If you're unsure whether your lake has a cap, the Ontario [Boating Restrictions 
 
 ## The Capacity Plate Question
 
-Every boat sold in Canada after the late 1970s has a capacity plate riveted to the transom or the inside of the gunwale. The plate states the maximum recommended horsepower for the hull. Exceeding it creates real problems: capacity-plate compliance, insurance liability, potential warranty issues, and steering and handling that the hull was never designed for.
+Every boat sold in Canada after the late 1970s has a [capacity plate riveted to the transom](/blog/how-to-read-boat-capacity-plate-ontario) or the inside of the gunwale. The plate states the maximum recommended horsepower for the hull. Exceeding it creates real problems: capacity-plate compliance, insurance liability, potential warranty issues, and steering and handling that the hull was never designed for.
 
 For the 9.9 vs 15 conversation, the capacity plate matters when:
 
@@ -117,23 +117,23 @@ The budget. CAD pricing on both motors is similar enough that the call almost al
 
 ## Kicker Motor Use: 9.9 vs 15 for Trolling
 
-If you're rigging a kicker motor on a bigger boat, the 9.9 EFI FourStroke is the standard pick. Three reasons:
+If you're rigging a kicker motor on a bigger boat, [the 9.9 EFI FourStroke is the standard pick](/blog/mercury-9-9-efi-review-ontario). Three reasons:
 
 - Tournament classes (bass, walleye) cap kicker motors at 9.9 HP. If you ever want to fish a derby on Rice Lake or anywhere in the Kawarthas, the 15 disqualifies you.
 - The 9.9 weighs ~15 lbs less. On a bracket hanging off the main motor's transom, that weight savings matters for trim and handling.
 - A 15 HP kicker is overkill for trolling. You're running it at idle to 2000 RPM most of the time. The extra 5 HP at the top end isn't doing anything for you.
 
-The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. A pontoon kicker, for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
+The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
 
 ## Sailboat Auxiliary: Long Shaft, Weight, Command Thrust
 
 Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
-**Shaft length matters more.** Most sailboat transoms are tall. You'll usually need a 20 inch (long) shaft, sometimes a 25 inch (extra long) shaft on bigger displacement hulls. Wrong shaft length on a sailboat auxiliary is a more expensive mistake than on a powerboat because the boat is harder to manoeuvre back to the dock when the motor's cavitating.
+**Shaft length matters more.** Most sailboat transoms are tall. [You'll usually need a 20 inch (long) shaft](/blog/outboard-shaft-length-guide), sometimes a 25 inch (extra long) shaft on bigger displacement hulls. Wrong shaft length on a sailboat auxiliary is a more expensive mistake than on a powerboat because the boat is harder to manoeuvre back to the dock when the motor's cavitating.
 
 **Weight matters more, aft.** Sailboats are sensitive to transom weight. The 15 lb penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
 
-**Command Thrust may be worth it.** The Command Thrust gearcase option puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
+**Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
 ## Fuel Economy: The Difference Is Smaller Than You'd Expect
 

@@ -46,7 +46,7 @@ Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, establ
 
 ## SmartCraft Is the Engine's Computer. Everything Else Plugs Into It.
 
-**SmartCraft** is Mercury's name for the engine-side network that talks to gauges, displays, and apps. If your motor is from **2004 or newer at 40 HP and up** (or 2022+ at 25 HP+ with electric start), it's SmartCraft-capable. That's the foundation.
+**SmartCraft** is Mercury's name for the engine-side network that talks to gauges, displays, and apps. If your motor is from **2004 or newer at 40 HP and up** (or 2022+ at 25 HP+ with electric start), [it's SmartCraft-capable](/blog/mercury-smartcraft-connect-guide-ontario). That's the foundation.
 
 Everything in this article. VesselView, Active Trim, DTS, the new Mercury Marine App, runs on top of SmartCraft. Think of SmartCraft as the engine's data backbone; the displays and apps are how you read what it's saying.
 
@@ -100,7 +100,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 DTS is **standard** on the V8 250-400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175-225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
 
-Worth retrofitting? Almost never on existing boats. DTS retrofit involves changing the lever, the cables, the helm wiring, and possibly the engine's computer. New repower? Worth it on V8s.
+Worth retrofitting? Almost never on existing boats. [DTS retrofit involves changing the lever, the cables, the helm wiring](/blog/mercury-dts-retrofit-eligibility-2026), and possibly the engine's computer. New repower? Worth it on V8s.
 
 ---
 
@@ -119,7 +119,7 @@ You also pick one of **five Active Trim profiles**, higher number means more tri
 
 The catch: **Active Trim doesn't see shallow water.** It's making decisions about hull attitude based on speed and RPM. If you're entering a shallow spot, take manual trim control before the prop hits the bottom. The system isn't a substitute for awareness.
 
-Active Trim is offered across many SmartCraft-capable Mercury setups, including a wide range of FourStroke outboards and SmartCraft-capable sterndrives. Compatibility depends on the motor year, rigging, and current SmartCraft setup, so confirm with your dealer before ordering parts.
+Active Trim is offered across many SmartCraft-capable Mercury setups, including [a wide range of FourStroke outboards](/blog/fourstroke-vs-pro-xs) and SmartCraft-capable sterndrives. Compatibility depends on the motor year, rigging, and current SmartCraft setup, so confirm with your dealer before ordering parts.
 
 ---
 
@@ -147,7 +147,7 @@ Installation isn't terrible on most boats, a couple of hours plus configuration.
 Honest take, customer-by-customer:
 
 - **You have a 2010+ Mercury and you've never paired it to your phone:** worth the module + an hour of your time. The fuel flow and hour-tracking alone will pay for it over a season.
-- **You're repowering and choosing options:** add the SmartCraft Connect module from day one. Cheaper as part of a rigging job than as a retrofit.
+- **[You're repowering and choosing options](/blog/mercury-repower-cost-ontario-2026-cad):** add the SmartCraft Connect module from day one. Cheaper as part of a rigging job than as a retrofit.
 - **You have a multi-engine boat:** the multi-engine module is genuinely useful, see all engines on one screen, compare RPM trims, catch one engine running hotter than the others before it becomes a problem.
 - **You have a 2003 or older Mercury:** you don't have SmartCraft, and adding it isn't realistic. Skip.
 

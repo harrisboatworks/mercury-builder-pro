@@ -60,7 +60,7 @@ https://www.youtube.com/watch?v=AQIV2UddocM
 
 *Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). This is the real sequence our techs follow; the video shows why the labour is the cost.*
 
-That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" during other gearcase work saves real money.
+That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" [during other gearcase work](/blog/milky-gearcase-oil-meaning-cost-ontario) saves real money.
 
 ---
 

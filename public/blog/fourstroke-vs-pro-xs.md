@@ -54,7 +54,7 @@ Anyone staring at a Mercury order sheet or a repower quote and wondering why the
 
 **FourStroke** is the workhorse. It's the broadest line Mercury makes, from 2.5 hp kicker motors up through the 250 and 300 hp V8s. It's tuned for efficiency, low noise, and low cost of ownership. On pontoons, aluminum fishing boats, runabouts, and most cottage boats, this is the motor that just works and doesn't ask for attention.
 
-**Pro XS** is the performance version. Same Mercury reliability, but tuned for speed and hole shot, the quick jump up onto plane that bass and walleye anglers care about. It usually spins a couple hundred more RPM at the top, carries performance tuning like Mercury's Transient Spark for stronger acceleration, and runs a bit lighter than the equivalent FourStroke. It's the tournament-circuit motor.
+**Pro XS** is the performance version. Same Mercury reliability, but tuned for speed and hole shot, the quick jump up onto plane that bass and walleye anglers care about. It usually spins a couple hundred more RPM at the top, carries performance tuning like Mercury's Transient Spark for stronger acceleration, and runs a bit lighter than the equivalent FourStroke. [It's the tournament-circuit motor](/blog/mercury-pro-xs-buyer-guide-ontario).
 
 **Verado** is the refined one. The current Verado V8, V10, and V12 outboards (250 hp up to 600 hp) are built around quiet, smooth, premium operation, with Mercury's Advanced MidSection knocking down vibration and digital throttle and shift as standard. Worth a fact-check here, because plenty of old blog posts get it wrong: the current Verados are naturally aspirated, not supercharged. That was the old inline-six. Verado lives on big offshore boats, large pontoons and tritoons, and luxury cruisers.
 
@@ -90,7 +90,7 @@ That's the whole decision, honestly. The rest is detail.
 
 ### Best fit: most Rice Lake boats
 
-If you're on Rice Lake or anywhere in the Kawarthas with a pontoon or an aluminum fishing boat, the FourStroke is almost always the answer. Save the upgrade money for a good prop and a full tank.
+If you're on Rice Lake or anywhere in the Kawarthas with a pontoon or an aluminum fishing boat, [the FourStroke is almost always the answer](/blog/mercury-fourstroke-buyer-guide-ontario). Save the upgrade money for a good prop and a full tank.
 
 ## Where they overlap, and how to actually choose
 
@@ -98,7 +98,7 @@ The confusion lives in the overlap zone, roughly 115 hp and up, where the same h
 
 Walk it back to three honest questions:
 
-1. **What's the boat built to do?** A bass boat or a fast fishing hull rewards Pro XS. A pontoon or a family runabout rewards FourStroke. A big offshore or luxury boat is where Verado earns its keep.
+1. **What's the boat built to do?** A bass boat or a fast fishing hull rewards Pro XS. [A pontoon or a family runabout rewards FourStroke](/blog/best-mercury-outboard-pontoon-boats). A big offshore or luxury boat is where Verado earns its keep.
 2. **Will you actually use the performance?** If "fast" genuinely matters to you, Pro XS. If you're nodding along but you really just want to get to the fishing hole and back, FourStroke.
 3. **How much does quiet and smooth matter?** On a big boat with people aboard all day, Verado's refinement is a real upgrade. On a 17-foot tinny, you won't notice it enough to justify the spend.
 
@@ -127,7 +127,7 @@ One more local point worth saying plainly: the only Mercury service on Rice Lake
 
 ## Ready to figure out the right motor for your boat?
 
-Tell us the boat (make, length, what you do with it) and we'll tell you straight which Mercury family fits and why. No upsell to a motor you don't need. You can build a repower quote yourself in a few minutes, or just call and talk to a person who's rigged a thousand of these.
+Tell us the boat (make, length, what you do with it) and we'll tell you straight which Mercury family fits and why. No upsell to a motor you don't need. You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-cost-ontario-2026-cad), or just call and talk to a person who's rigged a thousand of these.
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
@@ -197,11 +197,11 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 
 ## Related guides
 
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 
 ## Next steps
 

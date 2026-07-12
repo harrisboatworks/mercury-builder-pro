@@ -46,7 +46,7 @@ The honest filter: how many hours will you run it per season, and what does one 
 
 ## What SeaPro actually is
 
-SeaPro is a commercial-spec variant of Mercury's FourStroke outboards. Same basic powerhead architecture in many cases, but with components and service intervals tuned for sustained heavy use:
+SeaPro is a [commercial-spec variant of Mercury's FourStroke outboards](/blog/mercury-fourstroke-buyer-guide-ontario). Same basic powerhead architecture in many cases, but with components and service intervals tuned for sustained heavy use:
 
 - Reinforced lower unit, heavier-gauge gearcase castings, beefier bearings, larger oil capacity
 - Enhanced cooling system, more cooling passages, designed for continuous running without heat-soaking
@@ -132,7 +132,7 @@ For a 200+ hours/season recreational user, the math gets close. On SeaPro V6 and
 
 ## What HBW does for commercial customers
 
-We support guides and rental operators throughout the Kawarthas and Trent-Severn:
+We support [guides and rental operators throughout the Kawarthas and Trent-Severn](/blog/trent-severn-mercury-dealer-survival-guide-2026):
 
 - **Commercial-spec quoting**, we register the motor correctly for commercial warranty terms. Getting this right at purchase matters; it's a pain to change retroactively.
 - **Priority service scheduling**, peak-season breakdowns get worked into the schedule. We know your boat is income.
@@ -187,11 +187,11 @@ Different applications. Pro XS is the performance variant (higher RPM, sport gea
 
 ## Related guides
 
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 - [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 - [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
 
 ## Next steps
 

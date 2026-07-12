@@ -34,9 +34,9 @@ language: en-CA
 
 Every July, some brave soul organizes the family reunion. Twenty-two people, four coolers, one group chat that's been chaos since March.
 
-The good news: a multi-boat day on Rice Lake is one of the easiest big-group activities to actually pull off, because the lake does the entertaining and the dock setup is simple.
+The good news: [a multi-boat day on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) is one of the easiest big-group activities to actually pull off, because the lake does the entertaining and the dock setup is simple.
 
-Here's how the groups that have a great day set it up, and the three rules that catch organizers off guard.
+Here's how the groups that have a great day set it up, and the three rules that catch organizers off guard. If it's your crew's first time on the water here, our [first-time rental guide](/blog/first-time-boat-rental-rice-lake-guide) covers the basics before you scale up to a fleet.
 
 ---
 

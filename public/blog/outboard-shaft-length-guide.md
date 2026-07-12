@@ -99,7 +99,7 @@ Between sizes? Round down, not up. A motor slightly longer than needed drags mor
 ## How to tell if your shaft length is wrong
 
 ### Shaft too short
-- Prop cavitates (ventilates) under load, RPMs spike, the boat will not accelerate cleanly
+- [Prop cavitates (ventilates) under load](/blog/mercury-propeller-selection-guide), RPMs spike, the boat will not accelerate cleanly
 - Choppy ride at speed, the motor lifts in waves, the prop breaks the surface
 - Overheating, the cooling water intake can rise above the waterline
 - Cavitation plate is visibly above the water at cruising speed
@@ -112,7 +112,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - Motor sounds "loaded" at cruise, working harder than the throttle position should require
 - Cavitation plate is well below the water surface at speed
 
-If you are seeing any of these symptoms, shaft length is a strong candidate. We diagnose during sea-trial on every repower at HBW.
+If you are seeing any of these symptoms, shaft length is a strong candidate. [We diagnose during sea-trial on every repower at HBW](/blog/what-happens-during-mercury-repower).
 
 ## Decoding Mercury shaft length codes
 
@@ -128,7 +128,7 @@ If you are seeing any of these symptoms, shaft length is a strong candidate. We 
 | ELHPT | Electric start, Long shaft, tiller, Power Tilt |
 
 Examples:
-- Mercury 90 EXLPT FourStroke = 25-inch shaft, electric start, power tilt
+- [Mercury 90 EXLPT FourStroke](/blog/how-to-read-mercury-outboard-serial-number) = 25-inch shaft, electric start, power tilt
 - Mercury 9.9 MH = Short shaft (15 inch), manual start, tiller
 - Mercury 60 ELHPT = 20-inch shaft, electric start, tiller, power tilt
 
@@ -144,7 +144,7 @@ Examples:
 
 Three things we do on every repower that prevent wrong-shaft mistakes:
 
-**We measure the transom during the walk-around.** Every repower starts with a tape measure, not a guess. We see the hull in person before we order.
+**[We measure the transom during the walk-around](/blog/mercury-repower-eligibility-guide).** Every repower starts with a tape measure, not a guess. We see the hull in person before we order.
 
 **We know the hull patterns.** Three generations of rigging experience means we know that a typical 16 to 18 ft Lund console takes a 20-inch, a Princecraft pontoon runs 20 or 25 depending on model year, and a Crestliner Tournament series may need 25.
 

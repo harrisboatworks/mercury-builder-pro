@@ -41,7 +41,7 @@ The customers we see at HBW in spring usually fit one of three patterns: the boa
 
 All three are repower candidates, if the hull is good.
 
-The part that trips people up is the math. A repower on a typical cottage aluminum boat or pontoon lands at a fraction of what a comparable new boat costs. The hull is the asset. The motor is the wear part. For [what every Mercury model costs](/pricing-reference) in CAD, see our full price reference.
+The part that trips people up is the math. [A repower on a typical cottage aluminum boat or pontoon](/blog/mercury-repower-cost-ontario-2026-cad) lands at a fraction of what a comparable new boat costs. [The hull is the asset](/blog/repower-vs-new-boat). The motor is the wear part. For [what every Mercury model costs](/pricing-reference) in CAD, see our full price reference.
 
 ## What actually changes the decision for cottage boats
 
@@ -64,9 +64,9 @@ source: Kawartha cottage
 ## The common cottage boat scenarios we see at HBW
 
 ### The old aluminum fishing boat
-A 16 to 18 ft aluminum console from the 1980s or 1990s, originally rigged with an Evinrude or an older Mercury. The hull is solid, aluminum is forgiving and this type of boat is built to last. The motor is dead or nearly there. The customer wants to keep the boat in the family.
+A 16 to 18 ft aluminum console from the 1980s or 1990s, [originally rigged with an Evinrude](/blog/evinrude-to-mercury-repower-ontario-guide) or an older Mercury. The hull is solid, aluminum is forgiving and this type of boat is built to last. The motor is dead or nearly there. The customer wants to keep the boat in the family.
 
-This is a clean repower candidate. A Mercury FourStroke in the appropriate HP class for the hull, possibly paired with a 9.9 ProKicker if fishing is part of the plan, gives this hull another generation of use.
+This is a clean repower candidate. A Mercury FourStroke in the appropriate HP class for the hull, possibly paired with [a 9.9 ProKicker if fishing is part of the plan](/blog/mercury-prokicker-rice-lake-fishing-guide), gives this hull another generation of use.
 
 ### The cottage runabout
 A 17 to 19 ft fiberglass runabout from the 1990s or early 2000s, used for family tubing, swimming, and runs to town. The motor is old and often underpowered relative to how the family uses the boat today, because families grow.
@@ -76,7 +76,7 @@ Stepping up in HP during a repower is common here and usually the right call.
 ### The cottage pontoon
 An 18 to 22 ft pontoon used for cruising, fishing with the kids, and the occasional tube ride. The motor is usually original from when the pontoon was bought.
 
-Mercury Command Thrust matters on pontoons. Pontoon hulls are heavy and blunt-fronted; they need pulling power more than top speed.
+[Mercury Command Thrust matters on pontoons](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull). Pontoon hulls are heavy and blunt-fronted; they need pulling power more than top speed.
 
 ### The tin boat
 A 14 to 16 ft tiller boat used for solo fishing and quick runs. The motor has been getting harder to start and parts for it have been getting harder to find. These are simple repowers, smaller motor, less rigging, lower cost.
@@ -180,10 +180,10 @@ For Rice Lake and surrounding Kawartha-area cottages, yes. Call us to sort out t
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 

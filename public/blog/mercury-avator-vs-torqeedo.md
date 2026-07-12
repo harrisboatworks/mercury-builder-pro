@@ -85,7 +85,7 @@ This is where the two companies are most directly comparable. Both use lithium-i
 
 Where they differ:
 
-**Mercury Avator** uses Mercury's proprietary Power Center system for the larger models, which integrates with SmartCraft for charge monitoring, range estimation, and load reporting. Smaller models use integrated batteries (7.5e).
+**Mercury Avator** uses Mercury's proprietary Power Center system for the larger models, which integrates with SmartCraft for charge monitoring, [range estimation](/blog/mercury-avator-range-rice-lake-cottage), and load reporting. [Smaller models use integrated batteries (7.5e)](/blog/mercury-avator-7-5e-review).
 
 **Torqeedo** uses Torqeedo's proprietary Power 24-3500 battery line and the larger Power 48-5000 series. Battery management is integrated with Torqeedo's display systems.
 
@@ -100,7 +100,7 @@ Charge times are similar between brands at equivalent battery capacities. Plan o
 - Mid-size batteries (3-5 kWh): overnight from 110V, faster from 240V
 - Large battery banks (10+ kWh): 240V required for practical charging
 
-For Ontario cottage applications, standard 110V outlet charging handles most use cases. If you're running a large battery bank, plan on a 240V charger install at the dock or boathouse.
+For Ontario cottage applications, standard 110V outlet charging handles most use cases. If you're running a large battery bank, plan on [a 240V charger install at the dock or boathouse](/blog/mercury-avator-charging-cottage-dock).
 
 ## Service and parts reality
 
@@ -132,7 +132,7 @@ For specialized applications (commercial use, sailboat auxiliary, large electric
 
 ## Where Mercury Avator wins
 
-For typical Ontario recreational boating:
+For [typical Ontario recreational boating](/blog/mercury-avator-electric-boating-ontario):
 
 - Dealer network depth across the country
 - Parts availability at local dealers

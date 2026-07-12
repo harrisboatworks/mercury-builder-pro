@@ -76,12 +76,12 @@ The corrosion warranty covers **structural corrosion** that wasn't caused by ext
 - Wear items (impellers, anodes, spark plugs, propellers, fuel filters, oil)
 - Damage from collision, grounding, or operator error
 - Damage from improper installation by anyone other than an authorized Mercury dealer
-- Damage from running ethanol pump gas if Mercury can show fuel-system failure
+- Damage from [running ethanol pump gas](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario) if Mercury can show fuel-system failure
 - Damage from running the wrong oil grade or skipping break-in
 - Damage from saltwater use on a motor not specified for salt
 - Modifications, racing use, or commercial use on a recreational-spec motor
 
-The phrase "improper installation" matters. **A Mercury installed by your buddy at the cottage doesn't have warranty coverage in the same way a Mercury installed by an authorized dealer does.** This is one reason we strongly recommend having any new Mercury rigged at a Mercury dealer, the rigging itself is a covered service, and the documentation protects you if anything fails later.
+The phrase "improper installation" matters. **A Mercury installed by your buddy at the cottage doesn't have warranty coverage in the same way a Mercury installed by an authorized dealer does.** This is one reason we strongly recommend [having any new Mercury rigged at a Mercury dealer](/blog/mercury-warranty-after-repower-ontario), the rigging itself is a covered service, and the documentation protects you if anything fails later.
 
 ---
 
@@ -110,7 +110,7 @@ whenInDoubt: MPP is transferable to a second owner, which adds to resale value. 
 
 ## Mercury Product Protection (MPP). The Extended Warranty
 
-If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, an optional extended-coverage program (typically marketed in Gold, Silver, and Premier tiers depending on availability). MPP is not part of the factory standard warranty.
+If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, [an optional extended-coverage program](/blog/mercury-extended-warranty-platinum-ontario) (typically marketed in Gold, Silver, and Premier tiers depending on availability). MPP is not part of the factory standard warranty.
 
 Coverage tiers, durations, and pricing depend on the specific motor, region, current promotions, and how soon after purchase the extension is added. As a general guide:
 
@@ -158,7 +158,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 1. **Wrong oil.** Mercury 4-strokes need FC-W certified marine oil. Automotive oil voids cylinder-related claims. Use Mercury 25W-40 marine, or another FC-W spec marine oil.
 2. **Skipping the 20-hour break-in service.** Documented service is part of the warranty conditions.
-3. **Skipping the 100-hour annual service.** Same.
+3. **[Skipping the 100-hour annual service](/blog/mercury-maintenance-intervals-20-100-300-rule).** Same.
 4. **Improper winterization.** A cracked block from missed winterization isn't a manufacturing defect; it's an operator-side failure.
 5. **Submersion.** A motor that goes underwater is voided unless it's professionally serviced within hours and Mercury approves the recovery.
 6. **Modification.** Aftermarket performance chips, non-Mercury props in some cases, removed safety systems, all warranty-voiding.
@@ -246,11 +246,6 @@ Any authorized Mercury dealer in Canada can honour your warranty. Bring your ori
 ### Does running ethanol pump gas void my warranty?
 
 Not directly. But if Mercury determines a fuel-system failure was caused by ethanol-related damage (water absorption, fuel-line degradation), that specific claim can be denied. We sell ethanol-free 89-octane marine gas at our dock partly for this reason, it's shelf-stable, doesn't absorb water, and reduces fuel-system failures over the motor's life.
-
-## Related guides
-
-- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
-- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Premier extended coverage
 
 ## Next steps
 

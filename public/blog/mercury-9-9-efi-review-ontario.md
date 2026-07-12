@@ -36,7 +36,7 @@ The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable wi
 
 ### Full Article
 
-Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as a walleye trolling kicker. The Mercury 9.9 MH EFI is built for the first job.
+Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
 
 Here is what the "MH EFI" means before we go further:
 
@@ -50,7 +50,7 @@ Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). Ext
 
 ## Why EFI Matters in a Small Outboard
 
-Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, on fuel it was not stabilized with, can be a frustrating experience come spring.
+Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, [on fuel it was not stabilized with](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), can be a frustrating experience come spring.
 
 Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range. The fuel economy number will vary by load and conditions, but the practical payoff is cleaner fuel control during cold starts and after seasonal storage.
 
@@ -60,7 +60,7 @@ Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stay
 
 Manual-start outboards typically do not need a battery. The problem with older EFI systems on small outboards is that they sometimes required one. Mercury's manual-start 9.9 EFI does not. Pulling the starter rope charges the electrical system enough to support ignition.
 
-This matters because it keeps the motor genuinely simple and portable. No key switch, no cranking battery, no electrical project to add to the installation. If the appeal of a 9.9 is simplicity, the battery-free operation preserves that.
+This matters because it keeps the motor genuinely [simple and portable](/blog/portable-outboard-mercury-guide-2-20hp). No key switch, no cranking battery, no electrical project to add to the installation. If the appeal of a 9.9 is simplicity, the battery-free operation preserves that.
 
 ---
 
@@ -74,7 +74,7 @@ The 9.9 MH EFI is a strong fit for:
 - **Tenders and utility boats**
 - **Restricted-horsepower lakes** where 9.9 HP is the regulated maximum
 
-For Rice Lake and the back lakes around the Kawarthas, this motor solves a real small-boat problem without making the boat more complicated. The best customer is not someone chasing top speed, it is someone who wants a simple, honest 9.9 that starts well, runs clean, and avoids carburetor drama.
+[For Rice Lake and the back lakes around the Kawarthas](/blog/best-mercury-outboard-rice-lake-fishing), this motor solves a real small-boat problem without making the boat more complicated. The best customer is not someone chasing top speed, it is someone who wants a simple, honest 9.9 that starts well, runs clean, and avoids carburetor drama.
 
 ---
 
@@ -83,7 +83,7 @@ For Rice Lake and the back lakes around the Kawarthas, this motor solves a real 
 The 9.9 MH EFI is the wrong motor if:
 
 - **Your boat is a heavy, decked-out aluminum rig.** Owners of fully loaded 1448-style boats with added decking, batteries, and gear have found that 9.9 HP struggles to get on plane, even with just one person aboard. This motor does not guarantee planing on every 14-foot aluminum.
-- **You need a dedicated trolling setup on a larger rig.** For kicker-motor walleye trolling on a bigger boat, the Mercury 9.9 EFI ProKicker, with its Command Thrust gearcase and high-thrust prop, is the comparison model to evaluate. Different job, different tool.
+- **You need a dedicated trolling setup on a larger rig.** For kicker-motor walleye trolling on a bigger boat, [the Mercury 9.9 EFI ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), with its Command Thrust gearcase and high-thrust prop, is the comparison model to evaluate. Different job, different tool.
 - **You need electric start, power tilt, or remote controls.** The MH EFI does none of these. If any of them matters to your setup, look at other configurations.
 - **Your transom is long-shaft.** This is the short-shaft (15") version. Measure your transom before buying.
 

@@ -54,7 +54,7 @@ The plate lists three things relevant to this conversation:
 2. **Maximum weight capacity**: total load (people, motor, gear, fuel)
 3. **Maximum persons capacity**: how many people the hull is rated to carry
 
-The maximum horsepower number is not a suggestion. In Canada, exceeding it voids your insurance, can create liability exposure, and in some cases violates Transport Canada regulations. The capacity plate is the ceiling, not a suggestion.
+The maximum horsepower number is not a suggestion. In Canada, exceeding it voids your insurance, can create liability exposure, and in some cases violates Transport Canada regulations. [The capacity plate is the ceiling](/blog/how-to-read-boat-capacity-plate-ontario), not a suggestion.
 
 ---
 
@@ -66,9 +66,9 @@ Maximum rated horsepower means the hull was engineered to handle that power load
 
 A few things to think about:
 
-**Transom condition matters.** An older aluminum boat with a 60hp rating and a soft transom isn't ready for a 60hp motor. A repower is also a good time for a transom inspection, we do that before every job.
+**Transom condition matters.** An older aluminum boat with a 60hp rating and a soft transom isn't ready for a 60hp motor. A repower is also [a good time for a transom inspection](/blog/mercury-repower-eligibility-guide), we do that before every job.
 
-**Use case matters.** If you fish Rice Lake at 20km/h with two people and a cooler, a motor that planes you out at 55km/h is probably more motor than you need, and more fuel cost on every trip.
+**Use case matters.** If you fish Rice Lake at 20km/h with two people and a cooler, [a motor that planes you out at 55km/h is probably more motor than you need](/blog/how-to-choose-right-horsepower-boat), and more fuel cost on every trip.
 
 **Weight distribution matters.** Heavier four-stroke motors change how a boat sits. A 115hp Mercury FourStroke is heavier than the 90hp two-stroke it might be replacing. We account for this in every repower recommendation.
 
@@ -81,7 +81,7 @@ When we talk through a repower with you, we're asking:
 - What do you use the boat for, and with how many people?
 - What's your current motor, and what's the complaint, not enough power, reliability, fuel economy?
 - What's the transom rating and actual transom condition?
-- Are you matching the old shaft length, or does the setup need to change?
+- Are you [matching the old shaft length](/blog/outboard-shaft-length-guide), or does the setup need to change?
 
 Matching the right motor to the hull and the use is the whole job. A bigger motor will not fix a tired hull, bad steering, or a prop that was wrong in the first place.
 
@@ -108,7 +108,7 @@ This is a general guide, your hull's capacity plate is the controlling document:
 
 ## Get a proper recommendation before you buy
 
-The quote configurator at mercuryrepower.ca lets you select by horsepower range and see installed pricing. If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.
+The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad). If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.
 
 Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
@@ -133,11 +133,11 @@ Not necessarily. Maximum rated horsepower means the hull was engineered to handl
 
 ## Related guides
 
-- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

@@ -55,7 +55,7 @@ Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V
 **V10 Verado (350-400 HP), $46,000-$54,000+**
 Twin or triple outboards on big offshore boats and large pontoons. Most Ontario customers don't need this band.
 
-**Repower budget reality check.** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and sea trial. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
+**[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and sea trial. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
 
 Getting a straight answer on Mercury outboard prices in Ontario used to mean calling four dealers, waiting on hold, and getting four different numbers, none of which told you what was actually included.
 
@@ -84,7 +84,7 @@ Every Mercury model name is a code. Here's how to decode it:
 - **L**, Long shaft (20")
 - **XL**, Extra long shaft (25")
 - **PT**, Power trim and tilt
-- **CT**, Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)
+- **CT**, [Command Thrust (larger gearcase, more low-end torque, right for pontoons and heavy hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull)
 
 **Example:** A "9.9 ELHPT Command Thrust ProKicker EFI FourStroke" means: 9.9 HP, electric start, long shaft, tiller handle, power trim, Command Thrust gearcase, set up as a ProKicker trolling motor, with EFI and four-stroke architecture.
 
@@ -107,7 +107,7 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 **Pontoon HP sizing reality.** A 20 ft pontoon needs at least 60 HP CT to get up on plane reliably with a normal cottage load. 90 CT is the sweet spot for most. 115 CT is for tritoons or anyone who tows tubes regularly. Underbuying the motor is one of the most common mistakes we see. The capacity plate is the ceiling, not a suggestion.
 
-**Pro XS vs. standard FourStroke at 115 HP.** Both run on the same 2.1L inline-4 platform. The FourStroke is tuned for smooth cruising and fuel economy. The Pro XS is tuned for hole-shot and a higher RPM ceiling.
+**[Pro XS vs. standard FourStroke at 115 HP](/blog/fourstroke-vs-pro-xs).** Both run on the same 2.1L inline-4 platform. The FourStroke is tuned for smooth cruising and fuel economy. The Pro XS is tuned for hole-shot and a higher RPM ceiling.
 
 Price difference between the two at 115 HP is small, roughly **$400** ($17,083 dealer price for 115ELPT FourStroke vs $17,490 for 115ELPT Pro XS, before HST). For a family bowrider or pontoon, take the FourStroke. For a bass boat or anyone who wants snappier acceleration, take the Pro XS.
 
@@ -131,7 +131,7 @@ Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for o
 
 ## Mercury promotional pricing and bonus warranty
 
-Mercury Canada runs promotions through the season: spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
+[Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
 Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see the financing guide for terms.
 
@@ -195,9 +195,9 @@ The dealer price shown is the motor price. Final out-the-door price depends on c
 
 - [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
 - [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
 
 ## Next steps
 

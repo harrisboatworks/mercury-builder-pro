@@ -40,7 +40,7 @@ Northumberland County stretches from the Lake Ontario shore north to the Trent s
 
 For Mercury outboard service, the county has historically been served by a mix of small general boat shops and dealers that focus on other brands. HBW has been the Mercury anchor since 1965, sitting right on Rice Lake at Gores Landing.
 
-If you live anywhere in Northumberland County, HBW is your local Mercury Premier dealer.
+If you live anywhere in Northumberland County, HBW is your [local Mercury Premier dealer](/blog/best-mercury-dealer-ontario-hbw-difference).
 
 ## Coverage across the county
 
@@ -73,7 +73,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, year-round storage means the spring launch is already at the lake.
+Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [year-round storage](/blog/boat-storage-kawartha-lakes) means the spring launch is already at the lake.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.
@@ -86,7 +86,7 @@ Northumberland County has a wider range of boating than most Ontario counties:
 
 **Rice Lake fishing and cottage boats**, the heart of recreational boating in the county. 14-18 foot aluminum, pontoons, Mercury 40-115 HP. Walleye, bass, muskie fishing.
 
-**Trent River and Trent-Severn cruisers**, larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
+**[Trent River and Trent-Severn cruisers](/blog/trent-severn-waterway-boating-guide-2026)**, larger boats running the lock system, often MerCruiser sterndrives or Mercury Verado-sized power.
 
 **Bay of Quinte access from the east of the county**, Brighton-area boats accessing Bay of Quinte muskie fishing. Larger aluminum or fiberglass, Mercury Pro XS or FourStroke 150-250 HP.
 
@@ -110,7 +110,7 @@ Build your quote at mercuryrepower.ca. Real installed CAD pricing. For [Mercury 
 
 If you have a service issue, submit a request at hbw.wiki/service.
 
-For a motor purchase or repower conversation, call: 905-342-2153.
+For a motor purchase or [repower conversation](/blog/mercury-repower-cost-ontario-2026-cad), call: 905-342-2153.
 
 **Start from home:** build your itemized Mercury quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), then pick up at Gores Landing.
 

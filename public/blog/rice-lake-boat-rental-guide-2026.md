@@ -36,7 +36,7 @@ Last season, 346 rentals went out from our dock. Most of them started with the s
 
 Here's all of it in one place. No surprises at the dock, because surprises at the dock waste your water time and ours.
 
-One thing up front: we're in Gores Landing, on the south shore of Rice Lake, about 90 minutes east of downtown Toronto and 25 minutes south of Peterborough. You rent here, you boat here. Our boats stay on Rice Lake.
+One thing up front: we're in Gores Landing, on [the south shore of Rice Lake](/blog/rice-lake-boating-guide-2026), about 90 minutes east of downtown Toronto and 25 minutes south of Peterborough. You rent here, you boat here. Our boats stay on Rice Lake.
 
 ---
 
@@ -52,7 +52,7 @@ Nine boats, three jobs:
 
 Every pontoon has a Bluetooth stereo. Every boat goes out with legally required safety gear and life jackets fitted to your whole party at check-in, including kid sizes. You don't bring or rent any of that separately.
 
-Capacity is per boat and it's a hard limit. If your group is bigger, book two boats; we do it every weekend all summer.
+Capacity is per boat and it's a hard limit. [If your group is bigger, book two boats](/blog/group-boat-rentals-rice-lake); we do it every weekend all summer.
 
 ---
 
@@ -62,7 +62,7 @@ Capacity is per boat and it's a hard limit. If your group is bigger, book two bo
 
 **Rental hours.** Monday to Saturday 8:00 am to 5:00 pm, Sunday 9:00 am to 4:00 pm. Multi-day rentals are the exception: keep the boat at our dock or at your cottage dock and use it whenever you like, with lights required after dark.
 
-**Check-in.** Show photo ID and a boat operator's card (permanent or temporary) for whoever's driving. We process a $1,000 damage deposit hold on a credit card; it's an authorization, not a charge. Staff fit life jackets for everyone, then the driver gets a boat orientation and a lake map.
+**Check-in.** Show photo ID and a boat operator's card (permanent or temporary) for whoever's driving. We process a $1,000 damage deposit hold on a credit card; it's an authorization, not a charge. Staff fit life jackets for everyone, then the driver gets [a boat orientation and a lake map](/blog/first-time-boat-rental-rice-lake-guide).
 
 ![Life jackets fitted and laid out on a pontoon at the Harris Boat Works rental dock](/lovable-uploads/inline-rental-lifejackets-checkin.webp)
 
@@ -121,7 +121,7 @@ Every rental gets the same send-off: full fuel, motor warmed and checked that mo
 
 ## Why Rent Here Instead of Closer to the City
 
-Rice Lake is the closest serious fishing and cruising lake to the eastern GTA that doesn't come with Muskoka traffic or Muskoka prices. From the 401 at Cobourg you're 20 minutes of county road from our dock. The lake gives you walleye and bass water, 30 km of lake to explore, ice cream stops in Bewdley and Hastings, and a marina at your back if anything comes up while you're out. If a rental day turns into "we should just own one of these," that conversation is 50 feet from the rental dock.
+Rice Lake is the closest serious fishing and cruising lake to the eastern GTA that doesn't come with Muskoka traffic or Muskoka prices. From the 401 at Cobourg you're 20 minutes of county road from our dock. The lake gives you [walleye and bass water](/blog/2026-rice-lake-fishing-season-outlook), 30 km of lake to explore, ice cream stops in Bewdley and Hastings, and a marina at your back if anything comes up while you're out. If a rental day turns into "we should just own one of these," that conversation is 50 feet from the rental dock.
 
 ---
 

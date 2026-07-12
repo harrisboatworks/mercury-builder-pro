@@ -88,7 +88,7 @@ Applies to models manufactured in Q2 2026 and later.
 
 ## How to Find Your Mercury Serial Number
 
-The serial number is the only way to confirm eligibility.
+The serial number is [the only way to confirm eligibility](/blog/how-to-read-mercury-outboard-serial-number).
 
 1. **Transom bracket**, most common. Port (left) side of the mounting bracket. Metal data plate.
 2. **Engine block**, stamped directly on some models.
@@ -142,10 +142,10 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 ---
 
 ## Related reading
-- Mercury SmartCraft Connect Guide Ontario
-- Mercury Controls & Rigging Guide Ontario
-- Mercury 115 vs 150 Comparison
-- Mercury Outboard Motor Families Guide
+- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
+- [Mercury Controls & Rigging Guide Ontario](/blog/mercury-controls-rigging-guide-ontario)
+- [Mercury 115 vs 150 Comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury Outboard Motor Families Guide](/blog/mercury-outboard-lineup-ontario)
 
 **Check if your Mercury qualifies for Boost.** 
 Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 

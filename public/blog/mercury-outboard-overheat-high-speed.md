@@ -40,7 +40,7 @@ That narrows the list fast. This guide walks the checks in the order a tech actu
 
 At idle, your powerhead barely generates heat and the cooling system barely has to work. Open the throttle and the heat load climbs dramatically, while the cooling system has to move a lot more water to keep up. A cooling system with marginal flow shows no symptoms at 2,000 RPM and cooks the powerhead at 5,000.
 
-That's why "it only overheats at speed" is useful information, not a mystery. It points you at the parts that matter under load: anything restricting water flow, anything that only opens at higher RPM, and anything that can't keep up when demand peaks. An idle overheat usually points somewhere else (we cover that in our idle-overheat guide). A high-speed overheat has its own short list.
+That's why "it only overheats at speed" is useful information, not a mystery. It points you at the parts that matter under load: anything restricting water flow, anything that only opens at higher RPM, and anything that can't keep up when demand peaks. An idle overheat usually points somewhere else (we cover that in [our idle-overheat guide](/blog/mercury-outboard-overheating-at-idle-fix-ontario)). A high-speed overheat has its own short list.
 
 ## Start Here: The Tell-Tale Stream at Speed
 
@@ -58,9 +58,9 @@ Tilt the motor, look at the intake screens on the gearcase, and clear anything s
 
 The impeller is the rubber pump that pushes cooling water up from the gearcase. As it wears, the vanes lose their edge and the pump moves less water. A worn impeller fails at high RPM first, because that's when the system needs the most flow. It can keep you cool at idle for a while after it's already too tired to handle wide-open throttle.
 
-Impellers are a wear item. Mercury's guidance is to replace them on a schedule (your maintenance interval guide has the specifics), not "when they fail," because the failure is the cooked powerhead, not the impeller. If yours is more than a couple of seasons old and you're overheating at speed, the impeller is a prime suspect.
+Impellers are a wear item. Mercury's guidance is to replace them on a schedule ([your maintenance interval guide](/blog/mercury-maintenance-intervals-20-100-300-rule) has the specifics), not "when they fail," because the failure is the cooked powerhead, not the impeller. If yours is more than a couple of seasons old and you're overheating at speed, [the impeller is a prime suspect](/blog/mercury-impeller-replacement-when-they-fail).
 
-A note on cost, because people get this backwards: the impeller itself is a small part. The job is pulling the gearcase, inspecting the housing and wear plate, and reassembling it right. That labour is the thing that protects your powerhead. Pricing this off the part is how people end up with a half-done DIY that fails again at speed two weekends later.
+A note on cost, because people get this backwards: the impeller itself is a small part. The job is [pulling the gearcase](/blog/mercury-water-pump-replacement-cost-ontario), inspecting the housing and wear plate, and reassembling it right. That labour is the thing that protects your powerhead. Pricing this off the part is how people end up with a half-done DIY that fails again at speed two weekends later.
 
 ## Step 3: The Poppet Valve (The One Most People Miss)
 
@@ -88,7 +88,7 @@ Rice Lake and the surrounding Kawartha lakes are shallow, weedy, and warm by mid
 
 If the alarm goes off at speed and you're out on the lake:
 
-1. **Throttle back to idle immediately.** Don't try to "make it home" at speed. Heat is what destroys a powerhead, and every minute at temperature does damage.
+1. **[Throttle back to idle immediately](/blog/outboard-overheating-emergency-guide).** Don't try to "make it home" at speed. Heat is what destroys a powerhead, and every minute at temperature does damage.
 2. **Tilt the motor and check the intakes.** Clear any weeds or debris from the gearcase screens.
 3. **Watch the tell-tale at idle.** If there's no stream at all, shut it down. Running with zero water flow will cook it in minutes.
 4. **Limp in at low RPM** if you have flow at idle, and get it looked at before you run it hard again.

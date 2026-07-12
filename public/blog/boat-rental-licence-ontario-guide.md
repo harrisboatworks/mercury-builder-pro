@@ -36,7 +36,7 @@ Every summer we watch the same scene: a group arrives for their 8:00 am rental, 
 
 Yes. And it's genuinely not a big deal if you handle it the night before instead of at our counter.
 
-This is the plain-language version of Canada's operator competency rules as they apply to renting a boat, plus exactly how we handle it at our Rice Lake dock in Gores Landing.
+This is the plain-language version of Canada's operator competency rules as they apply to [renting a boat](/blog/rice-lake-boat-rental-guide-2026), plus exactly how we handle it at our Rice Lake dock in Gores Landing.
 
 ---
 
@@ -51,7 +51,7 @@ For rentals specifically, the system is built so first-timers aren't shut out. Y
 | PCOC (boat licence) | Accredited online course + test, one-time | Life. It never expires | About 3 hours, self-paced online (Transport Canada sets the minimum study time) |
 | Rental-day paperwork | A renter competency process completed with the rental operator | That rental only | Minutes |
 
-Our honest advice: if you're renting once for a family day, the quick route is fine. If this is going to become a summer habit (it usually does), just get the card. You'll never think about it again.
+Our honest advice: if you're [renting once for a family day](/blog/renting-vs-owning-boat-ontario-math), the quick route is fine. If this is going to become a summer habit (it usually does), just get the card. You'll never think about it again.
 
 ---
 
@@ -65,7 +65,7 @@ We keep it to three things at check-in:
 
 Only the person driving needs any of this. Grandma, the kids, and your buddy who "just wants to fish" are passengers, and passengers need nothing.
 
-One driver can hand the wheel to another licensed driver mid-day. What you can't do is check in with one licensed person who then hands the boat to an unlicensed cousin. The person at the helm is the one who needs the proof.
+One driver can hand the wheel to another licensed driver mid-day. If you're booking for a bigger crew, our [group boat rentals on Rice Lake](/blog/group-boat-rentals-rice-lake) guide covers how that works. What you can't do is check in with one licensed person who then hands the boat to an unlicensed cousin. The person at the helm is the one who needs the proof.
 
 ---
 
@@ -106,7 +106,7 @@ The licence check is the boring part of a ten-minute send-off. Before any rental
 
 ## Ready to Book?
 
-Handle the licence tonight, book the boat for the weekend, and rental morning becomes a ten-minute check-in instead of a scramble.
+Handle the licence tonight, [book the boat for the weekend](/blog/first-time-boat-rental-rice-lake-guide), and rental morning becomes a ten-minute check-in instead of a scramble.
 
 **Licence:** [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (code HARRIS15)
 **Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)

@@ -80,7 +80,7 @@ In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the risi
 - Mercury's dealer network was, and is, built around long-term partnerships, not quarterly volume metrics. The dealer-tier system rewards consistency over time.
 - Mercury's warranty support, parts availability, and service relationship has been reliable across multiple economic cycles.
 
-We've stayed Mercury-only as a deliberate choice. We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
+We've [stayed Mercury-only as a deliberate choice](/blog/why-harris-boat-works-mercury-dealer). We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
 
 In 2026, we're celebrating **60 years as a Mercury dealer**. That's a multi-generational relationship most other industries can't match.
 
@@ -166,10 +166,10 @@ The **technology side has changed dramatically; the human side has not.** Our jo
 In 2026, HBW operates:
 
 - **Mercury Marine Premier Dealer**, with Mercury FourStroke and Pro XS in stock; Verado, SeaPro, and Avator available by special order
-- **Mercury Certified Repower Centre**, full-service repower facility for boat owners across Ontario
-- **Legend Boats Dealer**, selling Canadian-designed aluminum and pontoon boats (designed in Whitefish, Ontario)
+- **Mercury Certified Repower Centre**, [full-service repower facility for boat owners across Ontario](/blog/mercury-repower-cost-ontario-2026-cad)
+- **Legend Boats Dealer**, selling [Canadian-designed aluminum and pontoon boats](/blog/legend-boats-mercury-power-package-guide-ontario) (designed in Whitefish, Ontario)
 - **Marina Slips**, 49 seasonal slip rentals on Rice Lake
-- **Boat Rentals**, 9-boat fleet (Mercury-powered) for day rentals to GTA visitors and locals
+- **Boat Rentals**, 9-boat fleet (Mercury-powered) for [day rentals to GTA visitors and locals](/blog/rice-lake-boat-rental-guide-2026)
 - **Winter Storage**, 311+ stored boats per year
 - **Service & Repair**, diagnostic, warranty, repair, and pre-purchase inspections
 - **Boat Launch**, public-paid launch ramp ($20/day, $200/season) used by hundreds of boaters annually
@@ -183,7 +183,7 @@ A working family marina, peak season fully staffed for the May-October rush. Mos
 
 The fourth generation is in early-career. Our kids work the docks summers; we'll see if any choose to take over. We're not pressuring anyone, the family-business hand-off should happen because someone wants it, not out of obligation.
 
-If the fourth generation takes over, HBW continues. If they don't, we'll find a path that keeps the relationship with our customers intact. **Either way, we're not going anywhere soon.** A dealer choice today is a 10-15 year commitment to a service relationship; we want to be the dealer worth choosing for that long.
+If the fourth generation takes over, HBW continues. If they don't, we'll find a path that keeps the relationship with our customers intact. **Either way, we're not going anywhere soon.** A dealer choice today is a 10-15 year commitment to a service relationship; we want to be [the dealer worth choosing](/blog/best-mercury-dealer-ontario-hbw-difference) for that long.
 
 ---
 

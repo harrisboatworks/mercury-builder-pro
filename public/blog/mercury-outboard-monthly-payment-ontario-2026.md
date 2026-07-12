@@ -48,7 +48,7 @@ This page does the math. Real Mercury repower price tiers, Ontario tax treatment
 
 ## How HBW finances Mercury repowers
 
-HBW arranges Mercury repower financing through **Dealerplan Peterborough**, our broker. Dealerplan works with all major Canadian banks. The most common lender for HBW customers is **TD Auto Finance**, also National Bank and RBC depending on the file.
+HBW arranges [Mercury repower financing](/blog/mercury-outboard-financing-ontario-2026) through **Dealerplan Peterborough**, our broker. Dealerplan works with all major Canadian banks. The most common lender for HBW customers is **TD Auto Finance**, also National Bank and RBC depending on the file.
 
 A common misconception: Sheffield Financial is a Mercury Marine financing partner in the United States. Sheffield is NOT available in Canada. The HBW Canadian equivalent is TD Auto Finance through Dealerplan Peterborough.
 
@@ -64,7 +64,7 @@ A common misconception: Sheffield Financial is a Mercury Marine financing partne
 
 ## Ontario HST: how it gets handled
 
-In Ontario, every new outboard purchase is subject to **13% HST**. The HST is collected at the time of purchase. Most customers roll the HST into the financed amount. You can also pay HST at closing and finance only the engine.
+In Ontario, [every new outboard purchase](/blog/mercury-repower-cost-ontario-2026-cad) is subject to **13% HST**. The HST is collected at the time of purchase. Most customers roll the HST into the financed amount. You can also pay HST at closing and finance only the engine.
 
 | Engine | Installed Price | + 13% HST | Total If Financed With HST In |
 |---|---|---|---|
@@ -98,7 +98,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
 ## The HBW on-water repower test
 
-Repowers are the highest-risk install in our shop. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+Repowers are the highest-risk install in our shop. At HBW [we water-test every repower under load before delivery](/blog/what-happens-during-mercury-repower): cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 ## Common mistakes
 
@@ -141,7 +141,7 @@ The amortization is the basis used to CALCULATE your monthly payment. It is NOT 
 | Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,720 balloon |
 | Mercury 150 L Pro XS | $24,349 | ~$167 | ~$20,500 balloon |
 
-Three real options at month 60: pay the balloon, refinance the balance, or trade in toward a new motor. Most repower customers plan for the trade-in path.
+Three real options at month 60: pay the balloon, refinance the balance, or [trade in toward a new motor](/blog/boat-motor-trade-in-guide). Most repower customers plan for the trade-in path.
 
 If a $12,000 to $20,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis. Higher monthly payment, cleaner end-of-term position. We walk through both versions on a quote.
 
@@ -201,10 +201,10 @@ As of 2026-05-28, Mercury Marine Canada's TD "Always On" program offers 5.48% AP
 ## Related guides
 
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
 - [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
 
 ## Next steps
 
