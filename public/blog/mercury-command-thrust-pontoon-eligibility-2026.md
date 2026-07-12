@@ -116,7 +116,7 @@ Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. 
 
 ### Already over-powered
 
-Some pontoons are already running close to capacity-plate maximum HP. Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
 
 ## How to check your specific eligibility
 

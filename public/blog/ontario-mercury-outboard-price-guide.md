@@ -133,7 +133,7 @@ Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for o
 
 [Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see the financing guide for terms.
+Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms.
 
 Mercury's standard warranty in Canada is 3 years, concurrent. Bonus warranty terms change and apply only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
@@ -193,11 +193,11 @@ The dealer price shown is the motor price. Final out-the-door price depends on c
 
 ## Related guides
 
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](/blog/mercury-outboard-monthly-payment-ontario-2026), monthly payment ranges by HP
 - [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 - [Mercury Boost Cost Canada 2026](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
 - [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
 
 ## Next steps
 

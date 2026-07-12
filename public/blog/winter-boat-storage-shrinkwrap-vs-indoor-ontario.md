@@ -54,7 +54,7 @@ rightCriteria:
   - You want to keep the gel coat looking new for resale
 rightOutcome: $900 to $2,200 in Ontario depending on heated vs unheated and length. Worth it on high-value or low-tolerance boats.
 rightVariant: recommended
-whenInDoubt: Most Rice Lake customers shrinkwrap outside. If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
+whenInDoubt: [Most Rice Lake customers shrinkwrap outside](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
 ::
 
 Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
@@ -296,7 +296,6 @@ We don't have indoor storage on-site. Outdoor shrinkwrap + winterization is our 
 
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [mercury-outboard-winterization-service-cost-ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
 
 ## Next steps

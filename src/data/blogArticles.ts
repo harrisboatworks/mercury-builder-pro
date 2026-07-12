@@ -1722,7 +1722,7 @@ To our knowledge, we\\u2019re the first marine dealer in North America with a li
 If you\\u2019re using a UCP-aware assistant (and that list grows weekly), here\\u2019s what works today:
 
 - **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
-- **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [Ontario rates and monthly payment guide](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
+- **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [[Ontario rates and monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026)](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
 - **Get handed back to the dealer.** Every checkout session returns a \`continue_url\` that drops you into our live quote flow with everything pre-filled, so you can review, save, or call us at (905) 342-2153.
 - **Register the quote.** If you let your assistant share your name and email, the quote is registered with the dealership and a human at HBW can follow up. Optional. Skipping it still gets you a working quote.
 
@@ -2198,7 +2198,7 @@ What CAN'T be converted: A mechanical Pro XS, mechanical FourStroke, or any pre-
 The honest decision matrix:
 
 - **Motor is already DTS-capable but you have mechanical controls** → helm-side upgrade is real. Get quoted.
-- **Motor is mechanical, under 5 years old, low hours, otherwise excellent** → quote a full repower against the retrofit cost. Usually repower wins.
+- **Motor is mechanical, under 5 years old, low hours, otherwise excellent** → [quote a full repower against the retrofit cost](/blog/mercury-repower-cost-ontario-2026-cad). Usually repower wins.
 - **Motor is mechanical, 5+ years old or high hours** → repower territory. Don't pour money into retrofit.
 - **Single motor, smaller boat, no joystick interest** → DTS is a "nice to have" not a "need." Mechanical is the right call.
 - **Twins or triples without joystick** → adding DTS enables joystick, which is the real value driver. Worth the conversation.
@@ -2422,7 +2422,7 @@ Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. 
 
 ### Already over-powered
 
-Some pontoons are already running close to capacity-plate maximum HP. Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
 
 ## How to check your specific eligibility
 
@@ -2582,7 +2582,7 @@ If your motor isn't on this table, send the serial number and we'll check.
 
 ## What SmartCraft Connect actually does
 
-Before checking eligibility it helps to know what you'd be getting. SmartCraft Connect is Mercury's mobile and cloud connectivity layer (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
+Before checking eligibility it helps to know what you'd be getting. [SmartCraft Connect is Mercury's mobile and cloud connectivity layer](/blog/mercury-smartcraft-connect-guide-ontario) (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
 
 - Live engine data on your phone: RPM, fuel flow, hours, water temp, oil pressure, alarms
 - Trip logs and engine hour tracking automatically saved to the cloud
@@ -2652,7 +2652,7 @@ Five places to look. Try them in this order.
 1. **Engine cowl plate.** Lift the engine cowl. There's usually a metal plate riveted to the powerhead with model, serial, and year. Take a photo with your phone before it gets dirty.
 2. **Lower starboard side of the motor.** Most modern Mercurys have a serial sticker on the right rear of the engine block, just above the lower cowl seam.
 3. **Mounting bracket.** The serial is stamped into the swivel bracket on older portables and some mid-range motors.
-4. **VesselView display.** If your boat has a VesselView or SmartCraft-aware display already, the engine info page lists the serial.
+4. **[VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide).** If your boat has a VesselView or SmartCraft-aware display already, the engine info page lists the serial.
 5. **Original purchase paperwork.** Bill of sale, warranty registration, or invoice from the original dealer.
 
 Once you have it, email info@harrisboatworks.ca with the serial and we'll confirm SmartCraft Connect eligibility in one reply. Most replies go out same business day.
@@ -12138,7 +12138,7 @@ Mercury organizes its outboards into families by use case, not just horsepower. 
 
 **HP range:** 2.5 to 300 hp. This is [the volume seller in Ontario](/blog/mercury-fourstroke-buyer-guide-ontario) because it covers nearly every recreational use: a 9.9 kicker, a 25 for a light tinny, a 60 or 75 for a mid-size fishing rig, a 115 or 150 for bigger aluminum or fibreglass boats, up to 300 for big water. Tuned for fuel efficiency at cruise, smooth idle, quiet operation, and long service intervals. What it isn't: fast out of the hole.
 
-**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), it pairs a larger gearcase with a bigger prop for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
+**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), [it pairs a larger gearcase with a bigger prop](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
 
 ### Pro XS: performance fishing
 
@@ -17593,7 +17593,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 | Rentals | 9-boat fleet for day trips |
 | Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
 
-Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -18959,7 +18959,7 @@ At some point, the cost of maintaining an aging motor, especially an aging 2-str
 - The motor requires parts that are hard to source
 - The efficiency improvement of a new motor would recover the investment over a few seasons
 
-We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) if you want to see what a new Mercury package would cost for your setup.
+We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) if you want to see [what a new Mercury package would cost](/blog/mercury-repower-cost-ontario-2026-cad) for your setup.
 
 ---
 
@@ -19083,7 +19083,7 @@ rightCriteria:
   - You want to keep the gel coat looking new for resale
 rightOutcome: $900 to $2,200 in Ontario depending on heated vs unheated and length. Worth it on high-value or low-tolerance boats.
 rightVariant: recommended
-whenInDoubt: Most Rice Lake customers shrinkwrap outside. If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
+whenInDoubt: [Most Rice Lake customers shrinkwrap outside](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
 ::
 
 Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
@@ -20100,10 +20100,10 @@ Patterns vary by engine family and model year. Some small EFI FourStroke models 
 
 These are ranked by what comes through our service bays, not by Mercury's SmartCraft fault numbers; on the official list Fault 1 is Critical High Voltage, Fault 2 Critical Low Voltage, Fault 3 Water Pressure, Fault 4 Critical Overtemp, and Water in Fuel sits at Fault 23. This is our actual order based on service tickets, not a generic Mercury list. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
 
-1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
+1. **[Low battery voltage](/blog/mercury-boat-battery-guide-ontario).** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
 2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
 3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. [Phase separation from stored E10 fuel](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
-4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
+4. **[Engine over-temperature](/blog/mercury-outboard-overheat-alarm-decoder).** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
 5. **Low oil level (2-stroke).** For Optimax DFI owners, the remote oil tank reading low or sensor reading low. Often a float-magnet separation issue, not actual low oil.
 6. **Low oil pressure (4-stroke).** Actual low oil, bypass valve issue, or sensor fault. On a 4-stroke this is serious. Shut down.
 7. **Engine overspeed / RPM limit.** Typically a prop slip event (broken prop, lost a blade, came out of the water on a wave). Motor cuts power to protect itself.
@@ -24367,7 +24367,7 @@ Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for o
 
 [Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see the financing guide for terms.
+Promotions typically come in three forms: cash discounts off MSRP on specific HP classes, bonus warranty years stacked on Mercury's standard 3-year coverage, and financing incentives. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms.
 
 Mercury's standard warranty in Canada is 3 years, concurrent. Bonus warranty terms change and apply only when an eligible promotion is active. What's active right now is always on the [promotions page](https://www.mercuryrepower.ca/promotions).
 
@@ -34649,7 +34649,7 @@ Our most popular models in these two HP classes:
 | Mercury 150 L FourStroke | starts around $22,242 | Standard 150 |
 | Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
-Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
+Pricing as of 2026. [Install costs vary by what's on the boat now](/blog/mercury-repower-cost-ontario-2026-cad). Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
 
 ## What changes between 115 and 150
 
@@ -35874,7 +35874,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     ],
     content: `*Last reviewed: 2026-06-06*
 
-> **Quick answer:** A repower isn't just swapping one motor for another. The hull type, pontoon, aluminum fishing boat, or fibreglass V-hull, determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
+> **Quick answer:** [A repower isn't just swapping one motor for another](/blog/mercury-repower-cost-ontario-2026-cad). The hull type, pontoon, aluminum fishing boat, or fibreglass V-hull, determines which motors fit, how the new engine loads the transom, which shaft length you need, and what else might need to be addressed while you're at it.
 
 ## Repower by hull type at a glance
 
