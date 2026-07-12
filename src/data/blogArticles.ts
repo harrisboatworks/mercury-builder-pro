@@ -1804,7 +1804,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 
 ### Mercury Pro XS Command Thrust
 
-Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
+Pro XS CT (115 Pro XS) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT tops out at 115 HP across the lineup; there is no 150 Pro XS CT. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
 
 ### Mercury SeaPro Command Thrust
 
