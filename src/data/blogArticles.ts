@@ -24681,7 +24681,7 @@ These are real-world figures from boats rigged by Harris Boat Works. Conditions,
 *(Princecraft Sport, Lund Adventure)*
 
 - **40 HP:** Underpowered for this hull class. The boat is rated for 75-90 HP. A 40 will run, but it won't plane with the family aboard.
-- **60 HP:** 32-35 mph WOT. Comfortable 26-28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. A 60 CT on a heavier 18 ft deep-V is a stronger call.
+- **60 HP:** 32-35 mph WOT. Comfortable 26-28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. On an 18 ft deep-V, stay with the standard gearcase; CT is a pontoon and workboat gearcase and costs top speed on a V-hull.
 
 ### 16-18 ft small pontoon
 
