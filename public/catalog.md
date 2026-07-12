@@ -139,6 +139,7 @@ See any motor twin for an example body.
 
 Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md)
 - [Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)](https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md)
 - [Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)](https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario.md)
 - [Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)](https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario.md)
