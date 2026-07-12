@@ -33536,7 +33536,7 @@ Here is the grid we use when a customer brings in a pontoon for repower. **Prici
 | 20 ft | 2 | 5 adults | 90 HP FourStroke (CT optional) | $13,000 to $16,000 |
 | 22 ft | 2 | 6 adults | 115 HP CT or 150 HP | $17,000 to $21,000 |
 | 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or Pro XS V8 200 | $20,000 to $28,000 |
-| 24 ft | 2 | 6 to 8 adults | 150 HP CT | $20,000 to $23,500 |
+| 24 ft | 2 | 6 to 8 adults | 150 HP (standard gearcase) | $20,000 to $23,500 |
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
 | 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
 
