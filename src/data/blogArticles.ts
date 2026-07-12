@@ -26381,13 +26381,13 @@ No. It's not a bad motor, it's the same motor as the 90 with less headroom in th
 Because it's the same physical motor as the 90, same weight, minimal price difference, and the 90 has more headroom and better resale value. Stocking the 75 would mean offering customers a worse long-term buy at nearly the same price.
 
 **Can I get the 75 in a Command Thrust version?** 
-Yes, it's available. But if you need Command Thrust for a pontoon, the 90 CT is a better investment for the same reasons the 90 is better than the 75 on a fishing boat.
+No. Mercury does not offer a 75 CT: the FourStroke Command Thrust lineup jumps from 60 CT to 90 CT. If you need Command Thrust for a pontoon, the 90 CT is the right pick.
 
 **What if my hull falls between 60 and 75 HP on the capacity plate?** 
 Call us at 905-342-2153. Some hulls have specific configurations that matter, year, model, trim level. Five minutes of conversation usually sorts it out.
 
 **Does the 75 HP have a Command Thrust version?** 
-Yes. Same logic applies: if Command Thrust makes sense for your hull, the 90 CT is the better long-term value.
+No. There is no 75 CT in the Mercury lineup; step to the 90 CT if you need Command Thrust.
 
 **Is the 75 HP significantly cheaper than the 90?** 
 Not significantly. The exact figures vary with [Mercury Canada](https://www.mercurymarine.com/canada/en/) pricing, but it's not the kind of gap that should drive the decision for most buyers.
