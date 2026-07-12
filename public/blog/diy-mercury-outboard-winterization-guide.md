@@ -249,7 +249,7 @@ The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 P
 
 Two related guides in the same cluster:
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/boat-winterization-cost-ontario-2026)
 
 ---
 

@@ -15,6 +15,38 @@ export interface BlogIndexEntry {
 
 export const BLOG_INDEX: BlogIndexEntry[] = [
   {
+    "slug": "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
+    "title": "Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)",
+    "description": "Command Thrust started as BigFoot in the 90s, built for pontoons. Our back-to-back lake test showed 6 mph lost on a V-hull. The honest guide to who actually needs CT.",
+    "category": "Mercury Outboards",
+    "publishDate": "2026-07-12",
+    "keywords": [
+      "mercury command thrust vs standard",
+      "mercury bigfoot outboard",
+      "command thrust pontoon",
+      "command thrust on v hull",
+      "mercury command thrust gear ratio"
+    ],
+    "faqs": [
+      {
+        "q": "Is Command Thrust the same thing as BigFoot?",
+        "a": "Yes. BigFoot was the 1990s name for Mercury's big-gearcase pontoon and workboat option. Mercury renamed it Command Thrust around 2014. Same concept: bigger gearcase, taller gear ratio, bigger prop, more push power at low speed."
+      },
+      {
+        "q": "Does Command Thrust make the same horsepower?",
+        "a": "Yes. A 60 CT and a standard 60 have identical powerheads. CT changes the gearcase, gear ratio, and prop, which changes how the power reaches the water, not how much power there is."
+      },
+      {
+        "q": "Should I get Command Thrust on my pontoon?",
+        "a": "Almost certainly yes if you're 90 HP and up on a 20+ ft pontoon, and it's worth a conversation on smaller setups. CT is the standard pontoon choice at HBW. See the pontoon eligibility guide for size-by-size calls."
+      },
+      {
+        "q": "Should I get Command Thrust on my fishing boat?",
+        "a": "Almost certainly no. On a planing aluminum or fibreglass V-hull, CT adds drag and costs top speed with no meaningful benefit. Standard gearcase with the right prop is the better setup. The exception is workboat duty or a ProKicker for trolling."
+      }
+    ]
+  },
+  {
     "slug": "milky-gearcase-oil-meaning-cost-ontario",
     "title": "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)",
     "description": "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance.",
@@ -391,7 +423,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is Command Thrust available on all Mercury HP classes?",
-        "a": "No. CT is available on 9.9, 15, and 25 HP ProKicker models, plus 40, 50, 60, 75, 90, and 115 HP FourStrokes. Mercury Pro XS CT is offered in the 115-150 HP range. SeaPro CT exists for commercial duty. Under 9.9 HP and over 150 HP, the CT option generally does not apply."
+        "a": "No. CT is available on 9.9 and 15 HP ProKicker models, plus 40, 50, 60, 90, and 115 HP FourStrokes, and the 115 Pro XS. There is no 25 CT, no 75 CT, and no 150 CT. SeaPro CT exists for commercial duty. Above 115 HP the CT option does not apply, and the 150 runs Mercury's big gearcase as standard."
       },
       {
         "q": "Can I retrofit Command Thrust to my existing Mercury?",
@@ -885,7 +917,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Should I get Command Thrust on my Mercury outboard?",
-        "a": "If you fish anywhere with shallow water, weeds, or soft bottom, yes. The Command Thrust larger gearcase runs shallower than standard lower units, provides more thrust at trolling speeds, and handles prop fouling in weeds better. On Ontario lakes with weedy bays, which describes most lakes around Rice Lake and the Kawa…"
+        "a": "On an aluminum V-hull fishing boat, no. Command Thrust is a pontoon and workboat gearcase; on a planing V-hull it just adds drag and costs top-end speed with no meaningful benefit, even in weedy shallow water. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. I…"
       },
       {
         "q": "What shaft length do I need for an aluminum fishing boat?",
@@ -895,8 +927,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "best-mercury-outboard-pontoon-boats",
-    "title": "Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)",
-    "description": "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why.",
+    "title": "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)",
+    "description": "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard). The gearcase matters more than HP. HBW explains why.",
     "category": "Buying Guide",
     "publishDate": "2026-05-04",
     "keywords": [
@@ -911,7 +943,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is a 90 HP Mercury enough for a pontoon boat?",
-        "a": "For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 or 150 CT. The gearcase matters as much as the horsepower nu…"
+        "a": "For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 CT or 150 (standard gearcase; CT tops out at 115). The gearc…"
       },
       {
         "q": "What is the best Mercury outboard for an 18-foot pontoon?",
@@ -919,11 +951,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What is the best Mercury for a 20-foot pontoon?",
-        "a": "For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to be diminishing returns."
+        "a": "For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP FourStroke (standard gearcase; CT tops out at 115). Above 150 HP on a two-tube pontoon starts to be diminishing returns."
       },
       {
         "q": "What is the best Mercury for a 22-foot pontoon?",
-        "a": "For cruising, 115 to 150 HP Command Thrust. For active water sports with full family loading, 150 to 200 HP. Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP."
+        "a": "For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; CT tops out at 115). For active water sports with full family loading, 150 to 200 HP (standard gearcase). Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP."
       }
     ]
   },
@@ -943,7 +975,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is Mercury Command Thrust?",
-        "a": "Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for heavy boats (pontoons, work boats, heavy fishing rigs)."
+        "a": "Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke models from 40 to 115 HP (plus 9.9/15 ProKicker and the 115 Pro XS). CT tops out at 115 HP. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull…"
       },
       {
         "q": "Do I need Command Thrust on a pontoon?",
@@ -962,7 +994,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "best-pontoon-boats-rice-lake-cottage-use",
     "title": "Best Pontoon Boats for Rice Lake Cottage Use (2026)",
-    "description": "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with Mercury 90 to 150 hp Command Thrust. Practical advice from an Ontario dealer.",
+    "description": "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115). Practical advice from an Ontario dealer.",
     "category": "Buying Guide",
     "publishDate": "2026-05-04",
     "keywords": [
@@ -983,7 +1015,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What HP does a Rice Lake pontoon need?",
-        "a": "For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 to 150 HP CT. For a tritoon with active water sports: 150 to 200 HP CT."
+        "a": "For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 HP CT or a 150 HP FourStroke (standard gearcase; Command Thrust tops out at 115). For a tritoon with active water sports: 150 to 200 HP (standard gearcase)."
       },
       {
         "q": "Should I buy a Legend Boats pontoon at HBW?",
@@ -1008,7 +1040,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What's the difference between the Mercury 90 and 115 HP?",
-        "a": "They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for heavier or pontoon hulls; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes eithe…"
+        "a": "They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for pontoons and workboats; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either,…"
       },
       {
         "q": "How much does a 90 HP Mercury outboard weigh?",
@@ -1048,7 +1080,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What HP do I need for my cottage boat?",
-        "a": "Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 90 to 150 HP with Command Thrust."
+        "a": "Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 60 to 115 HP with Command Thrust (60 CT for 18 to 20 ft two-log pontoons; 150-class motors run a standard gearcase, since CT tops out at 115)."
       },
       {
         "q": "Should I switch from Evinrude to Mercury during a cottage repower?",
@@ -1301,7 +1333,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is SeaPro more expensive than FourStroke?",
-        "a": "Yes, typically 10-15% more on the same horsepower. A 115 SeaPro is roughly $1,800-$2,500 more than a 115 FourStroke. For users running 300+ hours/year, the price premium is recovered in extended service intervals and longer service life within 2-3 years."
+        "a": "Typically 10-15% more on the same horsepower in our quoting experience. The exact CAD difference moves with model year and rigging, so ask us for a current side-by-side quote."
       },
       {
         "q": "Can I run a SeaPro recreationally?",
@@ -1309,7 +1341,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How many hours can a SeaPro really handle?",
-        "a": "With proper maintenance, 5,000+ hours is common. We have working customers with documented 7,000+ hours on SeaPro 115s still earning their living."
+        "a": "Mercury does not publish an hour-life rating. Commercial operators routinely run SeaPros into the thousands of hours, and we service working boats with high documented hours still on their original powerheads. Maintenance discipline matters more than the badge."
       },
       {
         "q": "Does SeaPro use special oil or fuel?",
@@ -1476,7 +1508,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How important is Command Thrust for musky?",
-        "a": "Less critical than for walleye. Musky areas typically have adequate depth. Standard lower unit works well. That said, Command Thrust doesn't hurt."
+        "a": "Not recommended on a planing musky V-hull. Command Thrust is a pontoon and workboat gearcase, not for standard V-hulls: on a planing V-hull it adds drag and costs top speed. Stay with the standard gearcase for a musky boat; CT belongs on pontoons and workboats."
       }
     ]
   },
@@ -1794,7 +1826,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Are there current promotions available?",
-        "a": "Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. As of July 2026, the current HBW Exclusive brings every eligible new Mercury to 7 years of total factory-backed warranty (Mercury's 3-year factory base + 4 promotional bonus years / free extension), running through December 31,…"
+        "a": "Mercury promotions change over time. The standard Canadian warranty is 3 years, while the current TD financing offer runs separately. See [current promotions](https://www.mercuryrepower.ca/promotions) for the live offer and eligibility."
       },
       {
         "q": "Can I negotiate below advertised price?",
@@ -2372,8 +2404,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "What is the cheapest Mercury outboard in Canada in 2027?",
-        "a": "The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2027 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection)."
+        "q": "What is the cheapest Mercury outboard in Canada in 2026?",
+        "a": "The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection)."
       },
       {
         "q": "How much does a 2.5 HP Mercury cost in Canada?",
@@ -2415,7 +2447,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is Mercury better than Honda for pontoon boats?",
-        "a": "Mercury Command Thrust gearcase, available on the FourStroke 115 HP and up, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation."
+        "a": "Mercury Command Thrust gearcase, available on FourStroke models from 40 to 115 HP, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation."
       }
     ]
   },
@@ -2494,7 +2526,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does it take to trailer a boat from Toronto to Rice Lake?",
-        "a": "The drive from Toronto to Rice Lake is approximately 145-155 km depending on your starting point, and typically takes 90 to 110 minutes with a trailer in tow. The route runs northeast on Highway 115/35 past Peterborough, then east and north on county roads to Gores Landing or other launches. Without traffic, 90 minute…"
+        "a": "The drive from downtown Toronto to Rice Lake takes about 90 minutes via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic can add 30-45 minutes. Budget extra time if leaving…"
       },
       {
         "q": "Do I need a special licence to tow a boat trailer in Ontario?",
@@ -3665,7 +3697,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "When does Command Thrust matter on a pontoon?",
-        "a": "Any pontoon over 20 feet running a Mercury four-stroke in the 75 to 150 HP range should be in Command Thrust. The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel…"
+        "a": "Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard). The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition,…"
       }
     ]
   },
@@ -3785,7 +3817,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need DTS on a single-engine V6?",
-        "a": "No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it's mandatory), or if you specifically want VesselView integration to feel seamless."
+        "a": "No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it's mandatory), or if you specifically want VesselView integration to feel clean."
       },
       {
         "q": "Is hydraulic steering worth it for 90 HP?",
@@ -4089,39 +4121,6 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       {
         "q": "Is the Mercury 90 worth the upcharge over the 75?",
         "a": "For most boats and most buyers, yes. Same motor, more headroom, better resale, marginal cost difference. The math is hard to argue with once you see it laid out."
-      }
-    ]
-  },
-  {
-    "slug": "mercury-outboard-winterization-service-cost-ontario",
-    "title": "Mercury Winterization Cost Ontario",
-    "description": "Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works.",
-    "category": "Service & Pricing",
-    "publishDate": "2026-05-11",
-    "keywords": [
-      "mercury outboard winterization cost ontario",
-      "boat winterization price kawartha",
-      "shrinkwrap cost ontario per foot",
-      "mercury winterization service cost",
-      "boat storage rice lake price",
-      "harris boat works winterization"
-    ],
-    "faqs": [
-      {
-        "q": "How much does Mercury outboard winterization cost in Ontario?",
-        "a": "It depends on the motor. A small 9.9 HP 4-stroke is a different job than a 250 HP V8 Verado, and a sterndrive is different again. HBW tiers winterization pricing by engine type because the work varies. Live rates are on the HBW winter storage page."
-      },
-      {
-        "q": "What is included in HBW winterization?",
-        "a": "Engine flush, fuel stabilizer, fogging until the engine smokes and stalls, new spark plugs, full oil + filter change, lower-unit gear oil change with water-intrusion inspection, cooling system drain, and battery prep. Every step on every motor."
-      },
-      {
-        "q": "Can I just buy shrinkwrap without winterization?",
-        "a": "Yes. HBW does shrinkwrap-only for customers who handle their own winterization or store at home. $20/ft in our shop, $25/ft outdoors at the lot. Common with cottage owners who tow the boat home to store on their own property."
-      },
-      {
-        "q": "Does HBW offer indoor heated storage?",
-        "a": "No. HBW is outdoor only on a fenced, monitored lot with shrinkwrap. If you specifically need indoor heated, we point customers to other shops in the area honestly rather than upsell on something we do not offer."
       }
     ]
   },
@@ -4636,13 +4635,13 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       "Platinum warranty",
       "Mercury warranty Ontario",
       "extended motor warranty",
-      "Mercury Premier coverage",
+      "Mercury Platinum coverage",
       "outboard warranty cost"
     ],
     "faqs": [
       {
         "q": "What is the difference between Mercury Gold and Platinum coverage?",
-        "a": "Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Premier is the right call. HBW sells Platinum exclusively."
+        "a": "Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Platinum is the right call. HBW sells Platinum exclusively."
       },
       {
         "q": "When do I need to buy Mercury Product Protection?",
@@ -4794,7 +4793,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need Command Thrust on my Pro XS?",
-        "a": "Command Thrust adds a bigger gearcase, a lower gear ratio, and a bigger prop. On a heavily loaded angler boat, three fishermen, full livewell, full fuel, gear, Command Thrust meaningfully improves hole-shot and on-plane control at low speed. If you regularly fish two-up or three-up, or if you run a heavier hull, it's…"
+        "a": "No. Pro XS is a performance motor for planing V-hull bass and angler boats, and Command Thrust is a pontoon and workboat gearcase. On a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even loaded three-up with a full livewell. Standard gearcase Pro XS is the right call for Rice Lake and Ka…"
       }
     ]
   },
@@ -5494,7 +5493,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does the Avator 7.5e cost installed?",
-        "a": "Including the motor, battery, and mounting, expect roughly $4,500 to $6,500 CAD installed at Harris Boat Works, depending on battery configuration. Pickup only at Gores Landing."
+        "a": "Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153. Pickup only at Gores Landing."
       }
     ]
   },
@@ -5596,7 +5595,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does it cost to add a kicker to my repower?",
-        "a": "Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker runs roughly $4,500 to $6,500 installed depending on battery setup."
+        "a": "Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153."
       }
     ]
   },
@@ -5871,7 +5870,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I keep my Honda kicker and just swap the main motor?",
-        "a": "Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as seamless as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolli…"
+        "a": "Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as clean as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolling…"
       }
     ]
   },

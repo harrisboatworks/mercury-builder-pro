@@ -6666,7 +6666,7 @@ Walleye return to accessible depths as the water drops below 60°F. The Gores La
 
 Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with a tube or swimbait, can produce the biggest fish of the year. Bass season does not close until December 15.
 
-**Motor note:** November fishing means cold mornings, heavier clothing, and conditions that do not forgive an unreliable motor. Book fall lay-up or [winterization](/blog/mercury-outboard-winterization-service-cost-ontario) in October, before availability disappears.
+**Motor note:** November fishing means cold mornings, heavier clothing, and conditions that do not forgive an unreliable motor. Book fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026) in October, before availability disappears.
 
 ### December to Ice-Up: Season Close and Winterization
 
@@ -8019,7 +8019,7 @@ The spring no-starts that fill our May schedule almost all trace back to the sam
 The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/boat-winterization-cost-ontario-2026)
 - [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
@@ -14420,7 +14420,7 @@ The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 P
 
 Two related guides in the same cluster:
 - [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/mercury-outboard-winterization-service-cost-ontario)
+- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/boat-winterization-cost-ontario-2026)
 
 ---
 
