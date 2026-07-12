@@ -70,7 +70,7 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 
 ## What the Mercury 75 HP Actually Is
 
-The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 115. All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
+The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and 115](/blog/mercury-75-vs-90-vs-115-comparison). All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
 ![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
@@ -124,13 +124,13 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 | Boat Type | Our Recommendation |
 |---|---|
 | 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
-| Small pontoon under 20 ft | 90 ELPT Command Thrust, CT gearcase makes a meaningful difference on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
+| Small pontoon under 20 ft | 90 ELPT Command Thrust, [CT gearcase makes a meaningful difference](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
 | Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
 | Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
 
-If your hull is rated for 60 HP maximum, you're in the Mercury 60 ELPT FourStroke conversation, not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
+If your hull is rated for 60 HP maximum, you're in [the Mercury 60 ELPT FourStroke conversation](/blog/mercury-40-vs-60-hp-outboard-ontario), not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
 
-If your hull is rated for 90 HP or higher, skip directly to the 90 review or go build a quote.
+If your hull is rated for 90 HP or higher, [skip directly to the 90 review](/blog/mercury-90-hp-fourstroke-review-ontario) or go build a quote.
 
 ---
 

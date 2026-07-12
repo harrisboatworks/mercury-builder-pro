@@ -56,7 +56,7 @@ Bench testing tells you the motor starts, idles, and revs in neutral. That is th
 
 What bench testing does not tell you:
 
-- Whether the prop on the customer's boat lets the motor hit its WOT RPM window under load
+- Whether [the prop on the customer's boat](/blog/mercury-propeller-selection-guide) lets the motor hit its WOT RPM window under load
 - Whether the charging system holds voltage with the customer's actual electronics drawing real amps
 - Whether there is a trim issue, a hydraulic steering bleed, or a cooling restriction that only shows under speed and load
 - Whether the SmartCraft data stream throws a fault code at operating temperature, not cold-start temperature
@@ -77,7 +77,7 @@ That distance is the entire reason every Mercury repower we do gets water-tested
 
 When the test dock is 80 feet away, water testing is the default. Every repower. Every time.
 
-This is not marketing. It is operational geometry. Mercury dealers in Ontario tend to fall into a few patterns:
+This is not marketing. It is operational geometry. [Mercury dealers in Ontario](/blog/best-mercury-dealer-ontario-hbw-difference) tend to fall into a few patterns:
 
 | Dealer type | Distance to test water | Routine water testing? |
 |---|---|---|
@@ -91,7 +91,7 @@ This isn't a knock on inland shops. They are excellent at the work that happens 
 
 ## The HBW 8-step water test (what actually happens)
 
-Every repower follows the same sequence at the dock. Thirty to sixty minutes depending on size and complexity.
+[Every repower follows the same sequence](/blog/what-happens-during-mercury-repower) at the dock. Thirty to sixty minutes depending on size and complexity.
 
 1. **Cold start.** Verify start behaviour, fault codes, initial idle
 2. **Idle stabilization.** Confirm clean idle once warmed
@@ -100,7 +100,7 @@ Every repower follows the same sequence at the dock. Thirty to sixty minutes dep
 5. **Cruise.** Sustained mid-range run, check temperatures, fuel flow, charging
 6. **WOT (wide-open throttle) under load.** Verify the motor hits the correct WOT RPM band with the prop installed. FourStroke target: **5,500-6,000 RPM.** Pro XS target: **6,000-6,400 RPM.**
 7. **Charging system check.** Voltage at idle, at cruise, at WOT, with realistic electronics load
-8. **SmartCraft diagnostic scan.** Pull live data and any stored fault codes at operating temperature
+8. **SmartCraft diagnostic scan.** Pull live data and any [stored fault codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) at operating temperature
 
 If anything in those eight steps reads wrong, the boat goes back to the rigging bay and the issue is fixed before delivery. Not after. Not under warranty. Before.
 
@@ -137,7 +137,7 @@ If you have read other HBW posts and seen the line **"every repower gets a water
 
 ## Build your Mercury repower quote
 
-If you are weighing a Mercury repower for spring 2026, the next step is a no-obligation quote that includes the water test in writing. Transparent pricing. Real availability. No hidden setup fees.
+If you are [weighing a Mercury repower for spring 2026](/blog/mercury-repower-cost-ontario-2026-cad), the next step is a no-obligation quote that includes the water test in writing. Transparent pricing. Real availability. No hidden setup fees.
 
 **[Build your Mercury repower quote](https://mercuryrepower.ca)**
 
@@ -178,10 +178,10 @@ The marina launch area is generally accessible into late fall. For repowers comp
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
 - [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

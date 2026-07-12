@@ -40,13 +40,13 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 There are Mercury dealers closer to Richmond Hill. We know the map. We're not trying to pretend otherwise.
 
-What we're offering is a different kind of buying experience, and whether it's worth a 75-minute drive depends on what's been frustrating you about the closer options.
+What we're offering is a different kind of buying experience, and [whether it's worth a 75-minute drive](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw) depends on what's been frustrating you about the closer options.
 
 ## The Problem With "Call For a Quote"
 
 If you've tried to price a Mercury outboard lately, you've likely hit the wall: a dealer website that lists motors without prices, a form that promises a callback, or a phone number that leads to a conversation where someone asks a dozen questions before telling you what anything costs.
 
-This isn't incompetence. It's a sales strategy. Getting you on the phone before you have a price lets the dealer control the comparison. Once you're talking, the assumption is that personal rapport and anchoring will do the work that transparency would short-circuit.
+This isn't incompetence. It's a sales strategy. [Getting you on the phone before you have a price](/blog/why-mercury-dealers-hide-prices-online) lets the dealer control the comparison. Once you're talking, the assumption is that personal rapport and anchoring will do the work that transparency would short-circuit.
 
 We just put the price online. Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows real installed pricing in Canadian dollars, motor, rigging, and installation, before you've talked to anyone. You can compare, think it over, and call us when you've decided what you want. For [Mercury outboard pricing, every model](/pricing-reference) on one page, see our price reference.
 
@@ -54,7 +54,7 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 ## Why Premier Status Matters More Than Location
 
-Richmond Hill has Mercury dealers. Not all of them are Premier. Mercury's Premier tier is the top level of their dealer program, it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
+Richmond Hill has Mercury dealers. Not all of them are Premier. [Mercury's Premier tier is the top level of their dealer program](/blog/best-mercury-dealer-ontario-hbw-difference), it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
 On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
 
@@ -78,7 +78,7 @@ Richmond Hill has a sophisticated boating community, a lot of buyers who've done
 Full lineup from 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have an honest conversation about what makes sense for your specific hull, how you use it, and what you're willing to spend, not just push the highest-margin option.
 
 **Repower service**
-We replace old motors on hulls you want to keep. Full job: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. The rigging conversation matters as much as the motor choice, a motor improperly rigged to a hull will underperform and can shorten the motor's life.
+[We replace old motors on hulls you want to keep](/blog/mercury-repower-cost-ontario-2026-cad). Full job: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. The rigging conversation matters as much as the motor choice, a motor improperly rigged to a hull will underperform and can shorten the motor's life.
 
 **Mercury parts and service**
 Premier-tier warranty authorization and parts access. For engine repairs, we only service Mercury and Mercruiser.
@@ -166,11 +166,11 @@ Yes. Build a quote at mercuryrepower.ca/quote in about three minutes. Real CAD p
 
 ## Related guides
 
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
 - [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
 - [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 - [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
 
 ## Next steps
 

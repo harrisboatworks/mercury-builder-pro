@@ -54,7 +54,7 @@ For both groups, the pattern is:
 
 - Spring commissioning and launch prep
 - Mid-season service (impellers, fuel system, SmartCraft diagnostics)
-- Repower decisions when the old motor is past mid-life
+- [Repower decisions when the old motor is past mid-life](/blog/mercury-repower-cost-ontario-2026-cad)
 - Fall winterization and storage
 - Trade-in evaluations when upgrading
 
@@ -62,7 +62,7 @@ For both groups, the pattern is:
 
 Cobourg has marinas. What it has less of is Mercury Premier dealer depth.
 
-Premier is Mercury's top dealer tier. It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Premier-tier resolution paths matter.
+[Premier is Mercury's top dealer tier](/blog/best-mercury-dealer-ontario-hbw-difference). It reflects parts inventory depth, technical training, warranty authorization, and full SmartCraft diagnostic capability. For routine service, any qualified Mercury dealer can handle it. For a real repower or a complex warranty case, Premier-tier resolution paths matter.
 
 The closer Cobourg dealers tend to be in lower Mercury tiers, or are non-Mercury shops. For warranty work on a newer Mercury, the dealer tier shows up in resolution speed.
 
@@ -96,7 +96,7 @@ Cobourg customers whose boat lives on Lake Ontario can trailer up for major serv
 
 ## What Cobourg buyers tell us most often
 
-The most common Cobourg feedback we hear is about the call-for-quote frustration at other dealers. Cobourg has a high concentration of informed buyers, people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
+The most common Cobourg feedback we hear is about [the call-for-quote frustration at other dealers](/blog/why-mercury-dealers-hide-prices-online). Cobourg has a high concentration of informed buyers, people who've researched the motor they want, know the specifications, and just need a real number to compare. The phone-call-required pricing model frustrates this group the most.
 
 Our quote builder at mercuryrepower.ca shows real installed CAD pricing in three minutes. Motor, rigging, controls, prop, install labour, HST, all on one line. The price you see is the price you pay. For an informed Cobourg buyer, that alone justifies the 25-minute drive. For [current Mercury outboard prices](/pricing-reference) across the lineup, see our published price list.
 

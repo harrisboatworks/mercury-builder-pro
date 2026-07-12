@@ -36,7 +36,7 @@ A lot of the people stepping onto our rental dock have never driven anything wit
 
 By 10 am they're anchored in a bay with the cooler open, wondering why they were nervous.
 
-This is the guide version of what we tell every first-timer at the dock. Read it the night before and you'll show up as the calm one in your group.
+This is the guide version of what we tell every first-timer at the dock. If you want the fleet list, real fuel costs, and how booking works, that's in our [full Rice Lake rental guide](/blog/rice-lake-boat-rental-guide-2026). Read it the night before and you'll show up as the calm one in your group.
 
 ---
 
@@ -56,7 +56,7 @@ That single difference drives every boat-handling habit that matters:
 - **Neutral early.** Coming up to a dock, a swim raft, or another boat, come off the throttle way earlier than feels natural. The boat keeps gliding. That glide is your braking distance.
 - **Reverse is your brake.** A short burst of reverse kills your remaining glide. We show you this at the dock before you leave.
 
-A pontoon boat idles along at walking pace. At that speed you have all the time in the world to think, which is exactly the point.
+[A pontoon boat](/blog/is-a-pontoon-right-for-your-family-rice-lake) idles along at walking pace. At that speed you have all the time in the world to think, which is exactly the point.
 
 ---
 
@@ -70,7 +70,7 @@ That's genuinely the whole system. The kill switch clips to the driver (motor st
 
 ## Wind: The Thing First-Timers Underestimate
 
-Rice Lake is long and shallow, and like most lakes it's calmest in the morning and choppiest mid-afternoon. Two habits handle it:
+[Rice Lake is long and shallow](/blog/rice-lake-boating-guide-2026), and like most lakes it's calmest in the morning and choppiest mid-afternoon. Two habits handle it:
 
 1. **Do your relaxed cruising early.** Mornings are glass more often than not. If your crew wants a calm swim-and-lunch anchor, do it before mid-afternoon.
 2. **Approach the dock into the wind when you can.** Wind pushes a pontoon around at low speed (all that boat sits above the water like a sail). Nosing into the wind gives you control; letting it push you in from behind takes it away.
@@ -130,7 +130,7 @@ Motor won't start after your swim stop? Nine times out of ten it's the kill-swit
 
 ## Ready for Your First Boat Day?
 
-Do the licence tonight, book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
+[Do the licence tonight](/blog/boat-rental-licence-ontario-guide), book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Questions? Text:** 647-952-2153 **or call:** 905-342-2153

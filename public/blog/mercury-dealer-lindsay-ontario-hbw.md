@@ -40,7 +40,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 Lindsay sits at the centre of the Kawartha Lakes region, with Sturgeon Lake to the north, the Scugog River running through town, and the Trent-Severn Waterway connecting it all. The local boating community is significant, fishing, cruising, cottagers, water sports, the full mix. Boats in this region tend to spend more days on the water per year than anywhere else in southern Ontario.
 
-What Lindsay has less of is Mercury Premier dealer depth with full repower capacity. The closer dealers tend to be in lower Mercury tiers or are non-Mercury shops. For a major repower or a complex warranty case, the dealer tier matters.
+What Lindsay has less of is [Mercury Premier dealer depth with full repower capacity](/blog/best-mercury-dealer-ontario-hbw-difference). The closer dealers tend to be in lower Mercury tiers or are non-Mercury shops. For a major repower or a complex warranty case, the dealer tier matters.
 
 ## What Lindsay boaters typically use HBW for
 
@@ -48,7 +48,7 @@ The Lindsay customer pattern centers on serious cottage and fishing use:
 
 **The Kawartha cottager**, has property on Sturgeon, Pigeon, or Buckhorn Lake, runs a 16-20 foot aluminum or pontoon. Wants a Mercury Premier shop that can handle the seasonal service routine without disrupting the cottage time.
 
-**The serious angler**, Sturgeon Lake walleye and muskie fishing is legitimate. Anglers running Pro XS or FourStroke setups for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
+**The serious angler**, Sturgeon Lake walleye and muskie fishing is legitimate. [Anglers running Pro XS or FourStroke setups](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) for tournament-grade work need dealer-tier diagnostics and parts depth that smaller shops don't carry.
 
 **The cruise-boat owner**, Trent-Severn cruisers running 24-foot inboard/outboard or larger need a Mercury MerCruiser shop. HBW handles MerCruiser sterndrives as well as outboards.
 
@@ -61,7 +61,7 @@ For all three, the pattern is:
 
 ## The Trent-Severn factor
 
-Many Lindsay boaters cruise the Trent-Severn, through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
+[Many Lindsay boaters cruise the Trent-Severn](/blog/trent-severn-mercury-dealer-survival-guide-2026), through Bobcaygeon, Burleigh Falls, the Buckhorn locks, and down into Rice Lake. The lower Trent connects Rice Lake to the Kawartha system through the Hastings lock. That means a Lindsay-area boat that cruises the full Trent system is going to pass right by HBW anyway.
 
 For Lindsay customers planning a major Trent-Severn cruise, dropping the boat at HBW for service before the trip means the boat starts the cruise in known-good condition and the dealer is in the network if anything comes up mid-trip.
 
@@ -82,7 +82,7 @@ Motor pricing: mercuryrepower.ca
 Full lineup: 2.5 HP through 600 HP. For Kawartha cottagers, FourStroke 90/115/150 covers most setups. For Sturgeon Lake muskie/walleye anglers, Pro XS 115-200 is the common spec. ProKicker 9.9 trolling motors install on most Lindsay-area fishing rigs.
 
 **Repower service**
-Full repower including motor, rigging, controls, throttle and shift cables, prop matching, install, sea trial on Rice Lake. Lindsay customers can drop off, get the work done, and pick up commissioned and water-tested.
+[Full repower including motor, rigging, controls](/blog/mercury-repower-cost-ontario-2026-cad), throttle and shift cables, prop matching, install, sea trial on Rice Lake. Lindsay customers can drop off, get the work done, and pick up commissioned and water-tested.
 
 **MerCruiser sterndrive service**
 For Trent-Severn cruisers with MerCruiser sterndrives, we handle full service, repair, and repower. For engine repairs, we only service Mercury and Mercruiser.

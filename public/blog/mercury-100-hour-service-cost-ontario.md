@@ -34,7 +34,7 @@ language: en-CA
 
 Search "100-hour service cost" and you'll get American answers: year-round boating states, different labour rates, different math.
 
-Here's the Ontario version, from 4,160 winterize-and-service work orders in our system since 2013. On a Kawartha season, most boats don't hit 100 hours in a year; they hit the calendar first. So Mercury's "100 hours OR annually, whichever comes first" rule means your 100-hour service is almost always your fall service, done when the motor gets winterized anyway.
+Here's the Ontario version, from 4,160 winterize-and-service work orders in our system since 2013. On a Kawartha season, most boats don't hit 100 hours in a year; they hit the calendar first. So Mercury's "[100 hours OR annually, whichever comes first](/blog/mercury-maintenance-intervals-20-100-300-rule)" rule means your 100-hour service is almost always your fall service, done when the motor gets winterized anyway.
 
 That's not a dodge; it's the efficient way to buy it. One appointment, one drain of the same fluids, one bill.
 
@@ -119,7 +119,7 @@ Every winterize-and-service at our shop ends with the tech writing recommendatio
 
 ## When to Book (Ontario Reality)
 
-Our marina is closed December 1 to April 1, and fall slots fill in order. The efficient move: book your winterize-and-service in late summer for an October slot, and your motor goes into winter serviced, protected, and ready to launch without a spring rush. Spring-only services exist (see the [spring commissioning cost guide](/blog/spring-commissioning-cost-ontario)), but fall is when the full annual service belongs.
+Our marina is closed December 1 to April 1, and fall slots fill in order. The efficient move: [book your winterize-and-service in late summer](/blog/boat-winterization-cost-ontario-2026) for an October slot, and your motor goes into winter serviced, protected, and ready to launch without a spring rush. Spring-only services exist (see the [spring commissioning cost guide](/blog/spring-commissioning-cost-ontario)), but fall is when the full annual service belongs.
 
 ---
 

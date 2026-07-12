@@ -50,9 +50,9 @@ You just drained your lower unit and the oil looks wrong. Or a shop told you "th
 
 Your lower unit is a sealed box of precision gears, bearings, and shafts spinning in a bath of gear oil. Three seals keep the lake out: prop shaft, driveshaft, and shift shaft. When one wears (fishing line wrapped at the prop is a classic cause), water seeps in.
 
-Water and gear oil don't mix; they emulsify into that milky mess. Emulsified oil doesn't lubricate properly, and worse, water rusts bearings and gear faces from the inside. In winter, trapped water freezes and expands inside a case that has no room for expansion.
+Water and gear oil don't mix; they emulsify into that milky mess. Emulsified oil doesn't lubricate properly, and worse, water rusts bearings and gear faces from the inside. In winter, [trapped water freezes and expands inside a case](/blog/diy-mercury-outboard-winterization-guide) that has no room for expansion.
 
-That's the whole story of why every winterize-and-service includes a gearcase drain: it's a lubricant change AND the annual pressure check on your seals, disguised as one boring line item.
+That's the whole story of why [every winterize-and-service includes a gearcase drain](/blog/boat-winterization-cost-ontario-2026): it's a lubricant change AND the annual pressure check on your seals, disguised as one boring line item.
 
 ---
 

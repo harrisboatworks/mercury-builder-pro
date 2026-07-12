@@ -60,11 +60,11 @@ Get a multimeter on the battery terminals.
 - **12.0 to 12.5 V:** low, may crank but probably won't start a cold EFI motor. Charge before troubleshooting further.
 - **11.5 V or lower at rest after a proper surface-charge burn-off:** replace, don't recharge.
 
-A weak battery is the #1 cause of EFI motors that crank slowly but won't fire. Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors.
+[A weak battery is the #1 cause of EFI motors that crank slowly but won't fire](/blog/mercury-boat-battery-guide-ontario). Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors.
 
 ### Step 2: Fuel quality and quantity
 
-If you stored the boat with E10 gasoline and no stabilizer, your tank is probably the problem. **Phase separation** is what happens when water condenses out of humid air, mixes with the ethanol in E10 fuel, and sinks to the bottom of the tank as a low-octane, non-combustible layer.
+If you stored the boat with E10 gasoline and no stabilizer, your tank is probably the problem. **Phase separation** is what happens when water condenses out of humid air, [mixes with the ethanol in E10 fuel](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), and sinks to the bottom of the tank as a low-octane, non-combustible layer.
 
 Lab estimates say phase separation takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as **three weeks**.
 
@@ -137,7 +137,7 @@ Most no-start customers are running again the same day they bring the boat in.
 
 - **"It cranks fine."** About half the time it doesn't. Slow, laboured cranking sounds normal to an owner who's used to it. Voltage test settles it in ten seconds.
 - **"The gas is fresh."** Fresh from the jerry can you filled last October counts as stale. If it sat over winter with ethanol in it, it's a suspect.
-- **"It ran perfect last fall."** We believe you. Eight months of sitting is exactly how batteries, fuel, and plugs fail. Nothing has to "break" for a no-start.
+- **"It ran perfect last fall."** We believe you. [Eight months of sitting is exactly how batteries, fuel, and plugs fail](/blog/mercury-outboard-wont-start-after-sitting). Nothing has to "break" for a no-start.
 - **"I already checked the spark."** A visible spark in daylight isn't a load test. Weak spark looks fine until the plug is under compression.
 
 ## Ready for HBW to look at it?
@@ -191,9 +191,9 @@ Fuel, by a nose over electrical. Our own 537-job history since 2013 splits rough
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost 150 HP Pontoon Guide](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

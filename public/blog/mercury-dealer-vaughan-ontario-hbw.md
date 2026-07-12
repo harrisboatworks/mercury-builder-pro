@@ -76,7 +76,7 @@ Full repower: motor, rigging, controls, throttle and shift, prop selection, inst
 Premier-tier parts and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. If your boat is already in the Kawarthas area, this may make more sense than you'd think.
+[Outdoor with shrinkwrap](/blog/winter-storage-near-toronto-hbw). No indoor. If your boat is already in the Kawarthas area, this may make more sense than you'd think.
 
 **Transparent installed pricing**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), real numbers before any conversation starts.
@@ -126,9 +126,9 @@ Vaughan is inland with no nearby public launch. Local boaters trailer either nor
 
 The drive to Rice Lake is 80 minutes via Highway 400 south → 401 east → Highway 115 north, or via the 407 to skip city traffic. The 400 northbound on Friday afternoons in summer is brutal; reverse it for midweek HBW trips and you get the calmest 80 minutes you'll spend that week.
 
-Why Vaughan boaters drive to HBW for repower:
+Why [Vaughan boaters drive to HBW](/blog/mercury-repower-gta-toronto-destination) for repower:
 
-- **Mercury Premier-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For a $15,000-$25,000 repower, the drive is justified.
+- **Mercury Premier-level service.** Closer Simcoe-area dealers handle the volume but not always the rigging depth. For [a $15,000-$25,000 repower](/blog/mercury-repower-cost-ontario-2026-cad), the drive is justified.
 - **Once-a-year trip works.** Trailer up for the repower itself, then run service work closer to home.
 - **Transparent CAD pricing.** Build the quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) before the trip, the configurator works without a phone call and shows real pricing.
 
@@ -154,9 +154,9 @@ Yes. Build a quote at mercuryrepower.ca/quote in three minutes. Real CAD pricing
 
 - [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
 - [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
 - [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 - [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
+- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
 
 ## Next steps
 

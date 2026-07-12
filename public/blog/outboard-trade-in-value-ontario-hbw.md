@@ -97,7 +97,7 @@ whenInDoubt: Bring it in for a free 30 minute appraisal. We will be honest about
 
 "What about my old motor?"
 
-It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount, but because in Ontario, **the trade-in credit reduces the taxable amount of the new motor**. That 13% HST saving adds up faster than most people expect.
+It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount, but because in Ontario, **the trade-in credit reduces the taxable amount of the new motor**. [That 13% HST saving](/blog/repower-old-motor-trade-in-hst-disposal-ontario) adds up faster than most people expect.
 
 This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
 
@@ -108,9 +108,9 @@ This post is the answer we give over the phone, written down: what we look at, w
 There is no magic database for outboard residuals. What we do, and what any honest dealer does, is evaluate five factors.
 
 ### 1. Brand
-**Mercury and Yamaha hold value best.** Honda holds value but moves more slowly on resale. Suzuki and Tohatsu have followings but smaller secondary markets.
+**[Mercury and Yamaha hold value best](/blog/mercury-vs-yamaha-outboards-ontario).** Honda holds value but moves more slowly on resale. Suzuki and Tohatsu have followings but smaller secondary markets.
 
-**Evinrude/OMC motors have very limited trade value** as of 2026. BRP shut down outboard production in 2020. Parts availability has tightened every year since, and many models are no longer supported by certified service. We will not penalize you for owning one, but we cannot credit much against a motor with a shrinking resale market.
+**[Evinrude/OMC motors have very limited trade value](/blog/evinrude-to-mercury-repower-ontario-guide)** as of 2026. BRP shut down outboard production in 2020. Parts availability has tightened every year since, and many models are no longer supported by certified service. We will not penalize you for owning one, but we cannot credit much against a motor with a shrinking resale market.
 
 ### 2. Hours
 On a Mercury or Yamaha 4-stroke in working condition with no major issues, the value curve looks like this:
@@ -140,7 +140,7 @@ A service record binder adds 10 to 15% to most trades. Not because we are being 
 
 ## What adds value
 - Mercury or Yamaha brand rather than Honda, Suzuki, or Evinrude
-- 4-stroke rather than 2-stroke (post-2010, the 2-stroke market has contracted significantly)
+- [4-stroke rather than 2-stroke](/blog/two-stroke-vs-four-stroke-repower) (post-2010, the 2-stroke market has contracted significantly)
 - Under 500 hours with a documented SmartCraft or YDIS hour reading
 - Original Mercury or Yamaha rigging still intact, controls, harness, gauges
 - Recent annual service (current or prior season)
@@ -176,7 +176,7 @@ The math case for trade: Trade is certain. Private sale has a higher gross numbe
 
 In Ontario, when you trade a motor as part of a repower at HBW, **the trade credit reduces the taxable amount of the new motor**. That is a 13% HST saving on whatever the trade is worth.
 
-**Worked example.** Say you are repowering with a Mercury 90 ELPT FourStroke at $14,960, and we credit $4,000 for your old motor:
+**Worked example.** Say you are [repowering with a Mercury 90 ELPT FourStroke](/blog/mercury-repower-cost-ontario-2026-cad) at $14,960, and we credit $4,000 for your old motor:
 
 | Line | Trade Scenario | Private Sale Scenario |
 |---|---|---|

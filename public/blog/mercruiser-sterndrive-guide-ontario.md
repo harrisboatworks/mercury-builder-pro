@@ -48,7 +48,7 @@ A **sterndrive** (also called an "I/O", inboard/outboard) puts the engine *insid
 
 An **outboard** is a complete propulsion package, engine, drive, gearcase, all hanging off the transom in one unit.
 
-Each has trade-offs. Sterndrives give you a full-width swim platform, lower noise inside the boat, and the look most '90s and 2000s family boats were designed around. Outboards give you simpler maintenance, easier repower, and better resale.
+Each has trade-offs. Sterndrives give you a full-width swim platform, lower noise inside the boat, and the look most '90s and 2000s family boats were designed around. Outboards give you simpler maintenance, [easier repower, and better resale](/blog/outboard-vs-sterndrive-2026-ontario-repower).
 
 ---
 
@@ -96,7 +96,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 ### 3. Milky gear lube (water in the drive)
 
-Same warning sign as an outboard, same severity. Gear lube should be amber. Milky white means water has passed the drive's seals, usually the prop shaft seal or the upper drive shaft seal, and the drive needs to come apart for new seals before water destroys the gears.
+Same warning sign as an outboard, same severity. Gear lube should be amber. [Milky white means water has passed the drive's seals](/blog/milky-gearcase-oil-meaning-cost-ontario), usually the prop shaft seal or the upper drive shaft seal, and the drive needs to come apart for new seals before water destroys the gears.
 
 **Check the gear lube at every oil change.** Most owners don't, then drop the lower at the spring service and find $1,800 of damage.
 

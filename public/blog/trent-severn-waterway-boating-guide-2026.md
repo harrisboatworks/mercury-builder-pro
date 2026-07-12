@@ -40,7 +40,7 @@ The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a
 
 The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times called it one of the best travel experiences of 2025. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
 
-Harris Boat Works sits on Rice Lake, roughly between Locks 18 and 19. We have been here since 1947. This is the guide we would give a friend who was doing their first trip.
+Harris Boat Works [sits on Rice Lake, roughly between Locks 18 and 19](/blog/rice-lake-boating-guide-2026). We have been here since 1947. This is the guide we would give a friend who was doing their first trip.
 
 ---
 
@@ -187,7 +187,7 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Don't Own a Boat? You Can Still Do This
 
-**Rent from HBW.** Our 9-boat fleet on Rice Lake includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+**Rent from HBW.** [Our 9-boat fleet on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 **Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
@@ -210,8 +210,8 @@ Call 905-342-2153 before heading out if you need a slip or want to confirm fuel 
 ---
 
 ## Related reading
-- Walleye Opener Boat Prep Checklist
-- Mercury SmartCraft Connect Guide Ontario
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep)
+- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
 - Rice Lake Fishing Guide
 - Boat Rentals on Rice Lake
 
@@ -250,11 +250,11 @@ Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most
 
 ## Related guides
 
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
 - [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
 
 ## Next steps
 

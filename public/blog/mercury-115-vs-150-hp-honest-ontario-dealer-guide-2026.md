@@ -58,7 +58,7 @@ These are the recommendations we give at our desk. They reflect real-world perfo
 
 **Pontoons 18 to 20 ft:** **Mercury 60 Command Thrust is actually the best choice.** Not 115. Not 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust, fuel economy, and capacity-plate-appropriate HP for an 18 to 20 ft single-tube pontoon. We see pontoons over-powered with 115s routinely, and the math rarely works out in favour of the 115.
 
-**Pontoons 22 to 24 ft (especially tritoons):** **Mercury 150 HP.** Tritoons add hull surface and weight, and on a 22 to 24 ft tritoon the 150 is the right baseline. 115 is undersized for a tritoon of this size.
+**Pontoons 22 to 24 ft (especially tritoons):** **Mercury 150 HP.** [Tritoons add hull surface and weight](/blog/best-mercury-outboard-pontoon-boats), and on a 22 to 24 ft tritoon the 150 is the right baseline. 115 is undersized for a tritoon of this size.
 
 ### Bowriders and runabouts
 
@@ -139,7 +139,7 @@ For a customer fishing solo or with one partner, running the boat at idle or low
 
 This deserves its own section because we see it routinely on customer boats that come to us for service.
 
-**Mercury Command Thrust should ONLY be used on pontoon boats or very specific work boat applications.** Note: Mercury Command Thrust tops out at 115 HP. There is no 150 CT. If a 21+ ft pontoon needs more thrust than a 115 CT delivers, the upgrade path is the standard 150 L Pro XS, not a larger CT.
+**[Mercury Command Thrust should ONLY be used on pontoon boats](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) or very specific work boat applications.** Note: Mercury Command Thrust tops out at 115 HP. There is no 150 CT. If a 21+ ft pontoon needs more thrust than a 115 CT delivers, the upgrade path is the standard 150 L Pro XS, not a larger CT.
 
 Command Thrust (CT) uses a larger gearcase, larger propeller diameter, lower gear ratio (typically 2.33:1 instead of 2.07:1), and is engineered for low-speed thrust at the expense of top-end speed. It's the right call for:
 
@@ -173,7 +173,7 @@ Repowers are the highest-risk install in our shop. New motor, old hull, unknown 
 
 - **"I want to do some tubing this summer"** If 18ft V-hull or smaller, 115 is fine. If 19+ V-hull or 22+ pontoon, jump to 150.
 - **"Can we waterski with this?"** 115 will waterski an adult on an 18ft V-hull. 150 has comfortable margin.
-- **"I'm planning to fish tournaments"** Bass tournament use case usually points at 150 ProXS or 175 ProXS for the headroom.
+- **"I'm planning to fish tournaments"** Bass tournament use case usually points at [150 ProXS or 175 ProXS](/blog/mercury-150-300hp-pro-xs-performance-guide) for the headroom.
 - **"Just for cruising the cottage"** If 18ft V-hull, 115 is the smart spend. If pontoon 18-20ft, 60 CT is the right answer.
 - **"When can you get me in?"** Call 905-342-2153.
 

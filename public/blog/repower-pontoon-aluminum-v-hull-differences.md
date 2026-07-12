@@ -53,13 +53,13 @@ Here's what's different, and what to watch for, across the three most common hul
 
 ### What makes a pontoon repower different
 
-Pontoon boats are heavier and wider than most single-hull boats, and they move differently through the water. They don't plane the same way a V-hull does, they lift and ride on the tubes. Motor selection for a pontoon is less about top speed and more about having enough torque to get that weight moving, especially with a full load.
+Pontoon boats are heavier and wider than most single-hull boats, and they move differently through the water. They don't plane the same way a V-hull does, they lift and ride on the tubes. Motor selection for a pontoon is less about top speed and more about [having enough torque to get that weight moving](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), especially with a full load.
 
-For the 22 to 24 ft pontoons we see most, carrying 4 to 6 people, the 90 to 115hp range is the typical recommendation. Heavier loads and tritoons push higher. Your capacity plate and how you actually load the boat make the final call.
+For the 22 to 24 ft pontoons we see most, carrying 4 to 6 people, [the 90 to 115hp range is the typical recommendation](/blog/pontoon-hp-sizing-decision-tree-ontario). Heavier loads and tritoons push higher. Your capacity plate and how you actually load the boat make the final call.
 
 **Transom configuration:** Most modern pontoons use a standard outboard transom mount, which makes swapping motors relatively straightforward. Older pontoons sometimes have custom or non-standard motor mounts, always worth checking before assuming the new motor drops straight in.
 
-**Shaft length:** Pontoon deck heights typically require a long (20") shaft. Verify this before ordering, a short-shaft motor on a pontoon is a problem you'll know about immediately and loudly.
+**Shaft length:** [Pontoon deck heights typically require a long](/blog/outboard-shaft-length-guide) (20") shaft. Verify this before ordering, a short-shaft motor on a pontoon is a problem you'll know about immediately and loudly.
 
 **Weight:** Four-stroke motors are heavier than comparable two-strokes. On a pontoon, the added weight at the transom is usually fine given the boat's overall mass, but it's worth accounting for.
 
@@ -69,7 +69,7 @@ For the 22 to 24 ft pontoons we see most, carrying 4 to 6 people, the 90 to 115h
 
 ### What makes an aluminum fishing boat repower different
 
-Aluminum boats, Lund, Crestliner, Lowe, and similar North American-built hulls, or Canadian brands like Princecraft, are typically the most straightforward repowers. They're lighter, simpler in construction, and the transom geometry is usually well-suited to a direct motor swap.
+Aluminum boats, Lund, Crestliner, Lowe, and similar North American-built hulls, or Canadian brands like Princecraft, are [typically the most straightforward repowers](/blog/best-mercury-outboard-aluminum-fishing-boats). They're lighter, simpler in construction, and the transom geometry is usually well-suited to a direct motor swap.
 
 That said:
 

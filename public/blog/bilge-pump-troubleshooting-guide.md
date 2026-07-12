@@ -299,11 +299,11 @@ If your boat sits in the water unattended for any stretch of time, this is worth
 
 Freshwater is less corrosive than saltwater. There's no marine growth and no salt accelerating oxidation on every fitting. That doesn't mean your bilge is a gentle environment for electrical connections, though.
 
-Rice Lake and Trent system boats sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into outdoor shrinkwrap for six months, cycling through freeze-thaw from November through April. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
+[Rice Lake and Trent system boats](/blog/rice-lake-boating-guide-2026) sit in the water all season, exposed to rain, spray, and condensation every day. In a covered bilge, moisture stays high all summer. Then the boat goes into [outdoor shrinkwrap for six months](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), cycling through freeze-thaw from November through April. Each cycle expands and contracts every connection, every wire, every crimp. None of that is dramatic on its own. It adds up quietly.
 
 That's how a float switch ends up corroded without anyone noticing, until the boat's sitting low at the dock in July.
 
-The good news: freshwater bilge systems don't need the aggressive anti-corrosion routine that saltwater applications do. Heat-shrink connectors, a clean bilge, an annual inspection, and marine-grade wire cover most of the real risk.
+The good news: freshwater bilge systems don't need the aggressive anti-corrosion routine that saltwater applications do. Heat-shrink connectors, a clean bilge, an annual inspection, and [marine-grade wire](/blog/boat-electrical-safety-checklist-ontario-freshwater) cover most of the real risk.
 
 ---
 
@@ -317,7 +317,7 @@ Where most manufacturers cover non-structural components for one to three years,
 
 **The catch:** warranty covers manufacturing defects and premature failure, not neglect. A connector that corroded because it was never inspected, or a pump jammed by debris that was never cleared, falls outside warranty coverage. The WOWranty is most valuable when it's backed by basic maintenance: annual inspection, a clean bilge, and testing the system every spring.
 
-HBW is an authorized Legend dealer. If your Legend boat has a bilge pump issue inside the warranty window, bring it to us. We'll diagnose it, document it, and handle the warranty claim so you're not chasing it yourself.
+HBW is an [authorized Legend dealer](/blog/legend-boats-mercury-power-package-guide-ontario). If your Legend boat has a bilge pump issue inside the warranty window, bring it to us. We'll diagnose it, document it, and handle the warranty claim so you're not chasing it yourself.
 
 ---
 

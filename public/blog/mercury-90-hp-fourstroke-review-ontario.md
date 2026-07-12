@@ -65,11 +65,11 @@ The motors covered in this post are the standard **90 ELPT FourStroke** and the 
 
 ### 16-18 ft aluminum fishing boats
 
-Lund, Princecraft, Crestliner, Legend ProSport, these are the hulls the 90 ELPT was built for. Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28-32 mph, and tops out around 38-42 mph depending on prop and load. It has headroom for the occasional full boat.
+Lund, Princecraft, Crestliner, Legend ProSport, [these are the hulls the 90 ELPT was built for](/blog/best-mercury-outboard-aluminum-fishing-boats). Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28-32 mph, and tops out around 38-42 mph depending on prop and load. It has headroom for the occasional full boat.
 
 ### Mid-size pontoons up to ~22 ft
 
-For a pontoon carrying four to six people with normal cottage loads, the **90 ELPT Command Thrust** is the call. The CT gearcase swings a 14 or 14.5" prop instead of the standard 13", which translates directly to hole-shot on a flat-bottom hull. Standard gearcase pontoon 90s are slower to plane and work harder doing it.
+For a pontoon carrying four to six people with normal cottage loads, the **90 ELPT Command Thrust** is the call. [The CT gearcase swings a 14 or 14.5" prop](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) instead of the standard 13", which translates directly to hole-shot on a flat-bottom hull. Standard gearcase pontoon 90s are slower to plane and work harder doing it.
 
 ### Family runabouts in the 16-18 ft fibreglass range
 
@@ -89,7 +89,7 @@ Older Mercury, Yamaha, and OMC two-strokes in this power class are being replace
 
 **Heavy tritoons, 24+ ft pontoons, or houseboats.** The 90 will push those boats, but it'll work harder than it should for its service life. Those applications need 115 CT or higher.
 
-**Bass-boat hole-shot.** The 90 ELPT FourStroke is not a Pro XS. It's tuned for fuel economy, smooth cruising, and durability. If you want strong off-the-dock acceleration on a 19 ft fishing boat, the conversation shifts to a 90 Pro XS or a 115 Pro XS.
+**Bass-boat hole-shot.** The 90 ELPT FourStroke is not a Pro XS. It's tuned for fuel economy, smooth cruising, and durability. If you want strong off-the-dock acceleration on a 19 ft fishing boat, [the conversation shifts to a 90 Pro XS or a 115 Pro XS](/blog/fourstroke-vs-pro-xs).
 
 **Mismatched shaft length.** A short shaft (15") on a 20" transom puts the prop too close to the surface. The motor won't cool properly, and you'll ventilate. Shaft length must match transom height. Measure before you order, or let us measure for you.
 
@@ -114,13 +114,13 @@ Rule of thumb: aluminum fishing boats default to standard. Pontoons default to C
 
 ## How the 90 Compares to the 75 and the 115
 
-The 75, 90, and 115 are the same block with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
+[The 75, 90, and 115 are the same block](/blog/mercury-75-vs-90-vs-115-comparison) with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
 
 ![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
-If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17-18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
+If you're already shopping the 90 and [wondering about the 115](/blog/mercury-115-hp-fourstroke-review-ontario): the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17-18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
 
 ---
 
@@ -186,11 +186,11 @@ Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier startin
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 
 ## Next steps
 

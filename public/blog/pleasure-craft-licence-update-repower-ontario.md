@@ -65,7 +65,7 @@ The PCL is Transport Canada's identification number for your boat, the federal e
 
 A few important distinctions:
 - The PCL is tied to the hull (identified by the Hull Identification Number, or HIN). It stays with the boat, not the owner.
-- The [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is your personal operator licence. These are two separate documents.
+- The [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is [your personal operator licence](/blog/boat-rental-licence-ontario-guide). These are two separate documents.
 - The PCL is not proof of ownership. It is an identification document.
 - Any pleasure craft with a motor totalling at least 10 hp (7.5 kW) operated principally in Canadian waters requires a PCL.
 
@@ -73,13 +73,13 @@ A few important distinctions:
 
 The PCL records more than just your name and address. It includes your vessel's motor specifications. When you change motors, those recorded specs are out of date, and you are required to update within 30 days.
 
-Most Mercury repowers at HBW require an update because:
+[Most Mercury repowers at HBW](/blog/what-happens-during-mercury-repower) require an update because:
 - Horsepower class changes. Going from 90 to 115 HP, or 60 to 90 HP, means different specs on record.
-- Brand change. Evinrude to Mercury, Yamaha to Mercury, Honda to Mercury, all require an update.
+- Brand change. [Evinrude to Mercury](/blog/evinrude-to-mercury-repower-ontario-guide), Yamaha to Mercury, Honda to Mercury, all require an update.
 - Same HP, different model. Going from a carbureted two-stroke to a Mercury FourStroke of the same HP often requires an update because the motor model changes.
 - Number of motors changes. Adding or removing a motor (single to twin, main plus kicker) requires an update.
 
-Same-brand, same-HP, same-model swaps are the rare case where an update might not be strictly required. But given that updates are free and take about 15 minutes online, the answer is always to update.
+Same-brand, same-HP, same-model swaps are the rare case where an update might not be strictly required. But given that updates are free and take about 15 minutes online, the answer is always to update. If you're still working out the repower budget, our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) lays out the Ontario numbers.
 
 ## How to update your PCL
 
@@ -165,10 +165,10 @@ We provide all the motor data you need and walk you through the process. The act
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
 - [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

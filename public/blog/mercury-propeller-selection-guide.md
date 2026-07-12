@@ -48,7 +48,7 @@ Most repower and prop-change conversations at HBW eventually come back to this r
 
 Three things you tune when you select a Mercury prop:
 
-**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase (Command Thrust uses a larger gearcase that fits a larger-diameter prop).
+**Diameter** is the prop's total width measured across the tips. Larger diameter generally moves more water and gives more thrust at lower RPMs. Smaller diameter is for higher-RPM, higher-efficiency applications. Diameter is also partially determined by the gearcase ([Command Thrust uses a larger gearcase](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) that fits a larger-diameter prop).
 
 **Pitch** is the forward distance per revolution, as above. This is the dial you turn to match the motor's WOT RPM to the spec.
 

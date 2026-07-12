@@ -30,13 +30,13 @@ language: en-CA
 
 > **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have probably the largest Mercury parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 
-The Trent-Severn Waterway is 386 km of locks, lakes, and rivers that draws thousands of recreational boaters every summer. Most transits go smoothly. But a meaningful percentage of transit boats have a mechanical issue somewhere along the route. When that happens 30 km from any town, your options matter.
+[The Trent-Severn Waterway is 386 km of locks, lakes, and rivers](/blog/trent-severn-waterway-boating-guide-2026) that draws thousands of recreational boaters every summer. Most transits go smoothly. But a meaningful percentage of transit boats have a mechanical issue somewhere along the route. When that happens 30 km from any town, your options matter.
 
 This guide is the dealer-side perspective on how to prepare for, and recover from, a Trent-Severn transit issue. It's written from HBW's position on Rice Lake, which sits in the middle of the TSW corridor and serves as the unplanned service stop for a meaningful number of transit boats every season.
 
 ## HBW's position on the Trent-Severn
 
-We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. Rice Lake is one of the TSW's larger lake segments, sitting between Peterborough (north) and Hastings (east). For boaters running west-to-east or east-to-west on the TSW, Rice Lake is usually a partial-day or overnight stop.
+We're at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. [Rice Lake is one of the TSW's larger lake segments](/blog/rice-lake-boating-guide-2026), sitting between Peterborough (north) and Hastings (east). For boaters running west-to-east or east-to-west on the TSW, Rice Lake is usually a partial-day or overnight stop.
 
 HBW is set up to keep Mercury boaters moving on the TSW. We have:
 
@@ -53,7 +53,7 @@ Several years of seeing transit boats come to our dock for unscheduled service h
 
 **Common transit-induced failures we see:**
 
-- **Cooling system failures.** Impeller worn or stuck, raw water intake clogged with weeds (especially in mid-summer when Kawartha weed density peaks), thermostat stuck closed. Over-temperature alarm trips, customer limps to our dock.
+- **Cooling system failures.** [Impeller worn or stuck](/blog/mercury-impeller-replacement-when-they-fail), raw water intake clogged with weeds (especially in mid-summer when Kawartha weed density peaks), thermostat stuck closed. Over-temperature alarm trips, customer limps to our dock.
 - **Fuel system contamination.** Boats topping up at different marinas with variable fuel quality. Water in fuel, stale fuel from the trip start, or just contaminated tank. Spring-loaded into a transit, the boat fires Water in Fuel alarms and won't run cleanly.
 - **Battery issues.** Multi-day transit with electronics running, batteries drain, charging system can't keep up at idle through locks. Motor cranks slowly or not at all at lock-up.
 - **Prop strikes.** Submerged debris in the TSW, especially during high-water periods. Bent or damaged prop. Vibration alerts the owner to bring it in.
@@ -77,11 +77,11 @@ The mix of boats doing the full TSW transit is more varied than people expect.
 
 **Outboard-powered transit boats:** Single or twin Mercury outboard powered cruisers, larger fishing boats, and pontoons. Full HBW service capability.
 
-**Kicker presence:** Roughly 10% of full TSW transit boats run with a kicker motor for emergency backup or low-speed lock approach. For boats doing the full Trent-to-Severn run, having a kicker is genuinely smart insurance. Boats without a kicker that break down mid-transit are entirely dependent on tow services or sailing-on-anchor.
+**Kicker presence:** Roughly 10% of full TSW transit boats run with [a kicker motor for emergency backup](/blog/electric-trolling-motor-kicker-guide) or low-speed lock approach. For boats doing the full Trent-to-Severn run, having a kicker is genuinely smart insurance. Boats without a kicker that break down mid-transit are entirely dependent on tow services or sailing-on-anchor.
 
 ## Parts inventory: what's on our shelf
 
-Specific competitive fact: **HBW has probably the largest Mercury parts inventory in Ontario.** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
+Specific competitive fact: **HBW has probably [the largest Mercury parts inventory in Ontario](/blog/best-mercury-dealer-ontario-hbw-difference).** For TSW transit boats coming through with mechanical issues, this is often the difference between a same-day fix and a 3-7 day wait for parts to ship.
 
 Common transit-related parts we stock:
 
@@ -209,11 +209,11 @@ Not strictly required, but recommended for the full Trent-to-Severn transit. Rou
 
 ## Related guides
 
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
 - [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+- [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
 
 ## Next steps
 

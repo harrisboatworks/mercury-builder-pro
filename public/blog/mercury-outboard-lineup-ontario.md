@@ -44,19 +44,19 @@ Mercury organizes its outboards into families by use case, not just horsepower. 
 
 ### FourStroke: the everyday Ontario motor
 
-**HP range:** 2.5 to 300 hp. This is the volume seller in Ontario because it covers nearly every recreational use: a 9.9 kicker, a 25 for a light tinny, a 60 or 75 for a mid-size fishing rig, a 115 or 150 for bigger aluminum or fibreglass boats, up to 300 for big water. Tuned for fuel efficiency at cruise, smooth idle, quiet operation, and long service intervals. What it isn't: fast out of the hole.
+**HP range:** 2.5 to 300 hp. This is [the volume seller in Ontario](/blog/mercury-fourstroke-buyer-guide-ontario) because it covers nearly every recreational use: a 9.9 kicker, a 25 for a light tinny, a 60 or 75 for a mid-size fishing rig, a 115 or 150 for bigger aluminum or fibreglass boats, up to 300 for big water. Tuned for fuel efficiency at cruise, smooth idle, quiet operation, and long service intervals. What it isn't: fast out of the hole.
 
 **FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), it pairs a larger gearcase with a bigger prop for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
 
 ### Pro XS: performance fishing
 
-**HP range:** 115 to 300 hp. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke. In the Ontario tournament world, Pro XS is the standard. The current architecture is the inline-4 150, V6 175 to 250, and V8 300, and it carries into the 2027 model year unchanged as far as Mercury has announced.
+**HP range:** 115 to 300 hp. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke. [In the Ontario tournament world, Pro XS is the standard](/blog/mercury-pro-xs-buyer-guide-ontario). The current architecture is the inline-4 150, V6 175 to 250, and V8 300, and it carries into the 2027 model year unchanged as far as Mercury has announced.
 
 Honest note: buyers who pick Pro XS for the badge usually find a correctly propped FourStroke would have done the job for less money and less fuel. Pick by use case, not by name.
 
 ### SeaPro: commercial duty
 
-For guides, water taxis, rental fleets, and municipal boats. Calibrated for maximum torque at lower RPM with heavy-duty gearcases built for long hours under sustained load. If the motor is how you make a living, this is the family built for it.
+[For guides, water taxis, rental fleets, and municipal boats](/blog/mercury-seapro-commercial-outboard-guide). Calibrated for maximum torque at lower RPM with heavy-duty gearcases built for long hours under sustained load. If the motor is how you make a living, this is the family built for it.
 
 ### Verado: premium offshore, special order only
 
@@ -64,7 +64,7 @@ Verado (250 to 600 hp, naturally aspirated V8/V10/V12) is engineered for large o
 
 ### Avator electric: brochure only, for now
 
-Mercury's Avator electric line (currently the 7.5e and 20e in production) is build-to-order from the brochure, not something we stock on the floor. Avator outboards are rated by output power in kilowatts and equivalent thrust, not by direct gas-engine HP comparison. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice. Larger Avator models have been previewed but we don't have firm 2027 availability dates yet. When Mercury confirms, we'll update this post.
+[Mercury's Avator electric line](/blog/mercury-avator-electric-boating-ontario) (currently the 7.5e and 20e in production) is build-to-order from the brochure, not something we stock on the floor. Avator outboards are rated by output power in kilowatts and equivalent thrust, not by direct gas-engine HP comparison. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice. Larger Avator models have been previewed but we don't have firm 2027 availability dates yet. When Mercury confirms, we'll update this post.
 
 ## Matching the Motor to Your Ontario Boat
 

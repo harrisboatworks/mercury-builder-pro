@@ -54,7 +54,7 @@ If your boat doesn't slot neatly into one of these, email a photo of your motor 
 
 ## What DTS actually is (and isn't)
 
-DTS is Mercury's drive-by-wire system. Digital Throttle & Shift. Instead of mechanical cables running from the helm control to the motor, DTS uses electrical signals over a SmartCraft network. The throttle and shift commands travel as data, not as cable pulls.
+DTS is Mercury's drive-by-wire system. Digital Throttle & Shift. [Instead of mechanical cables running from the helm control to the motor](/blog/mercury-dts-vs-mechanical-controls-ontario-repower), DTS uses electrical signals over a SmartCraft network. The throttle and shift commands travel as data, not as cable pulls.
 
 What that buys you in real boating:
 
@@ -63,7 +63,7 @@ What that buys you in real boating:
 - One-handed multi-engine control (single lever controls multiple motors)
 - Joystick piloting compatibility (joystick requires DTS)
 - SmartCraft integration (live data, diagnostics, alarms)
-- Cleaner helm install (one harness instead of dual cables)
+- [Cleaner helm install](/blog/mercury-controls-rigging-guide-ontario) (one harness instead of dual cables)
 
 What DTS does NOT do:
 
@@ -84,7 +84,7 @@ The five-second visual check at the helm:
 1. **Throttle/shift control.** A DTS control has no visible cable coming out the bottom of the binnacle. It's a sealed unit with a wiring harness. Mechanical controls have two visible push-pull cables.
 2. **Throttle feel.** A DTS throttle moves smoothly without the spring-loaded resistance of a cable. It also has a soft click at neutral/forward/reverse detents.
 3. **Multi-engine sync.** If you have twins or triples and a single lever controls all engines together, that's DTS.
-4. **SmartCraft gauge or VesselView display.** Most DTS rigs have a SmartCraft gauge or VesselView screen showing live engine data.
+4. **SmartCraft gauge or VesselView display.** Most DTS rigs have a [SmartCraft gauge or VesselView screen](/blog/mercury-vesselview-smartcraft-plain-english-guide) showing live engine data.
 5. **Joystick.** If you have a joystick at the helm, you definitely have DTS. Joystick requires it.
 
 If any one of those five is true, you have DTS already. The eligibility question becomes "what's the upgrade path within DTS" rather than "can I retrofit."

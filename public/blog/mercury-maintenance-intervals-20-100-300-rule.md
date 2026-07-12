@@ -86,7 +86,7 @@ Skipping the 20-hour service leaves metal contamination in the oil and misses th
 
 ### Routine operation phase (20-300 hours)
 
-After break-in, the motor enters years of normal use. The 100-hour service interval is Mercury's standard for routine preventive maintenance during this phase. It covers the items that wear and accumulate through normal operation: oil, filters, spark plugs, gear lube, and inspection of critical systems.
+After break-in, the motor enters years of normal use. [The 100-hour service interval](/blog/mercury-100-hour-service-cost-ontario) is Mercury's standard for routine preventive maintenance during this phase. It covers the items that wear and accumulate through normal operation: oil, filters, spark plugs, gear lube, and inspection of critical systems.
 
 **The "every year" rule:** Mercury's schedule says every 100 hours OR every year, whichever comes first. Most recreational boaters in Ontario don't put 100 hours on a motor in a single season. That means the annual calendar trigger applies regardless of hours, and skipping a year isn't justified by low hours.
 

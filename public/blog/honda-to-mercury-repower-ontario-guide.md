@@ -38,7 +38,7 @@ Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50
 
 ## Why customers switch from Honda to Mercury
 
-The Honda-to-Mercury swap is less common than Yamaha-to-Mercury in Ontario because Honda has a smaller installed base here. The customers who do switch have one of three reasons.
+The Honda-to-Mercury swap is less common than [Yamaha-to-Mercury](/blog/yamaha-to-mercury-repower-ontario-guide) in Ontario because Honda has a smaller installed base here. The customers who do switch have one of three reasons.
 
 **Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Premier dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
 
@@ -48,7 +48,7 @@ The Honda-to-Mercury swap is less common than Yamaha-to-Mercury in Ontario becau
 
 ## What changes vs what stays the same
 
-Honda and Mercury both use different proprietary control architectures. None of the Honda-specific rigging carries over. The cost of switching is in the rigging, not the motor.
+Honda and Mercury both use different proprietary control architectures. [None of the Honda-specific rigging carries over](/blog/what-happens-during-mercury-repower). The cost of switching is in the rigging, not the motor.
 
 | Component | Stays the same? | Notes |
 |---|---|---|
@@ -62,7 +62,7 @@ Honda and Mercury both use different proprietary control architectures. None of 
 | Steering | Often | Hydraulic carries over; cable steering may need replacement at higher HP. |
 | Trim tabs, electronics | Yes | Carry over. |
 
-The cost premium for switching brands (vs same-brand repower) is roughly $1,800-$3,500 depending on whether you have mechanical or digital controls and how integrated your existing dash is.
+[The cost premium for switching brands](/blog/mercury-repower-cost-ontario-2026-cad) (vs same-brand repower) is roughly $1,800-$3,500 depending on whether you have mechanical or digital controls and how integrated your existing dash is.
 
 ## Costs in Ontario (CAD, 2026)
 
@@ -100,9 +100,9 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 **You want Joystick Piloting on a multi-engine setup.** Honda's iST joystick exists but Mercury's joystick integration is more mature and works with a broader range of multi-engine configurations.
 
-**You want Pro XS performance.** Honda doesn't have a direct Pro XS equivalent. If you're a bass fisherman or runabout owner wanting Pro XS aggression, Mercury is the only call.
+**You want Pro XS performance.** Honda doesn't have a direct Pro XS equivalent. If you're a bass fisherman or runabout owner [wanting Pro XS aggression](/blog/mercury-pro-xs-buyer-guide-ontario), Mercury is the only call.
 
-**Repower planning + warranty.** Mercury Canada offers 3 years limited + 3 years corrosion concurrent. Honda offers 5 years limited (some markets). Verify current warranty terms before committing because Honda's standard warranty length has historically been a Honda advantage and may still be.
+**Repower planning + warranty.** Mercury Canada offers [3 years limited + 3 years corrosion concurrent](/blog/mercury-outboard-warranty-canada-2026). Honda offers 5 years limited (some markets). Verify current warranty terms before committing because Honda's standard warranty length has historically been a Honda advantage and may still be.
 
 ## What we see at HBW
 
@@ -188,10 +188,10 @@ Depends on year, hours, condition, and market. We take Honda in trade against Me
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
 
 ## Next steps
 

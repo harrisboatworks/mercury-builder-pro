@@ -54,7 +54,7 @@ This post shows the curve, explains why midsummer is the killer on Rice Lake spe
 | October | 36 |
 | November | 45 |
 
-Two things stand out. First, June and July together (287 jobs) beat April and May (207) by about 40 percent. Second, roughly two-thirds of a year's impeller work lands between May and August, when boats are working hardest. The jobs that bring them in are not labelled "routine check" either: the midsummer tickets read "overheating", "alarm sounding", and "not pumping water".
+Two things stand out. First, June and July together (287 jobs) beat April and May (207) by about 40 percent. Second, roughly two-thirds of a year's impeller work lands between May and August, when boats are working hardest. The jobs that bring them in are not labelled "routine check" either: the midsummer tickets read "overheating", "[alarm sounding](/blog/mercury-outboard-overheat-alarm-decoder)", and "not pumping water".
 
 One honest note on the data: these are part lines from our repair orders, so they include both impellers replaced because they failed and impellers replaced during other work. The shape of the curve is the point: if spring stiffness were the main killer, April would be the peak. It isn't. Counts are part lines from completed repair orders, January 2014 through the first week of June 2026. The 2026 season is still in progress, so this summer's months are still adding to their totals. Fall counts are small enough that month-to-month wiggle (November edging October, for example) is noise, not signal.
 
@@ -70,7 +70,7 @@ Rice Lake is shallow, warm, and famously weedy. That's why the fishing is good, 
 
 Weeds wrap the lower unit and starve the water intake. A choked intake means the impeller runs partially dry, and a rubber impeller running dry destroys itself in seconds, not minutes. By midsummer the weed beds are at full height, exactly when the June-July spike hits. Late summer adds a second hazard: lower water means more sand and silt through the pump, which works like grinding paste on the housing and wear plate.
 
-If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure; on Rice Lake, treat that as an outer limit.
+If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule calls for [water pump impeller replacement](/blog/mercury-water-pump-replacement-cost-ontario) every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure; on Rice Lake, treat that as an outer limit.
 
 ## The Warning Signs, in the Order We See Them
 

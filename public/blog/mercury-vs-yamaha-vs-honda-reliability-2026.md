@@ -69,7 +69,7 @@ If you bought a properly maintained Mercury, Yamaha, or Honda today and ran it 5
 
 A motor is reliable if it starts when you turn the key, runs through the season without unexpected failures, and gets fixed quickly when something does go wrong. That last part is the one that varies most by brand and region.
 
-**Mercury** has the deepest dealer network in Ontario. More dealers means more certified technicians, more parts on local shelves, shorter diagnosis-to-repair windows. If you break down on Rice Lake in July and need a parts-shelf impeller or a diagnostic on your fuel system, Mercury regional dealer density gives you options.
+**Mercury** has [the deepest dealer network in Ontario](/blog/best-mercury-dealer-ontario-hbw-difference). More dealers means more certified technicians, more parts on local shelves, shorter diagnosis-to-repair windows. If you break down on Rice Lake in July and need a parts-shelf impeller or a diagnostic on your fuel system, Mercury regional dealer density gives you options.
 
 **Yamaha** makes excellent motors. Legendary saltwater durability, well-respected in the offshore community. In Ontario cottage country, Yamaha dealers are present but thinner on the ground than Mercury. Parts that are common in a coastal Yamaha dealer warehouse can take weeks to source inland.
 
@@ -91,16 +91,16 @@ The point is not that Yamaha or Honda fail more. The point is that when any moto
 ### Yamaha
 **Strengths:** A genuinely well-earned reputation for durability, especially in saltwater applications. The Yamaha 4.2L V6 engine family is widely respected in the offshore fishing community.
 
-**Where to be careful:** Ontario dealer density is lower than Mercury. Repowering from Mercury to Yamaha, or Yamaha to Mercury, requires replacing the full control system: $2,000 to $3,000 CAD in rigging on top of the motor cost.
+**Where to be careful:** Ontario dealer density is lower than Mercury. Repowering from Mercury to Yamaha, or [Yamaha to Mercury, requires replacing the full control system](/blog/yamaha-to-mercury-repower-ontario-guide): $2,000 to $3,000 CAD in rigging on top of the motor cost.
 
-**Our honest take:** In saltwater on the coast, Yamaha is a legitimate competitor to Mercury. In Ontario freshwater, Mercury wins on dealer support.
+**Our honest take:** In saltwater on the coast, [Yamaha is a legitimate competitor to Mercury](/blog/mercury-vs-yamaha-outboards-ontario). In Ontario freshwater, Mercury wins on dealer support.
 
 ### Honda
 **Strengths:** Reliable four-stroke engineering. Quiet operation, fuel-efficient at cruise, well-built mechanically. Strong reputation in the small-HP portable class.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Where to be careful:** Honda outboard dealer network in Ontario is smaller than either Mercury or Yamaha. Honda also has fewer options at the higher end of the HP range.
+**Where to be careful:** [Honda outboard dealer network in Ontario is smaller](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026) than either Mercury or Yamaha. Honda also has fewer options at the higher end of the HP range.
 
 **Our honest take:** Nothing wrong with the motor itself. The practical reliability disadvantage comes from the thinner dealer network in Ontario, not from the engineering.
 
@@ -157,7 +157,7 @@ A well-maintained Yamaha or Honda will outlast a neglected Mercury. We see this 
 - The cost of switching does not justify the change
 
 **Switch to Mercury when:**
-- You are doing a full repower anyway and the rigging investment is already committed
+- [You are doing a full repower anyway](/blog/mercury-repower-cost-ontario-2026-cad) and the rigging investment is already committed
 - The dealer network for your current brand has thinned out in your area
 - The motor has aged out and the brand current lineup does not have the right HP class for your hull
 
@@ -220,10 +220,10 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 ## Related guides
 
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
-- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
-- [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
+- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
+- [Boat Rentals Shared Access 2026 Ontario](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
 
 ## Next steps
 

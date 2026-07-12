@@ -32,7 +32,7 @@ language: en-CA
 
 > **Quick answer:** If your boat was properly winterized, spring commissioning is the cheap half of the year: a standard spring startup ran a flat $99 in labour at our shop last season (before HST), with parts only as needed. Boats that skipped fall service pay several times that in spring. Your spring bill is mostly decided in October. Book at hbw.wiki/service.
 
-Here's the pattern 9,540 spring work orders since 2013 make impossible to miss: the boats that cost real money in May are almost never the ones that were serviced in October.
+Here's the pattern 9,540 spring work orders since 2013 make impossible to miss: the boats that cost real money in May are almost never [the ones that were serviced in October](/blog/boat-winterization-cost-ontario-2026).
 
 Spring commissioning has a reputation as a big-ticket item. At our shop it isn't, IF the fall work happened. This guide gives you the real numbers for both timelines: the serviced boat's spring, and the skipped-fall boat's spring.
 

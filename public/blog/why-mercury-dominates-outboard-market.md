@@ -46,13 +46,13 @@ When your motor needs a water pump impeller on a Thursday in August, that means 
 ## The four reasons Mercury makes sense for Ontario boaters
 
 ### 1. Dealer network density
-Ontario has one of the strongest dealer networks for outboards. Parts on hand, technician depth, coverage when you travel, resale support. Finding a qualified Honda or Yamaha tech in Gores Landing or Bobcaygeon is harder than finding a Mercury tech.
+Ontario has [one of the strongest dealer networks](/blog/best-mercury-dealer-ontario-hbw-difference) for outboards. Parts on hand, technician depth, coverage when you travel, resale support. Finding [a qualified Honda or Yamaha tech](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) in Gores Landing or Bobcaygeon is harder than finding a Mercury tech.
 
 ### 2. Factory relationships with Canadian boat builders
-Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a $2,000 to $3,000 CAD brand-conversion cost.
+Most aluminum fishing boats sold in Canada (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. If you are repowering an existing boat that came factory-rigged for Mercury, keeping it Mercury avoids a [$2,000 to $3,000 CAD brand-conversion cost](/blog/mercury-repower-cost-ontario-2026-cad).
 
 ### 3. Full lineup coverage for every Ontario use case
-Mercury FourStroke covers 2.5 HP through 300 HP. Pro XS handles performance fishing. SeaPro covers commercial-duty. Verado covers premium high-horsepower applications (special-order at HBW).
+[Mercury FourStroke covers 2.5 HP through 300 HP](/blog/mercury-outboard-lineup-ontario). Pro XS handles performance fishing. SeaPro covers commercial-duty. Verado covers premium high-horsepower applications (special-order at HBW).
 
 ### 4. Parts and service continuity over the motor life
 A well-maintained Mercury lasts 15 to 25 years. Mercury depth in Ontario means we can service every motor we sell for the full life of that motor.
@@ -65,7 +65,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Existing non-Mercury rigging.** If your boat came factory-rigged for Yamaha or Honda, and the motor is running fine, stay with it. Brand switching costs money.
 
-**Small-portable segment.** Honda has a strong reputation in sub-15 HP four-stroke portables. In our area, we recommend the Mercury 9.9 ProKicker because we can back it up.
+**Small-portable segment.** Honda has a strong reputation in sub-15 HP four-stroke portables. In our area, we recommend [the Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) because we can back it up.
 
 ## Why HBW has stayed Mercury-only since 1965
 
@@ -117,10 +117,10 @@ Yes. Most cottage boats in this region came from the factory or previous owners 
 ## Related guides
 
 - [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
 - [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
 - [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 
 ## Next steps
 

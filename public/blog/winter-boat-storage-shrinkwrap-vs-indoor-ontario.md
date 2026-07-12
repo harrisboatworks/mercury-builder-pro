@@ -73,7 +73,7 @@ Let's get this out of the way first: **storage method doesn't replace winterizat
 
 Ontario gets to -20°C and colder regularly between January and February. Even *indoor unheated* storage drops below freezing during cold snaps. The only storage tier that lets you skip winterization is **heated indoor**, where the building stays above 5°C all winter, and even then, fuel stabilization is still recommended.
 
-What happens if you skip winterization (regardless of storage method):
+What happens [if you skip winterization](/blog/boat-winterization-cost-ontario-2026) (regardless of storage method):
 
 | Failure | Cost to Fix |
 |---------|-------------|
@@ -212,12 +212,12 @@ For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $5
 Our standard winter storage package includes:
 
 - Full shrinkwrap with support frame, 2-4 vents, and weather strapping
-- Mercury-trained winterization on the engine: fuel stabilization, fogging, gearcase drain and refill
+- [Mercury-trained winterization on the engine](/blog/diy-mercury-outboard-winterization-guide): fuel stabilization, fogging, gearcase drain and refill
 - Cooling system drain (freeze protection)
 - Steering and throttle cable lubrication
 - Anode inspection
 - Battery removed and brought indoors on a trickle charger through winter
-- Optional: spring commissioning add-on (we pull it off, prep it, water-test, deliver to your slip)
+- Optional: [spring commissioning add-on](/blog/spring-commissioning-cost-ontario) (we pull it off, prep it, water-test, deliver to your slip)
 
 **Pricing:** $33-$35/ft shrinkwrap + winterization fees ($300-$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000-$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200-$1,400.
 
@@ -296,9 +296,8 @@ We don't have indoor storage on-site. Outdoor shrinkwrap + winterization is our 
 
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [mercury-outboard-winterization-service-cost-ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
 
 ## Next steps
 

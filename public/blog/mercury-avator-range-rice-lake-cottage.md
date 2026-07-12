@@ -34,7 +34,7 @@ A Mercury Avator electric outboard's real-world range on Rice Lake depends on th
 
 ## What Is the Range of a Mercury Avator Electric Outboard?
 
-It depends on the model and how many battery packs you run. A Mercury Avator 7.5e on its built-in 1 kWh battery does roughly 3 to 4 miles at full throttle and 20 to 25 miles at trolling speed on Rice Lake. The larger models (20e through 110e) take external packs and extend range by adding batteries. Mercury rates Avators by power output and thrust, not by a gas-horsepower equivalent.
+It depends on the model and how many battery packs you run. [A Mercury Avator 7.5e](/blog/mercury-avator-7-5e-review) on its built-in 1 kWh battery does roughly 3 to 4 miles at full throttle and 20 to 25 miles at trolling speed on Rice Lake. The larger models (20e through 110e) take external packs and extend range by adding batteries. [Mercury rates Avators by power output and thrust](/blog/mercury-avator-electric-boating-ontario), not by a gas-horsepower equivalent.
 
 | Model | Battery setup | Full throttle | Half throttle | Trolling / low speed | Typical boat |
 |---|---|---|---|---|---|
@@ -57,7 +57,7 @@ Range on an electric outboard depends on:
 5. **Water and weather conditions** (chop and wind reduce range significantly)
 6. **Battery temperature** (cold water lowers usable capacity)
 
-Mercury's published Avator range numbers are honest in the sense that they reflect specific test conditions. But "5 miles at full throttle" doesn't mean "5 miles of useful range in real conditions." Plan on 60-70% of Mercury's published numbers for realistic Rice Lake conditions.
+Mercury's published Avator range numbers are honest in the sense that they reflect specific test conditions. But "5 miles at full throttle" doesn't mean "5 miles of useful range in real conditions." Plan on 60-70% of Mercury's published numbers for realistic Rice Lake conditions. If you're also cross-shopping Torqeedo, we put the two side by side in our [Avator vs Torqeedo breakdown](/blog/mercury-avator-vs-torqeedo).
 
 ## Avator range on Rice Lake by model
 
@@ -107,11 +107,11 @@ Most Rice Lake cottagers run trips that fall into one of three patterns:
 
 **Full-day**: out for 6-8 hours, multiple fishing spots, crossing the lake, running back into wind. 15-25+ miles total. This is where Avator stops being practical for most setups.
 
-For the first two patterns, Avator works. For the third, plan on running a gas outboard with a trolling motor as the better answer.
+For the first two patterns, Avator works. For the third, plan on running [a gas outboard with a trolling motor](/blog/electric-trolling-motor-kicker-guide) as the better answer.
 
 ## Charging at the cottage
 
-Charging is half the Avator equation. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer, plan on overnight per pack from 110V.
+[Charging is half the Avator equation](/blog/mercury-avator-charging-cottage-dock). The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger external 2,300 Wh packs take longer, plan on overnight per pack from 110V.
 
 What that means in practice:
 

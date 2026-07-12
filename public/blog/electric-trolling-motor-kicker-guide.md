@@ -64,7 +64,7 @@ An **electric trolling motor** is battery-powered, rated in pounds of thrust (no
 
 Brands you will see: Minn Kota, Garmin Force, MotorGuide.
 
-A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. The Mercury 9.9 ProKicker is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
+A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. [The Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
 
@@ -107,10 +107,10 @@ Battery range is real. A 50 lb-thrust unit running at 70% draws a single deep-cy
 ## When a gas kicker wins
 
 ### You troll for walleye
-This is what kickers were made for. Walleye trolling on Rice Lake demands sustained low-speed propulsion in open water, often in building chop. A gas kicker on a full tank handles an all-day walleye session without complaint.
+This is what kickers were made for. [Walleye trolling on Rice Lake](/blog/best-mercury-outboard-rice-lake-fishing) demands sustained low-speed propulsion in open water, often in building chop. A gas kicker on a full tank handles an all-day walleye session without complaint.
 
 ### You fish big water or serious chop
-Lake Simcoe, the Trent-Severn main channel, the Kawarthas in October wind. A gas kicker has enough thrust to push through conditions that strand an electric motor.
+[Lake Simcoe](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), the Trent-Severn main channel, the Kawarthas in October wind. A gas kicker has enough thrust to push through conditions that strand an electric motor.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -121,7 +121,7 @@ Larger Mercury 4-strokes (175 HP and up) are not built to idle at 600 to 800 RPM
 Main motor will not start at the far end of Rice Lake? The kicker gets you home.
 
 ### The Mercury 9.9 ProKicker specifically
-Mercury makes both a standard 9.9 FourStroke and a ProKicker version. For kicker duty, the ProKicker is the right choice:
+Mercury makes both [a standard 9.9 FourStroke](/blog/mercury-9-9-efi-review-ontario) and a ProKicker version. For kicker duty, the ProKicker is the right choice:
 
 - Idle drops to ~600 RPM vs ~750 on the standard
 - Achieves slower, steadier trolling speeds

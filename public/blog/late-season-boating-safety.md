@@ -106,7 +106,7 @@ VHF radio on Channel 16 is the standard. Cell coverage on many Ontario lakes is 
 
 A running motor gets you home. A failed motor in October on a cold lake is not the same situation as a failed motor in July. Before any shoulder-season trip:
 
-- Fresh fuel, ethanol treated or ethanol-free (HBW sells ethanol-free marine fuel at the dock in Gores Landing)
+- Fresh fuel, [ethanol treated or ethanol-free](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario) (HBW sells ethanol-free marine fuel at the dock in Gores Landing)
 - Battery and charging system tested
 - All safety shutoffs working
 - Reliable cold-starting confirmed
@@ -150,10 +150,10 @@ Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before th
 ---
 
 ## Related reading
-- Mercury Outboard Service Schedule
-- Walleye Opener Boat Prep Checklist
-- Mercury Motor Winterization Guide
-- Spring Outboard Commissioning Checklist
+- [Mercury Outboard Service Schedule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep)
+- [Mercury Motor Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 
 ## Sources
 
@@ -189,11 +189,11 @@ Absolutely. Cold water shock can incapacitate you in seconds. You may not have t
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [mercury-outboard-winterization-service-cost-ontario](/blog/mercury-outboard-winterization-service-cost-ontario), what winterization service costs
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 
 ## Next steps
 
