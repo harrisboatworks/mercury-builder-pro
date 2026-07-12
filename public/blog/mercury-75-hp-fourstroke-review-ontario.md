@@ -85,7 +85,7 @@ The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 
 | SmartCraft compatible | Yes | Yes |
 | Warranty | 3-year standard | 3-year standard |
 
-The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500, 5,500 RPM. The 90 runs to 5,000, 6,000. No weight change. A very small price difference.
+The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500-5,500 RPM. The 90 runs to 5,000-6,000. No weight change. A very small price difference.
 
 The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
 
@@ -111,7 +111,7 @@ There are three real scenarios where the 75 is the right call:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**The capacity plate forces it.** Some 16, 17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
+**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
 
 **An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
 
@@ -123,10 +123,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 | Boat Type | Our Recommendation |
 |---|---|
-| 14, 17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
+| 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
 | Small pontoon under 20 ft | 90 ELPT Command Thrust, CT gearcase makes a meaningful difference on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
 | Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
-| Repowering an old 60, 75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
+| Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
 
 If your hull is rated for 60 HP maximum, you're in the Mercury 60 ELPT FourStroke conversation, not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
 

@@ -78,11 +78,11 @@ From smallest to largest, with what each class actually powers:
 
 | HP Class | Common Models | What It Powers | Install Type |
 |---|---|---|---|
-| 2.5, 6 HP portable | 2.5 MH, 3.5 MH, 4 MH, 5 MH, 6 MH | Tenders, dinghies, small inflatables, kicker | Drop-in tiller, no rigging |
-| 8, 20 HP tiller | 8 EFI, 9.9 MH/EH/ProKicker, 15 MH, 20 MH | Small aluminum (12, 14 ft), kicker | Drop-in tiller, no rigging |
-| 25, 60 HP | 25 EFI, 40 ELHPT, 50 ELHPT, 60 ELHPT | 14, 16 ft aluminum, small consoles | Remote-control install with rigging |
-| 90, 115 HP | 90 EXLPT, 115 EXLPT FourStroke / Pro XS | 16, 19 ft aluminum, fishing boats, small pontoons | Full repower with rigging |
-| 150, 200 HP | 150 ELPT FourStroke, 175/200 Pro XS | 18, 22 ft pontoons, runabouts | Full repower with hydraulic steering |
+| 2.5-6 HP portable | 2.5 MH, 3.5 MH, 4 MH, 5 MH, 6 MH | Tenders, dinghies, small inflatables, kicker | Drop-in tiller, no rigging |
+| 8-20 HP tiller | 8 EFI, 9.9 MH/EH/ProKicker, 15 MH, 20 MH | Small aluminum (12-14 ft), kicker | Drop-in tiller, no rigging |
+| 25-60 HP | 25 EFI, 40 ELHPT, 50 ELHPT, 60 ELHPT | 14-16 ft aluminum, small consoles | Remote-control install with rigging |
+| 90-115 HP | 90 EXLPT, 115 EXLPT FourStroke / Pro XS | 16-19 ft aluminum, fishing boats, small pontoons | Full repower with rigging |
+| 150-200 HP | 150 ELPT FourStroke, 175/200 Pro XS | 18-22 ft pontoons, runabouts | Full repower with hydraulic steering |
 
 Tiller motors 20 HP and under are essentially drop-in installs. The motor is the whole purchase, no rigging, no controls, no extras.
 
@@ -94,7 +94,7 @@ For specific pricing on each model, build a quote at [mercuryrepower.ca](https:/
 
 Six things determine where your real floor is:
 
-**Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25, 40 HP if you want to plane.
+**Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25-40 HP if you want to plane.
 
 **Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people or pulling a tube.
 
@@ -132,15 +132,15 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Real situations where the smallest Mercury is genuinely the perfect call:
 
-- **Tender or dinghy off a sailboat or cruiser.** A 2.5, 6 HP portable does the job and stows easily.
+- **Tender or dinghy off a sailboat or cruiser.** A 2.5-6 HP portable does the job and stows easily.
 - **Kicker on a fishing or pontoon boat.** A 9.9 ProKicker is the standard answer for trolling speed control. No point in more HP than you need for slow fishing passes.
-- **Solo low-speed fishing on small, sheltered water.** A 9.9, 15 HP on a 12, 14 ft aluminum on sheltered water is a perfectly legitimate setup.
+- **Solo low-speed fishing on small, sheltered water.** A 9.9-15 HP on a 12-14 ft aluminum on sheltered water is a perfectly legitimate setup.
 
 ### When the Cheapest Mercury Is NOT the Right Answer
 
 **Heavy hull or fiberglass runabout.** Needs real power to plane.
 
-**Family use with passengers and gear.** Add 200, 400 lbs of crew weight to whatever the dry boat needs.
+**Family use with passengers and gear.** Add 200-400 lbs of crew weight to whatever the dry boat needs.
 
 **Rough water.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor can't punch back through.
 

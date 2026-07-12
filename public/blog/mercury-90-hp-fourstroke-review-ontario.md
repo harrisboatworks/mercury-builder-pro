@@ -30,13 +30,13 @@ language: en-CA
 
 ### Quick Answer
 
-The Mercury 90 HP FourStroke is the default pick for most 16, 18 ft aluminum fishing boats and mid-size pontoons up to about 22 ft in Ontario. It runs on the same 2.1L inline-4 block as the 75 and 115, weighs 359 lbs, and is tuned for smooth cruising and fuel economy rather than performance. For pontoons, take the Command Thrust (CT) version. For aluminum fishing boats, take the standard gearcase.
+The Mercury 90 HP FourStroke is the default pick for most 16-18 ft aluminum fishing boats and mid-size pontoons up to about 22 ft in Ontario. It runs on the same 2.1L inline-4 block as the 75 and 115, weighs 359 lbs, and is tuned for smooth cruising and fuel economy rather than performance. For pontoons, take the Command Thrust (CT) version. For aluminum fishing boats, take the standard gearcase.
 
 ---
 
 ### Mercury 90 HP FourStroke Review
 
-We sell more Mercury motors in the 75, 115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16, 20 ft range.
+We sell more Mercury motors in the 75-115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16-20 ft range.
 
 Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 90 FourStroke is a motor we know well, and one we're honest about when it's the wrong call.
 
@@ -63,19 +63,19 @@ The motors covered in this post are the standard **90 ELPT FourStroke** and the 
 
 ## Where the 90 HP Is the Right Answer
 
-### 16, 18 ft aluminum fishing boats
+### 16-18 ft aluminum fishing boats
 
-Lund, Princecraft, Crestliner, Legend ProSport, these are the hulls the 90 ELPT was built for. Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28, 32 mph, and tops out around 38, 42 mph depending on prop and load. It has headroom for the occasional full boat.
+Lund, Princecraft, Crestliner, Legend ProSport, these are the hulls the 90 ELPT was built for. Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28-32 mph, and tops out around 38-42 mph depending on prop and load. It has headroom for the occasional full boat.
 
 ### Mid-size pontoons up to ~22 ft
 
 For a pontoon carrying four to six people with normal cottage loads, the **90 ELPT Command Thrust** is the call. The CT gearcase swings a 14 or 14.5" prop instead of the standard 13", which translates directly to hole-shot on a flat-bottom hull. Standard gearcase pontoon 90s are slower to plane and work harder doing it.
 
-### Family runabouts in the 16, 18 ft fibreglass range
+### Family runabouts in the 16-18 ft fibreglass range
 
 Cruising, towing a tube, swimming, occasional fishing, the 90 handles all of it without working hard.
 
-### Repowers replacing 70, 90 HP two-strokes
+### Repowers replacing 70-90 HP two-strokes
 
 Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20 to 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
 
@@ -120,17 +120,17 @@ The 75, 90, and 115 are the same block with different tuning. There is no weight
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
-If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17, 18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
+If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17-18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
 
 ---
 
 ## What We'd Actually Recommend
 
-**For most 16, 18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
+**For most 16-18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
 
 **For mid-size pontoons up to 22 ft:** 90 ELPT Command Thrust.
 
-**For heavy loads on an 18, 20 ft boat:** Consider the 115 ELPT instead.
+**For heavy loads on an 18-20 ft boat:** Consider the 115 ELPT instead.
 
 **If the hull is rated under 75 HP:** We'll order the 75. We're not going to put an illegal motor on your boat.
 

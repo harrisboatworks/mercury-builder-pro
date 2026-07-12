@@ -34,7 +34,7 @@ language: en-CA
 
 ## Quick Answer
 
-For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -71,11 +71,11 @@ We've rigged and repowered family runabouts on Rice Lake and the Kawarthas for a
 
 | Boat Length | Recommended Mercury | Why |
 |---|---|---|
-| 16, 17 ft | 90 HP FourStroke | Sweet spot for light family use. Quiet, efficient, planes easily. |
-| 17, 18 ft | 115 HP FourStroke | More headroom for full crew and gear. Our most popular family pick. |
-| 18, 19 ft | 150 HP FourStroke | Real watersports capability. Planes with six on board. |
-| 19, 21 ft | 175, 200 HP V6 | Bigger boats want V6 power. Pro XS option for towing. |
-| 21, 22 ft | 200, 250 HP V6 | Premium tier. Watersports, big crew, longer runs. |
+| 16-17 ft | 90 HP FourStroke | Sweet spot for light family use. Quiet, efficient, planes easily. |
+| 17-18 ft | 115 HP FourStroke | More headroom for full crew and gear. Our most popular family pick. |
+| 18-19 ft | 150 HP FourStroke | Real watersports capability. Planes with six on board. |
+| 19-21 ft | 175-200 HP V6 | Bigger boats want V6 power. Pro XS option for towing. |
+| 21-22 ft | 200-250 HP V6 | Premium tier. Watersports, big crew, longer runs. |
 
 If your situation isn't on this list, the chart doesn't settle it anyway. The right answer comes from a conversation. Call us.
 
@@ -85,7 +85,7 @@ Mercury makes two flavours at most horsepower ratings: **FourStroke** (the stand
 
 **FourStroke is quieter.** Conversation-quiet at cruise. Pro XS has a sportier exhaust note that sounds great for five minutes and gets old over a six-hour day with kids in the boat.
 
-**FourStroke gets better fuel economy.** Roughly 10 to 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
+**FourStroke gets better fuel economy.** Roughly 10 to 15% better at typical family cruise (3,500-4,200 RPM). On a long day pulling skiers and tubes, that's real money.
 
 **FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end. The FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
@@ -109,7 +109,7 @@ Don't over-power either. A boat rated 150 HP max doesn't need a 200 HP motor. It
 
 ### Fuel Math at Family Cruise
 
-Real Mercury fuel consumption at typical family cruise speeds (3,500, 4,200 RPM):
+Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 | Motor | At Cruise | At WOT |
 |---|---|---|

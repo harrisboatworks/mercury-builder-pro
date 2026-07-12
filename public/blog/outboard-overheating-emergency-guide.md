@@ -120,7 +120,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 
 **Symptoms:** Weak tell-tale at idle that improves at higher RPM, intermittent overheat alarm while idling or in no-wake zones, sputtering tell-tale.
 
-**Service interval:** Mercury recommends replacing the water pump impeller every 2, 3 years or 200 hours, whichever comes first. This is one of the most important preventive maintenance items on an outboard and one of the most frequently skipped.
+**Service interval:** Mercury recommends replacing the water pump impeller every 2-3 years or 200 hours, whichever comes first. This is one of the most important preventive maintenance items on an outboard and one of the most frequently skipped.
 
 **Don't ignore it:** A weak tell-tale last fall that you kept fishing through means the impeller may be at or past its limit. Don't start next season without addressing it.
 

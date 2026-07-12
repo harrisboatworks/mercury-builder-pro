@@ -98,7 +98,7 @@ whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints o
 
 There are real scenarios where Boost earns its price:
 
-**Performance bass boats or mid-size runabouts** where the hull already responds to small power changes. Tournament fishing where every few seconds off a morning run matters. Lighter two-log pontoons (18, 20 ft) where the speed ceiling isn't as firmly set by hull drag.
+**Performance bass boats or mid-size runabouts** where the hull already responds to small power changes. Tournament fishing where every few seconds off a morning run matters. Lighter two-log pontoons (18-20 ft) where the speed ceiling isn't as firmly set by hull drag.
 
 **Customers who have already optimized everything else.** If the prop is correct, trim is dialed, and loading is managed, Boost is the next marginal step.
 

@@ -91,18 +91,18 @@ For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 
 | Scenario | Cost (CAD, before HST) |
 |---|---|
-| 90, 115 HP repower on existing hull | $17,000 to $22,000 |
-| 150, 200 HP repower on existing hull | $23,000 to $36,000 |
-| 250, 300 HP repower on existing hull | $35,000 to $40,000 |
-| New comparable aluminum package (90, 115 HP) | $50,000 to $70,000 |
-| New comparable fiberglass package (150, 200 HP) | $65,000 to $90,000 |
-| New comparable pontoon package (115, 150 HP) | $55,000 to $75,000 |
+| 90-115 HP repower on existing hull | $17,000 to $22,000 |
+| 150-200 HP repower on existing hull | $23,000 to $36,000 |
+| 250-300 HP repower on existing hull | $35,000 to $40,000 |
+| New comparable aluminum package (90-115 HP) | $50,000 to $70,000 |
+| New comparable fiberglass package (150-200 HP) | $65,000 to $90,000 |
+| New comparable pontoon package (115-150 HP) | $55,000 to $75,000 |
 
 The repower path typically saves $25,000 to $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
 ### When to Repower, The Clear Yes
 
-- **Hull is 5, 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left.
+- **Hull is 5-20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left.
 - **Existing seats, helm, and electronics still work or are fixable.** A motor swap doesn't require replacing the whole boat.
 - **The hull fits your use case.** A 16 ft aluminum console for Rice Lake fishing is the right tool. A new 16 ft aluminum console won't feel different on the water.
 - **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20 years are usually boats they love.
@@ -125,7 +125,7 @@ Some hulls fall between clear yes and clear no:
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 - **Older fiberglass with cosmetic issues but solid structure.** Repower works; plan a cosmetic refresh during the same shop visit.
-- **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10, 15 years cost-effectively.
+- **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10-15 years cost-effectively.
 - **Hulls with outdated electronics and rigging.** The repower is the right time to update everything. Combined cost is usually still well below new-boat pricing.
 
 We assess these during the walk-around. The right answer depends on the specific hull and your budget.
