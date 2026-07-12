@@ -5490,7 +5490,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
       },
       {
         question: 'What\'s the cost of a typical pontoon repower in Ontario?',
-        answer: 'For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP CT repower on a 20 to 22 ft pontoon, $23,000 to $30,000 CAD before HST. 200 to 300 HP packages land $35,000 to $40,000 CAD before HST. [Live pricing here.](/quote/motor-selection)'
+        answer: 'For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP repower (standard gearcase; CT tops out at 115) on a 20 to 22 ft pontoon, $23,000 to $30,000 CAD before HST. 200 to 300 HP packages land $35,000 to $40,000 CAD before HST. [Live pricing here.](/quote/motor-selection)'
       },
       {
         question: 'What\'s the most popular Mercury for pontoons in Ontario?',
