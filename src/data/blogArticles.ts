@@ -7641,7 +7641,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 13: March 30, 2026
   {
     slug: 'spring-outboard-commissioning-checklist',
-    relatedSlugs: ['mercury-outboard-winterization-service-cost-ontario', 'mercury-outboard-wont-start-troubleshooting', 'mercury-maintenance-intervals-20-100-300-rule'],
+    relatedSlugs: ['mercury-outboard-wont-start-troubleshooting', 'mercury-maintenance-intervals-20-100-300-rule'],
     title: 'Spring Outboard Commissioning Checklist (2026 Ontario)',
     description: 'Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical.',
     image: '/lovable-uploads/hero-spring-commissioning-checklist.png',
@@ -14001,7 +14001,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'diy-mercury-outboard-winterization-guide',
-    relatedSlugs: ['mercury-outboard-winterization-service-cost-ontario', 'spring-outboard-commissioning-checklist', 'mercury-maintenance-intervals-20-100-300-rule'],
+    relatedSlugs: ['spring-outboard-commissioning-checklist', 'mercury-maintenance-intervals-20-100-300-rule'],
     title: 'DIY Mercury Outboard Winterization',
     seoTitle: 'Can I Winterize My Mercury Outboard Myself? DIY Guide',
     description: 'Winterize your Mercury outboard yourself: stabilize fuel, fog engine, drain gearcase, refill lube, clear cooling system. Ontario dealer\'s complete DIY.',
@@ -28868,7 +28868,7 @@ Phone: 905-342-2153
     category: 'Maintenance',
     readTime: '~10 min read',
     keywords: ['boat trailer maintenance', 'trailer bearings', 'boat trailer Ontario', 'trailer service cost', 'trailer bearing repack', 'ST tires', 'boat trailer brakes', 'trailer winterization'],
-    relatedSlugs: ['spring-outboard-commissioning-checklist', 'mercury-outboard-winterization-service-cost-ontario', 'trailer-boat-toronto-to-rice-lake-guide'],
+    relatedSlugs: ['spring-outboard-commissioning-checklist', 'trailer-boat-toronto-to-rice-lake-guide'],
     content: `## Quick Answer
 
 **Your boat trailer carries the same value as your motor and your boat combined. Skip annual maintenance and you find out the hard way at the worst possible moment, usually mid-launch on a Saturday morning in May.**
