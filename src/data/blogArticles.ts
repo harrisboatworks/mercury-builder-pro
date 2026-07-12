@@ -5482,7 +5482,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
       },
       {
         question: 'What is the best Mercury for a 22-foot pontoon?',
-        answer: 'For cruising, 115 to 150 HP Command Thrust. For active water sports with full family loading, 150 to 200 HP. Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP.'
+        answer: 'For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; CT tops out at 115). For active water sports with full family loading, 150 to 200 HP (standard gearcase). Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP.'
       },
       {
         question: 'Do I need Mercury Command Thrust on a pontoon?',
