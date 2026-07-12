@@ -11956,7 +11956,7 @@ Mercury organizes its outboards into families by use case, not just horsepower. 
 
 **HP range:** 2.5 to 300 hp. This is the volume seller in Ontario because it covers nearly every recreational use: a 9.9 kicker, a 25 for a light tinny, a 60 or 75 for a mid-size fishing rig, a 115 or 150 for bigger aluminum or fibreglass boats, up to 300 for big water. Tuned for fuel efficiency at cruise, smooth idle, quiet operation, and long service intervals. What it isn't: fast out of the hole.
 
-**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on 115 hp and up, it pairs a larger gearcase with a bigger prop for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
+**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), it pairs a larger gearcase with a bigger prop for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
 
 ### Pro XS: performance fishing
 
