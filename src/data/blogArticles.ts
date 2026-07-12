@@ -5478,7 +5478,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
       },
       {
         question: 'What is the best Mercury for a 20-foot pontoon?',
-        answer: 'For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to be diminishing returns.'
+        answer: 'For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP FourStroke (standard gearcase; CT tops out at 115). Above 150 HP on a two-tube pontoon starts to be diminishing returns.'
       },
       {
         question: 'What is the best Mercury for a 22-foot pontoon?',
