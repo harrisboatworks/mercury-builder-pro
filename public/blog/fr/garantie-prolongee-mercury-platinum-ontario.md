@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi le
 description: "Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-10
 keywords: ["garantie prolongée Mercury","Mercury Product Protection","garantie Premier","garantie Mercury Ontario","garantie moteur prolongée","couverture Mercury Premier"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Garantie  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-07-10  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-06-09
+last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Northumberland HBW"
 description: "Harris Boat Works is Mercury Premier dealer for Northumberland County since 1947. Serves Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-07-10
 keywords: ["mercury dealer northumberland county","northumberland mercury premier","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-10  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw
 

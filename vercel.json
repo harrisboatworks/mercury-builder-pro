@@ -78,6 +78,16 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/mercury-outboard-winterization-service-cost-ontario",
+      "destination": "/blog/boat-winterization-cost-ontario-2026",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/mercury-outboard-winterization-service-cost-ontario.md",
+      "destination": "/blog/boat-winterization-cost-ontario-2026.md",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-6-year-warranty-explained",
       "destination": "/promotions",
       "statusCode": 301

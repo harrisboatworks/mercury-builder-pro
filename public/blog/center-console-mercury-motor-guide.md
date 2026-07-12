@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-03-23
+last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury for Center Console Boats Ontario"
 description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
 category: "Buying Guide"
 date_published: 2026-03-23
-date_modified: 2026-03-23
+date_modified: 2026-07-10
 keywords: ["center console outboard","twin mercury outboard","mercury 300 verado","offshore motor","center console motor choice"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  
-**Last updated:** 2026-03-23  
+**Last updated:** 2026-07-10  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 
@@ -147,7 +147,7 @@ If you are buying a 25 to 28 ft center console in Ontario and you plan to run it
 
 **3. Whether you want Mercury Joystick Piloting.** If docking precision matters to you, Joystick Piloting is a real quality-of-life upgrade. It requires twin engines minimum.
 
-The cost difference is real. A twin-Mercury 250 Pro XS V8 setup is roughly 1.7x the cost of a single 300 V8 of equivalent total HP. For most Ontario trailerable buyers, single is the right answer.
+The cost difference is real. A twin-Mercury 250 Pro XS V8 setup gives you 500 total HP and costs roughly 1.8 to 1.9 times as much as a single 300 Pro XS V8. Twins are not an equivalent-horsepower alternative; they are a redundancy and power upgrade. For most Ontario trailerable buyers, single is the right answer.
 
 ## Mercury Joystick Piloting: what it actually does
 
@@ -177,7 +177,7 @@ Joystick Piloting controls thrust direction across both motors, letting you walk
 
 ## Why Ontario center console buyers come to us
 
-We have been a Mercury dealer on Rice Lake for decades. Center-console repowers are a real part of our shop volume because we know the Ontario use case: Lake Ontario salmon, Bay of Quinte walleye, the Bay of Quinte salmon, and the occasional Georgian Bay day trip.
+We have been a Mercury dealer on Rice Lake for decades. Center-console repowers are a real part of our shop volume because we know the Ontario use case: Lake Ontario salmon, Bay of Quinte walleye, and the occasional Georgian Bay day trip.
 
 We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor for most Ontario fishing-focused center consoles. We recommend Verado when the premium is actually justified by how the boat is being used.
 
@@ -217,7 +217,7 @@ No. Mercury twin-engine architecture requires matched motors, same family, same 
 
 ### How much does a twin Mercury outboard setup cost in Ontario?
 
-As a planning reference: a twin Mercury 250 Pro XS V8 setup is roughly $58,000 to $65,000 CAD for the motors, plus $8,000 to $15,000 for rigging, totalling approximately $70,000 to $80,000 installed before HST. Adding Joystick Piloting: another $4,000 to $7,000. Get a current quote at mercuryrepower.ca.
+As a planning reference: a twin Mercury 250 Pro XS V8 setup is roughly $69,700 to $75,500 CAD for the pair depending on shaft length and controls (a 250ELPT Pro XS is $34,848 each on our current pricing reference), plus $8,000 to $15,000 for rigging, totalling approximately $78,000 to $90,000 installed before HST. Adding Joystick Piloting: another $4,000 to $7,000. Get a current quote at mercuryrepower.ca.
 
 ### What is Mercury Joystick Piloting, and do I need it on a center console?
 

@@ -64,7 +64,7 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 
 ---
 
-![Bar chart of Mercury outboard 2027 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
+![Bar chart of Mercury outboard 2026 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
 
 ## Full Article
 
@@ -148,7 +148,7 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Long runs across open water.** A 9.9 will eventually get you there. It's just going to be a long day.
 
-*Prices reflect HBW's current 2027 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
+*Prices reflect HBW's current 2026 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
 
 ---
 
@@ -168,9 +168,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## FAQs
 
-### What is the cheapest Mercury outboard in Canada in 2027?
+### What is the cheapest Mercury outboard in Canada in 2026?
 
-The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2027 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).
+The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).
 
 ### How much does a 2.5 HP Mercury cost in Canada?
 

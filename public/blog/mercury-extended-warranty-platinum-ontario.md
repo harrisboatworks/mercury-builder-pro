@@ -8,11 +8,11 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Extended Warranty Ontario"
-description: "Mercury Product Protection Premier extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP."
+description: "Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP."
 category: "Warranty & Protection"
 date_published: 2026-05-13
 date_modified: 2026-05-13
-keywords: ["Mercury extended warranty","Mercury Product Protection","Premier warranty","Mercury warranty Ontario","extended motor warranty","Mercury Premier coverage","outboard warranty cost"]
+keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Platinum coverage","outboard warranty cost"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
@@ -20,7 +20,7 @@ language: en-CA
 
 # Mercury Extended Warranty Ontario
 
-> Mercury Product Protection Premier extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP.
+> Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP.
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
@@ -30,13 +30,13 @@ language: en-CA
 
 ## Quick Answer
 
-**Mercury Product Protection (Premier) extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Premier exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
+**Mercury Product Protection Platinum extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Platinum exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
 
 - **Covers what your factory warranty covers, for years longer**: up to 8 years total (3-year factory + 5-year extended)
 - **Includes electrical** (Gold does not), alternator, ECU, sensors, harness, accessories
 - **Transferable** to next owner, adds resale value
 - **Honoured at 3,600+ Mercury dealers** across the US and Canada
-- **HBW exclusive**: 10% off Premier for customers who purchased their motor from HBW
+- **HBW exclusive**: 10% off Platinum for customers who purchased their motor from HBW
 
 [Get a quote on /warranty](https://www.harrisboatworks.ca/warranty), transparent CAD pricing by HP and term.
 
@@ -77,13 +77,13 @@ Your new Mercury comes with a 3-year factory limited warranty against defects in
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
-Two tiers exist: **Gold** (mechanical failures only) and **Premier** (mechanical + electrical + accessories). HBW sells Premier exclusively. Here is why:
+Two tiers exist: **Gold** (mechanical failures only) and **Platinum** (mechanical + electrical + accessories). HBW sells Platinum exclusively. Here is why:
 
-**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Premier does.
+**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Platinum does.
 
-For the price difference between the two tiers (typically $200-$400 across most HP bands), Premier is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
+For the price difference between the two tiers (typically $200-$400 across most HP bands), Platinum is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
 
-## What Premier Actually Covers
+## What Platinum Actually Covers
 
 **Engine internals (mechanical):**
 - Cylinder block, cylinder head, crankshaft, camshaft
@@ -167,9 +167,9 @@ We verify eligibility using your engine model and serial number. Takes about 10 
 
 Taxes and registration fees extra. Final pricing confirmed at registration with Mercury.
 
-**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Premier coverage tier. This is our way of saying thanks for buying the motor here.
+**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Platinum coverage tier. This is our way of saying thanks for buying the motor here.
 
-## When Premier Makes Financial Sense
+## When Platinum Makes Financial Sense
 
 The honest math:
 
@@ -185,13 +185,13 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Premier almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
 
 ## Transferability and Resale Value
 
-Premier coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
+Platinum coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
 
-A 5-year-old Mercury 150 HP with active Premier coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
+A 5-year-old Mercury 150 HP with active Platinum coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
 
 The motor must transfer to another recreational user (not commercial, not a dealer-purchased trade-in) for the warranty to follow it.
 
@@ -218,9 +218,9 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
 
 ## FAQs
 
-### What is the difference between Mercury Gold and Premier coverage?
+### What is the difference between Mercury Gold and Platinum coverage?
 
-Gold covers mechanical failures only. Premier adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Premier is the right call. HBW sells Premier exclusively.
+Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Platinum is the right call. HBW sells Platinum exclusively.
 
 ### When do I need to buy Mercury Product Protection?
 
