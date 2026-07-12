@@ -15076,7 +15076,7 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **County Road 28 to Gores Landing (about 15 minutes)**: Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
 
-**Total: 80–90 minutes** in normal conditions. Add 15–30 minutes on weekend afternoons during cottage season.
+**Total: about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north**, longer on summer Saturday mornings.
 
 ---
 
