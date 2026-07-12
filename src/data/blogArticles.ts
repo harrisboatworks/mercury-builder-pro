@@ -5329,9 +5329,9 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 | 22–24 ft, active water sports | 115 HP Command Thrust or 150 HP FourStroke (standard gearcase) | CT tops out at 115; above that, the 150 runs the big gearcase as standard. |
 | Large tritoon or performance setup | 150 HP and up (standard gearcase) | Verify hull rating, steering, and transom before quoting. |
 
-### 18–20 ft pontoon, cruising and fishing only
+### 18–20 ft two-log pontoon, cruising and fishing only
 
-**Best fit: 90 HP Command Thrust FourStroke.** Plenty of cruise speed and reasonable hole shot. Excellent fuel economy at cruise. This is our most common pontoon repower at HBW. Standard gearcase 90 also works, but Command Thrust handles the pontoon hull better.
+**Best fit: 60 HP Command Thrust FourStroke.** For lighter 18–20 ft two-log pontoons, the 60 CT is often the right call and our hero recommendation, see our [Mercury 115 vs 150 HP honest dealer guide](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026). Step up to a 90 HP Command Thrust for heavier loads or longer runs. Standard gearcase 90 also works, but Command Thrust handles the pontoon hull better.
 
 ### 18–20 ft pontoon, family use with occasional water sports
 
@@ -5339,11 +5339,11 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 ### 20–22 ft pontoon, active water sports
 
-**Best fit: 150 HP Command Thrust FourStroke.** Pulls skiers cleanly, handles wakeboarding loads, runs comfortably in chop. Above 150 HP on a traditional two-tube pontoon starts to return diminishing gains because the hull design itself limits top speed.
+**Best fit: 150 HP FourStroke (standard gearcase).** Command Thrust tops out at 115 HP, so the 150-class recommendation is Mercury's big standard gearcase, which is what the 150 ships with anyway. Pulls skiers cleanly, handles wakeboarding loads, runs comfortably in chop. Above 150 HP on a traditional two-tube pontoon starts to return diminishing gains because the hull design itself limits top speed.
 
 ### Tritoons (three-tube), 22–24 ft
 
-**Best fit: 150 HP and up.** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP Command Thrust is typical.
+**Best fit: 150 HP and up (standard gearcase).** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP FourStroke (standard gearcase) is typical.
 
 ::cta
 variant: inline
