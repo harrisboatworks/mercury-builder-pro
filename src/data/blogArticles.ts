@@ -6766,9 +6766,9 @@ This is the decision that anchors everything else.
 | 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
 | 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (CT is a pontoon and workboat gearcase, not for V-hulls) |
-| 18-22 ft pontoon | 90-150 HP | Mercury 115-150 Command Thrust, pontoon thrust needs are real |
+| 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, since CT tops out at 115) |
 | 19-21 ft bass or tournament boat | 150-250 HP | Mercury FourStroke for real-world use, Pro XS if you run tournaments |
-| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 Command Thrust |
+| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 FourStroke or Pro XS (standard gearcase; CT tops out at 115) |
 
 ### FourStroke or Pro XS?
 
