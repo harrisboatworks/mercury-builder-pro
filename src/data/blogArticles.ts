@@ -1792,7 +1792,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 |---|---|---|
 | 9.9 ProKicker CT | ELPT / ELHPT | Kicker motor on offshore + larger fishing rigs |
 | 15 ProKicker CT | ELPT / EXLPT | Kicker motor on heavier fishing boats |
-| 25 ProKicker CT | ELHPT / EXLPT | High-output kicker, big trolling alternator |
+| (No 25 CT) | — | Mercury does not offer a 25 Command Thrust; step down to 15 ProKicker CT or up to 40 CT |
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
