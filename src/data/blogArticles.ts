@@ -14343,7 +14343,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'cheapest-mercury-outboard-canada-2026',
     title: 'Cheapest Mercury Outboards in Canada (2026)',
-    seoTitle: 'Cheapest Mercury Outboard in Canada 2027 (Price by HP)',
+    seoTitle: 'Cheapest Mercury Outboard in Canada 2026 (Price by HP)',
     description: 'The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits.',
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
@@ -14389,7 +14389,7 @@ caveat: Numbers are typical ranges, not quotes. Build your exact quote at mercur
 
 ---
 
-![Bar chart of Mercury outboard 2027 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
+![Bar chart of Mercury outboard 2026 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
 
 ## Full Article
 
@@ -14473,14 +14473,14 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Long runs across open water.** A 9.9 will eventually get you there. It's just going to be a long day.
 
-*Prices reflect HBW's current 2027 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
+*Prices reflect HBW's current 2026 Mercury dealer pricing. See our live [Mercury pricing reference](/pricing-reference) for the latest dealer and MSRP per model.*
 
 ---
 
 ## FAQs
 
-**What's the cheapest Mercury outboard in Canada in 2027?** 
-The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2027 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+**What's the cheapest Mercury outboard in Canada in 2026?** 
+The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2026 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 **What's the cheapest Mercury with electric start?** 
 Mercury offers electric start on motors as small as the 9.9 EH. For specific pricing, see the motor selection page.
@@ -14522,7 +14522,7 @@ Not sure what your boat actually needs? Call **905-342-2153**. We won't sell you
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
     faqs: [
-      { question: 'What is the cheapest Mercury outboard in Canada in 2027?', answer: 'The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2027 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).' },
+      { question: 'What is the cheapest Mercury outboard in Canada in 2026?', answer: 'The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).' },
       { question: 'How much does a 2.5 HP Mercury cost in Canada?', answer: 'Live CAD pricing on the 2.5 MH portable, including HBW\'s discount off MSRP, is on the [motor selection page](/quote/motor-selection). Tiller motors 20 HP and under are just the motor price (no rigging or extras), so the live number is your all-in.' },
       { question: 'What is the cheapest Mercury with electric start?', answer: 'Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).' },
       { question: 'Is a small Mercury good enough for fishing?', answer: 'For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.' },
