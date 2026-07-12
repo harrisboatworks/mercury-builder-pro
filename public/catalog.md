@@ -166,7 +166,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercury ProKicker for Rice Lake Walleye](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md)
 - [Harris Boat Works Mercury Dealer Ontario](https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md)
 - [Best Mercury for Aluminum Boats 2026](https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md)
-- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md)
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md)
 - [Mercury Command Thrust on a Pontoon: Worth the Money?](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md)
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md)
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md)

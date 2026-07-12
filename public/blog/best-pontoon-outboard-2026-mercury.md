@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
 
-> **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to 115 HP or 150 HP with Command Thrust strongly recommended. For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
+> **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to a 115 HP Command Thrust, or to a 150 HP FourStroke (standard gearcase, since CT tops out at 115). For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust (available up to 115 HP) is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
 
 Pontoons are different from runabouts. They're heavy, draggy hulls that need torque and lift more than top-speed headline numbers. The mistake most pontoon buyers make is sizing the motor for the lightest day instead of the busiest. This post walks through what we actually rig on Rice Lake every spring, and where Command Thrust and Boost earn their price.
 
@@ -44,7 +44,7 @@ Here is the grid we use when a customer brings in a pontoon for repower. **Prici
 | 20 ft | 2 | 5 adults | 90 HP FourStroke (CT optional) | $13,000 to $16,000 |
 | 22 ft | 2 | 6 adults | 115 HP CT or 150 HP | $17,000 to $21,000 |
 | 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or Pro XS V8 200 | $20,000 to $28,000 |
-| 24 ft | 2 | 6 to 8 adults | 150 HP CT | $20,000 to $23,500 |
+| 24 ft | 2 | 6 to 8 adults | 150 HP (standard gearcase) | $20,000 to $23,500 |
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
 | 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
 
@@ -150,7 +150,7 @@ The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quie
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations

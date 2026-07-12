@@ -115,7 +115,7 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 3. Ask whether watersports are part of the plan.
 4. Test-drive whichever hull seems to fit, and sometimes the alternative too.
 
-The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-150 HP range, standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
+The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-115 HP range, standard gearcase for 150 and up since CT tops out at 115; standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
 
 If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
 
@@ -163,7 +163,7 @@ The smaller LE-series Legend pontoons with a Mercury 60 ELPT come in well under 
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations

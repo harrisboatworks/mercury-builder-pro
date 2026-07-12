@@ -151,7 +151,7 @@ Properly maintained aluminum cottage boats regularly last 30 to 50 years or more
 
 ### What HP do I need for my cottage boat?
 
-Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 90 to 150 HP with Command Thrust.
+Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 60 to 115 HP with Command Thrust (60 CT for 18 to 20 ft two-log pontoons; 150-class motors run a standard gearcase, since CT tops out at 115).
 
 ### Should I switch from Evinrude to Mercury during a cottage repower?
 

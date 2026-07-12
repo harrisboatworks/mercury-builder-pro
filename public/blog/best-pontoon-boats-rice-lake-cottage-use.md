@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
-description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with Mercury 90 to 150 hp Command Thrust. Practical advice from an Ontario dealer."
+description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115)."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -20,7 +20,7 @@ language: en-CA
 
 # Best Pontoon Boats for Rice Lake Cottage Use (2026)
 
-> Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with Mercury 90 to 150 hp Command Thrust. Practical advice from an Ontario dealer.
+> Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115).
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -31,7 +31,7 @@ language: en-CA
 # Best Pontoon Boats for Rice Lake Cottage Use
 
 ## Quick answer
-For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 150 HP range. Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
+For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 115 HP range (Command Thrust tops out at 115 HP; a 150 runs Mercury's big gearcase as standard). Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
 
 ::decision-card
 eyebrow: Pick the right hull
@@ -84,12 +84,12 @@ The question is not usually "should I get a pontoon?" Most cottage families have
 At cruising speeds, two adults, light fishing gear, and a cooler, this setup is comfortable and fuel-efficient. Deck space is enough for fishing chairs and lounging.
 
 ### Multi-generational family, cruising and water sports
-**What works:** 22 ft two-tube or tritoon with a Mercury Command Thrust FourStroke in the 115 to 150 HP range.
+**What works:** 22 ft two-tube or tritoon with a Mercury 115 HP Command Thrust FourStroke, or a 150 HP FourStroke (standard gearcase; CT tops out at 115).
 
-The 22 ft length handles six to ten people comfortably. The 115 to 150 HP Command Thrust motor handles tubing and lighter water sports without labouring. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
+The 22 ft length handles six to ten people comfortably. The 115 HP Command Thrust motor handles tubing and lighter water sports without labouring, and a 150 (standard gearcase) is the step above that. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
 
 ### Active water sports family
-**What works:** 22 ft tritoon with a Mercury Command Thrust FourStroke in the 150 to 200 HP range.
+**What works:** 22 ft tritoon with a Mercury FourStroke or Pro XS in the 150 to 200 HP range (standard gearcase; Command Thrust tops out at 115 HP).
 
 If tubing, skiing, and wakeboarding are a regular part of summer at the cottage, a tritoon is the right call. The third tube changes the hydrodynamics, better hole shot loaded, higher top speed, and better handling in sport use.
 
@@ -178,7 +178,7 @@ Two-tube is the right answer for cruising, fishing, and casual family use. Trito
 
 ### What HP does a Rice Lake pontoon need?
 
-For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 to 150 HP CT. For a tritoon with active water sports: 150 to 200 HP CT.
+For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 HP CT or a 150 HP FourStroke (standard gearcase; Command Thrust tops out at 115). For a tritoon with active water sports: 150 to 200 HP (standard gearcase).
 
 ### Should I buy a Legend Boats pontoon at HBW?
 
@@ -194,7 +194,7 @@ If your cottage configuration allows it, yes. Lift storage is the best thing you
 
 ### Can I tube and ski with a Rice Lake pontoon?
 
-Tubing: yes, with 115 HP CT or more. Skiing: more reliably with 150 HP CT and up, especially a tritoon. A two-tube at 90 HP is a cruising and fishing boat, not a water sports platform.
+Tubing: yes, with 115 HP CT or more. Skiing: more reliably with a 150 HP (standard gearcase) and up, especially a tritoon; Command Thrust tops out at 115. A two-tube at 90 HP is a cruising and fishing boat, not a water sports platform.
 
 ### How long does a pontoon last with proper maintenance?
 
@@ -207,7 +207,7 @@ Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are a
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
 - [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
 - [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks

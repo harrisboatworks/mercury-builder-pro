@@ -145,7 +145,7 @@ Most serious musky anglers prefer remote. Boats are larger, and helm position gi
 
 ### How important is Command Thrust for musky?
 
-Less critical than for walleye. Musky areas typically have adequate depth. Standard lower unit works well. That said, Command Thrust doesn't hurt.
+Not recommended on a planing musky V-hull. Command Thrust is a pontoon and workboat gearcase, not for standard V-hulls: on a planing V-hull it adds drag and costs top speed. Stay with the standard gearcase for a musky boat; CT belongs on pontoons and workboats.
 
 ## Related guides
 
