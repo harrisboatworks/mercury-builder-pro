@@ -3433,7 +3433,7 @@ Family use including tubing or skiing: **115 HP Command Thrust.** The Command Th
 ### Pontoons (20–24 ft)
 Cruising and fishing: **115 HP Command Thrust.**
 
-Active water sports, tubing, skiing, multiple passengers: **150 HP Command Thrust.** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
+Active water sports, tubing, skiing, multiple passengers: **150 HP FourStroke (standard gearcase; CT tops out at 115, and the 150 runs the same big gearcase as standard).** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
 
 ### Runabouts and bowriders (18–22 ft)
 Recreational family use: **150 to 200 HP.** The exact answer depends on hull weight and whether water sports are in the picture.
