@@ -5447,7 +5447,7 @@ Cruising and fishing: 115 HP Command Thrust. Active family use with tubing or sk
 For pontoons 18 ft and up, yes in most cases. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase can't match on pontoons. The cost premium is worth it.
 
 **Can I use my pontoon for water sports?**
-Yes, with the right HP. Tubing: 115 HP CT or higher. Skiing: 115–150 HP CT minimum. Wakeboarding: 150 HP CT or higher. Pontoons purpose-built for water sports (some tritoons) handle this best.
+Yes, with the right HP. Tubing: 115 HP CT or higher. Skiing: 115 HP CT minimum, step to a 150 (standard gearcase) if you want more. Wakeboarding: 150 HP or higher (standard gearcase; CT tops out at 115). Pontoons purpose-built for water sports (some tritoons) handle this best.
 
 **Should I get FourStroke or Pro XS for a pontoon?**
 FourStroke is almost always the right answer for pontoons. Pro XS is built for tournament fishing and performance applications, not the load-handling and cruising emphasis pontoons need.
