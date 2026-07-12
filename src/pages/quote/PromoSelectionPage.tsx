@@ -266,37 +266,43 @@ export default function PromoSelectionPage() {
 
 
             {/* Warranty Badge - Included with Shimmer Effect, no opacity animation */}
-            <div className="relative inline-flex items-center gap-4 bg-repower-cream backdrop-blur-sm border border-repower-gold/30 rounded-xl px-6 py-4 mb-10 overflow-hidden">
-              {/* Shimmer overlay */}
-              <div 
-                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-repower-gold/20 to-transparent pointer-events-none" 
-              />
-              
-              {/* Floating Shield Icon */}
-              <motion.div 
-                className="w-12 h-12 rounded-full bg-repower-gold/20 flex items-center justify-center"
-                animate={{ y: [0, -6, 0] }}
-                transition={{ 
-                  duration: 3, 
-                  ease: 'easeInOut', 
-                  repeat: Infinity 
-                }}
-              >
-                <Shield className="w-6 h-6 text-repower-navy-900" />
-              </motion.div>
-              <div className="text-left">
-                <div className="text-foreground font-bold text-lg">7 Years Factory Warranty</div>
-                <div className="text-muted-foreground text-sm">3 years standard + 4 years FREE extension</div>
+            {(activePromo.warranty_extra_years ?? 0) > 0 && (
+              <div className="relative inline-flex items-center gap-4 bg-repower-cream backdrop-blur-sm border border-repower-gold/30 rounded-xl px-6 py-4 mb-10 overflow-hidden">
+                {/* Shimmer overlay */}
+                <div 
+                  className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-repower-gold/20 to-transparent pointer-events-none" 
+                />
+                
+                {/* Floating Shield Icon */}
+                <motion.div 
+                  className="w-12 h-12 rounded-full bg-repower-gold/20 flex items-center justify-center"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ 
+                    duration: 3, 
+                    ease: 'easeInOut', 
+                    repeat: Infinity 
+                  }}
+                >
+                  <Shield className="w-6 h-6 text-repower-navy-900" />
+                </motion.div>
+                <div className="text-left">
+                  <div className="text-foreground font-bold text-lg">
+                    {3 + (activePromo.warranty_extra_years ?? 0)} Years Factory Warranty
+                  </div>
+                  <div className="text-muted-foreground text-sm">
+                    3 years standard + {activePromo.warranty_extra_years} years FREE extension
+                  </div>
+                </div>
+                {/* Pulsing INCLUDED Badge */}
+                <motion.div 
+                  className="bg-repower-mercury-red text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  ✓ INCLUDED
+                </motion.div>
               </div>
-              {/* Pulsing INCLUDED Badge */}
-              <motion.div 
-                className="bg-repower-mercury-red text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                ✓ INCLUDED
-              </motion.div>
-            </div>
+            )}
 
             {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
