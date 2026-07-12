@@ -11195,7 +11195,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 - Winter repower planning starts
 
 **Winter (December-February)**:
-- Best negotiation leverage
+- Strongest negotiation position
 - Lowest demand = best deals
 - Spring delivery available
 - Ideal for repower projects
@@ -30397,7 +30397,7 @@ A clean, well-documented used Mercury from a known dealer or a careful private s
 The catch is what you do not get:
 - **Warranty.** Once the factory window has expired, you own every repair.
 - **Documented service history.** Many private-sale Mercurys come with vague claims and no receipts. You are guessing about impeller intervals, gear lube changes, and whether the last owner ran ethanol-blended fuel through winter.
-- **The seller's leverage on price.** A used motor in a private sale rarely comes with the structured negotiation room a dealer can offer.
+- **The seller's negotiating position on price.** A used motor in a private sale rarely comes with the structured negotiation room a dealer can offer.
 
 The smart used-motor purchase has three properties:
 1. **A documented service history** from a Mercury dealer (not a "yeah I changed the oil" verbal).
@@ -35118,7 +35118,7 @@ A few notes specific to where we do business.
 
 **Trade-in market.** Used Mercury outboards hold value well in the Ontario used-motor market. Used Yamaha also holds value. For resale planning, the local buyer pool and the condition of the specific motor matter more than the logo on the cowl.
 
-**Kicker pairings.** Mercury's 9.9 / 15 / 25 ProKicker lineup is a common choice for Ontario salmon, walleye, and lake trout trolling. If your main motor is Mercury, the kicker pairing is seamless. If your main is Yamaha and you want a Mercury kicker, the pairing is still possible but requires more rigging integration.
+**Kicker pairings.** Mercury's 9.9 / 15 / 25 ProKicker lineup is a common choice for Ontario salmon, walleye, and lake trout trolling. If your main motor is Mercury, the kicker pairing is clean. If your main is Yamaha and you want a Mercury kicker, the pairing is still possible but requires more rigging integration.
 
 - [Honda to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide) - the same swap math for Honda owners
 - [Evinrude to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide) - orphaned-brand repower path
