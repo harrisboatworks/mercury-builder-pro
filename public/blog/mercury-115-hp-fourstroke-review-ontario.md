@@ -30,13 +30,13 @@ language: en-CA
 
 ### Quick Answer
 
-The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outboard available. It runs on the same 2.1L inline-4 block as the 75 and 90, tuned to 6,000 RPM. It's the right motor for 17, 20 ft aluminum fishing boats and mid-to-large pontoons (with Command Thrust), and it's the default choice for Ontario boaters who want real headroom without crossing into V6 territory and the price jump that comes with it.
+The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outboard available. It runs on the same 2.1L inline-4 block as the 75 and 90, tuned to 6,000 RPM. It's the right motor for 17-20 ft aluminum fishing boats and mid-to-large pontoons (with Command Thrust), and it's the default choice for Ontario boaters who want real headroom without crossing into V6 territory and the price jump that comes with it.
 
 ---
 
 ### Mercury 115 HP FourStroke Review
 
-"Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80, 100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
+"Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80-100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
 
 Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 115 FourStroke is one of the motors we sell and service most. Here's an honest look at where it makes sense, and where it doesn't.
 
@@ -44,7 +44,7 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 
 ## Why "Lightest 115 HP Available" Actually Matters
 
-The Mercury 115 ELPT FourStroke weighs 359 lbs. An older Mercury 115 OptiMax, the motor it commonly replaces, weighs around 425 lbs. That's 80, 100 lbs of difference. On a 17, 20 ft aluminum fishing boat, that weight change does real things:
+The Mercury 115 ELPT FourStroke weighs 359 lbs. An older Mercury 115 OptiMax, the motor it commonly replaces, weighs around 425 lbs. That's 80-100 lbs of difference. On a 17-20 ft aluminum fishing boat, that weight change does real things:
 
 - The hull sits higher at rest, improving fuel economy before you even turn the key.
 - The boat planes earlier with the same load.

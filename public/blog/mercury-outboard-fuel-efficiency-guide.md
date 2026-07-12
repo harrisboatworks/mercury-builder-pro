@@ -70,7 +70,7 @@ Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a ful
 
 **5. Cruise speed selection**
 
-Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500, 4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
+Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500-4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
 
 ---
 
@@ -114,9 +114,9 @@ Real-world fuel consumption depends on hull design, load, prop selection, mounti
 
 | Application | Typical fuel consumption range at cruise |
 |---|---|
-| Small aluminum with 25, 40 HP FourStroke | 2.5, 4.5 L/hr at cruise |
-| Mid-size aluminum with 60, 90 HP FourStroke | 5, 10 L/hr at cruise |
-| Fiberglass runabout with 115, 150 HP FourStroke | 10, 18 L/hr at cruise |
+| Small aluminum with 25-40 HP FourStroke | 2.5-4.5 L/hr at cruise |
+| Mid-size aluminum with 60-90 HP FourStroke | 5-10 L/hr at cruise |
+| Fiberglass runabout with 115-150 HP FourStroke | 10-18 L/hr at cruise |
 | Larger boats with 200+ HP | Highly variable; setup-dependent |
 
 If your fuel burn is significantly above these ranges for your setup, prop pitch, trim, or hull condition is the first place to look.

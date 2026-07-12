@@ -32,7 +32,7 @@ language: en-CA
 
 ### Quick Answer
 
-A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
+A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40-115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150-225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40-225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
 
@@ -52,15 +52,15 @@ Three patterns come up most often at Harris Boat Works:
 
 ---
 
-## Compatibility Matrix: Mercury 40, 225 HP
+## Compatibility Matrix: Mercury 40-225 HP
 
 | HP Class | Typical Controls | Typical Steering | Typical Gauges | Typical Wiring | Rigging Est. (CAD) |
 |---|---|---|---|---|---|
-| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
-| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
+| 40-60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
+| 75-90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
 | 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500 to $4,000 |
 | 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500 to $5,500 |
-| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
+| 175-200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
 | 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
 
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
@@ -79,7 +79,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 ### Side-Mount Controls
 
-Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400 to $800.
+Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40-90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400 to $800.
 
 ### DTS (Digital Throttle & Shift)
 
@@ -91,15 +91,15 @@ Mercury's electronic control system. Replaces mechanical throttle and shift cabl
 
 ### Cable Steering
 
-Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300 to $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
+Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90-115 HP on most boats. CAD $300 to $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
 
 ### Hydraulic Steering
 
-Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500 to $2,500 for a complete kit plus CAD $300 to $500 install labor.
+Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115-225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500 to $2,500 for a complete kit plus CAD $300 to $500 install labor.
 
 ### Power-Assist Hydraulic
 
-Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
+Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150-225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
 
 ---
 
@@ -130,7 +130,7 @@ whenInDoubt: If you'll see this boat in five years, the digital path is the chea
 
 ### Analog Gauges
 
-Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
+Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40-90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
 ### SmartCraft Connect (Mercury VesselView Mobile)
 
@@ -146,11 +146,11 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ## Wiring and Battery Setup
 
-**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
+**Single battery + basic harness (40-90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
 
-**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
+**Dual battery + ACR (115-150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
 
-**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
+**Dual or triple battery + switch panel (175-225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
 
 ---
 

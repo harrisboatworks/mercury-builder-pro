@@ -32,7 +32,7 @@ language: en-CA
 
 ### Quick Answer
 
-For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
+For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
 
 ---
 
@@ -75,9 +75,9 @@ Harris Boat Works has been a Mercury dealer on Rice Lake since 1965. We sell and
 
 ## The Real Decision Isn't About HP, It's About Load
 
-A 40 HP motor pushes a 15, 16 ft aluminum boat with two adults at a comfortable cruise of 22, 25 mph, topping out near 30 mph. It's a perfectly good walleye boat or duck-hunting tender, until you add a third person, a full tank, and a cooler full of ice. At that point, a 40 is working.
+A 40 HP motor pushes a 15-16 ft aluminum boat with two adults at a comfortable cruise of 22-25 mph, topping out near 30 mph. It's a perfectly good walleye boat or duck-hunting tender, until you add a third person, a full tank, and a cooler full of ice. At that point, a 40 is working.
 
-A 60 HP on the same hull turns the same loaded trip into a 28, 32 mph cruise. It has headroom for a fourth person and a kicker on a bracket.
+A 60 HP on the same hull turns the same loaded trip into a 28-32 mph cruise. It has headroom for a fourth person and a kicker on a bracket.
 
 The moment you feel an underpowered motor most is getting on plane with a full load. A 40 that felt right at launch will feel tight in August when the family's all aboard. People rarely lighten their boats over time, they add gear, passengers, and batteries. A 60 today is the same boat with three more people five years from now.
 
@@ -111,19 +111,19 @@ The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitt
 
 These are real-world figures from boats rigged by Harris Boat Works. Conditions, load, and hull cleanliness all affect the numbers. Treat them as ballparks.
 
-### 15, 16 ft aluminum fishing boat
+### 15-16 ft aluminum fishing boat
 *(Lund SSV-16, Princecraft 162, Crestliner FishHawk 1650, Legend ProSport)*
 
-- **40 HP:** 28, 32 mph WOT with two adults. Drops to 24, 26 mph cruise with three people and gear. A working motor on the right hull.
-- **60 HP:** 35, 38 mph WOT with two adults. Comfortable 28, 30 mph cruise loaded. On a hull rated to 60, gives headroom to tow a tube occasionally.
+- **40 HP:** 28-32 mph WOT with two adults. Drops to 24-26 mph cruise with three people and gear. A working motor on the right hull.
+- **60 HP:** 35-38 mph WOT with two adults. Comfortable 28-30 mph cruise loaded. On a hull rated to 60, gives headroom to tow a tube occasionally.
 
-### 17, 18 ft aluminum runabout
+### 17-18 ft aluminum runabout
 *(Princecraft Sport, Lund Adventure)*
 
-- **40 HP:** Underpowered for this hull class. The boat is rated for 75, 90 HP. A 40 will run, but it won't plane with the family aboard.
-- **60 HP:** 32, 35 mph WOT. Comfortable 26, 28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. A 60 CT on a heavier 18 ft deep-V is a stronger call.
+- **40 HP:** Underpowered for this hull class. The boat is rated for 75-90 HP. A 40 will run, but it won't plane with the family aboard.
+- **60 HP:** 32-35 mph WOT. Comfortable 26-28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. A 60 CT on a heavier 18 ft deep-V is a stronger call.
 
-### 16, 18 ft small pontoon
+### 16-18 ft small pontoon
 
 - **40 HP:** Only on a 16 ft pontoon, lightly loaded, and ideally with the Command Thrust gearcase. Even then, expect a slow planing time.
 - **60 HP:** Fine on 18 ft. The 60 Command Thrust is the popular call, pontoons reward the bigger gear ratio more than fishing boats do.

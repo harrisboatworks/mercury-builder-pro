@@ -68,7 +68,7 @@ This matters because it keeps the motor genuinely simple and portable. No key sw
 
 The 9.9 MH EFI is a strong fit for:
 
-- **Small aluminum fishing boats** (12, 14 feet where the transom, capacity plate, and load match)
+- **Small aluminum fishing boats** (12-14 feet where the transom, capacity plate, and load match)
 - **Cottage boats** on smaller lakes or restricted-horsepower water
 - **Back-lake trips** in the Kawarthas where a simple, reliable motor matters more than outright speed
 - **Tenders and utility boats**
