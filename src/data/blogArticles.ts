@@ -1796,7 +1796,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, workboats |
+| (No 75 CT) | — | Mercury does not offer a 75 CT; step to 90 FourStroke CT for pontoons in this range |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
