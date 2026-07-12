@@ -5470,7 +5470,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
     faqs: [
       {
         question: 'Is a 90 HP Mercury enough for a pontoon boat?',
-        answer: 'For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 or 150 CT. The gearcase matters as much as the horsepower number.'
+        answer: 'For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 CT or 150 (standard gearcase; CT tops out at 115). The gearcase matters as much as the horsepower number.'
       },
       {
         question: 'What is the best Mercury outboard for an 18-foot pontoon?',
