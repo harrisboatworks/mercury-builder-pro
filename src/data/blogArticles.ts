@@ -29235,13 +29235,13 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
     content: `## Quick Answer
 
-**Mercury Product Protection (Premier) extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Premier exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
+**Mercury Product Protection Platinum extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Platinum exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
 
 - **Covers what your factory warranty covers, for years longer**: up to 8 years total (3-year factory + 5-year extended)
 - **Includes electrical** (Gold does not), alternator, ECU, sensors, harness, accessories
 - **Transferable** to next owner, adds resale value
 - **Honoured at 3,600+ Mercury dealers** across the US and Canada
-- **HBW exclusive**: 10% off Premier for customers who purchased their motor from HBW
+- **HBW exclusive**: 10% off Platinum for customers who purchased their motor from HBW
 
 [Get a quote on /warranty](https://www.harrisboatworks.ca/warranty), transparent CAD pricing by HP and term.
 
