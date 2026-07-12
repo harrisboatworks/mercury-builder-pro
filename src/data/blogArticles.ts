@@ -29390,13 +29390,13 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Premier almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
 
 ## Transferability and Resale Value
 
-Premier coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
+Platinum coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
 
-A 5-year-old Mercury 150 HP with active Premier coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
+A 5-year-old Mercury 150 HP with active Platinum coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
 
 The motor must transfer to another recreational user (not commercial, not a dealer-purchased trade-in) for the warranty to follow it.
 
