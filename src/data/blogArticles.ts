@@ -5441,7 +5441,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 For cruising and fishing without water sports, 90 HP Command Thrust FourStroke. For occasional water sports with the family, step up to 115 HP Command Thrust.
 
 **What's the best Mercury for a 20-foot pontoon?**
-Cruising and fishing: 115 HP Command Thrust. Active family use with tubing or skiing: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to hit diminishing returns.
+Cruising and fishing: 115 HP Command Thrust. Active family use with tubing or skiing: 150 HP FourStroke (standard gearcase; CT tops out at 115). Above 150 HP on a two-tube pontoon starts to hit diminishing returns.
 
 **Do I need Mercury Command Thrust on a pontoon?**
 For pontoons 18 ft and up, yes in most cases. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase can't match on pontoons. The cost premium is worth it.
