@@ -22163,8 +22163,6 @@ Engine roughly perpendicular to the waterline. Hull running balanced. This is th
 
 Engine tilted away from the boat. Bow rises. Less hull in the water, more speed potential, but overdo it and you lose grip on the water entirely.
 
-> **[Diagram suggestion: Three-panel overhead/profile view showing each trim state with hull waterline contact area illustrated.]**
-
 ---
 
 ## When to Trim In
