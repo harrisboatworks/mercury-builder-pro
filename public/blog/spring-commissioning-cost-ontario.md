@@ -132,7 +132,7 @@ Most of it, yes; our spring checklist walks every step. The shop earns its hour 
 
 ### When should I book spring service?
 
-Before the rush. Our marina reopens April 1 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair.
+Before the rush. Our marina reopens April 6 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair.
 
 ### Why is my neighbour's spring bill huge and mine isn't?
 

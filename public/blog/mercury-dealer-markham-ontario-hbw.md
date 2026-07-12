@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Markham Ontario HBW"
 description: "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-10
 keywords: ["mercury dealer markham","mercury repower markham","mercury outboard markham ontario","boat motor dealer markham","harris boat works markham customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-07-10  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw
 
@@ -75,7 +75,7 @@ Markham sits at the edge of cottage country. A lot of Markham residents have con
 ## What Harris Boat Works Handles for Markham Customers
 
 **Mercury outboard sales**
-Full Mercury lineup: 2.5 HP kickers through 600 HP Verado. FourStroke, Pro XS, Verado, SeaPro. We'll talk through what actually makes sense for your hull and how you use it, not push you toward the highest margin option.
+Full Mercury lineup: 2.5 HP kickers through 600 HP Verado. FourStroke, Pro XS, Verado, SeaPro. Verado models are special order rather than stocked inventory; we quote them with current factory lead times. We'll talk through what actually makes sense for your hull and how you use it, not push you toward the highest margin option.
 
 **Repower service**
 Most of what we do is repower, replacing an older motor on a hull you want to keep. We handle the full job: motor, rigging, controls, throttle and shift cables, prop selection, and sea trial. A repower done right means the new motor performs the way Mercury designed it to, not just "runs."

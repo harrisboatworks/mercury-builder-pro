@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible
 description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-10
 keywords: ["revue Mercury 115 HP","Mercury 115 HP FourStroke","Mercury 115 ELPT Ontario","Mercury 115 CT Command Thrust","115 HP ponton","Mercury 115 vs 150","Mercury 115 FourStroke vs Pro XS"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Avis produit  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-07-10  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 

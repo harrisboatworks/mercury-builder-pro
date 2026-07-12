@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/roseneath
-last_updated: 2026-07-09
+last_updated: 2026-07-12
 currency: CAD
 pickup_only: true
 delivery_offered: false

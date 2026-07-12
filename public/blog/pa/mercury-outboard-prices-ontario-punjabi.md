@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi.md
-last_updated: 2026-06-12
+last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟ
 description: "Mercury outboard motor di keemat Canada vich: HP class anusar price structure, repower cost te live quote tool. Punjabi guide, koi lukiyan hoiyan fees nahi."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-07-10
 keywords: ["Mercury outboard motor di keemat Canada vich (Mercury outboard motor price in Canada)","Mercury 90hp outboard price Ontario Punjabi (Mercury 90hp outboard price Ontario Punjabi)","outboard motor dealer near Toronto Punjabi speaking (outboard motor dealer near Toronto who speaks Punjabi)","new outboard motor khareedan di guide Punjabi (guide to buying a new outboard motor in Punjabi)","Mercury vs Yamaha outboard video Punjabi (Mercury vs Yamaha outboard video in Punjabi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: pa
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-07-10  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi
 

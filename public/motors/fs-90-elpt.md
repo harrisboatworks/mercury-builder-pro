@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fs-90-elpt
-last_updated: 2026-07-09
+last_updated: 2026-07-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -73,6 +73,6 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 
 ## Notes
 
-- Financing available on totals over $5,000 CAD (tiered: 8.99% under $10K, 7.99% over $10K).
-- Standard 3-year Mercury factory warranty; up to 7 years available on select promotions.
+- Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
+- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
