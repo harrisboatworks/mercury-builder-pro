@@ -48,6 +48,8 @@ Three options most Rice Lake customers consider. **All prices reflect 2026 model
 | Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
 | Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | Call for current pricing: 905-342-2153 | Silent finesse fishing |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
 The Avator 7.5e is the right pick when silence matters. Walleye fishing in shallow water, bass tournament prep, or any situation where you want zero noise underwater. Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly equivalent to 3.5 HP" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.

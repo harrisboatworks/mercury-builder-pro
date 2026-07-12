@@ -55,7 +55,7 @@ A clean, well-documented used Mercury from a known dealer or a careful private s
 The catch is what you do not get:
 - **Warranty.** Once the factory window has expired, you own every repair.
 - **Documented service history.** Many private-sale Mercurys come with vague claims and no receipts. You are guessing about impeller intervals, gear lube changes, and whether the last owner ran ethanol-blended fuel through winter.
-- **The seller's leverage on price.** A used motor in a private sale rarely comes with the structured negotiation room a dealer can offer.
+- **The seller's negotiating position on price.** A used motor in a private sale rarely comes with the structured negotiation room a dealer can offer.
 
 The smart used-motor purchase has three properties:
 1. **A documented service history** from a Mercury dealer (not a "yeah I changed the oil" verbal).
@@ -76,6 +76,8 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 | Warranty | 3 years factory (see /promotions for current offers) | None |
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500 (no warranty cushion) |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
+
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 

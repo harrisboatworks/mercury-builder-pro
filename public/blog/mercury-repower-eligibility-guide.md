@@ -65,6 +65,8 @@ Aluminum transoms can also fail, though differently. Check for cracks at the mot
 
 If the transom has any of the above, the boat is not eligible for a repower until the transom is repaired or replaced. A transom rebuild can cost $1,500 to $4,000+ depending on the boat and the depth of the damage. If the transom is sound, you are clear on Check 1.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ### Check 2: Hull Waterlogging and Foam Integrity
 
 Fibreglass boats with foam-filled hulls can take on water through stress cracks, the bilge, deck fittings, or the transom over years. Waterlogged foam adds significant weight, throws off the planing characteristics, and can rot the underlying structure. A new motor on a waterlogged hull will under-perform regardless of horsepower.

@@ -165,6 +165,8 @@ We verify eligibility using your engine model and serial number. Takes about 10 
 | 500 | $4,870 | $8,766 | $12,417 | $15,777 | $18,748 |
 | 600 | $5,836 | $10,504 | $14,881 | $18,908 | $22,469 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 Taxes and registration fees extra. Final pricing confirmed at registration with Mercury.
 
 **HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Platinum coverage tier. This is our way of saying thanks for buying the motor here.

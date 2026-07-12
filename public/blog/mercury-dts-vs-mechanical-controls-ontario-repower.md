@@ -34,6 +34,8 @@ language: en-CA
 
 Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother, looks cleaner at the helm, and is required on most Mercury V8 and V10 outboards (150 HP and up depending on model). Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP, and they cost roughly $400-$800 less than the DTS equivalent fully installed. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. For a repower into a Mercury Pro XS 175+ or a Verado, you don't have a choice. We install both at Harris Boat Works, and the right call usually depends on motor size and what the helm looks like today.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## What you're actually choosing between
 
 **Mechanical controls** are the traditional setup. A throttle/shift lever at the helm connects to the outboard via two steel push-pull cables routed through the boat. Move the lever, the cable moves, the motor responds. The system is mature, cheap, and easy for any marine tech to service. If a cable seizes or kinks, replacing it is a few hundred dollars in parts and labour.

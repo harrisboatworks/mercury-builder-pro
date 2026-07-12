@@ -101,6 +101,8 @@ Mercury sets a **Minimum Advertised Price (MAP)** for new motors. So *motor pric
 
 1. **Rigging cost**, installing a Mercury 200 HP V6 on a 21-foot bowrider involves controls, steering, prop selection, sea trial. Some dealers charge $1,500. Some charge $4,000. Same motor, very different all-in.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 2. **All-in vs. add-on quoting**, many dealers quote a "headline" price and add line items at delivery (controls, prop, freight, prep). The "$23,000 quoted, $26,500 paid" surprise. Honest dealers quote all-in.
 
 3. **Trade-in valuation**, actual Ontario service-data values used Mercury motors fairly. Some dealers low-ball trades to make new-motor sales look better.

@@ -42,6 +42,8 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800-$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 For a 22-foot pontoon at $55,000, scale that up to roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 
 These are *operating* numbers, slip, storage, winterization, insurance, fuel, routine service, PCL, not depreciation or opportunity cost. The full sample budget is in Section 7 below; if you only read one section, read that one.

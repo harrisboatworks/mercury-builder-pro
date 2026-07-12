@@ -107,6 +107,8 @@ Published pricing from initial dealer rollouts:
 
 Converting and adding Canadian markup for dealer-installed labor and warranty handling, the realistic Canadian retail is likely in the **$300-$500 CAD** range, plus install if the motor needs to be at the dealer for the flash.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 > **Confirm with HBW before booking.** Mercury Canada has not published an official Canadian MAP at the time of writing (May 2026). When we have firm Canadian pricing in writing, we'll update this post. Verify any pricing you're quoted against Mercury Canada's official MAP once it's published. Don't pay based on speculation.
 
 **Myth:** Mercury Boost is a $2,000 upgrade that adds 50 horsepower.

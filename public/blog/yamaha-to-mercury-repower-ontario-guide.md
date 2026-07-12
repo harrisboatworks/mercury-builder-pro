@@ -86,6 +86,8 @@ We quote both the motor-only price and the all-in installed price so customers s
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
 | 250-300 HP | $25,000-$32,000 | $2,800-$4,500 | $35,000-$48,000 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 The "rigging premium for brand swap" line is the extra cost above a same-brand repower. If you were keeping Yamaha-to-Yamaha you'd skip this line and save roughly that amount. If you're switching brands, plan for it.
 
 Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca or email cowl plate photos to info@harrisboatworks.ca.
@@ -167,7 +169,7 @@ A few notes specific to where we do business.
 
 **Trade-in market.** Used Mercury outboards hold value well in the Ontario used-motor market. Used Yamaha also holds value. For resale planning, the local buyer pool and the condition of the specific motor matter more than the logo on the cowl.
 
-**Kicker pairings.** Mercury's 9.9 / 15 / 25 ProKicker lineup is a common choice for Ontario salmon, walleye, and lake trout trolling. If your main motor is Mercury, the kicker pairing is seamless. If your main is Yamaha and you want a Mercury kicker, the pairing is still possible but requires more rigging integration.
+**Kicker pairings.** Mercury's 9.9 / 15 / 25 ProKicker lineup is a common choice for Ontario salmon, walleye, and lake trout trolling. If your main motor is Mercury, the kicker pairing is clean. If your main is Yamaha and you want a Mercury kicker, the pairing is still possible but requires more rigging integration.
 
 - [Honda to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide) - the same swap math for Honda owners
 - [Evinrude to Mercury Repower Ontario Guide](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide) - orphaned-brand repower path

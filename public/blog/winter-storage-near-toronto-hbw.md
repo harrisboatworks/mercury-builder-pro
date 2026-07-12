@@ -50,6 +50,8 @@ We've stored 311+ boats per year for the last several seasons. Many of them come
 | **Muskoka indoor heated** | $2,500-$4,000+ | Premium service, distance |
 | **HBW outdoor + shrinkwrap + winterize** | **$700-$1,200** | Shrinkwrap (frame, vents, strapping) + full Mercury winterization + battery removal + spring commissioning prep |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 For most GTA boats, **HBW outdoor + shrinkwrap + winterize comes out roughly the same as GTA outdoor** but bundles in the full winterization service that often costs extra at urban marinas. **The price isn't the differentiator, the service is.**
 
 ---

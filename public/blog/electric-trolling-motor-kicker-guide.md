@@ -78,12 +78,14 @@ These are not competing tools. They are complementary. But they cost real money,
 | Range | Battery-limited (roughly 1 to 6 hours) | Effectively unlimited |
 | Stealth in shallow water | Excellent | Good, not silent |
 | Top trolling speed | ~3 to 5 mph | ~5 to 7 mph |
-| GPS spot-lock | Yes (game-changer) | No |
+| GPS spot-lock | Yes (holds position without an anchor) | No |
 | Hands-free control | Yes (foot pedal / wireless) | No |
 | Wind and wave handling | Limited above 1 to 2 ft chop | Excellent |
 | Maintenance | Minimal | Standard outboard service |
 | Upfront cost (CAD, approx.) | $500 to $3,500 (before batteries) | $4,000 to $7,500 installed |
 | Emergency backup propulsion | Limited (battery-dependent) | Full backup |
+
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## When an electric trolling motor wins
 

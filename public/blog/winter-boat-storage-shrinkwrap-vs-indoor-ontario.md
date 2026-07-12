@@ -83,6 +83,8 @@ What happens if you skip winterization (regardless of storage method):
 | **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 - $800 |
 | **Dead battery** (left uncharged in freezing temps) | $200 - $500 replacement |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 Your storage choice affects what *else* protects the boat. UV, snow, wind, pests. It doesn't change the freeze-protection requirement.
 
 ---

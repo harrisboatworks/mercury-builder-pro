@@ -44,6 +44,8 @@ Boat winterization in Ontario is not a flat number, it depends on motor size, wh
 | Battery prep | $25 to $50 |
 | Total typical all-in range | $250 to $400 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 Prices are typical CAD ranges, HST extra. Final pricing depends on motor size and condition.
 
 ::cost-stack

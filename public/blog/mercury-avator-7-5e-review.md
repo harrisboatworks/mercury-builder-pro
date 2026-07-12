@@ -59,6 +59,8 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Rough gas feel (guide only) | ~3.5 HP gas portable | 3.5 HP | 5 HP |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 The Avator costs more the day you buy it. It earns that back three ways: no fuel, no annual oil change, and silence. It is still a niche pick. For most repower customers a gas portable is the right tool and the smaller cheque. For fishing, and for anyone who values quiet water, the Avator is worth every dollar of the difference.
 
 ## What is the real range and battery life on Rice Lake?

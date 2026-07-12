@@ -90,6 +90,8 @@ If you were looking at a larger package (a loaded pontoon, a premium Legend conf
 
 The Bank of Canada policy rate eased through a series of cuts in 2025. Those cuts are filtering through to marine lending. On a typical $60,000 boat package, even a 1% rate reduction can take $30 to 40 per month off a five-year loan.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## The case for 2026 pre-owned
 
 Pre-owned boats typically account for about 80% of all boat transactions in a given year. With prices 5 to 10% below pandemic highs, the 2026 used market is worth a serious look. Every used boat at HBW gets inspected before it goes up for sale. Current inventory at [harrisboatworks.ca](https://harrisboatworks.ca).

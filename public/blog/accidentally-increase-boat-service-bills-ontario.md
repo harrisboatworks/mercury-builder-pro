@@ -34,6 +34,8 @@ language: en-CA
 
 The expensive Mercury service bills we see at our marina almost always start as a $50-$200 problem the owner could have caught early. Ignored alarm codes, stale ethanol fuel, weak batteries that strain the starter, skipped winterization, DIY wiring with crimp connectors instead of marine-grade terminals, and "I'll check the impeller next year" are the six biggest culprits. Roughly 70 percent of the service work we quote between $1,500 and $8,000 traces back to a smaller original issue that was either invisible or ignored. The point of this post isn't to scold anyone. It's to share what we actually see and let owners avoid the path that leads there.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## What we see at HBW
 
 Our service shop processes roughly 200-300 Mercury service jobs per year. The big-bill jobs (anything over $1,500) almost never come from sudden, unpredictable failures. They come from a chain of small problems that compounded.

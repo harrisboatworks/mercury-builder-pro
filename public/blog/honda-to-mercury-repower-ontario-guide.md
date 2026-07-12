@@ -74,6 +74,8 @@ The cost premium for switching brands (vs same-brand repower) is roughly $1,800-
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
 | 250 HP (Honda BF250 to Mercury) | $24,500-$26,000 | $2,800-$4,200 | $34,000-$43,000 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 The brand-swap premium for Honda customers is slightly lower than Yamaha customers because Honda gauges tend to be analog-friendly and integrate slightly more easily with replacement Mercury gauges than Yamaha Command Link does.
 
 For current Ontario CAD pricing on your specific HP class, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
@@ -177,7 +179,7 @@ Honestly, on current models, the reliability gap between Honda and Mercury is sm
 
 ### Can I keep my Honda kicker and just swap the main motor?
 
-Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as seamless as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolling and the Honda kicker is happy, keeping it saves money.
+Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as clean as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolling and the Honda kicker is happy, keeping it saves money.
 
 ### What is the trade-in value of a clean Honda BF90?
 

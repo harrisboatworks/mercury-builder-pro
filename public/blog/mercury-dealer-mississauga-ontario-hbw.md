@@ -54,7 +54,7 @@ If you price it here and decide a local dealer is the better call, that's fine. 
 
 ## The Repower Conversation Is Different Here
 
-Most of what we do is repower, replacing an aging motor on a hull someone wants to keep running. That's not a simple transaction. It's a conversation about your hull, how you use the boat, what rigging setup makes sense, what prop works for your load, and whether you're better off repowering or putting that money toward a new setup.
+Most of what we do is repower, replacing an aging motor on a hull someone wants to keep running. That's not a simple transaction. It's a conversation about your hull, how you use the boat, what rigging setup makes sense, what prop works for your load, and if you're better off repowering or putting that money toward a new setup.
 
 We have that conversation honestly. Our repower decision guide on mercuryrepower.ca explicitly covers when a repower doesn't make sense. We'd rather give someone a straight answer than book a job we shouldn't have taken.
 

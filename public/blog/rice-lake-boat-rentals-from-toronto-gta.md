@@ -220,6 +220,8 @@ The itinerary above is the fun math. Here's the money math, all in, so nobody's 
 | Bait | $5 a dozen worms ($10 for two) | At our dock; BJ Tackle in Bewdley for everything else |
 | Lunch and treats | Your call | Gores Landing and Bewdley both have options; ice cream stops are mandatory with kids aboard |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 Split a pontoon between two families and the per-person cost is one of the cheaper full days out you can buy, with no lineups and a lake instead of a parking lot. The licence is a one-time cost that covers every boating day you'll ever have in Canada.
 
 One planning note that saves money: fuel burn is mostly throttle habit. A day of cruising between anchor stops burns far less than a day of end-to-end laps of the lake. Pick two or three destinations, not ten.

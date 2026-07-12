@@ -52,6 +52,8 @@ Here is the math we walk customers through at Gores Landing. **All ranges are 20
 | 21 ft fibreglass, Pro XS 200 + Boost | $25,000 to $29,000 | $90,000 to $120,000 | $61,000 to $95,000 |
 | 24 ft tritoon, Pro XS V8 250 | $28,000 to $34,000 | $100,000 to $140,000 | $66,000 to $112,000 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 Add transom repair or major work and the repower number climbs. Even then, repower usually wins on dollars. The savings get bigger as the boat gets fancier. A new tritoon with luxury seating, sound system, and a Pro XS V8 250 is well into six figures CAD. The repower of an existing tritoon, even with all the rigging, lands in the high $20s to low $30s.
 
 ## What are the hidden costs of buying a new boat?

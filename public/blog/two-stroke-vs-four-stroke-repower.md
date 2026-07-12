@@ -87,6 +87,8 @@ What we usually replace or add:
 
 Budget $500 to $1,500 in rigging on top of the motor for a typical 2-stroke repower. That is already inside the installed prices we quote. Our [what happens during a Mercury repower](/blog/what-happens-during-mercury-repower) guide walks the full sequence, removal to water test.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## How much does it cost to repower a 2-stroke to a Mercury 4-stroke?
 
 Installed at Harris Boat Works on Rice Lake, ballpark CAD by motor HP:

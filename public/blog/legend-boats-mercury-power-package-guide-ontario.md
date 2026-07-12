@@ -70,6 +70,8 @@ The R Series is **riveted aluminum**, not welded, the entry price comes from the
 
 Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000-$22,000** all-in.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 **Best for:** Budget-conscious anglers, kicker / second-boat buyers, light-duty utility.
 
 ### XF Series, 16-18 ft, serious fishing

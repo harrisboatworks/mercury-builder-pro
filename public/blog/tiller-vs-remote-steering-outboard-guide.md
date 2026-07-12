@@ -71,6 +71,8 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## The simple version
 
 Most small boats want tiller. Most bigger boats want remote control. The question isn't complicated unless you're in the crossover zone, which is 14 to 16-foot hulls in the 25 to 40 HP range.

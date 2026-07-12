@@ -174,6 +174,8 @@ Trailer frames are weldable. Bunks, rollers, lights, and brakes are all replacea
 
 A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in Ontario. A full refurbishment (bunks, bearings, brakes, lights, tires) on a sound frame is usually $800-$1,500. Math the lifespan honestly.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ---
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
