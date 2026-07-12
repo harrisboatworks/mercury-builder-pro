@@ -3345,7 +3345,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 | Aluminum 14-16 ft | Trolling / get on plane | 25-40 HP / 40-60 HP (sweet spot) |
 | Console 16-18 ft | All-round (most common HBW repower) | 90-115 HP (90 or 115 ELPT FourStroke) |
 | Pontoon 18-20 ft | Cruise & fish / tubing | 90 HP CT / 115 HP CT |
-| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP CT |
+| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP (standard gearcase) |
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
