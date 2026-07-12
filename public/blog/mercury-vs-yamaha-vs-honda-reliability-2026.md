@@ -195,7 +195,7 @@ For Ontario freshwater fishing boats, Mercury wins on dealer support and parts a
 
 ### Is Mercury better than Honda for pontoon boats?
 
-Mercury Command Thrust gearcase, available on the FourStroke 115 HP and up, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.
+Mercury Command Thrust gearcase, available on FourStroke models from 40 to 115 HP, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.
 
 ### What is the most reliable Mercury outboard?
 

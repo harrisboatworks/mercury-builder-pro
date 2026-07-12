@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9 through 115 HP FourStroke (including 9.9/15/25 HP ProKicker), select Pro XS, and SeaPro commercial outboards. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca for a same-day fit check on your boat.
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca for a same-day fit check on your boat.
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
@@ -96,11 +96,11 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 |---|---|---|
 | 9.9 ProKicker CT | ELPT / ELHPT | Kicker motor on offshore + larger fishing rigs |
 | 15 ProKicker CT | ELPT / EXLPT | Kicker motor on heavier fishing boats |
-| 25 ProKicker CT | ELHPT / EXLPT | High-output kicker, big trolling alternator |
+| (No 25 CT) | — | Mercury does not offer a 25 Command Thrust; step down to 15 ProKicker CT or up to 40 CT |
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, workboats |
+| (No 75 CT) | — | Mercury does not offer a 75 CT; step to 90 FourStroke CT for pontoons in this range |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
@@ -108,7 +108,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 
 ### Mercury Pro XS Command Thrust
 
-Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
+Pro XS CT (115 Pro XS) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT tops out at 115 HP across the lineup; there is no 150 Pro XS CT. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
 
 ### Mercury SeaPro Command Thrust
 
@@ -221,7 +221,7 @@ Command Thrust uses a larger gearcase housing, a larger-diameter four-blade prop
 
 ### Is Command Thrust available on all Mercury HP classes?
 
-No. CT is available on 9.9, 15, and 25 HP ProKicker models, plus 40, 50, 60, 75, 90, and 115 HP FourStrokes. Mercury Pro XS CT is offered in the 115-150 HP range. SeaPro CT exists for commercial duty. Under 9.9 HP and over 150 HP, the CT option generally does not apply.
+No. CT is available on 9.9 and 15 HP ProKicker models, plus 40, 50, 60, 90, and 115 HP FourStrokes, and the 115 Pro XS. There is no 25 CT, no 75 CT, and no 150 CT. SeaPro CT exists for commercial duty. Above 115 HP the CT option does not apply, and the 150 runs Mercury's big gearcase as standard.
 
 ### Can I retrofit Command Thrust to my existing Mercury?
 

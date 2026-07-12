@@ -246,7 +246,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
 
 ### What's the difference between the Mercury 90 and 115 HP?
 
-They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for heavier or pontoon hulls; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.
+They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for pontoons and workboats; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.
 
 ### How much does a 90 HP Mercury outboard weigh?
 

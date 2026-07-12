@@ -1714,7 +1714,7 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
     relatedSlugs: ["mercury-command-thrust-pontoon-eligibility-2026", "mercury-command-thrust-guide-pontoon-boats", "how-to-read-mercury-outboard-serial-number", "fourstroke-vs-pro-xs", "mercury-propeller-selection-guide"],
     faqs: [
       { question: "What's the difference between Command Thrust and standard gearcase?", answer: "Command Thrust uses a larger gearcase housing, a larger-diameter four-blade prop with about 20 percent more blade surface area, and a lower gear ratio. The net effect is more pushing force at the cost of 2 to 4 MPH top speed. Standard gearcase is faster and slightly more fuel-efficient on light boats. CT is faster to plane and stronger in reverse on heavy boats." },
-      { question: "Is Command Thrust available on all Mercury HP classes?", answer: "No. CT is available on 9.9, 15, and 25 HP ProKicker models, plus 40, 50, 60, 75, 90, and 115 HP FourStrokes. Mercury Pro XS CT is offered in the 115-150 HP range. SeaPro CT exists for commercial duty. Under 9.9 HP and over 150 HP, the CT option generally does not apply." },
+      { question: "Is Command Thrust available on all Mercury HP classes?", answer: "No. CT is available on 9.9 and 15 HP ProKicker models, plus 40, 50, 60, 90, and 115 HP FourStrokes, and the 115 Pro XS. There is no 25 CT, no 75 CT, and no 150 CT. SeaPro CT exists for commercial duty. Above 115 HP the CT option does not apply, and the 150 runs Mercury's big gearcase as standard." },
       { question: "Can I retrofit Command Thrust to my existing Mercury?", answer: "Technically yes, practically rarely worth it. The gearcase, driveshaft, water pump, and prop are all different. By the time you add up parts and labor, you are usually close to the cost of trading toward a new CT motor. We quote both paths at HBW so you can compare." },
       { question: "Does Command Thrust affect my Mercury warranty?", answer: "No. CT is a factory option built on a Mercury outboard. The standard Mercury Marine warranty (3 years limited plus 3 years corrosion concurrent on Canadian-sold motors) applies the same way it would on the standard gearcase model." },
       { question: "Will Command Thrust burn more fuel?", answer: "At cruising RPM, fuel burn is comparable. At trolling speeds, CT can burn slightly more because the bigger prop is moving more water. At hole shot and time-to-plane, CT actually burns less because you get to plane faster and spend less time at the high-fuel-burn pre-plane RPM." },
@@ -1724,7 +1724,7 @@ If your telltale has gone lazy, or you can't remember which season the impeller 
     ],
     content: `*Last reviewed: 2026-05-28*
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9 through 115 HP FourStroke (including 9.9/15/25 HP ProKicker), select Pro XS, and SeaPro commercial outboards. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca for a same-day fit check on your boat.
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca for a same-day fit check on your boat.
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
@@ -1792,11 +1792,11 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 |---|---|---|
 | 9.9 ProKicker CT | ELPT / ELHPT | Kicker motor on offshore + larger fishing rigs |
 | 15 ProKicker CT | ELPT / EXLPT | Kicker motor on heavier fishing boats |
-| 25 ProKicker CT | ELHPT / EXLPT | High-output kicker, big trolling alternator |
+| (No 25 CT) | — | Mercury does not offer a 25 Command Thrust; step down to 15 ProKicker CT or up to 40 CT |
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, workboats |
+| (No 75 CT) | — | Mercury does not offer a 75 CT; step to 90 FourStroke CT for pontoons in this range |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
@@ -1804,7 +1804,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 
 ### Mercury Pro XS Command Thrust
 
-Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
+Pro XS CT (115 Pro XS) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT tops out at 115 HP across the lineup; there is no 150 Pro XS CT. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
 
 ### Mercury SeaPro Command Thrust
 
@@ -3345,7 +3345,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 | Aluminum 14-16 ft | Trolling / get on plane | 25-40 HP / 40-60 HP (sweet spot) |
 | Console 16-18 ft | All-round (most common HBW repower) | 90-115 HP (90 or 115 ELPT FourStroke) |
 | Pontoon 18-20 ft | Cruise & fish / tubing | 90 HP CT / 115 HP CT |
-| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP CT |
+| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP (standard gearcase) |
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
@@ -3433,7 +3433,7 @@ Family use including tubing or skiing: **115 HP Command Thrust.** The Command Th
 ### Pontoons (20–24 ft)
 Cruising and fishing: **115 HP Command Thrust.**
 
-Active water sports, tubing, skiing, multiple passengers: **150 HP Command Thrust.** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
+Active water sports, tubing, skiing, multiple passengers: **150 HP FourStroke (standard gearcase; CT tops out at 115, and the 150 runs the same big gearcase as standard).** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
 
 ### Runabouts and bowriders (18–22 ft)
 Recreational family use: **150 to 200 HP.** The exact answer depends on hull weight and whether water sports are in the picture.
@@ -3523,7 +3523,7 @@ For solo or two-person trolling, 25 to 40 HP. For three or more people who want 
 For cruising and fishing without water sports, 90 HP Command Thrust is plenty. For family use with tubing or skiing, step up to 115 HP Command Thrust. The Command Thrust gearcase matters, it's built for the load profile of pontoons.
 
 **What HP do I need for a 20-foot pontoon?**
-Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple passengers: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to deliver diminishing returns.
+Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple passengers: 150 HP FourStroke (standard gearcase). Above 150 HP on a two-tube pontoon starts to deliver diminishing returns.
 
 **What HP for a bass boat?**
 Tournament fishing: 200 to 250 HP Pro XS. Recreational bass fishing: 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard in tournament fishing.
@@ -5250,9 +5250,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // Week 3: January 19, 2026
   {
     slug: 'best-mercury-outboard-pontoon-boats',
-    seoTitle: "Best Mercury Outboard for a Pontoon: 90-150 HP CT (2026) | HBW",
-    title: "Best Mercury Outboard for a Pontoon: 90 to 150 HP CT (2026)",
-    description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-150 HP FourStroke with Command Thrust. The gearcase matters more than HP. HBW explains why.",
+    seoTitle: "Best Mercury Outboard for a Pontoon: 90-115 HP CT (2026) | HBW",
+    title: "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)",
+    description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard). The gearcase matters more than HP. HBW explains why.",
     image: '/lovable-uploads/hero-best-mercury-pontoon.png',
     imageAlt: 'Rear view of a Legend pontoon boat with a Mercury 115 HP Command Thrust outboard cruising on a calm Ontario lake.',
     author: 'Jay Harris',
@@ -5266,7 +5266,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-> **Quick answer:** Pontoons need torque and hole shot, not just top speed. For most 18–22 ft Ontario pontoons, Mercury 90–150 HP FourStroke with Command Thrust is the right answer. The gearcase matters as much as the horsepower number. Build an installed pontoon repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Pontoons need torque and hole shot, not just top speed. For most 18–22 ft Ontario pontoons, Mercury 90–115 HP FourStroke with Command Thrust is the right answer (CT tops out at 115 HP; a 150 runs Mercury's big gearcase as standard). For 18–20 ft two-log pontoons the 60 CT is often the hero pick. The gearcase matters as much as the horsepower number. Build an installed pontoon repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -5288,7 +5288,7 @@ rightCriteria:
   - Open water on Rice Lake or larger Kawartha lakes
   - Fast hole shot with the boat loaded matters
   - Long-term hold, you want the right motor once
-rightOutcome: 150 HP Command Thrust (200 HP on bigger tritoons)
+rightOutcome: 150 HP FourStroke (standard gearcase; CT tops out at 115. 200 HP on bigger tritoons.)
 rightVariant: alternative
 whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
 ::
@@ -5297,7 +5297,7 @@ whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in thi
 
 Customers shopping for a pontoon motor focus on the HP number. The gearcase is an afterthought, and that's the wrong order of priorities.
 
-![Pontoon motor sizing card: 18 ft pontoon takes a Mercury 90 HP Command Thrust, 20 ft takes 115 HP Command Thrust, 22 ft takes 115 to 150 HP Command Thrust. Towing with a full crew, step up one size.](/lovable-uploads/pontoon-motor-sizing-card-hbw.png)
+![Pontoon motor sizing card: 18 ft pontoon takes a Mercury 60 or 90 HP Command Thrust, 20 ft takes 90 to 115 HP Command Thrust, 22 ft takes 115 HP CT or 150 HP FourStroke (standard gearcase, since CT tops out at 115). Towing with a full crew, step up one size.](/lovable-uploads/pontoon-motor-sizing-card-hbw.png)
 *The short version. Your boat's capacity plate and loading decide the final call.*
 
 A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
@@ -5324,14 +5324,14 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 | Pontoon use case | Practical Mercury range | HBW note |
 |------------------|------------------------|-----------|
-| 18–20 ft, cruising and fishing | 90 HP Command Thrust | The most common pontoon repower we do. |
+| 18–20 ft two-log, cruising and fishing | 60 HP Command Thrust (hero) or 90 HP CT | Lighter two-log pontoons run great on the 60 CT. |
 | 20–22 ft, family cottage use | 90–115 HP Command Thrust | The sweet spot for Rice Lake pontoons. |
-| 22–24 ft, active water sports | 115–150 HP Command Thrust | Buy enough motor once. |
-| Large tritoon or performance setup | 150 HP and up | Verify hull rating, steering, and transom before quoting. |
+| 22–24 ft, active water sports | 115 HP Command Thrust or 150 HP FourStroke (standard gearcase) | CT tops out at 115; above that, the 150 runs the big gearcase as standard. |
+| Large tritoon or performance setup | 150 HP and up (standard gearcase) | Verify hull rating, steering, and transom before quoting. |
 
-### 18–20 ft pontoon, cruising and fishing only
+### 18–20 ft two-log pontoon, cruising and fishing only
 
-**Best fit: 90 HP Command Thrust FourStroke.** Plenty of cruise speed and reasonable hole shot. Excellent fuel economy at cruise. This is our most common pontoon repower at HBW. Standard gearcase 90 also works, but Command Thrust handles the pontoon hull better.
+**Best fit: 60 HP Command Thrust FourStroke.** For lighter 18–20 ft two-log pontoons, the 60 CT is often the right call and our hero recommendation, see our [Mercury 115 vs 150 HP honest dealer guide](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026). Step up to a 90 HP Command Thrust for heavier loads or longer runs. Standard gearcase 90 also works, but Command Thrust handles the pontoon hull better.
 
 ### 18–20 ft pontoon, family use with occasional water sports
 
@@ -5339,11 +5339,11 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 ### 20–22 ft pontoon, active water sports
 
-**Best fit: 150 HP Command Thrust FourStroke.** Pulls skiers cleanly, handles wakeboarding loads, runs comfortably in chop. Above 150 HP on a traditional two-tube pontoon starts to return diminishing gains because the hull design itself limits top speed.
+**Best fit: 150 HP FourStroke (standard gearcase).** Command Thrust tops out at 115 HP, so the 150-class recommendation is Mercury's big standard gearcase, which is what the 150 ships with anyway. Pulls skiers cleanly, handles wakeboarding loads, runs comfortably in chop. Above 150 HP on a traditional two-tube pontoon starts to return diminishing gains because the hull design itself limits top speed.
 
 ### Tritoons (three-tube), 22–24 ft
 
-**Best fit: 150 HP and up.** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP Command Thrust is typical.
+**Best fit: 150 HP and up (standard gearcase).** The third tube changes the hydrodynamics and lets the boat reach higher speeds with adequate HP. For 22–24 ft tritoons with active water sports, 200 HP FourStroke (standard gearcase) is typical.
 
 ::cta
 variant: inline
@@ -5379,7 +5379,7 @@ The result: noticeably stronger hole shot when loaded, faster time to cruise, be
 
 **1. Skipping Command Thrust to save money.** The single most common pontoon repower mistake. Customer picks the standard 90 HP, and trades up to Command Thrust within two or three seasons. Pay once.
 
-**2. Buying too small for water sports.** A 90 HP on a 20-foot pontoon used for tubing disappoints. Active water sports want 115 CT minimum; 150 CT preferred.
+**2. Buying too small for water sports.** A 90 HP on a 20-foot pontoon used for tubing disappoints. Active water sports want 115 CT minimum; a 150 (standard gearcase) is preferred, since CT tops out at 115.
 
 **3. Buying too much for cruising only.** A 200 HP on an 18-foot pontoon used for sunset cruises is overkill and extra fuel burn. The 90–115 CT range handles cruising elegantly.
 
@@ -5441,13 +5441,13 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 For cruising and fishing without water sports, 90 HP Command Thrust FourStroke. For occasional water sports with the family, step up to 115 HP Command Thrust.
 
 **What's the best Mercury for a 20-foot pontoon?**
-Cruising and fishing: 115 HP Command Thrust. Active family use with tubing or skiing: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to hit diminishing returns.
+Cruising and fishing: 115 HP Command Thrust. Active family use with tubing or skiing: 150 HP FourStroke (standard gearcase; CT tops out at 115). Above 150 HP on a two-tube pontoon starts to hit diminishing returns.
 
 **Do I need Mercury Command Thrust on a pontoon?**
 For pontoons 18 ft and up, yes in most cases. Command Thrust gives meaningful hole shot, load-handling, and pulling power that the standard gearcase can't match on pontoons. The cost premium is worth it.
 
 **Can I use my pontoon for water sports?**
-Yes, with the right HP. Tubing: 115 HP CT or higher. Skiing: 115–150 HP CT minimum. Wakeboarding: 150 HP CT or higher. Pontoons purpose-built for water sports (some tritoons) handle this best.
+Yes, with the right HP. Tubing: 115 HP CT or higher. Skiing: 115 HP CT minimum, step to a 150 (standard gearcase) if you want more. Wakeboarding: 150 HP or higher (standard gearcase; CT tops out at 115). Pontoons purpose-built for water sports (some tritoons) handle this best.
 
 **Should I get FourStroke or Pro XS for a pontoon?**
 FourStroke is almost always the right answer for pontoons. Pro XS is built for tournament fishing and performance applications, not the load-handling and cruising emphasis pontoons need.
@@ -5470,7 +5470,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
     faqs: [
       {
         question: 'Is a 90 HP Mercury enough for a pontoon boat?',
-        answer: 'For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 or 150 CT. The gearcase matters as much as the horsepower number.'
+        answer: 'For an 18 to 20 ft pontoon with a typical family load, a Mercury 90 HP with Command Thrust is a solid match: the CT gearcase swings a bigger prop, which is what gets a pontoon out of the hole. Past 20 ft, or if you tow tubes with a full crew, step to the 115 CT or 150 (standard gearcase; CT tops out at 115). The gearcase matters as much as the horsepower number.'
       },
       {
         question: 'What is the best Mercury outboard for an 18-foot pontoon?',
@@ -5478,11 +5478,11 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
       },
       {
         question: 'What is the best Mercury for a 20-foot pontoon?',
-        answer: 'For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to be diminishing returns.'
+        answer: 'For cruising and fishing, 115 HP Command Thrust. For active family use with tubing or skiing, 150 HP FourStroke (standard gearcase; CT tops out at 115). Above 150 HP on a two-tube pontoon starts to be diminishing returns.'
       },
       {
         question: 'What is the best Mercury for a 22-foot pontoon?',
-        answer: 'For cruising, 115 to 150 HP Command Thrust. For active water sports with full family loading, 150 to 200 HP. Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP.'
+        answer: 'For cruising, 115 HP Command Thrust or 150 HP FourStroke (standard gearcase; CT tops out at 115). For active water sports with full family loading, 150 to 200 HP (standard gearcase). Tritoons (three-tube) can absorb more HP and feel a meaningful difference. Two-log pontoons hit a drag wall above 150 HP.'
       },
       {
         question: 'Do I need Mercury Command Thrust on a pontoon?',
@@ -5490,7 +5490,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
       },
       {
         question: 'What\'s the cost of a typical pontoon repower in Ontario?',
-        answer: 'For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP CT repower on a 20 to 22 ft pontoon, $23,000 to $30,000 CAD before HST. 200 to 300 HP packages land $35,000 to $40,000 CAD before HST. [Live pricing here.](/quote/motor-selection)'
+        answer: 'For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP repower (standard gearcase; CT tops out at 115) on a 20 to 22 ft pontoon, $23,000 to $30,000 CAD before HST. 200 to 300 HP packages land $35,000 to $40,000 CAD before HST. [Live pricing here.](/quote/motor-selection)'
       },
       {
         question: 'What\'s the most popular Mercury for pontoons in Ontario?',
@@ -5680,7 +5680,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'What is Mercury Command Thrust?',
-        answer: 'Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull it just adds drag, so we do not recommend it there.'
+        answer: 'Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke models from 40 to 115 HP (plus 9.9/15 ProKicker and the 115 Pro XS). CT tops out at 115 HP. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull it just adds drag, so we do not recommend it there.'
       },
       {
         question: 'Do I need Command Thrust on a pontoon?',
@@ -5724,7 +5724,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'best-pontoon-boats-rice-lake-cottage-use',
     title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)",
-    description: 'Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with Mercury 90 to 150 hp Command Thrust. Practical advice from an Ontario dealer.',
+    description: 'Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115). Practical advice from an Ontario dealer.',
     image: '/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero.jpg',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
@@ -5736,7 +5736,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `# Best Pontoon Boats for Rice Lake Cottage Use
 
 ## Quick answer
-For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 150 HP range. Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
+For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 115 HP range (Command Thrust tops out at 115 HP; a 150 runs Mercury's big gearcase as standard). Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
 
 ::decision-card
 eyebrow: Pick the right hull
@@ -5789,12 +5789,12 @@ The question is not usually "should I get a pontoon?" Most cottage families have
 At cruising speeds, two adults, light fishing gear, and a cooler, this setup is comfortable and fuel-efficient. Deck space is enough for fishing chairs and lounging.
 
 ### Multi-generational family, cruising and water sports
-**What works:** 22 ft two-tube or tritoon with a Mercury Command Thrust FourStroke in the 115 to 150 HP range.
+**What works:** 22 ft two-tube or tritoon with a Mercury 115 HP Command Thrust FourStroke, or a 150 HP FourStroke (standard gearcase; CT tops out at 115).
 
-The 22 ft length handles six to ten people comfortably. The 115 to 150 HP Command Thrust motor handles tubing and lighter water sports without labouring. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
+The 22 ft length handles six to ten people comfortably. The 115 HP Command Thrust motor handles tubing and lighter water sports without labouring, and a 150 (standard gearcase) is the step above that. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
 
 ### Active water sports family
-**What works:** 22 ft tritoon with a Mercury Command Thrust FourStroke in the 150 to 200 HP range.
+**What works:** 22 ft tritoon with a Mercury FourStroke or Pro XS in the 150 to 200 HP range (standard gearcase; Command Thrust tops out at 115 HP).
 
 If tubing, skiing, and wakeboarding are a regular part of summer at the cottage, a tritoon is the right call. The third tube changes the hydrodynamics, better hole shot loaded, higher top speed, and better handling in sport use.
 
@@ -5876,11 +5876,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
         faqs: [
       { question: 'What size pontoon is best for Rice Lake cottage use?', answer: 'For most cottage families, 20 to 22 ft is the size most families land on. Smaller (18 ft) for a quieter two-adult household. Larger (24 ft-plus) for very large groups or active water sports focus.' },
       { question: 'Two-tube or tritoon for Rice Lake?', answer: 'Two-tube is the right answer for cruising, fishing, and casual family use. Tritoon earns its cost if active water sports (tubing, skiing, wakeboarding) are a regular part of your summer.' },
-      { question: 'What HP does a Rice Lake pontoon need?', answer: 'For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 to 150 HP CT. For a tritoon with active water sports: 150 to 200 HP CT.' },
+      { question: 'What HP does a Rice Lake pontoon need?', answer: 'For an 18 to 20 ft two-tube with casual use: Mercury 90 HP Command Thrust. For a 20 to 22 ft family pontoon with light water sports: 115 HP CT or a 150 HP FourStroke (standard gearcase; Command Thrust tops out at 115). For a tritoon with active water sports: 150 to 200 HP (standard gearcase).' },
       { question: 'Should I buy a Legend Boats pontoon at HBW?', answer: 'We are a Legend dealer, so yes, we sell them and stand behind them. Legend is a Canadian brand, factory Mercury-rigged, and well-suited to Ontario cottage lakes.' },
       { question: 'Can I fish from a pontoon on Rice Lake?', answer: 'Very effectively. Pontoons offer stable, comfortable platforms for casting, trolling, and structure fishing.' },
       { question: 'Should I get a boat lift for my pontoon?', answer: 'If your cottage configuration allows it, yes. Lift storage is the best thing you can do for hull and motor longevity.' },
-      { question: 'Can I tube and ski with a Rice Lake pontoon?', answer: 'Tubing: yes, with 115 HP CT or more. Skiing: more reliably with 150 HP CT and up, especially a tritoon. A two-tube at 90 HP is a cruising and fishing boat, not a water sports platform.' },
+      { question: 'Can I tube and ski with a Rice Lake pontoon?', answer: 'Tubing: yes, with 115 HP CT or more. Skiing: more reliably with a 150 HP (standard gearcase) and up, especially a tritoon; Command Thrust tops out at 115. A two-tube at 90 HP is a cruising and fishing boat, not a water sports platform.' },
       { question: 'How long does a pontoon last with proper maintenance?', answer: 'Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Furniture and electronics may need updating in the 10 to 15 year range, but the basic hull structure is durable.' },
       { question: 'Does HBW handle pontoon service and storage?', answer: 'Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.' },
     ],
@@ -6120,7 +6120,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
     faqs: [
       {
         question: "What's the difference between the Mercury 90 and 115 HP?",
-        answer: 'They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for heavier or pontoon hulls; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.'
+        answer: 'They share the same 2.1L FourStroke powerhead and Mercury lists the same lightest dry weight for both, about 163 kg (359 lb). The 115 is tuned for more power and offers a Command Thrust gearcase for pontoons and workboats; the 90 is the value sweet spot for most 16 to 18 ft aluminum boats. On a hull that takes either, the 115 buys headroom; the 90 saves money and fuel.'
       },
       {
         question: 'How much does a 90 HP Mercury outboard weigh?',
@@ -6296,7 +6296,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'Should I repower my cottage boat or buy new?', answer: 'For most cottage boats with hulls less than 25 years old in reasonable condition, repowering wins on the math. A new comparable boat package costs significantly more. The hull is the asset; the motor is the wear part.' },
       { question: 'How long does a cottage aluminum boat last?', answer: 'Properly maintained aluminum cottage boats regularly last 30 to 50 years or more. Many Kawartha aluminum hulls from the 1980s and 1990s are still on the water, often on their second or third Mercury repower.' },
-      { question: 'What HP do I need for my cottage boat?', answer: 'Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 90 to 150 HP with Command Thrust.' },
+      { question: 'What HP do I need for my cottage boat?', answer: 'Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 60 to 115 HP with Command Thrust (60 CT for 18 to 20 ft two-log pontoons; 150-class motors run a standard gearcase, since CT tops out at 115).' },
       { question: 'Should I switch from Evinrude to Mercury during a cottage repower?', answer: 'Most of the time, yes. Evinrude stopped making outboards in 2020 and parts support is only getting thinner. A brand conversion adds some rigging cost but pays back over the life of the new motor.' },
       { question: 'Can I get financing for a cottage repower?', answer: 'Yes. Mercury repower financing is available through HBW. Current financing options are shown on the financing page and confirmed with your quote at mercuryrepower.ca.' },
       { question: 'When is the best time to repower a cottage boat?', answer: 'Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.' },
@@ -6766,9 +6766,9 @@ This is the decision that anchors everything else.
 | 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
 | 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (CT is a pontoon and workboat gearcase, not for V-hulls) |
-| 18-22 ft pontoon | 90-150 HP | Mercury 115-150 Command Thrust, pontoon thrust needs are real |
+| 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, since CT tops out at 115) |
 | 19-21 ft bass or tournament boat | 150-250 HP | Mercury FourStroke for real-world use, Pro XS if you run tournaments |
-| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 Command Thrust |
+| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 FourStroke or Pro XS (standard gearcase; CT tops out at 115) |
 
 ### FourStroke or Pro XS?
 
@@ -9347,7 +9347,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How important is Command Thrust for musky?',
-        answer: 'Less critical than for walleye. Musky areas typically have adequate depth. Standard lower unit works well. That said, Command Thrust doesn\'t hurt.'
+        answer: 'Not recommended on a planing musky V-hull. Command Thrust is a pontoon and workboat gearcase, not for standard V-hulls: on a planing V-hull it adds drag and costs top speed. Stay with the standard gearcase for a musky boat; CT belongs on pontoons and workboats.'
       }
     ]
   },
@@ -11956,7 +11956,7 @@ Mercury organizes its outboards into families by use case, not just horsepower. 
 
 **HP range:** 2.5 to 300 hp. This is the volume seller in Ontario because it covers nearly every recreational use: a 9.9 kicker, a 25 for a light tinny, a 60 or 75 for a mid-size fishing rig, a 115 or 150 for bigger aluminum or fibreglass boats, up to 300 for big water. Tuned for fuel efficiency at cruise, smooth idle, quiet operation, and long service intervals. What it isn't: fast out of the hole.
 
-**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on 115 hp and up, it pairs a larger gearcase with a bigger prop for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
+**FourStroke Command Thrust** deserves a callout for pontoon owners. Available on FourStroke models from 40 to 115 HP (CT tops out at 115), it pairs a larger gearcase with a bigger prop for the torque loads heavy hulls put on a motor. If you're repowering a pontoon, ask about Command Thrust specifically.
 
 ### Pro XS: performance fishing
 
@@ -11983,7 +11983,7 @@ Mercury's Avator electric line (currently the 7.5e and 20e in production) is bui
 | Light aluminum fishing boat, 14-16 ft | FourStroke | 25-60 hp |
 | Mid-range fishing/family boat, 16-18 ft | FourStroke | 60-115 hp |
 | Larger fishing or family boat, 18-20 ft | FourStroke | 115-150 hp |
-| Pontoon, 22-24 ft | FourStroke Command Thrust | 115-150 hp |
+| Pontoon, 22-24 ft | FourStroke (Command Thrust up to 115; standard gearcase at 150) | 115 CT or 150 |
 | Tournament bass boat | Pro XS | 200-250 hp |
 | Commercial guide or rental | SeaPro | Match to hull rating |
 | Car-topper or kicker | FourStroke | 9.9-15 hp |
@@ -14737,7 +14737,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     { question: 'Which outboard brand is most reliable in 2026: Mercury, Yamaha, or Honda?', answer: 'All three produce reliable four-stroke outboards. The practical reliability difference in Ontario (how fast you can get a motor fixed when something goes wrong) favors Mercury, because of dealer network density and parts availability in this region.' },
     { question: 'How long does a Mercury, Yamaha, or Honda outboard last?', answer: 'Properly maintained, all three last well beyond 1,500 engine hours. For a recreational boater running 50 to 150 hours a season, that is 15 to 25 years of useful life with consistent service.' },
     { question: 'Is Mercury better than Yamaha for fishing boats in Ontario?', answer: 'For Ontario freshwater fishing boats, Mercury wins on dealer support and parts availability, especially in the cottage country dealer network. Most Lund, Crestliner, and Princecraft boats come Mercury-rigged from the factory.' },
-    { question: 'Is Mercury better than Honda for pontoon boats?', answer: 'Mercury Command Thrust gearcase, available on the FourStroke 115 HP and up, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.' },
+    { question: 'Is Mercury better than Honda for pontoon boats?', answer: 'Mercury Command Thrust gearcase, available on FourStroke models from 40 to 115 HP, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.' },
     { question: 'What is the most reliable Mercury outboard?', answer: 'The FourStroke series in the 60 to 150 HP class has an exceptionally strong track record over the past 15+ years. The 9.9 ProKicker is the most common kicker motor in Canada.' },
     { question: 'How much does it cost to switch from Yamaha or Honda to Mercury?', answer: 'Switching brands during a repower typically adds $2,000 to $3,000 CAD in rigging on top of the motor cost. The full control system (throttle, shift cables, harness, gauges) needs to be replaced when switching brands.' },
     { question: 'Are Yamaha outboards better in saltwater than Mercury?', answer: 'Yamaha has a well-earned saltwater durability reputation. Mercury SeaPro line is purpose-built for commercial and saltwater applications. For Ontario freshwater, Mercury wins on dealer support in this region.' },
@@ -19543,7 +19543,7 @@ Three series across three positioning bands:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25-40 ELPT Command Thrust** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
+Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25 ELPT / 40 ELPT Command Thrust (CT on the 40; there is no 25 CT)** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
 
@@ -19583,7 +19583,7 @@ The standard motor on each Legend hull is sized for the typical use case, but th
 | **XF 16-18** | Mercury 50-90 ELPT | Mercury 90-115 ELPT | Family days with full crew, watersports |
 | **XT 17-20** | Mercury 90-175 | Pro XS upgrade | Tournament fishing, top speed matters |
 | **Titanium 19** | Mercury 115 EXLPT | Mercury 150 | Max HP rating; for tournament-grade performance |
-| **LE 15-21** | Mercury 25-40 ELPT CT | Mercury 60-115 ELPT CT | More passengers, watersports towing |
+| **LE 15-21** | Mercury 25 ELPT / 40 ELPT CT (CT on the 40) | Mercury 60-115 ELPT CT | More passengers, watersports towing |
 | **Q 21-23** | Mercury 60 ELPT CT | Mercury 150-250 | Watersports, larger passenger loads |
 | **Halo 19-23** | Mercury 115 EXLPT | Verado options on 23 | Premium experience, single-engine boat |
 
@@ -23290,7 +23290,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What HP do I need for a pontoon boat?', answer: 'It depends on tube count, hull length, load, and use case. As a starting framework: 25 to 40 HP for 16 to 18 ft small toons, 60 to 90 HP for 20 to 22 ft cruisers, 115 to 150 HP for 22 to 24 ft loaded family pontoons, and 200+ HP for tritoons and watersports. When in doubt, size closer to the hull\'s max HP rating, not the minimum.' },
       { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.' },
       { question: 'Why do pontoons need more HP than runabouts?', answer: 'A typical pontoon sits 1,800 to 3,500 lbs dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 5,000 lbs. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
-      { question: 'When does Command Thrust matter on a pontoon?', answer: 'Any pontoon over 20 feet running a Mercury four-stroke in the 75 to 150 HP range should be in Command Thrust. The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel sluggish at the same horsepower.' },
+      { question: 'When does Command Thrust matter on a pontoon?', answer: 'Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury\'s big gearcase as standard). The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel sluggish at the same horsepower.' },
       { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For tube pulling with 4 to 6 people on deck, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.' },
     ],
     content: `# Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
@@ -23407,7 +23407,7 @@ This is the most common pontoon size on Ontario lakes, and it's where the underp
 
 If you're running 6-8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people up on cruise is a completely different experience with Command Thrust vs. a standard 115.
 
-See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), if your boat is over 20 feet and you're running a four-stroke under 150 HP, Command Thrust is not optional.
+See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), if your boat is over 20 feet and you're running a four-stroke at 115 HP or below, Command Thrust is not optional (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard).
 
 ---
 
@@ -23478,7 +23478,7 @@ The short version: **Command Thrust** is Mercury's designation for a larger gear
 
 Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration comes up on cruise faster, transitions more smoothly, and puts less stress on the motor.
 
-**Recommendation:** Any pontoon over 20 feet running a Mercury four-stroke in the 75-150 HP range should be in Command Thrust. Full details in the [Mercury Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats).
+**Recommendation:** Any pontoon over 20 feet running a Mercury four-stroke in the 90-115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury's big gearcase as standard). Full details in the [Mercury Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats).
 
 ---
 
@@ -24681,7 +24681,7 @@ These are real-world figures from boats rigged by Harris Boat Works. Conditions,
 *(Princecraft Sport, Lund Adventure)*
 
 - **40 HP:** Underpowered for this hull class. The boat is rated for 75-90 HP. A 40 will run, but it won't plane with the family aboard.
-- **60 HP:** 32-35 mph WOT. Comfortable 26-28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. A 60 CT on a heavier 18 ft deep-V is a stronger call.
+- **60 HP:** 32-35 mph WOT. Comfortable 26-28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. On an 18 ft deep-V, stay with the standard gearcase; CT is a pontoon and workboat gearcase and costs top speed on a V-hull.
 
 ### 16-18 ft small pontoon
 
@@ -26120,13 +26120,13 @@ This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**
 
 ::walkaround-lead-capture
 
-## When to Take the Command Thrust Upgrade
+## When to Take Command Thrust
 
 | Boat Type | Take CT? |
 |---|---|
 | Pontoon (any size) | Almost always |
 | Aluminum fishing boat | Rarely |
-| Fibreglass runabout | Case by case |
+| Fibreglass runabout | No, standard gearcase |
 
 CT gives you more low-end pulling power and hole-shot at the cost of some top-end speed. On a flat-bottom pontoon hull, that trade-off is worth it every time. On an aluminum fishing boat that runs at speed, the standard gearcase's lower drag profile is the better fit.
 
@@ -26381,13 +26381,13 @@ No. It's not a bad motor, it's the same motor as the 90 with less headroom in th
 Because it's the same physical motor as the 90, same weight, minimal price difference, and the 90 has more headroom and better resale value. Stocking the 75 would mean offering customers a worse long-term buy at nearly the same price.
 
 **Can I get the 75 in a Command Thrust version?** 
-Yes, it's available. But if you need Command Thrust for a pontoon, the 90 CT is a better investment for the same reasons the 90 is better than the 75 on a fishing boat.
+No. Mercury does not offer a 75 CT: the FourStroke Command Thrust lineup jumps from 60 CT to 90 CT. If you need Command Thrust for a pontoon, the 90 CT is the right pick.
 
 **What if my hull falls between 60 and 75 HP on the capacity plate?** 
 Call us at 905-342-2153. Some hulls have specific configurations that matter, year, model, trim level. Five minutes of conversation usually sorts it out.
 
 **Does the 75 HP have a Command Thrust version?** 
-Yes. Same logic applies: if Command Thrust makes sense for your hull, the 90 CT is the better long-term value.
+No. There is no 75 CT in the Mercury lineup; step to the 90 CT if you need Command Thrust.
 
 **Is the 75 HP significantly cheaper than the 90?** 
 Not significantly. The exact figures vary with [Mercury Canada](https://www.mercurymarine.com/canada/en/) pricing, but it's not the kind of gap that should drive the decision for most buyers.
@@ -30733,7 +30733,7 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 3. Ask whether watersports are part of the plan.
 4. Test-drive whichever hull seems to fit, and sometimes the alternative too.
 
-The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-150 HP range, standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
+The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-115 HP range, standard gearcase for 150 and up since CT tops out at 115; standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
 
 If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
 
@@ -30796,7 +30796,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Does aluminum corrode in fresh water?", answer: "Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. A boat kept in the water year-round needs sacrificial zincs and proper fitting installation. A trailered boat that comes home dry has almost no corrosion risk." },
       { question: "Can fiberglass survive Ontario winters in outdoor storage?", answer: "Yes, with proper preparation. Drain all water, cover with shrinkwrap or a quality cover, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see." },
       { question: "Are aluminum boats colder to fish from in shoulder seasons?", answer: "Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boat is a non-issue; a bare-aluminum-deck boat in October is genuinely cold. Most modern aluminum fishing boats have carpet or rubber matting that solves this." },
-      { question: "What's the right Mercury for an aluminum vs a fiberglass boat?", answer: "Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on heavier loads or pontoons. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic." },
+      { question: "What's the right Mercury for an aluminum vs a fiberglass boat?", answer: "Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on pontoons and workboats (not on planing V-hulls). Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic." },
       { question: "Is buying a used aluminum boat safer than buying a used fiberglass boat?", answer: "Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable Used Boat Walkaround Guide walks through the 13-page checklist we use ourselves." },
     ],
     content: `# Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
@@ -30900,7 +30900,7 @@ Yes, with proper preparation. Drain all water, cover with shrinkwrap or a qualit
 Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boat is a non-issue; a bare-aluminum-deck boat in October is genuinely cold. Most modern aluminum fishing boats have carpet or rubber matting that solves this.
 
 **What's the right Mercury for an aluminum vs a fiberglass boat?**
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on heavier loads or pontoons. Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
+Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust on pontoons and workboats (not on planing V-hulls). Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
 
 **Is buying a used aluminum boat safer than buying a used fiberglass boat?**
 Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) walks through the 13-page checklist we use ourselves.
@@ -33520,7 +33520,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     ],
     content: `*Last reviewed: 2026-05-25*
 
-> **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to 115 HP or 150 HP with Command Thrust strongly recommended. For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
+> **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to a 115 HP Command Thrust, or to a 150 HP FourStroke (standard gearcase, since CT tops out at 115). For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust (available up to 115 HP) is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
 
 Pontoons are different from runabouts. They're heavy, draggy hulls that need torque and lift more than top-speed headline numbers. The mistake most pontoon buyers make is sizing the motor for the lightest day instead of the busiest. This post walks through what we actually rig on Rice Lake every spring, and where Command Thrust and Boost earn their price.
 
@@ -33536,7 +33536,7 @@ Here is the grid we use when a customer brings in a pontoon for repower. **Prici
 | 20 ft | 2 | 5 adults | 90 HP FourStroke (CT optional) | $13,000 to $16,000 |
 | 22 ft | 2 | 6 adults | 115 HP CT or 150 HP | $17,000 to $21,000 |
 | 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or Pro XS V8 200 | $20,000 to $28,000 |
-| 24 ft | 2 | 6 to 8 adults | 150 HP CT | $20,000 to $23,500 |
+| 24 ft | 2 | 6 to 8 adults | 150 HP (standard gearcase) | $20,000 to $23,500 |
 | 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
 | 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
 

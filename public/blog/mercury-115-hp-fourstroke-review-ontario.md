@@ -83,13 +83,13 @@ This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**
 
 ::walkaround-lead-capture
 
-## When to Take the Command Thrust Upgrade
+## When to Take Command Thrust
 
 | Boat Type | Take CT? |
 |---|---|
 | Pontoon (any size) | Almost always |
 | Aluminum fishing boat | Rarely |
-| Fibreglass runabout | Case by case |
+| Fibreglass runabout | No, standard gearcase |
 
 CT gives you more low-end pulling power and hole-shot at the cost of some top-end speed. On a flat-bottom pontoon hull, that trade-off is worth it every time. On an aluminum fishing boat that runs at speed, the standard gearcase's lower drag profile is the better fit.
 

@@ -42,7 +42,7 @@ language: en-CA
 | Aluminum 14-16 ft | Trolling / get on plane | 25-40 HP / 40-60 HP (sweet spot) |
 | Console 16-18 ft | All-round (most common HBW repower) | 90-115 HP (90 or 115 ELPT FourStroke) |
 | Pontoon 18-20 ft | Cruise & fish / tubing | 90 HP CT / 115 HP CT |
-| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP CT |
+| Pontoon 20-24 ft | Cruise & fish / watersports | 115 HP CT / 150 HP (standard gearcase) |
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
@@ -130,7 +130,7 @@ Family use including tubing or skiing: **115 HP Command Thrust.** The Command Th
 ### Pontoons (20–24 ft)
 Cruising and fishing: **115 HP Command Thrust.**
 
-Active water sports, tubing, skiing, multiple passengers: **150 HP Command Thrust.** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
+Active water sports, tubing, skiing, multiple passengers: **150 HP FourStroke (standard gearcase; CT tops out at 115, and the 150 runs the same big gearcase as standard).** Above 150 HP starts to be diminishing returns on most two-tube pontoons.
 
 ### Runabouts and bowriders (18–22 ft)
 Recreational family use: **150 to 200 HP.** The exact answer depends on hull weight and whether water sports are in the picture.
