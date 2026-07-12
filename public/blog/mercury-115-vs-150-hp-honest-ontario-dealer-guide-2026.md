@@ -75,7 +75,7 @@ Our most popular models in these two HP classes:
 | Mercury 150 L FourStroke | starts around $22,242 | Standard 150 |
 | Mercury 150 L Pro XS FourStroke | **$24,349** | Our most popular 150, performance variant |
 
-Pricing as of 2026. Install costs vary by what's on the boat now. Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
+Pricing as of 2026. [Install costs vary by what's on the boat now](/blog/mercury-repower-cost-ontario-2026-cad). Build a real quote at [mercuryrepower.ca](https://mercuryrepower.ca) for your specific situation.
 
 ## What changes between 115 and 150
 

@@ -104,7 +104,7 @@ What CAN'T be converted: A mechanical Pro XS, mechanical FourStroke, or any pre-
 The honest decision matrix:
 
 - **Motor is already DTS-capable but you have mechanical controls** → helm-side upgrade is real. Get quoted.
-- **Motor is mechanical, under 5 years old, low hours, otherwise excellent** → quote a full repower against the retrofit cost. Usually repower wins.
+- **Motor is mechanical, under 5 years old, low hours, otherwise excellent** → [quote a full repower against the retrofit cost](/blog/mercury-repower-cost-ontario-2026-cad). Usually repower wins.
 - **Motor is mechanical, 5+ years old or high hours** → repower territory. Don't pour money into retrofit.
 - **Single motor, smaller boat, no joystick interest** → DTS is a "nice to have" not a "need." Mechanical is the right call.
 - **Twins or triples without joystick** → adding DTS enables joystick, which is the real value driver. Worth the conversation.

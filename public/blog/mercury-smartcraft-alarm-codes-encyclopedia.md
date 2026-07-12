@@ -59,10 +59,10 @@ Patterns vary by engine family and model year. Some small EFI FourStroke models 
 
 These are ranked by what comes through our service bays, not by Mercury's SmartCraft fault numbers; on the official list Fault 1 is Critical High Voltage, Fault 2 Critical Low Voltage, Fault 3 Water Pressure, Fault 4 Critical Overtemp, and Water in Fuel sits at Fault 23. This is our actual order based on service tickets, not a generic Mercury list. We service primarily Mercury FourStroke, Pro XS, Verado V8/V10/V12, and some Optimax DFI on Rice Lake and the Kawarthas.
 
-1. **Low battery voltage.** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
+1. **[Low battery voltage](/blog/mercury-boat-battery-guide-ontario).** By far the most common alarm. Battery weak after winter, alternator output dropping, voltage regulator marginal. Especially common on V8 FourStroke and Verado post-winterization.
 2. **High battery voltage.** Voltage regulator stuck high, alternator overcharging. Less common but real, especially on older motors with worn regulators.
 3. **Water in fuel.** The 4-beeps-every-2-minutes alarm. [Phase separation from stored E10 fuel](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), condensation in the tank, or a clogged 10-micron water-separating fuel filter. #1 spring first-start alarm we see.
-4. **Engine over-temperature.** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
+4. **[Engine over-temperature](/blog/mercury-outboard-overheat-alarm-decoder).** Impeller worn or stuck, raw water intake clogged (anchor mud, zebra mussels, weeds), thermostat stuck closed. Trips Guardian mode immediately.
 5. **Low oil level (2-stroke).** For Optimax DFI owners, the remote oil tank reading low or sensor reading low. Often a float-magnet separation issue, not actual low oil.
 6. **Low oil pressure (4-stroke).** Actual low oil, bypass valve issue, or sensor fault. On a 4-stroke this is serious. Shut down.
 7. **Engine overspeed / RPM limit.** Typically a prop slip event (broken prop, lost a blade, came out of the water on a wave). Motor cuts power to protect itself.

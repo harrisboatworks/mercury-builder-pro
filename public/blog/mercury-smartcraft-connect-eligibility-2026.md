@@ -55,7 +55,7 @@ If your motor isn't on this table, send the serial number and we'll check.
 
 ## What SmartCraft Connect actually does
 
-Before checking eligibility it helps to know what you'd be getting. SmartCraft Connect is Mercury's mobile and cloud connectivity layer (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
+Before checking eligibility it helps to know what you'd be getting. [SmartCraft Connect is Mercury's mobile and cloud connectivity layer](/blog/mercury-smartcraft-connect-guide-ontario) (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
 
 - Live engine data on your phone: RPM, fuel flow, hours, water temp, oil pressure, alarms
 - Trip logs and engine hour tracking automatically saved to the cloud
@@ -125,7 +125,7 @@ Five places to look. Try them in this order.
 1. **Engine cowl plate.** Lift the engine cowl. There's usually a metal plate riveted to the powerhead with model, serial, and year. Take a photo with your phone before it gets dirty.
 2. **Lower starboard side of the motor.** Most modern Mercurys have a serial sticker on the right rear of the engine block, just above the lower cowl seam.
 3. **Mounting bracket.** The serial is stamped into the swivel bracket on older portables and some mid-range motors.
-4. **VesselView display.** If your boat has a VesselView or SmartCraft-aware display already, the engine info page lists the serial.
+4. **[VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide).** If your boat has a VesselView or SmartCraft-aware display already, the engine info page lists the serial.
 5. **Original purchase paperwork.** Bill of sale, warranty registration, or invoice from the original dealer.
 
 Once you have it, email info@harrisboatworks.ca with the serial and we'll confirm SmartCraft Connect eligibility in one reply. Most replies go out same business day.

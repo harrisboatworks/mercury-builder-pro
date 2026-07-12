@@ -179,7 +179,7 @@ At some point, the cost of maintaining an aging motor, especially an aging 2-str
 - The motor requires parts that are hard to source
 - The efficiency improvement of a new motor would recover the investment over a few seasons
 
-We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) if you want to see what a new Mercury package would cost for your setup.
+We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) if you want to see [what a new Mercury package would cost](/blog/mercury-repower-cost-ontario-2026-cad) for your setup.
 
 ---
 

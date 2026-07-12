@@ -205,7 +205,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 | Rentals | 9-boat fleet for day trips |
 | Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
 
-Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
