@@ -222,11 +222,12 @@ export default function QuoteSummaryPage() {
         navigate('/quote/motor-selection');
       } else if (!state.selectedPackage) {
         // Auto-set Essential package instead of redirecting
+        const bonusYears = getTotalWarrantyBonusYears?.() ?? 0;
         dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
-        dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 7 } });
+        dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + bonusYears } });
       }
     }
-  }, [isMounted, state.isLoading, state.motor, state.selectedPackage, navigate]);
+  }, [isMounted, state.isLoading, state.motor, state.selectedPackage, navigate, getTotalWarrantyBonusYears]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
