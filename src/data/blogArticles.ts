@@ -2250,7 +2250,7 @@ Five things to confirm before you commit.
 2. **Tube count.** Two tubes or three (tritoon). The third tube is a major eligibility factor.
 3. **Loaded weight estimate.** Boat dry weight (in your owner's manual or on the capacity plate) plus typical people and gear. Be honest about what you actually carry.
 4. **Transom height.** Command Thrust gearcases run a few inches taller than standard. Most modern pontoons handle this fine but it's worth measuring.
-5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and whether you're at capacity-plate maximum.
+5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and if you're at capacity-plate maximum.
 
 Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll respond same-day with a yes, no, or specific recommendation.
 
@@ -7032,7 +7032,7 @@ whenInDoubt: For competitive tournaments, Pro XS pays for itself in time saved b
 
 Bass boats are built for one thing: run fast to a spot and fish it well. They're lighter than most recreational hulls, built to plane fast, and typically used by anglers who care about both speed and reliability.
 
-The right Mercury for a bass boat depends on whether you're fishing competitively or recreationally. That one variable changes the right motor family, the right HP, and whether the Pro XS premium is money well spent.
+The right Mercury for a bass boat depends on how you fish: competitively or recreationally. That one variable changes the right motor family, the right HP, and whether the Pro XS premium is money well spent.
 
 ---
 
@@ -13710,7 +13710,7 @@ At the same HP, the Pro XS carries a price premium. Build both at [mercuryrepowe
 
 ## What HBW Asks Before Recommending a Lake Ontario Setup
 
-Hull make, model, year, and length. Current vs planned motor. Your primary fishing use (recreational, tournament, charter). How far offshore you typically run. Whether you're at a slip or trailering. Budget.
+Hull make, model, year, and length. Current vs planned motor. Your primary fishing use (recreational, tournament, charter). How far offshore you typically run. Slip or trailer storage. Budget.
 
 We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryrepower.ca). If you want to talk through the setup before configuring, call us at 905-342-2153.
 
@@ -13727,7 +13727,7 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 ## FAQs
 
 **What HP do I need for Lake Ontario salmon fishing?**
-For most 22–26 ft hulls, 250–300 HP is the range. The right number depends on hull weight, use case, and whether you're running tournaments or recreational. Never exceed your capacity plate.
+For most 22–26 ft hulls, 250–300 HP is the range. The right number depends on hull weight, use case, and tournament vs recreational running. Never exceed your capacity plate.
 
 **Why a 15 HP kicker instead of a 9.9 for Lake Ontario?**
 The drag from full downrigger spreads, planer boards, and dipsy divers is more than a 9.9 can hold speed against cleanly. The 15 HP ProKicker is the standard for Lake Ontario salmon trolling.
