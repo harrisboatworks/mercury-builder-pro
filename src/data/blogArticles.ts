@@ -5680,7 +5680,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'What is Mercury Command Thrust?',
-        answer: 'Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull it just adds drag, so we do not recommend it there.'
+        answer: 'Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke models from 40 to 115 HP (plus 9.9/15 ProKicker and the 115 Pro XS). CT tops out at 115 HP. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull it just adds drag, so we do not recommend it there.'
       },
       {
         question: 'Do I need Command Thrust on a pontoon?',
