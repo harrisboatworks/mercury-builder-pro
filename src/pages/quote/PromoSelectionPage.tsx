@@ -202,8 +202,9 @@ export default function PromoSelectionPage() {
   };
 
   const handleContinue = () => {
+    const totalWarrantyYears = 3 + (activePromo?.warranty_extra_years ?? 0);
     dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
-    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 7 } });
+    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: totalWarrantyYears } });
     navigate('/quote/summary');
   };
 
