@@ -5324,10 +5324,10 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 | Pontoon use case | Practical Mercury range | HBW note |
 |------------------|------------------------|-----------|
-| 18–20 ft, cruising and fishing | 90 HP Command Thrust | The most common pontoon repower we do. |
+| 18–20 ft two-log, cruising and fishing | 60 HP Command Thrust (hero) or 90 HP CT | Lighter two-log pontoons run great on the 60 CT. |
 | 20–22 ft, family cottage use | 90–115 HP Command Thrust | The sweet spot for Rice Lake pontoons. |
-| 22–24 ft, active water sports | 115–150 HP Command Thrust | Buy enough motor once. |
-| Large tritoon or performance setup | 150 HP and up | Verify hull rating, steering, and transom before quoting. |
+| 22–24 ft, active water sports | 115 HP Command Thrust or 150 HP FourStroke (standard gearcase) | CT tops out at 115; above that, the 150 runs the big gearcase as standard. |
+| Large tritoon or performance setup | 150 HP and up (standard gearcase) | Verify hull rating, steering, and transom before quoting. |
 
 ### 18–20 ft pontoon, cruising and fishing only
 
