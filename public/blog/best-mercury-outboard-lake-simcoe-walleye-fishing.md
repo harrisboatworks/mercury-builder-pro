@@ -38,6 +38,8 @@ language: en-CA
 
 Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots takes real cruise speed. A typical Mercury setup for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling.
 
+A note on geography: we're not on Lake Simcoe. Harris Boat Works is on Rice Lake in the Kawarthas, about an hour east of Simcoe's east shore. Plenty of Simcoe anglers make the drive for repowers and service; this guide is written from that work.
+
 Live pricing on every Mercury we sell is at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ## Lake Simcoe at a glance (the stuff that changes the answer)

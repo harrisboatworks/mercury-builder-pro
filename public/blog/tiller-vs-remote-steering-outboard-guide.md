@@ -220,7 +220,7 @@ For fishing on Rice Lake specifically, tiller is the choice of most serious angl
 
 ### Does Mercury offer electronic or digital tiller steering?
 
-Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury's tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: VesselView Mobile shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
+Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury's tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: SmartCraft Connect Mobile (formerly VesselView Mobile) shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
 
 ### Is hydraulic steering worth it on a Mercury outboard, and what does it cost?
 
