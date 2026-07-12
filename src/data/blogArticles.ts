@@ -8152,7 +8152,7 @@ Common configuration. The main motor uses remote control from the helm; the kick
       },
       {
         question: 'Does Mercury offer electronic or digital tiller steering?',
-        answer: 'Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury\'s tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: VesselView Mobile shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.'
+        answer: 'Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury\'s tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: SmartCraft Connect Mobile (formerly VesselView Mobile) shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.'
       },
       {
         question: 'Is hydraulic steering worth it on a Mercury outboard, and what does it cost?',
@@ -13443,6 +13443,8 @@ The fastest way to know what a Mercury or a full repower costs you per month is 
 
 Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots takes real cruise speed. A typical Mercury setup for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling.
 
+A note on geography: we're not on Lake Simcoe. Harris Boat Works is on Rice Lake in the Kawarthas, about an hour east of Simcoe's east shore. Plenty of Simcoe anglers make the drive for repowers and service; this guide is written from that work.
+
 Live pricing on every Mercury we sell is at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ## Lake Simcoe at a glance (the stuff that changes the answer)
@@ -18204,7 +18206,7 @@ You don't "install SmartCraft." It's already in your motor if it's modern enough
 
 ---
 
-## VesselView Mobile Is Becoming the Mercury Marine App (Summer 2025)
+## SmartCraft Connect Mobile (formerly VesselView Mobile) and the Mercury Marine App (Summer 2025)
 
 Quick history. **VesselView Mobile** has been Mercury's phone app for several years, a Bluetooth module under the cowl talked to your phone, your phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
 
@@ -24307,7 +24309,7 @@ whenInDoubt: If you'll see this boat in five years, the digital path is the chea
 
 Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40-90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
-### SmartCraft Connect (Mercury VesselView Mobile)
+### SmartCraft Connect Mobile (formerly VesselView Mobile)
 
 Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300 to $500 for the module and SmartCraft tach.
 
@@ -25997,7 +25999,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Will a 115 plane my 22 ft pontoon?", answer: "With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is the standard answer for 20-22 ft pontoons. 24 ft and up, you want the 150 V6." },
       { question: "What's the warranty?", answer: "3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live." },
       { question: "Is the 115 fuel injected?", answer: "Yes. All Mercury 115 HP FourStrokes use EFI. Significantly cleaner running and more fuel-efficient than the older OptiMax and two-stroke 115s most of these motors are replacing." },
-      { question: "Does the 115 work with SmartCraft gauges?", answer: "Yes. Full SmartCraft integration is available. NMEA 2000, VesselView mobile, Active Trim. Common upgrade during repower." },
+      { question: "Does the 115 work with SmartCraft gauges?", answer: "Yes. Full SmartCraft integration is available. NMEA 2000, SmartCraft Connect Mobile (formerly VesselView Mobile), Active Trim. Common upgrade during repower." },
       { question: "Can I get a 115 HP in counter-rotation?", answer: "Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because twin 115s are unusual on Rice Lake boats, but available for the right application." },
     ],
     content: `### Quick Answer
@@ -27827,6 +27829,8 @@ Whitby sits in that Durham Region sweet spot, far enough east to have cleared mo
 
 At approximately 45 minutes via the 401 and Highway 115, we're within range of being your regular dealer, not just the place you went once for a big purchase.
 
+We're not in Whitby. Harris Boat Works is in Gores Landing on Rice Lake, about 45 minutes northeast via the 401 and 115. Here's why Whitby boaters make the drive.
+
 ## Why "Regular Dealer" Matters at 45 Minutes
 
 Most GTA boaters treat their dealer relationship as transactional. Buy the motor, maybe get it serviced once, otherwise figure it out yourself.
@@ -28119,7 +28123,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 # Mercury Dealer for Oshawa: We're Basically Durham Region
 
-Oshawa is the closest major city to Rice Lake on the 401 corridor. At approximately 40 minutes northeast via 401 east and Highway 115, you're effectively in our service area, not reaching across it.
+Oshawa is one of the closest major cities to Rice Lake on the 401 corridor. At approximately 40 minutes northeast via 401 east and Highway 115, you're effectively in our service area, not reaching across it.
 
 This isn't a case of asking you to make a meaningful sacrifice for a better dealer. It's acknowledging that Gores Landing is closer than it sounds.
 
@@ -32734,7 +32738,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
       { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
       { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying." },
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
-      { question: "What does an Avator setup cost installed?", answer: "Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+." },
+      { question: "What does an Avator setup cost installed?", answer: "Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153." },
     ],
     content: `## Quick Answer
 
@@ -33299,7 +33303,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
       { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'Only on very small boats: tenders, dinghies, small sailboats, and 12-foot tinnies with light loads. For most fishing boats and any pontoon it works as a kicker, not a main motor.' },
       { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'About 45 minutes at half throttle on the standard 1 kWh pack, and 3 to 5 hours at a slow trolling speed of 1.5 to 2 mph. Dual-battery setups roughly double that runtime. At wide-open throttle, expect under an hour.' },
       { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'Yes, and that is one of its best uses. Silent thrust at slow speed makes it ideal for finesse fishing in shallow weed lines. Pair it with a gas main motor for travel between spots.' },
-      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Including the motor, battery, and mounting, expect roughly $4,500 to $6,500 CAD installed at Harris Boat Works, depending on battery configuration. Pickup only at Gores Landing.' },
+      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153. Pickup only at Gores Landing.' },
       { question: 'What charges the Avator battery?', answer: 'A standard 120V household outlet charges the 1 kWh battery in roughly four hours. Faster chargers are available. Many customers charge overnight at the cottage.' },
       { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Yes. The Avator carries Mercury\'s Limited Warranty, and a promotional coverage extension is usually running. We confirm the exact current terms when we quote you.' },
     ],
@@ -33332,7 +33336,7 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Installed price (CAD) | $4,500 to $6,500 | $1,800 to $2,400 | $2,200 to $2,800 |
+| Installed price (CAD) | Call for current pricing: 905-342-2153 | $1,800 to $2,400 | $2,200 to $2,800 |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Rough gas feel (guide only) | ~3.5 HP gas portable | 3.5 HP | 5 HP |
 
@@ -33355,12 +33359,9 @@ The pairing we rig most on Rice Lake is a Mercury 90 HP FourStroke for getting b
 
 ## What does the Mercury Avator 7.5e cost installed?
 
-Installed pricing at Harris Boat Works runs by battery configuration:
+Avator is built to order through Mercury Canada, and battery count drives the price. For a current number on your setup (single or dual 1 kWh pack, bracket, charging, water test), call for current pricing: 905-342-2153.
 
-- Avator 7.5e plus single 1 kWh battery plus mount: $4,500 to $5,200 CAD
-- Avator 7.5e plus dual 1 kWh batteries plus mount: $5,500 to $6,500 CAD
-
-Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. The deposit is $200 for portable and small-HP motors, and financing is available on approved credit. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
+Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
 
 ## What are the Avator's limitations?
 
@@ -33388,7 +33389,7 @@ About 45 minutes at half throttle on the standard 1 kWh pack, and 3 to 5 hours a
 Yes, and that is one of its best uses. Silent thrust at slow speed makes it ideal for finesse fishing in shallow weed lines. Pair it with a gas main motor for travel between spots.
 
 **How much does the Avator 7.5e cost installed?**
-Including the motor, battery, and mounting, expect roughly $4,500 to $6,500 CAD installed at Harris Boat Works, depending on battery configuration. Pickup only at Gores Landing.
+Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153. Pickup only at Gores Landing.
 
 **What charges the Avator battery?**
 A standard 120V household outlet charges the 1 kWh battery in roughly four hours. Faster chargers are available. Many customers charge overnight at the cottage.
@@ -33742,7 +33743,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
       { question: 'Do I need both a main motor and a trolling motor?', answer: 'If you fish seriously you will want both. The main motor travels between fishing spots. The trolling motor (gasoline kicker or electric) lets you fish quietly without burning the main motor at idle for hours and without putting unnecessary hours on the big powerhead.' },
       { question: 'Should I pair my Mercury main with a bow electric trolling motor or a kicker?', answer: 'Choose a bow electric for shallow-water precision and spot-locking. Choose a kicker for long trolling days, bigger water, heavy chop, and true get-home backup. Many anglers eventually want both.' },
       { question: 'Can the Mercury Avator 7.5e be used as a kicker?', answer: 'Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.' },
-      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker runs roughly $4,500 to $6,500 installed depending on battery setup.' },
+      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.' },
       { question: 'Does the kicker need its own fuel tank?', answer: 'Not usually. We plumb the kicker into the boat\'s main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.' },
       { question: 'Will Harris Boat Works rig both motors together?', answer: 'Yes. We install main and kicker, wire the tie-bar linkage for synchronized steering, integrate the fuel system, and water test the combination on Rice Lake before pickup at Gores Landing.' },
     ],
@@ -33766,7 +33767,7 @@ Three options most Rice Lake customers consider. **All prices reflect 2026 model
 |---|---|---|---|---|---|---|
 | Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | $3,000 to $4,500 | Most fishing boats, all-day trolling, big water |
 | Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
-| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | $4,500 to $6,500 | Silent finesse fishing |
+| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | Call for current pricing: 905-342-2153 | Silent finesse fishing |
 
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
@@ -33828,7 +33829,7 @@ Choose a bow electric for shallow-water precision and spot-locking. Choose a kic
 Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.
 
 **How much does it cost to add a kicker to my repower?**
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker runs roughly $4,500 to $6,500 installed depending on battery setup.
+Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.
 
 **Does the kicker need its own fuel tank?**
 Not usually. We plumb the kicker into the boat's main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.
