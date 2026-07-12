@@ -241,7 +241,7 @@ We have set up a lot of fishing boats over the years, and the same pattern repea
 | Smallmouth & largemouth bass | 17-19 ft fishing boat | 90-115 HP FourStroke or Pro XS + trolling motor |
 | Muskie | 18-21 ft deep-V | 115-150 HP + 9.9 ProKicker |
 | Tournament bass | 19-21 ft bass boat | Pro XS V8 (200-250 HP) |
-| Family / mixed use | 16-18 ft aluminum console | 90-115 HP FourStroke (Command Thrust for heavy loads) |
+| Family / mixed use | 16-18 ft aluminum console | 90-115 HP FourStroke (standard gearcase; CT is a pontoon and workboat gearcase, not for V-hulls) |
 
 ### Best fit: Walleye Trolling
 
@@ -263,7 +263,7 @@ A 19-21 ft bass boat with a Mercury Pro XS V8 (200-250 HP). Maximum acceleration
 
 ### Best fit: Family and Mixed Use
 
-A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke, [Command Thrust](/blog/mercury-command-thrust-guide-pontoon-boats) gearcase for heavier loads. Full crew, full gear, a slower pace, some bluegill and crappie casting mixed in with walleye trolling. The FourStroke is quiet and efficient. The Command Thrust gearcase makes a real, noticeable difference when you consistently run a fully loaded boat. For heavy-use family fishing, it earns its place.
+A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke on the standard gearcase. Full crew, full gear, a slower pace, some bluegill and crappie casting mixed in with walleye trolling. The FourStroke is quiet and efficient. Command Thrust is a pontoon and workboat gearcase; on a V-hull it just adds drag, so we spec standard gearcase here and use a [9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) if you want more low-speed trolling control.. The Command Thrust gearcase makes a real, noticeable difference when you consistently run a fully loaded boat. For heavy-use family fishing, it earns its place.
 
 ---
 

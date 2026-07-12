@@ -92,15 +92,15 @@ This is the decision that anchors everything else.
 
 1. **How many people are regularly aboard?** Two anglers and gear is a different load than a family of five and a cooler.
 2. **What water do you run?** A calm cottage lake, the open south end of Rice Lake in an afternoon wind, and the Trent-Severn main channel in October are three different answers.
-3. **Are you trolling or running?** Walleye trolling and slow panfishing want control at low speed, which points toward a Command Thrust gearcase and often a [9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide). Running hard and planing fast points toward more top-end horsepower.
+3. **Are you trolling or running?** Walleye trolling and slow panfishing want control at low speed, which points toward a [9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) on the main motor's transom (the ProKicker CT gearcase is a legitimate trolling-motor configuration). Running hard and planing fast points toward more top-end horsepower on a standard gearcase.
 
 ### Motor Recommendations by Hull Type
 
 | Hull | HP range | HBW recommendation |
 |---|---|---|
-| 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, Command Thrust if consistently loaded |
+| 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
-| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke with Command Thrust |
+| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (CT is a pontoon and workboat gearcase, not for V-hulls) |
 | 18-22 ft pontoon | 90-150 HP | Mercury 115-150 Command Thrust, pontoon thrust needs are real |
 | 19-21 ft bass or tournament boat | 150-250 HP | Mercury FourStroke for real-world use, Pro XS if you run tournaments |
 | 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 Command Thrust |

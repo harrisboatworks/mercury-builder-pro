@@ -76,16 +76,16 @@ Customers switch from standard-gearcase pontoon setups to Command Thrust and not
 - 18–24 ft pontoons (most pontoon repowers we do at HBW)
 - Tritoons and party pontoons
 - Heavy fishing rigs with full gear, dual livewells, heavy electronics
-- Large centre consoles and deep-V hulls in the 22–28 ft range
+- Heavy commercial workboats, charters, and water taxis (Mercury SeaPro CT territory)
 - Any boat used for water sports where hole shot matters
 
 **Clear no:**
 - Small aluminum tin boats (12–16 ft), too light; the gearcase advantage is wasted and you give up top speed
-- Tournament bass boats, the Command Thrust ratio costs too much top speed
+- Tournament bass boats and any planing V-hull, CT is a pontoon and workboat gearcase and on a V-hull it just adds drag
 - Light recreational runabouts under 18 ft, standard gearcase is plenty
 
 **Assess case by case:**
-- 17–19 ft aluminum console fishing boats, standard gearcase is fine for most; Command Thrust helps on heavier hulls with full gear
+- 17–19 ft aluminum console fishing boats, standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on a V-hull, even loaded)
 - 20 ft fibreglass runabouts, depends on use case
 
 We make this call per boat at HBW. The right answer depends on the specific hull and how you use it.
@@ -154,7 +154,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). Or call **9
 
 ### What is Mercury Command Thrust?
 
-Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for heavy boats (pontoons, work boats, heavy fishing rigs).
+Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull it just adds drag, so we do not recommend it there.
 
 ### Do I need Command Thrust on a pontoon?
 

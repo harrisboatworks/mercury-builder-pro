@@ -84,7 +84,7 @@ rightCriteria:
   - Top end of roughly 50–58 mph depending on hull
 rightOutcome: Sweet spot for most Kawartha anglers
 rightVariant: recommended
-whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6. If you're regularly running heavy and three-up, look at Command Thrust.
+whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
 ::
 
 The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tournament boats, or anglers who run the Trent-Severn at speed. The 300 is V8, heaviest, fastest, and most expensive to operate. If that's the boat you fish, you already know it. If you're not sure, you probably don't need it.
@@ -93,13 +93,11 @@ The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tourn
 
 ## Command Thrust on Pro XS
 
-Command Thrust isn't a different motor, it's a different gearcase. Bigger gearcase, lower gear ratio, bigger prop. The motor can swing more wheel without losing RPM.
+Short version: not on a V-hull. Command Thrust is a pontoon and workboat gearcase. On a planing V-hull angler or bass boat it just adds drag and costs top-end speed with no meaningful benefit, even when the boat is loaded three-up with a full livewell, tackle, and electronics.
 
-On a heavily loaded angler boat, three fishermen, full livewell, full fuel, tackle, electronics, Command Thrust meaningfully improves hole-shot and low-speed on-plane control. The boat gets up faster, stays on plane at slower speeds, and feels more planted in chop.
+Other dealers commonly mis-rig V-hulls with CT claiming "more torque"; our position is that this is a mistake. Standard gearcase Pro XS is the right call for Rice Lake and Kawartha angler boats.
 
-If you fish two-up or three-up regularly, or if your hull is on the heavier end of its rating, Command Thrust is usually worth it. If you fish solo on a light hull and care most about top end, standard gearcase Pro XS is often the better match.
-
-Availability varies by HP and model year. Check the current Mercury lineup or ask us, we'll tell you whether Command Thrust is available for the configuration you want and whether it makes sense for your boat.
+If you want more low-speed control for trolling, that's what a 9.9 or 15 HP ProKicker is for (the ProKicker CT gearcase is a legitimate trolling-motor configuration). Pro XS CT itself only makes sense on the narrow pontoon/workboat applications the CT gearcase was engineered for, and even there it's a niche pick.
 
 ---
 
@@ -126,7 +124,7 @@ Different Kawartha water rewards different things:
 - **Rice Lake:** weed lines and shallow flats. Hole-shot dominates. You're up-and-over, not flat-out. **Pro XS shines.**
 - **Stoney, Buckhorn, Pigeon:** bigger water, longer spot-to-spot runs. Top-end matters more. **Pro XS V6 in the 200–225 range is the sweet spot.**
 - **Trent-Severn cruising:** lock-to-lock running with fuel range as a constraint. Top-end and fuel range both matter. **A 200 or 225 Pro XS sized to your hull is hard to beat.**
-- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up, Command Thrust if available.**
+- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up on the standard gearcase.**
 
 Match the HP to the water you actually fish, not the water you fished once on a road trip.
 
@@ -215,7 +213,7 @@ It depends on HP, rigging, and what's reusable on your boat. As a planning range
 
 ### Do I need Command Thrust on my Pro XS?
 
-Command Thrust adds a bigger gearcase, a lower gear ratio, and a bigger prop. On a heavily loaded angler boat, three fishermen, full livewell, full fuel, gear, Command Thrust meaningfully improves hole-shot and on-plane control at low speed. If you regularly fish two-up or three-up, or if you run a heavier hull, it's usually worth the upgrade. If you fish solo on a light bass boat and care most about top-end, standard gearcase Pro XS is often the better match. Availability varies by HP and model year, check current Mercury lineup for the exact configurations.
+No. Pro XS is a performance motor for planing V-hull bass and angler boats, and Command Thrust is a pontoon and workboat gearcase. On a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even loaded three-up with a full livewell. Standard gearcase Pro XS is the right call for Rice Lake and Kawartha angler boats. If you want more low-speed trolling control, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration).
 
 ### How long does a Pro XS repower take at HBW?
 

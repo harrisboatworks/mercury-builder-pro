@@ -1771,9 +1771,9 @@ Different hulls, different answers. The honest matrix:
 |---|---|---|
 | Pontoon (any size, 20+ ft twin tube) | **Yes, strong fit** | Heavy load, want hole shot |
 | Tritoon (any HP class) | **Yes, almost always** | Third tube adds weight + drag |
-| Aluminum deep-V fishing boat (heavy load) | **Yes, often** | CT on Pro XS for offshore guides |
+| Aluminum deep-V fishing boat | **No, standard gearcase** | CT is a pontoon and workboat gearcase; on a V-hull it just adds drag |
 | Fiberglass bass boat | **No, save the money** | Top speed matters, mechanical not engineered for it |
-| Center console offshore (Mercury Pro XS CT) | **Yes, for loaded offshore work** | Heavier loads + reverse thrust at the dock |
+| Center console (V-hull) | **No, standard gearcase** | CT is a pontoon and workboat gearcase; on a V-hull it just adds drag |
 | Commercial workboat / charter / water taxi | **Yes** | Mercury SeaPro CT exists for this exact use case |
 | Kicker motor (trolling) | **Yes, 9.9/15/25 HP ProKicker CT** | Slow-speed control + alternator output |
 | Light 14-16 ft cruising boat | **No, save the money** | Standard gearcase is faster and lighter |
@@ -1794,7 +1794,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, aluminum deep-V |
+| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, workboats |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
@@ -1802,7 +1802,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 
 ### Mercury Pro XS Command Thrust
 
-Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. Used where you want Pro XS aggression on heavier loads, often on bass-style aluminum hulls running guide-trip weight.
+Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
 
 ### Mercury SeaPro Command Thrust
 
@@ -1824,15 +1824,14 @@ For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon elig
 
 ### Aluminum deep-V fishing boats
 
-Big Lund, Princecraft, StarCraft, and similar. Heavy load with 4 anglers + gear + livewell + 2 batteries + 20-gallon fuel can put a 17 ft aluminum at displacement weight more often than buyers realize.
+Big Lund, Princecraft, StarCraft, and similar. On a planing V-hull, standard gearcase is the right call. CT is a pontoon and workboat gearcase; on a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even when the boat is loaded with 4 anglers, gear, livewell, and full fuel. Other dealers commonly mis-rig V-hulls with CT claiming "more torque"; our position is that this is a mistake.
 
-- 75 HP CT or 90 HP CT on heavier deep-Vs in the 17-19 ft range is a solid call.
-- Pro XS 115 CT is the upgrade for guides running 5-6 anglers daily.
-- Standard gearcase still wins on light 14-16 ft aluminums used for solo or two-person fishing.
+- Standard gearcase across the 14-19 ft range, solo or crewed.
+- If you want more low-speed thrust for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration).
 
 ### Fiberglass center consoles + offshore
 
-Mercury Pro XS CT (115-150 range) shows up most often on offshore-style center consoles running heavy. Less common in Ontario than on the Atlantic and Pacific coasts, but the use case is real for any boat that runs full bait wells + 4-5 anglers + multiple cooler weight.
+Standard gearcase. Center console V-hulls are planing boats; CT is a pontoon and workboat gearcase and on a V-hull it just adds drag. Full bait wells and 4-5 anglers don't change that. Match HP to the hull's capacity plate and stay with the standard gearcase.
 
 ### Kicker motors (the ProKicker CT story)
 
@@ -5076,7 +5075,7 @@ whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip
 
 We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
 
-The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or skipping Command Thrust on heavier hulls. Fix any one of those and the boat performs noticeably better than before.
+The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or over-speccing Command Thrust on a V-hull where it doesn't belong. Fix any one of those and the boat performs noticeably better than before.
 
 Here's how to think through each decision.
 
@@ -5148,8 +5147,8 @@ heading: Common mistakes on aluminum fishing boat repowers
   rebuttal: Two seasons later, they wish they'd bought it. Buy it once.
 - claim: Wrong prop.
   rebuttal: A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
-- claim: Skipping Command Thrust on heavier hulls.
-  rebuttal: On 18-20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
+- claim: You need Command Thrust on a heavier aluminum V-hull.
+  rebuttal: CT is a pontoon and workboat gearcase; on a V-hull it just adds drag. Standard gearcase is the right call on 14-20 ft aluminum fishing boats, loaded or not.
 - claim: Buying Pro XS when FourStroke would do.
   rebuttal: Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
 :::
@@ -5175,7 +5174,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricin
 
 ## What we see at HBW
 
-The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI Command Thrust is our top recommendation for 17-footers carrying 3-4 people and gear.
+The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI (standard gearcase) is our top recommendation for 17-footers carrying 3-4 people and gear; CT is a pontoon and workboat gearcase and on a V-hull it just adds drag.
 
 Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's max HP plate. Always check the capacity plate before quoting the repower -- the most common rejection at the shop is "owner wants a 90 on a hull rated for 60."
 
@@ -5199,7 +5198,7 @@ For serious fishing on Rice Lake or Kawartha lakes, yes, it's the standard setup
 For typical recreational use, 90 to 115 HP FourStroke. For bigger-water use or tournament-level performance, 115 to 150 Pro XS. Pair with a 9.9 ProKicker for trolling.
 
 **Should I get Command Thrust on a fishing boat?**
-On heavier deep-V aluminum hulls 18 feet and up, Command Thrust gives meaningful hole-shot and load-carrying improvement. On lighter standard-V hulls under 18 feet, the standard gearcase is fine. We assess this per boat.
+No. CT is a pontoon and workboat gearcase; on a V-hull it just adds drag and costs top-end speed with no meaningful benefit. Standard gearcase is the right call on aluminum fishing boats, loaded or not. (The ProKicker CT trolling motor is a separate, legitimate configuration.)
 
 **Can I use a kicker as my main motor?**
 On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.
@@ -5217,7 +5216,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Should I get Command Thrust on my Mercury outboard?',
-        answer: 'If you fish anywhere with shallow water, weeds, or soft bottom, yes. The Command Thrust larger gearcase runs shallower than standard lower units, provides more thrust at trolling speeds, and handles prop fouling in weeds better. On Ontario lakes with weedy bays, which describes most lakes around Rice Lake and the Kawarthas. Command Thrust is the practical choice even at a modest price premium. Available on Mercury motors from 9.9HP (the ProKicker) through 115HP. The main exception is deep clear lakes where you never fish in the weeds.'
+        answer: 'On an aluminum V-hull fishing boat, no. Command Thrust is a pontoon and workboat gearcase; on a planing V-hull it just adds drag and costs top-end speed with no meaningful benefit, even in weedy shallow water. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.'
       },
       {
         question: 'What shaft length do I need for an aluminum fishing boat?',
@@ -5225,7 +5224,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does it cost to power an aluminum fishing boat in Ontario in 2026?',
-        answer: 'For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP Command Thrust FourStroke runs approximately $12,000-$14,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures. Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.'
+        answer: 'For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.'
       },
       {
         question: 'Is EFI worth it over a carbureted motor on an aluminum fishing boat?',
@@ -5237,7 +5236,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What\'s the best Mercury outboard for a Lund 1675 in Ontario?',
-        answer: 'The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For primarily calm inland lake fishing, the Mercury 60HP Command Thrust is a strong alternative, slightly less top-end but better for shallow bays and weed fishing. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.'
+        answer: 'The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For lighter use on calm inland lakes, the standard-gearcase Mercury 60HP is a solid alternative (CT is a pontoon and workboat gearcase and is not recommended on a V-hull like the Lund 1675). The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.'
       }
     ]
   },
@@ -5570,16 +5569,16 @@ Customers switch from standard-gearcase pontoon setups to Command Thrust and not
 - 18–24 ft pontoons (most pontoon repowers we do at HBW)
 - Tritoons and party pontoons
 - Heavy fishing rigs with full gear, dual livewells, heavy electronics
-- Large centre consoles and deep-V hulls in the 22–28 ft range
+- Heavy commercial workboats, charters, and water taxis (Mercury SeaPro CT territory)
 - Any boat used for water sports where hole shot matters
 
 **Clear no:**
 - Small aluminum tin boats (12–16 ft), too light; the gearcase advantage is wasted and you give up top speed
-- Tournament bass boats, the Command Thrust ratio costs too much top speed
+- Tournament bass boats and any planing V-hull, CT is a pontoon and workboat gearcase and on a V-hull it just adds drag
 - Light recreational runabouts under 18 ft, standard gearcase is plenty
 
 **Assess case by case:**
-- 17–19 ft aluminum console fishing boats, standard gearcase is fine for most; Command Thrust helps on heavier hulls with full gear
+- 17–19 ft aluminum console fishing boats, standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on a V-hull, even loaded)
 - 20 ft fibreglass runabouts, depends on use case
 
 We make this call per boat at HBW. The right answer depends on the specific hull and how you use it.
@@ -5658,7 +5657,7 @@ Slightly, the torque-tuned ratio trades some top end for hole shot and pulling p
 On heavy boats running at lower cruise speeds, yes. The lower cruise speed lets the motor run at more efficient RPM. On lighter, faster boats the effect is less clear.
 
 **Should I get Command Thrust on a fishing boat?**
-On aluminum console fishing boats under 18 ft, standard gearcase is usually fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
+No. CT is a pontoon and workboat gearcase; on an aluminum or fiberglass V-hull fishing boat it just adds drag and costs top-end speed with no meaningful benefit, loaded or not. Standard gearcase is the right call.
 
 **Is Command Thrust the same as SeaPro?**
 No. SeaPro is a Mercury motor family built for commercial-duty cycles. Command Thrust is a gearcase option available on recreational FourStroke motors.
@@ -5675,7 +5674,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'What is Mercury Command Thrust?',
-        answer: 'Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for heavy boats (pontoons, work boats, heavy fishing rigs).'
+        answer: 'Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase nose, larger prop, and torque-tuned gear ratio designed for pontoons and workboats. On a planing V-hull it just adds drag, so we do not recommend it there.'
       },
       {
         question: 'Do I need Command Thrust on a pontoon?',
@@ -6531,7 +6530,7 @@ We have set up a lot of fishing boats over the years, and the same pattern repea
 | Smallmouth & largemouth bass | 17-19 ft fishing boat | 90-115 HP FourStroke or Pro XS + trolling motor |
 | Muskie | 18-21 ft deep-V | 115-150 HP + 9.9 ProKicker |
 | Tournament bass | 19-21 ft bass boat | Pro XS V8 (200-250 HP) |
-| Family / mixed use | 16-18 ft aluminum console | 90-115 HP FourStroke (Command Thrust for heavy loads) |
+| Family / mixed use | 16-18 ft aluminum console | 90-115 HP FourStroke (standard gearcase; CT is a pontoon and workboat gearcase, not for V-hulls) |
 
 ### Best fit: Walleye Trolling
 
@@ -6553,7 +6552,7 @@ A 19-21 ft bass boat with a Mercury Pro XS V8 (200-250 HP). Maximum acceleration
 
 ### Best fit: Family and Mixed Use
 
-A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke, [Command Thrust](/blog/mercury-command-thrust-guide-pontoon-boats) gearcase for heavier loads. Full crew, full gear, a slower pace, some bluegill and crappie casting mixed in with walleye trolling. The FourStroke is quiet and efficient. The Command Thrust gearcase makes a real, noticeable difference when you consistently run a fully loaded boat. For heavy-use family fishing, it earns its place.
+A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke on the standard gearcase. Full crew, full gear, a slower pace, some bluegill and crappie casting mixed in with walleye trolling. The FourStroke is quiet and efficient. Command Thrust is a pontoon and workboat gearcase; on a V-hull it just adds drag, so we spec standard gearcase here and use a [9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) if you want more low-speed trolling control.. The Command Thrust gearcase makes a real, noticeable difference when you consistently run a fully loaded boat. For heavy-use family fishing, it earns its place.
 
 ---
 
@@ -6752,15 +6751,15 @@ This is the decision that anchors everything else.
 
 1. **How many people are regularly aboard?** Two anglers and gear is a different load than a family of five and a cooler.
 2. **What water do you run?** A calm cottage lake, the open south end of Rice Lake in an afternoon wind, and the Trent-Severn main channel in October are three different answers.
-3. **Are you trolling or running?** Walleye trolling and slow panfishing want control at low speed, which points toward a Command Thrust gearcase and often a [9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide). Running hard and planing fast points toward more top-end horsepower.
+3. **Are you trolling or running?** Walleye trolling and slow panfishing want control at low speed, which points toward a [9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) on the main motor's transom (the ProKicker CT gearcase is a legitimate trolling-motor configuration). Running hard and planing fast points toward more top-end horsepower on a standard gearcase.
 
 ### Motor Recommendations by Hull Type
 
 | Hull | HP range | HBW recommendation |
 |---|---|---|
-| 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, Command Thrust if consistently loaded |
+| 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
-| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke with Command Thrust |
+| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (CT is a pontoon and workboat gearcase, not for V-hulls) |
 | 18-22 ft pontoon | 90-150 HP | Mercury 115-150 Command Thrust, pontoon thrust needs are real |
 | 19-21 ft bass or tournament boat | 150-250 HP | Mercury FourStroke for real-world use, Pro XS if you run tournaments |
 | 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 Command Thrust |
@@ -7981,7 +7980,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
-| Rice Lake pick | 60 HP EFI Command Thrust tiller; ProKicker 9.9 | 90-115 HP remote |
+| Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
 ## The simple version
@@ -8160,7 +8159,7 @@ Common configuration. The main motor uses remote control from the helm; the kick
       },
       {
         question: 'Which Mercury tiller motor is best for a 16-foot aluminum boat on a Kawartha lake?',
-        answer: 'For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI Command Thrust in tiller is the most popular choice. The Command Thrust version has higher prop thrust than the standard 60HP, which helps get heavier loads on plane quickly, useful when carrying two or three people plus gear. It also handles the variable conditions on Kawartha lakes well: enough power for open-water runs, manageable at slow speed in the weeds, and reliable EFI cold-starts every morning.'
+        answer: 'For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI FourStroke in tiller (standard gearcase) is the most popular choice. It has plenty of power for two or three people plus gear, handles the variable conditions on Kawartha lakes well, and gives you reliable EFI cold-starts every morning. We do not spec Command Thrust here: CT is a pontoon and workboat gearcase and on a V-hull fishing boat it just adds drag with no meaningful benefit. If you want more low-speed control for trolling, add a 9.9 HP ProKicker.'
       }
     ]
   },
@@ -30070,7 +30069,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "Do I need Command Thrust on my Pro XS?",
-        answer: "Command Thrust adds a bigger gearcase, a lower gear ratio, and a bigger prop. On a heavily loaded angler boat, three fishermen, full livewell, full fuel, gear, Command Thrust meaningfully improves hole-shot and on-plane control at low speed. If you regularly fish two-up or three-up, or if you run a heavier hull, it's usually worth the upgrade. If you fish solo on a light bass boat and care most about top-end, standard gearcase Pro XS is often the better match. Availability varies by HP and model year, check current Mercury lineup for the exact configurations."
+        answer: "No. Pro XS is a performance motor for planing V-hull bass and angler boats, and Command Thrust is a pontoon and workboat gearcase. On a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even loaded three-up with a full livewell. Standard gearcase Pro XS is the right call for Rice Lake and Kawartha angler boats. If you want more low-speed trolling control, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration)."
       },
       {
         question: "How long does a Pro XS repower take at HBW?",
@@ -30145,7 +30144,7 @@ rightCriteria:
   - Top end of roughly 50–58 mph depending on hull
 rightOutcome: Sweet spot for most Kawartha anglers
 rightVariant: recommended
-whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6. If you're regularly running heavy and three-up, look at Command Thrust.
+whenInDoubt: Most Rice Lake and Kawartha anglers land on a 200 or 225 Pro XS V6 with the standard gearcase.
 ::
 
 The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tournament boats, or anglers who run the Trent-Severn at speed. The 300 is V8, heaviest, fastest, and most expensive to operate. If that's the boat you fish, you already know it. If you're not sure, you probably don't need it.
@@ -30154,13 +30153,11 @@ The 250 and 300 Pro XS belong on 20–22 ft tournament rigs, multi-species tourn
 
 ## Command Thrust on Pro XS
 
-Command Thrust isn't a different motor, it's a different gearcase. Bigger gearcase, lower gear ratio, bigger prop. The motor can swing more wheel without losing RPM.
+Short version: not on a V-hull. Command Thrust is a pontoon and workboat gearcase. On a planing V-hull angler or bass boat it just adds drag and costs top-end speed with no meaningful benefit, even when the boat is loaded three-up with a full livewell, tackle, and electronics.
 
-On a heavily loaded angler boat, three fishermen, full livewell, full fuel, tackle, electronics, Command Thrust meaningfully improves hole-shot and low-speed on-plane control. The boat gets up faster, stays on plane at slower speeds, and feels more planted in chop.
+Other dealers commonly mis-rig V-hulls with CT claiming "more torque"; our position is that this is a mistake. Standard gearcase Pro XS is the right call for Rice Lake and Kawartha angler boats.
 
-If you fish two-up or three-up regularly, or if your hull is on the heavier end of its rating, Command Thrust is usually worth it. If you fish solo on a light hull and care most about top end, standard gearcase Pro XS is often the better match.
-
-Availability varies by HP and model year. Check the current Mercury lineup or ask us, we'll tell you whether Command Thrust is available for the configuration you want and whether it makes sense for your boat.
+If you want more low-speed control for trolling, that's what a 9.9 or 15 HP ProKicker is for (the ProKicker CT gearcase is a legitimate trolling-motor configuration). Pro XS CT itself only makes sense on the narrow pontoon/workboat applications the CT gearcase was engineered for, and even there it's a niche pick.
 
 ---
 
@@ -30187,7 +30184,7 @@ Different Kawartha water rewards different things:
 - **Rice Lake:** weed lines and shallow flats. Hole-shot dominates. You're up-and-over, not flat-out. **Pro XS shines.**
 - **Stoney, Buckhorn, Pigeon:** bigger water, longer spot-to-spot runs. Top-end matters more. **Pro XS V6 in the 200–225 range is the sweet spot.**
 - **Trent-Severn cruising:** lock-to-lock running with fuel range as a constraint. Top-end and fuel range both matter. **A 200 or 225 Pro XS sized to your hull is hard to beat.**
-- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up, Command Thrust if available.**
+- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up on the standard gearcase.**
 
 Match the HP to the water you actually fish, not the water you fished once on a road trip.
 
