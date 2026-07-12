@@ -13222,7 +13222,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
-    dateModified: '2026-05-31',
+    dateModified: '2026-07-12',
     category: 'Repower Cost & Pricing',
     readTime: '12 min read',
     keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
