@@ -7263,7 +7263,7 @@ Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a ful
 
 **5. Cruise speed selection**
 
-Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500, 4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
+Modern Mercury FourStrokes have a cruise efficiency sweet spot, typically somewhere in the 3,500-4,500 RPM range, but this varies by motor and hull. Running above or below that band costs efficiency. The right approach is to identify your motor's best cruise RPM (your dealer or owner's manual can help), and aim for it.
 
 ---
 
@@ -7307,9 +7307,9 @@ Real-world fuel consumption depends on hull design, load, prop selection, mounti
 
 | Application | Typical fuel consumption range at cruise |
 |---|---|
-| Small aluminum with 25, 40 HP FourStroke | 2.5, 4.5 L/hr at cruise |
-| Mid-size aluminum with 60, 90 HP FourStroke | 5, 10 L/hr at cruise |
-| Fiberglass runabout with 115, 150 HP FourStroke | 10, 18 L/hr at cruise |
+| Small aluminum with 25-40 HP FourStroke | 2.5-4.5 L/hr at cruise |
+| Mid-size aluminum with 60-90 HP FourStroke | 5-10 L/hr at cruise |
+| Fiberglass runabout with 115-150 HP FourStroke | 10-18 L/hr at cruise |
 | Larger boats with 200+ HP | Highly variable; setup-dependent |
 
 If your fuel burn is significantly above these ranges for your setup, prop pitch, trim, or hull condition is the first place to look.
@@ -10498,7 +10498,7 @@ Honest version: the right month to buy is the month you actually need the boat o
 
 ## Quick Answer
 
-For most family runabouts in the 17, 20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -10535,11 +10535,11 @@ We've rigged and repowered family runabouts on Rice Lake and the Kawarthas for a
 
 | Boat Length | Recommended Mercury | Why |
 |---|---|---|
-| 16, 17 ft | 90 HP FourStroke | Sweet spot for light family use. Quiet, efficient, planes easily. |
-| 17, 18 ft | 115 HP FourStroke | More headroom for full crew and gear. Our most popular family pick. |
-| 18, 19 ft | 150 HP FourStroke | Real watersports capability. Planes with six on board. |
-| 19, 21 ft | 175, 200 HP V6 | Bigger boats want V6 power. Pro XS option for towing. |
-| 21, 22 ft | 200, 250 HP V6 | Premium tier. Watersports, big crew, longer runs. |
+| 16-17 ft | 90 HP FourStroke | Sweet spot for light family use. Quiet, efficient, planes easily. |
+| 17-18 ft | 115 HP FourStroke | More headroom for full crew and gear. Our most popular family pick. |
+| 18-19 ft | 150 HP FourStroke | Real watersports capability. Planes with six on board. |
+| 19-21 ft | 175-200 HP V6 | Bigger boats want V6 power. Pro XS option for towing. |
+| 21-22 ft | 200-250 HP V6 | Premium tier. Watersports, big crew, longer runs. |
 
 If your situation isn't on this list, the chart doesn't settle it anyway. The right answer comes from a conversation. Call us.
 
@@ -10549,7 +10549,7 @@ Mercury makes two flavours at most horsepower ratings: **FourStroke** (the stand
 
 **FourStroke is quieter.** Conversation-quiet at cruise. Pro XS has a sportier exhaust note that sounds great for five minutes and gets old over a six-hour day with kids in the boat.
 
-**FourStroke gets better fuel economy.** Roughly 10 to 15% better at typical family cruise (3,500, 4,200 RPM). On a long day pulling skiers and tubes, that's real money.
+**FourStroke gets better fuel economy.** Roughly 10 to 15% better at typical family cruise (3,500-4,200 RPM). On a long day pulling skiers and tubes, that's real money.
 
 **FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end. The FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
@@ -10573,7 +10573,7 @@ Don't over-power either. A boat rated 150 HP max doesn't need a 200 HP motor. It
 
 ### Fuel Math at Family Cruise
 
-Real Mercury fuel consumption at typical family cruise speeds (3,500, 4,200 RPM):
+Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 | Motor | At Cruise | At WOT |
 |---|---|---|
@@ -12559,7 +12559,7 @@ If your motor falls outside current eligibility criteria, the upgrade is not ava
 In theory, yes, it is a software calibration and Mercury has the tools to modify software-based updates. Mercury has not published a standard reversal procedure. In practice, the improvement is consistently viewed as positive, it changes only the mid-range band, not cruise or wide-open-throttle behavior.
 
 **How do I know if my FourStroke qualifies?** 
-FourStroke models in the 175, 300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. The factory-installed version comes pre-loaded on new FourStroke 175, 200, 250, 300 HP, Pro XS 175, 200, 225, 250, 300 HP, and Verado 250, 300, 350 HP models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
+FourStroke models in the 175-300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. The factory-installed version comes pre-loaded on new FourStroke 175, 200, 250, 300 HP, Pro XS 175, 200, 225, 250, 300 HP, and Verado 250, 300, 350 HP models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
 
 **Is Boost worth it on Rice Lake?** 
 If your eligible engine already feels responsive with a light load, the improvement will be subtler. If you routinely run heavy, full pontoon, loaded family bowrider, anything where the hole-shot feels sluggish, Boost is one of the most cost-effective upgrades available. It costs a fraction of a new motor and requires no hardware.
@@ -14403,11 +14403,11 @@ From smallest to largest, with what each class actually powers:
 
 | HP Class | Common Models | What It Powers | Install Type |
 |---|---|---|---|
-| 2.5, 6 HP portable | 2.5 MH, 3.5 MH, 4 MH, 5 MH, 6 MH | Tenders, dinghies, small inflatables, kicker | Drop-in tiller, no rigging |
-| 8, 20 HP tiller | 8 EFI, 9.9 MH/EH/ProKicker, 15 MH, 20 MH | Small aluminum (12, 14 ft), kicker | Drop-in tiller, no rigging |
-| 25, 60 HP | 25 EFI, 40 ELHPT, 50 ELHPT, 60 ELHPT | 14, 16 ft aluminum, small consoles | Remote-control install with rigging |
-| 90, 115 HP | 90 EXLPT, 115 EXLPT FourStroke / Pro XS | 16, 19 ft aluminum, fishing boats, small pontoons | Full repower with rigging |
-| 150, 200 HP | 150 ELPT FourStroke, 175/200 Pro XS | 18, 22 ft pontoons, runabouts | Full repower with hydraulic steering |
+| 2.5-6 HP portable | 2.5 MH, 3.5 MH, 4 MH, 5 MH, 6 MH | Tenders, dinghies, small inflatables, kicker | Drop-in tiller, no rigging |
+| 8-20 HP tiller | 8 EFI, 9.9 MH/EH/ProKicker, 15 MH, 20 MH | Small aluminum (12-14 ft), kicker | Drop-in tiller, no rigging |
+| 25-60 HP | 25 EFI, 40 ELHPT, 50 ELHPT, 60 ELHPT | 14-16 ft aluminum, small consoles | Remote-control install with rigging |
+| 90-115 HP | 90 EXLPT, 115 EXLPT FourStroke / Pro XS | 16-19 ft aluminum, fishing boats, small pontoons | Full repower with rigging |
+| 150-200 HP | 150 ELPT FourStroke, 175/200 Pro XS | 18-22 ft pontoons, runabouts | Full repower with hydraulic steering |
 
 Tiller motors 20 HP and under are essentially drop-in installs. The motor is the whole purchase, no rigging, no controls, no extras.
 
@@ -14419,7 +14419,7 @@ For specific pricing on each model, build a quote at [mercuryrepower.ca](https:/
 
 Six things determine where your real floor is:
 
-**Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25, 40 HP if you want to plane.
+**Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25-40 HP if you want to plane.
 
 **Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people or pulling a tube.
 
@@ -14457,15 +14457,15 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Real situations where the smallest Mercury is genuinely the perfect call:
 
-- **Tender or dinghy off a sailboat or cruiser.** A 2.5, 6 HP portable does the job and stows easily.
+- **Tender or dinghy off a sailboat or cruiser.** A 2.5-6 HP portable does the job and stows easily.
 - **Kicker on a fishing or pontoon boat.** A 9.9 ProKicker is the standard answer for trolling speed control. No point in more HP than you need for slow fishing passes.
-- **Solo low-speed fishing on small, sheltered water.** A 9.9, 15 HP on a 12, 14 ft aluminum on sheltered water is a perfectly legitimate setup.
+- **Solo low-speed fishing on small, sheltered water.** A 9.9-15 HP on a 12-14 ft aluminum on sheltered water is a perfectly legitimate setup.
 
 ### When the Cheapest Mercury Is NOT the Right Answer
 
 **Heavy hull or fiberglass runabout.** Needs real power to plane.
 
-**Family use with passengers and gear.** Add 200, 400 lbs of crew weight to whatever the dry boat needs.
+**Family use with passengers and gear.** Add 200-400 lbs of crew weight to whatever the dry boat needs.
 
 **Rough water.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor can't punch back through.
 
@@ -15699,18 +15699,18 @@ For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 
 | Scenario | Cost (CAD, before HST) |
 |---|---|
-| 90, 115 HP repower on existing hull | $17,000 to $22,000 |
-| 150, 200 HP repower on existing hull | $23,000 to $36,000 |
-| 250, 300 HP repower on existing hull | $35,000 to $40,000 |
-| New comparable aluminum package (90, 115 HP) | $50,000 to $70,000 |
-| New comparable fiberglass package (150, 200 HP) | $65,000 to $90,000 |
-| New comparable pontoon package (115, 150 HP) | $55,000 to $75,000 |
+| 90-115 HP repower on existing hull | $17,000 to $22,000 |
+| 150-200 HP repower on existing hull | $23,000 to $36,000 |
+| 250-300 HP repower on existing hull | $35,000 to $40,000 |
+| New comparable aluminum package (90-115 HP) | $50,000 to $70,000 |
+| New comparable fiberglass package (150-200 HP) | $65,000 to $90,000 |
+| New comparable pontoon package (115-150 HP) | $55,000 to $75,000 |
 
 The repower path typically saves $25,000 to $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
 ### When to Repower, The Clear Yes
 
-- **Hull is 5, 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left.
+- **Hull is 5-20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left.
 - **Existing seats, helm, and electronics still work or are fixable.** A motor swap doesn't require replacing the whole boat.
 - **The hull fits your use case.** A 16 ft aluminum console for Rice Lake fishing is the right tool. A new 16 ft aluminum console won't feel different on the water.
 - **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20 years are usually boats they love.
@@ -15733,7 +15733,7 @@ Some hulls fall between clear yes and clear no:
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 - **Older fiberglass with cosmetic issues but solid structure.** Repower works; plan a cosmetic refresh during the same shop visit.
-- **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10, 15 years cost-effectively.
+- **Aluminum hulls with minor soft spots in the floor or transom.** A partial floor or transom repair as part of the repower sometimes extends the hull's life another 10-15 years cost-effectively.
 - **Hulls with outdated electronics and rigging.** The repower is the right time to update everything. Combined cost is usually still well below new-boat pricing.
 
 We assess these during the walk-around. The right answer depends on the specific hull and your budget.
@@ -15931,7 +15931,7 @@ whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints o
 
 There are real scenarios where Boost earns its price:
 
-**Performance bass boats or mid-size runabouts** where the hull already responds to small power changes. Tournament fishing where every few seconds off a morning run matters. Lighter two-log pontoons (18, 20 ft) where the speed ceiling isn't as firmly set by hull drag.
+**Performance bass boats or mid-size runabouts** where the hull already responds to small power changes. Tournament fishing where every few seconds off a morning run matters. Lighter two-log pontoons (18-20 ft) where the speed ceiling isn't as firmly set by hull drag.
 
 **Customers who have already optimized everything else.** If the prop is correct, trim is dialed, and loading is managed, Boost is the next marginal step.
 
@@ -17580,7 +17580,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 
 **Symptoms:** Weak tell-tale at idle that improves at higher RPM, intermittent overheat alarm while idling or in no-wake zones, sputtering tell-tale.
 
-**Service interval:** Mercury recommends replacing the water pump impeller every 2, 3 years or 200 hours, whichever comes first. This is one of the most important preventive maintenance items on an outboard and one of the most frequently skipped.
+**Service interval:** Mercury recommends replacing the water pump impeller every 2-3 years or 200 hours, whichever comes first. This is one of the most important preventive maintenance items on an outboard and one of the most frequently skipped.
 
 **Don't ignore it:** A weak tell-tale last fall that you kept fishing through means the impeller may be at or past its limit. Don't start next season without addressing it.
 
@@ -24207,7 +24207,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
 
 ### Quick Answer
 
-A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40, 115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150, 225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40, 225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
+A Mercury repower needs more than just the motor. Controls, steering, gauges, wiring, and the right prop together add roughly CAD $2,000 to $6,000+ to the install cost, depending on HP class and configuration. For 40-115 HP: typically a binnacle or side-mount control, cable or hydraulic steering at 115+, and SmartCraft Connect or analog gauges. For 150-225 HP V6: binnacle controls, power-assist hydraulic steering, VesselView display, and dual-battery wiring. This guide covers the 40-225 HP range. Sub-25 HP portables and Verado V8/V10/V12 follow different rules.
 
 ---
 
@@ -24227,15 +24227,15 @@ Three patterns come up most often at Harris Boat Works:
 
 ---
 
-## Compatibility Matrix: Mercury 40, 225 HP
+## Compatibility Matrix: Mercury 40-225 HP
 
 | HP Class | Typical Controls | Typical Steering | Typical Gauges | Typical Wiring | Rigging Est. (CAD) |
 |---|---|---|---|---|---|
-| 40, 60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
-| 75, 90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
+| 40-60 HP | Side-mount or binnacle mechanical | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | $1,500 to $2,500 |
+| 75-90 HP | Binnacle Gen II mechanical | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | $2,000 to $3,000 |
 | 115 HP | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery | $2,500 to $4,000 |
 | 150 HP V6 | Binnacle Gen II or DTS | Hydraulic, optional power-assist | VesselView 4/7 | Dual battery + ACR | $3,500 to $5,500 |
-| 175, 200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
+| 175-200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
 | 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
 
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
@@ -24254,7 +24254,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 ### Side-Mount Controls
 
-Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40, 90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400 to $800.
+Mounts on the side of the helm console or a pedestal. Same function as a binnacle. Used on smaller boats (40-90 HP), some pontoons with limited dashboard space. Mechanical only, no DTS in side-mount form. CAD $400 to $800.
 
 ### DTS (Digital Throttle & Shift)
 
@@ -24266,15 +24266,15 @@ Mercury's electronic control system. Replaces mechanical throttle and shift cabl
 
 ### Cable Steering
 
-Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90, 115 HP on most boats. CAD $300 to $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
+Mechanical cable from helm wheel to motor arm. Simple, durable, inexpensive. Works well through 90-115 HP on most boats. CAD $300 to $700 for the cable and helm assembly. Gets tiring on 115+ HP V-hull boats, especially in sporty conditions or after hours of driving.
 
 ### Hydraulic Steering
 
-Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115, 225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500 to $2,500 for a complete kit plus CAD $300 to $500 install labor.
+Helm-mounted pump pushes fluid to a hydraulic ram at the motor. Smoother, lighter, self-centering at speed. The right call for most 115-225 HP boats. **SeaStar Solutions** is the standard brand, SeaStar Pro for entry-level, HC5345 for V6+ applications. CAD $1,500 to $2,500 for a complete kit plus CAD $300 to $500 install labor.
 
 ### Power-Assist Hydraulic
 
-Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150, 225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
+Electric pump does most of the work. One-finger steering at any speed. Recommended for most V6 (150-225 HP) repowers, especially twin-engine setups or boats over 22 feet. CAD $2,500 to $4,000 for the kit plus install. For most Ontario buyers in the 115 HP zone, standard hydraulic is the call. For 150+ HP, lean toward power-assist unless budget is the constraint.
 
 ---
 
@@ -24305,7 +24305,7 @@ whenInDoubt: If you'll see this boat in five years, the digital path is the chea
 
 ### Analog Gauges
 
-Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40, 90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
+Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40-90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
 ### SmartCraft Connect (Mercury VesselView Mobile)
 
@@ -24321,11 +24321,11 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 ## Wiring and Battery Setup
 
-**Single battery + basic harness (40, 90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
+**Single battery + basic harness (40-90 HP):** Single Group 24 or 27 starting battery, basic harness, battery switch, fuse panel. CAD $400 to $700.
 
-**Dual battery + ACR (115, 150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
+**Dual battery + ACR (115-150 HP):** Electronics (chartplotter, fishfinder, stereo) increase the load. Battery 1 for starting, Battery 2 for electronics and accessories. ACR combines them when the engine runs, isolates when off. CAD $700 to $1,200.
 
-**Dual or triple battery + switch panel (175, 225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
+**Dual or triple battery + switch panel (175-225 HP V6):** V6 motors with VesselView, multiple electronics, livewells. CAD $1,200 to $2,000, higher on tournament-prepped boats. Use marine-grade tinned copper wiring with heat-shrink connections. A $200 shortcut in wiring materials can become a $1,500 mid-season problem.
 
 ---
 
@@ -24529,7 +24529,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Quick Answer
 
-For most 15, 16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
+For most 15-16 ft aluminum fishing boats with two adults, the Mercury 40 HP is enough, but the 60 HP is the smarter long-term call for anyone who adds a third person, tows a tube, or wants headroom for a heavier load. The price difference is about $2,602. On a pontoon under 20 ft, the 60 ELPT Command Thrust is where most customers land.
 
 ---
 
@@ -24572,9 +24572,9 @@ Harris Boat Works has been a Mercury dealer on Rice Lake since 1965. We sell and
 
 ## The Real Decision Isn't About HP, It's About Load
 
-A 40 HP motor pushes a 15, 16 ft aluminum boat with two adults at a comfortable cruise of 22, 25 mph, topping out near 30 mph. It's a perfectly good walleye boat or duck-hunting tender, until you add a third person, a full tank, and a cooler full of ice. At that point, a 40 is working.
+A 40 HP motor pushes a 15-16 ft aluminum boat with two adults at a comfortable cruise of 22-25 mph, topping out near 30 mph. It's a perfectly good walleye boat or duck-hunting tender, until you add a third person, a full tank, and a cooler full of ice. At that point, a 40 is working.
 
-A 60 HP on the same hull turns the same loaded trip into a 28, 32 mph cruise. It has headroom for a fourth person and a kicker on a bracket.
+A 60 HP on the same hull turns the same loaded trip into a 28-32 mph cruise. It has headroom for a fourth person and a kicker on a bracket.
 
 The moment you feel an underpowered motor most is getting on plane with a full load. A 40 that felt right at launch will feel tight in August when the family's all aboard. People rarely lighten their boats over time, they add gear, passengers, and batteries. A 60 today is the same boat with three more people five years from now.
 
@@ -24608,19 +24608,19 @@ The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitt
 
 These are real-world figures from boats rigged by Harris Boat Works. Conditions, load, and hull cleanliness all affect the numbers. Treat them as ballparks.
 
-### 15, 16 ft aluminum fishing boat
+### 15-16 ft aluminum fishing boat
 *(Lund SSV-16, Princecraft 162, Crestliner FishHawk 1650, Legend ProSport)*
 
-- **40 HP:** 28, 32 mph WOT with two adults. Drops to 24, 26 mph cruise with three people and gear. A working motor on the right hull.
-- **60 HP:** 35, 38 mph WOT with two adults. Comfortable 28, 30 mph cruise loaded. On a hull rated to 60, gives headroom to tow a tube occasionally.
+- **40 HP:** 28-32 mph WOT with two adults. Drops to 24-26 mph cruise with three people and gear. A working motor on the right hull.
+- **60 HP:** 35-38 mph WOT with two adults. Comfortable 28-30 mph cruise loaded. On a hull rated to 60, gives headroom to tow a tube occasionally.
 
-### 17, 18 ft aluminum runabout
+### 17-18 ft aluminum runabout
 *(Princecraft Sport, Lund Adventure)*
 
-- **40 HP:** Underpowered for this hull class. The boat is rated for 75, 90 HP. A 40 will run, but it won't plane with the family aboard.
-- **60 HP:** 32, 35 mph WOT. Comfortable 26, 28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. A 60 CT on a heavier 18 ft deep-V is a stronger call.
+- **40 HP:** Underpowered for this hull class. The boat is rated for 75-90 HP. A 40 will run, but it won't plane with the family aboard.
+- **60 HP:** 32-35 mph WOT. Comfortable 26-28 mph cruise. The 60 is the minimum we'd put on a 17 ft hull. A 60 CT on a heavier 18 ft deep-V is a stronger call.
 
-### 16, 18 ft small pontoon
+### 16-18 ft small pontoon
 
 - **40 HP:** Only on a 16 ft pontoon, lightly loaded, and ideally with the Command Thrust gearcase. Even then, expect a slow planing time.
 - **60 HP:** Fine on 18 ft. The 60 Command Thrust is the popular call, pontoons reward the bigger gear ratio more than fishing boats do.
@@ -25671,7 +25671,7 @@ This matters because it keeps the motor genuinely simple and portable. No key sw
 
 The 9.9 MH EFI is a strong fit for:
 
-- **Small aluminum fishing boats** (12, 14 feet where the transom, capacity plate, and load match)
+- **Small aluminum fishing boats** (12-14 feet where the transom, capacity plate, and load match)
 - **Cottage boats** on smaller lakes or restricted-horsepower water
 - **Back-lake trips** in the Kawarthas where a simple, reliable motor matters more than outright speed
 - **Tenders and utility boats**
@@ -25827,13 +25827,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `### Quick Answer
 
-The Mercury 90 HP FourStroke is the default pick for most 16, 18 ft aluminum fishing boats and mid-size pontoons up to about 22 ft in Ontario. It runs on the same 2.1L inline-4 block as the 75 and 115, weighs 359 lbs, and is tuned for smooth cruising and fuel economy rather than performance. For pontoons, take the Command Thrust (CT) version. For aluminum fishing boats, take the standard gearcase.
+The Mercury 90 HP FourStroke is the default pick for most 16-18 ft aluminum fishing boats and mid-size pontoons up to about 22 ft in Ontario. It runs on the same 2.1L inline-4 block as the 75 and 115, weighs 359 lbs, and is tuned for smooth cruising and fuel economy rather than performance. For pontoons, take the Command Thrust (CT) version. For aluminum fishing boats, take the standard gearcase.
 
 ---
 
 ### Mercury 90 HP FourStroke Review
 
-We sell more Mercury motors in the 75, 115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16, 20 ft range.
+We sell more Mercury motors in the 75-115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16-20 ft range.
 
 Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 90 FourStroke is a motor we know well, and one we're honest about when it's the wrong call.
 
@@ -25860,19 +25860,19 @@ The motors covered in this post are the standard **90 ELPT FourStroke** and the 
 
 ## Where the 90 HP Is the Right Answer
 
-### 16, 18 ft aluminum fishing boats
+### 16-18 ft aluminum fishing boats
 
-Lund, Princecraft, Crestliner, Legend ProSport, these are the hulls the 90 ELPT was built for. Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28, 32 mph, and tops out around 38, 42 mph depending on prop and load. It has headroom for the occasional full boat.
+Lund, Princecraft, Crestliner, Legend ProSport, these are the hulls the 90 ELPT was built for. Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28-32 mph, and tops out around 38-42 mph depending on prop and load. It has headroom for the occasional full boat.
 
 ### Mid-size pontoons up to ~22 ft
 
 For a pontoon carrying four to six people with normal cottage loads, the **90 ELPT Command Thrust** is the call. The CT gearcase swings a 14 or 14.5" prop instead of the standard 13", which translates directly to hole-shot on a flat-bottom hull. Standard gearcase pontoon 90s are slower to plane and work harder doing it.
 
-### Family runabouts in the 16, 18 ft fibreglass range
+### Family runabouts in the 16-18 ft fibreglass range
 
 Cruising, towing a tube, swimming, occasional fishing, the 90 handles all of it without working hard.
 
-### Repowers replacing 70, 90 HP two-strokes
+### Repowers replacing 70-90 HP two-strokes
 
 Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20 to 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
 
@@ -25917,17 +25917,17 @@ The 75, 90, and 115 are the same block with different tuning. There is no weight
 
 Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
 
-If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17, 18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
+If you're already shopping the 90 and wondering about the 115: the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17-18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
 
 ---
 
 ## What We'd Actually Recommend
 
-**For most 16, 18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
+**For most 16-18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
 
 **For mid-size pontoons up to 22 ft:** 90 ELPT Command Thrust.
 
-**For heavy loads on an 18, 20 ft boat:** Consider the 115 ELPT instead.
+**For heavy loads on an 18-20 ft boat:** Consider the 115 ELPT instead.
 
 **If the hull is rated under 75 HP:** We'll order the 75. We're not going to put an illegal motor on your boat.
 
@@ -26002,13 +26002,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `### Quick Answer
 
-The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outboard available. It runs on the same 2.1L inline-4 block as the 75 and 90, tuned to 6,000 RPM. It's the right motor for 17, 20 ft aluminum fishing boats and mid-to-large pontoons (with Command Thrust), and it's the default choice for Ontario boaters who want real headroom without crossing into V6 territory and the price jump that comes with it.
+The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outboard available. It runs on the same 2.1L inline-4 block as the 75 and 90, tuned to 6,000 RPM. It's the right motor for 17-20 ft aluminum fishing boats and mid-to-large pontoons (with Command Thrust), and it's the default choice for Ontario boaters who want real headroom without crossing into V6 territory and the price jump that comes with it.
 
 ---
 
 ### Mercury 115 HP FourStroke Review
 
-"Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80, 100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
+"Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80-100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
 
 Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 115 FourStroke is one of the motors we sell and service most. Here's an honest look at where it makes sense, and where it doesn't.
 
@@ -26016,7 +26016,7 @@ Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake 
 
 ## Why "Lightest 115 HP Available" Actually Matters
 
-The Mercury 115 ELPT FourStroke weighs 359 lbs. An older Mercury 115 OptiMax, the motor it commonly replaces, weighs around 425 lbs. That's 80, 100 lbs of difference. On a 17, 20 ft aluminum fishing boat, that weight change does real things:
+The Mercury 115 ELPT FourStroke weighs 359 lbs. An older Mercury 115 OptiMax, the motor it commonly replaces, weighs around 425 lbs. That's 80-100 lbs of difference. On a 17-20 ft aluminum fishing boat, that weight change does real things:
 
 - The hull sits higher at rest, improving fuel economy before you even turn the key.
 - The boat planes earlier with the same load.
@@ -26256,7 +26256,7 @@ The Mercury 75 HP FourStroke is part of the same family as the 80, 90, 100, and 
 | SmartCraft compatible | Yes | Yes |
 | Warranty | 3-year standard | 3-year standard |
 
-The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500, 5,500 RPM. The 90 runs to 5,000, 6,000. No weight change. A very small price difference.
+The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500-5,500 RPM. The 90 runs to 5,000-6,000. No weight change. A very small price difference.
 
 The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
 
@@ -26282,7 +26282,7 @@ There are three real scenarios where the 75 is the right call:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**The capacity plate forces it.** Some 16, 17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
+**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
 
 **An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
 
@@ -26294,10 +26294,10 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 | Boat Type | Our Recommendation |
 |---|---|
-| 14, 17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
+| 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
 | Small pontoon under 20 ft | 90 ELPT Command Thrust, CT gearcase makes a meaningful difference on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
 | Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
-| Repowering an old 60, 75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
+| Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
 
 If your hull is rated for 60 HP maximum, you're in the Mercury 60 ELPT FourStroke conversation, not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
 
@@ -27529,7 +27529,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 - Overheat alarm that sounds when trolling or in no-wake zones but goes quiet when you bring RPM up
 - Tell-tale that sputters but doesn't disappear entirely (a fully-failed impeller often produces no tell-tale at any RPM)
 
-**Service interval:** Mercury recommends replacing the impeller every 2, 3 years or 300 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
+**Service interval:** Mercury recommends replacing the impeller every 2-3 years or 300 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
 
 **Replacement:** The lower unit needs to come off to access the water pump. This is a job with straightforward procedure but it involves torquing the lower unit back on correctly and ensuring the shift shaft aligns. If you're mechanically confident, it's a DIY-possible job. If not, have it done by a technician.
 
