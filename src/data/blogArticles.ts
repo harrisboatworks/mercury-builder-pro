@@ -29507,26 +29507,26 @@ Service intake and current scheduling are at [hbw.wiki/service](https://hbw.wiki
 
 ## Choosing the right Rice Lake marina for your situation
 
-::: decision-card
+::decision-card
 eyebrow: Rice Lake marina decision
 heading: Which marina fits how you actually use the boat?
 subhead: Two honest paths. Pick the one that matches your situation.
-left-label: If you need Mercury service, repower, or seasonal support
-left-criteria:
-- Mercury or Mercruiser motor (new or older)
-- Want service, parts, and storage in one place
-- Plan to keep the boat 5+ years and want a service relationship
-- Drive in from the GTA or Northumberland for service days
-left-outcome: Harris Boat Works
-right-label: If you mostly need a slip and fuel near a cottage
-right-criteria:
-- Cottage on the south or west shore
-- Boat is small, simple, and rarely needs service
-- Walking distance from the cottage matters more than service depth
-- Comfortable trailering or shipping out for any work needed
-right-outcome: A nearby cottage-area marina
-when-in-doubt: If your motor is a Mercury and you want one phone number from May to April, the answer is the marina with the service shop attached.
-:::
+leftLabel: If you need Mercury service, repower, or seasonal support
+leftCriteria:
+  - Mercury or Mercruiser motor (new or older)
+  - Want service, parts, and storage in one place
+  - Plan to keep the boat 5+ years and want a service relationship
+  - Drive in from the GTA or Northumberland for service days
+leftOutcome: Harris Boat Works
+rightLabel: If you mostly need a slip and fuel near a cottage
+rightCriteria:
+  - Cottage on the south or west shore
+  - Boat is small, simple, and rarely needs service
+  - Walking distance from the cottage matters more than service depth
+  - Comfortable trailering or shipping out for any work needed
+rightOutcome: A nearby cottage-area marina
+whenInDoubt: If your motor is a Mercury and you want one phone number from May to April, the answer is the marina with the service shop attached.
+::
 
 ---
 
