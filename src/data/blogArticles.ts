@@ -5288,7 +5288,7 @@ rightCriteria:
   - Open water on Rice Lake or larger Kawartha lakes
   - Fast hole shot with the boat loaded matters
   - Long-term hold, you want the right motor once
-rightOutcome: 150 HP Command Thrust (200 HP on bigger tritoons)
+rightOutcome: 150 HP FourStroke (standard gearcase; CT tops out at 115. 200 HP on bigger tritoons.)
 rightVariant: alternative
 whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in this HP range. The only real question is the HP number.
 ::
