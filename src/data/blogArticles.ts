@@ -29231,7 +29231,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     publishDate: '2026-05-13',
     category: 'Warranty & Protection',
     readTime: '~12 min read',
-    keywords: ['Mercury extended warranty', 'Mercury Product Protection', 'Premier warranty', 'Mercury warranty Ontario', 'extended motor warranty', 'Mercury Premier coverage', 'outboard warranty cost'],
+    keywords: ['Mercury extended warranty', 'Mercury Product Protection', 'Platinum warranty', 'Mercury warranty Ontario', 'extended motor warranty', 'Mercury Platinum coverage', 'outboard warranty cost'],
     relatedSlugs: ['ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw'],
     content: `## Quick Answer
 
