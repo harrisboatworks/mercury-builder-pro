@@ -46,7 +46,7 @@ Three options most Rice Lake customers consider. **All prices reflect 2026 model
 |---|---|---|---|---|---|---|
 | Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | $3,000 to $4,500 | Most fishing boats, all-day trolling, big water |
 | Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
-| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | $4,500 to $6,500 | Silent finesse fishing |
+| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | Call for current pricing: 905-342-2153 | Silent finesse fishing |
 
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
@@ -122,7 +122,7 @@ Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolli
 
 ### How much does it cost to add a kicker to my repower?
 
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker runs roughly $4,500 to $6,500 installed depending on battery setup.
+Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.
 
 ### Does the kicker need its own fuel tank?
 

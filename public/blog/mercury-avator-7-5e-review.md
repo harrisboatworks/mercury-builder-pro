@@ -55,7 +55,7 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Installed price (CAD) | $4,500 to $6,500 | $1,800 to $2,400 | $2,200 to $2,800 |
+| Installed price (CAD) | Call for current pricing: 905-342-2153 | $1,800 to $2,400 | $2,200 to $2,800 |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Rough gas feel (guide only) | ~3.5 HP gas portable | 3.5 HP | 5 HP |
 
@@ -77,12 +77,9 @@ The pairing we rig most on Rice Lake is a Mercury 90 HP FourStroke for getting b
 
 ## What does the Mercury Avator 7.5e cost installed?
 
-Installed pricing at Harris Boat Works runs by battery configuration:
+Avator is built to order through Mercury Canada, and battery count drives the price. For a current number on your setup (single or dual 1 kWh pack, bracket, charging, water test), call for current pricing: 905-342-2153.
 
-- Avator 7.5e plus single 1 kWh battery plus mount: $4,500 to $5,200 CAD
-- Avator 7.5e plus dual 1 kWh batteries plus mount: $5,500 to $6,500 CAD
-
-Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. The deposit is $200 for portable and small-HP motors, and financing is available on approved credit. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
+Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
 
 ## What are the Avator's limitations?
 
@@ -128,7 +125,7 @@ Yes, and that is one of its best uses. Silent thrust at slow speed makes it idea
 
 ### How much does the Avator 7.5e cost installed?
 
-Including the motor, battery, and mounting, expect roughly $4,500 to $6,500 CAD installed at Harris Boat Works, depending on battery configuration. Pickup only at Gores Landing.
+Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153. Pickup only at Gores Landing.
 
 ### What charges the Avator battery?
 

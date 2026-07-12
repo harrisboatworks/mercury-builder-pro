@@ -177,7 +177,7 @@ Yes, but battery capacity drops in cold water. Late-season shoulder boating with
 
 ### What does an Avator setup cost installed?
 
-Pricing depends heavily on model and battery configuration. Build a quote at mercuryrepower.ca for real Canadian pricing on a specific Avator setup. The smallest 7.5e setups start under $5,000 installed; larger 75e/110e setups with multiple packs run $15,000-$25,000+.
+Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153.
 
 ## Related guides
 

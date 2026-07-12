@@ -54,7 +54,7 @@ You don't "install SmartCraft." It's already in your motor if it's modern enough
 
 ---
 
-## VesselView Mobile Is Becoming the Mercury Marine App (Summer 2025)
+## SmartCraft Connect Mobile (formerly VesselView Mobile) and the Mercury Marine App (Summer 2025)
 
 Quick history. **VesselView Mobile** has been Mercury's phone app for several years, a Bluetooth module under the cowl talked to your phone, your phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
 

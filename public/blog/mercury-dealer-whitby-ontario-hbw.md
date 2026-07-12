@@ -42,6 +42,8 @@ Whitby sits in that Durham Region sweet spot, far enough east to have cleared mo
 
 At approximately 45 minutes via the 401 and Highway 115, we're within range of being your regular dealer, not just the place you went once for a big purchase.
 
+We're not in Whitby. Harris Boat Works is in Gores Landing on Rice Lake, about 45 minutes northeast via the 401 and 115. Here's why Whitby boaters make the drive.
+
 ## Why "Regular Dealer" Matters at 45 Minutes
 
 Most GTA boaters treat their dealer relationship as transactional. Buy the motor, maybe get it serviced once, otherwise figure it out yourself.

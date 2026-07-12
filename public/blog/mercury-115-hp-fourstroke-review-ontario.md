@@ -207,7 +207,7 @@ Yes. All Mercury 115 HP FourStrokes use EFI. Significantly cleaner running and m
 
 ### Does the 115 work with SmartCraft gauges?
 
-Yes. Full SmartCraft integration is available. NMEA 2000, VesselView mobile, Active Trim. Common upgrade during repower.
+Yes. Full SmartCraft integration is available. NMEA 2000, SmartCraft Connect Mobile (formerly VesselView Mobile), Active Trim. Common upgrade during repower.
 
 ### Can I get a 115 HP in counter-rotation?
 

@@ -38,7 +38,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 # Mercury Dealer for Oshawa: We're Basically Durham Region
 
-Oshawa is the closest major city to Rice Lake on the 401 corridor. At approximately 40 minutes northeast via 401 east and Highway 115, you're effectively in our service area, not reaching across it.
+Oshawa is one of the closest major cities to Rice Lake on the 401 corridor. At approximately 40 minutes northeast via 401 east and Highway 115, you're effectively in our service area, not reaching across it.
 
 This isn't a case of asking you to make a meaningful sacrifice for a better dealer. It's acknowledging that Gores Landing is closer than it sounds.
 

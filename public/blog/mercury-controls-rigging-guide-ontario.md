@@ -132,7 +132,7 @@ whenInDoubt: If you'll see this boat in five years, the digital path is the chea
 
 Mechanical needles for tach, fuel level, and trim. CAD $400 to $800 for a full set. Work well for 40-90 HP on basic fishing boats. Give up fault codes, engine hours, fuel economy data, and advance warning.
 
-### SmartCraft Connect (Mercury VesselView Mobile)
+### SmartCraft Connect Mobile (formerly VesselView Mobile)
 
 Bluetooth module under the cowl that streams engine data to the Mercury Marine app on a phone. The app is free. What you see: RPM, fuel rate, total fuel used, engine temp, battery voltage, engine hours, fault codes with plain-English descriptions, maintenance reminders, Boost eligibility. Compatible with Mercury 4-strokes from 2004 forward, 40 HP and up (25/30 HP only from 2022+). CAD $300 to $500 for the module and SmartCraft tach.
 
