@@ -134,7 +134,7 @@ export const blogArticles: BlogArticle[] = [
     slug: "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
     title: "Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)",
     description: "Command Thrust started as BigFoot in the 90s, built for pontoons. Our back-to-back lake test showed 6 mph lost on a V-hull. The honest guide to who actually needs CT.",
-    image: "/lovable-uploads/command-thrust-pontoon-eligibility-hero.png",
+    image: "/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench.jpg",
     author: "Jay Harris",
     datePublished: "2026-07-12",
     dateModified: "2026-07-12",
@@ -178,6 +178,10 @@ Mercury's answer was BigFoot. Take a 40-60 HP powerhead and hang it over a much 
 Mercury's own literature at the time called BigFoot "the industry's only outboard engine made specifically for pontoons." That's the origin, from the horse's mouth: a pontoon and workboat motor. Around 2014, Mercury quietly renamed BigFoot to Command Thrust. New name, same idea.
 
 ## What's Actually Different Inside
+
+![Mercury Command Thrust gearcase next to a standard gearcase on the Harris Boat Works service bench, showing the size difference in the torpedo housing and skeg](/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench.jpg)
+
+*The two gearcases side by side on our bench. Same powerhead family, very different tools.*
 
 This isn't a trim package or a sticker. The CT gearcase changes the physics of what the motor can push:
 
