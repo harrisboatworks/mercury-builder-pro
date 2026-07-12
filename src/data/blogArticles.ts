@@ -1299,6 +1299,8 @@ The driver needs proof of competency: a Pleasure Craft Operator Card, or a boati
 **How much does a Rice Lake boat rental cost?**
 Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 **Are life jackets included?**
 Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included. Missing gear at return comes out of the damage deposit.
 
@@ -2964,6 +2966,8 @@ Aluminum transoms can also fail, though differently. Check for cracks at the mot
 
 If the transom has any of the above, the boat is not eligible for a repower until the transom is repaired or replaced. A transom rebuild can cost $1,500 to $4,000+ depending on the boat and the depth of the damage. If the transom is sound, you are clear on Check 1.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ### Check 2: Hull Waterlogging and Foam Integrity
 
 Fibreglass boats with foam-filled hulls can take on water through stress cracks, the bilge, deck fittings, or the transom over years. Waterlogged foam adds significant weight, throws off the planing characteristics, and can rot the underlying structure. A new motor on a waterlogged hull will under-perform regardless of horsepower.
@@ -4074,6 +4078,8 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Repair vs new-motor price | Over 60% | 30-60% | Under 30% |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
 | Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
+
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Quick recommendation
 
