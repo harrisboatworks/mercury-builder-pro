@@ -15133,7 +15133,7 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 ## FAQs
 
 **How long is the drive from Toronto to Rice Lake?**
-About 80–90 minutes in normal conditions. Saturday and Sunday afternoons during cottage season can add 30 minutes or more.
+About 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings.
 
 **Do I need trailer brakes for a boat under 1,400 kg?**
 Not legally required in Ontario, but check your tow vehicle's rating. For trailers over 1,400 kg combined, brakes are required.
