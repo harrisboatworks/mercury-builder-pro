@@ -3523,7 +3523,7 @@ For solo or two-person trolling, 25 to 40 HP. For three or more people who want 
 For cruising and fishing without water sports, 90 HP Command Thrust is plenty. For family use with tubing or skiing, step up to 115 HP Command Thrust. The Command Thrust gearcase matters, it's built for the load profile of pontoons.
 
 **What HP do I need for a 20-foot pontoon?**
-Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple passengers: 150 HP Command Thrust. Above 150 HP on a two-tube pontoon starts to deliver diminishing returns.
+Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple passengers: 150 HP FourStroke (standard gearcase). Above 150 HP on a two-tube pontoon starts to deliver diminishing returns.
 
 **What HP for a bass boat?**
 Tournament fishing: 200 to 250 HP Pro XS. Recreational bass fishing: 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard in tournament fishing.
