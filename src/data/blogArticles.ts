@@ -2019,7 +2019,7 @@ The honest decision matrix:
 - **Motor is mechanical, under 5 years old, low hours, otherwise excellent** → quote a full repower against the retrofit cost. Usually repower wins.
 - **Motor is mechanical, 5+ years old or high hours** → repower territory. Don't pour money into retrofit.
 - **Single motor, smaller boat, no joystick interest** → DTS is a "nice to have" not a "need." Mechanical is the right call.
-- **Twins or triples without joystick** → adding DTS unlocks joystick, which is the real value driver. Worth the conversation.
+- **Twins or triples without joystick** → adding DTS enables joystick, which is the real value driver. Worth the conversation.
 
 ## Step 3: HP class eligibility
 
@@ -2096,7 +2096,7 @@ rightLabel: Retrofit makes sense
 rightCriteria:
   - Your motor is already DTS-capable (some older Verado I6 models)
   - You currently have mechanical controls at the helm
-  - The helm-side upgrade unlocks DTS without engine work
+  - The helm-side upgrade enables DTS without engine work
   - Single-engine and you're not chasing joystick
 rightOutcome: Helm-side retrofit is the real upgrade
 rightVariant: recommended
@@ -2240,7 +2240,7 @@ Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. 
 
 ### Already over-powered
 
-Some pontoons are already running close to capacity-plate maximum HP. Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't unlock more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+Some pontoons are already running close to capacity-plate maximum HP. Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
 
 ## How to check your specific eligibility
 
@@ -8653,7 +8653,7 @@ These are not competing tools. They are complementary. But they cost real money,
 | Range | Battery-limited (roughly 1 to 6 hours) | Effectively unlimited |
 | Stealth in shallow water | Excellent | Good, not silent |
 | Top trolling speed | ~3 to 5 mph | ~5 to 7 mph |
-| GPS spot-lock | Yes (game-changer) | No |
+| GPS spot-lock | Yes (holds position without an anchor) | No |
 | Hands-free control | Yes (foot pedal / wireless) | No |
 | Wind and wave handling | Limited above 1 to 2 ft chop | Excellent |
 | Maintenance | Minimal | Standard outboard service |
@@ -10429,7 +10429,7 @@ Boat shows often have show-specific promotions, but they're usually similar to w
 Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.
 
 **Does the Mercury model year flip on July 1 change my buying decision?**
-It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you're chasing a specific feature or just want the motor. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
+It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price.r just want the motor. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **What's actually negotiable on a new Mercury purchase?**
 The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
@@ -24313,7 +24313,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 **Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to feel clean.
 
 ### Side-Mount Controls
 
@@ -24496,7 +24496,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Do I need DTS on a single-engine V6?',
-        answer: 'No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it\'s mandatory), or if you specifically want VesselView integration to feel seamless.',
+        answer: 'No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it\'s mandatory), or if you specifically want VesselView integration to feel clean.',
       },
       {
         question: 'Is hydraulic steering worth it for 90 HP?',
@@ -26786,7 +26786,7 @@ If you price it here and decide a local dealer is the better call, that's fine. 
 
 ## The Repower Conversation Is Different Here
 
-Most of what we do is repower, replacing an aging motor on a hull someone wants to keep running. That's not a simple transaction. It's a conversation about your hull, how you use the boat, what rigging setup makes sense, what prop works for your load, and whether you're better off repowering or putting that money toward a new setup.
+Most of what we do is repower, replacing an aging motor on a hull someone wants to keep running. That's not a simple transaction. It's a conversation about your hull, how you use the boat, what rigging setup makes sense, what prop works for your load, and if you're better off repowering or putting that money toward a new setup.
 
 We have that conversation honestly. Our repower decision guide on mercuryrepower.ca explicitly covers when a repower doesn't make sense. We'd rather give someone a straight answer than book a job we shouldn't have taken.
 
@@ -27096,7 +27096,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 ## Why Brampton Customers Call Us First
 
-The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to unlock. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
+The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.t.
 
 Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 
@@ -27246,7 +27246,7 @@ Oakville has a high concentration of experienced boat buyers, people who've owne
 
 If you've bought a motor before and the experience left you feeling like you were navigated toward a decision rather than informed for one, that's the difference we're describing.
 
-## Pricing That Doesn't Require a Conversation to Unlock
+## Pricing That Doesn't Require a Conversation to Get
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. Before you talk to anyone. Before you're a "prospect." For [Mercury outboard prices by horsepower](/pricing-reference) on one page, see our published price reference.
 
@@ -31563,7 +31563,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 - You can't honestly answer "I want this for 5+ more years"
 - The repair bill plus other deferred maintenance adds up to a number that doesn't make sense
 
-**What we recommend:** decide first whether you're selling as-is (disclose all known issues), making a small repair to make the boat saleable (sometimes worth it), or trading in through a dealer.
+**What we recommend:** decide first: are you selling as-is (disclose all known issues), making a small repair to make the boat saleable (sometimes worth it), or trading in through a dealer.
 
 **As-is private sale:** highest price but slowest, most paperwork, hardest emotional process. Use Kijiji, Facebook Marketplace, or boat-specific broker sites. Full disclosure protects you legally.
 
@@ -32563,7 +32563,7 @@ For Ontario aluminum fishing boats (16-19 ft) and mid-size pontoons, this is the
 
 - **75 HP**: RPM-limited to 5,500. Same motor as the 90, less performance. The price gap to the 90 is smaller than most buyers expect. We rarely recommend the 75 unless your capacity plate maxes at 75.
 - **90 HP**: RPM-limited to 6,000. Same physical motor as the 75 with more performance headroom. The default recommendation for most 16-19 ft Ontario boats.
-- **115 HP**: RPM-limited to 6,300. Same motor with full performance unlock. Worth the upgrade when the boat is heavier or you want full planing margin.
+- **115 HP**: RPM-limited to 6,300. Same motor with full performance turned on. Worth the upgrade when the boat is heavier or you want full planing margin.
 
 This is why most factory-rigged Ontario 16-19 ft aluminum boats come with the 90 HP. It's the right answer most of the time.
 
@@ -35311,7 +35311,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
       { question: "How long does a Honda-to-Mercury swap take at HBW?", answer: "Most brand-swap repowers run 3-5 working days once motor and rigging parts are on site. The Honda-specific work (removal of Honda controls, gauges, harness, and prop) takes roughly half a day. The Mercury rigging takes the rest. Spring queue (April-May) runs longer. Book early." },
       { question: "Will my Honda prop carry over to the new Mercury?", answer: "No. Honda and Mercury propellers are not interchangeable. You need a new Mercury prop sized to your boat and HP class. Prop selection affects fuel economy and top speed more than most owners realize, so we dial that in during the quote." },
       { question: "Is Mercury actually more reliable than Honda?", answer: "Honestly, on current models, the reliability gap between Honda and Mercury is small. Both brands build solid four-strokes. The bigger reliability factor is local service network: a motor you can get serviced quickly is a motor that stays running. In most of Ontario outside the GTA, Mercury has the service density advantage." },
-      { question: "Can I keep my Honda kicker and just swap the main motor?", answer: "Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as seamless as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolling and the Honda kicker is happy, keeping it saves money." },
+      { question: "Can I keep my Honda kicker and just swap the main motor?", answer: "Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as clean as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolling and the Honda kicker is happy, keeping it saves money." },
       { question: "What is the trade-in value of a clean Honda BF90?", answer: "Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury." }
     ]
   },
