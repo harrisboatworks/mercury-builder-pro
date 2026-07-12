@@ -54,6 +54,10 @@ Mercury's own literature at the time called BigFoot "the industry's only outboar
 
 ## What's Actually Different Inside
 
+![Mercury Command Thrust gearcase next to a standard gearcase on the Harris Boat Works service bench, showing the size difference in the torpedo housing and skeg](/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench.jpg)
+
+*The two gearcases side by side on our bench. Same powerhead family, very different tools.*
+
 This isn't a trim package or a sticker. The CT gearcase changes the physics of what the motor can push:
 
 | Spec | 60 HP standard | 60 HP Command Thrust |
