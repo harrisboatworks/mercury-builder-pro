@@ -11983,7 +11983,7 @@ Mercury's Avator electric line (currently the 7.5e and 20e in production) is bui
 | Light aluminum fishing boat, 14-16 ft | FourStroke | 25-60 hp |
 | Mid-range fishing/family boat, 16-18 ft | FourStroke | 60-115 hp |
 | Larger fishing or family boat, 18-20 ft | FourStroke | 115-150 hp |
-| Pontoon, 22-24 ft | FourStroke Command Thrust | 115-150 hp |
+| Pontoon, 22-24 ft | FourStroke (Command Thrust up to 115; standard gearcase at 150) | 115 CT or 150 |
 | Tournament bass boat | Pro XS | 200-250 hp |
 | Commercial guide or rental | SeaPro | Match to hull rating |
 | Car-topper or kicker | FourStroke | 9.9-15 hp |
