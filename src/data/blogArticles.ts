@@ -5789,12 +5789,12 @@ The question is not usually "should I get a pontoon?" Most cottage families have
 At cruising speeds, two adults, light fishing gear, and a cooler, this setup is comfortable and fuel-efficient. Deck space is enough for fishing chairs and lounging.
 
 ### Multi-generational family, cruising and water sports
-**What works:** 22 ft two-tube or tritoon with a Mercury Command Thrust FourStroke in the 115 to 150 HP range.
+**What works:** 22 ft two-tube or tritoon with a Mercury 115 HP Command Thrust FourStroke, or a 150 HP FourStroke (standard gearcase; CT tops out at 115).
 
-The 22 ft length handles six to ten people comfortably. The 115 to 150 HP Command Thrust motor handles tubing and lighter water sports without labouring. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
+The 22 ft length handles six to ten people comfortably. The 115 HP Command Thrust motor handles tubing and lighter water sports without labouring, and a 150 (standard gearcase) is the step above that. If water sports are occasional rather than constant, two-tube is fine and costs less than a tritoon.
 
 ### Active water sports family
-**What works:** 22 ft tritoon with a Mercury Command Thrust FourStroke in the 150 to 200 HP range.
+**What works:** 22 ft tritoon with a Mercury FourStroke or Pro XS in the 150 to 200 HP range (standard gearcase; Command Thrust tops out at 115 HP).
 
 If tubing, skiing, and wakeboarding are a regular part of summer at the cottage, a tritoon is the right call. The third tube changes the hydrodynamics, better hole shot loaded, higher top speed, and better handling in sport use.
 
