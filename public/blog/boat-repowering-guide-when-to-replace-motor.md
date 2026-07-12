@@ -41,6 +41,8 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
 | Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## Quick recommendation
 
 There are three honest answers to "when should I repower?":

@@ -98,6 +98,8 @@ For typical Ontario freshwater repowers on a solid hull vs. new boat options:
 | New comparable fiberglass package (150-200 HP) | $65,000 to $90,000 |
 | New comparable pontoon package (115-150 HP) | $55,000 to $75,000 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 The repower path typically saves $25,000 to $50,000 CAD against new. That savings is the deciding factor for most customers, but it's not the deciding factor when the hull is bad.
 
 ### When to Repower, The Clear Yes

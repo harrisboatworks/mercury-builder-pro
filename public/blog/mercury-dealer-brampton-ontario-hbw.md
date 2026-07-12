@@ -50,7 +50,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 ## Why Brampton Customers Call Us First
 
-The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to unlock. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
+The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.t.
 
 Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 

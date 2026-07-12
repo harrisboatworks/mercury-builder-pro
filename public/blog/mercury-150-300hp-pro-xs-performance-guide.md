@@ -161,6 +161,8 @@ V6 Mercurys are surprisingly efficient at cruise. Real-world numbers for the 200
 
 For most Ontario boating. Rice Lake, Trent-Severn, you'll spend 80% of your time at 25-35 mph cruise. Real fuel cost at ethanol-free 89 marine pricing on a typical 4-hour outing: $40-$70.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ## Try the calculator

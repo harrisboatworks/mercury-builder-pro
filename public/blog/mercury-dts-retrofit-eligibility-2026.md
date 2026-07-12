@@ -107,7 +107,7 @@ The honest decision matrix:
 - **Motor is mechanical, under 5 years old, low hours, otherwise excellent** → quote a full repower against the retrofit cost. Usually repower wins.
 - **Motor is mechanical, 5+ years old or high hours** → repower territory. Don't pour money into retrofit.
 - **Single motor, smaller boat, no joystick interest** → DTS is a "nice to have" not a "need." Mechanical is the right call.
-- **Twins or triples without joystick** → adding DTS unlocks joystick, which is the real value driver. Worth the conversation.
+- **Twins or triples without joystick** → adding DTS enables joystick, which is the real value driver. Worth the conversation.
 
 ## Step 3: HP class eligibility
 
@@ -184,7 +184,7 @@ rightLabel: Retrofit makes sense
 rightCriteria:
   - Your motor is already DTS-capable (some older Verado I6 models)
   - You currently have mechanical controls at the helm
-  - The helm-side upgrade unlocks DTS without engine work
+  - The helm-side upgrade enables DTS without engine work
   - Single-engine and you're not chasing joystick
 rightOutcome: Helm-side retrofit is the real upgrade
 rightVariant: recommended

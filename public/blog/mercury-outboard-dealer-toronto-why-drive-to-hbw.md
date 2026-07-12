@@ -114,6 +114,8 @@ source: Mississauga
 
 1. **Rigging and install pricing**, installing a Mercury 200 HP V6 on a 21-foot bowrider isn't just bolting it on. It's hours of rigging (controls, steering, gauges, prop selection, sea trial). Some dealers charge $1,500-$2,500. Some charge $4,000+. We publish ours transparently in the [configurator](https://www.mercuryrepower.ca).
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 2. **All-in vs. add-on quoting**, many dealers quote a "headline" price and add line items at delivery (controls, prop, freight, prep). Our pricing is **all-in before HST** in the live configurator, and the price you see is the price you pay.
 
 3. **Trade-in valuation**, we have actual Ontario service-data on used Mercury values. Some urban dealers low-ball trade-ins to make the new-motor sale look better. The transparent thing is to value the trade fairly and let you see the math.

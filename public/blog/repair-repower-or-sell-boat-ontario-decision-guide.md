@@ -68,6 +68,8 @@ Get a written estimate from a Mercury dealer or qualified service shop. Then loo
 
 The 30 percent threshold is a useful rule of thumb. A $1,500 repair on a $6,000 motor is a 25 percent ratio: easy repair decision. A $4,500 repair on a $6,000 motor is a 75 percent ratio: hard to justify when a new Mercury comes with a [3-year factory warranty](/blog/mercury-outboard-warranty-canada-2026), often extended by current promotions ([see what's active](/promotions)), and 15-20 years of expected service life.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## Question 2: the boat itself
 
 The motor is half the conversation. The other half is the hull.
@@ -128,7 +130,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 - You can't honestly answer "I want this for 5+ more years"
 - The repair bill plus other deferred maintenance adds up to a number that doesn't make sense
 
-**What we recommend:** decide first whether you're selling as-is (disclose all known issues), making a small repair to make the boat saleable (sometimes worth it), or trading in through a dealer.
+**What we recommend:** decide first: are you selling as-is (disclose all known issues), making a small repair to make the boat saleable (sometimes worth it), or trading in through a dealer.
 
 **As-is private sale:** highest price but slowest, most paperwork, hardest emotional process. Use Kijiji, Facebook Marketplace, or boat-specific broker sites. Full disclosure protects you legally.
 

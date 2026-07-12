@@ -75,6 +75,8 @@ In Ontario, every new outboard purchase is subject to **13% HST**. The HST is co
 | Mercury 150 Pro XS | $24,349 | $3,165 | $27,514 |
 | Mercury 250 V8 Pro XS | $42,000 | $5,460 | $47,460 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 The tables below show principal-only monthly payments (HST paid separately at closing).
 
 ## Amortization scenarios: active TD 5.48% program vs. post-promo 7.99% legacy

@@ -116,7 +116,7 @@ Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. 
 
 ### Already over-powered
 
-Some pontoons are already running close to capacity-plate maximum HP. Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't unlock more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+Some pontoons are already running close to capacity-plate maximum HP. Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
 
 ## How to check your specific eligibility
 
@@ -126,7 +126,7 @@ Five things to confirm before you commit.
 2. **Tube count.** Two tubes or three (tritoon). The third tube is a major eligibility factor.
 3. **Loaded weight estimate.** Boat dry weight (in your owner's manual or on the capacity plate) plus typical people and gear. Be honest about what you actually carry.
 4. **Transom height.** Command Thrust gearcases run a few inches taller than standard. Most modern pontoons handle this fine but it's worth measuring.
-5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and whether you're at capacity-plate maximum.
+5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and if you're at capacity-plate maximum.
 
 Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll respond same-day with a yes, no, or specific recommendation.
 

@@ -129,7 +129,7 @@ At the same HP, the Pro XS carries a price premium. Build both at [mercuryrepowe
 
 ## What HBW Asks Before Recommending a Lake Ontario Setup
 
-Hull make, model, year, and length. Current vs planned motor. Your primary fishing use (recreational, tournament, charter). How far offshore you typically run. Whether you're at a slip or trailering. Budget.
+Hull make, model, year, and length. Current vs planned motor. Your primary fishing use (recreational, tournament, charter). How far offshore you typically run. Slip or trailer storage. Budget.
 
 We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryrepower.ca). If you want to talk through the setup before configuring, call us at 905-342-2153.
 

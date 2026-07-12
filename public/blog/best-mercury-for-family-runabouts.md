@@ -151,6 +151,8 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 | 175 HP V6 FourStroke | $26,000 to $32,500 |
 | 200 HP V6 FourStroke | $28,000 to $35,000 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 "All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
 ### What We Do

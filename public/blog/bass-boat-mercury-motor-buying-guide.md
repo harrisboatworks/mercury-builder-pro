@@ -65,7 +65,7 @@ whenInDoubt: For competitive tournaments, Pro XS pays for itself in time saved b
 
 Bass boats are built for one thing: run fast to a spot and fish it well. They're lighter than most recreational hulls, built to plane fast, and typically used by anglers who care about both speed and reliability.
 
-The right Mercury for a bass boat depends on whether you're fishing competitively or recreationally. That one variable changes the right motor family, the right HP, and whether the Pro XS premium is money well spent.
+The right Mercury for a bass boat depends on how you fish: competitively or recreationally. That one variable changes the right motor family, the right HP, and whether the Pro XS premium is money well spent.
 
 ---
 

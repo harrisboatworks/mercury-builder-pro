@@ -51,6 +51,8 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 ## Where Honda actually wins
 
 Honda makes good motors. In specific use cases, Honda is the right call.

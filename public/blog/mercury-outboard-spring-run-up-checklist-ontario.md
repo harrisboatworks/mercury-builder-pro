@@ -74,6 +74,8 @@ A healthy motor should start within 3-5 seconds of cranking. If it cranks but wo
 
 A weak or intermittent water stream means the water pump impeller needs replacement, which is a routine $200-$400 service item we do dozens of times every spring.
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 **10. Idle check.** Let the motor idle for 2-3 minutes at the dock. Listen for unusual sounds (knocking, hissing, irregular firing) and watch for smoke beyond the normal first-start exhaust. Brief blue or white smoke at first start is normal as oil burns off. Continuous heavy smoke means something is wrong.
 
 **11. Test under light load.** Idle out from the dock at no-wake speed. Run for 2-3 minutes at idle to confirm everything is steady. Then bump up to 2,500-3,000 RPM for another 2-3 minutes. Watch the gauges (if you have SmartCraft, watch RPM, fuel flow, water temp). Listen for new sounds.

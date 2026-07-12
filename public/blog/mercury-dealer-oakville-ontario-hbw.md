@@ -50,7 +50,7 @@ Oakville has a high concentration of experienced boat buyers, people who've owne
 
 If you've bought a motor before and the experience left you feeling like you were navigated toward a decision rather than informed for one, that's the difference we're describing.
 
-## Pricing That Doesn't Require a Conversation to Unlock
+## Pricing That Doesn't Require a Conversation to Get
 
 Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) shows installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. Before you talk to anyone. Before you're a "prospect." For [Mercury outboard prices by horsepower](/pricing-reference) on one page, see our published price reference.
 

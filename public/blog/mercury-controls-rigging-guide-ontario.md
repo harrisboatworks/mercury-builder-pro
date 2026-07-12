@@ -63,6 +63,8 @@ Three patterns come up most often at Harris Boat Works:
 | 175-200 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | $4,500 to $6,500 |
 | 225 HP V6 | Binnacle DTS | Power-assist hydraulic | VesselView 9 | Dual battery + ACR, switch panel | $5,000 to $7,500 |
 
+_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
 
 ---
@@ -75,7 +77,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 **Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to be seamless.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to feel clean.
 
 ### Side-Mount Controls
 
@@ -248,7 +250,7 @@ For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging
 
 ### Do I need DTS on a single-engine V6?
 
-No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it's mandatory), or if you specifically want VesselView integration to feel seamless.
+No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it's mandatory), or if you specifically want VesselView integration to feel clean.
 
 ### Is hydraulic steering worth it for 90 HP?
 

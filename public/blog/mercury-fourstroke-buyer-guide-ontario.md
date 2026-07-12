@@ -98,7 +98,7 @@ For Ontario aluminum fishing boats (16-19 ft) and mid-size pontoons, this is the
 
 - **75 HP**: RPM-limited to 5,500. Same motor as the 90, less performance. The price gap to the 90 is smaller than most buyers expect. We rarely recommend the 75 unless your capacity plate maxes at 75.
 - **90 HP**: RPM-limited to 6,000. Same physical motor as the 75 with more performance headroom. The default recommendation for most 16-19 ft Ontario boats.
-- **115 HP**: RPM-limited to 6,300. Same motor with full performance unlock. Worth the upgrade when the boat is heavier or you want full planing margin.
+- **115 HP**: RPM-limited to 6,300. Same motor with full performance turned on. Worth the upgrade when the boat is heavier or you want full planing margin.
 
 This is why most factory-rigged Ontario 16-19 ft aluminum boats come with the 90 HP. It's the right answer most of the time.
 
