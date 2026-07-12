@@ -63,7 +63,7 @@ whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip
 
 We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
 
-The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or skipping Command Thrust on heavier hulls. Fix any one of those and the boat performs noticeably better than before.
+The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or over-speccing Command Thrust on a V-hull where it doesn't belong. Fix any one of those and the boat performs noticeably better than before.
 
 Here's how to think through each decision.
 
@@ -134,8 +134,8 @@ heading: Common mistakes on aluminum fishing boat repowers
   Two seasons later, they wish they'd bought it. Buy it once.
 - **Wrong prop.**  
   A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
-- **Skipping Command Thrust on heavier hulls.**  
-  On 18-20 ft deep-V aluminum, Command Thrust gives meaningful hole-shot improvement at full load.
+- **You need Command Thrust on a heavier aluminum V-hull.**  
+  CT is a pontoon and workboat gearcase; on a V-hull it just adds drag. Standard gearcase is the right call on 14-20 ft aluminum fishing boats, loaded or not.
 - **Buying Pro XS when FourStroke would do.**  
   Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
 
@@ -160,7 +160,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricin
 
 ## What we see at HBW
 
-The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI Command Thrust is our top recommendation for 17-footers carrying 3-4 people and gear.
+The sweet spot for aluminum fishing boats 14-17 feet is the Mercury 25-60 HP FourStroke. Lightweight tinny + small Mercury is the most common rig in our service bay. The 60 EFI (standard gearcase) is our top recommendation for 17-footers carrying 3-4 people and gear; CT is a pontoon and workboat gearcase and on a V-hull it just adds drag.
 
 Anything over 75 HP on a sub-17-foot aluminum hull usually exceeds the boat's max HP plate. Always check the capacity plate before quoting the repower -- the most common rejection at the shop is "owner wants a 90 on a hull rated for 60."
 
@@ -178,7 +178,7 @@ For most serious anglers on aluminum fishing boats, tiller is better, specifical
 
 ### Should I get Command Thrust on my Mercury outboard?
 
-If you fish anywhere with shallow water, weeds, or soft bottom, yes. The Command Thrust larger gearcase runs shallower than standard lower units, provides more thrust at trolling speeds, and handles prop fouling in weeds better. On Ontario lakes with weedy bays, which describes most lakes around Rice Lake and the Kawarthas. Command Thrust is the practical choice even at a modest price premium. Available on Mercury motors from 9.9HP (the ProKicker) through 115HP. The main exception is deep clear lakes where you never fish in the weeds.
+On an aluminum V-hull fishing boat, no. Command Thrust is a pontoon and workboat gearcase; on a planing V-hull it just adds drag and costs top-end speed with no meaningful benefit, even in weedy shallow water. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.
 
 ### What shaft length do I need for an aluminum fishing boat?
 
@@ -186,7 +186,7 @@ Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft o
 
 ### How much does it cost to power an aluminum fishing boat in Ontario in 2026?
 
-For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP Command Thrust FourStroke runs approximately $12,000-$14,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures. Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.
+For a 14-16ft boat, a Mercury 40HP FourStroke is approximately $8,000-$10,000 CAD retail. A Mercury 60HP FourStroke runs approximately $11,000-$13,000. A Mercury 75HP FourStroke is roughly $14,000-$16,000. A Mercury 115HP FourStroke for an 18-20ft boat is typically $18,000-$21,000. These are approximate 2026 Canadian retail figures for standard gearcase (CT is a pontoon and workboat gearcase and is not recommended on aluminum V-hulls). Build a real quote at mercuryrepower.ca/quote/motor-selection to see current pricing.
 
 ### Is EFI worth it over a carbureted motor on an aluminum fishing boat?
 
@@ -198,7 +198,7 @@ Switching from an older two-stroke to a current Mercury FourStroke EFI is immedi
 
 ### What's the best Mercury outboard for a Lund 1675 in Ontario?
 
-The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For primarily calm inland lake fishing, the Mercury 60HP Command Thrust is a strong alternative, slightly less top-end but better for shallow bays and weed fishing. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
+The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For lighter use on calm inland lakes, the standard-gearcase Mercury 60HP is a solid alternative (CT is a pontoon and workboat gearcase and is not recommended on a V-hull like the Lund 1675). The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
 
 ## Related guides
 

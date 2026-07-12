@@ -68,7 +68,7 @@ whenInDoubt: If your boat has a built-in console with windshield, you want remot
 | Installed price (Mercury) | $4,500-$9,500 (20-60 HP) | $14K-$17K (90 HP mechanical); +$2-4K SmartCraft/hydraulic |
 | Steering | Direct, reverse-intuitive | Cable under 90 HP; hydraulic 90 HP+ (+$800-$1,500) |
 | Best for | Solo / back-of-boat fishing, trolling | Family, passengers, bigger water |
-| Rice Lake pick | 60 HP EFI Command Thrust tiller; ProKicker 9.9 | 90-115 HP remote |
+| Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
 ## The simple version
@@ -228,7 +228,7 @@ Hydraulic steering is worth it for motors 115HP and above, where cable steering 
 
 ### Which Mercury tiller motor is best for a 16-foot aluminum boat on a Kawartha lake?
 
-For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI Command Thrust in tiller is the most popular choice. The Command Thrust version has higher prop thrust than the standard 60HP, which helps get heavier loads on plane quickly, useful when carrying two or three people plus gear. It also handles the variable conditions on Kawartha lakes well: enough power for open-water runs, manageable at slow speed in the weeds, and reliable EFI cold-starts every morning.
+For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI FourStroke in tiller (standard gearcase) is the most popular choice. It has plenty of power for two or three people plus gear, handles the variable conditions on Kawartha lakes well, and gives you reliable EFI cold-starts every morning. We do not spec Command Thrust here: CT is a pontoon and workboat gearcase and on a V-hull fishing boat it just adds drag with no meaningful benefit. If you want more low-speed control for trolling, add a 9.9 HP ProKicker.
 
 ## Related guides
 

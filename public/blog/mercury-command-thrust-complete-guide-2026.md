@@ -77,9 +77,9 @@ Different hulls, different answers. The honest matrix:
 |---|---|---|
 | Pontoon (any size, 20+ ft twin tube) | **Yes, strong fit** | Heavy load, want hole shot |
 | Tritoon (any HP class) | **Yes, almost always** | Third tube adds weight + drag |
-| Aluminum deep-V fishing boat (heavy load) | **Yes, often** | CT on Pro XS for offshore guides |
+| Aluminum deep-V fishing boat | **No, standard gearcase** | CT is a pontoon and workboat gearcase; on a V-hull it just adds drag |
 | Fiberglass bass boat | **No, save the money** | Top speed matters, mechanical not engineered for it |
-| Center console offshore (Mercury Pro XS CT) | **Yes, for loaded offshore work** | Heavier loads + reverse thrust at the dock |
+| Center console (V-hull) | **No, standard gearcase** | CT is a pontoon and workboat gearcase; on a V-hull it just adds drag |
 | Commercial workboat / charter / water taxi | **Yes** | Mercury SeaPro CT exists for this exact use case |
 | Kicker motor (trolling) | **Yes, 9.9/15/25 HP ProKicker CT** | Slow-speed control + alternator output |
 | Light 14-16 ft cruising boat | **No, save the money** | Standard gearcase is faster and lighter |
@@ -100,7 +100,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, aluminum deep-V |
+| 75 FourStroke CT | ELPT / EXLPT | 18-20 ft pontoons, workboats |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
@@ -108,7 +108,7 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 
 ### Mercury Pro XS Command Thrust
 
-Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. Used where you want Pro XS aggression on heavier loads, often on bass-style aluminum hulls running guide-trip weight.
+Pro XS CT (commonly 115 and 150 HP) puts the Pro XS performance powerhead on a Command Thrust gearcase. It's a niche configuration built for heavy pontoon and workboat applications. CT is a pontoon and workboat gearcase; on a V-hull bass or angler boat it just adds drag, so we don't recommend it there.
 
 ### Mercury SeaPro Command Thrust
 
@@ -130,15 +130,14 @@ For the deep pontoon-specific dive, see our [Mercury Command Thrust pontoon elig
 
 ### Aluminum deep-V fishing boats
 
-Big Lund, Princecraft, StarCraft, and similar. Heavy load with 4 anglers + gear + livewell + 2 batteries + 20-gallon fuel can put a 17 ft aluminum at displacement weight more often than buyers realize.
+Big Lund, Princecraft, StarCraft, and similar. On a planing V-hull, standard gearcase is the right call. CT is a pontoon and workboat gearcase; on a V-hull it just adds drag and costs top-end speed with no meaningful benefit, even when the boat is loaded with 4 anglers, gear, livewell, and full fuel. Other dealers commonly mis-rig V-hulls with CT claiming "more torque"; our position is that this is a mistake.
 
-- 75 HP CT or 90 HP CT on heavier deep-Vs in the 17-19 ft range is a solid call.
-- Pro XS 115 CT is the upgrade for guides running 5-6 anglers daily.
-- Standard gearcase still wins on light 14-16 ft aluminums used for solo or two-person fishing.
+- Standard gearcase across the 14-19 ft range, solo or crewed.
+- If you want more low-speed thrust for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT gearcase is a legitimate trolling-motor configuration).
 
 ### Fiberglass center consoles + offshore
 
-Mercury Pro XS CT (115-150 range) shows up most often on offshore-style center consoles running heavy. Less common in Ontario than on the Atlantic and Pacific coasts, but the use case is real for any boat that runs full bait wells + 4-5 anglers + multiple cooler weight.
+Standard gearcase. Center console V-hulls are planing boats; CT is a pontoon and workboat gearcase and on a V-hull it just adds drag. Full bait wells and 4-5 anglers don't change that. Match HP to the hull's capacity plate and stay with the standard gearcase.
 
 ### Kicker motors (the ProKicker CT story)
 
