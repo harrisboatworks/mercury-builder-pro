@@ -15171,7 +15171,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     faqs: [
       {
         question: 'How long does it take to trailer a boat from Toronto to Rice Lake?',
-        answer: 'The drive from Toronto to Rice Lake is approximately 145-155 km depending on your starting point, and typically takes 90 to 110 minutes with a trailer in tow. The route runs northeast on Highway 115/35 past Peterborough, then east and north on county roads to Gores Landing or other launches. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic through the 115/401 interchange and Peterborough can add 30-45 minutes. Budget at least 100 minutes if leaving after noon on a peak travel day.'
+        answer: 'The drive from downtown Toronto to Rice Lake takes about 90 minutes via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic can add 30-45 minutes. Budget extra time if leaving after noon on a peak travel day.'
       },
       {
         question: 'Do I need a special licence to tow a boat trailer in Ontario?',
