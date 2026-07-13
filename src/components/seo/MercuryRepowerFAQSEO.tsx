@@ -50,10 +50,10 @@ export function MercuryRepowerFAQSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Repower FAQ, Every Question Answered | Harris Boat Works</title>
+      <title>Mercury Outboard Repower FAQ: Every Question | HBW</title>
       <meta
         name="description"
-        content="20+ Mercury repower questions answered: cost, financing, pontoon repowers, shaft length, Pro XS vs FourStroke, warranty, trade-ins. Mercury dealer since 1965 on Rice Lake, Ontario."
+        content="Mercury repower FAQ: buying, financing, install and warranty answers from a Mercury Premier Dealer on Rice Lake, Ontario. Family-owned since 1947."
       />
       <meta
         name="keywords"
@@ -61,7 +61,7 @@ export function MercuryRepowerFAQSEO() {
       />
       {/* Canonical to /faq — the two routes render identical faqCategories data. */}
 
-      <meta property="og:title" content="Mercury Outboard Repower FAQ, Every Question Answered" />
+      <meta property="og:title" content="Mercury Outboard Repower FAQ: Every Question" />
       <meta property="og:description" content="20+ Mercury repower questions answered by Ontario's Mercury dealer since 1965." />
       <meta property="og:type" content="website" />
 

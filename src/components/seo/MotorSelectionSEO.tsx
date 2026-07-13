@@ -176,19 +176,19 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Mercury Outboard Quote Online: Live CAD Pricing | Harris Boat Works Ontario</title>
+      <title>Build a Mercury Outboard Quote: 2.5 to 600 HP | HBW</title>
       <meta
         name="description"
-        content="Get a Mercury outboard quote online with live CAD pricing. No obligation. You bring your boat to our Gores Landing marina and we handle the install."
+        content="Configure any Mercury FourStroke, Pro XS, SeaPro or ProKicker outboard and get instant CAD pricing online. Mercury dealer on Rice Lake since 1965."
       />
 
-      <meta property="og:title" content="Mercury Boats Canada: Mercury Outboards & Build a Quote" />
-      <meta property="og:description" content="Browse the full Mercury outboard lineup in Canada: FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing." />
+      <meta property="og:title" content="Build a Mercury Outboard Quote: 2.5 to 600 HP" />
+      <meta property="og:description" content="Configure Mercury FourStroke, Pro XS, SeaPro or ProKicker and get instant CAD pricing online." />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Boats Canada: Mercury Outboards & Build a Quote" />
-      <meta name="twitter:description" content="Browse the full Mercury outboard lineup in Canada. Configure online and get instant CAD pricing." />
+      <meta name="twitter:title" content="Build a Mercury Outboard Quote: 2.5 to 600 HP" />
+      <meta name="twitter:description" content="Configure any Mercury outboard and get instant CAD pricing. Mercury dealer since 1965." />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
   );

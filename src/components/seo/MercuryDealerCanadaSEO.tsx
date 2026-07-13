@@ -125,17 +125,17 @@ export function MercuryDealerCanadaSEO() {
 
   return (
     <Helmet>
-      <title>Why Buy from Harris Boat Works, Mercury Dealer Canada FAQ | Family-Owned Since 1947</title>
+      <title>Why Buy from Harris Boat Works: Mercury Dealer FAQ</title>
       <meta
         name="description"
-        content="Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965. Family-owned since 1947. Real CAD pricing, 3-year factory warranty, full Mercury lineup, financing available. 12 trust questions answered."
+        content="Mercury Marine Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965. Real CAD pricing and full Mercury lineup, Ontario."
       />
       <meta
         name="keywords"
         content="Mercury dealer Canada, Mercury Premier Dealer Ontario, Harris Boat Works trust, family-owned marine dealer, Mercury dealer since 1965, Rice Lake Mercury, authorized Mercury dealer"
       />
 
-      <meta property="og:title" content="Why Buy from Harris Boat Works, Mercury Dealer Canada" />
+      <meta property="og:title" content="Why Buy from Harris Boat Works: Mercury Dealer FAQ" />
       <meta property="og:description" content="Mercury Premier Dealer. Family-owned since 1947, Mercury dealer since 1965. Real CAD pricing." />
       <meta property="og:type" content="website" />
 
