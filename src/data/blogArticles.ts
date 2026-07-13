@@ -18359,14 +18359,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-vesselview-smartcraft-plain-english-guide',
-    title: 'Mercury VesselView SmartCraft Guide',
-    seoTitle: 'Mercury VesselView & SmartCraft Explained | Ontario Guide',
-    description: "Plain-English guide to Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App from HBW on Rice Lake.",
+    title: 'Mercury VesselView vs SmartCraft: Plain-English Guide',
+    seoTitle: 'Mercury VesselView vs SmartCraft: Plain-English Guide',
+    description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake.",
     image: '/lovable-uploads/hero-vesselview-smartcraft.png',
     imageAlt: 'Boater using the Mercury Marine app on a smartphone to monitor engine data while operating a Mercury FourStroke outboard.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-05-15',
+    dateModified: '2026-07-13',
     publishDate: '2026-05-15',
     category: 'Tech & Features',
     readTime: '9 min read',
@@ -18536,6 +18536,22 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       {
         "question": "Can I do this myself?",
         "answer": "The phone app pairing, yes, straightforward. The module install requires running wires, plugging into the engine harness, and (sometimes) configuring through Mercury's diagnostic tool. It's doable for an experienced DIY-er, but if you mis-wire it you can throw fault codes that take a dealer to clear. Up to you."
+      },
+      {
+        "question": "What is the difference between Mercury VesselView and SmartCraft?",
+        "answer": "SmartCraft is the data network built into SmartCraft-capable Mercury outboards; it is what the engine uses to report fuel burn, hours, alarms, and trim. VesselView is the display layer that shows you that data, either on a dash display or through the Mercury Marine app on your phone. You do not choose between them: VesselView is how you see what SmartCraft knows."
+      },
+      {
+        "question": "How do I check engine hours on Mercury VesselView?",
+        "answer": "Engine hours live in the engine data screens. In the Mercury Marine app, open your engine dashboard and hours appear alongside service reminders. On a dash-mounted VesselView display, look under the engine or maintenance menu. If you cannot find them, Harris Boat Works can pull exact hours with Mercury diagnostic tools: 905-342-2153."
+      },
+      {
+        "question": "How do I connect the Mercury Marine app to my outboard?",
+        "answer": "Pairing happens over Bluetooth through a SmartCraft module under the cowl, not over cell service. Install or confirm the module, download the Mercury Marine app, turn the key on, and follow the in-app pairing steps. Compatibility depends on your motor year and hardware, so if pairing fails, HBW can sort out which module your setup needs. Build a quote or book at mercuryrepower.ca."
+      },
+      {
+        "question": "Which Mercury outboards work with SmartCraft and VesselView?",
+        "answer": "Most Mercury outboards from 2004 or newer at 40 HP and up are SmartCraft-capable, and 2022 or newer motors at 25 HP and up with electric start are too. That capability is the foundation for VesselView displays and the Mercury Marine app. Not sure about your motor? Call Harris Boat Works at 905-342-2153 with your serial number."
       }
     ],
   },
