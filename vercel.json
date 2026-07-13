@@ -15,14 +15,14 @@
       "statusCode": 301
     },
     {
-      "source": "/:path*",
+      "source": "/(?<path>(?!sw\\.js$|service-worker\\.js$).*)",
       "has": [
         {
           "type": "host",
           "value": "quote.harrisboatworks.ca"
         }
       ],
-      "destination": "https://www.mercuryrepower.ca/:path*",
+      "destination": "https://www.mercuryrepower.ca/:path",
       "statusCode": 301
     },
     {
