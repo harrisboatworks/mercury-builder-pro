@@ -20,10 +20,6 @@ language: en-CA
 
 # Mercury Avator 7.5e: Review, Price CAD, and Range (2026)
 
-
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
-
-
 > Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake.
 
 **Category:** Buying Guide  
@@ -31,6 +27,8 @@ language: en-CA
 **Last updated:** 2026-06-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 
 > **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
 

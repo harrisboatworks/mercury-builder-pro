@@ -20,10 +20,6 @@ language: en-CA
 
 # Mercury Avator vs Torqeedo Ontario
 
-
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
-
-
 > Mercury Avator vs Torqeedo compared for Ontario boaters: power, batteries, charging, service and CAD pricing from Harris Boat Works on Rice Lake.
 
 **Category:** Electric Boating  
@@ -32,6 +28,7 @@ language: en-CA
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
 
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
 Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Premier dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
