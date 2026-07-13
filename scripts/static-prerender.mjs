@@ -5362,6 +5362,7 @@ const staticSitemapEntries = [
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
   { loc: '/electric/mercury-avator', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/motors/mercury-9-9-tiller-kicker-guide', priority: 0.85, changefreq: 'weekly' },
   // Language hub pages (only /zh and /fr exist as routes; Korean and
   // Spanish articles live under /blog/ko and /blog/es without a hub).
   { loc: '/zh', priority: 0.7, changefreq: 'monthly' },

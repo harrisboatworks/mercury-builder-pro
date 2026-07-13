@@ -133,6 +133,7 @@ const getStaticPages = (): SitemapEntry[] => {
     // AI agent integration landing page
     { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/electric/mercury-avator', lastmod: today, changefreq: 'weekly', priority: 0.8 },
+    { loc: '/motors/mercury-9-9-tiller-kicker-guide', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     // Language hub pages (only /zh and /fr exist as routes; Korean and
     // Spanish articles are served under /blog/ko and /blog/es without a hub)
     // WARNING: scripts/static-prerender.mjs regenerates sitemap.xml AFTER the
