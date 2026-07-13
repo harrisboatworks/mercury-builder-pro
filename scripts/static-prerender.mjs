@@ -4443,7 +4443,7 @@ const routes = [
   {
     path: '/fr',
     title: 'Concessionnaire Mercury en Ontario | Harris Boat Works',
-    description: "Harris Boat Works est un concessionnaire Mercury Marine Premier en Ontario. Famille depuis 1947, concessionnaire Mercury depuis 1965. Prix CAD affichés, ramassage à Gores Landing sur le lac Rice.",
+    description: "Concessionnaire Mercury Premier en Ontario. Entreprise familiale depuis 1947, Mercury depuis 1965. Prix en CAD, ramassage à Gores Landing sur le lac Rice.",
     h1: 'Harris Boat Works, concessionnaire Mercury en Ontario',
     intro: "Concessionnaire Mercury Marine Premier en Ontario. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965. Prix en dollars canadiens affichés en ligne, ramassage à Gores Landing sur le lac Rice.",
     htmlLang: 'fr',
