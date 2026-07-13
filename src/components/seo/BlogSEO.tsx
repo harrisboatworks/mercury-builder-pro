@@ -108,8 +108,16 @@ export function BlogSEO({ article }: BlogSEOProps) {
           { "@type": "Organization", "name": "Mercury Marine" },
           ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
         ],
-        ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
+        ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {}),
+        ...(article.citations && article.citations.length > 0 ? {
+          "citation": article.citations.map(c => ({
+            "@type": "CreativeWork",
+            "name": c.name,
+            "url": c.url,
+          }))
+        } : {})
       },
+
       ...(mentionsRiceLake ? [riceLakePlace] : []),
       {
         "@type": "WebPage",
