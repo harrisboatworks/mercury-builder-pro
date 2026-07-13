@@ -3305,6 +3305,8 @@ Text: (647) 952-2153`,
 
 > **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 10 to 15 lb weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 
+For a variant-by-variant breakdown of the 9.9 line itself, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
+
 There's a moment with every small-motor customer where the conversation lands on the same question. They're standing on the showroom floor, looking at two outboards that visually look identical, and they ask the version of the question that everyone asks: "What actually changes if I spend the extra money?"
 
 It's a fair question. The Mercury 9.9 HP and 15 HP FourStroke tiller models share more than they don't. Same block. Same gearcase. Same external dimensions. Same shape, same colour, same controls. From across the parking lot, you can't tell them apart.
@@ -4806,6 +4808,8 @@ Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](h
     content: `*Last reviewed: 2026-05-23*
 
 > **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local pickup details.
+
+For how the ProKicker fits alongside the rest of the 9.9 family, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
 Let us skip the preamble. If you fish Rice Lake for walleye, you need a kicker motor. That is the whole answer.
 
@@ -8575,6 +8579,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular small-boat motor in Canada. All current portables are FourStroke tiller motors. Key choices: size, shaft length (short vs. long), and manual vs. electric start. No rigging required, drop-in install. Configure at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
+Zeroing in on the 9.9? See our dedicated [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for every variant and its CAD price.
+
 ---
 
 ## Why portable motors are the right answer on small boats
@@ -9414,6 +9420,8 @@ Two minutes from now you can have a real trade-in value for your motor.
 *Last reviewed: 2026-04-06*
 
 > **Quick answer:** For musky in the Kawarthas, most anglers run a Mercury 90-150 FourStroke main with a 9.9 ProKicker for slow trolling big baits. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly, quote at mercuryrepower.ca.
+
+Running a 9.9 ProKicker for slow trolls and figure-8s? Details on every 9.9 variant are in our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
 ## Musky Fishing in the Kawarthas: Motor Selection Guide
 
@@ -17126,6 +17134,8 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configu
 Not sure about your transom height? Call us at 905-342-2153 or send a side-profile photo with a tape measure on the transom. We can confirm the right shaft length in five minutes.
 
 > **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
+
+Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) lists shaft length for every 9.9 variant.
 
 *Last reviewed: 2026-05-11.*
 ---
@@ -25870,6 +25880,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?", answer: "Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number." },
     ],
     content: `### Quick Answer
+
+For the full 9.9 lineup, tiller, electric start, Command Thrust, and ProKicker variants side by side, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
 The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable with electronic fuel injection and no cranking battery required. It is well suited to small aluminum fishing boats, cottage boats, tenders, and restricted-horsepower lakes. It is not a guaranteed planing motor for every 14-foot aluminum, and it is not the right call if you need electric start, power tilt, remote controls, or a long-shaft transom. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range.
 
