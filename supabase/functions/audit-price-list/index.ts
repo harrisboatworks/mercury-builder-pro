@@ -1,7 +1,9 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { requireAdmin } from "../_shared/admin-auth.ts";
-import { pingMotorUpdates } from "../_shared/indexnow.ts";
+// (IndexNow import removed — audit-price-list does not currently ping. If
+// price fixes should trigger a ping, import { pingMotorUpdates } and pass
+// only the model_keys whose prices actually changed.)
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
