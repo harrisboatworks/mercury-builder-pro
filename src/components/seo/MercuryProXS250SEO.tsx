@@ -145,16 +145,12 @@ export function MercuryProXS250SEO() {
     })),
   };
 
-  // Derive "From $X,XXX CAD" from the same variants that feed the schema so
-  // title / meta / og / twitter can never drift from the Offer prices.
-  const fromPrice = Math.min(...PRO_XS_250_VARIANTS.map((v) => v.hbwPrice));
-  const fromPriceStr = new Intl.NumberFormat('en-CA', {
-    style: 'currency', currency: 'CAD', maximumFractionDigits: 0,
-  }).format(fromPrice);
-  const titleStr = `Mercury Pro XS 250 Price Canada | From ${fromPriceStr} CAD | Harris Boat Works`;
-  const shortTitle = `Mercury Pro XS 250 Price Canada | From ${fromPriceStr} CAD`;
-  const metaDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock. Build your quote in 2 minutes.`;
-  const ogDesc = `Mercury Pro XS 250 from ${fromPriceStr} CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.`;
+  // Meta copy is intentionally price-free so it never drifts from the live
+  // Offer prices in the JSON-LD (which pull from PRO_XS_250_VARIANTS).
+  const titleStr = 'Mercury Pro XS 250 Price Canada (CAD) | Harris Boat Works';
+  const shortTitle = 'Mercury Pro XS 250 Price Canada (CAD)';
+  const metaDesc = 'Mercury 250 Pro XS with live CAD pricing and real repower costs. What it fits, what it weighs, what it runs. Ontario Mercury Premier dealer.';
+  const ogDesc = metaDesc;
 
   return (
     <Helmet>
