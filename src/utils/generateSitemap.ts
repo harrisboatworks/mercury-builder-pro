@@ -132,6 +132,7 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury-pontoon-outboards', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     // AI agent integration landing page
     { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    { loc: '/electric/mercury-avator', lastmod: today, changefreq: 'weekly', priority: 0.8 },
     // Language hub pages (only /zh and /fr exist as routes; Korean and
     // Spanish articles are served under /blog/ko and /blog/es without a hub)
     // WARNING: scripts/static-prerender.mjs regenerates sitemap.xml AFTER the
