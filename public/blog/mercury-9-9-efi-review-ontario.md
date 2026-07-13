@@ -30,6 +30,8 @@ language: en-CA
 
 ### Quick Answer
 
+For the full 9.9 lineup, tiller, electric start, Command Thrust, and ProKicker variants side by side, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
+
 The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable with electronic fuel injection and no cranking battery required. It is well suited to small aluminum fishing boats, cottage boats, tenders, and restricted-horsepower lakes. It is not a guaranteed planing motor for every 14-foot aluminum, and it is not the right call if you need electric start, power tilt, remote controls, or a long-shaft transom. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range.
 
 ---

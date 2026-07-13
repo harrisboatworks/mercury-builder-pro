@@ -32,6 +32,8 @@ language: en-CA
 
 > **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular small-boat motor in Canada. All current portables are FourStroke tiller motors. Key choices: size, shaft length (short vs. long), and manual vs. electric start. No rigging required, drop-in install. Configure at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
+Zeroing in on the 9.9? See our dedicated [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for every variant and its CAD price.
+
 ---
 
 ## Why portable motors are the right answer on small boats
