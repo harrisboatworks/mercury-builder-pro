@@ -8,6 +8,7 @@ import { useHapticFeedback } from "@/hooks/useHapticFeedback";
 import confetti from "canvas-confetti";
 import { COMPANY_INFO } from "@/lib/companyInfo";
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 const timelineSteps = [
   { icon: CheckCircle, label: "Payment Confirmed", description: "Your deposit has been processed successfully", complete: true },
   { icon: Mail, label: "Confirmation Email", description: "You'll receive a confirmation email with your quote PDF attached", complete: false, timing: "Within 5 minutes" },
@@ -15,6 +16,7 @@ const timelineSteps = [
 ];
 
 export default function PaymentSuccess() {
+  useNoIndex();
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [loading, setLoading] = useState(true);

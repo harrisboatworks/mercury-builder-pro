@@ -5,7 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { XCircle, ArrowLeft, CreditCard } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/companyInfo";
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 export default function PaymentCanceled() {
+  useNoIndex();
   useEffect(() => {
     document.title = "Payment Canceled - Harris Boat Works";
   }, []);

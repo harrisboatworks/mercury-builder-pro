@@ -274,6 +274,26 @@
       "statusCode": 301
     },
     {
+      "source": "/quote",
+      "destination": "/quote/motor-selection",
+      "statusCode": 301
+    },
+    {
+      "source": "/financing/apply",
+      "destination": "/financing-application",
+      "statusCode": 301
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing-reference",
+      "statusCode": 301
+    },
+    {
+      "source": "/mercury/250-pro-xs",
+      "destination": "/mercury/pro-xs-250",
+      "statusCode": 301
+    },
+    {
       "source": "/mercurypricelist",
       "destination": "/pricing-reference",
       "statusCode": 301

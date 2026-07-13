@@ -393,8 +393,11 @@ function renderArticleBodyHtml(content) {
   // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
   // body never contains literal placeholder strings.
   s = substituteLiveRateTokens(s);
-  // Drop leading H1, it duplicates the route H1 we inject in noscript.
-  s = s.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
+  // Drop ALL H1 lines from article body. The route H1 is stamped in the
+  // prerender header wrapper (<header><h1>{route.h1}</h1></header>), so any
+  // '# Heading' anywhere in the markdown body would otherwise render a second
+  // H1 and trigger duplicate-H1 warnings in Bing Site Scan.
+  s = s.replace(/^\s*#\s+.+$/gm, '');
   // Strip author footer signature (handled by AuthorByline component in SPA).
   s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
   s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
@@ -4432,6 +4435,46 @@ const routes = [
       return `<section><p>全部中文文章 (${sorted.length})</p></section>` + groupHtmlBlocks + leftoversHtml;
     }
   },
+  // ============================================================
+  // /fr hub (FrenchLanding) — prerender so the raw HTML carries
+  // lang="fr", a crawlable directory of all fr articles, and
+  // hreflang tags. Mirrors the /zh treatment above.
+  // ============================================================
+  {
+    path: '/fr',
+    title: 'Concessionnaire Mercury en Ontario | Harris Boat Works',
+    description: "Harris Boat Works est un concessionnaire Mercury Marine Premier en Ontario. Famille depuis 1947, concessionnaire Mercury depuis 1965. Prix CAD affichés, ramassage à Gores Landing sur le lac Rice.",
+    h1: 'Harris Boat Works, concessionnaire Mercury en Ontario',
+    intro: "Concessionnaire Mercury Marine Premier en Ontario. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965. Prix en dollars canadiens affichés en ligne, ramassage à Gores Landing sur le lac Rice.",
+    htmlLang: 'fr',
+    schemas: [genericPageSchema('/fr', 'Harris Boat Works, concessionnaire Mercury en Ontario', 'Concessionnaire Mercury Marine Premier en Ontario. Famille depuis 1947, Mercury depuis 1965. Prix CAD, ramassage à Gores Landing.')],
+    extraHead: [
+      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/fr" />`,
+      `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/" />`,
+      `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/zh" />`,
+      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/" />`,
+    ].join('\n  '),
+    extraNoscript: () => {
+      const visible = (frenchBlogArticles || []).filter(a => a.isPublished !== false);
+      const sorted = visible.slice().sort((a, b) =>
+        String(b.datePublished || b.publishDate || '').localeCompare(String(a.datePublished || a.publishDate || ''))
+      );
+      const cardsHtml = sorted.length
+        ? `<ul>${sorted.map(a => `<li><a href="/blog/fr/${a.slug}"><strong>${escapeHtml(a.title || a.slug)}</strong></a>${a.description ? ' — ' + escapeHtml(a.description) : ''}</li>`).join('')}</ul>`
+        : '';
+      const linksHtml =
+        '<section><h2>Devis, service et location</h2><ul>' +
+        '<li><a href="/quote/motor-selection"><strong>Générateur de devis Mercury (CAD)</strong></a></li>' +
+        '<li><a href="https://hbw.wiki/service"><strong>Demande de service (formulaire)</strong></a></li>' +
+        '<li><a href="/repower"><strong>Guide de remotorisation Mercury</strong></a></li>' +
+        '<li><a href="https://www.harrisboatworks.ca/rentals"><strong>Location de bateaux, lac Rice</strong></a></li>' +
+        '</ul></section>';
+      const articlesSection = cardsHtml
+        ? `<section><h2>Guides Mercury en français (${sorted.length})</h2>${cardsHtml}</section>`
+        : '';
+      return linksHtml + articlesSection;
+    }
+  },
   {
     path: '/repower/cost',
     title: 'Mercury Repower Cost in Ontario (2026 CAD) | Mercuryrepower.ca',
@@ -4727,6 +4770,9 @@ const routes = [
     description: 'Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works: Mercury dealer since 1965.',
     h1: 'Your Mercury Outboard Quote',
     intro: 'Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and any current promotional savings. Save it, download a PDF, or place a deposit.',
+    // Per-session quote estimates are thin, per-user, no search value: keep
+    // out of the index even for crawlers that don't execute the Helmet noindex.
+    extraHead: '<meta name="robots" content="noindex, nofollow" />\n  <meta name="googlebot" content="noindex, nofollow" />',
     schemas: [quoteSummaryPageSchema()]
   },
   {
@@ -4774,48 +4820,11 @@ const routes = [
       ).join('') +
       '</dl>'
   },
-  {
-    path: '/mercury-dealer-peterborough',
-    title: 'Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South',
-    description: 'Mercury Marine Premier Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
-    h1: 'Mercury Dealer Near Peterborough, Ontario',
-    intro: 'Harris Boat Works is the closest Mercury Marine Premier Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Lakefield, Bridgenorth, Buckhorn, and the Kawartha Lakes region.',
-    schemas: [mercuryDealerPeterboroughSchema()],
-    extraNoscript: () =>
-      '<dl>' +
-      PETERBOROUGH_FAQ_PRERENDER.map(i =>
-        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
-      ).join('') +
-      '</dl>'
-  },
-  {
-    path: '/mercury-dealer-cobourg',
-    title: 'Mercury Dealer Cobourg Ontario | Harris Boat Works, 20 Min North',
-    description: 'Mercury Marine Premier Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
-    h1: 'Mercury Dealer Near Cobourg, Ontario',
-    intro: 'Harris Boat Works is the closest Mercury Marine Premier Dealer to Cobourg, about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Cobourg, Port Hope, Grafton, Brighton, and Northumberland County.',
-    schemas: [mercuryDealerCobourgSchema()],
-    extraNoscript: () =>
-      '<dl>' +
-      COBOURG_FAQ_PRERENDER.map(i =>
-        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
-      ).join('') +
-      '</dl>'
-  },
-  {
-    path: '/mercury-dealer-gta',
-    title: 'Mercury Dealer for the GTA | Harris Boat Works, 90 Min East of Toronto',
-    description: 'Mercury Marine Premier Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.',
-    h1: 'Mercury Dealer for the Greater Toronto Area',
-    intro: 'Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers, about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965. Pickup only at Gores Landing.',
-    schemas: [mercuryDealerGTASchema()],
-    extraNoscript: () =>
-      '<dl>' +
-      GTA_FAQ_PRERENDER.map(i =>
-        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
-      ).join('') +
-      '</dl>'
-  },
+  // /mercury-dealer-peterborough, /mercury-dealer-cobourg, /mercury-dealer-gta
+  // were previously prerendered here but are now 301-redirected at the edge
+  // via vercel.json to their /locations/* canonicals, so the stamped HTML
+  // never actually served. Removed to save build time and eliminate duplicate
+  // content risk. See vercel.json redirects for the current destinations.
   {
     path: '/mercury-pro-xs',
     title: 'Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW',

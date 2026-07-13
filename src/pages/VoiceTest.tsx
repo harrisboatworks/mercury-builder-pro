@@ -13,6 +13,7 @@ import {
 } from '@/lib/RealtimeVoice';
 import { supabase } from '@/integrations/supabase/client';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 interface TestStep {
   id: string;
   title: string;
@@ -60,6 +61,7 @@ const initialSteps: TestStep[] = [
 ];
 
 export default function VoiceTest() {
+  useNoIndex();
   const navigate = useNavigate();
   const [steps, setSteps] = useState<TestStep[]>(initialSteps);
   const [isRunning, setIsRunning] = useState(false);

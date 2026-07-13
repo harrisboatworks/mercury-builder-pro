@@ -9,7 +9,9 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2, Mail, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 const Login = () => {
+  useNoIndex();
   const { signIn, signInWithGoogle, signInWithFacebook, user, loading } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');

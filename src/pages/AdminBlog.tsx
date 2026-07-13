@@ -26,6 +26,7 @@ import {
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 interface BlogSubscriber {
   id: string;
   email: string;
@@ -35,6 +36,7 @@ interface BlogSubscriber {
 }
 
 export default function AdminBlog() {
+  useNoIndex();
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedArticle, setSelectedArticle] = useState<BlogArticle | null>(null);
   const [isSendingNotification, setIsSendingNotification] = useState(false);

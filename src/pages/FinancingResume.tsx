@@ -5,7 +5,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { Card } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 export default function FinancingResume() {
+  useNoIndex();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { dispatch } = useFinancing();
