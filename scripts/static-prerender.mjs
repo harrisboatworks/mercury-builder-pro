@@ -3177,10 +3177,19 @@ const motorPageRoutes = motorRecords
     const title = `${display}: Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
     const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Premier Dealer · Mercury dealer since 1965.`;
 
+    // Per-motor social preview. Format from SEO batch:
+    // "{Motor name} | {Price in CAD} | Harris Boat Works", trimmed if long.
+    const priceLabel = price ? `${priceStr} CAD` : 'CAD Pricing';
+    const rawOgTitle = `${display} | ${priceLabel} | Harris Boat Works`;
+    const ogTitle = rawOgTitle.length > 70 ? `${display} | ${priceLabel}` : rawOgTitle;
+    const ogDescription = `${display} — ${m.horsepower} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
+
     return {
       path: `/motors/${slug}`,
       title,
       description: description.slice(0, 320),
+      ogTitle,
+      ogDescription: ogDescription.slice(0, 300),
       // Only emit og:image when we have a verified asset; otherwise let stamp()
       // fall back to the site-wide social-share image (a Harris-controlled asset),
       // never a guessed Mercury URL.
@@ -4332,6 +4341,8 @@ const routes = [
     description: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Jay Harris',
     intro: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
+    ogImage: `${SITE_URL}/lovable-uploads/hero-rice-lake-boating-guide.png`,
+    ogType: 'profile',
     schemas: [genericPageSchema('/about/jay-harris', 'Jay Harris — Owner, Harris Boat Works', 'Owner of Harris Boat Works, 3rd-generation family marina, Mercury Marine Premier Dealer.')]
   },
   {
@@ -4958,19 +4969,19 @@ const routes = [
   ...locationDetailRoutes,
   {
     path: '/privacy',
-    title: 'Privacy Policy | Harris Boat Works, mercuryrepower.ca',
-    description: 'Privacy Policy for Harris Boat Works (mercuryrepower.ca). How we collect, use, and protect personal information under PIPEDA and Canadian privacy law.',
+    title: 'Privacy Policy | Harris Boat Works',
+    description: 'How Harris Boat Works collects, uses, and protects your personal information under PIPEDA and Canadian privacy law.',
     h1: 'Privacy Policy',
     intro: 'Privacy Policy for Harris Boat Works Ltd. (mercuryrepower.ca). Describes the personal information we collect, how we use it, and your rights under PIPEDA and Canadian privacy legislation.',
-    schemas: [genericPageSchema('/privacy', 'Privacy Policy: Harris Boat Works', 'Privacy Policy for Harris Boat Works (mercuryrepower.ca).')]
+    schemas: [genericPageSchema('/privacy', 'Privacy Policy | Harris Boat Works', 'How Harris Boat Works collects, uses, and protects your personal information under PIPEDA and Canadian privacy law.')]
   },
   {
     path: '/terms',
-    title: 'Terms & Conditions | Harris Boat Works, mercuryrepower.ca',
-    description: 'Terms and Conditions for Harris Boat Works (mercuryrepower.ca). Service, repair and storage terms, plus website use terms governed by the laws of Ontario.',
+    title: 'Terms & Conditions | Harris Boat Works',
+    description: 'Terms for service, repair, storage, and online sales at Harris Boat Works — Mercury dealer on Rice Lake, Ontario.',
     h1: 'Terms & Conditions',
     intro: 'Terms and Conditions for Harris Boat Works Ltd. (mercuryrepower.ca). Includes service, repair and storage terms and website use terms governed by the laws of Ontario, Canada.',
-    schemas: [genericPageSchema('/terms', 'Terms & Conditions: Harris Boat Works', 'Terms and Conditions for Harris Boat Works (mercuryrepower.ca).')]
+    schemas: [genericPageSchema('/terms', 'Terms & Conditions | Harris Boat Works', 'Terms for service, repair, storage, and online sales at Harris Boat Works — Mercury dealer on Rice Lake, Ontario.')]
   },
 ];
 
@@ -5154,16 +5165,18 @@ function stamp(route) {
   const ogUrl = `${SITE_URL}${route.path === '/' ? '/' : route.path}`;
   const ogImage = route.ogImage || `${SITE_URL}/social-share.jpg`;
   const ogType = route.ogType || 'website';
+  const ogTitle = route.ogTitle || route.title;
+  const ogDescription = route.ogDescription || route.description;
 
   const socialReplacements = [
-    { re: /<meta\s+property=["']og:title["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:title" content="${escapeHtml(route.title)}" />` },
-    { re: /<meta\s+property=["']og:description["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:description" content="${escapeHtml(route.description)}" />` },
+    { re: /<meta\s+property=["']og:title["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:title" content="${escapeHtml(ogTitle)}" />` },
+    { re: /<meta\s+property=["']og:description["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:description" content="${escapeHtml(ogDescription)}" />` },
     { re: /<meta\s+property=["']og:url["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:url" content="${ogUrl}" />` },
     { re: /<meta\s+property=["']og:type["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:type" content="${ogType}" />` },
     { re: /<meta\s+property=["']og:image["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:image" content="${ogImage}" />` },
     { re: /<meta\s+property=["']og:locale["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:locale" content="${detectOgLocale(route.path)}" />` },
-    { re: /<meta\s+name=["']twitter:title["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:title" content="${escapeHtml(route.title)}" />` },
-    { re: /<meta\s+name=["']twitter:description["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:description" content="${escapeHtml(route.description)}" />` },
+    { re: /<meta\s+name=["']twitter:title["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:title" content="${escapeHtml(ogTitle)}" />` },
+    { re: /<meta\s+name=["']twitter:description["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:description" content="${escapeHtml(ogDescription)}" />` },
     { re: /<meta\s+name=["']twitter:url["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:url" content="${ogUrl}" />` },
     { re: /<meta\s+name=["']twitter:image["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:image" content="${ogImage}" />` }
   ];

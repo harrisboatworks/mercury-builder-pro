@@ -1,9 +1,27 @@
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { Helmet } from '@/lib/helmet';
+import { SITE_URL } from '@/lib/site';
 
 export default function Terms() {
+  const title = 'Terms & Conditions | Harris Boat Works';
+  const description = 'Terms for service, repair, storage, and online sales at Harris Boat Works — Mercury dealer on Rice Lake, Ontario.';
+  const url = `${SITE_URL}/terms`;
   return (
     <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+      </Helmet>
       <LuxuryHeader />
       <main className="min-h-screen bg-background">
         <div className="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-20">

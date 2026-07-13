@@ -21,6 +21,11 @@ export default function AboutJayHarris() {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content="profile" />
+        <meta property="og:image" content={`${SITE_URL}${heroImage}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={`${SITE_URL}${heroImage}`} />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Person',
@@ -28,6 +33,7 @@ export default function AboutJayHarris() {
           jobTitle: 'Owner, Harris Boat Works',
           worksFor: { '@type': 'Organization', name: 'Harris Boat Works', url: SITE_URL },
           url,
+          image: `${SITE_URL}${heroImage}`,
         })}</script>
       </Helmet>
 

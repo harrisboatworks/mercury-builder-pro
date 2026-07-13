@@ -303,12 +303,31 @@ export default function MotorPage() {
     inStock ? 'In stock' : 'Special order'
   } · Pickup at Gores Landing, ON · Mercury Marine Premier Dealer · Mercury dealer since 1965.`;
 
+  // Per-motor social preview tags. og:title format from SEO batch:
+  // "{Motor name} | Price in CAD | Harris Boat Works" (trimmed to fit).
+  const priceLabel = price ? `${formatCAD(price)} CAD` : 'CAD Pricing';
+  const rawOgTitle = `${display} | ${priceLabel} | Harris Boat Works`;
+  const ogTitle = rawOgTitle.length > 70 ? `${display} | ${priceLabel}` : rawOgTitle;
+  const ogDescription = `${display} — ${hp} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${
+    price ? `${formatCAD(price)} CAD` : 'Contact for CAD pricing'
+  }. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
+  const pageUrl = `https://www.mercuryrepower.ca/motors/${slug}`;
+
   return (
     <>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={`https://www.mercuryrepower.ca/motors/${slug}`} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="product" />
+        <meta property="og:image" content={schemaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={ogTitle} />
+        <meta name="twitter:description" content={ogDescription} />
+        <meta name="twitter:image" content={schemaImage} />
       </Helmet>
       <MotorPageSEO
         name={display}

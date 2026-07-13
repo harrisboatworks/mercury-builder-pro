@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fs-2.5-mh
-last_updated: 2026-07-12
+last_updated: 2026-07-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
