@@ -3783,11 +3783,12 @@ const HUB_DEFS = [
   },
   {
     path: '/maintenance',
-    metaTitle: 'Mercury Outboard Maintenance & Service Ontario | HBW',
-    metaDescription: 'Mercury maintenance follows a four-part seasonal cycle. Spring commissioning, summer service, fall winterization, winter storage. Schedule service at Harris Boat Works.',
+    lastReviewedISO: '2026-07-13',
+    metaTitle: 'Mercury Outboard Repair & Maintenance Ontario | HBW',
+    metaDescription: 'Mercury outboard repair, seasonal maintenance, and troubleshooting from a Mercury Premier Dealer in Ontario. Spring commissioning, winterization, and diagnostics.',
     breadcrumbName: 'Mercury Maintenance',
-    h1: 'Mercury Outboard Maintenance & Service Guide for Ontario (2026)',
-    intro: 'Mercury outboard maintenance in Ontario follows a four-part seasonal cycle: spring commissioning (April-May), summer mid-season check (July if running heavy hours), fall winterization (October-November), and winter storage. Skipped winterization is the leading cause of motor failure we see at HBW. Annual maintenance costs less than a single major repair on a neglected motor.',
+    h1: 'Mercury Outboard Repair & Maintenance Guide for Ontario (2026)',
+    intro: 'Mercury outboard repair and maintenance in Ontario follows a four-part seasonal cycle: spring commissioning (April-May), summer mid-season check (July if running heavy hours), fall winterization (October-November), and winter storage. Skipped winterization is the leading cause of motor failure we see at HBW. Annual maintenance costs less than a single major repair on a neglected motor.',
     table: {
       caption: 'Annual Mercury Service Cycle',
       columns: [
@@ -3809,8 +3810,18 @@ const HUB_DEFS = [
         { title: 'DIY Mercury Outboard Winterization Guide', to: '/blog/diy-mercury-outboard-winterization-guide' },
         { title: 'How Much Does Boat Winterization Cost?', to: '/blog/boat-winterization-cost-ontario-2026' },
       ]},
-      { heading: 'Troubleshooting', cards: [
+      { heading: "When something's wrong: troubleshooting guides", cards: [
         { title: "Mercury Outboard Won't Start Troubleshooting", to: '/blog/mercury-outboard-wont-start-troubleshooting' },
+        { title: "Mercury Won't Start After Sitting", to: '/blog/mercury-outboard-wont-start-after-sitting' },
+        { title: 'Outboard Overheating: Emergency Guide', to: '/blog/outboard-overheating-emergency-guide' },
+        { title: 'Mercury Overheating at Idle: Fix Guide', to: '/blog/mercury-outboard-overheating-at-idle-fix-ontario' },
+        { title: 'Mercury Overheat at High Speed', to: '/blog/mercury-outboard-overheat-high-speed' },
+        { title: 'Overheat Alarm Decoder', to: '/blog/mercury-outboard-overheat-alarm-decoder' },
+        { title: 'Mercury Beeping Codes Guide', to: '/blog/mercury-outboard-beeping-codes-guide' },
+        { title: 'SmartCraft Alarm Codes Encyclopedia', to: '/blog/mercury-smartcraft-alarm-codes-encyclopedia' },
+        { title: 'Milky Gearcase Oil: Meaning & Cost', to: '/blog/milky-gearcase-oil-meaning-cost-ontario' },
+        { title: 'Mercury Impeller Replacement: When They Fail', to: '/blog/mercury-impeller-replacement-when-they-fail' },
+        { title: 'Bilge Pump Troubleshooting Guide', to: '/blog/bilge-pump-troubleshooting-guide' },
       ]},
       { heading: 'New motor care', cards: [
         { title: 'Breaking In a New Mercury Motor', to: '/blog/breaking-in-new-mercury-motor-guide' },
@@ -3828,6 +3839,7 @@ const HUB_DEFS = [
       { question: 'What kind of oil does my Mercury need?', answer: "Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different specifications. Check your owner's manual or contact HBW." },
       { question: "Why won't my Mercury start in spring?", answer: 'Most spring no-starts are battery (40%), stale fuel (25%), or skipped winterization (20%). Run through the basics first.' },
       { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+      { question: 'Do you repair Mercury outboards?', answer: "Yes. Mercury and MerCruiser engine repair is what our shop does all season: diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Start with a service request at hbw.wiki/service, tell us the symptoms, and we'll get it on the bench." },
     ],
   },
   {
