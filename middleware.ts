@@ -12,6 +12,16 @@ export default function middleware(request: Request) {
   const url = new URL(request.url);
   const host = request.headers.get('host') || '';
 
+  // Never redirect the service-worker script URLs. Browsers refuse to update
+  // a registered service worker when the script response is a redirect, which
+  // would strand legacy PWA clients on stale hosts (quote.harrisboatworks.ca,
+  // apex mercuryrepower.ca) forever. Serve the retirement worker from those
+  // hosts as a 200 so it can unregister itself and let the next navigation
+  // follow the 301 below.
+  if (url.pathname === '/sw.js' || url.pathname === '/service-worker.js') {
+    return;
+  }
+
   // Apex → www (permanent 301)
   if (host === 'mercuryrepower.ca') {
     url.host = 'www.mercuryrepower.ca';
