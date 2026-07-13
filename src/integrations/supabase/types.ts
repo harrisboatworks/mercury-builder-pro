@@ -1776,6 +1776,27 @@ export type Database = {
         }
         Relationships: []
       }
+      indexnow_submissions: {
+        Row: {
+          last_reason: string | null
+          last_submitted_at: string
+          submission_count: number
+          url: string
+        }
+        Insert: {
+          last_reason?: string | null
+          last_submitted_at?: string
+          submission_count?: number
+          url: string
+        }
+        Update: {
+          last_reason?: string | null
+          last_submitted_at?: string
+          submission_count?: number
+          url?: string
+        }
+        Relationships: []
+      }
       inventory_updates: {
         Row: {
           completed_at: string | null
