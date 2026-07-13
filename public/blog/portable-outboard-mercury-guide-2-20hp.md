@@ -23,8 +23,6 @@ language: en-CA
 > Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular.
 
 **Category:** Buying Guide  
-
-See our full [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for the complete variant lineup and CAD prices.
 **Published:** 2026-04-27  
 **Last updated:** 2026-05-04  
 **Read time:** 8 min read  

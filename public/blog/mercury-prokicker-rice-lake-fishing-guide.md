@@ -23,8 +23,6 @@ language: en-CA
 > Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips.
 
 **Category:** Fishing  
-
-See our full [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for the complete variant lineup and CAD prices.
 **Published:** 2026-02-06  
 **Last updated:** 2026-05-23  
 **Read time:** 10 min read  

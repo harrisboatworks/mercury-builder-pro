@@ -23,8 +23,6 @@ language: en-CA
 > Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers.
 
 **Category:** Buying Guide  
-
-See our full [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for the complete variant lineup and CAD prices.
 **Published:** 2026-04-06  
 **Last updated:** 2026-04-06  
 **Read time:** 9 min read  

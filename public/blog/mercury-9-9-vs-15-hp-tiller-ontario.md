@@ -23,8 +23,6 @@ language: en-CA
 > Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca.
 
 **Category:** Buying Guide  
-
-See our full [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for the complete variant lineup and CAD prices.
 **Published:** 2026-05-18  
 **Last updated:** 2026-05-18  
 **Read time:** ~9 min read  
