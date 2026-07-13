@@ -64,10 +64,7 @@ const setSeo = (title: string, description: string) => {
     m.content = description;
     document.head.appendChild(m);
   }
-  const canonicalHref = window.location.origin + '/finance-calculator';
-  let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-  if (!link) { link = document.createElement('link'); link.rel = 'canonical'; document.head.appendChild(link); }
-  link.href = canonicalHref;
+  // Canonical is owned by the prerendered HTML / FinanceCalculatorSEO; no runtime mutation.
 };
 
 // ── Component ────────────────────────────────────────────────
