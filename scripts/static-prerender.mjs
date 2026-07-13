@@ -4341,6 +4341,8 @@ const routes = [
     description: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
     h1: 'Jay Harris',
     intro: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
+    ogImage: `${SITE_URL}/lovable-uploads/hero-rice-lake-boating-guide.png`,
+    ogType: 'profile',
     schemas: [genericPageSchema('/about/jay-harris', 'Jay Harris — Owner, Harris Boat Works', 'Owner of Harris Boat Works, 3rd-generation family marina, Mercury Marine Premier Dealer.')]
   },
   {
