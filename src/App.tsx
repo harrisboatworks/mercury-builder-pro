@@ -115,6 +115,7 @@ const RepowerTradeIn = lazy(() => import("./pages/RepowerTradeIn"));
 const MotorSelectionHub = lazy(() => import("./pages/MotorSelectionHub"));
 const MaintenanceHub = lazy(() => import("./pages/MaintenanceHub"));
 const LakesHub = lazy(() => import("./pages/LakesHub"));
+const AvatorLanding = lazy(() => import("./pages/AvatorLanding"));
 const About = lazy(() => import("./pages/About"));
 const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
 const Blog = lazy(() => import("./pages/Blog"));
