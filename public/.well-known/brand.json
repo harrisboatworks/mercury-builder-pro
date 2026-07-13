@@ -27,7 +27,21 @@
     "Model Context Protocol (MCP) - implemented",
     "Universal Commerce Protocol (UCP) - aligned, full conformance pending spec v1.0"
   ],
-  "description": "Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947. Mercury Marine Premier Dealer, a Mercury dealer since 1965, specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
+  "description": "Family-owned full-service marina and Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965. Mercury outboard sales and repowers with live CAD pricing, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, and spring commissioning. Serving Rice Lake, the Kawarthas, Peterborough, Northumberland, Durham Region, and the GTA.",
+  "services": [
+    "Mercury outboard sales",
+    "Mercury repower",
+    "Mercury Avator electric outboards (pricing coming soon)",
+    "Boat rentals (pontoon and fishing boats)",
+    "Outdoor winter boat storage with shrinkwrap",
+    "Boat winterization",
+    "Spring commissioning",
+    "Mercury factory service and repairs",
+    "Legend Boats dealer",
+    "Marine parts and accessories"
+  ],
+  "rentalsUrl": "https://www.harrisboatworks.ca/rentals",
+  "storageBookingUrl": "https://hbw.wiki/service",
   "founded": 1947,
   "mercuryDealerSince": 1965,
   "logo": {
