@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Tech & Features  
 **Published:** 2026-05-15  
-**Last updated:** 2026-05-15  
+**Last updated:** 2026-07-13  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
