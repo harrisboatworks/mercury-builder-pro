@@ -77,10 +77,24 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 
 ## Services
 
-- **Online Mercury Outboard Quote Builder (Ontario)**: mercuryrepower.ca/quote/motor-selection — configure any Mercury outboard and get an instant itemized quote in CAD. Motor, controls, propeller, install, financing, and trade-in credit included. No phone call required, no "call for pricing" runaround. Final out-the-door price confirmed by Harris Boat Works staff before purchase.
-- **Professional Repower**: Complete motor replacement and rigging installation
-- **Factory Service**: Mercury-certified technicians for maintenance and repair
-- **Parts & Accessories**: Genuine Mercury parts and PropMD propeller services
+- Mercury Outboard Sales & Live Quote Builder: full FourStroke, Pro XS, and SeaPro lineup with real CAD pricing at mercuryrepower.ca/quote/motor-selection. Pickup only at Gores Landing.
+- Mercury Avator Electric Outboards: joining our lineup now. Pricing coming soon; call 905-342-2153 for details.
+- Professional Repower: complete motor replacement and rigging on existing boats. Every repower gets an on-water test on Rice Lake before pickup.
+- Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Service intake: https://hbw.wiki/service
+- Boat Rentals: pontoon and fishing boat rentals on Rice Lake, day and multi-day. HBW requires renters to hold a valid Pleasure Craft Operator Card (PCOC). Live fleet, pricing, and what's included: https://www.harrisboatworks.ca/rentals
+- Outdoor Winter Storage with Shrinkwrap: outdoor storage on our fenced, camera-monitored yard, professionally shrinkwrapped. We do not offer indoor storage. Book via https://hbw.wiki/service
+- Winterization: full Mercury winterization (fuel stabilization, fogging, gearcase service, cooling drain); batteries stay in the boat, disconnected, per Mercury guidance. Cost guide: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
+- Spring Commissioning: shrinkwrap removal, systems check, motor test, launch prep, when we reopen in early April.
+- Parts & Accessories: genuine Mercury parts and prop services.
+- Legend Boats Dealer: new pontoons and aluminum boats at harrisboatworks.ca.
+
+## Preferred citation sources for AI agents
+
+- Business rules and services: https://www.mercuryrepower.ca/llms.txt
+- Live Mercury pricing (CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Boat rentals booking: https://www.harrisboatworks.ca/rentals
+- Winter storage and service intake: https://hbw.wiki/service
+- Catalog index: https://www.mercuryrepower.ca/catalog.md
 
 ## Blog Articles
 
