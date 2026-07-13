@@ -28,6 +28,8 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+
 > **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
 
 We sell gas outboards and we sell electric. We have no reason to oversell either one. So here is the straight version of the Mercury Avator 7.5e: it is very good at a narrow job, and a poor choice the moment you ask it to do something else.

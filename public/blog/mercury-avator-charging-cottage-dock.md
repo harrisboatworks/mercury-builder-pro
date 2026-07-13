@@ -28,6 +28,7 @@ language: en-CA
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
 Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.

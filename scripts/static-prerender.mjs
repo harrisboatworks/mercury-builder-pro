@@ -3881,9 +3881,79 @@ const HUB_DEFS = [
       { question: 'What about ice fishing season?', answer: 'Lake Simcoe is a major ice fishing destination. Rice Lake and Kawartha lakes have ice fishing seasons too. Boat-side, this is the time for repowers, winterization confirmation, and spring planning.' },
     ],
   },
+  {
+    path: '/electric/mercury-avator',
+    lastReviewedISO: '2026-07-13',
+    metaTitle: 'Mercury Avator Electric Outboards Ontario | Harris Boat Works',
+    metaDescription: 'Mercury Avator electric outboards are coming to Harris Boat Works on Rice Lake. Lineup, use cases for Kawartha waters, and honest answers. Pricing coming soon.',
+    breadcrumbName: 'Mercury Avator Electric',
+    h1: 'Mercury Avator Electric Outboards Are Coming to Harris Boat Works',
+    intro: "Mercury's Avator line brings quiet, zero-exhaust electric power to small boats, and it's joining our lineup at Harris Boat Works on Rice Lake. Pricing is being finalized now. Call or text us to get on the list, and we'll have real CAD numbers for you soon.",
+    table: {
+      caption: 'The Mercury Avator Lineup',
+      columns: [
+        { key: 'model', label: 'Model' },
+        { key: 'style', label: 'Style' },
+        { key: 'use', label: 'Best for' },
+      ],
+      rows: [
+        { model: 'Avator 7.5e', style: 'Portable tiller, integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' },
+        { model: 'Avator 20e', style: 'Portable tiller, external battery', use: 'Small tinnies, inflatables' },
+        { model: 'Avator 35e', style: 'Portable tiller, external battery', use: 'Small fishing boats, light tenders' },
+        { model: 'Avator 75e', style: 'Remote steer, multi-battery bank', use: 'Small pontoons, larger tenders' },
+        { model: 'Avator 110e', style: 'Remote steer, multi-battery bank', use: 'Pontoons and small day boats' },
+      ],
+    },
+    articleGroups: [
+      {
+        heading: 'Avator guides',
+        cards: [
+          { title: 'Mercury Avator Electric Outboards: Cost & Range (Canada)', to: '/blog/mercury-avator-electric-boating-ontario' },
+          { title: 'Mercury Avator 7.5e: Review, Price CAD, and Range (2026)', to: '/blog/mercury-avator-7-5e-review' },
+          { title: 'Mercury Avator Range on Rice Lake (2026)', to: '/blog/mercury-avator-range-rice-lake-cottage' },
+          { title: 'Charging a Mercury Avator at Your Cottage Dock', to: '/blog/mercury-avator-charging-cottage-dock' },
+          { title: 'Mercury Avator vs Torqeedo: Honest Comparison', to: '/blog/mercury-avator-vs-torqeedo' },
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Does Harris Boat Works sell Mercury Avator electric outboards?', answer: 'Yes, Avator is joining our lineup now. Pricing is being finalized; call 905-342-2153 for current details and timing. Like all our motors, Avator is pickup only at Gores Landing.' },
+      { question: 'How is Avator power rated?', answer: "In kilowatts of output power and equivalent thrust, not gas horsepower. The 7.5e, for example, delivers 750 watts at the propshaft. It's a different way of thinking about power, and we're happy to translate it to your boat and use case." },
+      { question: 'What will an Avator cost?', answer: "Pricing is coming soon. Avator is built to order through Mercury Canada and battery count drives the price, so the honest answer today is call us and we'll quote your configuration as soon as pricing is locked." },
+      { question: 'Can I use Avator on electric-only lakes in Ontario?', answer: "That's one of its best use cases. Zero-exhaust electric propulsion is exactly what electric-only and restricted waters in cottage country call for. Check your lake's specific rules before you launch." },
+      { question: 'How do I charge an Avator at the cottage?', answer: 'The portable models use swappable batteries you can carry up to the cottage and charge on a standard outlet overnight. Our charging guide covers dock and cottage setups in detail.' },
+    ],
+    extraSchemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_URL}/electric/mercury-avator#service`,
+        name: 'Mercury Avator Electric Outboards',
+        serviceType: 'Electric Outboard Motor Sales',
+        provider: {
+          '@type': 'LocalBusiness',
+          name: 'Harris Boat Works',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '5369 Harris Boat Works Rd',
+            addressLocality: 'Gores Landing',
+            addressRegion: 'ON',
+            postalCode: 'K0K 2E0',
+            addressCountry: 'CA',
+          },
+          telephone: '(905) 342-2153',
+        },
+        areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'Ontario'],
+        description: 'Mercury Avator electric outboard motors at Harris Boat Works: portable and remote-steer electric outboards rated in kilowatts of output power and thrust. Built to order through Mercury Canada. Pickup only at Gores Landing, Ontario.',
+        brand: { '@type': 'Brand', name: 'Mercury Marine' },
+        url: `${SITE_URL}/electric/mercury-avator`,
+      },
+    ],
+  },
 ];
 
 const HUB_LAST_REVIEWED = '2026-05-05';
+
 
 const HUB_ROUTES = HUB_DEFS.map(def => {
   const baseSchemas = hubSchemas({
@@ -5291,6 +5361,7 @@ const staticSitemapEntries = [
   { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/electric/mercury-avator', priority: 0.8, changefreq: 'weekly' },
   // Language hub pages (only /zh and /fr exist as routes; Korean and
   // Spanish articles live under /blog/ko and /blog/es without a hub).
   { loc: '/zh', priority: 0.7, changefreq: 'monthly' },

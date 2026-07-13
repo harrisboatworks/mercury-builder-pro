@@ -28,6 +28,7 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
 
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 > **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
 
 ## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
