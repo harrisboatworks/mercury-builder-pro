@@ -160,12 +160,9 @@ export function MercuryProXS250SEO() {
     <Helmet>
       <title>{titleStr}</title>
       <meta name="description" content={metaDesc} />
-      <link rel="canonical" href={CANONICAL} />
-
       <meta property="og:title" content={shortTitle} />
       <meta property="og:description" content={ogDesc} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={CANONICAL} />
       <meta property="og:image" content={PRO_XS_250_HERO_IMAGE} />
 
       <meta name="twitter:card" content="summary_large_image" />

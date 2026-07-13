@@ -14,7 +14,6 @@ export default function CaseStudies() {
           name="description"
           content="Real Mercury repower case studies from Ontario scenarios including aluminum fishing boats, pontoons, bass boats, and walkaround cuddy setups."
         />
-        <link rel="canonical" href={`${SITE_URL}/case-studies`} />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',

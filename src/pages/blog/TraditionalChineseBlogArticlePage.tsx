@@ -67,13 +67,11 @@ export default function TraditionalChineseBlogArticlePage() {
         <meta name="description" content={article.description} />
         {/* Pilot — kept out of the index until native-speaker review approves */}
         <meta name="robots" content="noindex,follow" />
-        <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="zh-Hant" href={url} />
         {hansUrl && <link rel="alternate" hrefLang="zh-Hans" href={hansUrl} />}
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="zh_TW" />
         <meta property="og:type" content="article" />
       </Helmet>

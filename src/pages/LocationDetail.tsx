@@ -244,7 +244,6 @@ export default function LocationDetail() {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={metaDesc} />
-        <link rel="canonical" href={canonical} />
         <script type="application/ld+json">{JSON.stringify(jsonLdGraph)}</script>
       </Helmet>
       <RepowerHeader />

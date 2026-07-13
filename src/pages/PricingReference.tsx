@@ -64,12 +64,10 @@ export default function PricingReference() {
           name="description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
         />
-        <link rel="canonical" href="https://www.mercuryrepower.ca/pricing-reference" />
         <link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Harris Boat Works" />
         <meta property="og:locale" content="en_CA" />
-        <meta property="og:url" content="https://www.mercuryrepower.ca/pricing-reference" />
         <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
         <meta
           property="og:description"

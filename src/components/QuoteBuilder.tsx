@@ -189,13 +189,8 @@ const QuoteBuilder = () => {
     }
     desc.content = 'Build your Mercury outboard quote with live pricing, sale deals, and promotions.';
 
-    let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = window.location.origin + '/';
+    // Canonical is owned by the prerendered HTML and/or the SEO component
+    // for this route; do not mutate it at runtime.
   }, []);
 
   const handleStepComplete = (stepData: any) => {

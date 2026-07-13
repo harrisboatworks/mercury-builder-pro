@@ -16,10 +16,8 @@ export default function AboutJayHarris() {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
         <meta property="og:type" content="profile" />
         <meta property="og:image" content={`${SITE_URL}${heroImage}`} />
         <meta name="twitter:card" content="summary_large_image" />

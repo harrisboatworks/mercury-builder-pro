@@ -292,12 +292,10 @@ export default function UrduBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="ur" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="ur_PK" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />

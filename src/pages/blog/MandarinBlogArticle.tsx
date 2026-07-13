@@ -85,12 +85,10 @@ export default function MandarinBlogArticle() {
       <Helmet>
         <title>Mercury水星舷外机换新指南 GTA华人船主 | Harris Boat Works</title>
         <meta name="description" content="安大略省Mercury水星舷外机换新（Repower）完整指南。Harris Boat WorksPremier 经销商，在线透明报价，无需电话谈价。GTA华人船主必读。" />
-        <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="zh-Hans" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content="安大略省Mercury水星舷外机换新指南" />
         <meta property="og:description" content="GTA华人船主Mercury舷外机换新完整指南。在线透明报价。" />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="zh_CN" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content="2026-04-12" />

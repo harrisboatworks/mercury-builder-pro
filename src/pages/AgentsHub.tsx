@@ -38,7 +38,6 @@ export default function AgentsHub() {
           name="description"
           content="Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947."
         />
-        <link rel="canonical" href={`${SITE_URL}/agents`} />
         <meta name="robots" content="index, follow" />
         <link rel="alternate" type="application/json" title="MCP Manifest" href="/.well-known/mcp.json" />
         <script type="application/ld+json">{JSON.stringify({

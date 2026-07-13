@@ -139,11 +139,9 @@ export function MercuryOutboardsOntarioSEO() {
         name="keywords"
         content="Mercury outboards Ontario, Mercury dealer Ontario, Mercury Premier dealer, Mercury Rice Lake, buy Mercury outboard Kawarthas, Mercury dealer GTA, Mercury Cobourg, Mercury Peterborough, Mercury Northumberland"
       />
-      <link rel="canonical" href={`${SITE_URL}/mercury-outboards-ontario`} />
 
       <meta property="og:title" content="Mercury Outboards Ontario, Full Lineup at Harris Boat Works" />
       <meta property="og:description" content="Mercury Premier Dealer on Rice Lake. Full lineup, real CAD pricing online." />
-      <meta property="og:url" content={`${SITE_URL}/mercury-outboards-ontario`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />

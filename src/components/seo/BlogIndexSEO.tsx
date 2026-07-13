@@ -53,12 +53,10 @@ export function BlogIndexSEO() {
       <title>Mercury Motor Guides & Boating Tips | Harris Boat Works Blog</title>
       <meta name="description" content="Mercury outboard guides, maintenance tips, and repower advice from a family Mercury dealer on Rice Lake, Ontario since 1947. Straight answers." />
       <meta name="keywords" content="mercury outboard tips, boat motor guide, outboard maintenance, mercury dealer blog, boat buying guide ontario" />
-      <link rel="canonical" href={`${SITE_URL}/blog`} />
       
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Motor Guides & Boating Tips | Harris Boat Works Blog" />
       <meta property="og:description" content="Expert advice on Mercury outboard motors, boat maintenance, and buying guides." />
-      <meta property="og:url" content={`${SITE_URL}/blog`} />
       <meta property="og:type" content="website" />
       
       {/* Twitter */}

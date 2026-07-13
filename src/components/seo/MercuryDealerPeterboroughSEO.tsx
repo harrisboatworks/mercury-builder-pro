@@ -91,11 +91,9 @@ export function MercuryDealerPeterboroughSEO() {
         name="keywords"
         content="Mercury dealer Peterborough, Mercury outboard Peterborough Ontario, Mercury repower Kawartha Lakes, boat motors Peterborough, Mercury Marine Lakefield"
       />
-      <link rel="canonical" href={`${SITE_URL}/mercury-dealer-peterborough`} />
 
       <meta property="og:title" content="Mercury Dealer Peterborough Ontario | Harris Boat Works" />
       <meta property="og:description" content="Mercury Premier Dealer 35 min south of Peterborough on Rice Lake. Family-owned since 1947." />
-      <meta property="og:url" content={`${SITE_URL}/mercury-dealer-peterborough`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />

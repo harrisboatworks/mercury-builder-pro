@@ -35,13 +35,11 @@ export function HomepageSEO() {
       <title>Mercury Repower Cost Ontario: Real Prices in 2 Minutes</title>
       <meta name="description" content="Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947." />
       <meta name="keywords" content="Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, Mercury trade-in, Mercury financing" />
-      <link rel="canonical" href={SITE_URL} />
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Repower Cost Ontario: Real Prices in 2 Minutes" />
       <meta property="og:description" content="Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={SITE_URL} />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
       <meta property="og:locale" content="en_CA" />
       <meta property="og:site_name" content="Harris Boat Works" />

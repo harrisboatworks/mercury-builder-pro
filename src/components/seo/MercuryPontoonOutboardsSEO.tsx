@@ -87,11 +87,9 @@ export function MercuryPontoonOutboardsSEO() {
         name="keywords"
         content="Mercury pontoon outboard, Mercury Command Thrust, pontoon repower Ontario, Mercury 90 Command Thrust, Mercury 115 Command Thrust, Legend pontoon Mercury, Princecraft pontoon outboard, pontoon motor Kawarthas"
       />
-      <link rel="canonical" href={`${SITE_URL}/mercury-pontoon-outboards`} />
 
       <meta property="og:title" content="Mercury Outboards for Pontoon Boats, Command Thrust & High-Thrust Options" />
       <meta property="og:description" content="Mercury Command Thrust 40–150 HP for pontoon boats. Mercury Premier Dealer on Rice Lake." />
-      <meta property="og:url" content={`${SITE_URL}/mercury-pontoon-outboards`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />

@@ -108,7 +108,6 @@ export default function TradeInValuePage() {
           name="description"
           content="Get a free instant estimate for your outboard motor trade-in value. Mercury, Yamaha, Honda, Suzuki and more, check what your motor is worth in seconds."
         />
-        <link rel="canonical" href={`${SITE_URL}/trade-in-value`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 

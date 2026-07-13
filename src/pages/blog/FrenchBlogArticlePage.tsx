@@ -314,7 +314,6 @@ export default function FrenchBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="fr-CA" href={url} />
         {FR_TO_EN_SLUG[article.slug] && (
           <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${FR_TO_EN_SLUG[article.slug]}`} />
@@ -324,7 +323,6 @@ export default function FrenchBlogArticlePage() {
         )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />

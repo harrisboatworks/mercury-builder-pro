@@ -79,12 +79,10 @@ export function PromotionsPageSEO(_props: PromotionsPageSEOProps) {
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={`${SITE_URL}/promotions`} />
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/promotions`} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

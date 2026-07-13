@@ -73,12 +73,10 @@ export function FAQPageSEO() {
         name="keywords"
         content="Mercury repower FAQ, Mercury outboard repower, boat repower Ontario, Mercury repower cost, Mercury outboard financing, Mercury dealer FAQ, repower vs new boat, Mercury Command Thrust, Mercury ProKicker, Harris Boat Works"
       />
-      <link rel="canonical" href={`${SITE_URL}/faq`} />
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower FAQ, Harris Boat Works" />
       <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Premier Dealer since 1947." />
-      <meta property="og:url" content={`${SITE_URL}/faq`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
 

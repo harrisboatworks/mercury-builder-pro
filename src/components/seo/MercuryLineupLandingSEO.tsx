@@ -66,12 +66,9 @@ export function MercuryLineupLandingSEO({ config }: { config: LandingConfig }) {
     <Helmet>
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
-      <link rel="canonical" href={config.canonical} />
-
       <meta property="og:title" content={metaTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={config.canonical} />
       <meta property="og:image" content={config.ogImage} />
 
       <meta name="twitter:card" content="summary_large_image" />

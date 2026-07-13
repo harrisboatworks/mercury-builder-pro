@@ -48,7 +48,6 @@ export default function ToolsIndex() {
           name="description"
           content="Trade-in value estimator, repower cost calculator, Boost eligibility checker, shaft length picker. Real CAD numbers from a Mercury Premier dealer in Gores Landing, ON."
         />
-        <link rel="canonical" href="https://www.mercuryrepower.ca/tools" />
       </Helmet>
 
       <div className="min-h-screen bg-repower-paper">

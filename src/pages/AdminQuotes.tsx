@@ -106,9 +106,10 @@ const AdminQuotes = () => {
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!desc) { desc = document.createElement('meta'); desc.name = 'description'; document.head.appendChild(desc); }
     desc.content = 'View and export customer quotes with trade-in penalty details.';
-    let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
-    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = window.location.origin + '/admin/quotes';
+    // Admin routes are not indexable; no canonical mutation.
+    let robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.appendChild(robots); }
+    robots.content = 'noindex, nofollow';
   }, []);
 
   const normalizeSavedQuote = (sq: any): UnifiedQuoteRow => {
