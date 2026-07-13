@@ -9,8 +9,13 @@ declare global {
   interface Window {
     dataLayer: Array<Record<string, any>>;
     gtag?: (command: 'event', eventName: string, params?: Record<string, any>) => void;
+    clarity?: ClarityFunction;
   }
 }
+
+type ClarityFunction = ((command: string, ...args: unknown[]) => void) & {
+  q?: unknown[][];
+};
 
 export type DeviceType = 'mobile' | 'tablet' | 'desktop';
 
@@ -27,6 +32,9 @@ export type PageCategory =
 const CONSENT_COOKIE = 'mr_consent';
 const CONSENT_DAYS = 180;
 const QUOTE_ID_KEY = 'mr_quote_id';
+export const CLARITY_PROJECT_ID = 'xlz4gut71c';
+
+const CLARITY_SCRIPT_SELECTOR = `script[data-clarity-project-id="${CLARITY_PROJECT_ID}"]`;
 
 /** Generate a RFC4122 v4 UUID without external deps. */
 export function uuidv4(): string {
@@ -132,6 +140,63 @@ export function pushConsentUpdate(value: ConsentValue): void {
 export function setConsent(value: ConsentValue): void {
   writeCookie(CONSENT_COOKIE, value, CONSENT_DAYS);
   pushConsentUpdate(value);
+}
+
+/* ---------------- Microsoft Clarity consent gate ---------------- */
+
+const CLARITY_DENIED_STATE = {
+  ad_Storage: 'denied',
+  analytics_Storage: 'denied',
+} as const;
+
+const CLARITY_ANALYTICS_STATE = {
+  ad_Storage: 'denied',
+  analytics_Storage: 'granted',
+} as const;
+
+function ensureClarityQueue(): ClarityFunction {
+  if (typeof window.clarity === 'function') return window.clarity;
+
+  const clarity = ((...args: unknown[]) => {
+    clarity.q = clarity.q || [];
+    clarity.q.push(args);
+  }) as ClarityFunction;
+  window.clarity = clarity;
+  return clarity;
+}
+
+/**
+ * Load Clarity only after the visitor has granted analytics consent.
+ * The queued Consent API v2 command is processed before recording begins.
+ */
+export function loadClarityAfterConsent(): boolean {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return false;
+  if (getStoredConsent() !== 'granted') return false;
+
+  const clarity = ensureClarityQueue();
+  clarity('consentv2', CLARITY_ANALYTICS_STATE);
+
+  if (document.querySelector(CLARITY_SCRIPT_SELECTOR)) return true;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
+  script.dataset.clarityProjectId = CLARITY_PROJECT_ID;
+  document.head.appendChild(script);
+  return true;
+}
+
+/** Keep Clarity aligned with the existing mr_consent decision. */
+export function syncClarityConsent(value: ConsentValue): void {
+  if (typeof window === 'undefined') return;
+  if (value === 'granted') {
+    loadClarityAfterConsent();
+    return;
+  }
+
+  if (typeof window.clarity === 'function') {
+    window.clarity('consentv2', CLARITY_DENIED_STATE);
+  }
 }
 
 /* ---------------- Page category mapping ---------------- */

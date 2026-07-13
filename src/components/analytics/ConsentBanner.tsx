@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getStoredConsent, pushConsentDefault, pushConsentUpdate, setConsent } from '@/lib/analytics';
+import {
+  getStoredConsent,
+  pushConsentDefault,
+  pushConsentUpdate,
+  setConsent,
+  syncClarityConsent,
+} from '@/lib/analytics';
 
 /**
  * PIPEDA-friendly Consent Mode v2 banner.
@@ -14,6 +20,7 @@ export function ConsentBanner() {
     const stored = getStoredConsent();
     if (stored) {
       pushConsentUpdate(stored);
+      syncClarityConsent(stored);
     } else {
       pushConsentDefault();
       setOpen(true);
@@ -24,6 +31,7 @@ export function ConsentBanner() {
 
   const choose = (value: 'granted' | 'denied') => {
     setConsent(value);
+    syncClarityConsent(value);
     setOpen(false);
   };
 
