@@ -292,12 +292,10 @@ export default function TagalogBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="tl" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="tl_PH" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />

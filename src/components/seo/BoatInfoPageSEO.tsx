@@ -68,12 +68,10 @@ export function BoatInfoPageSEO() {
         name="description"
         content="Tell us about your boat to confirm motor compatibility, shaft length, controls, and rigging for your Mercury outboard quote. Step 2 of the Harris Boat Works quote builder."
       />
-      <link rel="canonical" href={`${SITE_URL}/quote/boat-info`} />
 
       <meta property="og:title" content="Boat Information, Mercury Quote Builder" />
       <meta property="og:description" content="Confirm Mercury motor compatibility for your boat, shaft length, controls, and rigging." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/quote/boat-info`} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Boat Information, Mercury Quote Builder" />

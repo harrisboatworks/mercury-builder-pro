@@ -137,11 +137,9 @@ export function HowToRepowerSEO() {
         name="keywords"
         content="how to repower a boat, Mercury repower process, boat motor replacement, repower steps, Mercury install Ontario, boat repower guide, Harris Boat Works"
       />
-      <link rel="canonical" href={`${SITE_URL}/how-to-repower-a-boat`} />
 
       <meta property="og:title" content="How to Repower a Boat, 7-Step Mercury Process" />
       <meta property="og:description" content="Quote, fit, deposit, install, lake-test, pickup. The complete Mercury repower process at Harris Boat Works." />
-      <meta property="og:url" content={`${SITE_URL}/how-to-repower-a-boat`} />
       <meta property="og:type" content="article" />
 
       <meta name="twitter:card" content="summary_large_image" />

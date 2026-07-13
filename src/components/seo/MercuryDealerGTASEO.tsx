@@ -97,11 +97,9 @@ export function MercuryDealerGTASEO() {
         name="keywords"
         content="Mercury dealer GTA, Mercury dealer Toronto, Mercury outboard Lake Simcoe, Mercury repower Lake Scugog, Mercury Marine Greater Toronto Area, Mercury dealer near Toronto"
       />
-      <link rel="canonical" href={`${SITE_URL}/mercury-dealer-gta`} />
 
       <meta property="og:title" content="Mercury Dealer for the GTA | Harris Boat Works" />
       <meta property="og:description" content="Mercury Premier Dealer 90 min east of Toronto. Real CAD pricing, family-owned since 1947." />
-      <meta property="og:url" content={`${SITE_URL}/mercury-dealer-gta`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />

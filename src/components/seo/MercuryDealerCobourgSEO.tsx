@@ -90,11 +90,9 @@ export function MercuryDealerCobourgSEO() {
         name="keywords"
         content="Mercury dealer Cobourg, Mercury outboard Cobourg Ontario, Mercury repower Northumberland, boat motors Port Hope, Mercury Marine Cobourg Harbour"
       />
-      <link rel="canonical" href={`${SITE_URL}/mercury-dealer-cobourg`} />
 
       <meta property="og:title" content="Mercury Dealer Cobourg Ontario | Harris Boat Works" />
       <meta property="og:description" content="Mercury Premier Dealer 20 min north of Cobourg. Family-owned since 1947." />
-      <meta property="og:url" content={`${SITE_URL}/mercury-dealer-cobourg`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />

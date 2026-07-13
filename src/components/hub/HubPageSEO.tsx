@@ -102,11 +102,9 @@ export function HubPageSEO({
     <Helmet>
       <title>{metaTitle || title}</title>
       <meta name="description" content={cleanDesc} />
-      <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:title" content={metaTitle || title} />
       <meta property="og:description" content={cleanDesc} />
-      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_CA" />
       <meta property="og:image" content={ogImage} />

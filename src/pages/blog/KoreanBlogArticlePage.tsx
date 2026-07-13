@@ -294,7 +294,6 @@ export default function KoreanBlogArticlePage() {
       <Helmet>
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
-        <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="ko" href={url} />
         {KO_TO_EN_SLUG[article.slug] && (
           <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${KO_TO_EN_SLUG[article.slug]}`} />
@@ -304,7 +303,6 @@ export default function KoreanBlogArticlePage() {
         )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
-        <meta property="og:url" content={url} />
         <meta property="og:locale" content="ko_KR" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />

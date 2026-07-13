@@ -23,13 +23,11 @@ export function ContactPageSEO() {
       <title>Contact Harris Boat Works | Mercury Repower Quotes | Gores Landing Ontario</title>
       <meta name="description" content="Get in touch for a Mercury outboard repower quote. Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. Call 905-342-2153. Family-owned since 1947." />
       <meta name="keywords" content="contact Harris Boat Works, Mercury dealer Ontario, Mercury repower quote, Gores Landing boat dealer, Rice Lake Mercury dealer" />
-      <link rel="canonical" href={`${SITE_URL}/contact`} />
 
       {/* Open Graph */}
       <meta property="og:title" content="Contact Harris Boat Works | Mercury Repower Quotes" />
       <meta property="og:description" content="Get in touch for a Mercury outboard repower quote. Family-owned dealer since 1947 on Rice Lake." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/contact`} />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
 
       {/* Twitter */}
