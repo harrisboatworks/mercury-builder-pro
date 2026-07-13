@@ -6,25 +6,25 @@ export default function MaintenanceHub() {
   return (
     <HubPage
       path="/maintenance"
-      metaTitle="Mercury Outboard Maintenance & Service Ontario | HBW"
-      metaDescription="Mercury maintenance follows a four-part seasonal cycle. Spring commissioning, summer service, fall winterization, winter storage. Schedule service at Harris Boat Works."
+      metaTitle="Mercury Outboard Repair & Maintenance Ontario | HBW"
+      metaDescription="Mercury outboard repair, seasonal maintenance, and troubleshooting from a Mercury Premier Dealer in Ontario. Spring commissioning, winterization, and diagnostics."
       breadcrumbName="Mercury Maintenance"
-      lastReviewedISO="2026-05-05"
-      lastReviewedLabel="May 2026"
-      h1="Mercury Outboard Maintenance & Service Guide for Ontario (2026)"
-      subhead="Spring commissioning, winterization, troubleshooting. The seasonal cycle that keeps Mercurys running 20+ years."
-      primaryCTA={{ label: 'Request Service', to: '/contact' }}
+      lastReviewedISO="2026-07-13"
+      lastReviewedLabel="July 2026"
+      h1="Mercury Outboard Repair & Maintenance Guide for Ontario (2026)"
+      subhead="Mercury outboard repair, seasonal service, and troubleshooting. The cycle that keeps Mercurys running 20+ years."
+      primaryCTA={{ label: 'Submit a service request', to: 'https://hbw.wiki/service' }}
       phoneNumber="(905) 342-2153"
       directAnswer={
         <>
-          Mercury outboard maintenance in Ontario follows a four-part seasonal
-          cycle: spring commissioning (April-May), summer mid-season check
-          (July if running heavy hours), fall winterization (October-November),
-          and winter storage. Skipped winterization is the leading cause of
-          motor failure we see at HBW. Annual maintenance costs less than a
-          single major repair on a neglected motor. Modern Mercury FourStrokes
-          properly maintained last 1,500 to 2,000+ engine hours, or 10 to 30
-          years of recreational use.
+          Mercury outboard repair and maintenance in Ontario follows a four-part
+          seasonal cycle: spring commissioning (April-May), summer mid-season
+          check (July if running heavy hours), fall winterization
+          (October-November), and winter storage. Skipped winterization is the
+          leading cause of motor failure we see at HBW. Annual maintenance
+          costs less than a single major repair on a neglected motor. Modern
+          Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine
+          hours, or 10 to 30 years of recreational use.
         </>
       }
       table={{
@@ -54,9 +54,19 @@ export default function MaintenanceHub() {
           ],
         },
         {
-          heading: 'Troubleshooting',
+          heading: "When something's wrong: troubleshooting guides",
           cards: [
-            { title: "Mercury Outboard Won't Start Troubleshooting", description: 'Diagnose spring no-starts.', to: '/blog/mercury-outboard-wont-start-troubleshooting' },
+            { title: "Mercury Outboard Won't Start Troubleshooting", description: 'Diagnose spring no-starts step by step.', to: '/blog/mercury-outboard-wont-start-troubleshooting' },
+            { title: "Mercury Won't Start After Sitting", description: 'Storage-related no-start diagnosis.', to: '/blog/mercury-outboard-wont-start-after-sitting' },
+            { title: 'Outboard Overheating: Emergency Guide', description: 'What to do on the water right now.', to: '/blog/outboard-overheating-emergency-guide' },
+            { title: 'Mercury Overheating at Idle: Fix Guide', description: 'Low-speed overheat causes and fixes.', to: '/blog/mercury-outboard-overheating-at-idle-fix-ontario' },
+            { title: 'Mercury Overheat at High Speed', description: 'High-RPM overheat, usually cooling flow.', to: '/blog/mercury-outboard-overheat-high-speed' },
+            { title: 'Overheat Alarm Decoder', description: 'What the horn pattern means.', to: '/blog/mercury-outboard-overheat-alarm-decoder' },
+            { title: 'Mercury Beeping Codes Guide', description: 'Beep patterns and what they mean.', to: '/blog/mercury-outboard-beeping-codes-guide' },
+            { title: 'SmartCraft Alarm Codes Encyclopedia', description: 'Every SmartCraft fault code, plain English.', to: '/blog/mercury-smartcraft-alarm-codes-encyclopedia' },
+            { title: 'Milky Gearcase Oil: Meaning & Cost', description: 'Water in the lower unit, next steps.', to: '/blog/milky-gearcase-oil-meaning-cost-ontario' },
+            { title: 'Mercury Impeller Replacement: When They Fail', description: 'The single most common Mercury repair.', to: '/blog/mercury-impeller-replacement-when-they-fail' },
+            { title: 'Bilge Pump Troubleshooting Guide', description: 'When the pump quits or runs constantly.', to: '/blog/bilge-pump-troubleshooting-guide' },
           ],
         },
         {
@@ -88,6 +98,7 @@ export default function MaintenanceHub() {
         { question: 'What kind of oil does my Mercury need?', answer: 'Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different specifications. Check your owner\'s manual or contact HBW.' },
         { question: "Why won't my Mercury start in spring?", answer: 'Most spring no-starts are battery (40%), stale fuel (25%), or skipped winterization (20%). Run through the basics first.' },
         { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+        { question: 'Do you repair Mercury outboards?', answer: "Yes. Mercury and MerCruiser engine repair is what our shop does all season: diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Start with a service request at hbw.wiki/service, tell us the symptoms, and we'll get it on the bench." },
       ]}
       secondaryCTA={{
         heading: 'Considering a repower instead of more service?',
