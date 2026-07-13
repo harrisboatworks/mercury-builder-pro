@@ -31,7 +31,9 @@ export interface BlogArticle {
   videoAssetUrl?: string; // Optional self-hosted CDN video (Lovable Assets)
   videoAssetTitle?: string;
   videoAssetCaption?: string;
+  citations?: { name: string; url: string }[]; // Optional external citations, emitted into BlogPosting schema
 }
+
 
 // Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
 // not UTC. Prevents posts from publishing a day early in EDT.
