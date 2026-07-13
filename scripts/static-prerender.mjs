@@ -3950,6 +3950,78 @@ const HUB_DEFS = [
       },
     ],
   },
+  {
+    path: '/motors/mercury-9-9-tiller-kicker-guide',
+    lastReviewedISO: '2026-07-13',
+    metaTitle: 'Mercury 9.9 HP Outboard: Tiller, Kicker & ProKicker Guide | Harris Boat Works',
+    metaDescription: 'Every Mercury 9.9 variant explained: tiller, electric start, Command Thrust, and the ProKicker trolling motor. Real CAD prices from a Rice Lake Mercury dealer.',
+    breadcrumbName: 'Mercury 9.9 Guide',
+    h1: "The Mercury 9.9: Ontario's Do-Everything Small Outboard",
+    intro: 'The Mercury 9.9 is the most versatile small outboard we sell: cottage tinny power, sailboat auxiliary, and, in ProKicker form, the standard trolling kicker on Rice Lake and the Kawarthas. Prices start at $2,999 CAD as of July 2026. The trick is picking the right variant, and that is what this page sorts out.',
+    table: {
+      caption: 'Mercury 9.9 lineup at HBW',
+      columns: [
+        { key: 'variant', label: 'Variant' },
+        { key: 'letters', label: 'What the letters mean' },
+        { key: 'best', label: 'Best for' },
+      ],
+      rows: [
+        { variant: '9.9MH', letters: 'Manual start, 15 in short shaft, tiller', best: 'Small tinnies, tenders, shallow transoms' },
+        { variant: '9.9MLH', letters: 'Manual start, 20 in long shaft, tiller', best: 'Most cottage aluminum boats' },
+        { variant: '9.9EH / 9.9ELH', letters: 'Electric start, 15 in / 20 in, tiller', best: 'Anyone tired of pulling a cord' },
+        { variant: '9.9ELH Command Thrust', letters: 'Electric start, 20 in, bigger CT gearcase', best: 'Sailboat auxiliary, heavy displacement duty' },
+        { variant: '9.9EXLH Command Thrust', letters: 'Electric start, 25 in shaft, CT gearcase', best: 'Sailboats and tall transoms' },
+        { variant: '9.9 ProKicker (ELHPT/ELPT/EXLHPT/EXLPT)', letters: 'EFI, CT gearcase, high-thrust 4-blade prop, power tilt, tiller or remote', best: 'The dedicated trolling kicker' },
+      ],
+    },
+    articleGroups: [
+      {
+        heading: 'Mercury 9.9 guides',
+        cards: [
+          { title: 'Mercury 9.9 EFI Review (Ontario)', to: '/blog/mercury-9-9-efi-review-ontario' },
+          { title: 'Mercury ProKicker on Rice Lake: Fishing Guide', to: '/blog/mercury-prokicker-rice-lake-fishing-guide' },
+          { title: 'Mercury 9.9 vs 15 HP Tiller (Ontario)', to: '/blog/mercury-9-9-vs-15-hp-tiller-ontario' },
+          { title: 'Portable Mercury Outboards 2-20 HP', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
+          { title: 'Outboard Shaft Length Guide', to: '/blog/outboard-shaft-length-guide' },
+          { title: 'Musky Boat & Motor Guide: Kawarthas', to: '/blog/musky-boat-motor-guide-kawarthas' },
+        ],
+      },
+    ],
+    faqs: [
+      { question: "What's the difference between the Mercury 9.9 and the ProKicker?", answer: 'Same 9.9 powerhead, different mission. The ProKicker adds EFI, the Command Thrust gearcase, a high-thrust four-blade prop, and power tilt, all tuned for precise low-speed trolling as a kicker motor. The standard 9.9 is the all-purpose version for tinnies and tenders.' },
+      { question: 'How much does a Mercury 9.9 cost in Canada?', answer: "As of July 2026, HBW's price starts at $2,999 CAD for the manual-start 9.9MH/MLH, $3,399 for electric start, and $5,000 to $5,198 for ProKicker models. Live pricing for every variant is on our pricing reference page." },
+      { question: 'Is the Mercury 9.9 good for a sailboat?', answer: "Yes, it's a classic sailboat auxiliary. Choose the Command Thrust version with the 25 in (EXLH) shaft for most sailboats: the bigger gearcase and prop give the push a displacement hull needs." },
+      { question: 'What shaft length do I need?', answer: 'Measure transom height: about 15 in needs short (MH/EH), about 20 in needs long (L models, the most common), about 25 in needs XL, typical for sailboats. Our shaft length guide covers how to measure.' },
+      { question: 'Can the 9.9 push my fishing boat as a kicker?', answer: "That's the ProKicker's whole job. On 16-20 ft aluminum fishing rigs it trolls all day at precise speeds. It mounts beside your main motor on the transom or a kicker bracket." },
+      { question: 'Do I need a licence to run a 9.9 in Ontario?', answer: "You need a Pleasure Craft Operator Card (PCOC) to operate any powered boat in Canada, including a 9.9. The boat itself needs a Pleasure Craft Licence if the motor is 10 HP or more, which the 9.9 neatly ducks under, one reason it's such a popular cottage motor." },
+    ],
+    extraSchemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_URL}/motors/mercury-9-9-tiller-kicker-guide#service`,
+        name: 'Mercury 9.9 HP Outboard Sales',
+        serviceType: 'Outboard Motor Sales',
+        provider: {
+          '@type': 'LocalBusiness',
+          name: 'Harris Boat Works',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '5369 Harris Boat Works Rd',
+            addressLocality: 'Gores Landing',
+            addressRegion: 'ON',
+            postalCode: 'K0K 2E0',
+            addressCountry: 'CA',
+          },
+          telephone: '(905) 342-2153',
+        },
+        areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'Ontario'],
+        description: 'Mercury 9.9 HP outboards at Harris Boat Works: tiller, electric start, Command Thrust, and ProKicker variants in stock and available for pickup at Gores Landing, Ontario. Real CAD pricing from a Mercury Premier Dealer since 1965.',
+        brand: { '@type': 'Brand', name: 'Mercury Marine' },
+        url: `${SITE_URL}/motors/mercury-9-9-tiller-kicker-guide`,
+      },
+    ],
+  },
 ];
 
 const HUB_LAST_REVIEWED = '2026-05-05';
