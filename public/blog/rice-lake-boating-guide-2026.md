@@ -28,7 +28,9 @@ language: en-CA
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
-![Map of Rice Lake showing boat launches, fishing zones, and hazard areas for the 2026 boating guide.](/lovable-uploads/rice-lake-practical-boating-map.png)
+![Illustrated map of Rice Lake, Ontario showing Bewdley at the southwest end, Gores Landing and Harris Boat Works on the south shore, Harwood, Hiawatha and Keene to the north, and the Trent River outlet toward Hastings at the northeast end](/lovable-uploads/rice-lake-map-illustrated.jpg)
+
+*Rice Lake at a glance. Orientation map, not for navigation.*
 
 ## Quick Answer
 
