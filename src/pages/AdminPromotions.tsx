@@ -67,19 +67,16 @@ const AdminPromotions = () => {
   useEffect(() => {
     document.title = 'Promotions Manager | Admin';
     const desc = document.querySelector('meta[name="description"]');
-    const canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
     if (!desc) {
       const m = document.createElement('meta');
       m.name = 'description';
       m.content = 'Manage discounts and bonus promotions for Mercury outboards.';
       document.head.appendChild(m);
     }
-    if (!canonical) {
-      const link = document.createElement('link');
-      link.rel = 'canonical';
-      link.href = window.location.href;
-      document.head.appendChild(link);
-    }
+    // Admin routes are not indexable; no canonical mutation.
+    let robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.appendChild(robots); }
+    robots.content = 'noindex, nofollow';
   }, []);
 
   const [loading, setLoading] = useState(true);
