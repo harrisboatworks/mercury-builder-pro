@@ -566,6 +566,7 @@ function AnimatedRoutes() {
         <Route path="/motor-selection" element={<MotorSelectionHub />} />
         <Route path="/maintenance" element={<MaintenanceHub />} />
         <Route path="/lakes" element={<LakesHub />} />
+        <Route path="/electric/mercury-avator" element={<AvatorLanding />} />
         
         {/* Compare Page */}
         <Route path="/compare" element={<Compare />} />
