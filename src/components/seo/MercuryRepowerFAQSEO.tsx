@@ -60,11 +60,9 @@ export function MercuryRepowerFAQSEO() {
         content="Mercury repower FAQ, Mercury outboard FAQ, repower cost Ontario, pontoon repower, Mercury financing, Pro XS vs FourStroke, Command Thrust, ProKicker, SmartCraft Connect, Mercury warranty"
       />
       {/* Canonical to /faq — the two routes render identical faqCategories data. */}
-      <link rel="canonical" href={`${SITE_URL}/faq`} />
 
       <meta property="og:title" content="Mercury Outboard Repower FAQ, Every Question Answered" />
       <meta property="og:description" content="20+ Mercury repower questions answered by Ontario's Mercury dealer since 1965." />
-      <meta property="og:url" content={`${SITE_URL}/faq`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />

@@ -136,13 +136,11 @@ export function FinancingSEO() {
       <title>{`Boat Motor Financing | Apply Online | Rates ${CURRENT_RATE.rate} | Harris Boat Works`}</title>
       <meta name="description" content={`Finance your Mercury outboard motor. ${CURRENT_RATE.programLabel}. Easy online application, quick approval. Flexible terms from 36-180 months.`} />
       <meta name="keywords" content="boat motor financing, outboard motor loan, Mercury financing, marine financing Canada, boat loan Ontario, outboard financing rates" />
-      <link rel="canonical" href={`${SITE_URL}/financing-application`} />
       
       {/* Open Graph */}
       <meta property="og:title" content="Boat Motor Financing | Harris Boat Works" />
       <meta property="og:description" content={`Finance your Mercury outboard. Rates ${CURRENT_RATE.rate}. Easy online application.`} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/financing-application`} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

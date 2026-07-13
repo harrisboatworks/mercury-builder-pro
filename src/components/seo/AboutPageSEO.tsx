@@ -59,13 +59,11 @@ export function AboutPageSEO() {
       <title>About Harris Boat Works | Family-Owned Since 1947</title>
       <meta name="description" content="Family-owned Mercury dealer on Rice Lake, Ontario since 1947. Mercury Premier Dealer serving Kawarthas, GTA & Peterborough — real prices, no phone tag." />
       <meta name="keywords" content="Harris Boat Works, Mercury dealer Ontario, Rice Lake boat dealer, Kawartha Lakes marine, boat dealer Peterborough, Mercury repower center, family boat dealer" />
-      <link rel="canonical" href={`${SITE_URL}/about`} />
 
       {/* Open Graph */}
       <meta property="og:title" content="About Harris Boat Works | Family-Owned Since 1947" />
       <meta property="og:description" content="Family-owned Mercury dealer on Rice Lake, Ontario since 1947. Mercury Premier Dealer serving Kawarthas, GTA & Peterborough." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/about`} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

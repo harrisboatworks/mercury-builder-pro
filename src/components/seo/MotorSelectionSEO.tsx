@@ -181,12 +181,10 @@ export function MotorSelectionSEO({
         name="description"
         content="Get a Mercury outboard quote online with live CAD pricing. No obligation. You bring your boat to our Gores Landing marina and we handle the install."
       />
-      <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
 
       <meta property="og:title" content="Mercury Boats Canada: Mercury Outboards & Build a Quote" />
       <meta property="og:description" content="Browse the full Mercury outboard lineup in Canada: FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Boats Canada: Mercury Outboards & Build a Quote" />

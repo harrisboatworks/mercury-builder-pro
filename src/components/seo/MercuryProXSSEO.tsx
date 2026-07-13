@@ -128,11 +128,9 @@ export function MercuryProXSSEO() {
         name="keywords"
         content="Mercury Pro XS, Mercury Pro XS Ontario, Mercury Pro XS 115, Mercury Pro XS 150, Mercury Pro XS 200, Mercury Pro XS 250, Pro XS dealer Canada, Mercury performance outboard"
       />
-      <link rel="canonical" href={`${SITE_URL}/mercury-pro-xs`} />
 
       <meta property="og:title" content="Mercury Pro XS Outboards 115–250 HP, Real CAD Pricing" />
       <meta property="og:description" content="Pro XS performance lineup at Harris Boat Works. Mercury Premier Dealer, Rice Lake." />
-      <meta property="og:url" content={`${SITE_URL}/mercury-pro-xs`} />
       <meta property="og:type" content="product.group" />
 
       <meta name="twitter:card" content="summary_large_image" />
