@@ -34,9 +34,24 @@ serve(async (req) => {
     let updated = 0;
     let failed = 0;
 
+    // Track which motors' user-visible content actually changed so we can
+    // ping ONLY those to IndexNow (not "every in-stock motor every run").
+    const changedModelKeys: string[] = [];
+
     // Process each motor
     for (const motor of motors) {
       try {
+        const nextAvailability = motor.availability || 'In Stock';
+        const nextBasePrice = parseFloat(motor.price) || null;
+        const nextDescription = motor.description ?? null;
+
+        // Snapshot prior user-visible fields for change detection.
+        const { data: prior } = await supabase
+          .from('motor_models')
+          .select('id, model_key, availability, base_price, description')
+          .eq('stock_number', motor.stock_number)
+          .maybeSingle();
+
         const motorData = {
           stock_number: motor.stock_number,
           make: motor.make || 'Mercury',
@@ -44,11 +59,11 @@ serve(async (req) => {
           horsepower: parseFloat(motor.horsepower) || 0,
           year: parseInt(motor.year) || 2026,
           motor_type: motor.motor_type || 'Outboard',
-          base_price: parseFloat(motor.price) || null,
-          availability: motor.availability || 'In Stock',
+          base_price: nextBasePrice,
+          availability: nextAvailability,
           image_url: motor.image_url,
           detail_url: motor.detail_url,
-          description: motor.description,
+          description: nextDescription,
           features: motor.features ? JSON.parse(motor.features) : [],
           specifications: motor.specifications ? JSON.parse(motor.specifications) : {},
           inventory_source: 'api',
@@ -63,27 +78,39 @@ serve(async (req) => {
 
         const { error } = await supabase
           .from('motor_models')
-          .upsert(motorData, { 
+          .upsert(motorData, {
             onConflict: 'stock_number',
-            ignoreDuplicates: false 
+            ignoreDuplicates: false
           });
 
         if (error) {
           console.error('❌ Database error:', error);
           failed++;
-        } else {
-          // Check if it was insert or update
-          const { data: existing } = await supabase
-            .from('motor_models')
-            .select('id')
-            .eq('stock_number', motor.stock_number)
-            .single();
-          
-          if (existing) {
-            updated++;
-          } else {
-            inserted++;
+          continue;
+        }
+
+        if (prior) {
+          updated++;
+          const priorPrice = prior.base_price == null ? null : Number(prior.base_price);
+          const priceChanged =
+            (priorPrice == null) !== (nextBasePrice == null) ||
+            (priorPrice != null && nextBasePrice != null &&
+              Math.abs(priorPrice - nextBasePrice) > 1);
+          const availabilityChanged = prior.availability !== nextAvailability;
+          const descriptionChanged = (prior.description ?? null) !== nextDescription;
+
+          if (prior.model_key && (priceChanged || availabilityChanged || descriptionChanged)) {
+            changedModelKeys.push(prior.model_key);
           }
+        } else {
+          // Newly inserted — worth pinging once we know its model_key.
+          inserted++;
+          const { data: fresh } = await supabase
+            .from('motor_models')
+            .select('model_key')
+            .eq('stock_number', motor.stock_number)
+            .maybeSingle();
+          if (fresh?.model_key) changedModelKeys.push(fresh.model_key);
         }
       } catch (err) {
         console.error('❌ Processing error:', err);
@@ -97,23 +124,14 @@ serve(async (req) => {
       motors_inserted: inserted,
       motors_updated: updated,
       motors_failed: failed,
+      motors_changed_for_indexnow: changedModelKeys.length,
       timestamp: new Date().toISOString()
     };
 
     console.log('✅ Sync completed:', summary);
 
-    // Fire IndexNow ping for in-stock motors (non-blocking).
-    try {
-      const { data: inStockMotors } = await supabase
-        .from('motor_models')
-        .select('model_key')
-        .eq('availability', 'In Stock')
-        .not('model_key', 'is', null);
-      const keys = (inStockMotors || []).map((m: any) => m.model_key).filter(Boolean);
-      pingMotorUpdates(keys, 'inventory-api-sync');
-    } catch (pingErr) {
-      console.error('IndexNow ping skipped:', pingErr);
-    }
+    // Fire IndexNow ping ONLY for motors whose user-visible content changed.
+    pingMotorUpdates(changedModelKeys, 'inventory-api-sync');
 
     return new Response(JSON.stringify(summary), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
