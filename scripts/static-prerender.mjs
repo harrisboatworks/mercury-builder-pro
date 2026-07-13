@@ -6095,7 +6095,16 @@ for (const route of blogArticleRoutes) {
   const noscriptsForCheck = noscripts.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
   if (markdownPattern.test(noscriptsForCheck)) verifyErrors.push(`${route.path}: noscript contains raw markdown or author footer.`);
 }
-const sitemapMotorMatches = writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [];
+// Exclude non-DB hub pages that live under /motors/ (e.g. the Mercury 9.9 guide)
+// from the per-motor count check.
+const NON_DB_MOTOR_HUB_URLS = new Set([
+  '/motors/mercury-9-9-tiller-kicker-guide',
+]);
+const sitemapMotorMatches = (writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [])
+  .filter(m => {
+    const path = m.replace(/<\/?loc>/g, '').replace(SITE_URL, '');
+    return !NON_DB_MOTOR_HUB_URLS.has(path);
+  });
 if (sitemapMotorMatches.length !== motorPageRoutes.length) {
   verifyErrors.push(`sitemap.xml motor URL count ${sitemapMotorMatches.length} != ${motorPageRoutes.length}.`);
 }
