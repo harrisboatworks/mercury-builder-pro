@@ -59,7 +59,7 @@ export default function PricingReference() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
-        <title>Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works</title>
+        <title>Mercury Outboard Prices Ontario (CAD) | Harris Boat Works</title>
         <meta
           name="description"
           content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
