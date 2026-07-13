@@ -318,10 +318,8 @@ export default function MotorPage() {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="product" />
         <meta property="og:image" content={schemaImage} />
         <meta name="twitter:card" content="summary_large_image" />

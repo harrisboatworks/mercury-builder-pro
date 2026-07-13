@@ -12,7 +12,6 @@ export default function Locations() {
       <Helmet>
         <title>Mercury Outboard Pickup Areas | Harris Boat Works</title>
         <meta name="description" content="Regional Mercury buyer guides for Peterborough, Cobourg, Northumberland, the Kawarthas, Rice Lake, Durham Region (Whitby, Ajax, Pickering, Oshawa, Bowmanville/Courtice), and the GTA. Pickup only at Gores Landing, sales catchments only, no mobile service or delivery." />
-        <link rel="canonical" href={`${SITE_URL}/locations`} />
       </Helmet>
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />

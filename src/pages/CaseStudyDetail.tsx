@@ -77,7 +77,6 @@ export default function CaseStudyDetail() {
         <Helmet>
           <title>{pageTitle}</title>
           <meta name="description" content={metaDesc} />
-          <link rel="canonical" href={canonical} />
           <script type="application/ld+json">{JSON.stringify(jsonLdGraph)}</script>
         </Helmet>
 
@@ -199,7 +198,6 @@ export default function CaseStudyDetail() {
       <Helmet>
         <title>{study.title} | Harris Boat Works</title>
         <meta name="description" content={study.excerpt} />
-        <link rel="canonical" href={url} />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@graph': [
