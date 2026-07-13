@@ -230,7 +230,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercury Overheating Emergency Guide](https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md)
 - [Rice Lake Boating Guide 2026](https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md)
 - [Mercruiser Sterndrive Ontario Guide](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md)
-- [Mercury VesselView SmartCraft Guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md)
+- [Mercury VesselView vs SmartCraft Explained (Ontario)](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md)
 - [Read Mercury Outboard Serial Number](https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md)
 - [Mercury Maintenance: The 20/100/300 Rule](https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md)
 - [Shrinkwrap vs Indoor Boat Storage Ontario](https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md)
