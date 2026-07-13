@@ -1,6 +1,6 @@
 {
   "ratingValue": "4.7",
-  "reviewCount": "316",
+  "reviewCount": "317",
   "weekdayText": [
     "Monday: 8:00 AM – 5:00 PM",
     "Tuesday: 8:00 AM – 5:00 PM",
@@ -54,6 +54,6 @@
       "closes": "16:00"
     }
   ],
-  "fetchedAt": "2026-07-12T16:46:07.543Z",
+  "fetchedAt": "2026-07-13T11:15:02.721Z",
   "source": "google-places-edge"
 }
