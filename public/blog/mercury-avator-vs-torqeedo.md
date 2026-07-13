@@ -20,6 +20,10 @@ language: en-CA
 
 # Mercury Avator vs Torqeedo Ontario
 
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+
+
 > Mercury Avator vs Torqeedo compared for Ontario boaters: power, batteries, charging, service and CAD pricing from Harris Boat Works on Rice Lake.
 
 **Category:** Electric Boating  

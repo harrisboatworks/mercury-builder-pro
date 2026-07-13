@@ -20,6 +20,10 @@ language: en-CA
 
 # Mercury Avator Electric Outboards: Cost & Range (Canada)
 
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+
+
 > Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer.
 
 **Category:** Buying Guide  

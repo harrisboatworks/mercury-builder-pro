@@ -20,6 +20,10 @@ language: en-CA
 
 # Mercury Avator Electric Outboard Range on Rice Lake (2026)
 
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+
+
 > How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage.
 
 **Category:** Electric Boating  

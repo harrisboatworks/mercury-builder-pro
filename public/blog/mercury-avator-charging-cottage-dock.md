@@ -20,6 +20,10 @@ language: en-CA
 
 # Charging a Mercury Avator at Your Cottage Dock (2026)
 
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+
+
 > How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage.
 
 **Category:** Electric Boating  

@@ -20,6 +20,10 @@ language: en-CA
 
 # Mercury Avator 7.5e: Review, Price CAD, and Range (2026)
 
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+
+
 > Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake.
 
 **Category:** Buying Guide  
