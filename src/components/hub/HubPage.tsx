@@ -172,7 +172,11 @@ export function HubPage(props: HubPageProps) {
               size="lg"
               className="bg-repower-gold text-repower-navy-900 hover:bg-repower-gold/90"
             >
-              <Link to={primaryCTA.to}>{primaryCTA.label}</Link>
+              {/^https?:\/\//.test(primaryCTA.to) ? (
+                <a href={primaryCTA.to} target="_blank" rel="noopener noreferrer">{primaryCTA.label}</a>
+              ) : (
+                <Link to={primaryCTA.to}>{primaryCTA.label}</Link>
+              )}
             </Button>
             <a
               href={phoneToTel(phoneNumber)}
