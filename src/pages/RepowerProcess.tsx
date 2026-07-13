@@ -56,8 +56,8 @@ export default function RepowerProcess() {
   return (
     <HubPage
       path="/repower/process"
-      metaTitle="Mercury Repower Process: Under a Week | Mercuryrepower.ca"
-      metaDescription="Most Mercury repowers at Harris Boat Works run under a week from first contact to a water-tested pickup on Rice Lake. Special orders take longer. Pickup only at Gores Landing, ON."
+      metaTitle="Mercury Repower Process: 7 Steps from Quote to Splash (2026)"
+      metaDescription="The 7-step Mercury repower process at Harris Boat Works: quote, deposit, order, rig, install, lake test, pickup. Mercury dealer since 1965 in Gores Landing, Ontario."
       breadcrumbName="Mercury Repower Process"
       lastReviewedISO="2026-07-09"
       lastReviewedLabel="July 2026"
