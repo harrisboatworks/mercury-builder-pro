@@ -23,6 +23,8 @@ language: en-CA
 > Outboard shaft length guide: 15, 20, 25 inch. Match shaft to transom height to avoid cavitation and damage. Ontario dealer's practical advice for correct fit.
 
 **Category:** Buying Guide  
+
+See our full [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for the complete variant lineup and CAD prices.
 **Published:** 2026-05-05  
 **Last updated:** 2026-05-27  
 **Read time:** 10 min read  

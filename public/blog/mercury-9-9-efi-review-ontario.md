@@ -23,6 +23,8 @@ language: en-CA
 > The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.
 
 **Category:** Mercury Buying Guides  
+
+See our full [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) for the complete variant lineup and CAD prices.
 **Published:** 2026-05-10  
 **Last updated:** 2026-05-10  
 **Read time:** 10 min read  
