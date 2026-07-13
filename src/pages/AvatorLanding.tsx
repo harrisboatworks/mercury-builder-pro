@@ -213,7 +213,7 @@ export default function AvatorLanding() {
             and we'll get you a real number as soon as pricing is locked.
           </>
         ),
-        button: { label: 'Notify me', to: 'mailto:info@harrisboatworks.ca?subject=Avator%20pricing%20updates' },
+        button: { label: 'Contact HBW', to: '/contact' },
       }}
       extraSchemas={[serviceSchema]}
     />
