@@ -66,7 +66,7 @@ step5Label: Battery
 step5Question: Is the battery off the boat or on a maintainer for the winter?
 step5Tip: A frozen, discharged battery is a $200 spring purchase. A trickle charger or full pull-out is $50 of prevention.
 escalationLabel: Want us to handle it?
-escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at /service or call (905) 342-2153.
+escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at hbw.wiki/service.
 ::
 
 ::pull-quote

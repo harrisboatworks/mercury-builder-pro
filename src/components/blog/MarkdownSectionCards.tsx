@@ -1,6 +1,6 @@
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Phone, Calculator, MapPin } from 'lucide-react';
+import { Phone, Calculator, MapPin, Wrench } from 'lucide-react';
 import {
   ImagePlaceholder,
   type ImagePlaceholderProps,
@@ -1020,6 +1020,7 @@ type CardKind =
   | 'sources'
   | 'who-this-is-for'
   | 'when-to-call'
+  | 'when-to-service'
   | 'try-calculator'
   | 'dealer-note'
   | 'local-context'
@@ -1083,13 +1084,9 @@ function detectH2Card(headingText: string): CardKind {
     t === 'who should read this'
   )
     return 'who-this-is-for';
-  if (
-    t === 'when to call hbw' ||
-    t === 'when to call us' ||
-    t === 'when to bring it in' ||
-    t.startsWith('when to bring it to hbw')
-  )
-    return 'when-to-call';
+  if (t === 'when to call hbw' || t === 'when to call us') return 'when-to-call';
+  if (t === 'when to bring it in' || t.startsWith('when to bring it to hbw'))
+    return 'when-to-service';
   if (
     t === 'try the calculator' ||
     t === 'run the numbers' ||
@@ -1253,6 +1250,18 @@ const cardConfig: Record<
     eyebrowClass: 'text-[hsl(45_85%_60%)]',
     role: 'complementary',
     aria: 'When to call HBW',
+  },
+  'when-to-service': {
+    wrapper:
+      'my-8 rounded-lg p-5 md:p-6 shadow-sm border text-white [&_*]:text-white [&_a]:text-[hsl(45_85%_60%)] [&_strong]:text-[hsl(45_85%_70%)]',
+    style: {
+      backgroundColor: 'hsl(220 25% 10%)',
+      borderColor: 'hsl(45 75% 50%)',
+    },
+    eyebrow: 'Bring It In',
+    eyebrowClass: 'text-[hsl(45_85%_60%)]',
+    role: 'complementary',
+    aria: 'When to bring it in for service',
   },
   'try-calculator': {
     wrapper:
@@ -1426,6 +1435,15 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             Call 905-342-2153
+          </a>
+        )}
+        {section.kind === 'when-to-service' && (
+          <a
+            href="https://hbw.wiki/service"
+            className="mt-3 inline-flex items-center gap-2 rounded-md bg-[hsl(45_85%_55%)] px-4 py-2 font-semibold !text-[hsl(220_25%_10%)] no-underline shadow-sm hover:bg-[hsl(45_85%_50%)]"
+          >
+            <Wrench className="h-4 w-4" aria-hidden="true" />
+            Submit a service request
           </a>
         )}
       </aside>

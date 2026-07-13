@@ -130,7 +130,7 @@ Rice Lake is the closest serious fishing and cruising lake to the eastern GTA th
 Pick your boat and date, and the booking system shows you live availability and rates. Waivers happen online the night before, so rental morning is ten minutes from parking lot to throttle.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

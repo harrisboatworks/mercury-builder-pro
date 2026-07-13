@@ -153,7 +153,6 @@ This page is the SmartCraft Alarm Codes hub. Companion pages in the same diagnos
 Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: (905) 342-2153
-Text: (647) 952-2153
 
 Thinking it's time for a new motor instead? Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 

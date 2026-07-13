@@ -166,7 +166,7 @@ We service trailers we sell and most major brands. Common reasons customers brin
 - **Bunk replacement**: full carpet and bracket refresh
 - **Pre-purchase inspection**: buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
 
-Book at [hbw.wiki/service](https://hbw.wiki/service) or call (905) 342-2153.
+Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## When to Replace vs Repair
 

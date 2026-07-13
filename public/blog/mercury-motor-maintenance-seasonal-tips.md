@@ -32,7 +32,7 @@ language: en-CA
 
 > **Quick answer:** Mercury outboards in Ontario need three predictable touchpoints a year: spring commissioning, mid-season checks, and fall winterization with fogging and lower-unit oil. Skip winterization and you risk a cracked block from frozen water in the powerhead, a $4,000-plus mistake. Book early; spring rush adds weeks. Service scheduling and pricing live at mercuryrepower.ca.
 
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service) or call (905) 342-2153.
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service).
 
 ## Quick recommendation
 
@@ -176,7 +176,7 @@ Spring service slots fill up in March and April. Fall winterization slots fill i
 
 [**Request Service**](https://hbw.wiki/service)
 
-If you want to talk through what your specific motor needs, [give us a call at (905) 342-2153](tel:9053422153). We can pull up your service history (if we have serviced the motor before) and give you a real recommendation.
+Not sure what your specific motor needs? Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor details and we'll lay it out.
 
 ---
 

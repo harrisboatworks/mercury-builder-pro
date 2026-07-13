@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
-> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then call HBW at 905-342-2153.
+> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
@@ -116,9 +116,9 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 
 ## Ready for HBW to look at it?
 
-**Phone:** 905-342-2153  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Email:** info@harrisboatworks.ca  
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. Mercury CDS equipped.
 

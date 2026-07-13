@@ -120,7 +120,7 @@ step5Label: First water trial
 step5Question: Does the motor reach its rated WOT RPM with normal load?
 step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
 escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
+escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at hbw.wiki/service.
 ::
 
 ### Step 5, Lubrication
@@ -227,7 +227,7 @@ Two related guides in the same cluster:
 
 Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
-Want the boat ready for the long weekend? Get on the schedule now. Questions first? Call **905-342-2153**.
+Want the boat ready for the long weekend? Get on the schedule now at [hbw.wiki/service](https://hbw.wiki/service).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON
@@ -252,7 +252,7 @@ The primary indicator is milky or coffee-coloured gear oil when you remove the d
 
 ### How much does professional spring commissioning cost in Ontario?
 
-Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, call 905-342-2153 or request service at hbw.wiki/service.
+Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, request service at hbw.wiki/service.
 
 ### What's the best time to book spring commissioning near Rice Lake or the Kawarthas?
 

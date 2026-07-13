@@ -109,7 +109,7 @@ Every gearcase drain at our shop gets the same eyes: oil colour read before it h
 If your oil looked wrong, or nobody's looked in over a year, that's the whole booking reason.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

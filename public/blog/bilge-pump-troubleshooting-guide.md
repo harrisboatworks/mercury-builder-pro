@@ -333,7 +333,7 @@ We also check the manual override circuit separately from the automatic circuit.
 
 ---
 
-## When to Call HBW
+## When to bring it in
 
 If you've tested the manual override and the pump runs, but the float switch test does nothing, or you see visible corrosion at any connector, that's a same-visit fix for us and not worth troubleshooting further on your own. Same goes for a boat that's already taken on water once. Once a bilge system has let you down one time, it's earned a real inspection, not just a part swap and a guess.
 
@@ -345,9 +345,9 @@ Put in a request at hbw.wiki/service and we'll check the pump, the switch, and t
 
 If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them while you wait at the dock.
 
-**Phone:** 905-342-2153
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Boat Electrical Safety Checklist (Ontario Freshwater)](/blog/boat-electrical-safety-checklist-ontario-freshwater)

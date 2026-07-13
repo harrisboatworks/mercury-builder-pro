@@ -53,7 +53,7 @@ step4Question: Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-press
 step5Label: Pull codes with SmartCraft if equipped
 step5Question: VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.
 step5Tip: Take a photo of the code on the screen so you can text it to us.
-escalationLabel: Still beeping after all 5? Call us at (905) 342-2153.
+escalationLabel: Still beeping after all 5? Put in a service request at hbw.wiki/service.
 escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
 ::
 
@@ -73,7 +73,7 @@ A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal
 | Alarm at WOT only | At wide-open throttle | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Check water pressure at speed; possible service issue |
 | Alarm briefly after shutdown | Heat-soak | Normal if it clears as the motor cools and does not return; if it recurs, diagnose it | Wait for the motor to cool and confirm it does not come back; if it does, book a diagnostic |
 
-The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or call (905) 342-2153.
+The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or put in a service request at hbw.wiki/service.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
@@ -92,7 +92,7 @@ Here's the quick triage:
 2. **Check the fuel-water separator.** If it's the water-in-fuel warning, the separator may need draining or replacing.
 3. **Read the SmartCraft gauge or fault code** if your motor is equipped. The gauge tells you exactly which warning is active, instead of guessing from the beep. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for the full code list.
 
-Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, call us at 905-342-2153 before you run it hard.
+Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, don't run it hard. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) and we'll get it on the bench.
 
 ---
 

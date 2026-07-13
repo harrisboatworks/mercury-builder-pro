@@ -58,7 +58,7 @@ step5Label: Engine cutoff and spark
 step5Question: Is the lanyard attached, and does the engine crank without firing?
 step5Tip: Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
 escalationLabel: Tried everything?
-escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Call us at (905) 342-2153 or book at /service.
+escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
 ::
 
 ---

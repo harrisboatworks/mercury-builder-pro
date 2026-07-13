@@ -113,7 +113,7 @@ Every pump job here ends the same way: reassembled to torque, run on water, tell
 Tell us the motor, the hours, and the last time anyone was in there.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

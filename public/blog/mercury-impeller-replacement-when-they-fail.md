@@ -86,7 +86,7 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 2. Check the telltale stream.
 3. Tilt the motor and clear weeds or debris from the water intake.
 4. Re-check the stream. If it is strong again, weeds were likely the problem; head in at low rpm and monitor.
-5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Call 905-342-2153.
+5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What We See at HBW
 
@@ -110,9 +110,9 @@ The pattern we'd love to break: the boater who noticed a weak telltale in June a
 
 If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
 
-**Phone:** 905-342-2153
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Phone:** 905-342-2153
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 
@@ -140,7 +140,7 @@ Only sometimes. A short idle test in cold water is the easiest exam an impeller 
 
 ### Does HBW stock Mercury impellers and water pump kits?
 
-Yes. We stock Mercury and Mercruiser water pump kits in depth as part of probably the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service.
+Yes. We stock Mercury and Mercruiser water pump kits in depth as part of probably the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Book at hbw.wiki/service.
 
 ## Related guides
 
