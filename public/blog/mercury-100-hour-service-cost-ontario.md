@@ -128,7 +128,7 @@ Our marina is closed December 1 to April 1, and fall slots fill in order. The ef
 Tell us the motor and the season you want covered, and we'll handle the rest, recommendations line included.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

@@ -122,7 +122,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 **Rent:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Price a boat and motor:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)

@@ -30,7 +30,7 @@ language: en-CA
 
 ## Quick answer
 
-Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Call HBW at 905-342-2153.
+Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Put in a service request at hbw.wiki/service.
 
 ![Mercury outboard won't start: dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
 
@@ -142,9 +142,9 @@ Most no-start customers are running again the same day they bring the boat in.
 
 ## Ready for HBW to look at it?
 
-**Phone:** 905-342-2153  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Email:** info@harrisboatworks.ca  
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 

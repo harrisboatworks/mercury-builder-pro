@@ -116,7 +116,7 @@ Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017. S
 
 ### What you can do if your motor isn't eligible
 
-If your motor is on the no list and you want SmartCraft Connect specifically, [the path is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Most of our customers who repower from an Optimax or pre-2004 FourStroke to a current Mercury FourStroke pick up SmartCraft Connect on the new motor day-one as a side benefit of the repower. We can quote the swap at mercuryrepower.ca or by phone at 905-342-2153.
+If your motor is on the no list and you want SmartCraft Connect specifically, [the path is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Most of our customers who repower from an Optimax or pre-2004 FourStroke to a current Mercury FourStroke pick up SmartCraft Connect on the new motor day-one as a side benefit of the repower. We can quote the swap at mercuryrepower.ca.
 
 ## How to find your Mercury serial number to confirm eligibility
 
@@ -156,7 +156,7 @@ DIY makes sense if you already have engine wiring experience and the boat is eas
 
 Drop the boat off at HBW or bring just the motor in if it's portable. We do a clean install with the wiring tucked into the harness, mount the module in a known-good spot, pair the app to your phone before you leave, and verify all live data fields are reading correctly. Bench time is typically 1 to 1.5 hours. Most installs go out same-day if booked ahead.
 
-The HBW install is the right call if you want it done once, done right, and you'd rather not crack the engine harness open yourself. Call 905-342-2153 to book.
+The HBW install is the right call if you want it done once, done right, and you'd rather not crack the engine harness open yourself. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What we see at HBW
 
@@ -209,9 +209,10 @@ Three reasons SmartCraft Connect lands harder in Ontario than in some markets.
 
 ## Ready to confirm your eligibility?
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send your Mercury serial number for a same-day yes/no)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service) (send your Mercury serial number)
+**Email:** info@harrisboatworks.ca
 **Quote a repower if you need to switch motors:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Phone:** 905-342-2153
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
 
@@ -243,7 +244,7 @@ Email your Mercury serial number to info@harrisboatworks.ca. We confirm in one r
 
 ### What if I'm not eligible but I want Connect?
 
-The path is a repower to a current Mercury FourStroke or Pro XS. Most repower customers pick up SmartCraft Connect as a side benefit. We can quote at mercuryrepower.ca or 905-342-2153.
+The path is a repower to a current Mercury FourStroke or Pro XS. Most repower customers pick up SmartCraft Connect as a side benefit. We can quote at mercuryrepower.ca.
 
 ### Does Connect work on Mercury Avator electric outboards?
 

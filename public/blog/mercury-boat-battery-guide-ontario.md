@@ -59,7 +59,7 @@ step4Label: Age and replacement
 step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
 step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
 escalationLabel: Want HBW to diagnose?
-escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at /service or call (905) 342-2153.
+escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
 ::
 
 ## Why Batteries Are Our #1 Spring Service Call
@@ -282,7 +282,9 @@ Battery problems are fixable. They're also preventable, if you know what to chec
 Looking for a replacement battery, smart charger, terminal hardware, or switch components? Check [marinecatalogue.ca](https://www.marinecatalogue.ca/), real prices, no phone tag.
 
 Harris Boat Works. Gores Landing, ON. Est. 1947.  
-[hbw.wiki/service](https://hbw.wiki/service) · 905-342-2153
+[hbw.wiki/service](https://hbw.wiki/service)
+
+Phone: 905-342-2153
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

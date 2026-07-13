@@ -110,7 +110,7 @@ Handle the licence tonight, [book the boat for the weekend](/blog/first-time-boa
 
 **Licence:** [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (code HARRIS15)
 **Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)

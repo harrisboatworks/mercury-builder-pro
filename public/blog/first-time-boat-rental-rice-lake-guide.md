@@ -133,7 +133,7 @@ Motor won't start after your swim stop? Nine times out of ten it's the kill-swit
 [Do the licence tonight](/blog/boat-rental-licence-ontario-guide), book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

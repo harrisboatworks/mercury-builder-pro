@@ -211,13 +211,13 @@ Spring commissioning is the inverse of winterization, and booking it in fall is 
 
 In August through November 2025, Harris Boat Works completed 584 winterizations across Rice Lake and the Kawarthas. That volume matters because it means the procedure is routine for our team, the appointment scheduling is dialed in, and we have seen the full range of what Ontario winters do to motors that were not properly prepped.
 
-We would rather you call us in September than call us in May about a cracked block.
+We would rather see your service request in September than in May about a cracked block.
 
 ## Book winterization
 
 Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/service](https://hbw.wiki/service). We start scheduling in late September. Booking early gets you the better slot.
 
-Or call 905-342-2153.
+Or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
 For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
 

@@ -229,7 +229,7 @@ What we handle:
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
 - [Storage](/blog/boat-storage-kawartha-lakes) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
+Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 ---
 

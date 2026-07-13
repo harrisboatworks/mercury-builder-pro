@@ -49,7 +49,7 @@ step4Question: Walk the line from tank to motor. Look for cracks, soft spots, ki
 step5Label: Pull and inspect the spark plugs
 step5Question: While you're in there, pull the plugs. Wet plugs mean it's getting fuel but not firing (ignition issue). Dry plugs mean no fuel is reaching the cylinders (still a fuel-delivery problem). Black sooty plugs suggest it's running rich (carb or injector issue). New plugs are $5 each and tell you a lot.
 step5Tip: Gap matters. Check the Mercury service manual for your specific motor before installing new plugs.
-escalationLabel: Still won't run right? Call us at (905) 342-2153.
+escalationLabel: Still won't run right? Put in a service request at hbw.wiki/service.
 escalationBody: If the basics check out and it's still rough, we run fuel pressure tests, injector flow checks, and ECU diagnostics that aren't practical at home. EFI motors especially need scan tools to read what's actually happening at the rail.
 ::
 
@@ -131,7 +131,7 @@ Here's what ethanol-free does for you:
 
 You don't have to find a specialty station or drive out of your way. **Harris Boat Works carries ethanol-free fuel at the dock.** Fill up on-site, right before you launch or while you're tied up, no trailer required.
 
-Call **905-342-2153** for fuel hours before you come in.
+Check fuel hours before you come in.
 
 ---
 
@@ -183,7 +183,7 @@ The [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog
 
 For Rice Lake boaters, **Harris Boat Works has on-water fuel access**, pull up to the dock, fill up, get back out. Ethanol-free available on-site. No need to trailer to a gas station.
 
-For fuel hours, call **905-342-2153** before heading in.
+Check fuel hours before heading in.
 
 ---
 
@@ -246,7 +246,7 @@ We have ethanol-free at the dock and we diagnose fuel system issues every day.
 
 **For service requests** (fuel system inspection, carb cleaning, fuel line replacement, seasonal commissioning): [hbw.wiki/service](https://hbw.wiki/service)
 
-**For fuel and fuel hours:** Call **905-342-2153**
+**Phone (fuel hours):** 905-342-2153
 
 Harris Boat Works. Gores Landing, ON, est. 1947
 
@@ -268,7 +268,7 @@ Not automatically. Premium pump gas in Ontario is typically still E10 unless the
 
 ### Does Harris Boat Works sell ethanol-free fuel?
 
-Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Call 905-342-2153 for current fuel hours before coming in.
+Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in.
 
 ### When should I use a fuel stabilizer?
 

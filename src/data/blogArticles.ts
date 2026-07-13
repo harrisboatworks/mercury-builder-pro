@@ -438,7 +438,7 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 If your oil looked wrong, or nobody's looked in over a year, that's the whole booking reason.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -584,7 +584,7 @@ Fall, bundled with your winterize-and-service while the shop's already working o
 Tell us the motor, the hours, and the last time anyone was in there.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -746,7 +746,7 @@ Yes. Our techs service Mercury outboards regardless of where you bought them, an
 Tell us the motor and the season you want covered, and we'll handle the rest, recommendations line included.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -875,7 +875,7 @@ Ask what they did in October. Spring bills are mostly fall decisions arriving wi
 Get on the spring list early, or better, book the fall-spring pair and make both bills boring.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -1030,7 +1030,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 **Rent:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Price a boat and motor:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)
@@ -1336,7 +1336,7 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
 [Do the licence tonight](/blog/boat-rental-licence-ontario-guide), book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -1505,7 +1505,7 @@ Yes, multi-day rentals can stay at your cottage dock for the duration, and you c
 Pick your boat and date, and the booking system shows you live availability and rates. Waivers happen online the night before, so rental morning is ten minutes from parking lot to throttle.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -1648,7 +1648,7 @@ Handle the licence tonight, [book the boat for the weekend](/blog/first-time-boa
 
 **Licence:** [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (code HARRIS15)
 **Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Questions? Text:** 647-952-2153 **or call:** 905-342-2153
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
@@ -1784,7 +1784,7 @@ Family-owned on Rice Lake since 1947.`
       { question: "Can I keep boating if the telltale stream is weak?", answer: "We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not." },
       { question: "Why do more impellers fail in summer than in spring?", answer: "In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes." },
       { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test in cold water is the easiest exam an impeller will face all year. It catches a dead pump, but a marginal one with set or cracked vanes can pass in May and let go in July. That's exactly the pattern our 12 years of shop records show." },
-      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth as part of probably the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Call 905-342-2153 or book at hbw.wiki/service." }
+      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth as part of probably the largest Mercury parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Book at hbw.wiki/service." }
     ],
     content: `## Quick answer
 
@@ -1844,7 +1844,7 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 2. Check the telltale stream.
 3. Tilt the motor and clear weeds or debris from the water intake.
 4. Re-check the stream. If it is strong again, weeds were likely the problem; head in at low rpm and monitor.
-5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Call 905-342-2153.
+5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What We See at HBW
 
@@ -1868,9 +1868,9 @@ The pattern we'd love to break: the boater who noticed a weak telltale in June a
 
 If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
 
-**Phone:** 905-342-2153
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Phone:** 905-342-2153
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 `,
@@ -2550,7 +2550,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: "Will SmartCraft Connect affect my warranty?", answer: "No. It's a Mercury-made module installed on a Mercury motor. Mercury treats the install as part of the standard product line. Your factory warranty applies the same way whether you have Connect or not." },
       { question: "Can I install the gateway myself or do I need a dealer?", answer: "You can DIY if you're comfortable with engine harness work. Allow 1-2 hours and basic tools. HBW does the install in roughly 1 to 1.5 hours of bench time if you'd rather not crack the harness yourself." },
       { question: "How do I confirm my exact motor is eligible?", answer: "Email your Mercury serial number to info@harrisboatworks.ca. We confirm in one reply, usually same business day. The serial is on the cowl plate, the lower starboard side of the motor, the mounting bracket, the VesselView display, or your original purchase paperwork." },
-      { question: "What if I'm not eligible but I want Connect?", answer: "The path is a repower to a current Mercury FourStroke or Pro XS. Most repower customers pick up SmartCraft Connect as a side benefit. We can quote at mercuryrepower.ca or 905-342-2153." },
+      { question: "What if I'm not eligible but I want Connect?", answer: "The path is a repower to a current Mercury FourStroke or Pro XS. Most repower customers pick up SmartCraft Connect as a side benefit. We can quote at mercuryrepower.ca." },
       { question: "Does Connect work on Mercury Avator electric outboards?", answer: "Yes, but with a different gateway module than the gas Connect path. The customer experience in the Mercury Marine app is the same. Ask HBW for the Avator-specific install part." }
     ],
     content: `*Last reviewed: 2026-06-19*
@@ -2643,7 +2643,7 @@ Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017. S
 
 ### What you can do if your motor isn't eligible
 
-If your motor is on the no list and you want SmartCraft Connect specifically, [the path is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Most of our customers who repower from an Optimax or pre-2004 FourStroke to a current Mercury FourStroke pick up SmartCraft Connect on the new motor day-one as a side benefit of the repower. We can quote the swap at mercuryrepower.ca or by phone at 905-342-2153.
+If your motor is on the no list and you want SmartCraft Connect specifically, [the path is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Most of our customers who repower from an Optimax or pre-2004 FourStroke to a current Mercury FourStroke pick up SmartCraft Connect on the new motor day-one as a side benefit of the repower. We can quote the swap at mercuryrepower.ca.
 
 ## How to find your Mercury serial number to confirm eligibility
 
@@ -2683,7 +2683,7 @@ DIY makes sense if you already have engine wiring experience and the boat is eas
 
 Drop the boat off at HBW or bring just the motor in if it's portable. We do a clean install with the wiring tucked into the harness, mount the module in a known-good spot, pair the app to your phone before you leave, and verify all live data fields are reading correctly. Bench time is typically 1 to 1.5 hours. Most installs go out same-day if booked ahead.
 
-The HBW install is the right call if you want it done once, done right, and you'd rather not crack the engine harness open yourself. Call 905-342-2153 to book.
+The HBW install is the right call if you want it done once, done right, and you'd rather not crack the engine harness open yourself. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What we see at HBW
 
@@ -2736,9 +2736,10 @@ Three reasons SmartCraft Connect lands harder in Ontario than in some markets.
 
 ## Ready to confirm your eligibility?
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send your Mercury serial number for a same-day yes/no)
+**Service:** [hbw.wiki/service](https://hbw.wiki/service) (send your Mercury serial number)
+**Email:** info@harrisboatworks.ca
 **Quote a repower if you need to switch motors:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Phone:** 905-342-2153
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
 
@@ -2904,7 +2905,6 @@ This page is the SmartCraft Alarm Codes hub. Companion pages in the same diagnos
 Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: (905) 342-2153
-Text: (647) 952-2153
 
 Thinking it's time for a new motor instead? Build a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca).`,
   },
@@ -3783,7 +3783,7 @@ Significantly. A fully loaded family boat behaves like a different machine than 
 
 > **Quick answer:** Mercury outboards in Ontario need three predictable touchpoints a year: spring commissioning, mid-season checks, and fall winterization with fogging and lower-unit oil. Skip winterization and you risk a cracked block from frozen water in the powerhead, a $4,000-plus mistake. Book early; spring rush adds weeks. Service scheduling and pricing live at mercuryrepower.ca.
 
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service) or call (905) 342-2153.
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service).
 
 ## Quick recommendation
 
@@ -3929,7 +3929,7 @@ Spring service slots fill up in March and April. Fall winterization slots fill i
 
 [**Request Service**](https://hbw.wiki/service)
 
-If you want to talk through what your specific motor needs, [give us a call at (905) 342-2153](tel:9053422153). We can pull up your service history (if we have serviced the motor before) and give you a real recommendation.
+Not sure what your specific motor needs? Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor details and we'll lay it out.
 
 ---
 
@@ -7931,7 +7931,7 @@ step5Label: First water trial
 step5Question: Does the motor reach its rated WOT RPM with normal load?
 step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
 escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at /service or call (905) 342-2153.
+escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a sea trial when possible. Book at hbw.wiki/service.
 ::
 
 ### Step 5, Lubrication
@@ -8054,7 +8054,7 @@ We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. I
 
 Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
-Want the boat ready for the long weekend? Get on the schedule now. Questions first? Call **905-342-2153**.
+Want the boat ready for the long weekend? Get on the schedule now at [hbw.wiki/service](https://hbw.wiki/service).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON`,
@@ -8091,7 +8091,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
       },
       {
         question: 'How much does professional spring commissioning cost in Ontario?',
-        answer: 'Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, call 905-342-2153 or request service at hbw.wiki/service.'
+        answer: 'Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, request service at hbw.wiki/service.'
       },
       {
         question: 'What\'s the best time to book spring commissioning near Rice Lake or the Kawarthas?',
@@ -14155,13 +14155,13 @@ Spring commissioning is the inverse of winterization, and booking it in fall is 
 
 In August through November 2025, Harris Boat Works completed 584 winterizations across Rice Lake and the Kawarthas. That volume matters because it means the procedure is routine for our team, the appointment scheduling is dialed in, and we have seen the full range of what Ontario winters do to motors that were not properly prepped.
 
-We would rather you call us in September than call us in May about a cracked block.
+We would rather see your service request in September than in May about a cracked block.
 
 ## Book winterization
 
 Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/service](https://hbw.wiki/service). We start scheduling in late September. Booking early gets you the better slot.
 
-Or call 905-342-2153.
+Or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
 *Last reviewed: 2026-05-11.*
 
@@ -14237,7 +14237,7 @@ step5Label: Battery
 step5Question: Is the battery off the boat or on a maintainer for the winter?
 step5Tip: A frozen, discharged battery is a $200 spring purchase. A trickle charger or full pull-out is $50 of prevention.
 escalationLabel: Want us to handle it?
-escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at /service or call (905) 342-2153.
+escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at hbw.wiki/service.
 ::
 
 ::pull-quote
@@ -15414,7 +15414,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     keywords: ['mercury outboard wont start', 'outboard troubleshooting', 'mercury starting problems'],
     content: `## Quick answer
 
-Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Call HBW at 905-342-2153.
+Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Put in a service request at hbw.wiki/service.
 
 *Last reviewed: 2026-07-09*
 
@@ -15528,9 +15528,9 @@ Most no-start customers are running again the same day they bring the boat in.
 
 ## Ready for HBW to look at it?
 
-**Phone:** 905-342-2153  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Email:** info@harrisboatworks.ca  
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 
@@ -17705,7 +17705,7 @@ step5Label: Alarm persists
 step5Question: Is the overheat alarm still active or coming back at low RPM?
 step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
 escalationLabel: Alarm still on? Don't push it.
-escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Call (905) 342-2153 or book at /service.
+escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Book at hbw.wiki/service.
 ::
 
 ---
@@ -17888,7 +17888,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     "question": "My boat is on the water and I'm panicking. What do I do?",
-    "answer": "Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. **905-342-2153** if you're in our area. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON"
+    "answer": "Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. If you're in our area, put in a service request at hbw.wiki/service and flag it as urgent. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON"
   }
 ],
   },
@@ -18320,7 +18320,7 @@ What we handle:
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
 - [Storage](/blog/boat-storage-kawartha-lakes) (we shrinkwrap and store 311+ boats every winter, sterndrives included)
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
+Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 ---
 
@@ -18502,7 +18502,7 @@ We install SmartCraft Connect modules, configure the Mercury Marine App, set up 
 
 Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit, a winter storage drop-off, or as a standalone appointment.
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
+Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
 
 ---
 
@@ -20069,7 +20069,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['mercury smartcraft alarm codes', 'mercury smartcraft alarm codes list', 'mercury smartcraft alarm codes meanings', 'mercury alarm code list', 'smartcraft fault codes mercury', 'mercury outboard error codes', 'mercury smartcraft diagnostic', 'mercury outboard warning lights'],
     content: `*Last reviewed: 2026-02-06*
 
-> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then call HBW at 905-342-2153.
+> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
@@ -20157,9 +20157,9 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 
 ## Ready for HBW to look at it?
 
-**Phone:** 905-342-2153  
+**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
 **Email:** info@harrisboatworks.ca  
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. Mercury CDS equipped.
 
@@ -23778,7 +23778,7 @@ step4Label: Age and replacement
 step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
 step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
 escalationLabel: Want HBW to diagnose?
-escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at /service or call (905) 342-2153.
+escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
 ::
 
 ## Why Batteries Are Our #1 Spring Service Call
@@ -24001,7 +24001,9 @@ Battery problems are fixable. They're also preventable, if you know what to chec
 Looking for a replacement battery, smart charger, terminal hardware, or switch components? Check [marinecatalogue.ca](https://www.marinecatalogue.ca/), real prices, no phone tag.
 
 Harris Boat Works. Gores Landing, ON. Est. 1947.  
-[hbw.wiki/service](https://hbw.wiki/service) · 905-342-2153
+[hbw.wiki/service](https://hbw.wiki/service)
+
+Phone: 905-342-2153
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -24024,7 +24026,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What octane does a Mercury outboard need?', answer: 'The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn\'t help them. Mercury\'s Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your motor or your owner\'s manual, don\'t guess.' },
       { question: 'Can I run ethanol gas (E10) in my Mercury outboard?', answer: 'You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion, gummed carburettors, and unbudgeted service bills.' },
       { question: 'Is premium gas ethanol-free in Ontario?', answer: 'Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.' },
-      { question: 'Does Harris Boat Works sell ethanol-free fuel?', answer: 'Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Call 905-342-2153 for current fuel hours before coming in.' },
+      { question: 'Does Harris Boat Works sell ethanol-free fuel?', answer: 'Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in.' },
       { question: 'When should I use a fuel stabilizer?', answer: 'Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is the real threshold before fuel quality starts dropping. Add stabilizer to the tank, top off with fuel so it mixes in, then run the motor for 10 to 15 minutes to circulate treated fuel through the carb and fuel lines. Skipping the run step leaves untreated fuel in the carb bowls.' },
       { question: 'What are the signs of a fuel system problem on a Mercury outboard?', answer: 'Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won\'t pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.' },
     ],
@@ -24051,7 +24053,7 @@ step4Question: Walk the line from tank to motor. Look for cracks, soft spots, ki
 step5Label: Pull and inspect the spark plugs
 step5Question: While you're in there, pull the plugs. Wet plugs mean it's getting fuel but not firing (ignition issue). Dry plugs mean no fuel is reaching the cylinders (still a fuel-delivery problem). Black sooty plugs suggest it's running rich (carb or injector issue). New plugs are $5 each and tell you a lot.
 step5Tip: Gap matters. Check the Mercury service manual for your specific motor before installing new plugs.
-escalationLabel: Still won't run right? Call us at (905) 342-2153.
+escalationLabel: Still won't run right? Put in a service request at hbw.wiki/service.
 escalationBody: If the basics check out and it's still rough, we run fuel pressure tests, injector flow checks, and ECU diagnostics that aren't practical at home. EFI motors especially need scan tools to read what's actually happening at the rail.
 ::
 
@@ -24133,7 +24135,7 @@ Here's what ethanol-free does for you:
 
 You don't have to find a specialty station or drive out of your way. **Harris Boat Works carries ethanol-free fuel at the dock.** Fill up on-site, right before you launch or while you're tied up, no trailer required.
 
-Call **905-342-2153** for fuel hours before you come in.
+Check fuel hours before you come in.
 
 ---
 
@@ -24185,7 +24187,7 @@ The [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog
 
 For Rice Lake boaters, **Harris Boat Works has on-water fuel access**, pull up to the dock, fill up, get back out. Ethanol-free available on-site. No need to trailer to a gas station.
 
-For fuel hours, call **905-342-2153** before heading in.
+Check fuel hours before heading in.
 
 ---
 
@@ -24248,7 +24250,7 @@ We have ethanol-free at the dock and we diagnose fuel system issues every day.
 
 **For service requests** (fuel system inspection, carb cleaning, fuel line replacement, seasonal commissioning): [hbw.wiki/service](https://hbw.wiki/service)
 
-**For fuel and fuel hours:** Call **905-342-2153**
+**Phone (fuel hours):** 905-342-2153
 
 Harris Boat Works. Gores Landing, ON, est. 1947
 
@@ -25247,7 +25249,7 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 | 8M0173128 | Under-cowl single-engine module | One Mercury outboard |
 | 8M0173129 | Under-helm 1-to-4 engine module | Twins, triples, quads |
 
-The module is purchased separately from the motor. Pricing is set by Mercury Canada and updates annually. See the current price at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call 905-342-2153.
+The module is purchased separately from the motor. Pricing is set by Mercury Canada and updates annually. See the current price at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -25310,7 +25312,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Bring it to HBW if:** You have never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, and you want it on the service log for the rest of the motor's life. HBW installs the module and verifies it pairs correctly, usually about a 30-minute add-on to a service visit.
 
-Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Call 905-342-2153 to book your install slot.
+Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbw.wiki/service](https://hbw.wiki/service).
 
 The most common DIY mistake: missing the SmartCraft service connector and splicing into the analog tach signal instead. This does not work and creates a confusing failure mode. HBW has done dozens of these installs. The fee is set up-front and includes the module, the install, app pairing, and a brief walkthrough.
 
@@ -25364,7 +25366,7 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 
 **If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
 
-**If you already have a compatible motor:** Call HBW at 905-342-2153 with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
+**If you already have a compatible motor:** Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
 
 ---
 
@@ -25381,7 +25383,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 ## CTA
 
 **Add SmartCraft Connect to your repower quote.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca), or call 905-342-2153 with your motor's serial number. 
+[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -28672,7 +28674,7 @@ step4Question: Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-press
 step5Label: Pull codes with SmartCraft if equipped
 step5Question: VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.
 step5Tip: Take a photo of the code on the screen so you can text it to us.
-escalationLabel: Still beeping after all 5? Call us at (905) 342-2153.
+escalationLabel: Still beeping after all 5? Put in a service request at hbw.wiki/service.
 escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
 ::
 
@@ -28692,7 +28694,7 @@ A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal
 | Alarm at WOT only | At wide-open throttle | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Check water pressure at speed; possible service issue |
 | Alarm briefly after shutdown | Heat-soak | Normal if it clears as the motor cools and does not return; if it recurs, diagnose it | Wait for the motor to cool and confirm it does not come back; if it does, book a diagnostic |
 
-The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or call (905) 342-2153.
+The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or put in a service request at hbw.wiki/service.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
@@ -28711,7 +28713,7 @@ Here's the quick triage:
 2. **Check the fuel-water separator.** If it's the water-in-fuel warning, the separator may need draining or replacing.
 3. **Read the SmartCraft gauge or fault code** if your motor is equipped. The gauge tells you exactly which warning is active, instead of guessing from the beep. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for the full code list.
 
-Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, call us at 905-342-2153 before you run it hard.
+Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, don't run it hard. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) and we'll get it on the bench.
 
 ---
 
@@ -28915,7 +28917,7 @@ step5Label: Engine cutoff and spark
 step5Question: Is the lanyard attached, and does the engine crank without firing?
 step5Tip: Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
 escalationLabel: Tried everything?
-escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Call us at (905) 342-2153 or book at /service.
+escalationBody: After storage, the most common no-start fixes we see are carb cleaning ($200 to $400), fuel system flush ($150 to $300), and battery replacement ($120 to $250). Book at hbw.wiki/service.
 ::
 
 ---
@@ -29226,7 +29228,7 @@ We service trailers we sell and most major brands. Common reasons customers brin
 - **Bunk replacement**: full carpet and bracket refresh
 - **Pre-purchase inspection**: buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
 
-Book at [hbw.wiki/service](https://hbw.wiki/service) or call (905) 342-2153.
+Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## When to Replace vs Repair
 
@@ -36530,15 +36532,15 @@ Don't. Even a few minutes at temperature can warp components or cook the powerhe
 **Is a high-speed overheat an emergency?**
 Treat it like one. It won't strand you the way a dead motor will, but continuing to run hot is how a manageable repair becomes an engine replacement. Get off the throttle and get it diagnosed before the next hard run.
 
-## When to Call HBW
+## When to bring it in
 
 If you've cleared the intakes and you're still overheating at speed, or you'd rather not pull the gearcase yourself, bring it in. We diagnose cooling problems off the symptom pattern, and "cool at idle, hot at speed" tells us where to start. Put in a service request at hbw.wiki/service and we'll get it on the bench before it costs you a powerhead.
 
 <!-- Canonical anchor: Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. -->
 
-**Phone:** 905-342-2153
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** hbw.wiki/service
+**Phone:** 905-342-2153
 **Configurator:** mercuryrepower.ca
 `,
   },
@@ -36873,7 +36875,7 @@ We also check the manual override circuit separately from the automatic circuit.
 
 ---
 
-## When to Call HBW
+## When to bring it in
 
 If you've tested the manual override and the pump runs, but the float switch test does nothing, or you see visible corrosion at any connector, that's a same-visit fix for us and not worth troubleshooting further on your own. Same goes for a boat that's already taken on water once. Once a bilge system has let you down one time, it's earned a real inspection, not just a part swap and a guess.
 
@@ -36916,9 +36918,9 @@ Yes. Legend's 6-Year WOWranty covers most components, including factory-installe
 
 If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them while you wait at the dock.
 
-**Phone:** 905-342-2153
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Boat Electrical Safety Checklist (Ontario Freshwater)](/blog/boat-electrical-safety-checklist-ontario-freshwater)

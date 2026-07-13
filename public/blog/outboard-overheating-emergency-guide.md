@@ -54,7 +54,7 @@ step5Label: Alarm persists
 step5Question: Is the overheat alarm still active or coming back at low RPM?
 step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
 escalationLabel: Alarm still on? Don't push it.
-escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Call (905) 342-2153 or book at /service.
+escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Book at hbw.wiki/service.
 ::
 
 ---
@@ -207,7 +207,7 @@ Not directly, overheating is a cooling-side problem, not a fuel-side one. But et
 
 ### My boat is on the water and I'm panicking. What do I do?
 
-Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. **905-342-2153** if you're in our area. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. If you're in our area, put in a service request at hbw.wiki/service and flag it as urgent. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ## Related guides
 
