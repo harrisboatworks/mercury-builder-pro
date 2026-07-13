@@ -202,6 +202,9 @@ Deno.serve(async (req) => {
     // ── 5. Match inventory models to motor_models and update ──
     const matchedMotors: string[] = [];
     const unmatchedModels: string[] = [];
+    // Only motors whose user-visible fields actually changed (availability,
+    // stock quantity, dealer price) should be pinged to IndexNow.
+    const changedModelKeys: string[] = [];
 
     for (const [modelName, group] of modelGroups) {
       const parsed = parseMotorName(modelName);
@@ -216,7 +219,7 @@ Deno.serve(async (req) => {
       // Build query
       let query = supabase
         .from('motor_models')
-        .select('id, model_display, horsepower, availability');
+        .select('id, model_key, model_display, horsepower, availability, stock_quantity, dealer_price_live');
 
       if (parsed.hp !== null) {
         query = query.eq('horsepower', parsed.hp);
@@ -266,6 +269,21 @@ Deno.serve(async (req) => {
 
           if (updateError) {
             console.error(`Error updating ${motor.model_display}:`, updateError);
+            continue;
+          }
+
+          // User-visible change detection. Ignore last_stock_check churn.
+          const priorPrice = motor.dealer_price_live == null ? null : Number(motor.dealer_price_live);
+          const nextPrice = group.dealerPrice == null ? null : Number(group.dealerPrice);
+          const priceChanged =
+            (priorPrice == null) !== (nextPrice == null) ||
+            (priorPrice != null && nextPrice != null &&
+              Math.abs(priorPrice - nextPrice) > 1);
+          const availabilityChanged = motor.availability !== 'In Stock';
+          const qtyChanged = (motor.stock_quantity ?? null) !== (group.qty ?? null);
+
+          if (motor.model_key && (priceChanged || availabilityChanged || qtyChanged)) {
+            changedModelKeys.push(motor.model_key);
           }
         }
 
@@ -386,18 +404,13 @@ Deno.serve(async (req) => {
 
     console.log('✅ Lightspeed sync complete:', JSON.stringify(result));
 
-    // Fire IndexNow ping for in-stock motors (non-blocking, never throws).
-    try {
-      const { data: inStockMotors } = await supabase
-        .from('motor_models')
-        .select('model_key')
-        .eq('availability', 'In Stock')
-        .not('model_key', 'is', null);
-      const keys = (inStockMotors || []).map((m: any) => m.model_key).filter(Boolean);
-      pingMotorUpdates(keys, 'lightspeed-sync');
-    } catch (pingErr) {
-      console.error('IndexNow ping skipped:', pingErr);
-    }
+    // Fire IndexNow ping ONLY for motors whose user-visible content changed
+    // in THIS sync (availability flip, price change, qty change). The helper
+    // also enforces a 24h cooldown per URL.
+    console.log(
+      `[lightspeed-sync] indexnow candidates: ${changedModelKeys.length} of ${matchedMotors.length} matched motors`,
+    );
+    pingMotorUpdates(changedModelKeys, 'lightspeed-sync');
 
     return new Response(JSON.stringify(result), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

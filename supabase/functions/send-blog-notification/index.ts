@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { requireAdmin } from "../_shared/admin-auth.ts";
-import { pingIndexNow, KEY_URLS } from "../_shared/indexnow.ts";
+import { pingIndexNow } from "../_shared/indexnow.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -135,14 +135,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`[send-blog-notification] Complete: ${successCount} sent, ${errorCount} failed`);
 
-    // Fire-and-forget IndexNow ping for the new article + key landing pages
-    // so search engines/AI crawlers re-index quickly. Excludes .md twins.
+    // Fire-and-forget IndexNow ping: ONLY the new article + the blog index.
+    // (We intentionally do NOT blast KEY_URLS here — a new blog post does
+    // not change the homepage / promotions / case-studies content.)
     pingIndexNow(
-      [
-        articleUrl,
-        ...KEY_URLS.map((p) => `https://www.mercuryrepower.ca${p}`),
-        'https://www.mercuryrepower.ca/blog',
-      ],
+      [articleUrl, 'https://www.mercuryrepower.ca/blog'],
       'blog-notification',
     );
 
