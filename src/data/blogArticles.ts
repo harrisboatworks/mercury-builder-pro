@@ -18359,8 +18359,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-vesselview-smartcraft-plain-english-guide',
-    title: 'Mercury VesselView vs SmartCraft: Plain-English Guide',
-    seoTitle: 'Mercury VesselView vs SmartCraft: Plain-English Guide',
+    title: 'Mercury VesselView vs SmartCraft Explained (Ontario)',
+    seoTitle: 'Mercury VesselView vs SmartCraft Explained (Ontario)',
     description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake.",
     image: '/lovable-uploads/hero-vesselview-smartcraft.png',
     imageAlt: 'Boater using the Mercury Marine app on a smartphone to monitor engine data while operating a Mercury FourStroke outboard.',
