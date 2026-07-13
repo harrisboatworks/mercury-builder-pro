@@ -404,18 +404,13 @@ Deno.serve(async (req) => {
 
     console.log('✅ Lightspeed sync complete:', JSON.stringify(result));
 
-    // Fire IndexNow ping for in-stock motors (non-blocking, never throws).
-    try {
-      const { data: inStockMotors } = await supabase
-        .from('motor_models')
-        .select('model_key')
-        .eq('availability', 'In Stock')
-        .not('model_key', 'is', null);
-      const keys = (inStockMotors || []).map((m: any) => m.model_key).filter(Boolean);
-      pingMotorUpdates(keys, 'lightspeed-sync');
-    } catch (pingErr) {
-      console.error('IndexNow ping skipped:', pingErr);
-    }
+    // Fire IndexNow ping ONLY for motors whose user-visible content changed
+    // in THIS sync (availability flip, price change, qty change). The helper
+    // also enforces a 24h cooldown per URL.
+    console.log(
+      `[lightspeed-sync] indexnow candidates: ${changedModelKeys.length} of ${matchedMotors.length} matched motors`,
+    );
+    pingMotorUpdates(changedModelKeys, 'lightspeed-sync');
 
     return new Response(JSON.stringify(result), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
