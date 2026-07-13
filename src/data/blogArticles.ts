@@ -17908,7 +17908,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: "Lifestyle",
     readTime: "11 min read",
     keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
-    content: `![Map of Rice Lake showing boat launches, fishing zones, and hazard areas for the 2026 boating guide.](/lovable-uploads/rice-lake-practical-boating-map.png)
+    content: `![Illustrated map of Rice Lake, Ontario showing Bewdley at the southwest end, Gores Landing and Harris Boat Works on the south shore, Harwood, Hiawatha and Keene to the north, and the Trent River outlet toward Hastings at the northeast end](/lovable-uploads/rice-lake-map-illustrated.jpg)
+
+*Rice Lake at a glance. Orientation map, not for navigation.*
 
 ## Quick Answer
 
