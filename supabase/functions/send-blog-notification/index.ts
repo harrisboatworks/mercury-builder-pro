@@ -135,14 +135,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`[send-blog-notification] Complete: ${successCount} sent, ${errorCount} failed`);
 
-    // Fire-and-forget IndexNow ping for the new article + key landing pages
-    // so search engines/AI crawlers re-index quickly. Excludes .md twins.
+    // Fire-and-forget IndexNow ping: ONLY the new article + the blog index.
+    // (We intentionally do NOT blast KEY_URLS here — a new blog post does
+    // not change the homepage / promotions / case-studies content.)
     pingIndexNow(
-      [
-        articleUrl,
-        ...KEY_URLS.map((p) => `https://www.mercuryrepower.ca${p}`),
-        'https://www.mercuryrepower.ca/blog',
-      ],
+      [articleUrl, 'https://www.mercuryrepower.ca/blog'],
       'blog-notification',
     );
 
