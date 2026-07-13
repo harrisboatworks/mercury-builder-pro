@@ -273,7 +273,6 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <title>{renderedTitle}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
-      <link rel="canonical" href={url} />
       {EN_TO_FR_SLUG[article.slug] && (
         <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/blog/fr/${EN_TO_FR_SLUG[article.slug]}`} />
       )}
@@ -288,7 +287,6 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta property="og:title" content={renderedTitle} />
       <meta property="og:description" content={cleanDescription} />
       <meta property="og:image" content={`${SITE_URL}${article.image}`} />
-      <meta property="og:url" content={url} />
       <meta property="og:type" content="article" />
       <meta property="og:locale" content="en_CA" />
       <meta property="article:published_time" content={article.datePublished} />
