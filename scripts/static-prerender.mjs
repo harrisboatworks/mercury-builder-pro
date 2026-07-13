@@ -4958,19 +4958,19 @@ const routes = [
   ...locationDetailRoutes,
   {
     path: '/privacy',
-    title: 'Privacy Policy | Harris Boat Works, mercuryrepower.ca',
-    description: 'Privacy Policy for Harris Boat Works (mercuryrepower.ca). How we collect, use, and protect personal information under PIPEDA and Canadian privacy law.',
+    title: 'Privacy Policy | Harris Boat Works',
+    description: 'How Harris Boat Works collects, uses, and protects your personal information under PIPEDA and Canadian privacy law.',
     h1: 'Privacy Policy',
     intro: 'Privacy Policy for Harris Boat Works Ltd. (mercuryrepower.ca). Describes the personal information we collect, how we use it, and your rights under PIPEDA and Canadian privacy legislation.',
-    schemas: [genericPageSchema('/privacy', 'Privacy Policy: Harris Boat Works', 'Privacy Policy for Harris Boat Works (mercuryrepower.ca).')]
+    schemas: [genericPageSchema('/privacy', 'Privacy Policy | Harris Boat Works', 'How Harris Boat Works collects, uses, and protects your personal information under PIPEDA and Canadian privacy law.')]
   },
   {
     path: '/terms',
-    title: 'Terms & Conditions | Harris Boat Works, mercuryrepower.ca',
-    description: 'Terms and Conditions for Harris Boat Works (mercuryrepower.ca). Service, repair and storage terms, plus website use terms governed by the laws of Ontario.',
+    title: 'Terms & Conditions | Harris Boat Works',
+    description: 'Terms for service, repair, storage, and online sales at Harris Boat Works — Mercury dealer on Rice Lake, Ontario.',
     h1: 'Terms & Conditions',
     intro: 'Terms and Conditions for Harris Boat Works Ltd. (mercuryrepower.ca). Includes service, repair and storage terms and website use terms governed by the laws of Ontario, Canada.',
-    schemas: [genericPageSchema('/terms', 'Terms & Conditions: Harris Boat Works', 'Terms and Conditions for Harris Boat Works (mercuryrepower.ca).')]
+    schemas: [genericPageSchema('/terms', 'Terms & Conditions | Harris Boat Works', 'Terms for service, repair, storage, and online sales at Harris Boat Works — Mercury dealer on Rice Lake, Ontario.')]
   },
 ];
 
