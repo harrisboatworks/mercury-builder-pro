@@ -12287,7 +12287,10 @@ The model year flip doesn't change the basic questions: what motor fits your boa
     readTime: '10 min read',
     keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime', 'avator cost canada'],
     relatedSlugs: ['mercury-avator-7-5e-review', 'mercury-avator-range-rice-lake-cottage', 'mercury-avator-charging-cottage-dock', 'mercury-avator-vs-torqeedo'],
-    content: `> **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
+    content: `
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
 
 ## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
 
@@ -32973,7 +32976,10 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
       { question: "What does an Avator setup cost installed?", answer: "Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153." },
     ],
-    content: `## Quick Answer
+    content: `
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+## Quick Answer
 
 A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
@@ -33121,7 +33127,10 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
       { question: "Should I wait for the next generation of either brand?", answer: "Probably not. The current product lines from both brands are mature, reliable products. The next generation may improve battery capacity or charge speed, but the core use case (short-range quiet electric boating) is well-served by current products." },
       { question: "Which is better for an HP-restricted lake?", answer: "Either brand qualifies for most HP-restricted lakes. Federal regulations allow electric motors up to 7.5 kW aggregate power on electric-only lakes. Both Avator and Torqeedo offer models in that range." },
     ],
-    content: `## Quick Answer
+    content: `
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+## Quick Answer
 
 Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for most Ontario buyers is not the motor itself but the dealer network and service support. Mercury Avator has the deepest Mercury Premier dealer network in Canada, which means parts, service, and warranty work happen at any Mercury dealer across the country. Torqeedo has a smaller but specialized dealer network, often through marine electronics shops rather than traditional outboard dealers. For most Ontario boaters who want long-term service support, Mercury Avator wins on infrastructure. Torqeedo may win on specific technical features for niche applications.
 
@@ -33274,7 +33283,10 @@ For pure side-by-side product comparison without the dealer factor: both brands 
       { question: "Does fast charging shorten battery life?", answer: "Slightly. Frequent 240V fast charging reduces battery lifecycle compared to slower 110V charging. For cottage use where overnight charging works, 110V is gentler on the battery." },
       { question: "What happens if the cottage loses power overnight while charging?", answer: "Charging stops, the battery stays at whatever level it reached. When power returns, the charger picks back up. No damage to the battery from power interruption." },
     ],
-    content: `## Quick Answer
+    content: `
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+## Quick Answer
 
 Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. The Avator 7.5e charges from a standard 110V outlet in 3-4 hours. Larger Avator models with external 2,300 Wh or 5,400 Wh battery packs benefit from a 240V charger for faster turnaround, but 110V overnight charging is workable for most cottage applications. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
 
@@ -33542,7 +33554,10 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
       { question: 'What charges the Avator battery?', answer: 'A standard 120V household outlet charges the 1 kWh battery in roughly four hours. Faster chargers are available. Many customers charge overnight at the cottage.' },
       { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Yes. The Avator carries Mercury\'s Limited Warranty, and a promotional coverage extension is usually running. We confirm the exact current terms when we quote you.' },
     ],
-    content: `*Last reviewed: 2026-06-02*
+    content: `
+
+> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+*Last reviewed: 2026-06-02*
 
 > **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
 
