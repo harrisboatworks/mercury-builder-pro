@@ -6,8 +6,8 @@ export default function RepowerTradeIn() {
   return (
     <HubPage
       path="/repower/trade-in"
-      metaTitle="Outboard Motor Trade-In Ontario (2026) | Mercuryrepower.ca"
-      metaDescription="Trade in your old outboard at Harris Boat Works. Mercury trades standard, other brands case-by-case. Valuation in 1 business day. Gores Landing ON."
+      metaTitle="Outboard Trade-In Value in Ontario (2026) | HBW"
+      metaDescription="What your old outboard is actually worth toward a Mercury repower. Real Ontario trade-in ranges, no lowball games. Rice Lake dealer since 1947."
       breadcrumbName="Outboard Trade-In"
       lastReviewedISO="2026-05-26"
       lastReviewedLabel="May 2026"

@@ -23,7 +23,7 @@ interface PromotionsPageSEOProps {
 export function PromotionsPageSEO(_props: PromotionsPageSEOProps) {
   const RATE = formatFinancingRate(MERCURY_PROMO_APR);
 
-  const title = 'Mercury Outboard Promotions & Financing Offers | Harris Boat Works';
+  const title = 'Mercury Outboard Promotions & Financing | HBW';
   const description =
     'Current Mercury outboard promotions, rebates, and financing offers from Harris Boat Works, Mercury Premier Dealer on Rice Lake. Updated as offers change.';
 

@@ -130,23 +130,23 @@ export function MercuryOutboardsOntarioSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboards Ontario, Full Lineup at Harris Boat Works | Mercury Dealer Since 1965</title>
+      <title>Mercury Outboards Ontario: Full Lineup & Prices | HBW</title>
       <meta
         name="description"
-        content="Mercury Marine outboards in Ontario, full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Premier Dealer on Rice Lake, family-owned since 1947."
+        content="Every Mercury outboard from 2.5 to 600 HP with live CAD pricing. FourStroke, Pro XS, Verado and SeaPro. Mercury dealer on Rice Lake since 1965."
       />
       <meta
         name="keywords"
         content="Mercury outboards Ontario, Mercury dealer Ontario, Mercury Premier dealer, Mercury Rice Lake, buy Mercury outboard Kawarthas, Mercury dealer GTA, Mercury Cobourg, Mercury Peterborough, Mercury Northumberland"
       />
 
-      <meta property="og:title" content="Mercury Outboards Ontario, Full Lineup at Harris Boat Works" />
-      <meta property="og:description" content="Mercury Premier Dealer on Rice Lake. Full lineup, real CAD pricing online." />
+      <meta property="og:title" content="Mercury Outboards Ontario: Full Lineup & Prices" />
+      <meta property="og:description" content="Every Mercury outboard from 2.5 to 600 HP with live CAD pricing. Mercury Premier Dealer on Rice Lake." />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboards Ontario" />
-      <meta name="twitter:description" content="Full Mercury lineup, real CAD pricing, Premier Dealer." />
+      <meta name="twitter:title" content="Mercury Outboards Ontario: Full Lineup & Prices" />
+      <meta name="twitter:description" content="Every Mercury outboard 2.5 to 600 HP with live CAD pricing. Mercury Premier Dealer, Rice Lake." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

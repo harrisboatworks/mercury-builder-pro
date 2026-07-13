@@ -122,20 +122,20 @@ export function MercuryProXSSEO() {
       <title>Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW</title>
       <meta
         name="description"
-        content="Mercury Pro XS performance outboards 115–250 HP in stock. Real CAD pricing, 3-year factory warranty, financing available. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965."
+        content="Mercury Pro XS from 115 to 300 HP with live CAD pricing. The performance line for bass, walleye and speed. Ontario Mercury Premier dealer."
       />
       <meta
         name="keywords"
         content="Mercury Pro XS, Mercury Pro XS Ontario, Mercury Pro XS 115, Mercury Pro XS 150, Mercury Pro XS 200, Mercury Pro XS 250, Pro XS dealer Canada, Mercury performance outboard"
       />
 
-      <meta property="og:title" content="Mercury Pro XS Outboards 115–250 HP, Real CAD Pricing" />
-      <meta property="og:description" content="Pro XS performance lineup at Harris Boat Works. Mercury Premier Dealer, Rice Lake." />
+      <meta property="og:title" content="Mercury Pro XS Outboards - 115 to 300 HP Ontario" />
+      <meta property="og:description" content="Mercury Pro XS from 115 to 300 HP with live CAD pricing. Ontario Mercury Premier dealer, Rice Lake." />
       <meta property="og:type" content="product.group" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Pro XS Outboards in Ontario" />
-      <meta name="twitter:description" content="115–250 HP Pro XS, real CAD pricing, 3-year factory warranty." />
+      <meta name="twitter:title" content="Mercury Pro XS Outboards - 115 to 300 HP Ontario" />
+      <meta name="twitter:description" content="Mercury Pro XS 115 to 300 HP, live CAD pricing, 3-year factory warranty." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

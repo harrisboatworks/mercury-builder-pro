@@ -59,26 +59,26 @@ export default function PricingReference() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
-        <title>Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works</title>
+        <title>Mercury Outboard Prices Ontario (CAD) | Harris Boat Works</title>
         <meta
           name="description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
+          content="Live CAD pricing on every Mercury outboard we stock, 2.5 to 600 HP. Real dealer prices from a Mercury Premier dealer on Rice Lake. No forms, no games."
         />
         <link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Harris Boat Works" />
         <meta property="og:locale" content="en_CA" />
-        <meta property="og:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
+        <meta property="og:title" content="Mercury Outboard Prices Ontario (CAD) | Harris Boat Works" />
         <meta
           property="og:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
+          content="Live CAD pricing on every Mercury outboard we stock, 2.5 to 600 HP. Real dealer prices from a Mercury Premier dealer on Rice Lake."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta name="twitter:title" content="Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works" />
+        <meta name="twitter:title" content="Mercury Outboard Prices Ontario (CAD) | Harris Boat Works" />
         <meta
           name="twitter:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
+          content="Live CAD pricing on every Mercury outboard we stock, 2.5 to 600 HP. Real dealer prices from a Mercury Premier dealer on Rice Lake."
         />
         {schemaJson && (
           <script type="application/ld+json">{schemaJson}</script>

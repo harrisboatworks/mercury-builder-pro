@@ -63,18 +63,18 @@ export function BoatInfoPageSEO() {
 
   return (
     <Helmet>
-      <title>Boat Information, Mercury Quote Builder | Harris Boat Works</title>
+      <title>Boat Information: Mercury Quote Builder | Harris Boat Works</title>
       <meta
         name="description"
-        content="Tell us about your boat to confirm motor compatibility, shaft length, controls, and rigging for your Mercury outboard quote. Step 2 of the Harris Boat Works quote builder."
+        content="Tell us about your boat to confirm Mercury motor compatibility, shaft length, controls and rigging. Step 2 of the Harris Boat Works quote builder."
       />
 
-      <meta property="og:title" content="Boat Information, Mercury Quote Builder" />
+      <meta property="og:title" content="Boat Information: Mercury Quote Builder" />
       <meta property="og:description" content="Confirm Mercury motor compatibility for your boat, shaft length, controls, and rigging." />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content="Boat Information, Mercury Quote Builder" />
+      <meta name="twitter:title" content="Boat Information: Mercury Quote Builder" />
       <meta name="twitter:description" content="Confirm Mercury motor compatibility for your boat in the Harris Boat Works quote builder." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

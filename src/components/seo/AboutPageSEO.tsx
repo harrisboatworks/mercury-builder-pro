@@ -56,19 +56,19 @@ export function AboutPageSEO() {
 
   return (
     <Helmet>
-      <title>About Harris Boat Works | Family-Owned Since 1947</title>
-      <meta name="description" content="Family-owned Mercury dealer on Rice Lake, Ontario since 1947. Mercury Premier Dealer serving Kawarthas, GTA & Peterborough — real prices, no phone tag." />
+      <title>About Harris Boat Works | Mercury Dealer Since 1965</title>
+      <meta name="description" content="Family-owned Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Founded 1947, Mercury dealer since 1965. Repower specialists." />
       <meta name="keywords" content="Harris Boat Works, Mercury dealer Ontario, Rice Lake boat dealer, Kawartha Lakes marine, boat dealer Peterborough, Mercury repower center, family boat dealer" />
 
       {/* Open Graph */}
-      <meta property="og:title" content="About Harris Boat Works | Family-Owned Since 1947" />
-      <meta property="og:description" content="Family-owned Mercury dealer on Rice Lake, Ontario since 1947. Mercury Premier Dealer serving Kawarthas, GTA & Peterborough." />
+      <meta property="og:title" content="About Harris Boat Works | Mercury Dealer Since 1965" />
+      <meta property="og:description" content="Family-owned Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Founded 1947, Mercury dealer since 1965." />
       <meta property="og:type" content="website" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="About Harris Boat Works | Family-Owned Since 1947" />
-      <meta name="twitter:description" content="Family-owned Mercury dealer on Rice Lake, Ontario since 1947. Mercury Premier Dealer serving Kawarthas, GTA & Peterborough." />
+      <meta name="twitter:title" content="About Harris Boat Works | Mercury Dealer Since 1965" />
+      <meta name="twitter:description" content="Family-owned Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Founded 1947, Mercury dealer since 1965." />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

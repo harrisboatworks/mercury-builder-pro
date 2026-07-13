@@ -6,8 +6,8 @@ export default function RepowerCost() {
   return (
     <HubPage
       path="/repower/cost"
-      metaTitle="Mercury Repower Cost in Canada (CAD) 2026 | Mercuryrepower.ca"
-      metaDescription="See real Mercury repower prices in CAD (2026). Full job $11,000 to $40,000 at Harris Boat Works, Gores Landing ON. Build a transparent quote in 3 minutes."
+      metaTitle="Mercury Repower Cost in Ontario (2026 CAD) | HBW"
+      metaDescription="Mercury repower cost by HP class in Ontario for 2026: portable to 300 HP. Live CAD pricing, install, rigging, trade-in, and financing from Harris Boat Works."
       breadcrumbName="Mercury Repower Cost"
       lastReviewedISO="2026-05-26"
       lastReviewedLabel="May 2026"

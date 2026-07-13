@@ -103,10 +103,10 @@ export default function TradeInValuePage() {
   return (
     <>
       <Helmet>
-        <title>What's Your Outboard Worth? | Free Trade-In Estimator | Harris Boat Works</title>
+        <title>Outboard Trade-In Value Estimator (CAD) | HBW</title>
         <meta
           name="description"
-          content="Get a free instant estimate for your outboard motor trade-in value. Mercury, Yamaha, Honda, Suzuki and more, check what your motor is worth in seconds."
+          content="Estimate what your outboard is worth toward a Mercury repower. Mercury and other brands, real Ontario numbers. Harris Boat Works, Gores Landing."
         />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>

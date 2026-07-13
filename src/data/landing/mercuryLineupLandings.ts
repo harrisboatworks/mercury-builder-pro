@@ -68,9 +68,9 @@ export interface LandingConfig {
 // ============================================================================
 export const PORTABLE_9_20HP: LandingConfig = {
   slug: '/mercury/portable-9-20hp',
-  metaTitle: 'Mercury 9.9, 15 & 20 HP Portable Outboard Price Canada | Harris Boat Works',
+  metaTitle: 'Mercury 9.9, 15 & 20 HP Portable Price Canada | HBW',
   metaDescription:
-    'Mercury 9.9, 15, and 20 HP portable and kicker outboard prices from $2,999 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 9.9, 15 and 20 HP portable outboards with live CAD pricing. Tiller or remote, short or long shaft. Rice Lake Mercury dealer since 1965.',
   canonical: 'https://www.mercuryrepower.ca/mercury/portable-9-20hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/uploads/2025-09-22T00-14-12-050Z-Mercury-Marine-9-9HP-Rear-3-4-Port-Short-TillerUp-1718214770881%20(1).jpg',
@@ -138,9 +138,9 @@ export const PORTABLE_9_20HP: LandingConfig = {
 // ============================================================================
 export const MID_RANGE_40_60HP: LandingConfig = {
   slug: '/mercury/mid-range-40-60hp',
-  metaTitle: 'Mercury 40, 50 & 60 HP Outboard Price Canada | Harris Boat Works',
+  metaTitle: 'Mercury 40, 50 & 60 HP Outboard Price Canada | HBW',
   metaDescription:
-    'Mercury 40, 50, and 60 HP FourStroke outboard prices from $9,438 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 40, 50 and 60 HP FourStroke outboards with live CAD pricing. Command Thrust options for pontoons. Ontario Mercury Premier dealer.',
   canonical: 'https://www.mercuryrepower.ca/mercury/mid-range-40-60hp',
   ogImage: 'https://mercuryrepower.ca/asset-gap-heroes/60-elpt-fourstroke.jpg',
 
@@ -206,9 +206,9 @@ export const MID_RANGE_40_60HP: LandingConfig = {
 // ============================================================================
 export const MID_POWER_90_115HP: LandingConfig = {
   slug: '/mercury/mid-power-90-115hp',
-  metaTitle: 'Mercury 90 & 115 HP Outboard Price Canada | Harris Boat Works',
+  metaTitle: 'Mercury 90 & 115 HP Outboard Price Canada | HBW',
   metaDescription:
-    'Mercury 90 and 115 HP FourStroke and Pro XS outboard prices from $14,960 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock.',
+    'Mercury 90 and 115 HP FourStroke outboards with live CAD pricing. Command Thrust for heavier hulls and pontoons. Mercury dealer on Rice Lake.',
   canonical: 'https://www.mercuryrepower.ca/mercury/mid-power-90-115hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -297,9 +297,9 @@ const fmtCAD150 = (n: number) => new Intl.NumberFormat('en-CA', { style: 'curren
 
 export const HP_150: LandingConfig = {
   slug: '/mercury/150-hp',
-  metaTitle: 'Mercury 150 HP Pro XS Price Canada | Live CAD Pricing | Harris Boat Works',
+  metaTitle: 'Mercury 150 HP Outboard Price in Ontario | Harris Boat Works',
   metaDescription:
-    'See current Mercury 150 HP Pro XS pricing in Canadian dollars, pulled live from our dealer pricelist. Mercury Premier Dealer since 1965, family owned since 1947.',
+    'Mercury 150 HP FourStroke with live CAD pricing and real repower costs. What it fits, what it weighs, what it runs. Ontario Mercury dealer.',
   canonical: 'https://www.mercuryrepower.ca/mercury/150-hp',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -366,7 +366,7 @@ export const PRO_XS_115: LandingConfig = {
   slug: '/mercury/115-pro-xs',
   metaTitle: 'Mercury 115 Pro XS Price in Ontario | Harris Boat Works',
   metaDescription:
-    'Mercury 115 Pro XS prices from $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake, Ontario. Real prices, in stock, with Command Thrust option.',
+    'Mercury 115 Pro XS with live CAD pricing. The performance 115 for bass boats and lighter hulls. Mercury Premier dealer on Rice Lake, Ontario.',
   canonical: 'https://www.mercuryrepower.ca/mercury/115-pro-xs',
   ogImage:
     'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',

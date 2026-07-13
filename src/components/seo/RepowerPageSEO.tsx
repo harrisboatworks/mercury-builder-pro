@@ -144,7 +144,7 @@ export function RepowerPageSEO() {
   return (
     <Helmet>
       <title>Mercury Repower Ontario 2026: Cost, Process, Financing | HBW</title>
-      <meta name="description" content={`Mercury repowers in Ontario typically run $11,000-$40,000 CAD all-in. Live pricing, the full repower process, and ${CURRENT_RATE.rate} financing at Harris Boat Works.`} />
+      <meta name="description" content={`Mercury outboard repower in Ontario: live CAD pricing, the full repower process, and ${CURRENT_RATE.rate} financing at Harris Boat Works. Rice Lake since 1965.`} />
       <meta name="keywords" content="mercury repower ontario, boat repower rice lake, outboard motor replacement, mercury dealer kawarthas, repower cottage boat, mercury four stroke, boat motor upgrade" />
       
       {/* Open Graph */}

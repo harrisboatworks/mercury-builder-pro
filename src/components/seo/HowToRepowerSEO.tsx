@@ -128,17 +128,17 @@ export function HowToRepowerSEO() {
 
   return (
     <Helmet>
-      <title>How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works</title>
+      <title>How to Repower a Boat: 7-Step Mercury Process | HBW</title>
       <meta
         name="description"
-        content="Complete 7-step guide to repowering your boat with a new Mercury outboard. Quote online, confirm fit, deposit, install, lake-test, pickup. Mercury Premier Dealer on Rice Lake, Mercury dealer since 1965."
+        content="Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury dealer since 1965."
       />
       <meta
         name="keywords"
         content="how to repower a boat, Mercury repower process, boat motor replacement, repower steps, Mercury install Ontario, boat repower guide, Harris Boat Works"
       />
 
-      <meta property="og:title" content="How to Repower a Boat, 7-Step Mercury Process" />
+      <meta property="og:title" content="How to Repower a Boat: 7-Step Mercury Process" />
       <meta property="og:description" content="Quote, fit, deposit, install, lake-test, pickup. The complete Mercury repower process at Harris Boat Works." />
       <meta property="og:type" content="article" />
 

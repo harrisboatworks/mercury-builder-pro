@@ -7,7 +7,7 @@ export default function RepowerFinancing() {
   return (
     <HubPage
       path="/repower/financing"
-      metaTitle="Mercury Outboard Financing in Ontario (2026) | Mercuryrepower.ca"
+      metaTitle="Mercury Outboard Financing in Ontario (2026) | HBW"
       metaDescription="Finance a Mercury repower OAC at Harris Boat Works. Current rates and your monthly payment on the live quote builder. Apply by phone at Gores Landing."
       breadcrumbName="Mercury Repower Financing"
       lastReviewedISO="2026-05-26"

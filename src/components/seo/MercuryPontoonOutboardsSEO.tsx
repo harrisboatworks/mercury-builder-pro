@@ -78,23 +78,23 @@ export function MercuryPontoonOutboardsSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works</title>
+      <title>Mercury Pontoon Outboards: Command Thrust & Big Tiller | HBW</title>
       <meta
         name="description"
-        content="Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Premier Dealer on Rice Lake."
+        content="Which Mercury actually fits a pontoon: Command Thrust gearcases, high-thrust props, big tiller options. Real CAD pricing from a Rice Lake dealer."
       />
       <meta
         name="keywords"
         content="Mercury pontoon outboard, Mercury Command Thrust, pontoon repower Ontario, Mercury 90 Command Thrust, Mercury 115 Command Thrust, Legend pontoon Mercury, Princecraft pontoon outboard, pontoon motor Kawarthas"
       />
 
-      <meta property="og:title" content="Mercury Outboards for Pontoon Boats, Command Thrust & High-Thrust Options" />
-      <meta property="og:description" content="Mercury Command Thrust 40–150 HP for pontoon boats. Mercury Premier Dealer on Rice Lake." />
+      <meta property="og:title" content="Mercury Pontoon Outboards: Command Thrust & Big Tiller" />
+      <meta property="og:description" content="Which Mercury actually fits a pontoon: Command Thrust gearcases, high-thrust props, big tiller options. Rice Lake dealer." />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboards for Pontoon Boats" />
-      <meta name="twitter:description" content="Command Thrust 40–150 HP for pontoons, Mercury Premier Dealer." />
+      <meta name="twitter:title" content="Mercury Pontoon Outboards: Command Thrust & Big Tiller" />
+      <meta name="twitter:description" content="Command Thrust gearcases, high-thrust props, big tiller options for pontoons. Rice Lake dealer." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
