@@ -1,7 +1,7 @@
 const VERSION_ENDPOINT = '/version.json';
 const RELOAD_GUARD_KEY = 'hbw:last-build-refresh';
 const LEGACY_CACHE_RESET_KEY = 'hbw:legacy-pwa-reset';
-const LEGACY_CACHE_RESET_VERSION = '2026-07-10-v1';
+const LEGACY_CACHE_RESET_VERSION = '2026-07-13-v2';
 const CHECK_INTERVAL_MS = 5 * 60 * 1000;
 
 type BuildVersion = {
