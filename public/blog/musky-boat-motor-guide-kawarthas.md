@@ -30,6 +30,8 @@ language: en-CA
 
 > **Quick answer:** For musky in the Kawarthas, most anglers run a Mercury 90-150 FourStroke main with a 9.9 ProKicker for slow trolling big baits. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly, quote at mercuryrepower.ca.
 
+Running a 9.9 ProKicker for slow trolls and figure-8s? Details on every 9.9 variant are in our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
+
 ## Musky Fishing in the Kawarthas: Motor Selection Guide
 
 Chasing muskies demands a capable boat and the right motor. Here's what Kawartha musky hunters need.

@@ -32,6 +32,8 @@ language: en-CA
 
 > **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 10 to 15 lb weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 
+For a variant-by-variant breakdown of the 9.9 line itself, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
+
 There's a moment with every small-motor customer where the conversation lands on the same question. They're standing on the showroom floor, looking at two outboards that visually look identical, and they ask the version of the question that everyone asks: "What actually changes if I spend the extra money?"
 
 It's a fair question. The Mercury 9.9 HP and 15 HP FourStroke tiller models share more than they don't. Same block. Same gearcase. Same external dimensions. Same shape, same colour, same controls. From across the parking lot, you can't tell them apart.

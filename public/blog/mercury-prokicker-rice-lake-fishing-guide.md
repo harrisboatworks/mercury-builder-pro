@@ -30,6 +30,8 @@ language: en-CA
 
 > **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local pickup details.
 
+For how the ProKicker fits alongside the rest of the 9.9 family, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
+
 Let us skip the preamble. If you fish Rice Lake for walleye, you need a kicker motor. That is the whole answer.
 
 Everything below explains why, and which version of the Mercury 9.9 to get, how it differs from the standard 9.9, and what we have learned rigging these on fishing boats on this specific lake. We have been setting up boats on Rice Lake's south shore for three generations, and the kicker is the single most common thing customers wish they had added at purchase instead of a year later.

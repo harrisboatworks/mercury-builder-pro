@@ -158,6 +158,8 @@ Not sure about your transom height? Call us at 905-342-2153 or send a side-profi
 
 > **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
 
+Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) lists shaft length for every 9.9 variant.
+
 ---
 
 ## What we see at HBW
