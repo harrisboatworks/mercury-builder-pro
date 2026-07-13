@@ -9,7 +9,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { useQuote } from '@/contexts/QuoteContext';
 import { clearQuoteId, getQuoteId, trackEvent } from '@/lib/analytics';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 export default function QuoteSuccessPage() {
+  useNoIndex();
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();

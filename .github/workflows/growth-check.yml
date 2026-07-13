@@ -1,0 +1,42 @@
+name: Growth agent live check
+
+# Runs scripts/growth-agent-live-check.mjs against the production site to
+# detect regressions in robots.txt, llms.txt, sitemap, .well-known files,
+# and AI-crawler accessibility (GPTBot, ClaudeBot, PerplexityBot, etc.).
+#
+# NOT wired into prebuild — the script makes live network calls and would
+# make production builds flaky. Runs on push to main plus a daily cron so
+# any regression fails loudly within 24h.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/growth-agent-live-check.mjs'
+      - 'public/robots.txt'
+      - 'public/llms.txt'
+      - 'public/catalog.md'
+      - 'public/.well-known/**'
+      - 'public/pricing-reference.md'
+      - '.github/workflows/growth-check.yml'
+  schedule:
+    # 13:07 UTC daily = 09:07 ET (winter) / 08:07 ET (summer). Off-peak minute
+    # to avoid the top-of-hour GitHub Actions load spike.
+    - cron: '7 13 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  growth-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # No npm install needed — script uses only Node built-ins (fetch, URL).
+      - name: Run growth-agent live check
+        run: node scripts/growth-agent-live-check.mjs
+        env:
+          MERCURY_SITE_URL: https://www.mercuryrepower.ca
+          HARRIS_SITE_URL: https://harrisboatworks.ca

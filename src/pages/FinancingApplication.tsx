@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
+import { useNoIndex } from '@/hooks/useNoIndex';
 import '@/styles/financing-mobile.css';
 
 // Lazy load step components (~180KB total)
@@ -53,6 +54,7 @@ interface SavedDraft {
 }
 
 export default function FinancingApplication() {
+  useNoIndex();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();

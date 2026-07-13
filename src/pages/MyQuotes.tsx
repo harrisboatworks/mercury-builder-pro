@@ -11,6 +11,7 @@ import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
 import { format } from 'date-fns';
 import { Skeleton } from '@/components/ui/skeleton';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 interface SavedQuote {
   id: string;
   customer_name?: string;
@@ -21,6 +22,7 @@ interface SavedQuote {
 }
 
 export default function MyQuotes() {
+  useNoIndex();
   const { user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [quotes, setQuotes] = useState<SavedQuote[]>([]);

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { createQuote, QuoteOption } from '../lib/quotesApi';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 export default function NewQuote() {
+  useNoIndex();
   const [form, setForm] = useState({
     customer_name: '',
     salesperson: 'Jay Harris',

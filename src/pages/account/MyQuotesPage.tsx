@@ -12,6 +12,7 @@ import { FileText, Calendar, ArrowRight, Plus, Download, CheckCircle, Clock } fr
 import { formatDistanceToNow } from "date-fns";
 import { useToast } from "@/hooks/use-toast";
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 interface SavedQuote {
   id: string;
   email: string;
@@ -27,6 +28,7 @@ interface SavedQuote {
 }
 
 export default function MyQuotesPage() {
+  useNoIndex();
   const { user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [quotes, setQuotes] = useState<SavedQuote[]>([]);

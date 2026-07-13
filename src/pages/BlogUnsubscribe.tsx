@@ -4,7 +4,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { CheckCircle, XCircle, Loader2, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 const BlogUnsubscribe = () => {
+  useNoIndex();
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');

@@ -6,7 +6,9 @@ import { CheckCircle2, Download, ArrowRight, Phone, Mail } from 'lucide-react';
 import { useFinancing } from '@/contexts/FinancingContext';
 import confetti from 'canvas-confetti';
 
+import { useNoIndex } from '@/hooks/useNoIndex';
 export default function FinancingSuccess() {
+  useNoIndex();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { state } = useFinancing();
