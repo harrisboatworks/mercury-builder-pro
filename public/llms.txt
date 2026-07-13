@@ -78,7 +78,7 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 ## Services
 
 - Mercury Outboard Sales & Live Quote Builder: full FourStroke, Pro XS, and SeaPro lineup with real CAD pricing at mercuryrepower.ca/quote/motor-selection. Pickup only at Gores Landing.
-- Mercury Avator Electric Outboards: joining our lineup now. Pricing coming soon; call 905-342-2153 for details.
+- Mercury Avator Electric Outboards: joining our lineup now. Canonical page: https://www.mercuryrepower.ca/electric/mercury-avator. Pricing coming soon; call 905-342-2153 for details.
 - Professional Repower: complete motor replacement and rigging on existing boats. Every repower gets an on-water test on Rice Lake before pickup.
 - Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Service intake: https://hbw.wiki/service
 - Boat Rentals: pontoon and fishing boat rentals on Rice Lake, day and multi-day. HBW requires renters to hold a valid Pleasure Craft Operator Card (PCOC). Live fleet, pricing, and what's included: https://www.harrisboatworks.ca/rentals
