@@ -3691,7 +3691,7 @@ const HUB_DEFS = [
       path: '/repower',
       lastReviewedISO: '2026-06-12',
       metaTitle: 'Boat Repower Ontario 2026: Cost & Process | HBW',
-      metaDescription: 'Boat repower in Ontario in 2026 typically runs $11,000 to $40,000 CAD, depending on HP. Cost, process, and Mercury repower guidance from HBW.',
+      metaDescription: 'Boat repower in Ontario in 2026: cost by HP class, the repower process, financing, and trade-in. Live CAD pricing from a Mercury Premier dealer.',
       breadcrumbName: 'Boat Repower Guide',
       h1: 'Boat Repower Guide for Ontario (2026): Mercury Repower Specialists',
       intro: "A boat repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, a full boat engine repower lands between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
@@ -5041,7 +5041,7 @@ const routes = [
   {
     path: '/finance-calculator',
     title: 'Mercury Outboard Financing Calculator - Ontario | HBW',
-    description: 'Estimate your Mercury outboard monthly payment in CAD. 8.99% under $10K, 7.99% over $10K. Terms up to 144 months through DealerPlan. Mercury dealer since 1965.',
+    description: 'Estimate your Mercury outboard monthly payment in CAD. Tiered DealerPlan rates and terms up to 144 months. Mercury dealer since 1965, Rice Lake.',
     h1: 'Mercury Outboard Finance Calculator',
     intro: 'Estimate your monthly payment for any Mercury outboard in Canadian dollars. Tiered rates of 8.99% APR under $10,000 and 7.99% APR over $10,000, with terms up to 144 months through DealerPlan. Minimum financed amount $5,000.',
     schemas: [{
@@ -5083,7 +5083,7 @@ const routes = [
   {
     path: '/financing-application',
     title: 'Mercury Outboard Financing Application (CAD) | HBW',
-    description: 'Apply online for Mercury outboard financing through DealerPlan. 7.99–8.99% APR, $5,000 minimum, terms to 144 months. Mercury dealer since 1965 on Rice Lake.',
+    description: 'Apply online for Mercury outboard financing through DealerPlan. Tiered rates, terms up to 144 months. Mercury dealer since 1965 on Rice Lake, Ontario.',
     h1: 'Mercury Outboard Financing Application',
     intro: 'Apply for Mercury outboard financing online through DealerPlan. Approval typically within 1 business day. Tiered rates: 8.99% under $10,000 and 7.99% over $10,000. $5,000 minimum financed amount, terms up to 144 months. Submitted information is encrypted and stored securely.',
     schemas: [{
