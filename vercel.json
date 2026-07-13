@@ -15,7 +15,7 @@
       "statusCode": 301
     },
     {
-      "source": "/(?<path>(?!sw\\.js$|service-worker\\.js$).*)",
+      "source": "/:path((?!sw\\.js$|service-worker\\.js$).*)",
       "has": [
         {
           "type": "host",
@@ -37,7 +37,7 @@
       "statusCode": 301
     },
     {
-      "source": "/(?<path>(?!sw\\.js$|service-worker\\.js$).*)",
+      "source": "/:path((?!sw\\.js$|service-worker\\.js$).*)",
       "has": [
         {
           "type": "host",
