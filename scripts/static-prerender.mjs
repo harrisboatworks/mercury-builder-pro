@@ -3177,10 +3177,19 @@ const motorPageRoutes = motorRecords
     const title = `${display}: Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
     const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Premier Dealer · Mercury dealer since 1965.`;
 
+    // Per-motor social preview. Format from SEO batch:
+    // "{Motor name} | {Price in CAD} | Harris Boat Works", trimmed if long.
+    const priceLabel = price ? `${priceStr} CAD` : 'CAD Pricing';
+    const rawOgTitle = `${display} | ${priceLabel} | Harris Boat Works`;
+    const ogTitle = rawOgTitle.length > 70 ? `${display} | ${priceLabel}` : rawOgTitle;
+    const ogDescription = `${display} — ${m.horsepower} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
+
     return {
       path: `/motors/${slug}`,
       title,
       description: description.slice(0, 320),
+      ogTitle,
+      ogDescription: ogDescription.slice(0, 300),
       // Only emit og:image when we have a verified asset; otherwise let stamp()
       // fall back to the site-wide social-share image (a Harris-controlled asset),
       // never a guessed Mercury URL.
