@@ -4443,7 +4443,7 @@ const routes = [
   {
     path: '/fr',
     title: 'Concessionnaire Mercury en Ontario | Harris Boat Works',
-    description: "Harris Boat Works est un concessionnaire Mercury Marine Premier en Ontario. Famille depuis 1947, concessionnaire Mercury depuis 1965. Prix CAD affichés, ramassage à Gores Landing sur le lac Rice.",
+    description: "Concessionnaire Mercury Premier en Ontario. Entreprise familiale depuis 1947, Mercury depuis 1965. Prix en CAD, ramassage à Gores Landing sur le lac Rice.",
     h1: 'Harris Boat Works, concessionnaire Mercury en Ontario',
     intro: "Concessionnaire Mercury Marine Premier en Ontario. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965. Prix en dollars canadiens affichés en ligne, ramassage à Gores Landing sur le lac Rice.",
     htmlLang: 'fr',
@@ -4630,7 +4630,7 @@ const routes = [
   // ============================================================
   {
     path: '/pricing-reference',
-    title: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing | Harris Boat Works',
+    title: 'Mercury Outboard Prices Ontario (CAD) | Harris Boat Works',
     description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.',
     h1: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
