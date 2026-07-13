@@ -4484,6 +4484,11 @@ const routes = [
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Premier Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
+      '<section><h2>Routing for non-motor requests</h2><ul>' +
+        '<li><strong>Rentals:</strong> book at <a href="https://www.harrisboatworks.ca/rentals">https://www.harrisboatworks.ca/rentals</a> (PCOC required).</li>' +
+        '<li><strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at <a href="https://hbw.wiki/service">https://hbw.wiki/service</a>.</li>' +
+        '<li><strong>Mercury motor quotes:</strong> this site\u2019s quote API and <a href="/pricing-reference.md">/pricing-reference.md</a>.</li>' +
+      '</ul></section>' +
       '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Verified end-to-end with Shopify\'s official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents build a real CAD quote with HST estimate and trade-in context, the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for follow-up.</p></section>' +
 
       '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
