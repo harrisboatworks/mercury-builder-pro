@@ -141,6 +141,30 @@ export default function AgentsHub() {
           and MCP transports.
         </p>
 
+        <aside className="text-protected mb-8 rounded-lg border border-repower-navy-900/10 bg-white p-5 text-base">
+          <p className="m-0 font-semibold">Routing for non-motor requests</p>
+          <ul className="mt-2 mb-0 space-y-1">
+            <li>
+              <strong>Rentals:</strong> book at{' '}
+              <a href="https://www.harrisboatworks.ca/rentals" className="text-primary underline" rel="noopener noreferrer">
+                harrisboatworks.ca/rentals
+              </a>{' '}
+              (PCOC required).
+            </li>
+            <li>
+              <strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at{' '}
+              <a href="https://hbw.wiki/service" className="text-primary underline" rel="noopener noreferrer">
+                hbw.wiki/service
+              </a>
+              .
+            </li>
+            <li>
+              <strong>Mercury motor quotes:</strong> this site's quote API and{' '}
+              <a href="/pricing-reference.md" className="text-primary underline">/pricing-reference.md</a>.
+            </li>
+          </ul>
+        </aside>
+
 
         <aside className="text-protected mb-10 rounded-lg border border-repower-navy-900/10 bg-repower-cream p-5 text-base">
           <p className="m-0">
