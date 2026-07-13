@@ -116,6 +116,7 @@ const MotorSelectionHub = lazy(() => import("./pages/MotorSelectionHub"));
 const MaintenanceHub = lazy(() => import("./pages/MaintenanceHub"));
 const LakesHub = lazy(() => import("./pages/LakesHub"));
 const AvatorLanding = lazy(() => import("./pages/AvatorLanding"));
+const Mercury99KickerGuide = lazy(() => import("./pages/Mercury99KickerGuide"));
 const About = lazy(() => import("./pages/About"));
 const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -567,6 +568,7 @@ function AnimatedRoutes() {
         <Route path="/maintenance" element={<MaintenanceHub />} />
         <Route path="/lakes" element={<LakesHub />} />
         <Route path="/electric/mercury-avator" element={<AvatorLanding />} />
+        <Route path="/motors/mercury-9-9-tiller-kicker-guide" element={<Mercury99KickerGuide />} />
         
         {/* Compare Page */}
         <Route path="/compare" element={<Compare />} />
