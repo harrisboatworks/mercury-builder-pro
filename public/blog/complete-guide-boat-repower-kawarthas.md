@@ -62,7 +62,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial – 2-4 weeks total.](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -282,7 +282,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
 
 ### Do I need new controls?
 

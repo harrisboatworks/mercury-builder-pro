@@ -36,7 +36,7 @@ language: en-CA
 
 ## Quick Answer
 
-A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **7-14 days** at the shop once scheduled. Spring rush adds 2-4 weeks of lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **2 to 5 days** at the shop once scheduled. Spring rush can add booking lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -210,7 +210,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### How long does a Mercury repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 

@@ -1236,7 +1236,7 @@ Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous cou
 - Planifier l'installation
 - Discuter de la logistique de transport (étape suivante)
 
-**Délai d'attente pour une remotorisation :** typiquement 2 à 4 semaines en haute saison (avril à juin, septembre à novembre), plus court hors saison. L'appel téléphonique réserve la place.
+**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre), plus court hors saison. L'appel téléphonique réserve la place.
 
 ### Étape 3 : Transport du bateau jusqu'à Harris Boat Works (1 jour, varie selon l'approche)
 
@@ -1359,7 +1359,7 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.
 
 **Combien de temps prend une remotorisation chez Harris Boat Works ?**
-Installation, essai sur l'eau et réglage d'hélice : généralement 1 à 2 semaines à l'atelier, plus de temps en haute saison. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l'eau.
+Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury — nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu'à ce que le moteur arrive.
 
 **Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?**
 Oui. 401 vers l'est jusqu'à Cobourg, vers le nord sur la route régionale 18 jusqu'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.
@@ -1391,7 +1391,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
 `,
     faqs: [
       { question: 'Combien coûte une remotorisation Mercury dans la GTA ?', answer: 'Cela dépend de la puissance et du bateau actuel. Plages typiques : installation 90 HP de 15 500 $ à 18 500 $; installation 150 HP de 23 000 $ à 30 000 $; installation 200 HP V6 de 28 000 $ à 35 000 $. Le configurateur à mercuryrepower.ca donne votre chiffre précis en 90 secondes.' },
-      { question: 'Combien de temps prend une remotorisation chez Harris Boat Works ?', answer: 'Installation, essai sur l\'eau et réglage d\'hélice : généralement 1 à 2 semaines à l\'atelier, plus de temps en haute saison. Délai de réservation de 2 à 4 semaines en haute saison. Planifiez le projet total comme 4 à 6 semaines entre la soumission et le moteur sur l\'eau.' },
+      { question: 'Combien de temps prend une remotorisation chez Harris Boat Works ?', answer: 'Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury — nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu\'à ce que le moteur arrive.' },
       { question: 'Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?', answer: 'Oui. 401 vers l\'est jusqu\'à Cobourg, vers le nord sur la route régionale 18 jusqu\'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.' },
       { question: 'Organisez-vous le transport de bateau depuis la GTA ?', answer: 'Nous n\'opérons pas de transport, mais nous travaillons avec plusieurs services de transport marin ontariens. Coût typique de 300 $ à 600 $ par direction pour un bateau de 18 à 22 pieds. Nous pouvons vous référer.' },
       { question: 'Mon Mercury sera-t-il admissible à la garantie si je l\'ai acheté ailleurs ?', answer: 'Oui. Le réseau de garantie canadien Mercury honore la couverture chez n\'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d\'achat; nous enregistrons le travail dans le système central de Mercury.' },

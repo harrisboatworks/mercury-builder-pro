@@ -83,7 +83,7 @@ Before we put a number in front of you, we look at four things: the capacity pla
 
 1. **Build a quote online** at [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection). Three minutes, itemized, no callback required.
 2. **We confirm the details.** Capacity plate, transom, controls, prop plan. By phone or when you drop the boat off.
-3. **Order and schedule.** In-stock motors install within days; ordered motors typically run 2-4 weeks. We're open early April through November, so winter orders install first thing in spring.
+3. **Order and schedule.** In-stock motors install within days; ordered motors depend on Mercury availability. We're open early April through November, so winter orders install first thing in spring.
 4. **Install and rig.** 1-2 days of shop time for a clean job.
 5. **On-water load test.** Rice Lake, real load, WOT numbers checked against Mercury's spec. Then you pick it up. We don't deliver, and honestly, you want to be there for the handover anyway.
 
@@ -118,7 +118,7 @@ Motor, rigging (controls, cables, gauges), prop, install labour, and on-water te
 
 ### How long does a repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Get your order in over the off-season to lock in a spring drop-off date.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Get your order in over the off-season to lock in a spring drop-off date.
 
 ### Do I need new controls and gauges?
 

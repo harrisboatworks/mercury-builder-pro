@@ -171,7 +171,7 @@ Most steps yes, the critical ones we'd want eyes on. Fuel stabilizer, fogging, a
 
 ### What's HBW's spring backlog like?
 
-By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait runs 2-4 weeks at the spring peak. Booking in fall avoids the queue entirely.
+By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait stretches longer at the spring peak. Booking in fall avoids the queue entirely.
 
 ### Are there parts of the Ontario boating season that get worse if I extend?
 

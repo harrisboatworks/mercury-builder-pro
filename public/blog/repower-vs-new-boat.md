@@ -168,7 +168,7 @@ Yes, a new Mercury outboard significantly increases resale value on a sound hull
 
 ### How long does a repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Book early for spring commissioning.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Book early for spring commissioning.
 
 ### Can I repower a 20-year-old boat?
 

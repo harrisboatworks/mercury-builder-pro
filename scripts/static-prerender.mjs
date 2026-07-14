@@ -1616,7 +1616,7 @@ function mercuryRepowerFaqSchema() {
 const HOWTO_FAQ_PRERENDER = [
   {
     question: "How long does the full repower process take?",
-    answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Getting the motor is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Spring (March–May) is busiest, book in fall or winter for priority scheduling."
+    answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Getting the motor is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Spring (March–May) is busiest, book in fall or winter for priority scheduling."
   },
   {
     question: "Do I need to bring my boat for the consultation?",
@@ -1800,7 +1800,7 @@ const GTA_FAQ_PRERENDER = [
   { question: "How do GTA customers handle pickup?", answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver, pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean." },
   { question: "Is it worth driving from Toronto for a Mercury outboard?", answer: "GTA boaters tell us yes, for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Premier Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA." },
   { question: "Do you handle Lake Simcoe and Lake Scugog Mercury repowers?", answer: "Yes: Lake Simcoe (Barrie, Orillia, Innisfil), Lake Scugog (Port Perry), and the Trent-Severn Waterway are core Mercury repower markets for us. Common configurations: Pro XS 150–250 for performance hulls, FourStroke 90–150 with Command Thrust for pontoons, FourStroke V8 250–300 for larger Lake Simcoe boats." },
-  { question: "How long does a GTA Mercury repower take?", answer: "Your boat is with us for 2 to 5 days, drop-off to pickup, install, lake-test, and prop tuning included. Motor lead time is separate: in-stock motors are ready when you are; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands. Plan one trip down for drop-off and one for pickup, or one trip total if you're picking up a loose motor for self-install." }
+  { question: "How long does a GTA Mercury repower take?", answer: "Your boat is with us for 2 to 5 days, drop-off to pickup, install, lake-test, and prop tuning included. Motor lead time is separate: in-stock motors are ready when you are; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Plan one trip down for drop-off and one for pickup, or one trip total if you're picking up a loose motor for self-install." }
 ];
 
 function geoServicePageSchema({ slug, name, description, areaName, areaLocality, faqArr }) {
@@ -1981,7 +1981,7 @@ const PRO_XS_250_FAQ_PRERENDER = [
   { question: 'Is the Pro XS 250 in stock?', answer: 'The two 20-inch (ELPT) variants are in stock at Gores Landing, Ontario. The 25-inch (EXLPT) variants we bring in to order. Confirm current availability in the quote builder or call us.' },
   { question: 'What warranty comes with a Pro XS 250?', answer: 'Every new Mercury Pro XS 250 includes the standard 3-year Mercury Marine factory warranty. Extended coverage is available. Any active Mercury bonus-warranty promotion is confirmed at quote time.' },
   { question: 'Can I finance a Pro XS 250?', answer: 'Yes. Financing is available on approved credit through Mercury Finance. Build a quote and we will show you current rate and monthly options, or call 905-342-2153.' },
-  { question: 'How long does a Pro XS 250 repower take?', answer: 'Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock 250s ship immediately, special-order Pro XS runs 3 to 6 weeks at Mercury, and your boat stays with you until the motor arrives. Spring (April and May) books up early, plan ahead.' },
+  { question: 'How long does a Pro XS 250 repower take?', answer: 'Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock 250s ship immediately, special-order Pro XS lead time depends on Mercury availability, and your boat stays with you until the motor arrives. Spring (April and May) books up early, plan ahead.' },
 ];
 
 function mercuryProXS250Schemas() {
@@ -2166,7 +2166,7 @@ const LINEUP_LANDING_CONFIGS = [
       { question: 'Do I need Command Thrust on a 40 to 60 HP motor?', answer: 'You need it if the boat is heavy or carries a lot, especially a pontoon. Command Thrust adds a bigger gearcase and prop for better low-speed grip. On a light fishing boat, the standard gearcase is fine and saves you money.' },
       { question: 'Will a 40 to 60 HP Mercury fit my boat?', answer: 'It fits most 16 to 18-foot fishing boats, small bowriders, and lighter pontoons, but the right HP depends on hull weight and your boat\u2019s capacity plate. Send us the boat details and we will size it properly.' },
       { question: 'Are these in stock?', answer: 'Several 40 and 60 HP FourStrokes are in stock at Gores Landing; 50 HP and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
-      { question: 'How long does a repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. If your motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (2 to 4 weeks FourStroke), and your boat stays with you until the motor lands. Spring books up fast, plan ahead." },
+      { question: 'How long does a repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. If your motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Spring books up fast, plan ahead." },
     ],
     finalCtaHeading: 'Build your 40 to 60 HP Mercury quote in two minutes',
   },
@@ -2232,7 +2232,7 @@ const LINEUP_LANDING_CONFIGS = [
       { question: 'What does a Mercury 150 HP cost in Canada?', answer: 'At Harris Boat Works, the 150L FourStroke is $22,242 CAD and the 150 ELPT Pro XS is $24,349 CAD. The 25-inch XL versions are slightly more. Prices are CAD, current at time of listing, confirm in the quote builder.' },
       { question: 'Will a 150 HP Mercury fit my boat?', answer: 'It fits most 17 to 19 ft fibreglass bowriders, runabouts, aluminum deep-Vs, and lighter pontoons. Check your boat capacity plate for max HP, and match the shaft length (20 or 25 inch) to your transom. Send us the boat details and we will size it properly.' },
       { question: 'Should I get the FourStroke 150 or the Pro XS 150?', answer: 'Choose the FourStroke 150 for a smooth, quiet, fuel-efficient family motor. Choose the Pro XS 150 for stronger hole shot and top end on a performance rig or bass boat. Same 3.0L block, different tune.' },
-      { question: 'How long does a 150 HP repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. In-stock 150s ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS), and your boat stays with you until the motor lands. Spring (April and May) books up fast, plan ahead." },
+      { question: 'How long does a 150 HP repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. In-stock 150s ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Spring (April and May) books up fast, plan ahead." },
       { question: 'Do you deliver the motor or pick up my boat?', answer: 'No. Pickup is at Gores Landing, and customers arrange their own boat transport to and from the shop. We rig, install, and water-test on our dock.' },
     ],
     finalCtaHeading: 'Build your 150 HP Mercury quote in two minutes',
@@ -2262,7 +2262,7 @@ const LINEUP_LANDING_CONFIGS = [
     ],
     faq: [
       { question: 'What does a Mercury 115 Pro XS cost in Canada?', answer: 'At Harris Boat Works, the 115 ELPT Pro XS is $17,490 CAD (20-inch shaft, standard gearcase). The 25-inch XL is $17,842. Command Thrust variants run from $17,941 to $18,299. Prices are CAD, confirm in the quote builder.' },
-      { question: 'How long does a 115 Pro XS repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. In-stock 115 Pro XS ships immediately; special orders wait at Mercury (3 to 6 weeks Pro XS), and your boat stays with you until the motor lands. Spring (April and May) books up fast, plan ahead." },
+      { question: 'How long does a 115 Pro XS repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. In-stock 115 Pro XS ships immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Spring (April and May) books up fast, plan ahead." },
       { question: 'Will a 115 Pro XS fit if I have a 115 FourStroke now?', answer: 'Yes, in most cases. The 115 Pro XS uses the same 2.1L block and the same transom bolt pattern as the 115 FourStroke. Match your shaft length (20 or 25 inch) and most direct repowers are straightforward. Send us your old motor model and we will confirm.' },
       { question: 'Pro XS vs FourStroke, what is the real difference?', answer: 'Same block, different tune and gearcase options. The Pro XS revs harder, has a stronger hole shot, and a higher top end. The FourStroke is smoother and quieter at cruise. Both are four-stroke, both are reliable. Pick by how you run the boat.' },
     ],
@@ -3771,7 +3771,7 @@ const HUB_DEFS = [
       faqs: [
         { question: 'How much does a Mercury repower cost in Ontario?', answer: 'Typical 2026 all-in repowers land $11,000 to $40,000 CAD depending on HP class. Smaller motors (40 to 60 HP) are at the low end; larger motors (200 to 300 HP) at the high end. Most Kawartha repowers are 75 to 115 HP and land $17,000 to $22,000 CAD. See live pricing at /quote/motor-selection.' },
         { question: 'Should I repower or buy a new boat?', answer: "For most boaters with a hull less than 20 years old that's structurally solid, repower wins on the math. A new comparable boat package costs $25,000 to $50,000 CAD more than a repower. The hull is the asset; the motor is the wear part." },
-        { question: 'How long does a Mercury repower take?', answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, old motor off, new Mercury rigged, water-tested on Rice Lake. Getting the motor is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives." },
+        { question: 'How long does a Mercury repower take?', answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, old motor off, new Mercury rigged, water-tested on Rice Lake. Getting the motor is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives." },
         { question: 'Can I finance a Mercury repower?', answer: 'Yes. Through December 31, 2026, the headline program is TD Auto Finance "Always On" at 5.48% APR (OAC) via Dealerplan Peterborough, with a $5,000 minimum financed and a $349 Dealerplan fee added post-tax. We process applications in-shop. See our financing guide for the worked monthly payment examples.' },
         { question: 'Should I switch from Evinrude to Mercury?', answer: 'For most Evinrude owners, yes. BRP shut down Evinrude outboard production in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor.' },
         { question: 'When is the best time to book a repower?', answer: 'Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for next season. Spring slots fill up by March.' },
@@ -4215,7 +4215,7 @@ const REPOWER_COST_EXTRA = () => commercialBodyHtml({
 });
 
 const REPOWER_PROCESS_FAQS = [
-  { q: 'How long does a Mercury repower take?', a: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands. Winter and early spring are the quietest booking windows, mid-summer is the busiest." },
+  { q: 'How long does a Mercury repower take?', a: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Winter and early spring are the quietest booking windows, mid-summer is the busiest." },
   { q: 'Do I need to bring my boat to Rice Lake?', a: 'Yes. HBW is pickup and drop-off only at 5369 Harris Boat Works Rd, Gores Landing. We do not pick up or deliver. Most customers within two hours trailer the boat themselves.' },
   { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
   { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
@@ -4224,7 +4224,7 @@ const REPOWER_PROCESS_FAQS = [
 ];
 const REPOWER_PROCESS_EXTRA = () => commercialBodyHtml({
   sections: [
-    { h2: 'Short answer', paragraphs: ['A Mercury repower at HBW follows seven steps from first quote to splash: consult, written quote, deposit, motor order, schedule, install and rigging, water test, pickup. The whole cycle is two to four shop weeks once the motor is in hand.'] },
+    { h2: 'Short answer', paragraphs: ['A Mercury repower at HBW follows seven steps from first quote to splash: consult, written quote, deposit, motor order, schedule, install and rigging, water test, pickup. Your boat is with us 2 to 5 days once the motor is in hand.'] },
     { h2: 'The seven steps', bullets: [
       'Consult: phone or email walkthrough of boat, current motor, and goals',
       'Quote: live CAD quote built online or by phone with itemized parts and labour',
@@ -4248,7 +4248,7 @@ const REPOWER_PROCESS_EXTRA = () => commercialBodyHtml({
 });
 
 const MOTOR_SELECTION_FAQS = [
-  { q: 'What Mercury families do you stock?', a: 'FourStroke and Pro XS are our standard stock from 2.5 HP portables to 300 HP V8s. Verado, SeaPro, and Avator are special-order through Mercury. Command Thrust is available on selected 25 HP through 115 HP FourStroke models.' },
+  { q: 'What Mercury families do you stock?', a: 'FourStroke and Pro XS are our standard stock — we carry the most popular models. Verado, SeaPro, and Avator are special-order through Mercury. Command Thrust is available on selected 25 HP through 115 HP FourStroke models.' },
   { q: 'How do I know which HP I need?', a: 'Start with the boat capacity plate, never exceed the rated maximum HP. From there it is hull type, weight, and how many people you run with. Our quote builder asks the right questions and narrows the picks for your boat.' },
   { q: 'What is Command Thrust?', a: 'A larger gearcase and lower gear ratio that turns a bigger prop. Best for heavy pontoons and loaded aluminum boats up to 115 HP. There is no 150 HP Command Thrust.' },
   { q: 'Pro XS vs FourStroke?', a: 'Pro XS is the performance line, lighter and faster, ideal for bass, walleye, and runabouts that chase top speed. FourStroke is quieter and smoother, ideal for pontoons, family runabouts, and trolling-heavy use.' },
@@ -4256,7 +4256,7 @@ const MOTOR_SELECTION_FAQS = [
 ];
 const MOTOR_SELECTION_EXTRA = () => commercialBodyHtml({
   sections: [
-    { h2: 'Short answer', paragraphs: ['Pick a Mercury family and HP class to build a real CAD quote. We carry FourStroke and Pro XS in standard stock from 2.5 to 300 HP. Verado, SeaPro, and Avator are special-order. Every quote is itemized: motor, install, rigging, accessories, trade-in, financing.'] },
+    { h2: 'Short answer', paragraphs: ['Pick a Mercury family and HP class to build a real CAD quote. We carry the most popular FourStroke and Pro XS models in standard stock. Verado, SeaPro, and Avator are special-order. Every quote is itemized: motor, install, rigging, accessories, trade-in, financing.'] },
     { h2: 'Browse by HP class', bullets: [
       'Portable, 2.5 to 20 HP, tiller and short shaft, tender and small aluminum',
       'Mid-range, 25 to 60 HP, FourStroke for aluminum fishing and small pontoons',

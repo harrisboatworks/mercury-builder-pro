@@ -106,7 +106,7 @@ export default function RepowerProcess() {
         {
           question: 'How long does a Mercury repower take?',
           answer:
-            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: we stock every HP class from 2.5 up to 300, so most builds go straight to a drop-off date. Special orders (a Verado, or an uncommon shaft-and-gearcase combo) wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands on our floor.",
+            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Getting the motor: we stock the most popular models, so most builds go straight to a drop-off date. If yours has to be ordered, the wait depends on the model and current Mercury availability — we give you a real date when we place the order, and your boat stays with you until the motor lands on our floor.",
         },
         {
           question: 'What happens at the water test?',

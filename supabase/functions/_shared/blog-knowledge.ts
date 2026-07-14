@@ -85,7 +85,7 @@ export const REPOWER_FAQS = [
   },
   {
     question: "How long does a repower take?",
-    answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Winter scheduling often means priority in the spring queue."
+    answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Winter scheduling often means priority in the spring queue."
   }
 ];
 
