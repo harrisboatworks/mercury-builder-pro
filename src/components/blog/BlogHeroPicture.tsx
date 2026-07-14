@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 
 interface BlogHeroPictureProps {
-  image: string;
+  /** Hero source. When omitted, the component renders nothing (article displays with no hero). */
+  image?: string;
   alt: string;
   /** Tailwind classes applied to the inner <img>. */
   className?: string;
@@ -36,6 +37,9 @@ export function BlogHeroPicture({
   photoSlot,
 }: BlogHeroPictureProps) {
   const [errored, setErrored] = useState(false);
+
+  if (!image) return null;
+
 
   const defaultFallback = (
     <div className="w-full h-full flex items-center justify-center bg-repower-navy-900 text-white">
