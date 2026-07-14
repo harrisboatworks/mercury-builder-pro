@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, Clock } from 'lucide-react';
 import { BlogArticle, parseLocalDate } from '@/data/blogArticles';
 import { getCleanDescription } from '@/lib/strip-markdown';
+import { BlogCardImage } from './BlogCardImage';
 
 interface BlogCardProps {
   article: BlogArticle;
@@ -25,11 +26,10 @@ export function BlogCard({ article }: BlogCardProps) {
             </div>
           </div>
         ) : (
-          <img
+          <BlogCardImage
             src={article.image}
             alt={article.imageAlt ?? article.title}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
             onError={() => setImgError(true)}
           />
         )}

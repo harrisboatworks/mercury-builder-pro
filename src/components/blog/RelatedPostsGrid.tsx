@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { blogArticles } from '@/data/blogArticles';
+import { BlogCardImage } from './BlogCardImage';
 
 interface Props {
   slugs: string[];
@@ -55,14 +56,9 @@ export function RelatedPostsGrid({ slugs, hideHeader = false }: Props) {
           >
             {a.image && (
               <div className="aspect-[16/9] w-full overflow-hidden bg-repower-navy-900/5">
-                <img
-                  src={
-                    a.image.startsWith('/') || a.image.startsWith('http')
-                      ? a.image
-                      : `/lovable-uploads/${a.image}`
-                  }
+                <BlogCardImage
+                  src={a.image}
                   alt=""
-                  loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
