@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 
 interface BlogHeroPictureProps {
-  image: string;
+  /** Hero source. When omitted, the component renders nothing (article displays with no hero). */
+  image?: string;
   alt: string;
   /** Tailwind classes applied to the inner <img>. */
   className?: string;
