@@ -102,7 +102,7 @@ Installed at Harris Boat Works on Rice Lake, ballpark CAD by motor HP:
 
 The 75 to 115 HP class is the busy lane in Ontario, and most of those land between $13,000 and $19,000 before HST. Every full repower covers the motor, rigging, controls, propeller, a fuel-system inspection, hauling the old motor away, and a water test on Rice Lake before you pick it up. Pickup only, at Gores Landing. We do not ship motors and we do not deliver.
 
-We take Mercury 2-stroke trade-ins, and we look at other brands case by case. Fill out the form on our [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw) and you get a CAD figure back by email inside one business day. Financing is available on approved credit. The full breakdown by motor class lives in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
+We take Mercury 2-stroke trade-ins, and we look at other brands case by case. Fill out the form on our [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw) and you usually get a CAD figure back by email inside one business day. Financing is available on approved credit. The full breakdown by motor class lives in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
 
 ## When should you repower instead of repairing the old 2-stroke again?
 
