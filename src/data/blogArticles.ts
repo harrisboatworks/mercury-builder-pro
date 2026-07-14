@@ -34117,7 +34117,7 @@ A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 t
 Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. Typical recovery is roughly 50 to 70 percent of the new motor cost when you eventually sell. The bigger return is years of enjoyment on a boat you already know.
 
 **How long does a repower take?**
-Most repowers run 1 to 3 days of shop time once the motor is in. Scheduling depends on the season, book early for spring commissioning, late summer for fall installs.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Book early for spring commissioning.
 
 **Can I repower a 20-year-old boat?**
 Often yes. Age alone is not the disqualifier, hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot.
