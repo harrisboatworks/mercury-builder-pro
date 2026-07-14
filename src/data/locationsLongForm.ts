@@ -158,7 +158,7 @@ const SPECS: SpecInput[] = [
       { question: 'How far is Harris Boat Works from Port Hope?', answer: 'About 30 minutes north of Port Hope, roughly 32 km on county roads to Gores Landing on the south shore of Rice Lake.' },
       { question: 'Do you deliver Mercury motors to Port Hope?', answer: "No. We're pickup-only at Gores Landing. The motor is water-tested on Rice Lake first, then you drive 30 minutes north to pick up." },
       { question: 'Do many Port Hope boaters cottage on Rice Lake?', answer: 'Yes. Port Hope has a strong cottage-on-Rice-Lake crowd. The lake is around 30 minutes north of town and we sit on its south shore.' },
-      { question: 'Can I get a trade-in valuation from Port Hope?', answer: 'Yes. Fill out the trade-in form and we email a CAD figure within one business day. We take Mercury outboards directly and review other brands case by case for resale or wholesale.' },
+      { question: 'Can I get a trade-in valuation from Port Hope?', answer: 'Yes. Fill out the trade-in form and we usually email a CAD figure within one business day. We take Mercury outboards directly and review other brands case by case for resale or wholesale.' },
       { question: 'Can I finance a Mercury repower from Port Hope?', answer: 'Yes. Financing is 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. We finalize numbers at quote. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).' },
     ],
     visitExtra:
@@ -287,7 +287,7 @@ const SPECS: SpecInput[] = [
         heading: 'How does pickup work for a local customer?',
         paragraphs: [
           "Same as everyone else: pickup-only at the dock. We don't ship motors and we don't deliver, not even within the village. The motor is installed on your boat, propped, fuel-connected, controls run, and water-tested on Rice Lake before you take it back. Locals usually drop the boat with us during quoting and pick it up after the water test.",
-          'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. Trade-ins: fill the form, we email a CAD figure within one business day. For HP-by-HP ranges, see the Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+          'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. Trade-ins: fill the form, we usually email a CAD figure within one business day. For HP-by-HP ranges, see the Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
     ],
@@ -559,7 +559,7 @@ const SPECS: SpecInput[] = [
         heading: 'How does pickup work for Bridgenorth customers?',
         paragraphs: [
           'You drive south to Gores Landing, 40 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Bridgenorth or to Chemong Lake cottages. The motor is installed, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.',
-          'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For trade-ins, we email a CAD figure within one business day. For ranges by HP, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+          'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For trade-ins, we usually email a CAD figure within one business day. For ranges by HP, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
     ],
@@ -567,7 +567,7 @@ const SPECS: SpecInput[] = [
       { question: 'How far is Harris Boat Works from Bridgenorth?', answer: 'About 40 minutes south, roughly 40 km via Peterborough to Gores Landing on the south shore of Rice Lake.' },
       { question: 'Do you deliver Mercury motors to Bridgenorth or Chemong Lake?', answer: 'No. We are pickup-only at Gores Landing. We rig and water-test on Rice Lake, then you drive south to pick up.' },
       { question: 'What HP Mercury is common for Chemong Lake pontoons?', answer: 'Chemong pontoons typically repower with Mercury FourStroke 90–150 HP, often Pro XS V8 4.6L 175 HP with the Boost option for 25 extra horsepower on demand.' },
-      { question: 'Do you take trade-ins from Bridgenorth boaters?', answer: 'Yes. We take Mercury outboard trade-ins directly and other-brand trade-ins case by case for resale or wholesale. Fill the form and we email a CAD figure within one business day.' },
+      { question: 'Do you take trade-ins from Bridgenorth boaters?', answer: 'Yes. We take Mercury outboard trade-ins directly and other-brand trade-ins case by case for resale or wholesale. Fill the form and we usually email a CAD figure within one business day.' },
       { question: 'Is Bridgenorth a good fit for a full repower instead of patching an old motor?', answer: 'Often yes. Most Chemong boats are core summer-use boats with a 5-month season, a complete Mercury repower usually beats stacking repairs on an aging powerhead.' },
     ],
     visitExtra:
@@ -836,7 +836,7 @@ const SPECS: SpecInput[] = [
         heading: 'How does pickup work for Northumberland County customers?',
         paragraphs: [
           'Same for everyone, in-county or out. We do not ship Mercury motors and we do not deliver, not within Cobourg, not to a Port Hope address, not even within Gores Landing. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. You drive to Gores Landing and pick up. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.',
-          'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For trade-ins, fill the form and we email a CAD figure within one business day. For full HP ranges, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+          'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For trade-ins, fill the form and we usually email a CAD figure within one business day. For full HP ranges, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
     ],

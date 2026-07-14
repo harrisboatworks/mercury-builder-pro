@@ -166,7 +166,7 @@ export function BoostEligibilityChecker() {
                   <strong className="font-display font-bold text-lg block mb-1">
                     Couldn't decode this number cleanly.
                   </strong>
-                  Email it to info@harrisboatworks.ca with a photo of the cowl plate and we'll confirm eligibility within one business day.
+                  Email it to info@harrisboatworks.ca with a photo of the cowl plate and we'll usually confirm eligibility within one business day.
                 </p>
               )}
 

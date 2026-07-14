@@ -226,7 +226,7 @@ Email 6 to 8 photos to **info@harrisboatworks.ca**:
 - Hour-meter reading
 - Any service records you have
 
-We reply within one business day with a preliminary trade range and a repower quote that includes it.
+We usually reply within one business day with a preliminary trade range and a repower quote that includes it.
 
 ## Why we are straight with you on trade numbers
 

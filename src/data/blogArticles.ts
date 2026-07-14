@@ -25318,7 +25318,7 @@ Email 6 to 8 photos to **info@harrisboatworks.ca**:
 - Hour-meter reading
 - Any service records you have
 
-We reply within one business day with a preliminary trade range and a repower quote that includes it.
+We usually reply within one business day with a preliminary trade range and a repower quote that includes it.
 
 ## Why we are straight with you on trade numbers
 
@@ -33566,7 +33566,7 @@ The other common situation: cottagers who add Avator without consulting their co
       { question: 'Is a FourStroke heavier than the 2-stroke it replaces?', answer: 'Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.' },
       { question: 'Will my boat still perform well with a FourStroke?', answer: 'Almost always, yes. FourStrokes deliver more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed is within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.' },
       { question: 'Do I need new rigging when I repower from 2-stroke to 4-stroke?', answer: 'Usually yes. Old mechanical controls and cables often do not match the modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring harness. Add $500 to $1,500 CAD for rigging.' },
-      { question: 'Does Harris Boat Works take my old 2-stroke as trade-in?', answer: 'We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will email a CAD figure within one business day.' },
+      { question: 'Does Harris Boat Works take my old 2-stroke as trade-in?', answer: 'We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will usually email a CAD figure within one business day.' },
       { question: 'How much does a 2-stroke to 4-stroke repower cost?', answer: 'Installed at Harris Boat Works, a full repower runs $11,000 to $24,000 CAD for most jobs, depending on horsepower. That includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup at Gores Landing.' },
     ],
     content: `*Last reviewed: 2026-05-24*
@@ -35480,7 +35480,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
       { question: "Will my Yamaha prop carry over to the new Mercury?", answer: "No. Yamaha and Mercury props have different shaft diameters and hub designs. You will need a new Mercury prop sized to your boat and HP class. We dial in the prop choice during the quote conversation because the right prop affects fuel economy and top-end performance more than most owners expect." },
       { question: "Does the Mercury warranty start fresh on a repower?", answer: "Yes. A new Mercury outboard installed at HBW comes with the full Mercury Canada retail warranty (3 years limited + 3 years corrosion concurrent for recreational use, both running in parallel for the same 3-year period). Mercury Product Protection (MPP) extended coverage is available separately. Warranty registration happens through our dealership at delivery." },
       { question: "Can I keep my Yamaha gauges if they still look fine?", answer: "No. Yamaha Command Link gauges read Yamaha-specific data streams. They will not read Mercury SmartCraft data. You need either a new Mercury analog gauge cluster or a Mercury VesselView display. We quote both options so you see the cost difference." },
-      { question: "What is the trade-in value of a clean Yamaha F90?", answer: "Depends on year, hours, condition, and current market. We take Yamaha in trade against Mercury repowers regularly. Send us serial number, hour count, and condition photos (cowl off, lower unit, transom mount) and we will quote a trade value within one business day. A clean low-hour Yamaha F90 retains real value in the Ontario used market." }
+      { question: "What is the trade-in value of a clean Yamaha F90?", answer: "Depends on year, hours, condition, and current market. We take Yamaha in trade against Mercury repowers regularly. Send us serial number, hour count, and condition photos (cowl off, lower unit, transom mount) and we will usually quote a trade value within one business day. A clean low-hour Yamaha F90 retains real value in the Ontario used market." }
     ]
   },
   {
@@ -35642,7 +35642,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
       { question: "Will my Honda prop carry over to the new Mercury?", answer: "No. Honda and Mercury propellers are not interchangeable. You need a new Mercury prop sized to your boat and HP class. Prop selection affects fuel economy and top speed more than most owners realize, so we dial that in during the quote." },
       { question: "Is Mercury actually more reliable than Honda?", answer: "Honestly, on current models, the reliability gap between Honda and Mercury is small. Both brands build solid four-strokes. The bigger reliability factor is local service network: a motor you can get serviced quickly is a motor that stays running. In most of Ontario outside the GTA, Mercury has the service density advantage." },
       { question: "Can I keep my Honda kicker and just swap the main motor?", answer: "Yes, technically. The kicker is electrically and mechanically independent of the main motor in most setups, so a Honda BF9.9 kicker can stay with a Mercury main. The integration is not as clean as Mercury-on-Mercury (no shared SmartCraft data for things like sync trolling), but it works. If you fish full-day trolling and the Honda kicker is happy, keeping it saves money." },
-      { question: "What is the trade-in value of a clean Honda BF90?", answer: "Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury." }
+      { question: "What is the trade-in value of a clean Honda BF90?", answer: "Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will usually quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury." }
     ]
   },
   {

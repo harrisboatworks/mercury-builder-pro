@@ -146,7 +146,7 @@ export default function QuoteSuccessPage() {
           </h1>
 
           <p className="font-sans text-[16px] font-semibold text-repower-navy-900 mb-3 max-w-[52ch] mx-auto">
-            We respond within 1 business day.
+            We usually respond within 1 business day.
           </p>
           <p className="font-sans text-[15px] text-repower-navy-900/65 mb-8 max-w-[52ch] mx-auto">
             Thanks for sending your details to Harris Boat Works. A real person reviews every quote.

@@ -209,7 +209,7 @@ No. Yamaha Command Link gauges read Yamaha-specific data streams. They will not 
 
 ### What is the trade-in value of a clean Yamaha F90?
 
-Depends on year, hours, condition, and current market. We take Yamaha in trade against Mercury repowers regularly. Send us serial number, hour count, and condition photos (cowl off, lower unit, transom mount) and we will quote a trade value within one business day. A clean low-hour Yamaha F90 retains real value in the Ontario used market.
+Depends on year, hours, condition, and current market. We take Yamaha in trade against Mercury repowers regularly. Send us serial number, hour count, and condition photos (cowl off, lower unit, transom mount) and we will usually quote a trade value within one business day. A clean low-hour Yamaha F90 retains real value in the Ontario used market.
 
 ## Related guides
 

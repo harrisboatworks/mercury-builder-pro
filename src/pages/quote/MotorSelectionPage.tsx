@@ -1206,7 +1206,7 @@ if (event.type === 'filter_motors') {
               Live pricing. Real quotes. Three minutes.
             </p>
             <p className="text-[15px] font-normal text-[#050E1C]/70 text-balance max-w-[60ch] mb-4">
-              Browse Mercury boats and outboards in Canada and build your repower quote in about 3 minutes. A real person at HBW reviews every quote and emails you back within 1 business day.
+              Browse Mercury boats and outboards in Canada and build your repower quote in about 3 minutes. A real person at HBW reviews every quote and usually emails you back within 1 business day.
             </p>
             <p className="text-[14px] font-normal text-[#050E1C]/70 text-balance max-w-[70ch] mb-4">
               Get your Mercury outboard quote online right here. This quote covers the motor, rigging, and professional installation at our marina in Gores Landing. You bring the boat to us and we take care of the rest. Turnaround is quick, no waiting around. There is no obligation, just a straightforward price on a new Mercury outboard for your boat.

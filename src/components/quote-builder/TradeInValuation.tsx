@@ -865,7 +865,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <div className="space-y-2">
                       <h3 className="text-lg font-light text-gray-900">Live estimate temporarily unavailable</h3>
                       <p className="text-sm font-light text-gray-700 leading-relaxed">
-                        We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll reply with a real number within one business day.
+                        We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day.
                       </p>
                       <p className="text-sm font-light text-gray-700">
                         Call <a href="tel:9053422153" className="underline font-medium">(905) 342-2153</a> or text <a href="sms:6479522153" className="underline font-medium">(647) 952-2153</a>

@@ -56,7 +56,7 @@ Yes. Port Hope has a strong cottage-on-Rice-Lake crowd. The lake is around 30 mi
 
 ### Can I get a trade-in valuation from Port Hope?
 
-Yes. Fill out the trade-in form and we email a CAD figure within one business day. We take Mercury outboards directly and review other brands case by case for resale or wholesale.
+Yes. Fill out the trade-in form and we usually email a CAD figure within one business day. We take Mercury outboards directly and review other brands case by case for resale or wholesale.
 
 ### Can I finance a Mercury repower from Port Hope?
 
