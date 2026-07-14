@@ -437,7 +437,7 @@ export default function Repower() {
               What customers <em className="not-italic italic text-repower-mercury-red">say.</em>
             </h2>
             <p className="font-sans text-base text-repower-cream/65">
-              <span className="font-medium text-repower-cream">{reviewCount}+</span> five-star reviews from Ontario boaters
+              Rated <span className="font-medium text-repower-cream">4.7 stars</span> across <span className="font-medium text-repower-cream">{reviewCount}</span> Google reviews from Ontario boaters
             </p>
           </div>
 

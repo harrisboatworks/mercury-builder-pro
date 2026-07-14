@@ -61,7 +61,7 @@ export default function RepowerTradeIn() {
         {
           question: 'How do I find out what my old motor is worth?',
           answer:
-            'Submit six pieces of information: brand, model, HP, year, shaft length, and condition. The form on our site sends the request to our team, and we email you a CAD figure within 1 business day. The number you receive is subject to a final inspection at Gores Landing when you drop the motor, but the email value is what we expect to confirm in 9 out of 10 cases.',
+            'Submit six pieces of information: brand, model, HP, year, shaft length, and condition. The form on our site sends the request to our team, and we usually email you a CAD figure within 1 business day. The number you receive is subject to a final inspection at Gores Landing when you drop the motor, but the email value is what we expect to confirm in 9 out of 10 cases.',
         },
         {
           question: 'How does the trade-in apply to my new motor?',

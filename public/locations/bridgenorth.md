@@ -55,7 +55,7 @@ Chemong pontoons typically repower with Mercury FourStroke 90–150 HP, often Pr
 
 ### Do you take trade-ins from Bridgenorth boaters?
 
-Yes. We take Mercury outboard trade-ins directly and other-brand trade-ins case by case for resale or wholesale. Fill the form and we email a CAD figure within one business day.
+Yes. We take Mercury outboard trade-ins directly and other-brand trade-ins case by case for resale or wholesale. Fill the form and we usually email a CAD figure within one business day.
 
 ### Is Bridgenorth a good fit for a full repower instead of patching an old motor?
 

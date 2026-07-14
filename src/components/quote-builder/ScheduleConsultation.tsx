@@ -895,7 +895,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="mt-2 mb-4 bg-repower-cream border border-repower-navy-900/10 p-4 rounded-sm text-[13px] text-repower-navy-900/80 leading-relaxed">
-              Your quote is reviewed by a real person at Harris Boat Works. No auto-pricing games. We confirm everything within 1 business day.
+              Your quote is reviewed by a real person at Harris Boat Works. No auto-pricing games. We usually confirm everything within 1 business day.
             </div>
             <button
               type="submit"

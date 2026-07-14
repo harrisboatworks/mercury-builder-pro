@@ -45,7 +45,7 @@ export const HARRIS_TEAM = {
 export const ONTARIO_LAKES = {
   rice_lake: {
     name: "Rice Lake",
-    description: "Our home lake! Great for walleye, bass, and muskie. We've been fishing here for 78 years.",
+    description: "Our home lake! Great for walleye, bass, and muskie. We've been fishing here for 79 years.",
     recommendations: "60-115HP FourStroke is perfect for Rice Lake's size and conditions",
     fun_fact: "Some say we know the fish here by name 🐟"
   },

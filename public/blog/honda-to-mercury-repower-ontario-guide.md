@@ -183,7 +183,7 @@ Yes, technically. The kicker is electrically and mechanically independent of the
 
 ### What is the trade-in value of a clean Honda BF90?
 
-Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury.
+Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will usually quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury.
 
 ## Related guides
 

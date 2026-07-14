@@ -148,7 +148,7 @@ Usually yes. Old mechanical controls and cables often do not match the modern mo
 
 ### Does Harris Boat Works take my old 2-stroke as trade-in?
 
-We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will email a CAD figure within one business day.
+We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will usually email a CAD figure within one business day.
 
 ### How much does a 2-stroke to 4-stroke repower cost?
 

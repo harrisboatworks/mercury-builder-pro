@@ -120,7 +120,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
         heading: 'How does pickup work for a Kawartha boater?',
         paragraphs: [
           "You drive to Gores Landing. We don't ship Mercury motors and we don't deliver to cottages, that's true for every repower we do, Kawartha included. The motor is installed on your boat at our shop, water-tested on Rice Lake, and ready for you to pick up. Bring the trailer, bring the boat, or drop the boat with us during quoting. Either way the boat leaves Gores Landing on its own wheels, with a Mercury that's been run through a full sea trial on the south shore.",
-          "For trade-ins, fill the form and we send a CAD figure within one business day. If you'd rather start with cost, the Mercury repower cost guide has ranges by HP and rigging scope.",
+          "For trade-ins, fill the form and we usually send a CAD figure within one business day. If you'd rather start with cost, the Mercury repower cost guide has ranges by HP and rigging scope.",
         ],
       },
     ],

@@ -115,7 +115,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $17,000 and $20,000 CAD. The 115 Pro XS Command Thrust sits in the $15,000–$18,000 motor band, and the rigging, controls, prop set, removal, fuel system, and water test build the rest. A clean Mercury 90 FourStroke trade-in can take several thousand off depending on hours and year, fill the trade form and we email a CAD figure within one business day.',
+            'All-in lands between $17,000 and $20,000 CAD. The 115 Pro XS Command Thrust sits in the $15,000–$18,000 motor band, and the rigging, controls, prop set, removal, fuel system, and water test build the rest. A clean Mercury 90 FourStroke trade-in can take several thousand off depending on hours and year, fill the trade form and we usually email a CAD figure within one business day.',
             'Financing is 7.99% APR over $10,000 on approved credit, 8.99% APR under $10,000. For full pricing context see our Mercury repower cost guide, or read more about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
@@ -228,7 +228,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $22,000 and $26,000 CAD. The 200 Pro XS V8 motor sits in the $18,000–$22,000 band, Boost adds $1,200–$1,800, and rigging, controls, prop set, removal, and water test build the rest. A clean 175 V6 trade-in can take several thousand off, fill the trade form and we email a CAD number within one business day.',
+            'All-in lands between $22,000 and $26,000 CAD. The 200 Pro XS V8 motor sits in the $18,000–$22,000 band, Boost adds $1,200–$1,800, and rigging, controls, prop set, removal, and water test build the rest. A clean 175 V6 trade-in can take several thousand off, fill the trade form and we usually email a CAD number within one business day.',
             'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See the Mercury repower cost guide for the broader pricing context, or read more about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
@@ -458,7 +458,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $32,000 and $38,000 CAD. The 300 V8 Verado itself sits in the $25,000+ premium band, the helm and DTS package adds several thousand, and the rigging, controls, prop set, removal, and water test build the rest. A clean older Verado can take a meaningful amount off via trade, fill the form and we email a CAD figure within one business day.',
+            'All-in lands between $32,000 and $38,000 CAD. The 300 V8 Verado itself sits in the $25,000+ premium band, the helm and DTS package adds several thousand, and the rigging, controls, prop set, removal, and water test build the rest. A clean older Verado can take a meaningful amount off via trade, fill the form and we usually email a CAD figure within one business day.',
             'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the build slot. See our repower cost guide for full context, or read the repower process for what the 8–14 week window actually looks like. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
@@ -477,7 +477,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Does the old Verado have trade-in value?',
           answer:
-            'Often yes, depending on hours, condition, and year. Verados are sought after as cores and for resale. Fill the trade-in form and we email a CAD figure within one business day. Trade value comes off the all-in price.',
+            'Often yes, depending on hours, condition, and year. Verados are sought after as cores and for resale. Fill the trade-in form and we usually email a CAD figure within one business day. Trade value comes off the all-in price.',
         },
         {
           question: 'Is there financing for a $35,000 repower?',
@@ -690,7 +690,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $10,000 and $13,000 CAD. The Mercury 60 Command Thrust sits a little higher than a standard 60 because of the bigger gearcase. The new controls, prop, removal, fuel system check, and water test build the rest. Trade-in on a clean standard 60 takes a few thousand off, fill the form and we email a CAD figure within one business day.',
+            'All-in lands between $10,000 and $13,000 CAD. The Mercury 60 Command Thrust sits a little higher than a standard 60 because of the bigger gearcase. The new controls, prop, removal, fuel system check, and water test build the rest. Trade-in on a clean standard 60 takes a few thousand off, fill the form and we usually email a CAD figure within one business day.',
             'Financing is 8.99% APR under $10,000, 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. See our cost guide for full pricing. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
@@ -806,7 +806,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did it cost?',
           paragraphs: [
             'All-in lands between $35,000 and $42,000 CAD before trade. The motor itself sits in the $25,000–$28,000 band for Verado 300 or slightly lower for Pro XS 300 V8 4.6L. The DTS helm package, new steering, transom rework, controls, prop set, removal of two old motors, and water test build the rest.',
-            'Trade-in on two 25-year-old 115 FourStrokes depends heavily on condition, clean, running motors with reasonable hours can take meaningful dollars off. Fill the trade-in form and we email a CAD figure within one business day.',
+            'Trade-in on two 25-year-old 115 FourStrokes depends heavily on condition, clean, running motors with reasonable hours can take meaningful dollars off. Fill the trade-in form and we usually email a CAD figure within one business day.',
             'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See our cost guide for full repower pricing. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
           ],
         },
@@ -825,7 +825,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Can I trade in both old 115s?',
           answer:
-            'Yes. We take Mercury outboard trade-ins, and 25-year-old 115 FourStrokes still carry some core value depending on condition. Fill the trade-in form with details on both motors and we email a combined CAD figure within one business day.',
+            'Yes. We take Mercury outboard trade-ins, and 25-year-old 115 FourStrokes still carry some core value depending on condition. Fill the trade-in form with details on both motors and we usually email a combined CAD figure within one business day.',
         },
         {
           question: 'How long does a twin-to-single conversion take?',
