@@ -194,7 +194,7 @@ export const MID_RANGE_40_60HP: LandingConfig = {
     { question: 'Do I need Command Thrust on a 40 to 60 HP motor?', answer: 'You need it if the boat is heavy or carries a lot, especially a pontoon. Command Thrust adds a bigger gearcase and prop for better low-speed grip. On a light fishing boat, the standard gearcase is fine and saves you money.' },
     { question: 'Will a 40 to 60 HP Mercury fit my boat?', answer: 'It fits most 16 to 18-foot fishing boats, small bowriders, and lighter pontoons, but the right HP depends on hull weight and your boat\u2019s capacity plate. Send us the boat details and we will size it properly.' },
     { question: 'Are these in stock?', answer: '60 HP FourStrokes are in stock at Gores Landing; 40 HP, 50 HP, and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
-    { question: 'How long does a repower take?', answer: 'Most repowers run 2 to 3 weeks from confirmed order to water-ready. Spring books up fast, so plan ahead.' },
+    { question: 'How long does a repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. If your motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (2 to 4 weeks FourStroke), and your boat stays with you until the motor lands. Spring books up fast, plan ahead." },
   ],
 
   finalCtaHeading: 'Build your 40 to 60 HP Mercury quote in two minutes',
@@ -415,7 +415,7 @@ export const PRO_XS_115: LandingConfig = {
 
   faq: [
     { question: 'What does a Mercury 115 Pro XS cost in Canada?', answer: 'At Harris Boat Works, the 115 ELPT Pro XS is $17,490 CAD (20-inch shaft, standard gearcase). The 25-inch XL is $17,842. Command Thrust variants run from $17,941 to $18,299. Prices are CAD, confirm in the quote builder.' },
-    { question: 'How long does a 115 Pro XS repower take?', answer: 'Most 115 Pro XS repowers run 2 to 3 weeks from confirmed order to water-ready. Spring (April and May) books up fast because every shop in Ontario is busy. Plan ahead.' },
+    { question: 'How long does a 115 Pro XS repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. In-stock 115 Pro XS ships immediately; special orders wait at Mercury (3 to 6 weeks Pro XS), and your boat stays with you until the motor lands. Spring (April and May) books up fast, plan ahead." },
     { question: 'Will a 115 Pro XS fit if I have a 115 FourStroke now?', answer: 'Yes, in most cases. The 115 Pro XS uses the same 2.1L block and the same transom bolt pattern as the 115 FourStroke. Match your shaft length (20 or 25 inch) and most direct repowers are straightforward. Send us your old motor model and we will confirm.' },
     { question: 'Pro XS vs FourStroke, what is the real difference?', answer: 'Same block, different tune and gearcase options. The Pro XS revs harder, has a stronger hole shot, and a higher top end. The FourStroke is smoother and quieter at cruise. Both are four-stroke, both are reliable. Pick by how you run the boat.' },
   ],

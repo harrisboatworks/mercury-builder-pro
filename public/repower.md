@@ -24,13 +24,15 @@ If you are looking for a boat repower in Ontario, you have come to the right pla
 
 ## Ontario Repower Benchmarks
 
-| Scenario | HP Range | Typical All-in (CAD) | Typical Shop Timeline |
+| Scenario | HP Range | Typical All-in (CAD) | Boat With Us |
 |---|---|---|---|
-| 16 to 18 ft aluminum console | 75 to 115 HP | $17,000 to $22,000 | 3 to 8 weeks |
-| Pontoon / tritoon | 150 HP | $23,000 to $30,000 | 3 to 8 weeks |
-| Bass boat (performance) | 200 to 300 HP Pro XS | $35,000 to $40,000 | 3 to 8 weeks |
-| Cottage tender / tiller | 9.9 to 25 HP | $3,000 to $5,500 (motor only) | 3 to 5 weeks |
-| Classic Evinrude / Johnson conversion (16 to 18 ft aluminum) | 75 to 115 HP | $18,500 to $25,000 | 3 to 8 weeks |
+| 16 to 18 ft aluminum console | 75 to 115 HP | $17,000 to $22,000 | 2 to 5 days |
+| Pontoon / tritoon | 150 HP | $23,000 to $30,000 | 2 to 5 days |
+| Bass boat (performance) | 200 to 300 HP Pro XS | $35,000 to $40,000 | 2 to 5 days |
+| Cottage tender / tiller | 9.9 to 25 HP | $3,000 to $5,500 (motor only) | 2 to 5 days |
+| Classic Evinrude / Johnson conversion (16 to 18 ft aluminum) | 75 to 115 HP | $18,500 to $25,000 | 2 to 5 days |
+
+_Motor lead time is separate and only applies to special orders, your boat stays with you until the motor arrives._
 
 Numbers above are sourced from the HP-class table on this page, the [Mercury Repower Cost Ontario 2026 guide](/blog/mercury-repower-cost-ontario-2026-cad), and the published $1,500 to $3,000 CAD brand-conversion rigging delta in the Evinrude/Yamaha/Honda conversion guides.
 
@@ -42,7 +44,8 @@ Through **December 31, 2026** the headline program is **TD Auto Finance "Always 
 
 - Family-owned since 1947, Mercury dealer since 1965, current Premier tier
 - Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-- Timeline: 3 to 8 weeks from deposit to pickup
+- Your boat is with us: 2 to 5 days, drop-off to pickup
+- Motor lead time (special order only): 2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado. Your boat stays home while we wait.
 - Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)
 - Distance from Toronto: about 110 km
 - Warranty: Mercury Canadian warranty (3 years limited plus 3 years corrosion, concurrent), with promo extensions stacked on top when active
