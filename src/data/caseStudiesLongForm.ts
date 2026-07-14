@@ -368,7 +368,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does this kind of repower take?',
           answer:
-            '2–4 weeks from quote signing to water test pickup at HBW. The window is wider than a Mercury-to-Mercury swap because we sometimes have transom rework on an older boat. Pickup-only at Gores Landing.',
+            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup (a little longer if we find transom rework on an older boat). Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Pickup-only at Gores Landing.",
         },
       ],
       visit:
