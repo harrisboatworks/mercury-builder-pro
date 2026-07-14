@@ -5220,8 +5220,6 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     title: 'Harris Boat Works Mercury Dealer Ontario',
     seoTitle: 'Why Boaters Trust Harris Boat Works Mercury',
     description: 'Discover why Harris Boat Works has been Ontario\'s trusted Mercury dealer since 1965. Learn about our expertise, inventory, service.',
-    image: '/lovable-uploads/Boaters_Trust_HBW.png',
-    imageAlt: 'Mercury outboard motors displayed at Harris Boat Works in Gores Landing, Ontario, a trusted Mercury Premier dealer.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
     dateModified: "2026-07-07",
