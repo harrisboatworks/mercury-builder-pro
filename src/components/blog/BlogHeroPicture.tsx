@@ -38,6 +38,9 @@ export function BlogHeroPicture({
 }: BlogHeroPictureProps) {
   const [errored, setErrored] = useState(false);
 
+  if (!image) return null;
+
+
   const defaultFallback = (
     <div className="w-full h-full flex items-center justify-center bg-repower-navy-900 text-white">
       <div className="text-center px-4">
