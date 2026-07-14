@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/cedar-strip-9-9-fourstroke
-last_updated: 2026-07-13
+last_updated: 2026-07-14
 currency: CAD
 pickup_only: true
 delivery_offered: false

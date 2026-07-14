@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-13
+last_updated: 2026-07-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -58,14 +58,14 @@ See any motor twin for an example body.
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mh.md)
-- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mlh.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elh.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elhpt.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-elpt.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-exlpt.md)
@@ -77,17 +77,17 @@ See any motor twin for an example body.
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
-- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
-- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
-- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
 - [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
+- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
+- [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
-- [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
 - [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
@@ -139,6 +139,7 @@ See any motor twin for an example body.
 
 Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md)
 - [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md)
 - [Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)](https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md)
 - [Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)](https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario.md)
