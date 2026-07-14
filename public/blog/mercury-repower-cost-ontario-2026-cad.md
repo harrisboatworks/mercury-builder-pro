@@ -118,7 +118,7 @@ Motor, rigging (controls, cables, gauges), prop, install labour, and on-water te
 
 ### How long does a repower take?
 
-The fastest path is to get your order in over the off-season: you lock in your motor before the spring rush and go to the front of the queue, so the install happens as soon as we open in early April. A clean install is 1-2 days of shop time. From order confirmation to pickup is typically 2-4 weeks depending on motor availability.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Get your order in over the off-season to lock in a spring drop-off date.
 
 ### Do I need new controls and gauges?
 
