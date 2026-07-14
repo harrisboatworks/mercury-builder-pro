@@ -173,7 +173,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 **Email:** info@harrisboatworks.ca
 **Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The Mercury Premier dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. On-water towing assistance for Rice Lake breakdowns.
 
 ---
 

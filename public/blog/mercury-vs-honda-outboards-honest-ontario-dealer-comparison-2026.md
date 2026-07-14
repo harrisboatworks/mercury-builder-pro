@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
 
-> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda often gets the nod for refinement and quiet running in the 9.9 to 90 HP range; Mercury wins on Ontario service network density, Pro XS performance, and lineup breadth above 350 HP. On Rice Lake, HBW is the Mercury Premier dealer, which usually settles the math.
+> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda often gets the nod for refinement and quiet running in the 9.9 to 90 HP range; Mercury wins on Ontario service network density, Pro XS performance, and lineup breadth above 350 HP. On Rice Lake, HBW is the only Mercury dealer, which usually settles the math.
 
 - Mercury Premier Dealer
 - Family-owned since 1947
@@ -45,7 +45,7 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Lineup top end | 2.5 HP to 600 HP (Verado V12, 450R) | Tops out at BF350 V8 (350 HP) |
 | Performance line | Pro XS | No direct counterpart |
 | Refinement (9.9-90 HP) | Strong; gap largely closed | Edge: quieter, smoother |
-| Regional service | More certified dealers; Mercury Premier dealer on Rice Lake | 2 certified dealers within 75 km (Peterborough ~30 km, Havelock ~45 km) |
+| Regional service | More certified dealers; only Mercury dealer + only brand-name service on Rice Lake | 2 certified dealers within 75 km (Peterborough ~30 km, Havelock ~45 km) |
 | Parts (Canada) | Canadian distribution centres | Often route through US |
 | Max warranty (2026) | Up to 8 yr (3 limited + 3 corrosion concurrent + up to 5 MPP) | Up to 8 yr (5 standard + 3 HondaCare) |
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
@@ -75,7 +75,7 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 ## The Rice Lake local-service reality (the part most buyers underestimate)
 
-**HBW is the Mercury Premier dealer on Rice Lake.** There is no Honda dealer on Rice Lake. There is no Yamaha dealer on Rice Lake. If your boat lives here and you want brand-name service close to home, the choice is Mercury at HBW or a 30-90 minute drive somewhere else.
+**HBW is the only Mercury dealer on Rice Lake. We are also the only brand-name outboard service of any kind on Rice Lake.** There is no Honda dealer on Rice Lake. There is no Yamaha dealer on Rice Lake. If your boat lives here and you want brand-name service close to home, the choice is Mercury at HBW or a 30-90 minute drive somewhere else.
 
 **Honda Marine certified service near Rice Lake:** Honda Marine's dealer locator lists two certified dealers within 75 km of HBW - one in the Peterborough area (about 30 km) and one in the Havelock area (about 45 km).
 
@@ -131,7 +131,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 **Quote builder:** mercuryrepower.ca
 **Service requests:** hbw.wiki/service
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The Mercury Premier dealer on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake.
 
 **Comparing real numbers beats comparing brochures.** Build a Mercury quote for your boat at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
