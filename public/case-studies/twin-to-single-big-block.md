@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/twin-to-single-big-block
-last_updated: 2026-07-13
+last_updated: 2026-07-14
 currency: CAD
 pickup_only: true
 delivery_offered: false

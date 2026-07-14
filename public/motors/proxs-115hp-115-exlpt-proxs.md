@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs
-last_updated: 2026-07-13
+last_updated: 2026-07-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
