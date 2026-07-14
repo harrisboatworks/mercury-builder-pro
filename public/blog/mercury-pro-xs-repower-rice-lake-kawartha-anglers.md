@@ -217,7 +217,7 @@ No. Pro XS is a performance motor for planing V-hull bass and angler boats, and 
 
 ### How long does a Pro XS repower take at HBW?
 
-From the day the motor is in our shop with the boat, a typical Pro XS repower is two to four working days for the install and rigging, plus a sea trial. Lead time on the motor itself depends on Mercury allocation, some HPs and shaft lengths are in stock, others are on order. The honest planning window is: book the assessment, get a firm quote, place the order, and schedule the install for whenever the motor lands. Most anglers schedule repowers in the off-season (October through April) so the boat is ready for opening day.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, and a sea trial on Rice Lake. Motor lead time is separate: in-stock Pro XS ships immediately, special-order shaft-and-gearcase combos wait at Mercury (3 to 6 weeks Pro XS), and your boat stays with you until the motor arrives. Most anglers schedule repowers in the off-season (October through April) so the boat is ready for opening day.
 
 ### Can I repower a 1990s bass boat with a modern Pro XS?
 
