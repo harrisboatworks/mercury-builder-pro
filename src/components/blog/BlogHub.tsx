@@ -14,6 +14,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogArticle, parseLocalDate } from '@/data/blogArticles';
 import { getCleanDescription } from '@/lib/strip-markdown';
+import { BlogCardImage } from './BlogCardImage';
 
 export interface BlogHubStrings {
   heroTitleLine1: string;          // white
@@ -107,10 +108,9 @@ function ArticleCard({
       className="group flex flex-col bg-white rounded-md overflow-hidden border border-repower-navy-900/10 hover:border-repower-navy-900/20 hover:shadow-md transition-all"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-repower-paper">
-        <img
+        <BlogCardImage
           src={article.image}
           alt={article.title}
-          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
         />
         {badge && (

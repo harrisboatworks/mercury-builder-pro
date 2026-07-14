@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
+import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 
 // Verified external profiles for the Harris Boat Works LocalBusiness entity.
 // Mirrors BUSINESS_SAME_AS in src/lib/companyInfo.ts. HTTPS only, no duplicates.
@@ -653,6 +654,55 @@ function loadBlogArticles() {
 // (model_key, model_display, model_number, family, horsepower, shaft_code,
 //  start_type, control_type, msrp, sale_price, dealer_price, base_price,
 //  manual_overrides, availability, in_stock, hero_image_url, image_url, updated_at).
+const REQUIRED_CANONICAL_MOTOR_ROUTES = new Map([
+  ['1A25411BK', 'fourstroke-25hp-25-elhpt-fourstroke'],
+  ['1A25413BK', 'fourstroke-25hp-25-elpt-fourstroke'],
+]);
+
+function loadRequiredCanonicalMotorRecords() {
+  const pricingPath = join(ROOT, 'public', 'pricing-reference.md');
+  const pricing = readFileSync(pricingPath, 'utf8');
+  const { byPartNo, lastUpdated } = loadCanonicalPricing();
+
+  return Array.from(REQUIRED_CANONICAL_MOTOR_ROUTES, ([partNo, routeSlug]) => {
+    const sku = byPartNo.get(partNo);
+    if (!sku) {
+      throw new Error(`[static-prerender] required canonical motor ${partNo} is missing from CANONICAL_SKUS`);
+    }
+    const pricingLine = pricing.split('\n').find((line) => line.includes(`| ${partNo} |`));
+    const motorId = pricingLine?.match(/[?&]motor=([0-9a-f-]{36})/i)?.[1];
+    if (!motorId) {
+      throw new Error(`[static-prerender] required canonical motor ${partNo} has no quote-builder motor id`);
+    }
+    const inStock = String(sku.status).toLowerCase() === 'in stock';
+    return {
+      id: motorId,
+      model_key: routeSlug,
+      model: 'Outboard',
+      model_display: sku.model,
+      model_number: sku.partNo,
+      mercury_model_no: sku.partNo,
+      family: sku.family,
+      horsepower: sku.hp,
+      shaft: null,
+      shaft_code: null,
+      start_type: null,
+      control_type: null,
+      msrp: sku.msrp,
+      sale_price: sku.dealer,
+      dealer_price: sku.dealer,
+      base_price: null,
+      manual_overrides: {},
+      _resolvedSellingPrice: sku.dealer,
+      availability: sku.status,
+      in_stock: inStock,
+      hero_image_url: null,
+      image_url: null,
+      updated_at: lastUpdated,
+    };
+  });
+}
+
 async function fetchAllSupabaseMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
   const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
@@ -671,6 +721,7 @@ async function fetchAllSupabaseMotors() {
 async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
   let apiMotors = [];
+  const canonicalMotors = loadRequiredCanonicalMotorRecords();
   // 1) Try the public API first.
   try {
     const res = await fetchWithTimeout(API_URL, { headers: { Accept: 'application/json' } });
@@ -729,20 +780,24 @@ async function loadMotors() {
     );
   }
   if (!sb.ok) {
-    console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with ${apiMotors.length} API motors only`);
-    return apiMotors;
+    console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with API plus canonical-route fallbacks`);
   }
 
-  // Merge: prefer API record (price hierarchy already resolved) when model_key matches.
+  // Merge: canonical routes preserve known public URL contracts when an upstream
+  // feed temporarily omits an orderable motor. Supabase and API records still
+  // win when they carry the same model_key.
   const byKey = new Map();
-  for (const m of sb.data) {
+  for (const m of canonicalMotors) {
+    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
+  }
+  for (const m of sb.ok ? sb.data : []) {
     if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
   }
   for (const m of apiMotors) {
     if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
   }
   const merged = Array.from(byKey.values());
-  console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.data.length})`);
+  console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.ok ? sb.data.length : 0}, canonical fallbacks: ${canonicalMotors.length})`);
   return merged;
 }
 
@@ -6080,6 +6135,29 @@ if (motorPageRoutes.length !== expectedMotorCount) {
 }
 
 const writtenSitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+for (const routeSlug of REQUIRED_CANONICAL_MOTOR_ROUTES.values()) {
+  const routePath = `/motors/${routeSlug}`;
+  const route = motorPageRoutes.find((candidate) => candidate.path === routePath);
+  if (!route) {
+    verifyErrors.push(`Required canonical motor route missing: ${routePath}`);
+    continue;
+  }
+  if (!writtenSitemap.includes(`<loc>${SITE_URL}${routePath}</loc>`)) {
+    verifyErrors.push(`Required canonical motor route missing from sitemap.xml: ${routePath}`);
+  }
+  const htmlPath = join(DIST, routePath.replace(/^\//, ''), 'index.html');
+  if (!existsSync(htmlPath)) {
+    verifyErrors.push(`Required canonical motor HTML missing: ${routePath}`);
+    continue;
+  }
+  const html = readFileSync(htmlPath, 'utf8');
+  if (!html.includes(`rel="canonical" href="${SITE_URL}${routePath}"`)) {
+    verifyErrors.push(`Required canonical motor route has wrong canonical: ${routePath}`);
+  }
+  if (html.includes(`rel="canonical" href="${SITE_URL}/"`)) {
+    verifyErrors.push(`Required canonical motor route canonicalizes to homepage: ${routePath}`);
+  }
+}
 const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|By Jay Harris/i;
 for (const route of blogArticleRoutes) {
   const p = join(DIST, route.path.replace(/^\//, ''), 'index.html');
