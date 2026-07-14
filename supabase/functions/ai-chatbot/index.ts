@@ -590,7 +590,7 @@ Gores Landing, ON K0K 2E0
 
 ### Credentials & History:
 - Mercury Marine Authorized Premier Dealer since 1965 (60+ years!)
-- Family-owned business since 1947 (78 years of marine expertise)
+- Family-owned business since 1947 (79 years of marine expertise)
 - CSI Award Winner (Mercury's highest customer satisfaction honor)
 - Certified Mercury Repower Center
 - One of the largest Mercury dealers in Ontario
