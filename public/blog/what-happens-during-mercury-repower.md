@@ -210,7 +210,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### How long does a Mercury repower take?
 
-Mercury-to-Mercury repowers: 2 to 4 days of shop time after drop-off. Brand conversions (Evinrude, Yamaha, Honda to Mercury): 4 to 6 days. Spring rush adds wait time before shop starts (sometimes weeks).
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 
