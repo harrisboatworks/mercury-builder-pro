@@ -10,7 +10,7 @@ export interface BlogArticle {
   seoTitle?: string;
   description: string;
   content: string;
-  image: string;
+  image?: string;
   imageAlt?: string;
   author: string;
   datePublished: string;
