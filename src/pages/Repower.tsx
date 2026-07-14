@@ -46,7 +46,7 @@ const repowerStepsData = [
 
 const whyHarrisData = [
   { icon: Award, title: "CSI Award Winner", description: "Mercury's highest honor for customer satisfaction" },
-  { icon: Calendar, title: "Since 1947", description: "78 years of family-owned marine expertise" },
+  { icon: Calendar, title: "Since 1947", description: "79 years of family-owned marine expertise" },
   { icon: BadgeCheck, title: "Mercury Dealer Since 1965", description: "60 years as an authorized Mercury dealer" },
   { icon: Wrench, title: "Certified Repower Center", description: "Mercury's top-tier repower certification" },
 ];

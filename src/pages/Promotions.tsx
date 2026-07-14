@@ -43,7 +43,7 @@ const whyBuyReasons = [
   {
     icon: Calendar,
     title: "Serving Boaters Since 1947",
-    description: "78 years of family-owned marine expertise on Rice Lake"
+    description: "79 years of family-owned marine expertise on Rice Lake"
   },
   {
     icon: null,
@@ -215,7 +215,7 @@ export default function Promotions() {
               What Our Customers Say
             </h2>
             <p className="font-sans text-repower-navy-900/65">
-              <span className="font-medium text-repower-navy-900">{reviewCount}+</span> five-star reviews from Ontario boaters
+              Rated <span className="font-medium text-repower-navy-900">4.7 stars</span> across <span className="font-medium text-repower-navy-900">{reviewCount}</span> Google reviews from Ontario boaters
             </p>
           </div>
 

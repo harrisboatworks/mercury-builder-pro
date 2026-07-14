@@ -56,7 +56,7 @@ Stony Lake boats often run bigger. Pro XS V8 4.6L 200–300 HP and FourStroke bi
 
 ### Can I drop my boat at HBW and pick it up later?
 
-Yes. Many Lakefield customers drop the boat with us during the quoting visit and pick it up after the rigging and water test. Typical turnaround is 1–3 weeks once the motor lands.
+Yes. Many Lakefield customers drop the boat with us during the quoting visit and pick it up after the rigging and water test. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.
 
 ### Can Lakefield customers finance a Mercury repower?
 

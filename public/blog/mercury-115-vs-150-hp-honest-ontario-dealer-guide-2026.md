@@ -185,7 +185,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show y
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The Mercury Premier dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario.
 
 ---
 

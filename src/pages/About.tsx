@@ -47,7 +47,7 @@ const services = [
   {
     icon: Shield,
     title: "New Motor Sales",
-    description: "Full line of Mercury outboards from 2.5HP portables to 600HP Verado. In-stock inventory with competitive pricing."
+    description: "The full Mercury line, from 2.5 HP portables up to 600 HP Verado — popular models in stock, larger and specialty motors by special order."
   },
   {
     icon: Wrench,

@@ -220,7 +220,7 @@ For Kawarthas and GTA boaters, our [complete Kawarthas repower guide](https://ww
 
 ## Why HBW Recommends Outboard Repowers in 2026
 
-When we recommend outboards, it's not because we stopped believing in sterndrives. It's because we've watched the market, the parts ecosystem, and the technology trajectory for 78 years, and the direction is clear.
+When we recommend outboards, it's not because we stopped believing in sterndrives. It's because we've watched the market, the parts ecosystem, and the technology trajectory for 79 years, and the direction is clear.
 
 A few specific reasons we're confident in this recommendation for most Ontario owners:
 
@@ -228,7 +228,7 @@ A few specific reasons we're confident in this recommendation for most Ontario o
 
 **We're a Mercury Premier Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
 
-**78 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
+**79 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
 
 We're not the biggest dealer in Ontario. But we're on the water, we know Rice Lake, and we tell people the truth, including when the truth is that their hull isn't worth a repower, or that keeping their existing engine makes more sense.
 

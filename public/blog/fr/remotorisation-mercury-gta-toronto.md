@@ -32,7 +32,7 @@ language: fr-CA
 
 *Dernière révision : 2026-05-13*
 
-> **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, maintenons une bonne profondeur d'inventaire Mercury (les modèles courants sont normalement disponibles) et complétons la plupart des remotoriations dans un délai typique de 1 à 2 semaines à l'atelier, selon la complexité et la charge saisonnière. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l'eau. Commencez le configurateur à mercuryrepower.ca.
+> **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, maintenons une bonne profondeur d'inventaire Mercury (les modèles courants sont normalement disponibles) et gardons votre bateau à l'atelier de 2 à 5 jours, du dépôt à la récupération; si le moteur doit être commandé, le délai dépend du modèle et de la disponibilité chez Mercury. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l'eau. Commencez le configurateur à mercuryrepower.ca.
 
 Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout de souffle; peut-être qu'une réfection du système de carburant coûte autant qu'un Mercury neuf. Dans tous les cas, vous êtes dans la GTA et vous devez comprendre : **comment ça fonctionne sur le plan logistique quand le concessionnaire est à 90 minutes de route ?**
 
@@ -94,7 +94,7 @@ Vous avez trois options pour amener le bateau à Gores Landing :
 
 La plupart des clients de la GTA choisissent l'option A. Le trajet 401 plus route régionale 18 est simple.
 
-### Étape 4 : L'installation (1 à 2 semaines à l'atelier)
+### Étape 4 : L'installation (2 à 5 jours à l'atelier)
 
 Le vieux moteur sort, le nouveau Mercury entre. Le travail comprend :
 
@@ -107,7 +107,7 @@ Le vieux moteur sort, le nouveau Mercury entre. Le travail comprend :
 - **Réglage**, ajustement du pas de l'hélice si nécessaire; parfois 1 ou 2 changements pour bien ajuster les performances
 - **Documentation**, enregistrement de la garantie, registres de service, inscription au MPP si acheté
 
-**Temps total écoulé :** généralement 1 à 2 semaines à l'atelier, selon la charge de travail et la complexité.
+**Temps total à l'atelier :** 2 à 5 jours pour l'installation et l'essai sur l'eau. Si le moteur est en commande spéciale, ajoutez un délai qui dépend du modèle et de la disponibilité chez Mercury.
 
 ### Étape 5 : Récupération, vérification sur l'eau, retour à la maison (4 à 8 heures)
 

@@ -149,7 +149,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Port Hope customers?',
         paragraphs: [
-          "You drive north, about 30 minutes, and pick up at Gores Landing. We don't ship Mercury motors and we don't deliver to Port Hope. The boat gets rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Most repowers wrap in 1–3 weeks once the motor lands.",
+          "You drive north, about 30 minutes, and pick up at Gores Landing. We don't ship Mercury motors and we don't deliver to Port Hope. The boat gets rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days, drop-off to pickup; if the motor has to be ordered, that wait depends on the model and Mercury's current availability, and we give you a real date at order time.",
           'Financing terms are 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits run $200 for portable, $500 for mid-range, $1,000 for big-block or Pro XS. For ranges by HP, see the Mercury repower cost guide. If your route is really Port Hope vs Cobourg, our Cobourg page is the closest comparison. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -217,7 +217,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for a Bewdley customer?',
         paragraphs: [
-          "You drive 15 minutes east to Gores Landing and pick up. If your current motor still runs, you can also come by water, same lake, no trailer involved. We don't ship Mercury motors and we don't deliver to Bewdley, even though it's right next door. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Most repowers wrap in 1–3 weeks once the motor lands.",
+          "You drive 15 minutes east to Gores Landing and pick up. If your current motor still runs, you can also come by water, same lake, no trailer involved. We don't ship Mercury motors and we don't deliver to Bewdley, even though it's right next door. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days, drop-off to pickup; if the motor has to be ordered, that wait depends on the model and Mercury's current availability, and we give you a real date at order time.",
           'For ranges by HP, see the Mercury repower cost guide. For the lake-wide picture, the Rice Lake page covers same-lake water-test detail. Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -354,7 +354,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Roseneath customers?',
         paragraphs: [
-          "You drive 15 minutes west to Gores Landing and pick up. If the old motor still runs, you can also come by water, same lake, no trailer involved. We don't ship Mercury motors and we don't deliver, not to Roseneath, not anywhere. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Most repowers wrap in 1–3 weeks once the motor lands.",
+          "You drive 15 minutes west to Gores Landing and pick up. If the old motor still runs, you can also come by water, same lake, no trailer involved. We don't ship Mercury motors and we don't deliver, not to Roseneath, not anywhere. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days, drop-off to pickup; if the motor has to be ordered, that wait depends on the model and Mercury's current availability, and we give you a real date at order time.",
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block or Pro XS. For ranges by HP, see the Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -422,7 +422,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Hastings customers?',
         paragraphs: [
-          "You drive around to Gores Landing, 25–30 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Hastings or to cottages along the Trent. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Most repowers wrap in 1–3 weeks once the motor lands.",
+          "You drive around to Gores Landing, 25–30 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Hastings or to cottages along the Trent. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days, drop-off to pickup; if the motor has to be ordered, that wait depends on the model and Mercury's current availability, and we give you a real date at order time.",
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For ranges by HP, see the Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -490,7 +490,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Lakefield customers?',
         paragraphs: [
-          "You drive south to Gores Landing, 45 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Lakefield or to Stony Lake cottages. Many Lakefield customers drop the boat with us during the quoting visit and pick it up after the rigging and water test. Typical turnaround is 1–3 weeks once the motor lands, longer on special-order Verado.",
+          "You drive south to Gores Landing, 45 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Lakefield or to Stony Lake cottages. Many Lakefield customers drop the boat with us during the quoting visit and pick it up after the rigging and water test. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup. Special-order motors can take longer to arrive; we give you a real date at order time.",
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For ranges by HP, see the Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -499,7 +499,7 @@ const SPECS: SpecInput[] = [
       { question: 'How far is Harris Boat Works from Lakefield?', answer: 'About 45 minutes south, roughly 45 km via Peterborough on Highway 28 and out County Road 9 into Gores Landing on the south shore of Rice Lake.' },
       { question: 'Do you deliver Mercury motors to Lakefield or Stony Lake cottages?', answer: "No. We're pickup-only at Gores Landing. We rig and water-test on Rice Lake, then you drive south to pick up." },
       { question: 'What HP Mercury is common for Stony Lake and northern Kawartha boats?', answer: 'Stony Lake boats often run bigger. Pro XS V8 4.6L 200–300 HP and FourStroke big-block 150–250 HP are common repowers in this segment, sometimes Verado V8/V10 250–400 HP on special order.' },
-      { question: 'Can I drop my boat at HBW and pick it up later?', answer: 'Yes. Many Lakefield customers drop the boat with us during the quoting visit and pick it up after the rigging and water test. Typical turnaround is 1–3 weeks once the motor lands.' },
+      { question: 'Can I drop my boat at HBW and pick it up later?', answer: 'Yes. Many Lakefield customers drop the boat with us during the quoting visit and pick it up after the rigging and water test. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.' },
       { question: 'Can Lakefield customers finance a Mercury repower?', answer: 'Yes. Financing is 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 portable, $500 mid-range, $1,000 big-block, Pro XS, or special-order Verado. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).' },
     ],
     visitExtra:
@@ -558,7 +558,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Bridgenorth customers?',
         paragraphs: [
-          'You drive south to Gores Landing, 40 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Bridgenorth or to Chemong Lake cottages. The motor is installed, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Typical turnaround is 1–3 weeks once the motor lands.',
+          'You drive south to Gores Landing, 40 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Bridgenorth or to Chemong Lake cottages. The motor is installed, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.',
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For trade-ins, we email a CAD figure within one business day. For ranges by HP, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -625,7 +625,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Lindsay customers?',
         paragraphs: [
-          'You drive east to Gores Landing, about an hour, and pick up. We do not ship Mercury motors and we do not deliver to Lindsay or to surrounding lakes. Most Lindsay customers drop the boat with us during quoting and pick it up after the rigging and water test. Typical turnaround is 1–3 weeks once the motor lands.',
+          'You drive east to Gores Landing, about an hour, and pick up. We do not ship Mercury motors and we do not deliver to Lindsay or to surrounding lakes. Most Lindsay customers drop the boat with us during quoting and pick it up after the rigging and water test. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.',
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For ranges by HP, see our Mercury repower cost guide. For the broader regional picture, our Kawartha Lakes page shows how we serve the whole chain. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -692,7 +692,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Bobcaygeon customers?',
         paragraphs: [
-          'You drive south to Gores Landing, about 75 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Bobcaygeon or to cottages on Pigeon, Sturgeon, or Buckhorn. Many Bobcaygeon customers drop the boat with us at the quote visit and pick it up after the rigging and water test are complete. Typical turnaround is 1–3 weeks once the motor lands.',
+          'You drive south to Gores Landing, about 75 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Bobcaygeon or to cottages on Pigeon, Sturgeon, or Buckhorn. Many Bobcaygeon customers drop the boat with us at the quote visit and pick it up after the rigging and water test are complete. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.',
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For ranges by HP, see our Mercury repower cost guide. For the closest companion read, our Buckhorn page covers the northern Kawartha side of the same corridor. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -759,7 +759,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Buckhorn customers?',
         paragraphs: [
-          'You drive south to Gores Landing, about 70 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Buckhorn or to cottages on Lower Buckhorn Lake. Many Buckhorn customers drop the boat with us at the quote visit and return for pickup after the rigging and water test. Typical turnaround is 1–3 weeks once the motor lands. Winter bookings for spring launch, January through April, are the busiest window.',
+          'You drive south to Gores Landing, about 70 minutes, and pick up. We do not ship Mercury motors and we do not deliver to Buckhorn or to cottages on Lower Buckhorn Lake. Many Buckhorn customers drop the boat with us at the quote visit and return for pickup after the rigging and water test. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup. Winter bookings for spring launch, January through April, are the busiest window.',
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For ranges by HP, see our Mercury repower cost guide. For the nearest companion read, our Bobcaygeon page covers the same northern Kawartha corridor from a different angle. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },
@@ -768,7 +768,7 @@ const SPECS: SpecInput[] = [
       { question: 'How far is Harris Boat Works from Buckhorn?', answer: 'About 70 minutes south, roughly 70 km via Highway 28 and County Road 9, to Gores Landing on the south shore of Rice Lake.' },
       { question: 'Do you deliver Mercury motors to Buckhorn cottages?', answer: 'No. We are pickup-only at Gores Landing. We rig and water-test on Rice Lake, then you drive south to pick up.' },
       { question: 'What HP Mercury is common for Buckhorn Lake boats?', answer: 'Pontoons and family runabouts typically repower with Mercury FourStroke 90–150 HP. Performance pontoons and bigger fiberglass run Pro XS V8 4.6L 175–225 HP, often with the Boost option for 25 extra horsepower on demand.' },
-      { question: 'How long is the wait for a Mercury repower from Buckhorn?', answer: 'Typical turnaround is 1–3 weeks once the motor arrives. Winter bookings for spring launch are the busiest window, most Buckhorn customers book January through April.' },
+      { question: 'How long is the wait for a Mercury repower from Buckhorn?', answer: 'Your boat is with us 2 to 5 days once the motor arrives, drop-off to pickup. Winter bookings for spring launch are the busiest window, most Buckhorn customers book January through April.' },
       { question: 'Should Buckhorn cottagers plan repowers before spring?', answer: 'Yes. Ice-out on Rice Lake is usually mid-April. January to April is the right window if you want the boat tested and back up north for the first long weekend.' },
     ],
     visitExtra:
@@ -792,7 +792,7 @@ const SPECS: SpecInput[] = [
     lng: -78.1000,
     h1: 'Northumberland County Mercury Repower',
     intro:
-      'Harris Boat Works is the Mercury repower shop inside Northumberland County. We sit in Gores Landing, ON, on the south shore of Rice Lake, at 5369 Harris Boat Works Rd. Every Northumberland resident (Cobourg, Port Hope, Hastings, Brighton, Bewdley, Gores Landing) is within a 30-minute drive. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake. Typical full repower: $11,000–$40,000 CAD.',
+      'Harris Boat Works is the Mercury Premier repower shop we run in Northumberland County. We sit in Gores Landing, ON, on the south shore of Rice Lake, at 5369 Harris Boat Works Rd. Every Northumberland resident (Cobourg, Port Hope, Hastings, Brighton, Bewdley, Gores Landing) is within a 30-minute drive. We are a Mercury Premier Dealer, selling Mercury since 1965 and family-owned since 1947. Customers drive to us for pickup; we do not ship or deliver. Every Mercury we rig is water-tested on Rice Lake. Typical full repower: $11,000–$40,000 CAD.',
     keyFacts: [
       'County: Northumberland, Ontario',
       'HBW coordinates: 44.1147, -78.2564',
@@ -835,7 +835,7 @@ const SPECS: SpecInput[] = [
       {
         heading: 'How does pickup work for Northumberland County customers?',
         paragraphs: [
-          'Same for everyone, in-county or out. We do not ship Mercury motors and we do not deliver, not within Cobourg, not to a Port Hope address, not even within Gores Landing. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. You drive to Gores Landing and pick up. Typical turnaround is 1–3 weeks once the motor lands.',
+          'Same for everyone, in-county or out. We do not ship Mercury motors and we do not deliver, not within Cobourg, not to a Port Hope address, not even within Gores Landing. The motor is rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. You drive to Gores Landing and pick up. Your boat is with us 2 to 5 days once the motor lands, drop-off to pickup.',
           'Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable HP, $500 for mid-range, $1,000 for big-block, Pro XS, or special-order Verado. For trade-ins, fill the form and we email a CAD figure within one business day. For full HP ranges, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
         ],
       },

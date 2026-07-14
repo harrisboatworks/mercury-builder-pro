@@ -149,7 +149,7 @@ No. DTS draws power from the standard outboard charging system and the boat's ma
 
 ### What happens if the DTS digital display fails on the water?
 
-Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer.
+Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it hasn't left our customers stranded.
 
 ### Are mechanical cables really 50-year-old technology?
 
@@ -161,7 +161,7 @@ Yes. The control system is independent of propeller choice. Whatever prop is cor
 
 ### Is there a fuel economy difference?
 
-Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. Nobody we have ever serviced has measured a meaningful difference. The motor model, the prop, and the hull matter far more than the control system.
+Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. We haven't seen a meaningful real-world difference. The motor model, the prop, and the hull matter far more than the control system.
 
 ## Related guides
 

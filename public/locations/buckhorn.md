@@ -55,7 +55,7 @@ Pontoons and family runabouts typically repower with Mercury FourStroke 90–150
 
 ### How long is the wait for a Mercury repower from Buckhorn?
 
-Typical turnaround is 1–3 weeks once the motor arrives. Winter bookings for spring launch are the busiest window, most Buckhorn customers book January through April.
+Your boat is with us 2 to 5 days once the motor arrives, drop-off to pickup. Winter bookings for spring launch are the busiest window, most Buckhorn customers book January through April.
 
 ### Should Buckhorn cottagers plan repowers before spring?
 

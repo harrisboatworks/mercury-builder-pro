@@ -14,7 +14,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     h1: 'Harris Boat Works - Mercury Repower Centre',
     lastReviewed: '2026-06-02',
     quickAnswer:
-      "Harris Boat Works is the Mercury repower shop on Rice Lake, in Gores Landing on the south shore. We're a Mercury Premier Dealer, family-owned since 1947. Every motor we rig is water-tested on Rice Lake itself before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
+      "Harris Boat Works is your Mercury Premier repower shop on Rice Lake, in Gores Landing on the south shore. We're a Mercury Premier Dealer, family-owned since 1947. Every motor we rig is water-tested on Rice Lake itself before pickup. No shipping. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     intro:
       "Harris Boat Works sits on the south shore of Rice Lake at 5369 Harris Boat Works Rd in Gores Landing, ON. We're the lake's Mercury Premier Dealer, selling Mercury since 1965 and a family-owned repower shop since 1947. If your boat already lives on Rice Lake, your Mercury repower starts and ends on the same water. We quote, rig, install, and water-test every job on Rice Lake before pickup. Full repowers typically run $11,000–$40,000 CAD. No shipping, customers come to Gores Landing for pickup, usually within a 90-minute drive.",
     keyFacts: [
@@ -44,7 +44,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
         heading: 'How does a Rice Lake repower actually run?',
         paragraphs: [
           'Start with a quote, call (905) 342-2153 or use the Mercury repower quote builder. We confirm HP, shaft length, controls (mechanical or digital), prop, and a rigging timeline. Deposit is $200 for portable HP, $500 for mid-range, $1,000 for big-block or Pro XS.',
-          "When the motor arrives, we install, connect the fuel system, rig controls and cables, pick the prop, and water-test on Rice Lake. Most jobs wrap in 1–3 weeks. You drive to Gores Landing for pickup. We don't ship Mercury motors and we don't deliver to cottages or other marinas. The water test is the final check, and we want the same techs who built the quote to be the ones running the boat off our dock.",
+          "When the motor arrives, we install, connect the fuel system, rig controls and cables, pick the prop, and water-test on Rice Lake. Your boat is with us 2 to 5 days, drop-off to pickup; if the motor has to be ordered, that wait depends on the model and Mercury's current availability. You drive to Gores Landing for pickup. We don't ship Mercury motors and we don't deliver to cottages or other marinas. The water test is the final check, and we want the same techs who built the quote to be the ones running the boat off our dock.",
         ],
       },
       {
@@ -277,7 +277,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'How does pickup work for Cobourg customers?',
         paragraphs: [
-          "You drive north to Gores Landing, about 25 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Cobourg. The boat gets rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Most repowers wrap in 1–3 weeks once the motor lands.",
+          "You drive north to Gores Landing, about 25 minutes, and pick up. We don't ship Mercury motors and we don't deliver to Cobourg. The boat gets rigged, propped, fuel-connected, controls run, and water-tested on Rice Lake before you arrive. Your boat is with us 2 to 5 days, drop-off to pickup; if the motor has to be ordered, that wait depends on the model and Mercury's current availability, and we give you a real date at order time.",
           "Financing runs 7.99% APR over $10,000 and 8.99% APR under $10,000, OAC. Deposits are $200 for portable, $500 for mid-range, and $1,000 for big-block or Pro XS. For ranges by HP, see the Mercury repower cost guide, or read the Rice Lake repower page for the water-test detail. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).",
         ],
       },

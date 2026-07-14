@@ -30,7 +30,7 @@ language: en-CA
 
 # Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
-> **Quick answer:** GTA boaters repower at HBW because we quote installed packages online, stock Mercury inventory, and turn most repowers in 7-14 days at the shop. Drop the boat in Gores Landing, pick it up commissioned and sea-trialled. Start the configurator at mercuryrepower.ca.
+> **Quick answer:** GTA boaters repower at HBW because we quote installed packages online, stock Mercury inventory, and keep the boat with us 2 to 5 days at the shop for a typical repower. Drop the boat in Gores Landing, pick it up commissioned and sea-trialled. Start the configurator at mercuryrepower.ca.
 
 You've decided to repower. Maybe your old motor is on its last legs; maybe a fuel-system rebuild costs as much as a fresh new Mercury. Either way, you're in the GTA and need to figure out: **how does this actually work logistically when the dealer is 90 minutes away?**
 
@@ -92,7 +92,7 @@ You have three options for getting the boat to Gores Landing:
 
 Most GTA customers go with Option A. The 401 + County Rd 18 drive is straightforward.
 
-### Stage 4: The install (1-2 weeks at the shop)
+### Stage 4: The install (2 to 5 days at the shop)
 
 Old motor comes off, new Mercury goes on. The work involves:
 
@@ -105,7 +105,7 @@ Old motor comes off, new Mercury goes on. The work involves:
 - **Tuning**, adjust prop pitch if needed; sometimes 1-2 swaps to dial in performance
 - **Documentation**, warranty registration, service records, MPP enrollment if purchased
 
-**Total elapsed time:** 7-14 days depending on workload + complexity. Most repowers done in 10 days.
+**Total elapsed time at the shop:** 2 to 5 days for the install and water test. If the motor is special-order, add lead time that depends on the model and Mercury's current availability.
 
 ### Stage 5: Pickup, on-water verification, drive home (4-8 hours)
 

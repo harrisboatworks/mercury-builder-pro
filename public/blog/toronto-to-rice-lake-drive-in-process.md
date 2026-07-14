@@ -131,7 +131,7 @@ whenInDoubt: If the job takes more than 2 days, bundle it with storage and do on
 
 ## What if my boat won't run?
 
-Trailer it in. We routinely take boats that have failed at the cottage and need a tow. Don't try to nurse a sick motor home, let it ride on the trailer. We've never refused a boat because it wouldn't start.
+Trailer it in. We routinely take boats that have failed at the cottage and need a tow. Don't try to nurse a sick motor home, let it ride on the trailer. A boat that won't start is exactly the kind of job we take on.
 
 If the motor is seized, leaking, or making noises that scare you, stop running it. Every minute of operation on a damaged motor makes the repair bill bigger. Trailer it, call us, and we'll sort it out when it gets here.
 

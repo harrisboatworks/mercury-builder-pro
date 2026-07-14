@@ -46,7 +46,7 @@ We do Yamaha-to-Mercury repowers every spring at HBW. The customer is almost alw
 
 The brand swap is not a casual decision. It costs more than a same-brand repower because the controls and rigging do not carry over. The customers who pull the trigger usually have one of four reasons. If you have not yet decided that repower is the right call at all, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) before pricing a brand switch.
 
-**HBW is the only Mercury dealer on Rice Lake. We are also the only brand-name outboard service of any kind on the lake.** If you live on Rice Lake or boat here regularly, a Yamaha-to-Mercury swap is also a swap to local service for the life of the motor. That changes the math.
+**HBW is the Mercury Premier dealer on Rice Lake.** If you live on Rice Lake or boat here regularly, a Yamaha-to-Mercury swap is also a swap to local service for the life of the motor. That changes the math.
 
 **Local service.** The closest Yamaha dealer is too far to be practical. This is the single biggest driver we see in the GTA, Kawarthas, and around Rice Lake. A motor you can't get serviced quickly is a motor that fails when you need it most. If the nearest Mercury Premier dealer is 20 minutes away and the nearest Yamaha dealer is 90 minutes away, the math eventually swings.
 
@@ -185,7 +185,7 @@ A few notes specific to where we do business.
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The Mercury Premier dealer on Rice Lake.
 
 **Want the side-by-side math?** Build your Mercury quote with trade-in at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and compare it against staying with Yamaha.
 

@@ -17,7 +17,7 @@ export default function RepowerTradeIn() {
       phoneNumber="(905) 342-2153"
       directAnswer={
         <>
-          Harris Boat Works accepts Mercury outboard trade-ins as standard practice and considers other-brand trade-ins case-by-case for resale or wholesale. Submit your motor's brand, model, HP, year, shaft length, and condition through our form. We email a CAD figure within 1 business day. Trade-in value reduces what you finance on the new motor. Old motor comes in when you pick up the new one (pickup-only, no shipping). Final value confirmed after inspection at Gores Landing.
+          Harris Boat Works accepts Mercury outboard trade-ins as standard practice and considers other-brand trade-ins case-by-case for resale or wholesale. Submit your motor's brand, model, HP, year, shaft length, and condition through our form. We usually email a CAD figure within 1 business day. Trade-in value reduces what you finance on the new motor. Old motor comes in when you pick up the new one (pickup-only, no shipping). Final value confirmed after inspection at Gores Landing.
         </>
       }
       table={{
@@ -81,7 +81,7 @@ export default function RepowerTradeIn() {
       ]}
       secondaryCTA={{
         heading: 'Get your trade-in number first',
-        body: <>Submit your motor details and we email a CAD figure within 1 business day.</>,
+        body: <>Submit your motor details and we usually email a CAD figure within 1 business day.</>,
         button: { label: 'Get a Trade-In Quote', to: '/trade-in-value' },
       }}
       enrichedContent={
