@@ -185,7 +185,7 @@ Standard is 3 years, concurrent, in Canada. Bonus coverage applies only when an 
 
 ### Can I order any model, or only what's in stock?
 
-Both. In-stock means physically at our shop in Gores Landing. Available-to-order means we request it from Mercury Canada, typically 1-4 weeks depending on the model.
+Both. In-stock means physically at our shop in Gores Landing. Available-to-order means we request it from Mercury Canada, typical wait depends on the model and Mercury's current availability.
 
 ### Are these prices final?
 

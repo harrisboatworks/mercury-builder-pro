@@ -135,7 +135,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Timeline**: 
 - New boat rigging: 4-8 hours
-- Repower: 6-16 hours
+- Repower: usually completed within the 2 to 5 days the boat is with us
 - Complex jobs: 2-3 days
 
 **Quality Checks**:
@@ -172,19 +172,19 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 | Step | Timeframe |
 |------|-----------|
 | Consultation to deposit | 1-7 days |
-| Scheduling installation | 1-4 weeks |
+| Scheduling installation | typical scheduling window |
 | Installation | 1-3 days |
 | Water test | Same day or next |
-| **Total** | **2-6 weeks** |
+| **Boat with us** | **2 to 5 days** |
 
 **Ordered Motor**:
 | Step | Timeframe |
 |------|-----------|
 | Order placement | 1-2 weeks |
-| Motor delivery | 2-12 weeks |
-| Installation scheduling | 1-2 weeks |
+| Motor delivery | depends on model and Mercury availability |
+| Installation scheduling | typical scheduling window |
 | Installation | 1-3 days |
-| **Total** | **6-16 weeks** |
+| **Boat with us** | **2 to 5 days** (motor lead time separate) |
 
 *Timelines vary by season - summer is busiest*
 
@@ -230,7 +230,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### How long does the whole process take?
 
-For in-stock motors, typically 2-6 weeks from deposit to water test. Ordered motors add 2-12 weeks for delivery. Summer season is busiest and may extend timelines.
+For in-stock motors, the boat is with us 2 to 5 days from drop-off to water test pickup. For ordered motors, wait time depends on the model and Mercury's current availability, and your boat stays with you until the motor arrives. Summer season is busiest and may extend scheduling.
 
 ### What deposit is required?
 

@@ -193,7 +193,7 @@ export const PROGRESS_MESSAGES: Record<number, ConversationalNudge> = {
 // Social proof (occasional, builds trust)
 export const SOCIAL_PROOF: ConversationalNudge[] = [
   { message: "127+ quotes generated this month", icon: 'award' },
-  { message: "Trusted since 1947, that's 78 years", icon: 'award' },
+  { message: "Trusted since 1947, that's 79 years", icon: 'award' },
   { message: "Mercury dealer since 1965, 60 years of expertise", icon: 'award' },
   { message: "Our techs average 15+ years experience", icon: 'shield' },
 ];

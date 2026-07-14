@@ -147,7 +147,7 @@ export function MotorSelectionSEO({
         "@id": `${SITE_URL}/quote/motor-selection#webpage`,
         "url": `${SITE_URL}/quote/motor-selection`,
         "name": "Mercury Outboard Motors for Sale Ontario | Build Your Quote | Harris Boat Works",
-        "description": "Browse Mercury outboard motors from 2.5HP to 600HP. Configure your motor, compare options, and get instant CAD pricing online.",
+        "description": "Browse the full Mercury outboard line — popular models in stock, larger and specialty motors by special order. Configure your motor, compare options, and get instant CAD pricing online.",
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA",

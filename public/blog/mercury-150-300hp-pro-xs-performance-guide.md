@@ -219,7 +219,7 @@ On a suitable sub-19 ft hull, a Mercury 150 Pro XS typically runs in the low-to-
 
 ### How much does a Mercury 150 Pro XS cost?
 
-All-in repower pricing on a Mercury 150 Pro XS typically plans out around $22,500 to $26,500 CAD, depending on rigging, controls, and what is coming off your transom. Pricing is in CAD and the final number is confirmed by Harris Boat Works. Build a live quote in about 90 seconds at mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+All-in repower pricing on a Mercury 150 Pro XS typically plans out around $22,500 to $26,500 CAD, depending on rigging, controls, and what is coming off your transom. Pricing is in CAD and the final number is confirmed by Harris Boat Works. Build a live quote in about three minutes at mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
 
 ## Related guides
 

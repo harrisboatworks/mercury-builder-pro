@@ -916,7 +916,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why does Harris Boat Works only sell Mercury?",
-        "a": "Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water."
+        "a": "Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and our shop is right on Rice Lake, so we can rig, service, and store a Mercury boat right on the water."
       },
       {
         "q": "Where is Harris Boat Works located?",
@@ -1889,7 +1889,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does the whole process take?",
-        "a": "For in-stock motors, typically 2-6 weeks from deposit to water test. Ordered motors add 2-12 weeks for delivery. Summer season is busiest and may extend timelines."
+        "a": "For in-stock motors, the boat is with us 2 to 5 days from drop-off to water test pickup. For ordered motors, wait time depends on the model and Mercury's current availability, and your boat stays with you until the motor arrives. Summer season is busiest and may extend scheduling."
       },
       {
         "q": "What deposit is required?",
@@ -4989,7 +4989,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What happens if the DTS digital display fails on the water?",
-        "a": "Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it has never stranded a customer."
+        "a": "Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it hasn't left our customers stranded."
       },
       {
         "q": "Are mechanical cables really 50-year-old technology?",

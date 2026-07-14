@@ -134,7 +134,7 @@ This is the single biggest reason GTA boaters end up choosing HBW: **you don't n
 
 Most marine dealers in the GTA still operate "call for pricing", meaning you fill out a form, wait 1-2 days, get an estimate without details, then negotiate. That model works for the dealer (they control the conversation); it works against you (you can't compare).
 
-**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor (98 Mercury models in current inventory), select your shaft length and controls, add a prop, see install pricing, see optional MPP, see trade-in credit math, get a final all-in number. **In about 90 seconds.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
+**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor (98 Mercury models in current inventory), select your shaft length and controls, add a prop, see install pricing, see optional MPP, see trade-in credit math, get a final all-in number. **In about three minutes.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
 
 This isn't a brochure tool. It's the same data our staff uses. The price you see at home is the price we'd quote you in person.
 
@@ -148,7 +148,7 @@ Couple of practical realities for GTA buyers:
 
 **The drive home with a new outboard.** A Mercury 90 HP weighs ~360 lbs; a 200 HP V6 weighs ~510 lbs. If you're picking up a small motor (under 25 HP), it fits in most pickup beds. Larger motors need a trailer or proper crate handling. We help with this, including loading.
 
-**Repower visits are different.** If you're repowering, you typically trailer your boat to us, leave it for 1-2 weeks (for rigging + sea trial), come back to pick it up. The 90-minute drive happens twice. If you're not local, plan to either stay nearby (Cobourg, Peterborough have hotels) or arrange transport in/out.
+**Repower visits are different.** If you're repowering, you typically trailer your boat to us, leave it 2 to 5 days for rigging and sea trial, come back to pick it up. The 90-minute drive happens twice. If you're not local, plan to either stay nearby (Cobourg, Peterborough have hotels) or arrange transport in/out.
 
 **Service visits.** Most service work is 1-3 days in the shop. Drop off, drive home, come back. Or arrange transport (some GTA customers use boat transport services for $300-$500 each way).
 

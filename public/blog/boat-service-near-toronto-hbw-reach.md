@@ -91,7 +91,7 @@ If your motor is a brand we don't service, we'll refer you. That's the right ans
 
 **Diagnostic for fault codes / alarms**, when something's wrong but you don't know what. We plug in G3 software, decode active and historical fault codes, deliver a report. Diagnostic fee $80-$120, typically credited toward repair work. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for code interpretation.
 
-**Repower**, full new motor install. Highest-margin work; takes 1-2 weeks at the shop. See our [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination).
+**Repower**, full new motor install. Highest-margin work; boat with us 2 to 5 days at the shop. See our [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination).
 
 **Pre-purchase inspection**, for buyers considering a used Mercury. Compression, gearcase pressure, computer diagnostics. Report with all findings. $200-$400. See [Used Outboard Buying Guide](/blog/used-outboard-buying-guide-ontario).
 

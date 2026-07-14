@@ -103,7 +103,7 @@ export const LOCATION_LONGFORM_EXTRAS: Record<string, LocationLongFormExtras> = 
   },
   'northumberland-county': {
     quickAnswer:
-      "Harris Boat Works is the Mercury repower shop inside Northumberland County, in Gores Landing on Rice Lake. We're a Mercury Premier Dealer, family-owned since 1947, and most of the county is within 30 minutes of our dock. Every motor is water-tested on Rice Lake before pickup. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
+      "Harris Boat Works is the Mercury Premier repower shop we run in Northumberland County, in Gores Landing on Rice Lake. We're a Mercury Premier Dealer, family-owned since 1947, and most of the county is within 30 minutes of our dock. Every motor is water-tested on Rice Lake before pickup. A full repower typically runs $11,000-$40,000 CAD. Build a quote at mercuryrepower.ca.",
     lastReviewed: '2026-05-24',
     whatWeSeeAtHBW:
       'Most of what we see is Rice Lake boats, because that is the county home water and ours. The mix runs from tiller tinnies to loaded pontoons. Wherever in the county a customer is, the repower lands in one place: rigged, tested on Rice Lake, picked up in Gores Landing.',

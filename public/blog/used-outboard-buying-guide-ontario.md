@@ -172,13 +172,13 @@ A pre-purchase inspection costs a small fraction of what a bad motor will cost y
 
 Sometimes the math on a used motor does not add up. A 10-year-old 90 HP with question marks on the compression, no service history, and a gearcase that needs attention can be a couple of thousand dollars in repairs away from what it should have cost in the first place. Sometimes a newer used motor is the right buy. Sometimes it is not.
 
-We will tell you which one you are looking at, even when the honest answer points you toward something new. New Mercury pricing is at **mercuryrepower.ca**, and the configurator gives you a real installed number in about 90 seconds. For how a new motor compares against an aging one, our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) lays out the full picture.
+We will tell you which one you are looking at, even when the honest answer points you toward something new. New Mercury pricing is at **mercuryrepower.ca**, and the configurator gives you a real installed number in about three minutes. For how a new motor compares against an aging one, our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) lays out the full picture.
 
 ---
 
 ## Ready to Decide?
 
-If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about 90 seconds.
+If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about three minutes.
 
 Call **905-342-2153** with questions, or book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
 

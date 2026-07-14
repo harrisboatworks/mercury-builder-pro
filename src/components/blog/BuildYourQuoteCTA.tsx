@@ -22,7 +22,7 @@ export function BuildYourQuoteCTA({ className = '' }: { className?: string }) {
         Thinking about a new Mercury?
       </h3>
       <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/75 leading-relaxed mb-6">
-        Build a real quote with live Canadian pricing in about 90 seconds. No call for price games.
+        Build a real quote with live Canadian pricing in about three minutes. No call for price games.
       </p>
       <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
         <Link

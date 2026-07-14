@@ -160,7 +160,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 We rig family runabouts every spring in Gores Landing. Specifically:
 
 - **Boat-to-motor matching**, Bring the boat in or send photos with the capacity plate spec, and we'll spec the right HP for how you'll actually use it.
-- **Repower quotes through the live configurator**, Real CAD pricing in about 90 seconds at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+- **Repower quotes through the live configurator**, Real CAD pricing in about three minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 - **Trade-in valuation**, We give fair-market value on your old motor or boat. No lowballing.
 - **Annual service**, Mercury Premier dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 

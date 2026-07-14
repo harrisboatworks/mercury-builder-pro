@@ -75,15 +75,15 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       h1: '90 HP to 115 HP Pro XS Command Thrust Repower on a 17-foot Bass Boat',
       lastReviewed: '2026-05-24',
       quickAnswer:
-        'A 90 HP to 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat typically runs $17,000–$20,000 all-in at Harris Boat Works in Gores Landing. That covers the new Mercury 115 Pro XS Command Thrust, removal of the old 90 HP FourStroke, new digital or mechanical controls, propeller selection, and a full water test on Rice Lake. Timeline is 3–4 weeks. Build a quote at mercuryrepower.ca.',
+        'A 90 HP to 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat typically runs $17,000–$20,000 all-in at Harris Boat Works in Gores Landing. That covers the new Mercury 115 Pro XS Command Thrust, removal of the old 90 HP FourStroke, new digital or mechanical controls, propeller selection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
       intro:
-        'A 90 HP to 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat typically runs $17,000–$20,000 all-in at Harris Boat Works in Gores Landing. That covers the new Mercury 115 Pro XS Command Thrust, removal of the old 90 HP FourStroke, new digital or mechanical controls, propeller selection, and a full water test on Rice Lake. Timeline is 3–4 weeks. This is the upgrade owners pick when they want tournament-grade hole shot and more top end out of a boat they already love.',
+        'A 90 HP to 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat typically runs $17,000–$20,000 all-in at Harris Boat Works in Gores Landing. That covers the new Mercury 115 Pro XS Command Thrust, removal of the old 90 HP FourStroke, new digital or mechanical controls, propeller selection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. This is the upgrade owners pick when they want tournament-grade hole shot and more top end out of a boat they already love.',
       keyFacts: [
         'Old motor: Mercury 90 HP FourStroke (still running)',
         'New motor: Mercury 115 HP Pro XS Command Thrust',
         'Boat: 17-foot fiberglass bass / multi-species hull',
         'Cost range: $17,000–$20,000 CAD all-in',
-        'Timeline: 3–4 weeks',
+        'Boat with us: 2 to 5 days (motor lead time separate)',
         'Power jump: 25 HP, roughly 28% more rated horsepower',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
         'Deposit: $500 to hold the order',
@@ -188,16 +188,16 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       h1: 'Pontoon Repower with Mercury Boost on a 24-foot Tritoon',
       lastReviewed: '2026-05-24',
       quickAnswer:
-        'A 175 HP to 200 HP Pro XS V8 4.6L repower with Mercury Boost on a 24-foot tritoon typically runs $22,000–$26,000 all-in at Harris Boat Works in Gores Landing. That covers the new 200 Pro XS, the Boost option (25 HP on-demand for 4–6 seconds), removal of the old 175 V6, digital controls, prop selection, and a water test on Rice Lake. Timeline is 4–5 weeks. Build a quote at mercuryrepower.ca.',
+        'A 175 HP to 200 HP Pro XS V8 4.6L repower with Mercury Boost on a 24-foot tritoon typically runs $22,000–$26,000 all-in at Harris Boat Works in Gores Landing. That covers the new 200 Pro XS, the Boost option (25 HP on-demand for 4–6 seconds), removal of the old 175 V6, digital controls, prop selection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
       intro:
-        'A 175 HP to 200 HP Pro XS V8 4.6L repower with Mercury Boost on a 24-foot tritoon typically runs $22,000–$26,000 all-in at Harris Boat Works in Gores Landing. That covers the new 200 Pro XS, the Boost option (25 HP on-demand for 4–6 seconds), removal of the old 175 V6, digital controls, prop selection, and a water test on Rice Lake. Timeline is 4–5 weeks. This is the most common Boost retrofit we do, heavy tritoons that need an easier time getting on plane with a full load.',
+        'A 175 HP to 200 HP Pro XS V8 4.6L repower with Mercury Boost on a 24-foot tritoon typically runs $22,000–$26,000 all-in at Harris Boat Works in Gores Landing. That covers the new 200 Pro XS, the Boost option (25 HP on-demand for 4–6 seconds), removal of the old 175 V6, digital controls, prop selection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. This is the most common Boost retrofit we do, heavy tritoons that need an easier time getting on plane with a full load.',
       keyFacts: [
         'Old motor: 175 HP V6 FourStroke',
         'New motor: Mercury 200 HP Pro XS V8 4.6L with Boost',
         'Boost gives 25 extra HP on demand for 4–6 seconds',
         'Boat: 24-foot tritoon',
         'Cost range: $22,000–$26,000 CAD all-in',
-        'Timeline: 4–5 weeks',
+        'Boat with us: 2 to 5 days (motor lead time separate)',
         'Boost cost add: ~$1,200–$1,800 over base motor',
         'Deposit: $1,000 for big-block / Pro XS',
       ],
@@ -302,15 +302,15 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       h1: 'Two-Stroke to FourStroke Modernization on a 17-foot Aluminum',
       lastReviewed: '2026-05-24',
       quickAnswer:
-        'Replacing an older 2-stroke 70–90 HP outboard with a new Mercury 90 HP FourStroke EFI on a 17-foot aluminum runabout typically runs $13,000–$16,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old 2-stroke, new controls and cables, propeller selection, fuel system inspection, and a full water test on Rice Lake. Timeline is 2–4 weeks. Build a quote at mercuryrepower.ca.',
+        'Replacing an older 2-stroke 70–90 HP outboard with a new Mercury 90 HP FourStroke EFI on a 17-foot aluminum runabout typically runs $13,000–$16,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old 2-stroke, new controls and cables, propeller selection, fuel system inspection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
       intro:
-        'Replacing an older 2-stroke 70–90 HP outboard with a new Mercury 90 HP FourStroke EFI on a 17-foot aluminum runabout typically runs $13,000–$16,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old 2-stroke, new controls and cables, propeller selection, fuel system inspection, and a full water test on Rice Lake. Timeline is 2–4 weeks. This is the reliability-and-warranty repower, owners trading a tired carbureted 2-stroke for a quiet, clean, factory-warrantied modern FourStroke.',
+        'Replacing an older 2-stroke 70–90 HP outboard with a new Mercury 90 HP FourStroke EFI on a 17-foot aluminum runabout typically runs $13,000–$16,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old 2-stroke, new controls and cables, propeller selection, fuel system inspection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. This is the reliability-and-warranty repower, owners trading a tired carbureted 2-stroke for a quiet, clean, factory-warrantied modern FourStroke.',
       keyFacts: [
         'Old motor: 70–90 HP 2-stroke (Mercury Sport or discontinued Evinrude legacy)',
         'New motor: Mercury 90 HP FourStroke EFI',
         'Boat: 17-foot aluminum runabout',
         'Cost range: $13,000–$16,000 CAD all-in',
-        'Timeline: 2–4 weeks',
+        'Boat with us: 2 to 5 days (motor lead time separate)',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
         'Noise reduction: roughly half at idle vs old 2-stroke',
         'Fuel improvement: roughly 30% better at cruise',
@@ -420,13 +420,13 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       quickAnswer:
         'A Mercury 300 HP V8 Verado special-order repower on a 23-foot fiberglass bowrider typically runs $32,000–$38,000 all-in at Harris Boat Works in Gores Landing. That covers the new V8 Verado, removal of the tired older 250 Verado, digital throttle and shift, prop selection, full helm integration, and a water test on Rice Lake. Build a quote at mercuryrepower.ca.',
       intro:
-        'A Mercury 300 HP V8 Verado special-order repower on a 23-foot fiberglass bowrider typically runs $32,000–$38,000 all-in at Harris Boat Works in Gores Landing. That covers the new V8 Verado, removal of the tired older 250 Verado, digital throttle and shift, prop selection, full helm integration, and a water test on Rice Lake. Timeline is 8–14 weeks because Verado is special-order only, we set the date the day the motor leaves the Mercury build line. This is the premium repower job, and we set lead-time expectations honestly from quote one.',
+        'A Mercury 300 HP V8 Verado special-order repower on a 23-foot fiberglass bowrider typically runs $32,000–$38,000 all-in at Harris Boat Works in Gores Landing. That covers the new V8 Verado, removal of the tired older 250 Verado, digital throttle and shift, prop selection, full helm integration, and a water test on Rice Lake. Motor lead time is 8–14 weeks because Verado is special-order only (boat with us is only 2 to 5 days for the actual install and water test); we set the date the day the motor leaves the Mercury build line. This is the premium repower job, and we set lead-time expectations honestly from quote one.',
       keyFacts: [
         'Old motor: older 250 HP Verado (tired, several seasons in)',
         'New motor: Mercury 300 HP V8 Verado (special-order)',
         'Boat: 23-foot fiberglass bowrider',
         'Cost range: $32,000–$38,000 CAD all-in',
-        'Timeline: 8–14 weeks (special-order lead time)',
+        'Motor lead time: 8–14 weeks (Verado is special-order only); boat with us: 2 to 5 days',
         'Deposit: $1,000 to hold the Mercury build slot',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
         'Note: Verado is not stocked, every job is built-to-order',
@@ -451,7 +451,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What did the job involve?',
           paragraphs: [
             'A Verado repower starts at the build slot. Once the order is confirmed and the deposit is in, Mercury allocates a build slot. Lead time runs 8–14 weeks depending on the time of year and queue. We tell customers up front: if you want the boat ready for the May long weekend, the order has to be in by late January or early February.',
-            "When the motor arrives, the shop work takes about 1–2 weeks. We pull the old Verado, inspect the transom skin and bracket, and inspect the rigging tunnel. Verado uses DTS throughout, the throttle, helm, gauges, and ECU all talk on a Mercury smart helm network. We replace the helm package as part of the job. Propeller selection runs through 2–3 stainless props in the 15–16-inch diameter range, pitched 19–23 inches depending on hull, load, and customer style, until WOT lands in Mercury's spec band cleanly.",
+            "When the motor arrives, the shop work takes about 2 to 5 days. We pull the old Verado, inspect the transom skin and bracket, and inspect the rigging tunnel. Verado uses DTS throughout, the throttle, helm, gauges, and ECU all talk on a Mercury smart helm network. We replace the helm package as part of the job. Propeller selection runs through 2–3 stainless props in the 15–16-inch diameter range, pitched 19–23 inches depending on hull, load, and customer style, until WOT lands in Mercury's spec band cleanly.",
             "Water test on Rice Lake confirms WOT RPM, helm response, steering torque, and gauge integrity. Pickup-only at Gores Landing, we don't ship or deliver.",
           ],
         },
@@ -532,15 +532,15 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       h1: 'Mercury Avator 7.5e Electric Kicker on an 18-foot Walleye Boat',
       lastReviewed: '2026-05-24',
       quickAnswer:
-        'Adding a Mercury Avator 7.5e electric outboard as a quiet kicker on an 18-foot aluminum walleye or muskie boat typically runs $4,500–$6,500 all-in at Harris Boat Works in Gores Landing. That covers the Avator, the lithium battery pack, the mounting bracket, helm wiring, and a water test on Rice Lake. Timeline is 1–2 weeks. Build a quote at mercuryrepower.ca.',
+        'Adding a Mercury Avator 7.5e electric outboard as a quiet kicker on an 18-foot aluminum walleye or muskie boat typically runs $4,500–$6,500 all-in at Harris Boat Works in Gores Landing. That covers the Avator, the lithium battery pack, the mounting bracket, helm wiring, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
       intro:
-        'Adding a Mercury Avator 7.5e electric outboard as a quiet kicker on an 18-foot aluminum walleye or muskie boat typically runs $4,500–$6,500 all-in at Harris Boat Works in Gores Landing. That covers the Avator, the lithium battery pack, the mounting bracket, helm wiring, and a water test on Rice Lake. Timeline is 1–2 weeks. The 7.5e gives the equivalent of a 3.5 HP gas kicker in thrust, runs silent, and lets you sneak up on walleye and muskie without spooking the fish.',
+        'Adding a Mercury Avator 7.5e electric outboard as a quiet kicker on an 18-foot aluminum walleye or muskie boat typically runs $4,500–$6,500 all-in at Harris Boat Works in Gores Landing. That covers the Avator, the lithium battery pack, the mounting bracket, helm wiring, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. The 7.5e gives the equivalent of a 3.5 HP gas kicker in thrust, runs silent, and lets you sneak up on walleye and muskie without spooking the fish.',
       keyFacts: [
         'Motor: Mercury Avator 7.5e (electric outboard)',
         'Thrust equivalent: comparable to a 3.5 HP gas kicker',
         'Boat: 18-foot aluminum walleye / muskie boat',
         'Cost range: $4,500–$6,500 CAD all-in with battery and bracket',
-        'Timeline: 1–2 weeks',
+        'Boat with us: 2 to 5 days (motor lead time separate)',
         'Run time: 60–90 minutes per battery at low troll',
         'Deposit: $200 for portable / small HP',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
@@ -584,7 +584,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does an Avator install take?',
           answer:
-            'Typically 1–2 weeks from quote signing to water test pickup at HBW. The job is mostly bracket installation, battery wiring, and water test. Faster than a main-engine repower because there is no controls or fuel system work on the existing motor.',
+            'Boat with us: 2 to 5 days from drop-off to water test pickup at HBW (motor lead time separate if not in stock). The job is mostly bracket installation, battery wiring, and water test. Faster than a main-engine repower because there is no controls or fuel system work on the existing motor.',
         },
         {
           question: 'How does an Avator 7.5e compare to a 3.5 HP gas kicker?',
@@ -649,15 +649,15 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       h1: '60 HP Command Thrust Repower on an 18-foot Deep-V Aluminum',
       lastReviewed: '2026-05-24',
       quickAnswer:
-        'A Mercury 60 HP FourStroke Command Thrust repower on an 18-foot deep-V aluminum boat typically runs $10,000–$13,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old standard-gearcase 60, new controls and cables, propeller selection, fuel system inspection, and a water test on Rice Lake. Timeline is 2–3 weeks. Build a quote at mercuryrepower.ca.',
+        'A Mercury 60 HP FourStroke Command Thrust repower on an 18-foot deep-V aluminum boat typically runs $10,000–$13,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old standard-gearcase 60, new controls and cables, propeller selection, fuel system inspection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
       intro:
-        'A Mercury 60 HP FourStroke Command Thrust repower on an 18-foot deep-V aluminum boat typically runs $10,000–$13,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old standard-gearcase 60, new controls and cables, propeller selection, fuel system inspection, and a water test on Rice Lake. Timeline is 2–3 weeks. Same horsepower rating as a standard 60 but with a bigger gearcase and higher-pitch prop, the Command Thrust gives heavy hulls the push they actually need.',
+        'A Mercury 60 HP FourStroke Command Thrust repower on an 18-foot deep-V aluminum boat typically runs $10,000–$13,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old standard-gearcase 60, new controls and cables, propeller selection, fuel system inspection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Same horsepower rating as a standard 60 but with a bigger gearcase and higher-pitch prop, the Command Thrust gives heavy hulls the push they actually need.',
       keyFacts: [
         'Old motor: standard Mercury 60 HP FourStroke',
         'New motor: Mercury 60 HP FourStroke Command Thrust',
         'Boat: 18-foot deep-V aluminum (heavy hull)',
         'Cost range: $10,000–$13,000 CAD all-in',
-        'Timeline: 2–3 weeks',
+        'Boat with us: 2 to 5 days (motor lead time separate)',
         'Same HP, bigger gearcase + higher-thrust prop',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
         'Deposit: $500 for mid-range orders',
@@ -765,13 +765,13 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       quickAnswer:
         'Consolidating an older twin 115 HP FourStroke setup into a single Mercury 300 HP V8, either Verado (special-order) or Pro XS 4.6L, on a 23-foot cabin or walkaround boat typically runs $35,000–$42,000 all-in at Harris Boat Works in Gores Landing, less trade value on the two old motors. Build a quote at mercuryrepower.ca.',
       intro:
-        "Consolidating an older twin 115 HP FourStroke setup into a single Mercury 300 HP V8, either Verado (special-order) or Pro XS 4.6L, on a 23-foot cabin or walkaround boat typically runs $35,000–$42,000 all-in at Harris Boat Works in Gores Landing, less trade value on the two old motors. Timeline is 6–12 weeks depending on whether the customer picks Verado (special-order) or Pro XS (often quicker to source). Going single saves on service hours, fuel, and helm complexity for owners who don't need the redundancy of twins.",
+        "Consolidating an older twin 115 HP FourStroke setup into a single Mercury 300 HP V8, either Verado (special-order) or Pro XS 4.6L, on a 23-foot cabin or walkaround boat typically runs $35,000–$42,000 all-in at Harris Boat Works in Gores Landing, less trade value on the two old motors. Motor lead time is 6–12 weeks depending on whether the customer picks Verado (boat with us for the actual install and water test is 2 to 5 days); (special-order) or Pro XS (often quicker to source). Going single saves on service hours, fuel, and helm complexity for owners who don't need the redundancy of twins.",
       keyFacts: [
         'Old setup: twin 115 HP FourStrokes, about 25 years old',
         'New setup: single Mercury 300 HP V8 Verado or Pro XS 4.6L',
         'Boat: 23-foot cabin / walkaround',
         'Cost range: $35,000–$42,000 CAD all-in (less trade)',
-        'Timeline: 6–12 weeks',
+        'Motor lead time: 6–12 weeks (boat with us: 2 to 5 days)',
         'Fuel economy: roughly 20–30% better at cruise vs two old 115s',
         'Deposit: $1,000 for big-block / Verado',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
@@ -799,7 +799,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           paragraphs: [
             'A twin-to-single is one of the bigger jobs we do. We start with a transom inspection, twin bolt patterns leave eight holes that need to be addressed, sometimes filled and sometimes left for hardware reuse depending on where the single mounts. The center bridge between the twin pockets often needs reinforcement to handle the torque of a single V8 in the middle. This is shop work, not a one-day install.',
             "The new motor goes through full Mercury rigging, DTS throttle, smart helm, hydraulic steering, new fuel routing from the tank to a single inlet, new gauge package. Propeller selection runs through 2–3 stainless props in the 15–16-inch diameter range, pitched 19–23 inches depending on hull and load, until WOT RPM lands in Mercury's band cleanly.",
-            "Water test on Rice Lake, loaded and unloaded, before pickup. Pickup-only at Gores Landing, we don't ship or deliver. The full timeline runs 6–12 weeks, the long end driven by Verado's special-order window.",
+            "Water test on Rice Lake, loaded and unloaded, before pickup. Pickup-only at Gores Landing, we don't ship or deliver. The motor lead time runs 6–12 weeks, the long end driven by Verado's special-order window; boat with us for the install and water test is 2 to 5 days.",
           ],
         },
         {
@@ -830,7 +830,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does a twin-to-single conversion take?',
           answer:
-            "6–12 weeks depending on motor choice. If you pick Verado 300 the timeline is driven by Mercury's 8–14 week special-order window. Pro XS 300 V8 is often quicker. Transom rework adds about a week to either path. Pickup-only at Gores Landing.",
+            "Motor lead time is 6–12 weeks depending on motor choice. If you pick Verado 300 the timeline is driven by Mercury's 8–14 week special-order window; Pro XS 300 V8 is often quicker. Boat with us for the install and water test is 2 to 5 days. Transom rework can add time. Pickup-only at Gores Landing.",
         },
       ],
       visit:

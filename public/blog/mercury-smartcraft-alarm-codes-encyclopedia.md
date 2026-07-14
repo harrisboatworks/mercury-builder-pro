@@ -120,7 +120,7 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 **Email:** info@harrisboatworks.ca  
 **Phone:** 905-342-2153
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. Mercury CDS equipped.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The Mercury Premier dealer on Rice Lake. Probably the largest Mercury parts inventory in Ontario. Mercury CDS equipped.
 
 ## Sources
 
