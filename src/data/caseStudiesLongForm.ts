@@ -124,7 +124,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does a 115 Pro XS Command Thrust repower take?',
           answer:
-            'Typically 3–4 weeks from quote signing to water test pickup at HBW. The Pro XS family sometimes has a slightly longer parts window than a base FourStroke, so we set the timeline once we confirm motor availability.',
+            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install and water test. Motor lead time is separate: in-stock 115 Pro XS ships immediately, special orders wait at Mercury (3 to 6 weeks Pro XS), and your boat stays with you until the motor arrives.",
         },
         {
           question: 'What is the difference between a 115 FourStroke and a 115 Pro XS?',
