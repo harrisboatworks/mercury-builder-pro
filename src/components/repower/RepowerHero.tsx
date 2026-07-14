@@ -29,7 +29,7 @@ export function RepowerHero() {
         </h1>
 
         <p className="font-sans text-[17px] md:text-[18px] leading-relaxed text-repower-navy-900/65 max-w-[60ch] mb-8">
-          A new Mercury costs a fraction of a new boat, and you keep the hull you already know. Most repowers are completed in one to three days at our Gores Landing shop on Rice Lake.
+          A new Mercury costs a fraction of a new boat, and you keep the hull you already know. Your boat is with us for 2 to 5 days, drop-off to pickup, at our Gores Landing shop on Rice Lake.
         </p>
 
         <div className="flex flex-col items-center text-center gap-4 mb-10">

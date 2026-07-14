@@ -31,7 +31,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'How long does a Mercury repower take?',
-        answer: 'Most repowers are completed in one to three days once your boat is with us. The timeline depends on the motor size, the complexity of the rigging, and how many other jobs are in the shop at the same time. Spring is our busiest period, if you\'re planning a repower for the season, booking in the fall or winter gets you priority scheduling. Submit a service request at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> to get a timeline estimate.'
+        answer: '<strong>Two clocks, and only one of them costs you your summer.</strong><br><br><strong>Your boat is with us: 2 to 5 days.</strong> Drop-off to pickup. Old motor off, new Mercury rigged, controls and prop sorted, and a real water test on Rice Lake before you take it home.<br><br><strong>Getting the motor: depends on the motor.</strong> We stock every HP class from 2.5 up to 300. If yours is on the shelf, you book a drop-off date and that\'s the whole story. If it\'s a special order, a Verado, or a shaft-and-gearcase combo we don\'t hold, Mercury\'s lead time applies: 2 to 4 weeks for FourStroke, 3 to 6 for Pro XS, 6 to 12 for Verado.<br><br><strong>The part that matters: you keep your boat while we wait.</strong> We don\'t take it in until your motor is here on the floor. So even on a special order, you\'re only off the water for those 2 to 5 days.'
       },
       {
         question: 'What\'s included in a repower package?',

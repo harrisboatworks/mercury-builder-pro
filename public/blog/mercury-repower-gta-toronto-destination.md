@@ -210,7 +210,7 @@ Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,
 
 ### How long does a repower take at HBW?
 
-Typical install + sea trial + prop tuning: 7-14 days at the shop. Booking lead time is 2-4 weeks during peak season. Plan total project as 4-6 weeks from configurator-quote to motor-on-water.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.
 
 ### Can I trailer my boat from Toronto to HBW myself?
 

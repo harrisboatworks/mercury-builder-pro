@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 const HOWTO_FAQ = [
   {
     question: "How long does the full repower process take?",
-    answer: "From quote to keys-in-hand, most repowers take two to four weeks. The actual install is one to three days once your boat is on site. Spring (March, May) is busiest, book in fall or winter for priority scheduling."
+    answer: "Two clocks, and only one of them costs you your summer. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Getting the motor is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Spring (March–May) is busiest, book in fall or winter for priority scheduling."
   },
   {
     question: "Do I need to bring my boat for the consultation?",

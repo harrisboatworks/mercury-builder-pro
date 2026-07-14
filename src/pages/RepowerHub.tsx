@@ -34,7 +34,7 @@ const DIRECTORY: DirGroup[] = [
   {
     heading: 'Process & What to Expect',
     cards: [
-      { title: 'What Happens During a Mercury Repower', description: 'The 7-step shop walk-through from deposit to pickup.', to: '/blog/what-happens-during-mercury-repower' },
+      { title: 'What Happens During a Mercury Repower', description: 'The 7-step shop walk-through from drop-off to pickup.', to: '/blog/what-happens-during-mercury-repower' },
       { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', description: 'Why every motor gets a real Rice Lake water test.', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026' },
       { title: 'Mercury Warranty After a Repower (Ontario)', description: 'How the 3+3 warranty and any active promo extension apply post-repower.', to: '/blog/mercury-warranty-after-repower-ontario' },
       { title: 'Pleasure Craft Licence Update During Repower', description: 'When and how to update Transport Canada paperwork.', to: '/blog/pleasure-craft-licence-update-repower-ontario' },
@@ -177,7 +177,7 @@ export default function RepowerHub() {
       ]}
       faqs={[
         { question: 'How much does a Mercury repower cost in Ontario?', answer: "It depends on the horsepower, the controls and rigging your boat needs, and trade-in. Rather than guess, build a quote and you'll get a real Canadian-dollar number in about two minutes, then a person here reviews it. No 'call for quote' games." },
-        { question: 'How long does a repower take?', answer: "It comes down to motor availability and how much rigging your boat needs. When you build a quote, we give you a realistic timeline for your specific job instead of a vague estimate." },
+        { question: 'How long does a repower take?', answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, motor off, new Mercury rigged, controls and prop sorted, water-tested on Rice Lake. Getting the motor is separate: if it's in stock, you book a drop-off date. If it's a special order, Mercury's lead time applies (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands on our floor." },
         { question: 'Can I trade in my old motor?', answer: "Yes. We factor trade-in value into your repower. You can get a quick estimate first at our trade-in page, then carry it into your quote." },
         { question: 'Do I need new controls, cables, and gauges?', answer: "Sometimes. Older boats often need updated controls or rigging to run a new motor safely. Your quote spells out exactly what's included so there are no surprises." },
         { question: 'What happens after I build a quote?', answer: "A real person at Harris Boat Works reviews your quote and follows up. There's no obligation. You'll have a real price and a clear next step." },
@@ -231,7 +231,8 @@ export default function RepowerHub() {
             <li>Full repower job: typically $11,000 to $40,000 CAD (2026) depending on horsepower</li>
             <li>Family-owned since 1947, Mercury dealer since 1965, current Premier tier</li>
             <li>Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</li>
-            <li>Timeline: 3 to 8 weeks from deposit to pickup, depending on Mercury lead time</li>
+            <li>Your boat is with us: 2 to 5 days, drop-off to pickup</li>
+            <li>Motor lead time (special order only): 2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado. Your boat stays home while we wait.</li>
             <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>
             <li>Distance from Toronto: about 110 km, roughly 90 minutes door-to-door</li>
             <li>Warranty: Mercury Canadian warranty (3 years limited plus 3 years corrosion, running concurrently), with promotional extensions stacked on top of the base coverage when active</li>
@@ -247,7 +248,7 @@ export default function RepowerHub() {
                   <th>Scenario</th>
                   <th>HP Range</th>
                   <th>Typical All-in (CAD)</th>
-                  <th>Typical Shop Timeline</th>
+                  <th>Boat With Us</th>
                 </tr>
               </thead>
               <tbody>
@@ -255,35 +256,36 @@ export default function RepowerHub() {
                   <td>16 to 18 ft aluminum console</td>
                   <td>75 to 115 HP</td>
                   <td>$17,000 to $22,000</td>
-                  <td>3 to 8 weeks</td>
+                  <td>2 to 5 days</td>
                 </tr>
                 <tr>
                   <td>Pontoon / tritoon</td>
                   <td>150 HP</td>
                   <td>$23,000 to $30,000</td>
-                  <td>3 to 8 weeks</td>
+                  <td>2 to 5 days</td>
                 </tr>
                 <tr>
                   <td>Bass boat (performance)</td>
                   <td>200 to 300 HP Pro XS</td>
                   <td>$35,000 to $40,000</td>
-                  <td>3 to 8 weeks</td>
+                  <td>2 to 5 days</td>
                 </tr>
                 <tr>
                   <td>Cottage tender / tiller</td>
                   <td>9.9 to 25 HP</td>
                   <td>$3,000 to $5,500 (motor only)</td>
-                  <td>3 to 5 weeks</td>
+                  <td>2 to 5 days</td>
                 </tr>
                 <tr>
                   <td>Classic Evinrude / Johnson conversion (16 to 18 ft aluminum)</td>
                   <td>75 to 115 HP</td>
                   <td>$18,500 to $25,000</td>
-                  <td>3 to 8 weeks</td>
+                  <td>2 to 5 days</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p><em>Motor lead time is separate and only applies to special orders, your boat stays with you until the motor arrives.</em></p>
           <p>The conversion row reflects the published $1,500 to $3,000 CAD brand-conversion rigging delta added to the 75 to 115 HP band. For your specific boat, <Link to="/quote/motor-selection">build a quote</Link> or read our <Link to="/blog/mercury-repower-cost-ontario-2026-cad">repower cost guide</Link> for the line-item breakdown.</p>
 
           <h3>How much does a Mercury repower cost in Ontario?</h3>
@@ -322,9 +324,12 @@ export default function RepowerHub() {
           />
 
           <h3>How long does a Mercury repower take?</h3>
-          <p>Most repowers take 3 to 8 weeks from deposit to pickup. The variable is Mercury's lead time, not our bench. FourStrokes ship out of the factory in 2 to 4 weeks. Pro XS runs 3 to 6 weeks. Verado is the slow lane at 6 to 12 weeks because it's special-order.</p>
-          <p>Once the motor lands at Gores Landing, the rigging and water test sit on the bench for roughly 3 to 5 working days. We'll call you the morning the water test passes and set a pickup time.</p>
+          <p><strong>Two clocks, and only one of them costs you your summer.</strong></p>
+          <p><strong>Your boat is with us: 2 to 5 days.</strong> Drop-off to pickup. Old motor off, new Mercury rigged, controls and prop sorted, and a real water test on Rice Lake before you take it home.</p>
+          <p><strong>Getting the motor: depends on the motor.</strong> We stock every HP class from 2.5 up to 300. If yours is on the shelf, you book a drop-off date and that's the whole story. If it's a special order, a Verado, or a shaft-and-gearcase combo we don't hold, Mercury's lead time applies: 2 to 4 weeks for FourStroke, 3 to 6 for Pro XS, 6 to 12 for Verado.</p>
+          <p><strong>The part that matters: you keep your boat while we wait.</strong> We don't take it in until your motor is here on the floor. So even on a special order, you're only off the water for those 2 to 5 days.</p>
           <p>Most Ontario boaters book their repower between January and April for a May long weekend launch. The <Link to="/blog/what-happens-during-mercury-repower">repower process walkthrough</Link> covers the full 7-step timeline.</p>
+
 
           <h3>Where do I pick up my repowered boat?</h3>
           <p>You pick up at the shop: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. We're on the south shore of Rice Lake, about 110 km east of Toronto on the 401, 30 km south of Peterborough, and an easy run from Northumberland County, the Kawarthas, and the GTA.</p>

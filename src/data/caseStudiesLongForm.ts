@@ -124,7 +124,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does a 115 Pro XS Command Thrust repower take?',
           answer:
-            'Typically 3–4 weeks from quote signing to water test pickup at HBW. The Pro XS family sometimes has a slightly longer parts window than a base FourStroke, so we set the timeline once we confirm motor availability.',
+            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install and water test. Motor lead time is separate: in-stock 115 Pro XS ships immediately, special orders wait at Mercury (3 to 6 weeks Pro XS), and your boat stays with you until the motor arrives.",
         },
         {
           question: 'What is the difference between a 115 FourStroke and a 115 Pro XS?',
@@ -368,7 +368,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does this kind of repower take?',
           answer:
-            '2–4 weeks from quote signing to water test pickup at HBW. The window is wider than a Mercury-to-Mercury swap because we sometimes have transom rework on an older boat. Pickup-only at Gores Landing.',
+            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup (a little longer if we find transom rework on an older boat). Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Pickup-only at Gores Landing.",
         },
       ],
       visit:
@@ -714,7 +714,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does the repower take?',
           answer:
-            'Typically 2–3 weeks from quote signing to water test pickup at HBW. Mercury-to-Mercury swaps on a clean transom are fast. Pickup-only at Gores Landing.',
+            "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a Mercury-to-Mercury swap on a clean transom. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Pickup-only at Gores Landing.",
         },
       ],
       visit:

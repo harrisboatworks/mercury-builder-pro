@@ -56,6 +56,8 @@ See any motor twin for an example body.
 
 ## Motors
 
+- [25ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
+- [25ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mh.md)
 - [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mlh.md)

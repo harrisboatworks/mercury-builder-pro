@@ -61,7 +61,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       { question: 'Where on Rice Lake is Harris Boat Works?', answer: "We're on the south shore in Gores Landing, at 5369 Harris Boat Works Rd, coordinates 44.1147, -78.2564. The water test happens on Rice Lake itself, off our own dock." },
       { question: 'Do you deliver Mercury motors to Rice Lake cottages?', answer: "No. We're pickup-only at Gores Landing. Every Mercury we rig is water-tested on Rice Lake first, then the customer drives to us for pickup." },
       { question: 'What HP Mercury is most common on Rice Lake?', answer: 'Rice Lake is shallow and weedy in summer, so mid-range FourStroke 60–115 HP and Pro XS 115–175 HP are the most common repowers. Tiller FourStroke 9.9–25 HP shows up on smaller aluminum boats. Prop selection matters more than raw horsepower here.' },
-      { question: 'How long does a Rice Lake repower take?', answer: 'Most repowers wrap in 1–3 weeks once the motor arrives at the shop. January through April is the busiest booking window for spring launch, ice-out on Rice Lake is typically mid-April.' },
+      { question: 'How long does a Rice Lake repower take?', answer: 'Your boat is with us for 2 to 5 days, drop-off to pickup. If the motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands. January through April is the busiest booking window for spring launch, ice-out on Rice Lake is typically mid-April.' },
     ],
     visit: VISIT,
     related: [

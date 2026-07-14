@@ -282,7 +282,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-One to two days of shop time for a clean Mercury-to-Mercury install. From signed order to pickup is typically two to four weeks once we are open, depending on motor availability. Order over the off-season to lock in an early-spring install slot.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
 
 ### Do I need new controls?
 
