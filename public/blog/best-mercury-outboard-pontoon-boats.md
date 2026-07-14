@@ -61,9 +61,6 @@ whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in thi
 
 Customers shopping for a pontoon motor focus on the HP number. The gearcase is an afterthought, and that's the wrong order of priorities.
 
-![Pontoon motor sizing card: 18 ft pontoon takes a Mercury 60 or 90 HP Command Thrust, 20 ft takes 90 to 115 HP Command Thrust, 22 ft takes 115 HP CT or 150 HP FourStroke (standard gearcase, since CT tops out at 115). Towing with a full crew, step up one size.](/lovable-uploads/pontoon-motor-sizing-card-hbw.png)
-*The short version. Your boat's capacity plate and loading decide the final call.*
-
 A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
 We default to Command Thrust on most pontoon repowers at HBW. Customers who push back on the small price difference, and then see the boat run with the right gearcase, get it immediately. For installed cost ranges on pontoon repowers in this HP band, see the [boat repower guide](/repower).

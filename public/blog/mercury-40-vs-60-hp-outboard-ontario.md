@@ -128,8 +128,6 @@ These are real-world figures from boats rigged by Harris Boat Works. Conditions,
 - **40 HP:** Only on a 16 ft pontoon, lightly loaded, and ideally with the Command Thrust gearcase. Even then, expect a slow planing time.
 - **60 HP:** Fine on 18 ft. The 60 Command Thrust is the popular call, pontoons reward the bigger gear ratio more than fishing boats do.
 
-![Mercury 40 HP and 60 HP FourStroke side-by-side on identical 16-foot aluminum boat transoms](/lovable-uploads/inline/inline-40-vs-60-comparison.png)
-
 ### 20 ft pontoon
 
 The 60 CT is the minimum we recommend on a 20 ft pontoon with four people aboard. Below that, the boat won't plane reliably when loaded. We see the consequences of undersizing pontoons every season, lugging motors, slow times getting on plane, premature wear.
