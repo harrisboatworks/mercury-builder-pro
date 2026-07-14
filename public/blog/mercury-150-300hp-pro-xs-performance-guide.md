@@ -38,8 +38,6 @@ Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, an
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
-![Graphic showing Mercury Pro XS 150 Inline-4, 175-250 V6, and 300 V8 outboards to help choose the right engine for your boat.](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
-
 ## The Quick Comparison Table
 
 | Motor | Block | Displacement | Approx weight | Top speed (typical 18-20 ft hull) | Best for |

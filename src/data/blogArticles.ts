@@ -5619,8 +5619,6 @@ whenInDoubt: Command Thrust is the right gearcase on almost every pontoon in thi
 
 Customers shopping for a pontoon motor focus on the HP number. The gearcase is an afterthought, and that's the wrong order of priorities.
 
-![Pontoon motor sizing card: 18 ft pontoon takes a Mercury 60 or 90 HP Command Thrust, 20 ft takes 90 to 115 HP Command Thrust, 22 ft takes 115 HP CT or 150 HP FourStroke (standard gearcase, since CT tops out at 115). Towing with a full crew, step up one size.](/lovable-uploads/pontoon-motor-sizing-card-hbw.png)
-*The short version. Your boat's capacity plate and loading decide the final call.*
 
 A 90 HP Command Thrust and a standard 90 HP look almost identical on a spec sheet. Same horsepower. Same motor family. But Command Thrust uses a larger gearcase, a larger prop, and a torque-tuned gear ratio that's built for heavy boats. On a pontoon, that means faster lift to cruise when you have six people aboard, better load-carrying, and a boat that feels like it has more motor than the number would suggest.
 
@@ -6214,7 +6212,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     seoTitle: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)",
     title: 'Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)',
     description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.",
-    image: '/lovable-uploads/mercury-75-90-115-hero.png',
+    
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
     dateModified: '2026-06-09',
@@ -11253,7 +11251,7 @@ Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, an
 
 The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
 
-![Graphic showing Mercury Pro XS 150 Inline-4, 175-250 V6, and 300 V8 outboards to help choose the right engine for your boat.](/lovable-uploads/mercury-pro-xs-150-300-architecture-chart.png)
+
 
 ## The Quick Comparison Table
 
@@ -14349,7 +14347,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-![DIY Mercury winterization risk checklist, 8 things that go wrong when boat owners winterize themselves](/lovable-uploads/diy-mercury-winterization-risk-checklist.png)
+
 
 ## Quick Answer
 
@@ -15738,8 +15736,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     slug: 'is-2026-good-year-to-buy-boat-canada',
     title: 'Is 2026 a Good Year to Buy a Boat in Canada?',
     description: 'Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative.',
-    image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_2.png',
-    imageAlt: 'Mercury outboard motors on display at Harris Boat Works showroom to help customers decide on 2026 boat buying options.',
+    image: '/lovable-uploads/hero-proxs-outside-hbw-shop.jpg',
+    imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-04-28',
     dateModified: '2026-07-09',
@@ -23629,8 +23627,6 @@ There are thousands of pontoons on Ontario lakes right now that are criminally u
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
 
-![Flowchart showing Mercury outboard horsepower recommendations for Ontario pontoon boats based on length and passenger load.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
-*The HBW pontoon HP sizing decision tree. Walk down the branch that matches your pontoon length and load profile. When in doubt between two adjacent recommendations, size up - pontoons reward headroom.*
 
 ---
 
@@ -25010,7 +25006,7 @@ These are real-world figures from boats rigged by Harris Boat Works. Conditions,
 - **40 HP:** Only on a 16 ft pontoon, lightly loaded, and ideally with the Command Thrust gearcase. Even then, expect a slow planing time.
 - **60 HP:** Fine on 18 ft. The 60 Command Thrust is the popular call, pontoons reward the bigger gear ratio more than fishing boats do.
 
-![Mercury 40 HP and 60 HP FourStroke side-by-side on identical 16-foot aluminum boat transoms](/lovable-uploads/inline/inline-40-vs-60-comparison.png)
+
 
 ### 20 ft pontoon
 
@@ -30953,7 +30949,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: "Pontoon vs V-Hull, Honestly Compared for Ontario Boaters",
     seoTitle: "Pontoon vs V-Hull Comparison Ontario | Harris Boat Works",
     description: "Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family use, fishing, rough water, fuel economy.",
-    image: "/lovable-uploads/hero-pontoon-vs-v-hull-ontario.png",
+    
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
     dateModified: "2026-05-16",
@@ -31501,7 +31497,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Spring Run-Up Checklist',
     seoTitle: 'Mercury Spring Run-Up Checklist Ontario | Harris Boat Works',
     description: 'Boring spring checks prevent expensive May surprises. A Mercury Premier dealer\'s step-by-step run-up checklist for Ontario boaters opening up their boat.',
-    image: '/lovable-uploads/hero-spring-run-up-checklist.png',
+    
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-06-09',
@@ -31767,8 +31763,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Repair, Repower or Sell? Ontario Decision Guide',
     seoTitle: 'Repair Repower or Sell Boat Ontario | Harris Boat Works',
     description: "Repair, repower or sell your boat? A practical Ontario guide to comparing costs and hull condition, from the repower specialists at Harris Boat Works.",
-    image: '/lovable-uploads/hero-repair-repower-sell-decision.png',
-    imageAlt: 'Three aluminum boats on trailers with Mercury outboards, illustrating the choice between repair, repower, or selling.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-07-04',
