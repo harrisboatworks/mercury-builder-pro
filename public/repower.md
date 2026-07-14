@@ -44,8 +44,7 @@ Through **December 31, 2026** the headline program is **TD Auto Finance "Always 
 
 - Family-owned since 1947, Mercury dealer since 1965, current Premier tier
 - Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-- Your boat is with us: 2 to 5 days, drop-off to pickup
-- Motor lead time (special order only): 2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado. Your boat stays home while we wait.
+- Your boat is with us: 2 to 5 days, drop-off to pickup. We don't take it in until your motor arrives.
 - Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)
 - Distance from Toronto: about 110 km
 - Warranty: Mercury Canadian warranty (3 years limited plus 3 years corrosion, concurrent), with promo extensions stacked on top when active

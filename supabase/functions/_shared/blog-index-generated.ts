@@ -1181,7 +1181,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How long does a Kawartha repower take?",
-        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Ord…"
+        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Ord…"
       }
     ]
   },
@@ -2224,7 +2224,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How long does a repower take?",
-        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Get your order in over the off-season to lo…"
+        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Get your order in over the off-season to lo…"
       },
       {
         "q": "Do I need new controls and gauges?",
@@ -2773,7 +2773,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does a Mercury repower take?",
-        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives."
+        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives."
       },
       {
         "q": "Do I need to bring my boat to HBW for the walk-around?",
@@ -3332,7 +3332,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How long does a repower take at HBW?",
-        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives."
+        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives."
       },
       {
         "q": "Can I trailer my boat from Toronto to HBW myself?",

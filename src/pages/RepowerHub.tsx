@@ -177,7 +177,7 @@ export default function RepowerHub() {
       ]}
       faqs={[
         { question: 'How much does a Mercury repower cost in Ontario?', answer: "It depends on the horsepower, the controls and rigging your boat needs, and trade-in. Rather than guess, build a quote and you'll get a real Canadian-dollar number in about two minutes, then a person here reviews it. No 'call for quote' games." },
-        { question: 'How long does a repower take?', answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, motor off, new Mercury rigged, controls and prop sorted, water-tested on Rice Lake. Getting the motor is separate: if it's in stock, you book a drop-off date. If it's a special order, Mercury's lead time applies (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands on our floor." },
+        { question: 'How long does a repower take?', answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, motor off, new Mercury rigged, controls and prop sorted, water-tested on Rice Lake. Getting the motor: we stock the most popular models — if yours is on the shelf you book a drop-off date. If it has to be ordered, the wait depends on the model and current Mercury availability; we give you a real date when we place the order, and your boat stays with you until the motor lands on our floor." },
         { question: 'Can I trade in my old motor?', answer: "Yes. We factor trade-in value into your repower. You can get a quick estimate first at our trade-in page, then carry it into your quote." },
         { question: 'Do I need new controls, cables, and gauges?', answer: "Sometimes. Older boats often need updated controls or rigging to run a new motor safely. Your quote spells out exactly what's included so there are no surprises." },
         { question: 'What happens after I build a quote?', answer: "A real person at Harris Boat Works reviews your quote and follows up. There's no obligation. You'll have a real price and a clear next step." },
@@ -231,8 +231,7 @@ export default function RepowerHub() {
             <li>Full repower job: typically $11,000 to $40,000 CAD (2026) depending on horsepower</li>
             <li>Family-owned since 1947, Mercury dealer since 1965, current Premier tier</li>
             <li>Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0</li>
-            <li>Your boat is with us: 2 to 5 days, drop-off to pickup</li>
-            <li>Motor lead time (special order only): 2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado. Your boat stays home while we wait.</li>
+            <li>Your boat is with us: 2 to 5 days, drop-off to pickup. We don't take it in until your motor arrives.</li>
             <li>Deposit: $200 (portable), $500 (mid-range), $1,000 (big-block / Pro XS / Verado)</li>
             <li>Distance from Toronto: about 110 km, roughly 90 minutes door-to-door</li>
             <li>Warranty: Mercury Canadian warranty (3 years limited plus 3 years corrosion, running concurrently), with promotional extensions stacked on top of the base coverage when active</li>
@@ -326,8 +325,8 @@ export default function RepowerHub() {
           <h3>How long does a Mercury repower take?</h3>
           <p><strong>Two clocks, and only one of them costs you your summer.</strong></p>
           <p><strong>Your boat is with us: 2 to 5 days.</strong> Drop-off to pickup. Old motor off, new Mercury rigged, controls and prop sorted, and a real water test on Rice Lake before you take it home.</p>
-          <p><strong>Getting the motor: depends on the motor.</strong> We stock every HP class from 2.5 up to 300. If yours is on the shelf, you book a drop-off date and that's the whole story. If it's a special order, a Verado, or a shaft-and-gearcase combo we don't hold, Mercury's lead time applies: 2 to 4 weeks for FourStroke, 3 to 6 for Pro XS, 6 to 12 for Verado.</p>
-          <p><strong>The part that matters: you keep your boat while we wait.</strong> We don't take it in until your motor is here on the floor. So even on a special order, you're only off the water for those 2 to 5 days.</p>
+          <p><strong>Getting the motor.</strong> We stock the most popular models. If yours is on the shelf, you book a drop-off date and that's the whole story. If it has to be ordered, the wait depends on the model and what Mercury has available — we'll give you a real date when we place the order, and we'll coordinate your drop-off around it.</p>
+          <p><strong>You keep your boat while we wait.</strong> We don't take it in until your motor is here on the floor. So even on a special order, you're only off the water for those 2 to 5 days.</p>
           <p>Most Ontario boaters book their repower between January and April for a May long weekend launch. The <Link to="/blog/what-happens-during-mercury-repower">repower process walkthrough</Link> covers the full 7-step timeline.</p>
 
 

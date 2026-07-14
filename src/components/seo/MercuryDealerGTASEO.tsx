@@ -20,7 +20,7 @@ const GTA_FAQ = [
   },
   {
     question: "How long does a GTA Mercury repower take?",
-    answer: "Your boat is with us for 2 to 5 days, drop-off to pickup, install, lake-test, and prop tuning included. Motor lead time is separate: in-stock motors are ready when you are; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor lands. Plan one trip down for drop-off and one for pickup, or one trip total if you're picking up a loose motor for self-install."
+    answer: "Your boat is with us for 2 to 5 days, drop-off to pickup, install, lake-test, and prop tuning included. Motor lead time is separate: in-stock motors are ready when you are; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Plan one trip down for drop-off and one for pickup, or one trip total if you're picking up a loose motor for self-install."
   }
 ];
 

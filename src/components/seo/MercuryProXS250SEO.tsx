@@ -94,7 +94,7 @@ export const PRO_XS_250_FAQ = [
   {
     question: 'How long does a Pro XS 250 repower take?',
     answer:
-      "Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock 250s ship immediately, special-order Pro XS runs 3 to 6 weeks at Mercury, and your boat stays with you until the motor arrives. Spring (April and May) books up early, plan ahead.",
+      "Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock 250s ship immediately, special-order Pro XS lead time depends on Mercury availability, and your boat stays with you until the motor arrives. Spring (April and May) books up early, plan ahead.",
   },
   {
     question: 'Where are you located?',

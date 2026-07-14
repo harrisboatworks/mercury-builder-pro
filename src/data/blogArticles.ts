@@ -4517,7 +4517,7 @@ We give the honest answer per motor and use case. Sometimes the answer is "not y
 
 Boaters who wait for the motor to die before repowering pay extra in three ways:
 
-1. **Mid-season repower bookings are expensive and slow.** Spring rush ends in May, fall rush starts in September. June through August is shop chaos. Mid-season repower can mean 3 to 6 weeks waiting for the motor to be ready, in peak boating season.
+1. **Mid-season repower bookings are expensive and slow.** Spring rush ends in May, fall rush starts in September. June through August is shop chaos. Mid-season repower can mean a longer wait for the motor to arrive, in peak boating season.
 2. **Lost season time.** Every week the boat is in the shop is a week of lost summer.
 3. **Pressure decisions.** Customers under pressure to get back on the water sometimes make rushed motor selection decisions they regret.
 
@@ -4607,7 +4607,7 @@ Often yes, especially during brand conversions. Mercury-to-Mercury repowers some
 The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **How long does a typical repower take?**
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
 
 ---
 
@@ -7047,7 +7047,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial – 2-4 weeks total.](/lovable-uploads/inline/repower-process-timeline.svg)
+![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to sea trial.](/lovable-uploads/inline/repower-process-timeline.svg)
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -7227,7 +7227,7 @@ It depends entirely on the hull. Aluminum hulls with solid transoms can run for 
 For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.
 
 **How long does a Kawartha repower take?**
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.
 
 **Do I need new controls?**
 A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.
@@ -7289,7 +7289,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       { question: 'What is a boat repower?', answer: 'Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a sea-trial. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.' },
       { question: 'Is repowering worth it on an older boat?', answer: 'It depends entirely on the hull. Aluminum hulls with solid transoms can run for decades more, and sound fiberglass is similar. The motor is the wear part. We do a proper hull walk-around before recommending anything, because a new motor only makes sense on a hull worth keeping.' },
       { question: 'Repower or buy new?', answer: 'For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.' },
-      { question: 'How long does a Kawartha repower take?', answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.' },
+      { question: 'How long does a Kawartha repower take?', answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Order over the off-season to lock in an early-spring install slot.' },
       { question: 'Do I need new controls?', answer: 'A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.' },
       { question: 'Do I need hydraulic steering?', answer: 'At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfortable control, and it is standard practice on higher-HP rigs. From 40 to 115 HP, cable steering is fine.' },
       { question: 'Do I need to update my Pleasure Craft Licence?', answer: 'Yes, whenever motor horsepower, brand, or model changes. The update is free, takes about fifteen minutes online, and HBW handles it for every customer as part of the job.' },
@@ -10421,7 +10421,7 @@ Slightly, on labour rates. The bigger advantage of fall service is that any prob
 Most steps yes, the critical ones we'd want eyes on. Fuel stabilizer, fogging, and battery prep are DIY-friendly. The cooling system flush and lower unit oil change are the failure-mode-expensive steps if done wrong. If you're new to the motor or you're not sure what you're seeing in the lower unit oil, that's the call to make.
 
 **What's HBW's spring backlog like?**
-By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait runs 2-4 weeks at the spring peak. Booking in fall avoids the queue entirely.
+By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait stretches longer at the spring peak. Booking in fall avoids the queue entirely.
 
 **Are there parts of the Ontario boating season that get worse if I extend?**
 Yes, two: late spring (mid-April through early May) before the water warms up, and late fall (after mid-October) when water temps drop below 15°C. Both are higher-risk windows for cold-water exposure if anything goes wrong. Float plan, dressed for the water not the air, and don't go alone.
@@ -10463,7 +10463,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
       },
       {
         question: 'What\'s HBW\'s spring backlog like?',
-        answer: 'By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait runs 2-4 weeks at the spring peak. Booking in fall avoids the queue entirely.'
+        answer: 'By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait stretches longer at the spring peak. Booking in fall avoids the queue entirely.'
       },
       {
         question: 'Are there parts of the Ontario boating season that get worse if I extend?',
@@ -13429,7 +13429,7 @@ Before we put a number in front of you, we look at four things: the capacity pla
 
 1. **Build a quote online** at [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection). Three minutes, itemized, no callback required.
 2. **We confirm the details.** Capacity plate, transom, controls, prop plan. By phone or when you drop the boat off.
-3. **Order and schedule.** In-stock motors install within days; ordered motors typically run 2-4 weeks. We're open early April through November, so winter orders install first thing in spring.
+3. **Order and schedule.** In-stock motors install within days; ordered motors depend on Mercury availability. We're open early April through November, so winter orders install first thing in spring.
 4. **Install and rig.** 1-2 days of shop time for a clean job.
 5. **On-water load test.** Rice Lake, real load, WOT numbers checked against Mercury's spec. Then you pick it up. We don't deliver, and honestly, you want to be there for the handover anyway.
 
@@ -13454,7 +13454,7 @@ If you know your boat, your motor, and roughly what you want, build the quote on
     faqs: [
       { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'Planning ranges before HST: small remote (40-60 HP) $11,000-$15,000; mid (75-115 HP) $17,000-$22,000; 150 HP $23,000-$30,000; high-HP (200-300 HP) $35,000-$40,000. Build a quote at mercuryrepower.ca for your specific setup.' },
       { question: "What's included in a Mercury repower quote?", answer: 'Motor, rigging (controls, cables, gauges), prop, install labour, and on-water test. We list every line item. No hidden fees.' },
-      { question: 'How long does a repower take?', answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Get your order in over the off-season to lock in a spring drop-off date.' },
+      { question: 'How long does a repower take?', answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Get your order in over the off-season to lock in a spring drop-off date.' },
       { question: 'Do I need new controls and gauges?', answer: 'Sometimes. Mercury-to-Mercury repowers usually keep existing post-2010 controls. Brand conversions (Evinrude, Yamaha, Honda to Mercury) need new everything in the control system.' },
       { question: 'Can I keep my old prop?', answer: "Probably not. A new motor needs a matched prop. Running an old prop on a new motor costs you performance and fuel economy. We pick the prop, lake-test it, and swap it if it doesn't perform. Every repower gets an on-water test on Rice Lake before pickup. No exceptions." },
       { question: 'What happens to my old motor?', answer: 'We give you a trade-in credit, even on non-running motors. Aluminum and parts have value. Our trade-in tool gives you an estimate before you commit.' },
@@ -16879,7 +16879,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **7-14 days** at the shop once scheduled. Spring rush adds 2-4 weeks of lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **2 to 5 days** at the shop once scheduled. Spring rush can add booking lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -17037,7 +17037,7 @@ Two related guides in the same cluster:
 ## FAQs
 
 **How long does a Mercury repower take?** 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
 
 **When is the fastest time to book a repower?** 
 November through March. Shortest wait times, first pick of motors, and sometimes promotional financing rates. By late March, spring booking is in full swing.
@@ -17082,7 +17082,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'How long does a Mercury repower take?',
-        answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.'
+        answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.'
       },
       {
         question: 'Do I need to bring my boat to HBW for the walk-around?',
@@ -20869,7 +20869,7 @@ If the configurator number works, call **905-342-2153**. We'll cover:
 - Schedule the install
 - Discuss boat transport logistics (next stage)
 
-**Wait time for repower install:** typically 2-4 weeks during peak season (April-June, September-November), and shorter at the start and end of the season. The phone call locks the slot.
+**Wait time for repower install:** longer during peak season (April-June, September-November), and shorter at the start and end of the season. The phone call locks the slot.
 
 ### Stage 3: Boat transport to HBW (1 day, varies by approach)
 
@@ -20999,7 +20999,7 @@ The drive is about an hour from Markham, 90 minutes from Mississauga. Most repow
 Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds.
 
 **How long does a repower take at HBW?**
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
 
 **Can I trailer my boat from Toronto to HBW myself?**
 Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site.
@@ -21033,7 +21033,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: "How much does a Mercury repower cost in the GTA?", answer: "Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds." },
-      { question: "How long does a repower take at HBW?", answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives." },
+      { question: "How long does a repower take at HBW?", answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives." },
       { question: "Can I trailer my boat from Toronto to HBW myself?", answer: "Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site." },
       { question: "Do you arrange boat transport from the GTA?", answer: "We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer." },
       { question: "Will my Mercury be eligible for warranty if I bought it elsewhere and want it serviced at HBW?", answer: "Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system." },
@@ -30463,7 +30463,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "How long does a Pro XS repower take at HBW?",
-        answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, and a sea trial on Rice Lake. Motor lead time is separate: in-stock Pro XS ships immediately, special-order shaft-and-gearcase combos wait at Mercury (3 to 6 weeks Pro XS), and your boat stays with you until the motor arrives. Most anglers schedule repowers in the off-season (October through April) so the boat is ready for opening day."
+        answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, and a sea trial on Rice Lake. Motor lead time is separate: in-stock Pro XS ships immediately, special-order shaft-and-gearcase combos wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Most anglers schedule repowers in the off-season (October through April) so the boat is ready for opening day."
       },
       {
         question: "Can I repower a 1990s bass boat with a modern Pro XS?",
@@ -33987,7 +33987,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
       { question: 'How long does a Mercury motor last?', answer: 'A well-maintained Mercury FourStroke can run 1,500 to 2,500-plus hours of recreational use, which on Ontario seasonal boating means 15 to 25 years for many owners. That is why repower math is so favourable.' },
       { question: 'What does it cost to fix a soft transom vs buy new?', answer: 'A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 to $8,000 CAD depending on size and complexity (2026 ranges). That is usually still cheaper than new, but it is a real decision point that can tip the math.' },
       { question: 'Will a new motor increase the resale value of my boat?', answer: 'Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. The bigger return is years of enjoyment on a boat you already know. Typical recovery is roughly 50 to 70 percent of the new motor cost when you eventually sell.' },
-      { question: 'How long does a repower take?', answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Book early for spring commissioning.' },
+      { question: 'How long does a repower take?', answer: 'Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Book early for spring commissioning.' },
       { question: 'Can I repower a 20-year-old boat?', answer: 'Often yes. Age alone is not the disqualifier, hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot. The walk-around inspection tells the story.' },
       { question: 'Does Mercury offer Canadian financing on repowers?', answer: 'The Mercury USA financing programs (Sheffield, Medallion) are US-only. HBW has Canadian financing partners, call 905-342-2153 for current options. Do not assume the Mercury US site applies in Canada.' },
       { question: 'What is the trade-in option?', answer: 'Two paths. Trade in the whole boat and put the value toward a different package with a current Mercury on it. Or trade in just the old motor, an old motor with life left in it has real value, typically $1,000 to $3,000 off the repower depending on age, hours, and condition. HBW assesses both paths.' },
@@ -34117,7 +34117,7 @@ A full transom rebuild on an aluminum or fibreglass boat typically runs $3,000 t
 Yes, a new Mercury outboard significantly increases resale value on a sound hull, though rarely dollar-for-dollar what you paid for the repower. Typical recovery is roughly 50 to 70 percent of the new motor cost when you eventually sell. The bigger return is years of enjoyment on a boat you already know.
 
 **How long does a repower take?**
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives. Book early for spring commissioning.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Book early for spring commissioning.
 
 **Can I repower a 20-year-old boat?**
 Often yes. Age alone is not the disqualifier, hull condition is. HBW has repowered well-maintained 1990s aluminum boats that have 20 more years in them, and declined to repower 8-year-old boats with rot.

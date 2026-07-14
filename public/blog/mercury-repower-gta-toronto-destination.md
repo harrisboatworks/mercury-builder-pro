@@ -78,7 +78,7 @@ If the configurator number works, call **905-342-2153**. We'll cover:
 - Schedule the install
 - Discuss boat transport logistics (next stage)
 
-**Wait time for repower install:** typically 2-4 weeks during peak season (April-June, September-November), and shorter at the start and end of the season. The phone call locks the slot.
+**Wait time for repower install:** longer during peak season (April-June, September-November), and shorter at the start and end of the season. The phone call locks the slot.
 
 ### Stage 3: Boat transport to HBW (1 day, varies by approach)
 
@@ -210,7 +210,7 @@ Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,
 
 ### How long does a repower take at HBW?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (2 to 4 weeks FourStroke, 3 to 6 Pro XS, 6 to 12 Verado), and your boat stays with you until the motor arrives.
+Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
 
 ### Can I trailer my boat from Toronto to HBW myself?
 

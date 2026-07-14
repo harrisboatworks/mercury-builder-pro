@@ -157,7 +157,7 @@ We give the honest answer per motor and use case. Sometimes the answer is "not y
 
 Boaters who wait for the motor to die before repowering pay extra in three ways:
 
-1. **Mid-season repower bookings are expensive and slow.** Spring rush ends in May, fall rush starts in September. June through August is shop chaos. Mid-season repower can mean 3 to 6 weeks waiting for the motor to be ready, in peak boating season.
+1. **Mid-season repower bookings are expensive and slow.** Spring rush ends in May, fall rush starts in September. June through August is shop chaos. Mid-season repower can mean a longer wait for the motor to arrive, in peak boating season.
 2. **Lost season time.** Every week the boat is in the shop is a week of lost summer.
 3. **Pressure decisions.** Customers under pressure to get back on the water sometimes make rushed motor selection decisions they regret.
 
