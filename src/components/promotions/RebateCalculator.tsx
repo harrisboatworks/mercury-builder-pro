@@ -159,7 +159,7 @@ export function RebateCalculator({
                   key={index}
                   type="button"
                   onClick={() => {
-                    const midHP = Math.round((row.hp_min + row.hp_max) / 2);
+                    const midHP = snapToMercuryHP((row.hp_min + row.hp_max) / 2);
                     setSelectedHP(midHP);
                     onHPChange?.(midHP);
                   }}
