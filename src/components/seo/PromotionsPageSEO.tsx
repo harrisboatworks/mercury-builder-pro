@@ -23,9 +23,9 @@ interface PromotionsPageSEOProps {
 export function PromotionsPageSEO(_props: PromotionsPageSEOProps) {
   const RATE = formatFinancingRate(MERCURY_PROMO_APR);
 
-  const title = 'Mercury Outboard Promotions & Financing | HBW';
+  const title = 'Mercury Summer Savings Rebate + Financing | HBW';
   const description =
-    'Current Mercury outboard promotions, rebates, and financing offers from Harris Boat Works, Mercury Premier Dealer on Rice Lake. Updated as offers change.';
+    'Mercury Summer Savings Rebate: save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus financing as low as 2.99% for 24 months (OAC). Ends August 31, 2026 at Harris Boat Works on Rice Lake.';
 
   const graph: any[] = [
     {
