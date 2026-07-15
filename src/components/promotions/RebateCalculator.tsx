@@ -138,7 +138,7 @@ export function RebateCalculator({
             onValueChange={handleSliderChange}
             min={minHP}
             max={maxHP}
-            step={5}
+            step={1}
             className="w-full"
           />
         </div>
