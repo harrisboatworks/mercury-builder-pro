@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-07-14
+last_updated: 2026-07-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Premier Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-07-14._
+_Last updated 2026-07-15._
 
 All prices shown on this page are live from our current Mercury pricelist feed, updated regularly. Every figure is in Canadian dollars and reflects the dealer price at our Rice Lake yard.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts
-last_updated: 2026-07-14
+last_updated: 2026-07-15
 currency: CAD
 pickup_only: true
 delivery_offered: false

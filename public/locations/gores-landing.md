@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/gores-landing
-last_updated: 2026-07-14
+last_updated: 2026-07-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -14,7 +14,7 @@ keyword: "mercury repower gores landing"
 
 # Mercury Repower in Gores Landing, Ontario
 
-Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina, family-owned since 1947 and a Mercury Premier Dealer, selling Mercury since 1965. For most Gores Landing customers the trip is a walk, a five-minute truck ride, or no drive at all if the boat is already at our dock. Every Mercury we rig is water-tested on Rice Lake before pickup. No shipping. Typical full repower: $11,000–$40,000 CAD.
+Harris Boat Works is in Gores Landing, ON, at 5369 Harris Boat Works Rd on the south shore of Rice Lake, coordinates 44.121684, -78.241502. We're the village marina, family-owned since 1947 and a Mercury Premier Dealer, selling Mercury since 1965. For most Gores Landing customers the trip is a walk, a five-minute truck ride, or no drive at all if the boat is already at our dock. Every Mercury we rig is water-tested on Rice Lake before pickup. No shipping. Typical full repower: $11,000–$40,000 CAD.
 
 ## Factbox
 
@@ -44,7 +44,7 @@ _No matching case studies recorded for this region yet._
 
 ### Where exactly is Harris Boat Works in Gores Landing?
 
-5369 Harris Boat Works Rd, on the south shore of Rice Lake, coordinates 44.1147, -78.2564. We're the village marina.
+5369 Harris Boat Works Rd, on the south shore of Rice Lake, coordinates 44.121684, -78.241502. We're the village marina.
 
 ### Do you deliver Mercury motors inside Gores Landing?
 
