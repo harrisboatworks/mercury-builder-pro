@@ -601,6 +601,25 @@ export default function Promotions() {
         </div>
       </section>
       <SiteFooter />
+
+      {/* Mobile-only sticky CTA bar */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-repower-navy-900/10 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] px-3 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] flex gap-2">
+        <Link
+          to="/quote/motor-selection"
+          className="flex-1 inline-flex items-center justify-center rounded-md bg-repower-mercury-red text-white font-semibold text-sm px-4 py-3 hover:bg-repower-mercury-red-deep"
+        >
+          Build Your Quote
+        </Link>
+        <a
+          href="tel:9053422153"
+          className="inline-flex items-center justify-center rounded-md border border-repower-navy-900/20 text-repower-navy-900 font-semibold text-sm px-4 py-3"
+          aria-label="Call Harris Boat Works"
+        >
+          Call
+        </a>
+      </div>
+      {/* Spacer so content is not hidden behind the sticky bar on mobile */}
+      <div className="md:hidden h-20" aria-hidden="true" />
     </div>
   );
 }
