@@ -3,6 +3,26 @@ import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Actual Mercury FourStroke HP steps. The slider snaps to these so the
+// calculator can never land on a non-existent HP (which would show $0).
+const MERCURY_HP_STEPS: number[] = [
+  2.5, 3.5, 4, 5, 6, 8, 9.9, 15, 20, 25, 30, 40, 50, 60, 75, 90, 115, 150, 175,
+  200, 225, 250, 300, 350, 400, 425,
+];
+
+function snapToMercuryHP(value: number): number {
+  let closest = MERCURY_HP_STEPS[0];
+  let bestDist = Math.abs(value - closest);
+  for (const step of MERCURY_HP_STEPS) {
+    const d = Math.abs(value - step);
+    if (d < bestDist) {
+      bestDist = d;
+      closest = step;
+    }
+  }
+  return closest;
+}
+
 interface RebateRow {
   hp_min: number;
   hp_max: number;
@@ -41,7 +61,7 @@ export function RebateCalculator({
   }, [matrix, selectedHP]);
 
   const handleSliderChange = (value: number[]) => {
-    const newHP = value[0];
+    const newHP = snapToMercuryHP(value[0]);
     setSelectedHP(newHP);
     onHPChange?.(newHP);
   };
@@ -118,7 +138,7 @@ export function RebateCalculator({
             onValueChange={handleSliderChange}
             min={minHP}
             max={maxHP}
-            step={5}
+            step={1}
             className="w-full"
           />
         </div>
@@ -139,7 +159,7 @@ export function RebateCalculator({
                   key={index}
                   type="button"
                   onClick={() => {
-                    const midHP = Math.round((row.hp_min + row.hp_max) / 2);
+                    const midHP = snapToMercuryHP((row.hp_min + row.hp_max) / 2);
                     setSelectedHP(midHP);
                     onHPChange?.(midHP);
                   }}
@@ -174,7 +194,7 @@ export function RebateCalculator({
           className="text-[12px] text-repower-navy-900"
           style={{ color: 'hsl(var(--repower-navy-900) / 0.6)' }}
         >
-          Rebates applied at checkout when you choose the Cash Rebate option
+          Rebate applied automatically at purchase based on your motor's horsepower. Promo financing can be added on top (OAC).
         </p>
       </div>
     </div>
