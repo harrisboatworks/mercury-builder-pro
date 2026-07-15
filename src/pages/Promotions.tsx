@@ -21,7 +21,7 @@ import { allTestimonials } from '@/lib/testimonialData';
 import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
 import { PromotionHero } from '@/components/promotions/PromotionHero';
 import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
-import { RebateMatrix } from '@/components/promotions/RebateMatrix';
+
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
@@ -296,6 +296,11 @@ export default function Promotions() {
     );
   };
 
+  const hasActivePromos = promotions.length > 0;
+  const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
+  const mainIsSummerSavings = /summer savings/i.test(mainName);
+  const mainIsTDAlwaysOn = !mainIsSummerSavings && /td|always on|financ/i.test(mainName);
+
   // Bonus-warranty FAQs are only correct when the active DB promo actually
   // includes an extended warranty. Never hardcode "7 years" as always-on.
   const bonusYears = mainPromotion?.warranty_extra_years ?? 0;
@@ -331,8 +336,30 @@ export default function Promotions() {
       ]
     : [];
 
-  const chooseOneFaqs =
-    mainPromotion?.promo_options?.type === 'choose_one'
+  const chooseOneFaqs = mainIsSummerSavings
+    ? [
+        {
+          question: 'How does the Summer Savings Rebate work?',
+          answer:
+            'Buy an eligible new Mercury FourStroke repower outboard (2.5 to 425 HP) between July 15 and August 31, 2026 and the factory rebate ($50 to $700 CAD depending on horsepower) is applied by Harris Boat Works as a credit at purchase. No mail-in forms, no cheques.',
+        },
+        {
+          question: 'Does this apply to repower installations?',
+          answer:
+            'Yes. The rebate applies to repower installations as long as the engine is retail sold and delivered between July 15 and August 31, 2026. The engine must be delivered and the retail sale completed before the promo ends on August 31, 2026.',
+        },
+        {
+          question: 'Can I combine the rebate with the 2.99% financing?',
+          answer:
+            'Yes. The rebate and the promotional 2.99% for 24 months financing (OAC) are layered, not either/or. The standard TD financing program is also still available.',
+        },
+        {
+          question: 'Which motors are excluded?',
+          answer:
+            'Engines in boat and engine packages, commercial/camp/resort/guide use, Mercury Racing, MerCruiser, CPO, SportJet, OptiMax, V12, two-strokes, and Avator.',
+        },
+      ]
+    : mainPromotion?.promo_options?.type === 'choose_one'
       ? [
           {
             question: 'What is the Choose One promotion?',
@@ -346,11 +373,6 @@ export default function Promotions() {
       : [];
 
   const promotionFaqs = [...warrantyFaqs, ...chooseOneFaqs];
-
-  const hasActivePromos = promotions.length > 0;
-  const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
-  const mainIsSummerSavings = /summer savings/i.test(mainName);
-  const mainIsTDAlwaysOn = !mainIsSummerSavings && /td|always on|financ/i.test(mainName);
 
   return (
     <div className="min-h-screen bg-repower-paper">
@@ -400,12 +422,8 @@ export default function Promotions() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="max-w-2xl mx-auto mb-8">
               <RebateCalculator matrix={rebateMatrix} initialHP={115} />
-              <div className="space-y-4">
-                <h3 className="font-display text-lg font-semibold text-repower-navy-900">All Rebate Tiers</h3>
-                <RebateMatrix matrix={rebateMatrix} />
-              </div>
             </div>
 
             <p className="text-center text-sm text-repower-navy-900/60">
