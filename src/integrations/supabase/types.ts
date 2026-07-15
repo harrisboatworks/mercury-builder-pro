@@ -32,6 +32,30 @@ export type Database = {
         }
         Relationships: []
       }
+      agent_artifact_rebuild_state: {
+        Row: {
+          last_dispatched_at: string | null
+          last_request_id: number | null
+          requested_at: string | null
+          singleton: boolean
+          updated_at: string
+        }
+        Insert: {
+          last_dispatched_at?: string | null
+          last_request_id?: number | null
+          requested_at?: string | null
+          singleton?: boolean
+          updated_at?: string
+        }
+        Update: {
+          last_dispatched_at?: string | null
+          last_request_id?: number | null
+          requested_at?: string | null
+          singleton?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
       agent_events: {
         Row: {
           created_at: string
@@ -6082,6 +6106,7 @@ export type Database = {
         }[]
       }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }
+      dispatch_agent_artifact_rebuild: { Args: never; Returns: boolean }
       encrypt_sin: { Args: { sin_plaintext: string }; Returns: string }
       enqueue_openclaw_slack_fallback_job: {
         Args: {
