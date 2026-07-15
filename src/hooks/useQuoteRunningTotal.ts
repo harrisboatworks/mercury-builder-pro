@@ -125,8 +125,12 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Discount', value: opts.adminDiscount, isCredit: true });
   }
 
-  // Cash rebate
-  if (opts.selectedPromoOption === 'cash_rebate' && motor.hp && opts.getRebateForHP) {
+  // Cash rebate — HP matrix is the sole source of truth. Applied whenever a
+  // rebate is available for this motor's HP, regardless of whether the
+  // customer selected "cash_rebate" or "special_financing" (Summer Savings
+  // is a layered offer: rebate + optional promo financing). Legacy paths
+  // that pass selectedPromoOption === 'cash_rebate' still get the rebate.
+  if (motor.hp && opts.getRebateForHP && opts.selectedPromoOption !== 'no_payments') {
     const rebate = opts.getRebateForHP(motor.hp);
     if (rebate && rebate > 0) {
       subtotal -= rebate;
