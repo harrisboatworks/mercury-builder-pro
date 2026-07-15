@@ -13,7 +13,7 @@
  *    reflects the currently-active promotion (not a stale 7-year value).
  */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, within } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import type { ReactNode } from 'react';
 
 // --- Mocks: keep the render surface tiny so we can focus on the copy + dispatch contract ---
@@ -59,10 +59,11 @@ let currentPromotions: any[] = [];
 vi.mock('@/hooks/useActivePromotions', () => ({
   useActivePromotions: () => ({
     promotions: currentPromotions,
+    loading: false,
     getRebateForHP: () => 500,
     getSpecialFinancingRates: () => [
-      { months: 24, rate: 1.99 },
-      { months: 36, rate: 2.99 },
+      { months: 24, rate: 2.99 },
+      { months: 36, rate: 3.99 },
       { months: 48, rate: 3.99 },
       { months: 60, rate: 4.99 },
     ],
@@ -189,5 +190,38 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
       .filter((a: any) => a?.type === 'SET_WARRANTY_CONFIG');
     const last = warrantyDispatches[warrantyDispatches.length - 1];
     expect(last.payload.totalYears).toBe(3);
+  });
+
+  it('persists the auto-selected 2.99% / 24-month rate without requiring a second tile click', async () => {
+    currentPromotions = [makePromo()];
+
+    render(<PromoSelectionPage />);
+
+    fireEvent.click(screen.getByRole('button', { name: /Promotional Financing/i }));
+
+    const continueButton = screen.getByRole('button', { name: /Apply Bonus & Continue/i });
+    await waitFor(() => expect(continueButton).toBeEnabled());
+    fireEvent.click(continueButton);
+
+    const financingDispatches = dispatchMock.mock.calls
+      .map((c) => c[0])
+      .filter((action) => action?.type === 'SET_PROMO_DETAILS' && action.payload?.option === 'special_financing');
+
+    expect(financingDispatches.length).toBeGreaterThan(0);
+    expect(financingDispatches[financingDispatches.length - 1].payload).toEqual({
+      option: 'special_financing',
+      rate: 2.99,
+      term: 24,
+      value: '2.99% APR for 24 months',
+    });
+    expect(navigateMock).toHaveBeenCalledWith('/quote/summary');
+  });
+
+  it('renders a date-only promotion through the advertised local calendar day', () => {
+    currentPromotions = [makePromo({ end_date: '2026-08-31' })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.getByText(/Offer ends August 31, 2026/i)).toBeInTheDocument();
   });
 });

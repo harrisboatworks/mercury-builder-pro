@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Percent, Banknote, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
@@ -13,6 +13,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
+import { promoEndOfDay } from '@/lib/quote-utils';
 
 type PromoOptionId = 'special_financing' | 'cash_rebate';
 
@@ -55,7 +56,7 @@ export default function PromoSelectionPage() {
   const rateSelectorRef = useRef<HTMLDivElement>(null);
 
   const activePromo = promotions.length > 0 ? promotions[0] : null;
-  const endDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
+  const endDate = activePromo?.end_date ? promoEndOfDay(activePromo.end_date) : null;
 
   // Get dynamic values based on motor HP
   const motorHP = state.motor?.hp || 150;
@@ -107,13 +108,27 @@ export default function PromoSelectionPage() {
     });
   }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
 
-  // Set default rate when special financing is selected
+  const persistFinancingRate = useCallback((rate: FinancingRate) => {
+    dispatch({
+      type: 'SET_PROMO_DETAILS',
+      payload: {
+        option: 'special_financing',
+        rate: rate.rate,
+        term: rate.months,
+        value: `${rate.rate}% APR for ${rate.months} months`,
+      },
+    });
+  }, [dispatch]);
+
+  // Set and persist the default rate when special financing is selected.
+  // The selected tile and quote state must never disagree.
   useEffect(() => {
     if (selectedOption === 'special_financing' && !selectedRate && financingRates.length > 0) {
       const defaultRate = financingRates.find(r => r.months === 24) || financingRates[0];
       setSelectedRate(defaultRate);
+      persistFinancingRate(defaultRate);
     }
-  }, [selectedOption, selectedRate, financingRates]);
+  }, [selectedOption, selectedRate, financingRates, persistFinancingRate]);
 
   // Auto-scroll to rate selector ONLY after user explicitly selects special financing
   useEffect(() => {
@@ -204,21 +219,18 @@ export default function PromoSelectionPage() {
     setSelectedRate(rate);
     setHasJustSelected(true);
     triggerHaptic('light');
-    
-    dispatch({ 
-      type: 'SET_PROMO_DETAILS', 
-      payload: {
-        option: 'special_financing',
-        rate: rate.rate,
-        term: rate.months,
-        value: `${rate.rate}% APR for ${rate.months} months`,
-      }
-    });
+    persistFinancingRate(rate);
     
     setTimeout(() => setHasJustSelected(false), 5000);
   };
 
   const handleContinue = () => {
+    // Final persistence guard: continuing with a visibly selected promo rate
+    // must save that exact rate even if the customer never clicks its tile.
+    if (selectedOption === 'special_financing' && selectedRate) {
+      persistFinancingRate(selectedRate);
+    }
+
     const totalWarrantyYears = 3 + (activePromo?.warranty_extra_years ?? 0);
     dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
     dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: totalWarrantyYears } });

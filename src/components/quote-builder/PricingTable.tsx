@@ -43,6 +43,12 @@ interface PricingTableProps {
   selectedPromoValue?: string;
   warrantyPromoYears?: number;
   totalCoverageYears?: number;
+  financingTerms?: {
+    payment: number;
+    rate: number;
+    termMonths: number;
+    isPromotional: boolean;
+  };
 }
 
 export function PricingTable({ 
@@ -57,7 +63,8 @@ export function PricingTable({
   selectedPromoOption,
   selectedPromoValue,
   warrantyPromoYears,
-  totalCoverageYears
+  totalCoverageYears,
+  financingTerms,
 }: PricingTableProps) {
   return (
     <div className="rounded-[12px] border border-repower-navy-900/10 bg-white p-8">
@@ -248,10 +255,11 @@ export function PricingTable({
           <FinancingCallout 
             totalPrice={pricing.total}
             onApplyForFinancing={onApplyForFinancing}
+            financingTerms={financingTerms}
           />
           
           <div className="text-xs text-repower-navy-900/65 italic mt-1">
-            *Based on default financing terms, subject to approval
+            *Based on {financingTerms?.isPromotional ? 'your selected promotional terms' : 'available financing terms'}, subject to approval
           </div>
         </div>
       )}
