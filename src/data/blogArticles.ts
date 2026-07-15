@@ -298,7 +298,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
 
 **Phone:** 905-342-2153
 **Avator info:** [mercuryrepower.ca/electric/mercury-avator](https://www.mercuryrepower.ca/electric/mercury-avator)
-**Gas repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Gas repower quotes:** [Build your quote](/quote/motor-selection)
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
