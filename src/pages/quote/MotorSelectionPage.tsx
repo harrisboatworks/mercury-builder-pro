@@ -60,6 +60,14 @@ import { SITE_URL } from '@/lib/site';
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
+const DEEP_LINK_MODEL_TARGETS: Record<string, { hp: number; family?: string }> = {
+  '150-hp': { hp: 150 },
+  '115-pro-xs': { hp: 115, family: 'pro xs' },
+  '150-pro-xs': { hp: 150, family: 'pro xs' },
+  '200-pro-xs': { hp: 200, family: 'pro xs' },
+  '250-pro-xs': { hp: 250, family: 'pro xs' },
+};
+
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
   const [dismissed, setDismissed] = useState(() => {
@@ -980,12 +988,7 @@ if (event.type === 'filter_motors') {
     const modelParam = searchParams.get('model');
     if (!modelParam || groupedMotors.length === 0) return;
 
-    const DEEP_LINK_MAP: Record<string, { hp: number; family?: string }> = {
-      '150-hp': { hp: 150 },
-      '115-pro-xs': { hp: 115, family: 'pro xs' },
-      '250-pro-xs': { hp: 250, family: 'pro xs' },
-    };
-    const target = DEEP_LINK_MAP[modelParam.toLowerCase()];
+    const target = DEEP_LINK_MODEL_TARGETS[modelParam.toLowerCase()];
     if (!target) return;
 
     let cancelled = false;
@@ -1348,7 +1351,12 @@ if (event.type === 'filter_motors') {
                  const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || motor.images?.[0] || '';
                  
                  return (
-                   <div data-motor-card key={motor.id}>
+                   <div
+                     key={motor.id}
+                     data-motor-card="true"
+                     data-hp={motor.hp}
+                     data-families={motor.type}
+                   >
                    <MotorCardPreview
                    img={heroImageUrl}
                    title={motor.model}

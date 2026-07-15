@@ -31,6 +31,10 @@ function formatCAD(n: number): string {
   }).format(n);
 }
 
+export function getProXsQuotePath(hp: number): string {
+  return `/quote/motor-selection?model=${hp}-pro-xs`;
+}
+
 export default function MercuryProXS() {
   const [variants, setVariants] = useState<ProXSVariant[] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -155,24 +159,39 @@ export default function MercuryProXS() {
               ))}
 
             {!loading && variants &&
-              variants.map(v => (
-                <Card key={v.hp} className="p-5 flex flex-col">
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
-                    {v.hp} HP Pro XS
-                  </div>
-                  <div className="text-2xl font-semibold text-foreground mb-1">
-                    {v.startingAt > 0 ? `from ${formatCAD(v.startingAt)}` : '—'}
-                  </div>
-                  <div className="text-xs text-muted-foreground mb-4">
-                    {v.inStockCount > 0
-                      ? `${v.inStockCount} variant${v.inStockCount === 1 ? '' : 's'} in stock`
-                      : 'Built to order'}
-                  </div>
-                  <Button asChild size="sm" variant="outline" className="mt-auto">
-                    <Link to="/quote/motor-selection">Configure</Link>
-                  </Button>
-                </Card>
-              ))}
+              variants.map(v => {
+                const quotePath = getProXsQuotePath(v.hp);
+                const priceLabel = v.startingAt > 0 ? `from ${formatCAD(v.startingAt)}` : 'View options';
+
+                return (
+                  <Card key={v.hp} className="p-5 flex flex-col">
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
+                      {v.hp} HP Pro XS
+                    </div>
+                    <Link
+                      to={quotePath}
+                      aria-label={`View ${v.hp} HP Pro XS motors${v.startingAt > 0 ? ` starting at ${formatCAD(v.startingAt)}` : ''}`}
+                      className="group/price -mx-1 rounded px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      <span className="block text-2xl font-semibold text-foreground underline-offset-4 group-hover/price:text-primary group-hover/price:underline">
+                        {priceLabel}
+                      </span>
+                      <span className="inline-flex items-center text-xs font-medium text-primary">
+                        Select this horsepower
+                        <ChevronRight className="ml-0.5 h-3.5 w-3.5 transition-transform group-hover/price:translate-x-0.5" />
+                      </span>
+                    </Link>
+                    <div className="text-xs text-muted-foreground mb-4">
+                      {v.inStockCount > 0
+                        ? `${v.inStockCount} variant${v.inStockCount === 1 ? '' : 's'} in stock`
+                        : 'Built to order'}
+                    </div>
+                    <Button asChild size="sm" variant="outline" className="mt-auto">
+                      <Link to={quotePath}>Configure</Link>
+                    </Button>
+                  </Card>
+                );
+              })}
           </div>
           <p className="text-xs text-muted-foreground text-center mt-4">
             Prices in CAD, all-in (plus HST). Financing from $5,000.
