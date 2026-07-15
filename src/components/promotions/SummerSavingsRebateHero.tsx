@@ -100,7 +100,7 @@ export function SummerSavingsRebateHero() {
                 <Calendar className="w-4 h-4" strokeWidth={1.75} />
                 <span>Offer ends August 31, 2026</span>
               </div>
-              <CountdownTimer endDate={OFFER_END_ISO} />
+              <CountdownTimer endDate={new Date(OFFER_END_ISO)} />
             </div>
           </div>
 
