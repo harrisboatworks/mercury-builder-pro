@@ -196,6 +196,7 @@ export const referencesSchema = z.object({
   return data.reference1.phone !== data.reference2.phone;
 }, {
   message: 'References must be different people',
+  path: ['reference2', 'phone'],
 });
 
 // Step 7: Review & Consent

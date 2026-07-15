@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { InfoIcon, UserCheck, Users } from 'lucide-react';
+import { AlertCircle, InfoIcon, UserCheck, Users } from 'lucide-react';
 import { MaskedInput } from './MaskedInput';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
@@ -16,7 +16,7 @@ import { MobileFormNavigation } from './MobileFormNavigation';
 export function ReferencesStep() {
   const { state, dispatch } = useFinancing();
 
-  const { register, handleSubmit, watch, setValue, control, formState: { errors, isValid, touchedFields } } = useForm<References>({
+  const { register, handleSubmit, watch, setValue, control, formState: { errors, isValid, touchedFields, submitCount } } = useForm<References>({
     resolver: zodResolver(referencesSchema),
     mode: 'onChange',
     defaultValues: state.references || {},
@@ -31,9 +31,6 @@ export function ReferencesStep() {
   const handleBack = () => {
     dispatch({ type: 'SET_CURRENT_STEP', payload: 5 });
   };
-
-  const reference1Phone = watch('reference1.phone');
-  const reference2Phone = watch('reference2.phone');
 
   return (
     <div className="space-y-6">
@@ -214,9 +211,6 @@ export function ReferencesStep() {
                 />
               </div>
               <FormErrorMessage error={errors.reference2?.phone?.message} field="Phone number" />
-              {reference1Phone && reference2Phone && reference1Phone === reference2Phone && (
-                <FormErrorMessage error="References must be different people" />
-              )}
             </div>
 
             <div className="space-y-2">
@@ -240,11 +234,19 @@ export function ReferencesStep() {
           </CardContent>
         </Card>
 
+        {submitCount > 0 && !isValid && (
+          <Alert variant="destructive" aria-live="assertive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>
+              Please complete the highlighted reference fields before continuing.
+            </AlertDescription>
+          </Alert>
+        )}
+
         <MobileFormNavigation
           onBack={handleBack}
           onNext={handleSubmit(onSubmit)}
           nextLabel="Continue to Review"
-          isNextDisabled={!isValid}
         />
       </form>
     </div>

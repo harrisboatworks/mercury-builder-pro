@@ -50,7 +50,7 @@ export function MobileFormNavigation({
         )}
         
         <Button
-          type="submit"
+          type={onNext ? "button" : "submit"}
           onClick={() => {
             triggerHaptic('light');
             onNext?.();
