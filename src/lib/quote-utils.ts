@@ -159,6 +159,20 @@ export function calculateQuotePricing(data: {
  * Use everywhere a promo end_date is compared against "now".
  */
 export function promoEndOfDay(dateStr: string): Date {
+  const dateOnlyMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
+  if (dateOnlyMatch) {
+    const [, year, month, day] = dateOnlyMatch;
+    return new Date(
+      Number(year),
+      Number(month) - 1,
+      Number(day),
+      23,
+      59,
+      59,
+      999,
+    );
+  }
+
   const d = new Date(dateStr);
   d.setHours(23, 59, 59, 999);
   return d;

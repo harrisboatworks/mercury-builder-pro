@@ -32,7 +32,7 @@ import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { calculateQuotePricing, calculateWarrantyExtensionCost, getFinanceableAmount } from '@/lib/quote-utils';
+import { calculateQuotePricing, calculateWarrantyExtensionCost, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -570,7 +570,7 @@ export default function QuoteSummaryPage() {
         // Calculate smart expiry: earlier of 30 days or promo end
         const thirtyDaysOut = new Date();
         thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
-        const promoEnd = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+        const promoEnd = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;
         const quoteExpiry = promoEnd && promoEnd < thirtyDaysOut ? promoEnd : thirtyDaysOut;
 
         const frozenPricingSnapshot = {
@@ -1107,6 +1107,12 @@ export default function QuoteSummaryPage() {
                     selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
                     warrantyPromoYears={promoYears > 0 ? promoYears : undefined}
                     totalCoverageYears={selectedPackageCoverageYears}
+                    financingTerms={{
+                      payment: monthlyPayment,
+                      rate: financingRate,
+                      termMonths,
+                      isPromotional: usePromoFinancing,
+                    }}
                   />
                 </motion.div>
 
@@ -1227,7 +1233,7 @@ export default function QuoteSummaryPage() {
                   quoteValidUntil={(() => {
                     if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
                     const d = new Date(); d.setDate(d.getDate() + 30);
-                    const pe = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+                    const pe = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;
                     return pe && pe < d ? pe : d;
                   })()}
                 />

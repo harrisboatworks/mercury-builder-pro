@@ -5,17 +5,20 @@ import { useMemo } from 'react';
 interface FinancingCalloutProps {
   totalPrice: number;
   onApplyForFinancing?: () => void;
+  financingTerms?: {
+    payment: number;
+    rate: number;
+    termMonths: number;
+    isPromotional: boolean;
+  };
 }
 
-export function FinancingCallout({ totalPrice, onApplyForFinancing }: FinancingCalloutProps) {
-  // Don't show financing for purchases under $5,000
-  if (totalPrice < FINANCING_MINIMUM) {
-    return null;
-  }
-  
+export function FinancingCallout({ totalPrice, onApplyForFinancing, financingTerms }: FinancingCalloutProps) {
   const { promo } = useActiveFinancingPromo();
   
   const financingDetails = useMemo(() => {
+    if (financingTerms) return financingTerms;
+
     // Add mandatory Dealerplan fee
     const amountToFinance = totalPrice + DEALERPLAN_FEE;
     
@@ -23,18 +26,22 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing }: FinancingC
     const promoRate = promo?.rate || null;
     const { payment, termMonths, rate } = calculateMonthlyPayment(amountToFinance, promoRate);
     
-    return { payment, termMonths, rate, isPromo: !!promo };
-  }, [totalPrice, promo]);
+    return { payment, termMonths, rate, isPromotional: !!promo };
+  }, [totalPrice, promo, financingTerms]);
+
+  // Don't show financing for purchases under $5,000. Keep hooks above the
+  // conditional so rerenders cannot change hook order.
+  if (totalPrice < FINANCING_MINIMUM) {
+    return null;
+  }
   
   return (
     <div className="flex items-center justify-between">
       <div className="text-base text-repower-navy-900 font-medium">
         From ${financingDetails.payment}/month
-        {financingDetails.isPromo && financingDetails.rate < 7.99 && (
-          <span className="ml-2 text-xs text-repower-gold font-normal">
-            {financingDetails.rate}% APR
-          </span>
-        )}
+        <span className="ml-2 text-xs text-repower-gold font-normal">
+          {financingDetails.rate}% APR · {financingDetails.termMonths} months
+        </span>
       </div>
       
       {onApplyForFinancing && (
