@@ -61,7 +61,7 @@ export function RebateCalculator({
   }, [matrix, selectedHP]);
 
   const handleSliderChange = (value: number[]) => {
-    const newHP = value[0];
+    const newHP = snapToMercuryHP(value[0]);
     setSelectedHP(newHP);
     onHPChange?.(newHP);
   };
