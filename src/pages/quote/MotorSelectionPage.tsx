@@ -68,6 +68,9 @@ const DEEP_LINK_MODEL_TARGETS: Record<string, { hp: number; family?: string }> =
   '250-pro-xs': { hp: 250, family: 'pro xs' },
 };
 
+const SUMMER_SAVINGS_STRIP =
+  '/lovable-uploads/mercury-summer-savings-rebate-2026-strip-1920x360.jpg';
+
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
   const [dismissed, setDismissed] = useState(() => {
@@ -76,14 +79,50 @@ function PromoBannerConditional() {
   });
   const promo = activePromos?.[0];
   if (!promo || dismissed) return null;
-  const endLabel = promo.end_date
-    ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
-    : 'Ends May 17, 2026';
-  const title = promo.bonus_title || promo.name || 'Current Mercury Promotion';
+
+  const isSummerSavings = /summer savings/i.test(
+    `${promo.name || ''} ${promo.bonus_title || ''}`,
+  );
+
   const handleDismiss = () => {
     localStorage.setItem(PROMO_DISMISS_KEY, 'true');
     setDismissed(true);
   };
+
+  // Summer Savings: full-bleed image strip variant (uses official Mercury art).
+  if (isSummerSavings) {
+    return (
+      <div className="relative w-full bg-repower-navy-900 border-b border-repower-gold/20">
+        <a
+          href="/promotions"
+          aria-label="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"
+          className="block w-full"
+        >
+          <img
+            src={SUMMER_SAVINGS_STRIP}
+            alt="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"
+            className="w-full h-auto block"
+            width={1920}
+            height={360}
+            loading="eager"
+          />
+        </a>
+        <button
+          onClick={handleDismiss}
+          aria-label="Dismiss promotion"
+          className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-black/40 text-white/80 hover:text-white hover:bg-black/60 transition-colors"
+          style={{ width: 28, height: 28 }}
+        >
+          <X className="w-4 h-4" />
+        </button>
+      </div>
+    );
+  }
+
+  const endLabel = promo.end_date
+    ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
+    : 'Ends May 17, 2026';
+  const title = promo.bonus_title || promo.name || 'Current Mercury Promotion';
   return (
     <div className="relative w-full bg-repower-navy-900 border-b border-repower-gold/20">
       <div className="flex flex-wrap md:flex-nowrap items-center md:h-14 md:max-h-14 py-2 md:py-0 px-4 md:px-14 md:pr-14 gap-y-1 md:gap-y-0 md:overflow-hidden pr-10 md:pr-14">

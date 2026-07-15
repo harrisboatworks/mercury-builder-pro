@@ -6,6 +6,8 @@ import { RebateMatrix } from './RebateMatrix';
 
 const BANNER_IMAGE =
   '/lovable-uploads/mercury-summer-savings-rebate-2026-banner-1920x675.jpg';
+const BANNER_IMAGE_MOBILE =
+  '/lovable-uploads/mercury-summer-savings-rebate-2026-mobile-414x736.jpg';
 const BANNER_ALT =
   'Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026';
 
@@ -31,16 +33,19 @@ const BULLETS = [
 export function SummerSavingsRebateHero() {
   return (
     <section className="relative overflow-hidden bg-repower-navy-900">
-      {/* Full-width banner */}
+      {/* Full-width banner, portrait crop on mobile, wide crop on desktop */}
       <div className="relative w-full">
-        <img
-          src={BANNER_IMAGE}
-          alt={BANNER_ALT}
-          className="w-full h-auto block"
-          width={1920}
-          height={675}
-          loading="eager"
-        />
+        <picture>
+          <source media="(max-width: 767px)" srcSet={BANNER_IMAGE_MOBILE} />
+          <img
+            src={BANNER_IMAGE}
+            alt={BANNER_ALT}
+            className="w-full h-auto block"
+            width={1920}
+            height={675}
+            loading="eager"
+          />
+        </picture>
       </div>
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-14 py-16 md:py-20">
