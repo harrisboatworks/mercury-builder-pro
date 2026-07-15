@@ -376,7 +376,7 @@ export default function Promotions() {
 
   return (
     <div className="min-h-screen bg-repower-paper">
-      <PromotionsPageSEO promotions={promotions} />
+      <PromotionsPageSEO promotions={promotions} isSummerSavingsActive={hasActivePromos && mainIsSummerSavings} />
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 
