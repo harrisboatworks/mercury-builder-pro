@@ -1,0 +1,41 @@
+name: Summer Savings quote canary
+
+on:
+  deployment_status: {}
+  schedule:
+    # Daily safety net at an off-peak minute: 09:17 ET (summer).
+    - cron: '17 13 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  production-quote:
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'deployment_status' && github.event.deployment.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Check live 60 HP promo quote
+        run: npm run check:promo-quote-live
+        env:
+          PROMO_CANARY_BASE_URL: https://www.mercuryrepower.ca
+          PROMO_CANARY_EXPIRES_AT: '2026-09-01T04:00:00Z'
+      - name: Upload failure screenshot
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: promo-quote-canary-screenshot
+          path: ${{ runner.temp }}/promo-quote-canary.png
+          if-no-files-found: ignore

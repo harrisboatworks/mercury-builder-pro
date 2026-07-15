@@ -13,7 +13,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
-import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
+import { calculateQuotePricing, calculateWarrantyExtensionCost, promoEndOfDay } from '@/lib/quote-utils';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
@@ -48,7 +48,7 @@ export default function PackageSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, getTotalWarrantyBonusYears, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
   
   // Always start with no selection - customer must explicitly choose
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
@@ -88,7 +88,7 @@ export default function PackageSelectionPage() {
   }, [state.selectedPromoOption, getSpecialFinancingRates]);
 
   // Get promo end date for countdown
-  const promoEndDate = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+  const promoEndDate = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;
 
   useEffect(() => {
     document.title = 'Choose Your Package | Harris Boat Works';
@@ -161,7 +161,7 @@ export default function PackageSelectionPage() {
   const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
   const motorDiscount = motorMSRP - motorSalePrice;
-  const promoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
+  const promoSavings = getPromotionSavingsForMotor?.(hp, motorMSRP) || 0;
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
 
   // Coverage years

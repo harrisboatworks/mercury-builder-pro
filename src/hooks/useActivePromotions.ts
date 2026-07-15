@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import {
+  getFirstPromotionRebateForHP,
+  getTotalPromotionDiscount,
+} from '@/lib/promotion-discounts';
 
 export interface PromoOption {
   id: string;
@@ -102,20 +106,19 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
     return promotions.filter(promo => promo.warranty_extra_years && promo.warranty_extra_years > 0);
   };
 
-  // Helper function to calculate total dollar savings from all promotions
-  // GUARD: if a promo defines a rebate matrix (HP-based), we IGNORE its
-  // discount_fixed_amount and discount_percentage here. The matrix rebate is
-  // resolved separately via getRebateForHP() so we never double-count.
+  // Legacy helper for callers that do not yet have a motor HP. Matrix promos
+  // intentionally contribute $0 until eligibility can be resolved.
   const getTotalPromotionalSavings = (basePrice: number = 0) => {
-    return promotions.reduce((total, promo) => {
-      const hasMatrix = !!promo.promo_options?.options?.find(
-        (o) => o.id === 'cash_rebate' && Array.isArray(o.matrix) && o.matrix.length > 0
-      );
-      if (hasMatrix) return total;
-      const fixedAmount = promo.discount_fixed_amount || 0;
-      const percentAmount = promo.discount_percentage ? (basePrice * promo.discount_percentage / 100) : 0;
-      return total + fixedAmount + percentAmount;
-    }, 0);
+    return getTotalPromotionDiscount(promotions, { basePrice });
+  };
+
+  // Canonical quote calculation: resolves both HP matrices and legacy promo
+  // discounts through one production helper.
+  const getPromotionSavingsForMotor = (hp: number, basePrice: number = 0) => {
+    return getTotalPromotionDiscount(promotions, {
+      basePrice,
+      horsepower: hp,
+    });
   };
 
   // Helper function to get the "Choose One" promotion options
@@ -124,27 +127,11 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
     return chooseOnePromo?.promo_options?.options || [];
   };
 
-  // Helper function to get rebate amount for a given HP
-  // Includes fallback to nearest tier if exact match not found
+  // Helper function to get rebate amount for a given HP.
+  // Only explicit matrix ranges are eligible; gaps/out-of-range values do not
+  // inherit the nearest tier.
   const getRebateForHP = (hp: number): number | null => {
-    const options = getChooseOneOptions();
-    const rebateOption = options.find(o => o.id === 'cash_rebate');
-    if (!rebateOption?.matrix || rebateOption.matrix.length === 0) return null;
-    
-    // Try exact match first
-    const exactMatch = rebateOption.matrix.find(row => hp >= row.hp_min && hp <= row.hp_max);
-    if (exactMatch) return exactMatch.rebate;
-    
-    // Fallback: find nearest tier to prevent $0 rebate
-    console.warn(`[Rebate Matrix] No exact match for ${hp}HP - finding nearest tier`);
-    
-    const sorted = [...rebateOption.matrix].sort((a, b) => {
-      const distA = Math.min(Math.abs(hp - a.hp_min), Math.abs(hp - a.hp_max));
-      const distB = Math.min(Math.abs(hp - b.hp_min), Math.abs(hp - b.hp_max));
-      return distA - distB;
-    });
-    
-    return sorted[0]?.rebate ?? null;
+    return getFirstPromotionRebateForHP(promotions, hp);
   };
 
   // Helper function to get special financing rates
@@ -161,6 +148,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
     getTotalWarrantyBonusYears,
     getWarrantyPromotions,
     getTotalPromotionalSavings,
+    getPromotionSavingsForMotor,
     getChooseOneOptions,
     getRebateForHP,
     getSpecialFinancingRates,

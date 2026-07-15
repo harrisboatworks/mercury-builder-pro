@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils';
+import {
+  getRebateTierForHP,
+  resolveRebateForHP,
+  type RebateTier,
+} from '@/lib/promotion-discounts';
 
-interface RebateRow {
-  hp_min: number;
-  hp_max: number;
-  rebate: number;
-}
+type RebateRow = RebateTier;
 
 interface RebateMatrixProps {
   matrix: RebateRow[];
@@ -23,7 +24,7 @@ export function RebateMatrix({ matrix, highlightHP, compact = false, className }
 
   const isHighlighted = (row: RebateRow) => {
     if (!highlightHP) return false;
-    return highlightHP >= row.hp_min && highlightHP <= row.hp_max;
+    return getRebateTierForHP(matrix, highlightHP) === row;
   };
 
   if (compact) {
@@ -124,6 +125,5 @@ export function RebateMatrix({ matrix, highlightHP, compact = false, className }
  * Helper to calculate rebate amount for a given HP
  */
 export function getRebateForHP(matrix: RebateRow[], hp: number): number | null {
-  const match = matrix.find(row => hp >= row.hp_min && hp <= row.hp_max);
-  return match ? match.rebate : null;
+  return resolveRebateForHP(matrix, hp);
 }
