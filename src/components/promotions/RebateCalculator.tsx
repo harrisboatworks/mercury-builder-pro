@@ -194,7 +194,7 @@ export function RebateCalculator({
           className="text-[12px] text-repower-navy-900"
           style={{ color: 'hsl(var(--repower-navy-900) / 0.6)' }}
         >
-          Rebates applied at checkout when you choose the Cash Rebate option
+          Rebate applied automatically at purchase based on your motor's horsepower. Promo financing can be added on top (OAC).
         </p>
       </div>
     </div>
