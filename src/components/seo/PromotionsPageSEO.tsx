@@ -90,13 +90,14 @@ export function PromotionsPageSEO({ isSummerSavingsActive = false }: PromotionsP
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      {ogImage && <meta property="og:image:width" content="1200" />}
+      {ogImage && <meta property="og:image:height" content="1200" />}
       {ogImage && (
-        <>
-          <meta property="og:image" content={ogImage} />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="1200" />
-          <meta property="og:image:alt" content="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026" />
-        </>
+        <meta
+          property="og:image:alt"
+          content="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"
+        />
       )}
 
       <meta name="twitter:card" content="summary_large_image" />
