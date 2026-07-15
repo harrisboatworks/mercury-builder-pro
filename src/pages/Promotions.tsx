@@ -422,12 +422,8 @@ export default function Promotions() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="max-w-2xl mx-auto mb-8">
               <RebateCalculator matrix={rebateMatrix} initialHP={115} />
-              <div className="space-y-4">
-                <h3 className="font-display text-lg font-semibold text-repower-navy-900">All Rebate Tiers</h3>
-                <RebateMatrix matrix={rebateMatrix} />
-              </div>
             </div>
 
             <p className="text-center text-sm text-repower-navy-900/60">
