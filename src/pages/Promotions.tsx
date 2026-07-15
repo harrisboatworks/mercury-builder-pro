@@ -418,7 +418,7 @@ export default function Promotions() {
                 Factory Rebate by Horsepower
               </h2>
               <p className="font-sans text-repower-navy-900/65">
-                If you choose the rebate option, here's what you'll get based on your motor
+                The rebate is applied automatically based on your motor's horsepower
               </p>
             </div>
 
@@ -427,7 +427,7 @@ export default function Promotions() {
             </div>
 
             <p className="text-center text-sm text-repower-navy-900/60">
-              Rebate applied at time of purchase. See dealer for complete details.
+              Rebate applied automatically at purchase. Promo financing can be added on top (OAC).
             </p>
           </div>
         </section>
