@@ -5796,7 +5796,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What parts does HBW keep on the shelf for transit boats?",
-        "a": "We have probably the largest Mercury parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can b…"
+        "a": "We have the largest Mercury and Mercruiser parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts can b…"
       }
     ]
   },
