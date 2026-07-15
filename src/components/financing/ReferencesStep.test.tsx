@@ -2,7 +2,10 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ReferencesStep } from './ReferencesStep';
 
-const dispatch = vi.fn();
+const { dispatch, trackClarityValidationBlocked } = vi.hoisted(() => ({
+  dispatch: vi.fn(),
+  trackClarityValidationBlocked: vi.fn(),
+}));
 
 vi.mock('@/contexts/FinancingContext', () => ({
   useFinancing: () => ({
@@ -15,9 +18,14 @@ vi.mock('@/hooks/useHapticFeedback', () => ({
   useHapticFeedback: () => ({ triggerHaptic: vi.fn() }),
 }));
 
+vi.mock('@/lib/analytics', () => ({
+  trackClarityValidationBlocked,
+}));
+
 describe('ReferencesStep', () => {
   beforeEach(() => {
     dispatch.mockClear();
+    trackClarityValidationBlocked.mockClear();
   });
 
   it('turns an invalid Continue click into actionable field feedback', async () => {
@@ -32,6 +40,10 @@ describe('ReferencesStep', () => {
       await screen.findByText(/complete the highlighted reference fields before continuing/i),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/full name is required/i)).toHaveLength(2);
+    expect(trackClarityValidationBlocked).toHaveBeenCalledWith(
+      'financing',
+      'references_incomplete',
+    );
     expect(dispatch).not.toHaveBeenCalled();
   });
 });

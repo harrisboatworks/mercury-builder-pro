@@ -1,4 +1,4 @@
-import { useEffect, useState, lazy, Suspense } from 'react';
+import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -15,6 +15,7 @@ import harrisLogo from '@/assets/harris-logo.png';
 import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import { useNoIndex } from '@/hooks/useNoIndex';
 import { DEALERPLAN_FEE } from '@/lib/finance';
+import { getFinancingFunnelStep, trackClarityFunnelStep } from '@/lib/analytics';
 import '@/styles/financing-mobile.css';
 
 // Lazy load step components (~180KB total)
@@ -66,6 +67,15 @@ export default function FinancingApplication() {
   const [showResumeDialog, setShowResumeDialog] = useState(false);
   const [savedDraft, setSavedDraft] = useState<SavedDraft | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const lastTrackedStepRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (isLoading) return;
+    const step = getFinancingFunnelStep(financingState.currentStep);
+    if (!step || lastTrackedStepRef.current === step) return;
+    lastTrackedStepRef.current = step;
+    trackClarityFunnelStep('financing', step);
+  }, [financingState.currentStep, isLoading]);
 
   // Detect saved drafts and handle auto-resume
   useEffect(() => {

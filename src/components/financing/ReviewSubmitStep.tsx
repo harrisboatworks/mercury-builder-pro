@@ -20,6 +20,7 @@ import { useState } from 'react';
 import { formatPhoneNumber } from '@/lib/validation';
 import { SuccessConfetti } from './SuccessConfetti';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { trackClaritySubmission } from '@/lib/analytics';
 
 export function ReviewSubmitStep() {
   const { state, dispatch } = useFinancing();
@@ -276,6 +277,8 @@ export function ReviewSubmitStep() {
         applicationId: application.id,
         userId,
       });
+
+      trackClaritySubmission('financing');
 
       // Redirect to success page after a brief delay to show confetti
       setTimeout(() => {

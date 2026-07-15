@@ -55,7 +55,7 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { SITE_URL } from '@/lib/site';
-import { trackEvent } from '@/lib/analytics';
+import { trackClarityMotorSelection, trackEvent } from '@/lib/analytics';
 import {
   getMotorHpRange,
   MOTOR_HP_RANGES,
@@ -1184,6 +1184,12 @@ if (event.type === 'filter_motors') {
 
   const handleMotorSelect = (motor: Motor) => {
     dismissExitIntent();
+    trackClarityMotorSelection({
+      model: motor.model,
+      hp: motor.hp,
+      family: classifyMotorFamily(motor.hp, motor.model, motor.features),
+    });
+
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
     
