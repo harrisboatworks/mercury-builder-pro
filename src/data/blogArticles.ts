@@ -135,6 +135,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "electric-vs-gas-repower-guide-rice-lake",
     title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)",
+    seoTitle: "Electric vs Gas Repower Guide for Rice Lake | HBW",
     description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat.",
     image: "/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png",
     imageAlt: "Mercury Avator electric outboard on a boat at a Rice Lake dock",
