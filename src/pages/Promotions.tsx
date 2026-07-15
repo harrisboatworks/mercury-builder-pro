@@ -296,6 +296,11 @@ export default function Promotions() {
     );
   };
 
+  const hasActivePromos = promotions.length > 0;
+  const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
+  const mainIsSummerSavings = /summer savings/i.test(mainName);
+  const mainIsTDAlwaysOn = !mainIsSummerSavings && /td|always on|financ/i.test(mainName);
+
   // Bonus-warranty FAQs are only correct when the active DB promo actually
   // includes an extended warranty. Never hardcode "7 years" as always-on.
   const bonusYears = mainPromotion?.warranty_extra_years ?? 0;
