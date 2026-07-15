@@ -35,7 +35,7 @@ Harris Boat Works has sold and serviced Mercury outboards since 1965. Three gene
 **Build a quote on any Mercury at /quote/motor-selection, or call us at (905) 342-2153.**
 
 ## Quick recommendation
-If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry probably the largest Mercury parts inventory in Ontario.
+If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
 
 We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
 
@@ -67,7 +67,7 @@ Other brands aren't bad motors. The depth-vs-breadth tradeoff just strongly favo
 
 The expertise compounds over time:
 - Three generations of technicians have learned only Mercury
-- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock probably the largest Mercury parts inventory in Ontario
+- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock the largest Mercury and Mercruiser parts inventory in Ontario
 - Training investments focus on Mercury
 - Customer expectations are calibrated to Mercury
 
