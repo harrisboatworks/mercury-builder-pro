@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke
-last_updated: 2026-07-14
+last_updated: 2026-07-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
