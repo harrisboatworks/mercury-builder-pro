@@ -46,7 +46,7 @@ content_update_frequency: weekly
 - Authorized Legend Boats dealer (we sell Legend pontoons and aluminum boats; we do NOT sell other boat brands)
 - Located at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - We do NOT offer delivery — all pickups are at our Gores Landing location
-- In-season hours (April–October): Monday–Saturday 8am–5pm, Sunday 9am–4pm. Marina closed for winter December 1 to April 1.
+- In-season hours (April 1-November 30): Monday-Saturday 8am-5pm, Sunday 9am-4pm. Marina closed for winter December 1-April 1.
 - Deposits are tiered: $200 (<75HP), $500 (75-199HP), $1000 (200+HP)
 - We service all of Ontario, Canada
 - Mercury Verado is special-order only — not in default inventory and not actively promoted

@@ -7,27 +7,26 @@ import { isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { formatFinancingRate } from '@/lib/finance';
 import { CodeBlock } from '@/components/agents/CodeBlock';
 
-const FINANCING_RATES_FAQ_BASE =
-  'Financing minimum is $5,000 CAD. Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance. A $349 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000.';
+const POST_PROMO_FINANCING_RATES_FAQ =
+  'After the current promotion ends, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance. A $349 DealerPlan fee is added post-tax for financed purchases. Financing minimum is $5,000 CAD; do not show monthly payment estimates below $5,000.';
 
 const FINANCING_RATES_FAQ_TEXT = isTDAlwaysOnActive()
-  ? `${FINANCING_RATES_FAQ_BASE} Current promo: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers ${formatFinancingRate()} (OAC) on new eligible Mercury outboards; standard tiered rates resume after the program ends.`
-  : `${FINANCING_RATES_FAQ_BASE} Promotional manufacturer rates (e.g. TD subvention programs) run periodically, see /promotions for the current offer.`;
+  ? `Current headline financing: through December 31, 2026, Mercury Marine Canada's TD 'Always On' program offers ${formatFinancingRate()} (OAC) on new eligible Mercury outboards. ${POST_PROMO_FINANCING_RATES_FAQ}`
+  : `Current standard financing: ${POST_PROMO_FINANCING_RATES_FAQ.replace('After the current promotion ends, standard tiered rates resume: ', '')} Promotional manufacturer rates run periodically; see /promotions for the current offer.`;
 
-const FINANCING_RATES_BULLET_BASE =
-  'Standard tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance.';
+const POST_PROMO_FINANCING_RATES_BULLET =
+  'After the promotion ends, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR $10,000 and up (OAC). Terms up to 120 months, arranged through DealerPlan (Canadian marine financing broker) across Canadian lenders, primarily TD Auto Finance.';
 
 const FINANCING_RATES_BULLET = isTDAlwaysOnActive()
-  ? `${FINANCING_RATES_BULLET_BASE} Current promo: ${formatFinancingRate()} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC).`
-  : `${FINANCING_RATES_BULLET_BASE} Promotional manufacturer rates run periodically, see /promotions for the current offer.`;
+  ? `Current headline financing is ${formatFinancingRate()} through Dec 31, 2026 via the Mercury TD 'Always On' program (OAC). ${POST_PROMO_FINANCING_RATES_BULLET}`
+  : `Current standard financing: ${POST_PROMO_FINANCING_RATES_BULLET.replace('After the promotion ends, standard tiered rates resume: ', '')} Promotional manufacturer rates run periodically; see /promotions for the current offer.`;
 
 
 const AGENTS_API_BASE = 'https://www.mercuryrepower.ca/api/agents';
 const PUBLIC_MOTORS_API = `${AGENTS_API_BASE}/motors`;
 const PUBLIC_QUOTE_API = `${AGENTS_API_BASE}/quote`;
 const MCP_SERVER = `${AGENTS_API_BASE}/mcp`;
-// motors-md edge function is not currently proxied; advertise the raw URL until proxied.
-const MOTORS_MD = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md';
+const MOTORS_MD = `${AGENTS_API_BASE}/motors.md`;
 
 export default function AgentsHub() {
   return (

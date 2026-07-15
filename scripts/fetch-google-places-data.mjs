@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Build-time fetch of live Google Places data (rating, review count, hours)
+ * Build-time fetch of live Google Places data (rating, review count, hours,
+ * and the canonical Google Business Profile map pin)
  * from the existing `google-places` Supabase edge function. The result is
  * cached to src/data/google-places-cache.json so the static prerender and
  * any runtime React component can emit consistent JSON-LD structured data
@@ -71,6 +72,7 @@ async function main() {
   const fallback = {
     ratingValue: '4.6',
     reviewCount: '301',
+    location: { latitude: 44.121684, longitude: -78.241502 },
     weekdayText: [],
     openingHoursSpecification: [],
     fetchedAt: null,
@@ -96,20 +98,26 @@ async function main() {
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    if (!data || data.error || !data.rating || !data.totalReviews) {
+    const rawLatitude = Number(data?.location?.latitude);
+    const rawLongitude = Number(data?.location?.longitude);
+    if (!data || data.error || !data.rating || !data.totalReviews || !Number.isFinite(rawLatitude) || !Number.isFinite(rawLongitude)) {
       throw new Error(`bad payload: ${JSON.stringify(data).slice(0, 200)}`);
     }
+    const latitude = Math.round(rawLatitude * 1_000_000) / 1_000_000;
+    const longitude = Math.round(rawLongitude * 1_000_000) / 1_000_000;
     const weekdayText = data.openingHours?.weekdayText || [];
     const cache = {
       ratingValue: String(data.rating),
       reviewCount: String(data.totalReviews),
+      location: { latitude, longitude },
+      address: data.address || null,
       weekdayText,
       openingHoursSpecification: parseWeekdayText(weekdayText),
       fetchedAt: new Date().toISOString(),
       source: 'google-places-edge',
     };
     writeCache(cache);
-    console.log(`[fetch-google-places] OK rating=${cache.ratingValue} reviews=${cache.reviewCount} hours=${cache.openingHoursSpecification.length} days`);
+    console.log(`[fetch-google-places] OK rating=${cache.ratingValue} reviews=${cache.reviewCount} hours=${cache.openingHoursSpecification.length} days geo=${latitude},${longitude}`);
   } catch (err) {
     console.warn(`[fetch-google-places] Fetch failed (${err?.message || err}); keeping existing cache.`);
     if (!loadExisting()) writeCache(fallback);

@@ -25,7 +25,7 @@
   },
   "standards": [
     "Model Context Protocol (MCP) - implemented",
-    "Universal Commerce Protocol (UCP) - aligned, full conformance pending spec v1.0"
+    "Universal Commerce Protocol (UCP) 2026-04-08 - implemented for quote-mode checkout and pickup fulfillment"
   ],
   "description": "Family-owned full-service marina and Mercury Marine Premier Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965. Mercury outboard sales and repowers with live CAD pricing, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, and spring commissioning. Serving Rice Lake, the Kawarthas, Peterborough, Northumberland, Durham Region, and the GTA.",
   "services": [
@@ -105,18 +105,25 @@
       "region": "ON",
       "postalCode": "K0K 2E0",
       "country": "CA",
-      "lat": 44.1147,
-      "lng": -78.2564
+      "lat": 44.121684,
+      "lng": -78.241502
     },
     "primaryRadiusKm": 150,
-    "commonOriginCities": ["Toronto", "Peterborough", "Kawartha Lakes", "Oshawa", "Whitby", "Cobourg"]
+    "commonOriginCities": [
+      "Toronto",
+      "Peterborough",
+      "Kawartha Lakes",
+      "Oshawa",
+      "Whitby",
+      "Cobourg"
+    ]
   },
   "contact": {
     "phone": "+1-905-342-2153",
     "phoneDisplay": "(905) 342-2153",
     "email": "info@harrisboatworks.ca",
     "hours": {
-      "note": "In-season (April 1 – November 30). Marina closed for winter December 1 – April 1.",
+      "note": "In-season (April 1 - November 30). Marina closed for winter December 1 - April 1.",
       "monSat": "08:00-17:00",
       "sun": "09:00-16:00"
     }
@@ -137,5 +144,5 @@
     "mcpServer": "https://www.mercuryrepower.ca/api/agents/mcp",
     "ucpCheckout": "https://www.mercuryrepower.ca/api/agents/ucp"
   },
-  "lastUpdated": "2026-04-25"
+  "lastUpdated": "2026-07-15"
 }

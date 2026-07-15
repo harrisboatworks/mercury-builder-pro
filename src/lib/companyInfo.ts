@@ -3,6 +3,19 @@
  * Centralized contact information for Harris Boat Works
  */
 
+import googlePlaces from '@/data/google-places-cache.json';
+
+const placesLatitude = Number(googlePlaces.location?.latitude);
+const placesLongitude = Number(googlePlaces.location?.longitude);
+
+/** Canonical local-search pin, refreshed from the Google Business Profile at build time. */
+export const BUSINESS_GEO = {
+  latitude: Number.isFinite(placesLatitude) ? placesLatitude : 44.121684,
+  longitude: Number.isFinite(placesLongitude) ? placesLongitude : -78.241502,
+} as const;
+
+export const BUSINESS_COORDINATES_TEXT = `${BUSINESS_GEO.latitude}, ${BUSINESS_GEO.longitude}`;
+
 export const COMPANY_INFO = {
   name: "Harris Boat Works",
   tagline: "Go Boldly - Authorized Mercury Marine Dealer",
@@ -11,7 +24,8 @@ export const COMPANY_INFO = {
     city: "Gores Landing", 
     province: "ON",
     postal: "K0K 2E0",
-    full: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0"
+    full: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0",
+    geo: BUSINESS_GEO,
   },
   contact: {
     phone: "(905) 342-2153",

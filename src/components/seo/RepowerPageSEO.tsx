@@ -1,5 +1,5 @@
 import { Helmet } from '@/lib/helmet';
-import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getAllFAQItems } from '@/data/faqData';
 import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
 
@@ -41,8 +41,8 @@ export function RepowerPageSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1456,
-          "longitude": -78.2542
+          "latitude": BUSINESS_GEO.latitude,
+          "longitude": BUSINESS_GEO.longitude
         },
         "foundingDate": "1947",
         "sameAs": BUSINESS_SAME_AS

@@ -31,10 +31,10 @@ const BLOG_FILES = readdirSync('src/data')
   .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
   .map((f) => `src/data/${f}`);
 
-// Raw Supabase URLs for the four public agent endpoints that MUST go through
+// Raw Supabase URLs for public agent endpoints that MUST go through
 // the branded /api/agents/* proxy on every user-facing surface.
 const RAW_AGENT_URL_RX =
-  /https?:\/\/eutsoqdpjurknjsshxes\.supabase\.co\/functions\/v1\/(public-motors-api|public-quote-api|ucp-checkout|agent-mcp-server)\b/;
+  /https?:\/\/eutsoqdpjurknjsshxes\.supabase\.co\/functions\/v1\/(public-motors-api|public-quote-api|ucp-checkout|agent-mcp-server|motors-md)\b/;
 
 // Walk a directory recursively, returning file paths matching the extension set.
 function walk(dir, exts) {
@@ -227,5 +227,4 @@ console.log(
   `0 raw agent-URL leaks across ${USER_FACING_FILES.length} user-facing files, ` +
   `${staleYearLeaks.length} stale-year warning(s)`
 );
-
 

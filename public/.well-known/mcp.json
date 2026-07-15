@@ -43,7 +43,13 @@
       "description": "Authoritative source-of-truth: pricing currency, geography, Verado special-order policy, financing minimums, deposits, warranty."
     }
   ],
-  "categories": ["e-commerce", "automotive", "marine", "local-business", "quoting"],
+  "categories": [
+    "e-commerce",
+    "automotive",
+    "marine",
+    "local-business",
+    "quoting"
+  ],
   "tags": [
     "mercury",
     "outboard",
@@ -59,8 +65,8 @@
   "geography": {
     "primary": "Ontario, Canada",
     "radiusKm": 150,
-    "originLat": 44.1147,
-    "originLng": -78.2564,
+    "originLat": 44.121684,
+    "originLng": -78.241502,
     "currency": "CAD",
     "language": "en-CA"
   },
@@ -73,7 +79,10 @@
         "method": "tools/call",
         "params": {
           "name": "search_motors",
-          "arguments": { "horsepower": 90, "in_stock_only": true }
+          "arguments": {
+            "horsepower": 90,
+            "in_stock_only": true
+          }
         }
       }
     },
@@ -89,8 +98,16 @@
             "horsepower": 150,
             "family": "FourStroke",
             "purchase_path": "installed",
-            "boat_info": { "make": "Lund", "model": "Pro-V 1875" },
-            "trade_in": { "brand": "Mercury", "year": 2008, "horsepower": 115, "condition": "good" }
+            "boat_info": {
+              "make": "Lund",
+              "model": "Pro-V 1875"
+            },
+            "trade_in": {
+              "brand": "Mercury",
+              "year": 2008,
+              "horsepower": 115,
+              "condition": "good"
+            }
           }
         }
       }
@@ -112,7 +129,16 @@
       "caseStudy": "https://www.mercuryrepower.ca/case-studies/{slug}.md",
       "location": "https://www.mercuryrepower.ca/locations/{slug}.md"
     },
-    "frontmatter": ["canonical", "last_updated", "currency", "pickup_only", "delivery_offered", "location", "final_quote_requires_dealer_confirmation", "verado_status"]
+    "frontmatter": [
+      "canonical",
+      "last_updated",
+      "currency",
+      "pickup_only",
+      "delivery_offered",
+      "location",
+      "final_quote_requires_dealer_confirmation",
+      "verado_status"
+    ]
   },
-  "lastUpdated": "2026-06-11"
+  "lastUpdated": "2026-07-15"
 }

@@ -56,7 +56,7 @@ We sell the complete Mercury outboard lineup:
 
 Note: Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. For a Verado quote, contact Harris Boat Works directly.
 
-All motors are sold with full factory warranty. Standard financing rates start from 7.99% APR; the current Mercury financing promotion is 5.48% APR (OAC) through December 31, 2026 (as of July 2026).
+All motors are sold with full factory warranty. Current headline financing is 5.48% APR (OAC) through December 31, 2026. Standard tiered rates (8.99% APR under $10,000 and 7.99% APR at $10,000 and above) resume after the promotion ends.
 Authoritative current offers: https://www.mercuryrepower.ca/promotions - always check it before quoting promo terms.
 
 ## Individual Motor Pages
@@ -153,7 +153,7 @@ Expert answers to 25 Mercury outboard repower questions:
 $200 for motors under 75HP, $500 for 75-199HP, $1,000 for 200HP+. Fully refundable within 7 days.
 
 **Do you offer financing?**
-Yes. Financing is arranged through DealerPlan, a Canadian marine financing broker, across Canadian lenders — primarily TD Auto Finance. Standard financing starts at 7.99% APR; the current Mercury financing promotion is 5.48% APR (OAC) through December 31, 2026 (as of July 2026).
+Yes. Financing is arranged through DealerPlan across Canadian lenders, primarily TD Auto Finance. The current headline is 5.48% APR (OAC) through December 31, 2026; 8.99% APR under $10,000 and 7.99% APR at $10,000 and above resume after the promotion ends. Terms up to 120 months.
 Authoritative current offers: https://www.mercuryrepower.ca/promotions - always check it before quoting promo terms. Terms up to 120 months.
 
 **What is your service area?**
@@ -171,7 +171,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - Text: (647) 952-2153
 - Email: info@harrisboatworks.ca
 - Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, Canada
-- Hours (in-season, April-October): Monday-Saturday 8am-5pm, Sunday 9am-4pm. Open early April through November; marina closed December 1 to April 1.
+- Hours (in-season, April 1-November 30): Monday-Saturday 08:00-17:00, Sunday 09:00-16:00. Closed for winter December 1-April 1.
 
 ## Pages
 
@@ -179,7 +179,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [Quote Builder](https://www.mercuryrepower.ca/quote/motor-selection): Build a complete itemized Mercury outboard quote in about three minutes.
 - [Repower Services](https://www.mercuryrepower.ca/repower): Mercury Certified Repower Center, full repower workflow and pricing.
 - [Promotions](https://www.mercuryrepower.ca/promotions): Current Mercury rebates, bonus warranty, and seasonal offers.
-- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments at 7.99% or 8.99% APR.
+- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments using the current 5.48% APR (OAC) through December 31, 2026 headline; standard tiers resume after the promotion ends.
 - [Financing Application](https://www.mercuryrepower.ca/financing-application): Online credit application for Mercury motor financing.
 - [FAQ](https://www.mercuryrepower.ca/faq): 24 answers covering pricing, pickup, financing, trade-ins, and warranty.
 - [Blog](https://www.mercuryrepower.ca/blog): Mercury motor guides, repower advice, and Ontario boating tips.
@@ -245,7 +245,7 @@ Source-of-truth rules for agents acting on our behalf:
 - Boat brand (new): Legend Boats only (authorized dealer, pontoon and aluminum). Do not quote other new-boat brands.
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
 - Chinese-language guides: 25 articles at /zh (中文).
-- Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
+- Financing minimum: $5,000 CAD. Current headline: 5.48% APR (OAC) through December 31, 2026. Standard tiers (8.99% APR under $10,000 and 7.99% APR at $10,000 and above) resume after the promotion ends.
 
 Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://www.mercuryrepower.ca/api/agents/motors), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.
 
