@@ -25,6 +25,7 @@ import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
+import { SummerSavingsRebateHero } from '@/components/promotions/SummerSavingsRebateHero';
 
 
 
@@ -347,9 +348,9 @@ export default function Promotions() {
   const promotionFaqs = [...warrantyFaqs, ...chooseOneFaqs];
 
   const hasActivePromos = promotions.length > 0;
-  const mainIsTDAlwaysOn = /td|always on|financ/i.test(
-    `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`,
-  );
+  const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
+  const mainIsSummerSavings = /summer savings/i.test(mainName);
+  const mainIsTDAlwaysOn = !mainIsSummerSavings && /td|always on|financ/i.test(mainName);
 
   return (
     <div className="min-h-screen bg-repower-paper">
@@ -358,11 +359,13 @@ export default function Promotions() {
       <div className="pt-[64px] lg:pt-[72px]" />
 
       {/* Hero Section, only when promos are active */}
+      {hasActivePromos && mainIsSummerSavings && <SummerSavingsRebateHero />}
+
       {hasActivePromos && mainIsTDAlwaysOn && (
         <TDFinancingHero endDate={mainPromotion?.end_date} />
       )}
 
-      {hasActivePromos && !mainIsTDAlwaysOn && (
+      {hasActivePromos && !mainIsTDAlwaysOn && !mainIsSummerSavings && (
         <PromotionHero
           endDate={mainPromotion?.end_date}
           bonusTitle={mainPromotion?.bonus_title}
@@ -376,12 +379,12 @@ export default function Promotions() {
         <TDFinancingHero />
       )}
 
-      {/* Choose One Section */}
-      {chooseOneOptions.length > 0 && (
+      {/* Choose One Section, hidden on Summer Savings (rebate is automatic, financing is layered, no "pick one" narrative) */}
+      {chooseOneOptions.length > 0 && !mainIsSummerSavings && (
         <ChooseOneSection options={chooseOneOptions} />
       )}
 
-      {/* Mercury TD "Always On" Financing, only show the standalone card if a DB promo is also active (so TD sits as a sibling). Otherwise the hero above already presents it. */}
+      {/* Mercury TD "Always On" Financing as a second section below the headline promo. */}
       {hasActivePromos && !mainIsTDAlwaysOn && <TDAlwaysOnCard />}
 
       {/* Full Rebate Matrix Table with Interactive Calculator */}
