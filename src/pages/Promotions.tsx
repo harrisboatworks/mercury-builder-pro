@@ -374,11 +374,6 @@ export default function Promotions() {
 
   const promotionFaqs = [...warrantyFaqs, ...chooseOneFaqs];
 
-  const hasActivePromos = promotions.length > 0;
-  const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
-  const mainIsSummerSavings = /summer savings/i.test(mainName);
-  const mainIsTDAlwaysOn = !mainIsSummerSavings && /td|always on|financ/i.test(mainName);
-
   return (
     <div className="min-h-screen bg-repower-paper">
       <PromotionsPageSEO promotions={promotions} />
