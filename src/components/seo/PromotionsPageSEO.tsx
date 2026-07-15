@@ -11,21 +11,28 @@ interface PromotionsPageSEOProps {
     end_date?: string;
     promo_options?: any;
   }>;
+  /**
+   * When true, render Summer Savings-specific title/description/og:image.
+   * When false, fall back to evergreen promotions metadata so nothing goes
+   * stale after the promo expires (no redeploy required).
+   */
+  isSummerSavingsActive?: boolean;
 }
 
-/**
- * Promotions page SEO is intentionally promo-neutral so it cannot go stale
- * when a specific manufacturer or dealer offer ends. Do NOT hardcode a
- * particular warranty length, rebate, or bonus offer here. Individual
- * promotions render inside the page body from the `promotions` DB table
- * (and expire automatically). The static <head> stays evergreen.
- */
-export function PromotionsPageSEO(_props: PromotionsPageSEOProps) {
+export function PromotionsPageSEO({ isSummerSavingsActive = false }: PromotionsPageSEOProps) {
   const RATE = formatFinancingRate(MERCURY_PROMO_APR);
 
-  const title = 'Mercury Summer Savings Rebate + Financing | HBW';
-  const description =
-    'Mercury Summer Savings Rebate: save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus financing as low as 2.99% for 24 months (OAC). Ends August 31, 2026 at Harris Boat Works on Rice Lake.';
+  const title = isSummerSavingsActive
+    ? 'Mercury Summer Savings Rebate + Financing | HBW'
+    : 'Mercury Outboard Promotions & Financing | HBW';
+
+  const description = isSummerSavingsActive
+    ? 'Mercury Summer Savings Rebate: save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus financing as low as 2.99% for 24 months (OAC). Ends August 31, 2026 at Harris Boat Works on Rice Lake.'
+    : `Current Mercury outboard promotions and low-rate financing at Harris Boat Works on Rice Lake. TD Auto Finance repower program from ${RATE} (OAC), Canada-wide pricing in CAD.`;
+
+  const ogImage = isSummerSavingsActive
+    ? `${SITE_URL}/lovable-uploads/mercury-summer-savings-rebate-2026-square-1x1.jpg`
+    : null;
 
   const graph: any[] = [
     {
@@ -75,8 +82,6 @@ export function PromotionsPageSEO(_props: PromotionsPageSEOProps) {
 
   const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 
-  const ogImage = `${SITE_URL}/lovable-uploads/mercury-summer-savings-rebate-2026-square-1x1.jpg`;
-
   return (
     <Helmet>
       <title>{title}</title>
@@ -85,15 +90,19 @@ export function PromotionsPageSEO(_props: PromotionsPageSEOProps) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="1200" />
-      <meta property="og:image:alt" content="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026" />
+      {ogImage && (
+        <>
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="1200" />
+          <meta property="og:image:alt" content="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026" />
+        </>
+      )}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
