@@ -23,6 +23,11 @@ import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
 import { format } from 'date-fns';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import {
+  getPromotionRebateForHP,
+  getTotalPromotionDiscount,
+  hasPromotionRebateMatrix,
+} from '@/lib/promotion-discounts';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AuthModal } from '@/components/auth/AuthModal';
@@ -30,6 +35,7 @@ import { createQuote } from '@/lib/quotesApi';
 import { PaymentMethodBadges } from '@/components/payments/PaymentMethodBadges';
 import { useQuote } from '@/contexts/QuoteContext';
 import { PromoOptionSelector, PromoOptionType } from './PromoOptionSelector';
+import { promoEndOfDay } from '@/lib/quote-utils';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -129,6 +135,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   // Calculate pricing
   const motorPrice = quoteData.motor?.salePrice || quoteData.motor?.basePrice || 0;
+  const motorHP = quoteData.motor?.hp || 0;
   const hasTradeIn = state.tradeInInfo?.hasTradeIn || false;
   const tradeInValue = hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
   const hasSale = (quoteData.motor?.basePrice || 0) > motorPrice;
@@ -201,28 +208,18 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   // Calculate promotion savings
   const calculatePromotionSavings = () => {
-    let totalFixedDiscount = 0;
-    let totalPercentageDiscount = 0;
-    let warrantyValue = 0;
-    
-    promotions.forEach(promo => {
-      if (promo.discount_fixed_amount > 0) {
-        totalFixedDiscount += promo.discount_fixed_amount;
-      }
-      if (promo.discount_percentage > 0) {
-        totalPercentageDiscount += (motorPrice * promo.discount_percentage / 100);
-      }
-      if (promo.warranty_extra_years && promo.warranty_extra_years > 0) {
-        // Estimate warranty value at $200 per extra year
-        warrantyValue += promo.warranty_extra_years * 200;
-      }
+    const priceDiscount = getTotalPromotionDiscount(promotions, {
+      basePrice: motorPrice,
+      horsepower: motorHP,
     });
+    const warrantyValue = promotions.reduce(
+      (total, promo) => total + ((promo.warranty_extra_years || 0) * 200),
+      0,
+    );
     
     return {
-      totalFixedDiscount,
-      totalPercentageDiscount,
       warrantyValue,
-      totalPromoValue: totalFixedDiscount + totalPercentageDiscount + warrantyValue
+      totalPromoValue: priceDiscount + warrantyValue,
     };
   };
 
@@ -541,34 +538,45 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                   <div className="font-medium text-repower-navy-900 text-xs uppercase tracking-wide flex items-center gap-1">
                     🎉 Active Promotions
                   </div>
-                  {promotions.map((promo, index) => (
-                    <div key={index} className="space-y-1">
-                      <div className="text-xs font-medium text-repower-navy-900">{promo.name}</div>
-                      {promo.discount_fixed_amount > 0 && (
-                        <div className="flex justify-between text-repower-gold">
-                          <span className="text-xs">Cash Discount:</span>
-                          <span className="font-medium">-{formatCurrency(promo.discount_fixed_amount)}</span>
-                        </div>
-                      )}
-                      {promo.discount_percentage > 0 && (
-                        <div className="flex justify-between text-repower-gold">
-                          <span className="text-xs">{promo.discount_percentage}% Discount:</span>
-                          <span className="font-medium">-{formatCurrency(motorPrice * promo.discount_percentage / 100)}</span>
-                        </div>
-                      )}
-                      {promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
-                        <div className="flex justify-between text-repower-gold">
-                          <span className="text-xs">+{promo.warranty_extra_years} Year Warranty:</span>
-                          <span className="font-medium">{formatCurrency(promo.warranty_extra_years * 200)} Value</span>
-                        </div>
-                      )}
-                      {promo.end_date && (
-                        <div className="text-xs text-repower-mercury-red font-medium">
-                          Expires: {format(new Date(promo.end_date), 'MMM d, yyyy')}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                  {promotions.map((promo, index) => {
+                    const hasMatrix = hasPromotionRebateMatrix(promo);
+                    const matrixRebate = getPromotionRebateForHP(promo, motorHP);
+
+                    return (
+                      <div key={index} className="space-y-1">
+                        <div className="text-xs font-medium text-repower-navy-900">{promo.name}</div>
+                        {hasMatrix && matrixRebate != null && (
+                          <div className="flex justify-between text-repower-gold">
+                            <span className="text-xs">{motorHP} HP Rebate:</span>
+                            <span className="font-medium">-{formatCurrency(matrixRebate)}</span>
+                          </div>
+                        )}
+                        {!hasMatrix && promo.discount_fixed_amount > 0 && (
+                          <div className="flex justify-between text-repower-gold">
+                            <span className="text-xs">Cash Discount:</span>
+                            <span className="font-medium">-{formatCurrency(promo.discount_fixed_amount)}</span>
+                          </div>
+                        )}
+                        {!hasMatrix && promo.discount_percentage > 0 && (
+                          <div className="flex justify-between text-repower-gold">
+                            <span className="text-xs">{promo.discount_percentage}% Discount:</span>
+                            <span className="font-medium">-{formatCurrency(motorPrice * promo.discount_percentage / 100)}</span>
+                          </div>
+                        )}
+                        {promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
+                          <div className="flex justify-between text-repower-gold">
+                            <span className="text-xs">+{promo.warranty_extra_years} Year Warranty:</span>
+                            <span className="font-medium">{formatCurrency(promo.warranty_extra_years * 200)} Value</span>
+                          </div>
+                        )}
+                        {promo.end_date && (
+                          <div className="text-xs text-repower-mercury-red font-medium">
+                            Expires: {format(promoEndOfDay(promo.end_date), 'MMM d, yyyy')}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                   {promotionSavings.totalPromoValue > 0 && (
                     <div className="flex justify-between font-bold text-repower-navy-900 border-t border-repower-gold/30 pt-2 mt-2">
                       <span>Total Promotional Value:</span>

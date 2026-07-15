@@ -76,7 +76,7 @@ export default function QuoteSummaryPage() {
   const { state, dispatch, getQuoteData } = useQuote();
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
@@ -332,19 +332,15 @@ export default function QuoteSummaryPage() {
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
   const motorDiscount = state.frozenPricing?.motorDiscount ?? (motorMSRP - motorSalePrice);
   
-  // Calculate promo savings including rebate.
-  // Matrix rebates ALWAYS apply when eligible (regardless of whether the
-  // customer selected "cash_rebate" or "special_financing") — the Summer
-  // Savings offer is layered: rebate + optional promo financing, never
-  // either/or. getTotalPromotionalSavings already skips promos that carry
-  // a matrix, so there is no double-count with discount_fixed_amount.
+  // Calculate every promotion discount through the shared production helper.
+  // Matrix rebates remain layered with optional promo financing.
   const basePromoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
-  const rebateAmount = (getRebateForHP?.(hp) || 0);
-  const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
+  const calculatedPromoSavings = getPromotionSavingsForMotor?.(hp, motorMSRP) || 0;
+  const promoSavings = state.frozenPricing?.promoSavings ?? calculatedPromoSavings;
 
   // Live (non-frozen) values for stale-quote comparison
   const liveMotorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
-  const livePromoSavings = basePromoSavings + rebateAmount;
+  const livePromoSavings = getPromotionSavingsForMotor?.(hp, liveMotorMSRP) || 0;
   
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   

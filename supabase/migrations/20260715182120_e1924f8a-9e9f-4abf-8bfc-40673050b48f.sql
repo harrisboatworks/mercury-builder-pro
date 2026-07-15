@@ -16,7 +16,7 @@ INSERT INTO public.promotions (
   'Save up to $700',
   'Save up to $700 CAD on eligible new Mercury FourStroke repower outboards (2.5 to 425 HP), plus promotional financing as low as 2.99% for 24 months on approved credit. Rebate applied by the dealer as a credit. Available July 15 to August 31, 2026.',
   0,
-  700,
+  0,
   0,
   '/lovable-uploads/mercury-summer-savings-rebate-2026-banner-1920x675.jpg',
   'Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026',

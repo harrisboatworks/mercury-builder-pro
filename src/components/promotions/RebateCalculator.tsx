@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getRebateTierForHP, type RebateTier } from '@/lib/promotion-discounts';
 
 // Actual Mercury FourStroke HP steps. The slider snaps to these so the
 // calculator can never land on a non-existent HP (which would show $0).
@@ -23,11 +24,7 @@ function snapToMercuryHP(value: number): number {
   return closest;
 }
 
-interface RebateRow {
-  hp_min: number;
-  hp_max: number;
-  rebate: number;
-}
+type RebateRow = RebateTier;
 
 interface RebateCalculatorProps {
   matrix: RebateRow[];
@@ -51,14 +48,10 @@ export function RebateCalculator({
     return { minHP: min, maxHP: max };
   }, [matrix]);
 
-  const currentRebate = useMemo(() => {
-    const match = matrix.find(row => selectedHP >= row.hp_min && selectedHP <= row.hp_max);
-    return match ? match.rebate : 0;
-  }, [matrix, selectedHP]);
-
   const currentTier = useMemo(() => {
-    return matrix.find(row => selectedHP >= row.hp_min && selectedHP <= row.hp_max);
+    return getRebateTierForHP(matrix, selectedHP);
   }, [matrix, selectedHP]);
+  const currentRebate = currentTier?.rebate ?? 0;
 
   const handleSliderChange = (value: number[]) => {
     const newHP = snapToMercuryHP(value[0]);
@@ -153,7 +146,7 @@ export function RebateCalculator({
           </div>
           <div className="grid grid-cols-2 gap-2">
             {matrix.map((row, index) => {
-              const isActive = selectedHP >= row.hp_min && selectedHP <= row.hp_max;
+              const isActive = currentTier === row;
               return (
                 <button
                   key={index}
