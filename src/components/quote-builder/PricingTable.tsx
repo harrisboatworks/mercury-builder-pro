@@ -200,21 +200,17 @@ export function PricingTable({
               </>
             )}
             
-            {/* Promotional Savings */}
+            {/* Promotional Savings — matrix rebate is always applied (layered offer). */}
             {pricing.promoValue > 0 && (
               <LineItemRow
                 label={
-                  selectedPromoOption === 'no_payments' 
-                    ? 'Warranty + No Payments'
-                    : selectedPromoOption === 'special_financing'
-                    ? `Warranty + ${selectedPromoValue || '2.99%'} APR`
-                    : selectedPromoOption === 'cash_rebate'
-                    ? `Warranty + ${selectedPromoValue} Rebate`
-                    : 'Promotional Savings'
+                  selectedPromoOption === 'special_financing'
+                    ? `Mercury Rebate + ${selectedPromoValue || '2.99%'} APR`
+                    : 'Mercury Rebate'
                 }
                 amount={pricing.promoValue}
                 isDiscount
-                description="Dealer Promotion"
+                description="Factory rebate applied"
                 className="pl-2 border-l-2 border-repower-mercury-red/30"
               />
             )}

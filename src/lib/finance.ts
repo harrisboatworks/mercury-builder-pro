@@ -162,10 +162,17 @@ export const calculatePaymentWithFrequency = (
 };
 
 /**
- * Calculate monthly payment with smart term selection (backward compatibility)
+ * Calculate monthly payment with smart term selection (backward compatibility).
+ * Accepts an optional term override so a customer-selected promo term
+ * (e.g. 2.99% for 24 months) drives the payment math instead of the
+ * price-tier default.
  */
-export const calculateMonthlyPayment = (price: number, promoRate: number | null = null) => {
-  return calculatePaymentWithFrequency(price, 'monthly', promoRate);
+export const calculateMonthlyPayment = (
+  price: number,
+  promoRate: number | null = null,
+  termMonthsOverride: number | null = null,
+) => {
+  return calculatePaymentWithFrequency(price, 'monthly', promoRate, termMonthsOverride);
 };
 
 /**

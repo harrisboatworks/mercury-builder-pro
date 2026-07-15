@@ -332,13 +332,16 @@ export default function QuoteSummaryPage() {
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
   const motorDiscount = state.frozenPricing?.motorDiscount ?? (motorMSRP - motorSalePrice);
   
-  // Calculate promo savings including rebate if selected
+  // Calculate promo savings including rebate.
+  // Matrix rebates ALWAYS apply when eligible (regardless of whether the
+  // customer selected "cash_rebate" or "special_financing") — the Summer
+  // Savings offer is layered: rebate + optional promo financing, never
+  // either/or. getTotalPromotionalSavings already skips promos that carry
+  // a matrix, so there is no double-count with discount_fixed_amount.
   const basePromoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
-  const rebateAmount = state.selectedPromoOption === 'cash_rebate' 
-    ? (getRebateForHP?.(hp) || 0) 
-    : 0;
+  const rebateAmount = (getRebateForHP?.(hp) || 0);
   const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
-  
+
   // Live (non-frozen) values for stale-quote comparison
   const liveMotorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
   const livePromoSavings = basePromoSavings + rebateAmount;
@@ -526,7 +529,16 @@ export default function QuoteSummaryPage() {
       canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
 
   const amountToFinance = getFinanceableAmount(displayPricing.subtotal, 0.13, DEALERPLAN_FEE);
-  const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
+  // If the customer opted in to promotional financing on PromoSelectionPage,
+  // use that rate/term for the monthly payment displayed in the summary.
+  // Otherwise fall back to the TD "Always On" promo rate (unchanged).
+  const usePromoFinancing =
+    state.selectedPromoOption === 'special_financing' &&
+    state.selectedPromoRate != null &&
+    state.selectedPromoTerm != null;
+  const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (promo?.rate || null);
+  const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
+  const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
 
   // CTA handlers
   const noMotorSelected = !state.motor;

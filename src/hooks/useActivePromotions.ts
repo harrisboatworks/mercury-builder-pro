@@ -103,8 +103,15 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
   };
 
   // Helper function to calculate total dollar savings from all promotions
+  // GUARD: if a promo defines a rebate matrix (HP-based), we IGNORE its
+  // discount_fixed_amount and discount_percentage here. The matrix rebate is
+  // resolved separately via getRebateForHP() so we never double-count.
   const getTotalPromotionalSavings = (basePrice: number = 0) => {
     return promotions.reduce((total, promo) => {
+      const hasMatrix = !!promo.promo_options?.options?.find(
+        (o) => o.id === 'cash_rebate' && Array.isArray(o.matrix) && o.matrix.length > 0
+      );
+      if (hasMatrix) return total;
       const fixedAmount = promo.discount_fixed_amount || 0;
       const percentAmount = promo.discount_percentage ? (basePrice * promo.discount_percentage / 100) : 0;
       return total + fixedAmount + percentAmount;
