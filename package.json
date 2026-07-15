@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-markdown-twins.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
+    "build": "node scripts/generate-markdown-twins.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
@@ -22,6 +22,7 @@
     "check:schema-org": "node scripts/validate-schema-org.mjs",
     "bump:blog-dates": "node scripts/bump-blog-date-modified.mjs",
     "post-deploy:rich-results": "node scripts/post-deploy-rich-results.mjs",
+    "sync:agent-facts": "node scripts/sync-agent-facts.mjs",
     "generate:canonical-pricing": "node scripts/generate-canonical-pricing.mjs",
     "generate:motor-markdown": "node scripts/generate-motor-markdown.mjs",
     "generate:responsive-variants": "node scripts/generate-responsive-variants.mjs",

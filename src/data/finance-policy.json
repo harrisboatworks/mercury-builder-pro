@@ -1,0 +1,13 @@
+{
+  "minimumCad": 5000,
+  "dealerplanFeeCad": 349,
+  "standardApr": {
+    "under10000": 8.99,
+    "atLeast10000": 7.99
+  },
+  "mercuryPromo": {
+    "name": "TD Always On",
+    "apr": 5.48,
+    "endsAt": "2026-12-31T23:59:59"
+  }
+}

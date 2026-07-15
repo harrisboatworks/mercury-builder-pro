@@ -1,6 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import googlePlaces from '@/data/google-places-cache.json';
 
 const LIVE_AGGREGATE_RATING = {
@@ -75,8 +75,8 @@ export function GlobalSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.121684,
-          "longitude": -78.241502
+          "latitude": BUSINESS_GEO.latitude,
+          "longitude": BUSINESS_GEO.longitude
         },
         "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS,

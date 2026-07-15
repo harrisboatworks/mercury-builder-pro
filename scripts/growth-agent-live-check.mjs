@@ -1,5 +1,12 @@
+import { readFileSync } from "node:fs";
+
 const SITE_URL = process.env.MERCURY_SITE_URL || "https://www.mercuryrepower.ca";
 const HARRIS_SITE_URL = process.env.HARRIS_SITE_URL || "https://harrisboatworks.ca";
+const GOOGLE_PLACES_URL = process.env.GOOGLE_PLACES_URL || "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/google-places";
+const SKIP_AI_ACCESS_MATRIX = process.env.GROWTH_SKIP_AI_ACCESS_MATRIX === "1";
+const FINANCE_POLICY = JSON.parse(
+  readFileSync(new URL("../src/data/finance-policy.json", import.meta.url), "utf8"),
+);
 
 const AI_CRAWLER_ALLOWLIST = [
   "GPTBot",
@@ -72,7 +79,9 @@ const CHECKS = [
   { path: "/catalog.md", required: true, signals: ["CAD", "pickup", "Gores Landing", ["public-motors-api", "build_quote"]] },
   { path: "/.well-known/mcp.json", required: true, signals: ["build_quote"] },
   { path: "/.well-known/brand.json", required: true, signals: ["Harris Boat Works"] },
+  { path: "/.well-known/ucp", required: true, signals: ["dev.ucp.shopping.checkout", "quote"] },
   { path: "/.well-known/ai.txt", required: true, signals: [["MCP", "agent-mcp-server"], ["public-motors-api", "build_quote"], "CAD", "Ontario", "Gores Landing", "pickup", ["install", "installation"]] },
+  { path: "/api/agents/motors.md", required: true, signals: ["Mercury Outboard Catalog", "special-order only", "CAD"] },
   { path: "/pricing-reference", required: true, signals: ["Mercury", "Ontario", "CAD", "Gores Landing"] },
   { path: "/pricing-reference.md", required: true, signals: ["CAD", "pickup_only", "Gores Landing", "motor_count"] },
 ];
@@ -103,6 +112,7 @@ const AI_ACCESS_PATHS = [
   "/catalog.md",
   "/pricing-reference",
   "/pricing-reference.md",
+  "/api/agents/motors.md",
   "/repower",
   "/blog/best-mercury-dealer-ontario-hbw-difference",
   "/zh",
@@ -110,6 +120,117 @@ const AI_ACCESS_PATHS = [
 
 function urlFor(path) {
   return new URL(path, SITE_URL).toString();
+}
+
+async function fetchArtifact(path, options = {}) {
+  const url = path.startsWith("http") ? path : urlFor(path);
+  try {
+    const response = await fetch(url, {
+      redirect: "follow",
+      ...options,
+      headers: { "User-Agent": "MercuryRepower-GrowthAgentLiveCheck/1.0", ...(options.headers || {}) },
+    });
+    return { path, url: response.url, status: response.status, ok: response.ok, text: await response.text() };
+  } catch (error) {
+    return { path, url, status: 0, ok: false, text: "", error: error.message };
+  }
+}
+
+function parseJsonArtifact(artifact, failures) {
+  try {
+    return JSON.parse(artifact.text);
+  } catch (error) {
+    failures.push(`${artifact.path} is not valid JSON: ${error.message}`);
+    return null;
+  }
+}
+
+function parsePricingRows(markdown) {
+  const rows = new Map();
+  const rowRx = /^\|\s*[\d.]+\s*\|\s*[^|]+?\s*\|\s*([A-Z0-9]+)\s*\|.*?\|\s*\$([\d,]+)\s*_\(MSRP \$([\d,]+)\)_\s*\|/gm;
+  for (const match of markdown.matchAll(rowRx)) {
+    rows.set(match[1], {
+      sellingPrice: Number(match[2].replace(/,/g, "")),
+      msrp: Number(match[3].replace(/,/g, "")),
+    });
+  }
+  return rows;
+}
+
+function semanticArtifactAssertion(artifacts) {
+  const failures = [];
+  for (const artifact of Object.values(artifacts)) {
+    if (!artifact.ok) failures.push(`${artifact.path} returned ${artifact.status || artifact.error || "an error"}`);
+  }
+  if (failures.length > 0) return { ok: false, failures };
+
+  const brand = parseJsonArtifact(artifacts.brand, failures);
+  const mcp = parseJsonArtifact(artifacts.mcp, failures);
+  const places = parseJsonArtifact(artifacts.places, failures);
+  const motors = parseJsonArtifact(artifacts.motors, failures);
+  if (!brand || !mcp || !places || !motors) return { ok: false, failures };
+
+  const placeLat = Number(places?.location?.latitude);
+  const placeLng = Number(places?.location?.longitude);
+  const geoPairs = [
+    ["brand.json", Number(brand?.geography?.headquarters?.lat), Number(brand?.geography?.headquarters?.lng)],
+    ["mcp.json", Number(mcp?.geography?.originLat), Number(mcp?.geography?.originLng)],
+  ];
+  if (!Number.isFinite(placeLat) || !Number.isFinite(placeLng)) {
+    failures.push("Google Places response is missing canonical coordinates");
+  } else {
+    for (const [label, lat, lng] of geoPairs) {
+      if (Math.abs(lat - placeLat) > 0.000001 || Math.abs(lng - placeLng) > 0.000001) {
+        failures.push(`${label} coordinates ${lat},${lng} do not match Google Places ${placeLat},${placeLng}`);
+      }
+    }
+  }
+
+  const standards = Array.isArray(brand.standards) ? brand.standards.join(" ") : "";
+  if (!/Universal Commerce Protocol.*implemented/i.test(standards) || /conformance pending/i.test(standards)) {
+    failures.push("brand.json does not describe UCP as implemented without stale pending-conformance text");
+  }
+
+  const rawSupabaseAgentUrl = /https?:\/\/eutsoqdpjurknjsshxes\.supabase\.co\/functions\/v1\/(?:motors-md|public-motors-api|public-quote-api|agent-mcp-server|ucp-checkout)\b/i;
+  for (const [label, artifact] of [["agents", artifacts.agents], ["llms.txt", artifacts.llms], ["brand.json", artifacts.brand], ["mcp.json", artifacts.mcp]]) {
+    if (rawSupabaseAgentUrl.test(artifact.text)) failures.push(`${label} exposes a raw Supabase agent endpoint`);
+  }
+  if (!artifacts.agents.text.includes("/api/agents/motors.md")) failures.push("agents page does not advertise /api/agents/motors.md");
+
+  if (/We do (?:\*\*)?not(?:\*\*)? sell(?: or service)? Mercury Verado|We do not sell Verado/i.test(artifacts.motorsMd.text)) {
+    failures.push("motors markdown still says Harris Boat Works does not sell Verado");
+  }
+  if (!/Verado is (?:\*\*)?special-order only/i.test(artifacts.motorsMd.text)) {
+    failures.push("motors markdown is missing the Verado special-order-only rule");
+  }
+
+  const promoActive = Date.now() <= new Date(FINANCE_POLICY.mercuryPromo.endsAt).getTime();
+  if (promoActive && !artifacts.llms.text.includes(`${FINANCE_POLICY.mercuryPromo.apr}% APR`)) {
+    failures.push(`llms.txt is missing the active ${FINANCE_POLICY.mercuryPromo.apr}% APR headline`);
+  }
+  if (promoActive && /Standard financing (?:rates )?(?:start|starts) (?:from|at)\s+7\.99%/i.test(artifacts.llms.text)) {
+    failures.push("llms.txt incorrectly frames 7.99% as current while the promo is active");
+  }
+
+  const pricingRows = parsePricingRows(artifacts.pricing.text);
+  const liveMotors = Array.isArray(motors.motors) ? motors.motors : [];
+  for (const motor of liveMotors) {
+    const row = pricingRows.get(String(motor.modelNumber || "").trim());
+    if (!row) {
+      failures.push(`pricing-reference.md is missing live model ${motor.modelNumber || motor.modelDisplay}`);
+      continue;
+    }
+    if (row.sellingPrice !== Number(motor.sellingPrice) || row.msrp !== Number(motor.msrp)) {
+      failures.push(`pricing-reference.md price drift for ${motor.modelNumber}: ${row.sellingPrice}/${row.msrp} vs API ${motor.sellingPrice}/${motor.msrp}`);
+    }
+  }
+
+  return {
+    ok: failures.length === 0,
+    failures,
+    canonicalGeo: Number.isFinite(placeLat) && Number.isFinite(placeLng) ? { latitude: placeLat, longitude: placeLng } : null,
+    liveMotorPriceComparisons: liveMotors.length,
+  };
 }
 
 async function fetchCheck(check) {
@@ -162,6 +283,9 @@ function robotsAssertion(url, text) {
 
   if (/Cloudflare Managed/i.test(text)) {
     failures.push("Cloudflare Managed content block is present");
+  }
+  if (/^Disallow:\s*\/api\/\s*$/mi.test(text) && !/^Allow:\s*\/api\/agents\/\s*$/mi.test(text)) {
+    failures.push("/api/ is disallowed without an Allow: /api/agents/ exception");
   }
 
   for (const rawLine of text.split(/\r?\n/)) {
@@ -333,15 +457,37 @@ async function fetchAiTxtContentAssertion(siteUrl) {
 }
 
 const results = await Promise.all(CHECKS.map(fetchCheck));
+const [brandArtifact, mcpArtifact, llmsArtifact, agentsArtifact, motorsMdArtifact, pricingArtifact, motorsArtifact, placesArtifact] = await Promise.all([
+  fetchArtifact("/.well-known/brand.json"),
+  fetchArtifact("/.well-known/mcp.json"),
+  fetchArtifact("/llms.txt"),
+  fetchArtifact("/agents"),
+  fetchArtifact("/api/agents/motors.md"),
+  fetchArtifact("/pricing-reference.md"),
+  fetchArtifact("/api/agents/motors"),
+  fetchArtifact(GOOGLE_PLACES_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" }),
+]);
+const semanticAssertions = semanticArtifactAssertion({
+  brand: brandArtifact,
+  mcp: mcpArtifact,
+  llms: llmsArtifact,
+  agents: agentsArtifact,
+  motorsMd: motorsMdArtifact,
+  pricing: pricingArtifact,
+  motors: motorsArtifact,
+  places: placesArtifact,
+});
 const robotsAssertions = await Promise.all([
   fetchRobotsAssertion(SITE_URL, true),
   fetchRobotsAssertion(HARRIS_SITE_URL, false),
 ]);
-const aiAccessChecks = await Promise.all(
-  AI_ACCESS_PATHS.flatMap((path) =>
-    AI_ACCESS_USER_AGENTS.map((userAgent) => fetchAiAccessCheck(path, userAgent)),
-  ),
-);
+const aiAccessChecks = SKIP_AI_ACCESS_MATRIX
+  ? []
+  : await Promise.all(
+      AI_ACCESS_PATHS.flatMap((path) =>
+        AI_ACCESS_USER_AGENTS.map((userAgent) => fetchAiAccessCheck(path, userAgent)),
+      ),
+    );
 const aiTxtContentAssertion = await fetchAiTxtContentAssertion(SITE_URL);
 const sitemap = results.find((result) => result.path === "/sitemap.xml");
 let sitemapUrls = null;
@@ -360,6 +506,12 @@ const robotsFailures = robotsAssertions.filter((result) => result.required && re
 const externalRobotsWarnings = robotsAssertions.filter((result) => !result.required && result.reachable && !result.ok);
 const aiAccessFailures = aiAccessChecks.filter((result) => !result.ok);
 const aiTxtContentFailures = aiTxtContentAssertion.ok ? [] : [aiTxtContentAssertion];
+const semanticFailures = semanticAssertions.ok ? [] : semanticAssertions.failures.map((failure) => ({
+  path: "semantic-agent-facts",
+  ok: false,
+  status: 0,
+  error: failure,
+}));
 
 const output = {
   site: SITE_URL,
@@ -369,13 +521,15 @@ const output = {
     hardFailures.length === 0 &&
     robotsFailures.length === 0 &&
     aiAccessFailures.length === 0 &&
-    aiTxtContentFailures.length === 0,
-  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures, ...aiTxtContentFailures],
+    aiTxtContentFailures.length === 0 &&
+    semanticFailures.length === 0,
+  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures, ...aiTxtContentFailures, ...semanticFailures],
   results,
   robotsAssertions,
   externalRobotsWarnings,
   aiAccessChecks,
   aiTxtContentAssertion,
+  semanticAssertions,
   searchFocus: [
     "Mercury outboard prices Ontario",
     "Mercury repower cost Ontario",

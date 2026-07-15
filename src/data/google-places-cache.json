@@ -1,6 +1,11 @@
 {
   "ratingValue": "4.7",
   "reviewCount": "317",
+  "location": {
+    "latitude": 44.121684,
+    "longitude": -78.241502
+  },
+  "address": "5369 Harris Boatworks Rd, Hamilton, ON K0K 2E0, Canada",
   "weekdayText": [
     "Monday: 8:00 AM – 5:00 PM",
     "Tuesday: 8:00 AM – 5:00 PM",
@@ -54,6 +59,6 @@
       "closes": "16:00"
     }
   ],
-  "fetchedAt": "2026-07-14T18:32:53.775Z",
+  "fetchedAt": "2026-07-15T16:02:25.597Z",
   "source": "google-places-edge"
 }

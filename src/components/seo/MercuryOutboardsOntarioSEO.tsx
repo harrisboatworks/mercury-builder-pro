@@ -1,6 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '@/data/mercuryOutboardsOffers.js';
 import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
@@ -88,7 +88,7 @@ export function MercuryOutboardsOntarioSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
+        "geo": { "@type": "GeoCoordinates", "latitude": BUSINESS_GEO.latitude, "longitude": BUSINESS_GEO.longitude },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },

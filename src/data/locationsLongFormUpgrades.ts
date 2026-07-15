@@ -5,6 +5,7 @@
 // the SEO brief. No em dashes.
 
 import type { LocationLongForm } from './locationsLongForm';
+import { BUSINESS_COORDINATES_TEXT, BUSINESS_GEO } from '../lib/companyInfo';
 
 const VISIT =
   "Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 · Phone (905) 342-2153 · Family-owned since 1947 · Mercury Premier Dealer, selling Mercury since 1965.\n\nWe're the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947. The same techs who write your quote are the ones who rig and water-test the motor on Rice Lake.";
@@ -19,7 +20,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       "Harris Boat Works sits on the south shore of Rice Lake at 5369 Harris Boat Works Rd in Gores Landing, ON. We're the lake's Mercury Premier Dealer, selling Mercury since 1965 and a family-owned repower shop since 1947. If your boat already lives on Rice Lake, your Mercury repower starts and ends on the same water. We quote, rig, install, and water-test every job on Rice Lake before pickup. Full repowers typically run $11,000–$40,000 CAD. No shipping, customers come to Gores Landing for pickup, usually within a 90-minute drive.",
     keyFacts: [
       'Lake: Rice Lake, roughly 30 km long, south shore',
-      'HBW coordinates: 44.1147, -78.2564',
+      `HBW coordinates: ${BUSINESS_COORDINATES_TEXT}`,
       'Distance from HBW to the lake: 0 km, we\'re on it',
       'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Typical full repower: $11,000–$40,000 CAD',
@@ -58,7 +59,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     whatWeSeeAtHBW:
       'Rice Lake is our home water. We run boats across it every week, we know its weed lines and shallow shoulders, and it is the lake every Mercury we rig gets water-tested on. When we prop a boat, we are propping it for water we actually know.',
     faqs: [
-      { question: 'Where on Rice Lake is Harris Boat Works?', answer: "We're on the south shore in Gores Landing, at 5369 Harris Boat Works Rd, coordinates 44.1147, -78.2564. The water test happens on Rice Lake itself, off our own dock." },
+      { question: 'Where on Rice Lake is Harris Boat Works?', answer: `We're on the south shore in Gores Landing, at 5369 Harris Boat Works Rd, coordinates ${BUSINESS_COORDINATES_TEXT}. The water test happens on Rice Lake itself, off our own dock.` },
       { question: 'Do you deliver Mercury motors to Rice Lake cottages?', answer: "No. We're pickup-only at Gores Landing. Every Mercury we rig is water-tested on Rice Lake first, then the customer drives to us for pickup." },
       { question: 'What HP Mercury is most common on Rice Lake?', answer: 'Rice Lake is shallow and weedy in summer, so mid-range FourStroke 60–115 HP and Pro XS 115–175 HP are the most common repowers. Tiller FourStroke 9.9–25 HP shows up on smaller aluminum boats. Prop selection matters more than raw horsepower here.' },
       { question: 'How long does a Rice Lake repower take?', answer: 'Your boat is with us for 2 to 5 days, drop-off to pickup. If the motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. January through April is the busiest booking window for spring launch, ice-out on Rice Lake is typically mid-April.' },
@@ -70,8 +71,8 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       { label: 'Bewdley', href: '/locations/bewdley' },
       { label: 'Harris Boat Works, a family marina in Gores Landing serving boaters since 1947', href: 'https://www.harrisboatworks.ca/aboutus' },
     ],
-    lat: 44.1147,
-    lng: -78.2564,
+    lat: BUSINESS_GEO.latitude,
+    lng: BUSINESS_GEO.longitude,
     heroImage: '/lovable-uploads/locations-rice-lake-mercury-repower-hero.png',
     heroAlt: 'Mercury repower on Rice Lake at Harris Boat Works, Gores Landing, Ontario.',
     metaDescription:
@@ -91,7 +92,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       'Drive time to HBW: 45–60 min from most Kawartha towns',
       'Lakes served: Pigeon, Sturgeon, Cameron, Balsam, Buckhorn, Stony',
       'Typical full repower: $11,000–$40,000 CAD',
-      'HBW coordinates: 44.1147, -78.2564',
+      `HBW coordinates: ${BUSINESS_COORDINATES_TEXT}`,
       'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
     ],
     sections: [
@@ -159,7 +160,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     keyFacts: [
       'Drive time: about 35 minutes south of Peterborough',
       'Route: Highway 28 South to Gores Landing on Rice Lake',
-      'HBW coordinates: 44.1147, -78.2564',
+      `HBW coordinates: ${BUSINESS_COORDINATES_TEXT}`,
       'Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer',
       'Roughly 1,700 service work orders per year',
       'Every repower water tested on Rice Lake before pickup',
@@ -247,7 +248,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
     keyFacts: [
       'Drive time: ~25 min north to Gores Landing',
       'Distance: ~28 km on county roads',
-      'HBW coordinates: 44.1147, -78.2564',
+      `HBW coordinates: ${BUSINESS_COORDINATES_TEXT}`,
       'Family-owned since 1947, Mercury Premier Dealer, selling Mercury since 1965',
       'Typical full repower: $11,000–$40,000 CAD',
       'Closest south-side city base to Rice Lake',

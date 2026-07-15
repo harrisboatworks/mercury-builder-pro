@@ -48,6 +48,7 @@ marked.setOptions({ gfm: true, breaks: false });
 let GOOGLE_PLACES_CACHE = {
   ratingValue: '4.6',
   reviewCount: '301',
+  location: { latitude: 44.121684, longitude: -78.241502 },
   openingHoursSpecification: [],
 };
 try {
@@ -65,6 +66,10 @@ const LIVE_AGGREGATE_RATING = {
 const LIVE_OPENING_HOURS = Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
   ? GOOGLE_PLACES_CACHE.openingHoursSpecification
   : [];
+const LIVE_BUSINESS_GEO = {
+  latitude: Number(GOOGLE_PLACES_CACHE.location?.latitude) || 44.121684,
+  longitude: Number(GOOGLE_PLACES_CACHE.location?.longitude) || -78.241502,
+};
 
 // HTML-escape a string for safe insertion into prerendered markup.
 function escHtml(v) {
@@ -1029,8 +1034,8 @@ function homepageSchema() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1456,
-          "longitude": -78.2542
+          "latitude": LIVE_BUSINESS_GEO.latitude,
+          "longitude": LIVE_BUSINESS_GEO.longitude
         },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Rice Lake" },
@@ -1189,8 +1194,8 @@ function contactPageSchema() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1456,
-          "longitude": -78.2542
+          "latitude": LIVE_BUSINESS_GEO.latitude,
+          "longitude": LIVE_BUSINESS_GEO.longitude
         },
         "contactPoint": [
           {
@@ -1255,7 +1260,7 @@ function repowerSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
+        "geo": { "@type": "GeoCoordinates", "latitude": LIVE_BUSINESS_GEO.latitude, "longitude": LIVE_BUSINESS_GEO.longitude },
         "foundingDate": "1947",
         "sameAs": BUSINESS_SAME_AS
       },
@@ -2440,7 +2445,7 @@ function mercuryOutboardsOntarioSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1456, "longitude": -78.2542 },
+        "geo": { "@type": "GeoCoordinates", "latitude": LIVE_BUSINESS_GEO.latitude, "longitude": LIVE_BUSINESS_GEO.longitude },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
@@ -4761,7 +4766,7 @@ const routes = [
         '<ul>' +
           '<li><code>GET</code> <a href="https://www.mercuryrepower.ca/api/agents/motors">https://www.mercuryrepower.ca/api/agents/motors</a>: Current Mercury inventory as JSON.</li>' +
           '<li><code>POST</code> <a href="https://www.mercuryrepower.ca/api/agents/quote">https://www.mercuryrepower.ca/api/agents/quote</a>: Submit a structured quote request (action: build_quote).</li>' +
-          '<li><code>GET</code> <a href="https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md">https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md</a>: Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
+          '<li><code>GET</code> <a href="https://www.mercuryrepower.ca/api/agents/motors.md">https://www.mercuryrepower.ca/api/agents/motors.md</a>: Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
         '</ul>' +
         '<p>All endpoints return standard HTTP status codes and CORS headers.</p>' +
       '</section>' +

@@ -1,12 +1,14 @@
+import financePolicy from '@/data/finance-policy.json';
+
 /**
  * Minimum amount eligible for financing
  */
-export const FINANCING_MINIMUM = 5000;
+export const FINANCING_MINIMUM = financePolicy.minimumCad;
 
 /**
  * Dealerplan processing fee (mandatory for all financed purchases)
  */
-export const DEALERPLAN_FEE = 349;
+export const DEALERPLAN_FEE = financePolicy.dealerplanFeeCad;
 
 /**
  * Get default financing rate based on price tier
@@ -14,20 +16,22 @@ export const DEALERPLAN_FEE = 349;
  * $10,000 and up: 7.99% APR
  */
 export const getDefaultFinancingRate = (price: number): number => {
-  return price < 10000 ? 8.99 : 7.99;
+  return price < 10000
+    ? financePolicy.standardApr.under10000
+    : financePolicy.standardApr.atLeast10000;
 };
 
 /**
  * Mercury Canada TD "Always On" promotional financing rate (APR, % units).
  * Headline rate quoted across the site. Update here to update everywhere.
  */
-export const MERCURY_PROMO_APR = 5.48;
+export const MERCURY_PROMO_APR = financePolicy.mercuryPromo.apr;
 
 /**
  * Promo end date (local). After this instant, helpers below revert to the
  * standard tier rate (7.99% APR). Update on renewal.
  */
-export const MERCURY_PROMO_END_ISO = '2026-12-31T23:59:59';
+export const MERCURY_PROMO_END_ISO = financePolicy.mercuryPromo.endsAt;
 
 /**
  * Current standing Mercury financing rate (APR, % units).
@@ -38,7 +42,7 @@ export const MERCURY_PROMO_END_ISO = '2026-12-31T23:59:59';
 export const getCurrentMercuryFinancingRate = (): number => {
   const now = Date.now();
   const end = new Date(MERCURY_PROMO_END_ISO).getTime();
-  return now <= end ? MERCURY_PROMO_APR : 7.99;
+  return now <= end ? MERCURY_PROMO_APR : financePolicy.standardApr.atLeast10000;
 };
 
 /**
