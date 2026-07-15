@@ -3,6 +3,26 @@ import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Actual Mercury FourStroke HP steps. The slider snaps to these so the
+// calculator can never land on a non-existent HP (which would show $0).
+const MERCURY_HP_STEPS = [
+  2.5, 3.5, 4, 5, 6, 8, 9.9, 15, 20, 25, 30, 40, 50, 60, 75, 90, 115, 150, 175,
+  200, 225, 250, 300, 350, 400, 425,
+] as const;
+
+function snapToMercuryHP(value: number): number {
+  let closest = MERCURY_HP_STEPS[0];
+  let bestDist = Math.abs(value - closest);
+  for (const step of MERCURY_HP_STEPS) {
+    const d = Math.abs(value - step);
+    if (d < bestDist) {
+      bestDist = d;
+      closest = step;
+    }
+  }
+  return closest;
+}
+
 interface RebateRow {
   hp_min: number;
   hp_max: number;
