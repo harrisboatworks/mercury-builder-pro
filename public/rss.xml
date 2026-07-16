@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Harris Boat Works Blog</title>
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 10 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
@@ -13,589 +13,404 @@
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
     <item>
+      <title><![CDATA[Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
+    </item>
+    <item>
+      <title><![CDATA[Is Mercury Still Reliable in 2026? A Dealer's Honest Answer]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026</guid>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a...]]></description>
+      <category><![CDATA[Mercury Outboards]]></category>
+    </item>
+    <item>
+      <title><![CDATA[Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull</guid>
+      <pubDate>Sun, 12 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Command Thrust started as BigFoot in the 90s, built for pontoons. Our back-to-back lake test showed 6 mph lost on a V-hull. The honest guide to who actually needs CT.]]></description>
+      <category><![CDATA[Mercury Outboards]]></category>
+    </item>
+    <item>
       <title><![CDATA[Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)]]></title>
       <link>https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario</link>
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario</guid>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 09 Jul 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Mercury's 2027 model year is here. FourStroke, Pro XS, SeaPro, and special-order Verado explained by an Ontario Premier dealer, with honest pricing notes.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png" type="image/png"/>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes]]></title>
-      <link>https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026</guid>
-      <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A local's guide to Rice Lake, launches, the sunken railway hazard, fishing seasons (FMZ 17), launches compared, and what makes this lake different. By.]]></description>
-      <category>Lifestyle</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-rice-lake-boating-guide.png" type="image/png"/>
+      <title><![CDATA[Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat</guid>
+      <pubDate>Mon, 06 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value.]]></description>
+      <category><![CDATA[Repower]]></category>
     </item>
     <item>
-      <title><![CDATA[Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating, what to do in the next 60 seconds, what to check at the dock, and how.]]></description>
-      <category>Troubleshooting</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-outboard-overheating.png" type="image/png"/>
+      <title><![CDATA[The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them]]></title>
+      <link>https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide</guid>
+      <pubDate>Fri, 03 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW.]]></description>
+      <category><![CDATA[Service & Troubleshooting]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.]]></description>
-      <category>Mercury Outboards</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-40-vs-60-hp-comparison.png" type="image/png"/>
+      <title><![CDATA[Do You Need a Licence to Rent a Boat in Ontario? (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake.]]></description>
+      <category><![CDATA[Boating Lifestyle]]></category>
     </item>
     <item>
-      <title><![CDATA[What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[What's your outboard worth on trade? How HBW evaluates outboard trades, what helps and hurts value, 2026 ranges by HP class, and how trade credit saves you HST on a repower.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-40-vs-60-hp-comparison.png" type="image/png"/>
+      <title><![CDATA[First Time Renting a Boat? What We Tell Every Renter at Our Dock]]></title>
+      <link>https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Never driven a boat? Here's the exact orientation we give every first-time renter at our Rice Lake dock: driving, docking, wind, and what to do if something goes wrong.]]></description>
+      <category><![CDATA[Boating Lifestyle]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury SmartCraft Connect compatibility (2004+ and 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding to your motor.]]></description>
-      <category>Mercury Outboards</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-controls-rigging-guide.png" type="image/png"/>
+      <title><![CDATA[Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out]]></title>
+      <link>https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends.]]></description>
+      <category><![CDATA[Boating Lifestyle]]></category>
     </item>
     <item>
-      <title><![CDATA[Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan]]></title>
-      <link>https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.]]></description>
-      <category>Lifestyle</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-trent-severn-waterway-2026.png" type="image/png"/>
+      <title><![CDATA[Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Real Ontario numbers for a Mercury 100-hour or annual service, from 4,160 work orders: flat-rate labour by HP class, median parts, and what's included.]]></description>
+      <category><![CDATA[Service]]></category>
     </item>
     <item>
-      <title><![CDATA[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier]]></title>
-      <link>https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Real CAD prices for Mercury outboards in Ontario, by HP tier (portable kickers to V6 repowers), plus what's actually included, how MSRP works, and what installed cost looks like at a Mercury Premier dealer.]]></description>
-      <category>Mercury Outboards</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-ontario-mercury-price-guide.png" type="image/png"/>
+      <title><![CDATA[Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.]]></description>
+      <category><![CDATA[Service]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Controls & Rigging Guide (2026): What You Actually Need by HP Class]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario, by motor class. Real CAD ranges and what HBW includes in a quote.]]></description>
-      <category>Mercury Outboards</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-controls-rigging-guide.png" type="image/png"/>
+      <title><![CDATA[Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance.]]></description>
+      <category><![CDATA[Service]]></category>
     </item>
     <item>
-      <title><![CDATA[Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario</guid>
-      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A practical Ontario buyer's checklist for used outboards, tell-tale, gearcase oil, compression, what to walk away from. Written by a third-generation.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-used-outboard-buying-guide.png" type="image/png"/>
+      <title><![CDATA[Renting vs Owning a Boat in Ontario: The Honest Math (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses.]]></description>
+      <category><![CDATA[Boating Lifestyle]]></category>
     </item>
     <item>
-      <title><![CDATA[The Best Mercury Outboard for a Family Runabout. HBW's Honest Picks (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts</guid>
-      <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case, with real Ontario pricing.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero.png" type="image/png"/>
+      <title><![CDATA[Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 9-boat fleet, what's included, real fuel costs, licence rules, and how booking works.]]></description>
+      <category><![CDATA[Boating Lifestyle]]></category>
     </item>
     <item>
-      <title><![CDATA[Cold-Water Boating Safety in Ontario: What to Know]]></title>
-      <link>https://www.mercuryrepower.ca/blog/late-season-boating-safety</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/late-season-boating-safety</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall, and any cold-water conditions.]]></description>
-      <category>Tips</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Late_Season_Boating_Safety_Hero.png" type="image/png"/>
+      <title><![CDATA[Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[What spring commissioning really costs in Ontario, from 9,540 spring work orders: the flat startup rate, what's included, and why the fall service decides the spring...]]></description>
+      <category><![CDATA[Service]]></category>
     </item>
     <item>
-      <title><![CDATA[Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-why-dealers-hide-prices.png" type="image/png"/>
+      <title><![CDATA[Canada Day on Rice Lake: Boating Guide]]></title>
+      <link>https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend</guid>
+      <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works.]]></description>
+      <category><![CDATA[Local Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Outboard Rigging Costs Explained (Ontario 2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repower</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-rigging-costs.png" type="image/png"/>
+      <title><![CDATA[Mercury Outboard Overheating at High Speed: What to Check]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed</guid>
+      <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Your Mercury overheat alarm fires at high speed but not at idle? Here's the 5-step check, from intake screens to the poppet valve, plus when to bring it in.]]></description>
+      <category><![CDATA[Service]]></category>
     </item>
     <item>
-      <title><![CDATA[What Happens During a Mercury Repower (Step-by-Step Process)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking, drop-off, removal of old motor, transom and rigging inspection, installation of new motor and rigging, sea-trial with prop testing, final adjustments, and pickup with break-in coaching. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repower</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-what-happens-during-repower.png" type="image/png"/>
+      <title><![CDATA[Mercury Pro XS vs Verado vs FourStroke Compared]]></title>
+      <link>https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs</guid>
+      <pubDate>Fri, 19 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.]]></description>
+      <category><![CDATA[Mercury Motors]]></category>
     </item>
     <item>
-      <title><![CDATA[Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat's transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-shaft-length-guide.png" type="image/png"/>
+      <title><![CDATA[Is a Pontoon Right for Your Family?]]></title>
+      <link>https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake</guid>
+      <pubDate>Fri, 19 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust]]></title>
-      <link>https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters.]]></description>
-      <category>About Us</category>
-      
+      <title><![CDATA[Mercury Quote via AI at Harris Boat Works]]></title>
+      <link>https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce</guid>
+      <pubDate>Thu, 11 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Harris Boat Works is a live Universal Commerce Protocol merchant. AI assistants can now build a real CAD Mercury outboard quote.]]></description>
+      <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[Best Mercury Outboard for Pontoon Boats (2026 Ontario Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons. Cruising-only setups can run a 90 CT; family use with water sports wants 115 to 150 CT. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-best-mercury-pontoon.png" type="image/png"/>
+      <title><![CDATA[When to Replace Your Mercury Impeller: What 766 Jobs Show]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail</guid>
+      <pubDate>Tue, 09 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs.]]></description>
+      <category><![CDATA[Service & Troubleshooting]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Command Thrust Guide for Pontoon Boats (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury Command Thrust is the gearcase option that turns a \"good\" pontoon Mercury into a \"great\" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png" type="image/png"/>
+      <title><![CDATA[Mercury Outboard Weight Chart (2.5 to 300 HP)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart</guid>
+      <pubDate>Sun, 07 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Best Pontoon Boats for Rice Lake Cottage Use (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero.jpg" type="image/png"/>
+      <title><![CDATA[Mercury vs Suzuki Outboards: Reliability 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026</guid>
+      <pubDate>Sat, 06 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision.]]></description>
+      <category><![CDATA[Brand Comparison]]></category>
     </item>
     <item>
-      <title><![CDATA[Trolling Motor vs Kicker Motor. Which Auxiliary Setup Wins on Rice Lake?]]></title>
-      <link>https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.]]></description>
-      <category>Comparison</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png" type="image/png"/>
+      <title><![CDATA[How Your Mercury Warranty Works After a Repower]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario</guid>
+      <pubDate>Sat, 06 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains.]]></description>
+      <category><![CDATA[Warranty & Protection]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury vs Yamaha Outboards in Ontario (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[An honest Mercury vs Yamaha comparison from an Ontario Mercury Premier dealer. Fuel economy, noise, technology, warranty, and which is right for your boat.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-vs-yamaha.png" type="image/png"/>
+      <title><![CDATA[Capacity Plate and Repower HP: What's Allowed]]></title>
+      <link>https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide</guid>
+      <pubDate>Sat, 06 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[How to read your boat's capacity plate before a repower: max HP rules, what's legal in Ontario, insurance implications, and smart HP choices.]]></description>
+      <category><![CDATA[Repower]]></category>
     </item>
     <item>
-      <title><![CDATA[Walleye Opener Boat Prep Checklist (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep</guid>
-      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season. The boat must run reliably, fish the way it did last fall, and not cost you opening morning to a dead battery or stale gas. This checklist covers what to do in the 2 weeks before opener so you're fishing instead of fixing. We do walleye opener prep at HBW; book early.]]></description>
-      <category>Tips</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Walleye_Opener_Ready_Hero.png" type="image/png"/>
+      <title><![CDATA[Old Motor Trade-In, HST and Disposal in Ontario]]></title>
+      <link>https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario</guid>
+      <pubDate>Sat, 06 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and responsible disposal, all explained honestly.]]></description>
+      <category><![CDATA[Repower]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis</guid>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see live pricing or contact us before committing.]]></description>
-      <category>Performance</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2.png" type="image/png"/>
+      <title><![CDATA[Pontoon vs Aluminum vs V-Hull Repower]]></title>
+      <link>https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences</guid>
+      <pubDate>Sat, 06 Jun 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull.]]></description>
+      <category><![CDATA[Repower]]></category>
     </item>
     <item>
-      <title><![CDATA[Boat Hull Replacement vs Repower: The Honest Decision (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repower</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-hull-vs-repower.png" type="image/png"/>
+      <title><![CDATA[HBW On-Water Load Test: Mercury Repower]]></title>
+      <link>https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock.]]></description>
+      <category><![CDATA[HBW Process]]></category>
     </item>
     <item>
-      <title><![CDATA[Is 2026 a Good Year to Buy a Boat in Canada?]]></title>
-      <link>https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada</guid>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-proxs-outside-hbw-shop.jpg" type="image/jpeg"/>
+      <title><![CDATA[Honda to Mercury Repower: Ontario Guide]]></title>
+      <link>https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.]]></description>
+      <category><![CDATA[Repower Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp</guid>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and...]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Mercury_Portable_Outboards.png" type="image/png"/>
+      <title><![CDATA[Lake Ontario Salmon Mercury Setup]]></title>
+      <link>https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20.]]></description>
+      <category><![CDATA[Fishing / Rigging]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Outboard Won't Start Troubleshooting (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting</guid>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Most Mercury motors that won't start in spring are battery, fuel, or skipped winterization. Run through the basics in order: battery voltage, fuel system, ignition, and starting circuit. If the motor still won't start after the basics, get it to HBW. The cost of a proper diagnostic is much smalle...]]></description>
-      <category>Troubleshooting</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/spring-no-start-flowchart.png" type="image/png"/>
+      <title><![CDATA[Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust.]]></description>
+      <category><![CDATA[Repower Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide</guid>
-      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A complete guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive.]]></description>
-      <category>How To</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png" type="image/png"/>
+      <title><![CDATA[Mercury Boost Cost Canada 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real.]]></description>
+      <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000</guid>
-      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Under $30,000 CAD on Rice Lake, your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Guy_talking_to_salesperson_Mercury.png" type="image/png"/>
+      <title><![CDATA[Mercury Command Thrust Guide 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix.]]></description>
+      <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026</guid>
-      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record. We are biased (we sell Mercury, exclusively, since 1965), but the data backs the position. Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-vs-yamaha-honda.png" type="image/png"/>
+      <title><![CDATA[Is Your Pontoon Eligible for Mercury Command Thrust? (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks.]]></description>
+      <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026</guid>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-cheapest-mercury-canada.png" type="image/png"/>
+      <title><![CDATA[Mercury DTS Retrofit Eligibility 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower.]]></description>
+      <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads. The right Mercury for Lake Ontario salmon and trout is a 200 to 300 HP V8 FourStroke or Pro XS on a 21 to 26 ft center console or walkaround hull, often with a 15 HP ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Fishing & Local</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-best-mercury-lake-ontario.png" type="image/png"/>
+      <title><![CDATA[Mercury Outboard Monthly Payment Math (Ontario, 2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[What a Mercury outboard costs per month in Ontario: real 2026 financing math by HP tier, current promo rate, terms, and total cost of borrowing.]]></description>
+      <category><![CDATA[Repower Cost & Pricing]]></category>
     </item>
     <item>
-      <title><![CDATA[Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, request service at HBW.]]></description>
-      <category>Maintenance</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Late_Season_Boating_Safety_Fall.png" type="image/png"/>
+      <title><![CDATA[Mercury vs Honda Ontario 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Best Mercury Outboard for Lake Simcoe Walleye Fishing (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Fishing & Local</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Walleye_Opener_Catch.png" type="image/png"/>
+      <title><![CDATA[Trent-Severn Mercury Dealer Guide]]></title>
+      <link>https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through.]]></description>
+      <category><![CDATA[Trent-Severn / Local]]></category>
     </item>
     <item>
-      <title><![CDATA[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Boat winterization cost in Ontario varies by motor size, boat type, and which services you bundle (motor only, motor + hull, motor + storage). A basic motor winterization is the smallest line item. A full package with hull shrink-wrap, indoor storage, and spring commissioning is the largest. We do winterization on Mercury motors at HBW. For a real quote on your specific boat, contact us or visit our service page.]]></description>
-      <category>Maintenance</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Ontario_Short_Boating_Season_Fall.png" type="image/png"/>
+      <title><![CDATA[Yamaha to Mercury Repower: Ontario Guide]]></title>
+      <link>https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table.]]></description>
+      <category><![CDATA[Repower Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs recreational reliability.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Mercury_SeaPro.png" type="image/png"/>
+      <title><![CDATA[Mercury Overheat Alarm Decoder: Beep Meanings]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder</guid>
+      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.]]></description>
+      <category><![CDATA[Service & Troubleshooting]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Outboard Financing in Ontario: Your Complete 2026 Guide]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).]]></description>
-      <category>Financing & Value</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-financing-ontario.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.]]></description>
-      <category>Repower Cost & Pricing</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-repower-cost-ontario.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Evinrude to Mercury Repower in Ontario (2026 Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide</guid>
-      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repower Guides</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-replace-evinrude.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Pleasure Craft Licence Update During Repower (Ontario 2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.]]></description>
-      <category>Canadian Boating Regulations</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-pcl-repower-licence.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026</guid>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5–21% on select FourStroke, Pro XS, and Verado engines. Check eligibility by serial number.]]></description>
-      <category>Mercury Technology</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-boost-software-upgrade.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Propeller Selection Guide (2026 Ontario)]]></title>
+      <title><![CDATA[Mercury Propeller Selection Guide 2026]]></title>
       <link>https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide</link>
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test that matters. Aluminum 3-blade props (typical $450 CAD) cover up to 115 HP. Stainless 3 or 4-blade props ($800 to $2,000 CAD) take...]]></description>
-      <category>Tips</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/bolt-on-motor-installation.png" type="image/png"/>
+      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.]]></description>
+      <category><![CDATA[Technical Reference]]></category>
     </item>
     <item>
-      <title><![CDATA[Tiller vs Remote Steering Outboard: Which to Choose (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide</guid>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control. Remote-control steering (steering wheel from helm) is best for console boats, family use, and any application where the operator is not at the back of the boat. The...]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Tiller_vs_Remote_Steering_Hero.png" type="image/png"/>
+      <title><![CDATA[Mercury Repower Eligibility: 5-Check Guide]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide</guid>
+      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.]]></description>
+      <category><![CDATA[Repower Decision]]></category>
     </item>
     <item>
-      <title><![CDATA[Spring Outboard Commissioning Checklist (2026 Ontario)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist</guid>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Spring commissioning brings your Mercury back to operational state after winter storage. The process covers fuel system, cooling system, lubrication, electrical, and hull inspection. Most Mercury motors that fail in May are motors that skipped a step in commissioning. We do spring service on hund...]]></description>
-      <category>Maintenance</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/How_to_Choose_HP.png" type="image/png"/>
+      <title><![CDATA[Mercury SmartCraft Connect Eligibility 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026</guid>
+      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect.]]></description>
+      <category><![CDATA[Mercury Technology]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide</guid>
-      <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Find the ideal Mercury motors for your center console. From single 115HP to quad 450HP setups, we cover every option for offshore and inshore boats.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero.png" type="image/png"/>
+      <title><![CDATA[Best Pontoon Outboard 2026: Mercury Buyer's Guide]]></title>
+      <link>https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury</guid>
+      <pubDate>Mon, 25 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Match Mercury HP to your pontoon size, tubes, and passenger count. Pricing from $13,000 CAD installed on Rice Lake.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury Outboard Fuel Efficiency Guide (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide</guid>
-      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all...]]></description>
-      <category>Tips</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Break_In_Infographic.png" type="image/png"/>
+      <title><![CDATA[Mercury Main + Trolling Motor: How to Pair Them]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor</guid>
+      <pubDate>Mon, 25 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. Rigging from $1,500 CAD on top of your repower.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Choosing the Right Mercury for Your Bass Boat (Ontario 2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide</guid>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/bass-boat-150-proxs-hero-real.png" type="image/png"/>
+      <title><![CDATA[Repower vs Buy New Boat: The Honest Math]]></title>
+      <link>https://www.mercuryrepower.ca/blog/repower-vs-new-boat</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/repower-vs-new-boat</guid>
+      <pubDate>Mon, 25 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from $11,000 CAD installed.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Complete Guide to Repowering Your Boat in the Kawarthas (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas</guid>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The lead time depends on Mercury availability, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repowering</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-complete-guide-repower-kawarthas.png" type="image/png"/>
+      <title><![CDATA[Mercury Avator 7.5e: Review, Price CAD, and Range (2026)]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review</guid>
+      <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing</guid>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-best-mercury-rice-lake.png" type="image/png"/>
+      <title><![CDATA[2-Stroke vs 4-Stroke Repower: What to Know]]></title>
+      <link>https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower</guid>
+      <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing.]]></description>
+      <category><![CDATA[Repower Guides]]></category>
     </item>
     <item>
-      <title><![CDATA[Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Fishing</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/ProKicker_Rice_Lake_Hero.png" type="image/png"/>
+      <title><![CDATA[Best Time to Buy Boat Motor Ontario]]></title>
+      <link>https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide</guid>
+      <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
     <item>
-      <title><![CDATA[What the 2026 Boating Market Means for Ontario Boat Buyers]]></title>
-      <link>https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The North American boating market is stabilizing in 2026 with healthier inventory, improving financing, and Canada's luxury tax on boats repealed. Here's the full picture for Ontario buyers at Harris Boat Works.]]></description>
-      <category>Market Insight</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/What_the_boating_market_means_blog_hero_image.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Tariffs, Trade, and Canadian Boating: What Harris Boat Works Customers Should Know in 2026]]></title>
-      <link>https://www.mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[U.S.–Canada tariffs, retaliatory measures, and the 2026 CUSMA review are creating uncertainty in the boating world. Here's a plain-language breakdown of what it all means for Mercury outboard and boat pricing in Ontario.]]></description>
-      <category>Market Insight</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water]]></title>
-      <link>https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The boat rental market is surging across North America. Here's why shared boating is exploding, what's driving the trend, and how Harris Boat Works' rental fleet on Rice Lake fits into the picture.]]></description>
-      <category>Lifestyle</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Why Mercury Dominates the Outboard Market in 2026]]></title>
-      <link>https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Avator & the Future of Electric Boating in Ontario]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury's Avator electric outboards are quietly changing what small-boat and cottage boating can look like. Here's how Avator fits into the future of boating for Harris Boat Works customers.]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[2026 Rice Lake Fishing Season Outlook]]></title>
-      <link>https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook</guid>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.]]></description>
-      <category>Lifestyle</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Ontario Cottage Boat Motor Repower Guide (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide</guid>
-      <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new. A Mercury repower lands $17,000 to $30,000 CAD all-in for typical cottage setups, against $50,000 to $90,000 CAD for comparable new packages. The hull is the asset; the motor is the wear part. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repowering</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Boat_Repowering_In_Progress.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison</guid>
-      <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives...]]></description>
-      <category>Comparison</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Comparing_Motor_Families.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats</guid>
-      <pubDate>Mon, 12 Jan 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/aluminum-fishing-hero-real.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[How to Choose the Right Horsepower for Your Boat (2026 Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat</guid>
-      <pubDate>Sat, 15 Jun 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Buying Guide</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-how-to-choose-horsepower.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips</guid>
-      <pubDate>Mon, 20 May 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury motor maintenance in Ontario follows a seasonal cycle: spring commissioning, summer check, fall winterization, and winter storage. Done right at HBW.]]></description>
-      <category>Maintenance</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Mercury_Maintenance_Schedule.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado</guid>
-      <pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 250 to 600+ HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the motor selection page.]]></description>
-      <category>Comparison</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/hero-mercury-motor-families.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Boat Repowering Guide: When to Replace Your Motor (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor</guid>
-      <pubDate>Tue, 05 Mar 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).]]></description>
-      <category>Repowering</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Boat_Repowering_101_Hero.png" type="image/png"/>
-    </item>
-    <item>
-      <title><![CDATA[Breaking In a New Mercury Motor (2026)]]></title>
-      <link>https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide</guid>
-      <pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is...]]></description>
-      <category>New Owner</category>
-      <enclosure url="https://www.mercuryrepower.ca/lovable-uploads/Breaking_In_New_Mercury_Hero.png" type="image/png"/>
+      <title><![CDATA[Mercury Outboard Warranty Canada 2026]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026</guid>
+      <pubDate>Sat, 23 May 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
     </item>
   </channel>
 </rss>
