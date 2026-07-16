@@ -340,9 +340,12 @@ export function ReviewSubmitStep() {
                     <span className="font-medium">${state.purchaseDetails?.amountToFinance?.toLocaleString() || 'N/A'}</span>
                   </div>
                   {state.purchaseDetails?.promoOption && (
-                    <div className="flex justify-between">
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">Promotion:</span>
-                      <span className="font-medium text-green-600">
+                      <span className="font-medium text-green-600 text-right">
+                        {state.purchaseDetails.promoName && <>{state.purchaseDetails.promoName}<br /></>}
+                        {(state.purchaseDetails.promoSavings || 0) > 0 &&
+                          <>${state.purchaseDetails.promoSavings?.toLocaleString('en-CA')} CAD factory rebate<br /></>}
                         {state.purchaseDetails.promoOption === 'no_payments' && '6 Mo No Payments'}
                         {state.purchaseDetails.promoOption === 'special_financing' && 
                           `${state.purchaseDetails.promoRate}% APR for ${state.purchaseDetails.promoTerm} months`}

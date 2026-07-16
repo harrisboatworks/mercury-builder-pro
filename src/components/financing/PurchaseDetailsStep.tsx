@@ -39,6 +39,9 @@ export function PurchaseDetailsStep() {
       promoRate: state.purchaseDetails?.promoRate || null,
       promoTerm: state.purchaseDetails?.promoTerm || null,
       promoValue: state.purchaseDetails?.promoValue || null,
+      promoName: state.purchaseDetails?.promoName || null,
+      promoSavings: state.purchaseDetails?.promoSavings ?? null,
+      promoCombinationMode: state.purchaseDetails?.promoCombinationMode || null,
     },
   });
 
@@ -53,6 +56,9 @@ export function PurchaseDetailsStep() {
   const promoRate = state.purchaseDetails?.promoRate;
   const promoTerm = state.purchaseDetails?.promoTerm;
   const promoValue = state.purchaseDetails?.promoValue;
+  const promoName = state.purchaseDetails?.promoName;
+  const promoSavings = state.purchaseDetails?.promoSavings || 0;
+  const promoCombinationMode = state.purchaseDetails?.promoCombinationMode;
 
   // Validate promo against currently-active promotions (prevents stale/expired promos
   // from saved or restored quotes from showing, e.g., March factory rebate after expiry).
@@ -85,6 +91,9 @@ export function PurchaseDetailsStep() {
           promoRate: null,
           promoTerm: null,
           promoValue: null,
+          promoName: null,
+          promoSavings: null,
+          promoCombinationMode: null,
         },
       });
     }
@@ -118,6 +127,9 @@ export function PurchaseDetailsStep() {
         promoRate,
         promoTerm,
         promoValue,
+        promoName,
+        promoSavings,
+        promoCombinationMode,
       },
     });
     dispatch({ type: 'COMPLETE_STEP', payload: 1 });
@@ -226,6 +238,20 @@ export function PurchaseDetailsStep() {
                 </p>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {isPromoStillActive && promoSavings > 0 && (
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start gap-3">
+          <Banknote className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-amber-800">
+              {promoName || 'Mercury promotion'} factory rebate: ${promoSavings.toLocaleString('en-CA')} CAD
+            </p>
+            <p className="text-xs text-amber-700 mt-0.5">
+              Already applied to the purchase amount{promoCombinationMode === 'layered' ? '; promotional financing is an additional optional benefit' : ''}.
+            </p>
           </div>
         </div>
       )}
