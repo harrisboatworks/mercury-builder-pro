@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-markdown-twins.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
+    "build": "node scripts/generate-markdown-twins.mjs && node scripts/generate-rss.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
@@ -27,6 +27,8 @@
     "generate:canonical-pricing": "node scripts/generate-canonical-pricing.mjs",
     "generate:motor-markdown": "node scripts/generate-motor-markdown.mjs",
     "generate:responsive-variants": "node scripts/generate-responsive-variants.mjs",
+    "generate:rss": "node scripts/generate-rss.mjs",
+    "check:rss": "node scripts/generate-rss.mjs --check",
     "build:image-variants-manifest": "node scripts/build-image-variants-manifest.mjs",
     "reconcile:blog-pricing": "node scripts/reconcile-blog-pricing.mjs",
     "prebuild": "npm run check:lockfile-sync && npm run generate:canonical-pricing && npm run generate:motor-markdown && npm run rewrite:agent-urls && npm run check:blog-leaks && npm run check:blog-timeline-facts && npm run check:blog-assets && npm run check:pricing-reference-copy && npm run check:pricing-drift && npm run generate:responsive-variants && npm run build:image-variants-manifest && npm run check:responsive-images",
