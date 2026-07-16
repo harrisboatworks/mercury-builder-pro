@@ -141,6 +141,9 @@ verify_jwt = false
 [functions.sync-elevenlabs-kb]
 verify_jwt = false
 
+[functions.sync-elevenlabs-static-kb]
+verify_jwt = true
+
 [functions.voice-inventory-lookup]
 verify_jwt = false
 

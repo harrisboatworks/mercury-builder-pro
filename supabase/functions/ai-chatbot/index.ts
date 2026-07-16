@@ -4,11 +4,23 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 import {
-  ACTIVE_PROMOTION_SELECT,
   buildPromotionCustomerAnswer,
   formatPromotionContext,
   isPromotionQuestion,
 } from "../_shared/promotion-context.ts";
+import {
+  buildBusinessCustomerAnswer,
+  buildCustomerKnowledgeSnapshot,
+  buildFinancingCustomerAnswer,
+  buildMotorCustomerAnswer,
+  formatCustomerKnowledgePrompt,
+  isBusinessInfoQuestion,
+  isFinancingQuestion,
+  isMotorPriceOrAvailabilityQuestion,
+  loadCustomerKnowledge,
+  resolveCustomerSellingPrice,
+  type CustomerKnowledge,
+} from "../_shared/customer-knowledge-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -19,50 +31,6 @@ const corsHeaders = {
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Helper function to get current motor inventory
-async function getCurrentMotorInventory() {
-  try {
-    const { data: motors, error } = await supabase
-      .from('motor_models')
-      .select('*')
-      .order('horsepower', { ascending: true });
-    
-    if (error) {
-      console.error('Error fetching motors:', error);
-      return [];
-    }
-    
-    return motors || [];
-  } catch (error) {
-    console.error('Error in getCurrentMotorInventory:', error);
-    return [];
-  }
-}
-
-// Helper function to get active promotions
-async function getActivePromotions() {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data: promotions, error } = await supabase
-      .from('promotions')
-      .select(ACTIVE_PROMOTION_SELECT)
-      .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
-      .order('priority', { ascending: false });
-    
-    if (error) {
-      console.error('Error fetching promotions:', error);
-      return [];
-    }
-    
-    return promotions || [];
-  } catch (error) {
-    console.error('Error in getActivePromotions:', error);
-    return [];
-  }
-}
 
 // Helper function to format motor data for AI
 function formatMotorData(motors: any[]) {
@@ -76,7 +44,7 @@ function formatMotorData(motors: any[]) {
     motorsByType[type].push({
       model: motor.model,
       hp: motor.horsepower,
-      price: motor.sale_price || motor.base_price,
+      price: resolveCustomerSellingPrice(motor),
       availability: motor.availability,
       year: motor.year
     });
@@ -97,11 +65,10 @@ function formatMotorData(motors: any[]) {
 }
 
 // Build dynamic system prompt with real-time data
-async function buildSystemPrompt() {
-  const [motors, promotions] = await Promise.all([
-    getCurrentMotorInventory(),
-    getActivePromotions()
-  ]);
+async function buildSystemPrompt(knowledge?: CustomerKnowledge) {
+  const liveKnowledge = knowledge || await loadCustomerKnowledge(supabase);
+  const motors = liveKnowledge.motors;
+  const promotions = liveKnowledge.promotions;
   
   const basePrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
 
@@ -749,7 +716,7 @@ ${formatBlogTitleIndex()}
 
 When a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
-  return dynamicPrompt;
+  return `${dynamicPrompt}\n\n${formatCustomerKnowledgePrompt(liveKnowledge, true)}`;
 }
 
 serve(async (req) => {
@@ -766,7 +733,15 @@ serve(async (req) => {
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
-    const { message, conversationHistory = [] } = await req.json();
+    const { message, conversationHistory = [], knowledgeProbe = false } = await req.json();
+    const knowledge = await loadCustomerKnowledge(supabase);
+
+    if (knowledgeProbe === true) {
+      const snapshot = await buildCustomerKnowledgeSnapshot(knowledge);
+      return new Response(JSON.stringify({ surface: 'chat-legacy', ...snapshot }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     if (!message) {
       throw new Error('Message is required');
@@ -778,8 +753,7 @@ serve(async (req) => {
     }
 
     if (isPromotionQuestion(message)) {
-      const promotions = await getActivePromotions();
-      const reply = buildPromotionCustomerAnswer(promotions, message);
+      const reply = buildPromotionCustomerAnswer(knowledge.promotions, message, knowledge.financing[0] || null);
       return new Response(JSON.stringify({
         reply,
         conversationHistory: [
@@ -792,8 +766,29 @@ serve(async (req) => {
       });
     }
 
+    let deterministicReply: string | null = null;
+    if (isFinancingQuestion(message)) {
+      deterministicReply = buildFinancingCustomerAnswer(knowledge.financing, knowledge.promotions);
+    } else if (isBusinessInfoQuestion(message)) {
+      deterministicReply = buildBusinessCustomerAnswer(knowledge.business, message);
+    } else if (isMotorPriceOrAvailabilityQuestion(message)) {
+      deterministicReply = buildMotorCustomerAnswer(knowledge.motors, message);
+    }
+    if (deterministicReply) {
+      return new Response(JSON.stringify({
+        reply: deterministicReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: deterministicReply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     // Build dynamic system prompt with real-time data
-    const systemPrompt = await buildSystemPrompt();
+    const systemPrompt = await buildSystemPrompt(knowledge);
 
     // Build conversation context
     const messages = [

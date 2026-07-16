@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
 import { KB_DOCUMENTS } from "../_shared/format-kb-documents.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const ELEVENLABS_API_KEY = Deno.env.get("ELEVENLABS_API_KEY");
 const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1";
@@ -251,14 +252,15 @@ async function attachDocumentsToAgent(
   // Filter out old static docs, keep other docs (like motor inventory)
   const preservedDocs = existingKB.filter((doc: any) => {
     const docName = (doc.name || "").toLowerCase();
+    const isLegacyInventoryDoc = /harris boat\s*works?.*inventory/.test(docName);
     const isStaticDoc = staticDocNames.some(name => 
       docName.includes(name.toLowerCase()) || 
       name.toLowerCase().includes(docName)
     );
-    if (isStaticDoc) {
+    if (isStaticDoc || isLegacyInventoryDoc) {
       console.log(`Replacing existing static doc: ${doc.name}`);
     }
-    return !isStaticDoc;
+    return !isStaticDoc && !isLegacyInventoryDoc;
   });
   
   console.log(`Preserving ${preservedDocs.length} non-static documents`);
@@ -326,6 +328,9 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
+
   try {
     console.log("Starting static KB sync...");
 
@@ -369,6 +374,9 @@ serve(async (req) => {
     const createdDocuments: Array<{ id: string; name: string }> = [];
     // Docs we intend to delete *after* a successful agent PATCH
     const oldDocsToDelete: Array<{ id: string; name: string }> = [];
+    oldDocsToDelete.push(...existingDocs.filter((doc) =>
+      /harris boat\s*works?.*inventory/i.test(doc.name || "")
+    ));
 
     // Process each document: generate + create new. Do NOT delete old yet.
     for (const [key, docConfig] of Object.entries(KB_DOCUMENTS)) {

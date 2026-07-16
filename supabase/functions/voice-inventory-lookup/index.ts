@@ -1,6 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
+import {
+  isDefaultQuotedMotor,
+  resolveCustomerSellingPrice,
+} from "../_shared/customer-knowledge-context.ts";
 
 // Parse motor configuration from model display name
 function parseMotorConfig(modelDisplay: string) {
@@ -131,14 +135,7 @@ function formatPriceForVoice(price: number | null | undefined): string | null {
 // Resolve selling price: sale_price → dealer_price (if < msrp) → msrp → base_price
 // Note: base_price is dealer cost on many entries, so msrp must come before it
 function getVoiceSellingPrice(m: Record<string, unknown>): number | null {
-  const msrp = (m.msrp as number) || null;
-  const salePrice = (m.sale_price as number) || null;
-  const dealerPrice = (m.dealer_price as number) || null;
-  const basePrice = (m.base_price as number) || null;
-  if (salePrice) return salePrice;
-  if (dealerPrice && msrp && dealerPrice < msrp) return dealerPrice;
-  if (msrp) return msrp;
-  return basePrice;
+  return resolveCustomerSellingPrice(m);
 }
 
 // Build motor object with parsed configuration
@@ -147,14 +144,7 @@ function buildMotorResponse(m: Record<string, unknown>) {
   const config = parseMotorConfig(modelDisplay);
   
   // Use selling price hierarchy: sale_price → dealer_price (if < msrp) → base_price → msrp
-  const msrp = m.msrp as number | null;
-  const salePrice = m.sale_price as number | null;
-  const dealerPrice = m.dealer_price as number | null;
-  const basePrice = m.base_price as number | null;
-  const price = salePrice 
-    || (dealerPrice && msrp && dealerPrice < msrp ? dealerPrice : null)
-    || msrp 
-    || basePrice;
+  const price = getVoiceSellingPrice(m);
   
   return {
     model: modelDisplay,
@@ -247,7 +237,7 @@ serve(async (req) => {
         // Search inventory by horsepower, family, stock status
         let query = supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, sale_price, dealer_price, base_price, availability")
+          .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, sale_price, dealer_price, base_price, manual_overrides, availability")
           .order("horsepower", { ascending: true });
 
         // ROBUST PARAM PARSING: Handle cases where ElevenLabs sends params incorrectly
@@ -361,6 +351,7 @@ serve(async (req) => {
         } else {
           // Build motor objects with config and apply config filters
           let motors = data
+            .filter(isDefaultQuotedMotor)
             .map(m => buildMotorResponse(m))
             .filter(motor => {
               const config = parseMotorConfig(motor.model);
@@ -392,16 +383,17 @@ serve(async (req) => {
         // Look up specific motor pricing
         const { data, error } = await supabase
           .from("motor_models")
-          .select("model, model_display, horsepower, msrp, dealer_price, sale_price, in_stock, stock_quantity")
+          .select("model, model_display, horsepower, msrp, dealer_price, sale_price, base_price, manual_overrides, availability, in_stock, stock_quantity")
           .or(`model_display.ilike.%${params?.model || ''}%,model.ilike.%${params?.model || ''}%`)
           .limit(5);
 
         if (error) throw error;
 
-        if (!data || data.length === 0) {
+        const visible = (data || []).filter(isDefaultQuotedMotor);
+        if (visible.length === 0) {
           result = { found: false, message: `No motor found matching "${params?.model}".` };
         } else {
-          const motor = data[0];
+          const motor = visible[0];
           const config = parseMotorConfig(motor.model_display || motor.model);
           result = {
             found: true,
@@ -409,6 +401,7 @@ serve(async (req) => {
             horsepower: motor.horsepower,
             msrp: motor.msrp,
             salePrice: motor.sale_price,
+            price: getVoiceSellingPrice(motor),
             inStock: motor.in_stock && (motor.stock_quantity || 0) > 0,
             ...config,
           };
@@ -449,7 +442,7 @@ serve(async (req) => {
         // Get all in-stock motors
         const { data, error } = await supabase
           .from("motor_models")
-          .select("model, model_display, horsepower, family, stock_quantity, msrp, sale_price, dealer_price, base_price, in_stock")
+          .select("model, model_display, horsepower, family, stock_quantity, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock")
           .eq("in_stock", true)
           .gt("stock_quantity", 0)
           .order("horsepower", { ascending: true })
@@ -462,6 +455,7 @@ serve(async (req) => {
         } else {
           // Apply config filters if provided
           let motors = data
+            .filter(isDefaultQuotedMotor)
             .map(m => buildMotorResponse(m))
             .filter(motor => {
               const config = parseMotorConfig(motor.model);
@@ -493,7 +487,7 @@ serve(async (req) => {
         
         const { data, error } = await supabase
           .from("motor_models")
-          .select("model, model_display, horsepower, family, in_stock, stock_quantity, msrp")
+          .select("model, model_display, horsepower, family, in_stock, stock_quantity, msrp, sale_price, dealer_price, base_price, manual_overrides, availability")
           .gte("horsepower", minHp)
           .lte("horsepower", maxHp)
           .order("horsepower", { ascending: true })
@@ -506,6 +500,7 @@ serve(async (req) => {
         } else {
           // Apply config filters if provided
           let motors = data
+            .filter(isDefaultQuotedMotor)
             .map(m => buildMotorResponse(m))
             .filter(motor => {
               const config = parseMotorConfig(motor.model);
@@ -534,24 +529,27 @@ serve(async (req) => {
         // Get full motor data for adding to quote
         const { data, error } = await supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, msrp, sale_price, in_stock, stock_quantity")
+          .select("id, model, model_display, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity")
           .or(`model_display.ilike.%${params?.model || ''}%,model.ilike.%${params?.model || ''}%`)
           .limit(1);
 
         if (error) throw error;
 
-        if (!data || data.length === 0) {
+        const visible = (data || []).filter(isDefaultQuotedMotor);
+        if (visible.length === 0) {
           result = { found: false, message: `No motor found matching "${params?.model}".` };
         } else {
-          const m = data[0];
+          const m = visible[0];
+          const price = getVoiceSellingPrice(m);
           result = {
             found: true,
             motor: {
               id: m.id,
               model: m.model_display || m.model,
               horsepower: m.horsepower,
-              msrp: m.msrp,
+              msrp: price,
               salePrice: m.sale_price,
+              price,
               inStock: m.in_stock && (m.stock_quantity || 0) > 0,
             }
           };
@@ -566,16 +564,17 @@ serve(async (req) => {
         
         const { data: motors, error } = await supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, family, msrp, sale_price, dealer_price, base_price, in_stock, stock_quantity, specifications")
+          .select("id, model, model_display, horsepower, family, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, specifications")
           .or(`model_display.ilike.%${motor1Query}%,model_display.ilike.%${motor2Query}%,model.ilike.%${motor1Query}%,model.ilike.%${motor2Query}%`)
           .limit(10);
         
         if (error) throw error;
         
-        const motor1 = motors?.find(m => 
+        const visibleMotors = (motors || []).filter(isDefaultQuotedMotor);
+        const motor1 = visibleMotors.find(m =>
           (m.model_display || m.model).toLowerCase().includes(motor1Query.toLowerCase())
         );
-        const motor2 = motors?.find(m => 
+        const motor2 = visibleMotors.find(m =>
           (m.model_display || m.model).toLowerCase().includes(motor2Query.toLowerCase())
         );
         

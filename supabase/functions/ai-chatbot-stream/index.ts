@@ -33,11 +33,23 @@ import {
 
 import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
 import {
-  ACTIVE_PROMOTION_SELECT,
   buildPromotionCustomerAnswer,
   formatPromotionContext,
   isPromotionQuestion,
 } from '../_shared/promotion-context.ts';
+import {
+  buildBusinessCustomerAnswer,
+  buildCustomerKnowledgeSnapshot,
+  buildFinancingCustomerAnswer,
+  buildMotorCustomerAnswer,
+  fetchCustomerMotors,
+  formatCustomerKnowledgePrompt,
+  isBusinessInfoQuestion,
+  isFinancingQuestion,
+  isMotorPriceOrAvailabilityQuestion,
+  loadCustomerKnowledge,
+  resolveCustomerSellingPrice,
+} from '../_shared/customer-knowledge-context.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -49,10 +61,8 @@ const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Correct pricing hierarchy: sale_price > dealer_price (if < msrp) > msrp
-function getOurPrice(m: { sale_price?: number | null; dealer_price?: number | null; msrp?: number | null; price?: number | null }): number {
-  if (m.sale_price && m.sale_price > 0) return m.sale_price;
-  if (m.dealer_price && m.msrp && m.dealer_price < m.msrp) return m.dealer_price;
-  return m.msrp || (m as any).price || 0;
+function getOurPrice(m: any): number {
+  return resolveCustomerSellingPrice(m) || Number(m?.price) || 0;
 }
 
 
@@ -111,7 +121,7 @@ function detectWhyBuyQuestion(message: string): boolean {
 async function getMotorsForComparison(hp1: number, hp2: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, horsepower, msrp, sale_price, dealer_price, family, description, features')
+    .select('model, model_display, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, family, description, features')
     .or(`horsepower.eq.${hp1},horsepower.eq.${hp2}`)
     .limit(10);
   return { 
@@ -120,14 +130,9 @@ async function getMotorsForComparison(hp1: number, hp2: number) {
   };
 }
 
-// Get current motor inventory with rich details - ONLY IN-STOCK motors
+// Same customer-visible catalogue and price fields used by the quote builder.
 async function getCurrentMotorInventory() {
-  const { data: motors } = await supabase
-    .from('motor_models')
-    .select('model, model_display, horsepower, msrp, sale_price, dealer_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
-    .eq('in_stock', true)
-    .order('horsepower', { ascending: true });
-  return motors || [];
+  return fetchCustomerMotors(supabase);
 }
 
 // Detect HP-specific query
@@ -152,19 +157,17 @@ function detectHPQuery(message: string): number | null {
 async function getMotorsForHP(hp: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('id, model_display, horsepower, msrp, sale_price, dealer_price, family, shaft, control, in_stock, stock_quantity')
+    .select('id, model, model_display, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, family, shaft, control, in_stock, stock_quantity')
     .eq('horsepower', hp)
     .order('in_stock', { ascending: false })
     .order('msrp', { ascending: true });
   return motors || [];
 }
 
-// Build compact grouped inventory summary by HP - ONLY IN-STOCK motors with quantities
+// Build compact grouped catalogue summary by HP, including orderable motors.
 function buildGroupedInventorySummary(motors: any[]): string {
-  // Filter to only in-stock motors
-  const inStockMotors = motors.filter(m => m.in_stock);
   const byHP: Record<number, any[]> = {};
-  inStockMotors.forEach(m => {
+  motors.forEach(m => {
     const hp = m.horsepower;
     if (!byHP[hp]) byHP[hp] = [];
     byHP[hp].push(m);
@@ -173,14 +176,14 @@ function buildGroupedInventorySummary(motors: any[]): string {
   return Object.entries(byHP)
     .sort(([a], [b]) => parseFloat(a) - parseFloat(b))
     .map(([hp, models]) => {
-      const totalQty = models.reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
+      const totalQty = models.reduce((sum, m) => sum + (m.in_stock ? (m.stock_quantity || 1) : 0), 0);
       const prices = models.map(m => getOurPrice(m)).filter(p => p > 0);
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
       const priceStr = prices.length === 0 ? 'TBD' :
         minPrice === maxPrice ? `$${minPrice.toLocaleString()}` : `$${minPrice.toLocaleString()}-$${maxPrice.toLocaleString()}`;
       const families = [...new Set(models.map(m => m.family).filter(Boolean))];
-      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${totalQty} in stock]`;
+      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${totalQty} in stock; ${models.length - models.filter(m => m.in_stock).length} available to order]`;
     })
     .join(' | ');
 }
@@ -317,47 +320,6 @@ async function lookupMercuryPart(partNumber: string): Promise<{
     };
   } catch (error) {
     console.error(`Error looking up part ${partNumber}:`, error);
-    return null;
-  }
-}
-
-// Get active promotions
-async function getActivePromotions() {
-  const today = new Date().toISOString().split('T')[0];
-  const { data: promotions } = await supabase
-    .from('promotions')
-    .select(ACTIVE_PROMOTION_SELECT)
-    .eq('is_active', true)
-    .or(`start_date.is.null,start_date.lte.${today}`)
-    .or(`end_date.is.null,end_date.gte.${today}`)
-    .order('priority', { ascending: false })
-    .limit(5);
-  return promotions || [];
-}
-
-// Pull the currently-active financing promo (single source of truth).
-// Mirrors the frontend `useActiveFinancingPromo` hook so the AI never quotes
-// a stale rate. Falls back to a clearly-flagged "contact dealer" state if no
-// promo row is active.
-async function getActiveFinancingPromo() {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data, error } = await supabase
-      .from('financing_options')
-      .select('id, name, rate, term_months, promo_text, promo_end_date, min_amount, is_active, is_promo')
-      .eq('is_active', true)
-      .eq('is_promo', true)
-      .or(`promo_end_date.is.null,promo_end_date.gte.${today}`)
-      .order('display_order', { ascending: true })
-      .order('rate', { ascending: true })
-      .limit(1);
-    if (error) {
-      console.error('getActiveFinancingPromo error:', error);
-      return null;
-    }
-    return (data && data[0]) || null;
-  } catch (e) {
-    console.error('getActiveFinancingPromo exception:', e);
     return null;
   }
 }
@@ -942,13 +904,12 @@ When a customer asks about a motor's features (electric start, tiller, shaft len
 ## DO NOT FABRICATE (CRITICAL FOR TRUST)
 Only state facts you can verify. If you don't have data, don't make it up.
 
-## WE DO NOT SELL VERADO (CRITICAL)
-Harris Boat Works does NOT carry Mercury Verado motors. We sell FourStroke, Pro XS, SeaPro, and Racing only.
+## VERADO IS SPECIAL-ORDER ONLY (CRITICAL)
+Harris Boat Works does not list Verado in default online inventory. Verado is available by special order.
 If someone asks about Verado:
-- Say honestly: "We don't carry Verado — our lineup is FourStroke, Pro XS, and SeaPro."
-- If they want high HP, steer them to the FourStroke V8 (250-300HP) or Pro XS (115-300HP) instead.
-- NEVER recommend or quote a Verado motor.
-- You can still answer general Mercury knowledge questions about Verado specs — just be clear we don't sell them.
+- Explain that it is special-order only and route exact configuration and pricing to (905) 342-2153 or info@harrisboatworks.ca.
+- Do not present Verado as in-stock/default inventory or invent a price.
+- You can still answer general Mercury knowledge questions about Verado specs.
 
 **NEVER fabricate:**
 - Ice/lake conditions (use weather station link or say "check our weather station")
@@ -1611,7 +1572,7 @@ User: "Thanks"
 You ARE Harris Boat Works. Speak as "we" and "our", NEVER "I" or "myself".
 When customers ask "do you have X?" they mean "does Harris Boat Works have X?"
 - "Do you have a launch ramp?" → "Yeah! We've got the best ramp on Rice Lake."
-- "Are you open Sunday?" → "We're closed Sundays, but open Mon-Sat."
+- "Are you open Sunday?" → Use the live published business-hours block below; do not answer from memory.
 - "Do you rent boats?" → "We do! Pontoons and fishing boats."
 
 ## ABOUT HARRIS BOAT WORKS
@@ -1965,7 +1926,14 @@ serve(async (req) => {
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
-    const { message, conversationHistory = [], context = {}, stream = false } = await req.json();
+    const { message, conversationHistory = [], context = {}, stream = false, knowledgeProbe = false } = await req.json();
+    const knowledge = await loadCustomerKnowledge(supabase);
+    if (knowledgeProbe === true) {
+      const snapshot = await buildCustomerKnowledgeSnapshot(knowledge);
+      return new Response(JSON.stringify({ surface: 'chat', ...snapshot }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     if (!message) throw new Error('Message is required');
 
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
@@ -2079,11 +2047,9 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     }
 
     // Get inventory, promotions, and current financing canon
-    const [motors, promotions, financingPromo] = await Promise.all([
-      getCurrentMotorInventory(), 
-      getActivePromotions(),
-      getActiveFinancingPromo(),
-    ]);
+    const motors = knowledge.motors;
+    const promotions = knowledge.promotions;
+    const financingPromo = knowledge.financing[0] || null;
 
     if (isPromotionQuestion(message)) {
       const reply = buildPromotionCustomerAnswer(promotions, message, financingPromo);
@@ -2103,9 +2069,35 @@ Provide a helpful, balanced comparison covering: power difference, price differe
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
+
+    let deterministicReply: string | null = null;
+    if (isFinancingQuestion(message)) {
+      deterministicReply = buildFinancingCustomerAnswer(knowledge.financing, promotions);
+    } else if (isBusinessInfoQuestion(message)) {
+      deterministicReply = buildBusinessCustomerAnswer(knowledge.business, message);
+    } else if (isMotorPriceOrAvailabilityQuestion(message)) {
+      deterministicReply = buildMotorCustomerAnswer(motors, message);
+    }
+    if (deterministicReply) {
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: deterministicReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply: deterministicReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     
     // Build the rich system prompt
     let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion, financingPromo);
+    systemPrompt += `\n\n${formatCustomerKnowledgePrompt(knowledge, true)}`;
     if (comparisonContext) systemPrompt += comparisonContext;
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
     if (perplexityContext) systemPrompt += perplexityContext;
