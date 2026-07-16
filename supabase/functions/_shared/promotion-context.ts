@@ -231,6 +231,8 @@ export function formatPromotionContext(promotions: PromotionRecord[]): string {
   return [
     '## CURRENT PROMOTIONS & SPECIAL OFFERS',
     'This block is generated from the live promotions database. Use only these facts for current-offer answers.',
+    'Promotion financing precedence: an APR and term listed inside an active promotion are canonical for that promotion. A separate standard financing offer does not cancel, replace, or make the promotion rate inactive.',
+    'For a layered offer, state that the eligible rebate applies and the customer may also choose the listed promotional financing, subject to the offer eligibility, approved credit, and terms.',
     ...promotions.slice(0, 5).map(formatPromotion),
   ].join('\n\n');
 }

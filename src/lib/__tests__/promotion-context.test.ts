@@ -58,6 +58,8 @@ describe('promotion context', () => {
     expect(context).toContain('The eligible rebate is automatic');
     expect(context).toContain('30-115 HP: $250 CAD');
     expect(context).toContain('2.99% APR for 24 months (OAC');
+    expect(context).toContain('A separate standard financing offer does not cancel');
+    expect(context).toContain('the eligible rebate applies and the customer may also choose');
     expect(context).toContain('Warranty registration deadline: September 15, 2026');
     expect(context).toContain('Backorders do not qualify');
     expect(context).toContain('Avator');
