@@ -32,6 +32,8 @@ jobs:
         env:
           PROMO_CANARY_BASE_URL: https://www.mercuryrepower.ca
           PROMO_CANARY_EXPIRES_AT: '2026-09-01T04:00:00Z'
+          # After expiry, assert the campaign disappears cleanly for one week.
+          PROMO_CANARY_RETIRES_AT: '2026-09-08T04:00:00Z'
       - name: Upload failure screenshot
         if: failure()
         uses: actions/upload-artifact@v4
