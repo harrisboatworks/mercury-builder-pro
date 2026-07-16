@@ -217,6 +217,22 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     expect(navigateMock).toHaveBeenCalledWith('/quote/summary');
   });
 
+  it('keeps a layered promotion step visible for optional financing', () => {
+    currentPromotions = [makePromo({
+      warranty_extra_years: 0,
+      promo_options: {
+        type: 'layered',
+        options: [{ id: 'cash_rebate' }, { id: 'special_financing' }],
+      },
+    })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.getByText(/Factory Rebate: \$500 auto-applied/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Promotional Financing/i })).toBeInTheDocument();
+    expect(navigateMock).not.toHaveBeenCalledWith('/quote/summary', { replace: true });
+  });
+
   it('renders a date-only promotion through the advertised local calendar day', () => {
     currentPromotions = [makePromo({ end_date: '2026-08-31' })];
 

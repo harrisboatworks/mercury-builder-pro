@@ -1,5 +1,9 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import {
+  ACTIVE_PROMOTION_SELECT,
+  formatPromotionContext,
+} from "../_shared/promotion-context.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -719,30 +723,20 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
 
     
     case "check_current_deals": {
+      const today = new Date().toISOString().split('T')[0];
       const { data: promos } = await supabase
         .from("promotions")
-        .select("name, discount_percentage, discount_fixed_amount, bonus_title, end_date")
+        .select(ACTIVE_PROMOTION_SELECT)
         .eq("is_active", true)
+        .or(`start_date.is.null,start_date.lte.${today}`)
+        .or(`end_date.is.null,end_date.gte.${today}`)
         .order("priority", { ascending: false })
         .limit(5);
-      
-      if (!promos?.length) {
-        return { content: [{ type: "text", text: "We don't have any special promotions running right now, but I can help you get the best price on any motor. What are you looking for?" }] };
-      }
-      
-      const promoList = promos.map(p => {
-        let deal = p.name;
-        if (p.discount_percentage) deal += ` - ${p.discount_percentage}% off`;
-        if (p.discount_fixed_amount) deal += ` - $${p.discount_fixed_amount} off`;
-        if (p.bonus_title) deal += ` + ${p.bonus_title}`;
-        if (p.end_date) deal += ` (ends ${new Date(p.end_date).toLocaleDateString()})`;
-        return deal;
-      }).join("\n");
-      
+
       return { 
         content: [{ 
           type: "text", 
-          text: `Here are our current promotions:\n\n${promoList}\n\nWant details on any of these?` 
+          text: formatPromotionContext(promos || []),
         }] 
       };
     }
@@ -1328,4 +1322,3 @@ serve(async (req) => {
     );
   }
 });
-

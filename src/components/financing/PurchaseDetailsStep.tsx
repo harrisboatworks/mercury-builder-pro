@@ -58,8 +58,8 @@ export function PurchaseDetailsStep() {
   // from saved or restored quotes from showing, e.g., March factory rebate after expiry).
   // forceRefresh ensures we always pull the latest promotions on financing-app entry,
   // bypassing the in-memory 5-minute cache.
-  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
-  const activeOptionIds = getChooseOneOptions().map((o) => o.id);
+  const { getPromotionOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
+  const activeOptionIds = getPromotionOptions().map((o) => o.id);
   const isPromoStillActive =
     !promoOption || (activeOptionIds.length > 0 && activeOptionIds.includes(promoOption));
 

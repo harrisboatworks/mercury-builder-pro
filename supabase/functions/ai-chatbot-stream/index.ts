@@ -32,6 +32,10 @@ import {
 } from '../_shared/harris-knowledge.ts';
 
 import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
+import {
+  ACTIVE_PROMOTION_SELECT,
+  formatPromotionContext,
+} from '../_shared/promotion-context.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -320,7 +324,7 @@ async function getActivePromotions() {
   const today = new Date().toISOString().split('T')[0];
   const { data: promotions } = await supabase
     .from('promotions')
-    .select('*')
+    .select(ACTIVE_PROMOTION_SELECT)
     .eq('is_active', true)
     .or(`start_date.is.null,start_date.lte.${today}`)
     .or(`end_date.is.null,end_date.gte.${today}`)
@@ -886,41 +890,7 @@ If they ask about installation, explain:
     `${Math.min(...motors.map(m => m.horsepower))}HP to ${Math.max(...motors.map(m => m.horsepower))}HP` : 
     'Contact for availability';
 
-  // Build promo summary (compact) - includes discounts, warranty bonuses, and end dates
-  const promoSummary = promotions.slice(0, 3).map(p => {
-    const benefits: string[] = [];
-    
-    if (p.discount_percentage > 0) {
-      benefits.push(`${p.discount_percentage}% off`);
-    }
-    if (p.discount_fixed_amount > 0) {
-      benefits.push(`$${p.discount_fixed_amount} off`);
-    }
-    if (p.warranty_extra_years > 0) {
-      benefits.push(`+${p.warranty_extra_years} year${p.warranty_extra_years > 1 ? 's' : ''} extended warranty FREE`);
-    }
-    if (p.bonus_title && !p.bonus_title.toLowerCase().includes('warranty')) {
-      benefits.push(p.bonus_title);
-    }
-    
-    const endDateStr = p.end_date ? ` (ends ${new Date(p.end_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})` : '';
-    const benefitText = benefits.length > 0 ? benefits.join(' + ') : 'Special offer';
-    return `${p.name}: ${benefitText}${endDateStr}`;
-  }).join(' | ');
-
-  // Build rebate matrix context from promo_options (if any promo has rebates)
-  let rebateMatrixContext = '';
-  const rebatePromo = promotions.find(p => p.promo_options?.options);
-  if (rebatePromo?.promo_options?.options) {
-    const rebateOption = rebatePromo.promo_options.options.find((o: any) => o.id === 'cash_rebate');
-    if (rebateOption?.matrix && Array.isArray(rebateOption.matrix)) {
-      rebateMatrixContext = `
-## FACTORY REBATES - EXACT AMOUNTS BY HP (MEMORIZE THIS!)
-When a customer asks about rebates, use EXACTLY these amounts based on motor HP:
-${rebateOption.matrix.map((tier: any) => `- ${tier.hp_min === tier.hp_max ? `${tier.hp_min}HP` : `${tier.hp_min}-${tier.hp_max}HP`}: $${tier.rebate} rebate`).join('\n')}
-`;
-    }
-  }
+  const promotionContext = formatPromotionContext(promotions);
 
   // Personality injection based on detected topics
   let topicHint = '';
@@ -929,7 +899,6 @@ ${rebateOption.matrix.map((tier: any) => `- ${tier.hp_min === tier.hp_max ? `${t
   else if (detectedTopics.includes('price_concern')) topicHint = "Budget matters - focus on value.";
 
   return `You're Harris from Harris Boat Works - talk like a friendly local who genuinely loves boats.
-${rebateMatrixContext}
 
 ## MOTOR MODEL CODE INTERPRETER (CRITICAL FOR SPEC QUESTIONS)
 When a customer asks about a motor's features (electric start, tiller, shaft length), DECODE THE MODEL NAME - the answer is in the letters after the HP!
@@ -1691,8 +1660,7 @@ ${quoteContext}
 ## COMPLETE INVENTORY BY HP (${motors.length} models, ${hpRange})
 ${motorSummary || 'Contact us for inventory'}
 
-## CURRENT PROMOTIONS - YOU HAVE AUTHORITATIVE DATA!
-${promoSummary || 'Ask about current offers'}
+${promotionContext}
 
 **CRITICAL PROMOTION RULES:**
 - You have COMPLETE, ACCURATE promo data above - use it confidently!
@@ -1700,7 +1668,7 @@ ${promoSummary || 'Ask about current offers'}
 - NEVER suggest calling for promo details - you have all the info
 - ALWAYS link to [our promotions page](/promotions) - it has full details
 - Mention the end date to create urgency
-- If they're viewing a motor, tell them the EXACT rebate amount for that HP
+- If they're viewing an eligible motor, tell them the EXACT rebate amount for that HP and respect every listed exclusion
 
 **Example responses (use the PROMO DATA above for names, end dates, and bonus amounts — never invent dates):**
 - If the PROMOTIONS data block lists an active offer, describe it from that data, then say [check out all the options](/promotions).
@@ -1715,7 +1683,7 @@ ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.me
 ## WARRANTY (CANONICAL, driven by promotions data above)
 - Mercury's BASE factory warranty is 3 years on every new outboard. Never state a final warranty length without checking the PROMOTIONS data above first.
 - If a warranty bonus is listed in the PROMOTIONS block ("+N years extended warranty FREE"), the active total is **3 + N years**. Always present that total, name the promo, and quote its end date verbatim from the promo data.
-- The "HBW Exclusive 7-Year Mercury Warranty" promotion ended June 14, 2026. Do not present it as currently running. The base factory warranty is 3 years on every new outboard. Only state a warranty bonus if the PROMOTIONS data block above lists one, and read its years and end date verbatim from that data.
+- Never name or quote an expired warranty promotion from memory. Only state a warranty bonus if the PROMOTIONS data block above lists one, and read its years and end date from that data.
 - After the active bonus promo ends, the warranty reverts to the 3-year standard. NEVER claim a longer warranty than what the promotions data supports.
 - For warranty *extensions/upgrades* beyond the active promo, route customers to https://www.mercuryrepower.ca/warranty.
 

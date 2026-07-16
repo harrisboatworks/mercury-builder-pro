@@ -1,6 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import {
+  ACTIVE_PROMOTION_SELECT,
+  formatPromotionContext,
+} from "../_shared/promotion-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -33,7 +37,7 @@ async function getActivePromotions() {
     const today = new Date().toISOString().split('T')[0];
     const { data: promotions, error } = await supabase
       .from('promotions')
-      .select('name, discount_percentage, discount_fixed_amount, bonus_title, bonus_description, warranty_extra_years, end_date, promo_options')
+      .select(ACTIVE_PROMOTION_SELECT)
       .eq('is_active', true)
       .or(`start_date.is.null,start_date.lte.${today}`)
       .or(`end_date.is.null,end_date.gte.${today}`)
@@ -140,91 +144,6 @@ Shaft length MUST match the boat's transom height - this isn't optional or a pre
 - This isn't preference - it's a specification. Getting it wrong hurts performance every trip.
 `;
 
-// Format promotion data with full "Choose One" details - FULLY DYNAMIC
-function formatPromotionData(promotions: any[]) {
-  if (!promotions.length) return "";
-  
-  let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
-  let hasChooseOneOptions = false; // Track if any promo has choose-one options
-  
-  promotions.forEach(promo => {
-    formatted += `**${promo.name}**\n`;
-    
-    if (promo.discount_percentage > 0) {
-      formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
-    }
-    if (promo.discount_fixed_amount > 0) {
-      formatted += `- $${promo.discount_fixed_amount} instant discount\n`;
-    }
-    if (promo.bonus_title) {
-      formatted += `- Bonus: ${promo.bonus_title}\n`;
-    }
-    if (promo.bonus_description) {
-      formatted += `- ${promo.bonus_description}\n`;
-    }
-    if (promo.warranty_extra_years) {
-      const baseWarranty = 3; // Mercury standard warranty
-      const totalYears = baseWarranty + promo.warranty_extra_years;
-      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years FREE (${totalYears} years total!)\n`;
-    }
-    
-    // Handle "Choose One" promo_options (Get 7 + Choose One structure)
-    // promo_options is an object with an "options" array, not an array itself
-    const promoOptions = promo.promo_options?.options;
-    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
-      hasChooseOneOptions = true;
-      formatted += `\n**CUSTOMER CHOOSES ONE BONUS (explain these options when asked):**\n`;
-      
-      promoOptions.forEach((option: any, idx: number) => {
-        formatted += `\n${idx + 1}. **${option.title || 'Option'}**`;
-        if (option.description) formatted += ` — ${option.description}`;
-        formatted += `\n`;
-        
-        // Special financing rates detail
-        if (option.rates && Array.isArray(option.rates)) {
-          formatted += `   FINANCING RATES:\n`;
-          option.rates.forEach((rate: any) => {
-            const minText = rate.minAmount ? ` (min finance amount $${rate.minAmount.toLocaleString()})` : '';
-            formatted += `   - ${rate.months} months at ${rate.rate}% APR${minText}\n`;
-          });
-        }
-        
-        // Rebate matrix detail - uses hp_min, hp_max, rebate fields from database
-        if (option.matrix && Array.isArray(option.matrix)) {
-          formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
-          option.matrix.forEach((tier: any) => {
-            const hpRange = tier.hp_min === tier.hp_max 
-              ? `${tier.hp_min}HP` 
-              : `${tier.hp_min}-${tier.hp_max}HP`;
-            formatted += `   - ${hpRange}: $${tier.rebate} cash back\n`;
-          });
-        }
-      });
-    }
-    
-    if (promo.end_date) {
-      const endDate = new Date(promo.end_date);
-      formatted += `\n⏰ PROMOTION ENDS: ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n`;
-    }
-    formatted += "\n";
-  });
-  
-  // Only add explanation guide if there were promo options (fully dynamic)
-  if (hasChooseOneOptions) {
-    formatted += `
-**HOW TO HELP CUSTOMERS CHOOSE:**
-When customer asks "which option should I choose?" → Ask about their situation:
-- Want to defer payments? → No-payment options work best
-- Financing a large amount? → Lower interest rates save money over time
-- Paying mostly cash? → Rebates give instant savings
-
-Use the specific option details listed above to explain what's available.
-`;
-  }
-  
-  return formatted;
-}
-
 // Map page paths to human-readable descriptions
 function getPageDescription(currentPage: string): string {
   const pageDescriptions: Record<string, string> = {
@@ -329,7 +248,7 @@ async function buildSystemPrompt(
     getActivePromotions(),
     getActiveFinancingPromo(),
   ]);
-  const promotionData = formatPromotionData(promotions);
+  const promotionData = formatPromotionContext(promotions);
   const financingCanon = financingPromo
     ? `\n## CURRENT FINANCING (CANONICAL, from financing_options table):\n- **${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** through TD Auto Finance via Dealerplan Peterborough\n- Default term: ${financingPromo.term_months || 60} months. Minimum financed: $${(financingPromo.min_amount || 5000).toLocaleString()}.\n- Runs through: ${financingPromo.promo_end_date || 'see /financing'}\n- ${financingPromo.promo_text || ''}\n- $349 DealerPlan fee added post-tax to every financed deal.\n- NEVER quote a different rate from memory. If a customer asks for exact monthly payment, route them to the configurator or /financing-application, do NOT calculate amortization by voice.\n`
     : `\n## CURRENT FINANCING:\nNo active financing promo loaded. Direct customers to /financing-application or have them call for the current rate. Do NOT quote a rate from memory.\n`;
@@ -504,9 +423,9 @@ Do NOT offer financing for sub-$5k motors, suggest they call us about the best o
 - **go_to_quote_step** - Navigate to a quote step. Use when customer says "show me my quote", "go to summary", "back to motor selection".
 
 **WHEN CUSTOMER ASKS ABOUT DEALS:**
-1. Briefly describe ONLY the promotion shown in the CURRENT PROMOTIONS block above. Do not invent bonus options or name an expired promo. The "HBW Exclusive 7-Year Mercury Warranty" promotion ended June 14, 2026, so do not present it as live. If the CURRENT PROMOTIONS block is empty, tell the customer there is no active promotion right now and that the standard Mercury factory warranty is 3 years.
+1. Briefly describe ONLY the promotion shown in the CURRENT PROMOTIONS block above. Respect its exact layered or choose-one structure. Do not invent options or name an expired promo. If the block says no promotion is active, say that plainly.
 2. Call navigate_to_promotions to SHOW them the page
-3. "Check out the details on your screen - you can see all three bonus options there"
+3. "I've pulled up the current details on your screen."
 
 ## SCREEN CONTROL - NAVIGATE FIRST, THEN READ SCREEN (SIMPLIFIED):
 You control the customer's browser. When they ask about motors, SHOW them visually while talking.
@@ -728,8 +647,8 @@ STEP 5 - TRADE-IN:
 → If they're trading a Mercury of the SAME horsepower, mention: "Good news — your current Mercury prop should fit the new motor, so that saves you the propeller charge right there."
 
 STEP 6 - PROMO:
-"Let me pull up the current bonus options for you. The standard Mercury factory warranty is 3 years, and I will only mention a bonus if one is active in the live promotions."
-→ Use go_to_quote_step('promo') to show options. Read names, years, and end dates only from the CURRENT PROMOTIONS data.
+"Let me pull up the current promotion details for you."
+→ Use go_to_quote_step('promo') to show the offer. Read the rebate, financing, eligibility, exclusions, dates, and whether benefits layer or require a choice only from the CURRENT PROMOTIONS data.
 
 STEP 7 - SUMMARY:
 "Here's your quote - [read the totals]. Ready to lock it in with a deposit, or want me to send this to your phone?"

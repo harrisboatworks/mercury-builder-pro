@@ -569,8 +569,9 @@ const AdminQuoteDetail = () => {
     const selectedOption = q.quote_data.selectedPromoOption;
     const selectedValue = q.quote_data.selectedPromoValue;
     
-    // Get active promotion for expiry date (check for promo_options with choose_one type)
-    const activePromo = promotions.find(p => p.promo_options?.type === 'choose_one' || p.warranty_extra_years);
+    // Get active promotion for expiry date, regardless of whether its benefits
+    // are layered or require a customer choice.
+    const activePromo = promotions.find(p => (p.promo_options?.options?.length ?? 0) > 0 || p.warranty_extra_years);
     const expiryDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
     const warrantyYears = activePromo?.warranty_extra_years || 0;
     

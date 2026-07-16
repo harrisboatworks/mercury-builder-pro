@@ -16,7 +16,7 @@ export function GlobalStickyQuoteBar() {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { promo } = useActiveFinancingPromo();
-  const { getRebateForHP, getSpecialFinancingRates, getChooseOneOptions } = useActivePromotions();
+  const { getRebateForHP, getSpecialFinancingRates, getPromotionOptions } = useActivePromotions();
 
   // Pages where bar should NOT show
   const hideOnPages = [
@@ -109,8 +109,8 @@ export function GlobalStickyQuoteBar() {
   }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates]);
 
   // Determine promo-or-summary destination
-  const hasActiveChooseOne = getChooseOneOptions().length > 0;
-  const promoOrSummary = hasActiveChooseOne ? '/quote/promo-selection' : '/quote/summary';
+  const hasActivePromotionOptions = getPromotionOptions().length > 0;
+  const promoOrSummary = hasActivePromotionOptions ? '/quote/promo-selection' : '/quote/summary';
 
   // Per-step validation gate (disable Continue when required selection missing)
   const gate = getQuoteStepGate(location.pathname, state);

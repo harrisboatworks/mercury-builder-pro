@@ -3,6 +3,10 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
+import {
+  ACTIVE_PROMOTION_SELECT,
+  formatPromotionContext,
+} from "../_shared/promotion-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -40,7 +44,7 @@ async function getActivePromotions() {
     const today = new Date().toISOString().split('T')[0];
     const { data: promotions, error } = await supabase
       .from('promotions')
-      .select('*')
+      .select(ACTIVE_PROMOTION_SELECT)
       .eq('is_active', true)
       .or(`start_date.is.null,start_date.lte.${today}`)
       .or(`end_date.is.null,end_date.gte.${today}`)
@@ -84,76 +88,6 @@ function formatMotorData(motors: any[]) {
       const price = motor.price ? `$${motor.price.toLocaleString()}` : 'Call for pricing';
       formatted += `- ${motor.model} (${motor.hp}HP) - ${price} - ${motor.availability}\n`;
     });
-    formatted += "\n";
-  });
-  
-  return formatted;
-}
-
-// Helper function to format promotion data for AI
-function formatPromotionData(promotions: any[]) {
-  if (!promotions.length) return "";
-  
-  let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
-  
-  promotions.slice(0, 5).forEach((promo: any) => {
-    formatted += `**${promo.name}**\n`;
-    
-    if (promo.discount_percentage > 0) {
-      formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
-    }
-    if (promo.discount_fixed_amount > 0) {
-      formatted += `- $${promo.discount_fixed_amount} off qualifying motors\n`;
-    }
-    if (promo.bonus_title) {
-      formatted += `- Bonus: ${promo.bonus_title}\n`;
-    }
-    if (promo.bonus_description) {
-      formatted += `- ${promo.bonus_description}\n`;
-    }
-    if (promo.warranty_extra_years) {
-      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage\n`;
-    }
-    
-    // Handle "Choose One" promo_options (new Get 7 + Choose One structure)
-    // promo_options is an object with { type: "choose_one", options: [...] }
-    const promoOptions = promo.promo_options?.options;
-    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
-      formatted += `- **Customer Chooses ONE of these bonus options:**\n`;
-      
-      promoOptions.forEach((option: any, idx: number) => {
-        formatted += `  ${idx + 1}. **${option.title || 'Option'}**`;
-        if (option.description) formatted += ` — ${option.description}`;
-        formatted += `\n`;
-        
-        // Special financing rates detail
-        if (option.rates && Array.isArray(option.rates)) {
-          formatted += `     Available rates:\n`;
-          option.rates.forEach((rate: any) => {
-            const minText = (rate.minAmount || rate.minimum_amount) 
-              ? ` (min $${(rate.minAmount || rate.minimum_amount).toLocaleString()})` 
-              : '';
-            formatted += `     - ${rate.months} months @ ${rate.rate}%${minText}\n`;
-          });
-        }
-        
-        // Rebate matrix detail - uses hp_min, hp_max, rebate fields
-        if (option.matrix && Array.isArray(option.matrix)) {
-          formatted += `     Rebate amounts by horsepower:\n`;
-          option.matrix.forEach((tier: any) => {
-            const hpRange = tier.hp_min === tier.hp_max 
-              ? `${tier.hp_min}HP` 
-              : `${tier.hp_min}-${tier.hp_max}HP`;
-            formatted += `     - ${hpRange}: $${tier.rebate} factory rebate\n`;
-          });
-        }
-      });
-    }
-    
-    if (promo.end_date) {
-      const endDate = new Date(promo.end_date);
-      formatted += `- Valid until: ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n`;
-    }
     formatted += "\n";
   });
   
@@ -238,7 +172,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 - Water contamination signs: Creamy/white gear lube indicates water presence - requires dealer inspection
 
 ### Warranty & Product Protection:
-- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length. The "HBW Exclusive 7-Year Mercury Warranty" promotion ended June 14, 2026 and is no longer running. Only state a warranty bonus if the live promotions data lists one, and read its years and end date verbatim from that data. Otherwise the warranty is the 3-year standard.
+- Mercury BASE factory warranty: 3 years, non-declining, on every new outboard. ALWAYS check the active promotions data before stating a final warranty length. Only state a warranty bonus if the live promotions data lists one, and read its years and end date from that data. Otherwise the warranty is the 3-year standard.
 - Mercury Product Protection Plans: Extend coverage up to 8 years total
 - Platinum Extended Warranty available through Harris Boat Works: Factory-backed parts & labor
 - Warranty registration required - engines must be registered with Mercury Marine
@@ -464,7 +398,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 
   // Add real-time inventory data
   const motorData = formatMotorData(motors);
-  const promotionData = formatPromotionData(promotions);
+  const promotionData = formatPromotionContext(promotions);
   
   const dynamicPrompt = basePrompt + motorData + promotionData + `
 
@@ -634,7 +568,7 @@ Gores Landing, ON K0K 2E0
 - ALWAYS check the "CURRENT PROMOTIONS & SPECIAL OFFERS" section above — it contains LIVE data from the database
 - If a rebate matrix is listed, look up the customer's HP range to give the exact rebate amount
 - NEVER say "no rebates available" if the promotion data above shows an active promotion with a rebate matrix
-- The current active Mercury promotion applies to ALL Mercury outboards — check the live promotions data above for details and any rebate matrix.
+- Apply a promotion only when the motor and intended use meet the live eligibility and exclusion rules above. Never generalize it to all Mercury outboards.
 
 ### When Discussing the Current Mercury Promotion:
 - Use ONLY the active promotion data shown above (name, dates, bonus details). Do NOT reference retired promos by name.
