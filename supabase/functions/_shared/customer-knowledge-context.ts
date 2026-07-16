@@ -516,7 +516,8 @@ export function buildBusinessCustomerAnswer(
   const contact = profile.contact;
   const address = addressLine(profile);
   if (/\b(hours?|open|closed|when)\b/i.test(question)) {
-    return `Our published hours are **${formatHours(profile)}**. Because seasonal or holiday exceptions can change, the current contact page is the final check before a long drive.`;
+    const hours = formatHours(profile).replace(/\.$/, "");
+    return `Our published hours are **${hours}**. Because seasonal or holiday exceptions can change, the current contact page is the final check before a long drive.`;
   }
   if (/\b(ship|shipping|deliver|delivery|pickup|pick up|courier)\b/i.test(question)) {
     return profile.productExclusions?.delivery?.reason ||
