@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
 import { KB_DOCUMENTS } from "../_shared/format-kb-documents.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const ELEVENLABS_API_KEY = Deno.env.get("ELEVENLABS_API_KEY");
 const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1";
@@ -326,6 +327,9 @@ serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     console.log("Starting static KB sync...");
