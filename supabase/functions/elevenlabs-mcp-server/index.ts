@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import {
   ACTIVE_PROMOTION_SELECT,
-  formatPromotionContext,
+  buildPromotionCustomerAnswer,
 } from "../_shared/promotion-context.ts";
 
 const corsHeaders = {
@@ -736,7 +736,10 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: formatPromotionContext(promos || []),
+          text: buildPromotionCustomerAnswer(
+            promos || [],
+            `${args.horsepower_range || ''} ${args.motor_family || ''}`.trim(),
+          ),
         }] 
       };
     }

@@ -6,6 +6,7 @@ import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-chec
 import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 import {
   ACTIVE_PROMOTION_SELECT,
+  buildPromotionCustomerAnswer,
   formatPromotionContext,
 } from "../_shared/promotion-context.ts";
 
@@ -39,7 +40,7 @@ async function getActivePromotions(): Promise<string> {
       .or(`start_date.is.null,start_date.lte.${today}`)
       .or(`end_date.is.null,end_date.gte.${today}`)
       .order('priority', { ascending: false });
-    return formatPromotionContext(promos || []);
+    return `${formatPromotionContext(promos || [])}\n\n## CUSTOMER-SAFE PROMOTION SUMMARY\n${buildPromotionCustomerAnswer(promos || [])}`;
   } catch (err) {
     console.error('[realtime-session] Error fetching promotions:', err);
     return 'Promotions data unavailable — direct customer to /promotions page.';

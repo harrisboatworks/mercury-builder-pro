@@ -20,6 +20,14 @@ export interface PromotionRecord {
   terms_url?: string | null;
 }
 
+export interface StandardFinancingRecord {
+  name?: string | null;
+  rate?: number | string | null;
+  term_months?: number | string | null;
+  promo_end_date?: string | null;
+  min_amount?: number | string | null;
+}
+
 type JsonRecord = Record<string, unknown>;
 
 function asRecord(value: unknown): JsonRecord | null {
@@ -105,6 +113,119 @@ export function getPromotionRebateMatrix(promotion: PromotionRecord): JsonRecord
   return asArray(rebateOption?.matrix)
     .map(asRecord)
     .filter((tier): tier is JsonRecord => Boolean(tier));
+}
+
+export function filterPromotionsForCountry(
+  promotions: PromotionRecord[],
+  country = 'CA',
+): PromotionRecord[] {
+  const target = country.toUpperCase();
+  return promotions.filter((promotion) => {
+    const details = asRecord(promotion.details);
+    const market = asRecord(details?.market);
+    const promotionCountry = asString(market?.country)?.toUpperCase();
+    return !promotionCountry || promotionCountry === target;
+  });
+}
+
+export function isPromotionQuestion(question: string): boolean {
+  return /\b(promo(?:tion)?s?|rebates?|summer savings|special offer|current (?:deal|offer)|2\.99|combine\b[^.?!]{0,40}\bfinanc)\b/i.test(question);
+}
+
+export function buildPromotionCustomerAnswer(
+  promotions: PromotionRecord[],
+  question = '',
+  standardFinancing: StandardFinancingRecord | null = null,
+  country = 'CA',
+): string {
+  const active = filterPromotionsForCountry(promotions, country);
+  if (!active.length) {
+    return 'There is no active promotion loaded right now. See [current promotions](/promotions) for the latest dealership offers.';
+  }
+
+  const primary = active.find((promotion) =>
+    getPromotionRebateMatrix(promotion).length > 0 ||
+    getPromotionOptions(promotion).some((option) => option.id === 'special_financing')
+  ) || active[0];
+  const name = asString(primary.name) || 'Current Mercury promotion';
+  const matrix = getPromotionRebateMatrix(primary);
+  const options = getPromotionOptions(primary);
+  const mode = getPromotionCombinationMode(primary);
+  const details = asRecord(primary.details) || {};
+  const eligibility = asRecord(details.eligibility) || {};
+  const hpMatch = question.match(/\b(\d+(?:\.\d+)?)\s*(?:hp|horsepower)\b/i);
+  const horsepower = hpMatch ? Number(hpMatch[1]) : null;
+  const matchingTier = horsepower === null ? null : matrix.find((tier) => {
+    const min = asNumber(tier.hp_min);
+    const max = asNumber(tier.hp_max);
+    return min !== null && max !== null && horsepower >= min && horsepower <= max;
+  });
+  const rebate = matchingTier ? formatMoney(matchingTier.rebate) : null;
+  const financingOption = options.find((option) => option.id === 'special_financing');
+  const financingRates = asArray(financingOption?.rates)
+    .map(asRecord)
+    .filter((rate): rate is JsonRecord => Boolean(rate));
+  const promoRate = financingRates.find((rate) =>
+    asNumber(rate.rate) !== null && asNumber(rate.months) !== null
+  );
+  const apr = promoRate ? asNumber(promoRate.rate) : null;
+  const months = promoRate ? asNumber(promoRate.months) : null;
+  const start = formatDate(primary.start_date);
+  const end = formatDate(primary.end_date);
+  const lines: string[] = [`**${name}** is active${start || end ? ` from ${start || 'now'} through ${end || 'further notice'}` : ''}.`];
+
+  if (horsepower !== null && rebate) {
+    lines.push(`For an eligible ${horsepower} HP Mercury FourStroke repower, the factory rebate is **${rebate} CAD**.`);
+  } else if (matrix.length) {
+    const tiers = matrix.map((tier) => {
+      const range = formatHpRange(tier);
+      const amount = formatMoney(tier.rebate);
+      return range && amount ? `${range}: ${amount} CAD` : null;
+    }).filter((tier): tier is string => Boolean(tier));
+    if (tiers.length) lines.push(`Rebate tiers: ${tiers.join('; ')}.`);
+  }
+
+  if (apr !== null && months !== null) {
+    if (mode === 'layered') {
+      lines.push(`**Yes — the rebate and promotional financing layer together.** The eligible rebate applies automatically, and **${apr}% APR for ${months} months** is optional on approved credit, subject to the promotion terms.`);
+    } else if (mode === 'choose_one') {
+      lines.push(`The offer requires a choice between the listed benefits; promotional financing is **${apr}% APR for ${months} months** on approved credit, subject to terms.`);
+    } else {
+      lines.push(`Promotional financing is **${apr}% APR for ${months} months** on approved credit, subject to terms.`);
+    }
+  }
+
+  const otherPromotions = active
+    .filter((promotion) => promotion !== primary)
+    .map((promotion) => asString(promotion.name))
+    .filter((promotionName): promotionName is string => Boolean(promotionName));
+  if (otherPromotions.length) lines.push(`Also active: ${otherPromotions.join('; ')}.`);
+
+  const products = asStringList(eligibility.products);
+  const use = asString(eligibility.use);
+  const stock = asString(eligibility.stock_requirement);
+  const eligibilityParts = [products.join('; '), use, stock].filter(Boolean);
+  if (eligibilityParts.length) lines.push(`Who qualifies: ${eligibilityParts.join('; ')}.`);
+  if (eligibility.backorders_qualify === false) lines.push('Backorders do not qualify.');
+
+  const requirements = asStringList(details.requirements);
+  if (requirements.length) lines.push(`Requirements: ${requirements.join('; ')}.`);
+
+  const exclusions = [
+    ...asStringList(eligibility.exclusions),
+    ...asStringList(details.exclusions),
+  ].filter((item, index, all) => all.indexOf(item) === index);
+  if (exclusions.length) lines.push(`Excluded: ${exclusions.join('; ')}.`);
+
+  const standardRate = asNumber(standardFinancing?.rate);
+  const standardTerm = asNumber(standardFinancing?.term_months);
+  if (standardRate !== null && /\b(financ|apr|rate|2\.99)\b/i.test(question)) {
+    const standardName = asString(standardFinancing?.name) || 'Standard financing';
+    lines.push(`${standardName} at ${standardRate}% APR${standardTerm ? ` for a default ${standardTerm}-month term` : ''} is a separate standard/alternate option; it does not cancel the promotion's ${apr ?? 'listed'}% rate and term.`);
+  }
+
+  lines.push('See [current promotions](/promotions) for the full terms.');
+  return lines.join('\n\n');
 }
 
 function formatOption(option: JsonRecord, mode: PromotionCombinationMode): string[] {
@@ -224,7 +345,8 @@ function formatPromotion(promotion: PromotionRecord): string {
 }
 
 export function formatPromotionContext(promotions: PromotionRecord[]): string {
-  if (!promotions.length) {
+  const active = filterPromotionsForCountry(promotions);
+  if (!active.length) {
     return '## CURRENT PROMOTIONS & SPECIAL OFFERS\nNo active promotion is loaded. Do not quote or name an expired offer.';
   }
 
@@ -233,6 +355,6 @@ export function formatPromotionContext(promotions: PromotionRecord[]): string {
     'This block is generated from the live promotions database. Use only these facts for current-offer answers.',
     'Promotion financing precedence: an APR and term listed inside an active promotion are canonical for that promotion. A separate standard financing offer does not cancel, replace, or make the promotion rate inactive.',
     'For a layered offer, state that the eligible rebate applies and the customer may also choose the listed promotional financing, subject to the offer eligibility, approved credit, and terms.',
-    ...promotions.slice(0, 5).map(formatPromotion),
+    ...active.slice(0, 5).map(formatPromotion),
   ].join('\n\n');
 }

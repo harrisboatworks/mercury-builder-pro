@@ -34,7 +34,9 @@ import {
 import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
 import {
   ACTIVE_PROMOTION_SELECT,
+  buildPromotionCustomerAnswer,
   formatPromotionContext,
+  isPromotionQuestion,
 } from '../_shared/promotion-context.ts';
 
 const corsHeaders = {
@@ -2082,6 +2084,25 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       getActivePromotions(),
       getActiveFinancingPromo(),
     ]);
+
+    if (isPromotionQuestion(message)) {
+      const reply = buildPromotionCustomerAnswer(promotions, message, financingPromo);
+      console.log('Returning deterministic promotion answer from live database rows');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: reply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     
     // Build the rich system prompt
     let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion, financingPromo);
