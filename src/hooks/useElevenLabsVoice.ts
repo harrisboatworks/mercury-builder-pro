@@ -7,6 +7,12 @@ import { dispatchVoiceNavigation, navigateToMotorsWithFilter, type MotorForQuote
 import { dispatchVoiceActivity, showTradeInEstimate, showCallbackConfirmation, showMotorComparison, showCurrentDeals, showLeadCaptureCard } from '@/lib/voiceActivityFeed';
 import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 import { formatMotorsForVoice } from '@/lib/visibleMotorsStore';
+import {
+  ACTIVE_PROMOTION_SELECT,
+  formatPromotionContext,
+  getPromotionCombinationMode,
+  getPromotionOptions,
+} from '../../supabase/functions/_shared/promotion-context';
 
 // Timeout configuration (in milliseconds)
 // Single graceful close after silence - triggers BEFORE ElevenLabs' turn timeout
@@ -942,55 +948,34 @@ async function handleCheckCurrentDeals(params: {
   console.log('[ClientTool] check_current_deals', params);
   
   try {
+    const today = new Date().toISOString().split('T')[0];
     const { data, error } = await supabase
       .from('promotions')
-      .select('name, discount_percentage, discount_fixed_amount, bonus_title, bonus_description, warranty_extra_years, end_date, promo_options')
+      .select(ACTIVE_PROMOTION_SELECT)
       .eq('is_active', true)
+      .or(`start_date.is.null,start_date.lte.${today}`)
+      .or(`end_date.is.null,end_date.gte.${today}`)
       .order('priority', { ascending: false })
       .limit(5);
-    
-    if (error || !data || data.length === 0) {
+
+    if (error) {
+      return JSON.stringify({ error: 'Unable to check promotions right now.' });
+    }
+
+    if (!data || data.length === 0) {
       return JSON.stringify({
         success: true,
-        message: "I don't see any specific promotions running right now, but we're always competitive on pricing. Want me to build you a quote?"
+        promotions: [],
+        message: formatPromotionContext([]),
       });
     }
-    
-    const mainPromo = data[0];
-    let message = `We've got the ${mainPromo.name} running right now!`;
-    
-    // Include warranty bonus
-    if (mainPromo.warranty_extra_years) {
-      message += ` That's ${3 + mainPromo.warranty_extra_years} years of factory coverage!`;
-    }
-    
-    // Include Choose One options if available
-    // promo_options is an object with an "options" array, not an array itself
-    const promoOptionsData = mainPromo.promo_options as any;
-    const promoOptions = promoOptionsData?.options;
-    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
-      message += ` Plus you get to choose one bonus: `;
-      const optionTitles = promoOptions.map((o: any) => o.title || 'bonus option').filter(Boolean);
-      message += optionTitles.join(', or ');
-      message += `. Want me to explain any of these options, or show you the promotions page?`;
-    } else if (mainPromo.bonus_title) {
-      message += ` Plus ${mainPromo.bonus_title}.`;
-    }
-    
-    if (mainPromo.end_date) {
-      const endDate = new Date(mainPromo.end_date);
-      const daysLeft = Math.ceil((endDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
-      if (daysLeft > 0 && daysLeft <= 30) {
-        message += ` Ends in ${daysLeft} days!`;
-      }
-    }
-    
+
     return JSON.stringify({
       success: true,
       promotions: data,
-      hasChooseOne: !!(promoOptions && promoOptions.length > 0),
-      chooseOneOptions: promoOptions || [],
-      message
+      combinationModes: data.map(getPromotionCombinationMode),
+      options: data.map(getPromotionOptions),
+      message: formatPromotionContext(data),
     });
   } catch (err) {
     return JSON.stringify({ error: 'Unable to check promotions right now.' });

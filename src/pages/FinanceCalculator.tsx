@@ -88,18 +88,18 @@ export default function FinanceCalculator() {
   const [term, setTerm] = useState<number>(60);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getChooseOneOptions, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, getPromotionOptions, getSpecialFinancingRates } = useActivePromotions();
 
   // Derive promo-aware content for hero pill & banner
   const financingPromoData = useMemo(() => {
     const rates = getSpecialFinancingRates();
-    const options = getChooseOneOptions();
+    const options = getPromotionOptions();
     const hasFinancingOption = options.some(o => o.id === 'special_financing' || o.id === 'no_payments');
     const lowestRate = rates ? Math.min(...rates.map(r => r.rate)) : null;
     const noPaymentsOption = options.find(o => o.id === 'no_payments');
-    const parentPromo = promotions.find(p => p.promo_options?.type === 'choose_one');
+    const parentPromo = promotions.find(p => (p.promo_options?.options?.length ?? 0) > 0);
     return { hasFinancingOption, lowestRate, noPaymentsOption, parentPromo, rates };
-  }, [promotions, getChooseOneOptions, getSpecialFinancingRates]);
+  }, [promotions, getPromotionOptions, getSpecialFinancingRates]);
 
   const heroPillText = useMemo(() => {
     if (financingPromoData.lowestRate) return `Promo rates from ${financingPromoData.lowestRate}% APR`;

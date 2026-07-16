@@ -118,12 +118,14 @@ export default function Promotions() {
     }
   };
 
-  // Find the main promotion, prefer "choose one" type, fall back to first active
-  const mainPromotion = promotions.find(p => p.promo_options?.type === 'choose_one') || promotions[0] || null;
-  const chooseOneOptions = mainPromotion?.promo_options?.type === 'choose_one' ? mainPromotion.promo_options.options : [];
+  // Prefer a promotion with structured benefits. The benefit relationship is
+  // read separately so layered offers never inherit choose-one copy.
+  const mainPromotion = promotions.find(p => (p.promo_options?.options?.length ?? 0) > 0) || promotions[0] || null;
+  const promotionOptions = mainPromotion?.promo_options?.options || [];
+  const chooseOneOptions = mainPromotion?.promo_options?.type === 'choose_one' ? promotionOptions : [];
 
   // Get rebate matrix for the full table display
-  const rebateMatrix = chooseOneOptions.find((o: any) => o.id === 'cash_rebate')?.matrix || [];
+  const rebateMatrix = promotionOptions.find((o: any) => o.id === 'cash_rebate')?.matrix || [];
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, '');

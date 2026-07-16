@@ -172,25 +172,29 @@ export default function PromoSelectionPage() {
     });
   }, [state.motor, activePromo, rebateAmount, state.selectedPromoOption, state.selectedPromoRate, dispatch]);
 
-  // Auto-skip only when we KNOW there is no eligible "choose one" promo.
+  // Auto-skip only when we KNOW there are no promotion options. Layered
+  // offers still need this step so the customer can opt into promo financing
+  // while the rebate remains automatic.
   // Guard against the loading race: while promotions are still loading we
   // must not redirect, otherwise the customer skips the screen before we
   // ever hear back from the DB and the rebate is silently dropped.
-  const hasChooseOneOptions = activePromo?.promo_options?.type === 'choose_one' &&
-    (activePromo.promo_options.options?.length ?? 0) > 0;
+  const hasPromotionOptions = (
+    activePromo?.promo_options?.type === 'choose_one' ||
+    activePromo?.promo_options?.type === 'layered'
+  ) && (activePromo.promo_options.options?.length ?? 0) > 0;
 
   useEffect(() => {
     if (promoLoading) return;
     if (!state.motor) return;
-    if (activePromo && hasChooseOneOptions) return;
+    if (activePromo && hasPromotionOptions) return;
 
     // For warranty-only promos, auto-apply the warranty and skip
-    if (activePromo && !hasChooseOneOptions) {
+    if (activePromo && !hasPromotionOptions) {
       dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
       dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + (activePromo.warranty_extra_years || 0) } });
     }
     navigate('/quote/summary', { replace: true });
-  }, [promoLoading, activePromo, hasChooseOneOptions, state.motor, navigate, dispatch]);
+  }, [promoLoading, activePromo, hasPromotionOptions, state.motor, navigate, dispatch]);
 
   const handleOptionSelect = (optionId: PromoOptionId) => {
     setSelectedOption(optionId);

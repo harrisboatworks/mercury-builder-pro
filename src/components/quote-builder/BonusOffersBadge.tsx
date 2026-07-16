@@ -12,14 +12,14 @@ function daysLeft(end: string | null) {
 }
 
 export default function CurrentPromotions() {
-  const { promotions, getChooseOneOptions } = useActivePromotions();
+  const { promotions, getPromotionOptions } = useActivePromotions();
   const promos = promotions ?? [];
   if (!promos.length) return null;
 
   const p = promos[0];
   const left = daysLeft(p.end_date);
-  const chooseOneOptions = getChooseOneOptions?.() ?? [];
-  const isChooseOne = chooseOneOptions.length > 0;
+  const promotionOptions = getPromotionOptions?.() ?? [];
+  const hasStructuredOptions = promotionOptions.length > 0;
 
   return (
     <div className="rounded-2xl border border-repower-navy-900/10 bg-white p-5 shadow-sm  ">
@@ -45,15 +45,15 @@ export default function CurrentPromotions() {
           {p.warranty_extra_years && (
             <div className="inline-flex items-center gap-2 bg-repower-cream text-repower-gold px-3 py-1.5 rounded-lg text-sm  ">
               <Shield className="w-4 h-4" />
-              <span className="font-medium">7 Years Factory Coverage</span>
-              <span className="text-repower-gold ">(3 + 4 FREE)</span>
+              <span className="font-medium">{3 + p.warranty_extra_years} Years Factory Coverage</span>
+              <span className="text-repower-gold ">(3 + {p.warranty_extra_years} FREE)</span>
             </div>
           )}
           
-          {/* Choose One options summary */}
-          {isChooseOne && (
+          {/* Structured promotion benefits; relationship comes from DB type. */}
+          {hasStructuredOptions && (
             <div className="grid grid-cols-3 gap-2 pt-2">
-              {chooseOneOptions.slice(0, 3).map((option) => (
+              {promotionOptions.slice(0, 3).map((option) => (
                 <div 
                   key={option.id}
                   className="flex items-center gap-1.5 text-xs text-repower-navy-900/65 "
@@ -67,8 +67,8 @@ export default function CurrentPromotions() {
             </div>
           )}
           
-          {/* Description if no choose-one */}
-          {!isChooseOne && p.bonus_description && (
+          {/* Description if no structured benefits */}
+          {!hasStructuredOptions && p.bonus_description && (
             <div className="text-sm text-repower-navy-900/65 ">
               {p.bonus_description}
             </div>

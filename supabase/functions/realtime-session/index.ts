@@ -4,6 +4,10 @@ import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
+import {
+  ACTIVE_PROMOTION_SELECT,
+  formatPromotionContext,
+} from "../_shared/promotion-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -30,47 +34,12 @@ async function getActivePromotions(): Promise<string> {
     const today = new Date().toISOString().split('T')[0];
     const { data: promos } = await supabase
       .from('promotions')
-      .select('name, details, start_date, end_date, warranty_extra_years, promo_options, bonus_title, bonus_description')
+      .select(ACTIVE_PROMOTION_SELECT)
       .eq('is_active', true)
+      .or(`start_date.is.null,start_date.lte.${today}`)
       .or(`end_date.is.null,end_date.gte.${today}`)
       .order('priority', { ascending: false });
-
-    if (!promos || promos.length === 0) {
-      return 'No active promotions at this time.';
-    }
-
-    return promos.map(p => {
-      let promoText = `**${p.name}**`;
-      if (p.start_date && p.end_date) {
-        promoText += ` (${p.start_date} – ${p.end_date})`;
-      }
-      if (p.warranty_extra_years) {
-        promoText += `\n- ${3 + p.warranty_extra_years}-year factory warranty (3 standard + ${p.warranty_extra_years} bonus)`;
-      }
-      if (p.bonus_description) {
-        promoText += `\n- ${p.bonus_description}`;
-      }
-      // Extract rebate matrix from promo_options if available
-      if (p.promo_options && typeof p.promo_options === 'object') {
-        const options = p.promo_options as any;
-        if (options.rebate_matrix) {
-          promoText += '\n- Rebate amounts by HP: ' + 
-            Object.entries(options.rebate_matrix).map(([hp, amt]) => `${hp} = $${amt}`).join(', ');
-        }
-        if (options.choices && Array.isArray(options.choices)) {
-          promoText += '\n- Customer picks ONE bonus: ' + options.choices.join(', ');
-        }
-      }
-      // Also check details JSON for rebate info
-      if (p.details && typeof p.details === 'object') {
-        const details = p.details as any;
-        if (details.rebate_matrix && !promoText.includes('Rebate amounts')) {
-          promoText += '\n- Rebate amounts by HP: ' + 
-            Object.entries(details.rebate_matrix).map(([hp, amt]) => `${hp} = $${amt}`).join(', ');
-        }
-      }
-      return promoText;
-    }).join('\n\n');
+    return formatPromotionContext(promos || []);
   } catch (err) {
     console.error('[realtime-session] Error fetching promotions:', err);
     return 'Promotions data unavailable — direct customer to /promotions page.';
