@@ -209,6 +209,8 @@ ${activePromotions}
 
 PROMOTION RULES:
 - NEVER say "no rebates" — every HP range qualifies for some benefit
+- Treat any APR and term listed in CURRENT PROMOTIONS as active for that promotion. A separate standard financing offer must never be used as evidence that the promotion rate is inactive.
+- If the offer is layered, say the eligible rebate applies and promotional financing is optional, subject to approved credit and the listed terms.
 - Direct them to the quote builder or /promotions for full details
 - If unsure about specific rebate amounts, check the data above or direct to /promotions
 

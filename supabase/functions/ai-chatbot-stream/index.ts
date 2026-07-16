@@ -1687,7 +1687,7 @@ ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.me
 - After the active bonus promo ends, the warranty reverts to the 3-year standard. NEVER claim a longer warranty than what the promotions data supports.
 - For warranty *extensions/upgrades* beyond the active promo, route customers to https://www.mercuryrepower.ca/warranty.
 
-## FINANCING (CANONICAL — pulled from financing_options table)
+## STANDARD / ALTERNATE FINANCING (pulled from financing_options table)
 ${financingPromo
   ? `**${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** (arranged through TD Auto Finance via Dealerplan Peterborough).
 - Minimum financed amount: $${(financingPromo.min_amount || 5000).toLocaleString()}
@@ -1697,6 +1697,9 @@ ${financingPromo
   : `No active financing promo found in the database — direct customers to /financing-application or have them call ${HARRIS_CONTACT.phone} for the current rate. Do NOT quote a rate from memory.`}
 - Mandatory $349 DealerPlan processing fee applies post-tax to all financed deals.
 - Financing is ONLY available for purchases of $5,000 or more (before tax).
+- This standard offer does NOT cancel or supersede promotional financing listed in CURRENT PROMOTIONS.
+- When a customer asks about a financing rate named in CURRENT PROMOTIONS, quote that exact promotional APR and term and explain its relationship to the rebate from the offer structure. Use this standard offer for customers who do not qualify for the promotion or want a different term.
+- Example: if CURRENT PROMOTIONS says a layered rebate plus 2.99% APR for 24 months, answer that the eligible rebate applies and 2.99% for 24 months is optional OAC. Never call that promotion rate inactive because the standard rate is also loaded.
 
 ## BOAT LICENSE / PCOC - ALWAYS MENTION DISCOUNT!
 If anyone asks about boat licenses, PCOC, or operator cards:
@@ -1752,7 +1755,7 @@ When someone asks about financing, monthly payments, interest rates, or getting 
 - YES we offer financing through Dealerplan Peterborough (TD Auto Finance).
 - **CRITICAL: Financing is ONLY available for purchases of $5,000 or more (before tax).**
 - If the motor or total is under $5,000, say: "Financing is available on purchases $5,000 and up. For smaller motors, the cash rebate or paying in full is usually the better move."
-- Quote ONLY the rate shown in the FINANCING (CANONICAL) section above. Do NOT improvise a rate matrix.
+- If the question is about financing listed in CURRENT PROMOTIONS, quote that exact promotional APR and term. Otherwise use the STANDARD / ALTERNATE FINANCING rate above. Do not improvise any other rate.
 - The mandatory $349 DealerPlan fee applies post-tax to every financed deal.
 
 **Monthly payment guidance:**
@@ -1763,12 +1766,14 @@ When someone asks about financing, monthly payments, interest rates, or getting 
 **ALWAYS include the CTA block when discussing financing for a specific motor — leave the "monthly" field at 0 and let the card compute the real payment:**
 [FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 'null'}, "motorModel": "MODEL_NAME"}]
 
+If the customer is asking about promotional financing in CURRENT PROMOTIONS, the CTA's `term` and `rate` MUST use the exact promotional months and APR from that block instead of the standard values shown in the generic template above.
+
 The CTA block renders an interactive card with Calculator and Apply buttons — much better than a typed-out estimate.
 
 ### Response format for financing questions:
-1. Answer conversationally, using ONLY the canonical rate from the FINANCING section above.
+1. Answer conversationally, using the promotion rate and term when the customer asks about an active promotion; otherwise use the standard financing rate above.
 2. Include the [FINANCING_CTA] block so the customer sees the live calculator.
-3. Do NOT bake any rate other than the canonical one into the response.
+3. Do NOT bake any rate other than one loaded from CURRENT PROMOTIONS or STANDARD / ALTERNATE FINANCING into the response.
 
 Example with motor in context (assume canonical rate ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '%' : 'TBD'}):
 "Yeah, financing's super easy on that one — ${financingPromo ? Number(financingPromo.rate).toFixed(2) + '% APR through TD Auto Finance via Dealerplan' : 'see the calculator for the current rate'}. Tap the calculator below for the exact monthly, or apply in about 5 minutes.
