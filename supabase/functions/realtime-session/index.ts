@@ -5,10 +5,9 @@ import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 import {
-  ACTIVE_PROMOTION_SELECT,
-  buildPromotionCustomerAnswer,
-  formatPromotionContext,
-} from "../_shared/promotion-context.ts";
+  formatCustomerKnowledgePrompt,
+  loadCustomerKnowledge,
+} from "../_shared/customer-knowledge-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -28,24 +27,6 @@ const sessionContextSchema = z.object({
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Fetch active promotions from database
-async function getActivePromotions(): Promise<string> {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data: promos } = await supabase
-      .from('promotions')
-      .select(ACTIVE_PROMOTION_SELECT)
-      .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
-      .order('priority', { ascending: false });
-    return `${formatPromotionContext(promos || [])}\n\n## CUSTOMER-SAFE PROMOTION SUMMARY\n${buildPromotionCustomerAnswer(promos || [])}`;
-  } catch (err) {
-    console.error('[realtime-session] Error fetching promotions:', err);
-    return 'Promotions data unavailable — direct customer to /promotions page.';
-  }
-}
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -100,9 +81,9 @@ serve(async (req) => {
       if (currentPage.includes('financing')) contextInfo += 'They are exploring financing options. ';
     }
 
-    // Fetch current promotions from the database
-    const activePromotions = await getActivePromotions();
-    console.log('[realtime-session] Fetched promotions from DB');
+    const knowledge = await loadCustomerKnowledge(supabase);
+    const liveCustomerKnowledge = formatCustomerKnowledgePrompt(knowledge, true);
+    console.log('[realtime-session] Fetched shared customer knowledge');
 
     // Request ephemeral token from OpenAI with FULL session configuration
     const response = await fetch("https://api.openai.com/v1/realtime/sessions", {
@@ -196,8 +177,8 @@ Checkout accepts Apple Pay, Google Pay, and Link for quick payment. Just say: "A
 
 Deposits are fully refundable. Balance due at pickup.
 
-FINANCING MINIMUM:
-**Financing is only available for purchases $5,000 and up (before tax).** For smaller motors under $5k, recommend the Factory Cash Rebate instead. Don't offer financing calculations or "6 Months No Payments" for sub-$5k purchases.
+FINANCING:
+Use only the live financing facts below. Do not calculate a monthly payment in voice; the quote builder is authoritative for the selected rate, term, fees, and amount financed.
 
 CREATING A QUOTE (create_quote tool):
 You can build and email the customer a saved quote during the call. Use the create_quote tool only when you have:
@@ -205,11 +186,10 @@ You can build and email the customer a saved quote during the call. Use the crea
 2. A specific motor they want (use the motor context from the page they're viewing, or ask which model)
 After the tool returns success, confirm naturally: "Just sent that quote to your inbox — you'll see it in a sec. The link's also in there if you want to pull it up on your phone." If the customer wants the link texted, ask for their cell number and offer to send it (you don't have an SMS tool yet — just say you'll have someone follow up). Don't read the share URL out loud character-by-character; the email already contains it. Don't call this tool more than once per customer per call unless they explicitly ask for a different motor.
 
-CURRENT PROMOTIONS (from database — always use this, never make up promo details):
-${activePromotions}
+${liveCustomerKnowledge}
 
 PROMOTION RULES:
-- NEVER say "no rebates" — every HP range qualifies for some benefit
+- Never claim a rebate or financing benefit unless it appears in LIVE CUSTOMER KNOWLEDGE.
 - Treat any APR and term listed in CURRENT PROMOTIONS as active for that promotion. A separate standard financing offer must never be used as evidence that the promotion rate is inactive.
 - If the offer is layered, say the eligible rebate applies and promotional financing is optional, subject to approved credit and the listed terms.
 - Direct them to the quote builder or /promotions for full details

@@ -251,14 +251,15 @@ async function attachDocumentsToAgent(
   // Filter out old static docs, keep other docs (like motor inventory)
   const preservedDocs = existingKB.filter((doc: any) => {
     const docName = (doc.name || "").toLowerCase();
+    const isLegacyInventoryDoc = /harris boat\s*works?.*inventory/.test(docName);
     const isStaticDoc = staticDocNames.some(name => 
       docName.includes(name.toLowerCase()) || 
       name.toLowerCase().includes(docName)
     );
-    if (isStaticDoc) {
+    if (isStaticDoc || isLegacyInventoryDoc) {
       console.log(`Replacing existing static doc: ${doc.name}`);
     }
-    return !isStaticDoc;
+    return !isStaticDoc && !isLegacyInventoryDoc;
   });
   
   console.log(`Preserving ${preservedDocs.length} non-static documents`);
@@ -369,6 +370,9 @@ serve(async (req) => {
     const createdDocuments: Array<{ id: string; name: string }> = [];
     // Docs we intend to delete *after* a successful agent PATCH
     const oldDocsToDelete: Array<{ id: string; name: string }> = [];
+    oldDocsToDelete.push(...existingDocs.filter((doc) =>
+      /harris boat\s*works?.*inventory/i.test(doc.name || "")
+    ));
 
     // Process each document: generate + create new. Do NOT delete old yet.
     for (const [key, docConfig] of Object.entries(KB_DOCUMENTS)) {

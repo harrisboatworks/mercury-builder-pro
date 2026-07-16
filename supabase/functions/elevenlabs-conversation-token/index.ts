@@ -2,10 +2,15 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import {
-  ACTIVE_PROMOTION_SELECT,
   buildPromotionCustomerAnswer,
   formatPromotionContext,
 } from "../_shared/promotion-context.ts";
+import {
+  buildCustomerKnowledgeSnapshot,
+  formatCustomerKnowledgePrompt,
+  loadCustomerKnowledge,
+  type CustomerKnowledge,
+} from "../_shared/customer-knowledge-context.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -31,54 +36,6 @@ const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1";
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Fetch active promotions only - no full inventory (agent uses tools for real-time lookups)
-async function getActivePromotions() {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data: promotions, error } = await supabase
-      .from('promotions')
-      .select(ACTIVE_PROMOTION_SELECT)
-      .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
-      .order('priority', { ascending: false })
-      .limit(3);
-    
-    if (error) {
-      console.error('Error fetching promotions:', error);
-      return [];
-    }
-    return promotions || [];
-  } catch (error) {
-    console.error('Error in getActivePromotions:', error);
-    return [];
-  }
-}
-
-// Pull canonical financing promo from financing_options (single source of truth).
-async function getActiveFinancingPromo() {
-  try {
-    const today = new Date().toISOString().split('T')[0];
-    const { data, error } = await supabase
-      .from('financing_options')
-      .select('id, name, rate, term_months, promo_text, promo_end_date, min_amount')
-      .eq('is_active', true)
-      .eq('is_promo', true)
-      .or(`promo_end_date.is.null,promo_end_date.gte.${today}`)
-      .order('display_order', { ascending: true })
-      .order('rate', { ascending: true })
-      .limit(1);
-    if (error) {
-      console.error('Error fetching financing promo:', error);
-      return null;
-    }
-    return (data && data[0]) || null;
-  } catch (e) {
-    console.error('Error in getActiveFinancingPromo:', e);
-    return null;
-  }
-}
 
 // Model suffix decoder - kept compact for quick reference
 const MODEL_SUFFIX_GUIDE = `
@@ -242,13 +199,12 @@ async function buildSystemPrompt(
   motorContext?: { model: string; hp: number; price?: number } | null,
   currentPage?: string | null,
   quoteContext?: any,
-  previousSessionContext?: any
+  previousSessionContext?: any,
+  knowledge?: CustomerKnowledge,
 ) {
-  // Only fetch promotions - inventory is accessed via tools
-  const [promotions, financingPromo] = await Promise.all([
-    getActivePromotions(),
-    getActiveFinancingPromo(),
-  ]);
+  const liveKnowledge = knowledge || await loadCustomerKnowledge(supabase);
+  const promotions = liveKnowledge.promotions;
+  const financingPromo = liveKnowledge.financing[0] || null;
   const promotionData = formatPromotionContext(promotions);
   const promotionAnswer = buildPromotionCustomerAnswer(promotions);
   const financingCanon = financingPromo
@@ -686,7 +642,7 @@ During guided quote building, YOU are their helper. Stay engaged until they're d
 ${pageContext}- All prices in CAD. No delivery - in-person pickup only at Gores Landing, ON.
 - Guide customers to quote builder for exact pricing.`;
 
-  return systemPrompt;
+  return `${systemPrompt}\n\n${formatCustomerKnowledgePrompt(liveKnowledge, false)}`;
 }
 
 serve(async (req) => {
@@ -713,6 +669,14 @@ serve(async (req) => {
       );
     }
 
+    const knowledge = await loadCustomerKnowledge(supabase);
+    const knowledgeSnapshot = await buildCustomerKnowledgeSnapshot(knowledge);
+    if (body?.knowledgeProbe === true) {
+      return new Response(JSON.stringify({ surface: 'voice', ...knowledgeSnapshot }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     // Cap real ElevenLabs token requests: 15 / 10 minutes per IP (warmups skipped above)
     const allowed = await checkRateLimit(req, {
       action: 'voice_token',
@@ -736,7 +700,7 @@ serve(async (req) => {
     console.log('Building dynamic system prompt with context:', { motorContext, currentPage, hasQuoteContext: !!quoteContext, hasReturningContext: !!previousSessionContext });
     
     // Build the system prompt with real inventory data, page context, quote context, and returning customer context
-    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext, previousSessionContext);
+    const systemPrompt = await buildSystemPrompt(motorContext, currentPage, quoteContext, previousSessionContext, knowledge);
     console.log('System prompt built, length:', systemPrompt.length);
 
     console.log('Requesting conversation token for agent:', ELEVENLABS_AGENT_ID);
@@ -765,6 +729,7 @@ serve(async (req) => {
     return new Response(JSON.stringify({ 
       token: data.token,
       systemPrompt: systemPrompt,
+      knowledgeVersion: knowledgeSnapshot.sourceVersion,
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

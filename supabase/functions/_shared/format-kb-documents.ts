@@ -39,6 +39,11 @@ import {
 } from "./mercury-knowledge.ts";
 
 import { BLOG_INDEX, type BlogIndexEntry } from "./blog-index-generated.ts";
+import {
+  ACTIVE_PROMOTION_SELECT,
+  filterPromotionsForCountry,
+  formatPromotionContext,
+} from "./promotion-context.ts";
 
 // ========== HARRIS BOAT WORKS GUIDE ==========
 export function formatHarrisGuide(): string {
@@ -956,50 +961,6 @@ ${sections.join("\n\n")}`;
 
 // ========== ACTIVE PROMOTIONS (LIVE FROM DB) ==========
 
-interface PromoLike {
-  name?: string | null;
-  promotion_text?: string | null;
-  description?: string | null;
-  promo_type?: string | null;
-  discount_percentage?: number | null;
-  discount_amount?: number | null;
-  bonus_offer?: string | null;
-  bonus_warranty_years?: number | null;
-  warranty_extra_years?: number | null;
-  applicable_motors?: unknown;
-  horsepower_range_min?: number | null;
-  horsepower_range_max?: number | null;
-  start_date?: string | null;
-  end_date?: string | null;
-  terms_conditions?: string | null;
-  priority?: number | null;
-}
-
-function formatPromoEntry(p: PromoLike): string {
-  const lines: string[] = [];
-  const title = p.name || p.promotion_text || p.bonus_offer || "Promotion";
-  lines.push(`### ${title}`);
-  if (p.promo_type) lines.push(`- Type: ${p.promo_type}`);
-  if (p.discount_percentage) lines.push(`- Discount: ${p.discount_percentage}% off`);
-  if (p.discount_amount) lines.push(`- Discount: $${Number(p.discount_amount).toLocaleString()} CAD off`);
-  if (p.bonus_offer) lines.push(`- Bonus: ${p.bonus_offer}`);
-  const warrantyYrs = p.bonus_warranty_years ?? p.warranty_extra_years;
-  if (warrantyYrs) lines.push(`- Bonus warranty: +${warrantyYrs} year(s) on top of the standard 3-year coverage`);
-  if (p.horsepower_range_min != null || p.horsepower_range_max != null) {
-    const lo = p.horsepower_range_min ?? 0;
-    const hi = p.horsepower_range_max ?? "+";
-    lines.push(`- HP range: ${lo} - ${hi}`);
-  }
-  if (p.applicable_motors && Array.isArray(p.applicable_motors) && p.applicable_motors.length) {
-    lines.push(`- Applies to: ${(p.applicable_motors as unknown[]).join(", ")}`);
-  }
-  if (p.start_date) lines.push(`- Starts: ${p.start_date}`);
-  if (p.end_date) lines.push(`- Ends: ${p.end_date} (23:59:59 ET — bonus warranties revert to 3-year standard the next day)`);
-  if (p.description) lines.push(`- Details: ${p.description}`);
-  if (p.terms_conditions) lines.push(`- Terms: ${p.terms_conditions}`);
-  return lines.join("\n");
-}
-
 /**
  * Generates the live active-promotions KB document by querying the
  * `promotions` table. Async — pass in a Supabase service-role client.
@@ -1012,13 +973,13 @@ export async function formatActivePromotions(
   const today = new Date().toISOString().split("T")[0];
   const { data, error } = await supabase
     .from("promotions")
-    .select("*")
+    .select(ACTIVE_PROMOTION_SELECT)
     .eq("is_active", true)
     .or(`start_date.is.null,start_date.lte.${today}`)
     .or(`end_date.is.null,end_date.gte.${today}`)
     .order("priority", { ascending: false });
 
-  const promos: PromoLike[] = error ? [] : (data || []);
+  const promos = filterPromotionsForCountry(error ? [] : (data || []), "CA");
   const now = new Date().toISOString();
 
   const header = `# Active Mercury Promotions at Harris Boat Works
@@ -1042,7 +1003,7 @@ _No active promotions right now. Direct customers to /promotions and the quote b
   }
 
   return `${header}
-${promos.map(formatPromoEntry).join("\n\n")}
+${formatPromotionContext(promos)}
 `;
 }
 
@@ -1110,4 +1071,3 @@ export const KB_DOCUMENTS: Record<string, KbDocConfig> = {
     requiresSupabase: true,
   },
 };
-

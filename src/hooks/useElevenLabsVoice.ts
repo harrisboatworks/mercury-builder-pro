@@ -2421,7 +2421,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
 
       // Load previous context (non-critical, don't retry)
       console.log('Fetching ElevenLabs conversation token...');
-      let tokenData: { token: string } | null = null;
+      let tokenData: { token: string; systemPrompt?: string; knowledgeVersion?: string } | null = null;
       let previousContext: any = null;
       
       // Load previous context in parallel with first token attempt
@@ -2512,6 +2512,15 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           await conversation.startSession({
             conversationToken: tokenData.token,
             connectionType: 'webrtc',
+            ...(tokenData.systemPrompt
+              ? {
+                  overrides: {
+                    agent: {
+                      prompt: { prompt: tokenData.systemPrompt },
+                    },
+                  },
+                }
+              : {}),
           });
           
           console.log('WebRTC connection successful!');
