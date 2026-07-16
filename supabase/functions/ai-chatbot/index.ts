@@ -5,7 +5,9 @@ import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 import {
   ACTIVE_PROMOTION_SELECT,
+  buildPromotionCustomerAnswer,
   formatPromotionContext,
+  isPromotionQuestion,
 } from "../_shared/promotion-context.ts";
 
 const corsHeaders = {
@@ -773,6 +775,21 @@ serve(async (req) => {
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     if (!OPENAI_API_KEY) {
       throw new Error('OpenAI API key not configured');
+    }
+
+    if (isPromotionQuestion(message)) {
+      const promotions = await getActivePromotions();
+      const reply = buildPromotionCustomerAnswer(promotions, message);
+      return new Response(JSON.stringify({
+        reply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: reply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     // Build dynamic system prompt with real-time data

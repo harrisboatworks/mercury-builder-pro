@@ -9,6 +9,7 @@ import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 import { formatMotorsForVoice } from '@/lib/visibleMotorsStore';
 import {
   ACTIVE_PROMOTION_SELECT,
+  buildPromotionCustomerAnswer,
   formatPromotionContext,
   getPromotionCombinationMode,
   getPromotionOptions,
@@ -975,7 +976,10 @@ async function handleCheckCurrentDeals(params: {
       promotions: data,
       combinationModes: data.map(getPromotionCombinationMode),
       options: data.map(getPromotionOptions),
-      message: formatPromotionContext(data),
+      message: buildPromotionCustomerAnswer(
+        data,
+        `${params.hp_range || ''} ${params.motor_model || ''}`.trim(),
+      ),
     });
   } catch (err) {
     return JSON.stringify({ error: 'Unable to check promotions right now.' });

@@ -83,9 +83,9 @@ try {
 
   const continueButton = page.getByRole('button', { name: /Apply Bonus & Continue/i });
   await continueButton.waitFor({ state: 'visible' });
-  if (await continueButton.isDisabled()) {
-    throw new Error('Promo Continue button stayed disabled after selecting promotional financing');
-  }
+  // Playwright's click waits for the React effect that persists the default
+  // 24-month rate and enables the button. An immediate isDisabled() check races
+  // that effect even though a real customer click succeeds a moment later.
   await continueButton.click();
   await page.waitForURL(/\/quote\/summary/);
 

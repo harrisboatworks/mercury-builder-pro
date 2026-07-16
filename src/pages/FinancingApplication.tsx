@@ -332,6 +332,12 @@ export default function FinancingApplication() {
                         (quoteData as any).selectedPromoTerm || null;
       const promoValue = (quoteData as any).financingAmount?.promoValue || 
                          (quoteData as any).selectedPromoValue || null;
+      const promoName = (quoteData as any).financingAmount?.promoName ||
+                        (quoteData as any).promotionName || null;
+      const promoSavings = (quoteData as any).financingAmount?.promoSavings ??
+                           (quoteData as any).frozenPricing?.promoSavings ?? null;
+      const promoCombinationMode = (quoteData as any).financingAmount?.promoCombinationMode ||
+                                   (quoteData as any).promotionCombinationMode || null;
       
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
@@ -346,6 +352,9 @@ export default function FinancingApplication() {
           promoRate: promoRate,
           promoTerm: promoTerm,
           promoValue: promoValue,
+          promoName,
+          promoSavings,
+          promoCombinationMode,
         },
       });
     }
@@ -420,6 +429,9 @@ export default function FinancingApplication() {
           promoRate: quoteDataToRestore.financingAmount?.promoRate || quoteDataToRestore.selectedPromoRate || null,
           promoTerm: quoteDataToRestore.financingAmount?.promoTerm || quoteDataToRestore.selectedPromoTerm || null,
           promoValue: quoteDataToRestore.financingAmount?.promoValue || quoteDataToRestore.selectedPromoValue || null,
+          promoName: quoteDataToRestore.financingAmount?.promoName || quoteDataToRestore.promotionName || null,
+          promoSavings: quoteDataToRestore.financingAmount?.promoSavings ?? quoteDataToRestore.frozenPricing?.promoSavings ?? null,
+          promoCombinationMode: quoteDataToRestore.financingAmount?.promoCombinationMode || quoteDataToRestore.promotionCombinationMode || null,
         },
       });
     }

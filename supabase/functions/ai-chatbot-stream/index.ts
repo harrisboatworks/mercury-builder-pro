@@ -34,7 +34,9 @@ import {
 import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
 import {
   ACTIVE_PROMOTION_SELECT,
+  buildPromotionCustomerAnswer,
   formatPromotionContext,
+  isPromotionQuestion,
 } from '../_shared/promotion-context.ts';
 
 const corsHeaders = {
@@ -1766,7 +1768,7 @@ When someone asks about financing, monthly payments, interest rates, or getting 
 **ALWAYS include the CTA block when discussing financing for a specific motor — leave the "monthly" field at 0 and let the card compute the real payment:**
 [FINANCING_CTA: {"price": MOTOR_PRICE, "monthly": 0, "term": ${financingPromo?.term_months || 60}, "rate": ${financingPromo ? Number(financingPromo.rate).toFixed(2) : 'null'}, "motorModel": "MODEL_NAME"}]
 
-If the customer is asking about promotional financing in CURRENT PROMOTIONS, the CTA's `term` and `rate` MUST use the exact promotional months and APR from that block instead of the standard values shown in the generic template above.
+If the customer is asking about promotional financing in CURRENT PROMOTIONS, the CTA term and rate MUST use the exact promotional months and APR from that block instead of the standard values shown in the generic template above.
 
 The CTA block renders an interactive card with Calculator and Apply buttons — much better than a typed-out estimate.
 
@@ -2082,6 +2084,25 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       getActivePromotions(),
       getActiveFinancingPromo(),
     ]);
+
+    if (isPromotionQuestion(message)) {
+      const reply = buildPromotionCustomerAnswer(promotions, message, financingPromo);
+      console.log('Returning deterministic promotion answer from live database rows');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: reply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     
     // Build the rich system prompt
     let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion, financingPromo);

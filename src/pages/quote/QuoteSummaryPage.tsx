@@ -532,6 +532,7 @@ export default function QuoteSummaryPage() {
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
     state.selectedPromoTerm != null;
+  const currentPromotion = promotions[0] ?? null;
   const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (promo?.rate || null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
@@ -664,8 +665,10 @@ export default function QuoteSummaryPage() {
         } : {}),
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
+        promotionName: currentPromotion?.name ?? undefined,
+        promotionCombinationMode: currentPromotion?.promo_options?.type ?? undefined,
         customerNotes: state.customerNotes || undefined,
-        promoEndDate: promotions?.[0]?.end_date ?? undefined,
+        promoEndDate: currentPromotion?.end_date ?? undefined,
       };
       
       // Save lead
@@ -742,6 +745,9 @@ export default function QuoteSummaryPage() {
         promoRate: state.selectedPromoRate,
         promoTerm: state.selectedPromoTerm,
         promoValue: state.selectedPromoValue,
+        promoName: currentPromotion?.name || null,
+        promoSavings,
+        promoCombinationMode: currentPromotion?.promo_options?.type || null,
       }
     };
     
@@ -815,6 +821,9 @@ export default function QuoteSummaryPage() {
         },
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
+        promotionName: currentPromotion?.name ?? undefined,
+        promotionCombinationMode: currentPromotion?.promo_options?.type ?? undefined,
+        promoEndDate: currentPromotion?.end_date ?? undefined,
         customerNotes: state.customerNotes || undefined,
       };
 

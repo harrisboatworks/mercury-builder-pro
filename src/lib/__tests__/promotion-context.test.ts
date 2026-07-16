@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
+  buildPromotionCustomerAnswer,
+  filterPromotionsForCountry,
   formatPromotionContext,
   getPromotionCombinationMode,
   getPromotionRebateMatrix,
@@ -65,6 +67,32 @@ describe('promotion context', () => {
     expect(context).toContain('Avator');
     expect(context).not.toContain('Discount: $700');
     expect(context).not.toContain('Offer structure: choose one');
+  });
+
+  it('returns a deterministic customer answer for the tested 60 HP path', () => {
+    const answer = buildPromotionCustomerAnswer(
+      [summerSavings],
+      'Can I combine the 60 HP rebate with 2.99% financing?',
+      { name: 'TD Always On', rate: 5.48, term_months: 60 },
+    );
+
+    expect(answer).toContain('60 HP');
+    expect(answer).toContain('$250 CAD');
+    expect(answer).toContain('rebate and promotional financing layer together');
+    expect(answer).toContain('2.99% APR for 24 months');
+    expect(answer).toContain('does not cancel');
+    expect(answer).not.toContain('$700 CAD');
+  });
+
+  it('filters explicitly non-Canadian promotions from every AI surface', () => {
+    const usOnly: PromotionRecord = {
+      name: 'US Military Rebate',
+      details: { market: { country: 'US', currency: 'USD' } },
+    };
+
+    expect(filterPromotionsForCountry([summerSavings, usOnly], 'CA')).toEqual([summerSavings]);
+    expect(formatPromotionContext([summerSavings, usOnly])).not.toContain('US Military Rebate');
+    expect(buildPromotionCustomerAnswer([summerSavings, usOnly])).not.toContain('US Military Rebate');
   });
 
   it('preserves a genuinely choose-one offer', () => {

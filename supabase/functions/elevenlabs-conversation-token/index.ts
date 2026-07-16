@@ -3,6 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import {
   ACTIVE_PROMOTION_SELECT,
+  buildPromotionCustomerAnswer,
   formatPromotionContext,
 } from "../_shared/promotion-context.ts";
 
@@ -249,6 +250,7 @@ async function buildSystemPrompt(
     getActiveFinancingPromo(),
   ]);
   const promotionData = formatPromotionContext(promotions);
+  const promotionAnswer = buildPromotionCustomerAnswer(promotions);
   const financingCanon = financingPromo
     ? `\n## STANDARD / ALTERNATE FINANCING (from financing_options table):\n- **${financingPromo.name}: ${Number(financingPromo.rate).toFixed(2)}% APR OAC** through TD Auto Finance via Dealerplan Peterborough\n- Default term: ${financingPromo.term_months || 60} months. Minimum financed: $${(financingPromo.min_amount || 5000).toLocaleString()}.\n- Runs through: ${financingPromo.promo_end_date || 'see /financing'}\n- ${financingPromo.promo_text || ''}\n- $349 DealerPlan fee added post-tax to every financed deal.\n- This standard offer does NOT cancel or supersede financing listed in CURRENT PROMOTIONS. If the customer asks about an active promotion rate, quote that exact APR and term and explain whether it layers with the rebate. Use the standard offer when the promotion does not apply or the customer wants another term.\n- NEVER quote a rate from memory. If a customer asks for exact monthly payment, route them to the configurator or /financing-application; do NOT calculate amortization by voice.\n`
     : `\n## CURRENT FINANCING:\nNo active financing promo loaded. Direct customers to /financing-application or have them call for the current rate. Do NOT quote a rate from memory.\n`;
@@ -387,6 +389,8 @@ ${currentMotorContext}
 ${MODEL_SUFFIX_GUIDE}
 ${SHAFT_LENGTH_CRITICAL}
 ${promotionData}
+## VOICE-SAFE CURRENT PROMOTION SUMMARY
+${promotionAnswer}
 ${financingCanon}
 ${quoteContextPrompt}
 ${returningCustomerPrompt}
@@ -423,9 +427,10 @@ Do NOT offer financing for sub-$5k motors, suggest they call us about the best o
 - **go_to_quote_step** - Navigate to a quote step. Use when customer says "show me my quote", "go to summary", "back to motor selection".
 
 **WHEN CUSTOMER ASKS ABOUT DEALS:**
-1. Briefly describe ONLY the promotion shown in the CURRENT PROMOTIONS block above. Respect its exact layered or choose-one structure. Do not invent options or name an expired promo. If the block says no promotion is active, say that plainly.
-2. Call navigate_to_promotions to SHOW them the page
-3. "I've pulled up the current details on your screen."
+1. You MUST call check_current_deals before answering any promotion, rebate, deal, or promotional-financing question. Read its returned facts faithfully; never answer from memory or pretrained knowledge.
+2. Briefly describe ONLY the promotion returned by that tool and shown in the CURRENT PROMOTIONS block above. Respect its exact layered or choose-one structure. Do not invent options or name an expired or US-only promo. If the block says no promotion is active, say that plainly.
+3. Call navigate_to_promotions to SHOW them the page
+4. "I've pulled up the current details on your screen."
 
 ## SCREEN CONTROL - NAVIGATE FIRST, THEN READ SCREEN (SIMPLIFIED):
 You control the customer's browser. When they ask about motors, SHOW them visually while talking.

@@ -32,6 +32,9 @@ export const purchaseDetailsSchema = z.object({
   promoRate: z.number().nullable().optional(),
   promoTerm: z.number().nullable().optional(),
   promoValue: z.string().nullable().optional(),
+  promoName: z.string().nullable().optional(),
+  promoSavings: z.number().min(0).nullable().optional(),
+  promoCombinationMode: z.enum(['layered', 'choose_one']).nullable().optional(),
 });
 
 // Step 2: Primary Applicant

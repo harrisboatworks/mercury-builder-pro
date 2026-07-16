@@ -475,6 +475,8 @@ export interface QuotePDFProps {
     // Selected promo option from "Choose One"
     selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
     selectedPromoValue?: string; // e.g., "$500" or "2.99%" or "6 months"
+    promotionName?: string;
+    promotionCombinationMode?: 'layered' | 'choose_one';
     // Deposit/payment confirmation
     depositInfo?: {
       amount: number;
@@ -661,15 +663,17 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   <View style={{ flex: 1 }}>
                     <Text style={styles.pricingLabel}>
                       {quoteData.selectedPromoOption === 'no_payments'
-                        ? '7-Year Warranty + No Payments'
+                        ? `${quoteData.promotionName || 'Mercury Promotion'} + No Payments`
                         : quoteData.selectedPromoOption === 'special_financing'
-                        ? `7-Year Warranty + ${quoteData.selectedPromoValue || '2.99%'} APR`
+                        ? `${quoteData.promotionName || 'Mercury Factory Rebate'} + ${quoteData.selectedPromoValue || '2.99%'} APR`
                         : quoteData.selectedPromoOption === 'cash_rebate'
-                        ? `7-Year Warranty + ${quoteData.selectedPromoValue} Rebate`
+                        ? `${quoteData.promotionName || 'Mercury Factory Rebate'}`
                         : 'Promotional Savings'}
                     </Text>
                     <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-                      Harris Boat Works 7-Year Warranty
+                      {quoteData.selectedPromoOption === 'special_financing'
+                        ? 'Factory rebate auto-applied; promotional financing on approved credit'
+                        : 'Mercury Canada factory promotion'}
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
@@ -932,16 +936,21 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </View>
               )}
               
-            {/* YOUR SELECTED BONUS (Choose One promo) */}
+            {/* Promotion details */}
             {quoteData.selectedPromoOption && (
               <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
                 <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                  YOUR SELECTED BONUS:
+                  PROMOTION DETAILS:
                 </Text>
+                {parseFloat(quoteData.promoSavings || '0') > 0 && (
+                  <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold', marginBottom: 2 }}>
+                    ✓ {quoteData.promotionName || 'Mercury factory rebate'}: -${quoteData.promoSavings} CAD
+                  </Text>
+                )}
                 <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
                   {quoteData.selectedPromoOption === 'no_payments' && `✓ 6 Months No Payments${quoteData.selectedPromoValue ? ` (${quoteData.selectedPromoValue})` : ''}`}
-                  {quoteData.selectedPromoOption === 'special_financing' && `✓ Special Financing: ${quoteData.selectedPromoValue || '2.99%'} APR`}
-                  {quoteData.selectedPromoOption === 'cash_rebate' && `✓ Factory Cash Rebate: ${quoteData.selectedPromoValue || ''}`}
+                  {quoteData.selectedPromoOption === 'special_financing' && `✓ Promotional financing: ${quoteData.selectedPromoValue || '2.99%'} APR for ${quoteData.financingTerm || 24} months (OAC)`}
+                  {quoteData.selectedPromoOption === 'cash_rebate' && `✓ Factory rebate applied${quoteData.selectedPromoValue ? `: ${quoteData.selectedPromoValue}` : ''}`}
                 </Text>
               </View>
             )}
