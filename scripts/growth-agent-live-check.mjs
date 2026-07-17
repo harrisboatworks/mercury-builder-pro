@@ -1,9 +1,19 @@
+import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const SITE_URL = process.env.MERCURY_SITE_URL || "https://www.mercuryrepower.ca";
 const HARRIS_SITE_URL = process.env.HARRIS_SITE_URL || "https://harrisboatworks.ca";
 const GOOGLE_PLACES_URL = process.env.GOOGLE_PLACES_URL || "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/google-places";
 const SKIP_AI_ACCESS_MATRIX = process.env.GROWTH_SKIP_AI_ACCESS_MATRIX === "1";
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
+const TSX_BIN = join(
+  ROOT,
+  "node_modules",
+  ".bin",
+  process.platform === "win32" ? "tsx.cmd" : "tsx",
+);
 const FINANCE_POLICY = JSON.parse(
   readFileSync(new URL("../src/data/finance-policy.json", import.meta.url), "utf8"),
 );
@@ -74,6 +84,7 @@ const CHECKS = [
   { path: "/admin/growth-agent", required: true, signals: ["Mercury Repower"] },
   { path: "/sitemap.xml", required: true },
   { path: "/robots.txt", required: true },
+  { path: "/rss.xml", required: true, signals: ["<rss", "<item>", "<lastBuildDate>"] },
   { path: "/agents", required: true, signals: ["agent", "MCP", "public-motors-api", "build_quote", "pickup", ["install", "installation"]] },
   { path: "/llms.txt", required: true, signals: ["Ontario", "CAD", "pickup", "Gores Landing"] },
   { path: "/catalog.md", required: true, signals: ["CAD", "pickup", "Gores Landing", ["public-motors-api", "build_quote"]] },
@@ -275,6 +286,81 @@ function sitemapCount(text) {
   return (text.match(/<loc>/g) || []).length;
 }
 
+function latestPublishedBlogArticle() {
+  const dumpScript = `
+    import { blogArticles, isArticlePublished } from './src/data/blogArticles.ts';
+    const latest = blogArticles
+      .filter(isArticlePublished)
+      .map((article) => ({
+        slug: article.slug,
+        publishDate: article.publishDate || article.datePublished,
+      }))
+      .filter((article) => article.slug && article.publishDate)
+      .sort((a, b) => {
+        const dateOrder = b.publishDate.localeCompare(a.publishDate);
+        return dateOrder || a.slug.localeCompare(b.slug);
+      })[0];
+    process.stdout.write(JSON.stringify(latest || null));
+  `;
+
+  return JSON.parse(execFileSync(TSX_BIN, ["--eval", dumpScript], {
+    cwd: ROOT,
+    encoding: "utf8",
+    maxBuffer: 64 * 1024 * 1024,
+    timeout: Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000),
+  }));
+}
+
+function rssSitemapAssertion(rssArtifact, sitemapArtifact) {
+  const failures = [];
+  if (!rssArtifact.ok) failures.push(`rss.xml returned ${rssArtifact.status || rssArtifact.error || "an error"}`);
+  if (!sitemapArtifact.ok) failures.push(`sitemap.xml returned ${sitemapArtifact.status || sitemapArtifact.error || "an error"}`);
+  if (failures.length > 0) return { ok: false, failures };
+
+  const rssLinks = [...rssArtifact.text.matchAll(/<item>[\s\S]*?<link>([^<]+)<\/link>[\s\S]*?<\/item>/g)]
+    .map((match) => match[1].trim());
+  const sitemapLinks = new Set(
+    [...sitemapArtifact.text.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1].trim()),
+  );
+  let latest = null;
+  try {
+    latest = latestPublishedBlogArticle();
+  } catch (error) {
+    failures.push(`could not load newest published blog from repo source: ${error.message}`);
+  }
+  const expectedLatestUrl = latest ? urlFor(`/blog/${latest.slug}`) : null;
+  const lastBuildDate = rssArtifact.text.match(/<lastBuildDate>([^<]+)<\/lastBuildDate>/i)?.[1]?.trim() || null;
+  const missingFromSitemap = rssLinks.filter((url) => !sitemapLinks.has(url));
+
+  if (!latest) failures.push("repo source has no published blog article for RSS freshness comparison");
+  if (rssLinks.length === 0) failures.push("rss.xml contains no items");
+  if (expectedLatestUrl && rssLinks[0] !== expectedLatestUrl) {
+    failures.push(`rss.xml newest item ${rssLinks[0] || "missing"} does not match repo source ${expectedLatestUrl}`);
+  }
+  if (expectedLatestUrl && !sitemapLinks.has(expectedLatestUrl)) {
+    failures.push(`sitemap.xml is missing newest published blog ${expectedLatestUrl}`);
+  }
+  if (latest?.publishDate && lastBuildDate) {
+    const expectedDate = new Date(`${latest.publishDate}T12:00:00Z`).toUTCString();
+    if (lastBuildDate !== expectedDate) {
+      failures.push(`rss.xml lastBuildDate ${lastBuildDate} does not match newest publish date ${expectedDate}`);
+    }
+  }
+  if (missingFromSitemap.length > 0) {
+    failures.push(`rss.xml has ${missingFromSitemap.length} item(s) missing from sitemap.xml`);
+  }
+
+  return {
+    ok: failures.length === 0,
+    failures,
+    expectedLatest: latest ? { ...latest, url: expectedLatestUrl } : null,
+    rssItemCount: rssLinks.length,
+    firstRssUrl: rssLinks[0] || null,
+    lastBuildDate,
+    rssItemsMissingFromSitemap: missingFromSitemap,
+  };
+}
+
 function robotsAssertion(url, text) {
   const failures = [];
   const allowlisted = new Set(AI_CRAWLER_ALLOWLIST.map((agent) => agent.toLowerCase()));
@@ -457,7 +543,7 @@ async function fetchAiTxtContentAssertion(siteUrl) {
 }
 
 const results = await Promise.all(CHECKS.map(fetchCheck));
-const [brandArtifact, mcpArtifact, llmsArtifact, agentsArtifact, motorsMdArtifact, pricingArtifact, motorsArtifact, placesArtifact] = await Promise.all([
+const [brandArtifact, mcpArtifact, llmsArtifact, agentsArtifact, motorsMdArtifact, pricingArtifact, motorsArtifact, placesArtifact, rssArtifact, sitemapArtifact] = await Promise.all([
   fetchArtifact("/.well-known/brand.json"),
   fetchArtifact("/.well-known/mcp.json"),
   fetchArtifact("/llms.txt"),
@@ -466,6 +552,8 @@ const [brandArtifact, mcpArtifact, llmsArtifact, agentsArtifact, motorsMdArtifac
   fetchArtifact("/pricing-reference.md"),
   fetchArtifact("/api/agents/motors"),
   fetchArtifact(GOOGLE_PLACES_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" }),
+  fetchArtifact("/rss.xml"),
+  fetchArtifact("/sitemap.xml"),
 ]);
 const semanticAssertions = semanticArtifactAssertion({
   brand: brandArtifact,
@@ -477,6 +565,7 @@ const semanticAssertions = semanticArtifactAssertion({
   motors: motorsArtifact,
   places: placesArtifact,
 });
+const rssParityAssertion = rssSitemapAssertion(rssArtifact, sitemapArtifact);
 const robotsAssertions = await Promise.all([
   fetchRobotsAssertion(SITE_URL, true),
   fetchRobotsAssertion(HARRIS_SITE_URL, false),
@@ -512,6 +601,12 @@ const semanticFailures = semanticAssertions.ok ? [] : semanticAssertions.failure
   status: 0,
   error: failure,
 }));
+const rssParityFailures = rssParityAssertion.ok ? [] : rssParityAssertion.failures.map((failure) => ({
+  path: "rss-sitemap-parity",
+  ok: false,
+  status: 0,
+  error: failure,
+}));
 
 const output = {
   site: SITE_URL,
@@ -522,14 +617,16 @@ const output = {
     robotsFailures.length === 0 &&
     aiAccessFailures.length === 0 &&
     aiTxtContentFailures.length === 0 &&
-    semanticFailures.length === 0,
-  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures, ...aiTxtContentFailures, ...semanticFailures],
+    semanticFailures.length === 0 &&
+    rssParityFailures.length === 0,
+  hardFailures: [...hardFailures, ...robotsFailures, ...aiAccessFailures, ...aiTxtContentFailures, ...semanticFailures, ...rssParityFailures],
   results,
   robotsAssertions,
   externalRobotsWarnings,
   aiAccessChecks,
   aiTxtContentAssertion,
   semanticAssertions,
+  rssParityAssertion,
   searchFocus: [
     "Mercury outboard prices Ontario",
     "Mercury repower cost Ontario",
