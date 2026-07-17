@@ -71,6 +71,13 @@ const LIVE_BUSINESS_GEO = {
   longitude: Number(GOOGLE_PLACES_CACHE.location?.longitude) || -78.241502,
 };
 
+const MERCURY_PRODUCT_PROTECTION_RATE_CARD = JSON.parse(
+  readFileSync(new URL('../src/data/mercuryProductProtectionRates.json', import.meta.url), 'utf8')
+);
+const MERCURY_PRODUCT_PROTECTION_ALL_PRICES = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.flatMap(
+  (band) => Object.values(band.prices).map(Number)
+);
+
 // HTML-escape a string for safe insertion into prerendered markup.
 function escHtml(v) {
   return String(v ?? '')
@@ -79,6 +86,29 @@ function escHtml(v) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function mercuryProductProtectionNoscriptHtml() {
+  const money = (value) => `$${Number(value).toLocaleString('en-CA')}`;
+  const rows = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.map((band) =>
+    `<tr><th scope="row">${escHtml(band.label)}</th>${[1, 2, 3, 4, 5]
+      .map((year) => `<td>${money(band.prices[String(year)])}</td>`)
+      .join('')}</tr>`
+  ).join('');
+  const first = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates[0];
+  const common = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.find((band) => band.label === '75-149.9 HP');
+  const last = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.at(-1);
+
+  return '<h2>How much does Mercury Product Protection cost in Canada?</h2>' +
+    `<p>Mercury Platinum Product Protection at Harris Boat Works currently starts at ${money(first.prices['1'])} CAD for a one-year plan on a 2.5-14.9 HP outboard. A four-year plan for a 75-149.9 HP outboard is ${money(common.prices['4'])} CAD. The complete rate card ranges up to ${money(last.prices['5'])} CAD for five years on a 600 HP outboard. Prices are before HST and final eligibility and price are confirmed by serial number. People often search for this as Mercury extended warranty pricing; Mercury's Canadian contract defines Product Protection as an extended service contract, not an extension of the standard product warranty.</p>` +
+    '<h2>Mercury Platinum Product Protection rate card (CAD before HST)</h2>' +
+    '<table><caption>Plan prices by horsepower and purchased plan term</caption>' +
+    '<thead><tr><th scope="col">Horsepower</th><th scope="col">1 year</th><th scope="col">2 years</th><th scope="col">3 years</th><th scope="col">4 years</th><th scope="col">5 years</th></tr></thead>' +
+    `<tbody>${rows}</tbody></table>` +
+    `<p>Rate card verified ${escHtml(MERCURY_PRODUCT_PROTECTION_RATE_CARD.lastVerified)}. Each column is the purchased Product Protection term, not the combined warranty total. Eligibility, exclusions, maintenance requirements, transfer rules and the actual Mercury contract govern.</p>` +
+    '<p><a href="/mercury-product-protection.md">Markdown rate card</a> · <a href="/mercury-product-protection.json">JSON rate card</a> · <a href="/promotions">Current promotions</a> · ' +
+    `<a href="${escHtml(MERCURY_PRODUCT_PROTECTION_RATE_CARD.officialOverviewUrl)}">Mercury Canada overview</a> · ` +
+    `<a href="${escHtml(MERCURY_PRODUCT_PROTECTION_RATE_CARD.officialCanadaPlanTermsUrl)}">Canadian Platinum plan terms</a></p>`;
 }
 
 // Parse a YAML-ish directive body into { flat, lists, items }.
@@ -4979,6 +5009,77 @@ const routes = [
     intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965.',
     schemas: [promotionsPageSchema()]
   },
+  {
+    path: '/mercury-product-protection',
+    title: 'Mercury Product Protection Platinum Plans & Prices | HBW',
+    description: 'See current CAD pricing for Mercury Platinum Product Protection, check eligible plan years and add protection to a Mercury outboard quote in Ontario.',
+    h1: 'Mercury Product Protection Platinum Plans & Prices',
+    intro: 'Current Canadian-dollar pricing for Mercury Platinum Product Protection plans from Harris Boat Works. Compare one- through five-year terms, understand eligibility and add the right coverage to a Mercury outboard quote.',
+    ogImage: `${SITE_URL}/images/mercury-platinum-product-protection.webp`,
+    extraHead: '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/mercury-product-protection.md" title="Mercury Platinum Product Protection rate card in Markdown" />\n  <link rel="alternate" type="application/json" href="https://www.mercuryrepower.ca/mercury-product-protection.json" title="Mercury Platinum Product Protection rate card in JSON" />',
+    schemas: [{
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': `${SITE_URL}/mercury-product-protection#webpage`,
+          url: `${SITE_URL}/mercury-product-protection`,
+          name: 'Mercury Product Protection Platinum Plans & Prices | Harris Boat Works',
+          description: 'Current CAD pricing, coverage and eligibility for Mercury Platinum Product Protection plans in Ontario.',
+          isPartOf: { '@id': `${SITE_URL}/#website` },
+          about: { '@id': `${SITE_URL}/mercury-product-protection#service` },
+          inLanguage: 'en-CA',
+        },
+        {
+          '@type': 'Service',
+          '@id': `${SITE_URL}/mercury-product-protection#service`,
+          name: 'Mercury Product Protection Platinum Plan',
+          serviceType: 'Extended service contract for eligible Mercury outboards',
+          provider: {
+            '@type': 'Organization',
+            name: 'Mercury Marine Limited',
+            url: MERCURY_PRODUCT_PROTECTION_RATE_CARD.officialOverviewUrl,
+          },
+          areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'CAD',
+            lowPrice: Math.min(...MERCURY_PRODUCT_PROTECTION_ALL_PRICES),
+            highPrice: Math.max(...MERCURY_PRODUCT_PROTECTION_ALL_PRICES),
+            offerCount: MERCURY_PRODUCT_PROTECTION_ALL_PRICES.length,
+            seller: { '@id': `${SITE_URL}/#organization` },
+          },
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: [
+            ['How much does Mercury Product Protection cost in Canada?', `At Harris Boat Works, current Mercury Platinum Product Protection pricing starts at $${MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates[0].prices['1']} CAD before HST for a one-year plan on a 2.5-14.9 HP outboard. A four-year plan for 75-149.9 HP is $${Number(MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates[3].prices['4']).toLocaleString('en-CA')} CAD. Mercury defines Product Protection as an extended service contract, not an extension of the standard product warranty. Final eligibility and price are confirmed by motor serial number.`],
+            ['What is Mercury Product Protection?', 'Mercury Product Protection is an extended service contract administered by Mercury Marine. Platinum coverage begins after the applicable Mercury factory limited warranty ends and covers eligible mechanical and electrical failures under the plan terms.'],
+            ['Why does Harris Boat Works sell Platinum coverage?', 'Platinum is the highest Mercury Product Protection coverage tier and includes eligible mechanical and electrical failures. It is the plan HBW quotes because it gives customers the broadest protection Mercury offers.'],
+            ['How many years can I add?', 'Plans are available in one- through five-year terms, subject to eligibility, with up to eight years of combined factory warranty and Product Protection. HBW confirms how any applicable promotional warranty coverage affects the available term.'],
+            ['Can the plan be transferred to a new owner?', 'Yes. Mercury states that Product Protection is transferable to a subsequent recreational-use purchaser, subject to the plan transfer process and timing requirements.'],
+            ['When do I need to buy coverage?', 'Mercury requires Product Protection to be purchased before the applicable factory limited warranty expires. HBW verifies the serial number, manufacture date, hours and current coverage before registration.'],
+            ['Is there a deductible?', 'Yes. The current Canadian Platinum contract states a $50 deductible per claim, paid directly to the authorized servicing dealer. The complete contract terms govern.'],
+            ['Do promotions change the price shown in a motor quote?', 'If an applicable Mercury promotion changes the included warranty period, it can change how many paid Product Protection years are needed. HBW confirms the motor’s current coverage, respects Mercury’s eight-year combined maximum, and prices the remaining Platinum term. The serial record and current promotion terms govern.'],
+          ].map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })),
+        },
+        {
+          '@type': 'Dataset',
+          '@id': `${SITE_URL}/mercury-product-protection#rate-card`,
+          name: 'Mercury Platinum Product Protection Canadian Rate Card',
+          description: 'Current Canadian-dollar retail pricing by horsepower band and one- through five-year Platinum plan term.',
+          url: `${SITE_URL}/mercury-product-protection`,
+          dateModified: MERCURY_PRODUCT_PROTECTION_RATE_CARD.lastVerified,
+          creator: { '@id': `${SITE_URL}/#organization` },
+          distribution: [
+            { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: `${SITE_URL}/mercury-product-protection.md` },
+            { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${SITE_URL}/mercury-product-protection.json` },
+          ],
+        },
+      ],
+    }],
+    extraNoscript: mercuryProductProtectionNoscriptHtml,
+  },
   // ============================================================
   // P2: Orphan SEO routes (previously inherited homepage metadata)
   // ============================================================
@@ -5485,6 +5586,9 @@ const staticSitemapEntries = [
   { loc: '/', priority: 1.0, changefreq: 'daily' },
   { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
   { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/mercury-product-protection', priority: 0.85, changefreq: 'monthly' },
+  { loc: '/mercury-product-protection.md', priority: 0.75, changefreq: 'monthly' },
+  { loc: '/mercury-product-protection.json', priority: 0.7, changefreq: 'monthly' },
   { loc: '/repower', priority: 0.9, changefreq: 'monthly' },
   { loc: '/repower/cost', priority: 0.85, changefreq: 'monthly' },
   { loc: '/repower/process', priority: 0.85, changefreq: 'monthly' },
@@ -6036,6 +6140,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '## Pricing reference',
     '',
     `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
+    `- [Mercury Platinum Product Protection rate card (CAD)](${SITE_URL}/mercury-product-protection.md), one- through five-year plan pricing by horsepower band. JSON: ${SITE_URL}/mercury-product-protection.json.`,
     '',
     '## MCP discovery',
     '',
@@ -6368,11 +6473,25 @@ verifyMd({
     '## Guides (Blog)',
     '## Pricing reference',
     'pricing-reference.md',
+    'mercury-product-protection.md',
     '## What we do NOT offer',
     'No sterndrives',
     'CAD',
     'Pickup only',
     'mcp.json',
+  ],
+});
+
+verifyMd({
+  relPath: '/mercury-product-protection.md',
+  label: 'Mercury Product Protection rate card',
+  requireSubstrings: [
+    'currency: CAD',
+    'last_verified:',
+    '## Direct answer',
+    '75-149.9 HP',
+    '$1,748',
+    'Current promotions',
   ],
 });
 

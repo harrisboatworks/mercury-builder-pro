@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-07-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Extended Warranty Ontario"
-description: "Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP."
+description: "Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term."
 category: "Warranty & Protection"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-17
 keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Platinum coverage","outboard warranty cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,68 +20,61 @@ language: en-CA
 
 # Mercury Extended Warranty Ontario
 
-> Mercury Product Protection Platinum extends factory warranty up to 8 years total, covering mechanical AND electrical failures. Real CAD pricing by HP.
+> Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term.
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-07-17
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 
 ## Quick Answer
 
-**Mercury Product Protection Platinum extends your factory warranty up to 8 years total, covering mechanical AND electrical failures, including the ECU, sensors, alternator, wiring, gauges, and controls. HBW sells Platinum exclusively because the electrical exclusion on Gold is where modern Mercury motors fail most expensively. Customers who purchased their motor from HBW get 10% off.**
+**Mercury Product Protection Platinum is an extended service contract, not an extension of Mercury's standard product warranty. It begins after the applicable Mercury limited warranty and covers eligible mechanical and electrical breakdowns under the contract terms. HBW quotes Platinum because it is Mercury's broadest Product Protection tier.**
 
-- **Covers what your factory warranty covers, for years longer**: up to 8 years total (3-year factory + 5-year extended)
-- **Includes electrical** (Gold does not), alternator, ECU, sensors, harness, accessories
-- **Transferable** to next owner, adds resale value
-- **Honoured at 3,600+ Mercury dealers** across the US and Canada
-- **HBW exclusive**: 10% off Platinum for customers who purchased their motor from HBW
+- **Up to 8 years of combined coverage**: applicable Mercury limited warranty plus Product Protection
+- **Eligible mechanical and electrical breakdowns**: including covered components listed in the Platinum contract
+- **Transferable** to a subsequent recreational-use owner when Mercury's process and timing requirements are met
+- **Serviced through authorized Mercury dealers** using genuine Mercury or Quicksilver parts
 
-[Get a quote on /warranty](https://www.harrisboatworks.ca/warranty), transparent CAD pricing by HP and term.
+[See current Canadian pricing](/mercury-product-protection), with the full rate card by horsepower and plan term.
 
 ::cost-stack
 heading: What an extended Mercury warranty actually costs
 eyebrow: The math at a glance
 subhead: Mercury Product Protection (extended warranty) prices vary by motor size and term. Here are realistic Ontario ranges so you can compare against the cost of a single major repair.
-item1Label: Small portable (2.5 to 20 HP), 2-year extension
-item1Value: $200 - $450
+item1Label: Small portable (2.5 to 39.9 HP), 2-year plan
+item1Value: $137 - $319
 item1Note: Cheapest peace of mind on the lineup. Worth it if the motor is a kicker you depend on.
-item2Label: Mid-range (25 to 90 HP), 3-year extension
-item2Value: $600 - $1,100
+item2Label: Mid-range (40 to 74.9 HP), 3-year plan
+item2Value: $904
 item2Note: Most common bracket on Rice Lake. Powerhead replacement on a 90 HP runs $5,500 to $9,000 without coverage.
-item3Label: High-HP (115 to 200 HP), 3-year extension
-item3Value: $900 - $1,800
+item3Label: High-HP (75 to 199.9 HP), 3-year plan
+item3Value: $1,376 - $1,921
 item3Note: Best value tier. One blown injector pump or ECU on a V6 covers the cost of the warranty 2 to 3 times over.
 item3Accent: true
-item4Label: Big block (225 to 400 HP), 3-year extension
-item4Value: $1,500 - $3,200
+item4Label: Big block (200 to 399.9 HP), 3-year plan
+item4Value: $4,612 - $6,579
 item4Note: V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
-item5Label: HBW Premier dealer discount
-item5Value: 10% off
-item5Note: We're a Mercury Marine Premier dealer. Customers who purchased the motor from HBW get 10% off the published Mercury Product Protection price.
+item5Label: Current Canadian deductible
+item5Value: $50 per claim
+item5Note: Paid directly to the authorized servicing dealer. The complete Canadian Platinum contract terms govern.
 totalLabel: Reality check
 totalValue: Coverage costs less than one bad day
-caveat: Pricing is illustrative and subject to [Mercury Marine](https://www.mercurymarine.com/canada/en/)'s current rate sheet. Coverage terms vary by motor model year. For a real quote against your serial number, call (905) 342-2153 or use /quote.
-::
-
-::pull-quote
-quote: I almost skipped the extended warranty. Then the ECU died on a Verado at 6 years. **The warranty paid for itself five times over** with that one phone call. Best $1,400 I ever spent.
-attribution: Susan W.
-source: HBW Customer, Bewdley 2026
+caveat: Pricing is before HST and subject to current Mercury eligibility and contract terms. HBW confirms the motor's serial record, manufacture date, hours, current coverage and final price before registration.
 ::
 
 ## What Mercury Product Protection Is
 
-Your new Mercury comes with a 3-year factory limited warranty against defects in materials and workmanship. That covers you for the first 3 years. Mercury Product Protection is the factory-backed extended service contract that picks up when the limited warranty ends. Current promotions can extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026).
+Your new recreational-use Mercury comes with an applicable factory limited warranty against defects in materials and workmanship. Mercury Product Protection is a separate extended service contract that begins after that limited warranty. If an applicable promotion changes the included warranty period, HBW confirms the serial record and current offer terms before calculating any paid Product Protection term. See [current offers](/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
 It is not a third-party insurance policy. It is not an aftermarket add-on. It is administered 100% by Mercury Marine, using genuine Mercury and Quicksilver parts, performed by authorized Mercury dealers, same factory standards as your original warranty.
 
-Two tiers exist: **Gold** (mechanical failures only) and **Platinum** (mechanical + electrical + accessories). HBW sells Platinum exclusively. Here is why:
+HBW sells **Platinum** almost exclusively. It covers eligible mechanical and electrical breakdowns under Mercury's Canadian plan terms.
 
-**On modern Mercury outboards (2017+), most expensive failures are electrical.** ECU replacement on a Pro XS V6: $2,500-$3,500 in parts before labour. SmartCraft sensor cascade failures: $1,200+. Alternator + voltage regulator on a Verado: $1,800+. Gold does not cover any of these. Platinum does.
+Modern Mercury outboards combine mechanical systems with increasingly sophisticated electrical controls. Platinum is the plan we quote because both categories can matter during long-term ownership.
 
-For the price difference between the two tiers (typically $200-$400 across most HP bands), Platinum is the obvious call. We do not carry Gold because we do not want a customer to come back in year 6 with a $3,000 ECU failure and find out their coverage did not include it.
+The actual Canadian Platinum contract controls what is covered or excluded. We verify the motor and review the plan before registration rather than relying on a generic coverage label.
 
 ## What Platinum Actually Covers
 
@@ -140,14 +133,14 @@ For the price difference between the two tiers (typically $200-$400 across most 
 To enroll in Mercury Product Protection:
 
 1. **Must be purchased before factory warranty expires.** Once enrolled, coverage starts the day factory warranty ends.
-2. **Engine must be from the current model year or 4 previous model years.** A 2026 motor: covered. A 2021 motor: covered. A 2020 motor: not eligible.
+2. **Engine must have been manufactured in the current calendar year or four preceding calendar years.** Other eligibility rules still apply, so HBW verifies the serial record instead of relying on an advertised model year.
 3. **Under 500 engine hours at time of purchase.**
 4. **Recreational use only.** Charter, commercial fishing, government, or work-related use is excluded.
-5. **Must be US or Canadian-purchased motor.** Imports from outside North America do not qualify.
+5. **The Canadian contract and registration rules must apply.** HBW confirms the original sale and serial record before quoting coverage.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-We verify eligibility using your engine model and serial number. Takes about 10 minutes, provide them via the form at [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty) and we confirm before you commit.
+We verify eligibility using your engine model and serial number. Start with the [Mercury Product Protection pricing page](/mercury-product-protection), then contact HBW for confirmation before you commit.
 
 ## Real CAD Pricing (HBW)
 
@@ -165,11 +158,9 @@ We verify eligibility using your engine model and serial number. Takes about 10 
 | 500 | $4,870 | $8,766 | $12,417 | $15,777 | $18,748 |
 | 600 | $5,836 | $10,504 | $14,881 | $18,908 | $22,469 |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Product Protection prices were checked against HBW's current Canadian rate card on July 17, 2026. For the maintained rate card and estimator, see [Mercury Product Protection pricing](/mercury-product-protection). For live motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Taxes and registration fees extra. Final pricing confirmed at registration with Mercury.
-
-**HBW exclusive**: Customers who purchased their motor from HBW get **10% off** any Platinum coverage tier. This is our way of saying thanks for buying the motor here.
 
 ## When Platinum Makes Financial Sense
 
@@ -191,15 +182,15 @@ For Ontario boaters who plan to keep their motor 5+ years, Platinum almost alway
 
 ## Transferability and Resale Value
 
-Platinum coverage is transferable to a subsequent recreational-use buyer within 30 days of sale. This matters at resale.
+Platinum coverage is transferable to a subsequent recreational-use buyer when Mercury's transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change.
 
-A 5-year-old Mercury 150 HP with active Platinum coverage to year 8 sells for 10-15% more than the same motor with no coverage. The buyer knows they have factory protection for the next 3 years. Sellers who include the transferable warranty in the listing close faster.
+Remaining transferable coverage can be useful to a buyer because it makes the engine's protection status easier to document. The serial record and approved transfer determine what coverage actually follows the engine.
 
 The motor must transfer to another recreational user (not commercial, not a dealer-purchased trade-in) for the warranty to follow it.
 
 ## What Happens When You File a Claim
 
-You do not deal with Mercury directly. You bring the boat to any authorized Mercury dealer (3,600+ across North America). They diagnose, contact Mercury for approval, and perform the repair using genuine Mercury parts. You pay the $50 deductible. Mercury covers the rest.
+You bring the boat to an authorized Mercury dealer. The dealer diagnoses the issue, handles the claim process and performs an approved covered repair using genuine Mercury or Quicksilver parts. You pay the current $50 deductible per claim; the contract terms determine the covered amount.
 
 If you bought the warranty at HBW but you are broken down at a marina near Algonquin Park, you can have the work done at any authorized Mercury dealer up there. The contract follows the engine.
 
@@ -209,9 +200,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## How to Get a Quote
 
-Visit [harrisboatworks.ca/warranty](https://www.harrisboatworks.ca/warranty), fill in your motor model and serial number, pick your preferred term length. We confirm eligibility within 1-2 business days and send you the final quote.
-
-HBW customers (motor purchased from us), mention this in the notes field and we apply the 10% discount automatically.
+Visit the [Mercury Product Protection page](/mercury-product-protection), choose your horsepower band and preferred term, then contact HBW with the motor model and serial number. We confirm eligibility, current coverage and the final price before registration.
 
 ---
 
@@ -220,17 +209,17 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
 
 ## FAQs
 
-### What is the difference between Mercury Gold and Platinum coverage?
+### Why does HBW quote Mercury Platinum Product Protection?
 
-Gold covers mechanical failures only. Platinum adds electrical and accessory coverage (ECU, sensors, alternator, wiring, gauges, controls). On modern Mercury outboards where most expensive failures are electrical, Platinum is the right call. HBW sells Platinum exclusively.
+Platinum is Mercury’s broadest Product Protection tier and covers eligible mechanical and electrical breakdowns under the Canadian contract terms. It is the plan HBW normally sells.
 
 ### When do I need to buy Mercury Product Protection?
 
-Before your 3-year factory warranty expires. Once you have enrolled, the extended coverage takes over the day factory warranty ends. Mercury allows enrollment within 4 model years of the engine.
+Before the applicable Mercury factory limited warranty expires. Mercury also applies manufacture-date, engine-hour, use and other eligibility rules, so HBW confirms the serial record first.
 
 ### Is Mercury Product Protection transferable when I sell my boat?
 
-Yes. Transferable to a subsequent recreational-use buyer within 30 days of sale. Adds 10-15% to resale value because the new owner inherits ongoing factory protection.
+Yes, to a subsequent recreational-use buyer when Mercury’s transfer requirements are met. The current Canadian terms require the transfer request within 30 business days of the ownership change.
 
 ### What is the deductible?
 
@@ -240,9 +229,9 @@ $50 per claim.
 
 No. Oil changes, impellers, plugs, anodes, propeller wear, those are maintenance items, not warranty items. You handle those normally.
 
-### I bought my motor from HBW. How do I get the 10% discount?
+### Where can I see current Canadian Platinum pricing?
 
-Mention it in the notes field on the quote form at /warranty. We verify the original purchase from our records and apply the discount before sending the final quote.
+Use the Mercury Product Protection page at /mercury-product-protection for the maintained rate card by horsepower and term. HBW confirms final eligibility and price by serial number.
 
 ## Next steps
 
@@ -258,4 +247,3 @@ Mention it in the notes field on the quote form at /warranty. We verify the orig
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

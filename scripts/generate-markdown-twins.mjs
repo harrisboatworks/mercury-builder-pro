@@ -650,6 +650,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '## Pricing reference',
     '',
     `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
+    `- [Mercury Platinum Product Protection rate card (CAD)](${SITE_URL}/mercury-product-protection.md), one- through five-year plan pricing by horsepower band. JSON: ${SITE_URL}/mercury-product-protection.json.`,
     '',
     '## MCP discovery',
     '',
@@ -1163,7 +1164,7 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
   console.log(`[markdown-twins] wrote pricing-reference.schema.json with ${schema['@graph'][1].numberOfItems} Product entries`);
 }
 
-verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', "Ontario's Mercury Repower Centre"]);
+verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', 'mercury-product-protection.md', "Ontario's Mercury Repower Centre"]);
 verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', '/api/agents/mcp']);
 
 // Verify pricing-reference motor count matches the quote-builder selection

@@ -450,6 +450,7 @@ const AdminQuoteDetail = () => {
           looseMotorBattery: qd.looseMotorBattery,
           selectedPackage: qd.selectedPackage?.id || 'good',
           adminCustomItems: qd.adminCustomItems || [],
+          warrantyConfig: qd.warrantyConfig,
           tradeInInfo: qd.tradeInInfo,
         });
       }

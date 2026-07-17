@@ -96,9 +96,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         looseMotorBattery: state.looseMotorBattery,
         selectedPackage: state.selectedPackage?.id || 'good',
         adminCustomItems: customItems,
-        completeWarrantyCost: 0, // Not available in admin context, will be 0
-        premiumWarrantyCost: 0,
-        currentCoverageYears: 3,
+        warrantyConfig: state.warrantyConfig,
         tradeInInfo: state.tradeInInfo,
       });
       

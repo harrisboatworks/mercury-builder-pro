@@ -296,7 +296,7 @@ WRONG - NEVER DO THIS:
   },
   {
     name: "get_warranty_pricing",
-    description: "Get extended warranty pricing for a motor. Use when customers ask about warranty costs, coverage, or extended protection.",
+    description: "Get Mercury Platinum Product Protection pricing for a motor. Use when customers ask about warranty costs, coverage, or an extended service contract.",
     inputSchema: {
       type: "object",
       properties: {
@@ -304,7 +304,7 @@ WRONG - NEVER DO THIS:
         years: { 
           type: "number", 
           enum: [1, 2, 3, 4, 5],
-          description: "Number of additional warranty years" 
+          description: "Purchased Product Protection plan term in years"
         }
       },
       required: ["horsepower"]
@@ -955,19 +955,23 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const hp = args.horsepower as number;
       const years = args.years as number || null;
       
-      const { data: pricing } = await supabase
+      const { data: pricing, error: pricingError } = await supabase
         .from("warranty_pricing")
         .select("*")
         .lte("hp_min", hp)
         .gte("hp_max", hp)
         .limit(1)
         .single();
+
+      if (pricingError && pricingError.code !== "PGRST116") {
+        console.error("[MCP] Product Protection pricing lookup failed:", pricingError);
+      }
       
       if (!pricing) {
         return { 
           content: [{ 
             type: "text", 
-            text: `For extended warranty on a ${hp}HP motor, I'd recommend speaking with our team for accurate pricing. Call us at (905) 342-2153 or I can have someone call you back.`
+            text: `I couldn't verify a Platinum Product Protection rate for a ${hp}HP motor, so I won't guess. See mercuryrepower.ca/mercury-product-protection or call (905) 342-2153 for a serial-number-confirmed price.`
           }] 
         };
       }
@@ -980,7 +984,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           return { 
             content: [{ 
               type: "text", 
-              text: `A ${years}-year extended warranty for your ${hp}HP motor is $${price.toLocaleString()} CAD. This covers parts and labor beyond the factory warranty. Want me to include this in your quote?` 
+              text: `A ${years}-year Mercury Platinum Product Protection plan for your ${hp}HP motor is $${price.toLocaleString()} CAD before HST. Product Protection is an extended service contract, not an extension of the standard product warranty. Final eligibility and price are confirmed by serial number. Want me to include it in your quote?`
             }] 
           };
         }
@@ -996,7 +1000,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: `Extended warranty options for your ${hp}HP motor:\n\n${allPricing}\n\nWhich coverage period works best for you?` 
+          text: `Mercury Platinum Product Protection plan prices for your ${hp}HP motor, in CAD before HST:\n\n${allPricing}\n\nEach figure is the purchased plan term. Final eligibility and price are confirmed by serial number. Which term would you like to review?`
         }]
       };
     }

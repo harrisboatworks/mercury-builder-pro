@@ -6,10 +6,6 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { hasElectricStart } from '@/lib/motor-config-utils';
 
-// Package warranty year constants
-const COMPLETE_TARGET_YEARS = 7;
-const PREMIUM_TARGET_YEARS = 8;
-
 export interface AccessoryBreakdownItem {
   name: string;
   price: number;
@@ -25,9 +21,7 @@ export interface BuildAccessoryBreakdownParams {
   looseMotorBattery?: { wantsBattery?: boolean; batteryCost?: number };
   selectedPackage?: string; // 'good' | 'better' | 'best'
   adminCustomItems?: Array<{ name: string; price: number }>;
-  completeWarrantyCost?: number;
-  premiumWarrantyCost?: number;
-  currentCoverageYears?: number;
+  warrantyConfig?: { extendedYears?: number; warrantyPrice?: number; totalYears?: number } | null;
   tradeInInfo?: { brand?: string; horsepower?: number; hasTradeIn?: boolean };
 }
 
@@ -41,9 +35,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     looseMotorBattery,
     selectedPackage = 'good',
     adminCustomItems = [],
-    completeWarrantyCost = 0,
-    premiumWarrantyCost = 0,
-    currentCoverageYears = 3,
+    warrantyConfig,
     tradeInInfo,
   } = params;
 
@@ -184,20 +176,15 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     });
   }
 
-  // Warranty extensions
-  if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
-    const extensionYears = COMPLETE_TARGET_YEARS - currentCoverageYears;
+  // Mercury Platinum Product Protection. Use the persisted quote state as the
+  // only source here so summary, saved quote, admin view and PDF cannot
+  // independently re-price or double-add the same plan.
+  if ((warrantyConfig?.extendedYears || 0) > 0 && (warrantyConfig?.warrantyPrice || 0) > 0) {
+    const extensionYears = warrantyConfig!.extendedYears!;
     breakdown.push({
-      name: `Complete Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-      price: completeWarrantyCost,
-      description: `Total coverage: ${COMPLETE_TARGET_YEARS} years`
-    });
-  } else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
-    const extensionYears = PREMIUM_TARGET_YEARS - currentCoverageYears;
-    breakdown.push({
-      name: `Premium Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-      price: premiumWarrantyCost,
-      description: `Total coverage: ${PREMIUM_TARGET_YEARS} years`
+      name: `Mercury Platinum Product Protection (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+      price: warrantyConfig!.warrantyPrice!,
+      description: `Combined coverage: ${warrantyConfig!.totalYears || 'confirmed at registration'} years`,
     });
   }
 

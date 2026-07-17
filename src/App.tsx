@@ -106,6 +106,7 @@ const Accessories = lazy(() => import("./pages/Accessories"));
 const NewQuote = lazy(() => import("./pages/NewQuote"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Promotions = lazy(() => import("./pages/Promotions"));
+const MercuryProductProtection = lazy(() => import("./pages/MercuryProductProtection"));
 const Repower = lazy(() => import("./pages/Repower"));
 const RepowerHub = lazy(() => import("./pages/RepowerHub"));
 const RepowerCost = lazy(() => import("./pages/RepowerCost"));
@@ -556,6 +557,8 @@ function AnimatedRoutes() {
         
         {/* Promotions Page */}
         <Route path="/promotions" element={<Promotions />} />
+        <Route path="/mercury-product-protection" element={<MercuryProductProtection />} />
+        <Route path="/warranty" element={<Navigate to="/mercury-product-protection" replace />} />
         
         {/* Hub pages (top-level resource pages) */}
         <Route path="/repower" element={<RepowerHub />} />
