@@ -50,7 +50,10 @@ import {
   loadCustomerKnowledge,
   resolveCustomerSellingPrice,
 } from '../_shared/customer-knowledge-context.ts';
-import { formatMercuryProductProtectionRateCard } from '../_shared/mercury-product-protection-rates.ts';
+import {
+  buildMercuryProductProtectionCustomerAnswer,
+  formatMercuryProductProtectionRateCard,
+} from '../_shared/mercury-product-protection-rates.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -2067,8 +2070,10 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       });
     }
 
-    let deterministicReply: string | null = null;
-    if (isFinancingQuestion(message)) {
+    let deterministicReply: string | null = buildMercuryProductProtectionCustomerAnswer(message);
+    if (deterministicReply) {
+      console.log('Returning deterministic Product Protection answer from the exact Canadian rate card');
+    } else if (isFinancingQuestion(message)) {
       deterministicReply = buildFinancingCustomerAnswer(knowledge.financing, promotions);
     } else if (isBusinessInfoQuestion(message)) {
       deterministicReply = buildBusinessCustomerAnswer(knowledge.business, message);

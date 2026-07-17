@@ -21,3 +21,40 @@ export function formatMercuryProductProtectionRateCard(): string {
 |----------|--------|---------|---------|---------|---------|
 ${rows}`;
 }
+
+function formatCad(value: number): string {
+  return `$${value.toLocaleString("en-CA")}`;
+}
+
+export function buildMercuryProductProtectionCustomerAnswer(question: string): string | null {
+  const asksAboutProductProtection = /\b(product protection|platinum(?: product protection)?(?: plan)?|extended warranty|extended service contract|protection plan)\b/i.test(question);
+  if (!asksAboutProductProtection) return null;
+
+  const hpMatch = question.match(/\b(\d+(?:\.\d+)?)\s*(?:hp|horsepower)\b/i);
+  if (!hpMatch) return null;
+
+  const hp = Number(hpMatch[1]);
+  const band = MERCURY_PLATINUM_PRODUCT_PROTECTION_RATES.find(
+    (candidate) => hp >= candidate.hpMin && hp <= candidate.hpMax,
+  );
+  if (!band) {
+    return `I couldn't verify a published Mercury Platinum Product Protection rate for a ${hp} HP motor, so I won't guess. See [the current Canadian rate card](/mercury-product-protection) or call (905) 342-2153 for a serial-number-confirmed price.`;
+  }
+
+  const yearMatch = question.match(/\b(\d+)\s*[- ]?year\b/i);
+  const requestedYears = yearMatch ? Number(yearMatch[1]) : null;
+  if (requestedYears !== null && (requestedYears < 1 || requestedYears > 5)) {
+    return `Mercury Platinum Product Protection is sold in purchased plan terms from one to five years. Combined coverage, including the applicable Mercury limited warranty and any active promotion, cannot exceed eight years. See [the current Canadian rate card](/mercury-product-protection) or call (905) 342-2153 so we can confirm the right term by serial number.`;
+  }
+
+  const qualification = "Product Protection is an extended service contract, not an extension of the standard product warranty. Final eligibility and current coverage are confirmed by serial number.";
+  if (requestedYears !== null) {
+    const price = band.prices[requestedYears - 1];
+    return `A ${requestedYears}-year Mercury Platinum Product Protection plan for a ${hp} HP motor is ${formatCad(price)} CAD before HST. That is the published price for the purchased ${requestedYears}-year plan, not a yearly installment. ${qualification} [View all current Canadian rates](/mercury-product-protection).`;
+  }
+
+  const options = band.prices
+    .map((price, index) => `${index + 1} year${index === 0 ? "" : "s"}: ${formatCad(price)}`)
+    .join("; ");
+  return `For a ${hp} HP motor, current Mercury Platinum Product Protection prices are ${options} CAD before HST. Each amount is the full published price for that purchased plan term. ${qualification} [View all current Canadian rates](/mercury-product-protection).`;
+}
