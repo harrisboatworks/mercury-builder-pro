@@ -27185,7 +27185,7 @@ Most Richmond Hill customers who drive up have done the homework first:
 Yes, that's the whole point of [mercuryrepower.ca](https://www.mercuryrepower.ca). Real installed pricing, no form submission, no callback required.
 
 **What motors do you carry?**
-Full Mercury lineup: 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order., whatever makes sense for your application.
+Full Mercury lineup: 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order, whatever makes sense for your application.
 
 **Do you service non-Mercury motors?**
 No. For engine repairs, we only service Mercury and Mercruiser. We won't touch a Yamaha, Honda, or Suzuki for service work.
