@@ -14,8 +14,8 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
 
 import { Button } from '@/components/ui/button';
-import { 
-  AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award, 
+import {
+  AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award,
   MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck, Star,
   Check, X
 } from 'lucide-react';
@@ -40,14 +40,14 @@ const modernBenefitsData = [
 const repowerStepsData = [
   { step: 1, title: "Consultation & Quote", description: "We assess your boat and recommend the right Mercury motor" },
   { step: 2, title: "Scheduling", description: "Book your installation with the shortest wait times" },
-  { step: 3, title: "Professional Installation", description: "Mercury-certified techs install in 1-2 days" },
+  { step: 3, title: "Professional Installation", description: "Mercury-certified techs install at our Gores Landing shop" },
   { step: 4, title: "Lake Test", description: "We test on Rice Lake and walk you through every feature" },
 ];
 
 const whyHarrisData = [
   { icon: Award, title: "CSI Award Winner", description: "Mercury's highest honor for customer satisfaction" },
-  { icon: Calendar, title: "Since 1947", description: "79 years of family-owned marine expertise" },
-  { icon: BadgeCheck, title: "Mercury Dealer Since 1965", description: "60 years as an authorized Mercury dealer" },
+  { icon: Calendar, title: "Since 1947", description: "Family-owned marine expertise on Rice Lake" },
+  { icon: BadgeCheck, title: "Mercury Dealer Since 1965", description: "An authorized Mercury dealer for generations" },
   { icon: Wrench, title: "Certified Repower Center", description: "Mercury's top-tier repower certification" },
 ];
 
@@ -66,7 +66,7 @@ export default function Repower() {
       {/* === Existing sections (Phase 2 will restyle these wrappers) === */}
 
       {/* Warning Signs Section */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
+      <section className="py-16 md:py-24 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
             <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
@@ -109,7 +109,7 @@ export default function Repower() {
       </section>
 
       {/* Repower vs New Boat */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
+      <section className="border-t border-repower-navy-900/10 py-16 md:py-24 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
             <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function Repower() {
                 {[
                   'Your hull is solid, aluminum & fiberglass last decades',
                   'You like your boat, it fits your needs and the right size',
-                  'The numbers work: 70% of the benefit for 30% of the cost',
+                  'The comparison works: about 70% of the new-boat benefit for roughly 30% of a comparable new boat',
                 ].map((item) => (
                   <li key={item} className="!flex flex-row flex-nowrap items-start gap-3 font-sans text-base text-repower-navy-900/80 leading-relaxed">
                     <Check className="w-5 h-5 text-repower-gold flex-shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
@@ -244,7 +244,7 @@ export default function Repower() {
               {
                 Icon: ChevronRight, color: 'text-repower-gold', eyebrow: 'The Steps',
                 title: 'Four steps from quote to lake test.',
-                body: '01 Consultation and quote. 02 Scheduling, shortest waits in the region. 03 Mercury-certified install in 1 to 2 days. 04 Lake test on Rice Lake before you take her home.',
+                body: '01 Consultation and quote. 02 Scheduling based on current shop capacity. 03 Mercury-certified installation at Harris Boat Works. 04 Lake test on Rice Lake before you take her home. Your quote confirms the expected timeline.',
               },
             ].map((s) => (
               <div key={s.eyebrow} className="bg-repower-navy-900 p-8 md:p-12 motion-safe:animate-fade-in">

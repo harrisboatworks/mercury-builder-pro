@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { 
+import {
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
   Award, Wrench, Waves, MapPin, Star, ChevronLeft, ChevronDown, BadgeCheck, Shield
 } from 'lucide-react';
@@ -44,13 +44,13 @@ const whyBuyReasons = [
   {
     icon: Calendar,
     title: "Serving Boaters Since 1947",
-    description: "79 years of family-owned marine expertise on Rice Lake"
+    description: "Family-owned marine expertise on Rice Lake since 1947"
   },
   {
     icon: null,
     useMercuryLogo: true,
     title: "Mercury Dealer Since 1965",
-    description: "60 years as an authorized Mercury dealer and service center"
+    description: "An authorized Mercury dealer and service centre since 1965"
   },
   {
     icon: Wrench,
@@ -69,6 +69,21 @@ const whyBuyReasons = [
   }
 ];
 
+interface PromoOption {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+  rates?: Array<{ months: number; rate: number }>;
+  minimum_amount?: number;
+  matrix?: Array<{ hp_min: number; hp_max: number; rebate: number }>;
+}
+
+interface PromotionOptions {
+  type: string;
+  options: PromoOption[];
+}
+
 interface Promotion {
   id: string;
   name: string;
@@ -83,7 +98,7 @@ interface Promotion {
   image_url: string | null;
   terms_url: string | null;
   is_active: boolean;
-  promo_options?: any;
+  promo_options?: PromotionOptions | null;
 }
 
 export default function Promotions() {
@@ -136,7 +151,7 @@ export default function Promotions() {
 
   const handleGeneralSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (channel === 'email' && !email) {
       toast.error('Please enter an email address');
       return;
@@ -180,6 +195,11 @@ export default function Promotions() {
   const TestimonialsSection = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+    const [isFocusWithin, setIsFocusWithin] = useState(false);
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
+      typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    );
 
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -192,27 +212,42 @@ export default function Promotions() {
     useEffect(() => {
       if (!emblaApi) return;
       emblaApi.on('select', onSelect);
-      
-      // Auto-rotate every 6 seconds
-      const interval = setInterval(() => {
-        emblaApi.scrollNext();
-      }, 6000);
 
       return () => {
         emblaApi.off('select', onSelect);
-        clearInterval(interval);
       };
     }, [emblaApi, onSelect]);
-    
-    const dailyTestimonials = useMemo(() => 
-      generateDailyTestimonials(allTestimonials, 6), 
+
+    useEffect(() => {
+      const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const updatePreference = () => setPrefersReducedMotion(media.matches);
+      media.addEventListener('change', updatePreference);
+      return () => media.removeEventListener('change', updatePreference);
+    }, []);
+
+    useEffect(() => {
+      if (!emblaApi || prefersReducedMotion || isHovered || isFocusWithin) return;
+      const interval = window.setInterval(() => emblaApi.scrollNext(), 6000);
+      return () => window.clearInterval(interval);
+    }, [emblaApi, isFocusWithin, isHovered, prefersReducedMotion]);
+
+    const dailyTestimonials = useMemo(() =>
+      generateDailyTestimonials(allTestimonials, 6),
       []
     );
     const { totalReviews: reviewCount } = useGoogleReviewStats();
 
     return (
       <section className="bg-white py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
-        <div className="max-w-[1100px] mx-auto">
+        <div
+          className="max-w-[1100px] mx-auto"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onFocusCapture={() => setIsFocusWithin(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsFocusWithin(false);
+          }}
+        >
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
               What Our Customers Say
@@ -268,12 +303,14 @@ export default function Promotions() {
 
             <button
               onClick={scrollPrev}
+              aria-label="Previous customer testimonial"
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full border border-repower-navy-900/10 shadow-sm hidden md:flex items-center justify-center hover:border-repower-navy-900/30 transition-colors"
             >
               <ChevronLeft className="w-5 h-5 text-repower-navy-900" />
             </button>
             <button
               onClick={scrollNext}
+              aria-label="Next customer testimonial"
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full border border-repower-navy-900/10 shadow-sm hidden md:flex items-center justify-center hover:border-repower-navy-900/30 transition-colors"
             >
               <ChevronRight className="w-5 h-5 text-repower-navy-900" />
@@ -286,11 +323,16 @@ export default function Promotions() {
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
-                className={`w-2 h-2 p-0 rounded-full transition-colors ${
-                  selectedIndex === index ? 'bg-repower-gold' : 'bg-repower-navy-900/20'
-                }`}
-                style={{ minHeight: 8, minWidth: 8 }}
-              />
+                aria-current={selectedIndex === index ? 'true' : undefined}
+                className="w-11 h-11 p-0 rounded-full inline-flex items-center justify-center"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    selectedIndex === index ? 'bg-repower-gold' : 'bg-repower-navy-900/20'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -394,7 +436,9 @@ export default function Promotions() {
           endDate={mainPromotion?.end_date}
           bonusTitle={mainPromotion?.bonus_title}
           bonusDescription={mainPromotion?.bonus_description}
-          bonusYears={bonusYears}
+          termsUrl={mainPromotion?.terms_url}
+          imageUrl={mainPromotion?.image_url}
+          hasOfferDetails={chooseOneOptions.length > 0}
         />
       )}
 
@@ -571,25 +615,36 @@ export default function Promotions() {
             </div>
 
             {(channel === 'email' || channel === 'both') && (
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required={channel === 'email' || channel === 'both'}
-                className="bg-white border-repower-navy-900/15"
-              />
+              <div>
+                <label htmlFor="promotion-alert-email" className="sr-only">Email address</label>
+                <Input
+                  id="promotion-alert-email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required={channel === 'email' || channel === 'both'}
+                  className="bg-white border-repower-navy-900/15"
+                />
+              </div>
             )}
 
             {(channel === 'sms' || channel === 'both') && (
-              <Input
-                type="tel"
-                placeholder="(555) 123-4567"
-                value={phone}
-                onChange={(e) => setPhone(formatPhone(e.target.value))}
-                required={channel === 'sms' || channel === 'both'}
-                className="bg-white border-repower-navy-900/15"
-              />
+              <div>
+                <label htmlFor="promotion-alert-phone" className="sr-only">Mobile phone number</label>
+                <Input
+                  id="promotion-alert-phone"
+                  type="tel"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  placeholder="(555) 123-4567"
+                  value={phone}
+                  onChange={(e) => setPhone(formatPhone(e.target.value))}
+                  required={channel === 'sms' || channel === 'both'}
+                  className="bg-white border-repower-navy-900/15"
+                />
+              </div>
             )}
 
             <Button type="submit" disabled={subscribing} className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">

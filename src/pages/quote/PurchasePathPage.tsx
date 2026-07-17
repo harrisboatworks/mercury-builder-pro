@@ -14,7 +14,7 @@ export default function PurchasePathPage() {
 
   useEffect(() => {
     document.title = 'Choose Installation Option | Harris Boat Works';
-    
+
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!desc) {
       desc = document.createElement('meta');
@@ -32,12 +32,13 @@ export default function PurchasePathPage() {
     import('@/pages/quote/BoatInfoPage');
   }, []);
 
-  // Separate effect for access control check - only runs on mount
+  // Re-check once persisted quote state finishes loading so a direct URL cannot
+  // bypass the normal motor/options prerequisites.
   useEffect(() => {
     if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
       navigate('/quote/motor-selection');
     }
-  }, []);
+  }, [isNavigationBlocked, isStepAccessible, navigate, state.isLoading]);
 
   // Navigate after purchase path is set (state has been committed)
   useEffect(() => {
@@ -53,7 +54,7 @@ export default function PurchasePathPage() {
         const model = (state.motor?.model || '').toUpperCase();
         const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
         const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
-        
+
         if (isTiller) {
           navigate('/quote/trade-in');
         } else {
@@ -76,12 +77,12 @@ export default function PurchasePathPage() {
   const handleStepComplete = (path: 'loose' | 'installed') => {
     pathSelectedOnThisPage.current = true;
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
-    
+
     // Clear installation config when selecting loose motor (no installation)
     if (path === 'loose') {
       dispatch({ type: 'SET_INSTALL_CONFIG', payload: null });
     }
-    
+
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     // Navigation handled by useEffect above
   };
@@ -104,13 +105,14 @@ export default function PurchasePathPage() {
           </button>
         </div>
         <QuotePageShell
-          eyebrow="Step 2 · Installation"
+          eyebrow="Step 3 · Purchase path"
           title="Loose motor or professional install?"
-          subhead="Pick how you'd like to take your motor. You can change this later."
+          subhead="Choose how you want to receive it. Your selection is confirmed before you move on, and you can change it later."
           className="!py-6 md:!py-8"
         >
           <PurchasePath
             selectedMotor={state.motor!}
+            selectedPath={state.purchasePath}
             onSelectPath={handleStepComplete}
           />
         </QuotePageShell>

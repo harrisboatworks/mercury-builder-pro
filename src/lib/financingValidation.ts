@@ -26,7 +26,7 @@ export const purchaseDetailsSchema = z.object({
   downPayment: z.number().min(0, 'Down payment cannot be negative'),
   tradeInValue: z.number().min(0, 'Trade-in value cannot be negative').optional(),
   amountToFinance: z.number().min(1, 'Amount to finance must be at least $1'),
-  preferredTerm: z.enum(['24', '36', '48', '60', '72', '84', '120', '180']).optional(),
+  preferredTerm: z.enum(['24', '36', '48', '60', '72', '84', '120', '180', '240']).optional(),
   // Promo fields for active promotion
   promoOption: z.enum(['no_payments', 'special_financing', 'cash_rebate']).nullable().optional(),
   promoRate: z.number().nullable().optional(),

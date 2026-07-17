@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { SITE_URL } from '@/lib/site';
 import { ExpandableImage } from '@/components/ui/expandable-image';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogSEO } from '@/components/seo/BlogSEO';
@@ -49,7 +49,7 @@ export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
-  
+
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
@@ -170,7 +170,7 @@ export default function BlogArticle() {
           const imageMatch = line.match(/!\[(.*?)\]\((\S+?)(?:\s+"([^"]*)")?\)/);
           if (imageMatch) {
             return (
-              <ExpandableImage 
+              <ExpandableImage
                 key={index}
                 src={imageMatch[2]}
                 alt={imageMatch[1]}
@@ -187,8 +187,8 @@ export default function BlogArticle() {
           const text = line.slice(3);
           const id = slugify(text);
           return (
-            <h2 
-              key={index} 
+            <h2
+              key={index}
               id={id}
               className="text-2xl font-semibold text-foreground mt-8 mb-4 scroll-mt-24"
             >
@@ -200,8 +200,8 @@ export default function BlogArticle() {
           const text = line.slice(4);
           const id = slugify(text);
           return (
-            <h3 
-              key={index} 
+            <h3
+              key={index}
               id={id}
               className="text-xl font-medium text-foreground mt-6 mb-3 scroll-mt-24"
             >
@@ -250,7 +250,7 @@ export default function BlogArticle() {
       {/* Floating share bar removed — byline BlogShareButtons covers all posts. */}
 
 
-      <main className="container mx-auto px-6 md:px-14 py-10 md:py-14">
+      <main className="container mx-auto px-5 md:px-14 py-6 md:py-12">
         {/* Breadcrumb */}
         <Breadcrumb className="mb-8 max-w-[880px] mx-auto">
           <BreadcrumbList>
@@ -265,8 +265,8 @@ export default function BlogArticle() {
                 <Link to="/blog" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Blog</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator className="text-repower-navy-900/40" />
-            <BreadcrumbItem>
+            <BreadcrumbSeparator className="hidden text-repower-navy-900/40 sm:block" />
+            <BreadcrumbItem className="hidden sm:flex">
               <BreadcrumbPage className="truncate max-w-[200px] text-repower-navy-900">{article.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -277,15 +277,6 @@ export default function BlogArticle() {
 
 
         <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
-          {/* Back Link */}
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Blog
-          </Link>
-
           {/* Header */}
           <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
@@ -334,9 +325,6 @@ export default function BlogArticle() {
                 location="header"
               />
             </div>
-            <p className="mt-3 text-xs text-repower-navy-900/50">
-              Last updated: {parseLocalDate(article.dateModified || article.datePublished).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </p>
           </header>
 
           {/* Featured Image — shared <picture> component (see BlogHeroPicture) */}

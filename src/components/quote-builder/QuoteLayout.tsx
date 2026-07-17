@@ -33,10 +33,10 @@ export const QuoteLayout = ({
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   // Track anonymous quote-building activity in the background
   useQuoteActivityTracker();
-  
+
   return <div className="min-h-screen bg-repower-paper relative">
       {/* Admin Mode Banner */}
       {state.isAdminQuote && isAdmin && (
@@ -49,7 +49,7 @@ export const QuoteLayout = ({
       <RepowerHeader solid />
 
       {/* Spacer to offset fixed header */}
-      <div className="h-[64px] lg:h-[72px]" aria-hidden />
+      <div className="h-[68px] lg:h-[72px]" aria-hidden />
 
       {/* Persistent trust strip */}
       <div className="bg-repower-cream border-b border-repower-navy-900/10">

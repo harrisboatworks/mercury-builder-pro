@@ -13,6 +13,8 @@ const TOOLS = [
     id: 'trade-in-value',
     name: 'Trade-In Value Estimator',
     description: "What's my old motor worth as a trade?",
+    meta: 'About 2 minutes · See an estimated CAD range',
+    cta: 'Estimate My Trade-In',
     Icon: DollarSign,
     Component: TradeInValueEstimator,
   },
@@ -20,6 +22,8 @@ const TOOLS = [
     id: 'repower-cost',
     name: 'Repower Cost Estimator',
     description: 'Ballpark cost for a complete repower with install.',
+    meta: 'About 2 minutes · See a budget range',
+    cta: 'Estimate My Repower Cost',
     Icon: Calculator,
     Component: RepowerCostEstimator,
   },
@@ -27,6 +31,8 @@ const TOOLS = [
     id: 'boost-eligibility',
     name: 'Boost Eligibility Checker',
     description: 'Is my Mercury 150 Pro XS eligible for the Boost upgrade?',
+    meta: 'Under 1 minute · Get an eligibility result',
+    cta: 'Check Boost Eligibility',
     Icon: Zap,
     Component: BoostEligibilityChecker,
   },
@@ -34,6 +40,8 @@ const TOOLS = [
     id: 'shaft-length',
     name: 'Shaft Length Picker',
     description: 'What shaft length fits my transom?',
+    meta: 'About 1 minute · Get a shaft recommendation',
+    cta: 'Find My Shaft Length',
     Icon: Ruler,
     Component: ShaftLengthPicker,
   },
@@ -75,8 +83,8 @@ export default function ToolsIndex() {
             <div className="mt-7 h-px w-full bg-repower-navy-900/10" aria-hidden />
           </header>
 
-          <section aria-label="Available tools" className="grid gap-6 md:grid-cols-2 mb-14">
-            {TOOLS.map(({ id, name, description, Icon }) => (
+          <nav aria-label="Tool shortcuts" className="grid gap-6 md:grid-cols-2 mb-14">
+            {TOOLS.map(({ id, name, description, meta, cta, Icon }) => (
               <div
                 key={id}
                 className="rounded-xl border border-repower-navy-900/15 bg-white p-6 flex flex-col shadow-sm"
@@ -85,33 +93,33 @@ export default function ToolsIndex() {
                   <div className="p-2 rounded-lg bg-repower-navy-900/5 text-repower-navy-900">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <h2 className="font-display font-bold text-lg text-repower-navy-900" style={{ letterSpacing: '-0.02em' }}>
+                  <span className="font-display font-bold text-lg text-repower-navy-900" style={{ letterSpacing: '-0.02em' }}>
                     {name}
-                  </h2>
+                  </span>
                 </div>
                 <p className="font-sans text-[14px] text-repower-navy-900/70 mb-5 flex-1 leading-relaxed">
                   {description}
                 </p>
+                <p className="mb-4 font-sans text-[12px] font-medium text-repower-navy-900/60">{meta}</p>
                 <Button
                   asChild
                   variant="outline"
                   className="w-full sm:w-auto self-start border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5"
                 >
                   <a href={`#${id}`}>
-                    Open tool
+                    {cta}
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </a>
                 </Button>
               </div>
             ))}
-          </section>
+          </nav>
 
           <div className="space-y-16">
-            {TOOLS.map(({ id, name, Component }) => (
-              <section
+            {TOOLS.map(({ id, Component }) => (
+              <div
                 key={id}
                 id={id}
-                aria-labelledby={`${id}-heading`}
                 className="scroll-mt-24 border-t border-repower-navy-900/10 pt-10"
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -128,7 +136,7 @@ export default function ToolsIndex() {
                   {name}
                 </h2>
                 <Component />
-              </section>
+              </div>
             ))}
           </div>
         </main>

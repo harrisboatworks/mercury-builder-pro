@@ -7,13 +7,14 @@ import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
-import { calculatePaymentWithFrequency, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
+import { calculatePaymentWithFrequency, DEALERPLAN_FEE, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Search, Calculator, FileText, Anchor, Calendar, Percent, CreditCard, ShieldCheck, ArrowRight, Phone, Sparkles } from 'lucide-react';
 import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
+import { getDealerPrice } from '@/lib/canonical-pricing';
 
 const CURRENT_RATE = getCurrentMercuryFinancingRate();
 
@@ -27,7 +28,7 @@ const STEPS = [
 ];
 
 const BENEFITS = [
-  { icon: Calendar, title: 'Flexible Terms', desc: '36 to 180 months, find the payment that fits your budget.' },
+  { icon: Calendar, title: 'Flexible Amortization', desc: 'Payment calculations can use amortization up to 240 months; the active TD contract term is up to 60 months.' },
   { icon: Percent, title: 'Competitive Rates', desc: `${CURRENT_RATE.programLabel}. Promotional rates may apply.` },
   { icon: CreditCard, title: 'Payment Options', desc: 'Choose weekly, bi-weekly, or monthly payments.' },
   { icon: ShieldCheck, title: 'No Early Payoff Penalty', desc: 'Pay off your motor anytime with zero extra fees.' },
@@ -39,7 +40,7 @@ const FAQ_ITEMS = [
   { q: 'How long does approval take?', a: 'Most applications receive a decision within 1–2 business days. Some are approved same-day.' },
   { q: "What's the minimum amount for financing?", a: 'Financing is available on purchases of $5,000 or more. For smaller purchases, we recommend our cash rebate options when available.' },
   { q: 'Can I pay off my loan early?', a: 'Absolutely. There are no prepayment penalties, pay off your balance anytime without extra fees.' },
-  { q: "What's included in the financed amount?", a: 'The financed total includes the motor price, 13% HST, and a $349 finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.' },
+  { q: "What's included in the financed amount?", a: `The financed total includes the motor price, 13% HST, and a $${DEALERPLAN_FEE} finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.` },
 ];
 
 // ── Types ────────────────────────────────────────────────────
@@ -47,9 +48,12 @@ const FAQ_ITEMS = [
 interface DbMotor {
   id: string;
   model: string;
+  model_display?: string | null;
+  model_number?: string | null;
   year: number;
   base_price: number | null;
   sale_price: number | null;
+  dealer_price?: number | null;
 }
 
 // ── SEO helper ───────────────────────────────────────────────
@@ -80,7 +84,10 @@ export default function FinanceCalculator() {
   const { state: quoteState } = useQuote();
 
   const modelId = params.get('model');
-  const navState = location.state as { motorPrice?: number; motorModel?: string; motorId?: string; motorHp?: number; fromModal?: boolean } || {};
+  const navState = useMemo(
+    () => (location.state as { motorPrice?: number; motorModel?: string; motorId?: string; motorHp?: number; fromModal?: boolean } | null) || {},
+    [location.state]
+  );
 
   const [totalFinanced, setTotalFinanced] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
@@ -107,9 +114,11 @@ export default function FinanceCalculator() {
     return `Rates ${CURRENT_RATE.rate}`;
   }, [financingPromoData]);
 
+  const normalizedAmortization = Math.min(240, Math.max(36, term || 60));
+
   // ── SEO ──
   useEffect(() => {
-    setSeo('Finance Your Mercury Outboard | Harris Boats', `Estimate payments and apply for flexible Mercury outboard financing. Rates ${CURRENT_RATE.rate}, terms up to 180 months.`);
+    setSeo('Finance Your Mercury Outboard | Harris Boat Works', `Estimate payments and apply for Canadian Mercury outboard financing. Rates ${CURRENT_RATE.rate}; amortization may be available up to 240 months, OAC.`);
   }, []);
 
   // ── Motor loading (unchanged logic) ──
@@ -117,7 +126,7 @@ export default function FinanceCalculator() {
     const run = async () => {
       if (navState.motorPrice && navState.motorModel) {
         const motorPrice = Math.round(navState.motorPrice);
-        const totalWithFees = motorPrice * 1.13 + 299;
+        const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
         setTotalFinanced(Math.round(totalWithFees));
         setTerm(getFinancingTerm(Math.round(totalWithFees)));
         if (!promo?.rate) setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
@@ -126,7 +135,7 @@ export default function FinanceCalculator() {
       }
       if (quoteState.motor) {
         const motorPrice = quoteState.motor.price || 0;
-        const totalWithFees = motorPrice * 1.13 + 299;
+        const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
         setTotalFinanced(Math.round(totalWithFees));
         setTerm(getFinancingTerm(Math.round(totalWithFees)));
         if (!promo?.rate) setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
@@ -135,11 +144,25 @@ export default function FinanceCalculator() {
       }
       if (!modelId) return;
       setLoading(true);
-      const { data, error } = await supabase.from('motor_models').select('id, model, year, base_price, sale_price').eq('id', modelId).maybeSingle();
+      const { data, error } = await supabase
+        .from('motor_models')
+        .select('id, model, model_display, model_number, year, base_price, sale_price, dealer_price')
+        .eq('id', modelId)
+        .maybeSingle();
       if (!error && data) {
-        setMotor(data as DbMotor);
-        const motorPrice = (data.sale_price && data.sale_price > 0 ? data.sale_price : data.base_price) || 0;
-        const totalWithFees = motorPrice * 1.13 + 299;
+        const canonicalDealerPrice = data.model_number ? getDealerPrice(data.model_number) : null;
+        const motorPrice = canonicalDealerPrice
+          ?? (data.dealer_price && data.dealer_price > 0 ? data.dealer_price : null)
+          ?? (data.sale_price && data.sale_price > 0 ? data.sale_price : null)
+          ?? data.base_price
+          ?? 0;
+        setMotor({
+          ...(data as DbMotor),
+          model: data.model_display || data.model,
+          base_price: motorPrice,
+          sale_price: motorPrice,
+        });
+        const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
         setTotalFinanced(Math.round(totalWithFees));
         setTerm(getFinancingTerm(Math.round(totalWithFees)));
         if (!promo?.rate) setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
@@ -147,7 +170,7 @@ export default function FinanceCalculator() {
       setLoading(false);
     };
     run();
-  }, [modelId, navState, quoteState.motor]);
+  }, [modelId, navState, promo?.rate, quoteState.motor]);
 
   useEffect(() => {
     if (promo?.rate && totalFinanced > 0) {
@@ -160,14 +183,17 @@ export default function FinanceCalculator() {
   const paymentCalculation = useMemo(() => {
     const principal = Math.max(0, totalFinanced - down);
     if (!principal || principal <= 0) return { amount: 0, frequency };
-    const result = calculatePaymentWithFrequency(principal, frequency, apr, term);
+    const result = calculatePaymentWithFrequency(principal, frequency, apr, normalizedAmortization);
     return { amount: result.payment, frequency, termPeriods: result.termPeriods };
-  }, [totalFinanced, down, apr, frequency, term]);
+  }, [totalFinanced, down, apr, frequency, normalizedAmortization]);
 
   const breakdown = useMemo(() => {
-    const motorPrice = Math.round((totalFinanced - 299) / 1.13);
+    if (totalFinanced <= 0) {
+      return { motorPrice: 0, hst: 0, financeFee: 0, total: 0 };
+    }
+    const motorPrice = Math.max(0, Math.round((totalFinanced - DEALERPLAN_FEE) / 1.13));
     const hst = Math.round(motorPrice * 0.13);
-    return { motorPrice, hst, financeFee: 299, total: totalFinanced };
+    return { motorPrice, hst, financeFee: DEALERPLAN_FEE, total: totalFinanced };
   }, [totalFinanced]);
 
   const handleApplyForFinancing = () => {
@@ -180,6 +206,7 @@ export default function FinanceCalculator() {
         motorId: motor.id, motorModel: motor.model, motorYear: motor.year,
         motorPrice: motor.base_price || motor.sale_price || 0,
         totalFinanced, downPayment: down, apr, frequency,
+        amortizationMonths: normalizedAmortization,
         estimatedPayment: paymentCalculation.amount, fromCalculator: true,
       },
     });
@@ -212,37 +239,41 @@ export default function FinanceCalculator() {
               Finance Your Mercury Outboard
             </h1>
             <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto mb-8">
-              Low payments. Flexible terms. On the water sooner.
+              Clear estimates. Flexible financing. On the water sooner.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={scrollToCalc}
+                className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              >
+                Estimate My Payment
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
               <Link
-                to="/"
+                to="/quote/motor-selection"
                 className="inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
               >
                 Build Your Quote
               </Link>
-              <button
-                onClick={handleApplyForFinancing}
-                className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
-              >
-                Apply Now
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </button>
             </div>
 
             <button
-              onClick={scrollToCalc}
-              className="mt-6 font-sans text-[13px] text-repower-navy-900/55 hover:text-repower-mercury-red transition-colors underline underline-offset-4"
+              onClick={handleApplyForFinancing}
+              className="mt-5 min-h-[44px] font-sans text-[13px] font-semibold text-repower-navy-900/70 hover:text-repower-mercury-red transition-colors underline underline-offset-4"
             >
-              or estimate your payment ↓
+              Already have your numbers? Apply for financing
             </button>
+            <p className="mx-auto mt-4 max-w-2xl font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+              Payment and rate examples are estimates, not a credit offer. The active TD program uses a contract of up to 60 months with amortization up to 240 months; a remaining balance may be due at maturity. Approval and final structure are confirmed by the Canadian lender.
+            </p>
             <div className="h-px bg-repower-navy-900/10 mt-12 max-w-[200px] mx-auto" />
           </div>
         </section>
 
         {/* ─── 2. How It Works ─── */}
-        <section className="py-14 px-6 md:px-14 bg-white">
+        <section className="hidden py-14 px-6 md:block md:px-14 bg-white">
           <div className="max-w-[1100px] mx-auto">
             <h2 className="text-center font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-10" style={{ letterSpacing: '-0.025em' }}>
               How It Works
@@ -261,7 +292,7 @@ export default function FinanceCalculator() {
         </section>
 
         {/* ─── 3. Benefits ─── */}
-        <section className="py-14 px-6 md:px-14 bg-repower-paper">
+        <section className="hidden py-14 px-6 md:block md:px-14 bg-repower-paper">
           <div className="max-w-[1100px] mx-auto">
             <h2 className="text-center font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-10" style={{ letterSpacing: '-0.025em' }}>
               Why Finance With Us
@@ -297,6 +328,9 @@ export default function FinanceCalculator() {
                   <span>Ends {new Date(financingPromoData.parentPromo.end_date).toLocaleDateString()}</span>
                 )}
               </div>
+              <p className="mx-auto mb-5 max-w-2xl font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+                OAC. Eligibility, final APR, term, and financed amount are determined by the lender. Offer details and availability may change; review the full promotion before applying.
+              </p>
               <Link
                 to="/promotions"
                 className="inline-flex items-center gap-2 border border-repower-navy-900/20 bg-white text-repower-navy-900 px-5 py-2.5 font-sans font-bold text-[12px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
@@ -334,7 +368,7 @@ export default function FinanceCalculator() {
                       </div>
                       <div>
                         <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Finance Fee</div>
-                        <div className="text-repower-navy-900">$349</div>
+                        <div className="text-repower-navy-900">${DEALERPLAN_FEE}</div>
                       </div>
                       <div>
                         <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-repower-navy-900/55 mb-1">Total</div>
@@ -376,13 +410,16 @@ export default function FinanceCalculator() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="term" className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">Term (months)</label>
+                      <label htmlFor="term" className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">Amortization (months)</label>
                       <input
                         id="term"
                         type="number"
                         inputMode="numeric"
+                        min={36}
+                        max={240}
                         value={term}
                         onChange={(e) => setTerm(Number(e.target.value || 0))}
+                        onBlur={() => setTerm(normalizedAmortization)}
                         className="w-full rounded bg-white border border-repower-navy-900/10 px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15"
                       />
                     </div>
@@ -416,7 +453,7 @@ export default function FinanceCalculator() {
                     </div>
                   )}
 
-                  <p className="font-sans text-[12px] text-repower-navy-900/55">* Includes 13% HST and $349 finance fee</p>
+                  <p className="font-sans text-[12px] text-repower-navy-900/55">* Includes 13% HST and ${DEALERPLAN_FEE} finance fee</p>
                 </div>
               </div>
 
@@ -431,16 +468,20 @@ export default function FinanceCalculator() {
                   </div>
                   {paymentCalculation.termPeriods && (
                     <div className="font-sans text-[13px] text-repower-navy-900/65 mb-6">
-                      {paymentCalculation.termPeriods} {frequency === 'bi-weekly' ? 'bi-weekly' : frequency === 'weekly' ? 'weekly' : 'monthly'} payments
+                      Payment calculated on a {normalizedAmortization}-month amortization
                     </div>
                   )}
+
+                  <p className="font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+                    Calculated at {apr.toFixed(2)}% APR using the values shown. The active TD program has a contract term of up to 60 months. If the selected amortization is longer, a balance remains due at maturity; the lender confirms the exact amount and final structure.
+                  </p>
 
                   <div className="h-px bg-repower-navy-900/10 my-6" />
 
                   <div className="space-y-2.5 font-sans text-[13px] mb-6">
                     <div className="flex justify-between text-repower-navy-900/65"><span>Motor</span><span>${breakdown.motorPrice.toLocaleString()}</span></div>
                     <div className="flex justify-between text-repower-navy-900/65"><span>HST (13%)</span><span>${breakdown.hst.toLocaleString()}</span></div>
-                    <div className="flex justify-between text-repower-navy-900/65"><span>Finance Fee</span><span>$349</span></div>
+                    <div className="flex justify-between text-repower-navy-900/65"><span>Finance Fee</span><span>${breakdown.financeFee.toLocaleString()}</span></div>
                     <div className="flex justify-between text-repower-navy-900 font-semibold pt-2 border-t border-repower-navy-900/10"><span>Total Financed</span><span>${totalFinanced.toLocaleString()}</span></div>
                     {down > 0 && (
                       <div className="flex justify-between text-repower-navy-900/65"><span>Less: Down Payment</span><span>-${down.toLocaleString()}</span></div>
@@ -456,7 +497,7 @@ export default function FinanceCalculator() {
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                     <Link
-                      to="/"
+                      to="/quote/motor-selection"
                       className="w-full inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
                     >
                       Build a Full Quote

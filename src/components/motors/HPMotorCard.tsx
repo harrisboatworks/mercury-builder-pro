@@ -16,7 +16,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
   const [imageLoaded, setImageLoaded] = useState(false);
   const { triggerHaptic } = useHapticFeedback();
-  
+
   // Smart image scaling - moderate scaling for card thumbnails
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
     minExpectedDimension: 300,
@@ -29,21 +29,21 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     handleImageLoad(e);
     setImageLoaded(true);
   };
-  
+
   const handleCardClick = () => {
     triggerHaptic('light');
     onConfigure(group);
   };
-  
+
   const handleConfigureClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     triggerHaptic('motorSelected');
     onConfigure(group);
   };
-  
+
   // Check if Pro XS variants are available
   const hasProXS = families.includes('Pro XS');
-  
+
   // Get description based on HP
   const getHPDescription = (hp: number): string => {
     if (hp <= 6) return "Perfect for tenders & small inflatables";
@@ -54,7 +54,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
     if (hp <= 200) return "High performance for serious boating";
     return "Maximum power for offshore adventures";
   };
-  
+
   // Format feature pills
   const featurePills: string[] = [];
   // Only show start type for smaller motors where it's a differentiator
@@ -67,28 +67,28 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
       featurePills.push('Manual Start');
     }
   }
-  
+
   if (features.shaftLengths.length > 1) {
     featurePills.push(`${features.shaftLengths.join(', ')} Shaft Options`);
   } else if (features.shaftLengths.length === 1) {
     featurePills.push(`${features.shaftLengths[0]} Shaft`);
   }
-  
+
   if (features.hasTiller && features.hasRemote) {
     featurePills.push('Tiller or Remote Control');
   } else if (features.hasTiller) {
     featurePills.push('Tiller Control');
   }
-  
+
   if (features.hasCommandThrust) {
     featurePills.push('Command Thrust Available');
   }
-  
+
   // Add Pro XS as first feature pill when available
   if (hasProXS) {
     featurePills.unshift('Pro XS Available');
   }
-  
+
   const familiesAttr = families.join(',').toLowerCase();
 
   return (
@@ -104,48 +104,48 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         Selected from your search
       </div>
       {/* Image Section */}
-      <div className="relative p-6 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
+      <div className="relative p-6 overflow-hidden bg-white">
         {/* Shimmer loading overlay */}
         {!imageLoaded && (
           <div className="absolute inset-0 animate-shimmer z-10" style={{ background: 'var(--gradient-image-bg)' }} />
         )}
-        <img 
-          src={heroImage} 
+        <img
+          src={heroImage}
           alt={`${hp} HP Mercury Outboard`}
-          className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           onLoad={onImageLoad}
           style={{ transform: `scale(${imageScale})` }}
         />
-        
-        
+
+
         {/* Pro XS Badge */}
         {hasProXS && (
           <div className="absolute top-4 right-20">
-            <img 
-              src={proXSLogo} 
-              alt="Pro XS Available" 
+            <img
+              src={proXSLogo}
+              alt="Pro XS Available"
               className="h-8 w-auto drop-shadow-md"
             />
           </div>
         )}
-        
+
         {/* HP Badge */}
         <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-widest font-medium uppercase">
           {hp} HP
         </div>
-        
+
         {/* Variant Count */}
         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700">
           {variants.length} Configuration{variants.length !== 1 ? 's' : ''}
         </div>
-        
+
         {/* Mercury Logo */}
         <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity">
           <img src={mercuryLogo} alt="Mercury Marine" className="h-6 w-auto" />
         </div>
       </div>
-      
+
       {/* Content */}
       <div className="border-t border-gray-200"></div>
       <div className="p-8 space-y-4">
@@ -153,16 +153,16 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         <h3 className="text-xl font-semibold tracking-wide text-gray-900">
           {hp} HP {families.length === 1 ? families[0] : 'Mercury'}
         </h3>
-        
+
         {/* Description */}
         <p className="text-sm font-normal text-gray-500">
           {getHPDescription(hp)}
         </p>
-        
+
         {/* Features */}
         <div className="flex flex-wrap gap-2 mt-4">
           {featurePills.slice(0, 3).map((pill, i) => (
-            <span 
+            <span
               key={i}
               className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700"
             >
@@ -170,7 +170,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
             </span>
           ))}
         </div>
-        
+
         {/* Price Range */}
         <div className="mt-6">
           <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
@@ -185,11 +185,11 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
             )}
           </p>
         </div>
-        
+
         {/* Stock status removed from browse cards */}
-        
+
         {/* CTA Button */}
-        <button 
+        <button
           className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-6"
           onClick={handleConfigureClick}
         >

@@ -80,7 +80,7 @@ export default function FAQ() {
         </div>
 
         {/* Hero Section */}
-        <section aria-labelledby="faq-hero-title" className="py-14 md:py-20 text-center">
+        <section aria-labelledby="faq-hero-title" className="py-8 md:py-16 text-center">
           <div className="container mx-auto px-6 md:px-14 max-w-[880px]">
             <div className="flex items-center justify-center gap-3 mb-5">
               <span className="h-px w-8 bg-repower-mercury-red" />
@@ -97,14 +97,21 @@ export default function FAQ() {
             </h1>
             <p
               id="faq-hero-description"
-              className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed"
+              className="font-sans text-[16px] md:text-[18px] text-repower-navy-900/70 max-w-[60ch] mx-auto leading-relaxed"
             >
               Repowering means replacing your boat's existing outboard motor with a new one.
               At Harris Boat Works, we specialize in Mercury outboard repowers, from 2.5hp kickers
               to 300hp performance engines. We handle the full process: motor selection, rigging,
               controls, gauges, and installation.
             </p>
-            <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
+            <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+              <Button asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
+                <Link to="/quote/motor-selection">Build Your Quote <ChevronRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+              <Button variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
+                <Link to="/contact">Ask a Different Question</Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -115,7 +122,10 @@ export default function FAQ() {
           className="sticky top-16 z-30 bg-repower-paper/95 backdrop-blur-sm border-y border-repower-navy-900/10"
         >
           <div className="container mx-auto px-6 md:px-14">
-            <div className="flex flex-nowrap gap-1.5 md:gap-2 py-2 md:py-3 overflow-x-auto scrollbar-hide min-w-0">
+            <div
+              className="flex min-w-0 flex-nowrap gap-1.5 overflow-x-auto py-2 pr-8 scrollbar-hide md:gap-2 md:py-3 md:pr-0"
+              style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0, black 12px, black calc(100% - 28px), transparent 100%)' }}
+            >
               {faqCategories.map(cat => {
                 const Icon = cat.icon;
                 const isActive = activeSection === cat.id;
@@ -141,7 +151,7 @@ export default function FAQ() {
         </nav>
 
         {/* FAQ Sections */}
-        <div className="container mx-auto px-6 md:px-14 py-14 md:py-20">
+        <div className="container mx-auto px-6 md:px-14 py-9 md:py-16">
           <div className="max-w-[880px] mx-auto space-y-16">
             {faqCategories.map(cat => {
               const Icon = cat.icon;
@@ -210,15 +220,18 @@ export default function FAQ() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
-                <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer">
+                <Link to="/quote/motor-selection">
                   Build Your Quote
                   <ChevronRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
                 <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer">
                   Book Service
                 </a>
+              </Button>
+              <Button size="lg" variant="ghost" asChild className="text-repower-navy-900 hover:bg-repower-navy-900/5">
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
