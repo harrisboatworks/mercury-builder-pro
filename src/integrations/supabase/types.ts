@@ -820,6 +820,212 @@ export type Database = {
         }
         Relationships: []
       }
+      diagnostic_brief_versions: {
+        Row: {
+          brief_json: Json
+          case_id: string
+          created_at: string
+          generated_at: string
+          hypotheses_summary: Json
+          id: string
+          pdf_storage_path: string | null
+          schema_version: string
+          skill_version: string
+          source_snapshot: Json
+          validation_status: string
+          validator_version: string | null
+          version_no: number
+        }
+        Insert: {
+          brief_json: Json
+          case_id: string
+          created_at?: string
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          pdf_storage_path?: string | null
+          schema_version?: string
+          skill_version: string
+          source_snapshot?: Json
+          validation_status?: string
+          validator_version?: string | null
+          version_no: number
+        }
+        Update: {
+          brief_json?: Json
+          case_id?: string
+          created_at?: string
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          pdf_storage_path?: string | null
+          schema_version?: string
+          skill_version?: string
+          source_snapshot?: Json
+          validation_status?: string
+          validator_version?: string | null
+          version_no?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostic_brief_versions_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: false
+            referencedRelation: "diagnostic_cases"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      diagnostic_cases: {
+        Row: {
+          case_status: string
+          closed_at: string | null
+          created_at: string
+          cust_id: number | null
+          generated_at: string
+          hypotheses_summary: Json
+          id: string
+          motor_serial: string
+          opened_with_skill_version: string
+          ro_header_id: number
+          ro_job_id: string
+          ro_no: string
+          source_synced_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          case_status?: string
+          closed_at?: string | null
+          created_at?: string
+          cust_id?: number | null
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          motor_serial: string
+          opened_with_skill_version: string
+          ro_header_id: number
+          ro_job_id: string
+          ro_no: string
+          source_synced_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          case_status?: string
+          closed_at?: string | null
+          created_at?: string
+          cust_id?: number | null
+          generated_at?: string
+          hypotheses_summary?: Json
+          id?: string
+          motor_serial?: string
+          opened_with_skill_version?: string
+          ro_header_id?: number
+          ro_job_id?: string
+          ro_no?: string
+          source_synced_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      diagnostic_outcomes: {
+        Row: {
+          brief_version_id: string
+          case_id: string
+          comeback_30_due_on: string | null
+          comeback_30d: boolean | null
+          comeback_30d_checked_at: string | null
+          comeback_30d_ro_no: string | null
+          comeback_60_due_on: string | null
+          comeback_60d: boolean | null
+          comeback_60d_checked_at: string | null
+          comeback_60d_ro_no: string | null
+          comeback_90_due_on: string | null
+          comeback_90d: boolean | null
+          comeback_90d_checked_at: string | null
+          comeback_90d_ro_no: string | null
+          confirmed_at: string
+          confirmed_cause: string
+          created_at: string
+          followup_notes: Json
+          id: string
+          matched_hypothesis_id: string | null
+          parts_used: Json
+          repair_performed: string
+          technician: string
+          tests_run: Json
+          updated_at: string
+        }
+        Insert: {
+          brief_version_id: string
+          case_id: string
+          comeback_30_due_on?: string | null
+          comeback_30d?: boolean | null
+          comeback_30d_checked_at?: string | null
+          comeback_30d_ro_no?: string | null
+          comeback_60_due_on?: string | null
+          comeback_60d?: boolean | null
+          comeback_60d_checked_at?: string | null
+          comeback_60d_ro_no?: string | null
+          comeback_90_due_on?: string | null
+          comeback_90d?: boolean | null
+          comeback_90d_checked_at?: string | null
+          comeback_90d_ro_no?: string | null
+          confirmed_at?: string
+          confirmed_cause: string
+          created_at?: string
+          followup_notes?: Json
+          id?: string
+          matched_hypothesis_id?: string | null
+          parts_used?: Json
+          repair_performed: string
+          technician: string
+          tests_run?: Json
+          updated_at?: string
+        }
+        Update: {
+          brief_version_id?: string
+          case_id?: string
+          comeback_30_due_on?: string | null
+          comeback_30d?: boolean | null
+          comeback_30d_checked_at?: string | null
+          comeback_30d_ro_no?: string | null
+          comeback_60_due_on?: string | null
+          comeback_60d?: boolean | null
+          comeback_60d_checked_at?: string | null
+          comeback_60d_ro_no?: string | null
+          comeback_90_due_on?: string | null
+          comeback_90d?: boolean | null
+          comeback_90d_checked_at?: string | null
+          comeback_90d_ro_no?: string | null
+          confirmed_at?: string
+          confirmed_cause?: string
+          created_at?: string
+          followup_notes?: Json
+          id?: string
+          matched_hypothesis_id?: string | null
+          parts_used?: Json
+          repair_performed?: string
+          technician?: string
+          tests_run?: Json
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diagnostic_outcomes_case_id_fkey"
+            columns: ["case_id"]
+            isOneToOne: true
+            referencedRelation: "diagnostic_cases"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "diagnostic_outcomes_version_case_fk"
+            columns: ["brief_version_id", "case_id"]
+            isOneToOne: false
+            referencedRelation: "diagnostic_brief_versions"
+            referencedColumns: ["id", "case_id"]
+          },
+        ]
+      }
       dropbox_sync_config: {
         Row: {
           auto_categorize: boolean | null
@@ -5121,6 +5327,39 @@ export type Database = {
           trade_allowance: number | null
           unit_type: string | null
           vin: string | null
+        }
+        Relationships: []
+      }
+      diagnostic_case_source: {
+        Row: {
+          ambiguity_flags: string[] | null
+          boat_hin: string | null
+          boat_make: string | null
+          boat_model: string | null
+          boat_unit_count: number | null
+          boat_unit_ordinal: number | null
+          boat_year: string | null
+          complaint: string | null
+          cust_id: number | null
+          customer_approval: string | null
+          customer_name: string | null
+          date_in: string | null
+          described_motor_job_count: number | null
+          is_resolved: boolean | null
+          job_bearing_motor_count: number | null
+          job_ordinal: number | null
+          job_status: string | null
+          motor_make: string | null
+          motor_model: string | null
+          motor_serial: string | null
+          motor_unit_count: number | null
+          motor_unit_ordinal: number | null
+          motor_year: string | null
+          promised_date: string | null
+          ro_header_id: number | null
+          ro_job_id: string | null
+          ro_no: string | null
+          synced_at: string | null
         }
         Relationships: []
       }
