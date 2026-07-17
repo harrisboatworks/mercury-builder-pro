@@ -27084,7 +27084,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'New Mercury FourStroke outboard in a truck bed at Harris Boat Works on Rice Lake for a customer repower.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: "2026-07-17",
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '5 min',
@@ -27137,7 +27137,7 @@ Richmond Hill has a sophisticated boating community, a lot of buyers who've done
 ## What Harris Boat Works Handles for Richmond Hill Customers
 
 **Mercury outboard sales**
-Full lineup from 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have an honest conversation about what makes sense for your specific hull, how you use it, and what you're willing to spend, not just push the highest-margin option.
+Full lineup from 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what makes sense for your specific hull, how you use it, and what you're willing to spend, not just push the highest-margin option.
 
 **Repower service**
 [We replace old motors on hulls you want to keep](/blog/mercury-repower-cost-ontario-2026-cad). Full job: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. The rigging conversation matters as much as the motor choice, a motor improperly rigged to a hull will underperform and can shorten the motor's life.
@@ -27185,7 +27185,7 @@ Most Richmond Hill customers who drive up have done the homework first:
 Yes, that's the whole point of [mercuryrepower.ca](https://www.mercuryrepower.ca). Real installed pricing, no form submission, no callback required.
 
 **What motors do you carry?**
-Full Mercury lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro, whatever makes sense for your application.
+Full Mercury lineup: 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order, whatever makes sense for your application.
 
 **Do you service non-Mercury motors?**
 No. For engine repairs, we only service Mercury and Mercruiser. We won't touch a Yamaha, Honda, or Suzuki for service work.
@@ -27246,7 +27246,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Customer consulting with a Mercury Premier dealer at Harris Boat Works to discuss outboard repower options.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: "2026-07-17",
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '5 min',
@@ -27297,7 +27297,7 @@ Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not 
 ## What Harris Boat Works Handles for Mississauga Customers
 
 **Mercury outboard sales**
-2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have an honest conversation about what makes sense for your boat and use case.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what makes sense for your boat and use case.
 
 **Repower service**
 Full repower: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's half the job.
@@ -27412,7 +27412,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Technician performing professional maintenance on a Mercury outboard motor at Harris Boat Works service shop.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: "2026-07-17",
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -27457,7 +27457,7 @@ That means the conversation about which motor to buy, and whether to repower at 
 ## What Harris Boat Works Handles for Vaughan Customers
 
 **Mercury outboard sales**
-2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have a straight conversation about what works for your specific hull and use case.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have a straight conversation about what works for your specific hull and use case.
 
 **Repower service**
 Full repower: motor, rigging, controls, throttle and shift, prop selection, installation, sea trial. Rigging matters as much as the motor, a poorly rigged motor underperforms and can cause problems down the road.
@@ -28218,7 +28218,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-dealer-pickering.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: "2026-07-17",
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -28263,7 +28263,7 @@ Mercury Premier is the top tier in their dealer program. Harris Boat Works has h
 ## What Harris Boat Works Handles for Pickering Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll talk through what makes sense for your specific hull and use case.
+Full lineup: 2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll talk through what makes sense for your specific hull and use case.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Pickering customers close enough to make multiple trips, we can also handle mid-season service and annual maintenance.
