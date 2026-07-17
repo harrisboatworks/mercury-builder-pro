@@ -14517,7 +14517,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-07-02',
+    dateModified: '2026-07-17',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14581,7 +14581,7 @@ Winterization isn't optional maintenance. It's the difference between a motor th
 
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
-In the late-season winterization window (August through November), we completed 584 winterizations at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+Late-season winterizations, from August through November, are one of the busiest stretches of our service year at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
 
 ---
 
@@ -14733,7 +14733,7 @@ The procedure above is accurate and complete, but it's also a sequence of steps 
 
 The cost of professional winterization is a known quantity. The cost of a cracked powerhead is not, and it's substantially higher.
 
-If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). We booked 584 winterizations in the 2025 fall season, the shop knows these motors.
+If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). The shop knows these motors.
 
 ---
 
