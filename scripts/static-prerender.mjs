@@ -4292,26 +4292,26 @@ const MOTOR_SELECTION_EXTRA = () => commercialBodyHtml({
 const FINANCE_FAQS = [
   { q: 'What is the current Mercury financing rate?', a: 'The headline Always-On rate is 5.48% APR through December 31, 2026 OAC, available on qualifying Mercury outboard purchases through DealerPlan. After December 31, 2026 the rate reverts to the standard tier of 8.99% APR under $10,000 and 7.99% APR over $10,000.' },
   { q: 'What is the minimum financed amount?', a: '$5,000 CAD. Anything under that has to be paid by debit, credit card, or e-transfer.' },
-  { q: 'What is the longest term?', a: 'Up to 144 months on qualifying Mercury outboard repowers OAC. Most customers pick 60 to 120 months depending on payment comfort.' },
+  { q: 'How long is the financing?', a: 'The active TD program uses a contract term of up to 60 months. Payment estimates may use amortization up to 240 months; when the amortization is longer than the contract, a remaining balance may be due at maturity. The lender confirms the final structure, OAC.' },
   { q: 'Are there fees?', a: 'A $349 DealerPlan administration fee applies and is added after tax. It is shown on the quote before you sign.' },
   { q: 'Can I pay it off early?', a: 'Yes. DealerPlan loans are open, no prepayment penalty. Most customers prepay extra in tax-refund season or after a bonus.' },
   { q: 'Does the trade-in reduce what I finance?', a: 'Yes. Trade-in credit is applied to the motor subtotal before financing. The amount financed equals motor and rigging total, plus tax and the $349 fee, minus down payment and trade-in credit.' },
 ];
 const FINANCE_EXTRA = () => commercialBodyHtml({
   sections: [
-    { h2: 'Short answer', paragraphs: ['Estimate your Mercury outboard payment in CAD. The current Always-On promotional rate is 5.48% APR through December 31, 2026 OAC through DealerPlan. After the promo, rates revert to 8.99% under $10,000 and 7.99% over $10,000. Minimum financed is $5,000, terms up to 144 months.'] },
-    { h2: 'How the math works', paragraphs: ['Amount financed equals motor and rigging total, plus tax, plus the $349 DealerPlan fee, minus down payment, minus trade-in credit. Monthly payment is the standard amortization at the rate and term you pick.'] },
+    { h2: 'Short answer', paragraphs: ['Estimate your Mercury outboard payment in CAD. The current Always-On promotional rate is 5.48% APR through December 31, 2026 OAC through DealerPlan. The active TD contract term is up to 60 months, while payment estimates may use amortization up to 240 months. A balance may remain due at contract maturity when the amortization is longer. Minimum financed is $5,000.'] },
+    { h2: 'How the math works', paragraphs: ['Amount financed equals motor and rigging total, plus tax, plus the $349 DealerPlan fee, minus down payment, minus trade-in credit. The calculator estimates payments using the selected amortization. The lender confirms the contract, remaining balance, and final structure.'] },
   ],
   table: {
     caption: 'Example monthly payments at 5.48% APR (Always-On promo)',
-    columns: ['Amount financed', '60 months', '84 months', '120 months', '144 months'],
+    columns: ['Amount financed', '60-month amort.', '120-month amort.', '180-month amort.', '240-month amort.'],
     rows: [
-      ['$10,000', '$191', '$144', '$108', '$95'],
-      ['$15,000', '$286', '$216', '$162', '$143'],
-      ['$20,000', '$381', '$288', '$216', '$190'],
-      ['$25,000', '$477', '$359', '$270', '$238'],
-      ['$30,000', '$572', '$431', '$324', '$285'],
-      ['$35,000', '$667', '$503', '$378', '$333'],
+      ['$10,000', '$191', '$108', '$82', '$69'],
+      ['$15,000', '$286', '$163', '$122', '$103'],
+      ['$20,000', '$382', '$217', '$163', '$137'],
+      ['$25,000', '$477', '$271', '$204', '$172'],
+      ['$30,000', '$573', '$325', '$245', '$206'],
+      ['$35,000', '$668', '$379', '$286', '$240'],
     ],
   },
   faqs: FINANCE_FAQS,
@@ -5101,9 +5101,9 @@ const routes = [
   {
     path: '/finance-calculator',
     title: 'Mercury Outboard Financing Calculator - Ontario | HBW',
-    description: 'Estimate your Mercury outboard monthly payment in CAD. Tiered DealerPlan rates and terms up to 144 months. Mercury dealer since 1965, Rice Lake.',
+    description: 'Estimate Mercury outboard payments in CAD. Active TD financing uses a contract of up to 60 months with amortization up to 240 months, OAC.',
     h1: 'Mercury Outboard Finance Calculator',
-    intro: 'Estimate your monthly payment for any Mercury outboard in Canadian dollars. Tiered rates of 8.99% APR under $10,000 and 7.99% APR over $10,000, with terms up to 144 months through DealerPlan. Minimum financed amount $5,000.',
+    intro: 'Estimate your monthly payment for a Mercury outboard in Canadian dollars. The active TD program uses a contract of up to 60 months with amortization up to 240 months; a remaining balance may be due at maturity. Minimum financed amount is $5,000, OAC.',
     schemas: [{
       "@context": "https://schema.org",
       "@graph": [
@@ -5131,9 +5131,10 @@ const routes = [
           "@id": `${SITE_URL}/finance-calculator#product`,
           "name": "Mercury Outboard Financing (DealerPlan)",
           "provider": { "@id": `${SITE_URL}/#organization` },
-          "feesAndCommissionsSpecification": "$299 DealerPlan processing fee applies to financed purchases.",
-          "interestRate": "7.99% over $10,000 CAD; 8.99% under $10,000 CAD",
-          "annualPercentageRate": "7.99",
+          "description": "The active TD program uses a contract term of up to 60 months. Payment estimates may use amortization up to 240 months, with a remaining balance potentially due at maturity. OAC.",
+          "feesAndCommissionsSpecification": "$349 DealerPlan administration fee applies to financed purchases and is added after tax.",
+          "interestRate": "5.48% APR through December 31, 2026 on qualifying purchases, OAC; promotional rates may also apply",
+          "annualPercentageRate": "5.48",
           "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
         },
       ],
@@ -5143,9 +5144,9 @@ const routes = [
   {
     path: '/financing-application',
     title: 'Mercury Outboard Financing Application (CAD) | HBW',
-    description: 'Apply online for Mercury outboard financing through DealerPlan. Tiered rates, terms up to 144 months. Mercury dealer since 1965 on Rice Lake, Ontario.',
+    description: 'Apply for Mercury outboard financing in Canada. Active TD financing uses a contract of up to 60 months with amortization up to 240 months, OAC.',
     h1: 'Mercury Outboard Financing Application',
-    intro: 'Apply for Mercury outboard financing online through DealerPlan. Approval typically within 1 business day. Tiered rates: 8.99% under $10,000 and 7.99% over $10,000. $5,000 minimum financed amount, terms up to 144 months. Submitted information is encrypted and stored securely.',
+    intro: 'Apply for Mercury outboard financing online through DealerPlan. Approval typically takes 1 to 2 business days. The active TD program uses a contract of up to 60 months with amortization up to 240 months; a remaining balance may be due at maturity. The minimum financed amount is $5,000, OAC. Submitted information is encrypted and stored securely.',
     schemas: [{
       "@context": "https://schema.org",
       "@graph": [
@@ -5173,9 +5174,10 @@ const routes = [
           "@id": `${SITE_URL}/financing-application#product`,
           "name": "Mercury Outboard Financing: DealerPlan",
           "provider": { "@id": `${SITE_URL}/#organization` },
-          "interestRate": "7.99% over $10,000 CAD; 8.99% under $10,000 CAD",
-          "annualPercentageRate": "7.99",
-          "feesAndCommissionsSpecification": "$299 DealerPlan processing fee.",
+          "description": "The active TD program uses a contract term of up to 60 months. Payment estimates may use amortization up to 240 months, with a remaining balance potentially due at maturity. OAC.",
+          "interestRate": "5.48% APR through December 31, 2026 on qualifying purchases, OAC; promotional rates may also apply",
+          "annualPercentageRate": "5.48",
+          "feesAndCommissionsSpecification": "$349 DealerPlan administration fee applies and is added after tax.",
           "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
         },
       ],
