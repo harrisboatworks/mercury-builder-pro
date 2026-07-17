@@ -29,7 +29,7 @@ import {
   getMaximumPlatinumPlanYears,
   type PlatinumPlanYears,
 } from '@/data/mercuryProductProtection';
-import platinumBadge from '@/assets/product-protection/mercury-platinum-2-5-14-9hp.webp';
+import mercury115Reference from '@/assets/product-protection/mercury-product-protection-platinum-hero.webp';
 
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const PAGE_URL = `${SITE_URL}/mercury-product-protection`;
@@ -154,7 +154,7 @@ function ProductProtectionSEO() {
       <meta property="og:description" content="Current CAD plan pricing, clear eligibility and a promotion-aware coverage estimator from Harris Boat Works." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={PAGE_URL} />
-      <meta property="og:image" content={`${SITE_URL}/images/mercury-platinum-product-protection.webp`} />
+      <meta property="og:image" content={`${SITE_URL}/images/mercury-product-protection-platinum-hero.webp`} />
       <meta name="twitter:card" content="summary_large_image" />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
@@ -253,20 +253,31 @@ export default function MercuryProductProtection() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[470px] lg:justify-self-end">
+            <div className="relative mx-auto w-full max-w-[560px] lg:justify-self-end">
               <div className="absolute -left-5 -top-5 h-24 w-1 bg-white" aria-hidden="true" />
-              <div className="relative h-[390px] overflow-hidden border border-white/20 bg-[#e1e3e7] shadow-2xl sm:h-[480px]">
-                <img
-                  src={platinumBadge}
-                  alt="Mercury Platinum Product Protection badge for 2.5 to 14.9 HP outboards"
-                  className="h-full w-full object-cover object-[center_38%]"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/85 to-transparent px-6 pb-6 pt-20">
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b5b8be]">Platinum, not a generic add-on</p>
-                  <p className="mt-2 text-xl font-semibold leading-snug">Administered by Mercury Marine and honoured through authorized Mercury dealers.</p>
+              <div className="overflow-hidden border border-white/20 bg-[#0d0d0e] shadow-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={mercury115Reference}
+                    alt="Mercury 115 FourStroke outboard installed on a boat"
+                    className="h-full w-full object-cover object-center"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/5" aria-hidden="true" />
+                  <p className="absolute bottom-4 left-5 border-l-4 border-[#ed1c28] pl-3 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white sm:text-sm">
+                    Mercury 115 FourStroke
+                  </p>
+                </div>
+                <div className="relative border-t border-white/15 px-6 py-6 sm:px-8">
+                  <div className="absolute right-0 top-0 h-full w-28 bg-[#ed1c28] [clip-path:polygon(70%_0,100%_0,100%_100%,0_100%)]" aria-hidden="true" />
+                  <p className="relative text-xs font-bold uppercase tracking-[0.24em] text-[#b5b8be]">Mercury Product Protection</p>
+                  <p className="relative mt-2 font-display text-3xl font-bold uppercase tracking-[0.08em] text-white sm:text-4xl">Platinum</p>
+                  <p className="relative mt-2 text-sm font-semibold uppercase tracking-[0.13em] text-white/65">1-5 year plans · Canadian pricing</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs leading-5 text-white/50">Badge artwork shown is the 2.5-14.9 HP version. The estimator below covers every listed rate band.</p>
+              <p className="mt-3 text-xs leading-5 text-white/50">Mercury 115 FourStroke shown. Plan pricing below covers every listed horsepower band; final eligibility is confirmed by serial number.</p>
             </div>
           </div>
         </section>
