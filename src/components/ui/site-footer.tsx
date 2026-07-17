@@ -20,6 +20,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
     { label: 'Motors', href: '/quote/motor-selection' },
     { label: 'Boat Repower Guide', href: '/repower' },
     { label: 'Promotions', href: '/promotions' },
+    { label: 'Product Protection', href: '/mercury-product-protection' },
     { label: 'Financing', href: '/finance-calculator' },
     { label: 'Blog', href: '/blog' },
     { label: 'Blogue français', href: '/blog/fr' },
@@ -130,7 +131,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
 
           {/* Social & Trust - full width on mobile */}
           <div>
-            <div className="flex flex-row items-start justify-between gap-4 sm:flex-col">
+            <div className="flex flex-col items-start gap-6">
               {/* Social Icons */}
               <div>
                 <h3 className={sectionTitleClass}>

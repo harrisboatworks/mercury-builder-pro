@@ -21,6 +21,8 @@ Every motor, case study, location, and curated blog guide has a lightweight mark
 
 - Catalog index: https://www.mercuryrepower.ca/catalog.md
 - Pricing reference (curated, listed motors only, CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Mercury Platinum Product Protection rate card (CAD): https://www.mercuryrepower.ca/mercury-product-protection.md
+- Mercury Platinum Product Protection rate data (JSON): https://www.mercuryrepower.ca/mercury-product-protection.json
 - Motor twin: https://www.mercuryrepower.ca/motors/{slug}.md
 - Case study twin: https://www.mercuryrepower.ca/case-studies/{slug}.md
 - Location twin: https://www.mercuryrepower.ca/locations/{slug}.md
@@ -40,6 +42,7 @@ Preferred citation sources:
 - `https://www.mercuryrepower.ca/llms.txt` for business rules, service boundaries, and agent guidance.
 - `https://www.mercuryrepower.ca/catalog.md` for the current agent-readable content index.
 - `https://www.mercuryrepower.ca/pricing-reference.md` for current CAD pricing on listed Mercury motors.
+- `https://www.mercuryrepower.ca/mercury-product-protection.md` for current CAD Mercury Platinum Product Protection pricing by horsepower and plan term.
 - Markdown twins at `.md` URLs for motors, case studies, locations, and blog guides.
 - HTML pages at canonical URLs for human-facing citations.
 
@@ -93,6 +96,7 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 
 - Business rules and services: https://www.mercuryrepower.ca/llms.txt
 - Live Mercury pricing (CAD): https://www.mercuryrepower.ca/pricing-reference.md
+- Mercury Platinum Product Protection pricing (CAD): https://www.mercuryrepower.ca/mercury-product-protection.md
 - Boat rentals booking: https://www.harrisboatworks.ca/rentals
 - Winter storage and service intake: https://hbw.wiki/service
 - Catalog index: https://www.mercuryrepower.ca/catalog.md
@@ -179,6 +183,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [Quote Builder](https://www.mercuryrepower.ca/quote/motor-selection): Build a complete itemized Mercury outboard quote in about three minutes.
 - [Repower Services](https://www.mercuryrepower.ca/repower): Mercury Certified Repower Center, full repower workflow and pricing.
 - [Promotions](https://www.mercuryrepower.ca/promotions): Current Mercury rebates, bonus warranty, and seasonal offers.
+- [Mercury Product Protection](https://www.mercuryrepower.ca/mercury-product-protection): Platinum plan coverage, eligibility, estimator, and clear Canadian pricing by HP and term.
 - [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments using the current 5.48% APR (OAC) through December 31, 2026 headline; standard tiers resume after the promotion ends.
 - [Financing Application](https://www.mercuryrepower.ca/financing-application): Online credit application for Mercury motor financing.
 - [FAQ](https://www.mercuryrepower.ca/faq): 24 answers covering pricing, pickup, financing, trade-ins, and warranty.
@@ -187,6 +192,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [About Us](https://www.mercuryrepower.ca/about): Family-owned Mercury Premier dealer on Rice Lake since 1947.
 - [Catalog (markdown)](https://www.mercuryrepower.ca/catalog.md): Full agent-readable catalog index in markdown.
 - [Pricing Reference (markdown)](https://www.mercuryrepower.ca/pricing-reference.md): Current Mercury pricing in CAD, listed motors only.
+- [Product Protection Rate Card (markdown)](https://www.mercuryrepower.ca/mercury-product-protection.md): Current Mercury Platinum Product Protection pricing in CAD by horsepower and one- through five-year term.
 - [Sitemap](https://www.mercuryrepower.ca/sitemap.xml): Machine-readable list of all indexable pages.
 
 ## For AI Agents

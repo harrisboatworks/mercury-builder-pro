@@ -202,8 +202,11 @@ export default function FinancingApplication() {
       }
 
       // Add warranty if selected
-      if (restoredQuoteState.warranty?.warrantyPrice) {
-        packageTotal += parseFloat(restoredQuoteState.warranty.warrantyPrice);
+      const restoredWarrantyPrice =
+        restoredQuoteState.warrantyConfig?.warrantyPrice ??
+        restoredQuoteState.warranty?.warrantyPrice;
+      if (restoredWarrantyPrice) {
+        packageTotal += Number(restoredWarrantyPrice);
       }
 
       // Add installation costs

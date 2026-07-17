@@ -1,0 +1,157 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Mercury Platinum Product Protection Canadian Rate Card",
+  "description": "Canadian-dollar retail pricing by horsepower band and one- through five-year plan term.",
+  "url": "https://www.mercuryrepower.ca/mercury-product-protection",
+  "license": "https://www.mercuryrepower.ca/terms",
+  "creator": {
+    "@type": "Organization",
+    "name": "Harris Boat Works",
+    "url": "https://www.mercuryrepower.ca"
+  },
+  "dateModified": "2026-07-17",
+  "currency": "CAD",
+  "pricesExcludeTax": true,
+  "baseCoverageYears": 3,
+  "maximumCombinedYears": 8,
+  "maximumPlanYears": 5,
+  "lastVerified": "2026-07-17",
+  "sourceLabel": "Harris Boat Works Mercury Platinum Product Protection retail rate card",
+  "officialOverviewUrl": "https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection",
+  "officialCanadaPlanTermsUrl": "https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf",
+  "rates": [
+    {
+      "hpMin": 2.5,
+      "hpMax": 14.9,
+      "label": "2.5-14.9 HP",
+      "prices": {
+        "1": 76,
+        "2": 137,
+        "3": 194,
+        "4": 247,
+        "5": 293
+      }
+    },
+    {
+      "hpMin": 15,
+      "hpMax": 39.9,
+      "label": "15-39.9 HP",
+      "prices": {
+        "1": 178,
+        "2": 319,
+        "3": 454,
+        "4": 576,
+        "5": 684
+      }
+    },
+    {
+      "hpMin": 40,
+      "hpMax": 74.9,
+      "label": "40-74.9 HP",
+      "prices": {
+        "1": 355,
+        "2": 639,
+        "3": 904,
+        "4": 1149,
+        "5": 1365
+      }
+    },
+    {
+      "hpMin": 75,
+      "hpMax": 149.9,
+      "label": "75-149.9 HP",
+      "prices": {
+        "1": 539,
+        "2": 971,
+        "3": 1376,
+        "4": 1748,
+        "5": 2077
+      }
+    },
+    {
+      "hpMin": 150,
+      "hpMax": 199.9,
+      "label": "150-199.9 HP",
+      "prices": {
+        "1": 753,
+        "2": 1357,
+        "3": 1921,
+        "4": 2442,
+        "5": 2900
+      }
+    },
+    {
+      "hpMin": 200,
+      "hpMax": 299.9,
+      "label": "200-299.9 HP",
+      "prices": {
+        "1": 1809,
+        "2": 3256,
+        "3": 4612,
+        "4": 5861,
+        "5": 6964
+      }
+    },
+    {
+      "hpMin": 300,
+      "hpMax": 399.9,
+      "label": "300-399.9 HP",
+      "prices": {
+        "1": 2580,
+        "2": 4644,
+        "3": 6579,
+        "4": 8358,
+        "5": 9932
+      }
+    },
+    {
+      "hpMin": 400,
+      "hpMax": 400,
+      "label": "400 HP",
+      "prices": {
+        "1": 3593,
+        "2": 6468,
+        "3": 9162,
+        "4": 11642,
+        "5": 13833
+      }
+    },
+    {
+      "hpMin": 425,
+      "hpMax": 425,
+      "label": "425 HP",
+      "prices": {
+        "1": 3760,
+        "2": 6770,
+        "3": 9589,
+        "4": 12183,
+        "5": 14478
+      }
+    },
+    {
+      "hpMin": 500,
+      "hpMax": 500,
+      "label": "500 HP",
+      "prices": {
+        "1": 4870,
+        "2": 8766,
+        "3": 12417,
+        "4": 15777,
+        "5": 18748
+      }
+    },
+    {
+      "hpMin": 600,
+      "hpMax": 600,
+      "label": "600 HP",
+      "prices": {
+        "1": 5836,
+        "2": 10504,
+        "3": 14881,
+        "4": 18908,
+        "5": 22469
+      }
+    }
+  ]
+}

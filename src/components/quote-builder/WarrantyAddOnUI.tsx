@@ -28,9 +28,9 @@ export default function WarrantyAddOnUI({
   const chips = targets.filter(t => t.targetYears > currentCoverageYears && t.targetYears <= maxCoverageYears);
 
   return (
-    <section aria-label="Extended Warranty" className="rounded-2xl border border-repower-navy-900/10 bg-white p-5 shadow-sm  ">
+    <section aria-label="Mercury Platinum Product Protection" className="rounded-2xl border border-repower-navy-900/10 bg-white p-5 shadow-sm  ">
       <div className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-repower-navy-900/400 ">
-        Extended Warranty
+        Platinum Product Protection
       </div>
 
       <div className="mb-4 text-sm text-repower-navy-900 ">

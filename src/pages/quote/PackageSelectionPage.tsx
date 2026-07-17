@@ -13,15 +13,20 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
-import { calculateQuotePricing, calculateWarrantyExtensionCost, promoEndOfDay } from '@/lib/quote-utils';
+import { calculateQuotePricing, promoEndOfDay } from '@/lib/quote-utils';
+import {
+  COMPLETE_COVERAGE_TARGET_YEARS,
+  PREMIUM_COVERAGE_TARGET_YEARS,
+  getProductProtectionPackagePrices,
+} from '@/lib/product-protection-packages';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Package warranty year constants
-const COMPLETE_TARGET_YEARS = 7;
-const PREMIUM_TARGET_YEARS = 8;
+const COMPLETE_TARGET_YEARS = COMPLETE_COVERAGE_TARGET_YEARS;
+const PREMIUM_TARGET_YEARS = PREMIUM_COVERAGE_TARGET_YEARS;
 
 // Animation variants
 const containerVariants = {
@@ -48,13 +53,19 @@ export default function PackageSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getTotalWarrantyBonusYears, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
+  const {
+    promotions,
+    loading: promotionsLoading,
+    error: promotionsError,
+    getTotalWarrantyBonusYears,
+    getPromotionSavingsForMotor,
+    getSpecialFinancingRates,
+  } = useActivePromotions();
+  const promotionsReady = !promotionsLoading && !promotionsError;
   
   // Always start with no selection - customer must explicitly choose
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [hasJustSelected, setHasJustSelected] = useState(false);
-  const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
-  const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
   
   // Clear any persisted package selection on mount so customer must choose fresh
@@ -166,8 +177,14 @@ export default function PackageSelectionPage() {
 
   // Coverage years
   const baseYears = 3;
-  const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
+  const promoYears = promotionsReady ? (getTotalWarrantyBonusYears?.() ?? 0) : 0;
   const currentCoverageYears = useMemo(() => Math.min(baseYears + promoYears, 8), [promoYears]);
+  const productProtectionPrices = useMemo(
+    () => getProductProtectionPackagePrices(motorHP, currentCoverageYears, promotionsReady),
+    [motorHP, currentCoverageYears, promotionsReady],
+  );
+  const completeWarrantyCost = productProtectionPrices.complete;
+  const premiumWarrantyCost = productProtectionPrices.premium;
 
   // Pricing totals
   const totals = calculateQuotePricing({
@@ -179,17 +196,6 @@ export default function PackageSelectionPage() {
     tradeInValue: state.tradeInInfo?.estimatedValue || 0,
     taxRate: 0.13
   });
-
-  // Fetch warranty costs
-  useEffect(() => {
-    async function fetchWarrantyCosts() {
-      const completeCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, COMPLETE_TARGET_YEARS);
-      const premiumCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, PREMIUM_TARGET_YEARS);
-      setCompleteWarrantyCost(completeCost);
-      setPremiumWarrantyCost(premiumCost);
-    }
-    if (motorHP > 0) fetchWarrantyCosts();
-  }, [motorHP, currentCoverageYears]);
 
   // Base subtotal
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
@@ -227,13 +233,13 @@ export default function PackageSelectionPage() {
     { 
       id: "better", 
       label: "Complete • Extended Coverage", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost + (isManualStart ? 0 : batteryCost) + (completeWarrantyCost ?? 0),
       savings: totals.savings, 
       features: [
         "Everything in Essential",
         ...(batteryCost > 0 ? ["Marine starting battery ($180 value)"] : []), 
         `Extended to ${COMPLETE_TARGET_YEARS} years total coverage`,
-        completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
+        (completeWarrantyCost ?? 0) > 0 ? `Platinum protection: $${completeWarrantyCost!.toLocaleString('en-CA')}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
         ...(isInstalled ? ["Priority installation"] : []),
         "🧢 FREE Mercury Hat ($35)"
       ].filter(Boolean),
@@ -245,12 +251,12 @@ export default function PackageSelectionPage() {
     { 
       id: "best", 
       label: "Premium • Max Coverage", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (canAddFuelTank ? 199 : 0), 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost + (isManualStart ? 0 : batteryCost) + (premiumWarrantyCost ?? 0) + (canAddFuelTank ? 199 : 0),
       savings: totals.savings, 
       features: [
         "Everything in Complete",
         `Maximum ${PREMIUM_TARGET_YEARS} years total coverage`,
-        premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
+        (premiumWarrantyCost ?? 0) > 0 ? `Platinum protection: $${premiumWarrantyCost!.toLocaleString('en-CA')}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         ...(isInstalled ? ["White-glove installation"] : []),
         "🧢👕 FREE Hat + Shirt ($75)"
@@ -260,12 +266,38 @@ export default function PackageSelectionPage() {
       recommended: recommendation.packageId === 'best',
       recommendationReason: recommendation.packageId === 'best' ? recommendation.reason : undefined
     },
-  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation, isInstalled, looseMotorBatteryCost, propCost, propFeatureText]);
+  ].filter((pkg) => {
+    if (pkg.id === 'better') return completeWarrantyCost !== null;
+    if (pkg.id === 'best') return premiumWarrantyCost !== null;
+    return true;
+  }), [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation, isInstalled, looseMotorBatteryCost, propCost, propFeatureText]);
+
+  const hasCompletePackage = packages.some((pkg) => pkg.id === 'better');
+  const hasPremiumPackage = packages.some((pkg) => pkg.id === 'best');
+  const effectiveRecommendationId = packages.some((pkg) => pkg.id === recommendation.packageId)
+    ? recommendation.packageId
+    : 'good';
+  const effectiveRecommendationReason = effectiveRecommendationId === recommendation.packageId
+    ? recommendation.reason
+    : 'Current included coverage already meets the recommended level, or a paid plan is not available online for this horsepower.';
+
+  useEffect(() => {
+    if (selectedPackage && !packages.some((pkg) => pkg.id === selectedPackage)) {
+      setSelectedPackage(null);
+      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: null });
+      if (promotionsReady) {
+        dispatch({
+          type: 'SET_WARRANTY_CONFIG',
+          payload: { totalYears: currentCoverageYears, extendedYears: 0, warrantyPrice: 0 },
+        });
+      }
+    }
+  }, [currentCoverageYears, dispatch, packages, promotionsReady, selectedPackage]);
 
   // Calculate monthly payments for upgrade nudges
   const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
-  const completePackage = packages.find(p => p.id === 'better') || packages[1];
-  const premiumPackage = packages.find(p => p.id === 'best') || packages[2];
+  const completePackage = packages.find(p => p.id === 'better') || essentialPackage;
+  const premiumPackage = packages.find(p => p.id === 'best') || completePackage;
 
   const essentialMonthly = calculateMonthlyPayment(
     (essentialPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
@@ -289,21 +321,23 @@ export default function PackageSelectionPage() {
   const coverageGainToPremium = (premiumPackage.coverageYears || PREMIUM_TARGET_YEARS) - (completePackage.coverageYears || COMPLETE_TARGET_YEARS);
 
   const handlePackageSelect = (packageId: string) => {
+    const selectedPkg = packages.find(p => p.id === packageId);
+    if (!promotionsReady || !selectedPkg) return;
+
     setSelectedPackage(packageId);
     setHasJustSelected(true);
-    
+
     // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
-    
+
     // Update warranty config and dispatch to context immediately
-    const selectedPkg = packages.find(p => p.id === packageId);
     if (selectedPkg) {
-      const totalYears = selectedPkg.coverageYears || currentCoverageYears;
+      const totalYears = Math.max(currentCoverageYears, selectedPkg.coverageYears || currentCoverageYears);
       const extendedYears = Math.max(0, totalYears - currentCoverageYears);
       
       let warrantyPrice = 0;
-      if (packageId === 'better') warrantyPrice = completeWarrantyCost;
-      else if (packageId === 'best') warrantyPrice = premiumWarrantyCost;
+      if (packageId === 'better') warrantyPrice = completeWarrantyCost ?? 0;
+      else if (packageId === 'best') warrantyPrice = premiumWarrantyCost ?? 0;
       
       dispatch({
         type: 'SET_WARRANTY_CONFIG',
@@ -379,7 +413,11 @@ export default function PackageSelectionPage() {
               >
                 <Shield className="w-4 h-4 text-repower-gold" />
                 <span className="text-sm font-medium text-repower-gold">
-                  {currentCoverageYears} Years Factory Warranty Included
+                  {promotionsLoading
+                    ? 'Verifying Current Mercury Coverage'
+                    : promotionsError
+                      ? 'Coverage Verification Unavailable'
+                      : `${currentCoverageYears} Years Mercury Coverage Included`}
                 </span>
               </motion.div>
 
@@ -395,7 +433,7 @@ export default function PackageSelectionPage() {
             </motion.div>
 
             {/* Compact Recommendation Badge */}
-            <TooltipProvider>
+            {promotionsReady && <TooltipProvider>
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -405,10 +443,10 @@ export default function PackageSelectionPage() {
                 <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
                   <Star className="w-4 h-4 text-primary fill-primary flex-shrink-0" />
                   <span className="text-sm font-semibold text-white">
-                    Recommended: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
+                    Recommended: {effectiveRecommendationId === 'good' ? 'Essential' : effectiveRecommendationId === 'better' ? 'Complete' : 'Premium'}
                   </span>
                   <span className="text-xs text-repower-navy-900/40 hidden sm:inline">
-                   , {recommendation.reason}
+                   , {effectiveRecommendationReason}
                   </span>
                   
                   {/* Inline Tooltip */}
@@ -446,20 +484,30 @@ export default function PackageSelectionPage() {
                   </Tooltip>
                 </div>
               </motion.div>
-            </TooltipProvider>
+            </TooltipProvider>}
 
             {/* Package Cards */}
             <motion.div variants={itemVariants} className="pt-4">
-              <PackageCards
-                options={packages}
-                selectedId={selectedPackage}
-                onSelect={handlePackageSelect}
-                promoRate={promo?.rate || null}
-                showUpgradeDeltas={true}
-                revealComplete={true}
-                variant="dark"
-                maxFeatures={6}
-              />
+              {promotionsLoading ? (
+                <div className="rounded-xl border border-white/20 bg-white/10 p-6 text-center text-white">
+                  Verifying current Mercury promotions and included coverage before pricing Product Protection…
+                </div>
+              ) : promotionsError ? (
+                <div role="alert" className="rounded-xl border border-red-300/50 bg-red-950/35 p-6 text-center text-white">
+                  Product Protection pricing is temporarily unavailable because current promotional coverage could not be verified. Refresh the page or contact HBW for a confirmed quote.
+                </div>
+              ) : (
+                <PackageCards
+                  options={packages}
+                  selectedId={selectedPackage}
+                  onSelect={handlePackageSelect}
+                  promoRate={promo?.rate || null}
+                  showUpgradeDeltas={true}
+                  revealComplete={true}
+                  variant="dark"
+                  maxFeatures={6}
+                />
+              )}
             </motion.div>
 
             {/* Temporary scroll indicator after selection */}
@@ -486,21 +534,24 @@ export default function PackageSelectionPage() {
             </AnimatePresence>
 
             {/* Comparison Table */}
-            <motion.div variants={itemVariants}>
-              <PackageComparisonTable
-                selectedId={selectedPackage}
-                onSelectPackage={handlePackageSelect}
-                currentCoverageYears={currentCoverageYears}
-                isManualStart={isManualStart}
-                includesProp={includesProp}
-                canAddFuelTank={canAddFuelTank}
-                purchasePath={state.purchasePath}
-              />
-            </motion.div>
+            {promotionsReady && (
+              <motion.div variants={itemVariants}>
+                <PackageComparisonTable
+                  selectedId={selectedPackage}
+                  onSelectPackage={handlePackageSelect}
+                  currentCoverageYears={currentCoverageYears}
+                  isManualStart={isManualStart}
+                  includesProp={includesProp}
+                  canAddFuelTank={canAddFuelTank}
+                  purchasePath={state.purchasePath}
+                  availablePackageIds={packages.map((pkg) => pkg.id as 'good' | 'better' | 'best')}
+                />
+              </motion.div>
+            )}
 
             {/* Upgrade Nudge Bars */}
             <AnimatePresence mode="wait">
-              {selectedPackage === 'good' && (
+              {selectedPackage === 'good' && hasCompletePackage && (
                 <motion.div
                   key="nudge-complete"
                   initial={{ opacity: 0, y: 10 }}
@@ -517,7 +568,7 @@ export default function PackageSelectionPage() {
                   />
                 </motion.div>
               )}
-              {selectedPackage === 'better' && (
+              {selectedPackage === 'better' && hasPremiumPackage && (
                 <motion.div
                   key="nudge-premium"
                   initial={{ opacity: 0, y: 10 }}

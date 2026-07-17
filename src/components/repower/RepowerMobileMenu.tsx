@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/quote/motor-selection', label: 'Motors' },
   { to: '/promotions', label: 'Promotions' },
+  { to: '/mercury-product-protection', label: 'Product Protection' },
   { to: '/repower', label: 'Repower' },
   { to: '/trade-in-value', label: 'Trade-In Value' },
   { to: '/tools', label: 'Tools' },

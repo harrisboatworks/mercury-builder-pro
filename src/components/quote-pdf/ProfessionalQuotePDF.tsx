@@ -912,15 +912,15 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
             </Text>
             <Text style={styles.summaryItem}>
-              Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
+              Coverage: {quoteData.selectedPackage?.coverageYears || 3} years total
             </Text>
               <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
                 What's Included:
               </Text>
               <>
-                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty</Text>
+                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 3} years combined Mercury coverage</Text>
                 <Text style={styles.summaryItem}>• Motor, controls & installation included</Text>
-                <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
+                <Text style={styles.summaryItem}>• Product Protection plan details itemized above when selected</Text>
               </>
               
               {/* MERCHANDISE BONUS - based on package tier */}
@@ -955,17 +955,18 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             )}
               
-            {/* BONUS OFFER (7-Year Warranty) */}
+            {/* Coverage summary: factory limited warranty, active promotion and
+                paid Product Protection are distinct even when combined. */}
             {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears >= 7 && (
               <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
                 <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                  7-YEAR FACTORY-BACKED WARRANTY
+                  MERCURY COVERAGE SUMMARY
                 </Text>
                   <Text style={{ fontSize: 9, color: colors.text }}>
-                    {quoteData.selectedPackage.coverageYears} Years Factory Warranty Included
+                    {quoteData.selectedPackage.coverageYears} Years Combined Coverage
                   </Text>
                   <Text style={{ fontSize: 8, color: colors.lightText }}>
-                    (Limited time offer - 3 base + {quoteData.selectedPackage.coverageYears - 3} bonus)
+                    Factory limited warranty plus any active promotional and selected Platinum Product Protection years. Final eligibility is confirmed by serial number.
                   </Text>
                 </View>
               )}

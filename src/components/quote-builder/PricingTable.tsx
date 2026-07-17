@@ -144,13 +144,13 @@ export function PricingTable({
                 className="font-sans font-semibold text-repower-navy-900"
                 style={{ fontSize: 14, letterSpacing: '-0.005em', lineHeight: 1.3 }}
               >
-                {(totalCoverageYears ?? 3 + warrantyPromoYears)}-Year Factory-Backed Warranty Included
+                {(totalCoverageYears ?? 3 + warrantyPromoYears)} Years of Mercury Coverage Included
               </div>
               <div
                 className="font-sans text-repower-navy-900/60"
                 style={{ fontSize: 12, lineHeight: 1.4 }}
               >
-                3 yr standard + {warrantyPromoYears} yr bonus coverage · Dealer Promotion
+                3 yr standard + {warrantyPromoYears} yr promotional coverage · Eligibility confirmed by serial
               </div>
             </div>
           </div>

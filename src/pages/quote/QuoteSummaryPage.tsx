@@ -32,7 +32,7 @@ import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { calculateQuotePricing, calculateWarrantyExtensionCost, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
+import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -79,9 +79,6 @@ export default function QuoteSummaryPage() {
   const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
-  const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
-  const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
-  const [warrantyCostsLoaded, setWarrantyCostsLoaded] = useState(false);
   const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
@@ -324,8 +321,6 @@ export default function QuoteSummaryPage() {
   const tillerInstallCost = isManualTiller && state.purchasePath === 'installed' 
     ? (state.installConfig?.installationCost || 0) 
     : 0;
-  const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
-  
   // Calculate pricing, use frozen snapshot if available (shared/QR links),
   // otherwise calculate live from current promo data
   const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || quoteData.motor?.basePrice || 0);
@@ -349,22 +344,6 @@ export default function QuoteSummaryPage() {
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
   const currentCoverageYears = useMemo(() => Math.min(baseYears + promoYears, 8), [promoYears]);
 
-  // Fetch warranty costs for accessory breakdown
-  useEffect(() => {
-    async function fetchWarrantyCosts() {
-      const completeCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, COMPLETE_TARGET_YEARS);
-      const premiumCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, PREMIUM_TARGET_YEARS);
-      setCompleteWarrantyCost(completeCost);
-      setPremiumWarrantyCost(premiumCost);
-      setWarrantyCostsLoaded(true);
-    }
-    if (motorHP > 0) {
-      fetchWarrantyCosts();
-    } else {
-      setWarrantyCostsLoaded(true);
-    }
-  }, [motorHP, currentCoverageYears]);
-
   // Use selected package from context
   const selectedPackage = state.selectedPackage?.id || 'good';
   const selectedPackageLabel = state.selectedPackage?.label || 'Essential • Best Value';
@@ -372,10 +351,9 @@ export default function QuoteSummaryPage() {
   
   // Get coverage years for selected package
   const selectedPackageCoverageYears = useMemo(() => {
-    if (selectedPackage === 'best') return PREMIUM_TARGET_YEARS;
-    if (selectedPackage === 'better') return COMPLETE_TARGET_YEARS;
+    if (state.warrantyConfig?.totalYears) return state.warrantyConfig.totalYears;
     return currentCoverageYears;
-  }, [selectedPackage, currentCoverageYears]);
+  }, [state.warrantyConfig?.totalYears, currentCoverageYears]);
 
   // Build accessory breakdown
   const accessoryBreakdown = useMemo(() => {
@@ -388,12 +366,10 @@ export default function QuoteSummaryPage() {
       looseMotorBattery: state.looseMotorBattery,
       selectedPackage,
       adminCustomItems: state.adminCustomItems || [],
-      completeWarrantyCost,
-      premiumWarrantyCost,
-      currentCoverageYears,
+      warrantyConfig: state.warrantyConfig,
       tradeInInfo: state.tradeInInfo,
     });
-  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, state.tradeInInfo]);
+  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, state.warrantyConfig, state.tradeInInfo]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
@@ -483,14 +459,6 @@ export default function QuoteSummaryPage() {
         augmentedOptions.push({ optionId: 'pkg-fuel-tank', name: '12L External Fuel Tank & Hose', price: 199, category: 'fuel', assignmentType: 'required' as const, isIncluded: false });
       }
 
-      // Package warranty extension delta
-      let packageWarrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
-      if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
-        packageWarrantyPrice += completeWarrantyCost;
-      } else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
-        packageWarrantyPrice += premiumWarrantyCost;
-      }
-
       const check = calculateRunningTotal(
         { price: effectiveMotorPrice, model: motor.model, hp: hp },
         {
@@ -502,7 +470,7 @@ export default function QuoteSummaryPage() {
           tankCost: state.fuelTankConfig?.tankCost,
           wantsBattery: state.looseMotorBattery?.wantsBattery,
           batteryCost: state.looseMotorBattery?.batteryCost,
-          warrantyPrice: packageWarrantyPrice,
+          warrantyPrice: state.warrantyConfig?.warrantyPrice || 0,
           warrantyTotalYears: state.warrantyConfig?.totalYears,
           tradeInValue: state.tradeInInfo?.estimatedValue,
           adminCustomItems: state.adminCustomItems,
@@ -522,7 +490,7 @@ export default function QuoteSummaryPage() {
       state.warrantyConfig?.warrantyPrice, state.warrantyConfig?.totalYears,
       state.tradeInInfo?.estimatedValue, state.adminCustomItems, state.adminDiscount,
       state.selectedPromoOption, getRebateForHP, includesProp, propAllowance, selectedPackage,
-      canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
+      canAddFuelTank]);
 
   const amountToFinance = getFinanceableAmount(displayPricing.subtotal, 0.13, DEALERPLAN_FEE);
   // If the customer opted in to promotional financing on PromoSelectionPage,
@@ -979,7 +947,7 @@ export default function QuoteSummaryPage() {
     if (selectedPackage === 'best') {
       return [
         "Everything in Complete",
-        `Maximum ${PREMIUM_TARGET_YEARS} years coverage`,
+        `Maximum ${PREMIUM_TARGET_YEARS} years combined coverage`,
         "Premium propeller",
         "🧢👕 FREE Hat + Shirt ($75)",
         ...(isInstalled ? ["White-glove installation"] : [])
@@ -988,7 +956,7 @@ export default function QuoteSummaryPage() {
     if (selectedPackage === 'better') {
       return [
         "Mercury motor",
-        `${COMPLETE_TARGET_YEARS} years coverage`,
+        `${COMPLETE_TARGET_YEARS} years combined coverage`,
         "Marine battery included",
         "🧢 FREE Mercury Hat ($35)",
         ...(isInstalled ? ["Priority installation"] : [])
@@ -996,7 +964,7 @@ export default function QuoteSummaryPage() {
     }
     return [
       "Mercury motor",
-      `${currentCoverageYears} years coverage`,
+      `${currentCoverageYears} years included coverage`,
       ...(isInstalled ? ["Standard installation"] : [])
     ];
   }, [selectedPackage, currentCoverageYears, isInstalled]);
@@ -1034,7 +1002,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded && subtotalStable}
+        isVisible={showCinematic && isMounted && !promoLoading && subtotalStable}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={displayPricing.subtotal}

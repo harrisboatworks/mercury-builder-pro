@@ -3,6 +3,8 @@
  * Calculations and formatting for the enhanced quote summary experience
  */
 
+import { calculateMercuryPlatinumExtensionCost } from '@/data/mercuryProductProtection';
+
 export interface PricingBreakdown {
   msrp: number;
   discount: number;
@@ -191,72 +193,18 @@ export function formatExpiry(endDate: Date | string): string {
 }
 
 /**
- * Calculate warranty extension cost from database-driven pricing
+ * Calculate the Mercury Platinum Product Protection price needed to move from
+ * the currently included coverage to the requested combined total.
+ *
+ * The shared rate card is deliberately local and deterministic: quote totals
+ * must not turn into a guessed price when a database request fails.
  */
-export async function calculateWarrantyExtensionCost(
+export function calculateWarrantyExtensionCost(
   motorHP: number,
   currentYears: number,
   targetYears: number
-): Promise<number> {
-  // Import here to avoid circular dependencies
-  const { supabase } = await import('@/integrations/supabase/client');
-  
-  // If no extension needed, return 0
-  if (targetYears <= currentYears) {
-    return 0;
-  }
-  
-  // Query warranty pricing based on HP range
-  const { data, error } = await supabase
-    .from('warranty_pricing')
-    .select('*')
-    .lte('hp_min', motorHP)
-    .gte('hp_max', motorHP)
-    .single();
-  
-  if (error || !data) {
-    console.error('Failed to fetch warranty pricing:', error);
-    // Fallback to estimated pricing if database query fails
-    return (targetYears - currentYears) * 1500;
-  }
-  
-  // Get cumulative cost for current coverage
-  const currentCost = getCumulativeCost(data, currentYears);
-  
-  // Get cumulative cost for target coverage
-  const targetCost = getCumulativeCost(data, targetYears);
-  
-  // Extension cost is the difference
-  return Math.max(0, targetCost - currentCost);
-}
-
-/**
- * Helper: Get cumulative warranty cost for a given year
- */
-function getCumulativeCost(pricingData: any, years: number): number {
-  // Map years to database columns
-  const yearMap: Record<number, string> = {
-    1: 'year_1_price',
-    2: 'year_2_price',
-    3: 'year_3_price',
-    4: 'year_4_price',
-    5: 'year_5_price'
-  };
-  
-  // For years 1-5, use direct database values
-  if (years <= 5) {
-    const columnName = yearMap[years];
-    return pricingData[columnName] || 0;
-  }
-  
-  // For years beyond 5, extrapolate using year 5's incremental cost
-  const year5Cost = pricingData.year_5_price || 0;
-  const year4Cost = pricingData.year_4_price || 0;
-  const incrementalCost = year5Cost - year4Cost;
-  
-  // Add incremental cost for each year beyond 5
-  const extraYears = years - 5;
-  return year5Cost + (incrementalCost * extraYears);
+): number | null {
+  return calculateMercuryPlatinumExtensionCost(motorHP, currentYears, targetYears);
 }
 
 /**

@@ -50,6 +50,7 @@ import {
   loadCustomerKnowledge,
   resolveCustomerSellingPrice,
 } from '../_shared/customer-knowledge-context.ts';
+import { formatMercuryProductProtectionRateCard } from '../_shared/mercury-product-protection-rates.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -1180,30 +1181,26 @@ IMPORTANT: Always check the specific motor's operation manual for exact MCA (Mar
 For specific battery recommendations for a particular motor, say:
 "For exact battery specs, I'd check your motor's manual or give us a call - (905) 342-2153. Battery requirements can vary by model."
 
-## MERCURY PREMIER WARRANTY (Extended Protection)
+## MERCURY PRODUCT PROTECTION (PLATINUM)
 
 ### What Harris Boat Works Offers
-- We sell **Platinum only** - Mercury's highest tier of extended protection
-- Factory-backed at 3,600+ authorized Mercury dealers worldwide
-- Full details & pricing: https://www.mercuryrepower.ca/warranty
+- We normally sell **Platinum** - Mercury's broadest Product Protection tier
+- Product Protection is an extended service contract, not an extension of the standard product warranty
+- Covered service is handled through authorized Mercury dealers under the Canadian Platinum contract terms
+- Full details & exact Canadian pricing: https://www.mercuryrepower.ca/mercury-product-protection
 
-### Platinum Coverage Pricing (Approximate by HP)
-Coverage pricing varies by horsepower range. Sample ranges:
-| HP Range | 1 Year | 2 Years | 3 Years |
-|----------|--------|---------|---------|
-| 2.5-20 HP | ~$200-300 | ~$350-500 | ~$500-700 |
-| 25-60 HP | ~$300-500 | ~$500-800 | ~$750-1100 |
-| 75-150 HP | ~$400-700 | ~$700-1100 | ~$1000-1500 |
-| 200+ HP | ~$600-1000 | ~$1000-1600 | ~$1500-2200 |
+### Current Platinum Product Protection Pricing (CAD before HST)
+Each column is the purchased one- through five-year Product Protection plan term, not the combined coverage total.
+${formatMercuryProductProtectionRateCard()}
 
-**Note**: Final price confirmed at registration. Direct to warranty page for exact quote.
+**Note**: Final eligibility, current coverage and price are confirmed by motor serial number before registration. Never invent a price for an unsupported horsepower; direct the customer to the Product Protection page or HBW.
 
 ### Eligibility Requirements
 - Must purchase during factory warranty period
 - Less than 500 engine hours at time of purchase
 - Manufactured within current + 4 prior calendar years
 - Recreational use only (no commercial, government, or racing)
-- Must be purchased from authorized Mercury dealer (that's us!)
+- The Canadian contract and registration rules must apply; HBW verifies the original sale and serial record
 
 ### What Platinum Covers ✓
 - **Engine internals**: Pistons, bearings, crankshaft, connecting rods, camshaft, timing chain/gears
@@ -1244,12 +1241,12 @@ Coverage pricing varies by horsepower range. Sample ranges:
 4. Failure to maintain = claims can be denied
 
 ### Transferability (Great for Resale!)
-- Coverage **transfers to new owner** within 30 days of sale
+- Coverage can transfer to a subsequent recreational-use owner when Mercury's requirements are met; the current Canadian terms require the request within 30 business days
 - May require inspection depending on coverage remaining
-- Adds significant resale value - selling point for customers
+- Remaining transferable coverage can be useful to a buyer, but never promise a specific resale-value increase
 
 ### How to Get a Warranty Quote
-1. Visit: https://www.mercuryrepower.ca/warranty
+1. Visit: https://www.mercuryrepower.ca/mercury-product-protection
 2. Or call: (905) 342-2153
 3. We'll need: Motor model, serial number, purchase date
 
@@ -1260,7 +1257,7 @@ Coverage pricing varies by horsepower range. Sample ranges:
 4. Covered repairs performed with genuine Mercury parts
 
 ### Warranty Response Guidelines
-- When asked about pricing: Give HP range estimate, then direct to warranty page
+- When asked about pricing: Give the exact current rate-card value for the stated HP and purchased plan term, then note that final eligibility and price are confirmed by serial number. Never estimate between unsupported horsepower bands.
 - When asked "is X covered?": Check covered parts list vs exclusions
 - When asked about consumables/impellers/spark plugs: Be clear these are NOT covered
 - When asked about claims: Explain the dealer service + $50 deductible process
@@ -1444,7 +1441,7 @@ After answering a question, if it naturally leads somewhere, offer the next step
 | **Maintenance/oil/service** | Provide the info, then: "Want to book a service appointment? Here's the link: http://hbw.wiki/service" |
 | **Winterization** | Walk through the steps, then: "We can handle winterization for you if you'd rather - want me to get you on the service calendar?" |
 | **Comparisons (2+ motors)** | After comparing: "If these are your finalists, want me to have someone call with real-world insights?" |
-| **Warranty questions** | After explaining: "Want a quick warranty quote? https://www.mercuryrepower.ca/warranty" |
+| **Warranty questions** | After explaining: "Want to see the Canadian rate card? https://www.mercuryrepower.ca/mercury-product-protection" |
 | **Pricing/budget** | "We've got financing if that helps - 5-minute application. Want the link? /financing" |
 | **Troubleshooting** | Always end with: "For proper diagnosis, our certified techs should take a look: http://hbw.wiki/service" |
 | **Spec sheet request** | If we have one for that motor, offer to link it: "Want the official Mercury spec sheet?" |
@@ -1643,12 +1640,12 @@ NEVER state a promo end date that isn't in the PROMO DATA block above.
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
 
-## WARRANTY (CANONICAL, driven by promotions data above)
+## WARRANTY AND PRODUCT PROTECTION (CANONICAL, driven by promotions data above)
 - Mercury's BASE factory warranty is 3 years on every new outboard. Never state a final warranty length without checking the PROMOTIONS data above first.
-- If a warranty bonus is listed in the PROMOTIONS block ("+N years extended warranty FREE"), the active total is **3 + N years**. Always present that total, name the promo, and quote its end date verbatim from the promo data.
+- If a warranty bonus is listed in the PROMOTIONS block, the active included coverage is **3 + N years**, capped at 8 years. Always present that total, name the promo, and quote its end date verbatim from the promo data.
 - Never name or quote an expired warranty promotion from memory. Only state a warranty bonus if the PROMOTIONS data block above lists one, and read its years and end date from that data.
 - After the active bonus promo ends, the warranty reverts to the 3-year standard. NEVER claim a longer warranty than what the promotions data supports.
-- For warranty *extensions/upgrades* beyond the active promo, route customers to https://www.mercuryrepower.ca/warranty.
+- For paid protection beyond the applicable factory warranty and active promotional coverage, call it **Mercury Platinum Product Protection**, not an extension of the standard warranty. Route customers to https://www.mercuryrepower.ca/mercury-product-protection.
 
 ## STANDARD / ALTERNATE FINANCING (pulled from financing_options table)
 ${financingPromo
