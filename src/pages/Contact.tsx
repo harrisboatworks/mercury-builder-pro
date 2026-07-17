@@ -1,5 +1,6 @@
 import { RequiredMark } from "@/components/ui/required-mark";
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -19,13 +20,13 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { ContactPageSEO } from '@/components/seo/ContactPageSEO';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  MessageSquare, 
-  Zap, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  MessageSquare,
+  Zap,
   CheckCircle2,
   AlertCircle,
   Send,
@@ -41,6 +42,14 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters'),
   preferred_contact_method: z.string(),
   urgency_level: z.string(),
+}).superRefine((data, ctx) => {
+  if (['phone', 'sms'].includes(data.preferred_contact_method) && (data.phone || '').replace(/\D/g, '').length < 10) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['phone'],
+      message: 'Enter a valid phone number for calls or text messages',
+    });
+  }
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -65,6 +74,7 @@ export default function Contact() {
     handleSubmit,
     watch,
     setValue,
+    trigger,
     formState: { errors },
     reset
   } = useForm<ContactFormData>({
@@ -80,9 +90,14 @@ export default function Contact() {
   const watchedValues = watch();
   const selectedInquiryType = inquiryTypes.find(type => type.value === watchedValues.inquiry_type);
 
+  const handleContinue = async () => {
+    const stepOneValid = await trigger(['name', 'email', 'inquiry_type']);
+    if (stepOneValid) setStep(2);
+  };
+
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const { data: result, error } = await supabase.functions.invoke('send-contact-inquiry', {
         body: data
@@ -138,9 +153,9 @@ export default function Contact() {
       <ContactPageSEO />
       <RepowerHeader />
       <div className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
-        <div className="container mx-auto px-6 md:px-14 py-14 md:py-20">
+        <div className="container mx-auto px-6 md:px-14 py-8 md:py-14">
           {/* Header */}
-          <div className="text-center mb-14 max-w-[880px] mx-auto">
+          <div className="text-center mb-8 md:mb-10 max-w-[880px] mx-auto">
             <div className="flex items-center justify-center gap-3 mb-5">
               <span className="h-px w-8 bg-repower-mercury-red" />
               <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
@@ -150,11 +165,18 @@ export default function Contact() {
             <h1 className="font-display font-bold text-repower-navy-900 mb-5" style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
               Get In Touch
             </h1>
-            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed">
+            <p className="font-sans text-[16px] md:text-[18px] text-repower-navy-900/70 max-w-[60ch] mx-auto leading-relaxed">
               Have questions about our motors, need a custom quote, or require service support?
               We're here to help you get back on the water.
             </p>
-            <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
+            <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+              <Button asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
+                <a href="tel:9053422153"><Phone className="mr-2 h-4 w-4" />Call (905) 342-2153</a>
+              </Button>
+              <Button asChild variant="outline" className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
+                <Link to="/quote/motor-selection">Build a Quote Instead</Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
@@ -162,13 +184,21 @@ export default function Contact() {
             <div className="lg:col-span-2">
               <Card className="border-repower-navy-900/10 bg-white shadow-none">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 font-display text-repower-navy-900">
-                    <MessageSquare className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
-                    Contact Form
-                  </CardTitle>
+                  <div className="flex items-center justify-between gap-4">
+                    <CardTitle className="flex items-center gap-2 font-display text-repower-navy-900">
+                      <MessageSquare className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
+                      Contact Form
+                    </CardTitle>
+                    <span className="shrink-0 rounded-full bg-repower-cream px-3 py-1 text-xs font-semibold text-repower-navy-900" aria-live="polite">
+                      Step {step} of 2
+                    </span>
+                  </div>
                   <CardDescription className="text-repower-navy-900/60">
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    {step === 1 ? 'Tell us who you are and what you need.' : 'Add your message and contact preference.'}
                   </CardDescription>
+                  <div className="h-1 overflow-hidden rounded-full bg-repower-navy-900/10" aria-hidden="true">
+                    <div className="h-full bg-repower-mercury-red transition-all" style={{ width: `${step * 50}%` }} />
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -224,14 +254,16 @@ export default function Contact() {
                                 key={type.value}
                                 type="button"
                                 onClick={() => setValue('inquiry_type', type.value)}
+                                aria-pressed={active}
                                 className={`text-left rounded-lg border bg-white p-4 flex items-center gap-3 transition-colors ${
                                   active
-                                    ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red'
+                                    ? 'border-repower-mercury-red bg-repower-cream ring-1 ring-repower-mercury-red'
                                     : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
                                 }`}
                               >
                                 <Icon className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
-                                <span className="text-sm font-medium text-repower-navy-900">{type.label}</span>
+                                <span className="flex-1 text-sm font-medium text-repower-navy-900">{type.label}</span>
+                                {active && <CheckCircle2 className="h-4 w-4 text-repower-mercury-red" aria-hidden="true" />}
                               </button>
                             );
                           })}
@@ -241,13 +273,16 @@ export default function Contact() {
                         )}
                       </div>
 
+                      <p className="-mb-3 text-xs text-repower-navy-900/55">
+                        Enter your name, email, and choose a topic to continue.
+                      </p>
                       <Button
                         type="button"
-                        onClick={() => setStep(2)}
+                        onClick={handleContinue}
                         disabled={!watchedValues.name || !watchedValues.email || !watchedValues.inquiry_type}
                         className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep"
                       >
-                        Continue
+                        Continue to Message
                       </Button>
                     </div>
                   )}
@@ -303,6 +338,21 @@ export default function Contact() {
                             </Label>
                           </div>
                         </RadioGroup>
+                        {['phone', 'sms'].includes(watchedValues.preferred_contact_method) && (
+                          <div className="mt-4">
+                            <Label htmlFor="preferred-phone">Phone Number <RequiredMark /></Label>
+                            <Input
+                              id="preferred-phone"
+                              type="tel"
+                              placeholder="(905) 555-0123"
+                              {...register('phone')}
+                              className={errors.phone ? 'border-destructive' : ''}
+                            />
+                            {errors.phone && (
+                              <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>
+                            )}
+                          </div>
+                        )}
                       </div>
 
                       <div>
@@ -315,14 +365,14 @@ export default function Contact() {
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="normal" id="normal-urgency" />
                             <Label htmlFor="normal-urgency">
-                              Normal <span className="text-muted-foreground text-sm">(24 hour response)</span>
+                              Normal <span className="text-muted-foreground text-sm">(within 1 business day)</span>
                             </Label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="urgent" id="urgent-urgency" />
                             <Label htmlFor="urgent-urgency" className="flex items-center gap-2">
                               <Zap className="w-4 h-4 text-repower-mercury-red" strokeWidth={1.5} />
-                              Urgent <span className="text-repower-navy-900/60 text-sm">(2-4 hour response)</span>
+                              Urgent <span className="text-repower-navy-900/60 text-sm">(2–4 business hours)</span>
                             </Label>
                           </div>
                         </RadioGroup>
@@ -383,7 +433,7 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
                     <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.email}</p>
-                    <p className="text-sm text-repower-navy-900/60">We respond within 24 hours</p>
+                    <p className="text-sm text-repower-navy-900/60">We respond within 1 business day</p>
                   </div>
                 </div>
 
@@ -415,11 +465,11 @@ export default function Contact() {
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-repower-navy-900">Normal Inquiries</span>
-                  <Badge variant="secondary" className="bg-repower-navy-900/10 text-repower-navy-900 hover:bg-repower-navy-900/15">24 hours</Badge>
+                  <Badge variant="secondary" className="bg-repower-navy-900/10 text-repower-navy-900 hover:bg-repower-navy-900/15">1 business day</Badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-repower-navy-900">Urgent Requests</span>
-                  <Badge className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">2-4 hours</Badge>
+                  <Badge className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">2–4 business hours</Badge>
                 </div>
 
                 <Separator className="my-4 bg-repower-navy-900/10" />

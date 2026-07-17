@@ -24,7 +24,7 @@ const timelineEvents = [
   {
     year: "1965",
     title: "Mercury Marine Partnership",
-    description: "Becomes an authorized Mercury Marine dealer, starting nearly 60 years of Mercury expertise and partnership."
+    description: "Becomes an authorized Mercury Marine dealer, beginning a partnership that continues today."
   },
   {
     year: "1980s",
@@ -47,7 +47,7 @@ const services = [
   {
     icon: Shield,
     title: "New Motor Sales",
-    description: "The full Mercury line, from 2.5 HP portables up to 600 HP Verado — popular models in stock, larger and specialty motors by special order."
+    description: "Mercury outboards from 2.5 to 300 HP are available through our online quote tool, with Verado models handled by special order."
   },
   {
     icon: Wrench,
@@ -69,7 +69,7 @@ const services = [
 const faqs = [
   {
     question: "How long has Harris Boat Works been in business?",
-    answer: "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 79 years. We've been an authorized Mercury Marine dealer since 1965, over 60 years of Mercury expertise."
+    answer: "Harris Boat Works has been family-owned since 1947. We've been an authorized Mercury Marine dealer since 1965."
   },
   {
     question: "Where exactly are you located?",
@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     question: "Do you offer financing?",
-    answer: "Yes! We offer competitive marine financing with rates starting from 6.99% APR*. You can apply online through our website and get pre-approved in as little as 24 hours. *Promotional rates subject to change."
+    answer: "Yes. Financing is available through Canadian marine lenders, subject to credit approval. Current rate, term, and program details are shown in our calculator and confirmed before you apply."
   },
   {
     question: "Can you service motors from other brands?",
@@ -104,7 +104,7 @@ export default function About() {
     <>
       <AboutPageSEO />
       <RepowerHeader />
-      
+
       <main className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
         {/* Hero Section */}
         <section aria-labelledby="about-hero" className="relative py-14 md:py-20">
@@ -124,10 +124,18 @@ export default function About() {
               <h1 id="about-hero" className="font-display font-bold text-repower-navy-900 mb-5" style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
                 Family-Owned Since <span className="italic text-repower-mercury-red">1947</span>
               </h1>
-              <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed">
+              <p className="font-sans text-[18px] text-repower-navy-900/70 max-w-[60ch] mx-auto leading-relaxed">
                 Three generations of marine expertise on the beautiful shores of Rice Lake, Ontario.
-                Your trusted Mercury dealer for nearly 60 years.
+                Family-owned since 1947 and an authorized Mercury dealer since 1965.
               </p>
+              <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+                <Button asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
+                  <Link to="/quote/motor-selection">Browse Motors <ChevronRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+                <Button variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
+                  <Link to="/contact">Talk to Harris Boat Works</Link>
+                </Button>
+              </div>
               <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
             </div>
 
@@ -158,8 +166,8 @@ export default function About() {
               <div className="flex items-center gap-3">
                 <Calendar className="h-7 w-7 text-repower-mercury-red" strokeWidth={1.5} />
                 <div className="text-left">
-                  <p className="text-sm font-medium text-repower-navy-900">79 Years</p>
-                  <p className="text-xs text-repower-navy-900/60">In Business</p>
+                  <p className="text-sm font-medium text-repower-navy-900">Since 1947</p>
+                  <p className="text-xs text-repower-navy-900/65">Family-Owned</p>
                 </div>
               </div>
             </div>

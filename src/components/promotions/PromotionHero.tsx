@@ -1,20 +1,24 @@
 import { motion } from 'framer-motion';
-import { Shield, Calendar } from 'lucide-react';
+import { Shield, Calendar, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import mercuryLogo from '@/assets/mercury-logo.png';
-// Optimized warranty badge: 15KB WebP @ 400w (was 3MB PNG).
-const harris7YearWarranty = '/assets/optimized/harris-7-year-warranty-400w.webp';
 
 interface PromotionHeroProps {
   endDate?: string | null;
   bonusTitle?: string | null;
   bonusDescription?: string | null;
-  bonusYears?: number;
+  termsUrl?: string | null;
+  imageUrl?: string | null;
+  hasOfferDetails?: boolean;
 }
 
-export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYears = 0 }: PromotionHeroProps) {
-  const hasBonusWarranty = bonusYears > 0;
-  const totalWarrantyYears = 3 + bonusYears;
+export function PromotionHero({ endDate, bonusTitle, bonusDescription, termsUrl, imageUrl, hasOfferDetails = false }: PromotionHeroProps) {
+  const formattedEndDate = endDate
+    ? new Date(endDate).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })
+    : null;
+  const safeImageUrl = imageUrl && !/(?:7[-_ ]?year|get[-_ ]?7)/i.test(imageUrl) ? imageUrl : null;
+  const detailsHref = termsUrl || (hasOfferDetails ? '#offer-details' : null);
 
   return (
     <section className="relative bg-repower-paper text-repower-navy-900 py-20 md:py-28 px-6 md:px-14">
@@ -41,7 +45,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYear
           className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-5 flex items-center justify-center gap-3"
         >
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
-          Current Mercury offer at Harris Boat Works
+          Current offers at Harris Boat Works
           <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
         </motion.p>
 
@@ -53,7 +57,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYear
           className="font-display font-bold text-repower-navy-900 text-center mb-6"
           style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
         >
-          {bonusTitle || 'Current Mercury Offer'}
+          {bonusTitle || <>Current <em className="not-italic italic text-repower-mercury-red">Mercury</em> Offers</>}
         </motion.h1>
 
         {/* Subhead */}
@@ -63,45 +67,80 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYear
           transition={{ duration: 0.5, delay: 0.15 }}
           className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto text-center leading-relaxed mb-12"
         >
-          {bonusDescription || 'See the current Mercury offer, eligibility, and terms. Harris Boat Works confirms all promotion details before purchase.'}
+          {bonusDescription ||
+            'Current Mercury outboard offers from Harris Boat Works, including financing, rebates, and any active bonus warranty terms. Standard Mercury factory warranty applies to every new motor.'}
         </motion.p>
 
-        {hasBonusWarranty && (
-          <>
-            {/* Promo image, shown only when the active database offer includes bonus warranty years. */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-12"
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.18 }}
+          className="mb-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center"
+        >
+          <Link
+            to="/quote/motor-selection"
+            className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded bg-repower-mercury-red px-7 py-3 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-repower-mercury-red-deep"
+          >
+            Build Your Quote
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+          {detailsHref && (
+            <a
+              href={detailsHref}
+              target={detailsHref.startsWith('http') ? '_blank' : undefined}
+              rel={detailsHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="inline-flex min-h-[48px] items-center justify-center rounded border border-repower-navy-900/20 bg-white px-7 py-3 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition-colors hover:border-repower-navy-900"
             >
-              <div className="bg-white border border-repower-navy-900/10 p-4 md:p-6 max-w-3xl mx-auto">
-                <img
-                  src={harris7YearWarranty}
-                  alt={`Harris Boat Works, ${totalWarrantyYears} years of factory-backed Mercury coverage`}
-                  className="w-full h-auto"
-                />
-              </div>
-            </motion.div>
+              Review Offer Details
+            </a>
+          )}
+        </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.25 }}
-              className="bg-repower-cream border-l-2 border-repower-gold p-6 md:p-8 max-w-3xl mx-auto flex items-start gap-5 mb-10"
-            >
-              <Shield className="w-7 h-7 text-repower-gold shrink-0 mt-0.5" strokeWidth={1.75} />
-              <div>
-                <div className="font-display font-semibold text-[18px] text-repower-navy-900 tracking-tight">
-                  {totalWarrantyYears} Years Factory-Backed Coverage
-                </div>
-                <div className="font-sans text-[14px] text-repower-navy-900/65 mt-1">
-                  3 years standard + {bonusYears} promotional bonus years
-                </div>
-              </div>
-            </motion.div>
-          </>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.45, delay: 0.2 }}
+          className="mx-auto mb-10 max-w-3xl text-center font-sans text-xs leading-relaxed text-repower-navy-900/65"
+        >
+          {formattedEndDate ? `Offer ends ${formattedEndDate}. ` : ''}
+          Eligible new Mercury models and purchase dates only. {hasOfferDetails ? 'Choose-one benefits cannot be combined. ' : ''}Financing is OAC; final eligibility and terms are confirmed before purchase.
+        </motion.p>
+
+        {/* Render only current offer artwork supplied by the active promotion. */}
+        {safeImageUrl && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-12"
+          >
+            <div className="bg-white border border-repower-navy-900/10 p-4 md:p-6 max-w-3xl mx-auto">
+              <img
+                src={safeImageUrl}
+                alt={bonusTitle || 'Current Harris Boat Works Mercury outboard offer'}
+                className="w-full h-auto"
+              />
+            </div>
+          </motion.div>
         )}
+
+        {/* Warranty callout, on cream */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.25 }}
+          className="bg-repower-cream border-l-2 border-repower-gold p-6 md:p-8 max-w-3xl mx-auto flex items-start gap-5 mb-10"
+        >
+          <Shield className="w-7 h-7 text-repower-gold shrink-0 mt-0.5" strokeWidth={1.75} />
+          <div>
+            <div className="font-display font-semibold text-[18px] text-repower-navy-900 tracking-tight">
+              Factory Warranty
+            </div>
+            <div className="font-sans text-[14px] text-repower-navy-900/65 mt-1">
+              Standard Mercury factory warranty; current bonuses listed here
+            </div>
+          </div>
+        </motion.div>
 
         {/* Countdown */}
         {endDate && (
@@ -113,7 +152,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription, bonusYear
           >
             <div className="flex items-center justify-center gap-2 font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-navy-900/55 mb-3">
               <Calendar className="w-4 h-4" strokeWidth={1.75} />
-              <span>Limited time offer</span>
+              <span>{formattedEndDate ? `Ends ${formattedEndDate}` : 'Limited time offer'}</span>
             </div>
             <CountdownTimer endDate={endDate} />
           </motion.div>

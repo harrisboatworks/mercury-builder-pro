@@ -19,6 +19,7 @@ import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'luci
 import { useState } from 'react';
 import { formatPhoneNumber } from '@/lib/validation';
 import { SuccessConfetti } from './SuccessConfetti';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 
 export function ReviewSubmitStep() {
   const { state, dispatch } = useFinancing();
@@ -26,6 +27,8 @@ export function ReviewSubmitStep() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const { getChooseOneOptions } = useActivePromotions({ forceRefresh: true });
+  const activeNoPaymentsOption = getChooseOneOptions().find((option) => option.id === 'no_payments');
 
   const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = useForm<Consent>({
     resolver: zodResolver(consentSchema),
@@ -37,8 +40,9 @@ export function ReviewSubmitStep() {
   const accuracyConfirmation = watch('accuracyConfirmation');
   const termsAndPrivacy = watch('termsAgreement');
   const signature = watch('signature');
+  const noPaymentsSummary = activeNoPaymentsOption?.title || 'No-Payments Promotion';
 
-  const applicantFullName = state.applicant 
+  const applicantFullName = state.applicant
     ? [
         state.applicant.firstName,
         state.applicant.middleName,
@@ -304,7 +308,7 @@ export function ReviewSubmitStep() {
   return (
     <div className="space-y-6">
       {showConfetti && <SuccessConfetti />}
-      
+
       <Alert role="status">
         <ShieldCheck className="h-4 w-4" aria-hidden="true" />
         <AlertDescription>
@@ -316,7 +320,7 @@ export function ReviewSubmitStep() {
       <Card>
         <CardContent className="pt-6">
           <h3 className="text-lg font-semibold mb-4">Application Summary</h3>
-          
+
           <Accordion type="multiple" defaultValue={['purchase']} className="w-full">
             {/* Purchase Details */}
             <AccordionItem value="purchase">
@@ -346,10 +350,10 @@ export function ReviewSubmitStep() {
                         {state.purchaseDetails.promoName && <>{state.purchaseDetails.promoName}<br /></>}
                         {(state.purchaseDetails.promoSavings || 0) > 0 &&
                           <>${state.purchaseDetails.promoSavings?.toLocaleString('en-CA')} CAD factory rebate<br /></>}
-                        {state.purchaseDetails.promoOption === 'no_payments' && '6 Mo No Payments'}
-                        {state.purchaseDetails.promoOption === 'special_financing' && 
+                        {state.purchaseDetails.promoOption === 'no_payments' && noPaymentsSummary}
+                        {state.purchaseDetails.promoOption === 'special_financing' &&
                           `${state.purchaseDetails.promoRate}% APR for ${state.purchaseDetails.promoTerm} months`}
-                        {state.purchaseDetails.promoOption === 'cash_rebate' && 
+                        {state.purchaseDetails.promoOption === 'cash_rebate' &&
                           `${state.purchaseDetails.promoValue}`}
                       </span>
                     </div>

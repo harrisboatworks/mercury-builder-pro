@@ -14,6 +14,7 @@ import { Mail, ArrowLeft } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo.png';
 import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import { useNoIndex } from '@/hooks/useNoIndex';
+import { DEALERPLAN_FEE } from '@/lib/finance';
 import '@/styles/financing-mobile.css';
 
 // Lazy load step components (~180KB total)
@@ -71,35 +72,35 @@ export default function FinancingApplication() {
     const detectSavedDraft = (): SavedDraft | null => {
       // Priority 1: Check 'financing_draft' (from Back to Quote)
       const backToQuoteDraft = localStorage.getItem('financing_draft');
-      
+
       // Priority 2: Check 'financingApplication' (auto-save)
       const autoSavedDraft = localStorage.getItem('financingApplication');
-      
+
       // Use most recent or most complete draft
       const draftStr = backToQuoteDraft || autoSavedDraft;
-      
+
       if (!draftStr) return null;
-      
+
       try {
         const parsed = JSON.parse(draftStr);
-        
+
         // Filter: Only show dialog if meaningful progress exists
-        const hasMeaningfulProgress = 
-          parsed.currentStep > 1 || 
+        const hasMeaningfulProgress =
+          parsed.currentStep > 1 ||
           (parsed.purchaseDetails && Object.keys(parsed.purchaseDetails).length > 2);
-        
+
         if (!hasMeaningfulProgress) return null;
-        
+
         // Filter: Ignore drafts older than 7 days
         const lastSaved = parsed.lastSaved || Date.now();
         const daysSince = (Date.now() - lastSaved) / (1000 * 60 * 60 * 24);
-        
+
         if (daysSince > 7) {
           localStorage.removeItem('financing_draft');
           localStorage.removeItem('financingApplication');
           return null;
         }
-        
+
         return {
           data: parsed,
           currentStep: parsed.currentStep,
@@ -115,7 +116,7 @@ export default function FinancingApplication() {
 
     // Check for saved draft first
     const draft = detectSavedDraft();
-    
+
     if (draft) {
       // Show resume dialog
       setSavedDraft(draft);
@@ -129,15 +130,15 @@ export default function FinancingApplication() {
 
     if (calculatorState) {
       console.log('Loading financing data from calculator:', calculatorState);
-      
-      // Map frequency to appropriate term
-      let termMapping: "36" | "48" | "60" | "72" | "84" | "120" | "180" = "60";
-      if (calculatorState.frequency === 'bi-weekly') {
-        termMapping = "120"; // ~5 years bi-weekly
-      } else if (calculatorState.frequency === 'weekly') {
-        termMapping = "180"; // ~3.5 years weekly
-      }
-      
+
+      // Preserve the calculator's amortization choice. Payment frequency must
+      // never silently change the term handed into the application.
+      const supportedAmortizations = [24, 36, 48, 60, 72, 84, 120, 180, 240] as const;
+      const requestedAmortization = Number(calculatorState.amortizationMonths);
+      const termMapping = supportedAmortizations.includes(requestedAmortization as typeof supportedAmortizations[number])
+        ? String(requestedAmortization) as "24" | "36" | "48" | "60" | "72" | "84" | "120" | "180" | "240"
+        : "60";
+
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
@@ -149,13 +150,13 @@ export default function FinancingApplication() {
           preferredTerm: termMapping,
         }
       });
-      
+
       toast({
         title: "Calculator Data Loaded",
         description: "Your financing estimate has been pre-filled from the calculator.",
         duration: 4000,
       });
-      
+
       setIsLoading(false);
       return;
     }
@@ -166,25 +167,25 @@ export default function FinancingApplication() {
 
     if (savedQuoteIdParam && restoredQuoteState) {
       console.log('Restoring full quote state from database:', restoredQuoteState);
-      
+
       // Handle both 'motor' and 'selectedMotor' keys (consistent with SavedQuotePage.tsx)
       const motorData = restoredQuoteState.motor || restoredQuoteState.selectedMotor;
-      
+
       // Calculate accurate total from saved state - handle multiple field name variations
       const motorMSRP = parseFloat(motorData?.msrp) || parseFloat(motorData?.basePrice) || 0;
-      const motorDiscount = parseFloat(motorData?.dealer_discount) || 
+      const motorDiscount = parseFloat(motorData?.dealer_discount) ||
                             (motorMSRP - (parseFloat(motorData?.salePrice) || parseFloat(motorData?.price) || motorMSRP));
-      
+
       // Get package-specific pricing
       let packageTotal = motorMSRP - motorDiscount;
-      
+
       // Subtract admin discount (special pricing from admin)
       const adminDiscount = parseFloat(restoredQuoteState.adminDiscount) || 0;
       packageTotal -= adminDiscount;
-      
+
       // Subtract promo rebate if cash_rebate option selected
       let promoRebate = 0;
-      if (restoredQuoteState.selectedPromoOption === 'cash_rebate' && 
+      if (restoredQuoteState.selectedPromoOption === 'cash_rebate' &&
           restoredQuoteState.selectedPromoValue) {
         // Parse "$250 rebate" -> 250
         const match = restoredQuoteState.selectedPromoValue.match(/\$?([\d,]+)/);
@@ -193,44 +194,44 @@ export default function FinancingApplication() {
         }
       }
       packageTotal -= promoRebate;
-      
+
       // Add accessories based on package
       const packageKey = restoredQuoteState.selectedPackage?.key || restoredQuoteState.selectedPackage;
       if (packageKey === 'better' || packageKey === 'best') {
         packageTotal += 180; // Battery
       }
-      
+
       // Add warranty if selected
       if (restoredQuoteState.warranty?.warrantyPrice) {
         packageTotal += parseFloat(restoredQuoteState.warranty.warrantyPrice);
       }
-      
+
       // Add installation costs
       if (restoredQuoteState.installConfig?.installationType === 'professional') {
         packageTotal += 450; // Professional installation
       }
-      
+
       // Add controls/rigging
       if (restoredQuoteState.boatInfo?.controlsType === 'new') {
         packageTotal += 1200;
       } else if (restoredQuoteState.boatInfo?.controlsType === 'adapter') {
         packageTotal += 125;
       }
-      
+
       // Subtract trade-in
       const tradeInValue = parseFloat(restoredQuoteState.tradeInInfo?.estimatedValue) || 0;
-      
+
       // Add tax and fees (do NOT subtract trade-in here, the financing form handles that)
       const withTax = packageTotal * 1.13;
-      const totalWithFees = withTax + 299; // Dealerplan fee
-      
+      const totalWithFees = withTax + DEALERPLAN_FEE;
+
       // Build motor model display with package info
-      const packageLabel = restoredQuoteState.selectedPackage?.label || 
+      const packageLabel = restoredQuoteState.selectedPackage?.label ||
                            (packageKey ? packageKey.charAt(0).toUpperCase() + packageKey.slice(1) : '');
-      const motorModel = packageLabel 
+      const motorModel = packageLabel
         ? `${motorData?.model || 'Motor'} (${packageLabel})`
         : motorData?.model || 'Motor';
-      
+
       // Dispatch to financing form
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
@@ -242,14 +243,14 @@ export default function FinancingApplication() {
           amountToFinance: Math.round(totalWithFees * 100) / 100,
         }
       });
-      
+
       // Show confirmation toast
       toast({
         title: "Quote Restored Successfully",
         description: `Your ${motorData?.model || 'motor'} configuration has been loaded with all accessories and options.`,
         duration: 5000,
       });
-      
+
       setIsLoading(false);
       return; // Skip other pre-fill logic
     }
@@ -291,11 +292,11 @@ export default function FinancingApplication() {
 
     // No draft or URL parameters found - proceed with quote pre-fill
     const quoteId = searchParams.get('quote');
-    
+
     // Try to get quote data from localStorage (saved from quote summary)
     const savedQuoteState = localStorage.getItem('quote_state');
     let quoteData = quoteState;
-    
+
     if (savedQuoteState) {
       try {
         quoteData = JSON.parse(savedQuoteState);
@@ -305,32 +306,32 @@ export default function FinancingApplication() {
         console.error('Failed to parse quote state:', e);
       }
     }
-    
+
     // Pre-fill if we have motor data
     if (quoteData?.motor && !financingState.purchaseDetails?.motorModel) {
       if (quoteId) {
         financingDispatch({ type: 'SET_QUOTE_ID', payload: quoteId });
       }
-      
+
       // Use totalWithFees (includes package subtotal + HST + Dealerplan fee)
       const totalWithFees = (quoteData as any).financingAmount?.totalWithFees;
       const motorPrice = totalWithFees || quoteData.motor.salePrice || quoteData.motor.price || 0;
       const tradeInValue = (quoteData as any).financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
       const downPayment = 0; // Will be set by user
-      
+
       // Build motor model display with package info
-      const motorModel = (quoteData as any).financingAmount?.packageName 
+      const motorModel = (quoteData as any).financingAmount?.packageName
         ? `${quoteData.motor.model || ''} (${(quoteData as any).financingAmount.packageName})`
         : quoteData.motor.model || '';
 
       // Extract promo details from financing amount or state
-      const promoOption = (quoteData as any).financingAmount?.promoOption || 
+      const promoOption = (quoteData as any).financingAmount?.promoOption ||
                           (quoteData as any).selectedPromoOption || null;
-      const promoRate = (quoteData as any).financingAmount?.promoRate || 
+      const promoRate = (quoteData as any).financingAmount?.promoRate ||
                         (quoteData as any).selectedPromoRate || null;
-      const promoTerm = (quoteData as any).financingAmount?.promoTerm || 
+      const promoTerm = (quoteData as any).financingAmount?.promoTerm ||
                         (quoteData as any).selectedPromoTerm || null;
-      const promoValue = (quoteData as any).financingAmount?.promoValue || 
+      const promoValue = (quoteData as any).financingAmount?.promoValue ||
                          (quoteData as any).selectedPromoValue || null;
       const promoName = (quoteData as any).financingAmount?.promoName ||
                         (quoteData as any).promotionName || null;
@@ -338,7 +339,7 @@ export default function FinancingApplication() {
                            (quoteData as any).frozenPricing?.promoSavings ?? null;
       const promoCombinationMode = (quoteData as any).financingAmount?.promoCombinationMode ||
                                    (quoteData as any).promotionCombinationMode || null;
-      
+
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
@@ -358,7 +359,7 @@ export default function FinancingApplication() {
         },
       });
     }
-    
+
     // Simulate loading state for better UX
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
@@ -369,7 +370,7 @@ export default function FinancingApplication() {
     if (financingState.currentStep > 1 || Object.keys(financingState.purchaseDetails || {}).length > 1) {
       localStorage.setItem('financing_draft', JSON.stringify(financingState));
     }
-    
+
     // Navigate back to quote summary
     navigate('/quote/summary');
   };
@@ -377,9 +378,9 @@ export default function FinancingApplication() {
   const handleContinue = () => {
     if (savedDraft) {
       // Use LOAD_FROM_STORAGE since localStorage data uses camelCase format
-      financingDispatch({ 
-        type: 'LOAD_FROM_STORAGE', 
-        payload: savedDraft.data 
+      financingDispatch({
+        type: 'LOAD_FROM_STORAGE',
+        payload: savedDraft.data
       });
     }
     setShowResumeDialog(false);
@@ -390,7 +391,7 @@ export default function FinancingApplication() {
     // This contains the motor details from the quote the user just came from
     const currentQuoteState = localStorage.getItem('quote_state');
     let quoteDataToRestore: any = null;
-    
+
     if (currentQuoteState) {
       try {
         quoteDataToRestore = JSON.parse(currentQuoteState);
@@ -398,25 +399,25 @@ export default function FinancingApplication() {
         console.error('Failed to parse quote state for restoration:', e);
       }
     }
-    
+
     // Clear all saved drafts (old financing progress)
     localStorage.removeItem('financing_draft');
     localStorage.removeItem('financingApplication');
     localStorage.removeItem('quote_state');
-    
+
     // Reset context to initial state
     financingDispatch({ type: 'RESET_APPLICATION' });
-    
+
     // Re-apply the current quote's motor details if available
     if (quoteDataToRestore?.motor) {
       const totalWithFees = quoteDataToRestore.financingAmount?.totalWithFees;
       const motorPrice = totalWithFees || quoteDataToRestore.motor.salePrice || quoteDataToRestore.motor.price || 0;
       const tradeInValue = quoteDataToRestore.financingAmount?.tradeInValue || quoteDataToRestore.tradeInInfo?.estimatedValue || 0;
-      
-      const motorModel = quoteDataToRestore.financingAmount?.packageName 
+
+      const motorModel = quoteDataToRestore.financingAmount?.packageName
         ? `${quoteDataToRestore.motor.model || ''} (${quoteDataToRestore.financingAmount.packageName})`
         : quoteDataToRestore.motor.model || '';
-      
+
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
@@ -435,7 +436,7 @@ export default function FinancingApplication() {
         },
       });
     }
-    
+
     setShowResumeDialog(false);
   };
 
@@ -450,12 +451,12 @@ export default function FinancingApplication() {
       {/* Minimal Luxury Header */}
       <div className="max-w-2xl mx-auto mb-8">
         <div className="flex items-center justify-between">
-          <img 
-            src={harrisLogo} 
-            alt="Harris Boat Works" 
+          <img
+            src={harrisLogo}
+            alt="Harris Boat Works"
             className="h-10 md:h-12 w-auto"
           />
-          
+
           <Button
             variant="ghost"
             onClick={handleBackToQuote}
@@ -467,7 +468,7 @@ export default function FinancingApplication() {
           </Button>
         </div>
       </div>
-      
+
       <div className="max-w-2xl mx-auto pb-24 md:pb-8">
         {/* Mercury TD "Always On" financing offer banner */}
         <TDAlwaysOnBanner />
@@ -510,7 +511,7 @@ export default function FinancingApplication() {
             <Mail className="h-4 w-4" aria-hidden="true" />
             Save & Continue Later
           </Button>
-          
+
           {/* Security Message */}
           <p className="text-xs text-muted-foreground font-light">
             All information encrypted and secure
@@ -521,7 +522,7 @@ export default function FinancingApplication() {
           open={showSaveDialog}
           onOpenChange={setShowSaveDialog}
         />
-        
+
         <FinancingResumeDialog
           open={showResumeDialog}
           draftData={savedDraft}

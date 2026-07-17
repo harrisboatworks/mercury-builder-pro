@@ -49,8 +49,8 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
 
   // Container-aware adaptive scaling - scales images to fill container optimally
   const { scale: mainImageScale, containerRef, handleImageLoad: handleMainImageLoad } = useContainerAwareScale({
-    targetFillPercent: enhanced ? 0.85 : 0.80, // Fill 85% of modal, 80% of regular
-    maxScale: 2.0, // Allow up to 2x for small images
+    targetFillPercent: enhanced ? 0.90 : 0.84,
+    maxScale: 2.2, // Product cutouts vary widely; normalize small source images.
     minScale: 1.0, // Never shrink images
   });
 
@@ -151,15 +151,15 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
     }
   };
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     const prevIndex = selectedIndex === 0 ? displayImages.length - 1 : selectedIndex - 1;
     setSelectedUrl(displayImages[prevIndex]);
-  };
+  }, [displayImages, selectedIndex]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     const nextIndex = selectedIndex === displayImages.length - 1 ? 0 : selectedIndex + 1;
     setSelectedUrl(displayImages[nextIndex]);
-  };
+  }, [displayImages, selectedIndex]);
 
   const handleThumbnailClick = (index: number) => {
     setSelectedUrl(displayImages[index]);
@@ -182,7 +182,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!showLightbox) return;
-      
+
       switch (e.key) {
         case 'ArrowLeft':
           e.preventDefault();
@@ -201,7 +201,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [showLightbox]);
+  }, [handleNext, handlePrevious, showLightbox]);
 
   // No early return - we always show placeholder as fallback
 
@@ -216,10 +216,10 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           </div>
         )}
         {/* Fixed-height container that centers the scaled image */}
-        <div 
+        <div
           ref={containerRef}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden`}
-          style={{ background: 'var(--gradient-image-bg)', touchAction: 'pan-y' }}
+          className={`${enhanced ? 'h-[300px] sm:h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden bg-white`}
+          style={{ touchAction: 'pan-y' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
@@ -229,16 +229,16 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           <img
             src={displayImages[selectedIndex]}
             alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-            className={`w-full h-full object-contain mix-blend-multiply transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className={`w-full h-full object-contain transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={onMainImageLoad}
             onError={() => handleImageError(displayImages[selectedIndex])}
-            style={{ 
+            style={{
               transform: `scale(${finalScale})`,
               transformOrigin: 'center center'
             }}
           />
         </div>
-        
+
         {/* Click to expand hint - only show for non-placeholder */}
         {displayImages[0] !== PLACEHOLDER_IMAGE && (
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
@@ -254,14 +254,14 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
             </div>
           </div>
         )}
-        
+
         {/* Image quality indicator */}
         {isThumbnailUrl(displayImages[selectedIndex]) && (
           <div className="absolute top-2 left-2 bg-orange-500/90 text-white text-xs px-2 py-1 rounded-full">
             Thumbnail
           </div>
         )}
-        
+
         {/* Navigation arrows for main image */}
         {displayImages.length > 1 && displayImages[0] !== PLACEHOLDER_IMAGE && (
           <>
@@ -272,7 +272,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
                 e.stopPropagation();
                 handlePrevious();
               }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#F5F1EA]/85 hover:bg-[#F5F1EA] text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-repower-cream/85 hover:bg-repower-cream text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -283,13 +283,13 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
                 e.stopPropagation();
                 handleNext();
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#F5F1EA]/85 hover:bg-[#F5F1EA] text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-repower-cream/85 hover:bg-repower-cream text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
           </>
         )}
-        
+
         {/* Image counter */}
         {displayImages.length > 1 && displayImages[0] !== PLACEHOLDER_IMAGE && (
           <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
