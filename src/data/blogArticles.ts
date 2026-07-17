@@ -12223,7 +12223,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-07-17',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '10 min read',
@@ -12275,13 +12275,6 @@ The boating industry has known for years that people who try boating through ren
 
 We see that in our own customer base. People rent a Legend ProSport for a long weekend, decide they want their own, and come back to talk about a quote. That progression is not theoretical for us; it is part of how a real portion of our boat sales come together.
 
-::pull-quote
-quote: I'm in Toronto five days a week. Owning a boat for ten Saturdays a year never made financial sense. **Renting from HBW lets me bring the kids up, fish all day, hand the keys back.** No winterization headache.
-attribution: Alex W.
-source: Toronto
-::
-
----
 
 ## When renting makes more sense than buying
 
