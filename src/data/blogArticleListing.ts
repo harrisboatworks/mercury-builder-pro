@@ -2,7 +2,7 @@ export interface BlogListingArticle {
   slug: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   imageAlt?: string;
   author: string;
   datePublished: string;
