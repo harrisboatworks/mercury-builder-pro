@@ -1,10 +1,7 @@
 "use client";
 import { useCallback, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
-import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
-import { Button } from "@/components/ui/button";
-import { Download, CreditCard, ArrowUp, Sparkles, Bookmark, Mail } from "lucide-react";
+import { Download, CreditCard, Bookmark } from "lucide-react";
 import confetti from 'canvas-confetti';
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useSound } from '@/contexts/SoundContext';
@@ -20,18 +17,11 @@ type StickySummaryProps = {
   onReserve: () => void;
   depositAmount?: number;
   coverageYears?: number;
-  monthlyDelta?: number;
   promoWarrantyYears?: number;
   onDownloadPDF?: () => void;
   onSaveForLater?: () => void;
   onApplyForFinancing?: () => void;
   isGeneratingPDF?: boolean;
-  // Upgrade prompt props
-  showUpgradePrompt?: boolean;
-  upgradeToLabel?: string;
-  upgradeCostDelta?: number;
-  upgradeCoverageGain?: number;
-  onUpgradeClick?: () => void;
   // Payment processing prop
   isProcessingPayment?: boolean;
   // Quote expiry
@@ -48,18 +38,11 @@ export default function StickySummary({
   onReserve,
   depositAmount = 200,
   coverageYears,
-  monthlyDelta,
   promoWarrantyYears,
   onDownloadPDF,
   onSaveForLater,
   onApplyForFinancing,
   isGeneratingPDF = false,
-  // Upgrade prompt props
-  showUpgradePrompt = false,
-  upgradeToLabel,
-  upgradeCostDelta,
-  upgradeCoverageGain,
-  onUpgradeClick,
   // Payment processing prop
   isProcessingPayment = false,
   // Quote expiry
@@ -124,19 +107,9 @@ export default function StickySummary({
           {packageLabel}
         </div>
 
-        <div className="mt-3">
-          <CoverageComparisonTooltip />
-        </div>
-
-
         {typeof coverageYears === "number" && (
           <div className="mt-2 font-sans text-[14px] text-repower-navy-900/70">
-            Coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years total</span>
-          </div>
-        )}
-        {typeof monthlyDelta === "number" && monthlyDelta > 0 && (
-          <div className="mt-1 font-sans text-[13px] text-repower-navy-900/70">
-            +{money(Math.round(monthlyDelta))}/mo for Extended Warranty
+            Mercury coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years included</span>
           </div>
         )}
         {promoWarrantyYears ? (
@@ -157,41 +130,6 @@ export default function StickySummary({
             })()}
           </div>
         )}
-
-        {/* Upgrade prompt - shown when on Essential */}
-        <AnimatePresence>
-          {showUpgradePrompt && upgradeToLabel && upgradeCostDelta != null && onUpgradeClick && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="mt-3 overflow-hidden"
-            >
-              <button
-                onClick={onUpgradeClick}
-                className="w-full rounded-lg border border-repower-navy-900/10 bg-repower-cream p-3 text-left transition hover:bg-repower-paper"
-              >
-                <div className="flex items-center gap-2 text-xs font-semibold text-repower-navy-900">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  <span>Want more coverage?</span>
-                </div>
-                <div className="mt-1 text-sm text-repower-navy-900/75">
-                  Upgrade to <span className="font-semibold">{upgradeToLabel}</span> for just{' '}
-                  <span className="font-semibold text-repower-mercury-red">
-                    +{money(Math.round(upgradeCostDelta))}/mo
-                  </span>
-                </div>
-                {upgradeCoverageGain != null && upgradeCoverageGain > 0 && (
-                  <div className="mt-0.5 flex items-center gap-1 text-xs text-repower-navy-900/65">
-                    <ArrowUp className="h-3 w-3" />
-                    <span>+{upgradeCoverageGain} years extra protection</span>
-                  </div>
-                )}
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         <ul className="mt-4 space-y-1.5 font-sans text-[14px] text-repower-navy-900/70">
           {bullets.slice(0, 3).map((b, i) => (
