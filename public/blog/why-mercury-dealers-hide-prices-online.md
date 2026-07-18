@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-06-09
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-06-09
+date_modified: 2026-07-18
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-18
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
@@ -174,13 +174,13 @@ Pricing on the configurator is in CAD before HST. HST (13%) is added at quote co
 
 You can ask. Many will give it over the phone. The cost is your time. Knowing what we know about how the industry works, we'd say: skip the dealers who insist on phone gatekeeping and shop the dealers who publish.
 
-### What if HBW's online price is higher than another dealer's verbal quote?
+### What if HBW's online price is higher than another dealer's quote?
 
-Tell us. We'll match or explain the difference. Our pricing is in line with the Mercury dealer network. If a verbal quote is meaningfully lower, it usually means the verbal quote is missing rigging, install, or a hidden cost that shows up later.
+Call us and send the complete written quote. We'll compare the motor, rigging, installation, promotions, and availability, then tell you whether we can improve our price. We'll try when the packages are genuinely comparable, but a match is not guaranteed.
 
 ### How do I tell if a dealer's quote is fair without published prices?
 
-Build a quote at HBW first. Use that as your reference. Then go look at other dealers. The dealers who can't beat or match a transparent quote are the ones who depend on you not knowing.
+Build a quote at HBW first and use it as a written reference. Compare the exact motor, included rigging, installation, prop, promotions, taxes, and timing, not just the headline number. If another dealer gives you a complete written quote, send it to us and we'll review it.
 
 ## Related guides
 
@@ -204,4 +204,3 @@ Build a quote at HBW first. Use that as your reference. Then go look at other de
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
