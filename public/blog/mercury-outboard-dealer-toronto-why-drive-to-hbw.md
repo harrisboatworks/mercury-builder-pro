@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-12  
-**Last updated:** 2026-06-26  
+**Last updated:** 2026-07-18  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw
 
@@ -134,7 +134,7 @@ This is the single biggest reason GTA boaters end up choosing HBW: **you don't n
 
 Most marine dealers in the GTA still operate "call for pricing", meaning you fill out a form, wait 1-2 days, get an estimate without details, then negotiate. That model works for the dealer (they control the conversation); it works against you (you can't compare).
 
-**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor (98 Mercury models in current inventory), select your shaft length and controls, add a prop, see install pricing, see optional MPP, see trade-in credit math, get a final all-in number. **In about three minutes.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
+**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor, select your shaft length and controls, add a prop, see install pricing, review current Mercury offers, see trade-in credit math and get a final all-in number. **In about three minutes.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
 
 This isn't a brochure tool. It's the same data our staff uses. The price you see at home is the price we'd quote you in person.
 
@@ -242,4 +242,3 @@ Yes. Mercury's warranty network extends across Canada. Bring your purchase paper
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

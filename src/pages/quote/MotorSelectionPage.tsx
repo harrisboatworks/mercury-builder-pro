@@ -17,8 +17,6 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { X } from 'lucide-react';
-// Optimized warranty badge: 15KB WebP @ 400w (was 3MB PNG).
-const harris7YearWarranty = '/assets/optimized/harris-7-year-warranty-400w.webp';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview, { type SharedCardData } from '@/components/motors/MotorCardPreview';
@@ -126,13 +124,9 @@ function PromoBannerConditional() {
   return (
     <div className="relative w-full bg-repower-navy-900 border-b border-repower-gold/20">
       <div className="flex flex-wrap md:flex-nowrap items-center md:h-14 md:max-h-14 py-2 md:py-0 px-4 md:px-14 md:pr-14 gap-y-1 md:gap-y-0 md:overflow-hidden pr-10 md:pr-14">
-        {/* Badge */}
-        <img
-          src={harris7YearWarranty}
-          alt=""
-          className="shrink-0"
-          style={{ height: 32, width: 'auto' }}
-        />
+        <span className="shrink-0 rounded-full border border-repower-gold/35 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-repower-gold">
+          Mercury Offer
+        </span>
         {/* Title */}
         <span
           className="text-repower-cream font-semibold whitespace-nowrap ml-4 shrink-0"

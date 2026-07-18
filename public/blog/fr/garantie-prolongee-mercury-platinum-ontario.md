@@ -1,130 +1,60 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-07-10
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent"
-description: "Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP."
+title: "Mercury Product Protection Platinum : couverture et prix canadiens"
+description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les..."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-07-10
-keywords: ["garantie prolongée Mercury","Mercury Product Protection","garantie Premier","garantie Mercury Ontario","garantie moteur prolongée","couverture Mercury Premier"]
+date_modified: 2026-07-18
+keywords: ["garantie prolongée Mercury","Mercury Product Protection","Mercury Platinum","garantie Mercury Ontario","prix protection Mercury","couverture Mercury Platinum"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
 ---
 
-# Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent
+# Mercury Product Protection Platinum : couverture et prix canadiens
 
-> Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques. Vrais prix CAD par HP.
+> Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les...
 
 **Category:** Garantie  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-10  
-**Read time:** 12 min  
+**Last updated:** 2026-07-18  
+**Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 
 ## Réponse rapide
 
-**Mercury Product Protection (Premier) prolonge votre garantie d'usine jusqu'à 8 ans au total, couvrant les défaillances mécaniques ET électriques, incluant l'ECU, les capteurs, l'alternateur, le câblage, les jauges et les commandes. HBW vend exclusivement Premier parce que l'exclusion électrique sur Gold est l'endroit où les moteurs Mercury modernes échouent le plus chèrement. 10 % de rabais sur la garantie prolongée Premier pour les clients ayant acheté leur moteur chez Harris Boat Works.**
+**Mercury Product Protection Platinum est un contrat de service prolongé, et non une prolongation de la garantie limitée Mercury. La couverture commence après la garantie limitée applicable et protège contre certaines défaillances mécaniques et électriques selon les modalités du contrat canadien. HBW vend normalement Platinum, le niveau de protection le plus complet de Mercury.**
 
-- **Couvre ce que votre garantie d'usine couvre, pendant des années de plus**, jusqu'à 8 ans au total (3 ans d'usine + 5 ans prolongé)
-- **Inclut l'électrique** (Gold ne le fait pas), alternateur, ECU, capteurs, faisceau, accessoires
-- **Transférable** au prochain propriétaire, ajoute de la valeur à la revente
-- **Honoré chez plus de 3 600 concessionnaires Mercury** aux États-Unis et au Canada
-- **Exclusivité HBW** : 10 % de rabais sur Premier pour les clients ayant acheté leur moteur chez HBW
+- Jusqu'à **8 ans de couverture combinée**, garantie limitée applicable plus Product Protection
+- Durées achetées de 1 à 5 ans, selon l'admissibilité et la couverture déjà incluse
+- Couverture Platinum pour les pièces mécaniques et électriques admissibles
+- Franchise de **50 $ par réclamation**
+- Transfert possible à un acheteur subséquent à usage récréatif, sous réserve du processus Mercury
 
-Obtenez une soumission par le formulaire de contact à [mercuryrepower.ca](https://www.mercuryrepower.ca) ou appelez le 905-342-2153 pour la tarification Premier actuelle par HP et durée.
+Les prix ci-dessous sont en dollars canadiens avant TVH et ont été vérifiés avec la fiche de prix HBW le 17 juillet 2026. Le modèle, le numéro de série, les heures et la couverture actuelle déterminent l'admissibilité et le prix final.
 
-> **Note importante :** les détails de couverture, les prix et l'admissibilité peuvent changer selon le moteur, la date d'achat et le programme Mercury en vigueur. HBW confirme toujours la couverture exacte au moment de la soumission, et toutes les figures dans ce guide doivent être validées avec Mercury Canada avant achat.
+Consultez aussi la page maintenue des [prix Mercury Product Protection](/mercury-product-protection) et les [promotions Mercury en vigueur](/promotions).
 
 ---
 
 ## Ce qu'est Mercury Product Protection
 
-Votre nouveau Mercury vient avec une garantie limitée d'usine de 3 ans contre les défauts de matériaux et de fabrication. Cela vous couvre pour les 3 premières années. Mercury Product Protection est le contrat de service prolongé soutenu par l'usine qui prend le relais quand la garantie limitée se termine.
+Mercury définit Product Protection comme un contrat de service prolongé administré par Mercury Marine. La couverture Platinum commence après l'expiration de la garantie limitée Mercury applicable. Elle ne remplace pas l'entretien normal et ne transforme pas les pièces d'usure en pièces couvertes.
 
-Ce n'est pas une police d'assurance tierce. Ce n'est pas un ajout après-vente. Elle est administrée à 100 % par [Mercury Marine](https://www.mercurymarine.com/canada/en/), en utilisant des pièces Mercury et Quicksilver authentiques, effectuée par des concessionnaires Mercury autorisés, mêmes normes d'usine que votre garantie d'origine.
-
-Deux niveaux existent : **Gold** (défaillances mécaniques seulement) et **Premier** (mécaniques + électriques + accessoires). HBW vend Premier exclusivement. Voici pourquoi :
-
-**Sur les hors-bord Mercury modernes (2017+), la plupart des défaillances coûteuses sont électriques.** Remplacement d'ECU sur un Pro XS V6 : 2 500 $ à 3 500 $ en pièces avant la main-d'œuvre. Cascade de défaillances de capteurs SmartCraft : 1 200 $ et plus. Alternateur et régulateur de tension sur un Verado : 1 800 $ et plus. Gold ne couvre rien de cela. Premier oui.
-
-Pour la différence de prix entre les deux niveaux (typiquement 200 $ à 400 $ à travers la plupart des plages de HP), Premier est le choix évident.
+Mercury offre les niveaux Gold et Platinum. Gold vise les défaillances mécaniques. Platinum ajoute les défaillances électriques admissibles. **Platinum** est le niveau Product Protection vendu par HBW. **Premier** désigne le niveau de concessionnaire Mercury de Harris Boat Works, pas un plan Product Protection.
 
 ---
 
-## Ce que Premier couvre réellement
+## Prix canadiens Platinum chez HBW
 
-**Composants internes du moteur (mécaniques) :**
-- Bloc cylindre, culasse, vilebrequin, arbre à cames
-- Pistons, segments, axes de piston, bielles
-- Soupapes, train de soupapes, poussoirs, culbuteurs
-- Composants de distribution (chaînes, engrenages, couvercle)
-- Pompe à huile, carter, amortisseur harmonique
-- Collecteurs d'admission et d'échappement
-
-**Embase / boîte de vitesses :**
-- Roulements, arbre d'entraînement, arbre d'hélice, engrenages
-- Porte-roulement, composants internes de changement de vitesse
-
-**Trim et direction assistée :**
-- Cylindres de trim, moteur de trim, capteur de position de trim
-- Pompe de direction assistée, cylindre, composants JPO/JPS
-
-**Système d'alimentation :**
-- Pompe à carburant, pompe d'injection, injecteurs carburant/air
-- Compresseur d'air (Verado), pare-flammes
-
-**Électrique (l'exclusion Gold) :**
-- Modules ECU, ETC, EBC, CDM
-- Alternateur, redresseur, régulateur de tension
-- Capteurs, interrupteurs, limiteur de RPM
-- Faisceau de câblage, boîtes d'interrupteurs
-- Démarreur, bobines d'allumage, stator
-- Klaxons et modules d'avertissement
-
-**Accessoires (l'exclusion Gold) :**
-- Jauges SmartCraft et VesselView
-- Câbles d'accélération/changement de vitesse, poignées de barre franche
-- Commandes à distance, commandes joystick
-- Jauges analogiques, interrupteurs
-- Interrupteur d'arrêt d'urgence
-- Faisceau de câblage pour accessoires
-
-**Avantages supplémentaires :**
-- Allocation de remorquage sur l'eau de 200 $ par réclamation
-- Allocation de levage/sortie de 200 $ par réclamation (bateaux de 26 pi et plus)
-- Franchise de 50 $ par réclamation
-- Garantie de satisfaction de 30 jours à partir de l'achat
-
-**Ce qui N'est PAS couvert :**
-- Hélices (pièce d'usure)
-- Articles d'entretien régulier (huile, filtres, bougies, turbines, anodes)
-- Dommages d'accident, abus, course ou usage non récréatif
-- Moteurs usagés importés de l'extérieur des États-Unis/Canada
-
----
-
-## Admissibilité, quand vous pouvez l'acheter
-
-Pour vous inscrire à Mercury Product Protection :
-
-1. **Doit être acheté avant l'expiration de la garantie d'usine.** Une fois inscrit, la couverture commence le jour où la garantie d'usine se termine.
-2. **Le moteur doit être de l'année modèle courante ou des 4 années modèles précédentes.** Un moteur 2026 : couvert. Un moteur 2021 : couvert. Un moteur 2020 : non admissible.
-3. **Moins de 500 heures moteur au moment de l'achat.**
-4. **Usage récréatif seulement.** Nolisement, pêche commerciale, gouvernemental ou usage lié au travail est exclu.
-5. **Doit être un moteur acheté aux États-Unis ou au Canada.** Les importations de l'extérieur de l'Amérique du Nord ne se qualifient pas.
-
-Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de votre moteur. Cela prend environ 10 minutes, fournissez-les via le formulaire de contact à [mercuryrepower.ca](https://www.mercuryrepower.ca) ou par téléphone au 905-342-2153.
-
----
-
-## Vrais prix CAD (HBW)
+Chaque colonne correspond à la durée Product Protection achetée, et non au nombre total d'années de couverture.
 
 | Gamme produit (HP) | 1 an | 2 ans | 3 ans | 4 ans | 5 ans |
 |---|---|---|---|---|---|
@@ -140,57 +70,60 @@ Nous vérifions l'admissibilité à l'aide du modèle et du numéro de série de
 | 500 | 4 870 $ | 8 766 $ | 12 417 $ | 15 777 $ | 18 748 $ |
 | 600 | 5 836 $ | 10 504 $ | 14 881 $ | 18 908 $ | 22 469 $ |
 
-Taxes et frais d'enregistrement en sus. Tarification finale confirmée à l'enregistrement avec Mercury.
-
-**Exclusivité HBW** : 10 % de rabais sur la garantie prolongée Premier pour les clients ayant acheté leur moteur chez Harris Boat Works.
+Prix en CAD avant TVH. HBW confirme l'admissibilité et le prix final avec le numéro de série avant l'enregistrement.
 
 ---
 
-## Quand Premier a un sens financier
+## Admissibilité et durée disponible
 
-Le calcul honnête :
+Selon les modalités canadiennes actuelles :
 
-**Achetez-le si :**
-- Vous prévoyez garder le moteur 5 ans ou plus
-- Le moteur est de 150 HP ou plus (les défaillances électriques deviennent coûteuses rapidement)
-- Vous voulez un coût de propriété prévisible (pas de factures surprises de 2 500 $ à 5 000 $)
-- Vous prévoyez vendre le bateau dans la fenêtre de couverture (la transférabilité ajoute de la valeur à la revente)
-- Vous naviguez dans des zones éloignées où l'allocation de remorquage sur l'eau compte
+1. Le contrat doit être acheté avant l'expiration de la garantie limitée Mercury applicable.
+2. Un achat après la première année de garantie d'usine est assujetti à une surcharge.
+3. Le produit doit dater de l'année civile courante ou des quatre années précédentes.
+4. Le moteur doit avoir moins de 500 heures au moment de l'achat.
+5. L'usage doit être récréatif. Les usages commerciaux, professionnels, gouvernementaux et liés au travail sont exclus.
+6. La garantie limitée applicable et Product Protection ne peuvent pas dépasser 8 années combinées.
 
-**Sautez-le si :**
-- Vous prévoyez revendre le bateau dans 12 à 24 mois
-- Le moteur est de moins de 25 HP (pièces peu coûteuses, moins à défaillir)
-- Vous êtes un usager commercial ou de nolisement (vous n'êtes pas admissible de toute façon)
-
-Pour les plaisanciers ontariens qui prévoient garder leur moteur 5 ans ou plus, Premier se rentabilise presque toujours si même un composant majeur défaille pendant la période de couverture.
+Une promotion active peut modifier la couverture incluse et, par conséquent, le nombre d'années Platinum à acheter. La fiche du numéro de série et les modalités de la promotion en vigueur ont priorité.
 
 ---
 
-## Transférabilité et valeur de revente
+## Ce que Platinum couvre et exclut
 
-La couverture Premier est transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Cela compte à la revente.
+Platinum couvre les composants mécaniques et électriques admissibles énumérés dans le contrat, notamment des éléments du bloc moteur, de l'embase, du système de carburant, du trim, de l'allumage, des commandes et de certains accessoires Mercury ou Quicksilver.
 
-Un Mercury 150 HP de 5 ans avec couverture Premier active jusqu'à l'année 8 se vend pour 10 à 15 % de plus que le même moteur sans couverture. L'acheteur sait qu'il a une protection d'usine pour les 3 prochaines années.
+Les exclusions comprennent notamment :
+
+- l'entretien normal et les consommables;
+- l'usure normale et la corrosion;
+- les accidents, l'abus, la négligence et la submersion;
+- les modifications non approuvées;
+- les usages commerciaux ou liés au travail;
+- les composants non indiqués comme pièces couvertes.
+
+Les prestations supplémentaires comprennent jusqu'à 200 $ par réclamation pour le remorquage sur l'eau et jusqu'à 200 $ pour le levage ou la sortie d'un bateau non remorquable de 26 pieds ou plus, selon les modalités du contrat.
 
 ---
 
-## Ce qui se passe quand vous faites une réclamation
+## Transfert et réclamation
 
-Vous ne traitez pas directement avec Mercury. Vous apportez le bateau à n'importe quel concessionnaire Mercury autorisé (plus de 3 600 à travers l'Amérique du Nord). Ils diagnostiquent, contactent Mercury pour approbation, et effectuent la réparation à l'aide de pièces Mercury authentiques. Vous payez la franchise de 50 $. Mercury couvre le reste.
+Le contrat peut être transféré à un acheteur subséquent à usage récréatif. La demande doit être soumise dans les **30 jours ouvrables** suivant l'achat et demeure assujettie aux documents, à l'inspection, aux frais et aux autres conditions de Mercury. Le transfert n'est donc pas automatique.
 
-Si vous avez acheté la garantie chez HBW mais que vous êtes en panne dans une marina près du parc Algonquin, vous pouvez faire faire le travail par n'importe quel concessionnaire Mercury autorisé là-bas.
+Pour une réclamation, apportez le produit à un concessionnaire Mercury autorisé. Le concessionnaire effectue le diagnostic et demande l'approbation de Mercury. La franchise canadienne actuelle est de 50 $ par réclamation. Seules les réparations et les pièces admissibles selon le contrat sont payées.
 
 ---
 
 ## Comment obtenir une soumission
 
-Visitez [mercuryrepower.ca](https://www.mercuryrepower.ca) et utilisez le formulaire de contact, ou appelez le 905-342-2153. Donnez-nous le modèle et le numéro de série de votre moteur et votre durée préférée. Nous confirmons l'admissibilité dans 1 à 2 jours ouvrables et vous envoyons la soumission finale.
+Commencez avec la page des [prix Mercury Product Protection](/mercury-product-protection), puis communiquez avec HBW au 905-342-2153 avec le modèle, le numéro de série, les heures et la durée souhaitée. Nous confirmons l'admissibilité, la couverture incluse et le prix final avant l'enregistrement.
 
-Clients HBW (moteur acheté chez nous), mentionnez-le dans le champ notes et nous appliquons automatiquement le rabais de 10 %.
+## Sources
 
----
+- [Mercury Product Protection, aperçu officiel](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection)
+- [Modalités canadiennes Platinum, mars 2025](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf)
 
-*Dernière révision : 2026-05-13*
+*Dernière révision : 2026-07-18*
 
 Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina familiale depuis 1947 sur le lac Rice.
 ## Guides connexes
@@ -202,17 +135,17 @@ Par Harris Boat Works, concessionnaire Mercury Marine certifié Premier, marina 
 
 ## FAQs
 
-### Quelle est la différence entre les couvertures Mercury Gold et Premier?
+### Quelle est la différence entre Mercury Gold et Platinum?
 
-Gold couvre seulement les défaillances mécaniques. Premier ajoute la couverture électrique et accessoires (ECU, capteurs, alternateur, câblage, jauges, commandes). Sur les hors-bord Mercury modernes où la plupart des défaillances coûteuses sont électriques, Premier est le bon choix. HBW vend exclusivement Premier.
+Gold couvre les défaillances mécaniques admissibles. Platinum ajoute les défaillances électriques admissibles. HBW vend normalement Platinum. Premier est le niveau de concessionnaire Mercury de HBW, pas un niveau Product Protection.
 
 ### Quand dois-je acheter Mercury Product Protection?
 
-Avant l'expiration de votre garantie d'usine de 3 ans. Une fois inscrit, la couverture prolongée prend le relais le jour où la garantie d'usine se termine. Mercury permet l'inscription dans les 4 années modèles du moteur.
+Avant l'expiration de la garantie limitée Mercury applicable. Les modalités canadiennes actuelles prévoient une surcharge après la première année de garantie d'usine. L'âge du moteur, les heures, l'usage et le numéro de série déterminent aussi l'admissibilité.
 
 ### Mercury Product Protection est-elle transférable quand je vends mon bateau?
 
-Oui. Transférable à un acheteur subséquent à usage récréatif dans les 30 jours de la vente. Ajoute 10 à 15 % à la valeur de revente parce que le nouveau propriétaire hérite de la protection d'usine continue.
+Oui, à un acheteur subséquent à usage récréatif si les conditions Mercury sont respectées. La demande doit être présentée dans les 30 jours ouvrables et peut exiger des documents, une inspection et des frais.
 
 ### Quelle est la franchise?
 
@@ -220,11 +153,11 @@ Oui. Transférable à un acheteur subséquent à usage récréatif dans les 30 j
 
 ### Mercury Product Protection couvre-t-elle l'entretien régulier?
 
-Non. Vidanges d'huile, turbines, bougies, anodes, usure d'hélice, ce sont des articles d'entretien, pas des articles de garantie. Vous les gérez normalement.
+Non. Les vidanges d'huile, turbines, bougies, anodes, filtres, hélices et autres consommables ou pièces d'usure ne sont pas couverts.
 
-### J'ai acheté mon moteur chez HBW. Comment obtenir le rabais de 10 %?
+### Où puis-je consulter les prix canadiens actuels?
 
-Mentionnez-le dans le champ notes du formulaire de contact à mercuryrepower.ca, ou par téléphone au 905-342-2153. Nous vérifions l'achat original dans nos dossiers et appliquons le rabais avant d'envoyer la soumission finale.
+La page /mercury-product-protection affiche la fiche de prix HBW par puissance et durée. Les prix sont en CAD avant TVH, et HBW confirme le prix final et l'admissibilité avec le numéro de série.
 
 ## Next steps
 

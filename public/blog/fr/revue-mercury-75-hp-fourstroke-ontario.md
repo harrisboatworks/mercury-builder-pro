@@ -104,7 +104,7 @@ Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversat
 
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
-- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 - [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
 
 ## Questions fréquentes

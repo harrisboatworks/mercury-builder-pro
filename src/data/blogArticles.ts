@@ -12953,7 +12953,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     videoAssetUrl: '/__l5e/assets-v1/aa07895e-5481-4c59-9cf4-43b2832e072c/mercury-boost-demo.mp4',
     videoAssetTitle: 'Mercury Boost: official demo',
     videoAssetCaption: "Mercury's official demonstration of the Boost software upgrade in action.",
-    content: `_Last updated: May 27, 2026_
+    content: `_Last updated: July 18, 2026_
 
 > **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5 to 21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
 
@@ -15044,7 +15044,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-24',
-    dateModified: '2026-05-27',
+    dateModified: '2026-07-18',
     publishDate: '2026-04-24',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -15065,7 +15065,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Ontario dealer density (Kawarthas + GTA) | High | Moderate | Lower |
 | Freshwater reputation | Excellent | Excellent | Excellent |
 | Standard warranty | 3 years | 3 years | 3 years |
-| Extended warranty program | Mercury Product Protection (Gold / Premier) | Yamaha YES | Honda Protection Plan |
+| Extended service contract | Mercury Product Protection (Gold / Platinum) | Yamaha YES | Honda Protection Plan |
 | SmartCraft / digital integration | Yes (current/full lineup) | Yes (proprietary) | Yes (proprietary) |
 | Software upgrade roadmap (Boost-style retrofits) | Yes | Limited | Limited |
 | Parts shelf availability (Ontario) | Strong | Strong | Moderate |
@@ -20164,7 +20164,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-warranty-canada.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-23',
-    dateModified: '2026-05-23',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-23',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -20172,7 +20172,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-*Last reviewed: 2026-05-23*
+*Last reviewed: 2026-07-18*
 
 > **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires registered ownership and service-interval compliance.
 
@@ -20232,14 +20232,14 @@ The phrase "improper installation" matters. **A Mercury installed by your buddy 
 ::decision-card
 eyebrow: Extended warranty decision
 heading: Should you buy Mercury Product Protection?
-subhead: MPP extends coverage up to 8 total years. Worth it for some buyers, overkill for others. The honest answer depends on how you pay and how long you keep the boat.
+subhead: Platinum Product Protection can bring eligible coverage to a maximum of 8 combined years. The honest answer depends on the exact price, how long you keep the boat and how much repair-cost certainty matters to you.
 leftLabel: Take MPP extended coverage
 leftCriteria:
   - You're financing the motor over 5+ years
   - You plan to keep the boat 7+ years
-  - You run the motor hard (heavy hours, towing, offshore)
+  - You run meaningful seasonal hours or tow regularly
   - Peace of mind matters more than the upfront cost
-leftOutcome: 8-year MPP package
+leftOutcome: Price the eligible Platinum term
 leftVariant: recommended
 rightLabel: Factory coverage is enough
 rightCriteria:
@@ -20249,31 +20249,29 @@ rightCriteria:
   - You service religiously and keep records
 rightOutcome: Stick with the 3-year factory
 rightVariant: alternative
-whenInDoubt: MPP is transferable to a second owner, which adds to resale value. If you're close to the line, the extra coverage usually pays back at trade-in time.
+whenInDoubt: Compare the exact Platinum price with your ownership horizon. Transfer is available to a subsequent recreational-use buyer, but Mercury's timing, eligibility and inspection terms apply.
 ::
 
-## Mercury Product Protection (MPP). The Extended Warranty
+## Mercury Product Protection Platinum. The Extended Service Contract
 
-If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, [an optional extended-coverage program](/blog/mercury-extended-warranty-platinum-ontario) (typically marketed in Gold, Silver, and Premier tiers depending on availability). MPP is not part of the factory standard warranty.
+If you want coverage after the applicable Mercury limited warranty, Mercury offers **Mercury Product Protection (MPP)**, [an optional extended service contract](/blog/mercury-extended-warranty-platinum-ontario). HBW normally quotes the **Platinum** plan because it is Mercury's broadest Product Protection tier, covering eligible mechanical and electrical failures. Platinum is the Product Protection tier. Mercury Premier describes a dealer tier, not a Product Protection plan.
 
-Coverage tiers, durations, and pricing depend on the specific motor, region, current promotions, and how soon after purchase the extension is added. As a general guide:
+The current Canadian Platinum provisions and your motor's serial record govern eligibility. Important points:
 
-- Eligible Mercury outboards can be extended to roughly 5 to 8 years of total coverage (3 standard plus MPP) depending on tier and product
-- **Must be purchased while the original warranty is still active.** Not "within 1 year of purchase", that's an old rule that's been retired. The current rule: any time before your standard 3-year coverage ends.
-- **Transferable** with the motor if you sell it (private sale or dealer trade-in)
-- **Same dealer network**, any authorized Mercury dealer in Canada honours MPP claims
-- Covers the same scope as the original limited warranty, including parts and labour
+- Factory limited warranty and paid Product Protection cannot exceed **8 combined years**.
+- Product Protection must be purchased before the applicable factory limited warranty expires. Mercury's Canadian terms apply a surcharge when it is purchased after the first factory-warranty year.
+- The motor must meet Mercury's age, hour and recreational-use rules. Current Canadian terms specify the current model year plus four previous calendar years and fewer than 500 accumulated engine hours.
+- A transfer to a subsequent recreational-use buyer must be submitted within **30 business days** and remains subject to Mercury's eligibility, documentation, inspection and fee requirements.
+- Claims are made through an authorized Mercury dealer. Mercury approval and the Canadian contract terms apply.
+- Platinum covers the mechanical and electrical parts specifically listed in the contract. Maintenance, normal wear, corrosion, accident damage, abuse, commercial use and unauthorized modifications are excluded.
 
-We can confirm what's available for your specific motor and current promotions when you quote with us.
+We confirm the available term against the serial record and any applicable promotion before registration. [Current Mercury promotions](/promotions) are maintained separately because included coverage can change how many paid Product Protection years are needed.
 
-**What MPP costs (rough):** Pricing varies by motor HP and term length. As a rough range:
-- A 90 HP 4-stroke with a 5-year MPP: roughly $1,200-$1,800 CAD
-- A 200 HP V6 with a 5-year MPP: roughly $1,800-$2,800 CAD
-- A V8/V10 Verado with a 5-year MPP: roughly $2,800-$4,000+ CAD
+**What Platinum costs:** HBW publishes the exact Canadian rate card by horsepower band and purchased term. As verified July 17, 2026, a five-year Platinum plan is **$2,077 CAD before HST** for 75-149.9 HP and **$6,964 CAD before HST** for 200-299.9 HP. See the maintained [Mercury Product Protection prices and estimator](/mercury-product-protection) for every band and one- through five-year term.
 
-**Is it worth it?** Honest take from our shop: for motors over 90 HP, **yes**, the cost of one major out-of-warranty repair (cracked block, blown head gasket, lower unit rebuild) easily exceeds the MPP price. For smaller motors, it's a closer call; the math depends on how risk-tolerant you are. Most of our 115 HP+ buyers add MPP. About half of our 90 HP buyers do. Below 90 HP, it's less common.
+**Is it worth it?** It can be reasonable when you plan to keep the motor beyond the factory-warranty period, finance over a longer term or want predictable exposure to a covered mechanical or electrical failure. It can be unnecessary for a short ownership horizon or when you are comfortable carrying repair risk yourself. Use the exact price, not a generic horsepower rule.
 
-The other factor: resale. A used motor with transferable MPP coverage is meaningfully easier to sell, and at a higher price.
+Transferability can also be useful at resale, but it is a documented process, not an automatic promise of a higher selling price.
 
 ---
 
@@ -20281,9 +20279,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Buying a Used Mercury. Does the Warranty Transfer?
 
-Mercury's standard warranty **partially transfers** to a second owner with documentation. The corrosion warranty transfers; the limited warranty transfers as long as you can prove the original purchase date and registration.
-
-**MPP transfers fully**, regardless of original owner.
+Mercury's warranty and Product Protection transfer rules are not identical. For Product Protection, the current Canadian Platinum provisions allow transfer to a subsequent recreational-use buyer when the transfer is submitted within 30 business days and Mercury's eligibility, documentation, inspection and fee requirements are met.
 
 If you're buying a used Mercury under three years old, **ask the seller for**:
 - Original sale receipt or dealer invoice (proves warranty start date)
@@ -20320,7 +20316,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 **Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. [Mercury Canada](https://www.mercurymarine.com/canada/en/) and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
 
-**The HST/GST factor.** When you buy MPP at the same time as a new motor, the MPP cost gets bundled into the original sale total, which means you pay HST on the MPP. Some customers split the purchases (buy the motor first, MPP a few months later) to spread the tax hit. The trade-off: Mercury sometimes runs MPP promotions that are only available at point-of-sale, so splitting can cost you a discount. Ask your dealer about current promos before deciding.
+**The HST factor.** HBW's published Platinum prices are in Canadian dollars before HST. Buying later does not avoid tax, and the Canadian terms say purchases after the first factory-warranty year are subject to a surcharge. Check [current promotions](/promotions) and have HBW verify the serial record before choosing the timing.
 
 ---
 
@@ -20336,7 +20332,7 @@ If you bought a Mercury elsewhere and want warranty work done in our shop, we ca
 
 Service requests: [hbw.wiki/service](https://hbw.wiki/service).
 
-New Mercury quotes (with MPP options): [mercuryrepower.ca](https://www.mercuryrepower.ca).
+New Mercury motor quotes: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -20358,8 +20354,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Sources
 
-- [Mercury Marine - Warranty](https://www.mercurymarine.com/canada/en/owners/warranty/) - Official Mercury Canadian limited warranty terms.
-- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network for warranty claims and Mercury Product Protection.
+- [Mercury Product Protection](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection) - Official Mercury overview, coverage comparison and program guidelines.
+- [Current Canadian Platinum Plan Benefits and Provisions](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf) - Canadian contract terms reviewed for this update.
 
 `,
     faqs: [
@@ -20369,11 +20365,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "When can I buy MPP, is there still a 1-year purchase deadline?",
-        answer: "No. The old \"purchase within 1 year\" rule has been retired. You can purchase MPP any time before your standard 3-year warranty expires. There's still incentive to buy early (Mercury sometimes runs point-of-sale promos), but you have the full 3 years to decide."
+        answer: "Mercury Product Protection must be purchased before the applicable factory limited warranty expires. The current Canadian Platinum terms apply a surcharge after the first factory-warranty year, and model age, hours, use and serial-record eligibility still apply. HBW verifies those details before registration."
       },
       {
         question: "Does the warranty transfer if I sell my Mercury?",
-        answer: "Yes, partially. The corrosion warranty and the remaining limited warranty transfer with documented sale. The MPP transfers fully. Without paperwork (original receipt, dealer registration, service records), the transferred warranty is hard to prove and Mercury may not honour claims."
+        answer: "Product Protection can transfer to a subsequent recreational-use buyer when Mercury's requirements are met. The current Canadian Platinum terms require submission within 30 business days and may require documentation, inspection and a transfer fee. HBW can check the serial record and paperwork."
       },
       {
         question: "Will my warranty be voided if I do my own oil changes?",
@@ -20381,7 +20377,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "Is MPP worth it on a 90 HP 4-stroke?",
-        answer: "Most of our 90 HP+ buyers add it. A single major repair (head gasket, lower unit, ECU) usually costs more than the MPP premium. The math is closer below 90 HP. Above 150 HP it's almost always worth it. The other consideration: transferable MPP makes the motor easier to resell at a better price years later."
+        answer: "It depends on the exact Platinum price, how long you plan to keep the motor and how much repair-cost certainty matters to you. HBW publishes exact CAD pricing by horsepower and term at /mercury-product-protection so you can compare the real cost instead of relying on a generic horsepower rule."
       },
       {
         question: "What if I bought my Mercury from a dealer that's no longer in business?",
@@ -20530,14 +20526,14 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: "Three Mercury outboards on a dock at Harris Boat Works on Rice Lake, showcasing the dealership's scenic Ontario location.",
     author: 'Jay Harris',
     datePublished: "2026-05-12",
-    dateModified: '2026-06-26',
+    dateModified: '2026-07-18',
     publishDate: "2026-05-12",
     category: "Mercury Outboards",
     readTime: '12 min read',
     keywords: ["Mercury outboard dealer Toronto", "Mercury dealer GTA", "Mercury dealer Mississauga", "Mercury dealer Brampton", "Mercury Premier dealer Toronto", "drive to Mercury dealer Ontario"],
     content: `# Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
 
-*Last reviewed: 2026-06-26*
+*Last reviewed: 2026-07-18*
 
 > **Quick answer:** Toronto-area boaters drive to HBW because we post real installed prices online, stock 2026 Mercury inventory you can see in person, and have one of Ontario's deepest service benches. The 90-minute drive saves thousands on most repowers. Build a quote first at mercuryrepower.ca.
 
@@ -20643,7 +20639,7 @@ This is the single biggest reason GTA boaters end up choosing HBW: **you don't n
 
 Most marine dealers in the GTA still operate "call for pricing", meaning you fill out a form, wait 1-2 days, get an estimate without details, then negotiate. That model works for the dealer (they control the conversation); it works against you (you can't compare).
 
-**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor (98 Mercury models in current inventory), select your shaft length and controls, add a prop, see install pricing, see optional MPP, see trade-in credit math, get a final all-in number. **In about three minutes.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
+**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor, select your shaft length and controls, add a prop, see install pricing, review current Mercury offers, see trade-in credit math and get a final all-in number. **In about three minutes.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
 
 This isn't a brochure tool. It's the same data our staff uses. The price you see at home is the price we'd quote you in person.
 
@@ -30587,7 +30583,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Angler driving a bass boat with a Mercury Pro XS outboard on a misty morning, ideal for Rice Lake and Kawartha fishing.',
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-05-15",
+    dateModified: "2026-07-18",
     publishDate: "2026-05-15",
     category: "Repower",
     readTime: "11 min read",
@@ -30633,7 +30629,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "What's the warranty on a Mercury Pro XS?",
-        answer: "Mercury Pro XS comes with a standard 3-year limited factory warranty in Canada. Extended Mercury Product Protection plans (Premier coverage) can extend that meaningfully, often to 6 or 8 years, when purchased at time of motor sale. As a Mercury Premier dealer, HBW handles all warranty work in-house, which matters if anything ever needs attention: you don't ship the motor anywhere, you don't wait for a regional rep, and the same techs who installed it do the warranty work."
+        answer: "Mercury Pro XS comes with the applicable Mercury limited warranty in Canada. Optional Mercury Product Protection Platinum can bring eligible factory warranty plus paid protection to a maximum of 8 combined years. HBW verifies the serial record, available term and current promotion before registration. As a Mercury Premier dealer, HBW handles warranty and Product Protection claims in-house."
       },
       {
         question: "Does HBW finance repowers?",
@@ -32391,7 +32387,7 @@ Yes. We're also a Legend Boats dealer. Aluminum fishing boats and pontoons prima
 
 Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
 
-*Last reviewed: 2026-05-17.*
+*Last reviewed: 2026-07-18.*
 `,
     faqs: [
       { question: "Who is the best Mercury dealer near Peterborough, Ontario?", answer: "Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Premier Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965." },
@@ -32962,7 +32958,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     imageAlt: 'Mercury 115 FourStroke outboard on an aluminum fishing boat at an Ontario dock for our 2026 buyer guide.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -32975,7 +32971,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
       { question: "What's the price difference between a 75 and a 90 FourStroke?", answer: "Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases." },
       { question: "Can I tow water-ski with a FourStroke?", answer: "Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke pulls skiers without any drama." },
       { question: "How do I match the prop to a new FourStroke?", answer: "Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed." },
-      { question: "Does Mercury warranty come with a new FourStroke?", answer: "Yes, Mercury's standard 3-year limited warranty applies. Mercury Product Protection (Premier) extends total coverage up to 8 years and adds electrical coverage. See [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) for details." },
+      { question: "Does Mercury warranty come with a new FourStroke?", answer: "Yes, the applicable Mercury limited warranty comes with a new FourStroke. Optional Mercury Product Protection Platinum covers eligible mechanical and electrical failures after that warranty and can bring combined coverage to a maximum of 8 years. See the [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) and [current Platinum pricing](/mercury-product-protection)." },
     ],
     content: `## Quick Answer
 
@@ -33136,7 +33132,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
     image: '/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -33146,7 +33142,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
       { question: "What's the most popular Pro XS in Ontario?", answer: "The 200 Pro XS V6 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is the walleye sweet spot for mid-size aluminum on big water." },
       { question: "Does Pro XS use the same powerhead as FourStroke?", answer: "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175-225 Pro XS uses the 3.4L V6 (Pro XS exclusive). The 250-300 Pro XS uses the 4.6L V8." },
       { question: "Can I get Command Thrust on a Pro XS?", answer: "Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges." },
-      { question: "Does Pro XS warranty match FourStroke?", answer: "Yes, same Mercury limited warranty (3 years standard). Mercury Product Protection (Premier) extension applies the same way." },
+      { question: "Does Pro XS warranty match FourStroke?", answer: "The applicable Mercury limited warranty and optional Product Protection rules are comparable. HBW quotes Product Protection Platinum, which covers eligible mechanical and electrical failures and can bring combined coverage to a maximum of 8 years, subject to serial-record eligibility." },
       { question: "Can I repower from a FourStroke to a Pro XS?", answer: "Yes, but the rigging context matters. Pro XS performance often benefits from SmartCraft upgrades, hydraulic steering, performance throttle controls. The motor swap itself is straightforward; the full rigging context is where the Pro XS value shows up." },
       { question: "Is Pro XS louder than FourStroke?", answer: "Slightly. Pro XS tuning produces a more \"sport\" exhaust character. Most owners describe it as a feature, not a problem. For small Ontario lakes where quiet matters, FourStroke is the quieter option." },
       { question: "Should I buy Pro XS new or used?", answer: "Pro XS resale stays strong. A used Pro XS in good condition from a known service history is reasonable. A used Pro XS from unknown history is a higher-risk bet than the same-aged FourStroke because Pro XS owners tend to run them harder." },

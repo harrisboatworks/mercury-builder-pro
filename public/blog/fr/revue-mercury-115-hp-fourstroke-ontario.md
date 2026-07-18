@@ -156,7 +156,7 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 - [Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury](/blog/fr/revue-mercury-90-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
-- [Garantie prolongée Mercury (Premier) : ce qu'elle couvre et pourquoi les plaisanciers ontariens l'achètent](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Mercury Product Protection Premier prolonge la garantie d'usine jusqu'à 8 ans au total, couvrant les.
+- [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
 ## Questions fréquentes
 

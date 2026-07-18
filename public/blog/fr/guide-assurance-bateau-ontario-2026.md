@@ -133,7 +133,7 @@ Les remotorisations surtout, plusieurs clients oublient de mettre à jour leur p
 L'assurance couvre les accidents, le vol, les dommages météo et la responsabilité. La garantie prolongée couvre les défaillances mécaniques et électriques dues à des défauts de matériaux ou de fabrication. Elles ne se chevauchent pas.
 
 - **Frapper un billot et endommager votre arbre d'hélice?** Assurance.
-- **L'ECU meurt à 4 ans, 200 heures?** Garantie prolongée (si vous avez acheté Premier, voir notre [guide de garantie](/blog/fr/garantie-prolongee-mercury-platinum-ontario)).
+- **L'ECU tombe en panne à 4 ans, 200 heures?** Product Protection peut s'appliquer si vous avez acheté Platinum et si la défaillance est couverte, voir notre [guide de protection](/blog/fr/garantie-prolongee-mercury-platinum-ontario).
 - **Bateau volé dans votre entrée?** Assurance.
 - **Défaillance d'engrenages d'embase à 3 ans?** Garantie d'usine (si encore active) ou garantie prolongée.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-05-27
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha vs Honda: Reliability 2026"
 description: "Mercury vs Yamaha vs Honda reliability in 2026: real service-shop data, common failure points, parts availability, and which brand holds up on Ontario lakes."
 category: "Buying Guide"
 date_published: 2026-04-24
-date_modified: 2026-05-27
+date_modified: 2026-07-18
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-07-18  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
 
@@ -42,7 +42,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Ontario dealer density (Kawarthas + GTA) | High | Moderate | Lower |
 | Freshwater reputation | Excellent | Excellent | Excellent |
 | Standard warranty | 3 years | 3 years | 3 years |
-| Extended warranty program | Mercury Product Protection (Gold / Premier) | Yamaha YES | Honda Protection Plan |
+| Extended service contract | Mercury Product Protection (Gold / Platinum) | Yamaha YES | Honda Protection Plan |
 | SmartCraft / digital integration | Yes (current/full lineup) | Yes (proprietary) | Yes (proprietary) |
 | Software upgrade roadmap (Boost-style retrofits) | Yes | Limited | Limited |
 | Parts shelf availability (Ontario) | Strong | Strong | Moderate |
