@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-07-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Mississauga HBW"
 description: "What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-17
 keywords: ["mercury dealer mississauga","mercury repower mississauga","mercury outboard mississauga ontario","boat motor dealer mississauga","harris boat works mississauga customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-07-17  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw
 
@@ -73,7 +73,7 @@ Harris Boat Works has been on Rice Lake since 1947. Third generation. We're not 
 ## What Harris Boat Works Handles for Mississauga Customers
 
 **Mercury outboard sales**
-2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. We'll have an honest conversation about what makes sense for your boat and use case.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what makes sense for your boat and use case.
 
 **Repower service**
 Full repower: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. The rigging isn't an afterthought, it's half the job.
