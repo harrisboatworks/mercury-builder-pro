@@ -72,8 +72,9 @@ try {
   await page.getByText('Factory Rebate: $250 auto-applied', { exact: false }).waitFor();
   await page.getByText('Offer ends August 31, 2026', { exact: false }).waitFor();
 
-  // Exercise both branches, then opt into promo financing. The 24-month rate
+  // Confirm all payment methods are available, then opt into promo financing. The 24-month rate
   // must persist even when the customer never clicks the rate tile itself.
+  await page.getByRole('heading', { name: /^Cash Purchase$/i }).waitFor();
   await page.getByRole('heading', { name: /^Standard TD Financing$/i })
     .locator('xpath=ancestor::button[1]')
     .click();
@@ -81,7 +82,7 @@ try {
     .locator('xpath=ancestor::button[1]')
     .click();
 
-  const continueButton = page.getByRole('button', { name: /Apply Bonus & Continue/i });
+  const continueButton = page.getByRole('button', { name: /Continue to Quote/i });
   await continueButton.waitFor({ state: 'visible' });
   // Playwright's click waits for the React effect that persists the default
   // 24-month rate and enables the button. An immediate isDisabled() check races

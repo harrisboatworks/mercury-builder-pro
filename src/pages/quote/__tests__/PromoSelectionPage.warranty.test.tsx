@@ -8,7 +8,7 @@
  *    years FREE extension".
  *  - When the active promotion has NO bonus warranty years, the entire
  *    warranty badge is hidden (no hardcoded "7 Years").
- *  - On "Apply Bonus & Continue", the dispatched SET_WARRANTY_CONFIG
+ *  - On "Continue to Quote", the dispatched SET_WARRANTY_CONFIG
  *    payload records totalYears = 3 + bonus, so the saved quote summary
  *    reflects the currently-active promotion (not a stale 7-year value).
  */
@@ -49,6 +49,7 @@ const baseQuoteState = {
   selectedPromoOption: null,
   selectedPromoRate: null,
   selectedPromoTerm: null,
+  selectedPaymentMethod: null,
 };
 let currentQuoteState: any = baseQuoteState;
 vi.mock('@/contexts/QuoteContext', () => ({
@@ -158,10 +159,9 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    // Select cash rebate (doesn't require picking a financing rate).
-    fireEvent.click(screen.getByRole('button', { name: /Factory Rebate/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
 
-    fireEvent.click(screen.getByRole('button', { name: /Apply Bonus & Continue/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
 
     // The saved-quote contract: warranty config total years reflects the promo.
     const warrantyDispatches = dispatchMock.mock.calls
@@ -182,8 +182,8 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Factory Rebate/i }));
-    fireEvent.click(screen.getByRole('button', { name: /Apply Bonus & Continue/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
 
     const warrantyDispatches = dispatchMock.mock.calls
       .map((c) => c[0])
@@ -199,7 +199,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Promotional Financing/i }));
 
-    const continueButton = screen.getByRole('button', { name: /Apply Bonus & Continue/i });
+    const continueButton = screen.getByRole('button', { name: /Continue to Quote/i });
     await waitFor(() => expect(continueButton).toBeEnabled());
     fireEvent.click(continueButton);
 
@@ -229,8 +229,65 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     render(<PromoSelectionPage />);
 
     expect(screen.getByText(/Factory Rebate: \$500 auto-applied/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Promotional Financing/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^Standard TD Financing/i })).toBeInTheDocument();
     expect(navigateMock).not.toHaveBeenCalledWith('/quote/summary', { replace: true });
+  });
+
+  it('records cash as the payment method while retaining the factory rebate benefit', () => {
+    currentPromotions = [makePromo({
+      warranty_extra_years: 0,
+      promo_options: {
+        type: 'layered',
+        options: [{ id: 'cash_rebate' }, { id: 'special_financing' }],
+      },
+    })];
+
+    render(<PromoSelectionPage />);
+    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+
+    expect(dispatchMock).toHaveBeenCalledWith({
+      type: 'SET_PAYMENT_METHOD',
+      payload: 'cash_purchase',
+    });
+    expect(dispatchMock).toHaveBeenCalledWith({
+      type: 'SET_PROMO_DETAILS',
+      payload: {
+        option: 'cash_rebate',
+        rate: null,
+        term: null,
+        value: '$500 rebate',
+      },
+    });
+  });
+
+  it('keeps standard financing distinct from a cash purchase', () => {
+    currentPromotions = [makePromo({ warranty_extra_years: 0 })];
+
+    render(<PromoSelectionPage />);
+    fireEvent.click(screen.getByRole('button', { name: /^Standard TD Financing/i }));
+
+    expect(dispatchMock).toHaveBeenCalledWith({
+      type: 'SET_PAYMENT_METHOD',
+      payload: 'standard_financing',
+    });
+    expect(screen.getByRole('button', { name: /Continue to Quote/i })).toBeEnabled();
+  });
+
+  it('shows only cash when the quote is below the financing minimum', () => {
+    currentQuoteState = {
+      ...baseQuoteState,
+      motor: { hp: 2.5, salePrice: 1298, price: 1298 },
+      purchasePath: 'loose',
+    };
+    currentPromotions = [makePromo({ warranty_extra_years: 0 })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Promotional Financing/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
   });
 
   it('renders a date-only promotion through the advertised local calendar day', () => {

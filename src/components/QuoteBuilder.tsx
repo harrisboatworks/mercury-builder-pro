@@ -129,6 +129,8 @@ export interface SelectedPackage {
   priceBeforeTax: number;
 }
 
+export type QuotePaymentMethod = 'cash_purchase' | 'standard_financing' | 'special_financing';
+
 export interface QuoteData {
   motor: Motor | null;
   boatInfo: BoatInfo | null;
@@ -159,6 +161,7 @@ export interface QuoteData {
   selectedPromoRate?: number | null;
   selectedPromoTerm?: number | null;
   selectedPromoValue?: string | null;
+  selectedPaymentMethod?: QuotePaymentMethod | null;
   looseMotorBattery?: { wantsBattery: boolean; batteryCost: number } | null;
 }
 

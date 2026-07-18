@@ -98,6 +98,9 @@ export default function SavedQuotePage() {
               }
             });
           }
+          if (quoteData.selectedPaymentMethod) {
+            dispatch({ type: 'SET_PAYMENT_METHOD', payload: quoteData.selectedPaymentMethod });
+          }
           
           // Restore frozen pricing snapshot (ensures PDF ↔ web parity)
           if (quoteData.frozenPricing) {
