@@ -177,7 +177,7 @@ Jay Harris, the third-generation owner. The Harris family has operated the marin
 
 ### How do I get in touch with Harris Boat Works?
 
-Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also [build a live quote online](/quote/motor-selection).
+Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also use our online Mercury quote builder.
 
 ## Related guides
 
