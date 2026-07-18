@@ -158,7 +158,7 @@ export default function PricingReference() {
           body="The table below shows motor-only pricing. Your installed number depends on rigging, controls, and your boat. Build a quote in about two minutes and a person here reviews it."
           primaryLabel="Build Your Quote"
           primaryHref="/quote/motor-selection"
-          ctaLocation="pricing_reference_inline"
+          
         />
 
         {loading ? (
