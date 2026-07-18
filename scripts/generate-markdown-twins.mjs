@@ -734,7 +734,7 @@ const BLOG_TWIN_SLUGS = [
 // Emits: { relatedBySlug: {slug: string[]}, contexts: {slug: string}, titles: {slug: string} }
 function loadBlogClusterData() {
   const dumpScript = `
-    import { blogClusters, blogClusterContexts, getRelatedSlugs } from '../src/data/blogClusters.ts';
+    import { blogClusters, blogClusterContexts, getRelatedSlugs, relatedSlugsOverrides } from '../src/data/blogClusters.ts';
     import { blogArticles } from '../src/data/blogArticles.ts';
     const titleBySlug = Object.fromEntries(blogArticles.map(a => [a.slug, a.title]));
     const relatedBySlug = {};
@@ -742,7 +742,11 @@ function loadBlogClusterData() {
       const all = [c.pillar, ...c.spokes];
       for (const s of all) relatedBySlug[s] = getRelatedSlugs(s, 8);
     }
-    process.stdout.write(JSON.stringify({ relatedBySlug, contexts: blogClusterContexts, titles: titleBySlug }));
+    for (const s of Object.keys(relatedSlugsOverrides || {})) {
+      relatedBySlug[s] = getRelatedSlugs(s, 8);
+    }
+    const overrideSlugs = Object.keys(relatedSlugsOverrides || {});
+    process.stdout.write(JSON.stringify({ relatedBySlug, contexts: blogClusterContexts, titles: titleBySlug, overrideSlugs }));
   `;
   const tmpFile = join(ROOT, 'scripts', '.blog-clusters-twins-dump.mts');
   writeFileSync(tmpFile, dumpScript);
