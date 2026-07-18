@@ -163,6 +163,14 @@ For July and August weekends, book several weeks ahead online. Weekdays are far 
 
 Ours are. Every boat is serviced by our own shop, winterized properly, and pulled from the schedule if anything affects safety or reliability. Ask any operator you rent from who maintains their fleet; the answer tells you a lot.
 
+## Related guides
+
+- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)](/blog/rice-lake-boat-rental-guide-2026), the 2026 Rice Lake boat rental guide
+- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
