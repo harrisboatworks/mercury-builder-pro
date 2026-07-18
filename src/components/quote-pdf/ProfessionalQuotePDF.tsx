@@ -913,7 +913,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               MERCURY COVERAGE
             </Text>
             <Text style={styles.summaryItem}>
-              {quoteData.selectedPackage?.coverageYears || 3} years included
+              {quoteData.selectedPackage?.coverageYears || 3} years total combined coverage
             </Text>
               <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
                 What's Included:

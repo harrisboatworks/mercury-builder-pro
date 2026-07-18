@@ -946,7 +946,7 @@ export default function QuoteSummaryPage() {
   const selectedPackageFeatures = useMemo(() => {
     return [
       "Mercury motor",
-      `${selectedPackageCoverageYears} years Mercury coverage included`,
+      `${selectedPackageCoverageYears} years total combined Mercury coverage`,
       ...(isInstalled ? ["Professional installation"] : ["Loose motor pickup"])
     ];
   }, [selectedPackageCoverageYears, isInstalled]);

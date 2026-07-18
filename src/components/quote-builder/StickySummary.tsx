@@ -109,7 +109,7 @@ export default function StickySummary({
 
         {typeof coverageYears === "number" && (
           <div className="mt-2 font-sans text-[14px] text-repower-navy-900/70">
-            Mercury coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years included</span>
+            Mercury coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years total</span>
           </div>
         )}
         {promoWarrantyYears ? (
