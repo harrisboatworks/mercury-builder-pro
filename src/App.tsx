@@ -55,7 +55,6 @@ const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
 const PromoSelectionPage = lazy(() => import("@/pages/quote/PromoSelectionPage"));
-const PackageSelectionPage = lazy(() => import("@/pages/quote/PackageSelectionPage"));
 const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 
 // Admin pages
@@ -276,7 +275,7 @@ function AnimatedRoutes() {
         <Route path="/quote/trade-in" element={<TradeInPage />} />
         <Route path="/quote/installation" element={<InstallationPage />} />
         <Route path="/quote/promo-selection" element={<PromoSelectionPage />} />
-        <Route path="/quote/package-selection" element={<PackageSelectionPage />} />
+        <Route path="/quote/package-selection" element={<Navigate to="/quote/summary" replace />} />
         <Route path="/quote/summary" element={<QuoteSummaryPage />} />
         <Route path="/quote/schedule" element={<SchedulePage />} />
         <Route path="/quote/success" element={<QuoteSuccessPage />} />

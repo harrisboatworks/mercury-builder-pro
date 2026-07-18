@@ -910,10 +910,10 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           {/* COVERAGE BOX */}
           <View style={styles.summaryBox}>
             <Text style={styles.coverageTitle}>
-              {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
+              MERCURY COVERAGE
             </Text>
             <Text style={styles.summaryItem}>
-              Coverage: {quoteData.selectedPackage?.coverageYears || 3} years total
+              {quoteData.selectedPackage?.coverageYears || 3} years total combined coverage
             </Text>
               <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
                 What's Included:
@@ -923,19 +923,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={styles.summaryItem}>• Motor, controls & installation included</Text>
                 <Text style={styles.summaryItem}>• Product Protection plan details itemized above when selected</Text>
               </>
-              
-              {/* MERCHANDISE BONUS - based on package tier */}
-              {quoteData.selectedPackage?.id && quoteData.selectedPackage.id !== 'good' && (
-                <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                  <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                    PACKAGE BONUS:
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
-                    {quoteData.selectedPackage.id === 'better' && '✓ FREE Mercury Hat ($35 value)'}
-                    {quoteData.selectedPackage.id === 'best' && '✓ FREE Mercury Hat + Shirt ($75 value)'}
-                  </Text>
-                </View>
-              )}
               
             {/* Promotion details */}
             {quoteData.selectedPromoOption && (

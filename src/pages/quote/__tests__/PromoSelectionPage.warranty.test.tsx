@@ -174,6 +174,15 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
       warrantyPrice: 0,
       totalYears: 5,
     });
+    const packageDispatch = dispatchMock.mock.calls
+      .map((c) => c[0])
+      .filter((action) => action?.type === 'SET_SELECTED_PACKAGE')
+      .pop();
+    expect(packageDispatch?.payload).toEqual({
+      id: 'good',
+      label: 'Configured Quote',
+      priceBeforeTax: 0,
+    });
     expect(navigateMock).toHaveBeenCalledWith('/quote/summary');
   });
 

@@ -30,8 +30,7 @@ import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
+import { CreditCard } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -43,10 +42,6 @@ import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
-
-// Package warranty year constants
-const COMPLETE_TARGET_YEARS = 7;
-const PREMIUM_TARGET_YEARS = 8;
 
 // Animation variants
 const sectionVariants = {
@@ -219,9 +214,10 @@ export default function QuoteSummaryPage() {
       if (!state.motor) {
         navigate('/quote/motor-selection');
       } else if (!state.selectedPackage) {
-        // Auto-set Essential package instead of redirecting
+        // Keep the internal baseline package for quote-data compatibility. The
+        // customer-facing package selector is intentionally retired.
         const bonusYears = getTotalWarrantyBonusYears?.() ?? 0;
-        dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+        dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
         dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + bonusYears } });
       }
     }
@@ -234,10 +230,6 @@ export default function QuoteSummaryPage() {
 
   const handleBack = () => {
     navigate('/quote/trade-in');
-  };
-
-  const handleChangePackage = () => {
-    navigate('/quote/package-selection');
   };
 
   const quoteData = getQuoteData();
@@ -345,10 +337,10 @@ export default function QuoteSummaryPage() {
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
   const currentCoverageYears = useMemo(() => Math.min(baseYears + promoYears, 8), [promoYears]);
 
-  // Use selected package from context
+  // Preserve the internal baseline package ID for calculation and saved-quote
+  // compatibility without exposing package tiers in the customer journey.
   const selectedPackage = state.selectedPackage?.id || 'good';
-  const selectedPackageLabel = state.selectedPackage?.label || 'Essential • Best Value';
-  const selectedPackagePriceBeforeTax = state.selectedPackage?.priceBeforeTax || 0;
+  const selectedPackageLabel = state.selectedPackage?.label || 'Configured Quote';
   
   // Get coverage years for selected package
   const selectedPackageCoverageYears = useMemo(() => {
@@ -378,7 +370,7 @@ export default function QuoteSummaryPage() {
     tradeInInfo: state.tradeInInfo,
   });
 
-  // Calculate package-specific totals
+  // Calculate quote totals
   const packageSpecificTotals = useMemo(() => {
     const accessoryTotal = accessoryBreakdown.reduce((sum, item) => sum + item.price, 0);
     return calculateQuotePricing({
@@ -675,7 +667,7 @@ export default function QuoteSummaryPage() {
         const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
         const refNote = savedQuoteRefForSms ? `\nRef: ${savedQuoteRefForSms}` : '';
         const quoteLink = savedQuoteIdForSms ? `\nView: https://www.mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
-        const smsMessage = `👀 Quote Downloaded!${refNote}\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}${quoteLink}`;
+        const smsMessage = `👀 Quote Downloaded!${refNote}\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}${quoteLink}`;
         
         await supabase.functions.invoke('send-sms', {
           body: { to: 'admin', message: smsMessage }
@@ -948,33 +940,16 @@ export default function QuoteSummaryPage() {
     return () => window.removeEventListener('initiate-deposit', handleInitiateDeposit);
   }, [depositAmount, user, motorName, hp, modelYear]);
 
-  // Package features for display
+  // Plain-language inclusions for the configured quote. Product Protection is
+  // presented separately and is not bundled into customer-facing package tiers.
   const isInstalled = state.purchasePath === 'installed';
   const selectedPackageFeatures = useMemo(() => {
-    if (selectedPackage === 'best') {
-      return [
-        "Everything in Complete",
-        `Maximum ${PREMIUM_TARGET_YEARS} years combined coverage`,
-        "Premium propeller",
-        "🧢👕 FREE Hat + Shirt ($75)",
-        ...(isInstalled ? ["White-glove installation"] : [])
-      ];
-    }
-    if (selectedPackage === 'better') {
-      return [
-        "Mercury motor",
-        `${COMPLETE_TARGET_YEARS} years combined coverage`,
-        "Marine battery included",
-        "🧢 FREE Mercury Hat ($35)",
-        ...(isInstalled ? ["Priority installation"] : [])
-      ];
-    }
     return [
       "Mercury motor",
-      `${currentCoverageYears} years included coverage`,
-      ...(isInstalled ? ["Standard installation"] : [])
+      `${selectedPackageCoverageYears} years total combined Mercury coverage`,
+      ...(isInstalled ? ["Professional installation"] : ["Loose motor pickup"])
     ];
-  }, [selectedPackage, currentCoverageYears, isInstalled]);
+  }, [selectedPackageCoverageYears, isInstalled]);
 
   return (
     <>
@@ -1048,21 +1023,7 @@ export default function QuoteSummaryPage() {
             <div className="grid lg:grid-cols-[1fr_440px] gap-12">
               {/* Main Content - Left Column */}
               <div className="space-y-6">
-                {/* Package Header with Change Link */}
-                <div className="flex items-center justify-between">
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">{selectedPackageLabel}</span> Package
-                  </p>
-                  <Button
-                    variant="link"
-                    size="sm"
-                    onClick={() => navigate('/quote/package-selection')}
-                    className="h-auto p-0 text-sm text-primary hover:text-primary/80 gap-1"
-                  >
-                    <ChevronLeft className="w-3.5 h-3.5" />
-                    Change Package
-                  </Button>
-                </div>
+                <p className="text-sm font-medium text-foreground">Your configured quote</p>
 
                 {/* Detailed Pricing Breakdown */}
                 <motion.div
@@ -1081,7 +1042,7 @@ export default function QuoteSummaryPage() {
                       horsepower: state.tradeInInfo.horsepower,
                       model: state.tradeInInfo.model
                     } : undefined}
-                    packageName={selectedPackageLabel}
+                    packageName="Rigging & Installation"
                     includesInstallation={state.purchasePath === 'installed'}
                     onApplyForFinancing={isCashPurchase ? undefined : handleApplyForFinancing}
                     selectedPromoOption={state.selectedPromoOption}
@@ -1190,7 +1151,7 @@ export default function QuoteSummaryPage() {
               {/* Sticky Summary - Right Column (Desktop) */}         
               <div>
                 <StickySummary
-                  packageLabel={selectedPackageLabel}
+                  packageLabel="Configured quote"
                   yourPriceBeforeTax={displayPricing.subtotal}
                   totalWithTax={displayPricing.total}
                   totalSavings={displayPricing.savings}
@@ -1210,7 +1171,6 @@ export default function QuoteSummaryPage() {
                   }}
                   onApplyForFinancing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
-                  showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}
                   quoteValidUntil={(() => {
                     if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);

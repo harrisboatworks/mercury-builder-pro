@@ -205,7 +205,7 @@ export default function PromoSelectionPage() {
 
     // For warranty-only promos, auto-apply the warranty and skip
     if (activePromo && !hasPromotionOptions) {
-      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
       dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + (activePromo.warranty_extra_years || 0) } });
     }
     navigate('/quote/summary', { replace: true });
@@ -253,7 +253,7 @@ export default function PromoSelectionPage() {
     }
 
     const totalWarrantyYears = 3 + (activePromo?.warranty_extra_years ?? 0);
-    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
     dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: totalWarrantyYears } });
     navigate('/quote/summary');
   };
