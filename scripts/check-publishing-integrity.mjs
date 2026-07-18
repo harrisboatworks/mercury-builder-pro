@@ -24,6 +24,16 @@ const mandarinArticlePage = read('src/pages/blog/MandarinBlogArticlePage.tsx');
 const mandarinBlogIndex = read('src/pages/blog/BlogIndexZh.tsx');
 const globalSeo = read('src/components/seo/GlobalSEO.tsx');
 const homepageSeo = read('src/components/seo/HomepageSEO.tsx');
+const frenchLanding = read('src/pages/FrenchLanding.tsx');
+const mandarinLanding = read('src/pages/MandarinLanding.tsx');
+const appSource = read('src/App.tsx');
+const canonicalComponent = read('src/components/seo/Canonical.tsx');
+const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
+const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
+const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
+const sitemapGenerator = read('src/utils/generateSitemap.ts');
+const publicSitemap = read('public/sitemap.xml');
+const parsedVercelConfig = JSON.parse(vercelConfig);
 
 check(
   /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
@@ -79,9 +89,83 @@ check(
   'GlobalSEO must not inject homepage hreflang URLs into every hydrated route.',
 );
 check(
-  /hrefLang="en-CA"/.test(homepageSeo) && /hrefLang="zh-Hans"/.test(homepageSeo) && /hrefLang="x-default"/.test(homepageSeo),
+  /renderHomeHubAlternates\(\)/.test(homepageSeo),
   'HomepageSEO must own the multilingual home-hub hreflang set.',
 );
+const expectedHomeAlternates = [
+  { hrefLang: 'en-CA', path: '/' },
+  { hrefLang: 'fr-CA', path: '/fr' },
+  { hrefLang: 'zh-Hans', path: '/zh' },
+  { hrefLang: 'x-default', path: '/' },
+];
+check(
+  JSON.stringify(seoPageMetadata.home?.alternates) === JSON.stringify(expectedHomeAlternates),
+  'Home hreflang metadata must contain only the reciprocal English, French, Simplified Chinese, and x-default home hubs.',
+);
+check(
+  /renderHomeHubAlternates\(\)/.test(homepageSeo) &&
+    /renderHomeHubAlternates\(\)/.test(frenchLanding) &&
+    /renderHomeHubAlternates\(\)/.test(mandarinLanding) &&
+    /seoPageMetadata\.home\.alternates/.test(homeHubAlternates),
+  'The English, French, and Mandarin home hubs must render one shared hreflang cluster.',
+);
+check(
+  !/hrefLang="(?:ko|es|hi|pa)"/.test(homepageSeo),
+  'Blog language hubs must not be advertised as translated homepage equivalents.',
+);
+check(
+  (prerenderScript.match(/extraHead:\s*HOME_HUB_ALTERNATE_TAGS/g) ?? []).length === 3 &&
+    /<link data-rh="true" rel="alternate"/.test(prerenderScript),
+  'Static home-hub hreflang tags must use the shared reciprocal cluster and be adoptable by Helmet.',
+);
+check(
+  /const \{ title, description \} = seoPageMetadata\.home/.test(homepageSeo) &&
+    /title:\s*HOME_SEO\.title/.test(prerenderScript) &&
+    /description:\s*HOME_SEO\.description/.test(prerenderScript),
+  'Raw and hydrated homepage metadata must use the same source.',
+);
+check(
+  /useLocation\(\)/.test(canonicalComponent) && /<Helmet>/.test(canonicalComponent) &&
+    /canonicalUrlFor\(pathname\)/.test(canonicalComponent) && /<Canonical \/>/.test(appSource),
+  'Hydrated canonicals must be route-aware and owned by Helmet.',
+);
+check(
+  !/document\.createElement\(["']link["']\)/.test(appSource) &&
+    !/document\.head\.appendChild/.test(appSource),
+  'App must not imperatively mutate the canonical link after hydration.',
+);
+check(
+  /'\/mercury-repower-faq':\s*'\/faq'/.test(canonicalUrlSource) &&
+    /'\/motor-selection':\s*'\/quote\/motor-selection'/.test(canonicalUrlSource) &&
+    /canonicalPath:\s*'\/quote\/motor-selection'/.test(prerenderScript),
+  'Raw and hydrated canonicals must preserve the intentional FAQ and motor-selection aliases.',
+);
+check(
+  parsedVercelConfig.trailingSlash === false,
+  'vercel.json must redirect trailing-slash variants to the canonical no-slash URL.',
+);
+check(
+  parsedVercelConfig.redirects?.some((redirect) =>
+    redirect.source === '/REPOWER' && redirect.destination === '/repower' && redirect.statusCode === 301
+  ),
+  'vercel.json must redirect the observed uppercase /REPOWER variant to /repower.',
+);
+for (const loc of [
+  '/mercury-product-protection.md',
+  '/mercury-product-protection.json',
+  '/pricing-reference.md',
+  '/motor-selection',
+  '/mercury-repower-faq',
+]) {
+  const escapedLoc = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const sitemapEntry = new RegExp(`loc:\\s*['"]${escapedLoc}['"]`);
+  check(
+    !sitemapEntry.test(sitemapGenerator) &&
+      !sitemapEntry.test(prerenderScript) &&
+      !publicSitemap.includes(`<loc>https://www.mercuryrepower.ca${loc}</loc>`),
+    `Search sitemap must not list the noindexed or noncanonical URL ${loc}.`,
+  );
+}
 check(
   !/mercuryrepower\.ca\/logo\.png/.test(brandMetadata),
   'brand.json references the removed /logo.png asset.',

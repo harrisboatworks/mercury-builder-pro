@@ -74,6 +74,9 @@ const LIVE_BUSINESS_GEO = {
 const MERCURY_PRODUCT_PROTECTION_RATE_CARD = JSON.parse(
   readFileSync(new URL('../src/data/mercuryProductProtectionRates.json', import.meta.url), 'utf8')
 );
+const SEO_PAGE_METADATA = JSON.parse(
+  readFileSync(new URL('../src/data/seoPageMetadata.json', import.meta.url), 'utf8')
+);
 const MERCURY_PRODUCT_PROTECTION_ALL_PRICES = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.flatMap(
   (band) => Object.values(band.prices).map(Number)
 );
@@ -469,6 +472,13 @@ const DIST = join(ROOT, 'dist');
 const PUBLIC = join(ROOT, 'public');
 const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://www.mercuryrepower.ca';
+const HOME_SEO = SEO_PAGE_METADATA.home;
+const HOME_HUB_ALTERNATE_TAGS = HOME_SEO.alternates
+  .map(({ hrefLang, path }) => {
+    const href = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
+    return `<link data-rh="true" rel="alternate" hreflang="${hrefLang}" href="${href}" />`;
+  })
+  .join('\n  ');
 const MIN_BYTES = 4 * 1024;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
@@ -1010,8 +1020,8 @@ function homepageSchema() {
         "@type": "WebPage",
         "@id": "https://www.mercuryrepower.ca/#webpage",
         "url": "https://www.mercuryrepower.ca/",
-        "name": "Mercury Repower Quotes Online: Real Prices, No Forms | Harris Boat Works",
-        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Premier Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
+        "name": HOME_SEO.title,
+        "description": HOME_SEO.description,
         "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
         "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "primaryImageOfPage": { "@id": "https://www.mercuryrepower.ca/#logo" },
@@ -3827,6 +3837,7 @@ const HUB_DEFS = [
   })(),
   {
     path: '/motor-selection',
+    canonicalPath: '/quote/motor-selection',
     metaTitle: 'Choose the Right Mercury Outboard 2026: HP, Family, Prop | HBW',
     metaDescription: 'Mercury outboard selection by boat type, HP class, and use case. FourStroke vs Pro XS, prop selection, Command Thrust, and live CAD pricing from Harris Boat Works.',
     breadcrumbName: 'Mercury Motor Selection',
@@ -4157,6 +4168,7 @@ const HUB_ROUTES = HUB_DEFS.map(def => {
     : baseSchemas;
   return {
     path: def.path,
+    canonical: def.canonicalPath,
     title: def.metaTitle,
     description: def.metaDescription,
     h1: def.h1,
@@ -4462,11 +4474,12 @@ const routes = [
 
   {
     path: '/',
-    title: 'Mercury Repower Ontario (2026) | Harris Boat Works Rice Lake',
-    description: 'Mercury repower in Ontario (2026). Live CAD quotes for 2.5-300 HP, family-owned since 1947 on Rice Lake. Pickup at Gores Landing, 90 min from Toronto.',
+    title: HOME_SEO.title,
+    description: HOME_SEO.description,
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Premier Dealer on Rice Lake since 1947, selling Mercury since 1965.',
-    schemas: [homepageSchema()]
+    schemas: [homepageSchema()],
+    extraHead: HOME_HUB_ALTERNATE_TAGS,
   },
   ...HUB_ROUTES,
   // ============================================================
@@ -4482,12 +4495,7 @@ const routes = [
     h1: '欢迎来到Harris Boat Works',
     intro: '安大略省Mercury Marine Premier 授权经销商。1947年创立，Rice Lake, Gores Landing, ON。提供水星舷外机、动力升级、保养与购买的中文指南。',
     schemas: [genericPageSchema('/zh', 'Harris Boat Works 中文', 'Mercury Marine Premier 授权经销商，安大略省 Rice Lake。')],
-    extraHead: [
-      `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/zh" />`,
-      `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/" />`,
-      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/fr" />`,
-      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/zh" />`,
-    ].join('\n  '),
+    extraHead: HOME_HUB_ALTERNATE_TAGS,
     extraNoscript: () => {
       const visible = (mandarinBlogArticles || []).filter(a => a.isPublished !== false);
       const sorted = visible.slice().sort((a, b) =>
@@ -4548,12 +4556,7 @@ const routes = [
     intro: "Concessionnaire Mercury Marine Premier en Ontario. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965. Prix en dollars canadiens affichés en ligne, ramassage à Gores Landing sur le lac Rice.",
     htmlLang: 'fr',
     schemas: [genericPageSchema('/fr', 'Harris Boat Works, concessionnaire Mercury en Ontario', 'Concessionnaire Mercury Marine Premier en Ontario. Famille depuis 1947, Mercury depuis 1965. Prix CAD, ramassage à Gores Landing.')],
-    extraHead: [
-      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/fr" />`,
-      `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/" />`,
-      `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/zh" />`,
-      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/" />`,
-    ].join('\n  '),
+    extraHead: HOME_HUB_ALTERNATE_TAGS,
     extraNoscript: () => {
       const visible = (frenchBlogArticles || []).filter(a => a.isPublished !== false);
       const sorted = visible.slice().sort((a, b) =>
@@ -5490,7 +5493,7 @@ function stamp(route) {
   // e.g. /mercury-repower-faq → /faq — can point crawlers at the kept URL)
   const canonicalHref = route.canonical
     ? (route.canonical.startsWith('http') ? route.canonical : `${SITE_URL}${route.canonical}`)
-    : `${SITE_URL}${route.path === '/' ? '' : route.path}`;
+    : `${SITE_URL}${route.path === '/' ? '/' : route.path}`;
   const canonical = `<link data-rh="true" rel="canonical" href="${canonicalHref}" />`;
   if (/<link\s+rel=["']canonical["'][^>]*>/i.test(html)) {
     html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/i, canonical);
@@ -5625,14 +5628,11 @@ const staticSitemapEntries = [
   { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
   { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
   { loc: '/mercury-product-protection', priority: 0.85, changefreq: 'monthly' },
-  { loc: '/mercury-product-protection.md', priority: 0.75, changefreq: 'monthly' },
-  { loc: '/mercury-product-protection.json', priority: 0.7, changefreq: 'monthly' },
   { loc: '/repower', priority: 0.9, changefreq: 'monthly' },
   { loc: '/repower/cost', priority: 0.85, changefreq: 'monthly' },
   { loc: '/repower/process', priority: 0.85, changefreq: 'monthly' },
   { loc: '/repower/financing', priority: 0.85, changefreq: 'monthly' },
   { loc: '/repower/trade-in', priority: 0.85, changefreq: 'monthly' },
-  { loc: '/motor-selection', priority: 0.9, changefreq: 'monthly' },
   { loc: '/maintenance', priority: 0.85, changefreq: 'monthly' },
   { loc: '/lakes', priority: 0.85, changefreq: 'monthly' },
   { loc: '/trade-in-value', priority: 0.8, changefreq: 'weekly' },
@@ -5645,7 +5645,6 @@ const staticSitemapEntries = [
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
   { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
-  { loc: '/mercury-repower-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-pro-xs', priority: 0.85, changefreq: 'weekly' },
@@ -5666,7 +5665,6 @@ const staticSitemapEntries = [
   { loc: '/fr', priority: 0.7, changefreq: 'monthly' },
   { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario', priority: 0.65, changefreq: 'monthly' },
   { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
-  { loc: '/pricing-reference.md', priority: 0.85, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
 ];

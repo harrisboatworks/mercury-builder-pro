@@ -98,8 +98,6 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/quote/motor-selection', lastmod: today, changefreq: 'daily', priority: 0.9 },
     { loc: '/promotions', lastmod: today, changefreq: 'weekly', priority: 0.8 },
     { loc: '/mercury-product-protection', lastmod: today, changefreq: 'monthly', priority: 0.85 },
-    { loc: '/mercury-product-protection.md', lastmod: today, changefreq: 'monthly', priority: 0.75 },
-    { loc: '/mercury-product-protection.json', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/repower', lastmod: today, changefreq: 'monthly', priority: 0.9 },
     { loc: '/repower/cost', lastmod: today, changefreq: 'monthly', priority: 0.85 },
     { loc: '/repower/process', lastmod: today, changefreq: 'monthly', priority: 0.85 },
@@ -117,7 +115,6 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/tools', lastmod: '2026-05-10', changefreq: 'monthly', priority: 0.8 },
     { loc: '/blog', lastmod: today, changefreq: 'weekly', priority: 0.8 },
     // Pilot SEO landing pages: Batch 1
-    { loc: '/mercury-repower-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/how-to-repower-a-boat', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/mercury-dealer-canada-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     // Geo landing pages now live under /locations/:slug, see locationEntries below.
