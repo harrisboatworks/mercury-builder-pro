@@ -5412,8 +5412,6 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
 
 Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the highest tier Mercury awards, which gives our customers factory-direct support, priority parts access, and a shop built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
 
-**Build a quote on any Mercury at /quote/motor-selection, or call us at (905) 342-2153.**
-
 ## Quick recommendation
 If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
 
@@ -5485,7 +5483,7 @@ We don't push repowers that aren't needed. Sometimes a customer comes in with a 
 
 Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
-Ready to talk repower? Call (905) 342-2153 or build a quote at /quote/motor-selection.
+Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
 
 ## Common questions about HBW
 
@@ -5529,7 +5527,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.' },
       { question: 'Who runs Harris Boat Works now?', answer: 'Jay Harris, the third-generation owner. The Harris family has operated the marina continuously since 1947.' },
-      { question: 'How do I get in touch with Harris Boat Works?', answer: 'Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also build a live quote at /quote/motor-selection.' },
+      { question: 'How do I get in touch with Harris Boat Works?', answer: 'Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also [build a live quote online](/quote/motor-selection).' },
     ]
   },
 
