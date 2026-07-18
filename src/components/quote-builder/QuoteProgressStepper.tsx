@@ -2,70 +2,26 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
-
-interface Step {
-  id: number;
-  label: string;
-  shortLabel: string;
-  path: string;
-  isConditional?: boolean;
-  condition?: (state: any) => boolean;
-}
-
-const allSteps: Step[] = [
-  { id: 1, label: 'Motor Selection', shortLabel: 'Motor', path: '/quote/motor-selection' },
-  { id: 2, label: 'Options', shortLabel: 'Options', path: '/quote/options' },
-  { id: 3, label: 'Purchase Path', shortLabel: 'Path', path: '/quote/purchase-path' },
-  { id: 4, label: 'Boat Info', shortLabel: 'Boat', path: '/quote/boat-info' },
-  {
-    id: 5,
-    label: 'Trade-In',
-    shortLabel: 'Trade-In',
-    path: '/quote/trade-in',
-    isConditional: true,
-    condition: (state) => state.hasTradein,
-  },
-  {
-    id: 6,
-    label: 'Fuel Tank',
-    shortLabel: 'Fuel',
-    path: '/quote/fuel-tank',
-    isConditional: true,
-    condition: (state) => state.purchasePath === 'loose' && state.motor?.isTiller,
-  },
-  {
-    id: 7,
-    label: 'Installation',
-    shortLabel: 'Install',
-    path: '/quote/installation',
-    isConditional: true,
-    condition: (state) => state.purchasePath === 'installed',
-  },
-  { id: 8, label: 'Promo', shortLabel: 'Promo', path: '/quote/promo-selection' },
-  { id: 9, label: 'Summary', shortLabel: 'Summary', path: '/quote/summary' },
-];
+import { getVisibleQuoteSteps, type QuoteProgressStep } from './quote-progress-steps';
 
 export const QuoteProgressStepper = () => {
   const { state, isStepAccessible } = useQuote();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const visibleSteps = allSteps.filter((step) => {
-    if (step.isConditional && step.condition) return step.condition(state);
-    return true;
-  });
+  const visibleSteps = getVisibleQuoteSteps(state);
 
   const currentStepIndex = visibleSteps.findIndex((step) => location.pathname === step.path);
   const safeIndex = currentStepIndex < 0 ? 0 : currentStepIndex;
   const isCurrentStep = (index: number) => index === currentStepIndex;
   const isCompleted = (index: number) => index < currentStepIndex;
-  const isAccessible = (step: Step, index: number) => {
+  const isAccessible = (step: QuoteProgressStep, index: number) => {
     if (isCompleted(index)) return true;
     if (isCurrentStep(index)) return true;
     return isStepAccessible(step.id);
   };
 
-  const handleStepClick = (step: Step, index: number) => {
+  const handleStepClick = (step: QuoteProgressStep, index: number) => {
     if (isAccessible(step, index)) navigate(step.path);
   };
 
