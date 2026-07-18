@@ -74,8 +74,8 @@ export default function PromoSelectionPage() {
 
   // Use the same pricing order and quote inputs as the final summary so the
   // payment preview cannot drift from the amount ultimately financed.
-  const estimatedFinancingAmount = useMemo(() => {
-    if (!state.motor) return 0;
+  const financingEstimate = useMemo(() => {
+    if (!state.motor) return null;
     const motorMSRP = state.frozenPricing?.motorMSRP
       ?? (state.motor.msrp || state.motor.basePrice || state.motor.price || 0);
     const promotionalSavings = state.frozenPricing?.promoSavings
@@ -98,7 +98,7 @@ export default function PromoSelectionPage() {
       motorDiscountOverride: state.frozenPricing?.motorDiscount,
       frozenSubtotal: state.frozenPricing?.subtotal,
       dealerFee: DEALERPLAN_FEE,
-    }).financeableAmount;
+    });
   }, [
     getPromotionSavingsForMotor,
     motorHP,
@@ -115,9 +115,14 @@ export default function PromoSelectionPage() {
     state.warrantyConfig,
     state.purchasePath,
   ]);
+  const estimatedFinancingAmount = financingEstimate?.financeableAmount || 0;
+  const financingEligibilityAmount = state.frozenPricing?.total
+    ?? financingEstimate?.pricing.total
+    ?? 0;
 
-  // Check if eligible for financing-dependent options
-  const isEligibleForFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
+  // Match the summary CTA gate: DealerPlan's fee is financed, but it does not
+  // turn an otherwise below-minimum purchase into an eligible application.
+  const isEligibleForFinancing = financingEligibilityAmount >= FINANCING_MINIMUM;
 
   const options = useMemo<PromoOption[]>(() => [
       {

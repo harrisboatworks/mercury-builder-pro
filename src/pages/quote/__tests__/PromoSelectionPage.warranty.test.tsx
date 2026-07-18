@@ -300,6 +300,21 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     expect(screen.queryByRole('button', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
   });
 
+  it('does not use the DealerPlan fee to cross the financing minimum', () => {
+    currentQuoteState = {
+      ...baseQuoteState,
+      motor: { hp: 20, model: '20 MH FourStroke', salePrice: 4650, price: 4650 },
+      purchasePath: 'loose',
+    };
+    currentPromotions = [makePromo({ warranty_extra_years: 0 })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Promotional Financing/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
+  });
+
   it('renders a date-only promotion through the advertised local calendar day', () => {
     currentPromotions = [makePromo({ end_date: '2026-08-31' })];
 
