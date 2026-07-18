@@ -493,8 +493,26 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
   return slugToClusterMap.get(slug);
 }
 
+/**
+ * Per-slug related-slug overrides. When a slug has an entry here, its
+ * "Related guides" list is these exact slugs in this exact order, bypassing
+ * cluster-based sibling resolution. Use sparingly for articles whose best
+ * neighbours live outside their primary cluster.
+ */
+export const relatedSlugsOverrides: Record<string, string[]> = {
+  "boat-rentals-shared-access-booming-2026": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "total-cost-of-owning-a-boat-ontario-2026",
+    "is-a-pontoon-right-for-your-family-rice-lake",
+  ],
+};
+
 /** Pick up to N sibling slugs for the given article (pillar always first). */
 export function getRelatedSlugs(slug: string, max = 5): string[] {
+  const override = relatedSlugsOverrides[slug];
+  if (override) return override.slice(0, max);
   const cluster = getClusterForSlug(slug);
   if (!cluster) return [];
   const isPillar = cluster.pillar === slug;
