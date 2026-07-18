@@ -853,18 +853,22 @@ const AdminQuoteDetail = () => {
                 </h2>
                 <div className="space-y-2 text-sm">
                   <div className="font-medium text-emerald-700 dark:text-emerald-300">
-                    7-Year Factory-Backed Warranty
+                    {promo.warrantyYears > 0
+                      ? `${promo.totalWarranty}-Year Factory-Backed Warranty`
+                      : 'Current Mercury Promotion'}
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-600" />
                     <span>{promo.label}</span>
                     {promo.value && <Badge variant="secondary">{promo.value}</Badge>}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600" />
-                    <span>{promo.totalWarranty}-Year Factory Warranty</span>
-                    <Badge variant="outline" className="text-xs">3 + {promo.warrantyYears} FREE</Badge>
-                  </div>
+                  {promo.warrantyYears > 0 && (
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-600" />
+                      <span>{promo.totalWarranty}-Year Factory Warranty</span>
+                      <Badge variant="outline" className="text-xs">3 + {promo.warrantyYears} FREE</Badge>
+                    </div>
+                  )}
                   {promo.expiryDate && (
                     <div className="flex items-center gap-2 text-muted-foreground pt-1 border-t mt-2">
                       <Calendar className="w-4 h-4" />

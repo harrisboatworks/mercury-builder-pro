@@ -405,7 +405,7 @@ export default function MercuryProductProtection() {
                     Rate-card estimate only. Eligibility, current coverage and final price are confirmed by motor serial number at registration. Taxes and any applicable fees are extra.
                   </p>
                   <Link to="/quote/motor-selection" className="inline-flex shrink-0 items-center justify-center gap-2 bg-[#ed1c28] px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white hover:bg-[#c9101c]">
-                    Add to a quote <ArrowRight className="h-4 w-4" />
+                    Build a motor quote <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>

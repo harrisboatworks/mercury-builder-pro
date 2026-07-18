@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-05-23
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Warranty Canada 2026"
 description: "A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it."
 category: "Buying Guide"
 date_published: 2026-05-23
-date_modified: 2026-05-23
+date_modified: 2026-07-18
 keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury Product Protection MPP","Mercury corrosion warranty","Mercury warranty transfer used motor","Mercury warranty Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-23  
-**Last updated:** 2026-05-23  
+**Last updated:** 2026-07-18  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 
@@ -88,14 +88,14 @@ The phrase "improper installation" matters. **A Mercury installed by your buddy 
 ::decision-card
 eyebrow: Extended warranty decision
 heading: Should you buy Mercury Product Protection?
-subhead: MPP extends coverage up to 8 total years. Worth it for some buyers, overkill for others. The honest answer depends on how you pay and how long you keep the boat.
+subhead: Platinum Product Protection can bring eligible coverage to a maximum of 8 combined years. The honest answer depends on the exact price, how long you keep the boat and how much repair-cost certainty matters to you.
 leftLabel: Take MPP extended coverage
 leftCriteria:
   - You're financing the motor over 5+ years
   - You plan to keep the boat 7+ years
-  - You run the motor hard (heavy hours, towing, offshore)
+  - You run meaningful seasonal hours or tow regularly
   - Peace of mind matters more than the upfront cost
-leftOutcome: 8-year MPP package
+leftOutcome: Price the eligible Platinum term
 leftVariant: recommended
 rightLabel: Factory coverage is enough
 rightCriteria:
@@ -105,31 +105,29 @@ rightCriteria:
   - You service religiously and keep records
 rightOutcome: Stick with the 3-year factory
 rightVariant: alternative
-whenInDoubt: MPP is transferable to a second owner, which adds to resale value. If you're close to the line, the extra coverage usually pays back at trade-in time.
+whenInDoubt: Compare the exact Platinum price with your ownership horizon. Transfer is available to a subsequent recreational-use buyer, but Mercury's timing, eligibility and inspection terms apply.
 ::
 
-## Mercury Product Protection (MPP). The Extended Warranty
+## Mercury Product Protection Platinum. The Extended Service Contract
 
-If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, [an optional extended-coverage program](/blog/mercury-extended-warranty-platinum-ontario) (typically marketed in Gold, Silver, and Premier tiers depending on availability). MPP is not part of the factory standard warranty.
+If you want coverage after the applicable Mercury limited warranty, Mercury offers **Mercury Product Protection (MPP)**, [an optional extended service contract](/blog/mercury-extended-warranty-platinum-ontario). HBW normally quotes the **Platinum** plan because it is Mercury's broadest Product Protection tier, covering eligible mechanical and electrical failures. Platinum is the Product Protection tier. Mercury Premier describes a dealer tier, not a Product Protection plan.
 
-Coverage tiers, durations, and pricing depend on the specific motor, region, current promotions, and how soon after purchase the extension is added. As a general guide:
+The current Canadian Platinum provisions and your motor's serial record govern eligibility. Important points:
 
-- Eligible Mercury outboards can be extended to roughly 5 to 8 years of total coverage (3 standard plus MPP) depending on tier and product
-- **Must be purchased while the original warranty is still active.** Not "within 1 year of purchase", that's an old rule that's been retired. The current rule: any time before your standard 3-year coverage ends.
-- **Transferable** with the motor if you sell it (private sale or dealer trade-in)
-- **Same dealer network**, any authorized Mercury dealer in Canada honours MPP claims
-- Covers the same scope as the original limited warranty, including parts and labour
+- Factory limited warranty and paid Product Protection cannot exceed **8 combined years**.
+- Product Protection must be purchased before the applicable factory limited warranty expires. Mercury's Canadian terms apply a surcharge when it is purchased after the first factory-warranty year.
+- The motor must meet Mercury's age, hour and recreational-use rules. Current Canadian terms specify the current model year plus four previous calendar years and fewer than 500 accumulated engine hours.
+- A transfer to a subsequent recreational-use buyer must be submitted within **30 business days** and remains subject to Mercury's eligibility, documentation, inspection and fee requirements.
+- Claims are made through an authorized Mercury dealer. Mercury approval and the Canadian contract terms apply.
+- Platinum covers the mechanical and electrical parts specifically listed in the contract. Maintenance, normal wear, corrosion, accident damage, abuse, commercial use and unauthorized modifications are excluded.
 
-We can confirm what's available for your specific motor and current promotions when you quote with us.
+We confirm the available term against the serial record and any applicable promotion before registration. [Current Mercury promotions](/promotions) are maintained separately because included coverage can change how many paid Product Protection years are needed.
 
-**What MPP costs (rough):** Pricing varies by motor HP and term length. As a rough range:
-- A 90 HP 4-stroke with a 5-year MPP: roughly $1,200-$1,800 CAD
-- A 200 HP V6 with a 5-year MPP: roughly $1,800-$2,800 CAD
-- A V8/V10 Verado with a 5-year MPP: roughly $2,800-$4,000+ CAD
+**What Platinum costs:** HBW publishes the exact Canadian rate card by horsepower band and purchased term. As verified July 17, 2026, a five-year Platinum plan is **$2,077 CAD before HST** for 75-149.9 HP and **$6,964 CAD before HST** for 200-299.9 HP. See the maintained [Mercury Product Protection prices and estimator](/mercury-product-protection) for every band and one- through five-year term.
 
-**Is it worth it?** Honest take from our shop: for motors over 90 HP, **yes**, the cost of one major out-of-warranty repair (cracked block, blown head gasket, lower unit rebuild) easily exceeds the MPP price. For smaller motors, it's a closer call; the math depends on how risk-tolerant you are. Most of our 115 HP+ buyers add MPP. About half of our 90 HP buyers do. Below 90 HP, it's less common.
+**Is it worth it?** It can be reasonable when you plan to keep the motor beyond the factory-warranty period, finance over a longer term or want predictable exposure to a covered mechanical or electrical failure. It can be unnecessary for a short ownership horizon or when you are comfortable carrying repair risk yourself. Use the exact price, not a generic horsepower rule.
 
-The other factor: resale. A used motor with transferable MPP coverage is meaningfully easier to sell, and at a higher price.
+Transferability can also be useful at resale, but it is a documented process, not an automatic promise of a higher selling price.
 
 ---
 
@@ -137,9 +135,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Buying a Used Mercury. Does the Warranty Transfer?
 
-Mercury's standard warranty **partially transfers** to a second owner with documentation. The corrosion warranty transfers; the limited warranty transfers as long as you can prove the original purchase date and registration.
-
-**MPP transfers fully**, regardless of original owner.
+Mercury's warranty and Product Protection transfer rules are not identical. For Product Protection, the current Canadian Platinum provisions allow transfer to a subsequent recreational-use buyer when the transfer is submitted within 30 business days and Mercury's eligibility, documentation, inspection and fee requirements are met.
 
 If you're buying a used Mercury under three years old, **ask the seller for**:
 - Original sale receipt or dealer invoice (proves warranty start date)
@@ -176,7 +172,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 **Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. [Mercury Canada](https://www.mercurymarine.com/canada/en/) and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
 
-**The HST/GST factor.** When you buy MPP at the same time as a new motor, the MPP cost gets bundled into the original sale total, which means you pay HST on the MPP. Some customers split the purchases (buy the motor first, MPP a few months later) to spread the tax hit. The trade-off: Mercury sometimes runs MPP promotions that are only available at point-of-sale, so splitting can cost you a discount. Ask your dealer about current promos before deciding.
+**The HST factor.** HBW's published Platinum prices are in Canadian dollars before HST. Buying later does not avoid tax, and the Canadian terms say purchases after the first factory-warranty year are subject to a surcharge. Check [current promotions](/promotions) and have HBW verify the serial record before choosing the timing.
 
 ---
 
@@ -192,7 +188,7 @@ If you bought a Mercury elsewhere and want warranty work done in our shop, we ca
 
 Service requests: [hbw.wiki/service](https://hbw.wiki/service).
 
-New Mercury quotes (with MPP options): [mercuryrepower.ca](https://www.mercuryrepower.ca).
+New Mercury motor quotes: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -214,8 +210,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Sources
 
-- [Mercury Marine - Warranty](https://www.mercurymarine.com/canada/en/owners/warranty/) - Official Mercury Canadian limited warranty terms.
-- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network for warranty claims and Mercury Product Protection.
+- [Mercury Product Protection](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection) - Official Mercury overview, coverage comparison and program guidelines.
+- [Current Canadian Platinum Plan Benefits and Provisions](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf) - Canadian contract terms reviewed for this update.
 
 ## FAQs
 
@@ -225,11 +221,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### When can I buy MPP, is there still a 1-year purchase deadline?
 
-No. The old "purchase within 1 year" rule has been retired. You can purchase MPP any time before your standard 3-year warranty expires. There's still incentive to buy early (Mercury sometimes runs point-of-sale promos), but you have the full 3 years to decide.
+Mercury Product Protection must be purchased before the applicable factory limited warranty expires. The current Canadian Platinum terms apply a surcharge after the first factory-warranty year, and model age, hours, use and serial-record eligibility still apply. HBW verifies those details before registration.
 
 ### Does the warranty transfer if I sell my Mercury?
 
-Yes, partially. The corrosion warranty and the remaining limited warranty transfer with documented sale. The MPP transfers fully. Without paperwork (original receipt, dealer registration, service records), the transferred warranty is hard to prove and Mercury may not honour claims.
+Product Protection can transfer to a subsequent recreational-use buyer when Mercury's requirements are met. The current Canadian Platinum terms require submission within 30 business days and may require documentation, inspection and a transfer fee. HBW can check the serial record and paperwork.
 
 ### Will my warranty be voided if I do my own oil changes?
 
@@ -237,7 +233,7 @@ No, as long as you use the correct oil and follow Mercury's specifications. Keep
 
 ### Is MPP worth it on a 90 HP 4-stroke?
 
-Most of our 90 HP+ buyers add it. A single major repair (head gasket, lower unit, ECU) usually costs more than the MPP premium. The math is closer below 90 HP. Above 150 HP it's almost always worth it. The other consideration: transferable MPP makes the motor easier to resell at a better price years later.
+It depends on the exact Platinum price, how long you plan to keep the motor and how much repair-cost certainty matters to you. HBW publishes exact CAD pricing by horsepower and term at /mercury-product-protection so you can compare the real cost instead of relying on a generic horsepower rule.
 
 ### What if I bought my Mercury from a dealer that's no longer in business?
 
@@ -261,4 +257,3 @@ Not directly. But if Mercury determines a fuel-system failure was caused by etha
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

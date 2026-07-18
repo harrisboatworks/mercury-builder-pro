@@ -631,7 +631,7 @@ function MotorCardPreviewInner({
               onClick={(e) => e.stopPropagation()}
               className="block text-center text-xs text-repower-navy-900/55 hover:text-repower-navy-900 mt-3 underline-offset-2 hover:underline"
             >
-              Not sure? Call (905) 342-2153 and we'll match it.
+              Have a complete written quote? Call (905) 342-2153 and we'll see what we can do.
             </a>
 
             {/* Monthly payment estimate (kept, secondary) */}
