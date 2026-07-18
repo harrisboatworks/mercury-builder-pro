@@ -41,6 +41,7 @@ interface PricingTableProps {
   onApplyForFinancing?: () => void;
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  selectedPaymentMethod?: 'cash_purchase' | 'standard_financing' | 'special_financing' | null;
   warrantyPromoYears?: number;
   totalCoverageYears?: number;
   financingTerms?: {
@@ -62,6 +63,7 @@ export function PricingTable({
   onApplyForFinancing,
   selectedPromoOption,
   selectedPromoValue,
+  selectedPaymentMethod,
   warrantyPromoYears,
   totalCoverageYears,
   financingTerms,
@@ -245,8 +247,19 @@ export function PricingTable({
         />
       </div>
 
-      {/* Financing Callout - Subtle and Minimal - Only show for $5,000+ */}
-      {pricing.total >= FINANCING_MINIMUM && (
+      {selectedPaymentMethod === 'cash_purchase' && (
+        <div className="mt-6 mb-4 border-t border-repower-navy-900/20 pt-6">
+          <div className="rounded-lg border border-repower-gold/35 bg-repower-cream px-4 py-3">
+            <div className="text-sm font-semibold text-repower-navy-900">Cash purchase selected</div>
+            <div className="mt-1 text-xs text-repower-navy-900/65">
+              No financing is included. Your eligible Mercury rebate remains applied above.
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Financing Callout - Subtle and Minimal - Only show for $5,000+ non-cash quotes */}
+      {selectedPaymentMethod !== 'cash_purchase' && pricing.total >= FINANCING_MINIMUM && (
         <div className="mt-6 mb-4 pt-6 border-t border-repower-navy-900/20 space-y-2">
           <div className="text-sm text-repower-navy-900 font-normal">
             Flexible financing available

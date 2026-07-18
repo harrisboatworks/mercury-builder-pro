@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Percent, Banknote, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
+import { Shield, Percent, Banknote, CreditCard, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -15,10 +15,10 @@ import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShe
 import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
 import { promoEndOfDay } from '@/lib/quote-utils';
 
-type PromoOptionId = 'special_financing' | 'cash_rebate';
+type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
 interface PromoOption {
-  id: PromoOptionId;
+  id: PaymentOptionId;
   title: string;
   subtitle: string;
   description: string;
@@ -39,11 +39,12 @@ export default function PromoSelectionPage() {
   const { triggerHaptic } = useHapticFeedback();
 
   // Restore from context if user navigates back
-  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(
-    (state.selectedPromoOption === 'special_financing' || state.selectedPromoOption === 'cash_rebate')
-      ? state.selectedPromoOption
-      : null
-  );
+  const [selectedOption, setSelectedOption] = useState<PaymentOptionId | null>(() => {
+    if (state.selectedPaymentMethod) return state.selectedPaymentMethod;
+    if (state.selectedPromoOption === 'special_financing') return 'special_financing';
+    if (state.selectedPromoOption === 'cash_rebate') return 'standard_financing';
+    return null;
+  });
   const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
     state.selectedPromoRate && state.selectedPromoTerm
       ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
@@ -61,7 +62,10 @@ export default function PromoSelectionPage() {
   // Get dynamic values based on motor HP
   const motorHP = state.motor?.hp || 150;
   const rebateAmount = getRebateForHP(motorHP) || 0;
-  const financingRates = getSpecialFinancingRates() || [];
+  const financingRates = useMemo(
+    () => getSpecialFinancingRates() || [],
+    [getSpecialFinancingRates],
+  );
   const lowestRate = financingRates?.[0]?.rate || 2.99;
   const shortestPromoTerm = financingRates.length > 0
     ? financingRates.reduce((min, r) => (r.months < min.months ? r : min), financingRates[0])
@@ -79,36 +83,47 @@ export default function PromoSelectionPage() {
   // Check if eligible for financing-dependent options
   const isEligibleForFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
 
-  const options: PromoOption[] = [
-    {
-      id: 'special_financing',
-      title: 'Promotional Financing',
-      subtitle: shortestPromoTerm
-        ? `${shortestPromoTerm.rate}% for ${shortestPromoTerm.months} months (OAC)`
-        : `As Low As ${lowestRate}% APR (OAC)`,
-      description: 'Layered on top of your rebate. Pick promo financing to lock in a low promotional rate, or keep standard TD financing.',
-      highlight: 'Optional Add-On',
-      icon: Percent,
-    },
-    {
-      id: 'cash_rebate',
-      title: 'Standard TD Financing',
-      subtitle: 'As low as 5.48% APR',
-      description: 'Keep the standard TD "Always On" program. Your factory rebate above is still applied either way.',
-      highlight: 'Default',
-      icon: Banknote,
-    },
-  ];
+  const options = useMemo<PromoOption[]>(() => [
+      {
+        id: 'cash_purchase',
+        title: 'Cash Purchase',
+        subtitle: 'No financing',
+        description: 'Pay without financing. Your eligible factory rebate remains fully applied to the quote.',
+        highlight: 'No Loan',
+        icon: Banknote,
+      },
+      {
+        id: 'special_financing',
+        title: 'Promotional Financing',
+        subtitle: shortestPromoTerm
+          ? `${shortestPromoTerm.rate}% for ${shortestPromoTerm.months} months (OAC)`
+          : `As Low As ${lowestRate}% APR (OAC)`,
+        description: 'Layered on top of your rebate. Pick promo financing to lock in a low promotional rate, or keep standard TD financing.',
+        highlight: 'Optional Add-On',
+        icon: Percent,
+      },
+      {
+        id: 'standard_financing',
+        title: 'Standard TD Financing',
+        subtitle: 'As low as 5.48% APR',
+        description: 'Use the standard TD "Always On" program. Your eligible factory rebate remains fully applied.',
+        highlight: 'Flexible Terms',
+        icon: CreditCard,
+      },
+    ],
+    [lowestRate, shortestPromoTerm],
+  );
 
   // Filter to only eligible options - hide financing-only options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
-      if (option.id === 'special_financing' && !isEligibleForFinancing) return false;
+      if ((option.id === 'special_financing' || option.id === 'standard_financing') && !isEligibleForFinancing) return false;
       return true;
     });
-  }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
+  }, [options, isEligibleForFinancing]);
 
   const persistFinancingRate = useCallback((rate: FinancingRate) => {
+    dispatch({ type: 'SET_PAYMENT_METHOD', payload: 'special_financing' });
     dispatch({
       type: 'SET_PROMO_DETAILS',
       payload: {
@@ -196,14 +211,16 @@ export default function PromoSelectionPage() {
     navigate('/quote/summary', { replace: true });
   }, [promoLoading, activePromo, hasPromotionOptions, state.motor, navigate, dispatch]);
 
-  const handleOptionSelect = (optionId: PromoOptionId) => {
+  const handleOptionSelect = (optionId: PaymentOptionId) => {
     setSelectedOption(optionId);
     setHasJustSelected(true);
     setHasUserInteracted(true);
     triggerHaptic('light');
 
-    if (optionId === 'cash_rebate') {
-      // Standard TD financing — clear any promo rate/term, keep rebate.
+    dispatch({ type: 'SET_PAYMENT_METHOD', payload: optionId });
+
+    if (optionId === 'cash_purchase' || optionId === 'standard_financing') {
+      // Cash and standard financing both keep the independently layered rebate.
       setSelectedRate(null);
       dispatch({
         type: 'SET_PROMO_DETAILS',
@@ -359,7 +376,7 @@ export default function PromoSelectionPage() {
             {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
               <div className="flex-1 h-px bg-border"></div>
-              <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose Your Financing</span>
+              <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose How You'll Pay</span>
               <div className="flex-1 h-px bg-border"></div>
             </div>
 
@@ -418,6 +435,10 @@ export default function PromoSelectionPage() {
 
                     {/* Title */}
                     <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
+
+                    <div className="mb-3 text-sm font-semibold text-repower-navy-900/75">
+                      {option.subtitle}
+                    </div>
 
                     {/* Highlight Badge */}
                     <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-repower-cream text-repower-navy-900 border border-repower-gold/30">
@@ -507,7 +528,7 @@ export default function PromoSelectionPage() {
                 disabled={!selectedOption || (selectedOption === 'special_financing' && !selectedRate)}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
-                Apply Bonus & Continue
+                Continue to Quote
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               {!selectedOption && (

@@ -475,6 +475,7 @@ export interface QuotePDFProps {
     // Selected promo option from "Choose One"
     selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
     selectedPromoValue?: string; // e.g., "$500" or "2.99%" or "6 months"
+    selectedPaymentMethod?: 'cash_purchase' | 'standard_financing' | 'special_financing' | null;
     promotionName?: string;
     promotionCombinationMode?: 'layered' | 'choose_one';
     // Deposit/payment confirmation
@@ -951,6 +952,17 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   {quoteData.selectedPromoOption === 'no_payments' && `✓ 6 Months No Payments${quoteData.selectedPromoValue ? ` (${quoteData.selectedPromoValue})` : ''}`}
                   {quoteData.selectedPromoOption === 'special_financing' && `✓ Promotional financing: ${quoteData.selectedPromoValue || '2.99%'} APR for ${quoteData.financingTerm || 24} months (OAC)`}
                   {quoteData.selectedPromoOption === 'cash_rebate' && `✓ Factory rebate applied${quoteData.selectedPromoValue ? `: ${quoteData.selectedPromoValue}` : ''}`}
+                </Text>
+              </View>
+            )}
+
+            {quoteData.selectedPaymentMethod === 'cash_purchase' && (
+              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
+                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+                  PURCHASE METHOD:
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text, fontWeight: 'bold' }}>
+                  ✓ Cash purchase (no financing)
                 </Text>
               </View>
             )}

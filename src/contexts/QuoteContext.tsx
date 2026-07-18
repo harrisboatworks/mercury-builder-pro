@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useMemo, useState } from 'react';
-import { Motor, BoatInfo, QuoteData } from '@/components/QuoteBuilder';
+import type { Motor, BoatInfo, QuoteData, QuotePaymentMethod } from '@/components/QuoteBuilder';
 import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
 import { trackEvent } from '@/lib/analytics';
 
@@ -80,6 +80,7 @@ interface QuoteState {
   selectedPromoRate: number | null;      // e.g., 2.99, 3.99, 4.49, 5.49 for special financing
   selectedPromoTerm: number | null;      // e.g., 24, 36, 48, 60 months for special financing
   selectedPromoValue: string | null;     // Display value (e.g., "$500", "3.99% for 36mo")
+  selectedPaymentMethod: QuotePaymentMethod | null; // Separate from the promotion benefit so cash still keeps a layered rebate
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
@@ -122,6 +123,7 @@ type QuoteAction =
       term?: number | null;
       value?: string | null;
     }}
+  | { type: 'SET_PAYMENT_METHOD'; payload: QuotePaymentMethod | null }
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
@@ -160,6 +162,7 @@ const initialState: QuoteState = {
   selectedPromoRate: null,
   selectedPromoTerm: null,
   selectedPromoValue: null,
+  selectedPaymentMethod: null,
   completedSteps: [],
   currentStep: 1,
   isLoading: true,
@@ -237,6 +240,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         selectedPromoTerm: action.payload.term ?? null,
         selectedPromoValue: action.payload.value ?? null,
       };
+    case 'SET_PAYMENT_METHOD':
+      return { ...state, selectedPaymentMethod: action.payload };
     case 'COMPLETE_STEP': {
       // Analytics: fire quote_step_complete on advance (not back-nav). Each step fires once per session.
       try {
@@ -336,6 +341,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         selectedPromoRate: restored.selectedPromoRate || null,
         selectedPromoTerm: restored.selectedPromoTerm || null,
         selectedPromoValue: restored.selectedPromoValue || null,
+        selectedPaymentMethod: restored.selectedPaymentMethod || null,
         adminCustomItems: restored.adminCustomItems || [],
         isLoading: false
       };
@@ -624,6 +630,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     selectedPromoRate: state.selectedPromoRate,
     selectedPromoTerm: state.selectedPromoTerm,
     selectedPromoValue: state.selectedPromoValue,
+    selectedPaymentMethod: state.selectedPaymentMethod,
     looseMotorBattery: state.looseMotorBattery
   });
 

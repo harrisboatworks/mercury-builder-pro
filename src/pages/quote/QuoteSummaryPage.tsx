@@ -493,6 +493,7 @@ export default function QuoteSummaryPage() {
       canAddFuelTank]);
 
   const amountToFinance = getFinanceableAmount(displayPricing.subtotal, 0.13, DEALERPLAN_FEE);
+  const isCashPurchase = state.selectedPaymentMethod === 'cash_purchase';
   // If the customer opted in to promotional financing on PromoSelectionPage,
   // use that rate/term for the monthly payment displayed in the summary.
   // Otherwise fall back to the TD "Always On" promo rate (unchanged).
@@ -626,13 +627,14 @@ export default function QuoteSummaryPage() {
         },
         // Always include QR code; only include financing data if total meets minimum threshold
         financingQrCode: qrCodeDataUrl,
-        ...(packageTotal >= FINANCING_MINIMUM ? {
+        ...(!isCashPurchase && packageTotal >= FINANCING_MINIMUM ? {
           monthlyPayment,
           financingTerm: termMonths,
           financingRate,
         } : {}),
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
+        selectedPaymentMethod: state.selectedPaymentMethod,
         promotionName: currentPromotion?.name ?? undefined,
         promotionCombinationMode: currentPromotion?.promo_options?.type ?? undefined,
         customerNotes: state.customerNotes || undefined,
@@ -1013,7 +1015,8 @@ export default function QuoteSummaryPage() {
         imageUrl={imageUrl}
         selectedPromoOption={state.selectedPromoOption}
         selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
-        monthlyPayment={monthlyPayment}
+        monthlyPayment={isCashPurchase ? undefined : monthlyPayment}
+        showMonthlyPayment={!isCashPurchase}
       />
       
       {/* Stale Quote Detection */}
@@ -1075,12 +1078,13 @@ export default function QuoteSummaryPage() {
                     } : undefined}
                     packageName={selectedPackageLabel}
                     includesInstallation={state.purchasePath === 'installed'}
-                    onApplyForFinancing={handleApplyForFinancing}
+                    onApplyForFinancing={isCashPurchase ? undefined : handleApplyForFinancing}
                     selectedPromoOption={state.selectedPromoOption}
                     selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
+                    selectedPaymentMethod={state.selectedPaymentMethod}
                     warrantyPromoYears={promoYears > 0 ? promoYears : undefined}
                     totalCoverageYears={selectedPackageCoverageYears}
-                    financingTerms={{
+                    financingTerms={isCashPurchase ? undefined : {
                       payment: monthlyPayment,
                       rate: financingRate,
                       termMonths,
@@ -1164,7 +1168,7 @@ export default function QuoteSummaryPage() {
                       <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
                   </button>
-                  {displayPricing.total >= FINANCING_MINIMUM && (
+                  {!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM && (
                     <button
                       onClick={handleApplyForFinancing}
                       className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40"
@@ -1185,7 +1189,7 @@ export default function QuoteSummaryPage() {
                   yourPriceBeforeTax={displayPricing.subtotal}
                   totalWithTax={displayPricing.total}
                   totalSavings={displayPricing.savings}
-                  monthly={monthlyPayment}
+                  monthly={isCashPurchase ? undefined : monthlyPayment}
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
                   depositAmount={depositAmount}
@@ -1199,7 +1203,7 @@ export default function QuoteSummaryPage() {
                       setShowAuthSaveDialog(true);
                     }
                   }}
-                  onApplyForFinancing={displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
+                  onApplyForFinancing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}

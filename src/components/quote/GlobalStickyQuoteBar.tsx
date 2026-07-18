@@ -54,6 +54,7 @@ export function GlobalStickyQuoteBar() {
 
   // Calculate monthly payment - only for amounts >= $5,000
   const monthlyPayment = useMemo(() => {
+    if (state.selectedPaymentMethod === 'cash_purchase') return null;
     if (!runningTotal || runningTotal < FINANCING_MINIMUM) return null;
 
     // Add Dealerplan fee
@@ -64,7 +65,7 @@ export function GlobalStickyQuoteBar() {
     const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);
 
     return payment;
-  }, [runningTotal, promo]);
+  }, [runningTotal, promo, state.selectedPaymentMethod]);
 
   // Financing unavailable when total is valid but below threshold
   const financingUnavailable = useMemo(() => {

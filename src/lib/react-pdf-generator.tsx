@@ -57,6 +57,7 @@ export interface ReactPdfQuoteData {
   // Selected promo option
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  selectedPaymentMethod?: 'cash_purchase' | 'standard_financing' | 'special_financing' | null;
   promotionName?: string;
   promotionCombinationMode?: 'layered' | 'choose_one';
   promoEndDate?: string;
@@ -123,6 +124,7 @@ function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     includesInstallation: data.includesInstallation,
     selectedPromoOption: data.selectedPromoOption,
     selectedPromoValue: data.selectedPromoValue,
+    selectedPaymentMethod: data.selectedPaymentMethod,
     promotionName: data.promotionName,
     promotionCombinationMode: data.promotionCombinationMode,
     promoEndDate: data.promoEndDate,

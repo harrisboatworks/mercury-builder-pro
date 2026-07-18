@@ -35,4 +35,37 @@ describe('PricingTable financing terms', () => {
     expect(screen.getByText(/your selected promotional terms/i)).toBeInTheDocument();
     expect(screen.queryByText(/5\.48% APR/i)).not.toBeInTheDocument();
   });
+
+  it('respects a cash purchase while keeping the factory rebate visible', () => {
+    render(
+      <PricingTable
+        pricing={{
+          msrp: 12_040,
+          discount: 0,
+          adminDiscount: 0,
+          promoValue: 250,
+          subtotal: 11_790,
+          tax: 1_532.70,
+          total: 13_322.70,
+          savings: 250,
+        }}
+        selectedPromoOption="cash_rebate"
+        selectedPromoValue="$250"
+        selectedPaymentMethod="cash_purchase"
+        onApplyForFinancing={vi.fn()}
+        financingTerms={{
+          payment: 255,
+          rate: 5.48,
+          termMonths: 60,
+          isPromotional: false,
+        }}
+      />,
+    );
+
+    expect(screen.getByText('Cash purchase selected')).toBeInTheDocument();
+    expect(screen.getByText(/No financing is included/i)).toBeInTheDocument();
+    expect(screen.getByText('Mercury Rebate')).toBeInTheDocument();
+    expect(screen.queryByText(/From \$255\/month/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Apply for Financing/i })).not.toBeInTheDocument();
+  });
 });
