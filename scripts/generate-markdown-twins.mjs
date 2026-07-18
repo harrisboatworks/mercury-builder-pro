@@ -763,7 +763,8 @@ function loadBlogClusterData() {
 function renderRelatedGuidesMarkdown(slug, contentMarkdown, clusterData) {
   const siblings = clusterData.relatedBySlug[slug];
   if (!siblings || siblings.length === 0) return '';
-  const linkedInBody = new Set(
+  const isOverride = Array.isArray(clusterData.overrideSlugs) && clusterData.overrideSlugs.includes(slug);
+  const linkedInBody = isOverride ? new Set() : new Set(
     Array.from((contentMarkdown || '').matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(m => m[1])
   );
   const picked = siblings.filter(s => !linkedInBody.has(s)).slice(0, 5);
