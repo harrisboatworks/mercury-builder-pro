@@ -4,6 +4,7 @@
  */
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { isSameHpMercuryTrade, resolvePropellerDecision } from '@/lib/propeller-selection';
 import { hasElectricStart } from '@/lib/motor-config-utils';
 
 export interface AccessoryBreakdownItem {
@@ -22,7 +23,7 @@ export interface BuildAccessoryBreakdownParams {
   selectedPackage?: string; // 'good' | 'better' | 'best'
   adminCustomItems?: Array<{ name: string; price: number }>;
   warrantyConfig?: { extendedYears?: number; warrantyPrice?: number; totalYears?: number } | null;
-  tradeInInfo?: { brand?: string; horsepower?: number; hasTradeIn?: boolean };
+  tradeInInfo?: { brand?: string; horsepower?: number | string; hasTradeIn?: boolean };
 }
 
 export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): AccessoryBreakdownItem[] {
@@ -141,22 +142,22 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
   }
 
   // Propeller allowance (or customer prop opt-out / trade-in match)
-  const isMercuryTradeMatch = tradeInInfo?.hasTradeIn &&
-    tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
-    Number(tradeInInfo?.horsepower) === Number(hp);
+  const isMercuryTradeMatch = isSameHpMercuryTrade(tradeInInfo, hp);
+  const propellerDecision = resolvePropellerDecision({
+    hp,
+    installConfig,
+    boatInfo,
+    tradeInInfo,
+  });
 
   if (!includesProp && propAllowance) {
-    if (boatInfo?.hasCompatibleProp) {
+    if (propellerDecision === 'reuse_existing') {
       breakdown.push({
-        name: 'Use of Customer Propeller',
+        name: 'Propeller: Use Existing',
         price: 0,
-        description: 'If one is required, additional cost applies'
-      });
-    } else if (isMercuryTradeMatch) {
-      breakdown.push({
-        name: 'Propeller — Use Existing',
-        price: 0,
-        description: `Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed). Saving you $${propAllowance!.price.toLocaleString()}.`
+        description: isMercuryTradeMatch
+          ? 'Your current Mercury propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.'
+          : 'Your propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.'
       });
     } else {
       breakdown.push({

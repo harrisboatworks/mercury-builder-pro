@@ -925,20 +925,6 @@ export const BoatInformation = ({
                               {/* Control radio options already shown above */}
                               <div className="text-xs text-muted-foreground">We’ll confirm compatibility during installation.</div>
                             </div>}
-                          {hp >= 25 && boatInfo.currentMotorBrand === 'Mercury' && <div className="accessory-item">
-                              <label className="flex items-start gap-2">
-                                <input type="checkbox" checked={!!boatInfo.hasCompatibleProp} onChange={e => setBoatInfo(prev => ({
-                          ...prev,
-                          hasCompatibleProp: e.target.checked
-                        }))} />
-                                <span>I have a compatible propeller from my old {hp}HP motor</span>
-                              </label>
-                              {!boatInfo.hasCompatibleProp && <div className="cost-note text-sm text-protected-primary">
-                                  +${hp >= 150 ? '1,200 (Stainless Steel)' : '350 (Aluminum)'}
-                                  <small className="block text-xs text-protected-muted">Fit and Size determined to be confirmed at inspection</small>
-                                </div>}
-                            </div>}
-
                           {/* Highlight FREE water testing */}
                           <div className="water-test-benefit bg-accent p-4 rounded-lg">
                             <h4 className="font-bold text-accent-foreground">✅ FREE Water Testing Included</h4>

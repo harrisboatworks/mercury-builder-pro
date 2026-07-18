@@ -122,7 +122,7 @@ export default function InstallationPage() {
         <QuotePageShell
           eyebrow="Step 5 · Installation"
           title="Configure your installation"
-          subhead="Tell us how you'd like the motor rigged. We handle controls, steering, and dispose of your old one."
+          subhead="Confirm the propeller and mounting details. Final propeller size is verified during water testing."
           className="!py-6 md:!py-8"
         >
           <div className="mx-auto w-full max-w-[880px] mb-6 bg-repower-cream border border-repower-navy-900/10 p-5 rounded-sm">
@@ -136,6 +136,8 @@ export default function InstallationPage() {
           <InstallationConfig
             selectedMotor={state.motor}
             boatInfo={state.boatInfo}
+            initialConfig={state.installConfig}
+            tradeInInfo={state.tradeInInfo}
             onComplete={handleStepComplete}
           />
         </QuotePageShell>

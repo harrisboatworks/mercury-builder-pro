@@ -404,6 +404,9 @@ export default function QuoteBuilder() {
           >
             <InstallationConfig
               selectedMotor={selectedMotor}
+              boatInfo={boatInfo}
+              initialConfig={installConfig}
+              tradeInInfo={tradeInInfo}
               onComplete={handleConfigComplete}
             />
           </motion.div>
