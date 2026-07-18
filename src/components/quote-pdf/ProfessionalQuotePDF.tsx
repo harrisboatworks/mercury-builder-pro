@@ -1053,9 +1053,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <Text style={styles.termsText}>
               • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
             </Text>
-            <Text style={styles.termsText}>
-              • Financing options available subject to credit approval • Ask your sales representative for details
-            </Text>
+            {quoteData.selectedPaymentMethod !== 'cash_purchase' && (
+              <Text style={styles.termsText}>
+                • Financing options available subject to credit approval • Ask your sales representative for details
+              </Text>
+            )}
           </View>
         </View>
 
