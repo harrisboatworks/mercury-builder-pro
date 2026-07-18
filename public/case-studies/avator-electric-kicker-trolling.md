@@ -11,18 +11,21 @@ case_study_id: CS10
 slug: avator-electric-kicker-trolling
 boat_type: "18-foot aluminum walleye / muskie boat"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
 # Avator 7.5e Electric Kicker on a Walleye Boat
 
-Add a silent Mercury Avator 7.5e electric kicker to an 18-foot walleye boat for $4,500–$6,500 all-in at Harris Boat Works.
+An illustrative 18-foot walleye-boat scenario adding a Mercury Avator 7.5e electric outboard for quiet, low-speed use.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
 - **Boat type:** 18-foot aluminum walleye / muskie boat
 - **Region:** Rice Lake / Kawarthas
 - **Scenario:** Electric kicker / trolling install
-- **HP jump:** Silent kicker add (3.5 HP gas equivalent)
+- **HP jump:** 750-watt electric outboard added for defined low-speed use
 
 ## Before → After
 
@@ -31,17 +34,17 @@ Add a silent Mercury Avator 7.5e electric kicker to an 18-foot walleye boat for 
 
 ## Recommendation
 
-Best for 16–19-foot aluminum walleye and muskie boats with a main motor already on the transom, where the owner wants a silent trolling/kicker option without spooking fish.
+Consider for a compatible fishing boat only after confirming the complete load, required range and reserve, transom or bracket fit, controls, and charging access.
 
-## Why it worked
+## Why this configuration may fit
 
-- Silent at trolling speeds for walleye and muskie
-- No carb, no fuel stabilizer, no spark plug ritual
-- Integrates with Mercury smart helm for state-of-charge readout
+- Quiet electric operation with no exhaust at the motor
+- One integrated quick-swap battery, with an optional charged spare carried separately
+- Integrated display shows battery, power, and estimated runtime
 
-## Customer quote
+## Planning takeaway
 
-> Silent troll, no fuel ritual, and a battery you charge like a phone.
+A quiet, low-speed option can make sense when the boat, route, range, mounting, and charging plan all fit.
 
 ## Quote a similar repower
 

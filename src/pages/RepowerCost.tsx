@@ -166,7 +166,7 @@ export default function RepowerCost() {
           <p>What's not in the price: trailer work, hull repair, gel-coat or aluminum patching, fuel tank replacement. Any of that gets flagged and quoted separately.</p>
 
           <h3>How does pricing change by horsepower?</h3>
-          <p>Three buckets cover most repowers. Mid-range FourStroke 40 to 90 HP lands $11,000 to $18,000 (2026). Big-block 115 to 200 HP lands $18,000 to $32,000 (2026). Pro XS 115 to 300 HP lands $19,000 to $40,000 (2026), and the Boost upgrade on Pro XS V8 4.6L (175/200/225 HP) adds roughly $1,200 to $1,800 to the motor.</p>
+          <p>Three buckets cover most repowers. Mid-range FourStroke 40 to 90 HP lands $11,000 to $18,000 (2026). Big-block 115 to 200 HP lands $18,000 to $32,000 (2026). Pro XS 115 to 300 HP lands $19,000 to $40,000 (2026). Boost is not included in these planning ranges because eligibility and current Canadian pricing must be confirmed for the exact engine serial number.</p>
 
           <h3>Are there financing options?</h3>
           <p>Yes. Financing OAC through Mercury and partner lenders, with current rates and your monthly payment posted live on the quote builder. Sample math is illustrative only. Deposit tiers are $200 portable, $500 mid-range, $1,000 big-block / Pro XS / Verado. Full detail on the <Link to="/repower/financing">financing page</Link>.</p>

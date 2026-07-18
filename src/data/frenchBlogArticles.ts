@@ -1714,7 +1714,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
       { question: "Un 115 fera-t-il planer mon ponton de 22 pi?", answer: "Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150 V6." },
       { question: "Quelle est la garantie?", answer: "Garantie d'usine de 3 ans en standard. Mercury offre une bonification promotionnelle de 3 ans une grande partie de l'année, la portant à 6 ans au total." },
       { question: "Le 115 est-il à injection de carburant?", answer: "Oui. Tous les Mercury 115 HP FourStroke utilisent l'EFI." },
-      { question: "Le 115 fonctionne-t-il avec les jauges SmartCraft?", answer: "Oui. Intégration complète SmartCraft disponible. NMEA 2000, VesselView mobile, Active Trim. Mise à niveau courante lors d'une remotorisation." },
+      { question: "Le 115 fonctionne-t-il avec les jauges SmartCraft?", answer: "Oui. Intégration SmartCraft disponible, notamment NMEA 2000, SmartCraft Connect Mobile (anciennement VesselView Mobile) et Active Trim. La compatibilité exacte dépend du moteur et de l'installation." },
       { question: "Puis-je obtenir un 115 HP en contre-rotation?", answer: "Oui. Mercury fabrique un 115 CXL pour configurations à deux moteurs. Moins courant chez HBW parce que les 115 jumelés sont inhabituels sur les bateaux du lac Rice, mais disponibles pour la bonne application." },
     ],
     content: `### Réponse rapide

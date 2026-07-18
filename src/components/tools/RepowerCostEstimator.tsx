@@ -32,8 +32,6 @@ const ROWS: Row[] = [
   { hp: '350-400', family: 'Verado', motor: [39500, 48500], rigging: [6000, 10000], allIn: [45500, 58500] },
 ];
 
-const BOOST_RANGE: [number, number] = [1500, 3000];
-
 function familiesFor(hp: HpClass | ''): Family[] {
   if (!hp) return [];
   return Array.from(new Set(ROWS.filter((r) => r.hp === hp).map((r) => r.family)));
@@ -49,19 +47,12 @@ export function RepowerCostEstimator() {
   const [family, setFamily] = useState<Family | ''>('');
   const [hasTrade, setHasTrade] = useState<'yes' | 'no' | ''>('');
   const [tradeValue, setTradeValue] = useState<string>('');
-  const [boost, setBoost] = useState<'yes' | 'no' | ''>('');
-
   const availableFamilies = useMemo(() => familiesFor(hpClass), [hpClass]);
-  const showBoost = hpClass === '150-200' && family === 'Pro XS';
 
   // Reset family if HP class changes and current family is no longer valid.
   if (family && !availableFamilies.includes(family as Family)) {
     setFamily('');
   }
-  if (!showBoost && boost) {
-    setBoost('');
-  }
-
   const row = useMemo(
     () => ROWS.find((r) => r.hp === hpClass && r.family === family) || null,
     [hpClass, family],
@@ -72,17 +63,8 @@ export function RepowerCostEstimator() {
 
   const result = useMemo(() => {
     if (!ready || !row) return null;
-    let lowAll = row.allIn[0];
-    let highAll = row.allIn[1];
-
-    let boostLow = 0;
-    let boostHigh = 0;
-    if (showBoost && boost === 'yes') {
-      boostLow = BOOST_RANGE[0];
-      boostHigh = BOOST_RANGE[1];
-      lowAll += boostLow;
-      highAll += boostHigh;
-    }
+    const lowAll = row.allIn[0];
+    const highAll = row.allIn[1];
 
     let netLow = lowAll;
     let netHigh = highAll;
@@ -98,11 +80,10 @@ export function RepowerCostEstimator() {
       motor: row.motor,
       rigging: row.rigging,
       allIn: [lowAll, highAll] as [number, number],
-      boost: showBoost && boost === 'yes' ? ([boostLow, boostHigh] as [number, number]) : null,
       tradeNum,
       net: [netLow, netHigh] as [number, number],
     };
-  }, [ready, row, showBoost, boost, tradeNum]);
+  }, [ready, row, tradeNum]);
 
   const handleReset = () => {
     setBoat('');
@@ -110,7 +91,6 @@ export function RepowerCostEstimator() {
     setFamily('');
     setHasTrade('');
     setTradeValue('');
-    setBoost('');
   };
 
   return (
@@ -179,7 +159,7 @@ export function RepowerCostEstimator() {
                 >
                   <RadioGroupItem id={`hp-${h}`} value={h} />
                   <span>
-                    {h} HP{h === '225-300' ? ' (V6)' : h === '350-400' ? ' (V8)' : ''}
+                    {h} HP
                   </span>
                 </label>
               ))}
@@ -203,31 +183,6 @@ export function RepowerCostEstimator() {
                   >
                     <RadioGroupItem id={`fam-${f}`} value={f} />
                     <span>{f}</span>
-                  </label>
-                ))}
-              </RadioGroup>
-            </fieldset>
-          )}
-
-          {/* Boost (conditional) */}
-          {showBoost && (
-            <fieldset>
-              <legend className="text-sm font-medium text-repower-navy-900 mb-2">
-                Add Mercury Boost?
-              </legend>
-              <RadioGroup
-                value={boost}
-                onValueChange={(v) => setBoost(v as 'yes' | 'no')}
-                className="flex flex-wrap gap-2"
-              >
-                {(['yes', 'no'] as const).map((v) => (
-                  <label
-                    key={v}
-                    htmlFor={`boost-${v}`}
-                    className="flex items-center gap-2 rounded-md border border-repower-navy-900/15 px-3 py-2 cursor-pointer hover:bg-repower-navy-900/[0.03] text-sm text-repower-navy-900"
-                  >
-                    <RadioGroupItem id={`boost-${v}`} value={v} />
-                    <span>{v === 'yes' ? 'Yes' : 'No'}</span>
                   </label>
                 ))}
               </RadioGroup>
@@ -312,12 +267,6 @@ export function RepowerCostEstimator() {
                       <td className="py-2 pr-3">Rigging + install</td>
                       <td className="py-2 pr-3 text-right">{fmt(result.rigging[0])} - {fmt(result.rigging[1])}</td>
                     </tr>
-                    {result.boost && (
-                      <tr className="border-b border-repower-navy-900/10">
-                        <td className="py-2 pr-3">Mercury Boost upgrade</td>
-                        <td className="py-2 pr-3 text-right">{fmt(result.boost[0])} - {fmt(result.boost[1])}</td>
-                      </tr>
-                    )}
                     {result.tradeNum > 0 && (
                       <tr className="border-b border-repower-navy-900/10 text-repower-red">
                         <td className="py-2 pr-3">Trade-in credit</td>
@@ -333,7 +282,7 @@ export function RepowerCostEstimator() {
               </div>
 
               <p className="mt-4 text-xs text-repower-navy-900/60 italic">
-                Planning-level CAD ranges as of May 2026. Final pricing depends on configuration, lender approval, Mercury availability, and the live quote. Build a current quote at mercuryrepower.ca for today's exact numbers.
+                Planning-level CAD ranges as of May 2026. Boost is excluded because eligibility and current Canadian pricing require the exact engine serial number. Final pricing depends on configuration, lender approval, Mercury availability, and the live quote.
               </p>
 
               <div className="mt-5 flex flex-col sm:flex-row gap-3">

@@ -152,52 +152,6 @@ HBW 的 quote 下一步在哪里？
 
 Mercury motor 和 repower quote 从 MercuryRepower.ca 开始。Service request 使用 https://hbw.wiki/service。
 
-Schema notes
-
-Use BlogPosting.
-
-Use FAQPage.
-
-Consider Service schema for Mercury repower quote page linking.
-
-Add ImageObject for quote breakdown visual.
-
-Batch 2 implementation checklist
-
-Item
-
-Required action
-
-Hub placement
-
-Add all five posts under the Mandarin/GTA Boating hub and link back to the hub from each post.
-
-Internal links
-
-Link Batch 2 to Batch 1 posts: rental day trip, safety checklist, Mercury service guide, free fishing weekend, and destination comparison.
-
-Commercial CTA
-
-Use https://www.mercuryrepower.ca for Mercury motor/repower quotes. Use https://hbw.wiki/service for service. Use https://www.harrisboatworks.ca/rentals for rental articles.
-
-Add BlogPosting, FAQPage, and ImageObject for every post. Add Service schema only if a post becomes a commercial landing page.
-
-Visuals
-
-Generate one infographic per post. Avoid fake prices, fake logos, incorrect Mercury cowling designs, or unreadable Chinese text.
-
-Annual updates
-
-Recheck Transport Canada, Ontario fishing rules, and Mercury product URLs annually or when products change.
-
-Tone
-
-Keep the copy honest, useful, lightly funny, and practical. No corporate Chinese.
-
-Sources used in this batch
-
-HBW business, rental, dealer, service, and Rice Lake claims are based on Harris Boat Works, Harris Boat Works rentals, and Harris Boat Works Mercury Outboards. Mercury product-family claims are based on Mercury FourStroke 2.5-20hp, Mercury FourStroke 25-30hp, Mercury FourStroke 75-150hp, and Mercury Pro XS. Boating licence and operator-card claims are based on Transport Canada PCOC and Transport Canada PCL. Fishing-rule context is based on Ontario Traditional Chinese fishing regulations and Ontario FMZ 17.
-
 > 相关指南：[安省华人 boat ownership cost 中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 
 HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Premier dealer 与 Legend Boats dealer。

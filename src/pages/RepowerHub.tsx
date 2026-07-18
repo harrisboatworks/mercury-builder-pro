@@ -289,7 +289,7 @@ export default function RepowerHub() {
 
           <h3>How much does a Mercury repower cost in Ontario?</h3>
           <p>The honest range for a full Mercury repower at Harris Boat Works is $11,000 to $40,000 CAD (2026). That covers the whole job: motor, rigging, controls and cables, propeller, fuel connection, old motor removal, and the water test on Rice Lake.</p>
-          <p>Where you land in that range depends on three things: horsepower, the Mercury family you pick, and what your boat needs to accept the new motor. A mid-range FourStroke 40 to 90 HP repower usually lands $11,000 to $18,000. A Pro XS 200 with the Boost upgrade and digital controls runs closer to $19,000 to $25,000. A 300 HP Pro XS on a fishing rig with new gauges and a new prop can push $30,000 to $40,000. Verado V8/V10 is special-order and starts north of $25,000 for the motor alone before rigging.</p>
+          <p>Where you land in that range depends on three things: horsepower, the Mercury family you pick, and what your boat needs to accept the new motor. A mid-range FourStroke 40 to 90 HP repower usually lands $11,000 to $18,000. Larger Pro XS repowers with digital controls, new gauges, and a new prop land higher in the range. Verado V8/V10 is special-order and starts north of $25,000 for the motor alone before rigging. Boost is quoted separately only after HBW confirms the exact engine serial number and current Canadian pricing.</p>
 
           <BlogInlineCTA
             variant="inline"

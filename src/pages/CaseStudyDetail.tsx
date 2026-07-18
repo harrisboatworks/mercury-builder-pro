@@ -51,6 +51,7 @@ export default function CaseStudyDetail() {
           dateModified: lf.lastReviewed,
           mainEntityOfPage: url,
           inLanguage: 'en-CA',
+          ...(study.isIllustrative ? { articleSection: 'Illustrative repower planning scenario' } : {}),
         },
         {
           '@type': 'FAQPage',
@@ -108,6 +109,15 @@ export default function CaseStudyDetail() {
             <p className="mt-3 text-sm italic text-muted-foreground">
               Last reviewed: {lf.lastReviewed}
             </p>
+
+            {study.isIllustrative && (
+              <div className="mt-6 rounded-lg border border-amber-300 bg-amber-50 px-5 py-4 text-amber-950">
+                <p className="font-semibold">Illustrative planning scenario</p>
+                <p className="mt-1 text-sm leading-relaxed">
+                  This is not a customer testimonial, completed-job record, or fixed-price quote. HBW confirms the actual boat, motor, rigging, availability, and current pricing before making a recommendation.
+                </p>
+              </div>
+            )}
 
             <div className="mt-6 rounded-lg border-l-4 border-repower-gold bg-repower-cream/40 px-5 py-4">
               <p className="text-sm font-semibold text-repower-gold uppercase tracking-wider mb-2">
@@ -239,6 +249,16 @@ export default function CaseStudyDetail() {
             <p className="text-lg text-muted-foreground">{study.excerpt}</p>
           </header>
 
+          {study.isIllustrative && (
+            <aside className="mb-8 rounded-lg border border-amber-300 bg-amber-50 p-5 text-amber-950">
+              <p className="font-semibold">Illustrative planning scenario</p>
+              <p className="mt-1 text-sm">
+                This is not a customer testimonial, completed-job record, performance guarantee, or fixed-price quote.
+                HBW confirms the actual boat, capacity plate, motor, rigging, pricing, and expected performance before recommending a package.
+              </p>
+            </aside>
+          )}
+
           <div className="aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted mb-8">
             <img src={study.heroImage} alt={study.title} className="h-full w-full object-cover" />
           </div>
@@ -260,7 +280,9 @@ export default function CaseStudyDetail() {
 
           <section className="grid gap-8 md:grid-cols-[1.4fr,0.9fr] mb-10">
             <div>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Why this recommendation made sense</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">
+                {study.isIllustrative ? 'Why this configuration may fit' : 'Why this recommendation made sense'}
+              </h2>
               <p className="text-muted-foreground mb-4">{study.recommendation}</p>
               <ul className="space-y-3 text-muted-foreground">
                 {study.whyItWorked.map((item) => (
@@ -279,8 +301,12 @@ export default function CaseStudyDetail() {
           </section>
 
           <section className="rounded-lg border border-border bg-card p-6 mb-10">
-            <h2 className="text-2xl font-semibold text-foreground mb-3">HBW note</h2>
-            <p className="text-muted-foreground">"{study.customerQuote}"</p>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">
+              {study.isIllustrative ? 'Planning takeaway' : 'HBW note'}
+            </h2>
+            <p className="text-muted-foreground">
+              {study.isIllustrative ? study.customerQuote : `"${study.customerQuote}"`}
+            </p>
           </section>
 
           {study.detailImage && (
@@ -292,7 +318,7 @@ export default function CaseStudyDetail() {
           )}
 
           <section className="rounded-lg border border-border bg-muted/30 p-6">
-            <h2 className="text-2xl font-semibold text-foreground mb-3">Get a quote like this</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">Get a quote for your boat</h2>
             <p className="text-muted-foreground mb-5">
               Start in the Mercury quote builder and size a package for a similar boat, use case, and horsepower range.
             </p>

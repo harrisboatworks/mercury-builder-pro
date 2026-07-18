@@ -94,7 +94,6 @@ export default function BlogIndexZh() {
         />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="zh-Hans" href={url} />
-        <link rel="alternate" hrefLang="zh-Hant" href={`${SITE_URL}/blog/zh-hant`} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content="Mercury 中文指南 — Harris Boat Works" />

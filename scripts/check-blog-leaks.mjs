@@ -24,11 +24,14 @@ const LEAK_PATTERNS = [
   { pattern: /\[CUSTOMER STORY OPPORTUNITY\]/i, name: 'Customer story placeholder' },
   { pattern: /\[INSERT\s+[A-Z]/i, name: '[INSERT ...] placeholder' },
   { pattern: /\bTODO:/i, name: 'TODO leak' },
+  { pattern: /^\s*Schema\s+notes\s*$/i, name: 'Schema production notes' },
+  { pattern: /^\s*Batch\s+(?:\d+\s+)?implementation\s+checklist\s*$/i, name: 'Batch implementation checklist' },
+  { pattern: /\bGenerate\s+one\s+(?:useful\s+)?infographic\s+per\s+post\b/i, name: 'Visual production instruction' },
 ];
 
-const BLOG_LANG_RX = /^(mandarin|korean|french|spanish)BlogArticles\.ts$/;
+const BLOG_LANG_RX = /BlogArticles\.ts$/;
 const BLOG_FILES = readdirSync('src/data')
-  .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
+  .filter((f) => f === 'blogArticles.ts' || (BLOG_LANG_RX.test(f) && f !== 'archivedBlogArticles.ts'))
   .map((f) => `src/data/${f}`);
 
 // Raw Supabase URLs for public agent endpoints that MUST go through
@@ -72,6 +75,23 @@ for (const file of BLOG_FILES) {
       }
     }
   }
+
+  const articleStarts = [...src.matchAll(/slug:\s*['"]([^'"]+)['"]/g)]
+    .map((match) => ({ slug: match[1], index: match.index }));
+  articleStarts.push({ slug: '(end)', index: src.length });
+  for (let i = 0; i < articleStarts.length - 1; i++) {
+    const current = articleStarts[i];
+    const block = src.slice(current.index, articleStarts[i + 1].index);
+    const quickAnswerHeadings = block.match(/^\s*##\s+Quick\s+answer\s*$/gmi) ?? [];
+    if (quickAnswerHeadings.length > 1) {
+      errors.push({
+        file,
+        line: lineNumberFor(src, current.index),
+        name: `Duplicate Quick answer headings in "${current.slug}"`,
+        snippet: `${quickAnswerHeadings.length} headings found`,
+      });
+    }
+  }
 }
 
 // 2. Raw agent endpoint URL scan on user-facing surfaces
@@ -110,6 +130,9 @@ const MODEL_CONTEXT_RX = /^[\s,.'"-]*(?:Mercury|FourStroke|Pro\s*XS|Verado|SeaPr
 const CJK_YEAR_SUFFIX_RX = /^\s*(?:년|年)/;
 // 5) Standalone parenthetical year "(2024)" — citation/annotation style.
 const PAREN_YEAR = (before, after) => /\(\s*$/.test(before) && /^\s*\)/.test(after);
+// 6) A source-list citation to HBW's own dated operating data is historical
+// evidence, not a stale customer-facing offer or current-year claim.
+const FIRST_PARTY_DATA_RX = /Boat Works\s*$/i;
 const staleYearLeaks = [];
 
 function extractProseChunks(src) {
@@ -159,12 +182,13 @@ for (const file of BLOG_FILES) {
     STALE_YEAR_RX.lastIndex = 0;
     while ((m = STALE_YEAR_RX.exec(ch.text)) !== null) {
       const before = ch.text.slice(Math.max(0, m.index - 20), m.index);
-      const after = ch.text.slice(m.index + 4, m.index + 40);
+      const after = ch.text.slice(m.index + 4, m.index + 64);
       if (HISTORICAL_WORD_RX.test(before)) continue;
       if (MONTH_DAY_PREFIX_RX.test(before)) continue;
       if (MODEL_CONTEXT_RX.test(after)) continue;
       if (CJK_YEAR_SUFFIX_RX.test(after)) continue;
       if (PAREN_YEAR(before, after)) continue;
+      if (FIRST_PARTY_DATA_RX.test(before) && /^\s+rental operations data\s*\(first-party\)/i.test(after)) continue;
       // Skip if part of an ISO-like date (YYYY-MM-DD) - that's data, not prose claim
       if (/^[-/]\d/.test(after) || /\d[-/]$/.test(before)) continue;
       const line = lineNumberFor(src, ch.absStart + m.index);
@@ -227,4 +251,3 @@ console.log(
   `0 raw agent-URL leaks across ${USER_FACING_FILES.length} user-facing files, ` +
   `${staleYearLeaks.length} stale-year warning(s)`
 );
-

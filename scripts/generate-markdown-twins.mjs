@@ -428,6 +428,7 @@ function caseStudyMarkdown(s) {
     `slug: ${s.slug}`,
     `boat_type: ${JSON.stringify(s.boatType)}`,
     `region: ${JSON.stringify(s.region)}`,
+    `is_illustrative: ${s.isIllustrative ? 'true' : 'false'}`,
   ]);
   const why = (s.whyItWorked || []).map(w => `- ${w}`).join('\n');
   return [
@@ -436,6 +437,10 @@ function caseStudyMarkdown(s) {
     '',
     s.excerpt,
     '',
+    ...(s.isIllustrative ? [
+      '> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.',
+      '',
+    ] : []),
     '## Factbox',
     '',
     `- **Boat type:** ${s.boatType}`,
@@ -452,13 +457,13 @@ function caseStudyMarkdown(s) {
     '',
     s.recommendation,
     '',
-    '## Why it worked',
+    s.isIllustrative ? '## Why this configuration may fit' : '## Why it worked',
     '',
     why || '_(no notes recorded)_',
     '',
-    '## Customer quote',
+    s.isIllustrative ? '## Planning takeaway' : '## Customer quote',
     '',
-    `> ${s.customerQuote}`,
+    s.isIllustrative ? s.customerQuote : `> ${s.customerQuote}`,
     '',
     '## Quote a similar repower',
     '',
@@ -1193,7 +1198,7 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 }
 
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
-if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
+if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', 'is_illustrative: true', 'Illustrative planning scenario:', '## Planning takeaway', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
 if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
 const localizedTwinSummaries = blogTwinSummaries.filter(t => /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\//.test(t.path));

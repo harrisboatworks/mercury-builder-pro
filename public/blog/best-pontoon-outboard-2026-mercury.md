@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury.md
-last_updated: 2026-05-25
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Pontoon Outboard 2026: Mercury Buyer's Guide"
-description: "Match Mercury HP to your pontoon size, tubes, and passenger count. Pricing from $13,000 CAD installed on Rice Lake."
+description: "Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-05-25
+date_modified: 2026-07-18
 keywords: ["best pontoon outboard mercury","mercury pontoon motor","pontoon repower mercury","command thrust pontoon","mercury 90 hp pontoon","mercury 115 hp pontoon","mercury 150 hp pontoon","pro xs pontoon boost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,15 +20,15 @@ language: en-CA
 
 # Best Pontoon Outboard 2026: Mercury Buyer's Guide
 
-> Match Mercury HP to your pontoon size, tubes, and passenger count. Pricing from $13,000 CAD installed on Rice Lake.
+> Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last updated:** 2026-05-25  
+**Last updated:** 2026-07-18  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
 
-> **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to a 115 HP Command Thrust, or to a 150 HP FourStroke (standard gearcase, since CT tops out at 115). For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust (available up to 115 HP) is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
+> **Quick answer:** The best Mercury outboard for a pontoon depends on tube count, length, hull rating, and real passenger load. A 90 HP FourStroke can suit many 20-foot two-tube pontoons; a properly rated 22-foot pontoon may need a 115 HP Command Thrust or 150 HP FourStroke. Tritoon recommendations depend on the capacity plate and watersports load. Boost can improve acceleration on an eligible motor, but it does not add horsepower. Use the pricing reference for current bare-motor pricing and the quote builder for boat-specific rigging and installation.
 
 Pontoons are different from runabouts. They're heavy, draggy hulls that need torque and lift more than top-speed headline numbers. The mistake most pontoon buyers make is sizing the motor for the lightest day instead of the busiest. This post walks through what we actually rig on Rice Lake every spring, and where Command Thrust and Boost earn their price.
 
@@ -36,17 +36,17 @@ Pontoons are different from runabouts. They're heavy, draggy hulls that need tor
 
 Pontoon sizing depends on three things: length, tube count, and how many passengers you actually carry. Forget the chart on the boat brochure. What matters is real-world load. A pontoon is not a runabout. It needs gearcase as much as it needs horsepower, which is why we almost never separate the two when talking pontoons.
 
-Here is the grid we use when a customer brings in a pontoon for repower. **Pricing reflects 2026 model year ranges, all-in installed at HBW.**
+Here is a planning grid for the first sizing conversation. The capacity plate and the actual boat always control the final recommendation.
 
-| Pontoon length | Tubes | Typical passengers | Recommended Mercury | Installed price (CAD, 2026) |
-|---|---|---|---|---|
-| 18 ft | 2 | 4 adults | 60 to 75 HP FourStroke | $10,500 to $13,000 |
-| 20 ft | 2 | 5 adults | 90 HP FourStroke (CT optional) | $13,000 to $16,000 |
-| 22 ft | 2 | 6 adults | 115 HP CT or 150 HP | $17,000 to $21,000 |
-| 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or Pro XS V8 200 | $20,000 to $28,000 |
-| 24 ft | 2 | 6 to 8 adults | 150 HP (standard gearcase) | $20,000 to $23,500 |
-| 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
-| 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
+| Pontoon length | Tubes | Typical passengers | Mercury range to discuss |
+|---|---|---|---|
+| 18 ft | 2 | 4 adults | 60 to 75 HP FourStroke |
+| 20 ft | 2 | 5 adults | 90 HP FourStroke; evaluate Command Thrust |
+| 22 ft | 2 | 6 adults | 115 HP Command Thrust or 150 HP FourStroke |
+| 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or a properly rated Pro XS option |
+| 24 ft | 2 | 6 to 8 adults | 150 HP FourStroke, subject to hull rating |
+| 24 ft | 3 (tritoon) | 8+ adults | Pro XS range matched to the capacity plate and load |
+| 26 ft | 3 | 10+ adults | Higher-horsepower Pro XS range where the hull permits |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -74,15 +74,15 @@ For when Command Thrust is NOT worth it on lighter boats, see our [Command Thrus
 
 Pro XS becomes the right call on three pontoon scenarios.
 
-**First, tritoons used for tubing or skiing.** The third tube adds drag and lift, so planing a tritoon clean with a skier on the rope requires real torque. A Pro XS V8 200 with Boost will get a skier up cleanly even with the boat loaded. Press the Boost button, the motor delivers 25 extra HP for 4 to 6 seconds, the rope comes tight, and the skier is up. After that the boat settles into pull-pace easily.
+**First, tritoons used for tubing or skiing.** The third tube changes how the boat carries load and comes onto plane. A correctly sized Pro XS can provide the torque and response the hull needs. On an eligible motor, Boost activates automatically during full-throttle mid-range acceleration; there is no separate Boost button and no added horsepower.
 
-**Second, pontoons over 24 feet.** These big pontoons carry a lot of people and gear. A Pro XS V8 225 with Boost handles the load with margin and gives you mid-30s mph top end, which on a big pontoon is plenty of fun.
+**Second, properly rated larger pontoons.** These boats carry significant people and gear, so the base motor, hull rating, propeller, and setup come first. Boost may sharpen acceleration on an eligible motor, but it cannot create the horsepower margin an underpowered pontoon needs.
 
 **Third, owners who simply want a faster boat.** A Pro XS V8 250 on a tritoon will run mid-40s mph and accelerate harder than most fibreglass family boats. It is not the budget pick but it is the right pick for that customer. Our [Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) covers the math on whether it earns its premium.
 
 ## How much does a pontoon repower cost at Harris Boat Works?
 
-The installed price ranges above (2026) include motor, rigging, controls and cables, propeller selection, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing, no shipping, no delivery.
+Use the [Mercury pricing reference](/pricing-reference) for current bare-motor pricing. An installed quote can include motor, rigging, controls and cables, propeller selection, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing, no shipping, no delivery.
 
 Some pontoons need additional rigging. Examples we see often:
 
@@ -91,7 +91,7 @@ Some pontoons need additional rigging. Examples we see often:
 - Steering upgrade for higher HP (hydraulic): add $1,200 to $2,000
 - New gauges or chart-plotter integration: add $500 to $2,500
 
-Most pontoon repowers fall between $14,000 and $28,000 CAD all-in (2026 ranges). Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total for your specific pontoon. Our full [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks each line down.
+The complete price depends on the exact motor, controls, steering, propeller, transom and fuel-system condition, and how much existing rigging can be reused. Financing is OAC, with current rates updated periodically. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current terms and a line-item total for your pontoon.
 
 ## What about the Mercury Avator on a pontoon?
 
@@ -125,7 +125,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
 
 ### What size Mercury motor do I need for a 22 foot pontoon?
 
-A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.
+A 115 HP or 150 HP FourStroke covers many properly rated 22-foot two-tube pontoons. Command Thrust may help with a heavier load. A tritoon recommendation depends on the capacity plate, passenger load, watersports use, and propeller setup.
 
 ### Is a 90 HP enough for a pontoon?
 
@@ -133,15 +133,15 @@ Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourS
 
 ### Should I get Command Thrust on a pontoon?
 
-On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch propeller and larger gearcase that meaningfully improves hole shot and reverse on heavy pontoons. The upgrade adds roughly $800 to $1,500 CAD as of 2026.
+Command Thrust is often useful on heavier pontoons because its larger gearcase can turn a larger propeller. The right answer depends on the exact motor, hull, load, and desired low-speed control.
 
 ### How much does a pontoon repower cost in Ontario?
 
-A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.
+Use the pricing reference for the current bare-motor price. The installed quote depends on controls, steering, propeller, removal, fuel-system condition, transom condition, and reusable rigging.
 
 ### Is the Boost upgrade worth it for pontoons?
 
-On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
+Sometimes, if the motor is eligible and the pontoon is already correctly powered and propped. Boost is an automatic software calibration that can improve mid-range acceleration. It does not add horsepower, top speed, or maximum RPM, so it is not a fix for an underpowered boat.
 
 ### Can a Mercury Avator electric work on a pontoon?
 

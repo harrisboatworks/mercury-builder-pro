@@ -11,11 +11,14 @@ case_study_id: CS06
 slug: 90-to-115-pro-xs-fish-boat
 boat_type: "17-foot fiberglass bass boat"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
-# 90 HP to 115 Pro XS Repower Case Study
+# 90 HP to 115 Pro XS Repower Planning Scenario
 
-A 17-foot fiberglass bass boat gets a 115 HP Pro XS Command Thrust repower for $17,000–$20,000 all-in at Harris Boat Works.
+An illustrative 17-foot fiberglass bass-boat scenario comparing a 90 HP setup with a 115 HP Pro XS Command Thrust repower.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -33,15 +36,15 @@ A 17-foot fiberglass bass boat gets a 115 HP Pro XS Command Thrust repower for $
 
 Best for 17-foot fiberglass bass or multi-species hulls rated 115 HP or higher, where the owner wants stronger hole shot and a Pro XS-class top end without changing the hull.
 
-## Why it worked
+## Why this configuration may fit
 
-- Pro XS tune gives sharper hole shot vs base FourStroke 115
-- Command Thrust gearcase moves more water on heavier loads
-- Mid-50s mph top end with the right prop
+- Pro XS is Mercury's performance-oriented 115 HP option
+- Command Thrust can turn a larger propeller for a heavier load
+- Final acceleration, RPM, and top speed depend on the actual hull, load, engine height, and propeller
 
-## Customer quote
+## Planning takeaway
 
-> Tournament-grade hole shot and more top end out of a boat they already love.
+A 115 Pro XS Command Thrust may suit a properly rated 17-foot performance hull when the complete setup supports it.
 
 ## Quote a similar repower
 

@@ -11,11 +11,14 @@ case_study_id: CS01
 slug: aluminum-fishing-60-to-90-fourstroke
 boat_type: "Aluminum fishing boat"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
 # 18-foot aluminum fishing boat: 60HP to 90HP FourStroke
 
-A practical power jump for inland-lake anglers who needed better holeshot, load carrying, and open-water confidence.
+An illustrative comparison of a 60 HP setup with a Mercury 90 HP FourStroke on a properly rated aluminum fishing boat.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -31,17 +34,17 @@ A practical power jump for inland-lake anglers who needed better holeshot, load 
 
 ## Recommendation
 
-Best for owners who fish with two to three people, carry gear, and want stronger mid-range without overbuilding the package.
+Consider only after confirming the capacity plate, transom, current motor, full fishing load, propeller, steering, and measured WOT RPM.
 
-## Why it worked
+## Why this configuration may fit
 
-- Improved load-carrying confidence in wind and chop
-- Better holeshot for getting on plane with gear aboard
-- Strong fit for 18–20 foot aluminum fishing layouts
+- Higher rated horsepower may help a heavier operating load when the hull permits it
+- Acceleration and speed must be measured on the actual boat
+- Propeller and engine height are selected against loaded WOT RPM
 
-## Customer quote
+## Planning takeaway
 
-> The boat feels more usable with a full fishing load and still stays easy to live with on smaller lakes.
+A 90 HP FourStroke may suit a properly rated aluminum fishing hull after the complete load and current setup are measured.
 
 ## Quote a similar repower
 

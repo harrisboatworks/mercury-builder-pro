@@ -113,6 +113,11 @@
       "statusCode": 301
     },
     {
+      "source": "/repower-legacy",
+      "destination": "/repower",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/2026-mercury-model-preview",
       "destination": "/blog/mercury-outboard-lineup-ontario",
       "statusCode": 301
@@ -697,6 +702,18 @@
       "destination": "/blog/fr/index.html"
     },
     {
+      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-platinum-ontario/index.html"
+    },
+    {
+      "source": "/blog/zh-hant",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/zh-hant/:slug",
+      "destination": "/index.html"
+    },
+    {
       "source": "/blog/zh",
       "destination": "/blog/zh/index.html"
     },
@@ -718,19 +735,35 @@
     },
     {
       "source": "/blog/fr/:slug",
-      "destination": "/index.html"
+      "destination": "/blog/fr/:slug/index.html"
     },
     {
       "source": "/blog/zh/:slug",
-      "destination": "/index.html"
+      "destination": "/blog/zh/:slug/index.html"
     },
     {
       "source": "/blog/ko/:slug",
-      "destination": "/index.html"
+      "destination": "/blog/ko/:slug/index.html"
     },
     {
       "source": "/blog/es/:slug",
-      "destination": "/index.html"
+      "destination": "/blog/es/:slug/index.html"
+    },
+    {
+      "source": "/blog/hi/:slug",
+      "destination": "/blog/hi/:slug/index.html"
+    },
+    {
+      "source": "/blog/pa/:slug",
+      "destination": "/blog/pa/:slug/index.html"
+    },
+    {
+      "source": "/blog/ur/:slug",
+      "destination": "/blog/ur/:slug/index.html"
+    },
+    {
+      "source": "/blog/tl/:slug",
+      "destination": "/blog/tl/:slug/index.html"
     },
     {
       "source": "/blog/unsubscribe",
@@ -802,7 +835,7 @@
     },
     {
       "source": "/motors/:slug",
-      "destination": "/index.html"
+      "destination": "/motors/:slug/index.html"
     },
     {
       "source": "/quote/motor-selection",
@@ -875,13 +908,18 @@
     {
       "source": "/terms",
       "destination": "/terms/index.html"
-    },
-    {
-      "source": "/((?!api/|_next/|_static/|assets/|.*\\..*).*)",
-      "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/blog/zh-hant",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
     {
       "source": "/blog/zh-hant/(.*)",
       "headers": [

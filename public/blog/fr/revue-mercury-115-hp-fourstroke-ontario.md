@@ -216,7 +216,7 @@ Oui. Tous les Mercury 115 HP FourStroke utilisent l'EFI.
 
 ### Le 115 fonctionne-t-il avec les jauges SmartCraft?
 
-Oui. Intégration complète SmartCraft disponible. NMEA 2000, VesselView mobile, Active Trim. Mise à niveau courante lors d'une remotorisation.
+Oui. Intégration SmartCraft disponible, notamment NMEA 2000, SmartCraft Connect Mobile (anciennement VesselView Mobile) et Active Trim. La compatibilité exacte dépend du moteur et de l'installation.
 
 ### Puis-je obtenir un 115 HP en contre-rotation?
 

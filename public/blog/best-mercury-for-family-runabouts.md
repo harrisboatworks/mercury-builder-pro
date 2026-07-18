@@ -103,7 +103,7 @@ The most common mistake we see on family runabouts: the previous owner under-pow
 
 A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80 to 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
 
-**The rule:** Look at your boat's max HP rating on the capacity plate (usually near the helm). For family use with full crew and gear, don't go more than 25 HP below max. If your boat is rated 115 HP max, run a 90, 115 HP motor.
+**The rule:** Start with the boat's maximum HP rating on the capacity plate (usually near the helm) and never exceed it. The right choice below that ceiling depends on the hull, full operating load, use, and performance target; there is no universal requirement to stay within 25 HP of maximum.
 
 Don't over-power either. A boat rated 150 HP max doesn't need a 200 HP motor. It adds fuel cost, changes handling in chop, and on some hulls causes porpoising.
 

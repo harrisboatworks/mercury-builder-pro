@@ -11,11 +11,14 @@ case_study_id: CS08
 slug: two-stroke-to-fourstroke-modernization
 boat_type: "17-foot aluminum runabout"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
 # Two-Stroke to FourStroke Modernization
 
-Replace an old 2-stroke 70–90 HP with a Mercury 90 FourStroke EFI for $13,000–$16,000 all-in at Harris Boat Works.
+An illustrative 17-foot aluminum-boat scenario replacing an older 70–90 HP two-stroke with a Mercury 90 FourStroke EFI.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
@@ -33,15 +36,15 @@ Replace an old 2-stroke 70–90 HP with a Mercury 90 FourStroke EFI for $13,000�
 
 Best for owners of 15–25-year-old aluminum runabouts with tired carbureted 2-strokes who want a quiet, clean, factory-warrantied modern FourStroke without changing the hull.
 
-## Why it worked
+## Why this configuration may fit
 
 - Clean cold starts and smooth idle with modern EFI
-- Roughly half the idle noise vs older 2-stroke
-- No 2-stroke oil mixing, ~30% better fuel at cruise
+- Quieter, smoother operation is a common reason to compare a current FourStroke
+- No two-stroke oil mixing; actual fuel use depends on the old engine, hull, propeller, load, and operating point
 
-## Customer quote
+## Planning takeaway
 
-> No oil mixing, half the idle noise, and roughly 30% better fuel burn at cruise.
+A current FourStroke can simplify fuel handling, starting, service support, and warranty compared with an aging carbureted two-stroke.
 
 ## Quote a similar repower
 

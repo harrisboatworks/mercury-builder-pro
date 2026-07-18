@@ -3362,52 +3362,6 @@ Rice Lake 租船适合不会开船的人吗？
 
 中文攻略适合理解问题和做计划，但规则、日期和限制应以 Ontario 和 Transport Canada 官方页面为准 (Ontario free family fishing, Transport Canada PCOC).
 
-Schema notes
-
-Use BlogPosting.
-
-Use FAQPage.
-
-Add ItemList or comparison table markup only if the CMS supports clean structured output.
-
-Add ImageObject for comparison visual.
-
-Batch implementation checklist
-
-Item
-
-Required action
-
-Language
-
-Publish as Simplified Chinese first; add Traditional variants later if possible.
-
-Hreflang
-
-Use zh-Hans-CA for Simplified Chinese Canada pages if supported.
-
-Internal links
-
-Link all five posts to a Mandarin/GTA boating hub. Link rental posts to HBW rentals/general page. Link Mercury service post to https://hbw.wiki/service. Link Mercury/repower mentions to https://www.mercuryrepower.ca.
-
-Add BlogPosting and FAQPage to every post. Add ImageObject once visuals are created.
-
-Visuals
-
-Generate one useful infographic per post; do not use generic stock photos as the only visual.
-
-Fact-checking
-
-Recheck Ontario dates yearly. Recheck Transport Canada requirements if regulations change.
-
-Tone
-
-Keep the copy useful, human, local, and honest. Avoid over-polished corporate Chinese.
-
-Sources used in this batch
-
-Factual statements about PCOC, proof of competency, electric trolling motors, Rental Boat Safety Checklist, and acceptable documents come from Transport Canada PCOC. Factual statements about Pleasure Craft Licence, 10HP/7.5kW threshold, bow display, PCL vs PCOC, and registration caveats come from Transport Canada PCL. Safety-equipment references come from the Transport Canada Safe Boating Guide. Ontario 2026 free fishing dates and licence-exemption caveats come from Ontario free family fishing. Chinese-language fishing-regulation availability comes from Ontario Traditional Chinese fishing regulations. FMZ 16 and Lake Simcoe exception references come from Ontario FMZ 16. FMZ 17 and Kawartha-area exception/bait references come from Ontario FMZ 17. Harris Boat Works facts about Rice Lake, rentals, boat operator card requirement, services, Mercury/Legend positioning, winterization, storage, launch, slips, and history come from Harris Boat Works.
-
 HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Premier dealer 与 Legend Boats dealer。
 `,
   },
@@ -3531,16 +3485,6 @@ Pro XS 适合普通家庭船吗？
 HBW 能帮我选 Mercury motor 吗？
 
 可以从 MercuryRepower.ca 开始配置 quote。HBW Mercury outboard 页面说明其 Mercury offering includes repower, removal/installation, lake test and warranty registration (Harris Boat Works Mercury Outboards).
-
-Schema notes
-
-Use BlogPosting.
-
-Use FAQPage.
-
-Add comparison Table in visible content.
-
-Add ImageObject for horsepower selector visual.
 
 > 相关指南：[FourStroke vs Pro XS 中文对比指南](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)。
 
@@ -3683,52 +3627,6 @@ Mercury FourStroke 和 Pro XS 价格怎么比？
 HBW 的 quote 下一步在哪里？
 
 Mercury motor 和 repower quote 从 MercuryRepower.ca 开始。Service request 使用 https://hbw.wiki/service。
-
-Schema notes
-
-Use BlogPosting.
-
-Use FAQPage.
-
-Consider Service schema for Mercury repower quote page linking.
-
-Add ImageObject for quote breakdown visual.
-
-Batch 2 implementation checklist
-
-Item
-
-Required action
-
-Hub placement
-
-Add all five posts under the Mandarin/GTA Boating hub and link back to the hub from each post.
-
-Internal links
-
-Link Batch 2 to Batch 1 posts: rental day trip, safety checklist, Mercury service guide, free fishing weekend, and destination comparison.
-
-Commercial CTA
-
-Use https://www.mercuryrepower.ca for Mercury motor/repower quotes. Use https://hbw.wiki/service for service. Use https://www.harrisboatworks.ca/rentals for rental articles.
-
-Add BlogPosting, FAQPage, and ImageObject for every post. Add Service schema only if a post becomes a commercial landing page.
-
-Visuals
-
-Generate one infographic per post. Avoid fake prices, fake logos, incorrect Mercury cowling designs, or unreadable Chinese text.
-
-Annual updates
-
-Recheck Transport Canada, Ontario fishing rules, and Mercury product URLs annually or when products change.
-
-Tone
-
-Keep the copy honest, useful, lightly funny, and practical. No corporate Chinese.
-
-Sources used in this batch
-
-HBW business, rental, dealer, service, and Rice Lake claims are based on Harris Boat Works, Harris Boat Works rentals, and Harris Boat Works Mercury Outboards. Mercury product-family claims are based on Mercury FourStroke 2.5-20hp, Mercury FourStroke 25-30hp, Mercury FourStroke 75-150hp, and Mercury Pro XS. Boating licence and operator-card claims are based on Transport Canada PCOC and Transport Canada PCL. Fishing-rule context is based on Ontario Traditional Chinese fishing regulations and Ontario FMZ 17.
 
 > 相关指南：[安省华人 boat ownership cost 中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 
