@@ -116,7 +116,7 @@ export default function ToolsIndex() {
           </nav>
 
           <div className="space-y-16">
-            {TOOLS.map(({ id, Component }) => (
+            {TOOLS.map(({ id, name, Component }) => (
               <div
                 key={id}
                 id={id}

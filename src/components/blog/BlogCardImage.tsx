@@ -1,7 +1,7 @@
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 
 interface BlogCardImageProps {
-  src: string;
+  src?: string;
   alt: string;
   className?: string;
   sizes?: string;

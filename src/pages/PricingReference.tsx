@@ -158,7 +158,7 @@ export default function PricingReference() {
           body="The table below shows motor-only pricing. Your installed number depends on rigging, controls, and your boat. Build a quote in about two minutes and a person here reviews it."
           primaryLabel="Build Your Quote"
           primaryHref="/quote/motor-selection"
-          ctaLocation="pricing_reference_inline"
+          
         />
 
         {loading ? (
@@ -237,8 +237,6 @@ export default function PricingReference() {
           primaryLabel="Build Your Quote"
           primaryHref="/quote/motor-selection"
           phone="905-342-2153"
-          ctaLocation="pricing_reference_banner"
-          phoneCtaLocation="pricing_reference_banner_phone"
         />
 
       </main>

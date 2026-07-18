@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Warranty & Protection  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-17  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 
@@ -247,3 +247,4 @@ Use the Mercury Product Protection page at /mercury-product-protection for the m
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

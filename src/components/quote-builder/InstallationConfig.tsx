@@ -18,6 +18,7 @@ import {
 
 interface BoatInfo {
   controlsOption?: string;
+  hasCompatibleProp?: boolean;
 }
 
 interface InstallationSelection {

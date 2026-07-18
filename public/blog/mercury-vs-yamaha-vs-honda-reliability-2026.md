@@ -223,7 +223,7 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
-- [Boat Rentals Shared Access 2026 Ontario](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
+- [Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
 
 ## Next steps
 
