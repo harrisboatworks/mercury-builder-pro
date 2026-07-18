@@ -4338,6 +4338,63 @@ export type Database = {
           },
         ]
       }
+      staff_device_link_requests: {
+        Row: {
+          approval_code_hash: string
+          approved_at: string | null
+          approved_by_display_name: string | null
+          approved_by_staff_key: string | null
+          approved_staff_identity: Json | null
+          claimed_at: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          metadata: Json
+          platform: string
+          request_secret_hash: string
+          requested_display_name: string
+          requester_key_hash: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          approval_code_hash: string
+          approved_at?: string | null
+          approved_by_display_name?: string | null
+          approved_by_staff_key?: string | null
+          approved_staff_identity?: Json | null
+          claimed_at?: string | null
+          created_at?: string
+          expires_at: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          request_secret_hash: string
+          requested_display_name: string
+          requester_key_hash: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          approval_code_hash?: string
+          approved_at?: string | null
+          approved_by_display_name?: string | null
+          approved_by_staff_key?: string | null
+          approved_staff_identity?: Json | null
+          claimed_at?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          metadata?: Json
+          platform?: string
+          request_secret_hash?: string
+          requested_display_name?: string
+          requester_key_hash?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       staff_device_tokens: {
         Row: {
           active: boolean
