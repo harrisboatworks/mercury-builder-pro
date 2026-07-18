@@ -23,6 +23,7 @@ import { useAutoSaveQuoteOnAuth } from '@/hooks/useAutoSaveQuoteOnAuth';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { resolvePropellerDecision } from '@/lib/propeller-selection';
 import { hasElectricStart } from '@/lib/motor-config-utils';
 import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 
@@ -370,6 +371,12 @@ export default function QuoteSummaryPage() {
       tradeInInfo: state.tradeInInfo,
     });
   }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, state.warrantyConfig, state.tradeInInfo]);
+  const resolvedPropellerDecision = resolvePropellerDecision({
+    hp,
+    installConfig: state.installConfig,
+    boatInfo: state.boatInfo,
+    tradeInInfo: state.tradeInInfo,
+  });
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
@@ -444,10 +451,7 @@ export default function QuoteSummaryPage() {
       const augmentedOptions = [...(state.selectedOptions || [])];
 
       // Propeller allowance (added by breakdown when motor doesn't include prop)
-      const isMercuryTradeMatch = state.tradeInInfo?.hasTradeIn &&
-        state.tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
-        state.tradeInInfo?.horsepower === hp;
-      if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp && !isMercuryTradeMatch) {
+      if (!includesProp && propAllowance && resolvedPropellerDecision === 'include_allowance') {
         augmentedOptions.push({ optionId: 'prop-allowance', name: propAllowance.name, price: propAllowance.price, category: 'propeller', assignmentType: 'required' as const, isIncluded: false });
       }
 
@@ -485,7 +489,8 @@ export default function QuoteSummaryPage() {
     }
   }, [packageSpecificTotals.total, motor, motorMSRP, motorDiscount, basePromoSavings, hp,
       state.selectedOptions, state.boatInfo?.controlsOption, state.purchasePath,
-      state.installConfig?.installationCost, state.fuelTankConfig?.tankSize, state.fuelTankConfig?.tankCost,
+      state.installConfig?.installationCost, resolvedPropellerDecision,
+      state.fuelTankConfig?.tankSize, state.fuelTankConfig?.tankCost,
       state.looseMotorBattery?.wantsBattery, state.looseMotorBattery?.batteryCost,
       state.warrantyConfig?.warrantyPrice, state.warrantyConfig?.totalYears,
       state.tradeInInfo?.estimatedValue, state.adminCustomItems, state.adminDiscount,

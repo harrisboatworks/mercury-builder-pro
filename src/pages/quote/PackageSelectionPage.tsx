@@ -22,6 +22,7 @@ import {
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { resolvePropellerDecision } from '@/lib/propeller-selection';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Package warranty year constants
@@ -207,9 +208,19 @@ export default function PackageSelectionPage() {
 
   // Package options with smart recommendations
   const isInstalled = state.purchasePath === 'installed';
-  const propCost = (!includesProp && propAllowance) ? propAllowance.price : 0;
-  const propFeatureText = propAllowance
-    ? `${propAllowance.name} ($${propAllowance.price.toLocaleString()})`
+  const propellerDecision = resolvePropellerDecision({
+    hp,
+    installConfig: state.installConfig,
+    boatInfo: state.boatInfo,
+    tradeInInfo: state.tradeInInfo,
+  });
+  const propCost = (!includesProp && propAllowance && propellerDecision === 'include_allowance')
+    ? propAllowance.price
+    : 0;
+  const propFeatureText = !includesProp && propAllowance
+    ? propellerDecision === 'include_allowance'
+      ? `${propAllowance.name} ($${propAllowance.price.toLocaleString()})`
+      : 'Use existing propeller (verified during water test)'
     : null;
 
   const packages: PackageOption[] = useMemo(() => [
@@ -223,7 +234,7 @@ export default function PackageSelectionPage() {
         isManualTiller ? "Tiller-handle operation" : (state.boatInfo?.controlsOption === 'adapter' ? "Control adaptor harness (uses your existing controls)" : state.boatInfo?.controlsOption === 'compatible' ? "Compatible with your existing controls (no extra hardware)" : "New controls & rigging package"), 
         `${currentCoverageYears} years coverage included`,
         ...(isInstalled ? [isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation"] : []),
-        ...(propFeatureText && !includesProp ? [propFeatureText] : []),
+        ...(propFeatureText ? [propFeatureText] : []),
         ...(looseMotorBatteryCost > 0 ? [`Marine starting battery ($${looseMotorBatteryCost.toFixed(0)})`] : ["Customer supplies battery (if needed)"])
       ],
       coverageYears: currentCoverageYears,
