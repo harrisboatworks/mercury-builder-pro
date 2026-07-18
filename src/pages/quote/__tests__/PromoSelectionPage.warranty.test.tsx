@@ -62,6 +62,7 @@ vi.mock('@/hooks/useActivePromotions', () => ({
     promotions: currentPromotions,
     loading: false,
     getRebateForHP: () => 500,
+    getPromotionSavingsForMotor: () => 500,
     getSpecialFinancingRates: () => [
       { months: 24, rate: 2.99 },
       { months: 36, rate: 3.99 },

@@ -23,7 +23,7 @@ export interface BuildAccessoryBreakdownParams {
   selectedPackage?: string; // 'good' | 'better' | 'best'
   adminCustomItems?: Array<{ name: string; price: number }>;
   warrantyConfig?: { extendedYears?: number; warrantyPrice?: number; totalYears?: number } | null;
-  tradeInInfo?: { brand?: string; horsepower?: number | string; hasTradeIn?: boolean };
+  tradeInInfo?: { brand?: string; horsepower?: number | string; hasTradeIn?: boolean; estimatedValue?: number };
 }
 
 export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): AccessoryBreakdownItem[] {
