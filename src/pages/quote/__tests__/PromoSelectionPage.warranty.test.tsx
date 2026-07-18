@@ -62,6 +62,7 @@ vi.mock('@/hooks/useActivePromotions', () => ({
     promotions: currentPromotions,
     loading: false,
     getRebateForHP: () => 500,
+    getPromotionSavingsForMotor: () => 500,
     getSpecialFinancingRates: () => [
       { months: 24, rate: 2.99 },
       { months: 36, rate: 3.99 },
@@ -288,6 +289,21 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     currentQuoteState = {
       ...baseQuoteState,
       motor: { hp: 2.5, salePrice: 1298, price: 1298 },
+      purchasePath: 'loose',
+    };
+    currentPromotions = [makePromo({ warranty_extra_years: 0 })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Promotional Financing/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
+  });
+
+  it('does not use the DealerPlan fee to cross the financing minimum', () => {
+    currentQuoteState = {
+      ...baseQuoteState,
+      motor: { hp: 20, model: '20 MH FourStroke', salePrice: 4650, price: 4650 },
       purchasePath: 'loose',
     };
     currentPromotions = [makePromo({ warranty_extra_years: 0 })];

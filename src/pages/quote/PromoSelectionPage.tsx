@@ -12,8 +12,9 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
-import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { promoEndOfDay } from '@/lib/quote-utils';
+import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 
 type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
@@ -35,7 +36,7 @@ interface FinancingRate {
 export default function PromoSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
-  const { promotions, loading: promoLoading, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getRebateForHP, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
 
   // Restore from context if user navigates back
@@ -71,17 +72,57 @@ export default function PromoSelectionPage() {
     ? financingRates.reduce((min, r) => (r.months < min.months ? r : min), financingRates[0])
     : null;
 
-  // Estimate financing amount (motor price + tax + fees - trade-in)
-  const estimatedFinancingAmount = useMemo(() => {
-    const motorPrice = state.motor?.salePrice || state.motor?.price || 0;
-    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
-    const taxMultiplier = 1.13; // HST
-    const dealerplanFee = 349;
-    return (motorPrice * taxMultiplier) + dealerplanFee - tradeInValue;
-  }, [state.motor, state.tradeInInfo]);
+  // Use the same pricing order and quote inputs as the final summary so the
+  // payment preview cannot drift from the amount ultimately financed.
+  const financingEstimate = useMemo(() => {
+    if (!state.motor) return null;
+    const motorMSRP = state.frozenPricing?.motorMSRP
+      ?? (state.motor.msrp || state.motor.basePrice || state.motor.price || 0);
+    const promotionalSavings = state.frozenPricing?.promoSavings
+      ?? getPromotionSavingsForMotor(motorHP, motorMSRP);
 
-  // Check if eligible for financing-dependent options
-  const isEligibleForFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
+    return calculateQuoteFinancingEstimate({
+      selectedOptions: state.selectedOptions,
+      motor: state.motor,
+      boatInfo: state.boatInfo,
+      purchasePath: state.purchasePath,
+      installConfig: state.installConfig,
+      looseMotorBattery: state.looseMotorBattery,
+      selectedPackage: state.selectedPackage?.id || 'good',
+      adminCustomItems: state.adminCustomItems,
+      warrantyConfig: state.warrantyConfig,
+      tradeInInfo: state.tradeInInfo,
+      adminDiscount: state.adminDiscount,
+      promotionalSavings,
+      motorMSRPOverride: state.frozenPricing?.motorMSRP,
+      motorDiscountOverride: state.frozenPricing?.motorDiscount,
+      frozenSubtotal: state.frozenPricing?.subtotal,
+      dealerFee: DEALERPLAN_FEE,
+    });
+  }, [
+    getPromotionSavingsForMotor,
+    motorHP,
+    state.adminCustomItems,
+    state.adminDiscount,
+    state.boatInfo,
+    state.frozenPricing,
+    state.installConfig,
+    state.looseMotorBattery,
+    state.motor,
+    state.selectedOptions,
+    state.selectedPackage?.id,
+    state.tradeInInfo,
+    state.warrantyConfig,
+    state.purchasePath,
+  ]);
+  const estimatedFinancingAmount = financingEstimate?.financeableAmount || 0;
+  const financingEligibilityAmount = state.frozenPricing?.total
+    ?? financingEstimate?.pricing.total
+    ?? 0;
+
+  // Match the summary CTA gate: DealerPlan's fee is financed, but it does not
+  // turn an otherwise below-minimum purchase into an eligible application.
+  const isEligibleForFinancing = financingEligibilityAmount >= FINANCING_MINIMUM;
 
   const options = useMemo<PromoOption[]>(() => [
       {
