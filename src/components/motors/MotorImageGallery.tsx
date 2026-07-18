@@ -218,8 +218,8 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         {/* Fixed-height container that centers the scaled image */}
         <div
           ref={containerRef}
-          className={`${enhanced ? 'h-[300px] sm:h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden bg-white`}
-          style={{ touchAction: 'pan-y' }}
+          className={`${enhanced ? 'h-[300px] sm:h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden`}
+          style={{ background: 'var(--gradient-image-bg)', touchAction: 'pan-y' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
@@ -229,7 +229,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           <img
             src={displayImages[selectedIndex]}
             alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-            className={`w-full h-full object-contain transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className={`w-full h-full object-contain mix-blend-darken transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={onMainImageLoad}
             onError={() => handleImageError(displayImages[selectedIndex])}
             style={{

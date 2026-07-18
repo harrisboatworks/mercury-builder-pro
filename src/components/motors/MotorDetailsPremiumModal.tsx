@@ -608,7 +608,8 @@ export default function MotorDetailsPremiumModal({
                 <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - Fetched from motor_media table */}
                     <div
-                      className="rounded-lg bg-white py-2"
+                      className="rounded-lg py-2"
+                      style={{ background: 'var(--gradient-image-bg)' }}
                     >
                       {imagesLoading ? (
                         <div className="flex items-center justify-center h-64">
