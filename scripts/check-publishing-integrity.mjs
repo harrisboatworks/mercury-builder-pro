@@ -22,6 +22,8 @@ const caseStudyGenerator = read('scripts/generate-markdown-twins.mjs');
 const boostChecker = read('src/components/tools/BoostEligibilityChecker.tsx');
 const mandarinArticlePage = read('src/pages/blog/MandarinBlogArticlePage.tsx');
 const mandarinBlogIndex = read('src/pages/blog/BlogIndexZh.tsx');
+const globalSeo = read('src/components/seo/GlobalSEO.tsx');
+const homepageSeo = read('src/components/seo/HomepageSEO.tsx');
 
 check(
   /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
@@ -71,6 +73,14 @@ check(
 check(
   !/hrefLang="zh-Hant"/.test(mandarinArticlePage) && !/hrefLang="zh-Hant"/.test(mandarinBlogIndex),
   'Hydrated Simplified Chinese pages must not advertise noindex zh-Hant pilots as alternates.',
+);
+check(
+  !/hrefLang=/.test(globalSeo),
+  'GlobalSEO must not inject homepage hreflang URLs into every hydrated route.',
+);
+check(
+  /hrefLang="en-CA"/.test(homepageSeo) && /hrefLang="zh-Hans"/.test(homepageSeo) && /hrefLang="x-default"/.test(homepageSeo),
+  'HomepageSEO must own the multilingual home-hub hreflang set.',
 );
 check(
   !/mercuryrepower\.ca\/logo\.png/.test(brandMetadata),
