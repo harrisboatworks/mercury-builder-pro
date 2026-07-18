@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-05-24
+last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Time to Buy Boat Motor Ontario"
 description: "When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math."
 category: "Buying Guide"
 date_published: 2026-05-24
-date_modified: 2026-05-24
+date_modified: 2026-07-18
 keywords: ["best time to buy boat motor","when to buy mercury outboard","year end boat motor deals","boat motor buying calendar ontario","winter boat motor pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last updated:** 2026-05-24  
+**Last updated:** 2026-07-18
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 
@@ -134,7 +134,7 @@ Not always. Late summer (August, post-model-year flip) can carry stronger closeo
 
 ### Why are boat show prices not automatically the cheapest?
 
-Boat shows often have show-specific promotions, but they're usually similar to what we can do at the shop in the same period. Sometimes show pricing is better, sometimes the dealer can match or beat it. We welcome price comparisons from any show. The thing show pricing doesn't always include is the install slot, which by January is the actual constraint for opener.
+Boat shows can have show-specific promotions, but they are often similar to what is available at the shop in the same period. Sometimes show pricing is better. Bring us the complete written quote and we'll review whether we can improve our price. We can't promise to match every offer because packages, rigging, promotions, availability, and install timing differ.
 
 ### When's the worst time to negotiate?
 
@@ -182,4 +182,3 @@ Yes. Mercury's standard Canadian warranty is 3 years. Bonus warranty coverage ap
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

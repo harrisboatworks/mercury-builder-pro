@@ -10826,7 +10826,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard on a snowy dock with a calendar highlighting winter boat motor buying deals at Harris Boat Works.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-24',
-    dateModified: '2026-05-24',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '~8 min read',
@@ -10834,7 +10834,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)
 
-*Last reviewed: 2026-05-24*
+*Last reviewed: 2026-07-18*
 
 > **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed roughly December 1 to April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
@@ -10927,7 +10927,7 @@ A locked quote is good for the pricing window we issued it in. If you want to co
 Not always. Late summer (August, post-model-year flip) can carry stronger closeout discounts when Mercury runs a 2026 closeout incentive. January and February tend to carry winter Mercury promotional pricing. The cheapest absolute month varies year to year with Mercury's promotional calendar. The cheapest WINDOW to order is late summer and mid-winter.
 
 **Why are boat show prices not automatically the cheapest?**
-Boat shows often have show-specific promotions, but they're usually similar to what we can do at the shop in the same period. Sometimes show pricing is better, sometimes the dealer can match or beat it. We welcome price comparisons from any show. The thing show pricing doesn't always include is the install slot, which by January is the actual constraint for opener.
+Boat shows can have show-specific promotions, but they are often similar to what is available at the shop in the same period. Sometimes show pricing is better. Bring us the complete written quote and we'll review whether we can improve our price. We can't promise to match every offer because packages, rigging, promotions, availability, and install timing differ.
 
 **When's the worst time to negotiate?**
 Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.
@@ -10965,7 +10965,7 @@ Honest version: the right month to buy is the month you actually need the boat o
       },
       {
         question: 'Why are boat show prices not automatically the cheapest?',
-        answer: 'Boat shows often have show-specific promotions, but they\'re usually similar to what we can do at the shop in the same period. Sometimes show pricing is better, sometimes the dealer can match or beat it. We welcome price comparisons from any show. The thing show pricing doesn\'t always include is the install slot, which by January is the actual constraint for opener.'
+        answer: 'Boat shows can have show-specific promotions, but they are often similar to what is available at the shop in the same period. Sometimes show pricing is better. Bring us the complete written quote and we\'ll review whether we can improve our price. We can\'t promise to match every offer because packages, rigging, promotions, availability, and install timing differ.'
       },
       {
         question: 'When\'s the worst time to negotiate?',
@@ -16591,7 +16591,7 @@ phone: 905-342-2153
     image: '/lovable-uploads/hero-why-dealers-hide-prices.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -16763,12 +16763,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
         answer: 'You can ask. Many will give it over the phone. The cost is your time. Knowing what we know about how the industry works, we\'d say: skip the dealers who insist on phone gatekeeping and shop the dealers who publish.'
       },
       {
-        question: 'What if HBW\'s online price is higher than another dealer\'s verbal quote?',
-        answer: 'Tell us. We\'ll match or explain the difference. Our pricing is in line with the Mercury dealer network. If a verbal quote is meaningfully lower, it usually means the verbal quote is missing rigging, install, or a hidden cost that shows up later.'
+        question: 'What if HBW\'s online price is higher than another dealer\'s quote?',
+        answer: 'Call us and send the complete written quote. We\'ll compare the motor, rigging, installation, promotions, and availability, then tell you whether we can improve our price. We\'ll try when the packages are genuinely comparable, but a match is not guaranteed.'
       },
       {
         question: 'How do I tell if a dealer\'s quote is fair without published prices?',
-        answer: 'Build a quote at HBW first. Use that as your reference. Then go look at other dealers. The dealers who can\'t beat or match a transparent quote are the ones who depend on you not knowing.'
+        answer: 'Build a quote at HBW first and use it as a written reference. Compare the exact motor, included rigging, installation, prop, promotions, taxes, and timing, not just the headline number. If another dealer gives you a complete written quote, send it to us and we\'ll review it.'
       },
     ]
   },

@@ -198,7 +198,7 @@ const valueQuestions = [
   "What's included in the price?",
   "Is there a rebate?",
   "Extended warranty worth it?",
-  "Price match policy?",
+  "Can you review another dealer's quote?",
   "What does installation include?",
   "Any package deals?",
   "Trade-in value for my old motor?",
