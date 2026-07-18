@@ -237,8 +237,6 @@ export default function PricingReference() {
           primaryLabel="Build Your Quote"
           primaryHref="/quote/motor-selection"
           phone="905-342-2153"
-          ctaLocation="pricing_reference_banner"
-          phoneCtaLocation="pricing_reference_banner_phone"
         />
 
       </main>
