@@ -469,6 +469,8 @@ export const blogClusterContexts: Record<string, string> = {
   "rice-lake-boating-guide-2026": "the 2026 Rice Lake boating guide",
   "rice-lake-boat-launch-guide": "Rice Lake boat launch guide",
   "rice-lake-boat-rentals-from-toronto-gta": "boat rentals from the GTA to Rice Lake",
+  "rice-lake-boat-rental-guide-2026": "the 2026 Rice Lake boat rental guide",
+  "first-time-boat-rental-rice-lake-guide": "first-time renter's guide to Rice Lake",
   "canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend": "a local's Canada Day guide",
   "is-a-pontoon-right-for-your-family-rice-lake": "is a pontoon right for your family?",
   "best-marina-rice-lake-ontario": "marina options on Rice Lake",
@@ -493,8 +495,26 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
   return slugToClusterMap.get(slug);
 }
 
+/**
+ * Per-slug related-slug overrides. When a slug has an entry here, its
+ * "Related guides" list is these exact slugs in this exact order, bypassing
+ * cluster-based sibling resolution. Use sparingly for articles whose best
+ * neighbours live outside their primary cluster.
+ */
+export const relatedSlugsOverrides: Record<string, string[]> = {
+  "boat-rentals-shared-access-booming-2026": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "total-cost-of-owning-a-boat-ontario-2026",
+    "is-a-pontoon-right-for-your-family-rice-lake",
+  ],
+};
+
 /** Pick up to N sibling slugs for the given article (pillar always first). */
 export function getRelatedSlugs(slug: string, max = 5): string[] {
+  const override = relatedSlugsOverrides[slug];
+  if (override) return override.slice(0, max);
   const cluster = getClusterForSlug(slug);
   if (!cluster) return [];
   const isPillar = cluster.pillar === slug;
