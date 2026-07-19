@@ -749,19 +749,23 @@ export default function QuoteSummaryPage() {
         }
 
         if (!savedForQr) {
-          const { data: insertedQuote, error: insertError } = await supabase
+          // Anonymous visitors may INSERT saved_quotes but cannot SELECT the
+          // row back under RLS. Generate the UUID client-side so a successful
+          // insert is enough to build the resumable URL without requesting a
+          // representation that the SELECT policy correctly blocks.
+          const savedQuoteId = crypto.randomUUID();
+          const { error: insertError } = await supabase
             .from('saved_quotes')
             .insert({
+              id: savedQuoteId,
               email: state.customerEmail || 'pdf-download@placeholder.com',
               resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
               quote_state: { ...state, frozenPricing: frozenPricingSnapshot, pdfSnapshot } as any,
               user_id: user?.id || null,
               expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
-            } as any)
-            .select('id, reference_number')
-            .single();
+            } as any);
           if (insertError) throw insertError;
-          savedForQr = insertedQuote;
+          savedForQr = { id: savedQuoteId };
         }
 
         if (savedForQr?.id) {
