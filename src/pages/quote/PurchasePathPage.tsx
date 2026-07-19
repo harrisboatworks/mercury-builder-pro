@@ -49,26 +49,9 @@ export default function PurchasePathPage() {
 
     // Small delay to ensure state is fully committed and navigation isn't blocked
     const navigationTimer = setTimeout(() => {
-      if (state.purchasePath === 'installed') {
-        // Check if it's a tiller motor
-        const model = (state.motor?.model || '').toUpperCase();
-        const hp = typeof state.motor?.hp === 'string' ? parseInt(state.motor.hp, 10) : state.motor?.hp;
-        const isTiller = model.includes('TILLER') || (hp && hp <= 30 && (model.includes('EH') || model.includes('MH') || /\bH\b/.test(model)));
-
-        if (isTiller) {
-          navigate('/quote/trade-in');
-        } else {
-          navigate('/quote/boat-info');
-        }
-      } else {
-        // For loose path
-        const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
-        if (isSmallTillerMotor) {
-          navigate('/quote/fuel-tank');
-        } else {
-          navigate('/quote/trade-in');
-        }
-      }
+      // Fuel-tank choices already live on Options. Keep both customer paths
+      // short and consistent instead of reintroducing a duplicate fuel step.
+      navigate(state.purchasePath === 'installed' ? '/quote/boat-info' : '/quote/trade-in');
     }, 150);
 
     return () => clearTimeout(navigationTimer);

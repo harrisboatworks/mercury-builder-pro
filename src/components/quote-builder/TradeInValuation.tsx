@@ -11,10 +11,11 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, AlertTriangle, Info, Wrench, ChevronDown, ExternalLink, Pencil, HelpCircle } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { decodeTradeInModel, type Confidence, type DecodeResult } from './tradeInModelDecoder';
+import { decodeTradeInModel, decodeTradeInModelFields, type Confidence, type DecodeResult } from './tradeInModelDecoder';
 import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 
 
 
@@ -59,11 +60,15 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     autoEstimateTriggered.current = false;
     setDecodeOverride({}); // fresh model text → drop any prior overrides
     const trimmed = raw.trim();
-    const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
+    const decodedFields = decodeTradeInModelFields(trimmed, {
+      brand: tradeInInfo.brand,
+      year: tradeInInfo.year,
+    });
     onTradeInChange({
       ...tradeInInfo,
       model: raw,
-      horsepower: numericOnly ? parseFloat(trimmed) : 0,
+      horsepower: decodedFields.horsepower,
+      engineType: decodedFields.engineType,
     });
   };
 
@@ -127,11 +132,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const hasModelOrHp = Boolean((tradeInInfo.model && tradeInInfo.model.trim()) || tradeInInfo.horsepower);
 
   // Clear validation when all required fields are filled
+  const currentYear = new Date().getFullYear();
+  const hasValidYear = isSupportedTradeInYear(tradeInInfo.year, currentYear);
+
   useEffect(() => {
-    if (showValidation && tradeInInfo.brand && tradeInInfo.year && hasModelOrHp && tradeInInfo.condition) {
+    if (showValidation && tradeInInfo.brand && hasValidYear && hasModelOrHp && tradeInInfo.condition) {
       setShowValidation(false);
     }
-  }, [tradeInInfo.brand, tradeInInfo.year, hasModelOrHp, tradeInInfo.condition, showValidation]);
+  }, [tradeInInfo.brand, hasValidYear, hasModelOrHp, tradeInInfo.condition, showValidation]);
 
   // Reset estimate when fields change so button is shown again
   useEffect(() => {
@@ -145,7 +153,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   // Check if required fields are missing
   const missingFields = {
     brand: !tradeInInfo.brand,
-    year: !tradeInInfo.year,
+    year: !hasValidYear,
     horsepower: !hasModelOrHp,
     condition: !tradeInInfo.condition
   };
@@ -154,9 +162,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
   ];
-
-  const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: currentYear - 1989 }, (_, i) => currentYear - i);
 
   const conditionOptions = [
     { value: 'excellent', label: 'Excellent', description: 'Like new, 0–100 hours, no issues' },
@@ -168,7 +173,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !tradeInInfo.year || !hasModelOrHp || !tradeInInfo.condition) {
+    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition) {
       console.log('Missing required fields');
       return;
     }
@@ -341,15 +346,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     setEstimate(null);
                     autoEstimateTriggered.current = false;
                     onTradeInChange({
+                      ...tradeInInfo,
                       hasTradeIn: true,
-                      brand: '',
-                      year: 0,
-                      horsepower: 0,
-                      model: '',
-                      serialNumber: '',
-                      condition: 'good' as const,
+                      condition: tradeInInfo.condition || 'good',
                       estimatedValue: 0,
-                      confidenceLevel: 'medium' as const
+                      confidenceLevel: tradeInInfo.confidenceLevel || 'medium'
                     });
                   }}
                   aria-pressed={tradeInInfo.hasTradeIn}
@@ -383,7 +384,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
             >
               
               {/* Pre-filled notice */}
-              {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && (
+              {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && Boolean(
+                tradeInInfo.brand || tradeInInfo.year || tradeInInfo.horsepower || tradeInInfo.model
+              ) && (
                 <div className="bg-repower-navy-900/[0.04] border border-repower-navy-900/10 rounded-sm p-4">
                   <div className="flex items-center gap-2 text-repower-navy-900">
                     <CheckCircle2 className="w-4 h-4" />
@@ -442,13 +445,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <TooltipContent side="top" align="start" className="max-w-xs text-xs leading-relaxed">
                           <p className="font-medium mb-1">Why the year matters</p>
                           <p className="font-light">
-                            When the model text is just an HP number (like "90"), the year decides
-                            whether it's likely a 2-Stroke or 4-Stroke:
+                            For Mercury motors, a bare HP number (like "90") can use the year as a
+                            clue. Other brands still need the full model or an explicit "4S" / "2S".
                           </p>
                           <ul className="list-disc pl-4 mt-1 space-y-0.5 font-light">
-                            <li><span className="font-medium">2007 or newer</span> → 4-Stroke (medium confidence)</li>
-                            <li><span className="font-medium">Before 2000</span> → 2-Stroke (medium confidence)</li>
-                            <li><span className="font-medium">2000–2006</span> → ambiguous, please add "4S" or "2S"</li>
+                            <li><span className="font-medium">Mercury, 2007 or newer</span> → likely 4-Stroke</li>
+                            <li><span className="font-medium">Mercury, before 2000</span> → likely 2-Stroke</li>
+                            <li><span className="font-medium">Any uncertainty</span> → add the full model, "4S", or "2S"</li>
                           </ul>
                           <p className="font-light mt-1">
                             Picking a year updates the "Based on" reasons under the model field automatically.
@@ -457,29 +460,29 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </Tooltip>
                     </TooltipProvider>
                   </Label>
-                  <Select 
-                    value={tradeInInfo.year?.toString() || ''} 
-                    onValueChange={(value) => {
+                  <Input
+                    id="trade-year"
+                    type="number"
+                    inputMode="numeric"
+                    min={TRADE_IN_MIN_YEAR}
+                    max={currentYear}
+                    value={tradeInInfo.year || ''}
+                    onChange={(event) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, year: parseInt(value) });
+                      const year = Number.parseInt(event.target.value, 10);
+                      onTradeInChange({ ...tradeInInfo, year: Number.isFinite(year) ? year : 0 });
                     }}
-                  >
-                    <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
+                    placeholder="e.g. 2003"
+                    aria-describedby={showValidation && missingFields.year ? 'trade-year-error' : undefined}
+                    className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
                         ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
-                    }`}>
-                      <SelectValue placeholder="Select year" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {years.map(year => (
-                        <SelectItem key={year} value={year.toString()} className="font-light">{year}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    }`}
+                  />
                   {showValidation && missingFields.year && (
-                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
+                    <p id="trade-year-error" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Enter a year from {TRADE_IN_MIN_YEAR} to {currentYear}</p>
                   )}
                 </div>
 

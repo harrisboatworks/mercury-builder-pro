@@ -2,10 +2,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
-import { getVisibleQuoteSteps, type QuoteProgressStep } from './quote-progress-steps';
+import { canNavigateQuoteProgress, getVisibleQuoteSteps, type QuoteProgressStep } from './quote-progress-steps';
 
 export const QuoteProgressStepper = () => {
-  const { state, isStepAccessible } = useQuote();
+  const { state } = useQuote();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -15,14 +15,12 @@ export const QuoteProgressStepper = () => {
   const safeIndex = currentStepIndex < 0 ? 0 : currentStepIndex;
   const isCurrentStep = (index: number) => index === currentStepIndex;
   const isCompleted = (index: number) => index < currentStepIndex;
-  const isAccessible = (step: QuoteProgressStep, index: number) => {
-    if (isCompleted(index)) return true;
-    if (isCurrentStep(index)) return true;
-    return isStepAccessible(step.id);
+  const isAccessible = (index: number) => {
+    return canNavigateQuoteProgress(currentStepIndex, index);
   };
 
   const handleStepClick = (step: QuoteProgressStep, index: number) => {
-    if (isAccessible(step, index)) navigate(step.path);
+    if (isAccessible(index)) navigate(step.path);
   };
 
   const currentLabel = visibleSteps[safeIndex]?.label || '';
@@ -45,7 +43,7 @@ export const QuoteProgressStepper = () => {
             {visibleSteps.map((step, index) => {
               const completed = isCompleted(index);
               const current = isCurrentStep(index);
-              const accessible = isAccessible(step, index);
+              const accessible = isAccessible(index);
               const showConnector = index < visibleSteps.length - 1;
               const nextCompleted = isCompleted(index + 1);
 

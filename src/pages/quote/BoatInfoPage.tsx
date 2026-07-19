@@ -9,10 +9,12 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { ArrowLeft } from 'lucide-react';
 import { BoatInfo } from '@/components/QuoteBuilder';
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
+import { getQuoteStepNumber } from '@/components/quote-builder/quote-progress-steps';
 
 export default function BoatInfoPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible, isNavigationBlocked } = useQuote();
+  const stepNumber = getQuoteStepNumber(state, '/quote/boat-info') ?? 4;
   
   // Get monthly payment if motor is selected
   const monthlyPayment = useMotorMonthlyPayment({ 
@@ -84,7 +86,7 @@ export default function BoatInfoPage() {
           </button>
         </div>
         <QuotePageShell
-          eyebrow="Step 3 · Your Boat"
+          eyebrow={`Step ${stepNumber} · Your Boat`}
           title="Tell us about your boat"
           subhead="We use this to sanity-check fit before we send your quote. No auto-pricing games."
           className="!py-6 md:!py-8"

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { decodeTradeInModel } from './tradeInModelDecoder';
+import { decodeTradeInModel, decodeTradeInModelFields } from './tradeInModelDecoder';
 
 describe('decodeTradeInModel — model tokens', () => {
   it('F115 → Yamaha 4-Stroke 115HP, both high', () => {
@@ -63,8 +63,7 @@ describe('decodeTradeInModel — model tokens', () => {
     const r = decodeTradeInModel('2S 60');
     expect(r.stroke).toBe('2-Stroke');
     expect(r.strokeConfidence).toBe('high');
-    // Note: "2" is parsed as the leading HP number per current heuristics.
-    expect(r.hp).toBe(2);
+    expect(r.hp).toBe(60);
   });
 
   // Natural phrasings — these previously fell through to the year-based tiebreaker
@@ -132,37 +131,45 @@ describe('decodeTradeInModel — model tokens', () => {
 
 describe('decodeTradeInModel — year edge cases (bare HP)', () => {
   it('"90" + 2015 → 4-Stroke medium', () => {
-    const r = decodeTradeInModel('90', { year: 2015 });
+    const r = decodeTradeInModel('90', { brand: 'Mercury', year: 2015 });
     expect(r.stroke).toBe('4-Stroke');
     expect(r.strokeConfidence).toBe('medium');
     expect(r.strokeReasons.join(' ')).toMatch(/≥ 2007/);
   });
 
   it('"90" + 2007 (boundary) → 4-Stroke medium', () => {
-    const r = decodeTradeInModel('90', { year: 2007 });
+    const r = decodeTradeInModel('90', { brand: 'Mercury', year: 2007 });
     expect(r.stroke).toBe('4-Stroke');
     expect(r.strokeConfidence).toBe('medium');
   });
 
   it('"90" + 1995 → 2-Stroke medium', () => {
-    const r = decodeTradeInModel('90', { year: 1995 });
+    const r = decodeTradeInModel('90', { brand: 'Mercury', year: 1995 });
     expect(r.stroke).toBe('2-Stroke');
     expect(r.strokeConfidence).toBe('medium');
     expect(r.strokeReasons.join(' ')).toMatch(/< 2000/);
   });
 
   it('"90" + 2003 (gap zone) → stroke null, low, ambiguity warning', () => {
-    const r = decodeTradeInModel('90', { year: 2003 });
+    const r = decodeTradeInModel('90', { brand: 'Mercury', year: 2003 });
     expect(r.stroke).toBeNull();
     expect(r.strokeConfidence).toBe('low');
     expect(r.warnings.some((w) => /Stroke unclear/i.test(w))).toBe(true);
   });
 
-  it('"90" no year → stroke null, low, warning to enter year', () => {
+  it('"90" no year → stroke null, low, warning for a full model or stroke marker', () => {
     const r = decodeTradeInModel('90');
     expect(r.stroke).toBeNull();
     expect(r.strokeConfidence).toBe('low');
-    expect(r.warnings.some((w) => /enter year/i.test(w))).toBe(true);
+    expect(r.warnings.some((w) => /full model|4S/i.test(w))).toBe(true);
+  });
+
+  it('does not apply Mercury-era assumptions to a 2016 Evinrude', () => {
+    const r = decodeTradeInModel('90', { brand: 'Evinrude', year: 2016 });
+    expect(r.stroke).toBeNull();
+    expect(r.strokeConfidence).toBe('low');
+    expect(r.strokeReasons.join(' ')).not.toMatch(/Mercury era/i);
+    expect(r.warnings.some((w) => /full model|4S/i.test(w))).toBe(true);
   });
 
   it('marker beats year: F90 + 1995 → 4-Stroke high', () => {
@@ -173,11 +180,9 @@ describe('decodeTradeInModel — year edge cases (bare HP)', () => {
 });
 
 describe('decodeTradeInModel — multi-number strings', () => {
-  it('"2008 90 ELPT" → leading "200" wins (3-digit cap on \\d{1,3})', () => {
+  it('"2008 90 ELPT" ignores the leading year and finds 90HP', () => {
     const r = decodeTradeInModel('2008 90 ELPT');
-    // Documents current behavior: regex captures "200" (first 3 digits of "2008").
-    // 90 is then ignored. This test guards against regressions in either direction.
-    expect(r.hp).toBe(200);
+    expect(r.hp).toBe(90);
   });
 
   it('"90 25" → hp 90 wins as leading number', () => {
@@ -191,11 +196,9 @@ describe('decodeTradeInModel — multi-number strings', () => {
     expect(r.hpConfidence).toBe('high');
   });
 
-  it('"1999" alone → leading "199" parsed as HP (3-digit cap)', () => {
+  it('"1999" alone is treated as a year, not 199HP', () => {
     const r = decodeTradeInModel('1999');
-    // Current behavior: "199" is captured (within 2–450), so high confidence.
-    // Locks in the regex contract; change deliberately if heuristics evolve.
-    expect(r.hp).toBe(199);
+    expect(r.hp).toBeNull();
   });
 
   it('"9.9" → hp 9.9 high (decimal)', () => {
@@ -231,5 +234,33 @@ describe('decodeTradeInModel — suggestions', () => {
   it('"F 115" (spaced prefix) → suggestion ["F115"]', () => {
     const r = decodeTradeInModel('F 115');
     expect(r.suggestions).toEqual(['F115']);
+  });
+});
+
+describe('decodeTradeInModelFields — persisted quote data', () => {
+  it('persists decoded HP and stroke for alphanumeric model codes', () => {
+    expect(decodeTradeInModelFields('F115', { brand: 'Yamaha', year: 2020 })).toEqual({
+      horsepower: 115,
+      engineType: '4-stroke',
+    });
+    expect(decodeTradeInModelFields('90 2 stroke', { brand: 'Evinrude', year: 2016 })).toEqual({
+      horsepower: 90,
+      engineType: '2-stroke',
+    });
+    expect(decodeTradeInModelFields('4S 90', { brand: 'Mercury', year: 2020 })).toEqual({
+      horsepower: 90,
+      engineType: '4-stroke',
+    });
+    expect(decodeTradeInModelFields('2008 90 ELPT', { brand: 'Mercury', year: 2008 })).toEqual({
+      horsepower: 90,
+      engineType: '4-stroke',
+    });
+  });
+
+  it('does not persist a guessed stroke for a bare non-Mercury HP', () => {
+    expect(decodeTradeInModelFields('90', { brand: 'Evinrude', year: 2016 })).toEqual({
+      horsepower: 90,
+      engineType: undefined,
+    });
   });
 });

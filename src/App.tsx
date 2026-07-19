@@ -47,7 +47,6 @@ const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage")
 const OptionsPage = lazy(() => import("@/pages/quote/OptionsPage"));
 const PurchasePathPage = lazy(() => import("@/pages/quote/PurchasePathPage"));
 const BoatInfoPage = lazy(() => import("@/pages/quote/BoatInfoPage"));
-const FuelTankPage = lazy(() => import("@/pages/quote/FuelTankPage"));
 const TradeInPage = lazy(() => import("@/pages/quote/TradeInPage"));
 const InstallationPage = lazy(() => import("@/pages/quote/InstallationPage"));
 const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
@@ -252,7 +251,7 @@ function AnimatedRoutes() {
         <Route path="/quote/options" element={<OptionsPage />} />
         <Route path="/quote/purchase-path" element={<PurchasePathPage />} />
         <Route path="/quote/boat-info" element={<BoatInfoPage />} />
-        <Route path="/quote/fuel-tank" element={<FuelTankPage />} />
+        <Route path="/quote/fuel-tank" element={<Navigate to="/quote/options" replace />} />
         <Route path="/quote/trade-in" element={<TradeInPage />} />
         <Route path="/quote/installation" element={<InstallationPage />} />
         <Route path="/quote/promo-selection" element={<PromoSelectionPage />} />

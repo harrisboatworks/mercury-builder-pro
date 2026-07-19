@@ -9,6 +9,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { ArrowLeft } from 'lucide-react';
 import type { TradeInInfo } from '@/lib/trade-valuation';
 import { Skeleton } from '@/components/ui/skeleton';
+import { getQuoteStepNumber } from '@/components/quote-builder/quote-progress-steps';
+import { buildInitialTradeInInfo } from '@/lib/trade-in-state';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -22,18 +24,11 @@ import {
 
 export default function TradeInPage() {
   const navigate = useNavigate();
-  const { state, dispatch, isStepAccessible } = useQuote();
-  const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>({
-    hasTradeIn: false,
-    brand: '',
-    year: 0,
-    horsepower: 0,
-    model: '',
-    serialNumber: '',
-    condition: 'good' as const,
-    estimatedValue: 0,
-    confidenceLevel: 'medium' as const
-  });
+  const { state, dispatch } = useQuote();
+  const stepNumber = getQuoteStepNumber(state, '/quote/trade-in') ?? 5;
+  const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(() => (
+    buildInitialTradeInInfo(state.tradeInInfo, state.boatInfo)
+  ));
   
   // Track unsaved changes
   const [isDirty, setIsDirty] = useState(false);
@@ -53,17 +48,7 @@ export default function TradeInPage() {
         year: state.boatInfo?.currentMotorYear,
         hp: state.boatInfo?.currentHp
       });
-      setTradeInInfo({
-        hasTradeIn: false,
-        brand: state.boatInfo?.currentMotorBrand || '',
-        year: state.boatInfo?.currentMotorYear || 0,
-        horsepower: state.boatInfo?.currentHp || 0,
-        model: '',
-        serialNumber: '',
-        condition: 'good' as const,
-        estimatedValue: 0,
-        confidenceLevel: 'medium' as const
-      });
+      setTradeInInfo(buildInitialTradeInInfo(state.tradeInInfo, state.boatInfo));
 
       document.title = 'Trade-In Valuation | Harris Boat Works';
       
@@ -162,12 +147,7 @@ export default function TradeInPage() {
     if (state.purchasePath === 'installed') {
       navigate('/quote/boat-info');
     } else {
-      const isSmallTillerMotor = state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller');
-      if (isSmallTillerMotor) {
-        navigate('/quote/fuel-tank');
-      } else {
-        navigate('/quote/purchase-path');
-      }
+      navigate('/quote/purchase-path');
     }
   };
 
@@ -176,9 +156,7 @@ export default function TradeInPage() {
       // Show confirmation dialog instead of navigating immediately
       const target = state.purchasePath === 'installed' 
         ? '/quote/boat-info' 
-        : state.motor && state.motor.hp <= 9.9 && state.motor.type?.toLowerCase().includes('tiller')
-          ? '/quote/fuel-tank'
-          : '/quote/purchase-path';
+        : '/quote/purchase-path';
       setPendingNavigation(target);
       setShowExitDialog(true);
     } else {
@@ -241,7 +219,7 @@ export default function TradeInPage() {
     return (
       <PageTransition>
         <QuoteLayout>
-          <QuotePageShell eyebrow="Step 4 · Trade-In" title="Trading in your current motor?">
+          <QuotePageShell eyebrow={`Step ${stepNumber} · Trade-In`} title="Trading in your current motor?">
             <Skeleton className="h-9 w-32" />
             <div className="p-8 border border-repower-navy-900/10 bg-white space-y-6">
               <div className="space-y-3">
@@ -272,7 +250,7 @@ export default function TradeInPage() {
           </button>
         </div>
         <QuotePageShell
-          eyebrow="Step 4 · Trade-In"
+          eyebrow={`Step ${stepNumber} · Trade-In`}
           title="Trading in your current motor?"
           subhead="Get an instant credit estimate. Final value is confirmed by our team on pickup."
           className="!py-6 md:!py-8"

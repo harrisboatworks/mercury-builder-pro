@@ -16,6 +16,8 @@ export interface DecodeContext {
   year?: number;
 }
 
+export type DecodedTradeInEngineType = '4-stroke' | '2-stroke' | 'optimax' | undefined;
+
 const BRAND_FROM_PREFIX: Record<string, string> = {
   F: 'Yamaha',
   DF: 'Suzuki',
@@ -44,12 +46,17 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   const upper = trimmed.toUpperCase();
 
   // ---- HP extraction ----
-  const strong = upper.match(/^(?:F|DF|BF|DT)?(\d{1,3}(?:\.\d)?)/);
+  const leadingStrokeHp = upper.match(/^(?:2|4|TWO|FOUR)[\s-]?(?:S|STROKES?)\s+(\d{1,3}(?:\.\d)?)(?!\d)/);
+  const strong = leadingStrokeHp ? null : upper.match(/^(?:F|DF|BF|DT)?(\d{1,3}(?:\.\d)?)(?!\d)/);
   const embedded = Array.from(upper.matchAll(/\b(\d{1,3}(?:\.\d)?)\b/g))
     .map((m) => parseFloat(m[1]))
     .filter((n) => n >= 2 && n <= 450 && !(n >= 1950 && n <= 2050));
 
-  if (strong) {
+  if (leadingStrokeHp) {
+    result.hp = parseFloat(leadingStrokeHp[1]);
+    result.hpConfidence = 'high';
+    result.hpReasons.push(`HP "${leadingStrokeHp[1]}" follows an explicit stroke marker`);
+  } else if (strong) {
     const n = parseFloat(strong[1]);
     if (n >= 2 && n <= 450) {
       result.hp = n;
@@ -103,20 +110,24 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
     result.strokeConfidence = 'high';
     result.strokeReasons.push(`Matched "${twoStrokeHit[0]}" → 2-Stroke marker`);
   } else if (/^\d/.test(upper) && result.hp) {
-    // Bare number, try to use year as a tiebreaker
-    if (year && year >= 2007) {
+    // Mercury's model history supports a bounded year-based clue. Applying the
+    // same cutoff to other brands can confidently misclassify their motors.
+    const isMercury = brand?.trim().toLowerCase() === 'mercury';
+    if (isMercury && year && year >= 2007) {
       result.stroke = '4-Stroke';
       result.strokeConfidence = 'medium';
       result.strokeReasons.push(`Bare HP + year ${year} (≥ 2007) → likely 4-Stroke (modern Mercury era)`);
-    } else if (year && year < 2000) {
+    } else if (isMercury && year && year < 2000) {
       result.stroke = '2-Stroke';
       result.strokeConfidence = 'medium';
-      result.strokeReasons.push(`Bare HP + year ${year} (< 2000) → likely 2-Stroke era`);
+      result.strokeReasons.push(`Bare HP + year ${year} (< 2000) → likely 2-Stroke (Mercury era)`);
     } else {
       result.stroke = null;
       result.strokeConfidence = 'low';
-      result.strokeReasons.push('Bare HP with no year, stroke ambiguous');
-      result.warnings.push("Stroke unclear from bare HP, enter year to refine, or add '4S' / '2S'");
+      result.strokeReasons.push(isMercury
+        ? 'Bare Mercury HP without a decisive year, stroke ambiguous'
+        : 'Bare HP without a brand-specific model marker, stroke ambiguous');
+      result.warnings.push("Stroke unclear from bare HP; enter the full model or add '4S' / '2S'");
     }
   }
 
@@ -149,4 +160,23 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   }
 
   return result;
+}
+
+export function decodeTradeInModelFields(raw: string, ctx: DecodeContext = {}): {
+  horsepower: number;
+  engineType: DecodedTradeInEngineType;
+} {
+  const decoded = decodeTradeInModel(raw, ctx);
+  const engineType = decoded.stroke === '4-Stroke'
+    ? '4-stroke'
+    : decoded.stroke === '2-Stroke'
+      ? '2-stroke'
+      : decoded.stroke === 'OptiMax'
+        ? 'optimax'
+        : undefined;
+
+  return {
+    horsepower: decoded.hp ?? 0,
+    engineType,
+  };
 }

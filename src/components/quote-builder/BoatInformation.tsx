@@ -17,6 +17,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { isTillerMotor } from '@/lib/utils';
 import { TransomHeightCalculator } from '@/components/motors/TransomHeightCalculator';
+import { TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -589,8 +590,8 @@ export const BoatInformation = ({
 
                     {/* Skip option for unsure users */}
                     <button type="button" onClick={handleSkip} className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg">
-                      <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
-                           <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Skip boat type selection" className="h-20 w-full h-auto object-contain" loading="lazy" />
+                      <div className="mb-3 flex h-24 items-center justify-center rounded-md border border-repower-navy-900/10 bg-repower-navy-900/[0.04] text-repower-navy-900/60 transition-colors group-hover:bg-repower-navy-900/[0.07] group-hover:text-repower-navy-900">
+                        <HelpCircle className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" />
                       </div>
                       <h3 className="font-light tracking-wide heading-protected">Not Sure?</h3>
                       <p className="text-sm font-light text-protected">Skip, we'll confirm later</p>
@@ -788,20 +789,20 @@ export const BoatInformation = ({
                        </div>
 
                        <div className="space-y-2">
-                         <Label className="font-light">Current Motor Year</Label>
-                         <Select value={boatInfo.currentMotorYear?.toString() || ''} onValueChange={value => setBoatInfo(prev => ({
-                      ...prev,
-                      currentMotorYear: parseInt(value)
-                    }))}>
-                           <SelectTrigger>
-                             <SelectValue placeholder="Select year" />
-                           </SelectTrigger>
-                           <SelectContent>
-                             {Array.from({
-                          length: new Date().getFullYear() - 1989
-                        }, (_, i) => new Date().getFullYear() - i).map(year => <SelectItem key={year} value={year.toString()}>{year}</SelectItem>)}
-                           </SelectContent>
-                         </Select>
+                         <Label htmlFor="current-motor-year" className="font-light">Current Motor Year</Label>
+                         <Input
+                           id="current-motor-year"
+                           type="number"
+                           inputMode="numeric"
+                           min={TRADE_IN_MIN_YEAR}
+                           max={new Date().getFullYear()}
+                           placeholder="e.g. 2003"
+                           value={boatInfo.currentMotorYear || ''}
+                           onChange={event => setBoatInfo(prev => ({
+                             ...prev,
+                             currentMotorYear: parseInt(event.target.value, 10) || undefined
+                           }))}
+                         />
                          <p className="text-xs text-protected-subtle">Helps us provide more accurate trade-in estimates.</p>
                        </div>
                       </>}

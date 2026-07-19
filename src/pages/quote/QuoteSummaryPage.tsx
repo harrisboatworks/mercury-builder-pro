@@ -41,6 +41,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
 import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
+import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
@@ -798,20 +799,27 @@ export default function QuoteSummaryPage() {
         savedQuoteQrCode,
       };
       
-      // Save lead
-      try {
-        const { saveLead } = await import('@/lib/leadCapture');
-        await saveLead({
-          motor_model: quoteData.motor?.model,
-          motor_hp: quoteData.motor?.hp,
-          base_price: displayPricing.subtotal,
-          final_price: packageTotal,
-          lead_status: 'downloaded',
-          lead_source: 'pdf_download',
-          quote_data: quoteData
-        });
-      } catch (leadError) {
-        console.error('Failed to save lead:', leadError);
+      // Save a CRM lead only when the quote has a real, contactable customer.
+      // Anonymous downloads remain represented by saved_quotes + activity
+      // tracking without inventing placeholder CRM identities.
+      if (hasIdentifiedPdfCustomer({ name: state.customerName, email: state.customerEmail })) {
+        try {
+          const { saveLead } = await import('@/lib/leadCapture');
+          await saveLead({
+            motor_model: quoteData.motor?.model,
+            motor_hp: quoteData.motor?.hp,
+            base_price: displayPricing.subtotal,
+            final_price: packageTotal,
+            customer_name: state.customerName,
+            customer_email: state.customerEmail,
+            customer_phone: state.customerPhone || undefined,
+            lead_status: 'downloaded',
+            lead_source: 'pdf_download',
+            quote_data: quoteData
+          });
+        } catch (leadError) {
+          console.error('Failed to save identified PDF lead:', leadError);
+        }
       }
       
       const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
