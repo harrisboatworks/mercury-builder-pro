@@ -16,6 +16,7 @@ import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock, 
 import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
+import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -38,6 +39,20 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const [isSendingText, setIsSendingText] = useState(false);
+  const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
+
+  const buildPdfData = (quoteNumber: string, customer: { name: string; email: string; phone?: string }) => {
+    if (!pdfSnapshot) {
+      throw new Error('The exact quote snapshot is missing. Return to the quote summary once, then try again.');
+    }
+    return {
+      quoteNumber,
+      customerName: customer.name || 'Valued Customer',
+      customerEmail: customer.email || '',
+      customerPhone: customer.phone || '',
+      snapshot: pdfSnapshot,
+    };
+  };
 
   const formatPhoneAsUserTypes = (value: string) => {
     // Remove all non-digits
@@ -80,6 +95,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const calculateMonthlyPayment = () => {
+    if (pdfSnapshot?.financing?.monthlyPayment) return pdfSnapshot.financing.monthlyPayment;
     if (!quoteData.motor) return 0;
     const principal = Math.round(totalCashPrice) - quoteData.financing.downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
@@ -130,19 +146,22 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const subtotal = motorPrice + accessoryTotal;
   const hasTradeIn = quoteData.tradeInInfo?.hasTradeIn || false;
   const tradeInValue = quoteData.tradeInInfo?.estimatedValue || 0;
-  const subtotalAfterTrade = subtotal - (hasTradeIn ? tradeInValue : 0);
-  const hst = subtotalAfterTrade * 0.13;
-  const totalCashPrice = subtotalAfterTrade + hst;
+  const calculatedSubtotalAfterTrade = subtotal - (hasTradeIn ? tradeInValue : 0);
+  const subtotalAfterTrade = pdfSnapshot?.pricing.subtotal ?? calculatedSubtotalAfterTrade;
+  const hst = pdfSnapshot?.pricing.hst ?? (subtotalAfterTrade * 0.13);
+  const totalCashPrice = pdfSnapshot?.pricing.totalCashPrice ?? (subtotalAfterTrade + hst);
   
   // Create pricing data object - MSRP is just motor MSRP, not including accessories
   const data = {
-    msrp: motorMSRP, // Motor MSRP only (not adding accessories)
-    discount: motorDiscount,
-    promoValue: 0,
-    motorSubtotal: motorPrice,
-    accessoryTotal: accessoryTotal,
-    subtotal: subtotal,
-    savings: motorDiscount
+    msrp: pdfSnapshot?.pricing.msrp ?? motorMSRP,
+    discount: pdfSnapshot?.pricing.discount ?? motorDiscount,
+    promoValue: pdfSnapshot?.pricing.promoValue ?? 0,
+    motorSubtotal: pdfSnapshot?.pricing.motorSubtotal ?? motorPrice,
+    accessoryTotal: pdfSnapshot
+      ? pdfSnapshot.accessoryBreakdown.reduce((sum, item) => sum + item.price, 0)
+      : accessoryTotal,
+    subtotal: pdfSnapshot?.pricing.subtotal ?? subtotal,
+    savings: pdfSnapshot?.pricing.savings ?? motorDiscount
   };
   
   // Create totals object for backward compatibility
@@ -156,7 +175,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
   const calculateTotalCost = () => {
     const monthlyPayment = calculateMonthlyPayment();
-    return (monthlyPayment * quoteData.financing.term) + quoteData.financing.downPayment;
+    const amortization = pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term;
+    return (monthlyPayment * amortization) + quoteData.financing.downPayment;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -194,9 +214,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         base_price: totals.subtotal,
         final_price: Math.round(totalCashPrice),
         deposit_amount: quoteData.financing.downPayment,
-        loan_amount: Math.round(totalCashPrice) - quoteData.financing.downPayment,
+        loan_amount: pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - quoteData.financing.downPayment),
         monthly_payment: calculateMonthlyPayment(),
-        term_months: quoteData.financing.term,
+        term_months: pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term,
         total_cost: calculateTotalCost(),
         customer_name: sanitizedContactInfo.name,
         customer_email: sanitizedContactInfo.email,
@@ -314,26 +334,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           // Import PDF generation utilities
           const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
           
-          // Prepare complete quote data for PDF
-          const pdfQuoteData = {
-            quoteNumber: quoteNumber,
-            customerName: sanitizedContactInfo.name,
-            customerEmail: sanitizedContactInfo.email,
-            customerPhone: sanitizedContactInfo.phone,
-            motor: quoteData.motor,
-            pricing: {
-              msrp: data.msrp,
-              discount: data.discount,
-              promoValue: data.promoValue,
-              motorSubtotal: motorPrice,
-              subtotal: subtotalAfterTrade,
-              hst: hst,
-              totalCashPrice: totalCashPrice
-            },
-            financing: quoteData.financing,
-            tradeInValue: hasTradeIn ? tradeInValue : undefined,
-            tradeInInfo: hasTradeIn ? quoteData.boatInfo?.tradeIn : undefined
-          };
+          const pdfQuoteData = buildPdfData(quoteNumber, {
+            name: sanitizedContactInfo.name,
+            email: sanitizedContactInfo.email,
+            phone: sanitizedContactInfo.phone,
+          });
           
           console.log('🔍 [PDF] Generating PDF blob...');
           const pdfBlob = await generatePDFBlob(pdfQuoteData);
@@ -538,38 +543,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       // Import PDF generator
       const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       
-      const pdfData = {
-        quoteNumber,
-        customerName: contactInfo.name || 'Valued Customer',
-        customerEmail: contactInfo.email || user?.email || '',
-        customerPhone: contactInfo.phone || '',
-        motor: {
-          model: quoteData.motor?.model || 'Mercury Motor',
-          hp: quoteData.motor?.hp || 0,
-          year: quoteData.motor?.year,
-          sku: (quoteData.motor as any)?.sku,
-        },
-        pricing: {
-          msrp: totals.msrp,
-          discount: totals.discount,
-          promoValue: totals.promoValue,
-          subtotal: totals.subtotal,
-          tradeInValue: hasTradeIn ? tradeInValue : undefined,
-          subtotalAfterTrade: Math.round(subtotalAfterTrade),
-          hst: Math.round(hst),
-          totalCashPrice: Math.round(totalCashPrice),
-          savings: totals.savings
-        },
-        specs: [
-          { label: "HP", value: `${quoteData.motor?.hp || 0}` },
-          { label: "Year", value: `${quoteData.motor?.year || 2025}` }
-        ].filter(spec => spec.value && spec.value !== '0'),
-        financing: {
-          monthlyPayment: Math.round(calculateMonthlyPayment()),
-          term: quoteData.financing.term,
-          rate: quoteData.financing.rate
-        }
-      };
+      const pdfData = buildPdfData(quoteNumber, {
+        name: contactInfo.name || 'Valued Customer',
+        email: contactInfo.email || user?.email || '',
+        phone: contactInfo.phone,
+      });
       
       // Generate PDF using PDF.co API
       const pdfUrl = await generateQuotePDF(pdfData);
@@ -605,25 +583,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       
       // Generate PDF first
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfQuoteData = {
-        quoteNumber,
-        customerName: contactInfo.name || 'Customer',
-        customerEmail: contactInfo.email,
-        customerPhone: contactInfo.phone,
-        motor: quoteData.motor,
-        pricing: {
-          msrp: data.msrp,
-          discount: data.discount,
-          promoValue: data.promoValue,
-          motorSubtotal: motorPrice,
-          subtotal: subtotalAfterTrade,
-          hst: hst,
-          totalCashPrice: totalCashPrice
-        },
-        financing: quoteData.financing,
-        tradeInValue: hasTradeIn ? tradeInValue : undefined,
-        tradeInInfo: hasTradeIn ? quoteData.boatInfo?.tradeIn : undefined
-      };
+      const pdfQuoteData = buildPdfData(quoteNumber, {
+        name: contactInfo.name || 'Customer',
+        email: contactInfo.email,
+        phone: contactInfo.phone,
+      });
       
       const pdfBlob = await generatePDFBlob(pdfQuoteData);
       
@@ -694,25 +658,11 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       
       // Generate PDF first
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-      const pdfQuoteData = {
-        quoteNumber,
-        customerName: contactInfo.name || 'Customer',
-        customerEmail: contactInfo.email,
-        customerPhone: contactInfo.phone,
-        motor: quoteData.motor,
-        pricing: {
-          msrp: data.msrp,
-          discount: data.discount,
-          promoValue: data.promoValue,
-          motorSubtotal: motorPrice,
-          subtotal: subtotalAfterTrade,
-          hst: hst,
-          totalCashPrice: totalCashPrice
-        },
-        financing: quoteData.financing,
-        tradeInValue: hasTradeIn ? tradeInValue : undefined,
-        tradeInInfo: hasTradeIn ? quoteData.boatInfo?.tradeIn : undefined
-      };
+      const pdfQuoteData = buildPdfData(quoteNumber, {
+        name: contactInfo.name || 'Customer',
+        email: contactInfo.email,
+        phone: contactInfo.phone,
+      });
       
       const pdfBlob = await generatePDFBlob(pdfQuoteData);
       

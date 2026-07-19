@@ -9,7 +9,8 @@ import { ShieldCheck, Save, Loader2, Copy, Check, Link, Plus, Trash2 } from 'luc
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
-import { calculateQuotePricing } from '@/lib/quote-utils';
+import { calculateQuotePricing, getFinanceableAmount } from '@/lib/quote-utils';
+import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { useToast } from '@/hooks/use-toast';
 
 import { SITE_URL } from '@/lib/site';
@@ -112,9 +113,11 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       const tradeInValue = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
       
       // Calculate promo savings from state (same logic as QuoteSummaryPage)
-      const promoSavings = state.selectedPromoOption === 'cash_rebate' && state.selectedPromoValue
-        ? parseInt(state.selectedPromoValue.replace(/[^0-9]/g, ''), 10) || 0
-        : 0;
+      const promoSavings = state.pdfSnapshot?.pricing.promoValue
+        ?? state.frozenPricing?.promoSavings
+        ?? (state.selectedPromoOption === 'cash_rebate' && state.selectedPromoValue
+          ? parseInt(state.selectedPromoValue.replace(/[^0-9]/g, ''), 10) || 0
+          : 0);
       
       // Use the same calculateQuotePricing function as QuoteSummaryPage for consistency
       const pricing = calculateQuotePricing({
@@ -129,6 +132,38 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       });
       
       // Enhanced quote data with admin fields and persisted accessory breakdown
+      const updatedFinancing = state.pdfSnapshot?.financing && state.selectedPaymentMethod !== 'cash_purchase'
+        ? (() => {
+            const amountFinanced = getFinanceableAmount(pricing.subtotal, 0.13, state.pdfSnapshot!.financing!.dealerFee || DEALERPLAN_FEE);
+            return {
+              ...state.pdfSnapshot!.financing!,
+              amountFinanced,
+              monthlyPayment: calculateMonthlyPayment(
+                amountFinanced,
+                state.pdfSnapshot!.financing!.rate,
+                state.pdfSnapshot!.financing!.amortizationMonths,
+              ).payment,
+            };
+          })()
+        : undefined;
+      const updatedPdfSnapshot = state.pdfSnapshot ? {
+        ...state.pdfSnapshot,
+        pricing: {
+          msrp: motorMSRP,
+          discount: motorDiscount,
+          adminDiscount,
+          promoValue: promoSavings,
+          motorSubtotal: motorMSRP - motorDiscount - adminDiscount - promoSavings,
+          subtotal: pricing.subtotal,
+          hst: pricing.tax,
+          totalCashPrice: pricing.total,
+          savings: pricing.savings,
+        },
+        accessoryBreakdown,
+        financing: updatedFinancing,
+        customerNotes: customerNotes || undefined,
+      } : undefined;
+
       const frozenPricingSnapshot = {
         motorMSRP,
         motorDiscount,
@@ -138,6 +173,18 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         hst: pricing.tax,
         total: pricing.total,
         savings: pricing.savings,
+        quoteExpiryDate: updatedPdfSnapshot?.validUntil,
+        promotionName: updatedPdfSnapshot?.promotion?.name,
+        promotionEndDate: updatedPdfSnapshot?.promotion?.endDate,
+        promotionCombinationMode: updatedPdfSnapshot?.promotion?.combinationMode,
+        selectedPromoOption: updatedPdfSnapshot?.promotion?.selectedOption,
+        selectedPromoValue: updatedPdfSnapshot?.promotion?.selectedValue,
+        selectedPaymentMethod: updatedPdfSnapshot?.paymentMethod,
+        financingRate: updatedFinancing?.rate,
+        financingAmortizationMonths: updatedFinancing?.amortizationMonths,
+        financingContractTermMonths: updatedFinancing?.contractTermMonths,
+        dealerFee: updatedFinancing?.dealerFee,
+        amountFinanced: updatedFinancing?.amountFinanced,
       };
       
       const enhancedQuoteData = {
@@ -152,6 +199,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         adminCustomItems: customItems,
         accessoryBreakdown, // Persist the full breakdown for PDF generation
         frozenPricing: frozenPricingSnapshot, // Lock prices for share link parity
+        pdfSnapshot: updatedPdfSnapshot,
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoRate: state.selectedPromoRate,
         selectedPromoTerm: state.selectedPromoTerm,

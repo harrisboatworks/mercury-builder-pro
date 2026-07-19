@@ -48,6 +48,13 @@ import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
+import {
+  calculateProtectionMonthlyDelta,
+  FINANCING_CONTRACT_TERM_MONTHS,
+  frozenPricingFromPdfSnapshot,
+  QUOTE_PDF_SNAPSHOT_VERSION,
+  type QuotePdfSnapshot,
+} from '@/lib/quote-pdf-data';
 
 // Animation variants
 const sectionVariants = {
@@ -110,6 +117,7 @@ export default function QuoteSummaryPage() {
       state.warrantyConfig?.extendedYears ?? 0,
       state.warrantyConfig?.warrantyPrice ?? 0,
       state.warrantyConfig?.totalYears ?? currentCoverageYears,
+      state.pdfSnapshot?.createdAt ?? 'snapshot-pending',
     ].join(':');
     if (softLeadSnapshotRef.current === snapshotKey) return;
     softLeadSnapshotRef.current = snapshotKey;
@@ -168,6 +176,7 @@ export default function QuoteSummaryPage() {
     state.warrantyConfig?.extendedYears,
     state.warrantyConfig?.warrantyPrice,
     state.warrantyConfig?.totalYears,
+    state.pdfSnapshot?.createdAt,
     currentCoverageYears,
     user?.id,
   ]);
@@ -324,7 +333,7 @@ export default function QuoteSummaryPage() {
 
 
   // Helper to get display value for promo option
-  const getPromoDisplayValue = (
+  const getPromoDisplayValue = useCallback((
     option: 'no_payments' | 'special_financing' | 'cash_rebate' | null | undefined,
     motorHP: number
   ): string => {
@@ -344,7 +353,7 @@ export default function QuoteSummaryPage() {
       default:
         return '';
     }
-  };
+  }, [getRebateForHP, getSpecialFinancingRates]);
 
   const specSheetUrl = motor?.specSheetUrl ?? null;
   
@@ -565,6 +574,141 @@ export default function QuoteSummaryPage() {
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
 
+  const quoteValidUntil = useMemo(() => {
+    if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
+    if (state.pdfSnapshot?.validUntil) return new Date(state.pdfSnapshot.validUntil);
+    const thirtyDaysOut = new Date();
+    thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
+    const promotionEnd = currentPromotion?.end_date ? promoEndOfDay(currentPromotion.end_date) : null;
+    return promotionEnd && promotionEnd < thirtyDaysOut ? promotionEnd : thirtyDaysOut;
+  }, [currentPromotion?.end_date, state.frozenPricing?.quoteExpiryDate, state.pdfSnapshot?.validUntil]);
+
+  const pdfSnapshot = useMemo<QuotePdfSnapshot>(() => {
+    const frozen = state.frozenPricing;
+    const existing = state.pdfSnapshot;
+    const paymentMethod = frozen?.selectedPaymentMethod ?? existing?.paymentMethod ?? state.selectedPaymentMethod;
+    const financingAmortization = frozen?.financingAmortizationMonths ?? existing?.financing?.amortizationMonths ?? termMonths;
+    const financingApr = frozen?.financingRate ?? existing?.financing?.rate ?? financingRate;
+    const planPrice = state.warrantyConfig?.warrantyPrice || 0;
+    const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
+    const selectedPromoValue = frozen?.selectedPromoValue
+      ?? state.selectedPromoValue
+      ?? getPromoDisplayValue(state.selectedPromoOption, Number(hp));
+
+    return {
+      version: QUOTE_PDF_SNAPSHOT_VERSION,
+      createdAt: state.pdfSnapshot?.createdAt || new Date().toISOString(),
+      validUntil: quoteValidUntil.toISOString(),
+      motor: {
+        model: motorName,
+        hp: Number(hp),
+        msrp: motorMSRP,
+        modelYear: Number(modelYear || 2026),
+        category: motor?.category || 'FourStroke',
+        imageUrl: imageUrl || undefined,
+      },
+      pricing: {
+        msrp: motorMSRP,
+        discount: motorDiscount,
+        adminDiscount: state.adminDiscount || 0,
+        promoValue: promoSavings,
+        motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
+        subtotal: displayPricing.subtotal,
+        hst: displayPricing.tax,
+        totalCashPrice: displayPricing.total,
+        savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
+      },
+      accessoryBreakdown,
+      purchasePath: state.purchasePath === 'installed' ? 'installed' : 'loose',
+      ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue > 0 && state.tradeInInfo?.brand ? {
+        tradeInValue: state.tradeInInfo.estimatedValue,
+        tradeInInfo: {
+          brand: state.tradeInInfo.brand,
+          year: Number(state.tradeInInfo.year),
+          horsepower: Number(state.tradeInInfo.horsepower),
+          model: state.tradeInInfo.model || undefined,
+        },
+      } : {}),
+      includedCoverageYears: currentCoverageYears,
+      ...(state.warrantyConfig && state.warrantyConfig.extendedYears > 0 && planPrice > 0 ? {
+        productProtection: {
+          planYears: state.warrantyConfig.extendedYears,
+          totalCoverageYears: state.warrantyConfig.totalYears,
+          priceBeforeTax: planPrice,
+          ...(canShowFinancing ? {
+            monthlyDelta: calculateProtectionMonthlyDelta({
+              priceBeforeTax: planPrice,
+              annualRate: financingApr,
+              amortizationMonths: financingAmortization,
+            }),
+          } : {}),
+        },
+      } : {}),
+      ...(canShowFinancing ? {
+        financing: {
+          monthlyPayment: frozen?.amountFinanced && frozen?.financingRate && frozen?.financingAmortizationMonths
+            ? calculateMonthlyPayment(frozen.amountFinanced, frozen.financingRate, frozen.financingAmortizationMonths).payment
+            : monthlyPayment,
+          rate: financingApr,
+          amortizationMonths: financingAmortization,
+          contractTermMonths: frozen?.financingContractTermMonths ?? existing?.financing?.contractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS,
+          amountFinanced: frozen?.amountFinanced ?? existing?.financing?.amountFinanced ?? amountToFinance,
+          dealerFee: frozen?.dealerFee ?? existing?.financing?.dealerFee ?? DEALERPLAN_FEE,
+          downPayment: state.financing.downPayment,
+        },
+      } : {}),
+      paymentMethod,
+      promotion: {
+        name: frozen ? frozen.promotionName : (existing?.promotion?.name ?? currentPromotion?.name),
+        endDate: frozen ? frozen.promotionEndDate : (existing?.promotion?.endDate ?? currentPromotion?.end_date),
+        combinationMode: frozen?.promotionCombinationMode ?? existing?.promotion?.combinationMode ?? currentPromotion?.promo_options?.type,
+        selectedOption: frozen?.selectedPromoOption ?? state.selectedPromoOption,
+        selectedValue: selectedPromoValue,
+      },
+      customerNotes: state.customerNotes || undefined,
+    };
+  }, [
+    accessoryBreakdown,
+    amountToFinance,
+    currentCoverageYears,
+    currentPromotion?.end_date,
+    currentPromotion?.name,
+    currentPromotion?.promo_options?.type,
+    displayPricing.subtotal,
+    displayPricing.tax,
+    displayPricing.total,
+    financingRate,
+    hp,
+    imageUrl,
+    modelYear,
+    monthlyPayment,
+    motor?.category,
+    motorDiscount,
+    motorMSRP,
+    motorName,
+    promoSavings,
+    quoteValidUntil,
+    state.adminDiscount,
+    state.customerNotes,
+    state.financing.downPayment,
+    state.frozenPricing,
+    state.pdfSnapshot,
+    state.purchasePath,
+    state.selectedPaymentMethod,
+    state.selectedPromoOption,
+    state.selectedPromoValue,
+    state.tradeInInfo,
+    state.warrantyConfig,
+    termMonths,
+    getPromoDisplayValue,
+  ]);
+
+  useEffect(() => {
+    if (JSON.stringify(state.pdfSnapshot) !== JSON.stringify(pdfSnapshot)) {
+      dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
+    }
+  }, [dispatch, pdfSnapshot, state.pdfSnapshot]);
+
   // CTA handlers
   const noMotorSelected = !state.motor;
 
@@ -577,44 +721,24 @@ export default function QuoteSummaryPage() {
     
     try {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const packageTax = displayPricing.subtotal * 0.13;
-      const packageTotal = displayPricing.subtotal + packageTax;
+      const packageTotal = pdfSnapshot.pricing.totalCashPrice;
       
       // Generate QR code, always generate for all quotes (cash & financing)
       // Points to financing app with prefilled params for financing-eligible quotes,
       // or to the main site for sub-threshold quotes
-      const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
       let qrTargetUrl = `${SITE_URL}`;
       let savedQuoteIdForSms: string | undefined;
       let savedQuoteRefForSms: string | undefined;
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
-        const packageTaxForQr = displayPricing.subtotal * 0.13;
-        const packageTotalForQr = displayPricing.subtotal + packageTaxForQr;
-        // Calculate smart expiry: earlier of 30 days or promo end
-        const thirtyDaysOut = new Date();
-        thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
-        const promoEnd = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;
-        const quoteExpiry = promoEnd && promoEnd < thirtyDaysOut ? promoEnd : thirtyDaysOut;
-
-        const frozenPricingSnapshot = {
-          motorMSRP,
-          motorDiscount,
-          adminDiscount: state.adminDiscount || 0,
-          promoSavings,
-          subtotal: displayPricing.subtotal,
-          hst: packageTaxForQr,
-          total: packageTotalForQr,
-          savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
-          quoteExpiryDate: quoteExpiry.toISOString(),
-        };
+        const frozenPricingSnapshot = frozenPricingFromPdfSnapshot(pdfSnapshot);
         const { data: savedForQr } = await supabase
           .from('saved_quotes')
           .insert({
             email: state.customerEmail || 'pdf-download@placeholder.com',
             resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: { ...state, frozenPricing: frozenPricingSnapshot } as any,
+            quote_state: { ...state, frozenPricing: frozenPricingSnapshot, pdfSnapshot } as any,
             user_id: user?.id || null,
             expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
           } as any)
@@ -645,59 +769,8 @@ export default function QuoteSummaryPage() {
         customerName: state.customerName || 'Valued Customer',
         customerEmail: state.customerEmail || '',
         customerPhone: state.customerPhone || '',
-        motor: {
-          model: motorName,
-          hp: hp,
-          msrp: motorMSRP,
-          base_price: motorMSRP - motorDiscount,
-          sale_price: motorMSRP - motorDiscount - promoSavings,
-          dealer_price: motorMSRP - motorDiscount,
-          model_year: modelYear || 2026,
-          category: motor?.category || 'FourStroke',
-          imageUrl: imageUrl
-        },
-        selectedPackage: {
-          id: selectedPackage,
-          label: selectedPackageLabel,
-          coverageYears: selectedPackageCoverageYears,
-          features: []
-        },
-        accessoryBreakdown: (() => { console.log('[PDF] accessoryBreakdown items:', accessoryBreakdown.length, JSON.stringify(accessoryBreakdown)); return accessoryBreakdown; })(),
-        ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
-          tradeInValue: state.tradeInInfo.estimatedValue,
-          tradeInInfo: {
-            brand: state.tradeInInfo.brand,
-            year: state.tradeInInfo.year,
-            horsepower: state.tradeInInfo.horsepower,
-            model: state.tradeInInfo.model
-          }
-        } : {}),
-        includesInstallation: state.purchasePath === 'installed',
-        pricing: {
-          msrp: motorMSRP,
-          discount: motorDiscount,
-          adminDiscount: state.adminDiscount || 0,
-          promoValue: promoSavings,
-          motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-          subtotal: displayPricing.subtotal,
-          hst: packageTax,
-          totalCashPrice: packageTotal,
-          savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
-        },
-        // Always include QR code; only include financing data if total meets minimum threshold
+        snapshot: pdfSnapshot,
         financingQrCode: qrCodeDataUrl,
-        ...(!isCashPurchase && packageTotal >= FINANCING_MINIMUM ? {
-          monthlyPayment,
-          financingTerm: termMonths,
-          financingRate,
-        } : {}),
-        selectedPromoOption: state.selectedPromoOption,
-        selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
-        selectedPaymentMethod: state.selectedPaymentMethod,
-        promotionName: currentPromotion?.name ?? undefined,
-        promotionCombinationMode: currentPromotion?.promo_options?.type ?? undefined,
-        customerNotes: state.customerNotes || undefined,
-        promoEndDate: currentPromotion?.end_date ?? undefined,
       };
       
       // Save lead
@@ -785,6 +858,7 @@ export default function QuoteSummaryPage() {
   };
 
   const handleBookConsult = () => {
+    dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     navigate('/quote/schedule');
   };
 
@@ -800,8 +874,6 @@ export default function QuoteSummaryPage() {
     try {
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const packageTax = displayPricing.subtotal * 0.13;
-      const packageTotal = displayPricing.subtotal + packageTax;
       const referenceNumber = `HBW-DEP-${quoteNumber.slice(4)}`;
       
       const basePdfData = {
@@ -809,51 +881,7 @@ export default function QuoteSummaryPage() {
         customerName: customerInfo.name,
         customerEmail: customerInfo.email,
         customerPhone: customerInfo.phone,
-        motor: {
-          model: motorName,
-          hp: hp,
-          msrp: motorMSRP,
-          base_price: motorMSRP - motorDiscount,
-          sale_price: motorMSRP - motorDiscount - promoSavings,
-          dealer_price: motorMSRP - motorDiscount,
-          model_year: modelYear || 2026,
-          category: motor?.category || 'FourStroke',
-          imageUrl: imageUrl
-        },
-        selectedPackage: {
-          id: selectedPackage,
-          label: selectedPackageLabel,
-          coverageYears: selectedPackageCoverageYears,
-          features: []
-        },
-        accessoryBreakdown,
-        ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
-          tradeInValue: state.tradeInInfo.estimatedValue,
-          tradeInInfo: {
-            brand: state.tradeInInfo.brand,
-            year: state.tradeInInfo.year,
-            horsepower: state.tradeInInfo.horsepower,
-            model: state.tradeInInfo.model
-          }
-        } : {}),
-        includesInstallation: state.purchasePath === 'installed',
-        pricing: {
-          msrp: motorMSRP,
-          discount: motorDiscount,
-          adminDiscount: state.adminDiscount || 0,
-          promoValue: promoSavings,
-          motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-          subtotal: displayPricing.subtotal,
-          hst: packageTax,
-          totalCashPrice: packageTotal,
-          savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
-        },
-        selectedPromoOption: state.selectedPromoOption,
-        selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
-        promotionName: currentPromotion?.name ?? undefined,
-        promotionCombinationMode: currentPromotion?.promo_options?.type ?? undefined,
-        promoEndDate: currentPromotion?.end_date ?? undefined,
-        customerNotes: state.customerNotes || undefined,
+        snapshot: pdfSnapshot,
       };
 
       // Generate TWO PDFs: clean quote + deposit-confirmed version
@@ -904,7 +932,7 @@ export default function QuoteSummaryPage() {
           .insert({
             email: customerInfo.email,
             resume_token: `dep_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: state as any,
+            quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
             user_id: user?.id || null,
             expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
             quote_pdf_path: quotePdfPath || null,
@@ -1154,6 +1182,10 @@ export default function QuoteSummaryPage() {
                     currentCoverageYears={currentCoverageYears}
                     value={state.warrantyConfig}
                     onChange={handleProductProtectionChange}
+                    financing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? {
+                      rate: financingRate,
+                      amortizationMonths: termMonths,
+                    } : undefined}
                   />
                 </motion.div>
 
@@ -1270,12 +1302,7 @@ export default function QuoteSummaryPage() {
                   onApplyForFinancing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   isProcessingPayment={isProcessingDeposit}
-                  quoteValidUntil={(() => {
-                    if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
-                    const d = new Date(); d.setDate(d.getDate() + 30);
-                    const pe = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;
-                    return pe && pe < d ? pe : d;
-                  })()}
+                  quoteValidUntil={quoteValidUntil}
                 />
               </div>
             </div>
@@ -1286,7 +1313,7 @@ export default function QuoteSummaryPage() {
           <SaveQuoteDialog 
             open={showSaveDialog}
             onOpenChange={setShowSaveDialog}
-            quoteData={state}
+            quoteData={{ ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot }}
             motorModel={motorName}
             finalPrice={displayPricing.total}
           />

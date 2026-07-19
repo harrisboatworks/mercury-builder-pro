@@ -1,9 +1,11 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
+import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
+  quoteDate?: string;
   customerName: string;
   customerEmail: string;
   customerPhone?: string;
@@ -25,6 +27,7 @@ export interface ReactPdfQuoteData {
     price: number;
   }>;
   accessoryBreakdown?: any[];
+  snapshot?: QuotePdfSnapshot;
   warranty?: {
     years: number;
     price: number;
@@ -48,6 +51,9 @@ export interface ReactPdfQuoteData {
     downPayment?: number;
     term: number;
     rate: number;
+    amountFinanced?: number;
+    dealerFee?: number;
+    contractTermMonths?: number;
   };
   monthlyPayment?: number;
   financingTerm?: number;
@@ -92,44 +98,77 @@ async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
   return quotePdfRendererPromise;
 }
 
-function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
+function formatDate(value?: string): string {
+  const date = value ? new Date(value) : new Date();
+  return date.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
+  const snapshot = data.snapshot;
+  const motor = snapshot?.motor ?? data.motor ?? {};
+  const pricing = snapshot?.pricing ?? data.pricing ?? {};
+  const financing = snapshot?.financing ?? (data.monthlyPayment || data.financing?.monthlyPayment ? {
+    monthlyPayment: data.monthlyPayment ?? data.financing?.monthlyPayment,
+    amortizationMonths: data.financingTerm ?? data.financing?.term,
+    rate: data.financingRate ?? data.financing?.rate,
+    amountFinanced: data.financing?.amountFinanced,
+    dealerFee: data.financing?.dealerFee,
+    contractTermMonths: data.financing?.contractTermMonths,
+  } : undefined);
+  const productProtection = snapshot?.productProtection;
+  const promotion = snapshot?.promotion;
+  const includedCoverageYears = snapshot?.includedCoverageYears
+    ?? data.selectedPackage?.coverageYears
+    ?? 3;
+
   return {
     quoteNumber: data.quoteNumber,
-    date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+    date: formatDate(data.quoteDate ?? snapshot?.createdAt),
+    validUntil: snapshot?.validUntil,
     customerName: data.customerName,
     customerEmail: data.customerEmail,
     customerPhone: data.customerPhone || '',
     customerId: '',
-    productName: data.motor?.model || '',
-    horsepower: `${data.motor?.hp || 0}HP`,
-    category: data.motor?.category || 'FourStroke',
-    modelYear: data.motor?.model_year || 2025,
-    msrp: (data.motor?.msrp || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    dealerDiscount: (data.pricing?.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    promoSavings: (data.pricing?.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    motorSubtotal: (data.pricing?.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    subtotal: (data.pricing?.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    tax: (data.pricing?.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    total: (data.pricing?.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    totalSavings: (data.pricing?.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-    accessoryBreakdown: data.accessoryBreakdown || data.accessories,
-    tradeInValue: data.tradeInValue,
-    tradeInInfo: data.tradeInInfo,
-    selectedPackage: data.selectedPackage || undefined,
+    productName: motor.model || '',
+    horsepower: `${motor.hp || 0}HP`,
+    category: motor.category || 'FourStroke',
+    modelYear: motor.modelYear || motor.model_year || 2026,
+    msrp: Number(pricing.msrp ?? motor.msrp ?? 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    dealerDiscount: Number(pricing.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    promoSavings: Number(pricing.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    motorSubtotal: Number(pricing.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    subtotal: Number(pricing.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    tax: Number(pricing.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    total: Number(pricing.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    totalSavings: Number(pricing.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    accessoryBreakdown: snapshot?.accessoryBreakdown ?? data.accessoryBreakdown ?? data.accessories,
+    tradeInValue: snapshot?.tradeInValue ?? data.tradeInValue,
+    tradeInInfo: snapshot?.tradeInInfo ?? data.tradeInInfo,
+    includedCoverageYears,
+    productProtection,
+    selectedPackage: data.selectedPackage || (snapshot ? {
+      id: 'configured',
+      label: 'Configured Quote',
+      coverageYears: productProtection?.totalCoverageYears ?? includedCoverageYears,
+      features: [],
+    } : undefined),
     warrantyTargets: [],
-    monthlyPayment: data.monthlyPayment,
-    financingTerm: data.financingTerm,
-    financingRate: data.financingRate,
+    monthlyPayment: financing?.monthlyPayment,
+    financingTerm: financing?.amortizationMonths,
+    financingRate: financing?.rate,
+    financingAmount: financing?.amountFinanced,
+    dealerFee: financing?.dealerFee,
+    financingContractTerm: financing?.contractTermMonths,
     financingQrCode: data.financingQrCode,
-    includesInstallation: data.includesInstallation,
-    selectedPromoOption: data.selectedPromoOption,
-    selectedPromoValue: data.selectedPromoValue,
-    selectedPaymentMethod: data.selectedPaymentMethod,
-    promotionName: data.promotionName,
-    promotionCombinationMode: data.promotionCombinationMode,
-    promoEndDate: data.promoEndDate,
-    pricing: data.pricing,
-    customerNotes: data.customerNotes,
+    includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
+    selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
+    selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,
+    selectedPaymentMethod: snapshot?.paymentMethod ?? data.selectedPaymentMethod,
+    promotionName: promotion?.name ?? data.promotionName,
+    promotionCombinationMode: promotion?.combinationMode ?? data.promotionCombinationMode,
+    promoEndDate: promotion?.endDate ?? data.promoEndDate,
+    pricing,
+    customerNotes: snapshot?.customerNotes ?? data.customerNotes,
     depositInfo: data.depositInfo,
   };
 }
