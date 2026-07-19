@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-18
+last_updated: 2026-07-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -362,7 +362,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta.md)
 - [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide.md)
 - [GTA 华人 Rice Lake 一日游完整行程规划：从多伦多出发到玩一天 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan.md)
-- [GTA 华人船驾照（PCL）+ 安省钓鱼证完整办理指南 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md)
+- [GTA 华人 PCOC 操作员卡、PCL 船牌和安省钓鱼证指南 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md)
 - [多伦多华人在 Rice Lake 买船完整指南：从选型到交付 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md)
 - [多伦多出发钓鱼去哪：Rice Lake、Lake Simcoe、Kawarthas 怎么选 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.md)
 - [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？ [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese.md)
@@ -391,4 +391,3 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md)
 - [Outboard motor service at winterization sa Ontario (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md)
 - [Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein [hi]](https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md)
-
