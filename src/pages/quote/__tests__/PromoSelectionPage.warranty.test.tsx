@@ -202,6 +202,33 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     expect(last.payload.totalYears).toBe(3);
   });
 
+  it('preserves an 8-year target and reprices the paid term around promo years', () => {
+    currentQuoteState = {
+      ...baseQuoteState,
+      motor: { hp: 115, salePrice: 15000, price: 15000 },
+      warrantyConfig: {
+        extendedYears: 5,
+        warrantyPrice: 2077,
+        totalYears: 8,
+      },
+    };
+    currentPromotions = [makePromo({ warranty_extra_years: 2 })];
+
+    render(<PromoSelectionPage />);
+
+    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
+
+    const warrantyDispatches = dispatchMock.mock.calls
+      .map((call) => call[0])
+      .filter((action: any) => action?.type === 'SET_WARRANTY_CONFIG');
+    expect(warrantyDispatches.at(-1)?.payload).toEqual({
+      extendedYears: 3,
+      warrantyPrice: 1376,
+      totalYears: 8,
+    });
+  });
+
   it('persists the auto-selected 2.99% / 24-month rate without requiring a second tile click', async () => {
     currentPromotions = [makePromo()];
 

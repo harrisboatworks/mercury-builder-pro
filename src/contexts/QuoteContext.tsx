@@ -3,7 +3,7 @@ import type { Motor, BoatInfo, QuoteData, QuotePaymentMethod } from '@/component
 import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
 import { trackEvent } from '@/lib/analytics';
 
-interface WarrantyConfig {
+export interface WarrantyConfig {
   extendedYears: number;
   warrantyPrice: number;
   totalYears: number;
@@ -135,7 +135,7 @@ type QuoteAction =
   | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string; adminCustomItems?: Array<{ name: string; price: number }> } }
   | { type: 'RESTORE_QUOTE'; payload: any }
   | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } }
-  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing };
+  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing | undefined };
 
 const initialState: QuoteState = {
   motor: null,
@@ -201,7 +201,18 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
     case 'SET_MOTOR':
       const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
-      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null, configuratorOptions: null, selectedOptions: [] };
+      return {
+        ...state,
+        motor: action.payload,
+        motorSpecs,
+        previewMotor: null,
+        configuratorStep: null,
+        configuratorOptions: null,
+        selectedOptions: [],
+        // Product Protection pricing is horsepower-specific. Never carry a
+        // paid plan from the previously selected motor into a new quote.
+        warrantyConfig: null,
+      };
     case 'SET_PREVIEW_MOTOR':
       return { ...state, previewMotor: action.payload };
     case 'SET_CONFIGURATOR_STEP':
