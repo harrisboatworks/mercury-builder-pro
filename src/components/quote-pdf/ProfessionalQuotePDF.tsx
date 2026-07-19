@@ -319,40 +319,42 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         </View>
 
-        <Text style={styles.sectionTitle}>Coverage, Payment and Next Steps</Text>
-        <View style={styles.twoUp} wrap={false}>
-          <View style={[styles.panel, styles.panelAccent]}>
-            <Text style={styles.panelTitle}>Mercury Coverage</Text>
-            <Text style={styles.panelLead}>{coverageTotal} years total</Text>
-            <Text style={styles.panelText}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included.</Text>
-            {quoteData.productProtection ? (
-              <>
-                <Text style={styles.protectionPrice}>{quoteData.productProtection.planYears} additional years of Platinum Product Protection</Text>
-                <Text style={styles.panelText}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
-                {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={styles.protectionDelta}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
-              </>
-            ) : <Text style={styles.panelText}>No additional paid Product Protection plan selected.</Text>}
-            <Text style={styles.panelText}>Final eligibility and coverage dates are confirmed using the engine serial number. Installation, trade-in and propeller fit remain subject to final inspection where applicable.</Text>
-          </View>
+        <View wrap={false}>
+          <Text style={styles.sectionTitle}>Coverage, Payment and Next Steps</Text>
+          <View style={styles.twoUp}>
+            <View style={[styles.panel, styles.panelAccent]}>
+              <Text style={styles.panelTitle}>Mercury Coverage</Text>
+              <Text style={styles.panelLead}>{coverageTotal} years total</Text>
+              <Text style={styles.panelText}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included.</Text>
+              {quoteData.productProtection ? (
+                <>
+                  <Text style={styles.protectionPrice}>{quoteData.productProtection.planYears} additional years of Platinum Product Protection</Text>
+                  <Text style={styles.panelText}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
+                  {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={styles.protectionDelta}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
+                </>
+              ) : <Text style={styles.panelText}>No additional paid Product Protection plan selected.</Text>}
+              <Text style={styles.panelText}>Final eligibility and coverage dates are confirmed using the engine serial number. Installation, trade-in and propeller fit remain subject to final inspection where applicable.</Text>
+            </View>
 
-          <View style={styles.panel}>
-            <Text style={styles.panelTitle}>{hasFinancing ? 'Financing Estimate' : 'Purchase Method'}</Text>
-            {hasFinancing ? (
-              <>
-                <Text style={styles.panelLead}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
-                <Text style={styles.panelText}>{quoteData.financingRate}% APR | {quoteData.financingTerm}-month amortization</Text>
-                {quoteData.financingAmount ? <Text style={styles.panelText}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
-                {quoteData.dealerFee ? <Text style={styles.panelText}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
-                <Text style={styles.panelText}>On approved credit. DealerPlan contract term is up to {quoteData.financingContractTerm || 60} months.</Text>
-                <Text style={styles.panelText}>Payment figures are estimates and may vary with the final financed amount and lender approval.</Text>
-                {(quoteData.financingTerm || 0) > (quoteData.financingContractTerm || 60) ? <Text style={styles.panelText}>Because the amortization is longer than the contract term, a balance may remain at maturity and may need to be paid or refinanced.</Text> : null}
-              </>
-            ) : (
-              <>
-                <Text style={styles.panelLead}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
-                <Text style={styles.panelText}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or payment estimate is included.' : 'Ask us for current financing options if you would like a payment estimate.'}</Text>
-              </>
-            )}
+            <View style={styles.panel}>
+              <Text style={styles.panelTitle}>{hasFinancing ? 'Financing Estimate' : 'Purchase Method'}</Text>
+              {hasFinancing ? (
+                <>
+                  <Text style={styles.panelLead}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
+                  <Text style={styles.panelText}>{quoteData.financingRate}% APR | {quoteData.financingTerm}-month amortization</Text>
+                  {quoteData.financingAmount ? <Text style={styles.panelText}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
+                  {quoteData.dealerFee ? <Text style={styles.panelText}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
+                  <Text style={styles.panelText}>On approved credit. DealerPlan contract term is up to {quoteData.financingContractTerm || 60} months.</Text>
+                  <Text style={styles.panelText}>Payment figures are estimates and may vary with the final financed amount and lender approval.</Text>
+                  {(quoteData.financingTerm || 0) > (quoteData.financingContractTerm || 60) ? <Text style={styles.panelText}>Because the amortization is longer than the contract term, a balance may remain at maturity and may need to be paid or refinanced.</Text> : null}
+                </>
+              ) : (
+                <>
+                  <Text style={styles.panelLead}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
+                  <Text style={styles.panelText}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or payment estimate is included.' : 'Ask us for current financing options if you would like a payment estimate.'}</Text>
+                </>
+              )}
+            </View>
           </View>
         </View>
 
