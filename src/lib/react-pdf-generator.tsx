@@ -1,7 +1,7 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
-import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -58,6 +58,8 @@ export interface ReactPdfQuoteData {
   monthlyPayment?: number;
   financingTerm?: number;
   financingRate?: number;
+  savedQuoteQrCode?: string;
+  /** @deprecated Use savedQuoteQrCode. Kept for older callers during migration. */
   financingQrCode?: string;
   pricing?: any;
   // Selected promo option
@@ -159,7 +161,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     financingAmount: financing?.amountFinanced,
     dealerFee: financing?.dealerFee,
     financingContractTerm: financing?.contractTermMonths,
-    financingQrCode: data.financingQrCode,
+    savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
     includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
     selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
     selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,
@@ -224,6 +226,12 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
 export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
   try {
     console.log('Generating PDF blob for:', data.quoteNumber);
+    if (data.snapshot) {
+      const validation = validateQuotePdfSnapshot(data.snapshot);
+      if (!validation.isValid) {
+        throw new Error(`Quote totals need to be refreshed before creating the PDF: ${validation.errors.join(' ')}`);
+      }
+    }
     const { pdf, ProfessionalQuotePDF } = await loadQuotePdfRenderer();
     const transformedData = buildProfessionalQuotePdfData(data);
 
@@ -247,4 +255,5 @@ export function downloadPDF(url: string, filename: string): void {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+  window.setTimeout(() => URL.revokeObjectURL(url), 30_000);
 }

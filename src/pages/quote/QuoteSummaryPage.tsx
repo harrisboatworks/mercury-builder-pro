@@ -39,8 +39,8 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
-import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
+import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
@@ -99,6 +99,11 @@ export default function QuoteSummaryPage() {
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
   const [phoneCaptureQuoteId, setPhoneCaptureQuoteId] = useState<string | undefined>();
+  const pdfSavedQuoteRef = useRef<{
+    id: string;
+    referenceNumber?: string;
+    snapshotKey: string;
+  } | null>(null);
   
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
@@ -723,43 +728,59 @@ export default function QuoteSummaryPage() {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
       const packageTotal = pdfSnapshot.pricing.totalCashPrice;
       
-      // Generate QR code, always generate for all quotes (cash & financing)
-      // Points to financing app with prefilled params for financing-eligible quotes,
-      // or to the main site for sub-threshold quotes
-      let qrTargetUrl = `${SITE_URL}`;
+      let qrTargetUrl: string | null = null;
       let savedQuoteIdForSms: string | undefined;
       let savedQuoteRefForSms: string | undefined;
       
-      // Always save quote and point QR to saved quote page (works for both cash & financing)
+      // A resumable QR is shown only after the exact quote state is saved.
       try {
         const frozenPricingSnapshot = frozenPricingFromPdfSnapshot(pdfSnapshot);
-        const { data: savedForQr } = await supabase
-          .from('saved_quotes')
-          .insert({
-            email: state.customerEmail || 'pdf-download@placeholder.com',
-            resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: { ...state, frozenPricing: frozenPricingSnapshot, pdfSnapshot } as any,
-            user_id: user?.id || null,
-            expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
-          } as any)
-          .select('id, reference_number')
-          .single();
+        const snapshotKey = JSON.stringify(pdfSnapshot);
+        let savedForQr: { id: string; reference_number?: string | null } | null = null;
+
+        // Reuse an already-saved link for an unchanged quote. Anonymous
+        // visitors cannot update saved_quotes under RLS, so a changed snapshot
+        // gets a new record rather than pointing at stale values.
+        if (pdfSavedQuoteRef.current?.snapshotKey === snapshotKey) {
+          savedForQr = {
+            id: pdfSavedQuoteRef.current.id,
+            reference_number: pdfSavedQuoteRef.current.referenceNumber,
+          };
+        }
+
+        if (!savedForQr) {
+          const { data: insertedQuote, error: insertError } = await supabase
+            .from('saved_quotes')
+            .insert({
+              email: state.customerEmail || 'pdf-download@placeholder.com',
+              resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
+              quote_state: { ...state, frozenPricing: frozenPricingSnapshot, pdfSnapshot } as any,
+              user_id: user?.id || null,
+              expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
+            } as any)
+            .select('id, reference_number')
+            .single();
+          if (insertError) throw insertError;
+          savedForQr = insertedQuote;
+        }
+
         if (savedForQr?.id) {
+          pdfSavedQuoteRef.current = {
+            id: savedForQr.id,
+            referenceNumber: savedForQr.reference_number || undefined,
+            snapshotKey,
+          };
           qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
           savedQuoteIdForSms = savedForQr.id;
-          savedQuoteRefForSms = (savedForQr as any).reference_number;
+          savedQuoteRefForSms = savedForQr.reference_number || undefined;
         }
       } catch (qrSaveErr) {
         console.warn('Could not save quote for QR code:', qrSaveErr);
       }
       
-      let qrCodeDataUrl = '';
+      let savedQuoteQrCode: string | undefined;
       try {
-        qrCodeDataUrl = await QRCode.toDataURL(qrTargetUrl, {
-          width: 200,
-          margin: 1,
-          color: { dark: '#111827', light: '#ffffff' }
-        });
+        savedQuoteQrCode = await generateSavedQuoteQrCode(qrTargetUrl);
       } catch (error) {
         console.error('QR code generation failed:', error);
       }
@@ -770,7 +791,7 @@ export default function QuoteSummaryPage() {
         customerEmail: state.customerEmail || '',
         customerPhone: state.customerPhone || '',
         snapshot: pdfSnapshot,
-        financingQrCode: qrCodeDataUrl,
+        savedQuoteQrCode,
       };
       
       // Save lead

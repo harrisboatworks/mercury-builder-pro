@@ -73,11 +73,83 @@ export interface QuotePdfSnapshot {
   customerNotes?: string;
 }
 
+export interface QuotePdfValidationResult {
+  isValid: boolean;
+  errors: string[];
+}
+
 function monthlyPayment(principal: number, annualRate: number, amortizationMonths: number): number {
   if (principal <= 0 || amortizationMonths <= 0) return 0;
   const monthlyRate = annualRate / 100 / 12;
   if (monthlyRate === 0) return principal / amortizationMonths;
   return principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -amortizationMonths));
+}
+
+/**
+ * Verify that the exact values printed in a quote still reconcile. This is a
+ * final safety gate for customer PDFs, not a pricing calculator: callers must
+ * fix or refresh a stale snapshot instead of silently changing its values.
+ */
+export function validateQuotePdfSnapshot(
+  snapshot: QuotePdfSnapshot,
+  tolerance = 0.02,
+): QuotePdfValidationResult {
+  const errors: string[] = [];
+  const accessoryPrices = snapshot.accessoryBreakdown.map((item) => Number(item.price));
+  const requiredPrices = [
+    snapshot.pricing.motorSubtotal,
+    snapshot.pricing.subtotal,
+    snapshot.pricing.hst,
+    snapshot.pricing.totalCashPrice,
+    Number(snapshot.tradeInValue || 0),
+    ...accessoryPrices,
+  ];
+  if (requiredPrices.some((value) => !Number.isFinite(value))) {
+    errors.push('One or more printed prices are invalid.');
+  }
+
+  const accessoryTotal = accessoryPrices.reduce(
+    (sum, price) => sum + price,
+    0,
+  );
+  const expectedSubtotal = snapshot.pricing.motorSubtotal
+    + accessoryTotal
+    - Number(snapshot.tradeInValue || 0);
+  const expectedHst = snapshot.pricing.subtotal * 0.13;
+  const expectedTotal = snapshot.pricing.subtotal + snapshot.pricing.hst;
+
+  if (Math.abs(snapshot.pricing.subtotal - expectedSubtotal) > tolerance) {
+    errors.push('The itemized prices do not add up to the subtotal.');
+  }
+  if (Math.abs(snapshot.pricing.hst - expectedHst) > tolerance) {
+    errors.push('The HST does not match 13% of the subtotal.');
+  }
+  if (Math.abs(snapshot.pricing.totalCashPrice - expectedTotal) > tolerance) {
+    errors.push('The cash total does not match the subtotal plus HST.');
+  }
+
+  if (snapshot.financing) {
+    const financingValues = [
+      snapshot.financing.monthlyPayment,
+      snapshot.financing.amountFinanced,
+      snapshot.financing.rate,
+      snapshot.financing.amortizationMonths,
+    ];
+    if (financingValues.some((value) => !Number.isFinite(value))) {
+      errors.push('One or more financing values are invalid.');
+    } else {
+      const expectedPayment = Math.round(monthlyPayment(
+        snapshot.financing.amountFinanced,
+        snapshot.financing.rate,
+        snapshot.financing.amortizationMonths,
+      ));
+      if (Math.abs(snapshot.financing.monthlyPayment - expectedPayment) > 1) {
+        errors.push('The monthly payment does not match the financed amount, APR and amortization.');
+      }
+    }
+  }
+
+  return { isValid: errors.length === 0, errors };
 }
 
 /**

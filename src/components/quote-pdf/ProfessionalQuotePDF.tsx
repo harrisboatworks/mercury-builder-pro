@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   ctaTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 3 },
   ctaText: { fontSize: 8, color: colors.navyMuted, marginBottom: 2 },
   qrBlock: { width: 76, alignItems: 'center' },
-  qr: { width: 54, height: 54 },
+  qr: { width: 58, height: 58 },
   qrCaption: { color: colors.navyMuted, fontSize: 6.5, marginTop: 3, textAlign: 'center' },
   deposit: { backgroundColor: colors.white, border: `1.25 solid ${colors.navy}`, borderLeft: `3 solid ${colors.red}`, padding: 9, marginBottom: 10 },
   depositTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 5 },
@@ -160,6 +160,8 @@ export interface QuotePDFProps {
     financingAmount?: number;
     dealerFee?: number;
     financingContractTerm?: number;
+    savedQuoteQrCode?: string;
+    /** @deprecated Use savedQuoteQrCode. */
     financingQrCode?: string;
     includesInstallation?: boolean;
     selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
@@ -226,6 +228,7 @@ function LineItemRow({ item }: { item: LineItem }) {
 }
 
 export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
+  const savedQuoteQrCode = quoteData.savedQuoteQrCode ?? quoteData.financingQrCode;
   const expiry = validUntilText(quoteData.date, quoteData.validUntil, quoteData.promoEndDate);
   const items = quoteData.accessoryBreakdown || [];
   const groups = [
@@ -388,8 +391,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         {!quoteData.depositInfo ? (
           <View style={styles.cta} wrap={false}>
             <View style={{ flex: 1, paddingRight: 12 }}>
-              <Text style={styles.ctaTitle}>{quoteData.financingQrCode ? 'Reopen this quote online' : 'Questions or ready to proceed?'}</Text>
-              {quoteData.financingQrCode ? (
+              <Text style={styles.ctaTitle}>{savedQuoteQrCode ? 'Reopen this quote online' : 'Questions or ready to proceed?'}</Text>
+              {savedQuoteQrCode ? (
                 <>
                   <Text style={styles.ctaText}>Scan the QR code to reopen this saved quote and continue when you are ready.</Text>
                   <Text style={styles.ctaText}>Questions? Call or text Harris Boat Works at (905) 342-2153.</Text>
@@ -401,9 +404,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </>
               )}
             </View>
-            {quoteData.financingQrCode ? (
+            {savedQuoteQrCode ? (
               <View style={styles.qrBlock}>
-                <Image src={quoteData.financingQrCode} style={styles.qr} />
+                <Image src={savedQuoteQrCode} style={styles.qr} />
                 <Text style={styles.qrCaption}>Scan to reopen quote</Text>
               </View>
             ) : null}

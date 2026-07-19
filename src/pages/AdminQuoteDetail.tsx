@@ -16,7 +16,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
 import { buildLegacyQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
-import QRCode from 'qrcode';
+import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
@@ -428,17 +428,12 @@ const AdminQuoteDetail = () => {
         throw new Error('The admin discount changed after this PDF snapshot. Open Edit Quote and refresh the summary so totals, tax and payment stay exact.');
       }
       
-      // Generate QR code — always, for both cash and financing buyers
-      // Points to financing app with prefilled params for all quotes
-      // QR always points to the saved quote page (works for both cash & financing)
+      // Both saved_quotes and customer_quotes IDs are supported by the shared
+      // quote loader, so this link can honestly reopen either record type.
       const qrTargetUrl = `${SITE_URL}/quote/saved/${q.id}`;
-      let financingQrCode = '';
+      let savedQuoteQrCode: string | undefined;
       try {
-        financingQrCode = await QRCode.toDataURL(qrTargetUrl, {
-          width: 200,
-          margin: 1,
-          color: { dark: '#111827', light: '#ffffff' }
-        });
+        savedQuoteQrCode = await generateSavedQuoteQrCode(qrTargetUrl);
       } catch (error) {
         console.error('QR code generation failed:', error);
       }
@@ -450,7 +445,7 @@ const AdminQuoteDetail = () => {
         customerEmail: q.customer_email || '',
         customerPhone: q.customer_phone || '',
         snapshot,
-        financingQrCode,
+        savedQuoteQrCode,
       };
       
       const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');

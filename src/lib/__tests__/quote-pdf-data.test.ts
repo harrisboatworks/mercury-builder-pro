@@ -3,6 +3,7 @@ import {
   buildLegacyQuotePdfSnapshot,
   calculateProtectionMonthlyDelta,
   QUOTE_PDF_SNAPSHOT_VERSION,
+  validateQuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
 
 describe('quote PDF data', () => {
@@ -55,5 +56,85 @@ describe('quote PDF data', () => {
         selectedOption: 'special_financing',
       },
     });
+  });
+
+  it('accepts itemized, tax and financing values that reconcile', () => {
+    const result = validateQuotePdfSnapshot({
+      version: QUOTE_PDF_SNAPSHOT_VERSION,
+      createdAt: '2026-07-19T12:00:00.000Z',
+      motor: { model: '60 ELPT FourStroke', hp: 60, msrp: 11000, modelYear: 2026, category: 'FourStroke' },
+      pricing: {
+        msrp: 11000,
+        discount: 1000,
+        promoValue: 250,
+        motorSubtotal: 9750,
+        subtotal: 10800,
+        hst: 1404,
+        totalCashPrice: 12204,
+        savings: 1250,
+      },
+      accessoryBreakdown: [{ name: 'Rigging package', price: 1050 }],
+      purchasePath: 'installed',
+      includedCoverageYears: 3,
+      financing: {
+        monthlyPayment: 240,
+        rate: 5.48,
+        amortizationMonths: 60,
+        contractTermMonths: 60,
+        amountFinanced: 12553,
+        dealerFee: 349,
+      },
+    });
+
+    expect(result).toEqual({ isValid: true, errors: [] });
+  });
+
+  it('rejects a PDF snapshot whose displayed items or payment do not reconcile', () => {
+    const result = validateQuotePdfSnapshot({
+      version: QUOTE_PDF_SNAPSHOT_VERSION,
+      createdAt: '2026-07-19T12:00:00.000Z',
+      motor: { model: '60 ELPT FourStroke', hp: 60, msrp: 11000, modelYear: 2026, category: 'FourStroke' },
+      pricing: {
+        msrp: 11000,
+        discount: 1000,
+        promoValue: 250,
+        motorSubtotal: 9750,
+        subtotal: 10800,
+        hst: 1404,
+        totalCashPrice: 12204,
+        savings: 1250,
+      },
+      accessoryBreakdown: [{ name: 'Rigging package', price: 800 }],
+      purchasePath: 'installed',
+      includedCoverageYears: 3,
+      financing: {
+        monthlyPayment: 372,
+        rate: 5.48,
+        amortizationMonths: 60,
+        contractTermMonths: 60,
+        amountFinanced: 12553,
+        dealerFee: 349,
+      },
+    });
+
+    expect(result.isValid).toBe(false);
+    expect(result.errors).toEqual(expect.arrayContaining([
+      'The itemized prices do not add up to the subtotal.',
+      'The monthly payment does not match the financed amount, APR and amortization.',
+    ]));
+  });
+
+  it('rejects non-numeric persisted line-item prices', () => {
+    const result = validateQuotePdfSnapshot({
+      version: QUOTE_PDF_SNAPSHOT_VERSION,
+      createdAt: '2026-07-19T12:00:00.000Z',
+      motor: { model: '60 ELPT FourStroke', hp: 60, msrp: 11000, modelYear: 2026, category: 'FourStroke' },
+      pricing: { msrp: 11000, discount: 1000, promoValue: 0, motorSubtotal: 10000, subtotal: 10000, hst: 1300, totalCashPrice: 11300, savings: 1000 },
+      accessoryBreakdown: [{ name: 'Broken legacy item', price: Number.NaN }],
+      purchasePath: 'installed',
+      includedCoverageYears: 3,
+    });
+
+    expect(result.errors).toContain('One or more printed prices are invalid.');
   });
 });
