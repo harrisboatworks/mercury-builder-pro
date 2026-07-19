@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario.md
-last_updated: 2026-07-10
+last_updated: 2026-07-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pou
 description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-07-10
+date_modified: 2026-07-19
 keywords: ["revue Mercury 75 HP","Mercury 75 HP FourStroke","Mercury 75 vs 90","Mercury 75 ELPT Ontario","Mercury 90 mieux que 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Avis produit  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-07-19  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
 
@@ -116,10 +116,10 @@ Non. Ce n'est pas un mauvais moteur, c'est le même moteur que le 90 avec moins 
 Parce que c'est le même moteur physique que le 90, même poids, différence de prix minimale, et le 90 a plus de marge et une meilleure valeur de revente.
 
 **Puis-je obtenir le 75 en version Command Thrust?**
-Oui, c'est disponible. Mais si vous avez besoin de Command Thrust pour un ponton, le 90 CT est un meilleur investissement.
+Non. Mercury n'offre pas de 75 FourStroke Command Thrust. La gamme FourStroke standard passe du 60 CT au 90 CT; si votre ponton a besoin de cette embase, le 90 CT est normalement le bon choix.
 
 **Que se passe-t-il si ma coque se situe entre 60 et 75 HP sur la plaque de capacité?**
-Appelez-nous au 905-342-2153.
+Envoyez la photo de la plaque de capacité et les détails du bateau par le [formulaire de service HBW](https://hbw.wiki/service). Nous confirmerons les options conformes; le téléphone reste disponible si vous préférez parler à quelqu'un.
 
 **Le 75 HP est-il significativement moins cher que le 90?**
 Pas significativement. Les chiffres exacts varient avec la tarification de [Mercury Canada](https://www.mercurymarine.com/canada/en/).
@@ -130,7 +130,7 @@ Pas significativement. Les chiffres exacts varient avec la tarification de [Merc
 
 Si vous êtes venu ici en regardant le 75 et que cela a confirmé ce que vous soupçonniez, allez bâtir une soumission sur le 90 à mercuryrepower.ca. Vrais prix CAD, vraies configurations.
 
-Si vous avez une situation de plaque de capacité ou une question de moteur usagé, appelez-nous au 905-342-2153.
+Si vous avez une situation de plaque de capacité ou une question de moteur usagé, commencez par le [formulaire de service HBW](https://hbw.wiki/service). Vous pouvez aussi nous joindre au 905-342-2153.
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 

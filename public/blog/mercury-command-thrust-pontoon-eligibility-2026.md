@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026.md
-last_updated: 2026-05-28
+last_updated: 2026-07-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Pontoon Eligible for Mercury Command Thrust? (2026)"
 description: "Find if your pontoon needs Mercury Command Thrust. Covers hull weight, transom height, tube count, prop diameter, and HP class checks."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-07-19
 keywords: ["mercury command thrust pontoon eligibility","command thrust for pontoon","is command thrust worth it pontoon","mercury command thrust compatibility","tritoon command thrust eligibility","command thrust gearcase pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last updated:** 2026-07-19  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-pontoon-eligibility-2026
 
@@ -134,7 +134,7 @@ For the long version of motor serial number decoding, our [Mercury Outboard Seri
 
 ## HP class availability
 
-Mercury offers Command Thrust as an option on select FourStroke models in the 25 to 115 HP range. Specific HP and shaft length availability varies by model year, and Mercury updates the lineup periodically.
+For the current standard FourStroke lineup, Mercury offers Command Thrust at **40, 50, 60, 90, and 115 HP**. A 115 Pro XS Command Thrust configuration is also available. Mercury does not offer a 25 HP or 75 HP FourStroke Command Thrust model. Smaller ProKicker and high-thrust applications are separate model families, so do not treat them as proof that a standard 25 HP CT exists.
 
 Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 

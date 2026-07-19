@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-07-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를
 description: "온타리오의 겨울은 보트 엔진에 치명적입니다. Mercury 선외기 겨울 정비의 6단계 핵심 과정을 설명합니다. 연료 안정화, 포깅, 기어 오일, 배터리, 윤활, 보관까지."
 category: "정비 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-07-19
 keywords: ["선외기 겨울 보관","Mercury 겨울 정비","온타리오 보트 윈터라이제이션","Mercury winterization guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: ko-KR
 
 **Category:** 정비 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Last updated:** 2026-07-19  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
 
@@ -111,7 +111,7 @@ HBW 현장에서 에탄올 무첨가 연료를 판매합니다.
 - 연료 안정제 용량 오류 또는 기화기 처리 누락
 - 핵심 윤활 지점 누락
 
-HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 모델에 정통합니다.
+HBW의 Mercury 정비 요청은 [온라인 서비스 양식](https://hbw.wiki/service)으로 시작합니다. 엔진 모델과 보트 정보를 보내 주시면 필요한 겨울 정비 범위를 확인할 수 있습니다.
 
 ## 겨울 정비 예약
 

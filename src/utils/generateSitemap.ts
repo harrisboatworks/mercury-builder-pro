@@ -142,7 +142,7 @@ const getStaticPages = (): SitemapEntry[] => {
     // scripts/static-prerender.mjs, or it will never reach production.
     { loc: '/zh', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/fr', lastmod: today, changefreq: 'monthly', priority: 0.7 },
-    { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario', lastmod: today, changefreq: 'monthly', priority: 0.65 },
+    { loc: '/blog/fr/concessionnaire-mercury-premier-ontario', lastmod: today, changefreq: 'monthly', priority: 0.65 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];

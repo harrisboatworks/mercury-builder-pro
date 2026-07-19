@@ -118,6 +118,11 @@ function verify(filePath) {
   if (!leaks.ok) {
     return { ok: false, reason: `check-blog-leaks failed: ${(leaks.stdout + leaks.stderr).trim()}` };
   }
+  // 3. structural duplication and critical-topic regression check
+  const integrity = runCheck('node', ['scripts/check-blog-content-integrity.mjs']);
+  if (!integrity.ok) {
+    return { ok: false, reason: `check-blog-content-integrity failed: ${(integrity.stdout + integrity.stderr).trim()}` };
+  }
   return { ok: true };
 }
 

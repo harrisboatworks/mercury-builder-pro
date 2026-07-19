@@ -38,7 +38,7 @@ La preparación invernal de un motor Mercury en Ontario cubre seis pasos esencia
 
 El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y ofrecemos preparación invernal y almacenamiento exterior con shrinkwrap.
 
 ---
 
@@ -131,7 +131,7 @@ No espere demasiado: los talleres se llenan rápido al inicio y al final de la t
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
+En Harris Boat Works, nuestros técnicos formados por [Mercury Marine](https://www.mercurymarine.com/canada/en/) siguen el procedimiento correspondiente al modelo y número de serie del motor.
 
 ---
 
@@ -182,7 +182,7 @@ Idealmente en septiembre o principios de octubre. Los espacios se llenan rápido
 
 ### ¿Harris Boat Works ofrece almacenamiento?
 
-Sí. Manejamos 311 contratos de almacenamiento por año, interior y exterior.
+Sí. HBW ofrece almacenamiento exterior con shrinkwrap, hasta 30 pies. No ofrecemos almacenamiento interior, recogida ni entrega.
 
 ### ¿Qué pasa si no hago la preparación invernal?
 

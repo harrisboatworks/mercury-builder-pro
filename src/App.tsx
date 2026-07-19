@@ -586,7 +586,8 @@ function AnimatedRoutes() {
         {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
         <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
         <Route path="/blog/fr" element={<BlogIndexFr />} />
-        <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
+        <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<Navigate to="/blog/fr/concessionnaire-mercury-premier-ontario" replace />} />
+        <Route path="/blog/fr/concessionnaire-mercury-premier-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         {/* /blog/zh/mercury-repower-guide-gta now served by MandarinBlogArticlePage (legacy override retired 2026-06-07) */}
         <Route path="/blog/zh" element={<BlogIndexZh />} />

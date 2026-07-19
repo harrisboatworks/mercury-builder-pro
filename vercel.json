@@ -488,6 +488,11 @@
       "source": "/blog/zh/ontario-first-time-boat-rental-safety-checklist",
       "destination": "/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh",
       "statusCode": 301
+    },
+    {
+      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-premier-ontario",
+      "statusCode": 301
     }
   ],
   "rewrites": [
@@ -708,8 +713,8 @@
       "destination": "/blog/fr/index.html"
     },
     {
-      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
-      "destination": "/blog/fr/concessionnaire-mercury-platinum-ontario/index.html"
+      "source": "/blog/fr/concessionnaire-mercury-premier-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-premier-ontario/index.html"
     },
     {
       "source": "/blog/zh-hant",

@@ -42,7 +42,7 @@ Maraming bagong boat owner sa Greater Toronto Area, lalo na ‘yung galing sa lu
 
 Bakit? Tuwing nagyeyelo ang temperatura, ang tubig na naiiwan sa loob ng engine block, cooling passages, at lower unit ay mag-e-expand at literal na bibiyakin ang metal. Tawag dito ay freeze damage, at ang repair nito ay kadalasang mas mahal pa sa presyo ng lumang motor. Pati fuel system ay naaapektuhan: ang gasolina na naiiwan ay nagfe-phase separate at nag-iiwan ng malagkit na residue na bumabara sa carburetor o fuel injectors. Bukod pa, ang moisture sa loob ng cylinders ay nagdudulot ng kalawang.
 
-Dito pumapasok ang aming winterization service. Noong nakaraang season, **584 na bangka** ang ni-winterize namin, ibig sabihin, sanay na sanay na kami. Kasama sa winterization package ang:
+Dito pumapasok ang aming winterization service. Sinusunod ng aming Mercury-trained team ang tamang procedure para sa model at serial number ng motor. Kasama sa winterization service ang:
 
 - Pagda-drain ng lahat ng tubig mula sa engine block, exhaust, at cooling system.
 - Paglalagay ng fuel stabilizer sa tangke para hindi masira ang gasolina habang nakaimbak.
