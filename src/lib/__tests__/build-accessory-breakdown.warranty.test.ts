@@ -21,6 +21,7 @@ describe('Product Protection quote breakdown', () => {
         name: 'Mercury Platinum Product Protection (4 additional years)',
         price: 1748,
         description: 'Combined coverage: 7 years',
+        category: 'protection',
       },
     ]);
     expect(breakdown.reduce((sum, item) => sum + item.price, 0)).toBe(1748);

@@ -11,10 +11,11 @@ export interface AccessoryBreakdownItem {
   name: string;
   price: number;
   description?: string;
+  category?: 'equipment' | 'installation' | 'protection' | 'custom';
 }
 
 export interface BuildAccessoryBreakdownParams {
-  selectedOptions?: Array<{ name: string; price: number; isIncluded?: boolean }>;
+  selectedOptions?: Array<{ name: string; price: number; isIncluded?: boolean; category?: string }>;
   motor: any;
   boatInfo?: any;
   purchasePath?: 'loose' | 'installed' | null;
@@ -91,7 +92,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: option.name,
       price: option.price,
-      description: option.isIncluded ? 'Included with motor' : undefined
+      description: option.isIncluded ? 'Included with motor' : undefined,
+      category: option.category?.toLowerCase().includes('install') ? 'installation' : 'equipment',
     });
   });
 
@@ -101,13 +103,15 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: `${mountingType} Installation`,
       price: tillerInstallCost,
-      description: 'Professional mounting and setup'
+      description: 'Professional mounting and setup',
+      category: 'installation',
     });
   } else if (isManualTiller && tillerInstallCost === 0 && purchasePath === 'installed') {
     breakdown.push({
       name: 'Clamp-On Installation',
       price: 0,
-      description: 'DIY-friendly mounting system (no installation labor required)'
+      description: 'DIY-friendly mounting system (no installation labor required)',
+      category: 'installation',
     });
   }
 
@@ -120,7 +124,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     const controlsDesc = controlsOption === 'adapter'
       ? 'Adapter to connect your existing Mercury controls to the new motor'
       : 'New throttle/shift controls, cables, and installation hardware';
-    breakdown.push({ name: controlsName, price: controlsCost, description: controlsDesc });
+    breakdown.push({ name: controlsName, price: controlsCost, description: controlsDesc, category: 'installation' });
   }
 
   // Professional installation for remote motors (installed path only)
@@ -128,7 +132,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: 'Professional Installation',
       price: installationLaborCost,
-      description: 'Expert rigging, mounting, and commissioning by certified technicians'
+      description: 'Expert rigging, mounting, and commissioning by certified technicians',
+      category: 'installation',
     });
   }
 
@@ -137,7 +142,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: 'Marine Starting Battery',
       price: looseMotorBattery.batteryCost || 179.99,
-      description: 'Marine starting battery for electric start motor'
+      description: 'Marine starting battery for electric start motor',
+      category: 'equipment',
     });
   }
 
@@ -157,13 +163,15 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
         price: 0,
         description: isMercuryTradeMatch
           ? 'Your current Mercury propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.'
-          : 'Your propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.'
+          : 'Your propeller will be checked for fit and performance during water testing. Additional cost applies only if a different propeller is required.',
+        category: 'equipment',
       });
     } else {
       breakdown.push({
         name: propAllowance.name,
         price: propAllowance.price,
-        description: propAllowance.description
+        description: propAllowance.description,
+        category: 'equipment',
       });
     }
   }
@@ -173,7 +181,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: '12L External Fuel Tank & Hose',
       price: 199,
-      description: 'Portable fuel tank for extended range'
+      description: 'Portable fuel tank for extended range',
+      category: 'equipment',
     });
   }
 
@@ -186,6 +195,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
       name: `Mercury Platinum Product Protection (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
       price: warrantyConfig!.warrantyPrice!,
       description: `Combined coverage: ${warrantyConfig!.totalYears || 'confirmed at registration'} years`,
+      category: 'protection',
     });
   }
 
@@ -194,7 +204,8 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     breakdown.push({
       name: item.name,
       price: item.price,
-      description: 'Custom item'
+      description: 'Custom item',
+      category: 'custom',
     });
   });
 

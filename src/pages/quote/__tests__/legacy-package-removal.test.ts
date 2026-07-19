@@ -25,7 +25,7 @@ describe('legacy quote package removal', () => {
   it('removes legacy package names and merchandise bonuses from quote PDFs', () => {
     const pdfSource = readFileSync('src/components/quote-pdf/ProfessionalQuotePDF.tsx', 'utf8');
 
-    expect(pdfSource).toContain('MERCURY COVERAGE');
+    expect(pdfSource).toContain('Mercury Coverage');
     expect(pdfSource).not.toContain('PACKAGE BONUS:');
     expect(pdfSource).not.toContain('FREE Mercury Hat + Shirt');
   });

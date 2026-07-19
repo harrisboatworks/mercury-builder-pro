@@ -14,10 +14,9 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import AdminNav from '@/components/admin/AdminNav';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
-import { DEALERPLAN_FEE } from '@/lib/finance';
-import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
+import { buildLegacyQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
-import QRCode from 'qrcode';
+import { generateSavedQuoteQrCode } from '@/lib/saved-quote-qr';
 import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
@@ -420,80 +419,21 @@ const AdminQuoteDetail = () => {
     setIsGeneratingPDF(true);
     try {
       const qd = q.quote_data;
-      const motor = qd.motor || {};
-      
-      // Motor pricing - use motor's built-in savings as dealer discount
-      const motorMSRP = motor.msrp || motor.originalPrice || q.base_price || 0;
-      const motorSavings = motor.savings || 0;  // Built-in dealer discount
-      const adminDiscountValue = q.admin_discount || qd.adminDiscount || 0;  // Admin's special discount
-      
-      // Promo rebate - parse the selectedPromoValue (e.g., "$250 rebate" -> 250)
-      const promoValueStr = qd.selectedPromoValue || '';
-      const promoValue = qd.selectedPromoOption === 'cash_rebate' 
-        ? (parseInt(promoValueStr.replace(/[^0-9]/g, '')) || 0) 
-        : 0;
-      
-      // Motor subtotal after all discounts
-      const motorSubtotal = motorMSRP - motorSavings - adminDiscountValue - promoValue;
-      
-      // Accessories - use persisted breakdown, or recompute for legacy quotes
-      let accessoryBreakdown = qd.accessoryBreakdown;
-      
-      if (!accessoryBreakdown || accessoryBreakdown.length === 0) {
-        // Legacy quote: recompute from saved quote data
-        accessoryBreakdown = buildAccessoryBreakdown({
-          selectedOptions: qd.selectedOptions || [],
-          motor: qd.motor || {},
-          boatInfo: qd.boatInfo,
-          purchasePath: qd.purchasePath,
-          installConfig: qd.installConfig,
-          looseMotorBattery: qd.looseMotorBattery,
-          selectedPackage: qd.selectedPackage?.id || 'good',
-          adminCustomItems: qd.adminCustomItems || [],
-          warrantyConfig: qd.warrantyConfig,
-          tradeInInfo: qd.tradeInInfo,
-        });
+      const snapshot = buildLegacyQuotePdfSnapshot(qd, q.created_at || undefined);
+      if (!snapshot) {
+        throw new Error('This older record has no exact PDF price snapshot. Open it in Edit Quote and refresh the summary before generating a customer PDF.');
+      }
+      const snapshotAdminDiscount = snapshot.pricing.adminDiscount || 0;
+      if (Math.abs(snapshotAdminDiscount - (q.admin_discount || 0)) > 0.01) {
+        throw new Error('The admin discount changed after this PDF snapshot. Open Edit Quote and refresh the summary so totals, tax and payment stay exact.');
       }
       
-      // For loose motor path with no items, add clamp-on placeholder
-      if (qd.purchasePath === 'loose' && accessoryBreakdown.length === 0) {
-        accessoryBreakdown = [{
-          name: 'Clamp-On Installation',
-          price: 0,
-          description: 'DIY-friendly mounting system (no installation labor required)'
-        }];
-      }
-      
-      // Calculate totals
-      console.log('[Admin PDF] accessoryBreakdown items:', accessoryBreakdown.length, JSON.stringify(accessoryBreakdown));
-      const accessoriesTotal = accessoryBreakdown.reduce((sum: number, a: any) => sum + (a.price || 0), 0);
-      const tradeInValue = qd.tradeInInfo?.hasTradeIn 
-        ? (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) 
-        : 0;
-      const subtotalBeforeTax = motorSubtotal + accessoriesTotal - tradeInValue;
-      const taxAmount = subtotalBeforeTax * 0.13;
-      const totalPrice = subtotalBeforeTax + taxAmount;
-      
-      // Financing info - extract from qd.financing object
-      const financing = qd.financing || {};
-      const financingTerm = financing.term || q.term_months || 48;
-      const financingRate = financing.rate || 7.99;
-      const monthlyPayment = q.monthly_payment || qd.monthlyPayment || Math.round(totalPrice / financingTerm);
-      
-      // Get selected package info
-      const selectedPackage = qd.selectedPackage || null;
-      
-      // Generate QR code — always, for both cash and financing buyers
-      // Points to financing app with prefilled params for all quotes
-      // QR always points to the saved quote page (works for both cash & financing)
+      // Both saved_quotes and customer_quotes IDs are supported by the shared
+      // quote loader, so this link can honestly reopen either record type.
       const qrTargetUrl = `${SITE_URL}/quote/saved/${q.id}`;
-      let financingQrCode = '';
+      let savedQuoteQrCode: string | undefined;
       try {
-        financingQrCode = await QRCode.toDataURL(qrTargetUrl, {
-          width: 200,
-          margin: 1,
-          color: { dark: '#111827', light: '#ffffff' }
-        });
+        savedQuoteQrCode = await generateSavedQuoteQrCode(qrTargetUrl);
       } catch (error) {
         console.error('QR code generation failed:', error);
       }
@@ -504,52 +444,8 @@ const AdminQuoteDetail = () => {
         customerName: q.customer_name || 'Valued Customer',
         customerEmail: q.customer_email || '',
         customerPhone: q.customer_phone || '',
-        motor: {
-          model: motor.model || motor.display_name || 'Motor',
-          hp: motor.horsepower || motor.hp || 0,
-          msrp: motorMSRP,
-          base_price: motorMSRP - motorSavings,
-          sale_price: motorSubtotal,
-          dealer_price: motorMSRP - motorSavings,
-          savings: motorSavings,
-          model_year: motor.year || motor.model_year || new Date().getFullYear(),
-          category: motor.category || motor.motor_type || 'FourStroke',
-          imageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url
-        },
-        selectedPackage: selectedPackage ? {
-          id: selectedPackage.id || 'essential',
-          label: selectedPackage.label || 'Essential',
-          coverageYears: qd.warrantyConfig?.totalYears || selectedPackage.coverageYears || 7,
-          features: selectedPackage.features || []
-        } : undefined,
-        accessoryBreakdown,
-        ...(qd.tradeInInfo?.hasTradeIn && tradeInValue > 0 ? {
-          tradeInValue: tradeInValue,
-          tradeInInfo: {
-            brand: qd.tradeInInfo.brand,
-            year: qd.tradeInInfo.year,
-            horsepower: qd.tradeInInfo.horsepower,
-            model: qd.tradeInInfo.model
-          }
-        } : {}),
-        includesInstallation: qd.purchasePath === 'installed',
-        pricing: {
-          msrp: motorMSRP,
-          discount: motorSavings,  // Dealer discount from motor
-          adminDiscount: adminDiscountValue,  // Admin's special discount
-          promoValue: promoValue,
-          motorSubtotal: motorSubtotal,
-          subtotal: subtotalBeforeTax,
-          hst: taxAmount,
-          totalCashPrice: totalPrice,
-          savings: motorSavings + adminDiscountValue + promoValue
-        },
-        monthlyPayment: monthlyPayment,
-        financingTerm: financingTerm,
-        financingRate: financingRate,
-        financingQrCode,
-        selectedPromoOption: qd.selectedPromoOption,
-        selectedPromoValue: qd.selectedPromoValue
+        snapshot,
+        savedQuoteQrCode,
       };
       
       const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');

@@ -3,6 +3,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { useQuote } from '@/contexts/QuoteContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { frozenPricingFromPdfSnapshot, isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 /**
  * Watches for a user returning from Google OAuth on the summary page.
@@ -50,7 +51,12 @@ export function useAutoSaveQuoteOnAuth() {
           .insert({
             email: user.email || '',
             resume_token: resumeToken,
-            quote_state: state as any,
+            quote_state: {
+              ...state,
+              ...(isQuotePdfSnapshot(state.pdfSnapshot) ? {
+                frozenPricing: frozenPricingFromPdfSnapshot(state.pdfSnapshot),
+              } : {}),
+            } as any,
             user_id: user.id,
             expires_at: expiresAt.toISOString(),
           })

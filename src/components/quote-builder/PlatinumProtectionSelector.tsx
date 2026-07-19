@@ -7,12 +7,17 @@ import {
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
 import { cn } from '@/lib/utils';
+import { calculateProtectionMonthlyDelta } from '@/lib/quote-pdf-data';
 
 interface PlatinumProtectionSelectorProps {
   horsepower: number;
   currentCoverageYears: number;
   value: QuoteWarrantyConfig | null;
   onChange: (config: QuoteWarrantyConfig) => void;
+  financing?: {
+    rate: number;
+    amortizationMonths: number;
+  };
 }
 
 function formatCad(amount: number): string {
@@ -24,6 +29,7 @@ export function PlatinumProtectionSelector({
   currentCoverageYears,
   value,
   onChange,
+  financing,
 }: PlatinumProtectionSelectorProps) {
   const includedYears = normalizeIncludedCoverageYears(currentCoverageYears);
   const options = getPlatinumQuoteOptions(horsepower, includedYears);
@@ -85,6 +91,13 @@ export function PlatinumProtectionSelector({
 
             {options.map((option) => {
               const selected = selectedTotalYears === option.totalYears;
+              const monthlyDelta = financing
+                ? calculateProtectionMonthlyDelta({
+                    priceBeforeTax: option.price,
+                    annualRate: financing.rate,
+                    amortizationMonths: financing.amortizationMonths,
+                  })
+                : null;
               return (
                 <button
                   key={option.totalYears}
@@ -97,7 +110,7 @@ export function PlatinumProtectionSelector({
                     totalYears: option.totalYears,
                   })}
                   className={cn(
-                    'min-h-[64px] rounded border px-3 py-2.5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red focus-visible:ring-offset-2',
+                    'min-h-[76px] rounded border px-3 py-2.5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red focus-visible:ring-offset-2',
                     selected
                       ? 'border-repower-mercury-red bg-repower-mercury-red text-white'
                       : 'border-repower-navy-900/15 bg-white text-repower-navy-900 hover:border-repower-navy-900/45',
@@ -107,6 +120,11 @@ export function PlatinumProtectionSelector({
                   <span className={cn('mt-1 block text-xs', selected ? 'text-white/75' : 'text-repower-navy-900/60')}>
                     Add {formatCad(option.price)}
                   </span>
+                  {monthlyDelta ? (
+                    <span className={cn('mt-1 block text-xs font-semibold', selected ? 'text-white' : 'text-repower-mercury-red')}>
+                      Approx. +${monthlyDelta}/month
+                    </span>
+                  ) : null}
                 </button>
               );
             })}
@@ -115,7 +133,7 @@ export function PlatinumProtectionSelector({
       )}
 
       <p className="mt-4 text-xs leading-5 text-repower-navy-900/60">
-        Exact HBW rate-card pricing before HST. Factory warranty, promotional coverage and paid Platinum coverage remain separate programs. Final eligibility is confirmed using the engine serial number.{' '}
+        Exact HBW rate-card pricing before HST. {financing ? 'Monthly figures use the same APR and amortization as this quote and include HST; financing is on approved credit. ' : ''}Factory warranty, promotional coverage and paid Platinum coverage remain separate programs. Final eligibility is confirmed using the engine serial number.{' '}
         <a
           href="/mercury-product-protection"
           className="font-semibold text-repower-navy-900 underline decoration-repower-mercury-red/60 underline-offset-4 hover:text-repower-mercury-red"

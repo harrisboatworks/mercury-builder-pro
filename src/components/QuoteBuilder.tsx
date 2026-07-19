@@ -19,6 +19,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { BonusOffers } from './quote-builder/BonusOffers';
+import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface Motor {
   id: string;
@@ -163,6 +164,7 @@ export interface QuoteData {
   selectedPromoValue?: string | null;
   selectedPaymentMethod?: QuotePaymentMethod | null;
   looseMotorBattery?: { wantsBattery: boolean; batteryCost: number } | null;
+  pdfSnapshot?: QuotePdfSnapshot;
 }
 
 const QuoteBuilder = () => {

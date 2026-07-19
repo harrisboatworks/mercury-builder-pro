@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer, useEffect, useCallback, u
 import type { Motor, BoatInfo, QuoteData, QuotePaymentMethod } from '@/components/QuoteBuilder';
 import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
 import { trackEvent } from '@/lib/analytics';
+import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface WarrantyConfig {
   extendedYears: number;
@@ -46,6 +47,17 @@ export interface FrozenPricing {
   total: number;
   savings: number;
   quoteExpiryDate?: string; // ISO date — earliest of 30 days or promo end
+  promotionName?: string;
+  promotionEndDate?: string;
+  promotionCombinationMode?: 'layered' | 'choose_one';
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoValue?: string | null;
+  selectedPaymentMethod?: QuotePaymentMethod | null;
+  financingRate?: number;
+  financingAmortizationMonths?: number;
+  financingContractTermMonths?: number;
+  dealerFee?: number;
+  amountFinanced?: number;
 }
 
 // Battery option for loose electric start motors
@@ -98,6 +110,7 @@ interface QuoteState {
   customerPhone: string;
   adminCustomItems: Array<{ name: string; price: number }>;
   frozenPricing?: FrozenPricing;
+  pdfSnapshot?: QuotePdfSnapshot;
 }
 
 type QuoteAction = 
@@ -135,7 +148,8 @@ type QuoteAction =
   | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string; adminCustomItems?: Array<{ name: string; price: number }> } }
   | { type: 'RESTORE_QUOTE'; payload: any }
   | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } }
-  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing | undefined };
+  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing | undefined }
+  | { type: 'SET_PDF_SNAPSHOT'; payload: QuotePdfSnapshot | undefined };
 
 const initialState: QuoteState = {
   motor: null,
@@ -332,6 +346,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       };
     case 'SET_FROZEN_PRICING':
       return { ...state, frozenPricing: action.payload };
+    case 'SET_PDF_SNAPSHOT':
+      return { ...state, pdfSnapshot: action.payload };
     case 'RESTORE_QUOTE':
       // Restore quote from saved data (used for admin editing)
       const restored = action.payload;
@@ -354,6 +370,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         selectedPromoValue: restored.selectedPromoValue || null,
         selectedPaymentMethod: restored.selectedPaymentMethod || null,
         adminCustomItems: restored.adminCustomItems || [],
+        frozenPricing: restored.frozenPricing,
+        pdfSnapshot: restored.pdfSnapshot,
         isLoading: false
       };
     default:
@@ -642,7 +660,8 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     selectedPromoTerm: state.selectedPromoTerm,
     selectedPromoValue: state.selectedPromoValue,
     selectedPaymentMethod: state.selectedPaymentMethod,
-    looseMotorBattery: state.looseMotorBattery
+    looseMotorBattery: state.looseMotorBattery,
+    pdfSnapshot: state.pdfSnapshot,
   });
 
   const clearQuote = () => {
