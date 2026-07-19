@@ -5,214 +5,200 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Zap, Mail } from 'lucide-react';
 
-type Verdict = 'eligible' | 'possible' | 'not' | 'undecidable';
+type Family = 'FourStroke' | 'Pro XS' | 'Verado' | 'Racing';
+type Verdict = 'preliminarily-eligible' | 'not-listed' | 'needs-review';
 
-type DecodeResult = {
+type Result = {
   verdict: Verdict;
-  family: string | null;
-  hp: number | null;
-  yearCode: string | null;
-  yearLabel: string | null;
+  message: string;
 };
 
-const YEAR_MAP: Record<string, string> = {
-  Z: '2023',
-  A: '2024',
-  B: '2025',
-  C: '2026',
-};
+const MIN_STANDARD_SERIAL = '2B529482';
+const FACTORY_STANDARD_SERIAL = '3B612425';
+const MIN_RACING_150R_SERIAL = '3B547096';
+const MIN_VERADO_350_SERIAL = '3B266064';
+const MAX_VERADO_350_DEALER_SERIAL = '3B578265';
+const FACTORY_VERADO_350_SERIAL = '3B578266';
 
-function decode(input: string): DecodeResult {
-  const raw = input.trim().toUpperCase().replace(/[\s-]/g, '');
-  if (raw.length < 4) {
-    return { verdict: 'undecidable', family: null, hp: null, yearCode: null, yearLabel: null };
+function normalizeSerial(value: string) {
+  return value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+function serialAtLeast(serial: string, minimum: string) {
+  return serial.localeCompare(minimum, 'en', { sensitivity: 'base', numeric: true }) >= 0;
+}
+
+function serialAtMost(serial: string, maximum: string) {
+  return serial.localeCompare(maximum, 'en', { sensitivity: 'base', numeric: true }) <= 0;
+}
+
+function evaluate(family: Family, hp: number, serialInput: string): Result {
+  const serial = normalizeSerial(serialInput);
+  if (!/^\d[A-Z]\d{6}$/.test(serial)) {
+    return {
+      verdict: 'needs-review',
+      message: 'That serial format could not be checked. Send HBW a clear photo of the engine identification plate.',
+    };
   }
 
-  const f150Match = /F\s*150/.test(raw);
-  const familyMatch = raw.match(/F(\d{2,3})/);
-  const family = familyMatch ? 'FourStroke' : null;
-  const hp = familyMatch ? parseInt(familyMatch[1], 10) : null;
+  let listed = false;
+  let serialMatch = false;
 
-  // Year code: take the last alphabetic character in the string.
-  const alphaTail = raw.match(/[A-Z]/g);
-  const yearCode = alphaTail ? alphaTail[alphaTail.length - 1] : null;
-  const yearLabel = yearCode && YEAR_MAP[yearCode] ? YEAR_MAP[yearCode] : null;
-
-  if (!f150Match && !familyMatch) {
-    return { verdict: 'undecidable', family: null, hp: null, yearCode, yearLabel };
-  }
-
-  if (f150Match) {
-    if (yearCode && ['Z', 'A', 'B', 'C'].includes(yearCode)) {
-      return { verdict: 'eligible', family: 'FourStroke', hp: 150, yearCode, yearLabel };
+  if (family === 'FourStroke' && [175, 200, 250, 300].includes(hp)) {
+    listed = true;
+    if (serialAtLeast(serial, FACTORY_STANDARD_SERIAL)) {
+      return {
+        verdict: 'needs-review',
+        message: 'This serial is in Mercury\'s published factory-equipped range. It may already include Boost or need a dealer software update, so HBW must check its current Mercury status before discussing any purchase.',
+      };
     }
-    return { verdict: 'possible', family: 'FourStroke', hp: 150, yearCode, yearLabel };
+    serialMatch = serialAtLeast(serial, MIN_STANDARD_SERIAL);
+  } else if (family === 'Pro XS' && [175, 200, 225, 250, 300].includes(hp)) {
+    listed = true;
+    if (serialAtLeast(serial, FACTORY_STANDARD_SERIAL)) {
+      return {
+        verdict: 'needs-review',
+        message: 'This serial is in Mercury\'s published factory-equipped range. It may already include Boost or need a dealer software update, so HBW must check its current Mercury status before discussing any purchase.',
+      };
+    }
+    serialMatch = serialAtLeast(serial, MIN_STANDARD_SERIAL);
+  } else if (family === 'Verado' && [250, 300].includes(hp)) {
+    listed = true;
+    if (serialAtLeast(serial, FACTORY_STANDARD_SERIAL)) {
+      return {
+        verdict: 'needs-review',
+        message: 'This serial is in Mercury\'s published factory-equipped range. It may already include Boost or need a dealer software update, so HBW must check its current Mercury status before discussing any purchase.',
+      };
+    }
+    serialMatch = serialAtLeast(serial, MIN_STANDARD_SERIAL);
+  } else if (family === 'Verado' && hp === 350) {
+    listed = true;
+    if (serialAtLeast(serial, FACTORY_VERADO_350_SERIAL)) {
+      return {
+        verdict: 'needs-review',
+        message: 'This 350 HP Verado serial is in Mercury\'s published factory-equipped range and may need a dealer software update to interface with Boost. HBW must check its current Mercury status before discussing any purchase.',
+      };
+    }
+    serialMatch = serialAtLeast(serial, MIN_VERADO_350_SERIAL) && serialAtMost(serial, MAX_VERADO_350_DEALER_SERIAL);
+  } else if (family === 'Racing' && hp === 150) {
+    listed = true;
+    if (serialAtLeast(serial, FACTORY_STANDARD_SERIAL)) {
+      return {
+        verdict: 'needs-review',
+        message: 'This Racing 150R serial is in Mercury\'s published factory-equipped range. HBW must check its current Mercury status before discussing any purchase.',
+      };
+    }
+    serialMatch = serialAtLeast(serial, MIN_RACING_150R_SERIAL);
   }
 
-  return { verdict: 'not', family, hp, yearCode, yearLabel };
+  if (!listed) {
+    return {
+      verdict: 'not-listed',
+      message: 'This family and horsepower combination is not on Mercury\'s published dealer-installed Boost list. A standard 150 FourStroke or 150 Pro XS is not the Racing 150R exception.',
+    };
+  }
+
+  if (!serialMatch) {
+    return {
+      verdict: 'not-listed',
+      message: 'The family and horsepower are listed, but this serial number is outside the published dealer-installed range.',
+    };
+  }
+
+  return {
+    verdict: 'preliminarily-eligible',
+    message: 'The family, horsepower, and serial number match the published dealer-installed range. HBW must still confirm the full model code, current Mercury status, warranty treatment, and Canadian price before booking.',
+  };
 }
 
 export function BoostEligibilityChecker() {
-  const [value, setValue] = useState('');
-  const [result, setResult] = useState<DecodeResult | null>(null);
+  const [family, setFamily] = useState<Family>('FourStroke');
+  const [hp, setHp] = useState('');
+  const [serial, setSerial] = useState('');
+  const [result, setResult] = useState<Result | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!value.trim()) {
-      setResult(null);
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const parsedHp = Number.parseInt(hp, 10);
+    if (!Number.isFinite(parsedHp)) {
+      setResult({ verdict: 'needs-review', message: 'Enter the horsepower shown on the motor, then try again.' });
       return;
     }
-    setResult(decode(value));
+    setResult(evaluate(family, parsedHp, serial));
   };
 
   return (
     <section
       aria-labelledby="boost-checker-heading"
-      className="my-10 rounded-2xl border border-repower-navy-900/15 bg-white shadow-sm overflow-hidden"
+      className="my-10 overflow-hidden rounded-2xl border border-repower-navy-900/15 bg-white shadow-sm"
     >
       <div className="h-1.5 w-full bg-repower-navy-900" aria-hidden="true" />
       <div className="p-6 md:p-8">
-        <div className="flex items-start gap-3 mb-5">
+        <div className="mb-5 flex items-start gap-3">
           <div className="rounded-lg bg-repower-navy-900/5 p-2 text-repower-navy-900">
             <Zap className="h-5 w-5" aria-hidden="true" />
           </div>
           <div>
-            <h2
-              id="boost-checker-heading"
-              className="font-display font-bold text-xl md:text-2xl text-repower-navy-900"
-              style={{ letterSpacing: '-0.02em' }}
-            >
-              Boost Eligibility Checker
+            <h2 id="boost-checker-heading" className="font-display text-xl font-bold text-repower-navy-900 md:text-2xl">
+              Boost Preliminary Eligibility Check
             </h2>
             <p className="mt-1 text-sm text-repower-navy-900/70">
-              Enter your Mercury motor model number (cowl plate). We'll check it against the current Boost-eligible class.
+              Check the published dealer-installed range. HBW confirms the exact motor before any purchase.
             </p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="grid gap-4 md:grid-cols-3">
           <div>
-            <Label htmlFor="boost-model" className="text-sm font-medium text-repower-navy-900">
-              Mercury model number
-            </Label>
-            <Input
-              id="boost-model"
-              type="text"
-              placeholder="e.g. 1F150XLB"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              className="mt-1.5 font-mono uppercase"
-              aria-describedby="boost-model-help"
-              autoComplete="off"
-            />
-            <p id="boost-model-help" className="mt-1 text-xs text-repower-navy-900/60">
-              Found on the engine cowl plate. Looks like 1F150XLB or similar.
-            </p>
+            <Label htmlFor="boost-family">Engine family</Label>
+            <select
+              id="boost-family"
+              value={family}
+              onChange={(event) => setFamily(event.target.value as Family)}
+              className="mt-1.5 h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+            >
+              <option>FourStroke</option>
+              <option>Pro XS</option>
+              <option>Verado</option>
+              <option>Racing</option>
+            </select>
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button
-              type="submit"
-              className="bg-repower-navy-900 hover:bg-repower-navy-900/90 text-white"
-            >
-              Check eligibility
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => {
-                setValue('');
-                setResult(null);
-              }}
-              className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5"
-            >
-              Reset
-            </Button>
+          <div>
+            <Label htmlFor="boost-hp">Horsepower</Label>
+            <Input id="boost-hp" inputMode="numeric" placeholder="e.g. 200" value={hp} onChange={(event) => setHp(event.target.value)} className="mt-1.5" />
+          </div>
+          <div>
+            <Label htmlFor="boost-serial">Serial number</Label>
+            <Input id="boost-serial" placeholder="e.g. 2B529482" value={serial} onChange={(event) => setSerial(event.target.value)} className="mt-1.5 font-mono uppercase" />
+          </div>
+          <div className="md:col-span-3 flex flex-col gap-3 sm:flex-row">
+            <Button type="submit" className="bg-repower-navy-900 text-white hover:bg-repower-navy-900/90">Check published range</Button>
+            <Button type="button" variant="outline" onClick={() => { setHp(''); setSerial(''); setResult(null); }}>Reset</Button>
           </div>
         </form>
 
-        <div aria-live="polite" aria-atomic="true" className="mt-6">
-          {result && (
-            <div className="rounded-xl border border-repower-navy-900/10 bg-repower-navy-900/[0.03] p-5">
-              {result.verdict === 'eligible' && (
-                <p className="text-[15px] leading-relaxed text-repower-navy-900">
-                  <strong className="font-display font-bold text-lg block mb-1">
-                    Likely eligible.
-                  </strong>
-                  This appears to be a Mercury 150 HP FourStroke from year code{' '}
-                  <span className="font-mono">{result.yearCode}</span>
-                  {result.yearLabel ? ` (${result.yearLabel})` : ''}, which matches the Boost-eligible class. Mercury Boost adds 10 HP via software (no hardware change) and is typically $1,500 to $3,000 CAD installed at HBW.{' '}
-                  <strong>Confirm exact eligibility and current pricing with HBW before buying.</strong>
-                </p>
-              )}
-              {result.verdict === 'possible' && (
-                <p className="text-[15px] leading-relaxed text-repower-navy-900">
-                  <strong className="font-display font-bold text-lg block mb-1">
-                    Possibly eligible.
-                  </strong>
-                  This appears to be a 150 HP FourStroke but the year code is older than the current V8 generation. Boost may still apply. Confirm with HBW.
-                </p>
-              )}
-              {result.verdict === 'not' && (
-                <p className="text-[15px] leading-relaxed text-repower-navy-900">
-                  <strong className="font-display font-bold text-lg block mb-1">
-                    Not eligible.
-                  </strong>
-                  Mercury Boost is currently available only on select Mercury 150 HP V8 FourStroke models. Your motor doesn't match that class. If Mercury expands Boost to other classes, we'll update this tool.
-                </p>
-              )}
-              {result.verdict === 'undecidable' && (
-                <p className="text-[15px] leading-relaxed text-repower-navy-900">
-                  <strong className="font-display font-bold text-lg block mb-1">
-                    Couldn't decode this number cleanly.
-                  </strong>
-                  Email it to info@harrisboatworks.ca with a photo of the cowl plate and we'll usually confirm eligibility within one business day.
-                </p>
-              )}
-
-              {(result.family || result.hp || result.yearLabel) && result.verdict !== 'undecidable' && (
-                <div className="mt-4 grid grid-cols-3 gap-3 text-sm">
-                  <div className="rounded-md border border-repower-navy-900/10 bg-white px-3 py-2">
-                    <p className="text-xs uppercase tracking-wide text-repower-navy-900/60">Family</p>
-                    <p className="font-medium text-repower-navy-900">{result.family || '-'}</p>
-                  </div>
-                  <div className="rounded-md border border-repower-navy-900/10 bg-white px-3 py-2">
-                    <p className="text-xs uppercase tracking-wide text-repower-navy-900/60">HP</p>
-                    <p className="font-medium text-repower-navy-900">{result.hp ?? '-'}</p>
-                  </div>
-                  <div className="rounded-md border border-repower-navy-900/10 bg-white px-3 py-2">
-                    <p className="text-xs uppercase tracking-wide text-repower-navy-900/60">Year</p>
-                    <p className="font-medium text-repower-navy-900">
-                      {result.yearLabel || (result.yearCode ? `code ${result.yearCode}` : '-')}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-repower-red hover:bg-repower-red/90 text-white">
-                  <Link to="/quote/motor-selection?service=boost">
-                    Get a Boost Upgrade Quote at HBW
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5"
-                >
-                  <a href="mailto:info@harrisboatworks.ca?subject=Boost%20Eligibility%20Check">
-                    <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
-                    Email serial to HBW
-                  </a>
-                </Button>
-              </div>
-
-              <p className="mt-4 text-xs text-repower-navy-900/60 italic">
-                Mercury Boost availability changes when Mercury Marine releases new versions. Always confirm with HBW (905-342-2153) before purchasing the upgrade.
-              </p>
+        {result && (
+          <div aria-live="polite" className="mt-6 rounded-xl border border-repower-navy-900/10 bg-repower-navy-900/[0.03] p-5">
+            <strong className="font-display text-lg text-repower-navy-900">
+              {result.verdict === 'preliminarily-eligible' ? 'Preliminary match' : result.verdict === 'not-listed' ? 'Not on the published range' : 'Dealer review needed'}
+            </strong>
+            <p className="mt-1 text-[15px] leading-relaxed text-repower-navy-900">{result.message}</p>
+            <p className="mt-3 text-sm text-repower-navy-900/70">
+              Boost can improve mid-range acceleration on an eligible motor. It does not add horsepower, top speed, or maximum RPM.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="bg-repower-red text-white hover:bg-repower-red/90">
+                <Link to="/contact">Ask HBW to confirm</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <a href="mailto:info@harrisboatworks.ca?subject=Boost%20Eligibility%20Check">
+                  <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
+                  Email plate photo
+                </a>
+              </Button>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

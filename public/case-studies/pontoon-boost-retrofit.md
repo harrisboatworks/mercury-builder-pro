@@ -11,18 +11,21 @@ case_study_id: CS07
 slug: pontoon-boost-retrofit
 boat_type: "24-foot tritoon"
 region: "Rice Lake / Kawarthas"
+is_illustrative: true
 ---
 
-# Pontoon Boost Retrofit Case Study
+# Pontoon Boost Upgrade Planning Scenario
 
-A 24-foot tritoon gets a 200 HP Pro XS V8 with Mercury Boost for $22,000–$26,000 all-in at Harris Boat Works.
+An illustrative 24-foot tritoon scenario showing when a 200 HP Pro XS with the Mercury Boost software upgrade may improve acceleration.
+
+> **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
 ## Factbox
 
 - **Boat type:** 24-foot tritoon
 - **Region:** Rice Lake / Kawarthas
-- **Scenario:** Pontoon Boost retrofit
-- **HP jump:** 175 → 200 (+25 HP Boost on demand)
+- **Scenario:** Pontoon Boost planning scenario
+- **HP jump:** 175 → 200; Boost improves acceleration, not horsepower
 
 ## Before → After
 
@@ -31,17 +34,17 @@ A 24-foot tritoon gets a 200 HP Pro XS V8 with Mercury Boost for $22,000–$26,0
 
 ## Recommendation
 
-Best for 22–26-foot tritoons rated for 200+ HP that struggle to plane fully loaded. Mercury Boost trades the cost of a 225 HP motor for an on-demand burst that lifts the boat onto plane in seconds.
+Consider Boost only after confirming the hull is correctly powered and the motor is eligible. It cannot substitute for additional rated horsepower on an underpowered boat.
 
-## Why it worked
+## Why this configuration may fit
 
 - V8 4.6L torque suits heavy pontoon hulls
-- Mercury Boost adds 25 HP on demand for 4–6 seconds
-- Hole-shot time roughly cut in half
+- Mercury reports 5% to 21% quicker zero-to-top-speed acceleration across five tested boat-and-engine combinations
+- Boost does not increase horsepower, top speed, or the maximum RPM range
 
-## Customer quote
+## Planning takeaway
 
-> Press the Boost button and a heavy tritoon planes in 4–5 seconds instead of 10.
+Boost can improve mid-range acceleration and throttle response on an eligible motor; the result depends on the boat, load, setup, and conditions.
 
 ## Quote a similar repower
 

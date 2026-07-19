@@ -12,14 +12,14 @@ export default function CaseStudies() {
         <title>Mercury Repower Case Studies | Harris Boat Works</title>
         <meta
           name="description"
-          content="Real Mercury repower case studies from Ontario scenarios including aluminum fishing boats, pontoons, bass boats, and walkaround cuddy setups."
+          content="Mercury repower examples and clearly labelled planning scenarios for aluminum fishing boats, pontoons, bass boats, and walkaround cuddy setups."
         />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
           name: 'Mercury Repower Case Studies',
           url: `${SITE_URL}/case-studies`,
-          description: 'Real Mercury repower examples and recommendations from Harris Boat Works.',
+          description: 'Mercury repower examples and clearly labelled illustrative planning scenarios from Harris Boat Works.',
         })}</script>
       </Helmet>
 
@@ -30,7 +30,7 @@ export default function CaseStudies() {
         <header className="max-w-3xl mb-10">
           <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">Mercury repower case studies</h1>
           <p className="text-lg text-muted-foreground">
-            Real Ontario repower scenarios showing where specific Mercury outboard recommendations make sense.
+            Ontario repower examples and planning scenarios showing where specific Mercury outboard recommendations may make sense. Illustrative entries are clearly labelled and are not customer testimonials or fixed-price quotes.
           </p>
         </header>
 

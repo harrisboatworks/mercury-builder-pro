@@ -1,7 +1,7 @@
 // Long-form case study pages for mercuryrepower.ca (Bucket 2 Batch 2, May 2026).
 // Each page renders: hero, H1, last-reviewed line, "Quick answer" gold callout,
 // intro, Key facts, H2 sections, FAQs, Visit Harris Boat Works, Related.
-// Copy is verbatim from the SEO brief — do not rewrite. No em dashes.
+// These planning scenarios are illustrative, not customer testimonials.
 
 import type { CaseStudy } from './caseStudies';
 
@@ -46,9 +46,9 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
   {
     id: 'CS06',
     slug: '90-to-115-pro-xs-fish-boat',
-    title: '90 HP to 115 Pro XS Repower Case Study',
+    title: '90 HP to 115 Pro XS Repower Planning Scenario',
     excerpt:
-      'A 17-foot fiberglass bass boat gets a 115 HP Pro XS Command Thrust repower for $17,000–$20,000 all-in at Harris Boat Works.',
+      'An illustrative 17-foot fiberglass bass-boat scenario comparing a 90 HP setup with a 115 HP Pro XS Command Thrust repower.',
     scenario: 'Fiberglass bass boat repower',
     boatType: '17-foot fiberglass bass boat',
     region: 'Rice Lake / Kawarthas',
@@ -57,32 +57,32 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     hpJump: '90 → 115',
     heroImage: '/lovable-uploads/case-study-90-to-115-pro-xs-fish-boat-hero.png',
     customerQuote:
-      'Tournament-grade hole shot and more top end out of a boat they already love.',
+      'A 115 Pro XS Command Thrust may suit a properly rated 17-foot performance hull when the complete setup supports it.',
     recommendation:
       'Best for 17-foot fiberglass bass or multi-species hulls rated 115 HP or higher, where the owner wants stronger hole shot and a Pro XS-class top end without changing the hull.',
     whyItWorked: [
-      'Pro XS tune gives sharper hole shot vs base FourStroke 115',
-      'Command Thrust gearcase moves more water on heavier loads',
-      'Mid-50s mph top end with the right prop',
+      'Pro XS is Mercury\'s performance-oriented 115 HP option',
+      'Command Thrust can turn a larger propeller for a heavier load',
+      'Final acceleration, RPM, and top speed depend on the actual hull, load, engine height, and propeller',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS06',
     longForm: {
-      cleanTitle: '90 HP to 115 Pro XS Repower Case Study',
+      cleanTitle: '90 HP to 115 Pro XS Repower Planning Scenario',
       canonical: 'https://www.mercuryrepower.ca/case-studies/90-to-115-pro-xs-fish-boat',
       metaDescription:
-        'See how a 17-foot bass boat gets a 115 HP Pro XS Command Thrust repower for $17,000–$20,000 all-in at Harris Boat Works.',
+        'Illustrative 17-foot bass-boat scenario comparing a 90 HP setup with a Mercury 115 HP Pro XS Command Thrust repower.',
       h1: '90 HP to 115 HP Pro XS Command Thrust Repower on a 17-foot Bass Boat',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'A 90 HP to 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat typically runs $17,000–$20,000 all-in at Harris Boat Works in Gores Landing. That covers the new Mercury 115 Pro XS Command Thrust, removal of the old 90 HP FourStroke, new digital or mechanical controls, propeller selection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
+        'This illustrative scenario compares a 90 HP setup with a 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat. The current bare-motor price is published in the pricing reference; removal, controls, propeller, rigging, and water testing depend on the actual boat and belong in a written quote.',
       intro:
-        'A 90 HP to 115 HP Pro XS Command Thrust repower on a 17-foot fiberglass bass boat typically runs $17,000–$20,000 all-in at Harris Boat Works in Gores Landing. That covers the new Mercury 115 Pro XS Command Thrust, removal of the old 90 HP FourStroke, new digital or mechanical controls, propeller selection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. This is the upgrade owners pick when they want tournament-grade hole shot and more top end out of a boat they already love.',
+        'A 90 HP to 115 HP Pro XS Command Thrust repower can suit a properly rated 17-foot fiberglass bass or multi-species boat when the owner wants stronger acceleration and performance tuning. This is a planning example, not a completed customer job. HBW confirms the hull rating, exact motor, controls, propeller, rigging, and current quote before making a recommendation.',
       keyFacts: [
         'Old motor: Mercury 90 HP FourStroke (still running)',
         'New motor: Mercury 115 HP Pro XS Command Thrust',
         'Boat: 17-foot fiberglass bass / multi-species hull',
-        'Cost range: $17,000–$20,000 CAD all-in',
+        'Pricing: current bare motor in the pricing reference; installed quote depends on the boat and rigging',
         'Boat with us: 2 to 5 days (motor lead time separate)',
         'Power jump: 25 HP, roughly 28% more rated horsepower',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
@@ -92,31 +92,30 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What was on the boat before?',
           paragraphs: [
-            'The starting point is a 17-foot fiberglass bass or multi-species boat with a 90 HP Mercury FourStroke that still works fine. The motor is not the problem. The hull is. Modern fiberglass bass boats weigh more than the brochure pretends, once you load a kicker, a trolling motor, two batteries, a livewell, a cooler, and two anglers with tackle, the 90 is doing a lot of work just to plane.',
-            'Customers usually come in for service, not a repower, and start asking about a bigger motor halfway through coffee. The 90 hits the high 30s mph if the prop is right, but hole shot is the issue. By the time the boat is on plane, two boat lengths have gone by, not great on tournament starts or in tight rivers.',
+            'The planning example starts with a properly rated 17-foot fiberglass bass or multi-species boat carrying normal fishing load: trolling motor, batteries, livewell, fuel, tackle, and two anglers. Before comparing motors, HBW would document the capacity plate, current engine, measured performance, mounting height, propeller, and full operating load.',
+            'The decision should be based on the owner\'s measured acceleration, RPM, handling, and speed goals rather than a generic result assigned to every 17-foot hull.',
           ],
         },
         {
           heading: 'Why upgrade to a 115 Pro XS Command Thrust?',
           paragraphs: [
-            "The 115 Pro XS Command Thrust is two motors in one decision. Pro XS is the attitude, sport-tuned intake, exhaust, and ECU calibration for stronger hole shot and quicker top-end response than a base FourStroke 115. Command Thrust is the gearcase, a larger-diameter torpedo with a bigger gearset and a higher-thrust prop, designed to push heavier hulls and shrug off load.",
-            "Together you get a motor that pulls a fully loaded 17-foot bass boat onto plane in about half the time the old 90 needed. Top end in this combo lands in the mid-50s mph on a clean hull with the right pitch. Fuel economy at cruise is comparable to the old 90 because the new motor isn't labouring.",
-            'The Command Thrust gearcase also handles trim and steering torque better when the boat is pushed hard in corners. For tournament anglers, that means more confidence in chop and tighter holes through wakes.',
+            'The 115 Pro XS is Mercury\'s performance-oriented 115 HP option. Command Thrust uses a larger gearcase that can turn a larger-diameter propeller, which may suit a heavier or more heavily loaded hull.',
+            'No responsible planning scenario can promise a planing time, top speed, fuel result, or handling change without the actual boat and baseline measurements. HBW would select engine height and propeller on the water and verify WOT RPM against Mercury\'s specification.',
           ],
         },
         {
           heading: 'What did the job involve?',
           paragraphs: [
             "This is more rigging than a FourStroke-to-FourStroke swap. We confirm the transom plate rating and Coast Guard capacity plate, pull the old 90, inspect the transom skin and bracket, and mount the 115 Pro XS Command Thrust with a bigger bolt pattern in some cases. The Pro XS often runs digital throttle and shift (DTS), if the boat had mechanical controls, we either keep mechanical or upgrade to DTS depending on what the helm can carry.",
-            "Propeller selection takes care here. The Command Thrust gearcase uses a different prop spline than a standard 115, so we move through 2–3 pitch options on the water until the motor hits Mercury's WOT RPM band cleanly. We pick props in the 14-inch diameter range, with pitch in the 17–21-inch window depending on hull, load, and customer style.",
+            "Propeller selection takes care here. The Command Thrust gearcase uses a different propeller family than a standard 115, so the correct model and pitch must be selected from the actual hull, load, engine height, and measured WOT RPM.",
             "Water test on Rice Lake confirms WOT RPM, listens for any rigging issue, and checks gauges. Pickup-only at Gores Landing, we don't ship or deliver.",
           ],
         },
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $17,000 and $20,000 CAD. The 115 Pro XS Command Thrust sits in the $15,000–$18,000 motor band, and the rigging, controls, prop set, removal, fuel system, and water test build the rest. A clean Mercury 90 FourStroke trade-in can take several thousand off depending on hours and year, fill the trade form and we usually email a CAD figure within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit, 8.99% APR under $10,000. For full pricing context see our Mercury repower cost guide, or read more about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'Use the pricing reference for the current bare-motor price. The complete installed quote depends on shaft length, controls, steering, propeller, removal, fuel-system condition, transom condition, and the amount of rigging the boat can reuse. Any trade value is assessed separately after the motor is identified and inspected.',
+            'HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and discloses the contract term, amortization, and any balance due at maturity.',
           ],
         },
       ],
@@ -139,7 +138,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Is there financing for this kind of repower?',
           answer:
-            'Yes. Over $10,000 the rate is 7.99% APR on approved credit. A $500 deposit holds the order. Full terms come through the quote and you confirm them before motor allocation. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'Yes. HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and shows the full lender disclosure. A $500 deposit holds the order.',
         },
       ],
       visit:
@@ -159,77 +158,76 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
   {
     id: 'CS07',
     slug: 'pontoon-boost-retrofit',
-    title: 'Pontoon Boost Retrofit Case Study',
+    title: 'Pontoon Boost Upgrade Planning Scenario',
     excerpt:
-      'A 24-foot tritoon gets a 200 HP Pro XS V8 with Mercury Boost for $22,000–$26,000 all-in at Harris Boat Works.',
-    scenario: 'Pontoon Boost retrofit',
+      'An illustrative 24-foot tritoon scenario showing when a 200 HP Pro XS with the Mercury Boost software upgrade may improve acceleration.',
+    scenario: 'Pontoon Boost planning scenario',
     boatType: '24-foot tritoon',
     region: 'Rice Lake / Kawarthas',
     beforeMotor: '175 HP V6 FourStroke',
     afterMotor: 'Mercury 200 HP Pro XS V8 4.6L with Boost',
-    hpJump: '175 → 200 (+25 HP Boost on demand)',
+    hpJump: '175 → 200; Boost improves acceleration, not horsepower',
     heroImage: '/lovable-uploads/case-study-pontoon-boost-retrofit-hero-v3.png',
     customerQuote:
-      'Press the Boost button and a heavy tritoon planes in 4–5 seconds instead of 10.',
+      'Boost can improve mid-range acceleration and throttle response on an eligible motor; the result depends on the boat, load, setup, and conditions.',
     recommendation:
-      'Best for 22–26-foot tritoons rated for 200+ HP that struggle to plane fully loaded. Mercury Boost trades the cost of a 225 HP motor for an on-demand burst that lifts the boat onto plane in seconds.',
+      'Consider Boost only after confirming the hull is correctly powered and the motor is eligible. It cannot substitute for additional rated horsepower on an underpowered boat.',
     whyItWorked: [
       'V8 4.6L torque suits heavy pontoon hulls',
-      'Mercury Boost adds 25 HP on demand for 4–6 seconds',
-      'Hole-shot time roughly cut in half',
+      'Mercury reports 5% to 21% quicker zero-to-top-speed acceleration across five tested boat-and-engine combinations',
+      'Boost does not increase horsepower, top speed, or the maximum RPM range',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS07',
     longForm: {
-      cleanTitle: 'Pontoon Boost Retrofit Case Study',
+      cleanTitle: 'Pontoon Boost Upgrade Planning Scenario',
       canonical: 'https://www.mercuryrepower.ca/case-studies/pontoon-boost-retrofit',
       metaDescription:
-        'See how a 24-foot tritoon gets a 200 HP Pro XS V8 with Mercury Boost for $22,000–$26,000 all-in at Harris Boat Works.',
+        'Illustrative 24-foot tritoon scenario explaining what Mercury Boost does, what it does not do, and how to verify motor eligibility.',
       h1: 'Pontoon Repower with Mercury Boost on a 24-foot Tritoon',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'A 175 HP to 200 HP Pro XS V8 4.6L repower with Mercury Boost on a 24-foot tritoon typically runs $22,000–$26,000 all-in at Harris Boat Works in Gores Landing. That covers the new 200 Pro XS, the Boost option (25 HP on-demand for 4–6 seconds), removal of the old 175 V6, digital controls, prop selection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
+        'Mercury Boost is a software calibration for eligible motors. It activates automatically during qualifying full-throttle mid-range acceleration. Mercury describes improved mid-range response and reports 5% to 21% quicker zero-to-top-speed acceleration across five tested boat-and-engine combinations. It does not add horsepower, top speed, maximum RPM, or change time to plane. This page is an illustrative planning scenario, not a completed customer job or a fixed-price quote.',
       intro:
-        'A 175 HP to 200 HP Pro XS V8 4.6L repower with Mercury Boost on a 24-foot tritoon typically runs $22,000–$26,000 all-in at Harris Boat Works in Gores Landing. That covers the new 200 Pro XS, the Boost option (25 HP on-demand for 4–6 seconds), removal of the old 175 V6, digital controls, prop selection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. This is the most common Boost retrofit we do, heavy tritoons that need an easier time getting on plane with a full load.',
+        'This illustrative scenario starts with a heavily loaded 24-foot tritoon whose owner is considering a 175 HP to 200 HP repower. Boost may make an eligible motor feel more responsive during full-throttle acceleration, but it is not extra horsepower and it cannot correct a motor-to-hull mismatch. Harris Boat Works confirms the capacity plate, motor eligibility, propeller, controls, and complete installed quote before recommending it.',
       keyFacts: [
         'Old motor: 175 HP V6 FourStroke',
         'New motor: Mercury 200 HP Pro XS V8 4.6L with Boost',
-        'Boost gives 25 extra HP on demand for 4–6 seconds',
+        'Boost: automatic software calibration during full-throttle mid-range acceleration',
         'Boat: 24-foot tritoon',
-        'Cost range: $22,000–$26,000 CAD all-in',
+        'Pricing: confirm the current motor price and Boost eligibility in a written quote',
         'Boat with us: 2 to 5 days (motor lead time separate)',
-        'Boost cost add: ~$1,200–$1,800 over base motor',
-        'Deposit: $1,000 for big-block / Pro XS',
+        'Performance: Mercury reports 5% to 21% quicker zero-to-top-speed acceleration across five tested combinations; actual results vary',
       ],
       sections: [
         {
           heading: 'What was on the boat before?',
           paragraphs: [
-            'The classic Boost retrofit candidate is a 24-foot tritoon (three logs, full furniture package, bimini, big fuel tank) with a 175 HP V6 FourStroke that came on the boat 5 to 8 years ago. The motor runs. It\'s well maintained. The owner has had it serviced at HBW since launch.',
-            'The issue is the way the boat behaves on a Saturday in July with eight adults, a cooler, water toys, and a full tank. The 175 plows. Hole shot takes 8–12 seconds depending on load, and the boat sits at a nose-high attitude longer than anyone enjoys. Once on plane the cruise is fine. It\'s the getting-there that turns into a conversation.',
+            'The planning example is a 24-foot tritoon with a 175 HP V6 FourStroke. Before recommending any upgrade, HBW would confirm the capacity plate, current setup, typical passenger and gear load, propeller, engine height, and whether the complaint is acceleration or genuinely insufficient power.',
+            'That distinction matters. Boost may improve acceleration on an eligible motor, but Mercury states that it does not increase engine horsepower, top speed, or the maximum RPM range.',
           ],
         },
         {
           heading: 'Why upgrade to a 200 Pro XS V8 with Boost?',
           paragraphs: [
-            'The 200 Pro XS V8 4.6L is the natural upgrade. The 4.6-litre block is the same physical motor as the 250 and 300 in that family, just tuned differently, which means you get a lot of motor for the HP rating. The V8 has more low-end torque than the older V6, which is exactly what a heavy pontoon needs.',
-            'Boost is the part that makes the math work. Press the button on the throttle and the motor delivers 25 extra HP for 4–6 seconds. The whole feature is built around the hole shot. A 24-foot tritoon that took 10 seconds to plane with the old 175 will plane in 4–5 seconds on a 200 Pro XS with Boost engaged. Once the boat is on plane, the owner releases the button and cruises on the 200 HP base.',
-            'Because the boost is short-burst and warranty-safe, you get the practical benefit of a 225 HP motor on demand without the cost or fuel burn of running 225 all day. For a pontoon that does a lot of loaded family days, this is one of the best dollar-for-dollar upgrades Mercury sells.',
+            'A 200 Pro XS V8 4.6L may be worth comparing only if the capacity plate and complete setup support 200 HP. Moving from a 175 V6 to a 200 V8 also changes engine architecture, weight, rigging, and propeller requirements, so it is not a software-only decision.',
+            'Boost is a Mercury software calibration that activates automatically during qualifying full-throttle mid-range acceleration. Mercury reports 5% to 21% quicker zero-to-top-speed acceleration across five tested boat-and-engine combinations, with results varying by boat, load, setup, and conditions.',
+            'It does not turn a 200 HP motor into a 225 HP motor. If the boat is underpowered for its real load, the correct answer may be a higher rated motor, a different propeller or setup, or no change until the hull limits are confirmed.',
           ],
         },
         {
           heading: 'What did the job involve?',
           paragraphs: [
-            'A V6-to-V8 swap on a pontoon is more than a motor change. We confirm the transom rating, pull the old 175, inspect the transom and the motor pod, and mount the 200 Pro XS V8 with new hardware. Boost requires a Mercury smart helm setup, digital throttle, the right gauge, the harness, and the boost button mapped on the throttle handle. If the pontoon already had a Mercury smart helm, the upgrade is mostly harness and software. If not, we install a new helm package.',
-            'Propeller selection matters more on a pontoon than people expect. We try 2–3 stainless props in the 15.25-inch diameter range, with pitch in the 17–19-inch window, until WOT RPM lands in Mercury\'s spec band cleanly with and without Boost active. The right prop is the difference between Boost feeling like a press-and-go feature and Boost feeling subtle.',
+            'A V6-to-V8 repower is more than a motor change. HBW confirms the transom rating and condition, control and steering compatibility, electrical needs, engine height, propeller, and exact Boost eligibility before quoting.',
+            'Boost is not operated with a separate button. On an eligible, unlocked motor it activates automatically when the throttle is advanced rapidly to wide-open throttle and the engine reaches the applicable mid-range conditions.',
             'Water test on Rice Lake, both loaded and unloaded, before pickup. Pickup-only at Gores Landing, we don\'t ship or deliver.',
           ],
         },
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $22,000 and $26,000 CAD. The 200 Pro XS V8 motor sits in the $18,000–$22,000 band, Boost adds $1,200–$1,800, and rigging, controls, prop set, removal, and water test build the rest. A clean 175 V6 trade-in can take several thousand off, fill the trade form and we usually email a CAD number within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See the Mercury repower cost guide for the broader pricing context, or read more about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'Use the pricing reference for the current bare-motor price. The installed quote depends on the exact motor, controls, steering, propeller, rigging, removal, transom condition, and any eligible software upgrade. HBW confirms Boost price and eligibility in writing rather than publishing an unverified fixed add-on.',
+            'Financing and promotions can change. The quote builder applies the current eligible terms and keeps them separate from the motor and installation price.',
           ],
         },
       ],
@@ -237,26 +235,26 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'What is Mercury Boost?',
           answer:
-            'Boost is a Mercury feature that delivers 25 extra horsepower on demand for 4–6 seconds at the press of a button. It is available on select Pro XS V8 4.6L models, 175, 200, and 225 HP. The most common use case is helping a heavy pontoon get on plane with a full load.',
+            'Boost is a Mercury software calibration that improves mid-range acceleration and throttle response on eligible motors. It activates automatically during full-throttle acceleration. It does not increase engine horsepower, top speed, or maximum RPM.',
         },
         {
           question: 'How much does Boost add to the motor price?',
           answer:
-            'Boost typically adds $1,200–$1,800 to the base Pro XS V8 price, depending on rigging requirements. The full pontoon retrofit with motor, Boost, removal, controls, and water test lands in the $22,000–$26,000 all-in range.',
+            'Boost pricing and eligibility must be confirmed for the specific engine serial number. HBW will show it as a separate line item in the written quote when available.',
         },
         {
-          question: 'Does Boost work for the whole day or just hole shot?',
+          question: 'When does Boost operate?',
           answer:
-            'Boost is intentionally short-burst, 4–6 seconds at a time. It is designed for the hole-shot moment when a heavy boat is fighting to get on plane, or for a quick passing burst. It is not a continuous overboost, which is why the motor stays inside Mercury\'s warranty envelope.',
+            'Boost is inactive at low RPM, steady-state cruising, and after top speed is reached. It activates automatically during full-throttle mid-range acceleration and remains active only while its operating conditions are met.',
         },
         {
           question: 'Will Boost work on my existing pontoon?',
           answer:
-            'Boost is only on select Pro XS V8 4.6L motors, 175, 200, and 225 HP. If your pontoon is rated for that HP range on the transom plate, the retrofit works. We confirm the rating before quoting. Pickup-only at Gores Landing.',
+            'Eligibility depends on the exact engine model, serial number, and Mercury\'s current rollout. Check the Mercury Marine app or ask HBW to verify the serial number. Hull horsepower rating and setup are separate checks.',
         },
       ],
       visit:
-        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965. Every Boost retrofit gets rigged and water-tested by the same techs who wrote the quote.`,
+        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works in Gores Landing, Mercury Premier Dealer, selling Mercury since 1965. Any eligible Boost work is confirmed by exact serial number and quoted in writing before authorization.`,
       related: [
         { label: 'Pricing Reference', href: '/pricing-reference' },
         { label: 'Rice Lake Mercury Repower', href: '/locations/rice-lake-mercury-repower' },
@@ -274,7 +272,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     slug: 'two-stroke-to-fourstroke-modernization',
     title: 'Two-Stroke to FourStroke Modernization',
     excerpt:
-      'Replace an old 2-stroke 70–90 HP with a Mercury 90 FourStroke EFI for $13,000–$16,000 all-in at Harris Boat Works.',
+      'An illustrative 17-foot aluminum-boat scenario replacing an older 70–90 HP two-stroke with a Mercury 90 FourStroke EFI.',
     scenario: '2-stroke to 4-stroke modernization',
     boatType: '17-foot aluminum runabout',
     region: 'Rice Lake / Kawarthas',
@@ -283,37 +281,36 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     hpJump: 'Modernization (similar HP, modern EFI)',
     heroImage: '/lovable-uploads/case-study-two-stroke-to-fourstroke-modernization-hero-v3.png',
     customerQuote:
-      'No oil mixing, half the idle noise, and roughly 30% better fuel burn at cruise.',
+      'A current FourStroke can simplify fuel handling, starting, service support, and warranty compared with an aging carbureted two-stroke.',
     recommendation:
       'Best for owners of 15–25-year-old aluminum runabouts with tired carbureted 2-strokes who want a quiet, clean, factory-warrantied modern FourStroke without changing the hull.',
     whyItWorked: [
       'Clean cold starts and smooth idle with modern EFI',
-      'Roughly half the idle noise vs older 2-stroke',
-      'No 2-stroke oil mixing, ~30% better fuel at cruise',
+      'Quieter, smoother operation is a common reason to compare a current FourStroke',
+      'No two-stroke oil mixing; actual fuel use depends on the old engine, hull, propeller, load, and operating point',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS08',
     longForm: {
       cleanTitle: 'Two-Stroke to FourStroke Modernization',
       canonical:
         'https://www.mercuryrepower.ca/case-studies/two-stroke-to-fourstroke-modernization',
       metaDescription:
-        'Replace an old 2-stroke 70–90 HP with a Mercury 90 FourStroke EFI for $13,000–$16,000 all-in at Harris Boat Works.',
+        'Illustrative 17-foot aluminum-boat scenario replacing an older 70–90 HP two-stroke with a Mercury 90 FourStroke EFI.',
       h1: 'Two-Stroke to FourStroke Modernization on a 17-foot Aluminum',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'Replacing an older 2-stroke 70–90 HP outboard with a new Mercury 90 HP FourStroke EFI on a 17-foot aluminum runabout typically runs $13,000–$16,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old 2-stroke, new controls and cables, propeller selection, fuel system inspection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
+        'This illustrative scenario replaces an older 70–90 HP two-stroke with a Mercury 90 FourStroke EFI on a properly rated 17-foot aluminum runabout. The pricing reference shows the current bare-motor price; removal, controls, propeller, fuel-system work, rigging, and testing require a boat-specific quote.',
       intro:
-        'Replacing an older 2-stroke 70–90 HP outboard with a new Mercury 90 HP FourStroke EFI on a 17-foot aluminum runabout typically runs $13,000–$16,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old 2-stroke, new controls and cables, propeller selection, fuel system inspection, and a full water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. This is the reliability-and-warranty repower, owners trading a tired carbureted 2-stroke for a quiet, clean, factory-warrantied modern FourStroke.',
+        'Replacing an older 70–90 HP two-stroke with a current Mercury 90 FourStroke EFI can improve starting, noise, fuel handling, and serviceability on a compatible 17-foot aluminum runabout. This is an illustrative planning example. HBW confirms motor weight, hull rating, controls, fuel system, propeller, and the current written quote for the actual boat.',
       keyFacts: [
         'Old motor: 70–90 HP 2-stroke (Mercury Sport or discontinued Evinrude legacy)',
         'New motor: Mercury 90 HP FourStroke EFI',
         'Boat: 17-foot aluminum runabout',
-        'Cost range: $13,000–$16,000 CAD all-in',
+        'Pricing: current bare motor in the pricing reference; installed quote depends on the boat and rigging',
         'Boat with us: 2 to 5 days (motor lead time separate)',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
-        'Noise reduction: roughly half at idle vs old 2-stroke',
-        'Fuel improvement: roughly 30% better at cruise',
+        'Noise and fuel use: compare with measurements from the actual old engine and boat',
       ],
       sections: [
         {
@@ -327,8 +324,8 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'Why upgrade from a 2-stroke to a Mercury 90 FourStroke EFI?',
           paragraphs: [
             "Reliability is the headline. Modern EFI 4-strokes start clean on a cold morning without choke fiddling, idle smooth, and don't foul plugs sitting overnight. They're computer-managed, no carbs to clean, no float bowls to drain, no jets to rebuild.",
-            'Noise is the second. A modern Mercury 90 FourStroke runs at roughly half the noise of a comparable old 2-stroke at idle and trolling speed. For early-morning launches and conversation in the boat, this is the change owners notice first.',
-            'Fuel is the third. Modern EFI burns roughly 30% less fuel at cruise than a carbureted 2-stroke of the same HP. No oil mixing, no jug of 2-stroke oil every other tank. Over a 5-month Ontario season that adds up.',
+            'Noise is the second. A current FourStroke can be quieter and smoother than an older carbureted two-stroke, but the difference depends on the specific engines, installation, and operating point.',
+            'Fuel is the third. Modern EFI eliminates two-stroke oil mixing and may reduce fuel use, but HBW would not promise a percentage without baseline fuel data from the actual boat and a comparable water test.',
             'Warranty closes the deal. A brand-new Mercury carries the current Mercury Limited Warranty plus any active promotional coverage, which we confirm at quote. That factory backing is the kind of peace of mind no 25-year-old 2-stroke can offer.',
           ],
         },
@@ -343,9 +340,9 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $13,000 and $16,000 CAD. The Mercury 90 FourStroke EFI sits in the $8,000–$14,000 mid-range FourStroke band, and the new controls, cables, prop, removal of the old 2-stroke, fuel system work, and water test build the rest. Trade-in on an old 2-stroke depends heavily on brand and condition, older Mercury Sport trade-ins still carry some resale value.',
+            'Use the pricing reference for the current bare-motor price. The installed quote adds only the work the boat actually needs, which may include removal, controls, cables, steering, propeller, fuel-system remediation, and water testing. Trade value depends on the exact old motor and its condition.',
             'Discontinued legacy 2-strokes have less trade value but we still take them case by case.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. For the full pricing picture, see our Mercury repower cost guide. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and discloses the contract term, amortization, and any balance due at maturity. A $500 deposit holds the order.',
           ],
         },
       ],
@@ -358,7 +355,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Why move from a 2-stroke to a 4-stroke?',
           answer:
-            'Three reasons. Reliability, modern EFI 4-strokes start clean and idle smooth. Noise, about half the noise at idle. Warranty, a new Mercury carries the current Mercury Limited Warranty plus any active promotional coverage, confirmed at quote. Fuel, no oil mixing and roughly 30 percent better burn at cruise.',
+            'Four reasons to compare them are modern EFI starting and idle control, quieter operation, no two-stroke oil mixing, and the current Mercury Limited Warranty. The actual noise and fuel difference depends on the old engine and boat, so HBW does not promise a generic percentage.',
         },
         {
           question: 'Will the controls from my old 2-stroke work with a new Mercury?',
@@ -390,7 +387,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     slug: 'verado-v8-special-order-repower',
     title: 'Verado V8 300 Special-Order Repower',
     excerpt:
-      'A 23-foot bowrider gets a Mercury 300 V8 Verado special-order repower for $32,000–$38,000 all-in at Harris Boat Works.',
+      'An illustrative 23-foot bowrider scenario planning a special-order Mercury 300 V8 Verado repower.',
     scenario: 'Premium Verado V8 repower',
     boatType: '23-foot fiberglass bowrider',
     region: 'Rice Lake / Kawarthas',
@@ -407,25 +404,25 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
       'Integrated DTS, helm electronics, and power steering',
       'New motor under current Mercury Limited Warranty',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS09',
     longForm: {
       cleanTitle: 'Verado V8 300 Special-Order Repower',
       canonical:
         'https://www.mercuryrepower.ca/case-studies/verado-v8-special-order-repower',
       metaDescription:
-        'See how a 23-foot bowrider gets a Mercury 300 V8 Verado special-order repower for $32,000–$38,000 all-in at Harris Boat Works.',
+        'Illustrative 23-foot bowrider scenario planning a special-order Mercury 300 V8 Verado repower with complete helm integration.',
       h1: 'Verado V8 300 Special-Order Repower on a 23-foot Bowrider',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'A Mercury 300 HP V8 Verado special-order repower on a 23-foot fiberglass bowrider typically runs $32,000–$38,000 all-in at Harris Boat Works in Gores Landing. That covers the new V8 Verado, removal of the tired older 250 Verado, digital throttle and shift, prop selection, full helm integration, and a water test on Rice Lake. Build a quote at mercuryrepower.ca.',
+        'This illustrative scenario covers a special-order Mercury 300 V8 Verado repower on a properly rated 23-foot fiberglass bowrider. Verado pricing and availability are confirmed by quote; removal, Digital Throttle and Shift, steering, propeller, helm integration, and water testing depend on the boat.',
       intro:
-        'A Mercury 300 HP V8 Verado special-order repower on a 23-foot fiberglass bowrider typically runs $32,000–$38,000 all-in at Harris Boat Works in Gores Landing. That covers the new V8 Verado, removal of the tired older 250 Verado, digital throttle and shift, prop selection, full helm integration, and a water test on Rice Lake. Motor lead time is 8–14 weeks because Verado is special-order only (boat with us is only 2 to 5 days for the actual install and water test); we set the date the day the motor leaves the Mercury build line. This is the premium repower job, and we set lead-time expectations honestly from quote one.',
+        'A Mercury 300 HP V8 Verado repower can suit a compatible 23-foot fiberglass bowrider where quiet operation, steering integration, and refined controls matter. This is an illustrative planning example, not a completed customer job. Verado is special-order from HBW, and both lead time and price are confirmed for the exact configuration before a deposit or schedule is discussed.',
       keyFacts: [
         'Old motor: older 250 HP Verado (tired, several seasons in)',
         'New motor: Mercury 300 HP V8 Verado (special-order)',
         'Boat: 23-foot fiberglass bowrider',
-        'Cost range: $32,000–$38,000 CAD all-in',
+        'Pricing and lead time: special-order quote for the exact motor and helm configuration',
         'Motor lead time: 8–14 weeks (Verado is special-order only); boat with us: 2 to 5 days',
         'Deposit: $1,000 to hold the Mercury build slot',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
@@ -458,8 +455,8 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $32,000 and $38,000 CAD. The 300 V8 Verado itself sits in the $25,000+ premium band, the helm and DTS package adds several thousand, and the rigging, controls, prop set, removal, and water test build the rest. A clean older Verado can take a meaningful amount off via trade, fill the form and we usually email a CAD figure within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the build slot. See our repower cost guide for full context, or read the repower process for what the 8–14 week window actually looks like. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'Verado is special-order from HBW, so the motor price and availability are confirmed in the written quote. The complete package depends on the helm and DTS configuration, steering, propeller, removal, rigging, and water testing. Any trade value is assessed separately after the old motor is identified and inspected.',
+            'HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and discloses the contract term, amortization, and any balance due at maturity. A $1,000 deposit holds the build slot.',
           ],
         },
       ],
@@ -480,9 +477,9 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
             'Often yes, depending on hours, condition, and year. Verados are sought after as cores and for resale. Fill the trade-in form and we usually email a CAD figure within one business day. Trade value comes off the all-in price.',
         },
         {
-          question: 'Is there financing for a $35,000 repower?',
+          question: 'Is financing available for a Verado repower?',
           answer:
-            'Yes. The rate is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. We do not finalize the build slot until the deposit is in and the credit is approved. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'Yes. HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable. A $1,000 deposit holds the order; the build slot is not finalized until the deposit is in and credit is approved.',
         },
       ],
       visit:
@@ -504,44 +501,44 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     slug: 'avator-electric-kicker-trolling',
     title: 'Avator 7.5e Electric Kicker on a Walleye Boat',
     excerpt:
-      'Add a silent Mercury Avator 7.5e electric kicker to an 18-foot walleye boat for $4,500–$6,500 all-in at Harris Boat Works.',
+      'An illustrative 18-foot walleye-boat scenario adding a Mercury Avator 7.5e electric outboard for quiet, low-speed use.',
     scenario: 'Electric kicker / trolling install',
     boatType: '18-foot aluminum walleye / muskie boat',
     region: 'Rice Lake / Kawarthas',
     beforeMotor: 'No kicker or old 4–9.9 HP gas kicker',
     afterMotor: 'Mercury Avator 7.5e electric outboard',
-    hpJump: 'Silent kicker add (3.5 HP gas equivalent)',
+    hpJump: '750-watt electric outboard added for defined low-speed use',
     heroImage: '/lovable-uploads/case-study-avator-electric-kicker-trolling-hero-v3.png',
     customerQuote:
-      'Silent troll, no fuel ritual, and a battery you charge like a phone.',
+      'A quiet, low-speed option can make sense when the boat, route, range, mounting, and charging plan all fit.',
     recommendation:
-      'Best for 16–19-foot aluminum walleye and muskie boats with a main motor already on the transom, where the owner wants a silent trolling/kicker option without spooking fish.',
+      'Consider for a compatible fishing boat only after confirming the complete load, required range and reserve, transom or bracket fit, controls, and charging access.',
     whyItWorked: [
-      'Silent at trolling speeds for walleye and muskie',
-      'No carb, no fuel stabilizer, no spark plug ritual',
-      'Integrates with Mercury smart helm for state-of-charge readout',
+      'Quiet electric operation with no exhaust at the motor',
+      'One integrated quick-swap battery, with an optional charged spare carried separately',
+      'Integrated display shows battery, power, and estimated runtime',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS10',
     longForm: {
       cleanTitle: 'Avator 7.5e Electric Kicker on a Walleye Boat',
       canonical:
         'https://www.mercuryrepower.ca/case-studies/avator-electric-kicker-trolling',
       metaDescription:
-        'Add a silent Mercury Avator 7.5e electric kicker to an 18-foot walleye boat for $4,500–$6,500 all-in at Harris Boat Works.',
+        'Illustrative 18-foot walleye-boat scenario adding a Mercury Avator 7.5e electric outboard for quiet, low-speed use.',
       h1: 'Mercury Avator 7.5e Electric Kicker on an 18-foot Walleye Boat',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'Adding a Mercury Avator 7.5e electric outboard as a quiet kicker on an 18-foot aluminum walleye or muskie boat typically runs $4,500–$6,500 all-in at Harris Boat Works in Gores Landing. That covers the Avator, the lithium battery pack, the mounting bracket, helm wiring, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
+        'This illustrative scenario adds a Mercury Avator 7.5e electric outboard to an 18-foot aluminum fishing boat for quiet, low-speed operation. HBW is not publishing firm Avator pricing yet; the motor, battery, bracket, controls, fit, and availability must be confirmed in a written quote.',
       intro:
-        'Adding a Mercury Avator 7.5e electric outboard as a quiet kicker on an 18-foot aluminum walleye or muskie boat typically runs $4,500–$6,500 all-in at Harris Boat Works in Gores Landing. That covers the Avator, the lithium battery pack, the mounting bracket, helm wiring, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. The 7.5e gives the equivalent of a 3.5 HP gas kicker in thrust, runs silent, and lets you sneak up on walleye and muskie without spooking the fish.',
+        'An Avator 7.5e can be considered for quiet, low-speed operation on a compatible 18-foot aluminum fishing boat. This is an illustrative planning example, not a completed customer installation. HBW confirms the boat fit, battery configuration, controls, bracket, expected runtime for the intended use, and current availability before recommending a package.',
       keyFacts: [
         'Motor: Mercury Avator 7.5e (electric outboard)',
-        'Thrust equivalent: comparable to a 3.5 HP gas kicker',
+        'Output: 750 watts at the propeller',
         'Boat: 18-foot aluminum walleye / muskie boat',
-        'Cost range: $4,500–$6,500 CAD all-in with battery and bracket',
-        'Boat with us: 2 to 5 days (motor lead time separate)',
-        'Run time: 60–90 minutes per battery at low troll',
+        'Pricing: coming soon; call (905) 342-2153 for the current motor and battery package',
+        'Install timing: confirmed after tiller or remote controls, mounting, clearance, and accessories are selected',
+        'Published test: about 60 minutes / 5 miles at full throttle and up to 19 hours / 34 miles at 25% on Mercury\'s specified 13-foot test boat; actual results vary',
         'Deposit: $200 for portable / small HP',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
       ],
@@ -549,34 +546,30 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'What was on the boat before?',
           paragraphs: [
-            "The starting point is an 18-foot aluminum walleye or muskie boat with a 90–150 HP Mercury main motor already on the transom. There is either no kicker at all, or there's an old 4–9.9 HP gas kicker that smells, sputters at slow troll, and adds noise the fish hear.",
-            "Owners come in once they realize the kicker is the limiting factor on Rice Lake walleye. The fish stack up in the same shallow flats over and over, and any time a gas kicker fires off, the bite stops for ten minutes. A bow-mount trolling motor helps but eats battery and doesn't handle 1–2 foot chop confidently for hours.",
-            'The conversation turns to Avator about 80 percent of the time these days.',
+            'The planning example is an 18-foot aluminum fishing boat with a gas main motor already on the transom. The owner is comparing a small gas kicker, a bow-mounted electric, and an Avator for defined low-speed use.',
+            'Before recommending Avator, HBW would document the complete boat load, transom space, mounting and shaft requirements, intended route, normal wind and water conditions, required reserve, and charging access.',
           ],
         },
         {
           heading: 'Why upgrade to a Mercury Avator 7.5e?',
           paragraphs: [
-            "The Avator 7.5e is Mercury's small electric outboard, built specifically for the kicker / trolling role. Three things matter.",
-            'First, silence. At trolling speeds in the 1.5–2.5 mph range, the Avator is functionally silent. No exhaust, no idle vibration, no prop cavitation noise. Walleye and muskie key on sound. Removing the kicker noise often turns a slow afternoon into a productive one.',
-            "Second, clean run. No carb to gum up sitting all winter. No oil change, no spark plug, no fuel stabilizer ritual. Plug the battery in to charge, leave the motor on the bracket, and it's ready next time you launch.",
-            "Third, integration. The Avator uses Mercury's smart electronics, so the gauge integrates with helm displays on newer boats. You see remaining range and battery state-of-charge the same way you read fuel level on the main motor. That matters when you're pushing the limits of a battery on a long evening troll.",
-            'The trade-off is run time. Battery range is 60–90 minutes at low troll per pack. For all-day walleye work most owners add a second battery and rotate them. The math still works out, Mercury lithium packs charge in a few hours, last for thousands of cycles, and weigh less than a full jerrycan of gas.',
+            "The Avator 7.5e is Mercury's 750-watt electric outboard. It offers quiet operation, no exhaust at the motor, an integrated display with battery and estimated-runtime information, and a removable battery under the top cowl.",
+            'Mercury tested it on a 13-foot boat with a 382-lb dry weight and one 1 kWh battery: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those figures are test context, not a result promised for this 18-foot scenario.',
+            'The 7.5e uses one integrated quick-swap battery. A charged spare can be carried and swapped, but it is not a dual-wired battery bank. The included 110W charger connects to a household outlet; faster optional chargers are available.',
           ],
         },
         {
           heading: 'What did the job involve?',
           paragraphs: [
-            'The work is straightforward compared with a main-engine repower. We confirm transom space beside the main motor, fit the Avator mounting bracket, mount the motor, wire the battery and the helm gauge, and run the steering and throttle controls. On older boats with a clean transom this is a half-day install. On boats with crowded transoms (main motor, bow-mount controls, transducer, hydraulic jack plate) we sometimes have to relocate accessories to get the Avator clearance.',
-            'Battery placement matters. Lithium packs need a dry, ventilated location with cable run kept short. We usually mount them in a rear compartment with a vented battery box.',
-            "Water test on Rice Lake confirms thrust, helm response, and gauge integration. Pickup-only at Gores Landing, we don't ship or deliver.",
+            'The planned job begins with transom and bracket clearance, shaft length, tiller or remote-control choice, steering clearance, display and charger selection, and the intended route. The standard 1 kWh battery installs under the top cowl; it is not wired into a rear battery compartment.',
+            'Installation scope and timing depend on the selected configuration and any accessories that need to move. A written quote separates the motor, integrated battery, charger, mounting, controls or display, labour, and testing.',
           ],
         },
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $4,500 and $6,500 CAD. The Avator 7.5e and a single Mercury lithium pack are the bulk of it. The bracket, helm gauge, install labour, and water test make up the rest. A second battery, common for serious walleye anglers, adds about $1,000–$1,500 on top.',
-            'Financing is available, 8.99% APR under $10,000 on approved credit. A $200 deposit holds the order. For broader context, see the Mercury repower cost guide or read about Rice Lake repower work. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'HBW is not publishing firm Avator package pricing yet. The written quote will separate the motor, battery configuration, bracket or mounting work, controls or display, installation, and water testing so the customer can see what the package includes.',
+            'HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and discloses the contract term, amortization, and any balance due at maturity.',
           ],
         },
       ],
@@ -584,26 +577,26 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does an Avator install take?',
           answer:
-            'Boat with us: 2 to 5 days from drop-off to water test pickup at HBW (motor lead time separate if not in stock). The job is mostly bracket installation, battery wiring, and water test. Faster than a main-engine repower because there is no controls or fuel system work on the existing motor.',
+            'Timing depends on the selected tiller or remote configuration, bracket and transom fit, steering clearance, controls or display, and motor availability. HBW confirms the scope and timing in the written quote.',
         },
         {
           question: 'How does an Avator 7.5e compare to a 3.5 HP gas kicker?',
           answer:
-            'Thrust is comparable to a 3.5 HP gas kicker. Noise is the difference. The Avator runs silent at trolling speeds, which is the point, walleye and muskie spook off prop wash and engine noise. The 7.5e gives you a stealth approach a gas kicker cannot.',
+            'Mercury rates the 7.5e at 750 watts at the propeller rather than gasoline horsepower. Compare the complete boat fit, required speed and range, charging, maintenance, and mounting instead of relying on a simple horsepower equivalence.',
         },
         {
           question: 'How long does the Avator battery last?',
           answer:
-            'Run time depends on speed setting and load. At low trolling speeds (1.5–2.5 mph), a single Mercury lithium pack typically gives 60–90 minutes of run time. For all-day fishing, owners often add a second battery or rotate two packs.',
+            'Mercury\'s specified 13-foot test boat ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle with one 1 kWh battery. Actual runtime depends on the hull, load, throttle, wind, water, and reserve requirement.',
         },
         {
           question: 'Will the Avator work with my existing main motor?',
           answer:
-            'Yes. The Avator mounts on a bracket beside the main outboard, no integration required. We confirm transom space and bracket fit before quoting. Pickup-only at Gores Landing.',
+            'Possibly. HBW must confirm transom and steering clearance, shaft length, bracket or direct-mount fit, tiller or remote controls, and the expected range before quoting. Pickup is at Gores Landing.',
         },
       ],
       visit:
-        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works. Avator installs are quick, and the Harris Boat Works service team on Rice Lake water-tests every electric kicker on Rice Lake itself before pickup.`,
+        `${VISIT_BASE}\n\nWe're the repower side of Harris Boat Works. Avator is build-to-order, and the team confirms the boat, route, mounting, battery, charger, controls, availability, and testing scope before making a recommendation.`,
       related: [
         { label: 'Pricing Reference', href: '/pricing-reference' },
         { label: 'Rice Lake Mercury Repower', href: '/locations/rice-lake-mercury-repower' },
@@ -621,7 +614,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     slug: 'command-thrust-heavy-aluminum',
     title: 'Command Thrust 60 HP on Heavy Aluminum',
     excerpt:
-      'Repower an 18-foot deep-V aluminum with a Mercury 60 HP Command Thrust for $10,000–$13,000 all-in at Harris Boat Works.',
+      'An illustrative 18-foot deep-V aluminum-boat scenario comparing a Mercury 60 HP Command Thrust repower with a standard gearcase.',
     scenario: 'Heavy-hull Command Thrust repower',
     boatType: '18-foot deep-V aluminum',
     region: 'Rice Lake / Kawarthas',
@@ -630,33 +623,33 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     hpJump: 'Same HP, bigger gearcase + high-thrust prop',
     heroImage: '/lovable-uploads/case-study-command-thrust-heavy-aluminum-hero-v3.png',
     customerQuote:
-      'Same horsepower on the plate, twice the hole shot under load.',
+      'The larger Command Thrust gearcase may help a properly rated heavy hull carry load without changing the horsepower rating.',
     recommendation:
-      'Best for heavy 17–19-foot deep-V aluminum hulls rated 60 HP that need more low-end pull without exceeding the transom rating or insurance class.',
+      'Consider for a properly rated heavier deep-V aluminum hull after comparing the standard and Command Thrust gearcases, actual load, propeller options, and measured WOT RPM.',
     whyItWorked: [
       'Larger gearcase and high-thrust prop move more water',
-      'Hole shot time roughly cut in half on loaded hulls',
+      'Larger propeller options may improve loaded acceleration and low-speed control',
       'Stays inside the boat\'s 60 HP transom rating',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS11',
     longForm: {
       cleanTitle: 'Command Thrust 60 HP on Heavy Aluminum',
       canonical:
         'https://www.mercuryrepower.ca/case-studies/command-thrust-heavy-aluminum',
       metaDescription:
-        'Repower an 18-foot deep-V aluminum with a Mercury 60 HP Command Thrust for $10,000–$13,000 all-in at Harris Boat Works.',
+        'Illustrative 18-foot deep-V aluminum-boat scenario comparing a Mercury 60 HP Command Thrust repower with a standard gearcase.',
       h1: '60 HP Command Thrust Repower on an 18-foot Deep-V Aluminum',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'A Mercury 60 HP FourStroke Command Thrust repower on an 18-foot deep-V aluminum boat typically runs $10,000–$13,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old standard-gearcase 60, new controls and cables, propeller selection, fuel system inspection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Build a quote at mercuryrepower.ca.',
+        'This illustrative scenario considers a Mercury 60 HP FourStroke Command Thrust repower on a properly rated 18-foot deep-V aluminum boat. The current bare-motor price is in the pricing reference; controls, propeller, removal, fuel-system work, rigging, and water testing require a boat-specific quote.',
       intro:
-        'A Mercury 60 HP FourStroke Command Thrust repower on an 18-foot deep-V aluminum boat typically runs $10,000–$13,000 all-in at Harris Boat Works in Gores Landing. That covers the new motor, removal of the old standard-gearcase 60, new controls and cables, propeller selection, fuel system inspection, and a water test on Rice Lake. Boat with us: 2 to 5 days. Motor lead time is separate — in-stock ships right away; special order depends on Mercury availability. Same horsepower rating as a standard 60 but with a bigger gearcase and higher-pitch prop, the Command Thrust gives heavy hulls the push they actually need.',
+        'A Mercury 60 HP FourStroke Command Thrust can suit a heavier 18-foot deep-V aluminum boat that benefits from a larger gearcase and propeller. This is an illustrative planning example, not a completed customer job. HBW confirms the hull rating, gearcase choice, controls, propeller, engine height, and current written quote for the actual boat.',
       keyFacts: [
         'Old motor: standard Mercury 60 HP FourStroke',
         'New motor: Mercury 60 HP FourStroke Command Thrust',
         'Boat: 18-foot deep-V aluminum (heavy hull)',
-        'Cost range: $10,000–$13,000 CAD all-in',
+        'Pricing: current bare motor in the pricing reference; installed quote depends on the boat and rigging',
         'Boat with us: 2 to 5 days (motor lead time separate)',
         'Same HP, bigger gearcase + higher-thrust prop',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
@@ -667,31 +660,30 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
           heading: 'What was on the boat before?',
           paragraphs: [
             'The candidate is a heavy 18-foot deep-V aluminum with a wide beam, full canvas, and a transom plate rated 60 HP. Owners often have a standard 60 HP FourStroke that came with the boat. Nothing is broken. The motor runs clean.',
-            'The complaint is consistent. Two people on board, a livewell full of water, a kicker, and a full fuel tank, the standard 60 takes too long to get the bow down and onto plane. Hole shot is in the 8–12 second range. At cruise the boat is fine, but the moment a wake hits the bow, the boat drops off plane and the slow climb back up starts again. With a 60 HP cap on the transom plate, the option to just go bigger is off the table.',
+            'The planning complaint is slow loaded acceleration with two people, fishing gear, a full livewell, kicker, and fuel. HBW would first measure the existing setup, propeller, engine height, WOT RPM, load, and hull condition. With a 60 HP capacity-plate limit, any recommendation must stay within that rating.',
           ],
         },
         {
           heading: 'Why upgrade to Command Thrust at the same HP?',
           paragraphs: [
             "Command Thrust is Mercury's heavy-hull gearcase. The horsepower rating stays at 60. What changes is the gearcase under the powerhead, a larger-diameter torpedo, larger gears, and a high-thrust prop with more blade area. The motor turns a lower gear ratio, which means each prop revolution moves more water.",
-            'The practical result is more hole shot and more low-end pull at the cost of a small top-end drop. On the same 18-foot deep-V, a Command Thrust 60 cuts hole shot time roughly in half, from 10 seconds to 5 seconds in our typical test loads. The boat sits at a better trim attitude on plane. Heavy boat behaviour (fighting wakes, climbing back on plane, holding plane at lower RPM) all gets noticeably better.',
-            'Top end gives up roughly 2–3 mph compared with the standard 60, depending on prop pitch. For a heavy fishing or family aluminum that does 95% of its work between idle and cruise, that trade is a clear win.',
-            'The other reason owners pick Command Thrust over jumping to bigger HP: insurance, transom rating, and resale. Staying at the rated 60 HP keeps the boat inside its design envelope and inside the insurance class it was rated for.',
+            'The larger gearcase and propeller options may improve loaded acceleration and low-speed control. The exact planing time, top speed, trim behaviour, and cruise result depend on the actual hull, load, engine height, and selected propeller, so this scenario does not assign a guaranteed improvement.',
+            'Staying within the capacity-plate rating is mandatory. Command Thrust is a gearcase choice within the same horsepower rating, not a substitute for confirming that the complete motor and boat combination is approved.',
           ],
         },
         {
           heading: 'What did the job involve?',
           paragraphs: [
             "A standard-to-Command-Thrust swap is mostly a propeller and gearcase change in terms of customer-visible difference, but it's a full motor swap under the cowl. We confirm the transom plate rating (the 60 HP cap stays valid), pull the old 60, inspect the transom and bracket, and mount the new Command Thrust 60 with new bolts. New controls and cables go in to match Mercury's current specs.",
-            'The prop selection is where the magic happens. Command Thrust uses different prop spline and pitch range than the standard 60 gearcase. We try 2–3 high-thrust aluminum or stainless props until WOT RPM lands in Mercury\'s spec band cleanly under load. Pitch is typically in the 11–13-inch range for an 18-foot deep-V, much lower than a comparable standard 60 would run.',
+            'Propeller selection is boat-specific. HBW would choose the correct Command Thrust propeller family and verify loaded WOT RPM, acceleration, steering, and trim on the actual boat rather than prescribing a generic pitch range.',
             "Water test on Rice Lake confirms WOT, hole shot, gauge function, and trim behaviour. Pickup-only at Gores Landing, we don't ship or deliver. See our repower process for the full sequence.",
           ],
         },
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $10,000 and $13,000 CAD. The Mercury 60 Command Thrust sits a little higher than a standard 60 because of the bigger gearcase. The new controls, prop, removal, fuel system check, and water test build the rest. Trade-in on a clean standard 60 takes a few thousand off, fill the form and we usually email a CAD figure within one business day.',
-            'Financing is 8.99% APR under $10,000, 7.99% APR over $10,000 on approved credit. A $500 deposit holds the order. See our cost guide for full pricing. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'Use the pricing reference for the current bare-motor price. The installed quote depends on controls, propeller, removal, fuel-system condition, steering, engine height, and any rigging that can be reused. Any trade value is assessed separately after the existing motor is identified and inspected.',
+            'HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and discloses the contract term, amortization, and any balance due at maturity. A $500 deposit holds the order.',
           ],
         },
       ],
@@ -709,7 +701,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Why not just go to a bigger HP standard motor?',
           answer:
-            "Sometimes that's the right answer. But if your transom is rated for 60 HP and a bigger motor would overpower the hull or push you into a higher insurance class, Command Thrust is the smart way to get more from the same HP.",
+            'Sometimes a different horsepower is worth comparing, but the capacity plate is the hard ceiling. Command Thrust is one gearcase option at the rated 60 HP; HBW confirms the actual boat and load before recommending it.',
         },
         {
           question: 'How long does the repower take?',
@@ -736,7 +728,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     slug: 'twin-to-single-big-block',
     title: 'Twin 115 to Single 300 V8 Consolidation',
     excerpt:
-      'Consolidate twin 115 HPs into a single 300 V8 on a 23-foot cabin boat for $35,000–$42,000 all-in at Harris Boat Works.',
+      'An illustrative 23-foot cabin-boat scenario evaluating whether twin 115 HP outboards can be replaced with one 300 HP V8.',
     scenario: 'Twin-to-single big-block consolidation',
     boatType: '23-foot cabin / walkaround',
     region: 'Rice Lake / Trent system',
@@ -745,34 +737,34 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
     hpJump: 'Twin 115 → single 300',
     heroImage: '/lovable-uploads/case-study-twin-to-single-big-block-hero-v3.png',
     customerQuote:
-      'Half the service hours, better fuel at cruise, and one throttle to dock with.',
+      'A twin-to-single conversion can reduce component count, but only if the hull, transom, balance, handling, and redundancy requirements support it.',
     recommendation:
-      'Best for 22–25-foot inland cabin / walkaround boats running tired twin 115s where the owner doesn\'t need offshore redundancy and wants lower service and helm complexity.',
+      'Consider only after the boat manufacturer or qualified technical review confirms single-engine rating, transom loading, balance, steering, controls, handling, and redundancy requirements.',
     whyItWorked: [
-      'One motor cuts annual service hours roughly in half',
-      'Modern V8 burns ~20–30% less fuel than two old 115s at cruise',
-      'Single throttle + DTS makes low-speed docking dramatically easier',
+      'One motor reduces the number of engine-specific service items',
+      'Fuel use must be measured on the actual hull and operating point',
+      'Single-engine controls are simpler, while twin-engine manoeuvring and get-home redundancy are lost',
     ],
-    isIllustrative: false,
+    isIllustrative: true,
     quoteUrl: '/quote/motor-selection?caseStudy=CS12',
     longForm: {
       cleanTitle: 'Twin 115 to Single 300 V8 Consolidation',
       canonical: 'https://www.mercuryrepower.ca/case-studies/twin-to-single-big-block',
       metaDescription:
-        'Consolidate twin 115 HPs into a single 300 V8 on a 23-foot cabin boat for $35,000–$42,000 all-in at Harris Boat Works.',
+        'Illustrative 23-foot cabin-boat scenario evaluating a change from twin 115 HP outboards to one Mercury 300 HP V8.',
       h1: 'Twin 115 to Single 300 V8 Consolidation on a 23-foot Cabin Boat',
-      lastReviewed: '2026-05-24',
+      lastReviewed: '2026-07-18',
       quickAnswer:
-        'Consolidating an older twin 115 HP FourStroke setup into a single Mercury 300 HP V8, either Verado (special-order) or Pro XS 4.6L, on a 23-foot cabin or walkaround boat typically runs $35,000–$42,000 all-in at Harris Boat Works in Gores Landing, less trade value on the two old motors. Build a quote at mercuryrepower.ca.',
+        'Replacing twin 115 HP outboards with one 300 HP V8 is a major naval-architecture and rigging decision, not a simple horsepower swap. This illustrative scenario shows the questions to ask. HBW must confirm the hull rating, transom, weight and balance, redundancy needs, steering, controls, propeller, and current written quote.',
       intro:
-        "Consolidating an older twin 115 HP FourStroke setup into a single Mercury 300 HP V8, either Verado (special-order) or Pro XS 4.6L, on a 23-foot cabin or walkaround boat typically runs $35,000–$42,000 all-in at Harris Boat Works in Gores Landing, less trade value on the two old motors. Motor lead time is 6–12 weeks depending on whether the customer picks Verado (boat with us for the actual install and water test is 2 to 5 days); (special-order) or Pro XS (often quicker to source). Going single saves on service hours, fuel, and helm complexity for owners who don't need the redundancy of twins.",
+        "This illustrative scenario evaluates consolidating twin 115 HP FourStrokes into one Mercury 300 HP V8 on a 23-foot cabin or walkaround boat. The change can reduce maintenance and helm complexity, but it also changes weight distribution, low-speed handling, redundancy, steering, controls, and transom loading. HBW confirms manufacturer limits and the full configuration before treating it as a viable repower path.",
       keyFacts: [
         'Old setup: twin 115 HP FourStrokes, about 25 years old',
         'New setup: single Mercury 300 HP V8 Verado or Pro XS 4.6L',
         'Boat: 23-foot cabin / walkaround',
-        'Cost range: $35,000–$42,000 CAD all-in (less trade)',
-        'Motor lead time: 6–12 weeks (boat with us: 2 to 5 days)',
-        'Fuel economy: roughly 20–30% better at cruise vs two old 115s',
+        'Pricing: written quote after hull, transom, controls, steering, and motor selection are confirmed',
+        'Motor lead time and install schedule: confirmed for the selected Pro XS or special-order Verado configuration',
+        'Fuel economy: no generic percentage; compare the measured twin baseline with the proposed single-engine setup',
         'Deposit: $1,000 for big-block / Verado',
         'Warranty: Mercury Limited Warranty, confirmed at quote',
       ],
@@ -787,27 +779,27 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           heading: 'Why consolidate twin 115s into a single 300?',
           paragraphs: [
-            'The math comes out three ways.',
-            "Service cost, one motor instead of two cuts annual service hours roughly in half. One winterization, one spring service, one set of plugs and oil filters. Over a 10-year ownership window that's real money.",
-            'Fuel, a modern Mercury 300 V8 4.6L at cruise burns less fuel than two older 115s working at the same speed. Modern EFI tuning, better prop efficiency, and one motor instead of two reduces parasitic drag on the gearcase side. We typically see 20–30% better fuel economy at cruise on the conversion.',
-            "Helm simplicity, one throttle, one shift, one set of gauges. Docking a 23-foot cabin with twin throttles is a learned skill. Docking it with one V8 and Mercury's DTS at low speed is dramatically easier.",
-            "The trade-off is honest: no get-home redundancy. With one motor, if the motor fails offshore you wait for a tow. For Rice Lake, the Kawarthas, and the Trent system this is rarely a practical concern. For the open Great Lakes it's a real call to make.",
+            'The comparison has four parts: service component count, measured fuel use, low-speed handling, and redundancy.',
+            'One motor reduces the number of engine-specific filters, plugs, fluids, water pumps, and control components, but a complete maintenance-cost comparison needs the exact old and proposed engines.',
+            'Fuel use cannot be assigned a generic improvement. Hull attitude, propeller efficiency, engine loading, cruise speed, wind, water, and total weight all affect the result, so the existing boat needs a measured baseline.',
+            'A single throttle and one engine network simplify the helm, but twin engines can provide different low-speed manoeuvring options. The new handling characteristics need to be assessed, not assumed.',
+            'The major trade-off is loss of get-home engine redundancy. The owner must evaluate operating area, towing access, and risk tolerance before treating a single-engine conversion as acceptable.',
           ],
         },
         {
           heading: 'What did the job involve?',
           paragraphs: [
             'A twin-to-single is one of the bigger jobs we do. We start with a transom inspection, twin bolt patterns leave eight holes that need to be addressed, sometimes filled and sometimes left for hardware reuse depending on where the single mounts. The center bridge between the twin pockets often needs reinforcement to handle the torque of a single V8 in the middle. This is shop work, not a one-day install.',
-            "The new motor goes through full Mercury rigging, DTS throttle, smart helm, hydraulic steering, new fuel routing from the tank to a single inlet, new gauge package. Propeller selection runs through 2–3 stainless props in the 15–16-inch diameter range, pitched 19–23 inches depending on hull and load, until WOT RPM lands in Mercury's band cleanly.",
-            "Water test on Rice Lake, loaded and unloaded, before pickup. Pickup-only at Gores Landing, we don't ship or deliver. The motor lead time runs 6–12 weeks, the long end driven by Verado's special-order window; boat with us for the install and water test is 2 to 5 days.",
+            "The proposed motor requires matched Mercury controls, steering, fuel routing, electrical work, gauges, and a boat-specific propeller. HBW would verify loaded WOT RPM, steering, trim, acceleration, and low-speed handling on the completed boat.",
+            "Motor availability, transom engineering or repair, and installation timing are confirmed in the written quote. Verado is special-order. Pickup is at Gores Landing; HBW does not ship or deliver outboards.",
           ],
         },
         {
           heading: 'What did it cost?',
           paragraphs: [
-            'All-in lands between $35,000 and $42,000 CAD before trade. The motor itself sits in the $25,000–$28,000 band for Verado 300 or slightly lower for Pro XS 300 V8 4.6L. The DTS helm package, new steering, transom rework, controls, prop set, removal of two old motors, and water test build the rest.',
+            'The current bare-motor price is only one part of this project. The written quote depends on the selected 300 HP model, steering, controls, transom work, electrical changes, propeller, removal of two motors, and water testing. Verado availability is special-order; Pro XS availability is confirmed at quote time.',
             'Trade-in on two 25-year-old 115 FourStrokes depends heavily on condition, clean, running motors with reasonable hours can take meaningful dollars off. Fill the trade-in form and we usually email a CAD figure within one business day.',
-            'Financing is 7.99% APR over $10,000 on approved credit. A $1,000 deposit holds the order. See our cost guide for full repower pricing. Current promo: {{LIVE_RATE}} through Dec 31, 2026 via the Mercury TD Always On program (OAC).',
+            'HBW can arrange financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more at the current {{LIVE_RATE}} promotional APR through Dec 31, 2026 (OAC). The financed quote includes the $349 DealerPlan documentation fee where applicable and discloses the contract term, amortization, and any balance due at maturity. A $1,000 deposit holds the order.',
           ],
         },
       ],
@@ -815,7 +807,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'Why go from twin to single?',
           answer:
-            'Three reasons. Service cost, one motor to maintain instead of two. Fuel, a modern V8 300 burns less than two 25-year-old 115s pushed hard. Helm simplicity, one throttle, one shift, one set of gauges. The trade-off is no get-home redundancy, so it is the right choice for inland water and the wrong choice for far-offshore work.',
+            'Potential advantages are fewer engine-specific service components and a simpler single-engine control network. Potential disadvantages are changed low-speed handling and loss of get-home engine redundancy. Fuel use and suitability must be evaluated on the actual hull; inland use alone does not make the conversion automatically appropriate.',
         },
         {
           question: 'Do I need to modify the transom for single-engine conversion?',
@@ -830,7 +822,7 @@ export const LONG_FORM_CASE_STUDIES: CaseStudy[] = [
         {
           question: 'How long does a twin-to-single conversion take?',
           answer:
-            "Motor lead time is 6–12 weeks depending on motor choice. If you pick Verado 300 the timeline is driven by Mercury's 8–14 week special-order window; Pro XS 300 V8 is often quicker. Boat with us for the install and water test is 2 to 5 days. Transom rework can add time. Pickup-only at Gores Landing.",
+            'Timing depends on current motor availability, the selected Pro XS or special-order Verado configuration, engineering or transom work, controls, steering, rigging, and water testing. HBW confirms both the motor lead time and the boat schedule in the written quote. Pickup is at Gores Landing.',
         },
       ],
       visit:

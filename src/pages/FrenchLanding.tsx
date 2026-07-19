@@ -88,10 +88,6 @@ export default function FrenchLanding() {
       <Helmet>
         <title>Concessionnaire Mercury Premier Ontario | Harris Boat Works</title>
         <meta name="description" content="Harris Boat Works, concessionnaire Mercury Marine Premier à Gores Landing, Ontario. Prix transparents en ligne à mercuryrepower.ca. Service pour plaisanciers francophones." />
-        <link rel="canonical" href={`${SITE_URL}/fr`} />
-        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
-        <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
-        <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
         <meta property="og:title" content="Bienvenue chez Harris Boat Works, Concessionnaire Mercury Premier" />
         <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Premier en Ontario." />
         <meta property="og:url" content={`${SITE_URL}/fr`} />

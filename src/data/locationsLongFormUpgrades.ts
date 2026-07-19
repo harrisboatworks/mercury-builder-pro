@@ -37,7 +37,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'What HP Mercury is most common on Rice Lake?',
         paragraphs: [
-          'Rice Lake is shallow and weedy in summer, so mid-range FourStroke 60-115 HP and Pro XS 115-175 HP are the most common repowers we quote. For an honest head-to-head on the most-requested mid-range, see our [90 HP Mercury motor vs 75 and 115](/blog/mercury-75-vs-90-vs-115-comparison) comparison. Prop selection matters more than raw horsepower here. A Pro XS V8 4.6L 175 HP with the Boost button is the upgrade pontoon owners ask about the most, that 25 extra HP for 4-6 seconds is the difference between getting up cleanly with six adults onboard and not.',
+          'Rice Lake is shallow and weedy in summer, so mid-range FourStroke 60-115 HP and Pro XS 115-175 HP are common repower discussions. For an honest head-to-head on the most-requested mid-range, see our [90 HP Mercury motor vs 75 and 115](/blog/mercury-75-vs-90-vs-115-comparison) comparison. Prop selection and correct motor-to-hull sizing matter more than a feature name. The 175 HP Pro XS is a 3.4L V6. Boost can improve mid-range acceleration on an eligible motor, but it does not add horsepower or top speed.',
           'For aluminum tinnies and 16-footers running Bewdley to Roseneath, a tiller FourStroke 9.9-25 HP is the usual repower in the $2,800-$5,500 CAD range. For bass boats and bigger fiberglass rigs, we are usually quoting big-block FourStroke 115-200 HP in the $14,000-$24,000 CAD range. If you are weighing Verado against the FourStroke or Pro XS families, the [Mercury Verado vs FourStroke vs Pro XS comparison](/blog/fourstroke-vs-pro-xs) lays out where each one earns its price. Looking at the small electric end of the lineup? Read the [Mercury Avator 7.5e review and price](/blog/mercury-avator-7-5e-review). Francophone visitors: [version française](/fr).',
         ],
       },
@@ -106,14 +106,14 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'What Mercury motors do Kawartha Lakes boaters typically repower with?',
         paragraphs: [
-          'The Kawartha chain runs the gamut. On Pigeon, Sturgeon, and Buckhorn we see a lot of pontoons and family runabouts repowering with Mercury FourStroke 90–150 HP, usually $11,000–$18,000 CAD for the motor alone. Cameron and Balsam see smaller fishing rigs running tiller FourStroke 9.9–25 HP at $2,800–$5,500 CAD. Stony Lake and the northern lakes see bigger boats, Pro XS V8 4.6L 175–225 HP at $18,000–$28,000 CAD, often with the Mercury Boost option for 25 extra horsepower on demand for 4–6 seconds.',
+          'The Kawartha chain runs the gamut. On Pigeon, Sturgeon, and Buckhorn we see many pontoons and family runabouts in the Mercury FourStroke 90–150 HP range. Cameron and Balsam see smaller fishing rigs with tiller FourStroke 9.9–25 HP. Stony Lake and the northern lakes see bigger boats in the Pro XS 175–225 HP range after hull rating and setup are confirmed. Boost may improve acceleration on an eligible motor but does not add horsepower.',
           'If the old motor is a tired 2-stroke from the 1990s, the upgrade to a current Mercury FourStroke usually brings fuel efficiency gains, quieter operation, and the current Mercury Limited Warranty. Confirm the promo at quote time, Mercury changes warranty offers seasonally.',
         ],
       },
       {
         heading: 'Where do Kawartha Lakes boaters launch?',
         paragraphs: [
-          "Each lake in the chain has its own public access points. We don't recommend specific launches because conditions, parking, and fees change, your township or the Trent-Severn Waterway materials are the right source. What we can say is that the Trent-Severn ties the chain together, and many of our Kawartha repower customers move between lakes through the system. That's one reason Mercury Boost is a popular upgrade with pontoons that run heavy loads through lift locks and short channels.",
+          "Each lake in the chain has its own public access points. We don't recommend specific launches because conditions, parking, and fees change, your township or the Trent-Severn Waterway materials are the right source. What we can say is that the Trent-Severn ties the chain together, and many of our Kawartha repower customers move between lakes through the system. For a heavily loaded pontoon, correct horsepower, propeller, and setup come first; Boost may improve acceleration only when the exact motor is eligible.",
           'For lakes on the south side of the chain, the drive to Gores Landing for pickup is a manageable day trip. For Bobcaygeon and Buckhorn, customers tend to combine pickup with other errands. See the Mercury repower process page for the full timeline.',
         ],
       },
@@ -196,7 +196,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'What Mercury motors do Peterborough boaters typically repower with?',
         paragraphs: [
-          'The mix depends on where the boat lives. Rice Lake and Otonabee boats (bass boats, aluminum runabouts, mid-size fiberglass) typically repower with Mercury FourStroke 90 to 150 HP. Bigger fishing rigs and pontoon owners with a heavy load often move up to Pro XS V8 4.6L 175 to 225 HP. For smaller utility boats and tinnies, tiller FourStroke 9.9 to 25 HP is the common path. Verado is available by special order only. Live installed CAD pricing for every model is in the [quote builder](/quote/motor-selection); typical Peterborough-area repower ranges are broken down in the [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).',
+          'The mix depends on where the boat lives. Rice Lake and Otonabee boats, including bass boats, aluminum runabouts, and mid-size fiberglass, often repower with Mercury FourStroke 90 to 150 HP. Bigger fishing rigs and pontoons may move up to Pro XS 175 to 225 HP after hull rating and setup are confirmed. For smaller utility boats and tinnies, tiller FourStroke 9.9 to 25 HP is common. Verado is available by special order only. Current bare-motor pricing is in the [pricing reference](/pricing-reference); the [quote builder](/quote/motor-selection) adds boat-specific rigging and installation.',
         ],
       },
       {
@@ -264,7 +264,7 @@ export const LOCATION_LONGFORM_UPGRADES: Record<string, LocationLongForm> = {
       {
         heading: 'What Mercury motors do Cobourg boaters typically repower with?',
         paragraphs: [
-          "For runabouts and aluminum boats heading to Rice Lake, Mercury FourStroke 60–115 HP is the common repower range, $8,000–$14,000 CAD for the motor alone. Bass boats and faster fiberglass hulls, common on Rice Lake's south-shore bays, usually move up to Pro XS 115–175 HP at $15,000–$22,000 CAD. The Pro XS V8 4.6L 175 HP with Mercury Boost (25 extra HP for 4–6 seconds on demand) is the upgrade pontoon owners ask about most.",
+          "For runabouts and aluminum boats heading to Rice Lake, Mercury FourStroke 60–115 HP is a common repower range. Bass boats and faster fiberglass hulls often move up to Pro XS 115–175 HP. The 175 HP Pro XS is a 3.4L V6. On an eligible motor, Mercury Boost activates automatically during full-throttle mid-range acceleration and improves response without adding horsepower or top speed.",
           "If you're repowering away from an older 2-stroke, the upgrade to a current Mercury FourStroke usually brings better fuel economy, quieter operation, and the current Mercury Limited Warranty. We confirm warranty details at quote.",
         ],
       },

@@ -136,16 +136,6 @@ HBW 能帮我选 Mercury motor 吗？
 
 可以从 MercuryRepower.ca 开始配置 quote。HBW Mercury outboard 页面说明其 Mercury offering includes repower, removal/installation, lake test and warranty registration (Harris Boat Works Mercury Outboards).
 
-Schema notes
-
-Use BlogPosting.
-
-Use FAQPage.
-
-Add comparison Table in visible content.
-
-Add ImageObject for horsepower selector visual.
-
 > 相关指南：[FourStroke vs Pro XS 中文对比指南](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)。
 
 HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Premier dealer 与 Legend Boats dealer。

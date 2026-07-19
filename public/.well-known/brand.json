@@ -45,7 +45,7 @@
   "founded": 1947,
   "mercuryDealerSince": 1965,
   "logo": {
-    "url": "https://www.mercuryrepower.ca/logo.png",
+    "url": "https://www.mercuryrepower.ca/email-assets/harris-logo.png",
     "alt": "Harris Boat Works"
   },
   "colors": {
@@ -144,5 +144,5 @@
     "mcpServer": "https://www.mercuryrepower.ca/api/agents/mcp",
     "ucpCheckout": "https://www.mercuryrepower.ca/api/agents/ucp"
   },
-  "lastUpdated": "2026-07-15"
+  "lastUpdated": "2026-07-18"
 }

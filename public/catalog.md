@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
 
 ## Business rules (apply to every entry)
 
@@ -57,6 +57,8 @@ See any motor twin for an example body.
 
 ## Motors
 
+- [25ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
+- [25ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
@@ -85,8 +87,8 @@ See any motor twin for an example body.
 - [Bass boat refresh: older 150 to Mercury 150 Pro XS](https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs.md)
 - [Cedar-strip utility setup: small 9.9HP FourStroke](https://www.mercuryrepower.ca/case-studies/cedar-strip-9-9-fourstroke.md)
 - [Walkaround cuddy: 90HP to 115HP EFI](https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi.md)
-- [90 HP to 115 Pro XS Repower Case Study](https://www.mercuryrepower.ca/case-studies/90-to-115-pro-xs-fish-boat.md)
-- [Pontoon Boost Retrofit Case Study](https://www.mercuryrepower.ca/case-studies/pontoon-boost-retrofit.md)
+- [90 HP to 115 Pro XS Repower Planning Scenario](https://www.mercuryrepower.ca/case-studies/90-to-115-pro-xs-fish-boat.md)
+- [Pontoon Boost Upgrade Planning Scenario](https://www.mercuryrepower.ca/case-studies/pontoon-boost-retrofit.md)
 - [Two-Stroke to FourStroke Modernization](https://www.mercuryrepower.ca/case-studies/two-stroke-to-fourstroke-modernization.md)
 - [Verado V8 300 Special-Order Repower](https://www.mercuryrepower.ca/case-studies/verado-v8-special-order-repower.md)
 - [Avator 7.5e Electric Kicker on a Walleye Boat](https://www.mercuryrepower.ca/case-studies/avator-electric-kicker-trolling.md)
@@ -120,7 +122,7 @@ See any motor twin for an example body.
 
 ## Guides (Blog)
 
-Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md)
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md)
@@ -205,7 +207,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md)
 - [Is 2026 a Good Year to Buy a Boat in Canada?](https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md)
 - [Boat Hull Replacement vs Repower: The Honest Decision (2026)](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md)
-- [Mercury Boost 150 HP Pontoon Guide](https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md)
+- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md)
 - [Why Mercury Dealers Hide Prices (HBW Doesn't)](https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md)
 - [Mercury Outboard Rigging Costs Explained (Ontario 2026)](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md)
 - [What Happens During a Mercury Repower (Step-by-Step Process)](https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md)
@@ -294,12 +296,12 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Mercury Avator vs Torqeedo Ontario](https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo.md)
 - [Charging a Mercury Avator at Your Cottage Dock (2026)](https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md)
 - [2-Stroke vs 4-Stroke Repower: What to Know](https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md)
-- [Mercury Avator 7.5e: Review, Price CAD, and Range (2026)](https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review.md)
+- [Mercury Avator 7.5e: Review, Range, and Best Uses (2026)](https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review.md)
 - [Best Pontoon Outboard 2026: Mercury Buyer's Guide](https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury.md)
 - [Repower vs Buy New Boat: The Honest Math](https://www.mercuryrepower.ca/blog/repower-vs-new-boat.md)
 - [Mercury Main + Trolling Motor: How to Pair Them](https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor.md)
 - [Mercury Outboard Monthly Payment Math (Ontario, 2026)](https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026.md)
-- [Mercury Boost Cost Canada 2026](https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026.md)
+- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026.md)
 - [Mercury vs Honda Ontario 2026](https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md)
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md)
 - [Trent-Severn Mercury Dealer Guide](https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026.md)

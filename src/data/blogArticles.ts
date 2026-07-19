@@ -2291,11 +2291,11 @@ If your boat does not slot neatly, email a photo and your boat specs to info@har
 |---|---|---|
 | 9.9 ProKicker CT | ELPT / ELHPT | Kicker motor on offshore + larger fishing rigs |
 | 15 ProKicker CT | ELPT / EXLPT | Kicker motor on heavier fishing boats |
-| (No 25 CT) | — | Mercury does not offer a 25 Command Thrust; step down to 15 ProKicker CT or up to 40 CT |
+| (No 25 CT) | Not offered | Mercury does not offer a 25 Command Thrust; step down to 15 ProKicker CT or up to 40 CT |
 | 40 FourStroke CT | ELPT / ELHPT | Heavier 16-18 ft aluminums, smaller pontoons |
 | 50 FourStroke CT | ELPT / ELHPT | Pontoons 16-20 ft, heavier aluminums |
 | 60 FourStroke CT | ELPT / ELHPT / EXLPT | Classic pontoon mid-range |
-| (No 75 CT) | — | Mercury does not offer a 75 CT; step to 90 FourStroke CT for pontoons in this range |
+| (No 75 CT) | Not offered | Mercury does not offer a 75 CT; step to 90 FourStroke CT for pontoons in this range |
 | 90 FourStroke CT | ELPT / EXLPT | The pontoon workhorse |
 | 115 FourStroke CT | ELPT / EXLPT | 20-22 ft pontoon + tritoon |
 
@@ -11084,7 +11084,7 @@ The most common mistake we see on family runabouts: the previous owner under-pow
 
 A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full fuel, a cooler, and tow toys, will plane sluggishly and struggle in chop. The motor runs at 80 to 90% throttle constantly just to maintain cruise, bad for motor life and miserable to drive.
 
-**The rule:** Look at your boat's max HP rating on the capacity plate (usually near the helm). For family use with full crew and gear, don't go more than 25 HP below max. If your boat is rated 115 HP max, run a 90, 115 HP motor.
+**The rule:** Start with the boat's maximum HP rating on the capacity plate (usually near the helm) and never exceed it. The right choice below that ceiling depends on the hull, full operating load, use, and performance target; there is no universal requirement to stay within 25 HP of maximum.
 
 Don't over-power either. A boat rated 150 HP max doesn't need a 200 HP motor. It adds fuel cost, changes handling in chop, and on some hulls causes porpoising.
 
@@ -11408,88 +11408,85 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-150-300hp-pro-xs-performance-guide',
     title: 'Mercury 150 Pro XS to 300 Compared for Ontario Boats',
     seoTitle: "Mercury 150 Pro XS to 300 Compared for Ontario Boats",
-    description: "Mercury 150 Pro XS through 300 HP for Ontario boats: weights, top speeds, fuel use, hull pairings, and CAD pricing from Harris Boat Works.",
+    description: "Mercury 150 Pro XS through 300 HP for Ontario boats: current inline-4, V6, and V8 architecture, hull-fit questions, and verified pricing paths.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-06-29',
+    dateModified: '2026-07-18',
 
     publishDate: '2026-05-13',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury 150 pro xs', 'mercury 175 pro xs', 'mercury 200 pro xs', 'mercury 225 pro xs', 'mercury 250 pro xs', 'mercury 300 pro xs', 'mercury v6 vs v8', 'mercury pro xs comparison ontario', 'mercury 150-300 hp guide'],
     content: `
-*Last reviewed: 2026-06-29*
+*Last reviewed: 2026-07-18*
 
-> **Quick answer:** The current Mercury 150 Pro XS is an inline-4. The Pro XS V6 range starts at 175 HP, while the 300 Pro XS is a V8. For many Ontario runabouts and fishing boats, the 200-225 HP range is the sweet spot, but the right answer depends on your hull rating, load, use, and budget.
+> **Quick answer:** The current Mercury 150 Pro XS is a 3.0L inline-4, the 175 Pro XS is a 3.4L V6, and the 200, 225, 250, and 300 Pro XS models are 4.6L V8 outboards. The right choice depends on the capacity plate, hull, load, use, controls, and complete written quote.
 
 The 150-300 HP Mercury range is where a lot of boaters either get the motor exactly right or spend a pile of money chasing the wrong kind of power.
 
-The first thing to clear up: the current Mercury 150 Pro XS is an inline-4, not a V6. The V6 Pro XS family starts at 175 HP, and the 300 Pro XS moves into V8 territory. That matters because you are not just comparing horsepower. You are comparing weight, torque, rigging, hull fit, handling, fuel use, and whether the boat will actually feel better on Rice Lake or just sound better in a spec sheet.
+The first thing to clear up is the architecture. The current 150 Pro XS is an inline-4, the 175 is the V6 model in this range, and the 200 through 300 models are V8s. That matters because you are not just comparing horsepower. You are comparing rigging, hull fit, handling, controls, fuel use, and whether the boat will actually benefit from the change.
 
 Harris Boat Works is a family-owned marina on Rice Lake, established in 1947, and a Mercury Marine Premier Dealer. We sell and rig these motors, so this guide is built around the real customer question: which one makes sense for your boat, your water, and your budget?
 
-The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175-250 HP V6, and 300 HP V8.
+The current Pro XS lineup in this range spans three architectures: 150 HP inline-4, 175 HP V6, and 200-300 HP V8.
 
 
 
 ## The Quick Comparison Table
 
-| Motor | Block | Displacement | Approx weight | Top speed (typical 18-20 ft hull) | Best for |
-|-------|-------|--------------|---------------|------------------------------------|----------|
-| **150 Pro XS** | Inline-4 | 3.0L | 456 lbs | 50-55 mph | Smaller bass boats, performance fishing under 19 ft |
-| **175 Pro XS** | V6 | 3.4L | 511 lbs | 55-60 mph | Mid-size bass boats, 19-20 ft fishing/runabout |
-| **200 Pro XS** | V6 | 3.4L | 511 lbs | 58-62 mph | The sweet spot, most popular V6 sale |
-| **225 Pro XS** | V6 | 3.4L | 511 lbs | 60-64 mph | Heavier hulls, watersports, big aluminum |
-| **250 Pro XS** | V6 | 3.4L | 511 lbs | 62-66 mph | Performance fishing, max-rated mid-size hulls |
-| **300 V8 Pro XS** | V8 | 4.6L | 527 lbs | 65-70+ mph | The premium tier, same weight as a 250, more power |
+| Motor | Architecture | Displacement | Planning use |
+|-------|--------------|--------------|--------------|
+| **150 Pro XS** | Inline-4 | 3.0L | Smaller performance fishing boats where the hull is rated for 150 HP |
+| **175 Pro XS** | V6 | 3.4L | Mid-size fishing boats and runabouts rated for 175 HP |
+| **200 Pro XS** | V8 | 4.6L | Performance fishing, family runabout, and watersports applications |
+| **225 Pro XS** | V8 | 4.6L | Heavier properly rated hulls needing more rated power |
+| **250 Pro XS** | V8 | 4.6L | Performance fishing and larger max-rated hulls |
+| **300 Pro XS** | V8 | 4.6L | Properly rated high-performance applications |
 
-**Surprising fact:** the 175, 200, 225, and 250 Pro XS V6 are **the same physical motor**, just programmed differently. Same powerhead, same displacement, same weight. The horsepower difference is calibration. This means:
-- Upgrading from a 175 to a 250 doesn't add weight or change rigging
-- Mercury's "Boost" software upgrade can add HP to existing motors (eligible serial numbers, see [our Boost software upgrade guide](/blog/mercury-boost-software-upgrade-eligibility-2026))
-- Resale values don't dramatically separate based on HP rating within the V6 range
+Mercury Boost does not turn one horsepower model into another. On an eligible engine it can improve mid-range acceleration without changing rated horsepower, top speed, or maximum RPM. See the [Boost eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026).
 
-> Pricing below is a planning range, not a quote. Installed cost changes with shaft length, controls, gauges, prop, steering, rigging, trade-in value, and current Mercury programs. For a real number, use the quote builder at MercuryRepower.ca.
+> Bare-motor pricing comes from the [pricing reference](/pricing-reference). Installed cost changes with shaft length, controls, gauges, propeller, steering, rigging, trade-in value, and current Mercury programs.
 
 ## Where Each One Wins
 
 ### 150 Pro XS (Inline-4, 3.0L)
 
-Performance-tuned inline-4. Same block as the 150 FourStroke, but with a sport gearcase, higher RPM ceiling, and Pro XS programming. Lighter than a V6 (~50 lbs), more fuel-efficient at cruise, simpler to maintain.
+The 150 Pro XS is the inline-4 performance option in this comparison. Verify the exact configured weight and gearcase rather than applying a generic difference to the transom.
 
 **Wins when:**
-- You're under 19 feet and want max performance without V6 weight
+- The hull is rated for 150 HP and the exact configuration fits the transom limits
 - Bass boat applications where every pound of transom weight costs you hole shot
-- You'll never need more than 50-55 mph
-- Budget-conscious, meaningfully cheaper than 175 V6
+- The real load and use do not justify stepping up to a higher-rated motor
+- The 150's controls and gearcase options fit the rig
 
-**Typical planning range:** ~$22,500-$26,500 CAD all-in.
+Use the [pricing reference](/pricing-reference) for the current bare-motor price and the quote builder for the boat-specific installed total.
 
 ### 175 Pro XS (V6, 3.4L)
 
 The smallest of the V6 family. Real V6 power and torque in a still-manageable package.
 
 **Wins when:**
-- You want V6 smoothness on a 19-20 ft hull
-- You expect to upgrade later (the 200/225/250 Pro XS is the same physical motor with different software)
-- Your boat tops out at 19 feet but you want headroom
+- The capacity plate and hull call for 175 HP
+- You want the 3.4L V6 architecture without moving to a 200 HP V8
+- The boat's load and use justify the step above 150 HP
 
-**Typical planning range:** ~$26,500-$31,500 CAD all-in.
+Use the [pricing reference](/pricing-reference) for the current bare-motor price and the quote builder for the boat-specific installed total.
 
-### 200 Pro XS (V6, 3.4L). The Most Popular
+### 200 Pro XS (V8, 4.6L)
 
-If you ask us which Mercury we sell most often in the V6 range, it's the **200 Pro XS**. The reason: it's the sweet spot for most 19-21 ft Ontario boats, bass boats, walleye boats, family runabouts that take watersports seriously. Real performance, real fuel efficiency at cruise (~7-9 GPH), reasonable weight on the transom.
+The 200 Pro XS is the entry point to the 4.6L V8 Pro XS group in this comparison. It can suit properly rated performance fishing boats, walleye boats, and family runabouts that take watersports seriously.
 
 **Wins when:**
-- You have a 19-21 ft hull and want a 60+ mph top speed
+- You have a properly rated performance hull and boat-specific acceleration, handling, or speed goals that justify Pro XS setup work
 - You want a single motor that handles cruise, watersports, and serious fishing equally well
 - The 175 feels like compromise but the 250 feels like overkill
 
-**Typical planning range:** ~$29,500-$34,000 CAD all-in.
+Use the [pricing reference](/pricing-reference) for the current bare-motor price and the quote builder for the boat-specific installed total.
 
-### 225 Pro XS (V6, 3.4L)
+### 225 Pro XS (V8, 4.6L)
 
-The bridge between 200 (sweet spot) and 250 (max V6). Same motor as 200, more software calibration. Useful when you have a heavier boat or want headroom for tournaments.
+The 225 sits between the 200 and 250 V8 ratings. It is a separate rated product, not a software upgrade promised to owners of another model.
 
 **Wins when:**
 - Heavier 21 ft hull (deck boat, big aluminum)
@@ -11498,63 +11495,49 @@ The bridge between 200 (sweet spot) and 250 (max V6). Same motor as 200, more so
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Typical planning range:** ~$32,000-$36,500 CAD all-in.
+Use the [pricing reference](/pricing-reference) for the current bare-motor price and the quote builder for the boat-specific installed total.
 
-### 250 Pro XS (V6, 3.4L)
+### 250 Pro XS (V8, 4.6L)
 
-Top of the V6 calibration. Maximum HP on the same physical V6 platform.
+The 250 Pro XS is a 4.6L V8 performance outboard for hulls rated and set up for that power.
 
 **Wins when:**
 - 21-22 ft performance bass boat or center console
-- Twin-engine setups on bigger hulls (twin 250 V6s = 500 HP at lower weight than twin V8s)
-- You want max V6 without going to V8
+- Multi-engine applications where the boat manufacturer permits the configuration
+- You want the 250 HP V8 Pro XS rating and performance gearcase choices
 
-**Typical planning range:** ~$34,500-$39,500 CAD all-in.
+Use the [pricing reference](/pricing-reference) for the current bare-motor price and the quote builder for the boat-specific installed total.
 
-### 300 V8 Pro XS. The Step Up
+### 300 Pro XS (V8, 4.6L)
 
-Mercury's V8 platform. Different motor entirely, bigger displacement (4.6L), more torque, slightly heavier. **Same dry weight as a V6 250 (~527 lbs)** because Mercury engineered the V8 to weigh the same as the top-tier V6. This is one of the most important Mercury engineering decisions of the last decade, going from V6 250 to V8 300 doesn't change your transom load.
+The 300 is the highest rating in the 4.6L V8 Pro XS range. Exact dry weight varies by shaft length, gearcase, controls, and configuration, so verify the selected SKU against the boat's transom and capacity information.
 
 **Wins when:**
-- You're at the top of the V6 calibration and want the next tier of torque
+- The hull is specifically rated and configured for 300 HP
 - Performance fishing where the V8 hole shot matters
-- 22+ ft hulls
-- DTS is standard (V6 makes it optional)
+- The exact steering, controls, gearcase, and transom limits have been confirmed
 
-**Typical planning range:** ~$39,500-$44,000 CAD all-in.
+Use the [pricing reference](/pricing-reference) for the current bare-motor price and the quote builder for the boat-specific installed total.
 
 ## The Real Decision Framework
 
 We'd lay this out for a customer at the shop:
 
-**1. What's your boat's max HP rating?** Don't exceed it. Don't go more than 25 HP below it for performance applications.
+**1. What's your boat's max HP rating?** Never exceed it. The best choice below that ceiling depends on the hull, load, use, and measured performance; there is no universal rule that every boat must be within 25 HP of maximum.
 
-**2. What's your top-speed target?**
-- Under 50 mph: a 150 Pro XS is enough
-- 50-58 mph: 175-200 Pro XS V6
-- 58-62 mph: 200-225 Pro XS V6
-- 62+ mph: 250 Pro XS V6 or 300 V8
+**2. What outcome are you trying to change?** Acceleration, loaded cruising, watersports pull, and top speed are different goals. Do not choose horsepower from a generic speed chart; compare Mercury performance reports for a genuinely similar hull and load.
 
-**3. Are you going to upgrade later?** If yes, buy the 200 V6 today knowing the same physical motor can be calibrated up to 250. If no, buy what you need.
+**3. Are you assuming a later software horsepower upgrade?** Do not. Buy the rated horsepower the boat needs today. Mercury Boost improves acceleration on eligible motors but does not change rated horsepower.
 
-**4. Twin or single?** Twin V6 250s give you 500 HP at lower weight than twin V8 350s. For the right hull (offshore center console, big bay boat) this matters significantly.
+**4. Twin or single?** Follow the boat manufacturer's approved configuration, transom rating, steering requirements, and total installed-weight limits. Multi-engine rigging is not a generic horsepower comparison.
 
-**5. Are you running flatter water (Rice Lake, inland) or rougher (Lake Ontario, Georgian Bay)?** Rougher water benefits from V8 torque; flat water doesn't really need it.
+**5. Where and how will the boat run?** Water conditions, load, trip length, and intended use affect propeller and setup choices, but they do not override the capacity plate.
 
 ## Fuel Economy and Hours
 
-V6 Mercurys are surprisingly efficient at cruise. Real-world numbers for the 200-225 Pro XS in a 20 ft hull:
+Fuel burn and range cannot be predicted responsibly from horsepower alone. Hull, propeller, engine height, load, water, weather, throttle setting, and fuel capacity all matter. Use Mercury performance reports for a genuinely comparable boat-and-engine combination, then verify the final setup during the water test.
 
-| Speed | Fuel burn | Range on 30-gal tank |
-|-------|-----------|----------------------|
-| Idle (trolling) | ~1.5 GPH | 20+ hours |
-| 25 mph cruise | ~7-8 GPH | 90-100 miles |
-| 35 mph cruise | ~9-11 GPH | 70-80 miles |
-| 50 mph WOT | ~18-22 GPH | 30-40 miles |
-
-For most Ontario boating. Rice Lake, Trent-Severn, you'll spend 80% of your time at 25-35 mph cruise. Real fuel cost at ethanol-free 89 marine pricing on a typical 4-hour outing: $40-$70.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+For current bare-motor pricing, see the [Mercury pricing reference](/pricing-reference).
 
 For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
@@ -11563,14 +11546,14 @@ For service intervals and major service costs on these motors, see [our Mercury 
 Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) - no signup, no email gate, takes 30 seconds.
 ## What HBW Does
 
-V6 sales and repowers are our most common high-end work. Specifically:
+For higher-horsepower Pro XS conversations, HBW provides:
 
-- **V6 quote builds through the configurator**, real CAD pricing in 90 seconds
-- **Trade-in valuations** on outgoing motors (V6 trades typically run $4,000-$10,000 depending on age and hours)
+- **Current bare-motor pricing** through the pricing reference and complete configured quotes
+- **Trade-in valuations** based on the actual outgoing motor's condition, hours, and market
 - **Rigging upgrades**, hydraulic steering, stainless prop, DTS where available
-- **Boost software upgrade evaluations**, for eligible Pro XS V6 owners wanting to step up HP without buying a new motor
+- **Boost software upgrade evaluations**, for eligible owners seeking better mid-range acceleration without buying a new motor
 
-If you're considering a V6 repower, the 90-second configurator quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) gets you a real number. For more nuanced discussions, twin vs single, V6 vs V8, Pro XS vs FourStroke, call **905-342-2153**.
+If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path. For twin vs single, V6 vs V8, or Pro XS vs FourStroke questions, call **905-342-2153**.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -11582,39 +11565,39 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can I really upgrade my 200 Pro XS to a 250 with software?',
-        answer: 'On eligible serial numbers, yes. Mercury\'s Boost Software Upgrade adds HP to certain Pro XS V6s. See our dedicated guide for which serial ranges qualify and current pricing.'
+        answer: 'No. Mercury Boost does not change rated horsepower. On eligible serial numbers it can improve mid-range acceleration and zero-to-top-speed time. See our dedicated guide for the current published eligibility ranges.'
       },
       {
-        question: 'Why does Mercury sell different HP ratings if 175-250 are the same physical motor?',
-        answer: 'Different applications need different power delivery. The 175 calibration is tuned for fuel economy and lower RPM; the 250 calibration is tuned for max power. Same hardware, different tuning.'
+        question: 'Are the 175 through 250 Pro XS models the same physical motor?',
+        answer: 'No. The current 175 Pro XS is a 3.4L V6. The current 200, 225, and 250 Pro XS models are 4.6L V8 outboards. Confirm the exact SKU because shaft length, gearcase, controls, and configuration also vary.'
       },
       {
         question: 'Is V6 worth the weight over the inline-4 150?',
-        answer: 'On hulls 19 ft+, yes. The V6 has more torque, smoother power delivery, and longer service life. On hulls under 18 ft, the lighter inline-4 may be the better choice, less transom weight, better hole shot.'
+        answer: 'Hull length alone cannot answer this. Use the capacity plate, transom limits, expected load, intended use, and the exact configured motor weight. The 175 is the V6 step above the inline-4 150; the 200 and higher models in this range are V8s.'
       },
       {
         question: 'V6 vs V8, does the V8 use that much more fuel?',
-        answer: 'Surprisingly little at cruise. V8s are typically 1-2 GPH thirstier at WOT, similar at typical cruise. Where the V8 wins: torque under load (heavy boats, watersports, sustained pull). Where the V6 wins: lighter weight (technically same dry weight on Pro XS V6 vs V8, but the V6 platform is more efficient at light loads).'
+        answer: 'There is no reliable generic fuel-use difference. Compare Mercury performance data for similar hulls and verify the selected motor, propeller, load, and cruise speed. The 175 Pro XS is a V6; the 200-300 Pro XS models in this range are V8s.'
       },
       {
         question: 'Should I buy single big V8 or twin smaller V6?',
-        answer: 'Depends on the boat. Twin V6s give redundancy (one motor fails, you still get home), better maneuverability with joystick (where supported), and balanced transom weight. Single V8 gives you simpler maintenance and lower upfront cost. For 22-26 ft boats, twins are increasingly popular; under 22 ft, single is usually right.'
+        answer: 'Use only the boat manufacturer\'s approved single- or multi-engine configuration. Total installed weight, transom design, steering, controls, electrical capacity, redundancy needs, and service cost all matter. Hull length alone cannot decide it.'
       },
       {
-        question: 'What\'s the difference between 250 V6 Pro XS and 250 SeaPro?',
-        answer: 'Different applications. 250 Pro XS is tuned for sport/performance use (recreational, fishing). 250 SeaPro is tuned for commercial use, heavier-duty internals, longer service intervals, designed for high-hour operation. See our Mercury SeaPro guide for the full breakdown.'
+        question: 'What\'s the difference between 250 Pro XS and 250 SeaPro?',
+        answer: 'Both are current V8 applications with different intended duty and available configurations. Pro XS is the performance line; SeaPro is the commercial line. Compare Mercury\'s current specifications for gearcase, controls, warranty, and service schedule before choosing.'
       },
       {
         question: 'How much does a Mercury 150 Pro XS weigh?',
-        answer: 'The Mercury 150 Pro XS has a dry weight of about 207 kg (456 lb) in its lightest configuration. That is noticeably lighter than the V6 Pro XS models, which is part of why it works so well on sub-19 ft performance and bass boats where every pound on the transom costs you hole shot. Want it matched to your hull and prop? Build a quote at mercuryrepower.ca or call 905-342-2153.'
+        answer: 'Dry weight varies with shaft length, gearcase, controls, and configuration. Use the specification for the exact selected SKU and compare it with the boat\'s capacity plate and transom limits. HBW can confirm the configured motor before quoting.'
       },
       {
         question: 'What is the top speed of a Mercury 150 Pro XS?',
-        answer: 'On a suitable sub-19 ft hull, a Mercury 150 Pro XS typically runs in the low-to-mid 50 mph range. Exact top speed depends on hull, load, and prop, so it is not a single fixed number, but if your targets are under 50 to 55 mph the 150 Pro XS is usually enough motor. For a setup dialed in to your boat, call Harris Boat Works at 905-342-2153.'
+        answer: 'There is no responsible generic top-speed number. Hull design, total load, engine height, propeller, water, and weather all matter. Use a Mercury performance report for a genuinely comparable rig and verify the final setup during the water test.'
       },
       {
         question: 'How much does a Mercury 150 Pro XS cost?',
-        answer: 'All-in repower pricing on a Mercury 150 Pro XS typically plans out around $22,500 to $26,500 CAD, depending on rigging, controls, and what is coming off your transom. Pricing is in CAD and the final number is confirmed by Harris Boat Works. Build a live quote in about three minutes at mercuryrepower.ca/quote/motor-selection or call 905-342-2153.'
+        answer: 'Use the pricing reference for the current bare-motor price. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging, and boat condition. Build a configured quote or call 905-342-2153.'
       }
     ]
 
@@ -12987,11 +12970,11 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     relatedSlugs: ['mercury-boost-upgrade-150hp-pontoon-analysis', 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026', 'mercury-115-hp-fourstroke-review-ontario'],
     title: 'Mercury Boost Software Eligibility 2026',
     seoTitle: 'Is Your Mercury Eligible for the 2026 Boost Upgrade?',
-    description: 'Mercury Boost is dealer-installed software offering up to 21% faster mid-range acceleration on select FourStroke, Pro XS, Verado engines.',
+    description: 'Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations.',
     image: '/lovable-uploads/hero-mercury-boost-calibration-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-18',
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
@@ -13000,7 +12983,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     videoAssetCaption: "Mercury's official demonstration of the Boost software upgrade in action.",
     content: `_Last updated: July 18, 2026_
 
-> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5 to 21% improvement in mid-range acceleration on eligible motors. Eligibility is determined by serial number, not model year. It covers select FourStroke, Pro XS, and Verado models, comes factory-installed on some new 2026 builds, does not change rated horsepower, and does not affect Mercury factory warranty or Mercury Protection Plan coverage.
+> **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit, that Mercury rates as a 5 to 21% improvement in zero-to-top-speed acceleration on tested eligible setups. Eligibility is determined by the exact engine and serial number, not model year alone. It covers select FourStroke, Pro XS, Verado, and Racing models and does not change top speed, rated horsepower, maximum RPM, or time to plane.
 
 > **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca, or call HBW at 905-342-2153 with your serial number. Free.
 ---
@@ -13009,7 +12992,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
 Mercury announced Boost as part of its 2026 technology rollout and described it as the starting point for a broader set of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
 
-Mercury cites a 5 to 21% improvement in mid-range acceleration and zero-to-top-speed run times, depending on the engine.
+Mercury describes the feature as improving mid-range acceleration and throttle response. In five published boat-and-engine tests, zero-to-top-speed acceleration was 5 to 21% quicker, with results varying by the complete setup and conditions.
 
 ---
 
@@ -13022,11 +13005,11 @@ Mercury cites a 5 to 21% improvement in mid-range acceleration and zero-to-top-s
 
 **What Boost does not change:**
 - Rated horsepower
-- Fuel economy at steady cruise (Boost changes mid-range delivery, not cruise calibration)
+- Top speed or time to plane
 - Physical components
 - Mercury factory warranty coverage
 
-Boost is a factory-backed, manufacturer-approved calibration. It does not void Mercury warranty coverage or Mercury Protection Plan coverage.
+Boost is a factory-backed, manufacturer-approved calibration. Mercury states that installing and using Boost does not void the Mercury Marine Limited Warranty.
 
 ---
 
@@ -13038,23 +13021,17 @@ Eligibility is by serial number, not model year.
 
 | Engine Family | HP Models | Eligible From Serial Number |
 |---|---|---|
-| FourStroke | 175, 200, 250, 300 HP | 2B529482 |
-| Pro XS | 175, 200, 225, 250, 300 HP | 2B529482 |
-| Verado | 250, 300 HP | 2B529482 |
-| Verado | 350 HP | 3B266064 to 3B578266 only |
-| Racing 150R | 150R | 3B547096 |
+| FourStroke | 175, 200, 250, 300 HP | 2B529482 to 3B612424 |
+| Pro XS | 175, 200, 225, 250, 300 HP | 2B529482 to 3B612424 |
+| Verado | 250, 300 HP | 2B529482 to 3B612424 |
+| Verado | 350 HP | 3B266064 to 3B578265 |
+| Racing 150R | 150R | 3B547096 to 3B612424 |
 
-**Important note on the 350 HP Verado:** Eligibility is within a specific serial range (3B266064 to 3B578266). If your 350 falls outside this range, it is not eligible for the dealer-installed version.
+**Important note on the 350 HP Verado:** The paid dealer-upgrade range is 3B266064 to 3B578265. Mercury lists 3B578266 and above as factory-equipped; some of those engines may still need a dealer software update so the app can interface with Boost.
 
-### Factory-Installed (New 2026 Production Motors)
+### Factory-Equipped Motors
 
-Boost comes pre-loaded on:
-- FourStroke 175, 200, 250, 300 HP
-- Pro XS 175, 200, 225, 250, 300 HP
-- Verado 250, 300, 350 HP
-- Racing 150R
-
-Applies to models manufactured in Q2 2026 and later.
+Boost is standard on specified newer engines. Mercury lists 3B612425 and above as factory-equipped for the standard affected families and Racing 150R, and 3B578266 and above for the 350 HP V10. Factory status is identified by exact model and serial threshold, not by build quarter alone. HBW checks the serial because a motor may require a paid unlock, may already be factory-equipped, or may need a dealer software update before the Mercury Marine App can show the correct status.
 
 ---
 
@@ -13074,15 +13051,15 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## How to Get Boost Installed
 
-Boost is dealer-installed. You cannot download or apply it yourself, Mercury's diagnostic software is dealer-exclusive.
+Boost can be purchased and unlocked through Mercury's supported app flow on some eligible single-engine boats or through an authorized Mercury dealer. App eligibility has configuration limitations, and some motors require a dealer software update.
 
 **The process:**
-1. Bring the engine to HBW (or schedule a service call)
+1. Bring the engine to HBW
 2. HBW confirms serial number eligibility
-3. Boost calibration is applied via Mercury's software interface
+3. HBW confirms whether the motor needs a paid unlock, software update, or is already factory-equipped
 4. A short test run confirms the update
 
-Most dealers can complete it in a single service visit. **Mercury has not published a standard retail price for the Boost upgrade.** Dealers set their own service rates. At most Mercury dealers in Ontario, shop rates run in the $120-$175 per hour range, and installation is primarily technician time, roughly 1-2 hours. If you are already bringing the engine in for spring commissioning or annual service, ask to have Boost done at the same visit to minimize total labor cost.
+Mercury does not publish one universal Canadian retail total that applies to every motor and visit. HBW confirms eligibility, the current upgrade price, and any required shop work from the exact serial number before booking. Do not use a converted foreign dealer price or a generic labour estimate as a Canadian quote.
 
 ---
 
@@ -13090,10 +13067,10 @@ Most dealers can complete it in a single service visit. **Mercury has not publis
 
 Mid-range acceleration is where the engine is most felt in real use. Not at full throttle, but in the transition from idle to cruising speed, when you are launching off Rice Lake's shallow flats, loading a pontoon with six passengers, or accelerating through a turn.
 
-A 5 to 21% improvement in that band is most noticeable on:
+Mercury's published 5 to 21% figures are zero-to-top-speed test results, not a promised improvement for every boat. The mid-range response change is most relevant on:
 - Heavily loaded pontoons
 - Family runabouts with full gear and passengers
-- Any setup where hole-shot or mid-range feel sluggish
+- Eligible setups where mid-range response is the actual complaint
 
 Ontario's boating season is short. If your eligible motor qualifies for Boost, getting it done before spring launch is worth a conversation with us.
 
@@ -13105,9 +13082,9 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 ## What we see at HBW
 
-Boost is a software calibration that improves mid-range acceleration. It does not change the rated horsepower of the motor. What you'll feel is sharper throttle response and stronger hole-shot, not a bigger top end. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: most 150 FourStroke pontoons are outside the current Boost eligibility list, and even on an eligible motor Boost does not add rated HP. If hole-shot is the real complaint, the right next step is usually a prop conversation first, then Boost only if the motor is eligible.
+Boost is a software calibration that improves mid-range and zero-to-top-speed acceleration. It does not change rated horsepower, top speed, maximum RPM, or time to plane. A common customer who asks is a 150 FourStroke pontoon owner who wishes they had specced the 175, and we have to be straight with them: standard outboards below 175 HP are outside the current Boost list, except the Mercury Racing 150R. If time to plane is the complaint, Boost is not the promised fix; start with correct horsepower, propeller, setup, and load.
 
-Eligibility depends on engine family, horsepower, model code, and serial number, not model year alone. We can check eligibility in our portal in a few minutes. Flash time at the shop is roughly 90 minutes plus the customer-portal activation. Not every motor is a candidate. Older carbureted and EFI engines are generally outside the current Mercury serial-number ranges.
+Eligibility depends on engine family, horsepower, model code, serial number, software status, and boat configuration, not model year alone. HBW checks the current Mercury status before quoting. Not every motor or app-based installation path is a candidate.
 
 For HBW repowers, standard stock conversations usually start with FourStroke and Pro XS; Verado is service, special-order, or offshore context only.
 
@@ -13116,22 +13093,22 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 ## FAQs
 
 **Does Boost void my warranty?** 
-No. Boost is an official Mercury program and factory-backed calibration. It does not void Mercury factory warranty or any Mercury Protection Plan coverage.
+No. Boost is an official Mercury program and factory-backed calibration. Mercury states that installing and using Boost does not void the Mercury Marine Limited Warranty.
 
-**Does Boost work on twin-engine setups?** 
-Yes, if both engines are eligible. Each engine is updated individually. If your twins have different serial numbers, eligibility is assessed per engine.
+**Does Boost work on twin-engine setups?**
+The Mercury Marine App purchase and unlock path is currently limited to select single-engine configurations. A dealer must check each engine and the boat configuration for a multi-engine installation.
 
 **What if my serial number isn't eligible?** 
-If your motor falls outside current eligibility criteria, the upgrade is not available at this time, there is no aftermarket equivalent. Mercury has indicated Boost will expand to additional models. In the meantime, the best performance improvements for ineligible engines are mechanical: correct prop specification, fresh spark plugs, clean lower unit with fresh gear lube, and a properly maintained ignition system.
+If the current Mercury eligibility check says the motor is not eligible, Boost is not available for that unit through the supported path. Confirm propeller, engine height, load, hull condition, and normal maintenance before deciding whether a different rated motor is needed.
 
-**Can Boost be reversed?** 
-In theory, yes, it is a software calibration and Mercury has the tools to modify software-based updates. Mercury has not published a standard reversal procedure. In practice, the improvement is consistently viewed as positive, it changes only the mid-range band, not cruise or wide-open-throttle behavior.
+**Can Boost be reversed?**
+Do not assume a standard reversal or refund path. Confirm the current purchase, unlock, warranty, and support terms before authorizing the upgrade.
 
 **How do I know if my FourStroke qualifies?** 
-FourStroke models in the 175-300 HP range from serial number 2B529482 are eligible for the dealer-installed retrofit. The factory-installed version comes pre-loaded on new FourStroke 175, 200, 250, 300 HP, Pro XS 175, 200, 225, 250, 300 HP, and Verado 250, 300, 350 HP models built in Q2 2026 and later. The fastest answer: call HBW at 905-342-2153 with your serial number.
+The current published dealer list includes FourStroke 175, 200, 250, and 300 HP; Pro XS 175, 200, 225, 250, and 300 HP; specified Verado models; and the Racing 150R, subject to serial-number rules and other requirements. The fastest answer is to call HBW at 905-342-2153 with the exact serial number.
 
 **Is Boost worth it on Rice Lake?** 
-If your eligible engine already feels responsive with a light load, the improvement will be subtler. If you routinely run heavy, full pontoon, loaded family bowrider, anything where the hole-shot feels sluggish, Boost is one of the most cost-effective upgrades available. It costs a fraction of a new motor and requires no hardware.
+If the exact motor is eligible and mid-range acceleration is the goal, Boost may be worth comparing with the complete written price. It does not change time to plane or correct an underpowered boat, wrong propeller, or poor setup.
 
 ---
 
@@ -13161,19 +13138,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which Mercury engines are eligible for the Boost software upgrade?',
-        answer: 'Eligibility depends on serial number, not model year. FourStroke 175-300hp, Pro XS 175-300hp, Verado 250-350hp, and Racing 150R models with serial numbers from 2B529482 onward are eligible for the dealer-installed upgrade. The 350hp Verado has a specific serial range (3B266064 to 3B578266).'
+        answer: 'Eligibility depends on the exact model and serial number, not model year alone. The published dealer list includes FourStroke 175, 200, 250, and 300 HP; Pro XS 175, 200, 225, 250, and 300 HP; specified Verado models; and the Racing 150R, each subject to Mercury\'s current serial and configuration requirements.'
       },
       {
         question: 'Does Mercury Boost void my warranty?',
-        answer: 'No. Boost is an official Mercury program and a factory-backed software calibration. It does not void your Mercury factory warranty or any Mercury Protection Plan coverage.'
+        answer: 'No. Boost is an official Mercury program and a factory-backed software calibration. Mercury states that installing and using Boost does not void the Mercury Marine Limited Warranty.'
       },
       {
         question: 'Does Boost work on twin-engine setups?',
-        answer: 'Yes, if both engines are eligible, both can be updated. Each engine is updated individually. If your twins have different serial numbers, eligibility is assessed per engine.'
+        answer: 'The Mercury Marine App purchase and unlock path is currently limited to select single-engine configurations. A dealer must check each engine and the complete boat configuration for a multi-engine installation.'
       },
       {
         question: 'How much does Mercury Boost cost to install in Canada?',
-        answer: 'Mercury has not published a standard retail price for the Boost calibration. Dealers set their own labour rates, and the installation is billed as in-shop labour, typically in the 1-2 hour range. At most Mercury dealers in Ontario, shop rates run $120-$175 per hour, so expect to pay roughly $150-$350 CAD for the Boost installation labour, not including any other in-shop work done at the same visit. Since there\'s no hardware involved, the cost is primarily technician time. If you\'re already bringing the engine in for spring commissioning or other in-shop service, ask to have Boost done at the same time to minimize total labour cost.'
+        answer: 'HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Call 905-342-2153 with a photo of the serial-number plate.'
       },
       {
         question: 'How do I find my Mercury outboard serial number?',
@@ -13181,19 +13158,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which FourStroke models are eligible for Mercury Boost?',
-        answer: 'Based on Mercury\'s 2026 rollout information, the factory-installed Boost calibration is confirmed on Pro XS (175-300hp) and Verado models (250, 300, 350hp) built in Q2 2026 and later. The dealer-installed retrofit upgrade for existing outboards is currently confirmed on the 350hp Verado within a specific serial range. Mercury has indicated Boost is the starting point for a broader set of software upgrades, additional eligible models may be announced as the program expands. If you own a FourStroke and want to know if your specific engine qualifies, the fastest answer is to call a certified dealer with your serial number.'
+        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
       },
       {
         question: 'Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?',
-        answer: 'For most Rice Lake and Kawartha Lakes boaters, the answer depends on how you load your boat. The improvement is most noticeable on heavily loaded boats, pontoons with a full deck, family runabouts with gear and passengers, or any setup where hole-shot and mid-range punch feel sluggish. Rice Lake\'s shallow flats mean you\'re often transitioning from idle to cruising speed in confined areas, and that\'s exactly where the Boost calibration makes a difference. If your eligible engine already feels responsive with a light load, the improvement will be subtler. But if you routinely run heavy or feel like your engine is slow to get on plane, Boost is one of the most cost-effective upgrades available, it costs a fraction of a new motor and requires no hardware.'
+        answer: 'The decision depends on eligibility, current mid-range acceleration, boat setup, load, and the complete written price. Mercury does not promise a change in time to plane, horsepower, top speed, or maximum RPM. Confirm the propeller and setup before treating software as the answer.'
       },
       {
         question: 'What should I do if my serial number isn\'t eligible for Mercury Boost?',
-        answer: 'If your Mercury engine falls outside the current Boost eligibility criteria, the upgrade simply isn\'t available for your unit at this time, there\'s no workaround or aftermarket equivalent. Mercury has said Boost is part of a broader software upgrade lineup, and additional models may become eligible as the program expands. In the meantime, the best performance improvements available to ineligible engines are mechanical: a properly spec\'d propeller, a clean lower unit with fresh gear lube, fresh spark plugs, and a correctly calibrated ignition timing through a standard service. These won\'t match the Boost gain, but a poorly maintained engine with a wrong prop can lose more performance than Boost recovers.'
+        answer: 'If Mercury\'s current check says the motor is not eligible, Boost is not available for that unit through the supported path. Confirm the propeller, engine height, load, hull condition, and normal maintenance before deciding whether a different rated motor is needed.'
       },
       {
         question: 'Can Mercury Boost be reversed if I don\'t like the result?',
-        answer: 'In theory, yes. Boost is a software calibration and Mercury dealers have the tools to apply and modify software-based updates. However, Mercury has not published a standard reversal procedure, and returning to the factory calibration would require a return visit to a certified dealer. In practice, the 5 to 21% mid-range acceleration improvement is almost universally regarded as positive, the calibration doesn\'t change how the engine feels at cruise or at wide-open throttle, only in the mid-range RPM band. If you\'re considering Boost, it\'s not a risky experiment, it\'s a factory-approved update with a straightforward performance outcome.'
+        answer: 'Do not assume a standard reversal or refund path. Confirm the current purchase, unlock, warranty, and support terms for the exact motor before authorizing the upgrade.'
       }
     ]
   },
@@ -16400,21 +16377,21 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-boost-upgrade-150hp-pontoon-analysis',
-    title: 'Mercury Boost 150 HP Pontoon Guide',
-    seoTitle: "Mercury Boost on a 150 HP Pontoon: Worth It? | HBW",
-    description: "For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. Real-world gains are small once load and hull drag enter the equation.",
+    title: 'Mercury Boost and 150 HP Pontoons: Check Eligibility First',
+    seoTitle: "Mercury Boost and 150 HP Pontoons: Eligibility Guide | HBW",
+    description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing performance or cost.",
     image: '/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2.png',
     imageAlt: 'Mercury technician servicing a pontoon outboard motor while a customer consults with a service advisor at Harris Boat Works.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-30',
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-18',
     publishDate: '2026-04-30',
     category: 'Performance',
     readTime: '12 min read',
     keywords: ['mercury boost upgrade pontoon', 'mercury boost 150hp', 'mercury software upgrade'],
-    content: `*Last reviewed: 2026-07-09*
+    content: `*Last reviewed: 2026-07-18*
 
-> **Quick answer:** For most 150 HP pontoon owners, Mercury Boost is not worth the money. It is a dealer-installed software upgrade that improves low and mid-range torque and hole shot, not top speed, so lightly loaded pontoons feel little change. Heavy loads and larger tritoons are the exception. Check your prop first, then run the eligibility check at mercuryrepower.ca.
+> **Quick answer:** Do not assume a standard Mercury 150 FourStroke pontoon motor qualifies for Boost. Mercury's published dealer-installed list starts at 175 HP for FourStroke and Pro XS; the 150 HP exception is the Mercury Racing 150R. Eligibility depends on engine family, model code, and serial number. Boost improves mid-range acceleration on an eligible motor, but it does not add horsepower, top speed, or maximum RPM.
 
 **Canonical URL:** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -16422,25 +16399,25 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick Answer
 
-For most 150 HP pontoon owners, Mercury Boost adds modest real-world performance gains, it's a software upgrade with no hardware change. Worth considering if you load heavy or push a wide tube layout. Less compelling if your hull is already near its speed ceiling. Eligibility check and pricing at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+For most owners of a standard Mercury 150 FourStroke pontoon motor, the first question has a simple answer: the motor is not on Mercury's currently published dealer-installed Boost eligibility list. Do not compare gains or pricing until a Mercury dealer has checked the exact engine family and serial number. If the motor is eligible, Boost is an automatic software calibration that can improve mid-range acceleration without changing rated horsepower.
 
 ---
 
 ## Full Article
 
-Mercury Boost is a software-only upgrade that increases the maximum output of certain Mercury outboards without changing any hardware. The motor stays the same. What changes is the engine management map, allowing the motor to deliver more power at the top end.
+Mercury Boost is a software calibration for specific eligible Mercury outboards. It can improve zero-to-top-speed and mid-range acceleration by 5 to 21 percent depending on the boat-and-engine combination. It does not raise horsepower, top speed, or maximum RPM.
 
 That's interesting. What's equally interesting is what it tells us about where Mercury's upgrade roadmap is heading, more software, more granularity, more options after you buy the motor.
 
-For a typical 150 HP pontoon owner in 2026, the honest answer on whether to buy Boost right now is: probably not essential, but worth understanding. If you're weighing Boost against jumping a full HP class, run the [repower vs new boat math](/repower) first, the installed-cost gap to the next motor up is usually smaller than Boost shoppers expect. You can also [get a 150 HP quote](/quote/motor-selection) in about three minutes to compare live installed pricing before deciding on Boost.
+For a typical 150 HP pontoon owner in 2026, the honest answer is to check eligibility before discussing whether Boost is worthwhile. If the motor is not eligible and the pontoon feels sluggish, verify the propeller, engine height, trim technique, hull condition, and real operating load before considering a repower.
 
 ### What Boost Actually Is
 
-Mercury Boost is an authorized, dealer-installed software upgrade that adjusts the engine management calibration on eligible motors. It's not a tune, not a chip, and not something you do yourself, it requires Mercury's authorized tooling and takes about an hour of dealer service time.
+Mercury Boost is an authorized software calibration installed on an eligible motor through Mercury's dealer process. It is not an aftermarket tune or owner-installed download.
 
-Boost-eligible motors as of 2026 include specific FourStroke and Pro XS models at certain HP classes. For eligibility on your specific motor serial number and current upgrade pricing, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Call HBW with a photo of the serial-number plate for an eligibility and pricing check.
 
-Boost does not void your Mercury warranty, it's a manufacturer-authorized upgrade. Unauthorized ECU modifications from non-Mercury sources do void warranty. There's an important distinction there.
+Because warranty coverage depends on the exact product, installation record, and current Mercury terms, HBW confirms warranty treatment for the specific motor before work is authorized.
 
 ### Why Most Pontoon Owners Won't Feel It Dramatically
 
@@ -16455,7 +16432,7 @@ The hierarchy of what actually drives pontoon performance:
 5. **Prop selection.** A correctly sized and pitched prop is the most overlooked performance factor on pontoons.
 6. **Trim adjustment.** Free improvement available to almost every pontoon driver.
 
-Boost lands below most of those factors. If any of the upstream variables are wrong, prop, trim, loading, fix those first. The return per dollar is better.
+Boost cannot compensate for an ineligible motor, an underpowered boat, or an incorrect propeller. Confirm those fundamentals first.
 
 ::decision-card
 eyebrow: Boost eligibility check
@@ -16463,18 +16440,18 @@ heading: Is your setup actually a Boost candidate?
 subhead: Boost is a software upgrade on specific late-model Mercury motors. The math only works on certain hulls and certain owners. Most pontoon owners do not feel it dramatically.
 leftLabel: Boost is worth the conversation
 leftCriteria:
-  - Mercury 150 FourStroke, 2024 or newer
-  - Heavier pontoon (triple tube, 24 foot or larger)
-  - You load the boat with 6+ people regularly
-  - You're already at the top of your motor's working range
+  - Mercury has confirmed the exact serial number is eligible
+  - The boat is correctly powered and propped
+  - Mid-range acceleration is the specific concern
+  - You understand that horsepower and top speed do not increase
 leftOutcome: Talk to us about Boost
 leftVariant: recommended
 rightLabel: Boost is not the right lever
 rightCriteria:
-  - Pre-2024 Mercury 150 (Boost is not available)
-  - Light dual-tube pontoon with 2 to 4 people typical
-  - You're already getting up on cruise on spec
-  - You'd be better served by a prop change first
+  - Standard Mercury 150 FourStroke, not the Racing 150R
+  - Serial number outside Mercury's published range
+  - The boat is underpowered for its rating and load
+  - Propeller or setup has not been checked
 rightOutcome: Skip Boost, check the prop
 rightVariant: alternative
 whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints on pontoons at a fraction of the Boost cost. Try the prop first.
@@ -16482,27 +16459,17 @@ whenInDoubt: A correctly pitched prop fixes most feels-underpowered complaints o
 
 ### When Boost Actually Makes Sense
 
-There are real scenarios where Boost earns its price:
+There are real scenarios where Boost can be worth discussing on an eligible motor:
 
 **Performance bass boats or mid-size runabouts** where the hull already responds to small power changes. Tournament fishing where every few seconds off a morning run matters. Lighter two-log pontoons (18-20 ft) where the speed ceiling isn't as firmly set by hull drag.
 
 **Customers who have already optimized everything else.** If the prop is correct, trim is dialed, and loading is managed, Boost is the next marginal step.
 
-**Customers who want it as a gift to themselves.** Some customers know the math doesn't pencil out as a strictly practical upgrade and buy it anyway because they enjoy the motor and want to push it. That's a reasonable choice, just go in with clear expectations.
+**Owners who want better acceleration, not a bigger motor.** Boost is not a substitute for horsepower or a way around the boat's capacity plate.
 
-For a 22-foot tritoon hauling four adults and full gear, none of those scenarios apply cleanly. The boat is constrained by its hull and load, and Boost won't change that meaningfully.
+### Do not buy on an assumed software roadmap
 
-### The More Interesting Conversation: Mercury's Software Roadmap
-
-The reason Boost matters beyond its 2026 performance gains is what it signals.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
-
-Software-defined performance is the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Buying a current Mercury motor positions you to participate in future upgrade cycles.
-
-In a few years, we'll likely see more specific upgrades, perhaps a tow mode that emphasizes low-end torque for getting skiers up, separate from a cruise mode tuned for fuel efficiency. Boost is the first widely-deployed iteration of that roadmap.
-
-If you're buying a Mercury today with a 5, 10-year ownership window in mind, the platform you're buying into matters. That's a better reason to care about Boost than the current performance increment.
+Mercury has described Boost as part of a broader software-upgrade capability, but future modes, eligibility expansions, prices, and compatibility are not promises to a current buyer. Buy the motor that correctly powers the boat today. Treat any later software option as a separate decision only after Mercury publishes the terms for that exact serial number.
 
 ![Mercury Pro XS outboard with Boost decal on a pontoon boat transom, illustrating the software upgrade performance.](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
 
@@ -16516,7 +16483,7 @@ When customers ask about Boost, we want to know:
 - Have you optimized trim?
 - What specifically are you trying to achieve, top speed, hole shot, or pulling power?
 
-Most pontoon customers walk out without Boost. We point them toward prop and trim optimization first, because those gains are larger and cheaper.
+For a standard 150 FourStroke pontoon, we start with eligibility and usually move directly to propeller, setup, and load checks because the common 150 FourStroke is not on the current retrofit list.
 
 ::cta
 variant: inline
@@ -16530,17 +16497,17 @@ primaryHref: /pricing-reference
 
 ## FAQs
 
-**Is the [Mercury Boost upgrade](https://www.mercurymarine.com/canada/en/outboards/fourstroke-2-6hp-150hp/boost-software-upgrade/) worth it for a 150 HP pontoon?** 
-For most 150 HP pontoon owners, the gains are real but modest, pontoon performance is constrained more by hull design, loading, and prop than by peak motor output. Boost makes more sense on lighter performance boats where small power changes are felt. On heavy family tritoons, most customers don't notice a meaningful difference.
+**Is Mercury Boost worth it for a 150 HP pontoon?**
+First identify which 150 HP motor you own. Mercury's published 150 HP exception is the Racing 150R; a standard 150 FourStroke is not listed. If the motor is ineligible, Boost is not an option. If Mercury confirms eligibility, judge it specifically as an acceleration upgrade, not added horsepower.
 
 **What is Mercury Boost?** 
-A software-only upgrade that increases maximum output on eligible Mercury FourStroke and Pro XS motors without hardware changes. Installation takes about an hour using Mercury's authorized tooling at a certified dealer.
+A software calibration that improves mid-range acceleration on an eligible motor. It does not add horsepower, top speed, or maximum RPM.
 
 **Which Mercury motors are eligible for Boost?** 
-Specific FourStroke and Pro XS models, typically 115 HP and up. For eligibility on your specific motor, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+Specific FourStroke, Pro XS, Verado, and Racing models subject to serial-number rules. The published dealer-installed list begins at 175 HP for standard FourStroke and Pro XS; the listed 150 HP model is the Racing 150R. Call with the serial number for the current answer.
 
 **Does Boost void my Mercury warranty?** 
-No. Boost is a Mercury-authorized upgrade. Warranty stays in effect. Unauthorized non-Mercury ECU modifications will void warranty, important distinction.
+HBW confirms warranty treatment for the exact motor and current Mercury terms before authorizing the work.
 
 **Can I install Boost myself?** 
 No. Boost requires Mercury's authorized tooling and authentication. It's a dealer-installed upgrade only.
@@ -16549,10 +16516,10 @@ No. Boost requires Mercury's authorized tooling and authentication. It's a deale
 In rough order of impact: correct prop selection, proper trim adjustment, lighter loading, and, if you haven't done it, stepping up to a three-log tritoon hull. All of those typically give more performance per dollar on a pontoon than software Boost.
 
 **Will Mercury offer more software upgrades like Boost?** 
-Probably. Software-defined upgrades are the direction the industry is heading. Boost is the first widely-deployed example from Mercury, not the last.
+Mercury has described a broader software-upgrade capability, but no future option should be assumed until Mercury publishes it for the exact motor.
 
 **If I buy Boost now, can I add more software upgrades later?** 
-Mercury's roadmap points toward more upgrades. Whether future upgrades stack with or supersede current Boost depends on Mercury's product decisions. We'd expect compatibility on current platforms, but specifics aren't confirmed.
+That is not currently promised. Future compatibility, pricing, and stacking depend on Mercury's later product decisions.
 
 ---
 
@@ -16588,43 +16555,43 @@ phone: 905-342-2153
     faqs: [
       {
         question: 'Is Mercury Boost worth it for a pontoon boat?',
-        answer: 'Mercury Boost is worth it for pontoon owners who regularly run with heavy loads, four or more adults, gear, and accessories. The upgrade improves low-end and mid-range torque delivery, which shortens the hole shot and makes the lift to cruise more confident on high-drag hull forms like pontoons. For lightly-loaded pontoon use (two to three people, minimal gear), the benefit is less pronounced and the cost-benefit ratio weakens. Check your propeller setup first: an over-propped motor causes the same symptoms Boost addresses, and a prop change, which averages about $819 at HBW based on our repair order history, is sometimes the better and cheaper fix.'
+        answer: 'Only after Mercury confirms the exact motor is eligible. Boost can improve mid-range acceleration, but it does not add horsepower or correct an underpowered boat. Check the propeller and setup first. Most standard Mercury 150 FourStroke pontoon motors are not on the current dealer-installed list; the published 150 HP exception is the Racing 150R.'
       },
       {
         question: 'What does Mercury Boost actually do to the motor?',
-        answer: 'Mercury Boost is a factory-calibration software update applied to eligible Mercury FourStroke and Verado engines by a certified dealer. It modifies the engine management system\'s fueling and timing maps to increase torque output in the low-to-mid RPM range. The physical hardware of the motor is unchanged, no parts are replaced or modified. The result is improved throttle response at partial throttle settings and a more assertive hole shot. Wide-open throttle (WOT) performance and top-end speed are not materially changed by the Boost calibration.'
+        answer: 'Mercury Boost is an authorized software calibration for eligible motors. Mercury publishes improved mid-range and zero-to-top-speed acceleration, depending on the boat-and-engine combination. It does not add horsepower, top speed, or maximum RPM.'
       },
       {
         question: 'Does Mercury Boost affect fuel economy?',
-        answer: 'At equivalent speeds and RPM, Mercury Boost has minimal impact on fuel consumption. The upgrade changes how torque is delivered, not how efficiently the motor converts fuel to power at a given operating point. If Boost\'s improved throttle response leads the operator to run the boat harder or at higher speeds, fuel use will increase, but that\'s a behavioural change, not a direct effect of the calibration. Operators who maintain the same cruising habits before and after Boost typically report no meaningful change in fuel economy.'
+        answer: 'Mercury\'s published Boost materials focus on acceleration performance, not a guaranteed fuel-economy result. Fuel use still depends on the boat, propeller, load, speed, and operating conditions.'
       },
       {
         question: 'Does Mercury Boost void the motor warranty?',
-        answer: 'No. Mercury Boost is a factory-authorized software upgrade installed by a certified Mercury dealer. It does not void the motor\'s warranty. Mercury supports Boost as an approved modification to eligible engines, and the upgrade is documented in the motor\'s service record. If you have questions about warranty implications for your specific motor, confirm with your dealer before proceeding, but for the vast majority of eligible motors, Boost is warranty-neutral.'
+        answer: 'Boost follows Mercury\'s authorized process on an eligible motor. HBW confirms the exact motor\'s warranty treatment and current Mercury terms before work is authorized.'
       },
       {
         question: 'How much does Mercury Boost cost in Canada?',
-        answer: 'Mercury Boost pricing in Canada is set by certified dealers and typically ranges from a few hundred to approximately $1,000 CAD as of 2026, depending on motor model year and dealer. For context, a 2026 Mercury 150 motor is priced at $27,265-$27,395 MSRP at Harris Boat Works, the Boost calibration is a small fraction of that investment. Confirm current pricing directly with us at 905-342-2153 or visit mercuryrepower.ca/contact. Have your motor\'s model year and serial number ready.'
+        answer: 'HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.'
       },
       {
         question: 'What is the difference between Mercury Boost and re-propping?',
-        answer: 'Mercury Boost is a software calibration that increases mid-range torque from the motor itself. Re-propping is changing the propeller to better match the motor\'s power output to the hull\'s load. Both can improve hole shot on a loaded pontoon, but they address different parts of the system. A motor that\'s over-propped (too high a pitch for the load) will benefit most from a prop change. A motor that\'s correctly propped but still sluggish on a heavy load benefits most from Boost. The right sequence: confirm the propeller is correctly matched to your load first, then consider Boost if the problem persists. A prop replacement at HBW averages about $819 based on our service history.'
+        answer: 'Re-propping matches the motor\'s existing power and RPM range to the hull and load. Boost changes eligible mid-range acceleration but does not change time to plane, horsepower, top speed, or maximum RPM. Confirm the propeller and setup first, then consider Boost only if the motor is eligible and mid-range acceleration is the actual goal.'
       },
       {
         question: 'Which Mercury motors are eligible for the Boost upgrade?',
-        answer: 'Mercury Boost eligibility is specific to certain FourStroke and Verado model years and requires digital throttle-and-shift (DTS) capability or VesselView integration. Not all Mercury FourStrokes are eligible, eligibility is based on the engine\'s ECM architecture and the availability of the Boost calibration for that specific model and year. Check the [Mercury Boost eligibility guide](https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026) for a current list, or confirm your motor\'s eligibility with a certified Mercury dealer before purchasing.'
+        answer: 'Eligibility is specific to engine family, model code, and serial number. Mercury\'s published dealer-installed list covers specified FourStroke, Pro XS, Verado, and Racing models. Confirm the exact serial number with a Mercury dealer before purchasing.'
       },
       {
         question: 'Will Mercury Boost make my pontoon go faster?',
-        answer: 'Not at top speed. Mercury Boost improves low-end and mid-range torque, which translates to a faster hole shot (coming up on cruise sooner) and better mid-throttle response. Once the pontoon is up on cruise and approaching wide-open throttle, Boost has minimal effect on the maximum speed the motor and hull combination will achieve. If faster top-end speed is your goal, the variables that matter are propeller pitch, motor horsepower, and hull form, not a calibration upgrade. For that use case, a 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 250 L Pro XS ($41,525 MSRP) is the more direct path.'
+        answer: 'Boost can shorten zero-to-top-speed time on an eligible setup, but Mercury says it does not increase top speed. Propeller selection, rated horsepower, hull, and load remain the main limits.'
       },
       {
         question: 'Should I get Boost before or after a prop change?',
-        answer: 'After. Confirm your propeller is correctly sized and pitched for your load before adding Boost. An over-propped motor, one that can\'t reach its optimal RPM range under full load, causes poor hole shot and laboured time to cruise. A prop change costs less than Boost in many cases and may solve the problem entirely. If you change to the correct propeller and hole shot is still unsatisfactory, adding Boost is the logical next step. Doing both together without knowing the contribution of each makes it harder to evaluate what\'s actually working.'
+        answer: 'Confirm the propeller is correctly sized and pitched before evaluating Boost. An over-propped motor can cause poor acceleration and prevent the engine from reaching its intended RPM range. Boost does not change time to plane, so diagnose that complaint separately.'
       },
       {
         question: 'Is Mercury Boost available in Ontario?',
-        answer: 'Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Premier dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Mercury dealer since 1965. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor\'s serial number ready when you call.'
+        answer: 'Boost is available for eligible motors through Mercury\'s supported app flow on select configurations or through authorized dealers. Call HBW at 905-342-2153 to confirm the exact model, serial number, software status, boat configuration, and current Canadian price.'
       }
     ]
   },
@@ -33903,35 +33870,35 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
   },
   {
     slug: 'mercury-avator-7-5e-review',
-    seoTitle: 'Mercury Avator 7.5e: Review, Price CAD & Range (2026) | Mercuryrepower.ca',
-    title: 'Mercury Avator 7.5e: Review, Price CAD, and Range (2026)',
-    description: 'Mercury Avator 7.5e electric outboard: honest review, price in CAD, battery life, range, and best uses on Rice Lake.',
+    seoTitle: 'Mercury Avator 7.5e Review, Range & Best Uses (2026)',
+    title: 'Mercury Avator 7.5e: Review, Range, and Best Uses (2026)',
+    description: 'Mercury Avator 7.5e electric outboard: honest review, current pricing status, battery life, range, and best uses on Rice Lake.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-7-5e-battery-freshwater-2026-07.webp',
     imageAlt: 'Angler holding an Avator battery beside a Mercury Avator 7.5e on a freshwater aluminum fishing boat',
     author: 'Jay Harris',
     datePublished: '2026-05-24',
-    dateModified: '2026-06-02',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury avator 7.5e review', 'avator 7.5e electric outboard', 'mercury electric outboard ontario', 'avator battery life', 'avator range rice lake', 'mercury avator price canada'],
     relatedSlugs: ['mercury-prokicker-rice-lake-fishing-guide', 'mercury-avator-range-rice-lake-cottage', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'Only on very small boats: tenders, dinghies, small sailboats, and 12-foot tinnies with light loads. For most fishing boats and any pontoon it works as a kicker, not a main motor.' },
-      { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'About 45 minutes at half throttle on the standard 1 kWh pack, and 3 to 5 hours at a slow trolling speed of 1.5 to 2 mph. Dual-battery setups roughly double that runtime. At wide-open throttle, expect under an hour.' },
-      { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'Yes, and that is one of its best uses. Silent thrust at slow speed makes it ideal for finesse fishing in shallow weed lines. Pair it with a gas main motor for travel between spots.' },
-      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153. Pickup only at Gores Landing.' },
-      { question: 'What charges the Avator battery?', answer: 'A standard 120V household outlet charges the 1 kWh battery in roughly four hours. Faster chargers are available. Many customers charge overnight at the cottage.' },
-      { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Yes. The Avator carries Mercury\'s Limited Warranty, and a promotional coverage extension is usually running. We confirm the exact current terms when we quote you.' },
+      { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'It can propel a compatible small tender, dinghy, sailboat, or light fishing boat. Boat weight, load, wind, current, required range, shaft length, and mounting determine whether it is appropriate; HBW confirms the fit rather than assigning it by boat length alone.' },
+      { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those are test results, not a promise for every boat; load, hull, weather, water, and throttle change the result.' },
+      { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.' },
+      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.' },
+      { question: 'What charges the Avator battery?', answer: 'The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.' },
+      { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Warranty coverage is confirmed for the exact motor and battery package when HBW quotes it. Mercury requires the outboard and battery to be registered separately; any promotional coverage applies only while an eligible offer is active.' },
     ],
     content: `
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
-*Last reviewed: 2026-06-02*
+*Last reviewed: 2026-07-18*
 
-> **Quick answer:** The Mercury Avator 7.5e is a 750-watt electric outboard with roughly the thrust of a 3.5 HP gas portable. It shines as a silent trolling kicker, as a motor for small fishing boats and tenders, and as a clean sailboat auxiliary. It is not a main motor for anything bigger than a light 12-foot tinnie. Build a quote at mercuryrepower.ca.
+> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; call for a configuration and current price.
 
-We sell gas outboards and we sell electric. We have no reason to oversell either one. So here is the straight version of the Mercury Avator 7.5e: it is very good at a narrow job, and a poor choice the moment you ask it to do something else.
+HBW sells gas outboards and is preparing Avator as a build-to-order option. We have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
 
 The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges off a wall outlet, and runs nearly silent. For a Rice Lake angler easing along a weed line at first light, that silence is the whole point. For someone who needs to cover the lake all day on one boat, it is the wrong tool, and no amount of wanting will change that. This review stays on the honest line between those two.
 
@@ -33939,9 +33906,9 @@ The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at th
 
 The Avator 7.5e is the entry point in Mercury's electric Avator family. A brushless electric motor, a removable lithium-ion battery, a full-colour display on the tiller, and none of the gas, oil, fumes, or pull-start of a small two or four-stroke. Press a button, twist the grip, go.
 
-A note on the number. Mercury rates the Avator by output power, kilowatts at the prop, and by equivalent thrust, not by a gasoline horsepower figure. In plain terms, the 7.5e pushes a boat about like a 3.5 HP gas portable would. We lean on that comparison because it is how people shop, but the spec that matters is 750 watts at the prop.
+A note on the number. Mercury rates Avator by output power rather than gasoline horsepower. The 7.5e specification that matters is 750 watts at the propeller. A direct horsepower comparison can be misleading because hull, load, propeller, and duty cycle change how either motor performs.
 
-Three customers, and the Avator is the right call for all three. The Rice Lake angler who wants a silent kicker: trolling for walleye in 12 feet of water, you do not want exhaust in the boat or engine drone in the water, and the Avator lets the hull slide through good water without announcing itself. The sailboat owner who needs an auxiliary: clean, low-vibration thrust to get out of the slip and back, no two-stroke smell in the cockpit. And the tender or car-topper owner under 14 feet: a 9 to 12-foot tender behind a cottage cruiser is exactly its weight class, light and easy to charge off cottage power.
+Three use cases are worth considering: quiet low-speed fishing, a compatible sailboat auxiliary, and a small tender or light portable-boat application. None is an automatic fit. The complete load, required speed and range, shaft and mounting, wind and water, and charging access still control the recommendation.
 
 ## How does the Avator 7.5e compare to a small gas portable?
 
@@ -33950,78 +33917,76 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Spec | Avator 7.5e | FourStroke 3.5 | FourStroke 5 |
 |---|---|---|---|
 | Output | 750 W at prop | n/a | n/a |
-| Weight (motor only) | ~22 kg | ~18 kg | ~26 kg |
-| Battery weight | ~14 kg | n/a | n/a |
-| Runtime per charge or tank | ~45 min half throttle, 3 to 5 hr trolling | Hours per 1 L tank | Hours per 1 L tank |
+| Energy source | Integrated, removable 1 kWh battery | Gasoline | Gasoline |
+| Published runtime context | 60 min / 5 mi at full throttle; up to 19 hr / 34 mi at 25% in Mercury's specified 13-foot test | Tank size, throttle, hull, and load dependent | Tank size, throttle, hull, and load dependent |
+| Charging / refuelling | Included 110W charger; faster optional chargers | Refill gasoline | Refill gasoline |
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Installed price (CAD) | Call for current pricing: 905-342-2153 | $1,800 to $2,400 | $2,200 to $2,800 |
+| Price (CAD) | Call for the current configured price: 905-342-2153 | See pricing reference | See pricing reference |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
-| Rough gas feel (guide only) | ~3.5 HP gas portable | 3.5 HP | 5 HP |
+| Selection basis | Boat fit, load, route, range, mounting, and charger | Boat fit, load, route, fuel range, and mounting | Boat fit, load, route, fuel range, and mounting |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Avator requires a configured quote. For current gas-outboard bare-motor prices, see the [Mercury pricing reference](/pricing-reference)._
 
 
-The Avator costs more the day you buy it. It earns that back three ways: no fuel, no annual oil change, and silence. It is still a niche pick. For most repower customers a gas portable is the right tool and the smaller cheque. For fishing, and for anyone who values quiet water, the Avator is worth every dollar of the difference.
+Avator and a gas portable have different purchase, charging or fuel, maintenance, noise, and range trade-offs. The correct comparison is the configured price and the job the boat must do, not a generic claim that one option pays for itself.
 
 ## What is the real range and battery life on Rice Lake?
 
 Range is the whole conversation with an electric outboard, and brochure numbers are a starting point, not a promise. Wind, chop, boat weight, water temperature, throttle position: every one of them moves the answer.
 
-We have run the Avator on customer boats around Rice Lake long enough to give you numbers you can plan around. At a slow troll, 1.5 to 2 mph, the speed that drags a worm harness for walleye, the 1 kWh battery holds 3 to 5 hours. That is a full fishing morning or a full evening. Push to half throttle for transit, 3 to 4 mph on a light boat, and you are looking at roughly 45 minutes. Wide open into a headwind, under an hour.
+Mercury's published test used a 13-foot boat with a 382-lb dry weight and one 1 kWh battery. It ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those figures show how strongly range changes with throttle; they are not a promise for a different boat, load, route, wind, current, or water condition.
 
-The tiller display shows battery percentage and estimated runtime against your current throttle, so you are never guessing. Most Avator owners add a second 1 kWh pack, running dual or carrying a spare, and the swap takes under a minute because the batteries latch in like a cordless-drill pack. Two batteries is effectively a full day of trolling. One more thing for early season: cold water in May pulls 10 to 20 percent off capacity, so keep the first trips short.
+The tiller display shows battery state, power, and estimated runtime, and integrated GPS supports range estimates. The 7.5e carries one integrated quick-swap battery under the top cowl. A spare can be carried and swapped; it is not a dual-wired battery bank. Plan reserve range conservatively and confirm the intended route before purchase.
 
 ## How does the Avator fit into a Mercury repower?
 
-The Avator is rarely the whole repower. More often it is half of one: a gas main motor plus the Avator as a silent kicker.
+Avator can be considered on its own for a compatible small craft or as a separate low-speed motor beside a gas main motor.
 
-The pairing we rig most on Rice Lake is a Mercury 90 HP FourStroke for getting between spots and an Avator 7.5e on a kicker bracket for working them. Two motors, two jobs. The 90 gets you there. The Avator keeps the boat quiet while you fish, no exhaust, no smell, no engine buzz through the deck on a weed line. If you are weighing a main-plus-kicker setup, our [Mercury ProKicker and trolling guide](/blog/mercury-prokicker-rice-lake-fishing-guide) lays out the options, with the Avator as one strong kicker beside Mercury's small gas portables.
+One planning option is a gas main motor for transit plus an Avator for compatible low-speed use. Whether that pairing works depends on transom space, bracket and shaft fit, steering or tiller choice, the intended route, and the boat's complete load. Our [Mercury ProKicker and trolling guide](/blog/mercury-prokicker-rice-lake-fishing-guide) lays out the gas alternatives as part of that comparison.
 
 ## What does the Mercury Avator 7.5e cost installed?
 
-Avator is built to order through Mercury Canada, and battery count drives the price. For a current number on your setup (single or dual 1 kWh pack, bracket, charging, water test), call for current pricing: 905-342-2153.
+Avator is build-to-order through Mercury Canada. For a current number on the exact motor, integrated battery, charger, controls, mounting, and any optional spare battery, call 905-342-2153.
 
-Installation covers the kicker bracket if used, throttle wiring, charging setup, and a water test on Rice Lake. Pickup only at Gores Landing: no shipping, no delivery. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks down the full motor families, and we keep spare battery packs in stock for anglers who want to double their day on the water without a run back to the dock.
+The written quote identifies the tiller or remote-control configuration, shaft and bracket fit, selected charger, optional display or controls, installation work, and testing. The 7.5e's standard battery installs under the top cowl rather than in a rear battery compartment. Pickup is at Gores Landing; HBW does not ship or deliver outboards.
 
 ## What are the Avator's limitations?
 
 An honest review owes you the limits. Three of them.
 
-Range. The Avator is not a distance motor. Plan a full day of open-water crossings on one battery and you will run it flat. Carry a spare or charge at the dock. The honest Rice Lake figures: 3 to 4 miles flat out, 8 to 12 at half throttle, 20 to 25 if you treat it as the slow trolling tool it is built to be.
+Range. The Avator is not an unlimited-distance motor. The published test results are useful context, but the boat, load, throttle, wind, water, and reserve requirement control a real trip plan. Carrying a charged spare can extend use, but the safe range still needs to be planned conservatively.
 
-Cold. Electric motors shrug off cold better than gas does, but the battery does not. Expect 10 to 20 percent less runtime on early-season Rice Lake.
+Scope. The 7.5e delivers 750 watts at the propeller. A boat that needs sustained higher speed, longer range, or more thrust may require a different Avator model or a gas outboard. Confirm the actual boat and route rather than assigning the 7.5e by length alone.
 
-Scope. The 7.5e is small, and it cannot be wished into something bigger. It will not replace a gas main motor on a heavy 16 to 18-foot boat that needs to run all day. Buy it for the job it is built for, silent kicker, tender, sailboat auxiliary, light boat, and it becomes one of your favourite things on the water. Buy it for the wrong job and you will be disappointed, and that is not the motor's fault.
+## How HBW would evaluate the fit
 
-## What we see at HBW
-
-Every happy Avator owner we have rigged bought it for the right reason. They wanted a silent kicker, or a clean little motor for a tender, and that is exactly what they got. The disappointed electric-outboard stories we hear, almost always a motor bought somewhere else, are the same story every time: someone asked a small electric to do a big gas motor's day. Match it to the task and the Avator is quiet, simple, and close to maintenance-free. We rig it, water-test it on Rice Lake, and hand it back at Gores Landing.
+HBW starts with the boat, total load, intended route, required reserve, transom or bracket, shaft length, tiller or remote controls, and charging access. That separates a sensible small-boat or low-speed application from a job that needs more power or range. The recommendation and current price belong in a written, configuration-specific quote.
 
 ## Frequently Asked Questions
 
 **Is the Mercury Avator 7.5e powerful enough as a main motor?**
-Only on very small boats: tenders, dinghies, small sailboats, and 12-foot tinnies with light loads. For most fishing boats and any pontoon it works as a kicker, not a main motor.
+It can propel a compatible small tender, dinghy, sailboat, or light fishing boat. Boat weight, load, wind, current, required range, shaft length, and mounting determine whether it is appropriate; HBW confirms the fit rather than assigning it by boat length alone.
 
 **How long does the Mercury Avator 7.5e battery last?**
-About 45 minutes at half throttle on the standard 1 kWh pack, and 3 to 5 hours at a slow trolling speed of 1.5 to 2 mph. Dual-battery setups roughly double that runtime. At wide-open throttle, expect under an hour.
+Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those are test results, not a promise for every boat; load, hull, weather, water, and throttle change the result.
 
 **Can I use the Avator for bass and walleye fishing on Rice Lake?**
-Yes, and that is one of its best uses. Silent thrust at slow speed makes it ideal for finesse fishing in shallow weed lines. Pair it with a gas main motor for travel between spots.
+It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.
 
 **How much does the Avator 7.5e cost installed?**
-Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153. Pickup only at Gores Landing.
+Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.
 
 **What charges the Avator battery?**
-A standard 120V household outlet charges the 1 kWh battery in roughly four hours. Faster chargers are available. Many customers charge overnight at the cottage.
+The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.
 
 **Is the Avator covered under Mercury's warranty?**
-Yes. The Avator carries Mercury's Limited Warranty, and a promotional coverage extension is usually running. We confirm the exact current terms when we quote you.
+Warranty coverage is confirmed for the exact motor and battery package when HBW quotes it. Mercury requires the outboard and battery to be registered separately; any promotional coverage applies only while an eligible offer is active.
 
 ## Ready to rig an Avator?
 
-If the Avator 7.5e fits the job, it is one of the cleanest, quietest motors we install. Call us and we will talk through battery configuration, mounting, and whether it should pair with a gas main motor.
+If the Avator 7.5e may fit the job, call us to work through the boat, route, expected range, battery and charger, mounting, and whether a separate main motor is required.
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
@@ -34038,28 +34003,28 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     slug: 'best-pontoon-outboard-2026-mercury',
     seoTitle: 'Best Pontoon Outboard 2026: Mercury Guide | Mercuryrepower.ca',
     title: 'Best Pontoon Outboard 2026: Mercury Buyer\'s Guide',
-    description: 'Match Mercury HP to your pontoon size, tubes, and passenger count. Pricing from $13,000 CAD installed on Rice Lake.',
+    description: 'Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
     imageAlt: 'Family fishing from a freshwater pontoon powered by a Mercury 115 HP FourStroke outboard',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-05-25',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['best pontoon outboard mercury', 'mercury pontoon motor', 'pontoon repower mercury', 'command thrust pontoon', 'mercury 90 hp pontoon', 'mercury 115 hp pontoon', 'mercury 150 hp pontoon', 'pro xs pontoon boost'],
     relatedSlugs: ['mercury-command-thrust-complete-guide-2026', 'mercury-command-thrust-guide-pontoon-boats', 'mercury-boost-upgrade-150hp-pontoon-analysis', 'best-pontoon-boats-rice-lake-cottage-use', 'mercury-repower-cost-ontario-2026-cad'],
     faqs: [
-      { question: 'What size Mercury motor do I need for a 22 foot pontoon?', answer: 'A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.' },
+      { question: 'What size Mercury motor do I need for a 22 foot pontoon?', answer: 'A 115 HP or 150 HP FourStroke covers many properly rated 22-foot two-tube pontoons. Command Thrust may help with a heavier load. A tritoon recommendation depends on the capacity plate, passenger load, watersports use, and propeller setup.' },
       { question: 'Is a 90 HP enough for a pontoon?', answer: 'Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.' },
-      { question: 'Should I get Command Thrust on a pontoon?', answer: 'On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch propeller and larger gearcase that meaningfully improves hole shot and reverse on heavy pontoons. The upgrade adds roughly $800 to $1,500 CAD as of 2026.' },
-      { question: 'How much does a pontoon repower cost in Ontario?', answer: 'A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.' },
-      { question: 'Is the Boost upgrade worth it for pontoons?', answer: 'On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.' },
+      { question: 'Should I get Command Thrust on a pontoon?', answer: 'Command Thrust is often useful on heavier pontoons because its larger gearcase can turn a larger propeller. The right answer depends on the exact motor, hull, load, and desired low-speed control.' },
+      { question: 'How much does a pontoon repower cost in Ontario?', answer: 'Use the pricing reference for the current bare-motor price. The installed quote depends on controls, steering, propeller, removal, fuel-system condition, transom condition, and reusable rigging.' },
+      { question: 'Is the Boost upgrade worth it for pontoons?', answer: 'Sometimes, if the motor is eligible and the pontoon is already correctly powered and propped. Boost is an automatic software calibration that can improve mid-range acceleration. It does not add horsepower, top speed, or maximum RPM, so it is not a fix for an underpowered boat.' },
       { question: 'Can a Mercury Avator electric work on a pontoon?', answer: 'The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.' },
     ],
     content: `*Last reviewed: 2026-05-25*
 
-> **Quick answer:** The best Mercury outboard for a pontoon in 2026 depends on tube count, length, and passenger load. For a 20 foot single-tube pontoon, a Mercury 90 HP FourStroke is the value pick at around $13,000 CAD installed. For a 22 foot pontoon, step up to a 115 HP Command Thrust, or to a 150 HP FourStroke (standard gearcase, since CT tops out at 115). For a tritoon used for tubing or skiing, a Pro XS V8 200 with Boost transforms the boat. Command Thrust (available up to 115 HP) is the right upgrade on most pontoons 22 feet and up. At Harris Boat Works we rig pontoons every spring and water test each one on Rice Lake. *Pricing reflects 2026 model year. Build a current quote at mercuryrepower.ca.*
+> **Quick answer:** The best Mercury outboard for a pontoon depends on tube count, length, hull rating, and real passenger load. A 90 HP FourStroke can suit many 20-foot two-tube pontoons; a properly rated 22-foot pontoon may need a 115 HP Command Thrust or 150 HP FourStroke. Tritoon recommendations depend on the capacity plate and watersports load. Boost can improve acceleration on an eligible motor, but it does not add horsepower. Use the pricing reference for current bare-motor pricing and the quote builder for boat-specific rigging and installation.
 
 Pontoons are different from runabouts. They're heavy, draggy hulls that need torque and lift more than top-speed headline numbers. The mistake most pontoon buyers make is sizing the motor for the lightest day instead of the busiest. This post walks through what we actually rig on Rice Lake every spring, and where Command Thrust and Boost earn their price.
 
@@ -34067,17 +34032,17 @@ Pontoons are different from runabouts. They're heavy, draggy hulls that need tor
 
 Pontoon sizing depends on three things: length, tube count, and how many passengers you actually carry. Forget the chart on the boat brochure. What matters is real-world load. A pontoon is not a runabout. It needs gearcase as much as it needs horsepower, which is why we almost never separate the two when talking pontoons.
 
-Here is the grid we use when a customer brings in a pontoon for repower. **Pricing reflects 2026 model year ranges, all-in installed at HBW.**
+Here is a planning grid for the first sizing conversation. The capacity plate and the actual boat always control the final recommendation.
 
-| Pontoon length | Tubes | Typical passengers | Recommended Mercury | Installed price (CAD, 2026) |
-|---|---|---|---|---|
-| 18 ft | 2 | 4 adults | 60 to 75 HP FourStroke | $10,500 to $13,000 |
-| 20 ft | 2 | 5 adults | 90 HP FourStroke (CT optional) | $13,000 to $16,000 |
-| 22 ft | 2 | 6 adults | 115 HP CT or 150 HP | $17,000 to $21,000 |
-| 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or Pro XS V8 200 | $20,000 to $28,000 |
-| 24 ft | 2 | 6 to 8 adults | 150 HP (standard gearcase) | $20,000 to $23,500 |
-| 24 ft | 3 (tritoon) | 8+ adults | Pro XS V8 225 plus Boost | $26,000 to $30,500 |
-| 26 ft | 3 | 10+ adults | Pro XS V8 250 or 300 | $28,000 to $34,000 |
+| Pontoon length | Tubes | Typical passengers | Mercury range to discuss |
+|---|---|---|---|
+| 18 ft | 2 | 4 adults | 60 to 75 HP FourStroke |
+| 20 ft | 2 | 5 adults | 90 HP FourStroke; evaluate Command Thrust |
+| 22 ft | 2 | 6 adults | 115 HP Command Thrust or 150 HP FourStroke |
+| 22 ft | 3 (tritoon) | 6 to 8 adults | 150 HP or a properly rated Pro XS option |
+| 24 ft | 2 | 6 to 8 adults | 150 HP FourStroke, subject to hull rating |
+| 24 ft | 3 (tritoon) | 8+ adults | Pro XS range matched to the capacity plate and load |
+| 26 ft | 3 | 10+ adults | Higher-horsepower Pro XS range where the hull permits |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -34105,15 +34070,15 @@ For when Command Thrust is NOT worth it on lighter boats, see our [Command Thrus
 
 Pro XS becomes the right call on three pontoon scenarios.
 
-**First, tritoons used for tubing or skiing.** The third tube adds drag and lift, so planing a tritoon clean with a skier on the rope requires real torque. A Pro XS V8 200 with Boost will get a skier up cleanly even with the boat loaded. Press the Boost button, the motor delivers 25 extra HP for 4 to 6 seconds, the rope comes tight, and the skier is up. After that the boat settles into pull-pace easily.
+**First, tritoons used for tubing or skiing.** The third tube changes how the boat carries load and comes onto plane. A correctly sized Pro XS can provide the torque and response the hull needs. On an eligible motor, Boost activates automatically during full-throttle mid-range acceleration; there is no separate Boost button and no added horsepower.
 
-**Second, pontoons over 24 feet.** These big pontoons carry a lot of people and gear. A Pro XS V8 225 with Boost handles the load with margin and gives you mid-30s mph top end, which on a big pontoon is plenty of fun.
+**Second, properly rated larger pontoons.** These boats carry significant people and gear, so the base motor, hull rating, propeller, and setup come first. Boost may sharpen acceleration on an eligible motor, but it cannot create the horsepower margin an underpowered pontoon needs.
 
 **Third, owners who simply want a faster boat.** A Pro XS V8 250 on a tritoon will run mid-40s mph and accelerate harder than most fibreglass family boats. It is not the budget pick but it is the right pick for that customer. Our [Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) covers the math on whether it earns its premium.
 
 ## How much does a pontoon repower cost at Harris Boat Works?
 
-The installed price ranges above (2026) include motor, rigging, controls and cables, propeller selection, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing, no shipping, no delivery.
+Use the [Mercury pricing reference](/pricing-reference) for current bare-motor pricing. An installed quote can include motor, rigging, controls and cables, propeller selection, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup. Pickup only at Gores Landing, no shipping, no delivery.
 
 Some pontoons need additional rigging. Examples we see often:
 
@@ -34122,7 +34087,7 @@ Some pontoons need additional rigging. Examples we see often:
 - Steering upgrade for higher HP (hydraulic): add $1,200 to $2,000
 - New gauges or chart-plotter integration: add $500 to $2,500
 
-Most pontoon repowers fall between $14,000 and $28,000 CAD all-in (2026 ranges). Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total for your specific pontoon. Our full [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) breaks each line down.
+The complete price depends on the exact motor, controls, steering, propeller, transom and fuel-system condition, and how much existing rigging can be reused. Financing is OAC, with current rates updated periodically. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current terms and a line-item total for your pontoon.
 
 ## What about the Mercury Avator on a pontoon?
 
@@ -34145,7 +34110,7 @@ The Command Thrust upgrade pays for itself in customer satisfaction. We have nev
 ## Frequently Asked Questions
 
 **What size Mercury motor do I need for a 22 foot pontoon?**
-A 115 HP or 150 HP FourStroke covers most 22 foot single-tube pontoons. Command Thrust is worth the upgrade if you carry six or more adults. Step up to a Pro XS V8 with Boost on tritoons of that length.
+A 115 HP or 150 HP FourStroke can suit many properly rated 22-foot two-tube pontoons. Command Thrust may help when the motor, hull, and typical load call for a larger-prop gearcase. Tritoon recommendations depend on the capacity plate, hull design, real load, and watersports use.
 
 **Is a 90 HP enough for a pontoon?**
 Yes, on an 18 to 20 foot single-tube pontoon carrying four people, a 90 HP FourStroke cruises well at 18 to 22 mph and comes up on cruise cleanly. Add a third tube or routinely carry six people and you will want more horsepower.
@@ -34157,7 +34122,7 @@ On pontoons 22 feet and up, almost always yes. Command Thrust gives a 15-inch pr
 A pontoon repower at Harris Boat Works typically runs $13,000 to $30,000 CAD installed in 2026, depending on horsepower. It includes motor, rigging, controls, propeller, fuel system inspection, old motor removal, and water test on Rice Lake. Build a current quote at mercuryrepower.ca.
 
 **Is the Boost upgrade worth it for pontoons?**
-On large, heavily loaded tritoons, yes. The 25 HP surge for 4 to 6 seconds gets the boat up on cruise quickly. On a light two-tube pontoon under 22 feet, the money is better spent on horsepower or Command Thrust.
+Sometimes, if the motor is eligible and the pontoon is already correctly powered and propped. Boost can improve mid-range acceleration, but it does not add horsepower, top speed, or maximum RPM. It cannot correct an underpowered boat.
 
 **Can a Mercury Avator electric work on a pontoon?**
 The Avator 7.5e is too small to be a main motor on a pontoon. It works as a quiet kicker for fishing finesse on small pontoons. For main propulsion on a pontoon you want gasoline 60 HP and up.
@@ -34480,88 +34445,68 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
   },
   {
     slug: 'mercury-outboard-monthly-payment-ontario-2026',
-    relatedSlugs: ['mercury-repower-cost-ontario-2026-cad', 'mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw', 'mercury-outboard-rigging-costs-ontario', 'mercury-extended-warranty-platinum-ontario', "hbw-on-water-load-test-mercury-repower-advantage-2026"],
+    relatedSlugs: ['mercury-repower-cost-ontario-2026-cad', 'outboard-trade-in-value-ontario-hbw', 'mercury-outboard-rigging-costs-ontario', 'mercury-extended-warranty-platinum-ontario', "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     title: 'Mercury Outboard Monthly Payment Math (Ontario, 2026)',
     seoTitle: 'Mercury Outboard Monthly Payment | Ontario 2026',
     description: 'What a Mercury outboard costs per month in Ontario: real 2026 financing math by HP tier, current promo rate, terms, and total cost of borrowing.',
     image: '/lovable-uploads/hero-mercury-monthly-payment.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-02',
+    dateModified: '2026-07-18',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
     content: `## Quick answer
 
-A Mercury repower in Ontario finances through the TD 'Always On' {{LIVE_RATE}} program (OAC). A Mercury 115 Pro XS at ## Quick answer
+A Mercury outboard purchase at HBW may qualify for {{LIVE_RATE}} promotional financing through DealerPlan and participating Canadian lenders through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, a Mercury 115 Pro XS at $17,490 is about $123 per month and a 150 Pro XS at $24,349 is about $170 per month on a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
 
-7,490 runs about ## Quick answer
-
-20/month, and a 150 Pro XS at A Mercury repower in Ontario finances through the TD 'Always On' {{LIVE_RATE}} program (OAC). A Mercury 115 Pro XS at $17,490 runs about $120/month, and a 150 Pro XS at $24,349 runs about $167/month, on a 240-month amortization basis. No down payment is required for qualified buyers. The program ends December 31, 2026, after which standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)).
-
-*Last reviewed: 2026-06-02*
+*Last reviewed: 2026-07-18*
 
 Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
 
-This page does the math. Real Mercury repower price tiers, Ontario tax treatment, the actual lender path we use, current rates, and the monthly payment numbers we'd quote you.4,349 runs about ## Quick answer
-
-67/month, on a 240-month amortization basis. No down payment is required for qualified buyers. The program ends December 31, 2026, after which standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)).
-
-*Last reviewed: 2026-06-02*
-
-Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
-
-This page does the math. Real Mercury repower price tiers, Ontario tax treatment, the actual lender path we use, current rates, and the monthly payment numbers we'd quote you.
+This page shows the current bare-motor examples, Ontario tax treatment, the mandatory DealerPlan fee, and the difference between contract term and amortization. Your signed lender disclosure controls the actual payment.
 
 ## How HBW finances Mercury repowers
 
-HBW arranges [Mercury repower financing](/blog/mercury-outboard-financing-ontario-2026) through **Dealerplan Peterborough**, our broker. Dealerplan works with all major Canadian banks. The most common lender for HBW customers is **TD Auto Finance**, also National Bank and RBC depending on the file.
+HBW arranges [outboard financing](/blog/mercury-outboard-financing-ontario-2026) through **DealerPlan** and participating Canadian lenders. The lender depends on the application and approval; this is financing arranged by HBW, not a direct loan issued by Mercury Marine.
 
-A common misconception: Sheffield Financial is a Mercury Marine financing partner in the United States. Sheffield is NOT available in Canada. The HBW Canadian equivalent is TD Auto Finance through Dealerplan Peterborough.
+A common misconception is that a U.S. Mercury financing page applies in Canada. Sheffield Financial is not the HBW Canadian path; HBW routes eligible applications through DealerPlan.
 
-**HBW's current standard rate is {{LIVE_RATE}} through the Mercury TD "Always On" program, available through Dec 31, 2026 (OAC).** After the program ends on Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up. Mercury Canada has at times run short promotional rates (2.99% and 4.9% have both appeared in past years); anything currently active is on the [promotions page](https://www.mercuryrepower.ca/promotions) (as of July 2026).
+**The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC).** HBW confirms the lender, contract, amortization, amount financed, $349 DealerPlan documentation fee, and any balance due at maturity in the written disclosure. Check the [promotions page](/promotions) for current program dates and terms.
 
 **What this financing path gives you:**
 - Fixed APR (no rate changes during the term)
 - $0 down payment required for qualified buyers
 - $5,000 minimum loan amount
-- Approvals typically returned in under 24 hours
-- Terms from 60 to 120 months (the 120-month option is in high demand for 250+ HP repowers)
-- No prepayment penalty
+- $349 DealerPlan documentation fee added after HST to every financed purchase
+- The current promotional contract is up to 60 months; payment examples may use amortization up to 240 months and leave a balance due at maturity. Other lenders may offer different terms.
+- Prepayment and approval terms are confirmed in the lender disclosure
 
 ## Ontario HST: how it gets handled
 
 In Ontario, [every new outboard purchase](/blog/mercury-repower-cost-ontario-2026-cad) is subject to **13% HST**. The HST is collected at the time of purchase. Most customers roll the HST into the financed amount. You can also pay HST at closing and finance only the engine.
 
-| Engine | Installed Price | + 13% HST | Total If Financed With HST In |
-|---|---|---|---|
-| Mercury 9.9 ProKicker + install | $5,000 | $650 | $5,650 |
-| Mercury 60 FourStroke EFI | $9,500 | $1,235 | $10,735 |
-| Mercury 90 FourStroke | $14,960 | $1,945 | $16,905 |
-| Mercury 115 Pro XS | $17,490 | $2,274 | $19,764 |
-| Mercury 150 Pro XS | $24,349 | $3,165 | $27,514 |
-| Mercury 250 V8 Pro XS | $42,000 | $5,460 | $47,460 |
+| Engine | Bare-Motor Price | 13% HST | DealerPlan Fee | Total If HST Is Financed |
+|---|---|---|---|---|
+| Mercury 115 Pro XS | $17,490 | $2,274 | $349 | $20,113 |
+| Mercury 150 Pro XS | $24,349 | $3,165 | $349 | $27,863 |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-The tables below show principal-only monthly payments (HST paid separately at closing).
+The first payment table below assumes HST is paid separately but includes the mandatory $349 DealerPlan fee. The worked examples later show both fee-only and HST-included totals.
 
-## Amortization scenarios: active TD {{LIVE_RATE_PCT}} program vs. post-promo 7.99% legacy
+## Amortization scenarios at the current promotional rate
 
-The primary column below is the **active TD "Always On" {{LIVE_RATE}} program** (240-month amortization basis, 60-month contract with balloon; as of July 2026, see [current promotions](https://www.mercuryrepower.ca/promotions)). The secondary column shows a **post-Dec 31, 2026 legacy 7.99% APR** scenario for context; standard tiered rates after the promo are 8.99% APR under $10,000 and 7.99% APR at $10,000 and up.
+The table uses the active {{LIVE_RATE}} promotional rate on a 240-month amortization basis and a contract of up to 60 months. The financed principal is the current bare-motor price plus the $349 DealerPlan fee; HST is paid separately in this example. A remaining balance is due at maturity unless it is paid, refinanced, or otherwise handled under the signed agreement.
 
 Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
-| Engine | Installed (CAD, pre-HST) | TD {{LIVE_RATE}} (240-mo amort) | Legacy 7.99% APR (term) |
+| Engine | Bare Motor | Principal With $349 Fee | {{LIVE_RATE}} (240-mo amortization) |
 |---|---|---|---|
-| Mercury 9.9 ProKicker | $5,000 | **$34/mo** | $101.36/mo (60 mo) |
-| Mercury 60 FourStroke EFI | $9,500 | **$65/mo** | $192.58/mo (60 mo) |
-| Mercury 90 FourStroke | $14,960 | **$103/mo** | $233.10/mo (84 mo) |
-| Mercury 115 Pro XS | $17,490 | **$120/mo** | $272.52/mo (84 mo) |
-| Mercury 150 Pro XS | $24,349 | **$167/mo** | $295.29/mo (120 mo) |
-| Mercury 250 V8 Pro XS | $42,000 | **$288/mo** | $509.35/mo (120 mo) |
+| Mercury 115 Pro XS | $17,490 | $17,839 | **about $123/mo** |
+| Mercury 150 Pro XS | $24,349 | $24,698 | **about $170/mo** |
 
-*All amounts in CAD. HST not included in principal. Primary rate: {{LIVE_RATE}} (TD Always On program through Dec 31, 2026, 240-month amortization basis, 60-month contract with balloon). Secondary rate: standard tiered legacy resuming Jan 1, 2027 (8.99% APR under $10,000, 7.99% APR at $10,000 and up).*
+*All amounts in CAD and rounded. HST is not included in this principal. Rate: {{LIVE_RATE}} through Dec 31, 2026 (OAC), 240-month amortization basis, contract up to 60 months. The signed lender disclosure controls.*
 
 ## The HBW on-water repower test
 
@@ -34569,52 +34514,43 @@ Repowers are the highest-risk install in our shop. At HBW [we water-test every r
 
 ## Common mistakes
 
-- **I will use Sheffield Financial like I saw on Mercury's US website.** Sheffield is USA-only. Canadian buyers cannot use Sheffield. The HBW path is TD Auto Finance via Dealerplan Peterborough, currently at {{LIVE_RATE}} under the TD Always On program through Dec 31, 2026.
-- **I'll pull from my line of credit instead.** HELOC at prime + 2-3% is materially higher than the active TD {{LIVE_RATE}} program, plus variable-rate risk. A fixed {{LIVE_RATE_PCT}} loan with no prepayment penalty is usually cleaner.
-- **I want zero interest financing.** The active TD Always On {{LIVE_RATE}} (OAC) is the headline rate through Dec 31, 2026 (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)). Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the promotions page. Outside those windows and after Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up.
-- **I'll finance through my own bank to get a lower rate.** Possible, but TD {{LIVE_RATE}} via Dealerplan is hard to beat right now. Major Canadian banks lending directly typically require 10-20% down. The Dealerplan-arranged path is usually faster (under 24 hours).
+- **Using a U.S. financing page for a Canadian purchase.** HBW arranges eligible Canadian applications through DealerPlan and participating Canadian lenders. The U.S. Sheffield path does not apply.
+- **Comparing the headline payment without the fee or HST choice.** The $349 DealerPlan fee is mandatory on financed purchases. HST may be paid at closing or included in the financed amount, which changes both the monthly payment and balance at maturity.
+- **Treating 240 months as the contract term.** It is the amortization basis in these examples. The active contract is up to 60 months, so a remaining balance may be due at maturity.
+- **Assuming an advertised rate is an approval.** {{LIVE_RATE}} is the current headline rate through Dec 31, 2026 on eligible purchases, OAC. The written lender disclosure is the final answer.
 
-## Other Canadian financing options
+## The current HBW-arranged promotional rate
 
-| Lender / Path | Rate context | Down required |
-|---|---|---|
-| **TD Auto Finance via Dealerplan (HBW) - active program** | **{{LIVE_RATE}} (TD Always On, OAC) through Dec 31, 2026** | $0 |
-| TD Auto Finance via Dealerplan (HBW) - post-promo from Jan 1, 2027 | Tiered legacy rates: 8.99% APR under $10,000, 7.99% APR at $10,000+ | $0 |
-| **National Bank via Dealerplan (HBW)** | Similar to TD; eligible for active {{LIVE_RATE_PCT}} program | $0 |
-| **RBC via Dealerplan (HBW)** | Similar profile | $0 |
-| **Direct bank marine loan** | Prime + spread | 10-20% typical |
-| **LBC Capital / Newcoast / BoatLoansCanada** | 6.45%+ secured; 9.75%+ unsecured | Varies |
-
-## The current Mercury financing rate (as of 2026-05-28)
-
-Through December 31, 2026, Mercury Marine Canada's TD "Always On" program is the active canonical Canadian rate:
+Through December 31, 2026, the current headline rate on eligible purchases is:
 
 - **{{LIVE_RATE}} (OAC)**
-- **Term up to 60 months** (customer's choice)
-- **Amortization up to 240 months** (20-year payment basis)
-- **Eligible: new Mercury outboards only**
+- **Contract up to 60 months**
+- **Amortization up to 240 months for payment calculation**
+- **$5,000 minimum financed amount**
+- **$349 DealerPlan documentation fee added after HST**
 
-Funded through TD Auto Finance via HBW's Dealerplan Peterborough relationship. Live program card at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). On Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up (as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)).
+HBW routes eligible applications through DealerPlan and participating Canadian lenders. The current program card is at [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions); the signed lender disclosure controls approval and terms.
 
 ### What the 240-month amortization actually means
 
 The amortization is the basis used to CALCULATE your monthly payment. It is NOT how long you will be paying. Your contract term is up to 60 months. At maturity, the remaining principal is due as a balloon payment.
 
-### Worked examples at HBW pricing (active TD {{LIVE_RATE_PCT}} program)
+### Worked examples at HBW pricing (current promotional program)
 
-| Motor | Financed | Monthly (240-mo amort) | Principal at month 60 |
-|---|---|---|---|
-| Mercury 90 ELPT FourStroke | $14,960 | ~$103 | ~$12,600 balloon |
-| Mercury 115 ELPT Pro XS | $17,490 | ~$120 | ~$14,720 balloon |
-| Mercury 150 L Pro XS | $24,349 | ~$167 | ~$20,500 balloon |
+| Motor | Financing Basis | Amount Financed | Monthly | Principal at Month 60 |
+|---|---|---|---|---|
+| Mercury 115 Pro XS | Bare motor + $349 fee; HST paid separately | $17,839 | ~$123 | ~$15,013 |
+| Mercury 150 Pro XS | Bare motor + $349 fee; HST paid separately | $24,698 | ~$170 | ~$20,786 |
+| Mercury 115 Pro XS | Bare motor + HST + $349 fee | $20,113 | ~$138 | ~$16,927 |
+| Mercury 150 Pro XS | Bare motor + HST + $349 fee | $27,863 | ~$191 | ~$23,450 |
 
-Three real options at month 60: pay the balloon, refinance the balance, or [trade in toward a new motor](/blog/boat-motor-trade-in-guide). Most repower customers plan for the trade-in path.
+At month 60, any remaining balance must be handled under the agreement, for example by payment or approved refinancing. A future [trade-in](/blog/boat-motor-trade-in-guide) is not guaranteed and should not be treated as the repayment plan.
 
-If a $12,000 to $20,000 balloon at year 5 would be uncomfortable, ask about a shorter amortization basis. Higher monthly payment, cleaner end-of-term position. We walk through both versions on a quote.
+If the balance at year five would be uncomfortable, ask for a shorter amortization basis. The monthly payment will be higher, but more principal is repaid during the contract.
 
 ## Ready to build a real quote?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to talk through the math or start a pre-approval through Dealerplan Peterborough, call HBW direct.
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to review the amount financed or start an application through DealerPlan, call HBW directly.
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca
@@ -34624,7 +34560,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ## Sources
 
-- Mercury Canada promotional financing examples (2025-2026)
+- HBW current financing policy and DealerPlan fee
 - Ontario HST treatment on marine purchases
 - Amortization math verified with Python using standard formula M = P x [r(1+r)^n] / [(1+r)^n - 1]
 - HBW current Mercury Pro XS pricing: 115 ProXS $17,490, 150 ProXS $24,349 (as of 2026)
@@ -34633,35 +34569,36 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 `,
     faqs: [
-      { question: "What is the typical APR for a Mercury repower in Ontario?", answer: "HBW's current standard rate is {{LIVE_RATE}} (OAC) through the Mercury TD \"Always On\" program, active through Dec 31, 2026 and arranged through Dealerplan Peterborough on TD Auto Finance (also National Bank and RBC). After Jan 1, 2027, standard tiered rates resume: 8.99% APR under $10,000, 7.99% APR at $10,000 and up. Mercury Canada has at times run short promotional campaigns (2.99% and 4.9% have both appeared in past years); anything currently active is on the [promotions page](https://www.mercuryrepower.ca/promotions) (as of July 2026)." },
-      { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "No. Through Dealerplan Peterborough, financing is available with $0 down for qualified buyers." },
-      { question: "Can I pay off the loan early without a penalty?", answer: "Yes. The TD Auto Finance and National Bank marine loan products arranged through Dealerplan Peterborough have no prepayment penalty." },
-      { question: "How long does the approval take?", answer: "Pre-approval typically returns in under 24 hours from application submission. Credit decisions are available 7 days a week." },
-      { question: "Is Sheffield Financial available to Canadian buyers?", answer: "No. Sheffield Financial is Mercury Marine's USA partner only. Canadian buyers cannot use Sheffield. The HBW Canadian equivalent is TD Auto Finance through Dealerplan Peterborough." },
+      { question: "What is the current promotional APR through HBW?", answer: "The current headline rate is {{LIVE_RATE}} through Dec 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan and participating Canadian lenders; the signed lender disclosure controls the actual approval and terms." },
+      { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "Qualified buyers may be eligible for $0 down. Approval, down payment, and all terms are confirmed by the lender." },
+      { question: "Can I pay off the loan early without a penalty?", answer: "Prepayment terms are confirmed in the signed lender disclosure. Do not rely on a website example for contract-specific terms." },
+      { question: "How long does the approval take?", answer: "Approval timing depends on the application and lender. HBW will confirm status after the completed application is submitted." },
+      { question: "Is Sheffield Financial available to Canadian buyers?", answer: "The U.S. Sheffield path does not apply to an HBW Canadian purchase. HBW arranges eligible applications through DealerPlan and participating Canadian lenders." },
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
       { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
-      { question: "What's the current Mercury financing rate at HBW?", answer: "As of 2026-05-28, Mercury Marine Canada's TD \"Always On\" program offers {{LIVE_RATE}} (OAC) with terms up to 60 months and amortization up to 240 months on new eligible Mercury outboards. The program runs through December 31, 2026. Check mercuryrepower.ca/promotions for the live offer." }
+      { question: "What fee is added to a financed purchase?", answer: "A mandatory $349 DealerPlan documentation fee is added after HST to every financed purchase. The payment example must include it." },
+      { question: "What's the current promotional financing rate at HBW?", answer: "The current headline rate is {{LIVE_RATE}} through December 31, 2026 on eligible purchases (OAC), with a contract up to 60 months and amortization up to 240 months. A balance may remain due at maturity. Check mercuryrepower.ca/promotions and the signed lender disclosure." }
     ]
   },
   {
     slug: 'mercury-boost-cost-canada-2026',
-    title: 'Mercury Boost Cost Canada 2026',
-    seoTitle: 'Mercury Boost Cost in Canada (2026): Real Price + Is It Worth It | HBW',
-    description: `What Mercury Boost actually costs in Canada (hint: not $2,000). Honest Ontario dealer breakdown of the Feb 2026 software upgrade: eligible motors, real.`,
+    title: 'Mercury Boost Canada 2026: Eligibility, Performance, and Pricing',
+    seoTitle: 'Mercury Boost Canada 2026: Eligibility & Pricing | HBW',
+    description: `What Mercury Boost does, which motors may qualify, and how HBW confirms current Canadian pricing from the exact serial number.`,
     image: '/lovable-uploads/hero-mercury-boost-console.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-18',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
     keywords: ["Mercury Boost", "Mercury Boost worth it", "Mercury Boost cost", "Pro XS Boost", "Verado Boost", "Mercury Boost software"],
     relatedSlugs: ["mercury-boost-software-upgrade-eligibility-2026", "mercury-pro-xs-buyer-guide-ontario", "mercury-150-300hp-pro-xs-performance-guide", "mercury-outboard-monthly-payment-ontario-2026", "mercury-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
-    content: `> **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. It improves mid-range acceleration by 5 to 21 percent depending on motor and hull, without changing peak rated horsepower. Realistic Canadian retail is roughly $300 to $500 CAD, plus install. Eligibility is limited to specific 175 to 300 HP FourStroke, Pro XS, and Verado serial ranges.
+    content: `> **Quick answer:** Mercury Boost is a software calibration upgrade, not a horsepower add-on. Mercury describes it as improving mid-range acceleration and throttle response, and its five published tests show 5 to 21 percent quicker zero-to-top-speed acceleration depending on the complete boat-and-engine setup. It does not change horsepower, top speed, maximum RPM, or time to plane. Eligibility depends on the engine family, model code, and serial number. HBW confirms current Canadian pricing only after checking that exact motor.
 
 # Mercury Boost Cost in Canada: Honest Ontario Dealer Breakdown (2026)
 
-**Published:** 2026-05-28 | **Updated:** 2026-05-29 (factual corrections)
+**Published:** 2026-05-28 | **Updated:** 2026-07-18 (Mercury June 2026 documentation)
 **Author:** Jay Harris, Harris Boat Works
 **Reading time:** 10 minutes
 
@@ -34671,25 +34608,25 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ## TL;DR
 
-Mercury Boost is a software upgrade Mercury announced at the 2026 Miami International Boat Show. It is **not** a peak-horsepower add-on. It does **not** make your motor a bigger motor. What it actually does is improve **mid-range acceleration response**, the punch you feel between roughly 40 and 80 km/h when you push the throttle.
+Mercury Boost is a software upgrade Mercury announced at the 2026 Miami International Boat Show. It is **not** a peak-horsepower add-on. It does **not** make your motor a bigger motor. It changes response during qualifying full-throttle mid-range acceleration.
 
 If you've seen the "$2,000 for 50 more horsepower" headlines floating around, those are wrong. The real picture is more interesting, and probably more useful, than the rumour. Here's the honest dealer breakdown.
 
-> **Editor's note (2026-05-29):** An earlier version of this post repeated several inaccurate claims circulating online: wrong eligible motor list, wrong price, and a "peak HP gain" mechanism. This version corrects all of them against Mercury Marine's official Feb 2026 specification.
+> **Editor's note (2026-07-18):** An earlier version repeated inaccurate horsepower, eligibility, and Canadian price claims. This version follows Mercury Marine's June 2026 documentation and requires an exact serial-number check for eligibility and pricing.
 
 ---
 
 ## What Mercury Boost actually does
 
-Mercury Boost is a calibration upgrade, new ECU mapping that changes how the motor responds during throttle-up. According to Mercury's official spec and independent testing reported at the 2026 Miami show:
+Mercury Boost is a calibration upgrade that changes how an eligible motor responds during throttle-up. According to Mercury's official material:
 
-- **5% to 21% improvement in mid-range acceleration** (depending on motor and hull)
-- **Faster 0-to-top-speed time**
+- **Improved mid-range acceleration and throttle response**
+- **5% to 21% quicker zero-to-top-speed acceleration in five published tests**
 - **No change to peak rated horsepower**
-- **No change to wide-open-throttle top speed in most cases**
-- Activates during throttle-up, primarily in the **~40-80 km/h** punch-out zone
+- **No change to top speed, maximum RPM, or time to plane**
+- Automatic activation only when Mercury's throttle and RPM conditions are met
 
-In a real-world test reported by [BoatBlurb](https://www.boatblurb.com/post/mercury-reveals-2026-tech-including-boost-software-upgrade) and corroborated by independent reviews, a BassCat 19 running a 200 HP V8 Pro XS gained roughly **17% faster mid-range acceleration** from 40 to 80 km/h. The boat did not become faster at WOT. It became faster *getting* to WOT and snappier *out of corners.*
+Mercury's published examples range from 5% quicker on a 20-foot deep-V with a 300 HP FourStroke to 21% quicker on a 19-foot fishing boat with a 175 HP Pro XS. Those are application-specific comparisons, not a promise for another hull, load, propeller, or operating condition.
 
 **Mercury Boost won the 2026 Miami Innovation Award** for advancing outboard engine performance. The award was for software-based response improvement, not for peak HP.
 
@@ -34697,54 +34634,45 @@ In a real-world test reported by [BoatBlurb](https://www.boatblurb.com/post/merc
 
 ## Which motors are actually eligible
 
-This is where the early online rumour mill got it most wrong. Per Mercury Marine's published Feb 2026 list, eligible motors are:
+This is where the early online rumour mill got it most wrong. Mercury's June 2026 documentation lists these dealer-upgrade families, subject to serial-number and configuration requirements:
 
 ### Dealer-installed Boost upgrade (existing motors)
-- **175, 200, 250, 300 HP FourStroke**, serial 2B529482 or later
-- **175, 200, 225, 250, 300 HP Pro XS**, serial 2B529482 or later
-- **250, 300 HP Verado**, serial 2B529482 or later
-- **350 HP Verado**, serial range 3B266064 to 3B578266
-- **Mercury Racing 150R**, serial 3B547096 or later
+- **175, 200, 250, 300 HP FourStroke**, serial 2B529482 through 3B612424
+- **175, 200, 225, 250, 300 HP Pro XS**, serial 2B529482 through 3B612424
+- **250, 300 HP Verado**, serial 2B529482 through 3B612424
+- **350 HP Verado**, serial range 3B266064 through 3B578265
+- **Mercury Racing 150R**, serial 3B547096 through 3B612424
 
-### Factory-installed Boost (new motors)
-- All of the above models manufactured in **Q2 2026 and later**
+### Factory-equipped Boost
+Some newer motors are factory-equipped starting at published serial thresholds. Model year or build quarter alone is not enough; check the exact serial number because the motor may need a paid unlock, may already include Boost, or may require a dealer software update.
 
 ### NOT eligible (despite what you may have read)
-- **300R V8 Pro XS**, not on the eligible list
-- **400R V8 Pro XS**, not on the eligible list
-- **V10 350, 400, 450R**, not on the eligible list
-- Anything below 150 HP (with the single exception of the Mercury Racing 150R)
-- Older serial-number motors below the 2B529482 cutoff
+- **Mercury Racing 200R, 250R, 300R, 400R, and 500R**, not on the eligible list
+- **400 and 425 HP V10**, not on the eligible list; the 350 HP V10 has its own published rules
+- **500 and 600 HP V12**, not on the eligible list
+- Any outboard below 175 HP (with the single exception of the Mercury Racing 150R)
+- Earlier motors below the published minimum serial; later serials may be factory-equipped and require a status check instead of a paid unlock
 
 :::mythbuster
-**Myth:** Boost will eventually be available for 300R, 400R, and V10 motors.
-**Reality:** Per Mercury Marine's published Feb 2026 eligibility list, the 300R, 400R, and V10 (350/400/450R) are not on the eligible list. If a dealer offers to install Boost on a 300R or V10, ask them to show you the serial-number range in Mercury's official document. The list is specific: 175-300 HP FourStroke, 175-300 HP Pro XS, 250-300 HP Verado, 350 HP Verado within a serial range, and Mercury Racing 150R.
+**Myth:** Every high-output Mercury can receive Boost.
+**Reality:** Eligibility is model- and serial-specific. The Racing 150R is listed, while 200R, 250R, 300R, 400R, and 500R are not. The 350 HP V10 has published eligibility rules, while the 400 and 425 HP V10 and current V12 models are not listed.
 :::
 
-If anyone tells you Boost is available for your 300R, 400R, or V10, ask them to show you the serial-number range in Mercury's published eligibility list. If they can't produce it, walk. The list above is the official one as of Feb 2026.
+If anyone tells you Boost is available for a motor, verify the exact engine and serial number in Mercury's current system before paying.
 
-**The single most common Ontario motor that IS eligible:** the **[200 HP and 250 HP V8 Pro XS](/blog/mercury-150-300hp-pro-xs-performance-guide)** on a modern bass or multi-species rig built from late 2024 onward. That serial-number window matters.
+The serial-number window matters even when the family and horsepower appear on the list. Motors at or above the published factory threshold may already include Boost or need a dealer update rather than a paid unlock.
 
 ---
 
 ## What it actually costs
 
-Here's the second piece the rumour mill got wrong. Boost is **not** $2,000 CAD.
+There is no responsible way to turn a US or Australian dealer post into an HBW Canadian quote. Currency conversion does not account for the exact eligible product, Canadian program terms, dealer process, or any other work the visit requires.
 
-Published pricing from initial dealer rollouts:
-
-- **$250 USD** at one US Mercury dealer (Waypoint Marine launch announcement)
-- **$395 AUD** at Australian Mercury dealers ([Hi Tech Marine](https://www.hitechmarine.com.au/mercury-boost-upgrade-perth-wa/))
-
-Converting and adding Canadian markup for dealer-installed labor and warranty handling, the realistic Canadian retail is likely in the **$300-$500 CAD** range, plus install if the motor needs to be at the dealer for the flash.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
-> **Confirm with HBW before booking.** Mercury Canada has not published an official Canadian MAP at the time of writing (May 2026). When we have firm Canadian pricing in writing, we'll update this post. Verify any pricing you're quoted against Mercury Canada's official MAP once it's published. Don't pay based on speculation.
+HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Call **905-342-2153** with a clear photo of the serial-number plate.
 
 :::mythbuster
-**Myth:** Mercury Boost is a $2,000 upgrade that adds 50 horsepower.
-**Reality:** Both numbers are wrong. Real published Mercury dealer pricing is $250 USD and $395 AUD. Realistic Canadian retail is in the $300-$500 CAD range plus install. And Boost does not add peak horsepower at WOT. It improves mid-range acceleration response by 5 to 21 percent. Peak HP is unchanged. Top speed is unchanged in most rigs.
+**Myth:** Mercury Boost adds horsepower.
+**Reality:** Boost does not add horsepower, top speed, or maximum RPM. It can improve mid-range and zero-to-top-speed acceleration on an eligible motor. Get the price for the exact serial number instead of relying on an online range.
 :::
 
 ---
@@ -34754,11 +34682,11 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 Now the honest question. Three scenarios.
 
 :::decision-card
-**Tournament rig (200-250 HP V8 Pro XS on a bass boat):** Probably yes. You pull out of holes 30 times a day. 17% faster mid-range acceleration is a noticeable, repeatable upgrade.
+**Tournament rig (eligible Pro XS on a bass boat):** Worth comparing. Repeated full-throttle acceleration is where Boost's response change is most relevant, but the result and price still depend on the exact setup.
 
 **Family 19-21 ft cruiser (steady-throttle use):** Probably no. Boost is invisible at steady cruise. It doesn't add top-end. Save the money.
 
-**Shopping for a new motor with factory Boost:** Depends on the price delta. Within $300-$500 of the non-Boost equivalent, take it. $1,500+ premium attributed to Boost, ask for the line-item MAP before signing.
+**Shopping for a new motor with factory Boost:** Buy the correctly sized motor for the boat. Confirm what is factory-enabled on the exact unit and compare the complete written quote; do not assume a value from an online price range.
 :::
 
 ---
@@ -34766,7 +34694,7 @@ Now the honest question. Three scenarios.
 :::customer-voice
 **What customers ask:** "If Boost gives me a 17 percent improvement, does that mean my 200 Pro XS will run faster at WOT?"
 
-**Our take:** No. The 17 percent number is mid-range acceleration. That's the punch you feel between 40 and 80 km/h. Wide-open-throttle top speed does not change in most rigs. Boost makes you faster getting to top speed and snappier coming out of corners. It does not raise the top speed itself.
+**Our take:** No. Mercury's percentage figures describe quicker zero-to-top-speed acceleration in specific tests. Boost changes eligible mid-range response, but it does not raise rated horsepower, maximum RPM, top speed, or time to plane.
 :::
 
 ## Boost vs upgrading to a bigger motor (the honest framing)
@@ -34776,13 +34704,12 @@ This is the question we hear most. **"Is Boost a way to skip buying a bigger mot
 **No.** Here is why:
 
 - Boost does not change peak HP. A 200 HP V8 Pro XS with Boost is still a 200 HP motor at WOT.
-- Boost does not change top speed (in most rigs).
-- Boost does not let you plane a heavier boat at lower RPM.
+- Boost does not change top speed or time to plane.
 - Boost improves **how quickly you reach WOT**, not what WOT actually is.
 
 If your boat is underpowered (won't hold plane with passengers, runs out of breath up-current, can't push the load you need), Boost won't fix that. [You need more cubic inches](/blog/mercury-repower-cost-ontario-2026-cad).
 
-If your boat has enough motor but you wish the punch out of corners was sharper, Boost might be the better spend than a re-prop.
+If your boat has enough motor but you want sharper mid-range response, first confirm propeller, engine height, load, and setup. Then compare Boost on the exact eligible serial number.
 
 The honest framing: **Boost is a response tuning upgrade, not a power upgrade.** Two different problems.
 
@@ -34791,35 +34718,28 @@ The honest framing: **Boost is a response tuning upgrade, not a power upgrade.**
 ## When Boost makes sense (checklist)
 
 - Your motor is [on the official Mercury eligible list](/blog/mercury-boost-software-upgrade-eligibility-2026) (check serial number)
-- You run a tournament, [ski, or wakeboard-style boat where hole-shot matters](/blog/best-mercury-for-ski-wakeboard-boats)
-- Canadian price lands in line with the official Mercury Canada MAP when published
+- You regularly use full-throttle mid-range acceleration and understand that time to plane does not change
+- HBW has confirmed current Canadian pricing for the exact serial number
 - You already have enough peak HP for your hull and load
 
 ## When Boost does NOT make sense (checklist)
 
-- Your motor isn't on the eligible list (300R, 400R, V10. Sorry, no)
+- Your motor family, horsepower, and serial are not in Mercury's published range
 - You spend 80% of your time at steady cruise
-- The pricing quoted is far above the published MAP once available
+- Eligibility or the complete written price has not been confirmed
 - Your real problem is that the motor is undersized for your boat
 
 ---
 
 ## What HBW is doing about Boost
 
-We are actively waiting on:
-1. **Official Mercury Canada retail pricing.** Not yet published as of May 2026.
-2. **The dealer flash procedure.** Mercury has confirmed it's a software flash through the standard Mercury diagnostic tool, similar to any other ECU calibration update.
-3. **A first wave of eligible customers in our service database.** We're identifying motors with qualifying serial numbers and reaching out as we go.
-
-When pricing lands, we will publish a Boost service page on mercuryrepower.ca with transparent CAD pricing, lead time, and the install-vs-bring-the-boat workflow. No hype. No "$2,000 surprise" pricing.
-
-If you're interested and want to be on the early-access list, send us your motor serial and we'll tell you straight whether yours is eligible.
+HBW verifies the serial number against Mercury's current eligibility information, confirms the Canadian price, and explains any required shop work before a customer authorizes the upgrade. If you are interested, send us a clear photo of the serial-number plate and we will tell you whether the motor qualifies.
 
 ---
 
 ## Build your Mercury repower quote (Boost-aware)
 
-We'll quote your motor honestly, check your serial against Mercury's official Boost eligibility list, and price everything against the published Mercury Canada MAP once it lands.
+We'll check the serial number against Mercury's current eligibility information and provide the current Canadian price for that exact motor.
 
 **[Build your Mercury repower quote](https://mercuryrepower.ca)**
 
@@ -34830,20 +34750,18 @@ We'll quote your motor honestly, check your serial against Mercury's official Bo
 - Mercury Marine official 2026 announcement (eligible motor list and serial numbers)
 - BoatBlurb: [Mercury Reveals 2026 Tech Including Boost Software Upgrade](https://www.boatblurb.com/post/mercury-reveals-2026-tech-including-boost-software-upgrade)
 - Boating Industry Canada: [Mercury Marine's Boost Wins 2026 Miami Innovation Award](https://boatingindustry.ca/current-news/mercury-marines-boost-wins-2026-miami-innovation-award-for-advancing-outboard-engine-performance/)
-- Hi Tech Marine (Australia, dealer pricing reference): [Mercury Boost Upgrade Perth WA](https://www.hitechmarine.com.au/mercury-boost-upgrade-perth-wa/)
 - YouTube: Does Mercury BOOST Actually Work (Australian independent test) [youtube.com/watch?v=9OcvxB-rprA](https://www.youtube.com/watch?v=9OcvxB-rprA)
-- Waypoint Marine US dealer launch announcement (pricing reference)
 
 ---
 
 `,
     faqs: [
-      { question: "Is Mercury Boost a horsepower increase?", answer: "No. It is a calibration software upgrade that improves mid-range acceleration response by 5-21%. Peak horsepower at WOT is unchanged." },
-      { question: "Does Boost work on my 300R or 400R?", answer: "No. Mercury's official eligibility list does not include 300R, 400R, or V10 (350/400/450R). It covers 175-300 HP FourStroke, 175-300 HP Pro XS, 250-300 HP Verado, 350 HP Verado (within a serial range), and the Mercury Racing 150R." },
-      { question: "How much does Boost cost in Canada?", answer: "HBW does not yet have official Mercury Canada MAP pricing. Realistic Canadian retail based on US ($250) and Australian ($395) pricing is in the $300-$500 CAD range, plus install if needed. It is not $2,000." },
+      { question: "Is Mercury Boost a horsepower increase?", answer: "No. It is a calibration software upgrade that improves eligible mid-range response. Mercury's five published tests show 5-21% quicker zero-to-top-speed acceleration, while rated horsepower, top speed, maximum RPM, and time to plane remain unchanged." },
+      { question: "Does Boost work on my 300R or 400R?", answer: "No. Mercury's June 2026 documentation lists the Racing 150R but not the 200R, 250R, 300R, 400R, or 500R. The 350 HP V10 has separate published eligibility rules; do not generalize that result to other V10 models." },
+      { question: "How much does Boost cost in Canada?", answer: "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate." },
       { question: "Did Mercury Boost win an award?", answer: "Yes, the 2026 Miami Innovation Award for advancing outboard engine performance. Specifically for software-based response improvement." },
-      { question: "Will Boost void my warranty?", answer: "When installed by a Mercury Premier dealer per Mercury's authorized procedure, Boost is covered under standard Mercury warranty terms. Always verify warranty details against your specific motor and Mercury's published warranty policy." },
-      { question: "Should I wait to buy a new motor until Boost ships factory-installed?", answer: "If your boat has been running fine, there is no reason to delay a needed repower for Boost. If you're already buying a motor in summer 2026, ask whether the unit you're being quoted is Q2 2026+ build. That's when factory Boost installs start showing up." }
+      { question: "Will Boost void my warranty?", answer: "Mercury's June 2026 instructions state that installing or using Boost does not void the Mercury Marine Limited Warranty. HBW still verifies the exact motor and current warranty status before work is authorized." },
+      { question: "Should I wait to buy a new motor until Boost ships factory-installed?", answer: "Buy the correctly rated motor for the boat today. Confirm factory-equipped status from the exact serial number; do not rely on a model-year or build-quarter assumption." }
     ]
   },
   {
@@ -35683,7 +35601,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     category: 'Repower Guide',
     readTime: '11 min read',
     keywords: ["Yamaha to Mercury repower", "Yamaha to Mercury Ontario", "brand swap outboard repower", "Mercury repower cost Ontario", "Yamaha Command Link Mercury", "Yamaha F150 to Mercury 150", "Mercury Premier dealer Ontario", "Yamaha trade-in Mercury"],
-    relatedSlugs: ["mercury-repower-cost-ontario-2026-cad", "mercury-vs-yamaha-outboards-ontario", "evinrude-to-mercury-repower-ontario-guide", "mercury-outboard-rigging-costs-ontario", "mercury-repower-cost-ontario-2026-cad", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
+    relatedSlugs: ["mercury-repower-cost-ontario-2026-cad", "mercury-vs-yamaha-outboards-ontario", "evinrude-to-mercury-repower-ontario-guide", "mercury-outboard-rigging-costs-ontario", "hbw-on-water-load-test-mercury-repower-advantage-2026"],
     faqs: [
       { question: "How long does a Yamaha-to-Mercury swap take at HBW?", answer: "Most brand-swap repowers in the 75-200 HP class take 3-5 working days once the motor and rigging parts are on site. That includes removal of the Yamaha, rigging of new throttle, harness, gauges, and prop, then water-test and break-in setup. Spring season (April-May) the queue runs longer because every Mercury repower booked over winter ships in the same window. Book early." },
       { question: "Will my Yamaha prop carry over to the new Mercury?", answer: "No. Yamaha and Mercury props have different shaft diameters and hub designs. You will need a new Mercury prop sized to your boat and HP class. We dial in the prop choice during the quote conversation because the right prop affects fuel economy and top-end performance more than most owners expect." },

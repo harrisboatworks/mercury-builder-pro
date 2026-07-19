@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
-import { SITE_URL } from "./lib/site";
 import { GlobalSEO } from "./components/seo/GlobalSEO";
+import { Canonical } from "./components/seo/Canonical";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -194,25 +194,6 @@ const StagingImageSizingV2 = lazy(() => import("./pages/StagingImageSizingV2"));
 const StagingImageSizingFinal = lazy(() => import("./pages/StagingImageSizingFinal"));
 const VoiceTest = lazy(() => import("./pages/VoiceTest"));
 const AgentsHub = lazy(() => import("./pages/AgentsHub"));
-
-function Canonical() {
-  useEffect(() => {
-    // Only set a canonical if the prerendered HTML did NOT already provide one,
-    // and only if no per-page SEO component (with data-rh="true") owns it.
-    // This prevents the runtime override from clobbering page-specific canonicals
-    // (e.g. /mercury-pro-xs) with the generic origin+pathname value.
-    const existing = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (existing) {
-      // Respect prerendered or Helmet-managed canonicals.
-      return;
-    }
-    const link = document.createElement("link");
-    link.rel = "canonical";
-    link.href = `${SITE_URL}${window.location.pathname}`;
-    document.head.appendChild(link);
-  }, []);
-  return null;
-}
 
 function RootRedirect() {
   const params = new URLSearchParams(window.location.search);

@@ -156,52 +156,6 @@ Rice Lake 租船适合不会开船的人吗？
 
 中文攻略适合理解问题和做计划，但规则、日期和限制应以 Ontario 和 Transport Canada 官方页面为准 (Ontario free family fishing, Transport Canada PCOC).
 
-Schema notes
-
-Use BlogPosting.
-
-Use FAQPage.
-
-Add ItemList or comparison table markup only if the CMS supports clean structured output.
-
-Add ImageObject for comparison visual.
-
-Batch implementation checklist
-
-Item
-
-Required action
-
-Language
-
-Publish as Simplified Chinese first; add Traditional variants later if possible.
-
-Hreflang
-
-Use zh-Hans-CA for Simplified Chinese Canada pages if supported.
-
-Internal links
-
-Link all five posts to a Mandarin/GTA boating hub. Link rental posts to HBW rentals/general page. Link Mercury service post to https://hbw.wiki/service. Link Mercury/repower mentions to https://www.mercuryrepower.ca.
-
-Add BlogPosting and FAQPage to every post. Add ImageObject once visuals are created.
-
-Visuals
-
-Generate one useful infographic per post; do not use generic stock photos as the only visual.
-
-Fact-checking
-
-Recheck Ontario dates yearly. Recheck Transport Canada requirements if regulations change.
-
-Tone
-
-Keep the copy useful, human, local, and honest. Avoid over-polished corporate Chinese.
-
-Sources used in this batch
-
-Factual statements about PCOC, proof of competency, electric trolling motors, Rental Boat Safety Checklist, and acceptable documents come from Transport Canada PCOC. Factual statements about Pleasure Craft Licence, 10HP/7.5kW threshold, bow display, PCL vs PCOC, and registration caveats come from Transport Canada PCL. Safety-equipment references come from the Transport Canada Safe Boating Guide. Ontario 2026 free fishing dates and licence-exemption caveats come from Ontario free family fishing. Chinese-language fishing-regulation availability comes from Ontario Traditional Chinese fishing regulations. FMZ 16 and Lake Simcoe exception references come from Ontario FMZ 16. FMZ 17 and Kawartha-area exception/bait references come from Ontario FMZ 17. Harris Boat Works facts about Rice Lake, rentals, boat operator card requirement, services, Mercury/Legend positioning, winterization, storage, launch, slips, and history come from Harris Boat Works.
-
 HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，是 Mercury Marine Premier dealer 与 Legend Boats dealer。
 
 ## Next steps

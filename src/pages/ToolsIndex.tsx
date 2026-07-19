@@ -30,8 +30,8 @@ const TOOLS = [
   {
     id: 'boost-eligibility',
     name: 'Boost Eligibility Checker',
-    description: 'Is my Mercury 150 Pro XS eligible for the Boost upgrade?',
-    meta: 'Under 1 minute · Get an eligibility result',
+    description: 'Does my engine family, horsepower, and serial match Mercury\'s published Boost range?',
+    meta: 'Under 1 minute · Preliminary serial check',
     cta: 'Check Boost Eligibility',
     Icon: Zap,
     Component: BoostEligibilityChecker,

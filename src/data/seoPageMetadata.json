@@ -1,0 +1,24 @@
+{
+  "home": {
+    "title": "Mercury Repower Cost Ontario: Real Prices in 2 Minutes",
+    "description": "Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947.",
+    "alternates": [
+      {
+        "hrefLang": "en-CA",
+        "path": "/"
+      },
+      {
+        "hrefLang": "fr-CA",
+        "path": "/fr"
+      },
+      {
+        "hrefLang": "zh-Hans",
+        "path": "/zh"
+      },
+      {
+        "hrefLang": "x-default",
+        "path": "/"
+      }
+    ]
+  }
+}
