@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { renderHomeHubAlternates } from '@/components/seo/homeHubAlternates';
 import { Phone, Mail, Globe, MapPin, Wrench, Anchor, Ship, Warehouse, Navigation } from 'lucide-react';
 
 export default function MandarinLanding() {
@@ -81,7 +80,6 @@ export default function MandarinLanding() {
       <Helmet>
         <title>Mercury水星舷外机经销商 | Harris Boat Works 安大略省</title>
         <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine Premier 授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
-        {renderHomeHubAlternates()}
         <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury Premier 授权经销商" />
         <meta property="og:description" content="安大略省Mercury Marine Premier 授权经销商。在线透明报价。" />
         <meta property="og:locale" content="zh_CN" />

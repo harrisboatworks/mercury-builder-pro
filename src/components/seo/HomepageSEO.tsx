@@ -1,7 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import seoPageMetadata from '@/data/seoPageMetadata.json';
-import { renderHomeHubAlternates } from '@/components/seo/homeHubAlternates';
 
 export function HomepageSEO() {
   const { title, description } = seoPageMetadata.home;
@@ -52,9 +51,6 @@ export function HomepageSEO() {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
-
-      {/* Only equivalent multilingual home hubs belong in this reciprocal cluster. */}
-      {renderHomeHubAlternates()}
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

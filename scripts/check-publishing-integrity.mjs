@@ -24,8 +24,6 @@ const mandarinArticlePage = read('src/pages/blog/MandarinBlogArticlePage.tsx');
 const mandarinBlogIndex = read('src/pages/blog/BlogIndexZh.tsx');
 const globalSeo = read('src/components/seo/GlobalSEO.tsx');
 const homepageSeo = read('src/components/seo/HomepageSEO.tsx');
-const frenchLanding = read('src/pages/FrenchLanding.tsx');
-const mandarinLanding = read('src/pages/MandarinLanding.tsx');
 const appSource = read('src/App.tsx');
 const canonicalComponent = read('src/components/seo/Canonical.tsx');
 const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
@@ -89,8 +87,8 @@ check(
   'GlobalSEO must not inject homepage hreflang URLs into every hydrated route.',
 );
 check(
-  /renderHomeHubAlternates\(\)/.test(homepageSeo),
-  'HomepageSEO must own the multilingual home-hub hreflang set.',
+  /HOME_HUB_PATHS/.test(canonicalComponent) && /renderHomeHubAlternates\(\)/.test(canonicalComponent),
+  'The route-aware canonical component must own the multilingual home-hub hreflang set.',
 );
 const expectedHomeAlternates = [
   { hrefLang: 'en-CA', path: '/' },
@@ -103,11 +101,10 @@ check(
   'Home hreflang metadata must contain only the reciprocal English, French, Simplified Chinese, and x-default home hubs.',
 );
 check(
-  /renderHomeHubAlternates\(\)/.test(homepageSeo) &&
-    /renderHomeHubAlternates\(\)/.test(frenchLanding) &&
-    /renderHomeHubAlternates\(\)/.test(mandarinLanding) &&
+  /new Set\(\['\/', '\/fr', '\/zh'\]\)/.test(canonicalComponent) &&
+    /HOME_HUB_PATHS\.has\(canonicalPath\)/.test(canonicalComponent) &&
     /seoPageMetadata\.home\.alternates/.test(homeHubAlternates),
-  'The English, French, and Mandarin home hubs must render one shared hreflang cluster.',
+  'Only the English, French, and Mandarin home hubs may render the shared hreflang cluster.',
 );
 check(
   !/hrefLang="(?:ko|es|hi|pa)"/.test(homepageSeo),
