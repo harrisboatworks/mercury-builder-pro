@@ -51,4 +51,20 @@ describe('professional quote PDF normalization', () => {
     expect(result.financingRate).toBe(7.99);
     expect(result.financingAmount).toBe(5434);
   });
+
+  it('keeps the saved-quote QR code on a cash quote', () => {
+    const savedQuoteQr = 'data:image/png;base64,saved-quote-qr';
+    const result = buildProfessionalQuotePdfData({
+      quoteNumber: 'HBW-CASH-QR',
+      customerName: 'Cash Customer',
+      customerEmail: 'cash@example.com',
+      motor: { model: '9.9 ELH FourStroke', hp: 9.9, msrp: 4895 },
+      pricing: { msrp: 4895, discount: 496, promoValue: 0, motorSubtotal: 4399, subtotal: 4578.99, hst: 595.27, totalCashPrice: 5174.26, savings: 496 },
+      selectedPaymentMethod: 'cash_purchase',
+      financingQrCode: savedQuoteQr,
+    });
+
+    expect(result.selectedPaymentMethod).toBe('cash_purchase');
+    expect(result.financingQrCode).toBe(savedQuoteQr);
+  });
 });

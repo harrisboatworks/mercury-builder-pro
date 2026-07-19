@@ -46,16 +46,16 @@ const styles = StyleSheet.create({
     color: colors.navy,
     fontFamily: 'Helvetica',
     fontSize: 9,
-    paddingTop: 24,
+    paddingTop: 20,
     paddingHorizontal: 28,
-    paddingBottom: 44,
+    paddingBottom: 34,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 7,
-    marginBottom: 11,
+    paddingVertical: 5.5,
+    marginBottom: 9,
     borderBottom: `1.5 solid ${colors.red}`,
   },
   logos: { flexDirection: 'row', alignItems: 'center', gap: 10 },
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   mercuryLogo: { width: 106, height: 21, objectFit: 'contain' },
   headerTitle: { color: colors.navy, fontSize: 13, fontWeight: 'bold', textAlign: 'right' },
   headerKicker: { fontSize: 7, color: colors.navyMuted, textAlign: 'right', marginTop: 3 },
-  overview: { flexDirection: 'row', gap: 14, marginBottom: 12 },
+  overview: { flexDirection: 'row', gap: 14, marginBottom: 10 },
   overviewLeft: { flex: 1.18 },
   overviewRight: { flex: 0.82 },
   eyebrow: { fontSize: 7.5, color: colors.red, fontWeight: 'bold', letterSpacing: 1.1, marginBottom: 4 },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   infoRow: { flexDirection: 'row', marginBottom: 2.5 },
   infoLabel: { width: 55, color: colors.navyMuted, fontSize: 7.5 },
   infoValue: { flex: 1, fontSize: 7.8 },
-  section: { marginBottom: 11 },
+  section: { marginBottom: 8 },
   sectionTitle: { fontSize: 11.5, fontWeight: 'bold', marginBottom: 6, paddingBottom: 4, borderBottom: `1 solid ${colors.red}` },
   table: { backgroundColor: colors.white, border: `1 solid ${colors.border}` },
   tableHeader: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: colors.white, borderBottom: `1 solid ${colors.border}`, paddingVertical: 5, paddingHorizontal: 7 },
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   discount: { color: colors.red, fontWeight: 'bold' },
   totalRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 7, paddingHorizontal: 7, borderTop: `1.5 solid ${colors.navy}` },
   totalRowText: { fontSize: 10.5, fontWeight: 'bold' },
-  twoUp: { flexDirection: 'row', gap: 10, marginBottom: 11 },
+  twoUp: { flexDirection: 'row', gap: 10, marginBottom: 8 },
   panel: { flex: 1, backgroundColor: colors.white, border: `1 solid ${colors.border}`, padding: 9 },
   panelAccent: { borderTop: `3 solid ${colors.red}` },
   panelTitle: { fontSize: 10, fontWeight: 'bold', marginBottom: 5 },
@@ -107,10 +107,12 @@ const styles = StyleSheet.create({
   protectionDelta: { color: colors.red, fontSize: 9, fontWeight: 'bold', marginTop: 3 },
   noteBox: { backgroundColor: colors.white, borderLeft: `2 solid ${colors.red}`, paddingVertical: 5, paddingLeft: 8, marginBottom: 9 },
   noteText: { fontSize: 8, lineHeight: 1.35 },
-  cta: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', border: `1.5 solid ${colors.red}`, backgroundColor: colors.white, padding: 9, marginBottom: 10 },
+  cta: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', border: `1.5 solid ${colors.red}`, backgroundColor: colors.white, padding: 5, marginBottom: 7 },
   ctaTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 3 },
   ctaText: { fontSize: 8, color: colors.navyMuted, marginBottom: 2 },
-  qr: { width: 64, height: 64 },
+  qrBlock: { width: 76, alignItems: 'center' },
+  qr: { width: 54, height: 54 },
+  qrCaption: { color: colors.navyMuted, fontSize: 6.5, marginTop: 3, textAlign: 'center' },
   deposit: { backgroundColor: colors.white, border: `1.25 solid ${colors.navy}`, borderLeft: `3 solid ${colors.red}`, padding: 9, marginBottom: 10 },
   depositTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 5 },
   footer: { position: 'absolute', left: 28, right: 28, bottom: 18, borderTop: `1 solid ${colors.border}`, paddingTop: 5, flexDirection: 'row', justifyContent: 'space-between' },
@@ -386,11 +388,25 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         {!quoteData.depositInfo ? (
           <View style={styles.cta} wrap={false}>
             <View style={{ flex: 1, paddingRight: 12 }}>
-              <Text style={styles.ctaTitle}>Questions or ready to proceed?</Text>
-              <Text style={styles.ctaText}>Call or text Harris Boat Works at (905) 342-2153</Text>
-              <Text style={styles.ctaText}>Reply to your quote email, or visit mercuryrepower.ca</Text>
+              <Text style={styles.ctaTitle}>{quoteData.financingQrCode ? 'Reopen this quote online' : 'Questions or ready to proceed?'}</Text>
+              {quoteData.financingQrCode ? (
+                <>
+                  <Text style={styles.ctaText}>Scan the QR code to reopen this saved quote and continue when you are ready.</Text>
+                  <Text style={styles.ctaText}>Questions? Call or text Harris Boat Works at (905) 342-2153.</Text>
+                </>
+              ) : (
+                <>
+                  <Text style={styles.ctaText}>Call or text Harris Boat Works at (905) 342-2153</Text>
+                  <Text style={styles.ctaText}>Reply to your quote email, or visit mercuryrepower.ca</Text>
+                </>
+              )}
             </View>
-            {quoteData.financingQrCode ? <Image src={quoteData.financingQrCode} style={styles.qr} /> : null}
+            {quoteData.financingQrCode ? (
+              <View style={styles.qrBlock}>
+                <Image src={quoteData.financingQrCode} style={styles.qr} />
+                <Text style={styles.qrCaption}>Scan to reopen quote</Text>
+              </View>
+            ) : null}
           </View>
         ) : null}
 
