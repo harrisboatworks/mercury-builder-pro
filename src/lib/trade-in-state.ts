@@ -3,6 +3,11 @@ import type { TradeInInfo } from '@/lib/trade-valuation';
 
 export const TRADE_IN_MIN_YEAR = 1950;
 
+export function parseMotorHorsepowerInput(value: string): number {
+  const horsepower = Number(value);
+  return Number.isFinite(horsepower) && horsepower > 0 ? horsepower : 0;
+}
+
 export function isSupportedTradeInYear(year: number, currentYear = new Date().getFullYear()): boolean {
   return year >= TRADE_IN_MIN_YEAR && year <= currentYear;
 }
