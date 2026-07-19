@@ -15,6 +15,7 @@ import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShe
 import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
+import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
 
 type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
@@ -246,11 +247,19 @@ export default function PromoSelectionPage() {
 
     // For warranty-only promos, auto-apply the warranty and skip
     if (activePromo && !hasPromotionOptions) {
+      const includedCoverageYears = Math.min(3 + (activePromo.warranty_extra_years || 0), 8);
       dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
-      dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + (activePromo.warranty_extra_years || 0) } });
+      dispatch({
+        type: 'SET_WARRANTY_CONFIG',
+        payload: reconcileWarrantyConfig(
+          Number(motorHP),
+          includedCoverageYears,
+          state.warrantyConfig,
+        ),
+      });
     }
     navigate('/quote/summary', { replace: true });
-  }, [promoLoading, activePromo, hasPromotionOptions, state.motor, navigate, dispatch]);
+  }, [promoLoading, activePromo, hasPromotionOptions, state.motor, state.warrantyConfig, motorHP, navigate, dispatch]);
 
   const handleOptionSelect = (optionId: PaymentOptionId) => {
     setSelectedOption(optionId);
@@ -293,9 +302,16 @@ export default function PromoSelectionPage() {
       persistFinancingRate(selectedRate);
     }
 
-    const totalWarrantyYears = 3 + (activePromo?.warranty_extra_years ?? 0);
+    const totalWarrantyYears = Math.min(3 + (activePromo?.warranty_extra_years ?? 0), 8);
     dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
-    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: totalWarrantyYears } });
+    dispatch({
+      type: 'SET_WARRANTY_CONFIG',
+      payload: reconcileWarrantyConfig(
+        Number(motorHP),
+        totalWarrantyYears,
+        state.warrantyConfig,
+      ),
+    });
     navigate('/quote/summary');
   };
 

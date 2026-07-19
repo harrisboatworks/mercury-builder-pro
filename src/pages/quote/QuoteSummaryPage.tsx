@@ -14,6 +14,7 @@ import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
+import { PlatinumProtectionSelector } from '@/components/quote-builder/PlatinumProtectionSelector';
 
 
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
@@ -42,6 +43,11 @@ import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
+import { trackEvent } from '@/lib/analytics';
+import {
+  reconcileWarrantyConfig,
+  type QuoteWarrantyConfig,
+} from '@/lib/quote-product-protection';
 
 // Animation variants
 const sectionVariants = {
@@ -74,6 +80,12 @@ export default function QuoteSummaryPage() {
   const { promo } = useActiveFinancingPromo();
   const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
+  const baseCoverageYears = 3;
+  const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
+  const currentCoverageYears = useMemo(
+    () => Math.min(baseCoverageYears + promoYears, 8),
+    [promoYears],
+  );
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
@@ -85,18 +97,35 @@ export default function QuoteSummaryPage() {
   useAutoSaveQuoteOnAuth();
 
   // Silent soft-lead save, auto-persist quote snapshot for anonymous visitors
-  const softLeadSavedRef = useRef(false);
+  const latestQuoteStateRef = useRef(state);
+  const softLeadAnalyticsTrackedRef = useRef(false);
   useEffect(() => {
-    if (softLeadSavedRef.current || state.isLoading || !state.motor) return;
-    softLeadSavedRef.current = true;
+    latestQuoteStateRef.current = state;
+  }, [state]);
+  const softLeadSnapshotRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    const snapshotKey = [
+      state.motor.id,
+      state.warrantyConfig?.extendedYears ?? 0,
+      state.warrantyConfig?.warrantyPrice ?? 0,
+      state.warrantyConfig?.totalYears ?? currentCoverageYears,
+    ].join(':');
+    if (softLeadSnapshotRef.current === snapshotKey) return;
+    softLeadSnapshotRef.current = snapshotKey;
+    const quoteStateSnapshot = latestQuoteStateRef.current;
 
-    // Analytics: a quote was generated and viewed
-    trackAgentEvent({
-      event_type: 'quote_generated',
-      motor_model: state.motor?.model || null,
-      motor_hp: (state.motor as any)?.hp ?? (state.motor as any)?.horsepower ?? null,
-      motor_id: state.motor?.id ?? null,
-    });
+    // Analytics: count the viewed quote once. Warranty changes still refresh
+    // the saved snapshot below without inflating quote-generated reporting.
+    if (!softLeadAnalyticsTrackedRef.current) {
+      softLeadAnalyticsTrackedRef.current = true;
+      trackAgentEvent({
+        event_type: 'quote_generated',
+        motor_model: quoteStateSnapshot.motor?.model || null,
+        motor_hp: (quoteStateSnapshot.motor as any)?.hp ?? (quoteStateSnapshot.motor as any)?.horsepower ?? null,
+        motor_id: quoteStateSnapshot.motor?.id ?? null,
+      });
+    }
 
     const sessionId = getOrCreateSessionId();
     (async () => {
@@ -113,7 +142,7 @@ export default function QuoteSummaryPage() {
           // Update the existing soft lead with latest state
           await (supabase as any)
             .from('saved_quotes')
-            .update({ quote_state: state as any, updated_at: new Date().toISOString() })
+            .update({ quote_state: quoteStateSnapshot as any, updated_at: new Date().toISOString() })
             .eq('id', existing.id);
         } else {
           // Create new soft-lead record
@@ -122,7 +151,7 @@ export default function QuoteSummaryPage() {
             .insert({
               email: 'anonymous@soft-lead.local',
               resume_token: `sl_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-              quote_state: state as any,
+              quote_state: quoteStateSnapshot as any,
               user_id: user?.id || null,
               session_id: sessionId,
               is_soft_lead: true,
@@ -133,7 +162,15 @@ export default function QuoteSummaryPage() {
         // Silently fail, analytics should never break the app
       }
     })();
-  }, [state.isLoading, state.motor]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [
+    state.isLoading,
+    state.motor,
+    state.warrantyConfig?.extendedYears,
+    state.warrantyConfig?.warrantyPrice,
+    state.warrantyConfig?.totalYears,
+    currentCoverageYears,
+    user?.id,
+  ]);
 
   // Listen for quote-saved-via-auth event to show phone capture
   useEffect(() => {
@@ -216,12 +253,10 @@ export default function QuoteSummaryPage() {
       } else if (!state.selectedPackage) {
         // Keep the internal baseline package for quote-data compatibility. The
         // customer-facing package selector is intentionally retired.
-        const bonusYears = getTotalWarrantyBonusYears?.() ?? 0;
         dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
-        dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + bonusYears } });
       }
     }
-  }, [isMounted, state.isLoading, state.motor, state.selectedPackage, navigate, getTotalWarrantyBonusYears]);
+  }, [isMounted, state.isLoading, state.motor, state.selectedPackage, navigate, dispatch]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
@@ -242,6 +277,38 @@ export default function QuoteSummaryPage() {
   const motorHp = hp;
   const sku = motor?.sku ?? motor?.partNumber ?? null;
   const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
+
+  // Keep a selected combined-coverage target aligned with current promotional
+  // years and the selected motor's exact rate band. Frozen shared quotes retain
+  // their original snapshot until the customer explicitly changes the plan.
+  useEffect(() => {
+    if (state.isLoading || promoLoading || !state.motor || state.frozenPricing) return;
+
+    const reconciled = reconcileWarrantyConfig(
+      Number(hp),
+      currentCoverageYears,
+      state.warrantyConfig,
+    );
+    const current = state.warrantyConfig;
+    if (
+      current?.extendedYears === reconciled.extendedYears &&
+      current?.warrantyPrice === reconciled.warrantyPrice &&
+      current?.totalYears === reconciled.totalYears
+    ) {
+      return;
+    }
+
+    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: reconciled });
+  }, [
+    currentCoverageYears,
+    dispatch,
+    hp,
+    promoLoading,
+    state.frozenPricing,
+    state.isLoading,
+    state.motor,
+    state.warrantyConfig,
+  ]);
   
   // Auto-calculated deposit based on motor HP (no user selection)
   const depositAmount = getRecommendedDeposit(hp);
@@ -332,11 +399,6 @@ export default function QuoteSummaryPage() {
   
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
-  // Coverage years
-  const baseYears = 3;
-  const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
-  const currentCoverageYears = useMemo(() => Math.min(baseYears + promoYears, 8), [promoYears]);
-
   // Preserve the internal baseline package ID for calculation and saved-quote
   // compatibility without exposing package tiers in the customer journey.
   const selectedPackage = state.selectedPackage?.id || 'good';
@@ -877,6 +939,7 @@ export default function QuoteSummaryPage() {
           prePenaltyValue: state.tradeInInfo.prePenaltyValue,
         } : null,
         financing: state.financing,
+        warrantyConfig: state.warrantyConfig,
         selectedPromoOption: state.selectedPromoOption,
         boatInfo: state.boatInfo,
         installConfig: state.installConfig,
@@ -950,6 +1013,19 @@ export default function QuoteSummaryPage() {
       ...(isInstalled ? ["Professional installation"] : ["Loose motor pickup"])
     ];
   }, [selectedPackageCoverageYears, isInstalled]);
+
+  const handleProductProtectionChange = useCallback((config: QuoteWarrantyConfig) => {
+    if (state.frozenPricing) {
+      dispatch({ type: 'SET_FROZEN_PRICING', payload: undefined });
+    }
+    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: config });
+    trackEvent('quote_product_protection_changed', {
+      motor_hp: Number(hp),
+      paid_plan_years: config.extendedYears,
+      total_coverage_years: config.totalYears,
+      price_cad: config.warrantyPrice,
+    });
+  }, [dispatch, hp, state.frozenPricing]);
 
   return (
     <>
@@ -1056,6 +1132,28 @@ export default function QuoteSummaryPage() {
                       termMonths,
                       isPromotional: usePromoFinancing,
                     }}
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    ...sectionVariants,
+                    visible: {
+                      ...sectionVariants.visible,
+                      transition: {
+                        ...sectionVariants.visible.transition,
+                        delay: 0.3,
+                      },
+                    },
+                  }}
+                >
+                  <PlatinumProtectionSelector
+                    horsepower={Number(hp)}
+                    currentCoverageYears={currentCoverageYears}
+                    value={state.warrantyConfig}
+                    onChange={handleProductProtectionChange}
                   />
                 </motion.div>
 
