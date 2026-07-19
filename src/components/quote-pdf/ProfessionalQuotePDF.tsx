@@ -10,6 +10,8 @@ import {
 } from '@react-pdf/renderer';
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 const Document = _Document as unknown as ComponentType<any>;
 const Page = _Page as unknown as ComponentType<any>;
@@ -22,13 +24,12 @@ const Image = _Image as unknown as ComponentType<any>;
 Font.registerHyphenationCallback((word) => [word]);
 
 const colors = {
-  navy: '#050E1C',
-  navyMuted: '#445064',
+  navy: '#0A1628',
+  navyMuted: '#4B5563',
   red: '#C8102E',
-  gold: '#C9A24A',
-  cream: '#F5F1EA',
-  paper: '#FAF8F4',
-  border: '#D8D4CD',
+  cream: '#F7F7F7',
+  paper: '#FFFFFF',
+  border: '#D1D5DB',
   white: '#FFFFFF',
 };
 
@@ -53,29 +54,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingBottom: 10,
-    marginBottom: 14,
-    borderBottom: `2 solid ${colors.red}`,
+    paddingVertical: 7,
+    marginBottom: 11,
+    borderBottom: `1.5 solid ${colors.red}`,
   },
-  logos: { flexDirection: 'row', alignItems: 'center', gap: 9 },
-  harrisWordmark: { fontSize: 9.5, fontWeight: 'bold', letterSpacing: 0.5 },
-  brandDivider: { width: 1.5, height: 24, backgroundColor: colors.red },
-  mercuryWordmark: { fontSize: 13, fontFamily: 'Helvetica-BoldOblique', letterSpacing: 0.2 },
-  headerTitle: { fontSize: 15, fontWeight: 'bold', textAlign: 'right' },
-  headerKicker: { fontSize: 7.5, color: colors.navyMuted, textAlign: 'right', marginTop: 2 },
+  logos: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  harrisLogo: { width: 58, height: 40, objectFit: 'contain' },
+  brandDivider: { width: 1, height: 27, backgroundColor: colors.border },
+  mercuryLogo: { width: 106, height: 21, objectFit: 'contain' },
+  headerTitle: { color: colors.navy, fontSize: 13, fontWeight: 'bold', textAlign: 'right' },
+  headerKicker: { fontSize: 7, color: colors.navyMuted, textAlign: 'right', marginTop: 3 },
   overview: { flexDirection: 'row', gap: 14, marginBottom: 12 },
   overviewLeft: { flex: 1.18 },
   overviewRight: { flex: 0.82 },
   eyebrow: { fontSize: 7.5, color: colors.red, fontWeight: 'bold', letterSpacing: 1.1, marginBottom: 4 },
   productName: { fontSize: 21, lineHeight: 1.05, fontWeight: 'bold', marginBottom: 7 },
   productMeta: { color: colors.navyMuted, fontSize: 8.5, marginBottom: 8 },
-  codeBox: { backgroundColor: colors.cream, borderLeft: `3 solid ${colors.gold}`, padding: 8 },
+  codeBox: { backgroundColor: colors.white, borderLeft: `2 solid ${colors.red}`, paddingVertical: 5, paddingLeft: 8 },
   codeTitle: { fontSize: 8.5, fontWeight: 'bold', marginBottom: 3 },
   codeItem: { color: colors.navyMuted, fontSize: 7.5, lineHeight: 1.3, marginBottom: 1 },
-  totalCard: { backgroundColor: colors.navy, color: colors.white, padding: 12, marginBottom: 8 },
-  totalLabel: { color: colors.white, opacity: 0.72, fontSize: 8, letterSpacing: 0.8, marginBottom: 3 },
-  totalPrice: { color: colors.white, fontSize: 25, fontWeight: 'bold', marginBottom: 3 },
-  savings: { color: '#F0D58F', fontSize: 9.5, fontWeight: 'bold' },
+  totalCard: { backgroundColor: colors.white, border: `1.25 solid ${colors.navy}`, borderTop: `3 solid ${colors.red}`, padding: 10, marginBottom: 8 },
+  totalLabel: { color: colors.navyMuted, fontSize: 7.5, letterSpacing: 0.65, marginBottom: 3 },
+  totalPrice: { color: colors.navy, fontSize: 23, fontWeight: 'bold', marginBottom: 3 },
+  savings: { color: colors.red, fontSize: 9, fontWeight: 'bold' },
   customerCard: { backgroundColor: colors.white, border: `1 solid ${colors.border}`, padding: 8 },
   cardTitle: { fontSize: 9.5, fontWeight: 'bold', marginBottom: 5 },
   infoRow: { flexDirection: 'row', marginBottom: 2.5 },
@@ -84,9 +85,9 @@ const styles = StyleSheet.create({
   section: { marginBottom: 11 },
   sectionTitle: { fontSize: 11.5, fontWeight: 'bold', marginBottom: 6, paddingBottom: 4, borderBottom: `1 solid ${colors.red}` },
   table: { backgroundColor: colors.white, border: `1 solid ${colors.border}` },
-  tableHeader: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: colors.cream, paddingVertical: 5, paddingHorizontal: 7 },
+  tableHeader: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: colors.white, borderBottom: `1 solid ${colors.border}`, paddingVertical: 5, paddingHorizontal: 7 },
   tableHeaderText: { fontSize: 7.5, fontWeight: 'bold', color: colors.navyMuted, letterSpacing: 0.6 },
-  groupLabel: { backgroundColor: '#EEE9E0', paddingVertical: 4, paddingHorizontal: 7, fontSize: 8, fontWeight: 'bold' },
+  groupLabel: { backgroundColor: colors.white, borderTop: `1 solid ${colors.navy}`, borderBottom: `0.5 solid ${colors.border}`, paddingVertical: 4, paddingHorizontal: 7, fontSize: 7.5, color: colors.navyMuted, fontWeight: 'bold', letterSpacing: 0.45 },
   row: { flexDirection: 'row', justifyContent: 'space-between', gap: 10, paddingVertical: 4, paddingHorizontal: 7, borderBottom: `0.5 solid ${colors.border}` },
   rowText: { flex: 1, flexDirection: 'column', gap: 2 },
   rowPrimary: { fontSize: 8.4, color: colors.navy },
@@ -104,13 +105,13 @@ const styles = StyleSheet.create({
   panelText: { color: colors.navyMuted, fontSize: 7.8, lineHeight: 1.35, marginBottom: 3 },
   protectionPrice: { fontSize: 11, fontWeight: 'bold', marginTop: 3 },
   protectionDelta: { color: colors.red, fontSize: 9, fontWeight: 'bold', marginTop: 3 },
-  noteBox: { backgroundColor: colors.cream, borderLeft: `3 solid ${colors.gold}`, padding: 8, marginBottom: 10 },
+  noteBox: { backgroundColor: colors.white, borderLeft: `2 solid ${colors.red}`, paddingVertical: 5, paddingLeft: 8, marginBottom: 9 },
   noteText: { fontSize: 8, lineHeight: 1.35 },
   cta: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', border: `1.5 solid ${colors.red}`, backgroundColor: colors.white, padding: 9, marginBottom: 10 },
   ctaTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 3 },
   ctaText: { fontSize: 8, color: colors.navyMuted, marginBottom: 2 },
   qr: { width: 64, height: 64 },
-  deposit: { backgroundColor: colors.cream, border: `1.5 solid ${colors.gold}`, padding: 9, marginBottom: 10 },
+  deposit: { backgroundColor: colors.white, border: `1.25 solid ${colors.navy}`, borderLeft: `3 solid ${colors.red}`, padding: 9, marginBottom: 10 },
   depositTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 5 },
   footer: { position: 'absolute', left: 28, right: 28, bottom: 18, borderTop: `1 solid ${colors.border}`, paddingTop: 5, flexDirection: 'row', justifyContent: 'space-between' },
   footerText: { color: colors.navyMuted, fontSize: 6.7 },
@@ -241,13 +242,13 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
       <Page size="LETTER" style={styles.page} wrap>
         <View style={styles.header} wrap={false}>
           <View style={styles.logos}>
-            <Text style={styles.harrisWordmark}>HARRIS BOAT WORKS</Text>
+            <Image src={harrisLogo} style={styles.harrisLogo} />
             <View style={styles.brandDivider} />
-            <Text style={styles.mercuryWordmark}>MERCURY</Text>
+            <Image src={mercuryLogo} style={styles.mercuryLogo} />
           </View>
           <View>
-            <Text style={styles.headerTitle}>Your Mercury Outboard Quote</Text>
-            <Text style={styles.headerKicker}>Harris Boat Works | Mercury Marine Premier Dealer</Text>
+            <Text style={styles.headerTitle}>Mercury Outboard Quote</Text>
+            <Text style={styles.headerKicker}>Prepared by Harris Boat Works | Mercury Marine Premier Dealer</Text>
           </View>
         </View>
 
@@ -302,8 +303,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             </View>
             {groups.map((group) => (
               <View key={group.key}>
-                <Text style={styles.groupLabel}>{group.title}</Text>
-                {group.items.map((item, index) => <LineItemRow key={`${group.key}-${index}-${item.name}`} item={item} />)}
+                <View wrap={false}>
+                  <Text style={styles.groupLabel}>{group.title}</Text>
+                  <LineItemRow item={group.items[0]} />
+                </View>
+                {group.items.slice(1).map((item, index) => <LineItemRow key={`${group.key}-${index + 1}-${item.name}`} item={item} />)}
               </View>
             ))}
             {groups.length === 0 ? <View style={styles.row}><Text style={styles.rowLabel}>{quoteData.includesInstallation ? 'Configured installation and setup' : 'Loose motor supply - installation not included'}</Text><Text style={styles.rowValue}>As shown</Text></View> : null}
