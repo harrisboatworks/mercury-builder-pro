@@ -17,7 +17,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { isTillerMotor } from '@/lib/utils';
 import { TransomHeightCalculator } from '@/components/motors/TransomHeightCalculator';
-import { TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
+import { parseMotorHorsepowerInput, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -781,9 +781,9 @@ export const BoatInformation = ({
                     {boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor' && <>
                         <div className="space-y-2">
                           <Label className="font-light">Current Motor Horsepower (HP)</Label>
-                          <Input type="number" inputMode="numeric" min={1} max={600} placeholder="e.g., 115" value={boatInfo.currentHp || ''} onChange={e => setBoatInfo(prev => ({
+                          <Input type="number" inputMode="decimal" min={1} max={600} step="0.1" placeholder="e.g., 9.9 or 115" value={boatInfo.currentHp || ''} onChange={e => setBoatInfo(prev => ({
                       ...prev,
-                      currentHp: parseInt(e.target.value || '0', 10) || 0
+                      currentHp: parseMotorHorsepowerInput(e.target.value)
                     }))} />
                          <p className="text-xs text-protected-subtle">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
                        </div>

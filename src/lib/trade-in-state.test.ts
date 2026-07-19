@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import type { BoatInfo } from '@/components/QuoteBuilder';
-import { buildInitialTradeInInfo, isSupportedTradeInYear } from './trade-in-state';
+import {
+  buildInitialTradeInInfo,
+  isSupportedTradeInYear,
+  parseMotorHorsepowerInput,
+} from './trade-in-state';
 
 const boatInfo = (
   currentMotorBrand: string,
@@ -55,5 +59,17 @@ describe('isSupportedTradeInYear', () => {
     expect(isSupportedTradeInYear(1950, 2026)).toBe(true);
     expect(isSupportedTradeInYear(2026, 2026)).toBe(true);
     expect(isSupportedTradeInYear(2027, 2026)).toBe(false);
+  });
+});
+
+describe('parseMotorHorsepowerInput', () => {
+  it('preserves decimal horsepower used by portable outboards', () => {
+    expect(parseMotorHorsepowerInput('9.9')).toBe(9.9);
+    expect(parseMotorHorsepowerInput('2.5')).toBe(2.5);
+  });
+
+  it('normalizes empty or invalid values to zero', () => {
+    expect(parseMotorHorsepowerInput('')).toBe(0);
+    expect(parseMotorHorsepowerInput('-9.9')).toBe(0);
   });
 });
