@@ -55,90 +55,28 @@ export default function SavedQuotePage() {
               msrp: quoteData.motorMsrp,
             };
           }
-          if (motorData) {
-            dispatch({ type: 'SET_MOTOR', payload: motorData });
-          }
-          if (quoteData.purchasePath) {
-            dispatch({ type: 'SET_PURCHASE_PATH', payload: quoteData.purchasePath });
-          }
-          if (quoteData.boatInfo) {
-            dispatch({ type: 'SET_BOAT_INFO', payload: quoteData.boatInfo });
-          }
-          if (quoteData.fuelTankConfig) {
-            dispatch({ type: 'SET_FUEL_TANK_CONFIG', payload: quoteData.fuelTankConfig });
-          }
-          if (quoteData.tradeInInfo) {
-            dispatch({ type: 'SET_TRADE_IN_INFO', payload: quoteData.tradeInInfo });
-          }
-          if (quoteData.installConfig) {
-            dispatch({ type: 'SET_INSTALL_CONFIG', payload: quoteData.installConfig });
-          }
-          if (quoteData.warrantyConfig) {
-            dispatch({ type: 'SET_WARRANTY_CONFIG', payload: quoteData.warrantyConfig });
-          }
-          if (quoteData.selectedOptions) {
-            dispatch({ type: 'SET_SELECTED_OPTIONS', payload: quoteData.selectedOptions });
-          }
-          if (quoteData.selectedPackage) {
-            dispatch({ type: 'SET_SELECTED_PACKAGE', payload: quoteData.selectedPackage });
-          }
-          if (quoteData.looseMotorBattery) {
-            dispatch({ type: 'SET_LOOSE_MOTOR_BATTERY', payload: quoteData.looseMotorBattery });
-          }
-          
-          // Restore promo selection with full details
-          if (quoteData.selectedPromoOption) {
-            dispatch({ 
-              type: 'SET_PROMO_DETAILS', 
-              payload: {
-                option: quoteData.selectedPromoOption,
-                rate: quoteData.selectedPromoRate,
-                term: quoteData.selectedPromoTerm,
-                value: quoteData.selectedPromoValue
-              }
+          // Restore the saved state atomically. Dispatching SET_MOTOR first can
+          // legitimately clear motor-dependent fields before later dispatches,
+          // which made QR resumes lose the authoritative PDF snapshot and other
+          // quote details during the same render.
+          dispatch({
+            type: 'RESTORE_QUOTE',
+            payload: {
+              ...quoteData,
+              motor: motorData || null,
+              customerName: quoteData.customerName ?? quote.customer_name ?? '',
+              customerEmail: quoteData.customerEmail ?? '',
+              customerPhone: quoteData.customerPhone ?? '',
+              customerNotes: quoteData.customerNotes ?? quote.customer_notes ?? '',
+              isAdminQuote: quoteData.isAdminQuote ?? quote.is_admin_quote ?? false,
+            },
+          });
+
+          if (quoteData.isAdminQuote || quote.is_admin_quote) {
+            dispatch({
+              type: 'SET_ADMIN_MODE',
+              payload: { isAdmin: true, editingQuoteId: quoteId },
             });
-          }
-          if (quoteData.selectedPaymentMethod) {
-            dispatch({ type: 'SET_PAYMENT_METHOD', payload: quoteData.selectedPaymentMethod });
-          }
-          
-          // Restore frozen pricing snapshot (ensures PDF ↔ web parity)
-          if (quoteData.frozenPricing) {
-            dispatch({ type: 'SET_FROZEN_PRICING', payload: quoteData.frozenPricing });
-          }
-          
-          // Restore admin fields from quote_data OR direct columns
-          const adminDiscountValue = quoteData.adminDiscount ?? quote.admin_discount ?? 0;
-          const adminNotesValue = quoteData.adminNotes ?? quote.admin_notes ?? '';
-          const customerNotesValue = quoteData.customerNotes ?? quote.customer_notes ?? '';
-          const adminCustomItemsValue = quoteData.adminCustomItems ?? [];
-          
-          // Restore customer info from quote_data (preferred) or edge function response
-          const customerNameValue = quoteData.customerName ?? quote.customer_name ?? '';
-          const customerEmailValue = quoteData.customerEmail ?? '';
-          const customerPhoneValue = quoteData.customerPhone ?? '';
-          
-          if (adminDiscountValue > 0 || adminNotesValue || customerNotesValue || adminCustomItemsValue.length > 0 || quoteData.isAdminQuote || quote.is_admin_quote) {
-            dispatch({ 
-              type: 'SET_ADMIN_QUOTE_DATA', 
-              payload: { 
-                adminDiscount: adminDiscountValue,
-                adminNotes: adminNotesValue,
-                customerNotes: customerNotesValue,
-                adminCustomItems: adminCustomItemsValue,
-                customerName: customerNameValue,
-                customerEmail: customerEmailValue,
-                customerPhone: customerPhoneValue,
-              }
-            });
-            
-            // Set admin mode with the quote ID for potential editing
-            if (quoteData.isAdminQuote || quote.is_admin_quote) {
-              dispatch({ 
-                type: 'SET_ADMIN_MODE', 
-                payload: { isAdmin: true, editingQuoteId: quoteId }
-              });
-            }
           }
         }
 

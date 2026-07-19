@@ -15,6 +15,7 @@ import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShe
 import { QuoteStepNav } from '@/components/quote-builder/redesign/QuoteStepNav';
 import { QuoteRadioTile } from '@/components/quote-builder/redesign/QuoteRadioTile';
 import { QuoteCheckbox } from '@/components/quote-builder/redesign/QuoteCheckbox';
+import { calculateQuoteOptionsTotal } from '@/lib/quote-options-total';
 
 // Categories that should display as visual cards when they have images
 const VISUAL_CATEGORIES = ['electronics', 'accessory', 'maintenance'];
@@ -201,9 +202,8 @@ export default function OptionsPage() {
       ...categorizedOptions.recommended,
       ...categorizedOptions.available,
     ];
-    return allOptions
-      .filter((opt) => localSelectedIds.has(opt.id))
-      .reduce((sum, opt) => sum + (opt.is_included ? 0 : (opt.price_override ?? opt.base_price)), 0);
+    const selectedBatteryPrice = isElectricStart && batteryChoice === true ? BATTERY_COST : 0;
+    return calculateQuoteOptionsTotal(allOptions, localSelectedIds, selectedBatteryPrice);
   };
 
   if (!state.motor) return null;
