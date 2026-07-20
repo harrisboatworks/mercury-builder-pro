@@ -337,6 +337,27 @@ function directiveToMarkdown(name, body) {
   return lines.join('\n');
 }
 
+const INLINE_FAQ_HEADING_LABELS = [
+  'Frequently Asked Questions', 'FAQs', 'FAQ', 'Common Questions',
+  'Common questions about HBW', 'Questions fréquentes', '자주 묻는 질문',
+  '常见问题', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+  'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal',
+  'اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات',
+  'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات', 'Mga madalas itanong',
+  'Mga karaniwang tanong', 'अक्सर पूछे जाने वाले प्रश्न',
+];
+const INLINE_FAQ_LABEL_PATTERN = INLINE_FAQ_HEADING_LABELS
+  .map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  .join('|');
+const AUTHORING_HEADING_LABELS = [
+  'Full Article', 'Article complet', 'Artículo completo', '전체 기사',
+  '다음 단계 / CTA', '行动呼吁（CTA）',
+];
+const AUTHORING_HEADING_PATTERN = [
+  ...AUTHORING_HEADING_LABELS.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+  String.raw`CTA(?:\s*[,/|:：—-]\s*[^\n]*)?`,
+].join('|');
+
 // Strip authoring scaffold and any legacy inline FAQ section when the article
 // has a faqs[] array. Mirrors the runtime renderer so .md twins match what
 // readers and crawlers see.
@@ -347,7 +368,7 @@ function cleanBlogContent(content, hasFaqs) {
     '',
   );
   c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  c = c.replace(/^##\s+(?:CTA|Full Article)\s*$/gim, '');
+  c = c.replace(new RegExp(`^#{2,3}\\s+(?:${AUTHORING_HEADING_PATTERN})\\s*$`, 'gim'), '');
   c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
   c = c.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');
   c = c.replace(/^::walkaround-lead-capture\s*$/gm, '[Request the used-boat walkaround checklist](/contact)');
@@ -373,10 +394,11 @@ function cleanBlogContent(content, hasFaqs) {
     '- **"$1"**  \n  $2',
   );
   if (hasFaqs) {
-    c = c.replace(
-      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-      '\n',
+    const faqSection = new RegExp(
+      `\\n##\\s+(?:${INLINE_FAQ_LABEL_PATTERN})(?:\\s*(?:\\||:|,|\\(|（|—|-)\\s*[^\\n]*)?\\s*\\n[\\s\\S]*?(?=\\n##\\s|\\s*$)`,
+      'gi',
     );
+    c = c.replace(faqSection, '\n');
   }
   return c.replace(/\n{3,}/g, '\n\n').trim();
 }

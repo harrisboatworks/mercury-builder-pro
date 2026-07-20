@@ -4419,7 +4419,7 @@ We're a third-generation family shop, on this dock since 1947 and a Mercury deal
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
->: Jay Harris, Harris Boat Works
+> *Jay Harris, Harris Boat Works*
 
 ## Who this is for
 
@@ -5526,6 +5526,8 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.' },
+      { question: 'Are Harris Boat Works prices competitive with other Mercury dealers?', answer: 'Yes. Mercury sets MSRP and our motor pricing is competitive across the dealer network. We compete on transparent pricing, Mercury expertise, service quality, water-tested installations, and long-term support.' },
+      { question: 'Can a multi-brand dealer offer a better Mercury price?', answer: 'Sometimes another dealer may quote a slightly different motor price. Compare the complete written quote, including rigging, controls, gauges, propeller allowance, installation, water testing, warranty support, and what happens after the sale.' },
       { question: 'Who runs Harris Boat Works now?', answer: 'Jay Harris, the third-generation owner. The Harris family has operated the marina continuously since 1947.' },
       { question: 'How do I get in touch with Harris Boat Works?', answer: 'Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also use our online Mercury quote builder.' },
     ]
@@ -26313,7 +26315,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Displacement | 208 cc (12.8 cu in) |
 | Dry weight | Approximately 84 lb |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---
@@ -26823,7 +26825,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
 | Dry weight | 359 lbs | 359 lbs |
-| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Full-throttle RPM | 4,500–5,500 | 5,000–6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
 | SmartCraft compatible | Yes | Yes |
@@ -30632,7 +30634,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "How much does a Pro XS repower cost in Ontario?",
-        answer: "It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical 175–250 HP Pro XS repower includes the 175 HP V6 and the 200–250 HP V8 models, plus controls, gauges, prop, steering, install labour, and taxes. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
+        answer: "It depends on HP, rigging, and what's reusable on your boat. The 175–250 HP Pro XS range spans the 175 HP V6 and the 200–250 HP V8 models. A complete repower may also require controls, gauges, a propeller allowance, steering, installation labour, and taxes. A 300 Pro XS V8 build sits higher, while a 150 Pro XS inline-4 build sits lower. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
       },
       {
         question: "Do I need Command Thrust on my Pro XS?",
@@ -33427,7 +33429,7 @@ For Rice Lake cottage applications, the Avator vs gas outboard decision usually 
 | Half-day light use | Good fit | Standard answer |
 | Full-day fishing crossing the lake | Range limited | Standard answer |
 | Multi-day trips without charging access | Doesn't work | Standard answer |
-| Quiet operation (early morning fishing) | Major advantage |, |
+| Quiet operation (early morning fishing) | Major advantage | Normal engine noise |
 | Low maintenance | Major advantage | More service required |
 | Cottage charging logistics | Required infrastructure | None |
 | Cold weather operation | Reduced capacity | Standard |

@@ -243,7 +243,8 @@ export default function KoreanBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/ko/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(article.content, 'ko', Boolean(article.faqs?.length));
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -364,7 +365,7 @@ export default function KoreanBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'ko', Boolean(article.faqs?.length)))}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {/* FAQ Section */}

@@ -243,7 +243,8 @@ export default function SpanishBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/es/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(article.content, 'es', Boolean(article.faqs?.length));
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -364,7 +365,7 @@ export default function SpanishBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'es', Boolean(article.faqs?.length)))}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {!shouldSuppressAutoCTA(article.content) && (

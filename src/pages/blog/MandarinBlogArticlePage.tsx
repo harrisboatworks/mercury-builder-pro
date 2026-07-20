@@ -48,7 +48,12 @@ export default function MandarinBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/zh/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(
+    article.content.replace(/^\s*#\s+.+\n+/, ''),
+    'zh',
+    Boolean(article.faqs?.length),
+  );
+  const tocItems = extractHeaders(cleanedContent);
   const relatedArticles = mandarinBlogArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
@@ -215,10 +220,7 @@ export default function MandarinBlogArticlePage() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={(() => {
-                const c = article.content.replace(/^\s*#\s+.+\n+/, '');
-                return cleanLocalizedBlogContent(c, 'zh', Boolean(article.faqs?.length));
-              })()}
+              content={cleanedContent}
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains
                 // the only h1 on the page (matches EN BlogArticle.tsx behavior).

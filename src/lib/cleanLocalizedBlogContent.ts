@@ -1,4 +1,6 @@
 const RELATED_LABELS: Record<string, string> = {
+  en: 'Related reading',
+  fr: 'Lectures connexes',
   ko: '관련 자료',
   zh: '相关阅读',
   es: 'Lecturas relacionadas',
@@ -9,17 +11,19 @@ const RELATED_LABELS: Record<string, string> = {
 };
 
 const FAQ_LABELS: Record<string, string[]> = {
+  fr: ['Questions fréquentes'],
   ko: ['자주 묻는 질문'],
   zh: ['常见问题'],
   es: ['Preguntas frecuentes'],
-  pa: ['ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ'],
-  ur: ['اکثر پوچھے جانے والے سوالات'],
-  tl: ['Mga madalas itanong'],
+  pa: ['ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal'],
+  ur: ['اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات', 'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات'],
+  tl: ['Mga madalas itanong', 'Mga karaniwang tanong'],
   hi: ['अक्सर पूछे जाने वाले प्रश्न'],
 };
 
 const INTERNAL_LINK_LABELS = [
   'Internal Links',
+  'Liens internes',
   '내부 링크',
   '内部链接',
   'Enlaces internos',
@@ -27,6 +31,15 @@ const INTERNAL_LINK_LABELS = [
   'اندرونی روابط',
   'Mga panloob na link',
   'आंतरिक लिंक',
+];
+
+const AUTHORING_HEADING_LABELS = [
+  'Full Article',
+  'Article complet',
+  'Artículo completo',
+  '전체 기사',
+  '다음 단계 / CTA',
+  '行动呼吁（CTA）',
 ];
 
 function escapeRegExp(value: string): string {
@@ -41,14 +54,26 @@ export function cleanLocalizedBlogContent(content: string, language: string, has
     '',
   );
   cleaned = cleaned.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  cleaned = cleaned.replace(/^##\s+(?:CTA|Full Article)\s*$/gim, '');
+  const authoringHeadings = new RegExp(
+    `^#{2,3}\\s+(?:${AUTHORING_HEADING_LABELS.map(escapeRegExp).join('|')}|CTA(?:\\s*[,/|:：—-]\\s*[^\\n]*)?)\\s*$`,
+    'gim',
+  );
+  cleaned = cleaned.replace(authoringHeadings, '');
   const internalLinks = new RegExp(`^(##\\s+)(?:${INTERNAL_LINK_LABELS.map(escapeRegExp).join('|')})\\s*$`, 'gim');
   cleaned = cleaned.replace(internalLinks, `$1${RELATED_LABELS[language] || 'Related reading'}`);
+  cleaned = cleaned.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');
 
   if (hasFaqs) {
-    const faqLabels = ['Frequently Asked Questions', 'FAQ', 'FAQs', 'Common Questions', ...(FAQ_LABELS[language] || [])];
+    const faqLabels = [
+      'Frequently Asked Questions',
+      'FAQs',
+      'FAQ',
+      'Common Questions',
+      'Common questions about HBW',
+      ...(FAQ_LABELS[language] || []),
+    ];
     const faqHeading = new RegExp(
-      `\\n##\\s+(?:${faqLabels.map(escapeRegExp).join('|')})\\s*[^\\n]*\\n[\\s\\S]*?(?=\\n##\\s|\\s*$)`,
+      `\\n##\\s+(?:${faqLabels.map(escapeRegExp).join('|')})(?:\\s*(?:\\||:|,|\\(|（|—|-)\\s*[^\\n]*)?\\s*\\n[\\s\\S]*?(?=\\n##\\s|\\s*$)`,
       'gi',
     );
     cleaned = cleaned.replace(faqHeading, '\n');

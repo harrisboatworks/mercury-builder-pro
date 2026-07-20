@@ -22,6 +22,28 @@ const staticRenderer = readFileSync('scripts/static-prerender.mjs', 'utf8');
 const runtimeRenderer = readFileSync('src/components/blog/MarkdownSectionCards.tsx', 'utf8');
 const twinGenerator = readFileSync('scripts/generate-markdown-twins.mjs', 'utf8');
 
+const FAQ_HEADING_LABELS = [
+  'Frequently Asked Questions', 'FAQs', 'FAQ', 'Common Questions',
+  'Common questions about HBW', 'Questions fréquentes', '자주 묻는 질문',
+  '常见问题', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+  'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal',
+  'اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات',
+  'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات', 'Mga madalas itanong',
+  'Mga karaniwang tanong', 'अक्सर पूछे जाने वाले प्रश्न',
+];
+const FAQ_LABEL_PATTERN = FAQ_HEADING_LABELS
+  .map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  .join('|');
+const FAQ_TRAILER_PATTERN = String.raw`(?:\s*(?:\||:|,|\(|（|—|-)\s*[^\n<]*)?`;
+const AUTHORING_HEADING_LABELS = [
+  'Full Article', 'Article complet', 'Artículo completo', '전체 기사',
+  '다음 단계 / CTA', '行动呼吁（CTA）',
+];
+const AUTHORING_HEADING_PATTERN = [
+  ...AUTHORING_HEADING_LABELS.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+  String.raw`CTA(?:\s*[,/|:：—-]\s*[^\n<]*)?`,
+].join('|');
+
 if (!/::bilingual-trust\(\?:-card\)\?/.test(staticRenderer)) {
   fail('scripts/static-prerender.mjs', 'must render the bilingual-trust-card alias');
 }
@@ -40,11 +62,11 @@ if (!/directiveToMarkdown/.test(twinGenerator)) {
 
 const htmlLeakPatterns = [
   [/::(?:cta|bilingual-trust(?:-card)?|decision-card|diagnostic-flow|cost-stack)\b/i, 'raw visual directive'],
+  [/(?:<|&lt;)div\s+class=(?:"|&quot;)hbw-language-note(?:"|&quot;)/i, 'raw language-note HTML'],
   [/\{\{LIVE_[A-Z_]+\}\}/, 'unresolved live token'],
-  [/<h2[^>]*>\s*(?:CTA|Internal Links|Full Article)\s*<\/h2>/i, 'authoring-only H2'],
+  [new RegExp(`<h[23][^>]*>\\s*(?:Internal Links|${AUTHORING_HEADING_PATTERN})\\s*<\\/h[23]>`, 'i'), 'authoring-only heading'],
   [/(?:^|>)\s*Language:\s*English\s*(?:<|$)/im, 'Language scaffold'],
   [/(?:^|>)\s*Canonical URL:\s*https?:\/\//im, 'Canonical URL scaffold'],
-  [/<\/a>\s+—\s+/g, 'em-dash related-guide separator'],
 ];
 
 const htmlFiles = walk('dist/blog', (path) => path.endsWith('/index.html'));
@@ -54,8 +76,14 @@ for (const file of htmlFiles) {
     pattern.lastIndex = 0;
     if (pattern.test(html)) fail(file, label);
   }
-  const faqHeadings = html.match(/<h2[^>]*>\s*(?:Frequently Asked Questions|FAQs?)\s*<\/h2>/gi) || [];
+  const faqHeadingPattern = new RegExp(
+    `<h2[^>]*>\\s*(?:${FAQ_LABEL_PATTERN})${FAQ_TRAILER_PATTERN}\\s*<\\/h2>`,
+    'gi',
+  );
+  const faqHeadings = html.match(faqHeadingPattern) || [];
   if (faqHeadings.length > 1) fail(file, `${faqHeadings.length} FAQ section headings`);
+  const relatedGuides = html.match(/<aside aria-labelledby="related-guides-heading-ssg">[\s\S]*?<\/aside>/i)?.[0] || '';
+  if (/<\/a>\s+—\s+/.test(relatedGuides)) fail(file, 'em-dash related-guide separator');
   if (/\/blog\/(?:fr|ko|zh|es|pa|ur|tl|hi)\//.test(file.replace(/\\/g, '/')) && /class="author-byline"[^>]*>[\s\S]{0,120}<span>By\s/.test(html)) {
     fail(file, 'English static byline on a translated article');
   }
@@ -64,8 +92,9 @@ for (const file of htmlFiles) {
 const twinFiles = walk('public/blog', (path) => path.endsWith('.md'));
 const twinLeakPatterns = [
   [/^::(?:[a-z][a-z-]*)(?:\s|$)/m, 'raw visual directive'],
+  [/<div\s+class="hbw-language-note"/i, 'raw language-note HTML'],
   [/\{\{LIVE_[A-Z_]+\}\}/, 'unresolved live token'],
-  [/^##\s+(?:CTA|Internal Links|Full Article)\s*$/im, 'authoring-only heading'],
+  [new RegExp(`^#{2,3}\\s+(?:Internal Links|${AUTHORING_HEADING_PATTERN})\\s*$`, 'im'), 'authoring-only heading'],
   [/^\s*Language:\s*English\s*$/im, 'Language scaffold'],
   [/^[*_\s]*Canonical URL\s*:[*_\s]*https?:\/\//im, 'Canonical URL scaffold'],
 ];
@@ -73,6 +102,31 @@ for (const file of twinFiles) {
   const markdown = readFileSync(file, 'utf8');
   for (const [pattern, label] of twinLeakPatterns) {
     if (pattern.test(markdown)) fail(file, label);
+  }
+  const faqHeadingPattern = new RegExp(
+    `^##\\s+(?:${FAQ_LABEL_PATTERN})${FAQ_TRAILER_PATTERN}\\s*$`,
+    'gim',
+  );
+  const faqHeadings = markdown.match(faqHeadingPattern) || [];
+  if (faqHeadings.length > 1) fail(file, `${faqHeadings.length} FAQ section headings`);
+}
+
+const whyHbwQuestionGuards = [
+  'Are Harris Boat Works prices competitive with other Mercury dealers?',
+  'Can a multi-brand dealer offer a better Mercury price?',
+];
+const whyHbwArtifacts = [
+  'dist/blog/why-harris-boat-works-mercury-dealer/index.html',
+  'public/blog/why-harris-boat-works-mercury-dealer.md',
+];
+for (const file of whyHbwArtifacts) {
+  if (!existsSync(file)) {
+    fail(file, 'missing why-HBW parity artifact');
+    continue;
+  }
+  const content = readFileSync(file, 'utf8');
+  for (const question of whyHbwQuestionGuards) {
+    if (!content.includes(question)) fail(file, `missing recovered pricing question: ${question}`);
   }
 }
 

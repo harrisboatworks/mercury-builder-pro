@@ -241,7 +241,8 @@ export default function TagalogBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/tl/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(article.content, 'tl', Boolean(article.faqs?.length));
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -351,7 +352,7 @@ export default function TagalogBlogArticlePage() {
         )}
 
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'tl', Boolean(article.faqs?.length)))}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {article.faqs && article.faqs.length > 0 && (

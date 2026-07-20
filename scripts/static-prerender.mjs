@@ -451,6 +451,27 @@ function expandVisualDirectives(md) {
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
+const INLINE_FAQ_HEADING_LABELS = [
+  'Frequently Asked Questions', 'FAQs', 'FAQ', 'Common Questions',
+  'Common questions about HBW', 'Questions fréquentes', '자주 묻는 질문',
+  '常见问题', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+  'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal',
+  'اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات',
+  'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات', 'Mga madalas itanong',
+  'Mga karaniwang tanong', 'अक्सर पूछे जाने वाले प्रश्न',
+];
+const INLINE_FAQ_LABEL_PATTERN = INLINE_FAQ_HEADING_LABELS
+  .map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  .join('|');
+const AUTHORING_HEADING_LABELS = [
+  'Full Article', 'Article complet', 'Artículo completo', '전체 기사',
+  '다음 단계 / CTA', '行动呼吁（CTA）',
+];
+const AUTHORING_HEADING_PATTERN = [
+  ...AUTHORING_HEADING_LABELS.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+  String.raw`CTA(?:\s*[,/|:：—-]\s*[^\n]*)?`,
+].join('|');
+
 function normalizeArticleContent(content, { hasFaqs = false, language = 'en' } = {}) {
   if (!content) return '';
   let s = String(content);
@@ -470,7 +491,7 @@ function normalizeArticleContent(content, { hasFaqs = false, language = 'en' } =
     '',
   );
   s = s.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  s = s.replace(/^##\s+(?:CTA|Full Article)\s*$/gim, '');
+  s = s.replace(new RegExp(`^#{2,3}\\s+(?:${AUTHORING_HEADING_PATTERN})\\s*$`, 'gim'), '');
   const relatedLabels = {
     en: 'Related reading', fr: 'Lectures connexes', ko: '관련 자료', zh: '相关阅读',
     es: 'Lecturas relacionadas', pa: 'ਸੰਬੰਧਿਤ ਗਾਈਡਾਂ', ur: 'متعلقہ رہنما',
@@ -482,10 +503,11 @@ function normalizeArticleContent(content, { hasFaqs = false, language = 'en' } =
   );
   s = s.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');
   if (hasFaqs) {
-    s = s.replace(
-      /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions|Questions fréquentes|자주 묻는 질문|常见问题|Preguntas frecuentes|ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ|اکثر پوچھے جانے والے سوالات|Mga madalas itanong|अक्सर पूछे जाने वाले प्रश्न)\s*[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
-      '\n',
+    const faqSection = new RegExp(
+      `\\n##\\s+(?:${INLINE_FAQ_LABEL_PATTERN})(?:\\s*(?:\\||:|,|\\(|（|—|-)\\s*[^\\n]*)?\\s*\\n[\\s\\S]*?(?=\\n##\\s|\\s*$)`,
+      'gi',
     );
+    s = s.replace(faqSection, '\n');
   }
   // Strip author footer signature (handled by AuthorByline component in SPA).
   s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
@@ -504,6 +526,9 @@ function renderArticleBodyHtml(content, options = {}) {
   const { md: expanded, slots } = expandVisualDirectives(s);
   s = expanded;
   s = s.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+  // Marked treats paired single tildes as GFM strikethrough. Localized ranges
+  // such as `16~19피트` must stay literal; preserve deliberate `~~strike~~`.
+  s = s.replace(/(?<!~)~(?!~)/g, '\\~');
   try {
     let html = marked.parse(s);
     // Restore prerendered directive HTML after marked runs.

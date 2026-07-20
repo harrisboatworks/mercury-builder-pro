@@ -5,7 +5,6 @@
  */
 export const ZH_TO_EN_SLUG: Record<string, string> = {
   'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
-  'mercury-repower-guide-gta': 'repower-vs-new-boat',
   'mercury-fourstroke-pro-xs-verado-chinese-comparison': 'fourstroke-vs-pro-xs',
 };
 

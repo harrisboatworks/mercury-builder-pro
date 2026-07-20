@@ -8,7 +8,7 @@ export const frenchBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-20',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -23,11 +23,11 @@ Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état
 
 Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce que ça vaut la peine de le remplacer, ou mieux vaut acheter un nouveau bateau ?
 
-<div class="hbw-language-note">
-  <h3>Une note sur la langue</h3>
-  <p>Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.</p>
-  <p>Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.</p>
-</div>
+### Une note sur la langue
+
+Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
+
+Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
 

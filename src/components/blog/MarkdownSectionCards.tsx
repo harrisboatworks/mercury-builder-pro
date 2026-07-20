@@ -952,7 +952,7 @@ function renderMarkdownWithDirectives(
     return (
       <ReactMarkdown
         key={`${keyPrefix}-md-${i}`}
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
         components={components}
       >
         {chunk.content}

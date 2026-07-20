@@ -241,7 +241,8 @@ export default function HindiBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/hi/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(article.content, 'hi', Boolean(article.faqs?.length));
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -351,7 +352,7 @@ export default function HindiBlogArticlePage() {
         )}
 
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'hi', Boolean(article.faqs?.length)))}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {article.faqs && article.faqs.length > 0 && (
