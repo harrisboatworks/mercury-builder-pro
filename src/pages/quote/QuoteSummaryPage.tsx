@@ -9,7 +9,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
-import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
+import { getRecommendedDeposit } from '@/lib/deposit';
 import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
@@ -87,7 +87,7 @@ export default function QuoteSummaryPage() {
   const { state, dispatch, getQuoteData } = useQuote();
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
   const baseCoverageYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
@@ -797,6 +797,24 @@ export default function QuoteSummaryPage() {
         customerPhone: state.customerPhone || '',
         snapshot: pdfSnapshot,
         savedQuoteQrCode,
+        recommendedDepositAmount: depositAmount,
+        promotionalFinancingAlternative: (() => {
+          if (state.selectedPaymentMethod === 'special_financing') return undefined;
+          const promotionalFinancing = getPromotionOptions()
+            .find((option) => option.id === 'special_financing');
+          if (
+            promotionalFinancing?.minimum_amount
+            && amountToFinance < promotionalFinancing.minimum_amount
+          ) {
+            return undefined;
+          }
+          const promotionalRate = promotionalFinancing?.rates?.[0];
+          if (!promotionalRate) return undefined;
+          return {
+            rate: promotionalRate.rate,
+            termMonths: promotionalRate.months,
+          };
+        })(),
       };
       
       // Save a CRM lead only when the quote has a real, contactable customer.

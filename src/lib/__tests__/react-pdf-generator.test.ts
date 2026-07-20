@@ -20,6 +20,8 @@ describe('professional quote PDF normalization', () => {
         paymentMethod: 'standard_financing',
         financing: { monthlyPayment: 240, rate: 5.48, amortizationMonths: 60, contractTermMonths: 60, amountFinanced: 12553, dealerFee: 349 },
       },
+      recommendedDepositAmount: 500,
+      promotionalFinancingAlternative: { rate: 2.99, termMonths: 24 },
       // Contradictory legacy values must not override the exact snapshot.
       pricing: { totalCashPrice: 1, promoValue: 0 },
       monthlyPayment: 1,
@@ -34,6 +36,8 @@ describe('professional quote PDF normalization', () => {
     expect(result.financingRate).toBe(5.48);
     expect(result.dealerFee).toBe(349);
     expect(result.includesInstallation).toBe(true);
+    expect(result.recommendedDepositAmount).toBe(500);
+    expect(result.promotionalFinancingAlternative).toEqual({ rate: 2.99, termMonths: 24 });
   });
 
   it('uses the nested financing object for older exact callers', () => {
@@ -50,6 +54,7 @@ describe('professional quote PDF normalization', () => {
     expect(result.financingTerm).toBe(48);
     expect(result.financingRate).toBe(7.99);
     expect(result.financingAmount).toBe(5434);
+    expect(result.recommendedDepositAmount).toBe(200);
   });
 
   it('keeps the saved-quote QR code on a cash quote', () => {

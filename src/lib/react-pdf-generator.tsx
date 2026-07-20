@@ -2,6 +2,7 @@
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
 import { validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { getRecommendedDeposit } from '@/lib/deposit';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -59,6 +60,11 @@ export interface ReactPdfQuoteData {
   financingTerm?: number;
   financingRate?: number;
   savedQuoteQrCode?: string;
+  recommendedDepositAmount?: number;
+  promotionalFinancingAlternative?: {
+    rate: number;
+    termMonths: number;
+  };
   /** @deprecated Use savedQuoteQrCode. Kept for older callers during migration. */
   financingQrCode?: string;
   pricing?: any;
@@ -162,6 +168,9 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     dealerFee: financing?.dealerFee,
     financingContractTerm: financing?.contractTermMonths,
     savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
+    recommendedDepositAmount: data.recommendedDepositAmount
+      ?? getRecommendedDeposit(Number(motor.hp || 0)),
+    promotionalFinancingAlternative: data.promotionalFinancingAlternative,
     includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
     selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
     selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,

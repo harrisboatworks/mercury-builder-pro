@@ -10,6 +10,7 @@ import {
 } from '@react-pdf/renderer';
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import { getRecommendedDeposit } from '@/lib/deposit';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -82,6 +83,11 @@ const styles = StyleSheet.create({
   infoRow: { flexDirection: 'row', marginBottom: 2.5 },
   infoLabel: { width: 55, color: colors.navyMuted, fontSize: 7.5 },
   infoValue: { flex: 1, fontSize: 7.8 },
+  quoteQrRow: { flexDirection: 'row', alignItems: 'center', gap: 7, borderTop: `0.5 solid ${colors.border}`, marginTop: 4, paddingTop: 5 },
+  quoteQr: { width: 42, height: 42 },
+  quoteQrCopy: { flex: 1 },
+  quoteQrTitle: { fontSize: 7.8, fontWeight: 'bold', marginBottom: 2 },
+  quoteQrText: { color: colors.navyMuted, fontSize: 6.5, lineHeight: 1.25 },
   section: { marginBottom: 8 },
   sectionTitle: { fontSize: 11.5, fontWeight: 'bold', marginBottom: 6, paddingBottom: 4, borderBottom: `1 solid ${colors.red}` },
   table: { backgroundColor: colors.white, border: `1 solid ${colors.border}` },
@@ -110,9 +116,14 @@ const styles = StyleSheet.create({
   cta: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', border: `1.5 solid ${colors.red}`, backgroundColor: colors.white, padding: 5, marginBottom: 7 },
   ctaTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 3 },
   ctaText: { fontSize: 8, color: colors.navyMuted, marginBottom: 2 },
-  qrBlock: { width: 76, alignItems: 'center' },
-  qr: { width: 58, height: 58 },
-  qrCaption: { color: colors.navyMuted, fontSize: 6.5, marginTop: 3, textAlign: 'center' },
+  reserveCallout: { border: `1.5 solid ${colors.red}`, borderLeft: `4 solid ${colors.red}`, backgroundColor: colors.white, padding: 8, marginTop: 2, marginBottom: 8 },
+  reserveTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 3 },
+  reserveText: { color: colors.navyMuted, fontSize: 7.6, lineHeight: 1.35 },
+  reservePolicy: { color: colors.navyMuted, fontSize: 6.7, lineHeight: 1.3, marginTop: 3 },
+  trustStrip: { borderTop: `1 solid ${colors.navy}`, borderBottom: `1 solid ${colors.navy}`, paddingVertical: 6, paddingHorizontal: 4, marginTop: 2 },
+  trustTitle: { color: colors.red, fontSize: 7.2, fontWeight: 'bold', letterSpacing: 0.7, textAlign: 'center', marginBottom: 3 },
+  trustText: { color: colors.navy, fontSize: 7.2, lineHeight: 1.35, textAlign: 'center' },
+  promoFinanceNote: { color: colors.red, fontSize: 7.3, fontWeight: 'bold', lineHeight: 1.3, marginTop: 2 },
   deposit: { backgroundColor: colors.white, border: `1.25 solid ${colors.navy}`, borderLeft: `3 solid ${colors.red}`, padding: 9, marginBottom: 10 },
   depositTitle: { fontSize: 10.5, fontWeight: 'bold', marginBottom: 5 },
   footer: { position: 'absolute', left: 28, right: 28, bottom: 18, borderTop: `1 solid ${colors.border}`, paddingTop: 5, flexDirection: 'row', justifyContent: 'space-between' },
@@ -161,6 +172,11 @@ export interface QuotePDFProps {
     dealerFee?: number;
     financingContractTerm?: number;
     savedQuoteQrCode?: string;
+    recommendedDepositAmount?: number;
+    promotionalFinancingAlternative?: {
+      rate: number;
+      termMonths: number;
+    };
     /** @deprecated Use savedQuoteQrCode. */
     financingQrCode?: string;
     includesInstallation?: boolean;
@@ -241,6 +257,17 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const coverageTotal = quoteData.productProtection?.totalCoverageYears ?? includedCoverage;
   const hasFinancing = quoteData.selectedPaymentMethod !== 'cash_purchase'
     && Boolean(quoteData.monthlyPayment && quoteData.financingTerm && quoteData.financingRate != null);
+  const alternatePromotion = quoteData.promotionalFinancingAlternative;
+  const recommendedDeposit = quoteData.recommendedDepositAmount
+    ?? getRecommendedDeposit(Number.parseFloat(quoteData.horsepower) || 0);
+  const showAlternatePromotion = Boolean(
+    hasFinancing
+      && alternatePromotion
+      && (
+        alternatePromotion.rate !== quoteData.financingRate
+        || alternatePromotion.termMonths !== quoteData.financingTerm
+      ),
+  );
 
   return (
     <Document>
@@ -276,11 +303,20 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <View style={styles.customerCard}>
               <Text style={styles.cardTitle}>Quote Details</Text>
               <View style={styles.infoRow}><Text style={styles.infoLabel}>Customer</Text><Text style={styles.infoValue}>{quoteData.customerName}</Text></View>
-              <View style={styles.infoRow}><Text style={styles.infoLabel}>Email</Text><Text style={styles.infoValue}>{quoteData.customerEmail || '-'}</Text></View>
-              <View style={styles.infoRow}><Text style={styles.infoLabel}>Phone</Text><Text style={styles.infoValue}>{quoteData.customerPhone || '-'}</Text></View>
+              {quoteData.customerEmail ? <View style={styles.infoRow}><Text style={styles.infoLabel}>Email</Text><Text style={styles.infoValue}>{quoteData.customerEmail}</Text></View> : null}
+              {quoteData.customerPhone ? <View style={styles.infoRow}><Text style={styles.infoLabel}>Phone</Text><Text style={styles.infoValue}>{quoteData.customerPhone}</Text></View> : null}
               <View style={styles.infoRow}><Text style={styles.infoLabel}>Quote</Text><Text style={styles.infoValue}>{quoteData.quoteNumber}</Text></View>
               <View style={styles.infoRow}><Text style={styles.infoLabel}>Issued</Text><Text style={styles.infoValue}>{quoteData.date}</Text></View>
               <View style={styles.infoRow}><Text style={styles.infoLabel}>Valid until</Text><Text style={styles.infoValue}>{expiry}</Text></View>
+              {savedQuoteQrCode ? (
+                <View style={styles.quoteQrRow}>
+                  <Image src={savedQuoteQrCode} style={styles.quoteQr} />
+                  <View style={styles.quoteQrCopy}>
+                    <Text style={styles.quoteQrTitle}>Scan to view your quote online</Text>
+                    <Text style={styles.quoteQrText}>Reopen this exact saved quote and continue whenever you are ready.</Text>
+                  </View>
+                </View>
+              ) : null}
             </View>
           </View>
         </View>
@@ -328,6 +364,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         </View>
 
+        {!quoteData.depositInfo ? (
+          <View style={styles.reserveCallout} wrap={false}>
+            <Text style={styles.reserveTitle}>Ready to lock this in?</Text>
+            <Text style={styles.reserveText}>
+              Reserve with a ${money(recommendedDeposit).replace('.00', '')} deposit to hold the motor and your place in the schedule. Call or text (905) 342-2153{savedQuoteQrCode ? ', or scan the QR above.' : ', or visit mercuryrepower.ca.'}
+            </Text>
+            <Text style={styles.reservePolicy}>Your deposit is applied to the final invoice. Refundability depends on stock or special-order status and when the order is committed.</Text>
+          </View>
+        ) : null}
+
         <View wrap={false}>
           <Text style={styles.sectionTitle}>Coverage, Payment and Next Steps</Text>
           <View style={styles.twoUp}>
@@ -355,6 +401,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   {quoteData.dealerFee ? <Text style={styles.panelText}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
                   <Text style={styles.panelText}>On approved credit. DealerPlan contract term is up to {quoteData.financingContractTerm || 60} months.</Text>
                   <Text style={styles.panelText}>Payment figures are estimates and may vary with the final financed amount and lender approval.</Text>
+                  {showAlternatePromotion && alternatePromotion ? <Text style={styles.promoFinanceNote}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
                   {(quoteData.financingTerm || 0) > (quoteData.financingContractTerm || 60) ? <Text style={styles.panelText}>Because the amortization is longer than the contract term, a balance may remain at maturity and may need to be paid or refinanced.</Text> : null}
                 </>
               ) : (
@@ -394,7 +441,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text style={styles.ctaTitle}>{savedQuoteQrCode ? 'Reopen this quote online' : 'Questions or ready to proceed?'}</Text>
               {savedQuoteQrCode ? (
                 <>
-                  <Text style={styles.ctaText}>Scan the QR code to reopen this saved quote and continue when you are ready.</Text>
+                  <Text style={styles.ctaText}>Use the QR code on page 1 to reopen this saved quote and continue when you are ready.</Text>
                   <Text style={styles.ctaText}>Questions? Call or text Harris Boat Works at (905) 342-2153.</Text>
                 </>
               ) : (
@@ -404,17 +451,16 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </>
               )}
             </View>
-            {savedQuoteQrCode ? (
-              <View style={styles.qrBlock}>
-                <Image src={savedQuoteQrCode} style={styles.qr} />
-                <Text style={styles.qrCaption}>Scan to reopen quote</Text>
-              </View>
-            ) : null}
           </View>
         ) : null}
 
+        <View style={styles.trustStrip} wrap={false}>
+          <Text style={styles.trustTitle}>WHY HARRIS BOAT WORKS</Text>
+          <Text style={styles.trustText}>Family-owned since 1947 | Mercury dealer since 1965 | Mercury Marine Premier Dealer | Every installed repower water-tested on Rice Lake before pickup</Text>
+        </View>
+
         <View style={styles.footer} fixed>
-          <Text style={styles.footerText}>Harris Boat Works | 5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0 | (905) 342-2153</Text>
+          <Text style={styles.footerText}>Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 | (905) 342-2153</Text>
           <Text style={styles.footerText} render={({ pageNumber, totalPages }: { pageNumber: number; totalPages: number }) => `Page ${pageNumber} of ${totalPages}`} />
         </View>
       </Page>
