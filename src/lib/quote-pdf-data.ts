@@ -28,6 +28,15 @@ export interface QuotePdfFinancing {
   downPayment?: number;
 }
 
+export interface QuotePdfFinancingInput {
+  amountFinanced: number;
+  rate: number;
+  amortizationMonths: number;
+  contractTermMonths?: number;
+  dealerFee: number;
+  downPayment?: number;
+}
+
 export interface QuotePdfPromotion {
   name?: string;
   endDate?: string;
@@ -83,6 +92,30 @@ function monthlyPayment(principal: number, annualRate: number, amortizationMonth
   const monthlyRate = annualRate / 100 / 12;
   if (monthlyRate === 0) return principal / amortizationMonths;
   return principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -amortizationMonths));
+}
+
+/**
+ * Build the financing block from one coherent set of inputs. The payment must
+ * never be copied from a newer quote total while amountFinanced is retained
+ * from an older PDF snapshot (for example, before a rebate or prop decision).
+ */
+export function buildQuotePdfFinancing({
+  amountFinanced,
+  rate,
+  amortizationMonths,
+  contractTermMonths = FINANCING_CONTRACT_TERM_MONTHS,
+  dealerFee,
+  downPayment,
+}: QuotePdfFinancingInput): QuotePdfFinancing {
+  return {
+    monthlyPayment: Math.round(monthlyPayment(amountFinanced, rate, amortizationMonths)),
+    rate,
+    amortizationMonths,
+    contractTermMonths,
+    amountFinanced,
+    dealerFee,
+    downPayment,
+  };
 }
 
 /**

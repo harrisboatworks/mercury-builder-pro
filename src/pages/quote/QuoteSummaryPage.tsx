@@ -50,6 +50,7 @@ import {
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
 import {
+  buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
   FINANCING_CONTRACT_TERM_MONTHS,
   frozenPricingFromPdfSnapshot,
@@ -592,9 +593,12 @@ export default function QuoteSummaryPage() {
   const pdfSnapshot = useMemo<QuotePdfSnapshot>(() => {
     const frozen = state.frozenPricing;
     const existing = state.pdfSnapshot;
-    const paymentMethod = frozen?.selectedPaymentMethod ?? existing?.paymentMethod ?? state.selectedPaymentMethod;
-    const financingAmortization = frozen?.financingAmortizationMonths ?? existing?.financing?.amortizationMonths ?? termMonths;
-    const financingApr = frozen?.financingRate ?? existing?.financing?.rate ?? financingRate;
+    const paymentMethod = frozen?.selectedPaymentMethod ?? state.selectedPaymentMethod ?? existing?.paymentMethod;
+    const financingAmortization = frozen?.financingAmortizationMonths ?? termMonths;
+    const financingApr = frozen?.financingRate ?? financingRate;
+    const financingAmount = frozen?.amountFinanced ?? amountToFinance;
+    const financingDealerFee = frozen?.dealerFee ?? DEALERPLAN_FEE;
+    const financingContractTerm = frozen?.financingContractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS;
     const planPrice = state.warrantyConfig?.warrantyPrice || 0;
     const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
     const selectedPromoValue = frozen?.selectedPromoValue
@@ -651,23 +655,20 @@ export default function QuoteSummaryPage() {
         },
       } : {}),
       ...(canShowFinancing ? {
-        financing: {
-          monthlyPayment: frozen?.amountFinanced && frozen?.financingRate && frozen?.financingAmortizationMonths
-            ? calculateMonthlyPayment(frozen.amountFinanced, frozen.financingRate, frozen.financingAmortizationMonths).payment
-            : monthlyPayment,
+        financing: buildQuotePdfFinancing({
+          amountFinanced: financingAmount,
           rate: financingApr,
           amortizationMonths: financingAmortization,
-          contractTermMonths: frozen?.financingContractTermMonths ?? existing?.financing?.contractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS,
-          amountFinanced: frozen?.amountFinanced ?? existing?.financing?.amountFinanced ?? amountToFinance,
-          dealerFee: frozen?.dealerFee ?? existing?.financing?.dealerFee ?? DEALERPLAN_FEE,
+          contractTermMonths: financingContractTerm,
+          dealerFee: financingDealerFee,
           downPayment: state.financing.downPayment,
-        },
+        }),
       } : {}),
       paymentMethod,
       promotion: {
-        name: frozen ? frozen.promotionName : (existing?.promotion?.name ?? currentPromotion?.name),
-        endDate: frozen ? frozen.promotionEndDate : (existing?.promotion?.endDate ?? currentPromotion?.end_date),
-        combinationMode: frozen?.promotionCombinationMode ?? existing?.promotion?.combinationMode ?? currentPromotion?.promo_options?.type,
+        name: frozen ? frozen.promotionName : (currentPromotion?.name ?? existing?.promotion?.name),
+        endDate: frozen ? frozen.promotionEndDate : (currentPromotion?.end_date ?? existing?.promotion?.endDate),
+        combinationMode: frozen?.promotionCombinationMode ?? currentPromotion?.promo_options?.type ?? existing?.promotion?.combinationMode,
         selectedOption: frozen?.selectedPromoOption ?? state.selectedPromoOption,
         selectedValue: selectedPromoValue,
       },
@@ -687,7 +688,6 @@ export default function QuoteSummaryPage() {
     hp,
     imageUrl,
     modelYear,
-    monthlyPayment,
     motor?.category,
     motorDiscount,
     motorMSRP,
