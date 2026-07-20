@@ -10,7 +10,7 @@ import { ArrowLeft } from 'lucide-react';
 import type { TradeInInfo } from '@/lib/trade-valuation';
 import { Skeleton } from '@/components/ui/skeleton';
 import { getQuoteStepNumber } from '@/components/quote-builder/quote-progress-steps';
-import { buildInitialTradeInInfo } from '@/lib/trade-in-state';
+import { buildEmptyTradeInInfo, buildInitialTradeInInfo } from '@/lib/trade-in-state';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -91,21 +91,14 @@ export default function TradeInPage() {
     dispatch({ type: 'SET_HAS_TRADEIN', payload: updatedTradeInInfo.hasTradeIn });
   };
 
-  const handleComplete = () => {
-    console.log('🔄 TradeInPage handleComplete - tradeInInfo:', tradeInInfo);
+  const handleComplete = (completedTradeInInfo?: TradeInInfo) => {
+    const currentTradeInInfo = completedTradeInInfo ?? tradeInInfo;
+    console.log('🔄 TradeInPage handleComplete - tradeInInfo:', currentTradeInInfo);
     
     // If no trade-in, ensure clean state
-    const finalTradeInInfo = tradeInInfo.hasTradeIn ? tradeInInfo : {
-      hasTradeIn: false,
-      brand: '',
-      year: 0,
-      horsepower: 0,
-      model: '',
-      serialNumber: '',
-      condition: 'good' as const,
-      estimatedValue: 0,
-      confidenceLevel: 'medium' as const
-    };
+    const finalTradeInInfo = currentTradeInInfo.hasTradeIn
+      ? currentTradeInInfo
+      : buildEmptyTradeInInfo();
     
     // If no trade-in, clear it from localStorage before navigating
     if (!finalTradeInInfo.hasTradeIn) {

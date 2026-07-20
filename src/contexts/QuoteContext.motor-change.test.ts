@@ -74,7 +74,8 @@ describe('quoteReducer SET_MOTOR', () => {
     expect(result.motor).toEqual(nextMotor);
     expect(result.purchasePath).toBe('installed');
     expect(result.boatInfo).toEqual({ type: 'pontoon', hasCompatibleProp: false });
-    expect(result.tradeInInfo).toEqual({ hasTradeIn: true, estimatedValue: 2500 });
+    expect(result.tradeInInfo).toBeNull();
+    expect(result.hasTradein).toBe(false);
     expect(result.installConfig).toBeNull();
     expect(result.looseMotorBattery).toBeNull();
     expect(result.selectedOptions).toEqual([]);
@@ -102,6 +103,8 @@ describe('quoteReducer SET_MOTOR', () => {
       ...initialState,
       motor: firstMotor,
       purchasePath: 'installed',
+      tradeInInfo: { hasTradeIn: true, estimatedValue: 2500 },
+      hasTradein: true,
       selectedOptions: [{
         optionId: 'controls',
         name: 'Controls',
@@ -126,6 +129,8 @@ describe('quoteReducer SET_MOTOR', () => {
 
     expect(result.motor?.price).toBe(11750);
     expect(result.purchasePath).toBe('installed');
+    expect(result.tradeInInfo).toEqual({ hasTradeIn: true, estimatedValue: 2500 });
+    expect(result.hasTradein).toBe(true);
     expect(result.selectedOptions).toHaveLength(1);
     expect(result.frozenPricing?.total).toBe(13560);
   });
