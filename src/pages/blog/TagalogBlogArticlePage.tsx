@@ -8,6 +8,7 @@ import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getTagalogArticleBySlug } from '@/data/tagalogBlogArticles';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -293,7 +294,6 @@ export default function TagalogBlogArticlePage() {
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="alternate" hrefLang="tl" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="tl_PH" />
@@ -341,7 +341,7 @@ export default function TagalogBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Mercury dealer mula 1965" />
+          <AuthorByline name="Jay Harris" title="Mercury dealer mula 1965" byLabel="Ni" bioLabel="Tingnan ang bio" />
         </div>
 
         {tocItems.length > 2 && (
@@ -351,7 +351,7 @@ export default function TagalogBlogArticlePage() {
         )}
 
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'tl', Boolean(article.faqs?.length)))}
         </article>
 
         {article.faqs && article.faqs.length > 0 && (

@@ -384,15 +384,21 @@ export default function BlogArticle() {
                   /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
                   '',
                 );
-                // Strip standalone "Language: English" lines.
+                // Strip standalone publishing scaffold. Some older imports put
+                // a separator immediately after these lines, so remove that
+                // separator with the metadata instead of leaving an orphaned
+                // horizontal rule at the top of the article.
                 c = c.replace(
-                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
+                  /^[*_\s]*(?:Language[*_\s:：]+English|Canonical URL\s*:[*_\s]*https?:\/\/\S+)[*_\s]*\r?\n(?:\s*---\s*\r?\n)?/gim,
                   '',
                 );
-                // Drop a literal "## CTA" heading line; keep its body content.
-                c = c.replace(/^##\s+CTA\s*$/gim, '');
+                // Drop literal authoring-only section labels; keep their body.
+                c = c.replace(/^##\s+(?:CTA|Full Article)\s*$/gim, '');
                 // Rename "## Internal Links" → "## Related reading" (keep list).
                 c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+                // Normalize the compact imported form so screen readers and
+                // plain-text extractors do not run the label into the answer.
+                c = c.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');
                 // Suppress inline FAQ-style sections when faqs[] is populated —
                 // the accordion below replaces them. Uses the global flag so
                 // articles that (historically) duplicated their FAQ block get

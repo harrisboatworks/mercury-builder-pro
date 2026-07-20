@@ -3,6 +3,9 @@ import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
 import { EN_TO_FR_SLUG } from '@/data/frenchEnglishSlugMap';
+import { EN_TO_KO_SLUG } from '@/data/koreanEnglishSlugMap';
+import { EN_TO_ZH_SLUG } from '@/data/mandarinEnglishSlugMap';
+import { EN_TO_ES_SLUG } from '@/data/spanishEnglishSlugMap';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -16,6 +19,11 @@ function getDealerCityFromSlug(slug: string): string | null {
 
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
+  const frSlug = EN_TO_FR_SLUG[article.slug];
+  const koSlug = EN_TO_KO_SLUG[article.slug];
+  const zhSlug = EN_TO_ZH_SLUG[article.slug];
+  const esSlug = EN_TO_ES_SLUG[article.slug];
+  const hasLanguageAlternate = Boolean(frSlug || koSlug || zhSlug || esSlug);
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
   // Head <title> prefers the article's explicit `seoTitle` when provided (so the
@@ -273,13 +281,22 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <title>{renderedTitle}</title>
       <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
-      {EN_TO_FR_SLUG[article.slug] && (
-        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/blog/fr/${EN_TO_FR_SLUG[article.slug]}`} />
+      {frSlug && (
+        <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/blog/fr/${frSlug}`} />
       )}
-      {EN_TO_FR_SLUG[article.slug] && (
+      {koSlug && (
+        <link rel="alternate" hrefLang="ko" href={`${SITE_URL}/blog/ko/${koSlug}`} />
+      )}
+      {zhSlug && (
+        <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/blog/zh/${zhSlug}`} />
+      )}
+      {esSlug && (
+        <link rel="alternate" hrefLang="es" href={`${SITE_URL}/blog/es/${esSlug}`} />
+      )}
+      {hasLanguageAlternate && (
         <link rel="alternate" hrefLang="en-CA" href={url} />
       )}
-      {EN_TO_FR_SLUG[article.slug] && (
+      {hasLanguageAlternate && (
         <link rel="alternate" hrefLang="x-default" href={url} />
       )}
       

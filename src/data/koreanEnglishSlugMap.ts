@@ -8,6 +8,9 @@ export const KO_TO_EN_SLUG: Record<string, string> = {
   'mercury-avator-jeondong-seonoegi': 'mercury-avator-electric-boating-ontario',
   'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
   'mercury-seonoegi-muge': 'mercury-outboard-weight-chart',
+  'mercury-outboard-winterization-guide': 'diy-mercury-outboard-winterization-guide',
+  'mercury-115-vs-150-comparison': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
+  'repower-vs-new-boat': 'repower-vs-new-boat',
 };
 
 export const EN_TO_KO_SLUG: Record<string, string> = Object.fromEntries(

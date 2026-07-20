@@ -271,16 +271,91 @@ function mdFrontmatter(canonicalPath, extraLines = [], lastUpdated = TWIN_DATE) 
   ].join('\n');
 }
 
-// Strip authoring scaffold (standalone date lines, Language line) and any
-// legacy inline FAQ section when the article has a faqs[] array. Mirrors
-// the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
-// what readers see.
+function directiveFields(body) {
+  const fields = {};
+  for (const raw of String(body || '').split('\n')) {
+    const match = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(raw.trimEnd());
+    if (match) fields[match[1]] = match[2].trim();
+  }
+  return fields;
+}
+
+function readableFieldName(key) {
+  return String(key)
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/\b(en|zh)\b/gi, (m) => m.toUpperCase())
+    .replace(/^./, (m) => m.toUpperCase());
+}
+
+// Convert component authoring directives into useful plain Markdown for AI
+// and text-only consumers. The HTML site still renders the richer cards.
+function directiveToMarkdown(name, body) {
+  const fields = directiveFields(body);
+  if (name === 'cta') {
+    if (!fields.heading || !fields.body) return '';
+    const links = [];
+    if (fields.primaryLabel && fields.primaryHref) links.push(`[${fields.primaryLabel}](${fields.primaryHref})`);
+    if (fields.secondaryLabel && fields.secondaryHref) links.push(`[${fields.secondaryLabel}](${fields.secondaryHref})`);
+    return [`### ${fields.heading}`, '', fields.body, '', links.join(' · '), fields.phone ? `Phone: ${fields.phone}` : '', fields.footer || '']
+      .filter(Boolean).join('\n');
+  }
+  if (name === 'bilingual-trust' || name === 'bilingual-trust-card') {
+    const lines = [`### ${fields.heading || ''}${fields.headingTranslated ? ` / ${fields.headingTranslated}` : ''}`, ''];
+    const indexes = Object.keys(fields)
+      .map((key) => /^item(\d+)En$/.exec(key)?.[1])
+      .filter(Boolean)
+      .map(Number)
+      .sort((a, b) => a - b);
+    for (const index of indexes) {
+      const en = fields[`item${index}En`];
+      const zh = fields[`item${index}Zh`];
+      if (en || zh) lines.push(`- ${[en, zh].filter(Boolean).join(' / ')}`);
+    }
+    if (fields.ctaEn && fields.ctaHref) lines.push('', `[${fields.ctaEn}${fields.ctaZh ? ` / ${fields.ctaZh}` : ''}](${fields.ctaHref})`);
+    return lines.filter((line, index) => line || index > 0).join('\n');
+  }
+  if (name === 'pull-quote') {
+    const quote = fields.quote ? `> ${fields.quote}` : '';
+    const attribution = [fields.attribution, fields.source].filter(Boolean).join(', ');
+    return [quote, attribution ? `> — ${attribution}` : ''].filter(Boolean).join('\n');
+  }
+
+  // Decision, diagnostic, and cost cards use structured key/value authoring.
+  // Keep every value, but expose it as readable Markdown rather than YAML-ish
+  // component props.
+  const lines = [];
+  if (fields.heading) lines.push(`### ${fields.heading}`, '');
+  if (fields.subhead) lines.push(fields.subhead, '');
+  for (const raw of String(body || '').split('\n')) {
+    const line = raw.trim();
+    if (!line || /^(heading|subhead)\s*:/.test(line)) continue;
+    const match = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
+    if (match) lines.push(`- **${readableFieldName(match[1])}:** ${match[2]}`);
+    else if (/^-\s+/.test(line)) lines.push(`  ${line}`);
+    else lines.push(line);
+  }
+  return lines.join('\n');
+}
+
+// Strip authoring scaffold and any legacy inline FAQ section when the article
+// has a faqs[] array. Mirrors the runtime renderer so .md twins match what
+// readers and crawlers see.
 function cleanBlogContent(content, hasFaqs) {
   let c = String(content || '');
+  c = c.replace(
+    /^[*_\s]*(?:Language[*_\s:：]+English|Canonical URL\s*:[*_\s]*https?:\/\/\S+)[*_\s]*\r?\n(?:\s*---\s*\r?\n)?/gim,
+    '',
+  );
   c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
-  c = c.replace(/^##\s+CTA\s*$/gim, '');
+  c = c.replace(/^##\s+(?:CTA|Full Article)\s*$/gim, '');
   c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  c = c.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');
+  c = c.replace(/^::walkaround-lead-capture\s*$/gm, '[Request the used-boat walkaround checklist](/contact)');
+  c = c.replace(/^::mercury-price-table\s*$/gm, 'Current Mercury pricing is available in the [Canadian pricing reference](/pricing-reference).');
+  c = c.replace(/^::([a-z][a-z-]*)\s*\n([\s\S]*?)\n::\s*$/gm, (_match, name, body) => directiveToMarkdown(name, body));
+  // Production-only image briefs are not reader content and should never be
+  // offered to search/AI consumers as though they were article prose.
+  c = c.replace(/^:::image-placeholder\s*\n[\s\S]*?^:::\s*$/gm, '');
   // Twins-only: strip directive fence lines (e.g. ":::mythbuster", ":::customer-voice", bare ":::").
   // The inner block content is kept verbatim as plain markdown so AI agents
   // reading the twin don't see raw fence markup as junk.

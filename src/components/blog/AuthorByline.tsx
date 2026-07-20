@@ -4,6 +4,8 @@ interface AuthorBylineProps {
   name?: string;
   title?: string;
   className?: string;
+  byLabel?: string;
+  bioLabel?: string;
   /** When true, renders a richer card-style block (suitable for top of article). */
   variant?: 'inline' | 'card';
 }
@@ -20,6 +22,8 @@ export function AuthorByline({
   name = 'Jay Harris',
   title,
   className = '',
+  byLabel = 'By',
+  bioLabel = 'View author bio',
   variant = 'inline',
 }: AuthorBylineProps) {
   const isJay = name === 'Jay Harris';
@@ -47,7 +51,7 @@ export function AuthorByline({
         </span>
         <div className="flex flex-col">
           <span className="font-semibold text-repower-navy-900 text-[15px]" itemProp="name">
-            By {name}
+            {byLabel} {name}
           </span>
           {credentials && (
             <span className="text-[13px] text-repower-navy-900/70 leading-snug" itemProp="description">
@@ -59,7 +63,7 @@ export function AuthorByline({
               to="/about/jay-harris"
               className="mt-1 text-[12px] font-semibold text-repower-mercury-red hover:underline"
             >
-              View author bio →
+              {bioLabel} →
             </Link>
           )}
         </div>
@@ -81,7 +85,7 @@ export function AuthorByline({
         {initials || 'JH'}
       </span>
       <span>
-        By{' '}
+        {byLabel}{' '}
         {isJay ? (
           <Link to="/about/jay-harris" className="font-semibold text-repower-navy-900 hover:text-repower-mercury-red hover:underline" itemProp="name">
             {name}

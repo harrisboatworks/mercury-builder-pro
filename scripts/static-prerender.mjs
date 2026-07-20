@@ -289,6 +289,31 @@ function renderBilingualTrustHtml(body) {
   return `<div class="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden"><div class="px-6 pt-6 md:px-8 md:pt-8">${eyebrow}<h3 class="font-display font-bold text-2xl text-repower-navy-900 m-0 text-balance tracking-tight">${escHtml(flat.heading)}</h3><p class="font-sans text-base text-muted-foreground leading-relaxed mt-1 mb-0" lang="zh-Hans">${escHtml(flat.headingTranslated)}</p></div><div class="px-6 py-6 md:px-8 md:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">${tiles}</div>${cta}</div>`;
 }
 
+function renderCtaHtml(body) {
+  const flat = {};
+  for (const raw of String(body).split('\n')) {
+    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(raw.replace(/\s+$/, ''));
+    if (kv) flat[kv[1]] = kv[2].trim();
+  }
+  if (!flat.heading || !flat.body || !flat.primaryLabel || !flat.primaryHref) return '';
+  const variant = flat.variant === 'banner' ? 'banner' : 'inline';
+  const secondary = flat.secondaryLabel && flat.secondaryHref
+    ? `<a href="${escHtml(flat.secondaryHref)}" class="cta-secondary">${escHtml(flat.secondaryLabel)}</a>`
+    : '';
+  const phone = flat.phone
+    ? `<p>Questions? <a href="tel:${escHtml(flat.phone.replace(/[^0-9+]/g, ''))}">Call ${escHtml(flat.phone)}</a></p>`
+    : '';
+  const footer = flat.footer ? `<p>${escHtml(flat.footer)}</p>` : '';
+  return (
+    `<aside class="blog-inline-cta blog-inline-cta-${variant}" aria-label="Call to action">` +
+      `<h3>${escHtml(flat.heading)}</h3>` +
+      `<p>${escHtml(flat.body)}</p>` +
+      `<div><a href="${escHtml(flat.primaryHref)}" class="cta-primary">${escHtml(flat.primaryLabel)}</a>${secondary}</div>` +
+      `${phone}${footer}` +
+    `</aside>`
+  );
+}
+
 function renderPullQuoteHtml(body) {
   const lines = String(body).split('\n');
   const flat = {};
@@ -411,8 +436,9 @@ function expandVisualDirectives(md) {
   md = sub(/^::decision-card\s*\n([\s\S]*?)\n::\s*$/gm, renderDecisionCardHtml);
   md = sub(/^::diagnostic-flow\s*\n([\s\S]*?)\n::\s*$/gm, renderDiagnosticFlowHtml);
   md = sub(/^::cost-stack\s*\n([\s\S]*?)\n::\s*$/gm, renderCostStackHtml);
-  md = sub(/^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
+  md = sub(/^::bilingual-trust(?:-card)?\s*\n([\s\S]*?)\n::\s*$/gm, renderBilingualTrustHtml);
   md = sub(/^::pull-quote\s*\n([\s\S]*?)\n::\s*$/gm, renderPullQuoteHtml);
+  md = sub(/^::cta\s*\n([\s\S]*?)\n::\s*$/gm, renderCtaHtml);
   // Bodied mercury-price-table form: `::mercury-price-table\nkey: val\n::`
   md = sub(/^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm, renderMercuryPriceTableHtml);
   // Bodiless mercury-price-table form: a single line `::mercury-price-table`
@@ -425,7 +451,7 @@ function expandVisualDirectives(md) {
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
-function renderArticleBodyHtml(content) {
+function normalizeArticleContent(content, { hasFaqs = false, language = 'en' } = {}) {
   if (!content) return '';
   let s = String(content);
   // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
@@ -437,10 +463,40 @@ function renderArticleBodyHtml(content) {
   // '# Heading' anywhere in the markdown body would otherwise render a second
   // H1 and trigger duplicate-H1 warnings in Bing Site Scan.
   s = s.replace(/^\s*#\s+.+$/gm, '');
+  // Remove publishing-pipeline metadata and the separator that commonly
+  // follows it. These fields belong in the page head, not reader copy.
+  s = s.replace(
+    /^[*_\s]*(?:Language[*_\s:：]+English|Canonical URL\s*:[*_\s]*https?:\/\/\S+)[*_\s]*\r?\n(?:\s*---\s*\r?\n)?/gim,
+    '',
+  );
+  s = s.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
+  s = s.replace(/^##\s+(?:CTA|Full Article)\s*$/gim, '');
+  const relatedLabels = {
+    en: 'Related reading', fr: 'Lectures connexes', ko: '관련 자료', zh: '相关阅读',
+    es: 'Lecturas relacionadas', pa: 'ਸੰਬੰਧਿਤ ਗਾਈਡਾਂ', ur: 'متعلقہ رہنما',
+    tl: 'Kaugnay na mga gabay', hi: 'संबंधित गाइड',
+  };
+  s = s.replace(
+    /^(##\s+)(?:Internal Links|Liens internes|내부 링크|内部链接|Enlaces internos|ਅੰਦਰੂਨੀ ਲਿੰਕ|اندرونی روابط|Mga panloob na link|आंतरिक लिंक)\s*$/gim,
+    `$1${relatedLabels[language] || relatedLabels.en}`,
+  );
+  s = s.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');
+  if (hasFaqs) {
+    s = s.replace(
+      /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions|Questions fréquentes|자주 묻는 질문|常见问题|Preguntas frecuentes|ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ|اکثر پوچھے جانے والے سوالات|Mga madalas itanong|अक्सर पूछे जाने वाले प्रश्न)\s*[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
+      '\n',
+    );
+  }
   // Strip author footer signature (handled by AuthorByline component in SPA).
   s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
   s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
   s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
+  return s.replace(/\n{3,}/g, '\n\n').trim();
+}
+
+function renderArticleBodyHtml(content, options = {}) {
+  let s = normalizeArticleContent(content, options);
+  if (!s) return '';
   // Expand visual directives (decision-card, diagnostic-flow, cost-stack,
   // bilingual-trust) into HTML matching the React components. Other
   // `:::name ... :::` directive blocks (image-placeholder, motor-pricing,
@@ -659,6 +715,7 @@ function loadBlogArticles() {
       seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
+      author: a.author,
       datePublished: a.datePublished,
       dateModified: a.dateModified,
       publishDate: a.publishDate || a.datePublished || null,
@@ -892,7 +949,7 @@ function renderRelatedGuidesHtml(currentSlug, contentMarkdown) {
   const items = picked.map(s => {
     const title = blogClusterData.titles[s] || s;
     const ctx = blogClusterData.contexts[s];
-    const ctxHtml = ctx ? ` — ${escapeHtml(ctx)}` : '';
+    const ctxHtml = ctx ? `: ${escapeHtml(ctx)}` : '';
     return `<li><a href="/blog/${s}"><strong>${escapeHtml(title)}</strong></a>${ctxHtml}</li>`;
   }).join('');
   return `<aside aria-labelledby="related-guides-heading-ssg"><h2 id="related-guides-heading-ssg">Related guides</h2><ul>${items}</ul></aside>`;
@@ -2880,16 +2937,41 @@ function renderHeroPictureHtml(image, alt, photoSlot) {
   );
 }
 
-function renderAuthorBylineHtml(authorName) {
-  const name = escapeHtml(authorName || 'Jay Harris');
-  const isJay = (authorName || 'Jay Harris') === 'Jay Harris';
-  const credentials = isJay
-    ? 'Owner, Harris Boat Works · 3rd-generation family marina since 1947 · Mercury Marine Premier Dealer'
-    : '';
-  const link = isJay ? ` <a href="/about/jay-harris">View bio →</a>` : '';
+const BYLINE_I18N = {
+  en: { locale: 'en-CA', by: 'By', updated: 'Updated', published: 'Published', bio: 'View bio', credentials: 'Owner, Harris Boat Works · Mercury Marine Premier Dealer' },
+  fr: { locale: 'fr-CA', by: 'Par', updated: 'Mis à jour', published: 'Publié', bio: 'Voir la biographie', credentials: 'Propriétaire, Harris Boat Works · Concessionnaire Mercury Marine Premier' },
+  ko: { locale: 'ko-KR', by: '작성자', updated: '업데이트', published: '게시', bio: '작성자 소개', credentials: 'Harris Boat Works 소유주 · Mercury Marine Premier 딜러' },
+  zh: { locale: 'zh-CN', by: '作者', updated: '更新于', published: '发布于', bio: '查看作者简介', credentials: 'Harris Boat Works 负责人 · Mercury Marine Premier 经销商' },
+  es: { locale: 'es-CA', by: 'Por', updated: 'Actualizado', published: 'Publicado', bio: 'Ver biografía', credentials: 'Propietario de Harris Boat Works · Distribuidor Mercury Marine Premier' },
+  pa: { locale: 'pa-CA', by: 'ਲੇਖਕ', updated: 'ਅੱਪਡੇਟ', published: 'ਪ੍ਰਕਾਸ਼ਿਤ', bio: 'ਲੇਖਕ ਬਾਰੇ', credentials: 'Harris Boat Works ਦੇ ਮਾਲਕ · Mercury Marine Premier ਡੀਲਰ' },
+  ur: { locale: 'ur-PK', by: 'مصنف', updated: 'تازہ کاری', published: 'شائع شدہ', bio: 'مصنف کا تعارف', credentials: 'Harris Boat Works کے مالک · Mercury Marine Premier ڈیلر' },
+  tl: { locale: 'fil-PH', by: 'Ni', updated: 'Na-update', published: 'Inilathala', bio: 'Tingnan ang bio', credentials: 'May-ari ng Harris Boat Works · Mercury Marine Premier Dealer' },
+  hi: { locale: 'hi-IN', by: 'लेखक', updated: 'अपडेट किया गया', published: 'प्रकाशित', bio: 'लेखक परिचय', credentials: 'Harris Boat Works के मालिक · Mercury Marine Premier डीलर' },
+};
+
+function renderAuthorBylineHtml(authorName, article = {}, language = 'en') {
+  const profile = BYLINE_I18N[language] || BYLINE_I18N.en;
+  const rawName = authorName || (language === 'en' ? 'Jay Harris' : 'Harris Boat Works');
+  const name = escapeHtml(rawName);
+  const isJay = rawName === 'Jay Harris';
+  const credentials = isJay ? profile.credentials : '';
+  const link = isJay ? ` <a href="/about/jay-harris">${escapeHtml(profile.bio)} →</a>` : '';
+  const published = article.datePublished || '';
+  const modified = article.dateModified || '';
+  const dateValue = modified || published;
+  const isUpdated = Boolean(modified && published && modified !== published);
+  let dateHtml = '';
+  if (dateValue) {
+    const parsed = new Date(`${dateValue}T12:00:00Z`);
+    const formatted = Number.isNaN(parsed.getTime())
+      ? dateValue
+      : new Intl.DateTimeFormat(profile.locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(parsed);
+    dateHtml = `<span>${escapeHtml(isUpdated ? profile.updated : profile.published)} <time datetime="${escapeHtml(dateValue)}">${escapeHtml(formatted)}</time>${article.readTime ? ` · ${escapeHtml(article.readTime)}` : ''}</span>`;
+  }
   return (
-    `<aside class="author-byline" itemscope itemtype="https://schema.org/Person">` +
-      `<span>By <span itemprop="name">${name}</span>${credentials ? `, <span itemprop="description">${escapeHtml(credentials)}</span>` : ''}${link}</span>` +
+    `<aside class="author-byline"${language === 'ur' ? ' dir="rtl"' : ''} itemscope itemtype="https://schema.org/${isJay ? 'Person' : 'Organization'}">` +
+      `<span>${escapeHtml(profile.by)} <span itemprop="name">${name}</span>${credentials ? `, <span itemprop="description">${escapeHtml(credentials)}</span>` : ''}${link}</span>` +
+      dateHtml +
     `</aside>`
   );
 }
@@ -2921,8 +3003,6 @@ const FR_TO_EN_SLUG = {
 };
 const ZH_TO_EN_SLUG = {
   'mercury-115-vs-150-comparison-zh': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
-  // Retired slugs (per vercel.json 301s) remapped to canonical zh targets:
-  'gta-chinese-rice-lake-winter-storage-complete-guide': 'diy-mercury-outboard-winterization-guide',
   'mercury-repower-guide-gta': 'repower-vs-new-boat',
   'mercury-fourstroke-pro-xs-verado-chinese-comparison': 'fourstroke-vs-pro-xs',
 };
@@ -2930,10 +3010,19 @@ const KO_TO_EN_SLUG = {
   'mercury-avator-jeondong-seonoegi': 'mercury-avator-electric-boating-ontario',
   'mercury-pro-xs-fourstroke-verado': 'fourstroke-vs-pro-xs',
   'mercury-seonoegi-muge': 'mercury-outboard-weight-chart',
+  'mercury-outboard-winterization-guide': 'diy-mercury-outboard-winterization-guide',
+  'mercury-115-vs-150-comparison': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
+  'repower-vs-new-boat': 'repower-vs-new-boat',
+};
+const ES_TO_EN_SLUG = {
+  'preparacion-invernal-motor-mercury': 'diy-mercury-outboard-winterization-guide',
+  'mercury-115-vs-150-comparacion': 'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026',
+  'remotorizacion-vs-bote-nuevo': 'repower-vs-new-boat',
 };
 const EN_TO_FR_SLUG = Object.fromEntries(Object.entries(FR_TO_EN_SLUG).map(([fr, en]) => [en, fr]));
 const EN_TO_ZH_SLUG = Object.fromEntries(Object.entries(ZH_TO_EN_SLUG).map(([zh, en]) => [en, zh]));
 const EN_TO_KO_SLUG = Object.fromEntries(Object.entries(KO_TO_EN_SLUG).map(([ko, en]) => [en, ko]));
+const EN_TO_ES_SLUG = Object.fromEntries(Object.entries(ES_TO_EN_SLUG).map(([es, en]) => [en, es]));
 
 // zh-Hant pilot slug map (mirrors src/data/traditionalChineseBlogArticles.ts
 // ZH_HANT_TO_HANS_SLUG). Retained for the future native-review rollout; the
@@ -2953,7 +3042,8 @@ function blogHreflangTags(enSlug) {
   const frSlug = EN_TO_FR_SLUG[enSlug];
   const zhSlug = EN_TO_ZH_SLUG[enSlug];
   const koSlug = EN_TO_KO_SLUG[enSlug];
-  if (!frSlug && !zhSlug && !koSlug) return '';
+  const esSlug = EN_TO_ES_SLUG[enSlug];
+  if (!frSlug && !zhSlug && !koSlug && !esSlug) return '';
   const tags = [
     `<link rel="alternate" hreflang="en-CA" href="${SITE_URL}/blog/${enSlug}" />`,
   ];
@@ -2962,19 +3052,16 @@ function blogHreflangTags(enSlug) {
     tags.push(`<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
   }
   if (koSlug) tags.push(`<link rel="alternate" hreflang="ko" href="${SITE_URL}/blog/ko/${koSlug}" />`);
+  if (esSlug) tags.push(`<link rel="alternate" hreflang="es" href="${SITE_URL}/blog/es/${esSlug}" />`);
   tags.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/${enSlug}" />`);
   return tags.join('\n  ');
 }
 
-// ZH-only fallback: for Chinese-targeted posts with no English twin, point
-// zh-Hans and x-default to the same page. The zh-Hant pilot is noindex pending
-// native review, so it must not participate in hreflang clusters yet.
+// ZH-only fallback: keep a truthful self-reference for Chinese-targeted posts
+// with no English twin. The zh-Hant pilot is noindex pending native review, so
+// it must not participate in hreflang clusters yet.
 function zhOnlyHreflangTags(zhSlug) {
-  const out = [
-    `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`,
-  ];
-  out.push(`<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/zh/${zhSlug}" />`);
-  return out.join('\n  ');
+  return `<link rel="alternate" hreflang="zh-Hans" href="${SITE_URL}/blog/zh/${zhSlug}" />`;
 }
 
 // Dedupe blogArticles by slug, keeping the FIRST occurrence so prerender
@@ -2999,13 +3086,16 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
   h1: article.title,
-  intro: firstParagraph(article.content, article.description),
+  // The description is already curated for the article header. Reusing the
+  // first body paragraph here duplicated Quick answers and exposed scaffold
+  // text before the real body renderer had a chance to normalize it.
+  intro: sanitizeSchemaText(article.description),
   schemas: [blogArticleSchema(article)],
   extraHead: blogHreflangTags(article.slug),
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.title, article.photoSlot);
-    const bylineHtml = renderAuthorBylineHtml(article.author);
-    const bodyHtml = renderArticleBodyHtml(article.content);
+    const bylineHtml = renderAuthorBylineHtml(article.author, article, 'en');
+    const bodyHtml = renderArticleBodyHtml(article.content, { hasFaqs: Boolean(article.faqs?.length) });
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
           `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
@@ -3034,7 +3124,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     ogType: 'article',
     ogLocale,
     h1: article.title,
-    intro: firstParagraph(article.content, article.description),
+    intro: sanitizeSchemaText(article.description),
     htmlLang: inLanguage,
     schemas: [
       {
@@ -3067,23 +3157,23 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
                    : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
                    : langCode === 'ko' ? KO_TO_EN_SLUG[article.slug]
+                   : langCode === 'es' ? ES_TO_EN_SLUG[article.slug]
                    : undefined;
       if (enSlug) return blogHreflangTags(enSlug);
       if (langCode === 'zh') return zhOnlyHreflangTags(article.slug);
-      // Wave-1 self-referencing hreflang for pa/ur/tl/hi (no EN twins yet).
-      if (langCode === 'pa' || langCode === 'ur' || langCode === 'tl' || langCode === 'hi') {
+      // Unpaired translations get only a truthful self-reference. Do not use
+      // a localized page as x-default or point at the generic English hub;
+      // neither is an equivalent article.
+      if (langCode === 'es' || langCode === 'pa' || langCode === 'ur' || langCode === 'tl' || langCode === 'hi') {
         const href = `${SITE_URL}/blog/${langCode}/${article.slug}`;
-        return [
-          `<link rel="alternate" hreflang="${langCode}" href="${href}" />`,
-          `<link rel="alternate" hreflang="x-default" href="${href}" />`,
-        ].join('\n  ');
+        return `<link rel="alternate" hreflang="${langCode}" href="${href}" />`;
       }
       return '';
     })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.title, article.photoSlot);
-      const bylineHtml = renderAuthorBylineHtml(article.author);
-      const bodyHtml = renderArticleBodyHtml(article.content);
+      const bylineHtml = renderAuthorBylineHtml(article.author, article, langCode);
+      const bodyHtml = renderArticleBodyHtml(article.content, { hasFaqs: Boolean(article.faqs?.length), language: langCode });
       const faqHtml = (article.faqs && article.faqs.length > 0)
         ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
@@ -3098,10 +3188,10 @@ const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concession
 const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier 딜러</span><span>·</span><span>1947년부터 가족 운영</span><span>·</span><span>1965년부터 Mercury 딜러</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
 const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星 Premier 经销商</span><span>·</span><span>家族经营自1947年</span><span>·</span><span>Mercury经销商自1965年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
 const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Premier</span><span>·</span><span>Familiar desde 1947</span><span>·</span><span>Distribuidor Mercury desde 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
-const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>1947 ਤੋਂ family-owned</span><span>·</span><span>1965 ਤੋਂ Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Premier Dealer</span><span>·</span><span>1947 سے family-owned</span><span>·</span><span>1965 سے Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-const tlDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>Family-owned mula 1947</span><span>·</span><span>Mercury dealer mula 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-const hiDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>1947 से family-owned</span><span>·</span><span>1965 से Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier ਡੀਲਰ</span><span>·</span><span>1947 ਤੋਂ ਪਰਿਵਾਰਕ ਮਾਲਕੀ</span><span>·</span><span>1965 ਤੋਂ Mercury ਡੀਲਰ</span><span>·</span><span>Gores Landing, Ontario</span><span>·</span><a href="/quote/motor-selection">ਆਨਲਾਈਨ ਕੋਟ ਬਣਾਓ</a></div>';
+const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Premier ڈیلر</span><span>·</span><span>1947 سے خاندانی ملکیت</span><span>·</span><span>1965 سے Mercury ڈیلر</span><span>·</span><span>Gores Landing, Ontario</span><span>·</span><a href="/quote/motor-selection">آن لائن قیمت بنائیں</a></div>';
+const tlDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier dealer</span><span>·</span><span>Pagmamay-ari ng pamilya mula 1947</span><span>·</span><span>Mercury dealer mula 1965</span><span>·</span><span>Gores Landing, Ontario</span><span>·</span><a href="/quote/motor-selection">Gumawa ng online quote</a></div>';
+const hiDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier डीलर</span><span>·</span><span>1947 से पारिवारिक स्वामित्व</span><span>·</span><span>1965 से Mercury डीलर</span><span>·</span><span>Gores Landing, Ontario</span><span>·</span><a href="/quote/motor-selection">ऑनलाइन कोट बनाएं</a></div>';
 
 const frenchBlogArticleRoutes = buildTranslatedBlogRoutes(frenchBlogArticles, 'fr', frDealerStripHtml, 'fr_CA', 'fr');
 const koreanBlogArticleRoutes = buildTranslatedBlogRoutes(koreanBlogArticles, 'ko', koDealerStripHtml, 'ko_KR', 'ko');

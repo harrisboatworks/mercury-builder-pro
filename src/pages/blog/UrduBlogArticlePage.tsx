@@ -8,6 +8,7 @@ import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getUrduArticleBySlug } from '@/data/urduBlogArticles';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -293,7 +294,6 @@ export default function UrduBlogArticlePage() {
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="alternate" hrefLang="ur" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="ur_PK" />
@@ -341,7 +341,7 @@ export default function UrduBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965 سے Mercury ڈیلر" />
+          <AuthorByline name="Jay Harris" title="1965 سے Mercury ڈیلر" byLabel="مصنف" bioLabel="مصنف کا تعارف" />
         </div>
 
         {tocItems.length > 2 && (
@@ -351,7 +351,7 @@ export default function UrduBlogArticlePage() {
         )}
 
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'ur', Boolean(article.faqs?.length)))}
         </article>
 
         {article.faqs && article.faqs.length > 0 && (

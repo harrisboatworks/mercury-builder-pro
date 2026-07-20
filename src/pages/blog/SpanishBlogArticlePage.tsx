@@ -8,6 +8,8 @@ import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getSpanishArticleBySlug } from '@/data/spanishBlogArticles';
+import { ES_TO_EN_SLUG } from '@/data/spanishEnglishSlugMap';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -294,7 +296,12 @@ export default function SpanishBlogArticlePage() {
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="alternate" hrefLang="es" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
+        {ES_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${ES_TO_EN_SLUG[article.slug]}`} />
+        )}
+        {ES_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${ES_TO_EN_SLUG[article.slug]}`} />
+        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="es_419" />
@@ -345,7 +352,7 @@ export default function SpanishBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Distribuidor Mercury concesionario Mercury desde 1965" />
+          <AuthorByline name="Jay Harris" title="Concesionario Mercury desde 1965" byLabel="Por" bioLabel="Ver biografía" />
         </div>
 
         {/* Table of Contents */}
@@ -357,7 +364,7 @@ export default function SpanishBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'es', Boolean(article.faqs?.length)))}
         </article>
 
         {!shouldSuppressAutoCTA(article.content) && (

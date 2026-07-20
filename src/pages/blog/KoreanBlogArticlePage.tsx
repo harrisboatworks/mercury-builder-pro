@@ -9,6 +9,7 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getKoreanArticleBySlug } from '@/data/koreanBlogArticles';
 import { KO_TO_EN_SLUG } from '@/data/koreanEnglishSlugMap';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
@@ -351,7 +352,7 @@ export default function KoreanBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965년부터 Mercury 딜러" />
+          <AuthorByline name="Jay Harris" title="1965년부터 Mercury 딜러" byLabel="작성자" bioLabel="작성자 소개" />
         </div>
 
         {/* Table of Contents */}
@@ -363,7 +364,7 @@ export default function KoreanBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanLocalizedBlogContent(article.content, 'ko', Boolean(article.faqs?.length)))}
         </article>
 
         {/* FAQ Section */}
