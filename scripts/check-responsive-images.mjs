@@ -57,6 +57,9 @@ for (const dir of SCAN_DIRS) {
     let m;
     while ((m = REF_RE.exec(content)) !== null) {
       const fname = m[1];
+      // Dedicated Open Graph JPGs are crawler-only and are never rendered by
+      // the on-page <picture> component, so they do not need WebP srcsets.
+      if (/-og\.jpg$/i.test(fname)) continue;
       if (!referenced.has(fname)) referenced.set(fname, new Set());
       referenced.get(fname).add(file.replace(ROOT + '/', ''));
     }

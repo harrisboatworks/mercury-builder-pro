@@ -3,6 +3,11 @@ import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
 import { EN_TO_FR_SLUG } from '@/data/frenchEnglishSlugMap';
+import {
+  BLOG_SOCIAL_IMAGE_HEIGHT,
+  BLOG_SOCIAL_IMAGE_WIDTH,
+  resolveBlogSocialImage,
+} from '@/lib/blog-social-image';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -18,6 +23,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
+  const socialImage = resolveBlogSocialImage(article.image, SITE_URL);
   // Head <title> prefers the article's explicit `seoTitle` when provided (so the
   // <title> tag can be tuned independently of the on-page H1). Otherwise it
   // falls back to `article.title` and appends " | Harris Boat Works" only when
@@ -286,7 +292,9 @@ export function BlogSEO({ article }: BlogSEOProps) {
       {/* Open Graph */}
       <meta property="og:title" content={renderedTitle} />
       <meta property="og:description" content={cleanDescription} />
-      <meta property="og:image" content={`${SITE_URL}${article.image}`} />
+      <meta property="og:image" content={socialImage} />
+      <meta property="og:image:width" content={String(BLOG_SOCIAL_IMAGE_WIDTH)} />
+      <meta property="og:image:height" content={String(BLOG_SOCIAL_IMAGE_HEIGHT)} />
       <meta property="og:type" content="article" />
       <meta property="og:locale" content="en_CA" />
       <meta property="article:published_time" content={article.datePublished} />
@@ -297,7 +305,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={renderedTitle} />
       <meta name="twitter:description" content={cleanDescription} />
-      <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
+      <meta name="twitter:image" content={socialImage} />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

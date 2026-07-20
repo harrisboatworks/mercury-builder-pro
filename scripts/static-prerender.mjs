@@ -23,6 +23,11 @@ import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import {
+  BLOG_SOCIAL_IMAGE_HEIGHT,
+  BLOG_SOCIAL_IMAGE_WIDTH,
+  resolveBlogSocialImage,
+} from '../src/lib/blog-social-image.js';
 
 // Verified external profiles for the Harris Boat Works LocalBusiness entity.
 // Mirrors BUSINESS_SAME_AS in src/lib/companyInfo.ts. HTTPS only, no duplicates.
@@ -2996,7 +3001,9 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   path: `/blog/${article.slug}`,
   title: buildBlogHeadTitle(article.title),
   description: article.description,
-  ogImage: `${SITE_URL}${article.image}`,
+  ogImage: resolveBlogSocialImage(article.image, SITE_URL),
+  ogImageWidth: BLOG_SOCIAL_IMAGE_WIDTH,
+  ogImageHeight: BLOG_SOCIAL_IMAGE_HEIGHT,
   ogType: 'article',
   h1: article.title,
   intro: firstParagraph(article.content, article.description),
@@ -3030,7 +3037,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     path: `/blog/${langCode}/${article.slug}`,
     title: buildBlogHeadTitle(article.title),
     description: article.description,
-    ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
+    ogImage: resolveBlogSocialImage(article.image, SITE_URL),
+    ogImageWidth: BLOG_SOCIAL_IMAGE_WIDTH,
+    ogImageHeight: BLOG_SOCIAL_IMAGE_HEIGHT,
     ogType: 'article',
     ogLocale,
     h1: article.title,
@@ -5537,6 +5546,12 @@ function stamp(route) {
     { re: /<meta\s+name=["']twitter:url["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:url" content="${ogUrl}" />` },
     { re: /<meta\s+name=["']twitter:image["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:image" content="${ogImage}" />` }
   ];
+  if (route.ogImageWidth && route.ogImageHeight) {
+    socialReplacements.push(
+      { re: /<meta\s+property=["']og:image:width["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:image:width" content="${route.ogImageWidth}" />` },
+      { re: /<meta\s+property=["']og:image:height["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:image:height" content="${route.ogImageHeight}" />` },
+    );
+  }
   for (const { re, tag } of socialReplacements) {
     if (re.test(html)) {
       // Replace the FIRST occurrence (any duplicates already in shell) and strip
