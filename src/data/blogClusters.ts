@@ -502,6 +502,13 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
  * neighbours live outside their primary cluster.
  */
 export const relatedSlugsOverrides: Record<string, string[]> = {
+  "ethanol-octane-mercury-outboard-fuel-guide-ontario": [
+    "mercury-outboard-wont-start-troubleshooting",
+    "mercury-outboard-wont-start-after-sitting",
+    "spring-outboard-commissioning-checklist",
+    "diy-mercury-outboard-winterization-guide",
+    "mercury-outboard-fuel-efficiency-guide",
+  ],
   "boat-rentals-shared-access-booming-2026": [
     "rice-lake-boat-rental-guide-2026",
     "first-time-boat-rental-rice-lake-guide",

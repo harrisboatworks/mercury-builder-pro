@@ -502,7 +502,7 @@ function parseDiagnosticFlowBody(body: string): DiagnosticFlowchartProps | null 
   for (const raw of lines) {
     const line = raw.replace(/\s+$/, '');
     if (!line.trim()) continue;
-    const kv = /^([a-zA-Z]+)\s*:\s*(.*)$/.exec(line);
+    const kv = /^([a-zA-Z0-9]+)\s*:\s*(.*)$/.exec(line);
     if (!kv) continue;
     const key = kv[1];
     const val = kv[2];
