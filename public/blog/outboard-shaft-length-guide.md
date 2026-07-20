@@ -20,11 +20,11 @@ language: en-CA
 
 # Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
 
-> Outboard shaft length guide: 15, 20, 25 inch. Match shaft to transom height to avoid cavitation and damage. Ontario dealer's practical advice for correct fit.
+> Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-07-20  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
