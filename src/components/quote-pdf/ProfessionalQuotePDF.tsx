@@ -13,7 +13,6 @@ import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { GOOGLE_REVIEWS_FALLBACK } from '@/config/googleReviews';
 import harrisLogoWhite from '@/assets/harris-logo-white.png';
-import mercuryLogo from '@/assets/mercury-logo.png';
 import mercuryLogoWhite from '@/assets/mercury-logo-white.png';
 
 const Document = _Document as unknown as ComponentType<any>;
@@ -83,25 +82,11 @@ const styles = StyleSheet.create({
   mercuryLogo: { width: 90, height: 18, objectFit: 'contain' },
   documentLabel: { color: colors.white, fontSize: 10, fontWeight: 'bold', textAlign: 'right', letterSpacing: 0.5 },
   documentKicker: { color: '#9AA4B5', fontSize: 6.7, textAlign: 'right', letterSpacing: 1.2, marginTop: 3 },
-  heroMain: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: 18 },
-  heroCopy: { flex: 1 },
+  heroMain: { paddingTop: 3 },
+  heroCopy: { width: '100%' },
   heroEyebrow: { color: colors.gold, fontSize: 7.2, fontWeight: 'bold', letterSpacing: 2, marginBottom: 6 },
   heroProduct: { color: colors.white, fontSize: 27, lineHeight: 1.02, fontWeight: 'bold', letterSpacing: -0.6 },
   heroMeta: { color: '#B9C2D2', fontSize: 8.5, lineHeight: 1.35, marginTop: 7 },
-  motorPanel: {
-    width: 140,
-    height: 115,
-    backgroundColor: colors.cream,
-    border: '1 solid #2A3752',
-    borderRadius: 6,
-    padding: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  motorImage: { width: 120, height: 105, objectFit: 'contain' },
-  motorPanelSpacious: { width: 150, height: 136, padding: 5 },
-  motorImageSpacious: { width: 126, height: 124 },
-  motorFallbackLogo: { width: 92, height: 22, objectFit: 'contain' },
   priceBand: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -463,13 +448,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <Text style={styles.heroEyebrow}>CONFIGURED FOR YOU</Text>
               <Text style={styles.heroProduct}>{quoteData.productName}</Text>
               <Text style={styles.heroMeta}>{motorMetaLine(quoteData, codeItems)}</Text>
-            </View>
-            <View style={[styles.motorPanel, spaciousLayout ? styles.motorPanelSpacious : {}]}>
-              {quoteData.motorImageUrl ? (
-                <Image src={quoteData.motorImageUrl} style={[styles.motorImage, spaciousLayout ? styles.motorImageSpacious : {}]} />
-              ) : (
-                <Image src={mercuryLogo} style={styles.motorFallbackLogo} />
-              )}
             </View>
           </View>
         </View>
