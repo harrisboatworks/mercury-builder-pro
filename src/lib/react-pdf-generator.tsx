@@ -1,7 +1,12 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
-import { resolveQuoteMotorImage, validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import {
+  resolveFinancingContractTermMonths,
+  resolveQuoteMotorImage,
+  validateQuotePdfSnapshot,
+  type QuotePdfSnapshot,
+} from '@/lib/quote-pdf-data';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { Buffer as BrowserBuffer } from 'buffer';
 
@@ -178,6 +183,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
   } : undefined);
   const productProtection = snapshot?.productProtection;
   const promotion = snapshot?.promotion;
+  const selectedPaymentMethod = snapshot?.paymentMethod ?? data.selectedPaymentMethod;
   const includedCoverageYears = snapshot?.includedCoverageYears
     ?? data.selectedPackage?.coverageYears
     ?? 3;
@@ -220,7 +226,11 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     financingRate: financing?.rate,
     financingAmount: financing?.amountFinanced,
     dealerFee: financing?.dealerFee,
-    financingContractTerm: financing?.contractTermMonths,
+    financingContractTerm: financing ? resolveFinancingContractTermMonths({
+      paymentMethod: selectedPaymentMethod,
+      amortizationMonths: Number(financing.amortizationMonths),
+      contractTermMonths: financing.contractTermMonths,
+    }) : undefined,
     savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
     recommendedDepositAmount: data.recommendedDepositAmount
       ?? getRecommendedDeposit(Number(motor.hp || 0)),
@@ -230,7 +240,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
     selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
     selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,
-    selectedPaymentMethod: snapshot?.paymentMethod ?? data.selectedPaymentMethod,
+    selectedPaymentMethod,
     promotionName: promotion?.name ?? data.promotionName,
     promotionCombinationMode: promotion?.combinationMode ?? data.promotionCombinationMode,
     promoEndDate: promotion?.endDate ?? data.promoEndDate,

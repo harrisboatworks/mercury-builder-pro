@@ -11,6 +11,7 @@ import {
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { getRecommendedDeposit } from '@/lib/deposit';
+import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
 import harrisLogoBlack from '@/assets/harris-logo.png?inline';
 import mercuryLogoBlack from '@/assets/mercury-logo.png';
 
@@ -384,11 +385,17 @@ export function motorMetaLine(quoteData: QuotePDFProps['quoteData'], codeItems: 
   ].filter(Boolean).join(' | ');
 }
 
-export function financingTermsLine(rate: number, contractTerm: number, amortizationTerm: number): string {
+export function financingTermsLine(
+  rate: number,
+  contractTerm: number,
+  amortizationTerm: number,
+  contractTermIsOfferSpecific = false,
+): string {
+  const contractCopy = `${contractTermIsOfferSpecific ? '' : 'up to '}${contractTerm}-month contract`;
   if (contractTerm === amortizationTerm) {
-    return `${rate}% APR | ${contractTerm}-month contract and amortization`;
+    return `${rate}% APR | ${contractCopy} and amortization`;
   }
-  return `${rate}% APR | ${contractTerm}-month contract | payment based on ${amortizationTerm}-month amortization`;
+  return `${rate}% APR | ${contractCopy} | payment based on ${amortizationTerm}-month amortization`;
 }
 
 export const FINANCING_ESTIMATE_DISCLAIMER = 'Payment figures are estimates and may change with the final financed amount, rate, term or lender approval.';
@@ -487,7 +494,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const savingsNumber = Number(String(quoteData.totalSavings).replace(/,/g, ''));
   const promoEndCopy = quoteData.promoEndDate ? ` | ends ${formattedDate(quoteData.promoEndDate)}` : '';
   const footerAddress = 'Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0';
-  const financingContractTerm = quoteData.financingContractTerm || 60;
+  const financingContractTerm = resolveFinancingContractTermMonths({
+    paymentMethod: quoteData.selectedPaymentMethod,
+    amortizationMonths: Number(quoteData.financingTerm),
+    contractTermMonths: quoteData.financingContractTerm,
+  });
+  const financingContractTermIsOfferSpecific = quoteData.selectedPaymentMethod === 'special_financing';
   const inspectionCaveat = quoteInspectionCaveat(quoteData);
   const hasFollowingPageTwoContent = Boolean(quoteData.customerNotes || quoteData.depositInfo);
 
@@ -693,7 +705,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             {hasFinancing ? (
               <>
                 <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{financingTermsLine(quoteData.financingRate!, financingContractTerm, quoteData.financingTerm!)}</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{financingTermsLine(
+                  quoteData.financingRate!,
+                  financingContractTerm,
+                  quoteData.financingTerm!,
+                  financingContractTermIsOfferSpecific,
+                )}</Text>
                 {quoteData.financingAmount ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
                 {quoteData.dealerFee ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
                 <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{(quoteData.financingTerm || 0) > financingContractTerm

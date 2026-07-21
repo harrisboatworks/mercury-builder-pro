@@ -36,12 +36,17 @@ describe('professional quote PDF display copy', () => {
 
   it('explains 60/72 financing without making the terms look contradictory', () => {
     expect(financingTermsLine(5.48, 60, 72))
-      .toBe('5.48% APR | 60-month contract | payment based on 72-month amortization');
+      .toBe('5.48% APR | up to 60-month contract | payment based on 72-month amortization');
   });
 
   it('keeps equal contract and amortization terms concise', () => {
     expect(financingTermsLine(5.48, 60, 60))
-      .toBe('5.48% APR | 60-month contract and amortization');
+      .toBe('5.48% APR | up to 60-month contract and amortization');
+  });
+
+  it('prints a selected 24-month promotion as the exact contract and amortization', () => {
+    expect(financingTermsLine(2.99, 24, 24, true))
+      .toBe('2.99% APR | 24-month contract and amortization');
   });
 
   it('keeps the financing estimate protection explicit', () => {

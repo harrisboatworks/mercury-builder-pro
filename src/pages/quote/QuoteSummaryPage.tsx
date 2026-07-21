@@ -53,7 +53,6 @@ import {
 import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
-  FINANCING_CONTRACT_TERM_MONTHS,
   frozenPricingFromPdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
   resolveQuoteMotorImage,
@@ -601,7 +600,6 @@ export default function QuoteSummaryPage() {
     const financingApr = frozen?.financingRate ?? financingRate;
     const financingAmount = frozen?.amountFinanced ?? amountToFinance;
     const financingDealerFee = frozen?.dealerFee ?? DEALERPLAN_FEE;
-    const financingContractTerm = frozen?.financingContractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS;
     const planPrice = state.warrantyConfig?.warrantyPrice || 0;
     const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
     const selectedPromoValue = frozen?.selectedPromoValue
@@ -662,7 +660,8 @@ export default function QuoteSummaryPage() {
           amountFinanced: financingAmount,
           rate: financingApr,
           amortizationMonths: financingAmortization,
-          contractTermMonths: financingContractTerm,
+          contractTermMonths: frozen?.financingContractTermMonths,
+          paymentMethod,
           dealerFee: financingDealerFee,
           downPayment: state.financing.downPayment,
         }),
