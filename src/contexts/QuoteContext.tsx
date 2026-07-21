@@ -242,6 +242,13 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       // and contact facts, but never carry a prior quote's trade-in credit into
       // the new motor. Saved/QR quotes still restore their own trade explicitly
       // through RESTORE_QUOTE.
+      const boatInfoWithoutLegacyTrade = state.boatInfo
+        ? { ...state.boatInfo, hasCompatibleProp: false }
+        : null;
+      if (boatInfoWithoutLegacyTrade) {
+        delete boatInfoWithoutLegacyTrade.tradeIn;
+      }
+
       return {
         ...state,
         motor: action.payload,
@@ -249,9 +256,7 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         previewMotor: null,
         configuratorStep: null,
         configuratorOptions: null,
-        boatInfo: state.boatInfo
-          ? { ...state.boatInfo, hasCompatibleProp: false }
-          : null,
+        boatInfo: boatInfoWithoutLegacyTrade,
         tradeInInfo: null,
         hasTradein: false,
         fuelTankConfig: null,
