@@ -340,7 +340,7 @@ function directiveToMarkdown(name, body) {
 const INLINE_FAQ_HEADING_LABELS = [
   'Frequently Asked Questions', 'FAQs', 'FAQ', 'Common Questions',
   'Common questions about HBW', 'Questions fréquentes', '자주 묻는 질문',
-  '常见问题', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+  '常见问题', '常見問題', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
   'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal',
   'اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات',
   'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات', 'Mga madalas itanong',
@@ -352,6 +352,7 @@ const INLINE_FAQ_LABEL_PATTERN = INLINE_FAQ_HEADING_LABELS
 const AUTHORING_HEADING_LABELS = [
   'Full Article', 'Article complet', 'Artículo completo', '전체 기사',
   '다음 단계 / CTA', '行动呼吁（CTA）',
+  '行動呼籲（CTA）',
 ];
 const AUTHORING_HEADING_PATTERN = [
   ...AUTHORING_HEADING_LABELS.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),

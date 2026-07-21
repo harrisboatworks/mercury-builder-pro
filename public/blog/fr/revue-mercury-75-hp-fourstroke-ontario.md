@@ -107,25 +107,6 @@ Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversat
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 - [Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)](/blog/fr/guide-assurance-bateau-ontario-2026): Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne.
 
-## Questions fréquentes
-
-**Le Mercury 75 HP est-il un mauvais moteur?**
-Non. Ce n'est pas un mauvais moteur, c'est le même moteur que le 90 avec moins de marge dans la plage de RPM.
-
-**Pourquoi HBW ne tient pas le 75 en stock?**
-Parce que c'est le même moteur physique que le 90, même poids, différence de prix minimale, et le 90 a plus de marge et une meilleure valeur de revente.
-
-**Puis-je obtenir le 75 en version Command Thrust?**
-Oui, c'est disponible. Mais si vous avez besoin de Command Thrust pour un ponton, le 90 CT est un meilleur investissement.
-
-**Que se passe-t-il si ma coque se situe entre 60 et 75 HP sur la plaque de capacité?**
-Appelez-nous au 905-342-2153.
-
-**Le 75 HP est-il significativement moins cher que le 90?**
-Pas significativement. Les chiffres exacts varient avec la tarification de [Mercury Canada](https://www.mercurymarine.com/canada/en/).
-
----
-
 ## Bâtissez une soumission, sur le 90
 
 Si vous êtes venu ici en regardant le 75 et que cela a confirmé ce que vous soupçonniez, allez bâtir une soumission sur le 90 à mercuryrepower.ca. Vrais prix CAD, vraies configurations.

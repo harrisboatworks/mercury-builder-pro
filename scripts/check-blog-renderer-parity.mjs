@@ -25,7 +25,7 @@ const twinGenerator = readFileSync('scripts/generate-markdown-twins.mjs', 'utf8'
 const FAQ_HEADING_LABELS = [
   'Frequently Asked Questions', 'FAQs', 'FAQ', 'Common Questions',
   'Common questions about HBW', 'Questions fréquentes', '자주 묻는 질문',
-  '常见问题', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+  '常见问题', '常見問題', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
   'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal',
   'اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات',
   'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات', 'Mga madalas itanong',
@@ -38,6 +38,7 @@ const FAQ_TRAILER_PATTERN = String.raw`(?:\s*(?:\||:|,|\(|（|—|-)\s*[^\n<]*)?
 const AUTHORING_HEADING_LABELS = [
   'Full Article', 'Article complet', 'Artículo completo', '전체 기사',
   '다음 단계 / CTA', '行动呼吁（CTA）',
+  '行動呼籲（CTA）',
 ];
 const AUTHORING_HEADING_PATTERN = [
   ...AUTHORING_HEADING_LABELS.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
@@ -50,6 +51,9 @@ if (!/::bilingual-trust\(\?:-card\)\?/.test(staticRenderer)) {
 if (!/::cta\\s\*\\n/.test(staticRenderer) || !/renderCtaHtml/.test(staticRenderer)) {
   fail('scripts/static-prerender.mjs', 'must expand CTA directives for no-JS readers');
 }
+if (!/renderCtaFooterHtml\(flat\.footer\)/.test(staticRenderer)) {
+  fail('scripts/static-prerender.mjs', 'must render supported inline links in CTA footers');
+}
 if (!/hasFaqs:\s*Boolean\(article\.faqs\?\.length\)/.test(staticRenderer)) {
   fail('scripts/static-prerender.mjs', 'must suppress inline FAQ copy when structured FAQs are appended');
 }
@@ -58,6 +62,22 @@ if (!/::bilingual-trust\(\?:-card\)\?/.test(runtimeRenderer)) {
 }
 if (!/directiveToMarkdown/.test(twinGenerator)) {
   fail('scripts/generate-markdown-twins.mjs', 'must convert visual directives into readable Markdown');
+}
+
+const localizedArticlePages = [
+  'FrenchBlogArticlePage.tsx', 'KoreanBlogArticlePage.tsx', 'MandarinBlogArticlePage.tsx',
+  'SpanishBlogArticlePage.tsx', 'PunjabiBlogArticlePage.tsx', 'UrduBlogArticlePage.tsx',
+  'TagalogBlogArticlePage.tsx', 'HindiBlogArticlePage.tsx', 'TraditionalChineseBlogArticlePage.tsx',
+];
+for (const page of localizedArticlePages) {
+  const file = join('src/pages/blog', page);
+  const source = readFileSync(file, 'utf8');
+  if (!/const cleanedContent\s*=\s*cleanLocalizedBlogContent\(/.test(source)) {
+    fail(file, 'must derive localized reader content from the shared cleaner');
+  }
+  if (!/const tocItems\s*=\s*extractHeaders\(cleanedContent\)/.test(source)) {
+    fail(file, 'must derive the localized TOC from cleaned reader content');
+  }
 }
 
 const htmlLeakPatterns = [
@@ -82,10 +102,26 @@ for (const file of htmlFiles) {
   );
   const faqHeadings = html.match(faqHeadingPattern) || [];
   if (faqHeadings.length > 1) fail(file, `${faqHeadings.length} FAQ section headings`);
+  const ctaBlocks = html.match(/<aside class="blog-inline-cta[\s\S]*?<\/aside>/gi) || [];
+  for (const ctaBlock of ctaBlocks) {
+    if (/\[[^\]]+\]\((?:\/|https?:\/\/)[^)]+\)/i.test(ctaBlock)) {
+      fail(file, 'literal Markdown link in prerendered CTA');
+    }
+  }
   const relatedGuides = html.match(/<aside aria-labelledby="related-guides-heading-ssg">[\s\S]*?<\/aside>/i)?.[0] || '';
   if (/<\/a>\s+—\s+/.test(relatedGuides)) fail(file, 'em-dash related-guide separator');
   if (/\/blog\/(?:fr|ko|zh|es|pa|ur|tl|hi)\//.test(file.replace(/\\/g, '/')) && /class="author-byline"[^>]*>[\s\S]{0,120}<span>By\s/.test(html)) {
     fail(file, 'English static byline on a translated article');
+  }
+}
+
+const ctaFooterGuard = 'dist/blog/fourstroke-vs-pro-xs/index.html';
+if (!existsSync(ctaFooterGuard)) {
+  fail(ctaFooterGuard, 'missing CTA footer regression artifact');
+} else {
+  const html = readFileSync(ctaFooterGuard, 'utf8');
+  if (!/<a href="\/repower"[^>]*>repower basics<\/a>/.test(html)) {
+    fail(ctaFooterGuard, 'missing rendered repower-basics CTA footer link');
   }
 }
 

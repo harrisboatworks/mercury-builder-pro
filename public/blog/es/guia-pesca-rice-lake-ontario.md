@@ -34,8 +34,6 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 ---
 
-### Artículo completo
-
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
 Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
@@ -153,40 +151,6 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 **5:30 PM**, Regreso a HBW, combustible 
 **6:00, 7:00 PM**, Regreso a Toronto
 
----
-
-## Preguntas frecuentes (FAQ)
-
-**¿Puedo comprar la licencia de pesca en Harris Boat Works?** 
-Actualmente no, las licencias se compran en ontario.ca o tiendas de artículos deportivos como Canadian Tire. Confirma disponibilidad local antes de venir.
-
-**¿Hay guías de pesca en español disponibles en Rice Lake?** 
-No manejamos guías de pesca en Harris Boat Works. Para servicios de guía, consulta operadores locales en Bewdley o Hastings. HBW es la marina de servicio y renta.
-
-**¿Puedo pescar walleye durante todo el año?** 
-No. La temporada cierra el 15 de noviembre y reabre el segundo sábado de mayo. Durante el cierre la pesca de walleye está prohibida. Siempre verifica las fechas actuales antes de salir.
-
-**¿Qué equipo básico necesito para walleye en Rice Lake?** 
-Caña de 6, 7 pies de acción media, carrete de spinning o baitcasting, línea de 8, 12 lbs, variedad de jigs de 1/4, 3/8 oz y señuelos de buceo tipo crankbait. El equipo específico depende de tus preferencias, consulta una tienda de artículos deportivos local para recomendaciones actualizadas.
-
-**¿Harris Boat Works tiene personal que hable español?** 
-Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos en español a través del formulario en hbw.wiki/service y haremos lo posible por ser útiles.
-
----
-
-## CTA, Reserva tu bote o configura tu próximo motor
-
-**¿Quieres pescar Rice Lake este verano?** 
-Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
-
-**¿Buscas un motor para tu propio bote?** 
-Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
-
-¿Preguntas? Escríbenos en hbw.wiki/service (se aceptan mensajes en español).
-
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
-harrisboatworks.ca | 905-342-2153
 ---
 
 ## FAQs

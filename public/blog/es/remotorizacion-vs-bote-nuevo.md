@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo.md
-last_updated: 2026-06-19
+last_updated: 2026-07-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?"
 description: "Análisis completo: remotorización (repower) con motor Mercury nuevo vs comprar un bote nuevo."
 category: "Remotorización"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-07-20
 keywords: ["remotorización vs bote nuevo","repower Mercury Ontario","cambiar motor bote","costo remotorización Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: es
 
 **Category:** Remotorización  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-07-20  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo
 
@@ -42,11 +42,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+### Una nota sobre el idioma
+
+Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+
+Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 
@@ -123,28 +123,6 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 | Presupuesto limitado | Remotorización |
 | Necesita navegar esta temporada | Remotorización (plazo más corto) |
 | La embarcación ya cumplió su vida útil | Bote nuevo |
-
----
-
-## Preguntas frecuentes
-
-**¿Cuánto cuesta una remotorización Mercury en Ontario?** 
-El costo varía según la potencia del motor, la longitud del árbol, el cableado necesario y la mano de obra. Para obtener un precio preciso para su embarcación, use el configurador en mercuryrepower.ca, disponible en tiempo real, y muestra los precios claramente en dólares canadienses.
-
-**¿Cómo sé si mi casco vale la pena remotorizar?** 
-Haga revisar el casco por un técnico con experiencia. En Harris Boat Works evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos.
-
-**¿Puedo ver botes nuevos en Harris Boat Works?** 
-Sí. Somos concesionarios de Legend Boats. Consulte el inventario en harrisboatworks.ca.
-
-**¿Puedo escribir en español?** 
-Nuestro personal responde en inglés. Puede enviarnos su pregunta y le responderemos en inglés; si lo prefiere, use Google Translate o pídale ayuda a un familiar bilingüe. El configurador de precios en mercuryrepower.ca funciona en cualquier idioma.
-
-**¿Cuánto tiempo tarda una remotorización?** 
-Depende de la disponibilidad del motor y el programa del taller. Una remotorización bien planificada puede realizarse en semanas. La temporada en Ontario es corta, planifique con anticipación.
-
-**¿Trabajan con otros motores además de Mercury?** 
-Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Mercury y Mercruiser.
 
 ---
 

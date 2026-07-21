@@ -81,18 +81,6 @@ Transport Canada 强制以下装备 (按船长不同有细微差别):
 2. **没带钓鱼证就钓鱼** ， 安大略 OPP 在莱斯湖夏季周末常做随机检查。罚款 $100 起。
 3. **救生衣过期或不合规** ， 加拿大认证标签必须完整。从中国带的救生衣不被加拿大法规承认。
 
-## 常见问题
-
-**Q:PCOC 中文考试有吗?** 有。多家在线培训公司提供中文 PCOC 课程和考试。BOATERexam 是常见选择。
-
-**Q:HBW 可以代办 PCOC 吗?** 不行。PCOC 是 Transport Canada 颁发的个人证件,必须本人申请考试。
-
-**Q:船只 PCL 牌照能不能转给买家?** 不能。PCL 不可转让。买家需在购船后申请新 PCL。卖家应该取消旧 PCL。
-
-**Q:莱斯湖周边哪里能买钓鱼证?** ontario.ca 网上申请最快。Canadian Tire、Walmart 也有线下售点但效率低。
-
-**Q:船上没有 PCOC 罚款多少?** $250 起。如果违反多项 (无 PCOC + 无 PCL + 无救生衣),累加可达 $1000+。
-
 ## 联系我们
 
 如有关于船只合规、维修或冬储的问题:电话 (905) 342-2153 | 邮件 info@harrisboatworks.ca | [harrisboatworks.ca](https://www.harrisboatworks.ca)

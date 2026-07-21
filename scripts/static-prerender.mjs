@@ -303,7 +303,7 @@ function renderCtaHtml(body) {
   const phone = flat.phone
     ? `<p>Questions? <a href="tel:${escHtml(flat.phone.replace(/[^0-9+]/g, ''))}">Call ${escHtml(flat.phone)}</a></p>`
     : '';
-  const footer = flat.footer ? `<p>${escHtml(flat.footer)}</p>` : '';
+  const footer = flat.footer ? `<p>${renderCtaFooterHtml(flat.footer)}</p>` : '';
   return (
     `<aside class="blog-inline-cta blog-inline-cta-${variant}" aria-label="Call to action">` +
       `<h3>${escHtml(flat.heading)}</h3>` +
@@ -311,6 +311,22 @@ function renderCtaHtml(body) {
       `<div><a href="${escHtml(flat.primaryHref)}" class="cta-primary">${escHtml(flat.primaryLabel)}</a>${secondary}</div>` +
       `${phone}${footer}` +
     `</aside>`
+  );
+}
+
+function renderCtaFooterHtml(footer) {
+  const value = String(footer || '');
+  const match = /^(.*?)\[([^\]]+)\]\(([^)]+)\)(.*)$/.exec(value);
+  if (!match) return escHtml(value);
+
+  const [, before, linkText, href, after] = match;
+  const externalAttrs = /^https?:\/\//i.test(href)
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : '';
+  return (
+    `${escHtml(before)}` +
+    `<a href="${escHtml(href)}" class="underline hover:no-underline"${externalAttrs}>${escHtml(linkText)}</a>` +
+    `${escHtml(after)}`
   );
 }
 
@@ -454,7 +470,7 @@ function expandVisualDirectives(md) {
 const INLINE_FAQ_HEADING_LABELS = [
   'Frequently Asked Questions', 'FAQs', 'FAQ', 'Common Questions',
   'Common questions about HBW', 'Questions fréquentes', '자주 묻는 질문',
-  '常见问题', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+  '常见问题', '常見問題', 'Preguntas frecuentes', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
   'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal',
   'اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات',
   'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات', 'Mga madalas itanong',
@@ -466,6 +482,7 @@ const INLINE_FAQ_LABEL_PATTERN = INLINE_FAQ_HEADING_LABELS
 const AUTHORING_HEADING_LABELS = [
   'Full Article', 'Article complet', 'Artículo completo', '전체 기사',
   '다음 단계 / CTA', '行动呼吁（CTA）',
+  '行動呼籲（CTA）',
 ];
 const AUTHORING_HEADING_PATTERN = [
   ...AUTHORING_HEADING_LABELS.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
@@ -493,12 +510,12 @@ function normalizeArticleContent(content, { hasFaqs = false, language = 'en' } =
   s = s.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
   s = s.replace(new RegExp(`^#{2,3}\\s+(?:${AUTHORING_HEADING_PATTERN})\\s*$`, 'gim'), '');
   const relatedLabels = {
-    en: 'Related reading', fr: 'Lectures connexes', ko: '관련 자료', zh: '相关阅读',
+    en: 'Related reading', fr: 'Lectures connexes', ko: '관련 자료', zh: '相关阅读', 'zh-Hant': '相關閱讀',
     es: 'Lecturas relacionadas', pa: 'ਸੰਬੰਧਿਤ ਗਾਈਡਾਂ', ur: 'متعلقہ رہنما',
     tl: 'Kaugnay na mga gabay', hi: 'संबंधित गाइड',
   };
   s = s.replace(
-    /^(##\s+)(?:Internal Links|Liens internes|내부 링크|内部链接|Enlaces internos|ਅੰਦਰੂਨੀ ਲਿੰਕ|اندرونی روابط|Mga panloob na link|आंतरिक लिंक)\s*$/gim,
+    /^(##\s+)(?:Internal Links|Liens internes|내부 링크|内部链接|內部連結|Enlaces internos|ਅੰਦਰੂਨੀ ਲਿੰਕ|اندرونی روابط|Mga panloob na link|आंतरिक लिंक)\s*$/gim,
     `$1${relatedLabels[language] || relatedLabels.en}`,
   );
   s = s.replace(/\*\*Quick answer\*\*(?!\s*:)/gi, '**Quick answer:**');

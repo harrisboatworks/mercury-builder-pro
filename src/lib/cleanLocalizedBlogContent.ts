@@ -3,6 +3,7 @@ const RELATED_LABELS: Record<string, string> = {
   fr: 'Lectures connexes',
   ko: '관련 자료',
   zh: '相关阅读',
+  'zh-Hant': '相關閱讀',
   es: 'Lecturas relacionadas',
   pa: 'ਸੰਬੰਧਿਤ ਗਾਈਡਾਂ',
   ur: 'متعلقہ رہنما',
@@ -14,6 +15,7 @@ const FAQ_LABELS: Record<string, string[]> = {
   fr: ['Questions fréquentes'],
   ko: ['자주 묻는 질문'],
   zh: ['常见问题'],
+  'zh-Hant': ['常見問題', '常见问题'],
   es: ['Preguntas frecuentes'],
   pa: ['ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ', 'ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ', 'Aksar puchhe jaande sawaal'],
   ur: ['اکثر پوچھے جانے والے سوالات', 'اکثر پوچھے گئے سوالات', 'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات'],
@@ -26,6 +28,7 @@ const INTERNAL_LINK_LABELS = [
   'Liens internes',
   '내부 링크',
   '内部链接',
+  '內部連結',
   'Enlaces internos',
   'ਅੰਦਰੂਨੀ ਲਿੰਕ',
   'اندرونی روابط',
@@ -40,6 +43,7 @@ const AUTHORING_HEADING_LABELS = [
   '전체 기사',
   '다음 단계 / CTA',
   '行动呼吁（CTA）',
+  '行動呼籲（CTA）',
 ];
 
 function escapeRegExp(value: string): string {

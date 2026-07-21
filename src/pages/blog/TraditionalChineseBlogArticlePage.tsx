@@ -22,6 +22,7 @@ import {
 } from '@/data/traditionalChineseBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { substituteLiveRateTokens } from '@/lib/finance';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { BlogCTA } from '@/components/blog/BlogCTA';
@@ -55,7 +56,12 @@ export default function TraditionalChineseBlogArticlePage() {
   const url = `${SITE_URL}/blog/zh-hant/${article.slug}`;
   const hansSlug = ZH_HANT_TO_HANS_SLUG[article.slug];
   const hansUrl = hansSlug ? `${SITE_URL}/blog/zh/${hansSlug}` : null;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(
+    substituteLiveRateTokens(article.content.replace(/^\s*#\s+.+\n+/, '')),
+    'zh-Hant',
+    Boolean(article.faqs?.length),
+  );
+  const tocItems = extractHeaders(cleanedContent);
   const relatedArticles = traditionalChineseBlogArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
@@ -164,17 +170,7 @@ export default function TraditionalChineseBlogArticlePage() {
 
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={(() => {
-                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
-                c = substituteLiveRateTokens(c);
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:常見問題|常见问题|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-                    '\n',
-                  );
-                }
-                return c;
-              })()}
+              content={cleanedContent}
 
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains

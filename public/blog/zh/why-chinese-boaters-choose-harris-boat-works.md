@@ -53,25 +53,15 @@ HBW 持有 Mercury 最高级别 [Premier dealer](https://www.mercurymarine.com/c
 
 GTA 地区大部分船坞是 "Mercury authorized" 但不是 Premier 级别。差异在保修索赔、技师培训深度、部件调度速度。
 
-::bilingual-trust-card
-eyebrow: Why HBW / 为什么选 HBW
-heading: What HBW brings to GTA Chinese boaters
-headingTranslated: HBW 为 GTA 华人船主提供的核心价值
-item1En: Family-run since 1947
-item1Zh: 1947 年至今, 三代家族经营
-item2En: Mercury Premier Dealer
-item2Zh: 水星 Premier 认证经销商
-item4En: Transparent itemized quotes
-item4Zh: 报价透明, 逐项列明
-item5En: Full-service Mercury shop
-item5Zh: 水星原厂工具与认证技师
-item6En: 1 hour from Toronto / GTA
-item6Zh: 从多伦多自驾约 1 小时
-ctaEn: Get a real quote at mercuryrepower.ca
-ctaZh: 立即获取实际报价
-ctaHref: https://www.mercuryrepower.ca
-::
+### What HBW brings to GTA Chinese boaters / HBW 为 GTA 华人船主提供的核心价值
 
+- Family-run since 1947 / 1947 年至今, 三代家族经营
+- Mercury Premier Dealer / 水星 Premier 认证经销商
+- Transparent itemized quotes / 报价透明, 逐项列明
+- Full-service Mercury shop / 水星原厂工具与认证技师
+- 1 hour from Toronto / GTA / 从多伦多自驾约 1 小时
+
+[Get a real quote at mercuryrepower.ca / 立即获取实际报价](https://www.mercuryrepower.ca)
 ## 4. 三代家族经营
 
 Harris 家族第三代现在主导日常运营：
@@ -116,16 +106,6 @@ HBW 不做：
 - 上门取送服务
 - 销售 PCOC / PCL / 钓鱼证
 - 冬季 (12 月 1 日 - 4 月 1 日) 任何服务
-
-## 常见问题
-
-**Q：HBW 有中文销售或维修报价吗？** 没有。HBW 团队使用英语服务，没有中文母语的销售或翻译。您可以用中英文混合发邮件到 info@harrisboatworks.ca，我们会以英文回复；欢迎带会英语的亲友同来，或使用手机翻译软件——我们会耐心沟通、尽力配合。
-
-**Q：HBW 距离多伦多多远？** 1-1.5 小时车程。从 Markham 大约 70 分钟,从 Mississauga 大约 90 分钟。
-
-**Q：HBW 接受信用卡 / e-Transfer / 现金？** 全部接受。大型维修我们建议 e-Transfer 或信用卡 (有记录方便保修)。
-
-**Q：HBW 可以转运到温哥华 / 蒙特利尔吗？** 不可以。HBW 只服务安大略南部 + 部分魁北克边境地区。
 
 ## 我们的承诺
 
