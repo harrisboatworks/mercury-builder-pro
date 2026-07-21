@@ -9,7 +9,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
-import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
+import { getRecommendedDeposit } from '@/lib/deposit';
 import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
@@ -50,6 +50,7 @@ import {
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
 import {
+  buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
   FINANCING_CONTRACT_TERM_MONTHS,
   frozenPricingFromPdfSnapshot,
@@ -86,7 +87,7 @@ export default function QuoteSummaryPage() {
   const { state, dispatch, getQuoteData } = useQuote();
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
   const baseCoverageYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
@@ -592,9 +593,12 @@ export default function QuoteSummaryPage() {
   const pdfSnapshot = useMemo<QuotePdfSnapshot>(() => {
     const frozen = state.frozenPricing;
     const existing = state.pdfSnapshot;
-    const paymentMethod = frozen?.selectedPaymentMethod ?? existing?.paymentMethod ?? state.selectedPaymentMethod;
-    const financingAmortization = frozen?.financingAmortizationMonths ?? existing?.financing?.amortizationMonths ?? termMonths;
-    const financingApr = frozen?.financingRate ?? existing?.financing?.rate ?? financingRate;
+    const paymentMethod = frozen?.selectedPaymentMethod ?? state.selectedPaymentMethod ?? existing?.paymentMethod;
+    const financingAmortization = frozen?.financingAmortizationMonths ?? termMonths;
+    const financingApr = frozen?.financingRate ?? financingRate;
+    const financingAmount = frozen?.amountFinanced ?? amountToFinance;
+    const financingDealerFee = frozen?.dealerFee ?? DEALERPLAN_FEE;
+    const financingContractTerm = frozen?.financingContractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS;
     const planPrice = state.warrantyConfig?.warrantyPrice || 0;
     const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
     const selectedPromoValue = frozen?.selectedPromoValue
@@ -651,23 +655,20 @@ export default function QuoteSummaryPage() {
         },
       } : {}),
       ...(canShowFinancing ? {
-        financing: {
-          monthlyPayment: frozen?.amountFinanced && frozen?.financingRate && frozen?.financingAmortizationMonths
-            ? calculateMonthlyPayment(frozen.amountFinanced, frozen.financingRate, frozen.financingAmortizationMonths).payment
-            : monthlyPayment,
+        financing: buildQuotePdfFinancing({
+          amountFinanced: financingAmount,
           rate: financingApr,
           amortizationMonths: financingAmortization,
-          contractTermMonths: frozen?.financingContractTermMonths ?? existing?.financing?.contractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS,
-          amountFinanced: frozen?.amountFinanced ?? existing?.financing?.amountFinanced ?? amountToFinance,
-          dealerFee: frozen?.dealerFee ?? existing?.financing?.dealerFee ?? DEALERPLAN_FEE,
+          contractTermMonths: financingContractTerm,
+          dealerFee: financingDealerFee,
           downPayment: state.financing.downPayment,
-        },
+        }),
       } : {}),
       paymentMethod,
       promotion: {
-        name: frozen ? frozen.promotionName : (existing?.promotion?.name ?? currentPromotion?.name),
-        endDate: frozen ? frozen.promotionEndDate : (existing?.promotion?.endDate ?? currentPromotion?.end_date),
-        combinationMode: frozen?.promotionCombinationMode ?? existing?.promotion?.combinationMode ?? currentPromotion?.promo_options?.type,
+        name: frozen ? frozen.promotionName : (currentPromotion?.name ?? existing?.promotion?.name),
+        endDate: frozen ? frozen.promotionEndDate : (currentPromotion?.end_date ?? existing?.promotion?.endDate),
+        combinationMode: frozen?.promotionCombinationMode ?? currentPromotion?.promo_options?.type ?? existing?.promotion?.combinationMode,
         selectedOption: frozen?.selectedPromoOption ?? state.selectedPromoOption,
         selectedValue: selectedPromoValue,
       },
@@ -687,7 +688,6 @@ export default function QuoteSummaryPage() {
     hp,
     imageUrl,
     modelYear,
-    monthlyPayment,
     motor?.category,
     motorDiscount,
     motorMSRP,
@@ -797,6 +797,24 @@ export default function QuoteSummaryPage() {
         customerPhone: state.customerPhone || '',
         snapshot: pdfSnapshot,
         savedQuoteQrCode,
+        recommendedDepositAmount: depositAmount,
+        promotionalFinancingAlternative: (() => {
+          if (state.selectedPaymentMethod === 'special_financing') return undefined;
+          const promotionalFinancing = getPromotionOptions()
+            .find((option) => option.id === 'special_financing');
+          if (
+            promotionalFinancing?.minimum_amount
+            && amountToFinance < promotionalFinancing.minimum_amount
+          ) {
+            return undefined;
+          }
+          const promotionalRate = promotionalFinancing?.rates?.[0];
+          if (!promotionalRate) return undefined;
+          return {
+            rate: promotionalRate.rate,
+            termMonths: promotionalRate.months,
+          };
+        })(),
       };
       
       // Save a CRM lead only when the quote has a real, contactable customer.
