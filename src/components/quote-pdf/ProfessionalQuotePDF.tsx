@@ -148,13 +148,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 8,
-    backgroundColor: colors.ink,
+    backgroundColor: colors.cream,
+    borderTop: `2 solid ${colors.ink}`,
+    borderBottom: `1 solid ${colors.ink}`,
+    borderLeft: `4 solid ${colors.red}`,
     paddingVertical: 8,
     paddingHorizontal: 8,
     marginTop: 6,
   },
   totalRowSpacious: { paddingVertical: 9 },
-  totalRowText: { color: colors.white, fontSize: 9.5, fontWeight: 'bold' },
+  totalRowText: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold' },
   totalRowTextSpacious: { fontSize: 10.7 },
   card: { backgroundColor: colors.cream, border: `1 solid ${colors.line}`, borderRadius: 6, padding: 10, marginBottom: 9 },
   cardTitle: { color: colors.ink, fontSize: 8.8, fontWeight: 'bold', marginBottom: 6 },
@@ -181,11 +184,10 @@ const styles = StyleSheet.create({
   reserveSpacious: { padding: 13 },
   reserveTitle: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold', marginBottom: 5 },
   reserveTitleSpacious: { fontSize: 10.4 },
+  reserveAmount: { color: colors.ink, fontSize: 7.4, fontWeight: 'bold', marginBottom: 3 },
+  reserveAmountSpacious: { fontSize: 8.1 },
   reserveText: { color: colors.ink2, fontSize: 6.9, lineHeight: 1.42 },
   reserveTextSpacious: { fontSize: 7.5 },
-  reserveChip: { alignSelf: 'flex-start', backgroundColor: colors.red, borderRadius: 4, marginTop: 7, paddingVertical: 5, paddingHorizontal: 8 },
-  reserveChipText: { color: colors.white, fontSize: 7.2, fontWeight: 'bold' },
-  reserveChipTextSpacious: { fontSize: 7.8 },
   reservePolicy: { color: colors.ink2, fontSize: 5.8, lineHeight: 1.3, marginTop: 6 },
   reservePolicySpacious: { fontSize: 6.2 },
   pageTwoTitle: { color: colors.ink, fontSize: 21, fontWeight: 'bold', borderBottom: `3 solid ${colors.red}`, paddingBottom: 9, marginBottom: 17 },
@@ -244,6 +246,32 @@ const styles = StyleSheet.create({
   noteTitle: { color: colors.ink, fontSize: 8.3, fontWeight: 'bold', marginBottom: 3 },
   noteText: { color: colors.ink2, fontSize: 7, lineHeight: 1.4 },
   depositBox: { backgroundColor: colors.cream, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, padding: 10, marginBottom: 10 },
+  singlePageBody: { paddingTop: 14, paddingHorizontal: 34, paddingBottom: 34 },
+  singleTop: { flexDirection: 'row', gap: 18, marginBottom: 13 },
+  singleBreakdown: { flex: 1.45 },
+  singleSide: { flex: 0.85 },
+  singleDetails: { backgroundColor: colors.cream, border: `1 solid ${colors.line}`, borderRadius: 6, padding: 10, marginBottom: 9 },
+  singleDetailsGrid: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, marginBottom: 3 },
+  singleDetailsLabel: { color: colors.ink2, fontSize: 7.2 },
+  singleDetailsValue: { flex: 1, color: colors.ink2, fontSize: 7.2, fontWeight: 'bold', textAlign: 'right' },
+  singleMiddle: { flexDirection: 'row', gap: 10, marginBottom: 13 },
+  singleMiniCard: { flex: 1, backgroundColor: colors.cream, border: `1 solid ${colors.line}`, borderTop: `3 solid ${colors.ink}`, borderRadius: 6, padding: 10, minHeight: 104 },
+  singleMiniCardWide: { flex: 2 },
+  singleMiniCardRed: { borderTop: `3 solid ${colors.red}` },
+  singleMiniEyebrow: { color: colors.ink2, fontSize: 6.4, fontWeight: 'bold', letterSpacing: 1.2, marginBottom: 5 },
+  singleMiniLead: { color: colors.ink, fontSize: 15, fontWeight: 'bold', lineHeight: 1.05, marginBottom: 5 },
+  singleMiniBody: { color: colors.ink2, fontSize: 6.7, lineHeight: 1.4 },
+  singleQrRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  singleQr: { width: 54, height: 54, backgroundColor: colors.white, padding: 3 },
+  singleQrCopy: { flex: 1 },
+  singleStepsHeader: { color: colors.red, fontSize: 7.7, fontWeight: 'bold', letterSpacing: 1.5, marginBottom: 7 },
+  singleSteps: { flexDirection: 'row', gap: 8, marginBottom: 13 },
+  singleStep: { flex: 1, backgroundColor: colors.cream, borderRadius: 6, padding: 9, minHeight: 72 },
+  singleStepNumber: { width: 17, height: 17, borderRadius: 8.5, backgroundColor: colors.ink, alignItems: 'center', justifyContent: 'center', marginBottom: 5 },
+  singleStepNumberText: { color: colors.white, fontSize: 6.2, fontWeight: 'bold' },
+  singleStepTitle: { color: colors.ink, fontSize: 7.8, fontWeight: 'bold', marginBottom: 3 },
+  singleStepBody: { color: colors.ink2, fontSize: 6.25, lineHeight: 1.35 },
+  singleTrust: { marginBottom: 0, paddingVertical: 9 },
   waterTestBand: { position: 'absolute', left: 34, right: 34, bottom: 38, backgroundColor: colors.cream, borderLeft: `3 solid ${colors.gold}`, paddingVertical: 7, paddingHorizontal: 10 },
   waterTestBandText: { color: colors.ink2, fontSize: 7.3, lineHeight: 1.35, fontWeight: 'bold', textAlign: 'center' },
   footerRule: { position: 'absolute', left: 34, right: 34, bottom: 25, borderTop: `1 solid ${colors.line}` },
@@ -436,6 +464,16 @@ function StepCard({ number, title, children, spacious = false }: { number: strin
   );
 }
 
+function CompactStepCard({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
+  return (
+    <View style={styles.singleStep}>
+      <View style={styles.singleStepNumber}><Text style={styles.singleStepNumberText}>{number}</Text></View>
+      <Text style={styles.singleStepTitle}>{title}</Text>
+      <Text style={styles.singleStepBody}>{children}</Text>
+    </View>
+  );
+}
+
 function TrustItem({ lead, label, bordered = false, spacious = false }: { lead: string; label: string; bordered?: boolean; spacious?: boolean }) {
   return (
     <View style={[styles.trustItem, bordered ? styles.trustItemBorder : {}]}>
@@ -488,6 +526,170 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const financingContractTerm = quoteData.financingContractTerm || 60;
   const inspectionCaveat = quoteInspectionCaveat(quoteData);
   const hasFollowingPageTwoContent = Boolean(quoteData.customerNotes || quoteData.depositInfo);
+  const isSimpleCashQuote = quoteData.selectedPaymentMethod === 'cash_purchase'
+    && items.length === 0
+    && !quoteData.includesInstallation
+    && !quoteData.productProtection
+    && !quoteData.tradeInValue
+    && !quoteData.customerNotes
+    && !quoteData.depositInfo;
+
+  if (isSimpleCashQuote) {
+    return (
+      <Document>
+        <Page size="LETTER" style={styles.page}>
+          <View style={styles.hero}>
+            <View style={styles.heroTop}>
+              <View style={styles.brandPlate}>
+                <Image src={harrisLogoBlack} style={styles.harrisLogo} />
+                <View style={styles.brandDivider} />
+                <Image src={mercuryLogoBlack} style={styles.mercuryLogo} />
+              </View>
+              <View>
+                <Text style={styles.documentLabel}>MERCURY OUTBOARD QUOTE</Text>
+                <Text style={styles.documentKicker}>MERCURY MARINE PREMIER DEALER</Text>
+              </View>
+            </View>
+            <View style={styles.heroMain}>
+              <View style={styles.heroCopy}>
+                <Text style={styles.heroEyebrow}>CONFIGURED FOR YOU</Text>
+                <Text style={styles.heroProduct}>{quoteData.productName}</Text>
+                <Text style={styles.heroMeta}>{motorMetaLine(quoteData, codeItems)}</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.priceBand}>
+            <View>
+              <Text style={styles.priceEyebrow}>TOTAL CASH PRICE | HST INCLUDED</Text>
+              <Text style={styles.priceAmount}>${quoteData.total}</Text>
+            </View>
+            <View style={styles.savingsPill}>
+              <Text style={styles.savingsPillText}>{savingsNumber > 0 ? `You save $${quoteData.totalSavings} vs MSRP` : 'Clear Canadian pricing'}</Text>
+            </View>
+          </View>
+
+          <View style={styles.singlePageBody}>
+            <View style={styles.singleTop}>
+              <View style={styles.singleBreakdown}>
+                <Text style={[styles.sectionHeader, styles.sectionHeaderSpacious]}>TRANSPARENT PRICE BREAKDOWN</Text>
+                <View style={styles.table}>
+                  <View style={[styles.row, styles.rowSpacious]}>
+                    <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>Mercury outboard MSRP</Text>
+                    <Text style={[styles.rowValue, styles.rowValueSpacious, { color: colors.ink2, textDecoration: 'line-through' }]}>${quoteData.msrp}</Text>
+                  </View>
+                  {Number(String(quoteData.dealerDiscount).replace(/,/g, '')) > 0 ? (
+                    <View style={[styles.row, styles.rowSpacious]}>
+                      <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>HBW dealer discount</Text>
+                      <Text style={[styles.rowValue, styles.rowValueSpacious, styles.discount]}>-${quoteData.dealerDiscount}</Text>
+                    </View>
+                  ) : null}
+                  {(quoteData.pricing?.adminDiscount || 0) > 0 ? (
+                    <View style={[styles.row, styles.rowSpacious]}>
+                      <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>Additional quote discount</Text>
+                      <Text style={[styles.rowValue, styles.rowValueSpacious, styles.discount]}>-${money(quoteData.pricing?.adminDiscount)}</Text>
+                    </View>
+                  ) : null}
+                  {Number(String(quoteData.promoSavings).replace(/,/g, '')) > 0 ? (
+                    <View style={[styles.row, styles.rowSpacious]} wrap={false}>
+                      <View style={styles.rowText}>
+                        <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>{quoteData.promotionName || 'Mercury Canada promotion'}</Text>
+                        <Text style={[styles.rowDescription, styles.rowDescriptionSpacious]}>Factory promotional savings applied{promoEndCopy}</Text>
+                      </View>
+                      <Text style={[styles.rowValue, styles.rowValueSpacious, styles.discount]}>-${quoteData.promoSavings}</Text>
+                    </View>
+                  ) : null}
+                  <View style={[styles.row, styles.rowSpacious]}>
+                    <Text style={[styles.rowPrimary, styles.rowPrimarySpacious, { fontWeight: 'bold' }]}>Motor price after discounts</Text>
+                    <Text style={[styles.rowValue, styles.rowValueSpacious]}>${quoteData.motorSubtotal}</Text>
+                  </View>
+                  <View style={[styles.row, styles.rowSpacious]}>
+                    <View style={styles.rowText}>
+                      <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>Loose motor configuration</Text>
+                      <Text style={[styles.rowDescription, styles.rowDescriptionSpacious]}>Installation is not included</Text>
+                    </View>
+                  </View>
+                  <View style={[styles.row, styles.rowSpacious]}>
+                    <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>Subtotal</Text>
+                    <Text style={[styles.rowValue, styles.rowValueSpacious]}>${quoteData.subtotal}</Text>
+                  </View>
+                  <View style={[styles.row, styles.rowSpacious]}>
+                    <Text style={[styles.rowPrimary, styles.rowPrimarySpacious]}>HST (13%)</Text>
+                    <Text style={[styles.rowValue, styles.rowValueSpacious]}>${quoteData.tax}</Text>
+                  </View>
+                  <View style={[styles.totalRow, styles.totalRowSpacious]}>
+                    <Text style={[styles.totalRowText, styles.totalRowTextSpacious]}>TOTAL CASH PRICE</Text>
+                    <Text style={[styles.totalRowText, styles.totalRowTextSpacious]}>${quoteData.total} CAD</Text>
+                  </View>
+                </View>
+              </View>
+
+              <View style={styles.singleSide}>
+                <View style={styles.singleDetails}>
+                  <Text style={styles.cardTitle}>Quote Details</Text>
+                  <View style={styles.singleDetailsGrid}><Text style={styles.singleDetailsLabel}>Customer</Text><Text style={styles.singleDetailsValue}>{quoteData.customerName}</Text></View>
+                  {quoteData.customerPhone ? <View style={styles.singleDetailsGrid}><Text style={styles.singleDetailsLabel}>Phone</Text><Text style={styles.singleDetailsValue}>{quoteData.customerPhone}</Text></View> : null}
+                  <View style={styles.singleDetailsGrid}><Text style={styles.singleDetailsLabel}>Quote #</Text><Text style={styles.singleDetailsValue}>{quoteData.quoteNumber}</Text></View>
+                  <View style={styles.singleDetailsGrid}><Text style={styles.singleDetailsLabel}>Issued</Text><Text style={styles.singleDetailsValue}>{quoteData.date}</Text></View>
+                  <View style={styles.singleDetailsGrid}><Text style={styles.singleDetailsLabel}>Valid until</Text><Text style={styles.singleDetailsValue}>{expiry}</Text></View>
+                </View>
+                <View style={styles.codeCard}>
+                  <Text style={styles.codeTitle}>Understanding your motor code</Text>
+                  <Text style={styles.codeText}>{firstCodeLine}</Text>
+                  {secondCodeLine ? <Text style={styles.codeText}>{secondCodeLine}</Text> : null}
+                </View>
+              </View>
+            </View>
+
+            <View style={styles.singleMiddle}>
+              <View style={styles.singleMiniCard}>
+                <Text style={styles.singleMiniEyebrow}>MERCURY COVERAGE</Text>
+                <Text style={styles.singleMiniLead}>{includedCoverage} years total</Text>
+                <Text style={styles.singleMiniBody}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included. Final eligibility is confirmed by serial number.</Text>
+              </View>
+
+              <View style={[styles.singleMiniCard, styles.singleMiniCardWide, styles.singleMiniCardRed]}>
+                <Text style={styles.singleMiniEyebrow}>READY TO LOCK THIS IN?</Text>
+                {savedQuoteQrCode ? (
+                  <View style={styles.singleQrRow}>
+                    <Image src={savedQuoteQrCode} style={styles.singleQr} />
+                    <View style={styles.singleQrCopy}>
+                      <Text style={styles.singleMiniLead}>Scan to reopen and reserve</Text>
+                      <Text style={styles.singleMiniBody}>Review this exact saved quote and place the ${money(recommendedDeposit).replace('.00', '')} deposit when you are ready. The deposit holds the motor and applies to your final invoice.</Text>
+                    </View>
+                  </View>
+                ) : (
+                  <>
+                    <Text style={styles.singleMiniLead}>${money(recommendedDeposit).replace('.00', '')} deposit</Text>
+                    <Text style={styles.singleMiniBody}>Reopen saved quote {quoteData.quoteNumber} to review the configuration and place the deposit when you are ready.</Text>
+                  </>
+                )}
+              </View>
+            </View>
+
+            <Text style={styles.singleStepsHeader}>WHAT HAPPENS NEXT</Text>
+            <View style={styles.singleSteps}>
+              <CompactStepCard number="1" title="Reserve">Approve the quote and place the deposit when you are ready.</CompactStepCard>
+              <CompactStepCard number="2" title="We prep and test-run">Your motor is prepared, test-run and commissioned before pickup.</CompactStepCard>
+              <CompactStepCard number="3" title="Pick up your motor">Review the motor and included equipment with our team before leaving.</CompactStepCard>
+            </View>
+
+            <View style={[styles.trust, styles.singleTrust]}>
+              <TrustItem lead="1947" label="FAMILY-OWNED SINCE" />
+              <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered />
+              <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered />
+              <TrustItem lead="Tested" label="PRE-DELIVERY MOTOR CHECK" bordered />
+              <TrustItem lead="300+" label="GOOGLE REVIEWS" bordered />
+            </View>
+          </View>
+
+          <View style={styles.footerRule} />
+          <Text style={styles.footerText}>{footerAddress}</Text>
+          <Text style={styles.footerPage}>Page 1 of 1</Text>
+        </Page>
+      </Document>
+    );
+  }
 
   return (
     <Document>
@@ -627,29 +829,29 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               {secondCodeLine ? <Text style={[styles.codeText, spaciousLayout ? styles.codeTextSpacious : {}]}>{secondCodeLine}</Text> : null}
             </View>
 
-            {savedQuoteQrCode ? (
-              <View style={styles.card}>
-                <View style={styles.qrRow}>
-                  <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} />
-                  <View style={styles.qrCopy}>
-                    <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this quote</Text>
-                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>Your exact configuration, saved. Continue whenever you are ready.</Text>
-                  </View>
-                </View>
-              </View>
-            ) : null}
-
             {!quoteData.depositInfo ? (
               <View style={[styles.reserve, spaciousLayout ? styles.reserveSpacious : {}]}>
                 <Text style={[styles.reserveTitle, spaciousLayout ? styles.reserveTitleSpacious : {}]}>Ready to lock this in?</Text>
-                <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>A ${money(recommendedDeposit).replace('.00', '')} deposit holds this motor and your place in the schedule. The deposit applies to your final invoice.</Text>
-                <View style={styles.reserveChip}><Text style={[styles.reserveChipText, spaciousLayout ? styles.reserveChipTextSpacious : {}]}>Call (905) 342-2153 | Text (647) 952-2153</Text></View>
+                <View style={styles.qrRow}>
+                  {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
+                  <View style={styles.qrCopy}>
+                    <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>{savedQuoteQrCode ? 'Scan to reopen and reserve' : 'Use your saved quote to reserve'}</Text>
+                    <Text style={[styles.reserveAmount, spaciousLayout ? styles.reserveAmountSpacious : {}]}>Deposit: ${money(recommendedDeposit).replace('.00', '')} CAD</Text>
+                    <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>Review this exact saved quote and place the deposit when you are ready. It holds the motor and applies to your final invoice.</Text>
+                  </View>
+                </View>
                 <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>Refundability depends on stock or special-order status and when the order is committed.</Text>
               </View>
             ) : (
               <View style={[styles.reserve, spaciousLayout ? styles.reserveSpacious : {}]}>
                 <Text style={[styles.reserveTitle, spaciousLayout ? styles.reserveTitleSpacious : {}]}>Deposit received</Text>
-                <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>${money(quoteData.depositInfo.amount)} received. Reference {quoteData.depositInfo.referenceNumber}.</Text>
+                <View style={styles.qrRow}>
+                  {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
+                  <View style={styles.qrCopy}>
+                    <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>${money(quoteData.depositInfo.amount)} received. Reference {quoteData.depositInfo.referenceNumber}.</Text>
+                    {savedQuoteQrCode ? <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}, { marginTop: 4 }]}>Scan to reopen this exact saved quote anytime.</Text> : null}
+                  </View>
+                </View>
               </View>
             )}
           </View>
