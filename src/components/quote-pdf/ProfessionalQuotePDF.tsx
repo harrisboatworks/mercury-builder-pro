@@ -11,9 +11,8 @@ import {
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { getRecommendedDeposit } from '@/lib/deposit';
-import { GOOGLE_REVIEWS_FALLBACK } from '@/config/googleReviews';
-import harrisLogoWhite from '@/assets/harris-logo-white.png';
-import mercuryLogoWhite from '@/assets/mercury-logo-white.png';
+import harrisLogoBlack from '@/assets/harris-logo.png?inline';
+import mercuryLogoBlack from '@/assets/mercury-logo.png';
 
 const Document = _Document as unknown as ComponentType<any>;
 const Page = _Page as unknown as ComponentType<any>;
@@ -59,11 +58,12 @@ const styles = StyleSheet.create({
     paddingBottom: 38,
   },
   hero: {
-    backgroundColor: colors.ink,
-    color: colors.white,
+    backgroundColor: colors.white,
+    color: colors.ink,
     paddingTop: 21,
     paddingHorizontal: 34,
     paddingBottom: 20,
+    borderBottom: `1 solid ${colors.line}`,
   },
   heroTop: {
     flexDirection: 'row',
@@ -76,16 +76,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
-  harrisLogo: { width: 45, height: 32, objectFit: 'contain' },
-  brandDivider: { width: 1, height: 25, backgroundColor: '#39445A' },
+  harrisLogo: { width: 62, height: 32, objectFit: 'contain' },
+  brandDivider: { width: 1, height: 25, backgroundColor: colors.ink },
   mercuryLogo: { width: 90, height: 18, objectFit: 'contain' },
-  documentLabel: { color: colors.white, fontSize: 10, fontWeight: 'bold', textAlign: 'right', letterSpacing: 0.5 },
-  documentKicker: { color: '#9AA4B5', fontSize: 6.7, textAlign: 'right', letterSpacing: 1.2, marginTop: 3 },
+  documentLabel: { color: colors.ink, fontSize: 10, fontWeight: 'bold', textAlign: 'right', letterSpacing: 0.5 },
+  documentKicker: { color: colors.ink2, fontSize: 6.7, textAlign: 'right', letterSpacing: 1.2, marginTop: 3 },
   heroMain: { paddingTop: 3 },
   heroCopy: { width: '100%' },
-  heroEyebrow: { color: colors.gold, fontSize: 7.2, fontWeight: 'bold', letterSpacing: 2, marginBottom: 6 },
-  heroProduct: { color: colors.white, fontSize: 27, lineHeight: 1.02, fontWeight: 'bold', letterSpacing: -0.6 },
-  heroMeta: { color: '#B9C2D2', fontSize: 8.5, lineHeight: 1.35, marginTop: 7 },
+  heroEyebrow: { color: colors.red, fontSize: 7.2, fontWeight: 'bold', letterSpacing: 2, marginBottom: 6 },
+  heroProduct: { color: colors.ink, fontSize: 27, lineHeight: 1.02, fontWeight: 'bold', letterSpacing: -0.6 },
+  heroMeta: { color: colors.ink2, fontSize: 8.5, lineHeight: 1.35, marginTop: 7 },
   priceBand: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -177,16 +177,16 @@ const styles = StyleSheet.create({
   qrTitleSpacious: { fontSize: 8.7 },
   qrText: { color: colors.ink2, fontSize: 6.55, lineHeight: 1.35 },
   qrTextSpacious: { fontSize: 7.2 },
-  reserve: { backgroundColor: colors.ink, color: colors.white, borderRadius: 6, padding: 11 },
+  reserve: { backgroundColor: colors.cream, color: colors.ink, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, borderRadius: 6, padding: 11 },
   reserveSpacious: { padding: 13 },
-  reserveTitle: { color: colors.white, fontSize: 9.5, fontWeight: 'bold', marginBottom: 5 },
+  reserveTitle: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold', marginBottom: 5 },
   reserveTitleSpacious: { fontSize: 10.4 },
-  reserveText: { color: '#B9C2D2', fontSize: 6.9, lineHeight: 1.42 },
+  reserveText: { color: colors.ink2, fontSize: 6.9, lineHeight: 1.42 },
   reserveTextSpacious: { fontSize: 7.5 },
   reserveChip: { alignSelf: 'flex-start', backgroundColor: colors.red, borderRadius: 4, marginTop: 7, paddingVertical: 5, paddingHorizontal: 8 },
   reserveChipText: { color: colors.white, fontSize: 7.2, fontWeight: 'bold' },
   reserveChipTextSpacious: { fontSize: 7.8 },
-  reservePolicy: { color: '#9AA4B5', fontSize: 5.8, lineHeight: 1.3, marginTop: 6 },
+  reservePolicy: { color: colors.ink2, fontSize: 5.8, lineHeight: 1.3, marginTop: 6 },
   reservePolicySpacious: { fontSize: 6.2 },
   pageTwoTitle: { color: colors.ink, fontSize: 21, fontWeight: 'bold', borderBottom: `3 solid ${colors.red}`, paddingBottom: 9, marginBottom: 17 },
   pageTwoTitleSpacious: { fontSize: 22, paddingBottom: 9, marginBottom: 16 },
@@ -217,13 +217,13 @@ const styles = StyleSheet.create({
   stepTitleSpacious: { fontSize: 10.3, marginBottom: 6 },
   stepBody: { color: colors.ink2, fontSize: 7.4, lineHeight: 1.45 },
   stepBodySpacious: { fontSize: 8.35, lineHeight: 1.48 },
-  trust: { flexDirection: 'row', alignItems: 'stretch', backgroundColor: colors.ink, borderRadius: 6, paddingVertical: 15, paddingHorizontal: 9, marginBottom: 15 },
+  trust: { flexDirection: 'row', alignItems: 'stretch', backgroundColor: colors.cream, border: `1 solid ${colors.ink}`, borderRadius: 6, paddingVertical: 15, paddingHorizontal: 9, marginBottom: 15 },
   trustSpacious: { paddingVertical: 14, marginBottom: 14 },
   trustItem: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
-  trustItemBorder: { borderLeft: '0.5 solid #2A3752' },
-  trustLead: { color: colors.gold, fontSize: 13, fontWeight: 'bold', textAlign: 'center', marginBottom: 4 },
+  trustItemBorder: { borderLeft: `0.5 solid ${colors.ink}` },
+  trustLead: { color: colors.ink, fontSize: 13, fontWeight: 'bold', textAlign: 'center', marginBottom: 4 },
   trustLeadSpacious: { fontSize: 14.2, marginBottom: 5 },
-  trustLabel: { color: '#AAB3C1', fontSize: 6.1, lineHeight: 1.35, letterSpacing: 0.6, textAlign: 'center' },
+  trustLabel: { color: colors.ink2, fontSize: 6.1, lineHeight: 1.35, letterSpacing: 0.6, textAlign: 'center' },
   trustLabelSpacious: { fontSize: 6.7 },
   reviewQuote: { borderLeft: `3 solid ${colors.gold}`, paddingVertical: 10, paddingLeft: 12, paddingRight: 8, marginBottom: 13 },
   reviewQuoteSpacious: { paddingVertical: 10, marginBottom: 12 },
@@ -486,12 +486,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const promoEndCopy = quoteData.promoEndDate ? ` | ends ${formattedDate(quoteData.promoEndDate)}` : '';
   const footerAddress = 'Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0';
   const financingContractTerm = quoteData.financingContractTerm || 60;
-  const googleRating = typeof quoteData.googleRating === 'number' && Number.isFinite(quoteData.googleRating)
-    ? quoteData.googleRating
-    : GOOGLE_REVIEWS_FALLBACK.rating;
-  const googleReviewCount = typeof quoteData.googleReviewCount === 'number' && Number.isFinite(quoteData.googleReviewCount)
-    ? quoteData.googleReviewCount
-    : GOOGLE_REVIEWS_FALLBACK.totalReviews;
   const inspectionCaveat = quoteInspectionCaveat(quoteData);
   const hasFollowingPageTwoContent = Boolean(quoteData.customerNotes || quoteData.depositInfo);
 
@@ -501,9 +495,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         <View style={styles.hero}>
           <View style={styles.heroTop}>
             <View style={styles.brandPlate}>
-              <Image src={harrisLogoWhite} style={styles.harrisLogo} />
+              <Image src={harrisLogoBlack} style={styles.harrisLogo} />
               <View style={styles.brandDivider} />
-              <Image src={mercuryLogoWhite} style={styles.mercuryLogo} />
+              <Image src={mercuryLogoBlack} style={styles.mercuryLogo} />
             </View>
             <View>
               <Text style={styles.documentLabel}>MERCURY OUTBOARD QUOTE</Text>
@@ -712,7 +706,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </>
             )}
             {showAlternatePromotion && alternatePromotion ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
-            {quoteData.promotionName ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 5 }]}>{quoteData.promotionName}{quoteData.promoEndDate ? ` | ends ${formattedDate(quoteData.promoEndDate)}` : ''}</Text> : null}
           </View>
         </View>
 
@@ -732,7 +725,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered spacious={spaciousLayout} />
           <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered spacious={spaciousLayout} />
           <TrustItem lead={quoteData.includesInstallation ? 'Rice Lake' : 'Tested'} label={quoteData.includesInstallation ? 'INSTALLED REPOWERS WATER-TESTED' : 'PRE-DELIVERY MOTOR CHECK'} bordered spacious={spaciousLayout} />
-          <TrustItem lead={`${googleRating} stars`} label={`${googleReviewCount} GOOGLE REVIEWS`} bordered spacious={spaciousLayout} />
+          <TrustItem lead="300+" label="GOOGLE REVIEWS" bordered spacious={spaciousLayout} />
         </View>
 
         <View style={[styles.reviewQuote, spaciousLayout ? styles.reviewQuoteSpacious : {}]}>
