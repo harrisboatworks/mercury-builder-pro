@@ -10,10 +10,10 @@
  * Update ONLY this file when the live Google totals change.
  */
 export const GOOGLE_REVIEWS_FALLBACK = {
-  rating: 4.6,
-  totalReviews: 301,
+  rating: 4.7,
+  totalReviews: 318,
   /** ISO date the fallback was last verified against the live Google listing. */
-  asOf: '2026-05-17',
+  asOf: '2026-07-20',
 } as const;
 
 export const GOOGLE_REVIEWS_URL =

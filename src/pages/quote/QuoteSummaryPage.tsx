@@ -37,6 +37,7 @@ import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/li
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
@@ -52,7 +53,6 @@ import {
 import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
-  FINANCING_CONTRACT_TERM_MONTHS,
   frozenPricingFromPdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
   resolveQuoteMotorImage,
@@ -89,6 +89,7 @@ export default function QuoteSummaryPage() {
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
   const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
@@ -599,7 +600,6 @@ export default function QuoteSummaryPage() {
     const financingApr = frozen?.financingRate ?? financingRate;
     const financingAmount = frozen?.amountFinanced ?? amountToFinance;
     const financingDealerFee = frozen?.dealerFee ?? DEALERPLAN_FEE;
-    const financingContractTerm = frozen?.financingContractTermMonths ?? FINANCING_CONTRACT_TERM_MONTHS;
     const planPrice = state.warrantyConfig?.warrantyPrice || 0;
     const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
     const selectedPromoValue = frozen?.selectedPromoValue
@@ -660,7 +660,8 @@ export default function QuoteSummaryPage() {
           amountFinanced: financingAmount,
           rate: financingApr,
           amortizationMonths: financingAmortization,
-          contractTermMonths: financingContractTerm,
+          contractTermMonths: frozen?.financingContractTermMonths,
+          paymentMethod,
           dealerFee: financingDealerFee,
           downPayment: state.financing.downPayment,
         }),
@@ -799,6 +800,8 @@ export default function QuoteSummaryPage() {
         snapshot: pdfSnapshot,
         savedQuoteQrCode,
         recommendedDepositAmount: depositAmount,
+        googleRating,
+        googleReviewCount,
         promotionalFinancingAlternative: (() => {
           if (state.selectedPaymentMethod === 'special_financing') return undefined;
           const promotionalFinancing = getPromotionOptions()

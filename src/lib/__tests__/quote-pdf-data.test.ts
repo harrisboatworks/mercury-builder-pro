@@ -4,6 +4,7 @@ import {
   buildLegacyQuotePdfSnapshot,
   calculateProtectionMonthlyDelta,
   QUOTE_PDF_SNAPSHOT_VERSION,
+  resolveFinancingContractTermMonths,
   resolveQuoteMotorImage,
   validateQuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
@@ -75,6 +76,27 @@ describe('quote PDF data', () => {
     });
 
     expect(result).toEqual({ isValid: true, errors: [] });
+  });
+
+  it('derives the contract term from a selected 24-month special financing offer', () => {
+    expect(resolveFinancingContractTermMonths({
+      paymentMethod: 'special_financing',
+      amortizationMonths: 24,
+      contractTermMonths: 60,
+    })).toBe(24);
+
+    expect(buildQuotePdfFinancing({
+      amountFinanced: 12_553,
+      rate: 2.99,
+      amortizationMonths: 24,
+      contractTermMonths: 60,
+      paymentMethod: 'special_financing',
+      dealerFee: 349,
+    })).toMatchObject({
+      rate: 2.99,
+      amortizationMonths: 24,
+      contractTermMonths: 24,
+    });
   });
 
   it('refuses to invent a PDF snapshot when exact persisted totals are absent', () => {

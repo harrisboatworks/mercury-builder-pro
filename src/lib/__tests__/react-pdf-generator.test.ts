@@ -1,8 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { buildProfessionalQuotePdfData, generatePDFBlob } from '@/lib/react-pdf-generator';
+import {
+  buildProfessionalQuotePdfData,
+  ensureReactPdfBrowserBuffer,
+  generatePDFBlob,
+} from '@/lib/react-pdf-generator';
 import { QUOTE_PDF_SNAPSHOT_VERSION } from '@/lib/quote-pdf-data';
 
 describe('professional quote PDF normalization', () => {
+  it('installs the Buffer compatibility layer required by the browser PDF renderer', () => {
+    const browserRuntime: Record<string, unknown> = {};
+
+    ensureReactPdfBrowserBuffer(browserRuntime);
+
+    expect(browserRuntime.Buffer).toBeDefined();
+  });
+
   it('prefers the immutable snapshot and carries financing semantics through', () => {
     const result = buildProfessionalQuotePdfData({
       quoteNumber: 'HBW-123456',
@@ -21,6 +33,8 @@ describe('professional quote PDF normalization', () => {
         financing: { monthlyPayment: 240, rate: 5.48, amortizationMonths: 60, contractTermMonths: 60, amountFinanced: 12553, dealerFee: 349 },
       },
       recommendedDepositAmount: 500,
+      googleRating: 4.7,
+      googleReviewCount: 318,
       promotionalFinancingAlternative: { rate: 2.99, termMonths: 24 },
       // Contradictory legacy values must not override the exact snapshot.
       pricing: { totalCashPrice: 1, promoValue: 0 },
@@ -38,6 +52,8 @@ describe('professional quote PDF normalization', () => {
     expect(result.includesInstallation).toBe(true);
     expect(result.motorImageUrl).toBe('/motors/90-fourstroke.png');
     expect(result.recommendedDepositAmount).toBe(500);
+    expect(result.googleRating).toBe(4.7);
+    expect(result.googleReviewCount).toBe(318);
     expect(result.promotionalFinancingAlternative).toEqual({ rate: 2.99, termMonths: 24 });
   });
 
@@ -56,6 +72,30 @@ describe('professional quote PDF normalization', () => {
     expect(result.financingRate).toBe(7.99);
     expect(result.financingAmount).toBe(5434);
     expect(result.recommendedDepositAmount).toBe(200);
+  });
+
+  it('normalizes a stale 60-month contract default to a selected 24-month promotion', () => {
+    const result = buildProfessionalQuotePdfData({
+      quoteNumber: 'HBW-PROMO-24',
+      customerName: 'Promo Customer',
+      customerEmail: 'promo@example.com',
+      snapshot: {
+        version: QUOTE_PDF_SNAPSHOT_VERSION,
+        createdAt: '2026-07-21T12:00:00.000Z',
+        motor: { model: '60 ELPT FourStroke', hp: 60, msrp: 11000, modelYear: 2026, category: 'FourStroke' },
+        pricing: { msrp: 11000, discount: 1000, promoValue: 250, motorSubtotal: 9750, subtotal: 10800, hst: 1404, totalCashPrice: 12204, savings: 1250 },
+        accessoryBreakdown: [{ name: 'Rigging package', price: 1050 }],
+        purchasePath: 'installed',
+        includedCoverageYears: 3,
+        paymentMethod: 'special_financing',
+        financing: { monthlyPayment: 539, rate: 2.99, amortizationMonths: 24, contractTermMonths: 60, amountFinanced: 12553, dealerFee: 349 },
+      },
+    });
+
+    expect(result.selectedPaymentMethod).toBe('special_financing');
+    expect(result.financingRate).toBe(2.99);
+    expect(result.financingTerm).toBe(24);
+    expect(result.financingContractTerm).toBe(24);
   });
 
   it('keeps the saved-quote QR code on a cash quote', () => {

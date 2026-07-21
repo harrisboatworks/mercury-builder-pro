@@ -1,8 +1,14 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
-import { resolveQuoteMotorImage, validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import {
+  resolveFinancingContractTermMonths,
+  resolveQuoteMotorImage,
+  validateQuotePdfSnapshot,
+  type QuotePdfSnapshot,
+} from '@/lib/quote-pdf-data';
 import { getRecommendedDeposit } from '@/lib/deposit';
+import { Buffer as BrowserBuffer } from 'buffer';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -65,6 +71,8 @@ export interface ReactPdfQuoteData {
     rate: number;
     termMonths: number;
   };
+  googleRating?: number;
+  googleReviewCount?: number;
   /** @deprecated Use savedQuoteQrCode. Kept for older callers during migration. */
   financingQrCode?: string;
   pricing?: any;
@@ -93,6 +101,14 @@ type QuotePdfRenderer = {
 };
 
 let quotePdfRendererPromise: Promise<QuotePdfRenderer> | null = null;
+
+export function ensureReactPdfBrowserBuffer(
+  target: Record<string, unknown> = globalThis as unknown as Record<string, unknown>,
+): void {
+  // Several image paths inside React PDF still expect Node's Buffer global.
+  // Vite does not provide it automatically in production browser bundles.
+  if (typeof target.Buffer === 'undefined') target.Buffer = BrowserBuffer;
+}
 
 async function prepareMotorImageForPdf(source?: string): Promise<string | undefined> {
   if (!source || typeof document === 'undefined' || typeof window === 'undefined') return source;
@@ -136,6 +152,7 @@ async function prepareMotorImageForPdf(source?: string): Promise<string | undefi
 }
 
 async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
+  ensureReactPdfBrowserBuffer();
   quotePdfRendererPromise ??= Promise.all([
     import('@react-pdf/renderer'),
     import('@/components/quote-pdf/ProfessionalQuotePDF'),
@@ -166,6 +183,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
   } : undefined);
   const productProtection = snapshot?.productProtection;
   const promotion = snapshot?.promotion;
+  const selectedPaymentMethod = snapshot?.paymentMethod ?? data.selectedPaymentMethod;
   const includedCoverageYears = snapshot?.includedCoverageYears
     ?? data.selectedPackage?.coverageYears
     ?? 3;
@@ -208,15 +226,21 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     financingRate: financing?.rate,
     financingAmount: financing?.amountFinanced,
     dealerFee: financing?.dealerFee,
-    financingContractTerm: financing?.contractTermMonths,
+    financingContractTerm: financing ? resolveFinancingContractTermMonths({
+      paymentMethod: selectedPaymentMethod,
+      amortizationMonths: Number(financing.amortizationMonths),
+      contractTermMonths: financing.contractTermMonths,
+    }) : undefined,
     savedQuoteQrCode: data.savedQuoteQrCode ?? data.financingQrCode,
     recommendedDepositAmount: data.recommendedDepositAmount
       ?? getRecommendedDeposit(Number(motor.hp || 0)),
     promotionalFinancingAlternative: data.promotionalFinancingAlternative,
+    googleRating: data.googleRating,
+    googleReviewCount: data.googleReviewCount,
     includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
     selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
     selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,
-    selectedPaymentMethod: snapshot?.paymentMethod ?? data.selectedPaymentMethod,
+    selectedPaymentMethod,
     promotionName: promotion?.name ?? data.promotionName,
     promotionCombinationMode: promotion?.combinationMode ?? data.promotionCombinationMode,
     promoEndDate: promotion?.endDate ?? data.promoEndDate,

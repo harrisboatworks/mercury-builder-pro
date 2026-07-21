@@ -48,6 +48,7 @@ export interface QuotePdfFinancingInput {
   rate: number;
   amortizationMonths: number;
   contractTermMonths?: number;
+  paymentMethod?: QuotePaymentMethod | null;
   dealerFee: number;
   downPayment?: number;
 }
@@ -109,6 +110,24 @@ function monthlyPayment(principal: number, annualRate: number, amortizationMonth
   return principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -amortizationMonths));
 }
 
+export function resolveFinancingContractTermMonths({
+  paymentMethod,
+  amortizationMonths,
+  contractTermMonths,
+}: {
+  paymentMethod?: QuotePaymentMethod | null;
+  amortizationMonths: number;
+  contractTermMonths?: number | null;
+}): number {
+  if (paymentMethod === 'special_financing' && Number.isFinite(amortizationMonths) && amortizationMonths > 0) {
+    return amortizationMonths;
+  }
+
+  return Number.isFinite(contractTermMonths) && Number(contractTermMonths) > 0
+    ? Number(contractTermMonths)
+    : FINANCING_CONTRACT_TERM_MONTHS;
+}
+
 /**
  * Build the financing block from one coherent set of inputs. The payment must
  * never be copied from a newer quote total while amountFinanced is retained
@@ -118,7 +137,8 @@ export function buildQuotePdfFinancing({
   amountFinanced,
   rate,
   amortizationMonths,
-  contractTermMonths = FINANCING_CONTRACT_TERM_MONTHS,
+  contractTermMonths,
+  paymentMethod,
   dealerFee,
   downPayment,
 }: QuotePdfFinancingInput): QuotePdfFinancing {
@@ -126,7 +146,11 @@ export function buildQuotePdfFinancing({
     monthlyPayment: Math.round(monthlyPayment(amountFinanced, rate, amortizationMonths)),
     rate,
     amortizationMonths,
-    contractTermMonths,
+    contractTermMonths: resolveFinancingContractTermMonths({
+      paymentMethod,
+      amortizationMonths,
+      contractTermMonths,
+    }),
     amountFinanced,
     dealerFee,
     downPayment,
@@ -299,6 +323,7 @@ export function buildLegacyQuotePdfSnapshot(state: any, createdAt?: string): Quo
     frozen?.financingRate,
     frozen?.financingAmortizationMonths,
   ].every((value) => Number.isFinite(value) && value > 0);
+  const paymentMethod = frozen?.selectedPaymentMethod ?? state?.selectedPaymentMethod ?? null;
 
   return {
     version: QUOTE_PDF_SNAPSHOT_VERSION,
@@ -349,18 +374,22 @@ export function buildLegacyQuotePdfSnapshot(state: any, createdAt?: string): Quo
         } : {}),
       },
     } : {}),
-    ...(financingComplete && frozen?.selectedPaymentMethod !== 'cash_purchase' ? {
+    ...(financingComplete && paymentMethod !== 'cash_purchase' ? {
       financing: {
         monthlyPayment: Math.round(monthlyPayment(Number(frozen.amountFinanced), Number(frozen.financingRate), Number(frozen.financingAmortizationMonths))),
         rate: Number(frozen.financingRate),
         amortizationMonths: Number(frozen.financingAmortizationMonths),
-        contractTermMonths: Number(frozen.financingContractTermMonths || FINANCING_CONTRACT_TERM_MONTHS),
+        contractTermMonths: resolveFinancingContractTermMonths({
+          paymentMethod,
+          amortizationMonths: Number(frozen.financingAmortizationMonths),
+          contractTermMonths: Number(frozen.financingContractTermMonths),
+        }),
         amountFinanced: Number(frozen.amountFinanced),
         dealerFee: Number(frozen.dealerFee || 0),
         downPayment: Number(state?.financing?.downPayment || 0),
       },
     } : {}),
-    paymentMethod: frozen?.selectedPaymentMethod ?? state?.selectedPaymentMethod ?? null,
+    paymentMethod,
     promotion: {
       name: frozen?.promotionName,
       endDate: frozen?.promotionEndDate,
