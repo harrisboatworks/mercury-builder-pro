@@ -94,6 +94,47 @@ type QuotePdfRenderer = {
 
 let quotePdfRendererPromise: Promise<QuotePdfRenderer> | null = null;
 
+async function prepareMotorImageForPdf(source?: string): Promise<string | undefined> {
+  if (!source || typeof document === 'undefined' || typeof window === 'undefined') return source;
+
+  try {
+    const response = await fetch(source);
+    if (!response.ok) throw new Error(`Motor image returned ${response.status}`);
+    const sourceBlob = await response.blob();
+    const objectUrl = URL.createObjectURL(sourceBlob);
+
+    try {
+      const image = new window.Image();
+      image.decoding = 'async';
+      image.src = objectUrl;
+      await new Promise<void>((resolve, reject) => {
+        image.onload = () => resolve();
+        image.onerror = () => reject(new Error('Motor image could not be decoded'));
+      });
+
+      const maxWidth = 360;
+      const maxHeight = 260;
+      const scale = Math.min(maxWidth / image.naturalWidth, maxHeight / image.naturalHeight, 1);
+      const width = Math.max(1, Math.round(image.naturalWidth * scale));
+      const height = Math.max(1, Math.round(image.naturalHeight * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Motor image canvas is unavailable');
+      context.fillStyle = '#FAF7F0';
+      context.fillRect(0, 0, width, height);
+      context.drawImage(image, 0, 0, width, height);
+      return canvas.toDataURL('image/jpeg', 0.82);
+    } finally {
+      URL.revokeObjectURL(objectUrl);
+    }
+  } catch (error) {
+    console.warn('Could not prepare the motor image for the quote PDF; using the Mercury fallback.', error);
+    return undefined;
+  }
+}
+
 async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
   quotePdfRendererPromise ??= Promise.all([
     import('@react-pdf/renderer'),
@@ -141,6 +182,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     horsepower: `${motor.hp || 0}HP`,
     category: motor.category || 'FourStroke',
     modelYear: motor.modelYear || motor.model_year || 2026,
+    motorImageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url || undefined,
     msrp: Number(pricing.msrp ?? motor.msrp ?? 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
     dealerDiscount: Number(pricing.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
     promoSavings: Number(pricing.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
@@ -243,6 +285,7 @@ export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
     }
     const { pdf, ProfessionalQuotePDF } = await loadQuotePdfRenderer();
     const transformedData = buildProfessionalQuotePdfData(data);
+    transformedData.motorImageUrl = await prepareMotorImageForPdf(transformedData.motorImageUrl);
 
     return pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
   } catch (error) {
