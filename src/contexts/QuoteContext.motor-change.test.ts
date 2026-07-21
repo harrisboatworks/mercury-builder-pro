@@ -185,7 +185,7 @@ describe('quoteReducer RESTORE_QUOTE', () => {
       ...initialState,
       motor: motor('motor-b', '115 ELPT', 15000),
       financing: { downPayment: 5000, term: 84, rate: 9.99 },
-      selectedPromoOption: 'stale_promo',
+      selectedPromoOption: 'cash_rebate',
       isAdminQuote: true,
       editingQuoteId: 'stale-admin-quote',
       uiFlags: { staleModal: true },

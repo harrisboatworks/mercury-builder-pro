@@ -6,6 +6,21 @@ export const FINANCING_CONTRACT_TERM_MONTHS = 60;
 export type QuotePaymentMethod = 'cash_purchase' | 'standard_financing' | 'special_financing';
 export type QuotePromoOption = 'no_payments' | 'special_financing' | 'cash_rebate';
 
+export function resolveQuoteMotorImage(motor: any): string | undefined {
+  const firstGalleryImage = Array.isArray(motor?.images) ? motor.images[0] : undefined;
+  const candidates = [
+    motor?.imageUrl,
+    motor?.hero_image_url,
+    motor?.image_url,
+    motor?.image,
+    typeof firstGalleryImage === 'string'
+      ? firstGalleryImage
+      : firstGalleryImage?.media_url || firstGalleryImage?.url || firstGalleryImage?.image_url,
+  ];
+
+  return candidates.find((candidate) => typeof candidate === 'string' && candidate.trim().length > 0)?.trim();
+}
+
 export interface QuotePdfPricing {
   msrp: number;
   discount: number;
@@ -295,7 +310,7 @@ export function buildLegacyQuotePdfSnapshot(state: any, createdAt?: string): Quo
       msrp,
       modelYear: Number(motor.model_year || motor.modelYear || motor.year || 2026),
       category: motor.category || motor.motor_type || 'FourStroke',
-      imageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url || undefined,
+      imageUrl: resolveQuoteMotorImage(motor),
     },
     pricing: {
       msrp,
