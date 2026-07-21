@@ -65,6 +65,8 @@ export interface ReactPdfQuoteData {
     rate: number;
     termMonths: number;
   };
+  googleRating?: number;
+  googleReviewCount?: number;
   /** @deprecated Use savedQuoteQrCode. Kept for older callers during migration. */
   financingQrCode?: string;
   pricing?: any;
@@ -213,6 +215,8 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     recommendedDepositAmount: data.recommendedDepositAmount
       ?? getRecommendedDeposit(Number(motor.hp || 0)),
     promotionalFinancingAlternative: data.promotionalFinancingAlternative,
+    googleRating: data.googleRating,
+    googleReviewCount: data.googleReviewCount,
     includesInstallation: snapshot ? snapshot.purchasePath === 'installed' : data.includesInstallation,
     selectedPromoOption: promotion?.selectedOption ?? data.selectedPromoOption,
     selectedPromoValue: promotion?.selectedValue ?? data.selectedPromoValue,

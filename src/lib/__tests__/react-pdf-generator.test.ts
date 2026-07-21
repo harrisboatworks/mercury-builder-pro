@@ -21,6 +21,8 @@ describe('professional quote PDF normalization', () => {
         financing: { monthlyPayment: 240, rate: 5.48, amortizationMonths: 60, contractTermMonths: 60, amountFinanced: 12553, dealerFee: 349 },
       },
       recommendedDepositAmount: 500,
+      googleRating: 4.7,
+      googleReviewCount: 318,
       promotionalFinancingAlternative: { rate: 2.99, termMonths: 24 },
       // Contradictory legacy values must not override the exact snapshot.
       pricing: { totalCashPrice: 1, promoValue: 0 },
@@ -38,6 +40,8 @@ describe('professional quote PDF normalization', () => {
     expect(result.includesInstallation).toBe(true);
     expect(result.motorImageUrl).toBe('/motors/90-fourstroke.png');
     expect(result.recommendedDepositAmount).toBe(500);
+    expect(result.googleRating).toBe(4.7);
+    expect(result.googleReviewCount).toBe(318);
     expect(result.promotionalFinancingAlternative).toEqual({ rate: 2.99, termMonths: 24 });
   });
 
