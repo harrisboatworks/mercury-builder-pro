@@ -11,8 +11,9 @@ import {
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { getRecommendedDeposit } from '@/lib/deposit';
-import harrisLogo from '@/assets/harris-logo.png';
+import harrisLogoWhite from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import mercuryLogoWhite from '@/assets/mercury-logo-white.png';
 
 const Document = _Document as unknown as ComponentType<any>;
 const Page = _Page as unknown as ComponentType<any>;
@@ -75,14 +76,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    backgroundColor: colors.white,
-    borderRadius: 5,
-    paddingVertical: 6,
-    paddingHorizontal: 8,
   },
-  harrisLogo: { width: 42, height: 30, objectFit: 'contain' },
-  brandDivider: { width: 1, height: 24, backgroundColor: colors.line },
-  mercuryLogo: { width: 84, height: 17, objectFit: 'contain' },
+  harrisLogo: { width: 45, height: 32, objectFit: 'contain' },
+  brandDivider: { width: 1, height: 25, backgroundColor: '#39445A' },
+  mercuryLogo: { width: 90, height: 18, objectFit: 'contain' },
   documentLabel: { color: colors.white, fontSize: 10, fontWeight: 'bold', textAlign: 'right', letterSpacing: 0.5 },
   documentKicker: { color: '#9AA4B5', fontSize: 6.7, textAlign: 'right', letterSpacing: 1.2, marginTop: 3 },
   heroMain: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: 18 },
@@ -208,9 +205,11 @@ const styles = StyleSheet.create({
   noteTitle: { color: colors.ink, fontSize: 8.3, fontWeight: 'bold', marginBottom: 3 },
   noteText: { color: colors.grey, fontSize: 7, lineHeight: 1.4 },
   depositBox: { backgroundColor: colors.cream, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, padding: 10, marginBottom: 10 },
-  footer: { position: 'absolute', left: 34, right: 34, bottom: 15, borderTop: `1 solid ${colors.line}`, paddingTop: 5, flexDirection: 'row', justifyContent: 'space-between', gap: 8 },
-  footerText: { flex: 1, color: colors.grey, fontSize: 5.9 },
-  footerPage: { width: 48, color: colors.grey, fontSize: 5.9, textAlign: 'right' },
+  footerRule: { position: 'absolute', left: 34, right: 34, bottom: 25, borderTop: `1 solid ${colors.line}` },
+  footerText: { position: 'absolute', left: 34, bottom: 15, color: colors.grey, fontSize: 5.9 },
+  footerPage: { position: 'absolute', right: 34, bottom: 15, color: colors.grey, fontSize: 5.9, textAlign: 'right' },
+  pageTwoFooterText: { position: 'absolute', left: 68, bottom: 15, color: colors.grey, fontSize: 5.9 },
+  pageTwoFooterPage: { position: 'absolute', right: 68, bottom: 15, color: colors.grey, fontSize: 5.9, textAlign: 'right' },
 });
 
 type LineItem = {
@@ -340,7 +339,7 @@ function LineItemRow({ item, compact }: { item: LineItem; compact: boolean }) {
   );
 }
 
-function StepCard({ number, title, children }: { number: string; title: string; children: string }) {
+function StepCard({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
   return (
     <View style={styles.step}>
       <View style={styles.stepNumber}><Text style={styles.stepNumberText}>{number}</Text></View>
@@ -396,9 +395,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         <View style={styles.hero}>
           <View style={styles.heroTop}>
             <View style={styles.brandPlate}>
-              <Image src={harrisLogo} style={styles.harrisLogo} />
+              <Image src={harrisLogoWhite} style={styles.harrisLogo} />
               <View style={styles.brandDivider} />
-              <Image src={mercuryLogo} style={styles.mercuryLogo} />
+              <Image src={mercuryLogoWhite} style={styles.mercuryLogo} />
             </View>
             <View>
               <Text style={styles.documentLabel}>MERCURY OUTBOARD QUOTE</Text>
@@ -550,7 +549,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               <View style={styles.reserve}>
                 <Text style={styles.reserveTitle}>Ready to lock this in?</Text>
                 <Text style={styles.reserveText}>A ${money(recommendedDeposit).replace('.00', '')} deposit holds this motor and your place in the schedule. The deposit applies to your final invoice.</Text>
-                <View style={styles.reserveChip}><Text style={styles.reserveChipText}>Call / text (905) 342-2153</Text></View>
+                <View style={styles.reserveChip}><Text style={styles.reserveChipText}>Call (905) 342-2153 | Text (647) 952-2153</Text></View>
                 <Text style={styles.reservePolicy}>Refundability depends on stock or special-order status and when the order is committed.</Text>
               </View>
             ) : (
@@ -562,10 +561,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         </View>
 
-        <View style={styles.footer} fixed>
-          <Text style={styles.footerText}>{footerAddress}</Text>
-          <Text style={styles.footerPage}>Page 1 of 2</Text>
-        </View>
+        <View style={styles.footerRule} />
+        <Text style={styles.footerText}>{footerAddress}</Text>
+        <Text style={styles.footerPage}>Page 1 of 2</Text>
       </Page>
 
       <Page size="LETTER" style={styles.pageTwo}>
@@ -648,10 +646,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         ) : null}
 
-        <View style={styles.footer} fixed>
-          <Text style={styles.footerText}>Harris Boat Works | Gores Landing, ON | (905) 342-2153 | mercuryrepower.ca</Text>
-          <Text style={styles.footerPage}>Page 2 of 2</Text>
-        </View>
+        <View style={styles.footerRule} />
+        <Text style={styles.pageTwoFooterText}>Harris Boat Works | Call 905-342-2153 | Text 647-952-2153 | mercuryrepower.ca</Text>
+        <Text style={styles.pageTwoFooterPage}>Page 2 of 2</Text>
       </Page>
     </Document>
   );

@@ -4,10 +4,18 @@ import {
   buildLegacyQuotePdfSnapshot,
   calculateProtectionMonthlyDelta,
   QUOTE_PDF_SNAPSHOT_VERSION,
+  resolveQuoteMotorImage,
   validateQuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
 
 describe('quote PDF data', () => {
+  it('keeps the selected motor image used by the quote builder', () => {
+    expect(resolveQuoteMotorImage({ image: 'https://cdn.example.com/90-fourstroke.jpg' }))
+      .toBe('https://cdn.example.com/90-fourstroke.jpg');
+    expect(resolveQuoteMotorImage({ images: [{ media_url: 'https://cdn.example.com/gallery.jpg' }] }))
+      .toBe('https://cdn.example.com/gallery.jpg');
+  });
+
   it('calculates the Platinum payment increment from price plus HST', () => {
     expect(calculateProtectionMonthlyDelta({
       priceBeforeTax: 1365,

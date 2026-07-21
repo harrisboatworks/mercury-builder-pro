@@ -55,6 +55,7 @@ import {
   FINANCING_CONTRACT_TERM_MONTHS,
   frozenPricingFromPdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
+  resolveQuoteMotorImage,
   type QuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
 
@@ -292,7 +293,7 @@ export default function QuoteSummaryPage() {
   const hp = quoteData.motor?.hp || motor?.hp || motor?.horsepower || 0;
   const motorHp = hp;
   const sku = motor?.sku ?? motor?.partNumber ?? null;
-  const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
+  const imageUrl = resolveQuoteMotorImage(motor) ?? null;
 
   // Keep a selected combined-coverage target aligned with current promotional
   // years and the selected motor's exact rate band. Frozen shared quotes retain

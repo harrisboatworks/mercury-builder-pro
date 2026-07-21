@@ -1,7 +1,7 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
-import { validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { resolveQuoteMotorImage, validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { getRecommendedDeposit } from '@/lib/deposit';
 
 export interface ReactPdfQuoteData {
@@ -182,7 +182,7 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     horsepower: `${motor.hp || 0}HP`,
     category: motor.category || 'FourStroke',
     modelYear: motor.modelYear || motor.model_year || 2026,
-    motorImageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url || undefined,
+    motorImageUrl: resolveQuoteMotorImage(motor),
     msrp: Number(pricing.msrp ?? motor.msrp ?? 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
     dealerDiscount: Number(pricing.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
     promoSavings: Number(pricing.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
