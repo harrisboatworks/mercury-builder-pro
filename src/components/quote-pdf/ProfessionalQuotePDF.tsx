@@ -31,7 +31,6 @@ const colors = {
   red: '#C8102E',
   gold: '#B98D36',
   cream: '#FAF7F0',
-  grey: '#5B6472',
   line: '#E3E0D8',
   white: '#FFFFFF',
 };
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     paddingHorizontal: 34,
   },
-  priceEyebrow: { color: colors.grey, fontSize: 7.3, fontWeight: 'bold', letterSpacing: 1.7, marginBottom: 3 },
+  priceEyebrow: { color: colors.ink2, fontSize: 7.3, fontWeight: 'bold', letterSpacing: 1.7, marginBottom: 3 },
   priceAmount: { color: colors.ink, fontSize: 25, lineHeight: 1, fontWeight: 'bold' },
   savingsPill: { backgroundColor: colors.red, borderRadius: 99, paddingVertical: 6, paddingHorizontal: 11 },
   savingsPillText: { color: colors.white, fontSize: 8.4, fontWeight: 'bold' },
@@ -129,13 +128,13 @@ const styles = StyleSheet.create({
   rowText: { flex: 1 },
   rowPrimary: { color: colors.ink2, fontSize: 7.9, lineHeight: 1.2 },
   rowPrimarySpacious: { fontSize: 9.1, lineHeight: 1.25 },
-  rowDescription: { color: colors.grey, fontSize: 6.25, lineHeight: 1.3, marginTop: 2 },
+  rowDescription: { color: colors.ink2, fontSize: 6.25, lineHeight: 1.3, marginTop: 2 },
   rowDescriptionSpacious: { fontSize: 7.25, lineHeight: 1.35, marginTop: 2.4 },
   rowValue: { width: 78, color: colors.ink2, textAlign: 'right', fontSize: 7.9, lineHeight: 1.2, fontWeight: 'bold' },
   rowValueSpacious: { width: 82, fontSize: 9.1, lineHeight: 1.25 },
   discount: { color: colors.red },
   groupLabel: {
-    color: colors.grey,
+    color: colors.ink2,
     fontSize: 6.8,
     fontWeight: 'bold',
     letterSpacing: 1.25,
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
   cardTitle: { color: colors.ink, fontSize: 8.8, fontWeight: 'bold', marginBottom: 6 },
   cardTitleSpacious: { fontSize: 9.7, marginBottom: 7 },
   infoRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, marginBottom: 3 },
-  infoLabel: { color: colors.grey, fontSize: 7.1 },
+  infoLabel: { color: colors.ink2, fontSize: 7.1 },
   infoLabelSpacious: { fontSize: 7.8 },
   infoValue: { flex: 1, color: colors.ink2, fontSize: 7.2, textAlign: 'right' },
   infoValueSpacious: { fontSize: 8 },
@@ -176,7 +175,7 @@ const styles = StyleSheet.create({
   qrCopy: { flex: 1 },
   qrTitle: { color: colors.ink, fontSize: 7.9, fontWeight: 'bold', lineHeight: 1.2, marginBottom: 3 },
   qrTitleSpacious: { fontSize: 8.7 },
-  qrText: { color: colors.grey, fontSize: 6.55, lineHeight: 1.35 },
+  qrText: { color: colors.ink2, fontSize: 6.55, lineHeight: 1.35 },
   qrTextSpacious: { fontSize: 7.2 },
   reserve: { backgroundColor: colors.ink, color: colors.white, borderRadius: 6, padding: 11 },
   reserveSpacious: { padding: 13 },
@@ -189,47 +188,69 @@ const styles = StyleSheet.create({
   reserveChipTextSpacious: { fontSize: 7.8 },
   reservePolicy: { color: '#9AA4B5', fontSize: 5.8, lineHeight: 1.3, marginTop: 6 },
   reservePolicySpacious: { fontSize: 6.2 },
-  pageTwoTitle: { color: colors.ink, fontSize: 20, fontWeight: 'bold', borderBottom: `3 solid ${colors.red}`, paddingBottom: 8, marginBottom: 15 },
+  pageTwoTitle: { color: colors.ink, fontSize: 21, fontWeight: 'bold', borderBottom: `3 solid ${colors.red}`, paddingBottom: 9, marginBottom: 17 },
+  pageTwoTitleSpacious: { fontSize: 22, paddingBottom: 9, marginBottom: 16 },
   twoUp: { flexDirection: 'row', gap: 12, marginBottom: 19 },
-  featureCard: { flex: 1, border: `1 solid ${colors.line}`, borderTop: `4 solid ${colors.ink}`, borderRadius: 6, padding: 14 },
-  featureCardSpacious: { minHeight: 185 },
+  twoUpSpacious: { marginBottom: 18 },
+  featureCard: { flex: 1, border: `1 solid ${colors.line}`, borderTop: `4 solid ${colors.ink}`, borderRadius: 6, padding: 14, minHeight: 182 },
+  featureCardSpacious: { minHeight: 184, padding: 16 },
   featureCardRed: { borderTop: `4 solid ${colors.red}` },
-  cardEyebrow: { color: colors.grey, fontSize: 7, fontWeight: 'bold', letterSpacing: 1.4, marginBottom: 6 },
-  cardLead: { color: colors.ink, fontSize: 21, fontWeight: 'bold', lineHeight: 1.05, marginBottom: 7 },
-  cardBody: { color: colors.grey, fontSize: 7.2, lineHeight: 1.45, marginBottom: 3 },
-  promoFinance: { color: colors.red, fontSize: 7.3, fontWeight: 'bold', lineHeight: 1.35, marginTop: 5 },
-  stepsHeader: { color: colors.red, fontSize: 8.2, fontWeight: 'bold', letterSpacing: 1.65, marginBottom: 10 },
+  cardEyebrow: { color: colors.ink2, fontSize: 7.4, fontWeight: 'bold', letterSpacing: 1.4, marginBottom: 6 },
+  cardEyebrowSpacious: { fontSize: 8.2, marginBottom: 7 },
+  cardLead: { color: colors.ink, fontSize: 22, fontWeight: 'bold', lineHeight: 1.05, marginBottom: 7 },
+  cardLeadSpacious: { fontSize: 24, marginBottom: 9 },
+  cardBody: { color: colors.ink2, fontSize: 7.6, lineHeight: 1.45, marginBottom: 3 },
+  cardBodySpacious: { fontSize: 8.4, lineHeight: 1.48, marginBottom: 4 },
+  promoFinance: { color: colors.red, fontSize: 7.7, fontWeight: 'bold', lineHeight: 1.35, marginTop: 5 },
+  promoFinanceSpacious: { fontSize: 8.4, marginTop: 6 },
+  stepsHeader: { color: colors.red, fontSize: 8.6, fontWeight: 'bold', letterSpacing: 1.65, marginBottom: 10 },
+  stepsHeaderSpacious: { fontSize: 9.4, marginBottom: 10 },
   steps: { flexDirection: 'row', gap: 10, marginBottom: 19 },
-  step: { flex: 1, backgroundColor: colors.cream, borderRadius: 6, padding: 12, minHeight: 112 },
-  stepSpacious: { minHeight: 124 },
+  stepsSpacious: { marginBottom: 18 },
+  step: { flex: 1, backgroundColor: colors.cream, borderRadius: 6, padding: 12, minHeight: 116 },
+  stepSpacious: { minHeight: 122, padding: 14 },
   stepNumber: { width: 22, height: 22, borderRadius: 11, backgroundColor: colors.ink, alignItems: 'center', justifyContent: 'center', marginBottom: 8 },
+  stepNumberSpacious: { width: 25, height: 25, borderRadius: 12.5, marginBottom: 10 },
   stepNumberText: { color: colors.white, fontSize: 8, fontWeight: 'bold' },
-  stepTitle: { color: colors.ink, fontSize: 9, fontWeight: 'bold', marginBottom: 5 },
-  stepBody: { color: colors.grey, fontSize: 7.1, lineHeight: 1.45 },
-  trust: { flexDirection: 'row', alignItems: 'stretch', backgroundColor: colors.ink, borderRadius: 6, paddingVertical: 14, paddingHorizontal: 9, marginBottom: 14 },
+  stepNumberTextSpacious: { fontSize: 9 },
+  stepTitle: { color: colors.ink, fontSize: 9.3, fontWeight: 'bold', marginBottom: 5 },
+  stepTitleSpacious: { fontSize: 10.3, marginBottom: 6 },
+  stepBody: { color: colors.ink2, fontSize: 7.4, lineHeight: 1.45 },
+  stepBodySpacious: { fontSize: 8.35, lineHeight: 1.48 },
+  trust: { flexDirection: 'row', alignItems: 'stretch', backgroundColor: colors.ink, borderRadius: 6, paddingVertical: 15, paddingHorizontal: 9, marginBottom: 15 },
+  trustSpacious: { paddingVertical: 14, marginBottom: 14 },
   trustItem: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
   trustItemBorder: { borderLeft: '0.5 solid #2A3752' },
-  trustLead: { color: colors.gold, fontSize: 12.5, fontWeight: 'bold', textAlign: 'center', marginBottom: 4 },
-  trustLabel: { color: '#AAB3C1', fontSize: 5.8, lineHeight: 1.35, letterSpacing: 0.6, textAlign: 'center' },
-  reviewQuote: { borderLeft: `3 solid ${colors.gold}`, paddingVertical: 8, paddingLeft: 12, paddingRight: 8, marginBottom: 12 },
-  reviewQuoteSpacious: { paddingVertical: 11, marginBottom: 15 },
-  reviewText: { color: colors.ink2, fontSize: 8.4, lineHeight: 1.45, fontStyle: 'italic' },
-  reviewAttribution: { color: colors.grey, fontSize: 6.7, marginTop: 5 },
-  closeout: { borderLeft: `3 solid ${colors.gold}`, backgroundColor: colors.cream, paddingVertical: 10, paddingHorizontal: 12, marginBottom: 12 },
-  closeoutSpacious: { paddingVertical: 13 },
-  closeoutTitle: { color: colors.ink, fontSize: 9.2, fontWeight: 'bold', marginBottom: 4 },
-  closeoutText: { color: colors.grey, fontSize: 7.25, lineHeight: 1.45 },
+  trustLead: { color: colors.gold, fontSize: 13, fontWeight: 'bold', textAlign: 'center', marginBottom: 4 },
+  trustLeadSpacious: { fontSize: 14.2, marginBottom: 5 },
+  trustLabel: { color: '#AAB3C1', fontSize: 6.1, lineHeight: 1.35, letterSpacing: 0.6, textAlign: 'center' },
+  trustLabelSpacious: { fontSize: 6.7 },
+  reviewQuote: { borderLeft: `3 solid ${colors.gold}`, paddingVertical: 10, paddingLeft: 12, paddingRight: 8, marginBottom: 13 },
+  reviewQuoteSpacious: { paddingVertical: 10, marginBottom: 12 },
+  reviewText: { color: colors.ink2, fontSize: 8.7, lineHeight: 1.45, fontStyle: 'italic' },
+  reviewTextSpacious: { fontSize: 9.5, lineHeight: 1.5 },
+  reviewAttribution: { color: colors.ink2, fontSize: 7, marginTop: 5 },
+  reviewAttributionSpacious: { fontSize: 7.5, marginTop: 6 },
+  closeout: { borderLeft: `3 solid ${colors.gold}`, backgroundColor: colors.cream, paddingVertical: 11, paddingHorizontal: 12 },
+  closeoutWithFollowingContent: { marginBottom: 12 },
+  closeoutSpacious: { paddingVertical: 10, paddingHorizontal: 14 },
+  closeoutTitle: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold', marginBottom: 4 },
+  closeoutTitleSpacious: { fontSize: 10.5, marginBottom: 5 },
+  closeoutText: { color: colors.ink2, fontSize: 7.5, lineHeight: 1.45 },
+  closeoutTextSpacious: { fontSize: 8.35, lineHeight: 1.48 },
+  closeoutCaveat: { color: colors.ink2, fontSize: 7.4, lineHeight: 1.4, fontWeight: 'bold', marginTop: 5 },
+  closeoutCaveatSpacious: { fontSize: 8.2, lineHeight: 1.45, marginTop: 6 },
   noteBox: { border: `1 solid ${colors.line}`, borderLeft: `3 solid ${colors.red}`, paddingVertical: 8, paddingHorizontal: 10, marginBottom: 10 },
   noteTitle: { color: colors.ink, fontSize: 8.3, fontWeight: 'bold', marginBottom: 3 },
-  noteText: { color: colors.grey, fontSize: 7, lineHeight: 1.4 },
+  noteText: { color: colors.ink2, fontSize: 7, lineHeight: 1.4 },
   depositBox: { backgroundColor: colors.cream, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, padding: 10, marginBottom: 10 },
   waterTestBand: { position: 'absolute', left: 34, right: 34, bottom: 38, backgroundColor: colors.cream, borderLeft: `3 solid ${colors.gold}`, paddingVertical: 7, paddingHorizontal: 10 },
   waterTestBandText: { color: colors.ink2, fontSize: 7.3, lineHeight: 1.35, fontWeight: 'bold', textAlign: 'center' },
   footerRule: { position: 'absolute', left: 34, right: 34, bottom: 25, borderTop: `1 solid ${colors.line}` },
-  footerText: { position: 'absolute', left: 34, bottom: 15, color: colors.grey, fontSize: 5.9 },
-  footerPage: { position: 'absolute', right: 34, bottom: 15, color: colors.grey, fontSize: 5.9, textAlign: 'right' },
-  pageTwoFooterText: { position: 'absolute', left: 68, bottom: 15, color: colors.grey, fontSize: 5.9 },
-  pageTwoFooterPage: { position: 'absolute', right: 68, bottom: 15, color: colors.grey, fontSize: 5.9, textAlign: 'right' },
+  footerText: { position: 'absolute', left: 34, bottom: 15, color: colors.ink2, fontSize: 5.9 },
+  footerPage: { position: 'absolute', right: 34, bottom: 15, color: colors.ink2, fontSize: 5.9, textAlign: 'right' },
+  pageTwoFooterText: { position: 'absolute', left: 68, bottom: 15, color: colors.ink2, fontSize: 5.9 },
+  pageTwoFooterPage: { position: 'absolute', right: 68, bottom: 15, color: colors.ink2, fontSize: 5.9, textAlign: 'right' },
 });
 
 type LineItem = {
@@ -368,6 +389,26 @@ export function financingTermsLine(rate: number, contractTerm: number, amortizat
   return `${rate}% APR | ${contractTerm}-month contract | payment based on ${amortizationTerm}-month amortization`;
 }
 
+export const FINANCING_ESTIMATE_DISCLAIMER = 'Payment figures are estimates and may change with the final financed amount, rate, term or lender approval.';
+
+export function quoteInspectionCaveat(quoteData: Pick<QuotePDFProps['quoteData'], 'accessoryBreakdown' | 'tradeInValue'>): string | null {
+  const hasTradeIn = Number(quoteData.tradeInValue || 0) > 0;
+  const hasPropeller = Boolean(
+    quoteData.accessoryBreakdown?.some((item) => item.name.toLowerCase().includes('propeller')),
+  );
+
+  if (hasTradeIn && hasPropeller) {
+    return 'Final trade-in value and propeller fit remain subject to final inspection and water testing.';
+  }
+  if (hasTradeIn) {
+    return 'Final trade-in value remains subject to final inspection and verification.';
+  }
+  if (hasPropeller) {
+    return 'Propeller fit remains subject to final inspection and water testing.';
+  }
+  return null;
+}
+
 function tradeDescription(info?: QuotePDFProps['quoteData']['tradeInInfo']): string {
   if (!info) return '';
   return [info.year, info.brand, `${info.horsepower} HP`, info.model].filter(Boolean).join(' ');
@@ -388,18 +429,18 @@ function LineItemRow({ item, compact }: { item: LineItem; compact: boolean }) {
 function StepCard({ number, title, children, spacious = false }: { number: string; title: string; children: React.ReactNode; spacious?: boolean }) {
   return (
     <View style={[styles.step, spacious ? styles.stepSpacious : {}]}>
-      <View style={styles.stepNumber}><Text style={styles.stepNumberText}>{number}</Text></View>
-      <Text style={styles.stepTitle}>{title}</Text>
-      <Text style={styles.stepBody}>{children}</Text>
+      <View style={[styles.stepNumber, spacious ? styles.stepNumberSpacious : {}]}><Text style={[styles.stepNumberText, spacious ? styles.stepNumberTextSpacious : {}]}>{number}</Text></View>
+      <Text style={[styles.stepTitle, spacious ? styles.stepTitleSpacious : {}]}>{title}</Text>
+      <Text style={[styles.stepBody, spacious ? styles.stepBodySpacious : {}]}>{children}</Text>
     </View>
   );
 }
 
-function TrustItem({ lead, label, bordered = false }: { lead: string; label: string; bordered?: boolean }) {
+function TrustItem({ lead, label, bordered = false, spacious = false }: { lead: string; label: string; bordered?: boolean; spacious?: boolean }) {
   return (
     <View style={[styles.trustItem, bordered ? styles.trustItemBorder : {}]}>
-      <Text style={styles.trustLead}>{lead}</Text>
-      <Text style={styles.trustLabel}>{label}</Text>
+      <Text style={[styles.trustLead, spacious ? styles.trustLeadSpacious : {}]}>{lead}</Text>
+      <Text style={[styles.trustLabel, spacious ? styles.trustLabelSpacious : {}]}>{label}</Text>
     </View>
   );
 }
@@ -451,6 +492,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const googleReviewCount = typeof quoteData.googleReviewCount === 'number' && Number.isFinite(quoteData.googleReviewCount)
     ? quoteData.googleReviewCount
     : GOOGLE_REVIEWS_FALLBACK.totalReviews;
+  const inspectionCaveat = quoteInspectionCaveat(quoteData);
+  const hasFollowingPageTwoContent = Boolean(quoteData.customerNotes || quoteData.depositInfo);
 
   return (
     <Document>
@@ -493,7 +536,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <View style={styles.table}>
               <View style={firstPageRowStyle}>
                 <Text style={firstPagePrimaryStyle}>Mercury outboard MSRP</Text>
-                <Text style={[...firstPageValueStyle, { color: colors.grey, textDecoration: 'line-through' }]}>${quoteData.msrp}</Text>
+                <Text style={[...firstPageValueStyle, { color: colors.ink2, textDecoration: 'line-through' }]}>${quoteData.msrp}</Text>
               </View>
               {Number(String(quoteData.dealerDiscount).replace(/,/g, '')) > 0 ? (
                 <View style={firstPageRowStyle}>
@@ -632,48 +675,49 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
       </Page>
 
       <Page size="LETTER" style={styles.pageTwo}>
-        <Text style={styles.pageTwoTitle}>Coverage, Payment &amp; Next Steps</Text>
+        <Text style={[styles.pageTwoTitle, spaciousLayout ? styles.pageTwoTitleSpacious : {}]}>Coverage, Payment &amp; Next Steps</Text>
 
-        <View style={styles.twoUp}>
+        <View style={[styles.twoUp, spaciousLayout ? styles.twoUpSpacious : {}]}>
           <View style={[styles.featureCard, spaciousLayout ? styles.featureCardSpacious : {}]}>
-            <Text style={styles.cardEyebrow}>MERCURY COVERAGE</Text>
-            <Text style={styles.cardLead}>{coverageTotal} years total</Text>
-            <Text style={styles.cardBody}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included.</Text>
+            <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>MERCURY COVERAGE</Text>
+            <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{coverageTotal} years total</Text>
+            <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included.</Text>
             {quoteData.productProtection ? (
               <>
-                <Text style={[styles.cardBody, { color: colors.ink, fontWeight: 'bold', marginTop: 3 }]}>{quoteData.productProtection.planYears} additional years of Platinum Product Protection</Text>
-                <Text style={styles.cardBody}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
-                {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={styles.promoFinance}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { color: colors.ink, fontWeight: 'bold', marginTop: 3 }]}>{quoteData.productProtection.planYears} additional years of Platinum Product Protection</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
+                {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
               </>
-            ) : <Text style={styles.cardBody}>No additional paid Product Protection plan selected.</Text>}
-            <Text style={[styles.cardBody, { marginTop: 3 }]}>Final eligibility and coverage dates are confirmed using the engine serial number.</Text>
+            ) : <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>No additional paid Product Protection plan selected.</Text>}
+            <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>Final eligibility and coverage dates are confirmed using the engine serial number.</Text>
           </View>
 
           <View style={[styles.featureCard, styles.featureCardRed, spaciousLayout ? styles.featureCardSpacious : {}]}>
-            <Text style={styles.cardEyebrow}>{hasFinancing ? 'FINANCING ESTIMATE' : 'PURCHASE METHOD'}</Text>
+            <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>{hasFinancing ? 'FINANCING ESTIMATE' : 'PURCHASE METHOD'}</Text>
             {hasFinancing ? (
               <>
-                <Text style={styles.cardLead}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
-                <Text style={styles.cardBody}>{financingTermsLine(quoteData.financingRate!, financingContractTerm, quoteData.financingTerm!)}</Text>
-                {quoteData.financingAmount ? <Text style={styles.cardBody}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
-                {quoteData.dealerFee ? <Text style={styles.cardBody}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
-                <Text style={styles.cardBody}>{(quoteData.financingTerm || 0) > financingContractTerm
+                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{financingTermsLine(quoteData.financingRate!, financingContractTerm, quoteData.financingTerm!)}</Text>
+                {quoteData.financingAmount ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
+                {quoteData.dealerFee ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{(quoteData.financingTerm || 0) > financingContractTerm
                   ? 'A balance may remain at contract end and may need to be paid or refinanced. On approved credit.'
                   : 'On approved credit.'}</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>{FINANCING_ESTIMATE_DISCLAIMER}</Text>
               </>
             ) : (
               <>
-                <Text style={styles.cardLead}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
-                <Text style={styles.cardBody}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or monthly-payment estimate is included in this quote.' : 'Ask us for current Canadian marine financing options if you would like a payment estimate.'}</Text>
+                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
+                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or monthly-payment estimate is included in this quote.' : 'Ask us for current Canadian marine financing options if you would like a payment estimate.'}</Text>
               </>
             )}
-            {showAlternatePromotion && alternatePromotion ? <Text style={styles.promoFinance}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
-            {quoteData.promotionName ? <Text style={[styles.cardBody, { marginTop: 5 }]}>{quoteData.promotionName}{quoteData.promoEndDate ? ` | ends ${formattedDate(quoteData.promoEndDate)}` : ''}</Text> : null}
+            {showAlternatePromotion && alternatePromotion ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
+            {quoteData.promotionName ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 5 }]}>{quoteData.promotionName}{quoteData.promoEndDate ? ` | ends ${formattedDate(quoteData.promoEndDate)}` : ''}</Text> : null}
           </View>
         </View>
 
-        <Text style={styles.stepsHeader}>WHAT HAPPENS NEXT</Text>
-        <View style={styles.steps}>
+        <Text style={[styles.stepsHeader, spaciousLayout ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
+        <View style={[styles.steps, spaciousLayout ? styles.stepsSpacious : {}]}>
           <StepCard number="1" title="Reserve" spacious={spaciousLayout}>A ${money(recommendedDeposit).replace('.00', '')} deposit reserves your motor and your place in the schedule.</StepCard>
           {quoteData.includesInstallation ? (
             <StepCard number="2" title="We rig and water-test" spacious={spaciousLayout}>Installed, commissioned, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
@@ -683,22 +727,23 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           <StepCard number="3" title={quoteData.includesInstallation ? 'Pick up and go boating' : 'Pick up your motor'} spacious={spaciousLayout}>{quoteData.includesInstallation ? 'Get a complete walkthrough of your new Mercury at our Gores Landing shop, about 90 minutes from Toronto.' : 'Review the motor, included equipment, and commissioning details with our team before leaving.'}</StepCard>
         </View>
 
-        <View style={styles.trust}>
-          <TrustItem lead="1947" label="FAMILY-OWNED SINCE" />
-          <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered />
-          <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered />
-          <TrustItem lead={quoteData.includesInstallation ? 'Rice Lake' : 'Tested'} label={quoteData.includesInstallation ? 'INSTALLED REPOWERS WATER-TESTED' : 'PRE-DELIVERY MOTOR CHECK'} bordered />
-          <TrustItem lead={`${googleRating} stars`} label={`${googleReviewCount} GOOGLE REVIEWS`} bordered />
+        <View style={[styles.trust, spaciousLayout ? styles.trustSpacious : {}]}>
+          <TrustItem lead="1947" label="FAMILY-OWNED SINCE" spacious={spaciousLayout} />
+          <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered spacious={spaciousLayout} />
+          <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered spacious={spaciousLayout} />
+          <TrustItem lead={quoteData.includesInstallation ? 'Rice Lake' : 'Tested'} label={quoteData.includesInstallation ? 'INSTALLED REPOWERS WATER-TESTED' : 'PRE-DELIVERY MOTOR CHECK'} bordered spacious={spaciousLayout} />
+          <TrustItem lead={`${googleRating} stars`} label={`${googleReviewCount} GOOGLE REVIEWS`} bordered spacious={spaciousLayout} />
         </View>
 
         <View style={[styles.reviewQuote, spaciousLayout ? styles.reviewQuoteSpacious : {}]}>
-          <Text style={styles.reviewText}>"Great service. Great price on a new outboard. Called from out of town and organized purchase and pickup, very easy. Had all the new features explained to me when I picked it up."</Text>
-          <Text style={styles.reviewAttribution}>- Erik F. | Google review</Text>
+          <Text style={[styles.reviewText, spaciousLayout ? styles.reviewTextSpacious : {}]}>"Great service. Great price on a new outboard. Called from out of town and organized purchase and pickup, very easy. Had all the new features explained to me when I picked it up."</Text>
+          <Text style={[styles.reviewAttribution, spaciousLayout ? styles.reviewAttributionSpacious : {}]}>- Erik F. | Google review</Text>
         </View>
 
-        <View style={[styles.closeout, spaciousLayout ? styles.closeoutSpacious : {}]}>
-          <Text style={styles.closeoutTitle}>Straight answers, complete pricing</Text>
-          <Text style={styles.closeoutText}>This quote is built from the motor, equipment, promotion, trade-in and installation choices shown here. If anything about your boat changes, call or text us and we will update the configuration before you commit.</Text>
+        <View style={[styles.closeout, spaciousLayout ? styles.closeoutSpacious : {}, hasFollowingPageTwoContent ? styles.closeoutWithFollowingContent : {}]}>
+          <Text style={[styles.closeoutTitle, spaciousLayout ? styles.closeoutTitleSpacious : {}]}>Straight answers, complete pricing</Text>
+          <Text style={[styles.closeoutText, spaciousLayout ? styles.closeoutTextSpacious : {}]}>This quote is built from the motor, equipment, promotion, trade-in and installation choices shown here. If anything about your boat changes, call or text us and we will update the configuration before you commit.</Text>
+          {inspectionCaveat ? <Text style={[styles.closeoutCaveat, spaciousLayout ? styles.closeoutCaveatSpacious : {}]}>{inspectionCaveat}</Text> : null}
         </View>
 
         {quoteData.customerNotes ? (

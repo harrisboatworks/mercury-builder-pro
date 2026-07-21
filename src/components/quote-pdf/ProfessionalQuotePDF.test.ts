@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
+  FINANCING_ESTIMATE_DISCLAIMER,
   financingTermsLine,
   mercuryFamilyLabel,
   motorMetaLine,
+  quoteInspectionCaveat,
   type QuotePDFProps,
 } from './ProfessionalQuotePDF';
 
@@ -40,5 +42,31 @@ describe('professional quote PDF display copy', () => {
   it('keeps equal contract and amortization terms concise', () => {
     expect(financingTermsLine(5.48, 60, 60))
       .toBe('5.48% APR | 60-month contract and amortization');
+  });
+
+  it('keeps the financing estimate protection explicit', () => {
+    expect(FINANCING_ESTIMATE_DISCLAIMER)
+      .toBe('Payment figures are estimates and may change with the final financed amount, rate, term or lender approval.');
+  });
+
+  it.each([
+    [
+      { accessoryBreakdown: [], tradeInValue: undefined },
+      null,
+    ],
+    [
+      { accessoryBreakdown: [{ name: 'Propeller Allowance', price: 350 }], tradeInValue: undefined },
+      'Propeller fit remains subject to final inspection and water testing.',
+    ],
+    [
+      { accessoryBreakdown: [], tradeInValue: 2500 },
+      'Final trade-in value remains subject to final inspection and verification.',
+    ],
+    [
+      { accessoryBreakdown: [{ name: 'Propeller Allowance', price: 350 }], tradeInValue: 2500 },
+      'Final trade-in value and propeller fit remain subject to final inspection and water testing.',
+    ],
+  ])('shows only the applicable final-inspection caveat', (quoteData, expected) => {
+    expect(quoteInspectionCaveat(quoteData)).toBe(expected);
   });
 });
