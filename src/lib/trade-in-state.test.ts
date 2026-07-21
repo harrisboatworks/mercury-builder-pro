@@ -1,10 +1,27 @@
 import { describe, expect, it } from 'vitest';
 import type { BoatInfo } from '@/components/QuoteBuilder';
 import {
+  buildEmptyTradeInInfo,
   buildInitialTradeInInfo,
   isSupportedTradeInYear,
   parseMotorHorsepowerInput,
 } from './trade-in-state';
+
+describe('buildEmptyTradeInInfo', () => {
+  it('removes both the trade decision and every valuation field', () => {
+    expect(buildEmptyTradeInInfo()).toEqual({
+      hasTradeIn: false,
+      brand: '',
+      year: 0,
+      horsepower: 0,
+      model: '',
+      serialNumber: '',
+      condition: 'good',
+      estimatedValue: 0,
+      confidenceLevel: 'medium',
+    });
+  });
+});
 
 const boatInfo = (
   currentMotorBrand: string,

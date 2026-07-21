@@ -12,6 +12,20 @@ export function isSupportedTradeInYear(year: number, currentYear = new Date().ge
   return year >= TRADE_IN_MIN_YEAR && year <= currentYear;
 }
 
+export function buildEmptyTradeInInfo(): TradeInInfo {
+  return {
+    hasTradeIn: false,
+    brand: '',
+    year: 0,
+    horsepower: 0,
+    model: '',
+    serialNumber: '',
+    condition: 'good',
+    estimatedValue: 0,
+    confidenceLevel: 'medium',
+  };
+}
+
 export function buildInitialTradeInInfo(
   existing: TradeInInfo | null | undefined,
   boatInfo: BoatInfo | null | undefined,
@@ -19,14 +33,9 @@ export function buildInitialTradeInInfo(
   if (existing) return { ...existing };
 
   return {
-    hasTradeIn: false,
+    ...buildEmptyTradeInInfo(),
     brand: boatInfo?.currentMotorBrand || '',
     year: boatInfo?.currentMotorYear || 0,
     horsepower: boatInfo?.currentHp || 0,
-    model: '',
-    serialNumber: '',
-    condition: 'good',
-    estimatedValue: 0,
-    confidenceLevel: 'medium',
   };
 }

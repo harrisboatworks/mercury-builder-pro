@@ -15,14 +15,14 @@ import { decodeTradeInModel, decodeTradeInModelFields, type Confidence, type Dec
 import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
+import { buildEmptyTradeInInfo, isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 
 
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
   onTradeInChange: (tradeInfo: TradeInInfo) => void;
-  onAutoAdvance?: () => void;
+  onAutoAdvance?: (completedTradeInInfo?: TradeInInfo) => void;
   currentMotorBrand?: string;
   currentHp?: number;
   currentMotorYear?: number;
@@ -279,26 +279,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   onClick={() => {
                     triggerHaptic('light');
                     console.log('❌ No trade-in clicked, clearing all trade-in data');
-                    const cleanTradeInInfo: TradeInInfo = { 
-                      hasTradeIn: false,
-                      brand: '',
-                      year: 0,
-                      horsepower: 0,
-                      model: '',
-                      serialNumber: '',
-                      condition: 'good' as const,
-                      estimatedValue: 0,
-                      confidenceLevel: 'medium' as const,
-                      // Clear audit fields
-                      rangePrePenaltyLow: undefined,
-                      rangePrePenaltyHigh: undefined,
-                      rangeFinalLow: undefined,
-                      rangeFinalHigh: undefined,
-                      tradeinValuePrePenalty: undefined,
-                      tradeinValueFinal: undefined,
-                      penaltyApplied: undefined,
-                      penaltyFactor: undefined
-                    };
+                    const cleanTradeInInfo = buildEmptyTradeInInfo();
                     onTradeInChange(cleanTradeInInfo);
                     console.log('✅ onTradeInChange called with clean state:', cleanTradeInInfo);
                     
@@ -318,7 +299,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       console.error('Failed to clear localStorage:', e);
                     }
                     
-                    onAutoAdvance?.();
+                    // Pass the cleared value through explicitly. React state updates
+                    // are asynchronous, so advancing without this payload can cause
+                    // the parent to re-save the previous trade-in from its closure.
+                    onAutoAdvance?.(cleanTradeInInfo);
                     console.log('🚀 onAutoAdvance called');
                   }}
                   aria-pressed={!tradeInInfo.hasTradeIn}

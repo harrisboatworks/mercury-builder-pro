@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Motor } from '@/components/QuoteBuilder';
+import { buildConsultationTradeInAuditFields } from '@/lib/consultation-payload';
 import { initialState, quoteReducer, type QuoteState } from './QuoteContext';
 
 const motor = (id: string, model: string, price: number): Motor => ({
@@ -16,14 +17,24 @@ const motor = (id: string, model: string, price: number): Motor => ({
 });
 
 describe('quoteReducer SET_MOTOR', () => {
-  it('clears quote-dependent state when the customer changes motors', () => {
+  it('clears quote-dependent state and legacy consultation trade data when the customer changes motors', () => {
     const firstMotor = motor('motor-a', '90 ELPT', 12000);
     const nextMotor = motor('motor-b', '115 ELPT', 15000);
     const populatedState: QuoteState = {
       ...initialState,
       motor: firstMotor,
       purchasePath: 'installed',
-      boatInfo: { type: 'pontoon' } as QuoteState['boatInfo'],
+      boatInfo: {
+        type: 'pontoon',
+        tradeIn: {
+          hasTradeIn: true,
+          estimatedValue: 4925,
+          tradeinValuePrePenalty: 5794,
+          tradeinValueFinal: 4925,
+          penaltyApplied: true,
+          penaltyFactor: 0.85,
+        },
+      } as QuoteState['boatInfo'],
       tradeInInfo: { hasTradeIn: true, estimatedValue: 2500 },
       fuelTankConfig: { size: 25 },
       installConfig: { propellerNeeded: true },
@@ -74,7 +85,9 @@ describe('quoteReducer SET_MOTOR', () => {
     expect(result.motor).toEqual(nextMotor);
     expect(result.purchasePath).toBe('installed');
     expect(result.boatInfo).toEqual({ type: 'pontoon', hasCompatibleProp: false });
-    expect(result.tradeInInfo).toEqual({ hasTradeIn: true, estimatedValue: 2500 });
+    expect(result.boatInfo).not.toHaveProperty('tradeIn');
+    expect(result.tradeInInfo).toBeNull();
+    expect(result.hasTradein).toBe(false);
     expect(result.installConfig).toBeNull();
     expect(result.looseMotorBattery).toBeNull();
     expect(result.selectedOptions).toEqual([]);
@@ -93,6 +106,14 @@ describe('quoteReducer SET_MOTOR', () => {
     expect(result.customerPhone).toBe('905-555-0100');
     expect(result.isAdminQuote).toBe(true);
     expect(result.editingQuoteId).toBe('quote-123');
+
+    expect(buildConsultationTradeInAuditFields(result.boatInfo)).toEqual({
+      tradein_value_pre_penalty: null,
+      tradein_value_final: null,
+      penalty_applied: false,
+      penalty_factor: null,
+      penalty_reason: null,
+    });
   });
 
   it('preserves the configuration when the same motor is refreshed', () => {
@@ -102,6 +123,16 @@ describe('quoteReducer SET_MOTOR', () => {
       ...initialState,
       motor: firstMotor,
       purchasePath: 'installed',
+      boatInfo: {
+        type: 'pontoon',
+        tradeIn: {
+          hasTradeIn: true,
+          estimatedValue: 4925,
+          tradeinValueFinal: 4925,
+        },
+      } as QuoteState['boatInfo'],
+      tradeInInfo: { hasTradeIn: true, estimatedValue: 2500 },
+      hasTradein: true,
       selectedOptions: [{
         optionId: 'controls',
         name: 'Controls',
@@ -126,6 +157,9 @@ describe('quoteReducer SET_MOTOR', () => {
 
     expect(result.motor?.price).toBe(11750);
     expect(result.purchasePath).toBe('installed');
+    expect(result.boatInfo?.tradeIn?.tradeinValueFinal).toBe(4925);
+    expect(result.tradeInInfo).toEqual({ hasTradeIn: true, estimatedValue: 2500 });
+    expect(result.hasTradein).toBe(true);
     expect(result.selectedOptions).toHaveLength(1);
     expect(result.frozenPricing?.total).toBe(13560);
   });

@@ -17,6 +17,7 @@ import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { buildConsultationTradeInAuditFields } from '@/lib/consultation-payload';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -209,6 +210,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         contactMethod: contactInfo.contactMethod,
         notes: sanitizeInput(contactInfo.notes)
       };
+      const tradeInAuditFields = buildConsultationTradeInAuditFields(quoteData.boatInfo);
 
       const insertPayload = {
         base_price: totals.subtotal,
@@ -225,12 +227,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         lead_status: 'scheduled',
         lead_source: 'consultation',
         lead_score: 75, // High score for scheduled consultations
-        // New trade-in penalty audit fields
-        tradein_value_pre_penalty: quoteData.boatInfo?.tradeIn?.tradeinValuePrePenalty ?? null,
-        tradein_value_final: quoteData.boatInfo?.tradeIn?.tradeinValueFinal ?? quoteData.boatInfo?.tradeIn?.estimatedValue ?? null,
-        penalty_applied: Boolean(quoteData.boatInfo?.tradeIn?.penaltyApplied),
-        penalty_factor: quoteData.boatInfo?.tradeIn?.penaltyFactor ?? null,
-        penalty_reason: (quoteData.boatInfo?.tradeIn?.penaltyApplied ? 'brand_out_of_business' : null),
+        // Legacy trade-in audit fields are mapped in one testable place so a
+        // motor change cannot silently retain a previous valuation.
+        ...tradeInAuditFields,
         discount_amount: 0,
       };
 

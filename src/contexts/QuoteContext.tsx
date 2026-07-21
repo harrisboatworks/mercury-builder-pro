@@ -238,10 +238,17 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         };
       }
 
-      // A different motor invalidates motor-priced selections and snapshots.
-      // Boat, trade-in, notes, and customer-entered custom items are facts the
-      // customer may have spent time entering, so preserve them. The one boat
-      // answer that is motor-relative (compatible propeller) is reset.
+      // A different motor starts a distinct quote configuration. Preserve boat
+      // and contact facts, but never carry a prior quote's trade-in credit into
+      // the new motor. Saved/QR quotes still restore their own trade explicitly
+      // through RESTORE_QUOTE.
+      const boatInfoWithoutLegacyTrade = state.boatInfo
+        ? { ...state.boatInfo, hasCompatibleProp: false }
+        : null;
+      if (boatInfoWithoutLegacyTrade) {
+        delete boatInfoWithoutLegacyTrade.tradeIn;
+      }
+
       return {
         ...state,
         motor: action.payload,
@@ -249,9 +256,9 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         previewMotor: null,
         configuratorStep: null,
         configuratorOptions: null,
-        boatInfo: state.boatInfo
-          ? { ...state.boatInfo, hasCompatibleProp: false }
-          : null,
+        boatInfo: boatInfoWithoutLegacyTrade,
+        tradeInInfo: null,
+        hasTradein: false,
         fuelTankConfig: null,
         installConfig: null,
         looseMotorBattery: null,
