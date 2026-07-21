@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     marginBottom: 4,
   },
+  sectionHeaderSpacious: { fontSize: 9.2, paddingBottom: 6, marginBottom: 5 },
   table: { width: '100%' },
   row: {
     flexDirection: 'row',
@@ -124,10 +125,14 @@ const styles = StyleSheet.create({
     borderBottom: `0.5 solid ${colors.line}`,
   },
   rowCompact: { paddingVertical: 3.2 },
+  rowSpacious: { paddingVertical: 5.1 },
   rowText: { flex: 1 },
   rowPrimary: { color: colors.ink2, fontSize: 7.9, lineHeight: 1.2 },
+  rowPrimarySpacious: { fontSize: 9.1, lineHeight: 1.25 },
   rowDescription: { color: colors.grey, fontSize: 6.25, lineHeight: 1.3, marginTop: 2 },
+  rowDescriptionSpacious: { fontSize: 7.25, lineHeight: 1.35, marginTop: 2.4 },
   rowValue: { width: 78, color: colors.ink2, textAlign: 'right', fontSize: 7.9, lineHeight: 1.2, fontWeight: 'bold' },
+  rowValueSpacious: { width: 82, fontSize: 9.1, lineHeight: 1.25 },
   discount: { color: colors.red },
   groupLabel: {
     color: colors.grey,
@@ -139,6 +144,7 @@ const styles = StyleSheet.create({
     paddingTop: 6,
     paddingBottom: 3,
   },
+  groupLabelSpacious: { fontSize: 7.6, paddingTop: 7, paddingBottom: 4 },
   totalRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -148,28 +154,41 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     marginTop: 6,
   },
+  totalRowSpacious: { paddingVertical: 9 },
   totalRowText: { color: colors.white, fontSize: 9.5, fontWeight: 'bold' },
+  totalRowTextSpacious: { fontSize: 10.7 },
   card: { backgroundColor: colors.cream, border: `1 solid ${colors.line}`, borderRadius: 6, padding: 10, marginBottom: 9 },
   cardTitle: { color: colors.ink, fontSize: 8.8, fontWeight: 'bold', marginBottom: 6 },
+  cardTitleSpacious: { fontSize: 9.7, marginBottom: 7 },
   infoRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, marginBottom: 3 },
   infoLabel: { color: colors.grey, fontSize: 7.1 },
+  infoLabelSpacious: { fontSize: 7.8 },
   infoValue: { flex: 1, color: colors.ink2, fontSize: 7.2, textAlign: 'right' },
+  infoValueSpacious: { fontSize: 8 },
   codeCard: { backgroundColor: colors.cream, borderLeft: `3 solid ${colors.red}`, paddingVertical: 8, paddingHorizontal: 10, marginBottom: 9 },
   codeTitle: { color: colors.ink, fontSize: 8, fontWeight: 'bold', marginBottom: 4 },
+  codeTitleSpacious: { fontSize: 8.8 },
   codeText: { color: colors.ink2, fontSize: 6.55, lineHeight: 1.45, marginBottom: 2 },
+  codeTextSpacious: { fontSize: 7.2 },
   qrRow: { flexDirection: 'row', alignItems: 'center', gap: 9 },
   qr: { width: 57, height: 57, backgroundColor: colors.white, padding: 3 },
   qrSpacious: { width: 78, height: 78, padding: 4 },
   qrCopy: { flex: 1 },
   qrTitle: { color: colors.ink, fontSize: 7.9, fontWeight: 'bold', lineHeight: 1.2, marginBottom: 3 },
+  qrTitleSpacious: { fontSize: 8.7 },
   qrText: { color: colors.grey, fontSize: 6.55, lineHeight: 1.35 },
+  qrTextSpacious: { fontSize: 7.2 },
   reserve: { backgroundColor: colors.ink, color: colors.white, borderRadius: 6, padding: 11 },
   reserveSpacious: { padding: 13 },
   reserveTitle: { color: colors.white, fontSize: 9.5, fontWeight: 'bold', marginBottom: 5 },
+  reserveTitleSpacious: { fontSize: 10.4 },
   reserveText: { color: '#B9C2D2', fontSize: 6.9, lineHeight: 1.42 },
+  reserveTextSpacious: { fontSize: 7.5 },
   reserveChip: { alignSelf: 'flex-start', backgroundColor: colors.red, borderRadius: 4, marginTop: 7, paddingVertical: 5, paddingHorizontal: 8 },
   reserveChipText: { color: colors.white, fontSize: 7.2, fontWeight: 'bold' },
+  reserveChipTextSpacious: { fontSize: 7.8 },
   reservePolicy: { color: '#9AA4B5', fontSize: 5.8, lineHeight: 1.3, marginTop: 6 },
+  reservePolicySpacious: { fontSize: 6.2 },
   pageTwoTitle: { color: colors.ink, fontSize: 20, fontWeight: 'bold', borderBottom: `3 solid ${colors.red}`, paddingBottom: 8, marginBottom: 15 },
   twoUp: { flexDirection: 'row', gap: 12, marginBottom: 19 },
   featureCard: { flex: 1, border: `1 solid ${colors.line}`, borderTop: `4 solid ${colors.ink}`, borderRadius: 6, padding: 14 },
@@ -356,12 +375,12 @@ function tradeDescription(info?: QuotePDFProps['quoteData']['tradeInInfo']): str
 
 function LineItemRow({ item, compact }: { item: LineItem; compact: boolean }) {
   return (
-    <View style={[styles.row, compact ? styles.rowCompact : {}]} wrap={false}>
+    <View style={[styles.row, compact ? styles.rowCompact : styles.rowSpacious]} wrap={false}>
       <View style={styles.rowText}>
-        <Text style={styles.rowPrimary}>{item.name}</Text>
-        {item.description ? <Text style={styles.rowDescription}>{item.description}</Text> : null}
+        <Text style={[styles.rowPrimary, compact ? {} : styles.rowPrimarySpacious]}>{item.name}</Text>
+        {item.description ? <Text style={[styles.rowDescription, compact ? {} : styles.rowDescriptionSpacious]}>{item.description}</Text> : null}
       </View>
-      <Text style={styles.rowValue}>${money(item.price)}</Text>
+      <Text style={[styles.rowValue, compact ? {} : styles.rowValueSpacious]}>${money(item.price)}</Text>
     </View>
   );
 }
@@ -413,6 +432,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     || Boolean(quoteData.customerNotes)
     || Boolean(quoteData.depositInfo);
   const spaciousLayout = !compactRows;
+  const firstPageRowStyle = [styles.row, compactRows ? styles.rowCompact : styles.rowSpacious];
+  const firstPagePrimaryStyle = [styles.rowPrimary, spaciousLayout ? styles.rowPrimarySpacious : {}];
+  const firstPageDescriptionStyle = [styles.rowDescription, spaciousLayout ? styles.rowDescriptionSpacious : {}];
+  const firstPageValueStyle = [styles.rowValue, spaciousLayout ? styles.rowValueSpacious : {}];
+  const firstPageInfoLabelStyle = [styles.infoLabel, spaciousLayout ? styles.infoLabelSpacious : {}];
+  const firstPageInfoValueStyle = [styles.infoValue, spaciousLayout ? styles.infoValueSpacious : {}];
   const codeItems = motorCodeBreakdown(quoteData.productName);
   const firstCodeLine = codeItems.slice(0, 3).join(' | ');
   const secondCodeLine = codeItems.slice(3).join(' | ');
@@ -464,105 +489,105 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
         <View style={[styles.pageOneBody, spaciousLayout ? styles.pageOneBodySpacious : {}]}>
           <View style={styles.breakdownColumn}>
-            <Text style={styles.sectionHeader}>TRANSPARENT PRICE BREAKDOWN</Text>
+            <Text style={[styles.sectionHeader, spaciousLayout ? styles.sectionHeaderSpacious : {}]}>TRANSPARENT PRICE BREAKDOWN</Text>
             <View style={styles.table}>
-              <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                <Text style={styles.rowPrimary}>Mercury outboard MSRP</Text>
-                <Text style={[styles.rowValue, { color: colors.grey, textDecoration: 'line-through' }]}>${quoteData.msrp}</Text>
+              <View style={firstPageRowStyle}>
+                <Text style={firstPagePrimaryStyle}>Mercury outboard MSRP</Text>
+                <Text style={[...firstPageValueStyle, { color: colors.grey, textDecoration: 'line-through' }]}>${quoteData.msrp}</Text>
               </View>
               {Number(String(quoteData.dealerDiscount).replace(/,/g, '')) > 0 ? (
-                <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                  <Text style={styles.rowPrimary}>HBW dealer discount</Text>
-                  <Text style={[styles.rowValue, styles.discount]}>-${quoteData.dealerDiscount}</Text>
+                <View style={firstPageRowStyle}>
+                  <Text style={firstPagePrimaryStyle}>HBW dealer discount</Text>
+                  <Text style={[...firstPageValueStyle, styles.discount]}>-${quoteData.dealerDiscount}</Text>
                 </View>
               ) : null}
               {(quoteData.pricing?.adminDiscount || 0) > 0 ? (
-                <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                  <Text style={styles.rowPrimary}>Additional quote discount</Text>
-                  <Text style={[styles.rowValue, styles.discount]}>-${money(quoteData.pricing?.adminDiscount)}</Text>
+                <View style={firstPageRowStyle}>
+                  <Text style={firstPagePrimaryStyle}>Additional quote discount</Text>
+                  <Text style={[...firstPageValueStyle, styles.discount]}>-${money(quoteData.pricing?.adminDiscount)}</Text>
                 </View>
               ) : null}
               {Number(String(quoteData.promoSavings).replace(/,/g, '')) > 0 ? (
-                <View style={[styles.row, compactRows ? styles.rowCompact : {}]} wrap={false}>
+                <View style={firstPageRowStyle} wrap={false}>
                   <View style={styles.rowText}>
-                    <Text style={styles.rowPrimary}>{quoteData.promotionName || 'Mercury Canada promotion'}</Text>
-                    <Text style={styles.rowDescription}>Factory promotional savings applied{promoEndCopy}</Text>
+                    <Text style={firstPagePrimaryStyle}>{quoteData.promotionName || 'Mercury Canada promotion'}</Text>
+                    <Text style={firstPageDescriptionStyle}>Factory promotional savings applied{promoEndCopy}</Text>
                   </View>
-                  <Text style={[styles.rowValue, styles.discount]}>-${quoteData.promoSavings}</Text>
+                  <Text style={[...firstPageValueStyle, styles.discount]}>-${quoteData.promoSavings}</Text>
                 </View>
               ) : null}
-              <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                <Text style={[styles.rowPrimary, { fontWeight: 'bold' }]}>Motor price after discounts</Text>
-                <Text style={styles.rowValue}>${quoteData.motorSubtotal}</Text>
+              <View style={firstPageRowStyle}>
+                <Text style={[...firstPagePrimaryStyle, { fontWeight: 'bold' }]}>Motor price after discounts</Text>
+                <Text style={firstPageValueStyle}>${quoteData.motorSubtotal}</Text>
               </View>
               {!quoteData.includesInstallation ? (
-                <View style={[styles.row, compactRows ? styles.rowCompact : {}]} wrap={false}>
+                <View style={firstPageRowStyle} wrap={false}>
                   <View style={styles.rowText}>
-                    <Text style={styles.rowPrimary}>Loose motor configuration</Text>
-                    <Text style={styles.rowDescription}>Installation is not included</Text>
+                    <Text style={firstPagePrimaryStyle}>Loose motor configuration</Text>
+                    <Text style={firstPageDescriptionStyle}>Installation is not included</Text>
                   </View>
                 </View>
               ) : null}
               {groups.map((group) => (
                 <View key={group.key}>
                   <View wrap={false}>
-                    <Text style={styles.groupLabel}>{group.title}</Text>
+                    <Text style={[styles.groupLabel, spaciousLayout ? styles.groupLabelSpacious : {}]}>{group.title}</Text>
                     <LineItemRow item={group.items[0]} compact={compactRows} />
                   </View>
                   {group.items.slice(1).map((item, index) => <LineItemRow key={`${group.key}-${index + 1}-${item.name}`} item={item} compact={compactRows} />)}
                 </View>
               ))}
               {groups.length === 0 && quoteData.includesInstallation ? (
-                <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                  <Text style={styles.rowPrimary}>Configured installation and setup</Text>
-                  <Text style={styles.rowValue}>As shown</Text>
+                <View style={firstPageRowStyle}>
+                  <Text style={firstPagePrimaryStyle}>Configured installation and setup</Text>
+                  <Text style={firstPageValueStyle}>As shown</Text>
                 </View>
               ) : null}
               {quoteData.tradeInValue && quoteData.tradeInValue > 0 ? (
                 <>
-                  <View style={[styles.row, compactRows ? styles.rowCompact : {}]} wrap={false}>
+                  <View style={firstPageRowStyle} wrap={false}>
                     <View style={styles.rowText}>
-                      <Text style={styles.rowPrimary}>Estimated trade-in value</Text>
-                      <Text style={styles.rowDescription}>{tradeDescription(quoteData.tradeInInfo)}</Text>
+                      <Text style={firstPagePrimaryStyle}>Estimated trade-in value</Text>
+                      <Text style={firstPageDescriptionStyle}>{tradeDescription(quoteData.tradeInInfo)}</Text>
                     </View>
-                    <Text style={[styles.rowValue, styles.discount]}>-${money(quoteData.tradeInValue)}</Text>
+                    <Text style={[...firstPageValueStyle, styles.discount]}>-${money(quoteData.tradeInValue)}</Text>
                   </View>
-                  <View style={[styles.row, compactRows ? styles.rowCompact : {}]} wrap={false}>
+                  <View style={firstPageRowStyle} wrap={false}>
                     <View style={styles.rowText}>
-                      <Text style={styles.rowPrimary}>HST savings from trade-in</Text>
-                      <Text style={styles.rowDescription}>HST is not charged on the eligible trade-in portion</Text>
+                      <Text style={firstPagePrimaryStyle}>HST savings from trade-in</Text>
+                      <Text style={firstPageDescriptionStyle}>HST is not charged on the eligible trade-in portion</Text>
                     </View>
-                    <Text style={styles.rowValue}>${money(quoteData.tradeInValue * 0.13)} saved</Text>
+                    <Text style={firstPageValueStyle}>${money(quoteData.tradeInValue * 0.13)} saved</Text>
                   </View>
                 </>
               ) : null}
-              <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                <Text style={styles.rowPrimary}>Subtotal</Text><Text style={styles.rowValue}>${quoteData.subtotal}</Text>
+              <View style={firstPageRowStyle}>
+                <Text style={firstPagePrimaryStyle}>Subtotal</Text><Text style={firstPageValueStyle}>${quoteData.subtotal}</Text>
               </View>
-              <View style={[styles.row, compactRows ? styles.rowCompact : {}]}>
-                <Text style={styles.rowPrimary}>HST (13%)</Text><Text style={styles.rowValue}>${quoteData.tax}</Text>
+              <View style={firstPageRowStyle}>
+                <Text style={firstPagePrimaryStyle}>HST (13%)</Text><Text style={firstPageValueStyle}>${quoteData.tax}</Text>
               </View>
-              <View style={styles.totalRow}>
-                <Text style={styles.totalRowText}>TOTAL CASH PRICE</Text><Text style={styles.totalRowText}>${quoteData.total} CAD</Text>
+              <View style={[styles.totalRow, spaciousLayout ? styles.totalRowSpacious : {}]}>
+                <Text style={[styles.totalRowText, spaciousLayout ? styles.totalRowTextSpacious : {}]}>TOTAL CASH PRICE</Text><Text style={[styles.totalRowText, spaciousLayout ? styles.totalRowTextSpacious : {}]}>${quoteData.total} CAD</Text>
               </View>
             </View>
           </View>
 
           <View style={[styles.sidebar, spaciousLayout ? styles.sidebarSpacious : {}]}>
             <View style={styles.card}>
-              <Text style={styles.cardTitle}>Quote Details</Text>
-              <View style={styles.infoRow}><Text style={styles.infoLabel}>Customer</Text><Text style={styles.infoValue}>{quoteData.customerName}</Text></View>
-              {quoteData.customerEmail ? <View style={styles.infoRow}><Text style={styles.infoLabel}>Email</Text><Text style={styles.infoValue}>{quoteData.customerEmail}</Text></View> : null}
-              {quoteData.customerPhone ? <View style={styles.infoRow}><Text style={styles.infoLabel}>Phone</Text><Text style={styles.infoValue}>{quoteData.customerPhone}</Text></View> : null}
-              <View style={styles.infoRow}><Text style={styles.infoLabel}>Quote #</Text><Text style={styles.infoValue}>{quoteData.quoteNumber}</Text></View>
-              <View style={styles.infoRow}><Text style={styles.infoLabel}>Issued</Text><Text style={styles.infoValue}>{quoteData.date}</Text></View>
-              <View style={styles.infoRow}><Text style={styles.infoLabel}>Valid until</Text><Text style={[styles.infoValue, { fontWeight: 'bold' }]}>{expiry}</Text></View>
+              <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Quote Details</Text>
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Customer</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerName}</Text></View>
+              {quoteData.customerEmail ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Email</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerEmail}</Text></View> : null}
+              {quoteData.customerPhone ? <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Phone</Text><Text style={firstPageInfoValueStyle}>{quoteData.customerPhone}</Text></View> : null}
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Quote #</Text><Text style={firstPageInfoValueStyle}>{quoteData.quoteNumber}</Text></View>
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Issued</Text><Text style={firstPageInfoValueStyle}>{quoteData.date}</Text></View>
+              <View style={styles.infoRow}><Text style={firstPageInfoLabelStyle}>Valid until</Text><Text style={[...firstPageInfoValueStyle, { fontWeight: 'bold' }]}>{expiry}</Text></View>
             </View>
 
             <View style={styles.codeCard}>
-              <Text style={styles.codeTitle}>Understanding your motor code</Text>
-              <Text style={styles.codeText}>{firstCodeLine}</Text>
-              {secondCodeLine ? <Text style={styles.codeText}>{secondCodeLine}</Text> : null}
+              <Text style={[styles.codeTitle, spaciousLayout ? styles.codeTitleSpacious : {}]}>Understanding your motor code</Text>
+              <Text style={[styles.codeText, spaciousLayout ? styles.codeTextSpacious : {}]}>{firstCodeLine}</Text>
+              {secondCodeLine ? <Text style={[styles.codeText, spaciousLayout ? styles.codeTextSpacious : {}]}>{secondCodeLine}</Text> : null}
             </View>
 
             {savedQuoteQrCode ? (
@@ -570,8 +595,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <View style={styles.qrRow}>
                   <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} />
                   <View style={styles.qrCopy}>
-                    <Text style={styles.qrTitle}>Scan to reopen this quote</Text>
-                    <Text style={styles.qrText}>Your exact configuration, saved. Continue whenever you are ready.</Text>
+                    <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this quote</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>Your exact configuration, saved. Continue whenever you are ready.</Text>
                   </View>
                 </View>
               </View>
@@ -579,15 +604,15 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
             {!quoteData.depositInfo ? (
               <View style={[styles.reserve, spaciousLayout ? styles.reserveSpacious : {}]}>
-                <Text style={styles.reserveTitle}>Ready to lock this in?</Text>
-                <Text style={styles.reserveText}>A ${money(recommendedDeposit).replace('.00', '')} deposit holds this motor and your place in the schedule. The deposit applies to your final invoice.</Text>
-                <View style={styles.reserveChip}><Text style={styles.reserveChipText}>Call (905) 342-2153 | Text (647) 952-2153</Text></View>
-                <Text style={styles.reservePolicy}>Refundability depends on stock or special-order status and when the order is committed.</Text>
+                <Text style={[styles.reserveTitle, spaciousLayout ? styles.reserveTitleSpacious : {}]}>Ready to lock this in?</Text>
+                <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>A ${money(recommendedDeposit).replace('.00', '')} deposit holds this motor and your place in the schedule. The deposit applies to your final invoice.</Text>
+                <View style={styles.reserveChip}><Text style={[styles.reserveChipText, spaciousLayout ? styles.reserveChipTextSpacious : {}]}>Call (905) 342-2153 | Text (647) 952-2153</Text></View>
+                <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>Refundability depends on stock or special-order status and when the order is committed.</Text>
               </View>
             ) : (
               <View style={[styles.reserve, spaciousLayout ? styles.reserveSpacious : {}]}>
-                <Text style={styles.reserveTitle}>Deposit received</Text>
-                <Text style={styles.reserveText}>${money(quoteData.depositInfo.amount)} received. Reference {quoteData.depositInfo.referenceNumber}.</Text>
+                <Text style={[styles.reserveTitle, spaciousLayout ? styles.reserveTitleSpacious : {}]}>Deposit received</Text>
+                <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>${money(quoteData.depositInfo.amount)} received. Reference {quoteData.depositInfo.referenceNumber}.</Text>
               </View>
             )}
           </View>

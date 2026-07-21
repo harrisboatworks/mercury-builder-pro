@@ -1,8 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { buildProfessionalQuotePdfData, generatePDFBlob } from '@/lib/react-pdf-generator';
+import {
+  buildProfessionalQuotePdfData,
+  ensureReactPdfBrowserBuffer,
+  generatePDFBlob,
+} from '@/lib/react-pdf-generator';
 import { QUOTE_PDF_SNAPSHOT_VERSION } from '@/lib/quote-pdf-data';
 
 describe('professional quote PDF normalization', () => {
+  it('installs the Buffer compatibility layer required by the browser PDF renderer', () => {
+    const browserRuntime: Record<string, unknown> = {};
+
+    ensureReactPdfBrowserBuffer(browserRuntime);
+
+    expect(browserRuntime.Buffer).toBeDefined();
+  });
+
   it('prefers the immutable snapshot and carries financing semantics through', () => {
     const result = buildProfessionalQuotePdfData({
       quoteNumber: 'HBW-123456',

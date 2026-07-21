@@ -3,6 +3,7 @@
 import { supabase } from '@/integrations/supabase/client';
 import { resolveQuoteMotorImage, validateQuotePdfSnapshot, type QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { getRecommendedDeposit } from '@/lib/deposit';
+import { Buffer as BrowserBuffer } from 'buffer';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -96,6 +97,14 @@ type QuotePdfRenderer = {
 
 let quotePdfRendererPromise: Promise<QuotePdfRenderer> | null = null;
 
+export function ensureReactPdfBrowserBuffer(
+  target: Record<string, unknown> = globalThis as unknown as Record<string, unknown>,
+): void {
+  // Several image paths inside React PDF still expect Node's Buffer global.
+  // Vite does not provide it automatically in production browser bundles.
+  if (typeof target.Buffer === 'undefined') target.Buffer = BrowserBuffer;
+}
+
 async function prepareMotorImageForPdf(source?: string): Promise<string | undefined> {
   if (!source || typeof document === 'undefined' || typeof window === 'undefined') return source;
 
@@ -138,6 +147,7 @@ async function prepareMotorImageForPdf(source?: string): Promise<string | undefi
 }
 
 async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
+  ensureReactPdfBrowserBuffer();
   quotePdfRendererPromise ??= Promise.all([
     import('@react-pdf/renderer'),
     import('@/components/quote-pdf/ProfessionalQuotePDF'),
