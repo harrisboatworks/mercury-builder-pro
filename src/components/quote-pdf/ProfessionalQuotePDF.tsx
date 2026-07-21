@@ -148,13 +148,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 8,
-    backgroundColor: colors.ink,
+    backgroundColor: colors.white,
+    borderTop: `2 solid ${colors.ink}`,
     paddingVertical: 8,
-    paddingHorizontal: 8,
     marginTop: 6,
   },
   totalRowSpacious: { paddingVertical: 9 },
-  totalRowText: { color: colors.white, fontSize: 9.5, fontWeight: 'bold' },
+  totalRowText: { color: colors.ink, fontSize: 9.5, fontWeight: 'bold' },
   totalRowTextSpacious: { fontSize: 10.7 },
   card: { backgroundColor: colors.cream, border: `1 solid ${colors.line}`, borderRadius: 6, padding: 10, marginBottom: 9 },
   cardTitle: { color: colors.ink, fontSize: 8.8, fontWeight: 'bold', marginBottom: 6 },
@@ -175,6 +175,8 @@ const styles = StyleSheet.create({
   qrCopy: { flex: 1 },
   qrTitle: { color: colors.ink, fontSize: 7.9, fontWeight: 'bold', lineHeight: 1.2, marginBottom: 3 },
   qrTitleSpacious: { fontSize: 8.7 },
+  qrDeposit: { color: colors.ink, fontSize: 7.2, fontWeight: 'bold', lineHeight: 1.3, marginBottom: 3 },
+  qrDepositSpacious: { fontSize: 7.9 },
   qrText: { color: colors.ink2, fontSize: 6.55, lineHeight: 1.35 },
   qrTextSpacious: { fontSize: 7.2 },
   reserve: { backgroundColor: colors.cream, color: colors.ink, border: `1 solid ${colors.ink}`, borderLeft: `4 solid ${colors.red}`, borderRadius: 6, padding: 11 },
@@ -627,29 +629,29 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               {secondCodeLine ? <Text style={[styles.codeText, spaciousLayout ? styles.codeTextSpacious : {}]}>{secondCodeLine}</Text> : null}
             </View>
 
-            {savedQuoteQrCode ? (
+            {!quoteData.depositInfo ? (
               <View style={styles.card}>
+                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Ready to lock this in?</Text>
                 <View style={styles.qrRow}>
-                  <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} />
+                  {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
                   <View style={styles.qrCopy}>
-                    <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this quote</Text>
-                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>Your exact configuration, saved. Continue whenever you are ready.</Text>
+                    {savedQuoteQrCode ? <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this exact quote</Text> : null}
+                    <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>Deposit: ${money(recommendedDeposit).replace('.00', '')} CAD</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>The deposit holds the motor and applies to your final invoice.</Text>
                   </View>
                 </View>
-              </View>
-            ) : null}
-
-            {!quoteData.depositInfo ? (
-              <View style={[styles.reserve, spaciousLayout ? styles.reserveSpacious : {}]}>
-                <Text style={[styles.reserveTitle, spaciousLayout ? styles.reserveTitleSpacious : {}]}>Ready to lock this in?</Text>
-                <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>A ${money(recommendedDeposit).replace('.00', '')} deposit holds this motor and your place in the schedule. The deposit applies to your final invoice.</Text>
-                <View style={styles.reserveChip}><Text style={[styles.reserveChipText, spaciousLayout ? styles.reserveChipTextSpacious : {}]}>Call (905) 342-2153 | Text (647) 952-2153</Text></View>
                 <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>Refundability depends on stock or special-order status and when the order is committed.</Text>
               </View>
             ) : (
-              <View style={[styles.reserve, spaciousLayout ? styles.reserveSpacious : {}]}>
-                <Text style={[styles.reserveTitle, spaciousLayout ? styles.reserveTitleSpacious : {}]}>Deposit received</Text>
-                <Text style={[styles.reserveText, spaciousLayout ? styles.reserveTextSpacious : {}]}>${money(quoteData.depositInfo.amount)} received. Reference {quoteData.depositInfo.referenceNumber}.</Text>
+              <View style={styles.card}>
+                <Text style={[styles.cardTitle, spaciousLayout ? styles.cardTitleSpacious : {}]}>Deposit received</Text>
+                <View style={styles.qrRow}>
+                  {savedQuoteQrCode ? <Image src={savedQuoteQrCode} style={[styles.qr, spaciousLayout ? styles.qrSpacious : {}]} /> : null}
+                  <View style={styles.qrCopy}>
+                    <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>${money(quoteData.depositInfo.amount)} CAD received</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>Reference {quoteData.depositInfo.referenceNumber}.{savedQuoteQrCode ? ' Scan to reopen this exact quote anytime.' : ''}</Text>
+                  </View>
+                </View>
               </View>
             )}
           </View>
