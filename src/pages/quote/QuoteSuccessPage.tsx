@@ -7,7 +7,7 @@ import { SaveQuotePrompt } from '@/components/auth/SaveQuotePrompt';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { useQuote } from '@/contexts/QuoteContext';
-import { clearQuoteId, getQuoteId, trackEvent } from '@/lib/analytics';
+import { clearQuoteId, getQuoteId, trackClaritySubmission, trackEvent } from '@/lib/analytics';
 
 import { useNoIndex } from '@/hooks/useNoIndex';
 export default function QuoteSuccessPage() {
@@ -50,6 +50,7 @@ export default function QuoteSuccessPage() {
       postal_code_fsa: fsa,
       quote_id: qid,
     });
+    trackClaritySubmission('quote');
     clearQuoteId();
   }, [quoteState, quoteId, searchParams]);
 

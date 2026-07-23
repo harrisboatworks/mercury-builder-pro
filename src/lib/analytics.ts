@@ -17,6 +17,40 @@ type ClarityFunction = ((command: string, ...args: unknown[]) => void) & {
   q?: unknown[][];
 };
 
+export type ClarityFunnel = 'quote' | 'financing';
+
+export type QuoteFunnelStep =
+  | 'motor-selection'
+  | 'options'
+  | 'purchase-path'
+  | 'boat-info'
+  | 'trade-in'
+  | 'fuel-tank'
+  | 'installation'
+  | 'promo-selection'
+  | 'package-selection'
+  | 'summary'
+  | 'schedule'
+  | 'success';
+
+export type FinancingFunnelStep =
+  | 'purchase-details'
+  | 'applicant'
+  | 'employment'
+  | 'financial'
+  | 'co-applicant'
+  | 'references'
+  | 'review-submit';
+
+export type ClarityFunnelStep = QuoteFunnelStep | FinancingFunnelStep;
+
+export type ClarityMotorFamily =
+  | 'FourStroke'
+  | 'Pro XS'
+  | 'SeaPro'
+  | 'Verado'
+  | 'ProKicker';
+
 export type DeviceType = 'mobile' | 'tablet' | 'desktop';
 
 export type PageCategory =
@@ -154,6 +188,11 @@ const CLARITY_ANALYTICS_STATE = {
   analytics_Storage: 'granted',
 } as const;
 
+let pendingClarityFunnelStep: {
+  funnel: ClarityFunnel;
+  step: ClarityFunnelStep;
+} | null = null;
+
 function ensureClarityQueue(): ClarityFunction {
   if (typeof window.clarity === 'function') return window.clarity;
 
@@ -191,12 +230,147 @@ export function syncClarityConsent(value: ConsentValue): void {
   if (typeof window === 'undefined') return;
   if (value === 'granted') {
     loadClarityAfterConsent();
+    replayPendingClarityFunnelStep();
     return;
   }
 
+  pendingClarityFunnelStep = null;
   if (typeof window.clarity === 'function') {
     window.clarity('consentv2', CLARITY_DENIED_STATE);
   }
+}
+
+/* ---------------- Privacy-safe Microsoft Clarity funnel signals ---------------- */
+
+const QUOTE_FUNNEL_STEPS: Record<string, QuoteFunnelStep> = {
+  '/quote': 'motor-selection',
+  '/quote/motor-selection': 'motor-selection',
+  '/quote/options': 'options',
+  '/quote/purchase-path': 'purchase-path',
+  '/quote/boat-info': 'boat-info',
+  '/quote/trade-in': 'trade-in',
+  '/quote/fuel-tank': 'fuel-tank',
+  '/quote/installation': 'installation',
+  '/quote/promo-selection': 'promo-selection',
+  '/quote/package-selection': 'package-selection',
+  '/quote/summary': 'summary',
+  '/quote/schedule': 'schedule',
+  '/quote/success': 'success',
+};
+
+const FINANCING_FUNNEL_STEPS: Record<number, FinancingFunnelStep> = {
+  1: 'purchase-details',
+  2: 'applicant',
+  3: 'employment',
+  4: 'financial',
+  5: 'co-applicant',
+  6: 'references',
+  7: 'review-submit',
+};
+
+function getConsentedClarity(): ClarityFunction | null {
+  if (typeof window === 'undefined' || getStoredConsent() !== 'granted') return null;
+  if (typeof window.clarity !== 'function') loadClarityAfterConsent();
+  return typeof window.clarity === 'function' ? window.clarity : null;
+}
+
+function sendClarityFunnelStep(
+  clarity: ClarityFunction,
+  funnel: ClarityFunnel,
+  step: ClarityFunnelStep,
+): void {
+  clarity('set', 'funnel', funnel);
+  clarity('set', 'funnel_step', `${funnel}:${step}`);
+  clarity('event', `${funnel}_step_view`);
+}
+
+function replayPendingClarityFunnelStep(): boolean {
+  if (!pendingClarityFunnelStep) return false;
+  const clarity = getConsentedClarity();
+  if (!clarity) return false;
+
+  const { funnel, step } = pendingClarityFunnelStep;
+  pendingClarityFunnelStep = null;
+  sendClarityFunnelStep(clarity, funnel, step);
+  return true;
+}
+
+function sanitizeCatalogLabel(value: string): string {
+  return value
+    .replace(/[^a-zA-Z0-9+./()\-\s]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 80) || 'unknown';
+}
+
+export function getQuoteFunnelStep(pathname: string): QuoteFunnelStep | null {
+  const normalized = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+  return QUOTE_FUNNEL_STEPS[normalized] || null;
+}
+
+export function getFinancingFunnelStep(step: number): FinancingFunnelStep | null {
+  return FINANCING_FUNNEL_STEPS[step] || null;
+}
+
+/**
+ * Add only stable, non-PII funnel labels to the current Clarity recording.
+ * The helper intentionally has no free-form metadata parameter.
+ */
+export function trackClarityFunnelStep(
+  funnel: ClarityFunnel,
+  step: ClarityFunnelStep,
+): boolean {
+  const clarity = getConsentedClarity();
+  if (!clarity) {
+    if (typeof window !== 'undefined' && getStoredConsent() === null) {
+      pendingClarityFunnelStep = { funnel, step };
+    }
+    return false;
+  }
+
+  pendingClarityFunnelStep = null;
+  sendClarityFunnelStep(clarity, funnel, step);
+  return true;
+}
+
+/** Catalog-only motor dimensions. Never pass quote IDs, stock numbers, or customer data. */
+export function trackClarityMotorSelection(input: {
+  model: string;
+  hp: number;
+  family: ClarityMotorFamily;
+}): boolean {
+  const clarity = getConsentedClarity();
+  if (!clarity) return false;
+  const hp = Number.isFinite(input.hp) && input.hp > 0 && input.hp <= 600
+    ? String(input.hp)
+    : 'unknown';
+  clarity('set', 'funnel', 'quote');
+  clarity('set', 'motor_model', sanitizeCatalogLabel(input.model));
+  clarity('set', 'motor_hp', hp);
+  clarity('set', 'motor_family', input.family);
+  clarity('event', 'quote_motor_selected');
+  return true;
+}
+
+export function trackClarityValidationBlocked(
+  funnel: ClarityFunnel,
+  category: 'references_incomplete',
+): boolean {
+  const clarity = getConsentedClarity();
+  if (!clarity) return false;
+  clarity('set', 'funnel', funnel);
+  clarity('set', 'validation_error', category);
+  clarity('event', `${funnel}_validation_blocked`);
+  return true;
+}
+
+export function trackClaritySubmission(funnel: ClarityFunnel): boolean {
+  const clarity = getConsentedClarity();
+  if (!clarity) return false;
+  clarity('set', 'funnel', funnel);
+  clarity('set', 'funnel_status', 'submitted');
+  clarity('event', `${funnel}_submitted`);
+  return true;
 }
 
 /* ---------------- Page category mapping ---------------- */
