@@ -108,6 +108,11 @@ export function BlogTable({ children }: { children?: ReactNode }) {
     const styledBodyRows = bodyRows.map((row, ri) => {
       const cells = Children.toArray((row.props as any).children).filter(isValidElement) as ReactElement[];
       const isTotal = ri === totalRowIdx;
+      const rowProps = row.props as any;
+      const isInteractive =
+        typeof rowProps.onClick === 'function' ||
+        rowProps.role === 'button' ||
+        rowProps.tabIndex != null;
       const lastIdx = cells.length - 1;
       const styledCells = cells.map((c, ci) => {
         const cellKind = isTotal ? (ci === 0 ? 'label' : ci === lastIdx ? 'value' : null) : null;
@@ -124,13 +129,13 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       });
       const rowExtras = isTotal
         ? 'bg-repower-navy-900/5 border-t-2 border-repower-navy-900/30'
-        : `${ri > 0 ? 'border-t border-border/30' : ''} even:bg-repower-paper/30 hover:bg-mercury-red/5 transition-colors`;
-      const rowProps: any = {
+        : `${ri > 0 ? 'border-t border-border/30' : ''} even:bg-repower-paper/30 ${isInteractive ? 'hover:bg-mercury-red/5 transition-colors' : ''}`;
+      const clonedRowProps: any = {
         key: `br-${ri}`,
-        className: mergeClass((row.props as any).className, rowExtras),
+        className: mergeClass(rowProps.className, rowExtras),
       };
-      if (isTotal) rowProps['data-blog-row-type'] = 'total';
-      return cloneElement(row, rowProps, styledCells);
+      if (isTotal) clonedRowProps['data-blog-row-type'] = 'total';
+      return cloneElement(row, clonedRowProps, styledCells);
     });
     newTbody = cloneElement(tbody, {}, styledBodyRows);
   }
