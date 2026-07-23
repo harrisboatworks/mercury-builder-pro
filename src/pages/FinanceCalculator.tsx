@@ -4,10 +4,15 @@ import { useSearchParams, useLocation, useNavigate, Link } from 'react-router-do
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
-import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
-import { calculatePaymentWithFrequency, DEALERPLAN_FEE, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
+import {
+  calculatePaymentWithFrequency,
+  DEALERPLAN_FEE,
+  getFinancingTerm,
+  getMotorCalculatorApr,
+  type PaymentFrequency,
+} from '@/lib/finance';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
@@ -91,10 +96,9 @@ export default function FinanceCalculator() {
 
   const [totalFinanced, setTotalFinanced] = useState<number>(0);
   const [down, setDown] = useState<number>(0);
-  const [apr, setApr] = useState<number>(8.99);
+  const [apr, setApr] = useState<number>(() => getMotorCalculatorApr(0));
   const [term, setTerm] = useState<number>(60);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
-  const { promo } = useActiveFinancingPromo();
   const { promotions, getPromotionOptions, getSpecialFinancingRates } = useActivePromotions();
 
   // Derive promo-aware content for hero pill & banner
@@ -129,7 +133,6 @@ export default function FinanceCalculator() {
         const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
         setTotalFinanced(Math.round(totalWithFees));
         setTerm(getFinancingTerm(Math.round(totalWithFees)));
-        if (!promo?.rate) setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
         setMotor({ id: navState.motorId || 'nav-state', model: navState.motorModel, year: new Date().getFullYear(), base_price: navState.motorPrice, sale_price: navState.motorPrice });
         return;
       }
@@ -138,7 +141,6 @@ export default function FinanceCalculator() {
         const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
         setTotalFinanced(Math.round(totalWithFees));
         setTerm(getFinancingTerm(Math.round(totalWithFees)));
-        if (!promo?.rate) setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
         setMotor({ id: quoteState.motor.id || 'quote-context', model: quoteState.motor.model || '', year: quoteState.motor.year || new Date().getFullYear(), base_price: motorPrice, sale_price: motorPrice });
         return;
       }
@@ -165,19 +167,17 @@ export default function FinanceCalculator() {
         const totalWithFees = motorPrice * 1.13 + DEALERPLAN_FEE;
         setTotalFinanced(Math.round(totalWithFees));
         setTerm(getFinancingTerm(Math.round(totalWithFees)));
-        if (!promo?.rate) setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
       }
       setLoading(false);
     };
     run();
-  }, [modelId, navState, promo?.rate, quoteState.motor]);
+  }, [modelId, navState, quoteState.motor]);
 
   useEffect(() => {
-    if (promo?.rate && totalFinanced > 0) {
-      const tieredRate = getDefaultFinancingRate(totalFinanced);
-      if (promo.rate < tieredRate) setApr(Number(promo.rate));
+    if (totalFinanced > 0) {
+      setApr(getMotorCalculatorApr(totalFinanced));
     }
-  }, [promo, totalFinanced]);
+  }, [totalFinanced]);
 
   // ── Calculations (unchanged) ──
   const paymentCalculation = useMemo(() => {
@@ -406,8 +406,12 @@ export default function FinanceCalculator() {
                         inputMode="decimal"
                         value={apr}
                         onChange={(e) => setApr(Number(e.target.value || 0))}
+                        aria-describedby="apr-help"
                         className="w-full rounded bg-white border border-repower-navy-900/10 px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15"
                       />
+                      <p id="apr-help" className="mt-2 font-sans text-[12px] leading-relaxed text-repower-navy-900/55">
+                        Defaults to the current standing estimate ({CURRENT_RATE.rate}). Short-term promotional rates have their own terms; see the promotion details before comparing payments.
+                      </p>
                     </div>
                     <div>
                       <label htmlFor="term" className="block mb-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">Amortization (months)</label>
@@ -445,11 +449,14 @@ export default function FinanceCalculator() {
                     </div>
                   </div>
 
-                  {promo && (
+                  {financingPromoData.lowestRate && (
                     <div className="bg-repower-cream border border-repower-gold/40 p-4 font-sans text-[13px] text-repower-navy-900">
-                      <span className="font-semibold">Promo APR applied:</span> {promo.rate}%{' '}
-                      {promo.promo_text && <span>· {promo.promo_text}</span>}{' '}
-                      {promo.promo_end_date && <span>(ends {new Date(promo.promo_end_date).toLocaleDateString('en-CA', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' })})</span>}
+                      <span className="font-semibold">A lower promotional rate may be available:</span>{' '}
+                      from {financingPromoData.lowestRate}% APR for the term shown in the{' '}
+                      <Link to="/promotions" className="font-semibold underline underline-offset-4">
+                        current promotion details
+                      </Link>
+                      . It is not automatically mixed into this standing-rate estimate.
                     </div>
                   )}
 
