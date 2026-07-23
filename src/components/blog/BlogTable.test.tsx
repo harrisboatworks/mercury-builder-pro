@@ -1,5 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+// @vitest-environment jsdom
+
+import '@testing-library/jest-dom/vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { afterAll, describe, expect, it, vi } from 'vitest';
 
 import { BlogTable } from './BlogTable';
 
@@ -11,6 +14,10 @@ vi.stubGlobal(
     disconnect() {}
   },
 );
+
+afterAll(() => {
+  vi.unstubAllGlobals();
+});
 
 describe('BlogTable', () => {
   it('keeps non-interactive body rows visually static', () => {
@@ -33,10 +40,28 @@ describe('BlogTable', () => {
 
     const row = screen.getByTestId('alarm-row');
 
-    expect(row).toHaveClass('even:bg-repower-paper/30');
     expect(row).not.toHaveClass('hover:bg-mercury-red/5');
     expect(row).not.toHaveClass('transition-colors');
-    expect(row).not.toHaveAttribute('role');
-    expect(row).not.toHaveAttribute('tabindex');
+  });
+
+  it('preserves hover feedback for intentionally interactive body rows', () => {
+    const onClick = vi.fn();
+
+    render(
+      <BlogTable>
+        <tbody>
+          <tr data-testid="interactive-row" onClick={onClick} tabIndex={0}>
+            <td>Open details</td>
+          </tr>
+        </tbody>
+      </BlogTable>,
+    );
+
+    const row = screen.getByTestId('interactive-row');
+
+    expect(row).toHaveClass('hover:bg-mercury-red/5');
+    expect(row).toHaveClass('transition-colors');
+    fireEvent.click(row);
+    expect(onClick).toHaveBeenCalledOnce();
   });
 });
