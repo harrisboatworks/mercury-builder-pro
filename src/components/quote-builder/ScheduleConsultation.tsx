@@ -17,6 +17,7 @@ import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { useQuote } from '@/contexts/QuoteContext';
 
 interface ScheduleConsultationProps {
   quoteData: QuoteData;
@@ -26,6 +27,7 @@ interface ScheduleConsultationProps {
 
 export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: ScheduleConsultationProps) => {
   const { user } = useAuth();
+  const { dispatch } = useQuote();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [contactInfo, setContactInfo] = useState({
@@ -40,6 +42,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const [isSendingText, setIsSendingText] = useState(false);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
+  const isLoosePickup = (purchasePath || quoteData.purchasePath) === 'loose';
 
   const buildPdfData = (quoteNumber: string, customer: { name: string; email: string; phone?: string }) => {
     if (!pdfSnapshot) {
@@ -276,6 +279,10 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         }
         quoteId = fnData?.quoteId;
       }
+
+      // Mark the final step only after the lead record has been persisted.
+      // useQuoteActivityTracker converts this confirmed state change into quote_submitted.
+      dispatch({ type: 'COMPLETE_STEP', payload: 7 });
 
       console.log('🔍 [NOTIFICATIONS] Starting notification process... quoteId:', quoteId);
 
@@ -716,21 +723,15 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-repower-navy-900">Submit Your Quote</h2>
-        <p className="text-lg text-repower-navy-900/75 font-normal">
-          Complete your contact information and we'll reach out to finalize the details
-        </p>
-      </div>
-
       <div className="max-w-2xl mx-auto">
         {/* Contact Form */}
         <Card className="p-6 border-repower-navy-900/10 rounded-sm hover:border-repower-navy-900/20 transition-colors duration-300">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
-              <p className="text-repower-navy-900/75 font-normal mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
+              <h2 className="text-2xl font-light tracking-wide text-repower-navy-900">Where should we send the reviewed quote?</h2>
+              <p className="text-repower-navy-900/70 font-normal mt-2">
+                Choose how you would like us to reply. No payment or obligation.
+              </p>
             </div>
             
             <div className="space-y-2">
@@ -780,7 +781,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method <RequiredMark /></Label>
+              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
                 <SelectTrigger className="border-repower-navy-900/10 rounded-sm">
                   <SelectValue placeholder="How would you like us to contact you?" />
@@ -807,45 +808,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               <p className="text-xs text-muted-foreground  font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
 
-            {/* Send Quote Options */}
-            <div className="space-y-3">
-              <h4 className="font-sans font-semibold text-[11px] uppercase tracking-[0.14em] text-repower-navy-900/55">Send Quote To:</h4>
-
-              {/* Send via Email */}
-              <button
-                type="button"
-                onClick={handleSendByEmail}
-                disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
-              >
-                <Mail className="w-4 h-4" />
-                {isSendingEmail ? 'Sending...' : 'Send to Email'}
-              </button>
-
-              {/* Send via Text */}
-              <button
-                type="button"
-                onClick={handleSendByText}
-                disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
-              >
-                <MessageSquare className="w-4 h-4" />
-                {isSendingText ? 'Sending...' : 'Send by Text'}
-              </button>
-
-              {/* Download as tertiary option */}
-              <button
-                type="button"
-                onClick={generatePDF}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 font-sans text-[13px] text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                Download PDF
-              </button>
-            </div>
-
             <div className="mt-2 mb-4 bg-repower-cream border border-repower-navy-900/10 p-4 rounded-sm text-[13px] text-repower-navy-900/80 leading-relaxed">
-              Your quote is reviewed by a real person at Harris Boat Works. No auto-pricing games. We usually confirm everything within 1 business day.
+              A real person at Harris Boat Works reviews every request. This does not place an order or take payment. We usually confirm everything within 1 business day.
             </div>
             <button
               type="submit"
@@ -853,9 +817,43 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               className="group w-full inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Calendar className="w-4 h-4" />
-              {isSubmitting ? 'Submitting...' : 'Submit Quote'}
+              {isSubmitting ? 'Sending for review…' : 'Send My Quote for Review'}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
+
+            <details className="border-t border-repower-navy-900/10 pt-5">
+              <summary className="cursor-pointer font-sans text-[13px] font-semibold text-repower-navy-900/70 hover:text-repower-navy-900">
+                Want a copy before you submit? <span className="font-normal text-repower-navy-900/50">(optional)</span>
+              </summary>
+              <div className="mt-4 space-y-3">
+                <button
+                  type="button"
+                  onClick={handleSendByEmail}
+                  disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
+                  className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
+                >
+                  <Mail className="w-4 h-4" />
+                  {isSendingEmail ? 'Sending…' : 'Email Me a Copy'}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSendByText}
+                  disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
+                  className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  {isSendingText ? 'Sending…' : 'Text Me a Copy'}
+                </button>
+                <button
+                  type="button"
+                  onClick={generatePDF}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 font-sans text-[13px] text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </button>
+              </div>
+            </details>
           </form>
         </Card>
       </div>
@@ -885,10 +883,21 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <div>
               <p className="font-light tracking-wide mb-2">What happens next?</p>
               <ul className="text-sm text-muted-foreground  font-light space-y-1">
-                <li>• We'll contact you within 24 hours to schedule your consultation</li>
-                <li>• Our technician will inspect your boat and verify all specifications</li>
-                <li>• You'll receive a final quote including installation costs</li>
-                <li>• Professional installation by certified Mercury technicians</li>
+                {isLoosePickup ? (
+                  <>
+                    <li>• We contact you within 1 business day</li>
+                    <li>• We confirm the exact motor, shaft, controls, and rigging requirements</li>
+                    <li>• We send the final pickup-ready price and availability</li>
+                    <li>• Pickup is arranged only after you approve the quote</li>
+                  </>
+                ) : (
+                  <>
+                    <li>• We contact you within 1 business day</li>
+                    <li>• We confirm your boat specifications and any inspection needs</li>
+                    <li>• We finalize the installation scope, price, and timing</li>
+                    <li>• Installation is booked only after you approve the quote</li>
+                  </>
+                )}
               </ul>
             </div>
           </div>

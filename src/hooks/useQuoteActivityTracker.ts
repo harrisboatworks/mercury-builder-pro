@@ -102,6 +102,7 @@ export function useQuoteActivityTracker() {
   const prevPromoOption = useRef<string | null>(null);
   const prevPackageId = useRef<string | null>(null);
   const prevSummaryPath = useRef(false);
+  const submittedTracked = useRef(false);
   const hasActiveQuote = useRef(false);
 
   const utmParams = useRef(captureUtmParams());
@@ -344,11 +345,12 @@ export function useQuoteActivityTracker() {
     }
   }, [location.pathname, state.isLoading, state.motor, state.currentStep, getMotorInfo, scheduleFlush]);
 
-  // Detect quote submitted (completedSteps includes the final step)
+  // Detect a persisted quote submission after the schedule form marks the final step.
   useEffect(() => {
     if (state.isLoading || !state.motor) return;
     const onSchedule = location.pathname === '/quote/schedule';
-    if (onSchedule && state.completedSteps.includes(7)) {
+    if (onSchedule && state.completedSteps.includes(7) && !submittedTracked.current) {
+      submittedTracked.current = true;
       const { model, hp, price } = getMotorInfo();
       flush({
         event_type: 'quote_submitted',

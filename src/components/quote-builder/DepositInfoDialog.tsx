@@ -66,13 +66,16 @@ export function DepositInfoDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Reserve Your Motor</DialogTitle>
+          <DialogTitle>Reserve this motor</DialogTitle>
           <DialogDescription>
-            Enter your details to proceed with the ${depositAmount} deposit.
+            Enter your details, then review the ${depositAmount} deposit in secure Stripe checkout.
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 py-2">
+          <p className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-3 text-sm leading-relaxed text-repower-navy-900/75">
+            HBW confirms the exact motor and quote details with you before anything is ordered.
+          </p>
           <div className="space-y-1.5">
             <Label htmlFor="deposit-name">Full Name <RequiredMark /></Label>
             <Input
@@ -117,7 +120,7 @@ export function DepositInfoDialog({
             className="w-full"
             size="lg"
           >
-            {isProcessing ? 'Processing...' : `Continue to Payment`}
+            {isProcessing ? 'Preparing checkout…' : 'Review Secure Checkout'}
           </Button>
           <div className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
             <Shield className="h-3 w-3" />

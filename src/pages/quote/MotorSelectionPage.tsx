@@ -55,6 +55,13 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { SITE_URL } from '@/lib/site';
+import { trackEvent } from '@/lib/analytics';
+import {
+  getMotorHpRange,
+  MOTOR_HP_RANGES,
+  motorMatchesHpRange,
+  type MotorHpRangeId,
+} from '@/lib/motor-hp-ranges';
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
@@ -394,6 +401,7 @@ function MotorSelectionContent() {
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [hpRange, setHpRange] = useState<MotorHpRangeId>('all');
   const [selectedGroup, setSelectedGroup] = useState<MotorGroup | null>(null);
   const [showConfigurator, setShowConfigurator] = useState(false);
   const [hasInitiallyLoaded, setHasInitiallyLoaded] = useState(false);
@@ -472,6 +480,7 @@ if (event.type === 'filter_motors') {
         setTimeout(() => { voiceFilterLockRef.current = false; }, 500);
         
         // Set HP/model as search query (fuzzy search handles this well)
+        setHpRange('all');
         if (horsepower) {
           setSearchQuery(String(horsepower));
         } else if (model) {
@@ -529,6 +538,7 @@ if (event.type === 'filter_motors') {
       if (event.type === 'clear_filters') {
         setSearchQuery('');
         setConfigFilters(null);
+        setHpRange('all');
         
         // Scroll to top of motor grid
         setTimeout(() => {
@@ -851,11 +861,15 @@ if (event.type === 'filter_motors') {
     return fuzzyResults.map(r => r.item);
   }, [processedMotors, searchQuery]);
 
-  // Apply structured config filters AFTER fuzzy search
+  const hpRangeFilteredMotors = useMemo(() => (
+    filteredMotors.filter((motor) => motorMatchesHpRange(Number(motor.hp), hpRange))
+  ), [filteredMotors, hpRange]);
+
+  // Apply structured config filters AFTER search and visible HP-range choices
   const finalFilteredMotors = useMemo(() => {
-    if (!configFilters) return filteredMotors;
+    if (!configFilters) return hpRangeFilteredMotors;
     
-    return filteredMotors.filter(motor => {
+    return hpRangeFilteredMotors.filter(motor => {
       const modelName = motor.model || '';
       const hp = motor.hp;
       
@@ -905,7 +919,7 @@ if (event.type === 'filter_motors') {
       
       return true;
     });
-  }, [filteredMotors, configFilters]);
+  }, [hpRangeFilteredMotors, configFilters]);
 
   // Update the visible motors store for voice agent access
   useEffect(() => {
@@ -1061,25 +1075,14 @@ if (event.type === 'filter_motors') {
     };
   }, [searchParams, groupedMotors]);
 
-  // Filter groups based on search
-  const filteredGroups = useMemo(() => {
-    if (!searchQuery) return groupedMotors;
-    const query = searchQuery.toLowerCase().trim();
-    const queryNum = parseFloat(query);
-    if (!isNaN(queryNum)) {
-      return groupedMotors.filter(g => g.hp === queryNum || g.hp.toString().includes(query));
-    }
-    return groupedMotors.filter(g => 
-      g.families.some(f => f.toLowerCase().includes(query))
-    );
-  }, [groupedMotors, searchQuery]);
-
   const handleConfigureGroup = (group: MotorGroup) => {
+    dismissExitIntent();
     setSelectedGroup(group);
     setShowConfigurator(true);
   };
 
   const handleMotorSelect = (motor: Motor) => {
+    dismissExitIntent();
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
     
@@ -1096,6 +1099,7 @@ if (event.type === 'filter_motors') {
   };
 
   const handleHpSuggestionSelect = (hp: number) => {
+    setHpRange('all');
     setSearchQuery(hp.toString());
     // Only clear config filters if NOT locked by voice
     if (!voiceFilterLockRef.current) {
@@ -1105,17 +1109,30 @@ if (event.type === 'filter_motors') {
   
   // Handler for HP filter changes from ConfigFilterSheet (doesn't clear config filters)
   const handleHpFilterChange = (query: string) => {
+    setHpRange('all');
     setSearchQuery(query);
     // Don't clear configFilters - user is using the filter sheet alongside config filters
   };
   
   // Clear config filters when user types in search (manual typing only)
   const handleSearchChange = (query: string) => {
+    if (query.trim()) setHpRange('all');
     setSearchQuery(query);
     // Only clear if NOT locked by voice
     if (!voiceFilterLockRef.current) {
       setConfigFilters(null);
     }
+  };
+
+  const handleHpRangeChange = (rangeId: MotorHpRangeId) => {
+    const range = getMotorHpRange(rangeId);
+    setHpRange(rangeId);
+    setSearchQuery('');
+    setConfigFilters(null);
+    trackEvent('quote_hp_range_selected', {
+      range_id: range.id,
+      range_label: range.label,
+    });
   };
   
   // Handle recently viewed click - open motor details
@@ -1229,7 +1246,7 @@ if (event.type === 'filter_motors') {
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-[#C8102E]" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#C8102E]">
-                In-Stock Mercury Outboards
+                Mercury Outboard Quote Builder
               </span>
             </div>
             <h1
@@ -1238,14 +1255,16 @@ if (event.type === 'filter_motors') {
             >
               Choose your power.
             </h1>
-            <p className="text-[18px] font-normal text-[#050E1C]/65 text-balance mb-4">
-              Live pricing. Real quotes. Three minutes.
+            <p className="text-[18px] md:text-[20px] font-normal leading-relaxed text-[#050E1C]/70 text-balance max-w-[58ch] mb-5">
+              Start with the horsepower on your current motor, or choose a range below. You will see real Canadian pricing before we ask for contact details.
             </p>
-            <p className="text-[15px] font-normal text-[#050E1C]/70 text-balance max-w-[60ch] mb-4">
-              Browse Mercury boats and outboards in Canada and build your repower quote in about 3 minutes. A real person at HBW reviews every quote and usually emails you back within 1 business day.
-            </p>
-            <p className="text-[14px] font-normal text-[#050E1C]/70 text-balance max-w-[70ch] mb-4">
-              Get your Mercury outboard quote online right here. This quote covers the motor, rigging, and professional installation at our marina in Gores Landing. You bring the boat to us and we take care of the rest. Turnaround is quick, no waiting around. There is no obligation, just a straightforward price on a new Mercury outboard for your boat.
+            <div className="flex flex-wrap gap-x-5 gap-y-2 mb-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#050E1C]/65">
+              <span className="inline-flex items-center gap-2"><span className="text-[#C9A24A]">✓</span> Real CAD pricing</span>
+              <span className="inline-flex items-center gap-2"><span className="text-[#C9A24A]">✓</span> No sign-in required</span>
+              <span className="inline-flex items-center gap-2"><span className="text-[#C9A24A]">✓</span> Reviewed by HBW</span>
+            </div>
+            <p className="text-[14px] font-normal text-[#050E1C]/65 text-balance max-w-[66ch] mb-5">
+              Not sure of the exact HP? Check the number on your motor cowl or your boat's capacity plate. You can change your choice before submitting anything.
             </p>
             <div className="text-[12px] font-medium text-[#050E1C]/65 border-t border-[#050E1C]/10 pt-3">
               Harris Boat Works · Mercury dealer since 1965, current Premier tier · Family-owned since 1947 · Gores Landing, ON
@@ -1288,13 +1307,64 @@ if (event.type === 'filter_motors') {
               }
             />
 
-            {(searchQuery || configFilters) && (
+            <div className="mt-3">
+              <p className={`mb-2 text-[12px] font-medium ${
+                isSearchStuck ? 'text-[#F5F1EA]/60' : 'text-[#050E1C]/60'
+              }`}>
+                Choose an HP range
+              </p>
+              <div
+                role="radiogroup"
+                aria-label="Filter motors by horsepower range"
+                className="keep-flex flex flex-row gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                {MOTOR_HP_RANGES.map((range) => {
+                  const active = hpRange === range.id;
+                  return (
+                    <button
+                      key={range.id}
+                      type="button"
+                      role="radio"
+                      aria-checked={active}
+                      onClick={() => handleHpRangeChange(range.id)}
+                      className={`relative shrink-0 rounded-full border px-3.5 py-2 text-left transition-colors ${
+                        active
+                          ? 'border-[#C9A24A] bg-[#C9A24A] text-[#050E1C]'
+                          : isSearchStuck
+                            ? 'border-[#F5F1EA]/15 bg-[#F5F1EA]/[0.06] text-[#F5F1EA] hover:border-[#C9A24A]/70'
+                            : 'border-[#050E1C]/10 bg-white text-[#050E1C] hover:border-[#C9A24A]'
+                      }`}
+                    >
+                      <span className="block text-[12px] font-bold tracking-[0.03em]">{range.label}</span>
+                      {range.id !== 'all' && (
+                        <span className={`mt-0.5 block text-[10px] ${
+                          active ? 'text-[#050E1C]/65' : isSearchStuck ? 'text-[#F5F1EA]/50' : 'text-[#050E1C]/50'
+                        }`}>
+                          {range.description}
+                        </span>
+                      )}
+                      {range.popular && (
+                        <span className="absolute -top-2 right-2 rounded-full bg-[#C8102E] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
+                          Popular
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {(searchQuery || configFilters || hpRange !== 'all') && (
               <div className="flex items-center gap-2 flex-wrap mt-3">
                 <span
                   className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
                     finalFilteredMotors.length > 0
-                      ? 'bg-repower-cream/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
-                      : 'bg-[#C8102E]/15 text-[#F5F1EA] border border-[#C8102E]/40'
+                      ? isSearchStuck
+                        ? 'bg-repower-cream/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
+                        : 'bg-white text-[#050E1C] border border-[#050E1C]/10'
+                      : isSearchStuck
+                        ? 'bg-[#C8102E]/15 text-[#F5F1EA] border border-[#C8102E]/40'
+                        : 'bg-[#C8102E]/10 text-[#9A0C24] border border-[#C8102E]/30'
                   }`}
                   aria-live="polite"
                   role="status"
@@ -1304,13 +1374,18 @@ if (event.type === 'filter_motors') {
                     : 'No motors match'}
                 </span>
                 {configFilters && (
-                  <span className="text-xs text-[#F5F1EA]/60">
+                  <span className={`text-xs ${isSearchStuck ? 'text-[#F5F1EA]/60' : 'text-[#050E1C]/60'}`}>
                     Filtered by: {[
                       configFilters.inStock && 'in stock',
                       configFilters.startType,
                       configFilters.controlType,
                       configFilters.shaftLength && `${configFilters.shaftLength} shaft`
                     ].filter(Boolean).join(', ')}
+                  </span>
+                )}
+                {hpRange !== 'all' && (
+                  <span className={`text-xs ${isSearchStuck ? 'text-[#F5F1EA]/60' : 'text-[#050E1C]/60'}`}>
+                    HP range: {getMotorHpRange(hpRange).label}
                   </span>
                 )}
               </div>
@@ -1425,7 +1500,7 @@ if (event.type === 'filter_motors') {
               </p>
               <button
                 className="inline-flex items-center gap-2 bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white px-6 py-3 rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] transition-colors"
-                onClick={() => { setSearchQuery(''); setConfigFilters(null); }}
+                onClick={() => { setSearchQuery(''); setConfigFilters(null); setHpRange('all'); }}
               >
                 Clear Filters
               </button>

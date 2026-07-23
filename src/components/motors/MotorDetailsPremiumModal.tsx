@@ -6,6 +6,7 @@ const RelatedPostsGrid = lazy(() =>
 );
 import { getDisplayPrices } from '@/lib/pricing';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { trackEvent } from '@/lib/analytics';
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -383,6 +384,10 @@ export default function MotorDetailsPremiumModal({
   };
 
   const handleSelectMotor = () => {
+    trackEvent('quote_motor_configure_clicked', {
+      motor_hp: hp ?? null,
+      motor_model: motor?.model || title,
+    });
     if (onSelect) onSelect();
     onClose();
   };

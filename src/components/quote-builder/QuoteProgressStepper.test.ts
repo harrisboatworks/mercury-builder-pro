@@ -18,6 +18,7 @@ describe('quote progress steps', () => {
       '/quote/installation',
       '/quote/promo-selection',
       '/quote/summary',
+      '/quote/schedule',
     ]);
     expect(steps.findIndex((step) => step.path === '/quote/trade-in')).toBe(4);
   });
