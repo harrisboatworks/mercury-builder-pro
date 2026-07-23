@@ -55,6 +55,9 @@ export function GlobalCtaTracker() {
           entry_cta: explicitLocation || 'untagged_sms_link',
         });
       } else if (href.startsWith('mailto:')) {
+        const recipient = href.slice('mailto:'.length).split('?', 1)[0].trim();
+        if (!recipient) return;
+
         trackEvent('email_click', {
           ...commonParams,
           entry_cta: explicitLocation || 'untagged_email_link',

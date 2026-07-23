@@ -96,4 +96,22 @@ describe('GlobalCtaTracker customer handoffs', () => {
     });
     expect(JSON.stringify(analytics.trackEvent.mock.calls)).not.toContain('sales@example.test');
   });
+
+  it('does not count a recipient-less email share as a customer handoff', () => {
+    render(
+      <>
+        <GlobalCtaTracker />
+        <a
+          href="mailto:?subject=Mercury%20Repower%20Guide"
+          onClick={(event) => event.preventDefault()}
+        >
+          Share by email
+        </a>
+      </>,
+    );
+
+    fireEvent.click(screen.getByRole('link', { name: 'Share by email' }));
+
+    expect(analytics.trackEvent).not.toHaveBeenCalled();
+  });
 });
