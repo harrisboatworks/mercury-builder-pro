@@ -1,6 +1,6 @@
 import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -742,9 +742,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
                 className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.name ? 'border-destructive' : ''}`}
+                aria-required="true"
+                aria-invalid={Boolean(errors.name)}
+                aria-describedby={errors.name ? 'name-error' : undefined}
               />
               {errors.name && (
-                <p className="text-sm text-destructive font-light">{errors.name}</p>
+                <p id="name-error" role="alert" className="text-sm text-destructive font-light">{errors.name}</p>
               )}
             </div>
 
@@ -757,9 +760,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email"
                 className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.email ? 'border-destructive' : ''}`}
+                aria-required="true"
+                aria-invalid={Boolean(errors.email)}
+                aria-describedby={errors.email ? 'email-error' : undefined}
               />
               {errors.email && (
-                <p className="text-sm text-destructive font-light">{errors.email}</p>
+                <p id="email-error" role="alert" className="text-sm text-destructive font-light">{errors.email}</p>
               )}
             </div>
 
@@ -773,17 +779,20 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="(705) 555-1234"
                 className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
+                aria-required="true"
+                aria-invalid={Boolean(errors.phone)}
+                aria-describedby={errors.phone ? 'phone-error phone-help' : 'phone-help'}
               />
               {errors.phone && (
-                <p className="text-sm text-destructive font-light">{errors.phone}</p>
+                <p id="phone-error" role="alert" className="text-sm text-destructive font-light">{errors.phone}</p>
               )}
-              <p className="text-xs text-muted-foreground  font-light">Enter 10 digits (with or without formatting)</p>
+              <p id="phone-help" className="text-xs text-muted-foreground font-light">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="contactMethod" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Preferred Contact Method</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
+                <SelectTrigger id="contactMethod" className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-sm">
@@ -814,12 +823,18 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group w-full inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group w-full inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-navy-900 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Calendar className="w-4 h-4" />
               {isSubmitting ? 'Sending for review…' : 'Send My Quote for Review'}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
+            <p className="text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/55">
+              We use your details to review this quote and contact you about it.{' '}
+              <Link to="/privacy" className="font-semibold text-repower-navy-900 underline decoration-repower-gold/70 underline-offset-2 hover:decoration-repower-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/50">
+                Privacy Policy
+              </Link>
+            </p>
 
             <details className="border-t border-repower-navy-900/10 pt-5">
               <summary className="cursor-pointer font-sans text-[13px] font-semibold text-repower-navy-900/70 hover:text-repower-navy-900">

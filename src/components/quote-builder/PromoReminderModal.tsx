@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import {
   Drawer,
@@ -144,17 +145,18 @@ export const PromoReminderModal = ({
         />
       </div>
 
-      <div className="space-y-3">
-        <Label className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">
+      <fieldset className="space-y-3">
+        <legend className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">
           How should we notify you?
-        </Label>
+        </legend>
         <RadioGroup
           value={channel}
           onValueChange={(v) => setChannel(v as 'email' | 'sms' | 'both')}
           className="grid grid-cols-3 gap-2"
+          aria-label="Notification method"
         >
           <label
-            className={`flex min-h-12 items-center justify-center gap-2 rounded-sm border px-3 py-3 font-sans cursor-pointer transition-colors ${
+            className={`flex min-h-12 items-center justify-center gap-2 rounded-sm border px-3 py-3 font-sans cursor-pointer transition-colors has-[:focus-visible]:outline-none has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-repower-gold has-[:focus-visible]:ring-offset-2 ${
               channel === 'email' 
                 ? 'border-repower-navy-900 bg-repower-navy-900 text-repower-cream'
                 : 'border-repower-navy-900/15 bg-repower-paper text-repower-navy-900 hover:border-repower-navy-900/40'
@@ -165,7 +167,7 @@ export const PromoReminderModal = ({
             <span className="text-sm font-semibold">Email</span>
           </label>
           <label
-            className={`flex min-h-12 items-center justify-center gap-2 rounded-sm border px-3 py-3 font-sans cursor-pointer transition-colors ${
+            className={`flex min-h-12 items-center justify-center gap-2 rounded-sm border px-3 py-3 font-sans cursor-pointer transition-colors has-[:focus-visible]:outline-none has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-repower-gold has-[:focus-visible]:ring-offset-2 ${
               channel === 'sms' 
                 ? 'border-repower-navy-900 bg-repower-navy-900 text-repower-cream'
                 : 'border-repower-navy-900/15 bg-repower-paper text-repower-navy-900 hover:border-repower-navy-900/40'
@@ -176,7 +178,7 @@ export const PromoReminderModal = ({
             <span className="text-sm font-semibold">Text</span>
           </label>
           <label
-            className={`flex min-h-12 items-center justify-center gap-2 rounded-sm border px-3 py-3 font-sans cursor-pointer transition-colors ${
+            className={`flex min-h-12 items-center justify-center gap-2 rounded-sm border px-3 py-3 font-sans cursor-pointer transition-colors has-[:focus-visible]:outline-none has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-repower-gold has-[:focus-visible]:ring-offset-2 ${
               channel === 'both' 
                 ? 'border-repower-navy-900 bg-repower-navy-900 text-repower-cream'
                 : 'border-repower-navy-900/15 bg-repower-paper text-repower-navy-900 hover:border-repower-navy-900/40'
@@ -186,7 +188,7 @@ export const PromoReminderModal = ({
             <span className="text-sm font-semibold">Both</span>
           </label>
         </RadioGroup>
-      </div>
+      </fieldset>
 
       {(channel === 'email' || channel === 'both') && (
         <div className="space-y-2">
@@ -201,6 +203,7 @@ export const PromoReminderModal = ({
             onChange={(e) => setEmail(e.target.value)}
             className="h-12 rounded-sm border-repower-navy-900/15 bg-repower-paper px-4 font-sans text-[15px] text-repower-navy-900 placeholder:text-repower-navy-900/35 focus-visible:border-repower-gold focus-visible:ring-repower-gold/15"
             required={channel === 'email' || channel === 'both'}
+            aria-required="true"
           />
         </div>
       )}
@@ -218,6 +221,7 @@ export const PromoReminderModal = ({
             onChange={(e) => setPhone(formatPhone(e.target.value))}
             className="h-12 rounded-sm border-repower-navy-900/15 bg-repower-paper px-4 font-sans text-[15px] text-repower-navy-900 placeholder:text-repower-navy-900/35 focus-visible:border-repower-gold focus-visible:ring-repower-gold/15"
             required={channel === 'sms' || channel === 'both'}
+            aria-required="true"
           />
         </div>
       )}
@@ -241,7 +245,10 @@ export const PromoReminderModal = ({
       </Button>
 
       <p className="text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/55">
-        We'll only contact you about promotions on this motor. Unsubscribe anytime.
+        This signs you up for price and promotion updates for this motor. Unsubscribe anytime.{' '}
+        <Link to="/privacy" className="font-semibold text-repower-navy-900 underline decoration-repower-gold/70 underline-offset-2 hover:decoration-repower-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/50">
+          Privacy
+        </Link>
       </p>
     </form>
   );
