@@ -124,7 +124,7 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       });
       const rowExtras = isTotal
         ? 'bg-repower-navy-900/5 border-t-2 border-repower-navy-900/30'
-        : `${ri > 0 ? 'border-t border-border/30' : ''} even:bg-repower-paper/30 hover:bg-mercury-red/5 transition-colors`;
+        : `${ri > 0 ? 'border-t border-border/30' : ''} even:bg-repower-paper/30`;
       const rowProps: any = {
         key: `br-${ri}`,
         className: mergeClass((row.props as any).className, rowExtras),
