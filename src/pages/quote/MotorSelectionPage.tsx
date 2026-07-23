@@ -1381,7 +1381,7 @@ if (event.type === 'filter_motors') {
           className={`sticky top-[64px] lg:top-[72px] z-40 transition-all duration-200 ease-out ${
             isSearchStuck
               ? 'bg-[rgba(10,22,40,0.92)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)] shadow-[0_8px_24px_-12px_rgba(5,14,28,0.65)]'
-              : 'bg-repower-paper border-b border-[#050E1C]/10 md:bg-transparent md:border-b-0'
+              : 'bg-repower-paper border-b border-[#050E1C]/10'
           }`}
         >
           <div className="max-w-[1400px] mx-auto px-4 md:px-14 pt-0 pb-3 md:pb-4">

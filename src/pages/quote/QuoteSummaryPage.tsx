@@ -1106,7 +1106,7 @@ export default function QuoteSummaryPage() {
             <QuoteSummarySkeleton />
           ) : (
           <div className="bg-repower-paper">
-          <div className="mx-auto w-full max-w-[1100px] py-12 px-6 md:py-16 md:px-0">
+          <div className="mx-auto w-full max-w-[1100px] px-6 py-12 md:px-8 md:py-16 min-[1180px]:px-0">
             <div className="grid lg:grid-cols-[1fr_440px] gap-12">
               {/* Main Content - Left Column */}
               <div className="space-y-6">

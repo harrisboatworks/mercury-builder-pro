@@ -518,7 +518,7 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {currentStep === 2 && <Card className={quoteStepCardClass}>
+            {currentStep === totalSteps - 1 && <Card className={quoteStepCardClass}>
                 <div className="space-y-4">
                   <h3 className={quoteStepHeadingClass}>Ready to Continue</h3>
                   <p className="font-sans text-sm text-repower-navy-900/65">We'll use typical settings and confirm any unknowns.</p>
@@ -872,7 +872,7 @@ export const BoatInformation = ({
                                 <small className="block text-xs text-protected-muted">Required for non‑Mercury controls</small>
                               </div>
                             </div> : <>
-                              <Button type="button" variant={boatInfo.controlsOption === 'none' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
+                              <Button type="button" variant={boatInfo.controlsOption === 'none' ? 'default' : 'outline'} className="h-auto whitespace-normal p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
                         ...prev,
                         controlsOption: 'none'
                       }))}>
@@ -881,7 +881,7 @@ export const BoatInformation = ({
                                 <small className="block text-xs opacity-60">Complete remote control kit</small>
                               </Button>
 
-                              <Button type="button" variant={boatInfo.controlsOption === 'adapter' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
+                              <Button type="button" variant={boatInfo.controlsOption === 'adapter' ? 'default' : 'outline'} className="h-auto whitespace-normal p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
                         ...prev,
                         controlsOption: 'adapter'
                       }))}>
@@ -890,7 +890,7 @@ export const BoatInformation = ({
                                 <small className="block text-xs opacity-60">We'll adapt your existing controls</small>
                               </Button>
 
-                              <Button type="button" variant={boatInfo.controlsOption === 'compatible' ? 'default' : 'outline'} className="h-auto p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
+                              <Button type="button" variant={boatInfo.controlsOption === 'compatible' ? 'default' : 'outline'} className="h-auto whitespace-normal p-4 text-left justify-start flex-col items-start" onClick={() => setBoatInfo(prev => ({
                         ...prev,
                         controlsOption: 'compatible'
                       }))}>
@@ -960,7 +960,7 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {currentStep === 4 && <Card className={quoteStepCardClass}>
+            {currentStep === totalSteps - 1 && <Card className={quoteStepCardClass}>
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <h3 className={quoteStepHeadingClass}>Compatibility check</h3>

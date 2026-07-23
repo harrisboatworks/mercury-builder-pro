@@ -17,6 +17,7 @@ describe('quote funnel UX contract', () => {
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
 
     expect(motorSelectionSource).toContain('bg-repower-paper border-b');
+    expect(motorSelectionSource).not.toContain('md:bg-transparent md:border-b-0');
     expect(motorSelectionSource).toContain('keep-flex flex flex-row gap-1.5 overflow-x-auto');
     expect(motorSelectionSource).toContain('md:hidden');
     expect(motorSelectionSource).toContain('!mobile && range.id');
@@ -68,10 +69,32 @@ describe('quote funnel UX contract', () => {
   it('does not celebrate before a customer has committed', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
     const stickySource = read('src/components/quote-builder/StickySummary.tsx');
+    const installationSource = read('src/components/quote-builder/InstallationConfig.tsx');
 
     expect(summarySource).not.toContain('QuoteRevealCinematic');
     expect(stickySource).not.toContain('canvas-confetti');
     expect(stickySource).not.toContain('playCelebration');
+    expect(installationSource).not.toContain('canvas-confetti');
+    expect(installationSource).not.toContain('playCelebration');
+  });
+
+  it('keeps quote content inset through tablet and small-laptop widths', () => {
+    const shellSource = read('src/components/quote-builder/redesign/QuotePageShell.tsx');
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+
+    expect(shellSource).toContain('md:px-8');
+    expect(shellSource).toContain('min-[960px]:px-0');
+    expect(summarySource).toContain('md:px-8');
+    expect(summarySource).toContain('min-[1180px]:px-0');
+  });
+
+  it('renders the boat review card at the actual final sub-step', () => {
+    const boatInfoSource = read('src/components/quote-builder/BoatInformation.tsx');
+    const dynamicReviewMatches = boatInfoSource.match(/currentStep === totalSteps - 1/g) ?? [];
+
+    expect(dynamicReviewMatches).toHaveLength(3);
+    expect(boatInfoSource).not.toContain('currentStep === 4 && <Card');
+    expect(boatInfoSource).toContain('whitespace-normal p-4 text-left');
   });
 
   it('marks submission only after the lead insert succeeds', () => {
