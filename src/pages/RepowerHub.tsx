@@ -107,24 +107,24 @@ export default function RepowerHub() {
         <>
           <p className="mb-4">
             If you are looking for a boat repower in Ontario, you have come to
-            the right place. Harris Boat Works has been a Mercury Premier
-            Dealer since 1965, family-owned since 1947. We handle every boat
-            engine repower from start to finish, right here at our marina on
-            Rice Lake. Bring your boat to Gores Landing and we will get you
-            back on the water with a new Mercury outboard.
+            the right place. Harris Boat Works has been a Mercury dealer since
+            1965 and holds Mercury&apos;s Premier tier today. Family-owned
+            since 1947, we handle every boat engine repower from start to
+            finish, right here at our marina on Rice Lake. Bring your boat to
+            Gores Landing and we will get you back on the water with a new
+            Mercury outboard.
           </p>
           A boat repower means replacing your existing outboard with a new
           Mercury on your current boat. For most Ontario freshwater customers
           in 2026, a full boat engine repower lands between $11,000 and
           $40,000 CAD depending on HP class, hull, and rigging. The hull is
           the asset; the motor is the wear part. A repower on a solid hull
-          gives you 80% of the new-boat experience for half the money. Live
-          pricing on every Mercury we sell is at{' '}
+          gives you 80% of the new-boat experience for half the money. See{' '}
           <Link
             to="/quote/motor-selection"
             className="font-semibold text-repower-gold underline-offset-4 hover:underline"
           >
-            /quote/motor-selection
+            live pricing on every Mercury in the quote builder
           </Link>
           , or see the{' '}
           <Link
@@ -158,9 +158,9 @@ export default function RepowerHub() {
         ],
         footnote: (
           <>
-            Live pricing on every motor at{' '}
+            See{' '}
             <Link to="/quote/motor-selection" className="text-repower-gold hover:underline">
-              /quote/motor-selection
+              live pricing on every motor in the quote builder
             </Link>
             .
           </>
