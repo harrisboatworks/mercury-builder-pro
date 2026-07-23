@@ -23,6 +23,23 @@ describe('quote funnel UX contract', () => {
     expect(motorSelectionSource).toContain('!mobile && range.popular');
   });
 
+  it('shows useful navigation before ultra-wide desktop widths', () => {
+    const headerSource = read('src/components/repower/RepowerHeader.tsx');
+    const menuSource = read('src/components/repower/RepowerMobileMenu.tsx');
+
+    expect(headerSource).toContain('const PRIMARY_NAV_LINKS');
+    expect(headerSource).toContain("label: 'Outboards'");
+    expect(headerSource).toContain("label: 'Pricing'");
+    expect(headerSource).toContain("label: 'Promotions'");
+    expect(headerSource).toContain("label: 'Financing'");
+    expect(headerSource).toContain('hidden lg:flex');
+    expect(headerSource).not.toContain('hidden min-[1500px]:flex');
+    expect(headerSource).toContain('More');
+    expect(headerSource).toContain("const isQuoteFlow = location.pathname.startsWith('/quote')");
+    expect(headerSource).toContain('!isQuoteFlow &&');
+    expect(menuSource).toContain("to: '/pricing-reference'");
+  });
+
   it('keeps the motor-selection preamble specific to Mercury outboards', () => {
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
 
