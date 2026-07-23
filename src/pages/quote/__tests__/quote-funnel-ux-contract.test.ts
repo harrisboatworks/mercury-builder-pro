@@ -128,6 +128,22 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('Installation is booked only after you approve the quote');
   });
 
+  it('explains data use and exposes required quote fields to assistive technology', () => {
+    const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
+    const reminderSource = read('src/components/quote-builder/PromoReminderModal.tsx');
+    const inlineCaptureSource = read('src/components/motors/EmailCaptureInline.tsx');
+
+    expect(scheduleSource).toContain('We use your details to review this quote and contact you about it.');
+    expect(scheduleSource).toContain('to="/privacy"');
+    expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(3);
+    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(3);
+    expect(scheduleSource).toContain('role="alert"');
+    expect(reminderSource).toContain('This signs you up for price and promotion updates for this motor.');
+    expect(reminderSource).toContain('has-[:focus-visible]:ring-2');
+    expect(inlineCaptureSource).toContain('Email address for pricing and deal updates');
+    expect(inlineCaptureSource).toContain('Pricing and deal emails from Harris Boat Works.');
+  });
+
   it('preserves agency before the reservation payment', () => {
     const depositSource = read('src/components/quote-builder/DepositInfoDialog.tsx');
 
