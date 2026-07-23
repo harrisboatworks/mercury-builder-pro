@@ -10,7 +10,8 @@ import {
  * Global click delegate for CTA tracking.
  * Reads data-cta="quote-start" and data-cta-location="..." attributes from
  * the nearest matching ancestor of the click target.
- * Also picks up tel: / mailto: links with a data-cta-location attribute.
+ * Also tracks every phone, text, and email handoff link. A data-cta-location
+ * value improves attribution, but is not required for the action to count.
  */
 export function GlobalCtaTracker() {
   useEffect(() => {
@@ -34,18 +35,32 @@ export function GlobalCtaTracker() {
 
       const link = target.closest<HTMLAnchorElement>('a[href]');
       if (!link) return;
-      const href = link.getAttribute('href') || '';
-      const loc = link.getAttribute('data-cta-location');
-      if (!loc) return;
+      const href = (link.getAttribute('href') || '').trim().toLowerCase();
+      const explicitLocation = link.getAttribute('data-cta-location')?.trim();
+      const pathname = window.location.pathname;
+      const commonParams = {
+        entry_page: pathname || '(direct)',
+        page_category: getPageCategory(pathname),
+        device_type: getDeviceType(),
+      };
+
       if (href.startsWith('tel:')) {
         trackEvent('phone_click', {
-          entry_cta: loc,
-          page_category: getPageCategory(window.location.pathname),
+          ...commonParams,
+          entry_cta: explicitLocation || 'untagged_phone_link',
+        });
+      } else if (href.startsWith('sms:')) {
+        trackEvent('sms_click', {
+          ...commonParams,
+          entry_cta: explicitLocation || 'untagged_sms_link',
         });
       } else if (href.startsWith('mailto:')) {
+        const recipient = href.slice('mailto:'.length).split('?', 1)[0].trim();
+        if (!recipient) return;
+
         trackEvent('email_click', {
-          entry_cta: loc,
-          page_category: getPageCategory(window.location.pathname),
+          ...commonParams,
+          entry_cta: explicitLocation || 'untagged_email_link',
         });
       }
     };
