@@ -8,6 +8,8 @@ describe('getQuoteStepNumber', () => {
     expect(getQuoteStepNumber(state, '/quote/trade-in')).toBe(5);
     expect(getQuoteStepNumber(state, '/quote/installation')).toBe(6);
     expect(getQuoteStepNumber(state, '/quote/promo-selection')).toBe(7);
+    expect(getQuoteStepNumber(state, '/quote/summary')).toBe(8);
+    expect(getQuoteStepNumber(state, '/quote/schedule')).toBe(9);
   });
 
   it('returns null for a step that is not visible on the selected path', () => {
@@ -17,6 +19,8 @@ describe('getQuoteStepNumber', () => {
     expect(getQuoteStepNumber(state, '/quote/installation')).toBeNull();
     expect(getQuoteStepNumber(state, '/quote/trade-in')).toBe(4);
     expect(getQuoteStepNumber(state, '/quote/promo-selection')).toBe(5);
+    expect(getQuoteStepNumber(state, '/quote/summary')).toBe(6);
+    expect(getQuoteStepNumber(state, '/quote/schedule')).toBe(7);
   });
 
   it('keeps fuel-tank choices in Options instead of inventing a duplicate step', () => {
@@ -27,5 +31,6 @@ describe('getQuoteStepNumber', () => {
     expect(getQuoteStepNumber(state, '/quote/fuel-tank')).toBeNull();
     expect(getQuoteStepNumber(state, '/quote/trade-in')).toBe(4);
     expect(getQuoteStepNumber(state, '/quote/summary')).toBe(6);
+    expect(getQuoteStepNumber(state, '/quote/schedule')).toBe(7);
   });
 });

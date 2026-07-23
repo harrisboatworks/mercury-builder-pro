@@ -1,10 +1,8 @@
 "use client";
-import { useCallback, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { money } from "@/lib/money";
 import { Download, CreditCard, Bookmark } from "lucide-react";
-import confetti from 'canvas-confetti';
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
-import { useSound } from '@/contexts/SoundContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 
 type StickySummaryProps = {
@@ -15,6 +13,7 @@ type StickySummaryProps = {
   monthly?: number;
   bullets?: string[];
   onReserve: () => void;
+  onReview?: () => void;
   depositAmount?: number;
   coverageYears?: number;
   promoWarrantyYears?: number;
@@ -36,6 +35,7 @@ export default function StickySummary({
   monthly,
   bullets = [],
   onReserve,
+  onReview,
   depositAmount = 200,
   coverageYears,
   promoWarrantyYears,
@@ -48,7 +48,6 @@ export default function StickySummary({
   // Quote expiry
   quoteValidUntil,
 }: StickySummaryProps) {
-  const { playCelebration } = useSound();
   const { user } = useAuth();
   const [showPulse, setShowPulse] = useState(false);
 
@@ -57,22 +56,6 @@ export default function StickySummary({
     const timer = setTimeout(() => setShowPulse(true), 1200);
     return () => clearTimeout(timer);
   }, []);
-
-  const handleReserveClick = useCallback(() => {
-    // Trigger celebration confetti burst
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#3B82F6', '#60A5FA', '#93C5FD', '#DBEAFE', '#1D4ED8'],
-    });
-    
-    // Play celebration sound
-    playCelebration();
-    
-    // Call original handler
-    onReserve();
-  }, [onReserve, playCelebration]);
 
   return (
     <>
@@ -144,7 +127,7 @@ export default function StickySummary({
 
         <div className="space-y-3">
           <button
-            onClick={handleReserveClick}
+            onClick={onReserve}
             disabled={isProcessingPayment}
             className={`group w-full rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
           >
@@ -158,6 +141,21 @@ export default function StickySummary({
               )}
             </span>
           </button>
+          <p className="px-1 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+            Secure Stripe checkout. HBW confirms details before ordering.
+          </p>
+
+          {onReview && (
+            <button
+              onClick={onReview}
+              className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                Have HBW Review My Quote
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </span>
+            </button>
+          )}
 
           {onApplyForFinancing && (
             <button

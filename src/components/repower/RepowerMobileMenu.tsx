@@ -1,18 +1,20 @@
 import { X, ChevronRight, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import type { User } from '@supabase/supabase-js';
 import harrisLogo from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo-white.png';
 
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  user?: any;
-  signOut?: () => Promise<any>;
+  user?: User | null;
+  signOut?: () => Promise<unknown>;
 }
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
-  { to: '/quote/motor-selection', label: 'Motors' },
+  { to: '/quote/motor-selection', label: 'Outboards' },
+  { to: '/pricing-reference', label: 'Pricing' },
   { to: '/promotions', label: 'Promotions' },
   { to: '/mercury-product-protection', label: 'Product Protection' },
   { to: '/repower', label: 'Repower' },

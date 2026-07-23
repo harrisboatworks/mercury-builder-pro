@@ -21,7 +21,6 @@ import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { SaveQuoteWithAuth } from '@/components/quote-builder/SaveQuoteWithAuth';
 import { PhoneCapture } from '@/components/quote-builder/PhoneCapture';
 import { useAutoSaveQuoteOnAuth } from '@/hooks/useAutoSaveQuoteOnAuth';
-import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { resolvePropellerDecision } from '@/lib/propeller-selection';
@@ -204,57 +203,6 @@ export default function QuoteSummaryPage() {
   // Deposit processing state - amount is auto-calculated from HP
   const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
   const [showDepositDialog, setShowDepositDialog] = useState(false);
-  
-  // Cinematic reveal - show for fresh quotes coming from package selection
-  const [showCinematic, setShowCinematic] = useState(false);
-  const [subtotalStable, setSubtotalStable] = useState(false);
-  const cinematicTriggeredRef = useRef(false);
-  
-  // Extract stable motor ID outside the effect to prevent re-triggers on object reference changes
-  const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
-
-  const handleCinematicComplete = useCallback(() => {
-    sessionStorage.setItem('quote-reveal-seen', 'true');
-    if (currentMotorId) {
-      sessionStorage.setItem('quote-reveal-motor-id', String(currentMotorId));
-    }
-    setShowCinematic(false);
-  }, [currentMotorId]);
-
-  // Check if we should show cinematic (fresh from package selection OR new motor)
-  useEffect(() => {
-    // Guard: prevent double-trigger on same mount or if already showing
-    if (cinematicTriggeredRef.current || showCinematic) return;
-    
-    const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
-    const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
-    
-    // Skip cinematic when the current viewer is an admin (not just because the quote was admin-created)
-    if (isAdmin) return;
-    
-    // Show cinematic if never seen OR different motor selected
-    if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
-      cinematicTriggeredRef.current = true;
-      setShowCinematic(true);
-    }
-    
-    // Scroll to top on mount
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [currentMotorId]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'R') {
-        e.preventDefault();
-        sessionStorage.removeItem('quote-reveal-seen');
-        setShowCinematic(true);
-      }
-    };
-    
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   // isMounted gate removed, content renders immediately from context
 
@@ -277,6 +225,11 @@ export default function QuoteSummaryPage() {
   }, [isMounted, state.isLoading, state.motor, state.selectedPackage, navigate, dispatch]);
 
   const handleStepComplete = () => {
+    trackEvent('quote_review_started', {
+      motor_hp: hp,
+      purchase_path: state.purchasePath || 'unknown',
+      device: window.innerWidth < 1024 ? 'mobile_or_tablet' : 'desktop',
+    });
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
     navigate('/quote/schedule');
   };
@@ -479,17 +432,6 @@ export default function QuoteSummaryPage() {
     }
     return packageSpecificTotals;
   }, [packageSpecificTotals, state.frozenPricing]);
-
-  // Wait for displayPricing.subtotal to settle before triggering the cinematic.
-  // accessoryBreakdown (which adds prop allowance, package extras, etc.) computes
-  // after first paint, so without this gate the cinematic counter can finish on
-  // the motor-only price ($28,122) instead of the true subtotal ($29,322).
-  useEffect(() => {
-    if (subtotalStable) return;
-    if (displayPricing.subtotal <= 0) return;
-    const t = setTimeout(() => setSubtotalStable(true), 150);
-    return () => clearTimeout(t);
-  }, [displayPricing.subtotal, subtotalStable]);
 
   // Live total for stale-quote comparison (always calculated from current data, ignoring frozen)
   const liveTotalForComparison = useMemo(() => {
@@ -912,13 +854,13 @@ export default function QuoteSummaryPage() {
     navigate('/financing/apply');
   };
 
-  const handleBookConsult = () => {
-    dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
-    navigate('/quote/schedule');
-  };
-
   // Open the deposit info dialog (replaces direct payment flow)
   const handleReserveDeposit = () => {
+    trackEvent('quote_deposit_dialog_opened', {
+      motor_hp: hp,
+      deposit_amount: depositAmount,
+      device: window.innerWidth < 1024 ? 'mobile_or_tablet' : 'desktop',
+    });
     setShowDepositDialog(true);
   };
 
@@ -1059,12 +1001,14 @@ export default function QuoteSummaryPage() {
 
       if (error) throw error;
       if (data?.url) {
-        window.open(data.url, '_blank');
-        toast({
-          title: "Redirecting to Payment",
-          description: "Opening secure payment window...",
+        trackEvent('quote_deposit_checkout_created', {
+          motor_hp: hp,
+          deposit_amount: depositAmount,
         });
+        window.location.assign(data.url);
+        return;
       }
+      throw new Error('Secure checkout did not return a payment link.');
     } catch (error: any) {
       console.error('Deposit error:', error);
       toast({
@@ -1141,22 +1085,6 @@ export default function QuoteSummaryPage() {
         }}
         isProcessing={isProcessingDeposit}
       />
-      {/* Cinematic Quote Reveal */}
-      <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted && !promoLoading && subtotalStable}
-        onComplete={handleCinematicComplete}
-        motorName={motorName}
-        finalPrice={displayPricing.subtotal}
-        msrp={motorMSRP}
-        savings={displayPricing.savings}
-        tradeInValue={state.tradeInInfo?.estimatedValue}
-        coverageYears={selectedPackageCoverageYears}
-        imageUrl={imageUrl}
-        selectedPromoOption={state.selectedPromoOption}
-        selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
-        monthlyPayment={isCashPurchase ? undefined : monthlyPayment}
-        showMonthlyPayment={!isCashPurchase}
-      />
       
       {/* Stale Quote Detection */}
       {state.frozenPricing && (
@@ -1178,7 +1106,7 @@ export default function QuoteSummaryPage() {
             <QuoteSummarySkeleton />
           ) : (
           <div className="bg-repower-paper">
-          <div className="mx-auto w-full max-w-[1100px] py-12 px-6 md:py-16 md:px-0">
+          <div className="mx-auto w-full max-w-[1100px] px-6 py-12 md:px-8 md:py-16 min-[1180px]:px-0">
             <div className="grid lg:grid-cols-[1fr_440px] gap-12">
               {/* Main Content - Left Column */}
               <div className="space-y-6">
@@ -1289,6 +1217,41 @@ export default function QuoteSummaryPage() {
                 {/* Mobile CTA Section */}
                 <div className="lg:hidden space-y-3">
                   <button
+                    onClick={handleReserveDeposit}
+                    disabled={isProcessingDeposit || noMotorSelected}
+                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      {isProcessingDeposit
+                        ? 'Preparing secure checkout…'
+                        : `Reserve this motor — $${depositAmount.toLocaleString()}`
+                      }
+                      {!isProcessingDeposit && (
+                        <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      )}
+                    </span>
+                  </button>
+                  <p className="px-2 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+                    Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
+                  </p>
+                  <div className="flex items-center gap-3 py-1" aria-hidden>
+                    <span className="h-px flex-1 bg-repower-navy-900/10" />
+                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
+                      Not ready to reserve?
+                    </span>
+                    <span className="h-px flex-1 bg-repower-navy-900/10" />
+                  </div>
+                  <button
+                    onClick={handleStepComplete}
+                    className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      Have HBW Review My Quote
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </span>
+                  </button>
+                  <button
                     onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
                     disabled={noMotorSelected}
                     title={noMotorSelected ? 'Select a motor first' : undefined}
@@ -1308,15 +1271,6 @@ export default function QuoteSummaryPage() {
                     <span className="inline-flex items-center justify-center gap-2">
                       <Download className="w-4 h-4" />
                       {isGeneratingPDF ? 'PDF' : 'Download PDF'}
-                    </span>
-                  </button>
-                  <button
-                    onClick={handleStepComplete}
-                    className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md"
-                  >
-                    <span className="inline-flex items-center justify-center gap-2">
-                      Continue to Schedule
-                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
                   </button>
                   {!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM && (
@@ -1343,6 +1297,7 @@ export default function QuoteSummaryPage() {
                   monthly={isCashPurchase ? undefined : monthlyPayment}
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
+                  onReview={handleStepComplete}
                   depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
                   promoWarrantyYears={promoYears > 0 ? promoYears : undefined}

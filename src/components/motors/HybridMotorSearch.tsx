@@ -490,7 +490,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} ${filterSlot ? 'pr-16' : 'pr-12'} text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
+            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} ${filterSlot ? 'pr-16 md:pr-32' : 'pr-12'} text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
             ${isDark
               ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
@@ -513,7 +513,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
 
         {/* Keyboard Shortcut Hint */}
         <AnimatePresence>
-          {!isFocused && !query && (
+          {!filterSlot && !isFocused && !query && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -547,7 +547,8 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         {query && (
           <button
             onClick={handleClear}
-            className={`absolute ${filterSlot ? 'right-14' : 'right-4'} top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-gray-600 transition-colors`}
+            className={`absolute ${filterSlot ? 'right-14 md:right-28' : 'right-4'} top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-gray-600 transition-colors`}
+            aria-label="Clear motor search"
           >
             <X className="w-5 h-5" />
           </button>

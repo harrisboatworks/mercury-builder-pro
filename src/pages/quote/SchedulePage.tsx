@@ -17,7 +17,7 @@ export default function SchedulePage() {
       return;
     }
 
-    document.title = 'Submit Your Quote | Harris Boat Works';
+    document.title = 'Request a Quote Review | Harris Boat Works';
 
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!desc) {
@@ -25,7 +25,7 @@ export default function SchedulePage() {
       desc.name = 'description';
       document.head.appendChild(desc);
     }
-    desc.content = "Submit your Mercury outboard motor quote and we'll contact you to finalize the details.";
+    desc.content = "Request a no-obligation review of your Mercury outboard quote from Harris Boat Works.";
   }, [isStepAccessible, navigate]);
 
   const handleBack = () => {
@@ -55,7 +55,7 @@ export default function SchedulePage() {
             <div className="flex items-center justify-center gap-3 mb-5">
               <span className="h-px w-8 bg-repower-mercury-red" />
               <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red">
-                Step 7 · Submit
+                Final step · Review
               </p>
               <span className="h-px w-8 bg-repower-mercury-red" />
             </div>
@@ -63,15 +63,15 @@ export default function SchedulePage() {
               className="font-display font-bold text-repower-navy-900 mb-5"
               style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
             >
-              Submit your quote
+              Get your quote reviewed
             </h1>
             <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto">
-              Send us your details and our team will reach out to confirm pricing, availability, and next steps.
+              No payment or obligation. Send your details and an HBW rep will confirm fit, availability, pricing, and next steps.
             </p>
             <div className="h-px bg-repower-navy-900/10 mt-10 max-w-[200px] mx-auto" />
           </div>
 
-          <div className="bg-white border border-repower-navy-900/10 p-6 md:p-10">
+          <div className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6 md:p-10">
             <ScheduleConsultation
               quoteData={quoteData}
               onBack={handleBack}

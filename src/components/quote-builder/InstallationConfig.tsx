@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import OptionGallery from "../OptionGallery";
 import { tillerMountingChoices } from "@/config/visualChoices";
-import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
-import { useSound } from '@/contexts/SoundContext';
 import { Button } from '@/components/ui/button';
 import { Check, Gauge, RefreshCw } from 'lucide-react';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
@@ -52,7 +50,6 @@ interface InstallationConfigProps {
 
 export default function InstallationConfig({ selectedMotor, boatInfo, initialConfig, tradeInInfo, onComplete }: InstallationConfigProps) {
   const isTiller = isTillerMotor(selectedMotor?.model || '');
-  const { playCelebration } = useSound();
 
   const hp = Number(selectedMotor?.hp || selectedMotor?.horsepower || 0);
   const propAllowance = getPropellerAllowance(hp);
@@ -81,13 +78,6 @@ export default function InstallationConfig({ selectedMotor, boatInfo, initialCon
     const selectedMounting = tillerMountingChoices.find(choice => choice.value === updatedConfig.mounting);
     const installationCost = selectedMounting?.price || 0;
     const recommendedPackage = selectedMounting?.recommendedPackage || 'good';
-    
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-    playCelebration();
     
     onComplete({
       ...updatedConfig,
@@ -178,7 +168,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, initialCon
                 className={`min-h-[168px] rounded-sm border-2 p-5 text-left transition-colors ${
                   config.propellerDecision === 'include_allowance'
                     ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04]'
-                    : 'border-repower-navy-900/15 bg-white hover:border-repower-navy-900/35'
+                    : 'border-repower-navy-900/15 bg-repower-cream hover:border-repower-gold/60'
                 }`}
               >
                 <span className="mb-3 flex items-center justify-between gap-3">
@@ -203,7 +193,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, initialCon
                 className={`min-h-[168px] rounded-sm border-2 p-5 text-left transition-colors ${
                   config.propellerDecision === 'reuse_existing'
                     ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04]'
-                    : 'border-repower-navy-900/15 bg-white hover:border-repower-navy-900/35'
+                    : 'border-repower-navy-900/15 bg-repower-cream hover:border-repower-gold/60'
                 }`}
               >
                 <span className="mb-3 flex items-center justify-between gap-3">

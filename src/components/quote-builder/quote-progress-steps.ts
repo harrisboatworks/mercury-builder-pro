@@ -37,6 +37,7 @@ const allSteps: QuoteProgressStep[] = [
   },
   { id: 8, label: 'Promo', shortLabel: 'Promo', path: '/quote/promo-selection' },
   { id: 9, label: 'Summary', shortLabel: 'Summary', path: '/quote/summary' },
+  { id: 10, label: 'Quote Review', shortLabel: 'Review', path: '/quote/schedule' },
 ];
 
 export const getVisibleQuoteSteps = (state: QuoteProgressState): QuoteProgressStep[] => (
