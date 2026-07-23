@@ -4,8 +4,10 @@ Build, validation, and content-maintenance utilities. Run with `node scripts/<na
 
 | Script | Purpose |
 |--------|---------|
-| `safe-blog-edit.mjs` | Canonical body-swap utility for `src/data/*BlogArticles.ts`. Backup, write, esbuild + leaks verify, rollback on failure. All bulk blog body edits MUST route through this. |
+| `safe-blog-edit.mjs` | Canonical body-swap utility for `src/data/*BlogArticles.ts`. Backup, write, parse + leak + structural integrity verification, rollback on failure. All bulk blog body edits MUST route through this. |
 | `check-blog-leaks.mjs` | Pre-publish leak scan. Fails if any blog `.ts` file contains editor notes, TODOs, or `[INSERT ...]` placeholders. Wired to prebuild. |
+| `check-blog-content-integrity.mjs` | Detects repeated headings, repeated long paragraphs, cross-article template-literal damage, and critical-topic/policy regressions. Wired to prebuild and `safe-blog-edit.mjs`. |
+| `generate-beep-codes-pdf.py` | Rebuilds the printable, one-page Mercury alarm reference in `public/downloads/` from the two model-family warning tables. |
 | `check-blog-asset-existence.mjs` | Pre-build asset guard. Walks every blog data file (`blogArticles.ts` + localized siblings), verifies each hero `image` and inline markdown/HTML `<img>` reference resolves to a file under `public/` (with `lovable-uploads/` and `assets/optimized/` fallback), and fails if any hero uses a path listed in `STUB_FALLBACK_HEROES`. External `http(s)://` URLs are skipped. Wired to prebuild. |
 | `check-pricing-reference-copy.mjs` | Locks the `/pricing-reference` page title, H1, and meta description to the Ontario CAD 2026 copy in both `src/pages/PricingReference.tsx` and `scripts/static-prerender.mjs`, and fails on any em-dash/en-dash. Wired to prebuild. |
 | `check-design-tokens.mjs` | Lints components for raw color classes (`text-white`, `bg-black`, etc.) instead of semantic design tokens from `index.css` / `tailwind.config.ts`. |

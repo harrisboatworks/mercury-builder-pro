@@ -138,16 +138,16 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     slug: 'first-boat-rental-rice-lake-chinese-guide',
     title: '多倫多華人第一次租船釣魚：證件、安全和當天流程',
     seoTitle: 'Rice Lake 租船 繁體 多倫多 (第一次完整流程)',
-    description: '多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：需要帶甚麼證件、租船安全檢查清單（不一定需要 PCOC）、當天到達流程、安全簡報、安省釣魚證（與船證分開）、從萬錦/士嘉堡的駕車路線（約 90 分鐘）。',
+    description: '多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：HBW 的 PCOC 要求、當天到達流程、安全簡報、安省釣魚證（與船證分開）、從萬錦或士嘉堡的駕車路線。',
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-07-19',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '8 分鐘',
     keywords: ['Rice Lake 租船', '繁體 多倫多', '第一次 租船 釣魚', '安省 釣魚證', 'Harris Boat Works'],
-    content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。租船當天通常需要：政府簽發的有相片證件、信用卡（按金用）、有效的安省釣魚證（如果要釣魚）。**租賃船隻通常不要求 PCOC**——加拿大運輸部允許租船公司用一份《Rental Boat Safety Checklist》代替 PCOC 完成短租。具體證件要求以 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 為準。
+    content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。租船當天需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚還要有效的安省釣魚證。加拿大運輸部容許租船者在租期內以已完成的《Rental Boat Safety Checklist》作為操作能力證明，但 **HBW 的租船政策要求每位操作員攜帶有效的實體 PCOC**。出發前請查看 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals)。
 
 ## 多倫多出發：路線和時間
 
@@ -173,16 +173,14 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## 當天流程（典型一日租船）
 
 1. **到店登記（約 15-20 分鐘）** ——出示證件，簽租船合約，刷信用卡按金。
-2. **安全簡報和租船檢查清單** ——HBW 同事會講解：船隻控制、油門、急救設備位置、救生衣穿戴、緊急聯絡方式、船隻允許航行的水域。這一步就是運輸部允許租船代替 PCOC 的部分，**必須完成並簽字**。
+2. **安全簡報和租船檢查清單** ——HBW 同事會講解船隻控制、油門、安全設備、救生衣、緊急聯絡方式和允許航行的水域。檢查清單必須完成並簽字，而且不能取代 HBW 對每位操作員攜帶有效實體 PCOC 的要求。
 3. **船隻交接和試機** ——同事把船開到碼頭，示範啟動、變速、停泊。
 4. **下水使用** ——按約定時長（半天 / 全天）使用。
 5. **返航和歸還** ——按約定時間回到 HBW 碼頭，結清燃油費用，退還按金。
 
 ## 關於 PCOC（船隻操作員卡）
 
-簡短答案：**短期租船通常不需要 PCOC**。
-
-加拿大運輸部對租賃船隻有專門規定：租船公司可以讓租客填寫並簽字一份《Rental Boat Safety Checklist》，由此代替 PCOC 的要求。具體執行因租船公司而異，HBW 的做法以其 [租船頁面](https://www.harrisboatworks.ca/rentals) 和現場流程為準。
+加拿大運輸部的聯邦規則允許租船者以已完成並簽署的《Rental Boat Safety Checklist》作為該租期內的操作能力證明。不過，租船公司可以採用更嚴格的要求。**HBW 要求每位可能操作船隻的人攜帶有效的實體 PCOC**，並在現場完成安全簡報和檢查清單。手機相片或影印本不等同實體 PCOC。詳情以 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 為準。
 
 ## 關於安省釣魚證
 
@@ -198,7 +196,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 ## 常見問題
 
-**Q：必須有 PCOC 嗎？** 通常不需要——加拿大運輸部允許租船公司用《Rental Boat Safety Checklist》代替。
+**Q：在 HBW 租船必須有 PCOC 嗎？** 必須。HBW 要求每位操作員攜帶有效的實體 PCOC，並完成租船安全簡報和檢查清單。
 
 **Q：HBW 提供救生衣嗎？** 是。按租船人數和體型搭配。
 
@@ -207,7 +205,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 > 完整簡體版：[/blog/zh/first-boat-rental-rice-lake-chinese-guide](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
 `,
     faqs: [
-      { question: '必須有 PCOC 嗎？', answer: '通常不需要。加拿大運輸部允許租船公司用《Rental Boat Safety Checklist》代替 PCOC。' },
+      { question: '在 HBW 租船必須有 PCOC 嗎？', answer: '必須。HBW 要求每位操作員攜帶有效的實體 PCOC，並完成租船安全簡報和檢查清單。' },
       { question: '從萬錦/士嘉堡到 Rice Lake 多久？', answer: '萬錦約 75-90 分鐘，士嘉堡約 90-110 分鐘。建議早上 8-9 點出發。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],
@@ -217,16 +215,16 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     slug: 'pcoc-pcl-fishing-licence-difference-ontario',
     title: 'PCOC、PCL、釣魚證區別：安省新手別搞混',
     seoTitle: '安省 船牌 繁體 PCOC vs PCL vs 釣魚證',
-    description: '安省新手常把三個證件搞混：PCOC（船隻操作員卡，終身有效，開動力船必須）、PCL（船隻牌照，船身的註冊號，免費，換引擎要更新）、安省釣魚證（獨立系統，由 MNRF 管理）。三者對比表 + 官方申請連結。',
+    description: '安省新手常把三個證件搞混：PCOC 是操作員卡，PCL 是船隻牌照，安省釣魚證則是獨立系統。比較有效期、申請費、租船規則和官方連結。',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-07-19',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分鐘',
     keywords: ['安省 船牌', '繁體 PCOC', 'PCL', '船隻操作員卡', '釣魚證'],
-    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是終身有效的「駕駛執照」，只要操作配動力的船就必須有。**PCL**（Pleasure Craft Licence，船隻牌照）是船身上那串字母數字註冊號，**免費**。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管。短期租船通常不需要 PCOC。
+    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是終身有效的操作能力證明。**PCL**（Pleasure Craft Licence，船隻牌照）是船身上那串字母數字號碼，目前有效期為 5 年，而且申請費以 Transport Canada 公布的現行費用為準。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。聯邦租船規則容許已完成的安全檢查清單，但 HBW 要求每位操作員攜帶有效的實體 PCOC。
 
 ## 一張表看懂三者區別
 
@@ -236,8 +234,8 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
 | 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
 | 是關於甚麼 | **人**——會不會安全開船 | **船**——船身的註冊號 | **行為**——允不允許釣魚 |
-| 費用 | 考試 + 卡片 \$40-\$60 不等 | **免費** | 視類型而定 |
-| 有效期 | **終身** | 10 年（到期續期） | Outdoors Card 3 年 |
+| 費用 | 考試及卡片費用視認可提供商而定 | 需要申請費；以 Transport Canada 現行費用為準 | 視類型而定 |
+| 有效期 | **終身** | 5 年（到期續期） | Outdoors Card 3 年 |
 | 中文支援 | 視提供商而定（建議查運輸部認可名單） | 英 / 法文 | **有官方繁體中文摘要** |
 | 換引擎要更新嗎 | 不用 | **要**（HP 變化時） | 不影響 |
 
@@ -251,7 +249,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## PCL：船隻牌照（船身註冊號）
 
 - **誰必須有：** 配 10 HP（7.5 kW）以上引擎的休閒船船主。
-- **怎麼辦：** [Transport Canada Pleasure Craft Licence 在線申請](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) ——**免費**。
+- **怎麼辦：** 在 [Transport Canada 船隻牌照及註冊頁面](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/apply-manage-vessel-registration) 在線申請。PCL 目前有效期為 **5 年**，需要申請費；金額可能變動，請以官方頁面為準。
 - **何時必須更新：** 換引擎（HP 變化時）、賣船給新主、地址變更。
 
 ## 安省釣魚證
@@ -264,7 +262,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 | 情況 | PCOC | PCL | 釣魚證 |
 |---|---|---|---|
-| Rice Lake 短期租船一天，釣魚 | 通常不用 | 不用 | **要** |
+| 在 HBW 租 Rice Lake 船一天並釣魚 | **要攜帶實體 PCOC** | 不用 | **要** |
 | 自家船（15 HP）在 Lake Simcoe 釣一天 | **要** | **要** | **要** |
 | 換了一台 90 HP Mercury 引擎 | 已有就夠 | **要更新** | 不影響 |
 
@@ -276,13 +274,13 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 **Q：PCOC 中文考試在哪裡？** 視 Transport Canada 認可提供商而定。請直接查 [認可名單](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 並聯繫提供商。
 
-**Q：換引擎後 PCL 一定要更新嗎？** 要。HP 變化時必須在 Transport Canada 在線更新，仍然免費。
+**Q：換引擎後 PCL 一定要更新嗎？** 如果牌照資料有變化，應在 Transport Canada 在線更新。適用費用以官方頁面為準。
 
 > 完整簡體版：[/blog/zh/pcoc-pcl-fishing-licence-difference-ontario](/blog/zh/pcoc-pcl-fishing-licence-difference-ontario)
 `,
     faqs: [
-      { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是您的「駕駛執照」（人證，終身有效）。PCL 是船的「車牌」（船證，免費，10 HP 以上必須）。兩個都要。' },
-      { question: '短期租船一定要 PCOC 嗎？', answer: '通常不需要。加拿大運輸部允許租船公司用《Rental Boat Safety Checklist》代替。' },
+      { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是操作員的能力證明，終身有效。PCL 是船隻牌照，目前有效期為 5 年，並按 Transport Canada 的現行規則收取申請費。' },
+      { question: '在 HBW 短期租船一定要 PCOC 嗎？', answer: '要。HBW 要求每位操作員攜帶有效的實體 PCOC，並完成租船安全簡報和檢查清單。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],
   },

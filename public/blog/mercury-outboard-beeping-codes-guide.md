@@ -12,7 +12,7 @@ description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on you
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
 date_modified: 2026-07-07
-keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
+keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury three beeps every four minutes","mercury six beeps","mercury alarm codes PDF"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
@@ -25,7 +25,7 @@ language: en-CA
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
 **Last updated:** 2026-07-07  
-**Read time:** 6 min  
+**Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
 ---
@@ -39,22 +39,22 @@ For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/se
 ::diagnostic-flow
 heading: What to do when your Mercury starts beeping
 eyebrow: Beep diagnostic flow
-subhead: Most Mercury alarms fall into one of these patterns. Work through this in order. Most marina calls we get could be solved with these 5 steps.
+subhead: Work through these checks in order, record what the motor does, and stop if cooling water is absent or the alarm stays continuous.
 step1Label: Stop and idle the motor down
 step1Question: Pull the throttle back to idle (or shut off and re-start at idle on the water). A beeping motor at WOT is a guaranteed way to make the problem worse.
 step1Tip: Continuous beep at idle means stop running it entirely. Tow in.
 step2Label: Identify the pattern
-step2Question: One long continuous beep at startup is normally just the system check. A short beep every few seconds at idle is usually low oil. A continuous beep that does NOT stop is overheat or low oil pressure, both serious.
+step2Question: A brief single beep at key-up is a normal system test on the manual families shown below. Three, four, or six-beep patterns have different meanings by engine family. A continuous alarm is serious.
 step3Label: Check the telltale stream
 step3Question: If the beep is continuous, look at the pee-stream out the side of the cowl. No stream or weak stream means cooling problem. Stop running the motor.
-step3Tip: A strong telltale with continuous beep usually points to oil pressure, not overheat.
+step3Tip: A visible telltale does not rule out every cooling problem. If a continuous alarm persists, stop and use the serial-specific manual or service process.
 step4Label: Check oil level (4-strokes)
 step4Question: Pull the dipstick on a 4-stroke. Low oil triggers a low-oil-pressure beep. Top up with the right Mercury 4-stroke oil and re-start. If the beep clears, you found it.
 step5Label: Pull codes with SmartCraft if equipped
-step5Question: VesselView or SmartCraft-linked plotters show fault codes that turn beeps into plain English. Note the exact code before calling the shop.
-step5Tip: Take a photo of the code on the screen so you can text it to us.
+step5Question: VesselView or SmartCraft-linked plotters may show a fault message. Note the exact code and include it with your online service request.
+step5Tip: Take a photo of the display and attach it with the motor serial number at hbw.wiki/service.
 escalationLabel: Still beeping after all 5? Put in a service request at hbw.wiki/service.
-escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and pulling codes need a tech. We can usually diagnose by phone in under 5 minutes.
+escalationBody: Continuous beeps that do not clear after stopping, checking water and oil, and reading the display need a technician. Send the pattern, serial number, and a photo of any display message at hbw.wiki/service.
 ::
 
 ---
@@ -77,6 +77,59 @@ The exact meaning of the four-beep pattern varies by motor year and rigging, alw
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
+## Official Mercury Alarm Tables, by Engine Family
+
+These tables are useful because they show why a beep count cannot be interpreted without the engine family. They are transcribed from two official Mercury operator-manual families, not presented as a universal code list. Confirm the motor serial number and use the warning-system table in its own manual before acting.
+
+### Classic OptiMax oil-injected two-stroke warning table
+
+Source family: [Mercury OptiMax Operation, Maintenance and Warranty Manual](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2006/optimax/10233r70.pdf).
+
+| Function | Horn pattern | What that manual family says |
+|---|---|---|
+| Start-up | One beep | Normal system test |
+| Low oil reserve | Four beeps every 2 minutes | Refill both the engine-mounted oil reservoir and remote oil tank |
+| Water in fuel | Four beeps every 2 minutes | Water has reached the full level in the filter chamber; follow the manual's removal procedure |
+| Cooling-system problem | Continuous | Guardian is active; shift to neutral, check the telltale and water intakes, and stop if flow is absent or intermittent |
+| Oil level critically low | Continuous | Guardian limits power; refill the engine-mounted reservoir and remote tank |
+| Oil-pump failure | Continuous | No lubricating oil is reaching the engine; stop the engine |
+| Engine overspeed | Continuous | The system limits RPM; incorrect propeller pitch, engine height, or trim can be causes |
+| Sensor out of range | Continuous or intermittent | Guardian may limit power; a diagnostic is required |
+
+On this family, returning the throttle to idle resets the Guardian power limit after the triggering condition is addressed. A reset does not repair the cause.
+
+### Older EFI FourStroke warning and Guardian table
+
+Source family: [Mercury 40/50/60 EFI FourStroke Operation and Maintenance Manual](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2006/4-stroke/10223r60.pdf). The exact component list and power limits below belong to that manual family. Do not transfer them to a current Verado, Pro XS, or another FourStroke without checking its serial-specific manual.
+
+| Horn pattern | Condition in this manual family | Expected behaviour and response |
+|---|---|---|
+| One beep at key-up | Normal system test | No action if it does not recur |
+| Six beeps | MAP, MAT, TPS, or ECM flash-checksum fault | The engine may continue running; service is required |
+| Three beeps every 4 minutes | Battery voltage, EST, injector, coolant sensor, or IAC fault | Hard starting, rough running, or stalling may occur; service is required |
+| Intermittent beeps | Fuel pump, main-power relay, or ECM reference-voltage fault | The engine may fail to start or may stall under load; service is required |
+| Continuous | Engine overheat | Guardian is active; stop, check the intakes and cooling-water flow |
+| Continuous | Low oil pressure | Guardian can limit power to 10% of maximum; stop and check oil level |
+| Continuous | Battery voltage below 10 V or above 16 V | Guardian can limit power to 75% |
+| Continuous | Coolant-sensor failure | Guardian can limit power to 50%, with overheat protection compromised |
+| Continuous | Engine-speed limiter | Above 6,200 RPM the system cuts spark and injection on cylinders 2 and 3; above 6,350 RPM it cuts all cylinders |
+
+Some faults in this older EFI table are sticky and require the key to be turned off before they reset. Again, the key cycle only clears the active state after the fault is addressed.
+
+[Download the printable one-page Mercury alarm reference](/downloads/mercury-alarm-beep-codes-quick-reference.pdf "cta")
+
+## Mercury Beeping 3 Times Every 4 Minutes
+
+On the older 40/50/60 EFI FourStroke manual family above, three beeps every four minutes means the ECM has detected an engine fault. The listed group includes battery voltage, EST, a fuel injector, coolant sensor, or IAC fault. The engine may be hard to start, run rough, or stall. The manual notes that neutral fast-idle can assist starting, but this is not a repair and it is not a reason to keep operating under load.
+
+Record the exact interval, photograph any display message, and submit the motor serial number through [hbw.wiki/service](https://hbw.wiki/service). On another engine family, three beeps can mean something else, so do not order parts from the beep count alone.
+
+## Six Beeps at Key-Up or While Running
+
+On that same older EFI FourStroke family, six beeps point to the MAP, MAT, TPS, or ECM flash-checksum fault group. The manual says the engine may continue to run, but it still requires service. This pattern is not a low-oil diagnosis by itself and should not be applied to another Mercury family without its manual.
+
+If the motor has SmartCraft or VesselView, include a photo of the displayed fault. If it does not, record whether the six beeps happened at key-up or underway, whether power changed, and the exact model and serial number.
+
 ![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
 
 *Quick-reference card: each row pairs a Mercury alarm pattern (single beep at key-on, continuous alarm at cruise, continuous alarm plus power reduction / Guardian mode, repeating four-beep advisory, intermittent beeping, alarm at WOT only, and brief alarm after shutdown / heat soak) with its likely meaning and the immediate action to take. Always cross-reference your specific motor's operator manual.*
@@ -98,16 +151,16 @@ Your owner's manual is the final word on what your specific motor's beep pattern
 
 ## Why the Exact Pattern Matters
 
-When you call a dealer and say "my motor is beeping," the first question will be: what exactly is it doing?
+When you submit a service request for a beeping motor, the first useful detail is: what exactly is it doing?
 
 The distinction matters because beep patterns are how Mercury's engine management system tells you which protective function has triggered. The same motor can produce different patterns for different conditions:
 
 - Beeping related to engine temperature (overheating) typically requires immediate response
-- Beeping related to oil level or fuel systems typically allows continued operation while you assess
+- Beeping related to oil level or fuel systems needs the response listed in the serial-specific manual; do not assume it is safe to continue under load
 - Beeping in Guardian mode (power reduction) requires understanding why the system protected the engine
 - Beeping that's intermittent and doesn't correlate with anything may be a sensor or wiring issue
 
-Getting the pattern right before calling a dealer or booking service helps narrow the diagnostic significantly.
+Getting the pattern right before booking service helps narrow the diagnostic significantly.
 
 ---
 
@@ -141,6 +194,8 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 **What to do:** Do not attempt to override it. The motor is telling you something is wrong and it's protecting itself. Identify the cause before running the motor hard again. This requires a diagnostic.
 
+**How much power can Guardian remove?** It depends on the engine family and fault. In the older EFI FourStroke manual table above, low oil pressure can limit power to 10% of maximum, a coolant-sensor failure to 50%, and out-of-range battery voltage to 75%. The same manual lists 6,200 and 6,350 RPM cut stages for its speed limiter. Those numbers are not universal specifications for every Mercury. Use them only for the matching manual and serial-number family.
+
 ### Intermittent or Random Beeping
 
 **Possible meanings:** Low voltage (battery or charging system), a failing sensor, loose wiring connection, or an intermittent condition the ECM is sensing.
@@ -169,7 +224,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Older vs. Newer Motors
 
-Older Mercury 2-strokes had simpler alarm systems, typically a continuous alarm for overheating or oil. Newer Mercury FourStrokes and Verado models have more sophisticated ECM systems with multi-pattern alarms and full SmartCraft integration. The alarm behaviour on a 2005 carbureted 2-stroke is genuinely different from a current EFI FourStroke. Some small EFI FourStrokes (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, and many current SmartCraft engines use a six-second horn rather than repeating beep counts; overspeed protection on newer motors can even cut power with no horn at all.
+Older oil-injected two-strokes, early EFI FourStrokes, current FourStrokes, Pro XS, and Verado systems do not all share one horn table. The alarm behaviour on an OptiMax is different from the older 40/50/60 EFI FourStroke table above, and many newer motors use a continuous six-second horn or intermittent short beeps rather than the older counted patterns. Treat the serial-specific manual and any SmartCraft message as the authority.
 
 If you're not sure what generation of alarm system your motor uses, the operator's manual will have the alarm section, or a dealer can look up the system for your specific motor and year.
 
@@ -248,11 +303,19 @@ Without SmartCraft you read the alarm by its beep pattern: count the beeps, note
 
 ### Are beep codes different on a Mercury 4-stroke?
 
-Modern Mercury FourStrokes use the same warning logic: one key-on test beep, interval beeps for conditions like low oil or water in fuel, and a continuous alarm for serious problems like overheat. Exact patterns vary by model and year, so confirm against the manual for your motor.
+Yes. Early EFI FourStroke manuals, newer FourStrokes, Pro XS, and Verado systems do not all use the same counted patterns. Confirm the exact engine family and serial number, then use that motor's operator manual and any SmartCraft message.
 
 ### What does 4 beeps every 2 minutes mean on a Mercury outboard?
 
 A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usually points to a low oil level in the oil reservoir or a water-in-fuel signal from the fuel-water separator. Check the oil reservoir and the separator first, read the SmartCraft gauge if equipped, and check your owner's manual, since patterns vary by model and year.
+
+### What do three beeps every four minutes mean on a Mercury outboard?
+
+On the older 40/50/60 EFI FourStroke manual family covered here, three beeps every four minutes indicate a fault group that includes battery voltage, EST, a fuel injector, coolant sensor, or IAC. The motor may start hard, run rough, or stall. Other engine families can use different patterns, so confirm the serial-specific manual.
+
+### What do six beeps mean on a Mercury outboard?
+
+On the older 40/50/60 EFI FourStroke manual family covered here, six beeps point to the MAP, MAT, TPS, or ECM flash-checksum fault group. The engine may continue running but still requires service. Do not apply that meaning to another Mercury family without checking its manual.
 
 ## Related guides
 

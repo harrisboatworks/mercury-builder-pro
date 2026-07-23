@@ -30,8 +30,28 @@ const canonicalUrlSource = read('src/lib/canonicalUrl.ts');
 const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
+const repowerHub = read('src/pages/RepowerHub.tsx');
 const publicSitemap = read('public/sitemap.xml');
 const parsedVercelConfig = JSON.parse(vercelConfig);
+
+const REPOWER_META_TITLE = 'Mercury Repower Cost Ontario | Live CAD Pricing & Quote';
+const REPOWER_META_DESCRIPTION = 'See what a Mercury repower costs in Ontario, compare live CAD motor pricing, and build an installed quote with rigging, trade-in, and financing options.';
+
+check(
+  repowerHub.includes(`metaTitle="${REPOWER_META_TITLE}"`) &&
+    prerenderScript.includes(`metaTitle: '${REPOWER_META_TITLE}'`),
+  'Hydrated and prerendered /repower titles must use the same cost-led live-CAD copy.',
+);
+check(
+  repowerHub.includes(`metaDescription="${REPOWER_META_DESCRIPTION}"`) &&
+    prerenderScript.includes(`metaDescription: '${REPOWER_META_DESCRIPTION}'`),
+  'Hydrated and prerendered /repower descriptions must stay in parity.',
+);
+check(
+  existsSync('public/downloads/mercury-alarm-beep-codes-quick-reference.pdf') &&
+    /\/downloads\/mercury-alarm-beep-codes-quick-reference\.pdf/.test(blogArticles),
+  'The beep-code article must link its printable one-page PDF and the file must exist.',
+);
 
 check(
   /CANONICAL_SKUS/.test(proXsSeo) && /family === 'ProXS'/.test(proXsSeo),
@@ -67,8 +87,12 @@ check(
   'vercel.json must preserve the noindex zh-Hant pilot hub and article SPA routes.',
 );
 check(
-  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario\/index\.html"/.test(vercelConfig),
-  'vercel.json must preserve the standalone French article prerender route.',
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,180}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,80}"statusCode":\s*301/.test(vercelConfig),
+  'vercel.json must permanently redirect the retired French Platinum slug to Premier.',
+);
+check(
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario\/index\.html"/.test(vercelConfig),
+  'vercel.json must preserve the standalone French Premier article prerender route.',
 );
 check(
   !/hreflang="zh-CA"/.test(prerenderScript),

@@ -32,15 +32,15 @@ language: en-CA
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
-This page is the version we use ourselves at HBW. Top 10 codes by service frequency, the patterns we see at spring first-start, what Guardian mode actually does, and the customer-side calls that turn out to be misdiagnoses every time. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. When you call HBW with an alarm code, we already know what 80% of them mean.
+This page combines common SmartCraft alarms with the information HBW needs for a useful diagnostic. We have Mercury CDS (Computer Diagnostic System) at our dock. Start with the [HBW service form](https://hbw.wiki/service) and include the motor serial number, exact beep pattern, operating conditions, and a photo of any display message.
 
-## What HBW asks first when you call
+## What HBW asks for in a service request
 
-When a customer calls with a Guardian alarm active or a code on the screen, the first thing we ask is one question:
+When a customer submits a Guardian alarm or display code, the first useful question is:
 
 **"What exactly does the screen say, and what beeps are you hearing? Is it a solid tone or a pattern? How many beeps and how often?"**
 
-That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
+That information helps route the request. The display text identifies the system involved, while the horn pattern provides family-specific context. A continuous tone is different from four beeps every two minutes, three beeps every four minutes, or six beeps.
 
 ## Mercury beep code patterns (what the horn is telling you)
 
@@ -50,10 +50,14 @@ That single question routes the call. The display text tells us the system invol
 |---|---|---|
 | **One beep at key-on** | Normal system test; the horn confirms it is working | None |
 | **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
+| **Three beeps every 4 minutes** | On an older 40/50/60 EFI FourStroke manual family: battery-voltage, EST, injector, coolant-sensor, or IAC fault | Hard starting, rough running, or stalling may occur. Record the display message and serial number; service is required |
+| **Six beeps** | On that same older EFI FourStroke family: MAP, MAT, TPS, or ECM flash-checksum fault | The engine may continue running, but service is required |
 | **Continuous tone** | Serious or critical fault such as overheat, critically low oil, or oil pump failure. Engine Guardian may limit power. Horn strategy varies by engine family and year; some newer engines use a six-second horn instead, and overspeed protection can cut power with no horn at all | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
 | **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
-Patterns vary by engine family and model year. Some small EFI FourStroke models (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, while many current SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
+Patterns vary by engine family and model year. The three-beep and six-beep meanings above come from an older 40/50/60 EFI FourStroke manual and are not universal. Many newer SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
+
+Guardian limits are family-specific too. In that older EFI FourStroke manual, low oil pressure can limit power to 10% of maximum, coolant-sensor failure to 50%, and out-of-range battery voltage to 75%. Its rev limiter stages are 6,200 and 6,350 RPM. Do not apply those percentages or thresholds to another Mercury family without its manual.
 
 ## The 10 alarms we see most at HBW (shop frequency, not Mercury's code order)
 
@@ -125,6 +129,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 ## Sources
 
 - Mercury Marine Universal Fault Code reference (publicly available subset, Codes 1-247)
+- [Mercury 2006 OptiMax operator manual warning table](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2006/optimax/10233r70.pdf)
+- [Mercury 2006 40/50/60 EFI FourStroke operator manual warning table](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2006/4-stroke/10223r60.pdf)
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - HBW shop-floor data: 2026 spring service-ticket distribution

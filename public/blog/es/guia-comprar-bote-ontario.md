@@ -141,9 +141,9 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 | Mantenimiento / servicio | $200, $600 CAD |
 | Slip de marina / amarre | $1,000, $3,000+ CAD |
 
-Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
+Harris Boat Works publica sus tarifas de servicio y almacenamiento para que el propietario pueda comparar los costos reales antes de decidir.
 
-**Consejo práctico:** Si usas el bote menos de 30 días al año, la renta puede ser más económica que la propiedad. Nuestras 9 embarcaciones de renta en Harris Boat Works generaron 346 rentals en 2025. Llama o consulta en harrisboatworks.ca para disponibilidad y tarifas.
+**Consejo práctico:** Si usas el bote pocas veces al año, la renta puede ser más económica que la propiedad. Consulta la página de alquileres de Harris Boat Works para conocer la flota, los requisitos y las tarifas vigentes.
 
 ---
 

@@ -93,11 +93,11 @@ export default function RepowerHub() {
   return (
     <HubPage
       path="/repower"
-      metaTitle="Boat Repower in Ontario | Mercury Outboard Repowering | Harris Boat Works"
-      metaDescription="Mercury repower in Ontario: real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
+      metaTitle="Mercury Repower Cost Ontario | Live CAD Pricing & Quote"
+      metaDescription="See what a Mercury repower costs in Ontario, compare live CAD motor pricing, and build an installed quote with rigging, trade-in, and financing options."
       breadcrumbName="Boat Repower Guide"
-      lastReviewedISO="2026-06-12"
-      lastReviewedLabel="June 2026"
+      lastReviewedISO="2026-07-19"
+      lastReviewedLabel="July 2026"
       h1="Boat Repower in Ontario. Mercury Outboard Repowering by Harris Boat Works."
       subhead="Real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       primaryCTA={{ label: 'Build Your Quote', to: '/quote/motor-selection' }}

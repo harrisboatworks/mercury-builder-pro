@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Avator électrique : prix et autonomie"
-description: "Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Platine Mercury."
+description: "Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Mercury Premier."
 category: "Guide d'achat"
 date_published: 2026-06-08
 date_modified: 2026-06-08
@@ -20,7 +20,7 @@ language: fr-CA
 
 # Mercury Avator électrique : prix et autonomie
 
-> Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Platine Mercury.
+> Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Mercury Premier.
 
 **Category:** Guide d'achat  
 **Published:** 2026-06-08  
@@ -79,7 +79,7 @@ Le prix de l'Avator varie beaucoup selon le modèle, le nombre de batteries et l
 
 Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
 ## FAQs
 

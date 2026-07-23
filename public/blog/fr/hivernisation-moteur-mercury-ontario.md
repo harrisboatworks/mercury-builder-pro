@@ -30,7 +30,7 @@ language: fr-CA
 
 ### Réponse rapide
 
-En Ontario, la fenêtre d'hivernisation se situe généralement entre octobre et novembre. Pour un moteur Mercury hors-bord, les étapes essentielles sont : stabiliser le carburant, lubrifier l'intérieur du moteur (fogging), vidanger et remplacer l'huile d'engrenage, retirer et entreposer la batterie, et graisser tous les raccords et points d'articulation. Si vous manquez une de ces étapes, vous risquez des dommages coûteux au printemps. Harris Boat Works réalise 584 hivernisations par année.
+En Ontario, la fenêtre d'hivernisation se situe généralement entre octobre et novembre. Pour un moteur Mercury hors-bord, les étapes essentielles sont : stabiliser le carburant, lubrifier l'intérieur du moteur (fogging), vidanger et remplacer l'huile d'engrenage, retirer et entreposer la batterie, et graisser tous les raccords et points d'articulation. Si vous manquez une de ces étapes, vous risquez des dommages coûteux au printemps.
 
 ---
 
@@ -94,7 +94,7 @@ Pour la mise à l'eau au printemps, la fenêtre habituelle se situe entre la mi-
 
 Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'expérience, les bons produits, et que vous ne sautez aucune étape. Les oublis les plus courants : la lubrification interne (fogging), la vérification des infiltrations d'eau dans le pied de moteur, et le graissage complet de tous les points d'articulation.
 
-À Harris Boat Works, nous effectuons 584 hivernisations par année. Nos techniciens connaissent les moteurs Mercury à fond et savent exactement quoi chercher, quoi remplacer, et quoi noter pour le printemps.
+À Harris Boat Works, nos techniciens formés Mercury suivent la procédure qui correspond au moteur et consignent les travaux nécessaires pour le printemps.
 
 Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
 
@@ -121,7 +121,7 @@ Oui, si vous avez l'expérience et les bons produits. Les étapes les plus souve
 L'éthanol absorbe l'humidité et se sépare du carburant lors d'un stockage prolongé. Ce mélange eau-éthanol peut colmater les injecteurs ou le carburateur et causer de la corrosion interne. Carburant sans éthanol ou stabilisant de qualité, ou idéalement les deux.
 
 **Est-ce que Harris Boat Works offre le service d'hivernisation?** 
-Oui. Nous effectuons 584 hivernisations par année à Gores Landing. Réservez à [hbw.wiki/service](https://hbw.wiki/service) le plus tôt possible, les places se remplissent en octobre.
+Oui. Le service est offert à Gores Landing. Commencez par le formulaire à [hbw.wiki/service](https://hbw.wiki/service) afin de confirmer le moteur, le travail et la date de dépôt.
 
 **Est-ce que je dois enlever ma batterie pour l'hiver?** 
 Absolument. Une batterie marine laissée dans le bateau par temps de gel se décharge et peut subir des dommages permanents. Retirez-la, entreposez-la hors gel, et idéalement mettez-la sur un chargeur de maintien.
@@ -146,6 +146,8 @@ Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 Si vous demandez un rendez-vous de service chez HBW, voici la limite importante à connaître :
 
 Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
+
+Pour l'hiver, HBW offre l'entreposage extérieur avec pellicule rétractable pour les bateaux jusqu'à 30 pieds. Nous n'offrons pas d'entreposage intérieur.
 ---
 
 ## FAQs
@@ -160,7 +162,7 @@ Idéalement en septembre ou début octobre. Les places se remplissent vite aprè
 
 ### Est-ce que Harris Boat Works offre aussi l'entreposage?
 
-Oui. Nous gérons 311 contrats d'entreposage par année , intérieur et extérieur.
+Oui. HBW offre uniquement l'entreposage extérieur avec pellicule rétractable, pour les bateaux jusqu'à 30 pieds. Nous n'offrons pas d'entreposage intérieur.
 
 ## Next steps
 

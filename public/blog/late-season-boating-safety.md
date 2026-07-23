@@ -145,7 +145,7 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 
 When you call it a season, do it right. Proper winterization protects your motor from the inside out. Fuel stabilization, gear lube change, internal lubrication (fogging), battery removed and on a tender, all grease points serviced. A motor properly winterized in October is ready to run in May. One that was not can cost you a significant repair bill before the season even starts.
 
-Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
+Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Include the motor model, serial number, and requested storage work so the shop can confirm the correct scope.
 
 ---
 

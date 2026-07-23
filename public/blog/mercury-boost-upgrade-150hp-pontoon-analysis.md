@@ -139,11 +139,11 @@ primaryHref: /pricing-reference
 
 ---
 
-Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
+Wondering if Boost makes sense for your specific pontoon? Start with the [Boost Eligibility Checker](/tools#boost-eligibility). For a serial-specific answer, submit the plate photo and boat details through the [HBW service form](https://hbw.wiki/service).
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
 
-> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether the promo applies to you. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility), then use the [HBW service form](https://hbw.wiki/service) if you need the exact serial number confirmed. The phone remains available if you prefer it.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -179,7 +179,7 @@ Boost follows Mercury's authorized process on an eligible motor. HBW confirms th
 
 ### How much does Mercury Boost cost in Canada?
 
-HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Submit a photo of the serial-number plate through hbw.wiki/service.
 
 ### What is the difference between Mercury Boost and re-propping?
 
@@ -199,7 +199,7 @@ Confirm the propeller is correctly sized and pitched before evaluating Boost. An
 
 ### Is Mercury Boost available in Ontario?
 
-Boost is available for eligible motors through Mercury's supported app flow on select configurations or through authorized dealers. Call HBW at 905-342-2153 to confirm the exact model, serial number, software status, boat configuration, and current Canadian price.
+Boost is available for eligible motors through Mercury's supported app flow on select configurations or through authorized dealers. Submit the exact model, serial number, software status, and boat configuration through hbw.wiki/service for current Canadian eligibility and pricing.
 
 ## Related guides
 

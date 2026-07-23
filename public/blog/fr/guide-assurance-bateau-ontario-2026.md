@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-07-10
+last_updated: 2026-07-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026
 description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par..."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-07-10
+date_modified: 2026-07-19
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Assurance  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-07-19  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
@@ -96,7 +96,7 @@ Facteurs de coût :
 - **Où vous naviguez**, le lac Ontario (eau libre, risque météo) coûte plus cher que les lacs intérieurs comme le lac Rice
 - **Historique de réclamations**, dossier propre obtient les meilleurs taux
 - **Expérience de l'opérateur**, la CCEP seule est le minimum
-- **Lieu d'entreposage**, les rabais pour entreposage intérieur sont réels
+- **Lieu et méthode d'entreposage**, certaines protections ou conditions varient selon l'assureur; demandez à votre courtier ce qui doit être déclaré
 
 ---
 

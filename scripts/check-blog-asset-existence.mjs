@@ -18,7 +18,7 @@ const SEARCH_DIRS = [
 ];
 
 const BLOG_FILES = readdirSync('src/data')
-  .filter((f) => f === 'blogArticles.ts' || /^(mandarin|korean|french|spanish|hindi|punjabi)BlogArticles\.ts$/.test(f))
+  .filter((f) => f === 'blogArticles.ts' || (f.endsWith('BlogArticles.ts') && f !== 'archivedBlogArticles.ts'))
   .map((f) => `src/data/${f}`);
 
 // Pull STUB_FALLBACK_HEROES from blogArticles.ts source.

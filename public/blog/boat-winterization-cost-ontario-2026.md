@@ -207,9 +207,9 @@ Spring commissioning is the inverse of winterization, and booking it in fall is 
 
 **Why book in fall:** Spring service backlog is real. If you call in April and ask for a May launch date, you may wait. If you pre-booked commissioning in October when you dropped the boat off, your slot is already locked.
 
-## We winterized 584 boats last fall
+## Why the Process Matters
 
-In August through November 2025, Harris Boat Works completed 584 winterizations across Rice Lake and the Kawarthas. That volume matters because it means the procedure is routine for our team, the appointment scheduling is dialed in, and we have seen the full range of what Ontario winters do to motors that were not properly prepped.
+Winterization is model-specific service, not a generic fog-and-cover job. The correct fuel, oil, cooling, gearcase, battery, and storage steps depend on the engine family and the boat. Submit the motor model and serial number so the work can be scoped correctly.
 
 We would rather see your service request in September than in May about a cracked block.
 

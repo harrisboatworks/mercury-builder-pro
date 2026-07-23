@@ -84,7 +84,7 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 
 - **트레일러로 집에 보관:** 가장 흔한 방식. 집 차고나 뒷마당에 두고, 출발 시 근처 boat launch로 견인.
 - **마리나 슬립:** 보트를 마리나에 상시 정박. 편하지만 연간 정박료 발생.
-- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 매년 약 584건의 겨울 정비와 311건의 보관 계약을 처리합니다.
+- **겨울 보관(Winter Storage):** 온타리오의 겨울은 길어서 보트를 물 위에 둘 수 없습니다. HBW는 Gores Landing에서 실외 수축 포장 겨울 보관과 Mercury 겨울 정비를 제공합니다.
 
 ---
 
@@ -346,7 +346,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
     image: '/lovable-uploads/ko-mercury-outboard-winterization-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-07-19',
     publishDate: '2026-04-12',
     category: '정비 가이드',
     readTime: '9 분',
@@ -436,7 +436,7 @@ HBW 현장에서 에탄올 무첨가 연료를 판매합니다.
 - 연료 안정제 용량 오류 또는 기화기 처리 누락
 - 핵심 윤활 지점 누락
 
-HBW 기술자들은 매년 584건의 겨울 정비를 수행하며 Mercury 전 모델에 정통합니다.
+HBW의 Mercury 정비 요청은 [온라인 서비스 양식](https://hbw.wiki/service)으로 시작합니다. 엔진 모델과 보트 정보를 보내 주시면 필요한 겨울 정비 범위를 확인할 수 있습니다.
 
 ## 겨울 정비 예약
 
@@ -505,7 +505,7 @@ HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지
 
 ### 전체 기사
 
-HBW에서는 매년 약 65대의 새 Mercury 엔진을 판매합니다. 그중 가장 자주 듣는 질문은 **"115와 150 중 뭘 골라야 하나요?"**입니다.
+HBW에서 자주 듣는 질문 중 하나는 **"115와 150 중 뭘 골라야 하나요?"**입니다.
 
 정답은 보트 크기, 용도, 예산에 따라 달라집니다.
 
