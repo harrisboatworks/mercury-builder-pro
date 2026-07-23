@@ -725,23 +725,23 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="max-w-2xl mx-auto">
         {/* Contact Form */}
-        <Card className="p-6 border-repower-navy-900/10 rounded-sm hover:border-repower-navy-900/20 transition-colors duration-300">
+        <Card className="rounded-sm border-repower-navy-900/10 bg-repower-paper p-6 shadow-none transition-colors duration-300 hover:border-repower-navy-900/20">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <h2 className="text-2xl font-light tracking-wide text-repower-navy-900">Where should we send the reviewed quote?</h2>
-              <p className="text-repower-navy-900/70 font-normal mt-2">
+              <h2 className="font-display text-2xl font-bold tracking-[-0.02em] text-repower-navy-900">Where should we send the reviewed quote?</h2>
+              <p className="mt-2 font-sans text-repower-navy-900/65">
                 Choose how you would like us to reply. No payment or obligation.
               </p>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="name" className="font-light">Full Name <RequiredMark /></Label>
+              <Label htmlFor="name" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Full Name <RequiredMark /></Label>
               <Input
                 id="name"
                 value={contactInfo.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.name ? 'border-destructive' : ''}`}
+                className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.name ? 'border-destructive' : ''}`}
               />
               {errors.name && (
                 <p className="text-sm text-destructive font-light">{errors.name}</p>
@@ -749,14 +749,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-light">Email Address <RequiredMark /></Label>
+              <Label htmlFor="email" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Email Address <RequiredMark /></Label>
               <Input
                 id="email"
                 type="email"
                 value={contactInfo.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email"
-                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.email ? 'border-destructive' : ''}`}
+                className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.email ? 'border-destructive' : ''}`}
               />
               {errors.email && (
                 <p className="text-sm text-destructive font-light">{errors.email}</p>
@@ -764,14 +764,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="font-light">Phone Number <RequiredMark /></Label>
+              <Label htmlFor="phone" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Phone Number <RequiredMark /></Label>
               <Input
                 id="phone"
                 type="tel"
                 value={contactInfo.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 placeholder="(705) 555-1234"
-                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.phone ? 'border-destructive' : ''}`}
+                className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
               />
               {errors.phone && (
@@ -781,9 +781,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method</Label>
+              <Label htmlFor="contactMethod" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Preferred Contact Method</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger className="border-repower-navy-900/10 rounded-sm">
+                <SelectTrigger className="min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-sm">
@@ -795,7 +795,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="notes" className="font-light">Additional Comments (Optional)</Label>
+              <Label htmlFor="notes" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Additional Comments (Optional)</Label>
               <Textarea
                 id="notes"
                 value={contactInfo.notes}
@@ -803,7 +803,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="Any additional information about your boat or installation requirements"
                 rows={3}
                 maxLength={500}
-                className="border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300"
+                className="rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold"
               />
               <p className="text-xs text-muted-foreground  font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
@@ -830,7 +830,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                   type="button"
                   onClick={handleSendByEmail}
                   disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                  className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
+                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <Mail className="w-4 h-4" />
                   {isSendingEmail ? 'Sending…' : 'Email Me a Copy'}
@@ -839,7 +839,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                   type="button"
                   onClick={handleSendByText}
                   disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                  className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
+                  className="group inline-flex w-full items-center justify-center gap-2 border border-repower-navy-900/15 bg-repower-cream px-5 py-3.5 font-sans text-[14px] font-semibold text-repower-navy-900 transition-colors hover:border-repower-gold disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <MessageSquare className="w-4 h-4" />
                   {isSendingText ? 'Sending…' : 'Text Me a Copy'}

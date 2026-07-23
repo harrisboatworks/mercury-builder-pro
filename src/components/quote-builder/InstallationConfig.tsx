@@ -178,7 +178,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, initialCon
                 className={`min-h-[168px] rounded-sm border-2 p-5 text-left transition-colors ${
                   config.propellerDecision === 'include_allowance'
                     ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04]'
-                    : 'border-repower-navy-900/15 bg-white hover:border-repower-navy-900/35'
+                    : 'border-repower-navy-900/15 bg-repower-cream hover:border-repower-gold/60'
                 }`}
               >
                 <span className="mb-3 flex items-center justify-between gap-3">
@@ -203,7 +203,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, initialCon
                 className={`min-h-[168px] rounded-sm border-2 p-5 text-left transition-colors ${
                   config.propellerDecision === 'reuse_existing'
                     ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04]'
-                    : 'border-repower-navy-900/15 bg-white hover:border-repower-navy-900/35'
+                    : 'border-repower-navy-900/15 bg-repower-cream hover:border-repower-gold/60'
                 }`}
               >
                 <span className="mb-3 flex items-center justify-between gap-3">

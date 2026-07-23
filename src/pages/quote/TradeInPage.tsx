@@ -221,7 +221,7 @@ export default function TradeInPage() {
         <QuoteLayout>
           <QuotePageShell eyebrow={`Step ${stepNumber} · Trade-In`} title="Trading in your current motor?">
             <Skeleton className="h-9 w-32" />
-            <div className="p-8 border border-repower-navy-900/10 bg-white space-y-6">
+            <div className="space-y-6 rounded-sm border border-repower-navy-900/10 bg-repower-cream p-8">
               <div className="space-y-3">
                 <Skeleton className="h-8 w-64" />
                 <Skeleton className="h-5 w-96" />

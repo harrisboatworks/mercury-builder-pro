@@ -432,9 +432,9 @@ export default function PromoSelectionPage() {
 
             {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="flex-1 h-px bg-border"></div>
-              <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose How You'll Pay</span>
-              <div className="flex-1 h-px bg-border"></div>
+              <div className="h-px flex-1 bg-repower-navy-900/10"></div>
+              <span className="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-repower-navy-900/55">Choose how you'll pay</span>
+              <div className="h-px flex-1 bg-repower-navy-900/10"></div>
             </div>
 
 
@@ -463,16 +463,16 @@ export default function PromoSelectionPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleOptionSelect(option.id)}
                     className={cn(
-                      'relative bg-white rounded-xl border-2 p-6 text-left transition-all duration-200',
+                      'relative rounded-sm border bg-repower-cream p-6 text-left transition-all duration-200',
                       isSelected
-                        ? 'border-primary shadow-xl ring-2 ring-primary/30'
-                        : 'border-transparent hover:border-primary/50 hover:shadow-xl'
+                        ? 'border-repower-mercury-red shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))] ring-2 ring-repower-mercury-red/10'
+                        : 'border-repower-navy-900/10 hover:border-repower-gold/60'
                     )}
                   >
                     {/* Selected Checkmark */}
                     {isSelected && (
                       <motion.div 
-                        className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg"
+                        className="absolute -right-3 -top-3 flex h-8 w-8 items-center justify-center rounded-full bg-repower-mercury-red shadow-sm"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 15 }}
@@ -483,27 +483,27 @@ export default function PromoSelectionPage() {
 
                     {/* Icon with Hover Effect */}
                     <motion.div 
-                      className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
+                      className="mb-4 flex h-14 w-14 items-center justify-center rounded-sm border border-repower-gold/30 bg-repower-paper"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <Icon className="w-7 h-7 text-primary" />
+                      <Icon className="h-7 w-7 text-repower-mercury-red" />
                     </motion.div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
+                    <h3 className="mb-1 font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">{option.title}</h3>
 
-                    <div className="mb-3 text-sm font-semibold text-repower-navy-900/75">
+                    <div className="mb-3 font-sans text-sm font-semibold text-repower-navy-900/75">
                       {option.subtitle}
                     </div>
 
                     {/* Highlight Badge */}
-                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-repower-cream text-repower-navy-900 border border-repower-gold/30">
+                    <span className="mb-3 inline-block rounded-sm border border-repower-gold/35 bg-repower-paper px-3 py-1 font-sans text-sm font-semibold text-repower-navy-900">
                       {option.highlight}
                     </span>
 
                     {/* Description */}
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    <p className="font-sans text-sm leading-relaxed text-repower-navy-900/60">
                       {option.description}
                     </p>
                   </motion.button>
@@ -523,8 +523,8 @@ export default function PromoSelectionPage() {
                   className="mb-8"
                   style={{ opacity: 1 }}
                 >
-                    <div className="bg-card border border-border rounded-xl p-6 max-w-2xl mx-auto">
-                    <h3 className="text-foreground font-semibold mb-4">Select Your Rate & Term</h3>
+                    <div className="mx-auto max-w-2xl rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6">
+                    <h3 className="mb-4 font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">Select your rate and term</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {financingRates.map((rate) => {
                         const isRateSelected = selectedRate?.months === rate.months;
@@ -535,10 +535,10 @@ export default function PromoSelectionPage() {
                             key={rate.months}
                             onClick={() => handleRateSelect(rate)}
                             className={cn(
-                              'p-4 rounded-lg border-2 text-center transition-all duration-200',
+                              'rounded-sm border p-4 text-center transition-all duration-200',
                               isRateSelected
-                                ? 'border-primary bg-primary/10 shadow-lg'
-                                : 'border-border bg-muted/50 hover:border-primary/50 hover:bg-accent'
+                                ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04]'
+                                : 'border-repower-navy-900/15 bg-repower-paper hover:border-repower-gold/60'
                             )}
                           >
                             <div className="text-2xl font-bold text-foreground">{rate.rate}%</div>

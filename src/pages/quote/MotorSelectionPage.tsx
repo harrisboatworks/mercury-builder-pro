@@ -76,6 +76,107 @@ const DEEP_LINK_MODEL_TARGETS: Record<string, { hp: number; family?: string }> =
 const SUMMER_SAVINGS_STRIP =
   '/lovable-uploads/mercury-summer-savings-rebate-2026-strip-1920x360.jpg';
 
+interface HpRangeRailProps {
+  activeRange: MotorHpRangeId;
+  dark?: boolean;
+  mobile?: boolean;
+  onChange: (range: MotorHpRangeId) => void;
+}
+
+function HpRangeRail({
+  activeRange,
+  dark = false,
+  mobile = false,
+  onChange,
+}: HpRangeRailProps) {
+  return (
+    <div
+      className={
+        mobile
+          ? 'border-b border-[#050E1C]/10 bg-repower-paper px-4 pb-3 pt-2 md:hidden'
+          : 'mt-3 hidden md:block'
+      }
+    >
+      <p
+        className={
+          mobile
+            ? 'sr-only'
+            : `mb-2 text-[12px] font-medium ${
+                dark ? 'text-[#F5F1EA]/60' : 'text-[#050E1C]/60'
+              }`
+        }
+      >
+        Choose an HP range
+      </p>
+      <div
+        role="radiogroup"
+        aria-label="Filter motors by horsepower range"
+        className={
+          mobile
+            ? 'keep-flex flex flex-row gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+            : 'keep-flex flex flex-row gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+        }
+      >
+        {MOTOR_HP_RANGES.map((range) => {
+          const active = activeRange === range.id;
+          return (
+            <button
+              key={range.id}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => onChange(range.id)}
+              className={`relative shrink-0 border text-left transition-colors ${
+                mobile
+                  ? `rounded-sm px-3 py-2 ${
+                      active
+                        ? 'border-[#050E1C] bg-[#050E1C] text-[#F5F1EA]'
+                        : 'border-[#050E1C]/10 bg-repower-cream text-[#050E1C] hover:border-[#C9A24A]'
+                    }`
+                  : `rounded-full px-3.5 py-2 ${
+                      active
+                        ? 'border-[#C9A24A] bg-[#C9A24A] text-[#050E1C]'
+                        : dark
+                          ? 'border-[#F5F1EA]/15 bg-[#F5F1EA]/[0.06] text-[#F5F1EA] hover:border-[#C9A24A]/70'
+                          : 'border-[#050E1C]/10 bg-repower-cream text-[#050E1C] hover:border-[#C9A24A]'
+                    }`
+              }`}
+            >
+              <span
+                className={
+                  mobile
+                    ? 'block text-[11px] font-bold tracking-[0.05em]'
+                    : 'block text-[12px] font-bold tracking-[0.03em]'
+                }
+              >
+                {range.label}
+              </span>
+              {!mobile && range.id !== 'all' && (
+                <span
+                  className={`mt-0.5 block text-[10px] ${
+                    active
+                      ? 'text-[#050E1C]/65'
+                      : dark
+                        ? 'text-[#F5F1EA]/50'
+                        : 'text-[#050E1C]/50'
+                  }`}
+                >
+                  {range.description}
+                </span>
+              )}
+              {!mobile && range.popular && (
+                <span className="absolute -top-2 right-2 rounded-full bg-[#C8102E] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
+                  Popular
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
   const [dismissed, setDismissed] = useState(() => {
@@ -1280,10 +1381,10 @@ if (event.type === 'filter_motors') {
           className={`sticky top-[64px] lg:top-[72px] z-40 transition-all duration-200 ease-out ${
             isSearchStuck
               ? 'bg-[rgba(10,22,40,0.92)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)] shadow-[0_8px_24px_-12px_rgba(5,14,28,0.65)]'
-              : 'bg-transparent'
+              : 'bg-repower-paper border-b border-[#050E1C]/10 md:bg-transparent md:border-b-0'
           }`}
         >
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-0 pb-3 md:pb-4">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-14 pt-0 pb-3 md:pb-4">
             <HybridMotorSearch
               query={searchQuery}
               onQueryChange={handleSearchChange}
@@ -1307,52 +1408,11 @@ if (event.type === 'filter_motors') {
               }
             />
 
-            <div className="mt-3">
-              <p className={`mb-2 text-[12px] font-medium ${
-                isSearchStuck ? 'text-[#F5F1EA]/60' : 'text-[#050E1C]/60'
-              }`}>
-                Choose an HP range
-              </p>
-              <div
-                role="radiogroup"
-                aria-label="Filter motors by horsepower range"
-                className="keep-flex flex flex-row gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              >
-                {MOTOR_HP_RANGES.map((range) => {
-                  const active = hpRange === range.id;
-                  return (
-                    <button
-                      key={range.id}
-                      type="button"
-                      role="radio"
-                      aria-checked={active}
-                      onClick={() => handleHpRangeChange(range.id)}
-                      className={`relative shrink-0 rounded-full border px-3.5 py-2 text-left transition-colors ${
-                        active
-                          ? 'border-[#C9A24A] bg-[#C9A24A] text-[#050E1C]'
-                          : isSearchStuck
-                            ? 'border-[#F5F1EA]/15 bg-[#F5F1EA]/[0.06] text-[#F5F1EA] hover:border-[#C9A24A]/70'
-                            : 'border-[#050E1C]/10 bg-white text-[#050E1C] hover:border-[#C9A24A]'
-                      }`}
-                    >
-                      <span className="block text-[12px] font-bold tracking-[0.03em]">{range.label}</span>
-                      {range.id !== 'all' && (
-                        <span className={`mt-0.5 block text-[10px] ${
-                          active ? 'text-[#050E1C]/65' : isSearchStuck ? 'text-[#F5F1EA]/50' : 'text-[#050E1C]/50'
-                        }`}>
-                          {range.description}
-                        </span>
-                      )}
-                      {range.popular && (
-                        <span className="absolute -top-2 right-2 rounded-full bg-[#C8102E] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
-                          Popular
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+            <HpRangeRail
+              activeRange={hpRange}
+              dark={isSearchStuck}
+              onChange={handleHpRangeChange}
+            />
 
             {(searchQuery || configFilters || hpRange !== 'all') && (
               <div className="flex items-center gap-2 flex-wrap mt-3">
@@ -1361,7 +1421,7 @@ if (event.type === 'filter_motors') {
                     finalFilteredMotors.length > 0
                       ? isSearchStuck
                         ? 'bg-repower-cream/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
-                        : 'bg-white text-[#050E1C] border border-[#050E1C]/10'
+                        : 'bg-repower-cream text-[#050E1C] border border-[#050E1C]/10'
                       : isSearchStuck
                         ? 'bg-[#C8102E]/15 text-[#F5F1EA] border border-[#C8102E]/40'
                         : 'bg-[#C8102E]/10 text-[#9A0C24] border border-[#C8102E]/30'
@@ -1392,6 +1452,12 @@ if (event.type === 'filter_motors') {
             )}
           </div>
         </div>
+
+        <HpRangeRail
+          activeRange={hpRange}
+          mobile
+          onChange={handleHpRangeChange}
+        />
         
         {/* Search Overlay for Desktop (opens from nav icon) */}
         <SearchOverlay

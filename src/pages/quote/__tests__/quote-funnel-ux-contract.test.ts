@@ -13,10 +13,14 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('Have HBW Review My Quote');
   });
 
-  it('keeps HP choices horizontal under the legacy mobile flex override', () => {
+  it('keeps the mobile HP rail compact, contained, and horizontal', () => {
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
 
-    expect(motorSelectionSource).toContain('keep-flex flex flex-row gap-2 overflow-x-auto');
+    expect(motorSelectionSource).toContain('bg-repower-paper border-b');
+    expect(motorSelectionSource).toContain('keep-flex flex flex-row gap-1.5 overflow-x-auto');
+    expect(motorSelectionSource).toContain('md:hidden');
+    expect(motorSelectionSource).toContain('!mobile && range.id');
+    expect(motorSelectionSource).toContain('!mobile && range.popular');
   });
 
   it('keeps the motor-selection preamble specific to Mercury outboards', () => {
@@ -26,6 +30,22 @@ describe('quote funnel UX contract', () => {
     expect(motorSelectionSource).toContain('Start with the horsepower on your current motor');
     expect(motorSelectionSource).not.toMatch(/Mercury boats/i);
     expect(motorSelectionSource).not.toMatch(/boats and (?:motors|outboards)/i);
+  });
+
+  it('keeps legacy white app surfaces out of the redesigned quote steps', () => {
+    const reminderSource = read('src/components/quote-builder/PromoReminderModal.tsx');
+    const boatInfoSource = read('src/components/quote-builder/BoatInformation.tsx');
+    const quoteInputSource = read('src/components/quote-builder/redesign/QuoteInput.tsx');
+    const quoteTileSource = read('src/components/quote-builder/redesign/QuoteRadioTile.tsx');
+
+    expect(reminderSource).toContain('Get a price alert.');
+    expect(reminderSource).toContain("Watch This Motor's Price");
+    expect(reminderSource).toContain('bg-repower-cream');
+    expect(reminderSource).not.toContain("Don't Miss a Deal!");
+    expect(boatInfoSource).toContain('const quoteStepCardClass');
+    expect(boatInfoSource).not.toContain('bg-protected');
+    expect(quoteInputSource).not.toContain('bg-white');
+    expect(quoteTileSource).not.toContain('bg-white');
   });
 
   it('does not celebrate before a customer has committed', () => {

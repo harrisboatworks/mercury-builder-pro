@@ -10,7 +10,7 @@ export const QuoteCheckbox = React.forwardRef<
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(
-      'peer h-[18px] w-[18px] shrink-0 rounded-[3px] border border-repower-navy-900/20 bg-white transition-colors',
+      'peer h-[18px] w-[18px] shrink-0 rounded-[3px] border border-repower-navy-900/20 bg-repower-paper transition-colors',
       'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-repower-gold/15',
       'data-[state=checked]:bg-repower-navy-900 data-[state=checked]:border-repower-navy-900',
       'disabled:cursor-not-allowed disabled:opacity-50',

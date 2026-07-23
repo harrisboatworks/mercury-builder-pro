@@ -71,7 +71,7 @@ export default function SchedulePage() {
             <div className="h-px bg-repower-navy-900/10 mt-10 max-w-[200px] mx-auto" />
           </div>
 
-          <div className="bg-white border border-repower-navy-900/10 p-6 md:p-10">
+          <div className="rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6 md:p-10">
             <ScheduleConsultation
               quoteData={quoteData}
               onBack={handleBack}

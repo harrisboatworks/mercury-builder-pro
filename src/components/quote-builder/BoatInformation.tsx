@@ -18,6 +18,16 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { isTillerMotor } from '@/lib/utils';
 import { TransomHeightCalculator } from '@/components/motors/TransomHeightCalculator';
 import { parseMotorHorsepowerInput, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
+
+const quoteStepCardClass =
+  'rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6 shadow-none md:p-8';
+const quoteStepHeadingClass =
+  'font-display text-2xl font-bold tracking-[-0.02em] text-repower-navy-900';
+const quoteFieldLabelClass =
+  'font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70';
+const quoteFieldControlClass =
+  'min-h-[48px] rounded-sm border-repower-navy-900/15 bg-repower-paper font-sans text-repower-navy-900';
+
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -464,23 +474,23 @@ export const BoatInformation = ({
       tradeIn: tradeInInfo
     });
   };
-  return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-4 md:py-6 lg:py-8 overflow-x-hidden">
+  return <div className="mx-auto w-full space-y-6 overflow-x-hidden py-2 md:space-y-8 md:py-4">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Step Content */}
         <div>
         {boatInfo.type === 'motor-only' ? <>
-            {currentStep === 0 && <Card className="p-6">
+            {currentStep === 0 && <Card className={quoteStepCardClass}>
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-light tracking-wide heading-protected">Motor Only</h3>
-                  <p className="text-sm font-light text-protected-subtle">Buying a motor without a boat? We'll confirm specs at consultation.</p>
+                  <h3 className={quoteStepHeadingClass}>Motor Only</h3>
+                  <p className="font-sans text-sm text-repower-navy-900/65">Buying a motor without a boat? We'll confirm specs at consultation.</p>
 
                   <div className="space-y-2">
-                    <Label className="flex items-center gap-2 font-light">Shaft Length (if known)</Label>
+                    <Label className={`${quoteFieldLabelClass} flex items-center gap-2`}>Shaft Length (if known)</Label>
                     <Select value={boatInfo.shaftLength} onValueChange={value => setBoatInfo(prev => ({
                   ...prev,
                   shaftLength: value
                 }))}>
-                      <SelectTrigger>
+                      <SelectTrigger className={quoteFieldControlClass}>
                         <SelectValue placeholder="Select shaft length" />
                       </SelectTrigger>
                       <SelectContent>
@@ -492,7 +502,7 @@ export const BoatInformation = ({
                     </Select>
                   </div>
 
-                  <Alert className="border-repower-navy-900/200 bg-repower-cream bg-protected">
+                  <Alert className="border-repower-gold/35 bg-repower-paper">
                     <Info className="w-4 h-4" />
                     <AlertDescription className="text-protected-subtle">
                       We'll verify exact rigging and cables during your appointment.
@@ -501,25 +511,26 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {showTradeIn && currentStep === 1 && <Card className="p-6">
+            {showTradeIn && currentStep === 1 && <Card className={quoteStepCardClass}>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide heading-protected">Trade-In Valuation (Optional)</h3>
+                  <h3 className={quoteStepHeadingClass}>Trade-In Valuation (Optional)</h3>
                   <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={'No Current Motor'} currentHp={0} />
                 </div>
               </Card>}
 
-            {currentStep === 2 && <Card className="p-6">
+            {currentStep === 2 && <Card className={quoteStepCardClass}>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide heading-protected">Ready to Continue</h3>
-                  <p className="text-sm font-light text-protected-subtle">We'll use typical settings and confirm any unknowns.</p>
+                  <h3 className={quoteStepHeadingClass}>Ready to Continue</h3>
+                  <p className="font-sans text-sm text-repower-navy-900/65">We'll use typical settings and confirm any unknowns.</p>
                 </div>
               </Card>}
           </> : <>
-            {currentStep === 0 && <Card className="p-6">
+            {currentStep === 0 && <Card className={quoteStepCardClass}>
                 <div className="space-y-6">
-                  <div className="text-center space-y-2 heading-protected">
-                    <Label className="text-2xl font-light tracking-wide">What type of boat do you have?</Label>
-                    <p className="font-light text-protected">Pick the closest match and enter your boat length.</p>
+                  <div className="space-y-2">
+                    <p className="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-repower-mercury-red">Boat profile</p>
+                    <Label className={quoteStepHeadingClass}>What type of boat do you have?</Label>
+                    <p className="font-sans text-[15px] leading-relaxed text-repower-navy-900/65">Pick the closest match and enter your boat length.</p>
                   </div>
                   
                   {boatTypes
@@ -531,9 +542,9 @@ export const BoatInformation = ({
                       type.id
                     ))
                     .length === 0 && selectedMotor && (
-                    <Alert className="mb-4 bg-protected">
+                    <Alert className="mb-4 border-repower-gold/35 bg-repower-paper">
                       <Info className="h-4 w-4" />
-                      <AlertDescription className="font-light text-protected-subtle">
+                      <AlertDescription className="font-sans text-repower-navy-900/65">
                         No standard boat types match your {selectedMotor.hp} HP motor. Consider selecting "Motor Only" 
                         if you're ordering a spare motor or contact us for custom applications.
                       </AlertDescription>
@@ -552,8 +563,8 @@ export const BoatInformation = ({
                        .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
                    ...prev,
                    type: type.id
-                 }))} className={`group relative rounded-2xl border-2 p-4 bg-protected text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-repower-mercury-red/30 bg-repower-mercury-red/5' : 'border-repower-navy-900/20'}`} aria-pressed={boatInfo.type === type.id}>
-                          <div className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-protected-white">
+                 }))} className={`group relative min-h-[44px] rounded-sm border p-4 text-left transition-all hover:-translate-y-0.5 ${boatInfo.type === type.id ? 'border-repower-mercury-red bg-repower-mercury-red/[0.04] shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))]' : 'border-repower-navy-900/15 bg-repower-paper hover:border-repower-gold/60'}`} aria-pressed={boatInfo.type === type.id}>
+                          <div className="mb-4 flex h-32 items-center justify-center overflow-hidden rounded-sm bg-repower-cream md:h-40">
                              <img 
                                src={type.image} 
                                alt={`${type.label} boat`} 
@@ -565,10 +576,10 @@ export const BoatInformation = ({
                                loading="lazy" 
                              />
                          </div>
-                        <h3 className="font-normal tracking-wide text-base md:text-lg heading-protected">{type.label}</h3>
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.01em] text-repower-navy-900">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
-                          <span className="block text-sm md:text-base font-light text-protected-subtle">{type.description}</span>
-                          {type.recommendedHP && <span className="block text-xs md:text-sm text-protected-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
+                          <span className="block font-sans text-sm text-repower-navy-900/60 md:text-[15px]">{type.description}</span>
+                          {type.recommendedHP && <span className="block font-sans text-xs font-semibold text-repower-navy-900/75 md:text-sm">Recommended: {type.recommendedHP} HP</span>}
                         </div>
                         <div className="selection-impact mt-2 text-xs text-protected-subtle">
                           {type.id === 'pontoon' && <span className="inline-flex items-center gap-1">
@@ -589,12 +600,12 @@ export const BoatInformation = ({
                       </button>)}
 
                     {/* Skip option for unsure users */}
-                    <button type="button" onClick={handleSkip} className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg">
-                      <div className="mb-3 flex h-24 items-center justify-center rounded-md border border-repower-navy-900/10 bg-repower-navy-900/[0.04] text-repower-navy-900/60 transition-colors group-hover:bg-repower-navy-900/[0.07] group-hover:text-repower-navy-900">
+                    <button type="button" onClick={handleSkip} className="group relative rounded-sm border border-repower-navy-900/15 bg-repower-paper p-5 text-left transition-all hover:-translate-y-0.5 hover:border-repower-gold/60">
+                      <div className="mb-4 flex h-24 items-center justify-center rounded-sm border border-repower-navy-900/10 bg-repower-cream text-repower-navy-900/60 transition-colors group-hover:text-repower-navy-900">
                         <HelpCircle className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" />
                       </div>
-                      <h3 className="font-light tracking-wide heading-protected">Not Sure?</h3>
-                      <p className="text-sm font-light text-protected">Skip, we'll confirm later</p>
+                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">Not sure?</h3>
+                      <p className="font-sans text-sm text-repower-navy-900/60">Skip it—we'll confirm later.</p>
                      </button>
                    </div>
 
@@ -603,7 +614,7 @@ export const BoatInformation = ({
                   <div className="why-this-matters">
                     <details className="text-sm">
                       <summary className="cursor-pointer text-protected-primary hover:opacity-80">Why do we need to know your boat type?</summary>
-                      <div className="mt-2 rounded-md bg-muted p-3">
+                      <div className="mt-2 rounded-sm border border-repower-navy-900/10 bg-repower-paper p-4 font-sans text-repower-navy-900/70">
                         <p>Different boats need different motor features:</p>
                         <ul className="mt-2 space-y-1">
                           <li>• Pontoons: Need extra thrust for heavy loads</li>
@@ -648,38 +659,38 @@ export const BoatInformation = ({
 
 
                    {/* Boat Details Section - Shows after boat type is selected */}
-                   {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section mt-6 p-6 bg-muted rounded-lg border border-border">
+                   {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section mt-6 rounded-sm border border-repower-gold/30 bg-repower-paper p-6">
                        <div className="space-y-6">
                          {/* Boat Make and Model */}
                          <div className="space-y-4">
-                          <div className="text-center space-y-2">
-                            <Label className="text-xl font-light tracking-wide heading-protected">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
-                            <p className="text-sm font-light text-protected-subtle">Boat details help us provide more accurate recommendations</p>
+                          <div className="space-y-2">
+                            <Label className="font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
+                            <p className="font-sans text-sm text-repower-navy-900/60">Boat details help us provide more accurate recommendations.</p>
                            </div>
                            
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div className="space-y-2">
-                                <Label className="font-light">Boat Make</Label>
+                                <Label className={quoteFieldLabelClass}>Boat Make</Label>
                                <Input value={boatInfo.make} onChange={e => setBoatInfo(prev => ({
                           ...prev,
                           make: e.target.value
-                        }))} placeholder="e.g., Harris, Ranger, Boston Whaler" className="min-h-[44px] py-3 text-base w-full" />
+                        }))} placeholder="e.g., Harris, Ranger, Boston Whaler" className={`${quoteFieldControlClass} w-full px-4 py-3 text-base`} />
                               </div>
                               <div className="space-y-2">
-                                <Label className="font-light">Boat Model</Label>
+                                <Label className={quoteFieldLabelClass}>Boat Model</Label>
                                <Input value={boatInfo.model} onChange={e => setBoatInfo(prev => ({
                           ...prev,
                           model: e.target.value
-                        }))} placeholder="e.g., Solstice 230, Z520L" className="min-h-[44px] py-3 text-base w-full" />
+                        }))} placeholder="e.g., Solstice 230, Z520L" className={`${quoteFieldControlClass} w-full px-4 py-3 text-base`} />
                              </div>
                            </div>
                          </div>
 
                          {/* Length Input */}
                           <div className="space-y-4">
-                            <div className="text-center space-y-2">
-                              <Label className="text-xl font-light tracking-wide heading-protected">Boat Length</Label>
-                              <p className="text-sm font-light text-protected-subtle">Use the slider to set your boat length</p>
+                            <div className="space-y-2">
+                              <Label className="font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">Boat length</Label>
+                              <p className="font-sans text-sm text-repower-navy-900/60">Use the slider to set your boat length.</p>
                            </div>
                            
                             <div className="slider-container">
@@ -698,11 +709,12 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {currentStep === 1 && <Card className="p-6">
+            {currentStep === 1 && <Card className={quoteStepCardClass}>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl font-light tracking-wide heading-protected">Transom Height Confirmation</h3>
-                    <p className="text-sm font-light text-protected-subtle">Measure from top of transom to bottom of hull.</p>
+                    <p className="mb-2 font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-repower-mercury-red">Fit check</p>
+                    <h3 className={quoteStepHeadingClass}>Confirm the transom height</h3>
+                    <p className="mt-2 font-sans text-sm text-repower-navy-900/65">Measure from the top of the transom to the bottom of the hull.</p>
                   </div>
 
                   <div className={`grid grid-cols-1 gap-3 ${hp >= 40 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
@@ -752,18 +764,18 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {currentStep === 2 && <Card className="p-6">
+            {currentStep === 2 && <Card className={quoteStepCardClass}>
                 <div className="space-y-6">
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label className="font-light">Current Motor Brand</Label>
+                      <Label className={quoteFieldLabelClass}>Current Motor Brand</Label>
                       <Select value={boatInfo.currentMotorBrand} onValueChange={value => setBoatInfo(prev => ({
                     ...prev,
                     currentMotorBrand: value,
                     currentHp: value === 'No Current Motor' ? 0 : prev.currentHp,
                     controlsOption: value !== 'Mercury' && value !== 'No Current Motor' ? 'none' : prev.controlsOption
                   }))}>
-                        <SelectTrigger>
+                        <SelectTrigger className={quoteFieldControlClass}>
                           <SelectValue placeholder="Select current motor brand" />
                         </SelectTrigger>
                         <SelectContent>
@@ -780,16 +792,16 @@ export const BoatInformation = ({
 
                     {boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor' && <>
                         <div className="space-y-2">
-                          <Label className="font-light">Current Motor Horsepower (HP)</Label>
+                          <Label className={quoteFieldLabelClass}>Current Motor Horsepower (HP)</Label>
                           <Input type="number" inputMode="decimal" min={1} max={600} step="0.1" placeholder="e.g., 9.9 or 115" value={boatInfo.currentHp || ''} onChange={e => setBoatInfo(prev => ({
                       ...prev,
                       currentHp: parseMotorHorsepowerInput(e.target.value)
-                    }))} />
+                    }))} className={quoteFieldControlClass} />
                          <p className="text-xs text-protected-subtle">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
                        </div>
 
                        <div className="space-y-2">
-                         <Label htmlFor="current-motor-year" className="font-light">Current Motor Year</Label>
+                         <Label htmlFor="current-motor-year" className={quoteFieldLabelClass}>Current Motor Year</Label>
                          <Input
                            id="current-motor-year"
                            type="number"
@@ -802,6 +814,7 @@ export const BoatInformation = ({
                              ...prev,
                              currentMotorYear: parseInt(event.target.value, 10) || undefined
                            }))}
+                           className={quoteFieldControlClass}
                          />
                          <p className="text-xs text-protected-subtle">Helps us provide more accurate trade-in estimates.</p>
                        </div>
@@ -823,12 +836,12 @@ export const BoatInformation = ({
                           <strong className="heading-protected">Tiller Motor Selected:</strong> Your {selectedMotor?.model} is a tiller motor that's steered by hand. No remote controls are needed or applicable.
                         </AlertDescription>
                       </Alert> : <div className="space-y-2">
-                        <Label className="font-light">Control Type</Label>
+                        <Label className={quoteFieldLabelClass}>Control Type</Label>
                         <Select value={boatInfo.controlType} onValueChange={value => setBoatInfo(prev => ({
                     ...prev,
                     controlType: value
                   }))}>
-                          <SelectTrigger>
+                          <SelectTrigger className={quoteFieldControlClass}>
                             <SelectValue placeholder="Select control type" />
                           </SelectTrigger>
                           <SelectContent>
@@ -841,8 +854,8 @@ export const BoatInformation = ({
                         </Select>
                       </div>}
 
-                    {!isSelectedTillerMotor && selectedMotor && <div className="controls-section rounded-lg border border-border bg-muted p-4">
-                        <h4 className="font-light tracking-wide text-repower-navy-900  mb-3">Steering Controls Required</h4>
+                    {!isSelectedTillerMotor && selectedMotor && <div className="controls-section rounded-sm border border-repower-navy-900/10 bg-repower-paper p-5">
+                        <h4 className="mb-3 font-display text-xl font-semibold tracking-[-0.01em] text-repower-navy-900">Steering controls required</h4>
                         {isNonMercuryBrand && <Alert className="mb-3 border-repower-navy-900/200 bg-repower-cream ">
                             <div className="flex items-center gap-2">
                               <Info className="w-4 h-4" />
@@ -900,7 +913,7 @@ export const BoatInformation = ({
 
                         <details className="mt-3">
                           <summary className="text-sm text-protected-primary cursor-pointer">Not sure what controls you have?</summary>
-                          <div className="help-content p-3 bg-protected rounded">
+                          <div className="help-content mt-2 rounded-sm border border-repower-navy-900/10 bg-repower-paper p-4">
                             <p className="text-sm mb-2 text-protected-subtle">Check your control box for:</p>
                             <ul className="text-sm space-y-1">
                               <li>• Mercury logo on the throttle</li>
@@ -919,8 +932,8 @@ export const BoatInformation = ({
                   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(String(selectedMotor?.hp)) : selectedMotor?.hp || 0;
                   const model = (selectedMotor?.model || '').toUpperCase();
                   const isElectricStart = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
-                  return <div className="accessories-check rounded-lg border border-border bg-protected p-4 space-y-4">
-                          <h3 className="text-xl font-light tracking-wide heading-protected">What do you already have?</h3>
+                  return <div className="accessories-check space-y-4 rounded-sm border border-repower-navy-900/10 bg-repower-paper p-5">
+                          <h3 className="font-display text-xl font-semibold tracking-[-0.01em] text-repower-navy-900">What do you already have?</h3>
                           {hp >= 40 && <div className="accessory-item">
                               <div className="text-sm text-repower-navy-900/65  mb-1">Controls</div>
                               {/* Control radio options already shown above */}
@@ -940,23 +953,23 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {showTradeIn && currentStep === 3 && <Card className="p-6">
+            {showTradeIn && currentStep === 3 && <Card className={quoteStepCardClass}>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide heading-protected">Have a motor to trade?</h3>
+                  <h3 className={quoteStepHeadingClass}>Have a motor to trade?</h3>
                    <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={boatInfo.currentMotorBrand} currentHp={boatInfo.currentHp} currentMotorYear={boatInfo.currentMotorYear} />
                 </div>
               </Card>}
 
-            {currentStep === 4 && <Card className="p-6">
+            {currentStep === 4 && <Card className={quoteStepCardClass}>
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-light tracking-wide heading-protected">Compatibility Check</h3>
+                    <h3 className={quoteStepHeadingClass}>Compatibility check</h3>
                     <div className="flex items-center gap-3">
                       <Progress value={computeCompatibilityScore()} className="h-3" />
                       <span className="text-sm text-protected-subtle">{computeCompatibilityScore()}% match</span>
                     </div>
                   </div>
-                  <div className="rounded-lg border border-border bg-muted p-4">
+                  <div className="rounded-sm border border-repower-navy-900/10 bg-repower-paper p-5">
                     <div className="flex flex-col md:flex-row gap-4 items-center">
                       <svg viewBox="0 0 400 120" className="w-full md:w-2/3">
                         <rect x="10" y="60" rx="6" ry="6" height="22" width={Math.max(80, Math.min(360, lengthFeet * 12))} className="fill-primary/50" />
@@ -984,9 +997,9 @@ export const BoatInformation = ({
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
             
-            {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-repower-navy-900/30 bg-repower-navy-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-repower-navy-900 transition-all duration-500" disabled={!canNext()}>
+            {currentStep === totalSteps - 1 ? <Button type="submit" className="min-h-12 rounded-sm bg-repower-mercury-red px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep" disabled={!canNext()}>
                 Continue to Quote
-              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="border-2 border-repower-navy-900/30 bg-repower-navy-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-repower-navy-900 transition-all duration-500">
+              </Button> : <Button type="button" onClick={handleNext} disabled={!canNext()} className="min-h-12 rounded-sm bg-repower-mercury-red px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep">
                 Next: {nextStepLabel}
               </Button>}
           </div>

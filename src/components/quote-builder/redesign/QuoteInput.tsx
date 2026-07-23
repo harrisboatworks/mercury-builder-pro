@@ -6,7 +6,7 @@ export interface QuoteInputProps extends React.InputHTMLAttributes<HTMLInputElem
 }
 
 const baseInputClass =
-  'w-full rounded bg-white border px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 placeholder:text-repower-navy-900/40 transition-colors duration-150 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15 disabled:opacity-50';
+  'w-full rounded-sm bg-repower-paper border px-4 py-[14px] font-sans text-[15px] text-repower-navy-900 placeholder:text-repower-navy-900/40 transition-colors duration-150 focus:outline-none focus:border-repower-gold focus:ring-[3px] focus:ring-repower-gold/15 disabled:opacity-50';
 
 export const QuoteInput = React.forwardRef<HTMLInputElement, QuoteInputProps>(
   ({ className, invalid, ...props }, ref) => (

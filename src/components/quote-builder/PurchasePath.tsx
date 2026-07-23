@@ -18,10 +18,10 @@ export default function PurchasePath({ selectedMotor, selectedPath, onSelectPath
     <div className="max-w-2xl mx-auto space-y-5">
       <section
         aria-label="Selected motor"
-        className="flex items-center gap-4 rounded-lg border border-repower-navy-900/10 bg-white p-4"
+        className="flex items-center gap-4 rounded-sm border border-repower-navy-900/10 bg-repower-cream p-4"
       >
         {selectedMotor?.image && (
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-md bg-white p-2">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-sm bg-repower-paper p-2">
             <img
               src={selectedMotor.image}
               alt=""
@@ -51,19 +51,19 @@ export default function PurchasePath({ selectedMotor, selectedPath, onSelectPath
           onClick={() => onSelectPath('loose')}
           aria-pressed={selectedPath === 'loose'}
           className={cn(
-            "group relative flex min-h-[210px] flex-col items-center justify-center gap-3 rounded-xl border-2 bg-white p-5 text-center transition-all duration-200 hover:border-repower-navy-900 hover:shadow-lg active:scale-[0.98] sm:gap-4 sm:p-8",
+            "group relative flex min-h-[210px] flex-col items-center justify-center gap-3 rounded-sm border bg-repower-cream p-5 text-center transition-all duration-200 hover:border-repower-gold active:scale-[0.98] sm:gap-4 sm:p-8",
             selectedPath === 'loose'
-              ? 'border-repower-mercury-red ring-2 ring-repower-mercury-red/15'
+              ? 'border-repower-mercury-red shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))] ring-2 ring-repower-mercury-red/10'
               : 'border-repower-navy-900/15'
           )}
         >
-          <Badge className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-muted text-muted-foreground text-[9px] sm:text-[10px] tracking-[0.12em] uppercase font-medium border border-border shadow-sm">
+          <Badge className="absolute -top-2.5 left-1/2 -translate-x-1/2 border border-repower-gold/35 bg-repower-paper font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/65 shadow-none sm:text-[10px]">
             Quick & Easy
           </Badge>
           <Package className="w-10 h-10 sm:w-14 sm:h-14 text-foreground/70 group-hover:text-foreground transition-colors" strokeWidth={1.5} />
           <div>
-            <span className="block text-base sm:text-xl font-semibold tracking-tight text-foreground">Loose Motor</span>
-            <span className="block text-xs sm:text-sm text-muted-foreground mt-1">Pickup the motor and handle installation yourself.</span>
+            <span className="block font-display text-base font-bold tracking-[-0.015em] text-repower-navy-900 sm:text-xl">Loose motor</span>
+            <span className="mt-1 block font-sans text-xs leading-relaxed text-repower-navy-900/60 sm:text-sm">Pick up the motor and handle installation yourself.</span>
           </div>
           {selectedPath === 'loose' && (
             <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-repower-mercury-red text-white" aria-hidden="true">
@@ -78,19 +78,19 @@ export default function PurchasePath({ selectedMotor, selectedPath, onSelectPath
           onClick={() => onSelectPath('installed')}
           aria-pressed={selectedPath === 'installed'}
           className={cn(
-            "group relative flex min-h-[210px] flex-col items-center justify-center gap-3 rounded-xl border-2 bg-white p-5 text-center transition-all duration-200 hover:border-repower-navy-900 hover:shadow-lg active:scale-[0.98] sm:gap-4 sm:p-8",
+            "group relative flex min-h-[210px] flex-col items-center justify-center gap-3 rounded-sm border bg-repower-cream p-5 text-center transition-all duration-200 hover:border-repower-gold active:scale-[0.98] sm:gap-4 sm:p-8",
             selectedPath === 'installed'
-              ? 'border-repower-mercury-red ring-2 ring-repower-mercury-red/15'
+              ? 'border-repower-mercury-red shadow-[inset_3px_0_0_0_hsl(var(--repower-mercury-red))] ring-2 ring-repower-mercury-red/10'
               : 'border-repower-navy-900/15'
           )}
         >
-          <Badge className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-muted text-muted-foreground text-[9px] sm:text-[10px] tracking-[0.12em] uppercase font-medium border border-border shadow-sm">
+          <Badge className="absolute -top-2.5 left-1/2 -translate-x-1/2 border border-repower-gold/35 bg-repower-paper font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/65 shadow-none sm:text-[10px]">
             Full Service
           </Badge>
           <Wrench className="w-10 h-10 sm:w-14 sm:h-14 text-foreground/70 group-hover:text-foreground transition-colors" strokeWidth={1.5} />
           <div>
-            <span className="block text-base sm:text-xl font-semibold tracking-tight text-foreground">Professional Install</span>
-            <span className="block text-xs sm:text-sm text-muted-foreground mt-1">HBW rigs, installs, and water-tests your boat.</span>
+            <span className="block font-display text-base font-bold tracking-[-0.015em] text-repower-navy-900 sm:text-xl">Professional install</span>
+            <span className="mt-1 block font-sans text-xs leading-relaxed text-repower-navy-900/60 sm:text-sm">HBW rigs, installs, and water-tests your boat.</span>
           </div>
           {selectedPath === 'installed' && (
             <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-repower-mercury-red text-white" aria-hidden="true">
