@@ -114,7 +114,7 @@ function HpRangeRail({
         className={
           mobile
             ? 'keep-flex flex flex-row gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
-            : 'keep-flex flex flex-row gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+            : 'grid grid-cols-6 gap-1.5 overflow-visible pt-2 lg:gap-2'
         }
       >
         {MOTOR_HP_RANGES.map((range) => {
@@ -133,12 +133,14 @@ function HpRangeRail({
                         ? 'border-[#050E1C] bg-[#050E1C] text-[#F5F1EA]'
                         : 'border-[#050E1C]/10 bg-repower-cream text-[#050E1C] hover:border-[#C9A24A]'
                     }`
-                  : `rounded-full px-3.5 py-2 ${
+                  : `min-h-[44px] w-full rounded-sm px-2.5 py-2 lg:min-h-[56px] lg:px-3 ${
                       active
-                        ? 'border-[#C9A24A] bg-[#C9A24A] text-[#050E1C]'
+                        ? dark
+                          ? 'border-[#C9A24A]/80 bg-[#F5F1EA]/10 text-[#F5F1EA] shadow-[inset_0_-3px_0_#C9A24A]'
+                          : 'border-[#050E1C] bg-[#050E1C] text-[#F5F1EA] shadow-[inset_0_-3px_0_#C9A24A]'
                         : dark
-                          ? 'border-[#F5F1EA]/15 bg-[#F5F1EA]/[0.06] text-[#F5F1EA] hover:border-[#C9A24A]/70'
-                          : 'border-[#050E1C]/10 bg-repower-cream text-[#050E1C] hover:border-[#C9A24A]'
+                          ? 'border-[#F5F1EA]/15 bg-transparent text-[#F5F1EA] hover:border-[#C9A24A]/70 hover:bg-[#F5F1EA]/[0.06]'
+                          : 'border-[#050E1C]/15 bg-transparent text-[#050E1C] hover:border-[#C9A24A] hover:bg-repower-cream'
                     }`
               }`}
             >
@@ -146,16 +148,16 @@ function HpRangeRail({
                 className={
                   mobile
                     ? 'block text-[11px] font-bold tracking-[0.05em]'
-                    : 'block text-[12px] font-bold tracking-[0.03em]'
+                    : 'block whitespace-nowrap text-[11px] font-bold tracking-[0.02em] lg:text-[12px]'
                 }
               >
                 {range.label}
               </span>
-              {!mobile && range.id !== 'all' && (
+              {!mobile && (
                 <span
-                  className={`mt-0.5 block text-[10px] ${
+                  className={`mt-0.5 hidden whitespace-nowrap text-[9px] lg:block lg:text-[10px] ${
                     active
-                      ? 'text-[#050E1C]/65'
+                      ? 'text-[#F5F1EA]/65'
                       : dark
                         ? 'text-[#F5F1EA]/50'
                         : 'text-[#050E1C]/50'
@@ -165,7 +167,7 @@ function HpRangeRail({
                 </span>
               )}
               {!mobile && range.popular && (
-                <span className="absolute -top-2 right-2 rounded-full bg-[#C8102E] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
+                <span className="absolute -top-2 right-2 rounded-sm bg-[#C8102E] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white shadow-sm">
                   Popular
                 </span>
               )}
