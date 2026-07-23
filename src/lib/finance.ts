@@ -46,6 +46,26 @@ export const getCurrentMercuryFinancingRate = (): number => {
 };
 
 /**
+ * Resolve the APR shown by the motor-detail calculator. A financing option the
+ * customer explicitly selected takes precedence; otherwise the current
+ * standing Mercury offer is used until expiry, with the normal price tier as
+ * the ceiling and post-promo fallback.
+ */
+export const getMotorCalculatorApr = (
+  amount: number,
+  selectedPromoRate: number | null = null,
+): number => {
+  const tieredRate = getDefaultFinancingRate(amount);
+  if (selectedPromoRate !== null && selectedPromoRate < tieredRate) {
+    return selectedPromoRate;
+  }
+  const standingOfferActive = Date.now() <= new Date(MERCURY_PROMO_END_ISO).getTime();
+  return standingOfferActive
+    ? Math.min(getCurrentMercuryFinancingRate(), tieredRate)
+    : tieredRate;
+};
+
+/**
  * Format a financing rate for display, e.g. "5.48% APR".
  * Defaults to getCurrentMercuryFinancingRate().
  */

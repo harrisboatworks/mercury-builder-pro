@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useCallback, useMemo, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -18,7 +18,12 @@ import {
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useQuote } from '@/contexts/QuoteContext';
-import { calculatePaymentWithFrequency, DEALERPLAN_FEE, getDefaultFinancingRate, type PaymentFrequency } from '@/lib/finance';
+import {
+  calculatePaymentWithFrequency,
+  DEALERPLAN_FEE,
+  getMotorCalculatorApr,
+  type PaymentFrequency,
+} from '@/lib/finance';
 import { DollarSign, Calculator, Sparkles } from 'lucide-react';
 
 interface FinanceCalculatorDrawerProps {
@@ -50,8 +55,12 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
       const rates = getSpecialFinancingRates();
       return rates?.[0]?.rate || null;
     }
-    return null; // Use tiered default
+    return null; // Use the current standing Mercury rate below
   }, [state.selectedPromoOption, getSpecialFinancingRates]);
+
+  const getCalculatorApr = useCallback((amount: number) => {
+    return getMotorCalculatorApr(amount, effectivePromoRate);
+  }, [effectivePromoRate]);
 
   const handleApplyForFinancing = () => {
     navigate('/financing-application', {
@@ -79,27 +88,18 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
       setTotalFinanced(Math.round(totalWithFees));
       setDown(0);
 
-      // Set correct APR based on user's promo selection or tiered default
-      const tieredRate = getDefaultFinancingRate(Math.round(totalWithFees));
-      if (effectivePromoRate && effectivePromoRate < tieredRate) {
-        setApr(effectivePromoRate);
-      } else {
-        setApr(tieredRate);
-      }
+      // An explicitly selected special offer wins; otherwise use the current
+      // standing Mercury rate until it expires, then fall back to the tier.
+      setApr(getCalculatorApr(Math.round(totalWithFees)));
     }
-  }, [open, motor.price, effectivePromoRate]);
+  }, [open, motor.price, getCalculatorApr]);
 
   // Update APR when total financed changes
   useEffect(() => {
     if (totalFinanced > 0) {
-      const tieredRate = getDefaultFinancingRate(totalFinanced);
-      if (effectivePromoRate && effectivePromoRate < tieredRate) {
-        setApr(effectivePromoRate);
-      } else {
-        setApr(tieredRate);
-      }
+      setApr(getCalculatorApr(totalFinanced));
     }
-  }, [totalFinanced, effectivePromoRate]);
+  }, [totalFinanced, getCalculatorApr]);
 
   const paymentCalculation = useMemo(() => {
     const principal = Math.max(0, totalFinanced - down);
