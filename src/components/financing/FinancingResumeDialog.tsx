@@ -58,57 +58,57 @@ export function FinancingResumeDialog({
 
   return (
     <AlertDialog open={open}>
-      <AlertDialogContent className="max-w-md text-left">
+      <AlertDialogContent className="max-w-md rounded-sm border-repower-navy-900/10 bg-repower-paper p-6 text-left text-repower-navy-900 shadow-2xl">
         <AlertDialogHeader className="text-left">
-          <AlertDialogTitle className="text-xl font-semibold">
-            Welcome Back!
+          <AlertDialogTitle className="font-display text-2xl font-semibold text-repower-navy-900">
+            Welcome back
           </AlertDialogTitle>
-          <AlertDialogDescription className="text-base font-light text-muted-foreground">
+          <AlertDialogDescription className="font-sans text-[15px] text-repower-navy-900/65">
             We found your saved financing application:
           </AlertDialogDescription>
         </AlertDialogHeader>
         
         {/* Bullet list with proper inline layout */}
-        <ul className="space-y-2 text-sm text-muted-foreground text-left">
+        <ul className="space-y-2 rounded-sm border border-repower-gold/35 bg-repower-cream p-4 text-left font-sans text-sm text-repower-navy-900/70">
           <li className="flex flex-row items-center gap-2">
-            <span className="text-foreground shrink-0">•</span>
+            <span className="shrink-0 text-repower-gold">•</span>
             <span>Step {draftData.currentStep} of 7: {stepTitles[draftData.currentStep]}</span>
           </li>
           
           {draftData.motorModel && (
             <li className="flex flex-row items-center gap-2">
-              <span className="text-foreground shrink-0">•</span>
+              <span className="shrink-0 text-repower-gold">•</span>
               <span>Motor: {draftData.motorModel}</span>
             </li>
           )}
           
           {draftData.amountToFinance && (
             <li className="flex flex-row items-center gap-2">
-              <span className="text-foreground shrink-0">•</span>
+              <span className="shrink-0 text-repower-gold">•</span>
               <span>Amount to Finance: ${draftData.amountToFinance.toLocaleString()}</span>
             </li>
           )}
           
           <li className="flex flex-row items-center gap-2">
-            <span className="text-foreground shrink-0">•</span>
+            <span className="shrink-0 text-repower-gold">•</span>
             <span>Last saved: {formatRelativeTime(draftData.lastSaved)}</span>
           </li>
         </ul>
         
-        <p className="text-sm text-muted-foreground pt-2 text-left">
+        <p className="pt-2 text-left font-sans text-sm text-repower-navy-900/65">
           Would you like to continue where you left off?
         </p>
         
         <AlertDialogFooter className="flex-col-reverse sm:flex-row gap-3 pt-2">
           <AlertDialogCancel
             onClick={onStartFresh}
-            className="font-light"
+            className="h-11 rounded-none border-repower-navy-900/20 bg-white font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-repower-navy-900"
           >
             Start Fresh
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={onContinue}
-            className="font-light"
+            className="h-11 rounded-none bg-repower-mercury-red font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-white hover:bg-repower-mercury-red-deep"
           >
             Continue Application
           </AlertDialogAction>

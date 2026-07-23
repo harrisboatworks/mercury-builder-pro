@@ -10,12 +10,15 @@ import { FormProgressIndicator } from '@/components/financing/FormProgressIndica
 import { FinancingApplicationSkeleton } from '@/components/financing/FinancingApplicationSkeleton';
 import { AccessibleFormWrapper } from '@/components/financing/AccessibleFormWrapper';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, ArrowLeft } from 'lucide-react';
-import harrisLogo from '@/assets/harris-logo.png';
+import { Mail, ArrowLeft, ShieldCheck, Clock3, Phone } from 'lucide-react';
+import harrisLogo from '@/assets/harris-logo-white.png';
+import mercuryLogo from '@/assets/mercury-logo-white.png';
 import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import { useNoIndex } from '@/hooks/useNoIndex';
 import { DEALERPLAN_FEE } from '@/lib/finance';
 import { getFinancingFunnelStep, trackClarityFunnelStep } from '@/lib/analytics';
+import { clearFinancingStorage, stripLocalSensitiveFields } from '@/lib/financingApplicationApi';
+import { Helmet } from '@/lib/helmet';
 import '@/styles/financing-mobile.css';
 
 // Lazy load step components (~180KB total)
@@ -92,7 +95,10 @@ export default function FinancingApplication() {
       if (!draftStr) return null;
 
       try {
-        const parsed = JSON.parse(draftStr);
+        const stored = JSON.parse(draftStr);
+        const parsed = stored.state
+          ? { ...stored.state, lastSaved: stored.lastActivity || stored.timestamp }
+          : stored;
 
         // Filter: Only show dialog if meaningful progress exists
         const hasMeaningfulProgress =
@@ -106,8 +112,7 @@ export default function FinancingApplication() {
         const daysSince = (Date.now() - lastSaved) / (1000 * 60 * 60 * 24);
 
         if (daysSince > 7) {
-          localStorage.removeItem('financing_draft');
-          localStorage.removeItem('financingApplication');
+          clearFinancingStorage();
           return null;
         }
 
@@ -381,7 +386,12 @@ export default function FinancingApplication() {
   const handleBackToQuote = () => {
     // Only save if user has made progress (not on step 1)
     if (financingState.currentStep > 1 || Object.keys(financingState.purchaseDetails || {}).length > 1) {
-      localStorage.setItem('financing_draft', JSON.stringify(financingState));
+      localStorage.setItem('financing_draft', JSON.stringify({
+        ...financingState,
+        applicant: stripLocalSensitiveFields(financingState.applicant as Record<string, unknown> | null),
+        coApplicant: stripLocalSensitiveFields(financingState.coApplicant as Record<string, unknown> | null),
+        lastSaved: Date.now(),
+      }));
     }
 
     // Navigate back to quote summary
@@ -414,8 +424,7 @@ export default function FinancingApplication() {
     }
 
     // Clear all saved drafts (old financing progress)
-    localStorage.removeItem('financing_draft');
-    localStorage.removeItem('financingApplication');
+    clearFinancingStorage();
     localStorage.removeItem('quote_state');
 
     // Reset context to initial state
@@ -460,75 +469,105 @@ export default function FinancingApplication() {
   const CurrentStepComponent = stepComponents[financingState.currentStep as keyof typeof stepComponents];
 
   return (
-    <div className="min-h-screen bg-white py-4 md:py-8 px-4 financing-form">
-      {/* Minimal Luxury Header */}
-      <div className="max-w-2xl mx-auto mb-8">
-        <div className="flex items-center justify-between">
-          <img
-            src={harrisLogo}
-            alt="Harris Boat Works"
-            className="h-10 md:h-12 w-auto"
-          />
-
+    <div className="min-h-screen bg-repower-paper financing-form">
+      <Helmet>
+        <title>Boat Repower Financing Application | Harris Boat Works</title>
+        <meta
+          name="description"
+          content="Secure Canadian boat repower financing application through Harris Boat Works."
+        />
+      </Helmet>
+      <header className="border-b border-white/10 bg-repower-navy-900">
+        <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 sm:gap-5">
+            <img src={harrisLogo} alt="Harris Boat Works" className="h-10 w-auto" />
+            <span className="h-8 w-px bg-white/20" aria-hidden="true" />
+            <img src={mercuryLogo} alt="Mercury Repower Center" className="h-7 w-auto" />
+          </div>
           <Button
             variant="ghost"
             onClick={handleBackToQuote}
-            className="gap-2 text-sm font-light text-muted-foreground hover:text-foreground transition-colors"
+            className="h-11 gap-2 rounded-none px-2 font-sans text-[12px] font-bold uppercase tracking-[0.12em] text-white/75 hover:bg-white/5 hover:text-white sm:px-4"
             aria-label="Return to quote summary"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            Back to Quote
+            <span className="hidden sm:inline">Back to Quote</span>
+            <span className="sm:hidden">Back</span>
           </Button>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-2xl mx-auto pb-24 md:pb-8">
-        {/* Mercury TD "Always On" financing offer banner */}
-        <TDAlwaysOnBanner />
-
-        {/* Progress Header */}
-        <FormProgressIndicator
-          currentStep={financingState.currentStep}
-          totalSteps={7}
-          stepTitles={stepTitles}
-          completedSteps={financingState.completedSteps}
-        />
-
-        {/* Step Content */}
-        <Card className="p-4 sm:p-6 md:p-8">
-          {CurrentStepComponent ? (
-            <AccessibleFormWrapper
-              stepNumber={financingState.currentStep}
-              stepTitle={stepTitles[financingState.currentStep as keyof typeof stepTitles]}
-              totalSteps={7}
-            >
-              <Suspense fallback={<FinancingApplicationSkeleton />}>
-                <CurrentStepComponent />
-              </Suspense>
-            </AccessibleFormWrapper>
-          ) : (
-            <div className="text-center py-12" role="status">
-              <p className="text-muted-foreground">Step {financingState.currentStep} coming soon</p>
-            </div>
-          )}
-        </Card>
-
-        {/* Save & Continue Later Link */}
-        <div className="mt-6 space-y-3 text-center">
-          <Button
-            variant="outline"
-            onClick={() => setShowSaveDialog(true)}
-            className="gap-2"
-            aria-label="Save application and continue later"
-          >
-            <Mail className="h-4 w-4" aria-hidden="true" />
-            Save & Continue Later
-          </Button>
-
-          {/* Security Message */}
-          <p className="text-xs text-muted-foreground font-light">
-            All information encrypted and secure
+      <main className="mx-auto max-w-[1180px] px-4 pb-24 pt-8 sm:px-6 md:pt-12 lg:px-8 lg:pb-16">
+        <div className="mb-8 max-w-3xl md:mb-10">
+          <p className="mb-3 font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-repower-mercury-red">
+            Secure Canadian financing
           </p>
+          <h1 className="font-display text-[clamp(34px,5vw,56px)] font-bold leading-[0.98] tracking-[-0.025em] text-repower-navy-900">
+            Financing application
+          </h1>
+          <p className="mt-5 max-w-2xl font-sans text-[16px] leading-relaxed text-repower-navy-900/68 md:text-[18px]">
+            Apply for boat repower financing through Harris Boat Works with Canadian marine lenders. Complete it at your pace—we will confirm the details before anything moves forward.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 font-sans text-[13px] font-medium text-repower-navy-900/70">
+            <span className="inline-flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4 text-repower-gold" aria-hidden="true" />
+              SIN encrypted separately
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-repower-gold" aria-hidden="true" />
+              About 8–10 minutes
+            </span>
+            <a href="tel:+19053422153" className="inline-flex items-center gap-2 hover:text-repower-mercury-red">
+              <Phone className="h-4 w-4 text-repower-gold" aria-hidden="true" />
+              (905) 342-2153
+            </a>
+          </div>
+        </div>
+
+        <div className="grid items-start gap-6 lg:grid-cols-[285px_minmax(0,1fr)] lg:gap-8">
+          <FormProgressIndicator
+            currentStep={financingState.currentStep}
+            totalSteps={7}
+            stepTitles={stepTitles}
+            completedSteps={financingState.completedSteps}
+          />
+
+          <div className="min-w-0">
+            <TDAlwaysOnBanner />
+
+            <Card className="financing-step-card rounded-sm border-repower-navy-900/10 bg-white p-4 shadow-[0_18px_50px_-35px_rgba(5,18,36,0.35)] sm:p-7 md:p-9">
+              {CurrentStepComponent ? (
+                <AccessibleFormWrapper
+                  stepNumber={financingState.currentStep}
+                  stepTitle={stepTitles[financingState.currentStep as keyof typeof stepTitles]}
+                  totalSteps={7}
+                >
+                  <Suspense fallback={<FinancingApplicationSkeleton />}>
+                    <CurrentStepComponent />
+                  </Suspense>
+                </AccessibleFormWrapper>
+              ) : (
+                <div className="py-12 text-center" role="status">
+                  <p className="text-repower-navy-900/60">Step {financingState.currentStep} coming soon</p>
+                </div>
+              )}
+            </Card>
+
+            <div className="mt-5 flex flex-col items-center justify-between gap-3 border-t border-repower-navy-900/10 pt-5 sm:flex-row">
+              <p className="max-w-md font-sans text-[12px] leading-relaxed text-repower-navy-900/55">
+                Need a break? We will email you a private 30-day link. Your SIN is never stored in the saved draft.
+              </p>
+              <Button
+                variant="outline"
+                onClick={() => setShowSaveDialog(true)}
+                className="h-11 shrink-0 gap-2 rounded-none border-repower-navy-900/20 bg-white px-5 font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-repower-navy-900 hover:border-repower-navy-900"
+                aria-label="Save application and continue later"
+              >
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                Save for later
+              </Button>
+            </div>
+          </div>
         </div>
 
         <SaveForLaterDialog
@@ -542,7 +581,7 @@ export default function FinancingApplication() {
           onContinue={handleContinue}
           onStartFresh={handleStartFresh}
         />
-      </div>
+      </main>
     </div>
   );
 }

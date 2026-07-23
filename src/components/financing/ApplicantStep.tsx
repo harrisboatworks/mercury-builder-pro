@@ -40,8 +40,12 @@ export function ApplicantStep() {
   const housingStatus = watch('housingStatus');
   const dateOfBirth = watch('dateOfBirth');
 
-  // Calculate age from date of birth
-  const age = dateOfBirth ? Math.floor((new Date().getTime() - new Date(dateOfBirth).getTime()) / (1000 * 60 * 60 * 24 * 365)) : null;
+  // Calculate age only from a real date. React Hook Form's valueAsDate can
+  // otherwise turn an empty native date input into Invalid Date/NaN.
+  const dateOfBirthTime = dateOfBirth instanceof Date ? dateOfBirth.getTime() : NaN;
+  const age = Number.isFinite(dateOfBirthTime)
+    ? Math.floor((Date.now() - dateOfBirthTime) / (1000 * 60 * 60 * 24 * 365.2425))
+    : null;
 
   // Show previous address if less than 3 years at current address
   const showPreviousAddress = timeAtAddress && ['<1', '1-2', '2-3'].includes(timeAtAddress);
@@ -145,15 +149,32 @@ export function ApplicantStep() {
           Date of Birth *
           <FieldValidationIndicator isValid={isFieldValid('dateOfBirth')} isTouched={!!touchedFields.dateOfBirth} />
         </Label>
-        <Input
-          id="dateOfBirth"
-          type="date"
-          autoComplete="bday"
-          {...register('dateOfBirth', { valueAsDate: true })}
-          max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
-          className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
+        <Controller
+          name="dateOfBirth"
+          control={control}
+          render={({ field }) => (
+            <Input
+              id="dateOfBirth"
+              type="date"
+              autoComplete="bday"
+              name={field.name}
+              ref={field.ref}
+              onBlur={field.onBlur}
+              value={
+                field.value instanceof Date && Number.isFinite(field.value.getTime())
+                  ? field.value.toISOString().slice(0, 10)
+                  : ''
+              }
+              onChange={(event) => {
+                const value = event.target.value;
+                field.onChange(value ? new Date(`${value}T12:00:00`) : undefined);
+              }}
+              max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
+              className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
+            />
+          )}
         />
-        {age && age >= 18 && (
+        {age !== null && age >= 18 && (
           <p className="text-sm text-green-500 font-normal">Age: {age} years old ✓</p>
         )}
         {errors.dateOfBirth && (

@@ -1289,6 +1289,7 @@ export type Database = {
           co_applicant_data: Json | null
           co_applicant_sin_encrypted: string | null
           completed_steps: number[]
+          consent_data: Json
           created_at: string
           current_step: number
           deleted_at: string | null
@@ -1316,6 +1317,7 @@ export type Database = {
           co_applicant_data?: Json | null
           co_applicant_sin_encrypted?: string | null
           completed_steps?: number[]
+          consent_data?: Json
           created_at?: string
           current_step?: number
           deleted_at?: string | null
@@ -1343,6 +1345,7 @@ export type Database = {
           co_applicant_data?: Json | null
           co_applicant_sin_encrypted?: string | null
           completed_steps?: number[]
+          consent_data?: Json
           created_at?: string
           current_step?: number
           deleted_at?: string | null

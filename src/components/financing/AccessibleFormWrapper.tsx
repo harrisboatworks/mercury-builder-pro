@@ -36,12 +36,13 @@ export function AccessibleFormWrapper({
         Step {stepNumber} of {totalSteps}: {stepTitle}
       </div>
 
-      {/* Visually hidden but focusable heading for keyboard navigation */}
+      {/* Focus target for keyboard and assistive-technology step changes. The
+          visible step components provide their own contextual headings. */}
       <h2 
         id={`step-${stepNumber}-heading`}
         ref={headingRef}
         tabIndex={-1}
-        className="text-2xl font-bold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+        className="sr-only"
       >
         {stepTitle}
       </h2>

@@ -9,7 +9,13 @@ import { Button } from '@/components/ui/button';
 import { Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
-import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions, FINANCING_MINIMUM } from '@/lib/finance';
+import {
+  calculateMonthlyPayment,
+  calculateMonthly,
+  getFinancingTermOptions,
+  getMotorCalculatorApr,
+  FINANCING_MINIMUM,
+} from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -50,6 +56,16 @@ export function PurchaseDetailsStep() {
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
   const amountToFinance = Math.max(0, motorPrice - downPayment - tradeInValue);
+
+  // Keep the derived amount inside react-hook-form as well as on screen.
+  // Without this synchronization the schema continues validating the initial
+  // zero value and leaves Continue disabled even after valid pricing is entered.
+  useEffect(() => {
+    setValue('amountToFinance', amountToFinance, {
+      shouldValidate: true,
+      shouldDirty: false,
+    });
+  }, [amountToFinance, setValue]);
 
   // Get promo details from state
   const promoOption = state.purchaseDetails?.promoOption;
@@ -163,9 +179,11 @@ export function PurchaseDetailsStep() {
     ? [termOptions[0], termOptions[1], termOptions[2]]
     : [termOptions[0], termOptions[0], termOptions[0]];
 
-  // Use promo rate if available, otherwise use tiered default
-  const defaultRate = amountToFinance >= 10000 ? 7.99 : 8.99;
-  const activeRate = (hasSpecialFinancing && isEligibleForSpecialFinancing) ? promoRate : defaultRate;
+  // An explicitly selected eligible promotion takes precedence. Otherwise use
+  // the same current standing Canadian financing rate as the motor calculator.
+  const selectedPromoRate =
+    hasSpecialFinancing && isEligibleForSpecialFinancing ? Number(promoRate) : null;
+  const activeRate = getMotorCalculatorApr(amountToFinance, selectedPromoRate);
 
   // Calculate payments for each dynamic term
   const paymentShort = calculateMonthly(amountToFinance, activeRate, shortTerm);
@@ -320,6 +338,7 @@ export function PurchaseDetailsStep() {
             size="icon"
             onClick={() => setIsEditingMotor(!isEditingMotor)}
             className="min-h-[44px] min-w-[44px]"
+            aria-label={isEditingMotor ? 'Lock motor model' : 'Edit motor model'}
           >
             <Pencil className="w-4 h-4" />
           </Button>

@@ -277,6 +277,35 @@ export function FinancingApplicationPDF({ application, refNumber }: FinancingApp
           </View>
         )}
 
+        {/* Electronic authorization */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Electronic Authorization</Text>
+          <View style={styles.row}>
+            <Text style={styles.label}>Credit Check Authorized:</Text>
+            <Text style={styles.value}>{application.consent_data?.creditCheckConsent ? 'Yes' : 'No'}</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.label}>Information Confirmed:</Text>
+            <Text style={styles.value}>{application.consent_data?.accuracyConfirmation ? 'Yes' : 'No'}</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.label}>Terms Accepted:</Text>
+            <Text style={styles.value}>{application.consent_data?.termsAgreement ? 'Yes' : 'No'}</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.label}>Typed Signature:</Text>
+            <Text style={styles.value}>{application.consent_data?.signature || 'N/A'}</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.label}>Signature Date:</Text>
+            <Text style={styles.value}>
+              {application.consent_data?.signatureDate
+                ? formatDate(application.consent_data.signatureDate)
+                : 'N/A'}
+            </Text>
+          </View>
+        </View>
+
         {/* Admin Notes */}
         {notesHistory.length > 0 && (
           <View style={styles.section}>
