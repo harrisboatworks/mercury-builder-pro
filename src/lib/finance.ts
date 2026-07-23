@@ -128,8 +128,10 @@ export const getFinancingTermOptions = (price: number): number[] => {
     return [60, 72, 84];  // 5, 6, 7 years
   } else if (price < 50000) {
     return [72, 84, 120]; // 6, 7, 10 years
-  } else {
+  } else if (price < 100000) {
     return [84, 120, 180]; // 7, 10, 15 years
+  } else {
+    return [120, 180, 240]; // 10, 15, 20 years
   }
 };
 

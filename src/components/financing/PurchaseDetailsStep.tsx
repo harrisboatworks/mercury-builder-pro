@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
-import { Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
+import { Check, Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
 import {
@@ -22,7 +22,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
-  const [isEditingMotor, setIsEditingMotor] = useState(false);
+  const [isEditingMotor, setIsEditingMotor] = useState(!state.purchaseDetails?.motorModel);
   const [selectedTerm, setSelectedTerm] = useState<string>('48');
 
   const {
@@ -36,7 +36,9 @@ export function PurchaseDetailsStep() {
     mode: 'onChange',
     defaultValues: {
       motorModel: state.purchaseDetails?.motorModel || '',
-      motorPrice: state.purchaseDetails?.motorPrice ? Number(state.purchaseDetails.motorPrice.toFixed(2)) : 0,
+      motorPrice: state.purchaseDetails?.motorPrice
+        ? Number(state.purchaseDetails.motorPrice.toFixed(2))
+        : undefined,
       downPayment: state.purchaseDetails?.downPayment || 0,
       tradeInValue: state.purchaseDetails?.tradeInValue || 0,
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
@@ -51,7 +53,8 @@ export function PurchaseDetailsStep() {
     },
   });
 
-  const motorPrice = watch('motorPrice');
+  const watchedMotorPrice = watch('motorPrice');
+  const motorPrice = Number.isFinite(watchedMotorPrice) ? watchedMotorPrice : 0;
   const downPayment = watch('downPayment');
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
@@ -202,6 +205,12 @@ export function PurchaseDetailsStep() {
         <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
 
+      {motorPrice <= 0 && (
+        <div className="rounded-sm border border-repower-gold/35 bg-repower-cream p-4 text-sm leading-relaxed text-repower-navy-900/70">
+          Start from your quote, or enter the motor and all-in purchase total below. Nothing is submitted until your final review.
+        </div>
+      )}
+
       {/* Expired Promo Notice, shown when a stale promotion was removed from a saved/restored quote */}
       {expiredPromoNotice && !noticeDismissed && (
         <div
@@ -338,9 +347,9 @@ export function PurchaseDetailsStep() {
             size="icon"
             onClick={() => setIsEditingMotor(!isEditingMotor)}
             className="min-h-[44px] min-w-[44px]"
-            aria-label={isEditingMotor ? 'Lock motor model' : 'Edit motor model'}
+            aria-label={isEditingMotor ? 'Finish editing motor model' : 'Edit motor model'}
           >
-            <Pencil className="w-4 h-4" />
+            {isEditingMotor ? <Check className="w-4 h-4" /> : <Pencil className="w-4 h-4" />}
           </Button>
         </div>
         <FormErrorMessage error={errors.motorModel?.message} field="Motor model" />
@@ -348,7 +357,7 @@ export function PurchaseDetailsStep() {
 
       {/* Motor Price */}
       <div className="space-y-2">
-        <Label htmlFor="motorPrice">Total Purchase Price</Label>
+        <Label htmlFor="motorPrice">All-in Purchase Total</Label>
         <div className="relative">
           <Input
             id="motorPrice"
@@ -374,14 +383,16 @@ export function PurchaseDetailsStep() {
             className="absolute right-3 top-1/2 -translate-y-1/2"
           />
         </div>
-        <FormErrorMessage error={errors.motorPrice?.message} field="Total purchase price" />
+        <FormErrorMessage error={errors.motorPrice?.message} field="All-in purchase total" />
         <p className="text-sm text-muted-foreground font-light">
-          {money(motorPrice)} (includes HST and $349 processing fee)
+          {motorPrice > 0
+            ? `${money(motorPrice)} total — 13% HST and the $349 DealerPlan fee are already included.`
+            : 'Use the total from your quote, including 13% HST and the $349 DealerPlan fee. This form does not add them again.'}
         </p>
       </div>
 
       {/* Down Payment Slider */}
-      <div className="space-y-4">
+      {motorPrice > 0 && <div className="space-y-4">
         <Label>Down Payment</Label>
 
         <div className="space-y-2">
@@ -418,7 +429,7 @@ export function PurchaseDetailsStep() {
           />
         </div>
         <FormErrorMessage error={errors.downPayment?.message} field="Down payment" />
-      </div>
+      </div>}
 
       {/* Trade-In Value */}
       {tradeInValue > 0 && (
@@ -447,7 +458,7 @@ export function PurchaseDetailsStep() {
         </div>
       )}
 
-      <div className="rounded-lg border border-border bg-muted/50 p-4 space-y-2">
+      {motorPrice > 0 && <div className="rounded-lg border border-border bg-muted/50 p-4 space-y-2">
         <div className="flex justify-between items-center">
           <span className="text-sm font-medium text-muted-foreground">Amount to Finance</span>
           <span className="text-2xl font-bold text-foreground">
@@ -462,7 +473,7 @@ export function PurchaseDetailsStep() {
             ✓ Qualifies for {promoRate}% APR special financing
           </p>
         )}
-      </div>
+      </div>}
 
       {/* Preferred Amortization Selection */}
       {amountToFinance > 0 && (
@@ -552,7 +563,7 @@ export function PurchaseDetailsStep() {
           <p className="text-xs text-muted-foreground font-light text-center">
             {hasSpecialFinancing && isEligibleForSpecialFinancing
               ? `Promotional ${promoRate}% APR applied. Your lender will confirm final terms.`
-              : 'Payment estimates use the selected amortization. TD contract terms are up to 60 months, and any remaining balance is due at maturity.'}
+              : 'Payment estimates use the selected amortization. Options shown are based on the amount; longer amortization up to 240 months may be available on qualifying higher-value applications. TD contract terms are up to 60 months, and any remaining balance is due at maturity.'}
           </p>
         </div>
       )}

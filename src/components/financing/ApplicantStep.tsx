@@ -205,7 +205,9 @@ export function ApplicantStep() {
             <MaskedInput
               id="sin"
               maskType="sin"
+              sensitive
               inputMode="numeric"
+              autoComplete="off"
               value={field.value}
               onChange={field.onChange}
               onBlur={field.onBlur}
@@ -217,6 +219,9 @@ export function ApplicantStep() {
         {errors.sin && (
           <p className="text-sm text-destructive font-normal">{errors.sin.message}</p>
         )}
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          Encrypted before storage. Your SIN is excluded from saved drafts and is never emailed.
+        </p>
       </div>
 
       {/* Contact Information */}
