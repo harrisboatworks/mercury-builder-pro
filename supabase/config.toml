@@ -63,6 +63,9 @@ verify_jwt = false
 [functions.send-financing-confirmation-email]
 verify_jwt = false
 
+[functions.financing-application-api]
+verify_jwt = false
+
 [functions.subscribe-promo-reminder]
 verify_jwt = false
 

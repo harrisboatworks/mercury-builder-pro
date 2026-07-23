@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, Download, ArrowRight, Phone, Mail } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Phone, Mail } from 'lucide-react';
 import { useFinancing } from '@/contexts/FinancingContext';
 import confetti from 'canvas-confetti';
+import { clearFinancingStorage } from '@/lib/financingApplicationApi';
+import harrisLogo from '@/assets/harris-logo-white.png';
+import mercuryLogo from '@/assets/mercury-logo-white.png';
 
 import { useNoIndex } from '@/hooks/useNoIndex';
 export default function FinancingSuccess() {
@@ -19,7 +22,7 @@ export default function FinancingSuccess() {
 
   useEffect(() => {
     // Clear localStorage after successful submission
-    localStorage.removeItem('financingApplication');
+    clearFinancingStorage();
     
     // Trigger confetti animation
     if (!showConfetti) {
@@ -47,134 +50,92 @@ export default function FinancingSuccess() {
   }, [showConfetti]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background flex items-center justify-center px-4 py-12">
-      <Card className="p-8 max-w-2xl w-full shadow-xl">
-        <div className="text-center">
-          {/* Success Icon */}
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping"></div>
-              <CheckCircle2 className="w-20 h-20 text-green-500 relative" />
+    <div className="min-h-screen bg-repower-paper">
+      <header className="border-b border-white/10 bg-repower-navy-900">
+        <div className="mx-auto flex h-[72px] max-w-[1000px] items-center gap-5 px-4 sm:px-6">
+          <img src={harrisLogo} alt="Harris Boat Works" className="h-10 w-auto" />
+          <span className="h-8 w-px bg-white/20" aria-hidden="true" />
+          <img src={mercuryLogo} alt="Mercury Repower Center" className="h-7 w-auto" />
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-[860px] px-4 py-10 sm:px-6 md:py-16">
+        <Card className="rounded-sm border-repower-navy-900/10 bg-white p-6 shadow-[0_22px_60px_-40px_rgba(5,18,36,0.45)] sm:p-10 md:p-12">
+          <div className="text-center">
+            <div className="mb-6 flex justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-repower-gold/20">
+                <CheckCircle2 className="h-9 w-9 text-repower-navy-900" />
+              </div>
             </div>
-          </div>
-          
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            Application Submitted!
-          </h1>
-          
-          <p className="text-muted-foreground mb-6 text-lg">
-            Thank you for submitting your financing application.
-          </p>
-          
-          {/* Reference Number */}
-          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-xl p-6 mb-8 border border-primary/20">
-            <p className="text-sm text-muted-foreground mb-2">Your Reference Number</p>
-            <code className="text-3xl font-mono font-bold text-primary tracking-wider">
-              #{referenceNumber}
-            </code>
-            <p className="text-xs text-muted-foreground mt-2">
-              Save this number for your records
+            <p className="mb-3 font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-repower-mercury-red">Securely received</p>
+            <h1 className="font-display text-[clamp(34px,6vw,52px)] font-bold leading-none tracking-[-0.025em] text-repower-navy-900">
+              Application submitted
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl font-sans text-[16px] leading-relaxed text-repower-navy-900/65">
+              Thank you. The Harris Boat Works financing team will review your information and contact you if anything else is needed.
             </p>
-          </div>
 
-          {/* Timeline */}
-          <div className="space-y-6 text-left mb-8">
-            <div>
-              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <ArrowRight className="h-6 w-6 text-primary" />
-                What Happens Next?
-              </h2>
-              <div className="space-y-4">
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Review Period</p>
-                    <p className="text-sm text-muted-foreground">Our financing team will review your application within 24-48 hours</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Additional Information</p>
-                    <p className="text-sm text-muted-foreground">We may contact you if we need additional information</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Decision Notification</p>
-                    <p className="text-sm text-muted-foreground">You'll receive an email and phone call with the financing decision</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    4
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Finalize Your Purchase</p>
-                    <p className="text-sm text-muted-foreground">Once approved, we'll guide you through the final steps to complete your motor purchase</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Information */}
-            <div className="border-t border-border pt-6">
-              <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                <Phone className="h-5 w-5 text-primary" />
-                Questions?
-              </h3>
-              <p className="text-muted-foreground text-sm mb-2">
-                Our financing team is here to help:
-              </p>
-              <div className="flex flex-col gap-2">
-                <a 
-                  href="tel:1-800-555-0123" 
-                  className="text-primary hover:underline flex items-center gap-2 font-medium"
-                >
-                  <Phone className="h-4 w-4" />
-                  1-800-555-0123
-                </a>
-                <a 
-                  href="mailto:financing@harrisboatworks.com" 
-                  className="text-primary hover:underline flex items-center gap-2 font-medium"
-                >
-                  <Mail className="h-4 w-4" />
-                  financing@harrisboatworks.com
-                </a>
-              </div>
+            <div className="mx-auto my-8 max-w-md rounded-sm border border-repower-gold/40 bg-repower-cream p-5">
+              <p className="font-sans text-[10px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/50">Reference number</p>
+              <code className="mt-2 block font-mono text-2xl font-bold tracking-[0.08em] text-repower-navy-900 sm:text-3xl">
+                #{referenceNumber}
+              </code>
+              <p className="mt-2 font-sans text-xs text-repower-navy-900/50">Keep this number for your records.</p>
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="border-t border-repower-navy-900/10 pt-8">
+            <h2 className="mb-5 flex items-center gap-2 font-display text-2xl font-semibold text-repower-navy-900">
+              <ArrowRight className="h-5 w-5 text-repower-mercury-red" />
+              What happens next
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                ['1', 'Personal review', 'Our team checks the application and confirms the lender fit.'],
+                ['2', 'Quick follow-up', 'We will call or email if a detail or document is needed.'],
+                ['3', 'Clear next steps', 'We explain the decision and help you finish the purchase.'],
+              ].map(([number, title, description]) => (
+                <div key={number} className="border border-repower-navy-900/10 bg-repower-paper p-4">
+                  <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-repower-navy-900 font-sans text-[11px] font-bold text-white">{number}</div>
+                  <p className="font-display font-semibold text-repower-navy-900">{title}</p>
+                  <p className="mt-1 font-sans text-[13px] leading-relaxed text-repower-navy-900/60">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-repower-navy-900/10 pt-7">
+            <h3 className="font-display text-lg font-semibold text-repower-navy-900">Questions?</h3>
+            <p className="mt-1 font-sans text-sm text-repower-navy-900/60">Talk directly with Harris Boat Works.</p>
+            <div className="mt-4 flex flex-col gap-3 font-sans text-sm font-semibold sm:flex-row sm:gap-6">
+              <a href="tel:+19053422153" className="inline-flex items-center gap-2 text-repower-navy-900 hover:text-repower-mercury-red">
+                <Phone className="h-4 w-4 text-repower-gold" />
+                (905) 342-2153
+              </a>
+              <a href="mailto:info@harrisboatworks.ca" className="inline-flex items-center gap-2 text-repower-navy-900 hover:text-repower-mercury-red">
+                <Mail className="h-4 w-4 text-repower-gold" />
+                info@harrisboatworks.ca
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 border-t border-repower-navy-900/10 pt-7 sm:flex-row">
             <Button
               onClick={() => navigate('/')}
-              size="lg"
-              className="gap-2"
+              className="h-12 flex-1 rounded-none bg-repower-navy-900 font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-white"
             >
-              Return Home
+              Return home
             </Button>
             <Button
-              onClick={() => navigate('/quote/new')}
+              onClick={() => navigate('/quote')}
               variant="outline"
-              size="lg"
-              className="gap-2"
+              className="h-12 flex-1 rounded-none border-repower-navy-900/20 bg-white font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-repower-navy-900"
             >
-              Get Another Quote
+              Build another quote
             </Button>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </main>
     </div>
   );
 }

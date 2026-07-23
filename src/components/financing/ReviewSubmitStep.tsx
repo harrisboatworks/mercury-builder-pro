@@ -21,9 +21,10 @@ import { formatPhoneNumber } from '@/lib/validation';
 import { SuccessConfetti } from './SuccessConfetti';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { trackClaritySubmission } from '@/lib/analytics';
+import { submitFinancingApplication } from '@/lib/financingApplicationApi';
 
 export function ReviewSubmitStep() {
-  const { state, dispatch } = useFinancing();
+  const { state, dispatch, clearStoredData } = useFinancing();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -152,72 +153,41 @@ export function ReviewSubmitStep() {
         }
       }
 
-      // Save to database.
-      // We generate the row id client-side so that anonymous (not signed in)
-      // submitters do not need a SELECT policy to read the row back after insert.
-      // For signed in users with an existing draft, we keep their applicationId.
-      const applicationRowId = state.applicationId || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : undefined);
-      const upsertPayload = {
-        id: applicationRowId,
-        user_id: user?.id ?? null,
-        quote_id: state.quoteId,
-        purchase_data: validated.purchaseDetails,
-        applicant_data: validated.applicant,
-        employment_data: validated.employment,
-        financial_data: validated.financial,
-        co_applicant_data: validated.coApplicant,
-        references_data: validated.references,
-        status: 'pending' as const,
-        current_step: 7,
-        completed_steps: [1, 2, 3, 4, 5, 6, 7],
-        applicant_sin_encrypted: applicantSinEncrypted,
-        co_applicant_sin_encrypted: coApplicantSinEncrypted,
-      };
-
-      // Anon submitters use plain insert (no UPDATE/SELECT policy on this
-      // table for the anon role). Signed in users use upsert so they can
-      // resume an existing draft, and we read the row back via .select().
-      let applicationId: string | undefined = applicationRowId;
-      let error: any = null;
-      if (user?.id) {
-        const res = await supabase
-          .from('financing_applications')
-          .upsert(upsertPayload)
-          .select()
-          .single();
-        error = res.error;
-        applicationId = res.data?.id ?? applicationRowId;
-      } else {
-        const res = await supabase
-          .from('financing_applications')
-          .insert(upsertPayload);
-        error = res.error;
-      }
-      const application = applicationId ? { id: applicationId } : null;
-
-      // CRITICAL: Check DB error before continuing
-      if (error || !application) {
-        console.error('Financing application DB write failed:', error);
+      let application: { id: string } | null = null;
+      try {
+        const result = await submitFinancingApplication({
+          applicationId: state.applicationId,
+          resumeToken: state.resumeToken,
+          applicantSinEncrypted,
+          coApplicantSinEncrypted,
+          application: {
+            purchaseDetails: validated.purchaseDetails,
+            applicant: validated.applicant,
+            employment: validated.employment,
+            financial: validated.financial,
+            coApplicant: validated.coApplicant,
+            hasCoApplicant: state.hasCoApplicant,
+            references: validated.references,
+            consent: validated.consent,
+            quoteId: state.quoteId,
+          },
+        });
+        application = { id: result.applicationId };
+      } catch (error) {
+        console.error('Financing application secure write failed:', error);
+        const secureWriteError = error as { code?: string; message?: string };
         await logFinancingSubmission({
           stage: 'db_upsert',
           outcome: 'failure',
           correlationId,
           applicationId: state.applicationId,
           userId,
-          errorCode: (error as any)?.code || 'unknown',
-          errorMessage: error?.message || 'No application returned',
-          metadata: { details: (error as any)?.details, hint: (error as any)?.hint },
+          errorCode: secureWriteError.code || 'unknown',
+          errorMessage: secureWriteError.message || 'No application returned',
         });
-        const isPermission =
-          (error as any)?.code === '42501' ||
-          (error?.message || '').toLowerCase().includes('permission denied') ||
-          (error?.message || '').toLowerCase().includes('row-level security');
         toast({
-          title: isPermission ? 'Permission error saving application' : 'Could not save application',
-          description: (isPermission
-            ? 'Your account does not have permission to submit this application. Please sign in and try again, or call us at (905) 342-2153.'
-            : 'We could not save your application. Please try again, or call us at (905) 342-2153.')
-            + ` Reference: ${correlationId}.`,
+          title: 'Could not save application',
+          description: `We could not securely save your application. Please try again, or call us at (905) 342-2153. Reference: ${correlationId}.`,
           variant: 'destructive',
         });
         setIsSubmitting(false);
@@ -258,8 +228,8 @@ export function ReviewSubmitStep() {
         // Don't show error to user - submission was successful
       }
 
-      // Clear localStorage
-      localStorage.removeItem('financing_application');
+      // Clear all current and legacy local draft keys.
+      clearStoredData();
 
       // Trigger success confetti
       setShowConfetti(true);
@@ -287,7 +257,7 @@ export function ReviewSubmitStep() {
 
     } catch (error) {
       console.error('Submission error:', error);
-      const err = error as any;
+      const err = error as { code?: string; message?: string };
       await logFinancingSubmission({
         stage: 'submission',
         outcome: 'failure',
