@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
-last_updated: 2026-06-22
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Weight Chart (2.5 to 300 HP)"
 description: "How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat."
 category: "Buying Guide"
 date_published: 2026-06-07
-date_modified: 2026-06-22
+date_modified: 2026-07-23
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-06-07  
-**Last updated:** 2026-06-22  
+**Last updated:** 2026-07-23
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
@@ -157,4 +157,3 @@ The 300 HP Mercury FourStroke V8 is 527 lb (239 kg) dry, and the 300 HP Pro XS V
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -4380,10 +4380,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     seoTitle: 'Mercury Pro XS vs Verado vs FourStroke Compared',
     title: 'Mercury Pro XS vs Verado vs FourStroke Compared',
     description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.",
-    image: '/lovable-uploads/hero-mercury-motor-families.png',
+    image: '/lovable-uploads/hero-proxs-outside-hbw-shop.webp',
+    imageAlt: 'New Mercury Pro XS outboard on its shipping pallet outside the Harris Boat Works shop in Gores Landing.',
     author: 'Jay Harris',
     datePublished: '2026-05-26',
-    dateModified: '2026-07-06',
+    dateModified: '2026-07-23',
     publishDate: '2026-06-19',
     category: 'Mercury Motors',
     readTime: '~9 min read',
@@ -4842,20 +4843,20 @@ Mercury Premier Dealer · Rice Lake, Ontario
     slug: 'breaking-in-new-mercury-motor-guide',
     title: 'How to Break In a New Mercury Outboard (10-Hour Guide)',
     seoTitle: "How to Break In a New Mercury Outboard: 10-Hour Guide | HBW",
-    description: "The Mercury 10-hour break-in, step by step: RPM targets by hour, what to avoid, and the 20-hour first service that protects your warranty. HBW guide.",
-    image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
-    imageAlt: 'Man operating a bass boat with a Mercury outboard on a calm lake to demonstrate the 10-hour engine break-in process.',
+    description: "Mercury's 10-hour break-in, step by step: throttle guidance, what to avoid, the 100-hour service schedule, and HBW's optional early check. Ontario guide.",
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-fourstroke-freshwater-review-2026-07.webp',
+    imageAlt: 'Mercury FourStroke outboard powering a family pontoon on freshwater during normal on-water operation.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-07-07',
+    dateModified: '2026-07-23',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `_Last updated: 2026-07-07_
+    content: `_Last updated: 2026-07-23_
 
 ---
 
-> **Quick answer:** Mercury's break-in covers roughly the first 10 hours, vary throttle, avoid sustained wide-open throttle in the first hour or two, then gradually open it up with continued variation. Follow the 20-hour oil change on FourStrokes; it flushes the metal particles produced during ring seating. Check the owner's manual for your specific motor model's guidance. Book your 20-hour service at [hbw.wiki/service](https://hbw.wiki/service).
+> **Quick answer:** Mercury's model-specific break-in procedure generally covers the first 10 hours: vary throttle, avoid long steady-RPM runs, and limit sustained wide-open throttle as your owner's manual directs. For most current FourStrokes, Mercury's first scheduled service is 100 hours or annually. HBW offers an optional early oil-and-filter change around 20 hours as dealer best practice, not a Mercury warranty requirement.
 
 **Mercury's own engine care primer for new owners:**
 
@@ -4867,14 +4868,14 @@ https://www.youtube.com/watch?v=ydFfxwUz5yc
 
 ## How Do I Break In a New Mercury Outboard? (Quick Answer)
 
-Run a 10-hour break-in. Vary the RPM constantly (no holding one speed), keep it off wide-open throttle for the first hour or two, then work in short full-throttle bursts as the hours add up. Don't lug it, don't baby it the whole time, and get the 20-hour service done on schedule. Varying the load is what seats the rings properly. The full hour-by-hour protocol is below.
+Follow the break-in procedure in the owner's manual for your exact motor. Mercury's general guidance covers roughly 10 hours: vary the RPM, avoid holding one speed, and limit sustained wide-open throttle as the manual directs. Once break-in is complete, operate normally within Mercury's rated RPM band. For most current FourStrokes, the published first scheduled service is 100 hours or annually.
 
 ## Why break-in actually matters
 
-The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary throttle continuously across the RPM band, avoid sustained wide-open throttle in the first two hours, run a mix of speeds for hours 2 to 10, then change oil and filter at 20 hours. Skipping it is the most common reason a new Mercury underperforms over its life. (If this is your first hour on a brand-new motor after a [Mercury repower in Ontario](/repower), the same break-in applies, the warranty clock and 20-hour service date start at first water test. For what a new motor costs before you buy, see [current pricing](/pricing-reference).) The hour-by-hour breakdown is below.
+Mercury's published break-in guide uses a 10-hour graduated protocol for the example motor: vary throttle, avoid long steady-RPM runs, and limit sustained wide-open throttle. Your owner's manual is the final authority because the exact procedure varies by model and family. Break-in and scheduled maintenance are separate timelines. For most current FourStrokes, Mercury says the first scheduled service is at 100 hours or annually. HBW's optional early check around 20 hours is dealer best practice, not Mercury's published first-service requirement.
 
-![Infographic timeline for Mercury outboard break-in: RPM guidelines from hour 1 through the 20-hour service interval.](/lovable-uploads/mercury-break-in-timeline-hbw.png)
-*The whole procedure on one card. Details below.*
+![Mercury outboard break-in and service timelines: model-specific break-in through 10 hours, optional HBW early check around 20 hours, and Mercury's first scheduled service at 100 hours or annually for most current FourStrokes.](/lovable-uploads/mercury-break-in-and-service-timeline-hbw.svg)
+*Break-in, HBW's optional early check, and Mercury's published service schedule are three separate things.*
 
 | Time | RPM / behavior | Do | Avoid |
 |---|---|---|---|
@@ -4882,8 +4883,9 @@ The Mercury FourStroke break-in is a 10-hour graduated RPM protocol: vary thrott
 | Hour 1 | No-wake for first 10 to 15 min, then moderate cruise | Vary throttle continuously | Holding one fixed RPM |
 | Hours 1 to 2 | Wider RPM range; brief bursts toward higher RPM OK | Keep varying throttle | Sustained wide-open throttle |
 | Hours 2 to 10 | Full RPM range | Mix of speeds; short WOT bursts (1 to 2 min) acceptable | Steady-state cruise at one RPM |
-| After 10 hours | Normal operation | WOT acceptable within Mercury's rated band | Skipping the 20-hour service |
-| At 20 hours | First service | **Change oil and filter**, removes break-in particles | Skipping; break-in metal stays in oil if you do |
+| After 10 hours | Normal operation | Operate within Mercury's rated band | Ignoring the model-specific owner's manual |
+| Around 20 hours | Optional HBW early check | Oil-and-filter change if you choose HBW's dealer recommendation | Treating it as a Mercury warranty requirement |
+| At 100 hours or annually | First scheduled service for most current FourStrokes | Follow the maintenance schedule for the exact model | Assuming every Mercury has the same schedule |
 
 ---
 
@@ -4927,13 +4929,11 @@ For most modern Mercury FourStrokes. **Always refer to the owner's manual for yo
 
 ---
 
-## The 20-hour oil change (FourStrokes)
+## Mercury's service schedule and HBW's optional 20-hour check
 
-This is the one maintenance step most new owners skip, and it matters. Break-in produces fine metal particles as components seat together. Those particles end up in the oil. Changing oil and filter at 20 hours flushes them out before they can cause wear.
+For most current Mercury FourStrokes, Mercury's published first scheduled service is at 100 hours or annually, whichever comes first. Your owner's manual is the source of truth for the exact model.
 
-After the 20-hour change, normal Mercury service intervals apply: oil and filter every 100 hours or annually, whichever comes first.
-
-At HBW, we book the 20-hour service appointment at delivery so it doesn't get forgotten.
+HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice. It gives owners an early check-in after break-in and a chance to catch setup or operating questions while the motor is still new. It is not Mercury's published first-service interval, and it is not a condition of warranty coverage.
 
 ---
 
@@ -4949,7 +4949,7 @@ source: Cobourg
 
 **Sustained cruise at one RPM.** Setting it at 3,500 for two hours and not touching the throttle. Worse than varying. The whole point of break-in is RPM variation.
 
-**Skipping the 20-hour oil change.** "The motor's barely used, why change the oil?" The 20-hour change isn't about contaminated oil. It's about flushing break-in debris before it causes wear.
+**Treating every model as if it has the same schedule.** Break-in and maintenance requirements vary. Follow the manual for the exact engine, and treat HBW's optional early check as a dealer recommendation.
 
 **Ignoring the owner's manual specifics.** The general break-in principles are consistent across Mercury models, but the specific RPM guidance varies. Follow the book for your motor.
 
@@ -4957,7 +4957,7 @@ source: Cobourg
 
 ---
 
-Due for your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
+Want HBW's optional early check, or due for scheduled service? Put in a request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What we do on new motor delivery at HBW
 
@@ -4965,9 +4965,9 @@ When a customer takes delivery of a new Mercury from us:
 
 - We run a brief initial sea trial to verify cooling, charging, and basic operation
 - We walk through the break-in protocol for the specific motor model
-- We explain the 20-hour service and what happens at the 100-hour interval
+- We explain Mercury's 100-hour or annual schedule and HBW's optional early check
 - We complete Mercury warranty registration with serial number and customer info
-- We book the 20-hour service appointment before the customer leaves, so it doesn't get lost
+- We offer to book HBW's optional early check before the customer leaves
 
 ---
 
@@ -4988,7 +4988,7 @@ For repower customers buying a new Mercury at HBW, the break-in applies to the n
 
 ## Break-in and Mercury warranty
 
-Mercury warranty requires break-in compliance per the owner's manual. Damage from improper break-in may not be covered under warranty. We document break-in compliance at HBW deliveries and keep records to support warranty claims if anything comes up.
+Follow the model-specific break-in procedure in the owner's manual. Mercury says a future engine failure caused by improper break-in may not be covered. HBW's optional 20-hour oil-and-filter change is not a Mercury warranty requirement, and proof of that optional service should not be presented as a condition of coverage.
 
 ---
 
@@ -5007,26 +5007,16 @@ Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Won\\](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Overheating at Idle? The Real Fix from a Mercury Premier Dealer](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-
----
-
 ## FAQ
 
 **How long is the Mercury break-in period?**
-Roughly 10 hours of graduated operation. Followed by a 20-hour oil and filter change on FourStrokes. Specific procedures vary by motor, check the owner's manual.
+Mercury's general guidance covers roughly 10 hours of graduated operation, but the owner's manual for the exact motor controls. Break-in is separate from scheduled maintenance.
 
 **Can I run my new Mercury at full throttle during break-in?**
 Brief bursts after the first hour or two are acceptable. Sustained wide-open throttle in the first 10 hours is not recommended. Vary throttle throughout.
 
-**Why does Mercury require a 20-hour oil change?**
-Break-in produces metal particles as engine components seat. Those particles end up in the oil. The 20-hour change flushes them before they can cause wear. Skipping it is a false economy.
+**Does Mercury require a 20-hour oil change?**
+For most current FourStrokes, no. Mercury's published first scheduled service is at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice. Check the owner's manual for the exact model.
 
 **Can I tube or ski behind a new Mercury during break-in?**
 Light water sports are okay after the first hour. Sustained heavy load, multiple skiers, full crew tubing, should wait until break-in is complete.
@@ -5043,7 +5033,7 @@ For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from da
 **Can I tow my new Mercury home from HBW and break it in on my own lake?**
 Yes. Many customers do this. Start at idle and no-wake speed, then graduate over the first hour. The break-in protocol works on any lake.
 
-Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
+Want HBW's optional early check, or due for scheduled service? Put in a request at [hbw.wiki/service](https://hbw.wiki/service).
 `,
     howToSteps: [
       {
@@ -5059,8 +5049,8 @@ Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](h
         text: 'Normal operation at varying speeds. Occasional full-throttle runs (1-2 minutes max). Avoid extended trolling at same speed. Vary your throttle position regularly.',
       },
       {
-        name: 'First Oil Change at 20 Hours',
-        text: 'Schedule your first oil change at 20 hours. This is critical as the oil captures metal particles from the break-in process that need to be removed before they cause wear.',
+        name: 'After Break-In: Confirm the Service Schedule',
+        text: 'Check the owner\'s manual for the exact model. Mercury\'s first scheduled service for most current FourStrokes is at 100 hours or annually. HBW offers an optional early oil-and-filter change around 20 hours as dealer best practice.',
       },
     ],
     howToTotalTime: 'PT10H',
@@ -5068,11 +5058,11 @@ Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](h
     faqs: [
       {
         question: 'When is the first oil change on a new Mercury outboard?',
-        answer: 'Mercury\'s published schedule for most current FourStrokes is oil and filter at 100 hours or annually. At HBW we recommend an early oil change around 20 hours after break-in as dealer best practice, because that first oil carries the most metal from break-in. Check the manual for your specific model. Book at hbw.wiki/service; HBW is at Gores Landing on Rice Lake.'
+        answer: 'Mercury\'s published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbw.wiki/service.'
       },
       {
         question: 'What happens if I don\'t break in my Mercury motor properly?',
-        answer: 'Skipping or rushing the break-in procedure can cause permanent engine damage that shows up gradually. The most common consequences are reduced peak horsepower (piston rings that didn\'t seat fully never achieve optimal compression), higher oil consumption over the engine\'s lifetime, accelerated wear on bearings and cylinder walls, and a shorter overall engine life. Mercury\'s 3-year factory warranty covers manufacturing defects, but damage from improper break-in is not a warranty claim, it\'s owner responsibility.'
+        answer: 'Skipping or rushing the model-specific break-in procedure can contribute to poor performance or engine damage. Mercury says a future engine failure caused by improper break-in may not be covered by warranty. Follow the procedure in the owner\'s manual, vary throttle as directed, and ask HBW if the instructions for your exact motor are unclear.'
       },
       {
         question: 'Can I go fishing during the Mercury motor break-in period?',
@@ -5084,7 +5074,7 @@ Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](h
       },
       {
         question: 'Do I need to use Mercury-branded oil during break-in?',
-        answer: 'Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any FC-W rated 4-stroke marine engine oil at the viscosity Mercury specifies for your motor (typically 25W-40 or 10W-30, check your owner\'s manual) can be used in a pinch, but avoid automotive oil not rated for marine use, and do not substitute TC-W3 (that\'s the 2-stroke marine spec). The more important discipline is the 20-hour oil change, whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.'
+        answer: 'Use the oil type and viscosity specified in the owner\'s manual for the exact motor. For a FourStroke, use an FC-W-rated four-stroke marine oil that meets Mercury\'s specification; TC-W3 is a two-stroke oil and is not a substitute. Using a particular brand does not turn HBW\'s optional 20-hour check into a warranty requirement.'
       },
       {
         question: 'How long does Mercury motor break-in take in terms of calendar time?',
@@ -5095,12 +5085,12 @@ Ready to book your 20-hour first service? Book it online at [hbw.wiki/service](h
         answer: 'Avoid full sustained wide-open-throttle pulls during the first 3 hours. After that, brief full-throttle bursts (under 30 seconds in hours 2-3, up to 1-2 minutes in hours 4-10) are acceptable. By hours 4-10, moderate towing use is fine as long as you\'re not holding wide-open throttle for extended stretches. The key is variation, a couple of tow runs mixed in with cruising and varying speeds won\'t harm the break-in.'
       },
       {
-        question: 'Where can I get my Mercury motor\'s 20-hour oil change done near Gores Landing or Rice Lake?',
-        answer: 'Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 performs Mercury 20-hour oil and gear lube service. If you purchased your motor from Harris Boat Works, the first oil change is included with the sale. For all other customers, request service at hbw.wiki/service or call 905-342-2153. For engine repairs, Harris Boat Works only services Mercury and Mercruiser.'
+        question: 'Where can I book HBW\'s optional early service near Gores Landing or Rice Lake?',
+        answer: 'Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury\'s published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbw.wiki/service.'
       },
       {
         question: 'What is the Mercury factory warranty on a new outboard motor?',
-        answer: 'New Mercury FourStroke outboards come with a 3-year limited factory warranty for recreational use, covering manufacturing defects in materials and workmanship. The warranty does not cover damage from improper use, neglect, or failure to follow the break-in and maintenance schedule in the owner\'s manual. Keeping service records including proof of the 20-hour oil change is important for any potential warranty claim. Harris Boat Works, as a Mercury Premier dealer, can perform warranty service directly.'
+        answer: 'New Mercury FourStroke outboards come with a 3-year limited factory warranty for recreational use, covering manufacturing defects in materials and workmanship. The warranty does not cover damage caused by improper use or neglect. Follow the break-in and maintenance schedule in the owner\'s manual and keep normal service records. HBW\'s optional 20-hour oil-and-filter change is not a Mercury warranty requirement.'
       },
       {
         question: 'Should I use a fuel stabilizer in my new Mercury motor right away?',
@@ -6390,27 +6380,27 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-75-vs-90-vs-115-comparison',
     seoTitle: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)",
     title: 'Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)',
-    description: "We sell all three. For most 16-18 ft aluminum boats on Ontario lakes, the 90 HP Mercury motor wins. Here's where 75 and 115 actually make sense.",
+    description: 'Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs.',
     image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp',
     imageAlt: 'Official Mercury freshwater photos of 75, 90 and 115 HP FourStroke outboards on the water',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
     keywords: ['90 hp mercury motor', 'mercury 75 vs 90', 'mercury 90 vs 115', 'best mercury hp', 'mercury 75hp review', 'mercury 115 fourstroke'],
     content: `# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-07-23*
 
-> **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
+> **Quick answer:** Mercury 75, 90 and 115 FourStroke models share a 2.1L block and Mercury-listed lightest dry weight. The right choice depends on the capacity plate, hull, normal passenger load, steering and gearcase configuration. The 90 is HBW's usual fit for many 16 to 18 ft aluminum console boats; confirm your boat before ordering.
 
-For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers full installed-cost ranges and the rigging changes that go with each HP class. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection) For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference)..
+For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 suits lighter use; the 115 adds useful headroom for family loading and rougher water. The exact price gap changes with model, rigging, and current promotions. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers the rigging changes that go with each class. Compare current CAD pricing on the [Mercury pricing reference](/pricing-reference), then build the exact configuration on the [motor selection page](/quote/motor-selection).
 
-![Mercury 75 vs 90 vs 115 HP outboard comparison: best boat fit, ideal use, and Harris Boat Works pricing from $14,476](/blog-visuals/mercury-75-90-115-comparison.png)
+![Mercury 75, 90, and 115 HP FourStroke decision card: same 2.1L block and 359 lb lightest dry weight, with tiller and Command Thrust availability shown for applicable 90 and 115 HP configurations.](/lovable-uploads/mercury-75-90-115-decision-card-hbw-v2.svg)
 
-*Same 2.1L block. Same 359 lb. The difference is fit.*
+*Same block, three fits. The capacity plate sets the ceiling.*
 
 **Which one is right for you?**
 
@@ -6421,7 +6411,7 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 
 ## Is Upgrading From 75 to 90 HP Worth It?
 
-For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The jump from a Mercury 75 to a 90 runs about $1,500 to $2,500 more installed, and for that you get 5 to 10 mph more top end, a noticeably better hole shot with a load, and a motor you won't outgrow in two seasons. Over a 60-month term at TD's 5.48% APR, that price difference works out to roughly $30 to $50 a month. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you won't second-guess.
+For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The 90 gives you stronger loaded planing and acceleration on the same 2.1L block and mounting footprint. The exact speed gain depends on hull, load, prop, mounting height, and conditions, so we do not promise a fixed mph increase. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you are less likely to outgrow.
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
@@ -6430,9 +6420,6 @@ Real-world performance varies with hull, load, prop, mounting height, water cond
 The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a reason: it fits the most common boat (16 to 18 ft aluminum console), the most common use (family fishing, mixed recreational), and the most common hull rating (75 to 115 HP capacity plate). It hits the price-performance sweet spot that the 75 misses on power and the 115 misses on value for lighter use. It is also the motor class that crosses our service bench most often: 526 winterize-and-service jobs on 75 to 115 HP FourStrokes in the last five years, more than any other HP band in the shop.
 
 When customers ask "75, 90, or 115?" we usually walk through three things: hull length, typical loading, and use case. The right answer comes out of those three. For most Ontario freshwater customers, the answer is 90. For lighter use on shorter hulls, the 75 is enough. For heavier loading or bigger water, the 115 earns the price difference.
-
-![Comparison card: Mercury 75, 90, and 115 HP share the same 2.1L block and 359 lb dry weight. 75 HP for lighter use with the only tiller option; 90 HP the sweet spot for 16-18 ft aluminum boats; 115 HP for heavier loads with Command Thrust option for pontoons.](/lovable-uploads/mercury-75-90-115-decision-card-hbw.png)
-*Same block, three fits. The capacity plate sets the ceiling.*
 
 ## What changes the answer
 
@@ -6482,7 +6469,7 @@ You don't need to overthink this one. A 75 that felt fine when you bought it can
 - You're running near wide-open just to keep up
 
 **What a 90 buys you on the same hull:**
-- 5 to 10 mph more top end
+- Stronger acceleration and loaded planing
 - Planes with a load instead of plowing
 - Better resale when you eventually sell the boat
 
@@ -6560,13 +6547,13 @@ We see these every season:
 
 1. **Buying 75 to save $1,500 and regretting it.** Customers who pick the 75 to cut budget often trade up to a 90 or 115 within 2 to 3 seasons. They paid the 75 price plus the trade-up cost. Should have bought the 90 the first time.
 2. **Buying 115 when 90 was plenty.** A 115 on a 16 ft aluminum used solo for fishing is overkill. The motor outpowers the hull's typical load. The savings on the 90 buy electronics, props, or kicker upgrades that matter more.
-3. **Picking on top speed alone.** All three motors have similar top-speed numbers within 5 mph. The real difference is hole shot and load-handling. Top speed rarely matters in real-world use.
+3. **Expecting a fixed mph gain.** Hull, load, prop, mounting height, and conditions can move the result by several mph. Compare loaded planing, acceleration, and cruise behaviour on your boat instead of treating a broad sea-trial range as a promise.
 4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection during sea-trial is critical. We test props on every repower.
 5. **Skipping the kicker decision.** The 9.9 ProKicker question is separate from the 75/90/115 question. Most fishing customers want a kicker regardless of which main motor.
 
-## Mercury 75/90/115 Pro XS: when to step up the family
+## Mercury 115 Pro XS: when to step up the family
 
-All three HP classes have Pro XS variants. The Pro XS step-up over FourStroke at the same HP costs an extra $1,000 to $1,500 CAD and gives you faster acceleration and slightly higher top speed.
+In Mercury's current lineup, the Pro XS choice in this comparison begins at 115 HP. There is no current 75 or 90 Pro XS. The 115 Pro XS is tuned for stronger acceleration and a higher RPM range than the 115 FourStroke, so the family choice only enters once the hull is rated for 115 HP.
 
 Pro XS is the right call when:
 
@@ -6636,7 +6623,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
       },
       {
         question: 'How much does a new 90 HP Mercury motor cost installed in Ontario?',
-        answer: 'Expect roughly $14,000 to $17,000 CAD installed at Harris Boat Works in 2026, including the motor, controls, propeller, rigging, and water test on Rice Lake. Final cost depends on your boat, existing rigging, and any trade-in. See our [current pricing](/pricing-reference) reference, or [see Ontario repower cost](/repower) for a full installed breakdown.'
+        answer: 'Installed cost depends on the exact motor, shaft, controls, propeller, existing rigging, and the boat itself. Use the [current pricing reference](/pricing-reference) for the motor, then build the exact configuration on the [motor selection page](/quote/motor-selection). HBW confirms the final installed scope after reviewing the boat.'
       },
       {
         question: 'How fast will a 75 HP push a 17-foot boat?',
@@ -6644,23 +6631,23 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
       },
       {
         question: 'Is the Mercury 90 HP worth the upgrade from 75 HP?',
-        answer: 'The 90 HP is worth the upgrade from 75 HP if you regularly carry three or more people, deal with wind on open water, or want more than light fishing use. The 90 HP shares the same block and physical weight as the 75 HP, more power without added transom weight. The key tradeoff is that the 90 HP has no tiller option, whereas the 75 HP does. If tiller steering matters, stay with the 75. If you want remote steering and more power, the 90 is a solid step at typically a modest price difference.'
+        answer: 'The 90 HP is worth the upgrade from 75 HP if you regularly carry three or more people, deal with wind on open water, or want stronger loaded performance. The 90 shares the same 2.1L block and Mercury-listed lightest dry weight as the 75. Mercury lists an advanced tiller as available for applicable 90 to 115 HP configurations, but exact model and market availability varies. Confirm the Canadian configuration before ordering.'
       },
       {
         question: 'What is the fuel economy difference between Mercury 75, 90, and 115 HP?',
-        answer: 'At typical cruising speeds, fuel economy differences between these three EFI FourStrokes are smaller than most people expect. Day-to-day on a 17 ft fishing boat, the difference in a full day\'s fuel cost between a 75 and 115 HP is approximately $5-$15 depending on how hard you run. The 115\'s efficiency advantage is that it\'s not being pushed as hard to maintain cruising speed, which offsets some of its larger displacement. Biggest differences appear at the extremes, low-speed and wide-open-throttle.'
+        answer: 'At typical cruising speeds, fuel-economy differences between these three EFI FourStrokes are smaller than many people expect. They share the same 2.1L block, so hull, load, propeller, mounting height, and throttle setting matter more than a simple horsepower label. The 115 may hold a loaded cruise at less throttle, while the 75 generally burns less at wide-open throttle. Boat-specific setup decides the result.'
       },
       {
         question: 'Which has better resale value: Mercury 75, 90, or 115 HP?',
-        answer: 'The Mercury 115 HP FourStroke consistently holds the best resale value of the three because it covers more use cases and appeals to more buyers. The 90 HP falls in between. Motors with broader use-case appeal and stronger original MSRP hold value better. The 115 HP\'s Command Thrust option, strong torque, and versatility make it the most sought-after of the three on Ontario\'s used boat market.'
+        answer: 'Resale depends on age, hours, condition, service history, rigging, and whether the motor is a good match for the hull. The 115 can appeal to a broad buyer pool on boats rated for it, but there is no universal resale winner. A clean, correctly matched 90 with documented service can be worth more to the right buyer than a poorly matched 115.'
       },
       {
         question: 'What is the best Mercury outboard for a 17 ft aluminum fishing boat on Rice Lake?',
-        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. For solo or two-person fishing with tiller control, the 75 HP tiller is efficient and well-suited to Rice Lake\'s shoreline work. For two or three regular passengers or more open-water conditions, the 90 HP provides better loaded performance at the same weight. The 115 HP is worth considering if the hull is heavier or you want long-term headroom. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can assess your specific hull and recommend the right choice.'
+        answer: 'For a 17 ft aluminum fishing boat on Rice Lake, the Mercury 75 HP or 90 HP FourStroke are both strong choices. The 75 suits lighter solo or two-person use. The 90 provides better loaded performance at the same Mercury-listed lightest dry weight. Mercury lists an advanced tiller as available for applicable 90 to 115 HP configurations, but confirm the exact Canadian model before ordering. Consider the 115 only if the capacity plate and hull fit support it.'
       },
       {
         question: 'Is it worth upgrading from a Mercury 75 to a 90 HP outboard?',
-        answer: 'For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 costs roughly $1,500 to $2,500 more installed and gives you 5 to 10 mph more top end and a much better hole shot under load, on the same 2.1L block and mounting footprint. If you usually run light and solo, the 75 is plenty.'
+        answer: 'For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 gives you stronger loaded planing and acceleration on the same 2.1L block and mounting footprint. Exact speed gain depends on hull, load, prop, mounting height, and conditions, so use the current pricing reference and a boat-specific assessment rather than assuming a fixed mph increase.'
       }
     ]
   },
@@ -36381,10 +36368,11 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
     title: "Mercury Outboard Weight Chart (2.5 to 300 HP)",
     seoTitle: "Mercury Outboard Weight Chart: 2.5 to 300 HP | HBW",
     description: "How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat.",
-    image: '/lovable-uploads/hero-mercury-weight-hoist.png',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
+    imageAlt: 'Harris Boat Works technician inspecting a Mercury outboard in the Gores Landing service shop.',
     author: "Jay Harris",
     datePublished: "2026-06-07",
-    dateModified: "2026-06-22",
+    dateModified: "2026-07-23",
     publishDate: "2026-06-07",
     category: "Buying Guide",
     readTime: "5 min read",

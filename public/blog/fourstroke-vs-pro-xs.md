@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-07-06
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS vs Verado vs FourStroke Compared"
 description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains."
 category: "Mercury Motors"
 date_published: 2026-05-26
-date_modified: 2026-07-06
+date_modified: 2026-07-23
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-06  
+**Last updated:** 2026-07-23
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
@@ -217,4 +217,3 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
