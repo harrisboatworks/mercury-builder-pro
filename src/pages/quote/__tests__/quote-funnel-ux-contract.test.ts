@@ -19,6 +19,15 @@ describe('quote funnel UX contract', () => {
     expect(motorSelectionSource).toContain('keep-flex flex flex-row gap-2 overflow-x-auto');
   });
 
+  it('keeps the motor-selection preamble specific to Mercury outboards', () => {
+    const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
+
+    expect(motorSelectionSource).toContain('Mercury Outboard Quote Builder');
+    expect(motorSelectionSource).toContain('Start with the horsepower on your current motor');
+    expect(motorSelectionSource).not.toMatch(/Mercury boats/i);
+    expect(motorSelectionSource).not.toMatch(/boats and (?:motors|outboards)/i);
+  });
+
   it('does not celebrate before a customer has committed', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
     const stickySource = read('src/components/quote-builder/StickySummary.tsx');
