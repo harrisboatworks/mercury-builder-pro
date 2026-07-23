@@ -20,8 +20,17 @@ describe('quote funnel UX contract', () => {
     expect(motorSelectionSource).not.toContain('md:bg-transparent md:border-b-0');
     expect(motorSelectionSource).toContain('keep-flex flex flex-row gap-1.5 overflow-x-auto');
     expect(motorSelectionSource).toContain('md:hidden');
-    expect(motorSelectionSource).toContain('!mobile && range.id');
+    expect(motorSelectionSource).toContain('!mobile && (');
     expect(motorSelectionSource).toContain('!mobile && range.popular');
+  });
+
+  it('uses a structured desktop HP selector without clipping its popular marker', () => {
+    const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
+
+    expect(motorSelectionSource).toContain('grid grid-cols-6 gap-1.5 overflow-visible pt-2');
+    expect(motorSelectionSource).toContain('min-h-[44px] w-full rounded-sm');
+    expect(motorSelectionSource).toContain('shadow-[inset_0_-3px_0_#C9A24A]');
+    expect(motorSelectionSource).not.toContain('rounded-full px-3.5 py-2');
   });
 
   it('shows useful navigation before ultra-wide desktop widths', () => {
