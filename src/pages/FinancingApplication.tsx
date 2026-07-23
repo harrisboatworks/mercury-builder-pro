@@ -70,6 +70,7 @@ export default function FinancingApplication() {
   const [showResumeDialog, setShowResumeDialog] = useState(false);
   const [savedDraft, setSavedDraft] = useState<SavedDraft | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [initializationKey, setInitializationKey] = useState(0);
   const lastTrackedStepRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -274,8 +275,10 @@ export default function FinancingApplication() {
     }
 
     // Check for URL parameters from QR code scan
-    const motorModel = searchParams.get('motorModel');
-    const motorPrice = searchParams.get('motorPrice');
+    const motorModel = searchParams.get('motorModel') || searchParams.get('motor');
+    const explicitAllInPrice = searchParams.get('motorPrice');
+    const legacyMotorPrice = searchParams.get('price');
+    const motorPrice = explicitAllInPrice || legacyMotorPrice;
     const downPayment = searchParams.get('downPayment');
     const tradeInValue = searchParams.get('tradeInValue');
     const packageName = searchParams.get('packageName');
@@ -283,14 +286,21 @@ export default function FinancingApplication() {
 
     // Pre-fill from URL parameters if available (takes precedence over quote context)
     if (motorModel && motorPrice) {
+      const parsedPrice = parseFloat(motorPrice);
+      // Legacy direct links used `price` for the pre-tax motor price. Modern
+      // `motorPrice` links carry the all-in total so it is never taxed twice.
+      const allInPrice = explicitAllInPrice
+        ? parsedPrice
+        : Math.round((parsedPrice * 1.13 + DEALERPLAN_FEE) * 100) / 100;
+
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
           motorModel: packageName ? `${motorModel} (${packageName})` : motorModel,
-          motorPrice: parseFloat(motorPrice),
+          motorPrice: allInPrice,
           downPayment: parseFloat(downPayment || '0'),
           tradeInValue: parseFloat(tradeInValue || '0'),
-          amountToFinance: Math.max(0, parseFloat(motorPrice) - parseFloat(downPayment || '0') - parseFloat(tradeInValue || '0')),
+          amountToFinance: Math.max(0, allInPrice - parseFloat(downPayment || '0') - parseFloat(tradeInValue || '0')),
         }
       });
 
@@ -381,7 +391,7 @@ export default function FinancingApplication() {
     // Simulate loading state for better UX
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
-  }, [searchParams, financingDispatch]);
+  }, [searchParams, financingDispatch, initializationKey]);
 
   const handleBackToQuote = () => {
     // Only save if user has made progress (not on step 1)
@@ -410,56 +420,15 @@ export default function FinancingApplication() {
   };
 
   const handleStartFresh = () => {
-    // IMPORTANT: Preserve the current quote_state BEFORE clearing drafts
-    // This contains the motor details from the quote the user just came from
-    const currentQuoteState = localStorage.getItem('quote_state');
-    let quoteDataToRestore: any = null;
-
-    if (currentQuoteState) {
-      try {
-        quoteDataToRestore = JSON.parse(currentQuoteState);
-      } catch (e) {
-        console.error('Failed to parse quote state for restoration:', e);
-      }
-    }
-
-    // Clear all saved drafts (old financing progress)
+    // Clear old financing progress, then rerun the normal initialization path.
+    // That preserves whichever current source brought the customer here:
+    // calculator state, saved quote, direct link, or quote context.
     clearFinancingStorage();
-    localStorage.removeItem('quote_state');
-
-    // Reset context to initial state
     financingDispatch({ type: 'RESET_APPLICATION' });
-
-    // Re-apply the current quote's motor details if available
-    if (quoteDataToRestore?.motor) {
-      const totalWithFees = quoteDataToRestore.financingAmount?.totalWithFees;
-      const motorPrice = totalWithFees || quoteDataToRestore.motor.salePrice || quoteDataToRestore.motor.price || 0;
-      const tradeInValue = quoteDataToRestore.financingAmount?.tradeInValue || quoteDataToRestore.tradeInInfo?.estimatedValue || 0;
-
-      const motorModel = quoteDataToRestore.financingAmount?.packageName
-        ? `${quoteDataToRestore.motor.model || ''} (${quoteDataToRestore.financingAmount.packageName})`
-        : quoteDataToRestore.motor.model || '';
-
-      financingDispatch({
-        type: 'SET_PURCHASE_DETAILS',
-        payload: {
-          motorModel: motorModel,
-          motorPrice: motorPrice,
-          downPayment: 0,
-          tradeInValue: tradeInValue,
-          amountToFinance: Math.max(0, motorPrice - tradeInValue),
-          promoOption: quoteDataToRestore.financingAmount?.promoOption || quoteDataToRestore.selectedPromoOption || null,
-          promoRate: quoteDataToRestore.financingAmount?.promoRate || quoteDataToRestore.selectedPromoRate || null,
-          promoTerm: quoteDataToRestore.financingAmount?.promoTerm || quoteDataToRestore.selectedPromoTerm || null,
-          promoValue: quoteDataToRestore.financingAmount?.promoValue || quoteDataToRestore.selectedPromoValue || null,
-          promoName: quoteDataToRestore.financingAmount?.promoName || quoteDataToRestore.promotionName || null,
-          promoSavings: quoteDataToRestore.financingAmount?.promoSavings ?? quoteDataToRestore.frozenPricing?.promoSavings ?? null,
-          promoCombinationMode: quoteDataToRestore.financingAmount?.promoCombinationMode || quoteDataToRestore.promotionCombinationMode || null,
-        },
-      });
-    }
-
+    setSavedDraft(null);
     setShowResumeDialog(false);
+    setIsLoading(true);
+    setInitializationKey((current) => current + 1);
   };
 
   if (isLoading) {
