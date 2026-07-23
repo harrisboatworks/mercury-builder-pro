@@ -3766,33 +3766,33 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
-    "title": "Ethanol Octane Mercury Fuel Guide",
-    "description": "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.",
+    "title": "Marine Fuel Problems in Ontario: Symptoms and Safe Checks",
+    "description": "Boat hard to start, stalling or bogging? Learn how stale gas, water, E10 and phase separation cause trouble, what to check safely and when to book service.",
     "category": "Service",
     "publishDate": "2026-04-11",
     "keywords": [
-      "ethanol",
-      "octane",
-      "marine fuel",
-      "mercury outboard",
-      "ontario"
+      "marine fuel problems Ontario",
+      "boat hard starting",
+      "E10 phase separation",
+      "stale boat fuel",
+      "Mercury fuel system"
     ],
     "faqs": [
       {
-        "q": "What octane does a Mercury outboard need?",
-        "a": "The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn't help them. Mercury's Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your m…"
+        "q": "What are the signs of a fuel problem in a boat?",
+        "a": "Common signs include hard starting after storage, starting and then stalling, rough idle, surging, bogging under load, failure to reach normal RPM, a primer bulb that will not firm up, repeated fuel-filter contamination, water in a fuel sample, or a sour varnish-like smell. These symptoms are clues, not proof. Battery…"
       },
       {
-        "q": "Can I run ethanol gas (E10) in my Mercury outboard?",
-        "a": "You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion,…"
+        "q": "Can I use E10 gasoline in a Mercury outboard or MerCruiser?",
+        "a": "Mercury says its current gasoline engines are designed to operate safely on fuel containing no more than 10 percent ethanol. Fresh, clean E10 within the engine and boat manufacturer requirements is acceptable. The bigger risks are water contamination, long storage and fuel-system compatibility. Mercury recommends etha…"
       },
       {
-        "q": "Is premium gas ethanol-free in Ontario?",
-        "a": "Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say \"ethanol-free,\" \"no ethanol,\" or \"non-ethanol blend,\" assume it conta…"
+        "q": "Can ethanol-free gasoline still go stale?",
+        "a": "Yes. Ethanol-free gasoline avoids ethanol-related water absorption and phase separation, but gasoline can still oxidize, lose volatility and form gum or deposits as it ages. Buy fresh fuel, avoid storing more than you need, and follow the engine manual and fuel-treatment label before offseason or long-term storage."
       },
       {
-        "q": "Does Harris Boat Works sell ethanol-free fuel?",
-        "a": "Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in."
+        "q": "Is HBW marine gas better because it is 89 octane?",
+        "a": "Its main marine advantage is that it is ethanol-free, not simply that it is 89 octane. Harris Boat Works sells 89-octane ethanol-free gasoline at the marina pump. Your engine label and owner manual still set the minimum octane requirement, so confirm that requirement rather than assuming higher octane will fix a fuel…"
       }
     ]
   },

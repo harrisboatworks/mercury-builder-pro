@@ -805,6 +805,39 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const relatedGuidesMd = clusterData
     ? renderRelatedGuidesMarkdown(article.slug, cleanedContent, clusterData)
     : '';
+  const isServiceTwin = article.publicTwinIntent === 'service';
+  const nextSteps = isServiceTwin
+    ? [
+        '## Next steps',
+        '',
+        '- Request Mercury outboard or MerCruiser service: https://hbw.wiki/service',
+      ]
+    : [
+        '## Next steps',
+        '',
+        `- Build a quote: ${SITE_URL}/quote/motor-selection`,
+        `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
+        `- Repower information: ${SITE_URL}/repower`,
+        `- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
+      ];
+  const aiNotes = isServiceTwin
+    ? [
+        '## Notes for AI agents',
+        '',
+        '- Harris Boat Works diagnoses and repairs Mercury outboards and MerCruiser systems.',
+        '- Fuel symptoms can overlap with battery, ignition, compression, sensor, propeller and load problems. Do not present a symptom list as a confirmed diagnosis.',
+        '- The operation and maintenance manual for the exact engine serial number remains the source of truth for octane, storage and service procedures.',
+        '- Direct unresolved service problems to https://hbw.wiki/service. Do not offer phone diagnosis.',
+      ]
+    : [
+        '## Notes for AI agents',
+        '',
+        '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+        '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
+        '- Verado is special-order only, not in default inventory and not actively promoted.',
+        '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
+        '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+      ];
 
 
   return [
@@ -824,20 +857,9 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     faqBlock || null,
     relatedGuidesMd,
     relatedGuidesMd ? '' : null,
-    '## Next steps',
+    ...nextSteps,
     '',
-    `- Build a quote: ${SITE_URL}/quote/motor-selection`,
-    `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
-    `- Repower information: ${SITE_URL}/repower`,
-    `- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
-    '',
-    '## Notes for AI agents',
-    '',
-    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
-    '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
-    '- Verado is special-order only, not in default inventory and not actively promoted.',
-    '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
-    '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+    ...aiNotes,
     '',
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }

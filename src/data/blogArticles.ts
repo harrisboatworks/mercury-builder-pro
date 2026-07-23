@@ -22,6 +22,7 @@ export interface BlogArticle {
   faqs?: { question: string; answer: string }[];
   keywords: string[];
   relatedSlugs?: string[]; // Manual cluster override; falls back to recency in getRelatedArticles
+  publicTwinIntent?: 'repower' | 'service'; // Controls the action and AI notes in the public markdown twin
   howToSteps?: HowToStep[]; // For instructional articles - enables HowTo schema
   howToTotalTime?: string; // ISO 8601 duration like "PT60M"
   howToSupplies?: string[]; // List of supplies / materials
@@ -24361,251 +24362,317 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
-    title: 'Ethanol Octane Mercury Fuel Guide',
-    seoTitle: "Ethanol and Octane for Mercury Outboards in Ontario",
-    description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.",
+    relatedSlugs: ['mercury-outboard-wont-start-troubleshooting', 'mercury-outboard-wont-start-after-sitting', 'spring-outboard-commissioning-checklist', 'diy-mercury-outboard-winterization-guide', 'mercury-outboard-fuel-efficiency-guide'],
+    publicTwinIntent: 'service',
+    title: 'Marine Fuel Problems in Ontario: Symptoms and Safe Checks',
+    seoTitle: 'Marine Fuel Problems in Ontario: Symptoms and Troubleshooting',
+    description: 'Boat hard to start, stalling or bogging? Learn how stale gas, water, E10 and phase separation cause trouble, what to check safely and when to book service.',
     image: '/lovable-uploads/hero-mercury-fuel-octane-ethanol.png',
     author: 'Jay Harris',
     datePublished: '2026-04-11',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-20',
     publishDate: '2026-04-11',
-    category: "Service",
-    readTime: '~12 min read',
-    keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"],
+    category: 'Service',
+    readTime: '~13 min read',
+    keywords: ['marine fuel problems Ontario', 'boat hard starting', 'E10 phase separation', 'stale boat fuel', 'Mercury fuel system'],
     faqs: [
-      { question: 'What octane does a Mercury outboard need?', answer: 'The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn\'t help them. Mercury\'s Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your motor or your owner\'s manual, don\'t guess.' },
-      { question: 'Can I run ethanol gas (E10) in my Mercury outboard?', answer: 'You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion, gummed carburettors, and unbudgeted service bills.' },
-      { question: 'Is premium gas ethanol-free in Ontario?', answer: 'Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.' },
-      { question: 'Does Harris Boat Works sell ethanol-free fuel?', answer: 'Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in.' },
-      { question: 'When should I use a fuel stabilizer?', answer: 'Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is the real threshold before fuel quality starts dropping. Add stabilizer to the tank, top off with fuel so it mixes in, then run the motor for 10 to 15 minutes to circulate treated fuel through the carb and fuel lines. Skipping the run step leaves untreated fuel in the carb bowls.' },
-      { question: 'What are the signs of a fuel system problem on a Mercury outboard?', answer: 'Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won\'t pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.' },
+      {
+        question: 'What are the signs of a fuel problem in a boat?',
+        answer: 'Common signs include hard starting after storage, starting and then stalling, rough idle, surging, bogging under load, failure to reach normal RPM, a primer bulb that will not firm up, repeated fuel-filter contamination, water in a fuel sample, or a sour varnish-like smell. These symptoms are clues, not proof. Battery, ignition, compression, sensor and load problems can look similar.',
+      },
+      {
+        question: 'Can I use E10 gasoline in a Mercury outboard or MerCruiser?',
+        answer: 'Mercury says its current gasoline engines are designed to operate safely on fuel containing no more than 10 percent ethanol. Fresh, clean E10 within the engine and boat manufacturer requirements is acceptable. The bigger risks are water contamination, long storage and fuel-system compatibility. Mercury recommends ethanol-free gasoline when possible and says to avoid E15 and E85.',
+      },
+      {
+        question: 'Can ethanol-free gasoline still go stale?',
+        answer: 'Yes. Ethanol-free gasoline avoids ethanol-related water absorption and phase separation, but gasoline can still oxidize, lose volatility and form gum or deposits as it ages. Buy fresh fuel, avoid storing more than you need, and follow the engine manual and fuel-treatment label before offseason or long-term storage.',
+      },
+      {
+        question: 'Is HBW marine gas better because it is 89 octane?',
+        answer: 'Its main marine advantage is that it is ethanol-free, not simply that it is 89 octane. Harris Boat Works sells 89-octane ethanol-free gasoline at the marina pump. Your engine label and owner manual still set the minimum octane requirement, so confirm that requirement rather than assuming higher octane will fix a fuel problem.',
+      },
+      {
+        question: 'Can a fuel additive fix phase-separated gasoline?',
+        answer: 'No. Mercury says a phase-separated fuel load cannot be reliably remixed by pouring an additive into the tank. The water and depleted fuel must be removed, the source of the water corrected, and the system refilled with fresh, dry fuel. Stabilizer is a prevention and storage tool, not a repair for contaminated or separated gasoline.',
+      },
+      {
+        question: 'Is premium gasoline always ethanol-free in Ontario?',
+        answer: 'No. Premium describes octane, not ethanol content. Ontario allows certain mid-grade, premium and marine gasoline volumes to be treated differently under its renewable-content rules, but that does not guarantee every 89, 91 or 93 pump is ethanol-free. Read the pump label or confirm the fuel specification with the seller.',
+      },
+      {
+        question: 'Is E15 safe in Mercury or MerCruiser engines?',
+        answer: 'No. Mercury says its current gasoline engines are designed for fuel containing a maximum of 10 percent ethanol and specifically says to avoid blends such as E15 and E85. If you suspect the wrong fuel was added, do not keep running the engine to burn it off. Stop and have the fuel identified and removed safely.',
+      },
+      {
+        question: 'Why can replacing the fuel filter fail to solve the problem?',
+        answer: 'A contaminated filter may be the first evidence of a larger issue. Water in the tank, phase-separated fuel, deteriorated hose material, tank debris, a restricted pickup, an air leak or stale gasoline can contaminate the replacement again. The source has to be found and corrected instead of repeatedly replacing the same downstream part.',
+      },
     ],
-    content: `# Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
+    content: `*Last reviewed: 2026-07-20*
 
-*Last reviewed: 2026-06-09*
+> **Quick answer:** Hard starting, stalling, rough idle and bogging can come from stale fuel, water, restricted flow or phase-separated E10, but those symptoms do not prove fuel is the cause. Check fuel age, the pump label, the tank vent, primer bulb and visible lines. Stop if you smell fuel or see contamination. For unresolved Mercury or MerCruiser problems, submit a service request.
 
-> **Quick answer:** Mercury's current 4-stroke outboards run on 87 octane regular gasoline. Premium isn't required and doesn't help. The bigger fuel issue is ethanol: E10 pump gas absorbs water, phase-separates in storage, and gums fuel systems. Use ethanol-free 89 marine gas where available (HBW sells it at the dock), or run fuel stabilizer in every tank if you cannot avoid E10. Older supercharged inline-6 Verados require 91 octane premium.
+The boat ran fine when it went into storage. Now it starts, dies and will not pull past half throttle.
+
+That pattern sends a lot of owners straight to "bad gas." Sometimes they are right. Sometimes the real cause is a weak battery, ignition fault, blocked vent, sensor problem, low compression or a boat that is overloaded or over-propped. Guessing gets expensive.
+
+In 2026, we are seeing more fuel-related concerns than usual in our own shop at Harris Boat Works. That is a local shop observation, not proof that every Ontario marina is seeing the same spike. This guide explains the symptoms, the checks an owner can make safely, and where proper diagnosis starts.
+
+## Who this guide is for
+
+This guide is for Ontario owners dealing with a Mercury outboard or MerCruiser that is hard to start, stalls, surges, bogs or will not reach normal RPM. It also helps owners trying to understand E10, E15, stale gasoline, water contamination, phase separation and the real value of ethanol-free marine fuel.
+
+It is not a substitute for the operation and maintenance manual for your exact engine and boat. Fuel systems, octane requirements and user-serviceable parts vary by model, year and installation.
+
+## Boat Hard to Start, Stalling or Bogging: What the Symptom Suggests
+
+A symptom narrows the search. It does not identify the failed part by itself.
+
+| What the boat does | Possible fuel-side causes | Other problems that can look similar |
+|---|---|---|
+| Hard starting after storage | Stale fuel, water contamination, empty carburetor bowl, lost prime or restricted flow | Weak battery, corroded connections, ignition or compression |
+| Starts and then stalls | Blocked tank vent, restricted pickup, stuck anti-siphon valve, dirty filter or air leak | Idle-control, sensor, ignition or Guardian-related issue |
+| Bogs when throttle is added | Restricted filter or line, weak fuel supply, water in fuel, dirty carburetor or injector | Propeller/load problem, ignition breakdown or low compression |
+| Surges at cruise | Air entering the fuel line, vent restriction or unstable fuel pressure | Electrical connection, sensor or control problem |
+| Primer bulb will not firm up | Air leak, open vent problem, damaged bulb, connection or pickup issue | Incorrect bulb orientation or a bulb that needs replacement |
+| Primer bulb collapses while running | Tank vent or pickup restriction | Pinched line or failing bulb |
+| Water or a second layer appears in a sample | Water contamination or phase separation | Stop using the fuel until it is identified |
+| Fuel smell or visible wetness | Fuel leak or trapped vapour | Stop operating and correct the hazard before restarting |
+
+For a complete no-start sequence that includes battery and ignition checks, use the [Mercury Outboard Won't Start troubleshooting guide](/blog/mercury-outboard-wont-start-troubleshooting). If the engine is sounding an alarm or entering Guardian mode, use the [Mercury alarm-code guide](/blog/mercury-smartcraft-alarm-codes-encyclopedia).
 
 ::diagnostic-flow
-heading: Mercury running rough or won't stay running? Work the fuel system in this order.
-eyebrow: Fuel diagnostic flow
-subhead: 5 things to check in order before you call the shop. This catches the most common fuel-side causes we see at the marina.
-step1Label: Squeeze the primer bulb until firm
-step1Question: Pump the primer bulb until it goes hard. If it never firms up, you have an air leak somewhere between the tank and the motor (cracked bulb, loose hose clamp, dry-rotted line, or a tank vent stuck closed). If it firms up but the motor still won't run, move to step 2.
-step1Tip: A bulb that collapses while running points to a clogged tank pickup or pinched fuel line.
-step2Label: Check for water and old fuel in the tank
-step2Question: If the gas has been sitting since last fall, it's likely degraded. Pull a sample from the lowest point of the tank into a clear jar. Water settles to the bottom and looks like a separate layer. Cloudy, dark, or varnish-smelling fuel is stale. Drain it, dispose of it properly, and refill with fresh ethanol-free 89 if you can get it.
-step3Label: Replace the water-separating fuel filter
-step3Question: Most Mercury rigs have a 10-micron water-separating filter (the silver canister near the motor). Unscrew it, dump the contents into a jar, and look for water or rust. Spin on a fresh one. Filters are cheap insurance and should be changed every 100 hours or annually anyway.
-step3Tip: Lube the new filter's gasket with a dab of clean oil before spinning it on. Hand tight, then a quarter turn more.
-step4Label: Inspect the fuel lines and connections
-step4Question: Walk the line from tank to motor. Look for cracks, soft spots, kinks, or fuel weeping at any clamp or fitting. The quick-connect at the motor is a common air-leak point. Replace anything questionable. Marine-grade fuel hose only, no automotive rubber.
-step5Label: Pull and inspect the spark plugs
-step5Question: While you're in there, pull the plugs. Wet plugs mean it's getting fuel but not firing (ignition issue). Dry plugs mean no fuel is reaching the cylinders (still a fuel-delivery problem). Black sooty plugs suggest it's running rich (carb or injector issue). New plugs are $5 each and tell you a lot.
-step5Tip: Gap matters. Check the Mercury service manual for your specific motor before installing new plugs.
-escalationLabel: Still won't run right? Put in a service request at hbw.wiki/service.
-escalationBody: If the basics check out and it's still rough, we run fuel pressure tests, injector flow checks, and ECU diagnostics that aren't practical at home. EFI motors especially need scan tools to read what's actually happening at the rail.
+heading: Boat hard to start, stalling or bogging? Check these five things before guessing.
+eyebrow: Safe fuel-side checks
+subhead: Stay outside pressurized fuel components. Stop immediately if you smell fuel, see a leak or find separated fuel.
+step1Label: Record the fuel history
+step1Question: Write down where the fuel came from, the pump label, when it was purchased, whether stabilizer was added before storage, and the last time the engine ran normally. Unknown age or unknown ethanol content matters.
+step1Tip: Do not add fresh gasoline just to dilute fuel you already suspect is contaminated.
+step2Label: Inspect the outside of the system
+step2Question: With the engine off and the area ventilated, inspect the cap, gasket, vent opening, primer bulb, visible hoses and quick-connects. Look for cracks, kinks, softness, wetness or a strong gasoline smell.
+step2Tip: Do not start the engine if you see a leak or smell accumulated vapour.
+step3Label: Check the primer bulb and tank vent
+step3Question: Follow the engine and boat manual. A bulb that never firms can point to lost prime or an air leak. A bulb that collapses while the engine runs can point to a restriction. Make sure a portable-tank vent is in the correct operating position.
+step4Label: Inspect only user-serviceable filtration
+step4Question: Check a visible filter bowl or water-separating filter only when the owner manual identifies it as user-serviceable and you can do it safely. Follow the stated interval and replacement procedure. Do not open a VST, Cool Fuel module, fuel rail or other pressurized component.
+step4Tip: A dirty filter may be evidence of contaminated fuel upstream, not the entire repair.
+step5Label: Decide whether to stop or continue
+step5Question: If the fuel is fresh, the system is dry and the basic checks are normal, move to battery and ignition troubleshooting. If you find water, separated fuel, repeated contamination, a leak or an unknown high-ethanol blend, stop operating and submit a service request.
+escalationLabel: Still hard to start, stalling or bogging? Submit a service request.
+escalationBody: HBW diagnoses Mercury outboard and MerCruiser fuel systems. Include the engine serial number, fuel source and date, storage history, exact symptoms and what you already checked.
 ::
 
-You're standing at the pump. The motor ran fine last fall. It's been sitting all winter and you want to fill it up and get on the water.
+## Watch out for Fuel Vapour, Leaks or Separated Gasoline
 
-Regular, mid-grade, or premium? What's this E10 label mean?
+Fuel vapour and liquid gasoline are fire and explosion hazards. Stop before turning diagnosis into a safety problem.
 
-Nobody at the gas station is going to help you figure this out. So here it is in plain English.
+Do not run the engine when:
+
+- you smell strong gasoline vapour
+- you see wet fuel, a leaking connection or a damaged hose
+- a clear fuel sample has water, sediment or a distinct second layer
+- the water-separating filter repeatedly fills with water or debris
+- you suspect E15, E85 or another unknown high-ethanol blend
+- the engine keeps stalling in a situation where losing power could put the boat or passengers at risk
+
+Do not open pressurized EFI parts, injectors, fuel rails, VST assemblies or MerCruiser Cool Fuel components as a casual dockside check. Ventilate enclosed engine spaces and follow the engine and boat manuals.
+
+## Why Boats Are Harder on Gasoline Than Cars
+
+Cars usually use a tank quickly. Boats often sit for days, weeks or an entire Ontario winter.
+
+Gasoline changes with age. It can oxidize, lose volatility and form gum or deposits. Water can enter through contamination, a damaged fill cap or gasket, a vent exposed to spray, condensation in some tank systems, or poor storage and handling.
+
+Ethanol adds another concern because it can absorb water. When enough water is present, the ethanol-water mixture can separate from the gasoline and settle to the bottom of the tank. The fuel pickup is also near the bottom, so the engine can draw the contaminated layer first.
+
+[Mercury's Canadian fuel guidance](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics) explains that phase-separated fuel can cause poor performance or damage, while the gasoline left above it can have a lower octane rating.
+
+## What E10 and Phase Separation Actually Mean
+
+E10 is gasoline containing up to 10 percent ethanol. Mercury says its current gasoline engines are designed to operate safely on fuel containing no more than 10 percent ethanol.
+
+That does not mean every E10 problem is caused by ethanol, or that fresh E10 automatically damages an engine. The important variables include:
+
+- the actual ethanol content
+- the age and condition of the gasoline
+- how much water is present
+- storage time and temperature
+- the condition of the tank, cap, vent, hoses and fittings
+- whether the boat's fuel system is compatible with the blend
+- whether the engine's required octane is still being met
+
+Once phase separation has occurred, the lower water-ethanol layer and the depleted gasoline above it are no longer a normal usable fuel load. Mercury's FAQ says an additive cannot reliably remix it. The water and depleted fuel have to be removed, the tank cleaned as required, and the system refilled with fresh, dry gasoline.
+
+## What Ontario's 11 Percent Rule Does and Does Not Mean
+
+Ontario's Cleaner Transportation Fuels regulation increased the supplier-level renewable-content requirement for gasoline to 11 percent in 2025. It is scheduled to increase again in 2028 and 2030.
+
+That figure is an average compliance requirement. It does not mean every Ontario pump contains exactly 11 percent ethanol. Ontario also says suppliers may deduct certain gasoline volumes expected for marine use, along with some mid-grade and premium gasoline of 89 octane or higher, when calculating compliance volumes.
+
+The practical takeaway is simple:
+
+- do not assume regular, mid-grade or premium has a specific ethanol content without checking
+- do not assume "premium" means ethanol-free
+- read the pump label and ask the fuel seller when the specification is unclear
+- follow the fuel and octane requirements for the exact engine and boat
+
+The current requirements and deductions are published on [Ontario's Cleaner Transportation Fuels page](https://www.ontario.ca/page/cleaner-transportation-fuels).
+
+## E15 Is Not a Marine Shortcut
+
+E15 is gasoline containing 15 percent ethanol. Mercury's Canadian guidance says to avoid fuel containing more than 10 percent ethanol, including E15 and E85.
+
+Do not try to use a high-ethanol blend because it is cheaper, newer or suitable for a road vehicle. A pump approval for certain cars does not make the fuel suitable for a Mercury outboard, MerCruiser or the boat's tank, lines and fittings.
+
+If E15 or another unknown blend may be in the tank, do not keep running the engine to burn it off. Record what was added and submit a service request so the fuel can be handled safely.
+
+## Premium Does Not Automatically Mean Ethanol-Free
+
+Premium is an octane description. Ethanol-free describes the fuel blend. They are not interchangeable.
+
+A 91- or 93-octane pump may still contain ethanol. An ethanol-free fuel may be 89 octane. The engine label and owner manual set the octane requirement, while the pump label and seller identify the ethanol content.
+
+Higher octane does not repair stale gasoline, remove water, clean a contaminated tank or reverse phase separation.
+
+## HBW's 89-Octane Ethanol-Free Marine Fuel
+
+Harris Boat Works sells 89-octane ethanol-free gasoline at the marina pump in Gores Landing.
+
+The important marine advantage is that it is ethanol-free. It avoids the ethanol-related water-absorption and phase-separation mechanism described above. It does not make gasoline immune to age, oxidation, dirt or direct water contamination, and it does not repair a fuel system that is already contaminated.
+
+Use it only when 89 octane meets the requirement in the engine manual or on the engine label. If an engine requires a higher minimum octane, follow that requirement.
+
+## What Fuel Stabilizer Can and Cannot Do
+
+Fuel stabilizer is a prevention and storage tool. It can slow oxidation and help control gum, varnish and corrosion when it is added to fresh fuel and circulated according to the product label and engine manual.
+
+Mercury recommends fresh, preferably ethanol-free gasoline treated with a marine-rated stabilizer before offseason or long-term storage.
+
+Stabilizer cannot:
+
+- turn stale or contaminated gasoline back into fresh gasoline
+- remove a layer of water from the bottom of a tank
+- reliably recombine phase-separated E10
+- make E15 acceptable for a Mercury engine
+- correct a leaking cap, vent, hose or fitting
+- replace diagnosis when the engine is already running poorly
+
+Do not add random alcohol-based "dry gas" products to a marine tank without specific manufacturer guidance. Adding more alcohol is not a sensible response to an unknown ethanol and water problem.
+
+## Mercury Outboard and MerCruiser Fuel Systems Are Not the Same
+
+Mercury outboards and MerCruiser sterndrives share the same basic concerns about fuel quality, water, ethanol and storage. Their fuel systems and safety conditions can be very different.
+
+A Mercury outboard may use a portable or built-in tank, primer bulb, fuel-demand valve, engine-mounted filters, low-pressure pump, high-pressure pump, VST, carburetor or injectors depending on model and year.
+
+A MerCruiser installation can add an enclosed engine compartment, anti-siphon valve, water-separating filter, low- and high-pressure circuits, Cool Fuel components and bilge-ventilation requirements. Fuel vapour in an enclosed compartment deserves immediate attention.
+
+Use the manual for the exact engine serial number and boat installation. A correct step for one model can be wrong or unsafe on another.
+
+## What We Check at HBW
+
+A proper fuel diagnosis is more than dumping the gasoline and replacing a filter.
+
+Depending on the engine and installation, our technicians may check:
+
+- fuel source, purchase date, ethanol label and storage history
+- fill cap, gasket, vent, tank condition and possible water entry
+- pickup tube, anti-siphon valve and tank restrictions
+- primer bulb, hoses, quick-connects and air leaks
+- water-separating filter contents and a controlled fuel sample
+- low-pressure and high-pressure fuel supply
+- carburetor, VST, Cool Fuel or injector condition as applicable
+- fuel pumps, regulators, screens and model-specific filtration
+- scan-tool faults and Guardian history where supported
+- battery voltage, ignition and compression so fuel is not blamed for another failure
+- propeller and boat load when the complaint appears only under load
+
+The model, year, serial number, fuel system and boat installation determine the correct test sequence.
+
+## Common mistakes
+
+The quickest way to make a fuel problem harder to diagnose is to change several things at once.
+
+Avoid these common mistakes:
+
+1. **Assuming every rough-running problem is bad gas.** Battery, spark, compression, sensors, cooling alarms and boat load can produce similar symptoms.
+2. **Assuming premium is ethanol-free.** Read the pump label.
+3. **Adding fresh fuel to dilute suspected contamination.** This creates more fuel to remove if water or phase separation is already present.
+4. **Pouring in random additives.** Treatment does not restore phase-separated fuel.
+5. **Replacing the filter repeatedly without finding the source.** The tank, vent, pickup, hoses or fuel itself may keep contaminating it.
+6. **Opening pressurized EFI components at the dock.** Fuel vapour, pressure and electrical ignition sources make this unsafe.
+7. **Continuing to run with a fuel smell or visible leak.** Stop and correct the hazard first.
+8. **Changing the propeller or tuning parts before confirming normal engine operation.** A motor that cannot make fuel pressure or ignition under load will not be fixed by setup changes.
+
+## When to bring it to HBW
+
+Submit a service request when:
+
+- the boat starts and stalls repeatedly
+- the engine bogs or will not reach normal RPM
+- you see water, debris or a separate layer in the fuel
+- a filter repeatedly collects water or contamination
+- the primer bulb will not firm up or collapses during operation
+- you smell fuel or find a leak
+- the boat sat with old unknown gasoline
+- E15 or another wrong fuel may have been added
+- basic safe checks do not separate fuel, battery and ignition symptoms
+
+HBW diagnoses and repairs Mercury outboards and MerCruiser systems. Include the engine serial number, exact symptoms, fuel source and date, storage history and the checks already completed.
+
+[Submit a service request at hbw.wiki/service](https://hbw.wiki/service).
+
+## Sources
+
+- [Mercury Marine Canada: Fuel Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
+- [Mercury Marine: Service and Support FAQs](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/faqs.html)
+- [Ontario: Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)
+- The operation and maintenance manual for the specific Mercury or MerCruiser serial number remains the source of truth for octane, storage and service procedures.
 
 ---
 
-## The Ethanol Problem in Plain English
+## Frequently Asked Questions
 
-Most Ontario pump gas, including the 87-octane "Regular" you've been putting in for years, is E10. That means 10% ethanol, 90% gasoline.
+**What are the signs of a fuel problem in a boat?**
 
-Ethanol absorbs moisture from the air. In a car, that's not a big deal: you burn through a full tank in a few days. The water never has a chance to settle.
+Common signs include hard starting after storage, starting and then stalling, rough idle, surging, bogging under load, failure to reach normal RPM, a primer bulb that will not firm up, repeated filter contamination, water in a sample or a sour varnish-like smell. These are clues, not proof. Battery, ignition, compression, sensor and load problems can look similar.
 
-In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake in the Kawarthas (Ontario). Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
+**Can I use E10 gasoline in a Mercury outboard or MerCruiser?**
 
-Here's what happens next: the water and ethanol eventually separate from the gasoline, a process called **phase separation**. That water-ethanol mixture sinks to the bottom of the tank, where the fuel pickup sits. So the first thing your motor draws when you try to start it is water, not fuel.
+Mercury says its current gasoline engines are designed to operate safely on fuel containing no more than 10 percent ethanol. Fresh, clean E10 within the engine and boat manufacturer requirements is acceptable. The bigger risks are water contamination, long storage and fuel-system compatibility. Mercury recommends ethanol-free gasoline when possible and says to avoid E15 and E85.
 
-The result: hard starting, rough running, corrosion inside the tank and fuel lines, gummed-up carburetors, and service bills you didn't budget for. It's one of the most common reasons boats come into the shop needing fuel system work after storage.
+**Can ethanol-free gasoline still go stale?**
 
----
+Yes. Ethanol-free gasoline avoids ethanol-related water absorption and phase separation, but gasoline can still oxidize, lose volatility and form gum or deposits as it ages. Buy fresh fuel, avoid storing more than you need, and follow the engine manual and treatment label before offseason or long-term storage.
 
-## Why Boats Are Way More Vulnerable Than Cars
+**Is HBW marine gas better because it is 89 octane?**
 
-Your car doesn't sit. Even if you take a two-week vacation, the tank cycles through in days once you're back. Ethanol's water-absorption issue is largely self-correcting in a car.
+Its main marine advantage is that it is ethanol-free, not simply that it is 89 octane. Harris Boat Works sells 89-octane ethanol-free gasoline at the marina pump. Your engine label and owner manual still set the minimum octane requirement.
 
-Boats are different. A fuel system that sits for two to six months with E10 in it is a fuel system in slow-motion damage mode:
+**Can a fuel additive fix phase-separated gasoline?**
 
-- **Fuel lines and primer bulbs** made from rubber compounds that were designed for straight gasoline can swell, crack, and get soft from ethanol exposure. A primer bulb that won't pump firm is often an early sign.
-- **Carburetors on older and smaller motors** are especially vulnerable. The varnish that E10 leaves behind when it degrades can clog jets and needles to the point where the carb needs to come apart and be cleaned before the engine will run properly.
-- **Gaskets and O-rings** inside carbs and fuel pumps can deteriorate, leading to air leaks, lean running conditions, and stumbling at wide-open throttle.
-- **Steel fuel tanks** can corrode from the inside when water sits at the bottom. Aluminum tanks are more resistant but not immune.
+No. Mercury says a phase-separated fuel load cannot be reliably remixed by pouring an additive into the tank. The water and depleted fuel must be removed, the source of the water corrected, and the system refilled with fresh, dry fuel. Stabilizer is a prevention and storage tool, not a repair.
 
-Our techs see this every spring and fall: motor ran fine when it was put away, now it won't start or bogs the moment you push the throttle past half. The [Mercury Outboard Won't Start troubleshooting guide](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting) covers many of these symptoms, a significant portion trace back to the fuel system.
+**Is premium gasoline always ethanol-free in Ontario?**
 
----
+No. Premium describes octane, not ethanol content. Ontario allows certain mid-grade, premium and marine gasoline volumes to be treated differently under its renewable-content rules, but that does not guarantee every 89, 91 or 93 pump is ethanol-free. Read the pump label or confirm the specification with the seller.
 
-## What Octane Your Mercury Actually Needs
+**Is E15 safe in Mercury or MerCruiser engines?**
 
-Octane measures detonation resistance, how well fuel resists igniting before the spark plug fires. Higher octane doesn't mean more energy, cleaner running, or more power. What it does is prevent knock in engines designed for higher compression. Put it in an engine that doesn't need it and you've spent extra money for nothing.
+No. Mercury says its current gasoline engines are designed for fuel containing a maximum of 10 percent ethanol and specifically says to avoid blends such as E15 and E85. If you suspect the wrong fuel was added, do not keep running the engine to burn it off.
 
-Here's the general picture for Mercury outboards:
+**Why can replacing the fuel filter fail to solve the problem?**
 
-### Most 4-Stroke Mercury Outboards (Under 250 HP)
-The vast majority of modern Mercury 4-stroke outboards are engineered for **87 octane (R+M)/2 minimum**, the standard pump Regular. Running 91 doesn't help them. Running 87 is the right call.
-
-### Verado and High-Output Pro XS V8 Models
-Mercury's Verado line and certain high-output Pro XS V8 engines are higher-compression motors that require a minimum of **89 or 91 octane**, check the engine sticker or your owner's manual for the specific requirement on your motor. Don't guess. The sticker is there for a reason.
-
-### The Rules in Short
-- Lower octane than required = detonation/knock = engine damage over time
-- Higher octane than required = wasted money, no benefit
-- When in doubt: read the sticker on your motor, not the marketing copy on the pump
-
-The [Mercury Outboard Fuel Efficiency Guide](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide) covers prop selection and RPM tuning in detail, the performance side of the equation this post doesn't.
+A contaminated filter may be the first evidence of a larger issue. Water in the tank, phase-separated fuel, deteriorated hose material, tank debris, a restricted pickup, an air leak or stale gasoline can contaminate the replacement again. The source has to be found and corrected.
 
 ---
 
-## The Ethanol-Free Advantage
+## Still Hard to Start, Stalling or Bogging?
 
-Ethanol-free gasoline, pure gasoline with no alcohol blended in, doesn't have the water-absorption problem. That changes the equation significantly for boats.
+If the safe checks in this guide do not resolve the problem, submit a service request. HBW can test the complete Mercury or MerCruiser fuel system and rule out battery, ignition, compression and load problems before replacing parts.
 
-Here's what ethanol-free does for you:
-
-**Storage life.** E10 fuel starts degrading in as little as 30 days, especially in heat. Ethanol-free gasoline holds up for six months or more without a stabilizer. For seasonal boaters, that window matters.
-
-**No phase separation.** Without ethanol, there's nothing to attract and absorb moisture. The water-separation risk disappears.
-
-**Carbureted motors run better on it.** Older motors and small kickers designed before ethanol blends were common run more reliably on ethanol-free. Many outboard manufacturers specifically recommend it.
-
-**Slightly better fuel economy.** Ethanol contains less energy per gallon than gasoline. At a 10% blend the effect is modest, but it's real.
-
-**Longer fuel system life.** Without ethanol attacking rubber compounds over time, lines, primer bulbs, and carb internals last longer.
-
-### HBW Sells Ethanol-Free Fuel On-Site
-
-You don't have to find a specialty station or drive out of your way. **Harris Boat Works carries ethanol-free fuel at the dock.** Fill up on-site, right before you launch or while you're tied up, no trailer required.
-
-Check fuel hours before you come in.
-
----
-
-## What About Premium Pump Gas (91/93)?
-
-This is where a lot of people make an incorrect assumption: **premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise.**
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-"Premium" and "ethanol-free" are not the same thing. Premium refers to octane rating only. If you're buying premium at a regular gas station, read the pump label. If it doesn't explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.
-
-Don't pay premium prices thinking you're protecting your fuel system. Read the label.
-
----
-
-## Fuel Additives and Stabilizers: When You Actually Need Them
-
-Stabilizers work by slowing the oxidation and degradation of fuel. Here's when to use them and how:
-
-**Any storage over 30 days, use a stabilizer.** This applies even with ethanol-free fuel, though the urgency is lower. With E10, 30 days is the real threshold before fuel quality starts dropping.
-
-**Proven products:** Sta-Bil 360 Marine, Mercury Quickare, and Mercury Quickleen are all well-regarded in the field. Sta-Bil 360 Marine is specifically formulated for marine applications and handles the ethanol/water issue directly. The others are good for general fuel system maintenance and carb cleaning.
-
-**How to add stabilizer correctly:** Add it to the tank, top off with fuel so it mixes in, then run the motor for 10-15 minutes. That circulates the treated fuel all the way through the system, carb, fuel lines, the works. Shut down and store. If you skip the run step, the carb bowls still have untreated fuel sitting in them.
-
-**Don't overdose.** Follow label directions. More is not better.
-
-The [DIY Mercury Outboard Winterization Guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide) walks through the full storage prep sequence.
-
----
-
-## Mid-Season Fuel Hygiene Tips
-
-Fuel care isn't just a spring-and-fall task. A few habits during the season pay off:
-
-**Top off the tank before leaving the dock.** Less air space means less condensation surface area.
-
-**Use a fuel-water separating filter, and change it every season.** Last line of defense before water reaches your motor. Milky filter bowl = moisture problem.
-
-**Check your fuel lines every spring.** Ethanol-damaged lines feel soft or tacky. A line that looks fine on the outside can be breaking down from the inside.
-
-**If the boat sat with E10 through winter, don't just top up with fresh fuel.** Diluting old, phase-separated fuel doesn't fix the problem. Drain it, inspect the separator, and start fresh.
-
-The [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers this step by step.
-
----
-
-## Where to Fuel Up on Rice Lake, Ontario (in the Kawarthas)
-
-For Rice Lake boaters, **Harris Boat Works has on-water fuel access**, pull up to the dock, fill up, get back out. Ethanol-free available on-site. No need to trailer to a gas station.
-
-Check fuel hours before heading in.
-
----
-
-## Common Fuel-Related Symptoms HBW Techs See Every Season
-
-If your motor shows any of these, a fuel system issue is likely somewhere in the chain:
-
-- **Hard starting after storage**, especially if it ran fine when put away
-- **Engine bogs at wide-open throttle**, motor pulls fine off idle but falls flat at full throttle
-- **Primer bulb won't pump firm**, stays soft even after pumping; often a bulb or line issue from ethanol degradation
-- **Varnish in the carb bowl**, yellow or orange residue; degraded fuel left behind
-- **Water in the fuel-water separator**, phase-separated or condensation moisture made it through
-- **Fuel gauge reading inconsistently**, can indicate a sender issue or internal tank corrosion affecting the float
-
-Some are straightforward fixes. Some need a full carb clean or fuel system inspection. Catching them early is cheaper than a mid-season breakdown on the water.
-
----
-
-## The Yearly Fuel Calendar
-
-A simple seasonal checklist that covers the full year:
-
-### Spring (May)
-- Inspect the fuel-water separator, replace the filter element if it's been more than one season
-- If you stored with E10 and didn't stabilize, drain the tank and start fresh with ethanol-free
-- If you stored properly with stabilizer and ethanol-free, top off with fresh ethanol-free
-- Run the motor briefly at the dock before launching; confirm fuel flow and no hesitation
-
-### Summer (June-August)
-- Top off the tank at the end of each trip or before multi-day sits
-- Inspect the primer bulb and fuel lines periodically, ethanol damage shows up gradually
-- Check the fuel-water separator bowl for water if you're running E10
-
-### Fall (September-October)
-- Add stabilizer to the tank, top off, run the motor 10-15 minutes to circulate treated fuel through the system
-- If storing indoors, a full tank reduces condensation; if storing outdoors, check manufacturer guidance
-- Note the condition of lines and primer bulb, order replacements now if anything looks suspect, not in May when everyone else is calling at the same time
-
-### Winter (November-April)
-- No fuel system action needed, the storage prep does its job
-- If you didn't stabilize properly, note it now so you can address it in spring before everyone else calls at the same time
-
----
-
-## Quick Decision Card
-
-| Situation | Fuel to Use |
-|---|---|
-| Most Mercury 4-stroke outboards (under 250 HP) | Ethanol-free 87 octane |
-| Verado / high-output Pro XS V8 | Ethanol-free 91 octane (check engine sticker) |
-| Storing more than 30 days (any fuel) | Add marine fuel stabilizer |
-| Unsure of your motor's octane requirement | Check the engine sticker or owner's manual, it's there |
-| Buying "premium" at a regular pump | Read the label, premium ≠ ethanol-free in Ontario |
-
----
-
-## Need Ethanol-Free Fuel or a Fuel System Service?
-
-We have ethanol-free at the dock and we diagnose fuel system issues every day.
-
-**For service requests** (fuel system inspection, carb cleaning, fuel line replacement, seasonal commissioning): [hbw.wiki/service](https://hbw.wiki/service)
-
-**Phone (fuel hours):** 905-342-2153
-
-Harris Boat Works. Gores Landing, ON, est. 1947
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
+[Submit a service request at hbw.wiki/service](https://hbw.wiki/service).
 `,
   },
   {

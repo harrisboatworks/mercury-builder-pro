@@ -19,6 +19,7 @@ const SUPPRESS_MARKERS: RegExp[] = [
   /^##\s+Ready to\s+/im,
   /^##\s+Ready for\s+/im,
   /^##\s+When to Call/im,
+  /^##\s+When to bring it to HBW/im,
   /^##\s+When to Use the Estimator/im,
 ];
 
