@@ -91,7 +91,7 @@ HBW completes the authorized fall work before the December closure. From Decembe
 
 ### 2. The "boat we know" stays with the people who know it
 
-When a GTA customer's boat lives at HBW year-round (slip in summer, storage in winter), our techs know that specific boat. They know the modifications, the prop history, the weak points, the previous service. **A boat that bounces between marinas annually loses that continuity.**
+When a GTA customer boats from HBW during the season and returns for outdoor winter storage, our techs know that specific boat. They know the modifications, the prop history, the weak points, the previous service. **A boat that bounces between marinas annually loses that continuity.**
 
 ### 3. Spring commissioning is planned before pickup
 

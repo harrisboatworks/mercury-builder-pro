@@ -3327,20 +3327,20 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "How much does a Mercury repower cost in the GTA?",
-        "a": "Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds."
+        "q": "How much does a Mercury repower cost for a GTA boater?",
+        "a": "It depends on the exact motor and boat-specific rigging. Use the current Mercury pricing reference and quote builder, then let HBW confirm the final written scope."
       },
       {
-        "q": "How long does a repower take at HBW?",
-        "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives."
+        "q": "How long is the boat at HBW?",
+        "a": "A clean repower is normally in the shop for 2 to 5 days once the motor and required rigging are available. Hidden conditions, complex systems, twins, or parts delays can extend the work."
       },
       {
-        "q": "Can I trailer my boat from Toronto to HBW myself?",
-        "a": "Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site."
+        "q": "Does HBW arrange transport from Toronto or the GTA?",
+        "a": "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
       },
       {
-        "q": "Do you arrange boat transport from the GTA?",
-        "a": "We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer."
+        "q": "Can I plan a repower while HBW is closed?",
+        "a": "Yes. Remote planning and approvals can continue. The physical marina is closed December 1 through April 1, with no on-site work or customer access."
       }
     ]
   },
@@ -3972,20 +3972,20 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "Do you offer indoor storage?",
-        "a": "No. Outdoor only on a fenced, monitored lot with shrinkwrap. If you need indoor, we'll point you to other shops without making a big deal of it."
+        "q": "Does HBW offer indoor or heated boat storage?",
+        "a": "No. HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage."
       },
       {
-        "q": "What's the size limit?",
-        "a": "30 feet. We're not taking anything bigger right now."
+        "q": "Does HBW pick up or deliver boats for storage?",
+        "a": "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
       },
       {
-        "q": "Do I still need winterization if my boat is shrinkwrapped?",
-        "a": "Yes. Shrinkwrap and winterization are two different jobs. The boat under the wrap still has water in it that needs to be dealt with."
+        "q": "Can I access my stored boat during winter?",
+        "a": "No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period."
       },
       {
-        "q": "When should I book winter storage?",
-        "a": "August or September is ideal. October works. The last week before freeze-up is when everyone calls at once and we start saying no."
+        "q": "Is winterization included with shrinkwrap?",
+        "a": "Not automatically. Storage, shrinkwrap, winterization, and spring commissioning are separate scopes. The written quote and work order state what is included."
       }
     ]
   },
@@ -4741,20 +4741,20 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "Do you offer indoor and outdoor boat storage on Rice Lake?",
-        "a": "Outdoor only. Our storage lot in Gores Landing is fenced, monitored, and staffed daily through the off-season. Boats are blocked, shrinkwrapped, and stored on our property from fall pickup through spring commissioning. We don't operate indoor heated storage. If your boat needs climate-controlled indoor space, we'll po…"
+        "q": "Does HBW offer indoor or summer boat storage?",
+        "a": "No. HBW offers outdoor winter storage with shrinkwrap only. We do not offer indoor, heated, climate-controlled, summer, or year-round storage."
       },
       {
-        "q": "What's included in your winterization package?",
-        "a": "Our standard winterization covers the engine and systems that can't survive an Ontario freeze-thaw cycle: fuel stabilization, fogging oil in the cylinders, draining the cooling system, gearcase lube inspection or change, battery removal or trickle-charge setup, and antifreeze in any water systems (livewells, freshwate…"
+        "q": "Does HBW pick up boats from Kawartha lakes?",
+        "a": "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
       },
       {
-        "q": "How much does boat storage cost in the Kawartha Lakes?",
-        "a": "Pricing depends on boat length, whether you bundle winterization and spring commissioning, and what cover option you choose. As a general planning range for the Kawartha Lakes area: outdoor storage with shrinkwrap typically runs from several hundred dollars for a small fishing boat up to roughly a thousand dollars or…"
+        "q": "Can I access my boat during winter?",
+        "a": "No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period."
       },
       {
-        "q": "Can I store my boat at HBW if I keep it on Pigeon / Sturgeon / Buckhorn?",
-        "a": "Yes. About half our storage customers don't keep their boats on Rice Lake during the season. They trailer from Pigeon Lake (about 45 min by road), Sturgeon Lake (20–25 min), Buckhorn Lake (30–35 min), or Stoney Lake (25–30 min) for winterization and storage because it simplifies spring launch, the boat is already wint…"
+        "q": "How much does Kawartha boat storage cost?",
+        "a": "Request a current written quote. Pricing depends on the boat, trailer, cover, winterization, installed systems, approved work, spring scope, HST, and stated exclusions. This guide does not publish an unsupported range."
       }
     ]
   },
@@ -5273,7 +5273,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I store my boat at HBW year-round if I am based in Lindsay?",
-        "a": "Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years."
+        "a": "No. HBW offers outdoor winter storage with shrinkwrap only. Customers arrange their own fall drop-off and spring pickup; HBW does not offer summer or year-round storage."
       }
     ]
   },

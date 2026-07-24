@@ -73,7 +73,7 @@ For Trent River and Lake Ontario cruisers with MerCruiser sterndrives, we handle
 Premier-tier parts depth, warranty authorization, SmartCraft diagnostics.
 
 **Winter storage**
-Outdoor with shrinkwrap. For Northumberland boaters who already boat on Rice Lake, [year-round storage](/blog/boat-storage-kawartha-lakes) means the spring launch is already at the lake.
+Outdoor winter storage with shrinkwrap only. For Northumberland boaters who already boat on Rice Lake, [outdoor winter storage](/blog/boat-storage-kawartha-lakes) keeps fall drop-off and spring pickup close to their normal boating area. Customers handle both trips.
 
 **Legend Boats**
 Aluminum fishing boats and pontoons. All Mercury-rigged. Worth a conversation if you're in the new-boat market.
