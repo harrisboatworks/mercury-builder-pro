@@ -23,6 +23,26 @@ describe('FaultCodeFinder', () => {
     expect(matches[0].meaning).toMatch(/system voltage lower/i);
   });
 
+  it('disambiguates opposite conditions in an exact grouped-code match', () => {
+    const above = filterFaultCodeRows(rows, '1012-24');
+    const below = filterFaultCodeRows(rows, '1012-25');
+
+    expect(above).toHaveLength(1);
+    expect(above[0]).toMatchObject({
+      codeLabel: '1012-24',
+      groupedCodeLabel: '1012-24 / 1012-25',
+    });
+    expect(above[0].meaning).toMatch(/above valid limit/i);
+    expect(above[0].meaning).not.toMatch(/below valid limit/i);
+    expect(below[0].meaning).toMatch(/below valid limit/i);
+    expect(below[0].meaning).not.toMatch(/above valid limit/i);
+  });
+
+  it('does not treat a bare four-digit UFC stem as a valid result', () => {
+    expect(filterFaultCodeRows(rows, '1012')).toEqual([]);
+    expect(filterFaultCodeRows(rows, '3043')).toEqual([]);
+  });
+
   it('expands legacy ranges so a single displayed ID is searchable', () => {
     const matches = filterFaultCodeRows(rows, '23');
 

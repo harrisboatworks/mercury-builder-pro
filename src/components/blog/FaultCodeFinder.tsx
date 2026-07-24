@@ -1,6 +1,10 @@
 import { useId, useMemo, useState } from 'react';
-import { Search } from 'lucide-react';
-import { filterFaultCodeRows, parseFaultCodeRows } from '@/lib/faultCodeLookup';
+import { AlertTriangle, Search } from 'lucide-react';
+import {
+  filterFaultCodeRows,
+  isIncompleteModernCode,
+  parseFaultCodeRows,
+} from '@/lib/faultCodeLookup';
 
 interface FaultCodeFinderProps {
   content: string;
@@ -13,6 +17,7 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
   const matches = useMemo(() => filterFaultCodeRows(rows, query), [query, rows]);
   const visibleMatches = matches.slice(0, 12);
   const hasQuery = query.trim().length > 0;
+  const hasIncompleteModernCode = isIncompleteModernCode(query);
 
   return (
     <section
@@ -36,6 +41,22 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
             component, such as “water in fuel” or “low voltage.”
           </p>
         </div>
+      </div>
+
+      <div
+        className="keep-flex mb-5 flex flex-row items-start gap-3 rounded-xl border border-repower-mercury-red/20 bg-repower-mercury-red/5 p-4 text-sm leading-relaxed text-repower-navy-900"
+        role="note"
+      >
+        <AlertTriangle
+          className="mt-0.5 h-5 w-5 shrink-0 text-repower-mercury-red"
+          aria-hidden="true"
+        />
+        <p>
+          <strong>Protect the engine and boat first.</strong> For low oil pressure,
+          oil-pump failure, active overheat, fuel leakage or overflow, loss of steering,
+          or a gear that does not match the control command, skip this lookup and follow
+          the display and owner-manual stop instructions.
+        </p>
       </div>
 
       <label htmlFor={inputId} className="sr-only">
@@ -76,7 +97,15 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
       )}
 
       <div className="mt-5" aria-live="polite">
-        {hasQuery && matches.length === 0 && (
+        {hasQuery && hasIncompleteModernCode && (
+          <div className="rounded-xl bg-repower-paper p-4 text-sm leading-relaxed text-repower-navy-900/75">
+            That is only the first half of a modern UFC. Enter the complete pair shown on
+            the display—including the suffix after the dash, such as <strong>1012-24</strong>.
+            Opposite suffixes can identify opposite conditions.
+          </div>
+        )}
+
+        {hasQuery && !hasIncompleteModernCode && matches.length === 0 && (
           <div className="rounded-xl bg-repower-paper p-4 text-sm leading-relaxed text-repower-navy-900/75">
             No match appears in these two scoped tables. Keep the photo and complete code,
             then use the serial-number-specific manual or an authorized Mercury dealer.
@@ -113,6 +142,11 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
                   <p className="mt-2 text-sm leading-relaxed text-repower-navy-900">
                     {row.meaning}
                   </p>
+                  {row.groupedCodeLabel && (
+                    <p className="mt-1 text-xs leading-relaxed text-repower-navy-900/60">
+                      Exact match from grouped table row: {row.groupedCodeLabel}
+                    </p>
+                  )}
                   <p className="mt-1 text-xs leading-relaxed text-repower-navy-900/60">
                     {row.reference}
                   </p>
