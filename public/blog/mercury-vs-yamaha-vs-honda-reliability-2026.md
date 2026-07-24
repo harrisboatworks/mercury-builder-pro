@@ -63,7 +63,7 @@ This is a conflict of interest. We are declaring it upfront, not burying it, bec
 
 All three brands make mechanically reliable four-stroke outboards in 2026. We are not aware of a meaningful defect rate in any of the three that should rule it out for Ontario freshwater use.
 
-If you bought a properly maintained Mercury, Yamaha, or Honda today and ran it 50 to 150 hours a season, you should get 15 to 25 years of useful life from it. The motor that fails early is almost always the motor that missed oil changes, skipped impeller replacements, and went into winter without proper fogging and fuel stabilizer. Brand matters less than habits.
+No brand has an honest universal service-life promise. Engine family, installation, load, cooling water, corrosion exposure, storage, and maintenance history all matter. Follow the exact manual, respond early to warnings, and use the model-specific storage procedure. Brand matters less than condition and care.
 
 ## The factor that actually moves the reliability answer: dealer network
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md
-last_updated: 2026-07-13
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer"
 description: "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a..."
 category: "Mercury Outboards"
 date_published: 2026-07-13
-date_modified: 2026-07-13
+date_modified: 2026-07-23
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-13  
-**Last updated:** 2026-07-13  
+**Last updated:** 2026-07-23  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 
@@ -126,7 +126,7 @@ If you're thinking about a new Mercury rather than servicing your current one: [
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury vs Yamaha vs Honda: Reliability Compared (2026)](/blog/mercury-vs-yamaha-vs-honda-reliability-2026)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Boat Battery Guide for Ontario Boaters](/blog/mercury-boat-battery-guide-ontario)
 - [Breaking In a New Mercury Motor: The Complete Guide](/blog/breaking-in-new-mercury-motor-guide)
 

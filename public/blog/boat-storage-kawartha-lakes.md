@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-05-15
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Storage Rice Lake Kawarthas"
 description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization."
 category: "Service & Maintenance"
 date_published: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-07-23
 keywords: ["boat storage Kawartha Lakes","winter boat storage Rice Lake","boat storage Gores Landing","shrinkwrap storage Kawarthas","boat winterization Ontario","spring commissioning Rice Lake","Harris Boat Works storage","outdoor boat storage Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
-**Last updated:** 2026-05-15  
+**Last updated:** 2026-07-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes
 
@@ -65,7 +65,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 **Storage + Shrinkwrap + Winterization**
 - Everything in the tier above, plus:
 - Fuel system stabilization
-- Engine fogging and cooling system drain
+- Model-specific internal protection and drainage procedure
 - Gearcase lube inspection/change
 - Battery removal or trickle-charge setup
 - Water system drain and antifreeze protection
@@ -212,7 +212,7 @@ Outdoor only. Our storage lot in Gores Landing is fenced, monitored, and staffed
 
 ### What's included in your winterization package?
 
-Our standard winterization covers the engine and systems that can't survive an Ontario freeze-thaw cycle: fuel stabilization, fogging oil in the cylinders, draining the cooling system, gearcase lube inspection or change, battery removal or trickle-charge setup, and antifreeze in any water systems (livewells, freshwater, head). The motor is trimmed up to drain, and the boat is prepped for its winter cover. We bundle this with storage and shrinkwrap so you don't have to coordinate three different vendors. Full details are in our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
+Our winterization scope follows the exact engine and onboard-system instructions: fuel preparation, model-specific internal protection, drainage and storage position, gearcase inspection or service, a battery plan, and protection for livewells, freshwater, or head systems where fitted. We bundle this with outdoor storage and shrinkwrap. Full details are in our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
 
 ### How much does boat storage cost in the Kawartha Lakes?
 
@@ -240,7 +240,7 @@ Yes. We store and winterize all makes of outboard-powered boats. Our service sho
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage

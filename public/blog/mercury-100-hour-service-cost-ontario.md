@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario.md
-last_updated: 2026-07-02
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Sh
 description: "Real Ontario numbers for a Mercury 100-hour or annual service, from 4,160 work orders: flat-rate labour by HP class, median parts, and what's included."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-07-02
+date_modified: 2026-07-23
 keywords: ["mercury 100 hour service cost","outboard annual service cost ontario","mercury service cost","100 hour service what's included","boat motor service cost ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-02  
+**Last updated:** 2026-07-23  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario
 
@@ -42,7 +42,7 @@ That's not a dodge; it's the efficient way to buy it. One appointment, one drain
 
 ## Who this is for
 
-You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want a real number before you book anything. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [20-100-300 maintenance guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want a real number before you book anything. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ---
 
@@ -56,7 +56,7 @@ Mercury's 100-hour and annual service list for a FourStroke, in plain terms:
 - Fuel system check: filters, lines, primer bulb, water-separating filter where fitted
 - Grease points, linkages, and corrosion check
 - Anodes checked, prop pulled and shaft greased
-- In fall, add the winterizing steps: fuel stabilizer run through, cylinder fogging, and cooling system drained
+- In fall, add the exact engine's fuel, internal-protection, battery, drainage, and storage-position steps
 
 The bundling logic is simple: the annual service and winterization share most of the same labour. Doing them together is one bill instead of two.
 
@@ -70,7 +70,7 @@ https://www.youtube.com/watch?v=ABeIIfXeB0Q
 
 ## Real Numbers From Our Counter
 
-These are medians from last season's completed work orders at our shop (2024-25 season, before HST; as of July 2026). Labour is a flat rate by motor class; parts are what the median job actually consumed (oil, filters, gear lube, plugs as needed, fogging oil, stabilizer):
+These are medians from last season's completed work orders at our shop (2024-25 season, before HST; as of July 2026). Labour is a flat rate by motor class; parts are what the median job actually consumed (oil, filters, gear lube, plugs and storage supplies as the model and condition required):
 
 | Motor class (FourStroke) | Flat-rate labour | Median parts | Typical all-in |
 |---|---|---|---|
@@ -90,10 +90,10 @@ What moves the number up: skipped previous services, a water-separating filter t
 
 ## Why "Cheap" 100-Hour Services Usually Aren't
 
-A $150 quote for a "full service" means something got skipped, and it's usually the gearcase oil or the fogging. Those are exactly the two items that catch expensive problems early:
+A very low "full service" quote may simply describe a smaller scope. Compare the line items against the exact manual, especially the gearcase inspection and model-specific storage procedure:
 
 - Gearcase oil that comes out milky means water is getting past a seal. Caught at service time, it's a seal job. Missed for a season, it can be a gearcase.
-- Skipped fogging on a stored motor invites corrosion in the cylinders over five months of Ontario winter.
+- Skipping the internal-protection procedure specified for the engine can leave storage-related corrosion or fuel-system problems.
 
 The labour on our invoices is the real work: 1 to 1.7 hours per motor depending on class. Anyone quoting half that time is doing half the list. Ask any shop for the itemized list before you compare prices; ours is the section above.
 
@@ -107,7 +107,7 @@ Plenty of owners handle oil and plugs themselves, and our [DIY winterization gui
 - **The shop buys you** the inspection layer: a tech who's seen hundreds of the same motor, the milky-oil catch, the recommendations line on your file, and a record that helps resale ("full dealer service history" is worth real money when you sell).
 - **The hybrid** many of our customers run: DIY the mid-season oil change, shop the annual fall service. The motor gets professional eyes once a year and you still save.
 
-What we'd skip: DIYing the gearcase and fogging steps if you've never done them. Those are the two where a small mistake gets expensive.
+What we'd skip: DIYing the gearcase or internal-protection procedure if you cannot follow the exact manual. Those are two areas where a small mistake gets expensive.
 
 ---
 
@@ -132,7 +132,7 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
-- [Mercury Maintenance Intervals: The 20-100-300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
 - [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
@@ -152,7 +152,7 @@ At our Rice Lake shop, last season's medians ran about $250 all-in for small til
 
 ### Is the 100-hour service the same as winterization?
 
-They overlap heavily, which is why Ontario shops bundle them. The annual service covers oil, gearcase oil, plugs, fuel system, and inspection; winterization adds stabilizer, fogging, and cooling-system draining. Doing both in one fall appointment shares the labour instead of paying it twice.
+No. They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. The scope varies by engine.
 
 ### My motor only ran 40 hours this year. Do I still need the service?
 
@@ -160,7 +160,7 @@ Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because
 
 ### What parts get replaced at a typical annual service?
 
-Engine oil and filter, gearcase oil, fuel stabilizer, and fogging oil on every job; spark plugs and fuel filters as condition and interval require. Median parts spend at our counter last season ranged from about $101 (small motors) to about $204 (150 HP class), before HST.
+There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included. HBW scopes the job from the serial number.
 
 ### Can I skip a year to save money?
 

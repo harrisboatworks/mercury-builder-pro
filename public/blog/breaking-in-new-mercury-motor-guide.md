@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-07-23
+**Last updated:** 2026-07-23  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
@@ -225,7 +225,7 @@ You don't need to add fuel stabilizer during normal break-in use. Stabilizer is 
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
@@ -245,3 +245,4 @@ You don't need to add fuel stabilizer during normal break-in use. Stabilizer is 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

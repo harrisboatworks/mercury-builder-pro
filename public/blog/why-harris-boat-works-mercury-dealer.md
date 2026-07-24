@@ -30,7 +30,7 @@ language: en-CA
 
 > **Quick answer:** HBW has been on Rice Lake in the Kawarthas, Ontario since 1947 and a Mercury dealer since 1965. Three generations of the Harris family, a current Mercury Marine Premier Dealer, and the only Mercury dealer on the lake. We post installed pricing online, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
-Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the highest tier Mercury awards, which gives our customers factory-direct support, priority parts access, and a shop built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
+Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the current top tier in Mercury's dealer program, and our shop is built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
 
 ## Quick recommendation
 If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
@@ -49,12 +49,14 @@ That is not a sales line. It's just how it worked out.
 ### 2. Mercury Premier dealer status
 Mercury rates dealers in tiers based on volume, service quality, customer satisfaction, and operational standards. Premier is the top tier, and it's not decorative.
 
-What Premier status gives our customers:
-- Priority parts allocation during high-demand periods
-- Earlier access to new product launches
-- Factory-direct technical support for complex service issues
-- Mercury-certified technician training at the highest levels
-- Faster warranty claim processing
+What our Premier status and Mercury-only focus mean in practice:
+- Mercury-trained technicians
+- Mercury-specific diagnostic equipment and tooling
+- Deep Mercury and MerCruiser parts inventory
+- Access to Mercury technical resources for complex service issues
+- Current product and service training
+
+Premier status does not change a customer's factory warranty rights or guarantee faster claim approval. Mercury's warranty terms and authorization process apply across its authorized Canadian dealer network.
 
 Our Mercury-only focus is part of why we maintain Premier status.
 
@@ -145,7 +147,7 @@ Since 1965. The marina itself was founded in 1947, and the Harris family has own
 
 ### What is a Mercury Premier dealer?
 
-Premier is the highest tier in Mercury's dealer rating system, awarded on volume, service quality, customer satisfaction, and operational standards. It gives our customers priority parts access, factory-direct technical support, and faster warranty processing.
+Premier is the current top tier in Mercury's dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, deep parts inventory, and access to Mercury technical resources. It does not change a customer's factory warranty rights or guarantee faster claim approval.
 
 ### Why does Harris Boat Works only sell Mercury?
 

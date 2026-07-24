@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Shrinkwrap vs Indoor Boat Storage Ontario"
 description: "Shrinkwrap vs indoor boat storage in Ontario: honest comparison on cost, protection, and what happens without winterization."
 category: "Service & Maintenance"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-23
 keywords: ["shrinkwrap vs indoor boat storage Ontario","winter boat storage Rice Lake","boat shrinkwrap cost Ontario 2026","heated indoor boat storage Ontario","what happens if you don't winterize"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-07-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 
@@ -57,7 +57,7 @@ rightVariant: recommended
 whenInDoubt: [Most Rice Lake customers shrinkwrap outside](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
 ::
 
-Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
+Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
 
 Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
 
@@ -79,7 +79,7 @@ What happens [if you skip winterization](/blog/boat-winterization-cost-ontario-2
 |---------|-------------|
 | **Cracked engine block** (water freezes inside cooling passages) | $5,000 - $10,000+ engine replacement |
 | **Cracked lower unit / sterndrive** (water freezes in the gearcase) | $1,500 - $4,500 |
-| **Corroded cylinder walls** (no fogging oil = surface rust over winter) | Loss of compression in spring, rebuild work |
+| **Internal corrosion or fuel-system storage damage** (wrong procedure for the engine) | Hard starting, poor running, or related repair work |
 | **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 - $800 |
 | **Dead battery** (left uncharged in freezing temps) | $200 - $500 replacement |
 
@@ -212,11 +212,11 @@ For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $5
 Our standard winter storage package includes:
 
 - Full shrinkwrap with support frame, 2-4 vents, and weather strapping
-- [Mercury-trained winterization on the engine](/blog/diy-mercury-outboard-winterization-guide): fuel stabilization, fogging, gearcase drain and refill
-- Cooling system drain (freeze protection)
+- [Mercury-trained winterization on the engine](/blog/diy-mercury-outboard-winterization-guide): model-specific fuel preparation, internal protection, gearcase work, battery plan, and storage position
+- Model-specific flushing, drainage, and storage position
 - Steering and throttle cable lubrication
 - Anode inspection
-- Battery removed and brought indoors on a trickle charger through winter
+- Battery disconnected and maintained according to the battery maker's instructions; it may remain in the boat
 - Optional: [spring commissioning add-on](/blog/spring-commissioning-cost-ontario) (we pull it off, prep it, water-test, deliver to your slip)
 
 **Pricing:** $33-$35/ft shrinkwrap + winterization fees ($300-$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000-$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200-$1,400.
@@ -278,7 +278,7 @@ A tarp is better than no cover. It's not better than shrinkwrap. Tarps flap in w
 
 ### What's included in HBW winterization specifically?
 
-Fuel stabilization with marine-grade additive, full fogging of the cylinders, gearcase oil drain/refill (with inspection for water/metal), cooling system fully drained, steering and throttle cables lubed, anode condition logged, battery removed and stored on tender. We document everything.
+The exact scope follows the engine manual: fuel preparation, model-specific internal protection, gearcase inspection or service, drainage and storage position, lubrication, anode inspection, and a battery plan. The battery may remain in the boat if disconnected and maintained. We document the work completed.
 
 ### Do you store sterndrive boats?
 

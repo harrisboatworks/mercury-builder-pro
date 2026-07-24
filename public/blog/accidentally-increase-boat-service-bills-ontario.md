@@ -86,9 +86,9 @@ The most damaging single-event pattern.
 
 A properly-winterized Mercury outboard can sit through an Ontario winter at zero damage. A non-winterized motor can crack a block, ruin a powerhead, or freeze-split a cooling jacket in a single overnight cold snap. The repair is often more than the motor is worth.
 
-What we wish more owners would do: have a Mercury Premier dealer do the winterization, or follow Mercury's published procedure carefully if doing it themselves. Confirm fogging oil is applied, the lower unit oil is changed, and any water has been drained from the powerhead cooling system.
+What we wish more owners would do: follow the storage procedure for the exact engine or have an authorized Mercury dealer do it. Confirm the fuel, internal-protection, gearcase, battery, and storage-position steps were completed and documented.
 
-What we see often: owners "did it themselves" but skipped a step. The most common skip is not running the engine long enough to confirm fogging oil was actually pulled through. Second most common: leaving the lower unit slightly tilted up so the impeller compresses against the housing all winter.
+What we see often: owners use a generic checklist for the wrong engine or discover water in the gearcase and refill it without addressing the seal. The exact serial-number manual prevents those mismatches.
 
 **The fix:** winterization is one of the few things genuinely worth paying a dealer to do, every year. The cost ($350-$550 for a typical Mercury) is a small fraction of what a freeze-damaged powerhead costs to replace. Service intake at hbw.wiki/service.
 
@@ -116,7 +116,7 @@ The most predictable pattern.
 
 The water pump impeller is the rubber component that pumps cooling water through the motor. Mercury specifies replacement every 3 years or 300 hours. Most Ontario freshwater impellers last 4-5 years in practice. Past that, the failure rate climbs sharply, and an impeller failure means the motor overheats fast and can seize.
 
-What we wish more owners would do: replace the impeller on Mercury's schedule, or at minimum check it visually every 2-3 years. $200-$400 done as routine maintenance.
+What we wish more owners would do: follow the water-pump interval in the exact engine manual and act sooner when cooling flow weakens, an overheat warning appears, or the motor has run in debris or sand.
 
 What we see often: owners stretch impellers to 6-7 years, the impeller fails on a Saturday in July, the owner doesn't notice the telltale water flow drop, and we're rebuilding a powerhead Monday.
 
@@ -183,7 +183,7 @@ Tied between ignored alarms (most expensive when it happens) and skipped impelle
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario

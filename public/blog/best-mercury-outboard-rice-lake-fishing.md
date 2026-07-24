@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-07-09
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Rice Lake Fishing 2026"
 description: "A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-07-09
+date_modified: 2026-07-23
 keywords: ["rice lake fishing guide","rice lake walleye","rice lake fishing regulations 2026","rice lake muskie","mercury 9.9 prokicker walleye","best mercury outboard rice lake fishing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-07-23  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
@@ -195,7 +195,7 @@ Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with 
 
 Bass and muskie close December 15. Walleye closed November 15. Crappie, perch, sunfish, and pike stay open all year.
 
-Now is the time to winterize your Mercury properly. FourStroke and ProKicker motors have specific fogging and fuel-stabilization procedures. HBW handles winterization for any Mercury or MerCruiser. Book before the December rush. It always comes.
+Now is the time to prepare your Mercury for storage. FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. HBW handles winterization for Mercury and MerCruiser. Book before the December 1 closure.
 
 ---
 

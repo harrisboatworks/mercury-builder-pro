@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-07-17
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "DIY Mercury Outboard Winterization"
-description: "Winterize your Mercury outboard yourself: stabilize fuel, fog engine, drain gearcase, refill lube, clear cooling system. Ontario dealer's complete DIY."
+description: "DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-07-17
+date_modified: 2026-07-23
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,11 +20,11 @@ language: en-CA
 
 # DIY Mercury Outboard Winterization
 
-> Winterize your Mercury outboard yourself: stabilize fuel, fog engine, drain gearcase, refill lube, clear cooling system. Ontario dealer's complete DIY.
+> DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop.
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last updated:** 2026-07-17  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -32,7 +32,7 @@ language: en-CA
 
 ## Quick Answer
 
-You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
+You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -45,41 +45,35 @@ https://www.youtube.com/watch?v=YGuQjF6vuao
 ---
 
 ::diagnostic-flow
-heading: Winterizing your Mercury? Five steps in this order
-eyebrow: Fall checklist
-subhead: Spring no-starts usually trace back to one of these five steps being skipped in fall.
-step1Label: Fuel
-step1Question: Is the tank near full with treated fuel (marine stabilizer added)?
-step1Tip: Top the tank to 95 percent with stabilizer mixed in. Empty space invites condensation, which is the most common cause of spring no-starts.
-step2Label: Fogging oil
-step2Question: Have you fogged the cylinders through the spark plug holes or air intake?
-step2Tip: Mercury recommends running fogging oil through the intake while the motor runs, then a shot directly into each cylinder. Skipping this is the #1 cause of corroded cylinder walls.
-step3Label: Lower unit oil
-step3Question: Has the lower unit oil been changed and inspected for water?
-step3Tip: Milky oil means a seal failure. Better to find it in fall when you have time to fix it, not in spring at the launch ramp.
-step4Label: Water flush and drain
-step4Question: Have you flushed with fresh water and let the motor drain fully tilted down?
-step4Tip: Run the motor on muffs with fresh water for 5 to 10 minutes, then tilt straight down to drain. Leftover water in the block freezes and cracks aluminum.
-step5Label: Battery
-step5Question: Is the battery off the boat or on a maintainer for the winter?
-step5Tip: A frozen, discharged battery is a $200 spring purchase. A trickle charger or full pull-out is $50 of prevention.
-escalationLabel: Want us to handle it?
-escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at hbw.wiki/service.
-::
-
-::pull-quote
-quote: I skipped winterization once. Just one year. The block cracked and the repair quote came back at **$7,800**. The $400 winterization service every fall is the cheapest insurance I buy on this boat.
-attribution: Ron H.
-source: HBW Customer, Peterborough 2026
+heading: Winterizing your Mercury? Start with the exact manual
+eyebrow: Safe fall checklist
+subhead: The order and supplies change by engine. Use the serial-number manual before opening the cowl or draining a fluid.
+step1Label: Identify
+step1Question: Do you have the operation and maintenance manual for the exact engine?
+step1Tip: Confirm the serial number, engine family, year, and storage section. A generic FourStroke checklist is not enough.
+step2Label: Fuel
+step2Question: Does the fuel meet Mercury's specification, and have you followed the model's storage guidance?
+step2Tip: Use fresh fuel, the stabilizer concentration Mercury specifies when applicable, and the run time stated in the manual.
+step3Label: Gearcase
+step3Question: Is the lubricant due, and did it show water or metal?
+step3Tip: Milky lubricant, metal, damaged seals, or uncertain fill procedure are reasons to stop and request service.
+step4Label: Engine protection
+step4Question: Are you following the exact internal-protection and flushing method?
+step4Tip: Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
+step5Label: Battery and position
+step5Question: Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?
+step5Tip: The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
+escalationLabel: Need the model-specific scope?
+escalationBody: Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
 ::
 
 ---
 
-![Six-step winterization guide for Mercury outboards: stabilize fuel, flush cooling, fog engine, drain gearcase, store battery, cover. Critical steps highlighted.](/lovable-uploads/inline/diy-winterization-steps.svg)\n\n## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
+## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
-Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
+Ontario's boating season has a hard stop. Fuel condition, water-contaminated gear lubricant, battery state, corrosion protection, and the motor's drainage position all matter during a long freeze.
 
-Winterization isn't optional maintenance. It's the difference between a motor that starts in May and one that needs a powerhead, or gets scrapped.
+Winterization is storage preparation, not one universal fogging recipe. The exact Mercury procedure depends on the engine family and model year.
 
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
@@ -111,17 +105,16 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 Pick these up at a Canadian Tire, marine store, or from your dealer's parts counter before the last day on the water:
 
-- Mercury Quickstor or equivalent fuel stabilizer
-- Mercury Storage Seal fogging oil (or Mercury Premium Fogging Oil)
-- Mercury High-Performance Gear Lube, volume depends on motor size; a quart typically covers motors under 60 HP, larger motors need more
-- New gear lube drain plug gaskets, cheap, replace every year
-- Spark plug socket (size varies; 13/16" is common on many Mercurys, check your manual)
-- Anti-seize compound for spark plug threads
-- Marine grease for grease points
+- The operation and maintenance manual for the exact serial number
+- Fuel stabilizer only if the storage procedure calls for it
+- The gearcase lubricant and quantity specified for the model
+- New drain-plug seals when the manual calls for replacement
+- The exact tools listed for the tasks you are performing
+- Mercury-specified lubricant for the applicable grease points
 - A bucket and rags
-- Flush muffs (earmuffs that go over the lower-unit cooling intake) or another method to supply cooling water
+- The approved flushing connection or cooling-water supply for the engine
 
-You need a way to run the motor briefly during this process. Flush muffs connected to a garden hose are the most common DIY method and work well.
+If the procedure requires the engine to run, use the water-supply method and flow Mercury specifies. Never run or dry-crank an outboard without cooling water.
 
 ---
 
@@ -133,37 +126,25 @@ Do these in order. Don't skip steps. If you're not sure what you're looking at a
 
 Do this before your last run of the season, not after.
 
-1. Add fuel stabilizer to the tank at the rate on the bottle, typically 1 oz per 2.5 gallons (10 L) or as directed.
-2. Run the motor for at least 10 minutes to circulate the stabilized fuel through the entire system, lines, injectors (FourStrokes), or carburettors (older 2-strokes).
-3. This prevents the fuel from breaking down and gumming up your fuel system over winter.
+1. Start with fresh fuel that meets the manual's specification.
+2. Add the stabilizer Mercury specifies, at the product's stated concentration, when the storage procedure calls for it.
+3. Circulate treated fuel for the time and by the method in the exact engine manual.
 
 **Ethanol note:** If you're running pump gas with ethanol (E10), this step matters more. Ethanol absorbs water and can cause phase separation in stored fuel. Ethanol-free fuel is available at HBW on-site, filling up with it at the end of season simplifies this step considerably.
 
-**Don't:** drain the tank completely dry. Modern FourStroke fuel systems need some fuel in the system. What you want is stabilized fuel, not an empty tank.
+Do not use one generic full-tank or empty-tank rule for every portable tank, built-in tank, carbureted motor, and EFI system. Follow the storage guidance for the boat's actual fuel system.
 
 ### Step 2: Flush the Cooling System
 
-After the last run (or during winterization), flush the motor with clean fresh water. This removes salt (for salt water boats), sediment, and any organic debris from the cooling passages.
+Use the flushing connection, engine state, water flow, and duration stated in the exact manual. Some flushing attachments are used with the engine off; other procedures require a running engine and a continuous water supply. Do not assume generic muffs and a five-minute idle are correct for every model.
 
-Connect the flush muffs to a hose, run the motor at idle for at least 5 minutes, then shut down.
+After shutdown, store the motor in the position Mercury specifies so water can drain.
 
-**Critical:** The motor must reach operating temperature during this step for the thermostat to open and allow water through the full cooling circuit. Five minutes at idle on warm motor is better than two minutes on a cold one.
+### Step 3: Follow the Model-Specific Internal Protection Procedure
 
-After shutting down, let the water drain completely from the motor while tilted down.
+Do not spray fogging oil into the intake simply because a generic checklist says to. Mercury storage procedures vary across current FourStrokes, older carbureted two-strokes, direct-injected engines, ProKicker, Verado, and other families.
 
-### Step 3: Fog the Engine
-
-Fogging oil is sprayed into the intake (for most FourStrokes) or carburettors (for older 2-strokes) while the motor is running. It deposits a protective oil film on the internal cylinder walls, protecting against rust and corrosion during storage.
-
-**FourStroke process (typical):** With the motor running at idle and connected to flush water:
-1. Remove the air box cover to access the intake.
-2. Spray fogging oil in short bursts into the intake. The motor will smoke, this is expected.
-3. Continue until oil smoke is coming steadily from the exhaust.
-4. Shut down while still spraying, this leaves a coat of oil on the cylinder walls.
-
-**Older carbureted 2-strokes:** Process is similar but through the carburettor throat(s). Follow your model-specific procedure.
-
-The procedure varies by motor model, consult your Mercury operator's manual for the exact method for your motor. Getting this step wrong (under-fogging, or fogging incorrectly) is one of the most common DIY mistakes.
+Use only the product, access point, engine state, and sequence in the exact manual. If the procedure requires removing spark plugs, opening the intake, disabling fuel or ignition, or running a special mixture and you are not confident, stop and request service.
 
 ### Step 4: Drain and Refill the Gearcase
 
@@ -187,27 +168,21 @@ Follow the lubrication diagram in your owner's manual. Common points:
 - Tilt/trim tube and pivot
 - Steering cable end (if applicable)
 - Swivel bracket
-- Propeller shaft (anti-seize compound on prop shaft, not regular grease)
+- Propeller shaft, using the lubricant Mercury specifies
 - Any other fittings shown in your manual
 
 Don't skip the prop shaft. A prop that corrodes onto the shaft over winter is a spring headache.
 
-### Step 6: Battery, Remove and Store Properly
+### Step 6: Disconnect and Maintain the Battery
 
-The battery should not overwinter in the boat. Cold temperatures accelerate discharge in lead-acid batteries, and a discharged battery can freeze and be permanently damaged.
-
-Leave the battery in the boat, disconnected (or on a maintainer). The killer is parasitic drain from leaving it connected, not the cold. If you have shore power at storage, a smart maintainer will further extend battery life.
-
-A battery that stored properly over winter starts spring at full capacity. A battery that sat in a cold boat all winter may start the season already compromised.
+The battery can remain in the boat if it is disconnected and maintained according to the battery maker's instructions. Use a compatible smart maintainer only where the storage setup and charger instructions allow it. Clean and protect the terminals, and load-test the battery before launch.
 
 ### Step 7: Final Check, Water Drain
 
 Before putting the cover on:
-- Tilt the motor to allow any remaining water to drain from the cooling system
-- Confirm you can see water drain from the motor
-- The motor should be stored in a position that allows gravity to drain any remaining water from the cooling passages
-
-For most outboards, storing tilted up (or close to vertical if the motor can be removed and stored on an engine stand) works. Check your model's storage orientation recommendation.
+- Move the motor to the storage position specified in its manual
+- Confirm drainage openings are not obstructed
+- Do not leave the motor in a position that can trap water
 
 ### Step 8: Cover and Store
 
@@ -221,19 +196,17 @@ If the boat goes into covered indoor storage, this is less critical. Outdoor or 
 
 Based on what we see in spring diagnostics at HBW:
 
-1. **Incomplete cooling flush.** The motor didn't get to temperature, so the thermostat never opened and the full cooling circuit wasn't cleared.
-2. **Fogging oil skipped entirely.** "I forgot" is the most common reason. The consequence shows up as surface corrosion on cylinder walls in spring.
+1. **Using a generic procedure for the wrong engine.** The correct internal-protection, flushing, and storage steps vary by model.
+2. **Running without cooling water.** Even a short dry run can damage the water-pump impeller.
 3. **Milky gear lube ignored.** If gear lube came out milky and the owner just refilled without addressing the seal leak, the new lube goes milky again by spring.
-4. **Battery left in the boat.** Dead or frozen battery in May.
+4. **Battery left connected.** Parasitic draw can leave a discharged or damaged battery by spring.
 5. **Stabilizer added but motor not run afterward.** The stabilizer never reached the injectors or carbs, so they saw unstabilized fuel all winter.
 
 ---
 
 ## When to Let a Dealer Do It
 
-The procedure above is accurate and complete, but it's also a sequence of steps where one mistake can result in expensive consequences in May. If you're not fully confident in any of the steps above, particularly fogging and cooling system clearance, professional winterization is the better economic decision.
-
-The cost of professional winterization is a known quantity. The cost of a cracked powerhead is not, and it's substantially higher.
+The guide above is a decision framework, not a substitute for the serial-number manual. If you find water or metal in the gearcase lubricant, damaged seals, alarms, fuel contamination, corrosion, or a procedure you cannot complete exactly, stop and request professional service.
 
 If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). The shop knows these motors.
 
@@ -253,7 +226,7 @@ Two related guides in the same cluster:
 
 ## Related reading
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 
 ---
@@ -274,43 +247,43 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Can I winterize my Mercury FourStroke outboard myself?
 
-Yes. For a standard Mercury four-stroke outboard, DIY winterization is a realistic option for a mechanically comfortable boater. Supply cost runs $120-$220 (fogging oil ~$20-$35; AMSOIL fuel stabilizer ~$19.19; lower unit gear lube ~$25-$50; marine grease ~$15-$20). The process takes 2-4 hours and doesn't require specialty tools or a lift. The key steps: flush the cooling system, stabilize the fuel and run it through the system, fog the engine, drain and refill the lower unit, grease all fittings, and service the battery. The main reason to use a dealer instead is if you find water in the lower unit, if the engine is under active warranty and you're not documenting service carefully, or if the engine has known diagnostic issues. Dealer shop rate at HBW is $140/hr.
+Yes, if every required task is within your ability and you follow the operation and maintenance manual for the exact serial number. Fuel preparation, internal engine protection, flushing, lubrication, and storage position vary by engine. Never run the motor without cooling water, and stop if the gearcase lubricant shows water or metal.
 
 ### What happens if I don't winterize my Mercury outboard?
 
-Skipping winterization puts your engine at risk of freeze cracking, fuel system degradation, lower unit damage, and battery failure. Water remaining in the powerhead cooling passages freezes and expands, this can crack the block or head, often requiring a complete engine replacement. Untreated fuel forms varnish over the winter that clogs injectors and carburetors, causing starting and running problems in spring. Based on our own repair order history, a "won't start" diagnostic averages $540; a full engine repair averages nearly $2,000. Unchanged gear lube won't reveal a leaking lower unit seal, which continues to cause internal damage while the boat sits. Total repair cost from skipped winterization can easily exceed $1,000-$3,000+ depending on what fails.
+Skipping the model-specific storage procedure can leave stale or separated fuel, water-contaminated gearcase lubricant, corrosion, a discharged battery, or trapped water to address in spring. The exact risks depend on the engine, fuel system, storage position, and work that was due before layup.
 
 ### What fogging oil should I use on a Mercury outboard?
 
-Mercury recommends Mercury Precision Fogging Oil for their four-stroke outboards. Using Mercury-branded fogging oil is advisable if your motor is still under warranty, using compatible OEM-recommended products protects your warranty documentation position. If your engine is out of warranty, a quality marine fogging oil from another reputable brand (such as Yamaha Stor-Rite or Star Brite) will perform the same protective function. The key is using a product specifically designed for marine engine fogging, not a substitute like WD-40 or light oil, which don't provide adequate cylinder wall protection over a long storage period.
+First confirm that the exact engine procedure calls for fogging oil. Mercury storage methods vary by engine family and model year. If it is required, use a product meeting the specification and apply it only through the access point and sequence stated in the serial-number manual.
 
 ### Do I need to run the engine during winterization?
 
-Yes, running the engine is essential for two steps. First, you need to run the engine on flush muffs with fresh water flowing to clear the cooling system of lake water and sediment. Second, you need to run the engine after adding fuel stabilizer to ensure the stabilized fuel circulates through the fuel injectors or carburetor, just adding stabilizer to the tank without running it doesn't protect the fuel delivery components. You also need the engine running briefly (and still warm) to fog properly. If you can't run the engine for any reason before storage, take it to a shop, partial winterization can leave you worse off than a complete job.
+It depends on the exact flushing, fuel-treatment, and internal-protection procedure. Some steps use an engine-off flush connection, while others require a running engine with continuous cooling water. Never run or dry-crank an outboard without the water supply Mercury specifies.
 
 ### How long does DIY outboard winterization take?
 
-Plan for 2-4 hours for a first-timer working through a single outboard. An experienced boater who has done the process before can complete it in 90 minutes to 2 hours. Twin-engine setups roughly double the time. The longest step is usually the cooling system flush and fuel stabilization run, which takes 10-20 minutes of engine-running time. The lower unit drain and refill takes 15-20 minutes if you're careful and don't strip anything. Allow time to let the engine cool slightly before removing any covers or doing your final grease and inspection work. First-time DIYers should budget a full afternoon.
+Time depends on the engine, access, tasks due, and what inspection finds. Read the complete storage procedure before starting and allow enough time to stop safely if the gearcase, fuel, battery, or cooling system needs professional attention.
 
 ### What lower unit oil should I use on my Mercury outboard?
 
-Mercury recommends Mercury Precision Lubricants gear lube in the weight specified for your model. Check your owner's manual for the correct specification, most Mercury four-stroke outboards use a specific SAE grade (typically 80W-90 or Mercury High Performance Gear Lube, depending on the model). AMSOIL synthetic gear lube is another quality option at $24.99-$26.49/L (available at marinecatalogue.ca). Using the wrong weight or an incompatible aftermarket product isn't recommended, particularly on engines under warranty.
+Use the gearcase lubricant specification in the operation and maintenance manual for the exact motor. Follow the stated fill method, quantity, seal replacement, and torque instructions. Do not infer the correct lubricant from horsepower alone.
 
 ### Should I store my outboard up or down for winter?
 
-Store the outboard in the fully tilted-down (vertical) or slightly tilted-up position, never in the fully trimmed-up position for extended storage. Storing fully trimmed up traps water in the cooling passages and puts mechanical stress on the tilt/trim system components over a long storage period. Trimming slightly down allows residual water to drain from the lower unit and water pump area. After the final cooling system flush, let the motor rest in a trimmed-slightly-down position overnight before doing your final grease work.
+Use the storage position specified in the manual for the exact engine and installation. The position must allow water to drain and must not leave openings blocked or components under an unsupported load. Do not rely on one generic up-or-down rule.
 
 ### What is the most important step in outboard winterization?
 
-The cooling system flush and the fuel stabilization run are the two most consequential steps. The cooling flush removes water that would otherwise freeze and crack the powerhead or exhaust system. The fuel stabilization run ensures treated fuel actually reaches the fuel delivery components, if you only add stabilizer to the tank without running the engine, the injectors and carb are still exposed to untreated fuel over winter. The lower unit drain is close behind in importance, it's your main diagnostic for a failing seal. If forced to choose, prioritize the cooling flush and fuel stabilization. Skipping either of those creates the most expensive failure modes.
+Identifying and following the correct procedure for the exact engine is the first step. Fuel condition, gearcase lubricant, internal engine protection, cooling-water drainage, battery maintenance, and storage position all matter, and their sequence varies by model.
 
 ### Does DIY winterization affect my Mercury warranty?
 
-Mercury's warranty does not require dealer-performed maintenance to remain valid, but it does require that maintenance be performed according to the intervals and procedures specified in your owner's manual, using appropriate products. DIY winterization is compatible with warranty coverage if you use OEM-recommended lubricants and fogging products, follow the correct procedures, and keep records. The risk with undocumented DIY service is that if a warranty claim arises, you may be asked to demonstrate that maintenance was performed correctly. If you're in an active warranty period and not confident about documentation, having a dealer service the engine at least once, then doing it yourself afterward, is a reasonable approach.
+Dealer-performed maintenance is not a universal condition of Mercury limited-warranty coverage. Follow the exact manual, use suitable products and procedures, and keep dates, engine hours, receipts, and notes. Damage caused by improper storage or service may be excluded, while warranty repairs must go through an authorized repair facility.
 
 ### What's the difference between winterizing a two-stroke and a four-stroke Mercury?
 
-The core process is similar, cooling flush, fuel stabilization, fogging, lower unit drain, battery service. The main differences: two-stroke carbureted engines need the carb bowl drained or run dry as part of fuel system prep, since fuel sitting in a float bowl over winter is prone to varnishing. Four-stroke EFI engines need fuel stabilizer circulated through the injection system by running the engine after treatment. Four-strokes also require an oil check (and oil change if due) as part of the service. At HBW, our 40-200 HP 2-stroke winterization rate is $206.89 vs. $337.84 for a 40-60 HP 4-stroke, the difference reflects the additional steps involved.
+Fuel preparation, internal engine protection, oil service, flushing, and storage steps can differ across carbureted two-strokes, direct-injected two-strokes, and FourStroke families. Use the exact serial-number manual instead of adapting a procedure from another engine.
 
 ## Related guides
 

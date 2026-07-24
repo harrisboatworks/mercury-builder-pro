@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-23
+**Last updated:** 2026-07-23  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
@@ -217,3 +217,4 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

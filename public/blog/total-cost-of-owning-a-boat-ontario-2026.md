@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-05-19
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-05-19
+date_modified: 2026-07-23
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last updated:** 2026-05-19  
+**Last updated:** 2026-07-23  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
@@ -150,11 +150,11 @@ For most recreational owners, **fuel is $1,500-$3,500 a year**.
 
 ## 5. Routine Service and Maintenance
 
-Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** beating the hourly trigger for most recreational owners (see our [Mercury Maintenance Intervals 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule) for the full breakdown).
+For most current recreational Mercury FourStrokes, the **100-hour or annual trigger** applies, with expanded work commonly due around 300 hours or three seasons. The exact model manual controls. See our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule) for the full breakdown.
 
 **HBW annual service pricing:**
 
-- **20-hour break-in service** (one-time, after first 20 hours): $250-$400 mid-range
+- **Optional early dealer check** (only if recommended): scope and price depend on the motor and installation
 - **100-hour annual service** (every year regardless of hours): $400-$700 mid-range; $700-$1,200 V6
 - **300-hour major service** (every 3 years): $800-$1,200 mid-range; $1,200-$2,500 V6/Verado
 
@@ -247,7 +247,7 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
 
 ## What we see at HBW
 
-The first-year ownership cost usually surprises new boaters. Boat + motor is the big number, but storage, insurance, gas, dock or trailer, and the 20-hour first service add up. On a $35K pontoon, expect another $4-6K in first-year costs after the purchase.
+The first-year ownership cost usually surprises new boaters. Boat + motor is the big number, but storage, insurance, gas, dock or trailer, and annual service add up. On a $35K pontoon, expect another $4-6K in first-year costs after the purchase.
 
 Year two through five averages out lower if winterization and 100-hour service are kept current. The boats that get expensive in year five are the ones whose owners skipped impeller changes and gear-lube changes. Those repairs end up costing more than what the maintenance would have.
 

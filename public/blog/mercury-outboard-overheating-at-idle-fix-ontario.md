@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-05-27
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-05-27
+date_modified: 2026-07-23
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-07-23  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
@@ -90,7 +90,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 - Overheat alarm that sounds when trolling or in no-wake zones but goes quiet when you bring RPM up
 - Tell-tale that sputters but doesn't disappear entirely (a fully-failed impeller often produces no tell-tale at any RPM)
 
-**Service interval:** Mercury recommends replacing the impeller every 2-3 years or 300 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
+**Service interval:** Follow the exact engine manual. Many Mercury schedules place water-pump service around 300 hours or three years, but the model and operating conditions control. A telltale that was weak last season or an overheat warning needs diagnosis now, regardless of the calendar.
 
 **Replacement:** The lower unit needs to come off to access the water pump. This is a job with straightforward procedure but it involves torquing the lower unit back on correctly and ensuring the shift shaft aligns. If you're mechanically confident, it's a DIY-possible job. If not, have it done by a technician.
 
@@ -171,7 +171,7 @@ Two related guides in the same cluster:
 
 ## Related reading
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
 ---

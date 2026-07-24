@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-05-23
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-05-23
+date_modified: 2026-07-23
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last updated:** 2026-05-23  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -180,7 +180,7 @@ The boat does not leave until it passes the sea-trial. That is not a marketing l
 
 You pick up a boat with a 3-year Mercury limited warranty on the new motor. It covers manufacturing defects and is honoured by any authorized Mercury dealer across Canada. HBW also runs seasonal Mercury promotions through the year, so check the promotions page for what is current when you book.
 
-A new Mercury FourStroke needs annual service, or service every 100 hours, whichever comes first. That covers engine oil and filter, gear lube, fuel filter, spark plug inspection, a throttle body check, and an overall inspection. Mercury's schedule puts water pump service in the 300-hour range, and many owners replace the impeller every 2 to 3 seasons. The impeller is the single most important item on the list. It is a rubber pump that circulates cooling water, and when it fails, overheating can come on fast.
+For most current recreational Mercury FourStrokes, scheduled service is due annually or every 100 hours, whichever comes first. The exact oil, filters, plugs, gearcase, water-pump parts, and inspections come from the manual for the serial number. Water-pump service is commonly part of an expanded interval around 300 hours or three seasons, but model and operating conditions control the actual timing.
 
 A word on protecting your warranty. Mercury warranty claims require documentation of proper maintenance, so keep your service records. Running the wrong prop pitch, neglecting annual service, or using the motor outside its rated application can create warranty problems, and in some cases insurance and liability problems too. None of that is exotic. It is the ordinary care any motor needs, and it is one more reason we test the prop before you leave the dock.
 

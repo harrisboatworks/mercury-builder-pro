@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination.md
-last_updated: 2026-06-26
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Repower GTA Toronto Guide"
 description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week."
 category: "Mercury Outboards"
 date_published: 2026-05-19
-date_modified: 2026-06-26
+date_modified: 2026-07-23
 keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Premier repower dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  
-**Last updated:** 2026-06-26  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 
@@ -114,7 +114,7 @@ We call when ready. You drive back. We walk you through the new motor at the doc
 **Important: the 10-hour break-in period.** Your new Mercury isn't full-RPM-ready for the first 10 hours. We brief you on:
 - First 2 hours: vary throttle, no extended WOT, no sustained high RPM
 - Next 8 hours: gradually expand operating range
-- After 20 hours: bring it back for the **20-hour break-in service** (this is critical, see our [Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule))
+- After break-in: follow the exact owner's manual. For most current FourStrokes, the first scheduled service is 100 hours or annually. HBW may recommend an optional early check; see our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 You can test-run on Rice Lake before driving home, or take it slow on the trailer back to the GTA and break-in at your home water.
 
@@ -168,7 +168,7 @@ Mistakes we see GTA boaters make:
 
 **1. Buying a Mercury motor from a non-Mercury source.** Marketplace listings, online auction Mercurys imported from the US, most have **no Canadian warranty coverage**. The motor itself is identical; the warranty network won't honour it. Save thousands upfront, lose thousands in out-of-pocket repairs over the motor's life.
 
-**2. Skipping the 20-hour break-in service.** Critical for warranty validity. We charge $250-$400 for it; the cost of skipping it is potentially the entire warranty.
+**2. Treating one generic checklist as the Mercury schedule.** The exact owner's manual controls. For most current FourStrokes, the first scheduled service is 100 hours or annually, not a universal 20-hour warranty service.
 
 **3. Not factoring transport in the budget.** $300-$600 each way for hired transport adds up. If you don't own a trailer, factor this in.
 

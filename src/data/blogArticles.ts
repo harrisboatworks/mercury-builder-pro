@@ -320,7 +320,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
     imageAlt: "Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario",
     author: "Jay Harris",
     datePublished: "2026-07-13",
-    dateModified: "2026-07-13",
+    dateModified: "2026-07-23",
     publishDate: "2026-07-13",
     category: "Mercury Outboards",
     readTime: "~8 min read",
@@ -439,7 +439,7 @@ If you're thinking about a new Mercury rather than servicing your current one: [
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury vs Yamaha vs Honda: Reliability Compared (2026)](/blog/mercury-vs-yamaha-vs-honda-reliability-2026)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Boat Battery Guide for Ontario Boaters](/blog/mercury-boat-battery-guide-ontario)
 - [Breaking In a New Mercury Motor: The Complete Guide](/blog/breaking-in-new-mercury-motor-guide)
 
@@ -636,7 +636,7 @@ If you're not sure whether your boat is a push boat or a plane boat, that's a tw
     image: "/lovable-uploads/hero-milky-gearcase-oil.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-07-23",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
@@ -925,22 +925,22 @@ Tell us the motor, the hours, and the last time anyone was in there.
     image: "/lovable-uploads/hero-100-hour-service-cost.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-07-23",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~8 min read",
     keywords: ["mercury 100 hour service cost", "outboard annual service cost ontario", "mercury service cost", "100 hour service what's included", "boat motor service cost ontario"],
     faqs: [
       { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "At our Rice Lake shop, last season's medians ran about $250 all-in for small tillers up to about $440 for a 150 HP FourStroke (labour + typical parts, before HST), done as a fall winterize-and-service. Your parts total depends on your motor's plug count and condition. Current-season pricing is confirmed when you book at hbw.wiki/service." },
-      { question: "Is the 100-hour service the same as winterization?", answer: "They overlap heavily, which is why Ontario shops bundle them. The annual service covers oil, gearcase oil, plugs, fuel system, and inspection; winterization adds stabilizer, fogging, and cooling-system draining. Doing both in one fall appointment shares the labour instead of paying it twice." },
+      { question: "Is the 100-hour service the same as winterization?", answer: "No. They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. The scope varies by engine." },
       { question: "My motor only ran 40 hours this year. Do I still need the service?", answer: "Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because oil degrades and moisture accumulates with time, not just use. Most Kawartha boats are calendar-limited, not hour-limited; that's exactly why the fall service exists." },
-      { question: "What parts get replaced at a typical annual service?", answer: "Engine oil and filter, gearcase oil, fuel stabilizer, and fogging oil on every job; spark plugs and fuel filters as condition and interval require. Median parts spend at our counter last season ranged from about $101 (small motors) to about $204 (150 HP class), before HST." },
+      { question: "What parts get replaced at a typical annual service?", answer: "There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included. HBW scopes the job from the serial number." },
       { question: "Can I skip a year to save money?", answer: "You can, and the data says you'll give it back later. Skipped services show up in our work orders as seized prop hardware, milky gearcase oil caught late, and fuel-system cleanups that cost more than the service would have. The annual service is the cheap insurance tier." },
       { question: "Do you service motors bought somewhere else?", answer: "Yes. Our techs service Mercury outboards regardless of where you bought them, and plenty of our regulars started that way. Put in a request at hbw.wiki/service with your motor details and hours, and we'll slot you into the fall schedule." }
     ],
     content: `# Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** In Ontario, most Mercury outboards hit their 100-hour or annual service at winterization, so the honest cost answer comes from real fall work orders. At our Rice Lake shop, last season's median for a full winterize-and-service ran from about $250 all-in on a small tiller to about $440 on a 150 HP FourStroke, parts included, before HST. Book at hbw.wiki/service.
 
@@ -954,7 +954,7 @@ That's not a dodge; it's the efficient way to buy it. One appointment, one drain
 
 ## Who this is for
 
-You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want a real number before you book anything. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [20-100-300 maintenance guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want a real number before you book anything. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ---
 
@@ -968,7 +968,7 @@ Mercury's 100-hour and annual service list for a FourStroke, in plain terms:
 - Fuel system check: filters, lines, primer bulb, water-separating filter where fitted
 - Grease points, linkages, and corrosion check
 - Anodes checked, prop pulled and shaft greased
-- In fall, add the winterizing steps: fuel stabilizer run through, cylinder fogging, and cooling system drained
+- In fall, add the exact engine's fuel, internal-protection, battery, drainage, and storage-position steps
 
 The bundling logic is simple: the annual service and winterization share most of the same labour. Doing them together is one bill instead of two.
 
@@ -983,7 +983,7 @@ https://www.youtube.com/watch?v=ABeIIfXeB0Q
 
 ## Real Numbers From Our Counter
 
-These are medians from last season's completed work orders at our shop (2024-25 season, before HST; as of July 2026). Labour is a flat rate by motor class; parts are what the median job actually consumed (oil, filters, gear lube, plugs as needed, fogging oil, stabilizer):
+These are medians from last season's completed work orders at our shop (2024-25 season, before HST; as of July 2026). Labour is a flat rate by motor class; parts are what the median job actually consumed (oil, filters, gear lube, plugs and storage supplies as the model and condition required):
 
 | Motor class (FourStroke) | Flat-rate labour | Median parts | Typical all-in |
 |---|---|---|---|
@@ -1003,10 +1003,10 @@ What moves the number up: skipped previous services, a water-separating filter t
 
 ## Why "Cheap" 100-Hour Services Usually Aren't
 
-A $150 quote for a "full service" means something got skipped, and it's usually the gearcase oil or the fogging. Those are exactly the two items that catch expensive problems early:
+A very low "full service" quote may simply describe a smaller scope. Compare the line items against the exact manual, especially the gearcase inspection and model-specific storage procedure:
 
 - Gearcase oil that comes out milky means water is getting past a seal. Caught at service time, it's a seal job. Missed for a season, it can be a gearcase.
-- Skipped fogging on a stored motor invites corrosion in the cylinders over five months of Ontario winter.
+- Skipping the internal-protection procedure specified for the engine can leave storage-related corrosion or fuel-system problems.
 
 The labour on our invoices is the real work: 1 to 1.7 hours per motor depending on class. Anyone quoting half that time is doing half the list. Ask any shop for the itemized list before you compare prices; ours is the section above.
 
@@ -1020,7 +1020,7 @@ Plenty of owners handle oil and plugs themselves, and our [DIY winterization gui
 - **The shop buys you** the inspection layer: a tech who's seen hundreds of the same motor, the milky-oil catch, the recommendations line on your file, and a record that helps resale ("full dealer service history" is worth real money when you sell).
 - **The hybrid** many of our customers run: DIY the mid-season oil change, shop the annual fall service. The motor gets professional eyes once a year and you still save.
 
-What we'd skip: DIYing the gearcase and fogging steps if you've never done them. Those are the two where a small mistake gets expensive.
+What we'd skip: DIYing the gearcase or internal-protection procedure if you cannot follow the exact manual. Those are two areas where a small mistake gets expensive.
 
 ---
 
@@ -1042,13 +1042,13 @@ Our marina is closed December 1 to April 1, and fall slots fill in order. The ef
 At our Rice Lake shop, last season's medians ran about $250 all-in for small tillers up to about $440 for a 150 HP FourStroke (labour + typical parts, before HST), done as a fall winterize-and-service. Your parts total depends on your motor's plug count and condition. Current-season pricing is confirmed when you book at hbw.wiki/service.
 
 **Is the 100-hour service the same as winterization?**
-They overlap heavily, which is why Ontario shops bundle them. The annual service covers oil, gearcase oil, plugs, fuel system, and inspection; winterization adds stabilizer, fogging, and cooling-system draining. Doing both in one fall appointment shares the labour instead of paying it twice.
+They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. Doing both in one fall appointment can avoid duplicate work.
 
 **My motor only ran 40 hours this year. Do I still need the service?**
 Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because oil degrades and moisture accumulates with time, not just use. Most Kawartha boats are calendar-limited, not hour-limited; that's exactly why the fall service exists.
 
 **What parts get replaced at a typical annual service?**
-Engine oil and filter, gearcase oil, fuel stabilizer, and fogging oil on every job; spark plugs and fuel filters as condition and interval require. Median parts spend at our counter last season ranged from about $101 (small motors) to about $204 (150 HP class), before HST.
+There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included.
 
 **Can I skip a year to save money?**
 You can, and the data says you'll give it back later. Skipped services show up in our work orders as seized prop hardware, milky gearcase oil caught late, and fuel-system cleanups that cost more than the service would have. The annual service is the cheap insurance tier.
@@ -1067,7 +1067,7 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
-- [Mercury Maintenance Intervals: The 20-100-300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
 - [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
@@ -1098,7 +1098,7 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
       { question: "Do I need spring commissioning if I winterized properly?", answer: "The fall work is what makes spring cheap, but the startup still matters: batteries, fuel, and rubber parts all age over five months. An hour of checks before your first family outing is how you find the small problem before it becomes the stranded-Saturday problem." },
       { question: "Can I do spring commissioning myself?", answer: "Most of it, yes; our spring checklist walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes." },
       { question: "When should I book spring service?", answer: "Before the rush. Our marina reopens April 6 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair." },
-      { question: "Why is my neighbour's spring bill huge and mine isn't?", answer: "Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, unfogged cylinders, connected batteries. The winterization cost guide shows what the fall side costs; it's the cheaper side." }
+      { question: "Why is my neighbour's spring bill huge and mine isn't?", answer: "Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The winterization cost guide shows what the fall side costs; it's the cheaper side." }
     ],
     content: `# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
 
@@ -1142,7 +1142,7 @@ The full owner's checklist version, if you want to run it yourself before first 
 | Winterized only (no service) | Startup + the annual service now, in the busy season | Startup plus the service you deferred |
 | Nothing done in fall | Startup + service + whatever winter did | The expensive column: fuel-system cleanups, corrosion, seized hardware |
 
-That third column is where spring horror stories come from: fuel that sat unstabilized for five months, cylinders that were never fogged, water that froze where it shouldn't have been. None of it is a spring problem; all of it is a fall decision, compounding.
+That third column is where spring horror stories come from: fuel that sat unstabilized for five months, model-specific internal-protection steps that were skipped, and water that froze where it should not have been. None of it is a spring problem; all of it is a fall decision, compounding.
 
 One more spring reality: May is our busiest month. Boats that need real work in spring wait in the same line as everyone else's launch prep. Fall-serviced boats skip that line, because their spring visit is quick.
 
@@ -1183,7 +1183,7 @@ Most of it, yes; our [spring checklist](/blog/spring-outboard-commissioning-chec
 Before the rush. Our marina reopens April 6 and May is the busiest month on the calendar; boats booked early launch on time. The genuinely efficient move is booking fall winterize-and-service and spring startup as a pair.
 
 **Why is my neighbour's spring bill huge and mine isn't?**
-Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, unfogged cylinders, connected batteries. The [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) shows what the fall side costs; it's the cheaper side.
+Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) shows what the fall side costs; it's the cheaper side.
 
 ---
 
@@ -2090,7 +2090,7 @@ Family-owned on Rice Lake since 1947.`
     photoSlot: 'hbw-impeller-photo',
     author: 'Jay Harris',
     datePublished: '2026-06-09',
-    dateModified: "2026-07-07",
+    dateModified: "2026-07-23",
     publishDate: '2026-06-09',
     category: 'Service & Troubleshooting',
     readTime: '7 min read',
@@ -2854,7 +2854,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: 'Smartphone showing Mercury SmartCraft Connect app data next to a Mercury FourStroke outboard motor on the water.',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-     dateModified: '2026-06-19',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-27',
     category: 'Mercury Technology',
     readTime: '11 min',
@@ -2870,7 +2870,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: "What if I'm not eligible but I want Connect?", answer: "The path is a repower to a current Mercury FourStroke or Pro XS. Most repower customers pick up SmartCraft Connect as a side benefit. We can quote at mercuryrepower.ca." },
       { question: "Does Connect work on Mercury Avator electric outboards?", answer: "Yes, but with a different gateway module than the gas Connect path. The customer experience in the Mercury Marine app is the same. Ask HBW for the Avator-specific install part." }
     ],
-    content: `*Last reviewed: 2026-06-19*
+    content: `*Last reviewed: 2026-07-23*
 
 > **Quick answer:** SmartCraft Connect works on most Mercury motors from 2004 onward: FourStroke 40 HP+, Pro XS 115 HP+, Verado, SeaPro 40 HP+, and Avator electric. It does NOT work on 9.9 to 20 HP portables, pre-2004 4-strokes, or any 2-stroke or Optimax engine. Mercury 25 and 30 HP got SmartCraft in 2022. Email your serial number to info@harrisboatworks.ca for a same-day yes or no.
 
@@ -3010,7 +3010,7 @@ The Connect module pays for itself first on the maintenance side. We get custome
 
 The second pattern: customers with an older boat that has a current Mercury (so a 2006 hull with a 2021 FourStroke 150, for example) often think Connect won't work because the boat is old. The boat doesn't matter. The motor's year and family matter. If the engine is 2004+ and not a portable / 2-stroke / Optimax, it's eligible.
 
-Third pattern: the trip log feature changes how people use the boat. We've had a few customers swap from "I think I have 40 hours on this motor" to "I have exactly 42.3 hours and my 20-hour service is overdue" within a week of installing the module. That data is gold for resale value down the road too, because it documents real run hours rather than guessing.
+Third pattern: the trip log feature changes how people use the boat. Instead of guessing that a motor has roughly 40 hours, owners can see the actual total and compare it with both the hour and calendar columns in the model-specific maintenance schedule. That data is useful for service planning and resale because it documents real run hours.
 
 Fourth pattern, and this one surprised us at the shop. Customers who add Connect end up running their motors better. Knowing the actual fuel flow at cruise, the actual operating temp, the actual RPM at full trim, gives them feedback they didn't have before. We see Rice Lake customers tune their trim and prop pitch with the data, and most of them pick up 2 to 4 MPH at cruise without changing anything mechanical. Just better information.
 
@@ -4088,29 +4088,29 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     slug: 'mercury-motor-maintenance-seasonal-tips',
     title: 'Mercury Motor Seasonal Care Ontario',
     seoTitle: "Mercury Maintenance: Ontario Seasonal Care 2026 | HBW",
-    description: "Spring, summer, fall, winter: Mercury maintenance for Ontario boaters. Service intervals, fogging, and the $4,000 CAD winterization mistake to avoid.",
+    description: "Seasonal Mercury maintenance for Ontario: spring checks, 100-hour or annual service, model-specific fall storage, and expanded 300-hour work.",
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
-    dateModified: '2026-05-04',
+    dateModified: '2026-07-23',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
     content: `# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
-*Last reviewed: 2026-05-04*
+*Last reviewed: 2026-07-23*
 
-> **Quick answer:** Mercury outboards in Ontario need three predictable touchpoints a year: spring commissioning, mid-season checks, and fall winterization with fogging and lower-unit oil. Skip winterization and you risk a cracked block from frozen water in the powerhead, a $4,000-plus mistake. Book early; spring rush adds weeks. Service scheduling and pricing live at mercuryrepower.ca.
+> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. Book service at hbw.wiki/service.
 
 Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service).
 
 ## Quick recommendation
 
-Most Mercury motors fail because of skipped maintenance, not because the motor itself is bad. Modern Mercurys are built to last 1,500 to 2,000+ hours when serviced on schedule. They die at half that mileage when service gets skipped two or three years running.
+Most preventable service problems start with skipped maintenance, old fuel, restricted cooling water, or a storage procedure that did not match the engine. A model-specific schedule costs less than guessing after a warning horn or no-start.
 
-The annual maintenance budget for a typical Mercury repower is small compared to the cost of replacing a destroyed motor. The customers who skip service to save money end up paying more in spring repairs, mid-season tow bills, and shortened motor life.
+The annual maintenance budget for a typical Mercury repower is small compared with a major repair. The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
 
-We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Stick to the seasonal cycle below and your Mercury will outlast the rest of the boat.
+We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Use the seasonal cycle below to organize the exact work listed in the manual for your motor.
 
 ## What changes the maintenance picture
 
@@ -4120,8 +4120,8 @@ Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
 - **Operating environment.** Sheltered Rice Lake, Ontario fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
-- **[Storage conditions](/blog/boat-storage-kawartha-lakes).** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
-- **Motor age.** Newer motors under warranty get a different service cadence than older motors. Modern FourStrokes (post-2010) are more service-tolerant than 2-strokes from the 1990s.
+- **[Storage conditions](/blog/boat-storage-kawartha-lakes).** A dry, secure cover and correct engine position matter. HBW offers outdoor shrinkwrapped storage only.
+- **Motor family and age.** Current FourStrokes, older two-strokes, SeaPro, ProKicker, and Verado models do not all share one checklist. The serial-number manual decides the cadence.
 - **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
 
 ## The seasonal cycle
@@ -4130,9 +4130,9 @@ Five things move how often and how aggressively you should service:
 
 After winter storage, the motor needs to be brought back to operational state before the boating season starts.
 
-Spring commissioning at HBW includes:
-- Refill gearcase with fresh lube (if drained for winter)
-- Battery reinstall and load test
+Spring commissioning at HBW can include:
+- Confirm the gearcase lubricant was serviced and inspect for leaks
+- Battery reconnect and load test
 - Fuel system check (replace fuel filter if due)
 - Cooling system flush
 - Spark plug inspection or replacement
@@ -4141,7 +4141,7 @@ Spring commissioning at HBW includes:
 - Test run on muffs or in water
 - Trailer prep (bearings, tires, lights)
 
-Spring service times start filling up in March. The customers who book in February or early March get their boats ready for May 1 launch with no rush. The customers who book in late April get their boats ready in late May or early June, after the rush. Plan ahead.
+HBW is closed from December 1 through April 1. You can submit a service request before reopening so the job is ready to schedule, but service work resumes after April 1.
 
 [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through this in more detail.
 
@@ -4153,30 +4153,28 @@ Boaters running 200+ hours a season should consider a mid-season check. Quick vi
 
 ### Fall winterization (October to early November)
 
-The single most important maintenance event of the year. Skipping winterization is the leading cause of Mercury motor failures we see in spring.
+Fall service is where most Ontario owners combine the annual interval with off-season preparation. The exact storage procedure varies by engine. Follow the manual instead of assuming every FourStroke needs the same fogging routine.
 
-Winterization at HBW includes:
+Fall preparation at HBW can include:
 - Fuel stabilization
-- Fogging the engine
-- Gearcase drain and refill with fresh lube
-- Cooling system clear-out
-- Water-pump impeller inspection
-- Anode replacement if depleted
-- Spark plug check or replacement
+- The model-specific internal engine protection procedure
+- Gearcase lubricant service and a check for water
+- Cooling-system and telltale checks
+- Anode inspection and replacement when due
+- Spark plug service when the manual calls for it
 - Lubrication of cables and pivot points
-- Battery service
+- Battery test, disconnect, and maintenance plan
 
 Some boaters DIY winterization, which is fine for confident owners on smaller motors. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the procedure. For bigger motors or owners who want it done right without doing it themselves, [request service at HBW](https://hbw.wiki/service).
 
 For pricing context, see the [boat winterization cost guide](/blog/boat-winterization-cost-ontario-2026).
 
-### Winter storage (November to March)
+### Winter storage (December 1 to April 1)
 
 If winterization is done correctly, the motor mostly takes care of itself over winter. A few things to do or avoid:
 
-- Battery: trickle charge once a month if removed and stored indoors
+- Battery: it can remain in the boat if disconnected and maintained according to the battery maker's instructions
 - Storage cover: snow load can damage seats, electronics, and canvas
-- Indoor temperature: heated indoor is best, unheated indoor is fine, outdoor is hardest on the motor
 - Mid-winter check: a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
 
 We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contact).
@@ -4185,17 +4183,17 @@ We offer outdoor shrinkwrapped storage at HBW. For pricing, [contact us](/contac
 
 We see these every year:
 
-1. **Skipping winterization.** The single biggest mistake. Costs: cracked powerhead block ($motor replacement), damaged gearcase seals ($1,500 to $4,500 lower unit replacement), fuel system gum-up ($200 to $800 spring repair).
+1. **Skipping the storage procedure.** Old fuel, water-contaminated gear lubricant, corrosion, and a poorly protected battery can turn into spring repairs.
 
-2. **Ignoring the impeller.** Water-pump impellers wear out at predictable intervals (typically every 2 to 3 years for recreational use). A failed impeller in mid-July overheats the motor and can cause cylinder head damage. Inspect and replace on schedule.
+2. **Ignoring the cooling-system schedule.** Water-pump impeller timing varies by engine. Many Mercury schedules use an expanded interval around 300 hours or three years. Replace it sooner if the manual, operating conditions, overheating, or reduced water pressure call for it.
 
 3. **Letting old gas sit.** Pump gas with ethanol breaks down over months, especially without stabilizer. Old gas gums up carburetors and injectors. Run tanks down or stabilize.
 
-4. **Skipping anodes.** Sacrificial anodes (zincs) protect the motor from electrolytic corrosion. They wear down. Replace at 30% depletion or the motor metal becomes the next sacrifice.
+4. **Skipping anodes.** Sacrificial anodes protect the motor from galvanic corrosion. Inspect them regularly and replace them by the manual, commonly when about half consumed. Freshwater applications may use aluminum or magnesium; zinc is for saltwater.
 
-5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need Mercury 4-Stroke Marine Oil (FC-W rated), not generic automotive oil or 2-stroke pre-mix. In Canada the grade goes by horsepower: 10W-30 for 0 to 30 hp, 25W-40 for 40, 50, and 60 hp, and 10W-30 again for 75 hp and up. Your owner's manual confirms it for your exact engine.
+5. **Wrong oil for FourStroke motors.** Use an FC-W-rated four-stroke marine oil that meets the specification and viscosity in the manual for the exact engine. Do not substitute automotive oil or TC-W3 two-stroke oil, and do not assume one horsepower-based viscosity chart applies to every family and model year.
 
-6. **Running on dead batteries.** A dying battery makes the starter struggle, which over time burns out the starter motor or wears the flywheel. Replace batteries every 4 to 6 years on schedule.
+6. **Running on a weak battery.** A weak battery can create slow cranking, unreliable starts, and misleading electrical symptoms. Load-test it, maintain clean connections, and replace it based on condition and the battery maker's guidance instead of one universal age rule.
 
 7. **Ignoring the prop.** A nicked or bent prop costs you fuel economy and stresses the motor. We inspect and recommend prop replacement when needed during winterization.
 
@@ -4213,26 +4211,21 @@ Even a basic spring or fall service includes:
 - Hose and connection condition
 - Fuel filter condition
 
-We log everything. The service records travel with the motor and matter for warranty support and resale value.
+We log the work we complete. Those records matter for warranty support and resale value.
 
 ## Service intervals at a glance
 
-For typical recreational use (50 to 150 hours per season) on a modern FourStroke:
+For many current recreational FourStrokes, this is the planning framework. The exact manual controls:
 
-| Service item | Interval |
+| Service stage | Typical timing |
 |---|---|
-| Oil and filter change | Every 100 hours or annually |
-| Spark plugs | Every 200 hours or every 2 years |
-| Water-pump impeller | Every 200 hours or every 3 years |
-| Gearcase lube | Annually (during winterization) |
-| Anodes | Inspect annually, replace at 30% depletion |
-| Fuel filter | Every 100 hours or annually |
-| Trim and tilt fluid | Inspect annually, top off as needed |
-| Steering grease | Annually |
-| Battery replacement | Every 4 to 6 years |
-| Prop inspection | Every service visit, replace as needed |
+| Break-in | Follow the model-specific procedure, often through the first 10 hours on current examples |
+| Optional dealer check | A few weeks after purchase if recommended; not a universal 20-hour requirement |
+| Scheduled service | 100 engine hours or annually for most current recreational FourStrokes |
+| Expanded service | Commonly 300 hours or about three seasons, with model-specific parts |
+| Condition checks | Before use and whenever a warning, impact, leak, weak telltale, or performance change appears |
 
-For motors running heavy hours (200+ per season), shorten the calendar intervals proportionally. For commercial-duty SeaPro motors, follow Mercury's heavy-duty service schedule.
+For high-hour use, the hour trigger can arrive before the calendar. Commercial-duty SeaPro and other specialized engines follow their own schedules.
 
 For exact intervals on your specific motor model, the Mercury owner's manual is the authoritative source. We follow Mercury's published schedules at HBW.
 
@@ -4250,6 +4243,12 @@ Spring service slots fill up in March and April. Fall winterization slots fill i
 
 Not sure what your specific motor needs? Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor details and we'll lay it out.
 
+## Sources
+
+- [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
+- [Mercury Marine Canada, Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+- [Mercury Marine Canada, Fuel Basics](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
+
 ---
 
 _Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
@@ -4263,7 +4262,7 @@ _Service pricing varies by motor size, boat type, and storage tier. The actual p
 The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
 
 Two related guides in the same cluster:
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
 
 ---
@@ -4271,10 +4270,10 @@ Two related guides in the same cluster:
 ## FAQ
 
 **How often should I service my Mercury outboard?**
-Annually at minimum. Spring commissioning to bring the motor back from winter storage, and fall winterization to put it away. Boaters running heavy hours (200+ per season) should add a mid-season check in July. Most service intervals are tied to hours, not just calendar time, so heavy-use boaters need more frequent attention.
+Follow both the hour and calendar columns in the exact manual. For most current recreational FourStrokes, scheduled service is due at 100 hours or annually. Spring commissioning and fall storage preparation are useful Ontario touchpoints, while high-hour owners can reach an hour-based interval mid-season.
 
 **What is the most important Mercury maintenance task?**
-Winterization. Skipping winterization is the single most common cause of major motor failure we see at HBW. Done right, winterization protects against freeze damage, fuel system gum-up, and corrosion over the storage period. Skipped or done wrong, it can destroy a motor in one winter.
+Follow the exact operation and maintenance manual by both hours and calendar. In Ontario, fall service is especially useful because it combines annual maintenance with fuel, gearcase, battery, and storage preparation before HBW closes on December 1.
 
 **How much does annual Mercury maintenance cost?**
 Cost varies by motor size, boat type, and what's included. A basic spring commissioning plus fall winterization is the smallest bill. Bundles that include water-pump impeller replacement, anode replacement, and other wear items run more. For your specific quote, [contact HBW](/contact).
@@ -4283,19 +4282,19 @@ Cost varies by motor size, boat type, and what's included. A basic spring commis
 Some of it. DIY makes sense for confident owners on smaller motors for tasks like fluid checks, oil changes, prop inspection, and basic visual maintenance. Tasks like water-pump impeller replacement, fuel system service on EFI motors, and anything involving lower-unit disassembly should be left to a Mercury dealer. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) covers winterization specifically.
 
 **How long does a Mercury outboard last with proper maintenance?**
-Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours before major service is required. For a recreational boater running 50 to 150 hours a season, that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
+There is no honest universal hour count. Engine family, load, cooling water, corrosion exposure, storage, installation, and service history all matter. A documented schedule and early response to warning signs give the motor its best chance of a long service life.
 
 **What kind of oil does my Mercury motor use?**
 The right oil depends on your specific motor. Most current Mercury FourStroke outboards use Mercury 4-Stroke Marine Oil (FC-W rated); the recommended viscosity for your engine is on the cowl decal and in your owner's manual. Don't guess between grades. Check the spec for your model, or [contact HBW](/contact) and we'll confirm it.
 
-**Should I winterize even if my boat is stored indoors?**
-Yes. Even in heated indoor storage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other winterization steps still apply.
+**Does every Mercury FourStroke need fogging for winter storage?**
+No single storage step applies to every model. Stabilize fresh fuel and follow the operation and maintenance manual for the exact engine. Some procedures use an oil or fuel-system method instead of a generic fogging routine. Store the outboard in the position the manual specifies so water can drain.
 
 **When should I replace my water-pump impeller?**
-Every 200 hours of operation or every 3 years, whichever comes first. We inspect impellers during fall winterization. A failed impeller can overheat the motor and damage the cylinder head, which is much more expensive than the preventive impeller replacement.
+Follow the exact owner's manual. Many Mercury schedules place water-pump service at an expanded interval around 300 hours or three years, while operating conditions or cooling symptoms can justify earlier work. A weak telltale or overheat warning needs diagnosis, not a calendar guess.
 
 **How often should I replace anodes?**
-Inspect annually. Replace when 30% or more depleted. A fully-depleted anode means the motor's metal becomes the next sacrifice, which leads to corrosion damage that is far more expensive to fix than a $50 anode.
+Inspect them regularly and replace them according to the manual, commonly when about half consumed. Use the correct material for the water. Aluminum works in fresh or brackish water, magnesium is intended for freshwater, and zinc is for saltwater.
 
 **Does Mercury warranty cover service work?**
 Mercury warranty covers manufacturing defects and material failures, not normal wear-item replacement (oil changes, plugs, anodes, impellers). Some service work needed to address a warranty issue is covered. Check with HBW or Mercury directly for your specific warranty coverage.
@@ -4304,7 +4303,7 @@ Mercury warranty covers manufacturing defects and material failures, not normal 
 Highly variable. Skipped winterization can cost a destroyed motor (multiple thousands). Skipped impeller replacement can cost a damaged cylinder head ($1,000 to $3,000 repair). Skipped fuel system service can cost spring start-up problems ($200 to $800). Skipped anode replacement can cost corrosion damage ($500 to $2,000). The math always favors regular service.
 
 **Can I bring a non-Mercury motor to HBW for service?**
-Yes, but our parts inventory and tooling are Mercury-focused. Non-Mercury service may take longer and require part-sourcing. For Mercury motors we are the most efficient. [Contact us](/contact) for non-Mercury service quotes.
+HBW repairs Mercury outboards and MerCruiser sterndrives. Other engine brands are accepted only as part of winterization and storage work, not general mechanical repair. Submit the exact engine and boat details at [hbw.wiki/service](https://hbw.wiki/service) before bringing it in.
 
 ---
 
@@ -4317,29 +4316,29 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     howToSteps: [
       {
         name: 'Spring Startup Checklist',
-        text: 'Check the lower unit oil for milky color indicating water intrusion. Inspect the propeller for dings and fishing line. Replace fuel filters. Check battery connections and clean corrosion. Inspect fuel lines for cracks. Test the kill switch.',
+        text: 'Check the gearcase lubricant for signs of water intrusion. Inspect the propeller and shaft for damage or fishing line. Inspect or replace fuel filters when due. Check battery connections, fuel lines, controls, and the engine stop switch.',
       },
       {
-        name: 'Mid-Season Maintenance (Every 50-100 Hours)',
+        name: 'Mid-Season Condition Checks',
         text: 'Check oil level on 4-stroke motors. Inspect spark plugs for fouling or wear. Clean the fuel/water separator. Lubricate all grease fittings. Check steering cable play. Inspect sacrificial anodes.',
       },
       {
         name: 'Fall Winterization',
-        text: 'Stabilize the fuel with Mercury Quickstor or similar. Fog the engine to protect internal components. Change lower unit oil. Disconnect battery and store in cool, dry place. Store motor upright to prevent water pooling.',
+        text: 'Stabilize fresh fuel, service the gearcase lubricant, follow the exact engine\'s storage procedure, disconnect and maintain the battery, and store the outboard in the position specified by the owner\'s manual so water can drain.',
       },
       {
         name: 'Schedule Professional Service',
-        text: 'Annual service (100 hours or yearly) includes full inspection, gear oil change, spark plug replacement, thermostat check, and water pump inspection. Major service (300 hours or every 3 years) includes water pump impeller replacement.',
+        text: 'For most current recreational FourStrokes, scheduled service is due at 100 hours or annually. Expanded work is commonly due around 300 hours or three seasons, but parts and inspections vary by model. Build the job from the serial-number manual.',
       },
     ],
     faqs: [
       {
         question: 'How often should I change the oil in my Mercury 4-stroke?',
-        answer: 'Change oil every 100 hours of operation or annually, whichever comes first. For new motors, the first oil change should be at 20 hours to remove break-in contaminants.'
+        answer: 'For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Mercury does not publish one universal 20-hour oil-change requirement for every new outboard. Follow the operation and maintenance manual for the exact serial number.'
       },
       {
         question: 'What happens if I don\'t winterize my outboard?',
-        answer: 'Water left in the cooling system can freeze and crack the engine block or powerhead. Unstabilized fuel causes carburetor gumming and fuel system problems. Improper storage leads to corrosion and seal damage.'
+        answer: 'Skipping the model-specific storage procedure can leave old fuel, water-contaminated gear lubricant, a discharged battery, or corrosion to deal with in spring. Store the outboard in the position Mercury specifies so cooling water can drain.'
       },
       {
         question: 'Can I do my own maintenance?',
@@ -4347,11 +4346,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How do I know if my water pump needs replacing?',
-        answer: 'Watch for weak or inconsistent water stream from the telltale, overheating warnings, or if it\'s been more than 300 hours since last replacement. When in doubt, have it inspected.'
+        answer: 'Follow the model-specific replacement schedule and act sooner if you see a weak or inconsistent telltale, reduced water pressure, or an overheating warning. Many Mercury schedules use an expanded interval around 300 hours or three years, but the exact manual controls.'
       },
       {
         question: 'How often should I change the oil in my Mercury 4-stroke outboard?',
-        answer: 'Change the oil and oil filter in your Mercury 4-stroke outboard every 100 hours of operation or once per year, whichever comes first. For most Ontario cottage boaters running 50-100 hours per season, annual oil changes are the right cadence. Use Mercury 4-Stroke Marine Oil (FC-W rated). In Canada the grade goes by horsepower: 10W-30 for 0 to 30 hp, 25W-40 for 40/50/60 hp, and 10W-30 for 75 hp and up. Your owner\'s manual confirms the exact grade for your engine. Using automotive oil is not recommended, it lacks the anti-foaming and corrosion-protection additives that marine oil provides. Keep a record of oil changes; it matters for warranty claims and resale value.'
+        answer: 'For most current recreational Mercury FourStrokes, change engine oil at 100 hours or annually, whichever comes first. Use an FC-W-rated four-stroke marine oil in the viscosity specified by the owner\'s manual for the exact engine. Keep the date, engine hours, oil specification, and receipt in the service record.'
       },
       {
         question: 'Can I do my own Mercury outboard maintenance?',
@@ -4359,11 +4358,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'When should I winterize my outboard in Ontario?',
-        answer: 'In Ontario, winterize your outboard mid to late September through early October, before sustained overnight temperatures drop below 0°C. Rice Lake and most Kawartha Lakes typically see hard freezes starting in late October, but cooling system damage can begin with repeated overnight freezes well before that. The practical target for most Ontario boaters is Canadian Thanksgiving weekend. Winterize the motor before you move it to storage, while the motor can still be run to draw stabilized fuel through the system and fog the cylinders properly.'
+        answer: 'Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, fall service runs through November and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner\'s manual for internal engine protection and storage position.'
       },
       {
         question: 'How long does a professional outboard winterization take?',
-        answer: 'A professional outboard winterization at a certified Mercury dealer takes approximately 1.5 to 2.5 hours for a single engine, depending on motor size and additional services. The work covers running stabilized fuel through the system, fogging the cylinders, changing lower unit oil, flushing the cooling system, disconnecting and charging the battery, and a visual inspection. Booking early, before the fall rush in late September, is the best way to get your preferred date.'
+        answer: 'The shop time depends on the engine, boat access, annual service items, and any issues found. A small portable and a V6 do not use the same procedure. Submit the serial number and service history at hbw.wiki/service so HBW can scope the correct fall work.'
       },
       {
         question: 'Does doing my own winterization void my Mercury warranty?',
@@ -4371,7 +4370,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What does annual Mercury outboard service cost in Ontario?',
-        answer: 'Professional annual service for a Mercury outboard at a certified dealer in Ontario typically runs $350-$700 for a single engine in the 60-150HP range, not including parts. The service covers oil and filter, gear lube, spark plugs, fuel filter, full inspection, and system checks. Water pump impeller replacement adds $150-$350 in parts and labour. Spring commissioning runs an additional $150-$300 if done professionally. For exact service pricing at Harris Boat Works, call 905-342-2153 or request service at hbw.wiki/service.'
+        answer: 'The price depends on the exact engine, the items due in its manual, service history, access, and what inspection finds. Spark plugs, water-pump parts, filters, and other wear items are not one universal annual replacement package. Request the current HBW scope and price at hbw.wiki/service with the serial number and engine hours.'
       }
     ]
   },
@@ -5108,13 +5107,13 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
     imageAlt: 'Technician inspecting a Mercury ProKicker outboard motor in a workshop for Rice Lake walleye trolling.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-05-23',
+    dateModified: '2026-07-23',
     category: 'Fishing',
     readTime: '10 min read',
     keywords: ['Mercury 9.9 ProKicker Rice Lake', 'Mercury ProKicker Ontario', '9.9 kicker motor walleye trolling', 'Mercury 9.9 ProKicker vs standard 9.9', 'ProKicker EFI guide', 'kicker motor Rice Lake'],
-    content: `*Last reviewed: 2026-05-23*
+    content: `*Last reviewed: 2026-07-23*
 
-> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local pickup details.
+> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local details.
 
 For how the ProKicker fits alongside the rest of the 9.9 family, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
@@ -5256,7 +5255,7 @@ Lock-to-lock travel moves at displacement speed, so your main motor is fine for 
 The Mercury 9.9 EFI ProKicker is easy to live with. The EFI powerhead has no oil filter to change, and the camshaft is maintenance-free with no valve-lash adjustments for the life of the engine. That leaves a short, predictable service list:
 
 - **Annual service:** engine oil change, gear lube, fuel filter, spark plug inspection, and a general going-over. Once a year or roughly every 100 hours, whichever comes first.
-- **Water pump and impeller:** Mercury's schedule puts water pump service in the 300-hour range. On Rice Lake's weedy, silty water we often recommend it sooner, every 2 to 3 seasons. The impeller is the single most important item on any water-cooled outboard. Do not stretch it.
+- **Water pump and impeller:** Follow the exact ProKicker manual. Expanded water-pump service is commonly around 300 hours or three years, while Rice Lake weeds, silt, reduced water pressure, or an overheat warning can justify earlier inspection.
 - **EFI throttle body:** inspect and clean every few seasons if you run ethanol-blended fuel regularly.
 
 HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.
@@ -5336,7 +5335,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
       },
       {
         name: 'Complete the Break-In Period',
-        text: 'Run the engine through the 10-hour break-in procedure specified in the owner\'s manual, varying speed and avoiding sustained full throttle. Schedule your first oil change at 20 hours.',
+        text: 'Run the engine through the 10-hour break-in procedure specified in the owner\'s manual, varying speed and avoiding sustained full throttle. Then follow the model-specific maintenance schedule. Do not treat a 20-hour oil change as a universal Mercury requirement.',
       },
     ],
     faqs: [
@@ -5400,7 +5399,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     keywords: ['mercury dealer ontario', 'harris boat works', 'mercury outboard dealer', 'mercury sales peterborough', 'trusted boat dealer ontario'],
     content: `> **Quick answer:** HBW has been on Rice Lake in the Kawarthas, Ontario since 1947 and a Mercury dealer since 1965. Three generations of the Harris family, a current Mercury Marine Premier Dealer, and the only Mercury dealer on the lake. We post installed pricing online, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
-Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the highest tier Mercury awards, which gives our customers factory-direct support, priority parts access, and a shop built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
+Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the current top tier in Mercury's dealer program, and our shop is built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
 
 ## Quick recommendation
 If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
@@ -5419,12 +5418,14 @@ That is not a sales line. It's just how it worked out.
 ### 2. Mercury Premier dealer status
 Mercury rates dealers in tiers based on volume, service quality, customer satisfaction, and operational standards. Premier is the top tier, and it's not decorative.
 
-What Premier status gives our customers:
-- Priority parts allocation during high-demand periods
-- Earlier access to new product launches
-- Factory-direct technical support for complex service issues
-- Mercury-certified technician training at the highest levels
-- Faster warranty claim processing
+What our Premier status and Mercury-only focus mean in practice:
+- Mercury-trained technicians
+- Mercury-specific diagnostic equipment and tooling
+- Deep Mercury and MerCruiser parts inventory
+- Access to Mercury technical resources for complex service issues
+- Current product and service training
+
+Premier status does not change a customer's factory warranty rights or guarantee faster claim approval. Mercury's warranty terms and authorization process apply across its authorized Canadian dealer network.
 
 Our Mercury-only focus is part of why we maintain Premier status.
 
@@ -5509,7 +5510,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
 `,
     faqs: [
       { question: 'How long has Harris Boat Works been a Mercury dealer?', answer: 'Since 1965. The marina itself was founded in 1947, and the Harris family has owned and run it for three generations in Gores Landing on Rice Lake.' },
-      { question: 'What is a Mercury Premier dealer?', answer: 'Premier is the highest tier in Mercury\'s dealer rating system, awarded on volume, service quality, customer satisfaction, and operational standards. It gives our customers priority parts access, factory-direct technical support, and faster warranty processing.' },
+      { question: 'What is a Mercury Premier dealer?', answer: 'Premier is the current top tier in Mercury\'s dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, deep parts inventory, and access to Mercury technical resources. It does not change a customer\'s factory warranty rights or guarantee faster claim approval.' },
       { question: 'Why does Harris Boat Works only sell Mercury?', answer: 'Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water.' },
       { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 90 minutes east of Toronto and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
       { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.' },
@@ -6803,12 +6804,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['rice lake fishing guide', 'rice lake walleye', 'rice lake fishing regulations 2026', 'rice lake muskie', 'mercury 9.9 prokicker walleye', 'best mercury outboard rice lake fishing'],
-    content: `*Last reviewed: 2026-07-09*
+    content: `*Last reviewed: 2026-07-23*
 
 > **Quick answer:** For Rice Lake's shallow, weedy, troll-heavy walleye fishing, the proven setup is a Mercury 60-90 HP FourStroke main paired with a Mercury 9.9 ProKicker. The kicker runs the slow 1-2 mph trolling speed walleye demand; the FourStroke handles the afternoon wind on the ride home. Match horsepower to your hull's capacity plate, not the minimum. Build a quote at mercuryrepower.ca or see [Mercury repower on Rice Lake](/locations/rice-lake-mercury-repower).
 
@@ -6977,7 +6978,7 @@ Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with 
 
 Bass and muskie close December 15. Walleye closed November 15. Crappie, perch, sunfish, and pike stay open all year.
 
-Now is the time to winterize your Mercury properly. FourStroke and ProKicker motors have specific fogging and fuel-stabilization procedures. HBW handles winterization for any Mercury or MerCruiser. Book before the December rush. It always comes.
+Now is the time to prepare your Mercury for storage. FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. HBW handles winterization for Mercury and MerCruiser. Book before the December 1 closure.
 
 ---
 
@@ -7173,7 +7174,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
     imageAlt: 'Lund fishing boat with a Mercury outboard motor cruising on a calm Kawartha lake during a repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
-    dateModified: '2026-05-23',
+    dateModified: '2026-07-23',
     publishDate: '2026-02-23',
     category: 'Repowering',
     readTime: '12 min read',
@@ -7182,7 +7183,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
 
 A repower means a new Mercury on your existing hull. For most Kawartha boats with a sound hull and transom, it is the smart move: you keep the boat you know and spend a fraction of the cost of new. A clean install runs one to two days of shop time, two to four weeks from order to pickup. Build your quote at mercuryrepower.ca.
 
-*Last reviewed: 2026-05-23*
+*Last reviewed: 2026-07-23*
 
 There is a moment every boat owner on these lakes eventually meets. The motor that has started every spring for fifteen years turns over, coughs, and goes quiet. You drift for a second, and you start doing math.
 
@@ -7332,7 +7333,7 @@ The boat does not leave until it passes the sea-trial. That is not a marketing l
 
 You pick up a boat with a 3-year Mercury limited warranty on the new motor. It covers manufacturing defects and is honoured by any authorized Mercury dealer across Canada. HBW also runs seasonal Mercury promotions through the year, so check the promotions page for what is current when you book.
 
-A new Mercury FourStroke needs annual service, or service every 100 hours, whichever comes first. That covers engine oil and filter, gear lube, fuel filter, spark plug inspection, a throttle body check, and an overall inspection. Mercury's schedule puts water pump service in the 300-hour range, and many owners replace the impeller every 2 to 3 seasons. The impeller is the single most important item on the list. It is a rubber pump that circulates cooling water, and when it fails, overheating can come on fast.
+For most current recreational Mercury FourStrokes, scheduled service is due annually or every 100 hours, whichever comes first. The exact oil, filters, plugs, gearcase, water-pump parts, and inspections come from the manual for the serial number. Water-pump service is commonly part of an expanded interval around 300 hours or three seasons, but model and operating conditions control the actual timing.
 
 A word on protecting your warranty. Mercury warranty claims require documentation of proper maintenance, so keep your service records. Running the wrong prop pitch, neglecting annual service, or using the motor outside its rated application can create warranty problems, and in some cases insurance and liability problems too. None of that is exotic. It is the ordinary care any motor needs, and it is one more reason we test the prop before you leave the dock.
 
@@ -7708,7 +7709,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 6.5 GPH fuel flow at 4200 RPM and 28 MPH.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-03-16',
     category: 'Tips',
     readTime: '9 min read',
@@ -7875,7 +7876,7 @@ Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh
 ## Internal Links
 
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
@@ -8210,9 +8211,9 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 
 ### Step 4, Cooling System
 
-- **Inspect the water-pump impeller.** Mercury recommends replacement every 200 hours or 3 years. If you're at or past that interval, replace it now. A failed impeller means an overheated motor within minutes.
+- **Check the water-pump schedule and cooling symptoms.** Many Mercury manuals place water-pump service at an expanded interval around 300 hours or three years, while other models or conditions differ. A weak telltale, reduced water pressure, or overheat warning needs diagnosis now.
 - **Check telltale stream.** This is the small stream of water from the side of the lower unit. You should see it within 10 seconds of startup on muffs. No stream = stop the motor immediately.
-- **Inspect anodes.** Replace if 30% or more depleted. Anodes protect your underwater metal. Depleted anodes stop working.
+- **Inspect anodes.** Replace them according to the exact manual, commonly when about half consumed, and use the correct material for the water.
 
 ---
 
@@ -8336,7 +8337,7 @@ Most straightforward Mercury FourStroke commissioning jobs are a 2–4 hour shop
 
 
 **What if I skipped fall winterization?**
-It depends on your winter. If the motor was stored indoors and Ontario had a mild winter, you may be fine. If it was outdoors in a hard freeze without fogging or water purging, you need a diagnostic before you run it. Come in and let us look at it.
+It depends on the engine, how it was prepared, and what happened during storage. If the model-specific procedure was skipped or the fuel, gearcase, battery, or drainage condition is unknown, request an inspection before relying on the motor.
 
 
 **You mentioned ethanol-free fuel, where can I get it near Rice Lake?**
@@ -8367,7 +8368,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
       { name: 'Visual inspection', text: 'Walk around the boat checking hull for damage, mouse intrusion, cover damage, and loose hardware. Inspect motor cowl for cracks or chewed wiring. Check transom for soft spots and mounting bolts. Look at trailer bearings, tires, lights, and ball coupler.' },
       { name: 'Battery and electrical', text: 'Reinstall the battery if removed for winter. Load test it; below 10.5V under load means replace. Clean and tighten battery terminals. Test bilge pump, lights, gauges, and electronics with the key on but engine off.' },
       { name: 'Fuel system', text: 'Check the fuel tank for water or contamination. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. Add fresh fuel; gas over 6 months old should be drained or used up.' },
-      { name: 'Cooling system', text: 'Check cooling system for visible damage or blockage. Inspect the water-pump impeller if at the 200-hour or 3-year service interval. Replace anti-corrosion anodes if 30% or more depleted.' },
+      { name: 'Cooling system', text: 'Check the cooling system for visible damage, blockage, a weak telltale, reduced water pressure, or warning history. Follow the exact manual for water-pump service. Inspect anodes and replace them according to the manual, commonly when about half consumed.' },
       { name: 'Lubrication', text: 'Top off engine oil to the full mark on the dipstick. Check gearcase lube level and top off if needed. Lubricate steering and shift cables. Grease swivel pivots and zerk fittings on the motor and rigging.' },
       { name: 'Spark plugs and ignition', text: 'Inspect spark plugs and replace if at the 200-hour or 2-year service interval. Check spark plug wires for damage or cracks. Test the ignition system by starting the motor on muffs.' },
       { name: 'Propeller and lower unit', text: 'Inspect the prop for nicks, bends, or damage and repair or replace as needed. Check the lower unit for visible damage or fluid leaks. Verify shift smoothness through forward, neutral, and reverse.' },
@@ -8404,7 +8405,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
       },
       {
         question: 'Should I replace the water pump impeller every spring?',
-        answer: 'You don\'t need to replace the impeller every spring, but it should be inspected regularly and replaced on Mercury\'s interval of every 200 hours or 3 years, whichever comes first. The impeller is a rubber pump inside the lower unit that circulates cooling water, it degrades even when not in use. A failed impeller means no cooling water and an overheated motor. If your motor sat unused for more than a season, or you\'re unsure when it was last changed, replace it this spring.'
+        answer: 'You do not need to replace the impeller every spring. Follow the exact manual for the engine; many Mercury schedules place water-pump service at an expanded interval around 300 hours or three years, while model and operating conditions can change it. A weak telltale, reduced water pressure, or overheat warning needs diagnosis sooner.'
       },
       {
         question: 'Can I do spring commissioning myself, or do I need a dealer?',
@@ -10253,7 +10254,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Two people in life jackets and winter gear operating a Mercury-powered boat on a foggy Ontario lake for fall safety.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-05',
-    dateModified: '2026-05-05',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-05',
     category: 'Tips',
     readTime: '9 min read',
@@ -10373,7 +10374,7 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 - You cannot dress appropriately for the conditions
 - The motor is unreliable in cold
 
-When you call it a season, do it right. Proper winterization protects your motor from the inside out. Fuel stabilization, gear lube change, internal lubrication (fogging), battery removed and on a tender, all grease points serviced. A motor properly winterized in October is ready to run in May. One that was not can cost you a significant repair bill before the season even starts.
+When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. The battery may remain in the boat if disconnected and maintained according to its maker's instructions.
 
 Schedule winterization at [hbw.wiki/service](https://hbw.wiki/service) before the fall rush. Harris Boat Works completed 584 winterizations last season, it is one of our core services.
 
@@ -10452,7 +10453,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Couple cruising in a Mercury boat on an Ontario lake during fall to illustrate extending the boating season.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-04-22',
+    dateModified: '2026-07-23',
     publishDate: '2026-04-22',
     category: 'Boating Lifestyle',
     readTime: '~8 min read',
@@ -10460,7 +10461,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
-*Last reviewed: 2026-04-22*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
 
@@ -10497,7 +10498,7 @@ We covered the full spring run-up in our [Spring Outboard Commissioning Checklis
 - **Dead battery.** $200-$400 replaced. Free if it just needs a charge.
 - **Stuck thermostat or weak impeller.** $40 in parts, but a missed impeller can cook a powerhead at $4,500+. The DIY version is one of the riskiest, the gearcase has to come off, and the failure mode is silent.
 - **Fuel water contamination.** Ethanol absorbs moisture over winter. Untreated fuel can clog injectors and corrode lines. Treatment is cheap, ignoring it isn't.
-- **Cracked block from incomplete winterization.** $2,000-$5,000 powerhead repair if you're lucky, motor replacement if you're not. The reason we don't recommend half-hearted DIY winterization.
+- **Storage damage from the wrong procedure.** Stale fuel, water-contaminated gear lubricant, corrosion, a weak battery, or the wrong drainage position can turn into spring diagnosis and repair.
 
 **When to call HBW:** if the motor's older than 5 years and hasn't seen a shop spring commissioning, that first start of the season is the call to make. Same if you bought the boat used and don't know the prior owner's winterization quality.
 
@@ -10521,7 +10522,7 @@ Fall is where the season ends well or starts the next one badly. Skip winterizat
 
 **What HBW winterization covers:**
 
-- Fuel stabilizer and fogging oil
+- The fuel-treatment and internal-protection supplies specified for the exact engine
 - Lower unit oil drain and refill (water in the oil means the seal is gone, the fall check is when we catch it)
 - Cooling system flush and drain
 - Block drain on inboard or sterndrive applications
@@ -10577,7 +10578,7 @@ Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending o
 The previous October, ideally. We book spring slots from October onward and the early bookers get the prime mid-April through early May slots. Booking in March means you're taking what's left.
 
 **Do I really need winterization every year?**
-Yes. Even a mild winter has enough freeze events to crack a block if water sits in the cooling passages. The $250-$400 you spend on winterization is the cheapest insurance against the $2,000-$5,000 powerhead repair the next spring. We see the cracked blocks every year.
+Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service.
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -10585,7 +10586,7 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 Slightly, on labour rates. The bigger advantage of fall service is that any problems get caught with time to source parts and book the repair before next opener. Spring service that uncovers a problem in mid-April means you're missing opener while we wait for parts.
 
 **Can I do my own winterization?**
-Most steps yes, the critical ones we'd want eyes on. Fuel stabilizer, fogging, and battery prep are DIY-friendly. The cooling system flush and lower unit oil change are the failure-mode-expensive steps if done wrong. If you're new to the motor or you're not sure what you're seeing in the lower unit oil, that's the call to make.
+Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, internal protection, flushing, gearcase service, and storage position vary by engine. If you are new to the motor, see water or metal in the gearcase lubricant, or cannot complete the specified procedure exactly, request service.
 
 **What's HBW's spring backlog like?**
 By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait stretches longer at the spring peak. Booking in fall avoids the queue entirely.
@@ -10618,7 +10619,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
       },
       {
         question: 'Do I really need winterization every year?',
-        answer: 'Yes. Even a mild winter has enough freeze events to crack a block if water sits in the cooling passages. The $250-$400 you spend on winterization is the cheapest insurance against the $2,000-$5,000 powerhead repair the next spring. We see the cracked blocks every year.'
+        answer: 'Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service.'
       },
       {
         question: 'Is fall service cheaper than spring service?',
@@ -10626,7 +10627,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
       },
       {
         question: 'Can I do my own winterization?',
-        answer: 'Most steps yes, the critical ones we\'d want eyes on. Fuel stabilizer, fogging, and battery prep are DIY-friendly. The cooling system flush and lower unit oil change are the failure-mode-expensive steps if done wrong. If you\'re new to the motor or you\'re not sure what you\'re seeing in the lower unit oil, that\'s the call to make.'
+        answer: 'Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, internal protection, flushing, gearcase service, and storage position vary by engine. If you see water or metal in the gearcase lubricant or cannot complete the procedure exactly, request service at hbw.wiki/service.'
       },
       {
         question: 'What\'s HBW\'s spring backlog like?',
@@ -10654,13 +10655,13 @@ The work that makes the season feel easy happens between seasons. Booked once, p
     imageAlt: 'New Mercury 90hp outboard on a workshop stand during winter, ready for a repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: '2026-04-27',
+    dateModified: '2026-07-23',
     publishDate: '2026-04-27',
     category: 'Repowering',
     readTime: '8 min read',
     keywords: ['winter repower', 'off season repower', 'plan boat repower', 'repower timeline', 'spring ready boat'],
     content: `
-*Last reviewed: 2026-04-27*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
 
@@ -10722,7 +10723,7 @@ item4Value: $350 to $1,200
 item4Note: Sized after sea trial. Standard allowance applies on most installs.
 item5Label: First-year service
 item5Value: $200 to $350
-item5Note: 20-hour break-in service. Included on many repower packages at HBW.
+item5Note: Model-specific break-in guidance and maintenance-schedule review. HBW may recommend an optional early check, but it is not a universal Mercury 20-hour requirement.
 item6Label: Mercury Product Protection (optional)
 item6Value: $700 to $1,800
 item6Note: 8-year total coverage. Best value if you finance or plan to keep the boat past year 5.
@@ -10813,7 +10814,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard on a snowy dock with a calendar highlighting winter boat motor buying deals at Harris Boat Works.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-24',
-    dateModified: '2026-07-18',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '~8 min read',
@@ -11526,7 +11527,7 @@ Fuel burn and range cannot be predicted responsibly from horsepower alone. Hull,
 
 For current bare-motor pricing, see the [Mercury pricing reference](/pricing-reference).
 
-For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+For service intervals and major service costs on these motors, see [our Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ## Try the calculator
 
@@ -14294,7 +14295,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-05-04',
+    dateModified: '2026-07-23',
     publishDate: '2026-04-21',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14302,7 +14303,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
     content: `# How Much Does Boat Winterization Cost in Ontario? (2026)
 
 ## Quick answer
-Boat winterization in Ontario is not a flat number, it depends on motor size, what services you bundle, and whether you are adding shrinkwrap and storage. Motor winterization is the most critical piece. Skipping it risks a cracked block, which costs several thousand dollars to repair or replace. Book before October to get the easier slots. Request service at [hbw.wiki/service](https://hbw.wiki/service).
+Boat winterization in Ontario is not a flat number. It depends on the engine, items due, onboard systems, and whether shrinkwrap and outdoor storage are included. Skipping the correct storage procedure can leave fuel, gearcase, battery, corrosion, or drainage problems for spring. Request the current scope at [hbw.wiki/service](https://hbw.wiki/service) before HBW closes on December 1.
 
 ## Winterization price summary (CAD)
 
@@ -14328,7 +14329,7 @@ item1Value: $30 - $50
 item1Note: Marine-grade stabilizer mixed into a near-full tank to prevent phase separation over winter
 item2Label: Fogging oil through cylinders
 item2Value: $50 - $80
-item2Note: Mercury recommends fogging the intake while running, then a shot into each cylinder. Prevents cylinder wall corrosion.
+item2Note: Follow the exact engine's internal-protection procedure. Do not assume every FourStroke should be fogged through the intake.
 item2Accent: true
 item3Label: Lower unit oil change + inspection
 item3Value: $50 - $90
@@ -14364,7 +14365,7 @@ We quote winterization based on what is in front of us.
 
 **Bundled services.** Motor-only winterization is the base. Add shrinkwrap, storage, trailer service, battery storage, and spring commissioning booking, the number grows.
 
-**What is included in the winterization scope.** Basic winterization covers the freeze-protection essentials: fuel stabilizer, fogging, cooling system drain, gearcase drain and refill. A full service adds wear-item replacements, impeller, anodes, plugs if due, plus a full written inspection.
+**What is included in the winterization scope.** The base scope is model-specific: fuel preparation, internal engine protection, drainage and storage position, battery plan, gearcase inspection or service, and lubrication as the manual requires. Wear items are added only when the engine schedule or inspection calls for them.
 
 **Motor condition and age.** A clean, regularly serviced motor takes the expected time. A neglected motor takes more, and we will tell you what additional service is needed before we start.
 
@@ -14374,23 +14375,23 @@ For an exact quote on your specific setup, request service at [hbw.wiki/service]
 
 ## What winterization actually includes at HBW
 
-Every motor we winterize at HBW gets the same procedure. Time and parts vary by engine size; the checklist does not:
+Every motor we winterize at HBW goes through the same verification framework, but the exact products, access points, engine state, and sequence come from the manual for that serial number:
 
-**Engine flush.** 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris from the cooling system.
+**Cooling-system preparation.** We use the approved flush connection or running-water method specified for the engine. An outboard is never run or dry-cranked without cooling water.
 
-**Fuel stabilizer.** Mercury Quickstor added to the fuel, engine run to circulate it through the entire fuel system including injectors or carbs.
+**Fuel preparation.** We use the stabilizer and circulation procedure specified for the engine and fuel system.
 
-**Fogging.** Cylinders fogged with Mercury Storage Seal until the engine smokes and stalls. Partial fogging means partial protection.
+**Internal engine protection.** The method varies by Mercury family and model year. HBW follows the exact storage procedure instead of applying one intake-fogging method to every FourStroke.
 
-**Spark plugs.** Removed, cylinders fogged individually, reinstalled or replaced if they are due.
+**Spark plugs.** Inspected or replaced when the model's maintenance table calls for it. Cylinders receive fogging oil only when the exact storage procedure requires it.
 
-**Oil change.** Full crankcase oil and filter, drained while warm so the used oil evacuates completely.
+**Oil change.** Crankcase oil and filter are changed when due under the model's annual or hour-based maintenance table.
 
 **Gearcase service.** Lower unit drained, inspected for water intrusion (milky oil means a seal failure we want to know about before it freezes), refilled with Mercury High Performance gear oil.
 
-**Cooling system drain.** All water removed from the block, water passages, and tell-tale. This is the step that prevents freeze damage. Miss it, and Ontario temperatures will find it.
+**Cooling-water drainage and storage position.** Follow the flushing and drainage method for the exact engine, then store it in the position Mercury specifies. Do not assume every model uses a manual block-drain step.
 
-**Battery service.** Charged, terminals cleaned, removed from the boat, and stored on a smart charger in a building that stays above freezing.
+**Battery service.** The battery is disconnected and checked. It may remain installed or be removed and maintained, depending on the boat, battery type, storage setup, and owner's plan.
 
 **Full written inspection.** Any service work identified during winterization is documented and communicated before spring.
 
@@ -14402,16 +14403,16 @@ Optional add-ons available separately or as a package:
 
 ## Mercury outboard specifics
 
-If you have a Mercury outboard, some winterization steps are specific to that brand. Mercury engines need the right fogging oil, a gearcase oil change, and a careful flush to prevent corrosion over winter. Here is exactly what a Mercury outboard needs before freeze-up.
+If you have a Mercury outboard, the winterization steps are specific to the engine family and serial number. Here is the framework HBW uses before freeze-up; the exact manual supplies the procedure.
 
-- **Engine flush.** 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris from the cooling passages before the motor sits all winter.
-- **Fogging with Mercury Storage Seal.** Cylinders fogged until the engine smokes and stalls. Partial fogging means partial protection.
+- **Cooling-system preparation.** Use the approved flush connection or running-water method in the exact manual, and keep cooling water supplied whenever the engine runs.
+- **Model-specific internal protection.** Use the product, access point, engine state, and sequence listed for the exact engine.
 - **Gearcase (lower unit) oil change.** Old oil out, gearcase inspected for water intrusion (milky oil flags a seal failure), refilled with Mercury High Performance gear oil.
 - **Fuel stabilizer.** Mercury Quickstor added to the fuel and run through the entire fuel system, including injectors or carbs.
 - **Lower unit oil inspection.** Magnetic drain plug checked for metal shavings, seals looked over before spring launch.
 - **Water pump inspection.** Impeller condition checked; a tired impeller is a summer overheat waiting to happen.
-- **Spark plug check or replacement.** Plugs pulled, cylinders fogged individually, plugs reinstalled or replaced if they are at interval.
-- **Battery removal.** Battery pulled from the boat, terminals cleaned, stored on a smart charger in a space that stays above freezing.
+- **Spark plug check or replacement.** Inspect or replace plugs when the model's maintenance table calls for it; use fogging oil only when the exact storage procedure requires it.
+- **Battery plan.** Disconnect and check the battery. It may remain in the boat or be removed and maintained, depending on the battery type and storage setup.
 
 Winterization is fall service only. Book your appointment before our December 1 closure (the marina is closed December 1 to April 1) to make sure your Mercury outboard is prepped before freeze-up.
 
@@ -14446,7 +14447,7 @@ Winterization is one of the service jobs a confident, experienced boater can han
 - You have done it before and know the process
 - The motor is smaller (under 60 HP) and accessible
 - You have a clean indoor space
-- You have the right supplies (gear lube pump, fogging oil, fuel stabilizer, fresh oil and filter)
+- You have the exact manual and the model-specific supplies it calls for
 - You are willing to own the outcome if you miss a step
 
 **Bring it to us when:**
@@ -14460,7 +14461,7 @@ Winterization is one of the service jobs a confident, experienced boater can han
 
 1. Customer drained the gearcase but forgot to refill it. Motor runs without lower-unit lube. Gears destroy themselves in 30 minutes. Lower unit replacement: $1,500 to $4,500 CAD depending on the motor.
 
-2. Customer missed the cooling system drain. Water freezes in the powerhead. Block cracks. Motor is scrap. We see this every single spring on boats where someone partially DIY'd the winterization.
+2. Customer used a generic procedure for the wrong engine or stored it in the wrong position. Fuel, gearcase, battery, corrosion, or drainage problems appear at spring commissioning.
 
 Both are avoidable.
 
@@ -14483,7 +14484,7 @@ Spring commissioning is the inverse of winterization, and booking it in fall is 
 
 In August through November 2025, Harris Boat Works completed 584 winterizations across Rice Lake and the Kawarthas. That volume matters because it means the procedure is routine for our team, the appointment scheduling is dialed in, and we have seen the full range of what Ontario winters do to motors that were not properly prepped.
 
-We would rather see your service request in September than in May about a cracked block.
+We would rather see your service request in September than a preventable storage-related repair request in May.
 
 ## Book winterization
 
@@ -14491,7 +14492,7 @@ Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/ser
 
 Or request service at [hbw.wiki/service](https://hbw.wiki/service).
 
-*Last reviewed: 2026-05-11.*
+*Last reviewed: 2026-07-23.*
 
 For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
 
@@ -14500,8 +14501,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'What does boat winterization cost in Ontario?', answer: 'It depends on motor size, scope of service, and whether you bundle shrinkwrap, storage, and spring commissioning. Motor-only winterization is the smallest line item. A full package is significantly more. Request a quote based on your specific boat at hbw.wiki/service.' },
-      { question: 'What does a proper Mercury winterization include?', answer: 'At HBW: engine flush, fuel stabilizer, fogging, spark plug service, oil and filter change, gearcase drain and refill, cooling system drain, battery service, and a written inspection report.' },
-      { question: 'Can I winterize my own Mercury outboard?', answer: 'Yes, if you have experience, the right tools, and a clean space. The two most common DIY mistakes (skipping the gearcase refill and missing the cooling system drain) each lead to expensive repairs.' },
+      { question: 'What does a proper Mercury winterization include?', answer: 'At HBW, the scope follows the exact engine manual: fuel preparation, internal protection, drainage and storage position, battery plan, gearcase inspection or service, lubrication, and any maintenance items due for that model. Not every FourStroke receives the same fogging or parts list.' },
+      { question: 'Can I winterize my own Mercury outboard?', answer: 'Yes, if the required tasks are within your ability and you follow the exact serial-number manual. Common mistakes include using a generic procedure, running without cooling water, missing water or metal in the gearcase lubricant, and storing the motor in the wrong position.' },
       { question: 'What happens if I do not winterize my boat?', answer: 'Water in the cooling system freezes, expands, and cracks the powerhead. Water in the gearcase freezes and damages internal seals. Unstabilized fuel breaks down. A skipped winterization can easily become a $2,000 to $5,000+ repair bill or a destroyed motor.' },
       { question: 'Does indoor storage eliminate the need for winterization?', answer: 'No. A cold unheated garage in Ontario still freezes. Water in the powerhead does not care whether the roof is over it. Winterize regardless of where the boat is stored.' },
       { question: 'When should I book winterization?', answer: 'Book in late September or early October to get the better appointment slots. November bookings are possible but more rushed. Last-minute freeze-up bookings sometimes are not.' },
@@ -14515,12 +14516,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     relatedSlugs: ['spring-outboard-commissioning-checklist', 'mercury-maintenance-intervals-20-100-300-rule'],
     title: 'DIY Mercury Outboard Winterization',
     seoTitle: 'Can I Winterize My Mercury Outboard Myself? DIY Guide',
-    description: 'Winterize your Mercury outboard yourself: stabilize fuel, fog engine, drain gearcase, refill lube, clear cooling system. Ontario dealer\'s complete DIY.',
+    description: 'DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop.',
     image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-07-17',
+    dateModified: '2026-07-23',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14531,9 +14532,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 
 
+*Last reviewed: 2026-07-23*
+
 ## Quick Answer
 
-You can winterize your own Mercury outboard if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer, and if you have the supplies and an hour of focused work. The step that kills motors is leaving water in the powerhead through a freeze. If you're not certain the cooling system is clear, pay a dealer to do it. A professional winterization costs a fraction of a cracked block.
+You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -14546,41 +14549,35 @@ https://www.youtube.com/watch?v=YGuQjF6vuao
 ---
 
 ::diagnostic-flow
-heading: Winterizing your Mercury? Five steps in this order
-eyebrow: Fall checklist
-subhead: Spring no-starts usually trace back to one of these five steps being skipped in fall.
-step1Label: Fuel
-step1Question: Is the tank near full with treated fuel (marine stabilizer added)?
-step1Tip: Top the tank to 95 percent with stabilizer mixed in. Empty space invites condensation, which is the most common cause of spring no-starts.
-step2Label: Fogging oil
-step2Question: Have you fogged the cylinders through the spark plug holes or air intake?
-step2Tip: Mercury recommends running fogging oil through the intake while the motor runs, then a shot directly into each cylinder. Skipping this is the #1 cause of corroded cylinder walls.
-step3Label: Lower unit oil
-step3Question: Has the lower unit oil been changed and inspected for water?
-step3Tip: Milky oil means a seal failure. Better to find it in fall when you have time to fix it, not in spring at the launch ramp.
-step4Label: Water flush and drain
-step4Question: Have you flushed with fresh water and let the motor drain fully tilted down?
-step4Tip: Run the motor on muffs with fresh water for 5 to 10 minutes, then tilt straight down to drain. Leftover water in the block freezes and cracks aluminum.
-step5Label: Battery
-step5Question: Is the battery off the boat or on a maintainer for the winter?
-step5Tip: A frozen, discharged battery is a $200 spring purchase. A trickle charger or full pull-out is $50 of prevention.
-escalationLabel: Want us to handle it?
-escalationBody: Full winterization service runs around $250 to $400 depending on motor size. Includes fuel stabilizer, fogging, lower unit oil, flush, drain, and battery prep. Book at hbw.wiki/service.
-::
-
-::pull-quote
-quote: I skipped winterization once. Just one year. The block cracked and the repair quote came back at **$7,800**. The $400 winterization service every fall is the cheapest insurance I buy on this boat.
-attribution: Ron H.
-source: HBW Customer, Peterborough 2026
+heading: Winterizing your Mercury? Start with the exact manual
+eyebrow: Safe fall checklist
+subhead: The order and supplies change by engine. Use the serial-number manual before opening the cowl or draining a fluid.
+step1Label: Identify
+step1Question: Do you have the operation and maintenance manual for the exact engine?
+step1Tip: Confirm the serial number, engine family, year, and storage section. A generic FourStroke checklist is not enough.
+step2Label: Fuel
+step2Question: Does the fuel meet Mercury's specification, and have you followed the model's storage guidance?
+step2Tip: Use fresh fuel, the stabilizer concentration Mercury specifies when applicable, and the run time stated in the manual.
+step3Label: Gearcase
+step3Question: Is the lubricant due, and did it show water or metal?
+step3Tip: Milky lubricant, metal, damaged seals, or uncertain fill procedure are reasons to stop and request service.
+step4Label: Engine protection
+step4Question: Are you following the exact internal-protection and flushing method?
+step4Tip: Some procedures differ from generic fogging advice. Keep cooling water supplied whenever the engine runs.
+step5Label: Battery and position
+step5Question: Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?
+step5Tip: The battery may remain in the boat if disconnected and maintained. The exact engine position must allow proper drainage.
+escalationLabel: Need the model-specific scope?
+escalationBody: Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
 ::
 
 ---
 
-![Six-step winterization guide for Mercury outboards: stabilize fuel, flush cooling, fog engine, drain gearcase, store battery, cover. Critical steps highlighted.](/lovable-uploads/inline/diy-winterization-steps.svg)\\n\\n## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
+## DIY Mercury Outboard Winterization: What to Do, What to Skip, and When to Call a Dealer
 
-Ontario's boating season has a hard stop. Unlike some parts of the country where an outboard can sit in the water year-round, here it comes out in October and faces five or six months of temperatures that will crack an unprotected powerhead if you leave water in it.
+Ontario's boating season has a hard stop. Fuel condition, water-contaminated gear lubricant, battery state, corrosion protection, and the motor's drainage position all matter during a long freeze.
 
-Winterization isn't optional maintenance. It's the difference between a motor that starts in May and one that needs a powerhead, or gets scrapped.
+Winterization is storage preparation, not one universal fogging recipe. The exact Mercury procedure depends on the engine family and model year.
 
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
@@ -14612,17 +14609,16 @@ For engine repairs, we only service Mercury and Mercruiser.
 
 Pick these up at a Canadian Tire, marine store, or from your dealer's parts counter before the last day on the water:
 
-- Mercury Quickstor or equivalent fuel stabilizer
-- Mercury Storage Seal fogging oil (or Mercury Premium Fogging Oil)
-- Mercury High-Performance Gear Lube, volume depends on motor size; a quart typically covers motors under 60 HP, larger motors need more
-- New gear lube drain plug gaskets, cheap, replace every year
-- Spark plug socket (size varies; 13/16" is common on many Mercurys, check your manual)
-- Anti-seize compound for spark plug threads
-- Marine grease for grease points
+- The operation and maintenance manual for the exact serial number
+- Fuel stabilizer only if the storage procedure calls for it
+- The gearcase lubricant and quantity specified for the model
+- New drain-plug seals when the manual calls for replacement
+- The exact tools listed for the tasks you are performing
+- Mercury-specified lubricant for the applicable grease points
 - A bucket and rags
-- Flush muffs (earmuffs that go over the lower-unit cooling intake) or another method to supply cooling water
+- The approved flushing connection or cooling-water supply for the engine
 
-You need a way to run the motor briefly during this process. Flush muffs connected to a garden hose are the most common DIY method and work well.
+If the procedure requires the engine to run, use the water-supply method and flow Mercury specifies. Never run or dry-crank an outboard without cooling water.
 
 ---
 
@@ -14634,37 +14630,25 @@ Do these in order. Don't skip steps. If you're not sure what you're looking at a
 
 Do this before your last run of the season, not after.
 
-1. Add fuel stabilizer to the tank at the rate on the bottle, typically 1 oz per 2.5 gallons (10 L) or as directed.
-2. Run the motor for at least 10 minutes to circulate the stabilized fuel through the entire system, lines, injectors (FourStrokes), or carburettors (older 2-strokes).
-3. This prevents the fuel from breaking down and gumming up your fuel system over winter.
+1. Start with fresh fuel that meets the manual's specification.
+2. Add the stabilizer Mercury specifies, at the product's stated concentration, when the storage procedure calls for it.
+3. Circulate treated fuel for the time and by the method in the exact engine manual.
 
 **Ethanol note:** If you're running pump gas with ethanol (E10), this step matters more. Ethanol absorbs water and can cause phase separation in stored fuel. Ethanol-free fuel is available at HBW on-site, filling up with it at the end of season simplifies this step considerably.
 
-**Don't:** drain the tank completely dry. Modern FourStroke fuel systems need some fuel in the system. What you want is stabilized fuel, not an empty tank.
+Do not use one generic full-tank or empty-tank rule for every portable tank, built-in tank, carbureted motor, and EFI system. Follow the storage guidance for the boat's actual fuel system.
 
 ### Step 2: Flush the Cooling System
 
-After the last run (or during winterization), flush the motor with clean fresh water. This removes salt (for salt water boats), sediment, and any organic debris from the cooling passages.
+Use the flushing connection, engine state, water flow, and duration stated in the exact manual. Some flushing attachments are used with the engine off; other procedures require a running engine and a continuous water supply. Do not assume generic muffs and a five-minute idle are correct for every model.
 
-Connect the flush muffs to a hose, run the motor at idle for at least 5 minutes, then shut down.
+After shutdown, store the motor in the position Mercury specifies so water can drain.
 
-**Critical:** The motor must reach operating temperature during this step for the thermostat to open and allow water through the full cooling circuit. Five minutes at idle on warm motor is better than two minutes on a cold one.
+### Step 3: Follow the Model-Specific Internal Protection Procedure
 
-After shutting down, let the water drain completely from the motor while tilted down.
+Do not spray fogging oil into the intake simply because a generic checklist says to. Mercury storage procedures vary across current FourStrokes, older carbureted two-strokes, direct-injected engines, ProKicker, Verado, and other families.
 
-### Step 3: Fog the Engine
-
-Fogging oil is sprayed into the intake (for most FourStrokes) or carburettors (for older 2-strokes) while the motor is running. It deposits a protective oil film on the internal cylinder walls, protecting against rust and corrosion during storage.
-
-**FourStroke process (typical):** With the motor running at idle and connected to flush water:
-1. Remove the air box cover to access the intake.
-2. Spray fogging oil in short bursts into the intake. The motor will smoke, this is expected.
-3. Continue until oil smoke is coming steadily from the exhaust.
-4. Shut down while still spraying, this leaves a coat of oil on the cylinder walls.
-
-**Older carbureted 2-strokes:** Process is similar but through the carburettor throat(s). Follow your model-specific procedure.
-
-The procedure varies by motor model, consult your Mercury operator's manual for the exact method for your motor. Getting this step wrong (under-fogging, or fogging incorrectly) is one of the most common DIY mistakes.
+Use only the product, access point, engine state, and sequence in the exact manual. If the procedure requires removing spark plugs, opening the intake, disabling fuel or ignition, or running a special mixture and you are not confident, stop and request service.
 
 ### Step 4: Drain and Refill the Gearcase
 
@@ -14688,27 +14672,21 @@ Follow the lubrication diagram in your owner's manual. Common points:
 - Tilt/trim tube and pivot
 - Steering cable end (if applicable)
 - Swivel bracket
-- Propeller shaft (anti-seize compound on prop shaft, not regular grease)
+- Propeller shaft, using the lubricant Mercury specifies
 - Any other fittings shown in your manual
 
 Don't skip the prop shaft. A prop that corrodes onto the shaft over winter is a spring headache.
 
-### Step 6: Battery, Remove and Store Properly
+### Step 6: Disconnect and Maintain the Battery
 
-The battery should not overwinter in the boat. Cold temperatures accelerate discharge in lead-acid batteries, and a discharged battery can freeze and be permanently damaged.
-
-Leave the battery in the boat, disconnected (or on a maintainer). The killer is parasitic drain from leaving it connected, not the cold. If you have shore power at storage, a smart maintainer will further extend battery life.
-
-A battery that stored properly over winter starts spring at full capacity. A battery that sat in a cold boat all winter may start the season already compromised.
+The battery can remain in the boat if it is disconnected and maintained according to the battery maker's instructions. Use a compatible smart maintainer only where the storage setup and charger instructions allow it. Clean and protect the terminals, and load-test the battery before launch.
 
 ### Step 7: Final Check, Water Drain
 
 Before putting the cover on:
-- Tilt the motor to allow any remaining water to drain from the cooling system
-- Confirm you can see water drain from the motor
-- The motor should be stored in a position that allows gravity to drain any remaining water from the cooling passages
-
-For most outboards, storing tilted up (or close to vertical if the motor can be removed and stored on an engine stand) works. Check your model's storage orientation recommendation.
+- Move the motor to the storage position specified in its manual
+- Confirm drainage openings are not obstructed
+- Do not leave the motor in a position that can trap water
 
 ### Step 8: Cover and Store
 
@@ -14722,19 +14700,17 @@ If the boat goes into covered indoor storage, this is less critical. Outdoor or 
 
 Based on what we see in spring diagnostics at HBW:
 
-1. **Incomplete cooling flush.** The motor didn't get to temperature, so the thermostat never opened and the full cooling circuit wasn't cleared.
-2. **Fogging oil skipped entirely.** "I forgot" is the most common reason. The consequence shows up as surface corrosion on cylinder walls in spring.
+1. **Using a generic procedure for the wrong engine.** The correct internal-protection, flushing, and storage steps vary by model.
+2. **Running without cooling water.** Even a short dry run can damage the water-pump impeller.
 3. **Milky gear lube ignored.** If gear lube came out milky and the owner just refilled without addressing the seal leak, the new lube goes milky again by spring.
-4. **Battery left in the boat.** Dead or frozen battery in May.
+4. **Battery left connected.** Parasitic draw can leave a discharged or damaged battery by spring.
 5. **Stabilizer added but motor not run afterward.** The stabilizer never reached the injectors or carbs, so they saw unstabilized fuel all winter.
 
 ---
 
 ## When to Let a Dealer Do It
 
-The procedure above is accurate and complete, but it's also a sequence of steps where one mistake can result in expensive consequences in May. If you're not fully confident in any of the steps above, particularly fogging and cooling system clearance, professional winterization is the better economic decision.
-
-The cost of professional winterization is a known quantity. The cost of a cracked powerhead is not, and it's substantially higher.
+The guide above is a decision framework, not a substitute for the serial-number manual. If you find water or metal in the gearcase lubricant, damaged seals, alarms, fuel contamination, corrosion, or a procedure you cannot complete exactly, stop and request professional service.
 
 If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). The shop knows these motors.
 
@@ -14755,19 +14731,19 @@ Two related guides in the same cluster:
 ## Frequently Asked Questions
 
 **Can I winterize a Mercury FourStroke the same way as an older 2-stroke?** 
-The core steps are the same, but the procedure for fogging and fuel stabilization differs. FourStrokes have fuel injection systems rather than carburettors, and the fogging process is different. Always follow the procedure in your model's Mercury operator's manual, not a generic guide.
+No. Fuel-system, internal-protection, flushing, lubrication, and storage procedures can differ by engine family and model year. Always follow the operation and maintenance manual for the exact serial number.
 
 **Do I need to change the spark plugs as part of winterization?** 
 It's a good time to inspect them, but it's not required at every winterization. If the plugs are at or near their service interval, change them in fall so the motor starts fresh in spring. Mercury's service schedule has plug replacement intervals, check your manual.
 
 **What if I pull the boat out of the water in November but can't get to it until December?** 
-The deadline is before it freezes hard enough to crack the block. In Ontario, that usually means before sustained temperatures below -5°C to -10°C. Don't cut it close, once it's frozen, the damage is done.
+Do not wait for a forecast threshold. Complete the model-specific storage procedure before layup and freezing conditions. HBW closes on December 1, so submit fall service early enough for the work to be completed in November.
 
 **Is it okay to run the motor without water to fog it?** 
 No. Dry-cranking an outboard even briefly can damage the water pump impeller. Always have the cooling system supplied with water when running the motor, including during fogging.
 
 **Should I drain the fuel tank completely for winter?** 
-Not recommended for modern FourStrokes. Leaving stabilized fuel in the system is better than an empty system, which allows seals and gaskets to dry out. The stabilizer should be run through the full fuel system. Ask your dealer if you're unsure about your specific motor.
+Use the storage guidance for the boat's actual tank, fuel system, and engine. Portable tanks, built-in tanks, carbureted motors, and EFI systems do not all use one full-or-empty rule. Use fresh fuel that meets Mercury's specification and the stabilizer procedure in the exact manual.
 
 **My gear lube came out milky. Is that a big problem?** 
 Yes. Milky gear lube means water in the gearcase, which means a seal is leaking. Fresh gear lube will go milky again by spring if the seal isn't addressed. This is worth having looked at before or during winterization.
@@ -14777,7 +14753,7 @@ Yes. Milky gear lube means water in the gearcase, which means a seal is leaking.
 ## Internal Links
 
 - [Mercury Outboard Won't Start After Sitting](/blog/mercury-outboard-wont-start-after-sitting)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
 
 ---
@@ -14796,58 +14772,57 @@ Phone: 905-342-2153
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
     howToSteps: [
-      { name: 'Stabilize the fuel', text: 'Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L). Run the motor for at least 10 minutes to circulate stabilized fuel through the lines, carbs, or fuel injectors. The stabilizer prevents fuel breakdown and gum formation over winter.' },
-      { name: 'Run for 10 minutes with stabilized fuel', text: 'Either complete this during your last run of the season, or run the motor on muffs for 10 minutes with a small amount of stabilized fuel. This puts treated fuel into every part of the system before fogging.' },
-      { name: 'Fog the engine', text: 'While the motor is still running warm, disconnect the fuel line (or shut off the fuel valve). Spray fogging oil into each cylinder through the spark plug holes, or into the air intake while the motor draws it in. The motor will sputter and stall as it consumes the fogging oil. The film coats cylinder walls, valves, and bearings against rust.' },
-      { name: 'Drain the gearcase', text: 'Position the motor vertical with the vent screw at the top and drain screw at the bottom. Remove the drain screw first, then the vent screw. Catch all the lube and inspect it; clean lube is honey-amber. Milky or grey lube means water in the gearcase from a failed seal: stop and bring the motor in.' },
-      { name: 'Refill with fresh gear lube', text: 'Use only Mercury High-Performance Gear Lube. Pump fresh lube into the bottom drain hole until lube comes out the top vent hole. Quickly install and tighten the vent screw, then the drain screw, both with new gaskets. Skipping this step destroys the gears in 30 minutes of operation in spring.' },
-      { name: 'Clear the cooling system', text: 'Run the motor on muffs (or in water) for one or two minutes to confirm cooling water flow. Disconnect the water source while the motor is still running for 10 to 15 seconds. Tilt the motor up to drain residual water from cooling passages. Confirm no water is dripping from anywhere it should not be.' },
-      { name: 'Apply corrosion protection and final touches', text: 'Replace spark plugs if over a year old or showing wear; use anti-seize on the threads. Lubricate steering, throttle, and shift cable pivot points with marine grease. Check anodes and replace if more than 30% depleted.' },
-      { name: 'Disconnect battery and store the motor', text: 'Leave the battery in the boat, disconnected (or on a maintainer). The killer is parasitic drain from leaving it connected, not the cold. If you have power access, a trickle/maintainer charger further extends life. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor) with the motor vertical to prevent water pooling.' },
+      { name: 'Identify the exact engine procedure', text: 'Record the serial number and open the storage section of the matching Mercury operation and maintenance manual. Confirm the required fuel, internal-protection, flushing, gearcase, battery, and storage-position steps before buying supplies.' },
+      { name: 'Prepare the fuel system', text: 'Use fresh fuel that meets Mercury\'s specification. Add and circulate the stabilizer Mercury specifies, at the product concentration and run time stated in the exact manual, when the storage procedure calls for it.' },
+      { name: 'Follow the internal-protection procedure', text: 'Use only the product, access point, engine state, and sequence listed for the engine. Do not assume every FourStroke should be fogged through the air intake. Keep cooling water supplied whenever the engine runs.' },
+      { name: 'Service and inspect the gearcase when due', text: 'Use the lubricant, fill method, quantity, torque, and seal-replacement instructions in the manual. Milky lubricant, metal, or damaged seals are reasons to stop and request professional inspection.' },
+      { name: 'Inspect corrosion protection and controls', text: 'Inspect the anodes and replace them according to the manual, commonly when about half consumed. Lubricate only the points shown in the manual with the specified marine lubricant.' },
+      { name: 'Disconnect and maintain the battery', text: 'The battery may remain in the boat if disconnected and maintained according to its manufacturer\'s instructions. Clean and protect the terminals and load-test the battery before launch.' },
+      { name: 'Store the outboard in the specified position', text: 'Use the storage position in the exact engine manual so water can drain. Confirm the cover, drainage openings, and surrounding area will not trap water or create corrosion.' },
     ],
     howToTotalTime: 'PT2H',
-    howToTools: ['Marine fogging oil', 'Fuel stabilizer', 'Gear lube', 'Corrosion guard', 'Wrench set'],
-    howToSupplies: ['Mercury Quickstor or equivalent fuel stabilizer', 'Mercury Storage Seal or Premium Fogging Oil', 'Mercury High-Performance Gear Lube', 'New gear lube drain plug gaskets', 'Anti-seize compound', 'Marine grease', 'Bucket and rags'],
+    howToTools: ['Exact Mercury operation and maintenance manual', 'Model-specific hand tools', 'Approved cooling-water connection', 'Drain pan'],
+    howToSupplies: ['Fuel treatment specified by the manual, if required', 'Specified gearcase lubricant', 'Specified seals and marine lubricant', 'Battery-maintenance supplies'],
     faqs: [
       {
         question: 'Can I winterize my Mercury FourStroke outboard myself?',
-        answer: 'Yes. For a standard Mercury four-stroke outboard, DIY winterization is a realistic option for a mechanically comfortable boater. Supply cost runs $120-$220 (fogging oil ~$20-$35; AMSOIL fuel stabilizer ~$19.19; lower unit gear lube ~$25-$50; marine grease ~$15-$20). The process takes 2-4 hours and doesn\'t require specialty tools or a lift. The key steps: flush the cooling system, stabilize the fuel and run it through the system, fog the engine, drain and refill the lower unit, grease all fittings, and service the battery. The main reason to use a dealer instead is if you find water in the lower unit, if the engine is under active warranty and you\'re not documenting service carefully, or if the engine has known diagnostic issues. Dealer shop rate at HBW is $140/hr.'
+        answer: 'Yes, if every required task is within your ability and you follow the operation and maintenance manual for the exact serial number. Fuel preparation, internal engine protection, flushing, lubrication, and storage position vary by engine. Never run the motor without cooling water, and stop if the gearcase lubricant shows water or metal.'
       },
       {
         question: 'What happens if I don\'t winterize my Mercury outboard?',
-        answer: 'Skipping winterization puts your engine at risk of freeze cracking, fuel system degradation, lower unit damage, and battery failure. Water remaining in the powerhead cooling passages freezes and expands, this can crack the block or head, often requiring a complete engine replacement. Untreated fuel forms varnish over the winter that clogs injectors and carburetors, causing starting and running problems in spring. Based on our own repair order history, a "won\'t start" diagnostic averages $540; a full engine repair averages nearly $2,000. Unchanged gear lube won\'t reveal a leaking lower unit seal, which continues to cause internal damage while the boat sits. Total repair cost from skipped winterization can easily exceed $1,000-$3,000+ depending on what fails.'
+        answer: 'Skipping the model-specific storage procedure can leave stale or separated fuel, water-contaminated gearcase lubricant, corrosion, a discharged battery, or trapped water to address in spring. The exact risks depend on the engine, fuel system, storage position, and work that was due before layup.'
       },
       {
         question: 'What fogging oil should I use on a Mercury outboard?',
-        answer: 'Mercury recommends Mercury Precision Fogging Oil for their four-stroke outboards. Using Mercury-branded fogging oil is advisable if your motor is still under warranty, using compatible OEM-recommended products protects your warranty documentation position. If your engine is out of warranty, a quality marine fogging oil from another reputable brand (such as Yamaha Stor-Rite or Star Brite) will perform the same protective function. The key is using a product specifically designed for marine engine fogging, not a substitute like WD-40 or light oil, which don\'t provide adequate cylinder wall protection over a long storage period.'
+        answer: 'First confirm that the exact engine procedure calls for fogging oil. Mercury storage methods vary by engine family and model year. If it is required, use a product meeting the specification and apply it only through the access point and sequence stated in the serial-number manual.'
       },
       {
         question: 'Do I need to run the engine during winterization?',
-        answer: 'Yes, running the engine is essential for two steps. First, you need to run the engine on flush muffs with fresh water flowing to clear the cooling system of lake water and sediment. Second, you need to run the engine after adding fuel stabilizer to ensure the stabilized fuel circulates through the fuel injectors or carburetor, just adding stabilizer to the tank without running it doesn\'t protect the fuel delivery components. You also need the engine running briefly (and still warm) to fog properly. If you can\'t run the engine for any reason before storage, take it to a shop, partial winterization can leave you worse off than a complete job.'
+        answer: 'It depends on the exact flushing, fuel-treatment, and internal-protection procedure. Some steps use an engine-off flush connection, while others require a running engine with continuous cooling water. Never run or dry-crank an outboard without the water supply Mercury specifies.'
       },
       {
         question: 'How long does DIY outboard winterization take?',
-        answer: 'Plan for 2-4 hours for a first-timer working through a single outboard. An experienced boater who has done the process before can complete it in 90 minutes to 2 hours. Twin-engine setups roughly double the time. The longest step is usually the cooling system flush and fuel stabilization run, which takes 10-20 minutes of engine-running time. The lower unit drain and refill takes 15-20 minutes if you\'re careful and don\'t strip anything. Allow time to let the engine cool slightly before removing any covers or doing your final grease and inspection work. First-time DIYers should budget a full afternoon.'
+        answer: 'Time depends on the engine, access, tasks due, and what inspection finds. Read the complete storage procedure before starting and allow enough time to stop safely if the gearcase, fuel, battery, or cooling system needs professional attention.'
       },
       {
         question: 'What lower unit oil should I use on my Mercury outboard?',
-        answer: 'Mercury recommends Mercury Precision Lubricants gear lube in the weight specified for your model. Check your owner\'s manual for the correct specification, most Mercury four-stroke outboards use a specific SAE grade (typically 80W-90 or Mercury High Performance Gear Lube, depending on the model). AMSOIL synthetic gear lube is another quality option at $24.99-$26.49/L (available at marinecatalogue.ca). Using the wrong weight or an incompatible aftermarket product isn\'t recommended, particularly on engines under warranty.'
+        answer: 'Use the gearcase lubricant specification in the operation and maintenance manual for the exact motor. Follow the stated fill method, quantity, seal replacement, and torque instructions. Do not infer the correct lubricant from horsepower alone.'
       },
       {
         question: 'Should I store my outboard up or down for winter?',
-        answer: 'Store the outboard in the fully tilted-down (vertical) or slightly tilted-up position, never in the fully trimmed-up position for extended storage. Storing fully trimmed up traps water in the cooling passages and puts mechanical stress on the tilt/trim system components over a long storage period. Trimming slightly down allows residual water to drain from the lower unit and water pump area. After the final cooling system flush, let the motor rest in a trimmed-slightly-down position overnight before doing your final grease work.'
+        answer: 'Use the storage position specified in the manual for the exact engine and installation. The position must allow water to drain and must not leave openings blocked or components under an unsupported load. Do not rely on one generic up-or-down rule.'
       },
       {
         question: 'What is the most important step in outboard winterization?',
-        answer: 'The cooling system flush and the fuel stabilization run are the two most consequential steps. The cooling flush removes water that would otherwise freeze and crack the powerhead or exhaust system. The fuel stabilization run ensures treated fuel actually reaches the fuel delivery components, if you only add stabilizer to the tank without running the engine, the injectors and carb are still exposed to untreated fuel over winter. The lower unit drain is close behind in importance, it\'s your main diagnostic for a failing seal. If forced to choose, prioritize the cooling flush and fuel stabilization. Skipping either of those creates the most expensive failure modes.'
+        answer: 'Identifying and following the correct procedure for the exact engine is the first step. Fuel condition, gearcase lubricant, internal engine protection, cooling-water drainage, battery maintenance, and storage position all matter, and their sequence varies by model.'
       },
       {
         question: 'Does DIY winterization affect my Mercury warranty?',
-        answer: 'Mercury\'s warranty does not require dealer-performed maintenance to remain valid, but it does require that maintenance be performed according to the intervals and procedures specified in your owner\'s manual, using appropriate products. DIY winterization is compatible with warranty coverage if you use OEM-recommended lubricants and fogging products, follow the correct procedures, and keep records. The risk with undocumented DIY service is that if a warranty claim arises, you may be asked to demonstrate that maintenance was performed correctly. If you\'re in an active warranty period and not confident about documentation, having a dealer service the engine at least once, then doing it yourself afterward, is a reasonable approach.'
+        answer: 'Dealer-performed maintenance is not a universal condition of Mercury limited-warranty coverage. Follow the exact manual, use suitable products and procedures, and keep dates, engine hours, receipts, and notes. Damage caused by improper storage or service may be excluded, while warranty repairs must go through an authorized repair facility.'
       },
       {
         question: 'What\'s the difference between winterizing a two-stroke and a four-stroke Mercury?',
-        answer: 'The core process is similar, cooling flush, fuel stabilization, fogging, lower unit drain, battery service. The main differences: two-stroke carbureted engines need the carb bowl drained or run dry as part of fuel system prep, since fuel sitting in a float bowl over winter is prone to varnishing. Four-stroke EFI engines need fuel stabilizer circulated through the injection system by running the engine after treatment. Four-strokes also require an oil check (and oil change if due) as part of the service. At HBW, our 40-200 HP 2-stroke winterization rate is $206.89 vs. $337.84 for a 40-60 HP 4-stroke, the difference reflects the additional steps involved.'
+        answer: 'Fuel preparation, internal engine protection, oil service, flushing, and storage steps can differ across carbureted two-strokes, direct-injected two-strokes, and FourStroke families. Use the exact serial-number manual instead of adapting a procedure from another engine.'
       }
     ]
   },
@@ -15095,7 +15070,7 @@ This is a conflict of interest. We are declaring it upfront, not burying it, bec
 
 All three brands make mechanically reliable four-stroke outboards in 2026. We are not aware of a meaningful defect rate in any of the three that should rule it out for Ontario freshwater use.
 
-If you bought a properly maintained Mercury, Yamaha, or Honda today and ran it 50 to 150 hours a season, you should get 15 to 25 years of useful life from it. The motor that fails early is almost always the motor that missed oil changes, skipped impeller replacements, and went into winter without proper fogging and fuel stabilizer. Brand matters less than habits.
+No brand has an honest universal service-life promise. Engine family, installation, load, cooling water, corrosion exposure, storage, and maintenance history all matter. Follow the exact manual, respond early to warnings, and use the model-specific storage procedure. Brand matters less than condition and care.
 
 ## The factor that actually moves the reliability answer: dealer network
 
@@ -17038,12 +17013,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Technician installing a new Mercury outboard on an aluminum boat during a professional shop repower process.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-06-12',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '12 min read',
     keywords: ['mercury repower process', 'what happens during repower', 'boat repower steps', 'mercury install process', 'repower timeline ontario'],
     content: `**Canonical URL:** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
+
+*Last reviewed: 2026-07-23*
 
 ---
 
@@ -17177,7 +17154,7 @@ Customer picks up the boat. We walk through:
 - The new motor's controls and features
 - Mercury SmartCraft display interpretation (if applicable)
 - The 10-hour break-in protocol
-- The 20-hour first oil change (we book this in advance)
+- The model-specific break-in and first scheduled service plan
 - Mercury warranty terms
 - Annual maintenance schedule
 - Final invoice and any remaining payment
@@ -17221,7 +17198,7 @@ Not required, but we recommend it. Riding along lets you confirm the boat feels 
 We contact you before proceeding. You get options: repair the transom now and continue with the repower, repair the transom first (which adds time and cost), or reconsider whether the hull is worth repowering. We don't install a new motor on a transom we'd have concerns about.
 
 **What's the break-in protocol for a new Mercury?** 
-Mercury's new motor break-in involves graduated throttle use over the first 10 hours, followed by a first oil change at 20 hours. We walk through this at pickup. Breaking it in correctly protects the motor for the long term.
+Mercury's new-motor break-in uses model-specific throttle and load guidance, commonly through the first 10 hours on current examples. For most current FourStrokes, Mercury's first scheduled service is 100 hours or annually. We walk through the exact manual at delivery and may recommend an optional early check without calling it a warranty requirement.
 
 **Does HBW handle the Pleasure Craft Licence update?** 
 Yes. We handle the Transport Canada PCL paperwork for HBW customers. The PCL must be updated when the motor changes, motor specs are recorded on it.
@@ -17282,7 +17259,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'When\'s my first service after the repower?',
-        answer: '20-hour oil and filter change. We book this at delivery so it\'s not forgotten. After that, normal Mercury service intervals (annual at minimum, more frequent for heavy use).'
+        answer: 'Follow the model-specific break-in procedure and maintenance table. For most current FourStrokes, Mercury\'s first scheduled service is 100 hours or annually. HBW may recommend an optional early check, but it is not a universal 20-hour oil-change or warranty requirement.'
       },
       {
         question: 'Can I trade in my old motor during the repower?',
@@ -17736,7 +17713,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-05-09",
+    dateModified: "2026-07-23",
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
@@ -18096,7 +18073,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 
 **Symptoms:** Weak tell-tale at idle that improves at higher RPM, intermittent overheat alarm while idling or in no-wake zones, sputtering tell-tale.
 
-**Service interval:** Mercury recommends replacing the water pump impeller every 2-3 years or 200 hours, whichever comes first. This is one of the most important preventive maintenance items on an outboard and one of the most frequently skipped.
+**Service interval:** Follow the exact engine manual. Many Mercury schedules place water-pump service at an expanded interval around 300 hours or three years, while model, duty, debris, overheating, or reduced water pressure can bring inspection forward.
 
 **Don't ignore it:** A weak tell-tale last fall that you kept fishing through means the impeller may be at or past its limit. Don't start next season without addressing it.
 
@@ -18165,7 +18142,7 @@ It can. Heat cycles can damage head gaskets and warp components even in brief ov
 
 ## Internal Links
 
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
@@ -19137,250 +19114,164 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-maintenance-intervals-20-100-300-rule',
-    title: 'Mercury Maintenance: The 20/100/300 Rule',
-    seoTitle: 'Mercury 20/100/300 Maintenance Rule (Ontario Guide)',
-    description: "A Mercury Premier dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario.",
-    image: '/lovable-uploads/hero-mercury-maintenance-20-100-300.png',
-    imageAlt: 'Technician performing professional maintenance on a Mercury FourStroke outboard during a 100-hour service interval.',
+    title: 'Mercury Outboard Maintenance: 100 and 300 Hours',
+    seoTitle: 'Mercury Outboard Maintenance Schedule (100 & 300 Hours)',
+    description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean.",
+    image: '/lovable-uploads/mercury-maintenance-schedule-100-300-hbw.svg',
+    imageAlt: 'Mercury outboard maintenance timeline showing model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-05-12',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-12',
     category: 'Service & Maintenance',
     readTime: '11 min read',
-    keywords: ["Mercury maintenance intervals 20 100 300", "Mercury 100 hour service Ontario", "Mercury break-in service", "Mercury 300 hour major service", "Mercury annual service cost Ontario"],
-    content: `**Language:** English 
+    keywords: ["Mercury maintenance schedule", "Mercury 100 hour service Ontario", "Mercury 20 hour service requirement", "Mercury 300 hour service", "Mercury annual service Ontario"],
+    content: `*Last reviewed: 2026-07-23*
 
----
+> **Quick answer:** Mercury does not publish one universal 20/100/300 service rule for every outboard. For most current FourStroke owners, the first scheduled service is at 100 engine hours or annually. A dealer may recommend an earlier check, while 300-hour work adds model-specific items. Your serial-number owner's manual is the final schedule.
 
-![Infographic showing Mercury outboard maintenance intervals at 20, 100, and 300 hours for Ontario boaters.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+There are three separate timelines that often get blended together: break-in, an optional early ownership check, and scheduled maintenance. Calling all three a single Mercury rule creates the wrong warranty advice.
 
-## Quick Answer
+Here is the clean version.
 
-Mercury's service schedule is built around three milestones: 20-hour break-in service, 100-hour (or annual) routine service, and 300-hour major service. Each milestone covers a different scope of work. The 100-hour annual is the one most Ontario owners need to calendar every year regardless of hours, because most recreational boaters never reach 100 hours in a season. Skipping any milestone shortens motor life and, for motors under warranty, can affect coverage.
+![Mercury outboard maintenance timeline separating model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.](/lovable-uploads/mercury-maintenance-schedule-100-300-hbw.svg)
 
-::cost-stack
-heading: What each Mercury service interval actually costs
-eyebrow: Service cost by hour milestone
-subhead: Mercury's 20/100/300-hour rule is the maintenance schedule that keeps your warranty valid and your motor running long-term. Here are real Ontario shop costs at each tier so you can budget realistically.
-item1Label: 20-hour break-in service (one-time)
-item1Value: $180 - $320
-item1Note: First service on a new motor or after a major repair. Oil + filter change, lower unit oil check, fastener torque check, fuel system inspection. Mercury warranty depends on this being documented.
-item2Label: Annual service (every 100 hours or 1 year, whichever first)
-item2Value: $280 - $480
-item2Note: Engine oil + filter, lower unit oil + check magnetic plug, spark plugs (if due), water-separating fuel filter, anodes inspected, propeller hardware check, fuel stabilizer review. Standard for most Rice Lake recreational use.
-item2Accent: true
-item3Label: 200-hour service add-on items
-item3Value: +$120 - $220 on top of annual
-item3Note: Air filter (if equipped), thermostat inspection, sensor diagnostic scan with SmartCraft if equipped. Bigger V6/V8 motors need this more rigorously than smaller 4-strokes.
-item4Label: 300-hour major service
-item4Value: $650 - $1,200
-item4Note: Full annual service plus water pump impeller replacement (mandatory at this milestone), gear case pressure test, full fuel system pressure check, valve adjustment if specified for your motor. Skip this and your warranty is at risk.
-item5Label: 500-hour and 1,000-hour milestones
-item5Value: $900 - $2,500 depending on findings
-item5Note: Full 300-hour service plus deeper inspection of valves, timing belt or chain (model-dependent), and any deferred items. This is the "rebuild it now or accept reduced life" tier.
-totalLabel: Average annual cost if you do it right
-totalValue: $350 - $700 / year for typical recreational use
-caveat: Hours-based services apply if you exceed the 100/300 hour mark in a season. Most Rice Lake recreational owners run 30-80 hours/year and follow the annual interval. Book at /service or call (905) 342-2153.
-::
+## There Is No Universal 20/100/300 Rule
 
----
+Mercury's current new-owner guidance says a dealer may recommend a quick checkup a few weeks after purchase. For most boaters, the first scheduled service is annual maintenance completed at 100 engine hours or before seasonal storage.
 
-## Mercury Maintenance Intervals: The 20/100/300-Hour Rule Explained
+That early dealer check can be useful. It gives us a chance to review how the motor is running, answer break-in questions, and inspect the installation. It is not the same thing as a Mercury-mandated 20-hour oil change, and it should not be presented as a universal warranty condition.
 
-A new Mercury outboard isn't a finished product the day it leaves the factory. It's the beginning of a mechanical relationship. How you manage the first few hundred hours determines what you get out of the next several thousand.
+The exact schedule still varies by engine family, model year, duty cycle, and serial number. SeaPro, V12, Racing, older two-strokes, and high-hour applications can follow different instructions. Use the operation and maintenance manual for the exact motor.
 
-Mercury builds its service schedule around three milestones that correspond to distinct phases of an engine's life. Here's what each one involves and why it exists.
+## The Maintenance Timeline That Actually Applies
 
----
+| Stage | Typical timing | What it means |
+|---|---|---|
+| Break-in | First hours, model-specific | Follow the throttle, load, and RPM procedure in the exact owner's manual. Many current Mercury examples use a 10-hour break-in period. |
+| Optional dealer check | A few weeks after purchase, if recommended | Review operation and installation. This is dealer advice, not a universal Mercury 20-hour service requirement. |
+| Scheduled service | 100 hours or annually for most current recreational FourStrokes | Complete the items listed for the exact motor, or do them before seasonal storage if the calendar comes first. |
+| Expanded service | Commonly 300 hours or about three seasons | Complete the 100-hour items plus the additional parts and inspections specified for that model. |
+| Ongoing service | Continue by hours and calendar | Repeat the manual's schedule. Heavy use and harsh conditions can bring service forward. |
 
-## Why Three Milestones
+Mercury's public parts guidance describes a 100-hour service at least once a year as critical for most engines. It describes a 300-hour service as the 100-hour work plus additional components that vary by engine model.
 
-### Break-in phase (0-20 hours)
+## What a 100-Hour or Annual Service Commonly Covers
 
-A new engine is not fully "seated" when it leaves manufacturing. In the first 10-20 hours of operation:
-- Piston rings seat against cylinder walls
-- Gears mesh and find their final wear pattern
-- Metal particles shed from these break-in processes end up in the oil
+The owner's manual decides the job. Depending on the motor, common items can include:
 
-The 20-hour service exists specifically to capture and remove those particles before they circulate through the engine indefinitely. It also re-torques fasteners that may have relaxed as components settled.
+- FourStroke engine oil and oil filter, where fitted
+- Gearcase lubricant and inspection for water or metal
+- Fuel filters listed for the model
+- Propeller, prop shaft, and fastener inspection
+- Steering, throttle, shift, battery, hoses, and connections
+- Lubrication points and corrosion protection
+- Fault-history or SmartCraft review when useful
+- Any calendar-based item due for that engine
 
-Skipping the 20-hour service leaves metal contamination in the oil and misses the first opportunity to catch any assembly-related issues while the motor is still new.
+Spark plugs, water-pump parts, thermostats, belts, and other components are not a universal annual replacement list. Inspect or replace them when the model's schedule calls for it.
 
-### Routine operation phase (20-300 hours)
+For a price based on real Ontario service work, see our [Mercury 100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario).
 
-After break-in, the motor enters years of normal use. [The 100-hour service interval](/blog/mercury-100-hour-service-cost-ontario) is Mercury's standard for routine preventive maintenance during this phase. It covers the items that wear and accumulate through normal operation: oil, filters, spark plugs, gear lube, and inspection of critical systems.
+## What Changes at 300 Hours
 
-**The "every year" rule:** Mercury's schedule says every 100 hours OR every year, whichever comes first. Most recreational boaters in Ontario don't put 100 hours on a motor in a single season. That means the annual calendar trigger applies regardless of hours, and skipping a year isn't justified by low hours.
+Mercury sells 300-hour maintenance kits for many outboards. Its public guidance says these kits include the 100-hour service items plus additional components depending on engine model.
 
-### Major service phase (300 hours)
+For many applications, the expanded interval can include spark plugs and water-pump service. Other motors can add different filters, seals, belts, thermostats, or inspections. That does not make every possible item mandatory on every Mercury at exactly 300 hours.
 
-At 300 hours, a motor's rubber and elastomeric components, belts, impeller, seals, thermostat, have reached their expected end of service life regardless of visible condition. Many of these parts don't show wear externally before they fail. The 300-hour major service replaces them preventively.
+The safe process is simple:
 
----
+1. Identify the engine by serial number.
+2. Open the current operation and maintenance manual for that engine.
+3. Check both the hour and calendar columns.
+4. Build the service scope from that table.
+5. Record what was completed, when, and with which supplies.
 
-## What Gets Done at Each Interval
+Rice Lake weeds, sand, restricted cooling flow, overheating, commercial use, or unusually high hours can justify earlier inspection. A symptom-based inspection is not permission to ignore the scheduled interval.
 
-### 20-Hour Break-In Service
+## Maintenance and Mercury Warranty
 
-| Item | Why |
-|---|---|
-| Oil and filter change (FourStrokes) | Remove metal particles from break-in wear |
-| Gear lube drain and refill | Remove break-in particles from gearcase |
-| Inspect and retorque fasteners | Components may relax after initial heat cycles |
-| Inspect fuel system | Catch any factory assembly issues early |
-| Inspect cooling system and tell-tale | Confirm normal operation |
-| Check and adjust throttle/shift linkage | Initial stretch and adjustment |
+Mercury's Canadian limited warranty tells the purchaser to complete regular maintenance according to the applicable operation and maintenance manual and keep service records. Mercury can ask for proof of proper maintenance when reviewing a claim.
 
-### 100-Hour/Annual Service
+That wording matters. The warranty points to the applicable manual, not a site-wide 20-hour rule.
 
-This is the service most Mercury owners should be scheduling every fall or spring.
+Owner-performed maintenance is possible when the owner follows the manual, uses suitable parts and fluids, and keeps records. Mercury's warranty excludes routine maintenance itself and can exclude damage caused by improper service, unsuitable fuel, oil or lubricants, or an accessory or part Mercury did not manufacture, sell, or test. A non-OEM part is not accurately described as automatically voiding the entire warranty.
 
-| Item | Why |
-|---|---|
-| Oil and filter change (FourStrokes) | Routine maintenance |
-| Gear lube drain and refill | Remove water and wear particles from season's use |
-| Spark plug inspection/replacement | Worn plugs reduce efficiency and increase no-start risk |
-| Fuel filter replacement | Clogged filters restrict flow |
-| Water pump impeller inspection | Critical for cooling; replace if worn or if interval is approaching |
-| Thermostat test | Cooling system integrity |
-| Inspect drive belts (applicable models) | Look for cracking or wear |
-| Lubricate all grease points | Steering, tilt/trim, pivot points |
-| Inspect propeller and shaft | Seal condition, debris damage |
-| Check battery and charging system | Spring: ensure winter storage didn't compromise either |
-| Inspect all hoses and connections | Look for brittleness, cracks, loose connections |
+Warranty repairs must go through a Mercury-authorized repair facility. If a failure is related to maintenance, records help show what was done.
 
-### 300-Hour Major Service
+## Ontario Seasonal Timing
 
-In addition to all 100-hour items:
+Most Rice Lake recreational owners reach the calendar before they reach 100 hours. Their annual service often happens with fall winterization, which avoids duplicating fluid work and catches gearcase water before storage.
 
-| Item | Why |
-|---|---|
-| Water pump impeller replacement (if not already current) | End of expected service life regardless of condition |
-| Thermostat replacement | Rubber and seal degradation |
-| Drive belt replacement (applicable models) | Preventive at life expectancy |
-| Timing belt inspection/replacement (applicable models) | Failure-critical item on applicable motor families |
-| Full cooling system inspection | Passage scale, hose condition |
-| Fuel system inspection and cleaning | Injector condition, fuel delivery integrity |
-| Inspect anodes | Marine environment corrosion protection |
+At HBW:
 
-Exact scope of the 300-hour service varies by motor model and family. Your dealer will follow the Mercury factory-published service manual for your specific motor.
+- Submit fall service before the marina closes on December 1.
+- The marina is closed from December 1 through April 1.
+- Spring service resumes after the April 1 reopening.
+- If the motor crosses an hour-based interval mid-season, do not wait for fall.
 
-![Infographic chart showing Mercury 20-hour break-in, 100-hour routine, and 300-hour major outboard service requirements.](/lovable-uploads/mercury-20-100-300-service-interval-timeline.png)
+Low hours do not automatically erase a calendar interval. The exact manual still decides what is due.
 
-*Mercury's three service milestones at a glance. The 20-hour break-in service is one-time and covers oil and filter change on FourStrokes, gear lube drain and refill, inspecting and retorquing fasteners, inspecting the fuel system, inspecting the cooling system and tell-tale, and checking and adjusting the throttle and shift linkage. The 100-hour or annual routine service (whichever comes first) adds spark plug inspection or replacement, fuel filter replacement, water pump impeller inspection, thermostat test, drive belt inspection on applicable models, lubricating all grease points, inspecting the propeller and shaft, checking the battery and charging system, and inspecting all hoses and connections. The 300-hour major service adds water pump impeller replacement, thermostat replacement, drive belt replacement on applicable models, timing belt inspection or replacement on applicable models, a full cooling system inspection, fuel system inspection and cleaning, and anode inspection. Exact 300-hour scope varies by motor.*
+## What HBW Checks Before Quoting Service
 
----
+We ask for the engine serial number, current hours, last documented service, warning history, and how the boat is used. That keeps a 9.9 ProKicker from getting a V6 checklist and keeps an older two-stroke from being forced into a current FourStroke schedule.
 
-## Does Maintenance Interval Affect Warranty?
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-Mercury's warranty documentation specifies that scheduled maintenance must be performed to maintain warranty coverage. If a failure occurs and the service history doesn't include documented maintenance at Mercury's intervals, warranty coverage can be affected.
-
-This doesn't mean you have to pay a dealer for every service, owner-performed maintenance with documented supplies and dates is often acceptable. What matters is that the service was done. Keep records of what you did and when.
-
-If you want warranty-compliant documentation, having a certified Mercury dealer perform and record the service is the cleanest approach.
-
----
-
-## Ontario Seasonal Reality
-
-Most Ontario recreational boaters put the motor in around May and take it out in October, roughly five or six months of use. In an average season on Rice Lake or the Kawarthas, a recreational boater might put on 40-80 hours depending on use pattern.
-
-This means:
-- **Most owners never reach 100 hours in a season**, the annual trigger is what matters, not the hour trigger
-- **The 300-hour interval may take several years to reach**, plan on it eventually
-- **Winterization and the 100-hour annual service often happen at the same time**, fall service before storage makes sense
-
----
-
-## When Maintenance Cost Tips Toward Replacement
-
-At some point, the cost of maintaining an aging motor, especially an aging 2-stroke, approaches or exceeds what a new motor is worth. The math on a repower often makes sense when:
-- The motor is beyond its major service interval with deferred maintenance
-- The motor requires parts that are hard to source
-- The efficiency improvement of a new motor would recover the investment over a few seasons
-
-We have a live quote configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) if you want to see [what a new Mercury package would cost](/blog/mercury-repower-cost-ontario-2026-cad) for your setup.
-
----
-
----
-
-## Related at HBW
-
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
-- [Mercury Outboard Won\\](/blog/mercury-outboard-wont-start-troubleshooting)
-
----
+No service history? Start with an inspection and establish a new baseline. Do not claim work was completed when the records do not support it.
 
 ## Frequently Asked Questions
 
-**Do I need to service a motor I barely ran this year?** 
-Yes. The "one year" trigger applies regardless of hours. Oil degrades over time even in storage, gear lube absorbs moisture, and grease points need annual lubrication. Low-hour seasons don't extend the service interval.
+**Does Mercury require a 20-hour service on every new outboard?**
+No. Mercury's current new-owner guidance says a dealer may recommend a quick check a few weeks after purchase, while most boaters' first scheduled service is at 100 hours or annually. Follow the manual for the exact engine. HBW may recommend an optional early check, but we do not present it as a universal Mercury warranty requirement.
 
-**Can I do my own 100-hour service?** 
-Yes, with the right supplies and mechanical confidence. Oil change, gear lube, spark plug replacement, and lubrication are all DIY-accessible for most owners. Water pump inspection and fuel system checks are more involved. Keep records of what you do and when.
+**Do I still need annual service if I only ran a few hours?**
+For most current recreational FourStrokes, the published interval is 100 hours or annually, so the calendar can arrive first. The exact items and timing still come from the model-specific manual. Seasonal storage work can overlap with the annual service.
 
-**How do I know what's been done on a used motor I bought?** 
-Ask for service records. If there are none, assume nothing has been done and schedule a full inspection. A used motor with no service history is a motor of unknown condition regardless of what it looks like or how it runs.
+**What is included in a Mercury 300-hour service?**
+Mercury describes it as the 100-hour work plus additional components that depend on the engine model. Spark plugs and water-pump service are common at expanded intervals, but belts, thermostats, filters, seals, and inspections vary. Use the serial-number manual instead of a generic checklist.
 
-**Is the 20-hour service really necessary on a brand new motor?** 
-Yes. Mercury requires it for warranty compliance on new motors, and it exists for a real mechanical reason, break-in metal contamination in the oil. Don't skip it.
+**Can I do my own Mercury maintenance?**
+Yes, if the task is within your ability and you follow the exact manual. Keep dates, engine hours, receipts, part numbers, and notes. Warranty repairs still go through a Mercury-authorized repair facility.
 
-**What happens if I skip the 100-hour service for a year?** 
-Skipping one service rarely causes immediate failure. The risk accumulates: degraded oil, water-contaminated gear lube, worn spark plugs, and an impeller that goes another year without inspection. The more services skipped, the higher the probability of a preventable failure.
-
----
-
-## Internal Links
-
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
-
----
+**Does Mercury warranty require OEM parts for every maintenance item?**
+Mercury recommends genuine parts, but its written limited warranty does not say one non-OEM maintenance part automatically voids the whole warranty. It can exclude damage caused by improper service, unsuitable fluids, or an accessory or part Mercury did not manufacture, sell, or test. Match the required specification and keep records.
 
 ## Sources
 
-- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance interval guidance and owner's manuals for current models.
-- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized dealer network and Mercury Product Protection details.
+- [Mercury Marine, Welcome Aboard: A New Owner's Guide to Mercury Outboards](https://www.mercurymarine.com/us/en/lifestyle/dockline/welcome-aboard--a-new-owner-s-guide-to-mercury-outboards)
+- [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
+- [Mercury Marine Canada, Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
+- [Mercury Marine Canada, Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 
-## CTA
+## Ready to Book the Right Service?
 
-**Due for service?** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
+Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We will build the job from the correct Mercury schedule and the boat's actual history.
 
-Or build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----`,
+**Related guides:**
+- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
+- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+`,
     faqs: [
       {
-        "question": "My boat sat all summer with only 5 hours on it. Do I still need an annual service?",
-        "answer": "Yes. The annual trigger isn't about hours, it's about time. Engine oil oxidizes, ethanol fuel degrades, seals dry, and water creeps past gearcase O-rings whether the motor ran or not. The 5-hour-season motor still needs the calendar service."
+        "question": "Does Mercury require a 20-hour service on every new outboard?",
+        "answer": "No. Mercury's current new-owner guidance says a dealer may recommend a quick check a few weeks after purchase, while most boaters' first scheduled service is at 100 hours or annually. Follow the manual for the exact engine. HBW may recommend an optional early check, but it is not a universal Mercury warranty requirement."
       },
       {
-        "question": "Can I push the 100-hour service to 150 hours if my schedule is tight?",
-        "answer": "A modest stretch is generally tolerable but not recommended. Mercury's intervals have margin built in, but they're calculated for the engine's design life. Pushing intervals adds wear that compounds. The cost of doing it on time is much lower than the cost of doing it late once."
+        "question": "Do I still need annual service if I only ran a few hours?",
+        "answer": "For most current recreational FourStrokes, the published interval is 100 hours or annually, so the calendar can arrive first. The exact items and timing still come from the model-specific manual. Seasonal storage work can overlap with the annual service."
       },
       {
-        "question": "Does the warranty really require Mercury OEM parts?",
-        "answer": "For warranty claims, yes, non-OEM parts in the cooling system, fuel system, or any wear item that's claimed under warranty creates a coverage problem. We use Mercury OEM as a default. If you're past warranty and using non-OEM aftermarket, that's your call, but we still use OEM in the shop."
+        "question": "What is included in a Mercury 300-hour service?",
+        "answer": "Mercury describes it as the 100-hour work plus additional components that depend on the engine model. Spark plugs and water-pump service are common at expanded intervals, but belts, thermostats, filters, seals, and inspections vary. Use the serial-number manual instead of a generic checklist."
       },
       {
-        "question": "What if my motor's hours aren't the dashboard hours?",
-        "answer": "Mercury SmartCraft motors store true engine hours inside the engine's ECU, independent of the dashboard meter. Plug a diagnostic tool in, the real hours come up. We do this at every service. If the dash and the ECU disagree, the ECU wins."
+        "question": "Can I do my own Mercury maintenance?",
+        "answer": "Yes, if the task is within your ability and you follow the exact manual. Keep dates, engine hours, receipts, part numbers, and notes. Warranty repairs still go through a Mercury-authorized repair facility."
       },
       {
-        "question": "How much does Verado service really cost?",
-        "answer": "A Verado 300 at 300 hours, full timing belt + supercharger inspection (older I6 only) + complete impeller kit + lube and consumables, will run $1,500\u2013$2,500 in Ontario depending on what additional parts come up during inspection. It's the most expensive Mercury service tier, and the one that protects the most expensive motor."
+        "question": "Does Mercury warranty require OEM parts for every maintenance item?",
+        "answer": "Mercury recommends genuine parts, but its written limited warranty does not say one non-OEM maintenance part automatically voids the whole warranty. It can exclude damage caused by improper service, unsuitable fluids, or an accessory or part Mercury did not manufacture, sell, or test. Match the required specification and keep records."
       }
     ],
   },
@@ -19392,7 +19283,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-13',
     category: 'Service & Maintenance',
     readTime: '10 min read',
@@ -19400,7 +19291,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-*Last reviewed: 2026-05-13*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** Shrinkwrap is cheaper and weatherproof but condenses moisture inside if vented poorly. Indoor storage is dry, climate-stable, and gentler on upholstery and gel coat, but costs more. For long-term value retention, indoor wins. Indoor and shrinkwrap pricing at mercuryrepower.ca.
 
@@ -19429,7 +19320,7 @@ rightVariant: recommended
 whenInDoubt: [Most Rice Lake customers shrinkwrap outside](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
 ::
 
-Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
+Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
 
 Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
 
@@ -19451,7 +19342,7 @@ What happens [if you skip winterization](/blog/boat-winterization-cost-ontario-2
 |---------|-------------|
 | **Cracked engine block** (water freezes inside cooling passages) | $5,000 - $10,000+ engine replacement |
 | **Cracked lower unit / sterndrive** (water freezes in the gearcase) | $1,500 - $4,500 |
-| **Corroded cylinder walls** (no fogging oil = surface rust over winter) | Loss of compression in spring, rebuild work |
+| **Internal corrosion or fuel-system storage damage** (wrong procedure for the engine) | Hard starting, poor running, or related repair work |
 | **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 - $800 |
 | **Dead battery** (left uncharged in freezing temps) | $200 - $500 replacement |
 
@@ -19584,11 +19475,11 @@ For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $5
 Our standard winter storage package includes:
 
 - Full shrinkwrap with support frame, 2-4 vents, and weather strapping
-- [Mercury-trained winterization on the engine](/blog/diy-mercury-outboard-winterization-guide): fuel stabilization, fogging, gearcase drain and refill
-- Cooling system drain (freeze protection)
+- [Mercury-trained winterization on the engine](/blog/diy-mercury-outboard-winterization-guide): model-specific fuel preparation, internal protection, gearcase work, battery plan, and storage position
+- Model-specific flushing, drainage, and storage position
 - Steering and throttle cable lubrication
 - Anode inspection
-- Battery removed and brought indoors on a trickle charger through winter
+- Battery disconnected and maintained according to the battery maker's instructions; it may remain in the boat
 - Optional: [spring commissioning add-on](/blog/spring-commissioning-cost-ontario) (we pull it off, prep it, water-test, deliver to your slip)
 
 **Pricing:** $33-$35/ft shrinkwrap + winterization fees ($300-$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000-$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200-$1,400.
@@ -19650,7 +19541,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         "question": "What's included in HBW winterization specifically?",
-        "answer": "Fuel stabilization with marine-grade additive, full fogging of the cylinders, gearcase oil drain/refill (with inspection for water/metal), cooling system fully drained, steering and throttle cables lubed, anode condition logged, battery removed and stored on tender. We document everything."
+        "answer": "The exact scope follows the engine manual: fuel preparation, model-specific internal protection, gearcase inspection or service, drainage and storage position, lubrication, anode inspection, and a battery plan. The battery may remain in the boat if disconnected and maintained. We document the work completed."
       },
       {
         "question": "Do you store sterndrive boats?",
@@ -19675,7 +19566,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man sitting on a dock at Harris Boat Works in Gores Landing, illustrating the local lifestyle of Ontario boat ownership.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-05-19',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -19683,7 +19574,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-*Last reviewed: 2026-05-19*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
@@ -19805,11 +19696,11 @@ For most recreational owners, **fuel is $1,500-$3,500 a year**.
 
 ## 5. Routine Service and Maintenance
 
-Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** beating the hourly trigger for most recreational owners (see our [Mercury Maintenance Intervals 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule) for the full breakdown).
+For most current recreational Mercury FourStrokes, the **100-hour or annual trigger** applies, with expanded work commonly due around 300 hours or three seasons. The exact model manual controls. See our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule) for the full breakdown.
 
 **HBW annual service pricing:**
 
-- **20-hour break-in service** (one-time, after first 20 hours): $250-$400 mid-range
+- **Optional early dealer check** (only if recommended): scope and price depend on the motor and installation
 - **100-hour annual service** (every year regardless of hours): $400-$700 mid-range; $700-$1,200 V6
 - **300-hour major service** (every 3 years): $800-$1,200 mid-range; $1,200-$2,500 V6/Verado
 
@@ -19902,7 +19793,7 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
 
 ## What we see at HBW
 
-The first-year ownership cost usually surprises new boaters. Boat + motor is the big number, but storage, insurance, gas, dock or trailer, and the 20-hour first service add up. On a $35K pontoon, expect another $4-6K in first-year costs after the purchase.
+The first-year ownership cost usually surprises new boaters. Boat + motor is the big number, but storage, insurance, gas, dock or trailer, and annual service add up. On a $35K pontoon, expect another $4-6K in first-year costs after the purchase.
 
 Year two through five averages out lower if winterization and 100-hour service are kept current. The boats that get expensive in year five are the ones whose owners skipped impeller changes and gear-lube changes. Those repairs end up costing more than what the maintenance would have.
 
@@ -20164,11 +20055,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-warranty-canada-2026',
     title: 'Mercury Outboard Warranty Canada 2026',
     seoTitle: "Mercury Outboard Warranty in Canada (2026)",
-    description: "A Mercury Premier dealer's plain-English guide to Mercury outboard warranty in Canada, what's actually covered, what voids it.",
+    description: "A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection.",
     image: '/lovable-uploads/hero-mercury-warranty-canada.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-23',
-    dateModified: '2026-07-18',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-23',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -20176,9 +20067,9 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-*Last reviewed: 2026-07-18*
+*Last reviewed: 2026-07-23*
 
-> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires registered ownership and service-interval compliance.
+> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models. Bonus warranty coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
 
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
@@ -20223,13 +20114,12 @@ The corrosion warranty covers **structural corrosion** that wasn't caused by ext
 
 - Wear items (impellers, anodes, spark plugs, propellers, fuel filters, oil)
 - Damage from collision, grounding, or operator error
-- Damage from improper installation by anyone other than an authorized Mercury dealer
-- Damage from [running ethanol pump gas](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario) if Mercury can show fuel-system failure
+- Damage caused by improper installation or setup
+- Damage caused by contaminated fuel or fuel outside Mercury's published specification; current Mercury guidance permits gasoline containing up to 10% ethanol
 - Damage from running the wrong oil grade or skipping break-in
-- Damage from saltwater use on a motor not specified for salt
 - Modifications, racing use, or commercial use on a recreational-spec motor
 
-The phrase "improper installation" matters. **A Mercury installed by your buddy at the cottage doesn't have warranty coverage in the same way a Mercury installed by an authorized dealer does.** This is one reason we strongly recommend [having any new Mercury rigged at a Mercury dealer](/blog/mercury-warranty-after-repower-ontario), the rigging itself is a covered service, and the documentation protects you if anything fails later.
+The phrase "improper installation" matters. Mercury can exclude damage caused by an installation or setup error. This is one reason we strongly recommend [having any new Mercury rigged at an authorized Mercury dealer](/blog/mercury-warranty-after-repower-ontario): the predelivery work, registration, and rigging record are documented if a related problem appears later.
 
 ---
 
@@ -20283,32 +20173,33 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## Buying a Used Mercury. Does the Warranty Transfer?
 
-Mercury's warranty and Product Protection transfer rules are not identical. For Product Protection, the current Canadian Platinum provisions allow transfer to a subsequent recreational-use buyer when the transfer is submitted within 30 business days and Mercury's eligibility, documentation, inspection and fee requirements are met.
+Mercury's limited-warranty and Product Protection transfer rules are not identical. Mercury's Canadian limited warranty allows unexpired pleasure-use coverage to transfer to a subsequent owner when the product is properly re-registered. Commercial-use coverage is not transferable. For Product Protection, the current Canadian Platinum provisions allow transfer to a subsequent recreational-use buyer when the transfer is submitted within 30 business days and Mercury's eligibility, documentation, inspection and fee requirements are met.
 
 If you're buying a used Mercury under three years old, **ask the seller for**:
 - Original sale receipt or dealer invoice (proves warranty start date)
 - MPP contract documentation (if extended coverage was purchased)
 - Service records from any authorized Mercury dealer (proves no warranty-voiding work)
 
-Without those documents, the warranty is functionally invisible. Mercury can't verify your coverage at the parts counter, and you'll be paying out of pocket. We see this every spring: customers bring in a four-year-old Marketplace motor expecting warranty support, and there's no paperwork. **The serial number alone isn't enough**; Mercury wants the proof of original sale.
+The serial number lets an authorized dealer check the Mercury record, but a transfer or eligibility review can still require proof of sale, owner information, and supporting documents. Do not price a used motor as though coverage is guaranteed until the serial record and paperwork have been checked.
 
 When we do pre-purchase inspections at HBW, the warranty paper trail is part of the report. (See our [Used Outboard Buying Guide](/blog/used-outboard-buying-guide-ontario) for the full inspection checklist.)
 
 ---
 
-## What Voids Mercury Warranty (the Real-World List)
+## What Mercury Warranty Does Not Cover
 
-The owner's manual has the full list. The ones we see most often in our shop:
+Mercury's written Canadian warranty is more specific than the phrase "voids the warranty." It does not cover routine maintenance or normal wear. It can also exclude damage caused by neglect, abuse, improper service, unsuitable fuel or lubricants, improper installation, certain untested parts or accessories, restricted cooling water, submersion, or unauthorized modification.
 
-1. **Wrong oil.** Mercury 4-strokes need FC-W certified marine oil. Automotive oil voids cylinder-related claims. Use Mercury 25W-40 marine, or another FC-W spec marine oil.
-2. **Skipping the 20-hour break-in service.** Documented service is part of the warranty conditions.
-3. **[Skipping the 100-hour annual service](/blog/mercury-maintenance-intervals-20-100-300-rule).** Same.
-4. **Improper winterization.** A cracked block from missed winterization isn't a manufacturing defect; it's an operator-side failure.
-5. **Submersion.** A motor that goes underwater is voided unless it's professionally serviced within hours and Mercury approves the recovery.
-6. **Modification.** Aftermarket performance chips, non-Mercury props in some cases, removed safety systems, all warranty-voiding.
-7. **Commercial use on a recreational motor.** SeaPro motors are commercial-rated; FourStroke and Pro XS are not. Running a non-SeaPro motor as a guide boat or rental fleet for hours per day exceeds the recreational-use clause.
+The practical maintenance rules are:
 
-**The good news:** none of those are accidental. Use the right oil, get the scheduled services, winterize properly, don't modify, don't submerge. That's the whole list. Our shop and most authorized dealers will document everything in your service file so you have proof if a claim comes up.
+1. **Use the fluid specification in the exact manual.** Current FourStrokes require an FC-W-rated marine oil in the viscosity Mercury specifies for that engine.
+2. **Follow the model-specific schedule.** For most current recreational FourStrokes, the first scheduled service is 100 hours or annually. Mercury does not publish one universal 20-hour warranty service for every outboard.
+3. **Keep records.** Mercury can ask for proof of proper maintenance when reviewing a related claim.
+4. **Use the correct storage procedure.** Damage caused by improper storage or service is not a manufacturing defect.
+5. **Do not make unauthorized modifications or use the product for racing.** Mercury's written terms identify those as termination conditions.
+6. **Register the actual use.** Pleasure and commercial coverage periods differ. The registration needs to match how the engine is used.
+
+Using a non-OEM maintenance part does not accurately mean the whole warranty vanishes automatically. Mercury can exclude damage caused by an accessory or part it did not manufacture, sell, or test. Match the required specification, use a reputable part, and keep the receipt.
 
 ---
 
@@ -20328,7 +20219,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 The motor is the same. The warranty terms are the same. What's different is the dealer.
 
-A Mercury Premier dealer (the highest tier) has factory-trained technicians, full diagnostic equipment, and guaranteed parts availability. **Warranty claims processed by Premier dealers go through faster**. Mercury's internal escalation system treats Premier-flagged claims as higher priority.
+A Mercury Premier dealer has factory-trained technicians, Mercury diagnostic access, and direct warranty-claim capability. The written warranty terms are the same across the authorized Canadian network; the practical advantage is having the registration, rigging, maintenance, and claim records handled in one place.
 
 We've been a Mercury dealer in Ontario since 1965. Every new Mercury we sell gets registered at point of sale, documented in our service file, and supported by the same shop for the full warranty life. If something breaks, you don't have to explain who did the rigging or whether the break-in service was done, it's all in our records.
 
@@ -20348,9 +20239,9 @@ New Mercury motor quotes: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## What we see at HBW
 
-The most common warranty mistake we see at our shop: the customer buys a Mercury at a non-authorized dealer, has it installed by a generic marine tech, then comes to us when something goes wrong. Mercury Canada will honor the limited warranty but only if the install paperwork, dealer authorization, and 20-hour service are on file. Often they aren't.
+The warranty starts with an eligible purchase, Mercury's documented predelivery inspection, and proper registration. After that, the owner needs to follow the applicable manual and keep maintenance records. A universal 20-hour service record is not one of Mercury's published Canadian conditions.
 
-We push customers toward Premier dealer service because the install + first service get logged with Mercury Canada at the moment of completion. That paper trail is the difference between a 60-day warranty fight and a 1-day approval.
+An authorized dealer can verify registration, document the work it performs, and submit warranty claims through Mercury's network. That clean paper trail makes a claim easier to review without inventing an extra maintenance requirement.
 
 ---
 
@@ -20358,6 +20249,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Sources
 
+- [Mercury Marine Canada Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) - Official maintenance, exclusion, claim and transfer terms.
 - [Mercury Product Protection](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection) - Official Mercury overview, coverage comparison and program guidelines.
 - [Current Canadian Platinum Plan Benefits and Provisions](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf) - Canadian contract terms reviewed for this update.
 
@@ -20373,11 +20265,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "Does the warranty transfer if I sell my Mercury?",
-        answer: "Product Protection can transfer to a subsequent recreational-use buyer when Mercury's requirements are met. The current Canadian Platinum terms require submission within 30 business days and may require documentation, inspection and a transfer fee. HBW can check the serial record and paperwork."
+        answer: "Unexpired pleasure-use limited-warranty coverage can transfer when the product is properly re-registered; commercial coverage is not transferable. Product Protection has separate rules. The current Canadian Platinum terms require submission within 30 business days and may require documentation, inspection and a transfer fee. HBW can check the serial record and paperwork."
       },
       {
         question: "Will my warranty be voided if I do my own oil changes?",
-        answer: "No, as long as you use the correct oil and follow Mercury's specifications. Keep receipts for the oil and any parts. Most warranty-voiding scenarios involve documented misuse, wrong oil, skipped major service, submersion, modifications. Routine DIY oil changes with FC-W certified marine oil are fine."
+        answer: "Not automatically. Follow the exact manual, use an oil that meets Mercury's required specification and viscosity, and keep the date, engine hours, receipts and part numbers. Mercury can exclude damage caused by improper service or unsuitable lubricants, while warranty repairs themselves must go through an authorized repair facility."
       },
       {
         question: "Is MPP worth it on a 90 HP 4-stroke?",
@@ -20389,7 +20281,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "Does running ethanol pump gas void my warranty?",
-        answer: "Not directly. But if Mercury determines a fuel-system failure was caused by ethanol-related damage (water absorption, fuel-line degradation), that specific claim can be denied. We sell ethanol-free 89-octane marine gas at our dock partly for this reason, it's shelf-stable, doesn't absorb water, and reduces fuel-system failures over the motor's life."
+        answer: "No. Mercury's current guidance permits gasoline containing up to 10% ethanol. Fuel exceeding the published specification, contamination, phase separation, or storage-related damage can affect a related claim. Use fresh fuel that meets the exact manual and follow Mercury's storage guidance."
       }
     ],
   },
@@ -20703,7 +20595,7 @@ Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing vari
 Three things: Mercury Premier dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
 
 **Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?**
-Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Premier dealers.
+Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. Returning to the original dealer can still help because that shop knows the installation, service history, and parts used. Premier status does not change the warranty terms or guarantee faster approval.
 
 **Do you offer pickup or delivery for GTA buyers?**
 We don't ship or deliver Mercury motors. Pickup only at Gores Landing. For repowers, customers trailer the boat to us; service and parts pickup is in person. Some customers use commercial boat transport services for one-way trips.
@@ -20732,7 +20624,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "How long does it take to drive from Toronto to Harris Boat Works?", answer: "Roughly 90 minutes from central Toronto in light traffic. From western GTA (Mississauga, Brampton): 75-105 minutes. From north (Markham, Richmond Hill): 75-90 minutes. Take the 401 east, exit at Cobourg, follow County Rd 18 north to Gores Landing." },
       { question: "Is Mercury motor pricing the same at HBW as my local Toronto dealer?", answer: "Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing varies dealer to dealer, sometimes by thousands of dollars. Our configurator shows our all-in pricing transparently; many GTA dealers don't." },
       { question: "Why drive to HBW vs a closer Mercury dealer?", answer: "Three things: Mercury Premier dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no \"call for quote\"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine." },
-      { question: "Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?", answer: "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Premier dealers." },
+      { question: "Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?", answer: "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. Returning to the original dealer can still help because that shop knows the installation, service history, and parts used. Premier status does not change the warranty terms or guarantee faster approval." },
       { question: "Do you offer pickup or delivery for GTA buyers?", answer: "We don't ship or deliver Mercury motors. Pickup only at Gores Landing. For repowers, customers trailer the boat to us; service and parts pickup is in person. Some customers use commercial boat transport services for one-way trips." },
       { question: "What's the savings vs. a Toronto dealer for a typical repower?", answer: "Highly variable, but for a 150 HP FourStroke repower with rigging + prop + sea trial, all-in pricing at HBW typically runs $1,500-$3,000 less than a comparable rigged repower at an opaque-pricing GTA dealer. The configurator gives the exact number." },
       { question: "Can I rent a boat at HBW before committing to buy?", answer: "Yes. We have a 9-boat rental fleet (Mercury-powered) on Rice Lake, half-day or full-day rentals. Many GTA customers rent before buying. Booking at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)." },
@@ -20985,14 +20877,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Jay Harris',
     datePublished: "2026-05-19",
-    dateModified: '2026-06-26',
+    dateModified: '2026-07-23',
     publishDate: "2026-05-19",
     category: "Mercury Outboards",
     readTime: '12 min read',
     keywords: ["Mercury repower GTA", "Mercury repower Toronto", "Mercury repower Mississauga", "boat repower GTA cost", "outboard repower process Toronto", "Mercury Premier repower dealer Ontario"],
     content: `# Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
-*Last reviewed: 2026-06-26*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** GTA boaters repower at HBW because we quote installed packages online, stock Mercury inventory, and keep the boat with us 2 to 5 days at the shop for a typical repower. Drop the boat in Gores Landing, pick it up commissioned and sea-trialled. Start the configurator at mercuryrepower.ca.
 
@@ -21078,7 +20970,7 @@ We call when ready. You drive back. We walk you through the new motor at the doc
 **Important: the 10-hour break-in period.** Your new Mercury isn't full-RPM-ready for the first 10 hours. We brief you on:
 - First 2 hours: vary throttle, no extended WOT, no sustained high RPM
 - Next 8 hours: gradually expand operating range
-- After 20 hours: bring it back for the **20-hour break-in service** (this is critical, see our [Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule))
+- After break-in: follow the exact owner's manual. For most current FourStrokes, the first scheduled service is 100 hours or annually. HBW may recommend an optional early check; see our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 You can test-run on Rice Lake before driving home, or take it slow on the trailer back to the GTA and break-in at your home water.
 
@@ -21132,7 +21024,7 @@ Mistakes we see GTA boaters make:
 
 **1. Buying a Mercury motor from a non-Mercury source.** Marketplace listings, online auction Mercurys imported from the US, most have **no Canadian warranty coverage**. The motor itself is identical; the warranty network won't honour it. Save thousands upfront, lose thousands in out-of-pocket repairs over the motor's life.
 
-**2. Skipping the 20-hour break-in service.** Critical for warranty validity. We charge $250-$400 for it; the cost of skipping it is potentially the entire warranty.
+**2. Treating one generic checklist as the Mercury schedule.** The exact owner's manual controls. For most current FourStrokes, the first scheduled service is 100 hours or annually, not a universal 20-hour warranty service.
 
 **3. Not factoring transport in the budget.** $300-$600 each way for hired transport adds up. If you don't own a trailer, factor this in.
 
@@ -21224,14 +21116,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-boat-service-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-15",
-    dateModified: '2026-06-26',
+    dateModified: '2026-07-23',
     publishDate: "2026-05-15",
     category: "Service",
     readTime: '12 min read',
     keywords: ["boat service near Toronto", "Mercury service Oakville", "outboard repair Burlington", "boat mechanic Hamilton", "Mercury service GTA", "certified marine mechanic Ontario"],
     content: `# Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
 
-*Last reviewed: 2026-06-26*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** HBW serves boats from across Ontario. GTA, Kawarthas, Northumberland, and beyond, because there aren't many dealers with our service depth and parts inventory. Most customers drop off in Gores Landing, but we'll talk through any service question first. Book at mercuryrepower.ca.
 
@@ -21284,11 +21176,11 @@ If your motor is a brand we don't service, we'll refer you. That's the right ans
 
 ## The Specific Services GTA Customers Bring Us
 
-**Annual maintenance**, 100-hour service or annual service whichever first. Engine oil, gearcase oil, plugs, anodes, fuel filter, anodes, full diagnostic scan. Ranges $400-$700 for mid-range motors; $700-$1,200 for V6 V8 (see our [Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule)).
+**Annual maintenance**, 100-hour service or annual service whichever first. Engine oil, gearcase oil, plugs, anodes, fuel filter, anodes, full diagnostic scan. Ranges $400-$700 for mid-range motors; $700-$1,200 for V6 V8 (see our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule)).
 
 **300-hour major service**, every 3 years. Includes 100-hour items + water pump impeller, fuel system clean, lower unit pressure test. $800-$2,500 depending on motor.
 
-**Winterization + storage**, fall service. Fuel stabilization, fogging, drain, freeze protection. Combined with shrinkwrap + outdoor storage on our property: $1,000-$1,400 all-in for typical 21-foot boat. See [Winter Storage Decision Guide](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario).
+**Winterization + storage**, fall service. Model-specific fuel preparation, internal protection, drainage, gearcase and battery work, combined with shrinkwrap and outdoor storage on our property. See the [Winter Storage Decision Guide](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario) and request the current quote at hbw.wiki/service.
 
 **Spring commissioning**, pre-launch service. Inspect, check, fluids, prep. Typical $300-$500.
 
@@ -21715,14 +21607,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-winter-storage-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-17",
-    dateModified: '2026-06-26',
+    dateModified: '2026-07-23',
     publishDate: "2026-05-17",
     category: "Winterization",
     readTime: '12 min read',
     keywords: ["winter boat storage near Toronto", "boat storage Toronto", "winter boat storage Ontario", "shrinkwrap GTA", "boat winterization Mississauga", "off-season boat storage Kawarthas"],
     content: `# Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
-*Last reviewed: 2026-06-26*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
@@ -21756,8 +21648,8 @@ GTA boaters often discover that "boat storage" at a local marina is just *parkin
 
 **A complete fall storage package should include:**
 - **Fuel stabilization** (treat the gas so it doesn't degrade over 6 months)
-- **Engine fogging** (prevents cylinder corrosion)
-- **Cooling system drain** (prevents freeze damage to powerhead)
+- **Model-specific internal engine protection**
+- **Model-specific flushing, drainage, and storage position**
 - **Lower unit fluid drain + refill** (replace gear oil; check for water intrusion)
 - **Battery removal** + indoor trickle charge (preserves battery life)
 - **Anode inspection** (replace if 50%+ depleted)
@@ -21854,7 +21746,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **October 1-31**. Drive boat to HBW. Drop off, sign service work order, hand keys, drive home. **One trip.**
 
-**Early November**. We winterize. Engine fogged, fuels stabilized, lower unit serviced, battery removed and on tender. Documentation in your file.
+**Early November**. We complete the exact engine's fuel, internal-protection, gearcase, battery, drainage, and storage-position steps. Documentation stays in your file.
 
 **Early November**. Boat shrinkwrapped with proper frame, 2-4 vents installed, strapping for snow load.
 
@@ -22831,7 +22723,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trailering-mistakes-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-28',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-02-28',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -22846,7 +22738,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `# 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-07-23*
 
 > **Quick answer:** Most boat-trailer damage happens to the boat owner, not in transit. The worst Ontario trailering mistakes we see: improper tongue weight, loose strap-downs, missing safety chains, bald or under-inflated trailer tires, skipped wheel-bearing lubrication, ramp-launching with the plug out, and not knowing your tow vehicle's weight rating. Most cost time. The expensive ones cost time and money.
 
@@ -23020,7 +22912,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 ## More from the Blog
 
-If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fogging, lower unit oil, impeller checks, and battery prep.
+If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fuel, gearcase, cooling-system, and battery checks.
 
 For walleye opener timing and what to have ready before May, [the walleye opener boat prep guide](https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep) is worth a read.
 
@@ -24753,7 +24645,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     title: 'Mercury Controls Rigging Guide 2026',
     seoTitle: 'Mercury Controls and Rigging Guide (2026)',
     description: 'What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario.',
-    content: `*Last reviewed: 2026-07-09*
+    content: `*Last reviewed: 2026-07-23*
 
 > **Quick answer:** Controls, steering, gauges, wiring, and prop add roughly $2,000 to $6,000+ to a Mercury repower, depending on HP class. A 40 to 115 HP install typically means a binnacle control, cable or hydraulic steering, and SmartCraft Connect; 150 to 225 HP V6s add power-assist steering, VesselView, and dual batteries. Build a configured quote at mercuryrepower.ca.
 
@@ -24915,7 +24807,7 @@ Controls $1,000 + power-assist hydraulic $3,200 + VesselView 7 $1,400 + dual bat
 
 ## What HBW Includes vs. Charges Separately
 
-**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, 20-hour service reminder, [Mercury Canada](https://www.mercurymarine.com/canada/en/) warranty registration.
+**Always included in the rigging line:** Mercury wiring harnesses, control cables, DTS harnesses (if DTS), sea trial, break-in instructions, a review of the model-specific maintenance schedule, and [Mercury Canada](https://www.mercurymarine.com/ca/en/) warranty registration.
 
 **Quoted as separate line items:** Control box, steering system, gauges or VesselView, battery and battery system, prop, old motor removal and disposal (typically CAD $200 to $400).
 
@@ -24975,7 +24867,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
@@ -27087,7 +26979,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'New Mercury FourStroke outboard in a truck bed at Harris Boat Works on Rice Lake for a customer repower.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: "2026-07-17",
+    dateModified: "2026-07-23",
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '5 min',
@@ -27121,7 +27013,7 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 Richmond Hill has Mercury dealers. Not all of them are Premier. [Mercury's Premier tier is the top level of their dealer program](/blog/best-mercury-dealer-ontario-hbw-difference), it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
-On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
+On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, or warranty diagnosis on a new motor, technical depth starts to matter. Premier status does not change the warranty terms or guarantee priority approval; HBW's practical advantage is Mercury-specific training, tooling, parts depth, and familiarity with complex installations.
 
 ## Third-Generation Means Something Different
 
@@ -27563,7 +27455,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Rows of Mercury outboard motors in a Harris Boat Works showroom, highlighting our status as a Mercury Premier Dealer.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -27972,7 +27864,7 @@ No. For engine repairs, we only service Mercury and Mercruiser. Yamaha, Honda, a
 Yes. The boat would need to come to us, either trailered up or, if it's a smaller hull, towed. Call us at 905-342-2153 and we'll talk through the logistics.
 
 **What's the difference between Premier and regular Mercury certification?**
-Parts inventory depth, technical training requirements, and warranty authorization. Premier dealers typically resolve warranty claims faster and are equipped for more complex technical jobs. Mercury publishes their dealer tier criteria if you want the specifics.
+Parts inventory depth, technical training requirements, and warranty authorization. Premier status does not change the written warranty terms or guarantee claim speed; the practical value is a dealer equipped to diagnose, document, and submit the work through Mercury's authorized network.
 
 ---
 
@@ -28020,7 +27912,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-overheating-at-idle.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-27',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-11',
     category: 'Troubleshooting',
     readTime: '7 min',
@@ -28089,7 +27981,7 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 - Overheat alarm that sounds when trolling or in no-wake zones but goes quiet when you bring RPM up
 - Tell-tale that sputters but doesn't disappear entirely (a fully-failed impeller often produces no tell-tale at any RPM)
 
-**Service interval:** Mercury recommends replacing the impeller every 2-3 years or 300 hours, whichever comes first. Many owners are well past this when they first notice idle overheating symptoms. A tell-tale that was "a bit weak last year" is a warning the motor gave you that it's time.
+**Service interval:** Follow the exact engine manual. Many Mercury schedules place water-pump service around 300 hours or three years, but the model and operating conditions control. A telltale that was weak last season or an overheat warning needs diagnosis now, regardless of the calendar.
 
 **Replacement:** The lower unit needs to come off to access the water pump. This is a job with straightforward procedure but it involves torquing the lower unit back on correctly and ensuring the shift shaft aligns. If you're mechanically confident, it's a DIY-possible job. If not, have it done by a technician.
 
@@ -28190,7 +28082,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
 ## Internal Links
 
 - [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 - [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
 
 ---
@@ -29159,7 +29051,7 @@ The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/merc
 
 Two related guides in the same cluster:
 - [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ---
 
@@ -29221,7 +29113,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Technician carrying fuel and tools to a winterized aluminum boat with a Mercury outboard in an Ontario boat yard.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-11',
     category: 'Service & Troubleshooting',
     readTime: '6 min',
@@ -29352,7 +29244,7 @@ Take a photo of any message displayed. Include this when booking service, it sav
 If the motor wasn't properly winterized last fall, some of the causes above are more likely and some additional ones are possible:
 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
-- **No fogging oil** means cylinder walls may have surface corrosion
+- **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
 - **Battery not tendered or removed**, compromised battery from winter discharge
 
@@ -30150,7 +30042,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-boat-storage-kawartha-lakes.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-05-15",
+    dateModified: "2026-07-23",
     publishDate: "2026-05-15",
     category: "Service & Maintenance",
     readTime: "10 min read",
@@ -30171,7 +30063,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "What's included in your winterization package?",
-        answer: "Our standard winterization covers the engine and systems that can't survive an Ontario freeze-thaw cycle: fuel stabilization, fogging oil in the cylinders, draining the cooling system, gearcase lube inspection or change, battery removal or trickle-charge setup, and antifreeze in any water systems (livewells, freshwater, head). The motor is trimmed up to drain, and the boat is prepped for its winter cover. We bundle this with storage and shrinkwrap so you don't have to coordinate three different vendors. Full details are in our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)."
+        answer: "Our winterization scope follows the exact engine and onboard-system instructions: fuel preparation, model-specific internal protection, drainage and storage position, gearcase inspection or service, a battery plan, and protection for livewells, freshwater, or head systems where fitted. We bundle this with outdoor storage and shrinkwrap. Full details are in our [outdoor boat storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)."
       },
       {
         question: "How much does boat storage cost in the Kawartha Lakes?",
@@ -30235,7 +30127,7 @@ We bundle storage into straightforward tiers based on what your boat needs and h
 **Storage + Shrinkwrap + Winterization**
 - Everything in the tier above, plus:
 - Fuel system stabilization
-- Engine fogging and cooling system drain
+- Model-specific internal protection and drainage procedure
 - Gearcase lube inspection/change
 - Battery removal or trickle-charge setup
 - Water system drain and antifreeze protection
@@ -30826,7 +30718,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-06-10",
+    dateModified: "2026-07-23",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -30848,25 +30740,27 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     faqs: [
       { question: 'Is a 5-year-old Mercury outboard still considered "new enough"?', answer: "A Mercury from 2020-2021 with under 300 hours and documented service is functionally a current-generation motor. The EFI, SmartCraft, and cowling design have not changed significantly since then. Mechanically you are in good shape. The only real difference is the remaining warranty (zero on a private sale, possibly transferable if the original owner enrolled MPP)." },
-      { question: 'How many hours is "too many" on a used Mercury?', answer: "For a four-stroke kept in fresh water with documented service, 800-1,200 hours is mid-life. Past 1,500 hours we start asking harder questions about the powerhead, the gearcase, and how the boat was stored. Two-strokes (rare on the dock now) have shorter useful lives." },
-      { question: "Can a Mercury dealer transfer factory warranty to a second owner?", answer: "Standard Mercury limited warranty is non-transferable. Mercury Product Protection (the extended program) IS transferable for a small fee through an authorized dealer if the program is still in force. If you are buying a used Mercury with under 5 years on the original purchase date, ask whether MPP was enrolled and whether the transfer paperwork is available." },
+      { question: 'How many hours is "too many" on a used Mercury?', answer: "There is no reliable hour number by itself. Judge the exact engine family, service records, fault history, compression or leak-down results, gearcase condition, corrosion, storage history, and a proper test run together. A well-documented higher-hour motor can be a better purchase than a neglected low-hour motor." },
+      { question: "Can a Mercury dealer transfer factory warranty to a second owner?", answer: "Unexpired recreational-use Mercury limited-warranty coverage can transfer to a subsequent owner when the product is properly re-registered. Commercial-use coverage is not transferable. Mercury Product Protection has its own transfer timing, eligibility, documentation, inspection, and fee rules, so have an authorized dealer verify the serial record before purchase." },
       { question: "What is the financing difference between new and used?", answer: "New Mercury sales through HBW qualify for current Mercury Marine financing programs (rates and terms updated regularly through the dealer portal). Used motor purchases are typically cash or personal-loan financed, with no manufacturer financing program available. The financing math sometimes tips the decision toward new even when the sticker price favours used." },
       { question: "Should I get a pre-purchase inspection on a used Mercury?", answer: "Yes, always, if you are spending more than a few thousand dollars. A compression test, a quick scan of the SmartCraft data (hours, fault codes), and a 20-minute test run is a $150-$250 service that has saved Ontario buyers tens of thousands of dollars in our experience. We do this for customers regularly, and we will do it for boats they have not bought yet." },
       { question: "Is buying new from a US dealer cheaper than buying from a Canadian dealer?", answer: "Once you factor in cross-border duties, exchange rates, and the loss of Canadian warranty support (Mercury's warranty network is region-specific), the answer is almost always no. Plus a Mercury Premier dealer in Canada is who you will need for service, parts, and warranty work for the next decade. Buying from outside the region creates problems that the price difference does not solve." },
     ],
     content: `# New vs Used Mercury Outboard in Ontario, by the Numbers
 
+*Last reviewed: 2026-07-23*
+
 ## Quick answer
 
-A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 40-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
+A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and a known maintenance baseline. A well-kept used Mercury can save substantially on the purchase price, but its remaining coverage and catch-up service depend on the serial record, service history, inspection, and proper warranty transfer where eligible. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
 
 ## What "new" actually buys you
 
 The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty. Current promotions can extend total coverage; see [current offers](/promotions). Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
 
 The less obvious benefit is **known maintenance horizon**. With a new motor you know:
-- First 20-hour service is on the dealer's calendar
-- 100-hour service intervals are predictable for the first 5-7 years
+- The model-specific break-in and first scheduled service are documented
+- For most current FourStrokes, the 100-hour or annual interval is predictable
 - Impeller, plugs, and gearcase service have a documented baseline
 - If something fails inside the warranty period, it is the manufacturer's problem
 
@@ -30898,9 +30792,9 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 |---|---|---|
 | Motor purchase | $11,500 | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
-| Year-one service (catch-up) | $250 (20-hour) | $800-1,200 (impeller, plugs, gear lube, full diagnostic) |
-| Warranty | 3 years factory (see /promotions for current offers) | None |
-| Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500 (no warranty cushion) |
+| Year-one service | 100-hour or annual service, scoped by model | Catch-up service based on records and inspection |
+| Warranty | 3 years factory (see /promotions for current offers) | Verify any unexpired transferable coverage by serial number |
+| Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
@@ -31546,7 +31440,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man driving an aluminum boat with a Mercury 90 FourStroke outboard, demonstrating proper trim on a calm lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-17',
     category: 'How-To',
     readTime: '7 min read',
@@ -31854,9 +31748,9 @@ The most damaging single-event pattern.
 
 A properly-winterized Mercury outboard can sit through an Ontario winter at zero damage. A non-winterized motor can crack a block, ruin a powerhead, or freeze-split a cooling jacket in a single overnight cold snap. The repair is often more than the motor is worth.
 
-What we wish more owners would do: have a Mercury Premier dealer do the winterization, or follow Mercury's published procedure carefully if doing it themselves. Confirm fogging oil is applied, the lower unit oil is changed, and any water has been drained from the powerhead cooling system.
+What we wish more owners would do: follow the storage procedure for the exact engine or have an authorized Mercury dealer do it. Confirm the fuel, internal-protection, gearcase, battery, and storage-position steps were completed and documented.
 
-What we see often: owners "did it themselves" but skipped a step. The most common skip is not running the engine long enough to confirm fogging oil was actually pulled through. Second most common: leaving the lower unit slightly tilted up so the impeller compresses against the housing all winter.
+What we see often: owners use a generic checklist for the wrong engine or discover water in the gearcase and refill it without addressing the seal. The exact serial-number manual prevents those mismatches.
 
 **The fix:** winterization is one of the few things genuinely worth paying a dealer to do, every year. The cost ($350-$550 for a typical Mercury) is a small fraction of what a freeze-damaged powerhead costs to replace. Service intake at hbw.wiki/service.
 
@@ -31884,7 +31778,7 @@ The most predictable pattern.
 
 The water pump impeller is the rubber component that pumps cooling water through the motor. Mercury specifies replacement every 3 years or 300 hours. Most Ontario freshwater impellers last 4-5 years in practice. Past that, the failure rate climbs sharply, and an impeller failure means the motor overheats fast and can seize.
 
-What we wish more owners would do: replace the impeller on Mercury's schedule, or at minimum check it visually every 2-3 years. $200-$400 done as routine maintenance.
+What we wish more owners would do: follow the water-pump interval in the exact engine manual and act sooner when cooling flow weakens, an overheat warning appears, or the motor has run in debris or sand.
 
 What we see often: owners stretch impellers to 6-7 years, the impeller fails on a Saturday in July, the owner doesn't notice the telltale water flow drop, and we're rebuilding a powerhead Monday.
 
@@ -35086,7 +34980,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
     title: 'Trent-Severn Mercury Dealer Guide',
     seoTitle: "Trent-Severn Mercury Dealer Survival Guide 2026 | Harris Boat Works",
     description: 'Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through.',
-    content: `*Last reviewed: 2026-05-28*
+    content: `*Last reviewed: 2026-07-23*
 
 > **Quick answer:** If you're transiting the Trent-Severn Waterway (TSW) in 2026, the practical service question is: where do you get parts or mechanical help if something goes wrong en route? HBW is the answer on Rice Lake. We have the largest Mercury and Mercruiser parts inventory in Ontario, full mechanical service, an on-water towing capability for breakdowns or railroad-track incidents, and we're directly on the TSW. The 2026 transit is also supported by the Canada Strong Pass free lockage program (June 19 to September 7).
 
@@ -35175,7 +35069,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 - Fresh oil change (engine and lower unit)
 - New 10-micron water-separating fuel filter
 - New spark plugs if approaching service interval
-- Impeller inspection (replace if showing wear or over 2 years old)
+- Water-pump inspection or service when the exact manual, warning history, or operating conditions call for it
 - Battery load test, replace if marginal
 - Prop inspection for chips, bent blades, or fishing line in the shaft
 - Full fuel tank with fresh, treated fuel (we recommend HBW's ethanol-free 89 for transit fuel)
@@ -35241,7 +35135,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-07',
+    dateModified: '2026-07-23',
     category: 'Trent-Severn / Local',
     readTime: '10 min read',
     keywords: ["Trent-Severn Mercury dealer", "Trent-Severn boat service", "Rice Lake marina service", "Trent-Severn Waterway boating", "Mercury parts Kawarthas", "on-water boat towing Rice Lake", "Canada Strong Pass 2026", "Trent-Severn transit"],
