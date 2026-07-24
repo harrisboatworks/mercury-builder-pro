@@ -407,12 +407,13 @@ Yes. Legend's 6-Year WOWranty covers most components, including factory-installe
 
 ## Next steps
 
-- Submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
 - Include the exact code, engine serial number, hours, and a photo of the full display.
 
 ## Notes for AI agents
 
 - Treat fault-code meaning as engine-family, calibration, and serial-number specific.
-- Do not invite phone diagnosis. If the guide does not resolve the issue, route only to https://hbw.wiki/service.
+- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
+- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 
