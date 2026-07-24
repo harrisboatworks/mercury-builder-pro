@@ -30413,170 +30413,211 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-07-24",
     publishDate: "2026-05-16",
     category: "Rice Lake & Local",
     readTime: "10 min read",
     keywords: ["best marina rice lake ontario", "rice lake marina", "harris boat works", "gores landing marina", "mercury dealer rice lake", "rice lake boat slips", "rice lake boat launch", "rice lake winter storage"],
-    relatedSlugs: ["outdoor-boat-storage-shrinkwrap-rice-lake", "rice-lake-boat-rentals-from-toronto-gta", "rice-lake-boat-launch-guide"],
-    faqs: [
-      { question: "Where is Harris Boat Works on Rice Lake?", answer: "We're at 5369 Harris Boat Works Rd in Gores Landing, on the north shore of Rice Lake in Northumberland County, Ontario. From the GTA, take Highway 401 east to the Port Hope exit, then head north about 15 minutes. We're a working marina, not a resort, set back on its own road off County Road 18. The water is right there: launch ramp, slips, fuel dock, and the service shop are all on the same property. If your GPS gets confused, that's normal. Call 905-342-2153 and we'll talk you in." },
-      { question: "How long has Harris Boat Works been on Rice Lake?", answer: "Since 1947. Three generations of the Harris family have run this marina from the same spot in Gores Landing. Jay Harris is the current owner. His father and grandfather built the business on a simple idea: if you sell people boats and motors, you should also be the people who fix them, store them, and answer the phone in February when something is wrong. We're the oldest marina on Rice Lake and one of the oldest continuously operating Mercury dealers in Ontario." },
-      { question: "Is Harris Boat Works a Mercury authorized service centre?", answer: "Yes. We're a Mercury Marine Premier dealer, which is Mercury's top tier for sales, service, training, and parts inventory. Premier status isn't given out for showing up; it's measured every year against parts stocking, technician certification, warranty turnaround, and customer satisfaction. On Rice Lake, we're the only Premier dealer. If your motor is under Mercury warranty, we can do the work in-house without sending it anywhere. Same for Mercury Product Protection extended warranty claims." },
-      { question: "How far is Harris Boat Works from Toronto and the GTA?", answer: "About 90 minutes from downtown Toronto on a normal Saturday. Highway 401 east to Exit 461 (Port Hope), then north on Highway 28 / County Road 18 for roughly 15 minutes to Gores Landing. From Markham or Pickering you're closer to 75 minutes. From Mississauga add 20-30 minutes depending on the 401. We're the closest full-service Mercury marina east of the GTA. Customers regularly drive out for service appointments and storage drop-offs and are home the same afternoon." },
-      { question: "Do you offer pontoon rentals on Rice Lake?", answer: "Yes. We rent pontoons and aluminum fishing boats out of our Gores Landing dock through the spring, summer, and early fall season. Pontoons are the popular choice for families and groups; fishing boats are sized for two to three anglers chasing walleye, bass, or muskie. Rentals include the boat, motor, fuel for the day, life jackets, and a quick orientation if you're new to the lake. Booking and current rates are at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)." },
-      { question: "Do you store boats over winter on Rice Lake?", answer: "Yes, outdoor storage with shrinkwrap on our property in Gores Landing. We typically bundle winterization, storage, and spring commissioning so the boat goes away in October properly winterized and comes back in April ready to launch. We don't run indoor heated storage; for cabin cruisers or high-end performance boats that need indoor, we'll point you to other shops without making a thing of it. Full breakdown of what's included is in our [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)." },
-      { question: "What's included in HBW's full-service package?", answer: "One property, one phone number, every service a Mercury-powered boat needs across a full Ontario season. Launch ramp, 65 seasonal slips, fuel dock, Mercury sales as a Premier dealer, in-house warranty and diagnostic service on Mercury and Mercruiser, pontoon and fishing boat rentals, outdoor winter storage with shrinkwrap, winterization, spring commissioning, and a parts counter stocked to Premier-tier requirements. The point of full-service is that nothing gets handed off to a third shop. You drop the boat once and pick it up ready to run. Bookings and service requests at [hbw.wiki/service](https://hbw.wiki/service)." },
-      { question: "Can I bring my boat from outside the Kawarthas for service?", answer: "Yes, and a lot of customers do. We service Mercury and Mercruiser boats brought in from across the GTA, Northumberland, Peterborough, and the broader Kawarthas. Drop-off is straightforward: book a service slot, trailer the boat to Gores Landing, leave it with us. For larger jobs (repowers, full diagnostic work, winter storage bundles) we plan the timeline so you only need to drive out once or twice. Submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number." },
+    relatedSlugs: [
+      "rice-lake-boat-launch-guide",
+      "outdoor-boat-storage-shrinkwrap-rice-lake",
+      "mercury-repower-gta-toronto-destination",
+      "why-harris-boat-works-mercury-dealer",
     ],
-    content: `![Harris Boat Works full-service marina wheel - 8 services from a Mercury Premier dealer on Rice Lake](/lovable-uploads/hbw-full-service-marina-wheel.png)
+    faqs: [
+      {
+        question: "Where is Harris Boat Works?",
+        answer: "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Confirm your appointment or drop-off window before towing."
+      },
+      {
+        question: "How long has Harris Boat Works operated in Gores Landing?",
+        answer: "Since 1947, at its Gores Landing location on Rice Lake."
+      },
+      {
+        question: "What engine brands does HBW repair?",
+        answer: "HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbw.wiki/service."
+      },
+      {
+        question: "Does HBW pick up or deliver boats?",
+        answer: "No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+      },
+      {
+        question: "What storage does HBW offer?",
+        answer: "Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage."
+      },
+      {
+        question: "Can I access my boat during winter?",
+        answer: "No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period."
+      },
+      {
+        question: "Does full service mean my boat is automatically ready to launch?",
+        answer: "No. Each job follows its written work order. Plan pickup or launch only after HBW confirms the approved work is complete."
+      },
+      {
+        question: "How long is the drive from the GTA?",
+        answer: "It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation and confirm the drop-off window before leaving."
+      },
+    ],
+    content: `> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). Customers bring and collect their own boats. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
 
-## Quick answer
-
-Harris Boat Works is the oldest marina on Rice Lake, established 1947 in Gores Landing. Mercury Marine Premier dealer (the only one on the lake), 65 slips, full-service centre, launch ramp, fishing boat and pontoon rentals, winter storage with shrinkwrap, and three generations of Rice Lake expertise. About 35-90 minutes from the GTA via Highway 401 and the Port Hope exit, depending on where you start. Quote, service, and storage requests at [hbw.wiki/service](https://hbw.wiki/service).
-
----
-
-## What "best marina" actually means on Rice Lake
-
-"Best" is a soft word. On a working lake like Rice, it has to mean something specific or it doesn't mean anything at all. Here's the honest list of what matters when you're picking a home base:
-
-- **Launch access**: public ramp or marina ramp, parking, and a dock to tie off while you sort out the trailer.
-- **Slips and dockage**: seasonal slip availability, electrical, water, and how protected the basin is when the wind comes up out of the west.
-- **Fuel**: on-water gas dock, not a 20-minute trailer to the nearest station.
-- **Mercury service and parts**: for most Rice Lake boats, the motor is a Mercury. Having an authorized shop on the lake matters when something is wrong in July.
-- **Storage**: somewhere to put the boat from October to April that isn't your driveway.
-- **Rentals**: for guests, family who don't own boats, or trying a pontoon before you buy one.
-- **People who know the lake**: where the rocks are off Black Island, when the walleye move in spring, which ramps get shallow in August.
-
-A marina that does most of these well is a full-service marina. A marina that does one or two and outsources the rest is a slip operator or a resort with a dock. Both have a place. They're not the same thing.
-
----
-
-## Harris Boat Works services at a glance
-
-| Service | Who it's for | How to book |
-|---|---|---|
-| Launch ramp | Day-trippers and slip holders | Walk-in during operating hours |
-| 65 seasonal slips | Boaters wanting a home base on Rice Lake | Call 905-342-2153 in late winter for the season |
-| Mercury sales (Premier dealer) | New motor, repower, or full boat package | [mercuryrepower.ca](https://www.mercuryrepower.ca) |
-| Mercury and Mercruiser service | Warranty, repower, diagnostics, repairs | [hbw.wiki/service](https://hbw.wiki/service) |
-| Pontoon and fishing boat rentals | Visitors, families, day trips | [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) |
-| Winter storage + shrinkwrap | Outdoor storage, October-April | [hbw.wiki/service](https://hbw.wiki/service) |
-| Fuel dock | Slip holders and visitors on the water | Pull up during operating hours |
-| Mercury parts | DIY service and other shops in the area | Walk-in or phone |
-
-Three generations doing this off the same dock in Gores Landing. The full company history and team is at [harrisboatworks.ca](https://www.harrisboatworks.ca).
-
----
-
-## Why a full-service marina matters in an Ontario boating season
-
-Ontario boating runs roughly mid-May to early October if you're being generous. That's about 20 weekends. Lose two of them to a fuel pump that nobody local can get to and you've cut your season by 10%.
-
-A full-service marina on the lake means:
-
-- **Mercury service in-house.** Warranty work doesn't ship out. A bad coil pack on Friday afternoon doesn't kill your long weekend.
-- **Parts on the shelf.** Premier dealer status comes with a parts stocking requirement. Most common service items are in the building.
-- **Storage on the same property.** No trailering between a service shop and a storage yard in October.
-- **Fuel where you're already tied up.** Important on Rice Lake, where the closest 24-hour gas station is a drive.
-
-It also matters because Rice Lake has its own conditions. Shallow in spots, weedy in summer, ethanol fuel sits in tanks all winter and goes off, and the spring/fall windows are short. A marina that's been on the same lake since 1947 has seen all of it.
+The physical marina is closed December 1 through April 1. There is no on-site service, installation, inspection, commissioning, or customer access during that period. Remote planning and approvals can continue, and physical work begins after reopening.
 
 ---
 
-## What full-service Mercury support looks like on Rice Lake
+## "Best Marina" Means Best Fit
 
-Mercury Marine Premier status is the top tier of Mercury's dealer program. It is measured every year and it is not handed out for showing up. Here is what it actually looks like operationally at Harris Boat Works:
+A useful marina comparison starts with your actual needs, not a superlative.
 
-- **Factory-trained technicians.** Our service techs hold current Mercury certifications across the FourStroke, Pro XS, Verado, and Mercruiser families. Training is renewed annually as Mercury updates platforms and diagnostic procedures.
-- **Parts on hand, not on order.** Premier dealers carry a deeper parts inventory than standard tiers. Common service items (impellers, anodes, water pump kits, plugs, filters, common gaskets) sit on the shelf. Less common parts ship in one to two business days through the Mercury parts network.
-- **Warranty work in-house.** If your Mercury is under factory warranty or covered by Mercury Product Protection, we open and close the claim ourselves. Nothing gets trucked to a third shop. Same for recall work.
-- **Repower capacity.** New motor, rigging, controls, gauges, and propeller all happen in one bay with one work order. The motor and the rigging kit come from the same parts counter.
-- **Year-round service availability.** April through November is when install and service work happens. The marina is closed December 1 to April 1; winter is booking, planning, and reserving spring slots. Boats booked in fall or over the winter get the earliest spring install slots.
-
-A marina should make boating easier. If it creates more phone calls than lake time, something has gone sideways. The full-service Mercury model on Rice Lake exists so a Friday-afternoon problem does not eat a long weekend, and so the same shop that sold you the motor is still the shop fixing it in year seven.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-Service intake and current scheduling are at [hbw.wiki/service](https://hbw.wiki/service).
-
----
-
-## Choosing the right Rice Lake marina for your situation
-
-::decision-card
-eyebrow: Rice Lake marina decision
-heading: Which marina fits how you actually use the boat?
-subhead: Two honest paths. Pick the one that matches your situation.
-leftLabel: If you need Mercury service, repower, or seasonal support
-leftCriteria:
-  - Mercury or Mercruiser motor (new or older)
-  - Want service, parts, and storage in one place
-  - Plan to keep the boat 5+ years and want a service relationship
-  - Drive in from the GTA or Northumberland for service days
-leftOutcome: Harris Boat Works
-rightLabel: If you mostly need a slip and fuel near a cottage
-rightCriteria:
-  - Cottage on the south or west shore
-  - Boat is small, simple, and rarely needs service
-  - Walking distance from the cottage matters more than service depth
-  - Comfortable trailering or shipping out for any work needed
-rightOutcome: A nearby cottage-area marina
-whenInDoubt: If your motor is a Mercury and you want one phone number from May to April, the answer is the marina with the service shop attached.
-::
-
----
-
-![Rice Lake marina dock at golden hour with mixed boat types in the slips](/lovable-uploads/inline/inline-marina-dock-golden-hour.png)
-
-## GTA access
-
-For GTA boaters, Rice Lake is the closest serious freshwater lake east of the city, and Harris Boat Works is the closest full-service Mercury marina once you cross the 401.
-
-| From | Drive time to Gores Landing |
+| Question | What to confirm |
 |---|---|
-| Downtown Toronto | ~90 minutes |
-| Markham | ~75 minutes |
-| Pickering / Ajax | ~60 minutes |
-| Mississauga | ~110 minutes |
-| Vaughan | ~95 minutes |
-| Oshawa | ~50 minutes |
+| Where will the boat stay during the season? | Ask about current slip or dockage availability and the exact facilities included. |
+| How will you launch? | Confirm ramp access, parking, hours, and any current fee before towing. |
+| Who repairs the engine? | Match the marina's authorized repair scope to the engine brand and serial number. |
+| How will winter storage work? | Confirm outdoor or indoor storage, cover type, access dates, and the written fall and spring scope. |
+| How will the boat get there? | Decide who is towing and verify the trailer, tow vehicle, route, and appointment window. |
+| What needs separate approval? | Ask for exclusions, parts, repairs, taxes, and completion conditions in writing. |
 
-The drive is Highway 401 east to Exit 461 (Port Hope), then about 15 minutes north on County Road 28 / County Road 18 to Gores Landing. No backroads, no ferry, no lock systems. If your appointment is at 9 AM, leave the GTA at 7:30 and you'll have coffee in hand at the dock. More on the GTA-to-Rice-Lake routing is in our [Rice Lake boat rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta) guide.
-
----
-
-## Rice Lake context
-
-A few things worth knowing if you're new to Rice Lake:
-
-- It's a warm, shallow, multi-species fishery, walleye, bass, muskie, perch, panfish.
-- It's part of the [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) system but you don't have to navigate locks to get on the water from Gores Landing. Drop in, run the lake.
-- It runs east-west, roughly 30 km long, with several islands and a long south shore lined with cottages.
-- It's east of Peterborough and north of Cobourg, family-friendly, and historically a summer destination for GTA families since the 1800s.
-- The lake freezes hard most winters. Ice fishing is a real season here.
+If you mainly need a nearby slip, location may lead the decision. If you need Mercury repower, diagnostics, warranty intake, or a long-term service relationship, authorized engine support may matter more.
 
 ---
 
-## Booking, contacting, getting started
+## Harris Boat Works Scope
 
-For service, storage, or a quote, the fastest path is [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number and what you need. For rentals, [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals). For everything else, including slip availability for next season, call 905-342-2153. The marina is closed during winter months, but we are available by phone, text, or email anytime; the season opens early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
+HBW's Mercury-facing services on this site are deliberately specific:
+
+- **Mercury repower and motor selection:** build a current CAD configuration in the [Mercury quote builder](/quote/motor-selection). The final installed scope depends on the exact engine, controls, steering, propeller, removal, rigging, boat condition, HST, and approved work.
+- **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service).
+- **Outdoor winter storage:** HBW offers outdoor winter storage with shrinkwrap. It does not offer indoor, heated, climate-controlled, summer, or year-round storage.
+- **Spring commissioning:** it is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+- **Customer transport:** customers arrange fall drop-off, service drop-off, and pickup at Gores Landing. HBW does not provide or arrange transport.
+- **Winter closure:** the physical marina is closed December 1 through April 1, with no customer access or on-site work during that period.
+
+Other marina offerings, including seasonal dockage, launch access, fuel, parts-counter service, and rentals, can change with the season and availability. Confirm the current offering before planning a trip.
+
+---
+
+## What "Full Service" Does Not Promise
+
+"Full service" describes the range of marina functions available at one location. It is not a promise that every item is bundled, every part is in stock, every repair is same-day, or every boat will be ready for an assumed launch date.
+
+For service, storage, or repower work:
+
+1. Submit the boat, engine, trailer, and requested-work details.
+2. Confirm that HBW accepts the requested scope.
+3. Review the written quote, inclusions, exclusions, and approvals.
+4. Receive a drop-off window before towing.
+5. Authorize any newly discovered work before it proceeds.
+6. Plan pickup only after HBW confirms the approved work is complete.
+
+A completed job must be judged against the written work order. Do not rely on a general package label or an informal "ready-to-run" assumption.
+
+---
+
+## Mercury Service Fit
+
+HBW may be a practical fit when:
+
+- The engine repair is for Mercury or MerCruiser
+- You need a Mercury repower quote based on the boat's capacity plate, transom, controls, steering, and intended use
+- You can bring the boat to Gores Landing and return for pickup
+- You are comfortable approving the exact parts and labour scope before work
+- Outdoor winter storage suits the boat and your insurance requirements
+
+HBW is not the right fit when:
+
+- You need engine repair for another brand
+- You need pickup, delivery, hauling, mobile service, or a transport referral
+- You need indoor, heated, climate-controlled, summer, or year-round storage
+- You need access to the boat between December 1 and April 1
+- You need a guaranteed turnaround before HBW has inspected and accepted the job
+
+---
+
+## From the Shop: Confirm Before Towing
+
+Travel time depends on the starting point, traffic, weather, road work, and whether you are towing. Use current navigation for the actual day instead of an old drive-time table.
+
+Before leaving:
+
+- Confirm the appointment or drop-off window
+- Check the trailer tires, bearings, lights, coupler, safety chains, winch strap, and tie-downs
+- Confirm the tow vehicle's ratings and the boat's travel height
+- Bring the engine serial number, keys, wheel-lock key, and any requested documentation
+- Remove personal items that are not part of the approved work
+- Do not plan a return launch until HBW confirms pickup
+
+The marina address is:
 
 Harris Boat Works
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-Mercury Marine Premier Dealer. Established 1947.
-Full marina home page: [harrisboatworks.ca](https://www.harrisboatworks.ca).
 
-## What we see at HBW
+5369 Harris Boat Works Rd
 
-We have been on this stretch of the south shore since 1947. Three generations of the same family running it. The customers we see most often: GTA boaters who drove out for the day, Kawartha cottagers who keep their boat on a trailer, and Mercury repower customers from across south-central Ontario who came specifically for Premier-level certification.
+Gores Landing, ON K0K 2E0
 
-What sets us apart is not fancy amenities. It is the depth on the service side: Mercury Marine Premier dealer, certified techs, and the parts-counter relationship that lets us source bizarre 1990s Mercruiser parts in a day or two when the customer needs them.
+905-342-2153
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
+## Winter Storage at HBW
+
+HBW's storage product is outdoor winter storage with shrinkwrap.
+
+- Customers arrange their own fall drop-off and spring pickup
+- The physical marina is closed December 1 through April 1
+- There is no winter customer access, inspection service, or on-site repair work during the closure
+- Shrinkwrap, engine winterization, onboard-system winterization, storage, repairs, and spring commissioning should be identified clearly in the written scope
+- A healthy battery may remain in place when disconnected and permitted by the approved storage plan; removal is not a universal requirement
+- Engine repairs are limited to Mercury and MerCruiser
+
+Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) before requesting a quote.
+
+---
+
+## Frequently Asked Questions
+
+### Where is Harris Boat Works?
+
+HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Confirm your appointment or drop-off window before towing.
+
+### How long has Harris Boat Works operated in Gores Landing?
+
+Since 1947, at its Gores Landing location on Rice Lake.
+
+### What engine brands does HBW repair?
+
+HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at [hbw.wiki/service](https://hbw.wiki/service).
+
+### Does HBW pick up or deliver boats?
+
+No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+
+### What storage does HBW offer?
+
+Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.
+
+### Can I access my boat during winter?
+
+No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
+
+### Does "full service" mean my boat is automatically ready to launch?
+
+No. Each job follows its written work order. Plan pickup or launch only after HBW confirms the approved work is complete.
+
+### How long is the drive from the GTA?
+
+It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation and confirm the drop-off window before leaving.
+
+---
+
+## Related Guides and Current Booking
+
+- [HBW service intake](https://hbw.wiki/service), current repair scope and service request
+- [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
+- [Outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), current HBW storage scope
+- [Rice Lake launch guide](/blog/rice-lake-boat-launch-guide), launch-planning questions
+- [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
+
+Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
 `,
   },
 
