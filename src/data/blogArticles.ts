@@ -30723,7 +30723,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     slug: "boat-storage-kawartha-lakes",
     title: 'Boat Storage Rice Lake Kawarthas',
     seoTitle: "Boat Storage Kawartha Lakes & Rice Lake | Harris Boat Works",
-    description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization.",
+    description: "Outdoor winter boat storage with shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. No indoor, summer, or year-round storage.",
     image: "/lovable-uploads/hero-boat-storage-kawartha-lakes.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
