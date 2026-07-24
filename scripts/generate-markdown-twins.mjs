@@ -254,17 +254,28 @@ function parseRigFromDisplay(display) {
   return { shaft, control };
 }
 
-function mdFrontmatter(canonicalPath, extraLines = [], lastUpdated = TWIN_DATE) {
+function mdFrontmatter(
+  canonicalPath,
+  extraLines = [],
+  lastUpdated = TWIN_DATE,
+  includeCommercePolicy = true,
+) {
+  const commercePolicy = includeCommercePolicy
+    ? [
+        'currency: CAD',
+        'pickup_only: true',
+        'delivery_offered: false',
+        'final_quote_requires_dealer_confirmation: true',
+        'verado_status: special-order only, not in default inventory',
+      ]
+    : [];
+
   return [
     '---',
     `canonical: ${SITE_URL}${canonicalPath}`,
     `last_updated: ${lastUpdated}`,
-    'currency: CAD',
-    'pickup_only: true',
-    'delivery_offered: false',
+    ...commercePolicy,
     'location: Gores Landing, ON, Canada',
-    'final_quote_requires_dealer_confirmation: true',
-    'verado_status: special-order only, not in default inventory',
     ...extraLines,
     '---',
     '',
@@ -818,7 +829,7 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
 
 
   return [
-    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated),
+    mdFrontmatter(`${routePrefix}/${article.slug}.md`, extra, lastUpdated, !isDiagnostic),
     `# ${article.title}`,
     '',
     `> ${article.description}`,
@@ -1229,7 +1240,22 @@ if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sam
 if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
 for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const relPath = `/blog/${article.slug}.md`;
-  const nextSteps = readFileSync(join(PUBLIC, relPath), 'utf8').split('## Next steps')[1] || '';
+  const twinText = readFileSync(join(PUBLIC, relPath), 'utf8');
+  const frontmatter = twinText.split('---')[1] || '';
+  const nextSteps = twinText.split('## Next steps')[1] || '';
+  for (const irrelevantField of [
+    'currency:',
+    'pickup_only:',
+    'delivery_offered:',
+    'final_quote_requires_dealer_confirmation:',
+    'verado_status:',
+  ]) {
+    if (frontmatter.includes(irrelevantField)) {
+      throw new Error(
+        `[markdown-twins] diagnostic blog twin has irrelevant commerce field ${irrelevantField} ${relPath}`,
+      );
+    }
+  }
   if (!nextSteps.includes('https://hbw.wiki/service')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing service intake: ${relPath}`);
   }
