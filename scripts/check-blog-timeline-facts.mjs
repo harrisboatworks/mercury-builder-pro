@@ -432,6 +432,84 @@ const ARTICLE_CONTRACTS = {
       },
     ],
   },
+  'boat-winterization-cost-ontario-2026': {
+    required: [
+      {
+        rx: /does not publish a one-price-fits-all winterization range/i,
+        rule: 'no-unapproved-winterization-pricing',
+      },
+      {
+        rx: /spring commissioning is included for HBW winter-storage customers and is \$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices/i,
+        rule: 'customer-transport-only',
+      },
+      {
+        rx: /outdoor winter storage with shrinkwrap only[\s\S]{0,180}do not offer indoor, heated, climate-controlled, summer, or year-round storage/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /healthy battery may remain in the boat[\s\S]{0,180}Removal is not a universal HBW requirement/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /can winterize other engine brands[\s\S]{0,120}Engine repairs are limited to Mercury and MerCruiser/i,
+        rule: 'winterization-versus-repair-scope',
+      },
+      {
+        rx: /584 winterizations from August through November 2025/i,
+        rule: 'verified-winterization-volume',
+      },
+      {
+        rx: /Plan pickup or launch only after HBW confirms the authorized work is complete/i,
+        rule: 'no-ready-to-launch-promise',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /\$250\s*(?:to|[-–])\s*\$400|\$30\s*(?:to|[-–])\s*\$50|\$50\s*(?:to|[-–])\s*\$80|\$50\s*(?:to|[-–])\s*\$90|\$40\s*(?:to|[-–])\s*\$70|\$25\s*(?:to|[-–])\s*\$50/i,
+        rule: 'no-rejected-winterization-ranges',
+      },
+      {
+        rx: /\$549 winterization|\$2,000\s*(?:to|[-–])\s*\$5,000|\$1,500\s*(?:to|[-–])\s*\$4,500/i,
+        rule: 'no-unsupported-repair-pricing',
+      },
+      {
+        rx: /9\.9 HP tiller is a 90-minute job|250 HP V8 Verado is a 3-hour job/i,
+        rule: 'no-unsupported-labour-times',
+      },
+      {
+        rx: /available by phone, text, or email anytime|pickups resume in early April/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /point you to the right options|worth the premium at another shop/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /In-shop wrap costs less|Outdoor wrap costs slightly more|priced per foot/i,
+        rule: 'no-unapproved-shrinkwrap-pricing',
+      },
+      {
+        rx: /your slot is already locked|locks in your spring launch slot|booking early gets you the better slot|smarter and cheaper choice/i,
+        rule: 'no-slot-or-savings-promise',
+      },
+      {
+        rx: /under 60 HP|90 HP and up/i,
+        rule: 'no-generic-diy-horsepower-threshold',
+      },
+      {
+        rx: /Quickstor added to the fuel and run through the entire fuel system|Water pump inspection[\s\S]{0,100}Impeller condition checked/i,
+        rule: 'no-universal-winterization-procedure',
+      },
+    ],
+  },
   'boat-storage-kawartha-lakes': {
     required: [
       {

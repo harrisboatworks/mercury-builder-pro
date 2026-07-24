@@ -14945,226 +14945,219 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
   },
   {
     slug: 'boat-winterization-cost-ontario-2026',
+    relatedSlugs: [
+      'diy-mercury-outboard-winterization-guide',
+      'mercury-maintenance-intervals-20-100-300-rule',
+      'outdoor-boat-storage-shrinkwrap-rice-lake',
+      'spring-outboard-commissioning-checklist',
+    ],
     title: 'Boat Winterization Cost Ontario 2026',
     seoTitle: 'Boat Winterization Cost Ontario 2026 | HBW Guide',
     description: 'Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap.',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
+    imageAlt: 'Two boaters on an Ontario lake during the fall-colour season before winter storage.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-24',
     publishDate: '2026-04-21',
     category: 'Maintenance',
     readTime: '12 min read',
     keywords: ['boat winterization cost ontario', 'mercury outboard winterization price', 'harris boat works winter storage'],
-    content: `# How Much Does Boat Winterization Cost in Ontario? (2026)
+    citations: [
+      {
+        name: 'Mercury Marine — How to Winterize Your Outboard',
+        url: 'https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard',
+      },
+      {
+        name: 'Mercury Marine — Marine Battery Maintenance and Tips',
+        url: 'https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics',
+      },
+    ],
+    content: `> **Quick answer:** Harris Boat Works does not publish a one-price-fits-all winterization range. The current quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit those details at [hbw.wiki/service](https://hbw.wiki/service) before the December 1 closure.
 
-## Quick answer
-Boat winterization in Ontario is not a flat number. It depends on the engine, items due, onboard systems, and whether shrinkwrap and outdoor storage are included. Skipping the correct storage procedure can leave fuel, gearcase, battery, corrosion, or drainage problems for spring. Request the current scope at [hbw.wiki/service](https://hbw.wiki/service) before HBW closes on December 1.
+The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, customer access, or pickup during that period. Customers arrange their own fall drop-off and spring pickup.
 
-## Winterization price summary (CAD)
+*HBW operating scope and pricing references verified July 24, 2026. All amounts are CAD before HST unless stated otherwise.*
 
-| Service | Price (CAD) |
-| --- | --- |
-| Fuel stabilizer + ethanol treatment | $30 to $50 |
-| Fogging oil through cylinders | $50 to $80 |
-| Lower unit oil change + inspection | $50 to $90 |
-| Cooling system flush + drain | $40 to $70 |
-| Battery prep | $25 to $50 |
-| Total typical all-in range | $250 to $400 |
+## What Does Boat Winterization Cost in Ontario?
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+The honest answer is: **it depends on the written scope for the boat in front of the technician**.
 
-Prices are typical CAD ranges, HST extra. Final pricing depends on motor size and condition.
+Older generic ranges and individual line-item estimates were not an approved HBW price list and have been removed. They should not be used to budget or compare a current job.
 
-::cost-stack
-heading: What goes into a Mercury winterization quote?
-eyebrow: Where the money goes
-subhead: A full marina winterization is usually 5 line items. Here is what each one covers and the typical CAD range.
-item1Label: Fuel stabilizer + ethanol treatment
-item1Value: $30 - $50
-item1Note: Marine-grade stabilizer mixed into a near-full tank to prevent phase separation over winter
-item2Label: Fogging oil through cylinders
-item2Value: $50 - $80
-item2Note: Follow the exact engine's internal-protection procedure. Do not assume every FourStroke should be fogged through the intake.
-item2Accent: true
-item3Label: Lower unit oil change + inspection
-item3Value: $50 - $90
-item3Note: Old oil out, fresh oil in, magnetic plug checked. Milky oil here is the biggest fall finding we make.
-item4Label: Cooling system flush + drain
-item4Value: $40 - $70
-item4Note: Run fresh water for 5 to 10 minutes on muffs, then tilt straight down to drain. Prevents block-freeze cracks.
-item5Label: Battery prep
-item5Value: $25 - $50
-item5Note: Either pulled to indoor storage with a maintainer, or a tender installed on board. Cheap insurance.
-totalLabel: Typical all-in range
-totalValue: $250 - $400 CAD
-caveat: Pricing varies by motor size, accessibility, and current shop rate. HST extra. Book a winterization slot at /service.
-::
+Instead, ask whether the quote identifies each cost driver:
 
-![Table of boat winterization costs in Ontario: 5 services totalling $250–$400 CAD before HST.](/lovable-uploads/inline/winterization-cost-breakdown.svg)
+| Cost driver | What must be confirmed |
+|---|---|
+| Engine and drive | Exact brand, model, serial number, engine count, and outboard or sterndrive configuration |
+| Maintenance due | Engine oil, filter, gearcase lubricant, spark plugs, impeller, anodes, filters, and lubrication only as the applicable schedule requires |
+| Condition found | Water or metal in gearcase lubricant, leaks, corrosion, damaged seals, fuel issues, alarms, or other repair findings |
+| Boat systems | Livewell, washdown, potable-water, head, bilge, pumps, and other systems that can retain water |
+| Storage preparation | Engine storage procedure, battery plan, drainage, moisture control, and approved cover or shrinkwrap scope |
+| Hull and trailer work | Shrinkwrap, outdoor storage, trailer service, and repairs listed separately when requested |
+| Spring work | Spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers as of July 2026 |
 
-## Why the price varies (and why flat rates mislead you)
+A useful quote states what is included, what is excluded, what requires approval if discovered, and when the work can be considered complete.
 
-A 9.9 HP tiller is a 90-minute job. A 250 HP V8 Verado is a 3-hour job with more oil capacity, more spark plugs, a more complex fuel system, and more lower unit to service. Same checklist, completely different amounts of time and parts.
+## What HBW Uses to Build the Quote
 
-When you see a "$549 winterization" posted on a marina website, that number was set for one boat configuration and applied to everything else. You are either paying for work that does not apply to your motor, or skipping work that should have happened. Neither is a good deal.
+The cowl horsepower is not enough. Two motors with the same horsepower badge can use different oil capacities, gearcases, fuel systems, storage procedures, and maintenance parts.
 
-We quote winterization based on what is in front of us.
+For an accurate request, provide:
 
-![Technician winterizing a Mercury outboard on an aluminum boat, illustrating key cost factors for Ontario boat storage.](/lovable-uploads/boat-winterization-cost-drivers-ontario.png)
+- Boat year, make, model, and length
+- Engine brand, horsepower, model, and serial number
+- Single, twin, or multi-engine configuration
+- Outboard, inboard, or sterndrive
+- Current engine hours when available
+- Known alarms, leaks, fuel problems, or gearcase concerns
+- The last completed annual service and winterization
+- Every onboard system that holds or moves water
+- Whether you are requesting shrinkwrap or HBW outdoor winter storage
+- Trailer concerns or other work you want quoted
 
-## What changes your winterization cost
+HBW can winterize other engine brands when the requested scope is accepted. Engine repairs are limited to Mercury and MerCruiser.
 
-**Motor size and type.** A small tiller takes less time and fewer parts than a large V8. Bigger motors cost more to winterize, this is unavoidable.
+## What a Mercury Winterization Scope May Include
 
-**Inboard/sterndrive vs outboard.** A sterndrive (Mercruiser 4-cylinder, V6, V8) is a different job than an outboard. You are draining the block, the manifolds, and the raw-water lines; applying antifreeze to the right places; and servicing the gimbal bearing.
+Mercury's owner resources tell owners to use the operation and maintenance manual for the exact engine. The products, access points, engine state, and sequence can change by family and serial range.
 
-**Bundled services.** Motor-only winterization is the base. Add shrinkwrap, storage, trailer service, battery storage, and spring commissioning booking, the number grows.
+A professional scope may address:
 
-**What is included in the winterization scope.** The base scope is model-specific: fuel preparation, internal engine protection, drainage and storage position, battery plan, gearcase inspection or service, and lubrication as the manual requires. Wear items are added only when the engine schedule or inspection calls for them.
+- **Fuel storage preparation:** the specified fuel treatment and circulation procedure for the engine and fuel system
+- **Internal engine protection:** the exact model's storage procedure; do not assume every FourStroke uses the same intake-fogging method
+- **Engine oil and filter:** changed when required by the applicable annual or hour-based maintenance schedule
+- **Gearcase lubricant:** inspected and serviced as required; milky lubricant or metal is a repair finding, not something to hide with fresh oil
+- **Cooling-system preparation:** the approved flushing and drainage method, with cooling water supplied whenever an outboard is run
+- **Lubrication and corrosion protection:** grease points and protection steps identified by the manual and inspection
+- **Storage position:** the position specified for the engine so water can drain as designed
+- **Battery plan:** charge and condition check, then disconnect to prevent parasitic draw
 
-**Motor condition and age.** A clean, regularly serviced motor takes the expected time. A neglected motor takes more, and we will tell you what additional service is needed before we start.
+A healthy battery may remain in the boat when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. Mercury's battery guidance likewise starts with fully charging the battery and disconnecting the terminals; removal depends on whether suitable maintenance charging is available.
 
-**Booking timing.** September and early October bookings are easier to schedule. Late October and November are the crunch window. Booking early is usually the smarter and cheaper choice.
+## Winterization and Annual Service Are Related, Not Identical
 
-For an exact quote on your specific setup, request service at [hbw.wiki/service](https://hbw.wiki/service).
+Winterization protects the engine and boat during storage. Annual service follows the maintenance table.
 
-## What winterization actually includes at HBW
+The two scopes often overlap, but one does not automatically prove the other was completed. For example:
 
-Every motor we winterize at HBW goes through the same verification framework, but the exact products, access points, engine state, and sequence come from the manual for that serial number:
+- Treating fuel does not prove the gearcase was inspected
+- Changing gearcase lubricant does not prove the onboard water systems were drained
+- Shrinkwrapping the boat does not winterize the engine
+- Winterizing the engine does not approve unrelated repairs
+- A completed fall work order does not promise the boat is automatically ready to launch in spring
 
-**Cooling-system preparation.** We use the approved flush connection or running-water method specified for the engine. An outboard is never run or dry-cranked without cooling water.
+The invoice and work order should show what was actually completed.
 
-**Fuel preparation.** We use the stabilizer and circulation procedure specified for the engine and fuel system.
+## From the Shop: 584 Winterizations in One Fall
 
-**Internal engine protection.** The method varies by Mercury family and model year. HBW follows the exact storage procedure instead of applying one intake-fogging method to every FourStroke.
+HBW recorded **584 winterizations from August through November 2025**. That number is useful because it shows how varied the work really is: portable outboards, fishing boats, pontoons, larger Mercury engines, MerCruiser packages, and boats with very different onboard systems do not belong under one generic price.
 
-**Spark plugs.** Inspected or replaced when the model's maintenance table calls for it. Cylinders receive fogging oil only when the exact storage procedure requires it.
+The repeat findings are practical:
 
-**Oil change.** Crankcase oil and filter are changed when due under the model's annual or hour-based maintenance table.
+1. The serial-number procedure matters more than a generic internet checklist.
+2. Water or metal in gearcase lubricant needs diagnosis before storage.
+3. A battery left connected can be discharged by parasitic loads.
+4. A wrapped boat can still have an improperly prepared engine or water system.
+5. Newly discovered repairs require approval; winterization is not blanket authorization.
 
-**Gearcase service.** Lower unit drained, inspected for water intrusion (milky oil means a seal failure we want to know about before it freezes), refilled with Mercury High Performance gear oil.
+That is why the service request asks for the actual boat and engine details before the scope is confirmed.
 
-**Cooling-water drainage and storage position.** Follow the flushing and drainage method for the exact engine, then store it in the position Mercury specifies. Do not assume every model uses a manual block-drain step.
+## Shrinkwrap and Outdoor Winter Storage at HBW
 
-**Battery service.** The battery is disconnected and checked. It may remain installed or be removed and maintained, depending on the boat, battery type, storage setup, and owner's plan.
+HBW offers **outdoor winter storage with shrinkwrap only**. We do not offer indoor, heated, climate-controlled, summer, or year-round storage.
 
-**Full written inspection.** Any service work identified during winterization is documented and communicated before spring.
+Winterization, shrinkwrap, storage, trailer work, and repairs are distinct items. Whether they appear together on a quote depends on what the customer requests and HBW accepts. Do not assume a bundle discount, a per-foot rate, or a service is included unless it is written on the current quote.
 
-Optional add-ons available separately or as a package:
-- Shrinkwrap the hull for outdoor storage
-- Trailer bearing service
-- Bilge clean-out
-- Pre-booked spring commissioning
+Customers arrange their own transportation to and from Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices.
 
-## Mercury outboard specifics
+## Timing: Finish the Physical Work Before December 1
 
-If you have a Mercury outboard, the winterization steps are specific to the engine family and serial number. Here is the framework HBW uses before freeze-up; the exact manual supplies the procedure.
+Fall winterization and storage intake must be completed before the physical marina closes on December 1.
 
-- **Cooling-system preparation.** Use the approved flush connection or running-water method in the exact manual, and keep cooling water supplied whenever the engine runs.
-- **Model-specific internal protection.** Use the product, access point, engine state, and sequence listed for the exact engine.
-- **Gearcase (lower unit) oil change.** Old oil out, gearcase inspected for water intrusion (milky oil flags a seal failure), refilled with Mercury High Performance gear oil.
-- **Fuel stabilizer.** Mercury Quickstor added to the fuel and run through the entire fuel system, including injectors or carbs.
-- **Lower unit oil inspection.** Magnetic drain plug checked for metal shavings, seals looked over before spring launch.
-- **Water pump inspection.** Impeller condition checked; a tired impeller is a summer overheat waiting to happen.
-- **Spark plug check or replacement.** Inspect or replace plugs when the model's maintenance table calls for it; use fogging oil only when the exact storage procedure requires it.
-- **Battery plan.** Disconnect and check the battery. It may remain in the boat or be removed and maintained, depending on the battery type and storage setup.
+HBW is closed December 1 through April 1:
 
-Winterization is fall service only. Book your appointment before our December 1 closure (the marina is closed December 1 to April 1) to make sure your Mercury outboard is prepped before freeze-up.
+- No on-site winterization, repair, inspection, or installation work
+- No customer access to stored boats
+- No winter pickup or drop-off
+- No spring commissioning during the closure
 
-## Storage options at HBW
+Remote planning and approvals can continue. Physical work resumes after reopening. Confirm the appointment and drop-off window before towing; do not rely on a generic month or an assumed slot.
 
+## Spring Commissioning Is a Separate Acceptance Step
 
-We offer outdoor winter storage at HBW with shrinkwrap. We do not offer indoor heated storage. For indoor heated, we will point you to the right options in the region rather than pretend we have it.
+As of July 2026, spring commissioning is:
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- **Included for HBW winter-storage customers**
+- **$99 for non-storage customers**, before HST
 
-Outdoor storage with shrinkwrap is the practical answer for most Rice Lake and Kawartha boats: aluminum fishing boats, pontoons, runabouts. For high-end fibreglass cruisers with custom paint, indoor might be worth the premium at another shop. Choose based on your boat, not based on what makes the marina more money.
+The approved work order controls the actual scope. Plan pickup or launch only after HBW confirms the authorized work is complete. A fall winterization, storage contract, or commissioning booking does not create a guaranteed launch date.
 
-Contact us for current per-foot rates. Note that the marina is closed during winter months, but we are available by phone, text, or email anytime, so storage drop-off windows close in late fall and pickups resume in early April. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
+## DIY or Professional Winterization?
 
-## Shrinkwrap: separate from winterization
+DIY can make sense when the owner has the exact manual, the required tools and products, a safe cooling-water supply, and the ability to inspect and refill fluids correctly.
 
-Shrinkwrap and winterization are two different jobs:
+Stop and request professional service when:
 
-**Shrinkwrap** keeps snow, ice, and wildlife out of the boat. It does not protect the engine from freezing.
+- The engine or storage procedure cannot be identified confidently
+- Gearcase lubricant contains water or metal
+- There are alarms, leaks, fuel contamination, corrosion, or damaged seals
+- The boat has water systems you cannot drain correctly
+- You cannot run the engine with the cooling-water supply required by its procedure
+- The work is outside your tools, training, or safe workspace
 
-**Winterization** protects the engine. Without it, the wrap is just keeping snow off a boat that is freezing from the inside.
+For Mercury owners, start with Mercury's official guidance and then follow the exact manual for the serial number. The related [DIY Mercury outboard winterization guide](/blog/diy-mercury-outboard-winterization-guide) is a decision framework, not a replacement for that manual.
 
-Customers who do their own winterization (or have it done elsewhere) sometimes just want shrinkwrap. We accommodate that, you can drop off, get wrapped, and tow the boat home or to cottage storage.
+## Request the Current Scope
 
-At HBW, shrinkwrap is priced per foot. In-shop wrap costs less because it is climate-controlled, no wind, faster work, tighter seams. Outdoor wrap costs slightly more.
+Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
 
-## DIY vs professional winterization
+## Related Guides and Sources
 
-Winterization is one of the service jobs a confident, experienced boater can handle DIY.
-
-**DIY makes sense when:**
-- You have done it before and know the process
-- The motor is smaller (under 60 HP) and accessible
-- You have a clean indoor space
-- You have the exact manual and the model-specific supplies it calls for
-- You are willing to own the outcome if you miss a step
-
-**Bring it to us when:**
-- The motor is larger (90 HP and up) and harder to access
-- You have not done it before
-- The boat lives outside and freeze protection is critical
-- You are not sure last year winterization was complete
-- You want spring commissioning bundled so the boat is launch-ready in May
-
-**The two most expensive DIY mistakes we see in spring:**
-
-1. Customer drained the gearcase but forgot to refill it. Motor runs without lower-unit lube. Gears destroy themselves in 30 minutes. Lower unit replacement: $1,500 to $4,500 CAD depending on the motor.
-
-2. Customer used a generic procedure for the wrong engine or stored it in the wrong position. Fuel, gearcase, battery, corrosion, or drainage problems appear at spring commissioning.
-
-Both are avoidable.
-
-## Spring commissioning: book it in fall
-
-Spring commissioning is the inverse of winterization, and booking it in fall is almost always the right call.
-
-**What spring commissioning includes at HBW:**
-- Gearcase lube refill
-- Battery reinstall and load test
-- Fuel system check and filter replacement if due
-- Cooling system flush
-- Visual inspection
-- Test run on muffs or in the water
-- Hull and trailer launch prep
-
-**Why book in fall:** Spring service backlog is real. If you call in April and ask for a May launch date, you may wait. If you pre-booked commissioning in October when you dropped the boat off, your slot is already locked.
-
-## We winterized 584 boats last fall
-
-In August through November 2025, Harris Boat Works completed 584 winterizations across Rice Lake and the Kawarthas. That volume matters because it means the procedure is routine for our team, the appointment scheduling is dialed in, and we have seen the full range of what Ontario winters do to motors that were not properly prepped.
-
-We would rather see your service request in September than a preventable storage-related repair request in May.
-
-## Book winterization
-
-Request winterization, shrinkwrap, storage, or the full package at [hbw.wiki/service](https://hbw.wiki/service). We start scheduling in late September. Booking early gets you the better slot.
-
-Or request service at [hbw.wiki/service](https://hbw.wiki/service).
-
-*Last reviewed: 2026-07-23.*
-
-For broader context on storage options across the Kawarthas, see our [Kawartha Lakes boat storage guide](/blog/boat-storage-kawartha-lakes).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
+- [Mercury Maintenance Intervals](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Outdoor Boat Storage on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury Marine: How to Winterize Your Outboard](https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard)
+- [Mercury Marine: Marine Battery Maintenance](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics)
 `,
     faqs: [
-      { question: 'What does boat winterization cost in Ontario?', answer: 'It depends on motor size, scope of service, and whether you bundle shrinkwrap, storage, and spring commissioning. Motor-only winterization is the smallest line item. A full package is significantly more. Request a quote based on your specific boat at hbw.wiki/service.' },
-      { question: 'What does a proper Mercury winterization include?', answer: 'At HBW, the scope follows the exact engine manual: fuel preparation, internal protection, drainage and storage position, battery plan, gearcase inspection or service, lubrication, and any maintenance items due for that model. Not every FourStroke receives the same fogging or parts list.' },
-      { question: 'Can I winterize my own Mercury outboard?', answer: 'Yes, if the required tasks are within your ability and you follow the exact serial-number manual. Common mistakes include using a generic procedure, running without cooling water, missing water or metal in the gearcase lubricant, and storing the motor in the wrong position.' },
-      { question: 'What happens if I do not winterize my boat?', answer: 'Water in the cooling system freezes, expands, and cracks the powerhead. Water in the gearcase freezes and damages internal seals. Unstabilized fuel breaks down. A skipped winterization can easily become a $2,000 to $5,000+ repair bill or a destroyed motor.' },
-      { question: 'Does indoor storage eliminate the need for winterization?', answer: 'No. A cold unheated garage in Ontario still freezes. Water in the powerhead does not care whether the roof is over it. Winterize regardless of where the boat is stored.' },
-      { question: 'When should I book winterization?', answer: 'Book in late September or early October to get the better appointment slots. November bookings are possible but more rushed. Last-minute freeze-up bookings sometimes are not.' },
-      { question: 'Do you winterize motors other than Mercury?', answer: 'We can winterize Yamaha, Honda, and Evinrude/Johnson motors. For engine repairs, we only service Mercury and Mercruiser. For non-Mercury winterization, contact us to confirm parts availability and timing.' },
-      { question: 'Is shrinkwrap included in winterization?', answer: 'No, shrinkwrap is a separate service priced by hull length. Most customers storing outside add it; customers with indoor storage often do not.' },
-      { question: 'Should I bundle spring commissioning with fall winterization?', answer: 'Usually yes. It is typically more cost-effective than booking separately, and it locks in your spring launch slot before the March-April backlog builds.' },
+      {
+        question: 'What does boat winterization cost at Harris Boat Works?',
+        answer: 'HBW does not publish a generic winterization range. The current quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service.',
+      },
+      {
+        question: 'What does a proper Mercury winterization include?',
+        answer: 'The exact scope follows the operation and maintenance manual for the engine and serial number. It may include fuel storage preparation, model-specific internal protection, oil and gearcase service when due, cooling-system preparation, lubrication, corrosion protection, storage position, and a battery plan.',
+      },
+      {
+        question: 'Can I winterize my own Mercury outboard?',
+        answer: 'Yes, when the work is within your ability and you follow the exact serial-number manual. Stop if you find water or metal in gearcase lubricant, alarms, leaks, fuel contamination, damaged seals, or a procedure you cannot complete safely.',
+      },
+      {
+        question: 'Can the battery stay in the boat over winter?',
+        answer: 'A healthy battery may remain when it is fully charged, disconnected, secured, and permitted by the approved storage plan. Removal is not a universal HBW requirement. The battery must not be left connected where parasitic loads can discharge it.',
+      },
+      {
+        question: 'When must HBW winterization be completed?',
+        answer: 'Before the December 1 closure. The physical marina is closed December 1 through April 1, with no on-site service, inspection, installation, commissioning, customer access, pickup, or drop-off during that period.',
+      },
+      {
+        question: 'Does HBW winterize engines other than Mercury?',
+        answer: 'HBW can winterize other engine brands when the requested scope is accepted. Engine repairs are limited to Mercury and MerCruiser.',
+      },
+      {
+        question: 'Is shrinkwrap included in winterization?',
+        answer: 'Do not assume it is included. Winterization, shrinkwrap, outdoor storage, trailer work, and repairs are distinct items and must appear in the current written quote when requested and accepted.',
+      },
+      {
+        question: 'What storage does HBW offer?',
+        answer: 'Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.',
+      },
+      {
+        question: 'What does spring commissioning cost?',
+        answer: 'As of July 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers, before HST. Plan pickup or launch only after HBW confirms the approved work is complete.',
+      },
     ]
   },
   {
