@@ -25,9 +25,9 @@ const BLOG_FILES = readdirSync('src/data')
   .filter((f) => f === 'blogArticles.ts' || BLOG_LANG_RX.test(f))
   .map((f) => `src/data/${f}`);
 
-// Extract every { slug: '...', ..., content: `...`, ..., description: '...' }
-// chunk. We keep this regex-based (no TS parse) because the file is a flat
-// array literal and the fields use predictable quoting.
+// Extract every { slug: '...', ..., content: `...`, ..., description: '...',
+// faqs: [...] } chunk. We keep this regex-based (no TS parse) because the file
+// is a flat array literal and the fields use predictable quoting.
 function extractArticles(src) {
   const articles = [];
   const slugRx = /slug:\s*['"]([^'"]+)['"]/g;
@@ -39,7 +39,14 @@ function extractArticles(src) {
     const block = src.slice(positions[i].start, positions[i + 1].start);
     const content = readTemplate(block, 'content');
     const description = readQuoted(block, 'description');
-    articles.push({ slug: positions[i].slug, content, description, blockStart: positions[i].start });
+    const faqs = readArray(block, 'faqs');
+    articles.push({
+      slug: positions[i].slug,
+      content,
+      description,
+      faqs,
+      blockStart: positions[i].start,
+    });
   }
   return articles;
 }
@@ -62,6 +69,41 @@ function readQuoted(block, field) {
   const rx = new RegExp(`${field}:\\s*(['"])((?:\\\\.|(?!\\1).)*)\\1`, 's');
   const m = block.match(rx);
   return m ? m[2] : '';
+}
+
+function readArray(block, field) {
+  const rx = new RegExp(`${field}:\\s*\\[`);
+  const m = block.match(rx);
+  if (!m) return '';
+  const start = m.index + m[0].length - 1;
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
+  for (let i = start; i < block.length; i++) {
+    const char = block[i];
+    if (escaped) {
+      escaped = false;
+      continue;
+    }
+    if (char === '\\') {
+      escaped = true;
+      continue;
+    }
+    if (quote) {
+      if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'" || char === '`') {
+      quote = char;
+      continue;
+    }
+    if (char === '[') depth++;
+    if (char === ']') {
+      depth--;
+      if (depth === 0) return block.slice(start + 1, i);
+    }
+  }
+  return block.slice(start + 1);
 }
 
 const errors = [];
@@ -102,7 +144,7 @@ function checkFounder(text, push) {
 }
 
 // R3: dealership age
-const AGE_RX = /\b(\d{1,3})\s*(?:\+)?\s*[-\u2013]?\s*years?\s+(?:in\s+business|of\s+business|operating|serving|in\s+operation|of\s+service|family[\s-](?:owned|run))/gi;
+const AGE_RX = /\b(\d{1,3})\s*(?:\+)?\s*[-\u2013]?\s*years?\s+(?:in\s+business|of\s+business|operating|serving|in\s+operation|family[\s-](?:owned|run))/gi;
 function checkAge(text, push) {
   const matches = text.match(AGE_RX) || [];
   for (const m of matches) {
@@ -739,7 +781,7 @@ for (const file of BLOG_FILES) {
   const src = readFileSync(file, 'utf8');
   const articles = extractArticles(src);
   for (const a of articles) {
-    const text = `${a.description}\n${a.content}`;
+    const text = `${a.description}\n${a.content}\n${a.faqs}`;
     const localPush = (rule, snippet) => push(file, a.slug, rule, snippet);
     checkTakeover(text, localPush);
     checkFounder(text, localPush);

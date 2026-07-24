@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-05-04
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
 description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-05-04
+date_modified: 2026-07-24
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-07-24
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 
@@ -202,7 +202,7 @@ Properly maintained aluminum pontoons regularly last 25 to 40 years and more. Fu
 
 ### Does HBW handle pontoon service and storage?
 
-Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are all available at HBW. We do not offer indoor heated storage. Call 905-342-2153 for specifics.
+Yes. Service, repower, and outdoor winter storage with shrinkwrap are available at HBW. Customers arrange their own fall drop-off and spring pickup; HBW does not provide hauling or indoor storage. Call 905-342-2153 for specifics.
 
 ## Related guides
 
@@ -226,4 +226,3 @@ Yes. Service, repower, hauling, and outdoor winter storage with shrinkwrap are a
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

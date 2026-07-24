@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw.md
-last_updated: 2026-06-09
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Cobourg, ~25 minutes north via County Road 18."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-07-24
 keywords: ["mercury dealer cobourg","cobourg mercury outboard","northumberland mercury dealer","rice lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-24
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-cobourg-ontario-hbw
 
@@ -89,7 +89,7 @@ Full job: motor, rigging, controls, prop selection, installation, sea trial on R
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, complete service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor option. For Cobourg customers whose boat lives on Rice Lake during the season, year-round storage at HBW means the launch is already at the lake when spring arrives.
+Outdoor winter storage with shrinkwrap only. No indoor, summer, or year-round storage. Customers arrange their own fall drop-off and spring pickup at Gores Landing.
 
 **Trailer-in service for Lake Ontario boats**
 Cobourg customers whose boat lives on Lake Ontario can trailer up for major service. The 25-minute drive each way is short enough that a same-day service visit works for routine jobs.
@@ -160,4 +160,3 @@ Yes. The Mercury Canada warranty network honours coverage at any authorized Merc
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -58,7 +58,7 @@ At 40 minutes, the whole service relationship becomes practical, not just the on
 
 **Winterization:** October drop-off, November shrinkwrap, spring pickup. The whole fall routine makes sense at this distance.
 
-**Storage:** Year-round outdoor storage with shrinkwrap. For Oshawa customers whose boats are already at the lake, keeping them here is more convenient than hauling them back for the winter.
+**Storage:** Outdoor winter storage with shrinkwrap only. Customers arrange their own fall drop-off and spring pickup at Gores Landing; HBW does not provide hauling.
 
 ## The Pricing Conversation Starts Before You Arrive
 
@@ -84,7 +84,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 40 minutes, year-round storage here makes solid logistical sense for most Oshawa boaters.
+Outdoor winter storage with shrinkwrap only. No indoor, summer, or year-round storage. Customers arrange their own fall drop-off and spring pickup at Gores Landing.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you even pick up the phone.

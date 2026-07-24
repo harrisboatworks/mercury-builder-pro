@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw.md
-last_updated: 2026-06-09
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Lindsay Ontario HBW"
 description: "Harris Boat Works is a Mercury Premier dealer 45 minutes southeast of Lindsay via Highway 35."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-07-24
 keywords: ["mercury dealer lindsay","kawartha lakes mercury","lindsay mercury premier","sturgeon lake mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-24
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-lindsay-ontario-hbw
 
@@ -131,7 +131,7 @@ Yes. We handle Mercury outboards and MerCruiser sterndrives, including full serv
 
 ### Can I store my boat at HBW year-round if I am based in Lindsay?
 
-Yes. Outdoor storage with shrinkwrap. For Kawartha cottagers who want to skip the tight Kawartha-region storage market and pick the boat up already at Rice Lake in spring, this routine tends to work. Many Lindsay customers run it for 5 to 10 years.
+No. HBW offers outdoor winter storage with shrinkwrap only. Customers arrange their own fall drop-off and spring pickup; HBW does not offer summer or year-round storage.
 
 ### Does HBW install ProKickers on Sturgeon Lake fishing boats?
 
@@ -159,4 +159,3 @@ Yes, the Mercury 9.9 ProKicker is common spec on Kawartha-area aluminum fishing 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

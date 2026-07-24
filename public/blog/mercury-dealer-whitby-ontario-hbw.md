@@ -78,7 +78,7 @@ Full job: motor, rigging, controls, throttle and shift cables, prop selection, i
 Premier-tier parts depth and warranty authorization. For engine repairs, we only service Mercury and Mercruiser.
 
 **Winter storage**
-Outdoor with shrinkwrap. No indoor. At 45 minutes, [the year-round storage relationship makes a lot of sense](/blog/winter-storage-near-toronto-hbw), boat stays here, we commission it in spring, you pick it up when Rice Lake is ready.
+Outdoor winter storage with shrinkwrap only. At 45 minutes, [outdoor winter storage](/blog/winter-storage-near-toronto-hbw) can be practical. Customers arrange fall drop-off and return for pickup after HBW confirms the approved spring work is complete.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), see it before you leave Whitby.
