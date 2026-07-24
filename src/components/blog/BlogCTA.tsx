@@ -27,12 +27,12 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
   // sales, pricing, and "diagnose it remotely" language out of these posts.
   if (isDiagnosticArticle(category, slug)) {
     return {
-      title: 'Still Have an Active Fault?',
+      title: 'Need an In-Shop Diagnosis?',
       description:
-        'Submit the exact code, engine serial number, hours, and a photo of the display. HBW will use that record to start the shop diagnosis.',
+        "HBW diagnoses faults at our Gores Landing shop. If you can bring the boat to us, include the code, engine serial number, hours, and a photo of the display with your service request. We don't diagnose faults remotely.",
       href: 'https://hbw.wiki/service',
       external: true,
-      buttonLabel: 'Submit a Service Request',
+      buttonLabel: 'Request Service in Gores Landing',
     };
   }
 

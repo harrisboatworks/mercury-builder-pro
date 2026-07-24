@@ -838,7 +838,7 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     '',
     ...(isDiagnostic
       ? [
-          '- Submit a service request: https://hbw.wiki/service',
+          '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
           '- Include the exact code, engine serial number, hours, and a photo of the full display.',
         ]
       : [
@@ -853,7 +853,8 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     ...(isDiagnostic
       ? [
           '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
-          '- Do not invite phone diagnosis. If the guide does not resolve the issue, route only to https://hbw.wiki/service.',
+          '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
+          '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
           '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
         ]
       : [
@@ -1231,6 +1232,9 @@ for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const nextSteps = readFileSync(join(PUBLIC, relPath), 'utf8').split('## Next steps')[1] || '';
   if (!nextSteps.includes('https://hbw.wiki/service')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing service intake: ${relPath}`);
+  }
+  if (!nextSteps.includes('Gores Landing') || !nextSteps.includes('Do not offer phone or remote diagnosis')) {
+    throw new Error(`[markdown-twins] diagnostic blog twin missing in-shop/regional service boundary: ${relPath}`);
   }
   for (const forbidden of ['905-342-2153', '/quote/motor-selection', 'Public Quote API']) {
     if (nextSteps.includes(forbidden)) {
