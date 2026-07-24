@@ -576,8 +576,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         .map((n) => Math.max(2, Math.min(450, Math.round(n))))
                     ));
 
+                    const showStrokePrompt = !stroke && strokeConfidence === 'low' && hp !== null;
+                    const visibleWarnings = showStrokePrompt
+                      ? warnings.filter((w) => !/stroke unclear/i.test(w))
+                      : warnings;
                     return (
                       <div className="mt-1.5 space-y-1.5">
+                        <div className="font-sans text-[11px] uppercase tracking-[0.14em] text-repower-navy-900/55">
+                          Model read
+                        </div>
+
                         <div className="flex flex-wrap items-center gap-1.5">
                           {hp !== null && (
                             <span className="inline-flex items-center gap-1">
