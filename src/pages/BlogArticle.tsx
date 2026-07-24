@@ -35,6 +35,7 @@ import { MercuryVideo } from '@/components/blog/MercuryVideo';
 import { MercuryVideoFile } from '@/components/blog/MercuryVideoFile';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
 import { renderHbwVisual } from '@/components/blog/visuals';
+import { FaultCodeFinder } from '@/components/blog/FaultCodeFinder';
 
 
 import {
@@ -344,6 +345,10 @@ export default function BlogArticle() {
           {/* Table of Contents */}
           {tocItems.length > 0 && (
             <TableOfContents items={tocItems} />
+          )}
+
+          {article.slug === 'mercury-outboard-fault-codes-lookup' && (
+            <FaultCodeFinder content={article.content} />
           )}
 
           {/* Optional Mercury Marine YouTube video reference */}
