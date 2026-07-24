@@ -196,6 +196,68 @@ const ARTICLE_CONTRACTS = {
       },
     ],
   },
+  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': {
+    required: [
+      {
+        rx: /HBW offers outdoor shrinkwrap storage only/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /don't offer indoor, heated, climate-controlled, or year-round storage/i,
+        rule: 'no-indoor-or-year-round-storage',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /don't provide pickup, delivery, hauling, mobile service, or transport referrals/i,
+        rule: 'customer-transport-only',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /we do both/i,
+        rule: 'no-indoor-storage',
+      },
+      {
+        rx: /mobile shrinkwrap service/i,
+        rule: 'no-mobile-service',
+      },
+      {
+        rx: /HBW pricing 2025-2026/i,
+        rule: 'no-stale-storage-pricing',
+      },
+      {
+        rx: /\$(?:33|35)\/ft/i,
+        rule: 'no-stale-fixed-storage-rate',
+      },
+      {
+        rx: /we can refer you to dealers/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /access the boat through winter/i,
+        rule: 'no-winter-customer-access',
+      },
+      {
+        rx: /deliver to your slip/i,
+        rule: 'no-delivery',
+      },
+      {
+        rx: /311\+ storage contracts|300-400 boats/i,
+        rule: 'no-unverified-storage-volume',
+      },
+      {
+        rx: /spring commissioning add-on/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+  },
 };
 
 function checkArticleContract(slug, text, push) {
