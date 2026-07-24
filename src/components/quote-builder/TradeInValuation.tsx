@@ -711,28 +711,31 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                             </span>
                           )}
                         </div>
-                        {hasReasons && (
-                          <div className="flex items-start gap-1.5 font-sans text-xs text-repower-navy-900/55">
-                            <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
-                            <div className="space-y-0.5">
-                              <div>Based on:</div>
-                              <ul className="list-disc pl-4 space-y-0.5">
-                                {hpReasons.map((r, i) => (
-                                  <li key={`hp-${i}`}><span className="font-medium">HP:</span> {r}</li>
-                                ))}
-                                {strokeReasons.map((r, i) => (
-                                  <li key={`st-${i}`}><span className="font-medium">Stroke:</span> {r}</li>
-                                ))}
-                              </ul>
+                        {(hp !== null || stroke) && (() => {
+                          const parts: string[] = [];
+                          if (hp !== null) parts.push(`${hp} HP`);
+                          if (stroke) parts.push(stroke);
+                          if (tradeInInfo.brand) parts.push(tradeInInfo.brand);
+                          return (
+                            <div className="flex items-start gap-1.5 font-sans text-xs text-repower-navy-900/65">
+                              <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+                              <span>We read this as a {parts.join(' ')}.</span>
                             </div>
+                          );
+                        })()}
+                        {showStrokePrompt && (
+                          <div className="flex items-start gap-1.5 font-sans text-xs text-repower-navy-900/75">
+                            <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5 text-repower-gold" aria-hidden="true" />
+                            <span>Is this a 2-stroke or 4-stroke? Add it to the model number (like "4S") or pick one above.</span>
                           </div>
                         )}
-                        {warnings.map((w, i) => (
+                        {visibleWarnings.map((w, i) => (
                           <div key={i} className="flex items-start gap-1.5 font-sans text-xs text-repower-gold">
                             <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
                             <span>{w}</span>
                           </div>
                         ))}
+
                         {suggestions.length > 0 && (
                           <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
                             <span className="font-sans text-xs text-repower-navy-900/55">Did you mean:</span>
