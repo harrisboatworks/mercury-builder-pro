@@ -138,6 +138,78 @@ function checkPresent(text, push) {
   }
 }
 
+// R5: article-specific operating contracts that previously drifted back into
+// customer-facing copy. Keep these semantic and narrow: they protect durable
+// HBW business rules without turning ordinary wording changes into failures.
+const ARTICLE_CONTRACTS = {
+  'winter-storage-near-toronto-hbw': {
+    required: [
+      {
+        rx: /outdoor shrinkwrap storage only/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /does not provide pickup, delivery, hauling, mobile service, or transport referrals/i,
+        rule: 'customer-transport-only',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /indoor unheated \(limited availability/i,
+        rule: 'no-indoor-storage',
+      },
+      {
+        rx: /battery removal\s*\+\s*indoor trickle charge/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /shop bandwidth November-March/i,
+        rule: 'no-winter-shop-work',
+      },
+      {
+        rx: /let you in for inspection/i,
+        rule: 'no-winter-customer-access',
+      },
+      {
+        rx: /commercial boat transport \(\$\d/i,
+        rule: 'no-third-party-transport-pricing',
+      },
+      {
+        rx: /\$(?:33|35)\/ft/i,
+        rule: 'no-stale-fixed-storage-rate',
+      },
+      {
+        rx: /spring commissioning add-on[^\n]*\$300-\$500/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /attribution:\s*Ken F\./i,
+        rule: 'no-fabricated-testimonial',
+      },
+      {
+        rx: /we periodically inspect storage areas/i,
+        rule: 'no-winter-yard-inspections',
+      },
+    ],
+  },
+};
+
+function checkArticleContract(slug, text, push) {
+  const contract = ARTICLE_CONTRACTS[slug];
+  if (!contract) return;
+  for (const check of contract.required) {
+    if (!check.rx.test(text)) push(check.rule, `Required operating rule is missing from ${slug}`);
+  }
+  for (const check of contract.forbidden) {
+    const match = text.match(check.rx);
+    if (match) push(check.rule, match[0]);
+  }
+}
+
 
 // ----- Drive ----------------------------------------------------------------
 
@@ -151,6 +223,7 @@ for (const file of BLOG_FILES) {
     checkFounder(text, localPush);
     checkAge(text, localPush);
     checkPresent(text, localPush);
+    checkArticleContract(a.slug, text, localPush);
   }
 }
 
