@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
@@ -54,7 +54,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Order over the off-season (October through March, while our shop is closed roughly December 1 to April 1) to lock the motor and an early-spring install slot. Spring rush (April through May): waits of 2-6 weeks before the shop can start.
+**Time of year.** Order over the off-season to lock the motor and an early-spring install slot. HBW's winter closure begins December 1, and the marina reopens April 6. Spring rush (April through May) can add booking lead time before the shop can start.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
@@ -62,7 +62,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 #### Step 1: Hull Walk-Around, Free, 30-60 Minutes
 
-Customer brings the boat to HBW in Gores Landing, or sends detailed photos and we visit the boat where it's stored. We assess:
+Customer brings the boat to HBW in Gores Landing for the physical walk-around. Detailed photos and the boat's make, model, year, capacity-plate rating, transom height, and current motor details can help us scope the conversation before drop-off. We assess:
 
 - Hull condition (cracks, dents, transom soft spots)
 - Existing motor age, brand, model, and condition
@@ -70,7 +70,7 @@ Customer brings the boat to HBW in Gores Landing, or sends detailed photos and w
 - Fuel system condition
 - Customer use case
 
-We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free. No commitment required.
+We give a verbal estimate of the repower scope, flag any issues that need addressing, and point you to the configurator for live pricing. The walk-around is free and happens at HBW. Harris Boat Works is drop-off only and does not provide boat pickup, hauling, delivery, or mobile service.
 
 #### Step 2: Motor Selection and Written Quote
 
@@ -83,13 +83,13 @@ Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or
 - HST (13% Ontario)
 - Total all-in number in CAD
 
-If you want to talk through the configuration, we do a 15, 30-minute consultation by phone or in-shop.
+If you want to talk through the configuration, we do a 15- to 30-minute consultation by phone or in-shop.
 
 #### Step 3: Deposit and Booking
 
-A deposit (typically 25% of the all-in cost) holds the slot and locks in the motor allocation. Customer signs the work order. Booking confirms the drop-off date and target completion date.
+A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and booking confirms the customer-arranged drop-off date and target completion date.
 
-If financing through Mercury Repower Financing, we handle the application in-shop.
+If you want financing, HBW can help arrange boat repower financing through Canadian marine lenders, on approved credit. The application, rate, term, and approval are handled separately from the deposit.
 
 #### Step 4: Boat Drop-Off
 
@@ -214,7 +214,7 @@ Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead
 
 ### Do I need to bring my boat to HBW for the walk-around?
 
-For Rice Lake and Kawartha-area customers, we can do walk-arounds at your dock or storage location. For longer-distance customers, photos and a phone call work for initial assessment, then bring the boat to HBW for the actual quote and repower.
+Yes, the physical hull and transom walk-around happens at HBW in Gores Landing. Detailed photos and a phone call can help scope the conversation first, but customers arrange transport to and from the shop. HBW does not provide boat pickup, hauling, delivery, or mobile service.
 
 ### What happens if my transom has soft spots?
 
@@ -274,4 +274,3 @@ Motor lead times vary by model and season, and spring is busy. If you are planni
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

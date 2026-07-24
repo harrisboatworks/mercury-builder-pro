@@ -255,6 +255,22 @@ const monthlyArticle = blogArticles.match(
 check(/\$349 DealerPlan/.test(monthlyArticle) && /Bare-Motor Price/.test(monthlyArticle), 'Monthly-payment article must label canonical prices as bare-motor and include the $349 DealerPlan fee.');
 check(!/\| Engine \| Installed Price|\| Engine \| Installed \(CAD/.test(monthlyArticle), 'Monthly-payment article relabels a bare-motor price as installed.');
 check(!/(?:7\.99%|8\.99%|Mercury TD Always On program)/.test(caseStudies), 'Illustrative case studies contain stale or misleading financing-program language.');
+const repowerProcessArticle = blogArticles.match(
+  /slug: 'what-happens-during-mercury-repower',[\s\S]*?\n\s*},\n\s*{\n\s*slug: 'outboard-shaft-length-guide'/,
+)?.[0] ?? '';
+check(
+  /\$200, \$500, or \$1,000 based on horsepower/.test(repowerProcessArticle) &&
+    /boat repower financing through Canadian marine lenders/.test(repowerProcessArticle),
+  'Repower-process article must use the live fixed-deposit model and Canadian financing wording.',
+);
+check(
+  !/(?:25% of the all-in cost|Mercury Repower Financing|visit the boat where it['’]s stored|walk-arounds at your dock or storage location)/i.test(repowerProcessArticle),
+  'Repower-process article contains a retired percentage deposit, U.S.-associated financing name, or off-site service promise.',
+);
+check(
+  /drop-off only and does not provide boat pickup, hauling, delivery, or mobile service/.test(repowerProcessArticle),
+  'Repower-process article must preserve the drop-off-only logistics boundary.',
+);
 check(
   !/(?:twice the hole shot|10 seconds to 5 seconds|2[–-]3 mph|11[–-]13-inch|mid-50s mph|about half the time the old 90|20[–-]30% better fuel)/i.test(caseStudies),
   'Illustrative case studies contain an unsupported exact performance result.',
