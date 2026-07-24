@@ -1879,7 +1879,8 @@ Get on the spring list early, or better, book the fall-spring pair and make both
     image: "/lovable-uploads/hero-renting-vs-owning-boat.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-07-24",
+
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2006,17 +2007,21 @@ A rental day, split with another family. No fixed costs, safety gear included, a
 
 ## Ready to Run Your Numbers?
 
-Rent a day and count how much you loved it, or price the ownership side with a real quote. We're the same phone number either way.
+Rent a day and count how much you loved it, or price the ownership side with a real quote. Either way you are talking to the same family marina.
 
-**Rent:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Price a boat and motor:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Phone:** 905-342-2153
+**Rent:** book online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Price a boat and motor:** [build a quote](/quote/motor-selection)
+**Questions about buying or repowering:** 905-342-2153
+
 
 **Related guides:**
 - [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada)
 - [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
+- [First-Time Boat Rental on Rice Lake](/blog/first-time-boat-rental-rice-lake-guide)
+- [Group Boat Rentals on Rice Lake](/blog/group-boat-rentals-rice-lake)
+
 
 ---
 
