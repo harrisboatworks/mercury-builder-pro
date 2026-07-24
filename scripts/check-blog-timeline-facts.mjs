@@ -354,6 +354,84 @@ const ARTICLE_CONTRACTS = {
       },
     ],
   },
+  'best-marina-rice-lake-ontario': {
+    required: [
+      {
+        rx: /has operated in Gores Landing since 1947[\s\S]{0,100}Mercury Marine Premier dealer/i,
+        rule: 'history-and-dealer-status',
+      },
+      {
+        rx: /engine repairs are limited to Mercury and MerCruiser/i,
+        rule: 'mercury-service-only',
+      },
+      {
+        rx: /does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices/i,
+        rule: 'customer-transport-only',
+      },
+      {
+        rx: /outdoor winter storage with shrinkwrap[\s\S]{0,180}does not offer indoor, heated, climate-controlled, summer, or year-round storage/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /may remain in place when disconnected[\s\S]{0,160}removal is not a universal requirement/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /Plan pickup only after HBW confirms the approved work is complete/i,
+        rule: 'no-ready-to-run-promise',
+      },
+      {
+        rx: /Travel time depends on the starting point, traffic, weather, road work, and whether you are towing/i,
+        rule: 'no-fixed-drive-time',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /oldest marina on Rice Lake|oldest continuously operating Mercury dealer|only Premier dealer|closest full-service Mercury marina/i,
+        rule: 'no-unsupported-superlative',
+      },
+      {
+        rx: /65 seasonal slips|About 35-90 minutes|Downtown Toronto \| ~90 minutes|Markham \| ~75 minutes|Mississauga \| ~110 minutes/i,
+        rule: 'no-unverified-capacity-or-drive-times',
+      },
+      {
+        rx: /available by phone, text, or email anytime|season opens early April|earliest spring install slots/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /bad coil pack on Friday afternoon doesn't kill your long weekend|Friday-afternoon problem does not eat a long weekend/i,
+        rule: 'no-turnaround-promise',
+      },
+      {
+        rx: /Most common service items are in the building|Less common parts ship in one to two business days|source bizarre 1990s Mercruiser parts in a day or two/i,
+        rule: 'no-parts-availability-promise',
+      },
+      {
+        rx: /Factory-trained technicians[\s\S]{0,240}Training is renewed annually/i,
+        rule: 'no-unsupported-certification-detail',
+      },
+      {
+        rx: /typically bundle winterization[\s\S]{0,180}ready to launch|pick it up ready to run|plan the timeline so you only need to drive out once or twice/i,
+        rule: 'no-ready-to-run-or-trip-count-promise',
+      },
+      {
+        rx: /point you to other shops|recommend a qualified mechanic/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /every service a Mercury-powered boat needs|nothing gets handed off to a third shop/i,
+        rule: 'no-universal-service-scope',
+      },
+    ],
+  },
   'boat-storage-kawartha-lakes': {
     required: [
       {
