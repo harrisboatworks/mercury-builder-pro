@@ -27081,7 +27081,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-05-10",
+    dateModified: "2026-07-24",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "10 min read",
@@ -27125,7 +27125,7 @@ Those aren't abstract benefits. They're what customers notice after a season.
 
 ## What the 2.1L Family Shares
 
-The 115 HP FourStroke belongs to Mercury's 75, 115 HP family: five motors (75, 80, 90, 100, 115) built on the same 2.1L inline-4 block with an 8-valve SOHC, maintenance-free valve train, and 17,000 hours of factory testing on this generation before shipping.
+The 115 HP FourStroke belongs to Mercury's 75-115 HP family: five motors (75, 80, 90, 100, 115) built on the same 2.1L inline-4 block with an 8-valve SOHC, maintenance-free valve train, and 17,000 hours of factory testing on this generation before shipping.
 
 What they all share:
 - Same 2.1L inline-4 block
@@ -27165,11 +27165,11 @@ CT gives you [more low-end pulling power and hole-shot](/blog/mercury-command-th
 
 ## Where the 115 HP FourStroke Is the Right Answer
 
-### 17, 20 ft aluminum fishing boats with heavier loads
+### 17-20 ft aluminum fishing boats with heavier loads
 
-A 16 ft boat with two anglers is the 90's job. When the hull is a 17, 20 ft Lund, Princecraft, Crestliner, or Legend with four people, full gear, a livewell, two batteries, and a trolling motor up front, the 115 is the right call. Cruise around 30, 35 mph, top out around 42, 48 mph depending on prop and load.
+A 16 ft boat with two anglers is the 90's job. When the hull is a 17-20 ft Lund, Princecraft, Crestliner, or Legend with four people, full gear, a livewell, two batteries, and a trolling motor up front, the 115 is the right call. Cruise around 30-35 mph, top out around 42-48 mph depending on prop and load.
 
-### Mid-to-large pontoons, 20, 24 ft
+### Mid-to-large pontoons, 20-24 ft
 
 This is where the 115 CT earns its keep. [A 22 ft pontoon with a full family load](/blog/best-mercury-outboard-pontoon-boats) and a cooler deserves at least 90 CT. The 115 CT is the right answer if the pontoon is a tritoon, if you tow tubes, or if the boat simply sits heavy.
 
@@ -27209,9 +27209,9 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 |---|---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V4 / different family |
 | Dry weight | 359 lbs | 359 lbs (363 CT) | ~455 lbs |
-| Full-throttle RPM | 5,000, 6,000 | 5,000, 6,000 | 5,000, 5,800 |
-| Best hull range | 16, 18 ft aluminum, mid pontoons | 17, 20 ft aluminum, mid-large pontoons | 19, 22 ft, larger platforms |
-| Price vs. 115 | Less |, | More (~$5,000+ more) |
+| Full-throttle RPM | 5,000-6,000 | 5,000-6,000 | 5,000-5,800 |
+| Best hull range | 16-18 ft aluminum, mid pontoons | 17-20 ft aluminum, mid-large pontoons | 19-22 ft, larger platforms |
+| Price vs. 115 | Less | Baseline | More (~$5,000+ more) |
 
 **[90 vs. 115](/blog/mercury-75-vs-90-vs-115-comparison):** Tuning, not a different motor. No weight change. Price difference is real but modest. If the boat regularly carries four people and full gear, the 115 is worth it.
 
@@ -27221,9 +27221,9 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## What We'd Actually Recommend
 
-**17, 20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
+**17-20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
 
-**Mid-to-large pontoon, 20, 24 ft, normal cottage loads:** 115 ELPT Command Thrust.
+**Mid-to-large pontoon, 20-24 ft, normal cottage loads:** 115 ELPT Command Thrust.
 
 **Same boat but you want hole-shot and run a tournament or performance fishing platform:** 115 Pro XS. Different motor, different price, worth asking about specifically.
 
@@ -27245,7 +27245,7 @@ Same 2.1L block. Different tuning, different RPM ceiling. No weight difference. 
 No. Different family, different block, different cylinder architecture, different weight class (~100 lbs heavier), different price point. Don't compare them as if they're close relatives.
 
 **When does the 115 CT make sense over the 90 CT?** 
-When the pontoon is 20, 24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
+When the pontoon is 20-24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
 
 **What fuel savings can I expect repowering from an old two-stroke?** 
 Typically 25 to 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
