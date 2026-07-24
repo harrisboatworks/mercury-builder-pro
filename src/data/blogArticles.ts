@@ -11659,7 +11659,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Family enjoying a day on a runabout boat powered by a Mercury outboard, ideal for Ontario lake cruising.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-05-07',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
