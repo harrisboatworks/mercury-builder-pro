@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-18
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -124,6 +124,7 @@ See any motor twin for an example body.
 
 Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md)
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md)
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md)
 - [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md)
@@ -391,4 +392,3 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md)
 - [Outboard motor service at winterization sa Ontario (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md)
 - [Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein [hi]](https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md)
-

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches I
 description: "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 
@@ -82,6 +82,22 @@ That last line is the entire economics of this post. The annual drain is the che
 
 ---
 
+## Which Mercury Gear Lube Goes Back In?
+
+Mercury's 2026 Capacity Guide separates gear lubes by application:
+
+| Application in the guide | Listed Mercury gear lube |
+|---|---|
+| Most standard outboard rows below 75 HP | 80W-90 Premium |
+| 75 HP-and-up rows | SAE 90 High Performance |
+| V10 Verado and 400R rows | 85W-90 Extreme Performance |
+
+That is a selector, not a substitute for identifying the lower unit. BigFoot, Command Thrust, Sport Master, counter-rotation and Racing gearcases can change both the lubricant and the quantity.
+
+Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-capacity-chart) to match horsepower, year, displacement, serial break and gearcase before filling.
+
+---
+
 ## Common mistakes
 
 - **Topping up milky oil and carrying on.** The water is still in there, and so is the leak. You've refreshed the emulsion, not fixed anything.
@@ -106,11 +122,12 @@ Every gearcase drain at our shop gets the same eyes: oil colour read before it h
 
 ## Ready to Get That Drain Checked?
 
-If your oil looked wrong, or nobody's looked in over a year, that's the whole booking reason.
+If the boat can come to HBW in Gores Landing and the oil looked wrong, or nobody has looked in over a year, that is the whole booking reason.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+HBW does not diagnose gearcase faults remotely. Include the engine serial number, current hours and a photo of the drained lubricant with the request so the shop has a useful starting record.
 
 **Related guides:**
 - [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
@@ -123,7 +140,8 @@ If your oil looked wrong, or nobody's looked in over a year, that's the whole bo
 ## Sources
 
 - HBW service records, Rice Lake: 7,417 gearcase jobs and 364 gearcase pressure tests, 2013-2026
-- Mercury Marine gearcase lubrication specifications (your owner's manual governs your model)
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 17 and 24-28
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 
 ## FAQs
 
@@ -162,4 +180,3 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
-
