@@ -7107,11 +7107,11 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
   {
     slug: 'ontario-cottage-boat-motor-repower-guide',
     title: 'Ontario Cottage Boat Motor Repower Guide (2026)',
-    description: 'Ontario cottage repower guide: replacing old motor with Mercury often beats buying new. Typical costs $17,000-$30,000 CAD vs $50,000-$90,000 for new packages.',
+    description: 'Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense.',
     image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-02',
-    dateModified: '2026-05-04',
+    dateModified: '2026-07-24',
     publishDate: '2026-02-02',
     category: 'Repowering',
     readTime: '10 min read',
@@ -7119,7 +7119,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
     content: `# Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
 
 ## Quick answer
-Most Ontario cottage boat repowers fall in the 25 to 115 HP range. A modern Mercury FourStroke brings quiet running, better fuel economy, and a multi-year limited warranty. We do cottage repowers every season from the Kawarthas to the Trent. For a real number on your boat, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Start with the boat's compliance notice or capacity label and the manufacturer's rating, not a horsepower-by-length chart. For an outboard boat 6 metres or shorter, [Transport Canada says the capacity label shows the maximum safe motor size](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft). HBW then matches a Mercury within that limit to the hull, load, controls, shaft length, and use. For a real number on your boat, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The honest case for repowering a cottage boat
 
@@ -7143,12 +7143,6 @@ The part that trips people up is the math. [A repower on a typical cottage alumi
 
 **Maintenance history.** A boat with consistent winterization records is a different repower candidate than one that has been "running fine" without professional service for ten years.
 
-::pull-quote
-quote: The boat hasn't left our cottage in 22 years. The Mercury 60 finally gave up last summer. Jay quoted a Mercury 75 swap that included winterizing and a spring launch. **We're back on the lake without driving the boat anywhere.**
-attribution: Tracy L.
-source: Kawartha cottage
-::
-
 ## The common cottage boat scenarios we see at HBW
 
 ### The old aluminum fishing boat
@@ -7159,7 +7153,7 @@ This is a clean repower candidate. A Mercury FourStroke in the appropriate HP cl
 ### The cottage runabout
 A 17 to 19 ft fiberglass runabout from the 1990s or early 2000s, used for family tubing, swimming, and runs to town. The motor is old and often underpowered relative to how the family uses the boat today, because families grow.
 
-Stepping up in HP during a repower is common here and usually the right call.
+Changing HP is considered only within the limit on the boat's compliance notice, capacity label, or manufacturer rating. A growing family changes the load and use case; it does not change the hull's safe horsepower limit.
 
 ### The cottage pontoon
 An 18 to 22 ft pontoon used for cruising, fishing with the kids, and the occasional tube ride. The motor is usually original from when the pontoon was bought.
@@ -7200,7 +7194,7 @@ When a cottage owner comes in, we want to know:
 
 **Skipping the hull walk-around.** Some cottage hulls have hidden problems. The walk-around takes half an hour and prevents expensive regret.
 
-**Underbuying HP for how the family actually uses the boat.** Families grow. Right-size during the repower.
+**Buying horsepower from a length chart.** Hull design, load, controls, shaft length, and the boat's rated limit all matter. A generic range is not authorization to exceed the compliance notice, capacity label, or manufacturer rating.
 
 **Skipping the ProKicker if you fish.** If fishing is part of the cottage routine, a 9.9 ProKicker is the standard addition.
 
@@ -7221,9 +7215,11 @@ We look at trailers as part of cottage repower projects.
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for a starting point on motor and rigging costs. If you want to talk through your specific hull before you build, call us at 905-342-2153.
 
+HBW is drop-off only for repower projects. Bring the boat to our Gores Landing shop; we do not offer pickup, hauling, delivery, or mobile service.
+
 We do cottage repowers every season. We will give you the honest answer for your boat.
 
-*Last reviewed: 2026-05-11.*
+*Last reviewed: 2026-07-24.*
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -7233,13 +7229,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'Should I repower my cottage boat or buy new?', answer: 'For most cottage boats with hulls less than 25 years old in reasonable condition, repowering wins on the math. A new comparable boat package costs significantly more. The hull is the asset; the motor is the wear part.' },
       { question: 'How long does a cottage aluminum boat last?', answer: 'Properly maintained aluminum cottage boats regularly last 30 to 50 years or more. Many Kawartha aluminum hulls from the 1980s and 1990s are still on the water, often on their second or third Mercury repower.' },
-      { question: 'What HP do I need for my cottage boat?', answer: 'Depends on hull length and use. Small tin boats (14 to 16 ft): 25 to 40 HP. Aluminum console (16 to 18 ft): 60 to 115 HP. Cottage pontoons (18 to 22 ft): 60 to 115 HP with Command Thrust (60 CT for 18 to 20 ft two-log pontoons; 150-class motors run a standard gearcase, since CT tops out at 115).' },
+      { question: 'What HP do I need for my cottage boat?', answer: 'Start with the boat\'s Canadian compliance notice or capacity label and the manufacturer\'s rating. For an outboard boat 6 metres or shorter, the capacity label shows the maximum safe motor size; do not exceed it. If the label is missing or the boat is longer than 6 metres, HBW verifies the manufacturer\'s limit and the hull, load, controls, shaft length, and use before recommending a Mercury. Length alone is not enough.' },
       { question: 'Should I switch from Evinrude to Mercury during a cottage repower?', answer: 'Most of the time, yes. Evinrude stopped making outboards in 2020 and parts support is only getting thinner. A brand conversion adds some rigging cost but pays back over the life of the new motor.' },
       { question: 'Can I get financing for a cottage repower?', answer: 'Yes. Mercury repower financing is available through HBW. Current financing options are shown on the financing page and confirmed with your quote at mercuryrepower.ca.' },
       { question: 'When is the best time to repower a cottage boat?', answer: 'Order over the off-season: November through March. Motor inventory is deepest and you get first pick of spring install slots. Our marina is closed roughly December 1 to April 1, but we take orders by phone and email all winter and start install work as soon as we reopen in early April. Spring rush typically picks up in March.' },
       { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes, if the motor horsepower, brand, or model changes. The update is free online and takes fifteen minutes. We help HBW customers through it.' },
       { question: 'Should I keep my old motor as a backup?', answer: 'Usually no. Old Evinrudes and older Mercurys have limited practical value as backups and the storage hassle is real. We give fair-market trade-in value during a repower.' },
-      { question: 'Can HBW haul my cottage boat from the lake?', answer: 'For Rice Lake and surrounding Kawartha-area cottages, yes. Call us to sort out the logistics.' },
+      { question: 'How do I get my cottage boat to HBW for a repower?', answer: 'HBW is drop-off only. Bring the boat to our Gores Landing shop; we do not offer pickup, hauling, delivery, or mobile service.' },
     ]
   },
 
