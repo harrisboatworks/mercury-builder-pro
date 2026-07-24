@@ -17,7 +17,16 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
   const matches = useMemo(() => filterFaultCodeRows(rows, query), [query, rows]);
   const visibleMatches = matches.slice(0, 12);
   const hasQuery = query.trim().length > 0;
-  const hasIncompleteModernCode = isIncompleteModernCode(query);
+  const hasIncompleteModernCode = isIncompleteModernCode(query, rows);
+  const normalizedStem = query.trim().replace(/[‐‑‒–—−]/g, '-');
+  const completeCodeExample =
+    rows
+      .find(
+        (row) =>
+          row.source === 'modern' &&
+          row.codes.some((code) => code.startsWith(`${normalizedStem}-`)),
+      )
+      ?.codes.find((code) => code.startsWith(`${normalizedStem}-`)) ?? '1012-24';
 
   return (
     <section
@@ -96,12 +105,13 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
         </div>
       )}
 
-      <div className="mt-5" aria-live="polite">
+      <div className="mt-5">
         {hasQuery && hasIncompleteModernCode && (
           <div className="rounded-xl bg-repower-paper p-4 text-sm leading-relaxed text-repower-navy-900/75">
-            That is only the first half of a modern UFC. Enter the complete pair shown on
-            the display, including the suffix after the dash, such as <strong>1012-24</strong>.
-            Opposite suffixes can identify opposite conditions.
+            That may be only the first half of a modern UFC. Enter the complete pair shown
+            on the display, including the suffix after the dash, such as{' '}
+            <strong>{completeCodeExample}</strong>. A single number may also be a legacy
+            VesselView ID, so any legacy match remains visible below.
           </div>
         )}
 
@@ -115,7 +125,11 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
 
         {visibleMatches.length > 0 && (
           <>
-            <p className="mb-3 text-sm font-semibold text-repower-navy-900/70">
+            <p
+              className="mb-3 text-sm font-semibold text-repower-navy-900/70"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               {matches.length} {matches.length === 1 ? 'match' : 'matches'}
               {matches.length > visibleMatches.length ? ` · showing first ${visibleMatches.length}` : ''}
             </p>
@@ -145,6 +159,12 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
                   {row.groupedCodeLabel && (
                     <p className="mt-1 text-xs leading-relaxed text-repower-navy-900/60">
                       Exact match from grouped table row: {row.groupedCodeLabel}
+                    </p>
+                  )}
+                  {row.dealerUpdateGuidance && (
+                    <p className="mt-1 text-xs leading-relaxed text-repower-navy-900/60">
+                      † This code has May 2026 dealer-software and calibration guidance.
+                      See “What Changed in May 2026” below.
                     </p>
                   )}
                   <p className="mt-2 text-sm leading-relaxed text-repower-navy-900/75">

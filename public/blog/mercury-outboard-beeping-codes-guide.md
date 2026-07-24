@@ -1,17 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-07-07
-currency: CAD
-pickup_only: true
-delivery_offered: false
+last_updated: 2026-07-24
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Beep & Alarm Codes: What Each Means"
 description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-07-07
+date_modified: 2026-07-24
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +19,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-07  
+**Last updated:** 2026-07-24  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
@@ -33,6 +28,8 @@ language: en-CA
 ## Quick Answer
 
 Mercury outboard beep patterns vary by model, year, and whether the boat has SmartCraft displays, so the exact meaning of any pattern requires confirming against your specific motor's manual. That said, the most common patterns correspond to temperature (overheat), oil level, water-in-fuel, or Guardian engine protection mode. Record the pattern exactly, number of beeps, timing, whether it correlates with RPM or load, and reference your manual or bring it to a dealer with that information.
+
+If the display shows a number as well as a horn pattern, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for the complete number. The modern two-part UFC table and legacy single-number VesselView list are different systems.
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
 

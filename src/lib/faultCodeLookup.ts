@@ -7,6 +7,7 @@ export interface FaultCodeRow {
   meaning: string;
   guidance: string;
   groupedCodeLabel?: string;
+  dealerUpdateGuidance?: boolean;
 }
 
 const DASHES_RE = /[‐‑‒–—−]/g;
@@ -16,7 +17,29 @@ const LEGACY_CODE_RE = /^\d+(?:-\d+)?$/;
 const normalize = (value: string) =>
   value.toLowerCase().replace(DASHES_RE, '-').replace(/\s+/g, ' ').trim();
 
-export const isIncompleteModernCode = (value: string) => /^\d{4}$/.test(normalize(value));
+const DEALER_UPDATE_CODES = new Set([
+  '603-4',
+  '603-5',
+  '3031-6',
+  '3033-6',
+  '3034-6',
+  '3043-6',
+]);
+
+export const isIncompleteModernCode = (value: string, rows: FaultCodeRow[] = []) => {
+  const term = normalize(value);
+  if (/^\d{4}$/.test(term)) return true;
+  if (!/^\d{1,3}$/.test(term)) return false;
+
+  const numericTerm = Number(term);
+  if (term.length === 3 && numericTerm > 247) return true;
+
+  return rows.some(
+    (row) =>
+      row.source === 'modern' &&
+      row.codes.some((code) => code.startsWith(`${term}-`)),
+  );
+};
 
 function expandLegacyCodes(label: string): string[] {
   const normalized = normalize(label);
@@ -75,6 +98,8 @@ export function parseFaultCodeRows(content: string): FaultCodeRow[] {
       codes,
       meaning: cells[1],
       guidance: cells[2],
+      dealerUpdateGuidance:
+        source === 'modern' && codes.some((code) => DEALER_UPDATE_CODES.has(code)),
     });
   }
 
@@ -111,7 +136,7 @@ function meaningForExactCode(row: FaultCodeRow, code: string): string {
       pattern: /could not adapt in reverse or forward/i,
       replacements: ['could not adapt in reverse', 'could not adapt in forward'],
     },
-    { pattern: /trim-up or trim-down/i, replacements: ['trim-up', 'trim-down'] },
+    { pattern: /trim-up or trim-down/i, replacements: ['Trim-up', 'Trim-down'] },
     {
       pattern: /Demand, shift, or helm-module/i,
       replacements: ['Demand', 'Shift', 'Helm-module'],
@@ -119,6 +144,22 @@ function meaningForExactCode(row: FaultCodeRow, code: string): string {
     {
       pattern: /Watchdog-module or watchdog-data/i,
       replacements: ['Watchdog-module', 'Watchdog-data'],
+    },
+    {
+      pattern: /Manifold-pressure and throttle-position signals disagree/i,
+      replacements: [
+        'Manifold-pressure and throttle-position sensor A signals disagree',
+        'Manifold-pressure and throttle-position sensor B signals disagree',
+      ],
+    },
+    {
+      pattern: /CAN P or CAN X document state-of-health fault/i,
+      replacements: [
+        'CAN P document 03 state-of-health fault',
+        'CAN X document 07 state-of-health fault',
+        'CAN X document 09 state-of-health fault',
+        'CAN X document 10 state-of-health fault',
+      ],
     },
   ];
 
@@ -156,10 +197,11 @@ export function filterFaultCodeRows(rows: FaultCodeRow[], query: string): FaultC
       .filter((row) => row.codes.includes(term))
       .map((row) => ({
         ...row,
-        codeLabel: term,
+        codeLabel: DEALER_UPDATE_CODES.has(term) ? `${term}†` : term,
         codes: [term],
         meaning: meaningForExactCode(row, term),
         groupedCodeLabel: row.codes.length > 1 ? row.codeLabel : undefined,
+        dealerUpdateGuidance: DEALER_UPDATE_CODES.has(term),
       }));
   }
 

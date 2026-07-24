@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-05-30
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury SmartCraft Connect Guide 2026"
 description: "Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-05-30
+date_modified: 2026-07-24
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last updated:** 2026-05-30  
+**Last updated:** 2026-07-24  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
@@ -33,6 +33,8 @@ language: en-CA
 Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small under-cowl module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (single-engine) and 8M0173129 (multi-engine). The Mercury Marine app is free on iOS and Android. No subscription.
 
 SmartCraft Connect Mobile is the current name for what Mercury used to call VesselView Mobile (rebranded in 2024). If you are shopping for the old name, this is the same product line.
+
+If the app shows a complete fault number, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) to check the scoped meaning and owner action before treating a component name as a parts diagnosis.
 
 ---
 

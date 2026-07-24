@@ -316,9 +316,9 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     slug: 'mercury-outboard-fault-codes-lookup',
     title: 'Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup',
     seoTitle: 'Mercury Outboard Fault Codes: VesselView & UFC Lookup',
-    description: 'Search documented Mercury fault codes by format and engine family, including legacy VesselView IDs and the current V6/V8 UFC table reviewed against 2025-2026 dealer literature.',
+    description: 'Search Mercury fault codes by format and engine family, including legacy VesselView IDs and the current V6/V8 UFC table checked against dealer literature.',
     image: '/lovable-uploads/hero-vesselview-smartcraft.png',
-    imageAlt: 'Mercury SmartCraft VesselView display showing engine data at the helm of a boat.',
+    imageAlt: 'Boater checking live Mercury engine data in the Mercury Marine app, with a Mercury FourStroke outboard on the transom.',
     author: 'Jay Harris',
     datePublished: '2026-07-23',
     dateModified: '2026-07-24',
@@ -376,7 +376,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
       },
       {
         question: 'What should I send with a Mercury service request?',
-        answer: 'If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. Submit that record at hbw.wiki/service so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.',
+        answer: 'If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. At hbw.wiki/service, choose “Various Boat / Motor Repairs (See Details),” put the record in Details, and use the photo upload for the display image. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.',
       },
     ],
     citations: [
@@ -437,7 +437,8 @@ Read the last column literally. **Service soon** means arrange service; it does 
 | 341-6 / 342-6 | Throttle-position sensor A or B adaptation fault | Service engine soon. The sensor adaptation, throttle mechanism, connector and wiring require diagnosis. |
 | 401-24 / 401-25 | Time-sampled manifold-pressure input above or below valid limit | Service engine soon. The pressure sensor, connector, wiring, sensor supply and intake system require diagnosis. |
 | 402-24 / 402-25 | Angle-sampled manifold-pressure input above or below valid limit | Service engine soon. The pressure sensor, connector, wiring, sensor supply and intake system require diagnosis. |
-| 404-6 / 405-6 | Manifold-pressure and throttle-position signals disagree | Service engine soon. The pressure and throttle signals, their wiring and the intake system must be checked together. |
+| 404-6 | Manifold-pressure and throttle-position sensor A signals disagree | Service engine soon. The pressure and throttle signals, their wiring and the intake system must be checked together. |
+| 405-6 | Manifold-pressure and throttle-position sensor B signals disagree | Service engine soon. The pressure and throttle signals, their wiring and the intake system must be checked together. |
 | 407-17 | Manifold-pressure barometric reading outside expected range | Service engine soon. The pressure sensor, wiring, connector and local barometric comparison require diagnosis. |
 | 431-21 | Oil pressure below the specified threshold | Stop the engine and check the oil level. If the level is correct or the alert persists, return to port and service the engine before its next use. |
 | 431-24 / 431-25 | Oil-pressure sensor input above or below valid limit | Service engine soon. Check the oil level first; a sensor-circuit code does not prove that actual oil pressure is safe. |
@@ -502,7 +503,10 @@ Read the last column literally. **Service soon** means arrange service; it does 
 | 4001-6 / 4002-6 / 4003-6 | Demand, shift, or helm-module crosscheck fault | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the controls. |
 | 4004-6 | CAN X document 1 state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
 | 4005-6 | CAN P document 2 state-of-health fault | Service engine soon. Network power, wiring and connected modules require diagnosis. |
-| 4006-6 / 4007-6 / 4008-6 / 4009-6 | CAN P or CAN X document state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4006-6 | CAN P document 03 state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4007-6 | CAN X document 07 state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4008-6 | CAN X document 09 state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4009-6 | CAN X document 10 state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
 | 4010-6 | CAN X document 11 state-of-health fault | Cruise control may not work properly. Service the engine soon. |
 | 4011-23 | CAN-bus authentication timeout | Service engine soon. Network power, wiring, module identity and current software require diagnosis. |
 | 4012-6 | CAN P and CAN X state-of-health faults | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
@@ -513,7 +517,9 @@ Read the last column literally. **Service soon** means arrange service; it does 
 | 4503-23 | Security system in setup mode | Follow the security setup instructions in the serial-specific owner manual or have an authorized dealer complete the setup. |
 | 4602-23 | Low system voltage blocking other fault evaluation | Return to port now. Turn off unnecessary electrical loads, check the battery connections, and service the engine before its next use. |
 
-The December 2025 manual contains **130 UFC pairs**. Mercury's May 2026 dealer update adds **3043-6** for a limited single-engine V8 application, bringing this current scoped lookup to **131 searchable pairs**. The older 2018 and 2021 versions list the same original 130 pairs; the 2018 version also shows **0-0** as a no-active-fault sentinel. Do not count 0-0 as an enabled fault or apply this table to a different Mercury family.
+† **Marked codes have May 2026 dealer-software and calibration guidance.** See [What Changed in May 2026](#what-changed-in-may-2026) below.
+
+The December 2025 manual contains **130 UFC pairs**. Mercury's May 2026 dealer update adds **3043-6** for a limited single-engine V8 application, bringing this current scoped lookup to **131 searchable pairs**. Do not apply this table to a different Mercury family.
 
 ### What Changed in May 2026
 
@@ -713,17 +719,17 @@ An **active fault** is present now. A **display history** is the alert list stor
 
 Photograph the exact code and text, affected engine, hours, horn pattern, and operating conditions before dismissing or deleting anything. Clearing a VesselView display's archived history clears that display list. It must not be described as erasing the PCM record a technician may read with CDS G3.
 
-Likewise, do not assume every stored fault includes the same freeze-frame data. Mercury's current CDS G3 material describes fault history and a last-30-fault list only where supported.
+Likewise, do not assume every stored fault includes the same freeze-frame data or that every module holds the same number of entries. Mercury's current CDS G3 material describes fault history and operating snapshots only where supported.
 
 ## How to Read the Alert on Common Mercury Displays
 
 ### VesselView 403
 
-Select **View** or press **Enter** to open the alert details. History is under **Menu > Alarms**. The 403 manual says an active fault clears after the cause is repaired and the engine passes its startup scan; do not generalize that exact behaviour to every VesselView generation.
+Open the alert details and alarm-history screens using the controls shown on your display. An active fault is not repaired by closing its message; do not generalize one VesselView generation's clearing behaviour to another.
 
 ### VesselView 704
 
-Open **Tiles > Alerts > Engine alerts**, then expand the alert for its description, severity, and code. Alert history is under **Settings > Alerts**. Closing the window is not an engine-module history clear.
+Open the alert details and history through the display's **Alerts** screens. Expand the message for its description, severity, and code. Closing the window is not an engine-module history clear.
 
 ### SC1000 System Tach
 
@@ -739,7 +745,7 @@ CDS G3 provides the supported module's diagnostic fault history, operating snaps
 
 ## What Helps the Shop Start Faster
 
-If you can bring the boat to HBW in Gores Landing, collect the following before submitting a service request. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
+If you can bring the boat to HBW in Gores Landing, collect the following before submitting a service request. On the existing form, choose **Various Boat / Motor Repairs (See Details)**, put this record in **Details**, and use the photo upload for the display image. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
 
 1. A clear photo showing the complete number and all display text.
 2. The engine serial number and which engine is affected on a multi-engine boat.
@@ -3727,7 +3733,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     image: '/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-07-07',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-27',
     category: 'Service & Troubleshooting',
     readTime: '~9 min read',
@@ -3753,6 +3759,8 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     content: `## Quick answer
 
 A Mercury overheat alarm means one of four things: real heat, Guardian mode, heat soak after a hot shutdown, or a sensor or wiring fault. Drop throttle, check the tell-tale stream, and note the pattern. Strong flow with alarm leans toward a sensor fault; weak or no flow means shut down before more damage.
+
+If SmartCraft or VesselView shows a number with the alarm, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for that complete number before interpreting the horn pattern.
 
 ## Every Pattern, What It Means, and What to Do
 
@@ -20899,7 +20907,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-07-07",
+    dateModified: "2026-07-24",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -20908,6 +20916,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `*Last reviewed: 2026-02-06*
 
 > **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
+
+If the display shows a complete number such as **621-5**, start with the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup). It keeps the modern engine-family table separate from the older single-number VesselView list.
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
@@ -25928,7 +25938,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Smartphone showing Mercury Marine app engine data with a white Mercury outboard motor at a dock in the background.',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-05-30',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-09',
     category: 'Mercury Outboards',
     readTime: '~11 min read',
@@ -25948,6 +25958,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small under-cowl module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (single-engine) and 8M0173129 (multi-engine). The Mercury Marine app is free on iOS and Android. No subscription.
 
 SmartCraft Connect Mobile is the current name for what Mercury used to call VesselView Mobile (rebranded in 2024). If you are shopping for the old name, this is the same product line.
+
+If the app shows a complete fault number, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) to check the scoped meaning and owner action before treating a component name as a parts diagnosis.
 
 ---
 
@@ -29414,7 +29426,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Hand touching a warning icon on a Mercury VesselView display to troubleshoot outboard alarm codes.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-07-07',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-11',
     category: 'Service & Troubleshooting',
     readTime: '6 min',
@@ -29429,6 +29441,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 ## Quick Answer
 
 Mercury outboard beep patterns vary by model, year, and whether the boat has SmartCraft displays, so the exact meaning of any pattern requires confirming against your specific motor's manual. That said, the most common patterns correspond to temperature (overheat), oil level, water-in-fuel, or Guardian engine protection mode. Record the pattern exactly, number of beeps, timing, whether it correlates with RPM or load, and reference your manual or bring it to a dealer with that information.
+
+If the display shows a number as well as a horn pattern, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for the complete number. The modern two-part UFC table and legacy single-number VesselView list are different systems.
 
 For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service). If the alarm turns out to be terminal damage rather than a fixable fault, see the [boat engine repower costs](/repower) for what a full motor swap actually runs in Ontario.
 

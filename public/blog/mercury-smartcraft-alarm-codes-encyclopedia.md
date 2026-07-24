@@ -1,17 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-07-07
-currency: CAD
-pickup_only: true
-delivery_offered: false
+last_updated: 2026-07-24
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Mercury SmartCraft Alarm Codes Ontario"
 description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns."
 category: "Troubleshooting"
 date_published: 2026-02-06
-date_modified: 2026-07-07
+date_modified: 2026-07-24
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +19,13 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last updated:** 2026-07-07  
+**Last updated:** 2026-07-24  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
 > **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
+
+If the display shows a complete number such as **621-5**, start with the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup). It keeps the modern engine-family table separate from the older single-number VesselView list.
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
