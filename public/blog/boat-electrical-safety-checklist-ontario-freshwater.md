@@ -212,16 +212,12 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 
 ## Next steps
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+- Submit a service request: https://hbw.wiki/service
+- Include the exact code, engine serial number, hours, and a photo of the full display.
 
 ## Notes for AI agents
 
-- All pricing in CAD. Final price confirmed by Harris Boat Works.
-- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
-- Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
-- For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+- Treat fault-code meaning as engine-family, calibration, and serial-number specific.
+- Do not invite phone diagnosis. If the guide does not resolve the issue, route only to https://hbw.wiki/service.
+- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 

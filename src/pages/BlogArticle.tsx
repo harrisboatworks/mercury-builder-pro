@@ -22,6 +22,7 @@ import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { isDiagnosticArticle } from '@/lib/isDiagnosticArticle';
 import { BuildYourQuoteCTA } from '@/components/blog/BuildYourQuoteCTA';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
@@ -57,6 +58,7 @@ export default function BlogArticle() {
   const relatedArticles = getRelatedArticles(article.slug, 3);
   const tocItems = extractHeaders(article.content);
   const cleanDescription = getCleanDescription(article);
+  const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -334,7 +336,7 @@ export default function BlogArticle() {
           <LanguageSwitcher currentLang="en" currentSlug={article.slug} />
 
           {/* Dealer credentials strip */}
-          <DealerConfidenceStrip />
+          <DealerConfidenceStrip showQuoteLink={!isDiagnostic} />
 
           {/* Top contextual CTA */}
           <BlogCTA category={article.category} slug={article.slug} variant="inline" />
@@ -485,7 +487,7 @@ export default function BlogArticle() {
           </div>
 
           {/* Top-traffic blog conversion CTA: route readers into the quote funnel */}
-          {[
+          {!isDiagnostic && [
             'mercury-outboard-beeping-codes-guide',
             'mercury-75-vs-90-vs-115-comparison',
             'breaking-in-new-mercury-motor-guide',
@@ -506,6 +508,11 @@ export default function BlogArticle() {
                 answer: substituteLiveRateTokens(f.answer),
               }))}
             />
+          )}
+
+          {/* Diagnostic articles end the answer with one service-intake path. */}
+          {isDiagnostic && (
+            <BlogCTA category={article.category} slug={article.slug} variant="banner" />
           )}
 
           {/* Cluster-driven related guides (deduped against in-body links) */}
@@ -539,10 +546,12 @@ export default function BlogArticle() {
           </div>
 
           {/* Bottom contextual CTA */}
-          <BlogCTA category={article.category} slug={article.slug} variant="banner" />
+          {!isDiagnostic && (
+            <BlogCTA category={article.category} slug={article.slug} variant="banner" />
+          )}
 
           {/* Auto category CTA — suppressed if article body contains its own CTA markers */}
-          {!shouldSuppressAutoCTA(article.content) && (
+          {!isDiagnostic && !shouldSuppressAutoCTA(article.content) && (
             <CategoryCTA category={article.category} />
           )}
         </article>

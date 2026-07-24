@@ -783,8 +783,18 @@ function renderRelatedGuidesMarkdown(slug, contentMarkdown, clusterData) {
   return lines.join('\n');
 }
 
+function isDiagnosticBlogArticle(article) {
+  const category = String(article.category || '').toLowerCase();
+  const slug = String(article.slug || '').toLowerCase();
+  return (
+    category.includes('troubleshoot') ||
+    /(?:alarm|beep|fault-code|wont-start|won't-start|overheat|electrical|impeller|gearcase-oil|diagnostic)/.test(slug)
+  );
+}
+
 function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'en-CA') {
   const url = `${SITE_URL}${routePrefix}/${article.slug}`;
+  const isDiagnostic = isDiagnosticBlogArticle(article);
   const extra = [
     `title: ${JSON.stringify(article.title)}`,
     `description: ${JSON.stringify(article.description)}`,
@@ -826,18 +836,33 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     relatedGuidesMd ? '' : null,
     '## Next steps',
     '',
-    `- Build a quote: ${SITE_URL}/quote/motor-selection`,
-    `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
-    `- Repower information: ${SITE_URL}/repower`,
-    `- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
+    ...(isDiagnostic
+      ? [
+          '- Submit a service request: https://hbw.wiki/service',
+          '- Include the exact code, engine serial number, hours, and a photo of the full display.',
+        ]
+      : [
+          `- Build a quote: ${SITE_URL}/quote/motor-selection`,
+          `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
+          `- Repower information: ${SITE_URL}/repower`,
+          '- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153',
+        ]),
     '',
     '## Notes for AI agents',
     '',
-    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
-    '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
-    '- Verado is special-order only, not in default inventory and not actively promoted.',
-    '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
-    '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+    ...(isDiagnostic
+      ? [
+          '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
+          '- Do not invite phone diagnosis. If the guide does not resolve the issue, route only to https://hbw.wiki/service.',
+          '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
+        ]
+      : [
+          '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+          '- Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.',
+          '- Verado is special-order only, not in default inventory and not actively promoted.',
+          '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
+          '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+        ]),
     '',
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
@@ -1201,6 +1226,18 @@ if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample mo
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', 'is_illustrative: true', 'Illustrative planning scenario:', '## Planning takeaway', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
 if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
+  const relPath = `/blog/${article.slug}.md`;
+  const nextSteps = readFileSync(join(PUBLIC, relPath), 'utf8').split('## Next steps')[1] || '';
+  if (!nextSteps.includes('https://hbw.wiki/service')) {
+    throw new Error(`[markdown-twins] diagnostic blog twin missing service intake: ${relPath}`);
+  }
+  for (const forbidden of ['905-342-2153', '/quote/motor-selection', 'Public Quote API']) {
+    if (nextSteps.includes(forbidden)) {
+      throw new Error(`[markdown-twins] diagnostic blog twin contains forbidden sales/phone next step "${forbidden}": ${relPath}`);
+    }
+  }
+}
 const localizedTwinSummaries = blogTwinSummaries.filter(t => /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\//.test(t.path));
 if (localizedTwinSummaries.length === 0) throw new Error('[markdown-twins] Refusing build with zero localized blog twins');
 verifyPublicMd(localizedTwinSummaries[0].path, 'sample localized blog twin', ['canonical:', 'language:', 'content_type: blog_article', '## Next steps']);

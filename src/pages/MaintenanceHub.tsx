@@ -64,6 +64,7 @@ export default function MaintenanceHub() {
             { title: 'Overheat Alarm Decoder', description: 'What the horn pattern means.', to: '/blog/mercury-outboard-overheat-alarm-decoder' },
             { title: 'Mercury Beeping Codes Guide', description: 'Beep patterns and what they mean.', to: '/blog/mercury-outboard-beeping-codes-guide' },
             { title: 'SmartCraft Alarm Codes Encyclopedia', description: 'Every SmartCraft fault code, plain English.', to: '/blog/mercury-smartcraft-alarm-codes-encyclopedia' },
+            { title: 'Mercury Fault Code Lookup', description: 'Legacy VesselView IDs and modern UFC pairs by engine family.', to: '/blog/mercury-outboard-fault-codes-lookup' },
             { title: 'Milky Gearcase Oil: Meaning & Cost', description: 'Water in the lower unit, next steps.', to: '/blog/milky-gearcase-oil-meaning-cost-ontario' },
             { title: 'Mercury Impeller Replacement: When They Fail', description: 'The single most common Mercury repair.', to: '/blog/mercury-impeller-replacement-when-they-fail' },
             { title: 'Bilge Pump Troubleshooting Guide', description: 'When the pump quits or runs constantly.', to: '/blog/bilge-pump-troubleshooting-guide' },
