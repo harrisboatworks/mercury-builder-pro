@@ -19952,277 +19952,221 @@ Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with th
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-13',
     category: 'Service & Maintenance',
     readTime: '10 min read',
     keywords: ["shrinkwrap vs indoor boat storage Ontario", "winter boat storage Rice Lake", "boat shrinkwrap cost Ontario 2026", "heated indoor boat storage Ontario", "what happens if you don't winterize"],
+    relatedSlugs: ["outdoor-boat-storage-shrinkwrap-rice-lake", "boat-winterization-cost-ontario-2026", "spring-commissioning-cost-ontario"],
     content: `
 # Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-07-24*
 
-> **Quick answer:** Shrinkwrap is cheaper and weatherproof but condenses moisture inside if vented poorly. Indoor storage is dry, climate-stable, and gentler on upholstery and gel coat, but costs more. For long-term value retention, indoor wins. Indoor and shrinkwrap pricing at mercuryrepower.ca.
+> **Quick answer:** HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage, and we don't provide pickup, delivery, hauling, mobile service, or transport referrals. Customers handle fall drop-off and spring pickup. The marina is closed December 1 through April 1. Compare storage quotes by written scope, not an old per-foot number.
 
-::decision-card
-heading: Shrinkwrap outdoors, or pay for indoor storage?
-eyebrow: Decision guide
-subhead: The right answer depends on your boat type, where you live, and how much you trust your tarp. Here's how we actually advise customers each fall.
-leftLabel: Shrinkwrap outside
-leftCriteria:
-  - Aluminum or fiberglass hull in good condition
-  - You have a paved driveway, lakeside lot, or low-cost outdoor space
-  - You don't mind a small risk of wind/snow damage if the wrap fails
-  - Your boat is under $40K replacement value
-  - You winterize properly and the boat isn't sitting in salty conditions
-leftOutcome: Typically $300 to $700 in Ontario for shrinkwrap + outdoor spot. Cheapest option that still seals out snow, ice, and most rodents.
-leftVariant: alternative
-rightLabel: Indoor storage
-rightCriteria:
-  - High-value boat ($40K+) or rare/collectible hull
-  - Wooden interior, real leather seats, or sensitive electronics
-  - You want the boat ready to launch in April without a full prep cycle
-  - You live in a high-wind zone, near salt-treated roads, or under heavy trees
-  - You want to keep the gel coat looking new for resale
-rightOutcome: $900 to $2,200 in Ontario depending on heated vs unheated and length. Worth it on high-value or low-tolerance boats.
-rightVariant: recommended
-whenInDoubt: [Most Rice Lake customers shrinkwrap outside](/blog/outdoor-boat-storage-shrinkwrap-rice-lake). If you're 50/50 on it, the cheap option is shrinkwrap; the safe option is indoor. We do both, book either at /service.
-::
+The storage label is only the start of the decision. "Outdoor," "indoor," and "heated indoor" describe where the boat sits. They don't tell you whether the quote includes shrinkwrap, engine winterization, battery handling, spring commissioning, or any work on the trailer.
 
-Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
+HBW has one storage model: outdoor storage with shrinkwrap at Gores Landing. If indoor storage is non-negotiable, HBW isn't the right storage provider for that boat.
 
-Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
-
-The honest answer: **for 90% of Ontario boaters, professionally shrinkwrapped + properly winterized + outside is the right call.** The other 10% have a specific reason, wood boat, classic, very high value, or a need to access the boat through the winter, that justifies indoor.
-
-Here's the math, the protection comparison, and the decision framework. Plus the cost of getting it wrong, which is the part most pricing pages skip.
+This guide explains the tradeoffs without pretending every Ontario facility sells the same package.
 
 ---
 
-## Why Winterization Is Non-Negotiable in Ontario
+## The Short Comparison
 
-Let's get this out of the way first: **storage method doesn't replace winterization.**
+| Storage type | What it changes | What to confirm |
+|---|---|---|
+| **Outdoor with shrinkwrap** | Adds a fitted weather barrier while the boat remains outside | Frame, vents, strapping, winterization scope, battery plan, spring work, and access rules |
+| **Indoor unheated** | Keeps the boat under a roof, but the building may still fall below freezing | Temperature, access, insurance terms, winterization requirements, and handling fees |
+| **Indoor heated** | Keeps the boat in a temperature-controlled building | Minimum temperature, fire and insurance rules, fuel policy, access, and the exact engine layup procedure |
 
-Ontario gets to -20°C and colder regularly between January and February. Even *indoor unheated* storage drops below freezing during cold snaps. The only storage tier that lets you skip winterization is **heated indoor**, where the building stays above 5°C all winter, and even then, fuel stabilization is still recommended.
+No storage label replaces the engine owner's manual. A heated building also doesn't give you permission to ignore fuel, battery, lubrication, corrosion, or manufacturer storage instructions.
 
-What happens [if you skip winterization](/blog/boat-winterization-cost-ontario-2026) (regardless of storage method):
-
-| Failure | Cost to Fix |
-|---------|-------------|
-| **Cracked engine block** (water freezes inside cooling passages) | $5,000 - $10,000+ engine replacement |
-| **Cracked lower unit / sterndrive** (water freezes in the gearcase) | $1,500 - $4,500 |
-| **Internal corrosion or fuel-system storage damage** (wrong procedure for the engine) | Hard starting, poor running, or related repair work |
-| **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 - $800 |
-| **Dead battery** (left uncharged in freezing temps) | $200 - $500 replacement |
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
-Your storage choice affects what *else* protects the boat. UV, snow, wind, pests. It doesn't change the freeze-protection requirement.
+HBW provides the first option only. We don't have indoor or heated storage on site.
 
 ---
 
-## Shrinkwrap Storage. Ontario's Default, and Why
+## Storage Type Does Not Replace Winterization
 
-Shrinkwrap is **7-12 mil polyethylene film, heat-shrunk tight over a support frame, with venting installed to prevent condensation**. It's designed to handle a season, single use, recyclable in spring.
+The right winter procedure depends on the engine, serial number, fuel system, cooling layout, and the instructions in the applicable owner's manual or service literature.
 
-A professional shrinkwrap job includes:
+A written winterization scope should address the items that apply to that engine, which may include:
 
-- Boat cleaned and dried
-- Support poles erected to create a peaked roof (so snow doesn't pool)
-- Film draped, heat-shrunk to fit
-- 2-4 vents installed (without these, you'll have mold by April)
-- Strapping for wind and snow load
-- Access door cut for spring un-wrapping
+- Fuel preparation
+- Model-specific internal engine protection
+- Gearcase inspection or service
+- Flushing, drainage, and storage position
+- Lubrication and corrosion protection
+- Battery condition and storage arrangement
+- Documentation of the work completed
 
-**Pros:**
+The battery does not automatically need to be removed. At HBW it may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions.
 
-- **Excellent water/snow barrier**, better than canvas, way better than tarps
-- **UV protection**, gelcoat doesn't fade
-- **Custom-fit to any shape**, pontoons, fishing boats, cruisers all wrap fine
-- **Cost-effective**, cheapest professional storage tier
-- **Can be done at HBW or at your house** with mobile shrinkwrap service
-- **Recyclable**, programs exist for spring removal
-
-**Cons:**
-
-- **Single-season**, gets removed and recycled in spring, paid every year
-- **Vents required** or you'll have mold (this is why DIY shrinkwrap with no vents is worse than no cover)
-- **Snow load failure** if the support frame is weak or undersized
-- **No temperature regulation**, same temperature as outside
-
-**HBW pricing 2025-2026:** $33/ft for trailer boats up to 21 ft, $35/ft for larger. That's **$693 for a 21-ft fishing boat** or **$770 for a 22-ft pontoon**, including the wrap, the frame, the vents, and the strapping.
-
-**Other Ontario dealers:** outdoor shrinkwrap storage runs $30-$37/ft across the province; some marinas charge $58/ft for outdoor with shrinkwrap (Muskoka pricing).
+Ask what the provider will actually do. "Stored indoors" and "professionally winterized" are different promises.
 
 ---
 
-## Indoor Unheated Storage. When It's Worth the Bump
+## From the Shop
 
-Indoor unheated is the next tier up. Building keeps the boat out of the elements but doesn't heat. Important: **even indoor unheated storage drops below freezing in Ontario January, so you still need full winterization.**
+The most common storage misunderstanding is simple: a customer hears one price and assumes it covers the whole fall-to-spring cycle.
 
-**Pros vs. shrinkwrap:**
+It might cover only a parking space. It might include shrinkwrap but not engine winterization. It might include fall work but charge separately for spring commissioning.
 
-- No UV exposure (gelcoat protection on aging hulls is real)
-- No snow load, period
-- No wind damage to cover
-- Better pest control (sealed building)
-- Possible insurance savings
-- You can access the boat through winter for maintenance, electronics work, etc.
+HBW records the approved scope on the work order. The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and the work you authorize. Use [hbw.wiki/service](https://hbw.wiki/service) for the current written scope and price.
 
-**Cons:**
-
-- **Costs more**, typically $40-$60/ft including basic shrinkwrap or cover
-- **Limited availability**, most Ontario indoor capacity books out by September
-- **Drop-off windows**, you can't just show up; storage facilities want appointments
-- **Condensation** without good air circulation in the building
-
-**Ontario pricing for indoor unheated:**
-- $37/ft (other regional marinas, 9-month contract)
-- $40-$60/ft including shrinkwrap (urban GTA marinas Belleville and others)
-- $55/ft (cottage-country marinas)
-
-For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **the protection delta over outdoor shrinkwrap doesn't justify the cost**. For older fibreglass, dark-coloured gelcoat, or a hull where you want to slow oxidation, it's worth considering.
+Don't use an old blog rate as a budget.
 
 ---
 
-![Heated indoor boat storage facility with pleasure craft on stands](/lovable-uploads/inline/inline-indoor-heated-storage.png)
+## What HBW's Outdoor Storage Model Means
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+HBW offers outdoor shrinkwrap storage only. The shrinkwrap portion uses a fitted film, support frame, vents, and strapping appropriate to the boat and approved scope.
 
-## Indoor Heated Storage. The Premium Tier
+Engine work is separate from the word "storage." The work order confirms whether winterization, gearcase service, battery handling, spring commissioning, or another item is included.
 
-Heated indoor keeps the building above 5°C (40°F) all winter. The differentiator isn't UV or snow, it's that the boat doesn't experience freezing temperatures at all.
+HBW does not offer:
 
-**Pros vs. unheated:**
+- Indoor or heated storage
+- Climate-controlled storage
+- Year-round storage
+- Pickup or delivery
+- Boat hauling
+- Mobile service
+- Transport referrals
+- Winter customer access
 
-- **No freeze risk**, you can technically skip winterization, though we still recommend fuel stabilization and a basic service
-- **Protects electronics, vinyl, upholstery** from cold-cycling damage
-- **Best for high-value boats, classic boats, wooden boats**
-- **Can use the boat for off-season maintenance** without warming it up
-
-**Cons:**
-
-- **Most expensive option**: $60-$90/ft, sometimes more
-- **Very limited availability** in Ontario, heated boat storage is a niche service
-- **Energy costs** are real and increasing
-- **Some still require partial winterization** (fuel, oil) regardless
-
-**When it's worth it:**
-
-- Wood boats (period correct, restored, classic)
-- Boats over $100K where the marginal cost is small relative to the asset
-- Boats with sensitive electronics that you'd rather not see thermal-cycle through winter
-- Boats you'll genuinely use in the off-season for repairs, photo work, or polish
-
-**When it's not:**
-
-- Standard aluminum fishing boats
-- Most pontoons under $50K
-- Anything where the storage premium would buy a meaningful upgrade elsewhere
+Customers bring the boat to Gores Landing in the fall and pick it up in the spring. If that logistics model doesn't fit, choose a provider whose service model does.
 
 ---
 
-## Head-to-Head: What You Actually Get
+## Access, Transport, and the Winter Closure
 
-| | **Outdoor + shrinkwrap** | **Indoor unheated** | **Indoor heated** |
-|---|---|---|---|
-| **Cost (21-ft boat)** | ~$700 (HBW) | ~$840-$1,260 | ~$1,260-$1,890 |
-| **Snow protection** | Good (with frame) | Excellent | Excellent |
-| **UV protection** | Good | Excellent | Excellent |
-| **Wind protection** | Good | Excellent | Excellent |
-| **Freeze protection** | Requires winterization | Requires winterization | Not required (recommended) |
-| **Pest protection** | Good (when sealed) | Excellent | Excellent |
-| **Off-season access** | Difficult | Easy | Easy |
-| **Booking lead time** | September/October | September | August/September |
+HBW is a customer drop-off and pickup operation. We don't move boats from GTA homes, cottage properties, or other marinas, and we don't arrange third-party transport.
 
-For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $500-$1,200 over indoor, money that's better spent on winterization done right, a quality cover frame, and an early-spring service.
+The marina is closed December 1 through April 1. During that period:
+
+- No service, repower, installation, or inspection work happens on site
+- Customers cannot access stored boats
+- Physical spring work has not started
+- Planning, quoting, and approvals can still happen remotely
+
+Remove personal gear, documents, electronics, and anything else you may need before the closure. Confirm the spring pickup process on the work order rather than assuming the boat will be accessible on a specific date.
 
 ---
 
-## What "Done Right" Looks Like at HBW
+## How to Compare Storage Quotes
 
-Our standard winter storage package includes:
+Put the quotes side by side and ask the same questions of every provider:
 
-- Full shrinkwrap with support frame, 2-4 vents, and weather strapping
-- [Mercury-trained winterization on the engine](/blog/diy-mercury-outboard-winterization-guide): model-specific fuel preparation, internal protection, gearcase work, battery plan, and storage position
-- Model-specific flushing, drainage, and storage position
-- Steering and throttle cable lubrication
-- Anode inspection
-- Battery disconnected and maintained according to the battery maker's instructions; it may remain in the boat
-- Optional: [spring commissioning add-on](/blog/spring-commissioning-cost-ontario) (we pull it off, prep it, water-test, deliver to your slip)
+1. **What physical storage is included?** Outdoor, indoor unheated, or heated indoor?
+2. **Is shrinkwrap included?** If yes, what framing, venting, and access design is used?
+3. **Is engine winterization included?** Which engine-specific procedure will the shop follow?
+4. **What happens to the battery?** Left installed and disconnected, removed, or another documented plan?
+5. **What does spring commissioning include?** Is it part of the contract or a separate authorization?
+6. **Who handles transport?** Is customer drop-off required?
+7. **Can you access the boat during storage?** Get the dates and rules in writing.
+8. **What is not included?** Trailer work, repairs, fluids, parts, launch, and tax can change the total.
 
-**Pricing:** $33-$35/ft shrinkwrap + winterization fees ($300-$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000-$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200-$1,400.
-
-We do **311+ storage contracts a year**. That's a meaningful chunk of our fall and spring shop time. The system is dialled in, you drop it off, you pick it up, the boat works.
-
----
-
-## Booking Lead Time Matters
-
-The mistake we see every year: customers calling in early November to book winter storage. By that point we're at capacity and so is every other dealer in Ontario.
-
-**Best practice:**
-- **September:** Booking opens. Best pricing, full slate of dates available.
-- **Early October:** Still good. Most popular drop-off windows starting to fill.
-- **Late October:** Squeeze territory. Fewer date options.
-- **November:** "Sorry, we're full" most years.
-
-If you're new to HBW, calling in late August / early September means you get into our system, you get a confirmed date, and you know the price ahead of time.
+This is the only useful way to compare prices. A bare storage-space quote and a full fall-service package are not the same product.
 
 ---
 
-## Book Winter Storage at HBW
+## When Indoor Storage May Fit Better
 
-We've stored boats in Gores Landing for three generations. Mercury Marine Premier dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring. Harris Boat Works is drop-off only: customers bring the boat to our Gores Landing marina, we do not offer pickup or delivery service.
+Indoor storage may suit a boat whose owner needs a roofed or temperature-controlled environment, or a facility with winter access. That can include some wooden boats, restoration projects, high-value interiors, or boats with a storage requirement set by an insurer.
 
+The details still matter. "Indoor" can mean an unheated building that freezes. "Heated" can mean different minimum temperatures and different fuel policies. Ask the provider for the actual conditions and contract terms.
+
+HBW does not offer either indoor tier. We also don't promise referrals, availability, or prices for another provider.
+
+---
+
+## Spring Commissioning
+
+Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
+
+Physical commissioning begins after the marina reopens. A spring work order may still need separate authorization for repairs, parts, or model-specific service beyond the commissioning scope.
+
+---
+
+## Frequently Asked Questions
+
+**Does HBW offer indoor or heated boat storage?**
+No. HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage.
+
+**Can I access my boat at HBW during winter?**
+No. The marina is closed December 1 through April 1, and customers cannot access stored boats during that period. Remove anything you will need before the closure.
+
+**Does shrinkwrap replace engine winterization?**
+No. Shrinkwrap protects the boat from weather. Engine storage procedures follow the exact owner's manual or authorized service literature for that engine.
+
+**Does HBW remove every battery for storage?**
+No. A battery may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions.
+
+**Does HBW pick up, deliver, haul, or service boats at my location?**
+No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals.
+
+**How much does HBW outdoor winter storage cost?**
+The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at [hbw.wiki/service](https://hbw.wiki/service).
+
+**Is spring commissioning included?**
+It is included for HBW winter-storage customers. As of July 2026, the price for non-storage customers is $99. Confirm the current scope when booking.
+
+---
+
+## Sources and Review Notes
+
+- HBW operating rules reviewed July 24, 2026: outdoor shrinkwrap storage only; customer drop-off and pickup; no indoor, heated, climate-controlled, or year-round storage
+- HBW winter closure: December 1 through April 1, with no physical work or customer access
+- HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
+- Mercury storage procedures vary by engine. Follow the exact owner's manual and authorized service literature.
+
+---
+
+## Ready to Confirm Your Storage Scope?
+
+Submit the boat details once. HBW will confirm whether the outdoor-storage model fits and put the approved fall and spring work in writing.
+
+**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
-**Online:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
-**Drop-off:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
----
+## Related Guides
 
-If you're shopping for storage locations beyond shrinkwrap details, our [Kawartha Lakes storage overview](/blog/boat-storage-kawartha-lakes) covers options across Rice Lake and the broader region.
----
-
-## What we see at HBW
-
-We've been shrinkwrapping boats on the south shore of Rice Lake for decades. Most years we wrap 300-400 boats between October and mid-November. The customers who pay the indoor-storage premium at other facilities are usually offshore fiberglass owners ($75K+ boats) or commercial guides. For the typical aluminum fishing rig or 19-foot pontoon, outdoor shrinkwrap is the smart spend.
-
-What separates a good shrinkwrap job from a bad one: tying the tarp to a frame, not just to the gunwales. Snow load splits ungo unframed wraps by January every year. We frame every wrap.
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
+- [Boat Winterization Cost in Ontario](/blog/boat-winterization-cost-ontario-2026)
+- [Spring Commissioning Cost in Ontario](/blog/spring-commissioning-cost-ontario)
 
 `,
     faqs: [
       {
-        "question": "Can I shrinkwrap my own boat?",
-        "answer": "Mechanically, yes, you can buy shrinkwrap film and a propane heat gun. Practically, most DIY shrinkwrap jobs we see are too loose (chafes the gelcoat in wind), have no vents (mold by spring), or have undersized support frames (collapse under snow). Pay a pro the first time at minimum, even if you watch and learn for next year."
+        question: "Does HBW offer indoor or heated boat storage?",
+        answer: "No. HBW offers outdoor shrinkwrap storage only. We don't offer indoor, heated, climate-controlled, or year-round storage."
       },
       {
-        "question": "Does shrinkwrap need to be removed in spring or can I leave it?",
-        "answer": "Remove it. Polyethylene film degrades in summer UV and the static support frame doesn't belong on a boat in the water. We pull, recycle, and dispose of every wrap every spring."
+        question: "Can I access my boat at HBW during winter?",
+        answer: "No. The marina is closed December 1 through April 1, and customers cannot access stored boats during that period. Remove anything you will need before the closure."
       },
       {
-        "question": "Is a tarp ok if I'm desperate?",
-        "answer": "A tarp is better than no cover. It's not better than shrinkwrap. Tarps flap in wind (chafe the gelcoat), pool water in the middle (snowmelt, then re-freezing), and trap moisture (mold). If budget is the issue, talk to us, there's almost always an option."
+        question: "Does shrinkwrap replace engine winterization?",
+        answer: "No. Shrinkwrap protects the boat from weather. Engine storage procedures follow the exact owner's manual or authorized service literature for that engine."
       },
       {
-        "question": "What's included in HBW winterization specifically?",
-        "answer": "The exact scope follows the engine manual: fuel preparation, model-specific internal protection, gearcase inspection or service, drainage and storage position, lubrication, anode inspection, and a battery plan. The battery may remain in the boat if disconnected and maintained. We document the work completed."
+        question: "Does HBW remove every battery for storage?",
+        answer: "No. A battery may remain in the boat, disconnected to prevent parasitic drain, when that matches the approved work order and battery-maker instructions."
       },
       {
-        "question": "Do you store sterndrive boats?",
-        "answer": "Yes, same shrinkwrap, plus the more thorough engine drain that sterndrives require (block, manifolds, every petcock). Mercruiser winterization is more involved than outboard winterization, and we charge accordingly."
+        question: "Does HBW pick up, deliver, haul, or service boats at my location?",
+        answer: "No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals."
       },
       {
-        "question": "What if my boat doesn't fit a standard shrinkwrap?",
-        "answer": "Shrinkwrap is custom-fit by design. We've wrapped pontoons, deck boats, sailboats, jet boats, classic wood, anything with a hard hull, we can wrap it. Bring photos, we'll quote."
+        question: "How much does HBW outdoor winter storage cost?",
+        answer: "The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at hbw.wiki/service."
       },
       {
-        "question": "Do you offer indoor storage?",
-        "answer": "We don't have indoor storage on-site. Outdoor shrinkwrap + winterization is our standard package and what we recommend for most Ontario boats. If you specifically need indoor (rare cases), we can refer you to dealers who do have it."
+        question: "Is spring commissioning included?",
+        answer: "It is included for HBW winter-storage customers. As of July 2026, the price for non-storage customers is $99. Confirm the current scope when booking."
       }
     ],
   },
