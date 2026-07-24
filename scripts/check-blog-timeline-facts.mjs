@@ -292,6 +292,68 @@ const ARTICLE_CONTRACTS = {
       },
     ],
   },
+  'outdoor-boat-storage-shrinkwrap-rice-lake': {
+    required: [
+      {
+        rx: /offers outdoor winter boat storage with shrinkwrap/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /do not offer indoor, heated, climate-controlled, or year-round storage/i,
+        rule: 'no-indoor-or-year-round-storage',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices/i,
+        rule: 'customer-transport-only',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /battery is healthy, disconnected[\s\S]{0,120}Battery removal is not a universal requirement/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /fenced, monitored lot|Fenced, with cameras|on-site daily through the off-season|staffed daily through the off-season/i,
+        rule: 'no-winter-staffing-or-security-promise',
+      },
+      {
+        rx: /We patch it|check the lot after big storms/i,
+        rule: 'no-winter-yard-inspections',
+      },
+      {
+        rx: /point you to other shops/i,
+        rule: 'no-unverified-referrals',
+      },
+      {
+        rx: /2–3× outdoor storage|small discount over booking them separately/i,
+        rule: 'no-unsupported-storage-pricing',
+      },
+      {
+        rx: /Spring commissioning \(separate service|Spring commissioning is priced by/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /30 feet\. We're not taking|Anything over 28 ft/i,
+        rule: 'no-fixed-storage-size-limit',
+      },
+      {
+        rx: /Battery removal \(or trickle-charge setup\)|Fog the engine cylinders|¾ to full tank/i,
+        rule: 'no-universal-winterization-shortcuts',
+      },
+      {
+        rx: /we charge for the re-wrap/i,
+        rule: 'no-unverified-rewrap-charge',
+      },
+    ],
+  },
   'mercury-outboard-dealer-toronto-why-drive-to-hbw': {
     required: GTA_DRIVE_IN_REQUIRED,
     forbidden: [
