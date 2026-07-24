@@ -11659,7 +11659,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Family enjoying a day on a runabout boat powered by a Mercury outboard, ideal for Ontario lake cruising.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-05-07',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11757,10 +11757,10 @@ Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 
-- **90 HP boat:** 25, 35 litres
-- **115 HP boat:** 35, 45 litres
-- **150 HP boat:** 45, 60 litres
-- **200 HP boat:** 60, 80 litres
+- **90 HP boat:** 25-35 litres
+- **115 HP boat:** 35-45 litres
+- **150 HP boat:** 45-60 litres
+- **200 HP boat:** 60-80 litres
 
 We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP that fits how often you'll use the boat, not just what looks good at the transom.
 
