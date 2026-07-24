@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup.md
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup"
 description: "Look up documented Mercury fault codes by format and engine family, including legacy VesselView IDs and the 2021 V6/V8 Universal Fault Code table."
 category: "Troubleshooting"
 date_published: 2026-07-23
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["mercury outboard fault codes","mercury fault code list","mercury smartcraft fault codes","mercury vesselview fault codes","mercury universal fault codes","mercury outboard error codes","mercury ufc codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-07-23  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24
 **Read time:** 24 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup
 
 > **Quick answer:** First identify the format on your screen. A single number or text label may come from Mercury's March 2007 legacy VesselView list. A two-part number such as **621-5** is a Universal Fault Code, or UFC, that must be matched to the correct engine-family publication. This page includes Mercury's full 130-pair UFC set for the 2018-and-newer 3.4L V6 and 4.6L V8 platform as published in November 2021, plus a clearly labelled legacy VesselView reference. It is not a universal list for every Mercury outboard.
 
-If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, submit the photo and serial number at [hbw.wiki/service](https://hbw.wiki/service).
+If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbw.wiki/service](https://hbw.wiki/service) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
 
 This is the code-number companion to our [Mercury beep and alarm guide](/blog/mercury-outboard-beeping-codes-guide). The horn tells you the alert class on supported systems; the screen identifies the actual fault. Both strategies vary by engine family and year.
 
@@ -356,7 +356,7 @@ CDS G3 provides the supported module's diagnostic fault history, operating snaps
 
 ## What Helps the Shop Start Faster
 
-Before submitting a service request, collect:
+If you can bring the boat to HBW in Gores Landing, collect the following before submitting a service request. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
 
 1. A clear photo showing the complete number and all display text.
 2. The engine serial number and which engine is affected on a multi-engine boat.
@@ -366,7 +366,7 @@ Before submitting a service request, collect:
 6. Any recent battery, rigging, control, fuel-system, or service work.
 7. Whether Guardian limited power, water flow changed, steering changed, or indicated gear disagreed with the control.
 
-Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence and submit it at [hbw.wiki/service](https://hbw.wiki/service).
+Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbw.wiki/service](https://hbw.wiki/service) and bring the boat to Gores Landing.
 
 ## Common Lookup Mistakes
 
@@ -418,7 +418,7 @@ Use Mercury Marine’s owner-manual lookup with the engine serial number. The se
 
 ### What should I send with a Mercury service request?
 
-Send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. Submit that information at hbw.wiki/service.
+If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. Submit that record at hbw.wiki/service so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
 
 ## Next steps
 
@@ -431,4 +431,3 @@ Send a clear photo of the complete code and message, the affected engine, serial
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
-

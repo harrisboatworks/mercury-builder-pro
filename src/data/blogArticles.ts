@@ -321,7 +321,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     imageAlt: 'Mercury SmartCraft VesselView display showing engine data at the helm of a boat.',
     author: 'Jay Harris',
     datePublished: '2026-07-23',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-24',
     publishDate: '2026-07-23',
     category: 'Troubleshooting',
     readTime: '24 min read',
@@ -368,7 +368,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
       },
       {
         question: 'What should I send with a Mercury service request?',
-        answer: 'Send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. Submit that information at hbw.wiki/service.',
+        answer: 'If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. Submit that record at hbw.wiki/service so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.',
       },
     ],
     citations: [
@@ -399,7 +399,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     ],
     content: `> **Quick answer:** First identify the format on your screen. A single number or text label may come from Mercury's March 2007 legacy VesselView list. A two-part number such as **621-5** is a Universal Fault Code, or UFC, that must be matched to the correct engine-family publication. This page includes Mercury's full 130-pair UFC set for the 2018-and-newer 3.4L V6 and 4.6L V8 platform as published in November 2021, plus a clearly labelled legacy VesselView reference. It is not a universal list for every Mercury outboard.
 
-If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, submit the photo and serial number at [hbw.wiki/service](https://hbw.wiki/service).
+If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbw.wiki/service](https://hbw.wiki/service) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
 
 This is the code-number companion to our [Mercury beep and alarm guide](/blog/mercury-outboard-beeping-codes-guide). The horn tells you the alert class on supported systems; the screen identifies the actual fault. Both strategies vary by engine family and year.
 
@@ -725,7 +725,7 @@ CDS G3 provides the supported module's diagnostic fault history, operating snaps
 
 ## What Helps the Shop Start Faster
 
-Before submitting a service request, collect:
+If you can bring the boat to HBW in Gores Landing, collect the following before submitting a service request. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
 
 1. A clear photo showing the complete number and all display text.
 2. The engine serial number and which engine is affected on a multi-engine boat.
@@ -735,7 +735,7 @@ Before submitting a service request, collect:
 6. Any recent battery, rigging, control, fuel-system, or service work.
 7. Whether Guardian limited power, water flow changed, steering changed, or indicated gear disagreed with the control.
 
-Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence and submit it at [hbw.wiki/service](https://hbw.wiki/service).
+Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbw.wiki/service](https://hbw.wiki/service) and bring the boat to Gores Landing.
 
 ## Common Lookup Mistakes
 
