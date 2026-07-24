@@ -141,6 +141,40 @@ function checkPresent(text, push) {
 // R5: article-specific operating contracts that previously drifted back into
 // customer-facing copy. Keep these semantic and narrow: they protect durable
 // HBW business rules without turning ordinary wording changes into failures.
+const GTA_DRIVE_IN_REQUIRED = [
+  {
+    rx: /closed December 1 through April 1/i,
+    rule: 'winter-closure',
+  },
+  {
+    rx: /does not pick up, deliver, haul, provide mobile service, coordinate transport, (?:or )?recommend transport providers/i,
+    rule: 'customer-transport-only',
+  },
+];
+
+const GTA_DRIVE_IN_FORBIDDEN = [
+  {
+    rx: /commercial boat transport services|work with several Ontario marine transport services/i,
+    rule: 'no-third-party-transport',
+  },
+  {
+    rx: /\$(?:300-\$500|300-\$600) each way/i,
+    rule: 'no-third-party-transport-pricing',
+  },
+  {
+    rx: /we can refer|recommend local towing services/i,
+    rule: 'no-transport-referrals',
+  },
+  {
+    rx: /maintenance during the off-season|everything happens while the boat is stored/i,
+    rule: 'no-winter-shop-work',
+  },
+  {
+    rx: /off-season weekend hours are reduced/i,
+    rule: 'winter-closure',
+  },
+];
+
 const ARTICLE_CONTRACTS = {
   'winter-storage-near-toronto-hbw': {
     required: [
@@ -255,6 +289,70 @@ const ARTICLE_CONTRACTS = {
       {
         rx: /spring commissioning add-on/i,
         rule: 'commissioning-price-canon',
+      },
+    ],
+  },
+  'mercury-outboard-dealer-toronto-why-drive-to-hbw': {
+    required: GTA_DRIVE_IN_REQUIRED,
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /\$1,500-\$3,000 less/i,
+        rule: 'no-unsupported-savings-range',
+      },
+    ],
+  },
+  'mercury-repower-gta-toronto-destination': {
+    required: GTA_DRIVE_IN_REQUIRED,
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /GTA boaters drive past three or four|labour rate[^.\n]*\$40-60/i,
+        rule: 'no-unsupported-competitor-statistics',
+      },
+      {
+        rx: /Typical ranges:\s*90 HP install|\$15,500-\$18,500|\$23,000-\$30,000|\$28,000-\$35,000/i,
+        rule: 'no-stale-repower-price-ranges',
+      },
+    ],
+  },
+  'boat-service-near-toronto-hbw-reach': {
+    required: [
+      ...GTA_DRIVE_IN_REQUIRED,
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /attribution:\s*Marco S\./i,
+        rule: 'no-fabricated-testimonial',
+      },
+      {
+        rx: /Spring commissioning[^\n]*\$300-\$500|Diagnostic fee \$80-\$120|\$200-\$400|\$500-\$700 all-in/i,
+        rule: 'no-unsupported-service-price-ranges',
+      },
+    ],
+  },
+  'toronto-to-rice-lake-drive-in-process': {
+    required: [
+      ...GTA_DRIVE_IN_REQUIRED,
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+    ],
+    forbidden: [
+      ...GTA_DRIVE_IN_FORBIDDEN,
+      {
+        rx: /safe limp-home or temporary fix/i,
+        rule: 'no-unsafe-generic-recovery',
+      },
+      {
+        rx: /one drive[\s\S]{0,80}(?:pickup|stored|storage)/i,
+        rule: 'dropoff-and-pickup-are-two-trips',
       },
     ],
   },
