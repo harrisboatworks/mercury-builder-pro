@@ -27807,11 +27807,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer Mississauga HBW',
     seoTitle: 'Mercury Repower Cost in Mississauga',
     description: 'What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake.',
-    image: '/lovable-uploads/hero-gta-mississauga-service-counter.png',
-    imageAlt: 'Customer consulting with a Mercury Premier dealer at Harris Boat Works to discuss outboard repower options.',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
+    imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: "2026-07-17",
+    dateModified: '2026-07-24',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '5 min',
@@ -27973,11 +27973,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer Vaughan Ontario HBW',
     seoTitle: 'Mercury Dealer for Vaughan, Repower from Rice Lake',
     description: 'Mercury Premier dealer near Vaughan: Harris Boat Works on Rice Lake, 80 minutes north. Repower, sales, parts, winter storage for Vaughan, Woodbridge, Maple area.',
-    image: '/lovable-uploads/hero-gta-vaughan-tech-install.png',
-    imageAlt: 'Technician performing professional maintenance on a Mercury outboard motor at Harris Boat Works service shop.',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
+    imageAlt: 'Exposed Mercury outboard powerhead during a real Harris Boat Works repower installation',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: "2026-07-17",
+    dateModified: '2026-07-24',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -28926,10 +28926,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-dealer-whitby-ontario-hbw',
     title: 'Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.',
-    image: '/lovable-uploads/hero-mercury-dealer-whitby.png',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
+    imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -28976,7 +28977,7 @@ Mercury Premier is the top dealer tier, parts depth, warranty authorization, tec
 ## What Harris Boat Works Handles for Whitby Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what works for your hull and how you use it.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what works for your hull and how you use it.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
@@ -29224,10 +29225,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-dealer-oshawa-ontario-hbw',
     title: 'Mercury Dealer for Oshawa: 40 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region.',
-    image: '/lovable-uploads/hero-mercury-dealer-oshawa.png',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
+    imageAlt: 'Official Mercury freshwater photography of a 115 HP FourStroke on a family pontoon',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -29280,7 +29282,7 @@ Premier is the top tier in Mercury's dealer program, parts depth, warranty autho
 ## What Harris Boat Works Handles for Oshawa Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what fits your hull and application.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what fits your hull and application.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Oshawa customers, we can realistically handle your complete annual service cycle.

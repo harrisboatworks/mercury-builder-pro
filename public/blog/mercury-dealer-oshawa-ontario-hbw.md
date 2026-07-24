@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Oshawa: 40 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-24
 keywords: ["mercury dealer oshawa","mercury repower oshawa","mercury outboard oshawa ontario","boat motor service durham region oshawa"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-07-24
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw
 
@@ -75,7 +75,7 @@ Premier is the top tier in Mercury's dealer program, parts depth, warranty autho
 ## What Harris Boat Works Handles for Oshawa Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what fits your hull and application.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what fits your hull and application.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Oshawa customers, we can realistically handle your complete annual service cycle.
@@ -180,4 +180,3 @@ Yes. Courtice and north Oshawa are within the same drive time. We have customers
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
