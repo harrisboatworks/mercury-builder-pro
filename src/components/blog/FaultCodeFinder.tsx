@@ -55,7 +55,7 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
           <strong>Protect the engine and boat first.</strong> For low oil pressure,
           oil-pump failure, active overheat, fuel leakage or overflow, loss of steering,
           or a gear that does not match the control command, skip this lookup and follow
-          the display and owner-manual stop instructions.
+          the display's stop instructions.
         </p>
       </div>
 
@@ -100,7 +100,7 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
         {hasQuery && hasIncompleteModernCode && (
           <div className="rounded-xl bg-repower-paper p-4 text-sm leading-relaxed text-repower-navy-900/75">
             That is only the first half of a modern UFC. Enter the complete pair shown on
-            the display—including the suffix after the dash, such as <strong>1012-24</strong>.
+            the display, including the suffix after the dash, such as <strong>1012-24</strong>.
             Opposite suffixes can identify opposite conditions.
           </div>
         )}
@@ -108,8 +108,8 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
         {hasQuery && !hasIncompleteModernCode && matches.length === 0 && (
           <div className="rounded-xl bg-repower-paper p-4 text-sm leading-relaxed text-repower-navy-900/75">
             No match appears in these two scoped tables. Keep the photo and complete code,
-            then use the serial-number-specific manual or an authorized Mercury dealer.
-            Do not borrow a meaning from a neighbouring number.
+            then take the record to an authorized Mercury dealer. Do not borrow a meaning
+            from a neighbouring number.
           </div>
         )}
 
@@ -147,8 +147,11 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
                       Exact match from grouped table row: {row.groupedCodeLabel}
                     </p>
                   )}
-                  <p className="mt-1 text-xs leading-relaxed text-repower-navy-900/60">
-                    {row.reference}
+                  <p className="mt-2 text-sm leading-relaxed text-repower-navy-900/75">
+                    <strong>
+                      {row.source === 'modern' ? 'What to do now: ' : 'Scope: '}
+                    </strong>
+                    {row.guidance}
                   </p>
                 </article>
               ))}
@@ -158,8 +161,9 @@ export function FaultCodeFinder({ content }: FaultCodeFinderProps) {
       </div>
 
       <p className="mt-5 border-t border-repower-navy-900/10 pt-4 text-xs leading-relaxed text-repower-navy-900/60">
-        Search results identify the documented component or condition; they do not prove
-        which part failed. The modern and legacy tables use different numbering systems.
+        Search results provide the scoped meaning and published operator action; they do
+        not prove which part failed. The modern and legacy tables use different numbering
+        systems.
       </p>
     </section>
   );

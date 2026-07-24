@@ -7,13 +7,14 @@ const rows = parseFaultCodeRows(article?.content ?? '');
 
 describe('FaultCodeFinder', () => {
   it('reads every modern code pair, including the current dealer update', () => {
-    const modernCodes = new Set(
-      rows.filter((row) => row.source === 'modern').flatMap((row) => row.codes),
-    );
+    const modernRows = rows.filter((row) => row.source === 'modern');
+    const modernCodes = new Set(modernRows.flatMap((row) => row.codes));
 
     expect(modernCodes.size).toBe(131);
     expect(modernCodes).toContain('621-5');
     expect(modernCodes).toContain('3043-6');
+    expect(modernRows.every((row) => row.guidance.length > 20)).toBe(true);
+    expect(modernRows.every((row) => !/4A-\d/i.test(row.guidance))).toBe(true);
   });
 
   it('matches complete modern pairs exactly', () => {
@@ -21,6 +22,9 @@ describe('FaultCodeFinder', () => {
 
     expect(matches).toHaveLength(1);
     expect(matches[0].meaning).toMatch(/system voltage lower/i);
+    expect(matches[0].guidance).toMatch(/return to port now/i);
+    expect(matches[0].guidance).toMatch(/battery connections/i);
+    expect(matches[0].guidance).not.toMatch(/4A-/i);
   });
 
   it('disambiguates opposite conditions in an exact grouped-code match', () => {
@@ -59,5 +63,21 @@ describe('FaultCodeFinder', () => {
 
     expect(matches.some((row) => row.codes.includes('1108-25'))).toBe(true);
     expect(matches.some((row) => row.codes.includes('23'))).toBe(true);
+  });
+
+  it('searches the owner guidance as well as the code meaning', () => {
+    const matches = filterFaultCodeRows(rows, 'unnecessary loads');
+
+    expect(matches.some((row) => row.codes.includes('621-5'))).toBe(true);
+    expect(matches.some((row) => row.codes.includes('4602-23'))).toBe(true);
+  });
+
+  it('does not publish dealer-only or unrelated manual-download links', () => {
+    expect(article?.content).not.toMatch(/\b4A-\d/i);
+    expect(article?.content).not.toMatch(/download\.brunswick-marine\.com/i);
+    expect(article?.content).not.toMatch(/sbmar\.com/i);
+    expect(article?.citations.map((citation) => citation.url).join(' ')).not.toMatch(
+      /mercnet|download\.brunswick-marine\.com|sbmar\.com/i,
+    );
   });
 });

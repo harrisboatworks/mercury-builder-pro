@@ -324,7 +324,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     dateModified: '2026-07-24',
     publishDate: '2026-07-23',
     category: 'Troubleshooting',
-    readTime: '27 min read',
+    readTime: '31 min read',
     keywords: [
       'mercury outboard fault codes',
       'mercury fault code list',
@@ -344,7 +344,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     faqs: [
       {
         question: 'What does Mercury fault code 621-5 mean?',
-        answer: 'In current Mercury diagnostic publication 90-8M0237508 for the covered V6 and V8 platform, 621-5 means valid system voltage is lower than expected. That definition is family-specific. Photograph the complete code, reduce unnecessary electrical loads, and use the serial-number-specific manual before acting on it.',
+        answer: 'In current Mercury diagnostic publication 90-8M0237508 for the covered V6 and V8 platform, 621-5 means valid system voltage is lower than expected. Mercury’s operator action is to return to port, turn off unnecessary electrical loads, check the battery connections, and service the engine before its next use. That definition is family-specific.',
       },
       {
         question: 'Does Mercury fault code 621-25 always mean low voltage?',
@@ -371,8 +371,8 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
         answer: 'Use Mercury Marine’s owner-manual lookup with the engine serial number. The serial number is the reliable route to the correct model-year and engine-family instructions.',
       },
       {
-        question: 'Can I download the diagnostic manual referenced by the page numbers?',
-        answer: 'Mercury owner manuals are available through the public serial-number lookup. Diagnostic publication 90-8M0237508 is dealer service literature written for trained technicians, not the owner manual. The Section 4A references on this page help a dealer locate the current fault card; HBW does not redistribute Mercury’s restricted service manuals.',
+        question: 'Why does this page not link to the diagnostic service manual?',
+        answer: 'The diagnostic publication is restricted dealer service literature written for trained technicians. This page puts the useful owner-facing meaning and Mercury action beside each code so you do not need the manual page number. For model-specific operating and stop instructions, use Mercury’s public owner-manual lookup with the engine serial number.',
       },
       {
         question: 'What should I send with a Mercury service request?',
@@ -381,28 +381,12 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     ],
     citations: [
       {
-        name: 'Mercury dealer literature search (authorized access required)',
-        url: 'https://mercnet.mercurymarine.com/us/en/service-and-warranty/literature.html',
-      },
-      {
-        name: 'Mercury CDS G3 supported products',
-        url: 'https://service.mercurymarine.com/g3/support/products',
-      },
-      {
-        name: 'Mercury SmartCraft SC1000 operation manual 8M0104521',
-        url: 'https://download.brunswick-marine.com/filereader/file/pdf/4/enen/smartcraft/2015/8m0104521r.pdf',
-      },
-      {
-        name: 'Mercury SmartCraft DDT technician reference 90-881204003',
-        url: 'https://download.brunswick-marine.com/filereader/file/pdf/11/enen/ddt/881204003r.pdf',
-      },
-      {
         name: 'Mercury SmartCraft Connect Mobile',
-        url: 'https://www.mercurymarine.com/me/en/smartcraft/vessel-intelligence/smartcraft-connect-mobile',
+        url: 'https://www.mercurymarine.com/ca/en/smartcraft/vessel-intelligence/smartcraft-connect-mobile',
       },
       {
-        name: 'Mercury Marine owner-manual lookup',
-        url: 'https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/owners-manual',
+        name: 'Mercury Marine owner resources and manual lookup',
+        url: 'https://www.mercurymarine.com/ca/en/service-and-support/owners-resources',
       },
     ],
     content: `> **Quick answer:** Search the complete code shown on your display, then confirm that the result matches your engine family. A single number or text label may come from Mercury's March 2007 legacy VesselView list. A two-part number such as **621-5** is a Universal Fault Code, or UFC, that must be matched to the correct engine-family publication. This page includes all 130 UFC pairs in Mercury's December 2025 diagnostic manual for the covered 3.4L V6 and 4.6L V8 platform, plus the limited-application **3043-6** code added in May 2026 and a clearly labelled legacy VesselView reference. It is not a universal list for every Mercury outboard.
@@ -411,7 +395,7 @@ If the display shows low oil pressure, oil-pump failure, an active overheat, fue
 
 This is the code-number companion to our [Mercury beep and alarm guide](/blog/mercury-outboard-beeping-codes-guide). The horn tells you the alert class on supported systems; the screen identifies the actual fault. Both strategies vary by engine family and year.
 
-**Reference status:** HBW last checked this lookup on **July 24, 2026** against Mercury diagnostic publication **90-8M0237508, December 2025**, current MercNET literature results, and Mercury's **May 2026 V6/V8 fault-code update**. The earlier 2021 manual used the same 130 pairs, but its page references are now obsolete.
+**Reference status:** HBW last checked this lookup on **July 24, 2026** against Mercury diagnostic publication **90-8M0237508, December 2025**, current MercNET literature results, and Mercury's **May 2026 V6/V8 fault-code update**. The meaning and owner action are included here, so you do not need to find a diagnostic-manual page.
 
 ## Before You Use Either Table
 
@@ -433,101 +417,101 @@ This is the code-number companion to our [Mercury beep and alarm guide](/blog/me
 
 ## Modern UFC Table: Current 3.4L V6 and 4.6L V8 Reference
 
-This table is scoped to Mercury diagnostic publication **90-8M0237508, December 2025**, Section 4A. Its Models Covered page lists these as 2018-and-newer PCM 112 applications; the publication cover starts at serial number **2B529482**:
+This table is scoped to the fault-code section of Mercury diagnostic publication **90-8M0237508, December 2025**. Its Models Covered section lists these as 2018-and-newer PCM 112 applications; the publication cover starts at serial number **2B529482**:
 
 - V6: 150R, 175, 175 Pro XS, 200, 200 SeaPro, 200R, and 225
 - V8: 200 Pro XS; 225 Pro XS and SeaPro; 250, 250 Pro XS, 250 SeaPro, and 250R; 300, 300 Pro XS, 300 SeaPro, and 300R
 
-Not every listed pair applies to every model, PCM calibration, midsection, gearcase, or control configuration. The table identifies the documented component or condition; it does not replace Mercury's official action, causes, tests, or repairs.
+Not every listed pair applies to every model, PCM calibration, midsection, gearcase, or control configuration. The last cell starts with Mercury's operator action, paraphrased into plain language. Any following sentence adds a safe first check named by Mercury or explains what still requires diagnosis. Dealer measurements, pinouts, software, adaptations, calibration, and repairs remain shop work.
 
-The **4A** references below are the printed Section 4A page numbers inside the December 2025 diagnostic manual, not the PDF viewer's page count. Mercury's public owner-manual lookup provides operator manuals by serial number. The diagnostic publication is dealer service literature, so this page names it for context but does not offer it as a download.
+Read the last column literally. **Service soon** means arrange service; it does not mean the named part is proven bad. **Return to port now** means operate only as needed for a safe return, then service the engine before using it again. A stop instruction takes priority over both.
 
-| UFC pair(s) | Documented component or condition | Reference location |
+| UFC pair(s) | Documented component or condition | What to do now |
 |---|---|---|
-| 101-16 / 102-16 / 103-16 / 104-16 | Ignition circuits 1-4: PCM output-control fault | 4A-3 to 4A-8 |
-| 201-16 / 202-16 / 203-16 / 204-16 / 205-16 / 206-16 / 207-16 / 208-16 | Fuel-injector circuits 1-8: PCM output-control fault | 4A-10 to 4A-19 |
-| 301-24 / 301-25 | Throttle-position sensor A input above or below valid limit | 4A-20 to 4A-21 |
-| 302-24 / 302-25 | Throttle-position sensor B input above or below valid limit | 4A-23 to 4A-24 |
-| 311-6 | Throttle-position sensors A and B faulted | 4A-26 |
-| 331-6 | Throttle-position sensors A and B disagree | 4A-27 |
-| 341-6 / 342-6 | Throttle-position sensor A or B adaptation fault | 4A-29 to 4A-30 |
-| 401-24 / 401-25 | Time-sampled manifold-pressure input above or below valid limit | 4A-32 to 4A-33 |
-| 402-24 / 402-25 | Angle-sampled manifold-pressure input above or below valid limit | 4A-34 to 4A-35 |
-| 404-6 / 405-6 | Manifold-pressure and throttle-position signals disagree | 4A-36 to 4A-37 |
-| 407-17 | Manifold-pressure barometric reading outside expected range | 4A-39 |
-| 431-21 | Oil pressure below the specified threshold | 4A-40 |
-| 431-24 / 431-25 | Oil-pressure sensor input above or below valid limit | 4A-41 to 4A-42 |
-| 511-24 / 511-25 | Intake-air-temperature input above or below valid limit | 4A-43 to 4A-44 |
-| 521-20 | Starboard engine-coolant temperature above normal | 4A-45 |
-| 521-24 / 521-25 | Starboard coolant-temperature sensor input above or below valid limit | 4A-46 to 4A-47 |
-| 531-24 / 531-25 | Oil-temperature sensor input above or below valid limit | 4A-48 |
-| 572-24 / 572-25 | Bank 1 exhaust-gas-temperature sensor input above or below valid limit | 4A-49 to 4A-50 |
-| 601-4 / 601-5 | Sensor-supply voltage A higher or lower than expected | 4A-51 to 4A-53 |
-| 602-4 / 602-5 | Sensor-supply voltage B higher or lower than expected | 4A-55 to 4A-56 |
-| 603-4† / 603-5† | Sensor-supply voltage C higher or lower than expected | 4A-57 to 4A-58; May 2026 update |
-| 621-4 | Valid system voltage higher than expected | 4A-59 |
-| 621-5 | Valid system voltage lower than expected | 4A-60 |
-| 711-6 | Oil-level sensor fault | 4A-61 |
-| 711-12 | Oil-level sensor invalid or disabled under present conditions | 4A-62 |
-| 711-19 | Oil-level test could not run, so level could not be determined | 4A-63 |
-| 711-24 | Oil-level sensor input above valid limit | 4A-63 |
-| 713-21 | Crankcase oil level below the specified threshold | 4A-64 |
-| 821-1 / 821-27 | Wideband oxygen-sensor output circuit open/high resistance or short/low resistance | 4A-65 to 4A-66 |
-| 822-4 / 822-5 / 822-16 | Wideband oxygen-sensor heater high, low, or output-control fault | 4A-68 to 4A-70 |
-| 902-4 / 902-5 | Port short-term fuel-trim correction higher or lower than expected | 4A-72 |
-| 1012-24 / 1012-25 | Engine trim-position input above or below valid limit | 4A-73 to 4A-74 |
-| 1021-24 / 1021-25 | Shift-actuator position sensor A input above or below valid limit | 4A-75 to 4A-77 |
-| 1023-24 / 1023-25 | Shift-actuator position sensor B input above or below valid limit | 4A-78 to 4A-80 |
-| 1024-6 | Shift-actuator position sensors A and B disagree | 4A-81 |
-| 1025-6 | Both shift-actuator position sensors faulted | 4A-82 |
-| 1051-23 | Camshaft synchronization state fault | 4A-84 |
-| 1052-6 | Crankshaft or camshaft trigger fault | 4A-85 |
-| 1061-24 / 1061-25 | Mechanical throttle-demand sensor A input above or below valid limit | 4A-86 to 4A-88 |
-| 1062-24 / 1062-25 | Mechanical throttle-demand sensor B input above or below valid limit | 4A-89 to 4A-90 |
-| 1063-24 / 1063-25 | Mechanical shift-demand sensor A input above or below valid limit | 4A-92 to 4A-93 |
-| 1064-24 / 1064-25 | Mechanical shift-demand sensor B input above or below valid limit | 4A-94 to 4A-96 |
-| 1071-6 / 1072-6 | Mechanical throttle-demand sensor A or B adaptation fault | 4A-97 to 4A-98 |
-| 1073-6 | Mechanical throttle-demand sensors A and B disagree | 4A-100 |
-| 1074-6 | Both mechanical throttle-demand sensors faulted | 4A-101 |
-| 1077-6 | Mechanical shift-demand sensors A and B disagree | 4A-102 |
-| 1078-6 | Both mechanical shift-demand sensors faulted | 4A-104 |
-| 1108-25 | Water detected in the fuel system | 4A-105 |
-| 1109-23 | Emergency-stop circuit active | 4A-106 |
-| 2011-23 | Engine Guardian active and limiting power | 4A-107 |
-| 2021-23 | Guardian active because of oil temperature | 4A-108 |
-| 2032-23 | Guardian active because of exhaust-system temperature | 4A-109 |
-| 2051-23 | Guardian active because of low oil pressure | 4A-110 |
-| 2081-23 | Guardian active because of engine overheat | 4A-111 |
-| 2091-23 | Guardian active because of excessive engine speed | 4A-112 |
-| 2092-23 | Engine speed above its neutral limit | 4A-113 |
-| 2101-23 | Guardian active because the helm module requested a power limit | 4A-114 |
-| 2111-23 | Guardian active because of battery voltage | 4A-114 |
-| 2124-20 | Exhaust-manifold temperature above normal | 4A-115 |
-| 3002-16 | Active-exhaust-valve output-control fault | 4A-116 |
-| 3012-6 / 3013-6 / 3014-6 | Electronic throttle lost control, has an output fault, or is sticking | 4A-117 to 4A-120 |
-| 3031-6† / 3032-6 | Electronic shift commanded position differs from actual position, or control is lost | 4A-121 to 4A-123; 3031-6 updated May 2026 |
-| 3033-6† / 3034-6† | Electronic shift could not adapt in reverse or forward | 4A-124 to 4A-126; May 2026 update |
-| 3037-6 | Electronic shift control timed out | 4A-127 |
-| 3039-23 | Reverse gear unavailable; a reverse command may produce forward gear | 4A-129 |
-| 3043-6† | Electronic shift actuator overtravel detected; dealer diagnosis required | May 2026 update; limited single-engine V8 application |
-| 3049-16 | Hydraulic-shift output-control fault | 4A-130 |
-| 3061-16 | Fuel-pump output-control fault | 4A-132 |
-| 3152-16 | Warning-horn output-control fault | 4A-133 |
-| 3171-16 | Starter output-control fault | 4A-134 |
-| 3181-16 / 3182-16 | Trim-up or trim-down output-control fault | 4A-135 to 4A-137 |
-| 4001-6 / 4002-6 / 4003-6 | Demand, shift, or helm-module crosscheck fault | 4A-139 to 4A-141 |
-| 4004-6 | CAN X document 1 state-of-health fault | 4A-141 |
-| 4005-6 | CAN P document 2 state-of-health fault | 4A-142 |
-| 4006-6 / 4007-6 / 4008-6 / 4009-6 | CAN P or CAN X document state-of-health fault | 4A-143 to 4A-145 |
-| 4010-6 | CAN X document 11 state-of-health fault | 4A-146 |
-| 4011-23 | CAN-bus authentication timeout | 4A-146 |
-| 4012-6 | CAN P and CAN X state-of-health faults | 4A-147 |
-| 4013-23 | Watchdog active | 4A-148 |
-| 4014-6 / 4016-6 | Watchdog-module or watchdog-data crosscheck fault | 4A-148 to 4A-149 |
-| 4501-23 | Security device missing | 4A-150 |
-| 4502-23 | Security system locked | 4A-150 |
-| 4503-23 | Security system in setup mode | 4A-151 |
-| 4602-23 | Low system voltage blocking other fault evaluation | 4A-151 |
+| 101-16 / 102-16 / 103-16 / 104-16 | Ignition circuits 1-4: PCM output-control fault | Service engine soon. The code can involve the spark plug, plug lead, ignition coil, its connector or wiring; it does not prove the coil failed. |
+| 201-16 / 202-16 / 203-16 / 204-16 / 205-16 / 206-16 / 207-16 / 208-16 | Fuel-injector circuits 1-8: PCM output-control fault | Service engine soon. Injector wiring, connections, fuel pressure and the injector itself require diagnosis before replacing parts. |
+| 301-24 / 301-25 | Throttle-position sensor A input above or below valid limit | Service engine soon. Do not force the throttle; the sensor, connector, wiring and shared sensor supply require diagnosis. |
+| 302-24 / 302-25 | Throttle-position sensor B input above or below valid limit | Service engine soon. Do not force the throttle; the sensor, connector, wiring and shared sensor supply require diagnosis. |
+| 311-6 | Throttle-position sensors A and B faulted | Return to port now and service the engine before its next use. Do not force the throttle or keep cycling the controls. |
+| 331-6 | Throttle-position sensors A and B disagree | Return to port now and service the engine before its next use. Do not force the throttle or keep cycling the controls. |
+| 341-6 / 342-6 | Throttle-position sensor A or B adaptation fault | Service engine soon. The sensor adaptation, throttle mechanism, connector and wiring require diagnosis. |
+| 401-24 / 401-25 | Time-sampled manifold-pressure input above or below valid limit | Service engine soon. The pressure sensor, connector, wiring, sensor supply and intake system require diagnosis. |
+| 402-24 / 402-25 | Angle-sampled manifold-pressure input above or below valid limit | Service engine soon. The pressure sensor, connector, wiring, sensor supply and intake system require diagnosis. |
+| 404-6 / 405-6 | Manifold-pressure and throttle-position signals disagree | Service engine soon. The pressure and throttle signals, their wiring and the intake system must be checked together. |
+| 407-17 | Manifold-pressure barometric reading outside expected range | Service engine soon. The pressure sensor, wiring, connector and local barometric comparison require diagnosis. |
+| 431-21 | Oil pressure below the specified threshold | Stop the engine and check the oil level. If the level is correct or the alert persists, return to port and service the engine before its next use. |
+| 431-24 / 431-25 | Oil-pressure sensor input above or below valid limit | Service engine soon. Check the oil level first; a sensor-circuit code does not prove that actual oil pressure is safe. |
+| 511-24 / 511-25 | Intake-air-temperature input above or below valid limit | Service engine soon. The temperature sensor, connector and wiring require diagnosis. |
+| 521-20 | Starboard engine-coolant temperature above normal | Stop the engine and check the cooling-water inlet for blockage. If the alert persists, return to port and service the engine before its next use. |
+| 521-24 / 521-25 | Starboard coolant-temperature sensor input above or below valid limit | Service engine soon. The sensor, connector and wiring require diagnosis; separately confirm the engine is not actually overheating. |
+| 531-24 / 531-25 | Oil-temperature sensor input above or below valid limit | Service engine soon. Check the oil level; the temperature sensor, connector and wiring require diagnosis. |
+| 572-24 / 572-25 | Bank 1 exhaust-gas-temperature sensor input above or below valid limit | Service engine soon. The exhaust-temperature sensor, connector and wiring require diagnosis. Do not ignore signs of actual overheating. |
+| 601-4 / 601-5 | Sensor-supply voltage A higher or lower than expected | Return to port now and service the engine before its next use. A shorted sensor or fault in the shared supply wiring can affect several readings. |
+| 602-4 / 602-5 | Sensor-supply voltage B higher or lower than expected | Return to port now and service the engine before its next use. A shorted sensor or fault in the shared supply wiring can affect several readings. |
+| 603-4† / 603-5† | Sensor-supply voltage C higher or lower than expected | Service engine soon. This circuit requires current Mercury calibration information and dealer diagnosis. |
+| 621-4 | Valid system voltage higher than expected | Return to port now and service the engine before its next use. Charging-system output, connections and wiring require diagnosis. |
+| 621-5 | Valid system voltage lower than expected | Return to port now. Turn off unnecessary electrical loads, check the battery connections, and service the engine before its next use. |
+| 711-6 | Oil-level sensor fault | Check the oil level on the dipstick, then service the engine soon. Do not assume a sensor fault means the oil level is safe. |
+| 711-12 | Oil-level sensor invalid or disabled under present conditions | Check the oil level on the dipstick, then service the engine soon. |
+| 711-19 | Oil-level test could not run, so level could not be determined | Check the oil level before continuing to operate the engine. |
+| 711-24 | Oil-level sensor input above valid limit | Check the oil level on the dipstick, then service the engine soon. |
+| 713-21 | Crankcase oil level below the specified threshold | Check the oil level before continuing to operate the engine. Add only the approved oil and do not overfill. |
+| 821-1 / 821-27 | Wideband oxygen-sensor output circuit open/high resistance or short/low resistance | Service engine soon. The oxygen sensor, connector and wiring require diagnosis. |
+| 822-4 / 822-5 / 822-16 | Wideband oxygen-sensor heater high, low, or output-control fault | Service engine soon. For 822-16, check the O2-sensor fuse only if your owner manual identifies it; otherwise leave circuit diagnosis to a technician. |
+| 902-4 / 902-5 | Port short-term fuel-trim correction higher or lower than expected | Service engine soon. Fuel pressure, air leaks, injectors, oxygen-sensor feedback and wiring are among the systems that require diagnosis. |
+| 1012-24 / 1012-25 | Engine trim-position input above or below valid limit | Service engine soon. The trim display may be inaccurate; the sensor linkage, connector and wiring require diagnosis. |
+| 1021-24 / 1021-25 | Shift-actuator position sensor A input above or below valid limit | Return to port now and service the engine before its next use. Do not force the control or rely on an uncertain gear indication. |
+| 1023-24 / 1023-25 | Shift-actuator position sensor B input above or below valid limit | Return to port now and service the engine before its next use. Do not force the control or rely on an uncertain gear indication. |
+| 1024-6 | Shift-actuator position sensors A and B disagree | Return to port now and service the engine before its next use. Do not force the control or rely on an uncertain gear indication. |
+| 1025-6 | Both shift-actuator position sensors faulted | Return to port now and service the engine before its next use. Do not force the control or rely on an uncertain gear indication. |
+| 1051-23 | Camshaft synchronization state fault | Service engine soon. Camshaft and crankshaft sensing, connections and wiring require diagnosis. |
+| 1052-6 | Crankshaft or camshaft trigger fault | Service engine soon. Crankshaft and camshaft sensing, connections and wiring require diagnosis. |
+| 1061-24 / 1061-25 | Mechanical throttle-demand sensor A input above or below valid limit | Service engine soon. Move the control gently; the demand sensor, connector, wiring and adaptation require diagnosis. |
+| 1062-24 / 1062-25 | Mechanical throttle-demand sensor B input above or below valid limit | Service engine soon. Move the control gently; the demand sensor, connector, wiring and adaptation require diagnosis. |
+| 1063-24 / 1063-25 | Mechanical shift-demand sensor A input above or below valid limit | Service engine soon. If the indicated gear does not match the control position, stop using the boat and arrange service. |
+| 1064-24 / 1064-25 | Mechanical shift-demand sensor B input above or below valid limit | Service engine soon. If the indicated gear does not match the control position, stop using the boat and arrange service. |
+| 1071-6 / 1072-6 | Mechanical throttle-demand sensor A or B adaptation fault | Service engine soon. The demand sensor adaptation, control mechanism, connector and wiring require diagnosis. |
+| 1073-6 | Mechanical throttle-demand sensors A and B disagree | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the control. |
+| 1074-6 | Both mechanical throttle-demand sensors faulted | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the control. |
+| 1077-6 | Mechanical shift-demand sensors A and B disagree | Return to port now and service the engine before its next use. Stop if the indicated gear does not match the control position. |
+| 1078-6 | Both mechanical shift-demand sensors faulted | Return to port now and service the engine before its next use. Stop if the indicated gear does not match the control position. |
+| 1108-25 | Water detected in the fuel system | Service engine soon. Follow the water-in-fuel procedure in the serial-specific owner manual; stop immediately if fuel is leaking or overflowing. |
+| 1109-23 | Emergency-stop circuit active | Check the emergency-stop lanyard. Turn the key off and restart once; if the alert returns, service the engine soon. |
+| 2011-23 | Engine Guardian active and limiting power | Reduce engine speed. Look for the separate root alert that caused Guardian to limit power. |
+| 2021-23 | Guardian active because of oil temperature | Reduce engine speed. If the alert persists, stop the engine and arrange service. |
+| 2032-23 | Guardian active because of exhaust-system temperature | Reduce engine speed. If the alert persists, stop the engine and arrange service. |
+| 2051-23 | Guardian active because of low oil pressure | Reduce engine speed. If the alert persists, stop the engine and check the oil level. Do not continue if the level is correct but the alert remains. |
+| 2081-23 | Guardian active because of engine overheat | Reduce engine speed. If the alert persists, stop the engine and check the cooling-water inlet for blockage. |
+| 2091-23 | Guardian active because of excessive engine speed | If the alert persists, lower excessive trim, stop the engine and check the propeller for damage or incorrect size. |
+| 2092-23 | Engine speed above its neutral limit | Reduce engine speed and return the control to neutral. Service the engine if the alert repeats. |
+| 2101-23 | Guardian active because the helm module requested a power limit | Reduce engine speed. Check the display for another alert or helm message that identifies the reason. |
+| 2111-23 | Guardian active because of battery voltage | Reduce engine speed. Turn off unnecessary electrical loads and check the battery connections. |
+| 2124-20 | Exhaust-manifold temperature above normal | Stop the engine and check the exhaust-water strainer for blockage. If the alert persists, return to port and service the engine before its next use. |
+| 3002-16 | Active-exhaust-valve output-control fault | Service engine soon. The valve, connector, wiring and output circuit require diagnosis. |
+| 3012-6 / 3013-6 / 3014-6 | Electronic throttle lost control, has an output fault, or is sticking | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the throttle control. |
+| 3031-6† / 3032-6 | Electronic shift commanded position differs from actual position, or control is lost | Return to port now and service the engine before its next use. Do not force the control; current software, calibration and shift hardware require dealer diagnosis. |
+| 3033-6† / 3034-6† | Electronic shift could not adapt in reverse or forward | Service engine soon. If the indicated gear does not match the control position, stop using the boat. Current software and calibration require dealer diagnosis. |
+| 3037-6 | Electronic shift control timed out | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the shift control. |
+| 3039-23 | Reverse gear unavailable; a reverse command may produce forward gear | Return to port now and service the engine before its next use. Do not command reverse again; the boat may move forward. |
+| 3043-6† | Electronic shift actuator overtravel detected; dealer diagnosis required | If indicated gear does not match the control position, stop using the boat. Preserve the alert and have calibration, configuration, actuator travel and shift hardware checked by a dealer. |
+| 3049-16 | Hydraulic-shift output-control fault | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the shift control. |
+| 3061-16 | Fuel-pump output-control fault | Return to port now and service the engine before its next use. Stop immediately if fuel is leaking or overflowing. |
+| 3152-16 | Warning-horn output-control fault | Service engine soon. The horn may not sound reliably, so watch the display and do not depend on an audible warning. |
+| 3171-16 | Starter output-control fault | Return to port now and service the engine before its next use. If the engine stops, a restart may not be available. |
+| 3181-16 / 3182-16 | Trim-up or trim-down output-control fault | Service engine soon. Trim in the affected direction may not work; the switch, relay, wiring and output circuit require diagnosis. |
+| 4001-6 / 4002-6 / 4003-6 | Demand, shift, or helm-module crosscheck fault | Return to port now and service the engine before its next use. Do not force or repeatedly cycle the controls. |
+| 4004-6 | CAN X document 1 state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4005-6 | CAN P document 2 state-of-health fault | Service engine soon. Network power, wiring and connected modules require diagnosis. |
+| 4006-6 / 4007-6 / 4008-6 / 4009-6 | CAN P or CAN X document state-of-health fault | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4010-6 | CAN X document 11 state-of-health fault | Cruise control may not work properly. Service the engine soon. |
+| 4011-23 | CAN-bus authentication timeout | Service engine soon. Network power, wiring, module identity and current software require diagnosis. |
+| 4012-6 | CAN P and CAN X state-of-health faults | Return to port now and service the engine before its next use. Network power, wiring and connected modules require diagnosis. |
+| 4013-23 | Watchdog active | Return to port now and service the engine before its next use. |
+| 4014-6 / 4016-6 | Watchdog-module or watchdog-data crosscheck fault | Return to port now and service the engine before its next use. |
+| 4501-23 | Security device missing | Do not turn the key off. Return to port now and service the engine before its next use. |
+| 4502-23 | Security system locked | Follow the unlock procedure in the serial-specific owner manual. If it cannot be unlocked normally, arrange service. |
+| 4503-23 | Security system in setup mode | Follow the security setup instructions in the serial-specific owner manual or have an authorized dealer complete the setup. |
+| 4602-23 | Low system voltage blocking other fault evaluation | Return to port now. Turn off unnecessary electrical loads, check the battery connections, and service the engine before its next use. |
 
 The December 2025 manual contains **130 UFC pairs**. Mercury's May 2026 dealer update adds **3043-6** for a limited single-engine V8 application, bringing this current scoped lookup to **131 searchable pairs**. The older 2018 and 2021 versions list the same original 130 pairs; the 2018 version also shows **0-0** as a no-active-fault sentinel. Do not count 0-0 as an enabled fault or apply this table to a different Mercury family.
 
@@ -780,16 +764,11 @@ Do not clear or repeatedly restart just to make the message disappear. Preserve 
 
 ## Sources
 
-- **Mercury V6/V8 diagnostic publication 90-8M0237508, December 2025, Section 4A.** Current dealer service literature for the covered 3.4L V6 and 4.6L V8 platform, starting serial 2B529482. HBW reviewed the publication through MercNET on July 24, 2026.
+- **Mercury V6/V8 diagnostic publication 90-8M0237508, December 2025.** Current dealer service literature for the covered 3.4L V6 and 4.6L V8 platform, starting serial 2B529482. HBW reviewed every listed fault meaning and operator action through MercNET on July 24, 2026.
 - **Mercury Service Advisory 2026-06R2, May 2026.** Current dealer information for V6/V8 shift and PCM fault-code updates. This article summarizes the owner-visible code changes without redistributing the restricted bulletin or its dealer procedure.
 - **Mercury VesselView operation manual 90-898279, March 2007.** Source of the mixed-product legacy display list. HBW reviewed the Mercury publication directly; the table above preserves its calibration and product-scope warnings.
-- [Mercury CDS G3 supported products](https://service.mercurymarine.com/g3/support/products)
-- [Mercury SmartCraft SC1000 operation manual 8M0104521](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/smartcraft/2015/8m0104521r.pdf)
-- [Mercury SmartCraft DDT technician reference 90-881204003](https://download.brunswick-marine.com/filereader/file/pdf/11/enen/ddt/881204003r.pdf)
-- [Mercury VesselView 403 operation manual](https://www.sbmar.com/wp-content/uploads/2018/03/VesselView403-Operation-Manual.pdf)
-- [Mercury VesselView 704 operation manual 8M0220645](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/smartcraft/2024/8m0220645.pdf)
-- [Mercury CDS G3 release notes](https://service.mercurymarine.com/g3/support/release-notes/)
-- [Mercury Marine owner-manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/owners-manual)
+- [Mercury SmartCraft Connect Mobile](https://www.mercurymarine.com/ca/en/smartcraft/vessel-intelligence/smartcraft-connect-mobile)
+- [Mercury Marine owner resources and serial-specific manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 `,
   },
   {
