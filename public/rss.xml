@@ -5,13 +5,21 @@
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Wed, 15 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
       <title>Harris Boat Works Blog</title>
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
+    <item>
+      <title><![CDATA[Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup</guid>
+      <pubDate>Thu, 23 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Look up documented Mercury fault codes by format and engine family, including legacy VesselView IDs and the 2021 V6/V8 Universal Fault Code table.]]></description>
+      <category><![CDATA[Troubleshooting]]></category>
+    </item>
     <item>
       <title><![CDATA[Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)]]></title>
       <link>https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake</link>
@@ -402,14 +410,6 @@
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide</guid>
       <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math.]]></description>
-      <category><![CDATA[Buying Guide]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Outboard Warranty Canada 2026]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026</guid>
-      <pubDate>Sat, 23 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection.]]></description>
       <category><![CDATA[Buying Guide]]></category>
     </item>
   </channel>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { isDiagnosticArticle } from '@/lib/isDiagnosticArticle';
 
 type CTAVariant = 'inline' | 'banner';
 
@@ -18,10 +19,22 @@ interface CTAConfig {
   buttonLabel?: string;
 }
 
-
 function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAConfig {
   const cat = category.toLowerCase();
   const s = slug.toLowerCase();
+
+  // Diagnostic content has one next step: the service intake. Keep phone,
+  // sales, pricing, and "diagnose it remotely" language out of these posts.
+  if (isDiagnosticArticle(category, slug)) {
+    return {
+      title: 'Still Have an Active Fault?',
+      description:
+        'Submit the exact code, engine serial number, hours, and a photo of the display. HBW will use that record to start the shop diagnosis.',
+      href: 'https://hbw.wiki/service',
+      external: true,
+      buttonLabel: 'Submit a Service Request',
+    };
+  }
 
   // Rentals: route to Harris rentals booking. For the GTA post we allow ONE
   // motor-pricing CTA at the very end (variant === 'banner') and use the
