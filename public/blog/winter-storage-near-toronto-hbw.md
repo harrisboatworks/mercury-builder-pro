@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Boat Storage Near Toronto HBW"
 description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land."
 category: "Winterization"
 date_published: 2026-05-17
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,116 +24,78 @@ language: en-CA
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
 # Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
-> **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
+> **Quick answer:** HBW offers outdoor shrinkwrap storage only. Customers arrange their own fall drop-off and spring pickup at Gores Landing; HBW does not provide pickup, delivery, hauling, mobile service, or transport referrals. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. Request the current storage scope and price at [hbw.wiki/service](https://hbw.wiki/service).
 
-Every September, GTA boaters face the same decision: [where do I store the boat for winter](/blog/boat-storage-kawartha-lakes)? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
+Every fall, GTA boaters face the same decision: [where do I store the boat for winter](/blog/boat-storage-kawartha-lakes)? The useful comparison is not a generic per-foot number. It is whether the quoted package includes outdoor storage, shrinkwrap, engine winterization, spring commissioning, trailer handling, and any model-specific work your boat actually needs.
 
-Most GTA boat owners haven't considered driving the boat to Rice Lake, Ontario for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
-
-We've stored 311+ boats per year for the last several seasons. Many of them come from the GTA. This is the version of the storage decision we'd walk through if you called and asked.
+HBW is a fit when you can trailer the boat to Gores Landing yourself and want the same Mercury dealer handling the fall work, storage record, and spring return-to-service. It is not a fit when you need indoor storage, heated storage, pickup, delivery, mobile service, or arranged transportation.
 
 ---
 
 ## The Quick Comparison
 
-| Storage option | Typical pricing (21-ft boat) | What's included |
-|---------------|----------------------------|-----------------|
-| **GTA outdoor + shrinkwrap (urban)** | $700-$1,200 | Shrinkwrap, outdoor parking, basic winterize |
-| **GTA indoor unheated** | $1,200-$2,000 | Indoor parking, basic winterize, no UV |
-| **GTA indoor heated** | $1,800-$3,500 | Indoor heated, no winterization needed |
-| **Muskoka indoor heated** | $2,500-$4,000+ | Premium service, distance |
-| **HBW outdoor + shrinkwrap + winterize** | **$700-$1,200** | Shrinkwrap (frame, vents, strapping) + full Mercury winterization + battery removal + spring commissioning prep |
+| Storage option | What it provides | Fit for HBW? |
+|---------------|------------------|--------------|
+| **Outdoor storage with shrinkwrap** | Weather protection on land; winterization scope is a separate item to confirm | **Yes. This is HBW's storage model.** |
+| **Indoor unheated storage** | A roof and enclosure, but freezing temperatures may still occur | **No. HBW does not offer indoor storage.** |
+| **Indoor heated storage** | Heated indoor space with different layup requirements | **No. HBW does not offer heated storage.** |
+| **Pickup, delivery, or mobile storage service** | A provider moves or services the boat off-site | **No. HBW is customer drop-off and pickup only.** |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
-For most GTA boats, **HBW outdoor + shrinkwrap + winterize comes out roughly the same as GTA outdoor** but bundles in the full winterization service that often costs extra at urban marinas. **The price isn't the differentiator, the service is.**
+Ask every provider for a written scope. A low storage number is not comparable to a package that also includes shrinkwrap, engine winterization, or spring commissioning. HBW confirms the current scope and price on the service work order; use [hbw.wiki/service](https://hbw.wiki/service) rather than an old blog figure.
 
 ---
 
-## What "Storage" Actually Includes (Often Different Than You Think)
+## From the Shop
+
+### What "Storage" Actually Includes (Often Different Than You Think)
 
 GTA boaters often discover that "boat storage" at a local marina is just *parking*, not winterization, not service, not anything else. That's a budget problem.
 
-**A complete fall storage package should include:**
-- **Fuel stabilization** (treat the gas so it doesn't degrade over 6 months)
-- **Model-specific internal engine protection**
-- **Model-specific flushing, drainage, and storage position**
-- **Lower unit fluid drain + refill** (replace gear oil; check for water intrusion)
-- **Battery removal** + indoor trickle charge (preserves battery life)
-- **Anode inspection** (replace if 50%+ depleted)
-- **Steering/throttle cable lubrication**
-- **Cooling system inspection** (impeller condition check)
-- **Documentation** (everything recorded for next service)
-- **Outdoor storage** with shrinkwrap or proper cover, depending on the boat and package
+The written scope should answer:
 
-At HBW, all of this is part of the bundle. **At many GTA storage marinas, only "storage" is included**, winterization is $300-$600 extra, often by a different tech, sometimes inadequately done.
+- Is the quoted amount storage only, or does it include shrinkwrap?
+- Is engine winterization included, and is it matched to the exact engine and owner's manual?
+- Is the gearcase lubricant inspected or changed?
+- Is the fuel system treated under the applicable engine procedure?
+- Is the battery left in the boat and disconnected to prevent parasitic drain, or is another documented arrangement approved?
+- Is spring commissioning included?
+- What work, if any, needs separate authorization?
 
-The cost of incomplete winterization can be catastrophic: a cracked engine block from missed cooling drain costs $5,000-$10,000+ to fix. The "$300 extra for winterize" line item isn't optional.
+Do not assume every storage contract includes every item. HBW records the approved scope on the work order. For Mercury engines, the exact owner's manual and service literature control the procedure.
 
 ---
 
-## The Transport Math (Honest Version)
+## The Transport Reality
 
-GTA boaters often skip HBW storage because of transport assumptions. Let me lay out the real numbers.
+HBW does not operate or arrange boat transport. Customers are responsible for getting their own boat to and from Gores Landing.
 
-**Option A. Trailer the boat yourself:**
-- Drive time GTA → Gores Landing: 75-105 minutes (depending on origin)
-- Round trip: 2.5-3.5 hours of driving for fall drop-off
-- Same again in spring for pickup
-- **Total: 5-7 hours of driving per year**
+- Trailer the boat to HBW for the fall drop-off.
+- Leave it on the approved trailer or follow the handling instructions on the work order.
+- Pick it up after the marina reopens and the authorized spring work is complete.
 
-**Option B. Hire commercial boat transport:**
-- Typical cost GTA-to-Rice Lake, Ontario (in the Kawarthas): $300-$600 each way
-- Round trip: $600-$1,200/year
-- No personal driving involved
-
-**Option C. Boat already lives in Kawartha area** (cottages, etc.):
-- Often essentially free; boat is already nearby
-- Common scenario: cottage owners with summer slips at Rice Lake or Kawarthas
-
-**Option D. Rent a slip at HBW for the season + winter store:**
-- Boat lives at our marina May-October
-- Stays put for winter
-- **Single delivery from GTA in spring (one drive). Pickup in fall (one drive).**
-- Many GTA customers do exactly this for the all-in-one logistics
-
-If you're choosing between **GTA outdoor + shrinkwrap ($800)** + drive your boat to a parking lot somewhere ($0) vs. **HBW + shrinkwrap + full winterize ($1,200)** + 2 trips to Rice Lake ($60 in gas), you're looking at roughly equivalent total cost, and HBW includes the winterization that the GTA option doesn't.
-
----
-
-::pull-quote
-quote: Stored the boat at home one winter. Spent the next April finding the battery, the cover, and the registration. Now everything lives at HBW between November and May. **Pick it up in spring, it's ready to launch the same day.**
-attribution: Ken F.
-source: Whitby
-::
+If you cannot arrange your own transport, choose a storage provider whose logistics model fits your situation. HBW does not quote third-party hauling prices or promise referrals.
 
 ## The Real Differences That Justify Driving
 
 Three reasons GTA boat owners specifically choose HBW for winter storage:
 
-### 1. The boat is at a Mercury Premier dealer all winter
+### 1. The boat returns to the same Mercury dealer in spring
 
-Why this matters: any service work that needs doing is already on a Mercury Premier dealer's site. No "I'll bring it in next year." Our shop is closed roughly December 1 to April 1, so the work itself happens once we reopen in early April, but the boat is already here, already diagnosed, and already on the schedule.
-
-A typical pattern: GTA customer drops boat off in October for storage. We winterize. While it is stored, we identify needed work and quote. They approve over the winter by phone or email (when the order book is open and winter promo pricing is live). The work happens as soon as we reopen in early April. Boat ready for spring with all maintenance current.
-
-You can't do this at a parking-lot storage facility.
+HBW completes the authorized fall work before the December closure. From December 1 through April 1, the marina is closed and no inspection, service, repower, installation, or customer access occurs. Customers can discuss and approve spring work remotely during the closure; physical work begins after reopening.
 
 ### 2. The "boat we know" stays with the people who know it
 
 When a GTA customer's boat lives at HBW year-round (slip in summer, storage in winter), our techs know that specific boat. They know the modifications, the prop history, the weak points, the previous service. **A boat that bounces between marinas annually loses that continuity.**
 
-### 3. Spring commissioning is built-in, not an extra trip
+### 3. Spring commissioning is planned before pickup
 
-Spring commissioning (de-winterize, fluids, fuel-up, sea trial, launch) is a separate service most GTA marinas charge for. At HBW, it's bundled into the storage contract. **One trip in fall, one trip in spring**, and the spring trip is to **launch a boat that's already in the slip**, not to deal with logistics.
-
-For owners renting a summer slip at HBW: spring commissioning is essentially free of additional driving. Boat winters at our property → launches into our marina → ready for the season.
+As of July 2026, HBW spring commissioning is included for winter-storage customers; the current price for non-storage customers is $99. Confirm the current scope when booking at [hbw.wiki/service](https://hbw.wiki/service). Physical commissioning begins only after the marina reopens in early April.
 
 ---
 
@@ -156,7 +118,7 @@ For everyone else, particularly GTA boaters who travel to Rice Lake or the Kawar
 
 Walking through the actual timeline for a GTA boater wintering with us:
 
-**Mid-September**. Decide to store with HBW. Book online at [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage) or phone 905-342-2153. Confirm drop-off date.
+**Mid-September**. Decide whether HBW's outdoor-shrinkwrap model fits. Submit the service request at [hbw.wiki/service](https://hbw.wiki/service) and confirm the approved scope, price, and drop-off date.
 
 **October 1-31**. Drive boat to HBW. Drop off, sign service work order, hand keys, drive home. **One trip.**
 
@@ -164,41 +126,25 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **Early November**. Boat shrinkwrapped with proper frame, 2-4 vents installed, strapping for snow load.
 
-**November-March.** The boat sits in our outdoor storage area, properly winterized and protected for Ontario weather. Batteries are removed or maintained according to the storage package, and our staff keeps eyes on the yard through the winter.
+**December 1-April 1.** The marina is closed. No inspection, service, repower, install work, or customer access happens during this period. The documented battery arrangement remains in place; batteries left in the boat are disconnected to prevent parasitic drain.
 
-**Over winter (December-March, shop closed):** Quote and approve any service or repower work by phone or email so it is on the schedule for as soon as we reopen in early April.
+**Over winter:** Discuss and approve any spring work by phone or email so it can be scheduled after reopening.
 
-**Late March-April**. We start de-winterization on schedule. Spring commissioning happens automatically as part of the service contract (no extra phone call required).
+**Early April onward.** Physical spring commissioning and any separately authorized work begin after the marina reopens.
 
 **Mid-late May**. You drive up. Boat is ready, run, sea-trialed, launching at our slip. Pick up keys, take boat. **Second trip of the year.**
 
-**Total trips per year: 2.** Total drive time: 5-7 hours. **All annual storage + winterization + spring commissioning: $1,000-$1,400 all-in for typical 21-ft boat.**
+**Customer transport:** one fall drop-off and one spring pickup. HBW does not provide or arrange either trip.
 
 ---
 
-## Pricing Breakdown. Real Numbers
+## How to Get the Current HBW Price
 
-Current 2026 HBW pricing (CAD before HST):
+HBW does not offer indoor or heated storage. The current outdoor-storage quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized fall work.
 
-**Outdoor + shrinkwrap (up to 21 ft):** $33/ft → ~$700 for a 21-ft boat
-**Outdoor + shrinkwrap (22 ft+):** $35/ft → ~$770 for a 22-ft boat
-**Outdoor with trailer, no shrinkwrap (up to 21 ft):** $36/ft (storage only)
+Use [hbw.wiki/service](https://hbw.wiki/service) for the current written scope and price. Do not budget from an old per-foot rate or a generic Ontario range.
 
-**Winterization service fees:**
-- 40-60 HP 4-stroke: $337.84
-- 75-115 HP 4-stroke: $425.71
-- Larger engines, sterndrives, twin setups: $500-$900+
-
-**Total all-in for typical 21-ft boat with 90-115 HP Mercury:**
-- Storage + shrinkwrap: $700
-- Winterization: $425
-- **Total: $1,125** all-in for the season
-
-**Indoor unheated (limited availability, book early):** $40-$60/ft + winterize → $1,200-$1,650 for 21-ft
-
-**Spring commissioning add-on (auto-included for most contracts):** $300-$500, get the boat water-ready in spring.
-
-**Booking opens September 1.** Best pricing if booked by mid-October. Capacity fills by early November.
+As of July 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers. Confirm that this remains current when booking.
 
 ---
 
@@ -206,35 +152,50 @@ Current 2026 HBW pricing (CAD before HST):
 
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
 
+## Sources and Review Notes
+
+- HBW service intake and current work-order scope: [hbw.wiki/service](https://hbw.wiki/service)
+- HBW operating rule verified July 24, 2026: outdoor shrinkwrap storage only; customer-arranged drop-off and pickup; marina closed December 1 through April 1
+- Spring commissioning price verified July 2026: included for HBW winter-storage customers; $99 for non-storage customers
+- Mercury winterization procedures vary by engine. Follow the exact owner's manual and authorized service literature.
+
+---
+
+**Booking:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
 ## FAQs
 
-### How much does winter boat storage cost in the GTA?
+### How much does winter boat storage cost at HBW?
 
-Outdoor shrinkwrap at urban GTA marinas: $700-$1,200 for 21-ft boat (storage only). Indoor unheated: $1,200-$2,000. Indoor heated: $1,800-$3,500. **Note: most GTA pricing doesn't include winterization**, that's $300-$600 extra. HBW's all-in pricing for outdoor + shrinkwrap + full winterization is $1,000-$1,400 for typical 21-ft boat.
+The current price depends on boat length, trailer and shrinkwrap requirements, engine configuration, and the approved winterization scope. HBW offers outdoor shrinkwrap storage only. Request the current written scope and price at hbw.wiki/service.
 
 ### How do I get my boat from the GTA to HBW for storage?
 
-Most owners trailer it themselves (90 minutes from central Toronto). Alternative: hire commercial boat transport ($300-$600 each way). Cheapest alternative: rent a summer slip at HBW so the boat is already there in the fall.
+Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not provide pickup, delivery, hauling, mobile service, transport referrals, or third-party transport prices.
 
-### What's the difference between outdoor and indoor storage?
+### Does HBW offer indoor or heated winter storage?
 
-Outdoor + professional shrinkwrap is the cost-effective standard, protects from snow, ice, UV, wind. Indoor unheated adds protection from environmental cycling but doesn't eliminate the need for winterization (interior temps drop below freezing). Indoor heated is the premium tier, boat stays above 5°C all winter, no winterization needed, but availability is rare and expensive.
+No. HBW offers outdoor shrinkwrap storage only.
 
-### Do I need to do anything if my boat is shrinkwrapped + winterized?
+### Do I need to do anything if my boat is shrinkwrapped and winterized?
 
-No active maintenance during winter. The boat is documented as winterized; we periodically inspect storage areas. You're free of any boat-related tasks until April-May when we de-winterize.
+Follow the approved work order and keep your contact information current. The marina is closed December 1 through April 1; no physical service or customer access happens during that period.
 
 ### Can I access my boat during winter for any reason?
 
-Yes, we can let you in for inspection, maintenance approvals, gear retrieval, etc. Just call ahead. The shrinkwrap has access doors for re-entry.
+No customer access is available while the marina is closed from December 1 through April 1. Remove anything you will need before the closure.
 
 ### What if I want to upgrade or repair the boat during winter?
 
-Off-season is the ideal time. We have shop bandwidth November-March that we don't have May-August. Most repowers, major service, and upgrades happen during the storage period. If you want this option, the boat is already on-site, just approve the work.
+Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April.
 
 ### When should I book winter storage?
 
-**Mid-September** is best. Pricing is firm. By **early November** capacity fills up; we may not be able to take new bookings. Don't wait until October, you'll lose options.
+Submit the service request before the fall rush and confirm current availability. HBW does not guarantee space or hold an old blog price.
 
 ### What's the difference between HBW shrinkwrap and a tarp?
 
@@ -266,4 +227,3 @@ Your existing boat insurance typically covers winter storage; some policies requ
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
