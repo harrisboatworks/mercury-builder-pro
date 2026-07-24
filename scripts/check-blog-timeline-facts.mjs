@@ -510,6 +510,80 @@ const ARTICLE_CONTRACTS = {
       },
     ],
   },
+  'mercury-repower-cost-ontario-2026-cad': {
+    required: [
+      {
+        rx: /There is no dependable one-price-fits-all installed range for a Mercury repower/i,
+        rule: 'no-generic-installed-range',
+      },
+      {
+        rx: /These are \*\*not installed totals\*\*[\s\S]{0,240}before HST, trade-in, installation, controls, propeller, and rigging/i,
+        rule: 'bare-price-disclaimer',
+      },
+      {
+        rx: /compliance notice for an outboard-powered vessel 6 metres or shorter includes weight and horsepower limits/i,
+        rule: 'capacity-plate-first',
+      },
+      {
+        rx: /HBW does not promise a universal number of days/i,
+        rule: 'no-universal-repower-timeline',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /does not provide boat pickup, hauling, delivery, or mobile repower service/i,
+        rule: 'customer-transport-only',
+      },
+      {
+        rx: /HBW does not buy used motors outright/i,
+        rule: 'trade-in-only',
+      },
+      {
+        rx: /no trade value[\s\S]{0,120}no-charge certified recycling/i,
+        rule: 'no-value-motor-recycling',
+      },
+      {
+        rx: /HBW arranges financing through Canadian marine lenders; it is not a Mercury-branded loan/i,
+        rule: 'financing-provider-scope',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /\$4,500-\$9,000|\$11,000-\$15,000|\$17,000-\$22,000|\$23,000-\$30,000|\$35,000-\$40,000/i,
+        rule: 'no-stale-installed-price-ranges',
+      },
+      {
+        rx: /\$2,000-\$4,500|\$250-\$900/i,
+        rule: 'no-unsupported-rigging-or-prop-range',
+      },
+      {
+        rx: /\b(?:1-2|2 to 5) days\b|install within days|ship immediately/i,
+        rule: 'no-fixed-repower-timeline',
+      },
+      {
+        rx: /Mercury-to-Mercury (?:usually keeps|repowers usually keep)|brand conversions[^.\n]{0,80}need new everything/i,
+        rule: 'no-blanket-rigging-compatibility',
+      },
+      {
+        rx: /Every HBW repower gets[\s\S]{0,120}(?:load-tested|on-water test)|Every repower gets an on-water test|No exceptions/i,
+        rule: 'no-universal-water-test-claim',
+      },
+      {
+        rx: /80% of the new-boat feeling|a third of the money|burns 25-35% less fuel/i,
+        rule: 'no-unsupported-value-or-fuel-claim',
+      },
+      {
+        rx: /old motor is worth money, even seized|trade-in credit, even on non-running motors|instant (?:number|trade-in)/i,
+        rule: 'no-guaranteed-trade-value',
+      },
+      {
+        rx: /No hidden fees/i,
+        rule: 'no-blanket-fee-claim',
+      },
+    ],
+  },
   'boat-storage-kawartha-lakes': {
     required: [
       {
@@ -673,6 +747,19 @@ for (const file of BLOG_FILES) {
     checkPresent(text, localPush);
     checkArticleContract(a.slug, text, localPush);
   }
+}
+
+const categoryCtaFile = 'src/components/blog/CategoryCTA.tsx';
+const categoryCtaSource = readFileSync(categoryCtaFile, 'utf8');
+if (!/HBW confirms the final installed total in a written quote/i.test(categoryCtaSource)) {
+  push(categoryCtaFile, 'shared-repower-cta', 'written-quote-boundary', 'Shared repower CTA must defer the final installed total to a written quote');
+}
+for (const staleClaim of [
+  /Two minutes from now you can have a real number for your boat/i,
+  /Instant trade estimate/i,
+]) {
+  const match = categoryCtaSource.match(staleClaim);
+  if (match) push(categoryCtaFile, 'shared-repower-cta', 'no-instant-price-or-trade-promise', match[0]);
 }
 
 if (errors.length) {

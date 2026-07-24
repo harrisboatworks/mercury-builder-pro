@@ -110,11 +110,11 @@ export function CategoryCTA({ category, className }: CategoryCTAProps) {
     return (
       <CardShell
         heading="Ready to Price Your Repower?"
-        body="Two minutes from now you can have a real number for your boat."
+        body="Start with the exact motor and boat details. HBW confirms the final installed total in a written quote."
         className={className}
       >
-        <Link to="/quote/motor-selection" className={primaryBtn}>Build your quote</Link>
-        <Link to="/trade-in-value" className={secondaryBtn}>Instant trade estimate</Link>
+        <Link to="/quote/motor-selection" className={primaryBtn}>Start your repower quote</Link>
+        <Link to="/trade-in-value" className={secondaryBtn}>Review trade-in options</Link>
         <a href={PHONE_HREF} className={tertiaryLink}>{PHONE_LABEL}</a>
       </CardShell>
     );
