@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026.md
-last_updated: 2026-06-19
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect Eligibility 2026"
 description: "Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect."
 category: "Mercury Technology"
 date_published: 2026-05-27
-date_modified: 2026-06-19
+date_modified: 2026-07-23
 keywords: ["mercury smartcraft connect eligibility","smartcraft connect compatibility","is my mercury smartcraft compatible","mercury connect mobile eligibility","smartcraft connect motor requirements","smartcraft compatible mercury models"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-07-23  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
 
@@ -166,7 +166,7 @@ The Connect module pays for itself first on the maintenance side. We get custome
 
 The second pattern: customers with an older boat that has a current Mercury (so a 2006 hull with a 2021 FourStroke 150, for example) often think Connect won't work because the boat is old. The boat doesn't matter. The motor's year and family matter. If the engine is 2004+ and not a portable / 2-stroke / Optimax, it's eligible.
 
-Third pattern: the trip log feature changes how people use the boat. We've had a few customers swap from "I think I have 40 hours on this motor" to "I have exactly 42.3 hours and my 20-hour service is overdue" within a week of installing the module. That data is gold for resale value down the road too, because it documents real run hours rather than guessing.
+Third pattern: the trip log feature changes how people use the boat. Instead of guessing that a motor has roughly 40 hours, owners can see the actual total and compare it with both the hour and calendar columns in the model-specific maintenance schedule. That data is useful for service planning and resale because it documents real run hours.
 
 Fourth pattern, and this one surprised us at the shop. Customers who add Connect end up running their motors better. Knowing the actual fuel flow at cruise, the actual operating temp, the actual RPM at full trim, gives them feedback they didn't have before. We see Rice Lake customers tune their trim and prop pitch with the data, and most of them pick up 2 to 4 MPH at cruise without changing anything mechanical. Just better information.
 

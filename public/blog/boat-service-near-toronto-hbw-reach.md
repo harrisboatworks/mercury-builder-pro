@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-06-26
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Service Near Toronto HBW Reach"
 description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't."
 category: "Service"
 date_published: 2026-05-15
-date_modified: 2026-06-26
+date_modified: 2026-07-23
 keywords: ["boat service near Toronto","Mercury service Oakville","outboard repair Burlington","boat mechanic Hamilton","Mercury service GTA","certified marine mechanic Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-05-15  
-**Last updated:** 2026-06-26  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 
@@ -81,11 +81,11 @@ If your motor is a brand we don't service, we'll refer you. That's the right ans
 
 ## The Specific Services GTA Customers Bring Us
 
-**Annual maintenance**, 100-hour service or annual service whichever first. Engine oil, gearcase oil, plugs, anodes, fuel filter, anodes, full diagnostic scan. Ranges $400-$700 for mid-range motors; $700-$1,200 for V6 V8 (see our [Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule)).
+**Annual maintenance**, 100-hour service or annual service whichever first. Engine oil, gearcase oil, plugs, anodes, fuel filter, anodes, full diagnostic scan. Ranges $400-$700 for mid-range motors; $700-$1,200 for V6 V8 (see our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule)).
 
 **300-hour major service**, every 3 years. Includes 100-hour items + water pump impeller, fuel system clean, lower unit pressure test. $800-$2,500 depending on motor.
 
-**Winterization + storage**, fall service. Fuel stabilization, fogging, drain, freeze protection. Combined with shrinkwrap + outdoor storage on our property: $1,000-$1,400 all-in for typical 21-foot boat. See [Winter Storage Decision Guide](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario).
+**Winterization + storage**, fall service. Model-specific fuel preparation, internal protection, drainage, gearcase and battery work, combined with shrinkwrap and outdoor storage on our property. See the [Winter Storage Decision Guide](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario) and request the current quote at hbw.wiki/service.
 
 **Spring commissioning**, pre-launch service. Inspect, check, fluids, prep. Typical $300-$500.
 

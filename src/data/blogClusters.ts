@@ -368,7 +368,7 @@ export const blogClusterContexts: Record<string, string> = {
   "2026-rice-lake-fishing-season-outlook": "2026 Rice Lake season outlook",
   "trailer-boat-toronto-to-rice-lake-guide": "trailering from Toronto to Rice Lake",
   // Cluster 6 — Maintenance, Service & Seasonal
-  "mercury-maintenance-intervals-20-100-300-rule": "the 20/100/300 maintenance rule",
+  "mercury-maintenance-intervals-20-100-300-rule": "the model-specific Mercury service schedule",
   "mercury-motor-maintenance-seasonal-tips": "seasonal maintenance tips",
   "diy-mercury-outboard-winterization-guide": "DIY winterization steps",
   "boat-winterization-cost-ontario-2026": "boat winterization cost in Ontario",

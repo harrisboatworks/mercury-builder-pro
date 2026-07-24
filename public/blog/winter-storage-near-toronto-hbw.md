@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-06-26
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Boat Storage Near Toronto HBW"
 description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake: pricing, what's included, the transport math, and where serious owners land."
 category: "Winterization"
 date_published: 2026-05-17
-date_modified: 2026-06-26
+date_modified: 2026-07-23
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Winterization  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-26  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 
@@ -62,8 +62,8 @@ GTA boaters often discover that "boat storage" at a local marina is just *parkin
 
 **A complete fall storage package should include:**
 - **Fuel stabilization** (treat the gas so it doesn't degrade over 6 months)
-- **Engine fogging** (prevents cylinder corrosion)
-- **Cooling system drain** (prevents freeze damage to powerhead)
+- **Model-specific internal engine protection**
+- **Model-specific flushing, drainage, and storage position**
 - **Lower unit fluid drain + refill** (replace gear oil; check for water intrusion)
 - **Battery removal** + indoor trickle charge (preserves battery life)
 - **Anode inspection** (replace if 50%+ depleted)
@@ -160,7 +160,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **October 1-31**. Drive boat to HBW. Drop off, sign service work order, hand keys, drive home. **One trip.**
 
-**Early November**. We winterize. Engine fogged, fuels stabilized, lower unit serviced, battery removed and on tender. Documentation in your file.
+**Early November**. We complete the exact engine's fuel, internal-protection, gearcase, battery, drainage, and storage-position steps. Documentation stays in your file.
 
 **Early November**. Boat shrinkwrapped with proper frame, 2-4 vents installed, strapping for snow load.
 
@@ -246,7 +246,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario

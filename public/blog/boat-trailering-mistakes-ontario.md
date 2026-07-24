@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Trailering Mistakes to Avoid, Ontario"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug."
 category: "Boating Lifestyle"
 date_published: 2026-02-28
-date_modified: 2026-06-09
+date_modified: 2026-07-23
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-28  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-23  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 
@@ -202,7 +202,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 ## More from the Blog
 
-If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fogging, lower unit oil, impeller checks, and battery prep.
+If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fuel, gearcase, cooling-system, and battery checks.
 
 For walleye opener timing and what to have ready before May, [the walleye opener boat prep guide](https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep) is worth a read.
 
@@ -251,7 +251,7 @@ Back in slowly until the bunks are just below the surface and the boat floats. T
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario

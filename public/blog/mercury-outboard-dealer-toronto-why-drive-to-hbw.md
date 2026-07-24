@@ -198,7 +198,7 @@ Three things: Mercury Premier dealer tier (factory-trained techs, full diagnosti
 
 ### Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?
 
-Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Premier dealers.
+Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. Returning to the original dealer can still help because that shop knows the installation, service history, and parts used. Premier status does not change the warranty terms or guarantee faster approval.
 
 ### Do you offer pickup or delivery for GTA buyers?
 

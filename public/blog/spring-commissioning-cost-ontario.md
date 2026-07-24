@@ -68,7 +68,7 @@ The full owner's checklist version, if you want to run it yourself before first 
 | Winterized only (no service) | Startup + the annual service now, in the busy season | Startup plus the service you deferred |
 | Nothing done in fall | Startup + service + whatever winter did | The expensive column: fuel-system cleanups, corrosion, seized hardware |
 
-That third column is where spring horror stories come from: fuel that sat unstabilized for five months, cylinders that were never fogged, water that froze where it shouldn't have been. None of it is a spring problem; all of it is a fall decision, compounding.
+That third column is where spring horror stories come from: fuel that sat unstabilized for five months, model-specific internal-protection steps that were skipped, and water that froze where it should not have been. None of it is a spring problem; all of it is a fall decision, compounding.
 
 One more spring reality: May is our busiest month. Boats that need real work in spring wait in the same line as everyone else's launch prep. Fall-serviced boats skip that line, because their spring visit is quick.
 
@@ -136,7 +136,7 @@ Before the rush. Our marina reopens April 6 and May is the busiest month on the 
 
 ### Why is my neighbour's spring bill huge and mine isn't?
 
-Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, unfogged cylinders, connected batteries. The winterization cost guide shows what the fall side costs; it's the cheaper side.
+Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The winterization cost guide shows what the fall side costs; it's the cheaper side.
 
 ## Next steps
 

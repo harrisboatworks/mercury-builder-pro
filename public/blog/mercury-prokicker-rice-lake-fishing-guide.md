@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-23
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury ProKicker for Rice Lake Walleye"
 description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
-date_modified: 2026-05-23
+date_modified: 2026-07-23
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +24,11 @@ language: en-CA
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
-**Last updated:** 2026-05-23  
+**Last updated:** 2026-07-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
-> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local pickup details.
+> **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local details.
 
 For how the ProKicker fits alongside the rest of the 9.9 family, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
@@ -170,7 +170,7 @@ Lock-to-lock travel moves at displacement speed, so your main motor is fine for 
 The Mercury 9.9 EFI ProKicker is easy to live with. The EFI powerhead has no oil filter to change, and the camshaft is maintenance-free with no valve-lash adjustments for the life of the engine. That leaves a short, predictable service list:
 
 - **Annual service:** engine oil change, gear lube, fuel filter, spark plug inspection, and a general going-over. Once a year or roughly every 100 hours, whichever comes first.
-- **Water pump and impeller:** Mercury's schedule puts water pump service in the 300-hour range. On Rice Lake's weedy, silty water we often recommend it sooner, every 2 to 3 seasons. The impeller is the single most important item on any water-cooled outboard. Do not stretch it.
+- **Water pump and impeller:** Follow the exact ProKicker manual. Expanded water-pump service is commonly around 300 hours or three years, while Rice Lake weeds, silt, reduced water pressure, or an overheat warning can justify earlier inspection.
 - **EFI throttle body:** inspect and clean every few seasons if you run ethanol-blended fuel regularly.
 
 HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.

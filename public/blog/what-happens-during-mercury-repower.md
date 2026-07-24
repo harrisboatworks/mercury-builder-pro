@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-06-12
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-06-12
+date_modified: 2026-07-23
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
@@ -162,7 +162,7 @@ Customer picks up the boat. We walk through:
 - The new motor's controls and features
 - Mercury SmartCraft display interpretation (if applicable)
 - The 10-hour break-in protocol
-- The 20-hour first oil change (we book this in advance)
+- The model-specific break-in and first scheduled service plan
 - Mercury warranty terms
 - Annual maintenance schedule
 - Final invoice and any remaining payment
@@ -238,7 +238,7 @@ Right away, with the 10-hour break-in protocol. The first hour at no-wake speed 
 
 ### When's my first service after the repower?
 
-20-hour oil and filter change. We book this at delivery so it's not forgotten. After that, normal Mercury service intervals (annual at minimum, more frequent for heavy use).
+Follow the model-specific break-in procedure and maintenance table. For most current FourStrokes, Mercury's first scheduled service is 100 hours or annually. HBW may recommend an optional early check, but it is not a universal 20-hour oil-change or warranty requirement.
 
 ### Can I trade in my old motor during the repower?
 

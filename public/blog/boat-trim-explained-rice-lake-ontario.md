@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trim-explained-rice-lake-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Trim Explained Rice Lake"
 description: "How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer."
 category: "How-To"
 date_published: 2026-05-17
-date_modified: 2026-06-09
+date_modified: 2026-07-23
 keywords: ["boat trim explained rice lake ontario","boat trim explained rice lake ontario ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** How-To  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-23  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trim-explained-rice-lake-ontario
 

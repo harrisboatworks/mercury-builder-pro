@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting.md
-last_updated: 2026-05-11
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Won't Start After Sitting: Fixes"
 description: "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-23
 keywords: ["mercury outboard wont start after sitting","mercury outboard stale fuel","mercury outboard spring no start","outboard wont start after winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-07-23  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
 
@@ -152,7 +152,7 @@ Take a photo of any message displayed. Include this when booking service, it sav
 If the motor wasn't properly winterized last fall, some of the causes above are more likely and some additional ones are possible:
 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
-- **No fogging oil** means cylinder walls may have surface corrosion
+- **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
 - **Battery not tendered or removed**, compromised battery from winter discharge
 

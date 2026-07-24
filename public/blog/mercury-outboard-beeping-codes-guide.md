@@ -197,7 +197,7 @@ The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/merc
 
 Two related guides in the same cluster:
 - [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
-- [The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ---
 

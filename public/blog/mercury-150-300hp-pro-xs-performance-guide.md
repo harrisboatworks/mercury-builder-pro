@@ -144,7 +144,7 @@ Fuel burn and range cannot be predicted responsibly from horsepower alone. Hull,
 
 For current bare-motor pricing, see the [Mercury pricing reference](/pricing-reference).
 
-For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+For service intervals and major service costs on these motors, see [our Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ## Try the calculator
 

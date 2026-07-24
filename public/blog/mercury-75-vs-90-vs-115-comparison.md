@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last updated:** 2026-07-23
+**Last updated:** 2026-07-23  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
@@ -307,3 +307,4 @@ For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 g
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -94,9 +94,9 @@ If the battery is more than 4–5 years old, replace it regardless of how it tes
 
 ### Step 4, Cooling System
 
-- **Inspect the water-pump impeller.** Mercury recommends replacement every 200 hours or 3 years. If you're at or past that interval, replace it now. A failed impeller means an overheated motor within minutes.
+- **Check the water-pump schedule and cooling symptoms.** Many Mercury manuals place water-pump service at an expanded interval around 300 hours or three years, while other models or conditions differ. A weak telltale, reduced water pressure, or overheat warning needs diagnosis now.
 - **Check telltale stream.** This is the small stream of water from the side of the lower unit. You should see it within 10 seconds of startup on muffs. No stream = stop the motor immediately.
-- **Inspect anodes.** Replace if 30% or more depleted. Anodes protect your underwater metal. Depleted anodes stop working.
+- **Inspect anodes.** Replace them according to the exact manual, commonly when about half consumed, and use the correct material for the water.
 
 ---
 
@@ -260,7 +260,7 @@ Book in February or March. By mid-April, most service departments near Rice Lake
 
 ### Should I replace the water pump impeller every spring?
 
-You don't need to replace the impeller every spring, but it should be inspected regularly and replaced on Mercury's interval of every 200 hours or 3 years, whichever comes first. The impeller is a rubber pump inside the lower unit that circulates cooling water, it degrades even when not in use. A failed impeller means no cooling water and an overheated motor. If your motor sat unused for more than a season, or you're unsure when it was last changed, replace it this spring.
+You do not need to replace the impeller every spring. Follow the exact manual for the engine; many Mercury schedules place water-pump service at an expanded interval around 300 hours or three years, while model and operating conditions can change it. A weak telltale, reduced water pressure, or overheat warning needs diagnosis sooner.
 
 ### Can I do spring commissioning myself, or do I need a dealer?
 
@@ -272,7 +272,7 @@ Yes. Ethanol-blended fuel (E10) can cause issues if it wasn't treated before sto
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto

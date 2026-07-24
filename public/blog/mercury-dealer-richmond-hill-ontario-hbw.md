@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-07-17
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Richmond Hill HBW"
 description: "Mercury dealer near Richmond Hill: Harris Boat Works on Rice Lake, 75 minutes north. Repower, sales, parts, winter storage for Richmond Hill, Aurora."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-07-17
+date_modified: 2026-07-23
 keywords: ["mercury dealer richmond hill","mercury repower richmond hill","mercury outboard richmond hill ontario","boat motor dealer aurora newmarket","harris boat works richmond hill customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-17  
+**Last updated:** 2026-07-23  
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw
 
@@ -56,7 +56,7 @@ If you use that and then buy from a closer dealer, fine. You'll buy with your ey
 
 Richmond Hill has Mercury dealers. Not all of them are Premier. [Mercury's Premier tier is the top level of their dealer program](/blog/best-mercury-dealer-ontario-hbw-difference), it reflects parts depth, technical training, and warranty authorization. Lower-tier dealers can sell Mercury motors. They can't always support the harder jobs as quickly.
 
-On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, warranty claim on a new motor, it starts to matter. A Premier dealer has faster resolution paths and more technical depth when the job gets complicated.
+On a straightforward motor purchase, tier may not matter much. On a complex repower, unusual hull, twin-engine setup, non-standard rigging, or warranty diagnosis on a new motor, technical depth starts to matter. Premier status does not change the warranty terms or guarantee priority approval; HBW's practical advantage is Mercury-specific training, tooling, parts depth, and familiarity with complex installations.
 
 ## Third-Generation Means Something Different
 

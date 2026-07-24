@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-06-10
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-06-10
+date_modified: 2026-07-23
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-06-10  
+**Last updated:** 2026-07-23  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
@@ -32,15 +32,15 @@ language: en-CA
 
 ## Quick answer
 
-A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and predictable maintenance for the first decade. A well-kept used Mercury saves you 40-50% on the purchase price but starts the warranty clock at zero, often needs $500-1,500 in catch-up service in year one, and puts the rebuild decision back on your timeline rather than the manufacturer's. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
+A new Mercury outboard costs more upfront but comes with a 3-year factory limited warranty (current promotions can extend total coverage; see [current offers](/promotions)), current technology, and a known maintenance baseline. A well-kept used Mercury can save substantially on the purchase price, but its remaining coverage and catch-up service depend on the serial record, service history, inspection, and proper warranty transfer where eligible. The right answer depends on how many seasons you intend to keep the boat and whether you have the cash to absorb a surprise. At Harris Boat Works we sell both. Here is how we actually help customers decide.
 
 ## What "new" actually buys you
 
 The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty. Current promotions can extend total coverage; see [current offers](/promotions). Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
 
 The less obvious benefit is **known maintenance horizon**. With a new motor you know:
-- First 20-hour service is on the dealer's calendar
-- 100-hour service intervals are predictable for the first 5-7 years
+- The model-specific break-in and first scheduled service are documented
+- For most current FourStrokes, the 100-hour or annual interval is predictable
 - Impeller, plugs, and gearcase service have a documented baseline
 - If something fails inside the warranty period, it is the manufacturer's problem
 
@@ -72,9 +72,9 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 |---|---|---|
 | Motor purchase | $11,500 | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
-| Year-one service (catch-up) | $250 (20-hour) | $800-1,200 (impeller, plugs, gear lube, full diagnostic) |
-| Warranty | 3 years factory (see /promotions for current offers) | None |
-| Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500 (no warranty cushion) |
+| Year-one service | 100-hour or annual service, scoped by model | Catch-up service based on records and inspection |
+| Warranty | 3 years factory (see /promotions for current offers) | Verify any unexpired transferable coverage by serial number |
+| Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
 | **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
@@ -141,11 +141,11 @@ A Mercury from 2020-2021 with under 300 hours and documented service is function
 
 ### How many hours is "too many" on a used Mercury?
 
-For a four-stroke kept in fresh water with documented service, 800-1,200 hours is mid-life. Past 1,500 hours we start asking harder questions about the powerhead, the gearcase, and how the boat was stored. Two-strokes (rare on the dock now) have shorter useful lives.
+There is no reliable hour number by itself. Judge the exact engine family, service records, fault history, compression or leak-down results, gearcase condition, corrosion, storage history, and a proper test run together. A well-documented higher-hour motor can be a better purchase than a neglected low-hour motor.
 
 ### Can a Mercury dealer transfer factory warranty to a second owner?
 
-Standard Mercury limited warranty is non-transferable. Mercury Product Protection (the extended program) IS transferable for a small fee through an authorized dealer if the program is still in force. If you are buying a used Mercury with under 5 years on the original purchase date, ask whether MPP was enrolled and whether the transfer paperwork is available.
+Unexpired recreational-use Mercury limited-warranty coverage can transfer to a subsequent owner when the product is properly re-registered. Commercial-use coverage is not transferable. Mercury Product Protection has its own transfer timing, eligibility, documentation, inspection, and fee rules, so have an authorized dealer verify the serial record before purchase.
 
 ### What is the financing difference between new and used?
 

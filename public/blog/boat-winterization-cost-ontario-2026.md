@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-05-04
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Winterization Cost Ontario 2026"
 description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-05-04
+date_modified: 2026-07-23
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,14 +24,14 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-07-23  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 
 # How Much Does Boat Winterization Cost in Ontario? (2026)
 
 ## Quick answer
-Boat winterization in Ontario is not a flat number, it depends on motor size, what services you bundle, and whether you are adding shrinkwrap and storage. Motor winterization is the most critical piece. Skipping it risks a cracked block, which costs several thousand dollars to repair or replace. Book before October to get the easier slots. Request service at [hbw.wiki/service](https://hbw.wiki/service).
+Boat winterization in Ontario is not a flat number. It depends on the engine, items due, onboard systems, and whether shrinkwrap and outdoor storage are included. Skipping the correct storage procedure can leave fuel, gearcase, battery, corrosion, or drainage problems for spring. Request the current scope at [hbw.wiki/service](https://hbw.wiki/service) before HBW closes on December 1.
 
 ## Winterization price summary (CAD)
 
@@ -57,7 +57,7 @@ item1Value: $30 - $50
 item1Note: Marine-grade stabilizer mixed into a near-full tank to prevent phase separation over winter
 item2Label: Fogging oil through cylinders
 item2Value: $50 - $80
-item2Note: Mercury recommends fogging the intake while running, then a shot into each cylinder. Prevents cylinder wall corrosion.
+item2Note: Follow the exact engine's internal-protection procedure. Do not assume every FourStroke should be fogged through the intake.
 item2Accent: true
 item3Label: Lower unit oil change + inspection
 item3Value: $50 - $90
@@ -93,7 +93,7 @@ We quote winterization based on what is in front of us.
 
 **Bundled services.** Motor-only winterization is the base. Add shrinkwrap, storage, trailer service, battery storage, and spring commissioning booking, the number grows.
 
-**What is included in the winterization scope.** Basic winterization covers the freeze-protection essentials: fuel stabilizer, fogging, cooling system drain, gearcase drain and refill. A full service adds wear-item replacements, impeller, anodes, plugs if due, plus a full written inspection.
+**What is included in the winterization scope.** The base scope is model-specific: fuel preparation, internal engine protection, drainage and storage position, battery plan, gearcase inspection or service, and lubrication as the manual requires. Wear items are added only when the engine schedule or inspection calls for them.
 
 **Motor condition and age.** A clean, regularly serviced motor takes the expected time. A neglected motor takes more, and we will tell you what additional service is needed before we start.
 
@@ -103,23 +103,23 @@ For an exact quote on your specific setup, request service at [hbw.wiki/service]
 
 ## What winterization actually includes at HBW
 
-Every motor we winterize at HBW gets the same procedure. Time and parts vary by engine size; the checklist does not:
+Every motor we winterize at HBW goes through the same verification framework, but the exact products, access points, engine state, and sequence come from the manual for that serial number:
 
-**Engine flush.** 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris from the cooling system.
+**Cooling-system preparation.** We use the approved flush connection or running-water method specified for the engine. An outboard is never run or dry-cranked without cooling water.
 
-**Fuel stabilizer.** Mercury Quickstor added to the fuel, engine run to circulate it through the entire fuel system including injectors or carbs.
+**Fuel preparation.** We use the stabilizer and circulation procedure specified for the engine and fuel system.
 
-**Fogging.** Cylinders fogged with Mercury Storage Seal until the engine smokes and stalls. Partial fogging means partial protection.
+**Internal engine protection.** The method varies by Mercury family and model year. HBW follows the exact storage procedure instead of applying one intake-fogging method to every FourStroke.
 
-**Spark plugs.** Removed, cylinders fogged individually, reinstalled or replaced if they are due.
+**Spark plugs.** Inspected or replaced when the model's maintenance table calls for it. Cylinders receive fogging oil only when the exact storage procedure requires it.
 
-**Oil change.** Full crankcase oil and filter, drained while warm so the used oil evacuates completely.
+**Oil change.** Crankcase oil and filter are changed when due under the model's annual or hour-based maintenance table.
 
 **Gearcase service.** Lower unit drained, inspected for water intrusion (milky oil means a seal failure we want to know about before it freezes), refilled with Mercury High Performance gear oil.
 
-**Cooling system drain.** All water removed from the block, water passages, and tell-tale. This is the step that prevents freeze damage. Miss it, and Ontario temperatures will find it.
+**Cooling-water drainage and storage position.** Follow the flushing and drainage method for the exact engine, then store it in the position Mercury specifies. Do not assume every model uses a manual block-drain step.
 
-**Battery service.** Charged, terminals cleaned, removed from the boat, and stored on a smart charger in a building that stays above freezing.
+**Battery service.** The battery is disconnected and checked. It may remain installed or be removed and maintained, depending on the boat, battery type, storage setup, and owner's plan.
 
 **Full written inspection.** Any service work identified during winterization is documented and communicated before spring.
 
@@ -131,16 +131,16 @@ Optional add-ons available separately or as a package:
 
 ## Mercury outboard specifics
 
-If you have a Mercury outboard, some winterization steps are specific to that brand. Mercury engines need the right fogging oil, a gearcase oil change, and a careful flush to prevent corrosion over winter. Here is exactly what a Mercury outboard needs before freeze-up.
+If you have a Mercury outboard, the winterization steps are specific to the engine family and serial number. Here is the framework HBW uses before freeze-up; the exact manual supplies the procedure.
 
-- **Engine flush.** 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris from the cooling passages before the motor sits all winter.
-- **Fogging with Mercury Storage Seal.** Cylinders fogged until the engine smokes and stalls. Partial fogging means partial protection.
+- **Cooling-system preparation.** Use the approved flush connection or running-water method in the exact manual, and keep cooling water supplied whenever the engine runs.
+- **Model-specific internal protection.** Use the product, access point, engine state, and sequence listed for the exact engine.
 - **Gearcase (lower unit) oil change.** Old oil out, gearcase inspected for water intrusion (milky oil flags a seal failure), refilled with Mercury High Performance gear oil.
 - **Fuel stabilizer.** Mercury Quickstor added to the fuel and run through the entire fuel system, including injectors or carbs.
 - **Lower unit oil inspection.** Magnetic drain plug checked for metal shavings, seals looked over before spring launch.
 - **Water pump inspection.** Impeller condition checked; a tired impeller is a summer overheat waiting to happen.
-- **Spark plug check or replacement.** Plugs pulled, cylinders fogged individually, plugs reinstalled or replaced if they are at interval.
-- **Battery removal.** Battery pulled from the boat, terminals cleaned, stored on a smart charger in a space that stays above freezing.
+- **Spark plug check or replacement.** Inspect or replace plugs when the model's maintenance table calls for it; use fogging oil only when the exact storage procedure requires it.
+- **Battery plan.** Disconnect and check the battery. It may remain in the boat or be removed and maintained, depending on the battery type and storage setup.
 
 Winterization is fall service only. Book your appointment before our December 1 closure (the marina is closed December 1 to April 1) to make sure your Mercury outboard is prepped before freeze-up.
 
@@ -174,7 +174,7 @@ Winterization is one of the service jobs a confident, experienced boater can han
 - You have done it before and know the process
 - The motor is smaller (under 60 HP) and accessible
 - You have a clean indoor space
-- You have the right supplies (gear lube pump, fogging oil, fuel stabilizer, fresh oil and filter)
+- You have the exact manual and the model-specific supplies it calls for
 - You are willing to own the outcome if you miss a step
 
 **Bring it to us when:**
@@ -188,7 +188,7 @@ Winterization is one of the service jobs a confident, experienced boater can han
 
 1. Customer drained the gearcase but forgot to refill it. Motor runs without lower-unit lube. Gears destroy themselves in 30 minutes. Lower unit replacement: $1,500 to $4,500 CAD depending on the motor.
 
-2. Customer missed the cooling system drain. Water freezes in the powerhead. Block cracks. Motor is scrap. We see this every single spring on boats where someone partially DIY'd the winterization.
+2. Customer used a generic procedure for the wrong engine or stored it in the wrong position. Fuel, gearcase, battery, corrosion, or drainage problems appear at spring commissioning.
 
 Both are avoidable.
 
@@ -211,7 +211,7 @@ Spring commissioning is the inverse of winterization, and booking it in fall is 
 
 In August through November 2025, Harris Boat Works completed 584 winterizations across Rice Lake and the Kawarthas. That volume matters because it means the procedure is routine for our team, the appointment scheduling is dialed in, and we have seen the full range of what Ontario winters do to motors that were not properly prepped.
 
-We would rather see your service request in September than in May about a cracked block.
+We would rather see your service request in September than a preventable storage-related repair request in May.
 
 ## Book winterization
 
@@ -231,11 +231,11 @@ It depends on motor size, scope of service, and whether you bundle shrinkwrap, s
 
 ### What does a proper Mercury winterization include?
 
-At HBW: engine flush, fuel stabilizer, fogging, spark plug service, oil and filter change, gearcase drain and refill, cooling system drain, battery service, and a written inspection report.
+At HBW, the scope follows the exact engine manual: fuel preparation, internal protection, drainage and storage position, battery plan, gearcase inspection or service, lubrication, and any maintenance items due for that model. Not every FourStroke receives the same fogging or parts list.
 
 ### Can I winterize my own Mercury outboard?
 
-Yes, if you have experience, the right tools, and a clean space. The two most common DIY mistakes (skipping the gearcase refill and missing the cooling system drain) each lead to expensive repairs.
+Yes, if the required tasks are within your ability and you follow the exact serial-number manual. Common mistakes include using a generic procedure, running without cooling water, missing water or metal in the gearcase lubricant, and storing the motor in the wrong position.
 
 ### What happens if I do not winterize my boat?
 
@@ -263,7 +263,7 @@ Usually yes. It is typically more cost-effective than booking separately, and it
 
 ## Related guides
 
-- [Mercury Maintenance: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule), the 20/100/300 maintenance rule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
