@@ -5,7 +5,7 @@ export interface FaultCodeRow {
   codeLabel: string;
   codes: string[];
   meaning: string;
-  reference: string;
+  guidance: string;
   groupedCodeLabel?: string;
 }
 
@@ -74,7 +74,7 @@ export function parseFaultCodeRows(content: string): FaultCodeRow[] {
       codeLabel,
       codes,
       meaning: cells[1],
-      reference: cells[2],
+      guidance: cells[2],
     });
   }
 
@@ -165,7 +165,7 @@ export function filterFaultCodeRows(rows: FaultCodeRow[], query: string): FaultC
 
   const words = term.split(' ').filter(Boolean);
   return rows.filter((row) => {
-    const searchable = normalize(`${row.codeLabel} ${row.meaning} ${row.reference}`);
+    const searchable = normalize(`${row.codeLabel} ${row.meaning} ${row.guidance}`);
     return words.every((word) => searchable.includes(word));
   });
 }
