@@ -354,6 +354,76 @@ const ARTICLE_CONTRACTS = {
       },
     ],
   },
+  'boat-storage-kawartha-lakes': {
+    required: [
+      {
+        rx: /provides outdoor winter storage with shrinkwrap/i,
+        rule: 'storage-outdoor-only',
+      },
+      {
+        rx: /do not (?:provide|offer) indoor, heated, climate-controlled, summer, or year-round storage/i,
+        rule: 'no-indoor-summer-or-year-round-storage',
+      },
+      {
+        rx: /closed December 1 through April 1/i,
+        rule: 'winter-closure',
+      },
+      {
+        rx: /does not pick up, deliver, haul, provide mobile service, arrange transport, recommend transport providers, or quote transport prices/i,
+        rule: 'customer-transport-only',
+      },
+      {
+        rx: /included for HBW winter-storage customers[\s\S]{0,120}\$99 for non-storage customers/i,
+        rule: 'commissioning-price-canon',
+      },
+      {
+        rx: /may remain in place when it is healthy, disconnected[\s\S]{0,160}removal is not a universal requirement/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /engine repairs are limited to Mercury and MerCruiser/i,
+        rule: 'mercury-service-only',
+      },
+    ],
+    forbidden: [
+      {
+        rx: /fenced, monitored, staffed daily|staffed daily through the off-season|Secure storage area/i,
+        rule: 'no-winter-staffing-or-security-promise',
+      },
+      {
+        rx: /Visual checks through winter after storms/i,
+        rule: 'no-winter-yard-inspections',
+      },
+      {
+        rx: /several hundred dollars|roughly a thousand dollars|low-to-mid hundreds/i,
+        rule: 'no-unsupported-storage-pricing',
+      },
+      {
+        rx: /About half our storage customers/i,
+        rule: 'no-unsupported-customer-volume',
+      },
+      {
+        rx: /bundling saves you money/i,
+        rule: 'no-unsupported-bundle-discount',
+      },
+      {
+        rx: /same morning|Saturday morning and be on the water by noon|first nice day in April/i,
+        rule: 'no-spring-turnaround-promise',
+      },
+      {
+        rx: /Battery pulled and trickle-charged|Battery removal or trickle-charge setup/i,
+        rule: 'battery-disconnect-not-removal',
+      },
+      {
+        rx: /we can still winterize it, store it, and commission it in spring|recommend a qualified mechanic/i,
+        rule: 'mercury-service-only',
+      },
+      {
+        rx: /Pigeon Lake \| about 45 min|Sturgeon Lake \| 20–25 min|Buckhorn Lake \| 30–35 min|Stoney Lake \| 25–30 min/i,
+        rule: 'no-unverified-drive-times',
+      },
+    ],
+  },
   'mercury-outboard-dealer-toronto-why-drive-to-hbw': {
     required: GTA_DRIVE_IN_REQUIRED,
     forbidden: [
