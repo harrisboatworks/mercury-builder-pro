@@ -107,23 +107,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
 
-## Common questions about HBW
-
-### "Are you the most competitive on Mercury pricing?"
-Mercury sets MSRP. Dealer pricing is competitive across the network. Our pricing is in line with other Mercury dealers. We compete on service quality, expertise, and long-term relationships.
-
-### "Can I get a better deal at a multi-brand dealer?"
-Sometimes nominally on motor price, but the long-term math usually favors HBW. Our parts inventory, service speed, and Premier-level support often save more than a small upfront price difference.
-
-### "Do you handle non-Mercury motors?"
-Some non-Mercury service we handle. But our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer.
-
-### "What if I bought my boat elsewhere?"
-We service Mercurys regardless of where they were purchased.
-
-### "How long has HBW been in business?"
-Founded 1947. Mercury dealership since 1965. Three generations of family ownership. Continuous operation in Gores Landing on Rice Lake.
-
 ## What HBW does not do
 - Saltwater servicing
 - Sailboat-specific outfitting
@@ -172,6 +155,14 @@ Some non-Mercury service we handle, but our engine repair depth is Mercury and M
 ### What if I bought my boat or motor somewhere else?
 
 We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.
+
+### Are Harris Boat Works prices competitive with other Mercury dealers?
+
+Yes. Mercury sets MSRP and our motor pricing is competitive across the dealer network. We compete on transparent pricing, Mercury expertise, service quality, water-tested installations, and long-term support.
+
+### Can a multi-brand dealer offer a better Mercury price?
+
+Sometimes another dealer may quote a slightly different motor price. Compare the complete written quote, including rigging, controls, gauges, propeller allowance, installation, water testing, warranty support, and what happens after the sale.
 
 ### Who runs Harris Boat Works now?
 

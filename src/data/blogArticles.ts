@@ -4868,7 +4868,7 @@ We're a third-generation family shop, on this dock since 1947 and a Mercury deal
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
->: Jay Harris, Harris Boat Works
+> *Jay Harris, Harris Boat Works*
 
 ## Who this is for
 
@@ -5966,6 +5966,8 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
       { question: 'What if I bought my boat or motor somewhere else?', answer: 'We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and found us for service, and Mercury warranty applies regardless of the original dealer.' },
+      { question: 'Are Harris Boat Works prices competitive with other Mercury dealers?', answer: 'Yes. Mercury sets MSRP and our motor pricing is competitive across the dealer network. We compete on transparent pricing, Mercury expertise, service quality, water-tested installations, and long-term support.' },
+      { question: 'Can a multi-brand dealer offer a better Mercury price?', answer: 'Sometimes another dealer may quote a slightly different motor price. Compare the complete written quote, including rigging, controls, gauges, propeller allowance, installation, water testing, warranty support, and what happens after the sale.' },
       { question: 'Who runs Harris Boat Works now?', answer: 'Jay Harris, the third-generation owner. The Harris family has operated the marina continuously since 1947.' },
       { question: 'How do I get in touch with Harris Boat Works?', answer: 'Phone (905) 342-2153, text (647) 952-2153, or email info@harrisboatworks.ca. You can also use our online Mercury quote builder.' },
     ]
@@ -18160,7 +18162,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     relatedSlugs: ['rice-lake-boating-guide-2026', 'rice-lake-boat-launch-guide', '2026-rice-lake-fishing-season-outlook'],
     title: 'Trent-Severn Waterway 2026 Guide',
     seoTitle: "Trent-Severn Waterway 2026: Lockage, Hours, Trip Plan",
-    description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.",
+    description: "Plan a 2026 Trent-Severn trip with lockage dates, operating hours, locking-through tips, and practical advice from Harris Boat Works on Rice Lake.",
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
@@ -22297,7 +22299,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "harris-boat-works-since-1947-rice-lake-institution",
     title: 'Harris Boat Works: On Rice Lake Since 1947',
     seoTitle: "Harris Boat Works Since 1947: Rice Lake Institution",
-    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've.",
+    description: "The story of Harris Boat Works on Rice Lake: three generations since 1947, a Mercury dealer since 1965, and what that continuity means for customers.",
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-05-18",
@@ -22362,7 +22364,7 @@ In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the risi
 
 We've [stayed Mercury-only as a deliberate choice](/blog/why-harris-boat-works-mercury-dealer). We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
 
-In 2026, we're celebrating **60 years as a Mercury dealer**. That's a multi-generational relationship most other industries can't match.
+We've been a Mercury dealer **since 1965**. That's a multi-generational relationship most other industries can't match.
 
 ---
 
@@ -22470,7 +22472,7 @@ If the fourth generation takes over, HBW continues. If they don't, we'll find a 
 ## Frequently Asked Questions
 
 **How long has Harris Boat Works been in business?**
-Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026.
+Founded in 1947 on Rice Lake and still in third-generation family hands. Mercury dealer since 1965.
 
 **Is HBW family-owned?**
 Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
@@ -22508,7 +22510,7 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026." },
+      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake and still in third-generation family hands. Mercury dealer since 1965." },
       { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
       { question: "Is HBW a Mercury Premier dealer?", answer: "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
       { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
@@ -25492,7 +25494,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Weight (long shaft) | ~227 lbs | ~250 lbs |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
-| WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
+| WOT RPM range | 5,500–6,000 | 5,500–6,000 |
 | Fuel system | EFI | EFI |
 | Tiller version | 40 ELHPT, yes | 60 ELHPT, yes |
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |
@@ -26645,7 +26647,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Displacement | 208 cc (12.8 cu in) |
 | Dry weight | Approximately 84 lb |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---
@@ -26934,7 +26936,7 @@ Those aren't abstract benefits. They're what customers notice after a season.
 
 ## What the 2.1L Family Shares
 
-The 115 HP FourStroke belongs to Mercury's 75, 115 HP family: five motors (75, 80, 90, 100, 115) built on the same 2.1L inline-4 block with an 8-valve SOHC, maintenance-free valve train, and 17,000 hours of factory testing on this generation before shipping.
+The 115 HP FourStroke belongs to Mercury's 75–115 HP family: five motors (75, 80, 90, 100, 115) built on the same 2.1L inline-4 block with an 8-valve SOHC, maintenance-free valve train, and 17,000 hours of factory testing on this generation before shipping.
 
 What they all share:
 - Same 2.1L inline-4 block
@@ -26974,11 +26976,11 @@ CT gives you [more low-end pulling power and hole-shot](/blog/mercury-command-th
 
 ## Where the 115 HP FourStroke Is the Right Answer
 
-### 17, 20 ft aluminum fishing boats with heavier loads
+### 17–20 ft aluminum fishing boats with heavier loads
 
-A 16 ft boat with two anglers is the 90's job. When the hull is a 17, 20 ft Lund, Princecraft, Crestliner, or Legend with four people, full gear, a livewell, two batteries, and a trolling motor up front, the 115 is the right call. Cruise around 30, 35 mph, top out around 42, 48 mph depending on prop and load.
+A 16 ft boat with two anglers is the 90's job. When the hull is a 17–20 ft Lund, Princecraft, Crestliner, or Legend with four people, full gear, a livewell, two batteries, and a trolling motor up front, the 115 is the right call. Cruise around 30–35 mph, top out around 42–48 mph depending on prop and load.
 
-### Mid-to-large pontoons, 20, 24 ft
+### Mid-to-large pontoons, 20–24 ft
 
 This is where the 115 CT earns its keep. [A 22 ft pontoon with a full family load](/blog/best-mercury-outboard-pontoon-boats) and a cooler deserves at least 90 CT. The 115 CT is the right answer if the pontoon is a tritoon, if you tow tubes, or if the boat simply sits heavy.
 
@@ -27018,9 +27020,9 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 |---|---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V4 / different family |
 | Dry weight | 359 lbs | 359 lbs (363 CT) | ~455 lbs |
-| Full-throttle RPM | 5,000, 6,000 | 5,000, 6,000 | 5,000, 5,800 |
-| Best hull range | 16, 18 ft aluminum, mid pontoons | 17, 20 ft aluminum, mid-large pontoons | 19, 22 ft, larger platforms |
-| Price vs. 115 | Less |, | More (~$5,000+ more) |
+| Full-throttle RPM | 5,000–6,000 | 5,000–6,000 | 5,000–5,800 |
+| Best hull range | 16–18 ft aluminum, mid pontoons | 17–20 ft aluminum, mid-large pontoons | 19–22 ft, larger platforms |
+| Price vs. 115 | Less | Baseline | More (~$5,000+ more) |
 
 **[90 vs. 115](/blog/mercury-75-vs-90-vs-115-comparison):** Tuning, not a different motor. No weight change. Price difference is real but modest. If the boat regularly carries four people and full gear, the 115 is worth it.
 
@@ -27030,9 +27032,9 @@ The outcome on most of these repowers: the boat feels lighter, runs quieter, and
 
 ## What We'd Actually Recommend
 
-**17, 20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
+**17–20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
 
-**Mid-to-large pontoon, 20, 24 ft, normal cottage loads:** 115 ELPT Command Thrust.
+**Mid-to-large pontoon, 20–24 ft, normal cottage loads:** 115 ELPT Command Thrust.
 
 **Same boat but you want hole-shot and run a tournament or performance fishing platform:** 115 Pro XS. Different motor, different price, worth asking about specifically.
 
@@ -27054,7 +27056,7 @@ Same 2.1L block. Different tuning, different RPM ceiling. No weight difference. 
 No. Different family, different block, different cylinder architecture, different weight class (~100 lbs heavier), different price point. Don't compare them as if they're close relatives.
 
 **When does the 115 CT make sense over the 90 CT?** 
-When the pontoon is 20, 24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
+When the pontoon is 20–24 ft, when you regularly carry 5–6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18–20 ft and loads are light, the 90 CT is fine.
 
 **What fuel savings can I expect repowering from an old two-stroke?** 
 Typically 25 to 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
@@ -27155,7 +27157,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
 | Dry weight | 359 lbs | 359 lbs |
-| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Full-throttle RPM | 4,500–5,500 | 5,000–6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
 | SmartCraft compatible | Yes | Yes |
@@ -27588,8 +27590,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-dealer-mississauga-ontario-hbw',
     title: 'Mercury Dealer Mississauga HBW',
-    seoTitle: 'Mercury Repower Cost in Mississauga',
-    description: 'What does a Mercury repower cost in Mississauga? See real 2026 motor prices from Harris Boat Works, a Premier dealer on Rice Lake.',
+    seoTitle: 'Mercury Dealer Near Mississauga | Harris Boat Works',
+    description: 'Looking for a Mercury dealer near Mississauga? See why GTA boaters use Harris Boat Works for repower advice, installation, water testing, and service.',
     image: '/lovable-uploads/hero-gta-mississauga-service-counter.png',
     imageAlt: 'Customer consulting with a Mercury Premier dealer at Harris Boat Works to discuss outboard repower options.',
     author: 'Jay Harris',
@@ -30965,7 +30967,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "How much does a Pro XS repower cost in Ontario?",
-        answer: "It depends on HP, rigging, and what's reusable on your boat. As a planning range only, a typical Pro XS repower in the 175–250 HP V6 range, including motor, controls, gauges, prop, steering, install labour, and taxes, runs from roughly the high teens of thousands to the mid-thirties of thousands CAD. A 300 Pro XS V8 build sits higher. A 150 Pro XS inline-4 build sits lower. Pricing depends on configuration and what we can carry over from your existing setup. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
+        answer: "It depends on HP, rigging, and what's reusable on your boat. The 175–250 HP Pro XS range spans the 175 HP V6 and the 200–250 HP V8 models. A complete repower may also require controls, gauges, a propeller allowance, steering, installation labour, and taxes. A 300 Pro XS V8 build sits higher, while a 150 Pro XS inline-4 build sits lower. For a real CAD number on your specific boat, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca)."
       },
       {
         question: "Do I need Command Thrust on my Pro XS?",
@@ -31805,7 +31807,8 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 |---|---|---|---|
 | FourStroke | 9.9-115 HP | Mechanical only | DTS not offered. Standard controls and cables. |
 | FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
-| FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
+| FourStroke V6 (3.4L) | 175–225 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
+| FourStroke V8 (4.6L) | 250–300 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
 | Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
@@ -32126,7 +32129,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'accidentally-increase-boat-service-bills-ontario',
     title: 'Avoid Bigger Service Bills Ontario',
     seoTitle: 'How to Lower Boat Service Bills Ontario | Harris Boat Works',
-    description: 'The shop-floor truth: most expensive Mercury repairs start as small ignored problems.',
+    description: 'The shop-floor truth: many expensive Mercury repairs start as small ignored problems. Learn the warning signs and habits that help contain service costs.',
     image: '/lovable-uploads/hero-service-bills-prevention.png',
     imageAlt: 'Mercury FourStroke outboard on an aluminum boat in a workshop with a service estimate, illustrating avoidable repair costs.',
     author: 'Harris Boat Works',
@@ -32889,7 +32892,7 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     slug: 'mercury-dealer-port-hope-ontario-hbw',
     title: 'Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake',
     seoTitle: 'Mercury Dealer Port Hope | Repower & Service from Rice Lake',
-    description: 'Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.',
+    description: 'Harris Boat Works is a Mercury Premier dealer serving Port Hope boaters from Gores Landing on Rice Lake, about 30 minutes north via County Road 18.',
     image: '/lovable-uploads/hero-mercury-dealer-port-hope.png',
     imageAlt: 'Man fly-fishing from a boat with a vintage Mercury outboard on a river, highlighting local service for Port Hope anglers.',
     author: 'Harris Boat Works',
@@ -33761,7 +33764,7 @@ For Rice Lake cottage applications, the Avator vs gas outboard decision usually 
 | Half-day light use | Good fit | Standard answer |
 | Full-day fishing crossing the lake | Range limited | Standard answer |
 | Multi-day trips without charging access | Doesn't work | Standard answer |
-| Quiet operation (early morning fishing) | Major advantage |, |
+| Quiet operation (early morning fishing) | Major advantage | Normal engine noise |
 | Low maintenance | Major advantage | More service required |
 | Cottage charging logistics | Required infrastructure | None |
 | Cold weather operation | Reduced capacity | Standard |

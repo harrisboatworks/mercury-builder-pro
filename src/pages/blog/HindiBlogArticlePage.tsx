@@ -8,6 +8,7 @@ import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getHindiArticleBySlug } from '@/data/hindiBlogArticles';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -240,7 +241,8 @@ export default function HindiBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/hi/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(article.content, 'hi', Boolean(article.faqs?.length));
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -293,7 +295,6 @@ export default function HindiBlogArticlePage() {
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="alternate" hrefLang="hi" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="hi_IN" />
@@ -341,7 +342,7 @@ export default function HindiBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="1965 से Mercury डीलर" />
+          <AuthorByline name="Jay Harris" title="1965 से Mercury डीलर" byLabel="लेखक" bioLabel="लेखक परिचय" />
         </div>
 
         {tocItems.length > 2 && (
@@ -351,7 +352,7 @@ export default function HindiBlogArticlePage() {
         )}
 
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {article.faqs && article.faqs.length > 0 && (

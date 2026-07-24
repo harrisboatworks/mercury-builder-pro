@@ -377,7 +377,7 @@ harrisboatworks.ca | 905-342-2153
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-20',
     publishDate: '2026-04-12',
     category: 'Mantenimiento',
     readTime: '11 min',
@@ -396,11 +396,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+### Una nota sobre el idioma
+
+Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+
+Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 
@@ -538,7 +538,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-20',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
@@ -553,11 +553,11 @@ El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 lit
 
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a tomar buenas decisiones sobre motores Mercury en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+### Una nota sobre el idioma
+
+Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a tomar buenas decisiones sobre motores Mercury en Ontario, algo que muy pocos concesionarios hacen.
+
+Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 Este artículo te da las especificaciones reales, la diferencia práctica en el agua, y una forma de decidir sin necesidad de memorizar hojas de datos técnicos.
 
@@ -699,7 +699,7 @@ harrisboatworks.ca | Rice Lake
     image: '/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-20',
     publishDate: '2026-04-12',
     category: 'Remotorización',
     readTime: '12 min',
@@ -718,11 +718,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+### Una nota sobre el idioma
+
+Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+
+Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 

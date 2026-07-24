@@ -11,6 +11,8 @@ import {
   getMandarinArticleBySlug,
   mandarinBlogArticles,
 } from '@/data/mandarinBlogArticles';
+import { ZH_TO_EN_SLUG } from '@/data/mandarinEnglishSlugMap';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { BlogCTA } from '@/components/blog/BlogCTA';
@@ -46,7 +48,12 @@ export default function MandarinBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/zh/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(
+    article.content.replace(/^\s*#\s+.+\n+/, ''),
+    'zh',
+    Boolean(article.faqs?.length),
+  );
+  const tocItems = extractHeaders(cleanedContent);
   const relatedArticles = mandarinBlogArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
@@ -102,8 +109,12 @@ export default function MandarinBlogArticlePage() {
         <title>{article.seoTitle ?? article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="alternate" hrefLang="zh-Hans" href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <link rel="alternate" hrefLang="x-default" href={url} />
+        {ZH_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog/${ZH_TO_EN_SLUG[article.slug]}`} />
+        )}
+        {ZH_TO_EN_SLUG[article.slug] && (
+          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${ZH_TO_EN_SLUG[article.slug]}`} />
+        )}
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:locale" content="zh_CN" />
@@ -167,7 +178,7 @@ export default function MandarinBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="1965 年起 Mercury 经销商" />
+                <AuthorByline name="Jay Harris" title="1965 年起 Mercury 经销商" byLabel="作者" bioLabel="查看作者简介" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {new Date(article.datePublished).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -209,16 +220,7 @@ export default function MandarinBlogArticlePage() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={(() => {
-                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:常见问题|Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-                    '\n',
-                  );
-                }
-                return c;
-              })()}
+              content={cleanedContent}
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains
                 // the only h1 on the page (matches EN BlogArticle.tsx behavior).
@@ -258,7 +260,7 @@ export default function MandarinBlogArticlePage() {
 
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Premier Dealer · Rice Lake, Ontario" />
+            <AuthorByline title="Harris Boat Works 第三代负责人 · Mercury Premier 经销商 · 安大略省 Rice Lake" byLabel="作者" bioLabel="查看作者简介" />
           </div>
 
           {/* FAQ Section */}

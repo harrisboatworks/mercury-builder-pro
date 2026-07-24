@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-markdown-twins.mjs && node scripts/check-publishing-integrity.mjs && node scripts/generate-rss.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
+    "build": "node scripts/generate-markdown-twins.mjs && node scripts/check-publishing-integrity.mjs && node scripts/generate-rss.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-blog-renderer-parity.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
+    "check:blog-renderer-parity": "node scripts/check-blog-renderer-parity.mjs",
     "rewrite:agent-urls": "node scripts/rewrite-agent-urls.mjs",
     "check:blog-assets": "node scripts/check-blog-asset-existence.mjs",
     "check:blog-articles": "tsx scripts/validate-blog-articles.ts",

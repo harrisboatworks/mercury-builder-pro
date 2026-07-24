@@ -233,7 +233,10 @@ function rewriteCostStack(md: string): string {
 }
 
 function rewriteBilingualTrust(md: string): string {
-  const re = /^::bilingual-trust\s*\n([\s\S]*?)\n::\s*$/gm;
+  // Accept the original authoring alias as well as the canonical directive.
+  // One Mandarin article shipped with `bilingual-trust-card`; treating the
+  // alias here prevents the YAML-like component props from reaching readers.
+  const re = /^::bilingual-trust(?:-card)?\s*\n([\s\S]*?)\n::\s*$/gm;
   return md.replace(re, (_m, body) => `:::bilingual-trust\n${body}\n:::`);
 }
 
@@ -949,7 +952,7 @@ function renderMarkdownWithDirectives(
     return (
       <ReactMarkdown
         key={`${keyPrefix}-md-${i}`}
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
         components={components}
       >
         {chunk.content}

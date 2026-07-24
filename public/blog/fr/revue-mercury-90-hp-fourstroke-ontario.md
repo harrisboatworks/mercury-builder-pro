@@ -134,28 +134,6 @@ Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les 
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
-## Questions fréquentes
-
-**Le 90 HP est-il bon pour un ponton de 22 pi?**
-Oui, avec l'embase Command Thrust.
-
-**Le 90 HP FourStroke est-il un Pro XS?**
-Non. Le Pro XS est une calibration différente, plafond de RPM plus haut, embase sport, hole-shot plus agressif.
-
-**La longueur d'arbre est-elle importante?**
-Oui, ce n'est pas optionnel.
-
-**Combien le 90 HP économise-t-il en carburant par rapport à un vieux deux temps?**
-Typiquement 20 à 30 % moins de carburant pour la même journée sur l'eau.
-
-**Le 90 CT est-il le même moteur que le 90 standard?**
-Même tête motrice. Embase différente.
-
-**Puis-je commander un 75 si ma plaque de capacité l'exige?**
-Oui.
-
----
-
 ## Bâtissez une soumission
 
 Bâtissez votre soumission de 90 HP à mercuryrepower.ca, choisissez l'embase standard ou CT, la longueur d'arbre et l'hélice. Voyez de vrais prix CAD en quelques minutes.

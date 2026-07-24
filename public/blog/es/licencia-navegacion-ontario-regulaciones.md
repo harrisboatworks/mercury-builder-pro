@@ -34,8 +34,6 @@ Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure C
 
 ---
 
-### Artículo completo
-
 Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 
 Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales y Forestales de Ontario (MNRF), que actualizan sus reglamentos periódicamente.
@@ -172,41 +170,6 @@ Para botes de más de 21 pies o pesos combinados superiores, verifica los requis
 | Navegación bajo influencia del alcohol | Cargo criminal, consecuencias severas |
 | Sin PCL válida (para motor 10+ HP) | Variable |
 
----
-
-## Preguntas frecuentes (FAQ)
-
-**¿La PCOC que obtuve en Quebec sirve para navegar en Ontario?** 
-Sí. La PCOC es federal y válida en toda Canada.
-
-**¿Puedo mostrar mi PCOC en el teléfono?** 
-No. La regulación requiere el original físico. Una foto o copia no es aceptada durante una inspección.
-
-**¿Cuánto tiempo tarda obtener la PCOC?** 
-El examen en línea toma aproximadamente 1, 2 horas de preparación. Si lo apruebas, recibes una tarjeta provisional inmediata y la tarjeta física por correo en semanas. Verifica tiempos actuales con el proveedor.
-
-**¿Qué es el Boating Safety Course que vi en algunas páginas?** 
-Es otro nombre para el mismo proceso, un curso y examen acreditado por Transporte Canadá que resulta en la PCOC. No hay diferencia funcional.
-
-**¿Harris Boat Works puede ayudarme con el proceso de licencia?** 
-No procesamos licencias directamente, pero podemos orientarte hacia los recursos correctos. Nuestro equipo opera en inglés; te recomendamos tc.gc.ca para la guía oficial.
-
-**¿Puedo usar mi bote en EE. UU. con la PCOC canadiense?** 
-La PCOC no equivale a una licencia en otros países. Cada estado tiene sus propios requisitos, verifica las regulaciones del estado específico antes de cruzar la frontera.
-
----
-
-## CTA, ¿Listo para salir al agua legalmente?
-
-Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
-
-Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
-
-¿Preguntas? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
-
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
-harrisboatworks.ca
 ---
 
 ## FAQs

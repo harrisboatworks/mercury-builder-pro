@@ -64,32 +64,6 @@ Rice Lake ’ਤੇ Gores Landing ਆ ਕੇ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’
 
 ਇਮਾਨਦਾਰੀ ਦੀ ਗੱਲ: ਸਾਡੀ team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਪਰ ਫ਼ਿਕਰ ਨਾ ਕਰੋ: ਨਾਲ ਕੋਈ friend ਜਾਂ family member ਲੈ ਕੇ ਆਓ ਜੋ English ਬੋਲ ਸਕਦਾ ਹੈ, ਜਾਂ ਆਪਣੇ ਫ਼ੋਨ ’ਤੇ translation app use ਕਰੋ। ਅਸੀਂ ਸਬਰ ਨਾਲ ਕੰਮ ਕੱਢ ਲਵਾਂਗੇ। ਬੱਸ ਆਓ Harris Boat Works ’ਤੇ, ਅਸੀਂ ਮਿਲ ਕੇ arrangement ਬਣਾ ਲਵਾਂਗੇ।
 
-## Aksar puchhe jaande sawaal | FAQ
-
-**1. Ontario fishing license di keemat kinna hai online?**  
-licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।
-
-**2. Toronto de nere family layi fishing spots kaun se ne?**  
-Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। ਸਾਡੀ 9-boat rental fleet ਹੈ, ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।
-
-**3. Fishing seasons Ontario vich kiven pata lagge?**  
-FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
-
-**4. Rice Lake te fishing rules limits ki ne?**  
-rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit sport licence ਨਾਲੋਂ ਘੱਟ; size limit species ਮੁਤਾਬਕ; slot size (walleye, muskellunge) ’ਵੇਖਣੀ ਪੈਂਦੀ ਹੈ। official summary FMZ 17 section ਵਿੱਚ ਹਰ species ਵੱਖ-ਵੱਖ rules ਦਿੱਤੇ ਹਨ। numbers ਅਗਲੀ trip ਤੋਂ ਪਹਿਲਾਂ official ਸਰੋਤ ਤੋਂ ਜ਼ਰੂਰ check ਕਰੋ।
-
-**5. Brampton ton fishing spot kidhar jaayiye?**  
-Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: https://harrisboatworks.ca/rentals।
-
-**6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?**  
-honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ patient ਰੱਖਾਂਗੇ, ਕੰਮ ਜ਼ਰੂਰ ਹੋਵੇਗਾ।
-
-**7. Kids layi fishing licence di lod hai?**  
-Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents।
-
-**8. Kawartha lakes fishing map video Punjabi vich mildi hai?**  
-video availability Punjabi ਵਿੱਚ official ਤੌਰ ’ਤੇ ਨਹੀਂ, ਪਰ Ontario government fishing map interactive online ਹੈ। Rice Lake ਨੂੰ Kawarthas ਵਿੱਚ select ਕਰਕੇ spots ’ਤੇ information ਮਿਲ ਜਾਵੇਗੀ। regulations summary ਜ਼ਰੂਰ read ਕਰੋ।
-
 ## Harris Boat Works ton madad lai link | ਹੈਰਿਸ ਬੋਟ ਵਰਕਸ ਤੋਂ ਮਦਦ ਲਈ ਲਿੰਕ
 
 Rice Lake ’ਤੇ fishing day plan ਕਰ ਰਹੇ ਹੋ? ਸਾਡੀ rental boat book ਕਰੋ: https://harrisboatworks.ca/rentals  

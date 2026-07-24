@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { SITE_URL } from '@/lib/site';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import { Calendar, Clock } from 'lucide-react';
@@ -35,6 +34,7 @@ import { MercuryVideo } from '@/components/blog/MercuryVideo';
 import { MercuryVideoFile } from '@/components/blog/MercuryVideoFile';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
 import { renderHbwVisual } from '@/components/blog/visuals';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 
 
 import {
@@ -56,7 +56,12 @@ export default function BlogArticle() {
   }
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(
+    substituteLiveRateTokens(article.content.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1')),
+    'en',
+    Boolean(article.faqs?.length),
+  );
+  const tocItems = extractHeaders(cleanedContent);
   const cleanDescription = getCleanDescription(article);
   const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
 
@@ -366,50 +371,7 @@ export default function BlogArticle() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose">
             <MarkdownSectionCards
-              content={(() => {
-                // Strip the first body H1 anywhere in the article (not just
-                // when it is the first line). Many posts open with a Quick
-                // Answer blockquote followed by `# Title`, which previously
-                // slipped past the leading-only regex and produced a duplicate
-                // title. The h1 -> h2 override below is a second safety net.
-                let c = article.content.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
-                // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
-                // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
-                // finance helper that drives the quote builder's monthly-payment
-                // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
-                c = substituteLiveRateTokens(c);
-
-                // Strip standalone scaffold lines: "*Last updated: ...*",
-                // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
-                // These conflict with the dateModified field shown in the byline.
-                c = c.replace(
-                  /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
-                  '',
-                );
-                // Strip standalone "Language: English" lines.
-                c = c.replace(
-                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
-                  '',
-                );
-                // Drop a literal "## CTA" heading line; keep its body content.
-                c = c.replace(/^##\s+CTA\s*$/gim, '');
-                // Rename "## Internal Links" → "## Related reading" (keep list).
-                c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
-                // Suppress inline FAQ-style sections when faqs[] is populated —
-                // the accordion below replaces them. Uses the global flag so
-                // articles that (historically) duplicated their FAQ block get
-                // BOTH copies stripped, and matches common variants:
-                // "Frequently Asked Questions", "FAQ", "FAQs", "Common questions".
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
-                    '\n',
-                  );
-                }
-                // Collapse 3+ blank lines left by the strips above.
-                c = c.replace(/\n{3,}/g, '\n\n');
-                return c;
-              })()}
+              content={cleanedContent}
               markdownComponents={{
                 // SEO: demote any in-body H1 to H2 so the page-level title
                 // remains the only H1 on the page. Catches stray H1s inside

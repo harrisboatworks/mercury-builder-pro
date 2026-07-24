@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury.md
-last_updated: 2026-06-19
+last_updated: 2026-07-20
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de preparación invernal para motores Mercury en Ontario"
 description: "Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging."
 category: "Mantenimiento"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-07-20
 keywords: ["preparar motor fuera de borda invierno Ontario","winterization motor Mercury","preparación invernal bote Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: es
 
 **Category:** Mantenimiento  
 **Published:** 2026-04-12  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-07-20  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury
 
@@ -42,11 +42,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+### Una nota sobre el idioma
+
+Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+
+Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 
@@ -132,28 +132,6 @@ No espere demasiado: los talleres se llenan rápido al inicio y al final de la t
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
 En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
-
----
-
-## Preguntas frecuentes
-
-**¿Puedo hacer la preparación invernal yo mismo?** 
-Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
-
-**¿Dónde puedo conseguir combustible sin etanol?** 
-Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
-
-**¿Cómo reservo la preparación invernal?** 
-La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
-
-**¿Los pasos son iguales para todos los motores Mercury?** 
-Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
-
-**¿Cuándo es el mejor momento para hacer la preparación invernal?** 
-Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
-
-**¿Cuánto tiempo tarda la preparación invernal?** 
-Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 
 ---
 

@@ -34,8 +34,6 @@ Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligato
 
 ---
 
-### Artículo completo
-
 Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrodoméstico. Hay requisitos legales, costos recurrentes que muchos compradores no anticipan, y decisiones técnicas que afectan si el bote será fácil de usar o una fuente constante de frustraciones.
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
@@ -162,40 +160,6 @@ Nuestro equipo opera principalmente en inglés, pero somos completamente accesib
 
 Si tienes preguntas específicas, puedes escribir en español en el formulario de hbw.wiki/service y haremos lo posible por responder de manera útil.
 
----
-
-## Preguntas frecuentes (FAQ)
-
-**¿Necesito licencia de conducir para manejar un bote en Ontario?** 
-No una de auto, pero sí necesitas la PCOC (Carta de Operador de Embarcaciones de Placer). Se obtiene en línea y es válida de por vida.
-
-**¿Es obligatorio el seguro para embarcaciones en Ontario?** 
-No es legalmente obligatorio como en los autos, pero es altamente recomendable. Un accidente sin seguro puede resultar en responsabilidad civil significativa.
-
-**¿Puedo comprar un bote en Ontario si soy residente permanente pero no ciudadano?** 
-Sí. La PCOC y la PCL están disponibles para residentes de Canadá independientemente del estatus migratorio.
-
-**¿Puedo remolcar mi bote en un trailer por las carreteras de Ontario?** 
-Sí, con las restricciones de ancho y peso correspondientes. Para la mayoría de las embarcaciones hasta ~21 pies no hay requerimientos especiales más allá de luces de trailer funcionales.
-
-**¿Qué pasa si compro un bote usado con un motor que no es Mercury?** 
-Harris Boat Works solo da servicio a motores Mercury y Mercruiser. Si el motor es de otra marca, deberás encontrar un taller de servicio autorizado para esa marca.
-
-**¿Puedo hacer la cotización en línea antes de llamar?** 
-Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presupuesto de repotenciación en 3 minutos, sin dar tu teléfono primero.
-
----
-
-## CTA, Próximos pasos
-
-**¿Listo para configurar tu motor o explorar opciones?** 
-Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
-
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
-
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
-harrisboatworks.ca
 ---
 
 ## FAQs

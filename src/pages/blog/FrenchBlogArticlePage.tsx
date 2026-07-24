@@ -15,6 +15,7 @@ import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { AuthorByline } from '@/components/blog/AuthorByline';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
+import { cleanLocalizedBlogContent } from '@/lib/cleanLocalizedBlogContent';
 import {
   Accordion,
   AccordionContent,
@@ -261,7 +262,8 @@ export default function FrenchBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/fr/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanLocalizedBlogContent(article.content, 'fr', Boolean(article.faqs?.length));
+  const tocItems = extractHeaders(cleanedContent);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -371,7 +373,12 @@ export default function FrenchBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Concessionnaire Mercury depuis 1965" />
+          <AuthorByline
+            name="Jay Harris"
+            title="Concessionnaire Mercury depuis 1965"
+            byLabel="Par"
+            bioLabel="Voir la biographie"
+          />
         </div>
 
         {/* Table of Contents */}
@@ -383,7 +390,7 @@ export default function FrenchBlogArticlePage() {
 
         {/* Article content */}
         <article className="prose prose-lg max-w-none">
-          {renderMarkdownContent(article.content)}
+          {renderMarkdownContent(cleanedContent)}
         </article>
 
         {!shouldSuppressAutoCTA(article.content) && (
