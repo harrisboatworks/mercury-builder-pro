@@ -249,6 +249,16 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/mercury-oil-capacity-lookup-hbw.svg</image:loc>
+      <image:title><![CDATA[Mercury Outboard Oil Capacity Chart: Model and Year Lookup]]></image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -290,7 +300,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1233,7 +1243,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1456,7 +1466,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ethanol Octane Mercury Fuel Guide"
 description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-06-09
+date_modified: 2026-07-24
 keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-24
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
 # Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
 
-> **Quick answer:** Mercury's current 4-stroke outboards run on 87 octane regular gasoline. Premium isn't required and doesn't help. The bigger fuel issue is ethanol: E10 pump gas absorbs water, phase-separates in storage, and gums fuel systems. Use ethanol-free 89 marine gas where available (HBW sells it at the dock), or run fuel stabilizer in every tank if you cannot avoid E10. Older supercharged inline-6 Verados require 91 octane premium.
+> **Quick answer:** Mercury fuel requirements vary by engine, so the cowl label and serial-number manual decide the minimum octane. Current Mercury gasoline engines accept no more than E10. For fuel care, use the product that matches the job: Quickare at fill-up, Quickleen as needed for deposits, and Quickstor for storage. HBW sells ethanol-free 89 marine gas at the dock.
 
 ::diagnostic-flow
 heading: Mercury running rough or won't stay running? Work the fuel system in this order.
@@ -149,13 +149,17 @@ Don't pay premium prices thinking you're protecting your fuel system. Read the l
 
 ## Fuel Additives and Stabilizers: When You Actually Need Them
 
-Stabilizers work by slowing the oxidation and degradation of fuel. Here's when to use them and how:
+Mercury's three black bottles are not interchangeable.
 
-**Any storage over 30 days, use a stabilizer.** This applies even with ethanol-free fuel, though the urgency is lower. With E10, 30 days is the real threshold before fuel quality starts dropping.
+| Product | When Mercury says to use it | What it does | Storage stabilizer? |
+|---|---|---|---|
+| **Quickare** | Add at every fill-up | Helps control corrosion, moisture, gum and varnish, including problems associated with ethanol-blended fuel | No |
+| **Quickleen** | Use as needed through the season | Aggressive cleaner for carbon deposits in carburetors, injectors, intake valves, plugs, piston crowns and cylinder heads | No. Mercury says it contains no fuel stabilizers |
+| **Quickstor** | Before offseason or long-term storage | Slows fuel oxidation, helps prevent fuel-system corrosion, and keeps gum and varnish from forming | Yes |
 
-**Proven products:** Sta-Bil 360 Marine, Mercury Quickare, and Mercury Quickleen are all well-regarded in the field. Sta-Bil 360 Marine is specifically formulated for marine applications and handles the ethanol/water issue directly. The others are good for general fuel system maintenance and carb cleaning.
+The 2026 Mercury Capacity Guide says Quickstor stabilizes fuel for up to two years. That is a product claim, not permission to ignore the storage procedure for the boat's tank and engine.
 
-**How to add stabilizer correctly:** Add it to the tank, top off with fuel so it mixes in, then run the motor for 10-15 minutes. That circulates the treated fuel all the way through the system, carb, fuel lines, the works. Shut down and store. If you skip the run step, the carb bowls still have untreated fuel sitting in them.
+**How to treat storage fuel:** Start with fresh fuel, add the labelled amount for the volume in the tank, and circulate it through the engine by the method and time specified in the owner's manual. Mercury's basic maintenance guide uses about 10 minutes as its general example. Tank level depends on whether the boat has an older vented tank or a newer low-evaporative-emissions system.
 
 **Don't overdose.** Follow label directions. More is not better.
 
@@ -250,6 +254,12 @@ We have ethanol-free at the dock and we diagnose fuel system issues every day.
 
 Harris Boat Works. Gores Landing, ON, est. 1947
 
+## Sources
+
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, page 19
+- Mercury Marine, Maintenance Made Easy, publication MER-5702, pages 10-13
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
+
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ## FAQs
@@ -272,7 +282,7 @@ Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. Y
 
 ### When should I use a fuel stabilizer?
 
-Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is the real threshold before fuel quality starts dropping. Add stabilizer to the tank, top off with fuel so it mixes in, then run the motor for 10 to 15 minutes to circulate treated fuel through the carb and fuel lines. Skipping the run step leaves untreated fuel in the carb bowls.
+Use a marine fuel stabilizer when preparing fresh fuel for offseason or other long-term storage, following the exact engine and fuel-system procedure. Mercury Quickstor is the storage product. Add the labelled dose, then circulate treated fuel through the system for the time and by the method specified in the manual.
 
 ### What are the signs of a fuel system problem on a Mercury outboard?
 
@@ -300,4 +310,3 @@ Hard starting after storage when it ran fine when put away, bogging at wide-open
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

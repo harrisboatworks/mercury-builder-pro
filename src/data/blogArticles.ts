@@ -1,3 +1,5 @@
+import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
+
 export interface HowToStep {
   name: string;
   text: string;
@@ -132,6 +134,184 @@ export function getSitemapEligibleArticles(): BlogArticle[] {
 }
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: 'mercury-outboard-oil-capacity-chart',
+    title: 'Mercury Outboard Oil Capacity Chart: Model and Year Lookup',
+    seoTitle: 'Mercury Outboard Oil Capacity Chart by Model & Year',
+    description: 'Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP.',
+    image: '/lovable-uploads/mercury-oil-capacity-lookup-hbw.svg',
+    imageAlt: 'HBW Mercury outboard oil capacity lookup reference showing model, year, crankcase, gearcase and oil filter fields.',
+    author: 'Harris Boat Works',
+    datePublished: '2026-07-24',
+    dateModified: '2026-07-24',
+    publishDate: '2026-07-24',
+    category: 'Service & Maintenance',
+    readTime: '12 min read',
+    keywords: [
+      'Mercury outboard oil capacity chart',
+      'Mercury FourStroke oil capacity',
+      'Mercury gearcase oil capacity',
+      'Mercury outboard oil filter chart',
+      'Mercury 90 oil capacity',
+      'Mercury 60 gear oil capacity',
+      'Mercury outboard oil lookup',
+    ],
+    relatedSlugs: [
+      'mercury-maintenance-intervals-20-100-300-rule',
+      'mercury-100-hour-service-cost-ontario',
+      'milky-gearcase-oil-meaning-cost-ontario',
+      'diy-mercury-outboard-winterization-guide',
+    ],
+    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.8, 5.28 or 5.5 US quarts depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
+
+The label on the cowl gets you into the right neighbourhood. It does not always identify the powerhead, gearcase or serial break that sets the capacity.
+
+That is why this lookup keeps similar-horsepower engines on separate rows. It is based on Mercury Marine's 2026 Capacity Guide, publication 8M0243459, pages 24 through 27.
+
+Here, 2026 is the guide's publication year. It is not a claim that every row is a 2026 or current-model-year engine.
+
+## Search the Mercury FourStroke Capacity Chart
+
+Type a horsepower, family, displacement or serial break. Examples: **9.9**, **2B094996**, **200 V8** or **350 Verado**.
+
+:::mercury-capacity-lookup
+${mercuryCapacityTableMarkdown}
+:::
+
+## Read This Before You Pour
+
+The listed crankcase quantity is a reference capacity, not a target to pour blindly.
+
+1. Match the exact engine family, model year, displacement and serial break.
+2. Follow the drain and filter procedure in the owner's manual for that serial number.
+3. Add less than the full listed capacity at first.
+4. Run the engine only with the correct cooling-water supply, then shut it down and let the oil settle as the manual specifies.
+5. Check the dipstick with the engine in the specified position and bring the level to the correct mark.
+6. Check the filter, drain plug and sealing surfaces for leaks.
+
+Filter changes, incomplete draining, engine angle and residual oil can change how much oil is required to reach the mark. Overfilling is not extra protection.
+
+## Why the Same Horsepower Can Have Different Capacities
+
+Mercury has used the same horsepower badge across different powerheads and gearcases.
+
+### A 9.9 HP example
+
+The chart lists three 9.9 HP FourStroke groups:
+
+| Year and engine | Crankcase | Gearcase |
+|---|---:|---:|
+| 1995-1998, 232 cc | 1.05 qt / 0.99 L | 6.8 oz |
+| 1999-2004, 323 cc | 1.05 qt / 0.99 L | 6.8 oz |
+| 2005+, 209 cc | 0.84 qt / 0.79 L | 10.8 oz |
+
+The newest row takes less crankcase oil but more gear lube than the older rows. "Mercury 9.9" is not enough information.
+
+### A 90 HP example
+
+The serial break matters even within the same model year:
+
+| 90 HP family | Crankcase | Gearcase | Oil filter |
+|---|---:|---:|---|
+| 2006 EFI, serial 1B366822 and below | 4.8 qt / 4.54 L | 22.5 oz | 8M0162830 |
+| 2006+ EFI, serial 1B366823 and up | 5.28 qt / 5 L | 24 oz | 877761Q01 |
+| 2014+ 2.1 L, serial 2B094996 and up | 5.5 qt / 5.2 L | 27.1 oz | 8M0162830 |
+
+That is a three-way capacity split behind one cowl number.
+
+### A 60 HP gearcase example
+
+The 996 cc 60 FourStroke is listed at 3.17 US quarts, or 3 litres, of crankcase oil. Its gearcase quantity changes with the lower unit:
+
+- Standard gearcase: 11.5 oz
+- BigFoot or Command Thrust gearcase: 24 oz
+
+If the gearcase is not identified, the lower-unit fill quantity can be off by more than two to one.
+
+## Which Mercury Crankcase Oil?
+
+The capacity guide groups oils by engine family, not by one universal rule.
+
+| Engine group in the guide | Listed oil family |
+|---|---|
+| Most 2.5-30 HP FourStrokes | Mercury 10W-30 |
+| Most 40-60 HP FourStrokes and legacy 1.7 L 75/90/115 | Mercury 25W-40 |
+| 2.1 L 75/90/115, 150 EFI and current 3.4 L V6 / 4.6 L V8 | Mercury 10W-30 Synthetic Blend |
+| Legacy 4- and 6-cylinder Verado families | Mercury 25W-40 |
+| 2022+ V10 350/400 Verado | Mercury 25W-40 Synthetic Blend |
+| 400R | Mercury 25W-50 High Performance Blend |
+| 600 V12 Verado | Mercury 10W-30 Full Synthetic |
+
+Mercury includes temperature, manual-start and high-performance footnotes in its chart. Treat the table as a lookup aid, then use the viscosity and formula named in the exact owner's manual.
+
+## Which Mercury Gear Lube?
+
+The 2026 guide generally assigns:
+
+- Mercury 80W-90 Premium Gear Lube to the standard outboard rows below 75 HP
+- Mercury SAE 90 High Performance Gear Lube to the 75 HP-and-up rows
+- Mercury 85W-90 Extreme Performance Gear Lube to the V10 Verado and 400R rows
+
+Gearcase design still controls the answer. Racing, Sport Master, counter-rotation, Command Thrust, Jet and other applications cannot be selected from horsepower alone.
+
+## What About Two-Stroke Mercury Outboards?
+
+The same 2026 Mercury guide separates two-stroke oil by engine type:
+
+| Engine type | Mercury's listed oil |
+|---|---|
+| Conventional carbureted and EFI two-strokes | Premium 2-Stroke as the good/better option, Premium Plus as best |
+| OptiMax, DFI and Pro XS two-strokes | Premium Plus as the good/better option, OptiMax/DFI oil as best |
+
+It does not provide one universal two-stroke gearcase capacity table. Use the manual for the exact serial number.
+
+## The Five Details That Prevent a Wrong Fill
+
+Have these in front of you before buying oil, a filter or a service kit:
+
+1. Model or horsepower
+2. Serial number
+3. Model year or production range
+4. Displacement or engine family
+5. Standard, BigFoot, Command Thrust, Verado, Sport Master or other gearcase
+
+A photo of the transom-bracket label is usually more useful than a photo of the cowl.
+
+## Sources and Scope
+
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-28
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
+- [Mercury Marine Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+
+The Mercury guide says its capacities are based on information believed accurate at publication and tells owners to verify against the engine owner's manual. This HBW lookup preserves the model, year and serial distinctions instead of turning them into a single horsepower rule.
+
+## Need the Right Service Scope?
+
+If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki/service](https://hbw.wiki/service) with a photo of the engine label and the current hours. We will build the service scope from the exact engine and its documented history.
+`,
+    faqs: [
+      {
+        question: 'How much oil does a Mercury 90 HP FourStroke take?',
+        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.8 US quarts. The later 1.7 L EFI at serial 1B366823 and up is 5.28 quarts. The 2014+ 2.1 L family at serial 2B094996 and up is 5.5 quarts. Confirm the final level on the dipstick and in the exact manual.',
+      },
+      {
+        question: 'How much oil does a Mercury 60 HP FourStroke take?',
+        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3.17 US quarts, or 3 litres, of crankcase oil. The gearcase is listed at 11.5 ounces for the standard lower unit and 24 ounces for the BigFoot or Command Thrust lower unit.',
+      },
+      {
+        question: 'Can I fill a Mercury outboard with the exact chart capacity?',
+        answer: 'Use the chart as a reference, not a blind pour target. Drain and replace the filter as the manual specifies, add less than the listed amount at first, then verify the final level on the dipstick with the engine positioned and rested as the manual requires.',
+      },
+      {
+        question: 'Is 10W-30 or 25W-40 correct for my Mercury outboard?',
+        answer: 'Both are correct for different Mercury families. The 2026 capacity guide lists 10W-30 for many 2.5-30 HP and current V6/V8 families, while 25W-40 appears on 40-60 HP, legacy 1.7 L 75/90/115 and several Verado families. Use the exact model and serial-number manual.',
+      },
+      {
+        question: 'What gear lube does a Mercury outboard use?',
+        answer: 'The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 90 High Performance for the 75 HP-and-up rows, and 85W-90 Extreme Performance for V10 Verado and 400R applications. The exact gearcase and manual control the choice.',
+      },
+    ],
+  },
   {
     slug: 'mercury-outboard-fault-codes-lookup',
     title: 'Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup',
@@ -1084,7 +1264,7 @@ If you're not sure whether your boat is a push boat or a plane boat, that's a tw
     image: "/lovable-uploads/hero-milky-gearcase-oil.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-23",
+    dateModified: "2026-07-24",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
@@ -1153,6 +1333,22 @@ That last line is the entire economics of this post. The annual drain is the che
 
 ---
 
+## Which Mercury Gear Lube Goes Back In?
+
+Mercury's 2026 Capacity Guide separates gear lubes by application:
+
+| Application in the guide | Listed Mercury gear lube |
+|---|---|
+| Most standard outboard rows below 75 HP | 80W-90 Premium |
+| 75 HP-and-up rows | SAE 90 High Performance |
+| V10 Verado and 400R rows | 85W-90 Extreme Performance |
+
+That is a selector, not a substitute for identifying the lower unit. BigFoot, Command Thrust, Sport Master, counter-rotation and Racing gearcases can change both the lubricant and the quantity.
+
+Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-capacity-chart) to match horsepower, year, displacement, serial break and gearcase before filling.
+
+---
+
 ## Common mistakes
 
 - **Topping up milky oil and carrying on.** The water is still in there, and so is the leak. You've refreshed the emulsion, not fixed anything.
@@ -1200,11 +1396,12 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 
 ## Ready to Get That Drain Checked?
 
-If your oil looked wrong, or nobody's looked in over a year, that's the whole booking reason.
+If the boat can come to HBW in Gores Landing and the oil looked wrong, or nobody has looked in over a year, that is the whole booking reason.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+HBW does not diagnose gearcase faults remotely. Include the engine serial number, current hours and a photo of the drained lubricant with the request so the shop has a useful starting record.
 
 **Related guides:**
 - [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
@@ -1217,7 +1414,8 @@ If your oil looked wrong, or nobody's looked in over a year, that's the whole bo
 ## Sources
 
 - HBW service records, Rice Lake: 7,417 gearcase jobs and 364 gearcase pressure tests, 2013-2026
-- Mercury Marine gearcase lubrication specifications (your owner's manual governs your model)
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 17 and 24-28
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 `,
   },
   {
@@ -19568,7 +19766,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard maintenance timeline showing model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-12',
     category: 'Service & Maintenance',
     readTime: '11 min read',
@@ -19602,6 +19800,18 @@ The exact schedule still varies by engine family, model year, duty cycle, and se
 | Ongoing service | Continue by hours and calendar | Repeat the manual's schedule. Heavy use and harsh conditions can bring service forward. |
 
 Mercury's public parts guidance describes a 100-hour service at least once a year as critical for most engines. It describes a 300-hour service as the 100-hour work plus additional components that vary by engine model.
+
+## Download the Free HBW Maintenance Planner
+
+We turned the useful owner-planning material into an original two-page checklist and service record. It is free, opens directly, and does not ask for an email address.
+
+[Download the Mercury Outboard Maintenance Planner PDF](/downloads/mercury-outboard-maintenance-planner-hbw.pdf "cta")
+
+The first page separates before-every-outing checks, in-season care, annual or 100-hour work for most current recreational FourStrokes, model-specific expanded service, and storage preparation. The second page is a printable service log.
+
+The planner deliberately does not flatten every Mercury into one schedule. Keep the engine serial number on the page and use the exact operation and maintenance manual to decide the final task list.
+
+Mercury also publishes its own [Maintenance Made Easy guide](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy) through a form on its website. HBW does not rehost that copyrighted brochure. Our planner is an original, shorter field reference built for owners who want the checklist without a lead form.
 
 ## What a 100-Hour or Annual Service Commonly Covers
 
@@ -19688,6 +19898,7 @@ Mercury recommends genuine parts, but its written limited warranty does not say 
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 - [Mercury Marine Canada, Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
 - [Mercury Marine Canada, Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+- [Mercury Marine, Maintenance Made Easy](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy)
 
 ## Ready to Book the Right Service?
 
@@ -24695,7 +24906,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-fuel-octane-ethanol.png',
     author: 'Jay Harris',
     datePublished: '2026-04-11',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-24',
     publishDate: '2026-04-11',
     category: "Service",
     readTime: '~12 min read',
@@ -24705,14 +24916,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I run ethanol gas (E10) in my Mercury outboard?', answer: 'You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion, gummed carburettors, and unbudgeted service bills.' },
       { question: 'Is premium gas ethanol-free in Ontario?', answer: 'Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.' },
       { question: 'Does Harris Boat Works sell ethanol-free fuel?', answer: 'Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in.' },
-      { question: 'When should I use a fuel stabilizer?', answer: 'Use a marine fuel stabilizer for any storage over 30 days. With E10, 30 days is the real threshold before fuel quality starts dropping. Add stabilizer to the tank, top off with fuel so it mixes in, then run the motor for 10 to 15 minutes to circulate treated fuel through the carb and fuel lines. Skipping the run step leaves untreated fuel in the carb bowls.' },
+      { question: 'When should I use a fuel stabilizer?', answer: 'Use a marine fuel stabilizer when preparing fresh fuel for offseason or other long-term storage, following the exact engine and fuel-system procedure. Mercury Quickstor is the storage product. Add the labelled dose, then circulate treated fuel through the system for the time and by the method specified in the manual.' },
       { question: 'What are the signs of a fuel system problem on a Mercury outboard?', answer: 'Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won\'t pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.' },
     ],
     content: `# Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-07-24*
 
-> **Quick answer:** Mercury's current 4-stroke outboards run on 87 octane regular gasoline. Premium isn't required and doesn't help. The bigger fuel issue is ethanol: E10 pump gas absorbs water, phase-separates in storage, and gums fuel systems. Use ethanol-free 89 marine gas where available (HBW sells it at the dock), or run fuel stabilizer in every tank if you cannot avoid E10. Older supercharged inline-6 Verados require 91 octane premium.
+> **Quick answer:** Mercury fuel requirements vary by engine, so the cowl label and serial-number manual decide the minimum octane. Current Mercury gasoline engines accept no more than E10. For fuel care, use the product that matches the job: Quickare at fill-up, Quickleen as needed for deposits, and Quickstor for storage. HBW sells ethanol-free 89 marine gas at the dock.
 
 ::diagnostic-flow
 heading: Mercury running rough or won't stay running? Work the fuel system in this order.
@@ -24831,13 +25042,17 @@ Don't pay premium prices thinking you're protecting your fuel system. Read the l
 
 ## Fuel Additives and Stabilizers: When You Actually Need Them
 
-Stabilizers work by slowing the oxidation and degradation of fuel. Here's when to use them and how:
+Mercury's three black bottles are not interchangeable.
 
-**Any storage over 30 days, use a stabilizer.** This applies even with ethanol-free fuel, though the urgency is lower. With E10, 30 days is the real threshold before fuel quality starts dropping.
+| Product | When Mercury says to use it | What it does | Storage stabilizer? |
+|---|---|---|---|
+| **Quickare** | Add at every fill-up | Helps control corrosion, moisture, gum and varnish, including problems associated with ethanol-blended fuel | No |
+| **Quickleen** | Use as needed through the season | Aggressive cleaner for carbon deposits in carburetors, injectors, intake valves, plugs, piston crowns and cylinder heads | No. Mercury says it contains no fuel stabilizers |
+| **Quickstor** | Before offseason or long-term storage | Slows fuel oxidation, helps prevent fuel-system corrosion, and keeps gum and varnish from forming | Yes |
 
-**Proven products:** Sta-Bil 360 Marine, Mercury Quickare, and Mercury Quickleen are all well-regarded in the field. Sta-Bil 360 Marine is specifically formulated for marine applications and handles the ethanol/water issue directly. The others are good for general fuel system maintenance and carb cleaning.
+The 2026 Mercury Capacity Guide says Quickstor stabilizes fuel for up to two years. That is a product claim, not permission to ignore the storage procedure for the boat's tank and engine.
 
-**How to add stabilizer correctly:** Add it to the tank, top off with fuel so it mixes in, then run the motor for 10-15 minutes. That circulates the treated fuel all the way through the system, carb, fuel lines, the works. Shut down and store. If you skip the run step, the carb bowls still have untreated fuel sitting in them.
+**How to treat storage fuel:** Start with fresh fuel, add the labelled amount for the volume in the tank, and circulate it through the engine by the method and time specified in the owner's manual. Mercury's basic maintenance guide uses about 10 minutes as its general example. Tank level depends on whether the boat has an older vented tank or a newer low-evaporative-emissions system.
 
 **Don't overdose.** Follow label directions. More is not better.
 
@@ -24931,6 +25146,12 @@ We have ethanol-free at the dock and we diagnose fuel system issues every day.
 **Phone (fuel hours):** 905-342-2153
 
 Harris Boat Works. Gores Landing, ON, est. 1947
+
+## Sources
+
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, page 19
+- Mercury Marine, Maintenance Made Easy, publication MER-5702, pages 10-13
+- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

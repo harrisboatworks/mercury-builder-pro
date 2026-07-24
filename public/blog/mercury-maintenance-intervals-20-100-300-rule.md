@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Maintenance: 100 and 300 Hours"
 description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean."
 category: "Service & Maintenance"
 date_published: 2026-05-12
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["Mercury maintenance schedule","Mercury 100 hour service Ontario","Mercury 20 hour service requirement","Mercury 300 hour service","Mercury annual service Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-12  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 
@@ -55,6 +55,18 @@ The exact schedule still varies by engine family, model year, duty cycle, and se
 | Ongoing service | Continue by hours and calendar | Repeat the manual's schedule. Heavy use and harsh conditions can bring service forward. |
 
 Mercury's public parts guidance describes a 100-hour service at least once a year as critical for most engines. It describes a 300-hour service as the 100-hour work plus additional components that vary by engine model.
+
+## Download the Free HBW Maintenance Planner
+
+We turned the useful owner-planning material into an original two-page checklist and service record. It is free, opens directly, and does not ask for an email address.
+
+[Download the Mercury Outboard Maintenance Planner PDF](/downloads/mercury-outboard-maintenance-planner-hbw.pdf "cta")
+
+The first page separates before-every-outing checks, in-season care, annual or 100-hour work for most current recreational FourStrokes, model-specific expanded service, and storage preparation. The second page is a printable service log.
+
+The planner deliberately does not flatten every Mercury into one schedule. Keep the engine serial number on the page and use the exact operation and maintenance manual to decide the final task list.
+
+Mercury also publishes its own [Maintenance Made Easy guide](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy) through a form on its website. HBW does not rehost that copyrighted brochure. Our planner is an original, shorter field reference built for owners who want the checklist without a lead form.
 
 ## What a 100-Hour or Annual Service Commonly Covers
 
@@ -124,6 +136,7 @@ No service history? Start with an inspection and establish a new baseline. Do no
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 - [Mercury Marine Canada, Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
 - [Mercury Marine Canada, Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+- [Mercury Marine, Maintenance Made Easy](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy)
 
 ## Ready to Book the Right Service?
 
@@ -179,4 +192,3 @@ Mercury recommends genuine parts, but its written limited warranty does not say 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

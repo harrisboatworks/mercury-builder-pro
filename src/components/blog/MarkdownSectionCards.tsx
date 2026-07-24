@@ -24,6 +24,7 @@ import { MercuryVideo } from './MercuryVideo';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
 import { BlogInlineCTA, type BlogInlineCTAProps } from './BlogInlineCTA';
+import { MercuryCapacityLookup } from './MercuryCapacityLookup';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -414,7 +415,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'mercury-capacity-lookup' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -432,7 +433,7 @@ interface RenderChunk {
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|mercury-capacity-lookup|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -854,6 +855,8 @@ function splitDirectives(md: string): RenderChunk[] {
         }
       }
       chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
+    } else if (name === 'mercury-capacity-lookup') {
+      chunks.push({ kind: 'mercury-capacity-lookup', content: '' });
     } else if (name === 'youtube-embed') {
       const idMatch = /^\s*id\s*:\s*([A-Za-z0-9_-]{6,})\s*$/m.exec(body);
       const titleMatch = /^\s*title\s*:\s*(.+)$/m.exec(body);
@@ -926,6 +929,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'mercury-price-table') {
       return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;
+    }
+    if (chunk.kind === 'mercury-capacity-lookup') {
+      return <MercuryCapacityLookup key={`${keyPrefix}-mcl-${i}`} />;
     }
     if (chunk.kind === 'youtube-embed' && chunk.youtubeProps) {
       return (

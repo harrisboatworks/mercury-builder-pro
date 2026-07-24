@@ -5,13 +5,21 @@
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Thu, 23 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
       <title>Harris Boat Works Blog</title>
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
+    <item>
+      <title><![CDATA[Mercury Outboard Oil Capacity Chart: Model and Year Lookup]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart</guid>
+      <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP.]]></description>
+      <category><![CDATA[Service & Maintenance]]></category>
+    </item>
     <item>
       <title><![CDATA[Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup]]></title>
       <link>https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup</link>
@@ -403,14 +411,6 @@
       <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing.]]></description>
       <category><![CDATA[Repower Guides]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Best Time to Buy Boat Motor Ontario]]></title>
-      <link>https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide</guid>
-      <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math.]]></description>
-      <category><![CDATA[Buying Guide]]></category>
     </item>
   </channel>
 </rss>
