@@ -385,7 +385,7 @@ We're not going to invent statistics. What we can tell you is what we actually s
 
 Mercury is a Brunswick Corporation brand, built in Fond du Lac, Wisconsin. Mercury continues to develop new outboard platforms, and recent industry coverage has highlighted multiple programs in the pipeline, including the V10 Verado family.
 
-The V10 Verado lineup (350-425hp) represents Mercury's high-performance answer to a market pushing for lighter, more powerful motors. Mercury has documented the 425hp V10 Verado as approximately 254 pounds lighter than the Yamaha 425 XTO, a meaningful weight savings for repower customers worried about transom load. This is documented in Mercury materials and dealer analyses, including [Bay Marine SC's V10 analysis](https://www.baymarine-sc.com/blog/no-compromises-a-definitive-analysis-of-the-mercury-v10-verado-outboard-engine-family--98843). The V10 also runs on 87-octane fuel, which matters for operating costs over a season.
+The V10 Verado lineup (350-425hp) represents Mercury's high-performance answer to a market pushing for lighter, more powerful motors. In its July 22, 2025 launch release, Mercury says the 425hp V10 Verado is 254 pounds lighter than a 450hp competitor when both are 25-inch XL models. Mercury does not identify that competitor, so we do not turn the result into a Yamaha-specific claim. The [official Mercury release](https://www.mercurymarine.com/us/en/about-us/news/425hp-v10-expansion-and-enhanced-350hp-launch) documents the comparison and test condition. The V10 also runs on 87-octane fuel, which matters for operating costs over a season.
 
 For the 60-150hp range that most Ontario boaters actually buy, Mercury's FourStroke lineup has been a mature, stable platform for years. Mature doesn't mean exciting. It means the engineering team has had time to find the gremlins, fix them, and optimize. That's a good thing when you're 45 minutes from shore on a Saturday afternoon.
 
@@ -12609,17 +12609,19 @@ The model year flip doesn't change the basic questions: what motor fits your boa
     seoTitle: 'Mercury Avator Electric Outboards: Cost & Range (Canada)',
     title: 'Mercury Avator Electric Outboards: Cost & Range (Canada)',
     description: 'Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer.',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-electric-boating-battery-freshwater-2026-07.webp',
-    imageAlt: 'Angler packing a Mercury Avator battery into its carry bag beside a 7.5e electric outboard on a freshwater aluminum boat',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07.jpg',
+    imageAlt: 'Mercury Avator 7.5e electric outboard powering a Lund WC-12 aluminum boat across a freshwater lake',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-23',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime', 'avator cost canada'],
     relatedSlugs: ['mercury-avator-7-5e-review', 'mercury-avator-range-rice-lake-cottage', 'mercury-avator-charging-cottage-dock', 'mercury-avator-vs-torqeedo'],
     content: `
+
+*Last reviewed: 2026-07-23*
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 > **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
@@ -12684,7 +12686,7 @@ For gas outboards, the configurator does what it always does: **[build a real Me
 - [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock)
 - [Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)](/blog/mercury-avator-vs-torqeedo)
 
-Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Premier dealer today.
+*Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.*
 `,
     faqs: [
       { question: 'How far can a Mercury Avator electric outboard go on one charge?', answer: "In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions." },

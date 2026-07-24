@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboards: Cost & Range (Canada)"
 description: "Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer."
 category: "Buying Guide"
 date_published: 2026-02-06
-date_modified: 2026-06-09
+date_modified: 2026-07-23
 keywords: ["mercury avator","electric outboard motor","avator electric boat","electric boating ontario","mercury electric motor","cottage boat electric","rice lake electric outboard","avator range runtime","avator cost canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-07-23
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
 
@@ -90,7 +90,7 @@ For gas outboards, the configurator does what it always does: **[build a real Me
 - [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock)
 - [Mercury Avator vs Torqeedo: Honest Comparison for Ontario Boaters (2026)](/blog/mercury-avator-vs-torqeedo)
 
-Harris Boat Works: family-owned on Rice Lake since 1947, Mercury dealer since 1965, and a Mercury Premier dealer today.
+*Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.*
 
 ## FAQs
 
@@ -132,4 +132,3 @@ It depends on the model, battery count, and charger, and batteries are often the
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
