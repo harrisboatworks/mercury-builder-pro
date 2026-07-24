@@ -286,13 +286,38 @@ const dealerHeroCanon = [
     slug: 'mercury-dealer-northumberland-county-hbw',
     image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
   },
+  {
+    slug: 'mercury-dealer-mississauga-ontario-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
+  },
+  {
+    slug: 'mercury-dealer-vaughan-ontario-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
+  },
+  {
+    slug: 'mercury-dealer-whitby-ontario-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
+  },
+  {
+    slug: 'mercury-dealer-oshawa-ontario-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
+  },
 ];
 for (const { slug, image } of dealerHeroCanon) {
   const source = articleSource(slug);
   check(source.includes(`image: '${image}'`), `${slug} must use its provenance-documented HBW or official Mercury hero.`);
   check(
-    !/(?:hero-gta-richmond-hill-pickup-motor|hero-mercury-90-shop-shot)/.test(source),
+    !/(?:hero-gta-(?:mississauga|richmond-hill|vaughan)|hero-mercury-(?:90-shop-shot|dealer-(?:whitby|oshawa)))/.test(source),
     `${slug} must not regress to a false-branded or unproven generated dealer hero.`,
+  );
+}
+for (const slug of ['mercury-dealer-whitby-ontario-hbw', 'mercury-dealer-oshawa-ontario-hbw']) {
+  const source = articleSource(slug);
+  check(
+    /standard repower lineup is FourStroke and Pro XS/.test(source) &&
+      /Verado is available on special order/.test(source) &&
+      /SeaPro is a commercial-duty option we bring in to order/.test(source),
+    `${slug} must preserve the accurate Verado special-order and SeaPro commercial-order framing.`,
   );
 }
 check(

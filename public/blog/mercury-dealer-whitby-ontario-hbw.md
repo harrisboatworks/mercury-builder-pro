@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-07-24
 keywords: ["mercury dealer whitby","mercury repower whitby","mercury outboard whitby ontario","boat motor service durham region"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-07-24
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
 
@@ -69,7 +69,7 @@ Mercury Premier is the top dealer tier, parts depth, warranty authorization, tec
 ## What Harris Boat Works Handles for Whitby Customers
 
 **Mercury outboard sales**
-Full lineup: 2.5 HP through 600 HP. FourStroke, Pro XS, Verado, SeaPro. Honest conversation about what works for your hull and how you use it.
+2.5 HP through 600 HP. Our standard repower lineup is FourStroke and Pro XS. Verado is available on special order, and SeaPro is a commercial-duty option we bring in to order. We'll have an honest conversation about what works for your hull and how you use it.
 
 **Repower service**
 Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial. For Whitby customers, we can realistically handle your annual service schedule, not just one-off repowers.
@@ -174,4 +174,3 @@ Yes. Brooklin and north Whitby are within the same drive time. We have customers
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
