@@ -21036,214 +21036,193 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: "Three Mercury outboards on a dock at Harris Boat Works on Rice Lake, showcasing the dealership's scenic Ontario location.",
     author: 'Jay Harris',
     datePublished: "2026-05-12",
-    dateModified: '2026-07-18',
+    dateModified: '2026-07-24',
     publishDate: "2026-05-12",
     category: "Mercury Outboards",
     readTime: '12 min read',
     keywords: ["Mercury outboard dealer Toronto", "Mercury dealer GTA", "Mercury dealer Mississauga", "Mercury dealer Brampton", "Mercury Premier dealer Toronto", "drive to Mercury dealer Ontario"],
-    content: `# Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
+    relatedSlugs: ["toronto-to-rice-lake-drive-in-process", "mercury-repower-gta-toronto-destination", "boat-service-near-toronto-hbw-reach"],
+    content: `
+# Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works (2026)
 
-*Last reviewed: 2026-07-18*
+*Last reviewed: 2026-07-24*
 
-> **Quick answer:** Toronto-area boaters drive to HBW because we post real installed prices online, stock 2026 Mercury inventory you can see in person, and have one of Ontario's deepest service benches. The 90-minute drive saves thousands on most repowers. Build a quote first at mercuryrepower.ca.
+> **Quick answer:** HBW is not in Toronto. We are a Mercury Marine Premier dealer in Gores Landing on Rice Lake. The drive can make sense when you want a written installed quote, Mercury-specific rigging, and an on-water test before pickup. It does not make sense if you cannot bring the boat to us and return for pickup. HBW does not ship, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
 
-**We're not in Toronto.** Harris Boat Works is in Gores Landing, on Rice Lake, Ontario (in the Kawarthas), about 90 minutes east of downtown Toronto. If you're a GTA boater needing a Mercury outboard, the question is: why would you drive 90 minutes when there are Mercury dealers within 15 minutes of your house?
+Choosing a dealer by distance alone is easy. Choosing by the complete job takes a little more work.
 
-Honest answer: you wouldn't, if the local option was equivalent. The story most GTA boaters don't realize is that **most local Mercury dealers in the GTA aren't actually equivalent.** What you save in drive time you pay back in dealer tier, pricing transparency, repower expertise, and post-sale service quality.
+For a portable outboard, the nearest authorized dealer may be the practical answer. For a full repower, the better comparison is the written scope: motor, controls, rigging, propeller, installation, testing, warranty registration, and the support you will receive after pickup.
 
-This post is the version of that comparison we'd run through with a GTA buyer who's about to pick a dealer. We're a Mercury dealer in Ontario since 1965, third-generation family business since 1947, and we sell Mercury motors to GTA buyers every week. Here's why.
-
----
-
-![Why Toronto boaters drive to Harris Boat Works: about 80 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-toronto-worth-the-drive.png)
-
-## The Toronto Dealer Reality
-
-The GTA has Mercury dealers. They're not all the same.
-
-**Mercury's dealer tier system** ranks dealers from entry-level service through Premier (the top tier). Premier status requires:
-- Factory-trained technicians on every Mercury family (FourStroke, Pro XS, Verado, SeaPro)
-- Full diagnostic equipment (G3 software, $3,000+ kit)
-- Stocked parts inventory for the most common service work
-- Demonstrated annual sales + service volumes
-- Clean Customer Satisfaction Index (CSI) scores
-
-**There are around 45 authorized Mercury dealers across Ontario. Of those, only a handful hold Premier status.** Most GTA dealers are a tier below, they sell Mercurys, but they don't have the same diagnostic depth or service infrastructure.
-
-That tier difference shows up in three specific ways for buyers:
-
-1. **Diagnostic capability**, when something goes wrong, can the dealer actually figure out what's wrong? Or do they swap parts hopefully?
-2. **Repower expertise**, installing a new motor on an old hull involves more than bolting it on. Rigging knowledge matters.
-3. **Service-after-sale**, do they keep your records, anticipate maintenance, support the motor for its full life? Or is it a one-and-done transaction?
-
-The price you pay for the motor is the same across dealers. **What you actually buy is the dealer.**
+HBW has sold Mercury outboards since 1965 and operates as a Mercury Marine Premier dealer. We publish current motor pricing and let boaters build a starting repower quote before making the trip.
 
 ---
 
-## The Drive-Time Math
+## What the Drive Can Buy You
 
-From central Toronto: roughly **90 minutes** to Gores Landing in light traffic. From the western GTA (Mississauga, Brampton, Oakville): **75-105 minutes**. From the north (Markham, Richmond Hill, Vaughan): **75-90 minutes**. From Hamilton/Burlington: **2-2.5 hours**.
+### A written starting price
 
-Compared to your closest GTA Mercury dealer (5-30 minutes typically), yes, it's farther.
+Use the [Mercury pricing reference](/pricing-reference) for current bare-motor prices and the [quote builder](/quote/motor-selection) for an installed starting quote. The boat still has to be assessed before the final work order is approved, but you can see the main numbers before towing anywhere.
 
-But the math changes when you factor in:
+Compare every dealer quote line by line:
 
-**The number of trips.** Most boat owners visit their Mercury dealer 1-3 times a year (annual service, occasional repair). At 90 minutes one-way, that's 9 hours of total drive time annually. Vs maybe 3 hours of urban-dealer trips. **Net: 6 extra hours per year.** Over 10 years of motor ownership, 60 hours of driving, about 3 weekend days total.
+- Exact motor model and shaft length
+- Gearcase and steering configuration
+- Controls, harnesses, gauges, and cables
+- Propeller selection
+- Removal of the old motor
+- Installation labour and shop supplies
+- Fuel-system or transom work that may be required
+- On-water testing
+- Warranty registration
+- HST and any stated exclusions
 
-**What 60 hours of driving buys you over 10 years:**
-- Premier-tier diagnostics on every visit
-- A documented service history with one shop, one set of techs
-- Mercury Product Protection (MPP) extended warranty processed by the same dealer that sold you the motor
-- Trade-in value when you upgrade (we keep records)
+A low headline number is not useful if the scopes are different.
 
-For most GTA buyers, that's worth it. For some it isn't, and that's fine, but the math is at least worth doing.
+### Mercury-specific rigging
 
----
+Modern repowers can involve mechanical controls, Digital Throttle and Shift, SmartCraft instruments, steering, charging, fuel systems, and boat-specific setup. The right configuration depends on the hull and the exact Mercury model, not only the horsepower printed on the cowl.
 
-## What's Different About a Trip to HBW
+HBW starts with the boat's capacity label or manufacturer's rating, then checks shaft length, transom condition, controls, steering, electrical system, typical load, and intended use.
 
-You've been to a marine dealer in the city. The model is usually: showroom in a strip plaza or industrial area, parts counter, service bay. Get in, get out.
+### A water test before handoff
 
-Gores Landing is different. Harris Boat Works has been **at the same Rice Lake dock since 1947**, third-generation family, with our marina's launch ramp, 49-slip moorage, rental fleet, and shop all on the same property. When you visit:
-
-- **You see the boats we service** sitting in the slips at our dock
-- **You see the rental fleet**, same Mercurys we sell
-- **You can do the trip on the water if your motor's in for service** (one of our courtesy boats can give you a Rice Lake tour while we work)
-- **You meet the people working on your motor**, not a corporate parts counter
-
-It's not "stop and shop", it's a destination day. Many of our GTA customers turn the trip into a half-day on Rice Lake, lunch in Bewdley, fuel up at the dock, and drive back. **That's the difference between a vendor relationship and a dealer relationship.**
+Every HBW repower is tested on Rice Lake before pickup. We check starting, shifting, steering, charging, cooling, gauge operation, wide-open-throttle RPM, and general behaviour under load. If the propeller or setup needs attention, we want to find it before the boat leaves.
 
 ---
 
-::pull-quote
-quote: Drove past four Mercury dealers between Mississauga and Gores Landing. **Worth every kilometre**: first dealer in three years who answered my email with a real number instead of "come in and we'll talk."
-attribution: Sandeep P.
-source: Mississauga
-::
+## From the Shop: The Logistics
 
-## The Cost Side. Why Pricing Is Different at HBW
+HBW is a customer drop-off and pickup operation.
 
-**Mercury MAP pricing.** Mercury sets a Minimum Advertised Price for new motors. Most dealers list at MAP. So motor-only pricing is similar across the province.
+For a repower, you bring the boat and trailer to Gores Landing, leave them for the scheduled work, and return after the installation and water test are complete. Routine service also requires a drop-off and a later pickup unless the approved work order says otherwise.
 
-**Where dealer pricing actually differs:**
+HBW does not provide:
 
-1. **Rigging and install pricing**, installing a Mercury 200 HP V6 on a 21-foot bowrider isn't just bolting it on. It's hours of rigging (controls, steering, gauges, prop selection, sea trial). Some dealers charge $1,500-$2,500. Some charge $4,000+. We publish ours transparently in the [configurator](https://www.mercuryrepower.ca).
+- Pickup or delivery
+- Boat hauling
+- Mobile service
+- Shipping of outboards
+- Courier or third-party release
+- Transport coordination
+- Transport referrals or transport-price estimates
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+If you cannot move the boat yourself, arrange your own solution before booking. Do not assume HBW will find a carrier.
 
-2. **All-in vs. add-on quoting**, many dealers quote a "headline" price and add line items at delivery (controls, prop, freight, prep). Our pricing is **all-in before HST** in the live configurator, and the price you see is the price you pay.
-
-3. **Trade-in valuation**, we have actual Ontario service-data on used Mercury values. Some urban dealers low-ball trade-ins to make the new-motor sale look better. The transparent thing is to value the trade fairly and let you see the math.
-
-4. **MPP extended warranty pricing**. Mercury Product Protection runs about the same dealer-to-dealer at MAP, but **how it's offered** varies. We discuss it before quote-finalization. Some dealers add it at the very end as upsell.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-For a typical GTA repower (e.g., 150 HP FourStroke + rigging on a 19-foot runabout), the all-in quote difference between a transparent dealer and an opaque one is often **$1,500-$3,000.** That covers a lot of drive time.
+For a motor-only purchase, pickup is in person at Gores Landing after HBW confirms the exact release requirements and safe loading plan. A mounted repower is the better fit when the boat needs rigging, setup, and an on-water test.
 
 ---
 
-## The Configurator. Get Your Real Number Without Calling
+## When the Trip Usually Makes Sense
 
-This is the single biggest reason GTA boaters end up choosing HBW: **you don't need to call us to get a real price.**
+The drive is worth considering when:
 
-Most marine dealers in the GTA still operate "call for pricing", meaning you fill out a form, wait 1-2 days, get an estimate without details, then negotiate. That model works for the dealer (they control the conversation); it works against you (you can't compare).
+- You are comparing complete installed repower scopes
+- You want the boat water-tested before handoff
+- Your project includes controls, gauges, steering, or substantial rigging
+- You want current Mercury pricing before the first visit
+- You are prepared to handle both drop-off and pickup
 
-**[mercuryrepower.ca](https://www.mercuryrepower.ca)** is our online quote configurator. Pick your motor, select your shaft length and controls, add a prop, see install pricing, review current Mercury offers, see trade-in credit math and get a final all-in number. **In about three minutes.** Then book a phone call or visit if you want to verify. No "we'll get back to you."
+The closest dealer may be the better answer when:
 
-This isn't a brochure tool. It's the same data our staff uses. The price you see at home is the price we'd quote you in person.
+- You cannot tow or otherwise move the boat yourself
+- The boat needs emergency service at its current marina
+- The job is simple routine work and distance is the deciding factor
+- You need another outboard brand serviced
 
----
-
-## What to Expect on a Visit (Be Honest About Logistics)
-
-Couple of practical realities for GTA buyers:
-
-**Pickup only.** Like most marine dealers, we don't deliver Mercury motors to your driveway. You either bring your boat to us (trailer) or arrange to pick up the motor + take it to your boat. **We don't ship outboards.** Plan accordingly.
-
-**The drive home with a new outboard.** A Mercury 90 HP weighs ~360 lbs; a 200 HP V6 weighs ~510 lbs. If you're picking up a small motor (under 25 HP), it fits in most pickup beds. Larger motors need a trailer or proper crate handling. We help with this, including loading.
-
-**Repower visits are different.** If you're repowering, you typically trailer your boat to us, leave it 2 to 5 days for rigging and sea trial, come back to pick it up. The 90-minute drive happens twice. If you're not local, plan to either stay nearby (Cobourg, Peterborough have hotels) or arrange transport in/out.
-
-**Service visits.** Most service work is 1-3 days in the shop. Drop off, drive home, come back. Or arrange transport (some GTA customers use boat transport services for $300-$500 each way).
-
-The logistics work. They just need planning.
+HBW is Mercury-only. We would rather be clear about the fit than turn a distance problem into a bad service experience.
 
 ---
 
-## When Driving Doesn't Make Sense
+## Winter Planning and the Physical Closure
 
-Honest take, because not every GTA buyer should drive to HBW:
+The marina is closed December 1 through April 1. No service, repower, installation, inspection, or customer access happens on site during that period.
 
-- **You need a 4 HP kicker for a tender.** Total motor purchase cost: $1,800. Drive time wouldn't justify the trip; buy local.
-- **You're shopping pure brand** (motor only, no install, no service relationship). Local dealer fine.
-- **You'll only own the boat 2-3 years.** Long-term service relationship matters less.
-- **You can't trailer or arrange transport.** Logistics matter.
+Planning can continue remotely. You can use the pricing tools, submit boat details, review a proposed configuration, and approve a spring work order while the physical shop is closed. The boat work begins after reopening.
 
-The trip makes sense for: **repowers**, **major motor purchases ($15K+)**, **boats you'll own 5+ years**, **anyone with a specific Mercury Premier service need** (diagnostic complexity, warranty work, MPP-eligible servicing).
+If your boat is stored at HBW, it remains inaccessible during the closure. HBW offers outdoor shrinkwrap storage only, not indoor, heated, climate-controlled, or year-round storage.
 
 ---
 
-## What HBW Customers Often Bundle Into the Trip
+## What to Send Before You Tow
 
-Customers from the GTA who make the drive often combine it with:
+Submit the following at [hbw.wiki/service](https://hbw.wiki/service):
 
-- **A Rice Lake fishing day**, we have a [full Rice Lake guide](/blog/rice-lake-boating-guide-2026) covering launches, hazards, fish species
-- **A [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) day**, we sit on the TSW; June-September lockage is free in 2026 (Canada Strong Pass). [Trent-Severn 2026 guide](/blog/trent-severn-waterway-boating-guide-2026)
-- **Boat rentals**, try a Mercury-powered rental for the day before committing to a purchase ([rental info](https://harrisboatworks.ca/rentals))
-- **Lunch in Bewdley**. Lakeview Restaurant, a 5-minute drive from us, is on the water
+1. Boat make, model, year, and length
+2. A clear photo of the capacity label or compliance notice
+3. Current motor model and serial number
+4. Transom and rigging photos
+5. Steering and control type
+6. Normal passenger and gear load
+7. How you use the boat
+8. The problem you are trying to solve
 
-We've had customers turn a 90-minute "go pick up your motor" drive into a full-day family outing. That's the pattern that works.
+HBW can then tell you whether the job fits our shop and what must be confirmed in person.
 
 ---
 
 ## Frequently Asked Questions
 
-**How long does it take to drive from Toronto to Harris Boat Works?**
-Roughly 90 minutes from central Toronto in light traffic. From western GTA (Mississauga, Brampton): 75-105 minutes. From north (Markham, Richmond Hill): 75-90 minutes. Take the 401 east, exit at Cobourg, follow County Rd 18 north to Gores Landing.
+**Is Harris Boat Works located in Toronto?**
+No. HBW is in Gores Landing, Ontario, on the south shore of Rice Lake. Check current traffic and towing directions before leaving.
 
-**Is Mercury motor pricing the same at HBW as my local Toronto dealer?**
-Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing varies dealer to dealer, sometimes by thousands of dollars. Our configurator shows our all-in pricing transparently; many GTA dealers don't.
+**Does HBW pick up or deliver boats in the GTA?**
+No. Customers bring the boat to Gores Landing and return for pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, or recommend transport providers.
 
-**Why drive to HBW vs a closer Mercury dealer?**
-Three things: Mercury Premier dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no "call for quote"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine.
+**Does HBW ship Mercury outboards?**
+No. Outboards are picked up in person at Gores Landing under HBW's release and loading requirements. Repower boats are collected after installation and water testing.
 
-**Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?**
-Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. Returning to the original dealer can still help because that shop knows the installation, service history, and parts used. Premier status does not change the warranty terms or guarantee faster approval.
+**How do I compare HBW with a closer dealer?**
+Compare the exact motor and the complete written scope, including rigging, controls, propeller, installation, testing, warranty registration, HST, and exclusions.
 
-**Do you offer pickup or delivery for GTA buyers?**
-We don't ship or deliver Mercury motors. Pickup only at Gores Landing. For repowers, customers trailer the boat to us; service and parts pickup is in person. Some customers use commercial boat transport services for one-way trips.
+**Can HBW plan a repower during winter?**
+Yes, planning and approvals can happen remotely. The marina is closed December 1 through April 1, so no physical work or customer access occurs during that period.
 
-**What's the savings vs. a Toronto dealer for a typical repower?**
-Highly variable, but for a 150 HP FourStroke repower with rigging + prop + sea trial, all-in pricing at HBW typically runs $1,500-$3,000 less than a comparable rigged repower at an opaque-pricing GTA dealer. The configurator gives the exact number.
-
-**Can I rent a boat at HBW before committing to buy?**
-Yes. We have a 9-boat rental fleet (Mercury-powered) on Rice Lake, half-day or full-day rentals. Many GTA customers rent before buying. Booking at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
-
-**Is HBW open weekends?**
-Yes. Saturday + Sunday hours during boating season (May-October), plus weekday business hours. Off-season weekend hours are reduced, call ahead.
-
-**Do you do warranty work for motors purchased at other dealers?**
-Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario.
+**Will HBW service a Mercury bought elsewhere?**
+HBW can assess Mercury service and warranty requests regardless of the selling dealer. Coverage, authorization, scheduling, and the exact repair scope still require confirmation.
 
 ---
-**Phone:** 905-342-2153
-**Configurator (transparent pricing):** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+## Ready to Compare the Complete Job?
+
+Start with the [Mercury pricing reference](/pricing-reference), build an installed starting quote, then submit the boat details before making the drive.
+
+**Quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
+**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+**Pickup location:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## Related Guides
+
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
+- [Boat Service Near Toronto: HBW Reach](/blog/boat-service-near-toronto-hbw-reach)
+
 `,
     faqs: [
-      { question: "How long does it take to drive from Toronto to Harris Boat Works?", answer: "Roughly 90 minutes from central Toronto in light traffic. From western GTA (Mississauga, Brampton): 75-105 minutes. From north (Markham, Richmond Hill): 75-90 minutes. Take the 401 east, exit at Cobourg, follow County Rd 18 north to Gores Landing." },
-      { question: "Is Mercury motor pricing the same at HBW as my local Toronto dealer?", answer: "Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing varies dealer to dealer, sometimes by thousands of dollars. Our configurator shows our all-in pricing transparently; many GTA dealers don't." },
-      { question: "Why drive to HBW vs a closer Mercury dealer?", answer: "Three things: Mercury Premier dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no \"call for quote\"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine." },
-      { question: "Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?", answer: "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. Returning to the original dealer can still help because that shop knows the installation, service history, and parts used. Premier status does not change the warranty terms or guarantee faster approval." },
-      { question: "Do you offer pickup or delivery for GTA buyers?", answer: "We don't ship or deliver Mercury motors. Pickup only at Gores Landing. For repowers, customers trailer the boat to us; service and parts pickup is in person. Some customers use commercial boat transport services for one-way trips." },
-      { question: "What's the savings vs. a Toronto dealer for a typical repower?", answer: "Highly variable, but for a 150 HP FourStroke repower with rigging + prop + sea trial, all-in pricing at HBW typically runs $1,500-$3,000 less than a comparable rigged repower at an opaque-pricing GTA dealer. The configurator gives the exact number." },
-      { question: "Can I rent a boat at HBW before committing to buy?", answer: "Yes. We have a 9-boat rental fleet (Mercury-powered) on Rice Lake, half-day or full-day rentals. Many GTA customers rent before buying. Booking at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)." },
-      { question: "Is HBW open weekends?", answer: "Yes. Saturday + Sunday hours during boating season (May-October), plus weekday business hours. Off-season weekend hours are reduced, call ahead." },
-      { question: "Do you do warranty work for motors purchased at other dealers?", answer: "Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario." },
+      {
+        question: "Is Harris Boat Works located in Toronto?",
+        answer: "No. HBW is in Gores Landing, Ontario, on the south shore of Rice Lake. Check current traffic and towing directions before leaving."
+      },
+      {
+        question: "Does HBW pick up or deliver boats in the GTA?",
+        answer: "No. Customers bring the boat to Gores Landing and return for pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, or recommend transport providers."
+      },
+      {
+        question: "Does HBW ship Mercury outboards?",
+        answer: "No. Outboards are picked up in person at Gores Landing under HBW's release and loading requirements. Repower boats are collected after installation and water testing."
+      },
+      {
+        question: "How do I compare HBW with a closer dealer?",
+        answer: "Compare the exact motor and the complete written scope, including rigging, controls, propeller, installation, testing, warranty registration, HST, and exclusions."
+      },
+      {
+        question: "Can HBW plan a repower during winter?",
+        answer: "Yes, planning and approvals can happen remotely. The marina is closed December 1 through April 1, so no physical work or customer access occurs during that period."
+      },
+      {
+        question: "Will HBW service a Mercury bought elsewhere?",
+        answer: "HBW can assess Mercury service and warranty requests regardless of the selling dealer. Coverage, authorization, scheduling, and the exact repair scope still require confirmation."
+      },
     ],
   },
   {
@@ -21491,235 +21470,210 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Jay Harris',
     datePublished: "2026-05-19",
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-24',
     publishDate: "2026-05-19",
     category: "Mercury Outboards",
     readTime: '12 min read',
     keywords: ["Mercury repower GTA", "Mercury repower Toronto", "Mercury repower Mississauga", "boat repower GTA cost", "outboard repower process Toronto", "Mercury Premier repower dealer Ontario"],
-    content: `# Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
+    relatedSlugs: ["mercury-outboard-dealer-toronto-why-drive-to-hbw", "toronto-to-rice-lake-drive-in-process", "boat-service-near-toronto-hbw-reach"],
+    content: `
+# Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-07-24*
 
-> **Quick answer:** GTA boaters repower at HBW because we quote installed packages online, stock Mercury inventory, and keep the boat with us 2 to 5 days at the shop for a typical repower. Drop the boat in Gores Landing, pick it up commissioned and sea-trialled. Start the configurator at mercuryrepower.ca.
+> **Quick answer:** A GTA repower at HBW is a customer drop-off and pickup job. Start with the boat's capacity label, build a current quote, send the hull and rigging details, then bring the boat to Gores Landing for the scheduled installation. A clean repower is normally in the shop for 2 to 5 days once the motor and required rigging are available. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
 
-You've decided to repower. Maybe your old motor is on its last legs; maybe a fuel-system rebuild costs as much as a fresh new Mercury. Either way, you're in the GTA and need to figure out: **how does this actually work logistically when the dealer is 90 minutes away?**
+There are two timelines in every repower:
 
-This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Premier dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
+1. **Motor and rigging availability**
+2. **Physical shop time after the complete package is ready**
 
-![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
-
-*Where our customers come from. The 90-minute drive radius covers most of the GTA east end, the Kawarthas, Northumberland, Durham, and Bay of Quinte.*
-
----
-
-## The Repower Decision (Skip If You're Already Sure)
-
-Before logistics, make sure repower is the right move. Three quick checks:
-
-1. **Is your hull worth keeping?** If the hull has cracks, soft transom, or significant deck rot, repowering is putting a new heart in a dying body. Hull-vs-repower decision: see our [hull replacement vs repower post](/blog/boat-hull-replacement-vs-repower-decision).
-
-2. **What's the math on your current motor?** A modern Mercury 150 HP repower (motor + rigging + prop + install) runs roughly $23,000-$30,000 all-in CAD. A new equivalent boat package runs $50,000-$80,000+. The math usually favours repower, but only if your hull has 5+ more good years.
-
-3. **Are you keeping the boat 5+ more years?** A repower's value compounds over years. If you're selling in 2 years, paying $25K for a new motor doesn't recover at resale.
-
-If those three say go, you're a repower candidate. The rest of this is about the actual logistics.
+Keeping those timelines separate prevents the most common planning mistake. Your boat does not need to sit at HBW while a special-order motor or rigging component is still on the way.
 
 ---
 
-## The Five Stages of a GTA Repower at HBW
+## Stage 1: Confirm What the Boat Can Safely Carry
 
-### Stage 1: The configurator quote (15 minutes, from your couch)
+Start with the capacity label, compliance notice, or manufacturer's documentation. Do not choose horsepower from boat length alone.
 
-Before you do anything else, get a real number.
+Send HBW:
 
-Go to **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, pick the Mercury HP that fits your boat, select shaft length and controls, add a prop, and you'll see all-in installed pricing in CAD. **About 90 seconds.** No sales call required. No "we'll get back to you."
+- Boat make, model, year, and length
+- A readable capacity-label photo
+- Current motor model and serial number
+- Current shaft length
+- Transom photos
+- Steering and control details
+- Gauge and electrical-system photos
+- Normal passenger and gear load
+- Primary use: fishing, cruising, towing, or heavy-load operation
 
-Bring trade-in info if you have it (year, hours, condition of your existing motor) and the configurator gives you a trade credit estimate too.
-
-This step matters because: most GTA dealers won't quote firmly without an in-person visit. The configurator means **you can compare HBW's all-in price to local dealer estimates without driving anywhere yet**.
-
-### Stage 2: The phone call (30-60 minutes)
-
-If the configurator number works, call **905-342-2153**. We'll cover:
-
-- Confirm the motor spec (sometimes shaft length needs verification on transom; we'll guide measurement)
-- Walk through any optional rigging (DTS, hydraulic steering upgrade, stainless prop)
-- Discuss MPP extended warranty options (worth considering, see our [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026))
-- Schedule the install
-- Discuss boat transport logistics (next stage)
-
-**Wait time for repower install:** longer during peak season (April-June, September-November), and shorter at the start and end of the season. The phone call locks the slot.
-
-### Stage 3: Boat transport to HBW (1 day, varies by approach)
-
-You have three options for getting the boat to Gores Landing:
-
-**Option A. Trailer it yourself.** Most common. From central Toronto: 90 minutes east on the 401, exit Cobourg, follow County Rd 18 north to Gores Landing. From western GTA (Oakville, Burlington): add 30-60 minutes. We have parking for trailers on the property; drop off the boat, leave the trailer or take it home.
-
-**Option B. Hire boat transport.** Several Ontario boat-transport services do GTA-to-Kawartha runs. Typical cost: $300-$600 each way for a typical 18-22 ft boat. Search "boat transport Ontario" or ask us, we know the operators. Useful if you don't own a tow vehicle or don't want to drive a trailer.
-
-**Option C. Some customers leave the boat at HBW after a season.** If you're already storing with us over the winter, the boat is already here, so there's no transport step. We do the repower once the shop reopens in the spring, and you skip the transport cost entirely.
-
-Most GTA customers go with Option A. The 401 + County Rd 18 drive is straightforward.
-
-### Stage 4: The install (2 to 5 days at the shop)
-
-Old motor comes off, new Mercury goes on. The work involves:
-
-- **Removal of existing motor**, drain fluids, disconnect rigging, lift off
-- **Transom inspection**, we look for soft spots, cracking, hardware damage. Almost always clean on hulls under 20 years old; sometimes finds issues on older boats.
-- **New motor installation**, mounting bolts to spec, alignment check, transom seal
-- **Rigging**, controls (or DTS), fuel lines, gauges or VesselView display, steering linkage, battery wiring
-- **Prop selection**, we have stainless and aluminum props in stock; correct pitch is calculated based on your hull, weight, and use case
-- **Sea trial**, water test on Rice Lake to verify WOT RPM hits Mercury's spec, no over-revving, smooth shifting, full trim range, tell-tale flow
-- **Tuning**, adjust prop pitch if needed; sometimes 1-2 swaps to dial in performance
-- **Documentation**, warranty registration, service records, MPP enrollment if purchased
-
-**Total elapsed time at the shop:** 2 to 5 days for the install and water test. If the motor is special-order, add lead time that depends on the model and Mercury's current availability.
-
-### Stage 5: Pickup, on-water verification, drive home (4-8 hours)
-
-We call when ready. You drive back. We walk you through the new motor at the dock: controls, gauges, break-in instructions, service schedule, MPP paperwork.
-
-**Important: the 10-hour break-in period.** Your new Mercury isn't full-RPM-ready for the first 10 hours. We brief you on:
-- First 2 hours: vary throttle, no extended WOT, no sustained high RPM
-- Next 8 hours: gradually expand operating range
-- After break-in: follow the exact owner's manual. For most current FourStrokes, the first scheduled service is 100 hours or annually. HBW may recommend an optional early check; see our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
-
-You can test-run on Rice Lake before driving home, or take it slow on the trailer back to the GTA and break-in at your home water.
+HBW then matches a current Mercury configuration within the boat's approved limit.
 
 ---
 
-## What the GTA Repower Actually Costs
+## Stage 2: Build the Starting Quote
 
-Real all-in pricing for typical GTA repowers (CAD before HST):
+Use the [Mercury pricing reference](/pricing-reference) for current bare-motor prices and the [repower quote builder](/quote/motor-selection) for an installed starting point.
 
-| Boat → New motor | All-in price range | What's included |
-|---|---|---|
-| **17 ft fishing → Mercury 90 HP FourStroke** | $15,500-$18,500 | Motor, rigging, controls, prop, install, sea trial |
-| **19 ft runabout → Mercury 150 HP FourStroke** | $23,000-$30,000 | Same + power steering upgrade |
-| **20 ft pontoon → Mercury 115 HP CT FourStroke** | $19,000-$23,000 | Same + Command Thrust gearcase upgrade |
-| **22 ft bowrider → Mercury 200 HP V6 FourStroke** | $28,000-$35,000 | Same + DTS digital throttle |
-| **22 ft bass boat → Mercury 200 HP V6 Pro XS** | $30,000-$36,000 | Same + stainless prop + Pro XS hole-shot tuning |
+The final written quote can include:
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+- Exact Mercury motor
+- Gearcase and shaft configuration
+- Controls, harnesses, and gauges
+- Steering components
+- Propeller selection
+- Removal of the old motor
+- Installation labour
+- Fuel-system and electrical work
+- On-water test
+- Warranty registration
+- HST and stated exclusions
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Do not budget from an old horsepower range in a blog post. Motor pricing, rigging needs, and available promotions can change.
 
-These ranges include trade-in credit math. If your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
-
-**Compared to buying a new equivalent boat:**
-- New 19 ft runabout package (boat + 150 HP + trailer): $50,000-$80,000+
-- Repowering your current 19 ft hull: $23,000-$30,000
-
-Repower wins by $25,000-$50,000 on most current boats. Exceptions: hulls in genuinely bad shape, or boats you want to upgrade in size/style.
+If inspection finds transom damage, obsolete steering, unsafe fuel components, or another hidden condition, HBW confirms the added scope before proceeding.
 
 ---
 
-## Why GTA Boaters Ship to HBW Vs. Local
+## Stage 3: Approve the Configuration and Schedule
 
-A Toronto repower at a GTA Mercury dealer is theoretically possible. Here's why most GTA customers end up at HBW:
+HBW confirms the motor model, installation scope, availability, deposit terms, and expected shop window before you bring the boat.
 
-**1. Mercury Premier dealer expertise on rigging.** Modern Mercurys (V6 V8 SmartCraft, DTS, joystick) require factory-level rigging knowledge. Lower-tier dealers often work fine on standard FourStrokes, less reliably on premium variants.
+For in-stock combinations, the installation can be scheduled once the required parts and a work bay are available. Special-order timing depends on the exact Mercury configuration and current supply.
 
-**2. The configurator + transparent pricing.** GTA repowers at "call for quote" dealers often surface as $3,000-$5,000 more than equivalent rigged at HBW. The math works in our favour.
-
-**3. Trade-in valuation.** We have actual Ontario service-data on used Mercury values. Some urban dealers low-ball trades. The configurator's trade quote is honest.
-
-**4. Service relationship over the next decade.** We document everything. Your motor's service history lives at our shop. When MPP claims happen 5 years from now, your dealer that sold the motor processes the claim, that's how the system works best.
-
-**5. Prop tuning expertise.** Most repower issues 6 months later are prop selection problems. We sea-trial every install on Rice Lake before delivery and adjust prop pitch as needed. Local dealers without water access at the shop can't always do this, they install on the trailer and you find out later if the prop's wrong.
+The marina is closed December 1 through April 1. During that closure, planning and approvals can happen remotely, but no service, repower, installation, inspection, or customer access occurs on site. Physical work begins after reopening.
 
 ---
 
-## What NOT to Do as a GTA Repower Customer
+## From the Shop: Stage 4, Customer Drop-Off
 
-Mistakes we see GTA boaters make:
+Bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing at the confirmed time.
 
-**1. Buying a Mercury motor from a non-Mercury source.** Marketplace listings, online auction Mercurys imported from the US, most have **no Canadian warranty coverage**. The motor itself is identical; the warranty network won't honour it. Save thousands upfront, lose thousands in out-of-pocket repairs over the motor's life.
+HBW is drop-off and pickup only. We do not provide:
 
-**2. Treating one generic checklist as the Mercury schedule.** The exact owner's manual controls. For most current FourStrokes, the first scheduled service is 100 hours or annually, not a universal 20-hour warranty service.
+- Pickup or delivery
+- Boat hauling
+- Mobile service
+- Transport coordination
+- Transport referrals
+- Transport-price estimates
 
-**3. Not factoring transport in the budget.** $300-$600 each way for hired transport adds up. If you don't own a trailer, factor this in.
+Customers are responsible for getting the boat to HBW and taking it home. If you cannot move the boat, solve that independently before reserving the installation slot.
 
-**4. Picking a Mercury HP that's wrong for the hull.** GTA buyers sometimes over-power "to be safe." Going to or above the boat's max-rated HP creates handling issues, fuel cost, and porpoising on some hulls. Match the HP to the hull's design.
-
-**5. Skipping the sea trial.** Some dealers (not us) deliver without water-testing. Always insist on a sea trial; performance issues are dramatically easier to fix at the shop than at your home dock.
-
----
-
-## When to Start Planning Your Repower (Timing)
-
-The Ontario boating season is short, and so is our install window. The shop runs early April through November. The marina is closed during winter months, but we are available by phone, text, or email anytime. No install work happens over the winter. That makes booking timing matter:
-
-- **Winter (December-March)**: planning season. The shop is closed, but this is the time to run the configurator, lock your spec, and book a slot. Boats booked over the winter get first pick of the early-April calendar.
-- **Early spring (April)**: install season opens. The first slots fill fast, often by late April.
-- **Peak spring (May-June)**: busy. Often a 3-4 week wait. Book now and you can still be on the water with the new motor by mid-summer.
-- **Mid-season (July-August)**: you'll lose 2-3 weeks of boating to the install. Usually not worth it unless your old motor is failing.
-- **Fall (September-November)**: good. The shop is active but not capacity-constrained, and your motor is ready for next spring.
-
-If you're planning a repower, **start the configurator now and book your slot. Installs run early April through November.**
+At drop-off, HBW confirms the boat, motor, controls, keys, visible hull condition, and approved work order.
 
 ---
 
+## Stage 5: Installation and Rigging
+
+A typical clean repower includes:
+
+1. Remove and document the old motor
+2. Inspect the transom and mounting area
+3. Install the approved Mercury motor
+4. Install or adapt controls, harnesses, steering, and instruments
+5. Inspect the fuel system and battery connections
+6. Select an initial propeller
+7. Program and verify supported Mercury systems
+8. Register the warranty
+
+The boat is usually with HBW for 2 to 5 days once the complete installation package is ready. More complex controls, repairs, twins, structural findings, or unavailable parts can change that window. The approved work order and shop update control, not a generic promise.
+
 ---
 
-## What we see at HBW
+## Stage 6: Rice Lake Water Test
 
-GTA boaters drive past three or four Toronto-area Mercury dealers to reach us. The reason isn't always price (though we are competitive). It's the install package: Premier dealer paperwork, proper rigging photos, and a labour rate that runs $40-60/hr below downtown Toronto marine shops.
+Every HBW repower receives an on-water test before pickup.
 
-The drive is about an hour from Markham, 90 minutes from Mississauga. Most repower customers drop off Friday afternoon, pick up Tuesday or Wednesday of the following week. We do not offer pickup or delivery -- drop-off only.
+The test checks:
+
+- Cold and warm starting
+- Idle and shifting
+- Steering and trim
+- Cooling and telltale operation
+- Charging voltage
+- Gauge and alarm operation
+- Wide-open-throttle RPM
+- General handling and propeller fit under load
+
+The goal is to catch setup issues while the boat is still at the shop. A trailer-only handoff cannot prove how the combination behaves in the water.
+
+---
+
+## Stage 7: Pickup and Handoff
+
+HBW contacts you when the boat is ready and confirms the pickup window. You return with the approved trailer arrangement, complete the handoff, and take the boat home.
+
+The handoff covers the installed controls, gauges, break-in instructions, maintenance references, warranty registration, and any follow-up noted on the work order.
+
+Follow the exact owner's manual for break-in and maintenance. There is no universal 20-hour warranty-service rule across every current Mercury family.
 
 ---
 
 ## Frequently Asked Questions
 
-**How much does a Mercury repower cost in the GTA?**
-Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds.
+**How much does a Mercury repower cost for a GTA boater?**
+It depends on the exact motor and boat-specific rigging. Use the current [Mercury pricing reference](/pricing-reference) and quote builder, then let HBW confirm the final written scope.
 
-**How long does a repower take at HBW?**
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
+**How long is the boat at HBW?**
+A clean repower is normally in the shop for 2 to 5 days once the motor and required rigging are available. Hidden conditions, complex systems, twins, or parts delays can extend the work.
 
-**Can I trailer my boat from Toronto to HBW myself?**
-Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site.
+**Does HBW arrange transport from Toronto or the GTA?**
+No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
 
-**Do you arrange boat transport from the GTA?**
-We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer.
+**Can I plan a repower while HBW is closed?**
+Yes. Remote planning and approvals can continue. The physical marina is closed December 1 through April 1, with no on-site work or customer access.
 
-**Will my Mercury be eligible for warranty if I bought it elsewhere and want it serviced at HBW?**
-Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system.
+**Will the boat be tested before pickup?**
+Yes. Every HBW repower receives an on-water test on Rice Lake before handoff.
 
-**Can I pick a Pro XS over a FourStroke for repower?**
-Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix.
-
-**What if my boat needs more than just a motor?**
-Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer.
-
-**Do you do twin-engine repowers?**
-Yes, twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Same configurator, same workflow, longer install time (typically 14-21 days for twins). Twin Pro XS V6 installations are common in our shop.
-
-**What's the trade-in value on my current motor?**
-Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 12-year-old 90 HP with high hours trades for $1,500-$2,500. The configurator estimates based on your motor's specs.
+**Can HBW repower a boat with a Mercury bought elsewhere?**
+HBW can assess the boat and proposed Mercury configuration, but the motor, warranty status, rigging compatibility, and work scope must be confirmed before scheduling.
 
 ---
 
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+## Start With the Boat, Not a Generic Price Range
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Send the capacity label, current motor serial number, and rigging photos. HBW will confirm whether the project fits, build the correct Mercury configuration, and put the scope in writing.
+
+**Quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
+**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+**Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## Related Guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process)
+- [Boat Service Near Toronto: HBW Reach](/blog/boat-service-near-toronto-hbw-reach)
+
 `,
     faqs: [
-      { question: "How much does a Mercury repower cost in the GTA?", answer: "Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://www.mercuryrepower.ca) gives your specific number in 90 seconds." },
-      { question: "How long does a repower take at HBW?", answer: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, sea trial, and prop tuning. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives." },
-      { question: "Can I trailer my boat from Toronto to HBW myself?", answer: "Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site." },
-      { question: "Do you arrange boat transport from the GTA?", answer: "We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer." },
-      { question: "Will my Mercury be eligible for warranty if I bought it elsewhere and want it serviced at HBW?", answer: "Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system." },
-      { question: "Can I pick a Pro XS over a FourStroke for repower?", answer: "Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-300hp-pro-xs-performance-guide) for the specific decision matrix." },
-      { question: "What if my boat needs more than just a motor?", answer: "Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer." },
-      { question: "Do you do twin-engine repowers?", answer: "Yes, twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Same configurator, same workflow, longer install time (typically 14-21 days for twins). Twin Pro XS V6 installations are common in our shop." },
-      { question: "What's the trade-in value on my current motor?", answer: "Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 12-year-old 90 HP with high hours trades for $1,500-$2,500. The configurator estimates based on your motor's specs." },
+      {
+        question: "How much does a Mercury repower cost for a GTA boater?",
+        answer: "It depends on the exact motor and boat-specific rigging. Use the current Mercury pricing reference and quote builder, then let HBW confirm the final written scope."
+      },
+      {
+        question: "How long is the boat at HBW?",
+        answer: "A clean repower is normally in the shop for 2 to 5 days once the motor and required rigging are available. Hidden conditions, complex systems, twins, or parts delays can extend the work."
+      },
+      {
+        question: "Does HBW arrange transport from Toronto or the GTA?",
+        answer: "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+      },
+      {
+        question: "Can I plan a repower while HBW is closed?",
+        answer: "Yes. Remote planning and approvals can continue. The physical marina is closed December 1 through April 1, with no on-site work or customer access."
+      },
+      {
+        question: "Will the boat be tested before pickup?",
+        answer: "Yes. Every HBW repower receives an on-water test on Rice Lake before handoff."
+      },
+      {
+        question: "Can HBW repower a boat with a Mercury bought elsewhere?",
+        answer: "HBW can assess the boat and proposed Mercury configuration, but the motor, warranty status, rigging compatibility, and work scope must be confirmed before scheduling."
+      },
     ],
   },
   {
@@ -21730,223 +21684,213 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-boat-service-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-15",
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-24',
     publishDate: "2026-05-15",
     category: "Service",
     readTime: '12 min read',
     keywords: ["boat service near Toronto", "Mercury service Oakville", "outboard repair Burlington", "boat mechanic Hamilton", "Mercury service GTA", "certified marine mechanic Ontario"],
-    content: `# Boat Service Near Toronto: Why HBW Has Ontario-Wide Reach From Rice Lake
+    relatedSlugs: ["mercury-outboard-dealer-toronto-why-drive-to-hbw", "toronto-to-rice-lake-drive-in-process", "mercury-repower-gta-toronto-destination"],
+    content: `
+# Boat Service Near Toronto: How Far Is Too Far for the Right Mercury Shop?
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-07-24*
 
-> **Quick answer:** HBW serves boats from across Ontario. GTA, Kawarthas, Northumberland, and beyond, because there aren't many dealers with our service depth and parts inventory. Most customers drop off in Gores Landing, but we'll talk through any service question first. Book at mercuryrepower.ca.
+> **Quick answer:** HBW is a Mercury-only, customer drop-off and pickup shop in Gores Landing. The trip can make sense for Mercury diagnostics, warranty assessment, rigging, and repower work that benefits from dealer tooling and an on-water test. It may not make sense for a simple local job or a boat you cannot bring to us. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
 
-**Up front: Harris Boat Works isn't in the GTA.** We're 90 minutes east of central Toronto, in Gores Landing on Rice Lake, Ontario (in the Kawarthas). So when you search "boat service near Toronto," we're not the closest option, but we are the option a meaningful number of GTA boaters drive to. This post is about why.
+"Near Toronto" is not one service model. A mobile technician, a multi-brand marina, and an authorized Mercury dealer can all be useful, but they solve different problems.
 
-If you Google "boat service Toronto" or "Mercury repair GTA" you get a long list of marinas, mobile mechanics, and inboard boat yards. Some are great. Some are not. Sorting by quality from a search-results page is functionally impossible.
-
-Here's the honest version: **most GTA boat service is provided by general-purpose marinas that work on multiple brands, including Mercury, but that don't have factory-level Mercury training or diagnostic equipment.** A handful of authorized Mercury dealers in the GTA do, they're a fraction of the listings.
-
-We're a Mercury dealer in Ontario since 1965, and we service Mercury motors for boaters from across the GTA, Hamilton, Burlington, Oakville, Mississauga, Toronto, Markham, every week. This is the version of "what's the right service for my motor" we'd walk a GTA boater through.
+Start by identifying the work the motor actually needs. Then choose the shop whose tools, authorization, location, and process match that work.
 
 ---
 
-## The GTA Marine Service Landscape
+## When Mercury-Specific Service Matters
 
-What's actually available to a GTA boater needing Mercury service:
+Routine maintenance must follow the exact engine manual and serial-number scope. More involved work can require:
 
-**1. Mobile mechanics.** Person comes to your driveway or marina slip with a tool box. Pros: convenient. Cons: limited diagnostic equipment (no factory tools), parts dependency (they have to find/order, then come back), warranty limitations on Mercury claims, mixed quality control. Best for: simple work (oil changes, plug replacement, simple repairs).
+- Mercury diagnostic software and service information
+- Active and stored fault review
+- Warranty authorization
+- Model-specific tools and procedures
+- SmartCraft, controls, and gauge knowledge
+- Correct parts identification
+- Water testing under load
 
-**2. General-purpose marinas.** Multi-brand service shops. Some excellent, some marginal. Mercury isn't their primary specialty in most cases. Pros: nearby. Cons: variable Mercury expertise, may not have G3 diagnostic software, sometimes long parts delays for Mercury-specific items.
+HBW has sold Mercury since 1965 and operates as a Mercury Marine Premier dealer. We service Mercury outboards and MerCruiser products that fit the shop's current capabilities. We do not service other outboard brands.
 
-**3. Authorized Mercury dealers.** A specific subset, actually trained by Mercury, registered to do warranty work, factory tools on hand. **Tier varies, basic, gold, Premier.** Most GTA dealers are basic-to-gold tier; few are Premier.
-
-**4. Mercury Premier dealers.** Top tier. Factory-trained on every Mercury family, full G3 diagnostic kit, stocked parts, demonstrated CSI scores, eligible for the most complex warranty work. We're one. There are a handful in Ontario.
-
-For routine work (oil change, prop replacement, impeller change), tiers 1-2 are usually fine. **For anything diagnostic, electronic, warranty-eligible, or repower-related, Premier is meaningfully better.** That's the calibration.
-
----
-
-## What HBW Actually Services (and What We Don't)
-
-We work on:
-
-- **All Mercury outboards**, current production back through older fleet (1980s onward, with parts availability dependent on age)
-- **Mercruiser sterndrives**. Alpha One, Bravo (1, 2, 3), gas inboard variants
-- **Mercury Verado**, special-order motors but full service support
-- **Pro XS, FourStroke, SeaPro, Avator**, full Mercury family
-- **All Mercury accessories**, controls, props, gauges, VesselView/SmartCraft, MPP-eligible work
-
-We don't work on:
-
-- **Yamaha, Honda, Suzuki, Tohatsu, Evinrude** outboards, refer to brand-specific dealers
-- **Inboard tow boats** (MasterCraft, Malibu, Nautique inboards), different specialty
-- **Personal watercraft / Sea-Doo / jet skis**, different category
-- **Sailboat rigging or fiberglass repair**, we focus on power
-
-If your motor is a brand we don't service, we'll refer you. That's the right answer when our specialty doesn't match your need.
+For another brand, use an appropriately authorized dealer for that brand. HBW does not promise a specific referral.
 
 ---
 
-## The Specific Services GTA Customers Bring Us
+## What HBW Can Assess
 
-**Annual maintenance**, 100-hour service or annual service whichever first. Engine oil, gearcase oil, plugs, anodes, fuel filter, anodes, full diagnostic scan. Ranges $400-$700 for mid-range motors; $700-$1,200 for V6 V8 (see our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule)).
+### Scheduled maintenance
 
-**300-hour major service**, every 3 years. Includes 100-hour items + water pump impeller, fuel system clean, lower unit pressure test. $800-$2,500 depending on motor.
+The exact maintenance plan depends on engine family, serial number, hours, calendar time, and use. There is no single checklist that applies to every Mercury.
 
-**Winterization + storage**, fall service. Model-specific fuel preparation, internal protection, drainage, gearcase and battery work, combined with shrinkwrap and outdoor storage on our property. See the [Winter Storage Decision Guide](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario) and request the current quote at hbw.wiki/service.
+Submit the serial number and current hours. HBW will identify the applicable scope and quote it in writing.
 
-**Spring commissioning**, pre-launch service. Inspect, check, fluids, prep. Typical $300-$500.
+### Faults, alarms, and running problems
 
-**Diagnostic for fault codes / alarms**, when something's wrong but you don't know what. We plug in G3 software, decode active and historical fault codes, deliver a report. Diagnostic fee $80-$120, typically credited toward repair work. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for code interpretation.
+An alarm description alone is not a diagnosis. HBW can review the engine history, reproduce the complaint when safe, follow the service procedure, and document findings.
 
-**Repower**, full new motor install. Highest-margin work; boat with us 2 to 5 days at the shop. See our [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination).
+Do not clear codes, disconnect components, or keep operating through a serious alarm just to avoid a shop visit.
 
-**Pre-purchase inspection**, for buyers considering a used Mercury. Compression, gearcase pressure, computer diagnostics. Report with all findings. $200-$400. See [Used Outboard Buying Guide](/blog/used-outboard-buying-guide-ontario).
+### Warranty assessment
 
-**Warranty work**, for Mercurys still under standard 3-year coverage or MPP extended. Mercury reimburses qualifying claims. We handle the paperwork.
+HBW can assess Mercury warranty concerns even when the motor was sold by another authorized dealer. Coverage is not automatic. The exact failure, maintenance history, warranty status, authorization, and Mercury's terms all matter.
 
-**Bellows / gimbal bearing on Mercruiser**, sterndrive-specific. Every 5-7 years. See [Mercruiser Sterndrive Guide](/blog/mercruiser-sterndrive-guide-ontario).
+### Repower and rigging
 
----
+Repowers require the boat's capacity label or manufacturer's rating, a hull and transom assessment, the exact Mercury configuration, controls, steering, instruments, propeller selection, installation, and an on-water test.
 
-::pull-quote
-quote: I dropped the boat at HBW on the way to the cottage and picked it up on the way home. Quote was honest, work was done on time, and **the bill matched the estimate**. That's not normal in this business.
-attribution: Marco S.
-source: Ajax
-::
+Use the [quote builder](/quote/motor-selection) for a starting number and [hbw.wiki/service](https://hbw.wiki/service) for the boat-specific work order.
 
-## What HBW Does That Most GTA Service Doesn't
+### Winter storage and spring commissioning
 
-Three concrete differences:
+HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage.
 
-### 1. G3 Diagnostic capability
-
-Mercury's factory diagnostic software (G3) decodes every possible fault code in Mercury's database, including stored historical codes. Many service shops have aftermarket diagnostic tools that read partial code lists. **G3 is dealer-only**, $3,000+ kit, and Mercury releases updates to it Mercury-only.
-
-For a complex problem (intermittent stalls, occasional fault codes, weird performance issues), G3 sees things consumer tools and lower-tier diagnostic systems can't. We use it on every diagnostic visit.
-
-### 2. Factory-trained techs (not just trained, factory-trained)
-
-Mercury runs ongoing certification programs for dealer techs. To stay Premier, we have to keep techs current on the latest Mercury release (Avator, V12 Verado, current SmartCraft software, etc.).
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-A tech at a non-authorized shop may have learned Mercurys 10 years ago and never been formally retrained. They can do basic work; on modern V8 V10 with electronics, they're guessing.
-
-### 3. Complete service history per boat (one shop, one record)
-
-When you bring a boat back to HBW for work years later, your history is in our system. We know what was serviced, when, what the codes said, what we recommended you defer, what's coming up. That continuity makes diagnosis faster and recommendations sharper.
-
-GTA boaters who bounce between mobile mechanics and different marinas often have no service history at all. That's fine for routine work; on big questions ("should I repower or rebuild?"), we have data they don't.
+Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
 
 ---
 
-## The "How Often" Reality for GTA Boaters
+## Pricing: Use the Written Scope
 
-A GTA boater with a typical Mercury usually needs:
+Old fixed price ranges are unreliable because service needs vary by engine and work order.
 
-- **Annual or 100-hour service**, 1× per year. ~3 hours total time (drop off, pick up, plus ~90 min each way drive)
-- **Spring commissioning**, 1× per year. Often combined with annual service.
-- **Winterization**, 1× per fall. Combined with storage = once-and-done in October.
-- **Repair / diagnostic**, usually 0-1× per year on a healthy motor. More on an aging motor.
+A useful quote should state:
 
-So a typical GTA Mercury owner makes **2-3 trips per year** to a service dealer. Total drive time: 4-9 hours/year (round-trip × 2-3).
+- Engine model and serial-number scope
+- Labour operation
+- Parts and fluids
+- Diagnostic work
+- Authorized repairs
+- Testing
+- HST
+- Exclusions and approval threshold
 
-If you're bringing the boat for **winter storage**, those trips collapse: drop off in October, pick up in May. **Two drives per year.** Most GTA customers using HBW for both storage and service do exactly this.
-
----
-
-## When to Use Local GTA Service Instead
-
-There are real cases where local service makes more sense than driving to HBW:
-
-- **Emergency on-water service**, main motor died at your home dock, can't get the boat moved. Mobile mechanic in the GTA is the right call.
-- **Seasonal slip is in the GTA**, boat lives at a Toronto marina; coming up to Rice Lake for routine service involves complex transport. Use the local marina.
-- **Routine work only, on simple motors**, 25 HP tiller motor on a tinny gets oil changed wherever's nearest. Drive time isn't justified.
-- **You don't own a trailer and won't ship**, logistics matter.
-
-Honest division: **simple work + simple motors → local. Diagnostic + electronic + warranty + repower → HBW.**
+HBW confirms the current price for the actual job. For motor pricing, the canonical source is the [Mercury pricing reference](/pricing-reference).
 
 ---
 
-## How a Typical GTA Service Visit Actually Works
+## From the Shop: The Drive-In Service Model
 
-Walking through it for a Toronto customer with a 19-foot bowrider needing annual service:
+HBW is drop-off and pickup only.
 
-**Day 0**. Phone or [hbw.wiki/service](https://hbw.wiki/service) booking. We set a date 1-2 weeks out (longer in May/June peak).
+You bring the boat, motor, or approved service item to Gores Landing at the scheduled time. HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
 
-**Day 1 (drop-off)**. Trailer the boat to Gores Landing. Drop at our shop. Hand over keys, sign work order. Drive home (90 min). Total trip: 4-5 hours including drop-off process.
+HBW does not provide:
 
-**Days 2-4**. Service work. Engine oil, gearcase oil, plugs, fuel filter, fuel-water separator, anode check, full diagnostic scan, water pump (if 100-hour interval). We text or email when done.
+- Pickup or delivery
+- Boat hauling
+- Mobile or dockside service
+- Transport coordination
+- Transport referrals
+- Transport-price estimates
 
-**Day 5-7 (pickup)**. Drive back, pick up boat, walk through any findings, drive home. Total trip: 4-5 hours again.
+Do not book on the assumption that HBW will move the boat from a GTA home, marina, or cottage.
 
-**Total elapsed time:** 5-7 days. **Total drive time:** 8-10 hours including the work-trip.
-
-For boats that **store with us through winter**, this collapses entirely. October drop-off, May pickup. Two drives per year, total.
+Turnaround depends on diagnosis, authorization, parts, current workload, and whether an on-water test is required. HBW will give the applicable update for the specific work order. A generic one-day or one-week promise is not reliable.
 
 ---
 
-## Booking. How to Actually Get on the Schedule
+## The Winter Closure
 
-**Through [hbw.wiki/service](https://hbw.wiki/service)**, the online service request form. We check it daily; typical response 24-48 hours. **Phone 905-342-2153** for time-sensitive issues.
+The marina is closed December 1 through April 1.
 
-**Best time to book:**
-- **Annual / 100-hr service:** book in March-early April for spring slot
-- **Winterization + storage:** book in **September** for fall (peak service period; book by mid-September)
-- **Repower:** book 4+ weeks ahead during peak season; order over the off-season for first pick of early-spring install slots
-- **Diagnostic:** book within 1-2 weeks; we prioritize active failures
+During the closure:
 
-**Worst time to walk in unannounced:** mid-May Saturday during peak prep season. Everyone is busy. Schedule properly.
+- No service, repower, installation, or inspection work happens on site
+- Customers cannot access stored boats
+- Physical spring commissioning has not started
+- Planning, quoting, and approvals can continue remotely
+
+If the boat is stored with HBW, remove anything you will need before December 1. Spring work begins after reopening and according to the approved schedule.
+
+---
+
+## When a Closer Shop Is the Better Answer
+
+Use a closer provider when:
+
+- The boat cannot be safely brought to Gores Landing
+- You need emergency help at the boat's current location
+- The motor is not a Mercury
+- The job is simple and travel is the deciding factor
+- You need indoor or heated winter storage
+
+The right shop is the one that can perform the required work safely and accurately. Distance is part of that decision.
 
 ---
 
 ## Frequently Asked Questions
 
-**How long does a Mercury annual service take at HBW?**
-1-3 days at the shop is typical. Drop off → service → pickup. We'll text/email when ready.
+**Does HBW pick up or deliver GTA boats?**
+No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
 
-**Will my Mercury warranty be honored if I get service at HBW even though I bought it elsewhere?**
-Yes. Mercury's Canadian warranty network is dealer-network-wide. Bring purchase paperwork and any prior service records. We process Mercury claims through their central system regardless of where you bought.
+**How long does Mercury service take at HBW?**
+It depends on diagnosis, authorization, parts, workload, and testing. HBW confirms the applicable schedule for the specific work order.
 
-**Do you do mobile / on-site service in the GTA?**
-No. All work happens at our shop in Gores Landing. We don't run service trucks to GTA addresses.
+**How much does annual Mercury service cost?**
+There is no reliable universal price. Send the engine serial number and hours so HBW can identify the correct maintenance scope and provide a written quote.
 
-**What's a fair price for a Mercury 150 HP annual service in the GTA?**
-$500-$700 all-in (parts + labour + diagnostic) is typical at a Mercury Premier dealer. We quote at the lower end of this range. Some shops charge more, some less; the value diff is in the diagnostic depth and tech training.
+**Can HBW service a Mercury bought elsewhere?**
+Yes, HBW can assess the service or warranty request. Scheduling, coverage, and the approved repair still require confirmation.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+**Does HBW service Yamaha, Honda, Suzuki, or other outboard brands?**
+No. HBW is Mercury-only. Use a properly authorized dealer for the motor's brand.
 
-**Can I bring a non-Mercury (Yamaha, Honda) for service?**
-No. We're a Mercury-only dealer. We refer non-Mercury work to brand-appropriate dealers. Same logic: Yamaha customers should use Yamaha-trained shops.
+**Is spring commissioning included with HBW storage?**
+Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
 
-**Do you offer pickup/delivery or transport for GTA boats needing service?**
-We don't operate transport. We can refer you to commercial boat transport services that work the GTA-Kawartha route ($300-$600 each way for typical 18-22 ft boats).
-
-**What if I need emergency service mid-summer?**
-Phone us. We'll prioritize active failures over routine work when we can. Mid-summer peak schedule means a 1-2 week wait is common, but a true on-water emergency (won't start, overheating preventing use) usually moves to the front of the queue.
-
-**Can I drop off a boat for "annual service plus winter storage" in one trip?**
-Yes, that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring.
+**Can HBW work on my boat during winter storage?**
+Not during the physical closure. The marina is closed December 1 through April 1, with no on-site service, installation, inspection, or customer access.
 
 ---
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+## Send the Motor Details Before Driving
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you can bring it to Gores Landing.
+
+**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+**Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## Related Guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process)
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
+
 `,
     faqs: [
-      { question: "How long does a Mercury annual service take at HBW?", answer: "1-3 days at the shop is typical. Drop off \u2192 service \u2192 pickup. We'll text/email when ready." },
-      { question: "Will my Mercury warranty be honored if I get service at HBW even though I bought it elsewhere?", answer: "Yes. Mercury's Canadian warranty network is dealer-network-wide. Bring purchase paperwork and any prior service records. We process Mercury claims through their central system regardless of where you bought." },
-      { question: "Do you do mobile / on-site service in the GTA?", answer: "No. All work happens at our shop in Gores Landing. We don't run service trucks to GTA addresses." },
-      { question: "What's a fair price for a Mercury 150 HP annual service in the GTA?", answer: "$500-$700 all-in (parts + labour + diagnostic) is typical at a Mercury Premier dealer. We quote at the lower end of this range. Some shops charge more, some less; the value diff is in the diagnostic depth and tech training." },
-      { question: "Can I bring a non-Mercury (Yamaha, Honda) for service?", answer: "No. We're a Mercury-only dealer. We refer non-Mercury work to brand-appropriate dealers. Same logic: Yamaha customers should use Yamaha-trained shops." },
-      { question: "Do you offer pickup/delivery or transport for GTA boats needing service?", answer: "We don't operate transport. We can refer you to commercial boat transport services that work the GTA-Kawartha route ($300-$600 each way for typical 18-22 ft boats)." },
-      { question: "What if I need emergency service mid-summer?", answer: "Phone us. We'll prioritize active failures over routine work when we can. Mid-summer peak schedule means a 1-2 week wait is common, but a true on-water emergency (won't start, overheating preventing use) usually moves to the front of the queue." },
-      { question: "Can I drop off a boat for \"annual service plus winter storage\" in one trip?", answer: "Yes, that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring." },
+      {
+        question: "Does HBW pick up or deliver GTA boats?",
+        answer: "No. Customers handle drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
+      },
+      {
+        question: "How long does Mercury service take at HBW?",
+        answer: "It depends on diagnosis, authorization, parts, workload, and testing. HBW confirms the applicable schedule for the specific work order."
+      },
+      {
+        question: "How much does annual Mercury service cost?",
+        answer: "There is no reliable universal price. Send the engine serial number and hours so HBW can identify the correct maintenance scope and provide a written quote."
+      },
+      {
+        question: "Can HBW service a Mercury bought elsewhere?",
+        answer: "Yes, HBW can assess the service or warranty request. Scheduling, coverage, and the approved repair still require confirmation."
+      },
+      {
+        question: "Does HBW service Yamaha, Honda, Suzuki, or other outboard brands?",
+        answer: "No. HBW is Mercury-only. Use a properly authorized dealer for the motor's brand."
+      },
+      {
+        question: "Is spring commissioning included with HBW storage?",
+        answer: "Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers."
+      },
+      {
+        question: "Can HBW work on my boat during winter storage?",
+        answer: "Not during the physical closure. The marina is closed December 1 through April 1, with no on-site service, installation, inspection, or customer access."
+      },
     ],
   },
   {
@@ -30863,7 +30807,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-toronto-to-rice-lake-drive-in.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-05-15",
+    dateModified: "2026-07-24",
     publishDate: "2026-05-15",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -30878,176 +30822,229 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       "repower Ontario drive in",
     ],
     relatedSlugs: [
-      "best-marina-rice-lake-ontario",
-      "boat-storage-kawartha-lakes",
-      "rice-lake-boat-rentals-from-toronto-gta",
+      "mercury-outboard-dealer-toronto-why-drive-to-hbw",
+      "mercury-repower-gta-toronto-destination",
+      "boat-service-near-toronto-hbw-reach",
     ],
     faqs: [
       {
-        question: "Do I need an appointment to drop off a boat for service?",
-        answer: "Yes. We schedule service drop-offs by appointment so we can have a bay ready and a work order prepped. Book through hbw.wiki/service with your motor serial number, year, and a description of the issue. Same-day walk-ins don't work for us, we want to give your boat focused time, not squeeze it between two other jobs. If you have an emergency (motor died at the cottage, overheating on the water), call 905-342-2153 and we'll triage. But for routine service, book ahead."
+        question: "Do I need an appointment before driving to HBW?",
+        answer: "Yes. Submit the motor and boat details first and wait for a confirmed drop-off arrangement."
       },
       {
-        question: "How long does typical Mercury service take at HBW?",
-        answer: "Routine annual service, oil change, impeller, gearcase lube, general inspection, typically takes 1-2 business days if no surprises. Most GTA customers drop off on a Saturday morning and pick up the following weekend. Diagnostics and repair work depends on what we find. Repowers are scheduled in advance and typically take 3-5 business days from drop-off to handoff, assuming the motor and rigging kit are in stock. We don't promise same-day turnaround because 'same day' usually means rushed work. We'd rather do it right and call you when it's ready."
+        question: "Is drop-off and pickup one trip?",
+        answer: "No. They are separate trips unless you independently make another arrangement that does not involve HBW transport."
       },
       {
-        question: "Can I pay you remotely so I don't make two trips?",
-        answer: "Yes. We take payment over the phone by credit card, or we can email you an invoice with a secure payment link. Many GTA customers pay in advance and send a friend or family member with the trailer for pickup, or we coordinate the pickup for their next cottage weekend. You don't have to drive back just to swipe a card. We call 1-2 days ahead with the final total and pickup window either way."
+        question: "Does HBW pick up or deliver boats?",
+        answer: "No. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices."
       },
       {
-        question: "Do you do pickups from my marina or home?",
-        answer: "Not routinely. We're a marina-based shop, not a mobile service. All service, repower, and storage work happens at our facility in Gores Landing. The drive-in model is how we keep costs reasonable and quality high, our techs work in a fully equipped bay with every Mercury tool and diagnostic computer on hand. If you absolutely cannot trailer your boat, we can recommend local towing services, but the economics usually favour renting a trailer for the day or asking a friend with a hitch."
+        question: "How long will HBW keep the boat?",
+        answer: "It depends on diagnosis, approval, parts, workload, and required testing. A clean repower is normally 2 to 5 days once the complete package is ready."
       },
       {
-        question: "What if I have a long-weekend emergency and can't drive my boat to you?",
-        answer: "Call us first, 905-342-2153. We'll ask a few questions and may be able to talk you through a safe limp-home or temporary fix. If the motor is truly dead, your best option is usually to leave the boat at your cottage marina and trailer it to us when you're back in the city. We don't do house calls, but we've talked a lot of customers through enough diagnostics over the phone to get them through a weekend. If it's under warranty, don't let a non-Mercury shop touch it, that can void coverage. Document everything and bring it to us."
+        question: "Can HBW work on a stored boat during winter?",
+        answer: "Not during the physical closure. The marina is closed December 1 through April 1, with no on-site work or customer access."
       },
       {
-        question: "Is there overnight parking if I drop off on Friday and pick up Saturday?",
-        answer: "Yes. Our lot is fenced and monitored. If you need to leave your tow vehicle overnight while the boat is in for service, that's normal for our GTA customers. Just confirm with the service desk when you drop off. We don't charge for overnight vehicle parking during an active service or storage booking. If you're leaving a vehicle for an extended period (storage season), that's a different conversation, but for a Friday-to-Saturday service window, park it and go."
+        question: "Does HBW offer indoor storage?",
+        answer: "No. HBW offers outdoor shrinkwrap storage only."
       },
       {
-        question: "Can I leave the boat with you between service jobs (mini-storage)?",
-        answer: "Yes, and many customers do. If you're doing a multi-stage job, say, diagnostics now, parts order, then repair in two weeks, we can store the boat on our property between appointments. It's not free, but it's cheaper than trailering home and back, and it means the boat is already here when the parts arrive. Ask about short-term storage when you book the initial appointment. For longer gaps, our regular storage rates apply."
-      },
-      {
-        question: "What's the catch, why is this not common in the GTA?",
-        answer: "There is no catch, but there's a reason. Most GTA marinas are seasonal, dock-focused operations. They do launches, hauls, and basic oil changes. When a job needs Mercury-specific diagnostics, warranty paperwork, or a full repower rigging, they send the motor out to a specialist shop, sometimes hundreds of kilometres away, and mark up the price. We're that specialist shop, but we're on the water instead of in an industrial park. The 'catch' is that you have to drive 60-90 minutes. The trade-off is that the work gets done by a Premier dealer on the same property where your boat can be stored, winterized, and launched. For most Mercury owners, the math works."
+        question: "Is spring commissioning included with storage?",
+        answer: "Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers."
       },
     ],
-    content: `> **Quick answer:** Most GTA boaters trailer to Harris Boat Works in 60-90 minutes via Highway 401 east to the Port Hope exit, then 15 minutes north to Gores Landing. Book the service slot first, drop the boat with us, and head home the same day for routine work. For larger jobs (repower, full diagnostics, winter storage) we plan a single drive, drop-off and pickup, so you're not making the trip twice. Quote and service requests at [hbw.wiki/service](https://hbw.wiki/service).
+    content: `
+# Toronto to Rice Lake: How HBW Drive-In Service Works
+
+*Last reviewed: 2026-07-24*
+
+> **Quick answer:** Book first, confirm that the job fits HBW, then bring the boat and trailer to Gores Landing at the approved drop-off time. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. Drop-off and pickup are two separate trips. HBW does not pick up, deliver, haul, provide mobile service, arrange transport, or recommend transport providers.
+
+HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
+
+The drive-in model works when the boat owner can safely tow the boat to HBW, leave it for the scheduled work, and return after completion. If you cannot do that, do not assume HBW will solve the transport.
 
 ---
 
-## Why GTA boaters drive to Rice Lake
+## Step 1: Book Before You Leave
 
-Most GTA boaters have done the math: 90 minutes of highway vs. 6 weeks of "we'll have to send it out" at the city shop. The drive wins.
+Submit a request at [hbw.wiki/service](https://hbw.wiki/service) with:
 
-HBW is the closest full-service Mercury Marine Premier dealer east of the GTA. For boats with Mercury motors needing real service, the trade-off is straightforward. Repowers, warranty work, and SmartCraft diagnostics specifically benefit from a Premier-tier shop on the same property where the boat can be stored, winterized, and launched.
+- Boat make, model, year, and length
+- Motor model and serial number
+- Current engine hours
+- A clear symptom or requested service
+- Photos of the motor, transom, controls, and visible damage
+- A capacity-label photo for repower discussions
+- Prior diagnostic or service records
+- Your preferred timing
 
-We're not asking you to drive farther because we like making you work. We're asking because the alternative, a shop that changes oil but sends every real job out, costs you more time and money in the long run. At least that's what our GTA customers tell us after their first visit.
+HBW will confirm whether the job fits, what information is missing, and when to bring the boat.
 
----
-
-## How far is it, really? Drive times from major GTA cities
-
-| From | Drive time to Gores Landing | Best route |
-|---|---|---|
-| Downtown Toronto | ~90 min | 401 east → Exit 461 Port Hope → County Rd 28 north |
-| Markham | ~75 min | 407 east → 401 east → same exit |
-| Pickering / Ajax | ~60 min | 401 east → same exit |
-| Oshawa | ~50 min | 401 east → same exit |
-| Mississauga | ~110 min | 401 east → same exit |
-| Vaughan | ~95 min | 407 → 401 east → same exit |
-
-No ferry. No locks. No backroads. Avoid the 407 and there are no tolls. The 401 is boring, but it's predictable, and it's the same highway most GTA boaters already take to get to the cottage.
+Do not tow to Gores Landing without a confirmed work order or drop-off arrangement.
 
 ---
 
-## Before you leave: the call ahead
+## Step 2: Plan the Route for the Actual Day
 
-Book the service appointment at [hbw.wiki/service](https://hbw.wiki/service) with your motor serial number, year, and what's wrong. Confirm drop-off date and time. If towing a boat that won't make the trip running, dead motor, overheating, whatever, tell us upfront. We'll plan for trailer-only delivery and pickup. Include any service history you have.
+Use a current map and traffic service. Travel time from the GTA changes with the starting point, Highway 401 traffic, construction, weather, and towing speed.
 
-The more we know before you arrive, the faster drop-off goes. A 10-minute phone call saves 30 minutes of paperwork and diagnostic guessing on the day.
+The final approach to Gores Landing uses rural roads. Slow down, leave extra braking distance, and choose a route that suits the trailer. Do not rely on an old blog estimate as a guaranteed arrival time.
 
----
+The destination is:
 
-## What to bring
-
-- Motor serial number (if not already provided)
-- Trailer in road-legal condition, working lights, working straps, tire pressure checked
-- Boat title or registration (especially for first visits)
-- Any prior service records
-- Keys. Lots of customers leave keys at home. The boat isn't going far without you, but we can't move it in the yard without them.
-- PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) sticker visible on the hull
+**Harris Boat Works**
+5369 Harris Boat Works Rd
+Gores Landing, ON K0K 2E0
 
 ---
 
-## The drive itself: practical tips
+## Step 3: Check the Trailer and Boat
 
-- Avoid 401 rush hour. East-bound from Toronto is worst before 7:30 AM and 4:00-6:30 PM. Aim for 8:00 AM departure or a later evening drop.
-- 80-90 km/h max with a boat trailer is the smart speed regardless of what the sign says. Your trailer bearings, your straps, and your nerves will thank you.
-- Last reliable fuel stop before Gores Landing is Port Hope or Cobourg. Fill up there if you'll need it for the return tow.
-- Cell service holds up all the way to Gores Landing. You won't lose navigation.
-- If you've never towed long-distance, do a parking-lot reverse practice once before the trip. The HBW yard is spacious, but confidence helps.
+Before leaving:
 
----
+- Confirm tires, pressure, bearings, lights, brakes, coupler, and safety chains
+- Secure the bow eye and transom straps
+- Lower or remove loose canvas and accessories
+- Secure electronics, batteries, and portable fuel tanks
+- Bring the boat and motor keys
+- Bring relevant service records
+- Remove valuables and personal items
+- Confirm the trailer plate and vehicle insurance documents
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-## At HBW: what drop-off looks like
-
-When you arrive in Gores Landing:
-
-- Pull straight up to the service drop area. Signage is on the building.
-- Park, find the service desk.
-- We confirm the work order, do a walkaround with you, and note any cosmetic concerns.
-- Sign-off, hand over keys, you're free to head home.
-- Typical drop-off takes 15-30 minutes if there's no surprise diagnostics on the day.
-
-If you want to see the shop or talk through the work plan, ask. We're not a secret operation. But most GTA customers are in a hurry to beat traffic home, and we respect that.
+If the trailer is unsafe, repair it before the trip. HBW does not provide roadside towing or trailer transport.
 
 ---
 
-## One-trip vs two-trip planning
+## From the Shop: Step 4, Drop Off the Boat
 
-::decision-card
-heading: One trip or two? Plan your HBW service visit
-subhead: The right schedule depends on the job. Here's how most GTA customers handle it.
-leftLabel: Routine service
-leftCriteria:
-  - Annual maintenance, impeller, oil change, inspection
-  - Drop off Saturday morning, head home same day
-  - We call when ready; pick up next weekend
-  - Two total trips (drop-off + pickup)
-leftOutcome: Drop and go, pick up next weekend
-leftVariant: recommended
-rightLabel: Larger jobs + storage
-rightCriteria:
-  - Repower, full diagnostic + repair, off-season service
-  - Drop off in fall, pick up in spring
-  - One drive. Everything happens while the boat is stored.
-  - Zero summer downtime
-rightOutcome: Single drive, store and service together
-whenInDoubt: If the job takes more than 2 days, bundle it with storage and do one trip.
-::
+At the confirmed time, HBW will:
 
-**Storage + service combined** is the most efficient option for GTA customers. Drop the boat off for winter storage, we do all maintenance during the off-season, and it's ready to launch in spring. You don't burn a summer Saturday sitting in the service bay.
+1. Identify the boat, motor, and keys
+2. Review the complaint or approved work
+3. Note visible condition
+4. Confirm contact and approval instructions
+5. Confirm whether the trailer remains with the boat
+
+The final scope comes from the work order. Do not leave expecting unapproved repairs, transport, launch work, or storage to be added automatically.
+
+After sign-in, you leave the boat and return home. HBW contacts you if the diagnosis changes the scope or approval is required.
 
 ---
 
-## What if my boat won't run?
+## Step 5: HBW Performs the Approved Work
 
-Trailer it in. We routinely take boats that have failed at the cottage and need a tow. Don't try to nurse a sick motor home, let it ride on the trailer. A boat that won't start is exactly the kind of job we take on.
+The schedule depends on the job:
 
-If the motor is seized, leaking, or making noises that scare you, stop running it. Every minute of operation on a damaged motor makes the repair bill bigger. Trailer it, call us, and we'll sort it out when it gets here.
+- Maintenance follows the exact engine and serial-number scope
+- Diagnostics depend on reproducing the complaint and following the service procedure
+- Repairs depend on findings, approval, and parts
+- Repowers depend on the complete motor and rigging package being available
+- Water testing depends on the work and safe operating conditions
+
+A clean repower is normally in the shop for 2 to 5 days after the complete package is ready. Service and diagnostic jobs do not have one universal turnaround.
+
+HBW will provide the update for the specific work order.
 
 ---
 
-## Coming back for pickup
+## Step 6: Return for Pickup
 
-Same drive in reverse. We typically call 1-2 days ahead with the pickup window. Payment can be done on pickup or in advance. Have the trailer ready, working lights, working brakes.
+Pickup is a separate trip from drop-off.
 
-Most customers pick up on a Saturday morning and are on the water by afternoon. If you're storing with us through winter, pickup happens in April after spring commissioning. The boat is running, tested, and ready to launch, not wrapped and parked.
+Wait until HBW confirms:
+
+- The approved work is complete
+- Required testing is complete
+- The final invoice or remaining authorization is ready
+- The pickup date and time
+- The trailer arrangement
+
+At handoff, review the work performed, parts or findings, operating instructions, maintenance notes, and any follow-up.
+
+For a repower, HBW completes an on-water test on Rice Lake before pickup.
 
 ---
 
-## More from HBW on Rice Lake and the Kawarthas
+## Transport Rules
 
-- [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario), full-service marina since 1947: slips, launch, storage, and Mercury Premier service
-- [Boat Storage Kawartha Lakes](/blog/boat-storage-kawartha-lakes), winter and summer storage for Rice Lake, Pigeon, Sturgeon, Buckhorn, and Stoney
-- [Rice Lake Boat Rentals from Toronto & GTA](/blog/rice-lake-boat-rentals-from-toronto-gta), day rentals and cottage boat access from the city
+HBW does not provide:
 
-For service bookings, storage quotes, and repower consultations: [hbw.wiki/service](https://hbw.wiki/service)  
-For marina slips, rentals, and general information: [harrisboatworks.ca](https://www.harrisboatworks.ca)
+- Pickup from a home, cottage, or marina
+- Delivery after service
+- Boat hauling
+- Mobile or dockside service
+- Transport coordination
+- Towing-company or carrier referrals
+- Transport-price estimates
 
-Harris Boat Works  
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
-Mercury Marine Premier Dealer. Established 1947.
+Customers are responsible for both drop-off and pickup. HBW will not promise a third-party solution.
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+## Winter Storage Does Not Create Winter Access
+
+HBW offers outdoor shrinkwrap storage only.
+
+The marina is closed December 1 through April 1. During that period there is no service, repower, installation, inspection, or customer access on site. Planning and approvals may continue remotely.
+
+Do not plan on HBW performing maintenance while the shop is closed. Physical work and spring commissioning begin after reopening.
+
+Spring commissioning is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+
+---
+
+## If the Boat Breaks Down Away From HBW
+
+Put safety first. Stop operating if the alarm, overheating, steering, fuel, electrical, or mechanical condition makes continued use unsafe.
+
+HBW can discuss whether a future shop booking is appropriate, but we do not provide house calls, on-water rescue, roadside towing, or transport arrangements. Use the appropriate local emergency or on-water assistance available where the boat is located.
+
+Do not attempt a "limp home" procedure based on generic advice when the cause is unknown.
+
+---
+
+## Frequently Asked Questions
+
+**Do I need an appointment before driving to HBW?**
+Yes. Submit the motor and boat details first and wait for a confirmed drop-off arrangement.
+
+**Is drop-off and pickup one trip?**
+No. They are separate trips unless you independently make another arrangement that does not involve HBW transport.
+
+**Does HBW pick up or deliver boats?**
+No. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+
+**How long will HBW keep the boat?**
+It depends on diagnosis, approval, parts, workload, and required testing. A clean repower is normally 2 to 5 days once the complete package is ready.
+
+**Can HBW work on a stored boat during winter?**
+Not during the physical closure. The marina is closed December 1 through April 1, with no on-site work or customer access.
+
+**Does HBW offer indoor storage?**
+No. HBW offers outdoor shrinkwrap storage only.
+
+**Is spring commissioning included with storage?**
+Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers.
+
+---
+
+## Confirm the Job Before Making the Drive
+
+Send the boat, motor, serial number, photos, and requested work. HBW will confirm whether the job fits and when to arrive.
+
+**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+**Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## Related Guides
+
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
+- [Boat Service Near Toronto: HBW Reach](/blog/boat-service-near-toronto-hbw-reach)
 
 `,
   },
