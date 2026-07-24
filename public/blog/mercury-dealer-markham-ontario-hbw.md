@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md
-last_updated: 2026-07-10
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Markham Ontario HBW"
 description: "Mercury Premier dealer near Markham: Harris Boat Works on Rice Lake, 70 minutes north. Repower, sales, service and parts for the Markham area."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-07-10
+date_modified: 2026-07-24
 keywords: ["mercury dealer markham","mercury repower markham","mercury outboard markham ontario","boat motor dealer markham","harris boat works markham customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-07-24
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw
 
@@ -194,4 +194,3 @@ Yes. We serve a broad Markham-area customer base including Unionville, Stouffvil
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

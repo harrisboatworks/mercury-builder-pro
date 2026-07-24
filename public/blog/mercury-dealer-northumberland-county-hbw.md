@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw.md
-last_updated: 2026-07-10
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Northumberland HBW"
 description: "Harris Boat Works is Mercury Premier dealer for Northumberland County since 1947. Serves Rice Lake, Cobourg, Port Hope, Hastings, Brighton, Trent system."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-07-10
+date_modified: 2026-07-24
 keywords: ["mercury dealer northumberland county","northumberland mercury premier","rice lake mercury dealer","trent system mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-07-24
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-northumberland-county-hbw
 
@@ -158,4 +158,3 @@ Yes. The Mercury Canada warranty network honours coverage at any authorized Merc
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

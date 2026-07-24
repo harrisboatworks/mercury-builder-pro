@@ -271,6 +271,30 @@ check(
   /drop-off only and does not provide boat pickup, hauling, delivery, or mobile service/.test(repowerProcessArticle),
   'Repower-process article must preserve the drop-off-only logistics boundary.',
 );
+const articleSource = (slug) =>
+  blogArticles.match(new RegExp(`slug: '${slug}',[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+const dealerHeroCanon = [
+  {
+    slug: 'mercury-dealer-markham-ontario-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
+  },
+  {
+    slug: 'mercury-dealer-richmond-hill-ontario-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp',
+  },
+  {
+    slug: 'mercury-dealer-northumberland-county-hbw',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
+  },
+];
+for (const { slug, image } of dealerHeroCanon) {
+  const source = articleSource(slug);
+  check(source.includes(`image: '${image}'`), `${slug} must use its provenance-documented HBW or official Mercury hero.`);
+  check(
+    !/(?:hero-gta-richmond-hill-pickup-motor|hero-mercury-90-shop-shot)/.test(source),
+    `${slug} must not regress to a false-branded or unproven generated dealer hero.`,
+  );
+}
 check(
   !/(?:twice the hole shot|10 seconds to 5 seconds|2[–-]3 mph|11[–-]13-inch|mid-50s mph|about half the time the old 90|20[–-]30% better fuel)/i.test(caseStudies),
   'Illustrative case studies contain an unsupported exact performance result.',

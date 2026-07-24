@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md
-last_updated: 2026-07-23
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Richmond Hill HBW"
 description: "Mercury dealer near Richmond Hill: Harris Boat Works on Rice Lake, 75 minutes north. Repower, sales, parts, winter storage for Richmond Hill, Aurora."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["mercury dealer richmond hill","mercury repower richmond hill","mercury outboard richmond hill ontario","boat motor dealer aurora newmarket","harris boat works richmond hill customers"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24
 **Read time:** 5 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw
 
@@ -186,4 +186,3 @@ Yes. Build a quote at mercuryrepower.ca/quote in about three minutes. Real CAD p
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
