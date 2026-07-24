@@ -914,7 +914,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         estimate.confidence === 'medium' ? 'bg-repower-cream text-repower-gold' :
                         'bg-repower-navy-900/[0.08] text-repower-navy-900/65'
                       }`}>
-                        {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'} confidence
+                        Estimate confidence: {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'}
                       </span>
                     </div>
                     
