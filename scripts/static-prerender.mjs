@@ -659,6 +659,7 @@ function loadBlogArticles() {
       seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
+      imageAlt: a.imageAlt || null,
       datePublished: a.datePublished,
       dateModified: a.dateModified,
       publishDate: a.publishDate || a.datePublished || null,
@@ -910,6 +911,7 @@ function loadTranslatedBlogArticles(modulePath, exportName) {
       seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
+      imageAlt: a.imageAlt || null,
       datePublished: a.datePublished,
       dateModified: a.dateModified,
       publishDate: a.publishDate || a.datePublished || null,
@@ -3003,7 +3005,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   schemas: [blogArticleSchema(article)],
   extraHead: blogHreflangTags(article.slug),
   extraNoscript: () => {
-    const heroHtml = renderHeroPictureHtml(article.image, article.title, article.photoSlot);
+    const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
     const bylineHtml = renderAuthorBylineHtml(article.author);
     const bodyHtml = renderArticleBodyHtml(article.content);
     const faqHtml = (article.faqs && article.faqs.length > 0)
@@ -3081,7 +3083,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       return '';
     })(),
     extraNoscript: () => {
-      const heroHtml = renderHeroPictureHtml(article.image, article.title, article.photoSlot);
+      const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
       const bylineHtml = renderAuthorBylineHtml(article.author);
       const bodyHtml = renderArticleBodyHtml(article.content);
       const faqHtml = (article.faqs && article.faqs.length > 0)
@@ -6317,6 +6319,11 @@ for (const route of blogArticleRoutes) {
   const p = join(DIST, route.path.replace(/^\//, ''), 'index.html');
   if (!existsSync(p)) { verifyErrors.push(`${route.path}: missing blog HTML.`); continue; }
   const html = readFileSync(p, 'utf8');
+  const article = blogArticles.find(candidate => route.path === `/blog/${candidate.slug}`);
+  if (article?.image) {
+    const expectedHero = `<img src="${escapeHtml(article.image)}" alt="${escapeHtml(article.imageAlt || article.title || '')}"`;
+    if (!html.includes(expectedHero)) verifyErrors.push(`${route.path}: prerendered hero alt is missing or stale.`);
+  }
   const readMeta = (name) => {
     const re = new RegExp(`<meta[^>]+(?:name|property)=["']${name.replace(':', '\\:')}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i');
     const m = html.match(re);
