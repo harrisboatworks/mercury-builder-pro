@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Storage Rice Lake Kawarthas"
-description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization."
+description: "Outdoor winter boat storage with shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. No indoor, summer, or year-round storage."
 category: "Service & Maintenance"
 date_published: 2026-05-15
 date_modified: 2026-07-24
@@ -20,7 +20,7 @@ language: en-CA
 
 # Boat Storage Rice Lake Kawarthas
 
-> Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization.
+> Outdoor winter boat storage with shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. No indoor, summer, or year-round storage.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
