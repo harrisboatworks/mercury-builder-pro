@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
+import {
+  BLOG_SOCIAL_IMAGE_HEIGHT,
+  BLOG_SOCIAL_IMAGE_WIDTH,
+  resolveBlogSocialImage,
+} from '@/lib/blog-social-image';
 import { ArrowLeft, Phone, MapPin } from 'lucide-react';
 
 export default function FrenchBlogArticle() {
   const url = `${SITE_URL}/blog/fr/concessionnaire-mercury-platinum-ontario`;
+  const socialImage = resolveBlogSocialImage('/lovable-uploads/hero-best-mercury-dealer-ontario.png', SITE_URL);
   
   const structuredData = {
     "@context": "https://schema.org",
@@ -99,9 +105,13 @@ export default function FrenchBlogArticle() {
         <meta property="og:description" content="Pourquoi les plaisanciers francophones choisissent Harris Boat Works pour leurs moteurs Mercury." />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={`${SITE_URL}/lovable-uploads/hero-best-mercury-dealer-ontario.png`} />
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:image:width" content={String(BLOG_SOCIAL_IMAGE_WIDTH)} />
+        <meta property="og:image:height" content={String(BLOG_SOCIAL_IMAGE_HEIGHT)} />
         <meta property="article:published_time" content="2026-04-12" />
         <meta property="article:author" content="Harris Boat Works" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={socialImage} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <LuxuryHeader />

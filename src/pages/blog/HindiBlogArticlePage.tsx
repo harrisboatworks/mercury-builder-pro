@@ -4,6 +4,11 @@ import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import {
+  BLOG_SOCIAL_IMAGE_HEIGHT,
+  BLOG_SOCIAL_IMAGE_WIDTH,
+  resolveBlogSocialImage,
+} from '@/lib/blog-social-image';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -240,6 +245,7 @@ export default function HindiBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/hi/${article.slug}`;
+  const socialImage = resolveBlogSocialImage(article.image, SITE_URL);
   const tocItems = extractHeaders(article.content);
 
   const structuredData = {
@@ -296,10 +302,15 @@ export default function HindiBlogArticlePage() {
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.seoTitle ?? article.title} />
         <meta property="og:description" content={article.description} />
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:image:width" content={String(BLOG_SOCIAL_IMAGE_WIDTH)} />
+        <meta property="og:image:height" content={String(BLOG_SOCIAL_IMAGE_HEIGHT)} />
         <meta property="og:locale" content="hi_IN" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:author" content="Harris Boat Works" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={socialImage} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <LuxuryHeader />
