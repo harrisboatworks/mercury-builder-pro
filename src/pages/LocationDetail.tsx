@@ -6,6 +6,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { COMPANY_INFO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import { getLocationBySlug } from '@/data/locations';
 import { substituteLiveRateTokens } from '@/lib/finance';
+import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -102,6 +103,7 @@ const USE_CASES_BY_SLUG: Record<string, UseCase[]> = {
 
 export default function LocationDetail() {
   const { slug } = useParams<{ slug: string }>();
+  const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const location = slug ? getLocationBySlug(slug) : undefined;
   if (!location) return <Navigate to="/locations" replace />;
 
@@ -299,7 +301,7 @@ export default function LocationDetail() {
                   Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
                 </p>
                 <p className="text-xs text-repower-cream/70">
-                  311 Google reviews, 4.6 stars.
+                  {googleReviewCount.toLocaleString('en-CA')} Google reviews, {googleRating.toFixed(1)} stars.
                 </p>
               </div>
             )}

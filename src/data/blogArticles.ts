@@ -21324,238 +21324,163 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
   {
     slug: "best-mercury-dealer-ontario-hbw-difference",
     title: "Best Mercury Dealer in Ontario: The HBW Difference (2026)",
-    description: "A frank look at what \"best Mercury dealer in Ontario\" actually means, what to look for.",
+    description: "How to compare Ontario Mercury dealers using current service recognition, written pricing, repower testing, and after-sale support.",
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-24',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
-    readTime: '12 min read',
-    keywords: ["best Mercury dealer Ontario", "Mercury Premier dealer Canada", "Mercury outboard specialist Ontario", "certified Mercury dealer GTA", "top Mercury dealer Ontario"],
-    content: `*Last reviewed: 2026-07-09*
+    readTime: '9 min read',
+    keywords: ["best Mercury dealer Ontario", "Mercury Premier Dealer Ontario", "Mercury outboard specialist Ontario", "Mercury repower dealer GTA", "Mercury dealer Peterborough"],
+    content: `*Last reviewed: 2026-07-24*
 
-> **Quick answer:** The best Mercury dealer in Ontario is the one with Premier tier certification, real diagnostic capability, and pricing you can see before you call. HBW holds Premier status, family-owned since 1947, Mercury dealer since 1965, and publishes all-in pricing online. Score any dealer, including us, on those three criteria. Try the configurator at mercuryrepower.ca.
+> **Quick answer:** There is no official "best Mercury dealer in Ontario" ranking. Compare current Mercury service recognition, technician qualifications for your motor family, the complete written price and scope, how the dealer tests the finished installation, and who supports the motor after delivery. Harris Boat Works is a Mercury Premier Dealer and Mercury Certified Repower Centre with current CAD motor pricing and an installed starting quote online.
 
 ## Quick answer
 
-What makes HBW different in Ontario: transparent installed pricing online, family-owned since 1947 and a Mercury dealer since 1965, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
+The best dealer for a portable motor may be the closest qualified shop. A repower is different. It combines motor fitment, steering, controls, wiring, propeller selection, installation, testing, warranty registration, and future service.
+
+For that job, ask for proof and a complete written scope. A badge by itself is not enough.
 
 ## Areas we serve
 
-Ontario boaters drive to Gores Landing from across the province. The closest catchments are the GTA and Durham, the Kawarthas, and Northumberland County. If you are pricing a repower or a new Mercury, start with the dealer page for your area: [Peterborough](/blog/mercury-dealer-peterborough-ontario-hbw), [Oshawa](/blog/mercury-dealer-oshawa-ontario-hbw), [Whitby](/blog/mercury-dealer-whitby-ontario-hbw), [Pickering](/blog/mercury-dealer-pickering-ontario-hbw), or [Cobourg](/blog/mercury-dealer-cobourg-ontario-hbw). For a broader GTA and Durham pickup overview, see our [Durham and GTA Mercury pickup page](/locations/durham-gta-mercury-pickup). Honest drive-time framing, not fabricated claims. You bring the boat to us at Gores Landing.
+HBW works from Gores Landing on Rice Lake. The closest service areas are Peterborough, the Kawarthas, Northumberland County, Durham Region, and the eastern GTA. Customers bring their own boats to Gores Landing and return for pickup. HBW does not provide pickup, delivery, hauling, or mobile service.
+
+Start with the [Peterborough service and repower page](/locations/peterborough-mercury-dealer), the [Kawartha Lakes page](/locations/kawartha-lakes-mercury-outboards), or the [Durham and GTA drop-off guide](/locations/durham-gta-mercury-pickup).
 
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)
 
-If you Google "best Mercury dealer Ontario," you get a list of 30-40 dealers and zero way to compare them. The provincial dealer network is Mercury-authorized, but **Mercury's authorization is just the floor, what separates dealers is everything they do above that floor.**
+A search result can tell you which dealers mention Mercury. It cannot tell you who is qualified for your exact motor family, what the final installation includes, or how the boat will be tested.
 
-Three things actually matter when evaluating an Ontario Mercury dealer:
+Use five checks:
 
-1. **Mercury dealer tier** (basic → gold → Premier)
-2. **Diagnostic and rigging expertise**
-3. **Pricing transparency and post-sale service relationship**
+1. **Current Mercury service recognition**
+2. **Technician qualification for the exact product line**
+3. **A complete written motor and rigging scope**
+4. **A clear installation and on-water test plan**
+5. **A shop that will support the motor after delivery**
 
-Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Premier dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+HBW is a Mercury Premier Dealer, has sold Mercury since 1965, and recorded 1,746 total work orders in 2025. Those facts describe capacity and continuity. Your written quote still needs to describe your job.
 
 ## Near Peterborough or the Kawarthas?
 
-A lot of this search traffic is really asking "who should I trust near Peterborough?" Fair question. Harris Boat Works is about 35 minutes south of Peterborough via Highway 28 on Rice Lake's south shore, and the case for making the drive is simple: Mercury Premier Dealer status, around 1,700 work orders a year through the service department, real prices published online before you ever talk to anyone, and a water test on Rice Lake before you take delivery. Family-owned since 1947, Mercury dealer since 1965. If a closer dealer gives you a straight answer and a real number, good for them. If they won't, you know where we are.
+Harris Boat Works is about 35 minutes south of Peterborough in Gores Landing. The usual route runs south on Highway 28, then east toward Gores Landing on County Road 9. Check current traffic and towing directions before leaving.
 
----
+Peterborough customers can see current [Mercury motor prices in CAD](/pricing-reference), build an [installed starting quote](/quote/motor-selection), and review the final scope before bringing the boat down. Completed repowers are water-tested on Rice Lake before pickup.
 
-## The Mercury Dealer Tier System (What Actually Matters)
+## What Mercury Premier Service Actually Means
 
-[Mercury Marine](https://www.mercurymarine.com/canada/en/) ranks its dealers in a three-tier certification system. The tiers determine:
+[Mercury Marine's dealer-network guidance](https://www.mercurymarine.com/ca/en/parts-and-service/service-and-support/mercury-dealer-network) describes Premier as its highest service rating. Mercury evaluates dealers each year and looks for:
 
-- **What service work the dealer is qualified to do** (warranty, complex repairs, specific motor families)
-- **Diagnostic equipment the dealer has access to** (G3 software is dealer-only, $3,000+ kit)
-- **Parts inventory the dealer is required to stock**
-- **Tech training requirements** (recurring certification)
-- **Customer Satisfaction Index (CSI) score thresholds**
+- A high service Customer Satisfaction Index score
+- The required service tools, testing equipment, manuals, and parts information
+- At least one Certified or Master Technician
+- Timely service for Mercury customers
+- An adequate inventory of genuine Mercury Precision Parts
+- A clean, organized service facility
 
-**Basic / standard dealer:** sells Mercurys, can do routine service. Acceptable for simple work.
+Premier is a useful service-performance signal. It is not a public promise that every technician is certified on every Mercury product line, and it does not replace a boat-specific quote.
 
-**Gold / advanced dealer:** higher tech training, more diagnostic capability. Can handle most warranty work.
+Ask which technician qualifications apply to your FourStroke, Pro XS, SeaPro, Verado, Avator, SmartCraft, or MerCruiser job. Ask the dealer to show exactly what is included.
 
-**Premier dealer:** the top tier. Factory-trained on every Mercury family (FourStroke, Pro XS, Verado, SeaPro, Avator), full G3 diagnostic kit, stocked parts inventory, demonstrated annual sales + service volumes, top-tier CSI scores. **There are a small number of Premier dealers in Ontario.**
+## Five Questions to Ask Any Ontario Mercury Dealer
 
-For most casual purchases (small motors, kicker motors, basic service), basic-tier dealers work fine. **For repower, complex diagnostic work, or warranty-heavy service, Premier tier is meaningfully better.**
+1. **"Does Mercury currently recognize this location as Premier, and which product lines are your technicians certified to service?"**
+2. **"What exact motor, shaft, gearcase, controls, steering, gauges, propeller, labour, and taxes are included in the written quote?"**
+3. **"Is every required part in stock or on order, and what controls the promised shop date?"**
+4. **"How will you test the completed repower on my boat before delivery?"**
+5. **"Who handles the warranty registration, future service, and the boat's work history?"**
 
----
+Clear answers matter more than a generic claim that one shop is "best."
 
-## What Mercury Doesn't Tell You About Its Dealer Network
+## Compare the Complete Written Scope, Not a Headline Price
 
-Here's the gap in Mercury's public communication: **Mercury's dealer locator at mercurymarine.com doesn't show tier**. You see "authorized dealer" and that's it.
+Two quotes can use the same horsepower and still describe different jobs. Confirm the exact motor model, shaft length, gearcase, steering, controls, gauges, propeller, removal, installation labour, electrical or fuel-system work, water test, warranty registration, HST, and exclusions.
 
-So a 1-tech mobile mechanic who got Mercury authorization 5 years ago and a 40-year Premier dealer with 15 factory-trained techs both look identical in Mercury's locator. **The only way to know is to ask the dealer directly.**
+HBW publishes current bare-motor selling prices on the [Mercury pricing reference](/pricing-reference). The [quote builder](/quote/motor-selection) adds an installed starting scope. The final written quote depends on the boat, existing rigging, inspection findings, stock, and any selected promotion.
 
-Questions to ask any Mercury dealer:
-- "Are you Mercury Premier certified?" (Yes = factory training current)
-- "Do you have G3 diagnostic software?" (Yes = serious diagnostic capability)
-- "How many Mercury-trained techs do you have on staff?" (more = better service-bandwidth)
-- "What's your typical service turnaround?" (1-3 days = healthy, 2-4 weeks = capacity-strained)
-- "Do you publish all-in pricing or quote on request?" (transparent = healthier pricing)
-
-A dealer that takes 3 minutes to answer those is a real dealer. One that hedges is a flag.
-
----
-
-## Pricing Transparency. The Other Differentiator
-
-Mercury sets a **Minimum Advertised Price (MAP)** for new motors. So *motor pricing* is similar across all dealers.
-
-**Where dealer pricing actually differs is everything else:**
-
-1. **Rigging cost**, installing a Mercury 200 HP V6 on a 21-foot bowrider involves controls, steering, prop selection, sea trial. Some dealers charge $1,500. Some charge $4,000. Same motor, very different all-in.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
-2. **All-in vs. add-on quoting**, many dealers quote a "headline" price and add line items at delivery (controls, prop, freight, prep). The "$23,000 quoted, $26,500 paid" surprise. Honest dealers quote all-in.
-
-3. **Trade-in valuation**, actual Ontario service-data values used Mercury motors fairly. Some dealers low-ball trades to make new-motor sales look better.
-
-4. **MPP extended warranty pricing**, same motor, same MPP terms, but presentation varies. Honest dealers discuss MPP early; opaque dealers add it at the end as upsell.
-
-**HBW's approach:** all-in pricing in the [mercuryrepower.ca configurator](https://www.mercuryrepower.ca). The price you see at home is the price we'd quote in person. **No "call for pricing" games, no surprise add-ons.**
-
-This is genuinely uncommon in the marine dealer industry, where opaque pricing is the historical norm. We chose transparency specifically because most marine buyers want it.
-
----
-
-::pull-quote
-quote: Got three Mercury quotes. Two of them said "rough number to start" and never followed up. **HBW sent a complete itemized number that afternoon** and stuck to it. Easy choice.
-attribution: Rob D.
-source: Bowmanville
-::
+For trade-ins, ask how the dealer reached the value. For optional Mercury Product Protection, ask which coverage is included and whether it appears in the quoted total.
 
 ## What "Best Dealer" Looks Like in Practice
 
-A real "best Mercury dealer" comparison should evaluate:
+A useful comparison covers:
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- **Mercury recognition:** current status, not an old logo or copied claim
+- **Technician fit:** training for the exact product line and system on your boat
+- **Fitment:** the correct horsepower limit, shaft, gearcase, steering, and controls
+- **Written scope:** parts, labour, taxes, exclusions, and any inspection-dependent work
+- **Availability:** what is in stock, what is ordered, and when the shop clock starts
+- **Testing:** how the dealer verifies the installation under load
+- **After-sale support:** warranty registration, service intake, records, and parts support
 
-**Tier:** Mercury Premier vs. lower
-**Diagnostic capability:** G3 software present + multiple trained techs
-**Service backlog:** healthy throughput (1-3 day turnarounds) vs. capacity-strained
-**Pricing transparency:** all-in published quotes vs. "call for pricing"
-**Service relationship continuity:** documented history per boat, returning customer base
-**Repower expertise:** demonstrated repower volume vs. occasional repowers
-**Specific motor family expertise:** comfortable with Verado / Pro XS / SeaPro vs. generalist
-**Warranty handling:** processes claims promptly vs. delays
-**Trade-in approach:** fair valuations vs. low-balling
-
-Score any dealer (including HBW) on those 9 criteria. The picture becomes clear.
-
----
+Use the same list for HBW or any other dealer.
 
 ## What HBW Brings Specifically
 
-We're not the only Mercury Premier dealer in Ontario. We are not necessarily the right answer for every boater.
+- **Mercury Premier Dealer and Mercury Certified Repower Centre**
+- **1,746 total work orders recorded in 2025**
+- **Ontario's largest Mercury and MerCruiser parts inventory**
+- **Current CAD motor pricing and an installed starting quote online**
+- **Rice Lake water testing before a completed repower leaves**
+- **A service history tied to the boat and customer**
 
-What we're good at:
-- **Mercury repowers** (volume + transparency + sea-trial expertise)
-- **Older Mercury support** (1990s onward, parts availability dependent)
-- **Complex diagnostic work** (G3, factory-trained, multiple specialists on staff)
-- **Service relationship continuity** (third-generation, on Rice Lake, Ontario (in the Kawarthas) since 1947)
-- **Pricing transparency** (configurator-based)
-- **GTA / wider Ontario service** (we're 90 minutes from Toronto, full service relationships extend across the province)
+HBW is a working marina, not a transport company. Customers bring the boat to Gores Landing and collect it after the confirmed work and water test.
 
-What we're not necessarily best at:
-- **Walk-in convenience for casual buyers in the GTA** (we're 90 minutes; if location is the main criterion, a closer dealer is closer)
-- **Premium showroom experience** (we're a working family marina, not a polished sales floor)
-- **Selling brands other than Mercury** (we're Mercury-only and Legend Boats)
-- **Sterndrive specialty** (we do Mercruiser but it's not our primary focus)
-- **Specialty PWC / jet ski / inboard tow boats** (we don't sell those)
+## When HBW May Not Be the Right Fit
 
-That honest division is what lets us tell you if HBW is or isn't the right fit before you drive out.
+- You need a small portable motor and a qualified local dealer is materially closer.
+- You want sales or engine service for Yamaha, Honda, or Suzuki. HBW handles Mercury and MerCruiser engine work.
+- You cannot bring the boat to Gores Landing. HBW does not provide or arrange transport.
+- Your priority is a same-day walk-in visit rather than a scheduled service relationship.
 
----
+## When HBW Is a Strong Fit
 
-## When HBW Is Wrong For You
-
-Some honest cases where HBW isn't the best dealer:
-
-- **You need a 2.5 HP yacht-tender motor.** Total cost: $1,400. Drive time + logistics don't justify it; buy local.
-- **You want a Yamaha or Honda or Suzuki.** We don't sell those. Find a brand-specific dealer.
-- **You only want walk-in service.** If you'd never drive to a Mercury dealer for service, HBW won't be the dealer you visit.
-- **You prefer high-pressure sales tactics or "deal of the week" pricing.** We don't do those.
-
-Real talk: we lose business to dealers closer to GTA buyers all the time, especially for small-motor purchases. That's fine. The customers we serve well are the ones who specifically value Premier-tier expertise, transparent pricing, and a service relationship.
-
----
-
-## What HBW Is Right For
-
-The customer profile we're a clear best-fit for:
-
-- **GTA / Ontario boater needing a Mercury repower** ($15K+ purchase, one-time)
-- **Boat owner needing complex diagnostic work** (intermittent fault codes, electronic systems issues)
-- **Long-term Mercury customers** wanting one shop to know their boat
-- **MPP extended warranty buyers** wanting their warranty processed at the dealer that sold the motor
-- **Ontario commercial operators** (guides, charters, rentals) needing SeaPro tier support
-- **Anyone who values transparent pricing** over "call for quote"
-- **Rice Lake / Kawartha-area boat owners** wanting a Mercury Premier dealer in their service area
-- **GTA owners wanting bundled storage + service relationship** (one shop handles everything off-season)
-
-If 2-3 of those describe you, we're worth the conversation.
-
----
-
-## How to Evaluate Any Ontario Mercury Dealer
-
-Five-question checklist for any dealer:
-
-1. **"Are you Mercury Premier certified?"** Yes = factory-current on every Mercury family. Anything else means lower-tier service capability.
-2. **"Show me your most recent rigging quote for a [boat type] with a [motor HP]."** Transparent dealers can do this. Opaque dealers say "we'll get you a quote."
-3. **"What's your service backlog?"** Healthy: 1-3 day turnarounds. Strained: 2-4+ weeks. Strained dealers either over-promise on timing or you wait.
-4. **"What's your trade-in process?"** Honest dealers walk you through their valuation method. Opaque dealers say "bring it in and we'll see."
-5. **"How long have you been a Mercury dealer at this location?"** Longevity is a stability signal. New-locations may still be excellent but they're an unknown.
-
-A dealer that gives a clear, specific answer to all 5 in under 10 minutes is a real dealer. One that hedges is a flag.
-
----
+- You are comparing a Mercury repower and want the complete price and scope before drop-off.
+- Your Mercury has a diagnostic, control, rigging, or SmartCraft issue that needs dealer tooling.
+- You want the installing dealer to water-test the boat and support it afterward.
+- You value published CAD pricing and documented service history.
+- You can bring the boat to Gores Landing for scheduled work.
 
 ## Frequently Asked Questions
 
-**What makes a Mercury Premier dealer different from a regular dealer?**
-Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario.
+**What makes a Mercury Premier Dealer different from an authorized dealer?**
+Mercury describes Premier as its highest service rating. Its published criteria include service CSI, required tools and testing equipment, genuine-parts inventory, an organized facility, and at least one Certified or Master Technician.
 
-**Is Mercury motor pricing the same at all Ontario dealers?**
-Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request.
+**Is Mercury motor pricing the same at every Ontario dealer?**
+No. Compare the exact motor model, shaft, gearcase, and complete written scope. Rigging, controls, propeller, labour, trade-in value, optional coverage, taxes, and exclusions can change the total.
 
-**How do I find out if a dealer is Mercury Premier?**
-Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident "yes" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier.
+**How do I verify a dealer's Mercury capability?**
+Ask for the location's current Mercury recognition and the technician qualifications that apply to your exact product line. Then confirm the complete job in writing.
 
-**Why does dealer tier matter for me as a recreational boater?**
-For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Premier tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't.
+**Why does Premier status matter?**
+It is an annually evaluated service-performance signal from Mercury. It is helpful, but it does not replace product-line qualification, a boat inspection, or a written quote.
 
-**Should I drive farther for a better dealer?**
-For one-time large purchases (repowers, MPP-eligible motors, complex installs): yes, the drive time pays off. For routine work on simple motors: no, local-distance is fine. The decision frame is "how often will I visit this dealer over the next 10 years?"
+**Should I drive farther for a Mercury dealer?**
+For a portable motor or routine part, proximity may win. For a repower or complex diagnostic job, compare the full scope, testing, and long-term service relationship against the added drive.
 
-**What's the average age of Mercury dealers in Ontario?**
-Mixed. Some have been in business 50+ years; others opened recently. Longevity isn't everything but it correlates with Mercury-knowledge depth and post-sale service quality.
+**Can any authorized Mercury dealer repower my boat?**
+Ask the dealer to confirm its capability for the exact motor, controls, steering, and electronic systems on your boat. Authorization alone does not describe the installation plan.
 
-**Can I get a Mercury repower at any authorized dealer?**
-Technically yes. In practice, Premier dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
+**What is the best Mercury dealer near Peterborough?**
+It depends on the job. HBW is about 35 minutes south of Peterborough and is a Mercury Premier Dealer and Mercury Certified Repower Centre. It publishes current CAD motor pricing, provides an installed starting quote online, and water-tests completed repowers on Rice Lake.
 
 ---
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Build an installed starting quote at the [Mercury Repower Centre](/quote/motor-selection). Final price and scope require HBW confirmation.
 `,
     faqs: [
-      { question: "What makes a Mercury Premier dealer different from a regular dealer?", answer: "Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario." },
-      { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request." },
-      { question: "How do I find out if a dealer is Mercury Premier?", answer: "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier." },
-      { question: "Why does dealer tier matter for me as a recreational boater?", answer: "For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Premier tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't." },
-      { question: "Should I drive farther for a better dealer?", answer: "For one-time large purchases (repowers, MPP-eligible motors, complex installs): yes, the drive time pays off. For routine work on simple motors: no, local-distance is fine. The decision frame is \"how often will I visit this dealer over the next 10 years?\"" },
-      { question: "What's the average age of Mercury dealers in Ontario?", answer: "Mixed. Some have been in business 50+ years; others opened recently. Longevity isn't everything but it correlates with Mercury-knowledge depth and post-sale service quality." },
-      { question: "Can I get a Mercury repower at any authorized dealer?", answer: "Technically yes. In practice, Premier dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity." },
-      { question: "What is the best Mercury dealer near Peterborough?", answer: "It depends what you value, but Harris Boat Works, about 35 minutes south of Peterborough via Highway 28 in Gores Landing, is a Mercury Premier Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965." },
-      { question: "What does Mercury Premier Dealer status mean?", answer: "Premier is a dealer status Mercury Marine awards based on sales and service performance standards. For a buyer it means factory-trained technicians, current diagnostic tooling, and a dealer Mercury itself holds to a higher standard. Harris Boat Works holds Premier status and has been a Mercury dealer since 1965." },
+      { question: "What makes a Mercury Premier Dealer different from an authorized dealer?", answer: "Mercury describes Premier as its highest service rating. Its published criteria include service CSI, required tools and testing equipment, genuine-parts inventory, an organized facility, and at least one Certified or Master Technician." },
+      { question: "Is Mercury motor pricing the same at every Ontario dealer?", answer: "No. Compare the exact motor model, shaft, gearcase, and complete written scope. Rigging, controls, propeller, labour, trade-in value, optional coverage, taxes, and exclusions can change the total." },
+      { question: "How do I verify a dealer's Mercury capability?", answer: "Ask for the location's current Mercury recognition and the technician qualifications that apply to your exact product line. Then confirm the complete job in writing." },
+      { question: "Why does Premier status matter?", answer: "It is an annually evaluated service-performance signal from Mercury. It is helpful, but it does not replace product-line qualification, a boat inspection, or a written quote." },
+      { question: "Should I drive farther for a Mercury dealer?", answer: "For a portable motor or routine part, proximity may win. For a repower or complex diagnostic job, compare the full scope, testing, and long-term service relationship against the added drive." },
+      { question: "Can any authorized Mercury dealer repower my boat?", answer: "Ask the dealer to confirm its capability for the exact motor, controls, steering, and electronic systems on your boat. Authorization alone does not describe the installation plan." },
+      { question: "What is the best Mercury dealer near Peterborough?", answer: "It depends on the job. HBW is about 35 minutes south of Peterborough and is a Mercury Premier Dealer and Mercury Certified Repower Centre. It publishes current CAD motor pricing, provides an installed starting quote online, and water-tests completed repowers on Rice Lake." },
     ],
   },
   {
@@ -32937,135 +32862,116 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   // ============================================
   {
     slug: 'mercury-dealer-peterborough-ontario-hbw',
-    title: 'Mercury Dealer Peterborough HBW',
-    seoTitle: 'Mercury Dealer Peterborough | Repower & Service from Rice Lake',
-    description: 'Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.',
+    title: 'Mercury Repower Near Peterborough: What to Compare',
+    seoTitle: 'Mercury Dealer Near Peterborough | Repower Buyer Guide',
+    description: 'Compare Mercury repower dealers near Peterborough by written scope, technician fit, pricing, water testing, and after-sale service.',
     image: '/lovable-uploads/hero-mercury-dealer-peterborough.png',
     imageAlt: "Man steering a Mercury outboard on a calm Ontario lake during fall, highlighting Harris Boat Works' local service area.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-07',
+    dateModified: '2026-07-24',
     publishDate: '2026-05-17',
     category: 'Dealer Locations',
-    readTime: '6 min read',
-    keywords: ['mercury dealer peterborough', 'peterborough mercury outboard', 'mercury premier dealer ontario', 'kawartha mercury repower'],
+    readTime: '5 min read',
+    keywords: ['mercury dealer peterborough', 'mercury repower peterborough', 'peterborough mercury service', 'mercury premier dealer ontario', 'kawartha mercury repower'],
     content: `## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 35 minutes south of Peterborough via Highway 28. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Premier Dealer and Mercury Certified Repower Centre in Gores Landing, about 35 minutes south of Peterborough. Peterborough customers bring their boats to HBW for scheduled Mercury sales, repower, parts, diagnostics, and service. HBW does not provide or arrange transport.
 
+For directions, drop-off policy, and a concise local factbox, use the [Peterborough service and repower page](/locations/peterborough-mercury-dealer).
 
-See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+![Peterborough to Harris Boat Works in Gores Landing on Rice Lake, about 35 minutes for Mercury repower and service](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
-![Why Peterborough boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
+## What to compare before choosing a Mercury repower dealer
 
-## The short answer for Peterborough boaters
+A repower quote should identify more than horsepower. Compare:
 
-If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: [Mercury Premier Dealer status](/blog/best-mercury-dealer-ontario-hbw-difference), real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 35 minutes south of Peterborough via Highway 28 in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
+- Exact motor model, shaft length, and gearcase
+- Boat horsepower limit and transom condition
+- Controls, steering, harnesses, gauges, and propeller
+- Removal and installation labour
+- Electrical and fuel-system work
+- Parts that are in stock versus on order
+- Water testing on the completed boat
+- Warranty registration, HST, exclusions, and inspection-dependent work
 
-## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
+The [Ontario Mercury dealer comparison guide](/blog/best-mercury-dealer-ontario-hbw-difference) explains Mercury Premier recognition and the questions to ask any shop.
 
-Most Peterborough boating questions get answered with a drive south through Lakefield or a drive west into the Kawarthas. The Mercury dealer math is a third option that a lot of Peterborough customers don't think about until they need a real conversation about a repower: HBW is 35 minutes south on Highway 28, and the route avoids any of the GTA congestion that makes a Mississauga or Burlington dealer a four-hour round trip.
+## What HBW offers Peterborough boaters
 
-For Peterborough customers, the conversation we have most often is "I've been driving to Toronto for warranty work and it's becoming impractical." Same warranty network. Closer dealer. Easier scheduling.
+- **Mercury Premier Dealer and Mercury Certified Repower Centre**
+- **1,746 total work orders recorded in 2025**
+- **Ontario's largest Mercury and MerCruiser parts inventory**
+- **Current Mercury selling prices in CAD on the [pricing reference](/pricing-reference)**
+- **An installed starting quote through the [quote builder](/quote/motor-selection)**
+- **Rice Lake water testing before a completed repower leaves**
 
-## What Peterborough boaters typically use HBW for
+Final price and timing still depend on the boat, exact motor, rigging, inspection, parts availability, and approved written scope.
 
-The pattern we see from Peterborough regulars looks like this:
+## Getting to HBW from Peterborough
 
-- **Spring commissioning**, they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
-- **Mid-season service**, an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Premier diagnostic
-- **Repower decisions**, [when the old motor is past mid-life and the math starts looking ugly](/blog/mercury-repower-cost-ontario-2026-cad), we walk through repower vs new boat vs sell with real numbers
-- **Fall winterization + storage**, boat stays with us through the off-season, gets full winterization, picks back up at spring launch
-- **Trade-in conversations**, the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
+From Peterborough, the usual route runs south on Highway 28 and then east toward Gores Landing on County Road 9. The trip is about 35 minutes in normal traffic. Check current traffic and towing directions before leaving.
 
-The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Premier shop on Rice Lake, the rest of the year gets simpler.
+Harris Boat Works
 
-## Why Peterborough customers drive past closer shops
+5369 Harris Boat Works Rd
 
-Peterborough has marinas. Peterborough has general boat shops. What it has less of is Mercury Premier dealer depth with full repower capacity.
+Gores Landing, ON K0K 2E0
 
-Premier is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Premier-tier resolution paths matter.
+The boat must arrive at the confirmed appointment time. HBW is customer drop-off and pickup only. We do not provide delivery, hauling, mobile service, transport coordination, or transport referrals.
 
-The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
+## How a Peterborough repower works
 
-## Getting to Harris Boat Works from Peterborough
+1. Confirm the boat's horsepower limit and current rigging.
+2. Check the [current bare-motor price](/pricing-reference).
+3. Build an [installed starting quote](/quote/motor-selection).
+4. Send the boat, transom, controls, steering, gauges, and capacity-label details.
+5. Review the exact motor, parts availability, written scope, deposit, and shop window.
+6. Bring the boat to Gores Landing at the scheduled time.
+7. HBW installs, rigs, tests, and registers the approved package.
+8. The completed repower is water-tested on Rice Lake before customer pickup.
 
-Route: Highway 28 South through Lakefield, then County Road 9 east toward Gores Landing, then County Road 18 into the marina. Mostly highway and rural county road. Last 10 minutes is scenic Rice Lake country.
+Hidden transom damage, obsolete steering, unsafe fuel components, or another inspection finding can change the scope. HBW confirms added work before proceeding.
 
-Approximate drive time: 35 minutes outside rush hour. From east Peterborough (around Trent University), shave 5 minutes. From west Peterborough (toward Lakefield), the drive is slightly longer but still under 40 minutes.
+## Mercury service near Peterborough
 
-Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-Phone: 905-342-2153
-Service requests: hbw.wiki/service
-Motor pricing: mercuryrepower.ca
+HBW handles Mercury and MerCruiser engine work. Common scheduled jobs include:
 
-## What HBW handles for Peterborough customers
+- Mercury diagnostics and SmartCraft-related service
+- Seasonal commissioning and winterization
+- Fuel, cooling, electrical, steering, and control-system work
+- Repower inspection, rigging, installation, and water testing
+- Outdoor shrinkwrap storage
 
-**Mercury outboard sales**
-Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order, most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on [the Otonabee, Trent system, or Kawartha lakes](/blog/trent-severn-mercury-dealer-survival-guide-2026).
+The marina is closed December 1 through April 1. Planning can happen during that period, but no service, repower, installation, inspection, or customer access occurs on site.
 
-**Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right, every install gets water-tested before it leaves the shop.
-
-**Mercury parts and service**
-Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
-
-**Winter storage**
-Outdoor with shrinkwrap. No indoor storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, year-round storage at HBW means the boat is already close to launch in spring.
-
-**Live installed pricing online**
-mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote before you leave Peterborough.
-
-## The Peterborough customer profile we see most often
-
-Peterborough boaters tend to know boats. The city has a deep boating culture, Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
-
-Our quote builder skips that step. The price you see is the price you pay. Three generations of HBW have built this business on returning customers and referrals, not on quota-driven sales tactics.
-
-## What we see at HBW
-
-The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
-
-For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
-
-## How to make the drive worth it
-
-Build your quote at mercuryrepower.ca first. Takes about three minutes. You'll see real installed pricing for the motor and rigging options you're considering.
-
-If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts, faster than a phone call, and it routes directly to the right person.
-
-For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
-
-**Start from home:** build your itemized Mercury quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), then pick up at Gores Landing.
+Start a service request at [hbw.wiki/service](https://hbw.wiki/service). For a repower, start with the [quote builder](/quote/motor-selection).
 
 ## Frequently Asked Questions, Peterborough
 
-**Can I use HBW as my regular Mercury service shop, not just for a repower?**
-Yes. A 35-minute drive each way works for spring commissioning, mid-season service, and fall winterization. Many of our Peterborough regulars have made this their annual routine.
+**Who is the best Mercury dealer near Peterborough?**
+There is no official best-dealer ranking. Compare current Mercury recognition, technician qualification for your product line, the complete written scope, testing, parts support, and after-sale service. HBW is one Peterborough-area option about 35 minutes south in Gores Landing.
 
-**Do you service the Trent-Severn or just Rice Lake boats?**
-We service Mercury and Mercruiser outboards regardless of where the boat lives. Trent-Severn, Kawarthas, Lake Ontario, Otonabee, same shop, same diagnostics. For engine repairs, we only service Mercury and Mercruiser.
+**How far is Harris Boat Works from Peterborough?**
+About 35 minutes in normal traffic. The usual route runs south on Highway 28 and east toward Gores Landing on County Road 9. Check live directions before towing.
 
-**Is HBW closer than a Toronto dealer?**
-For most Peterborough addresses, yes, Toronto is roughly 90-120 minutes through GTA traffic; HBW is 35 minutes via Highway 28. The drive is also more pleasant.
+**Is Harris Boat Works a Mercury Premier Dealer?**
+Yes. HBW holds Mercury Premier status and is a Mercury Certified Repower Centre.
 
-**What do you charge for a Mercury repower?**
-Depends on horsepower and existing rigging. The quote builder at mercuryrepower.ca gives a real CAD installed number based on your boat and the motor you're considering. Most repowers in our area land in the $13,000-$25,000 range including HST.
+**Does HBW publish Mercury prices online?**
+Yes. The pricing reference shows current bare-motor selling prices in CAD. The quote builder provides an installed starting point. HBW confirms the final price and scope.
 
-**Can I store my boat with you year-round?**
-Yes. Outdoor storage with shrinkwrap. For Peterborough customers who launch on Rice Lake or the Trent system, year-round storage at HBW makes the launch logistics simpler.
+**Does HBW deliver boats or motors to Peterborough?**
+No. Customers bring their boats to Gores Landing and return for pickup. HBW does not provide or arrange transport.
 
-**Do you sell new boats too?**
-Yes. We're also a Legend Boats dealer. Aluminum fishing boats and pontoons primarily, all Mercury-rigged. Worth a conversation if you're in the new-boat market.
-
-Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 · Family-owned on Rice Lake since 1947 · 5369 Harris Boat Works Rd, Gores Landing, ON · (905) 342-2153
-
-*Last reviewed: 2026-07-18.*
+*Last reviewed: 2026-07-24.*
 `,
     faqs: [
-      { question: "Who is the best Mercury dealer near Peterborough, Ontario?", answer: "Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Premier Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965." },
-      { question: "How far is Harris Boat Works from Peterborough?", answer: "About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore." },
-      { question: "Is Harris Boat Works a Mercury Premier dealer?", answer: "Yes. Harris Boat Works holds Mercury's Premier dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947." },
+      { question: "Who is the best Mercury dealer near Peterborough?", answer: "There is no official best-dealer ranking. Compare current Mercury recognition, technician qualification for your product line, the complete written scope, testing, parts support, and after-sale service. HBW is one Peterborough-area option about 35 minutes south in Gores Landing." },
+      { question: "How far is Harris Boat Works from Peterborough?", answer: "About 35 minutes in normal traffic. The usual route runs south on Highway 28 and east toward Gores Landing on County Road 9. Check live directions before towing." },
+      { question: "Is Harris Boat Works a Mercury Premier Dealer?", answer: "Yes. HBW holds Mercury Premier status and is a Mercury Certified Repower Centre." },
+      { question: "Does HBW publish Mercury prices online?", answer: "Yes. The pricing reference shows current bare-motor selling prices in CAD. The quote builder provides an installed starting point. HBW confirms the final price and scope." },
+      { question: "Does HBW deliver boats or motors to Peterborough?", answer: "No. Customers bring their boats to Gores Landing and return for pickup. HBW does not provide or arrange transport." },
     ],
   },
   {

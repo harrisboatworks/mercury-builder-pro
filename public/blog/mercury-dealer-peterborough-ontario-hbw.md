@@ -1,134 +1,127 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw.md
-last_updated: 2026-06-07
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury Dealer Peterborough HBW"
-description: "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28."
+location: Gores Landing, ON, Canada
+title: "Mercury Repower Near Peterborough: What to Compare"
+description: "Compare Mercury repower dealers near Peterborough by written scope, technician fit, pricing, water testing, and after-sale service."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-06-07
-keywords: ["mercury dealer peterborough","peterborough mercury outboard","mercury premier dealer ontario","kawartha mercury repower"]
+date_modified: 2026-07-24
+keywords: ["mercury dealer peterborough","mercury repower peterborough","peterborough mercury service","mercury premier dealer ontario","kawartha mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Mercury Dealer Peterborough HBW
+# Mercury Repower Near Peterborough: What to Compare
 
-> Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28.
+> Compare Mercury repower dealers near Peterborough by written scope, technician fit, pricing, water testing, and after-sale service.
 
-**Category:** Dealer Locations  
-**Published:** 2026-05-17  
-**Last updated:** 2026-06-07  
-**Read time:** 6 min read  
+**Category:** Dealer Locations
+**Published:** 2026-05-17
+**Last updated:** 2026-07-24
+**Read time:** 5 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw
 
 ## Quick Answer
 
-Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 35 minutes south of Peterborough via Highway 28. We handle Mercury outboard sales, repowers, parts, and service. Installed pricing is published online at mercuryrepower.ca, so you can build a quote before you make the drive. Family-owned since 1947, Mercury dealer since 1965.
+Harris Boat Works is a Mercury Premier Dealer and Mercury Certified Repower Centre in Gores Landing, about 35 minutes south of Peterborough. Peterborough customers bring their boats to HBW for scheduled Mercury sales, repower, parts, diagnostics, and service. HBW does not provide or arrange transport.
 
-See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
+For directions, drop-off policy, and a concise local factbox, use the [Peterborough service and repower page](/locations/peterborough-mercury-dealer).
 
-![Why Peterborough boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake, real pricing, repower specialists](/blog-visuals/peterborough-worth-the-drive-hbw.png)
+![Peterborough to Harris Boat Works in Gores Landing on Rice Lake, about 35 minutes for Mercury repower and service](/blog-visuals/peterborough-worth-the-drive-hbw.png)
 
-## The short answer for Peterborough boaters
+## What to compare before choosing a Mercury repower dealer
 
-If you're searching for the best Mercury dealer near Peterborough, here's the honest version: there are several dealers in the area, and "best" depends on what you need. What Harris Boat Works offers that's hard to find elsewhere: [Mercury Premier Dealer status](/blog/best-mercury-dealer-ontario-hbw-difference), real prices published online in our quote configurator (no "call for price"), water testing on Rice Lake before you take delivery, and a family that has run the place since 1947 and sold Mercury since 1965. We're about 35 minutes south of Peterborough via Highway 28 in Gores Landing, on Rice Lake's south shore. Plenty of Peterborough boaters drive past closer options for those four things.
+A repower quote should identify more than horsepower. Compare:
 
-## Peterborough boaters don't need to commute to the GTA for a Mercury dealer
+- Exact motor model, shaft length, and gearcase
+- Boat horsepower limit and transom condition
+- Controls, steering, harnesses, gauges, and propeller
+- Removal and installation labour
+- Electrical and fuel-system work
+- Parts that are in stock versus on order
+- Water testing on the completed boat
+- Warranty registration, HST, exclusions, and inspection-dependent work
 
-Most Peterborough boating questions get answered with a drive south through Lakefield or a drive west into the Kawarthas. The Mercury dealer math is a third option that a lot of Peterborough customers don't think about until they need a real conversation about a repower: HBW is 35 minutes south on Highway 28, and the route avoids any of the GTA congestion that makes a Mississauga or Burlington dealer a four-hour round trip.
+The [Ontario Mercury dealer comparison guide](/blog/best-mercury-dealer-ontario-hbw-difference) explains Mercury Premier recognition and the questions to ask any shop.
 
-For Peterborough customers, the conversation we have most often is "I've been driving to Toronto for warranty work and it's becoming impractical." Same warranty network. Closer dealer. Easier scheduling.
+## What HBW offers Peterborough boaters
 
-## What Peterborough boaters typically use HBW for
+- **Mercury Premier Dealer and Mercury Certified Repower Centre**
+- **1,746 total work orders recorded in 2025**
+- **Ontario's largest Mercury and MerCruiser parts inventory**
+- **Current Mercury selling prices in CAD on the [pricing reference](/pricing-reference)**
+- **An installed starting quote through the [quote builder](/quote/motor-selection)**
+- **Rice Lake water testing before a completed repower leaves**
 
-The pattern we see from Peterborough regulars looks like this:
+Final price and timing still depend on the boat, exact motor, rigging, inspection, parts availability, and approved written scope.
 
-- **Spring commissioning**, they drop off in April, pick up in May with the motor commissioned, tested, and ready for the Otonabee
-- **Mid-season service**, an impeller, a fuel issue, a SmartCraft fault that needs a Mercury Premier diagnostic
-- **Repower decisions**, [when the old motor is past mid-life and the math starts looking ugly](/blog/mercury-repower-cost-ontario-2026-cad), we walk through repower vs new boat vs sell with real numbers
-- **Fall winterization + storage**, boat stays with us through the off-season, gets full winterization, picks back up at spring launch
-- **Trade-in conversations**, the Trade-In Value Guide at mercuryrepower.ca gives a starting number; we close the actual valuation in person
+## Getting to HBW from Peterborough
 
-The Peterborough boaters who use us most don't come for the sale. They come because once you have a service relationship with a Mercury Premier shop on Rice Lake, the rest of the year gets simpler.
+From Peterborough, the usual route runs south on Highway 28 and then east toward Gores Landing on County Road 9. The trip is about 35 minutes in normal traffic. Check current traffic and towing directions before leaving.
 
-## Why Peterborough customers drive past closer shops
+Harris Boat Works
 
-Peterborough has marinas. Peterborough has general boat shops. What it has less of is Mercury Premier dealer depth with full repower capacity.
+5369 Harris Boat Works Rd
 
-Premier is Mercury's top dealer tier, it reflects parts inventory depth, technical training hours, warranty authorization, and SmartCraft diagnostic equipment. For routine work (oil changes, props, basic seasonal service) any qualified Mercury dealer is fine. For a full repower or a hard warranty case, Premier-tier resolution paths matter.
+Gores Landing, ON K0K 2E0
 
-The other reason: live online pricing. Most Mercury dealers, including most in the Peterborough area, require a phone call to get a quote. Our quote builder at mercuryrepower.ca shows real installed CAD pricing, motor, rigging, controls, prop, install labour, HST, in about three minutes. You see the number before you make the call. That alone is worth a 35-minute drive for most informed buyers. For [Mercury prices from 2.5 to 300 HP](/pricing-reference) on one page, see our published price reference.
+The boat must arrive at the confirmed appointment time. HBW is customer drop-off and pickup only. We do not provide delivery, hauling, mobile service, transport coordination, or transport referrals.
 
-## Getting to Harris Boat Works from Peterborough
+## How a Peterborough repower works
 
-Route: Highway 28 South through Lakefield, then County Road 9 east toward Gores Landing, then County Road 18 into the marina. Mostly highway and rural county road. Last 10 minutes is scenic Rice Lake country.
+1. Confirm the boat's horsepower limit and current rigging.
+2. Check the [current bare-motor price](/pricing-reference).
+3. Build an [installed starting quote](/quote/motor-selection).
+4. Send the boat, transom, controls, steering, gauges, and capacity-label details.
+5. Review the exact motor, parts availability, written scope, deposit, and shop window.
+6. Bring the boat to Gores Landing at the scheduled time.
+7. HBW installs, rigs, tests, and registers the approved package.
+8. The completed repower is water-tested on Rice Lake before customer pickup.
 
-Approximate drive time: 35 minutes outside rush hour. From east Peterborough (around Trent University), shave 5 minutes. From west Peterborough (toward Lakefield), the drive is slightly longer but still under 40 minutes.
+Hidden transom damage, obsolete steering, unsafe fuel components, or another inspection finding can change the scope. HBW confirms added work before proceeding.
 
-Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-Phone: 905-342-2153
-Service requests: hbw.wiki/service
-Motor pricing: mercuryrepower.ca
+## Mercury service near Peterborough
 
-## What HBW handles for Peterborough customers
+HBW handles Mercury and MerCruiser engine work. Common scheduled jobs include:
 
-**Mercury outboard sales**
-Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order, most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on [the Otonabee, Trent system, or Kawartha lakes](/blog/trent-severn-mercury-dealer-survival-guide-2026).
+- Mercury diagnostics and SmartCraft-related service
+- Seasonal commissioning and winterization
+- Fuel, cooling, electrical, steering, and control-system work
+- Repower inspection, rigging, installation, and water testing
+- Outdoor shrinkwrap storage
 
-**Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right, every install gets water-tested before it leaves the shop.
+The marina is closed December 1 through April 1. Planning can happen during that period, but no service, repower, installation, inspection, or customer access occurs on site.
 
-**Mercury parts and service**
-Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
-
-**Winter storage**
-Outdoor with shrinkwrap. No indoor storage. For Peterborough customers who boat on Rice Lake, the Otonabee, or anywhere in the Trent-Severn system, year-round storage at HBW means the boat is already close to launch in spring.
-
-**Live installed pricing online**
-mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote before you leave Peterborough.
-
-## The Peterborough customer profile we see most often
-
-Peterborough boaters tend to know boats. The city has a deep boating culture, Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
-
-Our quote builder skips that step. The price you see is the price you pay. Three generations of HBW have built this business on returning customers and referrals, not on quota-driven sales tactics.
-
-## What we see at HBW
-
-The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
-
-For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
-
-## How to make the drive worth it
-
-Build your quote at mercuryrepower.ca first. Takes about three minutes. You'll see real installed pricing for the motor and rigging options you're considering.
-
-If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts, faster than a phone call, and it routes directly to the right person.
-
-For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
-
-**Start from home:** build your itemized Mercury quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), then pick up at Gores Landing.
+Start a service request at [hbw.wiki/service](https://hbw.wiki/service). For a repower, start with the [quote builder](/quote/motor-selection).
 
 ## FAQs
 
-### Who is the best Mercury dealer near Peterborough, Ontario?
+### Who is the best Mercury dealer near Peterborough?
 
-Several dealers serve the Peterborough area, so it depends what you value. Harris Boat Works in Gores Landing, about 35 minutes south of Peterborough via Highway 28, is a Mercury Premier Dealer that publishes real motor prices online, water tests repowers on Rice Lake, and has been family-owned since 1947 and a Mercury dealer since 1965.
+There is no official best-dealer ranking. Compare current Mercury recognition, technician qualification for your product line, the complete written scope, testing, parts support, and after-sale service. HBW is one Peterborough-area option about 35 minutes south in Gores Landing.
 
 ### How far is Harris Boat Works from Peterborough?
 
-About 35 minutes by car, roughly 30 km south of Peterborough via Highway 28, at 5369 Harris Boat Works Rd in Gores Landing on Rice Lake's south shore.
+About 35 minutes in normal traffic. The usual route runs south on Highway 28 and east toward Gores Landing on County Road 9. Check live directions before towing.
 
-### Is Harris Boat Works a Mercury Premier dealer?
+### Is Harris Boat Works a Mercury Premier Dealer?
 
-Yes. Harris Boat Works holds Mercury's Premier dealer status and has been a Mercury dealer since 1965. The business itself has been family-owned on Rice Lake since 1947.
+Yes. HBW holds Mercury Premier status and is a Mercury Certified Repower Centre.
+
+### Does HBW publish Mercury prices online?
+
+Yes. The pricing reference shows current bare-motor selling prices in CAD. The quote builder provides an installed starting point. HBW confirms the final price and scope.
+
+### Does HBW deliver boats or motors to Peterborough?
+
+No. Customers bring their boats to Gores Landing and return for pickup. HBW does not provide or arrange transport.
 
 ## Related guides
 

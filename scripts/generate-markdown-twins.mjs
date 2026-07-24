@@ -515,6 +515,9 @@ function locationMarkdown(loc, caseStudies) {
   const localCtx = (loc.localContext || []).map(b => `- ${b}`).join('\n');
   const popular = (loc.popularBoats || []).map(b => `- ${b}`).join('\n');
   const hp = (loc.popularHpRanges || []).map(b => `- ${b}`).join('\n');
+  const hpSection = hp
+    ? ['## Popular Mercury HP ranges', '', hp, '']
+    : [];
   const trust = (loc.whyChooseUs || []).map(b => `- ${b}`).join('\n');
   const links = (loc.recommendedLinks || []).map(l => `- [${l.label}](${SITE_URL}${l.href})`).join('\n');
   const faqs = (loc.faqs || []).map(f => `### ${f.question}\n\n${f.answer}\n`).join('\n');
@@ -543,10 +546,7 @@ function locationMarkdown(loc, caseStudies) {
     '',
     popular || '_(none recorded)_',
     '',
-    '## Popular Mercury HP ranges',
-    '',
-    hp || '_(none recorded)_',
-    '',
+    ...hpSection,
     '## Why customers choose Harris Boat Works',
     '',
     trust || '_(none recorded)_',
@@ -572,7 +572,6 @@ function locationMarkdown(loc, caseStudies) {
     '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
     '- Verado is special-order only, not in default inventory.',
     '- HTML page (canonical for humans): ' + url,
-    '',
   ].filter(line => line !== '').join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
 
@@ -834,10 +833,10 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     '',
     `> ${article.description}`,
     '',
-    `**Category:** ${article.category || 'Guide'}  `,
-    `**Published:** ${article.datePublished}  `,
-    `**Last updated:** ${lastUpdated}  `,
-    `**Read time:** ${article.readTime || ''}  `,
+    `**Category:** ${article.category || 'Guide'}`,
+    `**Published:** ${article.datePublished}`,
+    `**Last updated:** ${lastUpdated}`,
+    `**Read time:** ${article.readTime || ''}`,
     `**Canonical (HTML for humans):** ${url}`,
     '',
     cleanedContent,
