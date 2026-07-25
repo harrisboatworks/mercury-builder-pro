@@ -187,7 +187,7 @@ export function BoostEligibilityChecker() {
               Boost can improve mid-range acceleration on an eligible motor. It does not add horsepower, top speed, or maximum RPM.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <Button asChild className="bg-repower-red text-white hover:bg-repower-red/90">
+              <Button asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red/90">
                 <Link to="/contact">Ask HBW to confirm</Link>
               </Button>
               <Button asChild variant="outline">

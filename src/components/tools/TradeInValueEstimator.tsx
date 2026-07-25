@@ -165,11 +165,12 @@ export function TradeInValueEstimator() {
   const hpNum = parseFloat(hp);
   const hoursNum = hours === '' ? null : parseInt(hours, 10);
 
+  const currentYear = new Date().getFullYear();
   const ready =
     brand !== '' &&
     !Number.isNaN(yearNum) &&
     yearNum >= 1990 &&
-    yearNum <= 2025 &&
+    yearNum <= currentYear &&
     !Number.isNaN(hpNum) &&
     hpNum > 0 &&
     stroke !== '' &&
@@ -258,13 +259,13 @@ export function TradeInValueEstimator() {
                 id="trade-year"
                 type="number"
                 min={1990}
-                max={2025}
+                max={currentYear}
                 placeholder="e.g. 2018"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
                 className="mt-1.5"
               />
-              <p className="mt-1 text-xs text-repower-navy-900/60">1990 - 2025</p>
+              <p className="mt-1 text-xs text-repower-navy-900/60">1990 - {currentYear}</p>
             </div>
             <div>
               <Label htmlFor="trade-hp" className="text-sm font-medium text-repower-navy-900">
@@ -405,7 +406,7 @@ export function TradeInValueEstimator() {
               )}
 
               <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-repower-red hover:bg-repower-red/90 text-white">
+                <Button asChild className="bg-repower-mercury-red hover:bg-repower-mercury-red/90 text-white">
                   <Link to="/quote/motor-selection?trade=yes">
                     Get a personalized trade quote
                   </Link>
