@@ -4432,7 +4432,7 @@ const ABOUT_EXTRA = () => commercialBodyHtml({
       'Jay Harris took over in 2015 as the third generation, representing the same family running the same dock on the same lake.',
     ] },
     { h2: 'Credentials', bullets: [
-      'Mercury Marine Premier Dealer (highest tier in the Mercury dealer recognition program)',
+      'Mercury Marine Premier Dealer',
       'Family-owned and operated since 1947',
       'Mercury dealer continuously since 1965 (60+ years)',
       'Service technicians certified on the full Mercury lineup',
