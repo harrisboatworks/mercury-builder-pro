@@ -942,8 +942,8 @@ ${sections.join("\n\n")}
  * without bloating tokens. Lets the model know which articles exist so
  * it can reference them by URL (/blog/<slug>).
  */
-export function formatBlogTitleIndex(): string {
-  const grouped = groupByCategory(BLOG_INDEX);
+export function formatBlogTitleIndex(entries: BlogIndexEntry[] = BLOG_INDEX): string {
+  const grouped = groupByCategory(entries);
   const categories = Object.keys(grouped).sort();
   const sections = categories.map((cat) => {
     const items = grouped[cat]
@@ -953,10 +953,59 @@ export function formatBlogTitleIndex(): string {
       .join("\n");
     return `**${cat}:**\n${items}`;
   });
-  return `# Blog Article Index (${BLOG_INDEX.length} posts on harrisboatworks.ca)
+  return `# Blog Article Index (${entries.length} posts on mercuryrepower.ca)
 Every URL is /blog/<slug>. Reference these when a customer's question maps to a post — link them to the article and pull from its summary/FAQ in the full Blog Article Reference document. Do NOT invent URLs.
 
 ${sections.join("\n\n")}`;
+}
+
+const LIVE_BLOG_INDEX_URL = "https://www.mercuryrepower.ca/blog-index.json";
+const LIVE_BLOG_INDEX_CACHE_MS = 5 * 60 * 1000;
+let liveBlogIndexCache: { context: string; expiresAt: number } | null = null;
+
+function isBlogIndexEntry(value: unknown): value is BlogIndexEntry {
+  if (!value || typeof value !== "object") return false;
+  const entry = value as Record<string, unknown>;
+  return typeof entry.slug === "string" &&
+    typeof entry.title === "string" &&
+    typeof entry.category === "string";
+}
+
+/**
+ * Read the deploy-generated public index so the customer chat sees newly
+ * published articles after a normal site deploy, without waiting for a
+ * separate Edge Function or voice-KB redeploy.
+ */
+export async function formatLiveBlogTitleIndex(): Promise<string> {
+  if (liveBlogIndexCache && liveBlogIndexCache.expiresAt > Date.now()) {
+    return liveBlogIndexCache.context;
+  }
+
+  try {
+    const response = await fetch(LIVE_BLOG_INDEX_URL, {
+      headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(5_000),
+    });
+    if (!response.ok) throw new Error(`blog index returned ${response.status}`);
+    const payload = await response.json() as { articles?: unknown[]; count?: unknown };
+    const entries = Array.isArray(payload.articles)
+      ? payload.articles.filter(isBlogIndexEntry)
+      : [];
+    if (!entries.length) throw new Error("blog index contained no valid articles");
+    if (typeof payload.count !== "number" || payload.count !== entries.length) {
+      throw new Error("blog index count did not match its valid entries");
+    }
+
+    const context = formatBlogTitleIndex(entries);
+    liveBlogIndexCache = {
+      context,
+      expiresAt: Date.now() + LIVE_BLOG_INDEX_CACHE_MS,
+    };
+    return context;
+  } catch (error) {
+    console.warn("[blog-index] Live index unavailable; using bundled fallback", error);
+    return formatBlogTitleIndex();
+  }
 }
 
 // ========== ACTIVE PROMOTIONS (LIVE FROM DB) ==========

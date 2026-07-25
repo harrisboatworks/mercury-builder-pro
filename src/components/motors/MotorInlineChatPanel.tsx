@@ -85,7 +85,7 @@ const RenderSegment = ({ segment, idx }: { segment: ParsedSegment; idx: number }
     <a
       key={idx}
       href={segment.href}
-      className="text-blue-600 hover:underline"
+      className="font-medium text-repower-mercury-red underline decoration-repower-mercury-red/30 underline-offset-2 hover:decoration-repower-mercury-red"
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
     >
@@ -127,7 +127,7 @@ const RotatingPromptSection = ({
         transition={{ duration: 0.25 }}
         className="pt-2"
       >
-        <p className="text-[10px] text-muted-foreground mb-2 uppercase tracking-wide px-1">Common Questions</p>
+        <p className="mb-2 px-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-repower-navy-900/48">Common Questions</p>
         <div className="flex flex-wrap gap-1.5">
           {prompts.map((prompt, idx) => (
             <motion.button
@@ -136,8 +136,7 @@ const RotatingPromptSection = ({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.05, duration: 0.2 }}
               onClick={() => onSend(prompt)}
-              className="px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
-                text-gray-700 rounded-full transition-all font-light hover:scale-[1.02]"
+              className="rounded-full border border-repower-navy-900/10 bg-[#FCFAF5] px-3 py-1.5 text-xs font-medium text-repower-navy-900/72 shadow-[0_2px_8px_rgba(5,14,28,0.04)] transition-all hover:scale-[1.02] hover:border-repower-mercury-red/25 hover:bg-white hover:text-repower-navy-900"
             >
               {prompt}
             </motion.button>
@@ -356,20 +355,20 @@ export function MotorInlineChatPanel({
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      className="flex flex-col h-full bg-white"
+      className="flex h-full flex-col bg-[radial-gradient(circle_at_100%_0%,rgba(201,162,74,0.15),transparent_34%),linear-gradient(180deg,#F9F6EF_0%,#F1ECE3_100%)]"
     >
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white shrink-0">
+      <div className="flex shrink-0 items-center justify-between border-b border-repower-navy-900/10 bg-[#F9F6EF]/95 px-4 py-3 backdrop-blur-md">
         <button
           onClick={onClose}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
+          className="flex items-center gap-2 text-sm font-semibold text-repower-navy-900/65 transition-colors hover:text-repower-navy-900"
         >
           <ChevronLeft className="w-4 h-4" />
           Back to pricing
         </button>
         <button
           onClick={handleStartFresh}
-          className="p-2 text-muted-foreground hover:text-gray-600 transition-colors rounded-full hover:bg-gray-100"
+          className="rounded-full border border-transparent p-2 text-repower-navy-900/45 transition-colors hover:border-repower-navy-900/10 hover:bg-[#FFFDF8] hover:text-repower-navy-900"
           title="Start fresh conversation"
         >
           <RefreshCw className="w-4 h-4" />
@@ -377,20 +376,26 @@ export function MotorInlineChatPanel({
       </div>
       
       {/* Chat Header */}
-      <div className="px-4 py-3 border-b border-gray-50 bg-gradient-to-r from-amber-50/50 to-orange-50/50 shrink-0">
+      <div className="shrink-0 border-b border-white/10 bg-repower-navy-900 px-4 py-4 text-white shadow-[0_12px_28px_rgba(5,14,28,0.14)]">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[linear-gradient(145deg,#D3AD55,#B97824)] shadow-[0_6px_16px_rgba(0,0,0,0.22)]">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
-          <div>
-            <p className="text-sm font-medium text-gray-900">Mercury Expert</p>
-            <p className="text-xs text-gray-500">Ask about the {hp}HP {motor.family || 'Motor'}</p>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold tracking-[-0.01em] text-white">Mercury Expert</p>
+            <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-white/62">
+              <span>Ask about the {hp}HP {motor.family || 'Motor'}</span>
+              <span className="inline-flex items-center gap-1 text-[#E6C97E]">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+                Live pricing, stock & offers
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 min-h-0">
+      <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-4 py-5">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -400,8 +405,8 @@ export function MotorInlineChatPanel({
               <div
                 className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
                   msg.isUser
-                    ? 'bg-gray-900 text-white rounded-br-md'
-                    : 'bg-gray-100 text-gray-800 rounded-bl-md'
+                    ? 'rounded-br-md bg-repower-navy-900 text-white shadow-[0_8px_20px_rgba(5,14,28,0.13)]'
+                    : 'rounded-bl-md border border-repower-navy-900/8 bg-[#FCFAF5] text-repower-navy-900 shadow-[0_8px_20px_rgba(5,14,28,0.06)]'
                 }`}
               >
                 {msg.isStreaming ? (
@@ -447,11 +452,11 @@ export function MotorInlineChatPanel({
       </div>
 
       {/* Input Area */}
-      <div className="px-4 py-3 border-t border-gray-100 bg-white shrink-0">
+      <div className="shrink-0 border-t border-repower-navy-900/10 bg-[#F8F5EE]/95 px-4 py-3 backdrop-blur-md">
         <div className="flex items-center gap-2">
           <button
             onClick={handleVoiceStart}
-            className="shrink-0 w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 flex items-center justify-center transition-colors"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-repower-navy-900/10 bg-[#FFFDF8] text-repower-navy-900/58 shadow-sm transition-colors hover:border-repower-navy-900/20 hover:text-repower-navy-900"
             title="Voice chat"
           >
             <Mic className="w-4 h-4" />
@@ -464,13 +469,13 @@ export function MotorInlineChatPanel({
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask anything about this motor..."
-              className="w-full px-4 py-2.5 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 pr-12"
+              className="w-full rounded-full border border-repower-navy-900/12 bg-[#FFFDF8] py-2.5 pl-4 pr-12 text-sm text-repower-navy-900 shadow-[inset_0_1px_2px_rgba(5,14,28,0.04)] placeholder:text-repower-navy-900/38 focus:border-repower-navy-900/25 focus:outline-none focus:ring-2 focus:ring-[#C9A24A]/20"
               disabled={isLoading}
             />
             <button
               onClick={() => handleSend()}
               disabled={!inputText.trim() || isLoading}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-muted-foreground hover:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-repower-mercury-red transition-colors hover:text-[#9A0C24] disabled:cursor-not-allowed disabled:opacity-35"
             >
               <Send className="w-4 h-4" />
             </button>

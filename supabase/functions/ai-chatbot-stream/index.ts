@@ -31,7 +31,7 @@ import {
   getLakeInfo
 } from '../_shared/harris-knowledge.ts';
 
-import { formatBlogTitleIndex } from '../_shared/format-kb-documents.ts';
+import { formatLiveBlogTitleIndex } from '../_shared/format-kb-documents.ts';
 import {
   buildPromotionCustomerAnswer,
   formatPromotionContext,
@@ -585,8 +585,8 @@ async function searchWithPerplexity(query: string, category: QueryCategory, cont
     }> = {
       mercury: {
         prefix: '2026 Mercury Marine outboard',
-        systemPrompt: 'You are a marine engine expert specializing in Mercury Marine outboards. Provide accurate, concise technical information about features, specifications, maintenance, and comparisons. Focus on practical, actionable advice. Keep responses under 200 words.',
-        domains: ['mercurymarine.com', 'anyflip.com/bookcase/iuuc', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
+        systemPrompt: 'You are a marine engine expert specializing in Mercury Marine outboards. Provide accurate, concise technical information about features, specifications, maintenance, and comparisons. Maintenance intervals and break-in procedures must be tied to the exact engine family, model year, and official Mercury manual; never present a generic interval or procedure as universal. Keep responses under 200 words.',
+        domains: ['mercurymarine.com', 'boatingmag.com', 'boats.com', 'discoverboating.com'],
         header: '## VERIFIED MERCURY INFO'
       },
       harris: {
@@ -907,6 +907,13 @@ When a customer asks about a motor's features (electric start, tiller, shaft len
 
 ## DO NOT FABRICATE (CRITICAL FOR TRUST)
 Only state facts you can verify. If you don't have data, don't make it up.
+
+## MODEL-SPECIFIC SERVICE INFORMATION (CRITICAL)
+Break-in procedures and maintenance intervals vary by engine family, model, model year, and manual revision.
+- Never present a universal first-service hour, oil-change interval, gear-lube interval, RPM limit, or break-in phase schedule.
+- Use the exact motor context and an official Mercury owner/service manual. If the exact manual-backed answer is unavailable, say so plainly and direct the customer to Mercury's manual lookup or Harris Boat Works service.
+- Do not repeat a 20-hour or 20-25-hour first-service recommendation unless the exact official manual for that motor explicitly requires it.
+- General safety checks are fine, but label them as general and do not substitute them for the motor's manual.
 
 ## VERADO IS SPECIAL-ORDER ONLY (CRITICAL)
 Harris Boat Works does not list Verado in default online inventory. Verado is available by special order.
@@ -1354,77 +1361,12 @@ Installation is plug-and-play via 10-pin SmartCraft diagnostic port. DIY-friendl
 - VesselView Link conflict → Explain they can't be used together
 - Older motors (pre-2004 or under 25hp) → "That motor predates SmartCraft connectivity"
 
-## ENGINE BREAK-IN PROCEDURE
+## ENGINE BREAK-IN AND FIRST SERVICE
 
-### Official Mercury 10-Hour Break-In Process
-
-**Phase 1: First Hour (0-1 hours)**
-- Maximum RPM: 3500
-- Vary throttle constantly - never hold steady speed
-- Light loads only (minimal passengers/gear)
-- Check for leaks, unusual sounds, warning lights
-
-**Phase 2: Second Hour (1-2 hours)**
-- Maximum RPM: 4500
-- Continue varying throttle
-- Still no wide-open throttle (WOT)
-- Monitor oil pressure and temperature
-
-**Phase 3: Hours 3-10**
-- Normal operation permitted
-- WOT allowed but MAX 5 minutes at a time
-- Continue varying speeds when possible
-- Full break-in complete at 10 hours
-
-### Critical Do's
-- ✅ Vary throttle settings constantly (prevents ring glazing)
-- ✅ Check oil before every outing during break-in
-- ✅ Use SmartCraft Connect/app to track hours precisely
-- ✅ Keep loads light initially
-- ✅ Monitor for leaks, unusual sounds, warning lights
-- ✅ Keep a simple log (date, hours, RPM ranges, any issues)
-
-### Critical Don'ts
-- ❌ Don't hold steady RPM for extended periods (causes ring glazing)
-- ❌ Don't run at WOT at all in first 2 hours
-- ❌ Don't run at WOT for more than 5 minutes (hours 3-10)
-- ❌ Don't idle for extended periods
-- ❌ Don't skip the first service after break-in
-- ❌ Don't tow heavy loads or water toys during break-in
-
-### Engine Family Notes
-| Family | Special Considerations |
-|--------|----------------------|
-| FourStroke | Oil checks critical, change oil/filter after break-in (typically 20-25 hours) |
-| Pro XS | Performance engine - break-in even more critical, follow procedure carefully |
-| Verado | Gentle throttle early, soft acceleration, limit boost pressure |
-| SeaPro | Commercial duty - same break-in, then ready for hard work |
-| Portable (2.5-20hp) | Same principles, just lower absolute RPM limits |
-
-### First Service After Break-In
-Schedule service at Harris after break-in (check manual for exact hours - typically 20-25):
-- Change engine oil and filter
-- Check/replace gear lube
-- Inspect for leaks and wear
-- Check all connections and hardware
-- Verify proper operation
-
-**Link to schedule service**: [Harris Service](http://hbw.wiki/service)
-
-### Why Break-In Matters
-- Allows piston rings to seat properly against cylinder walls
-- Prevents ring glazing that causes oil consumption issues
-- Ensures proper bearing wear-in for long engine life
-- **Protects warranty** - improper break-in may affect warranty claims
-
-### Break-In Response Guidelines
-- When asked about break-in → Provide the 3-phase structure clearly (1 hour / 1 hour / 8 hours)
-- When asked "do I really need to?" → YES, explain warranty implications and long-term engine health
-- When asked about WOT → "After 2 hours yes, but max 5 minutes at a time until 10 hours complete"
-- When asked about first service → Recommend scheduling at Harris after 20-25 hours (check manual for specific model)
-- For model-specific questions → Use Perplexity to find exact details
-- Always mention: "Check your owner's manual for your specific model's requirements"
-- Link to Mercury's official guide: https://www.mercurymarine.com/us/en/lifestyle/dockline/how-to-break-in-a-new-mercury-outboard
+- Give a break-in or first-service schedule only when it is supported by the exact motor's official Mercury manual.
+- Ask for the full model/year or serial-number range when the current motor context is not enough to identify the correct manual.
+- If exact manual-backed instructions are unavailable, explain that Mercury procedures vary and direct the customer to Mercury's manual lookup or Harris Boat Works service: [Harris Service](http://hbw.wiki/service).
+- Never improvise RPM limits, hour phases, oil-change timing, or warranty consequences.
 
 ## RESPONSE LENGTH GUIDE
 - Simple yes/no → 1 sentence
@@ -1470,11 +1412,7 @@ When a customer accepts an offer that needs contact info:
 
 **Break-In Question:**
 > User: "What's the break-in process?"
-> You: "Mercury's got a 10-hour break-in in 3 phases:
-> **Hours 0-1**: Max 3500 RPM, vary throttle constantly
-> **Hours 1-2**: Max 4500 RPM, still no WOT
-> **Hours 3-10**: Normal use, WOT okay but max 5 min at a time
-> Key thing is varying the throttle - never hold steady RPM. Want me to get you on the calendar for your first service after break-in?"
+> You: "Mercury's break-in procedure varies by engine family and model year. I don't want to give you the wrong RPM or hour limits—send me the full model/year (or serial range), and I'll point you to the exact Mercury manual. Harris can also confirm it here: http://hbw.wiki/service."
 
 **Comparison with callback offer:**
 > User: "What's the difference between the 60 and 75?"
@@ -2107,7 +2045,8 @@ Provide a helpful, balanced comparison covering: power difference, price differe
 
     // Blog article reference index — gives the model awareness of every
     // published post on /blog so it can cite or link articles by slug.
-    systemPrompt += `\n\n## BLOG ARTICLE INDEX (cite by /blog/<slug>)\n${formatBlogTitleIndex()}\n\nWhen a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
+    const liveBlogTitleIndex = await formatLiveBlogTitleIndex();
+    systemPrompt += `\n\n## BLOG ARTICLE INDEX (cite by /blog/<slug>)\n${liveBlogTitleIndex}\n\nWhen a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
     // When the user is asking us to create a quote, give the model crisp instructions
     // for collecting just the missing fields and then calling create_quote.

@@ -5,12 +5,23 @@ import { BlogCardImage } from './BlogCardImage';
 interface Props {
   slugs: string[];
   hideHeader?: boolean;
+  surface?: 'default' | 'motor-modal';
 }
 
 function truncate(s: string, n = 90): string {
   if (!s) return '';
   if (s.length <= n) return s;
   return s.slice(0, n).replace(/\s+\S*$/, '') + '…';
+}
+
+function formatUpdatedDate(date: string): string {
+  const parsed = new Date(`${date.slice(0, 10)}T12:00:00`);
+  if (Number.isNaN(parsed.getTime())) return '';
+  return new Intl.DateTimeFormat('en-CA', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(parsed);
 }
 
 /**
@@ -21,12 +32,12 @@ function truncate(s: string, n = 90): string {
  * Pass `hideHeader` to skip the built-in h2 (useful when the parent provides
  * its own heading, e.g. the motor modal Resources tab).
  */
-export function RelatedPostsGrid({ slugs, hideHeader = false }: Props) {
+export function RelatedPostsGrid({ slugs, hideHeader = false, surface = 'default' }: Props) {
+  const isMotorModal = surface === 'motor-modal';
   const articles = slugs
     .map((slug) => {
       const a = blogArticles.find((x) => x.slug === slug);
       if (!a) {
-        // eslint-disable-next-line no-console
         console.warn(
           `[RelatedPostsGrid] Skipping unknown article slug: ${slug}`,
         );
@@ -52,10 +63,16 @@ export function RelatedPostsGrid({ slugs, hideHeader = false }: Props) {
           <Link
             key={a.slug}
             to={`/blog/${a.slug}`}
-            className="group flex flex-col overflow-hidden rounded-lg border border-repower-navy-900/15 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+            className={`group flex flex-col overflow-hidden rounded-lg border transition-all hover:-translate-y-0.5 ${
+              isMotorModal
+                ? 'border-repower-navy-900/12 bg-[#FCFAF5] shadow-[0_12px_34px_rgba(5,14,28,0.07)] hover:border-repower-mercury-red/30 hover:shadow-[0_16px_38px_rgba(5,14,28,0.12)]'
+                : 'border-repower-navy-900/15 bg-white shadow-sm hover:shadow-md'
+            }`}
           >
             {a.image && (
-              <div className="aspect-[16/9] w-full overflow-hidden bg-repower-navy-900/5">
+              <div className={`aspect-[16/9] w-full overflow-hidden ${
+                isMotorModal ? 'bg-[#E8E2D7]' : 'bg-repower-navy-900/5'
+              }`}>
                 <BlogCardImage
                   src={a.image}
                   alt=""
@@ -72,9 +89,15 @@ export function RelatedPostsGrid({ slugs, hideHeader = false }: Props) {
                   {truncate(a.description, 90)}
                 </div>
               )}
-              {a.readTime && (
-                <div className="mt-3 text-xs uppercase tracking-wide text-repower-navy-900/50">
-                  {a.readTime}
+              {(a.readTime || (isMotorModal && a.dateModified)) && (
+                <div className="mt-auto flex flex-wrap items-center gap-x-2 gap-y-1 pt-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-repower-navy-900/48">
+                  {a.readTime && <span>{a.readTime}</span>}
+                  {isMotorModal && a.readTime && a.dateModified && (
+                    <span aria-hidden="true" className="text-repower-mercury-red/55">•</span>
+                  )}
+                  {isMotorModal && a.dateModified && (
+                    <span>Updated {formatUpdatedDate(a.dateModified)}</span>
+                  )}
                 </div>
               )}
             </div>

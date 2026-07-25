@@ -2,7 +2,7 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
-import { formatBlogTitleIndex } from "../_shared/format-kb-documents.ts";
+import { formatLiveBlogTitleIndex } from "../_shared/format-kb-documents.ts";
 import {
   buildPromotionCustomerAnswer,
   formatPromotionContext,
@@ -69,6 +69,7 @@ async function buildSystemPrompt(knowledge?: CustomerKnowledge) {
   const liveKnowledge = knowledge || await loadCustomerKnowledge(supabase);
   const motors = liveKnowledge.motors;
   const promotions = liveKnowledge.promotions;
+  const liveBlogTitleIndex = await formatLiveBlogTitleIndex();
   
   const basePrompt = `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert who sounds like a friend who happens to know everything about outboard motors. You work at an authorized Mercury Premier dealer in Ontario, Canada.
 
@@ -650,11 +651,10 @@ Gores Landing, ON K0K 2E0
 - **18-20ft Bass/Musky**: Mercury 115-150HP FourStroke
 - **Top Pick**: Mercury 60HP EFI Command Thrust - runs shallow, handles open crossings
 
-### New Motor Break-In (First 10 Hours):
-- Hour 1: Stay below 3000 RPM, vary speeds
-- Hours 2-3: Gradually to 3/4 throttle, brief full-throttle OK
-- Hours 4-10: Normal operation, vary throttle
-- **Critical**: First oil change at 20 hours to remove break-in particles
+### New Motor Break-In and First Service:
+- Procedures and intervals vary by engine family, model year, and official Mercury manual.
+- Never give a universal RPM/hour schedule or a universal 20-hour first oil change.
+- Use the exact motor context and official Mercury manual. If the exact manual-backed answer is unavailable, ask for the full model/year or serial range and direct the customer to Mercury's manual lookup or Harris Boat Works service.
 
 ## CONVERSATION RULES & ADVANCED KNOWLEDGE:
 
@@ -712,7 +712,7 @@ IMPORTANT INSTRUCTIONS:
 Location: Ontario, Canada - we serve Canadian customers with Canadian pricing and support.
 
 ## BLOG ARTICLE INDEX (cite by /blog/<slug>)
-${formatBlogTitleIndex()}
+${liveBlogTitleIndex}
 
 When a customer's question maps to one of these posts, mention it by name and link to the URL. Do NOT invent slugs or article titles that aren't on this list.`;
 
