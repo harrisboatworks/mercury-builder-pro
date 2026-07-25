@@ -1,4 +1,4 @@
-export const MERCURY_TECHNICAL_FACTS_VERSION = "mercury-tech-2026-07-25.1";
+export const MERCURY_TECHNICAL_FACTS_VERSION = "mercury-tech-2026-07-25.2";
 
 export const MERCURY_115_PRO_XS_MANUAL = {
   publication: "8M0145552",
@@ -65,6 +65,7 @@ export type MercuryTechnicalIntent =
   | "battery"
   | "break_in"
   | "service_schedule"
+  | "water_pump_impeller_schedule"
   | "unsupported_technical";
 
 export interface MercuryTechnicalAnswerOptions {
@@ -150,6 +151,13 @@ export function detectMercuryTechnicalIntent(message: string): MercuryTechnicalI
     /\b(?:when|how often|hours?|annual|yearly|due|interval|schedule)\b/.test(q)
   ) {
     return "service_schedule";
+  }
+
+  if (
+    /\b(?:impeller|water pump|seawater pump)\b/.test(q) &&
+    /\b(?:replace|replacement|change|service|due|schedule|interval|when|how often|hours?|years?)\b/.test(q)
+  ) {
+    return "water_pump_impeller_schedule";
   }
 
   if (/\b(?:wide open throttle|wot|max(?:imum)? rpm|rpm range|operating range)\b/.test(q)) {
@@ -277,6 +285,9 @@ export function buildVerifiedMercuryTechnicalAnswer(
 
     case "service_schedule":
       return `For this 115 Pro XS manual, engine oil and filter are scheduled every 100 hours or once yearly, whichever comes first. The water-pump impeller and spark plugs are in the 300-hour or 3-year schedule. There is no scheduled 20-hour oil change in this manual.${source}`;
+
+    case "water_pump_impeller_schedule":
+      return `For this 115 Pro XS, Mercury schedules water-pump impeller replacement every 300 hours of use or 3 years, whichever comes first. Replace it sooner if overheating occurs or reduced water pressure is noted. Mercury lists this as dealer service.${source}`;
 
     case "unsupported_technical":
       return manualHandoff(context, options);
