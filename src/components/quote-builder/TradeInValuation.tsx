@@ -923,7 +923,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <AnimatedPrice value={medianValue} prefix="$" duration={0.8} />
                       </div>
                       <div className="text-sm font-normal text-repower-navy-900/75">
-                        Range: ${Math.round(estimate.low).toLocaleString()}, ${Math.round(estimate.high).toLocaleString()}
+                        Range: ${Math.round(estimate.low).toLocaleString()} – ${Math.round(estimate.high).toLocaleString()}
                       </div>
                     </div>
 
