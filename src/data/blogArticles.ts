@@ -21371,7 +21371,7 @@ At HBW, Premier Dealer status sits alongside:
 
 - **Mercury-trained technicians**
 - **Mercury-specific diagnostic equipment and tooling**
-- **The largest Mercury and MerCruiser parts inventory in Ontario**
+- **Deep Mercury and MerCruiser parts inventory**
 - **Current product and service training**
 - **Complete written repower pricing**
 - **An on-water Rice Lake test before every repower pickup**
@@ -21512,7 +21512,7 @@ A useful answer is specific and written wherever it affects price, scope, warran
 ## Frequently Asked Questions
 
 **What should I expect from a Mercury Premier Dealer?**
-Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, the largest Mercury and MerCruiser parts inventory in Ontario, complete written pricing, and an on-water test before every repower pickup.
+Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water test before every repower pickup.
 
 **Is Mercury motor pricing the same at all Ontario dealers?**
 Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request.
@@ -21541,7 +21541,7 @@ An authorized Mercury dealer can assess a repower. Compare the written installat
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "What should I expect from a Mercury Premier Dealer?", answer: "Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, the largest Mercury and MerCruiser parts inventory in Ontario, complete written pricing, and an on-water test before every repower pickup." },
+      { question: "What should I expect from a Mercury Premier Dealer?", answer: "Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water test before every repower pickup." },
       { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request." },
       { question: "How do I confirm a dealer's Mercury designation?", answer: "Ask the dealer to confirm its current Mercury authorization and designation, then verify the technician, tooling, parts, and service scope for your specific motor. Dealer status and job-specific capability are related, but they are not interchangeable." },
       { question: "Does dealer status change my Mercury warranty?", answer: "No. Dealer status does not change a customer's factory warranty rights or guarantee claim approval. For warranty assessment, diagnostics, or a repower, confirm that the shop has the authorization, trained technicians, tooling, parts, and current capacity for the work." },
@@ -21549,7 +21549,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What's the average age of Mercury dealers in Ontario?", answer: "Mixed. Some have been in business 50+ years; others opened recently. Longevity isn't everything but it correlates with Mercury-knowledge depth and post-sale service quality." },
       { question: "Can I get a Mercury repower at any authorized dealer?", answer: "An authorized Mercury dealer can assess a repower. Compare the written installation scope, rigging and diagnostic capability, parts availability, warranty registration, propeller setup, and whether the finished boat will be tested on the water." },
       { question: "What is the best Mercury dealer near Peterborough?", answer: "It depends what you value, but Harris Boat Works, about 35 minutes south of Peterborough via Highway 28 in Gores Landing, is a Mercury Premier Dealer with transparent online pricing at mercuryrepower.ca, Rice Lake water testing on every repower, and a family that has owned the business since 1947 and sold Mercury since 1965." },
-      { question: "What does Mercury Premier Dealer status mean?", answer: "Premier Dealer is Harris Boat Works' current Mercury Marine dealer designation. HBW pairs that designation with Mercury-trained technicians, Mercury-specific diagnostic tooling, the largest Mercury and MerCruiser parts inventory in Ontario, transparent written pricing, and Rice Lake testing for every repower. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer." },
+      { question: "What does Mercury Premier Dealer status mean?", answer: "Premier Dealer is Harris Boat Works' current Mercury Marine dealer designation. HBW pairs that designation with Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, transparent written pricing, and Rice Lake testing for every repower. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer." },
     ],
   },
   {

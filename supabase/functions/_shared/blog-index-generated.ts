@@ -3394,20 +3394,20 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "What makes a Mercury Premier dealer different from a regular dealer?",
-        "a": "Premier status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Premier dealers in Ontario."
+        "q": "What should I expect from a Mercury Premier Dealer?",
+        "a": "Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water test before every repower…"
       },
       {
         "q": "Is Mercury motor pricing the same at all Ontario dealers?",
         "a": "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request."
       },
       {
-        "q": "How do I find out if a dealer is Mercury Premier?",
-        "a": "Mercury's online dealer locator doesn't display tier. You have to ask. A real Premier dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Premier."
+        "q": "How do I confirm a dealer's Mercury designation?",
+        "a": "Ask the dealer to confirm its current Mercury authorization and designation, then verify the technician, tooling, parts, and service scope for your specific motor. Dealer status and job-specific capability are related, but they are not interchangeable."
       },
       {
-        "q": "Why does dealer tier matter for me as a recreational boater?",
-        "a": "For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Premier tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't."
+        "q": "Does dealer status change my Mercury warranty?",
+        "a": "No. Dealer status does not change a customer's factory warranty rights or guarantee claim approval. For warranty assessment, diagnostics, or a repower, confirm that the shop has the authorization, trained technicians, tooling, parts, and current capacity for the work."
       }
     ]
   },

@@ -64,7 +64,7 @@ At HBW, Premier Dealer status sits alongside:
 
 - **Mercury-trained technicians**
 - **Mercury-specific diagnostic equipment and tooling**
-- **The largest Mercury and MerCruiser parts inventory in Ontario**
+- **Deep Mercury and MerCruiser parts inventory**
 - **Current product and service training**
 - **Complete written repower pricing**
 - **An on-water Rice Lake test before every repower pickup**
@@ -206,7 +206,7 @@ A useful answer is specific and written wherever it affects price, scope, warran
 
 ### What should I expect from a Mercury Premier Dealer?
 
-Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, the largest Mercury and MerCruiser parts inventory in Ontario, complete written pricing, and an on-water test before every repower pickup.
+Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water test before every repower pickup.
 
 ### Is Mercury motor pricing the same at all Ontario dealers?
 
@@ -238,7 +238,7 @@ It depends what you value, but Harris Boat Works, about 35 minutes south of Pete
 
 ### What does Mercury Premier Dealer status mean?
 
-Premier Dealer is Harris Boat Works' current Mercury Marine dealer designation. HBW pairs that designation with Mercury-trained technicians, Mercury-specific diagnostic tooling, the largest Mercury and MerCruiser parts inventory in Ontario, transparent written pricing, and Rice Lake testing for every repower. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
+Premier Dealer is Harris Boat Works' current Mercury Marine dealer designation. HBW pairs that designation with Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, transparent written pricing, and Rice Lake testing for every repower. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ## Related guides
 
