@@ -165,11 +165,12 @@ export function TradeInValueEstimator() {
   const hpNum = parseFloat(hp);
   const hoursNum = hours === '' ? null : parseInt(hours, 10);
 
+  const currentYear = new Date().getFullYear();
   const ready =
     brand !== '' &&
     !Number.isNaN(yearNum) &&
     yearNum >= 1990 &&
-    yearNum <= 2025 &&
+    yearNum <= currentYear &&
     !Number.isNaN(hpNum) &&
     hpNum > 0 &&
     stroke !== '' &&
