@@ -406,7 +406,7 @@ export function TradeInValueEstimator() {
               )}
 
               <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-repower-red hover:bg-repower-red/90 text-white">
+                <Button asChild className="bg-repower-mercury-red hover:bg-repower-mercury-red/90 text-white">
                   <Link to="/quote/motor-selection?trade=yes">
                     Get a personalized trade quote
                   </Link>

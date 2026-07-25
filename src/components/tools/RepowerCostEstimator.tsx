@@ -268,7 +268,7 @@ export function RepowerCostEstimator() {
                       <td className="py-2 pr-3 text-right">{fmt(result.rigging[0])} - {fmt(result.rigging[1])}</td>
                     </tr>
                     {result.tradeNum > 0 && (
-                      <tr className="border-b border-repower-navy-900/10 text-repower-red">
+                      <tr className="border-b border-repower-navy-900/10 text-repower-mercury-red">
                         <td className="py-2 pr-3">Trade-in credit</td>
                         <td className="py-2 pr-3 text-right">- {fmt(result.tradeNum)}</td>
                       </tr>
@@ -286,7 +286,7 @@ export function RepowerCostEstimator() {
               </p>
 
               <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-repower-red hover:bg-repower-red/90 text-white">
+                <Button asChild className="bg-repower-mercury-red hover:bg-repower-mercury-red/90 text-white">
                   <Link to="/quote/motor-selection">
                     Build a Real Quote at mercuryrepower.ca
                   </Link>
