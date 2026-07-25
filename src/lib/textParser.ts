@@ -46,22 +46,21 @@ export const parseMessageText = (text: string): ParsedSegment[] => {
   }
   
   // Then handle markdown links [text](url)
-  const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
   const markdownLinks: { placeholder: string; content: string; href: string }[] = [];
-  
-  // Reset regex for links (use a fresh regex on processedText)
-  let linkMatch;
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  while ((linkMatch = linkRegex.exec(processedText)) !== null) {
+
+  // Replace every link in one immutable regex pass. Mutating processedText
+  // inside RegExp.exec() shifts lastIndex and can leave every second link as
+  // raw Markdown in the chat bubble.
+  processedText = processedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, content, href) => {
     const placeholder = `__MDLINK_${placeholderIndex}__`;
     markdownLinks.push({
       placeholder,
-      content: linkMatch[1],
-      href: linkMatch[2]
+      content,
+      href,
     });
-    processedText = processedText.replace(linkMatch[0], placeholder);
     placeholderIndex++;
-  }
+    return placeholder;
+  });
   
   // Combined regex for URLs, emails, and phone numbers
   const combinedRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?|\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b|\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})|([0-9]{3})[-.]([0-9]{3})[-.]([0-9]{4}))/g;
