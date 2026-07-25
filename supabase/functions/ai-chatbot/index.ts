@@ -2,7 +2,10 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
-import { formatLiveBlogTitleIndex } from "../_shared/format-kb-documents.ts";
+import {
+  formatLiveBlogTitleIndex,
+  searchLiveBlogKnowledge,
+} from "../_shared/format-kb-documents.ts";
 import {
   buildPromotionCustomerAnswer,
   formatPromotionContext,
@@ -21,6 +24,9 @@ import {
   resolveCustomerSellingPrice,
   type CustomerKnowledge,
 } from "../_shared/customer-knowledge-context.ts";
+import {
+  buildVerifiedMercuryTechnicalAnswer,
+} from "../_shared/verified-mercury-technical-facts.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -131,7 +137,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 
 ### Mercury Outboard Lineup:
 - Complete range from 2.5HP portable to 600HP+ high-performance
-- Verado supercharged technology for premium performance
+- Current Verado families use naturally aspirated V8, V10 or V12 power; older Verado generations included supercharged inline-six engines
 - SeaPro commercial-grade engines for heavy-duty applications
 - FourStroke technology for fuel efficiency and smooth operation
 
@@ -151,7 +157,7 @@ When a customer asks about a specific motor's features (electric start, tiller, 
 ### Maintenance Best Practices:
 - Oil changes: Better to change at season end before storage (removes contaminants)
 - Gear lube inspection: Check for metal particles (normal) vs. chips (needs dealer attention)
-- Spark plugs: Replace every 300 hours or 3 years
+- Spark plugs: Use the exact model/year or serial-number manual; do not turn one family's interval into a universal schedule
 - Never run engine without water circulation - prevents pump damage and overheating
 - Anodes: Inspect regularly, don't paint them, use quality genuine Mercury anodes
 
@@ -612,17 +618,12 @@ Gores Landing, ON K0K 2E0
 - Both extremely reliable with proper maintenance
 
 ### Maintenance Quick Answers:
-- **Oil change**: Every 100 hours or annually (first change at 20 hours)
-- **No winterization**: Freeze damage to engine block, gummed fuel system, corrosion
-- **Water pump**: Replace every 300 hours or when telltale weak
-- **Spark plugs**: Every 100 hours or with annual service
-- **DIY-friendly**: Oil checks, prop inspection, battery maintenance
-- **Professional**: Water pump, lower unit service, annual inspections
+- Break-in, oil-change, spark-plug, water-pump and storage requirements vary by engine family, year and manual revision.
+- Use the exact manual-backed technical fact layer. Never invent a universal 20-hour service or a replacement list from horsepower alone.
+- General owner checks may be described as general, but they do not replace the serial-number manual.
 
 ### Seasonal Checklist Quick Reference:
-**Spring**: Check lower unit oil (milky = water), inspect prop, replace fuel filters, test kill switch
-**Summer (every 50-100hrs)**: Check oil, inspect plugs, clean fuel separator, lube fittings
-**Fall**: Stabilize fuel, fog engine, change lower unit oil, disconnect battery, store upright
+Use the applicable owner's manual and approved work scope. Do not turn a seasonal checklist into model-specific service instructions.
 
 ### Repower Quick Answers:
 - **Worth repowering if**: Hull solid, transom firm, interior functional
@@ -733,7 +734,7 @@ serve(async (req) => {
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
-    const { message, conversationHistory = [], knowledgeProbe = false } = await req.json();
+    const { message, conversationHistory = [], context = {}, knowledgeProbe = false } = await req.json();
     const knowledge = await loadCustomerKnowledge(supabase);
 
     if (knowledgeProbe === true) {
@@ -745,6 +746,23 @@ serve(async (req) => {
 
     if (!message) {
       throw new Error('Message is required');
+    }
+
+    const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
+      message,
+      context?.currentMotor,
+    );
+    if (verifiedTechnicalReply) {
+      return new Response(JSON.stringify({
+        reply: verifiedTechnicalReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: verifiedTechnicalReply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
@@ -788,7 +806,11 @@ serve(async (req) => {
     }
 
     // Build dynamic system prompt with real-time data
-    const systemPrompt = await buildSystemPrompt(knowledge);
+    let systemPrompt = await buildSystemPrompt(knowledge);
+    const blogKnowledgeContext = await searchLiveBlogKnowledge(message);
+    if (blogKnowledgeContext) {
+      systemPrompt += `\n\n${blogKnowledgeContext}`;
+    }
 
     // Build conversation context
     const messages = [

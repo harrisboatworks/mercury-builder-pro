@@ -60,12 +60,10 @@ const dest = resolve("supabase/functions/_shared/blog-index-generated.ts");
 writeFileSync(dest, out, "utf8");
 
 const publicDest = resolve("public/blog-index.json");
-const publicArticles = slim.map((article) => ({
-  slug: article.slug,
-  title: article.title,
-  category: article.category,
-  publishDate: article.publishDate,
-}));
+// The public index is also the live retrieval catalogue for chat and voice.
+// Keep the payload bounded, but retain summaries, keywords and structured FAQs
+// so a normal site deploy refreshes article knowledge without an Edge redeploy.
+const publicArticles = slim;
 const sourceVersion = createHash("sha256")
   .update(JSON.stringify(publicArticles))
   .digest("hex")

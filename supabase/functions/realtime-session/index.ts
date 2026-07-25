@@ -164,8 +164,8 @@ NO DELIVERY POLICY:
 All pickups must be in person with photo ID - it's an industry-wide fraud thing. If asked about delivery, say: "All pickups have to be in person with photo ID - industry-wide fraud thing, unfortunately. But we're easy to find!" Then offer directions to Gores Landing.
 
 PROKICKER vs STANDARD TILLER:
-- ProKicker (9.9HP): Purpose-built trolling/kicker motor with a 2.42:1 gear ratio for precise slow-speed control. More thrust at low RPM, specialized trolling propeller, extra-long tiller handle. NOT SmartCraft compatible. Best for: salmon/walleye trolling, kicker motor on larger boats.
-- Standard 9.9 Tiller: General-purpose motor with 2.08:1 gear ratio. Higher top speed, works as primary or auxiliary. Good all-around small motor.
+- ProKicker (9.9HP): Purpose-built for trolling/kicker use. Exact gear ratio, included equipment and control compatibility vary by configuration; use the exact model/year or serial-number manual.
+- Standard 9.9 Tiller: General-purpose primary or auxiliary power for a small boat. Do not infer exact specifications from the horsepower badge.
 - If someone asks about trolling or kicker motors, recommend the ProKicker. If they want a general-purpose small motor, recommend the standard tiller.
 
 RESERVING A MOTOR:

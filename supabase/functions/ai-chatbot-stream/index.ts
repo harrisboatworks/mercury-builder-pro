@@ -31,7 +31,10 @@ import {
   getLakeInfo
 } from '../_shared/harris-knowledge.ts';
 
-import { formatLiveBlogTitleIndex } from '../_shared/format-kb-documents.ts';
+import {
+  formatLiveBlogTitleIndex,
+  searchLiveBlogKnowledge,
+} from '../_shared/format-kb-documents.ts';
 import {
   buildPromotionCustomerAnswer,
   formatPromotionContext,
@@ -54,6 +57,9 @@ import {
   buildMercuryProductProtectionCustomerAnswer,
   formatMercuryProductProtectionRateCard,
 } from '../_shared/mercury-product-protection-rates.ts';
+import {
+  buildVerifiedMercuryTechnicalAnswer,
+} from '../_shared/verified-mercury-technical-facts.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -437,7 +443,8 @@ function detectQueryCategory(message: string): QueryCategory {
     /spark ?plug|plug gap|ignition/i,
     /oil (type|capacity|change|grade)|quicksilver/i,
     /maintenance|winteriz|break-?in|service (interval|schedule)/i,
-    // Parts & consumables - ALWAYS verify via Perplexity, never guess part numbers
+    // Parts & consumables - route as Mercury technical; the deterministic
+    // gate above will require serial-number/manual-backed fitment.
     /filter|fuel filter|oil filter|water separator|spin-on/i,
     /anode|zinc|sacrificial|corrosion/i,
     /thermostat|temp(erature)? sensor/i,
@@ -1003,11 +1010,12 @@ This feels helpful, not salesy, and gives them a real reason to share their numb
 
 ## PROKICKER vs STANDARD TILLER — KNOW THE DIFFERENCE
 The ProKicker is NOT a regular tiller motor. Key differences:
-- **ProKicker**: 2.42:1 gear ratio — purpose-built for trolling. More thrust at low RPM, precise slow-speed control. Specialized trolling propeller included. Extra-long tiller handle. NOT SmartCraft compatible.
-- **Standard 9.9 Tiller**: 2.08:1 gear ratio — general-purpose motor. Works as primary engine on small boats or auxiliary. Higher top speed than ProKicker.
+- **ProKicker**: Purpose-built for trolling, with configuration details that vary by exact model and year.
+- **Standard 9.9 Tiller**: General-purpose motor that can serve as primary power on a small boat or as auxiliary power.
 - **When to recommend ProKicker**: Customer trolls for salmon/walleye/trout, needs a kicker motor on a larger boat, wants precise slow-speed control.
 - **When to recommend Standard**: Customer needs a general all-purpose small motor, wants higher top speed, using as primary power on a small boat.
 - ProKicker is slightly more expensive but worth it for dedicated trolling use.
+- Do not state a gear ratio, included propeller, control compatibility or other exact configuration without the model/year or serial-number manual.
 
 ## INCLUDED ACCESSORIES BY HP RANGE
 CRITICAL: Know what comes WITH the motor at no extra cost!
@@ -1058,58 +1066,22 @@ Example responses:
 - ≤20HP: "Prop's included!"
 - >20HP remote: "Prop's picked at install based on your boat setup"
 
-## MOTOR WEIGHT REFERENCE (EXACT SPECS - DO NOT ESTIMATE)
-When asked about weight, USE THESE VERIFIED VALUES from Mercury's official specs:
-
-| HP | Model Examples | Dry Weight (lbs) |
-|----|----------------|------------------|
-| 2.5 | 2.5MH | 37-38 |
-| 3.5 | 3.5MH | 40-41 |
-| 4 | 4MH | 52-53 |
-| 5 | 5MH, 5MLH, 5MLHA Sail Power | 57-59 |
-| 6 | 6MH, 6MLH | 63-65 |
-| 8 | 8MH | 82-84 |
-| 9.9 | 9.9MH, 9.9ELH, 9.9 ProKicker | 88-95 |
-| 15 | 15MH, 15ELH | 115-121 |
-| 20 | 20MH, 20ELH, 20ELPT | 175-215 |
-| 25 | 25ML, 25EL | 167-180 |
-| 30 | 30EL, 30ELPT | 175-185 |
-| 40 | 40ELPT | 235-255 |
-| 50 | 50ELPT | 250-270 |
-| 60 | 60ELPT, 60EXLPT | 260-280 |
-| 75 | 75ELPT | 340-360 |
-| 90 | 90ELPT | 345-375 |
-| 100 | 100ELPT | 355-385 |
-| 115 | 115ELPT, 115 ProXS | 365-395 |
-| 150 | 150XL, 150CXL | 455-495 |
-| 200 | 200XL, 200CXL | 485-520 |
-| 250 | 250XL, 250XXL | 545-580 |
-| 300 | 300XL, 300CXL Verado | 580-640 |
-
-**Important notes:**
-- Weight varies by shaft length (short = lighter, long/XL = heavier)
-- Electric start adds ~5-10 lbs over manual
-- Command Thrust (CT) adds ~15-20 lbs
-- Verado models are heavier than FourStroke at same HP
-- These are DRY weights (no oil, fuel, or prop)
-
-**ALWAYS use this table first - don't guess or calculate. If they ask about a motor not in this list, use Perplexity to look up the exact spec from Mercury Marine.**
+## MOTOR WEIGHT
+Do not infer weight from horsepower. Shaft length, starting system, controls, gearcase and model year can change it. Give an exact weight only when it is present in the manual-backed technical fact layer for the identified model; otherwise ask for the full model/year or serial number.
 
 ## TECHNICAL SPECIFICATIONS
 When asked about specific specs (RPM, WOT, fuel consumption, etc.) for a motor:
-- If you're viewing a specific motor, provide exact specs from Perplexity lookup
-- For WOT/max RPM: Each model has a specific operating range - look it up, don't guess
-- Mercury's spec sheets are the source of truth
-- If uncertain, say "Let me check the exact specs for that model..." then provide verified data
-- Example: "The 50 ELPT has a WOT range of 5500-6000 RPM" (with actual verified numbers)
+- Use the deterministic manual-backed technical fact layer when it has the exact identified model.
+- Do not use web-search synthesis as authority for capacities, part numbers, RPM ranges, weights, battery requirements, procedures or schedules.
+- If the exact value is not loaded, say so and ask for the model/year or serial number. Never estimate from horsepower.
 
 ## PARTS & PART NUMBERS - CRITICAL (Service/Maintenance Parts)
 This section is for MOTOR SERVICE PARTS - items needed for service/maintenance like:
 - Spark plugs, filters (oil, fuel), anodes, impellers, thermostats, gear oil, shear pins, water pumps, gaskets, bearings
 
 NEVER guess or make up part numbers:
-- ALWAYS use Perplexity to verify the correct part number for that specific motor model
-- Quicksilver/Mercury part numbers are model-specific - what works on one motor may NOT work on another
+- Use the serial-number parts lookup or an exact official parts catalogue. A web-search summary is not fitment proof.
+- Quicksilver/Mercury part numbers are model-specific - what works on one motor may NOT work on another.
 
 ### Self-Service Parts Lookup - ALWAYS RECOMMEND FIRST
 Harris has an online parts lookup at https://www.mercuryrepower.ca/mercuryparts where customers can:
@@ -1127,13 +1099,13 @@ When in doubt, recommend the Harris parts page or calling rather than giving pot
 ## ACCESSORIES & UPGRADES (Different from Service Parts!)
 For ACCESSORIES like props, gauges, rigging, steering, electronics, controls, cables, fishfinders, trolling motors:
 - These are NOT on the parts lookup page - they're found via Mercury's accessory catalogs
-- Use Perplexity to search Mercury flipbooks (anyflip.com/bookcase/iuuc) for specs, compatibility, and part numbers
+- Use an exact catalogue page or HBW confirmation for compatibility and part numbers; do not rely on a generated search summary.
 - marinecatalogue.ca has some accessories with CAD pricing
 - When uncertain about accessory compatibility, recommend calling (905) 342-2153
 
 Key difference:
-- "What spark plug for my 9.9?" → Service part → Use Perplexity to verify, then recommend mercuryrepower.ca/mercuryparts
-- "What prop do I need?" → Accessory → Use Perplexity/flipbooks for recommendations
+- "What spark plug for my 9.9?" → Service part → Ask for the serial number and recommend mercuryrepower.ca/mercuryparts
+- "What prop do I need?" → Accessory → Explain that final selection depends on gearcase, hull, load and a water test
 - "Do you sell gauges?" → Accessory → Search flipbooks or marinecatalogue.ca
 
 ## RECOMMENDED ACCESSORIES FROM QUOTE BUILDER
@@ -1180,12 +1152,7 @@ Battery types available:
 - **AGM (Absorbed Glass Mat)**: Maintenance-free, spillproof, vibration-resistant, can mount in any orientation, lasts longer - worth the upgrade for serious boaters
 
 ### Battery Requirements by Motor Size
-Electric start motors require adequate cranking amps (CCA/MCA). General guidelines:
-- **Small motors (8-15 HP)**: Group 24 with 400+ CCA typically sufficient
-- **Mid-range (20-40 HP)**: Group 24 or 27 with 500+ CCA recommended
-- **Larger motors (50+ HP)**: Group 27 or 31 with 600+ CCA or per motor specs
-
-IMPORTANT: Always check the specific motor's operation manual for exact MCA (Marine Cranking Amps) requirements. When in doubt, recommend customers call or check their manual.
+Electric-start motors require adequate cranking capacity, but horsepower alone does not set the correct battery group or CCA/MCA value. Use the exact operation manual and account for the boat's installation and cable run.
 
 ### When Uncertain About Battery Specs
 For specific battery recommendations for a particular motor, say:
@@ -1382,7 +1349,7 @@ After answering a question, if it naturally leads somewhere, offer the next step
 |--------------------------|-------------------|
 | **Fuel economy/consumption** | "Want me to compare running costs between the models you're looking at?" |
 | **Props/propellers** | "Our techs do lake tests to dial in the perfect prop. Want me to get you on the list?" |
-| **Break-in procedure** | Provide the 3-phase steps directly, then: "Want me to schedule your first service after break-in?" |
+| **Break-in procedure** | Give steps only from the exact manual-backed fact layer; otherwise ask for model/year or serial number. |
 | **Maintenance/oil/service** | Provide the info, then: "Want to book a service appointment? Here's the link: http://hbw.wiki/service" |
 | **Winterization** | Walk through the steps, then: "We can handle winterization for you if you'd rather - want me to get you on the service calendar?" |
 | **Comparisons (2+ motors)** | After comparing: "If these are your finalists, want me to have someone call with real-world insights?" |
@@ -1874,13 +1841,35 @@ serve(async (req) => {
     }
     if (!message) throw new Error('Message is required');
 
-    const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
-    if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
-
     // Detect tool-intent up front. When matched we force the non-streaming path
     // so we can run the function-calling loop reliably.
     const hasQuoteIntent = detectQuoteIntent(message);
     const useStreaming = stream && !hasQuoteIntent;
+
+    const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
+      message,
+      context?.currentMotor,
+    );
+    if (verifiedTechnicalReply) {
+      console.log('Returning deterministic manual-backed Mercury technical answer');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: verifiedTechnicalReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply: verifiedTechnicalReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
+    if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
 
     // Detect topics, comparisons, categories, and HP-specific queries
     const detectedTopics = detectTopics(message);
@@ -1944,11 +1933,15 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       }
     }
 
-    // Fetch Perplexity context based on query category
-    let perplexityContext = '';
-    if (queryCategory !== 'none') {
-      perplexityContext = await searchWithPerplexity(message, queryCategory, context) || '';
-    }
+    // Retrieve current first-party article content alongside any external
+    // research. Exact technical questions have already been short-circuited
+    // through the manual-backed fact contract above.
+    const [blogKnowledgeContext, perplexityContext] = await Promise.all([
+      searchLiveBlogKnowledge(message),
+      queryCategory !== 'none'
+        ? searchWithPerplexity(message, queryCategory, context).then((value) => value || '')
+        : Promise.resolve(''),
+    ]);
 
     // Detect and lookup Mercury part numbers
     let partsContext = '';
@@ -2040,6 +2033,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     systemPrompt += `\n\n${formatCustomerKnowledgePrompt(knowledge, true)}`;
     if (comparisonContext) systemPrompt += comparisonContext;
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
+    if (blogKnowledgeContext) systemPrompt += `\n\n${blogKnowledgeContext}`;
     if (perplexityContext) systemPrompt += perplexityContext;
     if (partsContext) systemPrompt += partsContext;
 
