@@ -1,0 +1,1597 @@
+{
+  "version": 1,
+  "width": 1200,
+  "height": 630,
+  "targetBytes": 256000,
+  "images": [
+    {
+      "source": "/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image.png",
+      "output": "/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image-og.jpg",
+      "sourceSha256": "497697247c0adeb6f59b8532e779bb38f8fd630afa3c5dacafc2ba6668a93240",
+      "bytes": 134065,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png",
+      "output": "/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats-og.jpg",
+      "sourceSha256": "9287fa4a8cf0ea83cd1d2f5dcb442cb0dd8c341aca56206adb316ded1cc52955",
+      "bytes": 65754,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero.png",
+      "output": "/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero-og.jpg",
+      "sourceSha256": "cc8943c08dee956fb773aa9b0e2409296fd681cfbb67918f4cf1b9d0244ba635",
+      "bytes": 163002,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Best_Mercury_for_Ski_and_Wakeboard_Boats_Hero.png",
+      "output": "/lovable-uploads/Best_Mercury_for_Ski_and_Wakeboard_Boats_Hero-og.jpg",
+      "sourceSha256": "272b9dd4d2b267e067e7f76f033f48a97324b90d4b6a46d304ee076da9aa800c",
+      "bytes": 189618,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Boat_Repowering_In_Progress.png",
+      "output": "/lovable-uploads/Boat_Repowering_In_Progress-og.jpg",
+      "sourceSha256": "ece2575f15302f2d9e6775f01e7b3904ba1251972246988104de4655336cf869",
+      "bytes": 150422,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Breaking_In_New_Mercury_Hero.png",
+      "output": "/lovable-uploads/Breaking_In_New_Mercury_Hero-og.jpg",
+      "sourceSha256": "0d10faa7bd5d68fe04ac6aeedfccc80c8b7eb4a26a7cebea629ae942fb0c4f22",
+      "bytes": 156715,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Guy_talking_to_salesperson_Mercury.png",
+      "output": "/lovable-uploads/Guy_talking_to_salesperson_Mercury-og.jpg",
+      "sourceSha256": "fb65cdb503e7746d02591f8be2ef5d804d2493531d3de6000cd3cf3510e17ac6",
+      "bytes": 139352,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png",
+      "output": "/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image-og.jpg",
+      "sourceSha256": "0e1ca98328f6ce1149d97655e0ddb96c5a6c30277148fe628b2eec84779f8bce",
+      "bytes": 135111,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Late_Season_Boating_Safety_Hero.png",
+      "output": "/lovable-uploads/Late_Season_Boating_Safety_Hero-og.jpg",
+      "sourceSha256": "8b19f43c0219cca682335f79913ac298ab0c090e9083f127095c0f1e7d8cd5b5",
+      "bytes": 108001,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png",
+      "output": "/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero-og.jpg",
+      "sourceSha256": "26219894581fa1fff78dd65dc06a88e5c7a5939f89cca249c3bdbc47ac48adf4",
+      "bytes": 60545,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png",
+      "output": "/lovable-uploads/Mercury_Pontoon_Buyers_Guide-og.jpg",
+      "sourceSha256": "7d2d21cd1afccf6eba4bbcfb4eae65adc80a07db959e0943b7934989b4ad05be",
+      "bytes": 141285,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Mercury_Portable_Outboards.png",
+      "output": "/lovable-uploads/Mercury_Portable_Outboards-og.jpg",
+      "sourceSha256": "3a009924c9fd720e17415d1d22966bb32fe7f76983d299e5162f8a5aaee42752",
+      "bytes": 104899,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Mercury_SeaPro.png",
+      "output": "/lovable-uploads/Mercury_SeaPro-og.jpg",
+      "sourceSha256": "f7cb7cd0d413abd8752ad5023fc7fa68e84c0cba3f9a3b3eade4ddf58311ac5a",
+      "bytes": 167330,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Musky_Boat_Motor_Kawarthas_Hero.png",
+      "output": "/lovable-uploads/Musky_Boat_Motor_Kawarthas_Hero-og.jpg",
+      "sourceSha256": "f7c8297f4f4275f5f04ba76193ae792021764145eef0a92236615038fcf225e5",
+      "bytes": 182466,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Ontario_Short_Boating_Season_Fall.png",
+      "output": "/lovable-uploads/Ontario_Short_Boating_Season_Fall-og.jpg",
+      "sourceSha256": "18428ab5c1c65ffca630c588dc8987159712bca1f584e868b122b7095948a7b1",
+      "bytes": 159438,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Ontario_Short_Boating_Season_Hero.png",
+      "output": "/lovable-uploads/Ontario_Short_Boating_Season_Hero-og.jpg",
+      "sourceSha256": "9653de5ec3ac9bbe342b7ae0a19916aa97c5b7171499a78853020cc0171f00e5",
+      "bytes": 172867,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Ontario_Small_Lakes_Cottage_Hero.png",
+      "output": "/lovable-uploads/Ontario_Small_Lakes_Cottage_Hero-og.jpg",
+      "sourceSha256": "00e623047127ebe9f5cee7e290475dba26716d8e4659e840cde7ecda51cc13b6",
+      "bytes": 160064,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2.png",
+      "output": "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2-og.jpg",
+      "sourceSha256": "14e4e7dd550de0005d2c077ad266d1e81618f15b31e4fd01e3ee514942bdd5f6",
+      "bytes": 123522,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_Hero.png",
+      "output": "/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_Hero-og.jpg",
+      "sourceSha256": "7ef1627dd6c792e9c0c9a1087df1d834956a5140a7bd4ba37722c0c6df0bc13a",
+      "bytes": 132599,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ProKicker_Rice_Lake_Hero.png",
+      "output": "/lovable-uploads/ProKicker_Rice_Lake_Hero-og.jpg",
+      "sourceSha256": "8609f25457d4c7dad4bfe0cac42e3d49e3a16ea1e37d8ba2952f6d2cf064551a",
+      "bytes": 112373,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero.jpg",
+      "output": "/lovable-uploads/Rice_Lake_Cottage_Pontoon_Hero-og.jpg",
+      "sourceSha256": "fb135c086792e80d2c415c9fa49bbab87458f9522984d19a9d40632902b2dcb7",
+      "bytes": 123935,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Tiller_vs_Remote_Steering_Hero.png",
+      "output": "/lovable-uploads/Tiller_vs_Remote_Steering_Hero-og.jpg",
+      "sourceSha256": "be1ab17ec292ed9f8256aded3bc996001a2404dc527568f065faa00837278288",
+      "bytes": 118102,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Trading_In_Your_Boat_Motor_Hero.png",
+      "output": "/lovable-uploads/Trading_In_Your_Boat_Motor_Hero-og.jpg",
+      "sourceSha256": "76f597b4a7efe3a57c24d9f0afee12b8a2689ed73b496fe3793fdd1d5a837882",
+      "bytes": 121709,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Walleye_Opener_Ready_Hero.png",
+      "output": "/lovable-uploads/Walleye_Opener_Ready_Hero-og.jpg",
+      "sourceSha256": "ffe8690ff9f8ec33f76cbc9ebd462b49467b720a56647e5061170993c8826339",
+      "bytes": 132446,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png",
+      "output": "/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero-og.jpg",
+      "sourceSha256": "7591f6614cbed06847598347a7fba0e479dbff63c4092af324a49b034719a6da",
+      "bytes": 122543,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/What_the_boating_market_means_blog_hero_image.png",
+      "output": "/lovable-uploads/What_the_boating_market_means_blog_hero_image-og.jpg",
+      "sourceSha256": "2fc270537833b3969ac428cea1ed6a7ffc33624d1ac528473262a2de1747bd02",
+      "bytes": 132686,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png",
+      "output": "/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image-og.jpg",
+      "sourceSha256": "2337898acd14d53702475092cb6ad515272fd9fe1281d69287854ae2b27d9141",
+      "bytes": 141087,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png",
+      "output": "/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image-og.jpg",
+      "sourceSha256": "08f621aef6071bb61f553997732da28bd60773572a76a871d5f2ef1a3f8beb83",
+      "bytes": 148000,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/Year_End_Deals.png",
+      "output": "/lovable-uploads/Year_End_Deals-og.jpg",
+      "sourceSha256": "3580afa6225c70eecf24130ae2c33fab6eff0d7de50a85b2f7a56e312853d460",
+      "bytes": 146948,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/aluminum-fishing-hero-real.png",
+      "output": "/lovable-uploads/aluminum-fishing-hero-real-og.jpg",
+      "sourceSha256": "5e75ff89d11ef2406bcd39fc697941316e057c20140fb04b7b78ae5f76cffeb8",
+      "bytes": 136391,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/bass-boat-150-proxs-hero-real.png",
+      "output": "/lovable-uploads/bass-boat-150-proxs-hero-real-og.jpg",
+      "sourceSha256": "010c7664979f3fd68badac393876ad1dcbe66c271deb595e8115534c1423bdfb",
+      "bytes": 95513,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-7-5e-battery-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-7-5e-battery-freshwater-2026-07-og.jpg",
+      "sourceSha256": "80b17a4a09b3ca882dd09e374743c7ed2c83b2ddf2d18c75981223d1d67bd360",
+      "bytes": 118439,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-electric-boating-battery-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-electric-boating-battery-freshwater-2026-07-og.jpg",
+      "sourceSha256": "74487c8d95309d843b984c99f807b57660fe98185cdcd7196e7e23d894ee5334",
+      "bytes": 108641,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-vs-fourstroke-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-vs-fourstroke-freshwater-2026-07-og.jpg",
+      "sourceSha256": "3d2e43367dc331efd5c2ffb75604e2e0e5649584eea217a25ef84c80b8679c5c",
+      "bytes": 83995,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07-og.jpg",
+      "sourceSha256": "ff6eee156511984684acf5503b6156eaeeaecfc23c059b7e4a2007b38ade720a",
+      "bytes": 187508,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07-og.jpg",
+      "sourceSha256": "0a1671de002e5df738fee384ce3900b44ab81029baa28205a1f029fac54ef501",
+      "bytes": 100450,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-40-vs-60-official-photo-comparison-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-40-vs-60-official-photo-comparison-2026-07-og.jpg",
+      "sourceSha256": "a234d7b62b86129d974eb3bb62938d3514343b146bde7c784b9e09b540cf71d4",
+      "bytes": 75640,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-fourstroke-freshwater-review-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-fourstroke-freshwater-review-2026-07-og.jpg",
+      "sourceSha256": "cded853a599d0c4d49d2a52f6368a791f276f4ffe35463e28c1bd79e2cb423ac",
+      "bytes": 172843,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-vs-115-official-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-vs-115-official-freshwater-2026-07-og.jpg",
+      "sourceSha256": "2a8caebddd9dfe173a78c4f4163b80b8e070241c8e2ca717d7e07e56f4907059",
+      "bytes": 148950,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07-og.jpg",
+      "sourceSha256": "56b12c3ab01a77d5dac92f75eb3713b11a47f88bc52767406c90d421a6c565e9",
+      "bytes": 136356,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07-og.jpg",
+      "sourceSha256": "0d2e9fd78d3c38d4d6f2cc4152947d1a54c5d5fd242cbcb89b2d81293fd2c376",
+      "bytes": 85351,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/hero-pontoon-vs-vhull-official-freshwater-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/hero-pontoon-vs-vhull-official-freshwater-2026-07-og.jpg",
+      "sourceSha256": "991b5ab0d2271e05e10eb1614fc26a22d19996bd218250213110cc26de1c3c59",
+      "bytes": 143860,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/hero-repair-repower-sell-hbw-real-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/hero-repair-repower-sell-hbw-real-2026-07-og.jpg",
+      "sourceSha256": "efd0f1301ea0da44e845cbd4bbe464738962b2c1f00897cd25c2fb7f6ffacf9f",
+      "bytes": 138206,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp",
+      "output": "/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07-og.jpg",
+      "sourceSha256": "d767174127a84c62cad3222837d25b4040f9567739ad0c8bf00fa037034be190",
+      "bytes": 140761,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero.jpg",
+      "output": "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero-og.jpg",
+      "sourceSha256": "045fcab64e37e8183be061d61193aaa703602a92ae5db958d860c105cb047aa5",
+      "bytes": 110676,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/canadian-capacity-plate-compliance-notice.jpg",
+      "output": "/lovable-uploads/canadian-capacity-plate-compliance-notice-og.jpg",
+      "sourceSha256": "913a60901a2d157b8ed55da97a7dfb370e086779764421243a7853aad73e675b",
+      "bytes": 103417,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/center-console-mercury-hero.jpg",
+      "output": "/lovable-uploads/center-console-mercury-hero-og.jpg",
+      "sourceSha256": "e8206a8c837205fdb754d0fbfd051bb5fa2baf417e693bc7f55aeb2a9dec3b04",
+      "bytes": 133521,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/command-thrust-complete-guide-hero.png",
+      "output": "/lovable-uploads/command-thrust-complete-guide-hero-og.jpg",
+      "sourceSha256": "cdf1f44585a4230b07b8b9c33da029d9ab72d24b8f694656a0e6395f6a547d0f",
+      "bytes": 162606,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/command-thrust-pontoon-eligibility-hero.png",
+      "output": "/lovable-uploads/command-thrust-pontoon-eligibility-hero-og.jpg",
+      "sourceSha256": "e791fae649d97bd605372d37835c9b7ff9a33916da883f6b43caad19006d3570",
+      "bytes": 109422,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/diy-mercury-winterization-hero.jpg",
+      "output": "/lovable-uploads/diy-mercury-winterization-hero-og.jpg",
+      "sourceSha256": "4867739118ac6e5496613245f3f01b80ba6eeca7bf1feca3583d2a4c830ed501",
+      "bytes": 111342,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/dts-retrofit-eligibility-hero.png",
+      "output": "/lovable-uploads/dts-retrofit-eligibility-hero-og.jpg",
+      "sourceSha256": "56b6282671b78d7c9f03c31a75dbad13082594dd12d52246e6343a409a4ef60e",
+      "bytes": 120055,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/es-guia-comprar-bote-ontario-hero.png",
+      "output": "/lovable-uploads/es-guia-comprar-bote-ontario-hero-og.jpg",
+      "sourceSha256": "277fdffe109f746ebffdc5a4aa791ef81229404fe1eb5ef4ab758331bbe1bd34",
+      "bytes": 156148,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png",
+      "output": "/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero-og.jpg",
+      "sourceSha256": "0c5c167156fc21517f910094dee236aaf9de26c3b77807ebd06fd3ffdefdf6a2",
+      "bytes": 145511,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png",
+      "output": "/lovable-uploads/es-mercury-115-vs-150-comparacion-hero-og.jpg",
+      "sourceSha256": "bc84f71f1af83237a73748806e7775bf2424abe39a0de4ce55725239ca2bb959",
+      "bytes": 67242,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png",
+      "output": "/lovable-uploads/es-preparacion-invernal-motor-mercury-hero-og.jpg",
+      "sourceSha256": "c98e6721245f473ec61fdd2bb1c2c04c9456b3eb52614c93b7310d2dd8eb72c8",
+      "bytes": 115326,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero.png",
+      "output": "/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero-og.jpg",
+      "sourceSha256": "8cc2fa7f309dc42fa3f67ac8c89acbc8c28600ccbc9d96dbfdea3f2de23881c8",
+      "bytes": 151083,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-100-hour-service-cost.webp",
+      "output": "/lovable-uploads/hero-100-hour-service-cost-og.jpg",
+      "sourceSha256": "4f188a1398d40e141bb2c9eb9f9865ddfa3c6d01f10b6fd806666ef7231cf2dc",
+      "bytes": 104307,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-aluminum-vs-fiberglass-hull-ontario.png",
+      "output": "/lovable-uploads/hero-aluminum-vs-fiberglass-hull-ontario-og.jpg",
+      "sourceSha256": "043926899fb656b151760d68cbf4b38dd287fe428b5fff1d8eb3afae1ef91e16",
+      "bytes": 109682,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-avator-charging-cottage.png",
+      "output": "/lovable-uploads/hero-avator-charging-cottage-og.jpg",
+      "sourceSha256": "3e4f82b6148061ffe9e624e3656044e0bad07670d2050ba07be574e2910e8cb7",
+      "bytes": 133768,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-avator-range-rice-lake.png",
+      "output": "/lovable-uploads/hero-avator-range-rice-lake-og.jpg",
+      "sourceSha256": "b4e3bb482d173a7d36133c29516af134f155cef3ae462afbfccccb2c691d7b93",
+      "bytes": 84952,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-avator-vs-torqeedo.png",
+      "output": "/lovable-uploads/hero-avator-vs-torqeedo-og.jpg",
+      "sourceSha256": "83f0ba8e94900b9920ff7b1249e99f851b5dc31f781b939de8151c9523af7355",
+      "bytes": 112694,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-bad-used-boats-ontario.png",
+      "output": "/lovable-uploads/hero-bad-used-boats-ontario-og.jpg",
+      "sourceSha256": "652b67adea5827569655516423f9c55df176d0ef7d61b8f90bf02b261cfa2609",
+      "bytes": 143603,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
+      "output": "/lovable-uploads/hero-best-marina-rice-lake-ontario-og.jpg",
+      "sourceSha256": "8a5d1cf176c12d8ec1d7a9f5dc3fa87d95a9b9a5915156d72ba5d24c75427c77",
+      "bytes": 146110,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-best-mercury-dealer-ontario.png",
+      "output": "/lovable-uploads/hero-best-mercury-dealer-ontario-og.jpg",
+      "sourceSha256": "4430ea08ca53cb25ec50e4dc3d66bd237d6d429dbbe0e35fc02316595681f8c7",
+      "bytes": 115697,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-best-mercury-lake-ontario.png",
+      "output": "/lovable-uploads/hero-best-mercury-lake-ontario-og.jpg",
+      "sourceSha256": "6977c0f197e27e760e3fcdee452d4930fabc907ea43cad4b8daa2de8bc21af71",
+      "bytes": 144789,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-bilge-pump-troubleshooting-guide.png",
+      "output": "/lovable-uploads/hero-bilge-pump-troubleshooting-guide-og.jpg",
+      "sourceSha256": "495d68eda5d55326fb36fae40437e3d556a5a082910d3e0a33c2dcbc61217c1f",
+      "bytes": 98591,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-electrical-safety-checklist.png",
+      "output": "/lovable-uploads/hero-boat-electrical-safety-checklist-og.jpg",
+      "sourceSha256": "1d6bdf05e08bed10e3ad8ce20cefaf820dd221b48b96a144e44a392c78b0e1e5",
+      "bytes": 140306,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-insurance-ontario-guide-2026.png",
+      "output": "/lovable-uploads/hero-boat-insurance-ontario-guide-2026-og.jpg",
+      "sourceSha256": "95b50e6523abfcc9fd62d03f5e76573628ff5c425c5805b9d270c4a46cf21c91",
+      "bytes": 111540,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-rental-licence-ontario.webp",
+      "output": "/lovable-uploads/hero-boat-rental-licence-ontario-og.jpg",
+      "sourceSha256": "9292c7345065444451c10d52b053798f2bc9c9bef7ca965fbd7357eb3c4ba82f",
+      "bytes": 148868,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png",
+      "output": "/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor-og.jpg",
+      "sourceSha256": "1d1c3a7709cefb2c321ce2a6591c5f1c32077dbdef190e724863a8ca697ee803",
+      "bytes": 129466,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-service-near-toronto.png",
+      "output": "/lovable-uploads/hero-boat-service-near-toronto-og.jpg",
+      "sourceSha256": "fc8a234f6d71667f2edc2d533dca330707db9ed6dc423ceb6edd5c270ef02a3e",
+      "bytes": 115132,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-storage-kawartha-lakes.png",
+      "output": "/lovable-uploads/hero-boat-storage-kawartha-lakes-og.jpg",
+      "sourceSha256": "77df9c02923268bea70ab2867ba55e3123833d02533fd23e7257e980b157dee1",
+      "bytes": 139807,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario.png",
+      "output": "/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario-og.jpg",
+      "sourceSha256": "9060e04b951ddae2e4178922e64b82061a410f76a9b5992b40b5f2d1c3d6e958",
+      "bytes": 146702,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boat-trim-rice-lake.png",
+      "output": "/lovable-uploads/hero-boat-trim-rice-lake-og.jpg",
+      "sourceSha256": "a68d8a4cc47cbe312a4af1b4dbb3c994627e1480fe0107b855e5e51c37bdcf5c",
+      "bytes": 118391,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-boating-safety-gear-es-2026.png",
+      "output": "/lovable-uploads/hero-boating-safety-gear-es-2026-og.jpg",
+      "sourceSha256": "b4f0838b8f0903219093baaf8fd45bfef146cc85d257d149ec4a44e4918a1536",
+      "bytes": 141170,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-capacity-plate-decoder-ontario.png",
+      "output": "/lovable-uploads/hero-capacity-plate-decoder-ontario-og.jpg",
+      "sourceSha256": "6060881eafd70233c3e0061bf0384e3f7864d3ff88aa4f2ae3bbe04ca42ab6e9",
+      "bytes": 75570,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-cheapest-mercury-canada-lineup.png",
+      "output": "/lovable-uploads/hero-cheapest-mercury-canada-lineup-og.jpg",
+      "sourceSha256": "5ddcc647cd89ba62ee8ffe18146c1cb36f1f322f2ed71de9e271ddeaaad77f53",
+      "bytes": 112918,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-chinese-buyers-rice-lake-marina.png",
+      "output": "/lovable-uploads/hero-chinese-buyers-rice-lake-marina-og.jpg",
+      "sourceSha256": "0c0c9391ce98c5f3b84f53dd7c1dffcc38d9fd3a7f5134197dcf0c7903630558",
+      "bytes": 101595,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard.png",
+      "output": "/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard-og.jpg",
+      "sourceSha256": "f8aa0311aacccedbce1ec8e9f71cb476e0f4170a98a327f365143cf87e4ae491",
+      "bytes": 171444,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-complete-guide-repower-kawarthas.png",
+      "output": "/lovable-uploads/hero-complete-guide-repower-kawarthas-og.jpg",
+      "sourceSha256": "e3fba42a42a9fae6ef21201bab1675d0636b3a82b5bf2de11d42d8c5386c29e3",
+      "bytes": 136190,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench.jpg",
+      "output": "/lovable-uploads/hero-ct-vs-standard-gearcase-hbw-bench-og.jpg",
+      "sourceSha256": "481f578193640fc4d466db25617a481a940e0ca8ee93fe27014793e68fcf576c",
+      "bytes": 121302,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-docking-in-wind-rice-lake.png",
+      "output": "/lovable-uploads/hero-docking-in-wind-rice-lake-og.jpg",
+      "sourceSha256": "4bea092c3c2b826b58e47d6b1c41ddc14de8f7e6e6a869e9fcc6678dbe4ba5e9",
+      "bytes": 132896,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-dts-vs-mechanical-controls.png",
+      "output": "/lovable-uploads/hero-dts-vs-mechanical-controls-og.jpg",
+      "sourceSha256": "5d2470cb7c8e8ffb0387efd90180ef12b49cd6488ad7f6d882429441adabc8bd",
+      "bytes": 117625,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-first-time-boat-rental.webp",
+      "output": "/lovable-uploads/hero-first-time-boat-rental-og.jpg",
+      "sourceSha256": "4ebdc48ada8685e583331056988aa06c71d709256d4eb3df3565a9d02a53f674",
+      "bytes": 95930,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-group-boat-rentals.webp",
+      "output": "/lovable-uploads/hero-group-boat-rentals-og.jpg",
+      "sourceSha256": "4a0775ba51ccedc5f8ce46a9a5bcc408f0c6223337a490bc2e5231ff906912e2",
+      "bytes": 134571,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-brampton-showroom.png",
+      "output": "/lovable-uploads/hero-gta-brampton-showroom-og.jpg",
+      "sourceSha256": "445a9356027660b62752a5a9e7ca3ca7cb3e4412e65953e82a0faaa77aa7cd3f",
+      "bytes": 113112,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-burlington-aerial-marina.png",
+      "output": "/lovable-uploads/hero-gta-burlington-aerial-marina-og.jpg",
+      "sourceSha256": "5d81986ab1b012de516a6bd9e6edc9a7d8bd51053c94d4de70d70f9fd4cc3476",
+      "bytes": 123943,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-chinese-winter-storage.png",
+      "output": "/lovable-uploads/hero-gta-chinese-winter-storage-og.jpg",
+      "sourceSha256": "b10013820b4d4d4b04ff9bc15110a733719579fe7f623f9a705a674051465d6f",
+      "bytes": 145785,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-mississauga-service-counter.png",
+      "output": "/lovable-uploads/hero-gta-mississauga-service-counter-og.jpg",
+      "sourceSha256": "e0369eb86e4ea034b0ccaa5a75b11615e8aa6326775bc448ce6cbe147f4700a3",
+      "bytes": 110420,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-oakville-sea-trial.png",
+      "output": "/lovable-uploads/hero-gta-oakville-sea-trial-og.jpg",
+      "sourceSha256": "630598c6ff05a65d2b5e4a7f73f5753c43581ba20c94e36f59c08304ac452fd3",
+      "bytes": 107688,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-richmond-hill-pickup-motor.png",
+      "output": "/lovable-uploads/hero-gta-richmond-hill-pickup-motor-og.jpg",
+      "sourceSha256": "6647c05b1594a024f82883099b824c0ffce2c632748280dae2779c55605d03c3",
+      "bytes": 147749,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-gta-vaughan-tech-install.png",
+      "output": "/lovable-uploads/hero-gta-vaughan-tech-install-og.jpg",
+      "sourceSha256": "4cfc61194498ff11da2080e024ccf72acf6f474ed2e306ad7df4b3a1a6da59a1",
+      "bytes": 112510,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-harris-boat-works-since-1947.png",
+      "output": "/lovable-uploads/hero-harris-boat-works-since-1947-og.jpg",
+      "sourceSha256": "1301e4c3252e54acc297ec7f35d0099e9c98239a12cbe81112e42058ffea30e6",
+      "bytes": 112166,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-how-to-choose-horsepower.png",
+      "output": "/lovable-uploads/hero-how-to-choose-horsepower-og.jpg",
+      "sourceSha256": "b32842533d37b260dc96a6f68d8255df3cd10c3587f9be44de012fef00d09bf2",
+      "bytes": 106539,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-how-to-trim-mercury.png",
+      "output": "/lovable-uploads/hero-how-to-trim-mercury-og.jpg",
+      "sourceSha256": "1ca7b60b255f433a9ae030192053e9253d1792f72f82f9ac63d002674a2a809d",
+      "bytes": 123379,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-hull-vs-repower.png",
+      "output": "/lovable-uploads/hero-hull-vs-repower-og.jpg",
+      "sourceSha256": "c08e951ab500d2ed6ee052cb1d652d0c11abc1dfa96aadc48d71762664dd13b8",
+      "bytes": 136137,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-legend-boats-mercury-package.png",
+      "output": "/lovable-uploads/hero-legend-boats-mercury-package-og.jpg",
+      "sourceSha256": "1ba20ca889004f5bf7d4e1857698bde14f402a30383d92768fd0b8df7f116720",
+      "bytes": 129399,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mandarin-buying-guide.png",
+      "output": "/lovable-uploads/hero-mandarin-buying-guide-og.jpg",
+      "sourceSha256": "5c595740a297277140eac080ad45252d2ad6267db1cbb29bb25dd5a8e1d68215",
+      "bytes": 153438,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mandarin-day-trip.png",
+      "output": "/lovable-uploads/hero-mandarin-day-trip-og.jpg",
+      "sourceSha256": "d37883cf85b4b84893f37cdd19291a5000c841d69f8d465717a936f5a125957d",
+      "bytes": 133053,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mandarin-mercury-service.png",
+      "output": "/lovable-uploads/hero-mandarin-mercury-service-og.jpg",
+      "sourceSha256": "62ced343856f7e8d7c0beddad7fa902fa18abe42e07f41d542d3c15480388585",
+      "bytes": 123004,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mandarin-pcl-licence.png",
+      "output": "/lovable-uploads/hero-mandarin-pcl-licence-og.jpg",
+      "sourceSha256": "3a6c114de14d727144128824be837702218cb2f3183c0109191dfb281653198a",
+      "bytes": 121151,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercruiser-sterndrive-guide.png",
+      "output": "/lovable-uploads/hero-mercruiser-sterndrive-guide-og.jpg",
+      "sourceSha256": "dbf927e603df3c8196e4d835d3ddff2a2b5372976ef3ac63f257f26d8f3ece6b",
+      "bytes": 144041,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-115-aluminum-boat-cruising.png",
+      "output": "/lovable-uploads/hero-mercury-115-aluminum-boat-cruising-og.jpg",
+      "sourceSha256": "b1063e3d9b29f588cc5d4c6183611a86a47231d282c102ce3cd3fc3bff7ad43e",
+      "bytes": 112216,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-115-vs-150-comparison-zh.png",
+      "output": "/lovable-uploads/hero-mercury-115-vs-150-comparison-zh-og.jpg",
+      "sourceSha256": "a41d774f85cce7a83a3bb76dd566d85ed50e89e46756dc5618690d29369308c7",
+      "bytes": 118975,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-115-vs-150-comparison.png",
+      "output": "/lovable-uploads/hero-mercury-115-vs-150-comparison-og.jpg",
+      "sourceSha256": "3966dd3f61b67206b58a536b052892f99de2267561d85dd49a7ba04e2903c3c5",
+      "bytes": 132655,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-75-fourstroke.png",
+      "output": "/lovable-uploads/hero-mercury-75-fourstroke-og.jpg",
+      "sourceSha256": "10b53bb0f79b31a18d87d05050c147e83039e574743813f8c279404d64846bec",
+      "bytes": 102810,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png",
+      "output": "/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4-og.jpg",
+      "sourceSha256": "5d1609b056000eae90a014fe46c754c1ef992d5b7395f76b9305ee52fe5426ee",
+      "bytes": 108261,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-90-shop-shot.png",
+      "output": "/lovable-uploads/hero-mercury-90-shop-shot-og.jpg",
+      "sourceSha256": "01cd6843d77d0421df639404cce187f3c521389f14eba8fec9d364675f6a556d",
+      "bytes": 62447,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-battery-guide.png",
+      "output": "/lovable-uploads/hero-mercury-battery-guide-og.jpg",
+      "sourceSha256": "4c612d84aa66f13abc1cd010b81b52dc7f36fa4827546f936d738590664ac0ef",
+      "bytes": 90095,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-beeping-codes.png",
+      "output": "/lovable-uploads/hero-mercury-beeping-codes-og.jpg",
+      "sourceSha256": "70cd742650bbf1cb8660fe17b5ef34986b5d7438caad8bc7f200b605dbd81b93",
+      "bytes": 84872,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-boost-calibration-2026.png",
+      "output": "/lovable-uploads/hero-mercury-boost-calibration-2026-og.jpg",
+      "sourceSha256": "c7814196e486aaf2f6391f5e6f01fd59264db1c781f4465e4f31a77d71c4957d",
+      "bytes": 109537,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-boost-console.png",
+      "output": "/lovable-uploads/hero-mercury-boost-console-og.jpg",
+      "sourceSha256": "139a80a9e53e996335b8a3bae8d8b838b6830efad70edcb013dd913851dc1a8f",
+      "bytes": 115239,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-controls-rigging-guide.png",
+      "output": "/lovable-uploads/hero-mercury-controls-rigging-guide-og.jpg",
+      "sourceSha256": "0fb1619c07574fb38d77ac6f5fcc02840a74127ed94673abd5920f6c6c41fc9c",
+      "bytes": 110526,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-ajax.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-ajax-og.jpg",
+      "sourceSha256": "1a4cfb4e01f51eed1194821b2043af51289ab3a91fa07ae6e52377c317d2dbb4",
+      "bytes": 176314,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-bowmanville.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-bowmanville-og.jpg",
+      "sourceSha256": "26d210347d24dbcdf0075cc15ff50d40eb445b0d89aee1c330930ed8d7460f81",
+      "bytes": 121253,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-cobourg.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-cobourg-og.jpg",
+      "sourceSha256": "747f1c05685923e43a28a5e0e41b42595578812afe37a47bf4404888fe9a590c",
+      "bytes": 102155,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-lindsay.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-lindsay-og.jpg",
+      "sourceSha256": "17bfdbd6785c11e3edc7a07531c6c5c4c38bfda440aabb3235e80c3a0194cbcf",
+      "bytes": 148422,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-oshawa.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-oshawa-og.jpg",
+      "sourceSha256": "41a6498de4cd0fb3df58803a96d4a71318e5dbc4747d4a3e1b6df811e4249064",
+      "bytes": 113044,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-peterborough.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-peterborough-og.jpg",
+      "sourceSha256": "9afeffaab44539cb5dbdcdd429993dc0932c02050d4be3832c96aa91fa7ccdc2",
+      "bytes": 137514,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-pickering.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-pickering-og.jpg",
+      "sourceSha256": "0ac37e3b7fcb6ab0ce78f544942c8760dffa42b3b02ad087c3b5865046817684",
+      "bytes": 98774,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-port-hope.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-port-hope-og.jpg",
+      "sourceSha256": "56450d5bc6f80f5eb0fc89305df88bf9c8f6523ef96a673b510863cb926a97ff",
+      "bytes": 159173,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-dealer-whitby.png",
+      "output": "/lovable-uploads/hero-mercury-dealer-whitby-og.jpg",
+      "sourceSha256": "63252f462e5c1fdeec494c60c1dc8d834382a9e1cea19ead18f42a6f46439a6c",
+      "bytes": 81427,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario.png",
+      "output": "/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario-og.jpg",
+      "sourceSha256": "a2581a8e3b0f1dcdd2591f67bc0d9e999349daae0998e9eb065aad0895c92202",
+      "bytes": 127668,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-financing-ontario.png",
+      "output": "/lovable-uploads/hero-mercury-financing-ontario-og.jpg",
+      "sourceSha256": "ebe27e8e30abc97abfd28f11de21445e01bcd5aaca529e8854d4d1885986ecd1",
+      "bytes": 80861,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-fourstroke-buyer-guide.png",
+      "output": "/lovable-uploads/hero-mercury-fourstroke-buyer-guide-og.jpg",
+      "sourceSha256": "24ccedfe7a7e529f6bbc80357f9b665135e495d8ab88abd6c72887a0554aa706",
+      "bytes": 103651,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-fuel-octane-ethanol.png",
+      "output": "/lovable-uploads/hero-mercury-fuel-octane-ethanol-og.jpg",
+      "sourceSha256": "efa32bee7340d6569626cb878b880892db8efc4fb711b9c65c7eab5fd59758e8",
+      "bytes": 104250,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-kicker-transom.png",
+      "output": "/lovable-uploads/hero-mercury-kicker-transom-og.jpg",
+      "sourceSha256": "c1d492ee91680cd948922b8e6603bb2509016812fdb85b878c436c7f7a6dc416",
+      "bytes": 103075,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-main-and-trolling-motor.png",
+      "output": "/lovable-uploads/hero-mercury-main-and-trolling-motor-og.jpg",
+      "sourceSha256": "900decf7c58371c88b68fe26253d027d81feba107b9a2da0ecba10aa8026a2ac",
+      "bytes": 85382,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-maintenance-20-100-300.png",
+      "output": "/lovable-uploads/hero-mercury-maintenance-20-100-300-og.jpg",
+      "sourceSha256": "ad65c2d934b2be891e2ef351ec9bca334135820f68f80e610ad056326d63b0c2",
+      "bytes": 126731,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-monthly-payment.png",
+      "output": "/lovable-uploads/hero-mercury-monthly-payment-og.jpg",
+      "sourceSha256": "4f19c24cd73d2a33c5c3f732c74c394cdaf74a0418ac1de4b55f921ff78fd643",
+      "bytes": 107779,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-motor-families.png",
+      "output": "/lovable-uploads/hero-mercury-motor-families-og.jpg",
+      "sourceSha256": "7cc8b380d434c25d156f79d52875cc00a89b8e8fc8af658f81ebbb88bee51a67",
+      "bytes": 101272,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png",
+      "output": "/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips-og.jpg",
+      "sourceSha256": "fe395fb7bb76de4b84cf8c04678e1d855ea901ca87680b2a641cec0c43c3dfcb",
+      "bytes": 112738,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-outboard-dealer-toronto.png",
+      "output": "/lovable-uploads/hero-mercury-outboard-dealer-toronto-og.jpg",
+      "sourceSha256": "ca0a9410b8fa5d3055a9eefdaaf66fb373eec3091aa1886950a7317ed8309b3f",
+      "bytes": 116976,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder.png",
+      "output": "/lovable-uploads/hero-mercury-outboard-overheat-alarm-decoder-og.jpg",
+      "sourceSha256": "95fe4c54d9908c62ae26927553fa480bec4109344ec2a264db77a5beb1fe6d72",
+      "bytes": 86042,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-overheat-high-speed.png",
+      "output": "/lovable-uploads/hero-mercury-overheat-high-speed-og.jpg",
+      "sourceSha256": "9515e0a811ecee2a9dd68f670e28e7529f19728d3382584dab0745b791aa846b",
+      "bytes": 94477,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-overheating-at-idle.png",
+      "output": "/lovable-uploads/hero-mercury-overheating-at-idle-og.jpg",
+      "sourceSha256": "26ed6cfe364bec3ae134291421de8f55f123d10676be1077502108828aed7117",
+      "bytes": 144055,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-overheating-dockside.png",
+      "output": "/lovable-uploads/hero-mercury-overheating-dockside-og.jpg",
+      "sourceSha256": "0823c580b6b2afc59626bd827b77fddbf8d64232e69398bd071ad22eb78ff747",
+      "bytes": 134794,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-price-guide-counter.png",
+      "output": "/lovable-uploads/hero-mercury-price-guide-counter-og.jpg",
+      "sourceSha256": "afbe1f925ce6ff1ad69b8c8af0ef82b9fd29999ee2654c58f3e093d20a9a8c6b",
+      "bytes": 98140,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png",
+      "output": "/lovable-uploads/hero-mercury-pro-xs-buyer-guide-og.jpg",
+      "sourceSha256": "b1e12cdce12840fc43406929fa90ae370af3e4769f47af2153b75d4bb620f135",
+      "bytes": 154265,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-pro-xs-repower-anglers.png",
+      "output": "/lovable-uploads/hero-mercury-pro-xs-repower-anglers-og.jpg",
+      "sourceSha256": "d21563954e40beef4c33939b616c579c824c17a1eaf98620c69581e0c3f0b7e1",
+      "bytes": 128725,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-propeller-selection-guide.png",
+      "output": "/lovable-uploads/hero-mercury-propeller-selection-guide-og.jpg",
+      "sourceSha256": "15e6c6c4dc482fe88b9e53782801f99a40a98cdd7161dd41d7209b685359121c",
+      "bytes": 105928,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-repower-cost-ontario.png",
+      "output": "/lovable-uploads/hero-mercury-repower-cost-ontario-og.jpg",
+      "sourceSha256": "ab4f7c8d4bd4757c00029ad5d6cfb18a695021510a2cda23028a4008df26d614",
+      "bytes": 89786,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-repower-eligibility-guide.png",
+      "output": "/lovable-uploads/hero-mercury-repower-eligibility-guide-og.jpg",
+      "sourceSha256": "4cc540547b672ba25f9903206d054f7c27fc62ff36ee01f9c83da40ba60f0b86",
+      "bytes": 102832,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-repower-gta.png",
+      "output": "/lovable-uploads/hero-mercury-repower-gta-og.jpg",
+      "sourceSha256": "91de80e83e75e0607dddc56821d25aba386f7629ae161f18a52d0b9c6373311e",
+      "bytes": 131224,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-rigging-costs.png",
+      "output": "/lovable-uploads/hero-mercury-rigging-costs-og.jpg",
+      "sourceSha256": "ec242128e77b3a965b215e6605e444260e9d6216c5ce858847a3bf9a3fe5e0be",
+      "bytes": 118665,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-salmon-lake-ontario-2026.png",
+      "output": "/lovable-uploads/hero-mercury-salmon-lake-ontario-2026-og.jpg",
+      "sourceSha256": "9241e7deeccb0e18c0575f235c0fda5e208ddc9672bebff6180cb4ad4795a906",
+      "bytes": 157945,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-serial-number-decoder.png",
+      "output": "/lovable-uploads/hero-mercury-serial-number-decoder-og.jpg",
+      "sourceSha256": "5af47afc829e57312398c7465f59d1e867ff58bca0de348ed38bacff59e9cf0a",
+      "bytes": 110717,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png",
+      "output": "/lovable-uploads/hero-mercury-smartcraft-alarm-codes-og.jpg",
+      "sourceSha256": "98c8d2bf16aac90c7c470a623150a9151a7b0d47e69983ce04de08e24528ce94",
+      "bytes": 104287,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-suzuki-ontario-2026.png",
+      "output": "/lovable-uploads/hero-mercury-suzuki-ontario-2026-og.jpg",
+      "sourceSha256": "abfe89892cf34168afd843ab0bda35b2725f09f97ad8e0ec605911295125f97e",
+      "bytes": 121628,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-vs-yamaha-honda.png",
+      "output": "/lovable-uploads/hero-mercury-vs-yamaha-honda-og.jpg",
+      "sourceSha256": "deb6cad8680ba1694418bcb44828b5be23cd61d40d3aa1fbf1063101ebb9ed97",
+      "bytes": 30616,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-vs-yamaha.png",
+      "output": "/lovable-uploads/hero-mercury-vs-yamaha-og.jpg",
+      "sourceSha256": "a98ead178ec469965b5f60e84c595880b1ded8c7117067fa8b2e68065733e75e",
+      "bytes": 109512,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-walleye-simcoe-2026.png",
+      "output": "/lovable-uploads/hero-mercury-walleye-simcoe-2026-og.jpg",
+      "sourceSha256": "d15a747141aa0b4e43531683054559b2f509fbe624230df8e7d2b773c2a5ceac",
+      "bytes": 105326,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-warranty-after-repower.png",
+      "output": "/lovable-uploads/hero-mercury-warranty-after-repower-og.jpg",
+      "sourceSha256": "ec54507f4f7c2b3ddcbf2ddfe62963e465cbd1db211ddf916ea1efbf4819b6ce",
+      "bytes": 123849,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-warranty-canada.png",
+      "output": "/lovable-uploads/hero-mercury-warranty-canada-og.jpg",
+      "sourceSha256": "c6b2f0a102595ea32c750b3969266cdd08cd98e7324ab52732733952e9a20336",
+      "bytes": 158533,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-weight-hoist.png",
+      "output": "/lovable-uploads/hero-mercury-weight-hoist-og.jpg",
+      "sourceSha256": "09649c198b33cb3ac0b8f4f9da4915ffedd3a0d41f5e2f3ee5129d1eb45a6dc8",
+      "bytes": 74289,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-wont-start-after-sitting.png",
+      "output": "/lovable-uploads/hero-mercury-wont-start-after-sitting-og.jpg",
+      "sourceSha256": "bb7899bf410822bf5de2f81552ab22875bb3aed3a53a642700e4fb71fd210827",
+      "bytes": 138207,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-mercury-wont-start-dockside.png",
+      "output": "/lovable-uploads/hero-mercury-wont-start-dockside-og.jpg",
+      "sourceSha256": "14a3b0124273547def2fbc688886afcb87dd43a05e007a78a11d32c948b37b38",
+      "bytes": 111089,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-milky-gearcase-oil.webp",
+      "output": "/lovable-uploads/hero-milky-gearcase-oil-og.jpg",
+      "sourceSha256": "7310bf044bb05c24f150706f8e20e49b5742d5aa019d53ab675766ca4827e809",
+      "bytes": 93642,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
+      "output": "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario-og.jpg",
+      "sourceSha256": "907b2762f34f0a507e7c71277be9880b68e05909e57dc4ab35abbf16dfc76631",
+      "bytes": 102025,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-on-water-load-test.png",
+      "output": "/lovable-uploads/hero-on-water-load-test-og.jpg",
+      "sourceSha256": "55551ee6ddbba36bd41ee1184208fa14a7227def021a130f4d023f356a58cd61",
+      "bytes": 130616,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-ontario-boating-regulations-zh.png",
+      "output": "/lovable-uploads/hero-ontario-boating-regulations-zh-og.jpg",
+      "sourceSha256": "1e8ea1b949f2c2aafb5fb12da3a4aa1f4d38ea838404cb60070dc5119df13bc4",
+      "bytes": 109182,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-outboard-overheating.png",
+      "output": "/lovable-uploads/hero-outboard-overheating-og.jpg",
+      "sourceSha256": "b4e2696412e7610ec44b5f4cea80e423b110ed2e2a05d6c72d0cd28e74d90c72",
+      "bytes": 141245,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-outboard-vs-sterndrive.png",
+      "output": "/lovable-uploads/hero-outboard-vs-sterndrive-og.jpg",
+      "sourceSha256": "5f4dfb5c69ceba096386ef5e359a536d11e8448999d242f7bb16cddfb287f9ce",
+      "bytes": 108537,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
+      "output": "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake-og.jpg",
+      "sourceSha256": "586948756fe90de384bcb3d225b02279223743a39338e28d3f5dbcedecae48c2",
+      "bytes": 130234,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-pcl-repower-licence.png",
+      "output": "/lovable-uploads/hero-pcl-repower-licence-og.jpg",
+      "sourceSha256": "9fe9b70bacf391ae0b9d00f049b146d118a9359882b54ab1be6a7db084d76a9e",
+      "bytes": 162920,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-pontoon-aluminum-vhull.png",
+      "output": "/lovable-uploads/hero-pontoon-aluminum-vhull-og.jpg",
+      "sourceSha256": "d7f71d01591f0a7655e17550f32a93e8ee3ffb06afd43edb4e643306c8509621",
+      "bytes": 122229,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-pontoon-hp-sizing.png",
+      "output": "/lovable-uploads/hero-pontoon-hp-sizing-og.jpg",
+      "sourceSha256": "7567aa1494887132888904e721ec131ecf9977f353446101ee1494c43ad912df",
+      "bytes": 106558,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-pontoon-problems-rice-lake.png",
+      "output": "/lovable-uploads/hero-pontoon-problems-rice-lake-og.jpg",
+      "sourceSha256": "72e71d69db4dd0a2f6c14b46534ff6858c8cac97d2f70ac1935c1e03206f8e78",
+      "bytes": 128244,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-proxs-outside-hbw-shop.jpg",
+      "output": "/lovable-uploads/hero-proxs-outside-hbw-shop-og.jpg",
+      "sourceSha256": "5d12a57ad6fd5a149caa302efa5621d87315ab0ee3b8386aa6739a9333b0cf51",
+      "bytes": 142146,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-renting-vs-owning-boat.webp",
+      "output": "/lovable-uploads/hero-renting-vs-owning-boat-og.jpg",
+      "sourceSha256": "973b2d79d5a1dc7216c3f84069d699b231f11648e40a6168b5f49ebcc2d685ad",
+      "bytes": 169501,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-replace-evinrude.png",
+      "output": "/lovable-uploads/hero-replace-evinrude-og.jpg",
+      "sourceSha256": "594e6f214fd3ab122cd25550e4975cd0976d9ffe10eb40e1d32cc394a2b97cd8",
+      "bytes": 156476,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-repower-vs-new-boat.png",
+      "output": "/lovable-uploads/hero-repower-vs-new-boat-og.jpg",
+      "sourceSha256": "eaa94fd68f33719b61e99368d08c9438a5d9ce3b8dc04bee7a785199e40ae93a",
+      "bytes": 122025,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-rice-lake-boat-launch-ramp.png",
+      "output": "/lovable-uploads/hero-rice-lake-boat-launch-ramp-og.jpg",
+      "sourceSha256": "d236d02af60827b7c28aea8f1a08a4d1328a376273043eaabdd743661b68007f",
+      "bytes": 117662,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
+      "output": "/lovable-uploads/hero-rice-lake-boat-rental-guide-og.jpg",
+      "sourceSha256": "20b1692a990bb90f9707322f5f03ba452fc057ffd06a4d05e88b9fea4f51467f",
+      "bytes": 124037,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-rice-lake-boating-guide.png",
+      "output": "/lovable-uploads/hero-rice-lake-boating-guide-og.jpg",
+      "sourceSha256": "4faabdfb977d79ee79fc8da413b1ad6d5f963ec522d6e479fa55c3844e097bb0",
+      "bytes": 83238,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese.png",
+      "output": "/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese-og.jpg",
+      "sourceSha256": "ff10c7e79d9be22b58d29c54e31d5666c6d2cf5874884858a45eb4c0525e18d8",
+      "bytes": 140469,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-rice-lake-fishing-morning.png",
+      "output": "/lovable-uploads/hero-rice-lake-fishing-morning-og.jpg",
+      "sourceSha256": "40c25fbad5e63017cbc726e347ed39a89a20dd86dc207f598b25465b4e7cf991",
+      "bytes": 101259,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-service-bills-prevention.png",
+      "output": "/lovable-uploads/hero-service-bills-prevention-og.jpg",
+      "sourceSha256": "3f9ed3a5d51edeac8a6f2854724b687bcfe00f00cc3844907014908101e63039",
+      "bytes": 96928,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-shaft-length-guide.png",
+      "output": "/lovable-uploads/hero-shaft-length-guide-og.jpg",
+      "sourceSha256": "f05b1d54cf2645761517c52b0cd3d02c733e29da21f83537e29cea8547c2a618",
+      "bytes": 110598,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-smartcraft-connect-app.png",
+      "output": "/lovable-uploads/hero-smartcraft-connect-app-og.jpg",
+      "sourceSha256": "e3804d1523a626fb026b1252090c0b78bfbef94c729d14a3d14d74cb8f639e2f",
+      "bytes": 66570,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-spring-commissioning-checklist.png",
+      "output": "/lovable-uploads/hero-spring-commissioning-checklist-og.jpg",
+      "sourceSha256": "2aa5bf35b9bc7ce129cdc3f6eed56377eb11a6da17cc3a71a49f9b4ac526ea45",
+      "bytes": 132582,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-spring-commissioning-cost.webp",
+      "output": "/lovable-uploads/hero-spring-commissioning-cost-og.jpg",
+      "sourceSha256": "ef4a74e9e53da7d62b91cf765f86d7f643013a321bc5025627cbdd12999039fa",
+      "bytes": 114820,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-toronto-to-rice-lake-drive-in.png",
+      "output": "/lovable-uploads/hero-toronto-to-rice-lake-drive-in-og.jpg",
+      "sourceSha256": "a7f8ffeededf5c8d34f17a8a4a5c685c3fb5bc840e588f274f63a730e4448456",
+      "bytes": 90862,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-total-cost-of-ownership.png",
+      "output": "/lovable-uploads/hero-total-cost-of-ownership-og.jpg",
+      "sourceSha256": "c55e602e72d6f8a01367704df8350dc88a2d291fcdce4dbd170a34cf9efffdc5",
+      "bytes": 138341,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-trade-in-value-service-bay.png",
+      "output": "/lovable-uploads/hero-trade-in-value-service-bay-og.jpg",
+      "sourceSha256": "9593a5fed43db4b511b6ae012d3b81fb6678589a25fe4f5b88ef5d9bcbb331f6",
+      "bytes": 128569,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-trailer-boat-toronto.png",
+      "output": "/lovable-uploads/hero-trailer-boat-toronto-og.jpg",
+      "sourceSha256": "c8d6263f2e980dc88a4d7adb3cbd3a2836165f5d2f0e8c5b77dea3e2b93b1366",
+      "bytes": 129204,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-trailering-mistakes-ontario.png",
+      "output": "/lovable-uploads/hero-trailering-mistakes-ontario-og.jpg",
+      "sourceSha256": "6b0b4f2403482a59317a23a2c1b47277f081937c714ee7236034ee94e0a62151",
+      "bytes": 158111,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-trent-severn-waterway-2026.png",
+      "output": "/lovable-uploads/hero-trent-severn-waterway-2026-og.jpg",
+      "sourceSha256": "9a93279462f923599e65d5fe843f90f4df976d3ed0b3c1129ade8f5a401f3ef9",
+      "bytes": 146170,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-ucp-agentic-commerce.png",
+      "output": "/lovable-uploads/hero-ucp-agentic-commerce-og.jpg",
+      "sourceSha256": "72608a7311c8d8bc2cba51aadae675ba89b6db554abb0a9e56a2423418ed215c",
+      "bytes": 77562,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-used-boat-walkaround.png",
+      "output": "/lovable-uploads/hero-used-boat-walkaround-og.jpg",
+      "sourceSha256": "3ad15d0da0f2f1fb315a792d400aa5356579171a22880d3dae9c32dded38e2fc",
+      "bytes": 113196,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-used-outboard-buying-guide.png",
+      "output": "/lovable-uploads/hero-used-outboard-buying-guide-og.jpg",
+      "sourceSha256": "1c8939134e3104dd78abd497f8a3651377ad8b1c37ea1ca7eb7346365a0316fa",
+      "bytes": 103022,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-vesselview-smartcraft.png",
+      "output": "/lovable-uploads/hero-vesselview-smartcraft-og.jpg",
+      "sourceSha256": "54f07e525f7b1d8ac9774a34464a8544a0542d2da866b2eae275999dcccf8295",
+      "bytes": 92947,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-what-happens-during-repower.png",
+      "output": "/lovable-uploads/hero-what-happens-during-repower-og.jpg",
+      "sourceSha256": "dbde439ede17e5be62d0347e701a73cdd38186d263852b73048f86d532b5c599",
+      "bytes": 120543,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-why-dealers-hide-prices.png",
+      "output": "/lovable-uploads/hero-why-dealers-hide-prices-og.jpg",
+      "sourceSha256": "5f0e82faf067e2d36c8110ddefe5b7c56c67e4295cf222170190893fad804a78",
+      "bytes": 63400,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-winter-storage-near-toronto.png",
+      "output": "/lovable-uploads/hero-winter-storage-near-toronto-og.jpg",
+      "sourceSha256": "5320f43fd443cf3612290f5ea2343cfd6eaa33b2f81aa6def5ea9fdfa9c38de5",
+      "bytes": 134672,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png",
+      "output": "/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor-og.jpg",
+      "sourceSha256": "f9e2d5190758fbe5a1a639d943dbc97f0c05af66dcafb6a524fbe7c1d95a2a19",
+      "bytes": 160350,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese.png",
+      "output": "/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese-og.jpg",
+      "sourceSha256": "b01d80d7bbab5a2890514701d3480d85c59f037b87c48ec69f20128eea3829d5",
+      "bytes": 173315,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap.png",
+      "output": "/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap-og.jpg",
+      "sourceSha256": "ffb05f9c69ac346c1dd8cc156e0d571c6eed2078b3a6d0692c5a97253ec7826a",
+      "bytes": 191604,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-mercury-outboard-horsepower-guide-toronto-chinese.png",
+      "output": "/lovable-uploads/hero-zh-mercury-outboard-horsepower-guide-toronto-chinese-og.jpg",
+      "sourceSha256": "1dfe6e7171a8c169a1547a4dfe6743bb164e4fc6bb7bfded633aec207a3ca284",
+      "bytes": 137570,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-mercury-outboard-price-dealer-guide-toronto-chinese.png",
+      "output": "/lovable-uploads/hero-zh-mercury-outboard-price-dealer-guide-toronto-chinese-og.jpg",
+      "sourceSha256": "1ca8f19035c8c0988241f85f564591a5dcb20342d4344adb15568a0fda7eb339",
+      "bytes": 107585,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario.png",
+      "output": "/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario-og.jpg",
+      "sourceSha256": "e28b1b904be547d4f76db679bf39377bd5b17ffb1a2f16301a9817cf0847f9a6",
+      "bytes": 136831,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-ontario-spring-boat-checklist-chinese.png",
+      "output": "/lovable-uploads/hero-zh-ontario-spring-boat-checklist-chinese-og.jpg",
+      "sourceSha256": "d883e46c2e7b091cdee310dea5ef393da23bff578c255cfc490ab20ed4da0aae",
+      "bytes": 114747,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.png",
+      "output": "/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas-og.jpg",
+      "sourceSha256": "db692eca8fa0e5eebf7f4bd4798881e09f63315ef0d1b9ce636ca2be8c5d6c8a",
+      "bytes": 150604,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/hero-zh-used-boat-buying-checklist-toronto-chinese.png",
+      "output": "/lovable-uploads/hero-zh-used-boat-buying-checklist-toronto-chinese-og.jpg",
+      "sourceSha256": "4d1c36d580e8e83dfc8b7340dd779f09bfba6f26244fbbe87bf2fed8e35bd653",
+      "bytes": 158644,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/inline/inline-avator-electric-dock.png",
+      "output": "/lovable-uploads/inline/inline-avator-electric-dock-og.jpg",
+      "sourceSha256": "40524e40927f73d24d2e22e2e5a2de8caef5e3cd4c4530e596ea3527df734f8b",
+      "bytes": 102567,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ko-mercury-115-vs-150-comparison-hero.png",
+      "output": "/lovable-uploads/ko-mercury-115-vs-150-comparison-hero-og.jpg",
+      "sourceSha256": "6d0fe910fb45b056c434eccc8d116e1c532fc245cd8968d95f62f94953330a3f",
+      "bytes": 53206,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ko-mercury-outboard-winterization-guide-hero.png",
+      "output": "/lovable-uploads/ko-mercury-outboard-winterization-guide-hero-og.jpg",
+      "sourceSha256": "bfb1cf8b344cab46f8eba27670869ba70ef954e5ccb5fd422ded90d25c7bf731",
+      "bytes": 132344,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ko-ontario-boat-buying-guide-hero.png",
+      "output": "/lovable-uploads/ko-ontario-boat-buying-guide-hero-og.jpg",
+      "sourceSha256": "eb3683840d992e30e6a648aebca23cf2f98b3230c03498fbab06d935022e469f",
+      "bytes": 156070,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ko-ontario-boating-licence-regulations-hero.png",
+      "output": "/lovable-uploads/ko-ontario-boating-licence-regulations-hero-og.jpg",
+      "sourceSha256": "594f5edbf4c4fbaaf32aa314e0cc1edfe6e6c7fbcca7d875e02a88b15400cb05",
+      "bytes": 99424,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ko-repower-vs-new-boat-hero.png",
+      "output": "/lovable-uploads/ko-repower-vs-new-boat-hero-og.jpg",
+      "sourceSha256": "37475d8360d2b7156b76a544c7cfda0437365a2820e9736a0ed238e540ecd3f1",
+      "bytes": 135971,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/ko-rice-lake-fishing-guide-hero.png",
+      "output": "/lovable-uploads/ko-rice-lake-fishing-guide-hero-og.jpg",
+      "sourceSha256": "ed8400d390a340cb173d7718f8f234d631fd6be78963603e98213b769cc16f6a",
+      "bytes": 97614,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero.jpg",
+      "output": "/lovable-uploads/mercury-115-vs-150-aluminum-vhull-hero-og.jpg",
+      "sourceSha256": "dac4b0b88c29023fbb743202363aaaf2a488b352399795aca6c9ef76cf896838",
+      "bytes": 129323,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/mercury-9-9-efi-tiller.jpg",
+      "output": "/lovable-uploads/mercury-9-9-efi-tiller-og.jpg",
+      "sourceSha256": "5f4fbfd467d70385dc3b354540a566736d684b1c4dcd34df26939f3eb0daa68b",
+      "bytes": 115514,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero.jpg",
+      "output": "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero-og.jpg",
+      "sourceSha256": "c57e49f2372c9582d5682f7e5e79311506a9270e10de43b6f59c62b40cabc6f9",
+      "bytes": 69000,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/mercury-vs-honda-hero-2026.jpg",
+      "output": "/lovable-uploads/mercury-vs-honda-hero-2026-og.jpg",
+      "sourceSha256": "645e81a5f70597f652206cd0ece092669ba3f84fea6ff56fd2bab55f5ed1a33c",
+      "bytes": 87931,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/pontoon-family-rice-lake-hero.png",
+      "output": "/lovable-uploads/pontoon-family-rice-lake-hero-og.jpg",
+      "sourceSha256": "43f2bc1f910b1253b8f2b7f2b7230cee4f1ca369110379c6c50841b64b3983c1",
+      "bytes": 139489,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/repower-hero.jpg",
+      "output": "/lovable-uploads/repower-hero-og.jpg",
+      "sourceSha256": "c7a8c553990112ec500d464dbe09d80df4d045751870e1514626666eeed7bb7a",
+      "bytes": 123010,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/repower-old-new-motor-hero.jpg",
+      "output": "/lovable-uploads/repower-old-new-motor-hero-og.jpg",
+      "sourceSha256": "3473e0038cb485350c8cd400d2a7b3d030aeec5cee7d9f245e8ea50f642de477",
+      "bytes": 113661,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/smartcraft-connect-eligibility-hero.png",
+      "output": "/lovable-uploads/smartcraft-connect-eligibility-hero-og.jpg",
+      "sourceSha256": "7368ca50a683feff4d1e62d30494d229a15a2573a274c8cfbdb1afe482f935e5",
+      "bytes": 90062,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/spring-no-start-flowchart.png",
+      "output": "/lovable-uploads/spring-no-start-flowchart-og.jpg",
+      "sourceSha256": "b31ac0e1866f36e5c9b0744c19189f10d877a7617a0148a42952e36869eb399e",
+      "bytes": 45865,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-chinese-anglers-lake-simcoe-hero.png",
+      "output": "/lovable-uploads/zh-chinese-anglers-lake-simcoe-hero-og.jpg",
+      "sourceSha256": "97882881cba1c666bdceac8ebb9c1988d4424c838edb1eb5abc40727c6cd3fad",
+      "bytes": 111394,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-mercury-40-60hp-fishing-boat-hero.png",
+      "output": "/lovable-uploads/zh-mercury-40-60hp-fishing-boat-hero-og.jpg",
+      "sourceSha256": "371c5dc58e71ce060f42b5f1230b80bf645217b5c3415b2db2852594a52db050",
+      "bytes": 60526,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-mercury-9-9-20hp-kicker-tiller-hero.png",
+      "output": "/lovable-uploads/zh-mercury-9-9-20hp-kicker-tiller-hero-og.jpg",
+      "sourceSha256": "b693689d31212387e7e56cf2040a7f77f908ce9b89a7811e88da8ba80e4a90fe",
+      "bytes": 74365,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-mercury-fourstroke-pro-xs-verado-hero.png",
+      "output": "/lovable-uploads/zh-mercury-fourstroke-pro-xs-verado-hero-og.jpg",
+      "sourceSha256": "4fb3790b2f8c6d20a5d133e82b54164645f7b6366e41b77c5f26e89c1f5aadc2",
+      "bytes": 67494,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-mercury-repower-guide-gta-hero.png",
+      "output": "/lovable-uploads/zh-mercury-repower-guide-gta-hero-og.jpg",
+      "sourceSha256": "304d82a6fe6d822b8e7c26ce6f365e184108e579ada55d8df4e029289fbb2bc7",
+      "bytes": 180771,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-pcoc-vs-rental-boat-safety-hero.png",
+      "output": "/lovable-uploads/zh-pcoc-vs-rental-boat-safety-hero-og.jpg",
+      "sourceSha256": "756a736b120d224abf756e8be4dba35d0cdfe7e2a28981ff02b45b05ddb4b505",
+      "bytes": 142035,
+      "quality": 82
+    },
+    {
+      "source": "/lovable-uploads/zh-pontoon-vs-fishing-boat-hero.png",
+      "output": "/lovable-uploads/zh-pontoon-vs-fishing-boat-hero-og.jpg",
+      "sourceSha256": "8f873a7d09b0e433990c33b26af9340d6b984ee2cde1f6e248d10f42d64f9016",
+      "bytes": 170161,
+      "quality": 82
+    }
+  ]
+}

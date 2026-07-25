@@ -80,7 +80,13 @@ for (const dir of SCAN_DIRS) {
   for (const file of walk(dir)) {
     const content = readFileSync(file, 'utf8');
     let m;
-    while ((m = REF_RE.exec(content)) !== null) referenced.add(m[1]);
+    while ((m = REF_RE.exec(content)) !== null) {
+      // Dedicated Open Graph JPGs are metadata-only and never enter the
+      // on-page <picture> pipeline, so generating three responsive variants
+      // for each one only bloats the deployment.
+      if (/-og\.jpg$/i.test(m[1])) continue;
+      referenced.add(m[1]);
+    }
   }
 }
 
