@@ -126,7 +126,7 @@ export default function About() {
               </h1>
               <p className="font-sans text-[18px] text-repower-navy-900/70 max-w-[60ch] mx-auto leading-relaxed">
                 Three generations of marine expertise on the beautiful shores of Rice Lake, Ontario.
-                Family-owned since 1947 and an authorized Mercury dealer since 1965.
+                Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
               </p>
               <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
                 <Button asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
