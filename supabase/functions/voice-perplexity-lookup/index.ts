@@ -3,6 +3,9 @@ import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import {
   buildVerifiedMercuryTechnicalAnswer,
 } from "../_shared/verified-mercury-technical-facts.ts";
+import {
+  buildVerifiedHbwAuthorityAnswer,
+} from "../_shared/verified-hbw-authority-facts.ts";
 import { searchLiveBlogKnowledge } from "../_shared/format-kb-documents.ts";
 
 const corsHeaders = {
@@ -105,6 +108,24 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ success: false, error: 'Query is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(
+      query,
+      { voice: true, includeLinks: false },
+    );
+    if (verifiedAuthorityReply) {
+      return new Response(
+        JSON.stringify({
+          success: true,
+          answer: verifiedAuthorityReply,
+          sources: [],
+          confidence: 'high',
+          category: providedCategory || detectCategory(query),
+          source: 'verified-hbw-authority-facts',
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
 
