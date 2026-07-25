@@ -27,6 +27,9 @@ import {
 import {
   buildVerifiedMercuryTechnicalAnswer,
 } from "../_shared/verified-mercury-technical-facts.ts";
+import {
+  buildVerifiedHbwAuthorityAnswer,
+} from "../_shared/verified-hbw-authority-facts.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -746,6 +749,20 @@ serve(async (req) => {
 
     if (!message) {
       throw new Error('Message is required');
+    }
+
+    const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
+    if (verifiedAuthorityReply) {
+      return new Response(JSON.stringify({
+        reply: verifiedAuthorityReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: verifiedAuthorityReply },
+        ],
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(

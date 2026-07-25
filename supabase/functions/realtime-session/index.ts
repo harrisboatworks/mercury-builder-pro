@@ -8,6 +8,9 @@ import {
   formatCustomerKnowledgePrompt,
   loadCustomerKnowledge,
 } from "../_shared/customer-knowledge-context.ts";
+import {
+  HBW_AUTHORITY_REALTIME_INSTRUCTIONS,
+} from "../_shared/verified-hbw-authority-facts.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -162,6 +165,8 @@ COMPETITOR POLICY (CRITICAL):
 
 NO DELIVERY POLICY:
 All pickups must be in person with photo ID - it's an industry-wide fraud thing. If asked about delivery, say: "All pickups have to be in person with photo ID - industry-wide fraud thing, unfortunately. But we're easy to find!" Then offer directions to Gores Landing.
+
+${HBW_AUTHORITY_REALTIME_INSTRUCTIONS}
 
 PROKICKER vs STANDARD TILLER:
 - ProKicker (9.9HP): Purpose-built for trolling/kicker use. Exact gear ratio, included equipment and control compatibility vary by configuration; use the exact model/year or serial-number manual.

@@ -60,6 +60,9 @@ import {
 import {
   buildVerifiedMercuryTechnicalAnswer,
 } from '../_shared/verified-mercury-technical-facts.ts';
+import {
+  buildVerifiedHbwAuthorityAnswer,
+} from '../_shared/verified-hbw-authority-facts.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -1845,6 +1848,25 @@ serve(async (req) => {
     // so we can run the function-calling loop reliably.
     const hasQuoteIntent = detectQuoteIntent(message);
     const useStreaming = stream && !hasQuoteIntent;
+
+    const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
+    if (verifiedAuthorityReply) {
+      console.log('Returning deterministic HBW dealer-authority answer');
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: verifiedAuthorityReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
+      return new Response(JSON.stringify({ reply: verifiedAuthorityReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
       message,

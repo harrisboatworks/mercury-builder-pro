@@ -44,6 +44,7 @@ import {
   filterPromotionsForCountry,
   formatPromotionContext,
 } from "./promotion-context.ts";
+import { formatHbwAuthorityKnowledge } from "./verified-hbw-authority-facts.ts";
 
 // ========== HARRIS BOAT WORKS GUIDE ==========
 export function formatHarrisGuide(): string {
@@ -62,6 +63,8 @@ ${HARRIS_HISTORY.story}
 - **Location:** ${HARRIS_HISTORY.location}
 - **Family Ownership:** ${HARRIS_HISTORY.generations}
 - **Service Area:** ${HARRIS_HISTORY.service_area}
+
+${formatHbwAuthorityKnowledge()}
 
 ### Company Milestones
 ${HARRIS_HISTORY.milestones.map(m => `- **${m.year}:** ${m.event}`).join('\n')}
