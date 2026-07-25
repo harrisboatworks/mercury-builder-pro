@@ -259,13 +259,13 @@ export function TradeInValueEstimator() {
                 id="trade-year"
                 type="number"
                 min={1990}
-                max={2025}
+                max={currentYear}
                 placeholder="e.g. 2018"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
                 className="mt-1.5"
               />
-              <p className="mt-1 text-xs text-repower-navy-900/60">1990 - 2025</p>
+              <p className="mt-1 text-xs text-repower-navy-900/60">1990 - {currentYear}</p>
             </div>
             <div>
               <Label htmlFor="trade-hp" className="text-sm font-medium text-repower-navy-900">
