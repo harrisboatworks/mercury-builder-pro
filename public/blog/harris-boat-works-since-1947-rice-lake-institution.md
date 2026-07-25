@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-06-02
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Harris Boat Works: On Rice Lake Since 1947"
 description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've."
 category: "About HBW"
 date_published: 2026-05-18
-date_modified: 2026-06-02
+date_modified: 2026-07-24
 keywords: ["Harris Boat Works since 1947","third generation marina Ontario","historic Rice Lake marina","trusted boat dealer Ontario","family marina since 1947","Mercury dealer history Canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -22,10 +22,10 @@ language: en-CA
 
 > The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've.
 
-**Category:** About HBW  
-**Published:** 2026-05-18  
-**Last updated:** 2026-06-02  
-**Read time:** 12 min read  
+**Category:** About HBW
+**Published:** 2026-05-18
+**Last updated:** 2026-07-24
+**Read time:** 12 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
 ## Quick answer
