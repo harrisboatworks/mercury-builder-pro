@@ -289,18 +289,18 @@ const familyQuestions = {
   ],
 };
 
-// Technical questions (Perplexity-backed)
+// Technical questions that the assistant can answer without inviting a
+// horsepower-based estimate. Exact values still go through the manual-backed
+// fact contract.
 const technicalQuestions = [
-  "Exact oil capacity?",
-  "Spark plug part number?",
-  "Recommended prop pitch?",
-  "Gear ratio specs?",
-  "Alternator output?",
-  "Compression ratio?",
-  "Displacement size?",
-  "Dry weight specs?",
-  "Fuel system type?",
-  "Cooling system details?",
+  "Where's the serial number?",
+  "Which specs vary by serial?",
+  "Open the owner's manual?",
+  "What does the model code mean?",
+  "Which gearcase is this?",
+  "Which service items vary?",
+  "Where's the oil capacity lookup?",
+  "What specs are verified here?",
 ];
 
 /**
@@ -322,7 +322,7 @@ export function getMotorSpecificPrompts(context: MotorContext, count: number = 4
   const shownPrompts = getShownPrompts();
   
   // Build question pool based on motor characteristics
-  let pool: string[] = [];
+  const pool: string[] = [];
   
   // Add family-specific questions first (highest priority)
   if (modelLower.includes('prokicker') || familyLower.includes('prokicker')) {

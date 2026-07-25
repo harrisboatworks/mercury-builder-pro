@@ -14,6 +14,10 @@ import {
   getPromotionCombinationMode,
   getPromotionOptions,
 } from '../../supabase/functions/_shared/promotion-context';
+import {
+  buildVerifiedMercuryTechnicalAnswer,
+  type MercuryTechnicalMotorContext,
+} from '../../supabase/functions/_shared/verified-mercury-technical-facts';
 
 // Timeout configuration (in milliseconds)
 // Single graceful close after silence - triggers BEFORE ElevenLabs' turn timeout
@@ -276,249 +280,31 @@ async function handleLocallyInventoryLookup(params: {
   }
 }
 
-// Helper to detect spec category for Perplexity
-function detectSpecCategory(query: string): string {
-  const q = query.toLowerCase();
-  if (/part\s*number|part\s*#|filter|plug|impeller|gasket|seal/.test(q)) return 'parts';
-  if (/weight|dimension|fuel|displacement|bore|stroke|rpm|compression/.test(q)) return 'specs';
-  if (/warranty|coverage|extended|protection/.test(q)) return 'warranty';
-  if (/maintenance|service|interval|oil\s*change|winteriz|flush/.test(q)) return 'maintenance';
-  if (/problem|issue|won't|doesn't|error|alarm|overheat|stall/.test(q)) return 'troubleshooting';
-  return 'general';
-}
-
-// Client tool handler for Perplexity spec verification
-// Uses hardcoded answers for common questions, falls back to Perplexity for unknown ones
+// Client tool handler for technical verification. Exact loaded facts are
+// deterministic; anything else must go to a serial-number manual or a person.
 async function handleVerifySpecs(params: {
   query: string;
   category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
   motor_context?: string;
-}): Promise<string> {
+}, currentMotor?: MercuryTechnicalMotorContext | null): Promise<string> {
   console.log('[ClientTool] verify_specs called with:', params);
-  
-  const query = params.query.toLowerCase();
-  const motor = params.motor_context || '';
-  
-  // Common part number responses based on query patterns
-  
-  // === OIL & FILTERS ===
-  if (query.includes('oil filter')) {
-    return "For Mercury FourStroke outboards, the most common oil filter part number is 35-877769K01. This fits most 25 to 115 horsepower models. I'd recommend confirming with our parts department or checking the Mercury Marine website for your specific engine serial number.";
-  }
-  
-  if (query.includes('fuel filter') || query.includes('gas filter')) {
-    return "Mercury outboards use inline fuel filters. The common part numbers are 35-879885Q for the in-line filter and 35-8M0122423 for the water separating fuel filter. For larger motors, the 35-802893Q01 is often used. Check your model's specifications for the correct filter.";
-  }
-  
-  if (query.includes('lower unit') && (query.includes('oil') || query.includes('lube') || query.includes('gear'))) {
-    return "Mercury recommends using Quicksilver High Performance Gear Lube, part number 92-858064Q01, for lower unit service. Most outboards need about 21 to 26 ounces depending on the size. The lower unit should be serviced at least once a year or every 100 hours.";
-  }
-  
-  if (query.includes('oil') && (query.includes('type') || query.includes('recommend') || query.includes('use'))) {
-    return "Mercury recommends using Mercury or Quicksilver 4-Stroke Marine Engine Oil, 25W-40 synthetic blend for most FourStroke outboards. Always check your owner's manual for the specific oil capacity and type for your model.";
-  }
-  
-  if (query.includes('oil capacity') || query.includes('how much oil')) {
-    return "Oil capacity varies by model. For example, 40 to 60 horsepower models typically hold about 3 quarts, while 75 to 115 horsepower hold around 4 to 5 quarts. Check your owner's manual or dipstick for the exact capacity on your motor.";
-  }
-  
-  // === IGNITION & ELECTRICAL ===
-  if (query.includes('spark plug')) {
-    return "Mercury FourStroke outboards typically use NGK spark plugs. The common part numbers are IZFR6F11 for most models or BKR6E for some applications. Check your owner's manual or give our parts team a call to confirm the right plugs for your motor.";
-  }
-  
-  if (query.includes('battery') && (query.includes('size') || query.includes('type') || query.includes('recommend'))) {
-    return "Most Mercury outboards require a Group 24 or Group 27 marine starting battery with at least 625 cold cranking amps. For larger motors, a Group 31 battery may be recommended. Always use a marine-rated battery designed for the marine environment.";
-  }
-  
-  if (query.includes('fuse') || query.includes('circuit breaker')) {
-    return "Mercury outboards use various fuses and circuit breakers depending on the model. Common fuse ratings are 20 amp for accessories and 30 amp for the main circuit. Check your owner's manual for the fuse location and correct amperage for your specific motor.";
-  }
-  
-  // === COOLING & WATER SYSTEM ===
-  if (query.includes('impeller') || query.includes('water pump')) {
-    return "Water pump impellers should be replaced every 2 to 3 years or 300 hours, whichever comes first. Common impeller kit part numbers are 47-43026Q06 for smaller motors and 47-8M0100526 for larger FourStrokes. This is a critical maintenance item to prevent overheating.";
-  }
-  
-  if (query.includes('thermostat')) {
-    return "Mercury outboard thermostats typically open at 140 to 143 degrees Fahrenheit. Common part numbers include 885599001 for many FourStroke models. If your motor is running hot or cold, the thermostat should be checked. Our service team can diagnose temperature issues.";
-  }
-  
-  if (query.includes('overheat') || query.includes('running hot') || query.includes('temperature')) {
-    return "If your motor is overheating, first check that water is flowing from the tell-tale. Common causes include a worn impeller, clogged water intake, or thermostat issues. Reduce speed immediately if overheating and have it inspected. Don't run an overheating motor as it can cause serious damage.";
-  }
-  
-  // === CORROSION PROTECTION ===
-  if (query.includes('anode') || query.includes('zinc') || query.includes('sacrificial')) {
-    return "Anodes protect your motor from corrosion and should be replaced when 50% worn. Common anode part numbers are 97-826134Q for the trim tab anode and 97-42121Q02 for transom bracket anodes. In saltwater, check anodes every 3 to 4 months. In freshwater, annually is usually sufficient.";
-  }
-  
-  if (query.includes('corrosion') || query.includes('salt')) {
-    return "To prevent corrosion, flush your motor with fresh water after every saltwater use. Use Mercury Corrosion Guard spray on electrical connections and check anodes regularly. For storage, apply fogging oil and use a quality engine cover.";
-  }
-  
-  // === PROPELLER ===
-  if (query.includes('propeller') || query.includes('prop')) {
-    return "Propeller selection depends on your boat, motor, and how you use it. Mercury offers various pitches and diameters. A general rule: lower pitch for better acceleration and pulling power, higher pitch for top speed. I'd recommend speaking with our service team who can help you find the perfect prop for your setup.";
-  }
-  
-  if (query.includes('prop hub') || query.includes('hub kit')) {
-    return "Mercury Flo-Torq hub kits absorb shock and protect your lower unit. The part number depends on your motor size - common ones are 835257Q1 for smaller motors and 835271Q1 for larger ones. If your prop is slipping, you may need a new hub kit.";
-  }
-  
-  // === FUEL SYSTEM ===
-  if (query.includes('fuel line') || query.includes('fuel hose')) {
-    return "Mercury recommends using EPA-compliant fuel lines designed for marine use. Common sizes are 5/16 inch for smaller motors and 3/8 inch for larger ones. Replace fuel lines if they become stiff, cracked, or swollen. Quicksilver fuel line is part number 32-8M0062928.";
-  }
-  
-  if (query.includes('fuel pump') || query.includes('primer')) {
-    return "Electronic fuel injection motors have high-pressure fuel pumps that are part of the vapor separator tank assembly. If you're having fuel delivery issues, our service team can diagnose whether it's the pump, filter, or another component.";
-  }
-  
-  if (query.includes('ethanol') || query.includes('e10') || query.includes('fuel stabilizer')) {
-    return "Mercury recommends using fresh, 87 octane fuel with no more than 10% ethanol. Always use a fuel stabilizer like Quicksilver Quickstor when storing the motor for more than a few weeks. Avoid E15 or higher ethanol blends as they can damage fuel system components.";
-  }
-  
-  // === MAINTENANCE INTERVALS ===
-  if (query.includes('service') && (query.includes('interval') || query.includes('schedule') || query.includes('when'))) {
-    return "Mercury recommends a 100-hour or annual service, whichever comes first. This includes oil and filter change, gear lube, spark plugs, and general inspection. Water pump impeller replacement is recommended every 300 hours or 3 years.";
-  }
-  
-  if (query.includes('break in') || query.includes('break-in') || query.includes('new motor')) {
-    return "For the first 10 hours, vary your speed and avoid full throttle for extended periods. At 20 hours, you can operate normally but avoid prolonged wide-open throttle. The first oil change should be done at 20 hours to remove any break-in particles.";
-  }
-  
-  if (query.includes('winterize') || query.includes('winter storage') || query.includes('store')) {
-    return "To winterize your Mercury outboard: run fuel stabilizer through the system, fog the engine with Quicksilver Storage Seal, change the gear lube, and disconnect the battery. Store in an upright position if possible. Our service team can do a full winterization for you.";
-  }
-  
-  // === WARRANTY & COVERAGE ===
-  if (query.includes('warranty')) {
-    return "Mercury outboards come with a 3-year factory warranty that covers defects in materials and workmanship. Extended warranty options are available for additional coverage up to 6 years. Our team can provide full warranty details for your specific motor.";
-  }
-  
-  if (query.includes('recall') || query.includes('service bulletin')) {
-    return "Mercury issues service bulletins and recalls as needed for safety or reliability improvements. To check if your motor has any outstanding recalls, contact our service department with your engine serial number and we can look it up for you.";
-  }
-  
-  // === TROUBLESHOOTING ===
-  if (query.includes('won\'t start') || query.includes('no start') || query.includes('starting problem')) {
-    return "Common no-start causes include dead battery, faulty kill switch or lanyard, fuel issues, or a flooded engine. First check that the kill switch lanyard is attached, the battery has charge, and there's fresh fuel. If it still won't start, our service team can diagnose the issue.";
-  }
-  
-  if (query.includes('stall') || query.includes('dies') || query.includes('cuts out')) {
-    return "Stalling can be caused by fuel issues, dirty spark plugs, water in fuel, or electrical problems. Check your fuel filter and water separator first. If the problem persists, our service team can run diagnostics to identify the cause.";
-  }
-  
-  if (query.includes('vibration') || query.includes('shaking') || query.includes('rough')) {
-    return "Excessive vibration often indicates a damaged prop, worn motor mounts, or engine issues. Check your propeller for dings, bends, or fishing line wrapped around the hub. If the prop looks good, have our service team inspect the motor mounts and internal components.";
-  }
-  
-  if (query.includes('smoke') || query.includes('smoking')) {
-    return "Blue or white smoke usually indicates oil burning, which can be normal during break-in or cold starts. Black smoke suggests running rich. Excessive smoke after warm-up should be checked by our service team to prevent engine damage.";
-  }
-  
-  // === CONTROLS & RIGGING ===
-  if (query.includes('control cable') || query.includes('throttle cable') || query.includes('shift cable')) {
-    return "Mercury control cables come in various lengths. Measure your existing cable or the distance from your helm to the motor. Our parts team can help you select the correct cable length and type for your setup. Cables should be replaced if they feel stiff or sticky.";
-  }
-  
-  if (query.includes('steering') && (query.includes('fluid') || query.includes('oil'))) {
-    return "Mercury hydraulic steering systems use Mercury or Quicksilver Power Steering Fluid. Check the level in the helm pump reservoir periodically. If you notice hard steering or leaks, have the system inspected. Low fluid can damage the pump.";
-  }
-  
-  // === WEIGHT ===
-  if (query.includes('weight') || query.includes('how heavy') || query.includes('weigh') || query.includes('pounds') || query.includes('lbs')) {
-    // Extract HP from query or motor context
-    const hpMatch = query.match(/(\d+\.?\d*)/);
-    const hp = hpMatch ? parseFloat(hpMatch[1]) : (motor.match(/(\d+\.?\d*)/) ? parseFloat(motor.match(/(\d+\.?\d*)/)![1]) : 0);
-    
-    if (hp > 0) {
-      // VERIFIED weights from Mercury's official specs (dry weight in lbs)
-      const weightTable: Record<number, { weight: string; desc: string }> = {
-        2.5: { weight: '37-38', desc: 'Super light - easy to carry with one hand.' },
-        3.5: { weight: '40-41', desc: 'Nice and light, perfect for car-topping.' },
-        4: { weight: '52-53', desc: 'Still very portable, one person can handle it easily.' },
-        5: { weight: '57-59', desc: 'Light and compact - great for dinghies and sailboats.' },
-        6: { weight: '63-65', desc: 'Still portable, easy for one person to manage.' },
-        8: { weight: '82-84', desc: 'Getting a bit heavier but still one-person manageable.' },
-        9.9: { weight: '88-95', desc: 'One person can manage, but two makes it easier.' },
-        15: { weight: '115-121', desc: 'Definitely a two-person lift.' },
-        20: { weight: '175-215', desc: 'Two-person lift for sure, depends on the config.' },
-        25: { weight: '167-180', desc: 'A two-person job.' },
-        30: { weight: '175-185', desc: 'Need a buddy for this one.' },
-        40: { weight: '235-255', desc: "You'll want a hoist or extra hands." },
-        50: { weight: '250-270', desc: 'Hoist recommended.' },
-        60: { weight: '260-280', desc: 'Definitely need proper lifting equipment.' },
-        75: { weight: '340-360', desc: 'These need a hoist.' },
-        90: { weight: '345-375', desc: 'Hoist required.' },
-        100: { weight: '355-385', desc: 'Big motor, needs proper equipment.' },
-        115: { weight: '365-395', desc: 'Hoist time.' },
-        150: { weight: '455-495', desc: 'Serious lifting equipment needed.' },
-        200: { weight: '485-520', desc: 'These are heavy - hoist required.' },
-        250: { weight: '545-580', desc: 'Big boy territory.' },
-        300: { weight: '580-640', desc: 'These are beasts - definitely hoist only.' },
-      };
-      
-      // Find exact or closest match
-      const exactMatch = weightTable[hp];
-      if (exactMatch) {
-        const motorRef = motor || `${hp} horsepower motor`;
-        return `The ${motorRef} weighs about ${exactMatch.weight} pounds dry. ${exactMatch.desc}`;
-      }
-      
-      // Find closest match if not exact
-      const hpValues = Object.keys(weightTable).map(Number).sort((a, b) => a - b);
-      const closest = hpValues.reduce((prev, curr) => 
-        Math.abs(curr - hp) < Math.abs(prev - hp) ? curr : prev
-      );
-      const closestMatch = weightTable[closest];
-      const motorRef = motor || `${hp} horsepower motor`;
-      return `The closest I have is the ${closest}HP at ${closestMatch.weight} pounds. ${closestMatch.desc} Your ${hp}HP would be similar.`;
-    }
-    
-    return "Motor weight varies by model. What HP are you looking at? For example, a 5HP is about 57 pounds, a 20HP runs about 175-215 pounds, and a 115HP is around 365-395 pounds.";
+
+  const technicalContext = [
+    params.motor_context,
+    currentMotor?.model,
+    currentMotor?.hp,
+  ].filter(Boolean).join(' ');
+
+  const verifiedTechnicalReply = buildVerifiedMercuryTechnicalAnswer(
+    params.query,
+    technicalContext || currentMotor,
+    { voice: true, includeLinks: false },
+  );
+  if (verifiedTechnicalReply) {
+    return verifiedTechnicalReply;
   }
 
-  // === DEFAULT FALLBACK - CALL PERPLEXITY ===
-  // No hardcoded answer found - search Perplexity for technical info
-  console.log('[verify_specs] No hardcoded answer, calling Perplexity...');
-  
-  try {
-    // Race against 7s timeout (ElevenLabs has ~10s limit)
-    const perplexityPromise = supabase.functions.invoke('voice-perplexity-lookup', {
-      body: {
-        query: params.query,
-        category: params.category || detectSpecCategory(query),
-        motor_context: motor || undefined
-      }
-    });
-    
-    const timeoutPromise = new Promise<never>((_, reject) => 
-      setTimeout(() => reject(new Error('timeout')), 7000)
-    );
-    
-    const { data, error } = await Promise.race([perplexityPromise, timeoutPromise]) as { data: any; error: any };
-    
-    if (error) {
-      console.error('[verify_specs] Perplexity error:', error);
-      throw error;
-    }
-    
-    if (data?.success && data?.answer) {
-      console.log('[verify_specs] Perplexity success:', data.answer.substring(0, 100));
-      return data.answer;
-    }
-    
-    throw new Error('No answer from Perplexity');
-    
-  } catch (err) {
-    console.warn('[verify_specs] Perplexity failed/timeout:', err);
-    
-    // Graceful fallback - offer human assistance
-    return "I couldn't pull up that specific information right now. " +
-           "Our service team would know for sure - want me to have someone give you a call?";
-  }
+  return "I don't have a manual-backed answer loaded for that exact question, so I won't guess. Use the serial-number owner's manual or have Harris Boat Works confirm it.";
 }
 
 // Client tool handler for non-Mercury accessories/boat parts via catalogue search
@@ -660,56 +446,16 @@ function handleServiceEstimate(params: {
   motor_model?: string;
 }): string {
   console.log('[ClientTool] estimate_service_cost', params);
-  
-  const serviceType = (params.service_type || '').toLowerCase().replace(/\s+/g, '_');
-  const hp = params.motor_hp || 100; // Default to medium HP
-  
-  // Service type mapping
-  const serviceMap: Record<string, { minPrice: number; maxPrice: number; includes: string }> = {
-    '100_hour': { minPrice: 400, maxPrice: 600, includes: 'oil change, filter, gear lube, spark plugs, and full inspection' },
-    'annual': { minPrice: 400, maxPrice: 600, includes: 'oil change, filter, gear lube, spark plugs, and full inspection' },
-    'winterization': { minPrice: 250, maxPrice: 400, includes: 'fuel stabilizer, fogging oil, gear lube, and anti-freeze flush' },
-    'winterize': { minPrice: 250, maxPrice: 400, includes: 'fuel stabilizer, fogging oil, gear lube, and anti-freeze flush' },
-    'spring': { minPrice: 300, maxPrice: 450, includes: 'de-winterization, fresh fuel, battery service, and test run' },
-    'commissioning': { minPrice: 300, maxPrice: 450, includes: 'de-winterization, fresh fuel, battery service, and test run' },
-    'impeller': { minPrice: 350, maxPrice: 500, includes: 'impeller kit, gaskets, and test run' },
-    'water_pump': { minPrice: 350, maxPrice: 500, includes: 'impeller kit, gaskets, and test run' },
-    'lower_unit': { minPrice: 150, maxPrice: 250, includes: 'gear lube drain and refill, seal inspection' },
-    'gear_lube': { minPrice: 150, maxPrice: 250, includes: 'gear lube drain and refill, seal inspection' },
-    'prop': { minPrice: 75, maxPrice: 125, includes: 'prop removal, hub inspection, and installation' },
-  };
-  
-  // Adjust for HP
-  const hpMultiplier = hp <= 30 ? 0.7 : hp <= 115 ? 1.0 : hp <= 300 ? 1.3 : 1.6;
-  
-  // Find matching service
-  let serviceKey = Object.keys(serviceMap).find(key => serviceType.includes(key));
-  if (!serviceKey) {
-    // Try partial match
-    if (serviceType.includes('oil') || serviceType.includes('100')) serviceKey = '100_hour';
-    else if (serviceType.includes('winter')) serviceKey = 'winterization';
-    else if (serviceType.includes('spring') || serviceType.includes('commission')) serviceKey = 'spring';
-    else if (serviceType.includes('impeller') || serviceType.includes('water') || serviceType.includes('pump')) serviceKey = 'impeller';
-    else if (serviceType.includes('lower') || serviceType.includes('gear')) serviceKey = 'lower_unit';
-    else if (serviceType.includes('prop')) serviceKey = 'prop';
-  }
-  
-  if (!serviceKey) {
-    return JSON.stringify({
-      error: "I don't have pricing for that specific service. Our service team can give you an exact quote."
-    });
-  }
-  
-  const service = serviceMap[serviceKey];
-  const minPrice = Math.round(service.minPrice * hpMultiplier / 25) * 25;
-  const maxPrice = Math.round(service.maxPrice * hpMultiplier / 25) * 25;
-  
-  const motorRef = params.motor_model || (params.motor_hp ? `${params.motor_hp} horsepower motor` : 'your motor');
-  
+
+  const motorRef = params.motor_model
+    || (params.motor_hp ? `${params.motor_hp} horsepower motor` : 'your motor');
+  const requestedService = params.service_type?.trim() || 'that service';
+
   return JSON.stringify({
     success: true,
-    estimate: { minPrice, maxPrice },
-    message: `For ${serviceKey.replace(/_/g, ' ')} on ${motorRef}, you're looking at about $${minPrice} to $${maxPrice}. That includes ${service.includes}. Want me to have our service team reach out to schedule?`
+    estimate: null,
+    requiresVerifiedQuote: true,
+    message: `I don't have a live verified price or a confirmed parts list for ${requestedService} on ${motorRef}, so I won't invent one. The exact scope depends on the model and serial number, engine hours, service history, the applicable Mercury manual, and what inspection finds. Harris Boat Works can confirm the work and quote it at Gores Landing. Want me to arrange a callback?`
   });
 }
 
@@ -1936,7 +1682,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       set_purchase_path: (params: { purchase_type: string }) => {
         return handleSetPurchasePath(params);
       },
-      // Verify technical specs, part numbers, or unknown info via Perplexity
+      // Verify technical specs from the manual-backed fact contract
       verify_specs: withSearchingFeedback(
         'verify_specs',
         async (params: {
@@ -1944,7 +1690,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
           motor_context?: string;
         }) => {
-          return await handleVerifySpecs(params);
+          return await handleVerifySpecs(params, options.motorContext ?? null);
         },
         'Looking that up...'
       ),

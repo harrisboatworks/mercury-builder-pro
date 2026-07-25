@@ -6,6 +6,7 @@ import {
   getPromotionOptions,
   type PromotionRecord,
 } from "./promotion-context.ts";
+import { MERCURY_TECHNICAL_FACTS_VERSION } from "./verified-mercury-technical-facts.ts";
 
 export const CUSTOMER_MOTOR_SELECT = [
   "id",
@@ -622,6 +623,7 @@ export async function buildCustomerKnowledgeSnapshot(
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
     sourceVersion: sourceDigest.slice(0, 20),
+    technicalFactsVersion: MERCURY_TECHNICAL_FACTS_VERSION,
     business: {
       published: knowledge.businessPublished,
       lastUpdated: knowledge.business.lastUpdated || null,

@@ -374,46 +374,6 @@ WRONG - NEVER DO THIS:
   }
 ];
 
-// Service estimate data
-const SERVICE_ESTIMATES: Record<string, Record<string, { low: number; high: number; includes: string[] }>> = {
-  "100-hour": {
-    small: { low: 350, high: 500, includes: ["Oil change", "Gear lube", "Filter replacement", "Inspection"] },
-    medium: { low: 450, high: 700, includes: ["Oil change", "Gear lube", "Fuel filter", "Spark plugs", "Inspection"] },
-    large: { low: 600, high: 1000, includes: ["Oil change", "Gear lube", "All filters", "Spark plugs", "Anodes", "Inspection"] }
-  },
-  "winterization": {
-    small: { low: 200, high: 350, includes: ["Fuel stabilizer", "Fog engine", "Drain cooling system"] },
-    medium: { low: 300, high: 500, includes: ["Fuel stabilizer", "Fog engine", "Drain systems", "Battery service"] },
-    large: { low: 400, high: 700, includes: ["Full winterization", "Battery storage", "Shrink wrap available"] }
-  },
-  "spring-commissioning": {
-    small: { low: 250, high: 400, includes: ["Battery install", "Fluid check", "Test run"] },
-    medium: { low: 350, high: 550, includes: ["Battery install", "All fluids", "Systems check", "Test run"] },
-    large: { low: 450, high: 750, includes: ["Complete de-winterization", "Full systems test", "Sea trial"] }
-  },
-  "oil-change": {
-    small: { low: 100, high: 175, includes: ["Oil", "Filter", "Disposal"] },
-    medium: { low: 150, high: 250, includes: ["Synthetic oil", "Filter", "Disposal"] },
-    large: { low: 200, high: 350, includes: ["Full synthetic", "Filter", "Inspection"] }
-  },
-  "lower-unit": {
-    small: { low: 150, high: 250, includes: ["Gear lube change", "Seal inspection"] },
-    medium: { low: 200, high: 350, includes: ["Gear lube", "Seal check", "Water pump inspection"] },
-    large: { low: 300, high: 500, includes: ["Gear lube", "Full lower unit inspection"] }
-  },
-  "tune-up": {
-    small: { low: 200, high: 350, includes: ["Spark plugs", "Timing check", "Carb adjustment"] },
-    medium: { low: 300, high: 500, includes: ["Plugs", "Timing", "Fuel system service"] },
-    large: { low: 400, high: 700, includes: ["Complete tune-up", "Computer diagnostics"] }
-  }
-};
-
-function getHpCategory(hp: number): "small" | "medium" | "large" {
-  if (hp <= 40) return "small";
-  if (hp <= 150) return "medium";
-  return "large";
-}
-
 // Initialize Supabase
 function getSupabase() {
   const url = Deno.env.get("SUPABASE_URL")!;
@@ -459,16 +419,9 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
     }
     
     case "estimate_service_cost": {
-      const serviceType = (args.service_type as string || "").toLowerCase().replace(/\s+/g, "-");
       const hp = args.horsepower as number || 100;
-      const category = getHpCategory(hp);
-      const estimate = SERVICE_ESTIMATES[serviceType]?.[category];
-      
-      if (!estimate) {
-        return { content: [{ type: "text", text: `Service estimates for ${args.service_type} on a ${hp}HP motor: Please call us for a custom quote at (905) 342-2153.` }] };
-      }
-      
-      const text = `${args.service_type} service for a ${hp}HP motor: $${estimate.low} - $${estimate.high} CAD. Includes: ${estimate.includes.join(", ")}. Final price depends on parts needed.`;
+      const serviceType = args.service_type as string || "that service";
+      const text = `I don't have a live verified price or confirmed parts list for ${serviceType} on a ${hp}HP motor, so I won't invent one. Exact work depends on the model and serial number, engine hours, service history, the applicable Mercury manual, and inspection. Harris Boat Works can confirm the scope and quote at Gores Landing; call (905) 342-2153.`;
       return { content: [{ type: "text", text }] };
     }
     

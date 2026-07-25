@@ -426,7 +426,7 @@ export default function MotorDetailsPremiumModal({
           aria-modal="true"
           aria-label={`${displayTitle} details`}
           tabIndex={-1}
-          className="relative min-w-0 bg-repower-paper sm:bg-repower-cream w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-[12px]
+          className="relative min-w-0 bg-[#F4F0E8] w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-[12px]
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl lg:h-[90vh] lg:overflow-hidden
           flex flex-col">
 
@@ -434,7 +434,7 @@ export default function MotorDetailsPremiumModal({
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 z-[70] hidden h-11 w-11 items-center justify-center rounded-full border border-repower-navy-900/10 bg-white text-repower-navy-900 shadow-md transition-colors hover:bg-repower-paper lg:flex"
+            className="absolute right-4 top-4 z-[70] hidden h-11 w-11 items-center justify-center rounded-full border border-repower-navy-900/10 bg-[#FFFDF8] text-repower-navy-900 shadow-[0_8px_24px_rgba(5,14,28,0.12)] transition-all hover:-translate-y-px hover:border-repower-navy-900/20 hover:bg-white lg:flex"
             aria-label="Close motor details"
           >
             <X className="h-5 w-5" />
@@ -452,7 +452,7 @@ export default function MotorDetailsPremiumModal({
               }
             }}>
               {/* Mobile/Tablet Sticky Navigation - Back/X buttons only */}
-            <div className="lg:hidden sticky top-0 z-40 bg-repower-paper">
+            <div className="lg:hidden sticky top-0 z-40 bg-[#F8F5EE]/95 backdrop-blur-md">
                 <div className="flex justify-between items-center p-4">
                   <button
                     onClick={onClose}
@@ -474,7 +474,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Mobile/Tablet Scrollable Header - Title and Tabs */}
-              <div className="lg:hidden bg-repower-paper" style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)' }}>
+              <div className="lg:hidden bg-[#F8F5EE]" style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)' }}>
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
@@ -487,7 +487,7 @@ export default function MotorDetailsPremiumModal({
                 </div>
 
                 {/* Tabs - scrolls with content */}
-                <TabsList className="flex w-full flex-nowrap justify-start overflow-x-auto border-b border-gray-200 rounded-none bg-white p-0 h-auto scrollbar-hide">
+                <TabsList className="flex w-full flex-nowrap justify-start overflow-x-auto border-b border-repower-navy-900/10 rounded-none bg-[#F1ECE2] p-0 h-auto scrollbar-hide">
                   <TabsTrigger
                     value="overview"
                     className="shrink-0 text-xs uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-4 py-3"
@@ -545,7 +545,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Desktop Header */}
-            <div className="hidden lg:block sticky top-0 z-50 bg-repower-cream">
+            <div className="hidden lg:block sticky top-0 z-50 bg-[#F7F3EB]/95 backdrop-blur-md">
                 <div className="px-12 pt-12 pb-0">
                   <div className="flex flex-col pr-12">
                     {/* Eyebrow: HP · FAMILY */}
@@ -573,7 +573,7 @@ export default function MotorDetailsPremiumModal({
                 </div>
 
                 {/* 3. Tabs - new line, clear separation */}
-              <TabsList className="w-full justify-start rounded-none bg-repower-cream p-0 h-auto px-12" style={{ borderBottom: '1px solid rgba(10, 22, 40, 0.08)' }}>
+              <TabsList className="w-full justify-start rounded-none bg-[#F7F3EB]/95 p-0 h-auto px-12" style={{ borderBottom: '1px solid rgba(10, 22, 40, 0.08)' }}>
                   <TabsTrigger
                     value="overview"
                     className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
@@ -609,7 +609,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Scrollable Tab Content */}
-              <div className="space-y-8 p-4 pt-3 pb-28 sm:p-6 sm:pt-4 lg:pb-24">
+              <div className="min-h-full space-y-8 bg-[radial-gradient(circle_at_12%_0%,rgba(201,162,74,0.10),transparent_32%),linear-gradient(180deg,#F8F5EE_0%,#F1ECE3_100%)] p-4 pt-3 pb-28 sm:p-6 sm:pt-4 lg:pb-24">
                 <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - Fetched from motor_media table */}
                     <div
@@ -951,19 +951,26 @@ export default function MotorDetailsPremiumModal({
                   </TabsContent>
 
                   {/* RESOURCES TAB */}
-                  <TabsContent value="resources" className="space-y-5 mt-0">
-                    <div className="p-6 pt-8 pb-12 space-y-8">
+                  <TabsContent value="resources" className="mt-0 space-y-5">
+                    <div className="space-y-8 px-0 py-4 sm:p-6 sm:pt-7">
                       {/* Related Guides — first for buyer education. Lazy-loaded so blogArticles never enters the motor bundle */}
                       {relatedSlugs.length > 0 && (
-                        <div className="border-b border-gray-100 pb-6 mb-6">
-                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
-                            Related Guides
-                          </h3>
-                          <p className="text-sm text-[#050E1C]/70 mb-4">
-                            Hand-picked HBW articles for boaters considering this motor class.
-                          </p>
+                        <div className="rounded-xl border border-repower-navy-900/10 bg-[#EDE7DC]/70 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] sm:p-5">
+                          <div className="mb-5 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+                            <div>
+                              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-repower-mercury-red">
+                                Matched to this motor
+                              </p>
+                              <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-[#050E1C]">
+                                Related Guides
+                              </h3>
+                            </div>
+                            <p className="max-w-sm text-xs leading-relaxed text-[#050E1C]/62 sm:text-right">
+                              Ranked by horsepower, motor family and use case, with newly updated relevant guides included automatically.
+                            </p>
+                          </div>
                           <Suspense fallback={null}>
-                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader surface="motor-modal" />
                           </Suspense>
                         </div>
                       )}
@@ -998,7 +1005,7 @@ export default function MotorDetailsPremiumModal({
           </div>
 
           {/* RIGHT COLUMN: Sticky Pricing Card OR Inline Chat (Desktop Only) */}
-          <div className="hidden lg:block border-l border-gray-200">
+          <div className="hidden border-l border-repower-navy-900/10 bg-[radial-gradient(circle_at_100%_0%,rgba(201,162,74,0.16),transparent_38%),linear-gradient(180deg,#FBF8F1_0%,#F1ECE3_100%)] lg:block">
             <AnimatePresence mode="wait">
               {inlineChatOpen ? (
                 <motion.div
@@ -1025,7 +1032,7 @@ export default function MotorDetailsPremiumModal({
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="sticky top-0 p-6 space-y-6 max-h-[90vh] overflow-y-auto"
+                  className="sticky top-0 max-h-[90vh] space-y-6 overflow-y-auto p-6"
                 >
                   {/* Motor Name & Thumbnail */}
                   <div>
@@ -1035,7 +1042,7 @@ export default function MotorDetailsPremiumModal({
                   </div>
 
                   {/* Price Display */}
-                  <div className="border-t border-gray-100 pt-6">
+                  <div className="border-t border-repower-navy-900/10 pt-6">
                     <p className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-light mb-2">
                       from
                     </p>
@@ -1072,7 +1079,7 @@ export default function MotorDetailsPremiumModal({
                   </div>
 
                   {/* Key Spec Badges - All Features */}
-                  <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-6">
+                  <div className="flex flex-wrap gap-2 border-t border-repower-navy-900/10 pt-6">
                     {/* HP Badge - Always shown first */}
                     <span className="px-3 py-1 bg-stone-100 text-gray-700 text-xs font-medium rounded-full">
                       {hp} HP

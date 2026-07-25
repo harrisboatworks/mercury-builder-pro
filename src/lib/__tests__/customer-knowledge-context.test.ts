@@ -113,6 +113,8 @@ describe('shared customer knowledge', () => {
     const chat = await buildCustomerKnowledgeSnapshot(knowledge);
     const voice = await buildCustomerKnowledgeSnapshot(knowledge);
     expect(chat.sourceVersion).toBe(voice.sourceVersion);
+    expect(chat.technicalFactsVersion).toMatch(/^mercury-tech-/);
+    expect(chat.technicalFactsVersion).toBe(voice.technicalFactsVersion);
     expect(chat.motors.count).toBe(1);
     expect(chat.business.phone).toBe('+1-905-342-2153');
   });
