@@ -22,6 +22,11 @@ const commandThrust115ProXs = {
   family: "ProXS",
 };
 
+const modal115ProXs = {
+  model: "115 ELPT ProXS",
+  hp: 115,
+};
+
 describe("verified Mercury technical facts", () => {
   it("locks 115 Pro XS oil capacity to the official value", () => {
     const answer = buildVerifiedMercuryTechnicalAnswer(
@@ -100,6 +105,20 @@ describe("verified Mercury technical facts", () => {
     );
     expect(service).toContain("100 hours or once yearly");
     expect(service).toContain("There is no scheduled 20-hour oil change");
+  });
+
+  it("answers the exact modal impeller-schedule question from the 115 Pro XS manual", () => {
+    const answer = buildVerifiedMercuryTechnicalAnswer(
+      "Impeller replacement schedule?",
+      modal115ProXs,
+    );
+
+    expect(detectMercuryTechnicalIntent("Impeller replacement schedule?"))
+      .toBe("water_pump_impeller_schedule");
+    expect(answer).toContain("every 300 hours of use or 3 years");
+    expect(answer).toContain("Replace it sooner if overheating occurs or reduced water pressure is noted");
+    expect(answer).toContain("manual 8M0145552");
+    expect(answer).not.toContain("I won't guess");
   });
 
   it("exposes an explicit source version for deployment probes", () => {
