@@ -210,7 +210,7 @@ function oilCapacitySourceSuffix(options: MercuryTechnicalAnswerOptions): string
   if (options.voice || options.includeLinks === false) {
     return sourceSuffix(options);
   }
-  return ` Sources: [Mercury manual ${MERCURY_115_PRO_XS_MANUAL.publication}](${MERCURY_115_PRO_XS_MANUAL.url}) and [HBW's oil-capacity lookup](/blog/mercury-outboard-oil-capacity-chart).`;
+  return ` Sources: [Mercury manual ${MERCURY_115_PRO_XS_MANUAL.publication}](${MERCURY_115_PRO_XS_MANUAL.url}) and [HBW's oil-capacity lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart).`;
 }
 
 function manualHandoff(

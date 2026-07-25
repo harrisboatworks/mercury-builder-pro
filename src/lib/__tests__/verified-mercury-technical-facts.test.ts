@@ -32,6 +32,10 @@ describe("verified Mercury technical facts", () => {
     expect(answer).toContain("5.2 L");
     expect(answer).toContain("5.5 US qt");
     expect(answer).toContain("not 4 L");
+    expect(answer).toContain(
+      "https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart",
+    );
+    expect(answer).not.toContain("](/blog/");
     expect(answer).not.toContain("3.0 L");
     expect(MERCURY_115_PRO_XS_FACTS.engineOilCapacityWithFilter.litres).toBe(5.2);
   });
