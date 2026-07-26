@@ -3289,10 +3289,11 @@ const motorPageRoutes = motorRecords
       : 'Contact for pricing';
 
     // Title pattern (competitor-parity, city in ranked position for AI answer engines):
-    //   {YEAR} Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
+    //   Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
     // Any missing field is dropped cleanly (no double spaces, no dangling separators).
     // No em dashes anywhere (HBW brand rule); all separators are ASCII " - " or ", ".
-    const yearPart = m.year ? `${m.year} ` : '';
+    // year intentionally omitted: motor_models.year is stamped at ingest and does not track
+    // Mercury's July 1 model-year rollover. Do not re-add until the column is verified.
     const hpPart = m.horsepower ? `${m.horsepower}HP` : '';
     const shaftPart = shaft ? `${shaft} Shaft` : '';
     const startPart = m.start_type ? String(m.start_type).trim() : '';
@@ -3301,9 +3302,9 @@ const motorPageRoutes = motorRecords
     const stockTail = inStock
       ? 'In Stock at Harris Boat Works in Gores Landing, Ontario'
       : 'Special Order at Harris Boat Works in Gores Landing, Ontario';
-    const title = `${yearPart}Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
+    const title = `Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
 
-    const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: ${m.year ? `${m.year} ` : ''}Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
+    const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
 
     // Per-motor social preview. Format from SEO batch:
     // "{Motor name} | {Price in CAD} | Harris Boat Works", trimmed if long.
@@ -6400,6 +6401,10 @@ if (motorPageRoutes.length > 0) {
     if (motorTitleMatch && /[\u2013\u2014]/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains an em/en dash — HBW copy rules require plain ASCII " - " separators.`);
     if (motorTitleMatch && /  /.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains a double space.`);
     if (motorTitleMatch && /-\s+-\s+/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> has a dangling " - - " separator.`);
+    // Guard: motor <title> must NOT begin with a 4-digit year. motor_models.year is
+    // stamped at ingest and does not follow Mercury's July 1 model-year rollover, so
+    // leading a title with it publishes a stale fact. Do not re-add until verified.
+    if (motorTitleMatch && /^\s*\d{4}\b/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> begins with a 4-digit year. motor_models.year is untrusted; do not lead titles with it.`);
     if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
     if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
   }
