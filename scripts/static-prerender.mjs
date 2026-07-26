@@ -3289,8 +3289,9 @@ const motorPageRoutes = motorRecords
       : 'Contact for pricing';
 
     // Title pattern (competitor-parity, city in ranked position for AI answer engines):
-    //   {YEAR} Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} — {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
+    //   {YEAR} Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
     // Any missing field is dropped cleanly (no double spaces, no dangling separators).
+    // No em dashes anywhere (HBW brand rule); all separators are ASCII " - " or ", ".
     const yearPart = m.year ? `${m.year} ` : '';
     const hpPart = m.horsepower ? `${m.horsepower}HP` : '';
     const shaftPart = shaft ? `${shaft} Shaft` : '';
@@ -3300,7 +3301,7 @@ const motorPageRoutes = motorRecords
     const stockTail = inStock
       ? 'In Stock at Harris Boat Works in Gores Landing, Ontario'
       : 'Special Order at Harris Boat Works in Gores Landing, Ontario';
-    const title = `${yearPart}Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} — ${stockTail}`;
+    const title = `${yearPart}Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
 
     const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: ${m.year ? `${m.year} ` : ''}Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
 
@@ -6395,6 +6396,10 @@ if (motorPageRoutes.length > 0) {
     if (!/<title[^>]*>[^<]*Mercury[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing/wrong.`);
     if (!/<title[^>]*>[^<]*Harris Boat Works in Gores Landing, Ontario[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing "Harris Boat Works in Gores Landing, Ontario" location tail.`);
     if (!/<title[^>]*>[^<]*(In Stock|Special Order) at Harris Boat Works[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing stock/special-order marker.`);
+    const motorTitleMatch = sampleHtml.match(/<title[^>]*>([^<]*)<\/title>/i);
+    if (motorTitleMatch && /[\u2013\u2014]/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains an em/en dash — HBW copy rules require plain ASCII " - " separators.`);
+    if (motorTitleMatch && /  /.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains a double space.`);
+    if (motorTitleMatch && /-\s+-\s+/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> has a dangling " - - " separator.`);
     if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
     if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
   }
