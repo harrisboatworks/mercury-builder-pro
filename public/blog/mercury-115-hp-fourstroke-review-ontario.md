@@ -1,225 +1,338 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-07-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 115 HP FourStroke Review"
-description: "Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense."
+location: Gores Landing, ON, Canada
+title: "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust"
+description: "An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-05-10
-keywords: ["mercury 115 hp review","mercury 115 hp fourstroke","mercury 115 elpt ontario","mercury 115 ct command thrust","115 hp pontoon","mercury 115 vs 150","mercury 115 fourstroke vs proxs"]
+date_modified: 2026-07-26
+keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Mercury 115 HP FourStroke Review
+# Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust
 
-> Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense.
+> An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
-**Read time:** 10 min read  
+**Last updated:** 2026-07-26
+
+**Read time:** 16 min read
+
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
-### Quick Answer
+> **Quick answer:** Mercury's current 115 HP FourStroke is a quiet, relatively light 2.1-litre inline-four that works very well when the boat, gearcase and propeller match. Choose the standard gearcase for a recreational V-hull, Command Thrust for a pontoon or specific heavy workboat, and Pro XS when the hull and owner can use its higher operating range.
 
-The Mercury 115 HP FourStroke weighs 359 lbs, making it the lightest 115 HP outboard available. It runs on the same 2.1L inline-4 block as the 75 and 90, tuned to 6,000 RPM. It's the right motor for 17-20 ft aluminum fishing boats and mid-to-large pontoons (with Command Thrust), and it's the default choice for Ontario boaters who want real headroom without crossing into V6 territory and the price jump that comes with it.
+A guy tested 19, 20 and 21-pitch props on the same Mercury 115 Pro XS.
 
----
+The 20 was fastest. The 21 was slower than both of the others.
 
-### Mercury 115 HP FourStroke Review
+That one test tells you more about buying a 115 than most spec sheets do. The motor matters, but the finished setup matters just as much. A well-matched 115 feels quiet, eager and easy to live with. Put the wrong gearcase or prop behind it and the same motor can feel lazy, lose grip in turns or miss its proper operating range.
 
-"Lightest 115 HP available" isn't a marketing line, it's a spec that changes how a boat behaves. An 80-100 lb weight difference over the older two-stroke motors this motor commonly replaces affects how the hull sits in the water, how early it gets on plane, what the fuel economy looks like, and what happens at the trailer hitch.
+This review covers the current 2.1-litre Mercury 115 FourStroke, the 115 Pro XS and the Command Thrust versions. It uses current-family specifications, documented freshwater tests, independent boat reviews and owner prop testing. No brochure fantasy and no universal speed promise.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 115 FourStroke is one of the motors we sell and service most. Here's an honest look at where it makes sense, and where it doesn't.
+## The Current 2.1-Litre Mercury 115
 
----
+Mercury introduced the current 2.1-litre 75/90/115 FourStroke family in 2014. The 115 Pro XS joined it in 2016.
 
-## Why "Lightest 115 HP Available" Actually Matters
+That is useful, not disappointing. This is a mature engine family, not a first-year design that Ontario buyers are being asked to test for Mercury.
 
-The Mercury 115 ELPT FourStroke weighs 359 lbs. An older Mercury 115 OptiMax, the motor it commonly replaces, weighs around 425 lbs. That's 80-100 lbs of difference. On a 17-20 ft aluminum fishing boat, that weight change does real things:
+The current standard 115 FourStroke uses:
 
-- The hull sits higher at rest, improving fuel economy before you even turn the key.
-- The boat planes earlier with the same load.
-- The transom takes less stress over the long term.
-- Trailer tongue weight drops, which matters if you're hauling with a half-ton truck.
+- a 2.1-litre inline-four powerhead
+- an 8-valve single-overhead-cam design
+- electronic fuel injection
+- a 5,000 to 6,000 rpm wide-open-throttle range
+- a 2.07:1 standard gear ratio
+- a listed dry weight of roughly 360 lb for the lightest 20-inch configurations, depending on market specification
+- mechanical controls with SmartCraft compatibility
 
-Those aren't abstract benefits. They're what customers notice after a season.
+Command Thrust changes the gearcase, ratio and propeller options. It doesn't add horsepower. Current specifications put the lightest 20-inch CT configurations at about 364 lb with a 2.38:1 ratio.
 
----
+The 115 Pro XS uses the same 2.1-litre platform but raises the operating range to 5,300 to 6,300 rpm and adds performance-oriented calibration. It is available with either the standard gearcase or Command Thrust in the current Canadian lineup.
 
-## What the 2.1L Family Shares
+## What It Actually Feels Like on the Water
 
-The 115 HP FourStroke belongs to Mercury's 75, 115 HP family: five motors (75, 80, 90, 100, 115) built on the same 2.1L inline-4 block with an 8-valve SOHC, maintenance-free valve train, and 17,000 hours of factory testing on this generation before shipping.
+The first thing many owners notice is the lack of noise at idle. In one Boating Magazine test, the reviewers said they could not hear the 115 Pro XS on a Ranger aluminum fishing boat over their conversation at idle. A few owner reports make the same point in less scientific language: check the tach before reaching for the key because the motor may already be running.
 
-What they all share:
-- Same 2.1L inline-4 block
-- Maintenance-free valve train (no cam service, no valve lash adjustments)
-- 35-amp / 441-watt alternator
-- SmartCraft compatibility
-- 3-year factory standard warranty (plus available promotional bonus years)
+It doesn't stay silent at every rpm. One Bayliner VR4 owner disliked a steady Pro XS exhaust note during long runs around 2,000 to 3,200 rpm. That is one boat and one owner, not a known defect. It is still worth mentioning because some people spend an hour cruising at one engine speed and care more about sound than a tournament angler does.
 
-The 115 is the highest tuning of this family. It runs to 6,000 RPM and makes peak HP later in the power curve. Compared to the 90, the step from 90 to 115 is tuning, not a different motor. There is no weight penalty. The only real cost is price and fuel burn at full throttle.
+Acceleration is strong when the boat is propped correctly. In Mercury's freshwater records, a Crestliner 189XF reached 20 mph in 3.81 seconds, while a Crestliner 1750 Super Hawk did it in 4.94 seconds. Those are separate boat-specific results. A Canadian test of a 21 ft 6 in Princecraft pontoon with a 115 Pro XS Command Thrust reported planing in 3.6 seconds.
 
----
+Those numbers describe those boats, not every 115 installation. A loaded 22 ft pontoon and a light 17 ft fishing boat can carry the same horsepower and feel like completely different machines.
 
-## What "ELPT" and "CT" Mean
+## Standard FourStroke, Pro XS or Command Thrust?
 
-- **E**, Electric start
-- **L**, Long shaft (20"), fits the most common transom
-- **PT**, Power trim and tilt from the helm
-- **CT**, Command Thrust gearcase (larger lower unit, bigger prop swing, typically 14 or 14.5" instead of 13")
-
-This post covers the **115 ELPT FourStroke** and the **115 ELPT Command Thrust**. There's also a 115 Pro XS (performance-tuned, sport gearcase) and a counter-rotation 115 (for twin setups). Different SKUs, different prices, different applications. Use the quote builder at mercuryrepower.ca to compare.
-
----
-
-::walkaround-lead-capture
-
-## When to Take Command Thrust
-
-| Boat Type | Take CT? |
-|---|---|
-| Pontoon (any size) | Almost always |
-| Aluminum fishing boat | Rarely |
-| Fibreglass runabout | No, standard gearcase |
-
-CT gives you [more low-end pulling power and hole-shot](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) at the cost of some top-end speed. On a flat-bottom pontoon hull, that trade-off is worth it every time. On an aluminum fishing boat that runs at speed, the standard gearcase's lower drag profile is the better fit.
-
----
-
-## Where the 115 HP FourStroke Is the Right Answer
-
-### 17, 20 ft aluminum fishing boats with heavier loads
-
-A 16 ft boat with two anglers is the 90's job. When the hull is a 17, 20 ft Lund, Princecraft, Crestliner, or Legend with four people, full gear, a livewell, two batteries, and a trolling motor up front, the 115 is the right call. Cruise around 30, 35 mph, top out around 42, 48 mph depending on prop and load.
-
-### Mid-to-large pontoons, 20, 24 ft
-
-This is where the 115 CT earns its keep. [A 22 ft pontoon with a full family load](/blog/best-mercury-outboard-pontoon-boats) and a cooler deserves at least 90 CT. The 115 CT is the right answer if the pontoon is a tritoon, if you tow tubes, or if the boat simply sits heavy.
-
-### Family runabouts that do a bit of everything
-
-Cruise, fish, tow a tube, watersports occasionally, the 115 handles all of it without working hard, and does it fuel-efficiently.
-
-### Repowers from older two-strokes
-
-[The most common repower candidates](/blog/mercury-repower-cost-ontario-2026-cad) for the 115 ELPT are older 115 OptiMax, 115, 150 OMC, and 90, 115 Yamaha two-strokes. Occasionally a boat that had a 150 V6 but found it was more motor than needed steps down to the 115.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-The outcome on most of these repowers: the boat feels lighter, runs quieter, and uses 25 to 35% less fuel for the same day on the water. After a season, some customers don't miss the V6 feel at all.
-
----
-
-![Black Mercury 115 HP FourStroke outboard on an aluminum fishing boat, highlighting the lightweight design for Ontario.](/lovable-uploads/inline/inline-mercury-115.png)
-
-## Where the 115 HP FourStroke Is the Wrong Call
-
-**Bass-boat hole-shot.** The 115 ELPT FourStroke is tuned for fuel economy, smooth cruising, and reliability, not snapping off the dock. If you want strong acceleration on a 19 ft fishing rig, [the 115 Pro XS is the different motor you're looking for](/blog/mercury-pro-xs-buyer-guide-ontario).
-
-**Heavy tritoons, 24+ ft pontoons with full loads, or houseboats.** These applications need 150 V6 or higher. The 115 will push them, but it'll work harder than it should over its service life.
-
-**Hulls rated under 90 HP.** Capacity plate is the ceiling. If the plate says 90 HP max, a 115 is illegal. We won't put it on your boat.
-
-**When you actually need the 150.** If you've already been thinking about the 150 because the boat needs it, don't compromise. Buying the 115 to save money on a hull that genuinely wants a V6 just means you'll be doing this again in a few years.
-
----
-
-## How the 115 Compares to the 90 and the 150
-
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
-
-| | 90 ELPT | 115 ELPT | 150 ELPT (V6) |
+| Version | What changes | Best fit | Main trade-off |
 |---|---|---|---|
-| Block | 2.1L inline-4 | 2.1L inline-4 | 3.0L V4 / different family |
-| Dry weight | 359 lbs | 359 lbs (363 CT) | ~455 lbs |
-| Full-throttle RPM | 5,000, 6,000 | 5,000, 6,000 | 5,000, 5,800 |
-| Best hull range | 16, 18 ft aluminum, mid pontoons | 17, 20 ft aluminum, mid-large pontoons | 19, 22 ft, larger platforms |
-| Price vs. 115 | Less |, | More (~$5,000+ more) |
+| 115 FourStroke, standard gearcase | 5,000–6,000 rpm range and lower-drag 2.07:1 gearcase | Recreational aluminum or fibreglass V-hulls | Less performance personality than Pro XS |
+| 115 Pro XS, standard gearcase | Higher 5,300–6,300 rpm range and performance calibration | Light or responsive fishing hulls where setup and acceleration matter | The benefit depends heavily on prop and hull |
+| 115 FourStroke Command Thrust | Larger 2.38:1 gearcase and larger-diameter prop options | Pontoons and specific heavy workboats | More gearcase drag |
+| 115 Pro XS Command Thrust | Pro XS operating range with the larger CT gearcase | Performance-oriented pontoon applications | Not the right gearcase for a normal recreational V-hull |
 
-**[90 vs. 115](/blog/mercury-75-vs-90-vs-115-comparison):** Tuning, not a different motor. No weight change. Price difference is real but modest. If the boat regularly carries four people and full gear, the 115 is worth it.
+### Best fit: Standard 115 FourStroke
 
-**115 vs. 150:** Completely different family. The 150 is a V6, heavier by about 100 lbs, in a different price bracket. Don't let someone talk you into a 150 for a hull that fits the 115, and don't settle for the 115 on a hull that genuinely needs the 150.
+Choose the standard FourStroke if you want the quiet, straightforward version of the 115 on a recreational V-hull.
+
+It is not a lesser motor. It is the sensible setup for someone who fishes, cruises, carries family and gear, and wants the motor to do its job without turning every run into a top-speed test.
+
+### Best fit: 115 Pro XS
+
+Choose the Pro XS when the boat can use the extra operating range and you care about acceleration, propeller tuning and a sharper feel.
+
+The Pro XS is not a secret 130 with different decals. It shares the 2.1-litre platform with the regular 115. Its advantage comes from calibration, rpm range and how the complete package is set up.
+
+If the prop keeps it well below its intended range, the Pro XS badge won't fix the problem.
+
+### Best fit: Command Thrust
+
+Choose Command Thrust for a pontoon or a specific heavy-duty application that needs the larger gearcase and propeller.
+
+Don't buy it as a generic upgrade for a recreational V-hull. The larger case can carry load and produce lift, but it also adds drag. On an ordinary aluminum or fibreglass runabout, the standard gearcase is normally the better choice.
+
+[Read the full Command Thrust explanation](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) if another dealer has told you CT simply means “more torque.”
+
+![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger.jpg)
+
+*Official Mercury freshwater photography. The 115 Pro XS shown here uses the standard gearcase.*
+
+## The Propeller Can Change the Whole Review
+
+Here are three current-family owner tests that show why propeller selection needs more than a chart.
+
+### Same Glastron, three pitches
+
+A 2023 115 Pro XS owner tested 19, 20 and 21-pitch props on a 2012 Glastron GT-160:
+
+| Pitch | Reported maximum speed | Reported maximum rpm |
+|---|---:|---:|
+| 19 | 48.5 mph | 5,920 |
+| 20 | 49.5 mph | 5,770 |
+| 21 | 48.0 mph | 5,600 |
+
+The 20-pitch prop was fastest. The 21 pulled the engine down and lost speed. The 19 kept the engine closer to the upper part of its range and could still be the better all-around choice once people and gear go aboard.
+
+https://www.youtube.com/watch?v=HblsKMvjxCU
+
+*A current-generation 115 Pro XS owner tests three prop pitches on the same Glastron.*
+
+### Same pontoon, large pitch correction
+
+An owner with a 2018 22 ft dual pontoon and a 115 Pro XS Command Thrust compared two aluminum props on the same day and load:
+
+- 14.5 × 17 four-blade: 4,400 rpm and 19 mph
+- 16 × 12 three-blade: 5,500 rpm and 21 mph
+
+The first prop held the engine far below its intended operating range. Changing the prop added rpm and speed at the same time.
+
+### Same Crestliner model, different prop designs
+
+Mercury tested a 2023 Crestliner 1750 Hawk with two 15-pitch props:
+
+- Spitfire aluminum: 41.2 mph at 5,814 rpm
+- Spitfire X7 stainless: 46.9 mph at 5,978 rpm
+
+That doesn't mean stainless steel automatically adds 5.7 mph. Blade shape, cup, stiffness and test conditions all matter. It does prove that the pitch number alone doesn't describe how a prop will perform.
+
+[Our propeller-selection guide](/blog/mercury-propeller-selection-guide) explains the basics. The final answer still comes from running the boat with its normal load.
+
+## Real Freshwater Results, With the Boat Attached
+
+These results come from documented freshwater tests. They are examples, not promises.
+
+| Boat and setup | Motor and prop | Reported result |
+|---|---|---|
+| [2023 Crestliner 189XF, 18 ft 8 in aluminum](https://performancedata.mercurymarine.com/performance-test/144) | 115 Pro XS standard, 17-pitch Spitfire aluminum | 43.8 mph at 5,871 rpm; 0–20 mph in 3.81 s |
+| [2023 Crestliner 1750 Hawk, 17 ft 6 in aluminum](https://performancedata.mercurymarine.com/performance-test/132) | 115 Pro XS standard, 15-pitch Spitfire X7 | 46.9 mph at 5,978 rpm; 0–20 mph in 4.04 s |
+| [2023 Crestliner 1750 Super Hawk, 17 ft 9 in aluminum](https://performancedata.mercurymarine.com/performance-test/134) | 115 Pro XS standard, 15-pitch Spitfire | 39.5 mph at 6,174 rpm; 0–20 mph in 4.94 s |
+| [Crestliner 2070 Retriever HD, 20 ft aluminum (2024)](https://performancedata.mercurymarine.com/performance-test/150) | 115 Pro XS standard, 19-pitch Spitfire X7 | 37.9 mph at 5,869 rpm; 0–20 mph in 4.34 s |
+| [2020 Manitou Aurora LE RF TT, 22 ft pontoon](https://performancedata.mercurymarine.com/performance-test/244) | 115 FourStroke CT, 13-pitch Black Max pontoon prop | 26.2 mph at 5,706 rpm; 0–20 mph in 4.74 s |
+| [Princecraft Sportfisher 21-4S, 21 ft 6 in pontoon (2025)](https://www.boatdealers.ca/boat-reviews/%32%30%32%35/princecraft/sportfisher-21-4s) | 115 Pro XS CT | 27 mph at 6,000 rpm; on plane in 3.6 s |
+
+The useful point isn't that one boat ran 46.9 mph and another ran 26.2. It is that both results can be right.
+
+Each result belongs only to the named boat, propeller and test conditions. The table shows why hull, load, gearcase and propeller must stay attached to every performance number; no row is a forecast for another boat.
+
+## Common Mistakes
+
+### Buying the motor before checking the capacity plate
+
+The capacity plate is the ceiling. A 115 doesn't belong on a hull rated for 90 HP, even if someone online says the transom can take it.
+
+### Treating Command Thrust as the expensive upgrade
+
+CT is the correct tool for a pontoon. It is usually the wrong tool for a normal recreational V-hull.
+
+### Selecting a prop from an empty-boat speed run
+
+Your normal boat includes fuel, batteries, a trolling motor, tackle, canvas, people and maybe a full livewell. A prop that looks perfect with one person and half a tank can lug the motor once the boat goes back to work.
+
+### Chasing one YouTube speed number
+
+A speed number without hull, prop, mounting height, load and water conditions is entertainment. It isn't a buying specification.
+
+### Assuming Pro XS guarantees a big speed gain
+
+It can make a responsive hull feel sharper. It can't rescue a poor setup or turn a heavy pontoon into a bass boat.
+
+## Where the 115 Is the Right Answer
+
+The 115 makes sense when:
+
+- the capacity plate allows it
+- the current motor leaves the boat working too hard with its normal load
+- a 90 and 115 share a suitable physical fit, but the owner wants more loaded performance
+- the boat doesn't need the size and weight of the 150 class
+- a pontoon needs a properly propped 115 Command Thrust
+- the owner wants a mature, quiet four-stroke for a repower
+
+Boat length alone is not enough. Two 18 ft boats can differ dramatically in hull shape, dry weight, batteries, livewells and expected load.
+
+If you are choosing between the 90, 115 and 150, read the [115 versus 150 guide](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026) and the [Mercury 90 FourStroke review](/blog/mercury-90-hp-fourstroke-review-ontario). Then check the boat's rating and normal load.
+
+## Where the 115 Is the Wrong Answer
+
+Skip it when:
+
+- the capacity plate stops at 90 HP
+- a normal loaded test shows the hull genuinely needs the 150 class
+- the customer expects a heavy tritoon to run like a light fishing boat
+- the owner wants maximum performance but won't finish the prop and mounting work
+- the boat already performs properly and the repower case rests only on a hoped-for speed number
+
+Mercury's current 150 FourStroke is a larger 3.0-litre inline-four. It is not a V6. It is a different engine family with a different physical and price class.
+
+The correct question isn't “Can we hang a 115 on it?” The question is “Will this boat run properly with its normal load?”
+
+## What We See at HBW
+
+The propeller allowance in our quote builder is there for a reason.
+
+At HBW, motor pricing from 25 HP and up doesn't include a propeller. We match the starting prop to the boat, then check the result during water testing. If a customer already has a suitable prop, we can account for that, but “it fits the shaft” doesn't mean it is the right prop.
+
+We check:
+
+- full-throttle rpm with the engine trimmed properly
+- acceleration with a realistic load
+- grip in turns
+- ventilation
+- steering and engine height
+- whether the boat carries its normal load without making the motor labour
+
+Top speed is only one line on that list. The more important result is a motor running in its intended range without giving away control or loaded performance.
+
+That is also why we won't recommend Command Thrust on a recreational V-hull just because it sounds like the stronger version. The correct gearcase is the one that fits the application.
+
+## Reliability and Ownership Reality
+
+In the current-generation manufacturer tests, trade reviews and owner reports examined for this article, we did not identify a well-documented recurring failure pattern.
+
+That doesn't mean no owner has ever had a repair. Public owner material includes isolated power-loss complaints, an individual voltage-regulator repair and other one-off problems. It doesn't add up to a defensible trend.
+
+The more honest reliability conclusion is simple: the 2.1-litre platform has been in market since 2014, and the sources examined did not establish a recurring fault that should drive a buyer away from it. That is not proof that none exists, and it is not a reliability guarantee.
+
+Regular maintenance still matters. So do clean fuel, correct oil, cooling-system care and winterization. A mature engine design can't compensate for water in the fuel or an ignored overheat warning.
 
 ---
 
-## What We'd Actually Recommend
+## Ready to Price the Right 115?
 
-**17, 20 ft aluminum fishing boat, Ontario buyer wanting real headroom without going V6:** 115 ELPT FourStroke. Standard gearcase.
+Build the boat and motor together. The quote builder shows the current Canadian motor price and lets you account for installation, controls, propeller needs, trade-in and available programs.
 
-**Mid-to-large pontoon, 20, 24 ft, normal cottage loads:** 115 ELPT Command Thrust.
+**Build a quote:** [Mercury motor selection](https://www.mercuryrepower.ca/quote/motor-selection)
 
-**Same boat but you want hole-shot and run a tournament or performance fishing platform:** 115 Pro XS. Different motor, different price, worth asking about specifically.
+**Phone:** 905-342-2153
 
-If you buy from us, we service it. For engine repairs, we only work on Mercury and Mercruiser.
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
----
+**Related guides:**
 
-*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
-
-## Build a Quote
-
-See the 115 ELPT, 115 CT, and 115 Pro XS side by side at mercuryrepower.ca. Real CAD prices, real configurations, no "call for quote" games.
-
-Questions about which version fits your boat? Call 905-342-2153 or submit a service request at hbw.wiki/service.
-
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+- [Mercury Command Thrust: The Real Story](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull)
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Mercury 115 vs 150 HP: Honest Ontario Guide](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
+- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario)
+- [Mercury FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ---
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
 
----
+## Sources and Review Notes
+
+This review uses current-family evidence only. Performance numbers remain attached to the boat, propeller and test setup that produced them.
+
+- [Mercury Canada 2.1 L 75–115 maintenance-kit identification](https://www.mercurymarine.com/ca/en/product/mercury-8m0097855-21l-75-115hp-fourstroke-300-hour-maintenance-kit)
+- [Mercury Canada FourStroke family](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
+- [Mercury 75–115 FourStroke and 115 Pro XS owner manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
+- [Mercury history of the 75–115 FourStroke family](https://www.mercurymarine.com/nz/en/lifestyle/dockline/mercury-releases-new-mercury-40---115hp-tiller)
+- [Mercury confirmation of the 115 Pro XS 2016 launch](https://www.mercurymarine.com/ch/fr/about-us/news/mercury-marine-announces-new-150-pro-xs-outboard)
+- [Mercury 189XF test](https://performancedata.mercurymarine.com/performance-test/144)
+- [Mercury 1750 Hawk test](https://performancedata.mercurymarine.com/performance-test/132)
+- [Mercury 1750 Super Hawk test](https://performancedata.mercurymarine.com/performance-test/134)
+- [Mercury 2070 Retriever test](https://performancedata.mercurymarine.com/performance-test/150)
+- [Mercury Manitou pontoon test](https://performancedata.mercurymarine.com/performance-test/244)
+- [BoatDealers.ca Princecraft Sportfisher 21-4S test (2025)](https://www.boatdealers.ca/boat-reviews/%32%30%32%35/princecraft/sportfisher-21-4s)
+- [Boating Magazine 115 Pro XS test](https://www.boatingmag.com/mercury-115-pro-xs/)
+- [19/20/21-pitch 115 Pro XS owner test](https://www.youtube.com/watch?v=HblsKMvjxCU)
+- [Tracker 190 TX 115 Pro XS prop testing](https://www.youtube.com/watch?v=mDAhI53xUB0)
+- [115 Pro XS Command Thrust pontoon prop test](https://forums.iboats.com/threads/115-pro-xs-command-thrust-on-a-pontoon-prop.750820/)
+
+All speed and acceleration results vary by boat, propeller, load, mounting and conditions. Current prices come from the live HBW pricing reference, not this article.
+
+Harris Boat Works sells, installs and services Mercury outboards in Gores Landing, Ontario.
 
 ## FAQs
 
-### How much does the Mercury 115 HP FourStroke weigh?
+### Is the current Mercury 115 FourStroke a new engine design?
 
-359 lb dry for the standard ELPT. 363 lb for the Command Thrust version. Mercury claims it's the lightest 115 HP outboard available.
+No. The current 2.1-litre 75/90/115 family dates to 2014, and the 115 Pro XS joined it in 2016. Current buyers are getting a mature platform, not an untested first-year redesign.
 
-### What's the difference between the 115 FourStroke and the 115 Pro XS?
+### What is the difference between the Mercury 115 FourStroke and 115 Pro XS?
 
-Same 2.1L powerhead, different tuning. The Pro XS is calibrated for hole-shot and high-RPM performance with a sport gearcase. The standard FourStroke is the daily-driver tuning.
+They share the same 2.1-litre inline-four platform. The standard FourStroke operates from 5,000 to 6,000 rpm at wide-open throttle. The Pro XS uses performance-oriented calibration and a 5,300 to 6,300 rpm range.
 
-### Is the 115 enough for a 19 ft aluminum boat?
+### Does the 115 Pro XS come with Command Thrust?
 
-For most 19 ft aluminum fishing boats with normal loads, yes. If you regularly run heavy (four people, full livewell, kicker, batteries, multiple tackle stations), the 115 is at the edge of what it can comfortably do.
+Yes. The current Canadian lineup includes 115 Pro XS models with the standard gearcase and with Command Thrust. The standard gearcase belongs on most recreational V-hulls; Pro XS Command Thrust is mainly useful for pontoons and specific heavy-duty setups.
 
-### Will a 115 plane my 22 ft pontoon?
+### Is Command Thrust better on a V-hull?
 
-With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is the standard answer for 20-22 ft pontoons. 24 ft and up, you want the 150 V6.
+Usually not. Command Thrust turns a larger propeller through a lower 2.38:1 ratio, which helps a pontoon or heavy workboat carry load. Its larger case also creates more drag, so the standard 2.07:1 gearcase is normally the right choice for a recreational V-hull.
 
-### What's the warranty?
+### How fast will a Mercury 115 go?
 
-3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
+There is no honest single answer. An official Manitou pontoon test recorded 26.2 mph, while an official Crestliner 1750 Hawk test recorded 46.9 mph. Those are results for those exact boats, props, loads and conditions, not forecasts for another boat.
 
-### Is the 115 fuel injected?
+### How much does a Mercury 115 FourStroke weigh?
 
-Yes. All Mercury 115 HP FourStrokes use EFI. Significantly cleaner running and more fuel-efficient than the older OptiMax and two-stroke 115s most of these motors are replacing.
+Mercury lists the lightest 20-inch 115 configurations at roughly 360 to 364 lb, depending on gearcase and market specification. Confirm the exact model code when ordering.
 
-### Does the 115 work with SmartCraft gauges?
+### What propeller does a Mercury 115 need?
 
-Yes. Full SmartCraft integration is available. NMEA 2000, SmartCraft Connect Mobile (formerly VesselView Mobile), Active Trim. Common upgrade during repower.
+It depends on the boat, load and gearcase. Start with a matched recommendation, then verify wide-open-throttle rpm and handling during a water test.
 
-### Can I get a 115 HP in counter-rotation?
+### Is the Mercury 115 reliable?
 
-Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because twin 115s are unusual on Rice Lake boats, but available for the right application.
+The current 2.1-litre family has been in use since 2014. In the manufacturer tests, trade reviews and owner reports examined for this article, we did not identify a well-documented recurring current-generation failure pattern. That is not a reliability guarantee.
+
+### What does a Mercury 115 cost in Canada?
+
+Pricing varies by calibration, gearcase, shaft length and current Mercury programs. Use the live Canadian Mercury pricing reference for current HBW pricing, then build a complete quote with controls, rigging, propeller and installation.
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario), 90 HP FourStroke review
 - [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 
 ## Next steps
 
@@ -235,4 +348,3 @@ Yes. Mercury makes a 115 CXL for twin-engine setups. Less common at HBW because 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
