@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "a3e56e75111618e20860",
+  "sourceVersion": "dcd437ea383a50093e0f",
   "count": 197,
   "articles": [
     {
@@ -3383,20 +3383,20 @@
       ],
       "faqs": [
         {
-          "q": "What should I expect from a Mercury Premier Dealer?",
-          "a": "Confirm the current dealer designation, then verify the capabilities that matter for your job. At HBW, Premier Dealer status sits alongside Mercury-trained technicians, Mercury-specific diagnostic tooling, deep Mercury and MerCruiser parts inventory, complete written pricing, and an on-water test before every repower…"
+          "q": "What makes a Mercury dealer trustworthy?",
+          "a": "Look for consistent communication, a clear written scope, careful installation and testing, useful support after delivery, and a reputation that holds up across recent reviews and repeat customers. A manufacturer designation can support that picture, but it cannot replace it."
+        },
+        {
+          "q": "Why does staff consistency matter at a boat dealership?",
+          "a": "A consistent team carries knowledge from one season to the next, reduces handoff gaps, and helps the shop build a useful history of your boat. Customers spend less time starting over, and the people doing the work remain accountable for the relationship after pickup."
+        },
+        {
+          "q": "What matters more than a dealer badge?",
+          "a": "Look at the dealership's reputation, people, communication, written scope, technical capability, testing process, and long-term support. A manufacturer designation can support those qualities, but customers should still judge the actual experience directly."
         },
         {
           "q": "Is Mercury motor pricing the same at all Ontario dealers?",
-          "a": "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request."
-        },
-        {
-          "q": "How do I confirm a dealer's Mercury designation?",
-          "a": "Ask the dealer to confirm its current Mercury authorization and designation, then verify the technician, tooling, parts, and service scope for your specific motor. Dealer status and job-specific capability are related, but they are not interchangeable."
-        },
-        {
-          "q": "Does dealer status change my Mercury warranty?",
-          "a": "No. Dealer status does not change a customer's factory warranty rights or guarantee claim approval. For warranty assessment, diagnostics, or a repower, confirm that the shop has the authorization, trained technicians, tooling, parts, and current capacity for the work."
+          "a": "Advertised motor prices may be similar, but the complete cost can differ because controls, rigging, steering, propeller selection, removal, installation, testing, freight, prep, taxes, warranty products, and trade-in values vary. Compare complete written scopes, not headline prices."
         }
       ]
     },
