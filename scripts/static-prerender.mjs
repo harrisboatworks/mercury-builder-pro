@@ -3340,7 +3340,8 @@ const motorPageRoutes = motorRecords
         `<tr><th scope="row">Warranty</th><td>3-year factory warranty; bonus coverage only while an eligible promotion is active</td></tr>` +
         `<tr><th scope="row">Pickup</th><td>Gores Landing, ON (no shipping)</td></tr>` +
         '</tbody></table>' +
-        `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this motor →</a></p>`,
+        `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this motor →</a></p>` +
+        '<p><a href="/maintenance">Mercury service and maintenance at our Gores Landing shop →</a></p>',
     };
   });
 
@@ -3914,12 +3915,12 @@ const HUB_DEFS = [
   },
   {
     path: '/maintenance',
-    lastReviewedISO: '2026-07-13',
+    lastReviewedISO: '2026-07-26',
     metaTitle: 'Mercury Outboard Repair & Maintenance Ontario | HBW',
     metaDescription: 'Mercury outboard repair, seasonal maintenance, and troubleshooting from a Mercury Premier Dealer in Ontario. Spring commissioning, winterization, and diagnostics.',
     breadcrumbName: 'Mercury Maintenance',
     h1: 'Mercury Outboard Repair & Maintenance Guide for Ontario (2026)',
-    intro: 'Mercury outboard repair and maintenance in Ontario follows a four-part seasonal cycle: spring commissioning (April-May), summer mid-season check (July if running heavy hours), fall winterization (October-November), and winter storage. Skipped winterization is the leading cause of motor failure we see at HBW. Annual maintenance costs less than a single major repair on a neglected motor.',
+    intro: "Mercury outboard repair and maintenance in Ontario follows a four-part seasonal cycle: spring commissioning (April-May), summer mid-season check (July if running heavy hours), fall winterization (October-November), and winter storage. Regular service and proper storage preparation help prevent avoidable fuel, cooling, battery, and freeze-related problems. The exact interval, parts, lubricant, and fluid specification depends on the engine model and serial number, so the owner's manual for that engine is the controlling source. For most recreational models, schedule service at 100 hours or at least annually, whichever comes first. Physical service work pauses from December 1 until the marina reopens in early April; quotes and planning can continue during the closure.",
     table: {
       caption: 'Annual Mercury Service Cycle',
       columns: [
@@ -3930,8 +3931,8 @@ const HUB_DEFS = [
       rows: [
         { season: 'Spring (April-May)', service: 'Commissioning: battery, fuel, cooling, spark, fluids', crit: 'Yes' },
         { season: 'Summer (July)', service: 'Mid-season check (heavy use only)', crit: 'Optional' },
-        { season: 'Fall (Oct-Nov)', service: 'Winterization: stabilize fuel, fog engine, drain gearcase', crit: 'Critical' },
-        { season: 'Winter', service: 'Storage: monthly visual check, battery trickle', crit: 'Light' },
+        { season: 'Fall (Oct-Nov)', service: 'Winterization: treat fuel, change gearcase lubricant, follow the model-specific storage procedure', crit: 'Critical' },
+        { season: 'Winter', service: 'Storage: visual checks and battery care for your setup', crit: 'Light' },
       ],
     },
     articleGroups: [
@@ -3962,15 +3963,15 @@ const HUB_DEFS = [
       ]},
     ],
     faqs: [
-      { question: 'How often should I service my Mercury?', answer: 'Annually at minimum. Spring commissioning to bring the motor back from winter, fall winterization to put it away. Boaters running 200+ hours per season should add a mid-season check in July.' },
-      { question: "What's the most important Mercury maintenance task?", answer: 'Winterization. Skipping winterization is the single most common cause of motor failure we see at HBW. Done right, it protects against freeze damage, fuel system gum-up, and corrosion through the storage period.' },
+      { question: 'How often should I service my Mercury?', answer: "Follow the maintenance schedule for your exact engine model and serial number. For most recreational Mercury outboards, schedule service at 100 hours or at least annually, whichever comes first, plus proper storage preparation before freezing weather. High-hour and commercial use may require more frequent service." },
+      { question: "What's the most important Mercury maintenance task?", answer: "There is no single task that replaces the full schedule. Use the owner's manual for your exact engine, keep up with annual or 100-hour service, and prepare the fuel, cooling, battery, and gearcase systems properly before winter storage." },
       { question: 'How much does Mercury maintenance cost?', answer: "Varies by motor size, boat type, and what's included. Basic spring commissioning plus fall winterization is the smallest bill. Bundles with impeller replacement, anode replacement, and other wear items run more." },
       { question: 'Can I service my own Mercury?', answer: 'Some service yes, especially fluid changes, plug inspection, and visual maintenance. Tasks like water-pump impeller replacement, EFI fuel system service, and lower-unit work should be left to a Mercury dealer.' },
-      { question: 'How long does a Mercury last with proper maintenance?', answer: "Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that's 10 to 30 years." },
-      { question: 'What kind of oil does my Mercury need?', answer: "Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different specifications. Check your owner's manual or contact HBW." },
-      { question: "Why won't my Mercury start in spring?", answer: 'Most spring no-starts are battery (40%), stale fuel (25%), or skipped winterization (20%). Run through the basics first.' },
+      { question: 'How long does a Mercury last with proper maintenance?', answer: 'There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim.' },
+      { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
+      { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
       { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
-      { question: 'Do you repair Mercury outboards?', answer: "Yes. Mercury and MerCruiser engine repair is what our shop does all season: diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Start with a service request at hbw.wiki/service, tell us the symptoms, and we'll get it on the bench." },
+      { question: 'Do you repair Mercury outboards?', answer: 'Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service.' },
     ],
   },
   {
@@ -6019,6 +6020,7 @@ function motorMarkdown(m) {
     `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
     '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
+    `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
   ].filter(l => l !== null);
 
   return lines.join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
@@ -6207,6 +6209,11 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     `- llms.txt: ${SITE_URL}/llms.txt`,
     `- Sitemap (HTML, for search engines): ${SITE_URL}/sitemap.xml`,
     '',
+    '## Service and maintenance',
+    '',
+    `- [Mercury service and maintenance index](${SITE_URL}/maintenance.md), with shop boundaries, service intake, maintenance guidance, and links to current Ontario troubleshooting and cost guides.`,
+    `- Human maintenance hub: ${SITE_URL}/maintenance`,
+    '',
     '## Motors',
     '',
     motorTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n'),
@@ -6285,7 +6292,7 @@ const catalogBlogTwinSummaries = [
 
 writeMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, catalogBlogTwinSummaries));
 
-console.log(`[static-prerender] ✓ markdown twins written: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${catalogBlogTwinSummaries.length} blog guide links, 1 catalog`);
+console.log(`[static-prerender] ✓ markdown twins written: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${catalogBlogTwinSummaries.length} blog guide links, 1 catalog, 1 service index`);
 
 // ============================================================
 // Hardened post-build verification, fail the build on any issue.
@@ -6546,6 +6553,8 @@ verifyMd({
     '## Locations',
     '## Guides (Blog)',
     '## Pricing reference',
+    '## Service and maintenance',
+    'maintenance.md',
     'pricing-reference.md',
     'mercury-product-protection.md',
     '## What we do NOT offer',
@@ -6553,6 +6562,21 @@ verifyMd({
     'CAD',
     'Pickup only',
     'mcp.json',
+  ],
+});
+
+verifyMd({
+  relPath: '/maintenance.md',
+  label: 'Mercury service and maintenance index',
+  requireSubstrings: [
+    'content_type: service_index',
+    'service_dropoff_only: true',
+    'mobile_service: false',
+    'Mercury and MerCruiser',
+    '100-hour',
+    'Outdoor storage',
+    'reopens in early April',
+    'hbw.wiki/service',
   ],
 });
 
@@ -6612,4 +6636,4 @@ if (verifyErrors.length > 0) {
   for (const e of verifyErrors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`[static-prerender] ✓ Verification passed - ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, ${motorTwinSummaries.length}+${caseStudyTwinSummaries.length}+${locationTwinSummaries.length}+1 markdown twins, Verado consistent, ai.txt clean.`);
+console.log(`[static-prerender] ✓ Verification passed - ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, ${motorTwinSummaries.length}+${caseStudyTwinSummaries.length}+${locationTwinSummaries.length}+2 markdown twins, Verado consistent, ai.txt clean.`);

@@ -576,6 +576,10 @@
       "destination": "/catalog.md"
     },
     {
+      "source": "/maintenance.md",
+      "destination": "/maintenance.md"
+    },
+    {
       "source": "/motors/:slug.md",
       "destination": "/motors/:slug.md"
     },
@@ -982,6 +986,27 @@
     },
     {
       "source": "/catalog.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/maintenance.md",
       "headers": [
         {
           "key": "Content-Type",
