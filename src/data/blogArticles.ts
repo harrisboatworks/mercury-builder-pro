@@ -21329,7 +21329,7 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
     imageAlt: 'Aerial view of Harris Boat Works marina and service facilities on Rice Lake in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-07-26',
+    dateModified: '2026-07-25',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
     readTime: '9 min read',
