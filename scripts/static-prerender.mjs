@@ -6396,6 +6396,10 @@ if (motorPageRoutes.length > 0) {
     if (!/<title[^>]*>[^<]*Mercury[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing/wrong.`);
     if (!/<title[^>]*>[^<]*Harris Boat Works in Gores Landing, Ontario[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing "Harris Boat Works in Gores Landing, Ontario" location tail.`);
     if (!/<title[^>]*>[^<]*(In Stock|Special Order) at Harris Boat Works[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing stock/special-order marker.`);
+    const motorTitleMatch = sampleHtml.match(/<title[^>]*>([^<]*)<\/title>/i);
+    if (motorTitleMatch && /[\u2013\u2014]/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains an em/en dash — HBW copy rules require plain ASCII " - " separators.`);
+    if (motorTitleMatch && /  /.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains a double space.`);
+    if (motorTitleMatch && /-\s+-\s+/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> has a dangling " - - " separator.`);
     if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
     if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
   }
