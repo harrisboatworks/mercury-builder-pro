@@ -298,10 +298,11 @@ export default function MotorPage() {
   const schemaImage = toAbsoluteImageUrl(image);
 
   // Title pattern (competitor-parity, city in ranked position for AI answer engines):
-  //   {YEAR} Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
+  //   Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
   // Kept in sync with scripts/static-prerender.mjs for SPA-nav parity.
   // No em dashes anywhere (HBW brand rule); all separators are ASCII " - " or ", ".
-  const yearPart = motor.year ? `${motor.year} ` : '';
+  // year intentionally omitted: motor_models.year is stamped at ingest and does not track
+  // Mercury's July 1 model-year rollover. Do not re-add until the column is verified.
   const hpPart = hp ? `${hp}HP` : '';
   const shaftPart = shaft ? `${shaft} Shaft` : '';
   const startPart = motor.start_type ? String(motor.start_type).trim() : '';
@@ -310,8 +311,8 @@ export default function MotorPage() {
   const stockTail = inStock
     ? 'In Stock at Harris Boat Works in Gores Landing, Ontario'
     : 'Special Order at Harris Boat Works in Gores Landing, Ontario';
-  const title = `${yearPart}Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
-  const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: ${motor.year ? `${motor.year} ` : ''}Mercury ${family} ${hp} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${price ? `${formatCAD(price)} CAD` : 'Contact for pricing'}. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
+  const title = `Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
+  const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: Mercury ${family} ${hp} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${price ? `${formatCAD(price)} CAD` : 'Contact for pricing'}. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
 
   // Per-motor social preview tags. og:title format from SEO batch:
   // "{Motor name} | Price in CAD | Harris Boat Works" (trimmed to fit).
