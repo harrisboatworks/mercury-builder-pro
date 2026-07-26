@@ -106,13 +106,7 @@ export default function RepowerHub() {
       directAnswer={
         <>
           <p className="mb-4">
-            If you are looking for a boat repower in Ontario, you have come to
-            the right place. Harris Boat Works has been a Mercury dealer since
-            1965 and holds Mercury&apos;s Premier tier today. Family-owned
-            since 1947, we handle every boat engine repower from start to
-            finish, right here at our marina on Rice Lake. Bring your boat to
-            Gores Landing and we will get you back on the water with a new
-            Mercury outboard.
+            Harris Boat Works is a <strong>Mercury Marine Premier dealer</strong> and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization. Bring your boat to Gores Landing and we will get you back on the water with a new Mercury outboard.
           </p>
           A boat repower means replacing your existing outboard with a new
           Mercury on your current boat. For most Ontario freshwater customers
