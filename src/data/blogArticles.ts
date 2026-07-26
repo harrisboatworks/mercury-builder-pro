@@ -11474,6 +11474,200 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   // Week 52: December 28, 2026
   {
+    slug: '2026-mercury-model-preview',
+    title: 'Mercury 2027 Outboard Preview Guide',
+    seoTitle: 'Mercury 2027 Outboard Preview: What is New',
+    description: 'Mercury\'s 2027 model year is here as of July 1, 2026. What we know is changing, what isn\'t, and how to decide between remaining 2026 stock or the new 2027 lineup.',
+    image: '/lovable-uploads/2027_Mercury_Preview.png',
+    imageAlt: 'Black Mercury outboard on a Harris pontoon boat on an Ontario lake for the 2027 model year preview.',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Buying Guide',
+    readTime: '~9 min read',
+    keywords: ['2027 mercury outboard', 'mercury model year change', 'buy 2026 or wait 2027 mercury', 'mercury preview ontario', 'mercury repower 2027'],
+    content: `
+# Mercury 2027 Outboard Preview: What's Changing, What's Not, and How to Decide
+
+*Last reviewed: 2026-05-13*
+
+> **Quick answer:** Mercury's model year flips to 2027 on July 1, 2026. The motor sitting on the dealer floor on June 30 becomes "previous gen" on July 1, even if the spec sheet is identical. For most repower customers, the decision isn't 2026 vs 2027, it's "lock in current pricing and a slot in our spring install schedule now" or "wait to see what the official 2027 announcements bring." Build your quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) to see your number on either path.
+
+If you're shopping for a new Mercury this summer, the calendar is doing something to the conversation. July 1 is Mercury's model year flip. On that date the current 2026 lineup becomes "previous gen" and 2027 specs start trickling out from Mercury Marine.
+
+The question we're getting at the shop: do I lock in a 2026 now, or wait?
+
+Honest answer, before we get into the details: for most repower customers, the model year flip matters less than they think. Here's what actually changes, what doesn't, and how to make the call.
+
+## Quick recommendation
+
+If you need the motor on the water this summer or next spring, build a quote on the current 2027 lineup and lock it in. Pricing is set, inventory is real, and spring 2027 install slots fill before Christmas. Every new Mercury includes the standard factory warranty; current bonus coverage or financing offers are always posted at [mercuryrepower.ca/promotions](/promotions). If you're 12+ months out and the 2027 spec sheet might change your decision, watch the announcements and revisit. Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+
+## What Actually Changes at the Model Year Flip
+
+The Mercury model year date is a calendar event, not a redesign event. Most years, the difference between a 2026 and a 2027 motor of the same family is incremental: refined controls, a software revision, an updated cowl colour, a couple of new SKUs in the lineup.
+
+What typically changes year-to-year:
+
+- **Software and connectivity.** SmartCraft Connect features expand most years. Mobile app integration, gauge software, alarm libraries.
+- **Cosmetic refinements.** Cowl graphics, colour options, decals. Aesthetic, not mechanical.
+- **Lineup additions or retirements.** A new HP variant appears, or a low-volume SKU goes away. Avator electric has been the most active part of the lineup, adding new models year over year.
+- **Pricing.** Mercury's dealer pricing updates with each model year. Sometimes flat, sometimes a modest increase. We post current pricing at [mercuryrepower.ca/pricing-reference](/pricing-reference).
+
+What typically does NOT change in a single model year:
+
+- **Powerhead architecture.** The FourStroke 115 is the same 2.1L inline-4 it was in 2026, and it'll be the same in 2027. The 150 V6 3.0L stays a V6 3.0L. Verado V8/V10/V12 (250-600 HP) remain naturally aspirated, not supercharged.
+- **Gearcase options.** Command Thrust gearcases stay where they are. Pro XS sport gearcase stays where it is.
+- **Mounting patterns and rigging.** A 2027 motor of the same HP rigs to the same transom as a 2026.
+- **Service intervals and parts.** Mercury maintains long parts continuity, your local dealer can service either model year.
+
+The model year flip is a marketing event with real implications for resale and warranty timing, but it's not a redesign of the motors you're shopping.
+
+## What We Expect for 2027 (Honest, Not Speculative)
+
+Mercury hasn't released the full 2027 spec sheet as of this writing. What we expect, based on the direction Mercury has been moving:
+
+- **Continued Avator expansion.** The 7.5e and 20e are out. Larger Avator models are in development. Whether they ship for the 2027 model year depends on Mercury's announcement timing. We're a Mercury Premier dealer and we don't have firm 2027 Avator availability dates yet.
+- **SmartCraft Connect getting deeper.** Mercury's app-and-gauge ecosystem expands with each model year. Expect more remote diagnostics, fuel-flow logging, and integration with chartplotters.
+- **Software-defined performance.** Mercury Boost is the model for what's coming, a software upgrade that takes a Pro XS 150 to 175 HP without hardware changes. Expect more of this approach for 2027. We covered it in [Mercury Boost: Software Upgrade Eligibility for 2026 Models](/blog/mercury-boost-software-upgrade-eligibility-2026).
+- **Pro XS architecture stays put.** The current Pro XS lineup is the Inline-4 150, V6 175-250, V8 300. We don't see Mercury changing that architecture for 2027. The Pro XS V6 powerhead family is current.
+- **No "new flagship V12 V14 surprise."** Verado V12 is the flagship. There's no public roadmap pointing to a larger architecture for the 2027 model year.
+
+If Mercury announces something that changes this picture between now and July 1, we'll update this post and call out the change.
+
+## Buy a 2026 Now vs Wait for 2027: The Honest Framework
+
+Most repower decisions don't actually hinge on the model year. They hinge on three other things.
+
+| Factor | Buy 2026 now | Wait for 2027 |
+|--------|--------------|---------------|
+| Install timing | You want it on the water this summer or next spring | You're flexible on when |
+| Pricing certainty | You want a locked dealer quote today | You're willing to wait for Mercury's 2027 pricing release |
+| Warranty | Standard Mercury factory warranty applies; current bonus offers live on /promotions | Future bonus offers depend on the live promotions page |
+| Tech you want | The 2026 spec sheet meets your needs | You're waiting for a specific feature you've seen previewed (e.g., a new Avator model) |
+| Resale outlook | You plan to keep the boat 5+ years (resale gap closes) | You plan to sell within 2 years (resale gap matters) |
+
+**Buy current inventory if:** You're repowering for use, not for resale. You want to lock the current quote and a spring install slot. The current spec sheet meets your needs. Spring 2027 install bookings start in earnest by October, and the popular SKUs fill first.
+
+**Wait for 2027 if:** You're specifically chasing a 2027-announced feature (a new Avator, a new HP variant). You're outside the install booking pressure window (12+ months out from needing the motor). You're willing to revisit the decision in August when the 2027 spec sheet is public.
+
+For the vast majority of HBW repower customers, the answer is "buy current 2026 now, lock the spring install slot." The flip-date math doesn't change enough to justify a wait.
+
+## Warranty and Promotions
+
+Every new Mercury comes with the standard Mercury factory warranty, and HBW registers it at delivery. Bonus warranty programs are promotion-specific, so the live source is always [current promotions](/promotions), not an older blog post. For the evergreen warranty terms, read [Mercury Outboard Warranty Canada 2026](/blog/mercury-outboard-warranty-canada-2026).
+
+This matters specifically right now because:
+
+1. The warranty you can count on in every quote is Mercury's standard factory coverage.
+2. Any bonus coverage depends on the current promotion in force when we write the quote.
+3. Extended protection beyond the standard factory period is available separately through Mercury Product Protection.
+
+## Pricing and Trade-In Through the Flip
+
+If you're repowering, the trade-in tool already accounts for the model year transition. Old Mercurys retain trade value through the flip because the same boats want the same motors. A clean documented Mercury 90 EFI from 2018 is worth what it's worth whether the new model year is 2026 or 2027.
+
+Two tools to run your own numbers:
+
+- **Instant trade estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value). Brand, year, model, condition, current value in seconds.
+- **Repower quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection). Stack the trade against a 2026 quote, see the HST-adjusted total, lock it in.
+
+If you'd rather see Mercury's current 2026 dealer pricing in one view before building a quote, the full reference is at [mercuryrepower.ca/pricing-reference](/pricing-reference). We update it when Mercury updates dealer pricing.
+
+## What HBW Sees on Model Year Transitions
+
+We've seen 60+ Mercury model year flips at HBW since we became a Mercury dealer in 1965. The pattern is consistent.
+
+- **Pre-flip surge (June).** Customers who wanted "this year's motor" rush to lock orders before July 1. Inventory tightens on popular HP classes (90, 115, 150) toward the back of the month.
+- **Quiet transition (July).** Mercury issues the official 2027 announcements, dealer training rolls out, the new lineup specs go live. New SKUs typically don't physically ship until August at the earliest.
+- **Fall booking pressure (September-November).** Spring 2027 install slots get booked. Customers who waited for the 2027 announcement now lock orders. The mix of "buying 2027 now" vs "buying current at a model year flip discount" depends on what Mercury announced.
+- **Winter ordering (December-March).** Our shop is closed roughly December 1 to April 1, but we are on phone and email all winter taking orders, locking pricing, and reserving spring install slots. Motors ordered now are on hand for an early-April install when we reopen.
+
+If you're in the GTA or east Toronto and thinking about a repower, the call we'd make in late June is straightforward: get the quote built now, decide whether the 2027 unknowns are worth the wait, and lock the spring install slot either way.
+
+## Common Mistakes Around Model Year Transitions
+
+- **Waiting "to see" without a specific feature in mind.** If you can't name the 2027 feature you're chasing, you're not waiting for anything. Build the quote.
+- **Assuming a major redesign.** Mercury doesn't usually redesign powerhead architecture between model years. The 2027 FourStroke 150 is the 2026 FourStroke 150 with a different decal until proven otherwise.
+- **Skipping the trade-in math.** Your old motor doesn't lose value at the flip. The HST savings on the trade still work the same way. Don't leave that money on the table because you're focused on the new motor side of the deal.
+- **Waiting until April to book the install.** If you need the boat for opener, get your order in over winter so the install can start as soon as we reopen in early April. Spring slots fill fast. Quote and book early.
+- **Confusing the model year flip with a price drop.** Sometimes there's a closeout discount on remaining 2026 inventory, sometimes there isn't, depends on Mercury's program. Don't bank on it.
+
+## Frequently Asked Questions
+
+**When does Mercury officially release the 2027 lineup?**
+Mercury's model year flips July 1, 2026. Official 2027 announcements and dealer-facing spec sheets typically follow over the summer. Physical 2027 inventory usually ships starting late summer or early fall, depending on the model. For HBW customers, the practical date is when we can place a 2027 order with confirmed pricing and ETA, which is typically mid-to-late summer.
+
+**Will Mercury 2026 motors go on closeout when 2027 arrives?**
+Sometimes. Mercury's promotional calendar varies year to year. There may be a 2026 closeout incentive in late summer, there may not. We'll quote what's available at the time. If a closeout is active, we apply it transparently in the quote. Don't pre-bet on a closeout, build your quote on current pricing and let any incentive come off the top.
+
+**Is a 2026 Mercury still "current" after July 1?**
+Mechanically and warranty-wise, yes. A new Mercury 2026 sold after July 1 still carries the standard 3-year factory warranty starting from your purchase date, plus HBW's 4 years of bonus coverage. The 2026 designation matters for resale framing (it'll show as "previous gen" on used listings 5 years from now) but does not affect the motor's quality, parts continuity, or service eligibility.
+
+**Will bonus warranty coverage carry into 2027 model year motors?**
+Bonus coverage depends on the live promotion in force when we quote. Every new Mercury carries the standard factory warranty, and any current dealer bonus is posted at [current promotions](/promotions).
+
+**Should I wait for a new Avator model?**
+Depends on what you're shopping. The Avator 7.5e and 20e are the current production models. Larger Avators (like a 35e or 50e) have been previewed but aren't yet shipping at the dealer level as of June 2026. If you're considering an Avator-class repower, talk to us, we'll let you know what's actually available and what's still on the announcement track. Our [Avator vs Torqeedo comparison](/blog/mercury-avator-vs-torqeedo) covers the current Avator lineup in detail.
+
+**Does the model year flip affect my old motor's trade value?**
+Not meaningfully. Used outboard trade values move with the motor's brand, age, hours, and condition, not with the new motor's model year. A clean Mercury 115 EFI from 2018 trades for what it trades for regardless of whether the new lineup is 2026 or 2027. Run the [trade-in estimator](/trade-in-value) for your specific motor.
+
+**Can I order a 2027 Mercury now and have it installed in spring?**
+Yes, once Mercury releases 2027 pricing and order books open (typically late summer). We can take pre-orders against the 2027 lineup with a deposit, lock in spring install slots, and confirm pricing when the dealer pricelist drops. If you want to be at the front of the line for a specific 2027 model, the order conversation can start now.
+
+**Should I trade in my old motor before July 1?**
+The HST math is the same on either side of the flip. The slight argument for trading before July 1 is that your old motor goes onto our reconditioning bench while the 2026 vs 2027 talk is still active, which sometimes means a stronger resale margin on our end and a slightly better offer to you. Marginal effect, not a deal-breaker. Most customers trade when the new motor is being installed, not in anticipation of the flip.
+
+## Ready to See Your Number?
+
+The model year flip doesn't change the basic question: what motor do you want, what does the install cost, what's your trade worth, and when do you want to be on the water.
+
+**Build your repower quote (current 2026 lineup):** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
+**Instant trade-in estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value)
+**Current Mercury dealer pricing reference:** [mercuryrepower.ca/pricing-reference](/pricing-reference)
+**Call us for a 2027 pre-order conversation:** 905-342-2153
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+    `,
+    faqs: [
+      {
+        question: 'When does Mercury officially release the 2027 lineup?',
+        answer: 'Mercury\'s model year flips July 1, 2026. Official 2027 announcements and dealer-facing spec sheets typically follow over the summer. Physical 2027 inventory usually ships starting late summer or early fall, depending on the model. For HBW customers, the practical date is when we can place a 2027 order with confirmed pricing and ETA, which is typically mid-to-late summer.'
+      },
+      {
+        question: 'Will Mercury 2026 motors go on closeout when 2027 arrives?',
+        answer: 'Sometimes. Mercury\'s promotional calendar varies year to year. There may be a 2026 closeout incentive in late summer, there may not. We\'ll quote what\'s available at the time. If a closeout is active, we apply it transparently in the quote. Don\'t pre-bet on a closeout, build your quote on current pricing and let any incentive come off the top.'
+      },
+      {
+        question: 'Is a 2026 Mercury still "current" after July 1?',
+        answer: 'Mechanically and warranty-wise, yes. A new Mercury 2026 sold after July 1 still carries the standard 3-year factory warranty starting from your purchase date. Any bonus coverage depends on the current promotion in force when we quote. The 2026 designation matters for resale framing (it\'ll show as "previous gen" on used listings 5 years from now) but does not affect the motor\'s quality, parts continuity, or service eligibility.'
+      },
+      {
+        question: 'Will bonus warranty coverage carry into 2027 model year motors?',
+        answer: 'Bonus coverage depends on the live promotion in force when we quote. Every new Mercury carries the standard factory warranty, and any current dealer bonus is posted at current promotions.'
+      },
+      {
+        question: 'Should I wait for a new Avator model?',
+        answer: 'Depends on what you\'re shopping. The Avator 7.5e and 20e are the current production models. Larger Avators (like a 35e or 50e) have been previewed but aren\'t yet shipping at the dealer level as of June 2026. If you\'re considering an Avator-class repower, talk to us, we\'ll let you know what\'s actually available and what\'s still on the announcement track. Our Avator vs Torqeedo comparison covers the current Avator lineup in detail.'
+      },
+      {
+        question: 'Does the model year flip affect my old motor\'s trade value?',
+        answer: 'Not meaningfully. Used outboard trade values move with the motor\'s brand, age, hours, and condition, not with the new motor\'s model year. A clean Mercury 115 EFI from 2018 trades for what it trades for regardless of whether the new lineup is 2026 or 2027. Run the trade-in estimator for your specific motor.'
+      },
+      {
+        question: 'Can I order a 2027 Mercury now and have it installed in spring?',
+        answer: 'Yes, once Mercury releases 2027 pricing and order books open (typically late summer). We can take pre-orders against the 2027 lineup with a deposit, lock in spring install slots, and confirm pricing when the dealer pricelist drops. If you want to be at the front of the line for a specific 2027 model, the order conversation can start now.'
+      },
+      {
+        question: 'Should I trade in my old motor before July 1?',
+        answer: 'The HST math is the same on either side of the flip. The slight argument for trading before July 1 is that your old motor goes onto our reconditioning bench while the 2026 vs 2027 talk is still active, which sometimes means a stronger resale margin on our end and a slightly better offer to you. Marginal effect, not a deal-breaker. Most customers trade when the new motor is being installed, not in anticipation of the flip.'
+      }
+    ]
+  },
+
+  {
     slug: 'year-end-boat-motor-buying-guide',
     title: 'Best Time to Buy Boat Motor Ontario',
     description: 'When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math.',
@@ -27364,6 +27558,163 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
 
 
+
+
+  {
+    slug: 'mercury-outboard-winterization-service-cost-ontario',
+    relatedSlugs: ['spring-outboard-commissioning-checklist', 'winter-boat-storage-shrinkwrap-vs-indoor-ontario', 'diy-mercury-outboard-winterization-guide'],
+    title: 'Mercury Winterization Cost Ontario',
+    seoTitle: 'Boat Winterization Cost Ontario (2026) | Mercury Outboard Service',
+    description: 'Boat winterization cost in Ontario (2026): typical pricing for Mercury outboard fogging, fluid change, lower-unit oil, lake-tested service at Harris Boat Works.',
+    image: '/lovable-uploads/hero-mercury-winterization-service-cost.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-11',
+    dateModified: '2026-05-11',
+    publishDate: '2026-05-11',
+    category: 'Service & Pricing',
+    readTime: '7 min',
+    keywords: ['mercury outboard winterization cost ontario', 'boat winterization price kawartha', 'shrinkwrap cost ontario per foot', 'mercury winterization service cost', 'boat storage rice lake price', 'harris boat works winterization'],
+    content: `## Quick answer
+
+- **Winterization:** tiered by engine type. We quote per boat, not flat-rate. Live rates on our [winter storage page](https://www.harrisboatworks.ca/winter-storage).
+- **Shrinkwrap only:** $20/ft if done in our shop, $25/ft if done outdoors at the lot.
+- **[Outdoor winter storage](/blog/boat-storage-kawartha-lakes):** includes shrinkwrap, a spring check ($99 value), summer trailer parking ($150 value), and wrap recycling ($35 value). $284 of stuff most marinas charge extra for is bundled in.
+- **Indoor storage:** not offered. HBW is outdoor + shrinkwrap. If you need heated indoor, we'll point you somewhere else honestly.
+- **Size limit:** boats up to 30 feet.
+
+If you just want a quote: [request service](https://hbw.wiki/service). The rest of this page explains the why.
+
+## Mercury winterization cost breakdown (typical 90 to 150 HP)
+
+Tiered by engine. Typical 4-stroke outboard 90 to 150 HP at HBW. Smaller and larger motors scale accordingly.
+
+| Line Item | Typical CAD | Notes |
+|---|---|---|
+| Engine flush + fuel stabilizer | $40 to $70 | Mercury Quickstor added, engine run 10 min to circulate through the full fuel system. |
+| Cylinder fogging (Mercury Storage Seal) | $50 to $90 | Fogged until the engine smokes and stalls. The critical step. Partial fogging means partial protection. |
+| Spark plugs (new, installed) | $60 to $140 | 4 plugs typical on inline 4-cyl, more on V6/V8. OEM Mercury plugs only. |
+| Crankcase oil + filter change | $80 to $150 | Full evacuation while warm. Old oil out, fresh Mercury oil in. |
+| Lower-unit gear oil change + inspection | $50 to $90 | Milky oil means a seal failure caught in fall, not in spring at the launch. |
+| Cooling system drain + battery prep | $50 to $90 | All water out of block. Battery left in the boat, disconnected (or on a maintainer). |
+| **Typical 90 to 150 HP all-in** | **$330 to $630 CAD** | Before HST. |
+
+9.9 HP tiller is lower (about a 90 min job). 250 HP V8 Verado is higher (about a 3 hr job). Sterndrive is its own tier. Request a real quote at [hbw.wiki/service](https://hbw.wiki/service).
+
+## Why we don't quote a flat winterization rate
+
+When you see "$549 winterization" on a competitor's site, that's a marketing simplification. Here's what's actually in scope on a real Mercury winterization, and why the price varies:
+
+**A 9.9 HP 4-stroke tiller** is a 90-minute job: flush, fuel stabilizer, fog the cylinder, drain the cooling system, change the lower-unit oil. One spark plug, two if you're being thorough.
+
+**A 250 HP V8 Verado** is a 3-hour job with four spark plugs, more oil capacity, a bigger lower unit, an electronic fuel system that needs proper SmartCraft attention, and an alternator/voltage regulator that lives in water. Same procedure list, different amount of work.
+
+**A sterndrive (4-cylinder, V6, V8, Bravo)** is a different job again. You're draining the block, the manifolds, the raw-water lines. Adding marine-grade antifreeze in the right places. Checking the gimbal bearing. The lower unit alone is a half-hour of work most outboards don't have.
+
+**A 2-stroke** is its own beast, older fuel/oil mix concerns, premix carb cleaning, different fogging approach.
+
+Most marinas roll all of that into a flat "winterization" rate. You're either paying for work that didn't happen on your motor, or skipping work that should have happened. We'd rather quote you the real job.
+
+## What HBW winterization includes (the procedure, regardless of price tier)
+
+Every Mercury we winterize gets the same procedure list. The time, parts, and tier change with the engine. The steps don't:
+
+1. **Engine flush**, 10 to 15 minutes on muffs with fresh water to clear lake water, silt, and debris
+2. **Fuel stabilizer**, Mercury Quickstor added to fuel, engine run 10 minutes to circulate it through the entire fuel system
+3. **Fogging**, cylinders fogged with Mercury Storage Seal until the engine **smokes and stalls** (this is the critical step, partial fogging means partial protection)
+4. **Spark plugs**, removed, cylinders fogged individually, new plugs installed
+5. **Oil change**, full crankcase oil + filter, drained while warm for full evacuation
+6. **Lower-unit gear oil change**, drained, inspected for water intrusion (milky oil = a seal failure you need to know about), refilled with Mercury High Performance gear oil
+7. **Cooling system drain**, all water out of the block, water passages, tell-tale
+8. **Battery prep**, removed from boat, terminals cleaned, stored on a smart charger in a heated building (cold kills batteries; never leave one in a cold boat)
+
+Skip any of these and you're rolling the dice on a cracked block, a corroded fuel system, or a dead battery you didn't know about until the spring launch ramp. Hard freezes in Ontario do real damage. We've replaced enough cracked powerheads from skipped-step winterizations to know the math doesn't favour shortcuts.
+
+For the full step-by-step, our [DIY Mercury winterization guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization) walks through every step in detail. Most customers read it and then book us anyway. Worth knowing what's happening either way.
+
+## Shrinkwrap pricing (separate from winterization)
+
+Shrinkwrap and winterization are two different jobs. This is the single most expensive confusion in marine storage.
+
+- **Shrinkwrap** is the tight plastic cover. It keeps snow, ice, and squirrels out. It does not protect the engine.
+- **Winterization** is what protects the engine. Without it, the wrap is just keeping snow off a boat that's freezing from the inside.
+
+Customers who handle their own winterization (DIY-ers, repower customers who want to do it themselves, boats stored in someone's barn over winter) sometimes just want the wrap. Here's what that costs at HBW:
+
+| Where shrinkwrap is done | Price | Why |
+|---|---|---|
+| **In our shop** | **$20/ft** | Climate-controlled, no wind, faster work, tighter seams |
+| **Outdoors at the lot** | **$25/ft** | Wind makes the heat-shrink harder, takes longer, more material loss |
+
+So a 20 ft pontoon getting shrinkwrapped in our shop is $400. The same boat wrapped outside at the lot is $500. You can drop it off, get the wrap done, and tow it home to store on your own property if that's the plan. We do this all the time for cottage owners who store at the cottage.
+
+## Outdoor winter storage pricing
+
+If you're going to keep the boat with us through winter, three things get bundled in that most marinas charge extra for:
+
+| Service | Standalone Value | At HBW |
+|---|---|---|
+| **Spring check** (battery, fuel system, lower unit oil, hoses, basic systems) | $99 | Included |
+| **Summer trailer parking** (drop it after launch, pick it up in fall) | $150 | Included |
+| **Shrinkwrap recycling** (instead of landfilling the plastic in spring) | $35 | Included |
+| **Total bundled value** | **$284** | Included |
+
+That $284 in real services bundled into storage matters when you're comparing quotes. A storage rate that looks $200 lower somewhere else often isn't, once you add back what they charge for the spring check and the trailer parking and the wrap disposal.
+
+Live storage rates (per-foot) are on our [winter storage page](https://www.harrisboatworks.ca/winter-storage). They adjust each fall. We'd rather you see the live number than memorize one we update once and forget.
+
+## What HBW doesn't offer
+
+**Indoor heated storage.** We're outdoor only, on a fenced and monitored lot. If you have a high-end fibreglass cruiser with custom paint that you want kept indoors, we'll honestly point you to other shops. For most Rice Lake and Kawartha boats (aluminum fishing boats, pontoons, runabouts), outdoor with proper shrinkwrap is the practical answer at about half the cost of indoor.
+
+**Boats over 30 feet.** We're not taking them right now. We'd rather tell you that up front than waste your fall.
+
+## Extras that come up at the counter
+
+Beyond core winterization, shrinkwrap, and storage:
+
+- **Bio-wash hull cleaning: $10/ft.** Chemical hull clean before wrap. Worth it if the boat picked up zebra mussels, scum line, or stained gel coat over the season.
+- **Pontoon enclosures removal and install: $5/ft.** If you've got a full enclosure that needs to come off before wrap and back on in spring.
+- **Winterization + oil & filter change bundle.** Pre-storage prep done by us. Saves a service appointment in spring.
+
+## How to book
+
+1. Go to [hbw.wiki/service](https://hbw.wiki/service) and submit a service request.
+2. Tell us your motor make/model/HP, boat length, and which services you want (winterization, shrinkwrap, storage, or any combination).
+3. We'll come back with a real quote based on your specific boat.
+4. Book a drop-off slot. August and September are ideal. October works. The last week before freeze-up is when everyone calls at once.
+
+If you want a phone call first: **(905) 342-2153**. Or text **(647) 952-2153**.
+
+---
+
+## Reviewed by
+
+Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
+
+You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+## Related guides
+
+The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)**, start here if you want the complete picture.
+
+Two related guides in the same cluster:
+- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist)
+
+---
+
+Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+`,
+    faqs: [
+      { question: 'How much does Mercury outboard winterization cost in Ontario?', answer: 'It depends on the motor. A small 9.9 HP 4-stroke is a different job than a 250 HP V8 Verado, and a sterndrive is different again. HBW tiers winterization pricing by engine type because the work varies. Live rates are on the HBW winter storage page.' },
+      { question: 'What is included in HBW winterization?', answer: 'Engine flush, fuel stabilizer, fogging until the engine smokes and stalls, new spark plugs, full oil + filter change, lower-unit gear oil change with water-intrusion inspection, cooling system drain, and battery prep. Every step on every motor.' },
+      { question: 'Can I just buy shrinkwrap without winterization?', answer: 'Yes. HBW does shrinkwrap-only for customers who handle their own winterization or store at home. $20/ft in our shop, $25/ft outdoors at the lot. Common with cottage owners who tow the boat home to store on their own property.' },
+      { question: 'Does HBW offer indoor heated storage?', answer: 'No. HBW is outdoor only on a fenced, monitored lot with shrinkwrap. If you specifically need indoor heated, we point customers to other shops in the area honestly rather than upsell on something we do not offer.' },
+      { question: 'What is the boat size limit at HBW for winter storage?', answer: '30 feet. Boats over 30 feet are outside the current HBW storage capacity.' },
+      { question: 'When should I book winterization and storage?', answer: 'August or September is ideal. October still works. The week before freeze-up is when calls stack up and slots disappear. Earlier is always better.' },
+      { question: 'Do I have to use HBW for winterization to use HBW for storage?', answer: 'No. You can DIY winterization and book just shrinkwrap + storage. Or DIY everything and book just storage. HBW will work with whatever has already been done.' },
+    ],
+  },
 
 
   {
