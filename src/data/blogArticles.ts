@@ -21340,6 +21340,8 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
 
 # Best Mercury Dealer in Ontario: The HBW Difference (2026)
 
+Harris Boat Works is a **Mercury Marine Premier dealer** and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization.
+
 Searching for the "best Mercury dealer in Ontario" is really asking a more useful question:
 
 **Who will take care of my boat before, during, and after the sale?**
