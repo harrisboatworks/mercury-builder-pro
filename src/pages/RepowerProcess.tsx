@@ -98,7 +98,7 @@ export default function RepowerProcess() {
       whyHbwIntro="Same techs price the quote and rig the motor. About 85 repowers a year through the same bay."
       whyHbw={[
         { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'We stock the motors', description: 'No Mercury lead time to wait on for most builds.' },
-        { icon: <ListChecks className="h-5 w-5" aria-hidden="true" />, title: '~85 repowers a year', description: 'Same team, same process, same buyers.' },
+        { icon: <ListChecks className="h-5 w-5" aria-hidden="true" />, title: '~85 repowers a year', description: 'The bay runs the same repower workflow week after week, so the drill is familiar to us and predictable for you.' },
         { icon: <Wrench className="h-5 w-5" aria-hidden="true" />, title: 'Same tech quotes and rigs', description: 'No handoffs, no re-explaining.' },
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Water test on Rice Lake', description: 'Real freshwater run before pickup.' },
       ]}
