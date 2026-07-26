@@ -182,7 +182,7 @@ export default function RepowerProcess() {
           <h2>Why It's Fast</h2>
           <ul>
             <li><strong>We stock the motors.</strong> Most Mercurys most customers ask for are already at Gores Landing. No Mercury lead time to wait on.</li>
-            <li><strong>We do about 85 repowers a year.</strong> Same team, same process, same buyers. Everyone knows the drill.</li>
+            <li><strong>We do about 85 repowers a year.</strong> The bay runs this workflow week after week, so nobody is figuring it out for the first time on your boat.</li>
             <li><strong>Same tech quotes and rigs.</strong> Whoever priced your quote is the one who rigs the motor. No handoffs, no re-explaining.</li>
             <li><strong>Water test on our home lake.</strong> Every motor gets a real Rice Lake run before it goes home.</li>
           </ul>
