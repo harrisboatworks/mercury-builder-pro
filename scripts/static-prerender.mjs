@@ -6393,6 +6393,8 @@ if (motorPageRoutes.length > 0) {
     if (!sampleHtml.includes(`href="${expectedCanonical}"`)) verifyErrors.push(`Sample ${sample.path}: canonical missing/wrong.`);
     if (sampleHtml.includes(`rel="canonical" href="${SITE_URL}/"`)) verifyErrors.push(`Sample ${sample.path}: canonicalizes to homepage.`);
     if (!/<title[^>]*>[^<]*Mercury[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing/wrong.`);
+    if (!/<title[^>]*>[^<]*Harris Boat Works in Gores Landing, Ontario[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing "Harris Boat Works in Gores Landing, Ontario" location tail.`);
+    if (!/<title[^>]*>[^<]*(In Stock|Special Order) at Harris Boat Works[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing stock/special-order marker.`);
     if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
     if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
   }
