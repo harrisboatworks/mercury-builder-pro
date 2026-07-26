@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Fails the build if package-lock.json is out of sync with package.json.
 // Node-only — compares declared deps/devDeps/optionalDeps/peerDeps against
-// the root entry in package-lock.json. Catches the common CI failure where
-// `npm ci` rejects a stale lockfile.
+// the root entry in package-lock.json and requires immutable override specs.
+// Catches the common CI failure where `npm ci` rejects a stale lockfile.
 
 import { readFileSync, existsSync } from 'node:fs';
 
@@ -29,6 +29,8 @@ if (lock.name && pkg.name && lock.name !== pkg.name) {
 
 const root = lock.packages?.[''] ?? {};
 const groups = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'];
+const exactVersion =
+  /^(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/;
 
 const errors = [];
 for (const group of groups) {
@@ -50,12 +52,44 @@ for (const group of groups) {
   }
 }
 
+function checkOverrides(overrides, path = []) {
+  for (const [name, spec] of Object.entries(overrides ?? {})) {
+    const overridePath = [...path, name];
+    if (spec && typeof spec === 'object') {
+      checkOverrides(spec, overridePath);
+      continue;
+    }
+    if (
+      typeof spec === 'string' &&
+      !spec.startsWith('$') &&
+      !exactVersion.test(spec)
+    ) {
+      errors.push(
+        `  ! overrides.${overridePath.join('.')}: ${spec} must be an exact version`,
+      );
+    } else if (
+      typeof spec === 'string' &&
+      exactVersion.test(spec) &&
+      path.length === 0
+    ) {
+      const lockedVersion = lock.packages?.[`node_modules/${name}`]?.version;
+      if (lockedVersion && lockedVersion !== spec) {
+        errors.push(
+          `  ~ overrides.${name}: package.json=${spec} lockfile=${lockedVersion}`,
+        );
+      }
+    }
+  }
+}
+
+checkOverrides(pkg.overrides);
+
 if (errors.length) {
   console.error('\n❌ package-lock.json is out of sync with package.json\n');
   for (const e of errors) console.error(e);
   console.error(
-    '\nFix: run `npm install` locally and commit the updated package-lock.json.\n' +
-      'This guard prevents CI failures where `npm ci` rejects a stale lockfile.\n',
+    '\nFix: pin overrides to exact versions, run `npm install`, and commit package-lock.json.\n' +
+      'This guard prevents registry releases from making `npm ci` reject the lockfile.\n',
   );
   process.exit(1);
 }
