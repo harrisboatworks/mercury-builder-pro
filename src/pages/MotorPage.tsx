@@ -54,6 +54,7 @@ interface MotorRow {
   availability: string | null;
   in_stock: boolean | null;
   stock_quantity: number | null;
+  year: number | null;
   hero_media_id: string | null;
   hero_image_url: string | null;
   image_url: string | null;
