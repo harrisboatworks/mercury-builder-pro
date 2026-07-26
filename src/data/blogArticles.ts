@@ -21402,11 +21402,11 @@ Our approach is practical:
 
 This is not glamorous. It is consistent, accountable work, which is what builds a reputation in a small boating community.
 
-## Where Mercury Premier Status Fits
+## Where the Mercury Credential Fits
 
-HBW is currently a **Mercury Marine Premier Dealer**. It is a useful supporting credential because it reflects our relationship with Mercury and sits alongside trained technicians, Mercury-specific tooling, parts support, and current product knowledge.
+HBW currently holds **Mercury Marine Premier Dealer** status. It is a useful supporting credential because it reflects our relationship with Mercury and sits alongside trained technicians, Mercury-specific tooling, parts support, and current product knowledge.
 
-It is not the main reason to choose us. Premier status does not replace a clear quote, good communication, careful work, or support after pickup. Customers should judge those things directly.
+The designation is not the main reason to choose us. It does not replace a clear quote, good communication, careful work, or support after pickup. Customers should judge those things directly.
 
 ## Pricing Transparency Is Part of Trust
 
@@ -21470,7 +21470,7 @@ Ready to price it out? Build a current CAD quote online at the [Mercury Repower 
     faqs: [
       { question: "What makes a Mercury dealer trustworthy?", answer: "Look for consistent communication, a clear written scope, careful installation and testing, useful support after delivery, and a reputation that holds up across recent reviews and repeat customers. A manufacturer designation can support that picture, but it cannot replace it." },
       { question: "Why does staff consistency matter at a boat dealership?", answer: "A consistent team carries knowledge from one season to the next, reduces handoff gaps, and helps the shop build a useful history of your boat. Customers spend less time starting over, and the people doing the work remain accountable for the relationship after pickup." },
-      { question: "Is Mercury Premier status the most important reason to choose HBW?", answer: "No. Harris Boat Works is a current Mercury Marine Premier Dealer, but the more useful reasons to choose a dealer are its reputation, people, communication, written scope, technical capability, testing process, and long-term support." },
+      { question: "What matters more than a dealer badge?", answer: "Look at the dealership's reputation, people, communication, written scope, technical capability, testing process, and long-term support. A manufacturer designation can support those qualities, but customers should still judge the actual experience directly." },
       { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Advertised motor prices may be similar, but the complete cost can differ because controls, rigging, steering, propeller selection, removal, installation, testing, freight, prep, taxes, warranty products, and trade-in values vary. Compare complete written scopes, not headline prices." },
       { question: "Will HBW service a Mercury bought from another dealer?", answer: "Yes. HBW can assess Mercury service and warranty requests regardless of the selling dealer. Coverage, authorization, scheduling, parts availability, and the exact repair scope still require confirmation." },
       { question: "Should I drive farther for a dealer I trust?", answer: "For a repower, complex installation, or long-term service relationship, the right dealer can be worth the drive. For a simple portable-motor purchase or routine work, a capable local dealer may be more practical. Choose based on the work and the relationship you need." },

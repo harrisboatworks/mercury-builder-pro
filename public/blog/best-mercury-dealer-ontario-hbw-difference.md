@@ -94,11 +94,11 @@ Our approach is practical:
 
 This is not glamorous. It is consistent, accountable work, which is what builds a reputation in a small boating community.
 
-## Where Mercury Premier Status Fits
+## Where the Mercury Credential Fits
 
-HBW is currently a **Mercury Marine Premier Dealer**. It is a useful supporting credential because it reflects our relationship with Mercury and sits alongside trained technicians, Mercury-specific tooling, parts support, and current product knowledge.
+HBW currently holds **Mercury Marine Premier Dealer** status. It is a useful supporting credential because it reflects our relationship with Mercury and sits alongside trained technicians, Mercury-specific tooling, parts support, and current product knowledge.
 
-It is not the main reason to choose us. Premier status does not replace a clear quote, good communication, careful work, or support after pickup. Customers should judge those things directly.
+The designation is not the main reason to choose us. It does not replace a clear quote, good communication, careful work, or support after pickup. Customers should judge those things directly.
 
 ## Pricing Transparency Is Part of Trust
 
@@ -169,9 +169,9 @@ Look for consistent communication, a clear written scope, careful installation a
 
 A consistent team carries knowledge from one season to the next, reduces handoff gaps, and helps the shop build a useful history of your boat. Customers spend less time starting over, and the people doing the work remain accountable for the relationship after pickup.
 
-### Is Mercury Premier status the most important reason to choose HBW?
+### What matters more than a dealer badge?
 
-No. Harris Boat Works is a current Mercury Marine Premier Dealer, but the more useful reasons to choose a dealer are its reputation, people, communication, written scope, technical capability, testing process, and long-term support.
+Look at the dealership's reputation, people, communication, written scope, technical capability, testing process, and long-term support. A manufacturer designation can support those qualities, but customers should still judge the actual experience directly.
 
 ### Is Mercury motor pricing the same at all Ontario dealers?
 
