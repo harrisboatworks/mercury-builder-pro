@@ -3288,15 +3288,28 @@ const motorPageRoutes = motorRecords
       ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
       : 'Contact for pricing';
 
-    const title = `${display}: Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
-    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Premier Dealer · Mercury dealer since 1965.`;
+    // Title pattern (competitor-parity, city in ranked position for AI answer engines):
+    //   {YEAR} Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} — {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
+    // Any missing field is dropped cleanly (no double spaces, no dangling separators).
+    const yearPart = m.year ? `${m.year} ` : '';
+    const hpPart = m.horsepower ? `${m.horsepower}HP` : '';
+    const shaftPart = shaft ? `${shaft} Shaft` : '';
+    const startPart = m.start_type ? String(m.start_type).trim() : '';
+    const specParts = [hpPart, shaftPart, startPart].filter(Boolean).join(', ');
+    const idParts = [modelNo, family].filter(Boolean).join(' ');
+    const stockTail = inStock
+      ? 'In Stock at Harris Boat Works in Gores Landing, Ontario'
+      : 'Special Order at Harris Boat Works in Gores Landing, Ontario';
+    const title = `${yearPart}Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} — ${stockTail}`;
+
+    const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: ${m.year ? `${m.year} ` : ''}Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
 
     // Per-motor social preview. Format from SEO batch:
     // "{Motor name} | {Price in CAD} | Harris Boat Works", trimmed if long.
     const priceLabel = price ? `${priceStr} CAD` : 'CAD Pricing';
     const rawOgTitle = `${display} | ${priceLabel} | Harris Boat Works`;
     const ogTitle = rawOgTitle.length > 70 ? `${display} | ${priceLabel}` : rawOgTitle;
-    const ogDescription = `${display} — ${m.horsepower} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
+    const ogDescription = `${display} - ${m.horsepower} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
 
     return {
       path: `/motors/${slug}`,
@@ -6380,6 +6393,8 @@ if (motorPageRoutes.length > 0) {
     if (!sampleHtml.includes(`href="${expectedCanonical}"`)) verifyErrors.push(`Sample ${sample.path}: canonical missing/wrong.`);
     if (sampleHtml.includes(`rel="canonical" href="${SITE_URL}/"`)) verifyErrors.push(`Sample ${sample.path}: canonicalizes to homepage.`);
     if (!/<title[^>]*>[^<]*Mercury[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing/wrong.`);
+    if (!/<title[^>]*>[^<]*Harris Boat Works in Gores Landing, Ontario[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing "Harris Boat Works in Gores Landing, Ontario" location tail.`);
+    if (!/<title[^>]*>[^<]*(In Stock|Special Order) at Harris Boat Works[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing stock/special-order marker.`);
     if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
     if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
   }
