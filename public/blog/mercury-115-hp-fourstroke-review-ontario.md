@@ -64,11 +64,11 @@ The 115 Pro XS uses the same 2.1-litre platform but raises the operating range t
 
 The first thing many owners notice is the lack of noise at idle. In one Boating Magazine test, the reviewers said they could not hear the 115 Pro XS on a Ranger aluminum fishing boat over their conversation at idle. A few owner reports make the same point in less scientific language: check the tach before reaching for the key because the motor may already be running.
 
-It doesn't stay silent at every rpm. One Bayliner VR4 owner disliked a steady Pro XS exhaust note during long runs around 2,000 to 3,200 rpm. That is one boat and one owner, not a known defect. It is still worth mentioning because some people spend an hour cruising at one engine speed and care more about sound than a tournament angler does.
-
 Acceleration is strong when the boat is propped correctly. In Mercury's freshwater records, a Crestliner 189XF reached 20 mph in 3.81 seconds, while a Crestliner 1750 Super Hawk did it in 4.94 seconds. Those are separate boat-specific results. A Canadian test of a 21 ft 6 in Princecraft pontoon with a 115 Pro XS Command Thrust reported planing in 3.6 seconds.
 
 Those numbers describe those boats, not every 115 installation. A loaded 22 ft pontoon and a light 17 ft fishing boat can carry the same horsepower and feel like completely different machines.
+
+**Fuel use follows the boat too.** In Mercury's freshwater 189XF test, the 115 Pro XS used 2.6 US gal/h (about 9.8 L/h) at 3,000 rpm while the boat ran 19.5 mph. In the 22 ft Manitou pontoon test, the standard 115 Command Thrust used 2.2 US gal/h (about 8.3 L/h) at the same rpm while the boat ran 14.3 mph. Those are results for the named boats and props, not a fuel rating for the motor by itself.
 
 ## Standard FourStroke, Pro XS or Command Thrust?
 
@@ -219,6 +219,8 @@ The propeller allowance in our quote builder is there for a reason.
 
 At HBW, motor pricing from 25 HP and up doesn't include a propeller. We match the starting prop to the boat, then check the result during water testing. If a customer already has a suitable prop, we can account for that, but “it fits the shaft” doesn't mean it is the right prop.
 
+An existing Mercury mechanical control may be reusable, but we don't assume it is. We ask what is on the boat, then confirm the control box, cables, harness, key switch and gauges during inspection before recommending any adapter or replacement. Standard factory warranty and any bonus coverage depend on the exact motor and registration date. [Mercury Product Protection](/mercury-product-protection) is a separate optional extended service contract, with eligibility and plan options confirmed in the quote rather than hard-coded here.
+
 We check:
 
 - full-throttle rpm with the engine trimmed properly
@@ -248,19 +250,13 @@ Regular maintenance still matters. So do clean fuel, correct oil, cooling-system
 
 Build the boat and motor together. The quote builder shows the current Canadian motor price and lets you account for installation, controls, propeller needs, trade-in and available programs.
 
-**Build a quote:** [Mercury motor selection](https://www.mercuryrepower.ca/quote/motor-selection)
+**Browse current pricing:** [Canadian Mercury pricing reference](/pricing-reference)
+
+**Build a complete quote:** [Mercury motor selection](/quote/motor-selection)
 
 **Phone:** 905-342-2153
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-
-**Related guides:**
-
-- [Mercury Command Thrust: The Real Story](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury 115 vs 150 HP: Honest Ontario Guide](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury 90 HP FourStroke Review](/blog/mercury-90-hp-fourstroke-review-ontario)
-- [Mercury FourStroke vs Pro XS](/blog/fourstroke-vs-pro-xs)
 
 ---
 
