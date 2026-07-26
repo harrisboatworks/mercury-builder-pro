@@ -11659,7 +11659,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Family enjoying a day on a runabout boat powered by a Mercury outboard, ideal for Ontario lake cruising.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-07-24',
+    dateModified: '2026-07-26',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11670,7 +11670,7 @@ Honest version: the right month to buy is the month you actually need the boat o
 
 ## Quick Answer
 
-For most family runabouts in the 17-20 ft range, a **Mercury 90, 150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+For most family runabouts in the 17-20 ft range, a **Mercury 90-150 FourStroke** is the right call. Bigger isn't always better, your boat's capacity plate sets the real ceiling, and the right motor is the one that matches how you actually use the boat. See current installed pricing in CAD at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -11749,11 +11749,11 @@ Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 | Motor | At Cruise | At WOT |
 |---|---|---|
-| 90 HP FourStroke | 3, 4 GPH | 8, 9 GPH |
-| 115 HP FourStroke | 4, 5 GPH | 10, 12 GPH |
-| 150 HP FourStroke | 5, 7 GPH | 14, 16 GPH |
-| 175 HP V6 FourStroke | 6, 8 GPH | 16, 18 GPH |
-| 200 HP V6 FourStroke | 7, 9 GPH | 18, 20 GPH |
+| 90 HP FourStroke | 3-4 GPH | 8-9 GPH |
+| 115 HP FourStroke | 4-5 GPH | 10-12 GPH |
+| 150 HP FourStroke | 5-7 GPH | 14-16 GPH |
+| 175 HP V6 FourStroke | 6-8 GPH | 16-18 GPH |
+| 200 HP V6 FourStroke | 7-9 GPH | 18-20 GPH |
 
 Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 
@@ -27003,7 +27003,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-07-24",
+    dateModified: "2026-07-26",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "10 min read",
@@ -27167,7 +27167,7 @@ Same 2.1L block. Different tuning, different RPM ceiling. No weight difference. 
 No. Different family, different block, different cylinder architecture, different weight class (~100 lbs heavier), different price point. Don't compare them as if they're close relatives.
 
 **When does the 115 CT make sense over the 90 CT?** 
-When the pontoon is 20-24 ft, when you regularly carry 5, 6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18, 20 ft and loads are light, the 90 CT is fine.
+When the pontoon is 20-24 ft, when you regularly carry 5-6 people, when it's a tritoon, or when you tow tubes. If the pontoon is 18-20 ft and loads are light, the 90 CT is fine.
 
 **What fuel savings can I expect repowering from an old two-stroke?** 
 Typically 25 to 35% less fuel for the same day on the water. The exact number depends on the old motor's condition and how hard you used it.
