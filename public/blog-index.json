@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "dcd437ea383a50093e0f",
+  "sourceVersion": "b780ca58ecd7fd7f96bd",
   "count": 197,
   "articles": [
     {
@@ -4179,35 +4179,35 @@
     },
     {
       "slug": "mercury-115-hp-fourstroke-review-ontario",
-      "title": "Mercury 115 HP FourStroke Review",
-      "description": "Mercury 115 hp FourStroke review: lightest 115 available, same 2.1L block as the 75 and 90. Where it works and where a V6 makes more sense.",
+      "title": "Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust",
+      "description": "An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice.",
       "category": "Mercury Buying Guides",
       "publishDate": "2026-05-10",
       "keywords": [
         "mercury 115 hp review",
-        "mercury 115 hp fourstroke",
-        "mercury 115 elpt ontario",
-        "mercury 115 ct command thrust",
-        "115 hp pontoon",
-        "mercury 115 vs 150",
-        "mercury 115 fourstroke vs proxs"
+        "mercury 115 fourstroke review",
+        "mercury 115 pro xs review",
+        "mercury 115 command thrust",
+        "mercury 115 standard vs pro xs",
+        "mercury 115 real world performance",
+        "mercury 115 hp ontario"
       ],
       "faqs": [
         {
-          "q": "How much does the Mercury 115 HP FourStroke weigh?",
-          "a": "359 lb dry for the standard ELPT. 363 lb for the Command Thrust version. Mercury claims it's the lightest 115 HP outboard available."
+          "q": "Is the current Mercury 115 FourStroke a new engine design?",
+          "a": "No. The current 2.1-litre 75/90/115 family dates to 2014, and the 115 Pro XS joined it in 2016. Current buyers are getting a mature platform, not an untested first-year redesign."
         },
         {
-          "q": "What's the difference between the 115 FourStroke and the 115 Pro XS?",
-          "a": "Same 2.1L powerhead, different tuning. The Pro XS is calibrated for hole-shot and high-RPM performance with a sport gearcase. The standard FourStroke is the daily-driver tuning."
+          "q": "What is the difference between the Mercury 115 FourStroke and 115 Pro XS?",
+          "a": "They share the same 2.1-litre inline-four platform. The standard FourStroke operates from 5,000 to 6,000 rpm at wide-open throttle. The Pro XS uses performance-oriented calibration and a 5,300 to 6,300 rpm range."
         },
         {
-          "q": "Is the 115 enough for a 19 ft aluminum boat?",
-          "a": "For most 19 ft aluminum fishing boats with normal loads, yes. If you regularly run heavy (four people, full livewell, kicker, batteries, multiple tackle stations), the 115 is at the edge of what it can comfortably do."
+          "q": "Does the 115 Pro XS come with Command Thrust?",
+          "a": "Yes. The current Canadian lineup includes 115 Pro XS models with the standard gearcase and with Command Thrust. The standard gearcase belongs on most recreational V-hulls; Pro XS Command Thrust is mainly useful for pontoons and specific heavy-duty setups."
         },
         {
-          "q": "Will a 115 plane my 22 ft pontoon?",
-          "a": "With the Command Thrust upgrade and a normal cottage load, yes. The 115 CT is the standard answer for 20-22 ft pontoons. 24 ft and up, you want the 150 V6."
+          "q": "Is Command Thrust better on a V-hull?",
+          "a": "Usually not. Command Thrust turns a larger propeller through a lower 2.38:1 ratio, which helps a pontoon or heavy workboat carry load. Its larger case also creates more drag, so the standard 2.07:1 gearcase is normally the right choice for a recreational V-hull."
         }
       ]
     },
