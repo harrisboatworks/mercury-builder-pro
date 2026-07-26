@@ -6401,6 +6401,10 @@ if (motorPageRoutes.length > 0) {
     if (motorTitleMatch && /[\u2013\u2014]/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains an em/en dash — HBW copy rules require plain ASCII " - " separators.`);
     if (motorTitleMatch && /  /.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> contains a double space.`);
     if (motorTitleMatch && /-\s+-\s+/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> has a dangling " - - " separator.`);
+    // Guard: motor <title> must NOT begin with a 4-digit year. motor_models.year is
+    // stamped at ingest and does not follow Mercury's July 1 model-year rollover, so
+    // leading a title with it publishes a stale fact. Do not re-add until verified.
+    if (motorTitleMatch && /^\s*\d{4}\b/.test(motorTitleMatch[1])) verifyErrors.push(`Sample ${sample.path}: <title> begins with a 4-digit year. motor_models.year is untrusted; do not lead titles with it.`);
     if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
     if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
   }
