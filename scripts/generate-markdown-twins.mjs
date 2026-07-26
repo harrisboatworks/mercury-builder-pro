@@ -429,6 +429,7 @@ function motorMarkdown(m) {
     `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
     '- Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.',
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
+    `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
   ].filter(l => l !== null).join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
 
@@ -673,6 +674,11 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     `- MCP manifest: ${SITE_URL}/.well-known/mcp.json`,
     `- llms.txt: ${SITE_URL}/llms.txt`,
     `- Sitemap (HTML, for search engines): ${SITE_URL}/sitemap.xml`,
+    '',
+    '## Service and maintenance',
+    '',
+    `- [Mercury service and maintenance index](${SITE_URL}/maintenance.md), with shop boundaries, service intake, maintenance guidance, and links to current Ontario troubleshooting and cost guides.`,
+    `- Human maintenance hub: ${SITE_URL}/maintenance`,
     '',
     '## Motors',
     '',
@@ -1211,7 +1217,8 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
   console.log(`[markdown-twins] wrote pricing-reference.schema.json with ${schema['@graph'][1].numberOfItems} Product entries`);
 }
 
-verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', 'mercury-product-protection.md', "Ontario's Mercury Repower Centre"]);
+verifyPublicMd('/catalog.md', 'catalog.md', ['## Service and maintenance', 'maintenance.md', '## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', 'mercury-product-protection.md', "Ontario's Mercury Repower Centre"]);
+verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'service_dropoff_only: true', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage', 'reopens in early April', 'hbw.wiki/service']);
 verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', '/api/agents/mcp']);
 
 // Verify pricing-reference motor count matches the quote-builder selection

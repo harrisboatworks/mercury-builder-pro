@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-24
+last_updated: 2026-07-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -54,6 +54,11 @@ See any motor twin for an example body.
 - MCP manifest: https://www.mercuryrepower.ca/.well-known/mcp.json
 - llms.txt: https://www.mercuryrepower.ca/llms.txt
 - Sitemap (HTML, for search engines): https://www.mercuryrepower.ca/sitemap.xml
+
+## Service and maintenance
+
+- [Mercury service and maintenance hub](https://www.mercuryrepower.ca/maintenance)
+- [Agent-readable service index](https://www.mercuryrepower.ca/maintenance.md)
 
 ## Motors
 

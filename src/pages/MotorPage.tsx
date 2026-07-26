@@ -7,7 +7,7 @@ const RelatedPostsGrid = lazy(() =>
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Helmet } from '@/lib/helmet';
-import { Loader2, Award, MapPin, ShieldCheck, DollarSign } from 'lucide-react';
+import { Loader2, Award, MapPin, ShieldCheck, DollarSign, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { getMotorImageByPriority } from '@/lib/motor-helpers';
@@ -425,6 +425,15 @@ export default function MotorPage() {
                   <li className="flex items-start gap-2">
                     <ShieldCheck className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                     <span>3-year Mercury factory warranty included</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Wrench className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span>
+                      <Link to="/maintenance" className="underline underline-offset-2 hover:text-foreground">
+                        Mercury service and maintenance
+                      </Link>{' '}
+                      at our Gores Landing shop
+                    </span>
                   </li>
                 </ul>
               </div>
