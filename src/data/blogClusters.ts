@@ -443,6 +443,7 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-warranty-after-repower-ontario": "how warranty works after a repower",
   
   "mercury-extended-warranty-platinum-ontario": "Product Protection Platinum extended coverage",
+  "legend-boats-warranty-canada-wowranty-guide-2026": "the Legend Boats WOWranty guide",
   // Cluster 11 — Dealer & Destination
   "best-mercury-dealer-ontario-hbw-difference": "what makes HBW different",
   "mercury-outboard-dealer-toronto-why-drive-to-hbw": "why Toronto buyers drive to HBW",
