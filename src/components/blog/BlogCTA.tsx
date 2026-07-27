@@ -114,8 +114,8 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
   // Default - buying guides
   return {
     title: 'Browse Live Mercury Pricing',
-    description: 'See real CAD pricing on every Mercury outboard we sell. Updated daily.',
-    href: '/quote/motor-selection',
+    description: 'See current CAD pricing on every Mercury outboard we sell, then build a complete quote when you are ready.',
+    href: '/pricing-reference',
   };
 }
 
