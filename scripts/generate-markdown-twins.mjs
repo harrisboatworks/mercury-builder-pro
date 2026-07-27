@@ -292,6 +292,12 @@ function cleanBlogContent(content, hasFaqs) {
   c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
   c = c.replace(/^##\s+CTA\s*$/gim, '');
   c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  // Convert embedded YouTube cards to ordinary links before removing custom
+  // directive fences, so text-only twins retain a useful video destination.
+  c = c.replace(
+    /^:::youtube-embed\s*\nid:\s*([A-Za-z0-9_-]+)(?:\ntitle:\s*([^\n]+))?\n:::\s*$/gim,
+    (_match, id, title) => `[${title?.trim() || 'Watch video'}](https://www.youtube.com/watch?v=${id})`,
+  );
   // Twins-only: strip directive fence lines (e.g. ":::mythbuster", ":::customer-voice", bare ":::").
   // The inner block content is kept verbatim as plain markdown so AI agents
   // reading the twin don't see raw fence markup as junk.

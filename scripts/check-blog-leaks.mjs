@@ -189,6 +189,9 @@ for (const file of BLOG_FILES) {
       if (CJK_YEAR_SUFFIX_RX.test(after)) continue;
       if (PAREN_YEAR(before, after)) continue;
       if (FIRST_PARTY_DATA_RX.test(before) && /^\s+rental operations data\s*\(first-party\)/i.test(after)) continue;
+      // A year used as a URL path segment identifies a dated source; it is
+      // not a stale current-year claim in the surrounding article prose.
+      if (/\/$/.test(before) && /^\//.test(after)) continue;
       // Skip if part of an ISO-like date (YYYY-MM-DD) - that's data, not prose claim
       if (/^[-/]\d/.test(after) || /\d[-/]$/.test(before)) continue;
       const line = lineNumberFor(src, ch.absStart + m.index);
