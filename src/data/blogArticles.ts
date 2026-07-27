@@ -162,7 +162,7 @@ export const blogArticles: BlogArticle[] = [
       'milky-gearcase-oil-meaning-cost-ontario',
       'diy-mercury-outboard-winterization-guide',
     ],
-    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.8, 5.28 or 5.5 US quarts depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
+    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.54 L (4.8 US qt), 5 L (5.28 US qt) or 5.2 L (5.5 US qt) depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
 
 The label on the cowl gets you into the right neighbourhood. It does not always identify the powerhead, gearcase or serial break that sets the capacity.
 
