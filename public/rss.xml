@@ -5,13 +5,21 @@
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Fri, 24 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
       <title>Harris Boat Works Blog</title>
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
+    <item>
+      <title><![CDATA[Mercury 150 HP Review: FourStroke vs Pro XS]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario</guid>
+      <pubDate>Sun, 26 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[An honest Mercury 150 HP review for Ontario, comparing the current FourStroke and Pro XS with exact specs, freshwater tests and candid buyer advice.]]></description>
+      <category><![CDATA[Mercury Buying Guides]]></category>
+    </item>
     <item>
       <title><![CDATA[Mercury Outboard Oil Capacity Chart: Model and Year Lookup]]></title>
       <link>https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart</link>
@@ -25,7 +33,7 @@
       <link>https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup</link>
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup</guid>
       <pubDate>Thu, 23 Jul 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Look up documented Mercury fault codes by format and engine family, including legacy VesselView IDs and the 2021 V6/V8 Universal Fault Code table.]]></description>
+      <description><![CDATA[Search Mercury fault codes by format and engine family, including legacy VesselView IDs and the current V6/V8 UFC table checked against dealer literature.]]></description>
       <category><![CDATA[Troubleshooting]]></category>
     </item>
     <item>
@@ -403,14 +411,6 @@
       <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Mercury Avator 7.5e electric outboard: honest review, current pricing status, battery life, range, and best uses on Rice Lake.]]></description>
       <category><![CDATA[Buying Guide]]></category>
-    </item>
-    <item>
-      <title><![CDATA[2-Stroke vs 4-Stroke Repower: What to Know]]></title>
-      <link>https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower</guid>
-      <pubDate>Sun, 24 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing.]]></description>
-      <category><![CDATA[Repower Guides]]></category>
     </item>
   </channel>
 </rss>
