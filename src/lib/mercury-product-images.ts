@@ -197,9 +197,9 @@ export const mercuryProductImages: Record<string, MercuryProductImages> = {
 
   // 250 HP FourStroke (V8)
   '250': {
-    heroImage: `${MERCURY_CDN}/images/outboards/v8/250hp-verado/en-us-canada/250hp-verado-gallery-1.jpg`,
+    heroImage: '/lovable-uploads/products/mercury-250-fourstroke-official.webp',
     galleryImages: [
-      `${MERCURY_CDN}/images/outboards/v8/250hp-verado/en-us-canada/250hp-verado-gallery-1.jpg`,
+      '/lovable-uploads/products/mercury-250-fourstroke-official.webp',
     ]
   },
 
