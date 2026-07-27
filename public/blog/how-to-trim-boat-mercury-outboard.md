@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "How to Trim a Boat: Mercury Outboard Guide"
 description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained."
 category: "Mercury Outboards"

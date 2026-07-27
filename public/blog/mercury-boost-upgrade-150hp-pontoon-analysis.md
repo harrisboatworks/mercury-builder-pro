@@ -4,9 +4,9 @@ last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
 description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
 category: "Performance"

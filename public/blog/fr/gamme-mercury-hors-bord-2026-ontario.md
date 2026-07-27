@@ -4,9 +4,9 @@ last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens"
 description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial."
 category: "Guide d'achat"

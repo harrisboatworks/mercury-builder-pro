@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Bad Used Boats to Avoid Ontario"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji."
 category: "Buying Guide"

@@ -4,9 +4,9 @@ last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Electric Trolling Motor vs Kicker Guide"
 description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do."
 category: "Comparison"

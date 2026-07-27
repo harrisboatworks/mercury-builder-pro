@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "Mercury's 10-hour break-in, step by step: throttle guidance, what to avoid, the 100-hour service schedule, and HBW's optional early check. Ontario guide."
 category: "New Owner"

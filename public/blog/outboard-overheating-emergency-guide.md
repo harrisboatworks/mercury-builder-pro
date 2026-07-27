@@ -1,12 +1,7 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
 last_updated: 2026-05-09
-currency: CAD
-pickup_only: true
-delivery_offered: false
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Mercury Overheating Emergency Guide"
 description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"

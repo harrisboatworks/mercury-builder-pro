@@ -4,9 +4,9 @@ last_updated: 2026-05-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Repower Eligibility: 5-Check Guide"
 description: "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours."
 category: "Repower Decision"

@@ -4,9 +4,9 @@ last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups."
 category: "Buying Guide"

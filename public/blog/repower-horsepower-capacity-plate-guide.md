@@ -4,9 +4,9 @@ last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Capacity Plate and Repower HP: What's Allowed"
 description: "How to read your boat's capacity plate before a repower: max HP rules, what's legal in Ontario, insurance implications, and smart HP choices."
 category: "Repower"

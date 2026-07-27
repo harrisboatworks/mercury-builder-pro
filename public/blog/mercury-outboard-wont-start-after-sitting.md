@@ -1,17 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting.md
-last_updated: 2026-07-23
-currency: CAD
-pickup_only: true
-delivery_offered: false
+last_updated: 2026-07-24
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Mercury Won't Start After Sitting: Fixes"
 description: "Mercury outboard will not start after sitting or winter storage? Check battery, fuel, primer bulb, tank vent, kill switch, neutral."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-07-23
+date_modified: 2026-07-24
 keywords: ["mercury outboard wont start after sitting","mercury outboard stale fuel","mercury outboard spring no start","outboard wont start after winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +19,7 @@ language: en-CA
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-24  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-after-sitting
 
@@ -92,7 +87,7 @@ An Ontario winter is genuinely hard on lead-acid marine batteries. The combinati
 
 What to check:
 - **Resting voltage:** 12.6V = fully charged. 12.4V = acceptable, charge before using. Below 12.2V = seriously compromised.
-- **Cranking test:** With a load tester (or by watching voltage during crank): should hold above 9.5, 10V while the starter runs. Drop below this and the battery can't do the job.
+- **Cranking test:** With a load tester (or by watching voltage during crank): should hold above 9.5-10V while the starter runs. Drop below this and the battery can't do the job.
 - **Terminal condition:** White or green deposits on terminals = corrosion = resistance. Clean with a wire brush and baking soda solution, dry, reconnect, then retest.
 - **Cable connections:** All tight? A cable that loosened over the winter creates intermittent no-start symptoms.
 
@@ -115,7 +110,7 @@ What to check:
 - **Smell the fuel.** Fresh gas smells like fuel. Stale gas smells sour or like nail polish remover. If it smells off, it is.
 - **Check the fuel tank for water.** Water is heavier than fuel and sinks. If there's a drain or sump on the tank, check it.
 - **Drain the fuel filter/water separator.** Mercury FourStrokes have one inline. Drain the bowl and look for water droplets or discolouration.
-- **Check the primer bulb.** Should pump firm in 6, 8 squeezes and hold pressure. Stays soft = air leak in the fuel line connections or a deteriorated bulb.
+- **Check the primer bulb.** Should pump firm in 6-8 squeezes and hold pressure. Stays soft = air leak in the fuel line connections or a deteriorated bulb.
 - **Check fuel lines.** Old rubber fuel lines harden and crack. A cracked line lets air in, causing lean running or no-start. Inspect visually and by feel.
 - **Tank vent open?** An unvented tank creates vacuum as fuel draws out. The motor starves.
 

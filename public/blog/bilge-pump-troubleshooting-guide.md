@@ -1,12 +1,7 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
 last_updated: 2026-07-03
-currency: CAD
-pickup_only: true
-delivery_offered: false
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them"
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW."
 category: "Service & Troubleshooting"

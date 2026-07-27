@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼ਤੀ ਲਾਇਸੰਸ ਸਵਾਲ-ਜਵਾਬ"
 description: "Ki Ontario vich boat rent karan layi licence chahida? PCOC rules, bina card rental boat kiven chalao, lifejacket rules. Punjabi vich poori jaankari ethe lao."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"

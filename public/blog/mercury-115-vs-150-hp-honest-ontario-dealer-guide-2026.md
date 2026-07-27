@@ -4,9 +4,9 @@ last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
 description: "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust."
 category: "Repower Guide"

@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?"
 description: "Mercury 115 FourStroke와 150 FourStroke의 실질적 차이를 비교합니다. 배기량, 무게, 연비, 적합 보트 크기까지, 한국어로 쉽게 설명합니다."
 category: "엔진 비교"

@@ -4,9 +4,9 @@ last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
 category: "Buying Guide"

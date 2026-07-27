@@ -4,9 +4,9 @@ last_updated: 2026-03-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Used Boat Walkaround Ontario Guide"
 description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order."
 category: "Buying Guide"

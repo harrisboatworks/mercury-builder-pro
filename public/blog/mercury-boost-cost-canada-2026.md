@@ -4,9 +4,9 @@ last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Boost Canada 2026: Eligibility, Performance, and Pricing"
 description: "What Mercury Boost does, which motors may qualify, and how HBW confirms current Canadian pricing from the exact serial number."
 category: "Mercury Technology"

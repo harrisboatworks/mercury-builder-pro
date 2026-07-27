@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "多伦多出发钓鱼去哪：Rice Lake、Lake Simcoe、Kawarthas 怎么选"
 description: "多伦多华人钓鱼去哪？比较 Rice Lake、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程心态和第一次 boating/fishing 选择。"
 category: "Buying Guides"

@@ -4,9 +4,9 @@ last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Repower GTA Toronto Guide"
 description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week."
 category: "Mercury Outboards"
@@ -24,8 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  
-**Last updated:** 2026-07-24
-
+**Last updated:** 2026-07-24  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 
@@ -224,3 +223,4 @@ HBW can assess the boat and proposed Mercury configuration, but the motor, warra
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

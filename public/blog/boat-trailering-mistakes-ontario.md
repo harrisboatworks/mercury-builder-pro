@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Boat Trailering Mistakes to Avoid, Ontario"
 description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug."
 category: "Boating Lifestyle"

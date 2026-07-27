@@ -4,9 +4,9 @@ last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 115 vs 150 HP: Comparación completa para remotorización"
 description: "Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso."
 category: "Comparación de motores"

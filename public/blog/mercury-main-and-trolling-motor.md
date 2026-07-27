@@ -4,9 +4,9 @@ last_updated: 2026-05-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Main + Trolling Motor: How to Pair Them"
 description: "Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. Rigging from $1,500 CAD on top of your repower."
 category: "Buying Guide"

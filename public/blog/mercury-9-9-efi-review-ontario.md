@@ -4,9 +4,9 @@ last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
@@ -218,7 +218,7 @@ Based on visible Canadian listings reviewed in May 2026, it is a very strong pos
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 

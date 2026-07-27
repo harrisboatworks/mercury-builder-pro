@@ -4,9 +4,9 @@ last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury for Center Console Boats Ontario"
 description: "The Mercury picks for center console boats: single 115 HP for inshore up to quad 450R for offshore. Honest pairings by hull length."
 category: "Buying Guide"

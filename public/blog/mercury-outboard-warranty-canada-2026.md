@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Outboard Warranty Canada 2026"
 description: "A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection."
 category: "Buying Guide"

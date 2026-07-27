@@ -4,9 +4,9 @@ last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "머큐리 선외기 무게표 (2.5~300마력)"
 description: "머큐리 선외기는 얼마나 무거운가? 2.5~300마력 공식 건조 중량(kg/lb), 무게가 트랜섬에 중요한 이유, 그리고 내 보트에 맞추는 법."
 category: "구매 가이드"

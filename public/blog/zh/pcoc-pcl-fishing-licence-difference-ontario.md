@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "PCOC、PCL、钓鱼证区别：安省新手别搞混"
 description: "安省新手常把三个证件搞混：PCOC（船只操作员卡，终身有效，开动力船必须）、PCL（船只牌照，船身的注册号，免费，换引擎要更新）、安省钓鱼证（独立系统，由 MNRF 管理）。三者对比表 + 官方申请链接。"
 category: "mandarin"

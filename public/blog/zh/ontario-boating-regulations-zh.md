@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "安大略船只法规完整指南：PCOC、PCL、安全装备清单 (中文版)"
 description: "在安大略驾船需要 PCOC + PCL + 钓鱼证 + 必备安全装备。HBW 不销售证件,本指南教您从 ServiceOntario 和 Transport Canada 自助办理。"
 category: "法规安全"

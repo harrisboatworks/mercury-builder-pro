@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/bowmanville-courtice-mercury-dealer
-last_updated: 2026-07-18
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 slug: bowmanville-courtice-mercury-dealer
 region: "Bowmanville & Courtice"
 region_type: city

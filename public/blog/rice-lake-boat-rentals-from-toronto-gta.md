@@ -4,9 +4,9 @@ last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Rice Lake Boat Rentals from Toronto"
 description: "A Rice Lake rental day from the GTA: drive time, what's included, what to bring, and how to book online with Harris Boat Works."
 category: "Boating Lifestyle"

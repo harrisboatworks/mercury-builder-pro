@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke
-last_updated: 2026-07-26
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 motor_id: 2e892176-96f0-44f3-baa4-0896d8cc5ab2
 slug: fourstroke-20hp-20-elhpt-fourstroke
 family: FourStroke
@@ -76,4 +76,4 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 - Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
 - Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
-- Mercury service and maintenance: https://www.mercuryrepower.ca/maintenance
+- Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

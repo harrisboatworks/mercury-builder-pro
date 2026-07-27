@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"

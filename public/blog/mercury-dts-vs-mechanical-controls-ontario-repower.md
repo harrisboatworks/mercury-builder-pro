@@ -4,9 +4,9 @@ last_updated: 2026-07-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury DTS vs Mechanical Ontario"
 description: "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works."
 category: "Buying Guides"

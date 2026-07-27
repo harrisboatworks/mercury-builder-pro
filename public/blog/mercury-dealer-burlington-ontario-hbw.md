@@ -4,9 +4,9 @@ last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer Burlington Ontario HBW"
 description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
 category: "Service Area"

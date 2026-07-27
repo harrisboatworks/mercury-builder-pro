@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "GTA 华人从租船到买船路线图"
 description: "GTA 华人想从租船升级到买船？HBW 用中文讲清先租 pontoon 或 fishing boat、拿 PCOC、选船型、选 Mercury、规划 service/storage 和 repower。"
 category: "Buying Guides"

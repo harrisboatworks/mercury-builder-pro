@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-05-07
+last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Mercury for Family Runabout 2026"
 description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
-date_modified: 2026-05-07
+date_modified: 2026-07-24
 keywords: ["mercury family boat motor","family runabout outboard","mercury for pontoon","best mercury for recreation","family boat motor size","best Mercury outboard family runabout","Mercury 90 HP family boat","Mercury 150 HP runabout","family runabout horsepower","watersports family boat motor","quiet outboard family"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
-**Last updated:** 2026-05-07  
+**Last updated:** 2026-07-24  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
@@ -121,10 +121,10 @@ Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 
-- **90 HP boat:** 25, 35 litres
-- **115 HP boat:** 35, 45 litres
-- **150 HP boat:** 45, 60 litres
-- **200 HP boat:** 60, 80 litres
+- **90 HP boat:** 25-35 litres
+- **115 HP boat:** 35-45 litres
+- **150 HP boat:** 45-60 litres
+- **200 HP boat:** 60-80 litres
 
 We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP that fits how often you'll use the boat, not just what looks good at the transom.
 

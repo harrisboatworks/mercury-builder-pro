@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소"
 description: "Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
 category: "낚시 가이드"

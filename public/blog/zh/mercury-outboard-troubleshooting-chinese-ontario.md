@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 船外机故障排查中文指南"
 description: "Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。"
 category: "Maintenance"

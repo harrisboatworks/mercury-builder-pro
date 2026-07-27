@@ -4,9 +4,9 @@ last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间"
 description: "Mercury 40HP、50HP、60HP 船外机中文指南：安省铝船、钓鱼船、tiller/remote、Command Thrust、华人钓友怎么选。"
 category: "中马力指南"

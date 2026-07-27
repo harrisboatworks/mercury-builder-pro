@@ -4,9 +4,9 @@ last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Avator électrique : prix et autonomie"
 description: "Moteurs électriques Mercury Avator : prix, autonomie réelle, et s'ils conviennent au lac Rice. Avis honnête d'un concessionnaire Platine Mercury."
 category: "Guide d'achat"

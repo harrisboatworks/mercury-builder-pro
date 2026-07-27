@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"

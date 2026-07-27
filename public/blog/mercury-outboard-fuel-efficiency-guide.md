@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
 description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats."
 category: "Tips"

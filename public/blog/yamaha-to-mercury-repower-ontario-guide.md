@@ -4,9 +4,9 @@ last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"

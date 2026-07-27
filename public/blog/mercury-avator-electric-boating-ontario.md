@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Avator Electric Outboards: Cost & Range (Canada)"
 description: "Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer."
 category: "Buying Guide"
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
-**Last updated:** 2026-07-23
+**Last updated:** 2026-07-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
 
@@ -116,7 +116,7 @@ It depends on the model, battery count, and charger, and batteries are often the
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP FourStroke Review](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 
@@ -132,3 +132,4 @@ It depends on the model, battery count, and charger, and batteries are often the
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

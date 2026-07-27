@@ -4,9 +4,9 @@ last_updated: 2026-07-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Pickering: 50 Minutes from Rice Lake"
 description: "Mercury Premier dealer for Pickering: Harris Boat Works on Rice Lake, 50 minutes via 401 and 115. Repower, sales, service, storage for east GTA boat owners."
 category: "Service Area"

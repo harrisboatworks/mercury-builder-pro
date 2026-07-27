@@ -4,9 +4,9 @@ last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "为什么 GTA 华人船主选择 Harris Boat Works？"
 description: "Harris Boat Works 是莱斯湖南岸三代家族船坞，自 1947 年。Mercury Premier 认证。GTA 华人船主选择 HBW 的 5 个原因：距离、价格、Mercury 认证、传承、对华人客户的友好接待。"
 category: "HBW 中文介绍"

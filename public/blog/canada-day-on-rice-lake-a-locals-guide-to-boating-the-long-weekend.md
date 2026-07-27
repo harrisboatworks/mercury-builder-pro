@@ -4,9 +4,9 @@ last_updated: 2026-06-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Canada Day on Rice Lake: Boating Guide"
 description: "A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works."
 category: "Local Guide"

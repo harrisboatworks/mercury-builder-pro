@@ -4,9 +4,9 @@ last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Pontoon Outboard 2026: Mercury Buyer's Guide"
 description: "Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use."
 category: "Buying Guide"

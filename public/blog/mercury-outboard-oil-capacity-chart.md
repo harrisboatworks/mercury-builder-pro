@@ -4,9 +4,9 @@ last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Outboard Oil Capacity Chart: Model and Year Lookup"
 description: "Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP."
 category: "Service & Maintenance"
@@ -22,10 +22,10 @@ language: en-CA
 
 > Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP.
 
-**Category:** Service & Maintenance
-**Published:** 2026-07-24
-**Last updated:** 2026-07-24
-**Read time:** 12 min read
+**Category:** Service & Maintenance  
+**Published:** 2026-07-24  
+**Last updated:** 2026-07-24  
+**Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 
 > **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.8, 5.28 or 5.5 US quarts depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
@@ -257,3 +257,4 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

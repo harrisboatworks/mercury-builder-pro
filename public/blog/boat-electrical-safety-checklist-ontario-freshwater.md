@@ -1,12 +1,7 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
 last_updated: 2026-06-09
-currency: CAD
-pickup_only: true
-delivery_offered: false
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"

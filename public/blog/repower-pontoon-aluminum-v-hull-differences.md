@@ -4,9 +4,9 @@ last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Pontoon vs Aluminum vs V-Hull Repower"
 description: "Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull."
 category: "Repower"

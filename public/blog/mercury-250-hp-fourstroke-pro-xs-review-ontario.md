@@ -22,10 +22,10 @@ language: en-CA
 
 > An honest Mercury 250 HP review for Ontario, comparing the current 4.6 L V8 FourStroke and Pro XS with exact Canadian specs, freshwater tests and owner evidence.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-07-27
-**Last updated:** 2026-07-27
-**Read time:** 19 min read
+**Category:** Mercury Buying Guides  
+**Published:** 2026-07-27  
+**Last updated:** 2026-07-27  
+**Read time:** 19 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario
 
 > **Quick answer:** The current Mercury 250 FourStroke and 250 Pro XS are both 4.6-litre V8s rated at 250 HP, but they are aimed at different jobs. The FourStroke is the natural fit for most family tritoons, deep-Vs and runabouts. Pro XS makes sense when a performance hull can use its higher rpm range, exhaust character and available TorqueMaster gearcase.
@@ -485,3 +485,4 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

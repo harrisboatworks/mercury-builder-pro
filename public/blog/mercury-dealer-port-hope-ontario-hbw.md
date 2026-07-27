@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18."
 category: "Dealer Locations"

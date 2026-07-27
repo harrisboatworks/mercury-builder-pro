@@ -4,9 +4,9 @@ last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Ethanol Octane Mercury Fuel Guide"
 description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season."
 category: "Service"
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last updated:** 2026-07-24
+**Last updated:** 2026-07-24  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
@@ -310,3 +310,4 @@ Hard starting after storage when it ran fine when put away, bogging at wide-open
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

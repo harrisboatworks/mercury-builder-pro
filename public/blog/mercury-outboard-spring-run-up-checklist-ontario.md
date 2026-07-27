@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Spring Run-Up Checklist"
 description: "Boring spring checks prevent expensive May surprises. A Mercury Premier dealer's step-by-step run-up checklist for Ontario boaters opening up their boat."
 category: "Maintenance"

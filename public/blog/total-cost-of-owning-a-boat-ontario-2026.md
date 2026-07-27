@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"

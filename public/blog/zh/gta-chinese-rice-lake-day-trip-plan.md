@@ -4,9 +4,9 @@ last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "GTA 华人 Rice Lake 一日游完整行程规划：从多伦多出发到玩一天"
 description: "多伦多华人 Rice Lake 一日游完整行程：出发时间、自驾路线、停车上船流程、船上 4-6 小时安排、午餐补给、返程晚餐路线，由 Harris Boat Works 整理。"
 category: "mandarin"

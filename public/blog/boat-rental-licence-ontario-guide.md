@@ -4,9 +4,9 @@ last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Do You Need a Licence to Rent a Boat in Ontario? (2026)"
 description: "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and what it costs. From Harris Boat Works on Rice Lake."
 category: "Boating Lifestyle"

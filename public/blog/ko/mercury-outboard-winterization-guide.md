@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼"
 description: "온타리오의 겨울은 보트 엔진에 치명적입니다. Mercury 선외기 겨울 정비의 6단계 핵심 과정을 설명합니다. 연료 안정화, 포깅, 기어 오일, 배터리, 윤활, 보관까지."
 category: "정비 가이드"

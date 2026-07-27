@@ -4,9 +4,9 @@ last_updated: 2026-07-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?"
 description: "A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value."
 category: "Repower"

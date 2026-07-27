@@ -4,9 +4,9 @@ last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Spring Outboard Commissioning Checklist (2026 Ontario)"
 description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical."
 category: "Maintenance"

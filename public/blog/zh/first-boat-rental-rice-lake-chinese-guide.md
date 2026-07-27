@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "多伦多华人第一次租船钓鱼：证件、安全和当天流程"
 description: "多伦多华人第一次到 Rice Lake 租船钓鱼的完整指南：需要带什么证件、租船安全检查清单（不一定需要 PCOC）、当天到达流程、安全简报、安省钓鱼证（与船证分开）、从万锦/士嘉堡的驾车路线（约 90 分钟）。"
 category: "mandarin"
