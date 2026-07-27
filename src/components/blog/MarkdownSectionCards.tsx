@@ -1,4 +1,4 @@
-import ReactMarkdown, { Components } from 'react-markdown';
+import ReactMarkdown, { Components, defaultUrlTransform } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Phone, Calculator, MapPin, Wrench } from 'lucide-react';
 import {
@@ -18,6 +18,13 @@ import { DiagnosticFlowchart, type DiagnosticFlowchartProps } from './Diagnostic
 import { CostStack, type CostStackProps, type CostStackItem } from './CostStack';
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
+
+const PHONE_LINK_RE = /^(?:tel|sms):\+?[0-9().\s-]+$/i;
+
+function blogUrlTransform(url: string): string {
+  if (PHONE_LINK_RE.test(url)) return url;
+  return defaultUrlTransform(url);
+}
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
@@ -957,6 +964,7 @@ function renderMarkdownWithDirectives(
         key={`${keyPrefix}-md-${i}`}
         remarkPlugins={[remarkGfm]}
         components={components}
+        urlTransform={blogUrlTransform}
       >
         {chunk.content}
       </ReactMarkdown>
