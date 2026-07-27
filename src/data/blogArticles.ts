@@ -28826,6 +28826,12 @@ The ownership basics still matter:
 
 One isolated bad seal or loosened trim screw is worth fixing on that motor. It is not automatically a family-wide engineering verdict.
 
+## What We See at HBW
+
+The 250 conversation usually does not begin with the cowl. It begins with the capacity plate, transom, steering, controls and what the boat carries on a normal July weekend. From there, we decide whether the hull can actually use the Pro XS hardware or whether the standard FourStroke is the better match.
+
+Installation is not the finish line. Propeller selection and water testing have to put the motor in its correct full-throttle range with the boat loaded the way its owner will use it. A prop recommendation copied from somebody else's boat cannot replace that test.
+
 ## When We Would Tell You Not to Buy the 250
 
 ### The capacity plate stops below 250 HP
