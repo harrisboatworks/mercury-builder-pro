@@ -1,6 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
-import { mercuryOutboardCapacities } from '@/data/mercuryOutboardCapacities';
+import {
+  mercuryOutboardCapacities,
+  formatCrankcaseCapacity,
+  formatGearcaseCapacity,
+} from '@/data/mercuryOutboardCapacities';
 
 type HorsepowerBand = 'all' | 'portable' | 'midrange' | 'high';
 
@@ -24,10 +28,6 @@ function matchesBand(model: string, band: HorsepowerBand): boolean {
   return hp > 115;
 }
 
-function formatGearcaseCapacity(value: string): string {
-  if (value === 'None' || value === 'Not listed') return value;
-  return `${value} oz`;
-}
 
 export function MercuryCapacityLookup() {
   const [query, setQuery] = useState('');
@@ -131,13 +131,13 @@ export function MercuryCapacityLookup() {
                   <div>
                     <dt className="text-repower-navy-900/55">Crankcase</dt>
                     <dd className="font-semibold text-repower-navy-900">
-                      {row.crankcaseQt} qt / {row.crankcaseL} L
+                      {formatCrankcaseCapacity(row)}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-repower-navy-900/55">Gearcase</dt>
                     <dd className="font-semibold text-repower-navy-900">
-                      {formatGearcaseCapacity(row.gearcaseOz)}
+                      {formatGearcaseCapacity(row)}
                     </dd>
                   </div>
                   <div className="col-span-2">
@@ -176,13 +176,15 @@ export function MercuryCapacityLookup() {
                       <span className="mt-1 block text-repower-navy-900/65">{row.notes}</span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
-                      {row.crankcaseQt} qt
+                      {parseFloat(row.crankcaseL) < 1
+                        ? `${Math.round((parseFloat(row.crankcaseL) * 1000) / 5) * 5} mL`
+                        : `${row.crankcaseL} L`}
                       <span className="block text-xs font-normal text-repower-navy-900/55">
-                        {row.crankcaseL} L
+                        {row.crankcaseQt} US qt
                       </span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
-                      {formatGearcaseCapacity(row.gearcaseOz)}
+                      {formatGearcaseCapacity(row)}
                     </td>
                     <td className="min-w-48 px-4 py-4 text-repower-navy-900">
                       {row.crankcaseOil}

@@ -162,7 +162,7 @@ export const blogArticles: BlogArticle[] = [
       'milky-gearcase-oil-meaning-cost-ontario',
       'diy-mercury-outboard-winterization-guide',
     ],
-    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.8, 5.28 or 5.5 US quarts depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
+    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.54 L (4.8 US qt), 5 L (5.28 US qt) or 5.2 L (5.5 US qt) depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
 
 The label on the cowl gets you into the right neighbourhood. It does not always identify the powerhead, gearcase or serial break that sets the capacity.
 
@@ -201,9 +201,9 @@ The chart lists three 9.9 HP FourStroke groups:
 
 | Year and engine | Crankcase | Gearcase |
 |---|---:|---:|
-| 1995-1998, 232 cc | 1.05 qt / 0.99 L | 6.8 oz |
-| 1999-2004, 323 cc | 1.05 qt / 0.99 L | 6.8 oz |
-| 2005+, 209 cc | 0.84 qt / 0.79 L | 10.8 oz |
+| 1995-1998, 232 cc | 990 mL (1.05 US qt) | 200 mL (6.8 US fl oz) |
+| 1999-2004, 323 cc | 990 mL (1.05 US qt) | 200 mL (6.8 US fl oz) |
+| 2005+, 209 cc | 790 mL (0.84 US qt) | 320 mL (10.8 US fl oz) |
 
 The newest row takes less crankcase oil but more gear lube than the older rows. "Mercury 9.9" is not enough information.
 
@@ -213,18 +213,18 @@ The serial break matters even within the same model year:
 
 | 90 HP family | Crankcase | Gearcase | Oil filter |
 |---|---:|---:|---|
-| 2006 EFI, serial 1B366822 and below | 4.8 qt / 4.54 L | 22.5 oz | 8M0162830 |
-| 2006+ EFI, serial 1B366823 and up | 5.28 qt / 5 L | 24 oz | 877761Q01 |
-| 2014+ 2.1 L, serial 2B094996 and up | 5.5 qt / 5.2 L | 27.1 oz | 8M0162830 |
+| 2006 EFI, serial 1B366822 and below | 4.54 L (4.8 US qt) | 665 mL (22.5 US fl oz) | 8M0162830 |
+| 2006+ EFI, serial 1B366823 and up | 5 L (5.28 US qt) | 710 mL (24 US fl oz) | 877761Q01 |
+| 2014+ 2.1 L, serial 2B094996 and up | 5.2 L (5.5 US qt) | 800 mL (27.1 US fl oz) | 8M0162830 |
 
 That is a three-way capacity split behind one cowl number.
 
 ### A 60 HP gearcase example
 
-The 996 cc 60 FourStroke is listed at 3.17 US quarts, or 3 litres, of crankcase oil. Its gearcase quantity changes with the lower unit:
+The 996 cc 60 FourStroke is listed at 3 litres (3.17 US quarts) of crankcase oil. Its gearcase quantity changes with the lower unit:
 
-- Standard gearcase: 11.5 oz
-- BigFoot or Command Thrust gearcase: 24 oz
+- Standard gearcase: 340 mL (11.5 US fl oz)
+- BigFoot or Command Thrust gearcase: 710 mL (24 US fl oz)
 
 If the gearcase is not identified, the lower-unit fill quantity can be off by more than two to one.
 
@@ -292,11 +292,11 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     faqs: [
       {
         question: 'How much oil does a Mercury 90 HP FourStroke take?',
-        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.8 US quarts. The later 1.7 L EFI at serial 1B366823 and up is 5.28 quarts. The 2014+ 2.1 L family at serial 2B094996 and up is 5.5 quarts. Confirm the final level on the dipstick and in the exact manual.',
+        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.54 L (4.8 US quarts). The later 1.7 L EFI at serial 1B366823 and up is 5 L (5.28 US quarts). The 2014+ 2.1 L family at serial 2B094996 and up is 5.2 L (5.5 US quarts). Confirm the final level on the dipstick and in the exact manual.',
       },
       {
         question: 'How much oil does a Mercury 60 HP FourStroke take?',
-        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3.17 US quarts, or 3 litres, of crankcase oil. The gearcase is listed at 11.5 ounces for the standard lower unit and 24 ounces for the BigFoot or Command Thrust lower unit.',
+        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3 litres (3.17 US quarts) of crankcase oil. The gearcase is listed at 340 mL (11.5 US fl oz) for the standard lower unit and 710 mL (24 US fl oz) for the BigFoot or Command Thrust lower unit.',
       },
       {
         question: 'Can I fill a Mercury outboard with the exact chart capacity?',
