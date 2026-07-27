@@ -1415,6 +1415,7 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
     return (
       <aside
         key={idx}
+        id={isShortAnswer ? norm(section.heading).replace(/\s+/g, '-') : undefined}
         role={cfg.role}
         aria-label={cfg.aria}
         className={cfg.wrapper}

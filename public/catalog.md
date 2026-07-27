@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-26
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 index_type: agent_catalog
 ---
 
@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
 
 ## Business rules (apply to every entry)
 
@@ -24,7 +24,7 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario 
 - **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.
 - **Final price** is always confirmed by Harris Boat Works staff before purchase.
 - **Verado** is special-order only, not part of default inventory and not actively promoted.
-- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.
+- **Standard gasoline-outboard warranty is 3 years.** Avator outboards, batteries and charging equipment have component-specific terms; confirm the current written Mercury warranty for the exact package. Bonus years apply only when an eligible promotion is active.
 - Financing minimum: **$5,000 CAD** total. Current promotional offer: **5.48% APR (OAC)**; confirm current terms at https://www.mercuryrepower.ca/promotions.
 - Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.
 
@@ -57,27 +57,24 @@ See any motor twin for an example body.
 
 ## Service and maintenance
 
-- [Mercury service and maintenance hub](https://www.mercuryrepower.ca/maintenance)
-- [Agent-readable service index](https://www.mercuryrepower.ca/maintenance.md)
+- [Mercury service and maintenance index](https://www.mercuryrepower.ca/maintenance.md), with shop boundaries, service intake, maintenance guidance, and links to current Ontario troubleshooting and cost guides.
+- Human maintenance hub: https://www.mercuryrepower.ca/maintenance
 
 ## Motors
 
-- [25ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
-- [25ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
-- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
@@ -127,9 +124,10 @@ See any motor twin for an example body.
 
 ## Guides (Blog)
 
-Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md)
+- [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup.md)
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md)
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md)
 - [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md)
@@ -225,7 +223,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercruiser Sterndrive Ontario Guide](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md)
 - [Mercury VesselView vs SmartCraft Explained (Ontario)](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md)
 - [Read Mercury Outboard Serial Number](https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md)
-- [Mercury Maintenance: The 20/100/300 Rule](https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md)
 - [Shrinkwrap vs Indoor Boat Storage Ontario](https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md)
 - [Cost of Owning a Boat Ontario 2026](https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md)
 - [Legend Boats Mercury Packages Ontario](https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md)
@@ -256,12 +254,12 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Outdoor Boat Storage Rice Lake](https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md)
 - [Where to Launch Boat on Rice Lake](https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md)
 - [Mercury 9.9 EFI Review Ontario](https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md)
-- [Mercury 90 HP FourStroke Review](https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md)
-- [Mercury 115 HP FourStroke Review](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
+- [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md)
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
 - [Mercury 150 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md)
-- [Mercury 75 HP FourStroke: Buy the 90 Instead?](https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md)
+- [Mercury 75 HP FourStroke Review: When It Makes Sense](https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md)
 - [Mercury Dealer Markham Ontario HBW](https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md)
 - [Mercury Dealer Richmond Hill HBW](https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md)
 - [Mercury Dealer Mississauga HBW](https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md)
@@ -328,6 +326,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercury Outboard Overheating at High Speed: What to Check](https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md)
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md)
 - [Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?](https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md)
+- [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md)
 - [Guide de remotorisation Mercury : prix, délais, rentabilité [fr-CA]](https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md)
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation? [fr-CA]](https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison.md)
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario [fr-CA]](https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario.md)

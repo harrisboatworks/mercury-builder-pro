@@ -3,14 +3,14 @@ import { HubPage } from '@/components/hub/HubPage';
 import { SITE_URL } from '@/lib/site';
 
 const PATH = '/electric/mercury-avator';
-const LAST_REVIEWED_ISO = '2026-07-13';
+const LAST_REVIEWED_ISO = '2026-07-27';
 const LAST_REVIEWED_LABEL = 'July 2026';
 
 const FAQS = [
   {
     question: 'Does Harris Boat Works sell Mercury Avator electric outboards?',
     answer:
-      'Yes, Avator is joining our lineup now. Pricing is being finalized; call 905-342-2153 for current details and timing. Like all our motors, Avator is pickup only at Gores Landing.',
+      'Yes. HBW now offers Avator as a build-to-order product through Mercury Canada. Pricing is being finalized; call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Like all our motors, Avator is pickup only at Gores Landing.',
   },
   {
     question: 'How is Avator power rated?',
@@ -143,19 +143,19 @@ export default function AvatorLanding() {
     <HubPage
       path={PATH}
       metaTitle="Mercury Avator Electric Outboards Ontario | Harris Boat Works"
-      metaDescription="Mercury Avator electric outboards are coming to Harris Boat Works on Rice Lake. Lineup, use cases for Kawartha waters, and honest answers. Pricing coming soon."
+      metaDescription="Mercury Avator electric outboards are now available build-to-order from Harris Boat Works on Rice Lake. Honest Ontario use cases and pricing coming soon."
       breadcrumbName="Mercury Avator Electric"
       lastReviewedISO={LAST_REVIEWED_ISO}
       lastReviewedLabel={LAST_REVIEWED_LABEL}
-      h1="Mercury Avator Electric Outboards Are Coming to Harris Boat Works"
-      subhead="Quiet, zero-exhaust electric power for small boats, joining our lineup on Rice Lake. Pricing coming soon."
-      primaryCTA={{ label: 'Get on the Avator list', to: '/contact' }}
+      h1="Mercury Avator Electric Outboards at Harris Boat Works"
+      subhead="Quiet, zero-exhaust electric power for small boats, now available build-to-order on Rice Lake. Pricing coming soon."
+      primaryCTA={{ label: 'Discuss an Avator setup', to: '/contact' }}
       phoneNumber="(905) 342-2153"
       directAnswer={
         <>
-          Mercury's Avator line brings quiet, zero-exhaust electric power to small boats, and it's
-          joining our lineup at Harris Boat Works on Rice Lake. Pricing is being finalized now. Call
-          or text us to get on the list, and we'll have real CAD numbers for you soon.
+          Mercury's Avator line brings quiet, zero-exhaust electric power to small boats, and HBW
+          now offers it build-to-order through Mercury Canada. Pricing is being finalized. Call or
+          text us to discuss your boat and ask to be contacted when real CAD numbers are locked.
         </>
       }
       enrichedContent={EnrichedContent}
