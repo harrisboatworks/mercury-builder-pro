@@ -130,6 +130,8 @@ The 115 sits in the sweet spot where ordinary owners can feel setup changes with
 
 ## Standard FourStroke, Pro XS or Command Thrust?
 
+*On a phone, swipe the table sideways to see every column.*
+
 | Version | What changes | Best fit | Main trade-off |
 |---|---|---|---|
 | 115 FourStroke, standard gearcase | 5,000–6,000 rpm range and lower-drag 2.07:1 gearcase | Recreational aluminum or fibreglass V-hulls | Less performance personality than Pro XS |
@@ -159,7 +161,7 @@ Don't buy it as a generic upgrade for a recreational V-hull. The larger case can
 
 [Read the full Command Thrust explanation](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) if another dealer has told you CT simply means “more torque.”
 
-![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger.jpg)
+![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
 *Official Mercury freshwater photography. The 115 Pro XS shown here uses the standard gearcase.*
 
@@ -179,8 +181,7 @@ A 2023 115 Pro XS owner tested 19, 20 and 21-pitch props on a 2012 Glastron GT-1
 
 The 20-pitch prop was fastest. The 21 pulled the engine down and lost speed. The 19 kept the engine closer to the upper part of its range and could still be the better all-around choice once people and gear go aboard.
 
-https://www.youtube.com/watch?v=HblsKMvjxCU
-
+[Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers](https://www.youtube.com/watch?v=HblsKMvjxCU)
 *A current-generation 115 Pro XS owner tests three prop pitches on the same Glastron.*
 
 ### Same pontoon, large pitch correction
@@ -214,11 +215,19 @@ These results come from documented freshwater tests. They are examples, not prom
 | [2023 Crestliner 1750 Super Hawk, 17 ft 9 in aluminum](https://performancedata.mercurymarine.com/performance-test/134) | 115 Pro XS standard, 15-pitch Spitfire | 39.5 mph at 6,174 rpm; 0–20 mph in 4.94 s |
 | [Crestliner 2070 Retriever HD, 20 ft aluminum (2024)](https://performancedata.mercurymarine.com/performance-test/150) | 115 Pro XS standard, 19-pitch Spitfire X7 | 37.9 mph at 5,869 rpm; 0–20 mph in 4.34 s |
 | [2020 Manitou Aurora LE RF TT, 22 ft pontoon](https://performancedata.mercurymarine.com/performance-test/244) | 115 FourStroke CT, 13-pitch Black Max pontoon prop | 26.2 mph at 5,706 rpm; 0–20 mph in 4.74 s |
-| [Princecraft Sportfisher 21-4S, 21 ft 6 in pontoon (2025)](https://www.boatdealers.ca/boat-reviews/%32%30%32%35/princecraft/sportfisher-21-4s) | 115 Pro XS CT | 27 mph at 6,000 rpm; on plane in 3.6 s |
+| [Princecraft Sportfisher 21-4S, 21 ft 6 in pontoon (2025)](https://www.boatdealers.ca/boat-reviews/2025/princecraft/sportfisher-21-4s) | 115 Pro XS CT | 27 mph at 6,000 rpm; on plane in 3.6 s |
 
 The useful point isn't that one boat ran 46.9 mph and another ran 26.2. It is that both results can be right.
 
 Each result belongs only to the named boat, propeller and test conditions. The table shows why hull, load, gearcase and propeller must stay attached to every performance number; no row is a forecast for another boat.
+
+## What This Means on Ontario Water
+
+Around Rice Lake and the Kawarthas, the 115 often ends up doing one of two jobs: pushing a family pontoon with people, canvas and gear, or powering an aluminum fishing boat that still needs clean handling and useful cruise speed. Those boats can share a horsepower rating and still need different gearcases and propellers.
+
+For a pontoon, Command Thrust and the larger propeller are often the right tools. For a recreational aluminum V-hull, the standard gearcase is normally the better match. We start with the capacity plate, normal passenger load and how the boat is actually used, then confirm the setup during a water test on Rice Lake.
+
+If the boat stays in Ontario through winter, deal with fuel, gear lube, cooling-system service and storage before freeze-up. HBW's in-person marina season closes on December 1, so the useful service window is in the fall, not after the first cold snap.
 
 ## Common Mistakes
 
@@ -312,7 +321,7 @@ Build the boat and motor together. The quote builder shows the current Canadian 
 
 **Build a complete quote:** [Mercury motor selection](/quote/motor-selection)
 
-**Phone:** 905-342-2153
+**Phone:** [905-342-2153](tel:+19053422153)
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -325,14 +334,14 @@ This review uses current-family evidence only. Performance numbers remain attach
 - [Mercury Canada 2.1 L 75–115 maintenance-kit identification](https://www.mercurymarine.com/ca/en/product/mercury-8m0097855-21l-75-115hp-fourstroke-300-hour-maintenance-kit)
 - [Mercury Canada FourStroke family](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
 - [Mercury 75–115 FourStroke and 115 Pro XS owner manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
-- [Mercury history of the 75–115 FourStroke family](https://www.mercurymarine.com/nz/en/lifestyle/dockline/mercury-releases-new-mercury-40---115hp-tiller)
-- [Mercury confirmation of the 115 Pro XS 2016 launch](https://www.mercurymarine.com/ch/fr/about-us/news/mercury-marine-announces-new-150-pro-xs-outboard)
+- [Mercury Canada history of the 75–115 FourStroke family](https://www.mercurymarine.com/ca/en/lifestyle/dockline/mercury-releases-new-mercury-40---115hp-tiller)
+- [Boats.com report from the 2016 Miami launch of the 115 Pro XS](https://www.boats.com/reviews/new-2016-outboards-mercury-and-seven-marine-make-news-in-miami/)
 - [Mercury 189XF test](https://performancedata.mercurymarine.com/performance-test/144)
 - [Mercury 1750 Hawk test](https://performancedata.mercurymarine.com/performance-test/132)
 - [Mercury 1750 Super Hawk test](https://performancedata.mercurymarine.com/performance-test/134)
 - [Mercury 2070 Retriever test](https://performancedata.mercurymarine.com/performance-test/150)
 - [Mercury Manitou pontoon test](https://performancedata.mercurymarine.com/performance-test/244)
-- [BoatDealers.ca Princecraft Sportfisher 21-4S test (2025)](https://www.boatdealers.ca/boat-reviews/%32%30%32%35/princecraft/sportfisher-21-4s)
+- [BoatDealers.ca Princecraft Sportfisher 21-4S test (2025)](https://www.boatdealers.ca/boat-reviews/2025/princecraft/sportfisher-21-4s)
 - [Boating Magazine 115 Pro XS test](https://www.boatingmag.com/mercury-115-pro-xs/)
 - [19/20/21-pitch 115 Pro XS owner test](https://www.youtube.com/watch?v=HblsKMvjxCU)
 - [Tracker 190 TX 115 Pro XS prop testing](https://www.youtube.com/watch?v=mDAhI53xUB0)

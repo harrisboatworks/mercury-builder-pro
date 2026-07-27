@@ -16,6 +16,7 @@ const vercelConfig = read('vercel.json');
 const prerenderScript = read('scripts/static-prerender.mjs');
 const brandMetadata = read('public/.well-known/brand.json');
 const blogArticles = read('src/data/blogArticles.ts');
+const mercury115Twin = read('public/blog/mercury-115-hp-fourstroke-review-ontario.md');
 const caseStudies = read('src/data/caseStudiesLongForm.ts');
 const baseCaseStudies = read('src/data/caseStudies.ts');
 const caseStudyGenerator = read('scripts/generate-markdown-twins.mjs');
@@ -268,6 +269,44 @@ for (const { label, review, currentGeneration } of socialReviewChecks) {
   );
   check(!review.includes('—'), `${label} review must not contain em dashes.`);
 }
+
+check(
+  /mercury-115-pro-xs-freshwater-ranger-full\.webp/.test(mercury115Review),
+  'The Mercury 115 review must use the full-resolution direct Ranger image asset.',
+);
+check(
+  /On a phone, swipe the table sideways to see every column/.test(mercury115Review),
+  'The Mercury 115 comparison table must retain its mobile swipe guidance.',
+);
+check(
+  /title: Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers/.test(mercury115Review),
+  'The Mercury 115 owner prop-test embed must keep its accurate accessible title.',
+);
+check(
+  /tel:\+19053422153/.test(mercury115Review),
+  'The Mercury 115 closing call path must remain tappable.',
+);
+check(
+  /## What This Means on Ontario Water/.test(mercury115Review),
+  'The Mercury 115 review must keep its Ontario-use section.',
+);
+check(
+  /mercurymarine\.com\/ca\/en\/lifestyle\/dockline\/mercury-releases-new-mercury-40---115hp-tiller/.test(mercury115Review) &&
+    /boats\.com\/reviews\/new-2016-outboards-mercury-and-seven-marine-make-news-in-miami/.test(mercury115Review),
+  'The Mercury 115 review must retain its Canadian family-history and direct 2016 launch sources.',
+);
+check(
+  !/mercurymarine\.com\/ch\/fr\/about-us\/news\/mercury-marine-announces-new-150-pro-xs-outboard/.test(mercury115Review),
+  'The Mercury 115 review must not cite the Swiss-French 150 Pro XS article as its launch source.',
+);
+check(
+  !/%32%30%32%35/.test(mercury115Review),
+  'The Mercury 115 review contains an unnecessarily encoded year in the Princecraft source URL.',
+);
+check(
+  /\[Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers\]\(https:\/\/www\.youtube\.com\/watch\?v=HblsKMvjxCU\)/.test(mercury115Twin),
+  'The Mercury 115 Markdown twin must preserve the owner prop-test video as a usable link.',
+);
 
 check(
   /200 FourStroke is a 3\.4-litre V6/.test(mercury200Review) &&
