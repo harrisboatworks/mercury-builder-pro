@@ -131,13 +131,13 @@ export function MercuryCapacityLookup() {
                   <div>
                     <dt className="text-repower-navy-900/55">Crankcase</dt>
                     <dd className="font-semibold text-repower-navy-900">
-                      {row.crankcaseQt} qt / {row.crankcaseL} L
+                      {formatCrankcaseCapacity(row)}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-repower-navy-900/55">Gearcase</dt>
                     <dd className="font-semibold text-repower-navy-900">
-                      {formatGearcaseCapacity(row.gearcaseOz)}
+                      {formatGearcaseCapacity(row)}
                     </dd>
                   </div>
                   <div className="col-span-2">
