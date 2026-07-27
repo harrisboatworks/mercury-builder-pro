@@ -1,4 +1,5 @@
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
 interface BlogCardImageProps {
   src?: string;
@@ -24,11 +25,7 @@ export function BlogCardImage({
   onError,
 }: BlogCardImageProps) {
   const image = normalizeImageSrc(src);
-  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
-  const base = isLocalRaster ? image.replace(/\.(png|jpe?g)$/i, '') : null;
-  const webpSrcSet = base
-    ? `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`
-    : null;
+  const webpSrcSet = getResponsiveWebpSrcSet(image);
 
   const img = (
     <img

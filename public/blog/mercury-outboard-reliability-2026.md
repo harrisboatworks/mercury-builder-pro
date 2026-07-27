@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md
-last_updated: 2026-07-23
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer"
 description: "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a..."
 category: "Mercury Outboards"
 date_published: 2026-07-13
-date_modified: 2026-07-23
+date_modified: 2026-07-27
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-13  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-27  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 
@@ -116,8 +116,7 @@ Real maintenance, no upsell:
 
 **Watch Mercury's own walkthrough of the basics:**
 
-https://www.youtube.com/watch?v=ydFfxwUz5yc
-
+[Engine Care Basics for New Owners (Mercury Marine)](https://www.youtube.com/watch?v=ydFfxwUz5yc)
 *Video: Engine Care Basics for New Owners (Mercury Marine official channel).*
 
 If you're thinking about a new Mercury rather than servicing your current one: [mercuryrepower.ca](https://www.mercuryrepower.ca) has current information on repowering programs.

@@ -1,4 +1,7 @@
 import { DollarSign, Calendar, Settings, HelpCircle, Phone } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import { Link } from 'react-router-dom';
+import remarkGfm from 'remark-gfm';
 
 export interface PremiumFaqItem {
   question: string;
@@ -18,6 +21,52 @@ function pickIcon(question: string, answer: string) {
   if (/when|timing|season|how long|wait|time|schedule|spring|fall|winter|date/.test(q)) return Calendar;
   if (/service|maintenance|install|rig|repair|warranty|prop|setup|tune/.test(q) || /service|install|maintenance/.test(a)) return Settings;
   return HelpCircle;
+}
+
+function FaqAnswer({ answer }: { answer: string }) {
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        p: ({ children }) => <p className="m-0">{children}</p>,
+        a: ({ href, children }) => {
+          if (!href) return <span>{children}</span>;
+          const isInternal =
+            href.startsWith('/') ||
+            href.startsWith('#') ||
+            /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(
+              href,
+            );
+          const className =
+            'font-semibold text-primary underline decoration-primary/35 underline-offset-2 hover:decoration-primary';
+
+          if (isInternal) {
+            const to = href.startsWith('#')
+              ? href
+              : href.replace(/^https?:\/\/[^/]+/, '') || '/';
+            return (
+              <Link to={to} className={className}>
+                {children}
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={className}
+            >
+              {children}
+            </a>
+          );
+        },
+      }}
+    >
+      {answer}
+    </ReactMarkdown>
+  );
 }
 
 export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: PremiumFaqProps) {
@@ -72,9 +121,9 @@ export function PremiumFaq({ faqs, heading = 'Frequently Asked Questions' }: Pre
                 {faq.question}
               </h3>
 
-              <p className="font-sans text-repower-navy-900/80 text-[16px] leading-relaxed mt-3 mb-0 faq-answer">
-                {faq.answer}
-              </p>
+              <div className="font-sans text-repower-navy-900/80 text-[16px] leading-relaxed mt-3 mb-0 faq-answer">
+                <FaqAnswer answer={faq.answer} />
+              </div>
 
               <div aria-hidden="true" className="mt-5 pt-4 border-t border-repower-navy-900/10" />
             </li>

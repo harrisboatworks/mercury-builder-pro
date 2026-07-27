@@ -13,6 +13,7 @@ import {
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { parseLocalDate, type BlogListingArticle } from '@/data/blogArticleListing';
+import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCardImage } from './BlogCardImage';
 
@@ -147,14 +148,13 @@ function ArticleCard({
 }
 
 function BlogHubHeroImage({ src }: { src: string }) {
-  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(src);
-  const base = isLocalRaster ? src.replace(/\.(png|jpe?g)$/i, '') : null;
+  const webpSrcSet = getResponsiveWebpSrcSet(src);
 
   return (
     <picture>
-      {base && (
+      {webpSrcSet && (
         <source
-          srcSet={`${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`}
+          srcSet={webpSrcSet}
           sizes="100vw"
           type="image/webp"
         />

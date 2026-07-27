@@ -77,6 +77,9 @@ const MERCURY_PRODUCT_PROTECTION_RATE_CARD = JSON.parse(
 const SEO_PAGE_METADATA = JSON.parse(
   readFileSync(new URL('../src/data/seoPageMetadata.json', import.meta.url), 'utf8')
 );
+const IMAGE_VARIANTS_MANIFEST = JSON.parse(
+  readFileSync(new URL('../src/data/imageVariantsManifest.json', import.meta.url), 'utf8')
+);
 const MERCURY_PRODUCT_PROTECTION_ALL_PRICES = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.flatMap(
   (band) => Object.values(band.prices).map(Number)
 );
@@ -2861,16 +2864,38 @@ const BLOG_TABLE_FALLBACKS = {
 // so crawlers + LLMs see the responsive WebP srcset and credentials
 // without executing JS. Keep in sync if those components change.
 // ============================================================
+function getResponsiveWebpSrcSet(image) {
+  const match = /^(\/.+)\.(png|jpe?g)$/i.exec(image || '');
+  const base = match?.[1];
+  if (!base || !IMAGE_VARIANTS_MANIFEST.bases?.includes(base)) return null;
+
+  const widths = IMAGE_VARIANTS_MANIFEST.widths?.[base];
+  if (!Array.isArray(widths) || widths.length !== 3) return null;
+
+  const sources = [
+    `${base}-640.webp`,
+    `${base}-1024.webp`,
+    `${base}.webp`,
+  ];
+  const byWidth = new Map();
+  widths.forEach((width, index) => {
+    if (Number.isFinite(width) && width > 0) byWidth.set(width, sources[index]);
+  });
+
+  return [...byWidth.entries()]
+    .sort(([a], [b]) => a - b)
+    .map(([width, src]) => `${src} ${width}w`)
+    .join(', ');
+}
+
 function renderHeroPictureHtml(image, alt, photoSlot) {
   if (!image) return '';
   const safeAlt = escapeHtml(alt || '');
   const slotAttr = photoSlot ? ` data-photo-slot="${escapeHtml(photoSlot)}"` : '';
-  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
-  if (!isLocalRaster) {
+  const srcSet = getResponsiveWebpSrcSet(image);
+  if (!srcSet) {
     return `<figure class="blog-hero"${slotAttr}><img src="${escapeHtml(image)}" alt="${safeAlt}" loading="eager" fetchpriority="high" /></figure>`;
   }
-  const base = image.replace(/\.(png|jpe?g)$/i, '');
-  const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
   const sizes = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
   return (
     `<figure class="blog-hero"${slotAttr}>` +
