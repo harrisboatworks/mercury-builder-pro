@@ -306,7 +306,9 @@ export function getMotorImagesForModel(
     };
   }
 
-  if (hp === 250) return mercuryProductImages['250'];
+  if (hp === 250 && /\bfour\s*stroke\b|\bfourstroke\b/.test(normalizedModel)) {
+    return mercuryProductImages['250'];
+  }
 
   return null;
 }

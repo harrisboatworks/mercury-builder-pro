@@ -875,16 +875,22 @@ if (event.type === 'filter_motors') {
         Number(dbMotor.horsepower),
         dbMotor.model_display || dbMotor.model,
       );
+      const hasAssignedImage = Boolean(
+        dbMotor.hero_media_id ||
+        dbMotor.hero_image_url ||
+        dbMotor.image_url ||
+        firstDbImage,
+      );
       const heroImage =
         dbMotor.hero_image_url ||
         dbMotor.image_url ||
         firstDbImage ||
-        fallbackImages?.heroImage ||
+        (!dbMotor.hero_media_id ? fallbackImages?.heroImage : '') ||
         '';
       // Prefer assigned database media, then use an exact local product image.
       const galleryImages = dbImages.length > 0
         ? dbImages
-        : (fallbackImages?.galleryImages || []);
+        : (!hasAssignedImage ? (fallbackImages?.galleryImages || []) : []);
       const motorFamily = getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features));
 
       // Convert to Motor type (same as original)
