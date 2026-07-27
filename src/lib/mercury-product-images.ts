@@ -287,6 +287,28 @@ export function getMotorImages(hp: number): MercuryProductImages | null {
 }
 
 /**
+ * Get a family-correct product image for catalog cards that have no assigned
+ * database media. The generic HP map is FourStroke-first, so performance
+ * families must be handled before falling back to it.
+ */
+export function getMotorImagesForModel(
+  hp: number,
+  model: string | null | undefined,
+): MercuryProductImages | null {
+  const normalizedModel = model?.toLowerCase() || '';
+
+  if (hp === 250 && /\bpro\s*xs\b|\bproxs\b/.test(normalizedModel)) {
+    const heroImage = '/lovable-uploads/products/mercury-250-pro-xs-official.webp';
+    return {
+      heroImage,
+      galleryImages: [heroImage],
+    };
+  }
+
+  return getMotorImages(hp);
+}
+
+/**
  * Get hero image for a motor by HP
  */
 export function getMotorHeroImage(hp: number): string | null {
