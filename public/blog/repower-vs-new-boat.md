@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Repower vs Buy New Boat: The Honest Math"
 description: "Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from $11,000 CAD installed."
 category: "Buying Guide"

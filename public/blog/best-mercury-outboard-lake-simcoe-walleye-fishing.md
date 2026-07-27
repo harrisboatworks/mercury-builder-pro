@@ -4,9 +4,9 @@ last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Setup for Simcoe Walleye 2026"
 description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup."
 category: "Fishing & Local"

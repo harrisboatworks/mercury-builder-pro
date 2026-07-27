@@ -4,9 +4,9 @@ last_updated: 2026-05-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations."
 category: "Buying Guide"

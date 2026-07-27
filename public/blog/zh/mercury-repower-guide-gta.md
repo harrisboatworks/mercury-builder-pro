@@ -4,9 +4,9 @@ last_updated: 2026-05-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读"
 description: "你的船外机还值得维修吗？GTA 华人船主的 Mercury Repower 完整指南：换机时机、选马力、透明报价，以及 Harris Boat Works 的完整安装流程。"
 category: "成本分析"

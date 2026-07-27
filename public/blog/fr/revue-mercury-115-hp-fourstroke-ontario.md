@@ -4,9 +4,9 @@ last_updated: 2026-07-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte"
 description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré..."
 category: "Avis produit"

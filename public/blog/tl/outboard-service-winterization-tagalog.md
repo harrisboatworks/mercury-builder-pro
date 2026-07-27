@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Outboard motor service at winterization sa Ontario (Tagalog Guide)"
 description: "Outboard motor service at winterization sa Ontario: kailan, bakit, at saan magpapa-service ng Mercury motor mo. Tagalog guide mula sa Rice Lake na marina."
 category: "Tagalog Guide"

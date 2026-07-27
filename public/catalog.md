@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-26
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -57,27 +57,43 @@ See any motor twin for an example body.
 
 ## Service and maintenance
 
-- [Mercury service and maintenance hub](https://www.mercuryrepower.ca/maintenance)
-- [Agent-readable service index](https://www.mercuryrepower.ca/maintenance.md)
+- [Mercury service and maintenance index](https://www.mercuryrepower.ca/maintenance.md), with shop boundaries, service intake, maintenance guidance, and links to current Ontario troubleshooting and cost guides.
+- Human maintenance hub: https://www.mercuryrepower.ca/maintenance
 
 ## Motors
 
 - [25ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [25ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
+- [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
+- [6MH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mh.md)
+- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
+- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elh.md)
+- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elhpt.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
+- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
+- [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt.md)
+- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-elpt.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-exlpt.md)
+- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-xl.md)
+- [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-l.md)
+- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm.md)
+- [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-200-l.md)
+- [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-250-l-dts-tm.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
-- [9.9MLH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke.md)
 - [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
+- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
+- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
-- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md)
 - [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md)
 - [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md)
@@ -130,6 +146,7 @@ See any motor twin for an example body.
 Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md)
+- [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup.md)
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md)
 - [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md)
 - [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md)
@@ -225,7 +242,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercruiser Sterndrive Ontario Guide](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md)
 - [Mercury VesselView vs SmartCraft Explained (Ontario)](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md)
 - [Read Mercury Outboard Serial Number](https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md)
-- [Mercury Maintenance: The 20/100/300 Rule](https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md)
+- [Mercury Outboard Maintenance: 100 and 300 Hours](https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md)
 - [Shrinkwrap vs Indoor Boat Storage Ontario](https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario.md)
 - [Cost of Owning a Boat Ontario 2026](https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md)
 - [Legend Boats Mercury Packages Ontario](https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md)
@@ -256,8 +273,8 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Outdoor Boat Storage Rice Lake](https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md)
 - [Where to Launch Boat on Rice Lake](https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md)
 - [Mercury 9.9 EFI Review Ontario](https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md)
-- [Mercury 90 HP FourStroke Review](https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md)
-- [Mercury 115 HP FourStroke Review](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
+- [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md)
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
 - [Mercury 150 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md)
@@ -328,6 +345,8 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercury Outboard Overheating at High Speed: What to Check](https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md)
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md)
 - [Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?](https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md)
+- [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md)
+- [Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)](https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026.md)
 - [Guide de remotorisation Mercury : prix, délais, rentabilité [fr-CA]](https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md)
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation? [fr-CA]](https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison.md)
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario [fr-CA]](https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario.md)
@@ -400,3 +419,4 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md)
 - [Outboard motor service at winterization sa Ontario (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md)
 - [Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein [hi]](https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md)
+

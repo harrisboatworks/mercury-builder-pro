@@ -4,9 +4,9 @@ last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程"
 description: "多伦多到莱斯湖：Harris Boat Works 室外收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内冬储，不提供取送服务，船坞 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"

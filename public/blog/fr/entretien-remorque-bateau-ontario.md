@@ -4,9 +4,9 @@ last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)"
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"

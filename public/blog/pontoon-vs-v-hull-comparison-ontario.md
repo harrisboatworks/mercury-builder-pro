@@ -4,9 +4,9 @@ last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Pontoon vs V-Hull, Honestly Compared for Ontario Boaters"
 description: "Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family use, fishing, rough water, fuel economy."
 category: "Buying Guides"

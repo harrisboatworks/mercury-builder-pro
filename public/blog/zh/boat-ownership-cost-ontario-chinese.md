@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "安省华人 Boat Ownership Cost Guide"
 description: "安省买船后到底有哪些成本？HBW 用中文讲清 purchase price、PCOC、PCL、insurance、fuel、service、storage、winterization、trailer 和 repower。"
 category: "Buying Guides"

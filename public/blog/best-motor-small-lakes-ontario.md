@@ -4,9 +4,9 @@ last_updated: 2026-04-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Outboards for Ontario Small Lakes"
 description: "Find the perfect motor for small lake boating. Recommendations for horsepower-restricted waters and cottage lake applications across Ontario."
 category: "Buying Guide"

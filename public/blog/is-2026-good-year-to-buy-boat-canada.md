@@ -4,9 +4,9 @@ last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Is 2026 a Good Year to Buy a Boat in Canada?"
 description: "Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative."
 category: "Buying Guide"

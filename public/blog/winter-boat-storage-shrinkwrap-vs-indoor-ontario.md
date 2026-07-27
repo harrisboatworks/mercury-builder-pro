@@ -4,9 +4,9 @@ last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Shrinkwrap vs Indoor Boat Storage Ontario"
 description: "Shrinkwrap vs indoor boat storage in Ontario: honest comparison on cost, protection, and what happens without winterization."
 category: "Service & Maintenance"
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-24
+**Last updated:** 2026-07-24  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario
 
@@ -232,3 +232,4 @@ It is included for HBW winter-storage customers. As of July 2026, the price for 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

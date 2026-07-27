@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"

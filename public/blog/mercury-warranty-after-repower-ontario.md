@@ -4,9 +4,9 @@ last_updated: 2026-06-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "How Your Mercury Warranty Works After a Repower"
 description: "What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains."
 category: "Warranty & Protection"

@@ -4,9 +4,9 @@ last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
 description: "Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular."
 category: "Buying Guide"

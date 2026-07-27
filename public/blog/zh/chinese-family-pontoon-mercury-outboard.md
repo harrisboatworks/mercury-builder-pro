@@ -4,9 +4,9 @@ last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "华人家庭买 pontoon：Mercury 船外机怎么配才不后悔"
 description: "给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。"
 category: "家庭买船指南"

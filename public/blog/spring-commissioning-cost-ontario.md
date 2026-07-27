@@ -4,9 +4,9 @@ last_updated: 2026-07-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)"
 description: "What spring commissioning really costs in Ontario, from 9,540 spring work orders: the flat startup rate, what's included, and why the fall service decides the spring..."
 category: "Service"

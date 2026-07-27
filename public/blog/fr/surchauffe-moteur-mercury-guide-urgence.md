@@ -4,9 +4,9 @@ last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)"
 description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines..."
 category: "Dépannage"

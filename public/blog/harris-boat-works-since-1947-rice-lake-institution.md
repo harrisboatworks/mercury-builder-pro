@@ -4,9 +4,9 @@ last_updated: 2026-06-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Harris Boat Works: On Rice Lake Since 1947"
 description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've."
 category: "About HBW"

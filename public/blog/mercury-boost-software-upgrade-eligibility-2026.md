@@ -4,9 +4,9 @@ last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Boost Software Eligibility 2026"
 description: "Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations."
 category: "Mercury Technology"

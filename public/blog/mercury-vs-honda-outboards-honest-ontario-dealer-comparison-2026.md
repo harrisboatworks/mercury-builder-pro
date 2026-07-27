@@ -4,9 +4,9 @@ last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury vs Honda Ontario 2026"
 description: "Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup."
 category: "Buying Guide"

@@ -4,9 +4,9 @@ last_updated: 2026-05-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Used Outboard Buying Guide Ontario"
 description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test."
 category: "Buying Guide"

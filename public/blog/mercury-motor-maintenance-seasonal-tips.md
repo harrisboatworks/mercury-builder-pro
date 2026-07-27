@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Motor Seasonal Care Ontario"
 description: "Seasonal Mercury maintenance for Ontario: spring checks, 100-hour or annual service, model-specific fall storage, and expanded 300-hour work."
 category: "Maintenance"

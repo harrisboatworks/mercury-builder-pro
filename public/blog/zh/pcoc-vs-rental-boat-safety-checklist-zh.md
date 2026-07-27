@@ -4,9 +4,9 @@ last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "安省租船需要驾照吗？PCOC 与租船安全清单一次讲清"
 description: "安省租船华人指南：PCOC（船只操作员卡）与 Rental Boat Safety Checklist 的差别、何时需要哪一个、罚款风险、如何合法上水。"
 category: "安省法规中文"

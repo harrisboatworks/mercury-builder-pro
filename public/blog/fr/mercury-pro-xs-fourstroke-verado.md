@@ -4,9 +4,9 @@ last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Pro XS, FourStroke ou Verado : lequel choisir ?"
 description: "Pro XS, FourStroke ou Verado ? Ce qui distingue les trois familles Mercury, et lequel convient à votre bateau. Réponses franches d'un concessionnaire Mercury."
 category: "Guide d'achat"

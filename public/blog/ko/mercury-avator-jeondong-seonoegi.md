@@ -4,9 +4,9 @@ last_updated: 2026-06-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "머큐리 Avator 전동 선외기: 가격과 항속거리"
 description: "머큐리 Avator 전동 선외기: 가격, 실제 항속거리, 그리고 라이스 레이크에 적합한지. 머큐리 Premier 딜러의 정직한 평가."
 category: "구매 가이드"

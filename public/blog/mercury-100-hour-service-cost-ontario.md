@@ -4,9 +4,9 @@ last_updated: 2026-07-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)"
 description: "Real Ontario numbers for a Mercury 100-hour or annual service, from 4,160 work orders: flat-rate labour by HP class, median parts, and what's included."
 category: "Service"

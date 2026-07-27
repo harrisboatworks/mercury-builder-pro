@@ -4,9 +4,9 @@ last_updated: 2026-06-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario"
 description: "Les étapes essentielles pour préparer votre moteur Mercury pour l'hiver ontarien : stabilisation du carburant, lubrification interne."
 category: "Entretien"

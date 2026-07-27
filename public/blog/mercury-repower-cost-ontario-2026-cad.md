@@ -4,9 +4,9 @@ last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Repower Guide: Cost, Timeline & When It's Worth It"
 description: "What a Mercury repower actually costs, how long it takes, and when it beats buying new. Straight answers from a Mercury Premier dealer on Rice Lake."
 category: "Repower Cost & Pricing"
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-04-17  
-**Last updated:** 2026-07-24
+**Last updated:** 2026-07-24  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 
@@ -215,3 +215,4 @@ Yes, subject to lender approval and the current written terms. HBW arranges fina
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

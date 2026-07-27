@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"

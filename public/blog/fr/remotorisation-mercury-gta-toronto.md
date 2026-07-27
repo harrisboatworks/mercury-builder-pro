@@ -4,9 +4,9 @@ last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)"
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"

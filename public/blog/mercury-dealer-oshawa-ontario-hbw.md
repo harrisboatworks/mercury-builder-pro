@@ -4,9 +4,9 @@ last_updated: 2026-07-24
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Oshawa: 40 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region."
 category: "Service Area"
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-24
+**Last updated:** 2026-07-24  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw
 
@@ -180,3 +180,4 @@ Yes. Courtice and north Oshawa are within the same drive time. We have customers
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

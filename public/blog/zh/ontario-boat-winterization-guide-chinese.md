@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "安省船主冬季保养和冬储清单：第一次过冬怎么做"
 description: "第一次在安省过冬的船主指南：为什么必须冬化（结冰会裂缸体）、完整冬化清单、DIY vs 经销商服务、什么时候预订（9-11 月）、HBW 在 Gores Landing 的冬储服务（12 月 1 日至 4 月 1 日停业）。"
 category: "mandarin"

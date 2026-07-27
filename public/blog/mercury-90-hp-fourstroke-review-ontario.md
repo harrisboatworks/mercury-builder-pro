@@ -22,10 +22,10 @@ language: en-CA
 
 > An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-05-10
-**Last updated:** 2026-07-27
-**Read time:** 17 min read
+**Category:** Mercury Buying Guides  
+**Published:** 2026-05-10  
+**Last updated:** 2026-07-27  
+**Read time:** 17 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario
 
 > **Quick answer:** The Mercury 90 HP FourStroke is a strong match for many 16–18 ft aluminum fishing boats and lighter family runabouts. Choose the standard 2.07:1 gearcase for most recreational V-hulls. Choose the 2.38:1 Command Thrust version when a pontoon or heavy hull needs a larger propeller and better load-carrying grip.
@@ -344,3 +344,4 @@ Mercury's current U.S. and Canada warranty chart lists a 3-year limited warranty
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

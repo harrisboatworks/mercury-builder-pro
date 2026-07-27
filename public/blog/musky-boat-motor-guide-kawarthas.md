@@ -4,9 +4,9 @@ last_updated: 2026-04-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Best Motors for Kawartha Musky Fishing"
 description: "Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers."
 category: "Buying Guide"

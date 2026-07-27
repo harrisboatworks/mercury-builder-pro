@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교"
 description: "보트 엔진이 낡았을 때, 엔진만 교체하는 게 나을까 아니면 새 보트를 사는 게 나을까? 비용, 선체 상태, 타이밍 등 현실적인 판단 기준을 정리했습니다."
 category: "엔진 교체"

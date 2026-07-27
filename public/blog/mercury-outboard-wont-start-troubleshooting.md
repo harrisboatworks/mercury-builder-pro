@@ -1,12 +1,7 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
 last_updated: 2026-07-09
-currency: CAD
-pickup_only: true
-delivery_offered: false
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"

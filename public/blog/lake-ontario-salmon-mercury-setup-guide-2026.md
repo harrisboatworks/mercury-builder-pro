@@ -4,9 +4,9 @@ last_updated: 2026-07-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Lake Ontario Salmon Mercury Setup"
 description: "Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20."
 category: "Fishing / Rigging"

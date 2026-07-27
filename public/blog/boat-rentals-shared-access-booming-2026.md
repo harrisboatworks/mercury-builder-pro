@@ -4,9 +4,9 @@ last_updated: 2026-07-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us"
 description: "Rent or buy a boat in 2026? Real numbers from 346 rentals on Rice Lake, the 10-15 day rule, and an honest rent vs own vs boat club comparison for Ontario."
 category: "Lifestyle"

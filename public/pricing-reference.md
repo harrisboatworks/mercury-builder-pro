@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-07-18
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 index_type: pricing_reference
 data_source: motor_models (same selection rules as /quote/motor-selection)
 motor_count: 101
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Premier Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-07-18._
+_Last updated 2026-07-27._
 
 All prices shown on this page are live from our current Mercury pricelist feed, updated regularly. Every figure is in Canadian dollars and reflects the dealer price at our Rice Lake yard.
 
@@ -70,7 +70,7 @@ All prices shown on this page are live from our current Mercury pricelist feed, 
 | 8 | 8EH FourStroke | 1A08301LK | 15" | Tiller | $3,410 _(MSRP $3,635)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=46d5e443-5cc0-44ce-82ab-113476a8c9c8) |
 | 8 | 8ELH FourStroke | 1A08311LK | 20" | Tiller | $3,449 _(MSRP $3,675)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=26b4a777-162f-4aa9-a70a-f8c578d27238) |
 | 9.9 | 9.9MH FourStroke | 1A10201LK | 15" | Tiller | $2,999 _(MSRP $3,860)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=e920cfdf-223a-408a-850b-6f112e15c4d7) |
-| 9.9 | 9.9MLH FourStroke | 1A10211LK | 20" | Tiller | $2,999 _(MSRP $3,910)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=a580f60c-a86d-4352-b77a-665f0b9e8208) |
+| 9.9 | 9.9MLH FourStroke | 1A10211LK | 20" | Tiller | $2,999 _(MSRP $3,910)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=a580f60c-a86d-4352-b77a-665f0b9e8208) |
 | 9.9 | 9.9MLH Command Thrust FourStroke | 1A10251LK | 20" | Tiller | $3,971 _(MSRP $4,230)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=e636b8fc-6fda-4e94-a6dc-cb4742941622) |
 | 9.9 | 9.9EH FourStroke | 1A10301LK | 15" | Tiller | $3,299 _(MSRP $4,215)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=d9853a2e-fdb7-44c9-948c-28fa52fd95f9) |
 | 9.9 | 9.9ELH FourStroke | 1A10311LK | 20" | Tiller | $3,399 _(MSRP $4,420)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=4fa932da-bd7e-4d2f-b1da-9aaed16932a8) |

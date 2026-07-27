@@ -1,57 +1,57 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke
-last_updated: 2026-07-26
+canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-motor_id: a580f60c-a86d-4352-b77a-665f0b9e8208
-slug: fourstroke-9-9hp-9-9mlh-fourstroke
+motor_id: 71d56079-1b47-44e9-8447-969ec6ef416b
+slug: fourstroke-25hp-25-elhpt-fourstroke
 family: FourStroke
-horsepower: 9.9
-model_number: 1A10211LK
-availability: in_stock
-price_cad: 2999
+horsepower: 25
+model_number: 1A25411BK
+availability: special_order
+price_cad: 6265
 ---
 
-# 9.9MLH FourStroke
+# 25ELHPT FourStroke
 
-Mercury FourStroke 9.9 HP outboard motor (model 1A10211LK).
+Mercury FourStroke 25 HP outboard motor (model 1A25411BK).
 Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 9.9MLH FourStroke
+- **Model:** 25ELHPT FourStroke
 - **Family:** Mercury FourStroke
-- **Horsepower:** 9.9 HP
-- **Model number:** 1A10211LK
+- **Horsepower:** 25 HP
+- **Model number:** 1A25411BK
 
 ## Pricing (CAD)
 
-- **Selling price:** $2,999
-- **MSRP:** $3,910
+- **Selling price:** $6,265
+- **MSRP:** $6,675
 - **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability
 
-- **Status:** In stock at Gores Landing
+- **Status:** Special order, contact dealer for ETA
 - **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for
 
-Small tenders, canoes, sailboat kickers, and very light fishing setups.
+Small aluminum fishing boats, jon boats, and light tiller setups.
 
 ## Not ideal for
 
-Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.
+Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mlh-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=a580f60c-a86d-4352-b77a-665f0b9e8208
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=71d56079-1b47-44e9-8447-969ec6ef416b
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 ```json
 {
   "action": "build_quote",
-  "motor_id": "a580f60c-a86d-4352-b77a-665f0b9e8208",
+  "motor_id": "71d56079-1b47-44e9-8447-969ec6ef416b",
   "trade_in": null,
   "contact": null
 }
@@ -76,4 +76,4 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 - Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
 - Standard 3-year Mercury factory warranty. Bonus coverage applies only while an eligible promotion is active.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
-- Mercury service and maintenance: https://www.mercuryrepower.ca/maintenance
+- Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

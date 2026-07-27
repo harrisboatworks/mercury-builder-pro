@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج"
 description: "Boat winterization aur storage Toronto ke qareeb: کب کروائیں، کیا شامل ہوتا ہے، اور Mercury motor کی ماہر service۔ Rice Lake marina کی اردو گائیڈ پڑھیں۔"
 category: "اردو گائیڈ"

@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "多伦多华人二手船购买检查清单"
 description: "多伦多华人买二手船前要检查什么？HBW 用中文讲清船体、transom、trailer、Mercury outboard、PCL、PCOC、lake test 和常见风险。"
 category: "Buying Guides"
