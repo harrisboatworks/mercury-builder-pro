@@ -292,11 +292,11 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     faqs: [
       {
         question: 'How much oil does a Mercury 90 HP FourStroke take?',
-        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.8 US quarts. The later 1.7 L EFI at serial 1B366823 and up is 5.28 quarts. The 2014+ 2.1 L family at serial 2B094996 and up is 5.5 quarts. Confirm the final level on the dipstick and in the exact manual.',
+        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.54 L (4.8 US quarts). The later 1.7 L EFI at serial 1B366823 and up is 5 L (5.28 US quarts). The 2014+ 2.1 L family at serial 2B094996 and up is 5.2 L (5.5 US quarts). Confirm the final level on the dipstick and in the exact manual.',
       },
       {
         question: 'How much oil does a Mercury 60 HP FourStroke take?',
-        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3.17 US quarts, or 3 litres, of crankcase oil. The gearcase is listed at 11.5 ounces for the standard lower unit and 24 ounces for the BigFoot or Command Thrust lower unit.',
+        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3 litres (3.17 US quarts) of crankcase oil. The gearcase is listed at 340 mL (11.5 US fl oz) for the standard lower unit and 710 mL (24 US fl oz) for the BigFoot or Command Thrust lower unit.',
       },
       {
         question: 'Can I fill a Mercury outboard with the exact chart capacity?',
