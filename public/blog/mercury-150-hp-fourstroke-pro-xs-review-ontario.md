@@ -65,6 +65,8 @@ Mercury lists the lightest standard 150 around 455 lb and introduced the Pro XS 
 
 ## FourStroke vs Pro XS: The Differences That Matter
 
+*On a phone, swipe the table sideways to see every column.*
+
 | Feature | 150 FourStroke | 150 Pro XS | What it means on the boat |
 |---|---|---|---|
 | Rated power | 150 HP | 150 HP | Pro XS is not advertised as hidden extra horsepower |
@@ -109,6 +111,8 @@ That freedom is not permission to guess. An engine mounted too high can still lo
 ## Real Freshwater Results, With the Boat Attached
 
 These are documented examples, not speed promises.
+
+*On a phone, swipe the table sideways to see every column.*
 
 | Boat and test load | Motor and propeller | Reported result | Useful cruise point |
 |---|---|---|---|
