@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide.md
-last_updated: 2026-07-02
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock"
 description: "Never driven a boat? Here's the exact orientation we give every first-time renter at our Rice Lake dock: driving, docking, wind, and what to do if something goes wrong."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-07-02
+date_modified: 2026-07-27
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-02  
+**Last updated:** 2026-07-27  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 
@@ -133,7 +133,7 @@ Motor won't start after your swim stop? Nine times out of ten it's the kill-swit
 [Do the licence tonight](/blog/boat-rental-licence-ontario-guide), book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
+**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

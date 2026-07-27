@@ -938,7 +938,7 @@ function renderMarkdownWithDirectives(
         <MercuryVideo
           key={`${keyPrefix}-yt-${i}`}
           videoId={chunk.youtubeProps.id}
-          title={chunk.youtubeProps.title || 'Mercury Marine video'}
+          title={chunk.youtubeProps.title || 'Embedded boating video'}
         />
       );
     }

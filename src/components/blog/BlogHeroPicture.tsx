@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
 interface BlogHeroPictureProps {
   /** Hero source. When omitted, the component renders nothing (article displays with no hero). */
@@ -51,11 +52,7 @@ export function BlogHeroPicture({
     </div>
   );
 
-  const isLocalRaster = /^\/.+\.(png|jpe?g)$/i.test(image);
-  const base = isLocalRaster ? image.replace(/\.(png|jpe?g)$/i, '') : null;
-  const webpSrcSet = base
-    ? `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`
-    : null;
+  const webpSrcSet = getResponsiveWebpSrcSet(image);
 
   return (
     <div className={wrapperClassName} {...(photoSlot ? { 'data-photo-slot': photoSlot } : {})}>

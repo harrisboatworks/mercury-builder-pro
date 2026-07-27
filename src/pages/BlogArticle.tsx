@@ -355,7 +355,7 @@ export default function BlogArticle() {
           {article.youtubeVideoId && (
             <MercuryVideo
               videoId={article.youtubeVideoId}
-              title={article.youtubeVideoTitle || 'Mercury Marine video'}
+              title={article.youtubeVideoTitle || 'Embedded boating video'}
             />
           )}
 
@@ -363,7 +363,7 @@ export default function BlogArticle() {
           {article.videoAssetUrl && (
             <MercuryVideoFile
               src={article.videoAssetUrl}
-              title={article.videoAssetTitle || 'Mercury Marine video'}
+              title={article.videoAssetTitle || 'Embedded boating video'}
               caption={article.videoAssetCaption}
             />
           )}

@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Expand } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import imageVariantsManifest from '@/data/imageVariantsManifest.json';
-
-// Build-time manifest of image paths (without extension) that have all three
-// responsive WebP variants generated (-640.webp, -1024.webp, .webp). When a
-// PNG/JPG src is NOT in this manifest, we render a plain <img> instead of a
-// <picture> with a broken <source>. This avoids iOS Safari rendering the
-// broken-image icon when it fetches a non-existent webp variant.
-const variantBaseSet = new Set<string>(
-  (imageVariantsManifest as { bases: string[] }).bases ?? [],
-);
+import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
 interface ExpandableImageProps {
   src: string;
@@ -68,9 +59,7 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
       <figure className={cn("relative", containerClassName)}>
         <div className="relative group cursor-pointer">
           {(() => {
-            const pngJpgMatch = /^(\/.+)\.(png|jpe?g)$/i.exec(src);
-            const base = pngJpgMatch?.[1];
-            const hasVariants = !!base && variantBaseSet.has(base);
+            const srcSet = getResponsiveWebpSrcSet(src);
             const imgEl = (
               <img
                 src={src}
@@ -81,8 +70,7 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
                 onLoad={() => setImageLoaded(true)}
               />
             );
-            if (!hasVariants) return imgEl;
-            const srcSet = `${base}-640.webp 640w, ${base}-1024.webp 1024w, ${base}.webp 1920w`;
+            if (!srcSet) return imgEl;
             return (
               <picture>
                 <source

@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md
-last_updated: 2026-06-19
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Is a Pontoon Right for Your Family?"
 description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
-date_modified: 2026-06-19
+date_modified: 2026-07-27
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-07-27  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
@@ -70,7 +70,7 @@ Yes. This is the question we get most, and the answer is yes, with a caveat abou
 
 ![Kids tubing behind a pontoon boat on Rice Lake](/lovable-uploads/pontoon-family-tubing.png)
 
-Towing a tube takes roughly one horsepower for every 40 pounds you are pulling, and you need to comfortably reach about 20 mph. In practice:
+There is no useful one-number horsepower formula for tubing. The right setup depends on the boat's capacity plate, total people and gear, tube design, water conditions, propeller, and the riders' size and experience. A properly powered pontoon can tow a tube, but choose the engine for the whole loaded boat and the manufacturer's rating, not the tube's weight alone. In practice:
 
 - **Light tubing with younger kids:** a 90 to 115 hp pontoon handles it fine.
 - **Comfortable all-day tubing, a loaded boat, bigger kids:** you want 115 hp and up.
@@ -129,19 +129,18 @@ Here is the advantage of buying from [a marina that also rents](/blog/rice-lake-
 
 Tell us how your family actually spends a day on the water, who is aboard, whether the kids want to tube, how often you are out when it is windy, and we will tell you straight whether a pontoon, a tritoon, or something else fits. Rent one first if you want to be sure.
 
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-
-**Phone:** 905-342-2153
+**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 
 ## Sources
 
 - Mercury Marine and HBW rigging experience: pontoon horsepower and Command Thrust gearcase guidance.
-- General pontoon family-use, safety, and tubing-power guidance from boating-industry sources.
-- Legend Boats product lineup (LE, Q, Halo series) and 6-Year WOWranty.
+- [Discover Boating: boat tubing guidance](https://www.discoverboating.com/activities/boat-tubing)
+- [Discover Boating: buying a pontoon boat](https://www.discoverboating.com/resources/buying-a-pontoon-boat)
+- [Transport Canada: choosing lifejackets and PFDs](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/choosing-lifejackets-personal-flotation-devices-pfds)
+- [Legend Boats: 6-Year WOWranty](https://www.legendboats.com/?basic-page=legend-boats-6-year-wowranty)
 
 ## FAQs
 

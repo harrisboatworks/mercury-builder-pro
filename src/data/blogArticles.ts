@@ -965,7 +965,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
     imageAlt: "Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario",
     author: "Jay Harris",
     datePublished: "2026-07-13",
-    dateModified: "2026-07-23",
+    dateModified: "2026-07-27",
     publishDate: "2026-07-13",
     category: "Mercury Outboards",
     readTime: "~8 min read",
@@ -1074,7 +1074,10 @@ Real maintenance, no upsell:
 
 **Watch Mercury's own walkthrough of the basics:**
 
-https://www.youtube.com/watch?v=ydFfxwUz5yc
+:::youtube-embed
+id: ydFfxwUz5yc
+title: Engine Care Basics for New Owners (Mercury Marine)
+:::
 
 *Video: Engine Care Basics for New Owners (Mercury Marine official channel).*
 
@@ -1281,7 +1284,7 @@ If you're not sure whether your boat is a push boat or a plane boat, that's a tw
     image: "/lovable-uploads/hero-milky-gearcase-oil.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-24",
+    dateModified: "2026-07-27",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
@@ -1296,7 +1299,7 @@ If you're not sure whether your boat is a push boat or a plane boat, that's a tw
     ],
     content: `# Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-07-27*
 
 > **Quick answer:** Milky or coffee-coloured gearcase oil means water is getting into your lower unit, usually past a worn seal. Caught at the annual oil change, it's typically a pressure test and a seal job. Ignored for a season, water can destroy gears and bearings, and gearcases cost thousands. Our shop has pressure-tested 364 gearcases; most started as a milky drain. Book at hbw.wiki/service.
 
@@ -1376,7 +1379,10 @@ Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-ca
 
 **Watch Mercury's official gear lube change:**
 
-https://www.youtube.com/watch?v=BBbQVH5j0W0
+:::youtube-embed
+id: BBbQVH5j0W0
+title: Changing Gear Lube on a Mercury 40-300 HP FourStroke
+:::
 
 *Video: Mercury 40-300hp FourStroke Maintenance: Changing Gear Lube (Mercury Marine official).*
 
@@ -1879,7 +1885,7 @@ Get on the spring list early, or better, book the fall-spring pair and make both
     image: "/lovable-uploads/hero-renting-vs-owning-boat.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-24",
+    dateModified: "2026-07-27",
 
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
@@ -1895,7 +1901,7 @@ Get on the spring list early, or better, book the fall-spring pair and make both
     ],
     content: `# Renting vs Owning a Boat in Ontario: The Honest Math (2026)
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-07-27*
 
 > **Quick answer:** Owning wins if you're on the water most weekends and the boat is part of how you live. Renting wins if you boat a handful of days a season, because a rental day carries zero fixed costs while ownership costs run whether you launch or not. We sell boats AND rent them, so run the worksheet below before you decide. Rentals: harrisboatworks.ca/rentals.
 
@@ -2011,7 +2017,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 **Rent:** book online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Price a boat and motor:** [build a quote](/quote/motor-selection)
-**Questions about buying or repowering:** 905-342-2153
+**Questions about buying or repowering:** [905-342-2153](tel:+19053422153)
 
 
 **Related guides:**
@@ -2038,7 +2044,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     image: "/lovable-uploads/hero-group-boat-rentals.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-07-27",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2053,7 +2059,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     ],
     content: `# Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-07-27*
 
 > **Quick answer:** For groups bigger than one boat's capacity, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book the fleet at harrisboatworks.ca/rentals.
 
@@ -2155,7 +2161,7 @@ No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Ri
 Get your headcount, pick your boats, and get each driver licensed this week. The group chat will doubt you; the photos will vindicate you.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Planning a big group? Text:** 647-952-2153 **or call:** 905-342-2153
+**Planning a big group? Text:** [647-952-2153](sms:+16479522153) **or call:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -2179,7 +2185,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     image: "/lovable-uploads/hero-first-time-boat-rental.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-07-27",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2194,7 +2200,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     ],
     content: `# First Time Renting a Boat? What We Tell Every Renter at Our Dock
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-07-27*
 
 > **Quick answer:** Renting a boat with zero experience is normal and manageable. A pontoon boat is the easiest boat there is to drive: one throttle, no brakes, slow is always the right speed. Every Harris Boat Works rental starts with a ten-minute hands-on orientation, a fitted life jacket, and a lake map. Complete the boating licence course online the evening before, then book at harrisboatworks.ca/rentals.
 
@@ -2321,7 +2327,7 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
 [Do the licence tonight](/blog/boat-rental-licence-ontario-guide), book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
+**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -38290,7 +38296,7 @@ Harris Boat Works: family-owned on Rice Lake since 1947.
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: '2026-06-19',
-    dateModified: '2026-06-19',
+    dateModified: '2026-07-27',
     publishDate: '2026-06-19',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -38307,7 +38313,7 @@ Harris Boat Works: family-owned on Rice Lake since 1947.
     ],
     content: `# Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
 
-*Last reviewed: 2026-06-19*
+*Last reviewed: 2026-07-27*
 
 > **Quick answer:** For most families on Rice Lake and the Kawarthas, a pontoon is the best all-around boat: safe with kids, roomy, stable, and great for cruising and swimming. It pulls a tube too, with enough power (115 hp and up). What it isn't is a dedicated ski boat. If hard watersports rule your summer, look at a tritoon or a V-hull. Not sure? Rent one first.
 
@@ -38349,7 +38355,7 @@ Yes. This is the question we get most, and the answer is yes, with a caveat abou
 
 ![Kids tubing behind a pontoon boat on Rice Lake](/lovable-uploads/pontoon-family-tubing.png)
 
-Towing a tube takes roughly one horsepower for every 40 pounds you are pulling, and you need to comfortably reach about 20 mph. In practice:
+There is no useful one-number horsepower formula for tubing. The right setup depends on the boat's capacity plate, total people and gear, tube design, water conditions, propeller, and the riders' size and experience. A properly powered pontoon can tow a tube, but choose the engine for the whole loaded boat and the manufacturer's rating, not the tube's weight alone. In practice:
 
 - **Light tubing with younger kids:** a 90 to 115 hp pontoon handles it fine.
 - **Comfortable all-day tubing, a loaded boat, bigger kids:** you want 115 hp and up.
@@ -38431,19 +38437,18 @@ Yes, and we recommend it. Rent one for a weekend, use it the way your family act
 
 Tell us how your family actually spends a day on the water, who is aboard, whether the kids want to tube, how often you are out when it is windy, and we will tell you straight whether a pontoon, a tritoon, or something else fits. Rent one first if you want to be sure.
 
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-
-**Phone:** 905-342-2153
+**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 
 ## Sources
 
 - Mercury Marine and HBW rigging experience: pontoon horsepower and Command Thrust gearcase guidance.
-- General pontoon family-use, safety, and tubing-power guidance from boating-industry sources.
-- Legend Boats product lineup (LE, Q, Halo series) and 6-Year WOWranty.
+- [Discover Boating: boat tubing guidance](https://www.discoverboating.com/activities/boat-tubing)
+- [Discover Boating: buying a pontoon boat](https://www.discoverboating.com/resources/buying-a-pontoon-boat)
+- [Transport Canada: choosing lifejackets and PFDs](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/choosing-lifejackets-personal-flotation-devices-pfds)
+- [Legend Boats: 6-Year WOWranty](https://www.legendboats.com/?basic-page=legend-boats-6-year-wowranty)
 `
   },
   {

@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-07-02
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
 description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-07-02
+date_modified: 2026-07-27
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-02  
+**Last updated:** 2026-07-27  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
@@ -118,17 +118,19 @@ If your worksheet says "own," we're not going to talk you out of it; we'd love t
 
 ## Ready to Run Your Numbers?
 
-Rent a day and count how much you loved it, or price the ownership side with a real quote. We're the same phone number either way.
+Rent a day and count how much you loved it, or price the ownership side with a real quote. Either way you are talking to the same family marina.
 
-**Rent:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Price a boat and motor:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Phone:** 905-342-2153
+**Rent:** book online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Price a boat and motor:** [build a quote](/quote/motor-selection)
+**Questions about buying or repowering:** [905-342-2153](tel:+19053422153)
 
 **Related guides:**
 - [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
 - [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada)
 - [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
+- [First-Time Boat Rental on Rice Lake](/blog/first-time-boat-rental-rice-lake-guide)
+- [Group Boat Rentals on Rice Lake](/blog/group-boat-rentals-rice-lake)
 
 ---
 

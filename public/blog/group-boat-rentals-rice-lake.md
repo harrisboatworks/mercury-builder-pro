@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake.md
-last_updated: 2026-07-02
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out"
 description: "Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-07-02
+date_modified: 2026-07-27
 keywords: ["group boat rental rice lake","family reunion boat rental ontario","rent multiple boats","pontoon rental for large group","fishing weekend boat rental kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-02  
+**Last updated:** 2026-07-27  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 
@@ -108,7 +108,7 @@ Group send-offs get the same treatment as every rental, multiplied: every boat f
 Get your headcount, pick your boats, and get each driver licensed this week. The group chat will doubt you; the photos will vindicate you.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Planning a big group? Text:** 647-952-2153 **or call:** 905-342-2153
+**Planning a big group? Text:** [647-952-2153](sms:+16479522153) **or call:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**

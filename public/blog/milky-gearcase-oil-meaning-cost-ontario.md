@@ -1,17 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario.md
-last_updated: 2026-07-24
-currency: CAD
-pickup_only: true
-delivery_offered: false
+last_updated: 2026-07-27
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)"
 description: "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-07-24
+date_modified: 2026-07-27
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +19,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-24
+**Last updated:** 2026-07-27  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 
@@ -108,8 +103,7 @@ Use the [Mercury oil and gearcase capacity lookup](/blog/mercury-outboard-oil-ca
 
 **Watch Mercury's official gear lube change:**
 
-https://www.youtube.com/watch?v=BBbQVH5j0W0
-
+[Changing Gear Lube on a Mercury 40-300 HP FourStroke](https://www.youtube.com/watch?v=BBbQVH5j0W0)
 *Video: Mercury 40-300hp FourStroke Maintenance: Changing Gear Lube (Mercury Marine official).*
 
 ---
@@ -180,3 +174,4 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+
