@@ -221,6 +221,78 @@ const proXsGuide = blogArticles.match(
 check(/175 HP V6, and 200-300 HP V8/.test(proXsGuide), 'The Pro XS comparison must preserve the current 175 V6 and 200-300 V8 architecture.');
 check(!/(?:175-250 HP V6|200 Pro XS \(V6|225 Pro XS \(V6|250 Pro XS \(V6)/.test(proXsGuide), 'The Pro XS comparison contains a retired V6 architecture claim.');
 
+const mercury90Review = blogArticles.match(
+  /slug:\s*["']mercury-90-hp-fourstroke-review-ontario["'],[\s\S]*?\n\s*},\n\n\s*{/,
+)?.[0] ?? '';
+const mercury115Review = blogArticles.match(
+  /slug:\s*["']mercury-115-hp-fourstroke-review-ontario["'],[\s\S]*?\n\s*},\n\n\s*{/,
+)?.[0] ?? '';
+const mercury150Review = blogArticles.match(
+  /slug:\s*["']mercury-150-hp-fourstroke-pro-xs-review-ontario["'],[\s\S]*?\n\s*},\n\n\s*{/,
+)?.[0] ?? '';
+const mercury200Review = blogArticles.match(
+  /slug:\s*["']mercury-200-hp-fourstroke-pro-xs-review-ontario["'],[\s\S]*?\n\s*},\n\n\s*{/,
+)?.[0] ?? '';
+
+const socialReviewChecks = [
+  {
+    label: 'Mercury 90',
+    review: mercury90Review,
+    currentGeneration: /current 2\.1-litre Mercury 90 introduced in 2014/,
+  },
+  {
+    label: 'Mercury 115',
+    review: mercury115Review,
+    currentGeneration: /current 2\.1-litre 115 FourStroke and 115 Pro XS/,
+  },
+  {
+    label: 'Mercury 150',
+    review: mercury150Review,
+    currentGeneration: /current 3\.0-litre 150 FourStroke and 150 Pro XS/,
+  },
+  {
+    label: 'Mercury 200',
+    review: mercury200Review,
+    currentGeneration: /current 3\.4-litre V6 FourStroke and 4\.6-litre V8 Pro XS/,
+  },
+];
+
+for (const { label, review, currentGeneration } of socialReviewChecks) {
+  check(
+    /## What Owners Actually Say Online/.test(review),
+    `${label} review must keep its model-specific owner-buzz section.`,
+  );
+  check(
+    currentGeneration.test(review),
+    `${label} owner-buzz section must state the screened current engine generation.`,
+  );
+  check(!review.includes('—'), `${label} review must not contain em dashes.`);
+}
+
+check(
+  /200 FourStroke is a 3\.4-litre V6/.test(mercury200Review) &&
+    /200 Pro XS is a 4\.6-litre V8/.test(mercury200Review),
+  'The Mercury 200 review must preserve the current V6 FourStroke and V8 Pro XS architecture.',
+);
+check(
+  /FourStroke's full-throttle range is 5,200–6,000 rpm/.test(mercury200Review) &&
+    /Pro XS full-throttle range is 5,600–6,200 rpm/.test(mercury200Review),
+  'The Mercury 200 review must preserve the current operating ranges.',
+);
+check(
+  /does not:[\s\S]{0,220}raise the engine's rated horsepower[\s\S]{0,220}increase top speed[\s\S]{0,220}reduce time to plane/.test(mercury200Review),
+  'The Mercury 200 review must preserve the official Boost horsepower, top-speed, and planing limits.',
+);
+check(
+  /hero-mercury-200-fourstroke-pro-xs-review-2026-07\.webp/.test(mercury200Review) &&
+    /mercury-200-fourstroke-vs-pro-xs-official\.webp/.test(mercury200Review),
+  'The Mercury 200 review must keep its exact official-motor hero and comparison graphic.',
+);
+check(
+  !/(?:200 FourStroke\s+(?:is|uses|has)\s+(?:a\s+)?4\.6(?:-litre| L)|200 Pro XS\s+(?:is|uses|has)\s+(?:a\s+)?3\.4(?:-litre| L)|200 Pro XS\s+(?:is|uses|has)\s+(?:a\s+)?V6)/i.test(mercury200Review),
+  'The Mercury 200 review contains a retired or swapped engine architecture.',
+);
+
 for (const match of blogArticles.matchAll(/relatedSlugs:\s*\[([^\]]*)\]/g)) {
   const slugs = [...match[1].matchAll(/['"]([^'"]+)['"]/g)].map((entry) => entry[1]);
   check(new Set(slugs).size === slugs.length, `A blog article repeats a relatedSlugs entry: ${slugs.join(', ')}`);

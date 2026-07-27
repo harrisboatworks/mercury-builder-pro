@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "sourceVersion": "0eca626a279539c039f9",
-  "count": 198,
+  "sourceVersion": "60926c9ff8b46f336084",
+  "count": 199,
   "articles": [
     {
       "slug": "mercury-outboard-oil-capacity-chart",
@@ -4156,6 +4156,7 @@
         "mercury 90 command thrust",
         "mercury 90 standard vs command thrust",
         "mercury 90 real world performance",
+        "mercury 90 owner reviews",
         "mercury 90 hp ontario"
       ],
       "faqs": [
@@ -4190,6 +4191,7 @@
         "mercury 115 command thrust",
         "mercury 115 standard vs pro xs",
         "mercury 115 real world performance",
+        "mercury 115 owner reviews",
         "mercury 115 hp ontario"
       ],
       "faqs": [
@@ -4223,6 +4225,7 @@
         "mercury 150 pro xs review",
         "mercury 150 fourstroke vs pro xs",
         "mercury 150 real world performance",
+        "mercury 150 owner reviews",
         "mercury 150 hp ontario"
       ],
       "faqs": [
@@ -4241,6 +4244,40 @@
         {
           "q": "How fast will a Mercury 150 go?",
           "a": "There is no honest single answer. Documented examples in this review range from 34.6 mph on a 23.2-foot Barletta pontoon to 60.2 mph on a Nitro Z18 bass boat. The boat, propeller, mounting, load and conditions stay attached to every number."
+        }
+      ]
+    },
+    {
+      "slug": "mercury-200-hp-fourstroke-pro-xs-review-ontario",
+      "title": "Mercury 200 HP Review: FourStroke vs Pro XS",
+      "description": "An honest Mercury 200 HP review for Ontario, comparing the current 3.4 L V6 FourStroke and 4.6 L V8 Pro XS with freshwater tests and candid buyer advice.",
+      "category": "Mercury Buying Guides",
+      "publishDate": "2026-07-27",
+      "keywords": [
+        "mercury 200 hp review",
+        "mercury 200 fourstroke review",
+        "mercury 200 pro xs review",
+        "mercury 200 fourstroke vs pro xs",
+        "mercury 200 real world performance",
+        "mercury 200 owner reviews",
+        "mercury 200 hp ontario"
+      ],
+      "faqs": [
+        {
+          "q": "What is the difference between a Mercury 200 FourStroke and 200 Pro XS?",
+          "a": "They are two different engine platforms. The current 200 FourStroke is a 3.4-litre V6 aimed at recreational use. The current 200 Pro XS is a 4.6-litre V8 with a higher operating range and performance-oriented gearcase choices. Both are rated at 200 HP."
+        },
+        {
+          "q": "Is the Mercury 200 Pro XS faster than the 200 FourStroke?",
+          "a": "It can be the better choice on a performance hull, but the cowl does not determine speed by itself. Boat weight, hull design, gearcase, shaft length, mounting height, propeller, load and conditions all matter. Mercury's published freshwater tests show both motors performing well on the boats they were matched to, but…"
+        },
+        {
+          "q": "Is the Mercury 200 FourStroke a V6 or V8?",
+          "a": "The current Mercury 200 FourStroke is a 3.4-litre V6. The current 200 Pro XS is a 4.6-litre V8. Older online discussions sometimes mix earlier engines or treat the two current 200s as the same platform, which is incorrect."
+        },
+        {
+          "q": "How fast will a Mercury 200 go?",
+          "a": "There is no honest single speed. Official Mercury examples in this review range from 38.4 mph on a 23.2-foot Barletta pontoon with a 200 FourStroke to 53.5 mph in the published summary for a Crestliner 1850 Fish Hawk with a 200 Pro XS. Your result depends on the exact boat and setup."
         }
       ]
     },
