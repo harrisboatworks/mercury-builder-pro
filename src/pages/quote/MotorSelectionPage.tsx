@@ -62,6 +62,12 @@ import {
   motorMatchesHpRange,
   type MotorHpRangeId,
 } from '@/lib/motor-hp-ranges';
+import {
+  motorSelectionUrlStatesEqual,
+  readMotorSelectionUrlState,
+  writeMotorSelectionUrlState,
+  type MotorSelectionUrlState,
+} from '@/lib/motor-selection-url-state';
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
@@ -448,6 +454,11 @@ function buildMotorSelectionProductSchema(motor: Motor) {
 function MotorSelectionContent() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const initialUrlStateRef = useRef<MotorSelectionUrlState | null>(null);
+  if (!initialUrlStateRef.current) {
+    initialUrlStateRef.current = readMotorSelectionUrlState(searchParams);
+  }
+  const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
   
@@ -503,8 +514,8 @@ function MotorSelectionContent() {
   const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [promotionRules, setPromotionRules] = useState<PromotionRule[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [hpRange, setHpRange] = useState<MotorHpRangeId>('all');
+  const [searchQuery, setSearchQueryState] = useState(initialUrlState.searchQuery);
+  const [hpRange, setHpRangeState] = useState<MotorHpRangeId>(initialUrlState.hpRange);
   const [selectedGroup, setSelectedGroup] = useState<MotorGroup | null>(null);
   const [showConfigurator, setShowConfigurator] = useState(false);
   const [hasInitiallyLoaded, setHasInitiallyLoaded] = useState(false);
@@ -513,7 +524,39 @@ function MotorSelectionContent() {
   const [showQuiz, setShowQuiz] = useState(false);
   
   // Config filter state - shared by UI pills and voice commands
-  const [configFilters, setConfigFilters] = useState<ConfigFiltersState | null>(null);
+  const [configFilters, setConfigFiltersState] = useState<ConfigFiltersState | null>(
+    initialUrlState.configFilters,
+  );
+
+  const applyUrlFilterState = useCallback((
+    nextState: MotorSelectionUrlState,
+    options: { replace?: boolean } = {},
+  ) => {
+    setSearchQueryState(nextState.searchQuery);
+    setHpRangeState(nextState.hpRange);
+    setConfigFiltersState(nextState.configFilters);
+
+    const nextParams = writeMotorSelectionUrlState(searchParams, nextState);
+    if (nextParams.toString() !== searchParams.toString()) {
+      setSearchParams(nextParams, { replace: options.replace ?? false });
+    }
+  }, [searchParams, setSearchParams]);
+
+  useEffect(() => {
+    const urlState = readMotorSelectionUrlState(searchParams);
+    const currentState = { searchQuery, hpRange, configFilters };
+
+    if (!motorSelectionUrlStatesEqual(urlState, currentState)) {
+      setSearchQueryState(urlState.searchQuery);
+      setHpRangeState(urlState.hpRange);
+      setConfigFiltersState(urlState.configFilters);
+    }
+
+    const canonicalParams = writeMotorSelectionUrlState(searchParams, urlState);
+    if (canonicalParams.toString() !== searchParams.toString()) {
+      setSearchParams(canonicalParams, { replace: true });
+    }
+  }, [configFilters, hpRange, searchParams, searchQuery, setSearchParams]);
   
   // Voice show motor state (handled after processedMotors defined)
   const [voiceShowMotorId, setVoiceShowMotorId] = useState<string | null>(null);
@@ -582,17 +625,8 @@ if (event.type === 'filter_motors') {
         voiceFilterLockRef.current = true;
         setTimeout(() => { voiceFilterLockRef.current = false; }, 500);
         
-        // Set HP/model as search query (fuzzy search handles this well)
-        setHpRange('all');
-        if (horsepower) {
-          setSearchQuery(String(horsepower));
-        } else if (model) {
-          setSearchQuery(model);
-        } else if (inStock) {
-          setSearchQuery('stock');
-        }
-        
         // Store structured filters separately for real filtering
+        let nextConfigFilters: ConfigFiltersState | null = null;
         if (startType || controlType || shaftLength || inStock) {
           const newFilters = {
             startType: startType as 'electric' | 'manual' | undefined,
@@ -601,11 +635,23 @@ if (event.type === 'filter_motors') {
             inStock: inStock ? true : undefined,
           };
           console.log('%c📋 Setting configFilters:', 'color: #4CAF50; font-weight: bold;', newFilters);
-          setConfigFilters(newFilters);
+          nextConfigFilters = newFilters;
         } else {
           console.log('%c📋 Clearing configFilters (no filters)', 'color: #FF9800;');
-          setConfigFilters(null);
         }
+
+        const nextSearchQuery = horsepower
+          ? String(horsepower)
+          : model
+            ? model
+            : inStock
+              ? 'stock'
+              : searchQuery;
+        applyUrlFilterState({
+          searchQuery: nextSearchQuery,
+          hpRange: 'all',
+          configFilters: nextConfigFilters,
+        });
         
         // Scroll to the motor grid
         setTimeout(() => {
@@ -639,9 +685,11 @@ if (event.type === 'filter_motors') {
       
       // Handle clear_filters event
       if (event.type === 'clear_filters') {
-        setSearchQuery('');
-        setConfigFilters(null);
-        setHpRange('all');
+        applyUrlFilterState({
+          searchQuery: '',
+          hpRange: 'all',
+          configFilters: null,
+        });
         
         // Scroll to top of motor grid
         setTimeout(() => {
@@ -677,7 +725,7 @@ if (event.type === 'filter_motors') {
       window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
       window.removeEventListener('voice:show-motor', handleShowMotor as EventListener);
     };
-  }, [toast]);
+  }, [applyUrlFilterState, searchQuery, toast]);
 
   // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
 
@@ -1208,36 +1256,38 @@ if (event.type === 'filter_motors') {
   };
 
   const handleHpSuggestionSelect = (hp: number) => {
-    setHpRange('all');
-    setSearchQuery(hp.toString());
-    // Only clear config filters if NOT locked by voice
-    if (!voiceFilterLockRef.current) {
-      setConfigFilters(null);
-    }
+    applyUrlFilterState({
+      searchQuery: hp.toString(),
+      hpRange: 'all',
+      configFilters: voiceFilterLockRef.current ? configFilters : null,
+    });
   };
   
   // Handler for HP filter changes from ConfigFilterSheet (doesn't clear config filters)
   const handleHpFilterChange = (query: string) => {
-    setHpRange('all');
-    setSearchQuery(query);
-    // Don't clear configFilters - user is using the filter sheet alongside config filters
+    applyUrlFilterState({
+      searchQuery: query,
+      hpRange: 'all',
+      configFilters,
+    });
   };
   
   // Clear config filters when user types in search (manual typing only)
   const handleSearchChange = (query: string) => {
-    if (query.trim()) setHpRange('all');
-    setSearchQuery(query);
-    // Only clear if NOT locked by voice
-    if (!voiceFilterLockRef.current) {
-      setConfigFilters(null);
-    }
+    applyUrlFilterState({
+      searchQuery: query,
+      hpRange: query.trim() ? 'all' : hpRange,
+      configFilters: voiceFilterLockRef.current ? configFilters : null,
+    }, { replace: true });
   };
 
   const handleHpRangeChange = (rangeId: MotorHpRangeId) => {
     const range = getMotorHpRange(rangeId);
-    setHpRange(rangeId);
-    setSearchQuery('');
-    setConfigFilters(null);
+    applyUrlFilterState({
+      searchQuery: '',
+      hpRange: rangeId,
+      configFilters: null,
+    });
     trackEvent('quote_hp_range_selected', {
       range_id: range.id,
       range_label: range.label,
@@ -1406,7 +1456,11 @@ if (event.type === 'filter_motors') {
                   activeHpFilter={searchQuery}
                   onHpFilterChange={handleHpFilterChange}
                   filters={configFilters}
-                  onFilterChange={setConfigFilters}
+                  onFilterChange={(nextFilters) => applyUrlFilterState({
+                    searchQuery,
+                    hpRange,
+                    configFilters: nextFilters,
+                  })}
                   className={
                     isSearchStuck
                       ? 'bg-[#0A1628] border border-[rgba(201,162,74,0.20)] text-[#F5F1EA]/70 hover:text-[#F5F1EA] hover:border-[#C9A24A] hover:bg-[#122039] transition-colors duration-200'
@@ -1574,7 +1628,11 @@ if (event.type === 'filter_motors') {
               </p>
               <button
                 className="inline-flex items-center gap-2 bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white px-6 py-3 rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] transition-colors"
-                onClick={() => { setSearchQuery(''); setConfigFilters(null); setHpRange('all'); }}
+                onClick={() => applyUrlFilterState({
+                  searchQuery: '',
+                  hpRange: 'all',
+                  configFilters: null,
+                })}
               >
                 Clear Filters
               </button>
