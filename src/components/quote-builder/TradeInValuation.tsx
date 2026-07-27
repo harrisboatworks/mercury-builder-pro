@@ -770,10 +770,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       type="button"
                       key={option.value}
                       whileTap={{ scale: 0.98 }}
-                      className={`cursor-pointer rounded-sm border bg-repower-paper p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${
+                      className={`cursor-pointer rounded-sm border p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-navy-900/40 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-repower-navy-900 bg-repower-navy-900 text-white ring-2 ring-repower-navy-900/15'
-                          : 'border-repower-navy-900/20 hover:border-repower-gold'
+                          ? 'bg-repower-navy-900 border-repower-navy-900 text-white ring-2 ring-repower-navy-900/15 hover:bg-repower-navy-900'
+                          : 'bg-repower-paper border-repower-navy-900/20 hover:border-repower-gold hover:bg-repower-paper'
                       }`}
                       onClick={() => {
                         triggerHaptic('light');
