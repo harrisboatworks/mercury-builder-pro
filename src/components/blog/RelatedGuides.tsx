@@ -66,7 +66,7 @@ export function RelatedGuides({
               {titleFor(slug)}
             </Link>
             {blogClusterContexts[slug] && (
-              <span className="text-muted-foreground"> — {blogClusterContexts[slug]}</span>
+              <span className="text-muted-foreground">, {blogClusterContexts[slug]}</span>
             )}
           </li>
         ))}
