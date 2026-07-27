@@ -1989,3 +1989,16 @@ article .blog-article-prose table {
   font-variant-numeric: tabular-nums;
 }
 
+/* BlogTable provides the paper frame and horizontal scroll boundary itself.
+   Reset the global table frame inside that boundary so margins and shadows do
+   not make the table overflow on desktop or capture vertical wheel gestures. */
+.blog-article-prose .blog-table-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  overscroll-behavior-inline: contain;
+  touch-action: pan-x pan-y;
+}
+.blog-article-prose .blog-table-scroll > table {
+  margin: 0;
+  box-shadow: none;
+}

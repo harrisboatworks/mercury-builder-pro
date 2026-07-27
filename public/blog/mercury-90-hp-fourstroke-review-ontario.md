@@ -1,196 +1,273 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-07-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Mercury 90 HP FourStroke Review"
-description: "An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call."
+location: Gores Landing, ON, Canada
+title: "Mercury 90 HP FourStroke Review: Standard vs Command Thrust"
+description: "An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-05-10
-keywords: ["mercury 90 hp review","mercury 90 hp fourstroke","mercury 90 elpt ontario","mercury 90 ct command thrust","90 hp pontoon","90 hp aluminum boat"]
+date_modified: 2026-07-26
+keywords: ["mercury 90 hp review","mercury 90 hp fourstroke review","mercury 90 command thrust","mercury 90 standard vs command thrust","mercury 90 real world performance","mercury 90 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Mercury 90 HP FourStroke Review
+# Mercury 90 HP FourStroke Review: Standard vs Command Thrust
 
-> An honest Ontario buyer's guide to the Mercury 90 HP FourStroke. What the 2.1L block does well, where it's the wrong call.
+> An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
-**Read time:** 9 min read  
+**Last updated:** 2026-07-26
+**Read time:** 15 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario
 
-### Quick Answer
+> **Quick answer:** The Mercury 90 HP FourStroke is a strong match for many 16–18 ft aluminum fishing boats and lighter family runabouts. Choose the standard 2.07:1 gearcase for most recreational V-hulls. Choose the 2.38:1 Command Thrust version when a pontoon or heavy hull needs a larger propeller and better load-carrying grip.
 
-The Mercury 90 HP FourStroke is the default pick for most 16-18 ft aluminum fishing boats and mid-size pontoons up to about 22 ft in Ontario. It runs on the same 2.1L inline-4 block as the 75 and 115, weighs 359 lbs, and is tuned for smooth cruising and fuel economy rather than performance. For pontoons, take the Command Thrust (CT) version. For aluminum fishing boats, take the standard gearcase.
+The first question people ask about a 90 is usually, "How fast will it go?"
 
----
+That is fair. It is also the wrong first question.
 
-### Mercury 90 HP FourStroke Review
+Mercury tested this motor on a 16.75-ft Crestliner and recorded 36.6 mph. A 20-ft Manitou pontoon ran 24.4 mph. A documented 17-ft Boston Whaler repower ran about 43–44 mph. Same horsepower. Three honest answers.
 
-We sell more Mercury motors in the 75-115 HP family than any other class. And within that family, the 90 is where most customers end up, not because it's the cheapest option, and not because we steer people there, but because it's genuinely the right fit for most Ontario boats in the 16-20 ft range.
+The boat, gearcase, propeller and normal load decide what the motor feels like. This review keeps those pieces attached.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. The 90 FourStroke is a motor we know well, and one we're honest about when it's the wrong call.
+## What the Current Mercury 90 Actually Is
 
----
+The current Mercury 90 FourStroke sits in Mercury's 2.1-litre inline-four family with the 75 and 115. Mercury introduced this platform in 2014, so this is a mature engine family rather than a new design being tested on customers.
 
-## What the 90 HP Family Actually Shares
+The recreational 90 uses:
 
-The Mercury 90 HP FourStroke is part of a five-motor family built on the same 2.1L inline-4 block: the 75, 80, 90, 100, and 115. All use an 8-valve single overhead cam with a maintenance-free valve train, no regular cam service, no valve lash adjustments for the life of the motor. Mercury ran 17,000 hours of factory testing on this generation before shipping.
+- a 2.1-litre inline-four powerhead
+- an 8-valve single-overhead-cam layout
+- electronic fuel injection
+- a 5,000–6,000 rpm wide-open-throttle range
+- a 2.07:1 standard gear ratio
+- a 2.38:1 Command Thrust gear ratio
+- electric start and power trim on the common remote-control models
+- SmartCraft compatibility, with available information depending on the controls and gauges installed
 
-The differences between the 90, 100, and 115 are tuning, RPM ceiling, and price. There is no weight penalty as you step up. The 90 ELPT and the 115 ELPT both weigh 359 lbs.
+Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
 
-The motors covered in this post are the standard **90 ELPT FourStroke** and the **90 ELPT Command Thrust**. There are also a counter-rotation 90 (for twin setups) and a 90 EXLPT (25" shaft for taller transoms). Different SKUs, different prices, different applications.
+Mercury describes the FourStroke valve train as maintenance-free for the life of the engine. That does not make the whole motor maintenance-free. Oil, filters, gear lube, spark plugs, anodes, cooling-system condition and the rest of the service schedule still matter.
 
----
+The 80 and 100 HP versions you may see online are listed as international models in Mercury's operation manual. For a Canadian recreational buyer in this range, the practical comparison is 75 vs 90 vs 115.
 
-## What "ELPT" and "CT" Mean
+![Current-generation Mercury 90 HP FourStroke in official studio photography.](/lovable-uploads/inline/mercury-90-fourstroke-official-studio.png)
 
-- **E**, Electric start (push-button, not pull cord)
-- **L**, Long shaft (20"), fits the most common transom
-- **PT**, Power trim and tilt, you trim the motor up and down from the helm
-- **CT**, Command Thrust gearcase, larger lower unit, bigger prop swing
+*Official Mercury Marine studio photography of the current 90 HP FourStroke.*
 
----
+## What It Feels Like on the Water
 
-## Where the 90 HP Is the Right Answer
+The 90 is not trying to act like a race motor. It starts cleanly, settles into a quiet idle and delivers power without much drama. On the right 16–18 ft aluminum hull, it has enough midrange to get the boat moving without making every throttle change feel abrupt.
 
-### 16-18 ft aluminum fishing boats
+That is the appeal. It is an everyday motor.
 
-Lund, Princecraft, Crestliner, Legend ProSport, [these are the hulls the 90 ELPT was built for](/blog/best-mercury-outboard-aluminum-fishing-boats). Typical load: two to four people, full gear, trolling motor, a couple of batteries. On those boats, the 90 planes cleanly, cruises around 28-32 mph, and tops out around 38-42 mph depending on prop and load. It has headroom for the occasional full boat.
+The original 2014 launch testing of this same 2.1-litre platform described it as exceptionally smooth and quiet enough for normal conversation at cruise on one test boat. More than a decade later, that basic character is still why the 90 works for fishing, cottage runs and family use.
 
-### Mid-size pontoons up to ~22 ft
+It can also feel disappointing when the setup is wrong. A propeller with too much pitch can hold the motor below its intended rpm range. A motor mounted too low adds drag. A heavily loaded pontoon can make a healthy 90 feel tired if the hull really wants more power.
 
-For a pontoon carrying four to six people with normal cottage loads, the **90 ELPT Command Thrust** is the call. [The CT gearcase swings a 14 or 14.5" prop](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) instead of the standard 13", which translates directly to hole-shot on a flat-bottom hull. Standard gearcase pontoon 90s are slower to plane and work harder doing it.
+That is not a reason to avoid the motor. It is a reason to buy the finished setup, not just the horsepower number.
 
-### Family runabouts in the 16-18 ft fibreglass range
+## Standard Gearcase vs Command Thrust
 
-Cruising, towing a tube, swimming, occasional fishing, the 90 handles all of it without working hard.
+Command Thrust does not add horsepower. It changes how the 90 puts its power into the water.
 
-### Repowers replacing 70-90 HP two-strokes
+| Version | Gear ratio | What changes | Best fit | Main trade-off |
+|---|---:|---|---|---|
+| 90 FourStroke, standard | 2.07:1 | Smaller, lower-drag gearcase with standard propeller family | Most aluminum and fibreglass recreational V-hulls | Less propeller leverage for high-drag loads |
+| 90 FourStroke Command Thrust | 2.38:1 | Larger gearcase with larger-diameter propeller options | Pontoons and specific heavy or high-drag boats | Larger case adds drag and is not a generic performance upgrade |
 
-Older Mercury, Yamaha, and OMC two-strokes in this power class are being replaced every season. The 90 ELPT FourStroke typically comes out lighter than the motor it's replacing, quieter, cleaner, and 20 to 30% more fuel-efficient for the same day on the water. Most owners say the boat runs better than it did when new.
+### Best fit: Standard 90 FourStroke
 
----
+Choose the standard 90 for a normal recreational V-hull unless the boat, load or manufacturer application points elsewhere.
 
-::walkaround-lead-capture
+This is the version most buyers picture on a 16–18 ft aluminum fishing boat. It keeps the smaller gearcase, lets a lighter hull run efficiently and still gives a qualified rigger enough propeller choices to tune the boat properly.
 
-## Where the 90 HP Is the Wrong Call
+### Best fit: 90 Command Thrust
 
-**Hull rated under 75 HP.** The capacity plate is the ceiling. A 16 ft aluminum boat rated for 75 HP max should get the 75, not the 90. We can order a 75 if the plate forces it.
+Choose Command Thrust when carrying load matters more than minimizing gearcase drag.
 
-**Heavy tritoons, 24+ ft pontoons, or houseboats.** The 90 will push those boats, but it'll work harder than it should for its service life. Those applications need 115 CT or higher.
+Pontoons are the obvious case. Their tubes and broad deck create drag, and family loads change from one trip to the next. The 2.38:1 ratio lets the motor turn a larger propeller that can hold the water better and carry that load.
 
-**Bass-boat hole-shot.** The 90 ELPT FourStroke is not a Pro XS. It's tuned for fuel economy, smooth cruising, and durability. If you want strong off-the-dock acceleration on a 19 ft fishing boat, [the conversation shifts to a 90 Pro XS or a 115 Pro XS](/blog/fourstroke-vs-pro-xs).
+[Our Command Thrust guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) goes deeper into why CT is a fitment choice, not an automatic upgrade.
 
-**Mismatched shaft length.** A short shaft (15") on a 20" transom puts the prop too close to the surface. The motor won't cool properly, and you'll ventilate. Shaft length must match transom height. Measure before you order, or let us measure for you.
+## Real Freshwater Results, With the Boat Attached
 
----
+These are exact examples, not speed promises.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+| Boat and setup | Motor and propeller | Reported result | Useful context |
+|---|---|---|---|
+| [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 4.7 US gal/h |
+| [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 4.1 US gal/h |
+| [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 4.2 US gal/h |
+| [1968 Boston Whaler 17 repower and sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | Rigger considered trying 17 pitch after verifying rpm and handling |
 
-## Standard Gearcase vs. Command Thrust
+Mercury's Crestliner test page labels that setup 2.08:1, while the current operation manual gives the standard production ratio as 2.07:1. The table keeps Mercury's test-page wording rather than silently changing it.
 
-| | Standard Gearcase | Command Thrust |
+The 43–44 mph Whaler and 36.6 mph Crestliner results are not in conflict. A classic Whaler skiff, a newer deep-V fishing hull and a pontoon use the same 90 HP very differently. Boat length by itself cannot reconcile the results.
+
+The Manitou and Harris examples are the useful warning. Both carry 90 HP and a 2.38:1 setup. One reached 20 mph in 4.23 seconds. The heavier Harris took 12.6 seconds.
+
+The motor did not forget how to make 90 HP. The boat changed.
+
+https://www.youtube.com/watch?v=F1Js6zGC6-s
+
+*Boat Trader's 2026 sea trial of a classic 17-ft Boston Whaler repowered with a current-generation Mercury 90 FourStroke.*
+
+## The Propeller Can Change the Whole Review
+
+Mercury tells owners to choose a propeller that lets the motor operate in the upper half of its recommended full-throttle rpm range with the boat normally loaded.
+
+For the recreational 90, that full range is 5,000–6,000 rpm.
+
+The phrase **normally loaded** matters. A propeller chosen with one person, half a tank and no gear may pull the engine too low once the boat gets its batteries, trolling motor, canvas, cooler, passengers and full fuel back aboard.
+
+On the Boston Whaler sea trial, the 16-pitch Vengeance put the boat around 43–44 mph and the rigger still considered a 17-pitch test. That does not mean every 90 wants 16 or 17 pitch. It shows the proper sequence:
+
+1. Confirm the boat, capacity plate, transom and shaft length.
+2. Start with a propeller matched to the hull and gearcase.
+3. Run the boat with a realistic load.
+4. Check wide-open-throttle rpm, grip, steering and acceleration.
+5. Change the propeller if the numbers or handling say it is wrong.
+
+Our [propeller-selection guide](/blog/mercury-propeller-selection-guide) explains the terms. The water test gives the final answer.
+
+## When the 90 Is the Right Motor
+
+The 90 belongs on the shortlist when:
+
+- the capacity plate allows 90 HP
+- the boat is a typical 16–18 ft aluminum fishing hull
+- the boat is a lighter family runabout
+- the pontoon is modest in size and paired with the right Command Thrust setup
+- the owner values quiet, predictable everyday use over maximum possible speed
+- the normal passenger and gear load leaves reasonable power in reserve
+
+It can be a very good repower for an older hull because the owner gets modern starting, cleaner operation, current instrumentation options and a known service path. Do not assume it will be lighter than the old motor. Some older two-strokes were lighter, and exact transom capacity still needs inspection.
+
+## When We Would Tell You to Buy Something Else
+
+### The capacity plate stops at 75 HP
+
+Then the answer is 75. The 90 is not an upgrade path around the plate.
+
+### The boat regularly carries a heavy load
+
+A 22-ft pontoon with two people on Tuesday and eight people, a dog, coolers and tube gear on Saturday is not the same test. If the boat is rated for 115 and spends most of its life loaded, the 115 may be the more honest recommendation.
+
+### You want a Pro XS personality
+
+There is no current 90 Pro XS in Mercury's Canadian recreational lineup. Pro XS begins at 115 HP in this class.
+
+If you care about maximum acceleration, propeller testing and running near the top of the capacity plate, read our [115 HP FourStroke and Pro XS review](/blog/mercury-115-hp-fourstroke-review-ontario). Do not buy a 90 planning to alter its factory calibration later.
+
+### The boat needs a different shaft or gearcase
+
+Shaft length is fitment, not a preference. Gearcase choice is application, not a trim package. We need the actual boat before we can call either one correctly.
+
+## 75 vs 90 vs 115: The Honest Short Version
+
+| Motor | Why someone chooses it | When it becomes the wrong call |
 |---|---|---|
-| Gearcase profile | Hydrodynamic, lower drag at speed | Physically larger |
-| Prop size | ~13" | 14, 14.5" |
-| Strength | Top-end speed, fuel efficiency | Low-end thrust, hole-shot |
-| Best for | Aluminum fishing boats, lighter runabouts | Pontoons, heavy hulls, boats that struggle to plane |
+| 75 FourStroke | Capacity plate, lower power requirement or a genuinely light rig | Owner expects 90-like load carrying or buys only on initial price |
+| 90 FourStroke | Balanced everyday power for many mid-size freshwater boats | Heavy regular loads or performance expectations exceed the boat/motor match |
+| 115 FourStroke or Pro XS | More reserve, stronger acceleration and better fit for boats rated to use it | Hull cannot legally carry it, or the owner does not need the extra power |
 
-Rule of thumb: aluminum fishing boats default to standard. Pontoons default to CT. Heavy or unusual hulls, tell us the load and use case before we recommend.
+The shared 2.1-litre platform does not make the three motors interchangeable. Horsepower, calibration, capacity and price still matter.
 
----
+[Read the dedicated 75 HP review](/blog/mercury-75-hp-fourstroke-review-ontario) if the plate or budget has you deciding between 75 and 90.
 
-![Black Mercury FourStroke outboard on an aluminum fishing boat at sunset, ideal for Ontario lake cruising.](/lovable-uploads/inline/inline-mercury-90.png)
+## What HBW Checks Before Recommending a 90
 
-## How the 90 Compares to the 75 and the 115
+We don't recommend the motor from boat length alone.
 
-[The 75, 90, and 115 are the same block](/blog/mercury-75-vs-90-vs-115-comparison) with different tuning. There is no weight penalty stepping up. The only real penalty going from 75 to 90 to 115 is price and fuel burn at full throttle.
+On Rice Lake and across the Kawarthas, the normal load is rarely the brochure load. Trolling batteries, an electric motor, a livewell, cottage gear, canvas, fuel and people all count. We ask what is actually aboard on a normal Saturday, not what the empty hull did in a catalogue test.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+Before calling a 90 standard or Command Thrust the right fit, we check:
 
-Most boats want either the 90 or the 115. The 75 is right for smaller hulls or situations where the capacity plate forces it, we don't actually stock the 75 because the 90 is the same physical motor at a small additional cost and has better headroom and better resale value.
+- the capacity plate and transom height
+- hull type and actual boat model
+- current motor, controls, steering and gauges
+- typical passenger, fuel and gear load
+- towing expectations
+- battery, trolling-motor and kicker weight
+- whether the boat needs standard or Command Thrust
+- what can safely be reused after inspection
+- the propeller starting point and water-test plan
 
-If you're already shopping the 90 and [wondering about the 115](/blog/mercury-115-hp-fourstroke-review-ontario): the step from 90 to 115 is tuning, not a different motor. There's no weight change. For a 17-18 ft aluminum fishing boat that will regularly carry four adults and full gear, the 115 is worth considering. For a 16 ft boat running two anglers, the 90 is the right call and the 115 is extra motor you won't use.
+Existing Mercury controls or SmartCraft equipment may be reusable. They are not automatically reusable because the old motor says Mercury on the cowl. Condition, generation, connectors and the rest of the rigging still need inspection.
 
----
+We water test repowers because the invoice cannot tell us whether the propeller is right. The boat can.
 
-## What We'd Actually Recommend
+## Warranty, Product Protection and Current Pricing
 
-**For most 16-18 ft aluminum fishing boats on Rice Lake and the Kawarthas:** 90 ELPT FourStroke, standard gearcase.
+Mercury's current U.S. and Canada warranty chart lists a 3-year limited warranty for a new FourStroke registered for pleasure use. Registration and the full warranty terms still apply. Any promotional bonus coverage must be confirmed at the time of sale because those programs can change.
 
-**For mid-size pontoons up to 22 ft:** 90 ELPT Command Thrust.
+Mercury Product Protection Platinum is separate. It is an optional extended service contract, not extra years silently added to the standard warranty. Its coverage begins after the applicable limited warranty and remains subject to eligibility, contract terms and covered components.
 
-**For heavy loads on an 18-20 ft boat:** Consider the 115 ELPT instead.
+[Read the Canadian Mercury warranty and Product Protection guide](/blog/mercury-outboard-warranty-canada-2026) for the plain-language version.
 
-**If the hull is rated under 75 HP:** We'll order the 75. We're not going to put an illegal motor on your boat.
+We do not freeze motor prices into review articles. The live price link is deliberate: gearcase, shaft length and current programs can change the motor price, while the installed total also depends on rigging, propeller and what can safely be reused. Use the [live Canadian pricing reference](/pricing-reference), then [build a complete 90 HP quote](/quote/motor-selection).
 
-If you buy from us, we're also the ones servicing it. For engine repairs, we only service Mercury and Mercruiser, no farmed-out repairs, no strangers touching your motor.
+## Sources
 
----
+- [Mercury 75/80/90/100/115 FourStroke operation, maintenance and installation manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
+- [Mercury FourStroke product family and SmartCraft information](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke)
+- [Mercury performance test: Crestliner 1650 Hawk with 90 FourStroke](https://performancedata.mercurymarine.com/performance-test/127)
+- [Mercury performance test: Manitou Aurora LE Angler with 90 Command Thrust](https://performancedata.mercurymarine.com/performance-test/243)
+- [Mercury performance test: Harris Cruiser 210 with 90 FourStroke](https://performancedata.mercurymarine.com/performance-test/209)
+- [Mercury U.S. and Canada warranty coverage chart](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/coverage-duration/US%20and%20Canada%20warranty%20chart.pdf)
+- [Boat Trader: 17-ft Boston Whaler Mercury 90 repower sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/)
+- [Boats.com: introduction and test of the current 2.1-litre 75/90/115 platform](https://www.boats.com/reviews/mercury-debuts-new-75-hp-90-hp-115-hp-fourstroke-outboards/)
 
-*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
+## Ready to Price a Mercury 90 for Your Boat?
 
-## Build a Quote
+Use the live pricing reference to compare the exact 90 configurations, then build a complete quote with rigging, propeller and installation choices. If the 90 is not the right answer for your boat, we will tell you.
 
-Build your 90 HP quote at mercuryrepower.ca, pick the standard or CT gearcase, shaft length, and prop. See real CAD pricing in minutes.
+**Phone:** 905-342-2153
 
-Questions? Call 905-342-2153 or submit a service request at hbw.wiki/service.
+**Pricing:** [Live Canadian Mercury pricing](/pricing-reference)
+
+**Configurator:** [Build a Mercury 90 quote](/quote/motor-selection)
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
----
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
----
-
 ## FAQs
 
-### How much does the Mercury 90 HP FourStroke weigh?
+### Is the current Mercury 90 FourStroke a new design?
 
-Mercury lists the standard 90 ELPT at 359 lb dry. The Command Thrust version is 363 lb. Lighter than the older two-strokes it usually replaces.
+No. Mercury introduced this 2.1-litre 75/90/115 platform in 2014. The current 90 is a mature engine family, not a first-year redesign. Model codes, rigging options and available programs can change, so confirm the exact motor when ordering.
 
-### Is the 90 HP enough for a 17 ft aluminum boat?
+### What is the difference between the standard Mercury 90 and Command Thrust?
 
-For most 17 ft aluminum fishing boats running two to four people with normal gear, yes. If you regularly run heavy or you want the fastest top-end available, the 115 is the better answer.
+They use the same 2.1-litre powerhead. The standard gearcase has a 2.07:1 ratio and suits most recreational V-hulls. Command Thrust uses a larger 2.38:1 gearcase and larger-prop options to carry load on pontoons and specific heavy boats.
 
-### What's the difference between 90 ELPT and 90 ELPT Command Thrust?
+### What boats suit a Mercury 90, and how fast will it go?
 
-Same powerhead. Different gearcase. The Command Thrust is larger, swings a bigger prop, and pulls heavier loads better. Right call for pontoons. Less common on aluminum fishing boats.
+It commonly suits properly rated 16–18 ft aluminum fishing boats, lighter runabouts and modest pontoons with the right gearcase. There is no honest universal speed: documented examples in this review range from 22 mph on a 22.1-ft pontoon to about 43–44 mph on a classic 17-ft Boston Whaler.
 
-### Will a 90 plane my pontoon?
+### How much does a Mercury 90 FourStroke weigh?
 
-Depends on the pontoon size, hull style, load, and prop. A 90 CT will plane a typical 18 to 22 ft cottage pontoon with a normal load. A 24 ft tri-toon with eight people aboard is asking for a 115 CT or 150.
+Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit.
 
-### Does the Mercury 90 need a battery?
+### Does Mercury make a 90 Pro XS?
 
-Yes. The 90 ELPT is electric start. You need a marine starting battery (Group 24 or 27 typical, depending on the boat).
+No current 90 Pro XS appears in Mercury's Canadian recreational lineup. In this engine class, Pro XS starts at 115 HP. If you want a sharper performance setup, compare the 90 FourStroke with the 115 FourStroke or 115 Pro XS, subject to the boat's capacity plate.
 
-### Is the 90 fuel injected?
+### What propeller does a Mercury 90 need?
 
-Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier starting, cleaner running, better fuel economy than the old carbureted two-strokes most of these motors are replacing.
+It depends on the boat, gearcase and normal load. Mercury specifies a 5,000–6,000 rpm wide-open-throttle range for the recreational 90. The right propeller lets the motor run in the upper half of that range when the boat carries its normal load.
 
-### What's the warranty?
+### What warranty and extended protection are available on a Mercury 90?
 
-3-year factory warranty as standard. Bonus coverage applies only when an eligible promotion is active; see [current promotions](https://www.mercuryrepower.ca/promotions) for what's live.
-
-## Related guides
-
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
-- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+Mercury's current U.S. and Canada warranty chart lists a 3-year limited warranty for a new FourStroke registered for pleasure use. Mercury Product Protection Platinum is a separate optional extended service contract that begins after the limited warranty. Registration, eligibility and contract terms apply, and promotional bonus coverage can change.
 
 ## Next steps
 
@@ -206,4 +283,3 @@ Yes. All Mercury 90 HP FourStrokes use electronic fuel injection. Easier startin
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -148,8 +148,8 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       transition={{ duration: 0.3 }}
       className="not-prose my-8 w-full rounded-2xl border border-border/30 bg-repower-paper p-3 md:p-4 shadow-sm"
     >
-      <div className="w-full overflow-x-auto rounded-xl bg-card">
-        <table className="w-full border-collapse">
+      <div className="blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card">
+        <table className="w-full min-w-[640px] border-collapse md:min-w-full">
           {newThead}
           {newTbody}
         </table>
