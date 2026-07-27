@@ -201,9 +201,9 @@ The chart lists three 9.9 HP FourStroke groups:
 
 | Year and engine | Crankcase | Gearcase |
 |---|---:|---:|
-| 1995-1998, 232 cc | 1.05 qt / 0.99 L | 6.8 oz |
-| 1999-2004, 323 cc | 1.05 qt / 0.99 L | 6.8 oz |
-| 2005+, 209 cc | 0.84 qt / 0.79 L | 10.8 oz |
+| 1995-1998, 232 cc | 990 mL (1.05 US qt) | 200 mL (6.8 US fl oz) |
+| 1999-2004, 323 cc | 990 mL (1.05 US qt) | 200 mL (6.8 US fl oz) |
+| 2005+, 209 cc | 790 mL (0.84 US qt) | 320 mL (10.8 US fl oz) |
 
 The newest row takes less crankcase oil but more gear lube than the older rows. "Mercury 9.9" is not enough information.
 
@@ -213,18 +213,18 @@ The serial break matters even within the same model year:
 
 | 90 HP family | Crankcase | Gearcase | Oil filter |
 |---|---:|---:|---|
-| 2006 EFI, serial 1B366822 and below | 4.8 qt / 4.54 L | 22.5 oz | 8M0162830 |
-| 2006+ EFI, serial 1B366823 and up | 5.28 qt / 5 L | 24 oz | 877761Q01 |
-| 2014+ 2.1 L, serial 2B094996 and up | 5.5 qt / 5.2 L | 27.1 oz | 8M0162830 |
+| 2006 EFI, serial 1B366822 and below | 4.54 L (4.8 US qt) | 665 mL (22.5 US fl oz) | 8M0162830 |
+| 2006+ EFI, serial 1B366823 and up | 5 L (5.28 US qt) | 710 mL (24 US fl oz) | 877761Q01 |
+| 2014+ 2.1 L, serial 2B094996 and up | 5.2 L (5.5 US qt) | 800 mL (27.1 US fl oz) | 8M0162830 |
 
 That is a three-way capacity split behind one cowl number.
 
 ### A 60 HP gearcase example
 
-The 996 cc 60 FourStroke is listed at 3.17 US quarts, or 3 litres, of crankcase oil. Its gearcase quantity changes with the lower unit:
+The 996 cc 60 FourStroke is listed at 3 litres (3.17 US quarts) of crankcase oil. Its gearcase quantity changes with the lower unit:
 
-- Standard gearcase: 11.5 oz
-- BigFoot or Command Thrust gearcase: 24 oz
+- Standard gearcase: 340 mL (11.5 US fl oz)
+- BigFoot or Command Thrust gearcase: 710 mL (24 US fl oz)
 
 If the gearcase is not identified, the lower-unit fill quantity can be off by more than two to one.
 
