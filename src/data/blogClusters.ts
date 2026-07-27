@@ -233,6 +233,7 @@ export const blogClusters: BlogCluster[] = [
     spokes: [
       "mercury-warranty-after-repower-ontario",
       "mercury-extended-warranty-platinum-ontario",
+      "legend-boats-warranty-canada-wowranty-guide-2026",
     ],
   },
   {
