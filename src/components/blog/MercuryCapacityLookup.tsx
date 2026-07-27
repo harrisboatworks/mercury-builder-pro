@@ -176,13 +176,15 @@ export function MercuryCapacityLookup() {
                       <span className="mt-1 block text-repower-navy-900/65">{row.notes}</span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
-                      {row.crankcaseQt} qt
+                      {parseFloat(row.crankcaseL) < 1
+                        ? `${Math.round((parseFloat(row.crankcaseL) * 1000) / 5) * 5} mL`
+                        : `${row.crankcaseL} L`}
                       <span className="block text-xs font-normal text-repower-navy-900/55">
-                        {row.crankcaseL} L
+                        {row.crankcaseQt} US qt
                       </span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
-                      {formatGearcaseCapacity(row.gearcaseOz)}
+                      {formatGearcaseCapacity(row)}
                     </td>
                     <td className="min-w-48 px-4 py-4 text-repower-navy-900">
                       {row.crankcaseOil}
