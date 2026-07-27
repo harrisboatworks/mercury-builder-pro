@@ -36,6 +36,7 @@ export function BlogHeroPicture({
   wrapperClassName = 'aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10',
   photoSlot,
 }: BlogHeroPictureProps) {
+  const [useOriginal, setUseOriginal] = useState(false);
   const [errored, setErrored] = useState(false);
 
   if (!image) return null;
@@ -62,18 +63,25 @@ export function BlogHeroPicture({
         fallback ?? defaultFallback
       ) : (
         <picture>
-          {webpSrcSet && (
+          {!useOriginal && webpSrcSet && (
             <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
           )}
           <img
-            src={optimizeImage(image, 1280)}
-            srcSet={buildSrcSet(image)}
+            src={useOriginal ? image : optimizeImage(image, 1280)}
+            srcSet={useOriginal ? undefined : buildSrcSet(image)}
             sizes={sizes}
             alt={alt}
             className={className}
             loading="eager"
             fetchPriority="high"
-            onError={() => setErrored(true)}
+            onError={() => {
+              if (!useOriginal && optimizeImage(image, 1280) !== image) {
+                setUseOriginal(true);
+                return;
+              }
+
+              setErrored(true);
+            }}
           />
         </picture>
       )}
