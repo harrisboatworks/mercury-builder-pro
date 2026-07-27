@@ -4,9 +4,9 @@ last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 index_type: agent_catalog
 ---
 
@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
 
 ## Business rules (apply to every entry)
 
@@ -62,25 +62,6 @@ See any motor twin for an example body.
 
 ## Motors
 
-- [25ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
-- [25ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
-- [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fs-2.5-mh.md)
-- [6MH FourStroke](https://www.mercuryrepower.ca/motors/fs-6-mh.md)
-- [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-mh.md)
-- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-9.9-elh.md)
-- [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-eh.md)
-- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elh.md)
-- [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fs-20-elhpt.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fs-60-elpt-ct.md)
-- [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt.md)
-- [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fs-90-elpt.md)
-- [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-elpt.md)
-- [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-115-exlpt.md)
-- [150 EXLPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-xl.md)
-- [150 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-150-l.md)
-- [200 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm.md)
-- [200 ELPT ProXS](https://www.mercuryrepower.ca/motors/pxs-200-l.md)
-- [250 ELPT ProXS DTS](https://www.mercuryrepower.ca/motors/pxs-250-l-dts-tm.md)
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
 - [6MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
@@ -143,7 +124,7 @@ See any motor twin for an example body.
 
 ## Guides (Blog)
 
-Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md)
 - [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup.md)
