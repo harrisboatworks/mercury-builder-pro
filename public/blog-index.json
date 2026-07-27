@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "sourceVersion": "60926c9ff8b46f336084",
-  "count": 199,
+  "sourceVersion": "faf6ae080b7757c18de4",
+  "count": 201,
   "articles": [
     {
       "slug": "mercury-outboard-oil-capacity-chart",
@@ -4282,6 +4282,40 @@
       ]
     },
     {
+      "slug": "mercury-250-hp-fourstroke-pro-xs-review-ontario",
+      "title": "Mercury 250 HP Review: FourStroke vs Pro XS",
+      "description": "An honest Mercury 250 HP review for Ontario, comparing the current 4.6 L V8 FourStroke and Pro XS with exact Canadian specs, freshwater tests and owner evidence.",
+      "category": "Mercury Buying Guides",
+      "publishDate": "2026-07-27",
+      "keywords": [
+        "mercury 250 hp review",
+        "mercury 250 fourstroke review",
+        "mercury 250 pro xs review",
+        "mercury 250 fourstroke vs pro xs",
+        "mercury 250 real world performance",
+        "mercury 250 owner reviews",
+        "mercury 250 hp ontario"
+      ],
+      "faqs": [
+        {
+          "q": "What is the difference between a Mercury 250 FourStroke and 250 Pro XS?",
+          "a": "Both current motors are naturally aspirated 4.6-litre V8s rated at 250 HP. The FourStroke uses a 5,200 to 6,000 rpm operating range and recreational calibration. The Pro XS uses a 5,600 to 6,200 rpm range, performance-tuned exhaust and a TorqueMaster gearcase on select models for semi-surfacing, high-speed application…"
+        },
+        {
+          "q": "Is the Mercury 250 Pro XS faster than the 250 FourStroke?",
+          "a": "It can be the better tool on a performance hull, but there is no honest universal speed difference. Mercury's current public performance database did not provide a same-hull 250 FourStroke versus 250 Pro XS test when this review was checked. Hull, load, gearcase, mounting height and propeller determine whether the Pro…"
+        },
+        {
+          "q": "Are the 250 FourStroke and 250 Pro XS the same engine?",
+          "a": "They share Mercury's 4.6-litre, 32-valve DOHC V8 architecture and the same 250 HP rating, but they are not interchangeable model labels. Their operating ranges, exhaust character, gearcase applications, shaft-length availability and calibration differ. Compare the exact model code before ordering."
+        },
+        {
+          "q": "How much does a Mercury 250 weigh?",
+          "a": "Mercury's current linked brochures list about 527 lb for the lightest 250 FourStroke and 511 lb for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package."
+        }
+      ]
+    },
+    {
       "slug": "mercury-75-hp-fourstroke-review-ontario",
       "title": "Mercury 75 HP FourStroke: Buy the 90 Instead?",
       "description": "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor.",
@@ -6414,6 +6448,39 @@
         {
           "q": "Do both engines come with Command Thrust?",
           "a": "Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine."
+        }
+      ]
+    },
+    {
+      "slug": "new-mercury-outboard-first-season-guide-ontario",
+      "title": "Your New Mercury Outboard's First Season: What to Expect From PDI to First Service",
+      "description": "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one.",
+      "category": "Maintenance",
+      "publishDate": "2026-07-27",
+      "keywords": [
+        "new Mercury outboard first season",
+        "Mercury outboard PDI",
+        "Mercury break-in Ontario",
+        "Mercury first oil change",
+        "SmartCraft Connect app",
+        "Mercury alarm codes"
+      ],
+      "faqs": [
+        {
+          "q": "How long is the break-in period on a new Mercury outboard?",
+          "a": "Break-in length depends on the engine family. The schedule, duration, and RPM limits vary by engine family and model year, so check the owner's manual for your serial number for the exact routine. Read our break-in guide for the plain-language version."
+        },
+        {
+          "q": "When should I do the first oil change on my Mercury outboard?",
+          "a": "Mercury's published maintenance schedule calls for oil and filter service at 100 hours or annually, whichever comes first. Many owners and dealers like an early change around 20 hours to flush break-in debris; that's a common best practice, not a Mercury requirement."
+        },
+        {
+          "q": "Do I need to use the Mercury Marine app with my new outboard?",
+          "a": "It's not required for basic operation, but pairing the Mercury Marine app via SmartCraft Connect gives you engine hours, fault codes, maintenance reminders, and digital gauges on your phone. Worth doing in the first week."
+        },
+        {
+          "q": "What does a beep from my Mercury outboard mean at startup?",
+          "a": "A brief horn when you turn the key on is the normal system self-test. Any other beep pattern means the engine has flagged a condition. The beep sequence depends on your engine model; your owner's manual lists the codes, or check our alarm codes encyclopedia."
         }
       ]
     }

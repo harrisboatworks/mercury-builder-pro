@@ -425,7 +425,7 @@ For most family and cruising pontoons, the 3.4-litre V6 200 FourStroke is the st
 
 ### Can Mercury Boost be installed on a 200 FourStroke or 200 Pro XS?
 
-Eligible current and compatible earlier 200 HP FourStroke and Pro XS models can receive Mercury Boost through a dealer software calibration. Boost improves midrange acceleration. It does not raise the engine's rated horsepower, top speed or time to plane. Eligibility depends on model and serial number, so it must be verified before quoting it.
+Eligible current and compatible earlier 200 HP FourStroke and Pro XS models can receive Mercury Boost through a dealer software calibration. The change is stronger midrange acceleration. It does not raise the engine's rated horsepower, top speed or time to plane. Eligibility depends on model and serial number, so it must be verified before quoting it.
 
 ### What propeller does a Mercury 200 need?
 
