@@ -27444,7 +27444,7 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
     ],
     citations: [
       {
-        name: 'Mercury 150 and 150 Pro XS operation manual, 2025',
+        name: 'Current Mercury 150 and 150 Pro XS operation manual',
         url: 'https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2025/4-stroke/8m0231628_english.pdf',
       },
       {
@@ -27710,7 +27710,7 @@ Harris Boat Works is a Mercury Marine Premier Dealer on Rice Lake. We have been 
 
 This review was last checked July 26, 2026. Specifications come from Mercury's current 150/150 Pro XS operation manual and current product literature. Performance figures remain attached to the boat, propeller, test load and conditions that produced them.
 
-- [Mercury 150 and 150 Pro XS operation manual, 2025](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2025/4-stroke/8m0231628_english.pdf)
+- [Current Mercury 150 and 150 Pro XS operation manual](https://download.brunswick-marine.com/filereader/file/pdf/4/enen/outboard/2025/4-stroke/8m0231628_english.pdf)
 - [Mercury Canada FourStroke 75–150 HP product page](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-75-150hp)
 - [Mercury 115–150 HP Pro XS product page](https://www.mercurymarine.com/us/en/engines/outboard/pro-xs/pro-xs-115-150hp)
 - [Mercury's 150 Pro XS introduction and engineering details](https://www.mercurymarine.com/ch/fr/about-us/news/mercury-marine-announces-new-150-pro-xs-outboard)
