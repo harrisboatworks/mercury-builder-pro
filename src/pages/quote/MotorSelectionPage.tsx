@@ -48,7 +48,7 @@ import { preloadConfiguratorImages, preloadModalChunk } from '@/lib/configurator
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
-import { getMotorImages } from '@/lib/mercury-product-images';
+import { getMotorImagesForModel } from '@/lib/mercury-product-images';
 import { VOICE_NAVIGATION_EVENT, type VoiceNavigationEvent } from '@/lib/voiceNavigation';
 import { setVisibleMotors, type VisibleMotor } from '@/lib/visibleMotorsStore';
 import type { MotorGroup } from '@/hooks/useGroupedMotors';
@@ -871,9 +871,26 @@ if (event.type === 'filter_motors') {
         ? (dbMotor.images as Array<{url: string} | string>).map(img => typeof img === 'string' ? img : img.url)
         : [];
       const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
-      const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
-      // Use database images only, Mercury CDN URLs are unreliable (404 frequently)
-      const galleryImages = dbImages;
+      const fallbackImages = getMotorImagesForModel(
+        Number(dbMotor.horsepower),
+        dbMotor.model_display || dbMotor.model,
+      );
+      const hasAssignedImage = Boolean(
+        dbMotor.hero_media_id ||
+        dbMotor.hero_image_url ||
+        dbMotor.image_url ||
+        firstDbImage,
+      );
+      const heroImage =
+        dbMotor.hero_image_url ||
+        dbMotor.image_url ||
+        firstDbImage ||
+        (!dbMotor.hero_media_id ? fallbackImages?.heroImage : '') ||
+        '';
+      // Prefer assigned database media, then use an exact local product image.
+      const galleryImages = dbImages.length > 0
+        ? dbImages
+        : (!hasAssignedImage ? (fallbackImages?.galleryImages || []) : []);
       const motorFamily = getMotorFamilyDisplay(classifyMotorFamily(dbMotor.horsepower, dbMotor.model_display || dbMotor.model, dbMotor.features));
 
       // Convert to Motor type (same as original)
