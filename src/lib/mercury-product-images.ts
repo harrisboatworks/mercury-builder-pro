@@ -287,9 +287,10 @@ export function getMotorImages(hp: number): MercuryProductImages | null {
 }
 
 /**
- * Get a family-correct product image for catalog cards that have no assigned
- * database media. The generic HP map is FourStroke-first, so performance
- * families must be handled before falling back to it.
+ * Get a verified local product image for catalog cards that have no assigned
+ * database media. Keep this deliberately narrow: most legacy entries in the
+ * generic HP map use rotating Mercury CDN paths and must not be catalog
+ * fallbacks.
  */
 export function getMotorImagesForModel(
   hp: number,
@@ -305,7 +306,9 @@ export function getMotorImagesForModel(
     };
   }
 
-  return getMotorImages(hp);
+  if (hp === 250) return mercuryProductImages['250'];
+
+  return null;
 }
 
 /**
