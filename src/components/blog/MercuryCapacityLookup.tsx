@@ -1,6 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
-import { mercuryOutboardCapacities } from '@/data/mercuryOutboardCapacities';
+import {
+  mercuryOutboardCapacities,
+  formatCrankcaseCapacity,
+  formatGearcaseCapacity,
+} from '@/data/mercuryOutboardCapacities';
 
 type HorsepowerBand = 'all' | 'portable' | 'midrange' | 'high';
 
@@ -24,10 +28,6 @@ function matchesBand(model: string, band: HorsepowerBand): boolean {
   return hp > 115;
 }
 
-function formatGearcaseCapacity(value: string): string {
-  if (value === 'None' || value === 'Not listed') return value;
-  return `${value} oz`;
-}
 
 export function MercuryCapacityLookup() {
   const [query, setQuery] = useState('');
