@@ -171,7 +171,7 @@ export function MercuryCapacityLookup() {
                     <th className="whitespace-nowrap px-4 py-4 font-bold text-repower-navy-900">
                       {row.model}
                     </th>
-                    <td className="min-w-52 px-4 py-4">
+                    <td className="px-4 py-4 md:min-w-52 lg:min-w-0">
                       <span className="font-semibold text-repower-mercury-red">{row.year}</span>
                       <span className="mt-1 block text-repower-navy-900/65">{row.notes}</span>
                     </td>
