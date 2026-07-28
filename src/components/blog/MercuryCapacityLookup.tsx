@@ -55,7 +55,7 @@ export function MercuryCapacityLookup() {
   return (
     <section
       aria-labelledby="mercury-capacity-lookup-heading"
-      className="not-prose my-8 overflow-hidden rounded-2xl border border-repower-navy-900/15 bg-white shadow-sm"
+      className="not-prose my-8 overflow-hidden rounded-2xl border border-repower-navy-900/15 bg-white shadow-sm lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[min(1200px,calc(100vw-2rem))] lg:max-w-none"
     >
       <div className="bg-repower-navy-900 px-5 py-6 text-white sm:px-7">
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-repower-mercury-red">
