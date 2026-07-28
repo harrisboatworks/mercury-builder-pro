@@ -140,16 +140,39 @@ export function BlogTable({ children }: { children?: ReactNode }) {
     newTbody = cloneElement(tbody, {}, styledBodyRows);
   }
 
+  // Determine column count (prefer thead, fall back to first body row).
+  let colCount = 0;
+  if (thead) {
+    const headRows = Children.toArray((thead.props as any).children).filter(isValidElement) as ReactElement[];
+    if (headRows[0]) {
+      colCount = (Children.toArray((headRows[0].props as any).children).filter(isValidElement) as ReactElement[]).length;
+    }
+  }
+  if (!colCount && bodyRows[0]) {
+    colCount = (Children.toArray((bodyRows[0].props as any).children).filter(isValidElement) as ReactElement[]).length;
+  }
+  const isWide = colCount >= 5;
+
+  const wrapperClass = [
+    'not-prose my-8 w-full rounded-2xl border border-border/30 bg-repower-paper p-3 md:p-4 shadow-sm',
+    isWide ? 'lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[min(1200px,calc(100vw-2rem))] lg:max-w-none' : '',
+  ].filter(Boolean).join(' ');
+
+  const tableClass = isWide
+    ? 'w-full min-w-[640px] border-collapse lg:min-w-0'
+    : 'w-full min-w-[640px] border-collapse md:min-w-full';
+
   return (
     <motion.div
       initial={{ y: 8 }}
       whileInView={{ y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3 }}
-      className="not-prose my-8 w-full rounded-2xl border border-border/30 bg-repower-paper p-3 md:p-4 shadow-sm"
+      className={wrapperClass}
+      data-blog-table-wide={isWide ? 'true' : undefined}
     >
-      <div className="blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card">
-        <table className="w-full min-w-[640px] border-collapse md:min-w-full">
+      <div className={`blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card ${isWide ? 'lg:overflow-x-visible' : ''}`}>
+        <table className={tableClass}>
           {newThead}
           {newTbody}
         </table>
