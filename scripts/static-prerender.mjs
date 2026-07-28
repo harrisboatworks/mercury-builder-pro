@@ -4719,6 +4719,20 @@ const routes = [
     extraNoscript: CONTACT_EXTRA
   },
   {
+    // ============================================================
+    // /resources: unlisted Documents & Downloads library. Stamped so
+    // Vercel returns 200 on www.mercuryrepower.ca (no SPA fallback);
+    // page is intentionally noindex/nofollow — reached by direct link only.
+    // ============================================================
+    path: '/resources',
+    title: 'Documents & Downloads | Harris Boat Works',
+    description: 'Official Mercury documents, owner guides, and Harris Boat Works reference files — free to download and share.',
+    h1: 'Documents & Downloads',
+    intro: 'Official Mercury documents, owner guides, and Harris Boat Works reference files — free to download and share.',
+    schemas: [genericPageSchema('/resources', 'Documents & Downloads', 'Official Mercury documents, owner guides, and Harris Boat Works reference files.')],
+    extraHead: '<meta name="robots" content="noindex, nofollow" />\n  <meta name="googlebot" content="noindex, nofollow" />'
+  },
+  {
     path: '/blog',
     title: 'Mercury Motor Guides & Boating Tips | Harris Boat Works Blog',
     description: 'Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters make informed decisions.',
