@@ -41,6 +41,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Settings = lazy(() => import("./pages/Settings"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PricingReference = lazy(() => import("./pages/PricingReference"));
+const Resources = lazy(() => import("./pages/Resources"));
 
 // Quote builder pages
 const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage"));
@@ -582,6 +583,7 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/pricing-reference" element={<PricingReference />} />
+        <Route path="/resources" element={<Resources />} />
         {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
         <Route path="/n" element={<Navigate to="/pricing-reference" replace />} />
         <Route path="/blog/fr" element={<BlogIndexFr />} />
