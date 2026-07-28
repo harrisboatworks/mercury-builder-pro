@@ -26856,7 +26856,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Tracker fishing boat powered by a Mercury 60 HP FourStroke running on freshwater",
     author: "Harris Boat Works",
     datePublished: "2026-07-27",
-    dateModified: "2026-07-27",
+    dateModified: "2026-07-28",
     publishDate: "2026-07-27",
     category: "Mercury Buying Guides",
     readTime: "14 min read",
@@ -26872,7 +26872,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: "Is the Mercury 60 HP FourStroke a good motor?",
-        answer: "Yes, when it is matched to the right boat and set up properly. The current 995 cc inline-four has a strong reputation for quiet running, clean starting and straightforward routine maintenance. No credible recurring current-generation defect pattern emerged in the owner material reviewed for this article.",
+        answer: "Yes, when it's matched to the right boat and set up properly. The current 995 cc inline-four has a strong reputation for quiet running, clean starting and straightforward routine maintenance. No credible recurring current-generation defect pattern emerged in the owner material reviewed for this article.",
       },
       {
         question: "How fast will a Mercury 60 HP FourStroke go?",
@@ -26884,7 +26884,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: "Is Command Thrust better on a 16-foot aluminum fishing boat?",
-        answer: "Usually not by default. In HBW's back-to-back test on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. That is one setup-specific result, not a promise for every boat, but it shows why Command Thrust should not be sold as an automatic upgrade for a recreational V-hull.",
+        answer: "Usually not by default. In HBW's back-to-back test on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. The result shows why Command Thrust shouldn't be sold as an automatic upgrade for a recreational V-hull.",
       },
       {
         question: "What boats suit a Mercury 60 HP FourStroke?",
@@ -26925,23 +26925,23 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
         url: "https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/coverage-duration/US%20and%20Canada%20warranty%20chart.pdf",
       },
     ],
-    content: `*Last reviewed: 2026-07-27*
+    content: `*Last reviewed: 2026-07-28*
 
-> **Quick answer:** The Mercury 60 HP FourStroke is a quiet, compact and well-proven choice for many 15-to-17-foot Ontario fishing boats. Use the standard gearcase for most planing V-hulls. Choose Command Thrust when a pontoon or genuinely heavy, high-drag hull needs a larger propeller and more load-carrying grip.
+> **Quick answer:** The Mercury 60 HP FourStroke is a quiet, compact and well-proven choice for many 15-to-17-foot Ontario fishing boats. Use the standard gearcase for most planing V-hulls. Choose Command Thrust when a pontoon or heavy, high-drag hull needs a larger propeller and more load-carrying grip.
 
 Same hull. Same 60 horsepower. Very different result.
 
 In a back-to-back Harris Boat Works test on 16-foot Legend hulls, the standard-gearcase Mercury 60 ran six mph faster than the Command Thrust version.
 
-That does not make Command Thrust a bad motor. It makes Command Thrust a tool. On a small pontoon, barge or heavily loaded workboat, its larger gearcase can be exactly what the boat needs. On a light recreational V-hull, it can be extra drag with no useful job to do.
+Command Thrust is a tool for a specific job, not a worse motor. On a small pontoon, barge or heavily loaded workboat, its larger gearcase can be exactly what the boat needs. On a light recreational V-hull, it can be extra drag with no useful job to do.
 
-That distinction is the heart of this review. The current Mercury 60 is a genuinely good mid-range outboard. Buying the right version, mounting it properly and finishing the propeller setup matter more than the badge on the cowling.
+That distinction is the heart of this review. The current Mercury 60 is a good mid-range outboard. Buying the right version, mounting it properly and finishing the propeller setup matter more than the badge on the cowling.
 
 ## What the Current Mercury 60 Actually Is
 
 The current Canadian Mercury 60 FourStroke is a 995 cc inline-four with electronic fuel injection, an eight-valve single-overhead-cam layout and a published full-throttle operating range of 5,500 to 6,000 rpm.
 
-It sits at the top of Mercury's 40, 50 and 60 HP family. It is not the same large 2.1-litre block used by the 75, 90 and 115.
+It sits at the top of Mercury's 40, 50 and 60 HP family and uses a different powerhead from the larger 2.1-litre block in the 75, 90 and 115.
 
 Current family specifications include:
 
@@ -26957,7 +26957,7 @@ Current family specifications include:
 
 Those weights are Mercury's lightest-version dry figures, not a promise for every shaft length and control configuration. The family is offered with 20- and 25-inch shafts, tiller or remote steering, and different trim arrangements. The exact Canadian model code still has to match the boat.
 
-The same caution applies to what comes in the box. Do not assume a propeller, controls, gauges, battery or fuel tank is included because an online listing somewhere showed one. The written quote for the exact motor and rigging package is the answer.
+The same caution applies to what comes in the box. Don't assume a propeller, controls, gauges, battery or fuel tank is included because an online listing somewhere showed one. The written quote for the exact motor and rigging package is the answer.
 
 HBW's current Canadian selection includes standard remote and tiller models, Command Thrust remote and tiller models, and a 25-inch-shaft remote model. Availability changes, so use the live motor selector rather than treating an old dealer listing as a permanent configuration chart.
 
@@ -26965,55 +26965,55 @@ HBW's current Canadian selection includes standard remote and tiller models, Com
 
 The 60 is one of those motors that makes a good first impression by not doing anything theatrical.
 
-It starts cleanly. It idles quietly. The four-cylinder layout feels more settled than many smaller twins and triples, especially when you are easing along a weed edge or talking to someone in the boat. At cruise, it is capable of moving a sensibly loaded aluminum fishing boat with enough authority that the motor does not feel as though it is apologizing for being there.
+It starts cleanly. It idles quietly. The four-cylinder layout feels more settled than many smaller twins and triples, especially when you're easing along a weed edge or talking to someone in the boat. At cruise, it can move a sensibly loaded aluminum fishing boat with enough authority that the motor doesn't feel as though it's apologizing for being there.
 
-It is not a hidden 90. Put four adults, a full livewell, batteries, tackle and a week's worth of cottage supplies into a hull that really wants more power, and 60 horsepower remains 60 horsepower.
+Nobody should mistake it for a hidden 90. Put four adults, a full livewell, batteries, tackle and a week's worth of cottage supplies into a hull that really wants more power, and 60 horsepower remains 60 horsepower.
 
 The best version of this motor is on a boat whose capacity, load and expectations all agree. On that boat, it feels simple and unstrained. On an overmatched boat, the owner starts shopping for propellers that supposedly manufacture horsepower.
 
-They do not.
+They can't.
 
 ## What Owners Actually Say Online
 
 We screened public owner discussions, fishing-boat tests and long-term reports for the current 995 cc EFI family. Older two-strokes, carbureted 60s, jet-drive 60/40s and modified ECU motors were excluded.
 
-Owner comments are anecdotal. They are useful for repeated ownership themes, not for calculating failure rates.
+Owner comments are anecdotal. They're useful for repeated ownership themes, not for calculating failure rates.
 
 ### Quiet, easy and pleasantly uneventful
 
-Quietness is the comment that keeps coming back. In a [Quintrex Renegade 460 test](https://www.youtube.com/watch?v=EBm6yjqyo8Y), the standard 60 was described as quiet, smoke-free and easy to live with. In a [recent owner discussion comparing 60 HP brands](https://www.reddit.com/r/boating/comments/1b8fkif), one commenter also described the Mercury as quieter than the Yamaha. That is one person's comparison, not a controlled sound test.
+Quietness is the comment that keeps coming back. In a [Quintrex Renegade 460 test](https://www.youtube.com/watch?v=EBm6yjqyo8Y), the standard 60 was described as quiet, smoke-free and easy to live with. In a [recent owner discussion comparing 60 HP brands](https://www.reddit.com/r/boating/comments/1b8fkif), one commenter also described the Mercury as quieter than the Yamaha. That's one person's comparison, not a controlled sound test.
 
 Routine maintenance gets similar comments. Owners generally describe the oil change as straightforward, with one recurring shop-floor truth: put a rag under the filter unless you want the side of the motor to receive an oil treatment too.
 
-A [July 2026 fleet-maintenance post](https://www.reddit.com/r/boats/comments/1ur0fjy/mercury_service/) reported five Mercury 60s with more than 1,400 freshwater hours each. The post did not identify model years or gearcases, so it is encouraging anecdote rather than proof about every current 60. It does fit the broader theme: owners tend to like this engine because a serviced one gets on with its job.
+A [July 2026 fleet-maintenance post](https://www.reddit.com/r/boats/comments/1ur0fjy/mercury_service/) reported five Mercury 60s with more than 1,400 freshwater hours each. The post didn't identify model years or gearcases, so it's encouraging anecdote rather than proof about every current 60. It fits the broader theme: owners tend to like this engine because a serviced one gets on with its job.
 
 ### The propeller can change the whole review
 
 One Bass Tracker owner reported noticeably better planing and grip in turns after replacing a worn three-blade Black Max with a four-blade Spitfire of the same pitch. The engine had not gained horsepower. The propeller was simply doing a better job of connecting it to the water.
 
-That is why internet reviews of “the Mercury 60” can sound as if they describe different motors. Sometimes they describe different hulls. Sometimes they describe a motor mounted too low. Very often they describe different propellers and loads.
+That's why internet reviews of “the Mercury 60” can sound as if they describe different motors. Sometimes they describe different hulls. Sometimes they describe a motor mounted too low. Very often they describe different propellers and loads.
 
 ### What about the problem stories?
 
 We found isolated reports involving [fuel-delivery repairs](https://forums.iboats.com/threads/60hp-command-thrust.772798/), [idle noises](https://www.reddit.com/r/boating/comments/1v0po8u/60_hp_mercury_idle_noise/), [cooling blockages](https://forums.iboats.com/threads/mercury-fourstroke-60hp-overheating-difficult-blockage.766467/) and [gear-lube concerns](https://www.reddit.com/r/Outboards/comments/1h387ck/mercury_60hp_efi_4_stroke_100hrs_gearbox_issue/). They span different years and installations, most leave the gearcase unidentified, and several were never conclusively diagnosed.
 
-That is not enough evidence to call any of them a recurring current-generation defect.
+Those reports aren't enough evidence to call any of them a recurring current-generation defect.
 
-The useful lesson is less dramatic. If a 60 suddenly loses top-end rpm, overheats after running through sand, or begins making a genuinely new noise, diagnose the complete package. Fuel quality, filters, propeller condition, mounting, cooling passages and rigging all belong in the conversation before somebody on a forum declares the powerhead cursed.
+The useful lesson is less dramatic. If a 60 suddenly loses top-end rpm, overheats after running through sand, or begins making a new noise, diagnose the complete package. Fuel quality, filters, propeller condition, mounting, cooling passages and rigging all belong in the conversation before somebody on a forum declares the powerhead cursed.
 
 ## Standard vs Command Thrust: Pick the Gearcase for the Job
 
-Command Thrust does not add horsepower. It gives the 60 a larger gearcase, a 2.33:1 ratio and the ability to turn a larger-diameter propeller.
+Command Thrust doesn't add horsepower. It gives the 60 a larger gearcase, a 2.33:1 ratio and the ability to turn a larger-diameter propeller.
 
 ![Mercury 60 HP Command Thrust FourStroke powering a Tracker fishing boat on freshwater.](/lovable-uploads/inline/mercury-60-command-thrust-freshwater.webp)
 
-*Official Mercury Marine photography of the current 60 HP Command Thrust FourStroke on a freshwater fishing boat.*
+*Mercury 60 HP Command Thrust FourStroke on a freshwater fishing boat. Photo: Mercury Marine.*
 
 That combination can help a high-drag or heavily loaded boat get on plane and stay there at a lower speed. It is why Command Thrust makes sense on many small pontoons. It can also be appropriate on a utility boat or work hull where grip and load carrying matter more than the cleanest possible top end.
 
 The standard 1.83:1 gearcase is normally the better starting point for a conventional 15-to-17-foot recreational V-hull. It is lighter and presents less gearcase area to the water.
 
-Our six-mph Legend result is not a universal speed penalty for Command Thrust. It is one controlled, real-world warning against treating CT as a premium upgrade for every boat. Two boats with different props, loads, engine heights or hull condition can produce a different gap.
+Our six-mph Legend result is one back-to-back, real-world warning against treating CT as a premium upgrade for every boat.
 
 For the engineering history and the cases where the larger gearcase really earns its keep, read our [plain-English Command Thrust and BigFoot guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull).
 
@@ -27024,7 +27024,11 @@ For the engineering history and the cases where the larger gearcase really earns
 | The hull does not need a large-diameter propeller | The rig benefits from a larger propeller |
 | The normal load is moderate | The normal load is consistently heavy |
 
-If a salesperson cannot explain what the larger gearcase is solving on your boat, “Command Thrust is better” is not an explanation.
+![Mercury standard and Command Thrust gearcases shown side by side.](/lovable-uploads/hero-mercury-command-thrust-vs-standard.webp)
+
+*Mercury standard and Command Thrust gearcases shown side by side. The larger housing is the point, not extra horsepower.*
+
+If a salesperson can't explain what the larger gearcase is solving on your boat, “Command Thrust is better” isn't an explanation.
 
 ## Real Freshwater Results
 
@@ -27036,9 +27040,9 @@ Speed figures are only useful when the boat and setup remain attached. These are
 | Mercury Boat House Bulletin 253 | 17.5-ft MirroCraft F170T, standard 1.83:1 gearcase, 12-pitch Spitfire, freshwater | 33.6 mph at 6,098 rpm; 0–20 mph in 5.2 sec |
 | Harris Boat Works comparison | 16-ft Legend hulls, one standard 60 and one Command Thrust 60 | Standard version ran 6 mph faster at top end |
 
-The MirroCraft bulletin recorded 6,098 rpm, slightly above the current published 6,000-rpm upper limit. We would not use that exact setup as a universal target. It is included because it is a transparent Mercury test on a relevant freshwater aluminum boat.
+The MirroCraft bulletin recorded 6,098 rpm, slightly above the current published 6,000-rpm upper limit. We wouldn't use that exact setup as a universal target. We included it because it's a transparent Mercury test on a relevant freshwater aluminum boat.
 
-The two factory boats landed around 33 mph. That does not mean every 60-powered boat should. A lighter pad hull may run faster. A wide utility boat, pontoon or heavily loaded fishing package may run much slower and still be healthy.
+The two factory boats landed around 33 mph. That doesn't mean every 60-powered boat should. A lighter pad hull may run faster. A wide utility boat, pontoon or heavily loaded fishing package may run much slower and still be healthy.
 
 ## Propeller, Mounting Height and the Final Water Test
 
@@ -27046,7 +27050,7 @@ Mercury publishes a 5,500-to-6,000-rpm full-throttle range for the current 60. T
 
 A propeller with too much pitch can make the motor feel lazy and keep it below the intended rpm. Too little pitch can send it to the limiter without useful speed. Changing blade count can trade some top end for grip, planing and control in turns.
 
-Mounting height matters too. A motor mounted unnecessarily low creates drag. One mounted too high can lose water pressure or propeller grip. The correct answer is not copied from another boat simply because both boats are 16 feet long.
+Mounting height matters too. A motor mounted unnecessarily low creates drag. One mounted too high can lose water pressure or propeller grip. You can't copy the correct answer from another boat simply because both boats are 16 feet long.
 
 This is also why motors 25 HP and up are quoted with a propeller allowance at HBW unless an existing propeller is being reused and proves suitable. We finish the setup on the water, check rpm and handling, and change the propeller when the boat tells us to.
 
@@ -27062,7 +27066,7 @@ The 60 belongs on the shortlist when:
 - quiet trolling, cottage running and easy ownership matter more than maximum speed
 - you want the smoothness of an inline-four without moving into the much heavier 75-to-115 family
 
-The Command Thrust version belongs on the shortlist when the same 60 horsepower must push a smaller pontoon or a genuinely heavy, high-drag load.
+The Command Thrust version belongs on the shortlist when the same 60 horsepower must push a smaller pontoon or a heavy, high-drag load.
 
 If your real question is whether the boat needs 40 or 60 horsepower, use the separate [Mercury 40 vs 60 HP sizing guide](/blog/mercury-40-vs-60-hp-outboard-ontario). That page owns the horsepower decision; this review owns the current 60 itself.
 
@@ -27070,15 +27074,15 @@ If the capacity plate also allows 75 HP, the [dedicated Mercury 75 HP review](/b
 
 ## When We Would Tell You Not to Buy the 60
 
-We would move the conversation down in horsepower if the boat's capacity plate, transom condition or weight limit does not comfortably accept the 60.
+We'd move the conversation down in horsepower if the boat's capacity plate, transom condition or weight limit doesn't comfortably accept the 60.
 
-We would move it up if the boat is rated for more power and you regularly carry a full family, tow watersports, load a large pontoon or expect effortless acceleration with every seat occupied. A 60 that spends its life at full throttle trying to do a 90's job is not the economical choice.
+We'd move it up if the boat is rated for more power and you regularly carry a full family, tow watersports, load a large pontoon or expect effortless acceleration with every seat occupied. A 60 that spends its life at full throttle trying to do a 90's job isn't the economical choice.
 
-We would also pause if someone wants Command Thrust only because it sounds like the premium version. The larger gearcase should solve a real rigging problem. If it does not, choose the standard 60.
+We'd also pause if someone wants Command Thrust only because it sounds like the premium version. The larger gearcase should solve a real rigging problem. If it doesn't, choose the standard 60.
 
 ## What We See at HBW
 
-The current 60 is a very sensible repower for the Ontario boats that actually exist in large numbers: aluminum fishing boats, cottage runabouts and utility hulls that do not need triple-digit horsepower.
+The current 60 is a very sensible repower for the Ontario boats that actually exist in large numbers: aluminum fishing boats, cottage runabouts and utility hulls that don't need triple-digit horsepower.
 
 The motor itself is rarely the confusing part. The decisions around it are:
 
@@ -27100,15 +27104,15 @@ Motor prices, rebates and financing programs can change too. See the [live Mercu
 
 ## The Bottom Line
 
-The Mercury 60 FourStroke earns its reputation the unglamorous way. It is quiet, smooth, straightforward to maintain and powerful enough for a large number of Ontario fishing boats.
+The Mercury 60 FourStroke earns its reputation the unglamorous way. It's quiet, smooth, straightforward to maintain and powerful enough for a large number of Ontario fishing boats.
 
-The honest buying decision is not whether the motor is “good.” It is whether the boat needs the standard gearcase or Command Thrust, whether 60 horsepower suits the real load, and whether somebody will finish the setup on the water.
+The honest buying decision comes down to the gearcase, whether 60 horsepower suits the real load, and whether somebody will finish the setup on the water.
 
 Get those three things right and the 60 is the kind of motor owners stop talking about because they are busy using the boat.
 
 ## When to Call HBW
 
-Call if you are unsure about shaft length, Command Thrust, propeller reuse, controls or whether your current boat is worth repowering. A capacity-plate photo and a few pictures of the transom usually make the first conversation much more useful.
+Call if you're unsure about shaft length, Command Thrust, propeller reuse, controls or whether your current boat is worth repowering. A capacity-plate photo and a few pictures of the transom usually make the first conversation much more useful.
 
 **Call:** [905-342-2153](tel:+19053422153)
 
@@ -27118,7 +27122,7 @@ Harris Boat Works sells, installs, water-tests and services Mercury outboards in
 
 ## Sources and Review Notes
 
-This review was last checked July 27, 2026. Official specifications and factory performance results are separated from HBW's own test and public owner anecdotes. Performance remains specific to the listed boat, propeller, load and conditions.
+This review was last checked July 28, 2026. Official specifications and factory performance results are separated from HBW's own test and public owner anecdotes.
 
 - [Mercury Canada: FourStroke 40–60 HP](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-40-60hp)
 - [Mercury FourStroke 25–150 HP brochure](https://mercurymarine.widen.net/s/2fmhhfhzx6/8m0189528_mercfourstrokebrochure_25_150_web)
@@ -27135,7 +27139,7 @@ This review was last checked July 27, 2026. Official specifications and factory 
 - [Owner repair discussion: a sand-related cooling blockage](https://forums.iboats.com/threads/mercury-fourstroke-60hp-overheating-difficult-blockage.766467/)
 - [Owner repair discussion: an unresolved gear-lube concern](https://www.reddit.com/r/Outboards/comments/1h387ck/mercury_60hp_efi_4_stroke_100hrs_gearbox_issue/)
 
-Official hero photography: Mercury Marine, 60 HP FourStroke on a freshwater Tracker fishing boat. Photo credit: Taylor Wright.
+Official hero photography: Mercury Marine, 60 HP FourStroke on a freshwater Tracker fishing boat.
 `,
   },
   {

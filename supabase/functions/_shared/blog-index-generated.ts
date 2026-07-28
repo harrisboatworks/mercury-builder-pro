@@ -4173,7 +4173,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is the Mercury 60 HP FourStroke a good motor?",
-        "a": "Yes, when it is matched to the right boat and set up properly. The current 995 cc inline-four has a strong reputation for quiet running, clean starting and straightforward routine maintenance. No credible recurring current-generation defect pattern emerged in the owner material reviewed for this article."
+        "a": "Yes, when it's matched to the right boat and set up properly. The current 995 cc inline-four has a strong reputation for quiet running, clean starting and straightforward routine maintenance. No credible recurring current-generation defect pattern emerged in the owner material reviewed for this article."
       },
       {
         "q": "How fast will a Mercury 60 HP FourStroke go?",
@@ -4185,7 +4185,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is Command Thrust better on a 16-foot aluminum fishing boat?",
-        "a": "Usually not by default. In HBW's back-to-back test on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. That is one setup-specific result, not a promise for every boat, but it shows why Command Thrust should not be sold as an automatic upgrade for a recreational V-hull."
+        "a": "Usually not by default. In HBW's back-to-back test on 16-foot Legend hulls, the standard-gearcase 60 ran six mph faster than the Command Thrust 60. The result shows why Command Thrust shouldn't be sold as an automatic upgrade for a recreational V-hull."
       }
     ]
   },
