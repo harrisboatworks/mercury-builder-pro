@@ -139,7 +139,7 @@ Perch on small spoons and jigging raps near weed edges. Crappie on tiny jigs und
 
 Walleye, bass, and muskie are still in their closed window. But catfish (opens April 25), crappie, pike, and perch are all fair game.
 
-April crappie in shallow warming bays can be outstanding. Water in the 55-16°C (60°F) range pushes crappie into pre-spawn staging, and they stack tight. If you have never targeted Rice Lake crappie in late April, you are in for a pleasant surprise.
+April crappie in shallow warming bays can be outstanding. Water in the 13-16°C (55-60°F) range pushes crappie into pre-spawn staging, and they stack tight. If you have never targeted Rice Lake crappie in late April, you are in for a pleasant surprise.
 
 **Motor note:** This is prime repower and commissioning season at HBW, before the May 9 walleye rush hits and before everyone realizes their motor needs work. Book in April. Thank yourself in May.
 
