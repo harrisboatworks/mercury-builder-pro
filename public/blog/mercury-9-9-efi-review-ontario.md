@@ -36,7 +36,7 @@ The Mercury 9.9 MH EFI combines manual start, tiller steering and battery-free e
 
 For the full 9.9 lineup, including electric-start, long-shaft and ProKicker choices, see our [Mercury 9.9 tiller, kicker and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
-Two common 9.9 HP jobs are serving as the primary motor on a small aluminum or tender, and riding on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
+A 9.9 HP outboard commonly does one of two jobs: it serves as the primary motor on a small aluminum boat or tender, or it rides on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
 
 Here is what the "MH EFI" means before we go further:
 
@@ -52,7 +52,7 @@ Shaft length: 15-inch short shaft. Displacement: 209 cc (12.75 cubic inches). Ex
 
 Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, [on fuel it was not stabilized with](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), can be a frustrating experience come spring.
 
-Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range. The fuel economy number will vary by load and conditions, but the practical payoff is cleaner fuel control during cold starts and after seasonal storage.
+Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury describes the current system as providing easy starts and efficient, reliable performance in changing weather. The practical payoff is cleaner fuel control during cold starts and after seasonal storage, without pretending one percentage can predict fuel use on every boat.
 
 ---
 
@@ -155,7 +155,6 @@ Call **[905-342-2153](tel:+19053422153)** if you are unsure about shaft length, 
 ## Sources
 
 - [Mercury Marine Canada: current 9.9hp FourStroke product page](https://www.mercurymarine.com/ca/en/product/mercury-fourstroke-99hp-outboard)
-- [Mercury Marine: 2024 launch of the current 8 and 9.9hp EFI FourStroke family](https://www.mercurymarine.com/us/en/about-us/news/all-new-efi-fourstroke-and-prokicker-outboard)
 - [Mercury Marine Canada: fuel basics for current gasoline outboards](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
 - [Mercury Marine Canada: current outboard engine families](https://www.mercurymarine.com/ca/en/engines)
 - [Parks Canada: Trent-Severn Waterway boating information](https://parks.canada.ca/lhn-nhs/on/trentsevern)

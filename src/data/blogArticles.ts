@@ -26674,7 +26674,7 @@ The Mercury 9.9 MH EFI combines manual start, tiller steering and battery-free e
 
 For the full 9.9 lineup, including electric-start, long-shaft and ProKicker choices, see our [Mercury 9.9 tiller, kicker and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
-Two common 9.9 HP jobs are serving as the primary motor on a small aluminum or tender, and riding on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
+A 9.9 HP outboard commonly does one of two jobs: it serves as the primary motor on a small aluminum boat or tender, or it rides on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
 
 Here is what the "MH EFI" means before we go further:
 
@@ -26690,7 +26690,7 @@ Shaft length: 15-inch short shaft. Displacement: 209 cc (12.75 cubic inches). Ex
 
 Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, [on fuel it was not stabilized with](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), can be a frustrating experience come spring.
 
-Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range. The fuel economy number will vary by load and conditions, but the practical payoff is cleaner fuel control during cold starts and after seasonal storage.
+Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury describes the current system as providing easy starts and efficient, reliable performance in changing weather. The practical payoff is cleaner fuel control during cold starts and after seasonal storage, without pretending one percentage can predict fuel use on every boat.
 
 ---
 
@@ -26815,7 +26815,6 @@ Call **[905-342-2153](tel:+19053422153)** if you are unsure about shaft length, 
 ## Sources
 
 - [Mercury Marine Canada: current 9.9hp FourStroke product page](https://www.mercurymarine.com/ca/en/product/mercury-fourstroke-99hp-outboard)
-- [Mercury Marine: 2024 launch of the current 8 and 9.9hp EFI FourStroke family](https://www.mercurymarine.com/us/en/about-us/news/all-new-efi-fourstroke-and-prokicker-outboard)
 - [Mercury Marine Canada: fuel basics for current gasoline outboards](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
 - [Mercury Marine Canada: current outboard engine families](https://www.mercurymarine.com/ca/en/engines)
 - [Parks Canada: Trent-Severn Waterway boating information](https://parks.canada.ca/lhn-nhs/on/trentsevern)
@@ -29068,7 +29067,7 @@ For current Canadian motor pricing, use the [live Mercury pricing reference](/pr
 **Is the Mercury 75 HP a bad motor?** 
 No. It is a current 2.1-litre Mercury FourStroke and a valid choice when 75 HP matches the boat, load and budget. Sharing an engine platform with the 90 does not make the 75 defective or pointless.
 
-**Why doesn't HBW stock the 75?** 
+**Does HBW normally stock the 75?**
 The 90 is the more common comparison when a boat is rated for both, so 75 HP availability may be order-specific. We will quote the 75 when it is the rated or sensible fit rather than treating stock status as a reason to buy the wrong motor.
 
 **Can I get the 75 in a Command Thrust version?** 
@@ -29108,6 +29107,7 @@ Call **[905-342-2153](tel:+19053422153)** or build a [current CAD quote](/quote/
 
 - [Mercury Marine Canada: current outboard engine families](https://www.mercurymarine.com/ca/en/engines)
 - [Mercury Marine: 75/90/115 FourStroke owner's manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
+- [Mercury Marine Canada: limited-warranty terms and termination of coverage](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
 - [Transport Canada: compliance notices and capacity labels](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft)
 - [iBoats owner discussion: current 2.1-litre Mercury 75–115 family](https://forums.iboats.com/threads/keen-to-hear-from-mercury-75-115-efi-owners-2015-present-2-1l-models.762895/)
 
@@ -36220,9 +36220,9 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
       { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'It can propel a compatible small tender, dinghy, sailboat, or light fishing boat. Boat weight, load, wind, current, required range, shaft length, and mounting determine whether it is appropriate; HBW confirms the fit rather than assigning it by boat length alone.' },
       { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those are test results, not a promise for every boat; load, hull, weather, water, and throttle change the result.' },
       { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.' },
-      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the eventual package. Call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Pickup is at Gores Landing.' },
+      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the complete package. Call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Pickup is at Gores Landing.' },
       { question: 'What charges the Avator battery?', answer: 'The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.' },
-      { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Yes, but coverage differs by component. Mercury\'s current Canada/U.S. chart lists 3-year recreational limited and corrosion coverage for the Avator outboard and 2-year coverage for batteries and charging systems. Confirm the written terms for the exact package; Mercury requires the outboard and battery to be registered separately, and promotional coverage applies only while an eligible offer is active.' },
+      { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Yes, but coverage differs by component. As of July 2026, Mercury\'s current Canada/U.S. chart lists 3-year recreational limited and corrosion coverage for the Avator outboard and 2-year coverage for batteries and charging systems. Confirm the written terms for the exact package; Mercury requires the outboard and battery to be registered separately, and promotional coverage applies only while an eligible offer is active.' },
     ],
     content: `## Quick Answer
 
@@ -36232,9 +36232,9 @@ The Mercury Avator 7.5e delivers 750 watts at the propeller from a removable int
 
 ## Why This Review Is Cautious
 
-**Now at HBW:** HBW now offers Mercury Avator as a build-to-order option, with pricing coming soon. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases and contact information.
+**Now at HBW:** HBW offers Mercury Avator as a build-to-order option, with pricing coming soon. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases and contact information.
 
-HBW sells gas outboards and now offers Avator as a build-to-order option. We have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
+We sell gas outboards too, so we have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
 
 The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges off a wall outlet, and runs nearly silent. For a Rice Lake angler easing along a weed line at first light, that silence is the whole point. For someone who needs to cover the lake all day on one boat, it is the wrong tool, and no amount of wanting will change that. This review stays on the honest line between those two.
 
@@ -36266,7 +36266,7 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 _Avator pricing is being finalized. For current gas-outboard bare-motor prices, see the [Mercury pricing reference](/pricing-reference)._
 
 
-Avator and a gas portable have different purchase, charging or fuel, maintenance, noise, and range trade-offs. The correct comparison is the complete eventual package and the job the boat must do, not a generic claim that one option pays for itself.
+Avator and a gas portable have different purchase, charging or fuel, maintenance, noise, and range trade-offs. The correct comparison is the complete package and the job the boat must do, not a generic claim that one option pays for itself.
 
 ## What is the real range and battery life on Rice Lake?
 
@@ -36302,13 +36302,15 @@ Charging. The standard 110W charger is easy to plug into a household outlet, but
 
 The 7.5e name causes more confusion than any other part of the motor. Some shoppers read it as 7.5 horsepower, then feel disappointed when they learn Mercury rates it at 750 watts at the propeller. Mercury does not claim that it is a 7.5 HP gas outboard.
 
-People who like it tend to talk about the quiet operation, no fumes, clean controls and the self-contained battery. In the cited owner discussion, the criticism is equally practical: it is a physically substantial portable, the proprietary battery system is not cheap, and full throttle empties the range budget quickly. One sailor who tried both the 7.5e and 20e on a 12-foot dinghy found the smaller motor too slow for that particular use while praising the Avator design and waterproofing. That is anecdotal fit evidence, not a universal performance test.
+The cited owner discussion shows both the appeal and the limits. One commenter considered the Mercury expensive but still thought it looked the best. Another sailor who tried both the 7.5e and 20e on a 12-foot dinghy found the smaller motor too slow for that particular use, while praising the Avator design and waterproofing and noting the lock-in to Mercury batteries. That is anecdotal fit evidence, not a universal performance test.
 
 The useful takeaway is simple: electric feels best when the route and throttle suit it. Buying it as a vague substitute for "a small gas motor" is how expectations go wrong.
 
 ## What We See at HBW
 
-HBW starts with the boat, total load, intended route, required reserve, transom or bracket, shaft length, tiller or remote controls, and charging access. That separates a sensible small-boat or low-speed application from a job that needs more power or range. Once pricing is locked, the recommendation and price will belong in a written, configuration-specific quote.
+Avator is new to our build-to-order lineup, so we are not going to invent years of local ownership history that we do not have. What we can apply is the same fit-first process we use for every repower.
+
+We start with the boat, total load, intended route, required reserve, transom or bracket, shaft length, tiller or remote controls, and charging access. That separates a sensible small-boat or low-speed application from a job that needs more power or range. Once pricing is locked, the recommendation and price will belong in a written, configuration-specific quote.
 
 ## Frequently Asked Questions
 
@@ -36322,13 +36324,13 @@ Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60
 It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.
 
 **How much does the Avator 7.5e cost installed?**
-Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the eventual package. Call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Pickup is at Gores Landing.
+Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the complete package. Call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Pickup is at Gores Landing.
 
 **What charges the Avator battery?**
 The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.
 
 **Is the Avator covered under Mercury's warranty?**
-Yes, but coverage differs by component. Mercury's current Canada/U.S. chart lists 3-year recreational limited and corrosion coverage for the Avator outboard and 2-year coverage for batteries and charging systems. Confirm the written terms for the exact package; Mercury requires the outboard and battery to be registered separately, and promotional coverage applies only while an eligible offer is active.
+Yes, but coverage differs by component. As of July 2026, Mercury's current Canada/U.S. chart lists 3-year recreational limited and corrosion coverage for the Avator outboard and 2-year coverage for batteries and charging systems. Confirm the written terms for the exact package; Mercury requires the outboard and battery to be registered separately, and promotional coverage applies only while an eligible offer is active.
 
 ## Ready to rig an Avator?
 
@@ -36344,7 +36346,7 @@ If the Avator 7.5e may fit the job, call us to work through the boat, route, exp
 - [Mercury Marine Canada: Avator family](https://www.mercurymarine.com/ca/en/engines/electric/avator)
 - [Mercury Marine Canada: Avator tutorials and care](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/how-to/avator-tutorials-and-care)
 - [Mercury Marine: U.S. and Canada recreational warranty duration chart](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/coverage-duration/US%20and%20Canada%20warranty%20chart.pdf)
-- [Owner discussion: Avator 7.5e on a 12-foot dinghy and sailboat-fit questions](https://www.reddit.com/r/sailing/comments/1fh0qev/selecting_electric_outboard_for_26ft_monohull/)
+- [Owner discussion: 26-foot sailboat sizing, including a 7.5e and 20e comparison on a 12-foot dinghy](https://www.reddit.com/r/sailing/comments/1fh0qev/selecting_electric_outboard_for_26ft_monohull/)
 `,
   },
   {
@@ -36936,7 +36938,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     image: '/lovable-uploads/hero-mercury-boost-console.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-18',
+    dateModified: '2026-07-27',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
@@ -37029,13 +37031,11 @@ HBW checks the engine family, model code, and serial number first. We then confi
 
 Now the honest question. Three scenarios.
 
-:::decision-card
 **Tournament rig (eligible Pro XS on a bass boat):** Worth comparing. Repeated full-throttle acceleration is where Boost's response change is most relevant, but the result and price still depend on the exact setup.
 
 **Family 19-21 ft cruiser (steady-throttle use):** Probably no. Boost is invisible at steady cruise. It doesn't add top-end. Save the money.
 
 **Shopping for a new motor with factory Boost:** Buy the correctly sized motor for the boat. Confirm what is factory-enabled on the exact unit and compare the complete written quote; do not assume a value from an online price range.
-:::
 
 ---
 

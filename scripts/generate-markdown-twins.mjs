@@ -369,7 +369,7 @@ function cleanBlogContent(content, hasFaqs) {
   );
   if (hasFaqs) {
     c = c.replace(
-      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
+      /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
       '\n',
     );
   }
@@ -873,7 +873,7 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
   const isDiagnostic = isDiagnosticBlogArticle(article);
   const isAvator = /\bavator\b/i.test(`${article.slug} ${article.title}`);
   const warrantyAgentNote = isAvator
-    ? '- Avator warranty is component-specific. Mercury\'s current Canada/U.S. chart lists 3-year recreational coverage for the outboard and 2-year coverage for batteries and charging systems; confirm the written terms and any active eligible promotion for the exact package.'
+    ? '- Avator warranty is component-specific. As of July 2026, Mercury\'s current Canada/U.S. chart lists 3-year recreational coverage for the outboard and 2-year coverage for batteries and charging systems; confirm the written terms and any active eligible promotion for the exact package.'
     : '- Standard Mercury gasoline-outboard warranty is 3 years. Bonus warranty years apply only when an eligible Mercury promotion is active.';
   const extra = [
     `title: ${JSON.stringify(article.title)}`,

@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026.md
-last_updated: 2026-07-18
+last_updated: 2026-07-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Boost Canada 2026: Eligibility, Performance, and Pricing"
 description: "What Mercury Boost does, which motors may qualify, and how HBW confirms current Canadian pricing from the exact serial number."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-07-18
+date_modified: 2026-07-27
 keywords: ["Mercury Boost","Mercury Boost worth it","Mercury Boost cost","Pro XS Boost","Verado Boost","Mercury Boost software"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-07-27
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026
 
@@ -226,6 +226,5 @@ Buy the correctly rated motor for the boat today. Confirm factory-equipped statu
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- Standard Mercury gasoline-outboard warranty is 3 years. Bonus warranty years apply only when an eligible Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -161,6 +161,7 @@ Call **[905-342-2153](tel:+19053422153)** or build a [current CAD quote](/quote/
 
 - [Mercury Marine Canada: current outboard engine families](https://www.mercurymarine.com/ca/en/engines)
 - [Mercury Marine: 75/90/115 FourStroke owner's manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
+- [Mercury Marine Canada: limited-warranty terms and termination of coverage](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
 - [Transport Canada: compliance notices and capacity labels](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft)
 - [iBoats owner discussion: current 2.1-litre Mercury 75–115 family](https://forums.iboats.com/threads/keen-to-hear-from-mercury-75-115-efi-owners-2015-present-2-1l-models.762895/)
 
