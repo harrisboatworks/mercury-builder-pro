@@ -2,6 +2,10 @@ import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import {
+  AGENT_CATALOG_POSITIONING,
+  AGENT_CATALOG_WARRANTY_RULE,
+} from './lib/agent-catalog-facts.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -348,7 +352,7 @@ function cleanBlogContent(content, hasFaqs) {
   // both the historical double-colon form and the canonical triple-colon form
   // into readable headings and bullets for text-only readers.
   c = c.replace(
-    /^:{2,3}decision-card\s*\n([\s\S]*?)\n:{2,3}\s*$/gim,
+    /^:{2,3}decision-card[ \t]*\n([\s\S]*?)\n:{2,3}[ \t]*$/gim,
     (_match, body) => decisionCardToMarkdown(body),
   );
   // Twins-only: strip directive fence lines (e.g. ":::mythbuster", ":::customer-voice", bare ":::").
@@ -695,7 +699,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    AGENT_CATALOG_POSITIONING,
     '',
     '## Business rules (apply to every entry)',
     '',
@@ -703,7 +707,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
-    '- **Standard gasoline-outboard warranty is 3 years.** Avator outboards, batteries and charging equipment have component-specific terms; confirm the current written Mercury warranty for the exact package. Bonus years apply only when an eligible promotion is active.',
+    AGENT_CATALOG_WARRANTY_RULE,
     `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',

@@ -28954,14 +28954,14 @@ Online owner material is treated as anecdotal buyer context, not as a warranty s
       { question: "Is the Mercury 75 HP FourStroke a current motor?", answer: "Yes. The current Mercury 75 FourStroke is a 2.1-litre inline-four in the same engine family as the 90 and 115 FourStroke." },
       { question: "Can HBW order a Mercury 75 HP FourStroke?", answer: "Yes. We can quote the current 75 when it is the rated or sensible fit. Availability and timing should be confirmed on the current written quote." },
       { question: "What is the difference between a Mercury 75 and 90 FourStroke?", answer: "They share Mercury's 2.1-litre inline-four platform and have similar lightest published weights. They are distinct horsepower ratings with different full-throttle operating ranges: 4,500–5,500 rpm for the 75 and 5,000–6,000 rpm for the 90." },
-      { question: "Is the Mercury 90 worth more than the 75?", answer: "It can be when the capacity plate allows 90 and stronger loaded acceleration or reserve power matters. Compare the current complete installed quotes and the boat's normal load rather than relying on an old price-gap rule." },
+      { question: "Is the Mercury 90 worth more than the 75?", answer: "It can be when the capacity plate allows 90 and stronger loaded acceleration or reserve power matters. Compare today's installed totals and how the boat is normally loaded rather than relying on an old price-gap rule." },
       { question: "My capacity plate says 75 HP max. Can I put a 90 on it?", answer: "Do not exceed the manufacturer's maximum power rating. If the plate says 75 HP, we stay at or below 75 and confirm the correct motor configuration for the hull." },
       { question: "Will a Mercury 75 work on a pontoon?", answer: "It can suit a correctly rated light pontoon with a modest load, but there is no universal answer. Capacity, passenger load, hull design and gearcase requirements must be checked." },
       { question: "Where can I see the current Mercury 75 price in Canada?", answer: "Use HBW's live Mercury pricing reference or quote builder. This review does not freeze a price that can become stale." },
     ],
     content: `## Quick Answer
 
-The Mercury 75 HP FourStroke is a current 2.1-litre inline-four built on the same engine platform as the 90 and 115 FourStroke. Choose it when the boat is rated for 75 HP, the complete quote favours it, or the hull simply does not need 90 HP. If the plate allows 90, compare both rather than assuming either answer.
+The Mercury 75 HP FourStroke is a current 2.1-litre inline-four built on the same engine platform as the 90 and 115 FourStroke. Choose it when the boat is rated for 75 HP, the installed numbers favour it, or the hull simply does not need 90 HP. If the plate allows 90, compare both rather than assuming either answer.
 
 **Last reviewed:** July 27, 2026
 
@@ -28972,24 +28972,24 @@ The Mercury 75 HP FourStroke is a current 2.1-litre inline-four built on the sam
 ::decision-card
 heading: Mercury 75 HP or 90 HP?
 eyebrow: Start with the capacity plate
-subhead: The 90 adds power, but the boat's rated maximum, normal load and complete installed quote decide whether that power belongs on your boat.
+subhead: The 90 adds power, but the boat's rating, real load and installed-price difference decide whether that power belongs on your boat.
 leftLabel: Choose 90 HP if
 leftCriteria:
   - The capacity plate allows 90 HP
   - The boat regularly carries people, batteries and fishing gear
   - Stronger acceleration and reserve power matter
-  - The complete installed quote makes the step worthwhile
+  - The step-up cost makes sense for how you use the boat
 leftOutcome: Pick 90 HP FourStroke
 leftVariant: recommended
 rightLabel: Choose 75 HP if
 rightCriteria:
   - Your boat is rated max 75 HP on the capacity plate
-  - The hull is light and the normal load is modest
-  - The complete quote creates meaningful savings
-  - You value appropriate power more than maximum available power
+  - The hull is light and the usual load is modest
+  - The 75 leaves useful money in the budget
+  - You value a good match more than the largest allowed decal
 rightOutcome: Pick 75 HP FourStroke
 rightVariant: alternative
-whenInDoubt: Send us the capacity plate, boat model and normal loaded use. We will price the suitable choices and explain the tradeoff without pretending every boat needs the maximum.
+whenInDoubt: Send us the capacity plate, boat model and usual passenger-and-gear load. We will price the sensible choices and explain the tradeoff without pretending every boat needs the maximum.
 ::
 
 ---
@@ -28998,7 +28998,7 @@ whenInDoubt: Send us the capacity plate, boat model and normal loaded use. We wi
 
 We get asked about the Mercury 75 HP FourStroke regularly. Usually the question is, "Is the 75 enough, or should I go to the 90?" The right answer is not a percentage and it is not automatically the larger motor.
 
-Harris Boat Works has operated on Rice Lake since 1947 and has been a Mercury dealer since 1965. We are a third-generation family marina and a Mercury Marine Premier Dealer. Our job is to match the manufacturer's rated motor choices to the real boat and load, then let the complete quote show whether the extra 15 HP is sensible.
+Harris Boat Works has operated on Rice Lake since 1947 and has been a Mercury dealer since 1965. We are a third-generation family marina and a Mercury Marine Premier Dealer. Our job is to match the manufacturer's rated motor choices to the real boat and load, then decide whether the extra 15 HP earns its price.
 
 ---
 
@@ -29021,7 +29021,7 @@ The current Canadian 75, 90 and 115 FourStroke models share Mercury's 2.1-litre 
 
 The 75 and 90 share core architecture, but buyers should treat them as distinct rated engines. The 75 has a 4,500–5,500 rpm full-throttle operating range; the 90 uses 5,000–6,000 rpm. Exact weight and equipment depend on shaft length and model configuration.
 
-The 90 can provide stronger acceleration and more reserve with a normal load. Whether that advantage is worth buying depends on the boat's maximum horsepower rating, the installed price difference and how the boat is actually used.
+The 90 can provide stronger acceleration and more reserve when the boat is loaded. Whether that advantage is worth buying depends on the boat's maximum horsepower rating, the installed price difference and how the boat is actually used.
 
 ---
 
@@ -29029,7 +29029,7 @@ The 90 can provide stronger acceleration and more reserve with a normal load. Wh
 
 The 90 is the more common comparison when a boat is rated for either motor. It shares the 2.1-litre platform, adds 15 HP and often suits the loaded use buyers describe to us.
 
-That does not make the 75 a bad motor. It means we confirm current availability and compare complete quotes instead of treating stocking patterns as engineering advice. If the plate stops at 75, or the installed-price difference is meaningful for a light boat, ordering the 75 can be the correct answer.
+That does not make the 75 a bad motor. It means we confirm current availability and compare installed totals instead of treating stocking patterns as engineering advice. If the plate stops at 75, or the installed-price difference is meaningful for a light boat, ordering the 75 can be the correct answer.
 
 ---
 
@@ -29041,7 +29041,7 @@ There are three straightforward scenarios where the 75 is the right call:
 
 **The boat and load do not need 90 HP.** A genuinely light hull used with a modest load may perform exactly as the owner needs with 75. Maximum rated power is an option, not a commandment.
 
-**The complete quote creates real savings.** Compare current Canadian motor, rigging and installation totals. If the 75 saves enough to matter and still meets the performance goal, that is a sound buying decision.
+**The 75 leaves meaningful money in the budget.** Compare current Canadian motor, rigging and installation totals. If the 75 saves enough to matter and still meets the performance goal, that is a sound buying decision.
 
 ---
 
@@ -29050,13 +29050,13 @@ There are three straightforward scenarios where the 75 is the right call:
 | Boat Type | What we would check |
 |---|---|
 | 16-17 ft aluminum fishing boat | Capacity plate, batteries, livewell, passengers, gear and whether stronger loaded acceleration matters |
-| Small pontoon | Capacity plate, normal passenger load and whether a 90 Command Thrust configuration is rated and appropriate |
-| Light cottage runabout | Actual hull weight, towing use and the difference between the current complete 75 and 90 quotes |
+| Small pontoon | Capacity plate, usual passenger load and whether a 90 Command Thrust configuration is rated and appropriate |
+| Light cottage runabout | Actual hull weight, towing use and the difference between the current installed 75 and 90 totals |
 | Repowering an older 60-75 HP two-stroke | Transom capacity, new FourStroke weight, controls, steering and the performance goal |
 
 If your hull is rated for 60 HP maximum, you're in [the Mercury 60 ELPT FourStroke conversation](/blog/mercury-40-vs-60-hp-outboard-ontario), not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
 
-If your hull is rated for 90 HP or higher, read the [dedicated Mercury 90 review](/blog/mercury-90-hp-fourstroke-review-ontario) and compare both complete quotes. The right answer is the appropriately rated motor that meets the normal loaded use without buying performance you do not value.
+If your hull is rated for 90 HP or higher, read the [dedicated Mercury 90 review](/blog/mercury-90-hp-fourstroke-review-ontario) and compare the two installed totals. The right answer is the motor within the plate rating that carries the boat's real load without buying performance you do not value.
 
 ---
 
@@ -29077,7 +29077,7 @@ Mercury's current recreational 75 HP listing uses the standard gearcase; Command
 The plate is the limit. Send us the boat year, model and a clear photo of the capacity plate. We will stay within that rating and check the available motor configuration.
 
 **Is the 75 HP significantly cheaper than the 90?** 
-That changes with current Canadian pricing and programs. Compare the live motor prices and the complete installed quote rather than relying on an old rule of thumb.
+That changes with current Canadian pricing and programs. Compare the live motor prices and the installed difference rather than relying on an old rule of thumb.
 
 ---
 
@@ -29097,7 +29097,7 @@ The more useful owner feedback is about the wider 2.1-litre family. In one long-
 
 The Mercury 75 FourStroke is not merely a 90 that someone forgot to finish. It is a legitimate rated choice for boats that stop at 75 HP and for lighter uses where the owner does not need more.
 
-If the plate allows 90, compare the complete quotes and loaded-use goal. Do not overpower the boat, and do not spend extra only because the larger decal is available.
+If the plate allows 90, compare the installed numbers and how you actually load the boat. Do not overpower the boat, and do not spend extra only because the larger decal is available.
 
 ## When to Call HBW
 
