@@ -76,7 +76,7 @@ The kicker mounts on a separate bracket bolted through the transom alongside the
 
 ## What main + kicker pairings work best on Rice Lake?
 
-A Mercury 150 HP FourStroke weighs about 455 lb on the transom. Adding a 9.9 ProKicker adds another 108 lb offset to one side, which is rarely an issue on a 20 foot fibreglass deep-V but can affect trim on a narrow 16 foot tinny. The Avator 7.5e is much lighter (about 43 lb without battery), often the better pick on smaller hulls. We check transom rating and waterline before rigging any second motor.
+A Mercury 150 HP FourStroke weighs about 206 kg (455 lb) on the transom. Adding a 9.9 ProKicker adds another 49 kg (108 lb) offset to one side, which is rarely an issue on a 20 foot fibreglass deep-V but can affect trim on a narrow 16 foot tinny. The Avator 7.5e is much lighter (about 20 kg (43 lb) without battery), often the better pick on smaller hulls. We check transom rating and waterline before rigging any second motor.
 
 A few combinations we rig regularly at Harris Boat Works for Rice Lake and Kawartha fishing customers:
 

@@ -86,7 +86,7 @@ The current Canadian 75, 90 and 115 FourStroke models share Mercury's 2.1-litre 
 |---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
-| Published lightest weight | About 359 lb | About 359 lb |
+| Published lightest weight | About 163 kg (359 lb) | About 163 kg (359 lb) |
 | Full-throttle RPM | 4,500–5,500 rpm | 5,000–6,000 rpm |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |

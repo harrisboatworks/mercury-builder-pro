@@ -45,7 +45,7 @@ leftCriteria:
   - Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
   - Capacity plate caps you at 40 HP
   - Use is fishing, calm-water cruising, 2 to 3 people max
-  - You want lighter weight on the transom (35 to 40 lb savings vs 60)
+  - You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
   - Tiller is preferred and 40 HP tiller models suit your setup
 leftOutcome: Pick 40 HP FourStroke
 leftVariant: alternative
@@ -87,12 +87,12 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 227 lb) vs 60 HP ($12,040, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
+![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 103 kg (227 lb)) vs 60 HP ($12,040, 4-cylinder, 113 kg (250 lb)) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
 |---|---|---|
 | Powerhead | 3-cylinder, 747 cc | 4-cylinder, 995 cc |
-| Weight (long shaft) | ~227 lbs | ~250 lbs |
+| Weight (long shaft) | ~103 kg (227 lb) | ~113 kg (250 lb) |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
 | WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
@@ -101,7 +101,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |
 | Warranty | 3-year limited + 3-year corrosion | 3-year limited + 3-year corrosion |
 
-The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitting low, that changes the resting attitude of the boat. The 60 is smoother at idle, has more amperage for charging electronics, and, if you're running a fish-finder, livewell, and stereo off the same battery, the 25-amp alternator matters.
+The 60 weighs 10 kg (23 lb) more. On a light 15 ft aluminum with a transom already sitting low, that changes the resting attitude of the boat. The 60 is smoother at idle, has more amperage for charging electronics, and, if you're running a fish-finder, livewell, and stereo off the same battery, the 25-amp alternator matters.
 
 ---
 
@@ -206,7 +206,7 @@ A 60 HP with Command Thrust is the minimum we'd put on a 20 ft pontoon. Below 20
 
 ### What's the fuel economy difference between the 40 and 60?
 
-At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 3.5-4 gallons per hour and a 60 ELPT pulls roughly 5-5.5 GPH. Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per mile. Right-sized always wins.
+At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 13-15 L/h (3.5-4 US gal/h) and a 60 ELPT pulls roughly 19-21 L/h (5-5.5 GPH). Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per mile. Right-sized always wins.
 
 ### Tiller or remote steering: which should I get?
 

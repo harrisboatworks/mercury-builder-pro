@@ -181,7 +181,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricin
 
 ### What's the lightest outboard Mercury makes?
 
-The Mercury 2.5 MH FourStroke at approximately 41 lbs is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
+The Mercury 2.5 MH FourStroke at approximately 19 kg (41 lb) is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
 
 ### Why is 9.9HP so popular?
 
@@ -189,7 +189,7 @@ Many lakes have horsepower restrictions of 10HP or less. The Mercury 9.9HP provi
 
 ### Can I really carry these by myself?
 
-Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
+Up to about 9.9HP (39 kg (85 lb)), most adults can manage. 15HP and 20HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
 
 ### Do portable outboards need winterization?
 

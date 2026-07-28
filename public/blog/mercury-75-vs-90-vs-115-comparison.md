@@ -34,7 +34,7 @@ language: en-CA
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 suits lighter use; the 115 adds useful headroom for family loading and rougher water. The exact price gap changes with model, rigging, and current promotions. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers the rigging changes that go with each class. Compare current CAD pricing on the [Mercury pricing reference](/pricing-reference), then build the exact configuration on the [motor selection page](/quote/motor-selection).
 
-![Mercury 75, 90, and 115 HP FourStroke decision card: same 2.1L block and 359 lb lightest dry weight, with tiller and Command Thrust availability shown for applicable 90 and 115 HP configurations.](/lovable-uploads/mercury-75-90-115-decision-card-hbw-v2.svg)
+![Mercury 75, 90, and 115 HP FourStroke decision card: same 2.1L block and 163 kg (359 lb) lightest dry weight, with tiller and Command Thrust availability shown for applicable 90 and 115 HP configurations.](/lovable-uploads/mercury-75-90-115-decision-card-hbw-v2.svg)
 
 *Same block, three fits. The capacity plate sets the ceiling.*
 

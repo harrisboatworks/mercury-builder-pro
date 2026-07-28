@@ -34,7 +34,7 @@ If a review tells you that the Mercury 200 FourStroke and 200 Pro XS are basical
 
 That is not the current lineup.
 
-The 200 FourStroke is Mercury's 3.4-litre V6 recreational outboard. The 200 Pro XS is a 4.6-litre V8 performance outboard. The Pro XS has two more cylinders, 1.2 litres more displacement and roughly 30 lb more published lightest weight.
+The 200 FourStroke is Mercury's 3.4-litre V6 recreational outboard. The 200 Pro XS is a 4.6-litre V8 performance outboard. The Pro XS has two more cylinders, 1.2 litres more displacement and roughly 14 kg (30 lb) more published lightest weight.
 
 That difference matters. It also does not mean every boat should get the V8.
 
@@ -56,7 +56,7 @@ For the current Canadian range checked in July 2026:
 - mechanical or Digital Throttle & Shift configurations are available, depending on the exact model
 - shaft length, gearcase, rotation and control type must be verified from the model code
 
-Mercury publishes the lightest 200 FourStroke around 475 lb and the lightest 200 Pro XS around 505 lb. Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
+Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lightest 200 Pro XS around 229 kg (505 lb). Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
 
 ![Current Mercury 200 FourStroke and 200 Pro XS shown side by side in official studio photography.](/lovable-uploads/inline/mercury-200-fourstroke-vs-pro-xs-official.webp)
 
@@ -71,7 +71,7 @@ Mercury publishes the lightest 200 FourStroke around 475 lb and the lightest 200
 | Rated power | 200 HP | 200 HP | The Pro XS is not advertised as hidden extra horsepower |
 | Powerhead | 3.4 L V6 | 4.6 L V8 | Pro XS has more displacement and two more cylinders |
 | Full-throttle range | 5,200–6,000 rpm | 5,600–6,200 rpm | Pro XS supports a more performance-oriented propeller and setup window |
-| Published lightest weight | About 475 lb | About 505 lb | FourStroke saves roughly 30 lb before exact configuration differences |
+| Published lightest weight | About 215 kg (475 lb) | About 229 kg (505 lb) | FourStroke saves roughly 14 kg (30 lb) before exact configuration differences |
 | Gearcase | Standard recreational configurations | Standard and performance-oriented choices vary by model | Exact ratio and gearcase must be checked, not guessed from the family name |
 | Charging | 85 amp with idle charge management | 85 amp with idle charge management | Both are well suited to electronics-heavy modern boats |
 | Best fit | Family, cruising and load-carrying use | Performance fishing and responsive hulls | Application matters more than the badge |
@@ -171,10 +171,10 @@ These are complete Mercury performance records. They are examples, not speed pro
 
 | Boat | Motor and setup | Published result | Useful cruise point |
 |---|---|---|---|
-| [Barletta C22U pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 7.8 US gal/h |
-| [Crestliner 2200 Bay, 22.25 ft aluminum, 1,912 lb dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 8.6 US gal/h |
-| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,689 lb dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 8.8 US gal/h |
-| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 1,760 lb dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 8.2 US gal/h |
+| [Barletta C22U pontoon, 23.2 ft, 1,286 kg (2,834 lb) dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 29.5 L/h (7.8 US gal/h) |
+| [Crestliner 2200 Bay, 22.25 ft aluminum, 867 kg (1,912 lb) dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 32.6 L/h (8.6 US gal/h) |
+| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 766 kg (1,689 lb) dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 33.3 L/h (8.8 US gal/h) |
+| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 798 kg (1,760 lb) dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 31.0 L/h (8.2 US gal/h) |
 
 All four records are freshwater tests. The boat weights are published dry weights, not complete as-tested weights. Fuel, batteries, people, safety gear and options add to them.
 

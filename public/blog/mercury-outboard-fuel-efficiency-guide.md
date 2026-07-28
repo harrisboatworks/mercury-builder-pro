@@ -66,7 +66,7 @@ A weedy or fouled hull adds drag. This matters more for boats that sit in slips 
 
 **4. Weight**
 
-Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
+Every unnecessary 45 kg (100 lb) on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
 
 **5. Cruise speed selection**
 
@@ -89,7 +89,7 @@ This is why we don't recommend "getting a smaller motor to save fuel." If the sm
 ::cost-stack
 eyebrow: 2026 Ontario fuel cost ranges
 heading: What you'll actually spend on fuel per season
-subhead: Estimates based on Ontario marina gas pricing and realistic GPH for a properly propped Mercury FourStroke 90 to 150.
+subhead: Estimates based on Ontario marina gas pricing and realistic L/h (GPH) for a properly propped Mercury FourStroke 90 to 150.
 item1Label: Weekend family cruiser (50 hrs/season)
 item1Value: $550 to $850
 item1Note: Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
@@ -123,7 +123,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
+![Mercury SmartCraft gauge showing 24.6 L/h (6.5 US gal/h) fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -205,7 +205,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### What's normal fuel consumption for a 115HP outboard?
 
-At cruise (around 4,000 RPM), expect 6-8 GPH. At WOT, 10-12 GPH. Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.
+At cruise (around 4,000 RPM), expect 23-30 L/h (6-8 GPH). At WOT, 38-45 L/h (10-12 GPH). Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.
 
 ### How much does a dirty hull cost in fuel?
 
@@ -233,7 +233,7 @@ Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for
 
 ### How much fuel does a Mercury outboard use per hour?
 
-It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 1 gallon (about 3.8 litres) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.
+It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 3.8 litres (about 1 US gallon) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.
 
 ### Do 2-stroke or 4-stroke Mercury outboards burn less fuel?
 

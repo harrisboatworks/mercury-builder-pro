@@ -37,7 +37,7 @@ language: en-CA
 | Repower complexity | Medium (mounts vary) | Simplest | Most involved |
 | Typical HP | 22-24 ft, 4-6 people: 90-115 HP | Match the rated HP range | Match carefully to deadrise/load |
 | Shaft length | Long (20") | Standard 20" (some older 15") | Mostly 20"; some performance hulls 25" |
-| Transom check | Holds 180-250 lb motor; inspect | Inspect | Can fail internally with no visible signs |
+| Transom check | Holds 82-113 kg (180-250 lb) motor; inspect | Inspect | Can fail internally with no visible signs |
 | Controls/steering | Usually carries over | Usually simple | Often new cables, steering, gauges/SmartCraft |
 | Four-stroke weight | Mass absorbs it | Minor effect | Can shift trim and handling |
 
@@ -73,7 +73,7 @@ Aluminum boats, Lund, Crestliner, Lowe, and similar North American-built hulls, 
 
 That said:
 
-**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 180–250 lbs is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
+**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 82-113 kg (180–250 lbs) is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
 
 **Shaft length:** Most aluminum fishing boats in the 14–20 ft range run a standard 20" (long) shaft. Some older or smaller hulls use a short (15") shaft. Confirm before ordering.
 
@@ -118,7 +118,7 @@ Pontoons are heavier and wider and ride on their tubes rather than planing like 
 
 ### Is an aluminum fishing boat easy to repower?
 
-Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 180–250 lb motor is a structural issue, quoted separately if work is needed.
+Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 82-113 kg (180–250 lb) motor is a structural issue, quoted separately if work is needed.
 
 ### What should I watch for when repowering a fibreglass V-hull?
 

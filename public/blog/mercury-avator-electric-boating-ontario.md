@@ -49,7 +49,7 @@ Mercury names the Avator models by power output in watts, which trips people up.
 
 One quirk worth knowing: the first three figures are Mercury's gas-equivalent comparisons, while the 75e and 110e numbers are Mercury's literal prop-shaft conversions (7,500 watts converts to 10 hp). Electric motors deliver all their torque instantly, so a 75e pulls a bigger boat off the line far harder than "10 hp" suggests. Treat the column as a guide, not a spec.
 
-A few things worth knowing: the 7.5e battery (1 kWh, about 17 lb) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
+A few things worth knowing: the 7.5e battery (1 kWh, about 8 kg (17 lb)) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
 
 ### The honest part: range
 

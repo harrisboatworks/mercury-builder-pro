@@ -116,8 +116,8 @@ These ratios give you a working starting point. **Always confirm against your sp
 | Performance level | Ratio (boat weight to HP) |
 |--|--|
 | Minimum (gets you moving, not much more) | 25–30 lbs of total boat weight per HP |
-| Recommended (good performance, typical use) | 15–20 lbs per HP |
-| Optimal (excellent performance, full loads) | 10–15 lbs per HP |
+| Recommended (good performance, typical use) | 6.8-9.1 kg/HP (15–20 lbs/HP) |
+| Optimal (excellent performance, full loads) | 4.5-6.8 kg/HP (10–15 lbs/HP) |
 
 *Total boat weight = hull weight + maximum passenger and gear load.*
 
@@ -128,22 +128,22 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 ## Real-world Ontario examples
 
 ### 16-foot aluminum fishing boat
-- Hull weight: approximately 800 lbs
-- Passengers and gear (typical): approximately 600 lbs
-- Total: approximately 1,400 lbs
+- Hull weight: approximately 363 kg (800 lb)
+- Passengers and gear (typical): approximately 272 kg (600 lb)
+- Total: approximately 635 kg (1,400 lb)
 - Capacity plate range: check your plate, 16-foot aluminum hulls vary; many rate 60–75 HP, some allow higher
 - **Typical choice: 60 HP FourStroke**, balances hole shot, fuel economy, and headroom for most uses. A 40 HP is fine for lighter solo use; step up only if your hull's plate allows and you consistently carry heavy loads.
 
 ### 22-foot pontoon
-- Hull weight: approximately 2,000 lbs
-- Passengers (cottage family): approximately 1,500 lbs
-- Total: approximately 3,500 lbs
+- Hull weight: approximately 907 kg (2,000 lb)
+- Passengers (cottage family): approximately 680 kg (1,500 lb)
+- Total: approximately 1,588 kg (3,500 lb)
 - **Typical choice: 115 HP Command Thrust**, Command Thrust gearcase recommended at 115 HP and above on most pontoons. Handles the load profile pontoons demand.
 
 ### 20-foot bass boat
-- Hull weight: approximately 1,800 lbs
-- Passengers and tournament gear: approximately 500 lbs
-- Total: approximately 2,300 lbs
+- Hull weight: approximately 816 kg (1,800 lb)
+- Passengers and tournament gear: approximately 227 kg (500 lb)
+- Total: approximately 1,043 kg (2,300 lb)
 - **Typical choice: 200 HP Pro XS**, tournament performance on a 20-foot bass hull. Never exceed the capacity plate; check yours.
 
 ---

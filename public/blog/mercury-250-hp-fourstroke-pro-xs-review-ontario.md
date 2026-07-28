@@ -55,7 +55,7 @@ For the current Canadian product range checked in July 2026:
 - SmartCraft compatibility is standard, while controls and steering depend on the exact model
 - shaft length, gearcase, rotation and control type must be checked from the model code
 
-Mercury's current linked brochures list the lightest 250 FourStroke at about 527 lb and the lightest 250 Pro XS at about 511 lb. That is one of the stranger facts in this comparison: the performance model is not automatically the heavier one.
+Mercury's current linked brochures list the lightest 250 FourStroke at about 239 kg (527 lb) and the lightest 250 Pro XS at about 232 kg (511 lb). That is one of the stranger facts in this comparison: the performance model is not automatically the heavier one.
 
 Those are lightest-version figures, not installed weights. A 20-inch mechanical Pro XS, a 25-inch DTS FourStroke and a 30-inch counter-rotation model are not the same package.
 
@@ -72,7 +72,7 @@ Those are lightest-version figures, not installed weights. A 20-inch mechanical 
 | Rated power | 250 HP | 250 HP | Pro XS is not advertised as hidden extra horsepower |
 | Powerhead | 4.6 L V8 | 4.6 L V8 | They share the same core architecture and displacement |
 | Full-throttle range | 5,200–6,000 rpm | 5,600–6,200 rpm | Pro XS gives a performance setup a higher operating window |
-| Published lightest weight | About 527 lb | About 511 lb | Exact shaft, gearcase, controls and steering can change the package |
+| Published lightest weight | About 239 kg (527 lb) | About 232 kg (511 lb) | Exact shaft, gearcase, controls and steering can change the package |
 | Gearcase focus | Recreational and load-carrying configurations | TorqueMaster on select V8 applications | TorqueMaster is built for semi-surfacing, high-speed use |
 | Exhaust character | Large muffler and refinement-focused design | Performance-tuned exhaust | Pro XS intentionally has more startup and acceleration character |
 | Charging | 85 amp with Idle Charge | 85 amp with Idle Charge | Both suit electronics-heavy modern boats |
@@ -118,11 +118,11 @@ It is also incomplete for this exact comparison. When we filtered the current da
 
 | Boat | Published dry weight | Propeller | Top speed | 0–30 mph |
 |---|---:|---|---:|---:|
-| Barletta Cabrio 24UE tritoon | 3,194 lb | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
-| Harris Grand Mariner 250 tritoon | 3,954 lb | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
-| Evotti 721S tritoon | 3,413 lb | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
-| Lund 2075 Tyee Magnum deep-V | 1,920 lb | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
-| Glastron GTD 220 deck boat | 3,600 lb | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
+| Barletta Cabrio 24UE tritoon | 1,449 kg (3,194 lb) | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
+| Harris Grand Mariner 250 tritoon | 1,794 kg (3,954 lb) | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
+| Evotti 721S tritoon | 1,548 kg (3,413 lb) | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
+| Lund 2075 Tyee Magnum deep-V | 871 kg (1,920 lb) | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
+| Glastron GTD 220 deck boat | 1,633 kg (3,600 lb) | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
 
 Every test was on fresh water. Every result belongs to that exact installation.
 
@@ -445,7 +445,7 @@ They share Mercury's 4.6-litre, 32-valve DOHC V8 architecture and the same 250 H
 
 ### How much does a Mercury 250 weigh?
 
-Mercury's current linked brochures list about 527 lb for the lightest 250 FourStroke and 511 lb for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package.
+Mercury's current linked brochures list about 239 kg (527 lb) for the lightest 250 FourStroke and 232 kg (511 lb) for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package.
 
 ### Which Mercury 250 is better for a pontoon or tritoon?
 

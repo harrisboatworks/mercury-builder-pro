@@ -57,7 +57,7 @@ For the current Canadian lineup checked in July 2026:
 - the standard gear ratio is 1.92:1
 - the Pro XS gear ratio is 2.08:1
 
-Mercury lists the lightest standard 150 around 455 lb and introduced the Pro XS at 456 lb. Exact model, shaft length and rotation can change the number, so we still check the model code rather than treating one catalogue weight as every 150.
+Mercury lists the lightest standard 150 around 206 kg (455 lb) and introduced the Pro XS at 207 kg (456 lb). Exact model, shaft length and rotation can change the number, so we still check the model code rather than treating one catalogue weight as every 150.
 
 ![Current Mercury 150 FourStroke and 150 Pro XS shown side by side in official studio photography.](/lovable-uploads/inline/mercury-150-fourstroke-vs-pro-xs-official.webp)
 
@@ -75,7 +75,7 @@ Mercury lists the lightest standard 150 around 455 lb and introduced the Pro XS 
 | Gear ratio | 1.92:1 | 2.08:1 | Pro XS turns the prop shaft with more gear reduction for acceleration |
 | Gearcase details | Standard recreational gearcase | Extra water pickups on the nose | Pro XS supports higher mounting and jack-plate applications when set up correctly |
 | Engine mounts and calibration | Recreational tune | Performance-tuned mounts and Transient Spark Technology | Pro XS is aimed at sharper acceleration and high-speed control |
-| Published lightest weight | About 455 lb | About 456 lb | Weight is effectively a tie; the choice is about application |
+| Published lightest weight | About 206 kg (455 lb) | About 207 kg (456 lb) | Weight is effectively a tie; the choice is about application |
 | Charging | 60 amp with idle charge management | 60 amp with idle charge management | Both support electronics better than a small-output legacy charging system |
 
 ### Choose the standard 150 FourStroke when
@@ -183,9 +183,9 @@ These are documented examples, not speed promises.
 
 | Boat and test load | Motor and propeller | Reported result | Useful cruise point |
 |---|---|---|---|
-| [2020 Barletta C22QC pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 6.9 US gal/h |
-| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,527 lb dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 3.6 US gal/h |
-| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 2,765 lb as tested including two people and full 40 US gal fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 4.0 US gal/h |
+| [2020 Barletta C22QC pontoon, 23.2 ft, 1,286 kg (2,834 lb) dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 26.1 L/h (6.9 US gal/h) |
+| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 693 kg (1,527 lb) dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 13.6 L/h (3.6 US gal/h) |
+| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 1,254 kg (2,765 lb) as tested including two people and full 151 L (40 US gal) fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 15.1 L/h (4.0 US gal/h) |
 
 The Barletta and Crestliner rows use published dry boat weights. The Nitro figure is an as-tested weight with people and fuel, so the three weights are not directly comparable. What is comparable is the warning: the Barletta and Nitro use the same horsepower and differ by 25.6 mph at the top end. That isn't an argument that one test is wrong. It is the clearest possible argument against shopping by a detached speed number.
 
@@ -220,7 +220,7 @@ At HBW, motors 25 HP and up do not include a propeller in the base motor price. 
 
 Moving from a 115 to a 150 is not just changing the badge.
 
-The current Mercury 115 family is a 2.1-litre platform in roughly the 360 lb class. The 150 is a 3.0-litre platform around 455 lb. That roughly 90-plus-pound step matters to an older transom, boat balance, trailer tongue weight and how the hull sits at rest.
+The current Mercury 115 family is a 2.1-litre platform in roughly the 163 kg (360 lb) class. The 150 is a 3.0-litre platform around 206 kg (455 lb). That roughly 90-plus-pound step matters to an older transom, boat balance, trailer tongue weight and how the hull sits at rest.
 
 Choose the 115 when the boat is properly rated, normally loaded and does not need the size or weight of the 150 class.
 

@@ -104,7 +104,7 @@ source: Mississauga
 
 **Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
 
-**Combined weight 1,400–3,400 kg (3,000–7,500 lbs):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
+**Combined weight 1,400–3,400 kg (1,361-3,402 kg (3,000–7,500 lbs)):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

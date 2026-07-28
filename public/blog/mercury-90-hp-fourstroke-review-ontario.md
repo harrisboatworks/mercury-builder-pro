@@ -53,7 +53,7 @@ The recreational 90 uses:
 - electric start and power trim on the common remote-control models
 - SmartCraft compatibility, with available information depending on the controls and gauges installed
 
-Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
+Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
 
 Mercury describes the FourStroke valve train as maintenance-free for the life of the engine. That does not make the whole motor maintenance-free. Oil, filters, gear lube, spark plugs, anodes, cooling-system condition and the rest of the service schedule still matter.
 
@@ -152,9 +152,9 @@ These are exact examples, not speed promises.
 
 | Boat and setup | Motor and propeller | Reported result | Useful context |
 |---|---|---|---|
-| [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 4.7 US gal/h |
-| [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 4.1 US gal/h |
-| [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 4.2 US gal/h |
+| [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 17.8 L/h (4.7 US gal/h) |
+| [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 15.5 L/h (4.1 US gal/h) |
+| [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 15.9 L/h (4.2 US gal/h) |
 | [1968 Boston Whaler 17 repower and sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | Rigger considered trying 17 pitch after verifying rpm and handling |
 
 Mercury's Crestliner test page labels that setup 2.08:1, while the current operation manual gives the standard production ratio as 2.07:1. The table keeps Mercury's test-page wording rather than silently changing it.
@@ -308,7 +308,7 @@ It commonly suits properly rated 16–18 ft aluminum fishing boats, lighter runa
 
 ### How much does a Mercury 90 FourStroke weigh?
 
-Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit.
+Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit.
 
 ### Does Mercury make a 90 Pro XS?
 

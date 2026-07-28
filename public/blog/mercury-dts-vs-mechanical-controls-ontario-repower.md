@@ -161,7 +161,7 @@ Yes. The control system is independent of propeller choice. Whatever prop is cor
 
 ### Is there a fuel economy difference?
 
-Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. We haven't seen a meaningful real-world difference. The motor model, the prop, and the hull matter far more than the control system.
+Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a litre at cruise. We haven't seen a meaningful real-world difference. The motor model, the prop, and the hull matter far more than the control system.
 
 ## Related guides
 

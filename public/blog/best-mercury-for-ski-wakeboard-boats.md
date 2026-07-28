@@ -45,7 +45,7 @@ leftVariant: recommended
 rightLabel: Wakeboarding is the focus
 rightCriteria:
   - You want a big, lipped, firm wake to ride
-  - You run real ballast (1,000 lb or more)
+  - You run real ballast (454 kg (1,000 lb) or more)
   - Boat is 20 ft or larger with a tow tower
   - Sustained mid-range torque matters more than top end
 rightOutcome: 225 to 300 HP V6 or V8, more weight, more sustained pull
@@ -97,7 +97,7 @@ For outboard tow boats specifically:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (1,500-3,000 lbs of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
+**Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (680-1,361 kg (1,500-3,000 lbs) of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
 
 If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this, we're not going to sell you a 300 HP outboard tow boat if you'd be happier with a Malibu inboard.
 
@@ -126,7 +126,7 @@ For tow boats over 20 feet:
 
 **V6 Pro XS (200-225 HP)**, lighter, more efficient, lower upfront cost. Plenty of pull for skiing and entry-level wakeboarding. **The right call for 19-21 ft outboard tow boats with moderate use.**
 
-**V8 Pro XS (250-300 HP)**, heavier (adds 60-80 lbs to transom), uses more fuel, costs more. But the torque difference is real, sustained pulling power for serious wakeboarding and any wakesurfing. **The right call for 21+ ft tow boats and any boat with significant ballast.**
+**V8 Pro XS (250-300 HP)**, heavier (adds 27-36 kg (60-80 lbs) to transom), uses more fuel, costs more. But the torque difference is real, sustained pulling power for serious wakeboarding and any wakesurfing. **The right call for 21+ ft tow boats and any boat with significant ballast.**
 
 The V8 also has DTS standard, which on a tow boat is genuinely worth having, smoother throttle, better skier-handle precision.
 

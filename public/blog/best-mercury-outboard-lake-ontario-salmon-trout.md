@@ -44,7 +44,7 @@ Lake Ontario is a different problem. The lake covers more than 19,000 km². Swel
 
 That affects motor selection in three specific ways:
 
-**Bigger boats.** 22–26 ft deep-V hulls weigh significantly more than the aluminum fishing boats on Rice Lake. Fully loaded with crew, downriggers, planer boards, and electronics, all-up weight can exceed 6,000 lbs. Adequate HP is not optional, it affects both performance and safety margins.
+**Bigger boats.** 22–26 ft deep-V hulls weigh significantly more than the aluminum fishing boats on Rice Lake. Fully loaded with crew, downriggers, planer boards, and electronics, all-up weight can exceed 2,722 kg (6,000 lb). Adequate HP is not optional, it affects both performance and safety margins.
 
 **Bigger kicker.** The 9.9 ProKicker that handles Rice Lake walleye trolling is undersized for Lake Ontario salmon spreads. The drag from multiple downriggers, planer boards, and dipsy divers requires the 15 HP ProKicker for proper speed control.
 

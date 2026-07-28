@@ -92,7 +92,7 @@ Bearings are sealed grease cartridges that let the wheels spin freely. Submergin
 
 ### 2. Brakes (Surge or Electric)
 
-Most Ontario trailers under 2,500 lbs gross use surge brakes, the trailer's inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
+Most Ontario trailers under 1,134 kg (2,500 lb) gross use surge brakes, the trailer's inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
 
 **Action:**
 - Surge: flush the hydraulic line annually with marine-grade brake fluid (DOT 4 or DOT 5)

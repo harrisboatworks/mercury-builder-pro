@@ -125,7 +125,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
 | Displacement | 209 cc (12.75 cu in) |
-| Dry weight | Approximately 85 lb |
+| Dry weight | Approximately 38.6 kg (85 lb) |
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000–6,000 rpm |
 | Recommended fuel | 87 octane, up to 10% ethanol |
