@@ -1030,7 +1030,7 @@ We're not going to invent statistics. What we can tell you is what we actually s
 
 Mercury is a Brunswick Corporation brand, built in Fond du Lac, Wisconsin. Mercury continues to develop new outboard platforms, and recent industry coverage has highlighted multiple programs in the pipeline, including the V10 Verado family.
 
-The V10 Verado lineup (350-425hp) represents Mercury's high-performance answer to a market pushing for lighter, more powerful motors. In its July 22, 2025 launch release, Mercury says the 425hp V10 Verado is 254 pounds lighter than a 450hp competitor when both are 25-inch XL models. Mercury does not identify that competitor, so we do not turn the result into a Yamaha-specific claim. The [official Mercury release](https://www.mercurymarine.com/us/en/about-us/news/425hp-v10-expansion-and-enhanced-350hp-launch) documents the comparison and test condition. The V10 also runs on 87-octane fuel, which matters for operating costs over a season.
+The V10 Verado lineup (350-425hp) represents Mercury's high-performance answer to a market pushing for lighter, more powerful motors. In its July 22, 2025 launch release, Mercury says the 425hp V10 Verado is 115 kg (254 lb) lighter than a 450hp competitor when both are 25-inch XL models. Mercury does not identify that competitor, so we do not turn the result into a Yamaha-specific claim. The [official Mercury release](https://www.mercurymarine.com/us/en/about-us/news/425hp-v10-expansion-and-enhanced-350hp-launch) documents the comparison and test condition. The V10 also runs on 87-octane fuel, which matters for operating costs over a season.
 
 For the 60-150hp range that most Ontario boaters actually buy, Mercury's FourStroke lineup has been a mature, stable platform for years. Mature doesn't mean exciting. It means the engineering team has had time to find the gremlins, fix them, and optimize. That's a good thing when you're 45 minutes from shore on a Saturday afternoon.
 
@@ -1169,7 +1169,7 @@ Nothing about the powerhead changes. A 60 CT makes the same horsepower as a stan
 
 ## Why Pontoons Love It
 
-A 22-foot pontoon with a family, a cooler, and a dog aboard can be pushing well over 3,000 lbs of boat and cargo, sitting high with tubes that shove water instead of slicing it. That boat doesn't need shaft speed; it needs a paddle wheel's worth of grip.
+A 22-foot pontoon with a family, a cooler, and a dog aboard can be pushing well over 1,361 kg (3,000 lb) of boat and cargo, sitting high with tubes that shove water instead of slicing it. That boat doesn't need shaft speed; it needs a paddle wheel's worth of grip.
 
 Command Thrust gives it exactly that. Better hole-shot with a full deck, better control docking in wind, less strain holding cruise into a headwind. Mercury's own R&D backs the engineering: in their testing, a 60 CT out-accelerated a Yamaha 70 under both light and heavy loads. Great gearcase. Right application.
 
@@ -3366,14 +3366,14 @@ What Command Thrust does NOT do:
 
 - It does not add horsepower. A 90 HP Command Thrust makes the same peak power as a 90 HP standard.
 - It does not increase top speed. Usually top speed drops 2 to 4 MPH on a typical pontoon because the bigger prop is geared for thrust.
-- It does not help small light boats. On a 16 foot aluminum V-hull or a light pontoon under 1,500 lbs loaded, the standard gearcase usually outperforms Command Thrust on both speed and fuel.
+- It does not help small light boats. On a 16 foot aluminum V-hull or a light pontoon under 680 kg (1,500 lb) loaded, the standard gearcase usually outperforms Command Thrust on both speed and fuel.
 - It does not retrofit easily onto a non-CT motor. Converting an existing standard gearcase to Command Thrust means swapping the entire lower unit, which is usually only economical when buying a new motor.
 
 That last point is the most common confusion at the shop. People with an existing motor often ask if we can "add Command Thrust." The honest answer is rarely yes.
 
 ## Which pontoons are eligible
 
-The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 3,000 lbs, Command Thrust earns its keep. If it's under 2,000 lbs loaded, save the money. The middle is where the use case decides.
+The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 1,361 kg (3,000 lb), Command Thrust earns its keep. If it's under 907 kg (2,000 lb) loaded, save the money. The middle is where the use case decides.
 
 The four eligibility scenarios worth knowing.
 
@@ -3385,7 +3385,7 @@ If you have or are buying a tritoon, plan for Command Thrust unless your dealer 
 
 ### 20-foot and larger twin tube pontoons
 
-Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
+Once a twin tube pontoon hits 20 feet, the loaded weight is typically 1,134 kg (2,500 lb) or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
 
 ### Pontoons used for water sports
 
@@ -4297,7 +4297,7 @@ Text: (647) 952-2153`,
 
 *Last reviewed: 2026-05-18*
 
-> **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 10 to 15 lb weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
+> **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 4.5 to 7 kg (10 to 15 lb) weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 
 For a variant-by-variant breakdown of the 9.9 line itself, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
@@ -4333,7 +4333,7 @@ What it means for you: reliability, parts availability, and serviceability are i
 |---|---|---|
 | Rated horsepower | 9.9 HP | 15 HP |
 | Displacement | 333cc / 2-cylinder | 333cc / 2-cylinder |
-| Dry weight (tiller, manual start, short shaft) | ~84 lbs | ~99 lbs |
+| Dry weight (tiller, manual start, short shaft) | ~38 kg (84 lb) | ~45 kg (99 lb) |
 | Top RPM range | 5000-6000 | 5500-6300 |
 | Fuel burn at WOT | ~2.6 to 3.8 L/h (~0.7-1.0 GPH) | ~3.8 to 5.7 L/h (~1.0-1.5 GPH) |
 | Recommended fuel | Regular unleaded, 87 octane | Regular unleaded, 87 octane |
@@ -4344,7 +4344,7 @@ What it means for you: reliability, parts availability, and serviceability are i
 | Long shaft (20 inch) | Available | Available |
 | Best fit | HP-restricted lakes, 9.9-rated kicker class, lightest possible setup | Almost everything else |
 
-The 15 weighs about 15 lbs more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
+The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
 
 ## HP-Restricted Lakes: When the 9.9 Is the Only Legal Choice
 
@@ -4389,7 +4389,7 @@ The budget. CAD pricing on both motors is similar enough that the call almost al
 If you're rigging a kicker motor on a bigger boat, [the 9.9 EFI FourStroke is the standard pick](/blog/mercury-9-9-efi-review-ontario). Three reasons:
 
 - Tournament classes (bass, walleye) cap kicker motors at 9.9 HP. If you ever want to fish a derby on Rice Lake or anywhere in the Kawarthas, the 15 disqualifies you.
-- The 9.9 weighs ~15 lbs less. On a bracket hanging off the main motor's transom, that weight savings matters for trim and handling.
+- The 9.9 weighs ~7 kg (15 lb) less. On a bracket hanging off the main motor's transom, that weight savings matters for trim and handling.
 - A 15 HP kicker is overkill for trolling. You're running it at idle to 2000 RPM most of the time. The extra 5 HP at the top end isn't doing anything for you.
 
 The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
@@ -4400,7 +4400,7 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 **Shaft length matters more.** Most sailboat transoms are tall. [You'll usually need a 20 inch (long) shaft](/blog/outboard-shaft-length-guide), sometimes a 25 inch (extra long) shaft on bigger displacement hulls. Wrong shaft length on a sailboat auxiliary is a more expensive mistake than on a powerboat because the boat is harder to manoeuvre back to the dock when the motor's cavitating.
 
-**Weight matters more, aft.** Sailboats are sensitive to transom weight. The 15 lb penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
+**Weight matters more, aft.** Sailboats are sensitive to transom weight. The 7 kg (15 lb) penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
 
 **Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 
@@ -7076,7 +7076,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 suits lighter use; the 115 adds useful headroom for family loading and rougher water. The exact price gap changes with model, rigging, and current promotions. If you're stepping up HP as part of a motor swap, the [boat repower guide](/repower) covers the rigging changes that go with each class. Compare current CAD pricing on the [Mercury pricing reference](/pricing-reference), then build the exact configuration on the [motor selection page](/quote/motor-selection).
 
-![Mercury 75, 90, and 115 HP FourStroke decision card: same 2.1L block and 359 lb lightest dry weight, with tiller and Command Thrust availability shown for applicable 90 and 115 HP configurations.](/lovable-uploads/mercury-75-90-115-decision-card-hbw-v2.svg)
+![Mercury 75, 90, and 115 HP FourStroke decision card: same 2.1L block and 163 kg (359 lb) lightest dry weight, with tiller and Command Thrust availability shown for applicable 90 and 115 HP configurations.](/lovable-uploads/mercury-75-90-115-decision-card-hbw-v2.svg)
 
 *Same block, three fits. The capacity plate sets the ceiling.*
 
@@ -7595,7 +7595,7 @@ Perch on small spoons and jigging raps near weed edges. Crappie on tiny jigs und
 
 Walleye, bass, and muskie are still in their closed window. But catfish (opens April 25), crappie, pike, and perch are all fair game.
 
-April crappie in shallow warming bays can be outstanding. Water in the 55-60°F range pushes crappie into pre-spawn staging, and they stack tight. If you have never targeted Rice Lake crappie in late April, you are in for a pleasant surprise.
+April crappie in shallow warming bays can be outstanding. Water in the 13-16°C (55-60°F) range pushes crappie into pre-spawn staging, and they stack tight. If you have never targeted Rice Lake crappie in late April, you are in for a pleasant surprise.
 
 **Motor note:** This is prime repower and commissioning season at HBW, before the May 9 walleye rush hits and before everyone realizes their motor needs work. Book in April. Thank yourself in May.
 
@@ -7641,7 +7641,7 @@ A word about the afternoon wind. Rice Lake runs 32 km east to west with nothing 
 
 Fall is the prime muskie season on Rice Lake. Fish feed aggressively before winter, and the morning and evening windows in September and October can produce the best fish of the year. Troll suspending jerkbaits across the south-end channels and pause them. Sometimes a long, dead pause triggers a follow that has been behind the lure for 100 metres.
 
-Walleye return to accessible depths as the water drops below 60°F. The Gores Landing channels that produced summer fish come back to life. Walleye season runs to November 15.
+Walleye return to accessible depths as the water drops below 16°C (60°F). The Gores Landing channels that produced summer fish come back to life. Walleye season runs to November 15.
 
 Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with a tube or swimbait, can produce the biggest fish of the year. Bass season does not close until December 15.
 
@@ -8425,7 +8425,7 @@ A weedy or fouled hull adds drag. This matters more for boats that sit in slips 
 
 **4. Weight**
 
-Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
+Every unnecessary 45 kg (100 lb) on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
 
 **5. Cruise speed selection**
 
@@ -9733,7 +9733,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'What\'s the lightest outboard Mercury makes?',
-        answer: 'The Mercury 2.5 MH FourStroke at approximately 41 lbs is the lightest. It\'s designed for yacht tenders where every pound matters and owners need to lift it aboard.'
+        answer: 'The Mercury 2.5 MH FourStroke at approximately 19 kg (41 lb) is the lightest. It\'s designed for yacht tenders where every pound matters and owners need to lift it aboard.'
       },
       {
         question: 'Why is 9.9HP so popular?',
@@ -9741,7 +9741,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can I really carry these by myself?',
-        answer: 'Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limits - they\'re "portable" in that they can mount on small transoms, but carrying is challenging.'
+        answer: 'Up to about 9.9HP (39 kg (85 lb)), most adults can manage. 15HP and 20HP push the limits - they\'re "portable" in that they can mount on small transoms, but carrying is challenging.'
       },
       {
         question: 'Do portable outboards need winterization?',
@@ -9921,7 +9921,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'What is the difference between a trolling motor and a kicker motor?', answer: 'A trolling motor is electric, battery-powered, and rated in pounds of thrust. A kicker motor is a small gas outboard rated in horsepower that runs on the same fuel as your main motor. Electric trolling motors offer silence and GPS spot-lock. Gas kickers offer range, real thrust in wind, and backup propulsion.' },
       { question: 'Is the Mercury 9.9 ProKicker better than a regular 9.9 for trolling?', answer: 'For kicker duty specifically, yes. The ProKicker idles lower, trolls more slowly and steadily, and has a gear ratio tuned for slow-speed thrust rather than top-end speed.' },
       { question: 'Can I run an electric trolling motor on Rice Lake?', answer: 'Yes, and many anglers do, especially in the shallow bays and weed flats. Battery range becomes a factor on Rice Lake open water. A lithium battery upgrade substantially extends range if you plan to fish the whole lake.' },
-      { question: 'What size trolling motor do I need for my fishing boat?', answer: 'General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 55 to 80 lb units to handle wind.' },
+      { question: 'What size trolling motor do I need for my fishing boat?', answer: 'General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 25 to 36 kg (55 to 80 lb) units to handle wind.' },
       { question: 'Do I need both a trolling motor and a kicker?', answer: 'Not necessarily to start. Most anglers are better served by picking the right first unit for their primary fishery and adding the second unit later.' },
       { question: 'Where can I get a kicker or trolling motor installed near Rice Lake?', answer: 'Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.' },
     ]
@@ -10031,8 +10031,8 @@ These ratios give you a working starting point. **Always confirm against your sp
 | Performance level | Ratio (boat weight to HP) |
 |--|--|
 | Minimum (gets you moving, not much more) | 25–30 lbs of total boat weight per HP |
-| Recommended (good performance, typical use) | 15–20 lbs per HP |
-| Optimal (excellent performance, full loads) | 10–15 lbs per HP |
+| Recommended (good performance, typical use) | 6.8-9.1 kg/HP (15–20 lbs/HP) |
+| Optimal (excellent performance, full loads) | 4.5-6.8 kg/HP (10–15 lbs/HP) |
 
 *Total boat weight = hull weight + maximum passenger and gear load.*
 
@@ -10043,22 +10043,22 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 ## Real-world Ontario examples
 
 ### 16-foot aluminum fishing boat
-- Hull weight: approximately 800 lbs
-- Passengers and gear (typical): approximately 600 lbs
-- Total: approximately 1,400 lbs
+- Hull weight: approximately 363 kg (800 lb)
+- Passengers and gear (typical): approximately 272 kg (600 lb)
+- Total: approximately 635 kg (1,400 lb)
 - Capacity plate range: check your plate, 16-foot aluminum hulls vary; many rate 60–75 HP, some allow higher
 - **Typical choice: 60 HP FourStroke**, balances hole shot, fuel economy, and headroom for most uses. A 40 HP is fine for lighter solo use; step up only if your hull's plate allows and you consistently carry heavy loads.
 
 ### 22-foot pontoon
-- Hull weight: approximately 2,000 lbs
-- Passengers (cottage family): approximately 1,500 lbs
-- Total: approximately 3,500 lbs
+- Hull weight: approximately 907 kg (2,000 lb)
+- Passengers (cottage family): approximately 680 kg (1,500 lb)
+- Total: approximately 1,588 kg (3,500 lb)
 - **Typical choice: 115 HP Command Thrust**, Command Thrust gearcase recommended at 115 HP and above on most pontoons. Handles the load profile pontoons demand.
 
 ### 20-foot bass boat
-- Hull weight: approximately 1,800 lbs
-- Passengers and tournament gear: approximately 500 lbs
-- Total: approximately 2,300 lbs
+- Hull weight: approximately 816 kg (1,800 lb)
+- Passengers and tournament gear: approximately 227 kg (500 lb)
+- Total: approximately 1,043 kg (2,300 lb)
 - **Typical choice: 200 HP Pro XS**, tournament performance on a 20-foot bass hull. Never exceed the capacity plate; check yours.
 
 ---
@@ -10119,7 +10119,7 @@ Buying too small. Customers optimize for price at the low end of the range, then
 Significantly. A fully loaded family boat behaves like a different machine than an empty one. Plan for your real typical load, not the ideal solo-run scenario.
 
 **What does "lbs per HP" mean in motor sizing?**  
-It's a ratio of total loaded boat weight to horsepower. Lower ratio (more HP per pound of boat) = better performance. 10–15 lbs/HP is optimal; 25–30 lbs/HP is the functional minimum for getting moving.
+It's a ratio of total loaded boat weight to horsepower. Lower ratio (more HP per pound of boat) = better performance. 4.5-6.8 kg/HP (10–15 lbs/HP) is optimal; 11.3-13.6 kg/HP (25–30 lbs/HP) is the functional minimum for getting moving.
 
 **How does Mercury Command Thrust factor into sizing?**  
 Command Thrust is a gearcase option (not extra HP) that matters for pontoons and heavy hulls. On a pontoon, the right HP choice with Command Thrust will outperform a higher HP choice with a standard gearcase in real-world use. See the [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
@@ -11923,7 +11923,7 @@ leftVariant: recommended
 rightLabel: Wakeboarding is the focus
 rightCriteria:
   - You want a big, lipped, firm wake to ride
-  - You run real ballast (1,000 lb or more)
+  - You run real ballast (454 kg (1,000 lb) or more)
   - Boat is 20 ft or larger with a tow tower
   - Sustained mid-range torque matters more than top end
 rightOutcome: 225 to 300 HP V6 or V8, more weight, more sustained pull
@@ -11975,7 +11975,7 @@ For outboard tow boats specifically:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (1,500-3,000 lbs of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
+**Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (680-1,361 kg (1,500-3,000 lbs) of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
 
 If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this, we're not going to sell you a 300 HP outboard tow boat if you'd be happier with a Malibu inboard.
 
@@ -12004,7 +12004,7 @@ For tow boats over 20 feet:
 
 **V6 Pro XS (200-225 HP)**, lighter, more efficient, lower upfront cost. Plenty of pull for skiing and entry-level wakeboarding. **The right call for 19-21 ft outboard tow boats with moderate use.**
 
-**V8 Pro XS (250-300 HP)**, heavier (adds 60-80 lbs to transom), uses more fuel, costs more. But the torque difference is real, sustained pulling power for serious wakeboarding and any wakesurfing. **The right call for 21+ ft tow boats and any boat with significant ballast.**
+**V8 Pro XS (250-300 HP)**, heavier (adds 27-36 kg (60-80 lbs) to transom), uses more fuel, costs more. But the torque difference is real, sustained pulling power for serious wakeboarding and any wakesurfing. **The right call for 21+ ft tow boats and any boat with significant ballast.**
 
 The V8 also has DTS standard, which on a tow boat is genuinely worth having, smoother throttle, better skier-handle precision.
 
@@ -12265,7 +12265,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
       },
       {
         question: 'How much does a Mercury 150 Pro XS weigh?',
-        answer: 'Mercury publishes 456 lb for the lightest 150 Pro XS configuration. That is not the weight of every SKU. Shaft length, gearcase, controls and configuration can change the installed number, so compare the exact quoted motor with the boat\'s capacity plate and transom limits.'
+        answer: 'Mercury publishes 207 kg (456 lb) for the lightest 150 Pro XS configuration. That is not the weight of every SKU. Shaft length, gearcase, controls and configuration can change the installed number, so compare the exact quoted motor with the boat\'s capacity plate and transom limits.'
       },
       {
         question: 'What is the top speed of a Mercury 150 Pro XS?',
@@ -13333,7 +13333,7 @@ Mercury names the Avator models by power output in watts, which trips people up.
 
 One quirk worth knowing: the first three figures are Mercury's gas-equivalent comparisons, while the 75e and 110e numbers are Mercury's literal prop-shaft conversions (7,500 watts converts to 10 hp). Electric motors deliver all their torque instantly, so a 75e pulls a bigger boat off the line far harder than "10 hp" suggests. Treat the column as a guide, not a spec.
 
-A few things worth knowing: the 7.5e battery (1 kWh, about 17 lb) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
+A few things worth knowing: the 7.5e battery (1 kWh, about 8 kg (17 lb)) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
 
 ### The honest part: range
 
@@ -14884,7 +14884,7 @@ Lake Ontario is a different problem. The lake covers more than 19,000 km². Swel
 
 That affects motor selection in three specific ways:
 
-**Bigger boats.** 22–26 ft deep-V hulls weigh significantly more than the aluminum fishing boats on Rice Lake. Fully loaded with crew, downriggers, planer boards, and electronics, all-up weight can exceed 6,000 lbs. Adequate HP is not optional, it affects both performance and safety margins.
+**Bigger boats.** 22–26 ft deep-V hulls weigh significantly more than the aluminum fishing boats on Rice Lake. Fully loaded with crew, downriggers, planer boards, and electronics, all-up weight can exceed 2,722 kg (6,000 lb). Adequate HP is not optional, it affects both performance and safety margins.
 
 **Bigger kicker.** The 9.9 ProKicker that handles Rice Lake walleye trolling is undersized for Lake Ontario salmon spreads. The drag from multiple downriggers, planer boards, and dipsy divers requires the 15 HP ProKicker for proper speed control.
 
@@ -15722,7 +15722,7 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Heavy hull or fiberglass runabout.** Needs real power to plane.
 
-**Family use with passengers and gear.** Add 200-400 lbs of crew weight to whatever the dry boat needs.
+**Family use with passengers and gear.** Add 91-181 kg (200-400 lbs) of crew weight to whatever the dry boat needs.
 
 **Rough water.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor can't punch back through.
 
@@ -16351,7 +16351,7 @@ source: Mississauga
 
 **Combined trailer + boat weight under 1,400 kg (3,000 lbs):** Most mid-size SUVs and trucks can handle this without trailer brakes required, but check your tow vehicle's manufacturer ratings.
 
-**Combined weight 1,400–3,400 kg (3,000–7,500 lbs):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
+**Combined weight 1,400–3,400 kg (1,361-3,402 kg (3,000–7,500 lbs)):** Trailer brakes are required by law in Ontario (and a good idea regardless). Verify your tow vehicle's tow rating exceeds the combined load.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -22658,7 +22658,7 @@ This isn't a scare piece. It's what our service techs actually deal with, writte
 
 Before we get into the full list, this one deserves its own section because it causes more problems than everything else combined.
 
-Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
+Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 1,361 kg (3,000 lb). Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
 
 The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't come up to cruise properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
 
@@ -23283,7 +23283,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'What is the right tongue weight for a boat trailer?', answer: 'Tongue weight, the downward force the trailer puts on the hitch ball, should sit at 10 to 15 percent of your total loaded trailer weight. Too light and the trailer rear lifts and the rig sways at highway speed. Too heavy and the tow vehicle\'s front wheels lift, wrecking steering and loading the trailer axle unevenly. Keep heavier gear forward in the boat and check with a bathroom scale.' },
       { question: 'How often should boat trailer tires be replaced?', answer: 'Replace trailer tires every 5 to 6 years regardless of tread, and check sidewalls for cracking every spring. Trailer tires often look fine because they don\'t log enough highway kilometres to wear down, but UV and ozone oxidize the rubber even while the trailer sits in a driveway. A blowout on the 401 is not the place to find out yours are from 2018.' },
-      { question: 'When does Ontario require trailer brakes on a boat trailer?', answer: 'Ontario\'s Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lbs) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.' },
+      { question: 'When does Ontario require trailer brakes on a boat trailer?', answer: 'Ontario\'s Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lb) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.' },
       { question: 'Do I need a separate licence plate for my boat trailer in Ontario?', answer: 'Yes. All trailers on Ontario public roads must be registered and plated separately from the tow vehicle. Ontario treats trailers as separate vehicles. Registration is a one-time fee, around $72 for the original plate and permit. Equipment violations like missing or broken trailer lights are actively ticketed.' },
       { question: 'Why use a transom saver when trailering an outboard?', answer: 'An outboard hanging freely on the transom is not built to absorb highway vibration. Without a transom saver, the motor\'s weight swings on the tilt/trim system and steering cable over every bump. Over one season that wears steering arms, transom brackets, and trim ram seals, expensive repairs on a Mercury FourStroke in the 60 to 200 HP range. A transom saver costs next to nothing.' },
       { question: 'What should I do at the launch ramp before launching?', answer: 'Back in slowly until the bunks are just below the surface and the boat floats. Trailer wheel bearings and surge brakes are not meant to be dunked, especially hot from a highway drive, so keep hubs and brakes above the waterline. Install the drain plug before the boat comes off the trailer, never at the ramp. Then ignore any lineup behind you and take your time.' },
@@ -23456,7 +23456,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 **Lights and reflectors:** All trailers require working brake lights, tail lights, turn signals, and rear reflectors. Larger trailers may require side marker lights. Equipment violations are actively ticketed.
 
-**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lbs) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
+**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lb) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
 
 **Speed limits:** Ontario doesn't set a separate lower limit for towing, the posted limit applies. On most 400-series highways, that's **100 km/h** (some stretches are now 110 km/h for passenger vehicles). Towing at the posted limit requires proper setup: rated hitch, correct tongue weight, functioning trailer brakes if required, and tires you'd actually trust.
 
@@ -24224,7 +24224,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'What HP do I need for a pontoon boat?', answer: 'It depends on tube count, hull length, load, and use case. As a starting framework: 25 to 40 HP for 16 to 18 ft small toons, 60 to 90 HP for 20 to 22 ft cruisers, 115 to 150 HP for 22 to 24 ft loaded family pontoons, and 200+ HP for tritoons and watersports. When in doubt, size closer to the hull\'s max HP rating, not the minimum.' },
       { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers because they are the cheapest options that get the boat out the door. A 22-foot pontoon with 6 to 8 people occasionally pulling a tube wants a Mercury 90 or 115 HP four-stroke in Command Thrust configuration. The Command Thrust gearcase swings a larger prop, which dramatically improves hole-shot on a heavy pontoon.' },
-      { question: 'Why do pontoons need more HP than runabouts?', answer: 'A typical pontoon sits 1,800 to 3,500 lbs dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 5,000 lbs. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
+      { question: 'Why do pontoons need more HP than runabouts?', answer: 'A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 2,268 kg (5,000 lb). Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
       { question: 'When does Command Thrust matter on a pontoon?', answer: 'Any pontoon over 20 feet running a Mercury four-stroke in the 90 to 115 HP range should be in Command Thrust (CT tops out at 115; above that, the 150 runs Mercury\'s big gearcase as standard). The larger-diameter prop transforms hole-shot on a heavy boat, getting 8+ people up to cruise faster, with smoother transition, and less stress on the motor. Standard gearcase motors on heavy pontoons can feel sluggish at the same horsepower.' },
       { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For tube pulling with 4 to 6 people on deck, plan on a minimum 150 HP on a 22-foot two-tube, or 200 HP on a tritoon. For wakeboarding or wakesurfing you need a tritoon and 250+ HP: the third tube adds stability and wake shape, and the horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding.' },
     ],
@@ -24265,11 +24265,11 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** A typical pontoon sits between 1,800 and 3,500 lbs dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 5,000 lbs. You're pushing a lot of mass.
+**Weight.** A typical pontoon sits between 1,800 and 1,588 kg (3,500 lb) dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 2,268 kg (5,000 lb). You're pushing a lot of mass.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
-**Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 1,500-2,000 lbs of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
+**Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 680-907 kg (1,500-2,000 lbs) of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
 
 **Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
@@ -24520,7 +24520,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["marine battery","mercury","winter storage","battery switch","agm"],
     relatedSlugs: ['mercury-outboard-fault-codes-lookup', 'mercury-outboard-beeping-codes-guide', 'mercury-smartcraft-alarm-codes-encyclopedia'],
     faqs: [
-      { question: 'What size battery does a Mercury outboard need?', answer: 'For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 32 degrees F. Always check your engine\'s owner\'s manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.' },
+      { question: 'What size battery does a Mercury outboard need?', answer: 'For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 0°C (32 degrees F). Always check your engine\'s owner\'s manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.' },
       { question: 'AGM vs flooded lead-acid vs lithium: which marine battery should I buy?', answer: 'AGM is the sweet spot for most Ontario boat owners: sealed and maintenance-free, better vibration tolerance, slower self-discharge in storage, and more forgiving of partial discharge. Flooded lead-acid is cheaper if you are willing to check water levels. Lithium (LiFePO4) is excellent but 3 to 5 times the cost of an equivalent AGM and requires a lithium-compatible charger. A standard marine charger can damage a lithium battery.' },
       { question: 'Why does my boat battery die over the winter?', answer: 'Parasitic drain. A modern boat with a GPS, stereo, alarm, or automatic bilge pump can draw 10 to 30 milliamps continuously. At 20 mA a 100 Ah battery is fully dead in around 200 days, right inside Ontario\'s winter storage window. Turn the master switch to OFF, never leave it on Both, and use a smart maintainer if you have power access in storage.' },
       { question: 'Should I leave my battery switch on "Both" for storage?', answer: 'Never. With the switch on Both, any parasitic draw pulls from both banks simultaneously, doubling your drain exposure. Turn it to OFF for storage. Also never switch directly from 1 to 2 while the engine is running: switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.' },
@@ -24579,7 +24579,7 @@ The boats that never have this problem aren't running special equipment. They're
 
 Starting batteries deliver a massive burst of current for 1 to 3 seconds to crank an outboard, many thin plates, maximum surface area, designed for short bursts. They degrade quickly if repeatedly drawn down to a low state of charge.
 
-**Key spec:** Marine Cranking Amps (MCA), measured at 32°F. For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least **800 MCA** as a starting point. Always check your engine's owner's manual for the exact requirement for your model.
+**Key spec:** Marine Cranking Amps (MCA), measured at 0°C (32°F). For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least **800 MCA** as a starting point. Always check your engine's owner's manual for the exact requirement for your model.
 
 If you have an outboard and nothing else drawing power, a quality starting battery is all you need.
 
@@ -25141,7 +25141,7 @@ Price difference between the two at 115 HP is small, roughly **$400** ($17,083 d
 
 ### Things to know about the V6 and V8 tier
 
-**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 455 lbs vs. the V6 200 FourStroke at roughly 475 lbs). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 510 lbs, and older Yamaha 200-class V6 motors typically land in the 525-560 lb range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
+**The 150 FourStroke is our most common repower for 19-21 ft bowriders.** It's lighter than the V6 motors in the band above (Mercury 150 inline-4 FourStroke is roughly 206 kg (455 lb) vs. the V6 200 FourStroke at roughly 215 kg (475 lb)). The weight savings get more meaningful when you step up to heavier competing 200-class motors, the discontinued inline-4 supercharged Verado 200 sat around 231 kg (510 lb), and older Yamaha 200-class V6 motors typically land in the 238-254 kg (525-560 lb) range. It gets better fuel economy, and has more than enough power for skiing, tubing, and cruising Rice Lake or Lake Simcoe.
 
 **All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 150 HP FourStroke repower at Harris Boat Works typically lands at **$25,000-$28,000 all-in**, before HST and before any trade-in credit. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
 
@@ -25552,7 +25552,7 @@ leftCriteria:
   - Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
   - Capacity plate caps you at 40 HP
   - Use is fishing, calm-water cruising, 2 to 3 people max
-  - You want lighter weight on the transom (35 to 40 lb savings vs 60)
+  - You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
   - Tiller is preferred and 40 HP tiller models suit your setup
 leftOutcome: Pick 40 HP FourStroke
 leftVariant: alternative
@@ -25594,12 +25594,12 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 227 lb) vs 60 HP ($12,040, 4-cylinder, 250 lb) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
+![Side-by-side comparison: Mercury 40 HP ($9,438, 3-cylinder, 103 kg (227 lb)) vs 60 HP ($12,040, 4-cylinder, 113 kg (250 lb)) with best-boat and load recommendations, and $2,602 price gap.](/lovable-uploads/inline/40-vs-60-hp.svg)
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
 |---|---|---|
 | Powerhead | 3-cylinder, 747 cc | 4-cylinder, 995 cc |
-| Weight (long shaft) | ~227 lbs | ~250 lbs |
+| Weight (long shaft) | ~103 kg (227 lb) | ~113 kg (250 lb) |
 | Shaft options | 20" (L) or 25" (XL) | 20" (L) or 25" (XL) |
 | Alternator | 18 amp | 25 amp |
 | WOT RPM range | 5,500, 6,000 | 5,500, 6,000 |
@@ -25608,7 +25608,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 | Command Thrust | 40 ELPT CT, yes | 60 ELPT CT, yes |
 | Warranty | 3-year limited + 3-year corrosion | 3-year limited + 3-year corrosion |
 
-The 60 weighs 23 lbs more. On a light 15 ft aluminum with a transom already sitting low, that changes the resting attitude of the boat. The 60 is smoother at idle, has more amperage for charging electronics, and, if you're running a fish-finder, livewell, and stereo off the same battery, the 25-amp alternator matters.
+The 60 weighs 10 kg (23 lb) more. On a light 15 ft aluminum with a transom already sitting low, that changes the resting attitude of the boat. The 60 is smoother at idle, has more amperage for charging electronics, and, if you're running a fish-finder, livewell, and stereo off the same battery, the 25-amp alternator matters.
 
 ---
 
@@ -26658,7 +26658,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: "Is the Mercury 9.9 MH EFI fuel injected?", answer: "Yes. The Mercury 9.9 MH EFI uses electronic fuel injection. Mercury says the EFI system is designed for easier starts and efficient performance." },
       { question: "Does the manual-start Mercury 9.9 EFI need a battery?", answer: "Mercury says the manual-start 9.9 EFI models do not require a cranking battery because pulling the starter rope charges the electrical system needed for ignition." },
-      { question: "How much does the Mercury 9.9 MH EFI weigh?", answer: "Dealer specifications list the Mercury 9.9 MH EFI around 84 lb dry weight." },
+      { question: "How much does the Mercury 9.9 MH EFI weigh?", answer: "Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight." },
       { question: "What shaft length is the Mercury 9.9 MH EFI?", answer: "The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is right for a short shaft before buying." },
       { question: "What comes with the HBW Mercury 9.9 MH EFI offer?", answer: "As of May 2026, HBW's current offer is " + '$2,999' /* @canonical:dealer:9-9mh-fourstroke */ + " CAD + HST, with no extra charges or setup fees. It includes the 12 L fuel tank and hose, plus free prep." },
       { question: "Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?", answer: "It depends on the boat, load, prop, shaft length, weight distribution, and hull setup. Owner discussions show that even a newer Mercury 9.9 may struggle to plane a heavier 1448-style aluminum boat when the boat has added decking, batteries, and gear." },
@@ -26777,7 +26777,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
 | Displacement | 208 cc (12.8 cu in) |
-| Dry weight | Approximately 84 lb |
+| Dry weight | Approximately 38 kg (84 lb) |
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000, 6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
@@ -26859,7 +26859,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Is the current Mercury 90 FourStroke a new design?", answer: "No. Mercury introduced this 2.1-litre 75/90/115 platform in 2014. The current 90 is a mature engine family, not a first-year redesign. Model codes, rigging options and available programs can change, so confirm the exact motor when ordering." },
       { question: "What is the difference between the standard Mercury 90 and Command Thrust?", answer: "They use the same 2.1-litre powerhead. The standard gearcase has a 2.07:1 ratio and suits most recreational V-hulls. Command Thrust uses a larger 2.38:1 gearcase and larger-prop options to carry load on pontoons and specific heavy boats." },
       { question: "What boats suit a Mercury 90, and how fast will it go?", answer: "It commonly suits properly rated 16–18 ft aluminum fishing boats, lighter runabouts and modest pontoons with the right gearcase. There is no honest universal speed: documented examples in this review range from 22 mph on a 22.1-ft pontoon to about 43–44 mph on a classic 17-ft Boston Whaler." },
-      { question: "How much does a Mercury 90 FourStroke weigh?", answer: "Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit." },
+      { question: "How much does a Mercury 90 FourStroke weigh?", answer: "Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit." },
       { question: "Does Mercury make a 90 Pro XS?", answer: "No current 90 Pro XS appears in Mercury's Canadian recreational lineup. In this engine class, Pro XS starts at 115 HP. If you want a sharper performance setup, compare the 90 FourStroke with the 115 FourStroke or 115 Pro XS, subject to the boat's capacity plate." },
       { question: "What propeller does a Mercury 90 need?", answer: "It depends on the boat, gearcase and normal load. Mercury specifies a 5,000–6,000 rpm wide-open-throttle range for the recreational 90. The right propeller lets the motor run in the upper half of that range when the boat carries its normal load." },
       { question: "What warranty and extended protection are available on a Mercury 90?", answer: "Mercury's current U.S. and Canada warranty chart lists a 3-year limited warranty for a new FourStroke registered for pleasure use. Mercury Product Protection Platinum is a separate optional extended service contract that begins after the limited warranty. Registration, eligibility and contract terms apply, and promotional bonus coverage can change." },
@@ -26891,7 +26891,7 @@ The recreational 90 uses:
 - electric start and power trim on the common remote-control models
 - SmartCraft compatibility, with available information depending on the controls and gauges installed
 
-Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
+Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
 
 Mercury describes the FourStroke valve train as maintenance-free for the life of the engine. That does not make the whole motor maintenance-free. Oil, filters, gear lube, spark plugs, anodes, cooling-system condition and the rest of the service schedule still matter.
 
@@ -27187,7 +27187,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
       { question: "Does the 115 Pro XS come with Command Thrust?", answer: "Yes. The current Canadian lineup includes 115 Pro XS models with the standard gearcase and with Command Thrust. The standard gearcase belongs on most recreational V-hulls; Pro XS Command Thrust is mainly useful for pontoons and specific heavy-duty setups." },
       { question: "Is Command Thrust better on a V-hull?", answer: "Usually not. Command Thrust turns a larger propeller through a lower 2.38:1 ratio, which helps a pontoon or heavy workboat carry load. Its larger case also creates more drag, so the standard 2.07:1 gearcase is normally the right choice for a recreational V-hull." },
       { question: "How fast will a Mercury 115 go?", answer: "There is no honest single answer. An official Manitou pontoon test recorded 26.2 mph, while an official Crestliner 1750 Hawk test recorded 46.9 mph. Those are results for those exact boats, props, loads and conditions, not forecasts for another boat." },
-      { question: "How much does a Mercury 115 FourStroke weigh?", answer: "Mercury lists the lightest 20-inch 115 configurations at roughly 360 to 364 lb, depending on gearcase and market specification. Confirm the exact model code when ordering." },
+      { question: "How much does a Mercury 115 FourStroke weigh?", answer: "Mercury lists the lightest 20-inch 115 configurations at roughly 163 to 165 kg (360 to 364 lb), depending on gearcase and market specification. Confirm the exact model code when ordering." },
       { question: "What propeller does a Mercury 115 need?", answer: "It depends on the boat, load and gearcase. Start with a matched recommendation, then verify wide-open-throttle rpm and handling during a water test." },
       { question: "Is the Mercury 115 reliable?", answer: "The current 2.1-litre family has been in use since 2014. In the manufacturer tests, trade reviews and owner reports examined for this article, we did not identify a well-documented recurring current-generation failure pattern. That is not a reliability guarantee." },
       { question: "What does a Mercury 115 cost in Canada?", answer: "Pricing varies by calibration, gearcase, shaft length and current Mercury programs. Use the live Canadian Mercury pricing reference for current HBW pricing, then build a complete quote with controls, rigging, propeller and installation." },
@@ -27217,10 +27217,10 @@ The current standard 115 FourStroke uses:
 - electronic fuel injection
 - a 5,000 to 6,000 rpm wide-open-throttle range
 - a 2.07:1 standard gear ratio
-- a listed dry weight of roughly 360 lb for the lightest 20-inch configurations, depending on market specification
+- a listed dry weight of roughly 163 kg (360 lb) for the lightest 20-inch configurations, depending on market specification
 - mechanical controls with SmartCraft compatibility
 
-Command Thrust changes the gearcase, ratio and propeller options. It doesn't add horsepower. Current specifications put the lightest 20-inch CT configurations at about 364 lb with a 2.38:1 ratio.
+Command Thrust changes the gearcase, ratio and propeller options. It doesn't add horsepower. Current specifications put the lightest 20-inch CT configurations at about 165 kg (364 lb) with a 2.38:1 ratio.
 
 The 115 Pro XS uses the same 2.1-litre platform but raises the operating range to 5,300 to 6,300 rpm and adds performance-oriented calibration. It is available with either the standard gearcase or Command Thrust in the current Canadian lineup.
 
@@ -27507,7 +27507,7 @@ There is no honest single answer. An official Manitou pontoon test recorded 26.2
 
 **How much does a Mercury 115 FourStroke weigh?**
 
-Mercury lists the lightest 20-inch 115 configurations at roughly 360 to 364 lb, depending on gearcase and market specification. Confirm the exact model code when ordering.
+Mercury lists the lightest 20-inch 115 configurations at roughly 163 to 165 kg (360 to 364 lb), depending on gearcase and market specification. Confirm the exact model code when ordering.
 
 **What propeller does a Mercury 115 need?**
 
@@ -27682,7 +27682,7 @@ For the current Canadian lineup checked in July 2026:
 - the standard gear ratio is 1.92:1
 - the Pro XS gear ratio is 2.08:1
 
-Mercury lists the lightest standard 150 around 455 lb and introduced the Pro XS at 456 lb. Exact model, shaft length and rotation can change the number, so we still check the model code rather than treating one catalogue weight as every 150.
+Mercury lists the lightest standard 150 around 206 kg (455 lb) and introduced the Pro XS at 207 kg (456 lb). Exact model, shaft length and rotation can change the number, so we still check the model code rather than treating one catalogue weight as every 150.
 
 ![Current Mercury 150 FourStroke and 150 Pro XS shown side by side in official studio photography.](/lovable-uploads/inline/mercury-150-fourstroke-vs-pro-xs-official.webp)
 
@@ -27700,7 +27700,7 @@ Mercury lists the lightest standard 150 around 455 lb and introduced the Pro XS 
 | Gear ratio | 1.92:1 | 2.08:1 | Pro XS turns the prop shaft with more gear reduction for acceleration |
 | Gearcase details | Standard recreational gearcase | Extra water pickups on the nose | Pro XS supports higher mounting and jack-plate applications when set up correctly |
 | Engine mounts and calibration | Recreational tune | Performance-tuned mounts and Transient Spark Technology | Pro XS is aimed at sharper acceleration and high-speed control |
-| Published lightest weight | About 455 lb | About 456 lb | Weight is effectively a tie; the choice is about application |
+| Published lightest weight | About 206 kg (455 lb) | About 207 kg (456 lb) | Weight is effectively a tie; the choice is about application |
 | Charging | 60 amp with idle charge management | 60 amp with idle charge management | Both support electronics better than a small-output legacy charging system |
 
 ### Choose the standard 150 FourStroke when
@@ -27808,9 +27808,9 @@ These are documented examples, not speed promises.
 
 | Boat and test load | Motor and propeller | Reported result | Useful cruise point |
 |---|---|---|---|
-| [2020 Barletta C22QC pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 26.1 L/h (6.9 US gal/h) |
-| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,527 lb dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 13.6 L/h (3.6 US gal/h) |
-| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 2,765 lb as tested including two people and full 151 L (40 US gal) fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 15.1 L/h (4.0 US gal/h) |
+| [2020 Barletta C22QC pontoon, 23.2 ft, 1,286 kg (2,834 lb) dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 26.1 L/h (6.9 US gal/h) |
+| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 693 kg (1,527 lb) dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 13.6 L/h (3.6 US gal/h) |
+| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 1,254 kg (2,765 lb) as tested including two people and full 151 L (40 US gal) fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 15.1 L/h (4.0 US gal/h) |
 
 The Barletta and Crestliner rows use published dry boat weights. The Nitro figure is an as-tested weight with people and fuel, so the three weights are not directly comparable. What is comparable is the warning: the Barletta and Nitro use the same horsepower and differ by 25.6 mph at the top end. That isn't an argument that one test is wrong. It is the clearest possible argument against shopping by a detached speed number.
 
@@ -27845,7 +27845,7 @@ At HBW, motors 25 HP and up do not include a propeller in the base motor price. 
 
 Moving from a 115 to a 150 is not just changing the badge.
 
-The current Mercury 115 family is a 2.1-litre platform in roughly the 360 lb class. The 150 is a 3.0-litre platform around 455 lb. That roughly 90-plus-pound step matters to an older transom, boat balance, trailer tongue weight and how the hull sits at rest.
+The current Mercury 115 family is a 2.1-litre platform in roughly the 163 kg (360 lb) class. The 150 is a 3.0-litre platform around 206 kg (455 lb). That roughly 90-plus-pound step matters to an older transom, boat balance, trailer tongue weight and how the hull sits at rest.
 
 Choose the 115 when the boat is properly rated, normally loaded and does not need the size or weight of the 150 class.
 
@@ -28080,7 +28080,7 @@ If a review tells you that the Mercury 200 FourStroke and 200 Pro XS are basical
 
 That is not the current lineup.
 
-The 200 FourStroke is Mercury's 3.4-litre V6 recreational outboard. The 200 Pro XS is a 4.6-litre V8 performance outboard. The Pro XS has two more cylinders, 1.2 litres more displacement and roughly 30 lb more published lightest weight.
+The 200 FourStroke is Mercury's 3.4-litre V6 recreational outboard. The 200 Pro XS is a 4.6-litre V8 performance outboard. The Pro XS has two more cylinders, 1.2 litres more displacement and roughly 14 kg (30 lb) more published lightest weight.
 
 That difference matters. It also does not mean every boat should get the V8.
 
@@ -28102,7 +28102,7 @@ For the current Canadian range checked in July 2026:
 - mechanical or Digital Throttle & Shift configurations are available, depending on the exact model
 - shaft length, gearcase, rotation and control type must be verified from the model code
 
-Mercury publishes the lightest 200 FourStroke around 475 lb and the lightest 200 Pro XS around 505 lb. Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
+Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lightest 200 Pro XS around 229 kg (505 lb). Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
 
 ![Current Mercury 200 FourStroke and 200 Pro XS shown side by side in official studio photography.](/lovable-uploads/inline/mercury-200-fourstroke-vs-pro-xs-official.webp)
 
@@ -28117,7 +28117,7 @@ Mercury publishes the lightest 200 FourStroke around 475 lb and the lightest 200
 | Rated power | 200 HP | 200 HP | The Pro XS is not advertised as hidden extra horsepower |
 | Powerhead | 3.4 L V6 | 4.6 L V8 | Pro XS has more displacement and two more cylinders |
 | Full-throttle range | 5,200–6,000 rpm | 5,600–6,200 rpm | Pro XS supports a more performance-oriented propeller and setup window |
-| Published lightest weight | About 475 lb | About 505 lb | FourStroke saves roughly 30 lb before exact configuration differences |
+| Published lightest weight | About 215 kg (475 lb) | About 229 kg (505 lb) | FourStroke saves roughly 14 kg (30 lb) before exact configuration differences |
 | Gearcase | Standard recreational configurations | Standard and performance-oriented choices vary by model | Exact ratio and gearcase must be checked, not guessed from the family name |
 | Charging | 85 amp with idle charge management | 85 amp with idle charge management | Both are well suited to electronics-heavy modern boats |
 | Best fit | Family, cruising and load-carrying use | Performance fishing and responsive hulls | Application matters more than the badge |
@@ -28217,10 +28217,10 @@ These are complete Mercury performance records. They are examples, not speed pro
 
 | Boat | Motor and setup | Published result | Useful cruise point |
 |---|---|---|---|
-| [Barletta C22U pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 29.5 L/h (7.8 US gal/h) |
-| [Crestliner 2200 Bay, 22.25 ft aluminum, 1,912 lb dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 32.6 L/h (8.6 US gal/h) |
-| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,689 lb dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 33.3 L/h (8.8 US gal/h) |
-| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 1,760 lb dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 31.0 L/h (8.2 US gal/h) |
+| [Barletta C22U pontoon, 23.2 ft, 1,286 kg (2,834 lb) dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 29.5 L/h (7.8 US gal/h) |
+| [Crestliner 2200 Bay, 22.25 ft aluminum, 867 kg (1,912 lb) dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 32.6 L/h (8.6 US gal/h) |
+| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 766 kg (1,689 lb) dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 33.3 L/h (8.8 US gal/h) |
+| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 798 kg (1,760 lb) dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 31.0 L/h (8.2 US gal/h) |
 
 All four records are freshwater tests. The boat weights are published dry weights, not complete as-tested weights. Fuel, batteries, people, safety gear and options add to them.
 
@@ -28468,7 +28468,7 @@ All speed, acceleration and fuel-use results vary by boat, propeller, load, moun
       { question: "What is the difference between a Mercury 250 FourStroke and 250 Pro XS?", answer: "Both current motors are naturally aspirated 4.6-litre V8s rated at 250 HP. The FourStroke uses a 5,200 to 6,000 rpm operating range and recreational calibration. The Pro XS uses a 5,600 to 6,200 rpm range, performance-tuned exhaust and a TorqueMaster gearcase on select models for semi-surfacing, high-speed applications." },
       { question: "Is the Mercury 250 Pro XS faster than the 250 FourStroke?", answer: "It can be the better tool on a performance hull, but there is no honest universal speed difference. Mercury's current public performance database did not provide a same-hull 250 FourStroke versus 250 Pro XS test when this review was checked. Hull, load, gearcase, mounting height and propeller determine whether the Pro XS hardware produces a useful advantage." },
       { question: "Are the 250 FourStroke and 250 Pro XS the same engine?", answer: "They share Mercury's 4.6-litre, 32-valve DOHC V8 architecture and the same 250 HP rating, but they are not interchangeable model labels. Their operating ranges, exhaust character, gearcase applications, shaft-length availability and calibration differ. Compare the exact model code before ordering." },
-      { question: "How much does a Mercury 250 weigh?", answer: "Mercury's current linked brochures list about 527 lb for the lightest 250 FourStroke and 511 lb for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package." },
+      { question: "How much does a Mercury 250 weigh?", answer: "Mercury's current linked brochures list about 239 kg (527 lb) for the lightest 250 FourStroke and 232 kg (511 lb) for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package." },
       { question: "Which Mercury 250 is better for a pontoon or tritoon?", answer: "For most family and cruising tritoons, the standard 250 FourStroke is the straightforward choice. Pro XS can make sense on a genuinely performance-oriented hull with the right strakes, transom, steering, mounting and propeller, but the badge alone does not make a heavy pontoon faster." },
       { question: "Which Mercury 250 is better for a bass boat?", answer: "The 250 Pro XS is normally the relevant choice for a properly rated high-performance bass hull. Its higher operating range and available TorqueMaster gearcase are designed around that job. Setup still matters: engine height, propeller, load and steering condition can matter more than copying somebody else's speed number." },
       { question: "Does a Mercury 250 require premium fuel?", answer: "No. Mercury's current Canadian product pages specify unleaded regular gasoline with 87 AKI minimum, or 90 RON, and allow a maximum of 10% ethanol. Fresh, correctly stored fuel and a sound fuel system matter more than buying an octane grade the engine does not require." },
@@ -28579,7 +28579,7 @@ For the current Canadian product range checked in July 2026:
 - SmartCraft compatibility is standard, while controls and steering depend on the exact model
 - shaft length, gearcase, rotation and control type must be checked from the model code
 
-Mercury's current linked brochures list the lightest 250 FourStroke at about 527 lb and the lightest 250 Pro XS at about 511 lb. That is one of the stranger facts in this comparison: the performance model is not automatically the heavier one.
+Mercury's current linked brochures list the lightest 250 FourStroke at about 239 kg (527 lb) and the lightest 250 Pro XS at about 232 kg (511 lb). That is one of the stranger facts in this comparison: the performance model is not automatically the heavier one.
 
 Those are lightest-version figures, not installed weights. A 20-inch mechanical Pro XS, a 25-inch DTS FourStroke and a 30-inch counter-rotation model are not the same package.
 
@@ -28596,7 +28596,7 @@ Those are lightest-version figures, not installed weights. A 20-inch mechanical 
 | Rated power | 250 HP | 250 HP | Pro XS is not advertised as hidden extra horsepower |
 | Powerhead | 4.6 L V8 | 4.6 L V8 | They share the same core architecture and displacement |
 | Full-throttle range | 5,200–6,000 rpm | 5,600–6,200 rpm | Pro XS gives a performance setup a higher operating window |
-| Published lightest weight | About 527 lb | About 511 lb | Exact shaft, gearcase, controls and steering can change the package |
+| Published lightest weight | About 239 kg (527 lb) | About 232 kg (511 lb) | Exact shaft, gearcase, controls and steering can change the package |
 | Gearcase focus | Recreational and load-carrying configurations | TorqueMaster on select V8 applications | TorqueMaster is built for semi-surfacing, high-speed use |
 | Exhaust character | Large muffler and refinement-focused design | Performance-tuned exhaust | Pro XS intentionally has more startup and acceleration character |
 | Charging | 85 amp with Idle Charge | 85 amp with Idle Charge | Both suit electronics-heavy modern boats |
@@ -28642,11 +28642,11 @@ It is also incomplete for this exact comparison. When we filtered the current da
 
 | Boat | Published dry weight | Propeller | Top speed | 0–30 mph |
 |---|---:|---|---:|---:|
-| Barletta Cabrio 24UE tritoon | 3,194 lb | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
-| Harris Grand Mariner 250 tritoon | 3,954 lb | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
-| Evotti 721S tritoon | 3,413 lb | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
-| Lund 2075 Tyee Magnum deep-V | 1,920 lb | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
-| Glastron GTD 220 deck boat | 3,600 lb | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
+| Barletta Cabrio 24UE tritoon | 1,449 kg (3,194 lb) | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
+| Harris Grand Mariner 250 tritoon | 1,794 kg (3,954 lb) | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
+| Evotti 721S tritoon | 1,548 kg (3,413 lb) | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
+| Lund 2075 Tyee Magnum deep-V | 871 kg (1,920 lb) | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
+| Glastron GTD 220 deck boat | 1,633 kg (3,600 lb) | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
 
 Every test was on fresh water. Every result belongs to that exact installation.
 
@@ -28973,7 +28973,7 @@ Online owner material is treated as anecdotal buyer context, not as a warranty s
     faqs: [
       { question: "Why doesn't HBW stock the Mercury 75 HP FourStroke?", answer: "Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90." },
       { question: "Can HBW order a Mercury 75 if I really want one?", answer: "Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 in almost every case where customers ask about a 75." },
-      { question: "What's the actual difference between a 75 and a 90 Mercury FourStroke?", answer: "Same 2.1L block. Same dry weight (359 lb). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor." },
+      { question: "What's the actual difference between a 75 and a 90 Mercury FourStroke?", answer: "Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor." },
       { question: "Is the Mercury 90 worth the upcharge over the 75?", answer: "For most boats and most buyers, yes. Same motor, more headroom, better resale, marginal cost difference. The math is hard to argue with once you see it laid out." },
       { question: "My capacity plate says 75 HP max. Can I put a 90 on it?", answer: "No. The capacity plate is the legal ceiling. A 90 on a 75-rated hull is overpowering, voids your insurance in most cases, and creates real safety risk. Buy the 75 if the plate says 75. We'll help." },
       { question: "Will a Mercury 75 work on a pontoon?", answer: "Technically yes for smaller pontoons under 20 ft with light loads. We don't recommend it. Pontoons want torque and load-carrying ability, which is what the 90 ELPT Command Thrust delivers." },
@@ -28981,7 +28981,7 @@ Online owner material is treated as anecdotal buyer context, not as a warranty s
     ],
     content: `### Quick Answer
 
-The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 359 lb weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
+The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
 
 ---
 
@@ -29029,7 +29029,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 |---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
-| Dry weight | 359 lbs | 359 lbs |
+| Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
 | Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
@@ -31720,7 +31720,7 @@ Bearings are sealed grease cartridges that let the wheels spin freely. Submergin
 
 ### 2. Brakes (Surge or Electric)
 
-Most Ontario trailers under 2,500 lbs gross use surge brakes, the trailer's inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
+Most Ontario trailers under 1,134 kg (2,500 lb) gross use surge brakes, the trailer's inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
 
 **Action:**
 - Surge: flush the hydraulic line annually with marine-grade brake fluid (DOT 4 or DOT 5)
@@ -32964,7 +32964,7 @@ Send the boat, motor, serial number, photos, and requested work. HBW will confir
       },
       {
         question: "Is the Mercury 150 Pro XS a V6?",
-        answer: "No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, and 250. The 300 Pro XS is a V8. This matters because the 150 is meaningfully lighter than the V6 models, roughly 100 lbs less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP and up. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it."
+        answer: "No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, and 250. The 300 Pro XS is a V8. This matters because the 150 is meaningfully lighter than the V6 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP and up. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it."
       },
       {
         question: "How much does a Pro XS repower cost in Ontario?",
@@ -33651,7 +33651,7 @@ The chemistry difference creates real-world differences in weight, cost, ride, d
 
 ## Weight: aluminum wins
 
-A typical 18-foot aluminum V-hull weighs 800-1,100 lbs dry. A comparable 18-foot fiberglass V-hull weighs 1,400-1,800 lbs dry. The 400-700 lb difference matters in three places:
+A typical 18-foot aluminum V-hull weighs 363-499 kg (800-1,100 lbs) dry. A comparable 18-foot fiberglass V-hull weighs 635-816 kg (1,400-1,800 lbs) dry. The 181-318 kg (400-700 lb) difference matters in three places:
 
 1. **Trailering**: a lighter boat means a smaller tow vehicle works fine. Half-ton trucks tow most aluminum boats; fiberglass often pushes you toward a three-quarter-ton.
 2. **Launch ramp handling**: lighter boats float off the trailer earlier, load easier, and are more forgiving when the ramp is shallow or weed-fouled.
@@ -35394,7 +35394,7 @@ The Command Thrust (CT) option on the 90 and 115 is worth understanding, see the
 
 ## The 75 / 90 / 115 question
 
-The 75, 90, and 115 HP FourStroke share the same 2.1L inline-4 powerhead. Same block, same weight (359 lb), same physical footprint. The difference is software calibration, prop matching, and RPM limit.
+The 75, 90, and 115 HP FourStroke share the same 2.1L inline-4 powerhead. Same block, same weight (163 kg (359 lb)), same physical footprint. The difference is software calibration, prop matching, and RPM limit.
 
 For Ontario aluminum fishing boats (16-19 ft) and mid-size pontoons, this is the most common decision range, and the 90 is the sweet spot for most buyers. Here's why:
 
@@ -36082,7 +36082,7 @@ The other common situation: cottagers who add Avator without consulting their co
     relatedSlugs: ['mercury-repower-cost-ontario-2026-cad', 'what-happens-during-mercury-repower', 'evinrude-to-mercury-repower-ontario-guide'],
     faqs: [
       { question: 'Can I still buy a new 2-stroke Mercury outboard?', answer: 'Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. Repowers replace your old 2-stroke with a modern FourStroke.' },
-      { question: 'Is a FourStroke heavier than the 2-stroke it replaces?', answer: 'Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.' },
+      { question: 'Is a FourStroke heavier than the 2-stroke it replaces?', answer: 'Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.' },
       { question: 'Will my boat still perform well with a FourStroke?', answer: 'Almost always, yes. FourStrokes deliver more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed is within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.' },
       { question: 'Do I need new rigging when I repower from 2-stroke to 4-stroke?', answer: 'Usually yes. Old mechanical controls and cables often do not match the modern motor. Plan for new controls, possibly digital, plus a fresh fuel line and wiring harness. Add $500 to $1,500 CAD for rigging.' },
       { question: 'Does Harris Boat Works take my old 2-stroke as trade-in?', answer: 'We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will usually email a CAD figure within one business day.' },
@@ -36125,7 +36125,7 @@ Three wins land the first morning you run it: the idle, the fuel gauge, and the 
 
 ## Does the weight difference cause any problems?
 
-It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs about 140 kg, near 310 lb. A modern 90 HP FourStroke is closer to 163 kg, about 359 lb. On an 18-foot hull, that extra 50 pounds disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
+It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs about 140 kg, near 141 kg (310 lb). A modern 90 HP FourStroke is closer to 163 kg, about 163 kg (359 lb). On an 18-foot hull, that extra 23 kg (50 lb) disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
 
 Three things we check before any 2-stroke to 4-stroke repower:
 
@@ -36182,7 +36182,7 @@ The happiest repower customers walked in expecting the trade, not just the upgra
 Not in the recreational market. Mercury has shifted entirely to FourStroke and electric for new outboards. A repower replaces your old 2-stroke with a modern FourStroke.
 
 **Is a FourStroke heavier than the 2-stroke it replaces?**
-Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, against about 140 to 145 kg for an older 90 HP 2-stroke. That 15 to 25 kg matters for transom strength and how the boat trims.
+Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), against about 140 to 145 kg for an older 90 HP 2-stroke. That 15 to 25 kg matters for transom strength and how the boat trims.
 
 **Will my boat still perform well with a FourStroke?**
 Almost always, yes. FourStrokes bring more low-end torque, cleaner planing, and far better fuel economy. On most hulls top speed lands within 1 to 2 mph of the old 2-stroke, and cruise is meaningfully more efficient.
@@ -36731,7 +36731,7 @@ The kicker mounts on a separate bracket bolted through the transom alongside the
 
 ## What main + kicker pairings work best on Rice Lake?
 
-A Mercury 150 HP FourStroke weighs about 455 lb on the transom. Adding a 9.9 ProKicker adds another 108 lb offset to one side, which is rarely an issue on a 20 foot fibreglass deep-V but can affect trim on a narrow 16 foot tinny. The Avator 7.5e is much lighter (about 43 lb without battery), often the better pick on smaller hulls. We check transom rating and waterline before rigging any second motor.
+A Mercury 150 HP FourStroke weighs about 206 kg (455 lb) on the transom. Adding a 9.9 ProKicker adds another 49 kg (108 lb) offset to one side, which is rarely an issue on a 20 foot fibreglass deep-V but can affect trim on a narrow 16 foot tinny. The Avator 7.5e is much lighter (about 20 kg (43 lb) without battery), often the better pick on smaller hulls. We check transom rating and waterline before rigging any second motor.
 
 A few combinations we rig regularly at Harris Boat Works for Rice Lake and Kawartha fishing customers:
 
@@ -38516,7 +38516,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     keywords: ["repower pontoon", "repower aluminum fishing boat", "repower v-hull", "mercury repower hull types", "rice lake repower"],
     faqs: [
       { question: "What's different about repowering a pontoon boat?", answer: "Pontoons are heavier and wider and ride on their tubes rather than planing like a V-hull, so motor selection is about having enough torque to move the weight rather than top speed. Pontoon deck heights typically require a long (20-inch) shaft, and older pontoons can have non-standard motor mounts worth checking before assuming a new motor drops straight in." },
-      { question: "Is an aluminum fishing boat easy to repower?", answer: "Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 180–250 lb motor is a structural issue, quoted separately if work is needed." },
+      { question: "Is an aluminum fishing boat easy to repower?", answer: "Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 82-113 kg (180–250 lb) motor is a structural issue, quoted separately if work is needed." },
       { question: "What should I watch for when repowering a fibreglass V-hull?", answer: "Fibreglass V-hulls are the most involved repowers. Fibreglass transoms can fail internally without obvious signs, so Harris Boat Works inspects every transom before quoting. V-hull repowers also more often involve new throttle and shift cables, updated steering, and SmartCraft gauges, all quoted as part of the installed price, not added as a surprise at pickup." },
       { question: "Does the type of hull change the shaft length I need?", answer: "Yes. Pontoons typically need a long (20-inch) shaft, most aluminum fishing boats run a standard 20-inch shaft (some smaller hulls use a 15-inch short shaft), and fibreglass V-hulls vary the most. Confirming the correct shaft length before ordering is part of every Harris Boat Works repower assessment." }
     ],
@@ -38531,7 +38531,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
 | Repower complexity | Medium (mounts vary) | Simplest | Most involved |
 | Typical HP | 22-24 ft, 4-6 people: 90-115 HP | Match the rated HP range | Match carefully to deadrise/load |
 | Shaft length | Long (20") | Standard 20" (some older 15") | Mostly 20"; some performance hulls 25" |
-| Transom check | Holds 180-250 lb motor; inspect | Inspect | Can fail internally with no visible signs |
+| Transom check | Holds 82-113 kg (180-250 lb) motor; inspect | Inspect | Can fail internally with no visible signs |
 | Controls/steering | Usually carries over | Usually simple | Often new cables, steering, gauges/SmartCraft |
 | Four-stroke weight | Mass absorbs it | Minor effect | Can shift trim and handling |
 
@@ -38567,7 +38567,7 @@ Aluminum boats, Lund, Crestliner, Lowe, and similar North American-built hulls, 
 
 That said:
 
-**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 180–250 lbs is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
+**Transom condition is the first thing we check.** On an older aluminum boat, the transom wood (if present) or the transom reinforcement plate can degrade over time. A soft transom holding a motor that weighs 82-113 kg (180–250 lbs) is a structural issue, not a cosmetic one. We inspect this before every repower and quote transom work separately if it's needed.
 
 **Shaft length:** Most aluminum fishing boats in the 14–20 ft range run a standard 20" (long) shaft. Some older or smaller hulls use a short (15") shaft. Confirm before ordering.
 
@@ -38730,22 +38730,22 @@ Call us at 905-342-2153 or build your repower quote, warranty terms are listed w
     keywords: ["mercury outboard weight", "mercury outboard weight chart", "how much does a mercury 115 weigh", "outboard motor weight", "transom weight capacity"],
     relatedSlugs: ["repower-horsepower-capacity-plate-guide"],
     faqs: [
-      { question: "How much does a Mercury 115 four-stroke weigh?", answer: "Mercury lists the 115 FourStroke at 359 lb (163 kg) dry for the lightest model; the Command Thrust version is 363 lb. The 115 Pro XS is also 359 lb. Longer shaft lengths add weight." },
-      { question: "How much does a 90 hp Mercury outboard weigh?", answer: "359 lb (163 kg) dry for the lightest model, or 363 lb with the Command Thrust gearcase. The 75, 90, and 115 share the same 2.1L block, which is why their weights match." },
-      { question: "What is the lightest 115 hp outboard?", answer: "Mercury's 115 Pro XS at 359 lb, which Mercury says is the lightest performance 115 in its class by roughly 20 pounds. The standard 115 FourStroke is the same 359 lb in its lightest configuration." },
-      { question: "How much does a Mercury 250 weigh?", answer: "Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 FourStroke V8 is 527 lb (239 kg), both in their lightest configurations." },
+      { question: "How much does a Mercury 115 four-stroke weigh?", answer: "Mercury lists the 115 FourStroke at 163 kg (359 lb) dry for the lightest model; the Command Thrust version is 165 kg (363 lb). The 115 Pro XS is also 163 kg (359 lb). Longer shaft lengths add weight." },
+      { question: "How much does a 90 hp Mercury outboard weigh?", answer: "163 kg (359 lb) dry for the lightest model, or 165 kg (363 lb) with the Command Thrust gearcase. The 75, 90, and 115 share the same 2.1L block, which is why their weights match." },
+      { question: "What is the lightest 115 hp outboard?", answer: "Mercury's 115 Pro XS at 163 kg (359 lb), which Mercury says is the lightest performance 115 in its class by roughly 9 kg (20 lb). The standard 115 FourStroke is the same 163 kg (359 lb) in its lightest configuration." },
+      { question: "How much does a Mercury 250 weigh?", answer: "Depends on the family: the 250 Pro XS V8 is 229 kg (505 lb) dry, while the 250 FourStroke V8 is 239 kg (527 lb), both in their lightest configurations." },
       { question: "Why does outboard weight matter when repowering?", answer: "Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy." },
       { question: "Are modern four-strokes heavier than the old two-strokes they replace?", answer: "Often, yes. Modern four-strokes typically carry more weight than the two-strokes they replace, though the gap varies a lot by family and vintage. That is exactly why the capacity plate's maximum motor weight matters during a repower: check it before you buy, and if your hull is older or light, ask us to confirm the transom can carry the modern equivalent." },
-      { question: "How much does a 40 hp Mercury outboard weigh?", answer: "The 40 HP Mercury FourStroke EFI weighs 216 lb (98 kg) dry in its lightest 3-cylinder configuration. Longer shafts and rigging add weight on top of that. For the exact figure on the model you are repowering, call Harris Boat Works at 905-342-2153." },
-      { question: "How much does a 50 hp Mercury outboard weigh?", answer: "The 50 HP Mercury FourStroke EFI weighs 247 lb (112 kg) dry for the lightest model. The 50 and 60 HP share the same powerhead, so they weigh the same; Command Thrust versions run a few pounds heavier." },
-      { question: "How much does a 200 hp Mercury outboard weigh?", answer: "It depends on the family. The 200 HP FourStroke (3.4L V6) is 475 lb (216 kg) dry, while the 200 HP Pro XS (4.6L V8) is 505 lb (229 kg), both in their lightest configurations. Check your capacity plate before repowering." },
-      { question: "How much does a 300 hp Mercury outboard weigh?", answer: "The 300 HP Mercury FourStroke V8 is 527 lb (239 kg) dry, and the 300 HP Pro XS V8 is lighter at 505 lb (229 kg), both for the lightest configuration. Longer shafts and rigging add weight." }
+      { question: "How much does a 40 hp Mercury outboard weigh?", answer: "The 40 HP Mercury FourStroke EFI weighs 98 kg (216 lb) dry in its lightest 3-cylinder configuration. Longer shafts and rigging add weight on top of that. For the exact figure on the model you are repowering, call Harris Boat Works at 905-342-2153." },
+      { question: "How much does a 50 hp Mercury outboard weigh?", answer: "The 50 HP Mercury FourStroke EFI weighs 112 kg (247 lb) dry for the lightest model. The 50 and 60 HP share the same powerhead, so they weigh the same; Command Thrust versions run a few pounds heavier." },
+      { question: "How much does a 200 hp Mercury outboard weigh?", answer: "It depends on the family. The 200 HP FourStroke (3.4L V6) is 216 kg (475 lb) dry, while the 200 HP Pro XS (4.6L V8) is 229 kg (505 lb), both in their lightest configurations. Check your capacity plate before repowering." },
+      { question: "How much does a 300 hp Mercury outboard weigh?", answer: "The 300 HP Mercury FourStroke V8 is 239 kg (527 lb) dry, and the 300 HP Pro XS V8 is lighter at 229 kg (505 lb), both for the lightest configuration. Longer shafts and rigging add weight." }
     ],
     content: `## Quick answer
 
-Mercury outboards range from 41 lb for the 2.5 and 3.5 HP portables to 527 lb for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 359 lb. All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
+Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 239 kg (527 lb) for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 163 kg (359 lb). All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
 
-![Mercury outboard dry weight by HP class: 9.9 HP 85 lb, 60 HP 247 lb, 115 HP 359 lb, 150 HP 455 lb, 250 V8 527 lb (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
+![Mercury outboard dry weight by HP class: 9.9 HP 39 kg (85 lb), 60 HP 112 kg (247 lb), 115 HP 163 kg (359 lb), 150 HP 206 kg (455 lb), 250 V8 239 kg (527 lb) (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
 
 *Last reviewed: 2026-06-22*
 
@@ -38759,32 +38759,32 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 
 | HP | Dry weight (lightest model) | Notes |
 |---|---|---|
-| 2.5 / 3.5 | 41 lb (18 kg) | Tiller portables |
-| 4 / 5 / 6 | 57 lb (26 kg) | Shared single-cylinder platform |
-| 9.9 EFI | 85 lb (38.5 kg) | Command Thrust: 100 lb |
-| 9.9 ProKicker | 121 to 126 lb (55 to 57 kg) | Kicker-duty gearcase and controls; range covers ProKicker variants |
-| 15 EFI | 99 lb (45 kg) | |
-| 20 EFI | 99 lb (45 kg) | |
-| 25 EFI | 132 lb (60 kg) | |
-| 30 EFI | 145 lb (66 kg) | |
-| 40 EFI | 216 lb (98 kg) | 3-cylinder; the 4-cylinder 40 is 260 lb |
-| 50 EFI | 247 lb (112 kg) | |
-| 60 EFI | 247 lb (112 kg) | Command Thrust runs a few pounds heavier |
-| 75 | 359 lb (163 kg) | Shares 2.1L block with 90/115 |
-| 90 | 359 lb (163 kg) | Command Thrust: 363 lb |
-| 115 | 359 lb (163 kg) | Command Thrust: 363 lb |
-| 135 / 150 | 455 lb (206 kg) | 3.0L inline-4 |
-| 175 / 200 / 225 | 475 lb (216 kg) | 3.4L V6 |
-| 250 / 300 | 527 lb (239 kg) | 4.6L V8 |
+| 2.5 / 3.5 | 18 kg (41 lb) | Tiller portables |
+| 4 / 5 / 6 | 26 kg (57 lb) | Shared single-cylinder platform |
+| 9.9 EFI | 38.5 kg (85 lb) | Command Thrust: 45 kg (100 lb) |
+| 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) (55 to 57 kg) | Kicker-duty gearcase and controls; range covers ProKicker variants |
+| 15 EFI | 45 kg (99 lb) | |
+| 20 EFI | 45 kg (99 lb) | |
+| 25 EFI | 60 kg (132 lb) | |
+| 30 EFI | 66 kg (145 lb) | |
+| 40 EFI | 98 kg (216 lb) | 3-cylinder; the 4-cylinder 40 is 118 kg (260 lb) |
+| 50 EFI | 112 kg (247 lb) | |
+| 60 EFI | 112 kg (247 lb) | Command Thrust runs a few pounds heavier |
+| 75 | 163 kg (359 lb) | Shares 2.1L block with 90/115 |
+| 90 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
+| 115 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
+| 135 / 150 | 206 kg (455 lb) | 3.0L inline-4 |
+| 175 / 200 / 225 | 216 kg (475 lb) | 3.4L V6 |
+| 250 / 300 | 239 kg (527 lb) | 4.6L V8 |
 
 ### Pro XS dry weights
 
 | HP | Dry weight (lightest model) | Notes |
 |---|---|---|
-| 115 | 359 lb (163 kg) | Same as the standard 115; Mercury calls it the lightest performance 115 in class |
-| 150 | 456 lb (207 kg) | 3.0L |
-| 175 | 470 lb (213 kg) | 3.4L V6 |
-| 200 / 225 / 250 / 300 | 505 lb (229 kg) | 4.6L V8; yes, the Pro XS V8s are lighter than the FourStroke V8s |
+| 115 | 163 kg (359 lb) | Same as the standard 115; Mercury calls it the lightest performance 115 in class |
+| 150 | 207 kg (456 lb) | 3.0L |
+| 175 | 213 kg (470 lb) | 3.4L V6 |
+| 200 / 225 / 250 / 300 | 229 kg (505 lb) | 4.6L V8; yes, the Pro XS V8s are lighter than the FourStroke V8s |
 
 All figures are Mercury's published dry weight for the lightest available configuration. [Longer shafts](/blog/outboard-shaft-length-guide), Command Thrust gearcases, and rigging add weight, so a single HP can have more than one published number. Figures are from Mercury's published 2026 model-year specifications: [Mercury Marine official specifications](https://www.mercurymarine.com/ca/en/engines/outboard).
 
@@ -39630,7 +39630,7 @@ There is no meaningful weight penalty for choosing more horsepower. This parity 
 
 ## Performance on a Typical Ontario Aluminum Boat (17 to 19 ft)
 
-Most of the fishing and cottage boats we see at Harris Boat Works fall into the 17-to-19-foot aluminum category. Think Legend, Lund, Princecraft, Alumacraft, or Crestliner. Loaded with three or four adults, fishing gear, a full livewell, and a cooler, the total on-water weight quickly climbs north of 2,000 pounds. The difference between a 90 and a 115 becomes very real when you need to plane quickly against a chop on Rice Lake or cruise comfortably into the wind.
+Most of the fishing and cottage boats we see at Harris Boat Works fall into the 17-to-19-foot aluminum category. Think Legend, Lund, Princecraft, Alumacraft, or Crestliner. Loaded with three or four adults, fishing gear, a full livewell, and a cooler, the total on-water weight quickly climbs north of 907 kg (2,000 lb). The difference between a 90 and a 115 becomes very real when you need to plane quickly against a chop on Rice Lake or cruise comfortably into the wind.
 
 With a 90 hp FourStroke, a 17.5-foot deep-V aluminum boat carrying three adults and gear will typically plane in the mid-teens (mph) and top out around 32 to 35 mph in ideal conditions. A well-propped 115 on the same hull can add 4 to 6 mph on the top end, but more importantly it gets on plane faster and maintains plane at lower RPM. That extra mid-range authority means you can stay comfortably on step at 20 mph without burying the throttle, which is a huge advantage when you want to cover water smoothly with a full crew and a chop building.
 
@@ -39662,9 +39662,9 @@ A well-maintained 115 will typically fetch a higher resale value and sell more q
 
 Instead of choosing solely by horsepower number, think about the total weight you regularly put on the water. A simple framework is:
 
-- Light loads (under 2,200 lbs total on-plane weight): A 90 hp FourStroke, especially with Command Thrust, is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
-- Medium loads (2,200 to 2,800 lbs): A 115 hp will provide noticeably better acceleration, planing, and control in rough water. If you regularly carry three or four adults, a full livewell, and weekend gear, this is the sweet spot.
-- Heavy loads (2,800 lbs and up): If your boat is rated for 115 hp and you push its capacity limits, the 115 is the clear choice. Pairing it with Command Thrust gives you a setup that handles like a larger engine and keeps you safely on plane in any reasonable Ontario chop.
+- Light loads (under 998 kg (2,200 lb) total on-plane weight): A 90 hp FourStroke, especially with Command Thrust, is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
+- Medium loads (998 to 1,270 kg (2,200 to 2,800 lbs)): A 115 hp will provide noticeably better acceleration, planing, and control in rough water. If you regularly carry three or four adults, a full livewell, and weekend gear, this is the sweet spot.
+- Heavy loads (1,270 kg (2,800 lb) and up): If your boat is rated for 115 hp and you push its capacity limits, the 115 is the clear choice. Pairing it with Command Thrust gives you a setup that handles like a larger engine and keeps you safely on plane in any reasonable Ontario chop.
 
 Run through your typical crew, fuel, batteries, and tackle. Multiply by real weights, and you will quickly see whether the 90 or 115 deserves the nod.
 

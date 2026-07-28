@@ -194,7 +194,7 @@ A quick reference. Regulations change, verify current requirements with the [MTO
 
 **Lights and reflectors:** All trailers require working brake lights, tail lights, turn signals, and rear reflectors. Larger trailers may require side marker lights. Equipment violations are actively ticketed.
 
-**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lbs) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
+**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lb) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
 
 **Speed limits:** Ontario doesn't set a separate lower limit for towing, the posted limit applies. On most 400-series highways, that's **100 km/h** (some stretches are now 110 km/h for passenger vehicles). Towing at the posted limit requires proper setup: rated hitch, correct tongue weight, functioning trailer brakes if required, and tires you'd actually trust.
 
@@ -235,7 +235,7 @@ Replace trailer tires every 5 to 6 years regardless of tread, and check sidewall
 
 ### When does Ontario require trailer brakes on a boat trailer?
 
-Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lbs) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.
+Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lb) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying on this summary.
 
 ### Do I need a separate licence plate for my boat trailer in Ontario?
 

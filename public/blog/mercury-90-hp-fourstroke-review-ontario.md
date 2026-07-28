@@ -53,7 +53,7 @@ The recreational 90 uses:
 - electric start and power trim on the common remote-control models
 - SmartCraft compatibility, with available information depending on the controls and gauges installed
 
-Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
+Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and market specification can change the number, so the exact model code still matters when we check a transom.
 
 Mercury describes the FourStroke valve train as maintenance-free for the life of the engine. That does not make the whole motor maintenance-free. Oil, filters, gear lube, spark plugs, anodes, cooling-system condition and the rest of the service schedule still matter.
 
@@ -308,7 +308,7 @@ It commonly suits properly rated 16–18 ft aluminum fishing boats, lighter runa
 
 ### How much does a Mercury 90 FourStroke weigh?
 
-Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit.
+Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit.
 
 ### Does Mercury make a 90 Pro XS?
 

@@ -92,7 +92,7 @@ The Command Thrust (CT) option on the 90 and 115 is worth understanding, see the
 
 ## The 75 / 90 / 115 question
 
-The 75, 90, and 115 HP FourStroke share the same 2.1L inline-4 powerhead. Same block, same weight (359 lb), same physical footprint. The difference is software calibration, prop matching, and RPM limit.
+The 75, 90, and 115 HP FourStroke share the same 2.1L inline-4 powerhead. Same block, same weight (163 kg (359 lb)), same physical footprint. The difference is software calibration, prop matching, and RPM limit.
 
 For Ontario aluminum fishing boats (16-19 ft) and mid-size pontoons, this is the most common decision range, and the 90 is the sweet spot for most buyers. Here's why:
 

@@ -78,7 +78,7 @@ The boats that never have this problem aren't running special equipment. They're
 
 Starting batteries deliver a massive burst of current for 1 to 3 seconds to crank an outboard, many thin plates, maximum surface area, designed for short bursts. They degrade quickly if repeatedly drawn down to a low state of charge.
 
-**Key spec:** Marine Cranking Amps (MCA), measured at 32°F. For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least **800 MCA** as a starting point. Always check your engine's owner's manual for the exact requirement for your model.
+**Key spec:** Marine Cranking Amps (MCA), measured at 0°C (32°F). For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least **800 MCA** as a starting point. Always check your engine's owner's manual for the exact requirement for your model.
 
 If you have an outboard and nothing else drawing power, a quality starting battery is all you need.
 
@@ -292,7 +292,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### What size battery does a Mercury outboard need?
 
-For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 32 degrees F. Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.
+For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 0°C (32 degrees F). Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise on smaller boats with light loads.
 
 ### AGM vs flooded lead-acid vs lithium: which marine battery should I buy?
 

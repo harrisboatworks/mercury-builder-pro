@@ -30,7 +30,7 @@ language: en-CA
 
 # Mercury 9.9 vs 15 HP Outboard: Which Tiller Is Right for Your Ontario Boat?
 
-> **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 10 to 15 lb weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
+> **Quick answer:** Mercury's 9.9 HP and 15 HP FourStroke tillers share the same block, gearcase, and footprint. The 15 HP gives you about 50 percent more power for a 4.5 to 7 kg (10 to 15 lb) weight penalty and a small fuel-burn bump. Pick the 15 unless your lake has a horsepower restriction, your capacity plate caps you at 9.9, or you specifically want a 9.9-rated kicker for trolling. Most Rice Lake and Kawartha customers walk out with the 15.
 
 For a variant-by-variant breakdown of the 9.9 line itself, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
@@ -66,7 +66,7 @@ What it means for you: reliability, parts availability, and serviceability are i
 |---|---|---|
 | Rated horsepower | 9.9 HP | 15 HP |
 | Displacement | 333cc / 2-cylinder | 333cc / 2-cylinder |
-| Dry weight (tiller, manual start, short shaft) | ~84 lbs | ~99 lbs |
+| Dry weight (tiller, manual start, short shaft) | ~38 kg (84 lb) | ~45 kg (99 lb) |
 | Top RPM range | 5000-6000 | 5500-6300 |
 | Fuel burn at WOT | ~2.6 to 3.8 L/h (~0.7-1.0 GPH) | ~3.8 to 5.7 L/h (~1.0-1.5 GPH) |
 | Recommended fuel | Regular unleaded, 87 octane | Regular unleaded, 87 octane |
@@ -77,7 +77,7 @@ What it means for you: reliability, parts availability, and serviceability are i
 | Long shaft (20 inch) | Available | Available |
 | Best fit | HP-restricted lakes, 9.9-rated kicker class, lightest possible setup | Almost everything else |
 
-The 15 weighs about 15 lbs more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
+The 15 weighs about 7 kg (15 lb) more for 50 percent more power. That's the real tradeoff. The fuel-burn delta is small, the parts cost is similar, and the price difference at retail tends to be a few hundred dollars rather than a couple thousand.
 
 ## HP-Restricted Lakes: When the 9.9 Is the Only Legal Choice
 
@@ -122,7 +122,7 @@ The budget. CAD pricing on both motors is similar enough that the call almost al
 If you're rigging a kicker motor on a bigger boat, [the 9.9 EFI FourStroke is the standard pick](/blog/mercury-9-9-efi-review-ontario). Three reasons:
 
 - Tournament classes (bass, walleye) cap kicker motors at 9.9 HP. If you ever want to fish a derby on Rice Lake or anywhere in the Kawarthas, the 15 disqualifies you.
-- The 9.9 weighs ~15 lbs less. On a bracket hanging off the main motor's transom, that weight savings matters for trim and handling.
+- The 9.9 weighs ~7 kg (15 lb) less. On a bracket hanging off the main motor's transom, that weight savings matters for trim and handling.
 - A 15 HP kicker is overkill for trolling. You're running it at idle to 2000 RPM most of the time. The extra 5 HP at the top end isn't doing anything for you.
 
 The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
@@ -133,7 +133,7 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 **Shaft length matters more.** Most sailboat transoms are tall. [You'll usually need a 20 inch (long) shaft](/blog/outboard-shaft-length-guide), sometimes a 25 inch (extra long) shaft on bigger displacement hulls. Wrong shaft length on a sailboat auxiliary is a more expensive mistake than on a powerboat because the boat is harder to manoeuvre back to the dock when the motor's cavitating.
 
-**Weight matters more, aft.** Sailboats are sensitive to transom weight. The 15 lb penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
+**Weight matters more, aft.** Sailboats are sensitive to transom weight. The 7 kg (15 lb) penalty for the 15 HP version isn't a deal-breaker, but on a small sailboat (~24 to 28 foot) it shows up in stern squat. Heavier boats can handle the extra weight without issue.
 
 **Command Thrust may be worth it.** [The Command Thrust gearcase option](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) puts a larger-diameter prop on the same motor. It's slower at the top end but pushes a heavy displacement hull better at low RPM. For a sailboat under sail-handling load (motoring into wind to drop sails, manoeuvring in tight marinas), Command Thrust is often the right call regardless of whether you pick 9.9 or 15. Read more in our [Command Thrust vs Standard Gearcase guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026).
 

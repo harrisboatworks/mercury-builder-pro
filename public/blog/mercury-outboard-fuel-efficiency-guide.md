@@ -66,7 +66,7 @@ A weedy or fouled hull adds drag. This matters more for boats that sit in slips 
 
 **4. Weight**
 
-Every unnecessary 100 lbs on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
+Every unnecessary 45 kg (100 lb) on the boat costs fuel. The cumulative effect of a full cooler, extra anchors, gear that never leaves the boat, and passengers is real. It doesn't mean you should kick people out, it means if you're comparing fuel burns across trips, load matters.
 
 **5. Cruise speed selection**
 

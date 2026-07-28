@@ -44,7 +44,7 @@ The chemistry difference creates real-world differences in weight, cost, ride, d
 
 ## Weight: aluminum wins
 
-A typical 18-foot aluminum V-hull weighs 800-1,100 lbs dry. A comparable 18-foot fiberglass V-hull weighs 1,400-1,800 lbs dry. The 400-700 lb difference matters in three places:
+A typical 18-foot aluminum V-hull weighs 363-499 kg (800-1,100 lbs) dry. A comparable 18-foot fiberglass V-hull weighs 635-816 kg (1,400-1,800 lbs) dry. The 181-318 kg (400-700 lb) difference matters in three places:
 
 1. **Trailering**: a lighter boat means a smaller tow vehicle works fine. Half-ton trucks tow most aluminum boats; fiberglass often pushes you toward a three-quarter-ton.
 2. **Launch ramp handling**: lighter boats float off the trailer earlier, load easier, and are more forgiving when the ramp is shallow or weed-fouled.

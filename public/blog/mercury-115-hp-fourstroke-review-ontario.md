@@ -51,10 +51,10 @@ The current standard 115 FourStroke uses:
 - electronic fuel injection
 - a 5,000 to 6,000 rpm wide-open-throttle range
 - a 2.07:1 standard gear ratio
-- a listed dry weight of roughly 360 lb for the lightest 20-inch configurations, depending on market specification
+- a listed dry weight of roughly 163 kg (360 lb) for the lightest 20-inch configurations, depending on market specification
 - mechanical controls with SmartCraft compatibility
 
-Command Thrust changes the gearcase, ratio and propeller options. It doesn't add horsepower. Current specifications put the lightest 20-inch CT configurations at about 364 lb with a 2.38:1 ratio.
+Command Thrust changes the gearcase, ratio and propeller options. It doesn't add horsepower. Current specifications put the lightest 20-inch CT configurations at about 165 kg (364 lb) with a 2.38:1 ratio.
 
 The 115 Pro XS uses the same 2.1-litre platform but raises the operating range to 5,300 to 6,300 rpm and adds performance-oriented calibration. It is available with either the standard gearcase or Command Thrust in the current Canadian lineup.
 
@@ -379,7 +379,7 @@ There is no honest single answer. An official Manitou pontoon test recorded 26.2
 
 ### How much does a Mercury 115 FourStroke weigh?
 
-Mercury lists the lightest 20-inch 115 configurations at roughly 360 to 364 lb, depending on gearcase and market specification. Confirm the exact model code when ordering.
+Mercury lists the lightest 20-inch 115 configurations at roughly 163 to 165 kg (360 to 364 lb), depending on gearcase and market specification. Confirm the exact model code when ordering.
 
 ### What propeller does a Mercury 115 need?
 
