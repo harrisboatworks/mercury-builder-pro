@@ -86,6 +86,19 @@ export function BlogTable({ children }: { children?: ReactNode }) {
     if (TOTAL_RE.test(firstText)) totalRowIdx = bodyRows.length - 1;
   }
 
+  // Determine column count (prefer thead, fall back to first body row).
+  let colCount = 0;
+  if (thead) {
+    const headRowsForCount = Children.toArray((thead.props as any).children).filter(isValidElement) as ReactElement[];
+    if (headRowsForCount[0]) {
+      colCount = (Children.toArray((headRowsForCount[0].props as any).children).filter(isValidElement) as ReactElement[]).length;
+    }
+  }
+  if (!colCount && bodyRows[0]) {
+    colCount = (Children.toArray((bodyRows[0].props as any).children).filter(isValidElement) as ReactElement[]).length;
+  }
+  const isWide = colCount >= 5;
+
   // Rebuild thead with styled cells.
   let newThead: ReactElement | undefined;
   if (thead) {
@@ -93,7 +106,7 @@ export function BlogTable({ children }: { children?: ReactNode }) {
     const styledHeadRows = headRows.map((row, ri) => {
       const cells = Children.toArray((row.props as any).children).filter(isValidElement) as ReactElement[];
       const styledCells = cells.map((c, ci) =>
-        styleCell(c, { numeric: numericCols.has(ci), isHeader: true }),
+        styleCell(c, { numeric: numericCols.has(ci), isHeader: true, wide: isWide }),
       );
       return cloneElement(row, { key: `hr-${ri}`, className: mergeClass((row.props as any).className, 'border-b-2 border-mercury-red') }, styledCells);
     });
@@ -123,6 +136,7 @@ export function BlogTable({ children }: { children?: ReactNode }) {
           isHeader: false,
           totalRow: isTotal,
           totalCell: cellKind,
+          wide: isWide,
         });
         if (isTotal && cellKind === 'value') {
           return cloneElement(styled, { 'data-blog-cell-type': 'total-value' } as any);
@@ -142,18 +156,6 @@ export function BlogTable({ children }: { children?: ReactNode }) {
     newTbody = cloneElement(tbody, {}, styledBodyRows);
   }
 
-  // Determine column count (prefer thead, fall back to first body row).
-  let colCount = 0;
-  if (thead) {
-    const headRows = Children.toArray((thead.props as any).children).filter(isValidElement) as ReactElement[];
-    if (headRows[0]) {
-      colCount = (Children.toArray((headRows[0].props as any).children).filter(isValidElement) as ReactElement[]).length;
-    }
-  }
-  if (!colCount && bodyRows[0]) {
-    colCount = (Children.toArray((bodyRows[0].props as any).children).filter(isValidElement) as ReactElement[]).length;
-  }
-  const isWide = colCount >= 5;
 
   const wrapperClass = [
     'not-prose my-8 w-full rounded-2xl border border-border/30 bg-repower-paper p-3 md:p-4 shadow-sm',
