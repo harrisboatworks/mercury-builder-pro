@@ -26,12 +26,14 @@ interface CellOpts {
   isHeader: boolean;
   totalRow?: boolean;
   totalCell?: 'label' | 'value' | null;
+  wide?: boolean;
 }
 
 function styleCell(cell: ReactElement, opts: CellOpts): ReactElement {
+  const padX = opts.wide ? 'px-4 lg:px-3' : 'px-4';
   const base = opts.isHeader
-    ? 'px-4 py-3 text-[11px] uppercase tracking-[0.14em] text-repower-navy-900 font-semibold'
-    : 'px-4 py-3 text-sm text-repower-navy-900/85';
+    ? `${padX} py-3 text-[11px] uppercase tracking-[0.14em] text-repower-navy-900 font-semibold`
+    : `${padX} py-3 text-sm text-repower-navy-900/85`;
   const align = opts.numeric ? 'text-right tabular-nums font-display' : 'text-left';
   let extra = '';
   if (opts.totalRow && opts.totalCell === 'label') {
