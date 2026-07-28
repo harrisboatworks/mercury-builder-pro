@@ -1,12 +1,7 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md
 last_updated: 2026-06-29
-currency: CAD
-pickup_only: true
-delivery_offered: false
 location: Gores Landing, ON, Canada
-final_quote_requires_dealer_confirmation: true
-verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Overheating at High Speed: What to Check"
 description: "Your Mercury overheat alarm fires at high speed but not at idle? Here's the 5-step check, from intake screens to the poppet valve, plus when to bring it in."
 category: "Service"

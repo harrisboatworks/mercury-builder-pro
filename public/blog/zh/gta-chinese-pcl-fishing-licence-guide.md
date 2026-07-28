@@ -4,9 +4,9 @@ last_updated: 2026-05-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "GTA 华人船驾照（PCL）+ 安省钓鱼证完整办理指南"
 description: "多伦多华人办理加拿大 Pleasure Craft Operator Card（PCL）船驾照与安省钓鱼证完整流程：考试、费用、有效期、Rice Lake 钓鱼规则、罚款风险，来自 Harris Boat Works。"
 category: "mandarin"

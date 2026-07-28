@@ -4,9 +4,9 @@ last_updated: 2026-07-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?"
 description: "Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing."
 category: "Guide d'achat"

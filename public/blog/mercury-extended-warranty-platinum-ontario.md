@@ -4,9 +4,9 @@ last_updated: 2026-07-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury Extended Warranty Ontario"
 description: "Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term."
 category: "Warranty & Protection"
@@ -232,6 +232,11 @@ No. Oil changes, impellers, plugs, anodes, propeller wear, those are maintenance
 ### Where can I see current Canadian Platinum pricing?
 
 Use the Mercury Product Protection page at /mercury-product-protection for the maintained rate card by horsepower and term. HBW confirms final eligibility and price by serial number.
+
+## Related guides
+
+- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
+- [Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)](/blog/legend-boats-warranty-canada-wowranty-guide-2026), the Legend Boats WOWranty guide
 
 ## Next steps
 

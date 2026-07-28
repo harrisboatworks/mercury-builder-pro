@@ -4,9 +4,9 @@ last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)"
 description: "La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une hivernisation incomplète."
 category: "Dépannage"

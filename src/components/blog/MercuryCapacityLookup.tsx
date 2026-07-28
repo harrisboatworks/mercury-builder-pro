@@ -1,6 +1,10 @@
 import { useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
-import { mercuryOutboardCapacities } from '@/data/mercuryOutboardCapacities';
+import {
+  mercuryOutboardCapacities,
+  formatCrankcaseCapacity,
+  formatGearcaseCapacity,
+} from '@/data/mercuryOutboardCapacities';
 
 type HorsepowerBand = 'all' | 'portable' | 'midrange' | 'high';
 
@@ -24,10 +28,6 @@ function matchesBand(model: string, band: HorsepowerBand): boolean {
   return hp > 115;
 }
 
-function formatGearcaseCapacity(value: string): string {
-  if (value === 'None' || value === 'Not listed') return value;
-  return `${value} oz`;
-}
 
 export function MercuryCapacityLookup() {
   const [query, setQuery] = useState('');
@@ -55,7 +55,7 @@ export function MercuryCapacityLookup() {
   return (
     <section
       aria-labelledby="mercury-capacity-lookup-heading"
-      className="not-prose my-8 overflow-hidden rounded-2xl border border-repower-navy-900/15 bg-white shadow-sm"
+      className="not-prose my-8 overflow-hidden rounded-2xl border border-repower-navy-900/15 bg-white shadow-sm lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[min(1200px,calc(100vw-2rem))] lg:max-w-none"
     >
       <div className="bg-repower-navy-900 px-5 py-6 text-white sm:px-7">
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-repower-mercury-red">
@@ -131,13 +131,13 @@ export function MercuryCapacityLookup() {
                   <div>
                     <dt className="text-repower-navy-900/55">Crankcase</dt>
                     <dd className="font-semibold text-repower-navy-900">
-                      {row.crankcaseQt} qt / {row.crankcaseL} L
+                      {formatCrankcaseCapacity(row)}
                     </dd>
                   </div>
                   <div>
                     <dt className="text-repower-navy-900/55">Gearcase</dt>
                     <dd className="font-semibold text-repower-navy-900">
-                      {formatGearcaseCapacity(row.gearcaseOz)}
+                      {formatGearcaseCapacity(row)}
                     </dd>
                   </div>
                   <div className="col-span-2">
@@ -153,41 +153,43 @@ export function MercuryCapacityLookup() {
             ))}
           </div>
 
-          <div className="hidden overflow-x-auto md:block">
+          <div className="hidden overflow-x-auto md:block lg:overflow-x-visible">
             <table className="w-full border-collapse text-left text-sm">
               <thead className="bg-repower-navy-900/[0.055] text-xs uppercase tracking-wide text-repower-navy-900/70">
                 <tr>
-                  <th className="px-4 py-3">Model / HP</th>
-                  <th className="px-4 py-3">Year and identifier</th>
-                  <th className="px-4 py-3 text-right">Crankcase</th>
-                  <th className="px-4 py-3 text-right">Gearcase</th>
-                  <th className="px-4 py-3">Oil</th>
-                  <th className="px-4 py-3">Oil filter</th>
+                  <th className="px-4 py-3 lg:px-3">Model / HP</th>
+                  <th className="px-4 py-3 lg:px-3">Year and identifier</th>
+                  <th className="px-4 py-3 lg:px-3 text-right">Crankcase</th>
+                  <th className="px-4 py-3 lg:px-3 text-right">Gearcase</th>
+                  <th className="px-4 py-3 lg:px-3">Oil</th>
+                  <th className="px-4 py-3 lg:px-3">Oil filter</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-repower-navy-900/10">
                 {rows.map((row) => (
                   <tr key={`${row.model}-${row.year}-${row.notes}`} className="align-top">
-                    <th className="whitespace-nowrap px-4 py-4 font-bold text-repower-navy-900">
+                    <th className="whitespace-nowrap px-4 py-4 lg:px-3 font-bold text-repower-navy-900">
                       {row.model}
                     </th>
-                    <td className="min-w-52 px-4 py-4">
+                    <td className="px-4 py-4 lg:px-3 md:min-w-52 lg:min-w-0">
                       <span className="font-semibold text-repower-mercury-red">{row.year}</span>
                       <span className="mt-1 block text-repower-navy-900/65">{row.notes}</span>
                     </td>
-                    <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
-                      {row.crankcaseQt} qt
+                    <td className="whitespace-nowrap px-4 py-4 lg:px-3 text-right font-semibold text-repower-navy-900">
+                      {parseFloat(row.crankcaseL) < 1
+                        ? `${Math.round((parseFloat(row.crankcaseL) * 1000) / 5) * 5} mL`
+                        : `${row.crankcaseL} L`}
                       <span className="block text-xs font-normal text-repower-navy-900/55">
-                        {row.crankcaseL} L
+                        {row.crankcaseQt} US qt
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
-                      {formatGearcaseCapacity(row.gearcaseOz)}
+                    <td className="whitespace-nowrap px-4 py-4 lg:px-3 text-right font-semibold text-repower-navy-900">
+                      {formatGearcaseCapacity(row)}
                     </td>
-                    <td className="min-w-48 px-4 py-4 text-repower-navy-900">
+                    <td className="px-4 py-4 lg:px-3 text-repower-navy-900 md:min-w-48 lg:min-w-0">
                       {row.crankcaseOil}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-4 font-mono font-semibold text-repower-navy-900">
+                    <td className="whitespace-nowrap px-4 py-4 lg:px-3 font-mono font-semibold text-repower-navy-900">
                       {row.oilFilter}
                     </td>
                   </tr>

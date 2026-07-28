@@ -4,9 +4,9 @@ last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "How to Read Your Boat's Capacity Plate (Ontario Guide)"
 description: "What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often."
 category: "Buying Guides"

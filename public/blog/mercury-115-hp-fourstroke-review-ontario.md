@@ -22,10 +22,10 @@ language: en-CA
 
 > An honest Mercury 115 HP FourStroke review for Ontario, with real freshwater tests, Pro XS and Command Thrust differences, propeller quirks and buyer advice.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-05-10
-**Last updated:** 2026-07-27
-**Read time:** 18 min read
+**Category:** Mercury Buying Guides  
+**Published:** 2026-05-10  
+**Last updated:** 2026-07-27  
+**Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
 > **Quick answer:** Mercury's current 115 HP FourStroke is a quiet, relatively light 2.1-litre inline-four that works very well when the boat, gearcase and propeller match. Choose the standard gearcase for a recreational V-hull, Command Thrust for a pontoon or specific heavy workboat, and Pro XS when the hull and owner can use its higher operating range.
@@ -415,3 +415,4 @@ Pricing varies by calibration, gearcase, shaft length and current Mercury progra
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

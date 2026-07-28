@@ -24,7 +24,7 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Cana
 - **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.
 - **Final price** is always confirmed by Harris Boat Works staff before purchase.
 - **Verado** is special-order only, not part of default inventory and not actively promoted.
-- **Standard gasoline-outboard warranty is 3 years.** Avator outboards, batteries and charging equipment have component-specific terms; confirm the current written Mercury warranty for the exact package. Bonus years apply only when an eligible promotion is active.
+- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.
 - Financing minimum: **$5,000 CAD** total. Current promotional offer: **5.48% APR (OAC)**; confirm current terms at https://www.mercuryrepower.ca/promotions.
 - Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.
 
@@ -327,6 +327,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md)
 - [Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?](https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md)
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md)
+- [Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)](https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026.md)
 - [Guide de remotorisation Mercury : prix, délais, rentabilité [fr-CA]](https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md)
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation? [fr-CA]](https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison.md)
 - [Guide d'hivernisation de votre moteur Mercury hors-bord en Ontario [fr-CA]](https://www.mercuryrepower.ca/blog/fr/hivernisation-moteur-mercury-ontario.md)

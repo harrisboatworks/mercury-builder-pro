@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？"
 description: "多伦多华人买 Mercury 船外机前，别只问最低价。看清楚安装、rigging、prop、warranty、lake test、service、dealer trust 和 out-the-door quote。"
 category: "Buying Guides"

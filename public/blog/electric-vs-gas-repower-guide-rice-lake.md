@@ -4,9 +4,9 @@ last_updated: 2026-07-15
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)"
 description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat."
 category: "Buying Guide"

@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Mercury 115马力 vs 150马力舷外机：如何选择？"
 description: "Mercury FourStroke 115马力和150马力舷外机详细对比。价格、性能、油耗、适用船型全面分析，帮助您做出正确选择。"
 category: "产品对比"

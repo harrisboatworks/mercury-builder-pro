@@ -4,9 +4,9 @@ last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南"
 description: "莱斯湖 GTA 华人家庭船型选择:pontoon 平台船 vs 钓鱼船。稳定性、人数、油耗、价格对比。HBW Legend 加拿大本地品牌选择。"
 category: "租船与钓鱼"

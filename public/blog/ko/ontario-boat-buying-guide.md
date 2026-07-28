@@ -4,9 +4,9 @@ last_updated: 2026-04-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지"
 description: "온타리오에서 보트를 처음 구매하려는 한인을 위한 실용 가이드. PCOC 취득, 보트 종류, 보관 방법, 연간 유지비, 신규 구매 vs 중고 vs 엔진 교체(repower)까지 한 번에 정리했습니다."
 category: "구매 가이드"

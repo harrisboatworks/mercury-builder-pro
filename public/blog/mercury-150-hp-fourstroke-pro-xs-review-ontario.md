@@ -22,10 +22,10 @@ language: en-CA
 
 > An honest Mercury 150 HP review for Ontario, comparing the current FourStroke and Pro XS with exact specs, freshwater tests and candid buyer advice.
 
-**Category:** Mercury Buying Guides
-**Published:** 2026-07-26
-**Last updated:** 2026-07-27
-**Read time:** 18 min read
+**Category:** Mercury Buying Guides  
+**Published:** 2026-07-26  
+**Last updated:** 2026-07-27  
+**Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario
 
 > **Quick answer:** The Mercury 150 FourStroke and 150 Pro XS use the same 3.0-litre inline-four platform and are both rated at 150 HP. For most family runabouts and normal cruising pontoons, the standard FourStroke is the straightforward choice. Pro XS earns its place on a responsive fishing or performance hull where the owner will finish the mounting and propeller setup. It is not a secret higher-horsepower motor.
@@ -404,3 +404,4 @@ The price depends on model, shaft length, rigging and current Canadian programs.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

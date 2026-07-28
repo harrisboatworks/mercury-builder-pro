@@ -4,9 +4,9 @@ last_updated: 2026-05-13
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury"
 description: "Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux..."
 category: "Avis produit"

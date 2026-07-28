@@ -162,7 +162,7 @@ export const blogArticles: BlogArticle[] = [
       'milky-gearcase-oil-meaning-cost-ontario',
       'diy-mercury-outboard-winterization-guide',
     ],
-    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.8, 5.28 or 5.5 US quarts depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
+    content: `> **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.54 L (4.8 US qt), 5 L (5.28 US qt) or 5.2 L (5.5 US qt) depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
 
 The label on the cowl gets you into the right neighbourhood. It does not always identify the powerhead, gearcase or serial break that sets the capacity.
 
@@ -201,9 +201,9 @@ The chart lists three 9.9 HP FourStroke groups:
 
 | Year and engine | Crankcase | Gearcase |
 |---|---:|---:|
-| 1995-1998, 232 cc | 1.05 qt / 0.99 L | 6.8 oz |
-| 1999-2004, 323 cc | 1.05 qt / 0.99 L | 6.8 oz |
-| 2005+, 209 cc | 0.84 qt / 0.79 L | 10.8 oz |
+| 1995-1998, 232 cc | 990 mL (1.05 US qt) | 200 mL (6.8 US fl oz) |
+| 1999-2004, 323 cc | 990 mL (1.05 US qt) | 200 mL (6.8 US fl oz) |
+| 2005+, 209 cc | 790 mL (0.84 US qt) | 320 mL (10.8 US fl oz) |
 
 The newest row takes less crankcase oil but more gear lube than the older rows. "Mercury 9.9" is not enough information.
 
@@ -213,18 +213,18 @@ The serial break matters even within the same model year:
 
 | 90 HP family | Crankcase | Gearcase | Oil filter |
 |---|---:|---:|---|
-| 2006 EFI, serial 1B366822 and below | 4.8 qt / 4.54 L | 22.5 oz | 8M0162830 |
-| 2006+ EFI, serial 1B366823 and up | 5.28 qt / 5 L | 24 oz | 877761Q01 |
-| 2014+ 2.1 L, serial 2B094996 and up | 5.5 qt / 5.2 L | 27.1 oz | 8M0162830 |
+| 2006 EFI, serial 1B366822 and below | 4.54 L (4.8 US qt) | 665 mL (22.5 US fl oz) | 8M0162830 |
+| 2006+ EFI, serial 1B366823 and up | 5 L (5.28 US qt) | 710 mL (24 US fl oz) | 877761Q01 |
+| 2014+ 2.1 L, serial 2B094996 and up | 5.2 L (5.5 US qt) | 800 mL (27.1 US fl oz) | 8M0162830 |
 
 That is a three-way capacity split behind one cowl number.
 
 ### A 60 HP gearcase example
 
-The 996 cc 60 FourStroke is listed at 3.17 US quarts, or 3 litres, of crankcase oil. Its gearcase quantity changes with the lower unit:
+The 996 cc 60 FourStroke is listed at 3 litres (3.17 US quarts) of crankcase oil. Its gearcase quantity changes with the lower unit:
 
-- Standard gearcase: 11.5 oz
-- BigFoot or Command Thrust gearcase: 24 oz
+- Standard gearcase: 340 mL (11.5 US fl oz)
+- BigFoot or Command Thrust gearcase: 710 mL (24 US fl oz)
 
 If the gearcase is not identified, the lower-unit fill quantity can be off by more than two to one.
 
@@ -292,11 +292,11 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     faqs: [
       {
         question: 'How much oil does a Mercury 90 HP FourStroke take?',
-        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.8 US quarts. The later 1.7 L EFI at serial 1B366823 and up is 5.28 quarts. The 2014+ 2.1 L family at serial 2B094996 and up is 5.5 quarts. Confirm the final level on the dipstick and in the exact manual.',
+        answer: 'It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.54 L (4.8 US quarts). The later 1.7 L EFI at serial 1B366823 and up is 5 L (5.28 US quarts). The 2014+ 2.1 L family at serial 2B094996 and up is 5.2 L (5.5 US quarts). Confirm the final level on the dipstick and in the exact manual.',
       },
       {
         question: 'How much oil does a Mercury 60 HP FourStroke take?',
-        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3.17 US quarts, or 3 litres, of crankcase oil. The gearcase is listed at 11.5 ounces for the standard lower unit and 24 ounces for the BigFoot or Command Thrust lower unit.',
+        answer: 'The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3 litres (3.17 US quarts) of crankcase oil. The gearcase is listed at 340 mL (11.5 US fl oz) for the standard lower unit and 710 mL (24 US fl oz) for the BigFoot or Command Thrust lower unit.',
       },
       {
         question: 'Can I fill a Mercury outboard with the exact chart capacity?',
@@ -39852,6 +39852,270 @@ Whether you're coming up on 100 hours, want that early oil change, or just notic
 - [SmartCraft Connect Guide for Ontario Boaters](/blog/mercury-smartcraft-connect-guide-ontario)
 - [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
+`,
+  },
+  {
+    slug: 'legend-boats-warranty-canada-wowranty-guide-2026',
+    title: 'Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)',
+    description: 'Legend Boats warranty explained: 6-year WOWranty, Leakproof for Life, pontoon 5 | 10 | Lifetime, plus motor, trailer and electronics coverage.',
+    image: '/lovable-uploads/hero-legend-warranty-guide-2026.webp',
+    imageAlt: 'Official Legend Boats image of a blue XT fishing boat, Mercury outboard and Legend Glide-On trailer.',
+    author: 'Jay Harris',
+    datePublished: '2026-07-27',
+    dateModified: '2026-07-27',
+    publishDate: '2026-07-27',
+    category: 'Buying Guide',
+    readTime: '12 min read',
+    keywords: [
+      'Legend Boats warranty Canada',
+      'Legend WOWranty',
+      'Legend pontoon warranty',
+      'Leakproof for Life warranty',
+      'Legend boat warranty transfer',
+    ],
+    faqs: [
+      { question: 'Does the Legend 6-year WOWranty cover every component for six years?', answer: 'No. It covers most qualifying non-structural components that Legend manufactured or installed when a factory defect causes the failure. The motor, trailer, trolling motor, electronics, batteries, dealer-added accessories, consumables and wear items may follow separate terms.' },
+      { question: 'What does Leakproof for Life cover?', answer: "For an eligible all-welded Legend, it covers qualifying leaks through the hull structure caused by defects in factory material or workmanship for as long as the original purchaser owns the boat. Impact, corrosion, misuse, poor trailer support and unauthorized modifications are not factory defects." },
+      { question: 'Can a Legend hull warranty transfer to a second owner?', answer: "Qualifying structural protection may transfer once for up to 10 years from the first owner's original purchase date. Transfer normally requires a timely application, dealer inspection, condition photographs, a fee and Legend approval. Confirm the exact boat and current fee before completing the sale." },
+      { question: 'Do current Legend pontoons use the 6-year WOWranty?', answer: 'Current pontoons use a separate 5 | 10 | Lifetime structure. Legend publishes lifetime structural parts with up to 10 years of labour, 10 years on qualifying canvas and upholstery, and 5 years on factory-installed tech, electronics and structural fibreglass.' },
+      { question: 'Is the Mercury outboard covered by Legend?', answer: "The Mercury outboard follows Mercury's warranty, not the Legend hull warranty. Current eligible pleasure-use FourStroke, Pro XS and Verado outboards generally publish 3-year limited and 3-year corrosion coverage running concurrently. HBW verifies the actual term by serial number." },
+      { question: 'Does Legend cover the Minn Kota trolling motor and charger?', answer: 'The claim may start with Minn Kota unless broader factory-installed pontoon coverage applies. Most new freshwater Minn Kota motors publish 2 years on the product and limited-lifetime composite shaft coverage. Onboard chargers and maintainers publish 3 years. Exact Canadian terms are model-specific.' },
+      { question: 'What trailer warranty comes with a Legend package?', answer: "Legend's Glide-On trailers are supplied by ShoreLand'r. The current summary publishes 1-year basic coverage and 5-year fabricated parts and frame coverage. Tires, alignment, finish, normal wear, poor adjustment, corrosion, abuse and alterations may be excluded." },
+      { question: 'What should I bring for a warranty claim?', answer: 'Bring the bill of sale, HIN, delivery date, motor serial number, trailer VIN, accessory serial numbers, registration confirmations, maintenance records and clear photographs. If there is an alarm or screen message, record it before shutting the system down.' },
+    ],
+    content: `*Last reviewed: 2026-07-27*
+
+> **Quick answer:** A Legend package is not covered by one blanket warranty. Family and fishing boats combine structural coverage with the 6-year WOWranty, while current pontoons use a separate 5 | 10 | Lifetime program. Mercury, ShoreLand'r, Minn Kota, Humminbird and Garmin may cover their own products. The HIN, model year and written warranty decide the final coverage.
+
+A new Legend can arrive on one trailer with several different warranty providers.
+
+That is the part most warranty summaries gloss over. Legend may cover the boat and qualifying factory-installed equipment. Mercury covers the outboard. ShoreLand'r covers the trailer. Minn Kota, Humminbird and Garmin may each have their own terms.
+
+This guide puts those pieces in one place, including the claim steps and exclusions that matter after the sale.
+
+![Legend WOWranty logo](/lovable-uploads/inline/inline-legend-wowranty-logo.webp "Legend's official WOWranty logo. The written model-year warranty for the exact boat still controls.")
+
+## One Boat Package, Several Warranties
+
+The fastest way to understand a Legend warranty is to stop thinking of the package as one product.
+
+It is usually several products travelling together:
+
+- **The boat:** hull, floor, seats, wiring, pumps, canvas and factory-installed components
+- **The motor:** Mercury outboard, controls, propeller and related rigging
+- **The trailer:** Legend Glide-On trailer supplied by ShoreLand'r
+- **The trolling motor and charger:** normally Minn Kota
+- **The navigation and audio equipment:** commonly Humminbird, Garmin and other component manufacturers
+
+The provider that built or warranted the failed part usually controls the claim. Factory installation can change that route, especially on current pontoons where Legend publishes broader coverage for factory-installed technology and electronics.
+
+If two sources seem to conflict, use the warranty tied to the boat's **model year, HIN, delivery date and product serial number**. A current website summary is useful, but it does not replace the written warranty issued with the exact package.
+
+## Which Legend Boat Warranty Applies?
+
+Legend publishes different coverage structures for family and fishing boats, R-Series riveted boats and current pontoons.
+
+| Boat type | Main structural coverage | Other published coverage | What to confirm |
+|---|---|---|---|
+| **All-welded family and fishing boat** | Leakproof for Life for the original owner | Lifetime floor warranty and 6-year WOWranty on most qualifying components | Exact hull schedule, canvas term and transfer eligibility |
+| **R-Series / riveted boat** | Lifetime main seam warranty for the original owner | 10 years on most other hull components, lifetime floor and 6-year WOWranty | Hull prefix, model eligibility and transfer conditions |
+| **Current Legend pontoon** | Lifetime structural parts and up to 10 years of labour | 10-year canvas and upholstery, 5-year tech/electronics/fibreglass | Model year and whether the equipment was factory installed |
+
+![Legend all-welded hull warranty graphic](/lovable-uploads/inline/inline-legend-welded-hull-warranty.webp "Legend's official all-welded hull warranty graphic.")
+
+### All-Welded Models
+
+Legend's [current WOWranty page](https://www.legendboats.com/legend-boats-6-year-wowranty/) describes Leakproof for Life as coverage against qualifying leaks through the hull structure caused by defects in factory material or workmanship for as long as the original purchaser owns the boat.
+
+That does not turn every leak into warranty work. Impact damage, corrosion, misuse, poor trailer support, overpowering and unauthorized modifications remain different issues.
+
+Legend also publishes a **lifetime floor warranty against rot** for qualifying treated marine-grade plywood. Material coverage and the labour or finish required to access it may not have the same term.
+
+### R-Series and Other Riveted Models
+
+R-Series boats use a different structural promise. Legend publishes a **lifetime main seam warranty** for the original owner and **10-year coverage on most other hull components**.
+
+Older Ultralite, utility and legacy fibreglass boats may use their own schedules. HBW checks the HIN before promising a term because the current family summary cannot tell you what applies to every older hull.
+
+### Second-Owner Coverage
+
+Legend says qualifying structural coverage may transfer once, giving a second owner protection for up to 10 years from the original purchase date.
+
+The older owner manual calls for a prompt transfer application, an authorized dealer inspection, condition photographs, a fee and Legend approval. The public warranty page does not publish the current fee. Confirm the current amount and eligibility before including it in a used-boat deal.
+
+## What the 6-Year WOWranty Covers
+
+The 6-year WOWranty applies to most qualifying non-structural components that Legend manufactured or installed when a factory defect causes the failure.
+
+It is not six years on every part attached to the boat.
+
+Typical built-in items listed in Legend's older detailed coverage include:
+
+- Carpet, vinyl and Duraweave floor finishes
+- Seats, upholstery, bases, boxes, frames, posts and sliders
+- Switches, breakers, steering-wheel components, caps and windscreens
+- Lights, horn, bilge pumps and livewell pumps
+- Rod holders and other qualifying factory-installed hardware
+
+Items that commonly follow a separate warranty include:
+
+- Mercury outboard, controls, propeller and drivetrain components
+- Trailer, tires and trailer wear items
+- Minn Kota trolling motor and charger
+- Humminbird and Garmin navigation equipment
+- Stereo components, batteries and dealer-added accessories
+- Bulbs, consumables and normal wear items
+
+### Canvas Coverage Is Model-Specific
+
+The main Legend warranty page publishes **3 years on qualifying ProTech canvas material plus 1 year on stitching, zippers, seams and top components**.
+
+Current XT pages publish **5 years on the qualifying canvas material plus 1 year on the top components**. Current pontoons publish a different 10-year canvas and bimini-frame term.
+
+That is why a salesperson should not give one canvas answer for every Legend boat.
+
+## Why Current Pontoon Coverage Is Different
+
+The older HBW handout treated pontoons much like family and fishing boats. Legend's current site now gives pontoons their own 5 | 10 | Lifetime structure.
+
+![Legend pontoon lifetime structure graphic](/lovable-uploads/inline/inline-legend-pontoon-lifetime-structure.png "Legend's official graphic for current pontoon lifetime structural coverage.")
+
+| Current pontoon category | Published term | What the summary includes |
+|---|---|---|
+| **Structure** | Lifetime parts, up to 10 years labour | Pontoon tubes, cross-channels, seat frames, motor mounts, structural railing and wood decking |
+| **Canvas and bimini frames** | 10 years parts and labour | Manufacturer and material defects in standard mooring covers and bimini tops |
+| **Vinyl and upholstery** | 10 years parts and labour | Specified abnormal fading, peeling, cracking or loss of strength under normal use |
+| **Tech, electronics and fibreglass** | 5 years | Factory-installed navigation, audio, helm electronics, wiring, lighting and structural fibreglass |
+
+![Legend pontoon five-year technology warranty graphic](/lovable-uploads/inline/inline-legend-pontoon-tech-warranty.png "Legend's official graphic for current pontoon tech, electronics and fibreglass coverage.")
+
+Factory installation matters. A Garmin screen installed with the boat may have a different claim route from a screen added two seasons later.
+
+The current pontoon program also does not erase normal exclusions. Wear, impact, neglect, incompatible cleaners, mildew caused by care or storage conditions, aftermarket alterations and unauthorized repairs can still fall outside factory-defect coverage.
+
+## How the Motor, Trailer, Minn Kota and Electronics Fit
+
+This is where a buyer handout is more useful than a single manufacturer page.
+
+| Product | Current published summary | Where the claim usually starts |
+|---|---|---|
+| **Mercury FourStroke, Pro XS, Verado or Jet outboard** | Generally 3-year pleasure-use limited warranty plus 3-year corrosion coverage running concurrently | HBW checks registration, use type and remaining term by serial number |
+| **Mercury controls and rigging** | May match the engine term when supplied and installed as part of the qualifying package | Confirm the exact part and installation record |
+| **Legend Glide-On / ShoreLand'r trailer** | 1-year basic coverage and 5-year fabricated parts and frame coverage | Trailer VIN, delivery date, photographs and adjustment history |
+| **Most new Minn Kota freshwater trolling motors** | 2 years on the product plus limited-lifetime composite shaft coverage | Original receipt, serial label and authorized service route |
+| **Select Minn Kota QUEST / Advanced GPS models** | 2 years with a possible third year after eligible registration | Confirm the exact Canadian model and registration |
+| **Minn Kota onboard charger or maintainer** | 3 years | Charger model, serial number, receipt and installation details |
+| **Humminbird** | Commonly 1 or 2 years depending on model | Product serial and model-specific warranty |
+| **Garmin marine products** | Often 2 years for products listed in the current marine policy | Product serial and exact product listing |
+
+Mercury's 3-year limited and 3-year corrosion warranties are **concurrent**, not six stacked years. Any Mercury Product Protection or other extended plan is a separate written contract.
+
+For a deeper motor explanation, read our [Mercury Outboard Warranty in Canada guide](/blog/mercury-outboard-warranty-canada-2026). If an engine warning is involved, use the [Mercury SmartCraft alarm guide](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and the manual for the exact motor.
+
+The downloadable dealer guide also keeps the full Minn Kota product table, including Ultrex, Vantage, E-Drive, i-Pilot, CoPilot, DeckHand and factory-reconditioned motors.
+
+## Common Mistakes
+
+**Assuming the dealer can approve the claim.** We can inspect, document and submit it. Legend or the component manufacturer decides whether the failure is covered.
+
+**Starting the repair first.** Disassembly can erase evidence or create an authorization problem. Photograph the failure and confirm the claim route before work starts.
+
+**Losing serial numbers.** A clear serial-label photograph at delivery can save a surprising amount of time three years later.
+
+**Calling impact damage a leak warranty.** Leakproof for Life covers qualifying factory defects. It does not turn a strike, corrosion problem or poor trailer setup into a manufacturing defect.
+
+**Assuming removal and transportation are included.** Haul-out, launch, shipping, towing, travel, diagnosis, removal and reinstallation may not be covered even when the part itself is.
+
+## What HBW Checks Before Starting a Warranty Claim
+
+We start with the paperwork because that is usually faster than starting with a wrench.
+
+1. **Boat HIN, model year and delivery date**
+2. **Motor model, serial number, registered owner and use type**
+3. **Trailer VIN**
+4. **Trolling motor, charger, electronics and stereo serial numbers**
+5. **Bill of sale and registration confirmations**
+6. **Maintenance records and any protection-plan contract**
+7. **Overall photographs, close-up photographs and screen or alarm messages**
+
+If the problem affects safety or continued use could cause more damage, stop using the boat. Do not cut cables, remove a transducer or authorize an outside repair until the warranty provider is clear.
+
+HBW is an authorized Legend dealer. We can inspect the boat, verify the records and submit the claim, but the written warranty and manufacturer's decision still control.
+
+## Download the Legend Warranty Guide
+
+The full article explains the details. The PDF is the practical version to keep with the boat records.
+
+**[Download the 7-page Legend Warranty and Equipment Guide (PDF)](/downloads/legend-warranty-equipment-guide-2026.pdf)**
+
+It includes:
+
+- A one-page claim-routing map
+- All-welded, R-Series and pontoon coverage tables
+- Legend registration, transfer and claim steps
+- Mercury warranty and warning-horn reference
+- The full Minn Kota warranty and service table
+- Trailer, Humminbird, Garmin, canvas and accessory summaries
+- A fill-in claim-information sheet
+
+Print it, mark the equipment on the boat and keep it with the bill of sale and registration confirmations.
+
+
+## Frequently Asked Questions
+
+**Does the Legend 6-year WOWranty cover every component for six years?**
+
+No. It covers most qualifying non-structural components that Legend manufactured or installed when a factory defect causes the failure. The motor, trailer, trolling motor, electronics, batteries, dealer-added accessories, consumables and wear items may follow separate terms.
+
+**What does Leakproof for Life cover?**
+
+For an eligible all-welded Legend, it covers qualifying leaks through the hull structure caused by defects in factory material or workmanship for as long as the original purchaser owns the boat. Impact, corrosion, misuse, poor trailer support and unauthorized modifications are not factory defects.
+
+**Can a Legend hull warranty transfer to a second owner?**
+
+Qualifying structural protection may transfer once for up to 10 years from the first owner's original purchase date. Transfer normally requires a timely application, dealer inspection, condition photographs, a fee and Legend approval. Confirm the exact boat and current fee before completing the sale.
+
+**Do current Legend pontoons use the 6-year WOWranty?**
+
+Current pontoons use a separate 5 | 10 | Lifetime structure. Legend publishes lifetime structural parts with up to 10 years of labour, 10 years on qualifying canvas and upholstery, and 5 years on factory-installed tech, electronics and structural fibreglass.
+
+**Is the Mercury outboard covered by Legend?**
+
+The Mercury outboard follows Mercury's warranty, not the Legend hull warranty. Current eligible pleasure-use FourStroke, Pro XS and Verado outboards generally publish 3-year limited and 3-year corrosion coverage running concurrently. HBW verifies the actual term by serial number.
+
+**Does Legend cover the Minn Kota trolling motor and charger?**
+
+The claim may start with Minn Kota unless broader factory-installed pontoon coverage applies. Most new freshwater Minn Kota motors publish 2 years on the product and limited-lifetime composite shaft coverage. Onboard chargers and maintainers publish 3 years. Exact Canadian terms are model-specific.
+
+**What trailer warranty comes with a Legend package?**
+
+Legend's Glide-On trailers are supplied by ShoreLand'r. The current summary publishes 1-year basic coverage and 5-year fabricated parts and frame coverage. Tires, alignment, finish, normal wear, poor adjustment, corrosion, abuse and alterations may be excluded.
+
+**What should I bring for a warranty claim?**
+
+Bring the bill of sale, HIN, delivery date, motor serial number, trailer VIN, accessory serial numbers, registration confirmations, maintenance records and clear photographs. If there is an alarm or screen message, record it before shutting the system down.
+
+
+## Need Us to Check a Specific Legend?
+
+Put in a [service request at hbw.wiki/service](https://hbw.wiki/service) with the HIN, serial numbers and photographs. We will confirm which warranty provider should see the claim before repairs start.
+
+Shopping instead of troubleshooting? See our [Legend and Mercury package guide](/blog/legend-boats-mercury-power-package-guide-ontario) or browse [current Legend inventory](https://www.harrisboatworks.ca/search/inventory/availability/In%20Stock/brand/Legend/type/Boats).
+
+**Phone:** 905-342-2153  
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
+**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+## Sources
+
+- [Legend Boats WOWranty](https://www.legendboats.com/legend-boats-6-year-wowranty/)
+- [Legend XT Series current warranty summary](https://www.legendboats.com/xt-series/)
+- [Legend Boats Owner's Manual](https://online.flipbuilder.com/jxio/yegf/)
+- [Mercury Canada warranty coverage and product protection](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection)
+- [ShoreLand'r boat and PWC trailer warranty](https://shorelandr.com/PDF_Docs/SL-Boat-PWC-Trailers-Warranty.pdf)
+- [Minn Kota warranty information](https://minnkota.johnsonoutdoors.com/us/support/warranty)
+- [Humminbird warranty information](https://humminbird.johnsonoutdoors.com/us/support/warranty)
+- [Garmin Canada marine warranty](https://www.garmin.com/en-CA/legal/marine-warranty/)
 `,
   },
 ];

@@ -4,9 +4,9 @@ last_updated: 2026-06-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "First-time fishing sa Rice Lake mula Toronto: Family Guide"
 description: "First-time fishing sa Rice Lake mula Toronto: fishing licence, boat rental, ano ang dadalhin, at mga family tip. Kumpletong Tagalog guide para sa pamilya."
 category: "Tagalog Guide"

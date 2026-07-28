@@ -4,9 +4,9 @@ last_updated: 2026-05-17
 currency: CAD
 pickup_only: true
 delivery_offered: false
-location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
+location: Gores Landing, ON, Canada
 title: "多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？"
 description: "多伦多和安省华人船主如何选择 Mercury 船外机马力？从 9.9、20、60、115、150HP 到 Pro XS，按船型、用途、10HP 门槛和 Rice Lake 使用场景解释。"
 category: "Buying Guides"

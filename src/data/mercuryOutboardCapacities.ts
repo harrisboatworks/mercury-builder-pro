@@ -97,10 +97,46 @@ function escapeCell(value: string): string {
   return value.replace(/\|/g, '\\|');
 }
 
+/**
+ * Metric-first display: Mercury publishes an official metric litre capacity
+ * in the 2026 Capacity Guide (8M0243459), so the L value is authoritative.
+ * US quarts are shown as a secondary reference. Small volumes below 1 L are
+ * rendered in millilitres (rounded to the nearest 5 mL) for a Canadian reader.
+ */
+export function formatCrankcaseCapacity(row: MercuryOutboardCapacityRow): string {
+  const liters = parseFloat(row.crankcaseL);
+  if (Number.isFinite(liters) && liters < 1) {
+    const mL = Math.round((liters * 1000) / 5) * 5;
+    return `${mL} mL (${row.crankcaseQt} US qt)`;
+  }
+  return `${row.crankcaseL} L (${row.crankcaseQt} US qt)`;
+}
+
+/**
+ * Metric-first display for gearcase capacities. Mercury lists gearcase
+ * volumes in US fluid ounces; we convert directly (1 US fl oz = 29.5735 mL)
+ * rounded to the nearest 5 mL, and keep the ounce figure in parentheses.
+ */
+export function formatGearcaseCapacity(row: MercuryOutboardCapacityRow): string {
+  const raw = row.gearcaseOz;
+  if (raw === 'None' || raw === 'Not listed') return raw;
+  const toML = (ozStr: string): string => {
+    const oz = parseFloat(ozStr);
+    if (!Number.isFinite(oz)) return ozStr;
+    return String(Math.round((oz * 29.5735) / 5) * 5);
+  };
+  if (raw.includes('/')) {
+    const parts = raw.split('/').map((s) => s.trim());
+    const mLParts = parts.map(toML).join(' / ');
+    return `${mLParts} mL (${raw} US fl oz)`;
+  }
+  return `${toML(raw)} mL (${raw} US fl oz)`;
+}
+
 export const mercuryCapacityTableMarkdown = [
-  '| Model / HP | Year | Identifying notes | Crankcase capacity | Gearcase capacity | Recommended oil | Oil filter |',
+  '| Model / HP | Year | Identifying notes | Crankcase capacity (L) | Gearcase capacity (mL) | Recommended oil | Oil filter |',
   '|---|---|---|---:|---:|---|---|',
   ...mercuryOutboardCapacities.map((row) =>
-    `| ${escapeCell(row.model)} | ${escapeCell(row.year)} | ${escapeCell(row.notes)} | ${row.crankcaseQt} qt / ${row.crankcaseL} L | ${row.gearcaseOz === 'None' || row.gearcaseOz === 'Not listed' ? row.gearcaseOz : `${row.gearcaseOz} oz`} | ${escapeCell(row.crankcaseOil)} | ${escapeCell(row.oilFilter)} |`,
+    `| ${escapeCell(row.model)} | ${escapeCell(row.year)} | ${escapeCell(row.notes)} | ${formatCrankcaseCapacity(row)} | ${formatGearcaseCapacity(row)} | ${escapeCell(row.crankcaseOil)} | ${escapeCell(row.oilFilter)} |`,
   ),
 ].join('\n');
