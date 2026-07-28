@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
 const migration = readFileSync(
-  'supabase/migrations/20260727140000_allow_fractional_quote_activity_motor_hp.sql',
+  'supabase/migrations/20260728173646_allow_fractional_quote_activity_motor_hp.sql',
   'utf8',
 );
 
