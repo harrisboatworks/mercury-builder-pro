@@ -3392,4 +3392,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/blog-heroes-2026-07/hero-mercury-60-fourstroke-freshwater-review.webp</image:loc>
+      <image:title><![CDATA[Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't]]></image:title>
+    </image:image>
+  </url>
 </urlset>

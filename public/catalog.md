@@ -254,6 +254,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Outdoor Boat Storage Rice Lake](https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md)
 - [Where to Launch Boat on Rice Lake](https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md)
 - [Mercury 9.9 EFI Review Ontario](https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md)
+- [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario.md)
 - [Mercury 90 HP FourStroke Review: Standard vs Command Thrust](https://www.mercuryrepower.ca/blog/mercury-90-hp-fourstroke-review-ontario.md)
 - [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md)
 - [Mercury 150 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md)
@@ -400,4 +401,3 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md)
 - [Outboard motor service at winterization sa Ontario (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md)
 - [Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein [hi]](https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md)
-
