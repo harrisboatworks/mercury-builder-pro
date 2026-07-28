@@ -159,7 +159,9 @@ export function BlogTable({ children }: { children?: ReactNode }) {
 
   const wrapperClass = [
     'not-prose my-8 w-full rounded-2xl border border-border/30 bg-repower-paper p-3 md:p-4 shadow-sm',
-    isWide ? 'lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[min(1200px,calc(100vw-2rem))] lg:max-w-none' : '',
+    isWide
+      ? 'lg:w-[min(1200px,calc(100vw-2rem))] lg:max-w-none lg:[margin-left:calc((100%-min(1200px,100vw-2rem))/2)] lg:[margin-right:calc((100%-min(1200px,100vw-2rem))/2)]'
+      : '',
   ].filter(Boolean).join(' ');
 
   const tableClass = isWide
