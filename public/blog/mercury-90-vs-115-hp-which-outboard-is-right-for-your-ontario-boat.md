@@ -50,7 +50,7 @@ With a 90 hp FourStroke, a 17.5-foot deep-V aluminum boat carrying three adults 
 
 ## Fuel Economy: 90 vs 115 at Cruise and WOT
 
-Because the two engines share the same displacement, their fuel consumption at typical cruising speeds (3,500 to 4,000 RPM) is remarkably close. Both will return fuel burn in the range of roughly 4 to 5 gallons per hour (15 to 19 litres per hour) when propped correctly and settled into an efficient cruise. The 115 will typically burn a little more fuel at wide-open throttle, perhaps 5 to 10 percent, simply because it is making more power and turning the propeller faster.
+Because the two engines share the same displacement, their fuel consumption at typical cruising speeds (3,500 to 4,000 RPM) is remarkably close. Both will return fuel burn in the range of roughly 15 to 19 litres per hour (4 to 5 US gallons per hour) when propped correctly and settled into an efficient cruise. The 115 will typically burn a little more fuel at wide-open throttle, perhaps 5 to 10 percent, simply because it is making more power and turning the propeller faster.
 
 The real-world fuel cost difference over a season of weekend boating on Ontario lakes is modest. The 115's ability to plane at lower RPM can actually improve cruise economy when loaded heavily, because you are not forcing the engine to labour at high throttle openings just to stay on plane. That nuance is exactly why we encourage boaters to consider their typical load, not just the engine spec sheet, when comparing fuel use.
 

@@ -134,7 +134,7 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## Bilge Pump Types: What's in Your Boat
 
-**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in GPH. Cannot run dry. Best for general bilge duty.
+**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Cannot run dry. Best for general bilge duty.
 
 **Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
 
@@ -144,23 +144,23 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## How to Size Your Bilge Pump
 
-Bilge pumps are rated in gallons per hour (GPH) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 1,000 GPH will actually move about 600 GPH once it's installed and working against real head pressure.
+Bilge pumps are rated in litres per hour (L/h, or gallons per hour) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 3,800 L/h (1,000 GPH) will actually move about 2,300 L/h (600 GPH) once it's installed and working against real head pressure.
 
 A practical sizing guide for Ontario recreational boats:
 
-![Bilge pump sizing chart by boat length in GPH](/lovable-uploads/bilge-pump-sizing-chart.png)
+![Bilge pump sizing chart by boat length in L/h (GPH)](/lovable-uploads/bilge-pump-sizing-chart.png)
 
 | Boat length | Recommended capacity | Typical setup |
 |---|---|---|
-| Under 16 ft | 500-800 GPH | 1 pump |
-| 17-20 ft | 800-1,500 GPH | 1 pump, consider 2 |
-| 21-26 ft | 1,500-2,500 GPH | 2 pumps |
-| 27-35 ft | 2,500-3,500 GPH | 2-3 pumps |
-| 36 ft+ | 3,500-6,000+ GPH | 3+ pumps |
+| Under 16 ft | 1,900-3,000 L/h (500-800 GPH) | 1 pump |
+| 17-20 ft | 3,000-5,700 L/h (800-1,500 GPH) | 1 pump, consider 2 |
+| 21-26 ft | 5,700-9,500 L/h (1,500-2,500 GPH) | 2 pumps |
+| 27-35 ft | 9,500-13,000 L/h (2,500-3,500 GPH) | 2-3 pumps |
+| 36 ft+ | 13,000-22,700+ L/h (3,500-6,000+ GPH) | 3+ pumps |
 
-When in doubt, size up. A 1,500 GPH pump on a 20-foot boat has real-world output around 900 GPH, which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
+When in doubt, size up. A 5,700 L/h (1,500 GPH) pump on a 20-foot boat has real-world output around 3,400 L/h (900 GPH), which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
 
-**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 500 and 800 GPH, which suits the 14-20 foot hull sizes those boats are built around.
+**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 1,900 and 3,000 L/h (500 and 800 GPH), which suits the 14-20 foot hull sizes those boats are built around.
 
 ---
 
@@ -174,11 +174,11 @@ Two brands dominate the recreational market in Canada: Rule and Attwood. A third
 
 **Seaflo:** a budget-priced alternative with a 4-year warranty, longer than either Rule or Attwood. Real-world results are mixed, adequate for nuisance water on sheltered-water boats, less proven for demanding duty cycles. A reasonable choice for a secondary or backup pump where price matters more than peak performance.
 
-| Brand | Key model | GPH range | Warranty | Best use |
+| Brand | Key model | Flow range | Warranty | Best use |
 |---|---|---|---|---|
-| Attwood | Tsunami Mk2, Sahara | 500-1,200 | 3 yr | Primary auto pump, Legend Boats' factory choice |
-| Rule | Gold Series | 500-3,700 | 3 yr | Manual/standard with a separate switch |
-| Seaflo | Various | 500-2,000 | 4 yr | Secondary/backup pump |
+| Attwood | Tsunami Mk2, Sahara | 1,900-4,500 L/h (500-1,200 GPH) | 3 yr | Primary auto pump, Legend Boats' factory choice |
+| Rule | Gold Series | 1,900-14,000 L/h (500-3,700 GPH) | 3 yr | Manual/standard with a separate switch |
+| Seaflo | Various | 1,900-7,600 L/h (500-2,000 GPH) | 4 yr | Secondary/backup pump |
 
 ---
 
@@ -304,7 +304,7 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ## Legend Boats and the 6-Year WOWranty: What It Covers
 
-Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
+Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
 
 Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
 
@@ -394,7 +394,7 @@ Start with the discharge hose: check for kinks, a partial disconnection, or a bl
 
 ### What size bilge pump do I need for my boat?
 
-As a starting point, 500-800 GPH under 16 feet, 800-1,500 GPH for 17-20 feet, and 1,500-2,500 GPH for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
+As a starting point, 1,900-3,000 L/h (500-800 GPH) under 16 feet, 3,000-5,700 L/h (800-1,500 GPH) for 17-20 feet, and 5,700-9,500 L/h (1,500-2,500 GPH) for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
 
 ### Does my Legend Boats warranty cover the bilge pump?
 

@@ -66,7 +66,7 @@ Acceleration is strong when the boat is propped correctly. In Mercury's freshwat
 
 Those numbers describe those boats, not every 115 installation. A loaded 22 ft pontoon and a light 17 ft fishing boat can carry the same horsepower and feel like completely different machines.
 
-**Fuel use follows the boat too.** In Mercury's freshwater 189XF test, the 115 Pro XS used 2.6 US gal/h (about 9.8 L/h) at 3,000 rpm while the boat ran 19.5 mph. In the 22 ft Manitou pontoon test, the standard 115 Command Thrust used 2.2 US gal/h (about 8.3 L/h) at the same rpm while the boat ran 14.3 mph. Those are results for the named boats and props, not a fuel rating for the motor by itself.
+**Fuel use follows the boat too.** In Mercury's freshwater 189XF test, the 115 Pro XS used about 9.8 L/h (2.6 US gal/h) at 3,000 rpm while the boat ran 19.5 mph. In the 22 ft Manitou pontoon test, the standard 115 Command Thrust used about 8.3 L/h (2.2 US gal/h) at the same rpm while the boat ran 14.3 mph. Those are results for the named boats and props, not a fuel rating for the motor by itself.
 
 ## What Owners Actually Say Online
 

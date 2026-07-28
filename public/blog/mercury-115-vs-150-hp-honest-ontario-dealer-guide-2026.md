@@ -96,8 +96,8 @@ The 150 isn't a dramatic top-end difference. Where you actually feel it:
 - 150: 3,500-3,800 RPM (relaxed)
 
 **Fuel burn at 25 MPH cruise:**
-- 115: roughly 6.5-7.5 GPH
-- 150: roughly 7.5-8.5 GPH
+- 115: roughly 25-28 L/h (6.5-7.5 GPH)
+- 150: roughly 28-32 L/h (7.5-8.5 GPH)
 
 The 150 burns slightly more fuel per hour at the same cruise speed but runs at lower RPM, which is easier on the engine and on your ears. Over 200 hours of use, the fuel delta is real but not catastrophic.
 
@@ -114,13 +114,13 @@ We see online comparisons assume 100 hours of use per season as the baseline. **
 Using realistic Ontario use patterns:
 
 **20-hour season fuel cost delta (115 vs 150 at 25 MPH cruise, $1.85/L Ontario marine fuel):**
-- 115 fuel: 20 hr × 7 GPH × 3.785 L/gal × $1.85 = $980
-- 150 fuel: 20 hr × 8 GPH × 3.785 L/gal × $1.85 = $1,120
+- 115 fuel: 20 hr × 26.5 L/h (7 GPH) × $1.85 = $980
+- 150 fuel: 20 hr × 30.3 L/h (8 GPH) × $1.85 = $1,120
 - Annual delta: $140
 
 **100-hour season fuel cost delta (heavy use):**
-- 115 fuel: 100 hr × 7 GPH × 3.785 L/gal × $1.85 = $4,900
-- 150 fuel: 100 hr × 8 GPH × 3.785 L/gal × $1.85 = $5,600
+- 115 fuel: 100 hr × 26.5 L/h (7 GPH) × $1.85 = $4,900
+- 150 fuel: 100 hr × 30.3 L/h (8 GPH) × $1.85 = $5,600
 - Annual delta: $700
 
 For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding factor. The motor price delta matters more.

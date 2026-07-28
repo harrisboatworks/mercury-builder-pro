@@ -171,10 +171,10 @@ These are complete Mercury performance records. They are examples, not speed pro
 
 | Boat | Motor and setup | Published result | Useful cruise point |
 |---|---|---|---|
-| [Barletta C22U pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 7.8 US gal/h |
-| [Crestliner 2200 Bay, 22.25 ft aluminum, 1,912 lb dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 8.6 US gal/h |
-| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,689 lb dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 8.8 US gal/h |
-| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 1,760 lb dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 8.2 US gal/h |
+| [Barletta C22U pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 29.5 L/h (7.8 US gal/h) |
+| [Crestliner 2200 Bay, 22.25 ft aluminum, 1,912 lb dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 32.6 L/h (8.6 US gal/h) |
+| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,689 lb dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 33.3 L/h (8.8 US gal/h) |
+| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 1,760 lb dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 31.0 L/h (8.2 US gal/h) |
 
 All four records are freshwater tests. The boat weights are published dry weights, not complete as-tested weights. Fuel, batteries, people, safety gear and options add to them.
 

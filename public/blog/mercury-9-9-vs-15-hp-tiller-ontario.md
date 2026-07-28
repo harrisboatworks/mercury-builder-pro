@@ -68,9 +68,9 @@ What it means for you: reliability, parts availability, and serviceability are i
 | Displacement | 333cc / 2-cylinder | 333cc / 2-cylinder |
 | Dry weight (tiller, manual start, short shaft) | ~84 lbs | ~99 lbs |
 | Top RPM range | 5000-6000 | 5500-6300 |
-| Fuel burn at WOT | ~0.7 to 1.0 GPH | ~1.0 to 1.5 GPH |
+| Fuel burn at WOT | ~2.6 to 3.8 L/h (~0.7-1.0 GPH) | ~3.8 to 5.7 L/h (~1.0-1.5 GPH) |
 | Recommended fuel | Regular unleaded, 87 octane | Regular unleaded, 87 octane |
-| Standard fuel tank | Optional 3 or 6 gallon portable | Optional 3 or 6 gallon portable |
+| Standard fuel tank | Optional 11 or 23 L (3 or 6 US gal) portable | Optional 11 or 23 L (3 or 6 US gal) portable |
 | Warranty | 3 years limited + 3 years corrosion (concurrent) | 3 years limited + 3 years corrosion (concurrent) |
 | Tiller, remote, electric start options | All available | All available |
 | Command Thrust gearcase option | Available | Available |
@@ -141,9 +141,9 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 Customers sometimes ask whether the 9.9 will save them meaningful money on fuel. It won't.
 
-At wide-open throttle, the 15 burns about 0.3 to 0.5 GPH more than the 9.9. Spread that across 50 hours of running per season (which is high for most small-motor users), it's an extra 15 to 25 gallons of fuel. At Ontario marina pump prices, call it 100 to 150 CAD more per season.
+At wide-open throttle, the 15 burns about 1.1 to 1.9 L/h (0.3 to 0.5 GPH) more than the 9.9. Spread that across 50 hours of running per season (which is high for most small-motor users), it's an extra 57 to 95 L (15 to 25 US gal) of fuel. At Ontario marina pump prices, call it 100 to 150 CAD more per season.
 
-For most small-motor users, the actual difference is even smaller, because nobody runs a 9.9 or 15 at WOT continuously. You spend most of your time at cruising RPM where the fuel-burn delta drops to a few tenths of a GPH. The 15 is more efficient per horsepower-hour than the 9.9 when you account for the work being done.
+For most small-motor users, the actual difference is even smaller, because nobody runs a 9.9 or 15 at WOT continuously. You spend most of your time at cruising RPM where the fuel-burn delta drops to under a litre per hour (a few tenths of a GPH). The 15 is more efficient per horsepower-hour than the 9.9 when you account for the work being done.
 
 Translation: pick the motor that fits the boat and the use case. Don't pick the 9.9 to save money on fuel. The savings are too small to be a decision driver.
 
@@ -163,7 +163,7 @@ The one thing we don't see often is a customer who buys the 9.9, runs it for a s
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 6-gallon portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
@@ -217,7 +217,7 @@ Largely yes. Same block, gearcase, cooling system, prop hub, and most consumable
 
 ### What's the fuel burn for an average season?
 
-About 25 to 50 gallons of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors.
+About 95 to 190 L (25 to 50 US gal) of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors.
 
 ### Can I rig either as a remote-throttle setup later?
 

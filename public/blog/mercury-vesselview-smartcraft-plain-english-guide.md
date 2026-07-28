@@ -81,7 +81,7 @@ Once your phone is paired, here's what's on screen:
 - **Maintenance reminders**: "100-hour service due in 12 hours" instead of you guessing
 - **GPS range rings (new app)**, see how far you can go on remaining fuel before you commit to a long run
 
-The features people actually use: **fuel flow at cruise** (saves real money over a season, set the right trim, watch the GPH drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
+The features people actually use: **fuel flow at cruise** (saves real money over a season, set the right trim, watch the L/h drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
 
 ---
 

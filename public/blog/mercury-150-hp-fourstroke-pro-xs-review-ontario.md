@@ -183,9 +183,9 @@ These are documented examples, not speed promises.
 
 | Boat and test load | Motor and propeller | Reported result | Useful cruise point |
 |---|---|---|---|
-| [2020 Barletta C22QC pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 6.9 US gal/h |
-| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,527 lb dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 3.6 US gal/h |
-| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 2,765 lb as tested including two people and full 40 US gal fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 4.0 US gal/h |
+| [2020 Barletta C22QC pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 26.1 L/h (6.9 US gal/h) |
+| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,527 lb dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 13.6 L/h (3.6 US gal/h) |
+| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 2,765 lb as tested including two people and full 151 L (40 US gal) fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 15.1 L/h (4.0 US gal/h) |
 
 The Barletta and Crestliner rows use published dry boat weights. The Nitro figure is an as-tested weight with people and fuel, so the three weights are not directly comparable. What is comparable is the warning: the Barletta and Nitro use the same horsepower and differ by 25.6 mph at the top end. That isn't an argument that one test is wrong. It is the clearest possible argument against shopping by a detached speed number.
 
