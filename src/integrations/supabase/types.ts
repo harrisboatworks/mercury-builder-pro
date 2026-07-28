@@ -3933,6 +3933,45 @@ export type Database = {
         }
         Relationships: []
       }
+      site_documents: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          file_size_label: string | null
+          file_url: string
+          id: string
+          is_published: boolean
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_size_label?: string | null
+          file_url: string
+          id?: string
+          is_published?: boolean
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          file_size_label?: string | null
+          file_url?: string
+          id?: string
+          is_published?: boolean
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sms_conversation_archive: {
         Row: {
           archived_at: string | null
