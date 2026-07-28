@@ -90,8 +90,10 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
   ) {
     return {
       title: 'Request Service',
-      description: 'Book Mercury service with the Kawartha region\'s certified Mercury dealer. Family marina since 1947.',
-      href: '/contact',
+      description: 'Submit the boat, motor, symptoms, and photos before bringing it to our Gores Landing shop.',
+      href: 'https://hbw.wiki/service',
+      external: true,
+      buttonLabel: 'Request Service in Gores Landing',
     };
   }
 

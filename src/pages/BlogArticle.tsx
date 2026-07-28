@@ -295,6 +295,14 @@ export default function BlogArticle() {
             >
               {article.title}
             </h1>
+            <p className="font-sans text-sm italic text-repower-navy-900/70 -mt-2 mb-4">
+              Last reviewed:{' '}
+              {parseLocalDate(article.dateModified || article.datePublished).toLocaleDateString('en-CA', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+            </p>
             <p className="font-sans text-[18px] text-repower-navy-900/65 mb-6 leading-relaxed">
               {cleanDescription}
             </p>
@@ -303,13 +311,11 @@ export default function BlogArticle() {
                 <AuthorByline name="Jay Harris" title="3rd-generation owner · Harris Boat Works, Mercury dealer since 1965" />
                 {(() => {
                   const published = parseLocalDate(article.datePublished);
-                  const modified = article.dateModified ? parseLocalDate(article.dateModified) : null;
                   const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-                  const showUpdated = modified && modified.getTime() > published.getTime();
                   return (
                     <span className="flex items-center gap-1.5">
                       <Calendar className="h-4 w-4" />
-                      {showUpdated ? `Updated ${fmt(modified!)}` : fmt(published)}
+                      Published {fmt(published)}
                     </span>
                   );
                 })()}
@@ -386,7 +392,8 @@ export default function BlogArticle() {
 
                 // Strip standalone scaffold lines: "*Last updated: ...*",
                 // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
-                // These conflict with the dateModified field shown in the byline.
+                // The canonical Last reviewed line is rendered directly below
+                // the H1 from dateModified, so authoring scaffold is removed.
                 c = c.replace(
                   /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
                   '',

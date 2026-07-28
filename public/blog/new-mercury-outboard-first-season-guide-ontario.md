@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-07-27
+date_modified: 2026-07-28
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +24,11 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-27  
+**Last updated:** 2026-07-28
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
-> **Quick answer:** Before a new Mercury outboard ever gets wet, a proper dealer pre-delivery inspection sorts rigging, software, and propeller matching. Break-in is straightforward when you follow the manual and vary the throttle instead of holding WOT. Mercury says first oil change at 100 hours or annually; many owners do an early change around 20 hours as cheap insurance. Everything runs smoother when you book that first service online at hbw.wiki/service.
+> **Quick answer:** Before a new Mercury outboard gets wet, a proper dealer pre-delivery inspection sorts rigging, software and propeller matching. Follow the serial-specific manual during break-in and vary the throttle instead of holding one speed. Mercury schedules oil and filter service at 100 hours or annually. An early check around 20 hours is optional, not a Mercury warranty requirement.
 
 You just watched the shop lower a new Mercury FourStroke onto your transom. The paperwork is signed. Now you're standing on the dock, key in your hand, wondering what day one actually looks like.
 
@@ -87,7 +87,7 @@ That test isn't a five-minute idle at the dock. We run the engine under load, ch
 
 Before the test run, our shop does the full rigging and software setup that any good dealer should. Fastener torque, steering alignment, throttle and shift calibration, SmartCraft configuration, propeller matching, and fluid levels. We also check battery connections, rigging routing, and anything that could chafe or work loose over the first few hours.
 
-That kind of attention comes from decades of doing this on one lake with one brand. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. We treat every repower like it's going on our own boat because, a lot of the time, it is.
+We've been a Mercury dealer since 1965. We treat every repower like it's going on our own boat because, a lot of the time, it is.
 
 If you bought a new boat from another dealer, you're still welcome here for first-service work. The same thorough approach applies.
 
@@ -101,9 +101,9 @@ Even smart boaters can make a few unforced errors. Here are the ones we see most
 
 **Assuming every new noise is a catastrophe.** A new outboard has a learning curve. Mechanical trim sounds, fuel pump priming, and the normal key-on self-test horn are all part of the program. Learn what's normal (we cover that below) and don't panic at every click.
 
-**Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this won't unlock hidden performance; it just skips a step that protects the engine's long-term health.
+**Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this does not create hidden performance; it just skips a step that protects the engine's long-term health.
 
-**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW is closed December 1 to April 1, with drop-off only in that window. Winterize before the first deep freeze.
+**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW closes December 1 and reopens April 1. Winterize before the first deep freeze.
 
 ## Normal vs. Not Normal: Key Things to Watch For
 
@@ -125,26 +125,22 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 **Weedy water and the telltale.** Rice Lake grows thick cabbage weeds in the shallows. A few strands sucked up against the intake can slow the telltale stream or block it. Check it after weedy sections. A quick blast of reverse sometimes clears it; if it doesn't, stop and inspect. The same goes for the mud and grit that can get stirred up in narrow channels.
 
-**Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in skinny water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
+**Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in shallow water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
 
-**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and go drop-off only until April 1. Plan the winterization appointment while the weather is still pleasant.
+**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and reopen April 1. Plan the winterization appointment while the weather is still pleasant.
+
+## Sources
+
+- [Mercury Marine maintenance and service guidance](https://www.mercurymarine.com/ca/en/parts-and-service/service-and-support/maintenance)
+- [Mercury Marine owner resources and serial-specific manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+- [Mercury SmartCraft Connect Mobile](https://www.mercurymarine.com/ca/en/smartcraft/vessel-intelligence/smartcraft-connect-mobile)
 
 ## Book Your First-Season Service
 
-Whether you're coming up on 100 hours, want that early oil change, or just noticed something that doesn't feel right, getting a trained set of eyes on your motor early keeps the rest of the season on track.
+Coming up on 100 hours, considering the optional early check or seeing something that doesn't feel right? A clear service request gives the shop the motor details before the boat arrives.
 
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)  
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-
-**Phone:** 905-342-2153  
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
-- [Mercury Maintenance Intervals: The 20-100-300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [SmartCraft Connect Guide for Ontario Boaters](/blog/mercury-smartcraft-connect-guide-ontario)
-- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 
 ## FAQs
 
@@ -172,6 +168,14 @@ The telltale stream strength can vary as the thermostat cycles. A consistently w
 
 A good PDI and careful break-in make an extra inspection unnecessary, but if you hit something or notice a change in sound, vibration, or performance, book a service check. Better to have a pro look at it than let a small issue turn into a big one.
 
+## Related guides
+
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
@@ -186,4 +190,3 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

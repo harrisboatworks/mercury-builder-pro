@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 250 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 250 HP review for Ontario, comparing the current 4.6 L V8 FourStroke and Pro XS with exact Canadian specs, freshwater tests and owner evidence."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-07-27
+date_modified: 2026-07-28
 keywords: ["mercury 250 hp review","mercury 250 fourstroke review","mercury 250 pro xs review","mercury 250 fourstroke vs pro xs","mercury 250 real world performance","mercury 250 owner reviews","mercury 250 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-27  
+**Last updated:** 2026-07-28
 **Read time:** 19 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario
 
@@ -91,7 +91,7 @@ The standard FourStroke is not the slow version a buyer settles for. On a proper
 ### Choose the 250 Pro XS when
 
 - the boat is a properly rated bass or performance fishing hull
-- acceleration, engine height and high-speed control genuinely matter
+- acceleration, engine height and high-speed control matter
 - a 20-inch TorqueMaster application belongs on the transom
 - the owner is willing to finish the setup with the right propeller and water test
 - the startup bark and V8 character are part of the appeal rather than an annoyance
@@ -118,11 +118,11 @@ It is also incomplete for this exact comparison. When we filtered the current da
 
 | Boat | Published dry weight | Propeller | Top speed | 0–30 mph |
 |---|---:|---|---:|---:|
-| Barletta Cabrio 24UE tritoon | 1,449 kg (3,194 lb) | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
-| Harris Grand Mariner 250 tritoon | 1,794 kg (3,954 lb) | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
-| Evotti 721S tritoon | 1,548 kg (3,413 lb) | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
-| Lund 2075 Tyee Magnum deep-V | 871 kg (1,920 lb) | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
-| Glastron GTD 220 deck boat | 1,633 kg (3,600 lb) | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
+| [Barletta Cabrio 24UE tritoon](https://performancedata.mercurymarine.com/performance-test/25) | 1,449 kg (3,194 lb) | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
+| [Harris Grand Mariner 250 tritoon](https://performancedata.mercurymarine.com/performance-test/212) | 1,794 kg (3,954 lb) | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
+| [Evotti 721S tritoon](https://performancedata.mercurymarine.com/performance-test/461) | 1,548 kg (3,413 lb) | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
+| [Lund 2075 Tyee Magnum deep-V](https://performancedata.mercurymarine.com/performance-test/239) | 871 kg (1,920 lb) | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
+| [Glastron GTD 220 deck boat](https://performancedata.mercurymarine.com/performance-test/201) | 1,633 kg (3,600 lb) | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
 
 Every test was on fresh water. Every result belongs to that exact installation.
 
@@ -188,7 +188,7 @@ The responsible conclusion is narrower: the current V8 family has been in servic
 
 ## The TorqueMaster Question
 
-Mercury describes the TorqueMaster gearcase on select V8 Pro XS models as a 1.75:1 unit with a robust 1.25-inch prop shaft for semi-surfacing, high-speed applications.
+Mercury describes the TorqueMaster gearcase on select V8 Pro XS models as a 1.75:1 unit with a heavy-duty 1.25-inch prop shaft for semi-surfacing, high-speed applications.
 
 That sentence contains the buying decision.
 
@@ -277,6 +277,8 @@ Low voltage can create starting and electronic symptoms that look like an engine
 Mercury specifies 87 AKI minimum gasoline and permits up to 10% ethanol. Premium fuel is not a required upgrade for either 250.
 
 Fresh fuel is the issue that matters. Ontario boats that sit for long periods need sound storage habits, correct filtration and a fuel system that is not feeding the new motor last season's problem.
+
+HBW sells ethanol-free 89-octane gasoline at our Rice Lake dock. The engine does not require the extra octane, but avoiding ethanol can make seasonal storage simpler.
 
 ## Mercury Boost on the 250
 
@@ -378,7 +380,7 @@ The honest answer is not that one is universally better.
 It is this:
 
 - buy the FourStroke for family and load-carrying work
-- buy the Pro XS when the hull genuinely calls for performance hardware
+- buy the Pro XS when the hull calls for performance hardware
 - buy neither until the capacity plate, transom, shaft length, steering, controls and normal load have been checked
 - do not copy an internet propeller or speed number without copying the entire boat
 
@@ -439,25 +441,17 @@ Both current motors are naturally aspirated 4.6-litre V8s rated at 250 HP. The F
 
 It can be the better tool on a performance hull, but there is no honest universal speed difference. Mercury's current public performance database did not provide a same-hull 250 FourStroke versus 250 Pro XS test when this review was checked. Hull, load, gearcase, mounting height and propeller determine whether the Pro XS hardware produces a useful advantage.
 
-### Are the 250 FourStroke and 250 Pro XS the same engine?
-
-They share Mercury's 4.6-litre, 32-valve DOHC V8 architecture and the same 250 HP rating, but they are not interchangeable model labels. Their operating ranges, exhaust character, gearcase applications, shaft-length availability and calibration differ. Compare the exact model code before ordering.
-
 ### How much does a Mercury 250 weigh?
 
 Mercury's current linked brochures list about 239 kg (527 lb) for the lightest 250 FourStroke and 232 kg (511 lb) for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package.
 
 ### Which Mercury 250 is better for a pontoon or tritoon?
 
-For most family and cruising tritoons, the standard 250 FourStroke is the straightforward choice. Pro XS can make sense on a genuinely performance-oriented hull with the right strakes, transom, steering, mounting and propeller, but the badge alone does not make a heavy pontoon faster.
+For most family and cruising tritoons, the standard 250 FourStroke is the straightforward choice. Pro XS can make sense on a performance-oriented hull with the right strakes, transom, steering, mounting and propeller, but the badge alone does not make a heavy pontoon faster.
 
 ### Which Mercury 250 is better for a bass boat?
 
 The 250 Pro XS is normally the relevant choice for a properly rated high-performance bass hull. Its higher operating range and available TorqueMaster gearcase are designed around that job. Setup still matters: engine height, propeller, load and steering condition can matter more than copying somebody else's speed number.
-
-### Does a Mercury 250 require premium fuel?
-
-No. Mercury's current Canadian product pages specify unleaded regular gasoline with 87 AKI minimum, or 90 RON, and allow a maximum of 10% ethanol. Fresh, correctly stored fuel and a sound fuel system matter more than buying an octane grade the engine does not require.
 
 ### Can Mercury Boost be installed on a 250 FourStroke or 250 Pro XS?
 
@@ -470,6 +464,14 @@ Mercury introduced the current 4.6-litre V8 family in 2018. The owner material r
 ### What does a Mercury 250 cost in Canada?
 
 Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging and current Canadian programs. This article does not freeze a number that will go stale. Use HBW's live Canadian pricing reference, then build a complete quote for the exact motor and installation.
+
+## Related guides
+
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
 
 ## Next steps
 
@@ -485,4 +487,3 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

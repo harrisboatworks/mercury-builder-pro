@@ -143,7 +143,7 @@ export const blogArticles: BlogArticle[] = [
     imageAlt: 'HBW Mercury outboard oil capacity lookup reference showing model, year, crankcase, gearcase and oil filter fields.',
     author: 'Harris Boat Works',
     datePublished: '2026-07-24',
-    dateModified: '2026-07-24',
+    dateModified: '2026-07-28',
     publishDate: '2026-07-24',
     category: 'Service & Maintenance',
     readTime: '12 min read',
@@ -244,6 +244,8 @@ The capacity guide groups oils by engine family, not by one universal rule.
 
 Mercury includes temperature, manual-start and high-performance footnotes in its chart. Treat the table as a lookup aid, then use the viscosity and formula named in the exact owner's manual.
 
+For four-stroke engines, use oil that meets Mercury's specified marine four-stroke standard, commonly **FC-W**, as well as the viscosity and formula required by the exact manual. An automotive oil with the same viscosity printed on the bottle is not automatically the same specification.
+
 ## Which Mercury Gear Lube?
 
 The 2026 guide generally assigns:
@@ -265,6 +267,8 @@ The same 2026 Mercury guide separates two-stroke oil by engine type:
 
 It does not provide one universal two-stroke gearcase capacity table. Use the manual for the exact serial number.
 
+Two-stroke engine oil is a separate product from four-stroke crankcase oil. Use the **TC-W3** oil type and Mercury product named for the exact two-stroke family.
+
 ## The Five Details That Prevent a Wrong Fill
 
 Have these in front of you before buying oil, a filter or a service kit:
@@ -277,9 +281,13 @@ Have these in front of you before buying oil, a filter or a service kit:
 
 A photo of the transom-bracket label is usually more useful than a photo of the cowl.
 
+## From the Shop
+
+The avoidable mistake is usually not a bad conversion. It is matching the right horsepower to the wrong engine family or lower unit. A clear serial-label photo and a gearcase photo settle more questions than the cowl badge does.
+
 ## Sources and Scope
 
-- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-28
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-27
 - [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 - [Mercury Marine Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 
@@ -321,7 +329,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     imageAlt: 'Boater checking live Mercury engine data in the Mercury Marine app, with a Mercury FourStroke outboard on the transom.',
     author: 'Jay Harris',
     datePublished: '2026-07-23',
-    dateModified: '2026-07-24',
+    dateModified: '2026-07-28',
     publishDate: '2026-07-23',
     category: 'Troubleshooting',
     readTime: '31 min read',
@@ -371,10 +379,6 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
         answer: 'Use Mercury Marine’s owner-manual lookup with the engine serial number. The serial number is the reliable route to the correct model-year and engine-family instructions.',
       },
       {
-        question: 'Why does this page not link to the diagnostic service manual?',
-        answer: 'The diagnostic publication is restricted dealer service literature written for trained technicians. This page puts the useful owner-facing meaning and Mercury action beside each code so you do not need the manual page number. For model-specific operating and stop instructions, use Mercury’s public owner-manual lookup with the engine serial number.',
-      },
-      {
         question: 'What should I send with a Mercury service request?',
         answer: 'If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. At hbw.wiki/service, choose “Various Boat / Motor Repairs (See Details),” put the record in Details, and use the photo upload for the display image. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.',
       },
@@ -389,7 +393,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
         url: 'https://www.mercurymarine.com/ca/en/service-and-support/owners-resources',
       },
     ],
-    content: `> **Quick answer:** Search the complete code shown on your display, then confirm that the result matches your engine family. A single number or text label may come from Mercury's March 2007 legacy VesselView list. A two-part number such as **621-5** is a Universal Fault Code, or UFC, that must be matched to the correct engine-family publication. This page includes all 130 UFC pairs in Mercury's December 2025 diagnostic manual for the covered 3.4L V6 and 4.6L V8 platform, plus the limited-application **3043-6** code added in May 2026 and a clearly labelled legacy VesselView reference. It is not a universal list for every Mercury outboard.
+    content: `> **Quick answer:** Search the complete code, then match the result to the engine family. Single-number alerts may come from Mercury's legacy VesselView list. A two-part code such as **621-5** is a Universal Fault Code that must be checked against the correct family publication. This lookup separates the current covered V6/V8 table from the mixed-product legacy list.
 
 If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbw.wiki/service](https://hbw.wiki/service) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
 
@@ -757,6 +761,10 @@ If you can bring the boat to HBW in Gores Landing, collect the following before 
 
 Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbw.wiki/service](https://hbw.wiki/service) and bring the boat to Gores Landing.
 
+## From the Shop
+
+A fault code names the circuit or condition the computer noticed. It does not name the part to buy. The cleanest diagnostic starts with the full display photo, serial number, hours, battery voltage and what the boat was doing when the alert appeared.
+
 ## Common Lookup Mistakes
 
 - Calling the March 2007 1-247 list a current or outboard-only master list.
@@ -779,14 +787,21 @@ Do not clear or repeatedly restart just to make the message disappear. Preserve 
   },
   {
     slug: "electric-vs-gas-repower-guide-rice-lake",
+    relatedSlugs: [
+      'mercury-avator-electric-boating-ontario',
+      'mercury-avator-7-5e-review',
+      'mercury-avator-range-rice-lake-cottage',
+      'mercury-avator-charging-cottage-dock',
+      'mercury-repower-cost-ontario-2026-cad',
+    ],
     title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)",
     seoTitle: "Electric vs Gas Repower Guide for Rice Lake | HBW",
     description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat.",
-    image: "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-vs-fourstroke-freshwater-2026-07.webp",
-    imageAlt: "Mercury Avator 7.5e electric outboard and Mercury 60 HP FourStroke gasoline outboard shown in freshwater fishing settings",
+    image: "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07.jpg",
+    imageAlt: "Mercury Avator 7.5e electric outboard powering a Lund WC-12 aluminum boat on a freshwater lake",
     author: "Jay Harris",
     datePublished: "2026-07-15",
-    dateModified: "2026-07-15",
+    dateModified: "2026-07-28",
     publishDate: "2026-07-15",
     category: "Buying Guide",
     readTime: "~9 min read",
@@ -804,9 +819,7 @@ Do not clear or repeatedly restart just to make the message disappear. Preserve 
       { question: "Is electric cheaper than gas in the long run?", answer: "Per hour on the water, yes: no fuel, no oil changes, minimal maintenance. But the up-front premium over a small gas outboard takes years to recover on fuel savings alone. People who love their electrics bought them for silence and simplicity, not payback math." },
       { question: "How does Avator compare to Torqeedo or ePropulsion?", answer: "All three make legitimate motors. Avator's edge is the Mercury dealer network behind it: warranty, parts, and service you can actually drive to. We wrote an honest head-to-head in our Avator vs Torqeedo comparison." }
     ],
-    content: `# Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)
-
-*Last reviewed: 2026-07-15*
+    content: `*Last reviewed: 2026-07-28*
 
 > **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one. Call 905-342-2153 and we'll tell you straight which fits your boat.
 
@@ -876,6 +889,21 @@ The disappointed electric stories you read in forums almost all share one origin
 
 ---
 
+## Electric vs Gas at a Glance
+
+| Question | Mercury Avator electric | Mercury gas FourStroke |
+|---|---|---|
+| Noise and fumes | Very quiet, with no exhaust fumes at the transom | More sound and exhaust, even on a modern quiet four-stroke |
+| Best day | Predictable short trips, trolling, tenders and quiet-water use | Longer runs, heavier boats and days without charging access |
+| Energy stop | Recharge from shore power or swap a compatible battery | Refuel in minutes where gasoline is available |
+| Routine engine service | No engine oil, spark plugs or fuel system | Scheduled oil, filter, spark-plug, fuel-system and cooling-system work |
+| Biggest planning item | Battery count, charging time and real-world range | Fuel capacity, storage quality and service schedule |
+| Practical limit | Sustained speed, heavy loads and distance use battery quickly | More noise, more routine maintenance and fuel to store |
+
+Neither column is the universal winner. The right answer follows the boat, the trip and the charging available where the boat lives.
+
+---
+
 ## The Honest Limitations
 
 **Range shrinks in the real world.** Wind, chop, load, and throttle all eat battery. Cold water early in the season takes a bite too, because lithium chemistry doesn't love the cold even though the motor itself does. In Mercury's own published 7.5e test on a light 13-foot boat, one 1 kWh battery gave about 60 minutes at full throttle, or most of a day at slow trolling speed. Read both halves of that sentence before you buy. Our [Avator range on Rice Lake guide](/blog/mercury-avator-range-rice-lake-cottage) goes deeper.
@@ -918,6 +946,15 @@ We're bringing Avator into the lineup now, with pricing being finalized. If you 
 
 ---
 
+## Sources
+
+- [Mercury Avator 20e and 35e product information](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-20-35e), including Mercury's published 35e sound comparison
+- [Mercury Avator 7.5e product information](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e), including Mercury's published 13-foot test-boat range examples
+- [Clark Lake Vessel Operation Restriction Regulations application update](https://media-doppleronline-ca.s3-accelerate.amazonaws.com/2025/01/Clark-Lake-VORR-Application-Update.pdf)
+- [Transport Canada: Apply for Vessel Operation Restrictions](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/apply-vessel-operation-restrictions)
+
+---
+
 ## Frequently Asked Questions
 
 **Is Harris Boat Works actually selling the Mercury Avator now?**
@@ -945,15 +982,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
 **Avator info:** [mercuryrepower.ca/electric/mercury-avator](https://www.mercuryrepower.ca/electric/mercury-avator)
 **Gas repower quotes:** [Build your quote](/quote/motor-selection)
 
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario)
-- [Mercury Avator 7.5e: Review, Price CAD & Range (2026)](/blog/mercury-avator-7-5e-review)
-- [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
-- [Charging a Mercury Avator at Your Cottage Dock](/blog/mercury-avator-charging-cottage-dock)
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad)
 `,
   },
   {
@@ -27577,7 +27606,7 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
     imageAlt: "Mercury 150 Pro XS powering a Ranger 1782 aluminum fishing boat on fresh water",
     author: "Harris Boat Works",
     datePublished: "2026-07-26",
-    dateModified: "2026-07-27",
+    dateModified: "2026-07-28",
     publishDate: "2026-07-26",
     category: "Mercury Buying Guides",
     readTime: "18 min read",
@@ -27589,7 +27618,6 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
       { question: "How fast will a Mercury 150 go?", answer: "There is no honest single answer. Documented examples in this review range from 34.6 mph on a 23.2-foot Barletta pontoon to 60.2 mph on a Nitro Z18 bass boat. The boat, propeller, mounting, load and conditions stay attached to every number." },
       { question: "Which Mercury 150 is better for a pontoon?", answer: "For most family pontoons, the standard 150 FourStroke is the straightforward choice. Pro XS can make sense on a performance-oriented pontoon where the hull, propeller and mounting setup can use its wider rpm range and performance gearcase. The badge alone does not make a pontoon faster." },
       { question: "Can Mercury Boost be installed on a 150 FourStroke or 150 Pro XS?", answer: "No. Mercury's current Boost compatibility begins at 175 HP in the recreational FourStroke and Pro XS ranges. Mercury Racing's 150R is listed separately and is not the same motor as the recreational 150 Pro XS." },
-      { question: "What propeller does a Mercury 150 need?", answer: "It depends on the exact boat and normal load. An official Barletta pontoon test used a 14-pitch Spitfire, a Crestliner deep-V test used a 19-pitch Tempest Plus, and a Nitro bass-boat test used a 25-pitch Fury 4. Copying any one of those props to another boat would be guesswork. Start with a matched recommendation, then verify wide-open-throttle rpm and handling during a water test." },
       { question: "Is the Mercury 150 reliable?", answer: "The standard 3.0-litre platform reached the North American market in 2012, and the 150 Pro XS version arrived in 2018. Public owner material includes serious individual failures as well as many trouble-free reports, but we did not find documented evidence establishing a recurring current-generation defect strong enough to warn buyers away. That is not a guarantee, and service history, warranty status, maintenance, fuel, battery capacity, propeller setup and cooling-system care still matter." },
       { question: "What does a Mercury 150 cost in Canada?", answer: "The price depends on model, shaft length, rigging and current Canadian programs. The Pro XS generally carries a premium over the standard FourStroke, so compare the current difference against the performance hardware your boat can actually use. This review does not freeze a price that will go stale. Use the live HBW Canadian pricing reference, then build a complete quote that includes the actual controls, propeller, installation and eligible programs." },
     ],
@@ -27651,9 +27679,9 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
         url: 'https://www.bbcboards.net/showthread.php?t=922738',
       },
     ],
-    content: `*Last reviewed: 2026-07-27*
+    content: `*Last reviewed: 2026-07-28*
 
-> **Quick answer:** The Mercury 150 FourStroke and 150 Pro XS use the same 3.0-litre inline-four platform and are both rated at 150 HP. For most family runabouts and normal cruising pontoons, the standard FourStroke is the straightforward choice. Pro XS earns its place on a responsive fishing or performance hull where the owner will finish the mounting and propeller setup. It is not a secret higher-horsepower motor.
+> **Quick answer:** The Mercury 150 FourStroke and 150 Pro XS use the same 3.0-litre inline-four platform and are both rated at 150 HP. For most family runabouts and cruising pontoons, the standard FourStroke is the straightforward choice. Pro XS earns its place on a responsive fishing or performance hull whose setup can use its wider operating range. It's not a secret higher-horsepower motor.
 
 Here is the quickest way to get a Mercury 150 review wrong.
 
@@ -27716,7 +27744,7 @@ The standard 150 isn't the economy version of a better motor. On the right famil
 ### Choose the 150 Pro XS when
 
 - the boat is a responsive aluminum or fibreglass fishing hull
-- acceleration and high-speed handling genuinely matter
+- acceleration and high-speed handling matter
 - the owner will finish the propeller, engine-height and load setup
 - a jack plate or higher mounting is part of a qualified performance application
 - the hull can use the wider rpm range without sacrificing normal loaded operation
@@ -27785,7 +27813,7 @@ The online phrase “post-COVID motors” appears in some discussions, but a mod
 
 ### What the online buzz gets right
 
-- the standard 150 can be an excellent and genuinely fun motor on the right boat
+- the standard 150 can be an excellent and fun motor on the right boat
 - Pro XS performance is earned through propeller and mounting work, not guaranteed by the decal
 - using the same propeller on standard and Pro XS versions can produce a misleading comparison
 - buyers need a clear break-in explanation at delivery, not only a manual in a bag
@@ -27989,7 +28017,7 @@ All performance results vary by boat, propeller, load, mounting and conditions. 
     imageAlt: "Official Mercury 200 HP FourStroke and 200 Pro XS outboards shown side by side",
     author: "Harris Boat Works",
     datePublished: "2026-07-27",
-    dateModified: "2026-07-27",
+    dateModified: "2026-07-28",
     publishDate: "2026-07-27",
     category: "Mercury Buying Guides",
     readTime: "18 min read",
@@ -27997,13 +28025,11 @@ All performance results vary by boat, propeller, load, mounting and conditions. 
     faqs: [
       { question: "What is the difference between a Mercury 200 FourStroke and 200 Pro XS?", answer: "They are two different engine platforms. The current 200 FourStroke is a 3.4-litre V6 aimed at recreational use. The current 200 Pro XS is a 4.6-litre V8 with a higher operating range and performance-oriented gearcase choices. Both are rated at 200 HP." },
       { question: "Is the Mercury 200 Pro XS faster than the 200 FourStroke?", answer: "It can be the better choice on a performance hull, but the cowl does not determine speed by itself. Boat weight, hull design, gearcase, shaft length, mounting height, propeller, load and conditions all matter. Mercury's published freshwater tests show both motors performing well on the boats they were matched to, but they are not controlled same-hull comparisons." },
-      { question: "Is the Mercury 200 FourStroke a V6 or V8?", answer: "The current Mercury 200 FourStroke is a 3.4-litre V6. The current 200 Pro XS is a 4.6-litre V8. Older online discussions sometimes mix earlier engines or treat the two current 200s as the same platform, which is incorrect." },
       { question: "How fast will a Mercury 200 go?", answer: "There is no honest single speed. Official Mercury examples in this review range from 38.4 mph on a 23.2-foot Barletta pontoon with a 200 FourStroke to 53.5 mph in the published summary for a Crestliner 1850 Fish Hawk with a 200 Pro XS. Your result depends on the exact boat and setup." },
-      { question: "Which Mercury 200 is better for a pontoon?", answer: "For most family and cruising pontoons, the 3.4-litre V6 200 FourStroke is the straightforward choice. The V8 Pro XS can make sense on a genuinely performance-oriented pontoon whose rating, transom, steering and setup support it, but the extra performance hardware is not automatically useful on every pontoon." },
+      { question: "Which Mercury 200 is better for a pontoon?", answer: "For most family and cruising pontoons, the 3.4-litre V6 200 FourStroke is the straightforward choice. The V8 Pro XS can make sense on a performance-oriented pontoon whose rating, transom, steering and setup support it, but the extra performance hardware is not automatically useful on every pontoon." },
       { question: "Can Mercury Boost be installed on a 200 FourStroke or 200 Pro XS?", answer: "Eligible current and compatible earlier 200 HP FourStroke and Pro XS models can receive Mercury Boost through a dealer software calibration. The change is stronger midrange acceleration. It does not raise the engine's rated horsepower, top speed or time to plane. Eligibility depends on model and serial number, so it must be verified before quoting it." },
       { question: "What propeller does a Mercury 200 need?", answer: "It depends on the boat, gearcase and normal load. Official tests in this review use 14-pitch, 17-pitch and 19-pitch stainless propellers on very different boats. The correct propeller is the one that gives the specific installation proper wide-open-throttle rpm, grip, acceleration and handling during a realistic water test." },
       { question: "Is the Mercury 200 reliable?", answer: "The current V6 FourStroke and V8 Pro XS families have been in service since Mercury introduced the 3.4-litre V6 and 4.6-litre V8 platforms in 2018. We did not find a documented current-generation failure pattern strong enough to warn buyers away from either 200. That is not a guarantee. Battery capacity, clean fuel, cooling flow, correct propeller loading and scheduled maintenance still matter." },
-      { question: "Does the Mercury 200 require premium fuel?", answer: "No. Mercury's current V6/V8 operation manual specifies 87 AKI minimum fuel and allows up to 10% ethanol. Fresh, correctly stored fuel matters more than paying for an octane grade the engine does not require." },
       { question: "What does a Mercury 200 cost in Canada?", answer: "Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging and current Canadian programs. This review deliberately does not freeze a price that will go stale. Use the live HBW Canadian pricing reference, then build a complete quote for the exact model and installation." },
     ],
     citations: [
@@ -28072,15 +28098,15 @@ All performance results vary by boat, propeller, load, mounting and conditions. 
         url: 'https://www.reddit.com/r/Outboards/comments/1ud2i8z/2021_mercury_200_pro_xs/',
       },
     ],
-    content: `*Last reviewed: 2026-07-27*
+    content: `*Last reviewed: 2026-07-28*
 
-> **Quick answer:** The current Mercury 200 FourStroke is a 3.4-litre V6. The current 200 Pro XS is a 4.6-litre V8. Both are rated at 200 HP, but they are not the same engine wearing different decals. For a family runabout, cruising pontoon or normally loaded recreational boat, the V6 FourStroke is usually the cleaner choice. For a responsive fishing or performance hull that can use the V8, higher rpm range and performance gearcase options, the Pro XS earns a serious look.
+> **Quick answer:** The Mercury 200 FourStroke is a 3.4-litre V6; the 200 Pro XS is a 4.6-litre V8. Both are rated at 200 HP. The lighter V6 is usually the cleaner family-boat choice. The V8 Pro XS earns a serious look when a responsive fishing or performance hull can use its higher operating range and gearcase options.
 
 If a review tells you that the Mercury 200 FourStroke and 200 Pro XS are basically the same motor with different tuning, stop there.
 
 That is not the current lineup.
 
-The 200 FourStroke is Mercury's 3.4-litre V6 recreational outboard. The 200 Pro XS is a 4.6-litre V8 performance outboard. The Pro XS has two more cylinders, 1.2 litres more displacement and roughly 14 kg (30 lb) more published lightest weight.
+The 200 FourStroke is Mercury's 3.4-litre V6 recreational outboard. The 200 Pro XS is a 4.6-litre V8 performance outboard. The Pro XS has two more cylinders, 1.2 litres more displacement and roughly 17 kg (36 lb) more published lightest weight.
 
 That difference matters. It also does not mean every boat should get the V8.
 
@@ -28102,7 +28128,7 @@ For the current Canadian range checked in July 2026:
 - mechanical or Digital Throttle & Shift configurations are available, depending on the exact model
 - shaft length, gearcase, rotation and control type must be verified from the model code
 
-Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lightest 200 Pro XS around 229 kg (505 lb). Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
+Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lightest 200 Pro XS around 232 kg (511 lb). Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
 
 ![Current Mercury 200 FourStroke and 200 Pro XS shown side by side in official studio photography.](/lovable-uploads/inline/mercury-200-fourstroke-vs-pro-xs-official.webp)
 
@@ -28117,7 +28143,7 @@ Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lig
 | Rated power | 200 HP | 200 HP | The Pro XS is not advertised as hidden extra horsepower |
 | Powerhead | 3.4 L V6 | 4.6 L V8 | Pro XS has more displacement and two more cylinders |
 | Full-throttle range | 5,200–6,000 rpm | 5,600–6,200 rpm | Pro XS supports a more performance-oriented propeller and setup window |
-| Published lightest weight | About 215 kg (475 lb) | About 229 kg (505 lb) | FourStroke saves roughly 14 kg (30 lb) before exact configuration differences |
+| Published lightest weight | About 215 kg (475 lb) | About 232 kg (511 lb) | FourStroke saves roughly 17 kg (36 lb) before exact configuration differences |
 | Gearcase | Standard recreational configurations | Standard and performance-oriented choices vary by model | Exact ratio and gearcase must be checked, not guessed from the family name |
 | Charging | 85 amp with idle charge management | 85 amp with idle charge management | Both are well suited to electronics-heavy modern boats |
 | Best fit | Family, cruising and load-carrying use | Performance fishing and responsive hulls | Application matters more than the badge |
@@ -28135,7 +28161,7 @@ The standard FourStroke is not the motor you settle for when you cannot justify 
 ### Choose the 200 Pro XS when
 
 - the boat is a responsive aluminum or fibreglass fishing hull
-- acceleration and high-speed control genuinely matter
+- acceleration and high-speed control matter
 - the hull can use a 4.6-litre V8 without creating a weight or balance problem
 - a performance gearcase, jack plate or higher mounting is part of a qualified setup
 - the owner is willing to finish the propeller and engine-height work with a real water test
@@ -28275,6 +28301,12 @@ Motors 25 HP and up do not include a propeller in the base motor price. HBW carr
 
 Read the [Mercury propeller-selection guide](/blog/mercury-propeller-selection-guide) for the terms. The installed boat gives the final answer.
 
+## What This Means on Ontario Water
+
+A 200 on Rice Lake may be carrying a family pontoon with canvas and coolers, a deep-V fishing boat in open-water chop or a lighter hull whose owner cares about acceleration and handling. Those jobs share a horsepower number, not a setup.
+
+At HBW, the decision starts with the capacity plate, transom, steering, normal load and the way the boat is used. We carry a realistic propeller allowance in the quote, then finish the installation with a water test instead of treating a catalogue prop as the final answer.
+
 ## Controls, Charging, Battery and Fuel
 
 ### Mechanical vs Digital Throttle & Shift
@@ -28304,6 +28336,8 @@ Weak battery voltage can create starting and electronic symptoms that look like 
 Mercury specifies 87 AKI minimum gasoline and permits up to 10% ethanol. Premium fuel is not a required upgrade for either 200.
 
 Fresh fuel is the issue that matters. Ontario boats that sit for long periods need good storage habits, a sound fuel system and the right filtration. Paying for extra octane does not repair stale or water-contaminated gasoline.
+
+HBW sells ethanol-free 89-octane gasoline at our Rice Lake dock. The engine does not require the extra octane, but avoiding ethanol can make seasonal storage simpler.
 
 ## Mercury Boost on the 200
 
@@ -28459,7 +28493,7 @@ All speed, acceleration and fuel-use results vary by boat, propeller, load, moun
     imageAlt: "Official Mercury 250 HP FourStroke and 250 Pro XS V8 outboards shown side by side",
     author: "Harris Boat Works",
     datePublished: "2026-07-27",
-    dateModified: "2026-07-27",
+    dateModified: "2026-07-28",
     publishDate: "2026-07-27",
     category: "Mercury Buying Guides",
     readTime: "19 min read",
@@ -28467,11 +28501,9 @@ All speed, acceleration and fuel-use results vary by boat, propeller, load, moun
     faqs: [
       { question: "What is the difference between a Mercury 250 FourStroke and 250 Pro XS?", answer: "Both current motors are naturally aspirated 4.6-litre V8s rated at 250 HP. The FourStroke uses a 5,200 to 6,000 rpm operating range and recreational calibration. The Pro XS uses a 5,600 to 6,200 rpm range, performance-tuned exhaust and a TorqueMaster gearcase on select models for semi-surfacing, high-speed applications." },
       { question: "Is the Mercury 250 Pro XS faster than the 250 FourStroke?", answer: "It can be the better tool on a performance hull, but there is no honest universal speed difference. Mercury's current public performance database did not provide a same-hull 250 FourStroke versus 250 Pro XS test when this review was checked. Hull, load, gearcase, mounting height and propeller determine whether the Pro XS hardware produces a useful advantage." },
-      { question: "Are the 250 FourStroke and 250 Pro XS the same engine?", answer: "They share Mercury's 4.6-litre, 32-valve DOHC V8 architecture and the same 250 HP rating, but they are not interchangeable model labels. Their operating ranges, exhaust character, gearcase applications, shaft-length availability and calibration differ. Compare the exact model code before ordering." },
       { question: "How much does a Mercury 250 weigh?", answer: "Mercury's current linked brochures list about 239 kg (527 lb) for the lightest 250 FourStroke and 232 kg (511 lb) for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package." },
-      { question: "Which Mercury 250 is better for a pontoon or tritoon?", answer: "For most family and cruising tritoons, the standard 250 FourStroke is the straightforward choice. Pro XS can make sense on a genuinely performance-oriented hull with the right strakes, transom, steering, mounting and propeller, but the badge alone does not make a heavy pontoon faster." },
+      { question: "Which Mercury 250 is better for a pontoon or tritoon?", answer: "For most family and cruising tritoons, the standard 250 FourStroke is the straightforward choice. Pro XS can make sense on a performance-oriented hull with the right strakes, transom, steering, mounting and propeller, but the badge alone does not make a heavy pontoon faster." },
       { question: "Which Mercury 250 is better for a bass boat?", answer: "The 250 Pro XS is normally the relevant choice for a properly rated high-performance bass hull. Its higher operating range and available TorqueMaster gearcase are designed around that job. Setup still matters: engine height, propeller, load and steering condition can matter more than copying somebody else's speed number." },
-      { question: "Does a Mercury 250 require premium fuel?", answer: "No. Mercury's current Canadian product pages specify unleaded regular gasoline with 87 AKI minimum, or 90 RON, and allow a maximum of 10% ethanol. Fresh, correctly stored fuel and a sound fuel system matter more than buying an octane grade the engine does not require." },
       { question: "Can Mercury Boost be installed on a 250 FourStroke or 250 Pro XS?", answer: "Eligible current and compatible earlier 250 HP FourStroke and Pro XS models can receive Mercury Boost through a dealer software calibration. The change is stronger midrange acceleration. It does not raise rated horsepower, increase top speed or shorten time to plane. Eligibility must be checked by model and serial number." },
       { question: "Is the Mercury 250 V8 reliable?", answer: "Mercury introduced the current 4.6-litre V8 family in 2018. The owner material reviewed for this article is generally positive, with isolated complaints but no evidence strong enough to call one recurring current-generation defect. That is not a guarantee or warranty statistic. Battery capacity, clean fuel, correct propeller loading, cooling flow and scheduled maintenance still matter." },
       { question: "What does a Mercury 250 cost in Canada?", answer: "Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging and current Canadian programs. This article does not freeze a number that will go stale. Use HBW's live Canadian pricing reference, then build a complete quote for the exact motor and installation." },
@@ -28550,7 +28582,7 @@ All speed, acceleration and fuel-use results vary by boat, propeller, load, moun
         url: 'https://www.youtube.com/watch?v=U3kvfCqXpnk',
       },
     ],
-    content: `*Last reviewed: 2026-07-27*
+    content: `*Last reviewed: 2026-07-28*
 
 > **Quick answer:** The current Mercury 250 FourStroke and 250 Pro XS are both 4.6-litre V8s rated at 250 HP, but they are aimed at different jobs. The FourStroke is the natural fit for most family tritoons, deep-Vs and runabouts. Pro XS makes sense when a performance hull can use its higher rpm range, exhaust character and available TorqueMaster gearcase.
 
@@ -28615,7 +28647,7 @@ The standard FourStroke is not the slow version a buyer settles for. On a proper
 ### Choose the 250 Pro XS when
 
 - the boat is a properly rated bass or performance fishing hull
-- acceleration, engine height and high-speed control genuinely matter
+- acceleration, engine height and high-speed control matter
 - a 20-inch TorqueMaster application belongs on the transom
 - the owner is willing to finish the setup with the right propeller and water test
 - the startup bark and V8 character are part of the appeal rather than an annoyance
@@ -28642,11 +28674,11 @@ It is also incomplete for this exact comparison. When we filtered the current da
 
 | Boat | Published dry weight | Propeller | Top speed | 0–30 mph |
 |---|---:|---|---:|---:|
-| Barletta Cabrio 24UE tritoon | 1,449 kg (3,194 lb) | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
-| Harris Grand Mariner 250 tritoon | 1,794 kg (3,954 lb) | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
-| Evotti 721S tritoon | 1,548 kg (3,413 lb) | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
-| Lund 2075 Tyee Magnum deep-V | 871 kg (1,920 lb) | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
-| Glastron GTD 220 deck boat | 1,633 kg (3,600 lb) | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
+| [Barletta Cabrio 24UE tritoon](https://performancedata.mercurymarine.com/performance-test/25) | 1,449 kg (3,194 lb) | Enertia 15p | 41.6 mph at 5,776 rpm | 7.06 sec |
+| [Harris Grand Mariner 250 tritoon](https://performancedata.mercurymarine.com/performance-test/212) | 1,794 kg (3,954 lb) | Enertia 15p | 44.7 mph at 6,016 rpm | 8.7 sec |
+| [Evotti 721S tritoon](https://performancedata.mercurymarine.com/performance-test/461) | 1,548 kg (3,413 lb) | Enertia 15p | 44.1 mph at 5,905 rpm | 5.83 sec |
+| [Lund 2075 Tyee Magnum deep-V](https://performancedata.mercurymarine.com/performance-test/239) | 871 kg (1,920 lb) | Tempest Plus 19p | 54.1 mph at 5,755 rpm | 5.5 sec |
+| [Glastron GTD 220 deck boat](https://performancedata.mercurymarine.com/performance-test/201) | 1,633 kg (3,600 lb) | Revolution 4 18p | 52.7 mph at 5,977 rpm | 5.4 sec |
 
 Every test was on fresh water. Every result belongs to that exact installation.
 
@@ -28712,7 +28744,7 @@ The responsible conclusion is narrower: the current V8 family has been in servic
 
 ## The TorqueMaster Question
 
-Mercury describes the TorqueMaster gearcase on select V8 Pro XS models as a 1.75:1 unit with a robust 1.25-inch prop shaft for semi-surfacing, high-speed applications.
+Mercury describes the TorqueMaster gearcase on select V8 Pro XS models as a 1.75:1 unit with a heavy-duty 1.25-inch prop shaft for semi-surfacing, high-speed applications.
 
 That sentence contains the buying decision.
 
@@ -28801,6 +28833,8 @@ Low voltage can create starting and electronic symptoms that look like an engine
 Mercury specifies 87 AKI minimum gasoline and permits up to 10% ethanol. Premium fuel is not a required upgrade for either 250.
 
 Fresh fuel is the issue that matters. Ontario boats that sit for long periods need sound storage habits, correct filtration and a fuel system that is not feeding the new motor last season's problem.
+
+HBW sells ethanol-free 89-octane gasoline at our Rice Lake dock. The engine does not require the extra octane, but avoiding ethanol can make seasonal storage simpler.
 
 ## Mercury Boost on the 250
 
@@ -28902,7 +28936,7 @@ The honest answer is not that one is universally better.
 It is this:
 
 - buy the FourStroke for family and load-carrying work
-- buy the Pro XS when the hull genuinely calls for performance hardware
+- buy the Pro XS when the hull calls for performance hardware
 - buy neither until the capacity plate, transom, shaft length, steering, controls and normal load have been checked
 - do not copy an internet propeller or speed number without copying the entire boat
 
@@ -39702,13 +39736,20 @@ For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard gener
   },
   {
     slug: 'new-mercury-outboard-first-season-guide-ontario',
+    relatedSlugs: [
+      'breaking-in-new-mercury-motor-guide',
+      'mercury-maintenance-intervals-20-100-300-rule',
+      'mercury-smartcraft-connect-guide-ontario',
+      'mercury-smartcraft-alarm-codes-encyclopedia',
+      'what-happens-during-mercury-repower',
+    ],
     title: "Your New Mercury Outboard's First Season: What to Expect From PDI to First Service",
     description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one.",
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-fourstroke-freshwater-review-2026-07.webp',
     imageAlt: 'New Mercury FourStroke outboard running on Rice Lake during its first season after a dealer pre-delivery inspection.',
     author: 'Harris Boat Works',
     datePublished: '2026-07-27',
-    dateModified: '2026-07-27',
+    dateModified: '2026-07-28',
     publishDate: '2026-07-27',
     category: 'Maintenance',
     readTime: '9 min read',
@@ -39728,9 +39769,9 @@ For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard gener
       { question: 'Why is the water stream from my new Mercury outboard weak?', answer: 'The telltale stream strength can vary as the thermostat cycles. A consistently weak, sputtering, or absent stream is not normal. Weeds, mud, or a pickup obstruction are the most common causes on Rice Lake. Stop the engine and inspect if the stream disappears.' },
       { question: 'Should I get my new Mercury motor inspected after the first few trips?', answer: 'A good PDI and careful break-in make an extra inspection unnecessary, but if you hit something or notice a change in sound, vibration, or performance, book a service check. Better to have a pro look at it than let a small issue turn into a big one.' },
     ],
-    content: `*Last reviewed: 2026-07-27*
+    content: `*Last reviewed: 2026-07-28*
 
-> **Quick answer:** Before a new Mercury outboard ever gets wet, a proper dealer pre-delivery inspection sorts rigging, software, and propeller matching. Break-in is straightforward when you follow the manual and vary the throttle instead of holding WOT. Mercury says first oil change at 100 hours or annually; many owners do an early change around 20 hours as cheap insurance. Everything runs smoother when you book that first service online at hbw.wiki/service.
+> **Quick answer:** Before a new Mercury outboard gets wet, a proper dealer pre-delivery inspection sorts rigging, software and propeller matching. Follow the serial-specific manual during break-in and vary the throttle instead of holding one speed. Mercury schedules oil and filter service at 100 hours or annually. An early check around 20 hours is optional, not a Mercury warranty requirement.
 
 You just watched the shop lower a new Mercury FourStroke onto your transom. The paperwork is signed. Now you're standing on the dock, key in your hand, wondering what day one actually looks like.
 
@@ -39789,7 +39830,7 @@ That test isn't a five-minute idle at the dock. We run the engine under load, ch
 
 Before the test run, our shop does the full rigging and software setup that any good dealer should. Fastener torque, steering alignment, throttle and shift calibration, SmartCraft configuration, propeller matching, and fluid levels. We also check battery connections, rigging routing, and anything that could chafe or work loose over the first few hours.
 
-That kind of attention comes from decades of doing this on one lake with one brand. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. We treat every repower like it's going on our own boat because, a lot of the time, it is.
+We've been a Mercury dealer since 1965. We treat every repower like it's going on our own boat because, a lot of the time, it is.
 
 If you bought a new boat from another dealer, you're still welcome here for first-service work. The same thorough approach applies.
 
@@ -39803,9 +39844,9 @@ Even smart boaters can make a few unforced errors. Here are the ones we see most
 
 **Assuming every new noise is a catastrophe.** A new outboard has a learning curve. Mechanical trim sounds, fuel pump priming, and the normal key-on self-test horn are all part of the program. Learn what's normal (we cover that below) and don't panic at every click.
 
-**Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this won't unlock hidden performance; it just skips a step that protects the engine's long-term health.
+**Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this does not create hidden performance; it just skips a step that protects the engine's long-term health.
 
-**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW is closed December 1 to April 1, with drop-off only in that window. Winterize before the first deep freeze.
+**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW closes December 1 and reopens April 1. Winterize before the first deep freeze.
 
 ## Normal vs. Not Normal: Key Things to Watch For
 
@@ -39827,37 +39868,38 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 **Weedy water and the telltale.** Rice Lake grows thick cabbage weeds in the shallows. A few strands sucked up against the intake can slow the telltale stream or block it. Check it after weedy sections. A quick blast of reverse sometimes clears it; if it doesn't, stop and inspect. The same goes for the mud and grit that can get stirred up in narrow channels.
 
-**Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in skinny water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
+**Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in shallow water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
 
-**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and go drop-off only until April 1. Plan the winterization appointment while the weather is still pleasant.
+**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and reopen April 1. Plan the winterization appointment while the weather is still pleasant.
+
+## Sources
+
+- [Mercury Marine maintenance and service guidance](https://www.mercurymarine.com/ca/en/parts-and-service/service-and-support/maintenance)
+- [Mercury Marine owner resources and serial-specific manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
+- [Mercury SmartCraft Connect Mobile](https://www.mercurymarine.com/ca/en/smartcraft/vessel-intelligence/smartcraft-connect-mobile)
 
 ## Book Your First-Season Service
 
-Whether you're coming up on 100 hours, want that early oil change, or just noticed something that doesn't feel right, getting a trained set of eyes on your motor early keeps the rest of the season on track.
+Coming up on 100 hours, considering the optional early check or seeing something that doesn't feel right? A clear service request gives the shop the motor details before the boat arrives.
 
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)  
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-
-**Phone:** 905-342-2153  
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
-- [Mercury Maintenance Intervals: The 20-100-300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [SmartCraft Connect Guide for Ontario Boaters](/blog/mercury-smartcraft-connect-guide-ontario)
-- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
 `,
   },
   {
     slug: 'legend-boats-warranty-canada-wowranty-guide-2026',
+    relatedSlugs: [
+      'mercury-outboard-warranty-canada-2026',
+      'mercury-extended-warranty-platinum-ontario',
+      'legend-boats-mercury-power-package-guide-ontario',
+    ],
     title: 'Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)',
     description: 'Legend Boats warranty explained: 6-year WOWranty, Leakproof for Life, pontoon 5 | 10 | Lifetime, plus motor, trailer and electronics coverage.',
     image: '/lovable-uploads/hero-legend-warranty-guide-2026.webp',
     imageAlt: 'Official Legend Boats image of a blue XT fishing boat, Mercury outboard and Legend Glide-On trailer.',
     author: 'Jay Harris',
     datePublished: '2026-07-27',
-    dateModified: '2026-07-27',
+    dateModified: '2026-07-28',
     publishDate: '2026-07-27',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -39878,13 +39920,13 @@ Whether you're coming up on 100 hours, want that early oil change, or just notic
       { question: 'What trailer warranty comes with a Legend package?', answer: "Legend's Glide-On trailers are supplied by ShoreLand'r. The current summary publishes 1-year basic coverage and 5-year fabricated parts and frame coverage. Tires, alignment, finish, normal wear, poor adjustment, corrosion, abuse and alterations may be excluded." },
       { question: 'What should I bring for a warranty claim?', answer: 'Bring the bill of sale, HIN, delivery date, motor serial number, trailer VIN, accessory serial numbers, registration confirmations, maintenance records and clear photographs. If there is an alarm or screen message, record it before shutting the system down.' },
     ],
-    content: `*Last reviewed: 2026-07-27*
+    content: `*Last reviewed: 2026-07-28*
 
 > **Quick answer:** A Legend package is not covered by one blanket warranty. Family and fishing boats combine structural coverage with the 6-year WOWranty, while current pontoons use a separate 5 | 10 | Lifetime program. Mercury, ShoreLand'r, Minn Kota, Humminbird and Garmin may cover their own products. The HIN, model year and written warranty decide the final coverage.
 
 A new Legend can arrive on one trailer with several different warranty providers.
 
-That is the part most warranty summaries gloss over. Legend may cover the boat and qualifying factory-installed equipment. Mercury covers the outboard. ShoreLand'r covers the trailer. Minn Kota, Humminbird and Garmin may each have their own terms.
+That's the part most warranty summaries gloss over. Legend may cover the boat and qualifying factory-installed equipment. Mercury covers the outboard. ShoreLand'r covers the trailer. Minn Kota, Humminbird and Garmin may each have their own terms.
 
 This guide puts those pieces in one place, including the claim steps and exclusions that matter after the sale.
 
@@ -39967,7 +40009,7 @@ The main Legend warranty page publishes **3 years on qualifying ProTech canvas m
 
 Current XT pages publish **5 years on the qualifying canvas material plus 1 year on the top components**. Current pontoons publish a different 10-year canvas and bimini-frame term.
 
-That is why a salesperson should not give one canvas answer for every Legend boat.
+That's why a salesperson shouldn't give one canvas answer for every Legend boat.
 
 ## Why Current Pontoon Coverage Is Different
 
@@ -40034,6 +40076,8 @@ We start with the paperwork because that is usually faster than starting with a 
 7. **Overall photographs, close-up photographs and screen or alarm messages**
 
 If the problem affects safety or continued use could cause more damage, stop using the boat. Do not cut cables, remove a transducer or authorize an outside repair until the warranty provider is clear.
+
+The fastest clean claim starts with the correct HIN, delivery date, serial numbers and clear photographs. A leak after an impact and a factory stitching defect can look similar in one close-up photo, but they follow different claim routes. Context matters before anyone starts taking things apart.
 
 HBW is an authorized Legend dealer. We can inspect the boat, verify the records and submit the claim, but the written warranty and manufacturer's decision still control.
 
