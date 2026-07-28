@@ -12,6 +12,7 @@ import {
  * the nearest matching ancestor of the click target.
  * Also tracks every phone, text, and email handoff link. A data-cta-location
  * value improves attribution, but is not required for the action to count.
+ * Directions, service-request, and contact-page handoffs use the same delegate.
  */
 export function GlobalCtaTracker() {
   useEffect(() => {
@@ -62,6 +63,40 @@ export function GlobalCtaTracker() {
           ...commonParams,
           entry_cta: explicitLocation || 'untagged_email_link',
         });
+      } else {
+        let destination: URL;
+        try {
+          destination = new URL(href, window.location.origin);
+        } catch {
+          return;
+        }
+
+        const isGoogleMaps =
+          destination.hostname === 'maps.app.goo.gl' ||
+          (destination.hostname.endsWith('.google.com') &&
+            destination.pathname.startsWith('/maps/'));
+        if (isGoogleMaps) {
+          trackEvent('directions_click', {
+            ...commonParams,
+            entry_cta: explicitLocation || 'untagged_directions_link',
+          });
+        } else if (
+          destination.hostname === 'hbw.wiki' &&
+          destination.pathname.startsWith('/service')
+        ) {
+          trackEvent('appointment_click', {
+            ...commonParams,
+            entry_cta: explicitLocation || 'untagged_service_link',
+          });
+        } else if (
+          destination.origin === window.location.origin &&
+          destination.pathname.startsWith('/contact')
+        ) {
+          trackEvent('contact_click', {
+            ...commonParams,
+            entry_cta: explicitLocation || 'untagged_contact_link',
+          });
+        }
       }
     };
 
