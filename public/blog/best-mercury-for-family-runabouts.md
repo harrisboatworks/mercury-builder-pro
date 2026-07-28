@@ -113,11 +113,11 @@ Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 | Motor | At Cruise | At WOT |
 |---|---|---|
-| 90 HP FourStroke | 3, 4 GPH | 8, 9 GPH |
-| 115 HP FourStroke | 4, 5 GPH | 10, 12 GPH |
-| 150 HP FourStroke | 5, 7 GPH | 14, 16 GPH |
-| 175 HP V6 FourStroke | 6, 8 GPH | 16, 18 GPH |
-| 200 HP V6 FourStroke | 7, 9 GPH | 18, 20 GPH |
+| 90 HP FourStroke | 11-15 L/h (3-4 GPH) | 30-34 L/h (8-9 GPH) |
+| 115 HP FourStroke | 15-19 L/h (4-5 GPH) | 38-45 L/h (10-12 GPH) |
+| 150 HP FourStroke | 19-26 L/h (5-7 GPH) | 53-61 L/h (14-16 GPH) |
+| 175 HP V6 FourStroke | 23-30 L/h (6-8 GPH) | 61-68 L/h (16-18 GPH) |
+| 200 HP V6 FourStroke | 26-34 L/h (7-9 GPH) | 68-76 L/h (18-20 GPH) |
 
 Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 

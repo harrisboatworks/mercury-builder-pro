@@ -87,7 +87,7 @@ After a few weeks of running your boat, you'll trim without thinking about it. T
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-The right trim setting at cruise can save 10-20 percent on fuel compared to running with trim full in. On a Mercury 90 HP burning 6-7 gallons per hour at cruise, that's worth real money over a season. The exact savings depend on hull design, load, and conditions, but the direction is consistent: proper trim equals lower fuel burn.
+The right trim setting at cruise can save 10-20 percent on fuel compared to running with trim full in. On a Mercury 90 HP burning 23-26 L/h (6-7 US gal/h) at cruise, that's worth real money over a season. The exact savings depend on hull design, load, and conditions, but the direction is consistent: proper trim equals lower fuel burn.
 
 This is one of the reasons we tell new boat owners that the trim button is the cheapest performance upgrade their boat has. It costs nothing, and using it right makes the boat noticeably faster and quieter.
 

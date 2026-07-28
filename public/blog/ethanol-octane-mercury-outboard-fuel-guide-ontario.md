@@ -123,7 +123,7 @@ Here's what ethanol-free does for you:
 
 **Carbureted motors run better on it.** Older motors and small kickers designed before ethanol blends were common run more reliably on ethanol-free. Many outboard manufacturers specifically recommend it.
 
-**Slightly better fuel economy.** Ethanol contains less energy per gallon than gasoline. At a 10% blend the effect is modest, but it's real.
+**Slightly better fuel economy.** Ethanol contains less energy per litre than gasoline. At a 10% blend the effect is modest, but it's real.
 
 **Longer fuel system life.** Without ethanol attacking rubber compounds over time, lines, primer bulbs, and carb internals last longer.
 

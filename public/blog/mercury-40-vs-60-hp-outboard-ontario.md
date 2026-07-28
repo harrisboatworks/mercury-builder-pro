@@ -206,7 +206,7 @@ A 60 HP with Command Thrust is the minimum we'd put on a 20 ft pontoon. Below 20
 
 ### What's the fuel economy difference between the 40 and 60?
 
-At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 3.5-4 gallons per hour and a 60 ELPT pulls roughly 5-5.5 GPH. Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per mile. Right-sized always wins.
+At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 13-15 L/h (3.5-4 US gal/h) and a 60 ELPT pulls roughly 19-21 L/h (5-5.5 GPH). Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per mile. Right-sized always wins.
 
 ### Tiller or remote steering: which should I get?
 

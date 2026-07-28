@@ -4289,7 +4289,7 @@ Text: (647) 952-2153`,
       { question: "What shaft length do I need for a sailboat auxiliary?", answer: "Most sailboats need a 20 inch (long) shaft. Larger displacement hulls (28 foot plus) sometimes need 25 inch (extra long). Measure from the top of the transom to the centre of the prop shaft on your old motor, or measure transom height plus 5 to 8 inches. We measure for free if you bring the boat or a photo of the transom." },
       { question: "Will the 9.9 push a loaded 14 foot aluminum jon boat?", answer: "It depends on the load. Empty with one adult, yes. Loaded with two adults, fishing gear, full fuel tank, and live well, the 9.9 will struggle to get the boat onto plane. The 15 handles the same hull and load with margin to spare. Most customers who go 9.9 here end up wishing they'd picked the 15." },
       { question: "Do the 9.9 and 15 share parts?", answer: "Largely yes. Same block, gearcase, cooling system, prop hub, and most consumables (impellers, plugs, oil filter, gear lube). Some calibration-specific parts differ (ECM mapping, throttle stop), but the consumables are interchangeable." },
-      { question: "What's the fuel burn for an average season?", answer: "About 25 to 50 gallons of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors." },
+      { question: "What's the fuel burn for an average season?", answer: "About 95 to 190 L (25 to 50 US gal) of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors." },
       { question: "Can I rig either as a remote-throttle setup later?", answer: "Yes. Both motors have remote-control conversion kits. You can start with a tiller and add remote later if your boat use changes. Bring the motor and your console setup to HBW and we'll quote the conversion." },
       { question: "What warranty comes with a new Mercury 9.9 or 15?", answer: "3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Premier Protection is available at purchase. See our Mercury extended warranty guide for details." }
     ],
@@ -4335,9 +4335,9 @@ What it means for you: reliability, parts availability, and serviceability are i
 | Displacement | 333cc / 2-cylinder | 333cc / 2-cylinder |
 | Dry weight (tiller, manual start, short shaft) | ~84 lbs | ~99 lbs |
 | Top RPM range | 5000-6000 | 5500-6300 |
-| Fuel burn at WOT | ~0.7 to 1.0 GPH | ~1.0 to 1.5 GPH |
+| Fuel burn at WOT | ~2.6 to 3.8 L/h (~0.7-1.0 GPH) | ~3.8 to 5.7 L/h (~1.0-1.5 GPH) |
 | Recommended fuel | Regular unleaded, 87 octane | Regular unleaded, 87 octane |
-| Standard fuel tank | Optional 3 or 6 gallon portable | Optional 3 or 6 gallon portable |
+| Standard fuel tank | Optional 11 or 23 L (3 or 6 US gal) portable | Optional 11 or 23 L (3 or 6 US gal) portable |
 | Warranty | 3 years limited + 3 years corrosion (concurrent) | 3 years limited + 3 years corrosion (concurrent) |
 | Tiller, remote, electric start options | All available | All available |
 | Command Thrust gearcase option | Available | Available |
@@ -4408,9 +4408,9 @@ Sailboats add three wrinkles to the 9.9 vs 15 decision.
 
 Customers sometimes ask whether the 9.9 will save them meaningful money on fuel. It won't.
 
-At wide-open throttle, the 15 burns about 0.3 to 0.5 GPH more than the 9.9. Spread that across 50 hours of running per season (which is high for most small-motor users), it's an extra 15 to 25 gallons of fuel. At Ontario marina pump prices, call it 100 to 150 CAD more per season.
+At wide-open throttle, the 15 burns about 1.1 to 1.9 L/h (0.3 to 0.5 GPH) more than the 9.9. Spread that across 50 hours of running per season (which is high for most small-motor users), it's an extra 57 to 95 L (15 to 25 US gal) of fuel. At Ontario marina pump prices, call it 100 to 150 CAD more per season.
 
-For most small-motor users, the actual difference is even smaller, because nobody runs a 9.9 or 15 at WOT continuously. You spend most of your time at cruising RPM where the fuel-burn delta drops to a few tenths of a GPH. The 15 is more efficient per horsepower-hour than the 9.9 when you account for the work being done.
+For most small-motor users, the actual difference is even smaller, because nobody runs a 9.9 or 15 at WOT continuously. You spend most of your time at cruising RPM where the fuel-burn delta drops to under a litre per hour (a few tenths of a GPH). The 15 is more efficient per horsepower-hour than the 9.9 when you account for the work being done.
 
 Translation: pick the motor that fits the boat and the use case. Don't pick the 9.9 to save money on fuel. The savings are too small to be a decision driver.
 
@@ -4430,7 +4430,7 @@ The one thing we don't see often is a customer who buys the 9.9, runs it for a s
 
 Mercury's MSRP and Canadian dealer pricing both shift through the year, so the numbers below are a snapshot. Build a current quote for either motor in CAD at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection) for the exact figure.
 
-As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 6-gallon portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
+As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short shaft, 23-litre / 6 US gal portable tank) runs in the low 4-figures CAD installed. The 15 EFI FourStroke equivalent runs a few hundred dollars more. Both motors are in normal supply at HBW. Electric start, long shaft, and Command Thrust options each add an incremental cost. The online quote builder itemizes everything in Canadian dollars with no form gate or callbacks required. To [see Mercury prices by horsepower](/pricing-reference) across the full lineup, check our price reference.
 
 ## Common Mistakes
 
@@ -4470,7 +4470,7 @@ Largely yes. Same block, gearcase, cooling system, prop hub, and most consumable
 
 **What's the fuel burn for an average season?**
 
-About 25 to 50 gallons of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors.
+About 95 to 190 L (25 to 50 US gal) of regular 87-octane for a typical recreational user (50 hours running, mostly cruising RPM). At Ontario marina pump prices, that's roughly 150 to 300 CAD per season for fuel. The delta between 9.9 and 15 is roughly 25 to 50 CAD per season at most, well under the price difference between the motors.
 
 **Can I rig either as a remote-throttle setup later?**
 
@@ -8379,7 +8379,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Outboard Fuel Economy: How to Get Better MPG',
     description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats.",
     image: '/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero.jpg',
-    imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 6.5 GPH fuel flow at 4200 RPM and 28 MPH.",
+    imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 24.6 L/h (6.5 US gal/h) fuel flow at 4200 RPM and 28 MPH.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
     dateModified: '2026-07-23',
@@ -8448,7 +8448,7 @@ This is why we don't recommend "getting a smaller motor to save fuel." If the sm
 ::cost-stack
 eyebrow: 2026 Ontario fuel cost ranges
 heading: What you'll actually spend on fuel per season
-subhead: Estimates based on Ontario marina gas pricing and realistic GPH for a properly propped Mercury FourStroke 90 to 150.
+subhead: Estimates based on Ontario marina gas pricing and realistic L/h (GPH) for a properly propped Mercury FourStroke 90 to 150.
 item1Label: Weekend family cruiser (50 hrs/season)
 item1Value: $550 to $850
 item1Note: Mostly cruise speeds, light to moderate load. Mid 90 to 115 HP class.
@@ -8482,7 +8482,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-![Mercury SmartCraft gauge showing 6.5 GPH fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
+![Mercury SmartCraft gauge showing 24.6 L/h (6.5 US gal/h) fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -8566,7 +8566,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'What\'s normal fuel consumption for a 115HP outboard?',
-        answer: 'At cruise (around 4,000 RPM), expect 6-8 GPH. At WOT, 10-12 GPH. Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.'
+        answer: 'At cruise (around 4,000 RPM), expect 23-30 L/h (6-8 GPH). At WOT, 38-45 L/h (10-12 GPH). Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption.'
       },
       {
         question: 'How much does a dirty hull cost in fuel?',
@@ -8594,7 +8594,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much fuel does a Mercury outboard use per hour?',
-        answer: 'It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 1 gallon (about 3.8 litres) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.'
+        answer: 'It depends mostly on horsepower, throttle setting, prop, and load, not on the badge alone. A common rule of thumb for a modern Mercury FourStroke is roughly 3.8 litres (about 1 US gallon) per hour for every 10 horsepower at wide-open throttle, and at an efficient cruise you will burn well under that. The only way to know your real number is to watch a SmartCraft fuel-economy gauge on your own boat, because hull, weight, and water conditions move it a lot. Want help dialing in a prop and cruise RPM that lowers your burn? Call Harris Boat Works at 905-342-2153.'
       },
       {
         question: 'Do 2-stroke or 4-stroke Mercury outboards burn less fuel?',
@@ -11755,11 +11755,11 @@ Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
 | Motor | At Cruise | At WOT |
 |---|---|---|
-| 90 HP FourStroke | 3, 4 GPH | 8, 9 GPH |
-| 115 HP FourStroke | 4, 5 GPH | 10, 12 GPH |
-| 150 HP FourStroke | 5, 7 GPH | 14, 16 GPH |
-| 175 HP V6 FourStroke | 6, 8 GPH | 16, 18 GPH |
-| 200 HP V6 FourStroke | 7, 9 GPH | 18, 20 GPH |
+| 90 HP FourStroke | 11-15 L/h (3-4 GPH) | 30-34 L/h (8-9 GPH) |
+| 115 HP FourStroke | 15-19 L/h (4-5 GPH) | 38-45 L/h (10-12 GPH) |
+| 150 HP FourStroke | 19-26 L/h (5-7 GPH) | 53-61 L/h (14-16 GPH) |
+| 175 HP V6 FourStroke | 23-30 L/h (6-8 GPH) | 61-68 L/h (16-18 GPH) |
+| 200 HP V6 FourStroke | 26-34 L/h (7-9 GPH) | 68-76 L/h (18-20 GPH) |
 
 Translation: a typical family Saturday, six hours, mixed cruising, a couple of skiing pulls, an hour of tubing, uses roughly:
 
@@ -19499,7 +19499,7 @@ Once your phone is paired, here's what's on screen:
 - **Maintenance reminders**: "100-hour service due in 12 hours" instead of you guessing
 - **GPS range rings (new app)**, see how far you can go on remaining fuel before you commit to a long run
 
-The features people actually use: **fuel flow at cruise** (saves real money over a season, set the right trim, watch the GPH drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
+The features people actually use: **fuel flow at cruise** (saves real money over a season, set the right trim, watch the L/h drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
 
 ---
 
@@ -24909,7 +24909,7 @@ Here's what ethanol-free does for you:
 
 **Carbureted motors run better on it.** Older motors and small kickers designed before ethanol blends were common run more reliably on ethanol-free. Many outboard manufacturers specifically recommend it.
 
-**Slightly better fuel economy.** Ethanol contains less energy per gallon than gasoline. At a 10% blend the effect is modest, but it's real.
+**Slightly better fuel economy.** Ethanol contains less energy per litre than gasoline. At a 10% blend the effect is modest, but it's real.
 
 **Longer fuel system life.** Without ethanol attacking rubber compounds over time, lines, primer bulbs, and carb internals last longer.
 
@@ -25510,7 +25510,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What\'s the fuel economy difference between the 40 and 60?',
-        answer: 'At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 3.5-4 gallons per hour and a 60 ELPT pulls roughly 5-5.5 GPH. Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per mile. Right-sized always wins.',
+        answer: 'At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 13-15 L/h (3.5-4 US gal/h) and a 60 ELPT pulls roughly 19-21 L/h (5-5.5 GPH). Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per mile. Right-sized always wins.',
       },
       {
         question: 'Tiller or remote steering: which should I get?',
@@ -26013,7 +26013,7 @@ A small module, roughly the size of a deck of cards, that plugs into the SmartCr
 
 **What you see on the phone:**
 - Engine RPM
-- Fuel rate (gallons per hour) and total fuel used per session
+- Fuel rate (litres per hour) and total fuel used per session
 - Engine temperature and coolant pressure
 - Battery voltage
 - Engine hours, lifetime and per trip
@@ -26990,9 +26990,9 @@ These are exact examples, not speed promises.
 
 | Boat and setup | Motor and propeller | Reported result | Useful context |
 |---|---|---|---|
-| [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 4.7 US gal/h |
-| [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 4.1 US gal/h |
-| [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 4.2 US gal/h |
+| [2023 Crestliner 1650 Hawk, 16.75 ft deep-V](https://performancedata.mercurymarine.com/performance-test/127) | 90 FourStroke, standard 2.08:1 listing, 15-pitch Spitfire aluminum | 36.6 mph at 5,710 rpm; 0–20 mph in 4.07 s | At 4,000 rpm: 25.7 mph and 17.8 L/h (4.7 US gal/h) |
+| [2020 Manitou Aurora LE Angler, 20 ft pontoon](https://performancedata.mercurymarine.com/performance-test/243) | 90 FourStroke Command Thrust 2.38:1, 11-pitch Enertia stainless | 24.4 mph at 5,590 rpm; 0–20 mph in 4.23 s | At 4,000 rpm: 17.1 mph and 15.5 L/h (4.1 US gal/h) |
+| [2023 Harris Cruiser 210, 22.1 ft pontoon](https://performancedata.mercurymarine.com/performance-test/209) | 90 FourStroke, 2.38:1 setup, 12-pitch Spitfire aluminum | 22 mph at 5,566 rpm; 0–20 mph in 12.6 s | At 4,000 rpm: 14.5 mph and 15.9 L/h (4.2 US gal/h) |
 | [1968 Boston Whaler 17 repower and sea trial](https://www.boattrader.com/research/boat-repower-guide-step-6-initial-sea-trial-performance-testing/) | Current-generation 90 FourStroke, 16-pitch Vengeance stainless | About 43–44 mph; on plane in about 4–5 s | Rigger considered trying 17 pitch after verifying rpm and handling |
 
 Mercury's Crestliner test page labels that setup 2.08:1, while the current operation manual gives the standard production ratio as 2.07:1. The table keeps Mercury's test-page wording rather than silently changing it.
@@ -27232,7 +27232,7 @@ Acceleration is strong when the boat is propped correctly. In Mercury's freshwat
 
 Those numbers describe those boats, not every 115 installation. A loaded 22 ft pontoon and a light 17 ft fishing boat can carry the same horsepower and feel like completely different machines.
 
-**Fuel use follows the boat too.** In Mercury's freshwater 189XF test, the 115 Pro XS used 2.6 US gal/h (about 9.8 L/h) at 3,000 rpm while the boat ran 19.5 mph. In the 22 ft Manitou pontoon test, the standard 115 Command Thrust used 2.2 US gal/h (about 8.3 L/h) at the same rpm while the boat ran 14.3 mph. Those are results for the named boats and props, not a fuel rating for the motor by itself.
+**Fuel use follows the boat too.** In Mercury's freshwater 189XF test, the 115 Pro XS used about 9.8 L/h (2.6 US gal/h) at 3,000 rpm while the boat ran 19.5 mph. In the 22 ft Manitou pontoon test, the standard 115 Command Thrust used about 8.3 L/h (2.2 US gal/h) at the same rpm while the boat ran 14.3 mph. Those are results for the named boats and props, not a fuel rating for the motor by itself.
 
 ## What Owners Actually Say Online
 
@@ -27808,9 +27808,9 @@ These are documented examples, not speed promises.
 
 | Boat and test load | Motor and propeller | Reported result | Useful cruise point |
 |---|---|---|---|
-| [2020 Barletta C22QC pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 6.9 US gal/h |
-| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,527 lb dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 3.6 US gal/h |
-| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 2,765 lb as tested including two people and full 40 US gal fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 4.0 US gal/h |
+| [2020 Barletta C22QC pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/19) | 150 FourStroke, 1.92:1, 14-pitch Spitfire aluminum | 34.6 mph at 5,743 rpm; 0–20 mph in 4.89 s; 0–30 mph in 9.59 s | 22.0 mph at 4,000 rpm, 26.1 L/h (6.9 US gal/h) |
+| [2023 Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,527 lb dry](https://performancedata.mercurymarine.com/performance-test/141) | 150 Pro XS, 2.08:1, 19-pitch Tempest Plus stainless | 47.6 mph at 5,875 rpm; 0–20 mph in 3.99 s; 0–30 mph in 6.06 s | 21.3 mph at 3,000 rpm, 13.6 L/h (3.6 US gal/h) |
+| [2019 Nitro Z18, 18 ft 8 in fibreglass bass boat, 2,765 lb as tested including two people and full 151 L (40 US gal) fuel](https://boattest.com/boats/nitro/z18-w-mercury-150-hp-pro-xs-2019) | 150 Pro XS, 25-pitch Fury 4 | 60.2 mph at 5,770 rpm; planed in 4.1 s; 0–30 mph in 6.4 s | 25.7 mph at 3,000 rpm, 15.1 L/h (4.0 US gal/h) |
 
 The Barletta and Crestliner rows use published dry boat weights. The Nitro figure is an as-tested weight with people and fuel, so the three weights are not directly comparable. What is comparable is the warning: the Barletta and Nitro use the same horsepower and differ by 25.6 mph at the top end. That isn't an argument that one test is wrong. It is the clearest possible argument against shopping by a detached speed number.
 
@@ -28217,10 +28217,10 @@ These are complete Mercury performance records. They are examples, not speed pro
 
 | Boat | Motor and setup | Published result | Useful cruise point |
 |---|---|---|---|
-| [Barletta C22U pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 7.8 US gal/h |
-| [Crestliner 2200 Bay, 22.25 ft aluminum, 1,912 lb dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 8.6 US gal/h |
-| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,689 lb dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 8.8 US gal/h |
-| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 1,760 lb dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 8.2 US gal/h |
+| [Barletta C22U pontoon, 23.2 ft, 2,834 lb dry](https://performancedata.mercurymarine.com/performance-test/454) | 200 FourStroke V6, standard 1.85, 14-pitch Enertia stainless | 38.4 mph at 5,824 rpm; 0–20 mph in 3.98 s; 0–30 mph in 7.4 s | 24.4 mph at 4,000 rpm, 29.5 L/h (7.8 US gal/h) |
+| [Crestliner 2200 Bay, 22.25 ft aluminum, 1,912 lb dry](https://performancedata.mercurymarine.com/performance-test/152) | 200 FourStroke V6, standard 1.85, 17-pitch Tempest Plus stainless | 49.1 mph at 5,800 rpm; 0–20 mph in 3.8 s; 0–30 mph in 5.0 s | 32.9 mph at 4,000 rpm, 32.6 L/h (8.6 US gal/h) |
+| [Crestliner 1850 Fish Hawk, 18.5 ft aluminum deep-V, 1,689 lb dry](https://performancedata.mercurymarine.com/performance-test/142) | 200 Pro XS V8, standard 1.85, 19-pitch Tempest Plus stainless | 53.5 mph at 5,987 rpm in Mercury's summary; 0–20 mph in 3.17 s; 0–30 mph in 4.65 s | 35.8 mph at 4,000 rpm, 33.3 L/h (8.8 US gal/h) |
+| [Lund 1875 Tyee, 18.8 ft aluminum deep-V, 1,760 lb dry](https://performancedata.mercurymarine.com/performance-test/235) | 200 Pro XS V8, HD Straight 1.75, 17-pitch Enertia stainless | 53.3 mph at 6,131 rpm; 0–20 mph in 3.0 s; 0–30 mph in 4.6 s | 33.7 mph at 4,000 rpm, 31.0 L/h (8.2 US gal/h) |
 
 All four records are freshwater tests. The boat weights are published dry weights, not complete as-tested weights. Fuel, batteries, people, safety gear and options add to them.
 
@@ -33776,7 +33776,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What happens if the DTS digital display fails on the water?", answer: "Mercury includes a fallback mode that lets you control the motor at limited throttle to get back to dock. The fault gets diagnosed at the dealer. We've seen this happen rarely (maybe a handful of times across 25 years of installs), and it hasn't left our customers stranded." },
       { question: "Are mechanical cables really 50-year-old technology?", answer: "Functionally, yes. Modern cables have better materials and seals, but the principle has not changed. They wear out predictably (most cables are good for 10-15 years of average use), they're cheap, and they're easy to replace." },
       { question: "Do mechanical and DTS controls work with the same Mercury props?", answer: "Yes. The control system is independent of propeller choice. Whatever prop is correctly matched to your hull and motor will work with either control system. Our [Mercury Controls & Rigging Compatibility Matrix](/blog/mercury-controls-rigging-guide-ontario) covers prop selection in detail." },
-      { question: "Is there a fuel economy difference?", answer: "Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a gallon at cruise. We haven't seen a meaningful real-world difference. The motor model, the prop, and the hull matter far more than the control system." },
+      { question: "Is there a fuel economy difference?", answer: "Marginal in theory, irrelevant in practice. DTS allows slightly more precise throttle modulation which could in theory save a fraction of a litre at cruise. We haven't seen a meaningful real-world difference. The motor model, the prop, and the hull matter far more than the control system." },
     ],
     content: `# Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
 
@@ -33969,7 +33969,7 @@ After a few weeks of running your boat, you'll trim without thinking about it. T
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-The right trim setting at cruise can save 10-20 percent on fuel compared to running with trim full in. On a Mercury 90 HP burning 6-7 gallons per hour at cruise, that's worth real money over a season. The exact savings depend on hull design, load, and conditions, but the direction is consistent: proper trim equals lower fuel burn.
+The right trim setting at cruise can save 10-20 percent on fuel compared to running with trim full in. On a Mercury 90 HP burning 23-26 L/h (6-7 US gal/h) at cruise, that's worth real money over a season. The exact savings depend on hull design, load, and conditions, but the direction is consistent: proper trim equals lower fuel burn.
 
 This is one of the reasons we tell new boat owners that the trim button is the cheapest performance upgrade their boat has. It costs nothing, and using it right makes the boat noticeably faster and quieter.
 
@@ -37318,8 +37318,8 @@ The 150 isn't a dramatic top-end difference. Where you actually feel it:
 - 150: 3,500-3,800 RPM (relaxed)
 
 **Fuel burn at 25 MPH cruise:**
-- 115: roughly 6.5-7.5 GPH
-- 150: roughly 7.5-8.5 GPH
+- 115: roughly 25-28 L/h (6.5-7.5 GPH)
+- 150: roughly 28-32 L/h (7.5-8.5 GPH)
 
 The 150 burns slightly more fuel per hour at the same cruise speed but runs at lower RPM, which is easier on the engine and on your ears. Over 200 hours of use, the fuel delta is real but not catastrophic.
 
@@ -37336,13 +37336,13 @@ We see online comparisons assume 100 hours of use per season as the baseline. **
 Using realistic Ontario use patterns:
 
 **20-hour season fuel cost delta (115 vs 150 at 25 MPH cruise, $1.85/L Ontario marine fuel):**
-- 115 fuel: 20 hr × 7 GPH × 3.785 L/gal × $1.85 = $980
-- 150 fuel: 20 hr × 8 GPH × 3.785 L/gal × $1.85 = $1,120
+- 115 fuel: 20 hr × 26.5 L/h (7 GPH) × $1.85 = $980
+- 150 fuel: 20 hr × 30.3 L/h (8 GPH) × $1.85 = $1,120
 - Annual delta: $140
 
 **100-hour season fuel cost delta (heavy use):**
-- 115 fuel: 100 hr × 7 GPH × 3.785 L/gal × $1.85 = $4,900
-- 150 fuel: 100 hr × 8 GPH × 3.785 L/gal × $1.85 = $5,600
+- 115 fuel: 100 hr × 26.5 L/h (7 GPH) × $1.85 = $4,900
+- 150 fuel: 100 hr × 30.3 L/h (8 GPH) × $1.85 = $5,600
 - Annual delta: $700
 
 For most Rice Lake cottage users at 20 hours/year, fuel cost is not the deciding factor. The motor price delta matters more.
@@ -39210,7 +39210,7 @@ If you've cleared the intakes and you're still overheating at speed, or you'd ra
       { question: 'Why do bilge connections corrode even on a freshwater lake?', answer: "Freshwater is less corrosive than saltwater, but a damp bilge, condensation, and outdoor winter storage still expose connectors to moisture all season. Corrosion inside a crimped connector builds slowly and often isn't visible until you pull the connector apart or it fails outright." },
       { question: 'How often should I test my bilge pump?', answer: 'At minimum, test the manual override every time you\u2019re at the dock, and do a full float switch and connector check at spring commissioning. If your boat sits in the water all season, test the whole system monthly.' },
       { question: "My pump runs but not much water comes out. What's wrong?", answer: 'Start with the discharge hose: check for kinks, a partial disconnection, or a blocked thru-hull. Then clean the intake screen, since debris is the leading cause of reduced flow. If both are clear, the impeller may be worn or damaged.' },
-      { question: 'What size bilge pump do I need for my boat?', answer: "As a starting point, 500-800 GPH under 16 feet, 800-1,500 GPH for 17-20 feet, and 1,500-2,500 GPH for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up." },
+      { question: 'What size bilge pump do I need for my boat?', answer: "As a starting point, 1,900-3,000 L/h (500-800 GPH) under 16 feet, 3,000-5,700 L/h (800-1,500 GPH) for 17-20 feet, and 5,700-9,500 L/h (1,500-2,500 GPH) for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up." },
       { question: 'Does my Legend Boats warranty cover the bilge pump?', answer: "Yes. Legend's 6-Year WOWranty covers most components, including factory-installed bilge pumps and related electrical parts, for six years from purchase. On the Q-Series LE and Q-Series pontoons, that stretches to ten years. Bring your Legend to HBW. We're an authorized dealer and can handle the warranty claim directly." },
     ],
     content: `# The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them
@@ -39326,7 +39326,7 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## Bilge Pump Types: What's in Your Boat
 
-**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in GPH. Cannot run dry. Best for general bilge duty.
+**Centrifugal submersible (standard on most boats):** the workhorse. Sits in the bilge water, sealed motor, impeller moves water by centrifugal force. Rated in L/h (or GPH). Cannot run dry. Best for general bilge duty.
 
 **Diaphragm pump:** uses a flexible membrane instead of a spinning impeller. Can run dry without damage. Often used as a manual backup or where the pump can't stay submerged. Less common as a primary automatic pump on recreational boats.
 
@@ -39336,24 +39336,24 @@ The motor itself failing on its own is the least common cause on this list, and 
 
 ## How to Size Your Bilge Pump
 
-Bilge pumps are rated in gallons per hour (GPH) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 1,000 GPH will actually move about 600 GPH once it's installed and working against real head pressure.
+Bilge pumps are rated in litres per hour (L/h, or gallons per hour) at the pump itself, not accounting for hose length, vertical lift, or voltage drop. In real-world conditions, most pumps deliver roughly 60% of their rated capacity. A pump rated at 3,800 L/h (1,000 GPH) will actually move about 2,300 L/h (600 GPH) once it's installed and working against real head pressure.
 
 A practical sizing guide for Ontario recreational boats:
 
-![Bilge pump sizing chart by boat length in GPH](/lovable-uploads/bilge-pump-sizing-chart.png)
+![Bilge pump sizing chart by boat length in L/h (GPH)](/lovable-uploads/bilge-pump-sizing-chart.png)
 
 
 | Boat length | Recommended capacity | Typical setup |
 |---|---|---|
-| Under 16 ft | 500-800 GPH | 1 pump |
-| 17-20 ft | 800-1,500 GPH | 1 pump, consider 2 |
-| 21-26 ft | 1,500-2,500 GPH | 2 pumps |
-| 27-35 ft | 2,500-3,500 GPH | 2-3 pumps |
-| 36 ft+ | 3,500-6,000+ GPH | 3+ pumps |
+| Under 16 ft | 1,900-3,000 L/h (500-800 GPH) | 1 pump |
+| 17-20 ft | 3,000-5,700 L/h (800-1,500 GPH) | 1 pump, consider 2 |
+| 21-26 ft | 5,700-9,500 L/h (1,500-2,500 GPH) | 2 pumps |
+| 27-35 ft | 9,500-13,000 L/h (2,500-3,500 GPH) | 2-3 pumps |
+| 36 ft+ | 13,000-22,700+ L/h (3,500-6,000+ GPH) | 3+ pumps |
 
-When in doubt, size up. A 1,500 GPH pump on a 20-foot boat has real-world output around 900 GPH, which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
+When in doubt, size up. A 5,700 L/h (1,500 GPH) pump on a 20-foot boat has real-world output around 3,400 L/h (900 GPH), which still handles nuisance water easily and gives you real margin in an emergency. There's no real downside to more pumping capacity.
 
-**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 500 and 800 GPH, which suits the 14-20 foot hull sizes those boats are built around.
+**Note on Legend Boats:** Legend equips its fishing boats and deck boats with Attwood Tsunami bilge pumps rated between 1,900 and 3,000 L/h (500 and 800 GPH), which suits the 14-20 foot hull sizes those boats are built around.
 
 ---
 
@@ -39367,11 +39367,11 @@ Two brands dominate the recreational market in Canada: Rule and Attwood. A third
 
 **Seaflo:** a budget-priced alternative with a 4-year warranty, longer than either Rule or Attwood. Real-world results are mixed, adequate for nuisance water on sheltered-water boats, less proven for demanding duty cycles. A reasonable choice for a secondary or backup pump where price matters more than peak performance.
 
-| Brand | Key model | GPH range | Warranty | Best use |
+| Brand | Key model | Flow range | Warranty | Best use |
 |---|---|---|---|---|
-| Attwood | Tsunami Mk2, Sahara | 500-1,200 | 3 yr | Primary auto pump, Legend Boats' factory choice |
-| Rule | Gold Series | 500-3,700 | 3 yr | Manual/standard with a separate switch |
-| Seaflo | Various | 500-2,000 | 4 yr | Secondary/backup pump |
+| Attwood | Tsunami Mk2, Sahara | 1,900-4,500 L/h (500-1,200 GPH) | 3 yr | Primary auto pump, Legend Boats' factory choice |
+| Rule | Gold Series | 1,900-14,000 L/h (500-3,700 GPH) | 3 yr | Manual/standard with a separate switch |
+| Seaflo | Various | 1,900-7,600 L/h (500-2,000 GPH) | 4 yr | Secondary/backup pump |
 
 ---
 
@@ -39497,7 +39497,7 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ## Legend Boats and the 6-Year WOWranty: What It Covers
 
-Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
+Legend Boats equips its fishing boats and deck boats with Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH), factory-installed and covered under Legend's 6-Year WOWranty, one of the most comprehensive component warranties in the recreational boat industry.
 
 Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
 
@@ -39553,7 +39553,7 @@ At minimum, test the manual override every time you're at the dock, and do a ful
 Start with the discharge hose: check for kinks, a partial disconnection, or a blocked thru-hull. Then clean the intake screen, since debris is the leading cause of reduced flow. If both are clear, the impeller may be worn or damaged.
 
 **What size bilge pump do I need for my boat?**
-As a starting point, 500-800 GPH under 16 feet, 800-1,500 GPH for 17-20 feet, and 1,500-2,500 GPH for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
+As a starting point, 1,900-3,000 L/h (500-800 GPH) under 16 feet, 3,000-5,700 L/h (800-1,500 GPH) for 17-20 feet, and 5,700-9,500 L/h (1,500-2,500 GPH) for 21-26 feet, with two pumps once you're past about 20 feet. Real-world output runs about 60% of the rated number, so when you're between sizes, size up.
 
 **Does my Legend Boats warranty cover the bilge pump?**
 Yes. Legend's 6-Year WOWranty covers most components, including factory-installed bilge pumps and related electrical parts, for six years from purchase. On the Q-Series LE and Q-Series pontoons, that stretches to ten years. Bring your Legend to HBW. We're an authorized dealer and can handle the warranty claim directly.
@@ -39636,7 +39636,7 @@ With a 90 hp FourStroke, a 17.5-foot deep-V aluminum boat carrying three adults 
 
 ## Fuel Economy: 90 vs 115 at Cruise and WOT
 
-Because the two engines share the same displacement, their fuel consumption at typical cruising speeds (3,500 to 4,000 RPM) is remarkably close. Both will return fuel burn in the range of roughly 4 to 5 gallons per hour (15 to 19 litres per hour) when propped correctly and settled into an efficient cruise. The 115 will typically burn a little more fuel at wide-open throttle, perhaps 5 to 10 percent, simply because it is making more power and turning the propeller faster.
+Because the two engines share the same displacement, their fuel consumption at typical cruising speeds (3,500 to 4,000 RPM) is remarkably close. Both will return fuel burn in the range of roughly 15 to 19 litres per hour (4 to 5 US gallons per hour) when propped correctly and settled into an efficient cruise. The 115 will typically burn a little more fuel at wide-open throttle, perhaps 5 to 10 percent, simply because it is making more power and turning the propeller faster.
 
 The real-world fuel cost difference over a season of weekend boating on Ontario lakes is modest. The 115's ability to plane at lower RPM can actually improve cruise economy when loaded heavily, because you are not forcing the engine to labour at high throttle openings just to stay on plane. That nuance is exactly why we encourage boaters to consider their typical load, not just the engine spec sheet, when comparing fuel use.
 

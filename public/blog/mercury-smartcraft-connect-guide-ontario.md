@@ -52,7 +52,7 @@ A small module, roughly the size of a deck of cards, that plugs into the SmartCr
 
 **What you see on the phone:**
 - Engine RPM
-- Fuel rate (gallons per hour) and total fuel used per session
+- Fuel rate (litres per hour) and total fuel used per session
 - Engine temperature and coolant pressure
 - Battery voltage
 - Engine hours, lifetime and per trip
