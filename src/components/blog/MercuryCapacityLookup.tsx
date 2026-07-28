@@ -153,7 +153,7 @@ export function MercuryCapacityLookup() {
             ))}
           </div>
 
-          <div className="hidden overflow-x-auto md:block">
+          <div className="hidden overflow-x-auto md:block lg:overflow-x-visible">
             <table className="w-full border-collapse text-left text-sm">
               <thead className="bg-repower-navy-900/[0.055] text-xs uppercase tracking-wide text-repower-navy-900/70">
                 <tr>
