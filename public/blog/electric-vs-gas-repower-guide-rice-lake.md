@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md
-last_updated: 2026-07-15
+last_updated: 2026-07-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury 
 description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat."
 category: "Buying Guide"
 date_published: 2026-07-15
-date_modified: 2026-07-15
+date_modified: 2026-07-28
 keywords: ["electric outboard repower Ontario","Mercury Avator repower","electric vs gas outboard","Avator Rice Lake","electric outboard Ontario lakes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +24,9 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-07-15  
-**Last updated:** 2026-07-15  
+**Last updated:** 2026-07-28
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake
-
-# Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)
 
 > **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one. Call 905-342-2153 and we'll tell you straight which fits your boat.
 
@@ -98,6 +96,21 @@ The disappointed electric stories you read in forums almost all share one origin
 
 ---
 
+## Electric vs Gas at a Glance
+
+| Question | Mercury Avator electric | Mercury gas FourStroke |
+|---|---|---|
+| Noise and fumes | Very quiet, with no exhaust fumes at the transom | More sound and exhaust, even on a modern quiet four-stroke |
+| Best day | Predictable short trips, trolling, tenders and quiet-water use | Longer runs, heavier boats and days without charging access |
+| Energy stop | Recharge from shore power or swap a compatible battery | Refuel in minutes where gasoline is available |
+| Routine engine service | No engine oil, spark plugs or fuel system | Scheduled oil, filter, spark-plug, fuel-system and cooling-system work |
+| Biggest planning item | Battery count, charging time and real-world range | Fuel capacity, storage quality and service schedule |
+| Practical limit | Sustained speed, heavy loads and distance use battery quickly | More noise, more routine maintenance and fuel to store |
+
+Neither column is the universal winner. The right answer follows the boat, the trip and the charging available where the boat lives.
+
+---
+
 ## The Honest Limitations
 
 **Range shrinks in the real world.** Wind, chop, load, and throttle all eat battery. Cold water early in the season takes a bite too, because lithium chemistry doesn't love the cold even though the motor itself does. In Mercury's own published 7.5e test on a light 13-foot boat, one 1 kWh battery gave about 60 minutes at full throttle, or most of a day at slow trolling speed. Read both halves of that sentence before you buy. Our [Avator range on Rice Lake guide](/blog/mercury-avator-range-rice-lake-cottage) goes deeper.
@@ -140,6 +153,15 @@ We're bringing Avator into the lineup now, with pricing being finalized. If you 
 
 ---
 
+## Sources
+
+- [Mercury Avator 20e and 35e product information](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-20-35e), including Mercury's published 35e sound comparison
+- [Mercury Avator 7.5e product information](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e), including Mercury's published 13-foot test-boat range examples
+- [Clark Lake Vessel Operation Restriction Regulations application update](https://media-doppleronline-ca.s3-accelerate.amazonaws.com/2025/01/Clark-Lake-VORR-Application-Update.pdf)
+- [Transport Canada: Apply for Vessel Operation Restrictions](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/apply-vessel-operation-restrictions)
+
+---
+
 ## Ready to Figure Out Which Way Your Repower Goes?
 
 Tell us the boat, the water, and how you actually run it. We'll tell you straight whether that's an Avator, a gas FourStroke, or a gas main with an electric kicker. We sell both, so the only thing we're invested in is you being happy with it next August.
@@ -148,15 +170,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
 **Avator info:** [mercuryrepower.ca/electric/mercury-avator](https://www.mercuryrepower.ca/electric/mercury-avator)
 **Gas repower quotes:** [Build your quote](/quote/motor-selection)
 
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario)
-- [Mercury Avator 7.5e: Review, Price CAD & Range (2026)](/blog/mercury-avator-7-5e-review)
-- [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
-- [Charging a Mercury Avator at Your Cottage Dock](/blog/mercury-avator-charging-cottage-dock)
-- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad)
 
 ## FAQs
 
@@ -180,6 +194,14 @@ Per hour on the water, yes: no fuel, no oil changes, minimal maintenance. But th
 
 All three make legitimate motors. Avator's edge is the Mercury dealer network behind it: warranty, parts, and service you can actually drive to. We wrote an honest head-to-head in our Avator vs Torqeedo comparison.
 
+## Related guides
+
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
+- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
@@ -194,4 +216,3 @@ All three make legitimate motors. Avator's edge is the Mercury dealer network be
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

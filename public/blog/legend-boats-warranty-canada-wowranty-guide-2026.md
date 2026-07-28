@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026.md
-last_updated: 2026-07-27
+last_updated: 2026-07-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026
 description: "Legend Boats warranty explained: 6-year WOWranty, Leakproof for Life, pontoon 5 | 10 | Lifetime, plus motor, trailer and electronics coverage."
 category: "Buying Guide"
 date_published: 2026-07-27
-date_modified: 2026-07-27
+date_modified: 2026-07-28
 keywords: ["Legend Boats warranty Canada","Legend WOWranty","Legend pontoon warranty","Leakproof for Life warranty","Legend boat warranty transfer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-27  
+**Last updated:** 2026-07-28
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026
 
@@ -32,7 +32,7 @@ language: en-CA
 
 A new Legend can arrive on one trailer with several different warranty providers.
 
-That is the part most warranty summaries gloss over. Legend may cover the boat and qualifying factory-installed equipment. Mercury covers the outboard. ShoreLand'r covers the trailer. Minn Kota, Humminbird and Garmin may each have their own terms.
+That's the part most warranty summaries gloss over. Legend may cover the boat and qualifying factory-installed equipment. Mercury covers the outboard. ShoreLand'r covers the trailer. Minn Kota, Humminbird and Garmin may each have their own terms.
 
 This guide puts those pieces in one place, including the claim steps and exclusions that matter after the sale.
 
@@ -115,7 +115,7 @@ The main Legend warranty page publishes **3 years on qualifying ProTech canvas m
 
 Current XT pages publish **5 years on the qualifying canvas material plus 1 year on the top components**. Current pontoons publish a different 10-year canvas and bimini-frame term.
 
-That is why a salesperson should not give one canvas answer for every Legend boat.
+That's why a salesperson shouldn't give one canvas answer for every Legend boat.
 
 ## Why Current Pontoon Coverage Is Different
 
@@ -182,6 +182,8 @@ We start with the paperwork because that is usually faster than starting with a 
 7. **Overall photographs, close-up photographs and screen or alarm messages**
 
 If the problem affects safety or continued use could cause more damage, stop using the boat. Do not cut cables, remove a transducer or authorize an outside repair until the warranty provider is clear.
+
+The fastest clean claim starts with the correct HIN, delivery date, serial numbers and clear photographs. A leak after an impact and a factory stitching defect can look similar in one close-up photo, but they follow different claim routes. Context matters before anyone starts taking things apart.
 
 HBW is an authorized Legend dealer. We can inspect the boat, verify the records and submit the claim, but the written warranty and manufacturer's decision still control.
 
@@ -277,4 +279,3 @@ Bring the bill of sale, HIN, delivery date, motor serial number, trailer VIN, ac
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

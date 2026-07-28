@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md
-last_updated: 2026-07-24
+last_updated: 2026-07-28
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Oil Capacity Chart: Model and Year Lookup"
 description: "Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP."
 category: "Service & Maintenance"
 date_published: 2026-07-24
-date_modified: 2026-07-24
+date_modified: 2026-07-28
 keywords: ["Mercury outboard oil capacity chart","Mercury FourStroke oil capacity","Mercury gearcase oil capacity","Mercury outboard oil filter chart","Mercury 90 oil capacity","Mercury 60 gear oil capacity","Mercury outboard oil lookup"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-07-24  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-07-28
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 
@@ -176,6 +176,8 @@ The capacity guide groups oils by engine family, not by one universal rule.
 
 Mercury includes temperature, manual-start and high-performance footnotes in its chart. Treat the table as a lookup aid, then use the viscosity and formula named in the exact owner's manual.
 
+For four-stroke engines, use oil that meets Mercury's specified marine four-stroke standard, commonly **FC-W**, as well as the viscosity and formula required by the exact manual. An automotive oil with the same viscosity printed on the bottle is not automatically the same specification.
+
 ## Which Mercury Gear Lube?
 
 The 2026 guide generally assigns:
@@ -197,6 +199,8 @@ The same 2026 Mercury guide separates two-stroke oil by engine type:
 
 It does not provide one universal two-stroke gearcase capacity table. Use the manual for the exact serial number.
 
+Two-stroke engine oil is a separate product from four-stroke crankcase oil. Use the **TC-W3** oil type and Mercury product named for the exact two-stroke family.
+
 ## The Five Details That Prevent a Wrong Fill
 
 Have these in front of you before buying oil, a filter or a service kit:
@@ -209,9 +213,13 @@ Have these in front of you before buying oil, a filter or a service kit:
 
 A photo of the transom-bracket label is usually more useful than a photo of the cowl.
 
+## From the Shop
+
+The avoidable mistake is usually not a bad conversion. It is matching the right horsepower to the wrong engine family or lower unit. A clear serial-label photo and a gearcase photo settle more questions than the cowl badge does.
+
 ## Sources and Scope
 
-- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-28
+- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 24-27
 - [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 - [Mercury Marine Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
 
@@ -243,6 +251,14 @@ Both are correct for different Mercury families. The 2026 capacity guide lists 1
 
 The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 90 High Performance for the 75 HP-and-up rows, and 85W-90 Extreme Performance for V10 Verado and 400R applications. The exact gearcase and manual control the choice.
 
+## Related guides
+
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
@@ -257,4 +273,3 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
