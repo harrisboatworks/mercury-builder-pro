@@ -62,11 +62,11 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** A typical pontoon sits between 1,800 and 3,500 lbs dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 5,000 lbs. You're pushing a lot of mass.
+**Weight.** A typical pontoon sits between 1,800 and 1,588 kg (3,500 lb) dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 2,268 kg (5,000 lb). You're pushing a lot of mass.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
-**Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 1,500-2,000 lbs of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
+**Passenger load.** A 22-foot pontoon can legally carry 10-12 people. That's 680-907 kg (1,500-2,000 lbs) of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
 
 **Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
@@ -313,7 +313,7 @@ Not for a loaded boat. Dealers push 60 HP on 20-footers and 90 HP on 24-footers 
 
 ### Why do pontoons need more HP than runabouts?
 
-A typical pontoon sits 1,800 to 3,500 lbs dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 5,000 lbs. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
+A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 2,268 kg (5,000 lb). Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
 
 ### When does Command Thrust matter on a pontoon?
 

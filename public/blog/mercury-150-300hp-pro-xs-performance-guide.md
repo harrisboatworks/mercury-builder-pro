@@ -208,7 +208,7 @@ Both are current V8 applications with different intended duty and available conf
 
 ### How much does a Mercury 150 Pro XS weigh?
 
-Mercury publishes 456 lb for the lightest 150 Pro XS configuration. That is not the weight of every SKU. Shaft length, gearcase, controls and configuration can change the installed number, so compare the exact quoted motor with the boat's capacity plate and transom limits.
+Mercury publishes 207 kg (456 lb) for the lightest 150 Pro XS configuration. That is not the weight of every SKU. Shaft length, gearcase, controls and configuration can change the installed number, so compare the exact quoted motor with the boat's capacity plate and transom limits.
 
 ### What is the top speed of a Mercury 150 Pro XS?
 

@@ -44,7 +44,7 @@ This isn't a scare piece. It's what our service techs actually deal with, writte
 
 Before we get into the full list, this one deserves its own section because it causes more problems than everything else combined.
 
-Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
+Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 1,361 kg (3,000 lb). Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
 
 The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't come up to cruise properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
 

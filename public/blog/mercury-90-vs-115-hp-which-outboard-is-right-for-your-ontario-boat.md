@@ -44,7 +44,7 @@ There is no meaningful weight penalty for choosing more horsepower. This parity 
 
 ## Performance on a Typical Ontario Aluminum Boat (17 to 19 ft)
 
-Most of the fishing and cottage boats we see at Harris Boat Works fall into the 17-to-19-foot aluminum category. Think Legend, Lund, Princecraft, Alumacraft, or Crestliner. Loaded with three or four adults, fishing gear, a full livewell, and a cooler, the total on-water weight quickly climbs north of 2,000 pounds. The difference between a 90 and a 115 becomes very real when you need to plane quickly against a chop on Rice Lake or cruise comfortably into the wind.
+Most of the fishing and cottage boats we see at Harris Boat Works fall into the 17-to-19-foot aluminum category. Think Legend, Lund, Princecraft, Alumacraft, or Crestliner. Loaded with three or four adults, fishing gear, a full livewell, and a cooler, the total on-water weight quickly climbs north of 907 kg (2,000 lb). The difference between a 90 and a 115 becomes very real when you need to plane quickly against a chop on Rice Lake or cruise comfortably into the wind.
 
 With a 90 hp FourStroke, a 17.5-foot deep-V aluminum boat carrying three adults and gear will typically plane in the mid-teens (mph) and top out around 32 to 35 mph in ideal conditions. A well-propped 115 on the same hull can add 4 to 6 mph on the top end, but more importantly it gets on plane faster and maintains plane at lower RPM. That extra mid-range authority means you can stay comfortably on step at 20 mph without burying the throttle, which is a huge advantage when you want to cover water smoothly with a full crew and a chop building.
 
@@ -76,9 +76,9 @@ A well-maintained 115 will typically fetch a higher resale value and sell more q
 
 Instead of choosing solely by horsepower number, think about the total weight you regularly put on the water. A simple framework is:
 
-- Light loads (under 2,200 lbs total on-plane weight): A 90 hp FourStroke, especially with Command Thrust, is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
-- Medium loads (2,200 to 2,800 lbs): A 115 hp will provide noticeably better acceleration, planing, and control in rough water. If you regularly carry three or four adults, a full livewell, and weekend gear, this is the sweet spot.
-- Heavy loads (2,800 lbs and up): If your boat is rated for 115 hp and you push its capacity limits, the 115 is the clear choice. Pairing it with Command Thrust gives you a setup that handles like a larger engine and keeps you safely on plane in any reasonable Ontario chop.
+- Light loads (under 998 kg (2,200 lb) total on-plane weight): A 90 hp FourStroke, especially with Command Thrust, is almost certainly plenty. This covers a 17-foot aluminum tiller with two people and modest gear, or a smaller side-console boat used for solo fishing.
+- Medium loads (998 to 1,270 kg (2,200 to 2,800 lbs)): A 115 hp will provide noticeably better acceleration, planing, and control in rough water. If you regularly carry three or four adults, a full livewell, and weekend gear, this is the sweet spot.
+- Heavy loads (1,270 kg (2,800 lb) and up): If your boat is rated for 115 hp and you push its capacity limits, the 115 is the clear choice. Pairing it with Command Thrust gives you a setup that handles like a larger engine and keeps you safely on plane in any reasonable Ontario chop.
 
 Run through your typical crew, fuel, batteries, and tackle. Multiply by real weights, and you will quickly see whether the 90 or 115 deserves the nod.
 

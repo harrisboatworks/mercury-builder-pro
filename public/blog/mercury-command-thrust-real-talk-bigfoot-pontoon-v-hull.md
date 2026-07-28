@@ -79,7 +79,7 @@ Nothing about the powerhead changes. A 60 CT makes the same horsepower as a stan
 
 ## Why Pontoons Love It
 
-A 22-foot pontoon with a family, a cooler, and a dog aboard can be pushing well over 3,000 lbs of boat and cargo, sitting high with tubes that shove water instead of slicing it. That boat doesn't need shaft speed; it needs a paddle wheel's worth of grip.
+A 22-foot pontoon with a family, a cooler, and a dog aboard can be pushing well over 1,361 kg (3,000 lb) of boat and cargo, sitting high with tubes that shove water instead of slicing it. That boat doesn't need shaft speed; it needs a paddle wheel's worth of grip.
 
 Command Thrust gives it exactly that. Better hole-shot with a full deck, better control docking in wind, less strain holding cruise into a headwind. Mercury's own R&D backs the engineering: in their testing, a 60 CT out-accelerated a Yamaha 70 under both light and heavy loads. Great gearcase. Right application.
 

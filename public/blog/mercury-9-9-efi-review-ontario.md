@@ -140,7 +140,7 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
 | Displacement | 208 cc (12.8 cu in) |
-| Dry weight | Approximately 84 lb |
+| Dry weight | Approximately 38 kg (84 lb) |
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000, 6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
@@ -190,7 +190,7 @@ Mercury says the manual-start 9.9 EFI models do not require a cranking battery b
 
 ### How much does the Mercury 9.9 MH EFI weigh?
 
-Dealer specifications list the Mercury 9.9 MH EFI around 84 lb dry weight.
+Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight.
 
 ### What shaft length is the Mercury 9.9 MH EFI?
 

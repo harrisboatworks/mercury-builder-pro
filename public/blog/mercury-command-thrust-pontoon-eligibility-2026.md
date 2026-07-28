@@ -69,14 +69,14 @@ What Command Thrust does NOT do:
 
 - It does not add horsepower. A 90 HP Command Thrust makes the same peak power as a 90 HP standard.
 - It does not increase top speed. Usually top speed drops 2 to 4 MPH on a typical pontoon because the bigger prop is geared for thrust.
-- It does not help small light boats. On a 16 foot aluminum V-hull or a light pontoon under 1,500 lbs loaded, the standard gearcase usually outperforms Command Thrust on both speed and fuel.
+- It does not help small light boats. On a 16 foot aluminum V-hull or a light pontoon under 680 kg (1,500 lb) loaded, the standard gearcase usually outperforms Command Thrust on both speed and fuel.
 - It does not retrofit easily onto a non-CT motor. Converting an existing standard gearcase to Command Thrust means swapping the entire lower unit, which is usually only economical when buying a new motor.
 
 That last point is the most common confusion at the shop. People with an existing motor often ask if we can "add Command Thrust." The honest answer is rarely yes.
 
 ## Which pontoons are eligible
 
-The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 3,000 lbs, Command Thrust earns its keep. If it's under 2,000 lbs loaded, save the money. The middle is where the use case decides.
+The simplest rule: if your loaded pontoon weight (boat + people + gear + fuel) is over about 1,361 kg (3,000 lb), Command Thrust earns its keep. If it's under 907 kg (2,000 lb) loaded, save the money. The middle is where the use case decides.
 
 The four eligibility scenarios worth knowing.
 
@@ -88,7 +88,7 @@ If you have or are buying a tritoon, plan for Command Thrust unless your dealer 
 
 ### 20-foot and larger twin tube pontoons
 
-Once a twin tube pontoon hits 20 feet, the loaded weight is typically 2,500 lbs or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
+Once a twin tube pontoon hits 20 feet, the loaded weight is typically 1,134 kg (2,500 lb) or more. At those weights, Command Thrust noticeably reduces time-to-cruise and lets you carry a full load without feeling underpowered. The 20-22 foot twin tube pontoon is the classic Command Thrust application.
 
 ### Pontoons used for water sports
 

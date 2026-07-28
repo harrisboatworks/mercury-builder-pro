@@ -192,7 +192,7 @@ Yes, and many anglers do, especially in the shallow bays and weed flats. Battery
 
 ### What size trolling motor do I need for my fishing boat?
 
-General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 55 to 80 lb units to handle wind.
+General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 25 to 36 kg (55 to 80 lb) units to handle wind.
 
 ### Do I need both a trolling motor and a kicker?
 

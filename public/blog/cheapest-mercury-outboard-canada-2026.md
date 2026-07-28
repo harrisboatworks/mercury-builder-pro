@@ -140,7 +140,7 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 **Heavy hull or fiberglass runabout.** Needs real power to plane.
 
-**Family use with passengers and gear.** Add 200-400 lbs of crew weight to whatever the dry boat needs.
+**Family use with passengers and gear.** Add 91-181 kg (200-400 lbs) of crew weight to whatever the dry boat needs.
 
 **Rough water.** Lake Ontario, Lake Simcoe in the afternoon, Bay of Quinte. Wind builds and an underpowered motor can't punch back through.
 

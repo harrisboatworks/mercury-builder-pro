@@ -30,7 +30,7 @@ language: en-CA
 
 ### Quick Answer
 
-The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 359 lb weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
+The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
 
 ---
 
@@ -78,7 +78,7 @@ The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and
 |---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
-| Dry weight | 359 lbs | 359 lbs |
+| Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
 | Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
@@ -162,7 +162,7 @@ Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on 
 
 ### What's the actual difference between a 75 and a 90 Mercury FourStroke?
 
-Same 2.1L block. Same dry weight (359 lb). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor.
+Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor.
 
 ### Is the Mercury 90 worth the upcharge over the 75?
 

@@ -139,7 +139,7 @@ Perch on small spoons and jigging raps near weed edges. Crappie on tiny jigs und
 
 Walleye, bass, and muskie are still in their closed window. But catfish (opens April 25), crappie, pike, and perch are all fair game.
 
-April crappie in shallow warming bays can be outstanding. Water in the 55-60°F range pushes crappie into pre-spawn staging, and they stack tight. If you have never targeted Rice Lake crappie in late April, you are in for a pleasant surprise.
+April crappie in shallow warming bays can be outstanding. Water in the 55-16°C (60°F) range pushes crappie into pre-spawn staging, and they stack tight. If you have never targeted Rice Lake crappie in late April, you are in for a pleasant surprise.
 
 **Motor note:** This is prime repower and commissioning season at HBW, before the May 9 walleye rush hits and before everyone realizes their motor needs work. Book in April. Thank yourself in May.
 
@@ -185,7 +185,7 @@ A word about the afternoon wind. Rice Lake runs 32 km east to west with nothing 
 
 Fall is the prime muskie season on Rice Lake. Fish feed aggressively before winter, and the morning and evening windows in September and October can produce the best fish of the year. Troll suspending jerkbaits across the south-end channels and pause them. Sometimes a long, dead pause triggers a follow that has been behind the lure for 100 metres.
 
-Walleye return to accessible depths as the water drops below 60°F. The Gores Landing channels that produced summer fish come back to life. Walleye season runs to November 15.
+Walleye return to accessible depths as the water drops below 16°C (60°F). The Gores Landing channels that produced summer fish come back to life. Walleye season runs to November 15.
 
 Late-fall smallmouth on the railway drop-off, jig-and-drag in 15-plus feet with a tube or swimbait, can produce the biggest fish of the year. Bass season does not close until December 15.
 
