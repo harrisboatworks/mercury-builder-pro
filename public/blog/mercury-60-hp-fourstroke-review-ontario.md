@@ -46,6 +46,8 @@ It sits at the top of Mercury's 40, 50 and 60 HP family and uses a different pow
 
 Current family specifications include:
 
+*On a phone, swipe the table sideways to see every column.*
+
 | Specification | 60 Standard | 60 Command Thrust |
 |---|---:|---:|
 | Displacement | 995 cc | 995 cc |
@@ -118,6 +120,8 @@ Our six-mph Legend result is one back-to-back, real-world warning against treati
 
 For the engineering history and the cases where the larger gearcase really earns its keep, read our [plain-English Command Thrust and BigFoot guide](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull).
 
+*On a phone, swipe the table sideways to see every column.*
+
 | Choose the standard 60 when | Choose the 60 Command Thrust when |
 |---|---|
 | The boat is a typical planing aluminum V-hull | The boat is a pontoon or other high-drag hull |
@@ -134,6 +138,8 @@ If a salesperson can't explain what the larger gearcase is solving on your boat,
 ## Real Freshwater Results
 
 Speed figures are only useful when the boat and setup remain attached. These are not promises for another hull.
+
+*On a phone, swipe the table sideways to see every column.*
 
 | Test | Setup | Recorded result |
 |---|---|---|
