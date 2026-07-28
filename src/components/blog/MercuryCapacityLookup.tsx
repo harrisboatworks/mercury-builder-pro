@@ -186,7 +186,7 @@ export function MercuryCapacityLookup() {
                     <td className="whitespace-nowrap px-4 py-4 text-right font-semibold text-repower-navy-900">
                       {formatGearcaseCapacity(row)}
                     </td>
-                    <td className="min-w-48 px-4 py-4 text-repower-navy-900">
+                    <td className="px-4 py-4 text-repower-navy-900 md:min-w-48 lg:min-w-0">
                       {row.crankcaseOil}
                     </td>
                     <td className="whitespace-nowrap px-4 py-4 font-mono font-semibold text-repower-navy-900">
