@@ -189,7 +189,7 @@ Many lakes have horsepower restrictions of 10HP or less. The Mercury 9.9HP provi
 
 ### Can I really carry these by myself?
 
-Up to about 9.9HP (39 kg (85 lb)), most adults can manage. 15HP and 20HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
+Up to about 9.9 HP and 39 kg (85 lb), many adults can manage with care. 15 HP and 20 HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
 
 ### Do portable outboards need winterization?
 

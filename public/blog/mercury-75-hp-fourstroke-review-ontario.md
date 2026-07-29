@@ -162,7 +162,7 @@ Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on 
 
 ### What's the actual difference between a 75 and a 90 Mercury FourStroke?
 
-Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor.
+Same 2.1L block and the same published lightest dry weight, about 163 kg (359 lb). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor.
 
 ### Is the Mercury 90 worth the upcharge over the 75?
 

@@ -116,7 +116,7 @@ It depends on the model, battery count, and charger, and batteries are often the
 - [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
 - [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
 - [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 HP Review: FourStroke, Pro XS and Command Thrust](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons vs V-Hulls)](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull), where Command Thrust helps and where it hurts
 
 ## Next steps
 

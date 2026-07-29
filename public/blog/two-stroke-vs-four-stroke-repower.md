@@ -63,7 +63,7 @@ Three wins land the first morning you run it: the idle, the fuel gauge, and the 
 
 ## Does the weight difference cause any problems?
 
-It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs about 140 kg, near 141 kg (310 lb). A modern 90 HP FourStroke is closer to 163 kg, about 163 kg (359 lb). On an 18-foot hull, that extra 23 kg (50 lb) disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
+It can, and the boats that get this wrong are the ones where nobody asked the question. A FourStroke adds 15 to 25 kg at the very back of the boat. That changes how she sits at rest, how she trims at speed, and how hard the transom works. A vintage 90 HP 2-stroke runs near 141 kg (310 lb). A modern 90 HP FourStroke is closer to 163 kg (359 lb). On an 18-foot hull, that extra 23 kg (50 lb) disappears. On a tight 15-footer, it can settle the stern far enough that water creeps toward the splash well.
 
 Three things we check before any 2-stroke to 4-stroke repower:
 
@@ -136,7 +136,7 @@ Not in the recreational market. Mercury has shifted entirely to FourStroke and e
 
 ### Is a FourStroke heavier than the 2-stroke it replaces?
 
-Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.
+Yes. A 90 HP FourStroke weighs roughly 163 kg (359 lb), compared with about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim.
 
 ### Will my boat still perform well with a FourStroke?
 
