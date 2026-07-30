@@ -47,14 +47,14 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 | 2.5 / 3.5 | 18 kg (41 lb) | Tiller portables |
 | 4 / 5 / 6 | 26 kg (57 lb) | Shared single-cylinder platform |
 | 9.9 EFI | 38.5 kg (85 lb) | Command Thrust: 45 kg (100 lb) |
-| 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) (55 to 57 kg) | Kicker-duty gearcase and controls; range covers ProKicker variants |
+| 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) | Kicker-duty gearcase and controls; range covers ProKicker variants |
 | 15 EFI | 45 kg (99 lb) | |
 | 20 EFI | 45 kg (99 lb) | |
 | 25 EFI | 60 kg (132 lb) | |
 | 30 EFI | 66 kg (145 lb) | |
 | 40 EFI | 98 kg (216 lb) | 3-cylinder; the 4-cylinder 40 is 118 kg (260 lb) |
 | 50 EFI | 112 kg (247 lb) | |
-| 60 EFI | 112 kg (247 lb) | Command Thrust runs a few pounds heavier |
+| 60 EFI | 112 kg (247 lb) | Command Thrust runs a couple of kg (a few pounds) heavier |
 | 75 | 163 kg (359 lb) | Shares 2.1L block with 90/115 |
 | 90 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
 | 115 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
