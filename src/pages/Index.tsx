@@ -112,9 +112,9 @@ export default function Index() {
     <RepowerLayout>
       <HomepageSEO />
 
-      {/* Resume-quote banner */}
+      {/* Resume-quote banner — offset below the fixed RepowerHeader (h-16 / lg:h-[72px]) */}
       {hasInProgressQuote && (
-        <div className="border-b border-border bg-muted/40">
+        <div className="relative z-30 mt-16 lg:mt-[72px] border-b border-border bg-background">
           <div className="container mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-sm">
             <div className="flex items-center gap-2 text-foreground">
               <Clock className="h-4 w-4 text-primary" />
