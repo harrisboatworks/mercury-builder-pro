@@ -3866,7 +3866,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
-    "title": "Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario",
+    "title": "Mercury Outboard Octane and Ethanol Guide for Ontario",
     "description": "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
     "category": "Service",
     "publishDate": "2026-04-11",

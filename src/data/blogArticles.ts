@@ -24812,8 +24812,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: "ethanol-octane-mercury-outboard-fuel-guide-ontario",
-    title: "Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario",
-    seoTitle: "Mercury Outboard Octane and Ethanol Guide | Ontario",
+    title: "Mercury Outboard Octane and Ethanol Guide for Ontario",
+    seoTitle: "Mercury Outboard Octane and Ethanol Guide for Ontario",
     description: "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
     image: "/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp",
     imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
@@ -24831,11 +24831,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Is premium gasoline ethanol-free in Ontario?", answer: "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump." },
       { question: "Does Harris Boat Works sell ethanol-free marine gas?", answer: "Yes. During the marina season, HBW sells ethanol-free 89-octane gasoline at our Gores Landing fuel dock, commonly called marine gas. That doesn’t mean every mid-grade or 89-octane product is ethanol-free, so read the label at any other pump." },
       { question: "Does higher octane give a Mercury more power?", answer: "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
-      { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer’s preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination." },
+      { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination." },
       { question: "How long can gasoline sit in a boat tank?", answer: "There isn’t one safe shelf-life promise. Mercury says fuel components can begin oxidizing in as little as two weeks. Use fresh fuel, turn it over regularly and stabilize it before the boat sits. Ethanol-free fuel avoids ethanol-related problems, but it can still oxidize and form gum or varnish." },
       { question: "How can I confirm a fuel problem for service?", answer: "Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if you can." },
     ],
-    content: `# Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario
+    content: `# Mercury Outboard Octane and Ethanol Guide for Ontario
 
 *Last reviewed: July 30, 2026*
 
@@ -24945,7 +24945,7 @@ We still see fuel-related running problems in boats filled with ethanol-free gas
 
 If the labels don't give you a clear answer, take a photo of the pump and include the engine serial number in a service request. We'd rather identify the exact specification than have you pay for premium that doesn't solve the real question.
 
-## Common Fuel Mistakes
+## Common mistakes
 
 **Assuming premium or 89 means ethanol-free.** Higher octane doesn't prove a different ethanol blend. HBW's 89 is ethanol-free because that is the actual product specification, not because every mid-grade fuel is.
 
@@ -24985,7 +24985,7 @@ It doesn't simply because the number is higher. Use fuel that meets the engine's
 
 ### Can fuel stabilizer fix phase-separated fuel?
 
-No. Stabilizer's preventive when used with suitable fresh fuel according to its label and the storage procedure. It can't recombine separated fuel or remove contamination.
+No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It can't recombine separated fuel or remove contamination.
 
 ### How long can gasoline sit in a boat tank?
 
@@ -25006,7 +25006,7 @@ Send the serial number and the exact fuel label with your service request. We'll
 - Harris Boat Works fuel-dock product specification: ethanol-free, 89 octane
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
 - [Mercury Marine, How to Stabilize the Fuel in Your Boat](https://www.mercurymarine.com/ca/en/lifestyle/dockline/quick-tip--how-to-stabilize-the-fuel-in-your-boat)
-- [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/350-400hp)
+- [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/verado-350-400hp)
 - [Government of Ontario, Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)
 - [Ontario Regulation 663/20, Cleaner Transportation Fuels](https://www.ontario.ca/laws/regulation/200663)
 `,
