@@ -7,7 +7,7 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario"
+title: "Mercury Outboard Octane and Ethanol Guide for Ontario"
 description: "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit."
 category: "Service"
 date_published: 2026-04-11
@@ -18,7 +18,7 @@ content_type: blog_article
 language: en-CA
 ---
 
-# Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario
+# Mercury Outboard Octane and Ethanol Guide for Ontario
 
 > Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.
 
@@ -29,7 +29,7 @@ language: en-CA
 
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
-# Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario
+# Mercury Outboard Octane and Ethanol Guide for Ontario
 
 > **Quick answer:** Octane and ethanol answer different questions. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Fresh ethanol-free gasoline is the preferred choice when it meets the engine's octane requirement. Premium doesn't automatically mean ethanol-free, so read both parts of the pump label.
 
@@ -137,7 +137,7 @@ We still see fuel-related running problems in boats filled with ethanol-free gas
 
 If the labels don't give you a clear answer, take a photo of the pump and include the engine serial number in a service request. We'd rather identify the exact specification than have you pay for premium that doesn't solve the real question.
 
-## Common Fuel Mistakes
+## Common mistakes
 
 **Assuming premium or 89 means ethanol-free.** Higher octane doesn't prove a different ethanol blend. HBW's 89 is ethanol-free because that is the actual product specification, not because every mid-grade fuel is.
 
@@ -164,7 +164,7 @@ Send the serial number and the exact fuel label with your service request. We'll
 - Harris Boat Works fuel-dock product specification: ethanol-free, 89 octane
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
 - [Mercury Marine, How to Stabilize the Fuel in Your Boat](https://www.mercurymarine.com/ca/en/lifestyle/dockline/quick-tip--how-to-stabilize-the-fuel-in-your-boat)
-- [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/350-400hp)
+- [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/verado-350-400hp)
 - [Government of Ontario, Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)
 - [Ontario Regulation 663/20, Cleaner Transportation Fuels](https://www.ontario.ca/laws/regulation/200663)
 
@@ -192,7 +192,7 @@ It doesn’t simply because the number is higher. Use fuel that meets the engine
 
 ### Can fuel stabilizer fix phase-separated fuel?
 
-No. Stabilizer’s preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination.
+No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination.
 
 ### How long can gasoline sit in a boat tank?
 
