@@ -13,6 +13,10 @@ const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+// Publishable (anon) key is safe to embed and is already committed in the
+// browser client. Sharing it keeps both motor loaders resilient when the
+// public edge function is temporarily unavailable.
+const FALLBACK_SUPABASE_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
 const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
@@ -138,10 +142,7 @@ function loadLocalizedBlogArticles() {
 // replaced with public-motors-api (which only returns in-stock motors).
 async function loadAllQuoteBuilderMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  // Publishable (anon) key is safe to embed, same key is committed in src/integrations/supabase/client.ts
-  // Fallback ensures Vercel builds succeed even if VITE_SUPABASE_PUBLISHABLE_KEY env var isn't set in the build environment.
-  const FALLBACK_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
   }
@@ -199,14 +200,48 @@ async function loadMotors() {
   }
 
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&availability=neq.Exclude&order=horsepower.asc&limit=500`;
   const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
-  return res.json();
+  const rows = await res.json();
+  return (rows || [])
+    .filter((m) => !String(m.model_display || m.model || '').toLowerCase().includes('verado'))
+    .map((m) => {
+      const display = m.model_display || m.model || '';
+      const family = m.family ||
+        (/pro\s*xs|proxs/i.test(display) ? 'Pro XS' :
+          /sea\s*pro|seapro/i.test(display) ? 'SeaPro' :
+            /racing/i.test(display) ? 'Racing' : 'FourStroke');
+      const slug = `${family}-${m.horsepower}hp-${display}`
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      const overrides = m.manual_overrides || {};
+      const sellingPrice = [
+        overrides.sale_price,
+        overrides.base_price,
+        m.sale_price,
+        m.dealer_price,
+        m.msrp,
+        m.base_price,
+      ]
+        .map((value) => typeof value === 'string' ? Number.parseFloat(value) : value)
+        .find((value) => Number.isFinite(value) && value > 0) || null;
+      return {
+        ...m,
+        model_key: slug,
+        model: 'Outboard',
+        model_display: display,
+        mercury_model_no: m.model_number || m.mercury_model_no,
+        family,
+        shaft: m.shaft_code || m.shaft,
+        _resolvedSellingPrice: sellingPrice,
+      };
+    });
 }
 
 function motorSlug(modelKey) {
