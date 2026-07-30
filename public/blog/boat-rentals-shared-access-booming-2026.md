@@ -122,13 +122,6 @@ Whether that's a rental Saturday or the first step toward your own boat, start w
 - Boat club pricing: published GTA-area membership rates, summer 2026
 - Harris Boat Works 2025 rental operations data (first-party)
 
-**Related guides:**
-- [Rice Lake Boat Rental Guide 2026](/blog/rice-lake-boat-rental-guide-2026)
-- [First-Time Boat Rental on Rice Lake](/blog/first-time-boat-rental-rice-lake-guide)
-- [Rice Lake Boat Rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta)
-- [Total Cost of Owning a Boat in Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026)
-- [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake)
-
 ## FAQs
 
 ### Is it cheaper to rent or buy a boat in Ontario?

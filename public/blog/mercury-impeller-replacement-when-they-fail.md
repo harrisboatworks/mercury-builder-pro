@@ -25,7 +25,7 @@ language: en-CA
 
 ## Quick answer
 
-The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
+The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Once the motor is on the bench, the repair is usually straightforward. Book at hbw.wiki/service.
 
 Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
 
@@ -85,7 +85,7 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 
 ## What We See at HBW
 
-The midsummer impeller tickets almost never come in as "impeller, please". They come in as "overheating", "alarm going off", or "no water coming out the pee hole", usually on a Friday before a long weekend. The fix itself is straightforward: impeller, or the full water pump kit if the housing and wear plate are scored, and the motor is usually back on the water the same day. We stock Mercury and Mercruiser water pump kits in depth, so summer failures rarely wait on parts.
+The midsummer impeller tickets almost never come in as "impeller, please". They come in as "overheating", "alarm going off", or "no water coming out the pee hole", usually on a Friday before a long weekend. The fix itself is straightforward: impeller, or the full water pump kit if the housing and wear plate are scored. We stock Mercury and Mercruiser water pump kits in depth, which helps us avoid parts delays on many summer jobs.
 
 The pattern we'd love to break: the boater who noticed a weak telltale in June and toughed it out until the alarm ended their August long weekend. The first visit is an hour of shop time. The second can be a powerhead.
 
@@ -104,10 +104,6 @@ The pattern we'd love to break: the boater who noticed a weak telltale in June a
 ## Ready to Get Ahead of It?
 
 If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
-
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Phone:** 905-342-2153
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 
@@ -135,7 +131,7 @@ Only sometimes. A short idle test in cold water is the easiest exam an impeller 
 
 ### Does HBW stock Mercury impellers and water pump kits?
 
-Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury and Mercruiser parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Book at hbw.wiki/service.
+Yes. We stock Mercury and Mercruiser water pump kits in depth, which helps us avoid parts delays on many summer impeller jobs. Book at hbw.wiki/service.
 
 ## Related guides
 

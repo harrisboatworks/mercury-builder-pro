@@ -182,12 +182,6 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 ---
 
-## Related reading
-- Mercury Controls & Rigging Guide Ontario
-- Mercury Boost Software Upgrade Eligibility 2026
-- Mercury 9.9 EFI Review Ontario
-- Mercury Outboard Motor Families Guide
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).

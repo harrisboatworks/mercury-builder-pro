@@ -124,14 +124,6 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 **Price a boat and motor:** [build a quote](/quote/motor-selection)
 **Questions about buying or repowering:** [905-342-2153](tel:+19053422153)
 
-**Related guides:**
-- [Total Cost of Owning a Boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026)
-- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
-- [Is 2026 a Good Year to Buy a Boat in Canada?](/blog/is-2026-good-year-to-buy-boat-canada)
-- [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
-- [First-Time Boat Rental on Rice Lake](/blog/first-time-boat-rental-rice-lake-guide)
-- [Group Boat Rentals on Rice Lake](/blog/group-boat-rentals-rice-lake)
-
 ---
 
 ## Sources

@@ -133,12 +133,6 @@ Pick your boat and date, and the booking system shows you live availability and 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-- [Rice Lake Boat Rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta)
-- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)
-- [Canada Day on Rice Lake](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend)
-
 ---
 
 ## Sources

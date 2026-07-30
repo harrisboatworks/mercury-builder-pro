@@ -344,12 +344,6 @@ If your bilge pump has already let you down once, or you just want to know it'll
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)
 **Phone:** 905-342-2153
 
-**Related guides:**
-- [Boat Electrical Safety Checklist (Ontario Freshwater)](/blog/boat-electrical-safety-checklist-ontario-freshwater)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Motor Maintenance: Seasonal Tips](/blog/mercury-motor-maintenance-seasonal-tips)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-
 ---
 
 ## Sources

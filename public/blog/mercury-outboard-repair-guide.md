@@ -17,10 +17,10 @@ language: en-CA
 
 > Troubleshoot Mercury outboard starting, overheating, alarm and power-loss problems, with service intervals and honest DIY-or-dealer guidance.
 
-**Category:** Troubleshooting
-**Published:** 2026-07-30
-**Last updated:** 2026-07-30
-**Read time:** 16 min read
+**Category:** Troubleshooting  
+**Published:** 2026-07-30  
+**Last updated:** 2026-07-30  
+**Read time:** 16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide
 
 > **Quick answer:** Start with the simple things: neutral, the safety lanyard, battery connections, fuel supply, propeller and cooling-water intakes. Stop immediately for a fuel leak, hard mechanical noise, impact damage, or an overheat or oil warning that calls for shutdown. Your engine's serial-specific Mercury manual is the final authority. If those safe checks don't explain the problem, it needs proper diagnostics, not more guessing.
@@ -242,3 +242,4 @@ Use Mercury Marine’s online owner-manual lookup and match the manual to the en
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
+

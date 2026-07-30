@@ -1864,7 +1864,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
     image: "/lovable-uploads/hero-100-hour-service-cost.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-23",
+    dateModified: "2026-07-30",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~8 min read",
@@ -3045,11 +3045,11 @@ Family-owned on Rice Lake since 1947.`
       { question: "Can I keep boating if the telltale stream is weak?", answer: "We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not." },
       { question: "Why do more impellers fail in summer than in spring?", answer: "In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes." },
       { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test in cold water is the easiest exam an impeller will face all year. It catches a dead pump, but a marginal one with set or cracked vanes can pass in May and let go in July. That's exactly the pattern our 12 years of shop records show." },
-      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth as part of the largest Mercury and Mercruiser parts inventory in Ontario, which is why most summer impeller failures are fixed the same day the boat arrives. Book at hbw.wiki/service." }
+      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth, which helps us avoid parts delays on many summer impeller jobs. Book at hbw.wiki/service." }
     ],
     content: `## Quick answer
 
-The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Replacement is usually same-day work at HBW in Gores Landing. Book at hbw.wiki/service.
+The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Once the motor is on the bench, the repair is usually straightforward. Book at hbw.wiki/service.
 
 Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
 
@@ -3109,7 +3109,7 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 
 ## What We See at HBW
 
-The midsummer impeller tickets almost never come in as "impeller, please". They come in as "overheating", "alarm going off", or "no water coming out the pee hole", usually on a Friday before a long weekend. The fix itself is straightforward: impeller, or the full water pump kit if the housing and wear plate are scored, and the motor is usually back on the water the same day. We stock Mercury and Mercruiser water pump kits in depth, so summer failures rarely wait on parts.
+The midsummer impeller tickets almost never come in as "impeller, please". They come in as "overheating", "alarm going off", or "no water coming out the pee hole", usually on a Friday before a long weekend. The fix itself is straightforward: impeller, or the full water pump kit if the housing and wear plate are scored. We stock Mercury and Mercruiser water pump kits in depth, which helps us avoid parts delays on many summer jobs.
 
 The pattern we'd love to break: the boater who noticed a weak telltale in June and toughed it out until the alarm ended their August long weekend. The first visit is an hour of shop time. The second can be a powerhead.
 
@@ -3128,10 +3128,6 @@ The pattern we'd love to break: the boater who noticed a weak telltale in June a
 ## Ready to Get Ahead of It?
 
 If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
-
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Phone:** 905-342-2153
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 `,
@@ -3798,7 +3794,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: 'Smartphone showing Mercury SmartCraft Connect app data next to a Mercury FourStroke outboard motor on the water.',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-30',
     publishDate: '2026-05-27',
     category: 'Mercury Technology',
     readTime: '11 min',
@@ -16744,14 +16740,14 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
   },
   {
     slug: 'mercury-outboard-wont-start-troubleshooting',
-    relatedSlugs: ['mercury-outboard-wont-start-after-sitting', 'spring-outboard-commissioning-checklist', 'outboard-overheating-emergency-guide', "hbw-on-water-load-test-mercury-repower-advantage-2026"],
+    relatedSlugs: ['mercury-boat-battery-guide-ontario', 'mercury-outboard-beeping-codes-guide', 'mercury-outboard-wont-start-after-sitting', 'ethanol-octane-mercury-outboard-fuel-guide-ontario'],
     title: 'Mercury Outboard Won\'t Start (Ontario Dealer Guide, 2026)',
     seoTitle: 'Mercury Outboard Won\'t Start | HBW Ontario Dealer 2026',
     description: 'Mercury outboard won\'t start? Ontario dealer\'s honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW.',
     image: '/lovable-uploads/hero-mercury-wont-start-dockside.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: "2026-07-09",
+    dateModified: "2026-07-30",
     publishDate: '2026-04-27',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -16760,7 +16756,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
 
 Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Put in a service request at hbw.wiki/service.
 
-*Last reviewed: 2026-07-09*
+*Last reviewed: 2026-07-30*
 
 ![Mercury outboard won't start: dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
 
@@ -16784,13 +16780,11 @@ After these three, move into the real diagnostic ladder below.
 
 ### Step 1: Battery voltage at rest
 
-Get a multimeter on the battery terminals.
+Get a multimeter on the battery terminals. A fully charged 12 V lead-acid battery is typically around 12.6 V at rest, but the useful test is what happens under cranking load.
 
-- **12.6 to 12.8 V at rest:** healthy. Move to Step 2.
-- **12.0 to 12.5 V:** low, may crank but probably won't start a cold EFI motor. Charge before troubleshooting further.
-- **11.5 V or lower at rest after a proper surface-charge burn-off:** replace, don't recharge.
+If voltage falls sharply, the starter labours, or a cable gets hot, stop and correct the battery or connection problem before chasing fuel and ignition. Mercury's cranking-battery requirement varies by engine family, so use the serial-specific owner's manual rather than one voltage cutoff for every EFI outboard.
 
-[A weak battery is the #1 cause of EFI motors that crank slowly but won't fire](/blog/mercury-boat-battery-guide-ontario). Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors.
+[A weak battery is a common cause of EFI motors that crank slowly but won't fire](/blog/mercury-boat-battery-guide-ontario).
 
 ### Step 2: Fuel quality and quantity
 
@@ -16834,11 +16828,9 @@ This is where we plug in Mercury CDS (Computer Diagnostic System) and run live d
 
 ### Step 6: Compression check (also us)
 
-If the motor has 200+ hours and you've ruled out the easy stuff, a compression check tells you whether the bottom end is healthy.
+If you've ruled out the easy stuff, a compression or leak-down test can help identify a mechanical problem. There isn't one safe PSI cutoff for every Mercury outboard. Results depend on engine family, test method, gauge, cranking speed, temperature, and altitude.
 
-- **Above 170 psi per cylinder with under 10% spread:** healthy
-- **150-170 psi with reasonable spread:** age-appropriate wear
-- **Below 150 psi or spread over 15%:** worn, needs further investigation
+We compare cylinders with each other and then check the serial-specific Mercury service specification. A low or uneven result is a reason to investigate, not a universal diagnosis by itself.
 
 ## What we see at HBW
 
@@ -16853,7 +16845,7 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-Most no-start customers are running again the same day they bring the boat in.
+Once the boat is on the bench, many no-start jobs are quick to isolate. Parts availability and the actual cause decide the repair timeline.
 
 ## Common mistakes
 
@@ -16872,30 +16864,26 @@ Most no-start customers are running again the same day they bring the boat in.
 
 ## Ready for HBW to look at it?
 
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
-**Email:** info@harrisboatworks.ca  
-**Phone:** 905-342-2153
-
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The largest Mercury and Mercruiser parts inventory in Ontario.
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 
 ## Sources
 
-- Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
+- [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
-- HBW shop-floor data: 2026 spring service-ticket distribution
+- HBW service records: 537 no-start and rough-running jobs, 2013-2026
 
 ---
 
 `,
     howToSteps: [
-      { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
+      { name: 'Check the battery', text: 'Charge and load-test the battery, then watch what happens under cranking load. If voltage falls sharply, the starter labours, or a cable gets hot, correct the battery or connection problem first. Use the serial-specific Mercury manual for the required cranking-battery rating.' },
       { name: 'Check the fuel system', text: 'Gas over 6 months old is suspect. Check for water at the bottom of the tank. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. The primer bulb should pump up firm; if it stays soft, there is an air leak.' },
       { name: 'Check the kill switch lanyard', text: 'Confirm the lanyard kill switch is in place. A pulled or missing lanyard prevents the motor from starting. Also confirm the shifter is fully in neutral, since the neutral safety switch blocks cranking otherwise.' },
       { name: 'Check ignition and spark', text: 'Pull plugs and inspect: black/wet means flooded or fuel issue, tan/dry means okay, glazed/white means lean or overheated. Replace plugs at service interval. With plug grounded against the engine block and cranking, you should see strong blue spark. Weak orange or no spark indicates an ignition issue.' },
       { name: 'Check the starting circuit', text: 'If basics are good but the motor will not crank, listen for a click when you turn the key. No click means a solenoid issue. Grinding or labored cranking indicates a worn starter. Check for corroded or loose connections at the starter, solenoid, and ignition switch.' },
-      { name: 'Test for compression issues', text: 'If everything else is good but the motor still will not run, compression may be the issue. Low or inconsistent compression across cylinders points to worn rings, damaged cylinder, or head gasket failure. Compression testing requires a gauge and removing spark plugs.' },
-      { name: 'Stop and call for diagnostic', text: 'Cranking longer than 10 seconds at a time overheats the starter and water pump. If the motor will not start after 3 attempts at the basics, stop. Book a Mercury-certified diagnostic at HBW rather than risk further damage with a wrong DIY repair.' },
+      { name: 'Test for a mechanical issue', text: 'If the basic power, fuel, and ignition checks are good but the motor still will not run, compression or leak-down testing can help identify a mechanical problem. Compare cylinders and use the serial-specific Mercury service specification instead of a universal PSI cutoff.' },
+      { name: 'Stop and book a diagnostic', text: 'Do not keep cranking a motor that will not start. If the basic checks do not identify the cause, book a Mercury diagnostic at HBW rather than risk adding damage with a guessed repair.' },
     ],
     howToTotalTime: 'PT30M',
     howToTools: ['Multimeter', 'Spark plug socket', 'Spare spark plugs', 'Battery load tester', 'Compression gauge (optional)'],
@@ -16906,7 +16894,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       },
       {
         question: 'At what battery voltage should I replace instead of recharge?',
-        answer: 'For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a proper surface-charge burn-off is usually replace, not recharge. Modern EFI requires at least 10.5 V during crank to fire injectors.'
+        answer: 'A fully charged 12 V lead-acid battery is typically around 12.6 V at rest, but resting voltage alone does not decide replacement. Load-test it and watch the cranking behaviour. Mercury battery requirements vary by engine family, so confirm the correct rating in the serial-specific owner\'s manual.'
       },
       {
         question: 'How fast does E10 fuel go bad in storage?',
@@ -19009,46 +18997,45 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: "outboard-overheating-emergency-guide",
+    relatedSlugs: ["mercury-maintenance-intervals-20-100-300-rule", "mercury-outboard-overheating-at-idle-fix-ontario", "mercury-outboard-beeping-codes-guide", "mercury-impeller-replacement-when-they-fail"],
     title: 'Mercury Overheating Emergency Guide',
     seoTitle: "Mercury Outboard Overheating: What To Do Right Now",
     description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock.",
     image: "/lovable-uploads/hero-mercury-overheating-dockside.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-09",
-    dateModified: "2026-05-09",
+    dateModified: "2026-07-30",
     publishDate: "2026-05-09",
     category: "Troubleshooting",
     readTime: "9 min read",
     keywords: ["outboard overheating what to do", "Mercury outboard overheating", "Mercury impeller replacement", "tell-tale water stream weak", "Rice Lake weed intake clog", "outboard overheat alarm"],
-    content: `**Language:** English 
-
----
+    content: `*Last reviewed: 2026-07-30*
 
 ## Quick Answer
 
-If the overheat alarm is sounding: throttle to idle, shift to neutral, and check the tell-tale water stream. No stream means the pump failed or the intake is blocked, shut down immediately. A strong stream with an alarm points to a sensor or thermostat, idle toward shore. When in doubt, shut it down. Running an overheated motor turns a small repair into an engine replacement.
+If an overheat warning appears, reduce throttle immediately, follow the warning instructions on the display or in the serial-specific Mercury owner's manual, and get the boat into a safe position. Check the telltale and cooling-water intakes only when it's safe. A normal telltale doesn't prove the whole cooling system is working. If the warning persists, the telltale is weak or absent, or the manual directs you to stop, shut the engine down and arrange a tow.
 
 ::diagnostic-flow
 heading: Mercury overheating? Run this checklist before damage gets expensive
 eyebrow: Emergency diagnostic
-subhead: Most overheats clear with a debris check. Push through an alarm and you risk $2,500+ in powerhead damage.
+subhead: Some overheats clear with a debris check. Push through an alarm and you risk $4,500+ in powerhead damage.
 step1Label: Stop the boat
 step1Question: Have you throttled down to idle and shifted to neutral?
-step1Tip: Continuing to run an overheating Mercury for even a few minutes can melt powerhead components. Idle down first, then assess.
+step1Tip: Reduce throttle immediately and follow the display or owner's-manual warning procedure for the exact motor. The correct shutdown sequence can vary by model and warning.
 step2Label: Telltale stream
 step2Question: Is the telltale (pee stream) flowing, and is it the normal volume?
-step2Tip: A weak or absent stream usually means weeds or debris in the cooling inlet. A normal stream paired with overheating points to a deeper problem (thermostat, water pump, exhaust corrosion).
+step2Tip: A weak or absent stream can mean weeds, debris, or a cooling-system fault. A normal stream doesn't rule out a thermostat, sensor, water-pressure, or internal-flow problem.
 step3Label: Cooling inlet
 step3Question: Have you checked the lower unit cooling intake for weeds, plastic, or grocery bags?
 step3Tip: Pulling the boat onto the trailer or tilting the motor up is the fastest way to see and clear blockages. Rice Lake weed lines in late summer are the usual suspect.
 step4Label: Recheck after clearing
-step4Question: Does the telltale return to normal volume and the alarm clear after you idle for a minute or two?
-step4Tip: If yes, run at low RPM for a few more minutes to let things stabilize before returning to cruise. If no, suspect a water pump impeller, typically a 3-year service interval on Mercury outboards.
+step4Question: After clearing visible debris and following the manual's restart procedure, does the telltale return and the warning stay off?
+step4Tip: Don't assume the motor is fixed because the stream returns. Head for the nearest safe landing at the speed permitted by the warning procedure, and book an inspection before the next outing.
 step5Label: Alarm persists
 step5Question: Is the overheat alarm still active or coming back at low RPM?
 step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
 escalationLabel: Alarm still on? Don't push it.
-escalationBody: Cooling system failures get expensive fast. Tow in or trailer to us. We can usually diagnose impeller, thermostat, or exhaust corrosion the same day in season. Book at hbw.wiki/service.
+escalationBody: Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
 ::
 
 ---
@@ -19057,19 +19044,19 @@ escalationBody: Cooling system failures get expensive fast. Tow in or trailer to
 
 If you're reading this from the water with the alarm going, skip to the emergency section below. Get yourself safe, then come back for the rest.
 
-If you're reading this from shore, good. The best time to learn what to do when a Mercury overheats is before it happens. Understanding what causes overheating, how to read the tell-tale, and what the alarm patterns mean can be the difference between a $40 impeller replacement and a $4,500 powerhead job.
+If you're reading this from shore, good. The best time to learn what to do when a Mercury overheats is before it happens. Understanding what causes overheating, how to read the telltale, and what the warning system means can be the difference between a straightforward cooling-system repair and a $4,500+ powerhead job.
 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
 ---
 
-![5-step flow chart: Mercury outboard overheat emergency – idle, check tell-tale, clear intake, restart or tow. $40 impeller vs $4,500 powerhead.](/lovable-uploads/inline/overheating-first-60-seconds.svg)
+![Five-step Mercury outboard overheat response: reduce throttle, follow the warning instructions, check the telltale and intake, then restart only as directed or arrange a tow. A cooling-system fault can lead to $4,500 or more in powerhead damage.](/lovable-uploads/inline/overheating-first-60-seconds.svg)
 
 ## On the Water Right Now: Do This in Order
 
-### Step 1: Throttle back to idle, but don't shut down yet
+### Step 1: Reduce throttle and follow the warning
 
-Going from wide-open throttle directly to engine-off can cause its own problems on a hot powerhead. Drop to idle first. This gives you 30 seconds to assess before deciding whether to shut down.
+Reduce throttle immediately. Read the SmartCraft or VesselView message if equipped, and follow the warning procedure in the serial-specific Mercury owner's manual. Some conditions allow limited operation while Guardian reduces power; others require shutdown. Don't use one generic timer for every engine and warning.
 
 ### Step 2: Check the tell-tale
 
@@ -19077,20 +19064,20 @@ The tell-tale is the small stream of cooling water that exits the cowling or low
 
 | Tell-tale state | What it likely means |
 |---|---|
-| Strong, steady stream | Water is flowing. Problem may be a thermostat, sensor, or internal blockage. Head for shore at idle. |
-| Weak or sputtering | Impeller is failing or intake is partially blocked. Idle in only, do not accelerate. |
-| No stream at all | Water pump has failed or intake is completely blocked. **Shut down now.** |
-| Strong at cruise, weak or absent at idle | Classic worn impeller, getting by at high RPM but insufficient vacuum at low RPM. |
+| Strong, steady stream | Some water is moving, but a thermostat, sensor, water-pressure, or internal-flow problem may remain. Follow the warning procedure. |
+| Weak or sputtering | The intake may be restricted or the cooling system may have a fault. Reduce load and follow the warning procedure. |
+| No stream at all | Treat it as a serious cooling-flow warning. Shut down if the manual or display directs it, then inspect only when safe. |
+| Strong at cruise, weak or absent at idle | The cooling system needs inspection. Don't diagnose the impeller from the stream alone. |
 
 ### Step 3: If the stream is weak or absent, shut down
 
 Tilt the motor up out of the water. Inspect the cooling water intake screens on the lower unit, the slots where water enters. In Ontario lakes, the most common culprit is weeds, a plastic bag, or debris lodged in the screens.
 
-Clear the intake by hand. A boat hook or a screwdriver helps with stubborn debris.
+Clear loose weeds or debris by hand with the engine off and the propeller stopped. Don't push a screwdriver or other tool into the intake screens.
 
 ### Step 4: Wait before restarting
 
-Let the powerhead cool for 10-15 minutes before attempting a restart. When you start it again, watch the tell-tale immediately. If the stream is strong and the alarm doesn't return at idle, you may be clear to head home, at low RPM.
+Use the cooling and restart procedure in the owner's manual for the exact motor. If you restart, watch the telltale and display immediately. A returned stream doesn't prove the underlying fault is gone. Head for the nearest safe landing only as permitted by the warning procedure.
 
 ### Step 5: If the alarm returns, stop
 
@@ -19117,8 +19104,6 @@ The impeller is a rubber vane wheel inside the lower unit that drives cooling wa
 **Service interval:** Follow the exact engine manual. Many Mercury schedules place water-pump service at an expanded interval around 300 hours or three years, while model, duty, debris, overheating, or reduced water pressure can bring inspection forward.
 
 **Don't ignore it:** A weak tell-tale last fall that you kept fishing through means the impeller may be at or past its limit. Don't start next season without addressing it.
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ### 3. Thermostat Failure
 
@@ -19162,56 +19147,24 @@ If you suspect a cooling system problem, book before your next run: [hbw.wiki/se
 
 ---
 
-## Frequently Asked Questions
+## Ready to Book a Cooling-System Inspection?
 
-**The alarm went off once but the motor seems fine now. Do I need to bring it in?** 
-Yes. A single overheat event that resolved itself should still be diagnosed. It means something happened, whether a debris blockage that cleared, a beginning impeller failure, or a sensor issue. The cause needs to be identified before the next run.
-
-**What does the tell-tale look like when it's normal?** 
-A continuous, steady stream of water, not sputtering or intermittent, and noticeable at all RPMs including idle. The stream should be warm (not ice cold, which would indicate the thermostat is stuck open) but not steaming (which would indicate overheating).
-
-**Can I replace the water pump impeller myself?** 
-On smaller motors, it's a manageable DIY task for someone comfortable with mechanical work, it requires removing the lower unit. On larger or more complex motors, it's worth having a technician do it. The impeller kit itself is not expensive; most of the cost is labour for lower-unit removal.
-
-**How do I know if the impeller is worn without taking the lower unit apart?** 
-The tell-tale behaviour is the best indicator. A strong stream at cruise that weakens or sputters at idle is the classic worn impeller pattern. If your tell-tale has changed from what it used to be, that's a signal.
-
-**Does overheating damage the motor even if I shut it down quickly?** 
-It can. Heat cycles can damage head gaskets and warp components even in brief overheating events. The faster you shut down, the less likely serious damage is, but an overheating event is still worth having inspected.
-
----
-
-## Internal Links
-
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury Outboard Overheating at Idle, Ontario Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario)
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
-
----
-
-## CTA
-
-**After any overheating event, get it checked before the next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+After any overheating event, get it checked before the next run. [Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---`,
     howToSteps: [
-      { name: 'Throttle back to idle', text: 'Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think before deciding the next step.' },
-      { name: 'Look at the tell-tale stream', text: 'A strong, steady stream means cooling water is flowing; the issue may be a sensor, thermostat, or internal blockage, so continue at idle toward shore. A weak, sputtering stream means the impeller is failing or partially blocked; idle in only. No stream means shut down.' },
-      { name: 'Kill the engine if alarm persists or stream is weak/gone', text: 'Tilt the motor up out of the water. Inspect the intake screens on the lower unit for weeds, plastic, or bottom debris stuck in the grates. On Rice Lake and the Kawarthas in summer, the answer is almost always weeds.' },
-      { name: 'Clear the intake by hand', text: 'Pull weeds, bags, fishing line, or sand off the intake grates by hand. A boat hook or a screwdriver helps for stubborn debris. Two minutes of clearing usually restores flow.' },
-      { name: 'Wait 10 to 15 minutes before restarting', text: 'Let the powerhead cool. Check the tell-tale stream when you fire it back up. If it comes back full and the alarm does not return at idle, you are probably fine to head home at low RPM.' },
-      { name: 'If alarm comes back, do not fight it', text: 'Call for a tow, drift to shore, or paddle if you have to. Running an overheated motor "just to get home" is how a $40 impeller becomes a $4,500 lower unit and powerhead repair.' },
+      { name: 'Reduce throttle and read the warning', text: 'Reduce throttle immediately. Read the SmartCraft or VesselView message if equipped, and follow the warning procedure in the serial-specific Mercury owner\'s manual. Do not use one generic timer for every engine and warning.' },
+      { name: 'Look at the telltale stream', text: 'A steady stream confirms that some water is moving, but it does not prove the entire cooling system is working. A weak or absent stream can indicate an intake restriction or a cooling-system fault.' },
+      { name: 'Shut down when directed', text: 'If the warning persists, the telltale is weak or absent, or the manual directs you to stop, shut the engine down. Get the boat into a safe position before inspecting the motor.' },
+      { name: 'Clear visible debris safely', text: 'With the engine off and the propeller stopped, remove loose weeds, bags, or debris from the cooling-water intakes by hand. Do not push a screwdriver or another tool into the screens.' },
+      { name: 'Restart only as directed', text: 'Use the cooling and restart procedure in the owner\'s manual for the exact motor. If you restart, watch the telltale and display immediately. A returned stream does not prove the underlying fault is gone.' },
+      { name: 'Arrange a tow if the warning returns', text: 'Do not push through a returning overheat warning. Arrange a tow or use another safe way to reach shore, then book a cooling-system inspection before the next outing.' },
     ],
     howToTotalTime: 'PT15M',
-    howToTools: ['Boat hook or screwdriver (intake clearing)', 'Garden hose and earmuffs (dock diagnostic)', 'Spare impeller kit (optional onboard)'],
+    howToTools: ['Serial-specific Mercury owner\'s manual', 'Approved onboard communication device', 'Tow-service contact'],
     faqs: [
   {
     "question": "How long can I run an overheating outboard before damage?",
-    "answer": "Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2-3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge."
+    "answer": "There is no safe universal time. The warning type, engine family, load, and cooling-flow problem all matter. Reduce throttle immediately and follow the SmartCraft, VesselView, or serial-specific owner-manual instructions. If the warning persists or the instructions say to stop, shut the engine down."
   },
   {
     "question": "My tell-tale stream is steady but my alarm keeps going off, what gives?",
@@ -19219,11 +19172,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     "question": "Should I replace the impeller myself?",
-    "answer": "On smaller motors (under 30 HP), yes, it's straightforward, well-documented, and the parts are cheap. On modern V6/V8s with electric trim, alignment-sensitive lower units, and SmartCraft, the labour-to-mistake ratio gets worse. We charge under $200 in labour on most jobs and we've done thousands."
+    "answer": "It depends on the exact motor, your tools, and your experience removing and reinstalling a lower unit. Follow the serial-specific service procedure. If you are not comfortable with shift-shaft alignment, seals, torque values, and water-tube engagement, book the repair."
   },
   {
     "question": "How often should I flush my motor?",
-    "answer": "After every use is best practice. At minimum, after any trip in weeds, silt, or shallow water. Use the flush port on the cowl with a garden hose, run for 10 minutes at idle (or per Mercury's spec for your model), shut down."
+    "answer": "Follow the flushing procedure in the serial-specific Mercury owner's manual. The approved connection, whether the engine should run, and the required duration vary by model. Never assume that every Mercury should be run through the cowl flush port."
   },
   {
     "question": "Does ethanol-free fuel affect overheating?",
@@ -19231,7 +19184,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     "question": "My boat is on the water and I'm panicking. What do I do?",
-    "answer": "Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns, call for a tow, don't try to make it home. If you're in our area, put in a service request at hbw.wiki/service and flag it as urgent. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON"
+    "answer": "Reduce throttle, get the boat into a safe position, and follow the warning instructions on the display or in the serial-specific Mercury owner's manual. If the warning persists, the telltale is weak or absent, or the instructions say to stop, shut down and arrange a tow. Then submit a service request at hbw.wiki/service."
   }
 ],
   },
@@ -20155,6 +20108,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'mercury-maintenance-intervals-20-100-300-rule',
+    relatedSlugs: ['breaking-in-new-mercury-motor-guide', 'mercury-100-hour-service-cost-ontario', 'diy-mercury-outboard-winterization-guide', 'mercury-outboard-wont-start-troubleshooting'],
     title: 'Mercury Outboard Maintenance: 100 and 300 Hours',
     seoTitle: 'Mercury Outboard Maintenance Schedule (100 & 300 Hours)',
     description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean.",
@@ -20162,12 +20116,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard maintenance timeline showing model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-07-24',
+    dateModified: '2026-07-30',
     publishDate: '2026-05-12',
     category: 'Service & Maintenance',
     readTime: '11 min read',
     keywords: ["Mercury maintenance schedule", "Mercury 100 hour service Ontario", "Mercury 20 hour service requirement", "Mercury 300 hour service", "Mercury annual service Ontario"],
-    content: `*Last reviewed: 2026-07-23*
+    content: `*Last reviewed: 2026-07-30*
 
 > **Quick answer:** Mercury does not publish one universal 20/100/300 service rule for every outboard. For most current FourStroke owners, the first scheduled service is at 100 engine hours or annually. A dealer may recommend an earlier check, while 300-hour work adds model-specific items. Your serial-number owner's manual is the final schedule.
 
@@ -20175,9 +20129,7 @@ There are three separate timelines that often get blended together: break-in, an
 
 Here is the clean version.
 
-![Mercury outboard maintenance timeline separating model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.](/lovable-uploads/mercury-maintenance-schedule-100-300-hbw.svg)
-
-## There Is No Universal 20/100/300 Rule
+## Does Mercury Require a 20-Hour Service?
 
 Mercury's current new-owner guidance says a dealer may recommend a quick checkup a few weeks after purchase. For most boaters, the first scheduled service is annual maintenance completed at 100 engine hours or before seasonal storage.
 
@@ -20199,7 +20151,7 @@ Mercury's public parts guidance describes a 100-hour service at least once a yea
 
 ## Download the Free HBW Maintenance Planner
 
-We turned the useful owner-planning material into an original two-page checklist and service record. It is free, opens directly, and does not ask for an email address.
+We turned the useful owner-planning material into an original two-page checklist and service record. It's free, opens directly, and doesn't ask for an email address.
 
 [Download the Mercury Outboard Maintenance Planner PDF](/downloads/mercury-outboard-maintenance-planner-hbw.pdf "cta")
 
@@ -20207,7 +20159,7 @@ The first page separates before-every-outing checks, in-season care, annual or 1
 
 The planner deliberately does not flatten every Mercury into one schedule. Keep the engine serial number on the page and use the exact operation and maintenance manual to decide the final task list.
 
-Mercury also publishes its own [Maintenance Made Easy guide](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy) through a form on its website. HBW does not rehost that copyrighted brochure. Our planner is an original, shorter field reference built for owners who want the checklist without a lead form.
+Mercury also publishes its own [Maintenance Made Easy guide](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/whats-in-it-for-you.html). HBW doesn't rehost that copyrighted brochure. Our planner is an original, shorter field reference built for owners who want the checklist without a lead form.
 
 ## What a 100-Hour or Annual Service Commonly Covers
 
@@ -20271,40 +20223,17 @@ We ask for the engine serial number, current hours, last documented service, war
 
 No service history? Start with an inspection and establish a new baseline. Do not claim work was completed when the records do not support it.
 
-## Frequently Asked Questions
-
-**Does Mercury require a 20-hour service on every new outboard?**
-No. Mercury's current new-owner guidance says a dealer may recommend a quick check a few weeks after purchase, while most boaters' first scheduled service is at 100 hours or annually. Follow the manual for the exact engine. HBW may recommend an optional early check, but we do not present it as a universal Mercury warranty requirement.
-
-**Do I still need annual service if I only ran a few hours?**
-For most current recreational FourStrokes, the published interval is 100 hours or annually, so the calendar can arrive first. The exact items and timing still come from the model-specific manual. Seasonal storage work can overlap with the annual service.
-
-**What is included in a Mercury 300-hour service?**
-Mercury describes it as the 100-hour work plus additional components that depend on the engine model. Spark plugs and water-pump service are common at expanded intervals, but belts, thermostats, filters, seals, and inspections vary. Use the serial-number manual instead of a generic checklist.
-
-**Can I do my own Mercury maintenance?**
-Yes, if the task is within your ability and you follow the exact manual. Keep dates, engine hours, receipts, part numbers, and notes. Warranty repairs still go through a Mercury-authorized repair facility.
-
-**Does Mercury warranty require OEM parts for every maintenance item?**
-Mercury recommends genuine parts, but its written limited warranty does not say one non-OEM maintenance part automatically voids the whole warranty. It can exclude damage caused by improper service, unsuitable fluids, or an accessory or part Mercury did not manufacture, sell, or test. Match the required specification and keep records.
-
 ## Sources
 
 - [Mercury Marine, Welcome Aboard: A New Owner's Guide to Mercury Outboards](https://www.mercurymarine.com/us/en/lifestyle/dockline/welcome-aboard--a-new-owner-s-guide-to-mercury-outboards)
 - [Mercury Marine Canada, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-maintenance)
 - [Mercury Marine Canada, Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
 - [Mercury Marine Canada, Owner Resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
-- [Mercury Marine, Maintenance Made Easy](https://www.mercurymarine.com/us/en/parts-and-service/maintenance/maintenance-made-easy)
+- [Mercury Marine, Maintenance Made Easy](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/whats-in-it-for-you.html)
 
 ## Ready to Book the Right Service?
 
-Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We will build the job from the correct Mercury schedule and the boat's actual history.
-
-**Related guides:**
-- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide)
-- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
+Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We'll build the job from the correct Mercury schedule and the boat's actual history.
 `,
     faqs: [
       {
@@ -30542,8 +30471,6 @@ In some cases, the overheat alarm is triggered by a faulty temperature sensor ra
 - The motor doesn't feel or sound like it's struggling
 - The alarm is intermittent and doesn't correlate with observable symptoms
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Sensor diagnosis requires dealer tools to read temperature sensor values against actual powerhead temperature. If you suspect a sensor issue, this is a professional diagnostic.
 
 ---
@@ -30625,11 +30552,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
 ## CTA
 
 **Overheating at idle needs to be looked at before your next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---`,
     faqs: [
       { question: 'Why is my Mercury overheating only at idle?', answer: 'Almost always a partially-blocked or worn water pump impeller. At cruise RPM, enough water gets through to keep temps OK; at idle, there isn\'t enough flow. Standard fix is impeller replacement (1-2 hour service job).' },
@@ -30795,7 +30718,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-07-24',
+    dateModified: '2026-07-30',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -31543,8 +31466,6 @@ Getting the pattern right before calling a dealer or booking service helps narro
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection). For current CAD pricing on every Mercury we stock, see the [Mercury pricing reference](/pricing-reference).
-
 ## What to Do When the Alarm Sounds
 
 **Step 1: Don't panic, but don't ignore it.** Reduce throttle and assess.
@@ -31625,11 +31546,7 @@ A sensor fault can trigger a false alarm, yes. But the correct response to a fal
 ## CTA
 
 **Alarm that came back, or one you can't explain?** 
-Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---`,
     faqs: [
       { question: 'What does a continuous beep mean on a Mercury outboard?', answer: 'A continuous beep can indicate a serious warning such as overheating, overspeed, Guardian activation, or a sensor-related issue. Reduce throttle and diagnose safely.' },

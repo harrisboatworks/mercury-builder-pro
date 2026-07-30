@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
+import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
 
 // Public anonymous key used by the browser client. This read-only fallback
@@ -432,13 +433,14 @@ function expandVisualDirectives(md) {
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
-function renderArticleBodyHtml(content) {
+function renderArticleBodyHtml(content, { hasStructuredFaqs = false } = {}) {
   if (!content) return '';
   let s = String(content);
   // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
   // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
   // body never contains literal placeholder strings.
   s = substituteLiveRateTokens(s);
+  s = cleanBlogContent(s, { hasStructuredFaqs });
   // Drop ALL H1 lines from article body. The route H1 is stamped in the
   // prerender header wrapper (<header><h1>{route.h1}</h1></header>), so any
   // '# Heading' anywhere in the markdown body would otherwise render a second
@@ -674,6 +676,7 @@ function loadBlogArticles() {
       keywords: a.keywords || [],
       readTime: a.readTime || '5 min read',
       content: a.content || '',
+      relatedSlugs: a.relatedSlugs || [],
       faqs: (a.faqs || [])
         .map(f => ({
           question: sanitizeForSchema(f.question),
@@ -889,13 +892,18 @@ function loadBlogClusters() {
 const blogClusterData = loadBlogClusters();
 console.log(`[static-prerender] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
 
-function renderRelatedGuidesHtml(currentSlug, contentMarkdown) {
-  const siblings = blogClusterData.relatedBySlug[currentSlug];
+function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSlugs = []) {
+  const siblings = explicitRelatedSlugs.length
+    ? explicitRelatedSlugs
+    : blogClusterData.relatedBySlug[currentSlug];
   if (!siblings || siblings.length === 0) return '';
   const exclude = new Set(
     Array.from((contentMarkdown || '').matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(m => m[1])
   );
-  const picked = siblings.filter(s => !exclude.has(s)).slice(0, 5);
+  const picked = siblings
+    .filter(s => s !== currentSlug)
+    .filter(s => explicitRelatedSlugs.length || !exclude.has(s))
+    .slice(0, 4);
   if (picked.length < 2) return '';
   const items = picked.map(s => {
     const title = blogClusterData.titles[s] || s;
@@ -3078,7 +3086,12 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   ogImage: `${SITE_URL}${article.image}`,
   ogType: 'article',
   h1: article.title,
-  intro: firstParagraph(article.content, article.description),
+  intro: firstParagraph(
+    cleanBlogContent(article.content, {
+      hasStructuredFaqs: Boolean(article.faqs?.length),
+    }),
+    article.description,
+  ),
   schemas: [blogArticleSchema(article)],
   extraHead: [blogHreflangTags(article.slug), renderHeroPreloadTag(article.image)]
     .filter(Boolean)
@@ -3086,7 +3099,9 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
     const bylineHtml = renderAuthorBylineHtml(article.author);
-    const bodyHtml = renderArticleBodyHtml(article.content);
+    const bodyHtml = renderArticleBodyHtml(article.content, {
+      hasStructuredFaqs: Boolean(article.faqs?.length),
+    });
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
           `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
@@ -3094,7 +3109,11 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
     const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>Family-owned since 1947</span><span>·</span><span>Mercury dealer since 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
-    const relatedGuidesHtml = renderRelatedGuidesHtml(article.slug, article.content);
+    const relatedGuidesHtml = renderRelatedGuidesHtml(
+      article.slug,
+      article.content,
+      article.relatedSlugs,
+    );
     return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}${relatedGuidesHtml}`;
   }
 }));
@@ -3115,7 +3134,13 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     ogType: 'article',
     ogLocale,
     h1: article.title,
-    intro: firstParagraph(article.content, article.description),
+    intro: firstParagraph(
+      cleanBlogContent(article.content, {
+        hasStructuredFaqs:
+          Array.isArray(article.faqs) && article.faqs.length > 0,
+      }),
+      article.description,
+    ),
     htmlLang: inLanguage,
     schemas: [
       {
@@ -3167,7 +3192,9 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
       const bylineHtml = renderAuthorBylineHtml(article.author);
-      const bodyHtml = renderArticleBodyHtml(article.content);
+      const bodyHtml = renderArticleBodyHtml(article.content, {
+        hasStructuredFaqs: Boolean(article.faqs?.length),
+      });
       const faqHtml = (article.faqs && article.faqs.length > 0)
         ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`

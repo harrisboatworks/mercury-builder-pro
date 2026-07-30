@@ -220,12 +220,6 @@ It's also why we quote the installed number, not the box-only number. The price 
 
 ---
 
-## Related reading
-- Mercury SmartCraft Connect Guide Ontario
-- Mercury Outboard Financing Ontario
-- Mercury Repower Cost Ontario 2026
-- Mercury VesselView Guide
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).

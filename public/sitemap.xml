@@ -330,7 +330,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -450,7 +450,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1105,7 +1105,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1208,7 +1208,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1261,7 +1261,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1733,7 +1733,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2913,115 +2913,103 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-2.5-mh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-6hp-6mh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-6-mh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-9.9-elh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-9.9-mh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-20-eh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-20-elhpt</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-20-elh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-60-elpt-ct</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fourstroke-60hp-efi-elpt</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fs-90-elpt</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-115-elpt</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-115-exlpt</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-150-l</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-150-xl</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-200-l</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-200-l-dts-tm</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/pxs-250-l-dts-tm</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

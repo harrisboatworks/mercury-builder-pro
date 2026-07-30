@@ -136,12 +136,6 @@ Motor won't start after your swim stop? Nine times out of ten it's the kill-swit
 **Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
-- [Do You Need a Licence to Rent a Boat in Ontario?](/blog/boat-rental-licence-ontario-guide)
-- [Rice Lake Boat Rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-
 ---
 
 ## Sources

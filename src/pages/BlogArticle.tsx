@@ -19,6 +19,7 @@ import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogCTA } from '@/components/blog/BlogCTA';
@@ -55,8 +56,11 @@ export default function BlogArticle() {
     return <Navigate to="/blog" replace />;
   }
 
-  const relatedArticles = getRelatedArticles(article.slug, 3);
-  const tocItems = extractHeaders(article.content);
+  const relatedArticles = getRelatedArticles(article.slug, 4);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
   const cleanDescription = getCleanDescription(article);
   const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
 
@@ -382,43 +386,12 @@ export default function BlogArticle() {
                 // Answer blockquote followed by `# Title`, which previously
                 // slipped past the leading-only regex and produced a duplicate
                 // title. The h1 -> h2 override below is a second safety net.
-                let c = article.content.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
+                let c = cleanedContent.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
                 // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
                 // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
                 c = substituteLiveRateTokens(c);
-
-                // Strip standalone scaffold lines: "*Last updated: ...*",
-                // "_Last updated: ..._", "**Last updated:** ...", "*Last reviewed: ...*".
-                // The canonical Last reviewed line is rendered directly below
-                // the H1 from dateModified, so authoring scaffold is removed.
-                c = c.replace(
-                  /^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim,
-                  '',
-                );
-                // Strip standalone "Language: English" lines.
-                c = c.replace(
-                  /^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim,
-                  '',
-                );
-                // Drop a literal "## CTA" heading line; keep its body content.
-                c = c.replace(/^##\s+CTA\s*$/gim, '');
-                // Rename "## Internal Links" → "## Related reading" (keep list).
-                c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
-                // Suppress inline FAQ-style sections when faqs[] is populated —
-                // the accordion below replaces them. Uses the global flag so
-                // articles that (historically) duplicated their FAQ block get
-                // BOTH copies stripped, and matches common variants:
-                // "Frequently Asked Questions", "FAQ", "FAQs", "Common questions".
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
-                    '\n',
-                  );
-                }
-                // Collapse 3+ blank lines left by the strips above.
-                c = c.replace(/\n{3,}/g, '\n\n');
                 return c;
               })()}
               markdownComponents={{
@@ -556,7 +529,7 @@ export default function BlogArticle() {
             <h2 className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900 mb-8 text-center" style={{ letterSpacing: '-0.02em' }}>
               Related Articles
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedArticles.map(related => (
                 <article key={related.slug}>
                   <BlogCard article={related} />

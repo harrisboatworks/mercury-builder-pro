@@ -121,16 +121,6 @@ Real maintenance, no upsell:
 
 If you're thinking about a new Mercury rather than servicing your current one: [mercuryrepower.ca](https://www.mercuryrepower.ca) has current information on repowering programs.
 
-## Related Guides
-
-- [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
-- [Mercury vs Yamaha vs Honda: Reliability Compared (2026)](/blog/mercury-vs-yamaha-vs-honda-reliability-2026)
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Boat Battery Guide for Ontario Boaters](/blog/mercury-boat-battery-guide-ontario)
-- [Breaking In a New Mercury Motor: The Complete Guide](/blog/breaking-in-new-mercury-motor-guide)
-
-*Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. For annual service, visit [hbw.wiki/service](https://hbw.wiki/service). For new Mercury repowers, visit [mercuryrepower.ca](https://www.mercuryrepower.ca).*
-
 ## FAQs
 
 ### Are Mercury outboards more reliable than Yamaha?
@@ -157,9 +147,9 @@ No. Mercury's quality control processes are mature, and updates are validated be
 
 - [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
 - [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
 - [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
-- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 
 ## Next steps
 

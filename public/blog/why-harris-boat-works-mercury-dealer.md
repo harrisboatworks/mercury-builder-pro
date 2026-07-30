@@ -107,23 +107,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 
 Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
 
-## Common questions about HBW
-
-### "Are you the most competitive on Mercury pricing?"
-Mercury sets MSRP. Dealer pricing is competitive across the network. Our pricing is in line with other Mercury dealers. We compete on service quality, expertise, and long-term relationships.
-
-### "Can I get a better deal at a multi-brand dealer?"
-Sometimes nominally on motor price, but the long-term math usually favors HBW. Our parts inventory, service speed, and Premier-level support often save more than a small upfront price difference.
-
-### "Do you handle non-Mercury motors?"
-Some non-Mercury service we handle. But our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer.
-
-### "What if I bought my boat elsewhere?"
-We service Mercurys regardless of where they were purchased.
-
-### "How long has HBW been in business?"
-Founded 1947. Mercury dealership since 1965. Three generations of family ownership. Continuous operation in Gores Landing on Rice Lake.
-
 ## What HBW does not do
 - Saltwater servicing
 - Sailboat-specific outfitting
@@ -132,12 +115,6 @@ Founded 1947. Mercury dealership since 1965. Three generations of family ownersh
 - Most non-Mercury repowers
 
 If the work falls outside our core, we'll tell you that and point you toward a shop that's better set up for it. We'd rather you get the right service than take a job we can't deliver at our standard.
-## Related guides
-
-- [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution)
-- [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Why Boat Rentals and Shared Access Are Booming in 2026](/blog/boat-rentals-shared-access-booming-2026)
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/how-to-trim-boat-mercury-outboard)
 
 ## FAQs
 

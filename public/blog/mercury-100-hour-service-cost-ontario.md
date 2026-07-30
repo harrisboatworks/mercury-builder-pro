@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario.md
-last_updated: 2026-07-23
+last_updated: 2026-07-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Sh
 description: "Real Ontario numbers for a Mercury 100-hour or annual service, from 4,160 work orders: flat-rate labour by HP class, median parts, and what's included."
 category: "Service"
 date_published: 2026-07-02
-date_modified: 2026-07-23
+date_modified: 2026-07-30
 keywords: ["mercury 100 hour service cost","outboard annual service cost ontario","mercury service cost","100 hour service what's included","boat motor service cost ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-30  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario
 
@@ -130,12 +130,6 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-
-**Related guides:**
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Boat Winterization Cost Ontario](/blog/boat-winterization-cost-ontario-2026)
-- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
 

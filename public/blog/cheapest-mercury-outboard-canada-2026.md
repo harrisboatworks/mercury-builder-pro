@@ -152,13 +152,6 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 
 ---
 
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-
----
-
 Ready to find the right motor for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, every model from the 2.5 portable through the 300 V8, live CAD pricing, no "call for price."
 
 Not sure what your boat actually needs? Call **905-342-2153**. We won't sell you a motor that doesn't fit your hull.
