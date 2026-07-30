@@ -61,7 +61,7 @@ const STALE_DATE_RE_EN = /Last reviewed:\s*([A-Za-z]+\s+\d{1,2},?\s+\d{4}|\d{4}-
 const STALE_DATE_RE_FR = /Derni[èe]re r[ée]vision\s*[:\-]?\s*([A-Za-z\u00C0-\u017F]+\s+\d{1,2},?\s+\d{4}|\d{4}-\d{2}-\d{2}|\d{1,2}\s+[A-Za-z\u00C0-\u017F]+\s+\d{4})/i;
 
 // Canonical Quick Answer blockquote, as rendered by MarkdownSectionCards.
-const QUICK_ANSWER_BLOCKQUOTE_RE = /^>\s*\*\*\s*(Quick answer|R[ée]ponse rapide)\s*:?\s*\*\*/im;
+const QUICK_ANSWER_BLOCKQUOTE_RE = /^>\s*\*\*\s*(Quick answer|R[ée]ponse rapide|L'essentiel)\s*:?\s*\*\*/im;
 
 // Heading-driven short-answer cards. Mirrors detectH2Card() exactly.
 const QUICK_ANSWER_HEADINGS = new Set([
@@ -77,7 +77,11 @@ const QUICK_ANSWER_HEADINGS = new Set([
   'quick fix',
   // French equivalents (reported under the FR language bucket only)
   'reponse rapide',
+  'reponse courte',
   'lessentiel',
+  'en bref',
+  'a retenir',
+  'reponse directe',
 ]);
 
 const normHeading = (s) =>
