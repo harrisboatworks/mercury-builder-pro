@@ -841,9 +841,14 @@
       "destination": "/agents/index.html"
     },
     {
+      "source": "/resources",
+      "destination": "/resources/index.html"
+    },
+    {
       "source": "/pricing-reference",
       "destination": "/pricing-reference/index.html"
     },
+
     {
       "source": "/pricing-reference.md",
       "destination": "/pricing-reference.md"
