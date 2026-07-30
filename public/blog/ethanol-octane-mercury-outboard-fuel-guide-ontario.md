@@ -25,8 +25,7 @@ language: en-CA
 **Category:** Service  
 **Published:** 2026-04-11  
 **Last updated:** 2026-07-30  
-**Read time:** ~12 min read
-
+**Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
 # Mercury Outboard Octane and Ethanol Guide for Ontario
@@ -224,3 +223,4 @@ Record the engine serial number, fuel grade, ethanol label, purchase date and lo
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

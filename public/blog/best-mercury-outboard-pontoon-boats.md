@@ -178,14 +178,6 @@ For full Boost eligibility detail by motor family and serial range, see our [Mer
 
 ---
 
-## Related posts
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-
----
-
 ## Ready to repower your pontoon?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase. Or call **905-342-2153**, we rig pontoons every week and can give you the honest answer for your specific hull.

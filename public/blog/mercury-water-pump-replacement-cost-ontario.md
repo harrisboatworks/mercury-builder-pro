@@ -116,12 +116,6 @@ Tell us the motor, the hours, and the last time anyone was in there.
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
-- [Mercury Outboard Overheating at High Speed](/blog/mercury-outboard-overheat-high-speed)
-- [Milky Gearcase Oil: What It Means and Costs](/blog/milky-gearcase-oil-meaning-cost-ontario)
-- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
-
 ---
 
 ## Sources

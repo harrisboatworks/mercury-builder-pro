@@ -164,12 +164,6 @@ Dead battery accounts for roughly 40% of opener-morning failures. The battery sa
 
 ---
 
-## Related reading
-- Spring Outboard Commissioning Checklist
-- Mercury 9.9 EFI Review, kicker options
-- Mercury Outboard Won't Start Troubleshooting
-- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
-
 ## Sources
 
 - [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Walleye season dates, slot rules, and FMZ-specific regulations.

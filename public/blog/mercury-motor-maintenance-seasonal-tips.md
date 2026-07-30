@@ -185,16 +185,6 @@ _Service pricing varies by motor size, boat type, and storage tier. The actual p
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Mercury SmartCraft Alarm Codes: Complete List and Meanings (Ontario Dealer Guide)](/blog/mercury-smartcraft-alarm-codes-encyclopedia)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Breaking In a New Mercury Motor (2026)](/blog/breaking-in-new-mercury-motor-guide)
-
----
-
 ## FAQs
 
 ### How often should I change the oil in my Mercury 4-stroke?
@@ -239,6 +229,7 @@ The price depends on the exact engine, the items due in its manual, service hist
 
 ## Related guides
 
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 - [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto

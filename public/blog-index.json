@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "4a4f8fbf90c4b39701ad",
+  "sourceVersion": "421399645d3b8139353d",
   "count": 202,
   "articles": [
     {
@@ -2712,7 +2712,7 @@
         },
         {
           "q": "At what battery voltage should I replace instead of recharge?",
-          "a": "For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a proper surface-charge burn-off is usually replace, not recharge. Modern EFI requires at least 10.5 V during crank to fire injectors."
+          "a": "A fully charged 12 V lead-acid battery is typically around 12.6 V at rest, but resting voltage alone does not decide replacement. Load-test it and watch the cranking behaviour. Mercury battery requirements vary by engine family, so confirm the correct rating in the serial-specific owner's manual."
         },
         {
           "q": "How fast does E10 fuel go bad in storage?",
@@ -3024,7 +3024,7 @@
       "faqs": [
         {
           "q": "How long can I run an overheating outboard before damage?",
-          "a": "Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2-3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge."
+          "a": "There is no safe universal time. The warning type, engine family, load, and cooling-flow problem all matter. Reduce throttle immediately and follow the SmartCraft, VesselView, or serial-specific owner-manual instructions. If the warning persists or the instructions say to stop, shut the engine down."
         },
         {
           "q": "My tell-tale stream is steady but my alarm keeps going off, what gives?",
@@ -3032,11 +3032,11 @@
         },
         {
           "q": "Should I replace the impeller myself?",
-          "a": "On smaller motors (under 30 HP), yes, it's straightforward, well-documented, and the parts are cheap. On modern V6/V8s with electric trim, alignment-sensitive lower units, and SmartCraft, the labour-to-mistake ratio gets worse. We charge under $200 in labour on most jobs and we've done thousands."
+          "a": "It depends on the exact motor, your tools, and your experience removing and reinstalling a lower unit. Follow the serial-specific service procedure. If you are not comfortable with shift-shaft alignment, seals, torque values, and water-tube engagement, book the repair."
         },
         {
           "q": "How often should I flush my motor?",
-          "a": "After every use is best practice. At minimum, after any trip in weeds, silt, or shallow water. Use the flush port on the cowl with a garden hose, run for 10 minutes at idle (or per Mercury's spec for your model), shut down."
+          "a": "Follow the flushing procedure in the serial-specific Mercury owner's manual. The approved connection, whether the engine should run, and the required duration vary by model. Never assume that every Mercury should be run through the cowl flush port."
         }
       ]
     },

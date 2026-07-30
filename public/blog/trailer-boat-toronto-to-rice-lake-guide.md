@@ -144,14 +144,6 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 
 ---
 
-## Related reading
-- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide), where to launch on Rice Lake
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), conditions and hazards
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), pre-trip motor prep
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-
----
-
 ## Ready for the Drive?
 
 Build a quote for your Mercury motor, before or after the trip, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live installed pricing in CAD.
@@ -207,11 +199,11 @@ Before trailering, ensure the outboard is tilted fully up and the tilt lock enga
 
 ## Related guides
 
+- [Best Mercury for Rice Lake Fishing 2026](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
 - [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
 - [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
 - [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
-- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
 
 ## Next steps
 

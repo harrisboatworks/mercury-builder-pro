@@ -90,14 +90,6 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions. T
 
 As a third-generation family marina on Rice Lake, our family has been serving Ontario boaters since 1947. We are a Mercury Premier Dealer and a Legend Boats dealer, and we understand the specific demands of Ontario cottage and fishing boat setups. For engine repairs, we only service Mercury and Mercruiser. Our service intake is always open at hbw.wiki/service. Whether you are still deciding between a 90 and a 115 or are ready to build your new engine, our team can walk you through the options and get you on the water with confidence.
 
-## Related Guides
-
-- [Mercury 75 vs 90 vs 115: The Full Comparison](/blog/mercury-75-vs-90-vs-115-comparison)
-- [Mercury Command Thrust: Complete Guide 2026](/blog/mercury-command-thrust-complete-guide-2026)
-- [Mercury 90 HP FourStroke Review, Ontario](/blog/mercury-90-hp-fourstroke-review-ontario)
-- [Mercury 115 HP FourStroke Review, Ontario](/blog/mercury-115-hp-fourstroke-review-ontario)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-
 ## FAQs
 
 ### Can I put a 115 hp engine on a boat rated for 90 hp?
@@ -125,8 +117,8 @@ For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard gener
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
-- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

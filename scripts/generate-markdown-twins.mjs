@@ -2,6 +2,7 @@ import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { cleanBlogContent as cleanLegacyBlogContent } from '../src/lib/cleanBlogContent.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -322,11 +323,9 @@ function mdFrontmatter(
 // the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
 // what readers see.
 function cleanBlogContent(content, hasFaqs) {
-  let c = String(content || '');
-  c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
-  c = c.replace(/^##\s+CTA\s*$/gim, '');
-  c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  let c = cleanLegacyBlogContent(content, {
+    hasStructuredFaqs: hasFaqs,
+  });
   // Convert embedded YouTube cards to ordinary links before removing custom
   // directive fences, so text-only twins retain a useful video destination.
   c = c.replace(
@@ -349,12 +348,6 @@ function cleanBlogContent(content, hasFaqs) {
     /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
     '- **"$1"**  \n  $2',
   );
-  if (hasFaqs) {
-    c = c.replace(
-      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-      '\n',
-    );
-  }
   return c.replace(/\n{3,}/g, '\n\n').trim();
 }
 

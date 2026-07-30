@@ -123,12 +123,6 @@ If the boat can come to HBW in Gores Landing and the oil looked wrong, or nobody
 
 HBW does not diagnose gearcase faults remotely. Include the engine serial number, current hours and a photo of the drained lubricant with the request so the shop has a useful starting record.
 
-**Related guides:**
-- [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
-- [Mercury Water Pump Replacement Cost](/blog/mercury-water-pump-replacement-cost-ontario)
-- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
-
 ---
 
 ## Sources

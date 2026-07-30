@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-07-09
+last_updated: 2026-07-30
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
-date_modified: 2026-07-09
+date_modified: 2026-07-30
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-07-30  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
@@ -49,13 +49,11 @@ After these three, move into the real diagnostic ladder below.
 
 ### Step 1: Battery voltage at rest
 
-Get a multimeter on the battery terminals.
+Get a multimeter on the battery terminals. A fully charged 12 V lead-acid battery is typically around 12.6 V at rest, but the useful test is what happens under cranking load.
 
-- **12.6 to 12.8 V at rest:** healthy. Move to Step 2.
-- **12.0 to 12.5 V:** low, may crank but probably won't start a cold EFI motor. Charge before troubleshooting further.
-- **11.5 V or lower at rest after a proper surface-charge burn-off:** replace, don't recharge.
+If voltage falls sharply, the starter labours, or a cable gets hot, stop and correct the battery or connection problem before chasing fuel and ignition. Mercury's cranking-battery requirement varies by engine family, so use the serial-specific owner's manual rather than one voltage cutoff for every EFI outboard.
 
-[A weak battery is the #1 cause of EFI motors that crank slowly but won't fire](/blog/mercury-boat-battery-guide-ontario). Modern Mercury EFI needs at least 10.5 V during the cranking cycle to fire the fuel injectors.
+[A weak battery is a common cause of EFI motors that crank slowly but won't fire](/blog/mercury-boat-battery-guide-ontario).
 
 ### Step 2: Fuel quality and quantity
 
@@ -99,11 +97,9 @@ This is where we plug in Mercury CDS (Computer Diagnostic System) and run live d
 
 ### Step 6: Compression check (also us)
 
-If the motor has 200+ hours and you've ruled out the easy stuff, a compression check tells you whether the bottom end is healthy.
+If you've ruled out the easy stuff, a compression or leak-down test can help identify a mechanical problem. There isn't one safe PSI cutoff for every Mercury outboard. Results depend on engine family, test method, gauge, cranking speed, temperature, and altitude.
 
-- **Above 170 psi per cylinder with under 10% spread:** healthy
-- **150-170 psi with reasonable spread:** age-appropriate wear
-- **Below 150 psi or spread over 15%:** worn, needs further investigation
+We compare cylinders with each other and then check the serial-specific Mercury service specification. A low or uneven result is a reason to investigate, not a universal diagnosis by itself.
 
 ## What we see at HBW
 
@@ -118,7 +114,7 @@ We pulled our own numbers on this. Since 2013 we have logged 537 no-start and ro
 ![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
 *Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
 
-Most no-start customers are running again the same day they bring the boat in.
+Once the boat is on the bench, many no-start jobs are quick to isolate. Parts availability and the actual cause decide the repair timeline.
 
 ## Common mistakes
 
@@ -137,18 +133,14 @@ Most no-start customers are running again the same day they bring the boat in.
 
 ## Ready for HBW to look at it?
 
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
-**Email:** info@harrisboatworks.ca  
-**Phone:** 905-342-2153
-
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The largest Mercury and Mercruiser parts inventory in Ontario.
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 
 ## Sources
 
-- Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
+- [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
-- HBW shop-floor data: 2026 spring service-ticket distribution
+- HBW service records: 537 no-start and rough-running jobs, 2013-2026
 
 ---
 
@@ -160,7 +152,7 @@ Before anything else: kill switch clip fully seated, shifter clicked into true n
 
 ### At what battery voltage should I replace instead of recharge?
 
-For a typical 12 V lead-acid cranking battery, 11.5 V or lower at rest after a proper surface-charge burn-off is usually replace, not recharge. Modern EFI requires at least 10.5 V during crank to fire injectors.
+A fully charged 12 V lead-acid battery is typically around 12.6 V at rest, but resting voltage alone does not decide replacement. Load-test it and watch the cranking behaviour. Mercury battery requirements vary by engine family, so confirm the correct rating in the serial-specific owner's manual.
 
 ### How fast does E10 fuel go bad in storage?
 

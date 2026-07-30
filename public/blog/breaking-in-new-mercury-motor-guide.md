@@ -166,13 +166,6 @@ Follow the model-specific break-in procedure in the owner's manual. Mercury says
 
 ---
 
-## Related posts
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-
----
-
 ## Need service on your Mercury?
 
 Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).

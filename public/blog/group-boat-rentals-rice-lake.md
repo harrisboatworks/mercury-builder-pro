@@ -111,12 +111,6 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
 **Planning a big group? Text:** [647-952-2153](sms:+16479522153) **or call:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
-**Related guides:**
-- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
-- [Do You Need a Licence to Rent a Boat in Ontario?](/blog/boat-rental-licence-ontario-guide)
-- [First Time Renting a Boat?](/blog/first-time-boat-rental-rice-lake-guide)
-- [Rice Lake Boat Rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta)
-
 ---
 
 ## Sources

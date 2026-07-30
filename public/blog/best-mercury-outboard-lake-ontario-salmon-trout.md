@@ -143,14 +143,6 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 
 ---
 
-## Related reading
-- [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-
----
-
 ## Build Your Lake Ontario Setup
 
 Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, no games.
@@ -204,11 +196,11 @@ For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full 
 
 ## Related guides
 
+- [Best Mercury for Rice Lake Fishing 2026](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
 - [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
 - [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
-- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
 
 ## Next steps
 

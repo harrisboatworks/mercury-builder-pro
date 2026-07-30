@@ -157,12 +157,6 @@ The 5-amp alternator option is the one upgrade we always recommend -- charges th
 
 ---
 
-## Related reading
-- Mercury SmartCraft Connect Guide Ontario
-- Mercury Controls & Rigging Guide Ontario
-- Walleye Opener Boat Prep Checklist
-- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
-
 ## About the author
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).

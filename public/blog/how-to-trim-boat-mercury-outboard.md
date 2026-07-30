@@ -160,11 +160,6 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON  
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-**Related guides:**
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide)
-- [Mercury VesselView and SmartCraft Guide](/blog/mercury-vesselview-smartcraft-plain-english-guide)
-
 ## FAQs
 
 ### Should I trim all the way down before accelerating?
@@ -197,11 +192,11 @@ No. A gauge helps you repeat a known setting, but it cannot tell you whether tod
 
 ## Related guides
 
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 

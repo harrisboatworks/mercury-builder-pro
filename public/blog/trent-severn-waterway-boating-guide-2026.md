@@ -209,12 +209,6 @@ Call 905-342-2153 before heading out if you need a slip or want to confirm fuel 
 
 ---
 
-## Related reading
-- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep)
-- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
-- Rice Lake Fishing Guide
-- Boat Rentals on Rice Lake
-
 **Starting from Rice Lake? HBW is between Locks 18 and 19.** 
 Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 
 Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 

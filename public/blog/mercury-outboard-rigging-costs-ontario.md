@@ -186,13 +186,6 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 
 ---
 
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide)
-- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower)
-
----
-
 Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
 
 Prefer to talk through your specific boat's rigging condition first? Call **905-342-2153** or come in for a free walk-around.

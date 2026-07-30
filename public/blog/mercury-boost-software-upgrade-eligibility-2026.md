@@ -135,12 +135,6 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 
 ---
 
-## Related reading
-- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
-- [Mercury Controls & Rigging Guide Ontario](/blog/mercury-controls-rigging-guide-ontario)
-- [Mercury 115 vs 150 Comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury Outboard Motor Families Guide](/blog/mercury-outboard-lineup-ontario)
-
 **Check if your Mercury qualifies for Boost.** 
 Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 
 HBW confirms eligibility, quotes the installation, and books the visit. 

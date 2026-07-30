@@ -112,12 +112,6 @@ Handle the licence tonight, [book the boat for the weekend](/blog/first-time-boa
 **Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Phone:** 905-342-2153
 
-**Related guides:**
-- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
-- [Rice Lake Boat Rentals from Toronto and the GTA](/blog/rice-lake-boat-rentals-from-toronto-gta)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-- [Pleasure Craft Licence Update for Ontario](/blog/pleasure-craft-licence-update-repower-ontario)
-
 ---
 
 ## Sources

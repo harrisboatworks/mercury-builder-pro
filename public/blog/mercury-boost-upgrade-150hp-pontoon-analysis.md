@@ -132,13 +132,6 @@ primaryHref: /pricing-reference
 
 ---
 
-## Related reading
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
-
----
-
 Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.

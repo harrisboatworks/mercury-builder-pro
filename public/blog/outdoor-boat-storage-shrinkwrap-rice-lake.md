@@ -164,14 +164,6 @@ Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not 
 
 ---
 
-## Related Guides
-
-- [Winter Boat Storage: Shrinkwrap vs Indoor in Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
-- [Winter Storage Near Toronto at HBW](/blog/winter-storage-near-toronto-hbw)
-- [Boat Storage in the Kawartha Lakes](/blog/boat-storage-kawartha-lakes)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Maintenance Intervals by Engine Family](/blog/mercury-maintenance-intervals-20-100-300-rule)
-
 ## Sources and Scope
 
 - [HBW service request](https://hbw.wiki/service), current drop-off workflow and Mercury/MerCruiser repair boundary
@@ -226,9 +218,11 @@ List the concern in the service request. Repairs require assessment and approval
 
 ## Related guides
 
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
 
 ## Next steps
 
