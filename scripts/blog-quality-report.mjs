@@ -87,9 +87,12 @@ const QUICK_ANSWER_HEADINGS = new Set([
 const normHeading = (s) =>
   s
     .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^\w\s]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
+
 
 const FAQ_H2_RE = /^##\s+(Frequently Asked Questions?|FAQs?|Questions fr[ée]quentes|FAQ)\b/m;
 const RELATED_H2_RE = /^##\s+(Related guides|Related posts|Related at HBW|Guides connexes)\b/mi;
