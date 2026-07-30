@@ -30,17 +30,17 @@ language: en-CA
 
 # The Five-Minute Boat-Trailer Check Before Every Trip
 
-> **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, fix it before the trailer moves.
+> **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, don't move the trailer until it's fixed.
 
-A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap does not need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
+A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
 
-The solution is not a complicated inspection before every outing. It is a consistent five-minute check, followed by scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
+You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 
 ## The Five-Minute Check
 
-Walk around the trailer in the same order every time. Consistency is what keeps an easy-to-miss item from being skipped.
+Walk around the trailer in the same order every time. That's what keeps an easy-to-miss item from being skipped.
 
 ### 1. Coupler, ball and jack
 
@@ -91,11 +91,11 @@ Stand behind the rig and confirm the boat sits squarely, gear inside the boat is
 | Wheels | Hardware present, no movement signs | Torque verification due | Missing hardware, rust trails or visible looseness |
 | Lights | All required functions work | Dirty connector | Brake or signal light fails |
 
-This is a departure check, not permission to postpone maintenance.
+This is a departure check. It isn't permission to postpone maintenance.
 
 ## What Five Minutes Cannot Replace
 
-Trailer systems are not all built the same. Some hubs are serviceable, some use sealed or oil-bath systems, and brake designs and breakaway systems differ. The correct maintenance work and interval must come from the component maker and the trailer manual.
+Trailer systems aren't all built the same. Some hubs are serviceable, some use sealed or oil-bath systems, and brake designs and breakaway systems differ. The correct maintenance work and interval must come from the component maker and the trailer manual.
 
 | System | Scheduled work to confirm |
 |---|---|
@@ -137,20 +137,17 @@ Keep the following in the tow vehicle:
 
 The best checklist is the one you can complete correctly without improvising at the shoulder.
 
+## What We See at HBW
+
+A Rice Lake trip can include highway speed, broken county-road pavement, a cottage lane and a steep launch ramp in the same hour. That's why the walk-around belongs at home, not in the launch queue at Gores Landing.
+
+The trouble worth catching early is usually ordinary: one loose connection, one soft tire, one strap that looked fine last time. A fixed routine catches those small misses before road speed turns them into a much bigger problem.
+
 ## Need a Second Set of Eyes?
 
-If a trailer concern appears while you are preparing the boat for Mercury service, include it in the service request so the team can confirm what is within current shop scope and route you appropriately. Do not tow an unsafe trailer to get it inspected.
+If a trailer concern appears while you're preparing the boat for Mercury service, add it to the service request. We'll confirm what's within current shop scope and point you the right way. If the trailer isn't safe to tow, don't bring it down the road for an inspection.
 
 [Start a service request](https://hbw.wiki/service)
-
-Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
-
-## Related Guides
-
-- [Boat trailering mistakes Ontario boaters can avoid](/blog/boat-trailering-mistakes-ontario)
-- [Trailer boating from Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
-- [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist)
-- [Rice Lake boat launch guide](/blog/rice-lake-boat-launch-guide)
 
 ## Sources
 
@@ -166,11 +163,11 @@ No. Use the specification for the installed trailer tire together with the trail
 
 ### Should safety chains be crossed?
 
-Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road.
+Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but shouldn’t drag on the road.
 
 ### How tight should trailer wheel nuts be?
 
-Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value.
+Use the torque and recheck procedure published for your trailer, wheel and stud combination. There isn’t one responsible universal value.
 
 ### Does every trailer need the same bearing service?
 
@@ -182,7 +179,7 @@ Support requirements vary by boat, outboard and trailer. Follow the instructions
 
 ### Can I tow if one signal light is out?
 
-Do not start the trip with a failed required light. Repair the lamp, wiring, connector or ground first.
+Don’t start the trip with a failed required light. Repair the lamp, wiring, connector or ground first.
 
 ## Related guides
 

@@ -26,7 +26,6 @@ import { isDiagnosticArticle } from '@/lib/isDiagnosticArticle';
 import { BuildYourQuoteCTA } from '@/components/blog/BuildYourQuoteCTA';
 import { CategoryCTA, shouldSuppressAutoCTA } from '@/components/blog/CategoryCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
-import { RelatedGuides } from '@/components/blog/RelatedGuides';
 import { BlogTable } from '@/components/blog/BlogTable';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -526,23 +525,6 @@ export default function BlogArticle() {
           {isDiagnostic && (
             <BlogCTA category={article.category} slug={article.slug} variant="banner" />
           )}
-
-          {/* Cluster-driven related guides (deduped against in-body links) */}
-          <RelatedGuides
-            currentSlug={article.slug}
-            max={5}
-            minLinks={2}
-            excludeSlugs={Array.from(
-              new Set(
-                Array.from(article.content.matchAll(/\/blog\/([a-z0-9-]+)/gi)).map(
-                  (m) => m[1]
-                )
-              )
-            )}
-          />
-
-
-
 
           {/* Share Section */}
           <div className="mt-14 pt-10 border-t border-repower-navy-900/10">

@@ -30,11 +30,11 @@ language: en-CA
 
 # Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario
 
-> **Quick answer:** Octane and ethanol answer different questions. Octane measures resistance to engine knock; the ethanol label states the alcohol blend. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Premium does not automatically mean ethanol-free, and Ontario's renewable-fuel rules do not identify one grade at one pump.
+> **Quick answer:** Octane and ethanol answer different questions. Octane measures resistance to engine knock; the ethanol label states the alcohol blend. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Premium doesn't automatically mean ethanol-free, and Ontario's renewable-fuel rules don't identify one grade at one pump.
 
 At an Ontario fuel pump, “premium,” “87” and “E10” can appear close together. That makes them feel like one decision. They are not.
 
-The safe choice requires two independent checks:
+Here's the safe choice. Make two independent checks:
 
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
@@ -43,9 +43,9 @@ The safe choice requires two independent checks:
 
 ## Octane and Ethanol Describe Different Properties
 
-Octane is an anti-knock rating. In Canada, the number displayed at the pump is normally the Anti-Knock Index, shown as (R+M)/2. An engine designed for 87 does not gain a guaranteed power or cleanliness benefit merely because 91 is more expensive.
+Octane is an anti-knock rating. In Canada, the number displayed at the pump is normally the Anti-Knock Index, shown as (R+M)/2. An engine designed for 87 doesn't gain a guaranteed power or cleanliness benefit merely because 91 is more expensive.
 
-Ethanol content is the percentage of alcohol blended into the gasoline. E10 can contain up to 10 percent ethanol. It does not mean 10 octane points, and the octane number does not reveal the ethanol percentage.
+Ethanol content is the percentage of alcohol blended into the gasoline. E10 can contain up to 10 percent ethanol. It doesn't mean 10 octane points, and the octane number doesn't reveal the ethanol percentage.
 
 | Pump information | What it tells you | What it does not tell you |
 |---|---|---|
@@ -58,7 +58,7 @@ Read the complete pump label, then compare both answers with the exact engine ma
 
 ## What Octane Does a Mercury Outboard Need?
 
-The owner's manual and cowl label for the exact engine are the authority. Do not rely on a broad rule such as “all Verados need mid-grade.”
+The owner's manual and cowl label for the exact engine are the authority. Don't rely on a broad rule such as “all Verados need mid-grade.”
 
 A useful current example is Mercury's naturally aspirated 5.7-litre V10 Verado family. Mercury's published specifications for the 350, 400 and 425 hp models list **87 octane minimum (R+M)/2**. That directly disproves the blanket advice that every Verado requires 89.
 
@@ -76,7 +76,7 @@ For an older Mercury, a portable, or an engine with an uncertain fuel-system his
 
 Premium names an octane grade. Ethanol-free names a blend. A retailer may sell premium that contains ethanol, premium that does not, or different blends by location and season.
 
-The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser does not clearly identify ethanol content, ask the retailer. Do not infer it from the colour of the nozzle, price, brand or octane number.
+The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser doesn't clearly identify ethanol content, ask the retailer. Don't infer it from the colour of the nozzle, price, brand or octane number.
 
 This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it can meet Mercury's published fuel specifications for a current engine.
 
@@ -84,7 +84,7 @@ This also means regular is not automatically wrong for a boat. If 87 meets the e
 
 Ontario's cleaner-transportation-fuels regulation sets renewable-content requirements across a fuel supplier's gasoline pool. Pool-wide compliance can be achieved through a mix of products and credits.
 
-That policy does not let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
+That policy doesn't let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
 
@@ -100,7 +100,7 @@ Mercury's owner guidance emphasizes:
 - avoid storing untreated fuel beyond the guidance for the system and product
 - follow the exact manual when preparing the engine for storage
 
-There is no responsible universal countdown to phase separation. Temperature, water exposure, tank design, fuel composition and storage conditions all matter. Likewise, topping old fuel with fresh fuel does not remove water or reverse separation.
+There's no responsible universal countdown to phase separation. Temperature, water exposure, tank design, fuel composition and storage conditions all matter. Likewise, topping old fuel with fresh fuel doesn't remove water or reverse separation.
 
 If contamination is suspected, stop experimenting. Safe disposal and diagnosis are better than repeatedly sending questionable fuel through injectors or carburetors.
 
@@ -115,7 +115,13 @@ Use this sequence every time the fuel source changes:
 5. **Plan for storage.** Follow Mercury's specified stabilizer and storage procedure if the fuel will sit.
 6. **Keep the receipt.** If a problem begins after refuelling, the date, grade and location help the diagnosis.
 
-This takes less time than deciding based on “regular versus premium,” and it produces a much better answer.
+This takes less time than guessing from “regular versus premium,” and it gives you a much better answer.
+
+## What We See at HBW
+
+Around Rice Lake and the Kawarthas, the question usually isn't “what does AKI mean?” It's “which pump can I use without hurting the motor?” Start with the cowl label and the serial-number manual, then read the fuel label at the pump. That's the whole decision.
+
+If the labels don't give you a clear answer, take a photo of the pump and include the engine serial number in a service request. We'd rather identify the exact specification than have you pay for premium that doesn't solve the real question.
 
 ## Common Fuel Mistakes
 
@@ -133,18 +139,9 @@ This takes less time than deciding based on “regular versus premium,” and it
 
 ## Unsure What Your Engine Requires?
 
-Send the serial number and the exact fuel label with your service request. Harris Boat Works can identify the Mercury application and start with the right specification instead of a pump-grade guess.
+Send the serial number and the exact fuel label with your service request. We'll identify the Mercury application and start with the right specification instead of a pump-grade guess.
 
 [Start a Mercury service request](https://hbw.wiki/service)
-
-Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
-
-## Related Guides
-
-- [Mercury outboard fuel-efficiency guide](/blog/mercury-outboard-fuel-efficiency-guide)
-- [Mercury outboard will not start: dockside guide](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury maintenance schedule explained](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ## Sources
 
@@ -157,7 +154,7 @@ Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a
 
 ### What octane does my Mercury outboard require?
 
-Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury.
+Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but don’t generalize that to every Mercury.
 
 ### Can a current Mercury run E10?
 
@@ -169,23 +166,23 @@ Not automatically. Premium is an octane grade. Read the ethanol label for the ac
 
 ### Does higher octane give a Mercury more power?
 
-Not simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition.
+It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition.
 
 ### Can fuel stabilizer fix phase-separated fuel?
 
-No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It does not recombine separated fuel or remove contamination.
+No. Stabilizer’s preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination.
 
 ### How can I confirm a fuel problem for service?
 
-Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if possible.
+Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if you can.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 
