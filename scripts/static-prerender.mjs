@@ -3122,6 +3122,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       }] : [])
     ],
     extraHead: (() => {
+      const hreflang = (() => {
       const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
                    : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
                    : langCode === 'ko' ? KO_TO_EN_SLUG[article.slug]
@@ -3137,6 +3138,8 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         ].join('\n  ');
       }
       return '';
+      })();
+      return [hreflang, renderHeroPreloadTag(article.image)].filter(Boolean).join('\n  ');
     })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
