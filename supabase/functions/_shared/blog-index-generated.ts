@@ -32,11 +32,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much oil does a Mercury 90 HP FourStroke take?",
-        "a": "It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.8 US quarts. The later 1.7 L EFI at serial 1B366823 and up is 5.28 quarts. The 2014+ 2.1 L family at serial 2B094996 and up is 5.5 quarts. Confirm the final level on the dipstick and in the exact manual."
+        "a": "It depends on the engine family and serial break. The 2006 EFI at serial 1B366822 and below is listed at 4.54 L (4.8 US quarts). The later 1.7 L EFI at serial 1B366823 and up is 5 L (5.28 US quarts). The 2014+ 2.1 L family at serial 2B094996 and up is 5.2 L (5.5 US quarts). Confirm the final level on the dipstick and…"
       },
       {
         "q": "How much oil does a Mercury 60 HP FourStroke take?",
-        "a": "The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3.17 US quarts, or 3 litres, of crankcase oil. The gearcase is listed at 11.5 ounces for the standard lower unit and 24 ounces for the BigFoot or Command Thrust lower unit."
+        "a": "The 996 cc 60 HP FourStroke row in Mercury’s 2026 guide lists 3 litres (3.17 US quarts) of crankcase oil. The gearcase is listed at 340 mL (11.5 US fl oz) for the standard lower unit and 710 mL (24 US fl oz) for the BigFoot or Command Thrust lower unit."
       },
       {
         "q": "Can I fill a Mercury outboard with the exact chart capacity?",
@@ -1333,7 +1333,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What's normal fuel consumption for a 115HP outboard?",
-        "a": "At cruise (around 4,000 RPM), expect 6-8 GPH. At WOT, 10-12 GPH. Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption."
+        "a": "At cruise (around 4,000 RPM), expect 23-30 L/h (6-8 GPH). At WOT, 38-45 L/h (10-12 GPH). Actual numbers vary by boat weight, hull design, and conditions. SmartCraft gauges show real-time consumption."
       },
       {
         "q": "How much does a dirty hull cost in fuel?",
@@ -1496,7 +1496,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What's the lightest outboard Mercury makes?",
-        "a": "The Mercury 2.5 MH FourStroke at approximately 41 lbs is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard."
+        "a": "The Mercury 2.5 MH FourStroke at approximately 19 kg (41 lb) is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard."
       },
       {
         "q": "Why is 9.9HP so popular?",
@@ -1504,7 +1504,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I really carry these by myself?",
-        "a": "Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limits - they're \"portable\" in that they can mount on small transoms, but carrying is challenging."
+        "a": "Up to about 9.9HP (39 kg (85 lb)), most adults can manage. 15HP and 20HP push the limits - they're \"portable\" in that they can mount on small transoms, but carrying is challenging."
       },
       {
         "q": "Do portable outboards need winterization?",
@@ -1543,7 +1543,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What size trolling motor do I need for my fishing boat?",
-        "a": "General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 55 to 80 lb units to handle wind."
+        "a": "General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 25 to 36 kg (55 to 80 lb) units to handle wind."
       }
     ]
   },
@@ -3696,7 +3696,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "When does Ontario require trailer brakes on a boat trailer?",
-        "a": "Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lbs) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying…"
+        "a": "Ontario's Highway Traffic Act requires brakes on trailers with a gross weight of 1,360 kg (approximately 3,000 lb) or more, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit that threshold. If you are unsure, weigh it loaded. Confirm current requirements with MTO before relying…"
       },
       {
         "q": "Do I need a separate licence plate for my boat trailer in Ontario?",
@@ -3824,7 +3824,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why do pontoons need more HP than runabouts?",
-        "a": "A typical pontoon sits 1,800 to 3,500 lbs dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 5,000 lbs. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a ponto…"
+        "a": "A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel; a 22-footer with 10 passengers and a full cooler easily clears 2,268 kg (5,000 lb). Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard cat…"
       },
       {
         "q": "When does Command Thrust matter on a pontoon?",
@@ -3848,7 +3848,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What size battery does a Mercury outboard need?",
-        "a": "For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 32 degrees F. Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose onl…"
+        "a": "For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least 800 Marine Cranking Amps (MCA) measured at 0°C (32 degrees F). Always check your engine's owner's manual for the exact requirement for your model. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpo…"
       },
       {
         "q": "AGM vs flooded lead-acid vs lithium: which marine battery should I buy?",
@@ -3984,7 +3984,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the fuel economy difference between the 40 and 60?",
-        "a": "At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 3.5-4 gallons per hour and a 60 ELPT pulls roughly 5-5.5 GPH. Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually use less fuel per…"
+        "a": "At cruise (around 4,000-4,500 RPM), a 40 ELPT pulls roughly 13-15 L/h (3.5-4 US gal/h) and a 60 ELPT pulls roughly 19-21 L/h (5-5.5 GPH). Real numbers depend on hull, load, and prop. The 60 burns more fuel in absolute terms, but if it lets a heavier boat plane efficiently while the 40 would lug, the 60 can actually us…"
       },
       {
         "q": "Tiller or remote steering: which should I get?",
@@ -4147,7 +4147,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does the Mercury 9.9 MH EFI weigh?",
-        "a": "Dealer specifications list the Mercury 9.9 MH EFI around 84 lb dry weight."
+        "a": "Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight."
       },
       {
         "q": "What shaft length is the Mercury 9.9 MH EFI?",
@@ -4185,7 +4185,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a Mercury 90 FourStroke weigh?",
-        "a": "Mercury's published literature puts the lightest 90 configurations in roughly the 359–364 lb range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit."
+        "a": "Mercury's published literature puts the lightest 90 configurations in roughly the 163-165 kg (359–364 lb) range. Shaft length, gearcase and model specification can change the number, so confirm the exact model code before judging transom fit."
       }
     ]
   },
@@ -4283,12 +4283,12 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "It can be the better choice on a performance hull, but the cowl does not determine speed by itself. Boat weight, hull design, gearcase, shaft length, mounting height, propeller, load and conditions all matter. Mercury's published freshwater tests show both motors performing well on the boats they were matched to, but…"
       },
       {
-        "q": "Is the Mercury 200 FourStroke a V6 or V8?",
-        "a": "The current Mercury 200 FourStroke is a 3.4-litre V6. The current 200 Pro XS is a 4.6-litre V8. Older online discussions sometimes mix earlier engines or treat the two current 200s as the same platform, which is incorrect."
-      },
-      {
         "q": "How fast will a Mercury 200 go?",
         "a": "There is no honest single speed. Official Mercury examples in this review range from 38.4 mph on a 23.2-foot Barletta pontoon with a 200 FourStroke to 53.5 mph in the published summary for a Crestliner 1850 Fish Hawk with a 200 Pro XS. Your result depends on the exact boat and setup."
+      },
+      {
+        "q": "Which Mercury 200 is better for a pontoon?",
+        "a": "For most family and cruising pontoons, the 3.4-litre V6 200 FourStroke is the straightforward choice. The V8 Pro XS can make sense on a performance-oriented pontoon whose rating, transom, steering and setup support it, but the extra performance hardware is not automatically useful on every pontoon."
       }
     ]
   },
@@ -4317,12 +4317,12 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "It can be the better tool on a performance hull, but there is no honest universal speed difference. Mercury's current public performance database did not provide a same-hull 250 FourStroke versus 250 Pro XS test when this review was checked. Hull, load, gearcase, mounting height and propeller determine whether the Pro…"
       },
       {
-        "q": "Are the 250 FourStroke and 250 Pro XS the same engine?",
-        "a": "They share Mercury's 4.6-litre, 32-valve DOHC V8 architecture and the same 250 HP rating, but they are not interchangeable model labels. Their operating ranges, exhaust character, gearcase applications, shaft-length availability and calibration differ. Compare the exact model code before ordering."
+        "q": "How much does a Mercury 250 weigh?",
+        "a": "Mercury's current linked brochures list about 239 kg (527 lb) for the lightest 250 FourStroke and 232 kg (511 lb) for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package."
       },
       {
-        "q": "How much does a Mercury 250 weigh?",
-        "a": "Mercury's current linked brochures list about 527 lb for the lightest 250 FourStroke and 511 lb for the lightest 250 Pro XS. Those are comparison weights, not a promise for every configuration. Shaft length, gearcase, steering and control specification can change the installed package."
+        "q": "Which Mercury 250 is better for a pontoon or tritoon?",
+        "a": "For most family and cruising tritoons, the standard 250 FourStroke is the straightforward choice. Pro XS can make sense on a performance-oriented hull with the right strakes, transom, steering, mounting and propeller, but the badge alone does not make a heavy pontoon faster."
       }
     ]
   },
@@ -4351,7 +4351,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the actual difference between a 75 and a 90 Mercury FourStroke?",
-        "a": "Same 2.1L block. Same dry weight (359 lb). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor."
+        "a": "Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor."
       },
       {
         "q": "Is the Mercury 90 worth the upcharge over the 75?",
@@ -5020,7 +5020,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is the Mercury 150 Pro XS a V6?",
-        "a": "No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, and 250. The 300 Pro XS is a V8. This matters because the 150 is meaningfully lighter than the V6 models, roughly 100 lbs less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a re…"
+        "a": "No. The 150 Pro XS is an inline-4. The Pro XS V6 family is the 175, 200, 225, and 250. The 300 Pro XS is a V8. This matters because the 150 is meaningfully lighter than the V6 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight…"
       },
       {
         "q": "How much does a Pro XS repower cost in Ontario?",
@@ -5687,7 +5687,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is a FourStroke heavier than the 2-stroke it replaces?",
-        "a": "Yes. A 90 HP FourStroke weighs roughly 163 kg, about 359 lb, compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim."
+        "a": "Yes. A 90 HP FourStroke weighs roughly 163 kg, about 163 kg (359 lb), compared to about 140 to 145 kg for an older 90 HP 2-stroke. The 15 to 25 kg of added weight matters for transom strength and boat trim."
       },
       {
         "q": "Will my boat still perform well with a FourStroke?",
@@ -6224,7 +6224,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is an aluminum fishing boat easy to repower?",
-        "a": "Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 180–250 lb motor is a structural issue, q…"
+        "a": "Aluminum boats, North American-built hulls like Lund, Crestliner, and Lowe, or Canadian-built Princecraft, are usually the most straightforward repowers because they're lighter and simpler. The first thing Harris Boat Works checks is transom condition: a soft transom holding a 82-113 kg (180–250 lb) motor is a structu…"
       },
       {
         "q": "What should I watch for when repowering a fibreglass V-hull?",
@@ -6284,19 +6284,19 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does a Mercury 115 four-stroke weigh?",
-        "a": "Mercury lists the 115 FourStroke at 359 lb (163 kg) dry for the lightest model; the Command Thrust version is 363 lb. The 115 Pro XS is also 359 lb. Longer shaft lengths add weight."
+        "a": "Mercury lists the 115 FourStroke at 163 kg (359 lb) dry for the lightest model; the Command Thrust version is 165 kg (363 lb). The 115 Pro XS is also 163 kg (359 lb). Longer shaft lengths add weight."
       },
       {
         "q": "How much does a 90 hp Mercury outboard weigh?",
-        "a": "359 lb (163 kg) dry for the lightest model, or 363 lb with the Command Thrust gearcase. The 75, 90, and 115 share the same 2.1L block, which is why their weights match."
+        "a": "163 kg (359 lb) dry for the lightest model, or 165 kg (363 lb) with the Command Thrust gearcase. The 75, 90, and 115 share the same 2.1L block, which is why their weights match."
       },
       {
         "q": "What is the lightest 115 hp outboard?",
-        "a": "Mercury's 115 Pro XS at 359 lb, which Mercury says is the lightest performance 115 in its class by roughly 20 pounds. The standard 115 FourStroke is the same 359 lb in its lightest configuration."
+        "a": "Mercury's 115 Pro XS at 163 kg (359 lb), which Mercury says is the lightest performance 115 in its class by roughly 9 kg (20 lb). The standard 115 FourStroke is the same 163 kg (359 lb) in its lightest configuration."
       },
       {
         "q": "How much does a Mercury 250 weigh?",
-        "a": "Depends on the family: the 250 Pro XS V8 is 505 lb (229 kg) dry, while the 250 FourStroke V8 is 527 lb (239 kg), both in their lightest configurations."
+        "a": "Depends on the family: the 250 Pro XS V8 is 229 kg (505 lb) dry, while the 250 FourStroke V8 is 239 kg (527 lb), both in their lightest configurations."
       }
     ]
   },
