@@ -78,7 +78,7 @@
     "@supabase/supabase-js": "^2.53.1",
     "@tanstack/react-query": "^5.83.0",
     "@types/dompurify": "^3.2.0",
-    "@vercel/node": "^5.8.1",
+    "@vercel/node": "^5.9.2",
     "base64-js": "1.5.1",
     "buffer": "^6.0.3",
     "canvas-confetti": "^1.9.3",
@@ -147,6 +147,13 @@
   "overrides": {
     "undici": "6.28.0",
     "path-to-regexp": "^8.2.0",
-    "minimatch": "^9.0.5"
+    "minimatch": "^9.0.5",
+    "protobufjs": "^7.5.4",
+    "tar": "^7.5.22"
+  },
+  "resolutions": {
+    "protobufjs": "^7.5.4",
+    "tar": "^7.5.22"
   }
 }
+
