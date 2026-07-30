@@ -47,6 +47,9 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 
+const INLINE_FAQ_SECTION_RE =
+  /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi;
+
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
@@ -57,7 +60,11 @@ export default function BlogArticle() {
   }
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
-  const tocItems = extractHeaders(article.content);
+  const tocSource =
+    article.faqs && article.faqs.length > 0
+      ? article.content.replace(INLINE_FAQ_SECTION_RE, '\n')
+      : article.content;
+  const tocItems = extractHeaders(tocSource);
   const cleanDescription = getCleanDescription(article);
   const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
 
@@ -413,10 +420,7 @@ export default function BlogArticle() {
                 // BOTH copies stripped, and matches common variants:
                 // "Frequently Asked Questions", "FAQ", "FAQs", "Common questions".
                 if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)\b[^\n]*\n[\s\S]*?(?=\n##\s|\s*$)/gi,
-                    '\n',
-                  );
+                  c = c.replace(INLINE_FAQ_SECTION_RE, '\n');
                 }
                 // Collapse 3+ blank lines left by the strips above.
                 c = c.replace(/\n{3,}/g, '\n\n');

@@ -26669,32 +26669,31 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Mercury 9.9 EFI outboard on a tiller-steered boat, demonstrating the portable motor's performance on the water.",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-05-10",
+    dateModified: "2026-07-27",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "10 min read",
     keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"],
     faqs: [
-      { question: "Is the Mercury 9.9 MH EFI fuel injected?", answer: "Yes. The Mercury 9.9 MH EFI uses electronic fuel injection. Mercury says the EFI system is designed for easier starts and efficient performance." },
-      { question: "Does the manual-start Mercury 9.9 EFI need a battery?", answer: "Mercury says the manual-start 9.9 EFI models do not require a cranking battery because pulling the starter rope charges the electrical system needed for ignition." },
-      { question: "How much does the Mercury 9.9 MH EFI weigh?", answer: "Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight." },
-      { question: "What shaft length is the Mercury 9.9 MH EFI?", answer: "The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is right for a short shaft before buying." },
-      { question: "What comes with the HBW Mercury 9.9 MH EFI offer?", answer: "As of May 2026, HBW's current offer is " + '$2,999' /* @canonical:dealer:9-9mh-fourstroke */ + " CAD + HST, with no extra charges or setup fees. It includes the 12 L fuel tank and hose, plus free prep." },
-      { question: "Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?", answer: "It depends on the boat, load, prop, shaft length, weight distribution, and hull setup. Owner discussions show that even a newer Mercury 9.9 may struggle to plane a heavier 1448-style aluminum boat when the boat has added decking, batteries, and gear." },
-      { question: "Is the Mercury 9.9 MH EFI the same as a ProKicker?", answer: "No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and short shaft. ProKicker-style models are built around trolling control with a high-thrust prop, Command Thrust gearcase, and standard power tilt." },
-      { question: "Is $2,999 + HST a good price for the Mercury 9.9 MH EFI in Ontario?", answer: "Based on visible Canadian listings reviewed in May 2026, it is a very strong posted price. Other Canadian dealer pages for the 9.9 MH EFI show prices ranging from about $3,069 to $3,875 CAD. Dealer prices, fees, stock, and inclusions can change, so compare the full out-the-door offer, not just the headline number." },
+      { question: "Is the Mercury 9.9 MH EFI fuel injected?", answer: "Yes. The current Mercury 9.9hp FourStroke family uses electronic fuel injection. The MH configuration reviewed here combines EFI with manual start and tiller steering." },
+      { question: "Does the manual-start Mercury 9.9 EFI need a battery?", answer: "No cranking battery is required for the manual-start battery-free EFI configuration. That is one reason it suits simple cottage boats, tenders and small fishing boats." },
+      { question: "Does Mercury make short- and long-shaft 9.9hp outboards?", answer: "Yes. Mercury lists 15-inch short-shaft and 20-inch long-shaft configurations in the current 9.9hp FourStroke family. The transom height must be matched before ordering." },
+      { question: "What comes with a current Mercury 9.9hp FourStroke?", answer: "Mercury's current Canadian product page says the 9.9hp FourStroke includes a propeller and a 3.2-gallon remote fuel tank. Confirm the exact configuration and included equipment on the written quote." },
+      { question: "Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?", answer: "Sometimes, but horsepower alone cannot answer it. Hull shape, total load, weight distribution, transom height and propeller setup all matter. A lightly loaded utility boat and a heavily decked fishing boat can behave very differently with the same motor." },
+      { question: "Is the Mercury 9.9 MH EFI the same as a ProKicker?", answer: "No. The standard 9.9 MH EFI is a simple manual-start tiller configuration. ProKicker models are purpose-built for kicker duty and use different equipment, including a high-thrust setup. Compare the exact model, not only the 9.9hp decal." },
+      { question: "Where can I find the current Mercury 9.9 price in Canada?", answer: "Use HBW's live Mercury pricing reference or build a current CAD quote. Prices and available configurations can change, so this review does not freeze a dollar figure into the article." },
     ],
-    content: `### Quick Answer
+    content: `## Quick Answer
 
-For the full 9.9 lineup, tiller, electric start, Command Thrust, and ProKicker variants side by side, see our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
+The Mercury 9.9 MH EFI combines manual start, tiller steering and battery-free electronic fuel injection. It is a sensible primary motor for a correctly matched small aluminum, cottage boat or tender. It is not automatically the right kicker, and it will not guarantee that a heavy 14-foot boat gets on plane.
 
-The Mercury 9.9 MH EFI is a manual-start, tiller-handle, short-shaft portable with electronic fuel injection and no cranking battery required. It is well suited to small aluminum fishing boats, cottage boats, tenders, and restricted-horsepower lakes. It is not a guaranteed planing motor for every 14-foot aluminum, and it is not the right call if you need electric start, power tilt, remote controls, or a long-shaft transom. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range.
+**Last reviewed:** July 27, 2026
 
----
+## Which 9.9 Are We Reviewing?
 
-### Full Article
+For the full 9.9 lineup, including electric-start, long-shaft and ProKicker choices, see our [Mercury 9.9 tiller, kicker and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide).
 
-Most 9.9 HP outboards on Ontario boats are doing one of two things: serving as the primary motor on a small aluminum or tender, or riding on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
+A 9.9 HP outboard commonly does one of two jobs: it serves as the primary motor on a small aluminum boat or tender, or it rides on the stern corner of a bigger rig as [a walleye trolling kicker](/blog/mercury-main-and-trolling-motor). The Mercury 9.9 MH EFI is built for the first job.
 
 Here is what the "MH EFI" means before we go further:
 
@@ -26702,7 +26701,7 @@ Here is what the "MH EFI" means before we go further:
 - **H**, Tiller handle
 - **EFI**, Electronic fuel injection
 
-Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). External 12L / 3.2 gal fuel tank with fuel line.
+Shaft length: 15-inch short shaft. Displacement: 209 cc (12.75 cubic inches). External 12L / 3.2 gal fuel tank.
 
 ---
 
@@ -26710,7 +26709,7 @@ Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). Ext
 
 Small portable outboards have traditionally been carbureted. That works fine when they run regularly, but a carbureted 9.9 that sat for six months over winter, [on fuel it was not stabilized with](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), can be a frustrating experience come spring.
 
-Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury claims up to 27% better fuel economy than earlier carbureted models in the same HP range. The fuel economy number will vary by load and conditions, but the practical payoff is cleaner fuel control during cold starts and after seasonal storage.
+Mercury's EFI system modernizes the fuel delivery on a motor that otherwise stays simple. Mercury describes the current system as providing easy starts and efficient, reliable performance in changing weather. The practical payoff is cleaner fuel control during cold starts and after seasonal storage, without pretending one percentage can predict fuel use on every boat.
 
 ---
 
@@ -26727,10 +26726,9 @@ This matters because it keeps the motor genuinely [simple and portable](/blog/po
 The 9.9 MH EFI is a strong fit for:
 
 - **Small aluminum fishing boats** (12-14 feet where the transom, capacity plate, and load match)
-- **Cottage boats** on smaller lakes or restricted-horsepower water
+- **Cottage boats** on smaller lakes where modest portable power is appropriate
 - **Back-lake trips** in the Kawarthas where a simple, reliable motor matters more than outright speed
 - **Tenders and utility boats**
-- **Restricted-horsepower lakes** where 9.9 HP is the regulated maximum
 
 [For Rice Lake and the back lakes around the Kawarthas](/blog/best-mercury-outboard-rice-lake-fishing), this motor solves a real small-boat problem without making the boat more complicated. The best customer is not someone chasing top speed, it is someone who wants a simple, honest 9.9 that starts well, runs clean, and avoids carburetor drama.
 
@@ -26740,18 +26738,12 @@ The 9.9 MH EFI is a strong fit for:
 
 The 9.9 MH EFI is the wrong motor if:
 
-- **Your boat is a heavy, decked-out aluminum rig.** Owners of fully loaded 1448-style boats with added decking, batteries, and gear have found that 9.9 HP struggles to get on plane, even with just one person aboard. This motor does not guarantee planing on every 14-foot aluminum.
+- **Your boat is a heavy, decked-out aluminum rig.** Added decking, batteries, fuel, gear and passengers can put a 1448-style boat beyond what 9.9 HP will plane reliably. This motor does not guarantee planing on every 14-foot aluminum.
 - **You need a dedicated trolling setup on a larger rig.** For kicker-motor walleye trolling on a bigger boat, [the Mercury 9.9 EFI ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), with its Command Thrust gearcase and high-thrust prop, is the comparison model to evaluate. Different job, different tool.
 - **You need electric start, power tilt, or remote controls.** The MH EFI does none of these. If any of them matters to your setup, look at other configurations.
 - **Your transom is long-shaft.** This is the short-shaft (15") version. Measure your transom before buying.
 
 ---
-
-::pull-quote
-quote: Bought the 9.9 EFI as a kicker for trolling. **Ended up using it more than the main motor** on small-lake mornings. Quietest motor I've owned and the EFI starts on the first pull every time.
-attribution: Steve H.
-source: Peterborough
-::
 
 ## Standard 9.9 EFI vs. ProKicker-Style Use
 
@@ -26761,15 +26753,9 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 ---
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+## Current Canadian Pricing
 
-## The Price, What HBW Has Published
-
-As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + HST**, with the 12L fuel tank and hose included, free prep, no setup fee, no extra charges. Other Canadian dealer pages reviewed at that time showed prices in the $3,069 to $3,875 CAD range.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
-**Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+Prices and available configurations change, so this review does not preserve a dollar figure that can go stale. Use the [live Mercury pricing reference](/pricing-reference) or [build a current CAD quote](/quote/motor-selection), then confirm the exact shaft length, starting system, steering and included equipment on the written quote.
 
 ---
 
@@ -26795,21 +26781,27 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Shaft length | 15" short shaft |
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
-| Displacement | 208 cc (12.8 cu in) |
-| Dry weight | Approximately 38 kg (84 lb) |
+| Displacement | 209 cc (12.75 cu in) |
+| Dry weight | Approximately 38.6 kg (85 lb) |
 | Fuel tank | External 12L / 3.2 gal |
-| Full-throttle RPM range | 5,000, 6,000 |
+| Full-throttle RPM range | 5,000–6,000 rpm |
 | Recommended fuel | 87 octane, up to 10% ethanol |
 
 ---
 
 ---
 
-## What we see at HBW
+## What We See at HBW
 
-The 9.9 EFI is the workhorse kicker in our service bay. We see them on every musky boat in the Kawarthas, every salmon rig on Lake Ontario, and as primary power on small tinnies for cottage runs. The EFI version is the upgrade everyone wants over the carbureted 9.9.
+The useful conversation starts with the boat, not the 9.9 decal. We check the capacity plate, transom height, real loaded weight and whether the motor will be primary power or a kicker. We also ask whether the owner needs electric start, remote steering, power tilt or battery charging.
 
-The 5-amp alternator option is the one upgrade we always recommend -- charges the boat's house battery while trolling. The remote-control plumbing kit is the other. Mounted right, a 9.9 EFI lasts 15-20 years with basic maintenance.
+Those answers prevent the expensive version of "almost right," where the horsepower is correct but the shaft or equipment is not. We do not promise that every 14-foot aluminum will plane with 9.9hp, and we do not assume a manual portable is the best choice for every trolling installation.
+
+## What Owners Actually Ask About Online
+
+Online 9.9 discussions often mix older carbureted motors, current EFI portables, electric-start versions and ProKickers. A starting complaint about an older carbureted motor does not automatically describe this current battery-free EFI model. A charging discussion about an electric-start ProKicker may not apply to a manual MH.
+
+Before treating an anecdote as buying advice, check the model code, shaft length and equipment. With this family, the 9.9hp decal is only the beginning.
 
 ---
 
@@ -26819,44 +26811,32 @@ The 5-amp alternator option is the one upgrade we always recommend -- charges th
 No. The manual-start version is designed to operate without a cranking battery. Pulling the starter rope charges the electrical system enough to run the EFI. This is one of the motor's most practical features for small-boat and tender applications.
 
 **Will the 9.9 MH EFI get my 14-foot aluminum on plane?** 
-It depends on the boat's total weight. A basic 14-foot aluminum with one person and minimal gear, yes. A heavily loaded 1448-style boat with added decking, batteries, gear, and multiple passengers, not reliably. Check your boat's capacity plate and be honest about your typical load.
+It depends on the hull, total weight, weight distribution, propeller and setup. A light basic utility boat may plane with a light load; a heavily decked 1448-style boat may not. There is no honest guarantee based on length and horsepower alone.
 
 **Is the 9.9 MH EFI the right kicker for walleye trolling?** 
-For trolling on a larger boat, the Mercury 9.9 EFI ProKicker (Command Thrust gearcase, high-thrust prop) is the more purpose-built option. The standard MH EFI works as a kicker but is optimized for small-boat primary power, not slow-speed trolling on a big rig.
+For trolling on a larger boat, the Mercury 9.9 EFI ProKicker (Command Thrust gearcase, high-thrust prop) is the more purpose-built option. The standard MH EFI is a simpler portable configuration, so compare the exact equipment and job rather than assuming every 9.9 is interchangeable.
 
 **What is the shaft length?** 
-15 inches, short shaft. Measure your transom height before buying. If your transom is 20" or taller, you need a long-shaft version.
+The MH configuration reviewed here is a 15-inch short shaft. Mercury also lists 20-inch long-shaft configurations in the current 9.9hp family. Measure the transom before ordering.
 
 **Does HBW service the 9.9 EFI?** 
-Yes. For engine repairs, we only service Mercury and Mercruiser. All HBW technicians are Mercury-certified.
+Yes. For engine repairs, we only service Mercury and MerCruiser.
 
 **Can I use regular pump gas?** 
-The motor recommends 87 octane with up to 10% ethanol. Ethanol-free fuel will run cleaner over storage, HBW sells ethanol-free 89-octane marine gas at the dock in Gores Landing.
+Mercury specifies 87 octane fuel with up to 10% ethanol. Fresh fuel and correct storage matter more than buying a higher octane number the engine does not require. HBW also sells ethanol-free 89-octane marine fuel at the dock in Gores Landing.
 
 ---
 
-## Internal Links
-- Mercury SmartCraft Connect Guide Ontario
-- Mercury Controls & Rigging Guide Ontario
-- Walleye Opener Boat Prep Checklist
-- [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) Boating Guide 2026
+## When to Call HBW
 
-## About the author
+Call **[905-342-2153](tel:+19053422153)** if you are unsure about shaft length, whether the boat will plane, or whether you need a portable 9.9 or a ProKicker. Have the boat model, capacity-plate horsepower and a photo of the transom ready. Those details are much more useful than simply saying, "I need a 9.9."
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
+## Sources
 
-## CTA
-
-**See the current price on the Mercury 9.9 MH EFI.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 
-Or call 905-342-2153. 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
-Mercury Premier dealer. Est. 1947.
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
-
----
+- [Mercury Marine Canada: current 9.9hp FourStroke product page](https://www.mercurymarine.com/ca/en/product/mercury-fourstroke-99hp-outboard)
+- [Mercury Marine Canada: fuel basics for current gasoline outboards](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
+- [Mercury Marine Canada: current outboard engine families](https://www.mercurymarine.com/ca/en/engines)
+- [Parks Canada: Trent-Severn Waterway boating information](https://parks.canada.ca/lhn-nhs/on/trentsevern)
 `,
   },
   {
@@ -28982,168 +28962,178 @@ Online owner material is treated as anecdotal buyer context, not as a warranty s
   {
     slug: "mercury-75-hp-fourstroke-review-ontario",
     relatedSlugs: ['mercury-90-hp-fourstroke-review-ontario', 'mercury-115-hp-fourstroke-review-ontario', 'how-to-choose-right-horsepower-boat'],
-    title: 'Mercury 75 HP FourStroke: Buy the 90 Instead?',
-    seoTitle: 'Mercury 75 HP FourStroke: Why HBW Doesn\'t Stock It',
-    description: 'Mercury 75 hp FourStroke: why HBW doesn\'t stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer\'s honest take on this motor.',
-    image: '/lovable-uploads/hero-mercury-75-fourstroke.png',
-    imageAlt: 'Mercury 90 HP FourStroke on an aluminum fishing boat in misty Ontario waters, illustrating why it outperforms the 75 HP.',
+    title: 'Mercury 75 HP FourStroke Review: When It Makes Sense',
+    seoTitle: 'Mercury 75 HP FourStroke Review for Ontario Boats',
+    description: 'An honest Mercury 75 HP FourStroke review for Ontario: current 2.1L specs, 75 vs 90 tradeoffs, capacity-plate fit and the boats where 75 HP is the right call.',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp',
+    imageAlt: 'Official Mercury freshwater photography showing a 75 HP FourStroke on an aluminum fishing boat alongside other family use cases',
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-05-10",
+    dateModified: "2026-07-27",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
-    readTime: "7 min read",
-    keywords: ["mercury 75 hp review", "mercury 75 hp fourstroke", "mercury 75 vs 90", "mercury 75 elpt ontario", "why dealers dont sell 75 hp", "mercury 90 better than 75"],
+    readTime: "9 min read",
+    keywords: ["mercury 75 hp review", "mercury 75 hp fourstroke", "mercury 75 vs 90", "mercury 75 elpt ontario", "mercury 75 hp specs", "mercury 75 hp outboard canada"],
     faqs: [
-      { question: "Why doesn't HBW stock the Mercury 75 HP FourStroke?", answer: "Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90." },
-      { question: "Can HBW order a Mercury 75 if I really want one?", answer: "Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 in almost every case where customers ask about a 75." },
-      { question: "What's the actual difference between a 75 and a 90 Mercury FourStroke?", answer: "Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor." },
-      { question: "Is the Mercury 90 worth the upcharge over the 75?", answer: "For most boats and most buyers, yes. Same motor, more headroom, better resale, marginal cost difference. The math is hard to argue with once you see it laid out." },
-      { question: "My capacity plate says 75 HP max. Can I put a 90 on it?", answer: "No. The capacity plate is the legal ceiling. A 90 on a 75-rated hull is overpowering, voids your insurance in most cases, and creates real safety risk. Buy the 75 if the plate says 75. We'll help." },
-      { question: "Will a Mercury 75 work on a pontoon?", answer: "Technically yes for smaller pontoons under 20 ft with light loads. We don't recommend it. Pontoons want torque and load-carrying ability, which is what the 90 ELPT Command Thrust delivers." },
-      { question: "Can I get a 75 Mercury used?", answer: "Sometimes, yes. Used 75s come through the market. We can help assess condition and decide if a used 75 makes more sense than a new 90 for your situation." },
+      { question: "Is the Mercury 75 HP FourStroke a current motor?", answer: "Yes. The current Mercury 75 FourStroke is a 2.1-litre inline-four in the same engine family as the 90 and 115 FourStroke." },
+      { question: "Can HBW order a Mercury 75 HP FourStroke?", answer: "Yes. We can quote the current 75 when it is the rated or sensible fit. Availability and timing should be confirmed on the current written quote." },
+      { question: "What is the difference between a Mercury 75 and 90 FourStroke?", answer: "They share Mercury's 2.1-litre inline-four platform and have similar lightest published weights. They are distinct horsepower ratings with different full-throttle operating ranges: 4,500–5,500 rpm for the 75 and 5,000–6,000 rpm for the 90." },
+      { question: "Is the Mercury 90 worth more than the 75?", answer: "It can be when the capacity plate allows 90 and stronger loaded acceleration or reserve power matters. Compare today's installed totals and how the boat is normally loaded rather than relying on an old price-gap rule." },
+      { question: "My capacity plate says 75 HP max. Can I put a 90 on it?", answer: "Do not exceed the manufacturer's maximum power rating. If the plate says 75 HP, we stay at or below 75 and confirm the correct motor configuration for the hull." },
+      { question: "Will a Mercury 75 work on a pontoon?", answer: "It can suit a correctly rated light pontoon with a modest load, but there is no universal answer. Capacity, passenger load, hull design and gearcase requirements must be checked." },
+      { question: "Where can I see the current Mercury 75 price in Canada?", answer: "Use HBW's live Mercury pricing reference or quote builder. This review does not freeze a price that can become stale." },
     ],
-    content: `### Quick Answer
+    content: `## Quick Answer
 
-The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is the smarter buy for 95% of customers. We'll order the 75 if your capacity plate requires it.
+The Mercury 75 HP FourStroke is a current 2.1-litre inline-four built on the same engine platform as the 90 and 115 FourStroke. Choose it when the boat is rated for 75 HP, the installed numbers favour it, or the hull simply does not need 90 HP. If the plate allows 90, compare both rather than assuming either answer.
+
+**Last reviewed:** July 27, 2026
+
+## 75 or 90 Decision Guide
 
 ---
 
 ::decision-card
-heading: 75 HP or 90 HP? The honest answer
-eyebrow: Why HBW doesn't stock 75
-subhead: We will order 75 HP, but here is why almost every buyer ends up with the 90.
+heading: Mercury 75 HP or 90 HP?
+eyebrow: Start with the capacity plate
+subhead: The 90 adds power, but the boat's rating, real load and installed-price difference decide whether that power belongs on your boat.
 leftLabel: Choose 90 HP if
 leftCriteria:
-  - You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
-  - You want stronger hole shot and a bit more top end
-  - The price difference vs 75 HP is typically under $1,500 in 2026
-  - Resale value holds better (more buyer demand for 90 HP)
-  - You want flexibility to add a kicker without underpowering the main
+  - The capacity plate allows 90 HP
+  - The boat regularly carries people, batteries and fishing gear
+  - Stronger acceleration and reserve power matter
+  - The step-up cost makes sense for how you use the boat
 leftOutcome: Pick 90 HP FourStroke
 leftVariant: recommended
 rightLabel: Choose 75 HP if
 rightCriteria:
   - Your boat is rated max 75 HP on the capacity plate
-  - You specifically want the lightest powerhead in this range
-  - The budget gap matters more than 15 HP of headroom
-  - You are not towing or carrying full passenger loads
+  - The hull is light and the usual load is modest
+  - The 75 leaves useful money in the budget
+  - You value a good match more than the largest allowed decal
 rightOutcome: Pick 75 HP FourStroke
 rightVariant: alternative
-whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once they see how small the price gap is. If you want 75, we will order it. If your plate allows 90, get the 90.
+whenInDoubt: Send us the capacity plate, boat model and usual passenger-and-gear load. We will price the sensible choices and explain the tradeoff without pretending every boat needs the maximum.
 ::
 
 ---
 
-### Mercury 75 HP FourStroke: Why We Don't Stock It
+## Mercury 75 HP FourStroke: The Honest Question
 
-We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
+We get asked about the Mercury 75 HP FourStroke regularly. Usually the question is, "Is the 75 enough, or should I go to the 90?" The right answer is not a percentage and it is not automatically the larger motor.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
+Harris Boat Works has operated on Rice Lake since 1947 and has been a Mercury dealer since 1965. We are a third-generation family marina and a Mercury Marine Premier Dealer. Our job is to match the manufacturer's rated motor choices to the real boat and load, then decide whether the extra 15 HP earns its price.
 
 ---
 
 ## What the Mercury 75 HP Actually Is
 
-The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and 115](/blog/mercury-75-vs-90-vs-115-comparison). All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
+The current Canadian 75, 90 and 115 FourStroke models share Mercury's 2.1-litre inline-four platform. That common architecture explains why the 75 and 90 can be close in physical size and published lightest weight. It does not make them the same product or promise the same result on a boat.
 
-![Three-column comparison of Mercury 75, 90, 115 HP FourStroke outboards with prices from $14,476 to $17,083 CAD and same 2.1L block.](/lovable-uploads/inline/75-90-115-hp.svg)
+[Our 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison) covers the wider family decision.
 
 | Specification | Mercury 75 ELPT | Mercury 90 ELPT |
 |---|---|---|
 | Block | 2.1L inline-4 | 2.1L inline-4 |
 | Valve train | 8-valve SOHC, maintenance-free | 8-valve SOHC, maintenance-free |
-| Dry weight | 163 kg (359 lb) | 163 kg (359 lb) |
-| Full-throttle RPM | 4,500, 5,500 | 5,000, 6,000 |
+| Published lightest weight | About 163 kg (359 lb) | About 163 kg (359 lb) |
+| Full-throttle RPM | 4,500–5,500 rpm | 5,000–6,000 rpm |
 | Alternator | 35 amp / 441 watt | 35 amp / 441 watt |
 | Fuel system | EFI | EFI |
 | SmartCraft compatible | Yes | Yes |
 | Warranty | 3-year standard | 3-year standard |
 
-The difference between the 75 and 90 is software, prop tuning, and RPM ceiling. That's it. The 75 is tuned to peak at 4,500-5,500 RPM. The 90 runs to 5,000-6,000. No weight change. A very small price difference.
+The 75 and 90 share core architecture, but buyers should treat them as distinct rated engines. The 75 has a 4,500–5,500 rpm full-throttle operating range; the 90 uses 5,000–6,000 rpm. Exact weight and equipment depend on shaft length and model configuration.
 
-The 90 also holds better resale value and has more demand on the used market. If you're ever selling the boat, the 90 is a much easier conversation than the 75.
+The 90 can provide stronger acceleration and more reserve when the boat is loaded. Whether that advantage is worth buying depends on the boat's maximum horsepower rating, the installed price difference and how the boat is actually used.
 
 ---
 
-::walkaround-lead-capture
+## Why You May Not See a 75 in Stock
 
-## Why HBW Doesn't Stock the Mercury 75
+The 90 is the more common comparison when a boat is rated for either motor. It shares the 2.1-litre platform, adds 15 HP and often suits the loaded use buyers describe to us.
 
-Three reasons:
-
-1. **It's the same motor as the 90.** Same block, same weight, same maintenance requirements.
-2. **The price difference is minimal.** We don't publish exact figures because Mercury pricing and dealer pricing vary, but it's not enough to justify the headroom you give up.
-3. **The 90 holds resale value better.** The 75 sits in a gap between motors people actually want: the 60 below it and the 90 above it.
-
-For 95% of customers, the 75 is the wrong motor to buy when the 90 exists at nearly the same price and weight.
+That does not make the 75 a bad motor. It means we confirm current availability and compare installed totals instead of treating stocking patterns as engineering advice. If the plate stops at 75, or the installed-price difference is meaningful for a light boat, ordering the 75 can be the correct answer.
 
 ---
 
 ## When the 75 Might Actually Make Sense
 
-There are three real scenarios where the 75 is the right call:
+There are three straightforward scenarios where the 75 is the right call:
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. HBW does not quote or install above the manufacturer's maximum rating. If the plate says 75, we stay at or below 75 and order the suitable configuration.
 
-**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
+**The boat and load do not need 90 HP.** A genuinely light hull used with a modest load may perform exactly as the owner needs with 75. Maximum rated power is an option, not a commandment.
 
-**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
-
-**A used 75 with low hours is priced low enough to matter.** If a used 75 with 200 hours is available for significantly less than a new 90, the math might work out. We can help you assess the used motor honestly and tell you if it's worth it.
+**The 75 leaves meaningful money in the budget.** Compare current Canadian motor, rigging and installation totals. If the 75 saves enough to matter and still meets the performance goal, that is a sound buying decision.
 
 ---
 
-## What We'd Put on Your Boat Instead
+## How We Would Compare It on Your Boat
 
-| Boat Type | Our Recommendation |
+| Boat Type | What we would check |
 |---|---|
-| 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
-| Small pontoon under 20 ft | 90 ELPT Command Thrust, [CT gearcase makes a meaningful difference](/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull) on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
-| Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
-| Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
+| 16-17 ft aluminum fishing boat | Capacity plate, batteries, livewell, passengers, gear and whether stronger loaded acceleration matters |
+| Small pontoon | Capacity plate, usual passenger load and whether a 90 Command Thrust configuration is rated and appropriate |
+| Light cottage runabout | Actual hull weight, towing use and the difference between the current installed 75 and 90 totals |
+| Repowering an older 60-75 HP two-stroke | Transom capacity, new FourStroke weight, controls, steering and the performance goal |
 
 If your hull is rated for 60 HP maximum, you're in [the Mercury 60 ELPT FourStroke conversation](/blog/mercury-40-vs-60-hp-outboard-ontario), not this one. The 60 runs on a smaller 1.0L block, an entirely different motor.
 
-If your hull is rated for 90 HP or higher, [skip directly to the 90 review](/blog/mercury-90-hp-fourstroke-review-ontario) or go build a quote.
+If your hull is rated for 90 HP or higher, read the [dedicated Mercury 90 review](/blog/mercury-90-hp-fourstroke-review-ontario) and compare the two installed totals. The right answer is the motor within the plate rating that carries the boat's real load without buying performance you do not value.
 
 ---
 
-*Prices shown reflect HBW's current Mercury dealer pricing. For live updates as Mercury issues new dealer pricing, see our [Mercury pricing reference](/pricing-reference).*
+For current Canadian motor pricing, use the [live Mercury pricing reference](/pricing-reference) or [build a boat-specific quote](/quote/motor-selection).
 
 ## Frequently Asked Questions
 
 **Is the Mercury 75 HP a bad motor?** 
-No. It's not a bad motor, it's the same motor as the 90 with less headroom in the RPM range. If you need a 75 because the capacity plate requires it, it's the right motor. It's just not the right choice when the 90 is available at minimal additional cost.
+No. It is a current 2.1-litre Mercury FourStroke and a valid choice when 75 HP matches the boat, load and budget. Sharing an engine platform with the 90 does not make the 75 defective or pointless.
 
-**Why doesn't HBW stock the 75?** 
-Because it's the same physical motor as the 90, same weight, minimal price difference, and the 90 has more headroom and better resale value. Stocking the 75 would mean offering customers a worse long-term buy at nearly the same price.
+**Does HBW normally stock the 75?**
+The 90 is the more common comparison when a boat is rated for both, so 75 HP availability may be order-specific. We will quote the 75 when it is the rated or sensible fit rather than treating stock status as a reason to buy the wrong motor.
 
 **Can I get the 75 in a Command Thrust version?** 
-No. Mercury does not offer a 75 CT: the FourStroke Command Thrust lineup jumps from 60 CT to 90 CT. If you need Command Thrust for a pontoon, the 90 CT is the right pick.
+Mercury's current recreational 75 HP listing uses the standard gearcase; Command Thrust choices in this engine family begin at 90 HP. A 90 CT is only an option if the boat's capacity plate permits 90 HP.
 
 **What if my hull falls between 60 and 75 HP on the capacity plate?** 
-Call us at 905-342-2153. Some hulls have specific configurations that matter, year, model, trim level. Five minutes of conversation usually sorts it out.
-
-**Does the 75 HP have a Command Thrust version?** 
-No. There is no 75 CT in the Mercury lineup; step to the 90 CT if you need Command Thrust.
+The plate is the limit. Send us the boat year, model and a clear photo of the capacity plate. We will stay within that rating and check the available motor configuration.
 
 **Is the 75 HP significantly cheaper than the 90?** 
-Not significantly. The exact figures vary with [Mercury Canada](https://www.mercurymarine.com/canada/en/) pricing, but it's not the kind of gap that should drive the decision for most buyers.
+That changes with current Canadian pricing and programs. Compare the live motor prices and the installed difference rather than relying on an old rule of thumb.
 
 ---
 
-## Build a Quote, on the 90
+## What We See at HBW
 
-If you came here looking at the 75 and this confirmed what you suspected, go build a quote on the 90 at mercuryrepower.ca. Real CAD prices, real configurations.
+The most important 75 vs 90 details are rarely in the headline specification table. We need the capacity plate, actual boat model, current motor, transom height, normal passenger and gear load, and the performance the owner expects.
 
-If you have a capacity plate situation or a used motor question, call us at 905-342-2153. We'll help you work through it honestly.
+The shared 2.1-litre platform makes the comparison unusually interesting because the lightest published weights are close. It does not let us ignore the manufacturer's rating or promise how either motor will perform on a particular hull. If a customer values the added reserve and the plate permits it, the 90 may earn its place. If 75 HP fits the boat and the price difference matters, we will say so.
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
+## What Owners Actually Say Online
 
----
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
----
+The funny thing about 75 vs 90 discussions is how quickly someone suggests an ECU flash. The shared 2.1-litre architecture makes that sound easy from behind a keyboard. It is not how we recommend solving an underpowered boat. Mercury's warranty terms allow coverage to end after unauthorized modification, and a calibration change does not change what the capacity plate permits. If the boat is rated to accept 90 HP and the loaded use needs it, buy the correct 90.
+
+The more useful owner feedback is about the wider 2.1-litre family. In one long-running owner discussion, a contributor reported more than 1,300 hours on a current-family engine and called it generally outstanding while still acknowledging a few small issues. That is one owner's experience, not a failure-rate study, but it is more informative than pretending every shared-block engine is literally identical.
+
+## Our Honest Verdict
+
+The Mercury 75 FourStroke is not merely a 90 that someone forgot to finish. It is a legitimate rated choice for boats that stop at 75 HP and for lighter uses where the owner does not need more.
+
+If the plate allows 90, compare the installed numbers and how you actually load the boat. Do not overpower the boat, and do not spend extra only because the larger decal is available.
+
+## When to Call HBW
+
+Call **[905-342-2153](tel:+19053422153)** or build a [current CAD quote](/quote/motor-selection). For a fit recommendation, send the boat year and model, capacity-plate photo, current motor and a realistic normal-load description.
+
+## Sources
+
+- [Mercury Marine Canada: current outboard engine families](https://www.mercurymarine.com/ca/en/engines)
+- [Mercury Marine: 75/90/115 FourStroke owner's manual](https://servicelit.mercurymarine.com/mnetdata/service/mermar/owner/18/8m0145552.pdf)
+- [Mercury Marine Canada: limited-warranty terms and termination of coverage](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty)
+- [Transport Canada: compliance notices and capacity labels](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft)
+- [iBoats owner discussion: current 2.1-litre Mercury 75–115 family](https://forums.iboats.com/threads/keen-to-hear-from-mercury-75-115-efi-owners-2015-present-2-1l-models.762895/)
 
 ---
 `,
@@ -36124,7 +36114,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     imageAlt: 'Angler holding an Avator battery beside a Mercury Avator 7.5e on a freshwater aluminum fishing boat',
     author: 'Jay Harris',
     datePublished: '2026-05-24',
-    dateModified: '2026-07-18',
+    dateModified: '2026-07-27',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -36134,18 +36124,21 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
       { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'It can propel a compatible small tender, dinghy, sailboat, or light fishing boat. Boat weight, load, wind, current, required range, shaft length, and mounting determine whether it is appropriate; HBW confirms the fit rather than assigning it by boat length alone.' },
       { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those are test results, not a promise for every boat; load, hull, weather, water, and throttle change the result.' },
       { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.' },
-      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.' },
+      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the complete package. Call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Pickup is at Gores Landing.' },
       { question: 'What charges the Avator battery?', answer: 'The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.' },
-      { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Warranty coverage is confirmed for the exact motor and battery package when HBW quotes it. Mercury requires the outboard and battery to be registered separately; any promotional coverage applies only while an eligible offer is active.' },
+      { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Yes, but coverage differs by component. As of July 2026, Mercury\'s current Canada/U.S. chart lists 3-year recreational limited and corrosion coverage for the Avator outboard and 2-year coverage for batteries and charging systems. Confirm the written terms for the exact package; Mercury requires the outboard and battery to be registered separately, and promotional coverage applies only while an eligible offer is active.' },
     ],
-    content: `
+    content: `## Quick Answer
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
-*Last reviewed: 2026-07-18*
+The Mercury Avator 7.5e delivers 750 watts at the propeller from a removable integrated 1 kWh battery. It can suit a compatible tender, sailboat or light fishing boat when quiet operation matters. It is not a 7.5 HP gas replacement, and real range depends heavily on throttle, hull, load, wind and water.
 
-> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; call for a configuration and current price.
+**Last reviewed:** July 27, 2026
 
-HBW sells gas outboards and is preparing Avator as a build-to-order option. We have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
+## Why This Review Is Cautious
+
+**Now at HBW:** HBW offers Mercury Avator as a build-to-order option, with pricing coming soon. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases and contact information.
+
+We sell gas outboards too, so we have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
 
 The Avator 7.5e is Mercury's smallest electric outboard. It puts 750 watts at the prop, charges off a wall outlet, and runs nearly silent. For a Rice Lake angler easing along a weed line at first light, that silence is the whole point. For someone who needs to cover the lake all day on one boat, it is the wrong tool, and no amount of wanting will change that. This review stays on the honest line between those two.
 
@@ -36170,14 +36163,14 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Price (CAD) | Call for the current configured price: 905-342-2153 | See pricing reference | See pricing reference |
+| Price (CAD) | HBW pricing coming soon | See pricing reference | See pricing reference |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Selection basis | Boat fit, load, route, range, mounting, and charger | Boat fit, load, route, fuel range, and mounting | Boat fit, load, route, fuel range, and mounting |
 
-_Avator requires a configured quote. For current gas-outboard bare-motor prices, see the [Mercury pricing reference](/pricing-reference)._
+_Avator pricing is being finalized. For current gas-outboard bare-motor prices, see the [Mercury pricing reference](/pricing-reference)._
 
 
-Avator and a gas portable have different purchase, charging or fuel, maintenance, noise, and range trade-offs. The correct comparison is the configured price and the job the boat must do, not a generic claim that one option pays for itself.
+Avator and a gas portable have different purchase, charging or fuel, maintenance, noise, and range trade-offs. The correct comparison is the complete package and the job the boat must do, not a generic claim that one option pays for itself.
 
 ## What is the real range and battery life on Rice Lake?
 
@@ -36195,9 +36188,9 @@ One planning option is a gas main motor for transit plus an Avator for compatibl
 
 ## What does the Mercury Avator 7.5e cost installed?
 
-Avator is build-to-order through Mercury Canada. For a current number on the exact motor, integrated battery, charger, controls, mounting, and any optional spare battery, call 905-342-2153.
+Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. Call 905-342-2153 to discuss the boat, intended use and configuration, and ask to be contacted when pricing is locked.
 
-The written quote identifies the tiller or remote-control configuration, shaft and bracket fit, selected charger, optional display or controls, installation work, and testing. The 7.5e's standard battery installs under the top cowl rather than in a rear battery compartment. Pickup is at Gores Landing; HBW does not ship or deliver outboards.
+Once pricing is available, the written quote will identify the tiller or remote-control configuration, shaft and bracket fit, selected charger, optional display or controls, installation work, and testing. The 7.5e's standard battery installs under the top cowl rather than in a rear battery compartment. Pickup is at Gores Landing; HBW does not ship or deliver outboards.
 
 ## What are the Avator's limitations?
 
@@ -36207,9 +36200,21 @@ Range. The Avator is not an unlimited-distance motor. The published test results
 
 Scope. The 7.5e delivers 750 watts at the propeller. A boat that needs sustained higher speed, longer range, or more thrust may require a different Avator model or a gas outboard. Confirm the actual boat and route rather than assigning the 7.5e by length alone.
 
-## How HBW would evaluate the fit
+Charging. The standard 110W charger is easy to plug into a household outlet, but charging access and turnaround time must fit how the boat is used. A cottage dock without dependable power, back-to-back rental use, or an owner expecting a five-minute "refuel" needs a different plan, an optional faster charger, a spare battery, or a gas motor.
 
-HBW starts with the boat, total load, intended route, required reserve, transom or bracket, shaft length, tiller or remote controls, and charging access. That separates a sensible small-boat or low-speed application from a job that needs more power or range. The recommendation and current price belong in a written, configuration-specific quote.
+## What Owners Actually Say Online
+
+The 7.5e name causes more confusion than any other part of the motor. Some shoppers read it as 7.5 horsepower, then feel disappointed when they learn Mercury rates it at 750 watts at the propeller. Mercury does not claim that it is a 7.5 HP gas outboard.
+
+The cited owner discussion shows both the appeal and the limits. One commenter considered the Mercury expensive but still thought it looked the best. Another sailor who tried both the 7.5e and 20e on a 12-foot dinghy found the smaller motor too slow for that particular use, while praising the Avator design and waterproofing and noting the lock-in to Mercury batteries. That is anecdotal fit evidence, not a universal performance test.
+
+The useful takeaway is simple: electric feels best when the route and throttle suit it. Buying it as a vague substitute for "a small gas motor" is how expectations go wrong.
+
+## What We See at HBW
+
+Avator is new to our build-to-order lineup, so we are not going to invent years of local ownership history that we do not have. What we can apply is the same fit-first process we use for every repower.
+
+We start with the boat, total load, intended route, required reserve, transom or bracket, shaft length, tiller or remote controls, and charging access. That separates a sensible small-boat or low-speed application from a job that needs more power or range. Once pricing is locked, the recommendation and price will belong in a written, configuration-specific quote.
 
 ## Frequently Asked Questions
 
@@ -36223,27 +36228,29 @@ Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60
 It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.
 
 **How much does the Avator 7.5e cost installed?**
-Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.
+Avator is build-to-order through Mercury Canada, and HBW pricing is still being finalized. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the complete package. Call 905-342-2153 to discuss fit and ask to be contacted when pricing is locked. Pickup is at Gores Landing.
 
 **What charges the Avator battery?**
 The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.
 
 **Is the Avator covered under Mercury's warranty?**
-Warranty coverage is confirmed for the exact motor and battery package when HBW quotes it. Mercury requires the outboard and battery to be registered separately; any promotional coverage applies only while an eligible offer is active.
+Yes, but coverage differs by component. As of July 2026, Mercury's current Canada/U.S. chart lists 3-year recreational limited and corrosion coverage for the Avator outboard and 2-year coverage for batteries and charging systems. Confirm the written terms for the exact package; Mercury requires the outboard and battery to be registered separately, and promotional coverage applies only while an eligible offer is active.
 
 ## Ready to rig an Avator?
 
 If the Avator 7.5e may fit the job, call us to work through the boat, route, expected range, battery and charger, mounting, and whether a separate main motor is required.
 
-**Phone:** 905-342-2153
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [the Harris Boat Works service team on Rice Lake](https://www.harrisboatworks.ca/services)
+- **Call:** [905-342-2153](tel:+19053422153)
+- **Avator information:** [mercuryrepower.ca/electric/mercury-avator](/electric/mercury-avator)
+- **Pickup:** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario
 
-**Phone:** 905-342-2153
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+## Sources
 
-Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Mercury since 1965.
+- [Mercury Marine Canada: Avator 7.5e specifications and performance](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e)
+- [Mercury Marine Canada: Avator family](https://www.mercurymarine.com/ca/en/engines/electric/avator)
+- [Mercury Marine Canada: Avator tutorials and care](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/how-to/avator-tutorials-and-care)
+- [Mercury Marine: U.S. and Canada recreational warranty duration chart](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/coverage-duration/US%20and%20Canada%20warranty%20chart.pdf)
+- [Owner discussion: 26-foot sailboat sizing, including a 7.5e and 20e comparison on a 12-foot dinghy](https://www.reddit.com/r/sailing/comments/1fh0qev/selecting_electric_outboard_for_26ft_monohull/)
 `,
   },
   {
@@ -36835,7 +36842,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     image: '/lovable-uploads/hero-mercury-boost-console.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-18',
+    dateModified: '2026-07-27',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
@@ -36928,13 +36935,11 @@ HBW checks the engine family, model code, and serial number first. We then confi
 
 Now the honest question. Three scenarios.
 
-:::decision-card
 **Tournament rig (eligible Pro XS on a bass boat):** Worth comparing. Repeated full-throttle acceleration is where Boost's response change is most relevant, but the result and price still depend on the exact setup.
 
 **Family 19-21 ft cruiser (steady-throttle use):** Probably no. Boost is invisible at steady cruise. It doesn't add top-end. Save the money.
 
 **Shopping for a new motor with factory Boost:** Buy the correctly sized motor for the boat. Confirm what is factory-enabled on the exact unit and compare the complete written quote; do not assume a value from an online price range.
-:::
 
 ---
 

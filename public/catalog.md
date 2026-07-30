@@ -24,7 +24,7 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake, Ontario 
 - **Pickup only** at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship outboards. We do not deliver. We do not release motors to couriers or third parties.
 - **Final price** is always confirmed by Harris Boat Works staff before purchase.
 - **Verado** is special-order only, not part of default inventory and not actively promoted.
-- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.
+- **Standard gasoline-outboard warranty is 3 years.** Avator outboards, batteries and charging equipment have component-specific terms; confirm the current written Mercury warranty for the exact package. Bonus years apply only when an eligible promotion is active.
 - Financing minimum: **$5,000 CAD** total. Current promotional offer: **5.48% APR (OAC)**; confirm current terms at https://www.mercuryrepower.ca/promotions.
 - Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.
 
@@ -261,7 +261,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Mercury 150 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md)
-- [Mercury 75 HP FourStroke: Buy the 90 Instead?](https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md)
+- [Mercury 75 HP FourStroke Review: When It Makes Sense](https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md)
 - [Mercury Dealer Markham Ontario HBW](https://www.mercuryrepower.ca/blog/mercury-dealer-markham-ontario-hbw.md)
 - [Mercury Dealer Richmond Hill HBW](https://www.mercuryrepower.ca/blog/mercury-dealer-richmond-hill-ontario-hbw.md)
 - [Mercury Dealer Mississauga HBW](https://www.mercuryrepower.ca/blog/mercury-dealer-mississauga-ontario-hbw.md)
@@ -401,4 +401,3 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md)
 - [Outboard motor service at winterization sa Ontario (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md)
 - [Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein [hi]](https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md)
-
