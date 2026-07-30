@@ -24811,262 +24811,180 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
   },
   {
-    slug: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
-    title: 'Ethanol Octane Mercury Fuel Guide',
-    seoTitle: "Ethanol and Octane for Mercury Outboards in Ontario",
-    description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.",
-    image: '/lovable-uploads/hero-mercury-fuel-octane-ethanol.png',
-    author: 'Jay Harris',
-    datePublished: '2026-04-11',
-    dateModified: '2026-07-24',
-    publishDate: '2026-04-11',
+    slug: "ethanol-octane-mercury-outboard-fuel-guide-ontario",
+    title: "Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario",
+    seoTitle: "Mercury Outboard Octane and Ethanol Guide | Ontario",
+    description: "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
+    image: "/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp",
+    imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
+    author: "Jay Harris",
+    datePublished: "2026-04-11",
+    dateModified: '2026-07-30',
+    publishDate: "2026-04-11",
     category: "Service",
-    readTime: '~12 min read',
-    keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"],
+    readTime: "~11 min read",
+    keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"],
+    relatedSlugs: ["mercury-outboard-fuel-efficiency-guide","mercury-outboard-wont-start-troubleshooting","spring-outboard-commissioning-checklist","mercury-maintenance-intervals-20-100-300-rule"],
     faqs: [
-      { question: 'What octane does a Mercury outboard need?', answer: 'The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn\'t help them. Mercury\'s Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your motor or your owner\'s manual, don\'t guess.' },
-      { question: 'Can I run ethanol gas (E10) in my Mercury outboard?', answer: 'You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion, gummed carburettors, and unbudgeted service bills.' },
-      { question: 'Is premium gas ethanol-free in Ontario?', answer: 'Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.' },
-      { question: 'Does Harris Boat Works sell ethanol-free fuel?', answer: 'Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in.' },
-      { question: 'When should I use a fuel stabilizer?', answer: 'Use a marine fuel stabilizer when preparing fresh fuel for offseason or other long-term storage, following the exact engine and fuel-system procedure. Mercury Quickstor is the storage product. Add the labelled dose, then circulate treated fuel through the system for the time and by the method specified in the manual.' },
-      { question: 'What are the signs of a fuel system problem on a Mercury outboard?', answer: 'Hard starting after storage when it ran fine when put away, bogging at wide-open throttle, a primer bulb that won\'t pump firm, yellow or orange varnish in the carb bowl, water in the fuel-water separator, and inconsistent fuel gauge readings that can point to internal tank corrosion. Catching these early is cheaper than a mid-season breakdown.' },
+      { question: "What octane does my Mercury outboard require?", answer: "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury." },
+      { question: "Can a current Mercury run E10?", answer: "Yes. Mercury says current gasoline engines are designed for fuel containing no more than 10 percent ethanol. E15 and E85 exceed that limit." },
+      { question: "Is premium gasoline ethanol-free in Ontario?", answer: "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump." },
+      { question: "Does higher octane give a Mercury more power?", answer: "Not simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
+      { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It does not recombine separated fuel or remove contamination." },
+      { question: "How can I confirm a fuel problem for service?", answer: "Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if possible." },
     ],
-    content: `# Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
+    content: `# Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario
 
-*Last reviewed: 2026-07-24*
+*Last reviewed: July 30, 2026*
 
-> **Quick answer:** Mercury fuel requirements vary by engine, so the cowl label and serial-number manual decide the minimum octane. Current Mercury gasoline engines accept no more than E10. For fuel care, use the product that matches the job: Quickare at fill-up, Quickleen as needed for deposits, and Quickstor for storage. HBW sells ethanol-free 89 marine gas at the dock.
+> **Quick answer:** Octane and ethanol answer different questions. Octane measures resistance to engine knock; the ethanol label states the alcohol blend. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Premium does not automatically mean ethanol-free, and Ontario's renewable-fuel rules do not identify one grade at one pump.
 
-::diagnostic-flow
-heading: Mercury running rough or won't stay running? Work the fuel system in this order.
-eyebrow: Fuel diagnostic flow
-subhead: 5 things to check in order before you call the shop. This catches the most common fuel-side causes we see at the marina.
-step1Label: Squeeze the primer bulb until firm
-step1Question: Pump the primer bulb until it goes hard. If it never firms up, you have an air leak somewhere between the tank and the motor (cracked bulb, loose hose clamp, dry-rotted line, or a tank vent stuck closed). If it firms up but the motor still won't run, move to step 2.
-step1Tip: A bulb that collapses while running points to a clogged tank pickup or pinched fuel line.
-step2Label: Check for water and old fuel in the tank
-step2Question: If the gas has been sitting since last fall, it's likely degraded. Pull a sample from the lowest point of the tank into a clear jar. Water settles to the bottom and looks like a separate layer. Cloudy, dark, or varnish-smelling fuel is stale. Drain it, dispose of it properly, and refill with fresh ethanol-free 89 if you can get it.
-step3Label: Replace the water-separating fuel filter
-step3Question: Most Mercury rigs have a 10-micron water-separating filter (the silver canister near the motor). Unscrew it, dump the contents into a jar, and look for water or rust. Spin on a fresh one. Filters are cheap insurance and should be changed every 100 hours or annually anyway.
-step3Tip: Lube the new filter's gasket with a dab of clean oil before spinning it on. Hand tight, then a quarter turn more.
-step4Label: Inspect the fuel lines and connections
-step4Question: Walk the line from tank to motor. Look for cracks, soft spots, kinks, or fuel weeping at any clamp or fitting. The quick-connect at the motor is a common air-leak point. Replace anything questionable. Marine-grade fuel hose only, no automotive rubber.
-step5Label: Pull and inspect the spark plugs
-step5Question: While you're in there, pull the plugs. Wet plugs mean it's getting fuel but not firing (ignition issue). Dry plugs mean no fuel is reaching the cylinders (still a fuel-delivery problem). Black sooty plugs suggest it's running rich (carb or injector issue). New plugs are $5 each and tell you a lot.
-step5Tip: Gap matters. Check the Mercury service manual for your specific motor before installing new plugs.
-escalationLabel: Still won't run right? Put in a service request at hbw.wiki/service.
-escalationBody: If the basics check out and it's still rough, we run fuel pressure tests, injector flow checks, and ECU diagnostics that aren't practical at home. EFI motors especially need scan tools to read what's actually happening at the rail.
-::
+At an Ontario fuel pump, “premium,” “87” and “E10” can appear close together. That makes them feel like one decision. They are not.
 
-You're standing at the pump. The motor ran fine last fall. It's been sitting all winter and you want to fill it up and get on the water.
+The safe choice requires two independent checks:
 
-Regular, mid-grade, or premium? What's this E10 label mean?
+1. Does the octane meet the engine's minimum?
+2. Does the ethanol content stay within Mercury's limit?
 
-Nobody at the gas station is going to help you figure this out. So here it is in plain English.
+![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 
----
+## Octane and Ethanol Describe Different Properties
 
-## The Ethanol Problem in Plain English
+Octane is an anti-knock rating. In Canada, the number displayed at the pump is normally the Anti-Knock Index, shown as (R+M)/2. An engine designed for 87 does not gain a guaranteed power or cleanliness benefit merely because 91 is more expensive.
 
-Most Ontario pump gas, including the 87-octane "Regular" you've been putting in for years, is E10. That means 10% ethanol, 90% gasoline.
+Ethanol content is the percentage of alcohol blended into the gasoline. E10 can contain up to 10 percent ethanol. It does not mean 10 octane points, and the octane number does not reveal the ethanol percentage.
 
-Ethanol absorbs moisture from the air. In a car, that's not a big deal: you burn through a full tank in a few days. The water never has a chance to settle.
+| Pump information | What it tells you | What it does not tell you |
+|---|---|---|
+| 87, 89, 91 or 93 | Anti-knock rating | Ethanol content |
+| E10 | Up to 10% ethanol | Whether octane meets the engine minimum |
+| Premium | Higher octane grade than regular at that retailer | Automatically ethanol-free |
+| Ontario renewable-fuel compliance | Supplier-level renewable-content obligations | The blend in one grade at one pump |
 
-In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake in the Kawarthas (Ontario). Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
+Read the complete pump label, then compare both answers with the exact engine manual.
 
-Here's what happens next: the water and ethanol eventually separate from the gasoline, a process called **phase separation**. That water-ethanol mixture sinks to the bottom of the tank, where the fuel pickup sits. So the first thing your motor draws when you try to start it is water, not fuel.
+## What Octane Does a Mercury Outboard Need?
 
-The result: hard starting, rough running, corrosion inside the tank and fuel lines, gummed-up carburetors, and service bills you didn't budget for. It's one of the most common reasons boats come into the shop needing fuel system work after storage.
+The owner's manual and cowl label for the exact engine are the authority. Do not rely on a broad rule such as “all Verados need mid-grade.”
 
----
+A useful current example is Mercury's naturally aspirated 5.7-litre V10 Verado family. Mercury's published specifications for the 350, 400 and 425 hp models list **87 octane minimum (R+M)/2**. That directly disproves the blanket advice that every Verado requires 89.
 
-## Why Boats Are Way More Vulnerable Than Cars
+Other engine families, model years and calibrations can have different requirements. Meet the published minimum. Buying higher octane is not a substitute for correct fuel quality, propeller load, maintenance or diagnosis.
 
-Your car doesn't sit. Even if you take a two-week vacation, the tank cycles through in days once you're back. Ethanol's water-absorption issue is largely self-correcting in a car.
+## Mercury's Ethanol Limit
 
-Boats are different. A fuel system that sits for two to six months with E10 in it is a fuel system in slow-motion damage mode:
+Mercury states that current gasoline engines are designed to operate on fuel containing no more than 10 percent ethanol. That makes E10 the upper approved blend for those engines. E15 and E85 exceed the limit and should not be used.
 
-- **Fuel lines and primer bulbs** made from rubber compounds that were designed for straight gasoline can swell, crack, and get soft from ethanol exposure. A primer bulb that won't pump firm is often an early sign.
-- **Carburetors on older and smaller motors** are especially vulnerable. The varnish that E10 leaves behind when it degrades can clog jets and needles to the point where the carb needs to come apart and be cleaned before the engine will run properly.
-- **Gaskets and O-rings** inside carbs and fuel pumps can deteriorate, leading to air leaks, lean running conditions, and stumbling at wide-open throttle.
-- **Steel fuel tanks** can corrode from the inside when water sits at the bottom. Aluminum tanks are more resistant but not immune.
+This matters even when the octane number looks suitable. An E15 product with an adequate anti-knock rating still fails the ethanol-content requirement.
 
-Our techs see this every spring and fall: motor ran fine when it was put away, now it won't start or bogs the moment you push the throttle past half. The [Mercury Outboard Won't Start troubleshooting guide](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting) covers many of these symptoms, a significant portion trace back to the fuel system.
+For an older Mercury, a portable, or an engine with an uncertain fuel-system history, identify the serial number and consult its manual. Do not assume the current-engine statement answers every legacy application.
 
----
+## Why “Premium” Does Not Mean “Ethanol-Free”
 
-## What Octane Your Mercury Actually Needs
+Premium names an octane grade. Ethanol-free names a blend. A retailer may sell premium that contains ethanol, premium that does not, or different blends by location and season.
 
-Octane measures detonation resistance, how well fuel resists igniting before the spark plug fires. Higher octane doesn't mean more energy, cleaner running, or more power. What it does is prevent knock in engines designed for higher compression. Put it in an engine that doesn't need it and you've spent extra money for nothing.
+The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser does not clearly identify ethanol content, ask the retailer. Do not infer it from the colour of the nozzle, price, brand or octane number.
 
-Here's the general picture for Mercury outboards:
+This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it can meet Mercury's published fuel specifications for a current engine.
 
-### Most 4-Stroke Mercury Outboards (Under 250 HP)
-The vast majority of modern Mercury 4-stroke outboards are engineered for **87 octane (R+M)/2 minimum**, the standard pump Regular. Running 91 doesn't help them. Running 87 is the right call.
+## What Ontario's Fuel Rules Do and Do Not Prove
 
-### Verado and High-Output Pro XS V8 Models
-Mercury's Verado line and certain high-output Pro XS V8 engines are higher-compression motors that require a minimum of **89 or 91 octane**, check the engine sticker or your owner's manual for the specific requirement on your motor. Don't guess. The sticker is there for a reason.
+Ontario's cleaner-transportation-fuels regulation sets renewable-content requirements across a fuel supplier's gasoline pool. Pool-wide compliance can be achieved through a mix of products and credits.
 
-### The Rules in Short
-- Lower octane than required = detonation/knock = engine damage over time
-- Higher octane than required = wasted money, no benefit
-- When in doubt: read the sticker on your motor, not the marketing copy on the pump
+That policy does not let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
 
-The [Mercury Outboard Fuel Efficiency Guide](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide) covers prop selection and RPM tuning in detail, the performance side of the equation this post doesn't.
+For a purchase decision, use the pump label. For the engine decision, use the manual.
 
----
+## Fuel Quality and Storage Are Separate Again
 
-## The Ethanol-Free Advantage
+Fuel can meet both the octane and ethanol specifications and still be a poor choice if it is contaminated or has been stored improperly. Water, debris, oxidation and an unknown storage history are fuel-quality concerns, not octane ratings.
 
-Ethanol-free gasoline, pure gasoline with no alcohol blended in, doesn't have the water-absorption problem. That changes the equation significantly for boats.
+Mercury's owner guidance emphasizes:
 
-Here's what ethanol-free does for you:
+- buy fuel from a reliable, high-volume source
+- keep water and debris out of the fuel system
+- use products and storage procedures specified for the engine
+- avoid storing untreated fuel beyond the guidance for the system and product
+- follow the exact manual when preparing the engine for storage
 
-**Storage life.** E10 fuel starts degrading in as little as 30 days, especially in heat. Ethanol-free gasoline holds up for six months or more without a stabilizer. For seasonal boaters, that window matters.
+There is no responsible universal countdown to phase separation. Temperature, water exposure, tank design, fuel composition and storage conditions all matter. Likewise, topping old fuel with fresh fuel does not remove water or reverse separation.
 
-**No phase separation.** Without ethanol, there's nothing to attract and absorb moisture. The water-separation risk disappears.
+If contamination is suspected, stop experimenting. Safe disposal and diagnosis are better than repeatedly sending questionable fuel through injectors or carburetors.
 
-**Carbureted motors run better on it.** Older motors and small kickers designed before ethanol blends were common run more reliably on ethanol-free. Many outboard manufacturers specifically recommend it.
+## A Simple Pump-Side Decision
 
-**Slightly better fuel economy.** Ethanol contains less energy per litre than gasoline. At a 10% blend the effect is modest, but it's real.
+Use this sequence every time the fuel source changes:
 
-**Longer fuel system life.** Without ethanol attacking rubber compounds over time, lines, primer bulbs, and carb internals last longer.
+1. **Identify the engine.** Know the model, serial number and manual.
+2. **Read the octane.** It must meet or exceed the published minimum.
+3. **Read the ethanol statement.** Current Mercury gasoline engines allow no more than E10.
+4. **Assess the source.** Prefer fresh fuel from a reliable, high-turnover retailer.
+5. **Plan for storage.** Follow Mercury's specified stabilizer and storage procedure if the fuel will sit.
+6. **Keep the receipt.** If a problem begins after refuelling, the date, grade and location help the diagnosis.
 
-### HBW Sells Ethanol-Free Fuel On-Site
+This takes less time than deciding based on “regular versus premium,” and it produces a much better answer.
 
-You don't have to find a specialty station or drive out of your way. **Harris Boat Works carries ethanol-free fuel at the dock.** Fill up on-site, right before you launch or while you're tied up, no trailer required.
+## Common Fuel Mistakes
 
-Check fuel hours before you come in.
+**Paying for premium to avoid ethanol.** Higher octane does not prove a different ethanol blend.
 
----
+**Believing every Verado needs 89.** Current V10 Verado specifications list 87 minimum. Check the exact model rather than repeating a family-wide claim.
 
-## What About Premium Pump Gas (91/93)?
+**Using E15 because the octane is high enough.** The ethanol percentage still exceeds Mercury's current-engine limit.
 
-This is where a lot of people make an incorrect assumption: **premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise.**
+**Assuming an Ontario average describes one pump.** Supplier rules do not replace dispenser labels.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+**Treating stabilizer as a repair.** Stabilizer cannot remove water, undo phase separation or clean every existing deposit.
 
-"Premium" and "ethanol-free" are not the same thing. Premium refers to octane rating only. If you're buying premium at a regular gas station, read the pump label. If it doesn't explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.
+**Diagnosing by smell or colour alone.** Observations can support a history, but safe testing determines whether fuel is usable.
 
-Don't pay premium prices thinking you're protecting your fuel system. Read the label.
+## Frequently Asked Questions
 
----
+### What octane does my Mercury outboard require?
 
-## Fuel Additives and Stabilizers: When You Actually Need Them
+Use the cowl label and the owner's manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury.
 
-Mercury's three black bottles are not interchangeable.
+### Can a current Mercury run E10?
 
-| Product | When Mercury says to use it | What it does | Storage stabilizer? |
-|---|---|---|---|
-| **Quickare** | Add at every fill-up | Helps control corrosion, moisture, gum and varnish, including problems associated with ethanol-blended fuel | No |
-| **Quickleen** | Use as needed through the season | Aggressive cleaner for carbon deposits in carburetors, injectors, intake valves, plugs, piston crowns and cylinder heads | No. Mercury says it contains no fuel stabilizers |
-| **Quickstor** | Before offseason or long-term storage | Slows fuel oxidation, helps prevent fuel-system corrosion, and keeps gum and varnish from forming | Yes |
+Yes. Mercury says current gasoline engines are designed for fuel containing no more than 10 percent ethanol. E15 and E85 exceed that limit.
 
-The 2026 Mercury Capacity Guide says Quickstor stabilizes fuel for up to two years. That is a product claim, not permission to ignore the storage procedure for the boat's tank and engine.
+### Is premium gasoline ethanol-free in Ontario?
 
-**How to treat storage fuel:** Start with fresh fuel, add the labelled amount for the volume in the tank, and circulate it through the engine by the method and time specified in the owner's manual. Mercury's basic maintenance guide uses about 10 minutes as its general example. Tank level depends on whether the boat has an older vented tank or a newer low-evaporative-emissions system.
+Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump.
 
-**Don't overdose.** Follow label directions. More is not better.
+### Does higher octane give a Mercury more power?
 
-The [DIY Mercury Outboard Winterization Guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide) walks through the full storage prep sequence.
+Not simply because the number is higher. Use fuel that meets the engine's minimum. Performance also depends on engine calibration, load, propeller, rigging and condition.
 
----
+### Can fuel stabilizer fix phase-separated fuel?
 
-## Mid-Season Fuel Hygiene Tips
+No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It does not recombine separated fuel or remove contamination.
 
-Fuel care isn't just a spring-and-fall task. A few habits during the season pay off:
+### How can I confirm a fuel problem for service?
 
-**Top off the tank before leaving the dock.** Less air space means less condensation surface area.
+Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if possible.
 
-**Use a fuel-water separating filter, and change it every season.** Last line of defense before water reaches your motor. Milky filter bowl = moisture problem.
+## Unsure What Your Engine Requires?
 
-**Check your fuel lines every spring.** Ethanol-damaged lines feel soft or tacky. A line that looks fine on the outside can be breaking down from the inside.
+Send the serial number and the exact fuel label with your service request. Harris Boat Works can identify the Mercury application and start with the right specification instead of a pump-grade guess.
 
-**If the boat sat with E10 through winter, don't just top up with fresh fuel.** Diluting old, phase-separated fuel doesn't fix the problem. Drain it, inspect the separator, and start fresh.
+[Start a Mercury service request](https://hbw.wiki/service)
 
-The [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers this step by step.
+Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
 
----
+## Related Guides
 
-## Where to Fuel Up on Rice Lake, Ontario (in the Kawarthas)
-
-For Rice Lake boaters, **Harris Boat Works has on-water fuel access**, pull up to the dock, fill up, get back out. Ethanol-free available on-site. No need to trailer to a gas station.
-
-Check fuel hours before heading in.
-
----
-
-## Common Fuel-Related Symptoms HBW Techs See Every Season
-
-If your motor shows any of these, a fuel system issue is likely somewhere in the chain:
-
-- **Hard starting after storage**, especially if it ran fine when put away
-- **Engine bogs at wide-open throttle**, motor pulls fine off idle but falls flat at full throttle
-- **Primer bulb won't pump firm**, stays soft even after pumping; often a bulb or line issue from ethanol degradation
-- **Varnish in the carb bowl**, yellow or orange residue; degraded fuel left behind
-- **Water in the fuel-water separator**, phase-separated or condensation moisture made it through
-- **Fuel gauge reading inconsistently**, can indicate a sender issue or internal tank corrosion affecting the float
-
-Some are straightforward fixes. Some need a full carb clean or fuel system inspection. Catching them early is cheaper than a mid-season breakdown on the water.
-
----
-
-## The Yearly Fuel Calendar
-
-A simple seasonal checklist that covers the full year:
-
-### Spring (May)
-- Inspect the fuel-water separator, replace the filter element if it's been more than one season
-- If you stored with E10 and didn't stabilize, drain the tank and start fresh with ethanol-free
-- If you stored properly with stabilizer and ethanol-free, top off with fresh ethanol-free
-- Run the motor briefly at the dock before launching; confirm fuel flow and no hesitation
-
-### Summer (June-August)
-- Top off the tank at the end of each trip or before multi-day sits
-- Inspect the primer bulb and fuel lines periodically, ethanol damage shows up gradually
-- Check the fuel-water separator bowl for water if you're running E10
-
-### Fall (September-October)
-- Add stabilizer to the tank, top off, run the motor 10-15 minutes to circulate treated fuel through the system
-- If storing indoors, a full tank reduces condensation; if storing outdoors, check manufacturer guidance
-- Note the condition of lines and primer bulb, order replacements now if anything looks suspect, not in May when everyone else is calling at the same time
-
-### Winter (November-April)
-- No fuel system action needed, the storage prep does its job
-- If you didn't stabilize properly, note it now so you can address it in spring before everyone else calls at the same time
-
----
-
-## Quick Decision Card
-
-| Situation | Fuel to Use |
-|---|---|
-| Most Mercury 4-stroke outboards (under 250 HP) | Ethanol-free 87 octane |
-| Verado / high-output Pro XS V8 | Ethanol-free 91 octane (check engine sticker) |
-| Storing more than 30 days (any fuel) | Add marine fuel stabilizer |
-| Unsure of your motor's octane requirement | Check the engine sticker or owner's manual, it's there |
-| Buying "premium" at a regular pump | Read the label, premium ≠ ethanol-free in Ontario |
-
----
-
-## Need Ethanol-Free Fuel or a Fuel System Service?
-
-We have ethanol-free at the dock and we diagnose fuel system issues every day.
-
-**For service requests** (fuel system inspection, carb cleaning, fuel line replacement, seasonal commissioning): [hbw.wiki/service](https://hbw.wiki/service)
-
-**Phone (fuel hours):** 905-342-2153
-
-Harris Boat Works. Gores Landing, ON, est. 1947
+- [Mercury outboard fuel-efficiency guide](/blog/mercury-outboard-fuel-efficiency-guide)
+- [Mercury outboard will not start: dockside guide](/blog/mercury-outboard-wont-start-troubleshooting)
+- [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury maintenance schedule explained](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ## Sources
 
-- Mercury Marine, 2026 Capacity Guide, publication 8M0243459, page 19
-- Mercury Marine, Maintenance Made Easy, publication MER-5702, pages 10-13
-- [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
+- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)
+- [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/350-400hp)
+- [Government of Ontario, Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)
+- [Ontario Regulation 663/20, Cleaner Transportation Fuels](https://www.ontario.ca/laws/regulation/200663)
 `,
   },
   {
@@ -31666,183 +31584,186 @@ Phone: 905-342-2153
     ],
   },
   {
-    slug: 'boat-trailer-maintenance-guide-ontario',
-    seoTitle: 'Boat Trailer Maintenance Guide (Ontario 2026)',
-    title: 'Boat Trailer Maintenance Ontario',
-    description: 'Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights.',
-    image: '/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario.png',
-    imageAlt: 'Boat trailer on jack stands with maintenance tools like a grease gun and torque wrench at an Ontario marina.',
-    author: 'Harris Boat Works',
-    datePublished: '2026-05-13',
-    dateModified: '2026-05-14',
-    publishDate: '2026-05-13',
-    category: 'Maintenance',
-    readTime: '~10 min read',
-    keywords: ['boat trailer maintenance', 'trailer bearings', 'boat trailer Ontario', 'trailer service cost', 'trailer bearing repack', 'ST tires', 'boat trailer brakes', 'trailer winterization'],
-    relatedSlugs: ['spring-outboard-commissioning-checklist', 'trailer-boat-toronto-to-rice-lake-guide'],
-    content: `## Quick Answer
-
-**Your boat trailer carries the same value as your motor and your boat combined. Skip annual maintenance and you find out the hard way at the worst possible moment, usually mid-launch on a Saturday morning in May.**
-
-- **Bearings**: repack annually OR every 12,000 km; replace at the first sign of grease colour change or play
-- **Brakes**: annual flush + pad inspection; surge or electric, both fail the same way
-- **Tires**: check pressure cold every trip; replace every 5-6 years even if tread looks fine (rubber degrades faster than tread wears)
-- **Lights/wiring**: test before every trip; sealed LED tail lights last 10x longer than standard
-- **Bunks/rollers**: carpet bunks every 4-5 years; rusted bunk brackets are the #1 trailer failure HBW sees
-
----
-
-::cost-stack
-heading: What annual trailer service actually costs in Ontario
-eyebrow: Trailer maintenance budget
-subhead: Most trailer problems come from skipped maintenance. Here are the real Ontario shop costs for the 5 things you should be doing once a year on a boat trailer.
-item1Label: Wheel bearing repack
-item1Value: $60 - $120 per axle
-item1Note: Pull, clean, inspect, re-grease both bearings per hub. Single axle is one wheel side per side. Tandem is double. Most-skipped service we see on used trailers.
-item1Accent: true
-item2Label: Bearing buddy or oil-bath inspection
-item2Value: $20 - $40
-item2Note: If your trailer has bearing buddies, top off grease. If it has oil-bath hubs (heavier-duty trailers), check sight glass and oil colour. Milky oil means water intrusion, replace immediately.
-item3Label: Tire replacement
-item3Value: $120 - $250 per tire
-item3Note: Trailer tires age out before they wear out. 5-year rule of thumb in Ontario sun. Look for sidewall cracking. ST-rated marine tires only, not passenger.
-item4Label: Brake service (if equipped)
-item4Value: $150 - $400 per axle
-item4Note: Surge or electric brake systems on heavier trailers need annual inspection. Submerging brakes in lake water shortens life. Most aluminum-fishing-boat trailers don't have brakes; bigger fiberglass and pontoon trailers do.
-item5Label: Lights + wiring + winch strap
-item5Value: $30 - $150
-item5Note: LED bulb replacements, ground wire inspection, winch strap replacement if frayed. Cheap insurance that keeps you legal on the highway.
-totalLabel: Typical annual all-in (single axle, no brakes)
-totalValue: $150 - $350 / year
-caveat: Tandem trailers, braked trailers, and corroded older units cost more. Aluminum trailers in Rice Lake fresh water hold up better than steel in salt-treated road conditions. Book trailer service at /service.
-::
-
-## Why Most Boaters Skip Trailer Maintenance Until It Fails
-
-Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and [haul-out](/blog/boat-storage-kawartha-lakes), and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
-
-We see three patterns at HBW:
-
-1. **The bearing burn-out.** Boat owner trailers a 3-hour drive to a tournament. Hub heats up, bearing seizes, wheel locks, boat drags 200 metres before they can stop. Insurance covers some of it but not the holiday.
-2. **The brake fade.** Surge brakes on a loaded trailer have not been serviced in 5 years. Coming down a hill into a launch ramp, the brakes do not grab. Truck and trailer slide into the lake.
-3. **The tire blow-out.** Trailer tires look fine but were manufactured 8 years ago. UV and ozone degraded the rubber from the inside. 80 km/h on the 401 in July, tire shreds, trailer tracks into the ditch.
-
-All three are preventable with a 30-minute annual inspection.
-
-## The 6 Things to Check Every Spring
-
-### 1. Wheel Bearings (Most Common Failure Point)
-
-Bearings are sealed grease cartridges that let the wheels spin freely. Submerging hot bearings in cold lake water creates a vacuum that pulls water into the hub. Once water mixes with grease, corrosion starts immediately.
-
-**Action:**
-- Repack annually (Bearing Buddies make this easy)
-- Replace bearings outright every 4-5 years regardless of appearance
-- Check play with the wheel jacked up, any wiggle means bearings or races are worn
-
-**Cost at HBW:** $80-$120 per axle for repack, $250-$350 for full bearing replacement including parts.
-
-### 2. Brakes (Surge or Electric)
-
-Most Ontario trailers under 1,134 kg (2,500 lb) gross use surge brakes, the trailer's inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
-
-**Action:**
-- Surge: flush the hydraulic line annually with marine-grade brake fluid (DOT 4 or DOT 5)
-- Electric: test the magnet's grab strength annually; replace pads when worn
-- Inspect rotors/drums for rust pitting
-
-**Cost at HBW:** $150-$250 for surge brake service; $200-$300 for electric brake service.
-
-### 3. Tires and Pressure
-
-Boat trailer tires (ST-rated) are different from car tires. They have stiffer sidewalls but degrade faster from UV and ozone exposure. The tread can look perfect at 8 years old while the sidewall is structurally compromised.
-
-**Action:**
-- Check cold tire pressure before every trip (target 50-65 PSI depending on size, match the sidewall spec)
-- Replace tires every 5-6 years regardless of tread depth
-- Carry a full-size spare, not a "donut"
-- Check the DOT date code (last 4 digits = week/year of manufacture)
-
-### 4. Lights and Wiring
-
-Trailer lights fail because connectors corrode and constant flexing breaks the wiring inside the harness.
-
-**Action:**
-- Sealed LED lights with a single connector last 10x longer than standard bulbs
-- Apply dielectric grease to the 4- or 7-pin connector every spring
-- Test every trip, a $10 plug-in tester saves you from a $250 OPP ticket
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-### 5. Bunks, Rollers, and Frame
-
-The bunks (the carpeted boards your hull rests on) and the rollers degrade slowly until you notice your boat sitting unevenly on the trailer.
-
-**Action:**
-- Replace carpet on bunks every 4-5 years (worn carpet means direct wood-on-hull contact)
-- Rusted bunk brackets are the #1 trailer failure HBW sees, rinse the trailer after each dip
-- Inspect the frame for cracks at weld points, especially the cross members
-
-### 6. Winch, Straps, and Safety Chains
-
-The cheapest items on the trailer are usually the most ignored.
-
-**Action:**
-- Lubricate winch gears annually
-- Replace winch strap when fraying appears (Ontario sun degrades polyester within 5 years)
-- Inspect safety chains for cracked links, replace at any sign of corrosion
-
-## Ontario-Specific Considerations
-
-### Road Salt
-
-Ontario uses calcium chloride and sodium chloride on highways from November through April. Even if you do not trailer during salt season, residual salt on the road from before your first spring trip eats into trailer frames within months.
-
-**Action:** Rinse the trailer thoroughly after the first 2-3 spring trips. A garden hose with a sprayer attachment for 5 minutes does the job.
-
-### Gravel Launch Ramps
-
-Many Rice Lake and Kawartha launches have gravel or compacted-dirt access roads. The grit gets into bearings and lights faster than paved ramps. Plan for more frequent bearing maintenance if you launch off gravel weekly.
-
-### 401 Highway Speeds
-
-Ontario's 100 km/h posted limit means most boaters trailer at 110+ km/h actual. That is at the upper edge of most ST-rated trailer tires' rated speed (typically 105 km/h or 65 mph). Heavy loads + summer heat + actual highway speeds = more frequent tire replacements.
-
-## When to Bring Your Trailer to HBW
-
-We service trailers we sell and most major brands. Common reasons customers bring trailers in:
-
-- **Annual bearing repack**: fastest service item, usually done while you wait
-- **Brake conversion or upgrade**: surge to electric, or rusted-out brake replacement
-- **Frame repair**: welding cracked cross members or replacing tongue extensions
-- **Bunk replacement**: full carpet and bracket refresh
-- **Pre-purchase inspection**: buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
-
-Book at [hbw.wiki/service](https://hbw.wiki/service).
-
-## When to Replace vs Repair
-
-Trailer frames are weldable. Bunks, rollers, lights, and brakes are all replaceable parts. A 15-year-old trailer with a solid frame is usually worth refurbishing if the underlying structure is sound. Once the frame is cracked through, structurally compromised, or seriously rotted, replacement is the only safe option.
-
-A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in Ontario. A full refurbishment (bunks, bearings, brakes, lights, tires) on a sound frame is usually $800-$1,500. Math the lifespan honestly.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
----
-
-*Last reviewed: 2026-05-14*
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
-
-`,
+    slug: "boat-trailer-maintenance-guide-ontario",
+    title: "The Five-Minute Boat-Trailer Check Before Every Trip",
+    seoTitle: "5-Minute Boat Trailer Check | Ontario Towing Guide",
+    description: "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance.",
+    image: "/lovable-uploads/lens-cove/hero-lc004-trailer-check-2026-07.webp",
+    imageAlt: "Marine technician checking cold tire pressure on a boat trailer before towing",
+    author: "Jay Harris",
+    datePublished: "2026-05-26",
+    dateModified: '2026-07-30',
+    publishDate: "2026-05-26",
+    category: "Service",
+    readTime: "~11 min read",
+    keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"],
+    relatedSlugs: ["boat-trailering-mistakes-ontario","trailer-boat-toronto-to-rice-lake-guide","spring-outboard-commissioning-checklist","rice-lake-boat-launch-guide"],
     faqs: [
-      { question: 'How often should I repack trailer bearings?', answer: 'Annually for boats that get used 10+ times per season, or every 12,000 km of trailering. If your bearings get submerged in cold water after a hot drive (very common), repack at the end of the season as well.' },
-      { question: 'Are trailer tires different from car tires?', answer: 'Yes. Special Trailer (ST) tires have stiffer sidewalls and higher load ratings for the same size. Do not substitute passenger car tires. They flex too much and fail at trailer loads.' },
-      { question: 'Do I need to register my boat trailer in Ontario?', answer: 'Yes. All trailers used on Ontario roads must have a permit and license plate from ServiceOntario, regardless of size. Costs about $34 for the permit plus annual sticker.' },
-      { question: 'How long do trailer bunks last?', answer: '5-10 years depending on use. The carpet usually fails first (UV and abrasion), followed by the wood underneath if water gets in. Bunk brackets rust faster on trailers stored outside without covers.' },
-      { question: 'What is the speed limit when towing a boat trailer in Ontario?', answer: '100 km/h on most highways. Trailer tires often have a lower rated speed (typically 105 km/h / 65 mph). Do not push your luck, heat builds quickly at trailer speeds in summer.' },
+      { question: "Should boat-trailer tires use the pressure on the tow vehicle door?", answer: "No. Use the specification for the installed trailer tire together with the trailer manufacturer’s instructions. Check it cold, before road heat changes the reading." },
+      { question: "Should safety chains be crossed?", answer: "Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road." },
+      { question: "How tight should trailer wheel nuts be?", answer: "Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value." },
+      { question: "Does every trailer need the same bearing service?", answer: "No. Grease-packed, oil-bath, sealed and other hub systems have different procedures. Identify the components and follow their manuals." },
+      { question: "Is a transom saver mandatory?", answer: "Support requirements vary by boat, outboard and trailer. Follow the instructions for the exact rig instead of copying a universal position from another boat." },
+      { question: "Can I tow if one signal light is out?", answer: "Do not start the trip with a failed required light. Repair the lamp, wiring, connector or ground first." },
     ],
+    content: `# The Five-Minute Boat-Trailer Check Before Every Trip
+
+*Last reviewed: July 30, 2026*
+
+> **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, fix it before the trailer moves.
+
+A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap does not need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
+
+The solution is not a complicated inspection before every outing. It is a consistent five-minute check, followed by scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
+
+![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
+
+## The Five-Minute Check
+
+Walk around the trailer in the same order every time. Consistency is what keeps an easy-to-miss item from being skipped.
+
+### 1. Coupler, ball and jack
+
+Confirm the coupler is the correct size for the hitch ball, fully lowered onto it, latched and secured. The coupler and ball must also have adequate capacity for the loaded trailer.
+
+Raise the tongue jack until it is fully clear and secured for travel. Before relying on the latch, use the tongue jack to apply a small upward load. If the coupler lifts away from the ball, it was not properly seated.
+
+**Stop the trip** if the coupler will not latch positively, the lock or pin is missing, or any part is bent, cracked or excessively worn.
+
+### 2. Safety chains and breakaway connection
+
+Ontario's Ministry of Transportation says a trailer needs two separate means of attachment to the tow vehicle. If chains are used, cross them beneath the tongue so they can help support it if the primary connection fails. Keep enough slack for a full turn without letting the chains drag.
+
+Make sure the hooks are fully engaged and their retainers close. On a braked trailer with a breakaway system, connect its cable to the tow vehicle as directed by the trailer manufacturer, not to a chain that could leave with the trailer.
+
+### 3. Bow and transom restraints
+
+The winch strap pulls the boat forward, but it should not be the only thing holding the bow down. Confirm the bow safety chain or secondary restraint is attached. At the stern, check both transom straps for cuts, corrosion, damaged hooks and lost tension.
+
+Use the support method specified for your boat, motor and trailer combination. There is no universal transom-saver position that is correct for every rig.
+
+### 4. Tires
+
+Check pressure while the tires are cold, using the value specified for the installed trailer tire and the trailer maker's instructions. Do not borrow the tow vehicle's door-jamb number and do not invent a lower pressure to soften the ride.
+
+Look at the full visible circumference and both sidewalls. Cuts, bulges, exposed cord, significant cracking, objects in the tread or an obviously low tire are stop signs. Confirm the spare is inflated and that you can actually access the tools required to change it.
+
+### 5. Wheels and hubs
+
+Look for missing or loose hardware, rust trails around studs, grease where it should not be, a damaged dust cap or signs that a wheel has shifted. Wheel-nut torque and recheck intervals vary, so use the trailer or wheel manufacturer's procedure and a torque wrench.
+
+After the first safe stop on a longer trip, compare the hubs from side to side without touching a hot component. One hub that is markedly hotter than its mate, smells burned or is leaking needs attention. A hand-temperature guess is not a substitute for the maker's inspection procedure.
+
+### 6. Lights, plug and visible load security
+
+Test running lights, brake lights and both turn signals with the tow vehicle connected. Check the electrical plug and cable for damage and enough slack to turn without dragging.
+
+Stand behind the rig and confirm the boat sits squarely, gear inside the boat is secured, the drain plug is handled according to local transport and launch procedures, and nothing can swing into a tire or the road.
+
+## The Go, Fix or Stop Table
+
+| Item | Go | Fix before moving | Stop and inspect |
+|---|---|---|---|
+| Coupler | Fully seated, latched and secured | Missing lock or pin | Will not seat, bent or visibly cracked |
+| Chains | Crossed, latched and clear of road | Excess slack or poor routing | Broken link, open hook or only one attachment |
+| Restraints | Bow and transom secured | Loose strap | Cut webbing, failed hook or no secondary bow restraint |
+| Tires | Correct cold pressure, no visible damage | Minor pressure correction | Bulge, exposed cord, major crack or persistent loss |
+| Wheels | Hardware present, no movement signs | Torque verification due | Missing hardware, rust trails or visible looseness |
+| Lights | All required functions work | Dirty connector | Brake or signal light fails |
+
+This is a departure check, not permission to postpone maintenance.
+
+## What Five Minutes Cannot Replace
+
+Trailer systems are not all built the same. Some hubs are serviceable, some use sealed or oil-bath systems, and brake designs and breakaway systems differ. The correct maintenance work and interval must come from the component maker and the trailer manual.
+
+| System | Scheduled work to confirm |
+|---|---|
+| Tires and wheels | Age, condition, load rating, pressure, torque procedure and spare |
+| Hubs and bearings | System type, lubricant, seals, adjustment and inspection interval |
+| Brakes | Actuator, lines, fluid where applicable, friction components and breakaway system |
+| Coupler and jack | Wear, lubrication points, capacity labels and fasteners |
+| Bunks and rollers | Support, alignment, fasteners, carpet or roller condition |
+| Wiring and lights | Grounds, connectors, sealed lamps and cable routing |
+
+If the manual is missing, record the trailer VIN and the axle, coupler and brake-component labels. Those identifiers are more useful than a generic internet schedule.
+
+## Common Shortcuts That Create Trouble
+
+**Kicking a tire.** It may find a completely flat tire, but it does not measure cold pressure or reveal all structural damage.
+
+**Assuming the winch strap secures the boat.** It is one part of the restraint system, not a replacement for a bow safety connection and transom straps.
+
+**Using a universal torque number.** Stud size, wheel construction and manufacturer procedure matter. Guessing can leave a wheel loose or damage the hardware.
+
+**Greasing every hub the same way.** Different bearing systems require different procedures. More grease is not automatically better and can damage a seal or contaminate brakes.
+
+**Testing the lights alone.** Reflections help, but a second person or a phone recording from a safe stationary position makes the check more reliable.
+
+## A Better Ontario Towing Routine
+
+Do the six checks at home, not in the launch lane. Repeat a shorter walk-around after loading fuel or gear and after the first safe stop. On rough cottage roads, check the restraints again before joining the highway.
+
+Keep the following in the tow vehicle:
+
+- pressure gauge and the correct inflation source
+- torque wrench and the correct socket
+- jack rated and positioned for the trailer
+- wheel chocks
+- serviceable spare tire
+- replacement fuses or lamps appropriate to the rig
+- reflective vest and warning device
+- trailer manual and roadside-assistance information
+
+The best checklist is the one you can complete correctly without improvising at the shoulder.
+
+## Frequently Asked Questions
+
+### Should boat-trailer tires use the pressure on the tow vehicle door?
+
+No. Use the specification for the installed trailer tire together with the trailer manufacturer's instructions. Check it cold, before road heat changes the reading.
+
+### Should safety chains be crossed?
+
+Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road.
+
+### How tight should trailer wheel nuts be?
+
+Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value.
+
+### Does every trailer need the same bearing service?
+
+No. Grease-packed, oil-bath, sealed and other hub systems have different procedures. Identify the components and follow their manuals.
+
+### Is a transom saver mandatory?
+
+Support requirements vary by boat, outboard and trailer. Follow the instructions for the exact rig instead of copying a universal position from another boat.
+
+### Can I tow if one signal light is out?
+
+Do not start the trip with a failed required light. Repair the lamp, wiring, connector or ground first.
+
+## Need a Second Set of Eyes?
+
+If a trailer concern appears while you are preparing the boat for Mercury service, include it in the service request so the team can confirm what is within current shop scope and route you appropriately. Do not tow an unsafe trailer to get it inspected.
+
+[Start a service request](https://hbw.wiki/service)
+
+Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
+
+## Related Guides
+
+- [Boat trailering mistakes Ontario boaters can avoid](/blog/boat-trailering-mistakes-ontario)
+- [Trailer boating from Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
+- [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist)
+- [Rice Lake boat launch guide](/blog/rice-lake-boat-launch-guide)
+
+## Sources
+
+- [Ontario Ministry of Transportation, Safe and Responsible Driving: Towing](https://www.ontario.ca/document/official-mto-drivers-handbook/towing)
+- [Load Rite Trailers, Owner's Manual](https://www.loadrite.com/wp-content/uploads/2021/07/Owners-Manual.pdf)
+- [Dexter, Light Duty 600 to 8K Complete Service Manual](https://www.dextergroup.com/user_area/content_media/raw/LDServiceManual_Complete_8-17.pdf)
+`,
   },
   {
     slug: 'boat-insurance-ontario-guide-2026',
@@ -34030,153 +33951,190 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
   },
   {
-    slug: 'accidentally-increase-boat-service-bills-ontario',
-    title: 'Avoid Bigger Service Bills Ontario',
-    seoTitle: 'How to Lower Boat Service Bills Ontario | Harris Boat Works',
-    description: 'The shop-floor truth: most expensive Mercury repairs start as small ignored problems.',
-    image: '/lovable-uploads/hero-service-bills-prevention.png',
-    imageAlt: 'Mercury FourStroke outboard on an aluminum boat in a workshop with a service estimate, illustrating avoidable repair costs.',
-    author: 'Harris Boat Works',
-    datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
-    publishDate: '2026-05-17',
-    category: 'Maintenance',
-    readTime: '8 min read',
-    keywords: ['accidentally increase boat service bills ontario', 'accidentally increase boat service bills ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
+    slug: "accidentally-increase-boat-service-bills-ontario",
+    title: "Five Boat Problems That Get Expensive When You Keep Running",
+    seoTitle: "Prevent Bigger Mercury Service Bills | 5 Warning Signs",
+    description: "Five Mercury outboard warning signs Ontario boaters should not run through, plus the safe response and service details that support a sound diagnosis.",
+    image: "/lovable-uploads/lens-cove/hero-lc007-service-bills-2026-07.webp",
+    imageAlt: "Marine technician reviewing diagnostic notes, a propeller and test equipment in a service shop",
+    author: "Jay Harris",
+    datePublished: "2026-06-10",
+    dateModified: '2026-07-30',
+    publishDate: "2026-06-10",
+    category: "Service",
+    readTime: "~12 min read",
+    keywords: ["Mercury service","outboard warning signs","boat repair Ontario","Mercury alarm","outboard vibration"],
+    relatedSlugs: ["mercury-smartcraft-alarm-codes-encyclopedia","mercury-boat-battery-guide-ontario","mercury-impeller-replacement-when-they-fail","mercury-maintenance-intervals-20-100-300-rule","ethanol-octane-mercury-outboard-fuel-guide-ontario"],
     faqs: [
-      { question: "My motor has an alarm that comes and goes. Is it safe to ignore?", answer: "No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Premier dealer." },
-      { question: "How much does proper winterization cost?", answer: "$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately)." },
-      { question: "Is ethanol-free fuel really worth the extra cost?", answer: "For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally." },
-      { question: "How can I tell if my battery is failing before it dies?", answer: "Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go." },
-      { question: "Is DIY winterization safe to do myself?", answer: "It can be, if you follow Mercury's published procedure carefully and have the right tools. The most common DIY failure modes are not running long enough to fully fog the cylinders, skipping the lower unit oil change, and not draining cooling water properly. A $400 dealer winterization is cheap insurance." },
-      { question: "What's the most common \"small problem becomes big problem\" we see at HBW?", answer: "Tied between ignored alarms (most expensive when it happens) and skipped impeller replacement (most common). Both are 100 percent preventable." },
+      { question: "Can I keep running if a Mercury warning stops after a restart?", answer: "Do not use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating." },
+      { question: "Does a strong telltale mean the engine cannot be overheating?", answer: "No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual." },
+      { question: "Can a slightly damaged propeller wait until winter?", answer: "A new vibration or impact deserves prompt inspection. Visible damage may not show every affected component, and continued operation can add wear." },
+      { question: "Is 12.6 volts enough to prove a battery is healthy?", answer: "No. Resting voltage does not prove cranking capacity. A questionable, fully charged battery should be load-tested, and the connections and charging system also matter." },
+      { question: "How often should my Mercury be serviced?", answer: "Use the serial-number owner’s manual. Many current schedules include 100-hour or annual work, but the specific items and longer-interval tasks vary by model." },
+      { question: "What is the safest information to photograph?", answer: "With the boat stationary and safe, photograph the display message, engine serial label and visible condition. Never use a phone while operating." },
     ],
-    content: `# How Ontario Boat Owners Accidentally Make Their Service Bills Bigger
+    content: `# Five Boat Problems That Get Expensive When You Keep Running
 
-## Quick answer
+*Last reviewed: July 30, 2026*
 
-The expensive Mercury service bills we see at our marina almost always start as a $50-$200 problem the owner could have caught early. Ignored alarm codes, stale ethanol fuel, weak batteries that strain the starter, skipped winterization, DIY wiring with crimp connectors instead of marine-grade terminals, and "I'll check the impeller next year" are the six biggest culprits. Roughly 70 percent of the service work we quote between $1,500 and $8,000 traces back to a smaller original issue that was either invisible or ignored. The point of this post isn't to scold anyone. It's to share what we actually see and let owners avoid the path that leads there.
+> **Quick answer:** Stop treating a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+The most avoidable service bills rarely begin with a dramatic failure. They begin with a small change that gets dismissed: a warning that clears after a restart, a new vibration, a starter that turns more slowly, or an engine that no longer reaches its usual speed.
 
-## What we see at HBW
+This guide is not a diagnosis chart. Several systems can produce similar symptoms, and generic beep-code advice can be dangerously wrong. It is a symptom-to-action guide: what to notice, how to protect people and equipment, and what information helps a technician find the cause.
 
-Our service shop processes roughly 200-300 Mercury service jobs per year. The big-bill jobs (anything over $1,500) almost never come from sudden, unpredictable failures. They come from a chain of small problems that compounded.
+![Five Mercury outboard symptoms and the safest next action](/lovable-uploads/lens-cove/inline-lc007-symptom-to-action.svg)
 
-Here are the six patterns we see most often, in order of how expensive they get.
+## 1. Continuing After a Warning
 
-## 1. Ignored alarm codes
+A SmartCraft message, Guardian response or audible warning is the engine asking for attention. The meaning and permitted response depend on the model, control system and exact message.
 
-The most expensive pattern, by a wide margin.
+Reduce throttle, make the boat safe and consult the owner's manual for that engine serial number. If the warning remains, operating quality changes or the manual directs shutdown, stop the engine. Do not repeatedly restart it to see whether the alarm “goes away.”
 
-Modern Mercury outboards have alarm systems that warn you about low oil pressure, overheating, low voltage, and water in fuel. The alarm beeps, a code shows on your SmartCraft display, and the motor enters a protective mode that limits RPM.
+Record:
 
-What we wish more owners would do: stop the motor, check the [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) we maintain, and figure out what's wrong before continuing.
+- the exact words, icons or gauge readings
+- engine speed and boat speed when it appeared
+- whether power was automatically limited
+- water and weather conditions
+- what changed immediately before the warning
 
-What we see often: owners ignore the alarm, run the motor at limited RPM all weekend hoping it "fixes itself," and Monday morning the motor is in the shop with a $4,000-$8,000 repair.
+A video of the stationary display can help. Filming while operating the boat cannot.
 
-The most expensive case we've seen in recent years: a customer ran a Mercury 250 Pro XS with a low oil pressure alarm for two hours of cruising. The lower powerhead bearings seized. Total damage: $11,200 for a powerhead replacement. Original problem: a leaking oil filter seal, a $75 part.
+## 2. Ignoring a Cooling-Flow Change
 
-**The fix:** when an alarm beeps, stop. Check the code. If you're not sure, call your dealer. Running through alarms costs more than calling a tow.
+The telltale is useful, but it is not a complete cooling-system health gauge. Its appearance can vary by model and conditions, and a visible stream does not cancel a temperature warning.
 
-## 2. Stale fuel and ethanol problems
+If flow changes or a temperature warning appears, return to idle and reach a safe location. With the engine off and secured, look only for safe, visible issues such as weeds or debris at the water intakes. Follow the manual before doing anything more.
 
-The most common pattern in spring.
+Do not push back to full throttle as a test. Cooling complaints can involve intake blockage, pump condition, thermostat operation, passages, sensors or other causes that cannot be separated from the helm.
 
-Ethanol-blended gasoline (E10, which is most gasoline sold in Ontario) phase-separates over time. The water gets in, the ethanol attracts more water, and what was fuel turns into a thin layer of ethanol-water sludge sitting at the bottom of your tank. That sludge is what your fuel pickup is pulling into the engine on the first warm Saturday in May.
+## 3. Running Through a New Vibration or Propeller Impact
 
-What we wish more owners would do: drain old fuel before storage, run the engine until the carb or fuel rail is empty, and use ethanol-free fuel or fuel stabilizer for any boat that sits more than 6 weeks.
+A new vibration after hitting bottom, a floating object or heavy weeds is a reason to stop. A propeller can look only slightly damaged while producing imbalance, and fishing line can collect behind the propeller where it may affect seals.
 
-What we see often: owners launch in spring, the motor runs rough or won't start, and they keep cranking until they kill the battery and drain the fuel pump.
+Secure the engine against starting before any propeller inspection. Follow the manual for removal and installation, including hardware order and torque. Mercury recommends inspecting the propeller for damage and removing it several times during the season to check for fishing line.
 
-**The fix:** any boat that sat for more than 60 days needs a fuel check before launch. See our [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario) for the structured walk-through.
+Do not keep making wide-open-throttle runs to “see if it clears.” Vibration can affect more than the propeller, and an impact can involve the hub, shaft, gearcase or mounting system.
 
-## 3. Weak batteries that strain everything downstream
+## 4. Treating a Slow Crank as a Minor Battery Problem
 
-The most overlooked pattern.
+A battery can show voltage and still fail under load. Loose or corroded terminals, damaged cables, poor grounds, charging problems and an aging battery can all reduce cranking performance.
 
-A weak battery doesn't always fail dramatically. It often fails slowly: cranking the starter harder than it should, taxing the alternator, causing voltage drops in the rest of the boat's electrical system. Mercury's electronic control system (the brain that runs EFI, ignition timing, SmartCraft) is voltage-sensitive. Low or fluctuating voltage causes intermittent faults that don't always show as a clean alarm code.
+If the starter turns unusually slowly, stop repeated attempts. Check that connections are secure and free of corrosion as the owner's manual describes. A fully charged battery should be load-tested when its condition is in doubt. Use the battery type and rating specified for the exact engine.
 
-What we wish more owners would do: test the battery in spring, replace any battery older than 4 years that doesn't pass a load test, and keep the terminals clean and tight.
+Repeated low-voltage starting attempts can confuse the symptom picture and create heat at a poor connection. Replacing the battery from a resting-voltage reading alone is not a complete diagnosis.
 
-What we see often: owners "stretch" a tired battery into a 5th or 6th season, the boat develops intermittent EFI faults, and they spend $800-$1,500 on diagnostic time chasing electrical gremlins that go away when we install a $200 battery.
+## 5. Repeating High-Load Tests When the Engine Loses Power
 
-**The fix:** treat batteries as a wear item. Replace at 4-5 years even if they "still seem fine." Our [Mercury Boat Battery Guide](/blog/mercury-boat-battery-guide-ontario) covers selection and care.
+Bogging, hesitation or failure to reach the usual operating range can involve fuel quality, delivery, ignition, propeller load, engine protection or rigging. The fact that it happens at higher throttle does not prove one cause.
 
-## 4. Skipped or sloppy winterization
+Ease off and note the fuel source, approximate fuel age, tank selection, engine speed, load and conditions. Current Mercury gasoline engines permit fuel containing no more than 10 percent ethanol. E15 and E85 are not approved. If contamination or incorrect fuel is plausible, do not keep drawing it through the system.
 
-The most damaging single-event pattern.
+Avoid opening pressurized fuel components or improvising an on-water fuel transfer. Safe diagnosis may require pressure, electrical and scan-tool tests.
 
-A properly-winterized Mercury outboard can sit through an Ontario winter at zero damage. A non-winterized motor can crack a block, ruin a powerhead, or freeze-split a cooling jacket in a single overnight cold snap. The repair is often more than the motor is worth.
+## Symptom-to-Action Table
 
-What we wish more owners would do: follow the storage procedure for the exact engine or have an authorized Mercury dealer do it. Confirm the fuel, internal-protection, gearcase, battery, and storage-position steps were completed and documented.
+| What changed | Safe immediate response | What to document | What not to assume |
+|---|---|---|---|
+| Warning or Guardian response | Reduce load, get safe, follow exact manual | Message, icon, RPM, conditions | A generic beep pattern identifies the fault |
+| Cooling-flow change | Idle, reach safety, inspect only visible intakes | Warning, stream change, weeds, water depth | A visible telltale proves normal temperature |
+| New vibration or impact | Stop and secure engine | Impact, speed, propeller condition | A small nick is only cosmetic |
+| Slow crank or hard start | Stop repeated attempts | Battery age, connection state, sound | Resting voltage proves battery health |
+| Rough running or power loss | Ease off and arrange diagnosis | Fuel source, age, RPM, load | Premium fuel or a new filter will cure it |
 
-What we see often: owners use a generic checklist for the wrong engine or discover water in the gearcase and refill it without addressing the seal. The exact serial-number manual prevents those mismatches.
+## What to Send With a Service Request
 
-**The fix:** winterization is one of the few things genuinely worth paying a dealer to do, every year. The cost ($350-$550 for a typical Mercury) is a small fraction of what a freeze-damaged powerhead costs to replace. Service intake at hbw.wiki/service.
+Good intake information shortens the path to a sound diagnosis. Include:
 
-For engine repairs, we only service Mercury and Mercruiser.
+1. Engine serial number and model, not just horsepower.
+2. Engine hours if available.
+3. Exact symptom and the first date it appeared.
+4. The operating conditions when it happens.
+5. Any warning text, icons or Guardian response.
+6. Recent fuel, battery, propeller or maintenance changes.
+7. Clear photos or stationary video that can be captured safely.
+8. What you have already checked or replaced.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Avoid a shopping list of parts based on forum guesses. “Replace the fuel pump” gives a technician less useful information than “loses power above 3,800 rpm with either tank after refuelling Tuesday.”
 
-## 5. DIY wiring with the wrong terminals
+## Maintenance Helps, but Symptoms Outrank the Calendar
 
-The slowest-burn pattern.
+Mercury commonly organizes routine maintenance around engine-hour and annual intervals, with additional items at longer intervals. The exact schedule comes from the serial-number owner's manual.
 
-Marine electrical environments are brutal: salt-free freshwater is still humid, vibration is constant, and connections are exposed. Automotive crimp connectors and plain copper terminals corrode within a year or two in a boat. The corrosion creates resistance, the resistance creates voltage drops, the voltage drops create intermittent faults, and the intermittent faults end up in our shop as "the SmartCraft says something different every time."
+That schedule is a minimum plan for a normally operating engine. It does not mean a new warning or performance change should wait until the next annual service. Likewise, a recently serviced engine is not immune from impact, contaminated fuel, a loose connection or a new fault.
 
-What we wish more owners would do: use marine-grade tinned copper terminals, marine-grade heat-shrink, and adhesive-lined heat-shrink butt connectors. Spend the extra $5 per connection.
+Useful owner checks include:
 
-What we see often: owners DIY a fishfinder or trolling motor install with whatever connectors were in the toolbox. Two years later we're tracing a parasitic draw or a SmartCraft fault back to a corroded crimp behind the console.
+- correct engine oil and level procedure
+- battery terminals and specified battery condition
+- propeller and fishing-line inspection
+- fuel filters at the exact manual interval
+- cooling-water intakes clear of visible debris
+- control, steering and mounting hardware checks
 
-**The fix:** any new electrical work uses marine-grade terminals or it isn't done right. The difference is a few dollars per connection.
+The work becomes model-specific quickly. That is why the serial number belongs in every service request.
 
-![Heavily corroded boat battery terminal next to terminal cleaner brush](/lovable-uploads/inline/inline-corroded-battery-terminal.png)
+## Common Diagnosis Mistakes
 
-## 6. "I'll check the impeller next year"
+**Reading a universal alarm table.** Warning logic differs across engines and control systems. Use the exact manual and displayed message.
 
-The most predictable pattern.
+**Changing several parts at once.** It erases evidence and may introduce a second problem without proving what fixed the first.
 
-The water pump impeller is the rubber component that pumps cooling water through the motor. Mercury specifies replacement every 3 years or 300 hours. Most Ontario freshwater impellers last 4-5 years in practice. Past that, the failure rate climbs sharply, and an impeller failure means the motor overheats fast and can seize.
+**Testing under maximum load.** A repeated full-throttle run can turn a warning into damage.
 
-What we wish more owners would do: follow the water-pump interval in the exact engine manual and act sooner when cooling flow weakens, an overheat warning appears, or the motor has run in debris or sand.
+**Assuming new fuel is good fuel.** Octane, ethanol content, contamination and storage history are separate questions.
 
-What we see often: owners stretch impellers to 6-7 years, the impeller fails on a Saturday in July, the owner doesn't notice the telltale water flow drop, and we're rebuilding a powerhead Monday.
+**Calling every slow crank a dead battery.** The battery, cables, terminals, grounds, starter and charging system need to be considered together.
 
-**The fix:** impeller replacement is cheap insurance. The cost difference between routine replacement and overheating-driven repair is roughly 10x.
+## Frequently Asked Questions
 
-## The pattern across all six
+### Can I keep running if a Mercury warning stops after a restart?
 
-In every case, the small problem is cheap to fix. The big problem (the one we end up quoting) is what happens when the small problem is ignored or missed. The owners who avoid the big bills are the ones who:
+Do not use a restart as proof the cause is gone. Record the warning and follow the owner's manual. If it returns, performance changes or the manual requires shutdown, stop operating.
 
-1. Stop the motor when something is wrong
-2. Don't run through alarm codes
-3. Keep up with seasonal maintenance instead of skipping years
-4. Spend a little money on the boring stuff (batteries, impellers, fuel hygiene)
-5. Pay attention to small symptoms
+### Does a strong telltale mean the engine cannot be overheating?
 
-This isn't a sales pitch for the most expensive service plan. Most of what's on this list is owner-level prevention or a few hundred dollars of routine maintenance at a dealer.
+No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual.
 
-## What we won't sell you
+### Can a slightly damaged propeller wait until winter?
 
-Worth being explicit about: there are services some marinas push that we don't think Ontario freshwater boaters actually need annually. Examples include "fuel system cleaner" treatments on healthy motors, "full electrical diagnostic" without a specific symptom, and "premium hull treatments" that don't do much on aluminum hulls. We'd rather get the basics right and let you save the money.
+A new vibration or impact deserves prompt inspection. Visible damage may not show every affected component, and continued operation can add wear.
 
-If you want a structured pre-season inspection on your specific boat, our service intake is at hbw.wiki/service. We'll tell you what's actually worth doing and what isn't.
+### Is 12.6 volts enough to prove a battery is healthy?
+
+No. Resting voltage does not prove cranking capacity. A questionable, fully charged battery should be load-tested, and the connections and charging system also matter.
+
+### How often should my Mercury be serviced?
+
+Use the serial-number owner's manual. Many current schedules include 100-hour or annual work, but the specific items and longer-interval tasks vary by model.
+
+### What is the safest information to photograph?
+
+With the boat stationary and safe, photograph the display message, engine serial label and visible condition. Never use a phone while operating.
+
+## Get the Cause, Not a Guess
+
+Harris Boat Works diagnoses Mercury outboards using the engine identity, symptom history and appropriate tests before recommending a repair. No universal chart can replace that process.
+
+[Start a Mercury service request](https://hbw.wiki/service)
+
+Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
+
+## Related Guides
+
+- [Mercury SmartCraft alarms and Guardian System guide](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
+- [Mercury outboard battery and charging guide](/blog/mercury-boat-battery-guide-ontario)
+- [Mercury outboard impeller and cooling guide](/blog/mercury-impeller-replacement-when-they-fail)
+- [Mercury maintenance schedule explained](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury fuel: octane and ethanol in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario)
 
 ## Sources
 
-- Mercury Marine seasonal maintenance procedures (dealer technical reference, 2026)
-- Mercury Marine SmartCraft alarm code documentation
-- Transport Canada Pleasure Craft Safety Guide
-- HBW service shop records, 2018-2026
-
-> Related guide: [Boat electrical safety inspection checklist](/blog/boat-electrical-safety-checklist-ontario-freshwater).
-
-## About the author
-
-Reviewed by the Harris Boat Works service team. HBW handles Mercury and Mercruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and Mercruiser. [About Harris Boat Works](/about/jay-harris).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+- [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
+- [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
+- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)
+- [Mercury Marine, Parts and Maintenance](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-maintenance)
 `,
   },
   {

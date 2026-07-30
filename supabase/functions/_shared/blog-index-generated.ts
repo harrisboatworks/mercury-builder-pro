@@ -3866,33 +3866,34 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "ethanol-octane-mercury-outboard-fuel-guide-ontario",
-    "title": "Ethanol Octane Mercury Fuel Guide",
-    "description": "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.",
+    "title": "Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario",
+    "description": "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit.",
     "category": "Service",
     "publishDate": "2026-04-11",
     "keywords": [
-      "ethanol",
+      "Mercury outboard fuel",
       "octane",
-      "marine fuel",
-      "mercury outboard",
-      "ontario"
+      "ethanol",
+      "E10",
+      "Verado fuel",
+      "Ontario marine fuel"
     ],
     "faqs": [
       {
-        "q": "What octane does a Mercury outboard need?",
-        "a": "The vast majority of modern Mercury 4-stroke outboards under 250 HP are engineered for 87 octane minimum, the standard pump Regular. Running 91 doesn't help them. Mercury's Verado line and certain high-output Pro XS V8 engines are higher-compression and require a minimum of 89 or 91 octane. Check the sticker on your m…"
+        "q": "What octane does my Mercury outboard require?",
+        "a": "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury."
       },
       {
-        "q": "Can I run ethanol gas (E10) in my Mercury outboard?",
-        "a": "You can, but for any boat that sits more than a few weeks it causes problems. Ethanol absorbs moisture from the air, eventually phase-separates from the gasoline, and the water-ethanol mix sinks to the bottom of the tank right where the fuel pickup sits. That leads to hard starting, rough running, internal corrosion,…"
+        "q": "Can a current Mercury run E10?",
+        "a": "Yes. Mercury says current gasoline engines are designed for fuel containing no more than 10 percent ethanol. E15 and E85 exceed that limit."
       },
       {
-        "q": "Is premium gas ethanol-free in Ontario?",
-        "a": "Not automatically. Premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise. Premium refers to octane only. If you are buying premium at a regular gas station, read the label: if it does not explicitly say \"ethanol-free,\" \"no ethanol,\" or \"non-ethanol blend,\" assume it conta…"
+        "q": "Is premium gasoline ethanol-free in Ontario?",
+        "a": "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump."
       },
       {
-        "q": "Does Harris Boat Works sell ethanol-free fuel?",
-        "a": "Yes. Harris Boat Works carries ethanol-free fuel at the dock in Gores Landing. You can fill up on-site right before you launch or while you are tied up, no trailer required. Check current fuel hours before coming in."
+        "q": "Does higher octane give a Mercury more power?",
+        "a": "Not simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition."
       }
     ]
   },
@@ -4791,36 +4792,33 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "boat-trailer-maintenance-guide-ontario",
-    "title": "Boat Trailer Maintenance Ontario",
-    "description": "Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights.",
-    "category": "Maintenance",
-    "publishDate": "2026-05-13",
+    "title": "The Five-Minute Boat-Trailer Check Before Every Trip",
+    "description": "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance.",
+    "category": "Service",
+    "publishDate": "2026-05-26",
     "keywords": [
+      "boat trailer check",
       "boat trailer maintenance",
-      "trailer bearings",
-      "boat trailer Ontario",
-      "trailer service cost",
-      "trailer bearing repack",
-      "ST tires",
-      "boat trailer brakes",
-      "trailer winterization"
+      "Ontario towing",
+      "trailer tires",
+      "safety chains"
     ],
     "faqs": [
       {
-        "q": "How often should I repack trailer bearings?",
-        "a": "Annually for boats that get used 10+ times per season, or every 12,000 km of trailering. If your bearings get submerged in cold water after a hot drive (very common), repack at the end of the season as well."
+        "q": "Should boat-trailer tires use the pressure on the tow vehicle door?",
+        "a": "No. Use the specification for the installed trailer tire together with the trailer manufacturer’s instructions. Check it cold, before road heat changes the reading."
       },
       {
-        "q": "Are trailer tires different from car tires?",
-        "a": "Yes. Special Trailer (ST) tires have stiffer sidewalls and higher load ratings for the same size. Do not substitute passenger car tires. They flex too much and fail at trailer loads."
+        "q": "Should safety chains be crossed?",
+        "a": "Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road."
       },
       {
-        "q": "Do I need to register my boat trailer in Ontario?",
-        "a": "Yes. All trailers used on Ontario roads must have a permit and license plate from ServiceOntario, regardless of size. Costs about $34 for the permit plus annual sticker."
+        "q": "How tight should trailer wheel nuts be?",
+        "a": "Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value."
       },
       {
-        "q": "How long do trailer bunks last?",
-        "a": "5-10 years depending on use. The carpet usually fails first (UV and abrasion), followed by the wood underneath if water gets in. Bunk brackets rust faster on trailers stored outside without covers."
+        "q": "Does every trailer need the same bearing service?",
+        "a": "No. Grease-packed, oil-bath, sealed and other hub systems have different procedures. Identify the components and follow their manuals."
       }
     ]
   },
@@ -5235,33 +5233,33 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "accidentally-increase-boat-service-bills-ontario",
-    "title": "Avoid Bigger Service Bills Ontario",
-    "description": "The shop-floor truth: most expensive Mercury repairs start as small ignored problems.",
-    "category": "Maintenance",
-    "publishDate": "2026-05-17",
+    "title": "Five Boat Problems That Get Expensive When You Keep Running",
+    "description": "Five Mercury outboard warning signs Ontario boaters should not run through, plus the safe response and service details that support a sound diagnosis.",
+    "category": "Service",
+    "publishDate": "2026-06-10",
     "keywords": [
-      "accidentally increase boat service bills ontario",
-      "accidentally increase boat service bills ontario ontario",
-      "harris boat works",
-      "mercury outboard",
-      "rice lake"
+      "Mercury service",
+      "outboard warning signs",
+      "boat repair Ontario",
+      "Mercury alarm",
+      "outboard vibration"
     ],
     "faqs": [
       {
-        "q": "My motor has an alarm that comes and goes. Is it safe to ignore?",
-        "a": "No. Intermittent alarms usually point to either a degrading sensor or a real intermittent problem. Either way, the diagnostic is cheaper now than the repair later. Get it checked at a Mercury Premier dealer."
+        "q": "Can I keep running if a Mercury warning stops after a restart?",
+        "a": "Do not use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating."
       },
       {
-        "q": "How much does proper winterization cost?",
-        "a": "$350-$550 for a typical Mercury 25-150 HP. More for larger V8/V10 motors. The cost varies by service shop and what's included (some shops include lower unit oil change, others charge separately)."
+        "q": "Does a strong telltale mean the engine cannot be overheating?",
+        "a": "No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual."
       },
       {
-        "q": "Is ethanol-free fuel really worth the extra cost?",
-        "a": "For boats used regularly through the season, marginal benefit. For boats stored long periods or used infrequently, definitely worth it. Stabilizer is a cheaper alternative if ethanol-free isn't available locally."
+        "q": "Can a slightly damaged propeller wait until winter?",
+        "a": "A new vibration or impact deserves prompt inspection. Visible damage may not show every affected component, and continued operation can add wear."
       },
       {
-        "q": "How can I tell if my battery is failing before it dies?",
-        "a": "Load test at a dealer ($20-$40 or free at most marinas). Or watch for slow cranking, dim lights when starting, or any electrical fault codes that come and go."
+        "q": "Is 12.6 volts enough to prove a battery is healthy?",
+        "a": "No. Resting voltage does not prove cranking capacity. A questionable, fully charged battery should be load-tested, and the connections and charging system also matter."
       }
     ]
   },

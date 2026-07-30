@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Mercury outboard symptom-to-action guide</title>
+  <desc id="desc">Five warning signs and the safest immediate response.</desc>
+  <rect width="1200" height="720" rx="36" fill="#071b33"/>
+  <path d="M0 0h1200v12H0z" fill="#c9972b"/>
+  <text x="70" y="86" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">Symptom first. Safe action second.</text>
+  <text x="70" y="127" fill="#b9c9d9" font-family="Arial, sans-serif" font-size="22">Your serial-number manual decides the exact procedure.</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(70 172)">
+      <rect width="1060" height="82" rx="17" fill="#102b4a"/>
+      <rect width="16" height="82" rx="8" fill="#e2a936"/>
+      <text x="42" y="36" fill="#fff" font-size="24" font-weight="700">Warning message or alarm</text>
+      <text x="430" y="36" fill="#dbe7f1" font-size="21">Reduce throttle, reach a safe place, follow the manual.</text>
+      <text x="430" y="64" fill="#efc760" font-size="18">Never decode a generic beep chart as your diagnosis.</text>
+    </g>
+    <g transform="translate(70 270)">
+      <rect width="1060" height="82" rx="17" fill="#102b4a"/>
+      <rect width="16" height="82" rx="8" fill="#16a6a1"/>
+      <text x="42" y="36" fill="#fff" font-size="24" font-weight="700">Cooling flow changes</text>
+      <text x="430" y="36" fill="#dbe7f1" font-size="21">Return to idle and inspect only safe, visible intake obstructions.</text>
+      <text x="430" y="64" fill="#efc760" font-size="18">Stop if temperature or warning symptoms continue.</text>
+    </g>
+    <g transform="translate(70 368)">
+      <rect width="1060" height="82" rx="17" fill="#102b4a"/>
+      <rect width="16" height="82" rx="8" fill="#16a6a1"/>
+      <text x="42" y="36" fill="#fff" font-size="24" font-weight="700">New vibration or impact</text>
+      <text x="430" y="36" fill="#dbe7f1" font-size="21">Stop and inspect the propeller only with the engine secured.</text>
+      <text x="430" y="64" fill="#efc760" font-size="18">Continuing can turn one damaged part into several.</text>
+    </g>
+    <g transform="translate(70 466)">
+      <rect width="1060" height="82" rx="17" fill="#102b4a"/>
+      <rect width="16" height="82" rx="8" fill="#16a6a1"/>
+      <text x="42" y="36" fill="#fff" font-size="24" font-weight="700">Slow crank or hard start</text>
+      <text x="430" y="36" fill="#dbe7f1" font-size="21">Stop repeated attempts. Record the conditions and symptoms.</text>
+      <text x="430" y="64" fill="#efc760" font-size="18">Battery voltage alone does not prove battery condition.</text>
+    </g>
+    <g transform="translate(70 564)">
+      <rect width="1060" height="82" rx="17" fill="#102b4a"/>
+      <rect width="16" height="82" rx="8" fill="#16a6a1"/>
+      <text x="42" y="36" fill="#fff" font-size="24" font-weight="700">Power loss or rough running</text>
+      <text x="430" y="36" fill="#dbe7f1" font-size="21">Ease off, avoid repeated wide-open-throttle testing, get help.</text>
+      <text x="430" y="64" fill="#efc760" font-size="18">Fuel, ignition, propeller and protection systems can overlap.</text>
+    </g>
+  </g>
+  <text x="70" y="687" fill="#8eacc5" font-family="Arial, sans-serif" font-size="18">When in doubt, protect people first, then protect the engine.</text>
+</svg>
