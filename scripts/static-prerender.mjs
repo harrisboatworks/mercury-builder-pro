@@ -4556,7 +4556,7 @@ const routes = [
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Premier Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()],
-    extraHead: [HOME_HUB_ALTERNATE_TAGS, HOME_LCP_PRELOAD].filter(Boolean).join('\n  '),
+    extraHead: HOME_HUB_ALTERNATE_TAGS + '\n  ' + HOME_LCP_PRELOAD,
   },
   ...HUB_ROUTES,
   // ============================================================
