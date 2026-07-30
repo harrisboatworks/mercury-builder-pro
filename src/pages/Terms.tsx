@@ -15,6 +15,8 @@ export default function Terms() {
         <meta name="robots" content="index,follow" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
