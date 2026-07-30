@@ -4791,7 +4791,7 @@ const routes = [
   },
   {
     path: '/blog',
-    title: 'Mercury Motor Guides & Boating Tips | Harris Boat Works Blog',
+    title: 'Mercury Motor Guides & Boating Tips | Harris Boat Works',
     description: 'Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters make informed decisions.',
     h1: 'Mercury Motor Guides & Boating Tips',
     intro: 'Expert advice on Mercury outboard motors, repowers, boat maintenance, and buying guides from Ontario\'s Mercury Marine Premier Dealer since 1947.',
