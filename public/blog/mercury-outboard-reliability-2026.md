@@ -153,6 +153,14 @@ Early indicators are encouraging, but long-term reliability gets established ove
 
 No. Mercury's quality control processes are mature, and updates are validated before dealer release. The model year itself is not a reliability concern unless a specific platform has documented early-production issues, which we would communicate directly.
 
+## Related guides
+
+- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
+- [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
+- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
+- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

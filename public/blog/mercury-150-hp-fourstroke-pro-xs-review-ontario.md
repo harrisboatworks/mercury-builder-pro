@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-26  
-**Last updated:** 2026-07-28
+**Last updated:** 2026-07-28  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario
 
@@ -408,3 +408,4 @@ The price depends on model, shaft length, rigging and current Canadian programs.
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

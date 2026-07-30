@@ -175,6 +175,14 @@ Sunscreen, hats, water, towels, a cooler with food and non-alcoholic drinks, and
 
 If conditions are genuinely poor (high winds, rain), we cancel or reschedule with no penalty and refund your deposits and payments. If it's merely breezy, morning slots are your friend.
 
+## Related guides
+
+- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)](/blog/rice-lake-boat-rental-guide-2026), the 2026 Rice Lake boat rental guide
+- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
+- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

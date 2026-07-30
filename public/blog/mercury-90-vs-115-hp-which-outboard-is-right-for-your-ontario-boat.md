@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat.md
-last_updated: 2026-07-06
+last_updated: 2026-07-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 vs 115 HP: Which Outboard Is Right for Your Ontario Boat?"
 description: "A detailed comparison of Mercury 90 hp and 115 hp FourStroke outboards for Ontario aluminum boats, covering weight, performance, fuel economy, price, and resale value."
 category: "Repower"
 date_published: 2026-07-06
-date_modified: 2026-07-06
+date_modified: 2026-07-29
 keywords: ["Mercury 90","Mercury 115","Ontario boating","repower","aluminum boat","Mercury FourStroke","Outboard Comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,9 +24,11 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-07-06  
-**Last updated:** 2026-07-06  
+**Last updated:** 2026-07-29  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat
+
+> **Quick answer:** Choose the highest horsepower your boat's capacity plate allows only when your normal load and use justify it. A Mercury 90 can suit a lighter 17- to 19-ft aluminum boat, while a 115 gives more reserve for passengers and gear. Match the exact model, gearcase, shaft length, rigging, and propeller to the hull before ordering.
 
 Choosing between a Mercury 90 hp and 115 hp FourStroke for your Ontario boat often comes down to a few hundred pounds of extra load capacity and about $1,500 to $2,500 in upfront cost. Both share the same 2.1-litre block and weigh nearly the same, but the 115 delivers noticeably more mid-range torque and top-end punch. For most 17-to-19-foot aluminum fishing and cottage boats on Rice Lake or Kawartha waterways, the 115 is the safer long-term bet, yet the 90 can be perfectly adequate if you seldom run heavy. Understanding the real-world differences in performance, fuel economy, and resale value will help you make the right choice for your boat and how you use it.
 
@@ -117,6 +119,14 @@ Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command
 ### Should I repower with a 90 or 115 if I plan to sell the boat in a few years?
 
 For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard generally retains better resale value and appeals to a wider range of buyers. If the price difference fits your budget now, the 115 often pays off in quicker sales and higher offers down the road.
+
+## Related guides
+
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

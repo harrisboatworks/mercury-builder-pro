@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend.md
-last_updated: 2026-06-29
+last_updated: 2026-07-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Canada Day on Rice Lake: Boating Guide"
 description: "A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works."
 category: "Local Guide"
 date_published: 2026-06-29
-date_modified: 2026-06-29
+date_modified: 2026-07-29
 keywords: ["Rice Lake","Canada Day","boating","fishing","Ontario boating"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,9 +24,11 @@ language: en-CA
 
 **Category:** Local Guide  
 **Published:** 2026-06-29  
-**Last updated:** 2026-06-29  
+**Last updated:** 2026-07-29  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
+
+> **Quick answer:** A good Canada Day run on Rice Lake starts early, before launch lines and afternoon traffic build. Check the marine forecast and current local event notices, fuel before you go, carry a fitted PFD for everyone, confirm your navigation lights, keep a sober operator, and allow extra time getting back to the ramp after dark.
 
 If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. The Trent-Severn Waterway is fully open for navigation, the public launch at Gores Landing has reopened, and Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel right at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
 

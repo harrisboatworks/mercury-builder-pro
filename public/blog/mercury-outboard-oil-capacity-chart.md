@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-07-24  
-**Last updated:** 2026-07-28
+**Last updated:** 2026-07-28  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 
@@ -273,3 +273,4 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/avator-electric-kicker-trolling
-last_updated: 2026-07-28
+last_updated: 2026-07-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 case_study_id: CS10
 slug: avator-electric-kicker-trolling
 boat_type: "18-foot aluminum walleye / muskie boat"

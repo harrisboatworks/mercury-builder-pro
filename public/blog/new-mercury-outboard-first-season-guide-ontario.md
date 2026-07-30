@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-28
+**Last updated:** 2026-07-28  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -190,3 +190,4 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+
