@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "bf4a06aff9f0cd5900ab",
+  "sourceVersion": "be06811f7a0f2470df32",
   "count": 201,
   "articles": [
     {
@@ -691,34 +691,32 @@
     {
       "slug": "mercury-propeller-selection-guide",
       "title": "Mercury Propeller Selection Guide 2026",
-      "description": "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.",
+      "description": "Mercury propeller selection guide, hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.",
       "category": "Technical Reference",
       "publishDate": "2026-05-27",
       "keywords": [
-        "mercury propeller",
-        "mercury prop selection",
-        "wot rpm test",
-        "command thrust prop",
-        "aluminum vs stainless prop",
-        "3 blade vs 4 blade",
-        "ontario mercury dealer"
+        "mercury propeller selection",
+        "mercury prop pitch chart",
+        "3 blade vs 4 blade prop",
+        "command thrust propeller",
+        "WOT RPM test"
       ],
       "faqs": [
         {
           "q": "How do I choose the right Mercury propeller for my boat?",
-          "a": "Start with four variables: your gearcase, your hull type, normal operating load, and what you want the boat to do. Most aluminum fishing boats run a 3-blade aluminum prop on a standard gearcase. Pontoons with Command Thrust run a 4-blade prop. Final confirmation comes from a wide-open-throttle RPM test under normal lo…"
+          "a": "Start with four variables: gearcase, hull type, normal load, and what you want the boat to do. Most aluminum fishing boats run a 3-blade aluminum prop on a standard gearcase. Command Thrust pontoons run larger props from the 150-class catalogue, usually a 4-blade stainless like the Revolution 4. Confirm with a wide-op…"
         },
         {
           "q": "What is the rule for pitch and RPM on a Mercury outboard?",
-          "a": "Each inch of pitch change is worth roughly 150 to 200 RPM at wide-open throttle. If the motor is over-revving at WOT, increase pitch by 1 inch. If it is under-revving, decrease pitch by 1 inch. The goal is to land in the middle of the manufacturer's published WOT RPM range for your motor family."
+          "a": "Each inch of pitch is worth roughly 150 to 200 RPM at wide-open throttle. Over-revving past spec means add pitch. Cannot reach spec means drop pitch. Note that some prop families only come in 2-inch increments, so a 1-inch step is not always available in the family you are running."
+        },
+        {
+          "q": "Should my WOT RPM be in the middle or at the top of the range?",
+          "a": "Near the top. Mercury's guidance is that engine RPM at wide-open throttle under normal load should land near the top of the published range. That leaves headroom so extra passengers and gear do not drag the motor below spec into lugging territory."
         },
         {
           "q": "Should I use a 3-blade or 4-blade Mercury prop?",
-          "a": "3-blade props give the best top-end speed and the least drag at cruise. They are the default for most aluminum fishing boats and general-purpose applications. 4-blade props improve hole-shot, low-speed control, and turning grip at the cost of 1 to 3 MPH top-end. 4-blade is the default for pontoons (especially Command…"
-        },
-        {
-          "q": "Should I choose aluminum or stainless steel for my Mercury prop?",
-          "a": "Aluminum is the default for most fishing boats, pontoons under 150 HP, and any application where strike damage from rocks or deadheads is a real possibility. Aluminum is less expensive and field-repairable. Stainless is the default for higher-HP applications and performance hulls. Stainless holds shape under load and…"
+          "a": "3-blade gives the best top end and least drag, and it is the default for most fishing boats. 4-blade gives better hole-shot, low-speed control, and grip, at a cost of 1 to 3 mph up top, and it is the default for pontoons and tow boats. Blade count follows the job, not the other way around: Mercury's Enertia ECO is a 3…"
         }
       ]
     },
