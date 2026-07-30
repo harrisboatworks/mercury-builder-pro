@@ -24937,6 +24937,10 @@ This takes less time than guessing from “regular versus premium,” and it giv
 
 ## What We See at HBW
 
+![Harris Boat Works fuel dock on Rice Lake in Gores Landing, Ontario](/lovable-uploads/lens-cove/inline-lc014-hbw-ethanol-free-fuel-dock-2026-07.webp)
+
+*HBW's Gores Landing fuel dock, where boaters can buy ethanol-free 89-octane marine gas by road or water during the marina season.*
+
 Around Rice Lake and the Kawarthas, the question usually isn't “what does AKI mean?” It's “which pump can I use without hurting the motor?” Start with the cowl label and the serial-number manual, then read the fuel label at the pump. That's the whole decision.
 
 During the marina season, HBW sells ethanol-free 89-octane gasoline at our Gores Landing fuel dock. Most people simply call it **marine gas**, and boaters can buy it from us by water or by road. For a Mercury whose manual permits 89 octane, fresh ethanol-free 89 is the best local fuel choice we can offer.
