@@ -162,7 +162,7 @@ Send the serial number and the exact fuel label with your service request. We'll
 ## Sources
 
 - Harris Boat Works fuel-dock product specification: ethanol-free, 89 octane
-- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
+- [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy/fuel-basics)
 - [Mercury Marine, How to Stabilize the Fuel in Your Boat](https://www.mercurymarine.com/ca/en/lifestyle/dockline/quick-tip--how-to-stabilize-the-fuel-in-your-boat)
 - [Mercury Marine, 350 to 425 hp 5.7L V10 Verado specifications](https://www.mercurymarine.com/ca/en/engines/outboard/verado/verado-350-400hp)
 - [Government of Ontario, Cleaner Transportation Fuels](https://www.ontario.ca/page/cleaner-transportation-fuels)

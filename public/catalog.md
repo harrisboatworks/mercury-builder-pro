@@ -128,6 +128,7 @@ See any motor twin for an example body.
 
 Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide.md)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md)
 - [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup.md)
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md)
@@ -247,7 +248,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Docking a Boat in Wind: Rice Lake Guide](https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md)
 - [Pontoon HP Sizing Ontario Guide](https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md)
 - [Mercury Boat Battery Guide Ontario](https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md)
-- [Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario](https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md)
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md)
 - [Mercury Outboard Prices Ontario (2026): CAD Guide](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md)
 - [Mercury Controls Rigging Guide 2026](https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md)
 - [Mercury 40 vs 60 HP Ontario Guide](https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md)
@@ -401,4 +402,3 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md)
 - [Outboard motor service at winterization sa Ontario (Tagalog Guide) [tl]](https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog.md)
 - [Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein [hi]](https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md)
-
