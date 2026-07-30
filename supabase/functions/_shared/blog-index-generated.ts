@@ -3892,8 +3892,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump."
       },
       {
-        "q": "Does higher octane give a Mercury more power?",
-        "a": "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition."
+        "q": "Does Harris Boat Works sell ethanol-free marine gas?",
+        "a": "Yes. During the marina season, HBW sells ethanol-free 89-octane gasoline at our Gores Landing fuel dock, commonly called marine gas. That doesn’t mean every mid-grade or 89-octane product is ethanol-free, so read the label at any other pump."
       }
     ]
   },
