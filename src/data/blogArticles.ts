@@ -25738,7 +25738,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## The Command Thrust Question
 
-Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 2.07:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
+Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 1.83:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
 
 The CT upgrade costs about $300 to $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
 
