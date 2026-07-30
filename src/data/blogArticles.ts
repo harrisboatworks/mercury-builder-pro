@@ -39013,7 +39013,7 @@ Tell us how your family actually spends a day on the water, who is aboard, wheth
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-29',
-    dateModified: '2026-06-29',
+    dateModified: '2026-07-29',
     publishDate: '2026-06-29',
     category: 'Local Guide',
     readTime: '8 min read',
@@ -39632,7 +39632,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
     imageAlt: 'Freshwater photos comparing a Mercury 90 HP Command Thrust pontoon setup with a Mercury 115 HP FourStroke on a family pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-07-06',
-    dateModified: '2026-07-06',
+    dateModified: '2026-07-29',
     category: 'Repower',
     readTime: '~9 min read',
     keywords: ['Mercury 90', 'Mercury 115', 'Ontario boating', 'repower', 'aluminum boat', 'Mercury FourStroke', 'Outboard Comparison'],
@@ -39650,7 +39650,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
       { question: "Do both engines come with Command Thrust?", answer: "Yes. Both the Mercury 90 hp and 115 hp FourStroke are available with the Command Thrust gearcase option. If you often carry heavy loads, pull watersports gear, or operate at higher elevations, the CT gearcase is worth considering on either engine." },
       { question: "Should I repower with a 90 or 115 if I plan to sell the boat in a few years?", answer: "For most 17-to-19-foot aluminum boats common in Ontario, a 115 hp outboard generally retains better resale value and appeals to a wider range of buyers. If the price difference fits your budget now, the 115 often pays off in quicker sales and higher offers down the road." },
     ],
-    content: `> **Quick answer:** Choose the highest horsepower your boat\'s capacity plate allows only when your normal load and use justify it. A Mercury 90 can suit a lighter 17- to 19-ft aluminum boat, while a 115 gives more reserve for passengers and gear. Match the exact model, gearcase, shaft length, rigging, and propeller to the hull before ordering.
+    content: `> **Quick answer:** Choose the highest horsepower your boat's capacity plate allows only when your normal load and use justify it. A Mercury 90 can suit a lighter 17- to 19-ft aluminum boat, while a 115 gives more reserve for passengers and gear. Match the exact model, gearcase, shaft length, rigging, and propeller to the hull before ordering.
 
 Choosing between a Mercury 90 hp and 115 hp FourStroke for your Ontario boat often comes down to a few hundred pounds of extra load capacity and about $1,500 to $2,500 in upfront cost. Both share the same 2.1-litre block and weigh nearly the same, but the 115 delivers noticeably more mid-range torque and top-end punch. For most 17-to-19-foot aluminum fishing and cottage boats on Rice Lake or Kawartha waterways, the 115 is the safer long-term bet, yet the 90 can be perfectly adequate if you seldom run heavy. Understanding the real-world differences in performance, fuel economy, and resale value will help you make the right choice for your boat and how you use it.
 
