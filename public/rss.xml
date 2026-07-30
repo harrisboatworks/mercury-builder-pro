@@ -5,13 +5,21 @@
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Mon, 27 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
       <title>Harris Boat Works Blog</title>
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
+    <item>
+      <title><![CDATA[Mercury Outboard Repair Guide: Troubleshooting and Maintenance]]></title>
+      <link>https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide</guid>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Troubleshoot Mercury outboard starting, overheating, alarm and power-loss problems, with service intervals and honest DIY-or-dealer guidance.]]></description>
+      <category><![CDATA[Troubleshooting]]></category>
+    </item>
     <item>
       <title><![CDATA[Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)]]></title>
       <link>https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026</link>
@@ -403,14 +411,6 @@
       <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.]]></description>
       <category><![CDATA[Technical Reference]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Repower Eligibility: 5-Check Guide]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide</guid>
-      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.]]></description>
-      <category><![CDATA[Repower Decision]]></category>
     </item>
   </channel>
 </rss>

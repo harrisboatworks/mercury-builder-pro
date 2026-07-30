@@ -249,6 +249,16 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp</image:loc>
+      <image:title><![CDATA[Mercury Outboard Repair Guide: Troubleshooting and Maintenance]]></image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -1479,7 +1489,7 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp</image:loc>
-      <image:title><![CDATA[Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario]]></image:title>
+      <image:title><![CDATA[Mercury Outboard Octane and Ethanol Guide for Ontario]]></image:title>
     </image:image>
   </url>
   <url>

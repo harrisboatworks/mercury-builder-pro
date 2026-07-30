@@ -1233,14 +1233,22 @@ const blogTwinSummaries = [];
 for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
   writePublicMd(path, blogMarkdown(article, blogClusterData));
-  blogTwinSummaries.push({ path, title: article.title });
+  blogTwinSummaries.push({
+    path,
+    title: article.title,
+    isDiagnostic: isDiagnosticBlogArticle(article),
+  });
 }
 
 for (const group of localizedBlogGroups) {
   for (const article of group.articles) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
     writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
-    blogTwinSummaries.push({ path, title: `${article.title} [${group.language}]` });
+    blogTwinSummaries.push({
+      path,
+      title: `${article.title} [${group.language}]`,
+      isDiagnostic: isDiagnosticBlogArticle(article),
+    });
   }
 }
 // Note: previously a curated BLOG_TWIN_SLUGS sanity check ran here. Removed
@@ -1285,7 +1293,8 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', 'is_illustrative: true', 'Illustrative planning scenario:', '## Planning takeaway', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
-if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+const commercialBlogSample = blogTwinSummaries.find(twin => !twin.isDiagnostic);
+if (commercialBlogSample) verifyPublicMd(commercialBlogSample.path, 'sample commercial blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
 for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const relPath = `/blog/${article.slug}.md`;
   const twinText = readFileSync(join(PUBLIC, relPath), 'utf8');

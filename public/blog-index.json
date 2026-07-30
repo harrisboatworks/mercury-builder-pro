@@ -1,8 +1,40 @@
 {
   "version": 1,
-  "sourceVersion": "9cfed5dc19e38249da1e",
-  "count": 201,
+  "sourceVersion": "4a4f8fbf90c4b39701ad",
+  "count": 202,
   "articles": [
+    {
+      "slug": "mercury-outboard-repair-guide",
+      "title": "Mercury Outboard Repair Guide: Troubleshooting and Maintenance",
+      "description": "Troubleshoot Mercury outboard starting, overheating, alarm and power-loss problems, with service intervals and honest DIY-or-dealer guidance.",
+      "category": "Troubleshooting",
+      "publishDate": "2026-07-30",
+      "keywords": [
+        "Mercury outboard repair",
+        "Mercury outboard motor repair",
+        "Mercury outboard troubleshooting",
+        "Mercury outboard maintenance",
+        "Mercury outboard service Ontario"
+      ],
+      "faqs": [
+        {
+          "q": "What should I check first when my Mercury outboard will not start?",
+          "a": "Confirm the control is firmly in neutral, the emergency-stop lanyard is clipped in, the battery switch and connections are sound, and fuel can reach the engine. Note whether the starter does nothing, clicks, cranks slowly or cranks normally, because each points to a different diagnostic path."
+        },
+        {
+          "q": "How often should a Mercury outboard be serviced?",
+          "a": "For many recreational Mercury FourStroke engines, annual or every 100 hours is the main service interval, whichever comes first. Some items are due around 300 hours or three years. The schedule in the serial-specific owner manual overrides any general rule."
+        },
+        {
+          "q": "Can I maintain my Mercury outboard myself without voiding the warranty?",
+          "a": "Mercury allows owner maintenance, but you must follow the correct manual, use suitable parts and fluids, and keep records. Damage caused by incorrect service is not covered. Warranty claims are handled through an authorized Mercury dealer."
+        },
+        {
+          "q": "What does a beeping Mercury outboard mean?",
+          "a": "It means the engine or connected system has detected a condition that needs attention, but there is no single universal beep decoder for every model and year. Record the exact tone, display icon or message, rpm and operating conditions, then consult the correct manual or arrange diagnostics."
+        }
+      ]
+    },
     {
       "slug": "mercury-outboard-oil-capacity-chart",
       "title": "Mercury Outboard Oil Capacity Chart: Model and Year Lookup",
