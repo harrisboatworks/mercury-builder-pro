@@ -30,11 +30,11 @@ language: en-CA
 
 # Five Boat Problems That Get Expensive When You Keep Running
 
-> **Quick answer:** Stop treating a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
+> **Quick answer:** Don't treat a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
 
-The most avoidable service bills rarely begin with a dramatic failure. They begin with a small change that gets dismissed: a warning that clears after a restart, a new vibration, a starter that turns more slowly, or an engine that no longer reaches its usual speed.
+The most avoidable service bills don't usually begin with a dramatic failure. They begin with a small change that gets dismissed: a warning that clears after a restart, a new vibration, a starter that turns more slowly, or an engine that no longer reaches its usual speed.
 
-This guide is not a diagnosis chart. Several systems can produce similar symptoms, and generic beep-code advice can be dangerously wrong. It is a symptom-to-action guide: what to notice, how to protect people and equipment, and what information helps a technician find the cause.
+This isn't a diagnosis chart. Several systems can produce similar symptoms, and generic beep-code advice can be dangerously wrong. It's a symptom-to-action guide: what to notice, how to protect people and equipment, and what information helps a technician find the cause.
 
 ![Five Mercury outboard symptoms and the safest next action](/lovable-uploads/lens-cove/inline-lc007-symptom-to-action.svg)
 
@@ -98,7 +98,7 @@ Avoid opening pressurized fuel components or improvising an on-water fuel transf
 
 ## What to Send With a Service Request
 
-Good intake information shortens the path to a sound diagnosis. Include:
+Good intake information gets us to a sound diagnosis faster. Include:
 
 1. Engine serial number and model, not just horsepower.
 2. Engine hours if available.
@@ -110,6 +110,12 @@ Good intake information shortens the path to a sound diagnosis. Include:
 8. What you have already checked or replaced.
 
 Avoid a shopping list of parts based on forum guesses. “Replace the fuel pump” gives a technician less useful information than “loses power above 3,800 rpm with either tank after refuelling Tuesday.”
+
+## What We See at HBW
+
+Our 2025 records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
+
+Around Rice Lake and the Kawarthas, getting those details before the boat reaches Gores Landing can save a lot of backtracking. A clear symptom history helps us test the right system first instead of replacing parts on a guess.
 
 ## Maintenance Helps, but Symptoms Outrank the Calendar
 
@@ -142,22 +148,13 @@ The work becomes model-specific quickly. That is why the serial number belongs i
 
 ## Get the Cause, Not a Guess
 
-Harris Boat Works diagnoses Mercury outboards using the engine identity, symptom history and appropriate tests before recommending a repair. No universal chart can replace that process.
+We diagnose Mercury outboards using the engine identity, symptom history and appropriate tests before recommending a repair. We'd rather find the cause than sell you a guess.
 
 [Start a Mercury service request](https://hbw.wiki/service)
 
-Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
-
-## Related Guides
-
-- [Mercury SmartCraft alarms and Guardian System guide](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
-- [Mercury outboard battery and charging guide](/blog/mercury-boat-battery-guide-ontario)
-- [Mercury outboard impeller and cooling guide](/blog/mercury-impeller-replacement-when-they-fail)
-- [Mercury maintenance schedule explained](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury fuel: octane and ethanol in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario)
-
 ## Sources
 
+- Harris Boat Works 2025 service records: 507 customer-paid service jobs
 - [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
 - [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)
@@ -167,11 +164,11 @@ Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a
 
 ### Can I keep running if a Mercury warning stops after a restart?
 
-Do not use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating.
+Don’t use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating.
 
 ### Does a strong telltale mean the engine cannot be overheating?
 
-No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual.
+No. The telltale is one observation, not a complete temperature diagnosis. It can’t rule out an overheating problem. Treat a temperature warning according to the exact engine manual.
 
 ### Can a slightly damaged propeller wait until winter?
 
@@ -191,11 +188,11 @@ With the boat stationary and safe, photograph the display message, engine serial
 
 ## Related guides
 
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
 - [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
 
 ## Next steps
 

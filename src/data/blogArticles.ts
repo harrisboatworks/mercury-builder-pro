@@ -24826,22 +24826,22 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"],
     relatedSlugs: ["mercury-outboard-fuel-efficiency-guide","mercury-outboard-wont-start-troubleshooting","spring-outboard-commissioning-checklist","mercury-maintenance-intervals-20-100-300-rule"],
     faqs: [
-      { question: "What octane does my Mercury outboard require?", answer: "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury." },
+      { question: "What octane does my Mercury outboard require?", answer: "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but don’t generalize that to every Mercury." },
       { question: "Can a current Mercury run E10?", answer: "Yes. Mercury says current gasoline engines are designed for fuel containing no more than 10 percent ethanol. E15 and E85 exceed that limit." },
       { question: "Is premium gasoline ethanol-free in Ontario?", answer: "Not automatically. Premium is an octane grade. Read the ethanol label for the actual product at that pump." },
-      { question: "Does higher octane give a Mercury more power?", answer: "Not simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
-      { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It does not recombine separated fuel or remove contamination." },
-      { question: "How can I confirm a fuel problem for service?", answer: "Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if possible." },
+      { question: "Does higher octane give a Mercury more power?", answer: "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
+      { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer’s preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination." },
+      { question: "How can I confirm a fuel problem for service?", answer: "Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if you can." },
     ],
     content: `# Octane Is Not an Ethanol Label: Mercury Outboard Fuel in Ontario
 
 *Last reviewed: July 30, 2026*
 
-> **Quick answer:** Octane and ethanol answer different questions. Octane measures resistance to engine knock; the ethanol label states the alcohol blend. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Premium does not automatically mean ethanol-free, and Ontario's renewable-fuel rules do not identify one grade at one pump.
+> **Quick answer:** Octane and ethanol answer different questions. Octane measures resistance to engine knock; the ethanol label states the alcohol blend. Use at least the octane required by your exact Mercury owner's manual and no more than 10 percent ethanol. Premium doesn't automatically mean ethanol-free, and Ontario's renewable-fuel rules don't identify one grade at one pump.
 
 At an Ontario fuel pump, “premium,” “87” and “E10” can appear close together. That makes them feel like one decision. They are not.
 
-The safe choice requires two independent checks:
+Here's the safe choice. Make two independent checks:
 
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
@@ -24850,9 +24850,9 @@ The safe choice requires two independent checks:
 
 ## Octane and Ethanol Describe Different Properties
 
-Octane is an anti-knock rating. In Canada, the number displayed at the pump is normally the Anti-Knock Index, shown as (R+M)/2. An engine designed for 87 does not gain a guaranteed power or cleanliness benefit merely because 91 is more expensive.
+Octane is an anti-knock rating. In Canada, the number displayed at the pump is normally the Anti-Knock Index, shown as (R+M)/2. An engine designed for 87 doesn't gain a guaranteed power or cleanliness benefit merely because 91 is more expensive.
 
-Ethanol content is the percentage of alcohol blended into the gasoline. E10 can contain up to 10 percent ethanol. It does not mean 10 octane points, and the octane number does not reveal the ethanol percentage.
+Ethanol content is the percentage of alcohol blended into the gasoline. E10 can contain up to 10 percent ethanol. It doesn't mean 10 octane points, and the octane number doesn't reveal the ethanol percentage.
 
 | Pump information | What it tells you | What it does not tell you |
 |---|---|---|
@@ -24865,7 +24865,7 @@ Read the complete pump label, then compare both answers with the exact engine ma
 
 ## What Octane Does a Mercury Outboard Need?
 
-The owner's manual and cowl label for the exact engine are the authority. Do not rely on a broad rule such as “all Verados need mid-grade.”
+The owner's manual and cowl label for the exact engine are the authority. Don't rely on a broad rule such as “all Verados need mid-grade.”
 
 A useful current example is Mercury's naturally aspirated 5.7-litre V10 Verado family. Mercury's published specifications for the 350, 400 and 425 hp models list **87 octane minimum (R+M)/2**. That directly disproves the blanket advice that every Verado requires 89.
 
@@ -24883,7 +24883,7 @@ For an older Mercury, a portable, or an engine with an uncertain fuel-system his
 
 Premium names an octane grade. Ethanol-free names a blend. A retailer may sell premium that contains ethanol, premium that does not, or different blends by location and season.
 
-The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser does not clearly identify ethanol content, ask the retailer. Do not infer it from the colour of the nozzle, price, brand or octane number.
+The only reliable pump-level evidence is the actual label and retailer information for that product. If the dispenser doesn't clearly identify ethanol content, ask the retailer. Don't infer it from the colour of the nozzle, price, brand or octane number.
 
 This also means regular is not automatically wrong for a boat. If 87 meets the engine's minimum and the product is E10 or lower, it can meet Mercury's published fuel specifications for a current engine.
 
@@ -24891,7 +24891,7 @@ This also means regular is not automatically wrong for a boat. If 87 meets the e
 
 Ontario's cleaner-transportation-fuels regulation sets renewable-content requirements across a fuel supplier's gasoline pool. Pool-wide compliance can be achieved through a mix of products and credits.
 
-That policy does not let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
+That policy doesn't let a boater calculate the ethanol percentage in a specific pump grade. A province-wide average, a supplier obligation and the label on one dispenser are different kinds of information.
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
 
@@ -24907,7 +24907,7 @@ Mercury's owner guidance emphasizes:
 - avoid storing untreated fuel beyond the guidance for the system and product
 - follow the exact manual when preparing the engine for storage
 
-There is no responsible universal countdown to phase separation. Temperature, water exposure, tank design, fuel composition and storage conditions all matter. Likewise, topping old fuel with fresh fuel does not remove water or reverse separation.
+There's no responsible universal countdown to phase separation. Temperature, water exposure, tank design, fuel composition and storage conditions all matter. Likewise, topping old fuel with fresh fuel doesn't remove water or reverse separation.
 
 If contamination is suspected, stop experimenting. Safe disposal and diagnosis are better than repeatedly sending questionable fuel through injectors or carburetors.
 
@@ -24922,7 +24922,13 @@ Use this sequence every time the fuel source changes:
 5. **Plan for storage.** Follow Mercury's specified stabilizer and storage procedure if the fuel will sit.
 6. **Keep the receipt.** If a problem begins after refuelling, the date, grade and location help the diagnosis.
 
-This takes less time than deciding based on “regular versus premium,” and it produces a much better answer.
+This takes less time than guessing from “regular versus premium,” and it gives you a much better answer.
+
+## What We See at HBW
+
+Around Rice Lake and the Kawarthas, the question usually isn't “what does AKI mean?” It's “which pump can I use without hurting the motor?” Start with the cowl label and the serial-number manual, then read the fuel label at the pump. That's the whole decision.
+
+If the labels don't give you a clear answer, take a photo of the pump and include the engine serial number in a service request. We'd rather identify the exact specification than have you pay for premium that doesn't solve the real question.
 
 ## Common Fuel Mistakes
 
@@ -24942,7 +24948,7 @@ This takes less time than deciding based on “regular versus premium,” and it
 
 ### What octane does my Mercury outboard require?
 
-Use the cowl label and the owner's manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury.
+Use the cowl label and the owner's manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but don't generalize that to every Mercury.
 
 ### Can a current Mercury run E10?
 
@@ -24954,30 +24960,21 @@ Not automatically. Premium is an octane grade. Read the ethanol label for the ac
 
 ### Does higher octane give a Mercury more power?
 
-Not simply because the number is higher. Use fuel that meets the engine's minimum. Performance also depends on engine calibration, load, propeller, rigging and condition.
+It doesn't simply because the number is higher. Use fuel that meets the engine's minimum. Performance also depends on engine calibration, load, propeller, rigging and condition.
 
 ### Can fuel stabilizer fix phase-separated fuel?
 
-No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It does not recombine separated fuel or remove contamination.
+No. Stabilizer's preventive when used with suitable fresh fuel according to its label and the storage procedure. It can't recombine separated fuel or remove contamination.
 
 ### How can I confirm a fuel problem for service?
 
-Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if possible.
+Record the engine serial number, fuel grade, ethanol label, purchase date and location, amount added, prior fuel age and the exact symptoms. Keep the receipt if you can.
 
 ## Unsure What Your Engine Requires?
 
-Send the serial number and the exact fuel label with your service request. Harris Boat Works can identify the Mercury application and start with the right specification instead of a pump-grade guess.
+Send the serial number and the exact fuel label with your service request. We'll identify the Mercury application and start with the right specification instead of a pump-grade guess.
 
 [Start a Mercury service request](https://hbw.wiki/service)
-
-Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
-
-## Related Guides
-
-- [Mercury outboard fuel-efficiency guide](/blog/mercury-outboard-fuel-efficiency-guide)
-- [Mercury outboard will not start: dockside guide](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury maintenance schedule explained](/blog/mercury-maintenance-intervals-20-100-300-rule)
 
 ## Sources
 
@@ -31600,27 +31597,27 @@ Phone: 905-342-2153
     relatedSlugs: ["boat-trailering-mistakes-ontario","trailer-boat-toronto-to-rice-lake-guide","spring-outboard-commissioning-checklist","rice-lake-boat-launch-guide"],
     faqs: [
       { question: "Should boat-trailer tires use the pressure on the tow vehicle door?", answer: "No. Use the specification for the installed trailer tire together with the trailer manufacturer’s instructions. Check it cold, before road heat changes the reading." },
-      { question: "Should safety chains be crossed?", answer: "Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road." },
-      { question: "How tight should trailer wheel nuts be?", answer: "Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value." },
+      { question: "Should safety chains be crossed?", answer: "Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but shouldn’t drag on the road." },
+      { question: "How tight should trailer wheel nuts be?", answer: "Use the torque and recheck procedure published for your trailer, wheel and stud combination. There isn’t one responsible universal value." },
       { question: "Does every trailer need the same bearing service?", answer: "No. Grease-packed, oil-bath, sealed and other hub systems have different procedures. Identify the components and follow their manuals." },
       { question: "Is a transom saver mandatory?", answer: "Support requirements vary by boat, outboard and trailer. Follow the instructions for the exact rig instead of copying a universal position from another boat." },
-      { question: "Can I tow if one signal light is out?", answer: "Do not start the trip with a failed required light. Repair the lamp, wiring, connector or ground first." },
+      { question: "Can I tow if one signal light is out?", answer: "Don’t start the trip with a failed required light. Repair the lamp, wiring, connector or ground first." },
     ],
     content: `# The Five-Minute Boat-Trailer Check Before Every Trip
 
 *Last reviewed: July 30, 2026*
 
-> **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, fix it before the trailer moves.
+> **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, don't move the trailer until it's fixed.
 
-A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap does not need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
+A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
 
-The solution is not a complicated inspection before every outing. It is a consistent five-minute check, followed by scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
+You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 
 ## The Five-Minute Check
 
-Walk around the trailer in the same order every time. Consistency is what keeps an easy-to-miss item from being skipped.
+Walk around the trailer in the same order every time. That's what keeps an easy-to-miss item from being skipped.
 
 ### 1. Coupler, ball and jack
 
@@ -31671,11 +31668,11 @@ Stand behind the rig and confirm the boat sits squarely, gear inside the boat is
 | Wheels | Hardware present, no movement signs | Torque verification due | Missing hardware, rust trails or visible looseness |
 | Lights | All required functions work | Dirty connector | Brake or signal light fails |
 
-This is a departure check, not permission to postpone maintenance.
+This is a departure check. It isn't permission to postpone maintenance.
 
 ## What Five Minutes Cannot Replace
 
-Trailer systems are not all built the same. Some hubs are serviceable, some use sealed or oil-bath systems, and brake designs and breakaway systems differ. The correct maintenance work and interval must come from the component maker and the trailer manual.
+Trailer systems aren't all built the same. Some hubs are serviceable, some use sealed or oil-bath systems, and brake designs and breakaway systems differ. The correct maintenance work and interval must come from the component maker and the trailer manual.
 
 | System | Scheduled work to confirm |
 |---|---|
@@ -31717,6 +31714,12 @@ Keep the following in the tow vehicle:
 
 The best checklist is the one you can complete correctly without improvising at the shoulder.
 
+## What We See at HBW
+
+A Rice Lake trip can include highway speed, broken county-road pavement, a cottage lane and a steep launch ramp in the same hour. That's why the walk-around belongs at home, not in the launch queue at Gores Landing.
+
+The trouble worth catching early is usually ordinary: one loose connection, one soft tire, one strap that looked fine last time. A fixed routine catches those small misses before road speed turns them into a much bigger problem.
+
 ## Frequently Asked Questions
 
 ### Should boat-trailer tires use the pressure on the tow vehicle door?
@@ -31725,11 +31728,11 @@ No. Use the specification for the installed trailer tire together with the trail
 
 ### Should safety chains be crossed?
 
-Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road.
+Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but shouldn't drag on the road.
 
 ### How tight should trailer wheel nuts be?
 
-Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value.
+Use the torque and recheck procedure published for your trailer, wheel and stud combination. There isn't one responsible universal value.
 
 ### Does every trailer need the same bearing service?
 
@@ -31741,22 +31744,13 @@ Support requirements vary by boat, outboard and trailer. Follow the instructions
 
 ### Can I tow if one signal light is out?
 
-Do not start the trip with a failed required light. Repair the lamp, wiring, connector or ground first.
+Don't start the trip with a failed required light. Repair the lamp, wiring, connector or ground first.
 
 ## Need a Second Set of Eyes?
 
-If a trailer concern appears while you are preparing the boat for Mercury service, include it in the service request so the team can confirm what is within current shop scope and route you appropriately. Do not tow an unsafe trailer to get it inspected.
+If a trailer concern appears while you're preparing the boat for Mercury service, add it to the service request. We'll confirm what's within current shop scope and point you the right way. If the trailer isn't safe to tow, don't bring it down the road for an inspection.
 
 [Start a service request](https://hbw.wiki/service)
-
-Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
-
-## Related Guides
-
-- [Boat trailering mistakes Ontario boaters can avoid](/blog/boat-trailering-mistakes-ontario)
-- [Trailer boating from Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
-- [Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist)
-- [Rice Lake boat launch guide](/blog/rice-lake-boat-launch-guide)
 
 ## Sources
 
@@ -33966,8 +33960,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ["Mercury service","outboard warning signs","boat repair Ontario","Mercury alarm","outboard vibration"],
     relatedSlugs: ["mercury-smartcraft-alarm-codes-encyclopedia","mercury-boat-battery-guide-ontario","mercury-impeller-replacement-when-they-fail","mercury-maintenance-intervals-20-100-300-rule","ethanol-octane-mercury-outboard-fuel-guide-ontario"],
     faqs: [
-      { question: "Can I keep running if a Mercury warning stops after a restart?", answer: "Do not use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating." },
-      { question: "Does a strong telltale mean the engine cannot be overheating?", answer: "No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual." },
+      { question: "Can I keep running if a Mercury warning stops after a restart?", answer: "Don’t use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating." },
+      { question: "Does a strong telltale mean the engine cannot be overheating?", answer: "No. The telltale is one observation, not a complete temperature diagnosis. It can’t rule out an overheating problem. Treat a temperature warning according to the exact engine manual." },
       { question: "Can a slightly damaged propeller wait until winter?", answer: "A new vibration or impact deserves prompt inspection. Visible damage may not show every affected component, and continued operation can add wear." },
       { question: "Is 12.6 volts enough to prove a battery is healthy?", answer: "No. Resting voltage does not prove cranking capacity. A questionable, fully charged battery should be load-tested, and the connections and charging system also matter." },
       { question: "How often should my Mercury be serviced?", answer: "Use the serial-number owner’s manual. Many current schedules include 100-hour or annual work, but the specific items and longer-interval tasks vary by model." },
@@ -33977,11 +33971,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: July 30, 2026*
 
-> **Quick answer:** Stop treating a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
+> **Quick answer:** Don't treat a new warning, cooling-flow change, vibration, slow crank or power loss as something to “run through.” Reduce load, move to a safe place, follow the serial-number owner's manual and record exactly what happened. The first fault may be limited. Continued operation can add heat, impact, low voltage or contaminated fuel to the repair.
 
-The most avoidable service bills rarely begin with a dramatic failure. They begin with a small change that gets dismissed: a warning that clears after a restart, a new vibration, a starter that turns more slowly, or an engine that no longer reaches its usual speed.
+The most avoidable service bills don't usually begin with a dramatic failure. They begin with a small change that gets dismissed: a warning that clears after a restart, a new vibration, a starter that turns more slowly, or an engine that no longer reaches its usual speed.
 
-This guide is not a diagnosis chart. Several systems can produce similar symptoms, and generic beep-code advice can be dangerously wrong. It is a symptom-to-action guide: what to notice, how to protect people and equipment, and what information helps a technician find the cause.
+This isn't a diagnosis chart. Several systems can produce similar symptoms, and generic beep-code advice can be dangerously wrong. It's a symptom-to-action guide: what to notice, how to protect people and equipment, and what information helps a technician find the cause.
 
 ![Five Mercury outboard symptoms and the safest next action](/lovable-uploads/lens-cove/inline-lc007-symptom-to-action.svg)
 
@@ -34045,7 +34039,7 @@ Avoid opening pressurized fuel components or improvising an on-water fuel transf
 
 ## What to Send With a Service Request
 
-Good intake information shortens the path to a sound diagnosis. Include:
+Good intake information gets us to a sound diagnosis faster. Include:
 
 1. Engine serial number and model, not just horsepower.
 2. Engine hours if available.
@@ -34057,6 +34051,12 @@ Good intake information shortens the path to a sound diagnosis. Include:
 8. What you have already checked or replaced.
 
 Avoid a shopping list of parts based on forum guesses. “Replace the fuel pump” gives a technician less useful information than “loses power above 3,800 rpm with either tank after refuelling Tuesday.”
+
+## What We See at HBW
+
+Our 2025 records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
+
+Around Rice Lake and the Kawarthas, getting those details before the boat reaches Gores Landing can save a lot of backtracking. A clear symptom history helps us test the right system first instead of replacing parts on a guess.
 
 ## Maintenance Helps, but Symptoms Outrank the Calendar
 
@@ -34091,11 +34091,11 @@ The work becomes model-specific quickly. That is why the serial number belongs i
 
 ### Can I keep running if a Mercury warning stops after a restart?
 
-Do not use a restart as proof the cause is gone. Record the warning and follow the owner's manual. If it returns, performance changes or the manual requires shutdown, stop operating.
+Don't use a restart as proof the cause is gone. Record the warning and follow the owner's manual. If it returns, performance changes or the manual requires shutdown, stop operating.
 
 ### Does a strong telltale mean the engine cannot be overheating?
 
-No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual.
+No. The telltale is one observation, not a complete temperature diagnosis. It can't rule out an overheating problem. Treat a temperature warning according to the exact engine manual.
 
 ### Can a slightly damaged propeller wait until winter?
 
@@ -34115,22 +34115,13 @@ With the boat stationary and safe, photograph the display message, engine serial
 
 ## Get the Cause, Not a Guess
 
-Harris Boat Works diagnoses Mercury outboards using the engine identity, symptom history and appropriate tests before recommending a repair. No universal chart can replace that process.
+We diagnose Mercury outboards using the engine identity, symptom history and appropriate tests before recommending a repair. We'd rather find the cause than sell you a guess.
 
 [Start a Mercury service request](https://hbw.wiki/service)
 
-Harris Boat Works is family-owned since 1947, a Mercury dealer since 1965, and a Mercury Premier Dealer in Gores Landing, Ontario.
-
-## Related Guides
-
-- [Mercury SmartCraft alarms and Guardian System guide](/blog/mercury-smartcraft-alarm-codes-encyclopedia)
-- [Mercury outboard battery and charging guide](/blog/mercury-boat-battery-guide-ontario)
-- [Mercury outboard impeller and cooling guide](/blog/mercury-impeller-replacement-when-they-fail)
-- [Mercury maintenance schedule explained](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury fuel: octane and ethanol in Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario)
-
 ## Sources
 
+- Harris Boat Works 2025 service records: 507 customer-paid service jobs
 - [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
 - [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)

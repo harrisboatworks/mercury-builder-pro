@@ -17,7 +17,7 @@ function pickIcon(question: string, answer: string) {
   const q = question.toLowerCase();
   const a = answer.toLowerCase();
   if (/905-?342-?2153/.test(answer)) return Phone;
-  if (/price|cost|financ|payment|\$|cad|deposit|rate|apr/.test(q)) return DollarSign;
+  if (/\$|\b(?:price|cost|finance|financing|payment|cad|deposit|rate|apr)\b/.test(q)) return DollarSign;
   if (/when|timing|season|how long|wait|time|schedule|spring|fall|winter|date/.test(q)) return Calendar;
   if (/service|maintenance|install|rig|repair|warranty|prop|setup|tune/.test(q) || /service|install|maintenance/.test(a)) return Settings;
   return HelpCircle;

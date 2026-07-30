@@ -3881,7 +3881,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What octane does my Mercury outboard require?",
-        "a": "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but do not generalize that to every Mercury."
+        "a": "Use the cowl label and the owner’s manual matched to the engine serial number. Many current models specify 87 minimum, including current V10 Verados, but don’t generalize that to every Mercury."
       },
       {
         "q": "Can a current Mercury run E10?",
@@ -3893,7 +3893,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does higher octane give a Mercury more power?",
-        "a": "Not simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition."
+        "a": "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition."
       }
     ]
   },
@@ -4810,11 +4810,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Should safety chains be crossed?",
-        "a": "Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but should not drag on the road."
+        "a": "Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but shouldn’t drag on the road."
       },
       {
         "q": "How tight should trailer wheel nuts be?",
-        "a": "Use the torque and recheck procedure published for your trailer, wheel and stud combination. There is no responsible universal value."
+        "a": "Use the torque and recheck procedure published for your trailer, wheel and stud combination. There isn’t one responsible universal value."
       },
       {
         "q": "Does every trailer need the same bearing service?",
@@ -5247,11 +5247,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can I keep running if a Mercury warning stops after a restart?",
-        "a": "Do not use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating."
+        "a": "Don’t use a restart as proof the cause is gone. Record the warning and follow the owner’s manual. If it returns, performance changes or the manual requires shutdown, stop operating."
       },
       {
         "q": "Does a strong telltale mean the engine cannot be overheating?",
-        "a": "No. The telltale is one observation, not a complete temperature diagnosis. Treat a temperature warning according to the exact engine manual."
+        "a": "No. The telltale is one observation, not a complete temperature diagnosis. It can’t rule out an overheating problem. Treat a temperature warning according to the exact engine manual."
       },
       {
         "q": "Can a slightly damaged propeller wait until winter?",
