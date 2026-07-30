@@ -2888,6 +2888,35 @@ function getResponsiveWebpSrcSet(image) {
     .join(', ');
 }
 
+// Home-page LCP preload. Previously lived in the shared index.html shell,
+// which meant every route (including blog articles) inherited a high-priority
+// preload for an image they never render. Now injected only on `path: '/'`.
+const HOME_LCP_PRELOAD =
+  '<link rel="preload" as="image" type="image/webp" ' +
+  'href="/assets/optimized/landing-step-pick-800w.webp" ' +
+  'imagesrcset="/assets/optimized/landing-step-pick-400w.webp 400w, /assets/optimized/landing-step-pick-800w.webp 800w, /assets/optimized/landing-step-pick-1600w.webp 1600w" ' +
+  'imagesizes="(min-width: 768px) 33vw, 100vw" fetchpriority="high" />';
+
+// Article hero preload. Mirrors BlogHeroPicture's candidate selection so the
+// preloaded resource is exactly the one hydration picks (no double fetch).
+const HERO_PRELOAD_SIZES = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
+
+function renderHeroPreloadTag(image) {
+  if (!image) return '';
+  const srcSet = getResponsiveWebpSrcSet(image);
+  if (!srcSet) {
+    return `<link rel="preload" as="image" href="${escapeHtml(image)}" fetchpriority="high" />`;
+  }
+  // Fallback href = the largest (full-width) WebP variant, matching the
+  // <source> the browser resolves from the same srcset/sizes pair.
+  const candidates = srcSet.split(', ');
+  const largest = candidates[candidates.length - 1].split(' ')[0];
+  return (
+    `<link rel="preload" as="image" type="image/webp" href="${escapeHtml(largest)}" ` +
+    `imagesrcset="${escapeHtml(srcSet)}" imagesizes="${escapeHtml(HERO_PRELOAD_SIZES)}" fetchpriority="high" />`
+  );
+}
+
 function renderHeroPictureHtml(image, alt, photoSlot) {
   if (!image) return '';
   const safeAlt = escapeHtml(alt || '');
@@ -3028,7 +3057,9 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   h1: article.title,
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
-  extraHead: blogHreflangTags(article.slug),
+  extraHead: [blogHreflangTags(article.slug), renderHeroPreloadTag(article.image)]
+    .filter(Boolean)
+    .join('\n  '),
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
     const bylineHtml = renderAuthorBylineHtml(article.author);
@@ -3091,6 +3122,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       }] : [])
     ],
     extraHead: (() => {
+      const hreflang = (() => {
       const enSlug = langCode === 'fr' ? FR_TO_EN_SLUG[article.slug]
                    : langCode === 'zh' ? ZH_TO_EN_SLUG[article.slug]
                    : langCode === 'ko' ? KO_TO_EN_SLUG[article.slug]
@@ -3106,6 +3138,8 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         ].join('\n  ');
       }
       return '';
+      })();
+      return [hreflang, renderHeroPreloadTag(article.image)].filter(Boolean).join('\n  ');
     })(),
     extraNoscript: () => {
       const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
@@ -4522,7 +4556,7 @@ const routes = [
     h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Premier Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()],
-    extraHead: HOME_HUB_ALTERNATE_TAGS,
+    extraHead: HOME_HUB_ALTERNATE_TAGS + '\n  ' + HOME_LCP_PRELOAD,
   },
   ...HUB_ROUTES,
   // ============================================================

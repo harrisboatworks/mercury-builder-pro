@@ -177,6 +177,14 @@ High winds or heavy rain and we'll cancel or reschedule your rental with no pena
 
 Yes, multi-day rentals can stay at your cottage dock for the duration, and you can use the boat outside normal rental hours. You're responsible for it while it's in your care, and it needs working lights for any after-dark running.
 
+## Related guides
+
+- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
+- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
+- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
+- [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
+- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

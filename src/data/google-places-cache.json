@@ -1,6 +1,6 @@
 {
   "ratingValue": "4.7",
-  "reviewCount": "321",
+  "reviewCount": "322",
   "location": {
     "latitude": 44.121684,
     "longitude": -78.241502
@@ -59,6 +59,6 @@
       "closes": "16:00"
     }
   ],
-  "fetchedAt": "2026-07-27T23:03:27.833Z",
+  "fetchedAt": "2026-07-30T01:53:20.749Z",
   "source": "google-places-edge"
 }

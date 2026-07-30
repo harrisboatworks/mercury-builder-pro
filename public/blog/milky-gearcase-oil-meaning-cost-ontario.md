@@ -163,6 +163,14 @@ Every 100 hours or annually, whichever comes first, which for most Ontario boats
 
 Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbw.wiki/service.
 
+## Related guides
+
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service

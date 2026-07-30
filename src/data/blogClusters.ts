@@ -92,6 +92,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-main-and-trolling-motor",
       "portable-outboard-mercury-guide-2-20hp",
       "tiller-vs-remote-steering-outboard-guide",
+      "mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat",
     ],
   },
   {
@@ -118,6 +119,7 @@ export const blogClusters: BlogCluster[] = [
       "mercury-command-thrust-guide-pontoon-boats",
       "mercury-command-thrust-pontoon-eligibility-2026",
       "legend-boats-mercury-power-package-guide-ontario",
+      "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull",
     ],
   },
   {
@@ -158,6 +160,10 @@ export const blogClusters: BlogCluster[] = [
       "walleye-opener-boat-prep",
       "late-season-boating-safety",
       "ontario-boating-season-tips",
+      "milky-gearcase-oil-meaning-cost-ontario",
+      "mercury-water-pump-replacement-cost-ontario",
+      "mercury-100-hour-service-cost-ontario",
+      "spring-commissioning-cost-ontario",
     ],
   },
   {
@@ -190,6 +196,7 @@ export const blogClusters: BlogCluster[] = [
       "how-to-read-mercury-outboard-serial-number",
       "boat-motor-trade-in-guide",
       "outboard-trade-in-value-ontario-hbw",
+      "bilge-pump-troubleshooting-guide",
     ],
   },
   {
@@ -205,6 +212,7 @@ export const blogClusters: BlogCluster[] = [
       "harris-boat-works-since-1947-rice-lake-institution",
       "first-marine-dealer-ucp-agentic-commerce",
       "boat-rentals-shared-access-booming-2026",
+      "mercury-outboard-reliability-2026",
     ],
   },
   {
@@ -285,6 +293,11 @@ export const blogClusters: BlogCluster[] = [
       "boat-trim-explained-rice-lake-ontario",
       "trent-severn-waterway-boating-guide-2026",
       "trent-severn-mercury-dealer-survival-guide-2026",
+      "renting-vs-owning-boat-ontario-math",
+      "group-boat-rentals-rice-lake",
+      "first-time-boat-rental-rice-lake-guide",
+      "rice-lake-boat-rental-guide-2026",
+      "boat-rental-licence-ontario-guide",
     ],
   },
 ];
@@ -488,6 +501,18 @@ export const blogClusterContexts: Record<string, string> = {
   "trent-severn-waterway-boating-guide-2026": "boating the Trent-Severn Waterway",
   "trent-severn-mercury-dealer-survival-guide-2026": "Trent-Severn Mercury survival guide",
   "mercury-outboard-lineup-ontario": "Mercury outboard lineup for Ontario (2027 model year)",
+  // Cluster coverage additions (2026-07-29)
+  "mercury-90-vs-115-hp-which-outboard-is-right-for-your-ontario-boat": "choosing between a Mercury 90 and 115",
+  "mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull": "straight talk on Command Thrust gearcases",
+  "milky-gearcase-oil-meaning-cost-ontario": "what milky gearcase oil means and costs",
+  "mercury-water-pump-replacement-cost-ontario": "water pump replacement timing and cost",
+  "mercury-100-hour-service-cost-ontario": "what the 100-hour service covers",
+  "spring-commissioning-cost-ontario": "spring commissioning costs in Ontario",
+  "bilge-pump-troubleshooting-guide": "diagnosing a bilge pump that won't run",
+  "mercury-outboard-reliability-2026": "how Mercury reliability holds up in 2026",
+  "renting-vs-owning-boat-ontario-math": "the rent vs own math for Ontario boaters",
+  "group-boat-rentals-rice-lake": "renting for a group on Rice Lake",
+  "boat-rental-licence-ontario-guide": "licence rules for renting a boat in Ontario",
 };
 
 // Reverse lookup: slug -> cluster
@@ -511,6 +536,41 @@ export function getClusterForSlug(slug: string): BlogCluster | undefined {
  * neighbours live outside their primary cluster.
  */
 export const relatedSlugsOverrides: Record<string, string[]> = {
+  "renting-vs-owning-boat-ontario-math": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "group-boat-rentals-rice-lake",
+    "boat-rental-licence-ontario-guide",
+    "total-cost-of-owning-a-boat-ontario-2026",
+  ],
+  "group-boat-rentals-rice-lake": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "boat-rental-licence-ontario-guide",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "first-time-boat-rental-rice-lake-guide": [
+    "rice-lake-boat-rental-guide-2026",
+    "boat-rental-licence-ontario-guide",
+    "group-boat-rentals-rice-lake",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "rice-lake-boat-rental-guide-2026": [
+    "first-time-boat-rental-rice-lake-guide",
+    "boat-rental-licence-ontario-guide",
+    "group-boat-rentals-rice-lake",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
+  "boat-rental-licence-ontario-guide": [
+    "rice-lake-boat-rental-guide-2026",
+    "first-time-boat-rental-rice-lake-guide",
+    "group-boat-rentals-rice-lake",
+    "rice-lake-boat-rentals-from-toronto-gta",
+    "renting-vs-owning-boat-ontario-math",
+  ],
   "boat-rentals-shared-access-booming-2026": [
     "rice-lake-boat-rental-guide-2026",
     "first-time-boat-rental-rice-lake-guide",

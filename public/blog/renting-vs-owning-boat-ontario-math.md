@@ -165,6 +165,14 @@ Talk to us in late summer or fall. You'll know exactly how many boat days your s
 
 A rental day, split with another family. No fixed costs, safety gear included, and the marina handles everything. Book a morning slot, pack your own lunch, and the per-person cost beats most day trips out of the city. Live rates: [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
+## Related guides
+
+- [Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)](/blog/rice-lake-boat-rental-guide-2026), the 2026 Rice Lake boat rental guide
+- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
+- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
+- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection

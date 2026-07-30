@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-28
+**Last updated:** 2026-07-28  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026
 
@@ -279,3 +279,4 @@ Bring the bill of sale, HIN, delivery date, motor serial number, trailer VIN, ac
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

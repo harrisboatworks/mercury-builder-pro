@@ -400,6 +400,14 @@ As a starting point, 1,900-3,000 L/h (500-800 GPH) under 16 feet, 3,000-5,700 L/
 
 Yes. Legend's 6-Year WOWranty covers most components, including factory-installed bilge pumps and related electrical parts, for six years from purchase. On the Q-Series LE and Q-Series pontoons, that stretches to ten years. Bring your Legend to HBW. We're an authorized dealer and can handle the warranty claim directly.
 
+## Related guides
+
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+
 ## Next steps
 
 - If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service

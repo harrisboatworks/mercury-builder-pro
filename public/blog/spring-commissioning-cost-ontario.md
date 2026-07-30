@@ -138,6 +138,14 @@ Before the rush. Our marina reopens April 6 and May is the busiest month on the 
 
 Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The winterization cost guide shows what the fall side costs; it's the cheaper side.
 
+## Related guides
+
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Outdoor Boat Storage Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), outdoor shrink-wrap storage on Rice Lake
+
 ## Next steps
 
 - Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
