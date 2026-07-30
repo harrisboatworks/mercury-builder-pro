@@ -2900,11 +2900,30 @@ const HOME_LCP_PRELOAD =
 // Article hero preload. Mirrors BlogHeroPicture's candidate selection so the
 // preloaded resource is exactly the one hydration picks (no double fetch).
 const HERO_PRELOAD_SIZES = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100vw';
+const HERO_OPTIMIZER_WIDTHS = [640, 768, 1024, 1280, 1920];
+
+function renderVercelImageUrl(image, width = 1280, quality = 75) {
+  return `/_vercel/image?url=${encodeURIComponent(image)}&w=${width}&q=${quality}`;
+}
+
+function getVercelImageSrcSet(image, quality = 75) {
+  if (!image?.startsWith('/')) return null;
+  return HERO_OPTIMIZER_WIDTHS
+    .map((width) => `${renderVercelImageUrl(image, width, quality)} ${width}w`)
+    .join(', ');
+}
 
 function renderHeroPreloadTag(image) {
   if (!image) return '';
   const srcSet = getResponsiveWebpSrcSet(image);
   if (!srcSet) {
+    const optimizerSrcSet = getVercelImageSrcSet(image);
+    if (optimizerSrcSet) {
+      return (
+        `<link rel="preload" as="image" href="${escapeHtml(renderVercelImageUrl(image))}" ` +
+        `imagesrcset="${escapeHtml(optimizerSrcSet)}" imagesizes="${escapeHtml(HERO_PRELOAD_SIZES)}" fetchpriority="high" />`
+      );
+    }
     return `<link rel="preload" as="image" href="${escapeHtml(image)}" fetchpriority="high" />`;
   }
   // Fallback href = the largest (full-width) WebP variant, matching the
