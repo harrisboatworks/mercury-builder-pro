@@ -512,8 +512,6 @@ export const blogClusterContexts: Record<string, string> = {
   "mercury-outboard-reliability-2026": "how Mercury reliability holds up in 2026",
   "renting-vs-owning-boat-ontario-math": "the rent vs own math for Ontario boaters",
   "group-boat-rentals-rice-lake": "renting for a group on Rice Lake",
-  "first-time-boat-rental-rice-lake-guide": "what to expect on a first rental",
-  "rice-lake-boat-rental-guide-2026": "the full Rice Lake rental guide",
   "boat-rental-licence-ontario-guide": "licence rules for renting a boat in Ontario",
 };
 
