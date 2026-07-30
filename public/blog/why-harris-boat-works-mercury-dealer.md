@@ -137,7 +137,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
 - [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution)
 - [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [Why Boat Rentals and Shared Access Are Booming in 2026](/blog/boat-rentals-shared-access-booming-2026)
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario)
+- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/how-to-trim-boat-mercury-outboard)
 
 ## FAQs
 

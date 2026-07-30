@@ -6212,7 +6212,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
 - [Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations](/blog/harris-boat-works-since-1947-rice-lake-institution)
 - [Mercury Outboard Dealer Toronto: Why Drive to Harris Boat Works](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
 - [Why Boat Rentals and Shared Access Are Booming in 2026](/blog/boat-rentals-shared-access-booming-2026)
-- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/boat-trim-explained-rice-lake-ontario)
+- [Boat Trim Explained for Rice Lake Boaters, Without the Jargon](/blog/how-to-trim-boat-mercury-outboard)
 `,
     faqs: [
       { question: 'How long has Harris Boat Works been a Mercury dealer?', answer: 'Since 1965. The marina itself was founded in 1947, and the Harris family has owned and run it for three generations in Gores Landing on Rice Lake.' },
@@ -23109,192 +23109,182 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     slug: 'how-to-trim-boat-mercury-outboard',
-    title: 'How to Trim a Boat: Mercury Outboard Guide',
-    seoTitle: "How to Trim a Boat with a Mercury Outboard",
-    description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained.",
-    image: '/lovable-uploads/hero-how-to-trim-mercury.png',
+    title: 'How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge',
+    seoTitle: 'How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge',
+    description: 'Learn how to trim a Mercury outboard for planing, cruise, turns and rough water. Read speed, RPM, steering and spray instead of guessing on the water.',
+    image: "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8.png",
+    imageAlt: "A family runabout cruises smoothly on an Ontario lake with its black outboard set at a balanced trim angle and a clean wake behind the stern.",
     author: 'Jay Harris',
     datePublished: '2026-02-22',
-    dateModified: '2026-06-09',
+    dateModified: '2026-07-30',
     publishDate: '2026-02-22',
-    category: "Mercury Outboards",
+    category: 'Mercury Outboards',
     readTime: '~12 min read',
-    keywords: ["boat trim","mercury outboard","active trim","rice lake","fuel economy"],
-    faqs: [
-      { question: 'What does trim do on a Mercury outboard?', answer: 'Trim controls the angle of the outboard relative to the transom. Pressing trim in tilts the engine toward the boat and pushes thrust slightly upward, which drives the bow down. Pressing trim out tilts the engine away from the boat, shifting thrust angle downward and lifting the bow. Just a few degrees of tilt changes where the hull sits in the water, drag, time to plane, and ride comfort.' },
-      { question: 'When should I trim in versus trim out?', answer: 'Trim fully in for the holeshot, choppy conditions, heavy load forward, and slow-speed running. Trim out gradually for cruising on flat water, top-speed runs, light loads, and pulling a tube. Setting it once and forgetting it is a mistake: load changes, conditions change, speed changes. Touch the trim button throughout a run.' },
-      { question: 'What is prop ventilation and why does it happen?', answer: 'Ventilation is the prop pulling air instead of water, usually heard as a high-pitched whine while the engine revs sky-high and the boat goes nowhere. It happens when you hit the throttle with the engine trimmed out and the bow launches skyward. The fix is simple: trim fully in before you punch it, and drop trim in immediately if you hear ventilation at speed.' },
-      { question: 'What does Mercury Active Trim do?', answer: 'Active Trim automates trim adjustment based on engine RPM along a programmed trim curve: as you accelerate it trims out in sync with boat speed, then trims in as you back off. It is available on many current Mercury FourStroke and Verado models and integrates with VesselView displays. You can still override it manually for specific depths, unusual loads, or conditions that call for a specific angle.' },
-      { question: 'What is the difference between engine trim and trim tabs?', answer: 'Engine trim adjusts the angle of the outboard itself, changing thrust direction and bow angle. Trim tabs are small hydraulic fins on the transom, one each side, that push water down to lift the stern and let you correct side-to-side lean independently of the engine. They work together: engine trim plus trim tabs gives you full control of hull attitude in any condition.' },
-    ],
-    content: `# How to Trim Your Boat With a Mercury Outboard (Rice Lake, Ontario Boater's Guide)
+    keywords: ["how to trim a boat", "Mercury outboard trim", "trim in vs trim out", "boat porpoising fix", "Mercury Active Trim"],
+    faqs: [{"question": "Should I trim all the way down before accelerating?", "answer": "For a normal planing start, Mercury advises trimming the outboard completely in or down before accelerating. This helps the propeller bite clean water and controls bow rise. Once the boat is on plane and stable, trim out gradually. Follow the owner's manual if your hull or rigging has a different operating procedure."}, {"question": "How do I know when I have trimmed out too far?", "answer": "The first warning may be porpoising, loose steering, a speed plateau or an RPM rise without matching speed. Propeller ventilation can sound like the engine suddenly lost its load. Trim in until the boat settles and the propeller grips again. If the behaviour persists, reduce speed and inspect the setup."}, {"question": "Why does my boat go faster at the same throttle after I trim out?", "answer": "Trimming out can lift part of the hull clear of the water and reduce drag. With less wetted surface to push, the boat may gain speed without more throttle. The improvement stops when excessive trim causes bouncing, poor handling or ventilation. There is no safe generic percentage because hull, propeller, load and conditions change the result."}, {"question": "Should I trim down in rough water?", "answer": "Often, a small amount of trim in helps the forward part of the hull meet head seas more cleanly. Reduce speed first. Then adjust in small steps and judge control, spray and impact. Crosswinds, following seas and different hulls may require a different response, so do not treat one trim position as universal."}, {"question": "Can trim fix porpoising?", "answer": "If excessive trim out caused the porpoising, trimming in should stop it. If the boat still cycles up and down across a sensible speed and trim range, the cause may include load placement, motor height, propeller selection or hull setup. That is a diagnosis problem, not a reason to keep pressing the switch."}, {"question": "Does Mercury Active Trim work in shallow water?", "answer": "Active Trim adjusts engine trim from speed and operating inputs. Mercury states that it cannot detect water depth and will not automatically trim up to avoid shallow obstacles. Slow down and override the system manually before entering shallow water. Keep enough gearcase in the water to maintain steering control."}, {"question": "Do I need a trim gauge?", "answer": "No. A gauge helps you repeat a known setting, but it cannot tell you whether today's load and conditions make that setting correct. Learn to read speed, RPM, steering effort, spray, bow movement and propeller grip. Use the gauge as a reference after the boat tells you what works."}],
+    content: `# How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-07-29*
 
-> **Quick answer:** Trim controls the angle of your outboard relative to the transom. Trim down for hole-shot, trim up for cruise efficiency. Wrong trim costs you fuel, comfort, and speed. Mercury's Active Trim feature on supported motors automates the optimal angle. For most Rice Lake conditions, trim out gradually as you reach plane, then back off if the bow porpoises or the prop ventilates.
+> **Quick answer:** Tuck the outboard in before accelerating onto plane. Once the boat settles, trim out in short taps while holding steady throttle. Stop when speed quits improving, RPM rises without matching speed, steering gets loose, the bow starts bouncing, or the prop ventilates. Load, speed and water conditions change the right setting, so read the boat rather than memorizing a gauge number.
 
-There's a reason videos about boat trim rack up a million views on YouTube. Trim is one of those things that nobody really explains, you get handed the keys to a boat and told the trim button is the one that looks like an arrow. That's usually the end of the lesson.
+You bring the boat onto plane, leave the throttle alone and tap the trim switch. The bow lifts a little. Steering gets lighter. Speed rises. It feels like somebody quietly removed a load from the boat.
 
-After that, most people spend a season or two pressing buttons and hoping for the best. Maybe the bow's sitting too high and they can feel the prop ventilating before they even know what ventilation means. Maybe they're hammering through chop on a Rice Lake, Ontario (in the Kawarthas) afternoon and wondering why their back hurts and their fuel gauge is dropping faster than it should.
+Nothing about the throttle setting changed. The running attitude did. That small change altered the thrust angle and how much hull was pushing through the water.
 
-This post is the explanation you didn't get at the dealer. Practical, Mercury-specific, and written for the conditions you're actually dealing with on this lake.
+That is the useful way to understand trim. It is not a number you set once. It is an adjustment you make as speed, load and conditions change.
 
-![Side-profile diagram comparing three outboard trim angles on a boat: negative trim with the motor tucked in shows the bow plowing water and the boat fighting through chop slowly, neutral trim shows the boat planing efficiently in a balanced cruise, and positive trim with the motor tucked out shows the bow lifted high with the propeller ventilating above the waterline causing RPM spikes and lost thrust.](/lovable-uploads/diagram-trim-angles.png)
-*The three trim states every boater should recognize. Most of this article is about staying in the middle one - neutral, planing efficiently, with the prop fully wetted.*
+## What Trim Changes Under the Boat
 
----
+The trim switch changes the angle of the outboard relative to the transom. Mercury describes three basic states:
 
-## What Trim Actually Is
+- **Trimmed in or down:** The gearcase moves closer to the transom. Propeller thrust helps lift the stern and push the bow down.
+- **Neutral trim:** The propeller shaft is roughly parallel to the water surface while the boat is on plane. Thrust is directed mainly forward.
+- **Trimmed out or up:** The gearcase moves away from the transom. Some thrust pushes the stern down and lifts the bow.
 
-Trim controls the angle of your outboard relative to the transom, the back wall of your boat.
+Before accelerating onto plane, tuck the motor in. This gives the propeller clean water and helps control bow rise. Once the boat is on plane, trimming out can lift more of the hull clear of the water. Less wetted hull usually means less drag, so the boat may gain speed and improve fuel economy without more throttle.
 
-When you press **trim in** (sometimes labelled "down"), the engine tilts toward the boat. The prop pushes thrust slightly upward, which drives the bow down. When you press **trim out** (or "up"), the engine tilts away from the boat. Thrust angle shifts downward, lifting the bow.
+Keep going and the benefit disappears. The bow may begin to rise and fall in a cycle called **porpoising**. The propeller may draw air from the surface, called **ventilation**, which lets RPM rise without a matching increase in boat speed. Steering can also feel too light or loose.
 
-That angle change, just a few degrees of tilt, has a massive effect on how your boat runs. It changes where the hull sits in the water, how much drag you're fighting, how quickly you get on plane, and how stable the ride feels.
+The right position sits between plowing and losing grip. It varies with hull, motor height, propeller, passenger placement, fuel, gear, speed and water.
 
-Think of it like a skateboard ramp versus flat pavement. If you nose-dive into a wave at the wrong angle, you feel every bit of it. If you're running level with the water, you glide.
+![Four side-profile boats compare outboard trim: tucked in for acceleration, nearly vertical for efficient cruise, farther out with the bow porpoising, and over-trimmed near aerated surface water where the propeller can ventilate.](/lovable-uploads/lens-cove/LC-003/inline-four-trim-states-0c4960b2d7bd.svg)
+*From left: tuck the motor in for acceleration; ease it out to find a clean, efficient cruise; back in when the bow starts to porpoise; and trim in immediately if rising RPM and broken thrust signal ventilation.*
 
----
+## A Repeatable Way to Find the Right Trim
 
-## Why Trim Matters More Than You Think
+Learn on open water with good visibility, light traffic and enough depth. Use the boat's normal load. A solo test with little fuel will not tell you how the boat behaves with a family, a full tank and weekend gear aboard.
 
-People assume trim is just about top speed. It's not. It touches nearly everything:
+1. **Start trimmed in.** Bring the motor fully into its normal trim range before accelerating. Do not confuse the trim range with the higher trailer range used to lift the motor clear of the water.
+2. **Accelerate smoothly onto plane.** Keep the wheel straight and let the hull settle before chasing a perfect gauge reading.
+3. **Hold a steady cruising throttle.** Changing throttle and trim at the same time makes the result harder to read.
+4. **Trim out in short taps.** Pause after each tap. Give the hull time to respond.
+5. **Watch speed and RPM together.** A useful adjustment may bring more speed at the same throttle. If RPM flares but speed does not follow, trim back in.
+6. **Feel the steering and ride.** The wheel often gets lighter as drag falls. If the boat begins wandering, bouncing or feeling loose, you went too far.
+7. **Trim back in slightly.** Once you find the first sign of excessive trim, a small correction in usually puts the boat in a stable cruising attitude.
 
-**Fuel economy.** A boat running at the wrong trim angle is fighting the water. That translates directly to litres per hour. If you want to read more about what else eats into your fuel numbers, the [Mercury Outboard Fuel Efficiency Guide](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide) breaks down the full picture.
+A SmartCraft or VesselView display can make the test easier by showing RPM, speed, trim position and, on compatible setups, fuel data. The instruments confirm what happened. They do not replace the feel of the boat. Our [VesselView and SmartCraft guide](/blog/mercury-vesselview-smartcraft-plain-english-guide) explains the data side without turning it into a computer course.
 
-**Ride comfort.** Over-trimmed on a choppy afternoon means every wave hits the hull flat and hard. Properly trimmed, the bow rides over the chop instead of punching through it.
+## Read These Signals Instead of Guessing
 
-**Planing time.** Correct trim at the start gets your hull up faster. Wrong trim and you're in that sluggish transition zone longer, burning more fuel, making more noise, and going slower.
+| What you notice | Likely cause | First response |
+|---|---|---|
+| Bow stays high and the boat is slow to plane | Too much trim out during acceleration | Trim in before accelerating |
+| Bow feels buried, steering is heavy or spray breaks forward | Too much trim in at cruise | Trim out in short taps |
+| Speed rises at steady throttle and steering gets lighter | The hull is approaching an efficient attitude | Continue carefully, one short tap at a time |
+| RPM rises sharply without matching speed | Propeller ventilation | Trim in and ease the throttle if needed |
+| Bow repeatedly rises and falls | Too much trim out, load placement or setup issue | Trim in until stable |
+| Prop loses grip in a turn | Motor is trimmed too far out for the turn, or setup needs attention | Trim in before or during the turn |
+| Ride becomes hard in rough water | Speed or trim does not suit the conditions | Reduce speed first, then adjust trim |
 
-**Top speed.** Even a well-chosen prop can underperform if trim is off. (Speaking of props, if you're not sure yours is the right fit, the [Mercury Propeller Selection Guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide) is worth a read before you start chasing speed.)
+There is no universal "40 percent trim" answer. Gauge scales differ. Hulls respond differently. Even the same boat changes when people move seats or the livewell fills.
 
-**Hull wear.** Running under-trimmed at speed is hard on the bottom of your boat. You're pushing the bow into the water instead of letting it ride. Over time, that shows up in wear, stress, and vibration you don't want.
+The useful comparison is what changed after one trim input. Did speed increase? Did the wheel lighten? Did spray move aft? Did RPM jump without more speed? Those signals tell you more than a memorized bar on the gauge.
 
----
+## Common Mistakes
 
-## The Three Trim States
+**Leaving the motor tucked in at cruise.** Full-in trim helps the boat climb onto plane, but keeping it there can hold too much hull in the water. The boat may feel heavy and use more throttle to maintain speed.
 
-### Trimmed In (Negative Trim)
+**Trimming out before the hull settles.** If you start the holeshot with the motor already out, bow rise can increase and the propeller may ventilate. Start in, get on plane, then work outward.
 
-Engine tilted toward the boat. Bow pushes down. More of the hull is in the water. This creates drag at speed, but it's exactly what you want in certain situations.
+**Chasing top speed in passenger conditions.** A trim position that feels manageable with one experienced operator may feel loose with children, guests or a tube aboard. Stable control comes first.
 
-### Neutral Trim
+**Treating a bounce as normal.** Porpoising is feedback. Trim in. If the bounce remains through a sensible range of speed and trim, stop trying to cure it with the switch. Load placement, motor height, propeller choice or hull setup may need attention.
 
-Engine roughly perpendicular to the waterline. Hull running balanced. This is the sweet spot for most cruising conditions, but "neutral" looks different on every boat and every load.
+**Using trim as a depth sounder.** Raising the motor can help protect the gearcase at low speed in shallow water, but steering authority can decrease. Mercury also states that Active Trim cannot detect depth or automatically avoid underwater obstacles. Slow down, keep watch and use the manual trim control.
 
-### Trimmed Out (Positive Trim)
+**Trying to fix every rough ride with trim.** Trim can change how the bow meets the water. It cannot make an unsafe speed safe. Reduce speed before fine-tuning the attitude.
 
-Engine tilted away from the boat. Bow rises. Less hull in the water, more speed potential, but overdo it and you lose grip on the water entirely.
+## Rough Water, Turns and Shallow Water
 
----
+Trim advice gets unreliable when it becomes a slogan. "Trim down in chop" is a useful starting point when heading into waves because lowering the bow can help the forward hull meet the water more cleanly. It is not permission to keep the throttle pinned. Wave direction, hull design and load still matter.
 
-## When to Trim In
+Use this order:
 
-**Getting on plane (the holeshot).** This is the big one. When you're coming off idle and pushing to plane, you want the engine trimmed fully in. The downward thrust pushes the bow through the water instead of skyward. You get on plane faster and cleaner.
+1. Reduce speed until the boat is under control.
+2. Make a small trim change.
+3. Check steering, spray and impact.
+4. Keep the setting that improves control without burying the bow.
 
-**Choppy conditions.** Rice Lake afternoons can build a short, steep chop, especially when the wind's been running a few hours. Trim in keeps the bow lower and punching through the waves with control instead of catching air and slamming down.
+Before a tighter turn, trim in enough to keep the propeller in solid water and the boat predictable. Mercury recommends trimming in for propeller bite and handling, then trimming out again after the boat straightens.
 
-**Heavy load forward.** Extra weight in the bow means the bow is already sitting heavy. Trimming out in this situation only makes the handling worse.
+In shallow water, operate slowly. Trim up only as much as needed, knowing that steering may weaken as the gearcase rises. Do not run at planing speed with the motor in the trailer range. The owner's manual for your serial number remains the source of truth for the permitted trim and tilt range.
 
-**Slow-speed running.** When you're in no-wake zones or navigating the shallows near Gores Landing, trim in keeps the prop deeper and the hull stable.
+On Rice Lake, the practical lesson is not a local magic setting. It is that one trip can include open-water cruise, a turn into a bay, a loaded run home and a shallow approach. Each change deserves a fresh read of the boat.
 
----
+## Mercury Active Trim: Helpful, Not Psychic
 
-## When to Trim Out
+Mercury Active Trim is a GPS speed-based system that automatically adjusts engine trim. During acceleration it tucks the engine in to control bow rise. At planing speed it follows a selected trim profile. It can trim in as speed drops or as the boat enters a turn.
 
-**Cruising on flat water.** A calm morning on Rice Lake is when you find the trim sweet spot. Start neutral, ease the engine out in small increments. Watch your speedometer, you'll see the boat lift onto its best running angle and the speed climb without you touching the throttle.
+The system has five profiles, allowing more or less trim at a given speed. You can override it with the manual trim switch. Compatibility depends on the engine, controls, SmartCraft capability and rigging, so confirm the exact setup rather than assuming a current Mercury automatically has it.
 
-**Top-speed runs.** Trimming out reduces hull drag and lets the boat run on a smaller wetted surface. Just don't overdo it (more on that below).
+Active Trim cannot see shoals, logs or the lake bottom. It also cannot know that three passengers just moved to one side or that the wind changed your approach. Use it as a consistent default, not a substitute for watching the water and feeling the hull.
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+For a compatible boat, the appeal is simple. It handles routine trim changes while the operator keeps attention outside the boat. Understanding manual trim still matters because the conditions that call for an override are usually the conditions that need the most judgment.
 
-**Light loads.** Fewer passengers, empty cooler, nobody on the ski platform, lighter load means the bow wants to ride higher naturally. Some outward trim brings the hull into balance.
+## What HBW Checks Before Blaming the Trim Switch
 
-**Towing a tube.** When you've got kids on a tube and you're running in a circle, trim out slightly helps the boat stay responsive and nimble. Not the same as running wide-open, read your conditions and your load.
+If careful trim inputs do not produce a stable, predictable result, the switch may not be the problem.
 
----
+A propeller that is damaged or poorly matched can ventilate, miss the engine's specified wide-open-throttle RPM range or make the boat slow to plane. Motor mounting height changes how cleanly the propeller stays fed with water. Weight concentrated too far forward or aft changes the hull's response. Hull damage or water trapped where it should not be can add drag. A trim sender can also give a bad gauge reading even while the hydraulic system moves the motor normally.
 
-## Common Trim Mistakes
+Start with observations the shop can use:
 
-**Over-trimming on the holeshot.** This is the one that gets people. You hit the throttle with the engine trimmed out, the bow launches skyward, and then you hear a high-pitched whine from the motor. That's prop ventilation: the prop is pulling air instead of water. The engine revs sky-high and the boat goes nowhere fast. It's hard on the motor, embarrassing, and easy to fix: trim fully in before you punch it.
+- motor model and serial number
+- boat make, model and length
+- propeller part number or stamped size
+- normal passenger, fuel and gear load
+- speed and RPM before and after the symptom
+- whether the issue appears in a straight line, a turn or both
+- a short video of the wake, bow attitude or RPM flare, recorded by a passenger
 
-**Under-trimming at speed.** Running with too much trim in at cruise buries the bow, increases drag, and has you burning fuel to go slower than you should. If you're at cruise speed and the bow is sitting heavy, ease the trim out until the boat lifts and the speed ticks up.
+Do not record video while operating the boat alone. That should not need saying, yet here we are.
 
-**Setting it once and forgetting it.** Trim isn't a one-and-done adjustment. Load changes, conditions change, speed changes, what worked leaving the dock may not be right once you're running. Get used to touching the trim button throughout a run.
-
----
-
-## Reading the Boat
-
-You don't need a gauge to know if you're trimmed right. Your boat is already telling you.
-
-**Watch the bow.** If it's rising and you're not going faster, you've gone too far out. If it's low and you feel like you're plowing, you're too far in.
-
-**Watch the speedometer.** Ease the trim in either direction in small steps. Speed climbing? You're finding the right angle. Speed dropping or holding flat while the engine revs climb? Back off.
-
-**Listen for ventilation.** That high-pitched, load-free whine from the engine is the prop sucking air. Drop trim in immediately.
-
-**Feel the bow rise.** At cruise speed, as you ease the engine out, you'll feel the boat lift and lighten. There's a specific moment where it feels right, level, fast, and smooth. That's your target.
-
----
-
-## Mercury Active Trim
-
-Mercury's Active Trim system automates trim adjustment based on engine RPM. The system is programmed to a trim curve: as you accelerate, it trims out in sync with boat speed. As you back off, it trims in.
-
-For boaters who rent out their boats, have inexperienced guests aboard, or simply want one less thing to think about, Active Trim is a genuine quality-of-life upgrade. It handles the holeshot automatically and keeps the boat running efficiently without constant manual input.
-
-That said, it's not magic. If you're fishing specific depths, towing with unusual loads, or running in conditions that call for a specific trim angle, you can still override it manually. Active Trim is a smart default, not a replacement for understanding trim.
-
-Active Trim is available on many current Mercury FourStroke and Verado models. It integrates with VesselView displays, if you're curious how those systems work together, the [Mercury VesselView / SmartCraft Plain English Guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide) covers the full ecosystem. For boats running Mercury's latest software stack, the [Mercury BOOST Software Upgrade Eligibility Guide](https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026) explains what your motor might already be capable of.
-
-Whether Active Trim is available on your current motor, or worth adding in a repower, is worth a quick conversation if you're planning an upgrade.
+Our [Mercury propeller selection guide](/blog/mercury-propeller-selection-guide) explains how prop choice and the specified WOT RPM range fit into the diagnosis. If the boat still porpoises, ventilates or handles poorly after sensible trim changes, send the details through the service form. Guessing with replacement parts is an expensive hobby.
 
 ---
 
-## Trim Tabs vs. Engine Trim
+## Frequently Asked Questions
 
-They're related but different, and both matter.
+**Should I trim all the way down before accelerating?**
+For a normal planing start, Mercury advises trimming the outboard completely in or down before accelerating. This helps the propeller bite clean water and controls bow rise. Once the boat is on plane and stable, trim out gradually. Follow the owner's manual if your hull or rigging has a different operating procedure.
 
-**Engine trim** adjusts the angle of the outboard itself. It changes thrust direction and bow angle, and it's what we've been talking about in this guide.
+**How do I know when I have trimmed out too far?**
+The first warning may be porpoising, loose steering, a speed plateau or an RPM rise without matching speed. Propeller ventilation can sound like the engine suddenly lost its load. Trim in until the boat settles and the propeller grips again. If the behaviour persists, reduce speed and inspect the setup.
 
-**Trim tabs** are small hydraulic fins mounted on the transom, one on each side. They push water down and lift the stern, which changes how the hull sits on the water. Where engine trim adjusts the whole boat's attitude via thrust, trim tabs let you correct **side-to-side lean** (port or starboard) and fine-tune fore-and-aft balance independently of the engine.
+**Why does my boat go faster at the same throttle after I trim out?**
+Trimming out can lift part of the hull clear of the water and reduce drag. With less wetted surface to push, the boat may gain speed without more throttle. The improvement stops when excessive trim causes bouncing, poor handling or ventilation. There is no safe generic percentage because hull, propeller, load and conditions change the result.
 
-On a well-balanced boat with the right load, you may not need tabs at all. But if you're regularly running uneven loads (one heavy passenger on the port side, gear stacked to starboard), trim tabs let you level the hull without fighting the steering the whole time.
+**Should I trim down in rough water?**
+Often, a small amount of trim in helps the forward part of the hull meet head seas more cleanly. Reduce speed first. Then adjust in small steps and judge control, spray and impact. Crosswinds, following seas and different hulls may require a different response, so do not treat one trim position as universal.
 
-They work together. Engine trim and trim tabs are two dials on the same system, and the combination gives you full control of hull attitude in any condition.
+**Can trim fix porpoising?**
+If excessive trim out caused the porpoising, trimming in should stop it. If the boat still cycles up and down across a sensible speed and trim range, the cause may include load placement, motor height, propeller selection or hull setup. That is a diagnosis problem, not a reason to keep pressing the switch.
 
----
+**Does Mercury Active Trim work in shallow water?**
+Active Trim adjusts engine trim from speed and operating inputs. Mercury states that it cannot detect water depth and will not automatically trim up to avoid shallow obstacles. Slow down and override the system manually before entering shallow water. Keep enough gearcase in the water to maintain steering control.
 
-## Rice Lake Conditions: What This Looks Like in Practice
-
-**Calm morning glass.** Most mornings in July, Rice Lake looks like a mirror before 9am. This is your chance to experiment. Come up to cruise speed, then work the trim button in small increments and feel where the boat wants to be. You'll know it.
-
-**Afternoon chop.** By mid-afternoon on a summer day, the south end of Rice Lake can be genuinely rough, short, steep waves that hit hard if you're not set up right. Trim in, slow down slightly if needed, and let the bow do its job. Pounding through chop at full trim-out is how you get a sore back and a cracked passenger.
-
-**Towing a tube.** Lower speed, more weight, aggressive direction changes. Trim in slightly from neutral. You want the bow controlled, not floating.
-
-**Cruising to the islands.** Light load, flat water, comfortable speed. Find your trim sweet spot and leave it there. This is where the fuel savings show up, a properly trimmed boat at cruise is running as efficiently as your setup allows.
-
----
-
-## The Short Version
-
-- Trim fully in for every holeshot. No exceptions.
-- Trim out gradually at cruise until speed peaks and the bow lifts.
-- Watch, feel, and listen, the boat tells you when trim is right.
-- Active Trim handles this automatically if you want it to.
-- Trim tabs and engine trim work together for full hull control.
-
-Trim is one of those skills that feels obvious once it clicks. Ten minutes on the water with this framework in your head and you'll start adjusting without thinking about it.
+**Do I need a trim gauge?**
+No. A gauge helps you repeat a known setting, but it cannot tell you whether today's load and conditions make that setting correct. Learn to read speed, RPM, steering effort, spray, bow movement and propeller grip. Use the gauge as a reference after the boat tells you what works.
 
 ---
 
-Questions about Active Trim or whether your boat is rigged for it? Build a quote on [mercuryrepower.ca](https://www.mercuryrepower.ca) or request service at [hbw.wiki/service](https://hbw.wiki/service).
+## Ready to Get the Boat Running Properly?
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+If sensible trim changes do not stop porpoising, ventilation or poor handling, send us the motor, boat, propeller and load details. We can help separate an operating issue from a propeller, mounting-height, trim-system or hull-setup problem.
 
-`,
+**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
+
+**Phone:** 905-342-2153  
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON  
+**Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
+
+**Related guides:**
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide)
+- [Mercury VesselView and SmartCraft Guide](/blog/mercury-vesselview-smartcraft-plain-english-guide)`,
   },
   {
     slug: 'boat-trailering-mistakes-ontario',
@@ -24222,7 +24212,7 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
-> Related guide: [Boat trim explained for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+> Related guide: [Boat trim explained for Rice Lake boaters](/blog/how-to-trim-boat-mercury-outboard).
 
 ## Related at HBW
 
@@ -26660,7 +26650,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 ---
 
-> Related guide: [Boat trim for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+> Related guide: [Boat trim for Rice Lake boaters](/blog/how-to-trim-boat-mercury-outboard).
 
 ## Sources
 
@@ -33175,7 +33165,7 @@ Honest counter-positioning. Pro XS is the wrong answer if:
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-> Related guide: [Boat trim basics for Rice Lake](/blog/boat-trim-explained-rice-lake-ontario).
+> Related guide: [Boat trim basics for Rice Lake](/blog/how-to-trim-boat-mercury-outboard).
 
 > Related guide: [DTS vs mechanical controls, what Pro XS buyers should know](/blog/mercury-dts-vs-mechanical-controls-ontario-repower).
 
@@ -33914,126 +33904,6 @@ For an honest cost-benefit conversation on your specific boat, email info@harris
 - Mercury Marine outboard rigging guide (dealer technical reference, 2026)
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - HBW internal rigging records, 2020-2026
-
-## About the author
-
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-`,
-  },
-  {
-    slug: 'boat-trim-explained-rice-lake-ontario',
-    title: 'Boat Trim Explained Rice Lake',
-    seoTitle: 'Boat Trim Explained Rice Lake Ontario | Harris Boat Works',
-    description: 'How to trim an outboard on Rice Lake without porpoising, plowing, or burning fuel. Plain-English trim guide for Ontario boaters from a Mercury Premier dealer.',
-    image: '/lovable-uploads/hero-boat-trim-rice-lake.png',
-    imageAlt: 'Man driving an aluminum boat with a Mercury 90 FourStroke outboard, demonstrating proper trim on a calm lake.',
-    author: 'Harris Boat Works',
-    datePublished: '2026-05-17',
-    dateModified: '2026-07-23',
-    publishDate: '2026-05-17',
-    category: 'How-To',
-    readTime: '7 min read',
-    keywords: ['boat trim explained rice lake ontario', 'boat trim explained rice lake ontario ontario', 'harris boat works', 'mercury outboard', 'rice lake'],
-    faqs: [
-      { question: "How do I know if my trim is broken?", answer: "Press the trim up and down buttons with the motor in the water at idle. The motor should pivot smoothly through its full range. If you hear the motor straining but the trim doesn't move, the hydraulic ram or trim relay is the likely culprit. We diagnose this regularly, usually a $300-$600 repair." },
-      { question: "Can I use trim in reverse?", answer: "Sort of. Most modern Mercury outboards have a \"shallow water\" position that's trim partially out, intended for very low-speed maneuvering in shallow areas. You should not run at speed in reverse with significant trim out." },
-      { question: "Does trim affect steering response?", answer: "Yes, modestly. More trim out generally makes the boat feel looser at speed. Less trim makes the boat feel more stable but slower." },
-      { question: "What's the trim limit switch?", answer: "A small switch in the trim system that prevents you from trimming the motor too far out at speed (where the prop would ventilate and the boat could become unstable). It's a safety feature, not a malfunction." },
-      { question: "How does trim interact with hydrofoils or trim tabs?", answer: "A hydrofoil (the wing-shaped attachment some owners bolt to the cavitation plate) helps the boat get on plane faster and stay on plane at lower speeds. Trim tabs (separate hydraulic plates on the transom) give you fine control over bow attitude independent of the motor. Both can be useful, but they add cost and complexity. We can advise if either is worth it for your specific setup." },
-      { question: "Can the wrong trim damage my motor?", answer: "Sustained running with the prop ventilating (trim too far out) can be hard on the gearcase and lower unit. Running with trim full in at high speed for long periods stresses the motor mount and the transom. Both are unusual, but neither does the boat any favours." },
-    ],
-    content: `# Boat Trim Explained for Rice Lake Boaters, Without the Jargon
-
-## Quick answer
-
-Boat trim is the angle of your outboard relative to the transom, controlled by the trim button on your throttle. Trimming the motor IN (down) pushes the bow down and helps you get on plane quickly from a stop. Trimming OUT (up) lifts the bow once you're on plane, which reduces drag, improves fuel economy, and gives you a smoother ride. The wrong trim setting wastes fuel, soaks your passengers with spray, makes the boat porpoise like a rocking horse, or buries the bow in chop. On Rice Lake at typical cruise speeds with a 14-19 foot aluminum boat and a Mercury outboard, the right trim setting is usually about 30-50 percent of the way out once you're up on plane. The rest of this guide explains how to feel that without overthinking it.
-
-## What trim actually does
-
-Your outboard is mounted to the transom by a bracket that can pivot up and down. The trim button on your throttle control runs a hydraulic ram that changes this angle. When the motor angles in toward the transom, the propeller thrust pushes the bow down. When the motor angles out away from the transom, the thrust pushes the bow up.
-
-That's it. Everything else is just the consequence of bow angle relative to the water.
-
-## The three trim positions you actually use
-
-**Trim full IN (down):** for hole shot and getting on plane.
-The bow stays down, the prop bites cleanly, the boat accelerates without "plowing" or burying the nose. Most boats need trim fully in for the first 3-5 seconds when you push the throttle from idle to cruise.
-
-**Trim partially OUT (mid-position):** for cruise speed.
-Once the boat is up on plane and running, trim out until the bow lifts and the boat feels smooth, fast, and quiet. You want to feel the boat "settle" onto the water rather than fight against it. On most Rice Lake aluminum fishing boats, this is about 30-50 percent of the trim range.
-
-**Trim full OUT (up):** for shallow water, beaching, or driving on a trailer.
-This is the position for getting the prop out of the way, not for running at speed. If you run at cruise speed with trim full out, the prop will lose grip and ventilate, and the bow will bounce uncontrollably.
-
-## The mistakes we see most often on Rice Lake
-
-### Mistake 1: leaving trim full IN at cruise
-
-This is the most common one. People hit the throttle with trim in, the boat planes nicely, then they forget to trim out. The result: bow stays low, the hull pushes more water than it should, fuel burn is high, top speed is reduced, and the ride is wetter than it needs to be.
-
-**Fix:** once you feel the boat on plane (usually 5-8 seconds after throttle-up), trim out gradually until the bow lifts and the boat feels smooth.
-
-### Mistake 2: porpoising from too much trim OUT
-
-If you trim out too far at cruise, the bow lifts so much that the hull lifts off the water in front, then drops back, then lifts again. This rocking-horse motion is called porpoising. It's uncomfortable, it wastes fuel, and it scares passengers.
-
-**Fix:** trim in slightly until the porpoising stops. The boat should feel level and smooth, not bouncing.
-
-### Mistake 3: ignoring trim in chop
-
-Rice Lake gets 1-2 foot chop when the wind picks up from the southwest. In choppy water, the bow needs to be DOWN, not up. Lower bow cuts through chop. Higher bow slams into chop.
-
-**Fix:** trim in 1-2 button presses when conditions get bumpy. You sacrifice a knot or two of speed but the ride and the boat both thank you.
-
-## Reading what your boat is telling you
-
-You don't need a trim gauge to get trim right. The boat tells you everything you need to know:
-
-- **Bow too high (porpoising or bouncing in calm water):** trim in.
-- **Bow too low (spray over the windshield, sluggish acceleration, plowing feel):** trim out.
-- **Boat feels heavy on the wheel:** trim in slightly, you're fighting the bow lift.
-- **Boat feels loose or wandering at speed:** trim in slightly, you've gone too far out.
-- **Prop ventilating or losing grip in turns:** trim in, the prop is angling too high to stay in clean water.
-
-After a few weeks of running your boat, you'll trim without thinking about it. The motor will tell you what it wants.
-
-## Trim and fuel economy
-
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
-The right trim setting at cruise can save 10-20 percent on fuel compared to running with trim full in. On a Mercury 90 HP burning 23-26 L/h (6-7 US gal/h) at cruise, that's worth real money over a season. The exact savings depend on hull design, load, and conditions, but the direction is consistent: proper trim equals lower fuel burn.
-
-This is one of the reasons we tell new boat owners that the trim button is the cheapest performance upgrade their boat has. It costs nothing, and using it right makes the boat noticeably faster and quieter.
-
-## Trim on different boat types
-
-**Aluminum V-hull fishing boats** (the most common Rice Lake setup): respond well to trim, need about 30-50 percent trim out at cruise.
-
-**Pontoons:** less responsive to trim than V-hulls because the flat hull doesn't "ride" on the water the same way. Most pontoons need minimal trim, usually 10-25 percent out at cruise. Over-trimming a pontoon doesn't help speed and can cause the front to wander.
-
-**Bass boats and performance hulls:** very trim-sensitive, need careful adjustment to extract top speed. These boats reward an operator who pays attention.
-
-**Bowriders and runabouts:** similar to V-hulls but heavier, often need slightly more trim in for the family-load condition.
-
-![Aluminum fishing boat porpoising with bow too high, showing incorrect outboard trim](/lovable-uploads/inline/inline-wrong-trim-porpoising.png)
-
-## Trim and Mercury Pro XS
-
-If you own a Mercury Pro XS or are considering one, the trim conversation gets more interesting. Pro XS motors are designed for higher-performance applications and respond differently to trim than a standard FourStroke. The optimum trim is usually further out, top speed is more trim-sensitive, and a good operator can find an extra 2-4 mph just by playing with the button. Our [Mercury Pro XS Repower Guide for Rice Lake & Kawartha Anglers](/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers) covers this in detail.
-
-## What we do at Harris Boat Works
-
-When customers buy a new boat from us, we run through the trim basics on the launch day. It's a 5-minute conversation that saves people years of frustration. For owners coming in for service who mention "the boat feels slow" or "it bounces a lot," the trim conversation is usually the first diagnostic step. About half the time, trim is the issue. The other half, it's a propeller or a worn impeller, both of which we'll find on inspection.
-
-If you'd like a structured run-through of trim on your specific boat, email info@harrisboatworks.ca and we can usually walk you through it in 5 minutes. For the broader boat handling conversation, our [Docking in Wind on Rice Lake](/blog/docking-boat-in-wind-rice-lake) post covers another piece of the same skill set.
-
-## Sources
-
-- Mercury Marine outboard operation guide (dealer technical reference, 2026)
-- Transport Canada Pleasure Craft Safety Guide
-- HBW dealer experience, 2018-2026 customer service records
 
 ## About the author
 

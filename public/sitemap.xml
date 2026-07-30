@@ -1404,12 +1404,12 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-how-to-trim-mercury.png</image:loc>
-      <image:title><![CDATA[How to Trim a Boat: Mercury Outboard Guide]]></image:title>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8.png</image:loc>
+      <image:title><![CDATA[How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge]]></image:title>
     </image:image>
   </url>
   <url>
@@ -1908,16 +1908,6 @@
     <image:image>
       <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-dts-vs-mechanical-controls.png</image:loc>
       <image:title><![CDATA[Mercury DTS vs Mechanical Ontario]]></image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mercuryrepower.ca/blog/boat-trim-explained-rice-lake-ontario</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-boat-trim-rice-lake.png</image:loc>
-      <image:title><![CDATA[Boat Trim Explained Rice Lake]]></image:title>
     </image:image>
   </url>
   <url>
@@ -2937,13 +2927,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke</loc>
+    <loc>https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2979,25 +2969,25 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3015,13 +3005,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs</loc>
+    <loc>https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs-dts</loc>
+    <loc>https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

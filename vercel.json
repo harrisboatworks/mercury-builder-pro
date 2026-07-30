@@ -49,6 +49,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/boat-trim-explained-rice-lake-ontario",
+      "destination": "/blog/how-to-trim-boat-mercury-outboard",
+      "statusCode": 301
+    },
+    {
       "source": "/REPOWER",
       "destination": "/repower",
       "statusCode": 301

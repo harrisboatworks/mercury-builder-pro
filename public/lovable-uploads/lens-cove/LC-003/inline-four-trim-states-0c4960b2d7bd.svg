@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Four outboard trim states</title>
+  <desc id="desc">Four consistent side-profile boats show the outboard tucked in for acceleration, nearly vertical for efficient cruise, trimmed too far out with the bow porpoising, and over-trimmed near aerated surface water where ventilation can occur.</desc>
+  <defs>
+    <style>
+      .navy{fill:#0b2a4a;stroke:#0b2a4a}.line{fill:none;stroke:#0b2a4a;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#0b2a4a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+      .water{fill:none;stroke:#3c8dbc;stroke-width:7;stroke-linecap:round}
+      .wake{fill:none;stroke:#78b9d6;stroke-width:6;stroke-linecap:round}
+      .divider{stroke:#d9e1e8;stroke-width:3}
+    </style>
+    <g id="boat">
+      <path d="M105 492 L132 450 L305 424 L351 444 L325 510 Q292 548 205 556 L132 550 Q116 531 105 492 Z" fill="#0b2a4a"/>
+      <path d="M135 457 L304 432 L332 445 L155 476 Z" fill="#ffffff" opacity=".98"/>
+      <path d="M170 448 L213 406 L266 408 L294 429 Z" fill="#ffffff" stroke="#0b2a4a" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M214 407 L234 437 M266 410 L278 432" class="fine"/>
+      <path d="M145 505 Q220 524 322 483" fill="none" stroke="#ffffff" stroke-width="6" opacity=".9"/>
+      <path d="M151 528 Q225 541 305 512" fill="none" stroke="#ffffff" stroke-width="4" opacity=".75"/>
+      <path d="M105 491 L125 472" class="line"/>
+    </g>
+    <g id="motor">
+      <path d="M53 374 Q48 346 63 324 Q84 305 111 313 Q137 320 143 344 L142 398 Q139 414 125 424 L72 423 Q57 411 53 394 Z" fill="#111820" stroke="#0b2a4a" stroke-width="7"/>
+      <path d="M66 345 Q98 331 130 345" fill="none" stroke="#687888" stroke-width="4"/>
+      <path d="M73 387 L129 387" fill="none" stroke="#687888" stroke-width="4"/>
+      <path d="M92 420 L121 420 L124 515 L106 565 L73 565 L88 512 Z" fill="#111820" stroke="#0b2a4a" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M83 533 L121 533" fill="none" stroke="#687888" stroke-width="5"/>
+      <path d="M72 559 L116 559 L104 579 L79 579 Z" fill="#111820" stroke="#0b2a4a" stroke-width="6"/>
+      <circle cx="76" cy="566" r="8" fill="#0b2a4a"/>
+      <path d="M73 566 L49 551 M73 566 L47 577 M73 566 L66 594" class="fine"/>
+      <path d="M126 423 L151 455 L136 468 L112 440 Z" fill="#d9e1e8" stroke="#0b2a4a" stroke-width="6"/>
+      <circle cx="126" cy="424" r="8" fill="#3c8dbc" stroke="#0b2a4a" stroke-width="4"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+  <line x1="400" y1="170" x2="400" y2="730" class="divider"/>
+  <line x1="800" y1="170" x2="800" y2="730" class="divider"/>
+  <line x1="1200" y1="170" x2="1200" y2="730" class="divider"/>
+
+  <!-- Panel 1: tucked in for acceleration -->
+  <g transform="translate(0 0)">
+    <use href="#boat"/>
+    <g transform="rotate(-9 126 424)"><use href="#motor"/></g>
+    <path d="M12 573 Q50 555 90 573 T168 573 T246 573 T324 573 T392 573" class="water"/>
+    <path d="M18 604 Q61 580 108 606 M9 629 Q62 603 119 633" class="wake"/>
+    <path d="M102 250 Q76 282 91 318" class="line"/>
+    <path d="M74 303 L92 320 L108 297" class="line"/>
+  </g>
+
+  <!-- Panel 2: efficient cruise -->
+  <g transform="translate(400 0)">
+    <g transform="rotate(-2 105 492)"><use href="#boat"/></g>
+    <g transform="rotate(-2 126 424)"><use href="#motor"/></g>
+    <path d="M8 573 Q48 555 88 573 T168 573 T248 573 T328 573 T392 573" class="water"/>
+    <path d="M13 599 Q54 580 102 598 M18 620 Q67 601 126 620" class="wake"/>
+    <circle cx="200" cy="250" r="45" fill="none" stroke="#2f8f3a" stroke-width="9"/>
+    <path d="M178 250 L194 267 L224 229" fill="none" stroke="#2f8f3a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M105 635 H270" fill="none" stroke="#2f8f3a" stroke-width="9" stroke-linecap="round"/>
+    <path d="M244 615 L275 635 L244 655" fill="none" stroke="#2f8f3a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Panel 3: too far out / porpoising -->
+  <g transform="translate(800 0)">
+    <g transform="rotate(-8 105 492)"><use href="#boat"/></g>
+    <g transform="rotate(12 126 424)"><use href="#motor"/></g>
+    <path d="M8 573 Q48 555 88 573 T168 573 T248 573 T328 573 T392 573" class="water"/>
+    <path d="M12 602 Q49 579 96 609 M8 629 Q51 602 108 636" class="wake"/>
+    <path d="M237 289 Q279 245 325 284" class="line"/>
+    <path d="M299 267 L328 284 L304 304" class="line"/>
+    <path d="M253 340 Q295 296 341 335" class="line"/>
+    <path d="M315 318 L344 335 L320 355" class="line"/>
+    <path d="M199 196 L250 287 H148 Z" fill="none" stroke="#e59a00" stroke-width="10" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Panel 4: ventilation risk -->
+  <g transform="translate(1200 0)">
+    <g transform="rotate(-11 105 492)"><use href="#boat"/></g>
+    <g transform="rotate(19 126 424)"><use href="#motor"/></g>
+    <path d="M8 573 Q48 555 88 573 T168 573 T248 573 T328 573 T392 573" class="water"/>
+    <path d="M18 601 Q51 579 88 607 M10 628 Q47 603 94 634" class="wake"/>
+    <g fill="none" stroke="#3c8dbc" stroke-width="5">
+      <circle cx="61" cy="551" r="9"/><circle cx="41" cy="577" r="7"/><circle cx="86" cy="585" r="8"/>
+      <circle cx="58" cy="608" r="6"/><circle cx="29" cy="606" r="5"/>
+    </g>
+    <path d="M151 581 Q184 601 154 624 M171 557 Q222 593 176 647 M194 536 Q260 590 200 669" class="fine"/>
+    <circle cx="200" cy="238" r="48" fill="none" stroke="#cf1f1f" stroke-width="10"/>
+  </g>
+</svg>

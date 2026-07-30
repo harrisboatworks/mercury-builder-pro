@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T01:53:10.981Z",
-  "count": 413,
+  "generatedAt": "2026-07-30T10:31:53.763Z",
+  "count": 414,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -340,6 +340,7 @@
     "/lovable-uploads/ko-ontario-boating-licence-regulations-hero",
     "/lovable-uploads/ko-repower-vs-new-boat-hero",
     "/lovable-uploads/ko-rice-lake-fishing-guide-hero",
+    "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8",
     "/lovable-uploads/locations-bewdley-hero",
     "/lovable-uploads/locations-bobcaygeon-hero",
     "/lovable-uploads/locations-bridgenorth-hero",
@@ -2106,6 +2107,11 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8": [
+      640,
+      1024,
+      1672
     ],
     "/lovable-uploads/locations-bewdley-hero": [
       640,

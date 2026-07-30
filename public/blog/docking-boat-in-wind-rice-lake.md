@@ -221,7 +221,7 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
-> Related guide: [Boat trim explained for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+> Related guide: [Boat trim explained for Rice Lake boaters](/blog/how-to-trim-boat-mercury-outboard).
 
 ## Related at HBW
 
