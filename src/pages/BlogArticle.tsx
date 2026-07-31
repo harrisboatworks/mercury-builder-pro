@@ -416,11 +416,17 @@ export default function BlogArticle() {
                     href.startsWith('/') ||
                     href.startsWith('#') ||
                     /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(href);
+                  const isDownloadableAsset = /\.(?:pdf|docx?|xlsx?|zip)(?:[?#]|$)/i.test(href);
                   const isCta = title === 'cta';
                   const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
                   const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
                   if (isInternal) {
                     const to = href.startsWith('#') ? href : (href.replace(/^https?:\/\/[^/]+/, '') || '/');
+                    // Static downloads must bypass React Router, which otherwise
+                    // treats the asset URL as an application route and shows the 404 page.
+                    if (isDownloadableAsset) {
+                      return <a href={to} download className={linkClass} {...props}>{children}</a>;
+                    }
                     return <Link to={to} className={linkClass}>{children}</Link>;
                   }
                   return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
