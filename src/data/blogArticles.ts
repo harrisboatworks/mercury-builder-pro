@@ -13514,7 +13514,7 @@ The other thing we see every year: the customer who waited all summer "to see wh
 ## Frequently Asked Questions
 
 **What Mercury outboards does Harris Boat Works stock for the 2027 model year?**
-We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.
+We stock and order the full FourStroke range and Pro XS performance motors. SeaPro commercial motors and Verado are special order, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.
 
 **Is a 2026-built Mercury still worth buying after the July 1 flip?**
 Yes. It's mechanically identical to early 2027 stock, carries the same 3-year factory warranty starting from your purchase date, and full parts and service continuity. The "previous gen" label matters slightly for resale framing years from now, not for how the motor runs.
