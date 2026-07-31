@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Download, Link2, FileText } from 'lucide-react';
-import { toast } from 'sonner';
-import { supabase } from '@/integrations/supabase/client';
-import { RepowerHeader } from '@/components/repower/RepowerHeader';
-import { SiteFooter } from '@/components/ui/site-footer';
-import { NoIndex } from '@/components/seo/NoIndex';
-import { Helmet } from '@/lib/helmet';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Download, ExternalLink, Link2, FileText } from "lucide-react";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { RepowerHeader } from "@/components/repower/RepowerHeader";
+import { SiteFooter } from "@/components/ui/site-footer";
+import { NoIndex } from "@/components/seo/NoIndex";
+import { Helmet } from "@/lib/helmet";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,7 +16,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from "@/components/ui/breadcrumb";
 
 interface SiteDocument {
   id: string;
@@ -29,17 +29,21 @@ interface SiteDocument {
 }
 
 const PRIMARY_CATEGORIES: { name: string; anchor: string }[] = [
-  { name: 'New Owner Resources', anchor: 'new-owner' },
-  { name: 'Mercury Official Documents', anchor: 'mercury-official' },
-  { name: 'HBW Reference & Guides', anchor: 'hbw-reference' },
+  { name: "New Owner Resources", anchor: "new-owner" },
+  { name: "Mercury Official Documents", anchor: "mercury-official" },
+  { name: "HBW Reference & Guides", anchor: "hbw-reference" },
 ];
 
 function slugifyCategory(name: string): string {
   return name
     .toLowerCase()
-    .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function isPdfUrl(url: string): boolean {
+  return /\.pdf(?:[?#]|$)/i.test(url);
 }
 
 export default function Resources() {
@@ -50,14 +54,16 @@ export default function Resources() {
     let cancelled = false;
     (async () => {
       const { data, error } = await supabase
-        .from('site_documents')
-        .select('id, title, description, category, file_url, file_size_label, sort_order')
-        .eq('is_published', true)
-        .order('sort_order', { ascending: true, nullsFirst: false })
-        .order('title', { ascending: true });
+        .from("site_documents")
+        .select(
+          "id, title, description, category, file_url, file_size_label, sort_order",
+        )
+        .eq("is_published", true)
+        .order("sort_order", { ascending: true, nullsFirst: false })
+        .order("title", { ascending: true });
       if (cancelled) return;
       if (error) {
-        console.error('[Resources] failed to load site_documents', error);
+        console.error("[Resources] failed to load site_documents", error);
         setDocuments([]);
       } else {
         setDocuments((data as SiteDocument[]) ?? []);
@@ -90,9 +96,9 @@ export default function Resources() {
   const copyLink = async (url: string) => {
     try {
       await navigator.clipboard.writeText(url);
-      toast.success('Link copied to clipboard');
+      toast.success("Link copied to clipboard");
     } catch {
-      toast.error('Could not copy link');
+      toast.error("Could not copy link");
     }
   };
 
@@ -103,7 +109,7 @@ export default function Resources() {
         <title>Documents & Downloads | Harris Boat Works</title>
         <meta
           name="description"
-          content="Official Mercury documents, owner guides, and Harris Boat Works reference files — free to download and share."
+          content="Official Mercury documents, owner guides, and Harris Boat Works reference files. Free to open, download and share."
         />
       </Helmet>
       <RepowerHeader />
@@ -114,14 +120,19 @@ export default function Resources() {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/" className="text-repower-navy-900/60 hover:text-repower-mercury-red">
+                  <Link
+                    to="/"
+                    className="text-repower-navy-900/60 hover:text-repower-mercury-red"
+                  >
                     Home
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-repower-navy-900/40" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-repower-navy-900">Documents & Downloads</BreadcrumbPage>
+                <BreadcrumbPage className="text-repower-navy-900">
+                  Documents & Downloads
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -132,8 +143,8 @@ export default function Resources() {
             Documents & Downloads
           </h1>
           <p className="text-repower-navy-900/70 text-base md:text-lg">
-            Official Mercury documents, owner guides, and Harris Boat Works reference files — free
-            to download and share.
+            Official Mercury documents, owner guides, and Harris Boat Works
+            reference files. Free to open, download and share.
           </p>
         </section>
 
@@ -154,51 +165,63 @@ export default function Resources() {
                     </p>
                   ) : (
                     <div className="space-y-3">
-                      {docs.map((doc) => (
-                        <Card key={doc.id} className="border-repower-navy-900/10">
-                          <CardContent className="p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4">
-                            <div className="flex items-start gap-3 flex-1 min-w-0">
-                              <FileText className="w-5 h-5 mt-0.5 text-repower-mercury-red shrink-0" />
-                              <div className="min-w-0">
-                                <h3 className="font-semibold text-repower-navy-900 leading-snug">
-                                  {doc.title}
-                                </h3>
-                                {doc.description && (
-                                  <p className="text-sm text-repower-navy-900/70 mt-1">
-                                    {doc.description}
-                                  </p>
-                                )}
-                                {doc.file_size_label && (
-                                  <p className="text-xs text-repower-navy-900/50 mt-1">
-                                    {doc.file_size_label}
-                                  </p>
-                                )}
+                      {docs.map((doc) => {
+                        const isPdf = isPdfUrl(doc.file_url);
+                        return (
+                          <Card
+                            key={doc.id}
+                            className="border-repower-navy-900/10"
+                          >
+                            <CardContent className="p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4">
+                              <div className="flex items-start gap-3 flex-1 min-w-0">
+                                <FileText className="w-5 h-5 mt-0.5 text-repower-mercury-red shrink-0" />
+                                <div className="min-w-0">
+                                  <h3 className="font-semibold text-repower-navy-900 leading-snug">
+                                    {doc.title}
+                                  </h3>
+                                  {doc.description && (
+                                    <p className="text-sm text-repower-navy-900/70 mt-1">
+                                      {doc.description}
+                                    </p>
+                                  )}
+                                  {doc.file_size_label && (
+                                    <p className="text-xs text-repower-navy-900/50 mt-1">
+                                      {doc.file_size_label}
+                                    </p>
+                                  )}
+                                </div>
                               </div>
-                            </div>
-                            <div className="flex items-center gap-2 md:shrink-0">
-                              <Button asChild size="sm" className="gap-2">
-                                <a
-                                  href={doc.file_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                              <div className="flex items-center gap-2 md:shrink-0">
+                                <Button asChild size="sm" className="gap-2">
+                                  <a
+                                    href={doc.file_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {isPdf ? (
+                                      <Download className="w-4 h-4" />
+                                    ) : (
+                                      <ExternalLink className="w-4 h-4" />
+                                    )}
+                                    {isPdf
+                                      ? "Download PDF"
+                                      : "Open Official Resource"}
+                                  </a>
+                                </Button>
+                                <Button
+                                  type="button"
+                                  variant="outline"
+                                  size="icon"
+                                  aria-label="Copy link"
+                                  onClick={() => copyLink(doc.file_url)}
                                 >
-                                  <Download className="w-4 h-4" />
-                                  Download PDF
-                                </a>
-                              </Button>
-                              <Button
-                                type="button"
-                                variant="outline"
-                                size="icon"
-                                aria-label="Copy link"
-                                onClick={() => copyLink(doc.file_url)}
-                              >
-                                <Link2 className="w-4 h-4" />
-                              </Button>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
+                                  <Link2 className="w-4 h-4" />
+                                </Button>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        );
+                      })}
                     </div>
                   )}
                 </section>
