@@ -1541,7 +1541,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     image: '/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-05-13',
+    dateModified: '2026-07-31',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '9 min',
@@ -1565,13 +1565,13 @@ Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux
 
 Nous vendons plus de moteurs Mercury dans la famille 75 à 115 HP que dans toute autre classe. Et au sein de cette famille, le 90 est là où la plupart des clients aboutissent, non pas parce que c'est l'option la moins chère, mais parce que c'est vraiment le bon choix pour la plupart des bateaux de l'Ontario dans la plage de 16 à 20 pi.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
 
 ---
 
 ## Ce que la famille 90 HP partage réellement
 
-Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. Mercury a effectué 17 000 heures d'essais en usine sur cette génération avant la mise en marché.
+Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. 
 
 Les différences entre les 90, 100 et 115 sont la calibration, le plafond de RPM et le prix. Il n'y a aucune pénalité de poids en montant. Le 90 ELPT et le 115 ELPT pèsent tous les deux 359 lb.
 
@@ -1604,7 +1604,7 @@ Croisière, traction d'une chambre à air, baignade, pêche occasionnelle, le 90
 
 ### Remotorisations remplaçant des deux temps de 70 à 90 HP
 
-Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et 20 à 30 % plus efficace en carburant.
+Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et nettement plus économique en carburant.
 
 ---
 
@@ -1673,7 +1673,7 @@ Non. Le Pro XS est une calibration différente, plafond de RPM plus haut, embase
 Oui, ce n'est pas optionnel.
 
 **Combien le 90 HP économise-t-il en carburant par rapport à un vieux deux temps?**
-Typiquement 20 à 30 % moins de carburant pour la même journée sur l'eau.
+L'économie est réelle et marquée, mais elle varie selon la coque, l'hélice et votre usage. Apportez vos chiffres et nous ferons l'estimation avec vous.
 
 **Le 90 CT est-il le même moteur que le 90 standard?**
 Même tête motrice. Embase différente.
