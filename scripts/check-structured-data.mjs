@@ -7,6 +7,7 @@
 //   2. Missing required schema.org fields per @type
 //   3. Product offers without priceCurrency/price/availability
 //      (the exact bug class that hit /mercury-outboards-ontario)
+//   4. Self-serving LocalBusiness/Organization aggregate ratings
 //
 // Service-typed Offers under LocalBusiness.makesOffer are allowed to omit
 // price (legitimate price-on-request); only Product offers are strict.
@@ -115,6 +116,12 @@ function validateHtmlFile(file) {
             errors.push(`${file} block[${i}]: ${type} missing required field "${f}"`);
           }
         }
+      }
+      if ((type === 'LocalBusiness' || type === 'Organization') && node.aggregateRating) {
+        errors.push(
+          `${file} block[${i}]: ${type} declares a self-serving aggregateRating. ` +
+          `Google does not show review stars for a business or organization that controls the reviewed page.`
+        );
       }
       if (type === 'Offer') {
         // Service offers (price-on-request) are exempt — either the Offer's
