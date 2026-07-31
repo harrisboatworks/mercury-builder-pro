@@ -34239,7 +34239,7 @@ Avoid a shopping list of parts based on forum guesses. â€œReplace the fuel pumpâ
 
 ## What We See at HBW
 
-Our 2025 records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
+In 2025, our records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
 
 Around Rice Lake and the Kawarthas, getting those details before the boat reaches Gores Landing can save a lot of backtracking. A clear symptom history helps us test the right system first instead of replacing parts on a guess.
 
@@ -34306,7 +34306,7 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
 
 ## Sources
 
-- Harris Boat Works 2025 service records: 507 customer-paid service jobs
+- Harris Boat Works service records from 2025: 507 customer-paid service jobs
 - [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
 - [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)
