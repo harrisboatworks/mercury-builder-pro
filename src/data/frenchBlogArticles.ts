@@ -1411,7 +1411,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-07-10',
+    dateModified: '2026-07-31',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '7 min',
@@ -1435,7 +1435,7 @@ Le Mercury 75 HP FourStroke est le même moteur physique que le 90, même bloc 2
 
 On nous pose régulièrement la question sur le Mercury 75 HP FourStroke. Habituellement la question ressemble à : "Le 75 est-il assez bon, ou devrais-je passer au 90?" Voici notre réponse honnête : le 90 est presque toujours le meilleur choix, et la raison pour laquelle nous ne tenons pas le 75 en stock, c'est que c'est le même moteur.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire Mercury Marine certifié Premier. Ce n'est pas une tentative de vous faire dépenser plus, c'est une explication d'une réalité d'ingénierie légitime.
 
 ---
 
