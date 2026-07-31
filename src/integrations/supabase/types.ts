@@ -3942,6 +3942,9 @@ export type Database = {
           file_url: string
           id: string
           is_published: boolean
+          related_label: string | null
+          related_url: string | null
+          reviewed_on: string | null
           sort_order: number
           title: string
           updated_at: string
@@ -3954,6 +3957,9 @@ export type Database = {
           file_url: string
           id?: string
           is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
           sort_order?: number
           title: string
           updated_at?: string
@@ -3966,6 +3972,9 @@ export type Database = {
           file_url?: string
           id?: string
           is_published?: boolean
+          related_label?: string | null
+          related_url?: string | null
+          reviewed_on?: string | null
           sort_order?: number
           title?: string
           updated_at?: string
