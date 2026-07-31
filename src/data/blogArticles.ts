@@ -13395,13 +13395,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury outboard motors on a Harris Boat Works dock representing the 2027 model year lineup for Ontario boaters.',
     author: 'Jay Harris',
     datePublished: '2026-07-09',
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-31',
     publishDate: '2026-07-09',
     category: 'Buying Guide',
     readTime: '11 min read',
     keywords: ['mercury outboard lineup', 'mercury 2027 outboards', 'mercury outboard models ontario', 'mercury fourstroke vs pro xs', 'mercury dealer ontario'],
     faqs: [
-      { question: 'What Mercury outboards does Harris Boat Works stock for the 2027 model year?', answer: 'We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.' },
+      { question: 'What Mercury outboards does Harris Boat Works stock for the 2027 model year?', answer: 'We stock and order the full FourStroke range and Pro XS performance motors. SeaPro commercial motors and Verado are special order, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca.' },
       { question: 'Is a 2026-built Mercury still worth buying after the July 1 flip?', answer: "Yes. It's mechanically identical to early 2027 stock, carries the same 3-year factory warranty starting from your purchase date, and full parts and service continuity. The \"previous gen\" label matters slightly for resale framing years from now, not for how the motor runs." },
       { question: 'When will 2027 Mercury pricing be available?', answer: 'Mercury typically releases model year pricing to dealers over the summer, with physical 2027 inventory shipping late summer or early fall. As of July 2026, our posted pricing still reflects the 2026 model year pricelist. The quote builder always shows current live numbers.' },
       { question: "What's the best Mercury for a fishing boat on Rice Lake?", answer: "For most 14 to 18 ft fishing boats, a FourStroke in the 40 to 115 hp range. A popular setup adds a 9.9 hp ProKicker for dedicated trolling. If you fish tournaments and run hard, that's where Pro XS starts to earn its price." },
@@ -13434,7 +13434,7 @@ Mercury organizes its outboards into families by use case, not just horsepower. 
 
 ### Pro XS: performance fishing
 
-**HP range:** 115 to 300 hp. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke. [In the Ontario tournament world, Pro XS is the standard](/blog/mercury-pro-xs-buyer-guide-ontario). The current architecture is the inline-4 150, V6 175 to 250, and V8 300, and it carries into the 2027 model year unchanged as far as Mercury has announced.
+**HP range:** 115 to 300 hp. Faster hole shot, higher top-end RPM, stronger acceleration than the equivalent FourStroke. [In the Ontario tournament world, Pro XS is the standard](/blog/mercury-pro-xs-buyer-guide-ontario). The current architecture is the inline-4 115 to 150, V6 175 to 250, and V8 300, and it carries into the 2027 model year unchanged as far as Mercury has announced.
 
 Honest note: buyers who pick Pro XS for the badge usually find a correctly propped FourStroke would have done the job for less money and less fuel. Pick by use case, not by name.
 
