@@ -5790,7 +5790,7 @@ Mercury Premier Dealer · Rice Lake, Ontario
     imageAlt: 'Mercury FourStroke outboard powering a family pontoon on freshwater during normal on-water operation.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-31',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
@@ -5799,6 +5799,8 @@ Mercury Premier Dealer · Rice Lake, Ontario
 ---
 
 > **Quick answer:** Mercury's model-specific break-in procedure generally covers the first 10 hours: vary throttle, avoid long steady-RPM runs, and limit sustained wide-open throttle as your owner's manual directs. For most current FourStrokes, Mercury's first scheduled service is 100 hours or annually. HBW offers an optional early oil-and-filter change around 20 hours as dealer best practice, not a Mercury warranty requirement.
+
+[Download Your New Mercury Owner Guide](/downloads/hbw-your-new-mercury-owner-guide.pdf) and keep it with the paperwork for your motor.
 
 **Mercury's own engine care primer for new owners:**
 
@@ -9079,12 +9081,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-spring-commissioning-checklist.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-30',
-    dateModified: '2026-07-09',
+    dateModified: '2026-07-31',
     publishDate: '2026-03-30',
     category: 'Maintenance',
     readTime: '9 min read',
     keywords: ['spring boat commissioning', 'outboard commissioning', 'spring boat startup', 'mercury spring maintenance', 'boat season prep'],
     content: `> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+
+[Print the Spring Launch & First-Run Checklist](/downloads/mercury-spring-launch-first-run-checklist-hbw.pdf) and work through it at the boat.
 
 ---
 
@@ -11594,7 +11598,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
     imageAlt: 'New Mercury 90hp outboard on a workshop stand during winter, ready for a repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-31',
     publishDate: '2026-04-27',
     category: 'Repowering',
     readTime: '8 min read',
@@ -11603,6 +11607,8 @@ The work that makes the season feel easy happens between seasons. Booked once, p
 *Last reviewed: 2026-07-23*
 
 > **Quick answer:** Winter is the best time to plan and order a spring repower. Mercury inventory is open, the spring install queue is unbooked, and we can lock in pricing before the rush. Our shop is closed roughly December 1 to April 1, so the install itself happens once we reopen in early April. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+
+[Download the Mercury Repower Planning Worksheet](/downloads/mercury-repower-planning-worksheet-hbw.pdf) before you compare motors, rigging and install options.
 
 ## Winter Repower Planning
 
@@ -15558,7 +15564,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-07-23',
+    dateModified: '2026-07-31',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -15574,6 +15580,8 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
 ## Quick Answer
 
 You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
+
+[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) so the model-specific steps and supplies stay together at the boat.
 
 For professional winterization and [winter boat storage in the Kawarthas](/blog/boat-storage-kawartha-lakes): [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -16747,7 +16755,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     image: '/lovable-uploads/hero-mercury-wont-start-dockside.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: "2026-07-30",
+    dateModified: "2026-07-31",
     publishDate: '2026-04-27',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -16763,6 +16771,8 @@ Most Mercury no-start calls come down to battery and power (weak battery, switch
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
 This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop.
+
+[Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
 
 ## The three "stupid easy" things to check first
 
@@ -19859,7 +19869,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Close-up of a hand using a flashlight to read the serial number plate on a Mercury outboard motor bracket.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-05-17',
+    dateModified: '2026-07-31',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -19870,6 +19880,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-05-17*
 
 > **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like \`0T123456\` or \`1B234567\`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like \`90ELPT\` or \`1F60413GZ\`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
+
+[Download the Mercury Serial Number & Service Request Prep Sheet](/downloads/mercury-service-request-prep-sheet-hbw.pdf) before you photograph the motor or start a service request.
 
 Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
 
@@ -24989,7 +25001,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
     author: "Jay Harris",
     datePublished: "2026-04-11",
-    dateModified: '2026-07-30',
+    dateModified: '2026-07-31',
     publishDate: "2026-04-11",
     category: "Service",
     readTime: "~12 min read",
@@ -25017,6 +25029,8 @@ Here's the safe choice. Make two independent checks:
 
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
+
+[Download the Marine Fuel & Storage Quick Guide](/downloads/marine-fuel-storage-quick-guide-hbw.pdf) for the pump and storage checklist in one page.
 
 ![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 
@@ -31774,7 +31788,7 @@ Phone: 905-342-2153
     imageAlt: "Marine technician checking cold tire pressure on a boat trailer before towing",
     author: "Jay Harris",
     datePublished: "2026-05-26",
-    dateModified: '2026-07-30',
+    dateModified: '2026-07-31',
     publishDate: "2026-05-26",
     category: "Service",
     readTime: "~11 min read",
@@ -31797,6 +31811,8 @@ Phone: 905-342-2153
 A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
 
 You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
+
+[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 

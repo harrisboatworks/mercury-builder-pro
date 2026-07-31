@@ -4814,7 +4814,7 @@ const routes = [
     h1: 'Documents & Downloads',
     intro: 'Official Mercury documents, owner guides, and Harris Boat Works reference files — free to download and share.',
     schemas: [genericPageSchema('/resources', 'Documents & Downloads', 'Official Mercury documents, owner guides, and Harris Boat Works reference files.')],
-    extraHead: '<meta name="robots" content="noindex, nofollow" />\n  <meta name="googlebot" content="noindex, nofollow" />'
+    robots: 'noindex, nofollow'
   },
   {
     path: '/blog',
@@ -5628,6 +5628,16 @@ function stamp(route) {
     html = html.replace(/<meta\s+name=["']description["'][^>]*>/i, metaDesc);
   } else {
     html = html.replace(/<\/head>/i, `${metaDesc}\n  </head>`);
+  }
+
+  // Routes with an explicit robots policy replace the shell default. Keep one
+  // authoritative tag so crawlers and Helmet see the same instruction.
+  if (route.robots) {
+    html = html.replace(/\s*<meta\s+[^>]*name=["'](?:robots|googlebot)["'][^>]*>/gi, '');
+    html = html.replace(
+      /<\/head>/i,
+      `<meta data-rh="true" name="robots" content="${escapeHtml(route.robots)}" />\n  </head>`
+    );
   }
 
   // canonical (route.canonical wins so pages that consolidate duplicates —
