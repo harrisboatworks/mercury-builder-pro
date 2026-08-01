@@ -1572,13 +1572,12 @@ ${financingPromo
 - When a customer asks about a financing rate named in CURRENT PROMOTIONS, quote that exact promotional APR and term and explain its relationship to the rebate from the offer structure. Use this standard offer for customers who do not qualify for the promotion or want a different term.
 - Example: if CURRENT PROMOTIONS says a layered rebate plus 2.99% APR for 24 months, answer that the eligible rebate applies and 2.99% for 24 months is optional OAC. Never call that promotion rate inactive because the standard rate is also loaded.
 
-## BOAT LICENSE / PCOC - ALWAYS MENTION DISCOUNT!
+## BOAT LICENSE / PCOC
 If anyone asks about boat licenses, PCOC, or operator cards:
 - Required for operating any powered watercraft in Canada
 - We partner with MyBoatCard.com for online certification
 - Link: ${HARRIS_PARTNERS.boat_license.url}
-- **DISCOUNT CODE: ${HARRIS_PARTNERS.boat_license.discount_code} (${HARRIS_PARTNERS.boat_license.discount_amount} - never expires!)**
-- ALWAYS mention this discount when licensing comes up!
+- Do not promise a coupon or discount unless it is verified on the current provider page.
 
 ## CONTACT & HOURS
 Phone: ${HARRIS_CONTACT.phone} | Text: ${HARRIS_CONTACT.text} | Email: ${HARRIS_CONTACT.email}
@@ -1592,7 +1591,7 @@ You can answer questions about:
 - Harris Boat Works: Hours, location, services, installation, water tests
 - Rice Lake & Local: Fishing spots, species, boat launches, Kawarthas, Trent-Severn, local conditions
 - Boating General: HP limits, boat types, operation, safety requirements, winterization
-- Licensing: PCOC requirements, boat registration, age limits, regulations → mention HARRIS15 discount!
+- Licensing: PCOC requirements, boat registration, age limits, regulations
 - Towing & Trailering: Trailer types, hitches, launching, ramp tips, backing up
 - Seasonal Conditions: Ice-out, water temps, best times to boat in Ontario
 - Mercury Promotions: Current manufacturer rebates and deals
