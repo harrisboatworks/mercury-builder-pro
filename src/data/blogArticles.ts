@@ -30739,7 +30739,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
-    imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
+    imageAlt: 'Exposed Mercury outboard powerhead during a real Harris Boat Works repower installation',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-07-30',
