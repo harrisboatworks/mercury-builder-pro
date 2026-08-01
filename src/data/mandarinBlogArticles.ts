@@ -182,7 +182,7 @@ HBW 不提供室内冬储。我们只做室外收缩膜。如果需要室内存�
     image: '/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-01',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
@@ -365,7 +365,7 @@ ProKicker 的特点是低速大扭矩，在 1-2 mph 拖钓速度下稳定运作�
 非常适合。湖水较浅、不会太冷、不会浪太大。是 GTA 家庭学习钓鱼的理想湖泊。
 
 **我可以在 HBW 租一艘钓鱼船吗？**
-可以。9 艘 Legend 船，配 Mercury 马达。请在 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 预订。
+可以。HBW 在 Rice Lake 提供浮桥船和钓鱼船出租。请在 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 查看当前船型、载客量、价格和可订日期，并在线预订。
 
 **HBW 销售钓鱼牌照吗？**
 不销售。请在 ontario.ca/fishing 或当地零售商购买。

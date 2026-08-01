@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-06-02
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works: On Rice Lake Since 1947"
 description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've."
 category: "About HBW"
 date_published: 2026-05-18
-date_modified: 2026-06-02
+date_modified: 2026-08-01
 keywords: ["Harris Boat Works since 1947","third generation marina Ontario","historic Rice Lake marina","trusted boat dealer Ontario","family marina since 1947","Mercury dealer history Canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** About HBW  
 **Published:** 2026-05-18  
-**Last updated:** 2026-06-02  
+**Last updated:** 2026-08-01
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 
@@ -169,7 +169,7 @@ In 2026, HBW operates:
 - **Mercury Certified Repower Centre**, [full-service repower facility for boat owners across Ontario](/blog/mercury-repower-cost-ontario-2026-cad)
 - **Legend Boats Dealer**, selling [Canadian-designed aluminum and pontoon boats](/blog/legend-boats-mercury-power-package-guide-ontario) (designed in Whitefish, Ontario)
 - **Marina Slips**, 49 seasonal slip rentals on Rice Lake
-- **Boat Rentals**, 9-boat fleet (Mercury-powered) for [day rentals to GTA visitors and locals](/blog/rice-lake-boat-rental-guide-2026)
+- **Boat Rentals**, current pontoon and fishing-boat lineup for [Rice Lake rentals](/blog/rice-lake-boat-rental-guide-2026)
 - **Winter Storage**, 311+ stored boats per year
 - **Service & Repair**, diagnostic, warranty, repair, and pre-purchase inspections
 - **Boat Launch**, public-paid launch ramp ($20/day, $200/season) used by hundreds of boaters annually
@@ -211,7 +211,7 @@ Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Servic
 
 ### How big is HBW?
 
-A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, 9-boat rental fleet, 311+ winter storage contracts annually.
+A family marina with 49 seasonal slips, 311 winter-storage contracts in the 2025 season, a peak-season team, and a current pontoon and fishing-boat rental lineup. Rental availability changes, so check the live booking system.
 
 ### Why has HBW been in business so long?
 

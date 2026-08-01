@@ -197,7 +197,7 @@ Tutulungan ka namin bago ka pumalaot, magtatanong kami, magpapaliwanag, at sisig
 
 ## Ang HBW rental fleet
 
-Mayroon kaming 10-boat rental fleet, kasama ang bagong Halo pontoon para sa hanggang 12 tao. Sakto ito para sa pamilya: pwedeng mag-fishing, mag-cruise at magpicture-picture, o mag-relax lang sa tahimik na bahagi ng Rice Lake. Ethanol-free ang gasolina namin on site.
+Mayroon kaming rental fleet na may mga pontoon at fishing boat. Sakto ito para sa pamilya: pwedeng mag-fishing, mag-cruise at magpicture-picture, o mag-relax lang sa tahimik na bahagi ng Rice Lake. Tingnan ang kasalukuyang fleet at availability sa harrisboatworks.ca/rentals. Ethanol-free ang gasolina namin on site.
 
 Hindi kami maglalagay ng presyo dito, ang lahat ng detalye tungkol sa rates at availability ay nandito sa aming rentals page: [https://harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Tumingin doon para makapag-plano ng trip ngayong season.
 
@@ -337,7 +337,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming 10-boat rental fleet kung gusto mong maglaan ng oras sa lawa pagkatapos.
+Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming kasalukuyang rental fleet sa harrisboatworks.ca/rentals kung gusto mong maglaan ng oras sa lawa pagkatapos.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 

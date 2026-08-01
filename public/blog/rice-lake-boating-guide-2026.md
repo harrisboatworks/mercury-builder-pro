@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-05-10
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-01
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last updated:** 2026-08-01
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
@@ -108,7 +108,7 @@ For Rice Lake visitors, this opens up affordable multi-day trips through the Kaw
 
 ## Boat Rentals and Borrowing
 
-If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 9-boat rental fleet (Legend boats with Mercury motors). Walk-up and call-ahead rentals available, see [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
+If you don't have a boat, HBW offers pontoon and fishing-boat rentals on Rice Lake. The current lineup, live rates, capacity, equipment, and availability are listed at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals); rental bookings are online only.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -181,7 +181,7 @@ $20 per day or $200 for a seasonal pass (April through November). Seasonal pass 
 
 ### Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?
 
-No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary "rental boat safety checklist", but most full-day rentals (including ours) require a PCOC.
+The driver must bring proof of operator competency. A Pleasure Craft Operator Card works. HBW's current policy directs non-Canadian residents to complete a renter checklist waiver after reservation.
 
 ### Is Rice Lake too shallow for a 21-foot pontoon?
 

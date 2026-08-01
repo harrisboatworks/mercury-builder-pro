@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide.md
-last_updated: 2026-06-12
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ �
 description: "Ontario fishing licence ki kiven laiye? Outdoors Card, conservation vs sport licence, FMZ 17 Rice Lake rules te free Learn to Fish program, sab Punjabi vich."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-01
 keywords: ["Ontario fishing license keemat online (Ontario fishing license price online)","Toronto de nere fishing spots family layi (fishing spots near Toronto for family)","fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)","Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)","Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)","Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: pa
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-08-01
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide
 
@@ -70,7 +70,7 @@ Rice Lake ’ਤੇ Gores Landing ਆ ਕੇ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’
 licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।
 
 **2. Toronto de nere family layi fishing spots kaun se ne?**  
-Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। ਸਾਡੀ 9-boat rental fleet ਹੈ, ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।
+Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rental fleet ਹੈ; ਮੌਜੂਦਾ fleet ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।
 
 **3. Fishing seasons Ontario vich kiven pata lagge?**  
 FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
@@ -108,7 +108,7 @@ licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ
 
 ### 2. Toronto de nere family layi fishing spots kaun se ne?
 
-Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। ਸਾਡੀ 9-boat rental fleet ਹੈ, ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।
+Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rental fleet ਹੈ; ਮੌਜੂਦਾ fleet ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।
 
 ### 3. Fishing seasons Ontario vich kiven pata lagge?
 

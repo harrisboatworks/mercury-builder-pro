@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-07-27
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
-description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses."
+description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-07-27
+date_modified: 2026-08-01
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,11 +20,11 @@ language: en-CA
 
 # Renting vs Owning a Boat in Ontario: The Honest Math (2026)
 
-> Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses.
+> Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-27  
+**Last updated:** 2026-08-01
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
@@ -34,7 +34,7 @@ language: en-CA
 
 We're a marina that sells boats, services boats, stores boats, and rents boats. Whichever way you go, we're fine.
 
-That makes us one of the few places you'll get this comparison without a thumb on the scale. Most "rent vs buy" articles are written by whoever profits from one answer. Our honest version: the right answer is math plus personality, and people keep doing the math while skipping the personality part.
+Because HBW sells, services, stores, and rents boats, we can lay out both cost structures. The right answer is math plus personality, and the worksheet below covers both.
 
 Here's both.
 
@@ -78,9 +78,9 @@ A rental day has exactly none of those buckets in it. It has a rate you saw befo
 
 ---
 
-## The Worksheet: Five Minutes, Honest Inputs
+## The Worksheet: Honest Inputs
 
-1. **Count your realistic boat days.** Not aspirational days. Look at last summer's calendar: how many days did you have free, at the lake, with weather? Most families who don't live on the water are surprised how small the honest number is; cottagers and retirees land several times higher.
+1. **Count your realistic boat days.** Not aspirational days. Look at last summer's calendar: how many days did you have free, at the lake, with weather? Use your own history rather than a generic usage assumption.
 2. **Price a rental season.** Multiply your realistic days by a rental day (live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) plus fuel). That's your total annual boating cost as a renter. It ends there.
 3. **Price an ownership season.** Add YOUR numbers for the buckets above, using the linked guides. Include the payment if you'd finance.
 4. **Divide ownership cost by your boat days.** That's your true cost per day on the water as an owner.
@@ -94,7 +94,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 
 **Things that quietly favour renting:**
 
-- The boat is always ready, fuelled, and working. Mechanical surprises are our problem, not your Saturday's.
+- Storage, insurance, winterizing, and annual maintenance are not your costs for a booked rental day.
 - You can match the boat to the day: fishing boat for the guys' weekend, cruise pontoon for the family day.
 - No towing, no launch-day logistics, no trailer licence plate to renew.
 - Try different lakes and boats before committing to anything.
@@ -147,15 +147,15 @@ Winterization, storage, spring commissioning, and depreciation. The purchase pri
 
 ### Can renting help me decide what boat to buy?
 
-It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures.
+Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase.
 
 ### If I decide to buy, when's the smart time to do it?
 
 Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side.
 
-### What's the cheapest way to get on Rice Lake this summer?
+### How do I price a Rice Lake rental day?
 
-A rental day, split with another family. No fixed costs, safety gear included, and the marina handles everything. Book a morning slot, pack your own lunch, and the per-person cost beats most day trips out of the city. Live rates: [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs.
 
 ## Related guides
 

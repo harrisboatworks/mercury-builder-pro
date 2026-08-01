@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend.md
-last_updated: 2026-07-29
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Canada Day on Rice Lake: Boating Guide"
 description: "A local's guide to boating Rice Lake over Canada Day weekend - launches, fishing, fireworks viewing, safety, and ethanol-free fuel from Harris Boat Works."
 category: "Local Guide"
 date_published: 2026-06-29
-date_modified: 2026-07-29
+date_modified: 2026-08-01
 keywords: ["Rice Lake","Canada Day","boating","fishing","Ontario boating"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Local Guide  
 **Published:** 2026-06-29  
-**Last updated:** 2026-07-29  
+**Last updated:** 2026-08-01
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
 
@@ -51,7 +51,7 @@ The public launch at Gores Landing has fully reopened after seasonal maintenance
 ### Harris Boat Works private launch ramp
 For $20, you can use the private launch ramp at Harris Boat Works, right in Gores Landing. The ramp is well-maintained concrete with a gentle slope, suitable for most trailerable fishing boats, runabouts, and pontoons. Pay at the marina office upon arrival. This is often a calmer, faster alternative when the public launch is jammed, and you get the added benefit of walking-distance access to ethanol-free 89-octane fuel, tackle, and cold drinks before you head out. We only have one ramp, so there can still be a short wait during peak times, but it's consistently smoother than the public alternative on Canada Day weekend.
 
-If you don't own a boat but want to be on the water, Harris Boat Works also offers pontoon and fishing boat rentals. Check availability and reserve ahead at harrisboatworks.ca/rentals. Rentals book up quickly for the long weekend, so calling early is the best move.
+If you don't own a boat but want to be on the water, Harris Boat Works also offers pontoon and fishing boat rentals. Check current availability and reserve online at harrisboatworks.ca/rentals.
 
 ## Where to Watch Fireworks from the Water
 Watching the Canada Day fireworks from a boat is the highlight of the weekend for many Rice Lake families. The biggest displays are visible from the main lake, but knowing where to anchor makes the difference between a perfect show and a frustrating night of boat wakes and repositioning.

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-07-23
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn Waterway 2026 Guide"
 description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-07-23
+date_modified: 2026-08-01
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-01
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -187,7 +187,7 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Don't Own a Boat? You Can Still Do This
 
-**Rent from HBW.** [Our 9-boat fleet on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+**Rent from HBW.** [Our current Rice Lake rental lineup](/blog/rice-lake-boat-rental-guide-2026) includes ProSport fishing boats, Transporter pontoons, 23 Cruise pontoons, and the Halo pontoon. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 **Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
@@ -202,7 +202,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 | Fuel | Ethanol-free 89-octane marine gas at the dock |
 | Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
 | Launch ramp | 2-lane concrete; $20/day or $200/season |
-| Rentals | 9-boat fleet for day trips |
+| Rentals | Current pontoon and fishing-boat lineup for Rice Lake trips |
 | Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
 
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).

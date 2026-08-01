@@ -139,7 +139,7 @@ export default function FrenchLanding() {
               { icon: Ship, title: "Vente et remotorisations", desc: "Gamme complète Mercury, de 2,5 HP aux séries Verado et V8 400R." },
               { icon: Wrench, title: "Entretien et réparations", desc: "Atelier de service complet pour moteurs Mercury et Mercruiser." },
               { icon: Warehouse, title: "Entreposage hivernal", desc: "Des centaines d'embarcations passent l'hiver avec nous chaque année." },
-              { icon: Anchor, title: "Location d'embarcations", desc: "Neuf embarcations disponibles sur le lac Rice." },
+              { icon: Anchor, title: "Location d'embarcations", desc: "Pontons et bateaux de pêche disponibles sur le lac Rice; consultez la flotte actuelle en ligne." },
               { icon: Fuel, title: "Carburant sans éthanol", desc: "Essence sans éthanol sur place, idéal pour les moteurs hors-bord." },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex gap-3 p-4 rounded-lg bg-muted/30">

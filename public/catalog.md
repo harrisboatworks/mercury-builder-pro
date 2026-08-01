@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-30
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -191,7 +191,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md)
 - [Ordering Your Mercury: What to Expect](https://www.mercuryrepower.ca/blog/mercury-ordering-process.md)
 - [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md)
-- [Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us](https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md)
+- [Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You](https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md)
 - [Why Mercury Dominates the Outboard Market in 2026](https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md)
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario.md)
 - [Mercury Avator Electric Outboards: Cost & Range (Canada)](https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md)

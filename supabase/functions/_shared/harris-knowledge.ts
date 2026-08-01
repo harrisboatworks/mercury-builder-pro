@@ -325,9 +325,6 @@ export const HARRIS_PARTNERS = {
   boat_license: {
     provider: "MyBoatCard.com",
     url: "https://myboatcard.com/card/harrisboat",
-    discount_code: "HARRIS15",
-    discount_amount: "15% off",
-    expires: "Never expires",
     description: "Get your Pleasure Craft Operator Card (PCOC) online - required for operating any powered watercraft in Canada"
   },
   financing: {

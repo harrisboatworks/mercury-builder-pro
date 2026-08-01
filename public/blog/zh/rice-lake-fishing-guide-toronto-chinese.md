@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-04-12
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake钓鱼完整攻略：多伦多华人钓友必读"
 description: "Rice Lake（赖斯湖）钓鱼完整指南。鱼种、季节、装备、钓点、许可证信息，从多伦多出发仅1.5小时车程。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-01
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Last updated:** 2026-08-01
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 
@@ -206,7 +206,7 @@ ProKicker 的特点是低速大扭矩，在 1-2 mph 拖钓速度下稳定运作�
 非常适合。湖水较浅、不会太冷、不会浪太大。是 GTA 家庭学习钓鱼的理想湖泊。
 
 **我可以在 HBW 租一艘钓鱼船吗？**
-可以。9 艘 Legend 船，配 Mercury 马达。请在 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 预订。
+可以。HBW 在 Rice Lake 提供浮桥船和钓鱼船出租。请在 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 查看当前船型、载客量、价格和可订日期，并在线预订。
 
 **HBW 销售钓鱼牌照吗？**
 不销售。请在 ontario.ca/fishing 或当地零售商购买。

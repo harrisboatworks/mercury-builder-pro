@@ -602,14 +602,14 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-07-10',
+    dateModified: '2026-08-01',
     publishDate: '2026-04-12',
     category: 'Destination',
     readTime: '7 min',
     keywords: ['pêche lac Rice Ontario', 'pêche Kawarthas Ontario', 'meilleur lac pêche Ontario', 'Rice Lake fishing guide'],
     content: `### Réponse rapide
 
-Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947, avec une flotte de location de neuf embarcations.
+Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
 
 ---
 
@@ -677,7 +677,7 @@ Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêc
 
 ## Partir à la journée depuis Harris Boat Works
 
-Notre marina dispose d'une flotte de neuf embarcations disponibles à la location. Vous arrivez, vous montez à bord, et vous pêchez sur le même lac Rice que les résidents connaissent depuis des générations. Pas besoin de trouver un accès public, de transporter un bateau, ou d'apprendre à naviguer dans un lac inconnu.
+Notre marina loue des pontons et des bateaux de pêche directement sur le lac Rice. Consultez harrisboatworks.ca/rentals pour connaître les embarcations, les capacités, les tarifs et les disponibilités actuels. Vous n'avez pas besoin de transporter une embarcation depuis un autre lac.
 
 On vend aussi du carburant sans éthanol sur place, un détail que les propriétaires d'embarcations avec moteurs à carburateur apprécient particulièrement, puisque l'éthanol peut causer des problèmes mécaniques lors des périodes d'entreposage.
 
@@ -713,7 +713,7 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 Généralement le 2e samedi de mai pour la Zone 17. Vérifiez la date exacte pour l'année courante sur ontario.ca.
 
 **Peut-on louer un bateau à la journée à Harris Boat Works?** 
-Oui. Notre flotte de neuf embarcations est disponible à la location. Visitez [harrisboatworks.ca](https://harrisboatworks.ca) pour les détails et les réservations.
+Oui. Nous louons des pontons et des bateaux de pêche sur le lac Rice. Visitez [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) pour consulter la flotte actuelle, les tarifs, les disponibilités et réserver en ligne.
 
 **A-t-on besoin d'un permis de pêche pour le lac Rice?** 
 Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.

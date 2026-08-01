@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada.md
-last_updated: 2026-07-09
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is 2026 a Good Year to Buy a Boat in Canada?"
 description: "Is 2026 a good year to buy a boat in Canada? Honest dealer perspective on the market, tariffs, financing, and the repower alternative."
 category: "Buying Guide"
 date_published: 2026-04-28
-date_modified: 2026-07-09
+date_modified: 2026-08-01
 keywords: ["buy boat canada 2026","boat market canada","best time to buy boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-28  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-08-01
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-2026-good-year-to-buy-boat-canada
 
@@ -143,7 +143,7 @@ We sell boats and motors. We are transparent about that.
 
 We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
-Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent for a season first](/blog/renting-vs-owning-boat-ontario-math), HBW has nine boats available on Rice Lake.
+Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent first](/blog/renting-vs-owning-boat-ontario-math); HBW's current pontoon and fishing-boat lineup is listed at harrisboatworks.ca/rentals.
 
 ---
 
@@ -188,7 +188,7 @@ Based on what's actually on HBW's lot right now: entry-level new aluminum boats 
 
 ### Should I buy a boat or just rent in 2026?
 
-If you're uncertain whether you'll use a boat enough to justify ownership costs, renting for a season first is a legitimate and increasingly practical option. At Harris Boat Works, we ran 346 rentals in 2025, that demand is real and growing. The math generally favours ownership at roughly 30+ days of use per year, below that threshold, renting typically costs less than ownership when you factor in storage, maintenance, insurance, and depreciation. A first-time buyer who rents for one season before purchasing typically makes a better buying decision.
+If you're uncertain whether you'll use a boat enough to justify ownership costs, renting first is a practical way to test the type of boat and access pattern that fit you. There is no universal day-count threshold: compare the live rental rate for your realistic number of days against your own storage, maintenance, insurance, winterizing, depreciation, and financing costs.
 
 ### How do boat financing rates in Canada compare in 2026 vs recent years?
 

@@ -89,7 +89,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming 10-boat rental fleet kung gusto mong maglaan ng oras sa lawa pagkatapos.
+Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming kasalukuyang rental fleet sa harrisboatworks.ca/rentals kung gusto mong maglaan ng oras sa lawa pagkatapos.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 

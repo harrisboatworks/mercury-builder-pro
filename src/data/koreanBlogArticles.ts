@@ -188,7 +188,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-01',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -277,7 +277,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 실용 정보
 
-**HBW 렌탈 보트:** Rice Lake에 9척 규모의 렌탈 보트 선단 운영. 자기 낚시 장비만 가져오면 당일 출발 가능. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다. 렌탈 예약: [harrisboatworks.ca](https://harrisboatworks.ca)
+**HBW 렌탈 보트:** Rice Lake에서 폰툰과 낚시 보트를 대여합니다. 현재 보트 종류, 정원, 요금, 예약 가능 날짜는 [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)에서 확인하고 온라인으로 예약하세요. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다.
 
 **언어 안내:** HBW 직원들은 영어로 소통합니다. 한국어 서비스는 없지만 한인 낚시객을 환영하며 최선을 다해 도와드립니다.
 

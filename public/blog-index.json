@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "af1340e4d577dc77f526",
+  "sourceVersion": "d332914f24db50ad531d",
   "count": 202,
   "articles": [
     {
@@ -329,7 +329,7 @@
     {
       "slug": "renting-vs-owning-boat-ontario-math",
       "title": "Renting vs Owning a Boat in Ontario: The Honest Math (2026)",
-      "description": "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses.",
+      "description": "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses.",
       "category": "Boating Lifestyle",
       "publishDate": "2026-07-02",
       "keywords": [
@@ -354,7 +354,7 @@
         },
         {
           "q": "Can renting help me decide what boat to buy?",
-          "a": "It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures."
+          "a": "Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase."
         }
       ]
     },
@@ -374,7 +374,7 @@
       "faqs": [
         {
           "q": "Can we rent multiple boats at once on Rice Lake?",
-          "a": "Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in."
+          "a": "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in."
         },
         {
           "q": "How many people fit on a rental pontoon?",
@@ -393,7 +393,7 @@
     {
       "slug": "first-time-boat-rental-rice-lake-guide",
       "title": "First Time Renting a Boat? What We Tell Every Renter at Our Dock",
-      "description": "Never driven a boat? Here's the exact orientation we give every first-time renter at our Rice Lake dock: driving, docking, wind, and what to do if something goes wrong.",
+      "description": "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong.",
       "category": "Boating Lifestyle",
       "publishDate": "2026-07-02",
       "keywords": [
@@ -405,12 +405,12 @@
       ],
       "faqs": [
         {
-          "q": "Is renting a boat hard if I've never driven one?",
-          "a": "No. A pontoon has one throttle, no brakes, and a walking-pace idle. Our ten-minute dock orientation covers everything, and we don't rush first-timers. The learning curve is roughly \"golf cart,\" not \"airplane.\""
+          "q": "Is renting a boat manageable if I've never driven one?",
+          "a": "A pontoon can be a beginner-friendly option when you stay at idle near the dock, leave extra stopping distance, and follow the dock orientation. Staff review the controls, life jackets, safety gear, and Rice Lake map before departure."
         },
         {
-          "q": "What's the easiest rental boat for a beginner?",
-          "a": "A pontoon, no contest. It's stable, slow to react, forgiving to dock, and has room for the whole crew to spread out. Our 23-ft cruise pontoons are what most first-time groups take out. See the [full fleet guide](/blog/rice-lake-boat-rental-guide-2026)."
+          "q": "Which rental boat should a beginner choose?",
+          "a": "Compare the currently available pontoons in the live booking system and choose one whose posted capacity and equipment fit your group. Staff can review the selected boat's controls during orientation."
         },
         {
           "q": "Do I need a licence for my first rental?",
@@ -418,14 +418,14 @@
         },
         {
           "q": "What happens if I damage the boat?",
-          "a": "Tell us; that's the whole procedure. A $1,000 deposit hold covers assessment, and fender-level bumps are a normal part of everyone's first season. What turns a small thing big is not mentioning it."
+          "a": "Report it at return. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amounts above the hold."
         }
       ]
     },
     {
       "slug": "rice-lake-boat-rental-guide-2026",
       "title": "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
-      "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 10-boat fleet, including the new 12-person Halo, plus costs, licence rules, and booking.",
+      "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking.",
       "category": "Boating Lifestyle",
       "publishDate": "2026-07-02",
       "keywords": [
@@ -442,11 +442,11 @@
         },
         {
           "q": "How much does a Rice Lake boat rental cost?",
-          "a": "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold."
+          "a": "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for the fuel you use and a $1,000 refundable damage-deposit authorization."
         },
         {
           "q": "Are life jackets included?",
-          "a": "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included. Missing gear at return comes out of the damage deposit."
+          "a": "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included."
         },
         {
           "q": "Can we take the rental boat to another lake?",
@@ -2061,8 +2061,8 @@
     },
     {
       "slug": "boat-rentals-shared-access-booming-2026",
-      "title": "Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us",
-      "description": "Rent or buy a boat in 2026? Real numbers from 346 rentals on Rice Lake, the 10-15 day rule, and an honest rent vs own vs boat club comparison for Ontario.",
+      "title": "Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You",
+      "description": "Rent or buy a boat in Ontario? Compare pay-per-use rentals, boat clubs, and ownership, then use a Rice Lake rental to learn what fits before you buy.",
       "category": "Lifestyle",
       "publishDate": "2026-02-06",
       "keywords": [
@@ -2075,11 +2075,11 @@
       "faqs": [
         {
           "q": "Is it cheaper to rent or buy a boat in Ontario?",
-          "a": "Under 10 days a season, renting is almost always cheaper once you count what ownership really costs beyond the purchase price. At 15+ days, ownership usually wins. Between those thresholds, add up a season of rental fees and compare them against the carrying costs in our ownership cost guide."
+          "a": "There is no universal cutoff. Add up the current rental rate and expected fuel for your realistic number of days, then compare that with insurance, storage, winterizing, maintenance, depreciation, and any payment in our ownership cost guide."
         },
         {
           "q": "How many days a year should I boat to justify buying?",
-          "a": "Roughly 15 or more. Below 10, rentals win on math almost every time. Remember the Ontario season is only about 20 prime weekends, so 15 days means boating nearly every second weekend."
+          "a": "Use your own costs and calendar. The more genuine boating days you expect, the more ownership's fixed costs are spread out; occasional users may find pay-per-use rentals easier to justify."
         },
         {
           "q": "Do I need a licence to rent a boat on Rice Lake?",
@@ -2087,7 +2087,7 @@
         },
         {
           "q": "What boats can you rent at Harris Boat Works?",
-          "a": "A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals."
+          "a": "The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Check harrisboatworks.ca/rentals for live availability, capacity, equipment, and rates."
         }
       ]
     },
@@ -3522,8 +3522,8 @@
           "a": "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day."
         },
         {
-          "q": "What does a half-day rental cost?",
-          "a": "Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2× half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing."
+          "q": "What does a rental cost?",
+          "a": "Rates and rental periods vary by boat and date. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for the current price before booking."
         },
         {
           "q": "Can we fish from rental boats?",
