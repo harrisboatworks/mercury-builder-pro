@@ -326,6 +326,18 @@ function cleanBlogContent(content, hasFaqs) {
   let c = cleanLegacyBlogContent(content, {
     hasStructuredFaqs: hasFaqs,
   });
+  // Replace the visual MyBoatCard helper with an equivalent text-first block
+  // so the markdown twin keeps the customer guidance and referral disclosure.
+  c = c.replace(
+    /^::boat-card-help(?:\s*\nvariant:\s*full\s*\n::)?\s*$/gim,
+    [
+      '### Before your rental',
+      '',
+      "HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.",
+      '',
+      '*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*',
+    ].join('\n'),
+  );
   // Convert embedded YouTube cards to ordinary links before removing custom
   // directive fences, so text-only twins retain a useful video destination.
   c = c.replace(

@@ -2314,7 +2314,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     image: "/lovable-uploads/hero-group-boat-rentals.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-27",
+    dateModified: "2026-08-01",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2324,12 +2324,12 @@ Rent a day and count how much you loved it, or price the ownership side with a r
       { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore." },
       { question: "Can our group have a BBQ at the marina?", answer: "Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity." },
       { question: "Can we keep rental boats at our cottage for a reunion weekend?", answer: "Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you." },
-      { question: "Do we need a licence for every boat we rent?", answer: "Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. The online course takes about 3 hours at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (HARRIS15 saves 15%). Non-Canadian visitors complete a renter's checklist waiver instead." },
+      { question: "Do we need a licence for every boat we rent?", answer: "Yes. HBW requires one driver with a valid Pleasure Craft Operator Card for each rental boat. Every driver shows photo ID and a permanent or temporary card at check-in. Passengers don't need one, but anyone who may take the helm does." },
       { question: "Can we bring alcohol for a celebration on the water?", answer: "No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Rice Lake is rigorous with severe penalties. Celebrate on land after the boats are back; the lake is plenty of fun sober." },
     ],
     content: `# Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
 
-*Last reviewed: 2026-07-27*
+*Last reviewed: 2026-08-01*
 
 > **Quick answer:** For groups bigger than one boat's capacity, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book the fleet at harrisboatworks.ca/rentals.
 
@@ -2353,7 +2353,9 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
-**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. The online course takes about 3 hours, so get every designated driver through it the week before: [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat), code HARRIS15 for 15% off. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+**3. Every boat needs its own licensed driver.** One operator card doesn't cover a convoy. HBW requires each boat's driver to show photo ID and a valid Pleasure Craft Operator Card at check-in. If someone may take a turn at the helm, get their card sorted before rental day. Details are in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+
+::boat-card-help
 
 ---
 
@@ -2419,7 +2421,7 @@ Yes, in designated on-site areas only, never on or near the boats. It works well
 Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you.
 
 **Do we need a licence for every boat we rent?**
-Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. The online course takes about 3 hours at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (HARRIS15 saves 15%). Non-Canadian visitors complete a renter's checklist waiver instead.
+Yes. HBW requires one driver with a valid Pleasure Craft Operator Card for each rental boat. Every driver shows photo ID and a permanent or temporary card at check-in. Passengers don't need one, but anyone who may take the helm does.
 
 **Can we bring alcohol for a celebration on the water?**
 No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Rice Lake is rigorous with severe penalties. Celebrate on land after the boats are back; the lake is plenty of fun sober.
@@ -2455,7 +2457,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     image: "/lovable-uploads/hero-first-time-boat-rental.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-27",
+    dateModified: "2026-08-01",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2463,16 +2465,16 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     faqs: [
       { question: "Is renting a boat hard if I've never driven one?", answer: "No. A pontoon has one throttle, no brakes, and a walking-pace idle. Our ten-minute dock orientation covers everything, and we don't rush first-timers. The learning curve is roughly \"golf cart,\" not \"airplane.\"" },
       { question: "What's the easiest rental boat for a beginner?", answer: "A pontoon, no contest. It's stable, slow to react, forgiving to dock, and has room for the whole crew to spread out. Our 23-ft cruise pontoons are what most first-time groups take out. See the [full fleet guide](/blog/rice-lake-boat-rental-guide-2026)." },
-      { question: "Do I need a licence for my first rental?", answer: "Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide)." },
+      { question: "Do I need a licence for my first rental?", answer: "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements." },
       { question: "What happens if I damage the boat?", answer: "Tell us; that's the whole procedure. A $1,000 deposit hold covers assessment, and fender-level bumps are a normal part of everyone's first season. What turns a small thing big is not mentioning it." },
       { question: "What should I bring for a first rental day?", answer: "Sunscreen, hats, water, towels, a cooler with food and non-alcoholic drinks, and a dry bag or zip-lock for phones. Life jackets and safety gear are included and fitted at the dock. Leave the alcohol at home; it's prohibited on the rental boats." },
       { question: "What if the weather looks bad on my rental day?", answer: "If conditions are genuinely poor (high winds, rain), we cancel or reschedule with no penalty and refund your deposits and payments. If it's merely breezy, morning slots are your friend." },
     ],
     content: `# First Time Renting a Boat? What We Tell Every Renter at Our Dock
 
-*Last reviewed: 2026-07-27*
+*Last reviewed: 2026-08-01*
 
-> **Quick answer:** Renting a boat with zero experience is normal and manageable. A pontoon boat is the easiest boat there is to drive: one throttle, no brakes, slow is always the right speed. Every Harris Boat Works rental starts with a ten-minute hands-on orientation, a fitted life jacket, and a lake map. Complete the boating licence course online the evening before, then book at harrisboatworks.ca/rentals.
+> **Quick answer:** Renting a boat with zero experience is normal and manageable. A pontoon is forgiving to handle, and every Harris Boat Works rental starts with a hands-on orientation, a fitted life jacket, and a Rice Lake map. The driver must bring a valid Pleasure Craft Operator Card. Passengers don't need one.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.
 
@@ -2485,6 +2487,8 @@ This is the guide version of what we tell every first-timer at the dock. If you 
 ## Who this is for
 
 You booked (or you're about to book) a rental on Rice Lake and you've never driven a boat. Or you drove your uncle's tinny once in 2009 and you'd like a refresher before six people watch you dock. Either way, this is the no-judgment version. Experienced boaters can skip to the [fleet and cost guide](/blog/rice-lake-boat-rental-guide-2026).
+
+::boat-card-help
 
 ---
 
@@ -2562,7 +2566,7 @@ Motor won't start after your swim stop? Nine times out of ten it's the kill-swit
 
 ## Common mistakes
 
-- **Skipping the licence until rental morning.** The online course takes about 3 hours. Do it the night before at myboatcard.com/card/harrisboat (HARRIS15 saves 15%).
+- **Skipping the operator card until rental morning.** HBW requires the driver to bring a valid PCOC. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
 - **Docking at car-parking speed.** Idle. Glide. Reverse burst. Repeat it like a mantra.
 - **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers makes the day better for both.
 - **Ignoring the map.** The causeway doesn't care that you're new.
@@ -2579,7 +2583,7 @@ No. A pontoon has one throttle, no brakes, and a walking-pace idle. Our ten-minu
 A pontoon, no contest. It's stable, slow to react, forgiving to dock, and has room for the whole crew to spread out. Our 23-ft cruise pontoons are what most first-time groups take out. See the [full fleet guide](/blog/rice-lake-boat-rental-guide-2026).
 
 **Do I need a licence for my first rental?**
-Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements.
 
 **What happens if I damage the boat?**
 Tell us; that's the whole procedure. A $1,000 deposit hold covers assessment, and fender-level bumps are a normal part of everyone's first season. What turns a small thing big is not mentioning it.
@@ -2621,13 +2625,13 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
     image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-08-01",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~9 min read",
     keywords: ["rice lake boat rentals", "pontoon rental rice lake", "boat rental gores landing", "fishing boat rental kawarthas", "rent a boat rice lake ontario"],
     faqs: [
-      { question: "Do I need a boating licence to rent a boat on Rice Lake?", answer: "The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online in an evening at myboatcard.com/card/harrisboat (code HARRIS15 saves 15%). Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-ontario-guide)." },
+      { question: "Do I need a boating licence to rent a boat on Rice Lake?", answer: "Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide)." },
       { question: "How much does a Rice Lake boat rental cost?", answer: "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold." },
       { question: "Are life jackets included?", answer: "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included. Missing gear at return comes out of the damage deposit." },
       { question: "Can we take the rental boat to another lake?", answer: "No. Our boats stay on Rice Lake. If you're headed elsewhere in the Kawarthas, rent from a marina on that lake; trailering our fleet around isn't a thing we offer." },
@@ -2637,9 +2641,9 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
     ],
     content: `# Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-08-01*
 
-> **Quick answer:** Harris Boat Works rents a 9-boat fleet on Rice Lake: 23-ft cruise pontoons, 20-ft and 24-ft fishing pontoons, and 16-ft ProSport fishing boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and a boat operator's card (the online course takes an evening). Book at harrisboatworks.ca/rentals.
+> **Quick answer:** Harris Boat Works rents a 9-boat fleet on Rice Lake: cruise pontoons, fishing pontoons, and 16-ft ProSport fishing boats. Everything books online with live availability, life jackets and safety gear included. The driver must bring photo ID and a valid Pleasure Craft Operator Card. Passengers don't need one.
 
 Last season, 346 rentals went out from our dock. Most of them started with the same three questions: what boats do you have, what does it really cost, and do I need a licence?
 
@@ -2694,7 +2698,9 @@ There's no damage insurance to buy; the deposit system is the whole arrangement,
 
 ## Licences: The Two Cards That Matter
 
-**To drive the boat**, the operator needs proof of competency. If you have a Pleasure Craft Operator Card, bring it. If nobody in your group has one, you can complete the boating licence course online in an evening at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat), and our promo code HARRIS15 takes 15% off. Non-Canadian residents complete a renter's checklist waiver after reserving. Full details in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
+**To drive the boat**, HBW requires a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If more than one person may drive, each driver needs a card. Full details are in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
+
+::boat-card-help
 
 **To fish**, anyone 18 to 64 needs an Outdoors Card plus an Ontario fishing licence, sport or conservation. Under 18 or 65 plus, government ID is your licence. We don't sell fishing licences; get them at [ontario.ca](https://www.ontario.ca/page/get-fishing-licence) before you arrive. Canadian residents fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
 
@@ -2702,7 +2708,7 @@ There's no damage insurance to buy; the deposit system is the whole arrangement,
 
 ## Common mistakes
 
-- **Booking the boat but not the licence.** The temporary operator card takes minutes online, but do it before rental day, not at our counter at 8:05 am.
+- **Booking the boat but not the operator card.** The course takes time. Complete it before rental day, not at our counter at 8:05 am.
 - **Bringing a cooler of beer.** Alcohol on our rental boats is prohibited, full stop. Same rules as a car in Ontario, and the OPP patrol Rice Lake seriously.
 - **Ignoring the buoyed channels.** The old Harwood-to-Hiawatha rail causeway left rock just under the surface mid-lake. It's unmarked outside the buoyed passes. Use the map we hand you; it exists because of exactly this.
 - **Planning a shore party.** Your group size is the boat's capacity. Extra people can't hang out on our property while you boat.
@@ -2737,7 +2743,7 @@ Rice Lake is the closest serious fishing and cruising lake to the eastern GTA th
 ## Frequently Asked Questions
 
 **Do I need a boating licence to rent a boat on Rice Lake?**
-The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online in an evening at myboatcard.com/card/harrisboat (code HARRIS15 saves 15%). Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-ontario-guide).
+Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
 **How much does a Rice Lake boat rental cost?**
 Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold.
@@ -2790,24 +2796,24 @@ Pick your boat and date, and the booking system shows you live availability and 
     image: "/lovable-uploads/hero-boat-rental-licence-ontario.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-08-01",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~7 min read",
     keywords: ["licence to rent a boat ontario", "boat rental licence ontario", "pcoc for rental boat", "boating licence rice lake", "temporary boat licence ontario"],
     faqs: [
-      { question: "Can I rent a boat in Ontario with no licence at all?", answer: "You can book one, but the driver can't operate it without proof of competency. The fix takes one evening: complete the boating licence online at myboatcard.com/card/harrisboat (HARRIS15 for 15% off), or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving." },
+      { question: "Can I rent a boat in Ontario with no licence at all?", answer: "You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine." },
       { question: "Does everyone in the boat need a licence?", answer: "No, just whoever is driving. Passengers of any age need nothing. If two of you want to trade off driving through the day, both drivers need proof of competency." },
-      { question: "How fast can I actually get a boating licence?", answer: "Same day. The accredited course and test are fully online and self-paced; most people finish in about 3 hours. Your proof of completion is immediate and the physical card follows by mail. Doing it the night before your rental is the move." },
+      { question: "How fast can I actually get a boating licence?", answer: "The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you." },
       { question: "Is the PCOC valid outside Ontario?", answer: "Yes. It's a federal Transport Canada credential, valid across Canada, and it never expires. One evening covers every boating trip you'll ever take in the country. Some US states also recognize it for visiting boaters, but check that state's rules before you count on it." },
       { question: "Do kids need a licence to drive the rental boat?", answer: "Rental boats are adult territory: our rental drivers must be licensed adults with photo ID. Beyond our policy, Transport Canada also sets horsepower restrictions for youth operators. Short version: the kids ride, the adults drive." },
-      { question: "I'm visiting from the US. Can I rent?", answer: "Yes. Non-Canadian residents complete a renter's checklist waiver after booking instead of the Canadian card, and show home-country photo ID at check-in. Book first at harrisboatworks.ca/rentals and the paperwork follows online." },
+      { question: "I'm visiting from the US. Can I rent?", answer: "Yes, but HBW's operator-card policy still applies. MyBoatCard accepts non-residents for its accredited online course. Bring your temporary or permanent PCOC and photo ID at check-in." },
     ],
     content: `# Do You Need a Licence to Rent a Boat in Ontario? (2026)
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-08-01*
 
-> **Quick answer:** Yes, whoever drives a rented powerboat in Ontario needs proof of operator competency. A Pleasure Craft Operator Card (PCOC) works, and if nobody in your group has one, you can complete the boating licence course online the evening before rental day (about 3 hours). Only the driver needs it, passengers don't. At Harris Boat Works, get yours at myboatcard.com/card/harrisboat (code HARRIS15 saves 15%).
+> **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A rental safety checklist can satisfy that rule in some rental situations, but Harris Boat Works has a stricter policy: every rental driver must show a valid Pleasure Craft Operator Card. Passengers don't need one.
 
 Every summer we watch the same scene: a group arrives for their 8:00 am rental, sunscreen on, cooler packed, and then someone asks "wait, we need a *licence*?"
 
@@ -2819,16 +2825,16 @@ This is the plain-language version of Canada's operator competency rules as they
 
 ## The Rule, In Plain Terms
 
-Transport Canada requires anyone operating a motorized pleasure boat in Canada to carry proof of operator competency. For most Canadian boaters that means the Pleasure Craft Operator Card, the "boating licence" you get once by passing an accredited online test, and it never expires.
+Transport Canada requires anyone operating a motorized pleasure boat in Canada to carry proof of competency. For most Canadian boaters, that means the Pleasure Craft Operator Card (PCOC), commonly called a boating licence. You earn it once by passing an accredited test, and it doesn't expire.
 
-For rentals specifically, the system is built so first-timers aren't shut out. You have two routes:
+For rentals, a completed rental boat safety checklist can satisfy the federal proof-of-competency rule. That's the legal minimum. HBW's rental policy goes one step further: every person who drives one of our boats must show a valid PCOC at check-in. We don't substitute the rental checklist for the card.
 
-| Route | What it is | Good for | Time |
-|---|---|---|---|
-| PCOC (boat licence) | Accredited online course + test, one-time | Life. It never expires | About 3 hours, self-paced online (Transport Canada sets the minimum study time) |
-| Rental-day paperwork | A renter competency process completed with the rental operator | That rental only | Minutes |
+| Requirement | What it means |
+|---|---|
+| Canadian legal minimum | Carry accepted proof of competency. For a rental, a completed rental boat safety checklist can qualify. |
+| HBW rental policy | Every driver must show a valid permanent or temporary PCOC plus photo ID. |
 
-Our honest advice: if you're [renting once for a family day](/blog/renting-vs-owning-boat-ontario-math), the quick route is fine. If this is going to become a summer habit (it usually does), just get the card. You'll never think about it again.
+Only the driver needs the card. If two people plan to share the helm, both need one.
 
 ---
 
@@ -2836,19 +2842,23 @@ Our honest advice: if you're [renting once for a family day](/blog/renting-vs-ow
 
 We keep it to three things at check-in:
 
-1. **Photo ID** for the driver.
-2. **Proof of competency** for the driver: your PCOC if you have one, or the boating licence you completed online. The fastest route for our renters is [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat), and promo code **HARRIS15** takes 15% off. Do it the night before; it's all online and your temporary proof is immediate, with the card mailed after.
-3. **Non-Canadian residents** (visiting from the US or overseas) complete a renter's checklist waiver after reserving instead. Bring your passport or home ID.
+1. **Photo ID** for every person who may drive.
+2. **A valid PCOC** for every driver. The physical card or temporary proof after passing the accredited test both work.
+3. **The driver orientation.** We still cover the boat, safety equipment, local hazards, and the Rice Lake map before you leave.
 
 Only the person driving needs any of this. Grandma, the kids, and your buddy who "just wants to fish" are passengers, and passengers need nothing.
 
 One driver can hand the wheel to another licensed driver mid-day. If you're booking for a bigger crew, our [group boat rentals on Rice Lake](/blog/group-boat-rentals-rice-lake) guide covers how that works. What you can't do is check in with one licensed person who then hands the boat to an unlicensed cousin. The person at the helm is the one who needs the proof.
 
+::boat-card-help
+variant: full
+::
+
 ---
 
 ## What It Costs and How Long It Takes
 
-The online boating licence course runs on your phone or laptop, is self-paced, and most people finish in about 3 hours including the test. With our HARRIS15 code the price drops 15%. Fail the test? You retake it, no drama.
+The accredited online course runs on your phone or laptop and takes a few hours. When you pass, you can print temporary proof for check-in while the physical card is mailed to you. Give yourself a quiet evening before rental day instead of trying to finish it in our parking lot.
 
 Compare that to the cost of showing up licence-less: your 8:00 am slot ticking away while you speed-run a safety course on your phone in our parking lot. We see it every July weekend. Be the group that did it Tuesday night.
 
@@ -2884,13 +2894,13 @@ The licence check is the boring part of a ten-minute send-off. Before any rental
 ## Frequently Asked Questions
 
 **Can I rent a boat in Ontario with no licence at all?**
-You can book one, but the driver can't operate it without proof of competency. The fix takes one evening: complete the boating licence online at myboatcard.com/card/harrisboat (HARRIS15 for 15% off), or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving.
+You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine.
 
 **Does everyone in the boat need a licence?**
 No, just whoever is driving. Passengers of any age need nothing. If two of you want to trade off driving through the day, both drivers need proof of competency.
 
 **How fast can I actually get a boating licence?**
-Same day. The accredited course and test are fully online and self-paced; most people finish in about 3 hours. Your proof of completion is immediate and the physical card follows by mail. Doing it the night before your rental is the move.
+The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you.
 
 **Is the PCOC valid outside Ontario?**
 Yes. It's a federal Transport Canada credential, valid across Canada, and it never expires. One evening covers every boating trip you'll ever take in the country. Some US states also recognize it for visiting boaters, but check that state's rules before you count on it.
@@ -2899,17 +2909,13 @@ Yes. It's a federal Transport Canada credential, valid across Canada, and it nev
 Rental boats are adult territory: our rental drivers must be licensed adults with photo ID. Beyond our policy, Transport Canada also sets horsepower restrictions for youth operators. Short version: the kids ride, the adults drive.
 
 **I'm visiting from the US. Can I rent?**
-Yes. Non-Canadian residents complete a renter's checklist waiver after booking instead of the Canadian card, and show home-country photo ID at check-in. Book first at harrisboatworks.ca/rentals and the paperwork follows online.
+Yes, but HBW's operator-card policy still applies. MyBoatCard accepts non-residents for its accredited online course. Bring your temporary or permanent PCOC and photo ID at check-in.
 
 ---
 
 ## Ready to Book?
 
-Handle the licence tonight, [book the boat for the weekend](/blog/first-time-boat-rental-rice-lake-guide), and rental morning becomes a ten-minute check-in instead of a scramble.
-
-**Licence:** [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (code HARRIS15)
-**Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
+Get the operator card sorted before rental day, then [book the boat for the weekend](https://harrisboatworks.ca/rentals). Rental morning becomes a quick check-in instead of a scramble.
 
 **Related guides:**
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
@@ -13155,14 +13161,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png',
     author: 'Jay Harris',
     datePublished: '2026-02-06',
-    dateModified: '2026-07-18',
+    dateModified: '2026-08-01',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '~9 min read',
     keywords: ['rent or buy a boat', 'boat rentals Rice Lake', 'boat rental vs ownership Ontario', 'boat club vs boat rental', 'is renting a boat worth it'],
     content: `# Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us
 
-*Last reviewed: 2026-07-18*
+*Last reviewed: 2026-08-01*
 
 > **Quick answer:** Rent if you'll boat fewer than 10 days a season. Buy if you'll be on the water 15 or more. That rule comes from our own numbers: Harris Boat Works completed 346 rentals across a 9-boat fleet on Rice Lake in 2025. Between 10 and 15 days, compare a season of rental fees against storage, insurance, and winterizing. Book a boat at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
@@ -13222,7 +13228,7 @@ Renting flips that seasonal math in your favour. You pay for exactly the days yo
 A few things that bite first-time renters every summer:
 
 - **Booking late for July.** Summer weekends go early. If you want a specific boat on a long weekend, book weeks ahead, not days.
-- **Skipping the licence.** Every boat driver in Ontario needs a boat operator's licence. You can get one online before your rental; our [rental licence guide](/blog/boat-rental-licence-ontario-guide) covers it.
+- **Skipping the operator card.** HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. Our [rental licence guide](/blog/boat-rental-licence-ontario-guide) explains what to arrange before rental day.
 - **Underestimating space.** Six adults, a cooler, and a dog need a 23 Cruise or 24 Transporter, not a 16-footer. Count your people and gear honestly before you book.
 - **Ignoring the forecast.** Rice Lake is shallow and kicks up chop fast in a west wind. Build a weather plan B into your day.
 
@@ -13236,7 +13242,7 @@ We've been renting boats on this lake since 1947. The boom is new. The idea isn'
 
 ## Ready to get on the water?
 
-**Renting:** all bookings are online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Promo code HARRIS15 takes 15% off. Rentals run daily through the season from our dock in Gores Landing.
+**Renting:** all bookings are online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Rentals run daily through the season from our dock in Gores Landing. If the driver still needs a PCOC, our [rental licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and the HARRIS15 partner discount.
 
 **Buying:** if your rental habit has crossed the 15-day line, build a real quote with Canadian pricing at [mercuryrepower.ca](https://mercuryrepower.ca), or come walk the lot. We'll give you the honest answer for your situation, including "keep renting."
 
@@ -19208,7 +19214,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: "2026-05-10",
+    dateModified: "2026-08-01",
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
@@ -19396,7 +19402,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     "question": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
-    "answer": "No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary \"rental boat safety checklist\", but most full-day rentals (including ours) require a PCOC."
+    "answer": "You can reserve a boat, but Harris Boat Works requires every rental driver to show a valid Pleasure Craft Operator Card and photo ID before departure. Passengers don't need one. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details."
   },
   {
     "question": "Is Rice Lake too shallow for a 21-foot pontoon?",
@@ -22153,14 +22159,14 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-07-02',
+    dateModified: '2026-08-01',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
     keywords: ["Rice Lake boat rentals", "boat rentals near Toronto", "Kawarthas pontoon rentals", "family boat rental Ontario", "day trip boat rental GTA", "pontoon rental Toronto"],
     content: `# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-08-01*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
 
@@ -22221,10 +22227,12 @@ Each rental includes:
 - **Restroom + ice / snacks** at the marina before you leave
 
 What you bring:
-- **Valid [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
+- **Valid [Pleasure Craft Operator Card](/blog/boat-rental-licence-ontario-guide) (PCOC)** for every person who may drive. HBW requires it as a rental policy, even though federal rules allow a rental safety checklist as proof of competency in some rental situations. Bring the permanent card or temporary proof with your photo ID.
 - **Sunscreen, hats, water, snacks**
 - **Fishing gear and licence if fishing.** [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
+
+::boat-card-help
 
 What's NOT included:
 - **Fuel beyond what's prefilled**, most full-day rentals come back with about 1/4 tank used; if you run dry, refuel costs apply
@@ -22348,7 +22356,7 @@ The itinerary above is the fun math. Here's the money math, all in, so nobody's 
 | Boat rental | Live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) | Varies by boat and day; pontoons book out summer weekends, reserve ahead |
 | Fuel (paid at return) | $15 to $75 fishing, $60 to $100 full cruising day | You pay for what you burn; wind and throttle habit decide it |
 | Damage deposit | $1,000 hold, refunded | Credit card authorization, not a charge |
-| Boating licence | One-time, 15% off with code HARRIS15 | Online at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); it never expires |
+| Operator card | One-time | Every HBW rental driver must bring a valid PCOC; it never expires |
 | Bait | $5 a dozen worms ($10 for two) | At our dock; BJ Tackle in Bewdley for everything else |
 | Lunch and treats | Your call | Gores Landing and Bewdley both have options; ice cream stops are mandatory with kids aboard |
 
@@ -22366,7 +22374,7 @@ One planning note that saves money: fuel burn is mostly throttle habit. A day of
 Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes.
 
 **Do I need a boating licence to rent at HBW?**
-Yes, a Pleasure Craft Operator Card (PCOC) is required to operate any motorized boat in Ontario. If you don't have one, the marina can sometimes issue a temporary "rental boat safety checklist", but most full-day rentals require the PCOC. Easier to get the actual card before you come (3-hour online course, $50, lifetime good).
+Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day.
 
 **What does a half-day rental cost?**
 Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2× half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing.
@@ -22399,7 +22407,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: "How long does it take to drive from Toronto to Rice Lake?", answer: "Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes." },
-      { question: "Do I need a boating licence to rent at HBW?", answer: "Yes, a Pleasure Craft Operator Card (PCOC) is required to operate any motorized boat in Ontario. If you don't have one, the marina can sometimes issue a temporary \"rental boat safety checklist\", but most full-day rentals require the PCOC. Easier to get the actual card before you come (3-hour online course, $50, lifetime good)." },
+      { question: "Do I need a boating licence to rent at HBW?", answer: "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day." },
       { question: "What does a half-day rental cost?", answer: "Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2\u00d7 half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing." },
       { question: "Can we fish from rental boats?", answer: "Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST." },
       { question: "What if it rains the day of our rental?", answer: "Light rain, boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning), we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be." },
