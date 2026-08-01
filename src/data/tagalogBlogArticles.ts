@@ -134,7 +134,7 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-01',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)', 'kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)', 'boat operator card Ontario paano (boat operator card Ontario how)', 'online boat license Ontario Tagalog (online boat license Ontario Tagalog)', 'PCOC exam Tagalog (PCOC exam Tagalog)'],
@@ -197,7 +197,7 @@ Tutulungan ka namin bago ka pumalaot, magtatanong kami, magpapaliwanag, at sisig
 
 ## Ang HBW rental fleet
 
-Mayroon kaming 9-boat rental fleet. Sakto ito para sa pamilya: pwedeng mag-fishing, mag-cruise at magpicture-picture, o mag-relax lang sa tahimik na bahagi ng Rice Lake. Ethanol-free ang gasolina namin on site.
+Mayroon kaming 10-boat rental fleet, kasama ang bagong Halo pontoon para sa hanggang 12 tao. Sakto ito para sa pamilya: pwedeng mag-fishing, mag-cruise at magpicture-picture, o mag-relax lang sa tahimik na bahagi ng Rice Lake. Ethanol-free ang gasolina namin on site.
 
 Hindi kami maglalagay ng presyo dito, ang lahat ng detalye tungkol sa rates at availability ay nandito sa aming rentals page: [https://harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Tumingin doon para makapag-plano ng trip ngayong season.
 
@@ -260,7 +260,7 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
     image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-01',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['mekaniko ng bangka sa Toronto (boat mechanic in Toronto)', 'pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)', 'marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)', 'paano i-winterize ang bangka (how to winterize a boat)', 'paghahanda ng bangka sa taglamig (preparing boat for winter)', 'winter storage ng bangka Ontario (winter storage of boat Ontario)', 'winterization service bangka Toronto (winterization service boat Toronto)', 'paano ayusin ang Mercury outboard (how to fix Mercury outboard)'],
@@ -337,7 +337,7 @@ Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
 
-Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming 9-boat rental fleet kung gusto mong maglaan ng oras sa lawa pagkatapos.
+Pick-up lang ang serbisyo namin sa aming lokasyon sa Gores Landing. Hindi kami pumupunta sa bahay mo para mag-ayos, pero madaling i-trailer ang bangka papunta sa amin, halos 90 minutong biyahe mula sa Brampton, Mississauga, Scarborough, o Markham. May ethanol-free fuel kami on site, at habang naghihintay, puwede mong tingnan ang aming 10-boat rental fleet kung gusto mong maglaan ng oras sa lawa pagkatapos.
 
 ## Isang Matapat na Paalala Tungkol sa Wika
 

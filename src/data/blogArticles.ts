@@ -2321,7 +2321,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     keywords: ["group boat rental rice lake", "family reunion boat rental ontario", "rent multiple boats", "pontoon rental for large group", "fishing weekend boat rental kawarthas"],
     faqs: [
       { question: "Can we rent multiple boats at once on Rice Lake?", answer: "Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in." },
-      { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore." },
+      { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two." },
       { question: "Can our group have a BBQ at the marina?", answer: "Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity." },
       { question: "Can we keep rental boats at our cottage for a reunion weekend?", answer: "Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you." },
       { question: "Do we need a licence for every boat we rent?", answer: "Yes. HBW requires one driver with a valid Pleasure Craft Operator Card for each rental boat. Every driver shows photo ID and a permanent or temporary card at check-in. Passengers don't need one, but anyone who may take the helm does." },
@@ -2331,7 +2331,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** For groups bigger than one boat's capacity, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book the fleet at harrisboatworks.ca/rentals.
+> **Quick answer:** The new Halo gives groups of up to 12 people a roomy single-boat option. For larger groups, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Book the fleet at harrisboatworks.ca/rentals.
 
 Every July, some brave soul organizes the family reunion. Twenty-two people, four coolers, one group chat that's been chaos since March.
 
@@ -2349,7 +2349,7 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 ## The Three Rules That Surprise Group Organizers
 
-**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. Twelve people can't "mostly fit" on one pontoon. The fix is simple: book two boats. Groups do it all summer.
+**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. The Halo is listed for up to 12 people. A group of 13 can't "mostly fit," so the fix is simple: book two boats. Groups do it all summer.
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
@@ -2365,7 +2365,8 @@ Mix boats by what each sub-group wants to do:
 
 | Group | Boats to book | Why |
 |---|---|---|
-| Big family day (10 to 16) | Two cruise pontoons | Everyone swims, cruises, anchors together for lunch |
+| Big family day (up to 12) | Halo pontoon | The fleet's largest single-boat passenger capacity, with roomy seating and Bluetooth audio |
+| Larger family day (13 to 16) | Two cruise or fishing pontoons | Split the group safely while everyone cruises and anchors together for lunch |
 | Fishing weekend (4 to 8) | Two ProSport fishing boats, or one plus a fishing pontoon | Split up, hit different spots, compare catches at dinner |
 | Two-family cottage crew | One cruise pontoon + one fishing boat | Anglers leave at 8 am, families launch at 10 |
 | Reunion with elders and toddlers | Cruise pontoons | Stable, shaded, easy boarding, room for the stroller crowd |
@@ -2412,7 +2413,7 @@ Group send-offs get the same treatment as every rental, multiplied: every boat f
 Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in.
 
 **How many people fit on a rental pontoon?**
-Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore.
+Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two.
 
 **Can our group have a BBQ at the marina?**
 Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity.
@@ -2621,7 +2622,7 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
   {
     slug: "rice-lake-boat-rental-guide-2026",
     title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
-    description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 9-boat fleet, what's included, real fuel costs, licence rules, and how booking works.",
+    description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 10-boat fleet, including the new 12-person Halo, plus costs, licence rules, and booking.",
     image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
@@ -2643,7 +2644,7 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** Harris Boat Works rents a 9-boat fleet on Rice Lake: cruise pontoons, fishing pontoons, and 16-ft ProSport fishing boats. Everything books online with live availability, life jackets and safety gear included. The driver must bring photo ID and a valid Pleasure Craft Operator Card. Passengers don't need one.
+> **Quick answer:** Harris Boat Works rents a 10-boat fleet on Rice Lake, including a new 23-ft 5-in Halo pontoon for groups of up to 12, cruise and fishing pontoons, and 16-ft ProSport fishing boats. Everything books online with live availability, life jackets and safety gear included. The driver must bring photo ID and a valid Pleasure Craft Operator Card. Passengers don't need one.
 
 Last season, 346 rentals went out from our dock. Most of them started with the same three questions: what boats do you have, what does it really cost, and do I need a licence?
 
@@ -2655,13 +2656,16 @@ One thing up front: we're in Gores Landing, on [the south shore of Rice Lake](/b
 
 ## The Fleet: What You Can Actually Rent
 
-Nine boats, three jobs:
+Ten boats, four ways to spend the day:
 
 | Boat | Size | Best for |
 |---|---|---|
+| Halo pontoon | 23 ft 5 in | Groups of up to 12 who want one roomy cruising boat with Bluetooth audio |
 | Cruise pontoons | 23 ft | Families and groups who want to tour the lake, swim, and anchor for lunch |
 | Fishing pontoons (Transporter) | 20 and 24 ft | Groups that fish. Open deck, room for rods and coolers |
 | ProSport fishing boats | 16 ft | Two or three anglers who want to run to the spots and fish all day |
+
+The new Halo is our largest single-boat option by passenger capacity. It has a 60 hp motor, Bluetooth stereo, and a 95 L fuel tank. It doesn't have a livewell or fishfinder, so groups focused on fishing should choose a Transporter or ProSport instead.
 
 Every pontoon has a Bluetooth stereo. Every boat goes out with legally required safety gear and life jackets fitted to your whole party at check-in, including kid sizes. You don't bring or rent any of that separately.
 
@@ -13170,7 +13174,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** Rent if you'll boat fewer than 10 days a season. Buy if you'll be on the water 15 or more. That rule comes from our own numbers: Harris Boat Works completed 346 rentals across a 9-boat fleet on Rice Lake in 2025. Between 10 and 15 days, compare a season of rental fees against storage, insurance, and winterizing. Book a boat at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+> **Quick answer:** Rent if you'll boat fewer than 10 days a season. Buy if you'll be on the water 15 or more. That rule comes from our own numbers: Harris Boat Works completed 346 rentals across a 9-boat fleet on Rice Lake in 2025. The current 2026 fleet has 10 boats after the addition of a 12-person Halo pontoon. Between 10 and 15 days, compare rental fees against storage, insurance, and winterizing.
 
 Nine boats. 346 rentals. One season.
 
@@ -13192,7 +13196,7 @@ We feel it on our own dock. Rentals have been part of Harris Boat Works for deca
 
 ## Who actually rents from us
 
-Our rental fleet is 9 Legend boats, all Mercury-powered and maintained by our own shop: 2 Legend 23 Cruise pontoons, 3 Legend 24 Transporters, 2 Legend 20 Transporters, and 2 Legend 16 ProSports. These aren't mystery boats with unknown service histories. Our technicians prep them, fix them, and winterize them.
+Our current rental fleet is 10 Legend boats, all Mercury-powered and maintained by our own shop: 1 new Halo pontoon listed for up to 12 people, 2 Legend 23 Cruise pontoons, 3 Legend 24 Transporters, 2 Legend 20 Transporters, and 2 Legend 16 ProSports. These aren't mystery boats with unknown service histories. Our technicians prep them, fix them, and winterize them.
 
 Four groups keep them busy:
 
@@ -13258,7 +13262,7 @@ Roughly 15 or more. Below 10, rentals win on math almost every time. Remember th
 Yes. Whoever drives needs a boat operator's licence, and you can get one online before your rental day. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details.
 
 **What boats can you rent at Harris Boat Works?**
-A 9-boat Legend fleet: 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 **Can I rent a boat before buying one?**
 Yes, and we recommend it. Rent the size and style you're considering, load it with your actual family and gear, and see how it handles for a full day. It's the cheapest boat-buying research you can do. Our fleet covers the most common first-boat sizes, 16 to 24 feet.
@@ -13299,7 +13303,7 @@ Whether that's a rental Saturday or the first step toward your own boat, start w
       { question: 'Is it cheaper to rent or buy a boat in Ontario?', answer: 'Under 10 days a season, renting is almost always cheaper once you count what ownership really costs beyond the purchase price. At 15+ days, ownership usually wins. Between those thresholds, add up a season of rental fees and compare them against the carrying costs in our ownership cost guide.' },
       { question: 'How many days a year should I boat to justify buying?', answer: 'Roughly 15 or more. Below 10, rentals win on math almost every time. Remember the Ontario season is only about 20 prime weekends, so 15 days means boating nearly every second weekend.' },
       { question: 'Do I need a licence to rent a boat on Rice Lake?', answer: 'Yes. Whoever drives needs a boat operator\'s licence, and you can get one online before your rental day. See our Ontario rental licence guide for the details.' },
-      { question: 'What boats can you rent at Harris Boat Works?', answer: 'A 9-boat Legend fleet: 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals.' },
+      { question: 'What boats can you rent at Harris Boat Works?', answer: 'A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals.' },
       { question: 'Can I rent a boat before buying one?', answer: 'Yes, and we recommend it. Rent the size and style you\'re considering, load it with your actual family and gear, and see how it handles for a full day. It\'s the cheapest boat-buying research you can do. Our fleet covers the most common first-boat sizes, 16 to 24 feet.' },
       { question: 'What\'s the difference between a boat rental and a boat club?', answer: 'A rental is pay-per-day with no commitment. A boat club charges an initiation fee (typically $3,000-$4,500 in the GTA as of 2026) plus monthly dues year-round, in exchange for reserved access to a shared fleet. Clubs can make sense at 10-20 days a season near a club location; below that, rentals are usually cheaper.' },
       { question: 'How far ahead should I book a summer rental?', answer: 'For July and August weekends, book several weeks ahead online. Weekdays are far easier. In 2025 our nine boats went out 346 times, and the busiest weekends were spoken for well in advance.' },
@@ -16944,12 +16948,12 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
     imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-04-28',
-    dateModified: '2026-07-09',
+    dateModified: '2026-08-01',
     publishDate: '2026-04-28',
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['buy boat canada 2026', 'boat market canada', 'best time to buy boat'],
-    content: `*Last reviewed: 2026-07-09*
+    content: `*Last reviewed: 2026-08-01*
 
 > **Quick answer:** 2026 is a functional year to buy a boat in Canada, not a deal year. Inventory has recovered, lead times are normal, and prices sit above 2019 levels with little sign of dropping. If your hull is sound, a Mercury repower is often better value than buying new. Build a repower quote at mercuryrepower.ca.
 
@@ -17066,7 +17070,7 @@ We sell boats and motors. We are transparent about that.
 
 We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
-Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent for a season first](/blog/renting-vs-owning-boat-ontario-math), HBW has nine boats available on Rice Lake.
+Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent for a season first](/blog/renting-vs-owning-boat-ontario-math), HBW has 10 boats available on Rice Lake, including the new 12-person Halo pontoon.
 
 ---
 
@@ -18760,7 +18764,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-07-23",
+    dateModified: "2026-08-01",
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
@@ -18924,7 +18928,7 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Don't Own a Boat? You Can Still Do This
 
-**Rent from HBW.** [Our 9-boat fleet on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) includes 16-foot ProSports, 20-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+**Rent from HBW.** [Our 10-boat fleet on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) includes the new 12-person Halo pontoon, 16-foot ProSports, 20- and 24-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 **Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
@@ -18939,7 +18943,7 @@ HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from
 | Fuel | Ethanol-free 89-octane marine gas at the dock |
 | Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
 | Launch ramp | 2-lane concrete; $20/day or $200/season |
-| Rentals | 9-boat fleet for day trips |
+| Rentals | 10-boat fleet for day trips, including the 12-person Halo |
 | Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
 
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -19299,7 +19303,7 @@ For Rice Lake visitors, this opens up affordable multi-day trips through the Kaw
 
 ## Boat Rentals and Borrowing
 
-If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 9-boat rental fleet (Legend boats with Mercury motors). Walk-up and call-ahead rentals available, see [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
+If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 10-boat rental fleet of Mercury-powered Legend boats, including the new 12-person Halo pontoon. Check live availability at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -20513,7 +20517,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     imageAlt: 'Man sitting on a dock at Harris Boat Works in Gores Landing, illustrating the local lifestyle of Ontario boat ownership.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-07-23',
+    dateModified: '2026-08-01',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -20521,7 +20525,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     content: `
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-08-01*
 
 > **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800-$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
@@ -20731,7 +20735,7 @@ Boats are not cheap. They are also worth it for the right reasons.
 
 If you're considering ownership and the math above feels manageable, great. Welcome to the lake.
 
-If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. The current 10-boat fleet on Rice Lake runs from 16-ft fishing boats to the new 12-person Halo and 24-ft fishing pontoons, with Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
@@ -22187,6 +22191,7 @@ This is the version of the rental day we'd walk you through if you called and as
 **Drive time from Markham / Vaughan / Richmond Hill:** 75-90 minutes.
 
 **Rentals available:**
+- **1× Halo pontoon** (23 ft 5 in, up to 12 people, Bluetooth stereo)
 - **2× 23-ft Cruise pontoons** (luxury / large groups)
 - **2× 24-ft Transporter pontoons** + 1× 24-ft backup
 - **2× 20-ft Transporter pontoons** (mid-size, easier to drive)
@@ -22246,8 +22251,8 @@ What's NOT included:
 **You're a family of 4-6 wanting a relaxed cruising / swimming day.**
 → **20-ft or 24-ft Transporter pontoon.** Plenty of seating, swim ladder, easy to pilot, comfortable for kids. Half-day is usually enough.
 
-**You're a group of 6-10 wanting a longer day with food + drinks + multiple swim stops.**
-→ **23-ft or 24-ft Cruise pontoon.** Larger fleet, more seating, better for entertaining, full-day rental is the move.
+**You're a group of 7-12 wanting a longer day with food and multiple swim stops.**
+→ **Halo pontoon.** It has the fleet's largest single-boat passenger capacity, Bluetooth audio, and the roomiest setup for a cruising day. It doesn't have a livewell or fishfinder, so choose a Transporter if fishing is the priority.
 
 **You're 1-4 anglers wanting to actually fish (walleye, bass, perch).**
 → **16-ft ProSport fishing boat.** Right tool for the job: manageable size, fishfinder included, and it gets you to the structure on the lake. Half-day or full-day.
@@ -22622,7 +22627,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-05-18",
-    dateModified: '2026-06-02',
+    dateModified: '2026-08-01',
     publishDate: "2026-05-18",
     category: "About HBW",
     readTime: '12 min read',
@@ -22633,7 +22638,7 @@ Harris Boat Works has been on the same Rice Lake dock since 1947, three generati
 
 # Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
-*Last reviewed: 2026-06-02*
+*Last reviewed: 2026-08-01*
 
 The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer. The marina sits on land we've worked for nearly eight decades.
 
@@ -22770,7 +22775,7 @@ In 2026, HBW operates:
 - **Mercury Certified Repower Centre**, [full-service repower facility for boat owners across Ontario](/blog/mercury-repower-cost-ontario-2026-cad)
 - **Legend Boats Dealer**, selling [Canadian-designed aluminum and pontoon boats](/blog/legend-boats-mercury-power-package-guide-ontario) (designed in Whitefish, Ontario)
 - **Marina Slips**, 49 seasonal slip rentals on Rice Lake
-- **Boat Rentals**, 9-boat fleet (Mercury-powered) for [day rentals to GTA visitors and locals](/blog/rice-lake-boat-rental-guide-2026)
+- **Boat Rentals**, 10-boat fleet (Mercury-powered), including the new 12-person Halo, for [day rentals to GTA visitors and locals](/blog/rice-lake-boat-rental-guide-2026)
 - **Winter Storage**, 311+ stored boats per year
 - **Service & Repair**, diagnostic, warranty, repair, and pre-purchase inspections
 - **Boat Launch**, public-paid launch ramp ($20/day, $200/season) used by hundreds of boaters annually
@@ -22806,7 +22811,7 @@ Yes. Premier is the top tier of Mercury's certification system, requiring factor
 Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude. Mercury-only.
 
 **How big is HBW?**
-A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, 9-boat rental fleet, 311+ winter storage contracts annually.
+A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, a 10-boat rental fleet, and 311+ winter storage contracts annually.
 
 **Why has HBW been in business so long?**
 Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year.
@@ -22834,7 +22839,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Is HBW a Mercury Premier dealer?", answer: "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
       { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
       { question: "What does HBW sell and service?", answer: "Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude: Mercury-only." },
-      { question: "How big is HBW?", answer: "A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, 9-boat rental fleet, 311+ winter storage contracts annually." },
+      { question: "How big is HBW?", answer: "A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, a 10-boat rental fleet, and 311+ winter storage contracts annually." },
       { question: "Why has HBW been in business so long?", answer: "Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year." },
       { question: "Is HBW still growing?", answer: "Yes, our online repower business via mercuryrepower.ca has grown significantly in recent years. The configurator-based selling model has reached customers across Ontario and beyond. The family marina has expanded its reach without diluting its character." },
       { question: "Do you have CSI awards or other certifications?", answer: "HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Premier, Mercury Certified Repower Center, and Legend Boats authorized dealer." },
@@ -30738,8 +30743,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-dealer-whitby-ontario-hbw',
     title: 'Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
-    imageAlt: 'Exposed Mercury outboard powerhead during a real Harris Boat Works repower installation',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
+    imageAlt: 'A family cruising on a freshwater lake in a pontoon powered by a Mercury 90 HP Command Thrust FourStroke outboard',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-07-30',
@@ -31037,8 +31042,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-dealer-oshawa-ontario-hbw',
     title: 'Mercury Dealer for Oshawa: 40 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region.',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
-    imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
+    imageAlt: 'Family fishing from a freshwater pontoon powered by a Mercury 115 HP FourStroke outboard',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-07-24',
