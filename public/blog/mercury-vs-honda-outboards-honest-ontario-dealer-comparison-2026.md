@@ -28,7 +28,7 @@ language: en-CA
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
 
-> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda often gets the nod for refinement and quiet running in the 9.9 to 90 HP range; Mercury wins on Ontario service network density, Pro XS performance, and lineup breadth above 350 HP. On Rice Lake, HBW is the only Mercury dealer, which usually settles the math.
+> **Quick answer:** Both Mercury and Honda build reliable outboards in 2026. Honda is often considered for refinement and quiet running in the 9.9 to 90 HP range; Mercury offers Pro XS performance and a broader lineup above 350 HP. On Rice Lake, HBW provides authorized Mercury sales and service directly on the lake. For either brand, check the current dealer route from where the boat lives.
 
 - Mercury Premier Dealer
 - Family-owned since 1947
@@ -45,8 +45,8 @@ A Mercury or Honda buyer walks into our shop with the same two questions: which 
 | Lineup top end | 2.5 HP to 600 HP (Verado V12, 450R) | Tops out at BF350 V8 (350 HP) |
 | Performance line | Pro XS | No direct counterpart |
 | Refinement (9.9-90 HP) | Strong; gap largely closed | Edge: quieter, smoother |
-| Regional service | More certified dealers; only Mercury dealer + only brand-name service on Rice Lake | 2 certified dealers within 75 km (Peterborough ~30 km, Havelock ~45 km) |
-| Parts (Canada) | Canadian distribution centres | Often route through US |
+| Regional service | Authorized Mercury sales and service at HBW on Rice Lake; check the current locator elsewhere | Check Honda Marine's current dealer locator for the nearest authorized service |
+| Parts (Canada) | Confirm the exact part and current availability | Confirm the exact part and current availability |
 | Max warranty (2026) | Up to 8 yr (3 limited + 3 corrosion concurrent + up to 5 MPP) | Up to 8 yr (5 standard + 3 HondaCare) |
 | Long-term maintenance | Competitive | Reputation for low cost over 10+ yr |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
@@ -71,19 +71,17 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 **Pro XS performance.** Honda has no direct counterpart to Mercury Pro XS. If you fish tournaments or want hole-shot performance on a bass boat, this matters.
 
-**Parts availability in Canada.** Mercury parts ship from Canadian distribution centres. In our experience, Honda Marine parts often route through US distribution, which can add several days to a parts order in Ontario. For mid-season failures, those days matter.
+**Parts availability in Canada.** Do not choose a brand from a generic distribution claim. Ask each servicing dealer to check the exact part number, current availability, and realistic service route for your motor.
 
 ## The Rice Lake local-service reality (the part most buyers underestimate)
 
-**HBW is the only Mercury dealer on Rice Lake. We are also the only brand-name outboard service of any kind on Rice Lake.** There is no Honda dealer on Rice Lake. There is no Yamaha dealer on Rice Lake. If your boat lives here and you want brand-name service close to home, the choice is Mercury at HBW or a 30-90 minute drive somewhere else.
-
-**Honda Marine certified service near Rice Lake:** Honda Marine's dealer locator lists two certified dealers within 75 km of HBW - one in the Peterborough area (about 30 km) and one in the Havelock area (about 45 km).
+**HBW provides authorized Mercury sales and service directly on Rice Lake.** For Honda or any other brand, use the manufacturer's current dealer locator and confirm that the location services your exact model before buying or planning a trip.
 
 For Mercury owners on Rice Lake: drop the boat at our dock, walk home, pick it up when it's done. That's the local-service advantage.
 
 ## What HBW has on the shelf
 
-We keep the largest Mercury and Mercruiser parts inventory in Ontario. For Mercury owners, common spring service parts and most warranty parts are on our shelf, not on a backorder list. For Honda owners, parts come from elsewhere, which is fine, until you need a thermostat in the second week of July.
+HBW stocks common Mercury and MerCruiser service parts. Exact availability changes by serial number, part number, and season, so confirm the part before travelling. Owners of another brand should do the same with their authorized service location.
 
 ## The 8-year warranty conversation
 
@@ -105,7 +103,7 @@ Mercury 9.9 FourStroke is typically a few pounds lighter than equivalent Honda B
 
 ## The HBW on-water test
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ## Mythbuster
 
@@ -131,7 +129,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
 **Quote builder:** mercuryrepower.ca
 **Service requests:** hbw.wiki/service
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 **Comparing real numbers beats comparing brochures.** Build a Mercury quote for your boat at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-07-04
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS vs Mechanical Ontario"
 description: "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-07-04
+date_modified: 2026-08-02
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-04  
+**Last updated:** 2026-08-02  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
@@ -50,7 +50,7 @@ DTS is standard on all current Mercury Verado V8/V10/V12 (250-600 HP, naturally 
 
 For a full eligibility table with every motor class, year cutoff, joystick prerequisites, and what to do if your motor isn't DTS-capable, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for DTS Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026).
 
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
+To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check eligibility against the exact record.
 
 ### Mercury DTS compatibility by family and HP range
 

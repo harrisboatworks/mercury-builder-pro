@@ -28,12 +28,12 @@ language: en-CA
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
-> **Quick answer:** HBW has been on Rice Lake in the Kawarthas, Ontario since 1947 and a Mercury dealer since 1965. Three generations of the Harris family, a current Mercury Marine Premier Dealer, and the only Mercury dealer on the lake. We post installed pricing online, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
+> **Quick answer:** HBW has been on Rice Lake in the Kawarthas, Ontario since 1947 and a Mercury dealer since 1965. Three generations of the Harris family, a current Mercury Marine Premier Dealer, and authorized Mercury service directly on the lake. We publish current motor pricing online and quote the complete configuration in writing.
 
 Harris Boat Works has sold and serviced Mercury outboards since 1965. Three generations of the Harris family have rigged Mercurys, maintained them, and stood behind them. We are a Mercury Premier dealer, the current top tier in Mercury's dealer program, and our shop is built entirely around one brand. We sell Mercury exclusively because the math works for our customers and our shop.
 
 ## Quick recommendation
-If you are buying a Mercury outboard in southern Ontario, HBW is worth considering, and we are the only Mercury dealer on Rice Lake. HBW is exclusive Mercury, a Premier dealer, and we carry the largest Mercury and Mercruiser parts inventory in Ontario.
+If you are buying a Mercury outboard in southern Ontario, HBW is worth considering. We are an exclusive Mercury Premier dealer directly on Rice Lake, with Mercury-specific tooling, training, and parts support.
 
 We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
 
@@ -67,11 +67,11 @@ Other brands aren't bad motors. The depth-vs-breadth tradeoff just strongly favo
 
 The expertise compounds over time:
 - Three generations of technicians have learned only Mercury
-- Parts inventory and tooling are Mercury-specific and exceptionally deep. We stock the largest Mercury and Mercruiser parts inventory in Ontario
+- Parts inventory and tooling are Mercury-specific; exact part availability is confirmed by serial number before a trip
 - Training investments focus on Mercury
 - Customer expectations are calibrated to Mercury
 
-And because we are the only Mercury dealer on Rice Lake, a boater can buy, rig, store, and service a Mercury-powered boat without ever leaving the lake. That gives Rice Lake boaters a simpler path from quote to service.
+Because HBW provides Mercury sales, rigging, storage, water testing, and service directly on Rice Lake, local boaters can keep those steps at one marina. That gives Rice Lake boaters a simpler path from quote to service.
 
 ### 4. Local Ontario freshwater specialization
 We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and connected waters.
@@ -103,7 +103,7 @@ We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and conne
 
 We don't push repowers that aren't needed. Sometimes a customer comes in with a motor that has seasons of life left. We tell them that, and they go fish.
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
 
@@ -124,11 +124,11 @@ Since 1965. The marina itself was founded in 1947, and the Harris family has own
 
 ### What is a Mercury Premier dealer?
 
-Premier is the current top tier in Mercury's dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, deep parts inventory, and access to Mercury technical resources. It does not change a customer's factory warranty rights or guarantee faster claim approval.
+Premier is the current top tier in Mercury's dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, parts support, and access to Mercury technical resources. It does not change a customer's factory warranty rights or guarantee faster claim approval.
 
 ### Why does Harris Boat Works only sell Mercury?
 
-Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water.
+Depth over breadth. Three generations of expertise, parts support, and tooling are Mercury-specific, and HBW can rig, water-test, service, and store a Mercury boat directly on Rice Lake.
 
 ### Where is Harris Boat Works located?
 

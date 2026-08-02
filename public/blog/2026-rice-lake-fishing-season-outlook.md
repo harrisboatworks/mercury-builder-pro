@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-05-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Ontario Fishing Guide 2026"
 description: "An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup."
 category: "Lifestyle"
 date_published: 2026-02-06
-date_modified: 2026-05-23
+date_modified: 2026-08-02
 keywords: ["rice lake fishing","rice lake fishing guide 2026","rice lake walleye","rice lake bass fishing","rice lake muskie fishing","FMZ 17 fishing regulations","rice lake ontario fishing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-02-06  
-**Last updated:** 2026-05-23  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 
@@ -173,7 +173,7 @@ Most Rice Lake fishing boats are correctly powered at 90 HP. Step up to 115 HP i
 
 The kicker question is the one we settle most often for Rice Lake anglers, so here is the shop-floor version.
 
-The walleye channels south of Gores Landing are 17 to 21 feet deep, and a productive troll over that weedy bottom can run four to six hours. A main outboard is not built to idle at trolling speed for that long, day after day. A dedicated [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) is built for exactly that job, it sips fuel doing it, and if your main motor quits at the Hastings end of the lake, the kicker is a 32 km tow you do not have to pay for. It tends to pay for itself the first time either of those things happens.
+The walleye channels south of Gores Landing are 17 to 21 feet deep, and a productive troll over that weedy bottom can run four to six hours. A dedicated [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) can handle slow trolling while preserving the main motor for higher-load work. It can also provide limited backup propulsion, but actual return range depends on the boat, load, weather, fuel, and distance. Treat it as risk reduction, not a guaranteed payback.
 
 The other thing we see is underpowered boats. Someone buys a hull, puts the smallest motor that will technically push it on the transom, and then meets a west wind with a full boat and a long way back to the ramp. Power the boat for the lake's worst afternoon, not its calmest morning. When in doubt, [build a live Mercury quote](https://mercuryrepower.ca) for your exact hull and we will talk it through.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Mercury 40 vs 60 HP","Mercury 60 HP FourStroke review","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-08-02  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
@@ -140,7 +140,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Both the 40 and 60 are available with Mercury's Command Thrust (CT) gearcase. Here's what it does: a larger lower unit, longer gear ratio (2.33:1 instead of 2.07:1 on the standard 60), and a bigger prop. The result is more thrust at low RPM, which is exactly what a pontoon needs.
 
-The CT upgrade costs about $300 to $400 at MSRP. On a pontoon repower, it pays for itself the first weekend the boat planes on the first try with full load.
+The configured price difference for Command Thrust changes by model and propeller. On a pontoon repower, judge it by loaded hole shot, low-speed control, reverse authority, and the speed trade-off on the actual hull, not by a generic payback claim.
 
 If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, skip the CT and save the money.
 

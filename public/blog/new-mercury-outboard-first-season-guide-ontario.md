@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-07-28
+date_modified: 2026-08-02
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last updated:** 2026-07-28  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -81,7 +81,7 @@ If you're running in salt water or in stained, gritty shallows frequently, adjus
 
 ## What HBW Checks Before a New Motor Leaves the Dock
 
-A new motor is only as honest as the install. When you repower with us, we don't just bolt it on and hand you the keys. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+A new motor is only as honest as the install. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 
 That test isn't a five-minute idle at the dock. We run the engine under load, check WOT RPM against the prop we selected, confirm SmartCraft data looks clean, and listen for anything that doesn't sound right. If a cooling passage burps, a hose weeps, or a shift cable needs a tweak, we find it before you do.
 

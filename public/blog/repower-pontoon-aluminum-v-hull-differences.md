@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences.md
-last_updated: 2026-06-06
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon vs Aluminum vs V-Hull Repower"
 description: "Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-06-06
+date_modified: 2026-08-02
 keywords: ["repower pontoon","repower aluminum fishing boat","repower v-hull","mercury repower hull types","rice lake repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last updated:** 2026-06-06  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences
 
@@ -101,7 +101,7 @@ Fibreglass V-hull boats, bowriders, runabouts, and cuddy cabin boats, are typica
 
 ## One thing that applies to all three hull types
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 We're not putting a motor on a boat, handing you the keys, and finding out there's a handling issue when you launch. The test run is part of the job.
 

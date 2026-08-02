@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect Guide 2026"
 description: "Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
@@ -72,7 +72,7 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 For a full eligibility table with every motor class, every year cutoff, and what to do if your motor isn't compatible, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for SmartCraft Connect? (2026)](/blog/mercury-smartcraft-connect-eligibility-2026).
 
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll reply same-day.
+To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check compatibility against the exact record.
 
 ---
 

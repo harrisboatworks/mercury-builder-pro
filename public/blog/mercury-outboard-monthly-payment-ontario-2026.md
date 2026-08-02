@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026.md
-last_updated: 2026-07-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Monthly Payment Math (Ontario, 2026)"
 description: "What a Mercury outboard costs per month in Ontario: real 2026 financing math by HP tier, current promo rate, terms, and total cost of borrowing."
 category: "Repower Cost & Pricing"
 date_published: 2026-05-28
-date_modified: 2026-07-18
+date_modified: 2026-08-02
 keywords: ["mercury","repower","financing","ontario","monthly payment","Mercury outboard monthly payment","TD Auto Finance","Dealerplan Peterborough"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026
 
@@ -80,7 +80,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
 ## The HBW on-water repower test
 
-Repowers are the highest-risk install in our shop. At HBW [we water-test every repower under load before delivery](/blog/what-happens-during-mercury-repower): cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong or the rigging has a problem, we catch it at our dock. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+Repowers combine a new motor with an existing hull and rigging. HBW's standard handoff includes an on-water load test before pickup when safe seasonal conditions allow: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, and charging-system behaviour. Any alternate acceptance plan is documented with the customer.
 
 ## Common mistakes
 
@@ -126,7 +126,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca). If you want to 
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The only brand-name outboard service of any kind on Rice Lake.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 ## Sources
 

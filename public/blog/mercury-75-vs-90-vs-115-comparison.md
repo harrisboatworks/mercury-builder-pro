@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)"
 description: "Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs."
 category: "Comparison"
 date_published: 2026-01-26
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
@@ -183,7 +183,7 @@ We see these every season:
 1. **Buying 75 to save $1,500 and regretting it.** Customers who pick the 75 to cut budget often trade up to a 90 or 115 within 2 to 3 seasons. They paid the 75 price plus the trade-up cost. Should have bought the 90 the first time.
 2. **Buying 115 when 90 was plenty.** A 115 on a 16 ft aluminum used solo for fishing is overkill. The motor outpowers the hull's typical load. The savings on the 90 buy electronics, props, or kicker upgrades that matter more.
 3. **Expecting a fixed mph gain.** Hull, load, prop, mounting height, and conditions can move the result by several mph. Compare loaded planing, acceleration, and cruise behaviour on your boat instead of treating a broad sea-trial range as a promise.
-4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection during sea-trial is critical. We test props on every repower.
+4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection is critical, and the verification scope follows the motor, hull, rigging, work order, and safe seasonal testing conditions.
 5. **Skipping the kicker decision.** The 9.9 ProKicker question is separate from the 75/90/115 question. Most fishing customers want a kicker regardless of which main motor.
 
 ## Mercury 115 Pro XS: when to step up the family

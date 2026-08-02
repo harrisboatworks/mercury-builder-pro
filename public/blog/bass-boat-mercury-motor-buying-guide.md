@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-06-03
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Choosing the Right Mercury for Your Bass Boat (Ontario 2026)"
 description: "Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing."
 category: "Buying Guide"
 date_published: 2026-03-09
-date_modified: 2026-06-03
+date_modified: 2026-08-02
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-09  
-**Last updated:** 2026-06-03  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 
@@ -56,7 +56,7 @@ rightCriteria:
   - You are repowering an older bass boat that was originally FourStroke
 rightOutcome: Pick FourStroke
 rightVariant: alternative
-whenInDoubt: For competitive tournaments, Pro XS pays for itself in time saved between spots. For weekend fishing, FourStroke is the smarter buy.
+whenInDoubt: For competitive tournaments, decide whether the Pro XS performance premium has real value in your use. For weekend fishing, FourStroke is usually the simpler comparison.
 ::
 
 ---
@@ -114,7 +114,7 @@ If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat ma
 
 Most bass boats run 20-inch shaft with a jack plate. Some hulls with higher transom mounts or deeper set-ups need 25-inch. Check your boat specs or bring it in and we'll measure.
 
-Proper trim is a big deal on performance fishing rigs. Getting WOT RPM and trim dialled in correctly is part of the sea trial on every repower we do.
+Proper trim is a big deal on performance fishing rigs. When safe seasonal conditions allow, an on-water check can verify WOT RPM and trim for the specific motor, hull, load, and prop. The work order and documented acceptance plan control the scope.
 
 ---
 

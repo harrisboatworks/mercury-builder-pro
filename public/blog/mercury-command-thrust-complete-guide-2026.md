@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md
-last_updated: 2026-05-28
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Command Thrust Guide 2026"
 description: "Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-05-28
+date_modified: 2026-08-02
 keywords: ["mercury command thrust guide","mercury command thrust models","what is command thrust mercury","command thrust vs standard gearcase","mercury 9.9 prokicker","mercury 115 command thrust","pro xs command thrust","seapro command thrust"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +24,11 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last updated:** 2026-05-28  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca for a same-day fit check on your boat.
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor). Larger housing, bigger four-blade prop, lower gear ratio. Converts horsepower into pushing force instead of top-end speed. Available on 9.9/15 ProKicker, plus 40, 50, 60, 90, and 115 HP FourStroke, and the 115 Pro XS. CT tops out at 115 HP. Best fit: pontoons, heavy aluminums, kicker rigs, commercial. Email info@harrisboatworks.ca with your boat specifications and photos for a fit check.
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
@@ -86,7 +86,7 @@ Different hulls, different answers. The honest matrix:
 | Trolling-only fishing pontoon | **No, save the money** | Standard fine at trolling speeds |
 | 18-20 ft twin tube pontoon (moderate use) | **Probably yes** | Classic sweet spot |
 
-If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a same-day yes or no.
+If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a fit assessment.
 
 ## The full Mercury Command Thrust lineup
 
@@ -162,7 +162,7 @@ Five things to check before you commit. The same five we ask every customer who 
 4. **Boat geometry (transom height, tube count for pontoons).** Some older transoms do not accommodate the taller CT lower unit. Worth measuring before ordering.
 5. **Existing motor's age + hours.** Decides whether retrofit-thinking is realistic vs full repower.
 
-Email a cowl plate photo + capacity plate photo + an honest description of how you use the boat to info@harrisboatworks.ca. We respond same-day with a yes, no, or specific HP recommendation.
+Email a cowl plate photo, capacity plate photo, and an honest description of how you use the boat to info@harrisboatworks.ca. We will review the fit and follow up with a recommendation or any information still needed.
 
 For motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model identification.
 
@@ -208,7 +208,7 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
 ## Ready to talk Command Thrust for your boat?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send cowl plate photo + boat year/make for same-day fit check)
+**Email:** info@harrisboatworks.ca (send cowl plate photo + boat year/make for a fit check)
 **Quote a CT repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.

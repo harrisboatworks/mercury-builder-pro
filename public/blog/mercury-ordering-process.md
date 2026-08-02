@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-ordering-process.md
-last_updated: 2026-05-19
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-05-19
+date_modified: 2026-08-02
 keywords: ["mercury outboard ordering process","how to order mercury","mercury repower timeline","ordering outboard motor","mercury installation process"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last updated:** 2026-05-19  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 
@@ -135,8 +135,8 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Timeline**: 
 - New boat rigging: 4-8 hours
-- Repower: usually completed within the 2 to 5 days the boat is with us
-- Complex jobs: 2-3 days
+- Repower timing depends on the approved scope, parts, findings, current shop capacity, and safe test conditions
+- Complex jobs receive a job-specific written work plan
 
 **Quality Checks**:
 - All connections tight
@@ -168,25 +168,11 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ### Timeline Expectations
 
-**In-Stock Motor**:
-| Step | Timeframe |
-|------|-----------|
-| Consultation to deposit | 1-7 days |
-| Scheduling installation | typical scheduling window |
-| Installation | 1-3 days |
-| Water test | Same day or next |
-| **Boat with us** | **2 to 5 days** |
+**In-stock motor:** HBW confirms the installation slot after reviewing the boat, rigging scope, required parts, and current shop capacity. The water test is scheduled after rigging is complete.
 
-**Ordered Motor**:
-| Step | Timeframe |
-|------|-----------|
-| Order placement | 1-2 weeks |
-| Motor delivery | depends on model and Mercury availability |
-| Installation scheduling | typical scheduling window |
-| Installation | 1-3 days |
-| **Boat with us** | **2 to 5 days** (motor lead time separate) |
+**Ordered motor:** Mercury availability and freight come first; installation scheduling follows once the exact motor and required rigging are confirmed. The written quote or work plan is the timing source for the job.
 
-*Timelines vary by season - summer is busiest*
+Do not plan a launch date around a generic blog estimate. Seasonal demand, boat condition, parts, and configuration all affect timing.
 
 ### What to Prepare
 
@@ -230,7 +216,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### How long does the whole process take?
 
-For in-stock motors, the boat is with us 2 to 5 days from drop-off to water test pickup. For ordered motors, wait time depends on the model and Mercury's current availability, and your boat stays with you until the motor arrives. Summer season is busiest and may extend scheduling.
+Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Your boat stays with you until HBW confirms the drop-off date and applicable work plan.
 
 ### What deposit is required?
 

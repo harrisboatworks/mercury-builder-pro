@@ -32,7 +32,7 @@ language: en-CA
 
 ## Quick answer
 
-Honda outboards are excellent in the 9.9-50 HP class. Switching to Mercury makes sense for two reasons: Ontario dealer-network access (Mercury has 3x more service points) and HP-class match above 60 HP. Brand swap costs $1,800-$3,500 extra in rigging (controls, gauges, harness, prop). Email info@harrisboatworks.ca with your Honda specs for a same-day side-by-side quote.
+Honda outboards are excellent in the 9.9-50 HP class. A switch to Mercury can make sense when the local authorized-service route or the required Mercury product family fits better. Brand-swap rigging depends on controls, gauges, harness, propeller, steering, and the existing dash, so use a written side-by-side quote rather than a generic range.
 
 Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Premier), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't. Before pricing a brand switch, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) to confirm repower is the right call at all.
 
@@ -40,7 +40,7 @@ Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50
 
 The Honda-to-Mercury swap is less common than [Yamaha-to-Mercury](/blog/yamaha-to-mercury-repower-ontario-guide) in Ontario because Honda has a smaller installed base here. The customers who do switch have one of three reasons.
 
-**Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Premier dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
+**Service access.** Dealer networks change. Use the current Mercury and Honda Marine locators, confirm that the location services the exact model, and compare the real route from where the boat lives. Do not rely on a generic network ratio or drive-time claim.
 
 **HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 and 425 HP Verado V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
@@ -151,12 +151,12 @@ The honest framework:
 - **Stay with Honda:** 9.9-25 HP kicker/portable applications; reliable Honda with low hours; close to a working Honda dealer; fuel-economy-sensitive trolling use case; happy with current setup.
 - **Switch to Mercury:** 60+ HP and remote from Honda service; need 300+ HP; want Pro XS performance; planning Joystick Piloting on multi-engine; current Honda is tired AND closest Honda dealer is far.
 
-To start a quote at HBW: email cowl plate photos of your Honda + photos of your helm controls and gauges to info@harrisboatworks.ca. We respond same-day with a side-by-side Honda-equivalent Mercury quote, the full installed cost, and an honest assessment of whether the swap is worth it for your specific situation.
+To start a quote at HBW: email cowl plate photos of your Honda plus photos of your helm controls and gauges to info@harrisboatworks.ca. We will review the configuration and prepare a side-by-side Mercury quote or ask for any missing information.
 
 ## Ready to talk Honda-to-Mercury repower?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send Honda cowl plate + helm photos for same-day quote)
+**Email:** info@harrisboatworks.ca (send Honda cowl plate + helm photos for a side-by-side quote)
 **Build a Mercury quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Premier Dealer.
@@ -167,7 +167,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 
 ### How long does a Honda-to-Mercury swap take at HBW?
 
-Most brand-swap repowers run 3-5 working days once motor and rigging parts are on site. The Honda-specific work (removal of Honda controls, gauges, harness, and prop) takes roughly half a day. The Mercury rigging takes the rest. Spring queue (April-May) runs longer. Book early.
+A brand swap requires removal of the Honda controls, gauges, harness, and prop, then installation and testing of the approved Mercury package. HBW confirms the shop window after reviewing the boat, parts, current capacity, and safe test conditions.
 
 ### Will my Honda prop carry over to the new Mercury?
 
@@ -183,7 +183,7 @@ Yes, technically. The kicker is electrically and mechanically independent of the
 
 ### What is the trade-in value of a clean Honda BF90?
 
-Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will usually quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury.
+It depends on year, hours, condition, configuration, and the current Ontario market. Send the serial number, hour count, and clear condition photos so HBW can assess whether a trade fits the repower proposal.
 
 ## Related guides
 

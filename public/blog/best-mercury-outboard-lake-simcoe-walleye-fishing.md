@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Setup for Simcoe Walleye 2026"
 description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup."
 category: "Fishing & Local"
 date_published: 2026-04-21
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["best Mercury outboard for Lake Simcoe fishing","Lake Simcoe fishing guide 2026","Lake Simcoe walleye fishing","Lake Simcoe lake trout fishing","Lake Simcoe fishing regulations 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-21  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
 
@@ -128,7 +128,7 @@ For specific pricing, [build a quote](https://mercuryrepower.ca).
 
 ## The HBW on-water test
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 - [Recommended Mercury Outboard for Rice Lake Fishing](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing) - Rice Lake-specific setup
 - [Mercury 9.9 ProKicker Rice Lake Fishing Guide](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide) - kicker setup

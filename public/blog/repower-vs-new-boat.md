@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-vs-new-boat.md
-last_updated: 2026-06-12
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repower vs Buy New Boat: The Honest Math"
 description: "Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from $11,000 CAD installed."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-06-12
+date_modified: 2026-08-02
 keywords: ["repower vs new boat","mercury repower math","should i repower or buy new","repower cost ontario","hull worth repowering","transom rebuild cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-vs-new-boat
 
@@ -90,7 +90,7 @@ If the boat passes hull inspection, repower math almost always wins. Our [comple
 
 ## What does a typical Mercury repower include?
 
-When we quote a repower at Harris Boat Works, the installed price (2026 ranges) covers everything you need to take the boat home and run it: new Mercury outboard, rigging and controls (mechanical or digital), propeller selection, fuel system inspection, battery cables, old motor removal, a full water test on Rice Lake before pickup, and warranty registration. Mercury's contractual base coverage is 3 years limited + 3 years corrosion concurrent. Bonus warranty coverage applies only when an eligible promotion is active; confirm the live offer on our [promotions page](/promotions). Our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) explains the base warranty and optional protection. Our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) walks through each line by HP class. Financing is OAC, with current rates set by Mercury Canada's financing partner and updated periodically. Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for confirmed current rates and a line-item total. Pickup only at Gores Landing, no shipping, no delivery.
+An installed repower quote should identify the exact Mercury outboard, controls, steering, rigging, propeller, removal, installation, testing, warranty registration, HST, and exclusions that apply to the boat. Do not assume that every item is bundled the same way on every project. Confirm current warranty terms and any eligible bonus coverage on the [promotions page](/promotions), and use the [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for context. Financing is OAC through HBW's Canadian lending provider; the lender's current disclosure controls the rate, contract term, amortization, fees, down payment, and approval. Build a starting quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and rely on the written boat-specific total. Pickup only at Gores Landing, no shipping, no delivery.
 
 ## How long will a repowered boat last and how do I decide?
 
@@ -106,7 +106,7 @@ Three patterns from three generations of repowering boats on these lakes.
 
 **The repowers that go smoothly are the ones where the hull got an honest look first.** The ones that turn into headaches are almost always a good motor bolted to a hull that was hiding a soft transom or tired wiring. So we lead with the walk-around, and we tell you what we find even when the finding costs us the job.
 
-**The math nearly always favours repower when the hull is sound.** We have not had a customer regret a repower on a sound hull. We have had customers regret skipping a transom check and finding out two seasons in.
+**A sound hull can make repower the better value, but the math is boat-specific.** Compare the written repower total with hull condition, transom, wiring, steering, trailer, interior, expected ownership horizon, and the price of the realistic replacement boat. A transom check belongs before the recommendation.
 
 **Sometimes the right answer for the customer is new.** When that's the case, we say so, and we walk them through what a new Legend boat with Mercury power looks like. We sell new boats too. We just don't push them when a repower is the better answer.
 
@@ -168,7 +168,7 @@ Yes, a new Mercury outboard significantly increases resale value on a sound hull
 
 ### How long does a repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives. Book early for spring commissioning.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Your boat stays with you until the drop-off date is confirmed.
 
 ### Can I repower a 20-year-old boat?
 
@@ -184,11 +184,11 @@ Two paths. Trade in the whole boat and put the value toward a different package 
 
 ## Related guides
 
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 - [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
-- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
 
 ## Next steps
 

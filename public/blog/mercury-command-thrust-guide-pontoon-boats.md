@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Command Thrust on a Pontoon: Worth the Money?"
-description: "Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when."
+description: "Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["mercury command thrust","command thrust pontoon","mercury gearcase","pontoon repower","mercury fourstroke pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,11 +20,11 @@ language: en-CA
 
 # Mercury Command Thrust on a Pontoon: Worth the Money?
 
-> Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when.
+> Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats
 
@@ -104,7 +104,7 @@ Command Thrust props typically:
 - Use 4-blade designs more often, better hole shot and smoother trolling
 - Come in aluminum or stainless depending on HP class and use
 
-For pontoons, 4-blade aluminum is the most common Command Thrust prop. We test props during the sea trial of every Command Thrust install at HBW.
+For pontoons, 4-blade aluminum is a common Command Thrust starting point. Final prop selection depends on the hull, load, motor, and safe seasonal testing conditions.
 
 ---
 

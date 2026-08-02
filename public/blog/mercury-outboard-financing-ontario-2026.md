@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-07-07
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Financing Ontario (2026): Rates"
 description: "How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print."
 category: "Financing & Value"
 date_published: 2026-04-20
-date_modified: 2026-07-07
+date_modified: 2026-08-02
 keywords: ["mercury outboard financing Ontario","boat repower financing Ontario","finance boat motor Ontario","mercury financing rate 2026","mercury outboard monthly payment"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last updated:** 2026-07-07  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
 ## Quick answer
 
-Yes, you can finance a Mercury outboard or a full repower through us, with $0 down and terms up to 120 months. We arrange it through Canadian marine lenders, primarily TD Auto Finance, and most people get a pre-qualification answer in under a day. The current financing rate is 5.48% APR (OAC).
+Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. The current headline rate is 5.48% APR (OAC). Under the active TD program, the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
 
 Money is the part of a repower nobody likes to ask about at the counter, so people circle it. They'll spend twenty minutes on props and shaft length and then mumble "and, uh, do you guys do financing?" on the way out the door. Yes. We do. And it's a lot simpler and a lot less painful than most people expect.
 
@@ -46,14 +46,14 @@ _Prices here are planning figures as of July 2026. For live Mercury motor pricin
 
 **Current promotional rate (as of July 2026):** TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026. Financing minimum $5,000 before tax. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
 
-We don't lend the money ourselves, and we're not a bank. We work with a marine-and-powersports financing broker (DealerPlan, out of Peterborough) who shops your application across Canadian lenders, primarily TD Auto Finance, with National Bank and RBC in the mix. The broker's job is to find you the best approval, not to push one bank.
+We don't lend the money ourselves, and we're not a bank. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. The current headline program is through TD Auto Finance; the signed lender disclosure identifies the actual lender and controls the approval and terms.
 
 What that means for you in practice:
 
-- $0 down. You can finance the full out-the-door price, HST included. You don't have to come up with a deposit.
-- $5,000 minimum to finance. Below that it's usually not worth the paperwork; cash or a card makes more sense.
-- Terms up to 120 months. Longer terms are popular on bigger repowers (250 hp and up) where stretching the payment keeps it comfortable.
-- Fast answers. Most pre-qualifications come back in under 24 hours. Often same day.
+- Qualified buyers may be eligible for $0 down. The lender confirms any required down payment.
+- The minimum eligible purchase is $5,000 before the DealerPlan fee. Approval and the amount financed are lender decisions.
+- The active TD contract term is up to 60 months. Payment examples may use amortization up to 240 months, which can leave a balance due at maturity.
+- Application timing and the credit decision come from the broker and lender. Apply before committing to an installation date and wait for the written decision.
 - Pre-qualify before you commit. You can get approved and know your number before you sign anything or take the boat.
 
 You apply once, the broker does the shopping, and you get an answer. That's the whole machine.
@@ -62,12 +62,12 @@ You apply once, the broker does the shopping, and you get an answer. That's the 
 
 This is where most financing articles get vague, so let's be specific.
 
-The current standing financing rate we quote is 5.48% APR on approved credit. That is the headline rate, the one your payment math runs on right now, not a special you have to qualify for or a teaser that jumps later this year. It's good through December 31, 2026, and unless it's renewed it reverts to a higher posted rate (7.99% APR) on January 1, 2027. So if you're on the fence and the math works, doing it inside 2026 locks the better number.
+The current headline financing rate is 5.48% APR on approved credit through December 31, 2026. It is not an approval promise. Eligibility, lender, contract term, amortization, amount financed, and any balance due at maturity are confirmed in the written disclosure. Check the [promotions page](/promotions) for the current program dates before applying.
 
 Now, the word "promo rate" gets thrown around a lot, so here's the honest distinction:
 
-- The standing rate (5.48% APR) is what we quote day in, day out. Always on.
-- A true promo rate is a separate, time-limited offer, usually a seasonal Mercury Canada financing promotion (you'll sometimes see rates like 2.99% or 4.9% advertised). These come and go with the season and the model. When one is active and beats the standing rate, we use it. When it's expired, it's gone, and quoting an expired promo helps nobody.
+- The current headline rate (5.48% APR) is the active HBW program shown on the promotions page, subject to approval and program terms.
+- A separate seasonal offer may apply only to eligible models, purchase dates, contract lengths, or applicants. Use the dated offer and signed lender disclosure rather than an example rate from an old article.
 
 The practical takeaway: the rate you see in our quote builder and on our promotions page is the live one. We don't bury an old number in a blog post and let it rot. Which brings us to the question everyone actually has.
 
@@ -77,17 +77,17 @@ Fair, because half the financing pages on the internet are quoting rates from tw
 
 - The rate shown above (5.48% APR) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
 - Active seasonal promotions live on one page: [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). If Mercury Canada has something running that beats the standing rate, that's where it shows up, current and dated.
-- A real quote locks today's number. The second you build a quote at mercuryrepower.ca, the rate and payment you see are today's, for your actual motor and price, not a guess.
+- A site quote shows the current estimate for the selected amount and amortization. The approved lender offer and signed disclosure control the actual rate, payment, contract term, and maturity balance.
 
-So if you want the number that's true this minute, build the quote or call. The rate in this paragraph is live; everything seasonal is on the promotions page.
+For a current estimate, build the quote and check the dated promotions page. For the binding credit terms, use the approved lender disclosure.
 
 ## What your monthly payment actually looks like
 
-Payment depends on three things: the amount financed, the rate, and the term. The longer the term, the lower the monthly payment, but the more total interest you pay over the life of the loan. That's the trade every borrower makes.
+Payment depends on the amount financed, APR, and amortization. The contract term can be shorter than the amortization, which means a balance may remain due at maturity. Compare the payment, total borrowing cost during the contract, and maturity balance together.
 
 Rather than print example payments that go stale the day the rate moves, we built the math into the site. Every motor on [mercuryrepower.ca](https://mercuryrepower.ca) shows an estimated monthly payment right on the card, and the quote builder lets you slide the term to see how the payment changes for your boat and your price at today's rate. That's a more honest number than anything we could hard-code here.
 
-Rule of thumb most people use: pick the shortest term whose payment you're genuinely comfortable with. You'll pay less interest overall, and there's usually no penalty for paying it down faster.
+Ask the lender to show the alternatives in writing. A shorter amortization generally raises the payment and repays principal faster, but prepayment rights and every contract-specific term come from the signed disclosure.
 
 ## The fine print we'd rather you hear from us
 
@@ -95,13 +95,13 @@ Two things we put on the table up front, because finding out at signing is no fu
 
 The DealerPlan financing fee is $349. It's added after tax on every financed deal. It's not a surprise and it's not negotiable away; it's the broker's fee for arranging the loan. We tell everyone before they sign. Factor it in.
 
-"OAC" means on approved credit. The rate and the approval depend on your credit. Most people sail through, but the rate we quote assumes a clean approval. If your situation is complicated, the broker will still usually find a path, the terms just might differ. Better to apply and know than to assume you won't qualify.
+"OAC" means on approved credit. The lender reviews the application and may approve, decline, request more information, require a down payment, or offer different terms. HBW cannot promise an outcome in advance.
 
 ## Dealer financing vs. the bank vs. a HELOC
 
 People ask whether they should just go to their own bank. Honest answer: sometimes, and we'll never talk you out of a better deal.
 
-- Through us (marine lender): one application, fast approval, $0 down, the loan is purpose-built for boats and motors, and the rate is currently competitive. Easiest path, and everything happens in one place.
+- Through HBW: an eligible application is routed through DealerPlan and participating Canadian lenders. Qualified buyers may be eligible for $0 down; timing and terms depend on lender review.
 - Your own bank or line of credit: if you've got a strong relationship and they'll beat the marine rate, take it. A secured line of credit or HELOC can sometimes come in lower. The downside is it's on you to arrange, and it ties up your borrowing room.
 - HELOC specifically: often the cheapest money if you have home equity and discipline. Just remember you're securing a boat against your house, which is a personal call, not a financial one we'd make for you.
 
@@ -115,7 +115,7 @@ Nothing exotic. The lenders want to see that you can carry the payment. A few th
 - A payment that's reasonable against your income.
 - For bigger repowers, a slightly shorter term can actually help the approval, because it lowers the lender's risk.
 
-If you're not sure, the pre-qualification is free and fast and doesn't commit you to anything. Apply, see your number, decide.
+If you're not sure, review the application consent and ask whether the lender check affects your credit before submitting. Wait for the written result, then compare it with other borrowing options.
 
 ## Financing and your warranty stack together
 
@@ -123,19 +123,19 @@ Worth knowing, because people assume it's either/or: financing and bonus-coverag
 
 ## Common mistakes
 
-- Assuming you can't qualify and not asking. The pre-qual is fast and free. Most people qualify for more than they expect.
+- Assuming approval, timing, or a down payment before the lender responds. Wait for the written result before booking around the financing.
 - Chasing the longest term for the lowest payment. Lower monthly, more interest overall. Pick the shortest term you're comfortable with.
 - Forgetting the $349 fee in your budget. Small, but real. Build it in.
 - Trusting a rate you read in an old article. Rates move. Use the live number in our quote builder or on the promotions page, not a figure someone typed last year.
-- Paying cash when financing at a good rate frees up your money. If the rate is low, sometimes it's smarter to keep your cash working and finance the boat. Run both ways before you decide.
+- Comparing only the monthly payment. Also compare the amount financed, DealerPlan fee, total borrowing cost during the contract, and any balance due at maturity.
 
 ## Why finance through HBW specifically
 
-We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. We carry the largest Mercury and Mercruiser parts inventory in Ontario, and we rig, sea-trial, and service everything we sell right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the whole thing, the quote, the loan, the rigging, and the service in year three. That continuity matters more than a tenth of a point on a rate.
+We're a third-generation family marina, on this dock since 1947 and a Mercury dealer since 1965. Our tooling, parts support, rigging, water testing, and service are Mercury-focused right here on Rice Lake (service is drop-off at Gores Landing, we do not deliver). Financing through the same shop that installs and stands behind the motor means one phone number for the quote, application, rigging, and later service. That continuity is worth weighing alongside the written rate and terms.
 
 ## Ready to see your real number?
 
-The fastest way to know what a Mercury or a full repower costs you per month is to build a quote, it takes a few minutes and uses today's live rate on your actual motor and price. Or call and talk to a person who's financed hundreds of these and will tell you straight whether to finance or pay cash.
+The fastest way to estimate a payment is to build a quote using the current rate, selected amount, and amortization. Treat it as an estimate; the approved lender disclosure supplies the binding terms.
 
 - Phone: 905-342-2153
 - Build a quote (with live payment): [mercuryrepower.ca](https://mercuryrepower.ca)
@@ -146,27 +146,27 @@ The fastest way to know what a Mercury or a full repower costs you per month is 
 
 ### Can I finance a Mercury outboard in Ontario?
 
-Yes. We arrange financing through Canadian marine lenders, primarily TD Auto Finance, with $0 down and terms up to 120 months. Most pre-qualifications come back in under 24 hours. Build a quote with your payment at mercuryrepower.ca or call 905-342-2153.
+Yes. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. Under the current TD program, the contract term is up to 60 months and payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; approval and final terms come from the lender.
 
 ### What's the current financing rate?
 
-The standing rate is shown live in the article (sourced from the same engine that drives our quote builder's monthly-payment math) and is in effect through December 31, 2026. The live rate and any active seasonal Mercury Canada promotions are always shown current in our quote builder and on mercuryrepower.ca/promotions, so you're never working off an old number.
+The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms.
 
 ### What's the difference between the standing rate and a "promo rate"?
 
-The standing rate is what we quote every day. A promo rate is a separate, time-limited Mercury Canada offer (sometimes as low as 2.99% or 4.9%) that appears seasonally on certain models. When a promo is active and beats the standing rate, we use it; when it expires, it's gone. Check the promotions page for what's live today.
+A promotion is a dated, time-limited program with its own model, purchase-date, credit, contract, and amortization rules. Check the current promotions page and use the signed lender disclosure rather than an example rate from an older article.
 
 ### Is there a down payment?
 
-Down payment requirements vary by lender and approval; many customers finance the full out-the-door price with HST included and $0 down. The loan minimum is $5,000 before tax.
+Down payment requirements vary by lender and approval. Qualified buyers may be eligible for $0 down. The minimum eligible purchase is $5,000 before the DealerPlan fee; the lender confirms the amount financed.
 
 ### Are there any fees?
 
-Yes, one: the DealerPlan financing fee of $349, added after tax on financed deals. We tell you before you sign. There's no penalty for paying the loan down early.
+The current HBW financed quote includes a $349 DealerPlan fee after HST. The written quote and lender disclosure show the fee and any contract-specific charges or prepayment terms.
 
 ### How long can I finance for?
 
-Up to 120 months. Longer terms lower the monthly payment but cost more interest overall. They're popular on larger repowers (250 hp and up). Pick the shortest term you're comfortable with.
+Under the active TD program, the contract term is up to 60 months. Payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. The lender confirms the final structure in writing.
 
 ### Can I finance a full repower, not just the motor?
 
@@ -174,7 +174,7 @@ Yes. Motor, rigging, controls, and installation can all go into the financed amo
 
 ### Does financing affect my warranty?
 
-No. Financing and extended-warranty coverage are separate programs and stack. You can finance the motor and take the current extended-coverage offer on the same deal.
+Financing, factory warranty, promotional coverage, and paid extended coverage are separate programs. Confirm eligibility and the written terms for each on the quote; do not assume one program automatically includes another.
 
 ### Should I finance through you or my own bank?
 

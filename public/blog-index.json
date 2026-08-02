@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "30d63fa37f972004d9a4",
+  "sourceVersion": "aff8139cc622090d6210",
   "count": 202,
   "articles": [
     {
@@ -1033,11 +1033,11 @@
         },
         {
           "q": "What is a Mercury Premier dealer?",
-          "a": "Premier is the current top tier in Mercury's dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, deep parts inventory, and access to Mercury technical resources. It does not change a customer's factory warranty rights or guarantee faster claim approval."
+          "a": "Premier is the current top tier in Mercury's dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, parts support, and access to Mercury technical resources. It does not change a customer's factory warranty rights or guarantee faster claim approval."
         },
         {
           "q": "Why does Harris Boat Works only sell Mercury?",
-          "a": "Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water."
+          "a": "Depth over breadth. Three generations of expertise, parts support, and tooling are Mercury-specific, and HBW can rig, water-test, service, and store a Mercury boat directly on Rice Lake."
         },
         {
           "q": "Where is Harris Boat Works located?",
@@ -1114,7 +1114,7 @@
     {
       "slug": "mercury-command-thrust-guide-pontoon-boats",
       "title": "Mercury Command Thrust on a Pontoon: Worth the Money?",
-      "description": "Command Thrust adds modest cost over standard gearcase on a pontoon. Pays for itself in hole shot and load handling. Ontario dealer's honest take on when.",
+      "description": "Command Thrust can improve hole shot and load handling on the right pontoon. An Ontario dealer explains when the larger gearcase helps and when it does not.",
       "category": "Buying Guide",
       "publishDate": "2026-05-04",
       "keywords": [
@@ -1302,7 +1302,7 @@
         },
         {
           "q": "How long does a Kawartha repower take?",
-          "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, for a clean Mercury-to-Mercury install. Motor lead time is separate: in-stock motors ship immediately, special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arri…"
+          "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed."
         }
       ]
     },
@@ -2010,7 +2010,7 @@
       "faqs": [
         {
           "q": "How long does the whole process take?",
-          "a": "For in-stock motors, the boat is with us 2 to 5 days from drop-off to water test pickup. For ordered motors, wait time depends on the model and Mercury's current availability, and your boat stays with you until the motor arrives. Summer season is busiest and may extend scheduling."
+          "a": "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Your boat stays with you until HBW confirms the drop-off date and applicable work plan."
         },
         {
           "q": "What deposit is required?",
@@ -2401,19 +2401,19 @@
       "faqs": [
         {
           "q": "Can I finance a Mercury outboard in Ontario?",
-          "a": "Yes. We arrange financing through Canadian marine lenders, primarily TD Auto Finance, with $0 down and terms up to 120 months. Most pre-qualifications come back in under 24 hours. Build a quote with your payment at mercuryrepower.ca or call 905-342-2153."
+          "a": "Yes. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. Under the current TD program, the contract term is up to 60 months and payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; approva…"
         },
         {
           "q": "What's the current financing rate?",
-          "a": "The standing rate is shown live in the article (sourced from the same engine that drives our quote builder's monthly-payment math) and is in effect through December 31, 2026. The live rate and any active seasonal Mercury Canada promotions are always shown current in our quote builder and on mercuryrepower.ca/promotion…"
+          "a": "The current headline rate is shown from the same source used by the quote builder and is dated through December 31, 2026. Check mercuryrepower.ca/promotions before applying, and use the approved lender disclosure for the actual rate and terms."
         },
         {
           "q": "What's the difference between the standing rate and a \"promo rate\"?",
-          "a": "The standing rate is what we quote every day. A promo rate is a separate, time-limited Mercury Canada offer (sometimes as low as 2.99% or 4.9%) that appears seasonally on certain models. When a promo is active and beats the standing rate, we use it; when it expires, it's gone. Check the promotions page for what's live…"
+          "a": "A promotion is a dated, time-limited program with its own model, purchase-date, credit, contract, and amortization rules. Check the current promotions page and use the signed lender disclosure rather than an example rate from an older article."
         },
         {
           "q": "Is there a down payment?",
-          "a": "Down payment requirements vary by lender and approval; many customers finance the full out-the-door price with HST included and $0 down. The loan minimum is $5,000 before tax."
+          "a": "Down payment requirements vary by lender and approval. Qualified buyers may be eligible for $0 down. The minimum eligible purchase is $5,000 before the DealerPlan fee; the lender confirms the amount financed."
         }
       ]
     },
@@ -2894,7 +2894,7 @@
       "faqs": [
         {
           "q": "How long does a Mercury repower take?",
-          "a": "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives."
+          "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed."
         },
         {
           "q": "Do I need to bring my boat to HBW for the walk-around?",
@@ -2906,7 +2906,7 @@
         },
         {
           "q": "What if my Mercury can't reach rated RPM during sea-trial?",
-          "a": "We change the prop and re-test. Pitch is the most common issue. Sometimes the right prop is the second or third one we try. The right prop is the one that lets the motor reach mid-band of its rated WOT RPM with typical loading. See our [propeller selection guide](/blog/mercury-propeller-selection-guide)."
+          "a": "The result is assessed against the motor's rated operating range, hull, load, rigging, and prop. If a prop change is recommended, HBW documents it and gets customer approval before changing the work-order scope. Any on-water re-check depends on safe seasonal conditions and the documented acceptance plan. See our [prop…"
         }
       ]
     },
@@ -3255,7 +3255,7 @@
         },
         {
           "q": "Why does HBW charge for the launch ramp when others are free?",
-          "a": "Two-lane concrete vs. single-lane gravel. 24/7 access vs. dawn-to-dusk. Extended deep ramp usable at low water. Parking, washrooms, fuel, ice, snacks. Courtesy docks. Shelter from prevailing winds. Whether $20/day is worth it depends on how much you value your Saturday morning. The $200 season pass pays for itself by…"
+          "a": "Compare the current day rate, season-pass price, launch hours, ramp condition, parking, washrooms, fuel, courtesy docks, and wind exposure. Divide the current pass price by the current day rate to find your break-even trip count; confirm both prices with the launch operator before relying on the result."
         },
         {
           "q": "Can I save money by winterizing my boat myself?",
@@ -3453,7 +3453,7 @@
         },
         {
           "q": "How long is the boat at HBW?",
-          "a": "A clean repower is normally in the shop for 2 to 5 days once the motor and required rigging are available. Hidden conditions, complex systems, twins, or parts delays can extend the work."
+          "a": "HBW confirms the applicable shop window after reviewing the boat, required work, parts, current capacity, and testing needs. Hidden conditions, complex systems, twins, or parts delays can change that plan."
         },
         {
           "q": "Does HBW arrange transport from Toronto or the GTA?",
@@ -4663,11 +4663,11 @@
         },
         {
           "q": "Can HBW be my primary Mercury dealer if I live in Whitby?",
-          "a": "Yes. Many Whitby customers use us as primary dealer - spring commissioning, mid-season service, fall winterization. The 45-minute drive is short enough to make it practical."
+          "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
         },
         {
           "q": "Do you serve Brooklin and north Whitby?",
-          "a": "Yes. Brooklin and north Whitby are within the same drive time. We have customers across all of Durham Region."
+          "a": "Yes. Boat owners from Brooklin and north Whitby can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic."
         }
       ]
     },
@@ -4717,11 +4717,11 @@
         },
         {
           "q": "Can HBW be my primary Mercury dealer in Oshawa?",
-          "a": "Yes. 40 minutes is short enough to make us a real primary dealer - many Oshawa customers use us for spring commissioning, mid-season service, fall winterization, and storage."
+          "a": "Yes. Oshawa owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery."
         },
         {
           "q": "Do you serve north Oshawa and Courtice?",
-          "a": "Yes. Courtice and north Oshawa are within the same drive time. We have customers across all of Durham Region."
+          "a": "Yes. Boat owners from Courtice and north Oshawa can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic."
         }
       ]
     },
@@ -5012,7 +5012,7 @@
         },
         {
           "q": "How long will HBW keep the boat?",
-          "a": "It depends on diagnosis, approval, parts, workload, and required testing. A clean repower is normally 2 to 5 days once the complete package is ready."
+          "a": "It depends on diagnosis, approval, parts, current shop capacity, and required testing. HBW provides the applicable update for the specific work order rather than a generic turnaround promise."
         }
       ]
     },
@@ -5398,7 +5398,7 @@
         },
         {
           "q": "Does HBW service boats that live on Lake Ontario, not Rice Lake?",
-          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. The 25-minute drive each way is short enough that a same-day visit works for routine jobs. For engine repairs we only service Mercury and Mercruiser."
+          "a": "Yes. The boat doesn't need to live on Rice Lake for us to service it. Cobourg customers trailer in for service all season. Routine work still requires an appointment, and completion timing is confirmed after the job is reviewed. For engine repairs we only service Mercury and Mercruiser."
         },
         {
           "q": "Does HBW offer pickup or delivery for Cobourg customers?",
@@ -5959,7 +5959,7 @@
     {
       "slug": "trent-severn-mercury-dealer-survival-guide-2026",
       "title": "Trent-Severn Mercury Dealer Guide",
-      "description": "Trent-Severn transit guide: HBW on Rice Lake offers deep Mercury parts stock, on-water towing help, and full service for boaters passing through.",
+      "description": "Trent-Severn transit guide: how to confirm Mercury or MerCruiser service, exact parts, fuel, water access, and breakdown options near Rice Lake.",
       "category": "Trent-Severn / Local",
       "publishDate": "2026-05-28",
       "keywords": [
@@ -5968,14 +5968,14 @@
         "Rice Lake marina service",
         "Trent-Severn Waterway boating",
         "Mercury parts Kawarthas",
-        "on-water boat towing Rice Lake",
+        "Trent-Severn breakdown planning",
         "Canada Strong Pass 2026",
         "Trent-Severn transit"
       ],
       "faqs": [
         {
           "q": "Does HBW provide on-water towing on Rice Lake?",
-          "a": "Yes. We provide on-water towing assistance for breakdowns on Rice Lake or for boats that have hit the Rice Lake Railroad submerged tracks. Call 905-342-2153 for tow dispatch. We do not provide tow service away from Rice Lake."
+          "a": "Do not rely on this article as a towing promise. On-water help must be confirmed directly at the time. For an emergency, use 911 or the appropriate local marine-rescue channel."
         },
         {
           "q": "Is HBW directly on the Trent-Severn Waterway?",
@@ -5983,11 +5983,11 @@
         },
         {
           "q": "Does HBW have a fuel dock?",
-          "a": "Yes. We have a fuel dock with ethanol-free 89 octane available. For boats with older 2-stroke motors or owners who prefer non-ethanol fuel for storage and transit reliability, this is one of the few options on the Rice Lake portion of the TSW."
+          "a": "HBW sells ethanol-free 89-octane fuel at the marina. Confirm current operating access and availability before changing a transit plan."
         },
         {
           "q": "What parts does HBW keep on the shelf for transit boats?",
-          "a": "We have the largest Mercury and Mercruiser parts inventory in Ontario. Common transit-related parts in stock include 10-micron water-separating fuel filters, OEM impellers, spark plugs across the Mercury lineup, Mercury OEM propellers in common sizes, batteries, and Mercruiser stern drive service parts. Specific parts…"
+          "a": "HBW stocks common Mercury and MerCruiser service parts. The exact part depends on the engine serial number and current inventory, so confirm by phone before diverting or travelling."
         }
       ]
     },
@@ -6045,7 +6045,7 @@
       "faqs": [
         {
           "q": "How long does a Yamaha-to-Mercury swap take at HBW?",
-          "a": "Most brand-swap repowers in the 75-200 HP class take 3-5 working days once the motor and rigging parts are on site. That includes removal of the Yamaha, rigging of new throttle, harness, gauges, and prop, then water-test and break-in setup. Spring season (April-May) the queue runs longer because every Mercury repower…"
+          "a": "A brand swap requires removal of the Yamaha controls, harness, gauges, and prop, then installation and testing of the approved Mercury package. HBW confirms the shop window after reviewing the boat, parts, current capacity, and safe test conditions."
         },
         {
           "q": "Will my Yamaha prop carry over to the new Mercury?",
@@ -6080,7 +6080,7 @@
       "faqs": [
         {
           "q": "How long does a Honda-to-Mercury swap take at HBW?",
-          "a": "Most brand-swap repowers run 3-5 working days once motor and rigging parts are on site. The Honda-specific work (removal of Honda controls, gauges, harness, and prop) takes roughly half a day. The Mercury rigging takes the rest. Spring queue (April-May) runs longer. Book early."
+          "a": "A brand swap requires removal of the Honda controls, gauges, harness, and prop, then installation and testing of the approved Mercury package. HBW confirms the shop window after reviewing the boat, parts, current capacity, and safe test conditions."
         },
         {
           "q": "Will my Honda prop carry over to the new Mercury?",
@@ -6099,7 +6099,7 @@
     {
       "slug": "hbw-on-water-load-test-mercury-repower-advantage-2026",
       "title": "HBW On-Water Load Test: Mercury Repower",
-      "description": "Why every Mercury repower at Harris Boat Works gets a real-water load test before delivery. 80 feet from rigging bay to water-test dock.",
+      "description": "What an on-water Mercury repower check can verify at HBW, how seasonal conditions affect testing, and what the handoff should document.",
       "category": "HBW Process",
       "publishDate": "2026-05-28",
       "keywords": [
@@ -6115,19 +6115,19 @@
       "faqs": [
         {
           "q": "Do all Mercury dealers water-test repowers?",
-          "a": "Most Ontario Mercury dealers will water-test on customer request or when troubleshooting a warranty escalation. Routine water testing on every repower is the exception, not the rule, because the economics depend on dock proximity."
+          "a": "Testing practices vary by dealer, job, facilities, and conditions. Ask the installer what testing is included in your written scope and what happens if an on-water check cannot be completed safely."
         },
         {
           "q": "How long does an HBW water test take?",
-          "a": "Thirty to sixty minutes per motor, depending on motor size and whether anything needs to be retuned mid-test."
+          "a": "There is no reliable universal duration. The scope depends on the motor, hull, rigging, approved work, conditions, and whether a finding requires more diagnosis or adjustment."
         },
         {
-          "q": "What if the water test catches a problem?",
-          "a": "The boat goes back to the rigging bay. We fix it. We retest. Customer takes delivery only after the test passes clean. There is no extra cost. This is part of the repower."
+          "q": "What if the water test finds a problem?",
+          "a": "HBW documents the finding and the applicable next step. That may involve a rigging correction, propeller decision, further diagnosis, or a follow-up plan under the approved work scope."
         },
         {
-          "q": "Why is the WOT RPM check so important?",
-          "a": "A Mercury outboard rigged with the wrong prop will either over-rev (damage) or under-rev (lose power and burn fuel). The only way to verify WOT RPM is with the boat in the water, the prop on the motor, at full throttle under load. Bench testing cannot tell you this."
+          "q": "Why is the wide-open-throttle RPM check important?",
+          "a": "RPM under load helps assess whether the propeller and setup let the exact motor operate in its specified range. The correct range comes from the documentation for that motor and installation, not a generic value for every Mercury outboard."
         }
       ]
     },

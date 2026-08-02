@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-06-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Own
 description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-06-10
+date_modified: 2026-08-02
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last updated:** 2026-06-10  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 

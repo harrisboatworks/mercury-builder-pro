@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario.md
-last_updated: 2026-06-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Old Motor Trade-In, HST and Disposal in Ontario"
 description: "Wondering what to do with your old outboard when you repower? Trade-in credit, Ontario HST rules, and responsible disposal, all explained honestly."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-06-10
+date_modified: 2026-08-02
 keywords: ["repower trade-in ontario","old outboard trade in","hst credit boat motor","outboard disposal ontario","mercury repower harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last updated:** 2026-06-10  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
 
@@ -105,7 +105,7 @@ Some motors aren't worth trading. If you're replacing a 1998 two-stroke Evinrude
 
 If your old motor has no trade value, leave it with us when you repower. No charge. We route dead outboards through certified recycling channels so the oil, fuel, and metals are handled properly.
 
-Old marine two-strokes contain oil, fuel, and metals that shouldn't go in a dumpster. Disposal done right is better for Rice Lake. That's not a slogan, the lake is about 80 feet from our shop.
+Old marine two-strokes contain oil, fuel, and metals that should not go in a dumpster. Responsible handling matters at a marina beside Rice Lake.
 
 ---
 
@@ -120,7 +120,7 @@ When you repower with us, we give you:
 
 The motor price is the easy number. The installed, net-of-trade price is the honest one.
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ---
 
@@ -147,7 +147,7 @@ No. We take used motors as trade-ins against a repower or new motor purchase, bu
 
 ### Does a repower include an on-water test?
 
-Yes. Every repower at Harris Boat Works gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer.
 
 ## Related guides
 
