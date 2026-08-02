@@ -52,7 +52,7 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
-**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); get every designated driver through it before rental day. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Every person who may drive must show a valid temporary or permanent PCOC plus photo ID at check-in. Passengers don't need one. If a driver still needs the card, complete the accredited online course before rental day at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Details are in [our licence guide](/blog/boat-rental-licence-ontario-guide).
 
 ---
 
@@ -137,7 +137,7 @@ Yes. Multi-day rentals can stay at your cottage dock for the duration, and you c
 
 ### Do we need a licence for every boat we rent?
 
-Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian visitors complete a renter's checklist waiver instead.
+Yes. Every person who may drive must show a valid temporary or permanent PCOC plus photo ID at check-in. Passengers don't need one. If a driver still needs the card, complete the accredited online course before rental day at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat).
 
 ### Can we bring alcohol for a celebration on the water?
 

@@ -425,7 +425,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need a licence for my first rental?",
-        "a": "Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide)."
+        "a": "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card and photo ID. Passengers don't need one. If a driver still needs the card, complete it before rental day; [our licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements."
       },
       {
         "q": "What happens if I damage the boat?",
@@ -449,7 +449,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need a boating licence to rent a boat on Rice Lake?",
-        "a": "The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online at myboatcard.com/card/harrisboat. Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-…"
+        "a": "Yes. Every person who may drive an HBW rental must show a valid temporary or permanent Pleasure Craft Operator Card plus photo ID at check-in. Passengers do not need one. The general Canadian rental checklist can satisfy the federal minimum for some rentals, but HBW does not substitute it for the card."
       },
       {
         "q": "How much does a Rice Lake boat rental cost?",
@@ -481,7 +481,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can I rent a boat in Ontario with no licence at all?",
-        "a": "You can book one, but the driver can't operate it without proof of competency. Complete the boating licence online at myboatcard.com/card/harrisboat, or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving."
+        "a": "You can make a reservation, but HBW won't send the boat out until every person who may drive shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine."
       },
       {
         "q": "Does everyone in the boat need a licence?",
@@ -3076,7 +3076,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
-        "a": "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works. HBW's current policy directs non-Canadian residents to complete a renter checklist waiver after reservation."
+        "a": "Not if you may drive an HBW rental. Every person who may drive must show a valid temporary or permanent PCOC plus photo ID at check-in. Passengers do not need one, and the rental checklist does not replace the card at HBW."
       },
       {
         "q": "Is Rice Lake too shallow for a 21-foot pontoon?",
@@ -3530,7 +3530,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I need a boating licence to rent at HBW?",
-        "a": "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation."
+        "a": "Every person who may drive must bring a valid temporary or permanent Pleasure Craft Operator Card plus photo ID. Passengers do not need one. HBW does not substitute the rental checklist for the card, including for non-Canadian visitors."
       },
       {
         "q": "What does a rental cost?",

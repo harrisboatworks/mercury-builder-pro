@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide.md
-last_updated: 2026-08-01
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock"
 description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-01
+date_modified: 2026-08-02
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-01  
+**Last updated:** 2026-08-02  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 
 # First Time Renting a Boat? What We Tell Every Renter at Our Dock
 
-> **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. The driver must bring a valid Pleasure Craft Operator Card; passengers do not need one.
+> **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. Every driver must bring a valid Pleasure Craft Operator Card and photo ID; passengers do not need one.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.
 
@@ -42,11 +42,6 @@ This is the guide version of the core first-timer briefing. If you want the curr
 
 You booked (or you're about to book) a rental on Rice Lake and you've never driven a boat. Or you drove your uncle's tinny once in 2009 and you'd like a refresher before six people watch you dock. Either way, this is the no-judgment version. Experienced boaters can skip to the [fleet and cost guide](/blog/rice-lake-boat-rental-guide-2026).
 
-### Before your rental
-
-HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.
-
-*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*
 ---
 
 ## The One Big Mental Shift: No Brakes
@@ -123,7 +118,7 @@ Motor won't start after your swim stop? Confirm the kill-switch clip is seated a
 
 ## Common mistakes
 
-- **Skipping the operator card until rental morning.** HBW requires the driver to bring a valid PCOC. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
+- **Skipping the operator card until rental morning.** HBW requires every driver to bring a valid PCOC and photo ID. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
 - **Docking at car-parking speed.** Idle. Glide. Reverse burst. Repeat it like a mantra.
 - **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers makes the day better for both.
 - **Ignoring the map.** The causeway doesn't care that you're new.
@@ -158,7 +153,7 @@ Compare the currently available pontoons in the live booking system and choose o
 
 ### Do I need a licence for my first rental?
 
-Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements.
+Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card and photo ID. Passengers don't need one. If a driver still needs the card, complete it before rental day; [our licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements.
 
 ### What happens if I damage the boat?
 

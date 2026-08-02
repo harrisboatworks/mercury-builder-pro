@@ -71,7 +71,7 @@ Each rental includes:
 - **Public washrooms** during rental hours; the office provides the key
 
 What you bring:
-- **Valid boat operator's licence for the driver.** HBW requires the driver to show a valid temporary or permanent card at check-in. The rental safety checklist is still part of the briefing but does not replace HBW's driver-licence requirement. See the [current rental policy](https://www.harrisboatworks.ca/boat-rentals) before booking.
+- **Valid PCOC and photo ID for every person who may drive.** HBW accepts a valid temporary or permanent Pleasure Craft Operator Card at check-in. The rental safety checklist is still part of the briefing but does not replace HBW's driver-card requirement. Passengers do not need a PCOC. See the [current rental policy](https://www.harrisboatworks.ca/boat-rentals) before booking.
 - **Sunscreen, hats, water, snacks**
 - **Fishing gear and licence if fishing.** [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
@@ -190,7 +190,7 @@ Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic
 
 ### Do I need a boating licence to rent at HBW?
 
-The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation.
+Every person who may drive must bring a valid temporary or permanent Pleasure Craft Operator Card plus photo ID. Passengers do not need one. HBW does not substitute the rental checklist for the card, including for non-Canadian visitors.
 
 ### What does a rental cost?
 
