@@ -1859,16 +1859,16 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
     slug: 'pontoon-vs-fishing-boat-6-8-people-zh',
     title: 'Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南',
     seoTitle: 'Pontoon 还是钓鱼船？6-8 人船型选择',
-    description: '莱斯湖 GTA 华人家庭船型选择:pontoon 平台船 vs 钓鱼船。稳定性、人数、油耗、价格对比。HBW Legend 加拿大本地品牌选择。',
+    description: '莱斯湖 GTA 华人家庭船型选择：pontoon 平台船 vs 钓鱼船。稳定性、人数、油耗和配置对比。HBW 提供 Legend 船型选择。',
     image: '/lovable-uploads/zh-pontoon-vs-fishing-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-11',
     category: '租船与钓鱼',
     readTime: '6 分钟',
     keywords: ['pontoon vs fishing boat 中文', '6-8 人租船 中文', '大家庭租船 安省', 'Rice Lake pontoon 租船', '团体租船 多伦多'],
-    content: `> **简短答案：** 6-8 人家庭周末游建议 pontoon 平台船 ， 稳定、舒适、空间大。如果主要是 1-3 人专业钓鱼,选钓鱼船 ， 快、省油、便宜。莱斯湖 GTA 华人船主中 70% 选 pontoon,30% 选钓鱼船。Harris Boat Works (HBW) 提供两种船型的 Legend 加拿大本地品牌选择。
+    content: `> **简短答案：** 6-8 人家庭周末游通常更适合 pontoon 平台船，稳定、舒适、空间大。如果主要是 1-3 人认真钓鱼，钓鱼船通常更灵活、更省油。Harris Boat Works (HBW) 提供多种 Legend 船型选择，最终要按实际人数、用途、capacity plate 和预算来配。
 
 ## 关键差异
 
@@ -1879,7 +1879,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 | 速度 | 中等 (一般 20-35 km/h) | 快 (35-55 km/h) |
 | 油耗 | 中-高 | 低 |
 | 钓鱼适应性 | 一般 (有钓鱼版可选) | 专业级 |
-| 价格区间 (新) | 加币 $35K-80K | $25K-55K |
+| 新船价格 | 按船型、布局和动力配置报价 | 按船型、布局和动力配置报价 |
 | 莱斯湖适用性 | 出色 | 出色 |
 
 ## 为什么大部分 GTA 华人家庭选 Pontoon
@@ -1890,7 +1890,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 **特别一提：父母从中国来探亲住 2-3 个月时，pontoon 是"全家共度"最实在的答案。** 长辈不开车也能一起出门，孙辈在湖上跑来跑去，一家人在船上吃饭、看日落。比起每周末轮流找去哪吃饭，这是一个能让长辈真正放松、也能让你"尽到孝心"的方式。很多 GTA 华人家庭买 pontoon 的真实动机，就是这个场景。
 
-**2. 稳定不晃** ， Rice Lake 夏天周末游艇多,浪不大但稳定性差的船仍会晃。Pontoon 平台船因为有两个浮筒 (有些是三浮筒),稳定性是钓鱼船的 3-5 倍。
+**2. 稳定不晃** ， Rice Lake 夏天周末游艇多，浪不大但稳定性差的船仍会晃。Pontoon 平台船有两个浮筒，有些是三浮筒，通常比同级钓鱼船更稳定。
 
 **3. 安全 + 不晕船** ， 老人和小孩对船晃敏感。Pontoon 不晃。
 
@@ -1932,7 +1932,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 ## 莱斯湖船型推荐
 
-### Pontoon 平台船推荐 (HBW 销售 Legend 加拿大本地品牌)
+### Pontoon 平台船推荐 (HBW 销售 Legend 船型)
 
 **Legend Splash 18-22 英尺** ， GTA 华人家庭最常买。6-8 人能舒服坐。Mercury 90-115 FourStroke 引擎够用。
 
@@ -1946,7 +1946,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 ## 我们在 HBW 看到的实地见证
 
-每年春天的展销活动,HBW 卖出去的 Legend pontoon 大概是 Legend 钓鱼船的 2-3 倍。GTA 华人客户尤其偏好 pontoon ， 因为家庭聚会的文化需要。
+在 HBW 接待的 GTA 华人家庭里，pontoon 经常因为多人聚会、老人和孩子同船、甲板空间等原因进入最后的选择名单。实际销量会随库存和季节变化，我们不把一个年份的比例当成普遍规律。
 
 我们见过最常见的"买错"是:客户买了便宜钓鱼船,第二年发现家人不能舒服坐,最后又卖掉换 pontoon。提前选对省钱省心。
 
@@ -1969,7 +1969,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 **Q：Pontoon 船能不能去其他湖？** 能,但 trailerability (拖船能力) 比钓鱼船差。Pontoon 拖船需要更宽的 trailer 和更结实的 hitch。
 
-**Q：Legend 加拿大本地品牌品质如何？** Legend 工厂在魁北克 Trois-Rivières,加拿大本地制造。耐用性出色,特别适合安大略冬储气候。
+**Q：Legend 是加拿大制造吗？** Legend 是一家总部位于安大略省 Whitefish 的加拿大公司。其船只为加拿大水域设计，由美国合同制造商生产。选船时应比较具体型号、结构、保固和用途，而不是把品牌所在地当成制造地。
 
 **相关文章**
 
@@ -2228,7 +2228,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
     image: '/lovable-uploads/hero-mandarin-mercury-service.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-05-15',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -3114,7 +3114,7 @@ whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船�
 
 如果你想深入了解 Pro XS 和 FourStroke 的差别，我们有 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta) 可以参考。
 
-**Legend 浮筒船：** HBW 是安省 Legend 的合作伙伴，Legend 是加拿大本地制造的 pontoon 品牌，配 Mercury 原厂动力。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
+**Legend 浮筒船：** HBW 是 Legend 经销商。Legend 是一家总部位于安大略省 Whitefish 的加拿大公司，船只为加拿大水域设计，并由美国合同制造商生产。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
 
 ---
 

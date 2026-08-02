@@ -2272,7 +2272,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     image: "/lovable-uploads/hero-group-boat-rentals.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -5003,13 +5003,13 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
-    dateModified: '2026-07-23',
+    dateModified: '2026-08-02',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
     content: `# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-08-02*
 
 > **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. Book service at hbw.wiki/service.
 
@@ -6305,7 +6305,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     imageAlt: 'Aerial view of Harris Boat Works marina and shop on Rice Lake in Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: "2026-07-07",
+    dateModified: "2026-08-02",
     publishDate: '2026-05-04',
     category: 'About Us',
     readTime: '8 min read',
@@ -13012,7 +13012,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man in Legend XT 18 boat with Mercury outboard; infographic summarizing 2026 Ontario boat market trends and dealer advice.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-08-02',
     publishDate: '2026-02-06',
     category: 'Market Insight',
     readTime: '10 min read',
@@ -13020,7 +13020,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `# What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
-The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal government has announced a proposed repeal of the luxury tax on boats over $250,000 (effective November 5, 2025 per the CRA Luxury Tax Notice LTN5 announcement, pending final confirmation). If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, and used-boat values have corrected. The federal luxury tax is no longer payable on subject vessels effective November 5, 2025. Bill C-15 received Royal Assent on March 26, 2026. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The post-pandemic reset is complete
 
@@ -13067,13 +13067,13 @@ caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryr
 
 The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
 
-## The luxury tax on boats is being phased out
+## The luxury tax on subject vessels was repealed
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025 (per the announced change, pending final confirmation).
+Canada's federal luxury tax, introduced in 2022, applied to subject vessels priced or valued above $250,000. The [Canada Revenue Agency's Luxury Tax Notice LTN5](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ltn5/ltn5-luxury-tax-not-payable-subject-aircraft-and-vessels.html) confirms that the tax is no longer payable on subject vessels effective November 5, 2025. The amendments were included in Bill C-15, which received Royal Assent on March 26, 2026.
 
-If you were looking at a larger package (a loaded pontoon, a premium Legend configuration), that tax is on its way out (pending final confirmation).
+If you are shopping for a vessel above the threshold, the tax no longer applies to qualifying transactions on or after the effective date. The CRA notice explains the remaining filing and recordkeeping rules for earlier transactions.
 
 ## Financing is getting more manageable
 
@@ -13090,7 +13090,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Inventory is back. You get to choose.
 - Pricing is rational.
 - Financing is improving.
-- Luxury tax repeal is on its way (pending final confirmation).
+- The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
 We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
@@ -13098,7 +13098,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 
 ## Sources
 
-- Canada Revenue Agency, Luxury Tax Notice LTN5 (luxury tax on subject vessels no longer payable as of November 5, 2025). [canada.ca](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/luxury-tax.html)
+- Canada Revenue Agency, [Luxury Tax Notice LTN5](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ltn5/ltn5-luxury-tax-not-payable-subject-aircraft-and-vessels.html) (updated April 2026; Royal Assent March 26, 2026).
 - NMMA, U.S. new powerboat retail sales (2024-2025 unit data).
 - Bank of Canada, policy rate (series of cuts in 2025).
 
@@ -13108,7 +13108,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'Is 2026 a good time to buy a boat in Ontario?', answer: 'Yes, for most buyers it is one of the better windows in recent years. New inventory is plentiful, dealer competition is real, used prices have corrected from pandemic highs, and financing rates are easing.' },
-      { question: 'Did Canada really repeal the luxury tax on boats?', answer: 'Yes. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels (boats over $250,000) is no longer payable as of November 5, 2025.' },
+      { question: 'Did Canada really repeal the luxury tax on boats?', answer: 'Yes. Canada Revenue Agency Luxury Tax Notice LTN5 confirms that the luxury tax is no longer payable on subject vessels effective November 5, 2025. The amendments were included in Bill C-15, which received Royal Assent on March 26, 2026.' },
       { question: 'Are used boat prices coming down in Ontario?', answer: 'Used boat prices have softened an estimated 5 to 10% from 2021 to 2022 highs. Prices are still above pre-pandemic levels in many categories, but the correction has happened.' },
       { question: 'Why are new boat sales down if people are still boating?', answer: 'New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own.' },
       { question: 'Is Mercury allocation healthy for 2026?', answer: 'From our position as a Mercury Premier dealer, new motor allocation is healthy.' },
@@ -13560,18 +13560,18 @@ Electric outboards aren't a someday thing. Mercury's Avator line is here, we're 
 
 ### The Avator lineup, in plain terms
 
-Mercury names the Avator models by power output in watts, which trips people up. Here's the translation:
+Mercury rates Avator models by prop-shaft power in watts or kilowatts, not by gas-engine horsepower. Here is the current lineup:
 
-| Model | Power at prop | Best for | Rough gas feel (guide only) |
-|---|---|---|---|
-| Avator 7.5e | 750W | Canoes, dinghies, small tenders, trolling | ~3.5 hp |
-| Avator 20e | 2.2 kW | Small fishing boats, inflatables | ~5 hp |
-| Avator 35e | 3.7 kW | Small fishing boats, light tenders | ~9.9 hp |
-| Avator 75e | 7.5 kW | Small pontoons, larger tenders | 10 hp (prop-shaft rating) |
-| Avator 110e | 11 kW | Pontoons, day boats | 15 hp (prop-shaft rating) |
+| Model | Rated prop-shaft power | Best for |
+|---|---|---|
+| Avator 7.5e | 0.75 kW | Canoes, dinghies, small tenders, trolling |
+| Avator 20e | 2.2 kW | Small fishing boats, inflatables |
+| Avator 35e | 3.7 kW | Small fishing boats, light tenders |
+| Avator 75e | 7.5 kW | Small pontoons, larger tenders |
+| Avator 110e | 11 kW | Pontoons, day boats |
 
 
-One quirk worth knowing: the first three figures are Mercury's gas-equivalent comparisons, while the 75e and 110e numbers are Mercury's literal prop-shaft conversions (7,500 watts converts to 10 hp). Electric motors deliver all their torque instantly, so a 75e pulls a bigger boat off the line far harder than "10 hp" suggests. Treat the column as a guide, not a spec.
+Those are rated prop-shaft figures, not a promise that an Avator will behave like a gas outboard with a particular horsepower number. Hull, load, propeller, battery configuration, wind, and throttle setting all affect thrust, acceleration, range, and runtime. Compare the exact boat setup instead of converting kilowatts into a gas-horsepower shortcut.
 
 A few things worth knowing: the 7.5e battery (1 kWh, about 8 kg (17 lb)) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
 
@@ -13618,7 +13618,7 @@ For gas outboards, the configurator does what it always does: **[build a real Me
 `,
     faqs: [
       { question: 'How far can a Mercury Avator electric outboard go on one charge?', answer: "In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions." },
-      { question: 'What gas horsepower is each Mercury Avator equivalent to?', answer: 'Mercury compares the 7.5e to about 3.5 hp, the 20e to about 5 hp, and the 35e to about 9.9 hp. For the 75e and 110e, Mercury rates prop-shaft output: 7,500 watts converts to 10 hp and 11,000 watts to 15 hp. Instant electric torque means they feel stronger off the line than those numbers suggest.' },
+      { question: 'How is Mercury Avator power rated?', answer: 'Mercury rates Avator outboards by prop-shaft power: 0.75 kW for the 7.5e, 2.2 kW for the 20e, 3.7 kW for the 35e, 7.5 kW for the 75e, and 11 kW for the 110e. Thrust, acceleration, range, and runtime still depend on the exact hull, load, propeller, battery setup, weather, and throttle setting.' },
       { question: 'How long does it take to charge a Mercury Avator battery?', answer: "The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or about 2 hours on the optional 520W charger. The larger 5,400 Wh packs used by the 75e and 110e take roughly 20 hours for two batteries on the portable 520W charger; the 1050W charger cuts that by more than half." },
       { question: 'How much does a Mercury Avator cost in Canada?', answer: 'It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.' }
     ],
@@ -13892,7 +13892,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     image: '/lovable-uploads/hero-mercury-boost-calibration-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
-    dateModified: '2026-07-18',
+    dateModified: '2026-08-02',
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
@@ -14100,7 +14100,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
-    dateModified: '2026-07-04',
+    dateModified: '2026-08-02',
     category: 'Canadian Boating Regulations',
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
@@ -14683,7 +14683,7 @@ Start with the exact motor in the [Mercury repower configurator](/quote/motor-se
 
 Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world performance and reliability difference between equivalent motors is small. For Ontario cottage owners, the more important question is service network: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind on Rice Lake. For boaters in the Kawarthas, the practical service-availability question matters more than spec-sheet comparisons. Build a Mercury quote at mercuryrepower.ca.
 
-*Last reviewed: 2026-05-30*
+*Last reviewed: 2026-08-02*
 
 A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Premier dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
 
@@ -14760,7 +14760,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions. T
 - claim: Yamaha is more reliable than Mercury.
   rebuttal: Both brands build reliable modern outboards. Real-world reliability difference is small.
 - claim: Current Verado is supercharged.
-  rebuttal: No. Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+  rebuttal: No. Current Mercury Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 - claim: The 2025 Mercury recall is a big deal.
   rebuttal: For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
 - claim: I'll get Yamaha because the warranty is longer.
@@ -17725,7 +17725,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can I trust online pricing if it\'s published?',
-        answer: 'For HBW, yes. Pricing is verified annually after Mercury\'s July 1 model year change. The configurator pulls live data. We\'re a Mercury Premier dealer with 60 years of accountability, we don\'t bait-and-switch on published prices.'
+        answer: 'For HBW, yes. Pricing is verified after Mercury\'s July 1 model-year change, and the configurator uses the current pricing data. We\'ve been a Mercury dealer since 1965, and we don\'t bait-and-switch on published prices.'
       },
       {
         question: 'What about delivery, taxes, and trade-in?',
@@ -19261,7 +19261,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 ## Safety, The Stuff People Skip
 
-**PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
+**PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
 **[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
 
@@ -19350,7 +19350,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     "question": "What's the launch fee at Harris Boat Works?",
-    "answer": "$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches."
+    "answer": "$20 per day or $200 for a seasonal pass (April through November). The seasonal pass breaks even after 10 launches."
   },
   {
     "question": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
@@ -19709,7 +19709,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - **Easier docking.** You can make tiny throttle adjustments, half a notch, that mechanical cables can't reproduce.
 - **No cable wear.** Mechanical cables stretch and corrode over years; electronic signals don't.
 
-DTS is **standard** on the V8 250-400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175-225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
+DTS is **standard** on all current Verado models (V8 250-300 HP, V10 350-425 HP, and V12 600 HP) and is available on selected FourStroke and Pro XS configurations. If you're running a smaller engine, you likely have mechanical throttle and shift, and that's fine. Verify the exact model and serial before planning a control-system change.
 
 Worth retrofitting? Almost never on existing boats. [DTS retrofit involves changing the lever, the cables, the helm wiring](/blog/mercury-dts-retrofit-eligibility-2026), and possibly the engine's computer. New repower? Worth it on V8s.
 
@@ -21192,13 +21192,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-07-24",
+    dateModified: "2026-08-02",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
     keywords: ['mercury smartcraft alarm codes', 'mercury smartcraft alarm codes list', 'mercury smartcraft alarm codes meanings', 'mercury alarm code list', 'smartcraft fault codes mercury', 'mercury outboard error codes', 'mercury smartcraft diagnostic', 'mercury outboard warning lights'],
     relatedSlugs: ['mercury-outboard-fault-codes-lookup', 'mercury-outboard-beeping-codes-guide', 'mercury-outboard-overheat-alarm-decoder', 'mercury-smartcraft-connect-guide-ontario', 'mercury-boat-battery-guide-ontario'],
-    content: `*Last reviewed: 2026-02-06*
+    content: `*Last reviewed: 2026-08-02*
 
 > **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
 
@@ -21312,7 +21312,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "Is VesselView Mobile still available?", answer: "Mercury has superseded VesselView Mobile with SmartCraft Connect Mobile. Legacy VesselView Mobile hardware still uses the VesselView Mobile app, but new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works." },
       { question: "My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?", answer: "False or incorrect Optimax low-oil alarms can come from several causes per Mercury\'s service manual: unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank. Float-magnet separation is one of the causes we see, not the only one. Diagnosis starts with the delivery lines and cap; if the float itself is failed the manual\'s remedy is oil tank replacement." },
       { question: "Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?", answer: "Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. Diagnosis at HBW includes intake cleaning before assuming impeller failure." },
-      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production." }
+      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "No. Current Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production." }
     ],
   },
   {
@@ -22571,11 +22571,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "harris-boat-works-since-1947-rice-lake-institution",
     title: 'Harris Boat Works: On Rice Lake Since 1947',
     seoTitle: "Harris Boat Works Since 1947: Rice Lake Institution",
-    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've.",
+    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what staying on the same dock means for the customers who've returned.",
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-05-18",
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: "2026-05-18",
     category: "About HBW",
     readTime: '12 min read',
@@ -22586,9 +22586,9 @@ Harris Boat Works has been on the same Rice Lake dock since 1947, three generati
 
 # Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
-The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer. The marina sits on land we've worked for nearly eight decades.
+The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer.
 
 We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
@@ -22626,7 +22626,7 @@ Through the 1950s and early 1960s, outboards started taking over. Light, easier 
 
 ## Becoming a Mercury Dealer, 1965
 
-In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company growing fast, building motors that were lighter and more reliable than the competition. Becoming a Mercury dealer in 1965 meant signing on to a relationship that's now in its 60th year.
+In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company was growing fast, building motors that were lighter and more reliable than the competition. That was the year Harris Boat Works became a Mercury dealer.
 
 **Why Mercury, then and now:**
 
@@ -22636,7 +22636,7 @@ In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the risi
 
 We've [stayed Mercury-only as a deliberate choice](/blog/why-harris-boat-works-mercury-dealer). We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
 
-In 2026, we're celebrating **60 years as a Mercury dealer**. That's a multi-generational relationship most other industries can't match.
+We're proud to be **a Mercury dealer since 1965**. That's a multi-generational relationship most other industries can't match.
 
 ---
 
@@ -22649,7 +22649,7 @@ Specific things a multi-generational family marina knows:
 - **Where the underwater hazards are.** The sunken railway across Rice Lake, we know exactly where it sits, which boats run aground there in which conditions, which hulls handle the channel. We've seen generations of grounding stories.
 - **Which mistakes new boaters make.** First-time pontoon owners typically over-trim or under-trim depending on conditions. We see it every season. We can teach the corrections in 30 seconds.
 - **What the lake does in different weather.** Ice-out timing varies. Wind builds chop differently in spring vs. fall. Spring weed growth peaks at certain weeks. We know when to launch, when to wait, when to call ahead.
-- **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds 60-year customer relationships.
+- **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds relationships across generations.
 
 These aren't things a new dealer can fake. They take time. We have time on Rice Lake.
 
@@ -22744,7 +22744,7 @@ If the fourth generation takes over, HBW continues. If they don't, we'll find a 
 ## Frequently Asked Questions
 
 **How long has Harris Boat Works been in business?**
-Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026.
+Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer.
 
 **Is HBW family-owned?**
 Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
@@ -22782,7 +22782,7 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026." },
+      { question: "How long has Harris Boat Works been in business?", answer: "Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer." },
       { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
       { question: "Is HBW a Mercury Premier dealer?", answer: "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
       { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
@@ -33768,8 +33768,9 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 | FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
-| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
-| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 | 350-425 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V12 | 600 HP | DTS standard | Joystick Piloting requires DTS. |
 | Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
 | SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
 
@@ -35691,7 +35692,7 @@ Both Mercury Avator and Torqeedo make legitimate electric outboards. The decidin
 |---|---|---|
 | Parent company | Mercury Marine (Brunswick) | German, now Yamaha-owned (2024) |
 | 2026 models | 7.5e, 20e, 35e, 75e, 110e | Travel, Cruise, Deep Blue |
-| Power range | 750W-11,000W (~3-30 HP equivalent; rated in watts) | Portable to large commercial |
+| Power range | 0.75-11 kW rated prop-shaft power | Portable to large commercial |
 | Ontario dealers | Hundreds of Mercury dealers, ~within an hour | Concentrated in Toronto/Ottawa; rural hours away |
 | Parts | On shelf at Mercury Premier dealers | Often ordered from Torqeedo Canada |
 | Charging | 110V (portable 3-6 hr; mid overnight; 10+ kWh needs 240V) | Same household charging |
@@ -35710,7 +35711,7 @@ If you want a truly neutral comparison, find a marine specialty shop that carrie
 - Backed by Mercury Marine (Brunswick Corporation), one of the largest outboard manufacturers globally
 - Full integration with Mercury's SmartCraft / VesselView ecosystem
 - Models: 7.5e, 20e, 35e, 75e, 110e (2026 lineup)
-- Power range: 750W to 11,000W (roughly equivalent to 3 HP up to 30 HP in propulsion terms, though Mercury rates by watts not HP)
+- Rated prop-shaft power: 0.75 kW to 11 kW; compare thrust and performance on the exact hull rather than converting to gas horsepower
 - Battery system: integrated (7.5e) or external Power Center / 2,300 Wh packs (larger models)
 - Service through: any Mercury dealer in Canada with electrical service capability
 
@@ -36987,7 +36988,7 @@ We'll check the serial number against Mercury's current eligibility information 
     imageAlt: 'Ontario boater sitting in an aluminum fishing boat at a wooden dock at golden hour, Mercury 115 FourStroke outboard on the stern.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: "2026-07-07",
+    dateModified: "2026-08-02",
     publishDate: '2026-05-28',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -37001,7 +37002,7 @@ We'll check the serial number against Mercury's current eligibility information 
 - Gores Landing, ON
 - Quote builder available
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-08-02*
 
 A Mercury or Honda buyer walks into our shop with the same two questions: which motor is actually better, and what does my service look like over the next 10 years? We sell Mercury. We don't sell or service Honda. So this isn't a balanced review, the Mercury section was not written by Switzerland. But we still try to keep the comparisons fair.
 
@@ -37034,7 +37035,7 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 **Service network density in our region.** In the Kawarthas, Lake Simcoe basin, and Trent-Severn corridor, Mercury has more certified dealer locations than Honda Marine. Brand loyalty is free. Dealer support is not.
 
-**Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP - 400 HP Verado V8 or V10, 450R, or the V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
+**Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP, Mercury offers the 400 and 425 HP Verado V10, the 450R, and the 600 HP Verado V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
 
 **Pro XS performance.** Honda has no direct counterpart to Mercury Pro XS. If you fish tournaments or want hole-shot performance on a bass boat, this matters.
 
@@ -37108,7 +37109,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned si
       { question: "Is Mercury more reliable than Honda?", answer: "Both brands build reliable modern outboards. The real-world reliability difference is small. The bigger reliability factor for Ontario owners is local service network access." },
       { question: "Where can I get a Honda Marine outboard serviced near Rice Lake?", answer: "Honda Marine's dealer locator lists two certified dealers within 75 km of HBW - one in the Peterborough area (about 30 km) and one in the Havelock area (about 45 km)." },
       { question: "Is Honda's warranty longer than Mercury's?", answer: "Not in 2026. Honda offers 5 years standard plus 3 years HondaCare = up to 8 years. Mercury offers 3 years standard limited (with 3 years corrosion concurrent) plus up to 5 years Mercury Product Protection (MPP) extended = up to 8 years total. The maximum length is equal; the structure differs." },
-      { question: "Does Mercury have a Honda BF350 equivalent?", answer: "Yes. Mercury 350 Verado V8 is the direct equivalent. Mercury also offers 400 HP Verado V8/V10, 450R, and 600 HP V12, none of which Honda matches." },
+      { question: "Does Mercury have a Honda BF350 equivalent?", answer: "Yes. The Mercury 350 Verado V10 is the direct horsepower equivalent. Mercury also offers 400 and 425 HP Verado V10 models, the 450R, and the 600 HP Verado V12, none of which Honda matches." },
       { question: "Can I switch from Honda to Mercury on my existing boat?", answer: "Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower because controls, harness, gauges, and prop all change. See our Honda to Mercury Repower Ontario Guide for the full math." }
     ]
   },
@@ -37591,7 +37592,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   **What we tell customers:** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
 
 - **Myth:** "Verado is supercharged."
-  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-400 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
+  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-425 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
 
 ## Customer language we hear
 
@@ -37829,7 +37830,8 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     title: 'Honda to Mercury Repower: Ontario Guide',
     seoTitle: 'Honda to Mercury Repower Ontario Guide 2026 | Harris Boat Works',
     description: 'Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.',
-    content: `*Last reviewed: 2026-07-09*
+    dateModified: '2026-08-02',
+    content: `*Last reviewed: 2026-08-02*
 
 > **Quick answer:** Switching from Honda to Mercury makes sense for two reasons: Ontario service access, where Mercury has roughly three times Honda's dealer footprint, and lineup match above 60 HP. The brand swap adds $1,800 to $3,500 in rigging for controls, gauges, harness, and prop. Below 25 HP, your Honda kicker is usually worth keeping. Build a quote at mercuryrepower.ca.
 
@@ -37846,7 +37848,7 @@ The Honda-to-Mercury swap is less common than [Yamaha-to-Mercury](/blog/yamaha-t
 
 **Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Premier dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
 
-**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
+**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 and 425 HP Verado V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
 **Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Premier dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
 
@@ -37900,7 +37902,7 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 **You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Premier dealers are typically better-stocked.
 
-**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 450 HP, or 600 HP, Mercury (400 HP Verado V8/V10, 450R, 600 HP Verado V12) is the only path.
+**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 425 HP, 450 HP, or 600 HP, Mercury (400 or 425 HP Verado V10, 450R, or 600 HP Verado V12) is the only path.
 
 **You want Joystick Piloting on a multi-engine setup.** Honda's iST joystick exists but Mercury's joystick integration is more mature and works with a broader range of multi-engine configurations.
 
@@ -38850,7 +38852,7 @@ Tell us how your family actually spends a day on the water, who is aboard, wheth
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-29',
-    dateModified: '2026-07-29',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-29',
     category: 'Local Guide',
     readTime: '8 min read',
@@ -38858,14 +38860,14 @@ Tell us how your family actually spends a day on the water, who is aboard, wheth
     relatedSlugs: ['mercury-prokicker-rice-lake-fishing-guide', 'electric-trolling-motor-kicker-guide', 'ontario-boating-season-tips'],
     faqs: [
       { question: 'Is the Trent-Severn Waterway fully open for Canada Day weekend?', answer: 'Yes. The entire Trent-Severn Waterway opened for navigation on May 29, 2026. All locks, channels, and navigational aids from Trenton to Georgian Bay are operational. Rice Lake boaters can lock through in either direction.' },
-      { question: 'Where is the best place to launch a boat on Rice Lake for the long weekend?', answer: 'The Gores Landing public launch is free and has reopened after maintenance. For a less crowded alternative, the Harris Boat Works private ramp is available for $20, with ethanol-free fuel and marina amenities right at the water.' },
+      { question: 'Where can I launch a boat near Gores Landing for the long weekend?', answer: 'The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park. Check the Township waterfront-parks page for current public access and posted notices before you tow there. Harris Boat Works also has a private $20 launch ramp, with ethanol-free fuel and marina amenities at the water.' },
       { question: 'Can I drink alcohol on my boat while watching fireworks on Rice Lake?', answer: 'In Ontario, alcohol can only be consumed on a boat that has permanent sleeping accommodations, a permanent galley, and a permanent head, and only when the vessel is anchored or docked. Open alcohol on a typical fishing boat or pontoon is not legal, even while anchored. Police marine units conduct routine checks on holiday weekends. A sober operator is required at all times.' },
       { question: 'What kind of fuel does Rice Lake marinas offer, and why should I use ethanol-free?', answer: 'Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fuel resists water absorption and phase separation, making it a better choice for marine engines, especially if your boat sits between uses or has an older outboard.' },
       { question: 'Does Harris Boat Works service all brands of outboards?', answer: 'For engine repairs, we only service Mercury and Mercruiser products. You can book service at hbw.wiki/service. For repower quotes, we specialize in Mercury outboards and provide an on-water test for every repower.' },
     ],
     content: `> **Quick answer:** A good Canada Day run on Rice Lake starts early, before launch lines and afternoon traffic build. Check the marine forecast and current local event notices, fuel before you go, carry a fitted PFD for everyone, confirm your navigation lights, keep a sober operator, and allow extra time getting back to the ramp after dark.
 
-If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. The Trent-Severn Waterway is fully open for navigation, the public launch at Gores Landing has reopened, and Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel right at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
+If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. Check current Trent-Severn navigation notices and public-launch access before you leave; Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
 
 ## Boating on Rice Lake This Canada Day Weekend
 Rice Lake is one of the most accessible and family-friendly lakes in the Trent-Severn system. The long weekend from June 27 through July 1 consistently brings the busiest boat traffic of the early summer, but the lake's size and shape mean you can always find a quiet cove or a good fishing spot if you know where to look.
@@ -38875,13 +38877,13 @@ The Trent-Severn Waterway opened for full navigation on May 29, meaning all lock
 Early-morning boating tends to offer the calmest water and the least traffic, which is especially valuable if you're teaching new boaters or bringing young kids aboard. By mid-morning, the lake wakes up with skiers, tubers, and anglers sharing the water, so practicing good spatial awareness and keeping a respectful distance from anchored boats goes a long way toward a pleasant day.
 
 ### What's open and what to expect
-All public boat launches around the lake will be busy, but none are closed for construction or repairs. Marinas are fully staffed through the long weekend, though some have reduced hours on Canada Day itself. Harris Boat Works will be open with regular hours Saturday, Sunday, and Monday, but it's wise to top off fuel and grab any last-minute tackle or safety gear early, especially if you plan to be on the water past dinner.
+Public launches around the lake are busiest on holiday weekends. Check the [Township of Hamilton waterfront-parks page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and any posted notices before towing to a public ramp. Marina hours can change on statutory holidays, so confirm current hours before making the drive.
 
 ## Launching Options for the Long Weekend
 Getting your boat in the water on a busy holiday weekend can be the most stressful part of the day, so knowing your options matters.
 
 ### Gores Landing public launch
-The public launch at Gores Landing has fully reopened after seasonal maintenance and is free to use. Be prepared to line up, especially between 9 a.m. and noon. Parking fills quickly, and the lot is not huge, so arriving before 8 a.m. is your best bet. If you have a helper who can park the truck and trailer while you idle offshore, the whole process moves faster for everyone.
+The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park, 5310 Plank Road. Check the [official waterfront-parks page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) for current access, facilities, and posted notices before you tow there. Expect a holiday-weekend line and use a helper to clear the ramp promptly when practical.
 
 ### Harris Boat Works private launch ramp
 For $20, you can use the private launch ramp at Harris Boat Works, right in Gores Landing. The ramp is well-maintained concrete with a gentle slope, suitable for most trailerable fishing boats, runabouts, and pontoons. Pay at the marina office upon arrival. This is often a calmer, faster alternative when the public launch is jammed, and you get the added benefit of walking-distance access to ethanol-free 89-octane fuel, tackle, and cold drinks before you head out. We only have one ramp, so there can still be a short wait during peak times, but it's consistently smoother than the public alternative on Canada Day weekend.
@@ -38906,7 +38908,7 @@ Rice Lake is a legitimate multi-species fishery, and Canada Day weekend falls ri
 Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tick Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
 
 ### Largemouth and smallmouth bass
-Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. Remember that bass fishing on Rice Lake is catch-and-release only until the regular season opener, which is always the fourth Saturday in June, so the regular season is in effect by Canada Day weekend. Double-check the 2026 FMZ 17 rules for any changes.
+Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. In Fisheries Management Zone 17, the largemouth and smallmouth bass season runs from the third Saturday in June through December 15, so the regular season is open by Canada Day. Check the [current FMZ 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing for current limits and any exceptions.
 
 ### Muskie
 Rice Lake has a healthy muskie population, and the season opens on the first Saturday in June, so it's fully open for the long weekend. Muskies will be transitioning into their summer haunts, hanging around weed edges, rock points, and deeper transitions. Trolling large crankbaits or spinners in 10 to 18 feet of water or casting big rubber baits around any baitfish schools you mark on your electronics are standard approaches. Use heavy fluorocarbon or wire leaders and carry a large-mouth net and proper release tools. The muskie minimum size on Rice Lake is 44 inches in FMZ 17, so most fish you encounter will need to be released.
@@ -38939,6 +38941,11 @@ Rice Lake on Canada Day is about more than just boating. It's morning mist burni
 If you're trailering from out of town, book your accommodations or camping early, because the provincial parks and private campgrounds around the lake fill up. If you're day-tripping, come early, fuel up, and give yourself plenty of time at the ramp. Above all, respect the water, the wildlife, and your fellow boaters, and you'll come away with a weekend worth repeating.
 
 We're a third-generation family marina, this business has been part of Rice Lake since 1947, and we want every family that launches here to have the same love for this lake that we do. Swing by the marina, grab some ethanol-free fuel, and enjoy the best weekend of the summer.
+
+## Official references
+
+- [Township of Hamilton waterfront parks and Gores Landing launch](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/)
+- [Ontario Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 - [Mercury 9.9 ProKicker: Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario)

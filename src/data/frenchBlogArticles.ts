@@ -2600,11 +2600,11 @@ Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous ave
   {
     slug: 'moteur-hors-bord-electrique-mercury-avator',
     title: 'Mercury Avator électrique : prix et autonomie',
-    description: 'Moteurs électriques Mercury Avator : prix, autonomie réelle, et s\'ils conviennent au lac Rice. Avis honnête d\'un concessionnaire Platine Mercury.',
+    description: 'Moteurs électriques Mercury Avator : prix, autonomie réelle, et s\'ils conviennent au lac Rice. Avis honnête d\'un concessionnaire Mercury Premier.',
     image: '/lovable-uploads/hero-avator-range-rice-lake.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '8 min',
@@ -2617,15 +2617,15 @@ Les moteurs électriques, ce n'est plus de la musique d'avenir : c'est déjà l�
 
 Mercury nomme les modèles Avator par leur puissance en watts, ce qui mêle bien du monde. Voici la traduction :
 
-| Modèle | Puissance à l'hélice | Équivaut à (essence) | Pour quel bateau |
-|---|---|---|---|
-| Avator 7.5e | 750 W | ~3,5 ch | Annexes, canots, petites chaloupes, pêche à la traîne |
-| Avator 20e | 2,2 kW | ~5 ch | Chaloupes, petites embarcations |
-| Avator 35e | 3,7 kW | ~9,9 ch | Petites chaloupes de pêche, annexes |
-| Avator 75e | 7,5 kW | 10 ch (conversion à l'arbre d'hélice) | Petits pontons, embarcations plus grandes |
-| Avator 110e | 11 kW | 15 ch (conversion à l'arbre d'hélice) | Pontons, bateaux de promenade |
+| Modèle | Puissance à l'arbre d'hélice | Pour quel bateau |
+|---|---|---|
+| Avator 7.5e | 0,75 kW | Annexes, canots, petites chaloupes, pêche à la traîne |
+| Avator 20e | 2,2 kW | Chaloupes, petites embarcations |
+| Avator 35e | 3,7 kW | Petites chaloupes de pêche, annexes |
+| Avator 75e | 7,5 kW | Petits pontons, embarcations plus grandes |
+| Avator 110e | 11 kW | Pontons, bateaux de promenade |
 
-Une particularité à connaître : les trois premiers chiffres sont les équivalences essence publiées par Mercury, tandis que les chiffres des 75e et 110e sont des conversions directes de la puissance à l'arbre d'hélice (7 500 watts donnent 10 ch). Un moteur électrique livre tout son couple instantanément, alors un 75e tire un bateau bien plus fort que « 10 ch » le laisse croire. Voyez la colonne comme un repère, pas une spécification.
+Mercury publie la puissance de chaque Avator à l'arbre d'hélice. Nous ne convertissons pas ces valeurs en « HP essence », car une comparaison de puissance seule ne décrit pas l'autonomie, la poussée, le bateau, la charge ou les conditions. Le bon modèle se choisit à partir de l'embarcation et de l'usage réel.
 
 Quelques points à savoir : la batterie du 7.5e (1 kWh, environ 7,7 kg / 17 lb) se glisse sous le capot sans câbles, et vous pouvez en transporter une de rechange et la changer en quelques secondes. Les 75e et 110e utilisent un centre d'alimentation (Power Center) qui relie jusqu'à quatre batteries de 5 400 Wh, donc l'autonomie augmente selon le nombre de batteries achetées.
 
@@ -2660,10 +2660,10 @@ Le prix de l'Avator varie beaucoup selon le modèle, le nombre de batteries et l
 
 Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
       { question: 'Quelle est l\'autonomie d\'un moteur électrique Mercury Avator ?', answer: 'Dans l\'essai publié par Mercury du Avator 7.5e sur un bateau de 13 pieds (382 lb) avec une batterie de 1 kWh, le moteur a tenu environ 60 minutes ou 5 milles à plein régime, et jusqu\'à 19 heures ou 34 milles à 25 % des gaz. L\'autonomie réelle dépend de votre bateau, de la charge et des conditions.' },
-      { question: 'À quelle puissance essence chaque Mercury Avator correspond-il ?', answer: 'Mercury compare le 7.5e à environ 3,5 ch, le 20e à environ 5 ch et le 35e à environ 9,9 ch. Pour les 75e et 110e, Mercury publie la conversion directe de la puissance à l\'arbre d\'hélice : 7 500 watts donnent 10 ch et 11 000 watts donnent 15 ch. Le couple instantané fait qu\'ils semblent plus forts au départ que ces chiffres le suggèrent.' },
+      { question: 'Quelle est la puissance de chaque Mercury Avator ?', answer: 'Mercury publie la puissance à l\'arbre d\'hélice : 0,75 kW pour le 7.5e, 2,2 kW pour le 20e, 3,7 kW pour le 35e, 7,5 kW pour le 75e et 11 kW pour le 110e. Nous ne les convertissons pas en HP essence; le bateau, la charge, l\'autonomie et les conditions comptent dans le choix.' },
       { question: 'Combien de temps faut-il pour recharger une batterie Mercury Avator ?', answer: 'La batterie de 1 kWh du 7.5e prend environ 9 heures sur le chargeur de 110 W inclus, ou environ 2 heures sur le chargeur optionnel de 520 W. Les blocs de 5 400 Wh des 75e et 110e prennent environ 20 heures pour deux batteries sur le chargeur portatif de 520 W; le chargeur de 1 050 W réduit ce temps de plus de moitié.' },
       { question: 'Combien coûte un Mercury Avator au Canada ?', answer: 'Ça dépend du modèle, du nombre de batteries et du chargeur, et les batteries représentent souvent la plus grosse part du prix. L\'Avator est un produit sur commande chez Harris Boat Works : appelez le 905-342-2153 pour un prix exact et à jour selon votre bateau. Les Mercury à essence ont leurs prix en direct dans le configurateur sur mercuryrepower.ca.' }
     ]
@@ -2675,7 +2675,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -2727,7 +2727,7 @@ On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. 
 
 **Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153 et on l'adaptera à votre bateau, Verado compris.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
       { question: 'Est-ce que le Mercury Pro XS est un quatre-temps ?', answer: 'Oui. La gamme Mercury Pro XS actuelle est entièrement quatre-temps, tout comme les familles FourStroke et Verado. Les anciens Pro XS étaient des deux-temps OptiMax, d\'où la confusion, mais le Pro XS qu\'on peut acheter aujourd\'hui est un quatre-temps réglé pour l\'accélération au départ et la vitesse de pointe.' },
       { question: 'Quelle est la différence entre le Mercury 115 et le 115 Pro XS ?', answer: 'Les deux partagent la même base quatre-temps de 2,1 L, et Mercury publie le même poids sec le plus léger pour les deux : 163 kg (359 lb). Le Pro XS a une calibration de performance pour une accélération plus vive et plus de vitesse de pointe, avec des options de boîtier d\'engrenage de performance. Pour un ponton ou une chaloupe de pêche, le 115 FourStroke standard est habituellement le choix le plus intelligent; pour une coque de performance plus légère, le Pro XS vaut la différence.' },
@@ -2741,7 +2741,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '6 min',
@@ -2798,7 +2798,7 @@ Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière p
 
 **Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
       { question: 'Combien pèse un Mercury 115 quatre-temps ?', answer: 'Mercury publie 163 kg (359 lb) de poids sec pour le modèle le plus léger du 115 FourStroke; la version Command Thrust fait 165 kg (363 lb). Le 115 Pro XS pèse aussi 163 kg. Les arbres plus longs ajoutent du poids.' },
       { question: 'Combien pèse un hors-bord Mercury de 90 ch ?', answer: '163 kg (359 lb) de poids sec pour le modèle le plus léger, ou 165 kg (363 lb) avec le boîtier Command Thrust. Les 75, 90 et 115 partagent le même bloc de 2,1 L, c\'est pourquoi leurs poids sont identiques.' },
