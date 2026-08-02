@@ -30,7 +30,7 @@ language: en-CA
 
 # First Time Renting a Boat? What We Tell Every Renter at Our Dock
 
-> **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. Complete the boating licence course before rental day, then book online at harrisboatworks.ca/rentals.
+> **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. The driver must bring a valid Pleasure Craft Operator Card; passengers do not need one.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.
 
@@ -42,6 +42,11 @@ This is the guide version of the core first-timer briefing. If you want the curr
 
 You booked (or you're about to book) a rental on Rice Lake and you've never driven a boat. Or you drove your uncle's tinny once in 2009 and you'd like a refresher before six people watch you dock. Either way, this is the no-judgment version. Experienced boaters can skip to the [fleet and cost guide](/blog/rice-lake-boat-rental-guide-2026).
 
+### Before your rental
+
+HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.
+
+*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*
 ---
 
 ## The One Big Mental Shift: No Brakes
@@ -118,7 +123,7 @@ Motor won't start after your swim stop? Confirm the kill-switch clip is seated a
 
 ## Common mistakes
 
-- **Skipping the licence until rental morning.** Complete the online course before rental day at myboatcard.com/card/harrisboat.
+- **Skipping the operator card until rental morning.** HBW requires the driver to bring a valid PCOC. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
 - **Docking at car-parking speed.** Idle. Glide. Reverse burst. Repeat it like a mantra.
 - **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers makes the day better for both.
 - **Ignoring the map.** The causeway doesn't care that you're new.
@@ -153,7 +158,7 @@ Compare the currently available pontoons in the live booking system and choose o
 
 ### Do I need a licence for my first rental?
 
-Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements.
 
 ### What happens if I damage the boat?
 
@@ -189,3 +194,4 @@ If conditions are genuinely poor (high winds, rain), HBW's current policy allows
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

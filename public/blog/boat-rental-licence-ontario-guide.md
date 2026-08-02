@@ -30,7 +30,7 @@ language: en-CA
 
 # Do You Need a Licence to Rent a Boat in Ontario? (2026)
 
-> **Quick answer:** Yes, whoever drives a rented powerboat in Ontario needs proof of operator competency. A Pleasure Craft Operator Card (PCOC) works, and if nobody in your group has one, you can complete an accredited boating licence course online before rental day. Only the driver needs it, passengers don't. HBW links to myboatcard.com/card/harrisboat.
+> **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A rental safety checklist can satisfy that rule in some rental situations, but Harris Boat Works has a stricter policy: every rental driver must show a valid Pleasure Craft Operator Card. Passengers don't need one.
 
 The easiest rental check-in is the one where the driver arrives with the required proof of competency already complete.
 
@@ -42,16 +42,16 @@ This is the plain-language version of Canada's operator competency rules as they
 
 ## The Rule, In Plain Terms
 
-Transport Canada requires anyone operating a motorized pleasure boat in Canada to carry proof of operator competency. For most Canadian boaters that means the Pleasure Craft Operator Card, the "boating licence" you get once by passing an accredited online test, and it never expires.
+Transport Canada requires anyone operating a motorized pleasure boat in Canada to carry proof of competency. For most Canadian boaters, that means the Pleasure Craft Operator Card (PCOC), commonly called a boating licence. You earn it once by passing an accredited test, and it doesn't expire.
 
-For rentals specifically, the system is built so first-timers aren't shut out. You have two routes:
+For rentals, a completed rental boat safety checklist can satisfy the federal proof-of-competency rule. That's the legal minimum. HBW's rental policy goes one step further: every person who drives one of our boats must show a valid PCOC at check-in. We don't substitute the rental checklist for the card.
 
-| Route | What it is | Good for | Time |
-|---|---|---|---|
-| PCOC (boat licence) | Accredited online course + test, one-time | Life. It never expires | About 3 hours, self-paced online (Transport Canada sets the minimum study time) |
-| Rental-day paperwork | A renter competency process completed with the rental operator | That rental only | Complete before operating the boat |
+| Requirement | What it means |
+|---|---|
+| Canadian legal minimum | Carry accepted proof of competency. For a rental, a completed rental boat safety checklist can qualify. |
+| HBW rental policy | Every driver must show a valid permanent or temporary PCOC plus photo ID. |
 
-Our honest advice: if you're [renting once for a family day](/blog/renting-vs-owning-boat-ontario-math), complete the renter process that applies to your booking. If you expect to operate boats again, a permanent PCOC avoids repeating rental-day paperwork.
+Only the driver needs the card. If two people plan to share the helm, both need one.
 
 ---
 
@@ -59,19 +59,24 @@ Our honest advice: if you're [renting once for a family day](/blog/renting-vs-ow
 
 We keep it to three things at check-in:
 
-1. **Photo ID** for the driver.
-2. **Proof of competency** for the driver: your PCOC if you have one, or the boating licence you completed online. HBW links renters to [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Complete it before rental day; temporary proof is available after completion, with the card mailed after.
-3. **Non-Canadian residents** (visiting from the US or overseas) complete a renter's checklist waiver after reserving instead. Bring your passport or home ID.
+1. **Photo ID** for every person who may drive.
+2. **A valid PCOC** for every driver. The physical card or temporary proof after passing the accredited test both work.
+3. **The driver orientation.** We still cover the boat, safety equipment, local hazards, and the Rice Lake map before you leave.
 
 Only the person driving needs any of this. Grandma, the kids, and your buddy who "just wants to fish" are passengers, and passengers need nothing.
 
 One driver can hand the wheel to another licensed driver mid-day. If you're booking for a bigger crew, our [group boat rentals on Rice Lake](/blog/group-boat-rentals-rice-lake) guide covers how that works. What you can't do is check in with one licensed person who then hands the boat to an unlicensed cousin. The person at the helm is the one who needs the proof.
 
+### Before your rental
+
+HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.
+
+*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*
 ---
 
 ## What It Costs and How Long It Takes
 
-The online boating licence course runs on your phone or laptop and is self-paced. Transport Canada sets a minimum study time, so complete it before rental day rather than counting on a last-minute checkout-line fix.
+The accredited online course runs on your phone or laptop and takes a few hours. When you pass, you can print temporary proof for check-in while the physical card is mailed to you. Give yourself a quiet evening before rental day instead of trying to finish it in our parking lot.
 
 Showing up without the required proof can delay check-in. Complete the course or applicable renter paperwork before rental day.
 
@@ -106,11 +111,7 @@ Before a rental leaves the dock, the driver gets an orientation covering the sel
 
 ## Ready to Book?
 
-Complete the licence before rental day, then [book the boat online](/blog/first-time-boat-rental-rice-lake-guide) and finish the required documents before arrival.
-
-**Licence:** [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat)
-**Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
+Get the operator card sorted before rental day, then [book the boat for the weekend](https://harrisboatworks.ca/rentals). Rental morning becomes a quick check-in instead of a scramble.
 
 ---
 
@@ -125,15 +126,15 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
 
 ### Can I rent a boat in Ontario with no licence at all?
 
-You can book one, but the driver can't operate it without proof of competency. Complete the boating licence online at myboatcard.com/card/harrisboat, or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving.
+You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine.
 
 ### Does everyone in the boat need a licence?
 
 No, just whoever is driving. Passengers of any age need nothing. If two of you want to trade off driving through the day, both drivers need proof of competency.
 
-### How long should I allow for a boating licence?
+### How fast can I actually get a boating licence?
 
-The accredited course and test are online and self-paced, but Transport Canada requires minimum study time. Allow about 3 hours and complete it before rental day; proof of completion is available after you pass and the physical card follows by mail.
+The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you.
 
 ### Is the PCOC valid outside Ontario?
 
@@ -145,7 +146,7 @@ Rental boats are adult territory: our rental drivers must be licensed adults wit
 
 ### I'm visiting from the US. Can I rent?
 
-Yes. Non-Canadian residents complete a renter's checklist waiver after booking instead of the Canadian card, and show home-country photo ID at check-in. Book first at harrisboatworks.ca/rentals and the paperwork follows online.
+Yes, but HBW's operator-card policy still applies. MyBoatCard accepts non-residents for its accredited online course. Bring your temporary or permanent PCOC and photo ID at check-in.
 
 ## Related guides
 
