@@ -260,7 +260,7 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
     image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['mekaniko ng bangka sa Toronto (boat mechanic in Toronto)', 'pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)', 'marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)', 'paano i-winterize ang bangka (how to winterize a boat)', 'paghahanda ng bangka sa taglamig (preparing boat for winter)', 'winter storage ng bangka Ontario (winter storage of boat Ontario)', 'winterization service bangka Toronto (winterization service boat Toronto)', 'paano ayusin ang Mercury outboard (how to fix Mercury outboard)'],
@@ -297,7 +297,7 @@ Dito pumapasok ang aming winterization service. Noong nakaraang season, **584 na
 - Pag-fogging ng cylinders, isang protective oil mist na pumoprotekta sa loob ng makina laban sa kalawang.
 - Pagpalit ng lower unit gear oil, at pag-inspect sa seals para walang tubig na pumasok.
 - Pag-check ng propeller, skeg, at anode, at pag-lubricate ng grease fittings.
-- Pag-alis ng battery at pag-store nito sa safe na lugar.
+- Idiskonekta ang battery at iwanan ito sa loob ng bangka sa ligtas na paraan.
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 

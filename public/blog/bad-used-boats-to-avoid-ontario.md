@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Bad Used Boats to Avoid Ontario"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji."
 category: "Buying Guide"
 date_published: 2026-02-17
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-02-17  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
@@ -38,12 +38,12 @@ eyebrow: The real trade-off
 subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
 leftLabel: New Mercury
 leftCriteria:
-  - You want full Mercury factory warranty (5 + 5 = 10 years possible)
+  - You want up to 8 total years of factory-backed coverage with optional Mercury Product Protection
   - You finance and need lender-approved collateral
   - You will own the boat 7+ years and amortize the cost
   - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
   - Resale value matters to you down the line
-leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Mercury 5+5 covers most failure scenarios.
+leftOutcome: Higher upfront cost, with a standard three-year limited warranty for recreational use and optional Mercury Product Protection for up to eight total years of factory-backed coverage.
 leftVariant: recommended
 rightLabel: Used Mercury
 rightCriteria:

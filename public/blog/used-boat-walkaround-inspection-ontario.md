@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario.md
-last_updated: 2026-03-16
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Used Boat Walkaround Ontario Guide"
 description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order."
 category: "Buying Guide"
 date_published: 2026-03-16
-date_modified: 2026-03-16
+date_modified: 2026-08-02
 keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-16  
-**Last updated:** 2026-03-16  
+**Last updated:** 2026-08-02  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
 
@@ -33,12 +33,6 @@ language: en-CA
 # The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
 
 > **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
-
-**URL slug:** used-boat-walkaround-inspection-ontario
-
-**Meta description:** A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.
-
----
 
 Kijiji. Facebook Marketplace. The listing looks clean. The price feels right. The seller says it "runs great." Now you're driving two hours to go look at it.
 

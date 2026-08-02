@@ -22,7 +22,7 @@ export const mandarinBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/hero-gta-chinese-winter-storage.png',
     author: 'Jay Harris',
     datePublished: '2026-05-16',
-    dateModified: '2026-05-16',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-16',
     category: 'mandarin',
     readTime: '8 分钟',
@@ -68,19 +68,16 @@ subhead: 以下为常见配置的实际价格范围。最终金额取决于船�
 item1Label: 室外冬储 (含船架)
 item1Value: $450 to $850
 item1Note: 18 至 22 英尺常见范围。三角龙骨船或双体船另议。
-item2Label: 室内冬储
-item2Value: $1,100 to $1,800
-item2Note: 名额有限, 建议 9 月底前预订。适合高价值玻璃钢船和 Pontoon。
-item3Label: 收缩膜 (Shrinkwrap)
-item3Value: $300 to $550
-item3Note: 包含通风口和门拉链。冬季抗雪积压, 春季拆除方便。
-item4Label: Mercury 引擎冬季保养
-item4Value: $250 to $400
-item4Note: 含燃油稳定剂, 雾化, 齿轮油更换, 水道排空。冬储必做项目。
-item4Accent: true
-item5Label: 春季开机服务 (Spring Commissioning)
-item5Value: $200 to $350
-item5Note: 含电池, 燃油系统, 水泵检查和首次试机。春季提车即可下水。
+item2Label: 收缩膜 (Shrinkwrap)
+item2Value: $300 to $550
+item2Note: 包含通风口和门拉链。冬季抗雪积压, 春季拆除方便。
+item3Label: Mercury 引擎冬季保养
+item3Value: $250 to $400
+item3Note: 含燃油稳定剂, 雾化, 齿轮油更换, 水道排空。冬储必做项目。
+item3Accent: true
+item4Label: 春季开机服务 (Spring Commissioning)
+item4Value: $200 to $350
+item4Note: 含电池, 燃油系统, 水泵检查和首次试机。春季提车即可下水。
 totalLabel: 典型 GTA 华人客户全包价
 totalValue: $1,500 to $2,800
 caveat: 所有价格为加元 (CAD), 仅限 Gores Landing 自提。具体配置请预约面议。
@@ -2762,7 +2759,7 @@ Rice Lake 不大不小，4–6 小时可以从容玩一圈。下面 4 个方向�
     image: '/lovable-uploads/hero-mandarin-pcl-licence.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-05-15',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '11 分钟',
@@ -2854,7 +2851,7 @@ step5Label: 了解每个湖的鱼种规则
 step5Question: 你是否清楚目标湖的禁渔期, 大小限制和每日限额?
 step5Tip: 莱斯湖, Kawarthas, Lake Simcoe 各有不同规则。每年下载 Ontario Fishing Regulations Summary, 出门前查一遍。
 escalationLabel: 不确定哪些证件适合你?
-escalationBody: 来 HBW 提车时可以一并问清楚。Mandarin 服务可用, 电话 (905) 342-2153。
+escalationBody: ${ZH_LANGUAGE_NOTE}
 ::
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
 description: "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Mercury 115 vs 150 HP","Mercury 115 Pro XS price","Mercury 150 Pro XS price","Mercury 115 vs 150 pontoon","Mercury Command Thrust V-hull","Mercury 115 CT","Mercury outboard Ontario","Mercury Premier dealer Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
@@ -223,7 +223,7 @@ For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust,
 
 ### Can I run a Mercury 150 on a boat rated up to 115 HP?
 
-No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower).
+No. The capacity plate states the manufacturer's maximum recommended safe limit for your hull. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 or lower.
 
 ## Related guides
 

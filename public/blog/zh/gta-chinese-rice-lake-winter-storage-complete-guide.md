@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide.md
-last_updated: 2026-05-16
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、�
 description: "多伦多到莱斯湖：Harris Boat Works 室外收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内冬储，不提供取送服务，船坞 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"
 date_published: 2026-05-16
-date_modified: 2026-05-16
+date_modified: 2026-08-02
 keywords: ["冬储","莱斯湖","GTA 华人","收缩膜","Mercury","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-16  
-**Last updated:** 2026-05-16  
+**Last updated:** 2026-08-02  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 
@@ -69,19 +69,16 @@ subhead: 以下为常见配置的实际价格范围。最终金额取决于船�
 item1Label: 室外冬储 (含船架)
 item1Value: $450 to $850
 item1Note: 18 至 22 英尺常见范围。三角龙骨船或双体船另议。
-item2Label: 室内冬储
-item2Value: $1,100 to $1,800
-item2Note: 名额有限, 建议 9 月底前预订。适合高价值玻璃钢船和 Pontoon。
-item3Label: 收缩膜 (Shrinkwrap)
-item3Value: $300 to $550
-item3Note: 包含通风口和门拉链。冬季抗雪积压, 春季拆除方便。
-item4Label: Mercury 引擎冬季保养
-item4Value: $250 to $400
-item4Note: 含燃油稳定剂, 雾化, 齿轮油更换, 水道排空。冬储必做项目。
-item4Accent: true
-item5Label: 春季开机服务 (Spring Commissioning)
-item5Value: $200 to $350
-item5Note: 含电池, 燃油系统, 水泵检查和首次试机。春季提车即可下水。
+item2Label: 收缩膜 (Shrinkwrap)
+item2Value: $300 to $550
+item2Note: 包含通风口和门拉链。冬季抗雪积压, 春季拆除方便。
+item3Label: Mercury 引擎冬季保养
+item3Value: $250 to $400
+item3Note: 含燃油稳定剂, 雾化, 齿轮油更换, 水道排空。冬储必做项目。
+item3Accent: true
+item4Label: 春季开机服务 (Spring Commissioning)
+item4Value: $200 to $350
+item4Note: 含电池, 燃油系统, 水泵检查和首次试机。春季提车即可下水。
 totalLabel: 典型 GTA 华人客户全包价
 totalValue: $1,500 to $2,800
 caveat: 所有价格为加元 (CAD), 仅限 Gores Landing 自提。具体配置请预约面议。

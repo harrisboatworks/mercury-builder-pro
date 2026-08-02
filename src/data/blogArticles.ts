@@ -1,4 +1,11 @@
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
+import {
+  isArticleInSeason,
+  isArticlePublished as isListingArticlePublished,
+  parseLocalDate,
+} from './blogArticleListing';
+
+export { isArticleInSeason, parseLocalDate } from './blogArticleListing';
 
 export interface HowToStep {
   name: string;
@@ -37,58 +44,9 @@ export interface BlogArticle {
 }
 
 
-// Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
-// not UTC. Prevents posts from publishing a day early in EDT.
-export function parseLocalDate(dateString: string): Date {
-  const [y, m, d] = dateString.split('-').map(Number);
-  return new Date(y, (m || 1) - 1, d || 1);
-}
-
-// Seasonal posts - only surface on the blog index during their relevant
-// months (Ontario boating calendar). Months are 1-12. Posts not listed
-// here are treated as year-round. Sitemap eligibility is NOT affected -
-// these pages remain crawlable and indexable year-round (direct URLs
-// still work), we just hide them from the blog index out of season so
-// the feed feels timely instead of showing winterization in July.
-const SEASONAL_POSTS: Record<string, number[]> = {
-  // Winter / off-season buying & planning (Nov–Feb)
-  'winter-repower-planning-guide':        [11, 12, 1, 2],
-  'year-end-boat-motor-buying-guide':     [11, 12, 1, 2],
-  'mercury-outboard-lineup-ontario':       [10, 11, 12, 1, 2, 6, 7, 8],
-  // Winterization (Sep–Dec)
-  'boat-winterization-cost-ontario-2026':                [9, 10, 11, 12],
-  'diy-mercury-outboard-winterization-guide':            [9, 10, 11, 12],
-  
-  // Winter storage (Sep–Mar)
-  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [9, 10, 11, 12, 1, 2, 3],
-  'outdoor-boat-storage-shrinkwrap-rice-lake':        [9, 10, 11, 12, 1, 2, 3],
-  'winter-storage-near-toronto-hbw':                  [9, 10, 11, 12, 1, 2, 3],
-  'boat-storage-kawartha-lakes':                      [9, 10, 11, 12, 1, 2, 3],
-  // Spring commissioning & opener (Mar–May)
-  'spring-outboard-commissioning-checklist': [3, 4, 5],
-  'walleye-opener-boat-prep':                [3, 4, 5],
-  // Late-season / cold-water safety (Sep–Nov)
-  'late-season-boating-safety':              [9, 10, 11],
-  // Active boating-season content (Apr–Oct)
-  'ontario-boating-season-tips':              [4, 5, 6, 7, 8, 9, 10],
-  'trent-severn-waterway-boating-guide-2026': [4, 5, 6, 7, 8, 9, 10],
-  'rice-lake-boat-rentals-from-toronto-gta':  [4, 5, 6, 7, 8, 9],
-};
-
-export function isArticleInSeason(slug: string, now: Date = new Date()): boolean {
-  const months = SEASONAL_POSTS[slug];
-  if (!months) return true;
-  return months.includes(now.getMonth() + 1);
-}
-
 // Helper to check if an article is published
 export function isArticlePublished(article: BlogArticle): boolean {
-  const publishDate = article.publishDate || article.datePublished;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const articleDate = parseLocalDate(publishDate);
-  articleDate.setHours(0, 0, 0, 0);
-  return articleDate <= today;
+  return isListingArticlePublished(article);
 }
 
 // Get all published articles (filters out future-dated AND out-of-season articles)
@@ -2944,7 +2902,7 @@ Get the operator card sorted before rental day, then [book the boat for the week
     image: '/lovable-uploads/hero-ucp-agentic-commerce.png',
     author: 'Jay Harris',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-11',
     category: 'Mercury Technology',
     readTime: '6 min read',
@@ -2957,22 +2915,22 @@ Get the operator card sorted before rental day, then [book the boat for the week
       { question: "Why does a 1947 family marina care about an AI standard?", answer: "Because the standard rewards what we already do, plain CAD pricing, no Verado in default inventory, pickup only at Gores Landing. Machine-readable honesty is the same job as in-person honesty, just written in JSON. The same standard runs at Shopify, Target, and Walmart. We just got there first in our corner of the marine world." }
     ],
     relatedSlugs: ['mercury-outboard-financing-ontario-2026', 'ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad'],
-    content: `> **Quick answer:** As of June 11, 2026, Harris Boat Works is a live Universal Commerce Protocol (UCP) merchant, verified end-to-end with Shopify\\u2019s official \`ucp-cli\`. AI assistants like ChatGPT and Claude can now discover us, search live Mercury inventory, and build a real CAD quote with HST estimate and trade-in context. The dealer completes every sale with the buyer in person at Gores Landing. Payment is never collected over UCP. To our knowledge, we\\u2019re the first marine dealer doing this. Discovery profile: [/.well-known/ucp](/.well-known/ucp).
+    content: `> **Quick answer:** As of June 11, 2026, Harris Boat Works is a live Universal Commerce Protocol (UCP) merchant, verified end-to-end with Shopify's official \`ucp-cli\`. AI assistants like ChatGPT and Claude can now discover us, search live Mercury inventory, and build a real CAD quote with HST estimate and trade-in context. The dealer completes every sale with the buyer in person at Gores Landing. Payment is never collected over UCP. To our knowledge, we're the first marine dealer doing this. Discovery profile: [/.well-known/ucp](/.well-known/ucp).
 
-If you\\u2019ve asked ChatGPT to help you shop in the last six months, you\\u2019ve probably noticed it can do a lot more than it used to. It can compare products, fetch live inventory, and (at a handful of merchants) actually hand you off to checkout. That last part is what changed in April 2026, when a group of the largest retailers on the planet published an open standard for it.
+If you've asked ChatGPT to help you shop in the last six months, you've probably noticed it can do a lot more than it used to. It can compare products, fetch live inventory, and (at a handful of merchants) actually hand you off to checkout. That last part is what changed in April 2026, when a group of the largest retailers on the planet published an open standard for it.
 
 We turned that standard on at Harris Boat Works today.
 
 ## What UCP is, in plain language
 
-The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant\\u2019s store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
+The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant's store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
 
-It\\u2019s co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That\\u2019s most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
+It's co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That's most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
 
 UCP defines two things merchants care about:
 
 - **A discovery profile**, served at \`/.well-known/ucp\`, that tells the world what your store supports.
-- **A set of capabilities** (catalog search, checkout, fulfillment) with shared schemas, so the assistant doesn\\u2019t have to guess.
+- **A set of capabilities** (catalog search, checkout, fulfillment) with shared schemas, so the assistant doesn't have to guess.
 
 ## What we shipped
 
@@ -2980,17 +2938,17 @@ A few things, all of them live as of June 11, 2026:
 
 1. **A UCP discovery profile** at [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp), spec version **2026-04-08**.
 2. **Checkout in quote mode** (\`dev.ucp.shopping.checkout\`) and **fulfillment** (\`dev.ucp.shopping.fulfillment\`) capabilities, served at our \`ucp-checkout\` endpoint over **both REST and MCP** transports.
-3. **Verified end-to-end with Shopify\\u2019s official \`ucp-cli\`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
+3. **Verified end-to-end with Shopify's official \`ucp-cli\`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
 
 \`\`\`bash
 npx -y @shopify/ucp-cli discover www.mercuryrepower.ca
 \`\`\`
 
-To our knowledge, we\\u2019re the first marine dealer in North America with a live UCP profile. Hedged claim, on purpose: standards adoption moves fast, and we\\u2019d rather be honest than first-in-spirit.
+To our knowledge, we're the first marine dealer in North America with a live UCP profile. Hedged claim, on purpose: standards adoption moves fast, and we'd rather be honest than first-in-spirit.
 
 ## What an AI assistant can actually do here
 
-If you\\u2019re using a UCP-aware assistant (and that list grows weekly), here\\u2019s what works today:
+If you're using a UCP-aware assistant (and that list grows weekly), here's what works today:
 
 - **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
 - **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [[Ontario rates and monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026)](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
@@ -3001,24 +2959,24 @@ For the full agent surface (REST APIs, MCP tools, discovery URLs, deep-link temp
 
 ## What it deliberately will NOT do
 
-This is the part most agentic-commerce articles skip, so it\\u2019s the part we want to be loudest about.
+This is the part most agentic-commerce articles skip, so it's the part we want to be loudest about.
 
 - **No completed sale through UCP.** \`complete_checkout\` returns a quote and a handoff URL. It never places an order.
-- **No payment collection.** We don\\u2019t take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
+- **No payment collection.** We don't take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
 - **No shipping. No delivery. No courier release.** Pickup only at Gores Landing, Ontario, by the buyer in person with valid government photo ID. Same policy as the rest of the site.
 - **No final price without a human.** The dealer confirms the out-the-door price on every deal, every time. The AI quote is a starting line, not a finish line.
 
-If you\\u2019d expect those guardrails from a 1947 family marina, you\\u2019d be right. UCP just lets us write them down in a format every assistant on the planet can read.
+If you'd expect those guardrails from a 1947 family marina, you'd be right. UCP just lets us write them down in a format every assistant on the planet can read.
 
 ## Why a 1947 family marina cares about this
 
 Two reasons.
 
-**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We\\u2019ve been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
+**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We've been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
 
-**The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That\\u2019s a future we like.
+**The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That's a future we like.
 
-There is zero hype in any of this. The page you\\u2019re reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn\\u2019t (you still pick up the motor in person; we still confirm the price; we still don\\u2019t ship anywhere).
+There is zero hype in any of this. The page you're reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn't (you still pick up the motor in person; we still confirm the price; we still don't ship anywhere).
 
 ## Google just validated this direction at Google Marketing Live 2026
 
@@ -3028,7 +2986,7 @@ That is the direction we bet on. Harris Boat Works is already live on UCP, which
 
 ## Try it
 
-If you build with assistants, the discovery URL is the place to start: [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp). If you\\u2019re a buyer, the easiest path is still to open [the quote builder](/quote/motor-selection) and click through. Both lead to the same dealer at the same shop.
+If you build with assistants, the discovery URL is the place to start: [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp). If you're a buyer, the easiest path is still to open [the quote builder](/quote/motor-selection) and click through. Both lead to the same dealer at the same shop.
 
 **Phone:** (905) 342-2153
 **Email:** info@harrisboatworks.ca
@@ -4554,7 +4512,7 @@ Text: (647) 952-2153`,
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
-    dateModified: '2026-05-18',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-18',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -4644,7 +4602,7 @@ For the 9.9 vs 15 conversation, the capacity plate matters when:
 - **Your boat is plated at 15 HP.** Many 14 foot jon boats and 12-14 foot utility hulls cap here. The 15 is the right choice. The 9.9 will feel underpowered, especially loaded with two adults, gear, and a full fuel tank.
 - **Your boat is plated higher than 15 HP.** This guide isn't really for you. A 16 foot hull plated at 25 or 40 HP wants a 25 or 40 HP motor, not a 9.9. Check the [FourStroke buyer guide](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario) for that range.
 
-Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Insurance carriers void coverage for over-powering. Mercury's warranty position is that overpowering creates compliance, insurance, liability, and potential warranty problems. None of those problems are worth the extra 5 HP.
+Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Overpowering can jeopardize insurance coverage or a claim and creates compliance, liability, safety, and potential warranty problems. None of those problems are worth the extra 5 HP.
 
 ## What HBW Checks Before Quoting a 9.9 or 15
 
@@ -4779,7 +4737,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
     image: '/lovable-uploads/hero-how-to-choose-horsepower.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor horsepower', 'how to choose outboard motor', 'mercury motor sizing', 'boat hp guide', 'outboard motor selection'],
@@ -4787,7 +4745,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 
 ---
 
-> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Start with your boat's capacity plate. That number is the manufacturer's maximum recommended safe limit. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -4803,7 +4761,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
-Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the legal ceiling.
+Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the manufacturer's maximum recommended safe limit.
 
 ## The one thing most people get wrong on horsepower
 
@@ -4829,7 +4787,7 @@ Six variables move the right HP for your specific boat:
 
 **Where you launch and run.** Sheltered bays on a small Kawartha lake are different from Lake Ontario open water or a breezy afternoon on Rice Lake. Bigger water punishes underpowering in ways that feel dangerous, not just slow.
 
-**The capacity plate.** This is the legal and warranty-backed ceiling. We will not rig a motor that exceeds it, full stop.
+**The capacity plate.** This is the manufacturer's maximum recommended safe limit. Exceeding it can create compliance, insurance, liability, safety, and warranty problems. We will not rig a motor that exceeds it, full stop.
 
 **How long you plan to keep the boat.** If you're keeping this hull for 15 years, a bigger motor makes more sense than if you're planning to sell in three.
 
@@ -4921,7 +4879,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 **1. Buying too small to save money.** We've watched customers fight a 9.9 HP on a 16-foot boat that needed a 25. They trade up two seasons later at full price. The savings disappear.
 
-**2. Going over the capacity plate.** A 250 HP on a hull rated for 150 HP is illegal, unsafe, and void of warranty. Mercury won't cover it. Your insurance may not either. The motor also outpowers the hull and feels wrong.
+**2. Going over the capacity plate.** A 250 HP motor does not belong on a hull rated for 150 HP. It exceeds the manufacturer's maximum recommended safe limit, compromises handling, and creates compliance, insurance, liability, and potential warranty problems. We will not rig it.
 
 **3. Buying for one use and ignoring the rest.** "I just need it for fishing" is fine until your kids want to tube next summer. Think through the full use case before you buy.
 
@@ -4983,7 +4941,7 @@ Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple p
 Tournament fishing: 200 to 250 HP Pro XS. Recreational bass fishing: 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard in tournament fishing.
 
 **Can I put a bigger motor than the capacity plate allows?**
-No. The capacity plate is the legal and warranty-backed ceiling. Going over voids the Mercury warranty and creates insurance and safety problems. We won't rig it.
+No. The capacity plate states the manufacturer's maximum recommended safe limit. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. We won't rig it.
 
 **Does prop selection affect how much HP I need?**
 Yes. A wrong prop can cost you real top speed and fuel economy even on a perfectly-sized motor. Sometimes the fix isn't a bigger motor, it's the right prop on the motor you have. We test props on the water during every repower sea trial.
@@ -9380,7 +9338,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
     imageAlt: 'Comparison of tiller-steer outboard on an aluminum boat versus remote steering at a console on a bass boat.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-07-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9584,7 +9542,7 @@ Common configuration. The main motor uses remote control from the helm; the kick
       },
       {
         question: 'What\'s the biggest Mercury motor available in tiller configuration?',
-        answer: 'Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.'
+        answer: 'Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. For a 16-18ft aluminum V-hull on Rice Lake, the Mercury 60HP EFI FourStroke in tiller with the standard gearcase is the usual choice; Command Thrust is for pontoons and specific workboat applications.'
       },
       {
         question: 'Can I have both tiller and remote steering on the same outboard motor?',
@@ -10216,7 +10174,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-11',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -10246,7 +10204,7 @@ Here's how to work through it.
 
 Every boat has a maximum HP rating stamped on the capacity plate, usually located on the transom or near the helm. This is not a suggestion. It's the legal ceiling set by the manufacturer based on hull testing.
 
-**Never exceed it.** Going over the capacity plate voids Mercury warranty coverage, creates insurance exposure, and compromises the safety of the hull. We will not rig a motor that exceeds the plate, full stop.
+**Never exceed it.** Going over the capacity plate creates compliance, insurance, liability, safety, and potential warranty problems. We will not rig a motor that exceeds the plate, full stop.
 
 The capacity plate also shows maximum persons and maximum weight. Those numbers matter too when thinking about loading.
 
@@ -10390,7 +10348,7 @@ Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.c
 Start with the capacity plate, your legal ceiling. Then factor in hull weight and design, typical passenger and gear load, where you run, and what you do on the water. The capacity plate sets the maximum; use case and loading determine the best fit within that range.
 
 **Can I put a bigger motor than the capacity plate allows?**  
-No. The capacity plate is the legal ceiling set by the manufacturer. Going over it voids Mercury warranty, creates insurance exposure, and compromises hull safety. We won't rig above the rated maximum.
+No. The capacity plate states the manufacturer's maximum recommended safe limit. Going over it creates compliance, insurance, liability, safety, and potential warranty problems. We won't rig above the rated maximum.
 
 **What's the most common motor sizing mistake?**  
 Buying too small. Customers optimize for price at the low end of the range, then fight their underpowered boat for two seasons and trade up at full cost. The right motor is almost never the bottom of the acceptable range.
@@ -14995,17 +14953,11 @@ The fastest way to know what a Mercury or a full repower costs you per month is 
     imageAlt: 'Mercury 90 HP FourStroke outboard on an aluminum fishing boat, ideal for Lake Simcoe walleye trolling setups.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     category: 'Fishing & Local',
     readTime: '12 min read',
     keywords: ['best Mercury outboard for Lake Simcoe fishing', 'Lake Simcoe fishing guide 2026', 'Lake Simcoe walleye fishing', 'Lake Simcoe lake trout fishing', 'Lake Simcoe fishing regulations 2026'],
-    content: `- Mercury Premier Dealer
-- Family-owned since 1947
-- Mercury dealer since 1965
-- Gores Landing, ON
-- Quote builder available
-
-*Last reviewed: 2026-06-09*
+    content: `*Last reviewed: 2026-06-09*
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
 
@@ -23082,7 +23034,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-bad-used-boats-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-02-17',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -23106,12 +23058,12 @@ eyebrow: The real trade-off
 subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
 leftLabel: New Mercury
 leftCriteria:
-  - You want full Mercury factory warranty (5 + 5 = 10 years possible)
+  - You want up to 8 total years of factory-backed coverage with optional Mercury Product Protection
   - You finance and need lender-approved collateral
   - You will own the boat 7+ years and amortize the cost
   - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
   - Resale value matters to you down the line
-leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Mercury 5+5 covers most failure scenarios.
+leftOutcome: Higher upfront cost, with a standard three-year limited warranty for recreational use and optional Mercury Product Protection for up to eight total years of factory-backed coverage.
 leftVariant: recommended
 rightLabel: Used Mercury
 rightCriteria:
@@ -23977,7 +23929,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-03-16',
-    dateModified: '2026-03-16',
+    dateModified: '2026-08-02',
     publishDate: '2026-03-16',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -23989,12 +23941,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-03-16*
 
 > **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
-
-**URL slug:** used-boat-walkaround-inspection-ontario
-
-**Meta description:** A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.
-
----
 
 Kijiji. Facebook Marketplace. The listing looks clean. The price feels right. The seller says it "runs great." Now you're driving two hours to go look at it.
 
@@ -24202,7 +24148,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aluminum fishing boat with Mercury outboard approaching a wooden dock on Rice Lake during windy conditions.',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-03-21',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -24219,12 +24165,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-06-09*
 
 > **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
-
-**URL slug:** docking-boat-in-wind-rice-lake
-
-**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, Ontario (in the Kawarthas), without a bow thruster or a meltdown.
-
----
 
 You know the feeling. You're coming back into Bewdley on a Tuesday afternoon, the southwest wind has built to 15 knots the way it always does by 3 o'clock on Rice Lake, and there are three people watching from the dock. One of them is drinking a beer.
 
@@ -24432,7 +24372,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -24449,12 +24389,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-06-09*
 
 > **Quick answer:** Pontoon HP sizing depends on tube count, hull length, load, and use case. As a starting framework: 25-40 HP for 16-18 ft small toons, 60-90 HP for 20-22 ft cruisers, 115-150 HP for 22-24 ft loaded family pontoons, 200+ HP for tritoons and watersports. Mercury Command Thrust gearcases add low-RPM torque ideal for pontoons. When in doubt, match closer to the hull's max HP rating, not the minimum.
-
-**URL slug:** pontoon-hp-sizing-decision-tree-ontario
-
-**Meta description:** Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
-
----
 
 There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to cruise before dark, the motor gives up.
 
@@ -29944,11 +29878,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer Brampton Ontario HBW',
     seoTitle: 'Mercury Dealer for Brampton: Repower from Rice Lake',
     description: 'Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon.',
-    image: '/lovable-uploads/hero-gta-brampton-showroom.png',
-    imageAlt: 'Rows of Mercury outboard motors in a Harris Boat Works showroom, highlighting our status as a Mercury Premier Dealer.',
+    image: '/lovable-uploads/hero-proxs-outside-hbw-shop.webp',
+    imageAlt: 'A new Mercury Pro XS outboard outside Harris Boat Works in Gores Landing, Ontario.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-07-23',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -29976,7 +29910,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 ## Why Brampton Customers Call Us First
 
-The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.t.
+The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
 
 Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 
@@ -29984,11 +29918,11 @@ Our quote builder fixes that. Real installed pricing, motor, rigging, and instal
 
 A repower isn't a parts swap. It's a rigging job. The motor, the controls, the throttle and shift cables, the prop selection, the integration with your existing electronics, all of it has to be right for the motor to perform the way Mercury designed it. A repower done hastily or without the right rigging conversation is a repower you'll notice on the water.
 
-We've been doing repowers on Rice Lake since 1947. The rigging conversation is as important to us as the motor sale.
+The rigging conversation is as important to us as the motor sale.
 
 ## Mercury Premier, What It Means in Practice
 
-Premier is Mercury's top dealer tier. It means we carry deeper parts inventory, have more advanced technical training, and hold full warranty authorization. For most standard motor sales, the tier difference won't be visible. For complex repowers, unusual rigs, warranty claims, or technical issues after the sale, it's the difference between a quick resolution and a waiting game.
+Premier status reflects Mercury service, training, customer-satisfaction, and facility standards. For most standard motor sales, the difference may not be obvious. It matters more on complex repowers, unusual rigs, warranty claims, and technical issues after the sale.
 
 ---
 
@@ -30059,7 +29993,7 @@ We carry Legend Boats and have used inventory. But if your primary purpose is a 
 
 You see the price before you make the drive. We have the rigging conversation before we order anything. We do the job right. You get on the water with a motor that performs the way it's supposed to.
 
-No fog machine. No runaround. Since 1947.
+No fog machine. No runaround.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -30252,7 +30186,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-gta-burlington-aerial-marina.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-05-11',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -30392,7 +30326,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
-      { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing." },
+      { question: 'Is there a closer Mercury dealer to Burlington?', answer: 'Yes. There is a closer Mercury dealer in the Hamilton area. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.' },
       { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling.' },
     ],
   },
@@ -33479,14 +33413,14 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     imageAlt: 'Transport Canada compliance notice plate on a boat console showing maximum persons, horsepower, and load capacity.',
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-08-02",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "8 min read",
     keywords: ["boat capacity plate", "capacity plate ontario", "transport canada compliance notice", "boat maximum horsepower", "boat capacity decoder", "boat hin number", "used boat inspection ontario"],
     relatedSlugs: ["used-boat-walkaround-inspection-ontario", "mercury-40-vs-60-hp-outboard-ontario", "outboard-shaft-length-guide", "used-outboard-buying-guide-ontario"],
     faqs: [
-      { question: "Is it legal to exceed the maximum horsepower on the capacity plate?", answer: "On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or installer will mount a motor that exceeds the plate rating." },
+      { question: "Is it legal to exceed the maximum horsepower on the capacity plate?", answer: "The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the plate rating." },
       { question: "What if my plate is illegible or missing?", answer: "For a missing plate, Transport Canada accepts a manufacturer-issued replacement (if the boat builder is still in business) or a marine surveyor's written assessment. For an illegible plate, contact the manufacturer with the HIN and ask for a replacement." },
       { question: "Does the plate cover the trailer too?", answer: "No. The plate is for the boat only. Trailer capacity is a separate rating, marked on the trailer itself (typically on the tongue near the coupler). Trailer overload is a common cause of bearing and tire failure on Ontario highways. Worth checking both." },
       { question: "Are pontoons rated differently than V-hulls?", answer: "The Compliance Notice format is the same, but pontoon ratings tend to be more generous on person count because of the wider, more stable platform. A 22-foot tritoon may be rated for 12-14 adults where a 22-foot V-hull cruiser is rated for 8-10. Always check the actual plate; do not assume." },
@@ -33497,7 +33431,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Quick answer
 
-A Canadian boat capacity plate (called a Compliance Notice by Transport Canada) tells you the maximum number of people, maximum recommended engine horsepower, and maximum total load the boat is rated to carry safely. The numbers are stamped on a riveted plate inside the hull, usually near the helm or transom. If your boat was built before 2010 and is under 6 metres, it may not have one. If it does, the rules apply: exceeding the rated horsepower can void your insurance and your warranty, and overloading the boat is a real safety problem, not a guideline. This guide walks through every field, explains what is and is not legally enforceable, and covers the three reading mistakes we see most often at our Rice Lake marina.
+A Canadian boat capacity plate (called a Compliance Notice by Transport Canada) tells you the maximum number of people, maximum recommended engine horsepower, and maximum total load the boat is rated to carry safely. The numbers are stamped on a riveted plate inside the hull, usually near the helm or transom. If your boat was built before 2010 and is under 6 metres, it may not have one. If it does, follow those limits: exceeding the rated horsepower creates compliance, insurance, liability, safety, and potential warranty problems. Overloading the boat is a real safety problem, not a guideline. This guide walks through every field, explains what is and is not legally enforceable, and covers the three reading mistakes we see most often at our Rice Lake marina.
 
 ## Where to find the plate
 
@@ -33523,7 +33457,7 @@ This is the highest motor power the hull was designed and tested to handle safel
 
 **Important**: this is not a "minimum" or a "you should buy this much." It is a ceiling. Over-powering a hull can cause it to porpoise, plough, or in extreme cases fail at the transom. Under-powering wastes the hull's potential but is rarely dangerous.
 
-This number is also binding for warranty and insurance purposes. Mounting a motor that exceeds the rated max can void both, even if the boat seems to handle fine. We have seen Ontario insurance claims denied on this exact basis.
+This number matters for compliance, insurance, liability, safe handling, and warranty coverage. Mounting a motor that exceeds the rated maximum can give an insurer or manufacturer grounds to deny a related claim, even if the boat seems to handle fine.
 
 ### 3. Maximum gross load (or maximum total weight)
 This is the total weight the boat can safely carry: people, fuel, gear, motor, batteries, coolers, everything that is not the empty hull. Usually expressed in both kilograms and pounds. The number is much larger than just "5 people times 75 kg" because it accounts for fuel weight, motor weight, and typical gear.
@@ -33577,7 +33511,7 @@ When customers come to us at Harris Boat Works for a repower, the capacity plate
 ## FAQ
 
 **Is it legal to exceed the maximum horsepower on the capacity plate?**
-On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or installer will mount a motor that exceeds the plate rating.
+The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the plate rating.
 
 **What if my plate is illegible or missing?**
 For a missing plate, Transport Canada accepts a manufacturer-issued replacement (if the boat builder is still in business) or a marine surveyor's written assessment. For an illegible plate, contact the manufacturer with the HIN and ask for a replacement.
@@ -35712,7 +35646,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
@@ -35723,14 +35657,14 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
       { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
       { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying." },
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
-      { question: "What does an Avator setup cost installed?", answer: "Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153." },
+      { question: "What does an Avator setup cost installed?", answer: "Avator is built to order through Mercury Canada, and battery count drives the price. Pricing is coming soon to the online configurator at https://www.mercuryrepower.ca." },
     ],
     content: `
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
+A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model, battery configuration, hull, load, weather, and throttle. Mercury's published 13-foot test reached about 5 miles at full throttle and up to 34 miles at quarter-throttle. For practical Rice Lake planning on a small car-topper, use roughly 3 to 4 miles at full throttle or 20 to 25 miles at quarter-throttle, then keep a weather and reserve margin. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
 ## What Is the Range of a Mercury Avator Electric Outboard?
 
@@ -37485,7 +37419,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-09',
+    dateModified: '2026-08-02',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -37498,7 +37432,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
       { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
       { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." },
-      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower)." }
+      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate states the manufacturer's maximum recommended safe limit for your hull. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 or lower." }
     ]
   },
   {
@@ -38074,7 +38008,7 @@ Honda and Mercury both use different proprietary control architectures. [None of
 | 40-60 HP | $7,000-$10,500 | $1,400-$2,200 | $11,500-$16,000 |
 | 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250 HP (Honda BF250 to Mercury) | $24,500-$26,000 | $2,800-$4,200 | $34,000-$43,000 |
+| 250 HP (Honda BF250 to Mercury) | [See live pricing](/pricing-reference) | $2,800-$4,200 | Quote the complete installation for the specific boat |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -38171,7 +38105,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
     image: '/lovable-uploads/hero-on-water-load-test.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-09',
+    dateModified: '2026-08-02',
     category: 'Repower Guide',
     readTime: '10 min read',
     keywords: ["Honda to Mercury repower", "Honda to Mercury Ontario", "Honda BF250 Mercury", "brand swap outboard repower", "Mercury repower cost Ontario", "Honda BF dealer Ontario", "Honda vs Mercury Ontario", "Mercury Premier dealer"],
@@ -39268,7 +39202,7 @@ If you've cleared the intakes and you're still overheating at speed, or you'd ra
     image: '/lovable-uploads/hero-bilge-pump-troubleshooting-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-07-03',
-    dateModified: '2026-07-03',
+    dateModified: '2026-08-02',
     publishDate: '2026-07-03',
     category: 'Service & Troubleshooting',
     readTime: '~11 min read',
@@ -39317,7 +39251,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 866 US GPH, or 14.4 US gal/min)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.

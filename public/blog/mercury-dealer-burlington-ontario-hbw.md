@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Burlington Ontario HBW"
 description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-02
 keywords: ["mercury dealer burlington","mercury repower burlington","mercury outboard burlington ontario","boat motor service burlington hamilton"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw
 
@@ -149,7 +149,7 @@ About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on you
 
 ### Is there a closer Mercury dealer to Burlington?
 
-Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.
+Yes. There is a closer Mercury dealer in the Hamilton area. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.
 
 ### Can I quote and order remotely?
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "421399645d3b8139353d",
+  "sourceVersion": "af1340e4d577dc77f526",
   "count": 202,
   "articles": [
     {
@@ -378,7 +378,7 @@
         },
         {
           "q": "How many people fit on a rental pontoon?",
-          "a": "Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore."
+          "a": "Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two."
         },
         {
           "q": "Can our group have a BBQ at the marina?",
@@ -414,7 +414,7 @@
         },
         {
           "q": "Do I need a licence for my first rental?",
-          "a": "Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide)."
+          "a": "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements."
         },
         {
           "q": "What happens if I damage the boat?",
@@ -425,7 +425,7 @@
     {
       "slug": "rice-lake-boat-rental-guide-2026",
       "title": "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
-      "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 9-boat fleet, what's included, real fuel costs, licence rules, and how booking works.",
+      "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 10-boat fleet, including the new 12-person Halo, plus costs, licence rules, and booking.",
       "category": "Boating Lifestyle",
       "publishDate": "2026-07-02",
       "keywords": [
@@ -438,7 +438,7 @@
       "faqs": [
         {
           "q": "Do I need a boating licence to rent a boat on Rice Lake?",
-          "a": "The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online in an evening at myboatcard.com/card/harrisboat (code HARRIS15 saves 15%). Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental l…"
+          "a": "Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide)."
         },
         {
           "q": "How much does a Rice Lake boat rental cost?",
@@ -470,7 +470,7 @@
       "faqs": [
         {
           "q": "Can I rent a boat in Ontario with no licence at all?",
-          "a": "You can book one, but the driver can't operate it without proof of competency. The fix takes one evening: complete the boating licence online at myboatcard.com/card/harrisboat (HARRIS15 for 15% off), or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving."
+          "a": "You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine."
         },
         {
           "q": "Does everyone in the boat need a licence?",
@@ -478,7 +478,7 @@
         },
         {
           "q": "How fast can I actually get a boating licence?",
-          "a": "Same day. The accredited course and test are fully online and self-paced; most people finish in about 3 hours. Your proof of completion is immediate and the physical card follows by mail. Doing it the night before your rental is the move."
+          "a": "The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you."
         },
         {
           "q": "Is the PCOC valid outside Ontario?",
@@ -2087,7 +2087,7 @@
         },
         {
           "q": "What boats can you rent at Harris Boat Works?",
-          "a": "A 9-boat Legend fleet: 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals."
+          "a": "A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals."
         }
       ]
     },
@@ -2140,7 +2140,7 @@
       "faqs": [
         {
           "q": "What Mercury outboards does Harris Boat Works stock for the 2027 model year?",
-          "a": "We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca."
+          "a": "We stock and order the full FourStroke range and Pro XS performance motors. SeaPro commercial motors and Verado are special order, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor. Live availability and pricing is in the quote builder at mercuryrepower.ca."
         },
         {
           "q": "Is a 2026-built Mercury still worth buying after the July 1 flip?",
@@ -3065,7 +3065,7 @@
         },
         {
           "q": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
-          "a": "No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary \"rental boat safety checklist\", but most full-day rentals (including ours) require a PCOC."
+          "a": "You can reserve a boat, but Harris Boat Works requires every rental driver to show a valid Pleasure Craft Operator Card and photo ID before departure. Passengers don't need one. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details."
         },
         {
           "q": "Is Rice Lake too shallow for a 21-foot pontoon?",
@@ -3519,7 +3519,7 @@
         },
         {
           "q": "Do I need a boating licence to rent at HBW?",
-          "a": "Yes, a Pleasure Craft Operator Card (PCOC) is required to operate any motorized boat in Ontario. If you don't have one, the marina can sometimes issue a temporary \"rental boat safety checklist\", but most full-day rentals require the PCOC. Easier to get the actual card before you come (3-hour online course, $50, lifeti…"
+          "a": "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day."
         },
         {
           "q": "What does a half-day rental cost?",
@@ -4577,7 +4577,7 @@
         },
         {
           "q": "Is there a closer Mercury dealer to Burlington?",
-          "a": "Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing."
+          "a": "Yes. There is a closer Mercury dealer in the Hamilton area. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing."
         },
         {
           "q": "Can I quote and order remotely?",
@@ -5104,7 +5104,7 @@
       "faqs": [
         {
           "q": "Is it legal to exceed the maximum horsepower on the capacity plate?",
-          "a": "On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or instal…"
+          "a": "The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the…"
         },
         {
           "q": "What if my plate is illegible or missing?",
