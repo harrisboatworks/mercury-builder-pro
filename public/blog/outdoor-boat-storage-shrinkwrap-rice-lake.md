@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outdoor Boat Storage Rice Lake"
 description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter."
 category: "Service & Maintenance"
 date_published: 2026-05-10
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-10  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 
@@ -110,7 +110,7 @@ Avoid universal shortcuts:
 - Do not turn an annual interval into a rule for every model and serial number
 - Do not assume the battery must be removed
 
-A healthy battery may remain in the boat if it is disconnected and the approved storage plan allows it. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
+The battery may remain in the boat if the battery is healthy, disconnected, and allowed by the approved storage plan. Battery removal is not a universal requirement. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
 
 For engine-specific requirements, use the owner’s manual for the exact serial number and the approved work order.
 
@@ -238,4 +238,3 @@ List the concern in the service request. Repairs require assessment and approval
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

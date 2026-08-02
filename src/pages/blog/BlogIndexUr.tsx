@@ -12,6 +12,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: 'اور سیدھے جوابات۔',
   heroSubhead:
     'Rice Lake پر ایک فیملی Mercury ڈیلر کی حقیقی تجربے پر مبنی مشورہ۔ ری پاور، ٹربل شوٹنگ اور صحیح آؤٹ بورڈ کا انتخاب — ان لوگوں کی لکھی ہوئی جو خود اسے فٹ کرتے ہیں۔',
+  skipLinkLabel: 'بلاگ کے مواد پر جائیں',
   searchLabel: 'گائیڈز تلاش کریں',
   searchPlaceholder: 'گائیڈز، ماڈلز، موضوعات تلاش کریں…',
   trustItems: [],

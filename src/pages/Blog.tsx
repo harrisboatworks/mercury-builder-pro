@@ -7,6 +7,7 @@ const EN_STRINGS: BlogHubStrings = {
   heroTitleLine2: '& straight answers.',
   heroSubhead:
     'Real-world advice from a family Mercury dealer on Rice Lake. Repowers, troubleshooting, and choosing the right outboard. Written by the people who rig them.',
+  skipLinkLabel: 'Skip to blog content',
   searchLabel: 'Search guides',
   searchPlaceholder: 'Search guides, models, topics…',
   trustItems: [

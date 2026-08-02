@@ -23,6 +23,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: 'et réponses franches.',
   heroSubhead:
     "Des conseils concrets d'un concessionnaire Mercury familial sur le lac Rice. Remotorisation, dépannage et choix du bon hors-bord, par les gens qui les installent.",
+  skipLinkLabel: 'Aller au contenu du blogue',
   searchLabel: 'Rechercher des guides',
   searchPlaceholder: 'Rechercher un guide, un modèle, un sujet…',
   trustItems: [],

@@ -15314,7 +15314,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
     imageAlt: 'Two boaters on an Ontario lake during the fall-colour season before winter storage.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-07-31',
+    dateModified: '2026-08-02',
     publishDate: '2026-04-21',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -15470,12 +15470,8 @@ For Mercury owners, start with Mercury's official guidance and then follow the e
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
 
-## Related Guides and Sources
+## Sources
 
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
-- [Mercury Maintenance Intervals](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Outdoor Boat Storage on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 - [Mercury Marine: How to Winterize Your Outboard](https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard)
 - [Mercury Marine: Marine Battery Maintenance](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics)
 `,
@@ -26293,7 +26289,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-07-24",
+    dateModified: "2026-08-02",
     publishDate: "2026-05-10",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -26391,7 +26387,7 @@ Avoid universal shortcuts:
 - Do not turn an annual interval into a rule for every model and serial number
 - Do not assume the battery must be removed
 
-A healthy battery may remain in the boat if it is disconnected and the approved storage plan allows it. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
+The battery may remain in the boat if the battery is healthy, disconnected, and allowed by the approved storage plan. Battery removal is not a universal requirement. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
 
 For engine-specific requirements, use the owner’s manual for the exact serial number and the approved work order.
 
@@ -26442,50 +26438,6 @@ The current quote can depend on:
 - HST and stated exclusions
 
 Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not budget from an old article range or an assumed package discount.
-
----
-
-## Related Guides
-
-- [Winter Boat Storage: Shrinkwrap vs Indoor in Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
-- [Winter Storage Near Toronto at HBW](/blog/winter-storage-near-toronto-hbw)
-- [Boat Storage in the Kawartha Lakes](/blog/boat-storage-kawartha-lakes)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Maintenance Intervals by Engine Family](/blog/mercury-maintenance-intervals-20-100-300-rule)
-
-## FAQs
-
-**Does HBW offer indoor or heated boat storage?**
-
-No. HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage.
-
-**Does HBW pick up or deliver boats for storage?**
-
-No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
-
-**Can I access my stored boat during winter?**
-
-No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
-
-**Is winterization included with shrinkwrap?**
-
-Not automatically. Storage, shrinkwrap, winterization, and spring commissioning are separate scopes. The written quote and work order state what is included.
-
-**Can the battery stay in the boat?**
-
-Yes, if the battery is healthy, disconnected, and the approved storage plan allows it. Battery removal is not a universal requirement.
-
-**Is spring commissioning included?**
-
-It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
-
-**What is the maximum boat size HBW can store?**
-
-Submit the boat and trailer dimensions before drop-off. HBW confirms current capacity and whether the boat fits the available storage and handling scope; this guide does not promise a fixed size limit.
-
-**What if the boat needs repairs before storage?**
-
-List the concern in the service request. Repairs require assessment and approval separate from the storage contract. HBW repairs Mercury outboards and MerCruiser products.
 
 ---
 
@@ -32286,7 +32238,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-07-24",
+    dateModified: "2026-08-02",
     publishDate: "2026-05-16",
     category: "Rice Lake & Local",
     readTime: "10 min read",
@@ -32446,48 +32398,8 @@ Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-stor
 
 ---
 
-## Frequently Asked Questions
+## Source
 
-### Where is Harris Boat Works?
-
-HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Confirm your appointment or drop-off window before towing.
-
-### How long has Harris Boat Works operated in Gores Landing?
-
-Since 1947, at its Gores Landing location on Rice Lake.
-
-### What engine brands does HBW repair?
-
-HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at [hbw.wiki/service](https://hbw.wiki/service).
-
-### Does HBW pick up or deliver boats?
-
-No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
-
-### What storage does HBW offer?
-
-Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.
-
-### Can I access my boat during winter?
-
-No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
-
-### Does "full service" mean my boat is automatically ready to launch?
-
-No. Each job follows its written work order. Plan pickup or launch only after HBW confirms the approved work is complete.
-
-### How long is the drive from the GTA?
-
-It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation and confirm the drop-off window before leaving.
-
----
-
-## Related Guides and Current Booking
-
-- [HBW service intake](https://hbw.wiki/service), current repair scope and service request
-- [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
-- [Outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), current HBW storage scope
-- [Rice Lake launch guide](/blog/rice-lake-boat-launch-guide), launch-planning questions
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
 Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
@@ -32505,7 +32417,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     image: "/lovable-uploads/hero-boat-storage-kawartha-lakes.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-07-24",
+    dateModified: "2026-08-02",
     publishDate: "2026-05-15",
     category: "Service & Maintenance",
     readTime: "10 min read",
@@ -32695,50 +32607,6 @@ This guide does not promise:
 - A fixed storage, shrinkwrap, winterization, or transport price
 
 HBW confirms current capacity, timing, and price for the actual boat.
-
----
-
-## Related Guides
-
-- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Winter Boat Storage: Shrinkwrap vs Indoor in Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
-- [Winter Storage Near Toronto at HBW](/blog/winter-storage-near-toronto-hbw)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Mercury Maintenance Intervals by Engine Family](/blog/mercury-maintenance-intervals-20-100-300-rule)
-
-## FAQs
-
-**Does HBW offer indoor or summer boat storage?**
-
-No. HBW offers outdoor winter storage with shrinkwrap only. We do not offer indoor, heated, climate-controlled, summer, or year-round storage.
-
-**Does HBW pick up boats from Kawartha lakes?**
-
-No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
-
-**Can I access my boat during winter?**
-
-No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
-
-**How much does Kawartha boat storage cost?**
-
-Request a current written quote. Pricing depends on the boat, trailer, cover, winterization, installed systems, approved work, spring scope, HST, and stated exclusions. This guide does not publish an unsupported range.
-
-**Is spring commissioning included?**
-
-It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
-
-**Can the battery stay in the boat?**
-
-Yes, if it is healthy, disconnected, and the approved storage plan allows it. Removal is not a universal requirement.
-
-**Can HBW repair a Yamaha, Honda, Suzuki, or another outboard brand?**
-
-No. HBW engine repairs are limited to Mercury and MerCruiser. Confirm any storage or systems-only scope for another brand before drop-off.
-
-**When can I pick up the boat in spring?**
-
-After the marina reopens and HBW confirms that the approved spring scope is complete. Do not plan a launch or towing trip until HBW provides the pickup window.
 
 ---
 

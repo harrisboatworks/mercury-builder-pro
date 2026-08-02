@@ -12,6 +12,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: '與中肯解答。',
   heroSubhead:
     '來自 Rice Lake 一家家庭式 Mercury 經銷商的實戰建議。換裝新機、故障排查、如何選對舷外機——由真正動手裝機的人撰寫。',
+  skipLinkLabel: '跳至網誌內容',
   searchLabel: '搜尋指南',
   searchPlaceholder: '搜尋指南、型號或主題…',
   trustItems: [],

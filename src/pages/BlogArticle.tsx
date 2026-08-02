@@ -311,7 +311,7 @@ export default function BlogArticle() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="3rd-generation owner · Harris Boat Works, Mercury dealer since 1965" />
+                <AuthorByline name="Jay Harris" title="Owner, Harris Boat Works" />
                 {(() => {
                   const published = parseLocalDate(article.datePublished);
                   const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -483,12 +483,6 @@ export default function BlogArticle() {
             'breaking-in-new-mercury-motor-guide',
             'fourstroke-vs-pro-xs',
           ].includes(article.slug) && <BuildYourQuoteCTA />}
-
-
-          {/* Author Byline (bottom) */}
-          <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Premier Dealer · Rice Lake, Ontario" />
-          </div>
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
