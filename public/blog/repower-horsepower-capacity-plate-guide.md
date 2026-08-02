@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-06-06
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Capacity Plate and Repower HP: What's Allowed"
 description: "How to read your boat's capacity plate before a repower: max HP rules, what's legal in Ontario, insurance implications, and smart HP choices."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-06-06
+date_modified: 2026-08-02
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last updated:** 2026-06-06  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 
@@ -110,7 +110,7 @@ This is a general guide, your hull's capacity plate is the controlling document:
 
 The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad). If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ---
 

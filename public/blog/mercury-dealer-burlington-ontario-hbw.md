@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw.md
-last_updated: 2026-05-11
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Burlington Ontario HBW"
 description: "Mercury Premier dealer near Burlington: Harris Boat Works on Rice Lake, 110 minutes northeast. Repower, sales, parts, winter storage for Burlington."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-02
 keywords: ["mercury dealer burlington","mercury repower burlington","mercury outboard burlington ontario","boat motor service burlington hamilton"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-burlington-ontario-hbw
 
@@ -133,9 +133,9 @@ The drive to Rice Lake is roughly 110 minutes via the QEW east through Toronto, 
 
 Why Burlington boaters still drive to HBW:
 
-- **Same-day round-trips work.** Drop the boat off in the morning, head home; we'll call when it's ready.
-- **Annual repower or winterization trip.** Many Burlington customers trailer their boat to HBW once or twice a year for repower work or winterization + storage, then back to a Burlington-area marina for the season.
-- **Mercury Premier-level depth.** For a multi-thousand-dollar repower investment, the drive is justified when local dealers can't match the rigging expertise.
+- **Plan drop-off and pickup as separate trips.** HBW confirms completion timing after the boat and work scope are reviewed.
+- **Annual repower or winterization trip.** Burlington owners can trailer their boat to HBW for booked repower work or winterization and storage, then return it to their local marina for the season.
+- **Mercury Premier-level support.** The practical reasons to make the drive are Mercury-specific diagnostics, a documented rigging scope, current pricing, and one shop accountable for the installation and future service history.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

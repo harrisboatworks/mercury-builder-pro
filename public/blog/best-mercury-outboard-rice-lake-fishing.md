@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Rice Lake Fishing 2026"
 description: "A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["rice lake fishing guide","rice lake walleye","rice lake fishing regulations 2026","rice lake muskie","mercury 9.9 prokicker walleye","best mercury outboard rice lake fishing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
@@ -271,7 +271,7 @@ A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke on the standard 
 
 **The "I'll add the kicker later" plan.** Nobody adds the kicker later cleanly. They do add it, but it costs more, takes longer, and means undoing half the wiring we already ran. Put it on at repower time. Your future self, and your walleye numbers, will thank you.
 
-**The wrong prop.** A mismatched prop is like running in the wrong size boots. You can do it, but you are never quite right. We test props on the water during every sea trial. It matters more than most people think, and it is cheap to get right at install time.
+**The wrong prop.** A mismatched prop is like running in the wrong size boots. You can do it, but you are never quite right. Prop verification matters more than most people think, and the scope depends on the specific motor, hull, rigging, work order, and safe seasonal testing conditions.
 
 **Underbuying horsepower for real-world use.** There is a specific conversation we have every August with someone who bought a 60 HP in May, then discovered they are running a loaded 19-footer into afternoon west winds across 32 km of open lake. Match the motor to how you actually fish, not the minimum on the capacity plate.
 

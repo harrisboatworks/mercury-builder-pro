@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Oshawa: 40 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["mercury dealer oshawa","mercury repower oshawa","mercury outboard oshawa ontario","boat motor service durham region oshawa"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-oshawa-ontario-hbw
 
@@ -128,17 +128,17 @@ You're practically in our neighbourhood. Let's work together.
 
 ---
 
-## Where Oshawa Boaters Launch and Why Many Are Repower Candidates
+## Where Oshawa Boaters Launch and When Repower Is Worth Assessing
 
 Oshawa is a strong east-GTA boating town. **Oshawa Harbour Marina** is the main local hub, city-owned, large facility with public launch and a long recreational history. Lake Ontario shoreline here has a serious boating community with manufacturing-town roots.
 
 The drive to Rice Lake is just 40 minutes via the 401 east and Highway 115 north, easy midweek, weekend cottage traffic the only friction. For service trips, Tuesday-Thursday mornings are ideal.
 
-Why Oshawa is a particularly strong repower market:
+Why some Oshawa boaters consider HBW:
 
-- **Many older fiberglass hulls in great shape.** A 1990s-2000s 16-18 ft fiberglass hull with a tired Mercury or Evinrude is an ideal repower candidate. HBW handles a steady flow of these annually.
+- **Older hulls can be worth assessing.** A 1990s or 2000s fiberglass hull may be a repower candidate if its transom and other systems are sound. The hull inspection and written scope determine whether repowering makes sense.
 - **Proximity makes it practical.** 40 minutes is a reasonable drive for a multi-thousand-dollar repower investment, closer than driving back into central Toronto.
-- **Mercury Premier-level depth.** A repower done well lasts the rest of the boat's life. Done poorly, it gets brought back for warranty work.
+- **Mercury Premier-level support.** HBW offers Mercury-specific diagnostics, a documented rigging scope, current pricing, and continuity between installation and future service history. The motor, hull, maintenance, use, and conditions determine service life.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -152,11 +152,11 @@ About 40 minutes via Highway 401 east and Highway 115 north. Roughly 65 km. One 
 
 ### Can HBW be my primary Mercury dealer in Oshawa?
 
-Yes. 40 minutes is short enough to make us a real primary dealer - many Oshawa customers use us for spring commissioning, mid-season service, fall winterization, and storage.
+Yes. Oshawa owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Confirm the appointment and completion plan before trailering the boat; HBW is pickup-only and does not provide hauling or delivery.
 
 ### Do you serve north Oshawa and Courtice?
 
-Yes. Courtice and north Oshawa are within the same drive time. We have customers across all of Durham Region.
+Yes. Boat owners from Courtice and north Oshawa can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic.
 
 ## Related guides
 

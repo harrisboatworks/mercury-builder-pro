@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Toronto: Why Drive to HBW"
 description: "A frank comparison of Toronto-area Mercury dealers vs Harris Boat Works on Rice Lake: drive-time, pricing, and what you actually get for the trip."
 category: "Mercury Outboards"
 date_published: 2026-05-12
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["Mercury outboard dealer Toronto","Mercury dealer GTA","Mercury dealer Mississauga","Mercury dealer Brampton","Mercury Premier dealer Toronto","drive to Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-12  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw
 
@@ -69,7 +69,7 @@ HBW starts with the boat's capacity label or manufacturer's rating, then checks 
 
 ### A water test before handoff
 
-Every HBW repower is tested on Rice Lake before pickup. We check starting, shifting, steering, charging, cooling, gauge operation, wide-open-throttle RPM, and general behaviour under load. If the propeller or setup needs attention, we want to find it before the boat leaves.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test can cover starting, shifting, steering, charging, cooling, gauge operation, wide-open-throttle RPM, and general behaviour under load. Any alternate acceptance plan is documented with the customer.
 
 ---
 

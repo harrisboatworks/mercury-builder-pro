@@ -96,7 +96,7 @@ Finding ethanol-free fuel can be a challenge around Rice Lake, but Harris Boat W
 
 For engine repairs and routine maintenance, Harris Boat Works only services Mercury and Mercruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbw.wiki/service. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
 
-If you're considering repowering your boat with a new Mercury outboard, every repower sold by Harris Boat Works is followed by an on-water test on Rice Lake before you take delivery. No exceptions. You can explore outboard options and build a configuration at mercuryrepower.ca.
+If you're considering repowering your boat with a new Mercury outboard, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer. You can explore outboard options and build a configuration at mercuryrepower.ca.
 
 ## Make the Most of Your Weekend
 Rice Lake on Canada Day is about more than just boating. It's morning mist burning off while you set lines, the sound of the lock gates opening at Hastings, kids splashing off the swim platform at noon, and the collective awed silence when the first firework blooms over the water at dusk. A little planning lets you focus on all of that rather than sitting in line at the launch or scrambling for fuel at sunset.
@@ -135,7 +135,7 @@ Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fue
 
 ### Does Harris Boat Works service all brands of outboards?
 
-For engine repairs, we only service Mercury and Mercruiser products. You can book service at hbw.wiki/service. For repower quotes, we specialize in Mercury outboards and provide an on-water test for every repower.
+For engine repairs, HBW services Mercury and MerCruiser products. You can book service at hbw.wiki/service. For repower quotes, HBW specializes in Mercury outboards, and its standard handoff includes an on-water test when safe seasonal conditions allow.
 
 ## Related guides
 

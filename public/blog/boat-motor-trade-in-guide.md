@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide.md
-last_updated: 2026-03-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor Trade-In Ontario Guide"
 description: "Free instant trade-in estimator, the 13% HST math, real 2026 Ontario trade values, and how the swap actually works at HBW."
 category: "Buying Guide"
 date_published: 2026-03-10
-date_modified: 2026-03-10
+date_modified: 2026-08-02
 keywords: ["boat motor trade in ontario","outboard trade in value","hst trade in boat motor","mercury trade in hbw","repower trade in"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-03-10  
-**Last updated:** 2026-03-10  
+**Last updated:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide
 
@@ -76,7 +76,7 @@ HBW handles all three paths. The right one depends on what you value more: dolla
 
 | Path | Typical net | Time to cash | Best for |
 |------|------------|--------------|----------|
-| Trade-in toward repower | Trade value + 13% HST savings on the difference | Same day | Most repower customers |
+| Trade-in toward repower | Trade value + 13% HST savings on the difference | Applied when the deal closes | Customers applying the old motor to a repower |
 | Consignment through HBW | Higher than trade, minus our commission | 3-12 weeks | Newer motors, no rush, want a stronger price |
 | Private sale | Highest potential, no commission | Days to months | Smaller motors, popular models, sellers with time |
 
@@ -134,7 +134,7 @@ Here's the actual process if you trade through us:
 2. **Live inspection.** Bring it in, or, for boat-and-motor packages on a trailer, we'll inspect on your trailer. Compression check, lower unit oil, run-up if it's runnable, cosmetics. Usually 30-60 minutes.
 3. **Firm trade offer in writing.** Tied to your new motor quote so you see the full deal: new motor price, rigging, trade allowance, HST on the difference, total out the door.
 4. **Decommission and swap.** We pull the old motor, transfer your old controls if compatible, install the new motor, rig and test. Old motor goes to our reconditioning bench or to the consignment line, depending on what makes sense.
-5. **You leave on the new rig.** Same-day swap is common for like-for-like HP. If we're upgrading HP or changing rigging type (mechanical to DTS, for example), it's typically a 1-3 day shop visit.
+5. **You leave on the new rig.** Completion timing depends on the inspection, motor availability, rigging changes, parts, and the current shop schedule. HBW confirms the expected handoff in the written work plan rather than promising a generic turnaround.
 
 Service is drop-off: you bring the boat to us at Gores Landing, we do not pick up, deliver, or arrange hauling. GTA and east Toronto customers trailer up routinely, and we have handled trades from as far as Ottawa and Niagara.
 

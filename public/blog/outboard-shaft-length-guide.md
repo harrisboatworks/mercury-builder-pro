@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-07-20
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
 description: "Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-07-20
+date_modified: 2026-08-02
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last updated:** 2026-07-20  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
@@ -112,7 +112,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - Motor sounds "loaded" at cruise, working harder than the throttle position should require
 - Cavitation plate is well below the water surface at speed
 
-If you are seeing any of these symptoms, shaft length is a strong candidate. [We diagnose during sea-trial on every repower at HBW](/blog/what-happens-during-mercury-repower).
+If you are seeing any of these symptoms, shaft length is a strong candidate. [HBW's acceptance checks follow the specific motor, hull, rigging, work order, and safe seasonal conditions](/blog/what-happens-during-mercury-repower).
 
 ## Decoding Mercury shaft length codes
 

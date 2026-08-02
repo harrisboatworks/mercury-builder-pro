@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull.md
-last_updated: 2026-07-12
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Command Thrust: The Real Talk Guide (BigFoot History, Pontoons v
 description: "Command Thrust started as BigFoot in the 90s, built for pontoons. Our back-to-back lake test showed 6 mph lost on a V-hull. The honest guide to who actually needs CT."
 category: "Mercury Outboards"
 date_published: 2026-07-12
-date_modified: 2026-07-12
+date_modified: 2026-08-02
 keywords: ["mercury command thrust vs standard","mercury bigfoot outboard","command thrust pontoon","command thrust on v hull","mercury command thrust gear ratio"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-12  
-**Last updated:** 2026-07-12  
+**Last updated:** 2026-08-02  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-real-talk-bigfoot-pontoon-v-hull
 
@@ -111,7 +111,7 @@ Here's the thing: even Mercury doesn't call it an upgrade. When the 75-115 FourS
 
 To be fair to the other side of the argument: some brands ship taller gear ratios as their standard case, the bigger CT case is genuinely tougher, and there are boaters who like a deeper prop in rough water. Those points are real. They still don't make CT the right call on a recreational planing hull, because the drag penalty and the prop mismatch come with every one of those trade-offs.
 
-At HBW we're on the water. [Every repower gets an on-water test on Rice Lake before pickup. No exceptions.](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026) So we see exactly what a gearcase choice does to a real boat with a real load. That's why our advice on this is blunt: we love Command Thrust, in the applications it was engineered for.
+At HBW we're on the water. [Our standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026) That lets us see what a gearcase choice does to the actual boat and load.
 
 ## The Few V-Hull Exceptions
 
@@ -142,7 +142,7 @@ As of July 2026, from our live pricing: the 60 ELPT FourStroke is $12,040 and th
 
 ## When to call HBW
 
-If you're not sure whether your boat is a push boat or a plane boat, that's a two-minute phone call that saves you from a multi-thousand-dollar mismatch: 905-342-2153. Repower quotes with the right gearcase spec take about three minutes at mercuryrepower.ca. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+If you're not sure whether your boat is a push boat or a plane boat, send the hull, capacity plate, current motor, and use case before choosing the gearcase. Build the starting quote at mercuryrepower.ca. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)

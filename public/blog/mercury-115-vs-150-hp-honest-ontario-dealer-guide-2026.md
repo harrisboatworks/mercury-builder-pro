@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)"
 description: "Mercury 115 vs 150 hp: real dividing lines by hull type. 18 ft V-hull, 21 ft tritoon, 22 ft pontoon. Honest pricing and when not to use Command Thrust."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Mercury 115 vs 150 HP","Mercury 115 Pro XS price","Mercury 150 Pro XS price","Mercury 115 vs 150 pontoon","Mercury Command Thrust V-hull","Mercury 115 CT","Mercury outboard Ontario","Mercury Premier dealer Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026
 
@@ -157,9 +157,9 @@ We see other dealers rig V-hull customers with 115 CT thinking "more thrust is b
 
 If you're being quoted a Command Thrust motor on a V-hull, ask the dealer specifically why. There may be a legitimate reason (e.g., propping up an overweight specific build), but for the majority of V-hull buyers, the standard gearcase is what you want.
 
-## What HBW checks before delivery
+## What HBW checks before pickup
 
-Repowers are the highest-risk install in our shop. New motor, old hull, unknown how the combination will run until it's in the water. At HBW we water-test every repower under load before delivery: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, charging system under load. If the prop is wrong, the trim is wrong, or the rigging has a problem, we catch it at our dock. The customer drives home with a known-good combination, not a hopeful one. Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+Repowers combine a new motor with an existing hull and rigging, so the combination needs an acceptance test. HBW's standard handoff includes an on-water load test before pickup when safe seasonal conditions allow: cold start, idle quality, low-speed handling, on-plane behaviour, top-end RPM at WOT, and charging-system behaviour. Any alternate acceptance plan is documented with the customer.
 
 ## Common mistakes
 
@@ -185,7 +185,7 @@ Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show y
 **Email:** info@harrisboatworks.ca
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The largest Mercury and Mercruiser parts inventory in Ontario.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
 ---
 

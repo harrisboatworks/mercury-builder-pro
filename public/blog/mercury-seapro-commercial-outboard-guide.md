@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide.md
-last_updated: 2026-07-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SeaPro Commercial Outboard Guide"
 description: "An HBW guide to Mercury SeaPro outboards, what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs."
 category: "Buying Guide"
 date_published: 2026-04-20
-date_modified: 2026-07-10
+date_modified: 2026-08-02
 keywords: ["mercury seapro","commercial outboard","guide motor","heavy duty outboard","commercial boat motor","SeaPro vs FourStroke","commercial outboard motor","guide boat outboard","SeaPro 200 hour service","charter boat motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-20  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide
 
@@ -72,7 +72,7 @@ SeaPro is a [commercial-spec variant of Mercury's FourStroke outboards](/blog/me
 
 A fishing guide losing a Saturday in walleye season loses a full day's guide fees and risks cancellation fees and reputation. A rental operator losing a peak-summer boat loses daily rental revenue.
 
-If downtime costs you more than a modest daily amount, SeaPro's reliability premium pays for itself in one or two saved days per season.
+If downtime has a real daily business cost, compare SeaPro's configured premium with your own lost-revenue risk, duty cycle, service access, and replacement timeline. Do not assume a fixed number of avoided downtime days.
 
 ---
 

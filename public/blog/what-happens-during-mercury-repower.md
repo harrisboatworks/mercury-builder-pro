@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
@@ -36,7 +36,7 @@ language: en-CA
 
 ## Quick Answer
 
-A typical Mercury repower at HBW: configurator quote, phone call if needed, deposit, drop-off in Gores Landing, motor mount and rigging, sea trial on Rice Lake, pickup with break-in coaching. Most jobs are **2 to 5 days** at the shop once scheduled. Spring rush can add booking lead time. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+A typical Mercury repower at HBW moves from a configurator starting point to a boat-specific written scope, scheduled drop-off in Gores Landing, installation and rigging, testing, then pickup and handoff. Timing depends on the approved work, parts, findings, current shop capacity, and safe test conditions. Start at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -54,7 +54,7 @@ A repower isn't just bolting a new motor to your boat. It's a full integration p
 
 **Motor availability.** Common HP classes and configurations are typically in stock or on quick order. Less common configurations may have factory wait times.
 
-**Time of year.** Order over the off-season to lock the motor and an early-spring install slot. HBW's winter closure begins December 1, and the marina reopens April 6. Spring rush (April through May) can add booking lead time before the shop can start.
+**Time of year.** Planning in the off-season can give HBW more time to confirm motor availability and a realistic shop window. The physical marina is closed from December 1 through April 1, with no on-site work or customer access during that period. Spring demand can add booking lead time, so use the confirmed written schedule rather than an assumed launch date.
 
 **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer involvement. The faster you respond at each step, the faster the timeline.
 
@@ -132,9 +132,9 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 All connections double-checked. Motor is started on muffs (water-cooling adapter) to verify cooling, ignition, and basic operation before launch.
 
-#### Step 8: Sea Trial with Prop Testing, Typically Half a Day
+#### Step 8: Documented Acceptance Check
 
-Boat is launched on Rice Lake. On-water testing:
+When safe seasonal conditions allow and the work order calls for it, the boat is launched on Rice Lake for applicable on-water checks such as:
 
 - **Cooling verification**, Telltale water flow within 10 seconds of start
 - **WOT RPM check**, Motor reaches mid-band of rated WOT RPM with typical loading
@@ -143,9 +143,9 @@ Boat is launched on Rice Lake. On-water testing:
 - **Trim sensitivity**, Responsiveness tested
 - **All electronics check**, Gauges, GPS, fish finder all working with the new motor
 
-If WOT RPM is off, we swap props and re-test. We have a prop test kit at HBW for this reason. The boat doesn't leave until the prop is right.
+If the result points to a prop change, HBW documents the recommendation and gets the customer's approval before changing the work-order scope. The final checks depend on the motor, hull, rigging, load, and safe conditions.
 
-If the customer is available, they ride along to confirm the boat feels right before delivery.
+If an on-water check is not possible, HBW documents the alternate acceptance plan with the customer before pickup. Any customer participation is arranged in advance and is not assumed.
 
 #### Step 9: Final Adjustments and Documentation
 
@@ -153,10 +153,10 @@ Back at the shop:
 - Tighten any connections that loosened during sea trial
 - Document final configuration in service log
 - Complete Mercury warranty registration
-- Update [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) paperwork, required by Transport Canada when the motor changes, often forgotten elsewhere
+- Give the owner the motor information needed to confirm whether the [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) must be updated; a dealer needs the owner's authorization to apply on their behalf
 - Print final documentation for customer
 
-#### Step 10: Pickup and Break-In Coaching, 30-60 Minutes
+#### Step 10: Pickup and Break-In Coaching
 
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
@@ -175,7 +175,7 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 
 **Transom inspection during install.** Some shops bolt a new motor to a transom they didn't inspect. We inspect every transom with the motor off. This is where problems hide.
 
-**Sea trial with prop testing before delivery.** Some shops install the motor and tell the customer to come back if something doesn't feel right. We test on the water and confirm the prop is correct before you leave.
+**Documented acceptance before pickup.** The checks follow the specific motor, hull, rigging, work order, and safe seasonal conditions. When an on-water check is not possible, HBW documents the alternate acceptance plan with the customer.
 
 ---
 
@@ -192,7 +192,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### How long does a Mercury repower take?
 
-Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor arrives.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 
@@ -204,7 +204,7 @@ We contact you with options: fix transom now and proceed with repower, fix trans
 
 ### What if my Mercury can't reach rated RPM during sea-trial?
 
-We change the prop and re-test. Pitch is the most common issue. Sometimes the right prop is the second or third one we try. The right prop is the one that lets the motor reach mid-band of its rated WOT RPM with typical loading. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
+The result is assessed against the motor's rated operating range, hull, load, rigging, and prop. If a prop change is recommended, HBW documents it and gets customer approval before changing the work-order scope. Any on-water re-check depends on safe seasonal conditions and the documented acceptance plan. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
 
 ### What's included in the repower price?
 

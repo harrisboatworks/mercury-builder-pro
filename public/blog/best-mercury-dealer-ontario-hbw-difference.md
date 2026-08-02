@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-07-25
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Dealer in Ontario: The HBW Difference (2026)"
 description: "A frank look at what \"best Mercury dealer in Ontario\" actually means, what to look for."
 category: "Mercury Outboards"
 date_published: 2026-05-13
-date_modified: 2026-07-25
+date_modified: 2026-08-02
 keywords: ["best Mercury dealer Ontario","Mercury Premier dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-13  
-**Last updated:** 2026-07-25  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 
@@ -90,7 +90,7 @@ Our approach is practical:
 - **Visible pricing before the conversation.** Use the [Mercury pricing reference](/pricing-reference) for current motor pricing and the [repower quote builder](/quote/motor-selection) for an installed starting point.
 - **A written scope.** The motor, controls, rigging, steering, propeller, installation, testing, HST, and exclusions should be clear before work begins.
 - **Mercury-focused knowledge.** Our sales, tooling, parts, training, and service work are centred on Mercury and MerCruiser.
-- **An on-water test.** Every HBW repower is tested on Rice Lake before pickup.
+- **An on-water test.** HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented.
 - **A real service path after the sale.** Warranty registration, future maintenance, parts, and diagnostics are handled through the same Gores Landing operation.
 - **No pressure to pretend we are the right fit for everyone.** If distance, brand, or the type of work makes another dealer a better choice, we would rather say that early.
 
@@ -193,7 +193,7 @@ The dealer should complete the approved installation, register the warranty, tes
 
 ### What is the best Mercury dealer near Peterborough?
 
-The best fit depends on what you value. Harris Boat Works is about 35 minutes south of Peterborough in Gores Landing and offers transparent online pricing, a complete written repower scope, Rice Lake testing before pickup, and a long-term Mercury service relationship from a family business established in 1947.
+The best fit depends on what you value. Harris Boat Works is in Gores Landing and offers transparent online pricing, a boat-specific written repower scope, and a long-term Mercury service relationship from a family business established in 1947. Its standard repower handoff includes Rice Lake testing when safe seasonal conditions allow.
 
 ## Related guides
 

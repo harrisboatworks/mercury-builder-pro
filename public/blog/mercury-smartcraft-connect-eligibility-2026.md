@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026.md
-last_updated: 2026-07-30
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect Eligibility 2026"
 description: "Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect."
 category: "Mercury Technology"
 date_published: 2026-05-27
-date_modified: 2026-07-30
+date_modified: 2026-08-02
 keywords: ["mercury smartcraft connect eligibility","smartcraft connect compatibility","is my mercury smartcraft compatible","mercury connect mobile eligibility","smartcraft connect motor requirements","smartcraft compatible mercury models"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +24,11 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  
-**Last updated:** 2026-07-30  
+**Last updated:** 2026-08-02  
 **Read time:** 11 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-eligibility-2026
 
-> **Quick answer:** SmartCraft Connect works on most Mercury motors from 2004 onward: FourStroke 40 HP+, Pro XS 115 HP+, Verado, SeaPro 40 HP+, and Avator electric. It does NOT work on 9.9 to 20 HP portables, pre-2004 4-strokes, or any 2-stroke or Optimax engine. Mercury 25 and 30 HP got SmartCraft in 2022. Email your serial number to info@harrisboatworks.ca for a same-day yes or no.
+> **Quick answer:** SmartCraft Connect works on most Mercury motors from 2004 onward: FourStroke 40 HP+, Pro XS 115 HP+, Verado, SeaPro 40 HP+, and Avator electric. It does NOT work on 9.9 to 20 HP portables, pre-2004 4-strokes, or any 2-stroke or Optimax engine. Mercury 25 and 30 HP got SmartCraft in 2022. Email your serial number to info@harrisboatworks.ca for a compatibility check.
 
 Most Mercury owners hear about SmartCraft Connect from a buddy at the dock and ask the same first question: does it even work on my motor. The short version is above. The full version, including the exceptions and the "ask first" cases, is below. We see this question every week at the shop, so we put the answer in one place.
 
@@ -36,7 +36,7 @@ If your motor turns out to be compatible, you also need a gateway module (one-ti
 
 ## Quick eligibility check
 
-The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-mercury-outboard-serial-number), email it to info@harrisboatworks.ca, and we'll reply same-day with a yes or no. The table below covers 95 percent of cases.
+The fastest way to confirm: [find your Mercury serial number](/blog/how-to-read-mercury-outboard-serial-number), email it to info@harrisboatworks.ca, and we'll check compatibility. The table below covers the common cases.
 
 | Motor class | Compatible? | Notes |
 |---|---|---|
@@ -128,7 +128,7 @@ Five places to look. Try them in this order.
 4. **[VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide).** If your boat has a VesselView or SmartCraft-aware display already, the engine info page lists the serial.
 5. **Original purchase paperwork.** Bill of sale, warranty registration, or invoice from the original dealer.
 
-Once you have it, email info@harrisboatworks.ca with the serial and we'll confirm SmartCraft Connect eligibility in one reply. Most replies go out same business day.
+Once you have it, email info@harrisboatworks.ca with the serial and we'll check SmartCraft Connect eligibility against the exact motor record.
 
 For the long version of serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year decoding by character position.
 
@@ -154,7 +154,7 @@ DIY makes sense if you already have engine wiring experience and the boat is eas
 
 ### HBW install
 
-Drop the boat off at HBW or bring just the motor in if it's portable. We do a clean install with the wiring tucked into the harness, mount the module in a known-good spot, pair the app to your phone before you leave, and verify all live data fields are reading correctly. Bench time is typically 1 to 1.5 hours. Most installs go out same-day if booked ahead.
+Drop the boat off at HBW or bring just the motor in if it's portable. We do a clean install with the wiring tucked into the harness, mount the module in a known-good spot, pair the app to your phone before you leave, and verify all live data fields are reading correctly. Appointment and completion timing are confirmed after HBW checks the motor, required parts, and current shop schedule.
 
 The HBW install is the right call if you want it done once, done right, and you'd rather not crack the engine harness open yourself. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -162,7 +162,7 @@ The HBW install is the right call if you want it done once, done right, and you'
 
 We've done a lot of these installs since 2023, and a few patterns are worth mentioning.
 
-The Connect module pays for itself first on the maintenance side. We get customers calling in after a beep code and the answer is now five seconds long because they screenshot the app and text it to us before they call. We diagnose remote-first whenever we can, and Connect cut our "guess what the alarm is" calls roughly in half last summer.
+The practical maintenance value is better diagnostic context. An owner can share the alert details before calling, which may help the service team narrow the first checks. It does not replace Mercury diagnostics or a physical inspection when either is required.
 
 The second pattern: customers with an older boat that has a current Mercury (so a 2006 hull with a 2021 FourStroke 150, for example) often think Connect won't work because the boat is old. The boat doesn't matter. The motor's year and family matter. If the engine is 2004+ and not a portable / 2-stroke / Optimax, it's eligible.
 
@@ -240,7 +240,7 @@ You can DIY if you're comfortable with engine harness work. Allow 1-2 hours and 
 
 ### How do I confirm my exact motor is eligible?
 
-Email your Mercury serial number to info@harrisboatworks.ca. We confirm in one reply, usually same business day. The serial is on the cowl plate, the lower starboard side of the motor, the mounting bracket, the VesselView display, or your original purchase paperwork.
+Email your Mercury serial number to info@harrisboatworks.ca. HBW will check it against Mercury's records and reply with the eligibility result or any follow-up information needed. The serial is on the cowl plate, the lower starboard side of the motor, the mounting bracket, the VesselView display, or your original purchase paperwork.
 
 ### What if I'm not eligible but I want Connect?
 

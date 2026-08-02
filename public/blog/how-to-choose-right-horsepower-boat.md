@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Boat Horsepower"
 description: "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 
@@ -168,7 +168,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 **3. Buying for one use and ignoring the rest.** "I just need it for fishing" is fine until your kids want to tube next summer. Think through the full use case before you buy.
 
-**4. Ignoring the prop.** A right-sized motor with a wrong prop loses real performance. We test props during the sea trial of every repower.
+**4. Ignoring the prop.** A right-sized motor with a wrong prop loses real performance. Prop verification is matched to the motor, hull, rigging, work order, and safe seasonal testing conditions.
 
 **5. Ignoring load.** Empty boat numbers are aspirational. A family of five with gear and a cooler is a different boat than the demo run.
 

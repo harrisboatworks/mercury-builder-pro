@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-06-19
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-06-19
+date_modified: 2026-08-02
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last updated:** 2026-06-19  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
@@ -100,7 +100,7 @@ Heavier cable for higher-HP motors. Battery switch and dual-battery selectors re
 Fuel line, primer bulb, fuel filter. Typically replaced during a repower regardless of apparent condition, fuel system age affects new motor reliability, and these parts are cheap insurance.
 
 **Propeller** 
-Aluminum 3-blade (approximately $450 CAD) for motors up to 115 HP. Stainless 3 or 4-blade ($800 to $2,000 CAD) for 150 HP and up. We test props during sea trial of every repower and swap until the motor reaches its rated WOT RPM range.
+Aluminum 3-blade props are a common starting point for many motors up to 115 HP. Stainless 3- or 4-blade options may suit some 150 HP and larger applications. Current prop pricing and fit depend on the exact model. When safe seasonal conditions allow, an on-water check can verify WOT RPM; any prop change still requires customer approval under the work order.
 
 ### 2026 Rigging Cost Ranges by Scenario
 
@@ -229,7 +229,7 @@ Some service yes (oil changes, prop swaps, gauge cleaning). Throttle/shift integ
 
 ### How long does the rigging install take?
 
-For Mercury-to-Mercury repowers, rigging is part of the 2 to 4 day shop time. Brand conversions take longer (typically 4 to 6 days) because of the additional rigging work. Spring rush adds wait time before the shop starts.
+It depends on the approved rigging scope, parts availability, findings during removal, current shop capacity, and required testing. Brand conversions usually involve more components than a compatible Mercury-to-Mercury installation. HBW provides the applicable work plan for the specific boat.
 
 ### What rigging components fail most often?
 
