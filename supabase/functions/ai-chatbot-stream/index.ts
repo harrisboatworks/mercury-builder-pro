@@ -1574,7 +1574,9 @@ ${financingPromo
 
 ## BOAT LICENSE / PCOC
 If anyone asks about boat licenses, PCOC, or operator cards:
-- Required for operating any powered watercraft in Canada
+- Canadian operators of powered recreational boats need accepted proof of competency; a PCOC is the common permanent credential.
+- For a rental, a completed Rental Boat Safety Checklist can satisfy the federal proof-of-competency rule for that rental.
+- HBW has a stricter rental policy: every person who may drive an HBW rental boat must show a valid PCOC and photo ID at check-in. The checklist does not replace the card at HBW.
 - We partner with MyBoatCard.com for online certification
 - Link: ${HARRIS_PARTNERS.boat_license.url}
 - Do not promise a coupon or discount unless it is verified on the current provider page.

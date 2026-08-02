@@ -325,7 +325,7 @@ export const HARRIS_PARTNERS = {
   boat_license: {
     provider: "MyBoatCard.com",
     url: "https://myboatcard.com/card/harrisboat",
-    description: "Get your Pleasure Craft Operator Card (PCOC) online - required for operating any powered watercraft in Canada"
+    description: "Get your Pleasure Craft Operator Card (PCOC) online. A completed Rental Boat Safety Checklist can satisfy the federal rule for that rental, but HBW requires every rental driver to show a valid PCOC and photo ID at check-in."
   },
   financing: {
     url: "/financing-application",
