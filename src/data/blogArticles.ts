@@ -2289,7 +2289,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** The new Halo gives groups of up to 12 people a roomy single-boat option. For larger groups, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Book the fleet at harrisboatworks.ca/rentals.
+> **Quick answer:** The Halo is listed for groups of up to 12. For larger groups, check current availability and book enough boats for the full headcount. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Book online at harrisboatworks.ca/rentals.
 
 Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.
 
@@ -2307,7 +2307,7 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 ## The Three Rules That Surprise Group Organizers
 
-**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. The Halo is listed for up to 12 people. A group of 13 can't "mostly fit," so the fix is simple: book two boats. Groups do it all summer.
+**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. The Halo is listed for up to 12 people. A group of 13 can't "mostly fit," so check current availability and book enough capacity for the full group.
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
@@ -2323,9 +2323,9 @@ Mix boats by what each sub-group wants to do:
 
 | Group | Boats to book | Why |
 |---|---|---|
-| Big family day (up to 12) | Halo pontoon | The fleet's largest single-boat passenger capacity, with roomy seating and Bluetooth audio |
-| Larger family day (13 to 16) | Two cruise or fishing pontoons | Split the group safely while everyone cruises and anchors together for lunch |
-| Fishing weekend (4 to 8) | Two ProSport fishing boats, or one plus a fishing pontoon | Split up, hit different spots, compare catches at dinner |
+| Big family day (up to 12) | Halo pontoon | Check the live listing for availability, capacity, and equipment |
+| Group above one boat's posted capacity | Enough currently available boats for the full headcount | Match the combined posted capacity to everyone attending |
+| Fishing weekend | Currently available ProSport or Transporter options | Match each sub-group to a live listing and posted capacity |
 | Two-family cottage crew | One cruise pontoon + one fishing boat | Anglers leave at 8 am, families launch at 10 |
 | Reunion with elders and toddlers | Cruise pontoons | Stable, shaded, easy boarding, room for the stroller crowd |
 
@@ -22160,8 +22160,8 @@ What's NOT included:
 **You want a relaxed cruising or swimming day.**
 → Start with the **23 Cruise or Halo pontoon** listings and verify capacity and equipment for your group.
 
-**You're a group of 7-12 wanting a longer day with food and multiple swim stops.**
-→ **Halo pontoon.** It has the fleet's largest single-boat passenger capacity, Bluetooth audio, and the roomiest setup for a cruising day. It doesn't have a livewell or fishfinder, so choose a Transporter if fishing is the priority.
+**You want to mix fishing and cruising.**
+→ Compare the **20-ft and 24-ft Transporter** listings; both are presented as fishing pontoons in the live booking system.
 
 **You're a small fishing group.**
 → Review the **16-ft ProSport** listing and its posted capacity and equipment.

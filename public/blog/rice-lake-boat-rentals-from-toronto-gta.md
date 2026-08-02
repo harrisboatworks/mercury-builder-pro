@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-05-16  
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-01  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta
 
@@ -72,11 +72,16 @@ Each rental includes:
 - **Public washrooms** during rental hours; the office provides the key
 
 What you bring:
-- **Valid [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
+- **Valid [Pleasure Craft Operator Card](/blog/boat-rental-licence-ontario-guide) (PCOC)** for every person who may drive. HBW requires it as a rental policy, even though federal rules allow a rental safety checklist as proof of competency in some rental situations. Bring the permanent card or temporary proof with your photo ID.
 - **Sunscreen, hats, water, snacks**
 - **Fishing gear and licence if fishing.** [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
 
+### Before your rental
+
+HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.
+
+*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*
 What's NOT included:
 - **Fuel used**, which staff calculate when the boat returns
 - **Damage terms.** HBW processes a $1,000 credit-card authorization, and the current rental agreement governs responsibility for damage, including amounts above the hold
@@ -173,7 +178,7 @@ The itinerary above is the fun math. Here's the money math, all in, so nobody's 
 | Boat rental | Live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) | Varies by boat and day; check the current calendar |
 | Fuel (paid at return) | Varies with use | You pay for what you burn; boat, load, wind, distance, and throttle all matter |
 | Damage deposit | $1,000 hold, refunded | Credit card authorization, not a charge |
-| Boating licence | Complete an accredited course before rental day | HBW links to [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); the PCOC itself does not expire |
+| Operator card | One-time | Every HBW rental driver must bring a valid PCOC; it never expires |
 | Bait | Check current availability | Bring tackle and any bait you need if it is not available on site |
 | Lunch and treats | Your call | Gores Landing and Bewdley both have options; ice cream stops are mandatory with kids aboard |
 
@@ -191,7 +196,7 @@ Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 
 
 ### Do I need a boating licence to rent at HBW?
 
-The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation.
+Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day.
 
 ### What does a rental cost?
 

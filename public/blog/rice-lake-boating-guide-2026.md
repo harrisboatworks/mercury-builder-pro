@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-01  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
@@ -181,7 +181,7 @@ $20 per day or $200 for a seasonal pass (April through November). Seasonal pass 
 
 ### Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?
 
-The driver must bring proof of operator competency. A Pleasure Craft Operator Card works. HBW's current policy directs non-Canadian residents to complete a renter checklist waiver after reservation.
+You can reserve a boat, but Harris Boat Works requires every rental driver to show a valid Pleasure Craft Operator Card and photo ID before departure. Passengers don't need one. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details.
 
 ### Is Rice Lake too shallow for a 21-foot pontoon?
 

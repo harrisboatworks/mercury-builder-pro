@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-01  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 
 # Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
 
-> **Quick answer:** For groups bigger than one boat's capacity, check current availability for two or more boats and plan to run them together. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book online at harrisboatworks.ca/rentals.
+> **Quick answer:** The Halo is listed for groups of up to 12. For larger groups, check current availability and book enough boats for the full headcount. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Book online at harrisboatworks.ca/rentals.
 
 Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.
 
@@ -48,12 +48,17 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 ## The Three Rules That Surprise Group Organizers
 
-**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. Twelve people can't "mostly fit" on a boat whose posted capacity is lower. Check each live listing and book enough capacity for the full group.
+**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. The Halo is listed for up to 12 people. A group of 13 can't "mostly fit," so check current availability and book enough capacity for the full group.
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
-**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); get every designated driver through it before rental day. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+**3. Every boat needs its own licensed driver.** One operator card doesn't cover a convoy. HBW requires each boat's driver to show photo ID and a valid Pleasure Craft Operator Card at check-in. If someone may take a turn at the helm, get their card sorted before rental day. Details are in [our licence guide](/blog/boat-rental-licence-ontario-guide).
 
+### Before your rental
+
+HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.
+
+*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*
 ---
 
 ## Picking Your Fleet
@@ -62,8 +67,9 @@ Mix boats by what each sub-group wants to do:
 
 | Group | Boats to book | Why |
 |---|---|---|
-| Group above one boat's posted capacity | Enough currently available boats for the full headcount | Everyone swims, cruises, and anchors together for lunch |
-| Fishing weekend | Currently available ProSport or fishing-pontoon options | Match each sub-group to a live listing and posted capacity |
+| Big family day (up to 12) | Halo pontoon | Check the live listing for availability, capacity, and equipment |
+| Group above one boat's posted capacity | Enough currently available boats for the full headcount | Match the combined posted capacity to everyone attending |
+| Fishing weekend | Currently available ProSport or Transporter options | Match each sub-group to a live listing and posted capacity |
 | Two-family cottage crew | One cruise pontoon + one fishing boat | Anglers leave at 8 am, families launch at 10 |
 | Reunion with elders and toddlers | Cruise pontoons | Stable, shaded, easy boarding, room for the stroller crowd |
 
@@ -125,7 +131,7 @@ Yes, subject to current availability. Book each boat in the [online system](http
 
 ### How many people fit on a rental pontoon?
 
-Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore.
+Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two.
 
 ### Can our group have a BBQ at the marina?
 
@@ -137,7 +143,7 @@ Yes. Multi-day rentals can stay at your cottage dock for the duration, and you c
 
 ### Do we need a licence for every boat we rent?
 
-Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian visitors complete a renter's checklist waiver instead.
+Yes. HBW requires one driver with a valid Pleasure Craft Operator Card for each rental boat. Every driver shows photo ID and a permanent or temporary card at check-in. Passengers don't need one, but anyone who may take the helm does.
 
 ### Can we bring alcohol for a celebration on the water?
 

@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-01  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
 # Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)
 
-> **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
+> **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. The driver must bring photo ID and a valid Pleasure Craft Operator Card. Book at harrisboatworks.ca/rentals.
 
 Most rental questions start in the same place: what boats are currently available, what does it cost, and what licence does the driver need?
 
@@ -85,15 +85,20 @@ The current signed rental agreement governs responsibility for damage, including
 
 ## Licences: The Two Cards That Matter
 
-**To drive the boat**, the operator needs proof of competency. If you have a Pleasure Craft Operator Card, bring it. If nobody in your group has one, you can complete the boating licence course online at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian residents complete a renter's checklist waiver after reserving. Full details in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
+**To drive the boat**, HBW requires a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If more than one person may drive, each driver needs a card. Full details are in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
+### Before your rental
+
+HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.
+
+*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*
 **To fish**, anyone 18 to 64 needs an Outdoors Card plus an Ontario fishing licence, sport or conservation. Under 18 or 65 plus, government ID is your licence. We don't sell fishing licences; get them at [ontario.ca](https://www.ontario.ca/page/get-fishing-licence) before you arrive. Canadian residents fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
 
 ---
 
 ## Common mistakes
 
-- **Booking the boat but not the licence.** Complete the required driver-competency process before rental day rather than counting on a last-minute fix at check-in.
+- **Booking the boat but not the operator card.** The course takes time. Complete it before rental day, not at our counter at 8:05 am.
 - **Bringing a cooler of beer.** Alcohol on our rental boats is prohibited, full stop. Same rules as a car in Ontario, and the OPP patrol Rice Lake seriously.
 - **Ignoring the buoyed channels.** The old Harwood-to-Hiawatha rail causeway left rock just under the surface mid-lake. It's unmarked outside the buoyed passes. Use the map we hand you; it exists because of exactly this.
 - **Planning a shore party.** Your group size is the boat's capacity. Extra people can't hang out on our property while you boat.
@@ -144,7 +149,7 @@ Pick your boat and date, and the booking system shows you live availability and 
 
 ### Do I need a boating licence to rent a boat on Rice Lake?
 
-The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online at myboatcard.com/card/harrisboat. Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-ontario-guide).
+Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
 ### How much does a Rice Lake boat rental cost?
 

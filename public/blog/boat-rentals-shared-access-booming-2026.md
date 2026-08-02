@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-02-06  
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-01  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026
 
@@ -82,7 +82,7 @@ With a rental, you pay for the dates you book without taking on annual shrinkwra
 A few things first-time renters should plan for:
 
 - **Assuming a preferred boat will be open.** Check the live calendar before making the rest of your plans and book online when you are ready.
-- **Skipping the licence.** Every boat driver in Ontario needs a boat operator's licence. You can get one online before your rental; our [rental licence guide](/blog/boat-rental-licence-ontario-guide) covers it.
+- **Skipping the operator card.** HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. Our [rental licence guide](/blog/boat-rental-licence-ontario-guide) explains what to arrange before rental day.
 - **Underestimating space.** Check the selected boat's live capacity and equipment, then count people and gear honestly before you book. The current lineup includes the Halo as well as Cruise, Transporter, and ProSport choices.
 - **Ignoring the forecast.** Rice Lake is shallow and kicks up chop fast in a west wind. Build a weather plan B into your day.
 
@@ -92,7 +92,7 @@ The current HBW rental process is straightforward: book online, complete the req
 
 ## Ready to get on the water?
 
-**Renting:** all bookings are online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). The driver can complete the boating-licence course at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat).
+**Renting:** all bookings are online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). If the driver still needs a PCOC, the boating-licence course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat).
 
 **Buying:** if your own comparison favours ownership, build a real quote with Canadian pricing at [mercuryrepower.ca](https://mercuryrepower.ca), or come walk the lot. We'll give you the honest answer for your situation, including "keep renting."
 
