@@ -104,7 +104,7 @@ What's NOT included:
 
 ## Check the Current Rental Period
 
-The live booking system shows the rental period offered for each boat and date. Current standard hours on HBW's rental page are Monday to Saturday 8:00 am to 5:00 pm and Sunday 9:00 am to 4:00 pm. Multi-day renters may use the boat outside those hours while it remains in their care, subject to the current agreement and working-light requirement after dark.
+The live booking system shows the rental period offered for each boat and date. Confirm the selected period and any multi-day terms in the current listing and rental agreement before booking.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

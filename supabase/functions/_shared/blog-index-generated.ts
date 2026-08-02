@@ -385,7 +385,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can we rent multiple boats at once on Rice Lake?",
-        "a": "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in."
+        "a": "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own driver with a valid Pleasure Craft Operator Card and photo ID at check-in."
       },
       {
         "q": "How many people fit on a rental pontoon?",
