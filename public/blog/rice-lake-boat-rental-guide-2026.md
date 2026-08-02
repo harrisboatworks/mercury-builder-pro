@@ -46,7 +46,7 @@ The live booking system is the source of truth for the boats and dates available
 
 | Boat | Size | Best for |
 |---|---|---|
-| 23 Cruise and Halo pontoons | About 23 ft | Cruising, swimming, and larger groups; check each boat's posted capacity |
+| 23 Cruise and Halo pontoons | See live listing | Cruising, swimming, and larger groups; check each boat's posted capacity |
 | 20 and 24 Transporter pontoons | 20 and 24 ft | Fishing and cruising, with open deck space |
 | 16 ProSport fishing boats | 16 ft | Small fishing groups; check the live listing for capacity and equipment |
 

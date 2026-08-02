@@ -2278,7 +2278,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     readTime: "~8 min read",
     keywords: ["group boat rental rice lake", "family reunion boat rental ontario", "rent multiple boats", "pontoon rental for large group", "fishing weekend boat rental kawarthas"],
     faqs: [
-      { question: "Can we rent multiple boats at once on Rice Lake?", answer: "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in." },
+      { question: "Can we rent multiple boats at once on Rice Lake?", answer: "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own driver with a valid Pleasure Craft Operator Card and photo ID at check-in." },
       { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two." },
       { question: "Can our group have a BBQ at the marina?", answer: "Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity." },
       { question: "Can we keep rental boats at our cottage for a reunion weekend?", answer: "Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you." },
@@ -2368,7 +2368,7 @@ Group send-offs follow the current rental process for each boat: life jackets ar
 ## Frequently Asked Questions
 
 **Can we rent multiple boats at once on Rice Lake?**
-Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in.
+Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own driver with a valid Pleasure Craft Operator Card and photo ID at check-in.
 
 **How many people fit on a rental pontoon?**
 Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two.
@@ -2615,7 +2615,7 @@ The live booking system is the source of truth for the boats and dates available
 
 | Boat | Size | Best for |
 |---|---|---|
-| 23 Cruise and Halo pontoons | About 23 ft | Cruising, swimming, and larger groups; check each boat's posted capacity |
+| 23 Cruise and Halo pontoons | See live listing | Cruising, swimming, and larger groups; check each boat's posted capacity |
 | 20 and 24 Transporter pontoons | 20 and 24 ft | Fishing and cruising, with open deck space |
 | 16 ProSport fishing boats | 16 ft | Small fishing groups; check the live listing for capacity and equipment |
 
@@ -22176,7 +22176,7 @@ What's NOT included:
 
 ## Check the Current Rental Period
 
-The live booking system shows the rental period offered for each boat and date. Current standard hours on HBW's rental page are Monday to Saturday 8:00 am to 5:00 pm and Sunday 9:00 am to 4:00 pm. Multi-day renters may use the boat outside those hours while it remains in their care, subject to the current agreement and working-light requirement after dark.
+The live booking system shows the rental period offered for each boat and date. Confirm the selected period and any multi-day terms in the current listing and rental agreement before booking.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 

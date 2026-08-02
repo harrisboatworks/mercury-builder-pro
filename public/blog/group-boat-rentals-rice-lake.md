@@ -127,7 +127,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
 
 ### Can we rent multiple boats at once on Rice Lake?
 
-Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in.
+Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own driver with a valid Pleasure Craft Operator Card and photo ID at check-in.
 
 ### How many people fit on a rental pontoon?
 
