@@ -988,6 +988,7 @@ const punjabiBlogArticles = loadTranslatedBlogArticles('../src/data/punjabiBlogA
 const urduBlogArticles = loadTranslatedBlogArticles('../src/data/urduBlogArticles.ts', 'urduBlogArticles');
 const tagalogBlogArticles = loadTranslatedBlogArticles('../src/data/tagalogBlogArticles.ts', 'tagalogBlogArticles');
 const hindiBlogArticles = loadTranslatedBlogArticles('../src/data/hindiBlogArticles.ts', 'hindiBlogArticles');
+const traditionalChineseBlogArticles = loadTranslatedBlogArticles('../src/data/traditionalChineseBlogArticles.ts', 'traditionalChineseBlogArticles');
 
 assertLoaderNonEmpty(frenchBlogArticles, '../src/data/frenchBlogArticles.ts', 'frenchBlogArticles', 'French');
 assertLoaderNonEmpty(koreanBlogArticles, '../src/data/koreanBlogArticles.ts', 'koreanBlogArticles', 'Korean');
@@ -997,6 +998,7 @@ assertLoaderNonEmpty(punjabiBlogArticles, '../src/data/punjabiBlogArticles.ts', 
 assertLoaderNonEmpty(urduBlogArticles, '../src/data/urduBlogArticles.ts', 'urduBlogArticles', 'Urdu');
 assertLoaderNonEmpty(tagalogBlogArticles, '../src/data/tagalogBlogArticles.ts', 'tagalogBlogArticles', 'Tagalog');
 assertLoaderNonEmpty(hindiBlogArticles, '../src/data/hindiBlogArticles.ts', 'hindiBlogArticles', 'Hindi');
+assertLoaderNonEmpty(traditionalChineseBlogArticles, '../src/data/traditionalChineseBlogArticles.ts', 'traditionalChineseBlogArticles', 'Traditional Chinese');
 
 console.log(`[static-prerender] loaded ${frenchBlogArticles.length} fr-CA articles`);
 console.log(`[static-prerender] loaded ${koreanBlogArticles.length} ko-KR articles`);
@@ -2656,6 +2658,46 @@ function promotionsPageSchema() {
   };
 }
 
+const SUMMER_SAVINGS_START_ISO = '2026-07-15T00:00:00-04:00';
+const SUMMER_SAVINGS_END_ISO = '2026-08-31T23:59:59-04:00';
+const TD_ALWAYS_ON_END_ISO = '2026-12-31T23:59:59-05:00';
+
+function promotionsNoscriptSnapshot(now = new Date()) {
+  const timestamp = now.getTime();
+  const summerIsActive =
+    timestamp >= new Date(SUMMER_SAVINGS_START_ISO).getTime() &&
+    timestamp <= new Date(SUMMER_SAVINGS_END_ISO).getTime();
+
+  if (summerIsActive) {
+    return (
+      '<section><h2>Summer Savings Rebate: Save Up to $700 CAD</h2>' +
+      '<p>Save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus promotional financing as low as 2.99% for 24 months (OAC). Available July 15 to August 31, 2026 at Harris Boat Works.</p>' +
+      '<table><caption>Mercury Summer Savings rebate by horsepower</caption>' +
+      '<thead><tr><th scope="col">Eligible horsepower</th><th scope="col">Rebate (CAD)</th></tr></thead><tbody>' +
+      '<tr><td>2.5-3.5 HP</td><td>$50</td></tr>' +
+      '<tr><td>4-8 HP</td><td>$75</td></tr>' +
+      '<tr><td>9.9-25 HP</td><td>$100</td></tr>' +
+      '<tr><td>30-115 HP</td><td>$250</td></tr>' +
+      '<tr><td>150-200 HP</td><td>$350</td></tr>' +
+      '<tr><td>225-425 HP</td><td>$700</td></tr>' +
+      '</tbody></table>' +
+      '<p>The rebate and the 2.99% for 24 months promotional financing are layered, not either-or. Approval and eligibility conditions apply. The dealer confirms the final offer in writing.</p>' +
+      '<p><a href="/quote/motor-selection">Build a Mercury quote</a> or call Harris Boat Works at (905) 342-2153.</p></section>'
+    );
+  }
+
+  if (timestamp <= new Date(TD_ALWAYS_ON_END_ISO).getTime()) {
+    return (
+      '<section><h2>Current Mercury financing</h2>' +
+      `<p>Eligible new Mercury outboards may qualify for ${escapeHtml(LIVE_RATE_TOKENS.rate)} through December 31, 2026 (OAC). The contract is up to 60 months and payment estimates may use amortization up to 240 months, so a balance may remain due at maturity.</p>` +
+      '<p>HBW confirms the lender, amount financed, $349 DealerPlan documentation fee, and all terms in the written disclosure.</p>' +
+      '<p><a href="/financing-application">Apply for financing</a> or <a href="/quote/motor-selection">build a Mercury quote</a>.</p></section>'
+    );
+  }
+
+  return '<section><h2>Check current Mercury offers</h2><p>Mercury rebates and financing programs change. Build a quote or contact Harris Boat Works for the current written offer and eligibility terms.</p><p><a href="/quote/motor-selection">Build a Mercury quote</a></p></section>';
+}
+
 // ============================================================
 // Blog article schema, kept in sync with src/components/seo/BlogSEO.tsx
 // ============================================================
@@ -2818,8 +2860,9 @@ function stripVisualDirectiveBlocks(text) {
 // Extract first ~280 chars of plain text from blog content for noscript intro.
 function firstParagraph(content, fallback) {
   if (!content) return sanitizeSchemaText(fallback);
+  const resolvedContent = substituteLiveRateTokens(content);
   // Drop leading H1 heading line so it doesn't duplicate the rendered <h1>.
-  const withoutH1 = stripVisualDirectiveBlocks(String(content).replace(/^\s*#\s+.+(?:\r?\n|$)/, ''));
+  const withoutH1 = stripVisualDirectiveBlocks(String(resolvedContent).replace(/^\s*#\s+.+(?:\r?\n|$)/, ''));
   const stripped = withoutH1
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/<[^>]*>/g, ' ')
@@ -3213,6 +3256,7 @@ const paDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Pr
 const urDealerStripHtml = '<div class="dealer-confidence-strip" dir="rtl"><span>Mercury Premier Dealer</span><span>·</span><span>1947 سے family-owned</span><span>·</span><span>1965 سے Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
 const tlDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>Family-owned mula 1947</span><span>·</span><span>Mercury dealer mula 1965</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
 const hiDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier Dealer</span><span>·</span><span>1947 से family-owned</span><span>·</span><span>1965 से Mercury dealer</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+const zhHantDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Premier 經銷商</span><span>·</span><span>家族經營自 1947 年</span><span>·</span><span>Mercury 經銷商自 1965 年</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">網上報價工具</a></div>';
 
 const frenchBlogArticleRoutes = buildTranslatedBlogRoutes(frenchBlogArticles, 'fr', frDealerStripHtml, 'fr_CA', 'fr');
 const koreanBlogArticleRoutes = buildTranslatedBlogRoutes(koreanBlogArticles, 'ko', koDealerStripHtml, 'ko_KR', 'ko');
@@ -3222,7 +3266,14 @@ const punjabiBlogArticleRoutes = buildTranslatedBlogRoutes(punjabiBlogArticles, 
 const urduBlogArticleRoutes = buildTranslatedBlogRoutes(urduBlogArticles, 'ur', urDealerStripHtml, 'ur_PK', 'ur');
 const tagalogBlogArticleRoutes = buildTranslatedBlogRoutes(tagalogBlogArticles, 'tl', tlDealerStripHtml, 'tl_PH', 'tl');
 const hindiBlogArticleRoutes = buildTranslatedBlogRoutes(hindiBlogArticles, 'hi', hiDealerStripHtml, 'hi_IN', 'hi');
-console.log(`[static-prerender] translated blog routes → fr:${frenchBlogArticleRoutes.length} ko:${koreanBlogArticleRoutes.length} zh:${mandarinBlogArticleRoutes.length} es:${spanishBlogArticleRoutes.length} pa:${punjabiBlogArticleRoutes.length} ur:${urduBlogArticleRoutes.length} tl:${tagalogBlogArticleRoutes.length} hi:${hindiBlogArticleRoutes.length}`);
+const traditionalChineseBlogArticleRoutes = buildTranslatedBlogRoutes(
+  traditionalChineseBlogArticles,
+  'zh-hant',
+  zhHantDealerStripHtml,
+  'zh_TW',
+  'zh-Hant',
+).map((route) => ({ ...route, robots: 'noindex, follow' }));
+console.log(`[static-prerender] translated blog routes → fr:${frenchBlogArticleRoutes.length} ko:${koreanBlogArticleRoutes.length} zh:${mandarinBlogArticleRoutes.length} zh-Hant:${traditionalChineseBlogArticleRoutes.length} es:${spanishBlogArticleRoutes.length} pa:${punjabiBlogArticleRoutes.length} ur:${urduBlogArticleRoutes.length} tl:${tagalogBlogArticleRoutes.length} hi:${hindiBlogArticleRoutes.length}`);
 
 
 // ============================================================
@@ -4848,13 +4899,14 @@ const routes = [
   ...[
     { lang: 'fr', articles: frenchBlogArticles,   htmlLang: 'fr',      ogLocale: 'fr_CA',  h1: 'Guides Mercury et conseils nautiques',           intro: 'Conseils d\'experts sur les moteurs hors-bord Mercury, remotorisation, entretien et achat — par le concessionnaire Mercury Marine Premier de l\'Ontario depuis 1947.', backTo: 'Tous les articles' },
     { lang: 'zh', articles: mandarinBlogArticles, htmlLang: 'zh-Hans', ogLocale: 'zh_CN',  h1: '水星马达指南与船艇技巧',                         intro: '安大略省自1947年起的水星 Premier 经销商，提供水星舷外机、动力升级、保养与购买的专业建议。', backTo: '所有文章' },
+    { lang: 'zh-hant', articles: traditionalChineseBlogArticles, htmlLang: 'zh-Hant', ogLocale: 'zh_TW', h1: 'Mercury 繁體中文指南', intro: '為安省船主提供的 Mercury 繁體中文指南：舷外機、換裝新機、保養、安全與 Rice Lake 釣魚建議。', backTo: '全部指南', robots: 'noindex, follow' },
     { lang: 'ko', articles: koreanBlogArticles,   htmlLang: 'ko',      ogLocale: 'ko_KR',  h1: 'Mercury 모터 가이드 & 보팅 팁',                  intro: '1947년부터 온타리오의 Mercury Marine Premier 딜러가 제공하는 Mercury 선외기, 리파워, 정비 및 구매 가이드.', backTo: '전체 글' },
     { lang: 'es', articles: spanishBlogArticles,  htmlLang: 'es',      ogLocale: 'es_419', h1: 'Guías Mercury y consejos de navegación',         intro: 'Consejos expertos sobre motores fueraborda Mercury, repotenciación, mantenimiento y compra — del distribuidor Mercury Marine Premier de Ontario desde 1947.', backTo: 'Todos los artículos' },
     { lang: 'hi', articles: hindiBlogArticles,    htmlLang: 'hi',      ogLocale: 'hi_IN',  h1: 'Mercury मोटर गाइड और बोटिंग टिप्स',              intro: '1947 से ओंटारियो के Mercury Marine Premier डीलर से Mercury आउटबोर्ड मोटरों पर विशेषज्ञ सलाह।', backTo: 'सभी लेख' },
     { lang: 'pa', articles: punjabiBlogArticles,  htmlLang: 'pa',      ogLocale: 'pa_IN',  h1: 'Mercury ਮੋਟਰ ਗਾਈਡਾਂ ਅਤੇ ਬੋਟਿੰਗ ਟਿਪਸ',           intro: '1947 ਤੋਂ ਓਨਟਾਰੀਓ ਦੇ Mercury Marine Premier ਡੀਲਰ ਤੋਂ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰਾਂ ਬਾਰੇ ਮਾਹਰ ਸਲਾਹ।', backTo: 'ਸਾਰੇ ਲੇਖ' },
     { lang: 'ur', articles: urduBlogArticles,     htmlLang: 'ur',      ogLocale: 'ur_PK',  h1: 'Mercury موٹر گائیڈز اور بوٹنگ ٹپس',              intro: '1947 سے Ontario کے Mercury Marine Premier dealer سے Mercury outboard motors پر ماہر مشورہ۔', backTo: 'تمام مضامین' },
     { lang: 'tl', articles: tagalogBlogArticles,  htmlLang: 'tl',      ogLocale: 'tl_PH',  h1: 'Mercury motor guides at boating tips',           intro: 'Mga eksperto sa Mercury outboard motors mula sa Mercury Marine Premier dealer ng Ontario simula 1947.', backTo: 'Lahat ng artikulo' },
-  ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo }) => ({
+  ].map(({ lang, articles, htmlLang, ogLocale, h1, intro, backTo, robots, extraHead }) => ({
     path: `/blog/${lang}`,
     title: `${h1} | Harris Boat Works`,
     description: intro,
@@ -4862,6 +4914,8 @@ const routes = [
     intro,
     htmlLang,
     ogLocale,
+    robots,
+    extraHead,
     schemas: [genericPageSchema(`/blog/${lang}`, h1, intro)],
     extraNoscript: () => {
       const visible = (articles || []).filter(a => a.isPublished !== false);
@@ -5174,7 +5228,8 @@ const routes = [
     description: 'Current Mercury outboard promotions, rebates, and financing offers from Harris Boat Works, Mercury Premier Dealer on Rice Lake. Updated as offers change.',
     h1: 'Mercury Outboard Promotions',
     intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965.',
-    schemas: [promotionsPageSchema()]
+    schemas: [promotionsPageSchema()],
+    extraNoscript: promotionsNoscriptSnapshot,
   },
   {
     path: '/mercury-product-protection',
@@ -5455,6 +5510,7 @@ const routes = [
   ...frenchBlogArticleRoutes,
   ...koreanBlogArticleRoutes,
   ...mandarinBlogArticleRoutes,
+  ...traditionalChineseBlogArticleRoutes,
   ...spanishBlogArticleRoutes,
   ...punjabiBlogArticleRoutes,
   ...urduBlogArticleRoutes,
@@ -5530,28 +5586,28 @@ function sanitizeSchemaValue(value) {
 }
 
 function detectLang(path) {
-  if (path.startsWith('/blog/zh-hant/') || path === '/zh-hant') return 'zh-Hant';
-  if (path.startsWith('/blog/fr/') || path === '/fr') return 'fr-CA';
-  if (path.startsWith('/blog/zh/') || path === '/zh') return 'zh-Hans';
-  if (path.startsWith('/blog/ko/') || path === '/ko') return 'ko';
-  if (path.startsWith('/blog/es/') || path === '/es') return 'es';
-  if (path.startsWith('/blog/pa/')) return 'pa';
-  if (path.startsWith('/blog/ur/')) return 'ur';
-  if (path.startsWith('/blog/tl/')) return 'tl';
-  if (path.startsWith('/blog/hi/')) return 'hi';
+  if (path.startsWith('/blog/zh-hant/') || path === '/blog/zh-hant' || path === '/zh-hant') return 'zh-Hant';
+  if (path.startsWith('/blog/fr/') || path === '/blog/fr' || path === '/fr') return 'fr-CA';
+  if (path.startsWith('/blog/zh/') || path === '/blog/zh' || path === '/zh') return 'zh-Hans';
+  if (path.startsWith('/blog/ko/') || path === '/blog/ko' || path === '/ko') return 'ko';
+  if (path.startsWith('/blog/es/') || path === '/blog/es' || path === '/es') return 'es';
+  if (path.startsWith('/blog/pa/') || path === '/blog/pa') return 'pa';
+  if (path.startsWith('/blog/ur/') || path === '/blog/ur') return 'ur';
+  if (path.startsWith('/blog/tl/') || path === '/blog/tl') return 'tl';
+  if (path.startsWith('/blog/hi/') || path === '/blog/hi') return 'hi';
   return 'en';
 }
 
 function detectOgLocale(path) {
-  if (path.startsWith('/blog/zh-hant/') || path === '/zh-hant') return 'zh_TW';
-  if (path.startsWith('/blog/fr/') || path === '/fr') return 'fr_CA';
-  if (path.startsWith('/blog/zh/') || path === '/zh') return 'zh_CN';
-  if (path.startsWith('/blog/ko/') || path === '/ko') return 'ko_KR';
-  if (path.startsWith('/blog/es/') || path === '/es') return 'es_ES';
-  if (path.startsWith('/blog/pa/')) return 'pa_IN';
-  if (path.startsWith('/blog/ur/')) return 'ur_PK';
-  if (path.startsWith('/blog/tl/')) return 'tl_PH';
-  if (path.startsWith('/blog/hi/')) return 'hi_IN';
+  if (path.startsWith('/blog/zh-hant/') || path === '/blog/zh-hant' || path === '/zh-hant') return 'zh_TW';
+  if (path.startsWith('/blog/fr/') || path === '/blog/fr' || path === '/fr') return 'fr_CA';
+  if (path.startsWith('/blog/zh/') || path === '/blog/zh' || path === '/zh') return 'zh_CN';
+  if (path.startsWith('/blog/ko/') || path === '/blog/ko' || path === '/ko') return 'ko_KR';
+  if (path.startsWith('/blog/es/') || path === '/blog/es' || path === '/es') return 'es_ES';
+  if (path.startsWith('/blog/pa/') || path === '/blog/pa') return 'pa_IN';
+  if (path.startsWith('/blog/ur/') || path === '/blog/ur') return 'ur_PK';
+  if (path.startsWith('/blog/tl/') || path === '/blog/tl') return 'tl_PH';
+  if (path.startsWith('/blog/hi/') || path === '/blog/hi') return 'hi_IN';
   return 'en_CA';
 }
 
@@ -6509,6 +6565,52 @@ for (const route of blogArticleRoutes) {
   // catch unrendered headings, bold, code fences, or author-footer signatures.
   const noscriptsForCheck = noscripts.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
   if (markdownPattern.test(noscriptsForCheck)) verifyErrors.push(`${route.path}: noscript contains raw markdown or author footer.`);
+}
+
+const monthlyPaymentPath = join(DIST, 'blog', 'mercury-outboard-monthly-payment-ontario-2026', 'index.html');
+if (!existsSync(monthlyPaymentPath)) {
+  verifyErrors.push('Monthly-payment article HTML is missing.');
+} else {
+  const monthlyPaymentHtml = readFileSync(monthlyPaymentPath, 'utf8');
+  if (/\{\{LIVE_RATE(?:_PCT)?\}\}/.test(monthlyPaymentHtml)) {
+    verifyErrors.push('Monthly-payment article HTML contains an unresolved live-rate token.');
+  }
+}
+
+const promotionsPath = join(DIST, 'promotions', 'index.html');
+if (!existsSync(promotionsPath)) {
+  verifyErrors.push('Promotions HTML is missing.');
+} else {
+  const promotionsHtml = readFileSync(promotionsPath, 'utf8');
+  const buildTimestamp = Date.now();
+  const requiredPromotionText = buildTimestamp <= new Date(SUMMER_SAVINGS_END_ISO).getTime()
+    ? ['Summer Savings Rebate: Save Up to $700 CAD', '2.99% for 24 months', 'August 31, 2026']
+    : buildTimestamp <= new Date(TD_ALWAYS_ON_END_ISO).getTime()
+      ? ['Current Mercury financing', LIVE_RATE_TOKENS.rate, 'December 31, 2026']
+      : ['Check current Mercury offers', 'Build a Mercury quote'];
+  for (const expected of requiredPromotionText) {
+    if (!promotionsHtml.includes(expected)) {
+      verifyErrors.push(`/promotions prerender is missing current-offer text: ${expected}`);
+    }
+  }
+}
+
+for (const routePath of ['/blog/zh-hant', ...traditionalChineseBlogArticleRoutes.map(route => route.path)]) {
+  const htmlPath = join(DIST, routePath.replace(/^\//, ''), 'index.html');
+  if (!existsSync(htmlPath)) {
+    verifyErrors.push(`Traditional Chinese pilot route is missing HTML: ${routePath}`);
+    continue;
+  }
+  const html = readFileSync(htmlPath, 'utf8');
+  if (!html.includes(`rel="canonical" href="${SITE_URL}${routePath}"`)) {
+    verifyErrors.push(`Traditional Chinese pilot route has wrong canonical: ${routePath}`);
+  }
+  if (!html.includes('name="robots" content="noindex, follow"')) {
+    verifyErrors.push(`Traditional Chinese pilot route is missing its noindex pilot policy: ${routePath}`);
+  }
+  if (!html.includes('<html lang="zh-Hant"')) {
+    verifyErrors.push(`Traditional Chinese pilot route has the wrong html lang: ${routePath}`);
+  }
 }
 // Exclude non-DB hub pages that live under /motors/ (e.g. the Mercury 9.9 guide)
 // from the per-motor count check.

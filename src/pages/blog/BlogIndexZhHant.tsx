@@ -73,17 +73,14 @@ export default function BlogIndexZhHant() {
 
   return (
     <div lang="zh-Hant">
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'zh-Hant' }}>
         <title>Mercury 繁體中文指南 | Harris Boat Works</title>
         <meta
           name="description"
           content="為安省船主提供的 Mercury 繁體中文指南：舷外機、換裝新機、保養、安全與 Rice Lake 釣魚建議。"
         />
+        <meta name="robots" content="noindex,follow" />
         <link rel="canonical" href={url} />
-        <link rel="alternate" hrefLang="zh-Hant" href={url} />
-        <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/blog/zh`} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
-        <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content="Mercury 繁體中文指南 — Harris Boat Works" />
         <meta property="og:description" content="為安省船主提供的 Mercury 繁體中文指南。" />
         <meta property="og:url" content={url} />
