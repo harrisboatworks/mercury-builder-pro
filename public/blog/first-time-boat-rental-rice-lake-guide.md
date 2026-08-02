@@ -157,7 +157,7 @@ Yes, whoever drives needs proof of competency. The boating licence course is onl
 
 ### What happens if I damage the boat?
 
-Report it at return. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amounts above the hold.
+If you damage the boat or strike something during the trip, stop operating it and contact HBW immediately, then follow staff instructions. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amounts above the hold.
 
 ### What should I bring for a first rental day?
 
@@ -189,4 +189,3 @@ If conditions are genuinely poor (high winds, rain), HBW's current policy allows
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

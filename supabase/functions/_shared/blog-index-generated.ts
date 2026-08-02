@@ -429,7 +429,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What happens if I damage the boat?",
-        "a": "Report it at return. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amounts above the hold."
+        "a": "If you damage the boat or strike something during the trip, stop operating it and contact HBW immediately, then follow staff instructions. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amount…"
       }
     ]
   },
