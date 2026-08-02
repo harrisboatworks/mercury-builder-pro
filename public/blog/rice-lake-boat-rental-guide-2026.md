@@ -79,13 +79,13 @@ Rental rates are live in the booking system (they vary by boat and day), so we w
 - **Bait:** check current on-site availability before your rental; bring your own tackle.
 - **Cleaning:** normal use is expected. Spilled worm dirt and muddy anchors are the two classics that turn into cleaning fees. Rinse the anchor before it comes aboard and you're fine.
 
-The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day and report any damage at return.
+The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day. If damage occurs or you strike something during the trip, stop operating the boat and contact HBW immediately, then follow staff instructions.
 
 ---
 
 ## Licences: The Two Cards That Matter
 
-**To drive the boat**, the operator needs proof of competency. If you have a Pleasure Craft Operator Card, bring it. If nobody in your group has one, you can complete the boating licence course online at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian residents complete a renter's checklist waiver after reserving. Full details in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
+**To drive the boat**, every person who may take the helm must show a valid temporary or permanent Pleasure Craft Operator Card plus photo ID at check-in. A completed Rental Boat Safety Checklist can satisfy the federal proof-of-competency minimum for some rentals, but HBW has a stricter policy and does not substitute the checklist for the card. Passengers do not need a PCOC. If a driver still needs one, complete the accredited course before rental day at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Full details are in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
 **To fish**, anyone 18 to 64 needs an Outdoors Card plus an Ontario fishing licence, sport or conservation. Under 18 or 65 plus, government ID is your licence. We don't sell fishing licences; get them at [ontario.ca](https://www.ontario.ca/page/get-fishing-licence) before you arrive. Canadian residents fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
 
@@ -144,7 +144,7 @@ Pick your boat and date, and the booking system shows you live availability and 
 
 ### Do I need a boating licence to rent a boat on Rice Lake?
 
-The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online at myboatcard.com/card/harrisboat. Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-ontario-guide).
+Yes. Every person who may drive an HBW rental must show a valid temporary or permanent Pleasure Craft Operator Card plus photo ID at check-in. Passengers do not need one. The general Canadian rental checklist can satisfy the federal minimum for some rentals, but HBW does not substitute it for the card.
 
 ### How much does a Rice Lake boat rental cost?
 

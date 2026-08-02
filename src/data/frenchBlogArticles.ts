@@ -602,7 +602,7 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: '2026-04-12',
     category: 'Destination',
     readTime: '7 min',
@@ -743,7 +743,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
       },
       {
         question: 'Peut-on louer un bateau sur place?',
-        answer: 'Oui. Harris Boat Works a une flotte de 9 bateaux de location. Consultez harrisboatworks.ca.'
+        answer: 'Oui. HBW propose une gamme en ligne actuelle de bateaux pontons et de pêche; consultez harrisboatworks.ca/rentals pour les bateaux, la capacité, l’équipement, les tarifs et la disponibilité.'
       },
       {
         question: 'Quelles espèces vise-t-on?',

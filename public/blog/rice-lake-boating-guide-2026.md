@@ -181,7 +181,7 @@ $20 per day or $200 for a seasonal pass (April through November). The seasonal p
 
 ### Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?
 
-The driver must bring proof of operator competency. A Pleasure Craft Operator Card works. HBW's current policy directs non-Canadian residents to complete a renter checklist waiver after reservation.
+Not if you may drive an HBW rental. Every person who may drive must show a valid temporary or permanent PCOC plus photo ID at check-in. Passengers do not need one, and the rental checklist does not replace the card at HBW.
 
 ### Is Rice Lake too shallow for a 21-foot pontoon?
 
