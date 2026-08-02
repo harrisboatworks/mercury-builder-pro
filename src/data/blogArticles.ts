@@ -2581,7 +2581,7 @@ If conditions are genuinely poor (high winds, rain), HBW's current policy allows
     image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~9 min read",
@@ -2648,7 +2648,7 @@ Rental rates are live in the booking system (they vary by boat and day), so we w
 - **Bait:** check current on-site availability before your rental; bring your own tackle.
 - **Cleaning:** normal use is expected. Spilled worm dirt and muddy anchors are the two classics that turn into cleaning fees. Rinse the anchor before it comes aboard and you're fine.
 
-The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day and report any damage at return.
+The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day. If damage occurs or you strike something during the trip, stop operating the boat and contact HBW immediately, then follow staff instructions.
 
 ---
 

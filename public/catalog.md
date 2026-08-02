@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-08-01
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md
-last_updated: 2026-06-12
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario boat licence aur fishing licence: PCOC kya hai | पूरी �
 description: "PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।"
 category: "हिन्दी गाइड"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-02
 keywords: ["pcoc kya hai Ontario (What is PCOC in Ontario)","boat operator license kaise banwayein Canada (How to get boat operator license in Canada)","Ontario boat license online hindi (Ontario boat license online in Hindi)","pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)","boat chalane ka license kitne din mein milta hai (How many days to get a boating license)","Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)","Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)","Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)","fishing season Ontario kab se hai (When does fishing season start in Ontario)","best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: hi
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-08-02  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 
@@ -32,7 +32,7 @@ language: hi
 
 ## PCOC kya hai Ontario | PCOC क्या है
 
-Ontario में अगर आप किसी भी मोटर वाली नाव (चाहे वह छोटी मछली पकड़ने वाली नाव हो या बड़ी स्पीडबोट) चलाना चाहते हैं, तो आपके पास Pleasure Craft Operator Card (PCOC) होना अनिवार्य है। इसे लोग अक्सर “pcoc kya hai” खोजते हैं। यह कोई ड्राइविंग लाइसेंस नहीं है, बल्कि यह बताता है कि आपने पानी पर सुरक्षा के बुनियादी नियम सीख लिए हैं। एक बार बन जाने के बाद यह जीवनभर मान्य रहता है और इसे रिन्यू करने की ज़रूरत नहीं पड़ती।
+मोटर वाली recreational boat के operator को मान्य proof of competency चाहिए; Pleasure Craft Operator Card (PCOC) सामान्य स्थायी credential है। सामान्य Canadian rental rule में पूरी की गई Rental Boat Safety Checklist उस rental के लिए proof हो सकती है, लेकिन HBW हर rental driver से valid PCOC और photo ID मांगता है। PCOC जीवनभर मान्य रहता है और इसे renew करने की जरूरत नहीं पड़ती।
 
 कार्ड पाने के लिए एक ऑनलाइन कोर्स करना होता है और फिर एक छोटी परीक्षा पास करनी होती है। सब कुछ आप घर बैठे, अपने फ़ोन या कंप्यूटर पर पूरा कर सकते हैं। पास होते ही आपको डिजिटल कार्ड मिल जाता है जिसे आप प्रिंट कर सकते हैं। बिना पढ़े कोशिश न करें; कोर्स को ध्यान से पूरा करना ही सबसे आसान रास्ता है।
 
@@ -68,11 +68,11 @@ Harris Boat Works पर हम नावों की रजिस्ट्र�
 
 Rice Lake Fisheries Management Zone 17 (FMZ 17) में आता है। हर मछली की प्रजाति का अपना मौसम, रोज़ाना पकड़ने की सीमा, और आकार संबंधी नियम होते हैं। कोई एक तारीख नहीं है जब पूरी झील में मछली पकड़ने का मौसम खुलता या बंद होता है। इसलिए “fishing season Ontario kab se hai” का जवाब हर मछली के हिसाब से बदलता है। कंज़र्वेशन लाइसेंस पर रखने की सीमा स्पोर्ट लाइसेंस से कम होती है। यह सुनिश्चित करने के लिए कि आप मौजूदा नियमों का पालन करें, हमेशा ताज़ा Ontario Fishing Regulations Summary (FMZ 17) पढ़ें: https://www.ontario.ca/document/ontario-fishing-regulations-summary। हर साल नया संस्करण आता है, इसलिए हमेशा official लिंक से ही देखें। यह आधिकारिक स्रोत हर बार जीतेगा।
 
-## Bina PCOC ke boat rent karna | बिना PCOC के नाव किराए पर लेना
+## Rental checklist aur HBW PCOC policy | रेंटल चेकलिस्ट और HBW PCOC नीति
 
-क्या आपके पास PCOC नहीं है और आप फिर भी परिवार के साथ नाव चलाना चाहते हैं? अच्छी खबर: अगर आप किसी मान्यता प्राप्त रेंटल सेवा से नाव किराए पर लेते हैं, तो आप पूर्ण PCOC की बजाय एक रेंटल बोट सेफ्टी चेकलिस्ट पूरी कर सकते हैं। यह चेकलिस्ट वहाँ के स्टाफ आपको समझा देते हैं और आप थोड़ी देर में नाव चलाने के लिए तैयार हो जाते हैं।
+सामान्य कनाडाई नियम के तहत, पूरी की गई Rental Boat Safety Checklist उस किराये के लिए दक्षता के प्रमाण के रूप में काम कर सकती है। Harris Boat Works की सख्त नीति है: हर वह व्यक्ति जो HBW किराये की नाव चला सकता है, उसे चेक-इन पर वैध Pleasure Craft Operator Card (PCOC) और फोटो आईडी दिखानी होगी; चेकलिस्ट HBW पर कार्ड की जगह नहीं लेती।
 
-Harris Boat Works पर हमारे पास 9 नावों का किराए का बेड़ा है, जो बिल्कुल ऐसे ही परिवारों के लिए बना है। हमारी टीम आपको नाव के साथ पूरी जानकारी देगी और पानी पर सुरक्षित रहने का तरीका बताएगी। किराए के बारे में पूरी जानकारी यहाँ पाएँ: https://harrisboatworks.ca/rentals
+HBW पोंटून और मछली पकड़ने वाली नावों की वर्तमान ऑनलाइन सूची प्रदान करता है; वर्तमान नावों, क्षमता, उपकरण, दरों और उपलब्धता के लिए लाइव किराये पृष्ठ देखें: https://harrisboatworks.ca/rentals
 
 ## Learn to Fish program | मुफ़्त में मछली पकड़ना सीखें
 
@@ -105,7 +105,7 @@ Rice Lake, GTA के किसी भी कोने से लगभग 90 �
 
 ### PCOC क्या है और क्या मुझे सचमुच इसकी ज़रूरत है?
 
-जी हाँ। PCOC यानी Pleasure Craft Operator Card एक अनिवार्य कार्ड है जो बताता है कि आपने नाव सुरक्षा का प्रशिक्षण ले लिया है। Ontario में बिना इसके कोई भी मोटर वाली नाव चलाना क़ानूनन गलत है। यह जीवनभर चलता है और रिन्यू नहीं कराना पड़ता।
+मोटर वाली recreational boat के operator को मान्य proof of competency चाहिए; PCOC सामान्य स्थायी credential है। सामान्य Canadian rental rule में पूरी की गई Rental Boat Safety Checklist उस rental के लिए proof हो सकती है, लेकिन HBW हर rental driver से valid PCOC और photo ID मांगता है।
 
 ### boat operator license kaise banwayein Canada?
 

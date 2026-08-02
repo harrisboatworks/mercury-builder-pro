@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026.md
-last_updated: 2026-08-01
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)"
 description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online..."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-08-01
+date_modified: 2026-08-02
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-01  
+**Last updated:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
@@ -79,7 +79,7 @@ Rental rates are live in the booking system (they vary by boat and day), so we w
 - **Bait:** check current on-site availability before your rental; bring your own tackle.
 - **Cleaning:** normal use is expected. Spilled worm dirt and muddy anchors are the two classics that turn into cleaning fees. Rinse the anchor before it comes aboard and you're fine.
 
-The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day and report any damage at return.
+The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day. If damage occurs or you strike something during the trip, stop operating the boat and contact HBW immediately, then follow staff instructions.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-08-01
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-08-01
+date_modified: 2026-08-02
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Destination  
 **Published:** 2026-04-12  
-**Last updated:** 2026-08-01
+**Last updated:** 2026-08-02  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
@@ -166,7 +166,7 @@ Oui, pour les 18 à 64 ans. Les moins de 18 ans accompagnés d'un adulte licenci
 
 ### Peut-on louer un bateau sur place?
 
-Oui. Harris Boat Works a une flotte de 9 bateaux de location. Consultez harrisboatworks.ca.
+Oui. HBW propose une gamme en ligne actuelle de bateaux pontons et de pêche; consultez harrisboatworks.ca/rentals pour les bateaux, la capacité, l’équipement, les tarifs et la disponibilité.
 
 ### Quelles espèces vise-t-on?
 
