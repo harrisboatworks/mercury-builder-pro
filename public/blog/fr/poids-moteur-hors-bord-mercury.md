@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury.md
-last_updated: 2026-06-08
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Poids des hors-bord Mercury (2,5 à 300 ch)"
 description: "Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-08-02
 keywords: ["poids moteur Mercury","tableau poids hors-bord","Mercury 115 poids","capacité tableau arrière"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
+**Last updated:** 2026-08-02  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
 
@@ -80,7 +80,7 @@ Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière p
 
 **Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md
-last_updated: 2026-04-12
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-01
 keywords: ["pesca Rice Lake Ontario","guía pesca Ontario","pescar walleye Ontario","lago cerca de Toronto para pescar"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: es
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Last updated:** 2026-08-01  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 
@@ -122,9 +122,7 @@ Las licencias se compran en línea (ontario.ca), en tiendas de artículos deport
 
 ## Renta de botes en Harris Boat Works
 
-Si no tienes embarcación propia, Harris Boat Works renta botes por día en Rice Lake. Nuestra flota incluye **9 embarcaciones** (pontones de 20, 24 pies, V-hulls de 16 pies), todas equipadas y listas para salir.
-
-En 2025 realizamos **346 rentas** con ingresos brutos de $119,000 CAD, hay demanda real, y en temporada alta los fines de semana se reservan con anticipación.
+Si no tienes embarcación propia, Harris Boat Works renta botes en Rice Lake. La lista actual en línea incluye 20 Transporter, 23 Cruise, 24 Transporter, el pontón Halo y botes 16 ProSport. La disponibilidad, la capacidad, el equipo y las tarifas cambian según el bote y la fecha; consulta y reserva en harrisboatworks.ca/rentals.
 
 También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol (E10) del combustible de gasolinera puede causar separación de fases en sistemas de combustible marinos, nuestro combustible evita ese problema. No enviamos a nuestros clientes a otro lugar por combustible sin etanol.
 
@@ -152,25 +150,6 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 **1:00, 5:00 PM**, Tarde: bass o perca 
 **5:30 PM**, Regreso a HBW, combustible 
 **6:00, 7:00 PM**, Regreso a Toronto
-
----
-
-## Preguntas frecuentes (FAQ)
-
-**¿Puedo comprar la licencia de pesca en Harris Boat Works?** 
-Actualmente no, las licencias se compran en ontario.ca o tiendas de artículos deportivos como Canadian Tire. Confirma disponibilidad local antes de venir.
-
-**¿Hay guías de pesca en español disponibles en Rice Lake?** 
-No manejamos guías de pesca en Harris Boat Works. Para servicios de guía, consulta operadores locales en Bewdley o Hastings. HBW es la marina de servicio y renta.
-
-**¿Puedo pescar walleye durante todo el año?** 
-No. La temporada cierra el 15 de noviembre y reabre el segundo sábado de mayo. Durante el cierre la pesca de walleye está prohibida. Siempre verifica las fechas actuales antes de salir.
-
-**¿Qué equipo básico necesito para walleye en Rice Lake?** 
-Caña de 6, 7 pies de acción media, carrete de spinning o baitcasting, línea de 8, 12 lbs, variedad de jigs de 1/4, 3/8 oz y señuelos de buceo tipo crankbait. El equipo específico depende de tus preferencias, consulta una tienda de artículos deportivos local para recomendaciones actualizadas.
-
-**¿Harris Boat Works tiene personal que hable español?** 
-Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos en español a través del formulario en hbw.wiki/service y haremos lo posible por ser útiles.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-07-30
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Five-Minute Boat-Trailer Check Before Every Trip"
 description: "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance."
 category: "Service"
 date_published: 2026-05-26
-date_modified: 2026-07-30
+date_modified: 2026-07-31
 keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-05-26  
-**Last updated:** 2026-07-30  
+**Last updated:** 2026-07-31  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 
@@ -35,6 +35,8 @@ language: en-CA
 A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
 
 You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
+
+[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
 
 ![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-04-12
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake钓鱼完整攻略：多伦多华人钓友必读"
 description: "Rice Lake（赖斯湖）钓鱼完整指南。鱼种、季节、装备、钓点、许可证信息，从多伦多出发仅1.5小时车程。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-01
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Last updated:** 2026-08-01  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 
@@ -194,28 +194,6 @@ ProKicker 的特点是低速大扭矩，在 1-2 mph 拖钓速度下稳定运作�
 - **解决方案：** 你的 Chartplotter（Navionics、Garmin、C-MAP）会标示出来
 
 **如果你还不熟悉湖的中段，过湖时减速到 5-10 mph，直到你能在 Chartplotter 上确认铁路位置。**
-
----
-
-## 常见问题
-
-**从多伦多去 Rice Lake 真的需要 80-90 分钟吗？**
-是的，正常交通状况下。周末早上比较顺畅；周末下午回程可能会塞 30-60 分钟。
-
-**Rice Lake 适合家庭钓鱼吗？**
-非常适合。湖水较浅、不会太冷、不会浪太大。是 GTA 家庭学习钓鱼的理想湖泊。
-
-**我可以在 HBW 租一艘钓鱼船吗？**
-可以。9 艘 Legend 船，配 Mercury 马达。请在 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 预订。
-
-**HBW 销售钓鱼牌照吗？**
-不销售。请在 ontario.ca/fishing 或当地零售商购买。
-
-**HBW 有中文服务吗？**
-我们专门为华人朋友准备了这些中文指南——因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务，不过别担心——欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
-
-**Rice Lake 周边有餐厅吗？**
-Gores Landing 码头附近有 The Captain's Table。Cobourg 和 Bewdley 也有更多选择。
 
 ---
 

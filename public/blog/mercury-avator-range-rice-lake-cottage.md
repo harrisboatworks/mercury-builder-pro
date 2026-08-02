@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage.md
-last_updated: 2026-08-02
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboard Range on Rice Lake (2026)"
 description: "How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-08-02
+date_modified: 2026-06-09
 keywords: ["mercury avator range","avator electric outboard rice lake","mercury electric outboard ontario","avator cottage range"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,14 +24,14 @@ language: en-CA
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-06-09  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model, battery configuration, hull, load, weather, and throttle. Mercury's published 13-foot test reached about 5 miles at full throttle and up to 34 miles at quarter-throttle. For practical Rice Lake planning on a small car-topper, use roughly 3 to 4 miles at full throttle or 20 to 25 miles at quarter-throttle, then keep a weather and reserve margin. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
+A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
 ## What Is the Range of a Mercury Avator Electric Outboard?
 
@@ -178,7 +178,7 @@ Yes, but battery capacity drops in cold water. Late-season shoulder boating with
 
 ### What does an Avator setup cost installed?
 
-Avator is built to order through Mercury Canada, and battery count drives the price. Pricing is coming soon to the online configurator at https://www.mercuryrepower.ca.
+The installed total depends on the Avator model, battery count, charger, controls and mounting. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 ## Related guides
 

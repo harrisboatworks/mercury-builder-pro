@@ -11,6 +11,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -54,7 +55,10 @@ export default function TraditionalChineseBlogArticlePage() {
   const url = `${SITE_URL}/blog/zh-hant/${article.slug}`;
   const hansSlug = ZH_HANT_TO_HANS_SLUG[article.slug];
   const hansUrl = hansSlug ? `${SITE_URL}/blog/zh/${hansSlug}` : undefined;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = substituteLiveRateTokens(cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  }));
+  const tocItems = extractHeaders(cleanedContent);
   const relatedArticles = traditionalChineseBlogArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
@@ -162,17 +166,7 @@ export default function TraditionalChineseBlogArticlePage() {
 
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={(() => {
-                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
-                c = substituteLiveRateTokens(c);
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:常見問題|常见问题|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-                    '\n',
-                  );
-                }
-                return c;
-              })()}
+              content={cleanedContent.replace(/^\s*#\s+.+\n+/, '')}
 
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains

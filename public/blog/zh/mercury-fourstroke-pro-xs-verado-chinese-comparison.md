@@ -133,16 +133,6 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 
 如果不确定,我们建议邮件 info@harrisboatworks.ca 描述您的使用场景,我们给您配置建议。
 
-## 常见问题
-
-**Q：可以从 FourStroke 升级到 Pro XS 吗？** 不能直接"升级"。这是两个不同的引擎家族,需要换整台引擎 (repower)。HBW 提供 repower 服务,详见 [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)。
-
-**Q：FourStroke 跟 Yamaha F-series 差多少？** 两者都是优秀引擎。FourStroke 在 SmartCraft 集成和保修网络上略胜。Yamaha 在初始购买价上略低。HBW 卖 Mercury 因为我们是 [Premier dealer](https://www.mercurymarine.com/canada/en/)。
-
-**Q：Verado 是双引擎还是单引擎？** 两种都有。多数 V8/V10 Verado 用作单引擎 (200-300 HP)。双引擎用于大型 charter 或 deep sea (双 250-400)。
-
-**Q：Pro XS 油耗比 FourStroke 高多少？** 约 15-25%。Pro XS 高 RPM 调校在巡航速度时耗油更多。但起步加速更强。
-
 ## 联系我们
 
 - 电话：(905) 342-2153

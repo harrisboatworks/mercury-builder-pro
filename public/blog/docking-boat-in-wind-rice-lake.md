@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-08-02
+last_updated: 2026-06-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Docking a Boat in Wind: Rice Lake Guide"
 description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake."
 category: "Boating Lifestyle"
 date_published: 2026-03-21
-date_modified: 2026-08-02
+date_modified: 2026-06-09
 keywords: ["docking","wind","rice lake","boat handling","single outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,19 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-03-21  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-06-09  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 
 # Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
 
 > **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
+
+**URL slug:** docking-boat-in-wind-rice-lake
+
+**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, Ontario (in the Kawarthas), without a bow thruster or a meltdown.
+
+---
 
 You know the feeling. You're coming back into Bewdley on a Tuesday afternoon, the southwest wind has built to 15 knots the way it always does by 3 o'clock on Rice Lake, and there are three people watching from the dock. One of them is drinking a beer.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026.md
-last_updated: 2026-07-07
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Honda Ontario 2026"
 description: "Mercury vs Honda outboards: where Honda wins, where Mercury wins, local service reality on Rice Lake. Updated 2026 with Honda BF350 lineup."
 category: "Buying Guide"
 date_published: 2026-05-28
-date_modified: 2026-07-07
+date_modified: 2026-08-02
 keywords: ["Mercury vs Honda","Mercury vs Honda outboards","Honda BF vs Mercury","Honda Marine dealer Ontario","Mercury Honda comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-07  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026
 
@@ -67,7 +67,7 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 **Service network density in our region.** In the Kawarthas, Lake Simcoe basin, and Trent-Severn corridor, Mercury has more certified dealer locations than Honda Marine. Brand loyalty is free. Dealer support is not.
 
-**Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP - 400 HP Verado V8 or V10, 450R, or the V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
+**Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP, Mercury offers the 400 and 425 HP Verado V10, the 450R, and the 600 HP Verado V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
 
 **Pro XS performance.** Honda has no direct counterpart to Mercury Pro XS. If you fish tournaments or want hole-shot performance on a bass boat, this matters.
 
@@ -155,7 +155,7 @@ Not in 2026. Honda offers 5 years standard plus 3 years HondaCare = up to 8 year
 
 ### Does Mercury have a Honda BF350 equivalent?
 
-Yes. Mercury 350 Verado V8 is the direct equivalent. Mercury also offers 400 HP Verado V8/V10, 450R, and 600 HP V12, none of which Honda matches.
+Yes. The Mercury 350 Verado V10 is the direct horsepower equivalent. Mercury also offers 400 and 425 HP Verado V10 models, the 450R, and the 600 HP Verado V12, none of which Honda matches.
 
 ### Can I switch from Honda to Mercury on my existing boat?
 

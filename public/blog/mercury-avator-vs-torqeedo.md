@@ -39,7 +39,7 @@ Both Mercury Avator and Torqeedo make legitimate electric outboards. The decidin
 |---|---|---|
 | Parent company | Mercury Marine (Brunswick) | German, now Yamaha-owned (2024) |
 | 2026 models | 7.5e, 20e, 35e, 75e, 110e | Travel, Cruise, Deep Blue |
-| Power range | 750W-11,000W (~3-30 HP equivalent; rated in watts) | Portable to large commercial |
+| Power range | 0.75-11 kW rated prop-shaft power | Portable to large commercial |
 | Ontario dealers | Hundreds of Mercury dealers, ~within an hour | Concentrated in Toronto/Ottawa; rural hours away |
 | Parts | On shelf at Mercury Premier dealers | Often ordered from Torqeedo Canada |
 | Charging | 110V (portable 3-6 hr; mid overnight; 10+ kWh needs 240V) | Same household charging |
@@ -58,7 +58,7 @@ If you want a truly neutral comparison, find a marine specialty shop that carrie
 - Backed by Mercury Marine (Brunswick Corporation), one of the largest outboard manufacturers globally
 - Full integration with Mercury's SmartCraft / VesselView ecosystem
 - Models: 7.5e, 20e, 35e, 75e, 110e (2026 lineup)
-- Power range: 750W to 11,000W (roughly equivalent to 3 HP up to 30 HP in propulsion terms, though Mercury rates by watts not HP)
+- Rated prop-shaft power: 0.75 kW to 11 kW; compare thrust and performance on the exact hull rather than converting to gas horsepower
 - Battery system: integrated (7.5e) or external Power Center / 2,300 Wh packs (larger models)
 - Service through: any Mercury dealer in Canada with electrical service capability
 

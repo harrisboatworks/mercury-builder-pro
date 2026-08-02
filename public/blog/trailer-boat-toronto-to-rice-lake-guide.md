@@ -30,7 +30,7 @@ language: en-CA
 
 ## Quick Answer
 
-Trailering a boat from Toronto to Rice Lake takes about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
+Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
 
 ---
 
@@ -90,12 +90,12 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **County Road 28 to Gores Landing (about 15 minutes)**: Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
 
-**Total: about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north**, longer on summer Saturday mornings.
+**Total: roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north**, longer on summer weekends.
 
 ---
 
 ::pull-quote
-quote: Pull the boat from downtown Toronto to Rice Lake every Friday in summer, about 90 minutes door to ramp via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+quote: Pull the boat from central Toronto to Rice Lake every Friday in summer, roughly 1 hour 45 minutes door to ramp in light traffic via Highway 401 east and Highway 115 north, longer during peak summer traffic. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
 attribution: Jamal R.
 source: Mississauga
 ::
@@ -159,7 +159,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947
 
 ### How long does it take to trailer a boat from Toronto to Rice Lake?
 
-The drive from downtown Toronto to Rice Lake takes about 90 minutes via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic can add 30-45 minutes. Budget extra time if leaving after noon on a peak travel day.
+The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure.
 
 ### Do I need a special licence to tow a boat trailer in Ontario?
 

@@ -126,31 +126,6 @@ hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 ---
 
-## 자주 묻는 질문
-
-**엔진 교체 비용은 얼마나 드나요?** 
-보트 종류와 원하는 마력에 따라 크게 다릅니다. 정확한 비용은 mercuryrepower.ca에서 실시간으로 확인하세요. 숨겨진 항목 없이, 실제 비용을 CAD로 보여드립니다.
-
-**선체 상태를 어떻게 확인할 수 있나요?** 
-트랜섬(선미판)과 바닥을 눌러보세요. 물렁한 느낌이 나면 구조 문제가 있을 수 있습니다. 확실하지 않다면 보트를 가져오세요, 저희가 직접 살펴보고 솔직하게 말씀드리겠습니다.
-
-**영어로만 소통해야 하나요?** 
-온라인 견적 도구(mercuryrepower.ca)와 서비스 요청 양식(hbw.wiki/service)은 언어 장벽 없이 사용할 수 있습니다. 한국어로 요청서를 보내셔도 됩니다.
-
-**Gores Landing까지 얼마나 걸리나요?** 
-GTA에서 차로 약 1시간 30분 거리입니다. Rice Lake와 Kawartha Lakes 지역에서는 더 가깝습니다.
-
-**Mercury 엔진만 교체할 수 있나요, 아니면 다른 브랜드도 가능한가요?** 
-엔진 수리 및 설치는 Mercury와 Mercruiser만 취급합니다.
-
-**새 Legend 보트는 어떻게 볼 수 있나요?** 
-harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
-
----
-
-*관련 자료 (영어): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
----
-
 ## FAQs
 
 ### 선체 상태를 어떻게 판단하나요?

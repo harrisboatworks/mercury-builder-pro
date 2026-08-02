@@ -1054,7 +1054,7 @@ A fault code names the circuit or condition the computer noticed. It does not na
       "electric outboard Ontario lakes"
     ],
     faqs: [
-      { question: "Is Harris Boat Works actually selling the Mercury Avator now?", answer: "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup." },
+      { question: "Is Harris Boat Works actually selling the Mercury Avator now?", answer: "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path." },
       { question: "How far does an Avator go on one charge?", answer: "It depends heavily on throttle, load, and conditions. Mercury's published 7.5e test on a light 13-foot boat ran about 60 minutes at full throttle and most of a day at slow trolling speed on one 1 kWh battery. Spare batteries swap in seconds and effectively double your day." },
       { question: "Can I charge one at the cottage?", answer: "The 7.5e charges overnight from a standard dock or cottage outlet. The larger external packs on the 20e through 110e benefit from proper electrical service, and the biggest setups need real planning. Our cottage charging guide covers what each model needs." },
       { question: "Is electric cheaper than gas in the long run?", answer: "Per hour on the water, yes: no fuel, no oil changes, minimal maintenance. But the up-front premium over a small gas outboard takes years to recover on fuel savings alone. People who love their electrics bought them for silence and simplicity, not payback math." },
@@ -1174,7 +1174,7 @@ The Avator conversation at our counter is almost never "should I replace my 115 
 
 That's the honest state of electric boating in cottage country in 2026: it's not replacing the main gas motor on Rice Lake yet, and anyone who tells you otherwise is selling something. It is quietly winning the small-motor jobs, one dock at a time.
 
-We're bringing Avator into the lineup now, with pricing being finalized. If you want to be first in line when numbers land, get on the list through our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) or call us.
+We're bringing Avator into the lineup now, with Mercury Canada pricing still being finalized. We will not invent a placeholder number. Use our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) for current availability and the configuration path.
 
 ---
 
@@ -1199,7 +1199,7 @@ We're bringing Avator into the lineup now, with pricing being finalized. If you 
 ## Frequently Asked Questions
 
 **Is Harris Boat Works actually selling the Mercury Avator now?**
-Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup.
+Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 **How far does an Avator go on one charge?**
 It depends heavily on throttle, load, and conditions. Mercury's published 7.5e test on a light 13-foot boat ran about 60 minutes at full throttle and most of a day at slow trolling speed on one 1 kWh battery. Spare batteries swap in seconds and effectively double your day. See our [Rice Lake range guide](/blog/mercury-avator-range-rice-lake-cottage) for model-by-model numbers.
@@ -2618,7 +2618,7 @@ If conditions are genuinely poor (high winds, rain), HBW's current policy allows
     image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~9 min read",
@@ -2634,7 +2634,7 @@ If conditions are genuinely poor (high winds, rain), HBW's current policy allows
     ],
     content: `# Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
 > **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
 
@@ -2642,7 +2642,7 @@ Most rental questions start in the same place: what boats are currently availabl
 
 Here's all of it in one place. No surprises at the dock, because surprises at the dock waste your water time and ours.
 
-One thing up front: we're in Gores Landing, on [the south shore of Rice Lake](/blog/rice-lake-boating-guide-2026), about 90 minutes east of downtown Toronto and 25 minutes south of Peterborough. You rent here, you boat here. Our boats stay on Rice Lake.
+One thing up front: we're in Gores Landing, on [the south shore of Rice Lake](/blog/rice-lake-boating-guide-2026), roughly 1 hour 45 minutes from central Toronto in light traffic and about 30 to 35 minutes south of Peterborough. Traffic varies, so check the route before choosing a rental start time. You rent here, you boat here. Our boats stay on Rice Lake.
 
 ---
 
@@ -2727,7 +2727,7 @@ Every rental includes legally required safety gear, fitted life jackets, and a d
 
 ## Planning the Drive from the GTA
 
-Harris Boat Works is in Gores Landing on the south shore of Rice Lake, roughly 90 minutes from central Toronto in light traffic. Plan your route and arrival time before booking, then use the current rental listing to choose the boat, date, and capacity that fit your group.
+Harris Boat Works is in Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic. Allow more time during GTA and summer-weekend traffic. Plan your route and arrival time before booking, then use the current rental listing to choose the boat, date, and capacity that fit your group.
 
 ---
 
@@ -4704,7 +4704,7 @@ As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short
 
 HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Premier Dealer, which means our service techs are factory-certified on every motor we sell.
 
-We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown Toronto, on the south shore of Rice Lake. We pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
+We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from central Toronto in light traffic, on the south shore of Rice Lake. We are pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
 
 ## Frequently Asked Questions
 
@@ -6451,7 +6451,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'How long has Harris Boat Works been a Mercury dealer?', answer: 'Since 1965. The marina itself was founded in 1947, and the Harris family has owned and run it for three generations in Gores Landing on Rice Lake.' },
       { question: 'What is a Mercury Premier dealer?', answer: 'Premier is the current top tier in Mercury\'s dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, deep parts inventory, and access to Mercury technical resources. It does not change a customer\'s factory warranty rights or guarantee faster claim approval.' },
       { question: 'Why does Harris Boat Works only sell Mercury?', answer: 'Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water.' },
-      { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 90 minutes east of Toronto and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
+      { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
       { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.' },
       { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
@@ -7117,7 +7117,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does Command Thrust cost over the standard gearcase?',
-        answer: 'Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.'
+        answer: 'Command Thrust pricing moves with motor class and prop selection. Use the [live pricing reference](/pricing-reference) for current motor prices, then [build a configured quote](/quote/motor-selection) for the complete setup.'
       },
       {
         question: 'Will my standard prop fit on a Command Thrust gearcase?',
@@ -11860,7 +11860,7 @@ Boat shows can have show-specific promotions, but they are often similar to what
 Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.
 
 **Does the Mercury model year flip on July 1 change my buying decision?**
-It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price.r just want the motor. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
+It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price. If you just want the motor, compare the written numbers and availability. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **What's actually negotiable on a new Mercury purchase?**
 The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
@@ -12539,7 +12539,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
       },
       {
         question: 'How much does a Mercury 150 Pro XS cost?',
-        answer: 'As of July 27, 2026, our pricing reference lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. Build a configured quote or call 905-342-2153.'
+        answer: 'Our [live pricing reference](/pricing-reference) lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. [Build a configured quote](/quote/motor-selection) for the complete total.'
       }
     ]
 
@@ -12602,7 +12602,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only; call (905) 342-2153 for Verado pricing.*
+*The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
 ### Seasonal Pricing Patterns
 
@@ -13149,14 +13149,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png',
     author: 'Jay Harris',
     datePublished: '2026-02-06',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '~9 min read',
     keywords: ['rent or buy a boat', 'boat rentals Rice Lake', 'boat rental vs ownership Ontario', 'boat club vs boat rental', 'is renting a boat worth it'],
     content: `# Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
 > **Quick answer:** Rent if you want occasional days on the water without ownership's fixed costs. Buy if regular access, spontaneity, and keeping your own setup matter enough to justify insurance, storage, winterizing, maintenance, and depreciation. There is no universal day-count threshold: compare the live rental rate for the boat you would use against your own annual ownership costs. Book a Rice Lake rental at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
@@ -13428,9 +13428,9 @@ Honest note: buyers who pick Pro XS for the badge usually find a correctly propp
 
 Verado (250 to 600 hp, naturally aspirated V8/V10/V12) is engineered for large offshore centre consoles and multi-engine installs. Almost no boater on Rice Lake, the Kawarthas, or Lake Simcoe needs one. **We don't stock Verado; it's available as a special order**, quoted individually. If you're running a 20-foot fishing boat, a FourStroke 150 or 200 is the better call.
 
-### Avator electric: brochure only, for now
+### Avator electric: build-to-order
 
-[Mercury's Avator electric line](/blog/mercury-avator-electric-boating-ontario) (currently the 7.5e and 20e in production) is build-to-order from the brochure, not something we stock on the floor. Avator outboards are rated by output power in kilowatts and equivalent thrust, not by direct gas-engine HP comparison. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice. Larger Avator models have been previewed but we don't have firm 2027 availability dates yet. When Mercury confirms, we'll update this post.
+[Mercury's current Avator electric line](/blog/mercury-avator-electric-boating-ontario) includes the 7.5e, 20e, 35e, 75e and 110e. HBW treats Avator as build-to-order rather than floor stock. Mercury rates the models by prop-shaft output: 0.75, 2.2, 3.7, 7.5 and 11 kW respectively. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice; Avator fit depends on the exact boat, load, route, battery configuration and charging access.
 
 ## Matching the Motor to Your Ontario Boat
 
@@ -13616,7 +13616,7 @@ Be honest with yourself about how you boat.
 
 ### What about price?
 
-Avator pricing moves around a lot by model, battery count, and configuration, and the battery is often where the real money is, not the motor head. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. So this is the one Mercury line we price by conversation instead of the configurator. Call us at 905-342-2153, tell us the boat and how far you actually run, and we'll give you the real, current number for the exact setup. Same straight answer, just on the phone.
+Avator pricing depends on the model, battery count, charger, controls and installation. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See our [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both. We'll tell you straight which one fits your boat.
 
@@ -13634,7 +13634,7 @@ For gas outboards, the configurator does what it always does: **[build a real Me
       { question: 'How far can a Mercury Avator electric outboard go on one charge?', answer: "In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions." },
       { question: 'How is Mercury Avator power rated?', answer: 'Mercury rates Avator outboards by prop-shaft power: 0.75 kW for the 7.5e, 2.2 kW for the 20e, 3.7 kW for the 35e, 7.5 kW for the 75e, and 11 kW for the 110e. Thrust, acceleration, range, and runtime still depend on the exact hull, load, propeller, battery setup, weather, and throttle setting.' },
       { question: 'How long does it take to charge a Mercury Avator battery?', answer: "The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or about 2 hours on the optional 520W charger. The larger 5,400 Wh packs used by the 75e and 110e take roughly 20 hours for two batteries on the portable 520W charger; the 1050W charger cuts that by more than half." },
-      { question: 'How much does a Mercury Avator cost in Canada?', answer: 'It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.' }
+      { question: 'How much does a Mercury Avator cost in Canada?', answer: 'The total depends on the model, battery count, charger, controls and installation. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.' }
     ],
   },
 
@@ -14082,7 +14082,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does Mercury Boost cost to install in Canada?',
-        answer: 'HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Call 905-342-2153 with a photo of the serial-number plate.'
+        answer: 'HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.'
       },
       {
         question: 'How do I find my Mercury outboard serial number?',
@@ -15928,7 +15928,7 @@ Tiller motors 20 HP and under are essentially drop-in installs. The motor is the
 
 Once you cross to 25 HP and up, you're into a full project: controls, cables, gauges, prop, and installation labour.
 
-For specific pricing on each model, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+For current pricing on each model, use the [live pricing reference](/pricing-reference) or [build a configured quote](/quote/motor-selection).
 
 ### What Changes the "Cheapest That Works" Answer
 
@@ -16043,7 +16043,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is a small Mercury good enough for fishing?', answer: 'For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.' },
       { question: 'Should I buy the cheapest motor I can afford?', answer: 'Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.' },
       { question: 'Can I finance a small Mercury outboard?', answer: 'Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).' },
-      { question: 'How long does a small Mercury outboard last?', answer: 'Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.' },
+      { question: 'How long does a small Mercury outboard last?', answer: 'There is no reliable universal lifespan in hours or years. Maintenance, corrosion control, storage, operating load and parts availability all matter. A documented motor that follows its serial-number maintenance schedule is a better bet than one sold on a generic lifetime estimate.' },
       { question: 'What is the cheapest Mercury that can pull a tube?', answer: 'You need at least 60 HP to pull a tube reliably with one rider, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke, but you almost always want at least 90 HP for family tubing on Rice Lake or any open water. See the [motor selection page](/quote/motor-selection) for live pricing on the lineup.' },
       { question: 'Do I need rigging when I buy a small Mercury tiller?', answer: 'No. Tiller motors 20 HP and under are drop-in installs. You hang it on the transom, hook up the fuel line, and go. No controls, no cables, no install labour. The motor itself is the whole purchase. Above 25 HP, motors are typically remote-control installs with rigging, controls, and labour as separate line items.' },
       { question: 'What is the cheapest Mercury repower I can do on a 16-foot aluminum?', answer: 'A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).' },
@@ -16535,7 +16535,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['trailer boat toronto rice lake', 'ontario trailer rules', 'boat launch rice lake'],
     content: `## Quick Answer
 
-Trailering a boat from Toronto to Rice Lake takes about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
+Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
 
 ---
 
@@ -16595,12 +16595,12 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **County Road 28 to Gores Landing (about 15 minutes)**: Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
 
-**Total: about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north**, longer on summer Saturday mornings.
+**Total: roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north**, longer on summer weekends.
 
 ---
 
 ::pull-quote
-quote: Pull the boat from downtown Toronto to Rice Lake every Friday in summer, about 90 minutes door to ramp via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+quote: Pull the boat from central Toronto to Rice Lake every Friday in summer, roughly 1 hour 45 minutes door to ramp in light traffic via Highway 401 east and Highway 115 north, longer during peak summer traffic. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
 attribution: Jamal R.
 source: Mississauga
 ::
@@ -16652,7 +16652,7 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 ## FAQs
 
 **How long is the drive from Toronto to Rice Lake?**
-About 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings.
+Roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north, longer on summer weekends.
 
 **Do I need trailer brakes for a boat under 1,400 kg?**
 Not legally required in Ontario, but check your tow vehicle's rating. For trailers over 1,400 kg combined, brakes are required.
@@ -16690,7 +16690,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     faqs: [
       {
         question: 'How long does it take to trailer a boat from Toronto to Rice Lake?',
-        answer: 'The drive from downtown Toronto to Rice Lake takes about 90 minutes via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic can add 30-45 minutes. Budget extra time if leaving after noon on a peak travel day.'
+        answer: 'The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure.'
       },
       {
         question: 'Do I need a special licence to tow a boat trailer in Ontario?',
@@ -17082,7 +17082,7 @@ There is no universal day-count threshold. Compare the live rental rate for the 
 ## CTA
 
 **See real prices. No games.** 
-Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
+Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required.
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -17400,7 +17400,7 @@ For a typical 150 HP pontoon owner in 2026, the honest answer is to check eligib
 
 Mercury Boost is an authorized software calibration installed on an eligible motor through Mercury's dealer process. It is not an aftermarket tune or owner-installed download.
 
-Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Call HBW with a photo of the serial-number plate for an eligibility and pricing check.
+Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Send HBW a clear photo of the serial-number plate through the [contact page](/contact) for a written eligibility and price check.
 
 Because warranty coverage depends on the exact product, installation record, and current Mercury terms, HBW confirms warranty treatment for the specific motor before work is authorized.
 
@@ -17556,7 +17556,7 @@ phone: 905-342-2153
       },
       {
         question: 'How much does Mercury Boost cost in Canada?',
-        answer: 'HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.'
+        answer: 'HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.'
       },
       {
         question: 'What is the difference between Mercury Boost and re-propping?',
@@ -17576,7 +17576,7 @@ phone: 905-342-2153
       },
       {
         question: 'Is Mercury Boost available in Ontario?',
-        answer: 'Boost is available for eligible motors through Mercury\'s supported app flow on select configurations or through authorized dealers. Call HBW at 905-342-2153 to confirm the exact model, serial number, software status, boat configuration, and current Canadian price.'
+        answer: 'Boost is available for eligible motors through Mercury\'s supported app flow on select configurations or through authorized dealers. Send the exact model and a clear serial-number-plate photo through the [HBW contact page](/contact) to confirm software status, boat configuration and the current Canadian price in writing.'
       }
     ]
   },
@@ -18503,7 +18503,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Before you pay for any used outboard, do four things: compression-test every cylinder, check the gearcase oil colour, watch the tell-tale stream, and run it on the water. If the seller will not allow those, that is your answer. A dealer pre-purchase inspection is cheap insurance against a costly motor. Book one at hbw.wiki/service.
 
-Harris Boat Works has been a Mercury dealer and service shop on Rice Lake since 1947. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
+Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
 
 A used outboard can be a smart buy. Ontario is the right place to shop for one, too. The Kawarthas and Rice Lake run almost entirely freshwater motors, and freshwater is the best possible starting point. A single saltwater season leaves corrosion you cannot undo.
 
@@ -18908,7 +18908,7 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Why HBW Is a Useful Home Base
 
-HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from Toronto.
+HBW is at Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic.
 
 | Service | Detail |
 |---|---|
@@ -19190,7 +19190,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
@@ -19201,7 +19201,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, about 80 minutes northeast of Toronto. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works has a private ramp in Gores Landing.
 
 ---
 
@@ -22135,16 +22135,16 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
     keywords: ["Rice Lake boat rentals", "boat rentals near Toronto", "Kawarthas pontoon rentals", "family boat rental Ontario", "day trip boat rental GTA", "pontoon rental Toronto"],
     content: `# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
-> **Quick answer:** A Toronto-to-Rice Lake rental day trip works: plan roughly 90 minutes in light traffic to Harris Boat Works in Gores Landing, then fish or cruise from the south shore. Check the live fleet, rates, and availability at harrisboatworks.ca/rentals before planning the rest of the day.
+> **Quick answer:** A Toronto-to-Rice Lake rental day trip works: plan roughly 1 hour 45 minutes from central Toronto in light traffic to Harris Boat Works in Gores Landing, and allow more time during GTA or summer-weekend traffic. Check the live listings, rates, and availability at harrisboatworks.ca/rentals before planning the rest of the day.
 
 You're in Toronto, you don't own a boat, but you'd like to have one for a day. Harris Boat Works operates a current online rental lineup from its Gores Landing dock on Rice Lake. HBW has served boaters here since 1947; current rentals and their availability are listed online.
 
@@ -22154,9 +22154,8 @@ This guide covers the route, the verified rental process, what to bring, and the
 
 ## The Quick Answer
 
-**Drive time from central Toronto:** 90 minutes (401 east → exit Cobourg → County Rd 18 north).
-**Drive time from Mississauga / Brampton / western GTA:** 75-105 minutes.
-**Drive time from Markham / Vaughan / Richmond Hill:** 75-90 minutes.
+**Drive time from central Toronto:** roughly 1 hour 45 minutes in light traffic (401 east, exit Cobourg, County Rd 18 north).
+**Drive time from elsewhere in the GTA:** varies by origin and traffic; check the live route before choosing a rental start time and allow two hours or more when conditions warrant.
 
 **Current rental lineup:**
 - **23 Cruise and Halo pontoons**
@@ -22173,7 +22172,7 @@ The rest of this post is the detail you'd want before booking.
 
 ## Why Rice Lake Works for a GTA Day Trip
 
-Rice Lake is freshwater on the Trent-Severn Waterway, and HBW's dock is in Gores Landing on the south shore. The drive from central Toronto is roughly 90 minutes in light traffic, but traffic varies; check your route before choosing a rental start time. On the water, follow the map and orientation because the old railway causeway remains a serious navigation hazard.
+Rice Lake is freshwater on the Trent-Severn Waterway, and HBW's dock is in Gores Landing on the south shore. The drive from central Toronto is roughly 1 hour 45 minutes in light traffic, but traffic varies; check your route before choosing a rental start time. On the water, follow the map and orientation because the old railway causeway remains a serious navigation hazard.
 
 ---
 
@@ -22186,7 +22185,7 @@ Each rental includes:
 - **Public washrooms** during rental hours; the office provides the key
 
 What you bring:
-- **Valid [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
+- **Valid boat operator's licence for the driver.** HBW requires the driver to show a valid temporary or permanent card at check-in. The rental safety checklist is still part of the briefing but does not replace HBW's driver-licence requirement. See the [current rental policy](https://www.harrisboatworks.ca/boat-rentals) before booking.
 - **Sunscreen, hats, water, snacks**
 - **Fishing gear and licence if fishing.** [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
@@ -22227,7 +22226,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## A Sample GTA Day-Trip Itinerary
 
-**8:00 AM**. Leave central Toronto. Stop for coffee on the 401 east.
+**7:45 AM**. Leave central Toronto. Stop for coffee on the 401 east.
 **9:30 AM**. Arrive at HBW (5369 Harris Boat Works Rd, Gores Landing). Park, bathroom, snacks at the office.
 **9:45 AM**. Boat briefing + safety walkthrough.
 **10:00 AM**. On the water. Run east toward Hiawatha or west toward Bewdley.
@@ -22300,7 +22299,7 @@ Fuel use varies with the selected boat, load, wind, distance, and throttle. Plan
 ## Frequently Asked Questions
 
 **How long does it take to drive from Toronto to Rice Lake?**
-Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes.
+Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic. From elsewhere in the GTA, allow more time; summer weekends can push the trip past two hours. Check current routing before departure.
 
 **Do I need a boating licence to rent at HBW?**
 The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation.
@@ -22334,7 +22333,7 @@ Yes. HBW's current policy allows multi-day rentals to remain at a suitable cotta
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How long does it take to drive from Toronto to Rice Lake?", answer: "Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes." },
+      { question: "How long does it take to drive from Toronto to Rice Lake?", answer: "Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic. From elsewhere in the GTA, allow more time; summer weekends can push the trip past two hours. Check current routing before departure." },
       { question: "Do I need a boating licence to rent at HBW?", answer: "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation." },
       { question: "What does a rental cost?", answer: "Rates and rental periods vary by boat and date. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for the current price before booking." },
       { question: "Can we fish from rental boats?", answer: "Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST." },
@@ -22728,7 +22727,7 @@ Yes, three generations of the Harris family. The current ownership is third-gene
 Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores.
 
 **Where is HBW located?**
-5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto.
+5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic.
 
 **What does HBW sell and service?**
 Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude. Mercury-only.
@@ -22760,7 +22759,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "How long has Harris Boat Works been in business?", answer: "Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer." },
       { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
       { question: "Is HBW a Mercury Premier dealer?", answer: "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
-      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
+      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic." },
       { question: "What does HBW sell and service?", answer: "Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude: Mercury-only." },
       { question: "How big is HBW?", answer: "A family marina with 49 seasonal slips, 311 winter-storage contracts in the 2025 season, a peak-season team, and a current pontoon and fishing-boat rental lineup. Rental availability changes, so check the live booking system." },
       { question: "Why has HBW been in business so long?", answer: "Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year." },
@@ -26618,19 +26617,11 @@ If you're new to launching, this is the basic flow. Most people do it efficientl
 
 For any powered boat in Ontario waters:
 
-**Pleasure Craft Operator Card (PCOC)** for the operator. One-time test, accessible in the boat or on phone.
+**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
-**Valid Pleasure Craft Licence (PCL)** for any boat with a motor 7.5 kW (10 HP) or larger. 2026 PCL changes: lifetime licences converted to 5-year renewals at $24. Check your PCL is current.
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years and the federal service fee is $24, subject to annual inflation updates. Check the current fee and your licence status before launch day.
 
-**Required safety equipment:**
-- One PFD per person (one must be a wearable Type III)
-- Sound-signaling device (whistle, horn)
-- Bailer or manual water pump
-- Anchor or grapnel with line
-- Paddle or oar
-- Navigation lights for sunset operation
-
-Transport Canada publishes the full list, and there are specific extras for larger boats. Make sure you have everything before you launch.
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
 ---
 
@@ -26833,7 +26824,7 @@ As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + 
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-**Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+**Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
 ---
 
@@ -29103,7 +29094,7 @@ whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once the
 
 We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
+Harris Boat Works has served Rice Lake boaters since 1947 and sold and serviced Mercury outboards since 1965. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
 ---
 
@@ -29899,7 +29890,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 ## Why Brampton Customers Call Us First
 
-The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.t.
+The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
 
 Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 
@@ -29907,7 +29898,7 @@ Our quote builder fixes that. Real installed pricing, motor, rigging, and instal
 
 A repower isn't a parts swap. It's a rigging job. The motor, the controls, the throttle and shift cables, the prop selection, the integration with your existing electronics, all of it has to be right for the motor to perform the way Mercury designed it. A repower done hastily or without the right rigging conversation is a repower you'll notice on the water.
 
-We've been doing repowers on Rice Lake since 1947. The rigging conversation is as important to us as the motor sale.
+HBW has served Rice Lake boaters since 1947 and sold Mercury since 1965. The rigging conversation is as important to us as the motor sale.
 
 ## Mercury Premier, What It Means in Practice
 
@@ -32039,7 +32030,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
 
 - **Hit a deadhead and damage your prop shaft?** Insurance.
-- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Premier, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
+- **ECU dies at 4 years old, 200 hours?** Mercury Product Protection may apply if you bought an eligible Platinum plan and the failure is covered. See our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario).
 - **Boat stolen from your driveway?** Insurance.
 - **Lower unit gear failure at 3 years old?** Factory warranty (if still active) or extended warranty.
 
@@ -32226,7 +32217,7 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Platinum can reduce the financial shock of an eligible major component failure during the coverage period. Compare the exact plan price with the covered components, exclusions and your ownership horizon instead of assuming every repair will be covered or that the plan is guaranteed to pay for itself.
 
 ## Transferability and Resale Value
 
@@ -35647,7 +35638,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
       { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
       { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying." },
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
-      { question: "What does an Avator setup cost installed?", answer: "Avator is built to order through Mercury Canada; battery count drives the price. Call for current pricing: 905-342-2153." },
+      { question: "What does an Avator setup cost installed?", answer: "The installed total depends on the Avator model, battery count, charger, controls and mounting. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path." },
     ],
     content: `
 
@@ -36223,7 +36214,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
       { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'It can propel a compatible small tender, dinghy, sailboat, or light fishing boat. Boat weight, load, wind, current, required range, shaft length, and mounting determine whether it is appropriate; HBW confirms the fit rather than assigning it by boat length alone.' },
       { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those are test results, not a promise for every boat; load, hull, weather, water, and throttle change the result.' },
       { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.' },
-      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.' },
+      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration path. Pickup is at Gores Landing.' },
       { question: 'What charges the Avator battery?', answer: 'The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.' },
       { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Warranty coverage is confirmed for the exact motor and battery package when HBW quotes it. Mercury requires the outboard and battery to be registered separately; any promotional coverage applies only while an eligible offer is active.' },
     ],
@@ -36232,7 +36223,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 *Last reviewed: 2026-07-18*
 
-> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; call for a configuration and current price.
+> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; see the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 HBW sells gas outboards and is preparing Avator as a build-to-order option. We have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
 
@@ -36259,7 +36250,7 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Price (CAD) | Call for the current configured price: 905-342-2153 | See pricing reference | See pricing reference |
+| Price (CAD) | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | See [pricing reference](/pricing-reference) | See [pricing reference](/pricing-reference) |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Selection basis | Boat fit, load, route, range, mounting, and charger | Boat fit, load, route, fuel range, and mounting | Boat fit, load, route, fuel range, and mounting |
 
@@ -36312,7 +36303,7 @@ Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60
 It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.
 
 **How much does the Avator 7.5e cost installed?**
-Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.
+Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration path. Pickup is at Gores Landing.
 
 **What charges the Avator battery?**
 The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.
@@ -36427,9 +36418,9 @@ The complete price depends on the exact motor, controls, steering, propeller, tr
 
 ## What about the Mercury Avator on a pontoon?
 
-The Avator 7.5e is a small electric outboard. Useful as a silent kicker on small fishing pontoons for trolling, but not a main motor. Pontoon main propulsion needs sustained torque at 3,500 to 4,500 RPM and the Avator 7.5e is sized for slow-trolling applications.
+The Avator 7.5e is a small electric outboard with 0.75 kW of prop-shaft output. It is intended for compatible small boats, tenders and quiet low-speed use, not as the main motor on a family pontoon. A pontoon setup needs a boat-specific review of displacement, load, speed, route and battery reserve.
 
-Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly 3.5 HP equivalent" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop.
+Mercury rates Avator by prop-shaft output, not by a direct gasoline horsepower figure. The technical specification for the 7.5e is 0.75 kW at the propeller.
 
 If you are building a pontoon repower and you want quiet trolling for walleye or bass, talk to us about pairing a gasoline main motor with a small electric kicker. We rig that combination on Rice Lake fishing pontoons regularly.
 
@@ -36642,7 +36633,7 @@ Two paths. Trade in the whole boat and put the value toward a different package 
 
 ## Ready to do the math on your boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947. Same techs, same shop, since 1947.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947 and a Mercury dealer since 1965. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -36670,7 +36661,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
       { question: 'Do I need both a main motor and a trolling motor?', answer: 'If you fish seriously you will want both. The main motor travels between fishing spots. The trolling motor (gasoline kicker or electric) lets you fish quietly without burning the main motor at idle for hours and without putting unnecessary hours on the big powerhead.' },
       { question: 'Should I pair my Mercury main with a bow electric trolling motor or a kicker?', answer: 'Choose a bow electric for shallow-water precision and spot-locking. Choose a kicker for long trolling days, bigger water, heavy chop, and true get-home backup. Many anglers eventually want both.' },
       { question: 'Can the Mercury Avator 7.5e be used as a kicker?', answer: 'Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.' },
-      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.' },
+      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 planning range) for a Mercury 9.9 ProKicker on top of your main repower; use the live quote builder for today\'s total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the Avator page for current availability.' },
       { question: 'Does the kicker need its own fuel tank?', answer: 'Not usually. We plumb the kicker into the boat\'s main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.' },
       { question: 'Will Harris Boat Works rig both motors together?', answer: 'Yes. We install main and kicker, wire the tie-bar linkage for synchronized steering, integrate the fuel system, and water test the combination on Rice Lake before pickup at Gores Landing.' },
     ],
@@ -36694,13 +36685,13 @@ Three options most Rice Lake customers consider. **All prices reflect 2026 model
 |---|---|---|---|---|---|---|
 | Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | $3,000 to $4,500 | Most fishing boats, all-day trolling, big water |
 | Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
-| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | Call for current pricing: 905-342-2153 | Silent finesse fishing |
+| Mercury Avator 7.5e electric | 0.75 kW prop-shaft output | 1 kWh battery | Near-silent | Hours at troll on one pack | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | Silent finesse fishing |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
-The Avator 7.5e is the right pick when silence matters. Walleye fishing in shallow water, bass tournament prep, or any situation where you want zero noise underwater. Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly equivalent to 3.5 HP" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.
+The Avator 7.5e is worth considering when silence matters and the boat, load and route fit its 0.75 kW prop-shaft output and battery range. It is not a gasoline-horsepower substitute on paper; compare the actual speed, range, charging and reserve requirements for your boat. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.
 
 ## When should you choose a bow electric trolling motor instead?
 
@@ -36758,7 +36749,7 @@ Choose a bow electric for shallow-water precision and spot-locking. Choose a kic
 Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.
 
 **How much does it cost to add a kicker to my repower?**
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.
+Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD as a 2026 planning range for a Mercury 9.9 ProKicker on top of your main repower; use the [live quote builder](/quote/motor-selection) for today's total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the [Avator page](/electric/mercury-avator) for current availability.
 
 **Does the kicker need its own fuel tank?**
 Not usually. We plumb the kicker into the boat's main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.
@@ -36770,7 +36761,7 @@ Yes. We install main and kicker, wire the tie-bar linkage for synchronized steer
 
 ## Ready to rig your fishing boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. Same techs, same shop, since 1947.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -37004,7 +36995,7 @@ The serial-number window matters even when the family and horsepower appear on t
 
 There is no responsible way to turn a US or Australian dealer post into an HBW Canadian quote. Currency conversion does not account for the exact eligible product, Canadian program terms, dealer process, or any other work the visit requires.
 
-HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Call **905-342-2153** with a clear photo of the serial-number plate.
+HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 :::mythbuster
 **Myth:** Mercury Boost adds horsepower.
@@ -37094,7 +37085,7 @@ We'll check the serial number against Mercury's current eligibility information 
     faqs: [
       { question: "Is Mercury Boost a horsepower increase?", answer: "No. It is a calibration software upgrade that improves eligible mid-range response. Mercury's five published tests show 5-21% quicker zero-to-top-speed acceleration, while rated horsepower, top speed, maximum RPM, and time to plane remain unchanged." },
       { question: "Does Boost work on my 300R or 400R?", answer: "No. Mercury's June 2026 documentation lists the Racing 150R but not the 200R, 250R, 300R, 400R, or 500R. The 350 HP V10 has separate published eligibility rules; do not generalize that result to other V10 models." },
-      { question: "How much does Boost cost in Canada?", answer: "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate." },
+      { question: "How much does Boost cost in Canada?", answer: "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check." },
       { question: "Did Mercury Boost win an award?", answer: "Yes, the 2026 Miami Innovation Award for advancing outboard engine performance. Specifically for software-based response improvement." },
       { question: "Will Boost void my warranty?", answer: "Mercury's June 2026 instructions state that installing or using Boost does not void the Mercury Marine Limited Warranty. HBW still verifies the exact motor and current warranty status before work is authorized." },
       { question: "Should I wait to buy a new motor until Boost ships factory-installed?", answer: "Buy the correctly rated motor for the boat today. Confirm factory-equipped status from the exact serial number; do not rely on a model-year or build-quarter assumption." }
@@ -38096,7 +38087,6 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
     image: '/lovable-uploads/hero-on-water-load-test.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-07-09',
     category: 'Repower Guide',
     readTime: '10 min read',
     keywords: ["Honda to Mercury repower", "Honda to Mercury Ontario", "Honda BF250 Mercury", "brand swap outboard repower", "Mercury repower cost Ontario", "Honda BF dealer Ontario", "Honda vs Mercury Ontario", "Mercury Premier dealer"],
@@ -38823,7 +38813,7 @@ Harris Boat Works: family-owned on Rice Lake since 1947.
       { question: 'Pontoon or tritoon for a family?', answer: 'If you mostly cruise, swim, and tube lightly, a two-tube pontoon with the right power is plenty and costs less. If watersports are a real priority, or you are often out when the wind builds a chop on Rice Lake, the third tube is worth it for the speed, the towing power, and the better ride.' },
       { question: 'How big a pontoon does a family need?', answer: 'For most families, an 18 to 22 foot pontoon hits the sweet spot of space, stability, and cost. Smaller for two or three people on calm days, bigger if you regularly carry a crowd or want serious watersports capability.' },
       { question: 'Is a pontoon a good boat for Rice Lake specifically?', answer: 'For most of what families do here, yes. Rice Lake is calm a lot of the time and a pontoon is ideal for cruising and swimming. On windy afternoons it can get choppy, which is where a tritoon and decent horsepower earn their keep.' },
-      { question: 'What does it cost to power a family pontoon?', answer: 'Pricing depends on the boat and the Mercury motor you choose. Build a real quote at mercuryrepower.ca, or call us at 905-342-2153 and we will spec it to your family and your budget. No upsell to power you do not need.' },
+      { question: 'What does it cost to power a family pontoon?', answer: 'Pricing depends on the boat and the Mercury motor you choose. Use the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection) for the motor, controls, prop, rigging and installation. No upsell to power you do not need.' },
       { question: 'Can I rent a pontoon before I buy one?', answer: 'Yes, and we recommend it. Rent one for a weekend, use it the way your family actually would, and you will know if it is the right boat before you spend a dollar on buying. See our boat rentals at harrisboatworks.ca/rentals.' }
     ],
     content: `# Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
@@ -38943,7 +38933,7 @@ For most families, an 18 to 22 foot pontoon hits the sweet spot of space, stabil
 For most of what families do here, yes. Rice Lake is calm a lot of the time and a pontoon is ideal for cruising and swimming. On windy afternoons it can get choppy, which is where a tritoon and decent horsepower earn their keep.
 
 **What does it cost to power a family pontoon?**
-Pricing depends on the boat and the Mercury motor you choose. Build a real quote at mercuryrepower.ca, or call us at 905-342-2153 and we will spec it to your family and your budget. No upsell to power you do not need.
+Pricing depends on the boat and the Mercury motor you choose. Use the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection) for the motor, controls, prop, rigging and installation. No upsell to power you do not need.
 
 **Can I rent a pontoon before I buy one?**
 Yes, and we recommend it. Rent one for a weekend, use it the way your family actually would, and you will know if it is the right boat before you spend a dollar on buying. See our [boat rentals](https://harrisboatworks.ca/rentals).

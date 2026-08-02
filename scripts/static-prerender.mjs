@@ -5897,6 +5897,7 @@ const visibleEnglishArticles = allBlogArticlesForSitemap.filter(isPubliclyVisibl
 const visibleFrenchArticles = frenchBlogArticles.filter(isPubliclyVisible);
 const visibleKoreanArticles = koreanBlogArticles.filter(isPubliclyVisible);
 const visibleMandarinArticles = mandarinBlogArticles.filter(isPubliclyVisible);
+const visibleTraditionalChineseArticles = traditionalChineseBlogArticles.filter(isPubliclyVisible);
 const visibleSpanishArticles = spanishBlogArticles.filter(isPubliclyVisible);
 const visiblePunjabiArticles = punjabiBlogArticles.filter(isPubliclyVisible);
 const visibleUrduArticles = urduBlogArticles.filter(isPubliclyVisible);
@@ -5922,7 +5923,7 @@ const esReasons = countFilterReasons(spanishBlogArticles.filter(a => !isPublicly
 const totalFuture = enReasons.future + frReasons.future + koReasons.future + zhReasons.future + esReasons.future;
 const totalHidden = enReasons.hidden + frReasons.hidden + koReasons.hidden + zhReasons.hidden + esReasons.hidden;
 console.log(`[static-prerender] loaded ${allBlogArticlesForSitemap.length} total blog articles for sitemap (vs ${blogArticles.length} prerendered)`);
-console.log(`[static-prerender] sitemap eligibility: en ${visibleEnglishArticles.length}/${allBlogArticlesForSitemap.length}, fr ${visibleFrenchArticles.length}/${frenchBlogArticles.length}, ko ${visibleKoreanArticles.length}/${koreanBlogArticles.length}, zh ${visibleMandarinArticles.length}/${mandarinBlogArticles.length}, es ${visibleSpanishArticles.length}/${spanishBlogArticles.length} (filtered out: ${totalFuture} future-dated, ${totalHidden} hidden)`);
+console.log(`[static-prerender] sitemap eligibility: en ${visibleEnglishArticles.length}/${allBlogArticlesForSitemap.length}, fr ${visibleFrenchArticles.length}/${frenchBlogArticles.length}, ko ${visibleKoreanArticles.length}/${koreanBlogArticles.length}, zh ${visibleMandarinArticles.length}/${mandarinBlogArticles.length}, zh-Hant pilot ${visibleTraditionalChineseArticles.length}/${traditionalChineseBlogArticles.length}, es ${visibleSpanishArticles.length}/${spanishBlogArticles.length} (filtered out: ${totalFuture} future-dated, ${totalHidden} hidden)`);
 
 const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   loc: `/blog/${a.slug}`,
@@ -6469,6 +6470,7 @@ const catalogBlogTwinSummaries = [
     ['fr', 'fr-CA', visibleFrenchArticles],
     ['ko', 'ko-KR', visibleKoreanArticles],
     ['zh', 'zh-CN', visibleMandarinArticles],
+    ['zh-hant', 'zh-Hant', visibleTraditionalChineseArticles],
     ['es', 'es', visibleSpanishArticles],
     ['pa', 'pa', visiblePunjabiArticles],
     ['ur', 'ur', visibleUrduArticles],
@@ -6610,6 +6612,24 @@ for (const routePath of ['/blog/zh-hant', ...traditionalChineseBlogArticleRoutes
   }
   if (!html.includes('<html lang="zh-Hant"')) {
     verifyErrors.push(`Traditional Chinese pilot route has the wrong html lang: ${routePath}`);
+  }
+}
+for (const article of visibleTraditionalChineseArticles) {
+  const routePath = `/blog/zh-hant/${article.slug}`;
+  const markdownPath = join(DIST, routePath.replace(/^\//, '') + '.md');
+  if (!existsSync(markdownPath)) {
+    verifyErrors.push(`Traditional Chinese pilot route is missing Markdown twin: ${routePath}.md`);
+    continue;
+  }
+  const markdown = readFileSync(markdownPath, 'utf8');
+  if (!markdown.startsWith('---\n')) {
+    verifyErrors.push(`Traditional Chinese Markdown twin lacks frontmatter: ${routePath}.md`);
+  }
+  if (!markdown.includes(`canonical: ${SITE_URL}${routePath}`)) {
+    verifyErrors.push(`Traditional Chinese Markdown twin has wrong canonical: ${routePath}.md`);
+  }
+  if (/<html[\s>]/i.test(markdown) || /<!doctype html/i.test(markdown)) {
+    verifyErrors.push(`Traditional Chinese Markdown twin contains HTML: ${routePath}.md`);
   }
 }
 // Exclude non-DB hub pages that live under /motors/ (e.g. the Mercury 9.9 guide)

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-07-30
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Octane and Ethanol Guide for Ontario"
 description: "Choose Mercury outboard fuel in Ontario by checking octane and ethanol separately. Includes the current V10 Verado specification and E10 limit."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-07-30
+date_modified: 2026-07-31
 keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last updated:** 2026-07-30  
+**Last updated:** 2026-07-31  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
@@ -38,6 +38,8 @@ Here's the safe choice. Make two independent checks:
 
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
+
+[Download the Marine Fuel & Storage Quick Guide](/downloads/marine-fuel-storage-quick-guide-hbw.pdf) for the pump and storage checklist in one page.
 
 ![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 

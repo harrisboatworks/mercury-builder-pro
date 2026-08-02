@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Motor Seasonal Care Ontario"
 description: "Seasonal Mercury maintenance for Ontario: spring checks, 100-hour or annual service, model-specific fall storage, and expanded 300-hour work."
 category: "Maintenance"
 date_published: 2024-05-20
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["mercury motor maintenance","outboard winterization","boat motor service","mercury service schedule","outboard maintenance tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2024-05-20  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips
 

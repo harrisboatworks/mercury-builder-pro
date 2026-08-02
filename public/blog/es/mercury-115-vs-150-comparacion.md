@@ -142,25 +142,6 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 
 ---
 
-## Preguntas frecuentes (FAQ)
-
-**¿El 150 HP garantiza más velocidad máxima que el 115 HP?** 
-Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
-
-**¿Puedo instalar un 150 en un bote que originalmente tenía un 115?** 
-Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
-
-**¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?** 
-Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000, 3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
-
-**¿Puedo financiar el motor?** 
-Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
-
-**¿El equipo de Harris Boat Works habla español?** 
-Nuestro equipo opera en inglés. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual. Para preguntas específicas, puedes escribirnos en español en hbw.wiki/service.
-
----
-
 ## CTA, Compara precios y configura tu motor
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.

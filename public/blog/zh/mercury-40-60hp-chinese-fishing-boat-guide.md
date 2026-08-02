@@ -142,25 +142,6 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 
 ---
 
-## 常见问题
-
-**Q：我的16英尺铝船，三个人钓鱼，选40还是60HP？**
-A：三个人加上钓鱼装备，16英尺铝船，建议认真考虑60HP。40HP在满载时可能让船起步吃力，影响每次出湖的体验。具体还要看你的Capacity Plate最大马力标示。到mercuryrepower.ca建立报价后联络HBW确认。
-
-**Q：50HP是个好的折衷吗？**
-A：有时候是，有时候不如直接选60HP。50HP和60HP的价差，需要对比两者的实际差异来判断是否值得。建议在mercuryrepower.ca同时看50HP和60HP的报价，再和HBW讨论哪个配置更适合你的船。
-
-**Q：Mercury 40至60HP有电动启动吗？**
-A：大多数40HP以上的Mercury提供电动启动选项，但具体配置依型号而异。购买时确认。
-
-**Q：Repower换成40至60HP，原来的操控系统要换吗？**
-A：取决于你原来的发动机型号和系统配置。电启动需要电池连接，Remote操控需要相容的控制线。让HBW在Repower评估时一起确认。
-
-**Q：二手40至60HP Mercury值得买吗？**
-A：取决于使用历史和保养状态。如果有完整的服务纪录，某些保养良好的二手Mercury确实值得考虑。请至 hbw.wiki/service 提交评估申请，让HBW技师确认状态。
-
----
-
 ## 内部连结
 
 - [Mercury 9.9至20HP：钓鱼小船、Kicker、Tiller中文选购指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)

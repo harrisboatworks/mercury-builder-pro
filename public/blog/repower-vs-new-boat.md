@@ -132,7 +132,7 @@ We would rather lose a $15,000 motor sale than have you regret the upgrade becau
 
 ## Ready to do the math on your boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947. Same techs, same shop, since 1947.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947 and a Mercury dealer since 1965. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON

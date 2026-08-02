@@ -129,25 +129,6 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 
-## Questions fréquentes
-
-**Est-ce que la CCEP expire?** 
-Non. Vous réussissez le test une fois et la carte est valide à vie.
-
-**Peut-on passer le test en français?** 
-Oui. Plusieurs fournisseurs accrédités par Transports Canada offrent le test en français. Cherchez « carte conducteur embarcation plaisance cours français » pour trouver une option dans votre langue.
-
-**Quelle est la différence entre la CCEP et la licence d'embarcation?** 
-La CCEP est la certification de l'opérateur (vous). La licence d'embarcation ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) est le numéro d'immatriculation du bateau. Les deux sont nécessaires, mais ce sont deux choses distinctes.
-
-**Est-ce que la CCEP est reconnue dans d'autres provinces?** 
-Oui. La CCEP est une certification fédérale valide partout au Canada.
-
-**Où puis-je vérifier les exigences d'équipements de sécurité complètes?** 
-Sur le site de Transports Canada. Les exigences varient selon la longueur et le type de l'embarcation, la liste dans cet article est un résumé, pas la liste officielle complète.
-
----
-
 ## Liens internes
 - Guide de pêche sur le lac Rice
 - Guide d'hivernisation du moteur Mercury Ontario

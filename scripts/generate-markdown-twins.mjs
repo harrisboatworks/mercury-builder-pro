@@ -13,7 +13,9 @@ const PUBLIC_MOTORS_API = 'https://www.mercuryrepower.ca/api/agents/motors';
 const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
-const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+// Localized corpus loading resolves Vite asset imports across nine languages.
+// A cold CI filesystem can legitimately take longer than 30 seconds.
+const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 120000);
 // Publishable (anon) key is safe to embed and is already committed in the
 // browser client. Sharing it keeps both motor loaders resilient when the
 // public edge function is temporarily unavailable.
@@ -100,6 +102,7 @@ function loadLocalizedBlogArticles() {
     import { frenchBlogArticles } from '../src/data/frenchBlogArticles.ts';
     import { koreanBlogArticles } from '../src/data/koreanBlogArticles.ts';
     import { mandarinBlogArticles } from '../src/data/mandarinBlogArticles.ts';
+    import { traditionalChineseBlogArticles } from '../src/data/traditionalChineseBlogArticles.ts';
     import { spanishBlogArticles } from '../src/data/spanishBlogArticles.ts';
     import { punjabiBlogArticles } from '../src/data/punjabiBlogArticles.ts';
     import { urduBlogArticles } from '../src/data/urduBlogArticles.ts';
@@ -118,6 +121,7 @@ function loadLocalizedBlogArticles() {
       { prefix: 'fr', language: 'fr-CA', articles: clean(frenchBlogArticles) },
       { prefix: 'ko', language: 'ko-KR', articles: clean(koreanBlogArticles) },
       { prefix: 'zh', language: 'zh-CN', articles: clean(mandarinBlogArticles) },
+      { prefix: 'zh-hant', language: 'zh-Hant', articles: clean(traditionalChineseBlogArticles) },
       { prefix: 'es', language: 'es', articles: clean(spanishBlogArticles) },
       { prefix: 'pa', language: 'pa', articles: clean(punjabiBlogArticles) },
       { prefix: 'ur', language: 'ur', articles: clean(urduBlogArticles) },
@@ -1249,6 +1253,9 @@ for (const group of localizedBlogGroups) {
   for (const article of group.articles) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
     writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
+    verifyPublicMd(path, `${group.language} blog twin`, [
+      `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
+    ]);
     blogTwinSummaries.push({
       path,
       title: `${article.title} [${group.language}]`,

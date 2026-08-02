@@ -158,28 +158,6 @@ Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, 
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
 
-## Questions fréquentes
-
-**Le 115 FourStroke est-il vraiment le 115 HP le plus léger disponible?**
-Oui, à 359 lb.
-
-**Le 115 FourStroke est-il le même moteur que le 90?**
-Même bloc 2,1 L. Calibration différente.
-
-**Le 150 est-il comparable au 115?**
-Non. Famille différente, bloc différent, classe de poids différente (environ 100 lb plus lourd).
-
-**Quand le 115 CT a-t-il du sens par rapport au 90 CT?**
-Quand le ponton fait 20 à 24 pi, quand vous transportez régulièrement 5 à 6 personnes, ou quand c'est un tritoon.
-
-**Quelles économies de carburant puis-je m'attendre en remotorisant à partir d'un vieux deux temps?**
-Typiquement 25 à 35 % moins de carburant.
-
-**Le 115 Pro XS existe-t-il en Command Thrust?**
-Non, le Pro XS utilise une embase sport conçue pour les applications de performance.
-
----
-
 ## Bâtissez une soumission
 
 Voyez le 115 ELPT, le 115 CT et le 115 Pro XS côte à côte à mercuryrepower.ca. Vrais prix CAD, vraies configurations.

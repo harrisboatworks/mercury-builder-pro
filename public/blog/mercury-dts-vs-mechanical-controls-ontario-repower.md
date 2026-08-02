@@ -61,8 +61,9 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 | FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
-| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
-| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 | 350-425 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V12 | 600 HP | DTS standard | Joystick Piloting requires DTS. |
 | Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
 | SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
 

@@ -154,7 +154,7 @@ For pontoons 18 ft and up, yes. Command Thrust gives meaningful hole shot, load-
 
 ### How much does Command Thrust cost over the standard gearcase?
 
-Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.
+Command Thrust pricing moves with motor class and prop selection. Use the [live pricing reference](/pricing-reference) for current motor prices, then [build a configured quote](/quote/motor-selection) for the complete setup.
 
 ### Will my standard prop fit on a Command Thrust gearcase?
 

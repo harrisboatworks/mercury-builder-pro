@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-08-02
+last_updated: 2026-05-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Read Your Boat's Capacity Plate (Ontario Guide)"
 description: "What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-08-02
+date_modified: 2026-05-16
 keywords: ["boat capacity plate","capacity plate ontario","transport canada compliance notice","boat maximum horsepower","boat capacity decoder","boat hin number","used boat inspection ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-05-16  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 
@@ -32,7 +32,7 @@ language: en-CA
 
 ## Quick answer
 
-A Canadian boat capacity plate (called a Compliance Notice by Transport Canada) tells you the maximum number of people, maximum recommended engine horsepower, and maximum total load the boat is rated to carry safely. The numbers are stamped on a riveted plate inside the hull, usually near the helm or transom. If your boat was built before 2010 and is under 6 metres, it may not have one. If it does, follow those limits: exceeding the rated horsepower creates compliance, insurance, liability, safety, and potential warranty problems. Overloading the boat is a real safety problem, not a guideline. This guide walks through every field, explains what is and is not legally enforceable, and covers the three reading mistakes we see most often at our Rice Lake marina.
+A Canadian boat capacity plate (called a Compliance Notice by Transport Canada) tells you the maximum number of people, maximum recommended engine horsepower, and maximum total load the boat is rated to carry safely. The numbers are stamped on a riveted plate inside the hull, usually near the helm or transom. If your boat was built before 2010 and is under 6 metres, it may not have one. If it does, the rules apply: exceeding the rated horsepower can void your insurance and your warranty, and overloading the boat is a real safety problem, not a guideline. This guide walks through every field, explains what is and is not legally enforceable, and covers the three reading mistakes we see most often at our Rice Lake marina.
 
 ## Where to find the plate
 
@@ -58,7 +58,7 @@ This is the highest motor power the hull was designed and tested to handle safel
 
 **Important**: this is not a "minimum" or a "you should buy this much." It is a ceiling. Over-powering a hull can cause it to porpoise, plough, or in extreme cases fail at the transom. Under-powering wastes the hull's potential but is rarely dangerous.
 
-This number matters for compliance, insurance, liability, safe handling, and warranty coverage. Mounting a motor that exceeds the rated maximum can give an insurer or manufacturer grounds to deny a related claim, even if the boat seems to handle fine.
+This number is also binding for warranty and insurance purposes. Mounting a motor that exceeds the rated max can void both, even if the boat seems to handle fine. We have seen Ontario insurance claims denied on this exact basis.
 
 ### 3. Maximum gross load (or maximum total weight)
 This is the total weight the boat can safely carry: people, fuel, gear, motor, batteries, coolers, everything that is not the empty hull. Usually expressed in both kilograms and pounds. The number is much larger than just "5 people times 75 kg" because it accounts for fuel weight, motor weight, and typical gear.
@@ -128,7 +128,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### Is it legal to exceed the maximum horsepower on the capacity plate?
 
-The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the plate rating.
+On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or installer will mount a motor that exceeds the plate rating.
 
 ### What if my plate is illegible or missing?
 

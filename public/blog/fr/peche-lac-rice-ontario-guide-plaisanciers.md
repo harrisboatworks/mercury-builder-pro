@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-07-10
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-07-10
+date_modified: 2026-08-01
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: fr-CA
 
 **Category:** Destination  
 **Published:** 2026-04-12  
-**Last updated:** 2026-07-10  
+**Last updated:** 2026-08-01  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
 ### Réponse rapide
 
-Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947, avec une flotte de location de neuf embarcations.
+Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
 
 ---
 
@@ -98,7 +98,7 @@ Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêc
 
 ## Partir à la journée depuis Harris Boat Works
 
-Notre marina dispose d'une flotte de neuf embarcations disponibles à la location. Vous arrivez, vous montez à bord, et vous pêchez sur le même lac Rice que les résidents connaissent depuis des générations. Pas besoin de trouver un accès public, de transporter un bateau, ou d'apprendre à naviguer dans un lac inconnu.
+Notre marina loue des pontons et des bateaux de pêche directement sur le lac Rice. Consultez harrisboatworks.ca/rentals pour connaître les embarcations, les capacités, les tarifs et les disponibilités actuels. Vous n'avez pas besoin de transporter une embarcation depuis un autre lac.
 
 On vend aussi du carburant sans éthanol sur place, un détail que les propriétaires d'embarcations avec moteurs à carburateur apprécient particulièrement, puisque l'éthanol peut causer des problèmes mécaniques lors des périodes d'entreposage.
 
@@ -127,22 +127,6 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario): Les prix canadiens par puissance et durée, l'admissibilité, les exclusions et le transfert.
-
-## Questions fréquentes
-
-**Quand est l'ouverture de la saison du doré au lac Rice?** 
-Généralement le 2e samedi de mai pour la Zone 17. Vérifiez la date exacte pour l'année courante sur ontario.ca.
-
-**Peut-on louer un bateau à la journée à Harris Boat Works?** 
-Oui. Notre flotte de neuf embarcations est disponible à la location. Visitez [harrisboatworks.ca](https://harrisboatworks.ca) pour les détails et les réservations.
-
-**A-t-on besoin d'un permis de pêche pour le lac Rice?** 
-Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
-
-**Le lac Rice est-il accessible depuis Montréal?** 
-Oui. Le lac se trouve à moins de trois heures de Montréal via l'autoroute 401 vers l'ouest et la 115 vers le nord jusqu'à Gores Landing.
-
----
 
 ## Liens internes
 - Permis de conduire une embarcation au Canada

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide.md
-last_updated: 2026-05-27
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Repower Eligibility: 5-Check Guide"
 description: "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours."
 category: "Repower Decision"
 date_published: 2026-05-27
-date_modified: 2026-05-27
+date_modified: 2026-07-31
 keywords: ["mercury repower eligibility","is my boat worth repowering","transom inspection","boat capacity plate","mercury repower cost ontario","repower vs buy new","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Decision  
 **Published:** 2026-05-27  
-**Last updated:** 2026-05-27  
+**Last updated:** 2026-07-31  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide
 
@@ -174,7 +174,7 @@ Most repower conversations start with the eligibility check. If your boat passes
 
 If you are unsure on any of the checks, particularly transom integrity or hull condition, book an in-person assessment at [hbw.wiki/service](https://hbw.wiki/service). We will walk through it with you. No charge for the eligibility conversation.
 
-Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. Mercury dealer since 1965, family marina since 1947.
+Harris Boat Works, Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 Phone: (905) 342-2153
 Text: (647) 952-2153

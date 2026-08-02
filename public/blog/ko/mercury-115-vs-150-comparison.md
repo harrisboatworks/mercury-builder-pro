@@ -125,19 +125,6 @@ Mercury 150은 115보다 약 44kg(96lbs) 무겁습니다. 수상에서 조종 �
 
 ---
 
-## 자주 묻는 질문
-
-**HBW에서 115와 150 중 어느 것을 더 많이 추천하나요?** 
-보트 크기와 용도에 따라 다릅니다. 정확한 견적과 추천을 위해 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 사양을 입력해보세요.
-
-**두 엔진의 가격 차이는 얼마나 되나요?** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca)에서 실시간으로 두 엔진을 나란히 비교할 수 있습니다.
-
-**Pro XS 버전은 얼마나 더 비싼가요?** 
-Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가격은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 확인하세요.
-
----
-
 ## 내부 링크
 - 온타리오 보트 구매 가이드
 - Rice Lake 낚시 가이드

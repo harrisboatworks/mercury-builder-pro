@@ -140,7 +140,7 @@ The Avator conversation at our counter is almost never "should I replace my 115 
 
 That's the honest state of electric boating in cottage country in 2026: it's not replacing the main gas motor on Rice Lake yet, and anyone who tells you otherwise is selling something. It is quietly winning the small-motor jobs, one dock at a time.
 
-We're bringing Avator into the lineup now, with pricing being finalized. If you want to be first in line when numbers land, get on the list through our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) or call us.
+We're bringing Avator into the lineup now, with Mercury Canada pricing still being finalized. We will not invent a placeholder number. Use our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) for current availability and the configuration path.
 
 ---
 
@@ -176,7 +176,7 @@ Tell us the boat, the water, and how you actually run it. We'll tell you straigh
 
 ### Is Harris Boat Works actually selling the Mercury Avator now?
 
-Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup.
+Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 ### How far does an Avator go on one charge?
 
