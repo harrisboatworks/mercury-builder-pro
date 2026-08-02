@@ -126,26 +126,6 @@ caveat: 所有价格为加元 (CAD), 仅限 Gores Landing 自提。具体配置�
 
 我们见过最糟糕的情况是客户自己在车库冬化但忘记排冷却水 ， 春天开机的瞬间引擎缸体被冰裂。那种损坏修不好，只能换引擎。专业冬化的钱是保险，不是开销。
 
-## 常见问题
-
-**Q：HBW 室内冬储多少钱？**
-HBW 不提供室内冬储。我们只做室外收缩膜。如果需要室内存储，请联系 GTA 地区的恒温存储设施。
-
-**Q：HBW 可以来 GTA 取船吗？**
-不可以。HBW 是客户自送自取服务。多伦多到莱斯湖约 1 小时车程，建议早上送船。
-
-**Q：船在 HBW 冬储期间可以进去取东西吗？**
-12 月 1 日至 4 月 1 日船坞关闭，不能。请在送船前取出所有需要的物品。
-
-**Q：船坞何时重新开放？**
-4 月 1 日。具体开门日期请关注 HBW 官网或致电 (905) 342-2153。
-
-**Q：HBW 接受非 Mercury 引擎的船吗？**
-接受。冬储服务针对所有品牌船只。但引擎冬化只能由我们的 Mercury 认证技师做 ， 如果您的船是 Yamaha 或 Honda，请自行安排或联系我们外包服务。
-
-**Q：[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) 需要在冬储前过户给 HBW 吗？**
-不需要。船的所有权和注册保持在您名下，HBW 只是临时存放方。
-
 ## 联系我们
 
 - 网站：[harrisboatworks.ca](https://www.harrisboatworks.ca)

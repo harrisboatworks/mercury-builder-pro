@@ -4,6 +4,7 @@ import { Helmet } from '@/lib/helmet';
 import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
 import { BlogHeroPicture } from '@/components/blog/BlogHeroPicture';
 import { SITE_URL } from '@/lib/site';
+import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -46,7 +47,10 @@ export default function MandarinBlogArticlePage() {
   }
 
   const url = `${SITE_URL}/blog/zh/${article.slug}`;
-  const tocItems = extractHeaders(article.content);
+  const cleanedContent = cleanBlogContent(article.content, {
+    hasStructuredFaqs: Boolean(article.faqs?.length),
+  });
+  const tocItems = extractHeaders(cleanedContent);
   const relatedArticles = mandarinBlogArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
@@ -209,16 +213,7 @@ export default function MandarinBlogArticlePage() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={(() => {
-                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
-                if (article.faqs && article.faqs.length > 0) {
-                  c = c.replace(
-                    /\n##\s+(?:常见问题|Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-                    '\n',
-                  );
-                }
-                return c;
-              })()}
+              content={cleanedContent.replace(/^\s*#\s+.+\n+/, '')}
               markdownComponents={{
                 // Demote any in-body h1 to h2 so the page-level title remains
                 // the only h1 on the page (matches EN BlogArticle.tsx behavior).

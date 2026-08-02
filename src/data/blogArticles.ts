@@ -1,11 +1,4 @@
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
-import {
-  isArticleInSeason,
-  isArticlePublished as isListingArticlePublished,
-  parseLocalDate,
-} from './blogArticleListing';
-
-export { isArticleInSeason, parseLocalDate } from './blogArticleListing';
 
 export interface HowToStep {
   name: string;
@@ -44,9 +37,58 @@ export interface BlogArticle {
 }
 
 
+// Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
+// not UTC. Prevents posts from publishing a day early in EDT.
+export function parseLocalDate(dateString: string): Date {
+  const [y, m, d] = dateString.split('-').map(Number);
+  return new Date(y, (m || 1) - 1, d || 1);
+}
+
+// Seasonal posts - only surface on the blog index during their relevant
+// months (Ontario boating calendar). Months are 1-12. Posts not listed
+// here are treated as year-round. Sitemap eligibility is NOT affected -
+// these pages remain crawlable and indexable year-round (direct URLs
+// still work), we just hide them from the blog index out of season so
+// the feed feels timely instead of showing winterization in July.
+const SEASONAL_POSTS: Record<string, number[]> = {
+  // Winter / off-season buying & planning (Nov–Feb)
+  'winter-repower-planning-guide':        [11, 12, 1, 2],
+  'year-end-boat-motor-buying-guide':     [11, 12, 1, 2],
+  'mercury-outboard-lineup-ontario':       [10, 11, 12, 1, 2, 6, 7, 8],
+  // Winterization (Sep–Dec)
+  'boat-winterization-cost-ontario-2026':                [9, 10, 11, 12],
+  'diy-mercury-outboard-winterization-guide':            [9, 10, 11, 12],
+
+  // Winter storage (Sep–Mar)
+  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [9, 10, 11, 12, 1, 2, 3],
+  'outdoor-boat-storage-shrinkwrap-rice-lake':        [9, 10, 11, 12, 1, 2, 3],
+  'winter-storage-near-toronto-hbw':                  [9, 10, 11, 12, 1, 2, 3],
+  'boat-storage-kawartha-lakes':                      [9, 10, 11, 12, 1, 2, 3],
+  // Spring commissioning & opener (Mar–May)
+  'spring-outboard-commissioning-checklist': [3, 4, 5],
+  'walleye-opener-boat-prep':                [3, 4, 5],
+  // Late-season / cold-water safety (Sep–Nov)
+  'late-season-boating-safety':              [9, 10, 11],
+  // Active boating-season content (Apr–Oct)
+  'ontario-boating-season-tips':              [4, 5, 6, 7, 8, 9, 10],
+  'trent-severn-waterway-boating-guide-2026': [4, 5, 6, 7, 8, 9, 10],
+  'rice-lake-boat-rentals-from-toronto-gta':  [4, 5, 6, 7, 8, 9],
+};
+
+export function isArticleInSeason(slug: string, now: Date = new Date()): boolean {
+  const months = SEASONAL_POSTS[slug];
+  if (!months) return true;
+  return months.includes(now.getMonth() + 1);
+}
+
 // Helper to check if an article is published
 export function isArticlePublished(article: BlogArticle): boolean {
-  return isListingArticlePublished(article);
+  const publishDate = article.publishDate || article.datePublished;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const articleDate = parseLocalDate(publishDate);
+  articleDate.setHours(0, 0, 0, 0);
+  return articleDate <= today;
 }
 
 // Get all published articles (filters out future-dated AND out-of-season articles)
@@ -1012,7 +1054,7 @@ A fault code names the circuit or condition the computer noticed. It does not na
       "electric outboard Ontario lakes"
     ],
     faqs: [
-      { question: "Is Harris Boat Works actually selling the Mercury Avator now?", answer: "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup." },
+      { question: "Is Harris Boat Works actually selling the Mercury Avator now?", answer: "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path." },
       { question: "How far does an Avator go on one charge?", answer: "It depends heavily on throttle, load, and conditions. Mercury's published 7.5e test on a light 13-foot boat ran about 60 minutes at full throttle and most of a day at slow trolling speed on one 1 kWh battery. Spare batteries swap in seconds and effectively double your day." },
       { question: "Can I charge one at the cottage?", answer: "The 7.5e charges overnight from a standard dock or cottage outlet. The larger external packs on the 20e through 110e benefit from proper electrical service, and the biggest setups need real planning. Our cottage charging guide covers what each model needs." },
       { question: "Is electric cheaper than gas in the long run?", answer: "Per hour on the water, yes: no fuel, no oil changes, minimal maintenance. But the up-front premium over a small gas outboard takes years to recover on fuel savings alone. People who love their electrics bought them for silence and simplicity, not payback math." },
@@ -1132,7 +1174,7 @@ The Avator conversation at our counter is almost never "should I replace my 115 
 
 That's the honest state of electric boating in cottage country in 2026: it's not replacing the main gas motor on Rice Lake yet, and anyone who tells you otherwise is selling something. It is quietly winning the small-motor jobs, one dock at a time.
 
-We're bringing Avator into the lineup now, with pricing being finalized. If you want to be first in line when numbers land, get on the list through our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) or call us.
+We're bringing Avator into the lineup now, with Mercury Canada pricing still being finalized. We will not invent a placeholder number. Use our [Avator page](https://www.mercuryrepower.ca/electric/mercury-avator) for current availability and the configuration path.
 
 ---
 
@@ -1157,7 +1199,7 @@ We're bringing Avator into the lineup now, with pricing being finalized. If you 
 ## Frequently Asked Questions
 
 **Is Harris Boat Works actually selling the Mercury Avator now?**
-Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup.
+Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 **How far does an Avator go on one charge?**
 It depends heavily on throttle, load, and conditions. Mercury's published 7.5e test on a light 13-foot boat ran about 60 minutes at full throttle and most of a day at slow trolling speed on one 1 kWh battery. Spare batteries swap in seconds and effectively double your day. See our [Rice Lake range guide](/blog/mercury-avator-range-rice-lake-cottage) for model-by-model numbers.
@@ -2109,11 +2151,11 @@ Get on the spring list early, or better, book the fall-spring pair and make both
   {
     slug: "renting-vs-owning-boat-ontario-math",
     title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)",
-    description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses.",
+    description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses.",
     image: "/lovable-uploads/hero-renting-vs-owning-boat.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-27",
+    dateModified: "2026-08-01",
 
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
@@ -2123,19 +2165,19 @@ Get on the spring list early, or better, book the fall-spring pair and make both
       { question: "Is it cheaper to rent or buy a boat in Ontario?", answer: "For a handful of days a season, renting is far cheaper because ownership's fixed costs (insurance, storage, winterization, depreciation) run whether you boat or not. Heavy users flip the math: the more real boat days you log per year, the cheaper owning gets per day. Count your honest days first." },
       { question: "How many times a year should I boat before buying makes sense?", answer: "There's no magic number, because it depends on the boat and your costs. The principle: renting wins at low usage, owning wins at high usage, and the crossover sits where YOUR ownership buckets divided by YOUR honest days beats a rental day. In between, decide on lifestyle: spontaneity favours owning; flexibility and zero hassle favour renting." },
       { question: "What ownership costs do first-time buyers forget?", answer: "Winterization, storage, spring commissioning, and depreciation. The purchase price gets all the attention, but the annual carry is what surprises people. Our [total cost of ownership guide](/blog/total-cost-of-owning-a-boat-ontario-2026) itemizes all of it with current Ontario ranges." },
-      { question: "Can renting help me decide what boat to buy?", answer: "It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures." },
+      { question: "Can renting help me decide what boat to buy?", answer: "Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase." },
       { question: "If I decide to buy, when's the smart time to do it?", answer: "Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side." },
-      { question: "What's the cheapest way to get on Rice Lake this summer?", answer: "A rental day, split with another family. No fixed costs, safety gear included, and the marina handles everything. Book a morning slot, pack your own lunch, and the per-person cost beats most day trips out of the city. Live rates: [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)." },
+      { question: "How do I price a Rice Lake rental day?", answer: "Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs." },
     ],
     content: `# Renting vs Owning a Boat in Ontario: The Honest Math (2026)
 
-*Last reviewed: 2026-07-27*
+*Last reviewed: 2026-08-01*
 
 > **Quick answer:** Owning wins if you're on the water most weekends and the boat is part of how you live. Renting wins if you boat a handful of days a season, because a rental day carries zero fixed costs while ownership costs run whether you launch or not. We sell boats AND rent them, so run the worksheet below before you decide. Rentals: harrisboatworks.ca/rentals.
 
 We're a marina that sells boats, services boats, stores boats, and rents boats. Whichever way you go, we're fine.
 
-That makes us one of the few places you'll get this comparison without a thumb on the scale. Most "rent vs buy" articles are written by whoever profits from one answer. Our honest version: the right answer is math plus personality, and people keep doing the math while skipping the personality part.
+Because HBW sells, services, stores, and rents boats, we can lay out both cost structures. The right answer is math plus personality, and the worksheet below covers both.
 
 Here's both.
 
@@ -2179,9 +2221,9 @@ A rental day has exactly none of those buckets in it. It has a rate you saw befo
 
 ---
 
-## The Worksheet: Five Minutes, Honest Inputs
+## The Worksheet: Honest Inputs
 
-1. **Count your realistic boat days.** Not aspirational days. Look at last summer's calendar: how many days did you have free, at the lake, with weather? Most families who don't live on the water are surprised how small the honest number is; cottagers and retirees land several times higher.
+1. **Count your realistic boat days.** Not aspirational days. Look at last summer's calendar: how many days did you have free, at the lake, with weather? Use your own history rather than a generic usage assumption.
 2. **Price a rental season.** Multiply your realistic days by a rental day (live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) plus fuel). That's your total annual boating cost as a renter. It ends there.
 3. **Price an ownership season.** Add YOUR numbers for the buckets above, using the linked guides. Include the payment if you'd finance.
 4. **Divide ownership cost by your boat days.** That's your true cost per day on the water as an owner.
@@ -2195,7 +2237,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 
 **Things that quietly favour renting:**
 
-- The boat is always ready, fuelled, and working. Mechanical surprises are our problem, not your Saturday's.
+- Storage, insurance, winterizing, and annual maintenance are not your costs for a booked rental day.
 - You can match the boat to the day: fishing boat for the guys' weekend, cruise pontoon for the family day.
 - No towing, no launch-day logistics, no trailer licence plate to renew.
 - Try different lakes and boats before committing to anything.
@@ -2229,13 +2271,13 @@ There's no magic number, because it depends on the boat and your costs. The prin
 Winterization, storage, spring commissioning, and depreciation. The purchase price gets all the attention, but the annual carry is what surprises people. Our [total cost of ownership guide](/blog/total-cost-of-owning-a-boat-ontario-2026) itemizes all of it with current Ontario ranges.
 
 **Can renting help me decide what boat to buy?**
-It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures.
+Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase.
 
 **If I decide to buy, when's the smart time to do it?**
 Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/is-2026-good-year-to-buy-boat-canada) covers the market side.
 
-**What's the cheapest way to get on Rice Lake this summer?**
-A rental day, split with another family. No fixed costs, safety gear included, and the marina handles everything. Book a morning slot, pack your own lunch, and the per-person cost beats most day trips out of the city. Live rates: [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+**How do I price a Rice Lake rental day?**
+Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs.
 
 ---
 
@@ -2272,26 +2314,26 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     image: "/lovable-uploads/hero-group-boat-rentals.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
     keywords: ["group boat rental rice lake", "family reunion boat rental ontario", "rent multiple boats", "pontoon rental for large group", "fishing weekend boat rental kawarthas"],
     faqs: [
-      { question: "Can we rent multiple boats at once on Rice Lake?", answer: "Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in." },
-      { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two." },
+      { question: "Can we rent multiple boats at once on Rice Lake?", answer: "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in." },
+      { question: "How many people fit on a rental pontoon?", answer: "Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore." },
       { question: "Can our group have a BBQ at the marina?", answer: "Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity." },
       { question: "Can we keep rental boats at our cottage for a reunion weekend?", answer: "Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you." },
-      { question: "Do we need a licence for every boat we rent?", answer: "Yes. HBW requires one driver with a valid Pleasure Craft Operator Card for each rental boat. Every driver shows photo ID and a permanent or temporary card at check-in. Passengers don't need one, but anyone who may take the helm does." },
+      { question: "Do we need a licence for every boat we rent?", answer: "Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian visitors complete a renter's checklist waiver instead." },
       { question: "Can we bring alcohol for a celebration on the water?", answer: "No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Rice Lake is rigorous with severe penalties. Celebrate on land after the boats are back; the lake is plenty of fun sober." },
     ],
     content: `# Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** The new Halo gives groups of up to 12 people a roomy single-boat option. For larger groups, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Book the fleet at harrisboatworks.ca/rentals.
+> **Quick answer:** For groups bigger than one boat's capacity, check current availability for two or more boats and plan to run them together. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book online at harrisboatworks.ca/rentals.
 
-Every July, some brave soul organizes the family reunion. Twenty-two people, four coolers, one group chat that's been chaos since March.
+Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.
 
 The good news: [a multi-boat day on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) is one of the easiest big-group activities to actually pull off, because the lake does the entertaining and the dock setup is simple.
 
@@ -2307,13 +2349,11 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 ## The Three Rules That Surprise Group Organizers
 
-**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. The Halo is listed for up to 12 people. A group of 13 can't "mostly fit," so the fix is simple: book two boats. Groups do it all summer.
+**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. Twelve people can't "mostly fit" on a boat whose posted capacity is lower. Check each live listing and book enough capacity for the full group.
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
-**3. Every boat needs its own licensed driver.** One operator card doesn't cover a convoy. HBW requires each boat's driver to show photo ID and a valid Pleasure Craft Operator Card at check-in. If someone may take a turn at the helm, get their card sorted before rental day. Details are in [our licence guide](/blog/boat-rental-licence-ontario-guide).
-
-::boat-card-help
+**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); get every designated driver through it before rental day. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
 
 ---
 
@@ -2323,13 +2363,12 @@ Mix boats by what each sub-group wants to do:
 
 | Group | Boats to book | Why |
 |---|---|---|
-| Big family day (up to 12) | Halo pontoon | The fleet's largest single-boat passenger capacity, with roomy seating and Bluetooth audio |
-| Larger family day (13 to 16) | Two cruise or fishing pontoons | Split the group safely while everyone cruises and anchors together for lunch |
-| Fishing weekend (4 to 8) | Two ProSport fishing boats, or one plus a fishing pontoon | Split up, hit different spots, compare catches at dinner |
+| Group above one boat's posted capacity | Enough currently available boats for the full headcount | Everyone swims, cruises, and anchors together for lunch |
+| Fishing weekend | Currently available ProSport or fishing-pontoon options | Match each sub-group to a live listing and posted capacity |
 | Two-family cottage crew | One cruise pontoon + one fishing boat | Anglers leave at 8 am, families launch at 10 |
 | Reunion with elders and toddlers | Cruise pontoons | Stable, shaded, easy boarding, room for the stroller crowd |
 
-Every pontoon has a Bluetooth stereo; every boat carries fitted life jackets for your whole roster, kid sizes included. Live availability for the whole fleet is in the [booking system](https://harrisboatworks.ca/rentals); summer weekends book out, so lock multiple boats in early.
+The live booking system lists the equipment for each pontoon. Every boat carries fitted life jackets for your whole roster, kid sizes included. Check current multi-boat availability in the [booking system](https://harrisboatworks.ca/rentals).
 
 ---
 
@@ -2339,7 +2378,7 @@ Every pontoon has a Bluetooth stereo; every boat carries fitted life jackets for
 - **Pick a lunch anchorage before you launch.** "Meet at the west end around noon" beats fourteen phone calls from the middle of the lake. Your dock orientation includes a lake map; mark it together.
 - **Convoy through the marked passes.** The old rail causeway between Harwood and Hiawatha hides rock just under the surface, and the buoyed passes are the only way through. Lead boat goes first, everyone follows the same line.
 - **Trade passengers at anchor, not underway.** Kids always want to switch boats. The lunch anchorage is the time.
-- **Agree on a hard return time.** Boats need to be back, unloaded, and cleared by the return time on the agreement, because late returns run $5 a minute, per boat.
+- **Agree on a hard return time.** Boats need to be back, unloaded, and cleared by the return time on the agreement. Late charges follow the current signed rental terms and apply per boat.
 
 ---
 
@@ -2361,17 +2400,17 @@ For reunions based at a rented cottage, multi-day rentals change the game: keep 
 
 ## What HBW checks before your group leaves the dock
 
-Group send-offs get the same treatment as every rental, multiplied: every boat fuelled and checked that morning, life jackets fitted to every person on your roster (we help sort the kid sizes), safety kits counted per boat, and each driver gets the orientation, the map, and the causeway briefing. We've been launching family gatherings onto this lake since 1947; the ten minutes at the dock is why group days end with plans for next year instead of stories about the rocks.
+Group send-offs follow the current rental process for each boat: life jackets are fitted to every person on the roster, the required safety equipment stays with each boat, and every driver gets the boat orientation, lake map, and causeway briefing. Harris Boat Works has served boaters on Rice Lake since 1947.
 
 ---
 
 ## Frequently Asked Questions
 
 **Can we rent multiple boats at once on Rice Lake?**
-Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in.
+Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in.
 
 **How many people fit on a rental pontoon?**
-Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two.
+Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore.
 
 **Can our group have a BBQ at the marina?**
 Yes, in designated on-site areas only, never on or near the boats. It works well as a shore lunch between cruising sessions. Everyone at the BBQ needs to be part of your boats' rated capacity.
@@ -2380,7 +2419,7 @@ Yes, in designated on-site areas only, never on or near the boats. It works well
 Yes. Multi-day rentals can stay at your cottage dock for the duration, and you can use them outside regular rental hours (working lights required after dark). You're responsible for the boats while they're with you.
 
 **Do we need a licence for every boat we rent?**
-Yes. HBW requires one driver with a valid Pleasure Craft Operator Card for each rental boat. Every driver shows photo ID and a permanent or temporary card at check-in. Passengers don't need one, but anyone who may take the helm does.
+Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian visitors complete a renter's checklist waiver instead.
 
 **Can we bring alcohol for a celebration on the water?**
 No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Rice Lake is rigorous with severe penalties. Celebrate on land after the boats are back; the lake is plenty of fun sober.
@@ -2392,7 +2431,6 @@ No. Alcohol is prohibited on all our rental boats, and Ontario enforcement on Ri
 Get your headcount, pick your boats, and get each driver licensed this week. The group chat will doubt you; the photos will vindicate you.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Planning a big group? Text:** [647-952-2153](sms:+16479522153) **or call:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -2412,7 +2450,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
   {
     slug: "first-time-boat-rental-rice-lake-guide",
     title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock",
-    description: "Never driven a boat? Here's the exact orientation we give every first-time renter at our Rice Lake dock: driving, docking, wind, and what to do if something goes wrong.",
+    description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong.",
     image: "/lovable-uploads/hero-first-time-boat-rental.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
@@ -2422,32 +2460,28 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     readTime: "~8 min read",
     keywords: ["first time renting a boat", "how to drive a pontoon boat", "first time boat rental tips", "pontoon boat rental for beginners", "rice lake boat rental beginners"],
     faqs: [
-      { question: "Is renting a boat hard if I've never driven one?", answer: "No. A pontoon has one throttle, no brakes, and a walking-pace idle. Our ten-minute dock orientation covers everything, and we don't rush first-timers. The learning curve is roughly \"golf cart,\" not \"airplane.\"" },
-      { question: "What's the easiest rental boat for a beginner?", answer: "A pontoon, no contest. It's stable, slow to react, forgiving to dock, and has room for the whole crew to spread out. Our 23-ft cruise pontoons are what most first-time groups take out. See the [full fleet guide](/blog/rice-lake-boat-rental-guide-2026)." },
-      { question: "Do I need a licence for my first rental?", answer: "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements." },
-      { question: "What happens if I damage the boat?", answer: "Tell us; that's the whole procedure. A $1,000 deposit hold covers assessment, and fender-level bumps are a normal part of everyone's first season. What turns a small thing big is not mentioning it." },
+      { question: "Is renting a boat manageable if I've never driven one?", answer: "A pontoon can be a beginner-friendly option when you stay at idle near the dock, leave extra stopping distance, and follow the dock orientation. Staff review the controls, life jackets, safety gear, and Rice Lake map before departure." },
+      { question: "Which rental boat should a beginner choose?", answer: "Compare the currently available pontoons in the live booking system and choose one whose posted capacity and equipment fit your group. Staff can review the selected boat's controls during orientation." },
+      { question: "Do I need a licence for my first rental?", answer: "Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide)." },
+      { question: "What happens if I damage the boat?", answer: "If you damage the boat or strike something during the trip, stop operating it and contact HBW immediately, then follow staff instructions. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amounts above the hold." },
       { question: "What should I bring for a first rental day?", answer: "Sunscreen, hats, water, towels, a cooler with food and non-alcoholic drinks, and a dry bag or zip-lock for phones. Life jackets and safety gear are included and fitted at the dock. Leave the alcohol at home; it's prohibited on the rental boats." },
-      { question: "What if the weather looks bad on my rental day?", answer: "If conditions are genuinely poor (high winds, rain), we cancel or reschedule with no penalty and refund your deposits and payments. If it's merely breezy, morning slots are your friend." },
+      { question: "What if the weather looks bad on my rental day?", answer: "If conditions are genuinely poor (high winds, rain), HBW's current policy allows cancellation or rescheduling with no penalty and refunds applied deposits and payments. Check the forecast and current policy before departure." },
     ],
     content: `# First Time Renting a Boat? What We Tell Every Renter at Our Dock
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** Renting a boat with zero experience is normal and manageable. A pontoon is forgiving to handle, and every Harris Boat Works rental starts with a hands-on orientation, a fitted life jacket, and a Rice Lake map. The driver must bring a valid Pleasure Craft Operator Card. Passengers don't need one.
+> **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. Complete the boating licence course before rental day, then book online at harrisboatworks.ca/rentals.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.
 
-By 10 am they're anchored in a bay with the cooler open, wondering why they were nervous.
-
-This is the guide version of what we tell every first-timer at the dock. If you want the fleet list, real fuel costs, and how booking works, that's in our [full Rice Lake rental guide](/blog/rice-lake-boat-rental-guide-2026). Read it the night before and you'll show up as the calm one in your group.
+This is the guide version of the core first-timer briefing. If you want the current lineup, fuel planning, and how booking works, that's in our [full Rice Lake rental guide](/blog/rice-lake-boat-rental-guide-2026). Read it before rental day so the dock orientation is familiar.
 
 ---
 
 ## Who this is for
 
 You booked (or you're about to book) a rental on Rice Lake and you've never driven a boat. Or you drove your uncle's tinny once in 2009 and you'd like a refresher before six people watch you dock. Either way, this is the no-judgment version. Experienced boaters can skip to the [fleet and cost guide](/blog/rice-lake-boat-rental-guide-2026).
-
-::boat-card-help
 
 ---
 
@@ -2475,9 +2509,9 @@ That's genuinely the whole system. The kill switch clips to the driver (motor st
 
 ## Wind: The Thing First-Timers Underestimate
 
-[Rice Lake is long and shallow](/blog/rice-lake-boating-guide-2026), and like most lakes it's calmest in the morning and choppiest mid-afternoon. Two habits handle it:
+[Rice Lake is long and shallow](/blog/rice-lake-boating-guide-2026), so wind can build chop across open water. Conditions vary by day; check the forecast and use these habits:
 
-1. **Do your relaxed cruising early.** Mornings are glass more often than not. If your crew wants a calm swim-and-lunch anchor, do it before mid-afternoon.
+1. **Adjust the plan to current conditions.** If wind or waves build beyond the driver's comfort, shorten the route or head back.
 2. **Approach the dock into the wind when you can.** Wind pushes a pontoon around at low speed (all that boat sits above the water like a sail). Nosing into the wind gives you control; letting it push you in from behind takes it away.
 
 If whitecaps build and you'd rather not deal with it, head back early. Nobody at our dock has ever been mocked for coming in ahead of weather. We cancel or reschedule rentals ourselves when the forecast is genuinely bad.
@@ -2486,7 +2520,7 @@ If whitecaps build and you'd rather not deal with it, head back early. Nobody at
 
 ## Docking Without the Audience Stress
 
-Docking is 90% of first-timer anxiety and it's the most over-thought part of the day:
+Docking causes a lot of first-timer anxiety, but the basic approach is simple:
 
 - Line up your approach from far out, at idle speed.
 - Aim for a shallow angle to the dock, not straight at it.
@@ -2503,15 +2537,15 @@ And here's the part we mean sincerely: come in slow and crooked and bump a fende
 
 Two local things every renter hears at orientation:
 
-**The old railway causeway.** A rail line once crossed the lake between Harwood and Hiawatha, and its remains sit just under the surface mid-lake. The crossing points are marked with buoys; the rest of the line is not. This is why we hand every renter a lake map, and why "follow the buoyed passes" is the one rule we repeat twice.
+**The old railway causeway.** A rail line once crossed the lake between Harwood and Hiawatha, and its remains sit just under the surface mid-lake. The crossing points are marked with buoys; the rest of the line is not. This is why every renter gets a lake map and a reminder to follow the buoyed passes.
 
-**Weeds are normal.** Rice Lake is a shallow, fertile, world-class fishing lake, which means weed beds. If the motor feels sluggish after crossing a weedy patch: shift to neutral, shut the motor off, then tilt it up and clear the prop before restarting. A minute, not a crisis, and hands never go near a prop with the engine running.
+**Weeds are normal.** Rice Lake is a shallow, fertile fishing lake, which means weed beds. If the motor feels sluggish after crossing a weedy patch: shift to neutral, shut the motor off, then tilt it up and clear the prop before restarting. Keep hands away from the prop until the engine is fully shut down.
 
 ---
 
 ## What HBW checks before you leave the dock
 
-Every first-timer gets the same send-off as every veteran, just with a few extra minutes and zero eye-rolling: fuelled boat checked that morning, life jackets fitted to your actual passengers, safety kit counted, and a hands-on orientation covering throttle, kill switch, anchoring, the map, and the causeway passes. Then you're off, with the whole day to practise and us a phone call away. We've been putting first-timers onto this lake since 1947; the orientation is why they come back as regulars.
+Every renter gets fitted life jackets, the required safety equipment, and a driver orientation covering the selected boat, the map, and the causeway passes. Harris Boat Works has served Rice Lake boaters since 1947 and operates the current rental service from the Gores Landing dock.
 
 ---
 
@@ -2519,13 +2553,13 @@ Every first-timer gets the same send-off as every veteran, just with a few extra
 
 Short version: call us and stay put. 905-342-2153, or text 647-952-2153. The boat has an anchor; drop it so you're not drifting while we talk.
 
-Motor won't start after your swim stop? Nine times out of ten it's the kill-switch clip not seated or the throttle not in neutral, and we can walk you through it on the phone in under a minute. Genuinely stuck? Stay anchored, call us, and we'll sort it out from our end. It's our boat and our lake; you're never negotiating with a rental company three provinces away.
+Motor won't start after your swim stop? Confirm the kill-switch clip is seated and the throttle is in neutral, then call HBW if it still will not start. Stay anchored while you troubleshoot so the boat is not drifting.
 
 ---
 
 ## Common mistakes
 
-- **Skipping the operator card until rental morning.** HBW requires the driver to bring a valid PCOC. Complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains what to bring.
+- **Skipping the licence until rental morning.** Complete the online course before rental day at myboatcard.com/card/harrisboat.
 - **Docking at car-parking speed.** Idle. Glide. Reverse burst. Repeat it like a mantra.
 - **Letting the confident friend "handle it" with no card.** Whoever drives needs the licence. Two licensed drivers makes the day better for both.
 - **Ignoring the map.** The causeway doesn't care that you're new.
@@ -2535,29 +2569,29 @@ Motor won't start after your swim stop? Nine times out of ten it's the kill-swit
 
 ## Frequently Asked Questions
 
-**Is renting a boat hard if I've never driven one?**
-No. A pontoon has one throttle, no brakes, and a walking-pace idle. Our ten-minute dock orientation covers everything, and we don't rush first-timers. The learning curve is roughly "golf cart," not "airplane."
+**Is renting a boat manageable if I've never driven one?**
+A pontoon can be a beginner-friendly option when you stay at idle near the dock, leave extra stopping distance, and follow the dock orientation. Staff review the controls, life jackets, safety gear, and Rice Lake map before departure.
 
-**What's the easiest rental boat for a beginner?**
-A pontoon, no contest. It's stable, slow to react, forgiving to dock, and has room for the whole crew to spread out. Our 23-ft cruise pontoons are what most first-time groups take out. See the [full fleet guide](/blog/rice-lake-boat-rental-guide-2026).
+**Which rental boat should a beginner choose?**
+Compare the currently available pontoons in the live booking system and choose one whose posted capacity and equipment fit your group. Staff can review the selected boat's controls during orientation.
 
 **Do I need a licence for my first rental?**
-Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements.
+Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
 
 **What happens if I damage the boat?**
-Tell us; that's the whole procedure. A $1,000 deposit hold covers assessment, and fender-level bumps are a normal part of everyone's first season. What turns a small thing big is not mentioning it.
+If you damage the boat or strike something during the trip, stop operating it and contact HBW immediately, then follow staff instructions. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amounts above the hold.
 
 **What should I bring for a first rental day?**
 Sunscreen, hats, water, towels, a cooler with food and non-alcoholic drinks, and a dry bag or zip-lock for phones. Life jackets and safety gear are included and fitted at the dock. Leave the alcohol at home; it's prohibited on the rental boats.
 
 **What if the weather looks bad on my rental day?**
-If conditions are genuinely poor (high winds, rain), we cancel or reschedule with no penalty and refund your deposits and payments. If it's merely breezy, morning slots are your friend.
+If conditions are genuinely poor (high winds, rain), HBW's current policy allows cancellation or rescheduling with no penalty and refunds applied deposits and payments. Check the forecast and current policy before departure.
 
 ---
 
 ## Ready for Your First Boat Day?
 
-[Do the licence tonight](/blog/boat-rental-licence-ontario-guide), book the boat for a calm morning, and let us handle the rest at the dock. The nervousness lasts about ten minutes; the "why haven't we done this every summer" feeling lasts the drive home.
+[Complete the licence before rental day](/blog/boat-rental-licence-ontario-guide), check the live fleet and forecast, and follow the dock orientation before departure.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Phone:** [905-342-2153](tel:+19053422153)
@@ -2580,19 +2614,19 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
   {
     slug: "rice-lake-boat-rental-guide-2026",
     title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
-    description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 10-boat fleet, including the new 12-person Halo, plus costs, licence rules, and booking.",
+    description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking.",
     image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~9 min read",
     keywords: ["rice lake boat rentals", "pontoon rental rice lake", "boat rental gores landing", "fishing boat rental kawarthas", "rent a boat rice lake ontario"],
     faqs: [
-      { question: "Do I need a boating licence to rent a boat on Rice Lake?", answer: "Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide)." },
-      { question: "How much does a Rice Lake boat rental cost?", answer: "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold." },
-      { question: "Are life jackets included?", answer: "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included. Missing gear at return comes out of the damage deposit." },
+      { question: "Do I need a boating licence to rent a boat on Rice Lake?", answer: "The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online at myboatcard.com/card/harrisboat. Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-ontario-guide)." },
+      { question: "How much does a Rice Lake boat rental cost?", answer: "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for the fuel you use and a $1,000 refundable damage-deposit authorization." },
+      { question: "Are life jackets included?", answer: "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included." },
       { question: "Can we take the rental boat to another lake?", answer: "No. Our boats stay on Rice Lake. If you're headed elsewhere in the Kawarthas, rent from a marina on that lake; trailering our fleet around isn't a thing we offer." },
       { question: "Can we drink on the boat?", answer: "No. Alcohol on the rental boats is prohibited, and Ontario treats a boat like a car: enforcement on Rice Lake is real and the penalties are severe. Save it for dry land after the boat's back." },
       { question: "What happens if the weather turns bad?", answer: "High winds or heavy rain and we'll cancel or reschedule your rental with no penalty, deposits refunded. Standard cancellations are free up to 7 days out; inside 24 hours you're on the hook for the full amount." },
@@ -2600,40 +2634,37 @@ If conditions are genuinely poor (high winds, rain), we cancel or reschedule wit
     ],
     content: `# Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
-> **Quick answer:** Harris Boat Works rents a 10-boat fleet on Rice Lake, including a new 23-ft 5-in Halo pontoon for groups of up to 12, cruise and fishing pontoons, and 16-ft ProSport fishing boats. Everything books online with live availability, life jackets and safety gear included. The driver must bring photo ID and a valid Pleasure Craft Operator Card. Passengers don't need one.
+> **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
 
-Last season, 346 rentals went out from our dock. Most of them started with the same three questions: what boats do you have, what does it really cost, and do I need a licence?
+Most rental questions start in the same place: what boats are currently available, what does it cost, and what licence does the driver need?
 
 Here's all of it in one place. No surprises at the dock, because surprises at the dock waste your water time and ours.
 
-One thing up front: we're in Gores Landing, on [the south shore of Rice Lake](/blog/rice-lake-boating-guide-2026), about 90 minutes east of downtown Toronto and 25 minutes south of Peterborough. You rent here, you boat here. Our boats stay on Rice Lake.
+One thing up front: we're in Gores Landing, on [the south shore of Rice Lake](/blog/rice-lake-boating-guide-2026), roughly 1 hour 45 minutes from central Toronto in light traffic and about 30 to 35 minutes south of Peterborough. Traffic varies, so check the route before choosing a rental start time. You rent here, you boat here. Our boats stay on Rice Lake.
 
 ---
 
-## The Fleet: What You Can Actually Rent
+## The Current Rental Lineup
 
-Ten boats, four ways to spend the day:
+The live booking system is the source of truth for the boats and dates available. As of this review, it lists these options:
 
 | Boat | Size | Best for |
 |---|---|---|
-| Halo pontoon | 23 ft 5 in | Groups of up to 12 who want one roomy cruising boat with Bluetooth audio |
-| Cruise pontoons | 23 ft | Families and groups who want to tour the lake, swim, and anchor for lunch |
-| Fishing pontoons (Transporter) | 20 and 24 ft | Groups that fish. Open deck, room for rods and coolers |
-| ProSport fishing boats | 16 ft | Two or three anglers who want to run to the spots and fish all day |
+| 23 Cruise and Halo pontoons | About 23 ft | Cruising, swimming, and larger groups; check each boat's posted capacity |
+| 20 and 24 Transporter pontoons | 20 and 24 ft | Fishing and cruising, with open deck space |
+| 16 ProSport fishing boats | 16 ft | Small fishing groups; check the live listing for capacity and equipment |
 
-The new Halo is our largest single-boat option by passenger capacity. It has a 60 hp motor, Bluetooth stereo, and a 95 L fuel tank. It doesn't have a livewell or fishfinder, so groups focused on fishing should choose a Transporter or ProSport instead.
+Some current pontoon listings specify stereo or Bluetooth equipment; check the selected boat's live listing. Every boat goes out with legally required safety gear and life jackets fitted to your party at check-in, including kid sizes. You don't bring or rent any of that separately.
 
-Every pontoon has a Bluetooth stereo. Every boat goes out with legally required safety gear and life jackets fitted to your whole party at check-in, including kid sizes. You don't bring or rent any of that separately.
-
-Capacity is per boat and it's a hard limit. [If your group is bigger, book two boats](/blog/group-boat-rentals-rice-lake); we do it every weekend all summer.
+Capacity is per boat and it's a hard limit. [If your group is bigger, book two boats](/blog/group-boat-rentals-rice-lake) and verify that each boat has a qualified driver.
 
 ---
 
 ## What a Rental Day Looks Like
 
-**Booking.** Everything runs through the online system at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Live availability, live rates, pay the deposit or the full balance up front. Waivers get signed online the day before, so dock time is short.
+**Booking.** Everything runs through the online system at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Live availability and rates are shown there; pay the booking deposit or full balance as prompted. Required documents are due online one day before the rental date.
 
 **Rental hours.** Monday to Saturday 8:00 am to 5:00 pm, Sunday 9:00 am to 4:00 pm. Multi-day rentals are the exception: keep the boat at our dock or at your cottage dock and use it whenever you like, with lights required after dark.
 
@@ -2641,7 +2672,7 @@ Capacity is per boat and it's a hard limit. [If your group is bigger, book two b
 
 ![Life jackets fitted and laid out on a pontoon at the Harris Boat Works rental dock](/lovable-uploads/inline-rental-lifejackets-checkin.webp)
 
-**Return.** Back at the dock, unloaded, by your return time. We refuel the boat, check it over, settle the fuel, and release the deposit hold. Fair warning on timing: late returns run $5 per minute, so plan your last swim accordingly.
+**Return.** Back at the dock, unloaded, by your contracted return time. Staff refuel and inspect the boat, settle the fuel used, and finalize the damage-deposit hold. Late charges follow the current signed rental terms.
 
 ---
 
@@ -2649,20 +2680,18 @@ Capacity is per boat and it's a hard limit. [If your group is bigger, book two b
 
 Rental rates are live in the booking system (they vary by boat and day), so we won't print numbers here that go stale. The costs people don't plan for:
 
-- **Fuel:** you pay for what you burn, at return. A day of mostly fishing runs about $5 to $35 in a ProSport and $15 to $75 in a pontoon. Cruising the lake all day in a pontoon is more like $60 to $100. Wind, load, and throttle habit all matter.
+- **Fuel:** you pay for what you burn at return. The amount varies with the boat, distance, load, wind, and throttle use.
 - **Damage deposit:** $1,000 hold, released after the boat checks out clean.
-- **Bait:** we sell worms ($5 a dozen, $10 for two). For tackle, BJ Tackle in Bewdley is the spot.
+- **Bait:** check current on-site availability before your rental; bring your own tackle.
 - **Cleaning:** normal use is expected. Spilled worm dirt and muddy anchors are the two classics that turn into cleaning fees. Rinse the anchor before it comes aboard and you're fine.
 
-There's no damage insurance to buy; the deposit system is the whole arrangement, and you're responsible for damage. Treat the boat like you borrowed it from a friend, because functionally you did.
+The current signed rental agreement governs responsibility for damage, including amounts above the authorization. Review those terms before rental day and report any damage at return.
 
 ---
 
 ## Licences: The Two Cards That Matter
 
-**To drive the boat**, HBW requires a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If more than one person may drive, each driver needs a card. Full details are in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
-
-::boat-card-help
+**To drive the boat**, the operator needs proof of competency. If you have a Pleasure Craft Operator Card, bring it. If nobody in your group has one, you can complete the boating licence course online at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian residents complete a renter's checklist waiver after reserving. Full details in our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
 **To fish**, anyone 18 to 64 needs an Outdoors Card plus an Ontario fishing licence, sport or conservation. Under 18 or 65 plus, government ID is your licence. We don't sell fishing licences; get them at [ontario.ca](https://www.ontario.ca/page/get-fishing-licence) before you arrive. Canadian residents fish free on Mother's Day weekend, Father's Day weekend, and Family Fishing Week in July.
 
@@ -2670,17 +2699,17 @@ There's no damage insurance to buy; the deposit system is the whole arrangement,
 
 ## Common mistakes
 
-- **Booking the boat but not the operator card.** The course takes time. Complete it before rental day, not at our counter at 8:05 am.
+- **Booking the boat but not the licence.** Complete the required driver-competency process before rental day rather than counting on a last-minute fix at check-in.
 - **Bringing a cooler of beer.** Alcohol on our rental boats is prohibited, full stop. Same rules as a car in Ontario, and the OPP patrol Rice Lake seriously.
 - **Ignoring the buoyed channels.** The old Harwood-to-Hiawatha rail causeway left rock just under the surface mid-lake. It's unmarked outside the buoyed passes. Use the map we hand you; it exists because of exactly this.
 - **Planning a shore party.** Your group size is the boat's capacity. Extra people can't hang out on our property while you boat.
-- **Cutting the return time close.** $5 a minute adds up faster than you'd think.
+- **Cutting the return time close.** Leave enough time to be back by the stated return time; any late-return terms are set by the current signed rental agreement.
 
 ---
 
 ## What HBW checks before you leave the dock
 
-Every rental gets the same send-off: full fuel, motor warmed and checked that morning, safety kit counted, life jackets fitted to your actual passengers rather than tossed in a bin, and a driver orientation that covers the boat, the lake map, and where the rocks are. We've been putting people onto this lake since 1947. The orientation takes ten minutes and it's the reason first-timers come back relaxed instead of rattled.
+Every rental includes legally required safety gear, fitted life jackets, and a driver orientation covering the boat, the lake map, and the Rice Lake railway hazard. At return, staff refuel and inspect the boat before the account and damage-deposit hold are finalized. Harris Boat Works has served boaters on this lake since 1947.
 
 ---
 
@@ -2688,7 +2717,7 @@ Every rental gets the same send-off: full fuel, motor warmed and checked that mo
 
 **Weather:** if conditions are genuinely bad (high wind, heavy rain), we cancel or reschedule with a full refund. We'd rather rebook you than send you out white-knuckled.
 
-**Cancellations:** free with 7 days' notice, deposit refunded. Inside 24 hours or day-of, the full rental amount applies. In between those windows, call us and we'll figure it out.
+**Cancellations:** free with 7 days' notice, deposit refunded. Inside 24 hours or day-of, the full rental amount applies. Review the current agreement for any date that falls between those windows.
 
 **Dogs:** smaller dogs and service dogs are welcome aboard, leashed on land, and their behaviour is on you. No dog life jackets here, so bring one if your dog needs it.
 
@@ -2696,24 +2725,22 @@ Every rental gets the same send-off: full fuel, motor warmed and checked that mo
 
 ---
 
-## Why Rent Here Instead of Closer to the City
+## Planning the Drive from the GTA
 
-Rice Lake is the closest serious fishing and cruising lake to the eastern GTA that doesn't come with Muskoka traffic or Muskoka prices. From the 401 at Cobourg you're 20 minutes of county road from our dock. The lake gives you [walleye and bass water](/blog/2026-rice-lake-fishing-season-outlook), 30 km of lake to explore, ice cream stops in Bewdley and Hastings, and a marina at your back if anything comes up while you're out. If a rental day turns into "we should just own one of these," that conversation is 50 feet from the rental dock.
+Harris Boat Works is in Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic. Allow more time during GTA and summer-weekend traffic. Plan your route and arrival time before booking, then use the current rental listing to choose the boat, date, and capacity that fit your group.
 
 ---
 
 ## Frequently Asked Questions
 
 **Do I need a boating licence to rent a boat on Rice Lake?**
-Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide).
+The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online at myboatcard.com/card/harrisboat. Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-ontario-guide).
 
 **How much does a Rice Lake boat rental cost?**
-Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold.
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for the fuel you use and a $1,000 refundable damage-deposit authorization.
 
 **Are life jackets included?**
-Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included. Missing gear at return comes out of the damage deposit.
+Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included.
 
 **Can we take the rental boat to another lake?**
 No. Our boats stay on Rice Lake. If you're headed elsewhere in the Kawarthas, rent from a marina on that lake; trailering our fleet around isn't a thing we offer.
@@ -2731,10 +2758,9 @@ Yes, multi-day rentals can stay at your cottage dock for the duration, and you c
 
 ## Ready to Get on the Water?
 
-Pick your boat and date, and the booking system shows you live availability and rates. Waivers happen online the night before, so rental morning is ten minutes from parking lot to throttle.
+Pick your boat and date, and the booking system shows you live availability and rates. Complete the required documents before arrival so check-in can proceed at the office and dock.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
@@ -2764,20 +2790,20 @@ Pick your boat and date, and the booking system shows you live availability and 
     readTime: "~7 min read",
     keywords: ["licence to rent a boat ontario", "boat rental licence ontario", "pcoc for rental boat", "boating licence rice lake", "temporary boat licence ontario"],
     faqs: [
-      { question: "Can I rent a boat in Ontario with no licence at all?", answer: "You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine." },
+      { question: "Can I rent a boat in Ontario with no licence at all?", answer: "You can book one, but the driver can't operate it without proof of competency. Complete the boating licence online at myboatcard.com/card/harrisboat, or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving." },
       { question: "Does everyone in the boat need a licence?", answer: "No, just whoever is driving. Passengers of any age need nothing. If two of you want to trade off driving through the day, both drivers need proof of competency." },
-      { question: "How fast can I actually get a boating licence?", answer: "The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you." },
+      { question: "How long should I allow for a boating licence?", answer: "The accredited course and test are online and self-paced, but Transport Canada requires minimum study time. Allow about 3 hours and complete it before rental day; proof of completion is available after you pass and the physical card follows by mail." },
       { question: "Is the PCOC valid outside Ontario?", answer: "Yes. It's a federal Transport Canada credential, valid across Canada, and it never expires. One evening covers every boating trip you'll ever take in the country. Some US states also recognize it for visiting boaters, but check that state's rules before you count on it." },
       { question: "Do kids need a licence to drive the rental boat?", answer: "Rental boats are adult territory: our rental drivers must be licensed adults with photo ID. Beyond our policy, Transport Canada also sets horsepower restrictions for youth operators. Short version: the kids ride, the adults drive." },
-      { question: "I'm visiting from the US. Can I rent?", answer: "Yes, but HBW's operator-card policy still applies. MyBoatCard accepts non-residents for its accredited online course. Bring your temporary or permanent PCOC and photo ID at check-in." },
+      { question: "I'm visiting from the US. Can I rent?", answer: "Yes. Non-Canadian residents complete a renter's checklist waiver after booking instead of the Canadian card, and show home-country photo ID at check-in. Book first at harrisboatworks.ca/rentals and the paperwork follows online." },
     ],
     content: `# Do You Need a Licence to Rent a Boat in Ontario? (2026)
 
 *Last reviewed: 2026-08-01*
 
-> **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A rental safety checklist can satisfy that rule in some rental situations, but Harris Boat Works has a stricter policy: every rental driver must show a valid Pleasure Craft Operator Card. Passengers don't need one.
+> **Quick answer:** Yes, whoever drives a rented powerboat in Ontario needs proof of operator competency. A Pleasure Craft Operator Card (PCOC) works, and if nobody in your group has one, you can complete an accredited boating licence course online before rental day. Only the driver needs it, passengers don't. HBW links to myboatcard.com/card/harrisboat.
 
-Every summer we watch the same scene: a group arrives for their 8:00 am rental, sunscreen on, cooler packed, and then someone asks "wait, we need a *licence*?"
+The easiest rental check-in is the one where the driver arrives with the required proof of competency already complete.
 
 Yes. And it's genuinely not a big deal if you handle it the night before instead of at our counter.
 
@@ -2787,16 +2813,16 @@ This is the plain-language version of Canada's operator competency rules as they
 
 ## The Rule, In Plain Terms
 
-Transport Canada requires anyone operating a motorized pleasure boat in Canada to carry proof of competency. For most Canadian boaters, that means the Pleasure Craft Operator Card (PCOC), commonly called a boating licence. You earn it once by passing an accredited test, and it doesn't expire.
+Transport Canada requires anyone operating a motorized pleasure boat in Canada to carry proof of operator competency. For most Canadian boaters that means the Pleasure Craft Operator Card, the "boating licence" you get once by passing an accredited online test, and it never expires.
 
-For rentals, a completed rental boat safety checklist can satisfy the federal proof-of-competency rule. That's the legal minimum. HBW's rental policy goes one step further: every person who drives one of our boats must show a valid PCOC at check-in. We don't substitute the rental checklist for the card.
+For rentals specifically, the system is built so first-timers aren't shut out. You have two routes:
 
-| Requirement | What it means |
-|---|---|
-| Canadian legal minimum | Carry accepted proof of competency. For a rental, a completed rental boat safety checklist can qualify. |
-| HBW rental policy | Every driver must show a valid permanent or temporary PCOC plus photo ID. |
+| Route | What it is | Good for | Time |
+|---|---|---|---|
+| PCOC (boat licence) | Accredited online course + test, one-time | Life. It never expires | About 3 hours, self-paced online (Transport Canada sets the minimum study time) |
+| Rental-day paperwork | A renter competency process completed with the rental operator | That rental only | Complete before operating the boat |
 
-Only the driver needs the card. If two people plan to share the helm, both need one.
+Our honest advice: if you're [renting once for a family day](/blog/renting-vs-owning-boat-ontario-math), complete the renter process that applies to your booking. If you expect to operate boats again, a permanent PCOC avoids repeating rental-day paperwork.
 
 ---
 
@@ -2804,25 +2830,21 @@ Only the driver needs the card. If two people plan to share the helm, both need 
 
 We keep it to three things at check-in:
 
-1. **Photo ID** for every person who may drive.
-2. **A valid PCOC** for every driver. The physical card or temporary proof after passing the accredited test both work.
-3. **The driver orientation.** We still cover the boat, safety equipment, local hazards, and the Rice Lake map before you leave.
+1. **Photo ID** for the driver.
+2. **Proof of competency** for the driver: your PCOC if you have one, or the boating licence you completed online. HBW links renters to [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Complete it before rental day; temporary proof is available after completion, with the card mailed after.
+3. **Non-Canadian residents** (visiting from the US or overseas) complete a renter's checklist waiver after reserving instead. Bring your passport or home ID.
 
 Only the person driving needs any of this. Grandma, the kids, and your buddy who "just wants to fish" are passengers, and passengers need nothing.
 
 One driver can hand the wheel to another licensed driver mid-day. If you're booking for a bigger crew, our [group boat rentals on Rice Lake](/blog/group-boat-rentals-rice-lake) guide covers how that works. What you can't do is check in with one licensed person who then hands the boat to an unlicensed cousin. The person at the helm is the one who needs the proof.
 
-::boat-card-help
-variant: full
-::
-
 ---
 
 ## What It Costs and How Long It Takes
 
-The accredited online course runs on your phone or laptop and takes a few hours. When you pass, you can print temporary proof for check-in while the physical card is mailed to you. Give yourself a quiet evening before rental day instead of trying to finish it in our parking lot.
+The online boating licence course runs on your phone or laptop and is self-paced. Transport Canada sets a minimum study time, so complete it before rental day rather than counting on a last-minute checkout-line fix.
 
-Compare that to the cost of showing up licence-less: your 8:00 am slot ticking away while you speed-run a safety course on your phone in our parking lot. We see it every July weekend. Be the group that did it Tuesday night.
+Showing up without the required proof can delay check-in. Complete the course or applicable renter paperwork before rental day.
 
 ---
 
@@ -2849,20 +2871,20 @@ We don't sell fishing licences at the marina, so sort that online before you arr
 
 ## What HBW checks before you leave the dock
 
-The licence check is the boring part of a ten-minute send-off. Before any rental leaves our dock, the driver gets a hands-on orientation: throttle, kill switch, anchoring, the Rice Lake map, and the buoyed passes over the old rail causeway between Harwood and Hiawatha (rock just under the surface; the map exists for a reason). First-time renters get a few extra minutes, no charge and no eye-rolling. We'd rather over-explain at the dock than wave at you from the tow boat.
+Before a rental leaves the dock, the driver gets an orientation covering the selected boat, the kill switch, anchoring, the Rice Lake map, and the buoyed passes over the old rail causeway between Harwood and Hiawatha. Ask questions before departure and do not leave until the driver understands the controls and route hazards.
 
 ---
 
 ## Frequently Asked Questions
 
 **Can I rent a boat in Ontario with no licence at all?**
-You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine.
+You can book one, but the driver can't operate it without proof of competency. Complete the boating licence online at myboatcard.com/card/harrisboat, or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving.
 
 **Does everyone in the boat need a licence?**
 No, just whoever is driving. Passengers of any age need nothing. If two of you want to trade off driving through the day, both drivers need proof of competency.
 
-**How fast can I actually get a boating licence?**
-The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you.
+**How long should I allow for a boating licence?**
+The accredited course and test are online and self-paced, but Transport Canada requires minimum study time. Allow about 3 hours and complete it before rental day; proof of completion is available after you pass and the physical card follows by mail.
 
 **Is the PCOC valid outside Ontario?**
 Yes. It's a federal Transport Canada credential, valid across Canada, and it never expires. One evening covers every boating trip you'll ever take in the country. Some US states also recognize it for visiting boaters, but check that state's rules before you count on it.
@@ -2871,13 +2893,17 @@ Yes. It's a federal Transport Canada credential, valid across Canada, and it nev
 Rental boats are adult territory: our rental drivers must be licensed adults with photo ID. Beyond our policy, Transport Canada also sets horsepower restrictions for youth operators. Short version: the kids ride, the adults drive.
 
 **I'm visiting from the US. Can I rent?**
-Yes, but HBW's operator-card policy still applies. MyBoatCard accepts non-residents for its accredited online course. Bring your temporary or permanent PCOC and photo ID at check-in.
+Yes. Non-Canadian residents complete a renter's checklist waiver after booking instead of the Canadian card, and show home-country photo ID at check-in. Book first at harrisboatworks.ca/rentals and the paperwork follows online.
 
 ---
 
 ## Ready to Book?
 
-Get the operator card sorted before rental day, then [book the boat for the weekend](https://harrisboatworks.ca/rentals). Rental morning becomes a quick check-in instead of a scramble.
+Complete the licence before rental day, then [book the boat online](/blog/first-time-boat-rental-rice-lake-guide) and finish the required documents before arrival.
+
+**Licence:** [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat)
+**Book the boat:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Phone:** 905-342-2153
 
 **Related guides:**
 - [Rice Lake Boat Rentals: Fleet, Costs, and How It Works](/blog/rice-lake-boat-rental-guide-2026)
@@ -2902,7 +2928,7 @@ Get the operator card sorted before rental day, then [book the boat for the week
     image: '/lovable-uploads/hero-ucp-agentic-commerce.png',
     author: 'Jay Harris',
     datePublished: '2026-06-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-12',
     publishDate: '2026-06-11',
     category: 'Mercury Technology',
     readTime: '6 min read',
@@ -2915,22 +2941,22 @@ Get the operator card sorted before rental day, then [book the boat for the week
       { question: "Why does a 1947 family marina care about an AI standard?", answer: "Because the standard rewards what we already do, plain CAD pricing, no Verado in default inventory, pickup only at Gores Landing. Machine-readable honesty is the same job as in-person honesty, just written in JSON. The same standard runs at Shopify, Target, and Walmart. We just got there first in our corner of the marine world." }
     ],
     relatedSlugs: ['mercury-outboard-financing-ontario-2026', 'ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad'],
-    content: `> **Quick answer:** As of June 11, 2026, Harris Boat Works is a live Universal Commerce Protocol (UCP) merchant, verified end-to-end with Shopify's official \`ucp-cli\`. AI assistants like ChatGPT and Claude can now discover us, search live Mercury inventory, and build a real CAD quote with HST estimate and trade-in context. The dealer completes every sale with the buyer in person at Gores Landing. Payment is never collected over UCP. To our knowledge, we're the first marine dealer doing this. Discovery profile: [/.well-known/ucp](/.well-known/ucp).
+    content: `> **Quick answer:** As of June 11, 2026, Harris Boat Works is a live Universal Commerce Protocol (UCP) merchant, verified end-to-end with Shopify\\u2019s official \`ucp-cli\`. AI assistants like ChatGPT and Claude can now discover us, search live Mercury inventory, and build a real CAD quote with HST estimate and trade-in context. The dealer completes every sale with the buyer in person at Gores Landing. Payment is never collected over UCP. To our knowledge, we\\u2019re the first marine dealer doing this. Discovery profile: [/.well-known/ucp](/.well-known/ucp).
 
-If you've asked ChatGPT to help you shop in the last six months, you've probably noticed it can do a lot more than it used to. It can compare products, fetch live inventory, and (at a handful of merchants) actually hand you off to checkout. That last part is what changed in April 2026, when a group of the largest retailers on the planet published an open standard for it.
+If you\\u2019ve asked ChatGPT to help you shop in the last six months, you\\u2019ve probably noticed it can do a lot more than it used to. It can compare products, fetch live inventory, and (at a handful of merchants) actually hand you off to checkout. That last part is what changed in April 2026, when a group of the largest retailers on the planet published an open standard for it.
 
 We turned that standard on at Harris Boat Works today.
 
 ## What UCP is, in plain language
 
-The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant's store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
+The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant\\u2019s store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
 
-It's co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That's most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
+It\\u2019s co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That\\u2019s most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
 
 UCP defines two things merchants care about:
 
 - **A discovery profile**, served at \`/.well-known/ucp\`, that tells the world what your store supports.
-- **A set of capabilities** (catalog search, checkout, fulfillment) with shared schemas, so the assistant doesn't have to guess.
+- **A set of capabilities** (catalog search, checkout, fulfillment) with shared schemas, so the assistant doesn\\u2019t have to guess.
 
 ## What we shipped
 
@@ -2938,17 +2964,17 @@ A few things, all of them live as of June 11, 2026:
 
 1. **A UCP discovery profile** at [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp), spec version **2026-04-08**.
 2. **Checkout in quote mode** (\`dev.ucp.shopping.checkout\`) and **fulfillment** (\`dev.ucp.shopping.fulfillment\`) capabilities, served at our \`ucp-checkout\` endpoint over **both REST and MCP** transports.
-3. **Verified end-to-end with Shopify's official \`ucp-cli\`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
+3. **Verified end-to-end with Shopify\\u2019s official \`ucp-cli\`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
 
 \`\`\`bash
 npx -y @shopify/ucp-cli discover www.mercuryrepower.ca
 \`\`\`
 
-To our knowledge, we're the first marine dealer in North America with a live UCP profile. Hedged claim, on purpose: standards adoption moves fast, and we'd rather be honest than first-in-spirit.
+To our knowledge, we\\u2019re the first marine dealer in North America with a live UCP profile. Hedged claim, on purpose: standards adoption moves fast, and we\\u2019d rather be honest than first-in-spirit.
 
 ## What an AI assistant can actually do here
 
-If you're using a UCP-aware assistant (and that list grows weekly), here's what works today:
+If you\\u2019re using a UCP-aware assistant (and that list grows weekly), here\\u2019s what works today:
 
 - **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
 - **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [[Ontario rates and monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026)](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
@@ -2959,24 +2985,24 @@ For the full agent surface (REST APIs, MCP tools, discovery URLs, deep-link temp
 
 ## What it deliberately will NOT do
 
-This is the part most agentic-commerce articles skip, so it's the part we want to be loudest about.
+This is the part most agentic-commerce articles skip, so it\\u2019s the part we want to be loudest about.
 
 - **No completed sale through UCP.** \`complete_checkout\` returns a quote and a handoff URL. It never places an order.
-- **No payment collection.** We don't take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
+- **No payment collection.** We don\\u2019t take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
 - **No shipping. No delivery. No courier release.** Pickup only at Gores Landing, Ontario, by the buyer in person with valid government photo ID. Same policy as the rest of the site.
 - **No final price without a human.** The dealer confirms the out-the-door price on every deal, every time. The AI quote is a starting line, not a finish line.
 
-If you'd expect those guardrails from a 1947 family marina, you'd be right. UCP just lets us write them down in a format every assistant on the planet can read.
+If you\\u2019d expect those guardrails from a 1947 family marina, you\\u2019d be right. UCP just lets us write them down in a format every assistant on the planet can read.
 
 ## Why a 1947 family marina cares about this
 
 Two reasons.
 
-**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We've been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
+**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We\\u2019ve been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
 
-**The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That's a future we like.
+**The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That\\u2019s a future we like.
 
-There is zero hype in any of this. The page you're reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn't (you still pick up the motor in person; we still confirm the price; we still don't ship anywhere).
+There is zero hype in any of this. The page you\\u2019re reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn\\u2019t (you still pick up the motor in person; we still confirm the price; we still don\\u2019t ship anywhere).
 
 ## Google just validated this direction at Google Marketing Live 2026
 
@@ -2986,7 +3012,7 @@ That is the direction we bet on. Harris Boat Works is already live on UCP, which
 
 ## Try it
 
-If you build with assistants, the discovery URL is the place to start: [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp). If you're a buyer, the easiest path is still to open [the quote builder](/quote/motor-selection) and click through. Both lead to the same dealer at the same shop.
+If you build with assistants, the discovery URL is the place to start: [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp). If you\\u2019re a buyer, the easiest path is still to open [the quote builder](/quote/motor-selection) and click through. Both lead to the same dealer at the same shop.
 
 **Phone:** (905) 342-2153
 **Email:** info@harrisboatworks.ca
@@ -4512,7 +4538,7 @@ Text: (647) 952-2153`,
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
-    dateModified: '2026-08-02',
+    dateModified: '2026-05-18',
     publishDate: '2026-05-18',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -4602,7 +4628,7 @@ For the 9.9 vs 15 conversation, the capacity plate matters when:
 - **Your boat is plated at 15 HP.** Many 14 foot jon boats and 12-14 foot utility hulls cap here. The 15 is the right choice. The 9.9 will feel underpowered, especially loaded with two adults, gear, and a full fuel tank.
 - **Your boat is plated higher than 15 HP.** This guide isn't really for you. A 16 foot hull plated at 25 or 40 HP wants a 25 or 40 HP motor, not a 9.9. Check the [FourStroke buyer guide](https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario) for that range.
 
-Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Overpowering can jeopardize insurance coverage or a claim and creates compliance, liability, safety, and potential warranty problems. None of those problems are worth the extra 5 HP.
+Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9 HP and just "be careful." The answer in Ontario is no, and we won't rig it. The plate is the hull manufacturer's published maximum and Transport Canada's reference for compliance. Insurance carriers void coverage for over-powering. Mercury's warranty position is that overpowering creates compliance, insurance, liability, and potential warranty problems. None of those problems are worth the extra 5 HP.
 
 ## What HBW Checks Before Quoting a 9.9 or 15
 
@@ -4678,7 +4704,7 @@ As of May 2026, a typical Mercury 9.9 EFI FourStroke tiller (manual start, short
 
 HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965. We sell both the 9.9 and the 15 every season, install them, water-test them on Rice Lake before you pick up the boat, and service them long after the sale. We're a Mercury Marine Premier Dealer, which means our service techs are factory-certified on every motor we sell.
 
-We're not in Toronto. We're in Gores Landing, about 90 minutes east of downtown Toronto, on the south shore of Rice Lake. We pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
+We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from central Toronto in light traffic, on the south shore of Rice Lake. We are pickup-only, by design: every motor we install gets a real water test before you drive home with it. That's why customers from the GTA, Peterborough, Cobourg, and the Kawarthas drive to us instead of buying elsewhere.
 
 ## Frequently Asked Questions
 
@@ -4737,7 +4763,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
     image: '/lovable-uploads/hero-how-to-choose-horsepower.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-09',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor horsepower', 'how to choose outboard motor', 'mercury motor sizing', 'boat hp guide', 'outboard motor selection'],
@@ -4745,7 +4771,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 
 ---
 
-> **Quick answer:** Start with your boat's capacity plate. That number is the manufacturer's maximum recommended safe limit. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -4761,7 +4787,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
-Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the manufacturer's maximum recommended safe limit.
+Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the legal ceiling.
 
 ## The one thing most people get wrong on horsepower
 
@@ -4787,7 +4813,7 @@ Six variables move the right HP for your specific boat:
 
 **Where you launch and run.** Sheltered bays on a small Kawartha lake are different from Lake Ontario open water or a breezy afternoon on Rice Lake. Bigger water punishes underpowering in ways that feel dangerous, not just slow.
 
-**The capacity plate.** This is the manufacturer's maximum recommended safe limit. Exceeding it can create compliance, insurance, liability, safety, and warranty problems. We will not rig a motor that exceeds it, full stop.
+**The capacity plate.** This is the legal and warranty-backed ceiling. We will not rig a motor that exceeds it, full stop.
 
 **How long you plan to keep the boat.** If you're keeping this hull for 15 years, a bigger motor makes more sense than if you're planning to sell in three.
 
@@ -4879,7 +4905,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 **1. Buying too small to save money.** We've watched customers fight a 9.9 HP on a 16-foot boat that needed a 25. They trade up two seasons later at full price. The savings disappear.
 
-**2. Going over the capacity plate.** A 250 HP motor does not belong on a hull rated for 150 HP. It exceeds the manufacturer's maximum recommended safe limit, compromises handling, and creates compliance, insurance, liability, and potential warranty problems. We will not rig it.
+**2. Going over the capacity plate.** A 250 HP on a hull rated for 150 HP is illegal, unsafe, and void of warranty. Mercury won't cover it. Your insurance may not either. The motor also outpowers the hull and feels wrong.
 
 **3. Buying for one use and ignoring the rest.** "I just need it for fishing" is fine until your kids want to tube next summer. Think through the full use case before you buy.
 
@@ -4941,7 +4967,7 @@ Cruising and fishing: 115 HP Command Thrust. Active water sports with multiple p
 Tournament fishing: 200 to 250 HP Pro XS. Recreational bass fishing: 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard in tournament fishing.
 
 **Can I put a bigger motor than the capacity plate allows?**
-No. The capacity plate states the manufacturer's maximum recommended safe limit. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. We won't rig it.
+No. The capacity plate is the legal and warranty-backed ceiling. Going over voids the Mercury warranty and creates insurance and safety problems. We won't rig it.
 
 **Does prop selection affect how much HP I need?**
 Yes. A wrong prop can cost you real top speed and fuel economy even on a perfectly-sized motor. Sometimes the fix isn't a bigger motor, it's the right prop on the motor you have. We test props on the water during every repower sea trial.
@@ -5003,13 +5029,13 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
-    dateModified: '2026-07-23',
+    dateModified: '2026-08-02',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
     content: `# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-08-02*
 
 > **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. Book service at hbw.wiki/service.
 
@@ -6305,7 +6331,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     imageAlt: 'Aerial view of Harris Boat Works marina and shop on Rice Lake in Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: "2026-07-07",
+    dateModified: "2026-08-02",
     publishDate: '2026-05-04',
     category: 'About Us',
     readTime: '8 min read',
@@ -6425,7 +6451,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
       { question: 'How long has Harris Boat Works been a Mercury dealer?', answer: 'Since 1965. The marina itself was founded in 1947, and the Harris family has owned and run it for three generations in Gores Landing on Rice Lake.' },
       { question: 'What is a Mercury Premier dealer?', answer: 'Premier is the current top tier in Mercury\'s dealer program. At HBW, that sits alongside Mercury-trained technicians, Mercury-specific diagnostic equipment, deep parts inventory, and access to Mercury technical resources. It does not change a customer\'s factory warranty rights or guarantee faster claim approval.' },
       { question: 'Why does Harris Boat Works only sell Mercury?', answer: 'Depth over breadth. Three generations of expertise, parts inventory, and tooling are Mercury-specific, and we are the only Mercury dealer on Rice Lake, so we can rig, service, and store a Mercury boat right on the water.' },
-      { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 90 minutes east of Toronto and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
+      { question: 'Where is Harris Boat Works located?', answer: 'Gores Landing, Ontario, on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.' },
       { question: 'Does Harris Boat Works offer financing?', answer: 'Yes. Repower financing is available at 5.48% APR through TD Financing (via Dealerplan Peterborough, OAC, canonical rate through Dec 31, 2026, as of July 2026; see [current promotions](https://www.mercuryrepower.ca/promotions)) for qualified buyers.' },
       { question: 'Does Harris Boat Works offer boat storage?', answer: 'Yes, outdoor winter storage with shrinkwrap. We do not offer indoor heated storage. Pricing varies by boat size.' },
       { question: 'Can I bring a non-Mercury motor to Harris Boat Works for service?', answer: 'Some non-Mercury service we handle, but our engine repair depth is Mercury and Mercruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.' },
@@ -7091,7 +7117,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does Command Thrust cost over the standard gearcase?',
-        answer: 'Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing.'
+        answer: 'Command Thrust pricing moves with motor class and prop selection. Use the [live pricing reference](/pricing-reference) for current motor prices, then [build a configured quote](/quote/motor-selection) for the complete setup.'
       },
       {
         question: 'Will my standard prop fit on a Command Thrust gearcase?',
@@ -9338,7 +9364,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
     imageAlt: 'Comparison of tiller-steer outboard on an aluminum boat versus remote steering at a console on a bass boat.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-08-02',
+    dateModified: '2026-07-09',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9542,7 +9568,7 @@ Common configuration. The main motor uses remote control from the helm; the kick
       },
       {
         question: 'What\'s the biggest Mercury motor available in tiller configuration?',
-        answer: 'Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. For a 16-18ft aluminum V-hull on Rice Lake, the Mercury 60HP EFI FourStroke in tiller with the standard gearcase is the usual choice; Command Thrust is for pontoons and specific workboat applications.'
+        answer: 'Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.'
       },
       {
         question: 'Can I have both tiller and remote steering on the same outboard motor?',
@@ -10174,7 +10200,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/What_Size_Motor_Does_My_Boat_Need_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-05-11',
     publishDate: '2026-05-11',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -10204,7 +10230,7 @@ Here's how to work through it.
 
 Every boat has a maximum HP rating stamped on the capacity plate, usually located on the transom or near the helm. This is not a suggestion. It's the legal ceiling set by the manufacturer based on hull testing.
 
-**Never exceed it.** Going over the capacity plate creates compliance, insurance, liability, safety, and potential warranty problems. We will not rig a motor that exceeds the plate, full stop.
+**Never exceed it.** Going over the capacity plate voids Mercury warranty coverage, creates insurance exposure, and compromises the safety of the hull. We will not rig a motor that exceeds the plate, full stop.
 
 The capacity plate also shows maximum persons and maximum weight. Those numbers matter too when thinking about loading.
 
@@ -10348,7 +10374,7 @@ Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.c
 Start with the capacity plate, your legal ceiling. Then factor in hull weight and design, typical passenger and gear load, where you run, and what you do on the water. The capacity plate sets the maximum; use case and loading determine the best fit within that range.
 
 **Can I put a bigger motor than the capacity plate allows?**  
-No. The capacity plate states the manufacturer's maximum recommended safe limit. Going over it creates compliance, insurance, liability, safety, and potential warranty problems. We won't rig above the rated maximum.
+No. The capacity plate is the legal ceiling set by the manufacturer. Going over it voids Mercury warranty, creates insurance exposure, and compromises hull safety. We won't rig above the rated maximum.
 
 **What's the most common motor sizing mistake?**  
 Buying too small. Customers optimize for price at the low end of the range, then fight their underpowered boat for two seasons and trade up at full cost. The right motor is almost never the bottom of the acceptable range.
@@ -11834,7 +11860,7 @@ Boat shows can have show-specific promotions, but they are often similar to what
 Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.
 
 **Does the Mercury model year flip on July 1 change my buying decision?**
-It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price.r just want the motor. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
+It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price. If you just want the motor, compare the written numbers and availability. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **What's actually negotiable on a new Mercury purchase?**
 The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; any bonus coverage applies only while an eligible promotion is active. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
@@ -12513,7 +12539,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
       },
       {
         question: 'How much does a Mercury 150 Pro XS cost?',
-        answer: 'As of July 27, 2026, our pricing reference lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. Build a configured quote or call 905-342-2153.'
+        answer: 'Our [live pricing reference](/pricing-reference) lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. [Build a configured quote](/quote/motor-selection) for the complete total.'
       }
     ]
 
@@ -12576,7 +12602,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only; call (905) 342-2153 for Verado pricing.*
+*The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
 ### Seasonal Pricing Patterns
 
@@ -13012,7 +13038,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man in Legend XT 18 boat with Mercury outboard; infographic summarizing 2026 Ontario boat market trends and dealer advice.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-08-02',
     publishDate: '2026-02-06',
     category: 'Market Insight',
     readTime: '10 min read',
@@ -13020,7 +13046,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `# What the 2026 Boating Market Means for Ontario Boat Buyers
 
 ## Quick answer
-The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, used-boat values have corrected, and the federal government has announced a proposed repeal of the luxury tax on boats over $250,000 (effective November 5, 2025 per the CRA Luxury Tax Notice LTN5 announcement, pending final confirmation). If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+The 2026 Ontario boat market is steadier than anything we have seen since the COVID surge. Inventory is back on dealer lots, prices have stopped climbing, and used-boat values have corrected. The federal luxury tax is no longer payable on subject vessels effective November 5, 2025. Bill C-15 received Royal Assent on March 26, 2026. If you have been waiting, this is a more balanced market. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## The post-pandemic reset is complete
 
@@ -13067,13 +13093,13 @@ caveat: All CAD, pickup only at Gores Landing. Build a repower quote at mercuryr
 
 The categories most relevant to Rice Lake (aluminum fishing boats, pontoons, smaller trailerable rigs) are among the most resilient.
 
-## The luxury tax on boats is being phased out
+## The luxury tax on subject vessels was repealed
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Canada federal luxury tax, introduced in the 2022 budget, applied to boats priced above $250,000. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels is no longer payable as of November 5, 2025 (per the announced change, pending final confirmation).
+Canada's federal luxury tax, introduced in 2022, applied to subject vessels priced or valued above $250,000. The [Canada Revenue Agency's Luxury Tax Notice LTN5](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ltn5/ltn5-luxury-tax-not-payable-subject-aircraft-and-vessels.html) confirms that the tax is no longer payable on subject vessels effective November 5, 2025. The amendments were included in Bill C-15, which received Royal Assent on March 26, 2026.
 
-If you were looking at a larger package (a loaded pontoon, a premium Legend configuration), that tax is on its way out (pending final confirmation).
+If you are shopping for a vessel above the threshold, the tax no longer applies to qualifying transactions on or after the effective date. The CRA notice explains the remaining filing and recordkeeping rules for earlier transactions.
 
 ## Financing is getting more manageable
 
@@ -13090,7 +13116,7 @@ Pre-owned boats typically account for about 80% of all boat transactions in a gi
 - Inventory is back. You get to choose.
 - Pricing is rational.
 - Financing is improving.
-- Luxury tax repeal is on its way (pending final confirmation).
+- The luxury tax no longer applies to subject vessels for qualifying transactions on or after November 5, 2025.
 
 We have been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). The honest take on 2026: it is a buyer market, not a distressed one, just a balanced one.
 
@@ -13098,7 +13124,7 @@ Stop by Gores Landing, call 905-342-2153, or start a quote at [mercuryrepower.ca
 
 ## Sources
 
-- Canada Revenue Agency, Luxury Tax Notice LTN5 (luxury tax on subject vessels no longer payable as of November 5, 2025). [canada.ca](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/luxury-tax.html)
+- Canada Revenue Agency, [Luxury Tax Notice LTN5](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ltn5/ltn5-luxury-tax-not-payable-subject-aircraft-and-vessels.html) (updated April 2026; Royal Assent March 26, 2026).
 - NMMA, U.S. new powerboat retail sales (2024-2025 unit data).
 - Bank of Canada, policy rate (series of cuts in 2025).
 
@@ -13108,7 +13134,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'Is 2026 a good time to buy a boat in Ontario?', answer: 'Yes, for most buyers it is one of the better windows in recent years. New inventory is plentiful, dealer competition is real, used prices have corrected from pandemic highs, and financing rates are easing.' },
-      { question: 'Did Canada really repeal the luxury tax on boats?', answer: 'Yes. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels (boats over $250,000) is no longer payable as of November 5, 2025.' },
+      { question: 'Did Canada really repeal the luxury tax on boats?', answer: 'Yes. Canada Revenue Agency Luxury Tax Notice LTN5 confirms that the luxury tax is no longer payable on subject vessels effective November 5, 2025. The amendments were included in Bill C-15, which received Royal Assent on March 26, 2026.' },
       { question: 'Are used boat prices coming down in Ontario?', answer: 'Used boat prices have softened an estimated 5 to 10% from 2021 to 2022 highs. Prices are still above pre-pandemic levels in many categories, but the correction has happened.' },
       { question: 'Why are new boat sales down if people are still boating?', answer: 'New unit sales dropped as the post-COVID surge corrected, but overall boating expenditure remained strong. People are maintaining, upgrading, and repowering the boats they already own.' },
       { question: 'Is Mercury allocation healthy for 2026?', answer: 'From our position as a Mercury Premier dealer, new motor allocation is healthy.' },
@@ -13117,122 +13143,112 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
   {
     slug: 'boat-rentals-shared-access-booming-2026',
-    title: 'Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us',
-    seoTitle: 'Boat Rentals Are Booming in 2026: HBW\'s Rice Lake Fleet',
-    description: 'Rent or buy a boat in 2026? Real numbers from 346 rentals on Rice Lake, the 10-15 day rule, and an honest rent vs own vs boat club comparison for Ontario.',
+    title: 'Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You',
+    seoTitle: 'Rent or Buy a Boat in Ontario? A Rice Lake Guide',
+    description: 'Rent or buy a boat in Ontario? Compare pay-per-use rentals, boat clubs, and ownership, then use a Rice Lake rental to learn what fits before you buy.',
     image: '/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png',
     author: 'Jay Harris',
     datePublished: '2026-02-06',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '~9 min read',
     keywords: ['rent or buy a boat', 'boat rentals Rice Lake', 'boat rental vs ownership Ontario', 'boat club vs boat rental', 'is renting a boat worth it'],
-    content: `# Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us
+    content: `# Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
-> **Quick answer:** Rent if you'll boat fewer than 10 days a season. Buy if you'll be on the water 15 or more. That rule comes from our own numbers: Harris Boat Works completed 346 rentals across a 9-boat fleet on Rice Lake in 2025. The current 2026 fleet has 10 boats after the addition of a 12-person Halo pontoon. Between 10 and 15 days, compare rental fees against storage, insurance, and winterizing.
+> **Quick answer:** Rent if you want occasional days on the water without ownership's fixed costs. Buy if regular access, spontaneity, and keeping your own setup matter enough to justify insurance, storage, winterizing, maintenance, and depreciation. There is no universal day-count threshold: compare the live rental rate for the boat you would use against your own annual ownership costs. Book a Rice Lake rental at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
-Nine boats. 346 rentals. One season.
+Renting and owning solve different problems. A rental gives you a planned day on the water without year-round carrying costs. Ownership gives you your own boat, your own setup, and the ability to go when conditions and your calendar line up.
 
-That's what our rental fleet did in 2025. Average it out and every boat left the dock 38 times in a season that really runs May to September. Nobody rented because a magazine told them the sharing economy was trendy. They rented because for most people, most summers, it's just the smarter way to get on the water.
-
-This post is the honest version of the rent-vs-own decision. Real numbers where we have them, clearly labelled estimates where we don't, and the exact threshold where the math flips. We sell boats too, so when we tell you renting might be the better call, you can take that at face value.
+This post is the honest version of the rent-vs-own decision. It keeps changing prices in the live systems where they belong and gives you a worksheet you can run with your own use and costs. We sell boats and rent them, so either answer can be the right one.
 
 ## Who this is for
 
-Cottagers with waterfront but no boat. GTA families planning a Rice Lake day or a week at the cottage. Anglers who don't want to trailer a rig two hours each way. And anyone circling a boat purchase who wants to test the water, literally, before writing a cheque. If you already boat 20+ days a season and own a slip, you've made your decision. Everyone else, keep reading.
+Cottagers with waterfront but no boat. GTA families planning a Rice Lake day or a week at the cottage. Anglers who don't want to trailer a rig two hours each way. And anyone circling a boat purchase who wants to test the water, literally, before writing a cheque. Your own calendar and costs determine whether rental access or ownership fits better.
 
-## Why shared access is booming in 2026
+## Why rent before you buy
 
-The rental and shared-access market keeps growing across North America. Industry analysts peg the global boat rental market at around $20 billion USD in 2026, growing 5-6% a year, and the industry association NMMA points to boat clubs, peer-to-peer rentals, and charters as the fastest-growing way people get on the water, even in years when new-boat sales soften. The largest boat club franchise on the continent logged more than 640,000 member trips in 2025 alone.
+A rental turns abstract preferences into a real day on the water. You learn whether your group prefers a pontoon or a fishing boat, how much space you actually use, and whether a planned booking feels better or worse than owning and maintaining your own boat. That information is useful before a major purchase, even if you eventually decide to own.
 
-The driver isn't complicated. A new pontoon package can run north of $60,000, and for a lot of owners that boat spends 340-plus days a year on a trailer or under shrinkwrap. More people are doing that math and choosing access over ownership, at least at first.
+## Common rental use cases
 
-We feel it on our own dock. Rentals have been part of Harris Boat Works for decades, and demand keeps climbing. What's changed is who's renting and why.
+The current online rental lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Availability, capacity, equipment, and rates are shown in the live booking system; the list can change as boats are added or removed.
 
-## Who actually rents from us
+Examples include:
 
-Our current rental fleet is 10 Legend boats, all Mercury-powered and maintained by our own shop: 1 new Halo pontoon listed for up to 12 people, 2 Legend 23 Cruise pontoons, 3 Legend 24 Transporters, 2 Legend 20 Transporters, and 2 Legend 16 ProSports. These aren't mystery boats with unknown service histories. Our technicians prep them, fix them, and winterize them.
-
-Four groups keep them busy:
-
-**Cottagers without a boat.** The most common. They have the waterfront, they want the odd weekend on the water, and they don't want to pay for storage, insurance, and maintenance twelve months a year to boat six days.
+**Cottagers without a boat.** They have the waterfront, want occasional access, and do not want a year-round storage and maintenance commitment.
 
 **Visiting families.** A day of cruising, swimming, and tubing on Rice Lake. They want an afternoon, not an asset.
 
-**Travelling anglers.** Rice Lake is a legitimate walleye, bass, and muskie fishery. Plenty of serious anglers live far enough away that trailering their own rig is more hassle than it's worth. They rent a ProSport, fish hard, and drive home light.
+**Travelling anglers.** Rice Lake is a walleye, bass, and muskie fishery. A currently available ProSport can provide a fishing day without trailering a personal rig.
 
-**Try-before-you-buy prospects.** Someone considering a 20-foot fishing boat rents a 20 Transporter for a Saturday, feels how it handles loaded with family and gear, and comes back two weeks later to talk numbers. We see this constantly, and it's the least risky boat-shopping method we know of.
+**Try-before-you-buy shoppers.** Rent the closest available style to the boat you are considering and see how the layout works with your actual family and gear.
 
 ## Rent, boat club, peer-to-peer, or own: the honest comparison
 
-Here's how the four ways to get on the water in 2026 actually stack up for an Ontario boater. Club and app figures are typical GTA-area pricing as of summer 2026 and change often; confirm current numbers before deciding.
+Here's how the four ways to get on the water differ for an Ontario boater. Prices and membership terms change, so compare current written rates before deciding.
 
 | Option | Upfront cost | Ongoing cost | Best for | Watch for |
 |---|---|---|---|---|
-| Marina rental | $0 | Day rate + fuel, pay per use | 1-10 days a season, visitors, try-before-you-buy | Peak weekends book up early |
-| Boat club membership | Roughly $3,000-$4,500 initiation | $300-$500/month dues + fuel | 10-20 days near a club location | Reservation limits, dues run all winter |
-| Peer-to-peer app | $0 | Day rate + platform and service fees | Occasional use near big cities | Condition and maintenance vary by owner, insurance fine print |
-| Ownership | Purchase price (a new pontoon package often exceeds $60,000) | Insurance, storage, winterizing, maintenance, depreciation | 15+ days a season, anglers, waterfront owners | The costs that never show up in the brochure |
+| Marina rental | No ownership purchase | Day rate + fuel, pay per use | Occasional days, visitors, try-before-you-buy | Date and boat availability |
+| Boat club membership | Membership terms vary | Dues, fuel, and possible fees | Repeat use near a club location | Reservation limits and year-round terms |
+| Peer-to-peer app | No ownership purchase | Day rate + platform and service fees | Occasional use near big cities | Condition and maintenance vary by owner, insurance fine print |
+| Ownership | Purchase price or financing | Insurance, storage, winterizing, maintenance, depreciation | Frequent use, anglers, waterfront owners | Fixed costs continue when the boat is not used |
 
-The decision rule we give people at the counter: **rent under 10 days a season, buy at 15 or more, and between 10 and 15, run the math.** For a full ownership cost breakdown in Canadian dollars, see our [total cost of owning a boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026) guide.
+The decision rule is personal: multiply the current rental rate for the boat you would choose by your realistic number of days, then compare that with your own annual ownership costs. For the ownership side of the worksheet, see our [total cost of owning a boat in Ontario](/blog/total-cost-of-owning-a-boat-ontario-2026) guide.
 
 ## The four-month reality of an Ontario season
 
-Every rent-vs-own article written in Florida quietly assumes a 12-month season. Ontario gives you roughly Victoria Day to Thanksgiving, and the prime stretch is about 20 weekends. Boating 15 days here means using the boat almost every second weekend, all summer. Some families genuinely do. Most don't, and the difference between what people plan in March and what they log by September is the single biggest reason owners end up listing barely-used boats in the fall.
+Ontario's boating season is shorter than year-round markets. Instead of applying a generic day-count threshold, mark the dates you could realistically use a boat and compare the live rental cost for those dates with your own annual ownership costs.
 
-Renting flips that seasonal math in your favour. You pay for exactly the days you use, and the other eight months cost you nothing. No shrinkwrap bill, no storage contract, no watching a payment come out in February for a boat under a tarp. If you're curious what those carrying costs look like, our [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) breaks them down.
+With a rental, you pay for the dates you book without taking on annual shrinkwrap, storage, insurance, maintenance, or depreciation. If you're curious what those ownership carrying costs look like, our [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) breaks them down.
 
 ## Common mistakes
 
-A few things that bite first-time renters every summer:
+A few things first-time renters should plan for:
 
-- **Booking late for July.** Summer weekends go early. If you want a specific boat on a long weekend, book weeks ahead, not days.
-- **Skipping the operator card.** HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. Our [rental licence guide](/blog/boat-rental-licence-ontario-guide) explains what to arrange before rental day.
-- **Underestimating space.** Six adults, a cooler, and a dog need a 23 Cruise or 24 Transporter, not a 16-footer. Count your people and gear honestly before you book.
+- **Assuming a preferred boat will be open.** Check the live calendar before making the rest of your plans and book online when you are ready.
+- **Skipping the licence.** Every boat driver in Ontario needs a boat operator's licence. You can get one online before your rental; our [rental licence guide](/blog/boat-rental-licence-ontario-guide) covers it.
+- **Underestimating space.** Check the selected boat's live capacity and equipment, then count people and gear honestly before you book. The current lineup includes the Halo as well as Cruise, Transporter, and ProSport choices.
 - **Ignoring the forecast.** Rice Lake is shallow and kicks up chop fast in a west wind. Build a weather plan B into your day.
 
 ## What we see at HBW
 
-The boating industry has known for years that people who start with rentals or clubs are far more likely to become owners than people who never get on the water at all. We watch it happen at the counter. Someone rents a ProSport for a long weekend, rents again in August, and shows up the next spring asking what a used one costs.
-
-That's also why the fleet's maintenance discipline matters more than it might look. Every boat runs a Mercury outboard serviced by our shop, and any boat with a safety or reliability issue gets pulled before it goes out. A customer shouldn't be the one discovering a worn impeller mid-lake. And honestly, a clean, well-sorted rental fleet is the best advertisement our service department has: rent from us first, and you already know what our shop's work looks like before you ever buy.
-
-We've been renting boats on this lake since 1947. The boom is new. The idea isn't.
+The current HBW rental process is straightforward: book online, complete the required documents, bring the driver's photo ID and proof of competency, and get fitted life jackets plus a dock orientation before departure. At return, staff refuel and inspect the boat. Harris Boat Works has served Rice Lake boaters since 1947 and operates the rental service from its Gores Landing dock today.
 
 ## Ready to get on the water?
 
-**Renting:** all bookings are online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Rentals run daily through the season from our dock in Gores Landing. If the driver still needs a PCOC, our [rental licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and the HARRIS15 partner discount.
+**Renting:** all bookings are online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). The driver can complete the boating-licence course at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat).
 
-**Buying:** if your rental habit has crossed the 15-day line, build a real quote with Canadian pricing at [mercuryrepower.ca](https://mercuryrepower.ca), or come walk the lot. We'll give you the honest answer for your situation, including "keep renting."
+**Buying:** if your own comparison favours ownership, build a real quote with Canadian pricing at [mercuryrepower.ca](https://mercuryrepower.ca), or come walk the lot. We'll give you the honest answer for your situation, including "keep renting."
 
 ## Frequently Asked Questions
 
 **Is it cheaper to rent or buy a boat in Ontario?**
-Under 10 days a season, renting is almost always cheaper once you count what ownership really costs beyond the purchase price. At 15+ days, ownership usually wins. Between those thresholds, add up a season of rental fees and compare them against the carrying costs in our [ownership cost guide](/blog/total-cost-of-owning-a-boat-ontario-2026).
+There is no universal cutoff. Add up the current rental rate and expected fuel for your realistic number of days, then compare that with insurance, storage, winterizing, maintenance, depreciation, and any payment in our [ownership cost guide](/blog/total-cost-of-owning-a-boat-ontario-2026).
 
 **How many days a year should I boat to justify buying?**
-Roughly 15 or more. Below 10, rentals win on math almost every time. Remember the Ontario season is only about 20 prime weekends, so 15 days means boating nearly every second weekend.
+Use your own costs and calendar. The more genuine boating days you expect, the more ownership's fixed costs are spread out; occasional users may find pay-per-use rentals easier to justify.
 
 **Do I need a licence to rent a boat on Rice Lake?**
 Yes. Whoever drives needs a boat operator's licence, and you can get one online before your rental day. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details.
 
 **What boats can you rent at Harris Boat Works?**
-A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for live availability, capacity, equipment, and rates.
 
 **Can I rent a boat before buying one?**
-Yes, and we recommend it. Rent the size and style you're considering, load it with your actual family and gear, and see how it handles for a full day. It's the cheapest boat-buying research you can do. Our fleet covers the most common first-boat sizes, 16 to 24 feet.
+Yes. Rent the closest currently available style to the boat you're considering, load it with your actual family and gear, and use the day to evaluate layout, passenger space, and how you spend time on the water.
 
 **What's the difference between a boat rental and a boat club?**
-A rental is pay-per-day with no commitment. A boat club charges an initiation fee (typically $3,000-$4,500 in the GTA as of 2026) plus monthly dues year-round, in exchange for reserved access to a shared fleet. Clubs can make sense at 10-20 days a season near a club location; below that, rentals are usually cheaper.
+A rental is pay-per-use with no ownership commitment. A boat club uses membership and reservation terms for access to a shared fleet. Compare the current written initiation cost, dues, fuel charges, reservation limits, and cancellation rules against the live rental rate you would actually book.
 
 **How far ahead should I book a summer rental?**
-For July and August weekends, book several weeks ahead online. Weekdays are far easier. In 2025 our nine boats went out 346 times, and the busiest weekends were spoken for well in advance.
+Check the live calendar for your preferred boat and date, then book online when you are ready. Availability changes by boat and day.
 
 **Are rental boats well maintained?**
-Ours are. Every boat is serviced by our own shop, winterized properly, and pulled from the schedule if anything affects safety or reliability. Ask any operator you rent from who maintains their fleet; the answer tells you a lot.
+HBW supplies the required safety gear and fitted life jackets, gives the driver an orientation and lake map, then refuels and inspects the boat at return. Review the current rental FAQ and booking terms before your date.
 
 ## Ready for a day on Rice Lake?
 
@@ -13245,10 +13261,8 @@ Whether that's a rental Saturday or the first step toward your own boat, start w
 
 ## Sources
 
-- NMMA press coverage on 2025-2026 boating participation and shared-access growth (nmma.org)
-- Mordor Intelligence and Fortune Business Insights boat rental market reports, 2026 editions
-- Boat club pricing: published GTA-area membership rates, summer 2026
-- Harris Boat Works 2025 rental operations data (first-party)
+- [Harris Boat Works live rental booking](https://harrisboatworks.ca/rentals)
+- [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
 
 **Related guides:**
 - [Rice Lake Boat Rental Guide 2026](/blog/rice-lake-boat-rental-guide-2026)
@@ -13258,14 +13272,14 @@ Whether that's a rental Saturday or the first step toward your own boat, start w
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake)
 `,
     faqs: [
-      { question: 'Is it cheaper to rent or buy a boat in Ontario?', answer: 'Under 10 days a season, renting is almost always cheaper once you count what ownership really costs beyond the purchase price. At 15+ days, ownership usually wins. Between those thresholds, add up a season of rental fees and compare them against the carrying costs in our ownership cost guide.' },
-      { question: 'How many days a year should I boat to justify buying?', answer: 'Roughly 15 or more. Below 10, rentals win on math almost every time. Remember the Ontario season is only about 20 prime weekends, so 15 days means boating nearly every second weekend.' },
+      { question: 'Is it cheaper to rent or buy a boat in Ontario?', answer: 'There is no universal cutoff. Add up the current rental rate and expected fuel for your realistic number of days, then compare that with insurance, storage, winterizing, maintenance, depreciation, and any payment in our ownership cost guide.' },
+      { question: 'How many days a year should I boat to justify buying?', answer: 'Use your own costs and calendar. The more genuine boating days you expect, the more ownership\'s fixed costs are spread out; occasional users may find pay-per-use rentals easier to justify.' },
       { question: 'Do I need a licence to rent a boat on Rice Lake?', answer: 'Yes. Whoever drives needs a boat operator\'s licence, and you can get one online before your rental day. See our Ontario rental licence guide for the details.' },
-      { question: 'What boats can you rent at Harris Boat Works?', answer: 'A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals.' },
-      { question: 'Can I rent a boat before buying one?', answer: 'Yes, and we recommend it. Rent the size and style you\'re considering, load it with your actual family and gear, and see how it handles for a full day. It\'s the cheapest boat-buying research you can do. Our fleet covers the most common first-boat sizes, 16 to 24 feet.' },
-      { question: 'What\'s the difference between a boat rental and a boat club?', answer: 'A rental is pay-per-day with no commitment. A boat club charges an initiation fee (typically $3,000-$4,500 in the GTA as of 2026) plus monthly dues year-round, in exchange for reserved access to a shared fleet. Clubs can make sense at 10-20 days a season near a club location; below that, rentals are usually cheaper.' },
-      { question: 'How far ahead should I book a summer rental?', answer: 'For July and August weekends, book several weeks ahead online. Weekdays are far easier. In 2025 our nine boats went out 346 times, and the busiest weekends were spoken for well in advance.' },
-      { question: 'Are rental boats well maintained?', answer: 'Ours are. Every boat is serviced by our own shop, winterized properly, and pulled from the schedule if anything affects safety or reliability. Ask any operator you rent from who maintains their fleet; the answer tells you a lot.' },
+      { question: 'What boats can you rent at Harris Boat Works?', answer: 'The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Check harrisboatworks.ca/rentals for live availability, capacity, equipment, and rates.' },
+      { question: 'Can I rent a boat before buying one?', answer: 'Yes. Rent the closest currently available style to the boat you\'re considering, load it with your actual family and gear, and use the day to evaluate layout, passenger space, and how you spend time on the water.' },
+      { question: 'What\'s the difference between a boat rental and a boat club?', answer: 'A rental is pay-per-use with no ownership commitment. A boat club uses membership and reservation terms for access to a shared fleet. Compare the current written initiation cost, dues, fuel charges, reservation limits, and cancellation rules against the live rental rate you would actually book.' },
+      { question: 'How far ahead should I book a summer rental?', answer: 'Check the live calendar for your preferred boat and date, then book online when you are ready. Availability changes by boat and day.' },
+      { question: 'Are rental boats well maintained?', answer: 'HBW supplies the required safety gear and fitted life jackets, gives the driver an orientation and lake map, then refuels and inspects the boat at return. Review the current rental FAQ and booking terms before your date.' },
     ]
   },
 
@@ -13414,9 +13428,9 @@ Honest note: buyers who pick Pro XS for the badge usually find a correctly propp
 
 Verado (250 to 600 hp, naturally aspirated V8/V10/V12) is engineered for large offshore centre consoles and multi-engine installs. Almost no boater on Rice Lake, the Kawarthas, or Lake Simcoe needs one. **We don't stock Verado; it's available as a special order**, quoted individually. If you're running a 20-foot fishing boat, a FourStroke 150 or 200 is the better call.
 
-### Avator electric: brochure only, for now
+### Avator electric: build-to-order
 
-[Mercury's Avator electric line](/blog/mercury-avator-electric-boating-ontario) (currently the 7.5e and 20e in production) is build-to-order from the brochure, not something we stock on the floor. Avator outboards are rated by output power in kilowatts and equivalent thrust, not by direct gas-engine HP comparison. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice. Larger Avator models have been previewed but we don't have firm 2027 availability dates yet. When Mercury confirms, we'll update this post.
+[Mercury's current Avator electric line](/blog/mercury-avator-electric-boating-ontario) includes the 7.5e, 20e, 35e, 75e and 110e. HBW treats Avator as build-to-order rather than floor stock. Mercury rates the models by prop-shaft output: 0.75, 2.2, 3.7, 7.5 and 11 kW respectively. For most Ontario fishing and family boating, a gas FourStroke is still the practical choice; Avator fit depends on the exact boat, load, route, battery configuration and charging access.
 
 ## Matching the Motor to Your Ontario Boat
 
@@ -13560,18 +13574,18 @@ Electric outboards aren't a someday thing. Mercury's Avator line is here, we're 
 
 ### The Avator lineup, in plain terms
 
-Mercury names the Avator models by power output in watts, which trips people up. Here's the translation:
+Mercury rates Avator models by prop-shaft power in watts or kilowatts, not by gas-engine horsepower. Here is the current lineup:
 
-| Model | Power at prop | Best for | Rough gas feel (guide only) |
-|---|---|---|---|
-| Avator 7.5e | 750W | Canoes, dinghies, small tenders, trolling | ~3.5 hp |
-| Avator 20e | 2.2 kW | Small fishing boats, inflatables | ~5 hp |
-| Avator 35e | 3.7 kW | Small fishing boats, light tenders | ~9.9 hp |
-| Avator 75e | 7.5 kW | Small pontoons, larger tenders | 10 hp (prop-shaft rating) |
-| Avator 110e | 11 kW | Pontoons, day boats | 15 hp (prop-shaft rating) |
+| Model | Rated prop-shaft power | Best for |
+|---|---|---|
+| Avator 7.5e | 0.75 kW | Canoes, dinghies, small tenders, trolling |
+| Avator 20e | 2.2 kW | Small fishing boats, inflatables |
+| Avator 35e | 3.7 kW | Small fishing boats, light tenders |
+| Avator 75e | 7.5 kW | Small pontoons, larger tenders |
+| Avator 110e | 11 kW | Pontoons, day boats |
 
 
-One quirk worth knowing: the first three figures are Mercury's gas-equivalent comparisons, while the 75e and 110e numbers are Mercury's literal prop-shaft conversions (7,500 watts converts to 10 hp). Electric motors deliver all their torque instantly, so a 75e pulls a bigger boat off the line far harder than "10 hp" suggests. Treat the column as a guide, not a spec.
+Those are rated prop-shaft figures, not a promise that an Avator will behave like a gas outboard with a particular horsepower number. Hull, load, propeller, battery configuration, wind, and throttle setting all affect thrust, acceleration, range, and runtime. Compare the exact boat setup instead of converting kilowatts into a gas-horsepower shortcut.
 
 A few things worth knowing: the 7.5e battery (1 kWh, about 8 kg (17 lb)) slides in under the cowl with no cables, and you can carry a spare and swap it in seconds. The bigger 75e and 110e use a Power Center hub that connects up to four larger 5,400 Wh batteries, so range scales with how many packs you buy.
 
@@ -13602,7 +13616,7 @@ Be honest with yourself about how you boat.
 
 ### What about price?
 
-Avator pricing moves around a lot by model, battery count, and configuration, and the battery is often where the real money is, not the motor head. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. So this is the one Mercury line we price by conversation instead of the configurator. Call us at 905-342-2153, tell us the boat and how far you actually run, and we'll give you the real, current number for the exact setup. Same straight answer, just on the phone.
+Avator pricing depends on the model, battery count, charger, controls and installation. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See our [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both. We'll tell you straight which one fits your boat.
 
@@ -13618,9 +13632,9 @@ For gas outboards, the configurator does what it always does: **[build a real Me
 `,
     faqs: [
       { question: 'How far can a Mercury Avator electric outboard go on one charge?', answer: "In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions." },
-      { question: 'What gas horsepower is each Mercury Avator equivalent to?', answer: 'Mercury compares the 7.5e to about 3.5 hp, the 20e to about 5 hp, and the 35e to about 9.9 hp. For the 75e and 110e, Mercury rates prop-shaft output: 7,500 watts converts to 10 hp and 11,000 watts to 15 hp. Instant electric torque means they feel stronger off the line than those numbers suggest.' },
+      { question: 'How is Mercury Avator power rated?', answer: 'Mercury rates Avator outboards by prop-shaft power: 0.75 kW for the 7.5e, 2.2 kW for the 20e, 3.7 kW for the 35e, 7.5 kW for the 75e, and 11 kW for the 110e. Thrust, acceleration, range, and runtime still depend on the exact hull, load, propeller, battery setup, weather, and throttle setting.' },
       { question: 'How long does it take to charge a Mercury Avator battery?', answer: "The 7.5e's 1 kWh battery takes roughly 9 hours on the included 110W charger or about 2 hours on the optional 520W charger. The larger 5,400 Wh packs used by the 75e and 110e take roughly 20 hours for two batteries on the portable 520W charger; the 1050W charger cuts that by more than half." },
-      { question: 'How much does a Mercury Avator cost in Canada?', answer: 'It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.' }
+      { question: 'How much does a Mercury Avator cost in Canada?', answer: 'The total depends on the model, battery count, charger, controls and installation. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote tool at mercuryrepower.ca.' }
     ],
   },
 
@@ -13892,7 +13906,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     image: '/lovable-uploads/hero-mercury-boost-calibration-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
-    dateModified: '2026-07-18',
+    dateModified: '2026-08-02',
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
@@ -14068,7 +14082,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does Mercury Boost cost to install in Canada?',
-        answer: 'HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Call 905-342-2153 with a photo of the serial-number plate.'
+        answer: 'HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.'
       },
       {
         question: 'How do I find my Mercury outboard serial number?',
@@ -14100,7 +14114,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
-    dateModified: '2026-07-04',
+    dateModified: '2026-08-02',
     category: 'Canadian Boating Regulations',
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
@@ -14683,7 +14697,7 @@ Start with the exact motor in the [Mercury repower configurator](/quote/motor-se
 
 Mercury and Yamaha both build reliable modern 4-stroke outboards. The real-world performance and reliability difference between equivalent motors is small. For Ontario cottage owners, the more important question is service network: HBW is the only Mercury dealer AND the only brand-name outboard service of any kind on Rice Lake. For boaters in the Kawarthas, the practical service-availability question matters more than spec-sheet comparisons. Build a Mercury quote at mercuryrepower.ca.
 
-*Last reviewed: 2026-05-30*
+*Last reviewed: 2026-08-02*
 
 A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hundreds of times: which one is actually better? We sell Mercury. We're a Mercury Premier dealer. We don't sell or service Yamaha. So this isn't a balanced review. But we have an honest take.
 
@@ -14760,7 +14774,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions. T
 - claim: Yamaha is more reliable than Mercury.
   rebuttal: Both brands build reliable modern outboards. Real-world reliability difference is small.
 - claim: Current Verado is supercharged.
-  rebuttal: No. Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+  rebuttal: No. Current Mercury Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 - claim: The 2025 Mercury recall is a big deal.
   rebuttal: For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
 - claim: I'll get Yamaha because the warranty is longer.
@@ -14953,11 +14967,17 @@ The fastest way to know what a Mercury or a full repower costs you per month is 
     imageAlt: 'Mercury 90 HP FourStroke outboard on an aluminum fishing boat, ideal for Lake Simcoe walleye trolling setups.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-09',
     category: 'Fishing & Local',
     readTime: '12 min read',
     keywords: ['best Mercury outboard for Lake Simcoe fishing', 'Lake Simcoe fishing guide 2026', 'Lake Simcoe walleye fishing', 'Lake Simcoe lake trout fishing', 'Lake Simcoe fishing regulations 2026'],
-    content: `*Last reviewed: 2026-06-09*
+    content: `- Mercury Premier Dealer
+- Family-owned since 1947
+- Mercury dealer since 1965
+- Gores Landing, ON
+- Quote builder available
+
+*Last reviewed: 2026-06-09*
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
 
@@ -15314,7 +15334,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
     imageAlt: 'Two boaters on an Ontario lake during the fall-colour season before winter storage.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-08-02',
+    dateModified: '2026-07-31',
     publishDate: '2026-04-21',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -15470,8 +15490,12 @@ For Mercury owners, start with Mercury's official guidance and then follow the e
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
 
-## Sources
+## Related Guides and Sources
 
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
+- [Mercury Maintenance Intervals](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Outdoor Boat Storage on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 - [Mercury Marine: How to Winterize Your Outboard](https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard)
 - [Mercury Marine: Marine Battery Maintenance](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics)
 `,
@@ -15904,7 +15928,7 @@ Tiller motors 20 HP and under are essentially drop-in installs. The motor is the
 
 Once you cross to 25 HP and up, you're into a full project: controls, cables, gauges, prop, and installation labour.
 
-For specific pricing on each model, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+For current pricing on each model, use the [live pricing reference](/pricing-reference) or [build a configured quote](/quote/motor-selection).
 
 ### What Changes the "Cheapest That Works" Answer
 
@@ -16019,7 +16043,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Is a small Mercury good enough for fishing?', answer: 'For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.' },
       { question: 'Should I buy the cheapest motor I can afford?', answer: 'Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.' },
       { question: 'Can I finance a small Mercury outboard?', answer: 'Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at current Mercury Repower Financing rates (lower if a promotional rate is active). Full details on the [financing page](/financing).' },
-      { question: 'How long does a small Mercury outboard last?', answer: 'Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.' },
+      { question: 'How long does a small Mercury outboard last?', answer: 'There is no reliable universal lifespan in hours or years. Maintenance, corrosion control, storage, operating load and parts availability all matter. A documented motor that follows its serial-number maintenance schedule is a better bet than one sold on a generic lifetime estimate.' },
       { question: 'What is the cheapest Mercury that can pull a tube?', answer: 'You need at least 60 HP to pull a tube reliably with one rider, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke, but you almost always want at least 90 HP for family tubing on Rice Lake or any open water. See the [motor selection page](/quote/motor-selection) for live pricing on the lineup.' },
       { question: 'Do I need rigging when I buy a small Mercury tiller?', answer: 'No. Tiller motors 20 HP and under are drop-in installs. You hang it on the transom, hook up the fuel line, and go. No controls, no cables, no install labour. The motor itself is the whole purchase. Above 25 HP, motors are typically remote-control installs with rigging, controls, and labour as separate line items.' },
       { question: 'What is the cheapest Mercury repower I can do on a 16-foot aluminum?', answer: 'A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).' },
@@ -16511,7 +16535,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     keywords: ['trailer boat toronto rice lake', 'ontario trailer rules', 'boat launch rice lake'],
     content: `## Quick Answer
 
-Trailering a boat from Toronto to Rice Lake takes about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
+Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Plan for trailer brakes if your rig is over 1,400 kg combined. Confirm tire pressure, lights, and bearing condition before you leave. Verify with current traffic conditions before departing.
 
 ---
 
@@ -16571,12 +16595,12 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **County Road 28 to Gores Landing (about 15 minutes)**: Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
 
-**Total: about 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north**, longer on summer Saturday mornings.
+**Total: roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north**, longer on summer weekends.
 
 ---
 
 ::pull-quote
-quote: Pull the boat from downtown Toronto to Rice Lake every Friday in summer, about 90 minutes door to ramp via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
+quote: Pull the boat from central Toronto to Rice Lake every Friday in summer, roughly 1 hour 45 minutes door to ramp in light traffic via Highway 401 east and Highway 115 north, longer during peak summer traffic. The 401-East-to-Port-Hope-exit run is genuinely easier than dealing with cottage country traffic up Highway 11. **Best Saturday on the water starts with the right Friday drive.**
 attribution: Jamal R.
 source: Mississauga
 ::
@@ -16628,7 +16652,7 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 ## FAQs
 
 **How long is the drive from Toronto to Rice Lake?**
-About 90 minutes from downtown Toronto via Highway 401 east and Highway 115 north, longer on summer Saturday mornings.
+Roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north, longer on summer weekends.
 
 **Do I need trailer brakes for a boat under 1,400 kg?**
 Not legally required in Ontario, but check your tow vehicle's rating. For trailers over 1,400 kg combined, brakes are required.
@@ -16666,7 +16690,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     faqs: [
       {
         question: 'How long does it take to trailer a boat from Toronto to Rice Lake?',
-        answer: 'The drive from downtown Toronto to Rice Lake takes about 90 minutes via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic can add 30-45 minutes. Budget extra time if leaving after noon on a peak travel day.'
+        answer: 'The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure.'
       },
       {
         question: 'Do I need a special licence to tow a boat trailer in Ontario?',
@@ -17018,7 +17042,7 @@ We sell boats and motors. We are transparent about that.
 
 We have also been doing this for three generations. A customer who makes a decision they are comfortable with comes back. One who felt pressured does not.
 
-Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent for a season first](/blog/renting-vs-owning-boat-ontario-math), HBW has 10 boats available on Rice Lake, including the new 12-person Halo pontoon.
+Our 2026 advice: do the full math before deciding. If you are replacing a motor on a good hull, price out the repower at [mercuryrepower.ca](https://www.mercuryrepower.ca) first. If you are in the market for a new boat, bring a clear budget that includes all carrying costs, not just the purchase price. If you are not sure whether ownership is right for you, [rent first](/blog/renting-vs-owning-boat-ontario-math); HBW's current pontoon and fishing-boat lineup is listed at harrisboatworks.ca/rentals.
 
 ---
 
@@ -17045,7 +17069,7 @@ For many Ontario boaters with a sound hull, repowering is better value. A Mercur
 Fall (September, November) for new boats, dealers are clearing model-year inventory. Winter boat shows (January, February) for promotional financing programs. Spring offers the widest selection but also peak demand and less dealer motivation to negotiate.
 
 **Should I buy or rent in 2026?** 
-At 10 to 15 days of use per year, the math generally favors renting. At 30+ days of use per year, ownership starts to make sense. A season of renting before purchasing typically leads to a better buying decision.
+There is no universal day-count threshold. Compare the live rental rate for the boat you would use across your realistic number of days with your own annual ownership costs. Renting before purchasing can help you evaluate layout and use without promising a financial outcome.
 
 ---
 
@@ -17058,7 +17082,7 @@ At 10 to 15 days of use per year, the math generally favors renting. At 30+ days
 ## CTA
 
 **See real prices. No games.** 
-Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required. 
+Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration, no phone calls required.
 Or call 905-342-2153. Harris Boat Works, Gores Landing, ON. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -17089,7 +17113,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Should I buy a boat or just rent in 2026?',
-        answer: 'If you\'re uncertain whether you\'ll use a boat enough to justify ownership costs, renting for a season first is a legitimate and increasingly practical option. At Harris Boat Works, we ran 346 rentals in 2025, that demand is real and growing. The math generally favours ownership at roughly 30+ days of use per year, below that threshold, renting typically costs less than ownership when you factor in storage, maintenance, insurance, and depreciation. A first-time buyer who rents for one season before purchasing typically makes a better buying decision.'
+        answer: 'If you\'re uncertain whether you\'ll use a boat enough to justify ownership costs, renting first is a practical way to test the type of boat and access pattern that fit you. There is no universal day-count threshold: compare the live rental rate for your realistic number of days against your own storage, maintenance, insurance, winterizing, depreciation, and financing costs.'
       },
       {
         question: 'How do boat financing rates in Canada compare in 2026 vs recent years?',
@@ -17376,7 +17400,7 @@ For a typical 150 HP pontoon owner in 2026, the honest answer is to check eligib
 
 Mercury Boost is an authorized software calibration installed on an eligible motor through Mercury's dealer process. It is not an aftermarket tune or owner-installed download.
 
-Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Call HBW with a photo of the serial-number plate for an eligibility and pricing check.
+Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Send HBW a clear photo of the serial-number plate through the [contact page](/contact) for a written eligibility and price check.
 
 Because warranty coverage depends on the exact product, installation record, and current Mercury terms, HBW confirms warranty treatment for the specific motor before work is authorized.
 
@@ -17532,7 +17556,7 @@ phone: 905-342-2153
       },
       {
         question: 'How much does Mercury Boost cost in Canada?',
-        answer: 'HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.'
+        answer: 'HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.'
       },
       {
         question: 'What is the difference between Mercury Boost and re-propping?',
@@ -17552,7 +17576,7 @@ phone: 905-342-2153
       },
       {
         question: 'Is Mercury Boost available in Ontario?',
-        answer: 'Boost is available for eligible motors through Mercury\'s supported app flow on select configurations or through authorized dealers. Call HBW at 905-342-2153 to confirm the exact model, serial number, software status, boat configuration, and current Canadian price.'
+        answer: 'Boost is available for eligible motors through Mercury\'s supported app flow on select configurations or through authorized dealers. Send the exact model and a clear serial-number-plate photo through the [HBW contact page](/contact) to confirm software status, boat configuration and the current Canadian price in writing.'
       }
     ]
   },
@@ -17725,7 +17749,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can I trust online pricing if it\'s published?',
-        answer: 'For HBW, yes. Pricing is verified annually after Mercury\'s July 1 model year change. The configurator pulls live data. We\'re a Mercury Premier dealer with 60 years of accountability, we don\'t bait-and-switch on published prices.'
+        answer: 'For HBW, yes. Pricing is verified after Mercury\'s July 1 model-year change, and the configurator uses the current pricing data. We\'ve been a Mercury dealer since 1965, and we don\'t bait-and-switch on published prices.'
       },
       {
         question: 'What about delivery, taxes, and trade-in?',
@@ -18479,7 +18503,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 > **Quick answer:** Before you pay for any used outboard, do four things: compression-test every cylinder, check the gearcase oil colour, watch the tell-tale stream, and run it on the water. If the seller will not allow those, that is your answer. A dealer pre-purchase inspection is cheap insurance against a costly motor. Book one at hbw.wiki/service.
 
-Harris Boat Works has been a Mercury dealer and service shop on Rice Lake since 1947. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
+Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
 
 A used outboard can be a smart buy. Ontario is the right place to shop for one, too. The Kawarthas and Rice Lake run almost entirely freshwater motors, and freshwater is the best possible starting point. A single saltwater season leaves corrosion you cannot undo.
 
@@ -18876,7 +18900,7 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Don't Own a Boat? You Can Still Do This
 
-**Rent from HBW.** [Our 10-boat fleet on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) includes the new 12-person Halo pontoon, 16-foot ProSports, 20- and 24-foot Transporters, and 23-foot Cruise pontoons. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+**Rent from HBW.** [Our current Rice Lake rental lineup](/blog/rice-lake-boat-rental-guide-2026) includes ProSport fishing boats, Transporter pontoons, 23 Cruise pontoons, and the Halo pontoon. Rice Lake is part of the Trent-Severn, you are already on the waterway when you launch from Gores Landing. Book at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 **Houseboat the system.** Companies including Le Boat operate on the Trent-Severn and offer multi-day trips. Most houseboat operators brief customers on locking, no boating licence required in most rental cases.
 
@@ -18884,14 +18908,14 @@ Fuel is available at commercial marinas along the route, not at lockstations.
 
 ## Why HBW Is a Useful Home Base
 
-HBW is at Gores Landing on the south shore of Rice Lake, roughly 90 minutes from Toronto.
+HBW is at Gores Landing on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic.
 
 | Service | Detail |
 |---|---|
 | Fuel | Ethanol-free 89-octane marine gas at the dock |
 | Transient slips | 4, 6 available; $1.00/ft/night; call ahead to confirm availability |
 | Launch ramp | 2-lane concrete; $20/day or $200/season |
-| Rentals | 10-boat fleet for day trips, including the 12-person Halo |
+| Rentals | Current pontoon and fishing-boat lineup for Rice Lake trips |
 | Mercury service | Premier dealer; for engine repairs, we only service Mercury and Mercruiser |
 
 Call 905-342-2153 before heading out if you need a slip or want to confirm fuel availability. [Mercury repower quotes](/blog/mercury-repower-cost-ontario-2026-cad) at [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -19166,7 +19190,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: "2026-08-01",
+    dateModified: "2026-08-02",
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
@@ -19177,7 +19201,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, about 80 minutes northeast of Toronto. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works has a private ramp in Gores Landing.
 
 ---
 
@@ -19251,7 +19275,7 @@ For Rice Lake visitors, this opens up affordable multi-day trips through the Kaw
 
 ## Boat Rentals and Borrowing
 
-If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 10-boat rental fleet of Mercury-powered Legend boats, including the new 12-person Halo pontoon. Check live availability at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
+If you don't have a boat, HBW offers pontoon and fishing-boat rentals on Rice Lake. The current lineup, live rates, capacity, equipment, and availability are listed at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals); rental bookings are online only.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -19261,7 +19285,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 ## Safety, The Stuff People Skip
 
-**PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
+**PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
 **[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
 
@@ -19350,11 +19374,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   },
   {
     "question": "What's the launch fee at Harris Boat Works?",
-    "answer": "$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches."
+    "answer": "$20 per day or $200 for a seasonal pass (April through November). The seasonal pass breaks even after 10 launches."
   },
   {
     "question": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
-    "answer": "You can reserve a boat, but Harris Boat Works requires every rental driver to show a valid Pleasure Craft Operator Card and photo ID before departure. Passengers don't need one. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details."
+    "answer": "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works. HBW's current policy directs non-Canadian residents to complete a renter checklist waiver after reservation."
   },
   {
     "question": "Is Rice Lake too shallow for a 21-foot pontoon?",
@@ -19709,7 +19733,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - **Easier docking.** You can make tiny throttle adjustments, half a notch, that mechanical cables can't reproduce.
 - **No cable wear.** Mechanical cables stretch and corrode over years; electronic signals don't.
 
-DTS is **standard** on the V8 250-400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175-225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
+DTS is **standard** on all current Verado models (V8 250-300 HP, V10 350-425 HP, and V12 600 HP) and is available on selected FourStroke and Pro XS configurations. If you're running a smaller engine, you likely have mechanical throttle and shift, and that's fine. Verify the exact model and serial before planning a control-system change.
 
 Worth retrofitting? Almost never on existing boats. [DTS retrofit involves changing the lever, the cables, the helm wiring](/blog/mercury-dts-retrofit-eligibility-2026), and possibly the engine's computer. New repower? Worth it on V8s.
 
@@ -20683,7 +20707,7 @@ Boats are not cheap. They are also worth it for the right reasons.
 
 If you're considering ownership and the math above feels manageable, great. Welcome to the lake.
 
-If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. The current 10-boat fleet on Rice Lake runs from 16-ft fishing boats to the new 12-person Halo and 24-ft fishing pontoons, with Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. HBW's current Rice Lake lineup includes pontoon and fishing-boat options, with live rates and rental periods shown online. [Book and check availability at harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
@@ -21192,13 +21216,13 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-smartcraft-alarm-codes.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-07-24",
+    dateModified: "2026-08-02",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
     keywords: ['mercury smartcraft alarm codes', 'mercury smartcraft alarm codes list', 'mercury smartcraft alarm codes meanings', 'mercury alarm code list', 'smartcraft fault codes mercury', 'mercury outboard error codes', 'mercury smartcraft diagnostic', 'mercury outboard warning lights'],
     relatedSlugs: ['mercury-outboard-fault-codes-lookup', 'mercury-outboard-beeping-codes-guide', 'mercury-outboard-overheat-alarm-decoder', 'mercury-smartcraft-connect-guide-ontario', 'mercury-boat-battery-guide-ontario'],
-    content: `*Last reviewed: 2026-02-06*
+    content: `*Last reviewed: 2026-08-02*
 
 > **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
 
@@ -21312,7 +21336,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
       { question: "Is VesselView Mobile still available?", answer: "Mercury has superseded VesselView Mobile with SmartCraft Connect Mobile. Legacy VesselView Mobile hardware still uses the VesselView Mobile app, but new SmartCraft Connect hardware pairs with the Mercury Marine app. If you have the older app installed for a legacy module, it still works." },
       { question: "My Optimax keeps firing a low-oil alarm but the tank is full. What's wrong?", answer: "False or incorrect Optimax low-oil alarms can come from several causes per Mercury\'s service manual: unpurged air in the engine oil tank, a leaking remote-tank cap, blocked or punctured oil hoses, a restricted outlet filter, a faulty check valve, a float switch fault, or a failed float in the oil tank. Float-magnet separation is one of the causes we see, not the only one. Diagnosis starts with the delivery lines and cap; if the float itself is failed the manual\'s remedy is oil tank replacement." },
       { question: "Can a clogged raw water intake on Rice Lake trigger an over-temperature alarm?", answer: "Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the telltale tube can restrict raw water flow enough to trip the over-temperature alarm. Diagnosis at HBW includes intake cleaning before assuming impeller failure." },
-      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production." }
+      { question: "Are current Mercury Verado V8 and V10 outboards supercharged?", answer: "No. Current Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production." }
     ],
   },
   {
@@ -22111,129 +22135,90 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
     keywords: ["Rice Lake boat rentals", "boat rentals near Toronto", "Kawarthas pontoon rentals", "family boat rental Ontario", "day trip boat rental GTA", "pontoon rental Toronto"],
     content: `# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
-> **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
+> **Quick answer:** A Toronto-to-Rice Lake rental day trip works: plan roughly 1 hour 45 minutes from central Toronto in light traffic to Harris Boat Works in Gores Landing, and allow more time during GTA or summer-weekend traffic. Check the live listings, rates, and availability at harrisboatworks.ca/rentals before planning the rest of the day.
 
-You're in Toronto, you don't own a boat, but you'd like to have one for a day. The closest renting on Lake Ontario is logistically painful (parking, no real fishing water, rough chop). The big-water rentals up north (Muskoka) are a 2.5-hour drive on busy weekends.
+You're in Toronto, you don't own a boat, but you'd like to have one for a day. Harris Boat Works operates a current online rental lineup from its Gores Landing dock on Rice Lake. HBW has served boaters here since 1947; current rentals and their availability are listed online.
 
-**Rice Lake, Ontario (in the Kawarthas) is the answer most GTA boaters don't know about.** 90 minutes from downtown Toronto, gentle calm freshwater, fish, family-friendly, and on a Saturday morning you can be on the water before the people stuck in traffic on the way to Muskoka have made it past Barrie.
-
-[Harris Boat Works](/blog/best-marina-rice-lake-ontario) has rented boats on Rice Lake since long before Airbnb made "shared access" a thing. We've been on this lake since 1947, and the rental fleet grew naturally from generations of GTA visitors asking the same question: *can we just borrow one of these for the day?*
-
-This is the version of the rental day we'd walk you through if you called and asked.
+This guide covers the route, the verified rental process, what to bring, and the Rice Lake safety briefing.
 
 ---
 
 ## The Quick Answer
 
-**Drive time from central Toronto:** 90 minutes (401 east → exit Cobourg → County Rd 18 north).
-**Drive time from Mississauga / Brampton / western GTA:** 75-105 minutes.
-**Drive time from Markham / Vaughan / Richmond Hill:** 75-90 minutes.
+**Drive time from central Toronto:** roughly 1 hour 45 minutes in light traffic (401 east, exit Cobourg, County Rd 18 north).
+**Drive time from elsewhere in the GTA:** varies by origin and traffic; check the live route before choosing a rental start time and allow two hours or more when conditions warrant.
 
-**Rentals available:**
-- **1× Halo pontoon** (23 ft 5 in, up to 12 people, Bluetooth stereo)
-- **2× 23-ft Cruise pontoons** (luxury / large groups)
-- **2× 24-ft Transporter pontoons** + 1× 24-ft backup
-- **2× 20-ft Transporter pontoons** (mid-size, easier to drive)
-- **2× 16-ft ProSport fishing boats** (anglers)
+**Current rental lineup:**
+- **23 Cruise and Halo pontoons**
+- **20-ft and 24-ft Transporter pontoons**
+- **16-ft ProSport fishing boats**
 
-**Half-day or full-day options.** Mercury power on every boat. Life jackets included. Briefing on Rice Lake hazards before you leave.
+The booking system shows the live boat, capacity, equipment, rental period, rate, and availability for each date. Life jackets and legally required safety gear are included, and the driver receives a Rice Lake orientation before departure.
 
-**Booking:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) or call **905-342-2153**.
+**Booking:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 The rest of this post is the detail you'd want before booking.
 
 ---
 
-## Why Rice Lake (vs. Other GTA-Accessible Rental Options)
+## Why Rice Lake Works for a GTA Day Trip
 
-**Rice Lake vs. Lake Ontario:** Rice Lake is sheltered, calm, freshwater, fish-stocked, family-friendly. Lake Ontario is open big water, often choppy, and rentals are limited to specific zones. Rice Lake is just a better day for most non-boating families.
-
-**Rice Lake vs. Muskoka:** Muskoka is gorgeous but **2-2.5 hours** from the GTA on summer Saturdays (much worse with traffic). Rentals in Muskoka run 30-50% more expensive than Rice Lake equivalents. For a day trip, the math favours Rice Lake meaningfully.
-
-**Rice Lake vs. Kawartha Lakes (north):** Kawartha Lakes (Bobcaygeon, Buckhorn, Fenelon Falls) are great water but typically 2 hours from the GTA. Rice Lake at 90 minutes is closer; same essential boating experience.
-
-**Rice Lake vs. closer Toronto-area lakes:** Lake Simcoe is closer (60-75 minutes) but big, exposed, and known for chop. The Toronto Islands are tiny. The Trent-Severn is the same waterway as Rice Lake but renting starting points are limited.
-
-The 90-minute drive to Rice Lake is the sweet spot: far enough from the GTA to feel like a real escape, close enough to be a comfortable day trip.
+Rice Lake is freshwater on the Trent-Severn Waterway, and HBW's dock is in Gores Landing on the south shore. The drive from central Toronto is roughly 1 hour 45 minutes in light traffic, but traffic varies; check your route before choosing a rental start time. On the water, follow the map and orientation because the old railway causeway remains a serious navigation hazard.
 
 ---
 
 ## What You Get When You Rent at HBW
 
 Each rental includes:
-- **Mercury-powered boat**, fueled and ready
 - **Life jackets** for everyone (kids and adults, bring sizes if you have specific kids)
 - **Pre-departure briefing**. Rice Lake hazards (the sunken railway, weed beds, shoals), how to handle the boat, where to fish or cruise
-- **VHF or cell coverage info**. Rice Lake has reasonable cell service on the south shore
-- **Detailed lake map**, depths, hazards, hot spots, shoreline amenities
-- **Free use of the launch area**, you're launching from our marina, not the public ramp
-- **Free parking on-site** for your vehicle while you're on the water
-- **Restroom + ice / snacks** at the marina before you leave
+- **Lake map** showing the Rice Lake railway hazard and buoyed crossings
+- **Public washrooms** during rental hours; the office provides the key
 
 What you bring:
-- **Valid [Pleasure Craft Operator Card](/blog/boat-rental-licence-ontario-guide) (PCOC)** for every person who may drive. HBW requires it as a rental policy, even though federal rules allow a rental safety checklist as proof of competency in some rental situations. Bring the permanent card or temporary proof with your photo ID.
+- **Valid boat operator's licence for the driver.** HBW requires the driver to show a valid temporary or permanent card at check-in. The rental safety checklist is still part of the briefing but does not replace HBW's driver-licence requirement. See the [current rental policy](https://www.harrisboatworks.ca/boat-rentals) before booking.
 - **Sunscreen, hats, water, snacks**
 - **Fishing gear and licence if fishing.** [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
 
-::boat-card-help
-
 What's NOT included:
-- **Fuel beyond what's prefilled**, most full-day rentals come back with about 1/4 tank used; if you run dry, refuel costs apply
-- **Damage insurance / waiver**, typical rental damage waiver applies; details on the booking form
+- **Fuel used**, which staff calculate when the boat returns
+- **Damage terms.** HBW processes a $1,000 credit-card authorization, and the current rental agreement governs responsibility for damage, including amounts above the hold
 - **Fishing licence**, get yours from [ontario.ca](https://ontario.ca) or any HBW staff can help
 
 ---
 
 ## Boat Type Selection. Match the Boat to the Day
 
-**You're a family of 4-6 wanting a relaxed cruising / swimming day.**
-→ **20-ft or 24-ft Transporter pontoon.** Plenty of seating, swim ladder, easy to pilot, comfortable for kids. Half-day is usually enough.
+**You want a relaxed cruising or swimming day.**
+→ Start with the **23 Cruise or Halo pontoon** listings and verify capacity and equipment for your group.
 
-**You're a group of 7-12 wanting a longer day with food and multiple swim stops.**
-→ **Halo pontoon.** It has the fleet's largest single-boat passenger capacity, Bluetooth audio, and the roomiest setup for a cruising day. It doesn't have a livewell or fishfinder, so choose a Transporter if fishing is the priority.
+**You want to mix fishing and cruising.**
+→ Compare the **20-ft and 24-ft Transporter** listings; both are presented as fishing pontoons in the live booking system.
 
-**You're 1-4 anglers wanting to actually fish (walleye, bass, perch).**
-→ **16-ft ProSport fishing boat.** Right tool for the job: manageable size, fishfinder included, and it gets you to the structure on the lake. Half-day or full-day.
+**You're a small fishing group.**
+→ Review the **16-ft ProSport** listing and its posted capacity and equipment.
 
 **You're a couple on a date / scouting visit / first-time-on-water.**
-→ Smaller is usually better. **20-ft pontoon** is forgiving, easy to handle, comfortable for two.
+→ Compare the currently available pontoons and choose one whose posted capacity and equipment fit your group. Staff review the selected boat's controls during orientation.
 
 **You're considering buying a boat someday** and want to test the waters.
-→ Try the **20-ft pontoon first** to see if pontoon ownership is your style; or the **16-ft ProSport** to see if you'd be a fishing-boat owner. The rental experience is genuinely useful market research before a $40K+ purchase.
+→ Rent the closest available style to the boat you are considering and use the day to test layout, passenger space, and how you actually spend time on the water.
 
 ---
 
-::pull-quote
-quote: We rent a pontoon two weekends a year for the family at the in-laws' cottage. **The HBW booking process is the easiest part of the trip.** Show up, sign, go. Hand the keys back, drive home.
-attribution: Priya N.
-source: Markham
-::
+## Check the Current Rental Period
 
-## The Half-Day vs. Full-Day Math
-
-**Half-day rental** (4 hours):
-- 9 AM-1 PM or 1 PM-5 PM typical windows
-- Right size for: cruising, light fishing, swim trip with picnic
-- Doesn't include lunch on the water (usually)
-- Best for: GTA day-trippers driving up + back same day
-
-**Full-day rental** (8 hours):
-- 9 AM-5 PM typical
-- Right size for: serious fishing, long swim/cruise day, anchored picnics, sunset run
-- Includes time to explore Bewdley + Roseneath shores by water
-- Best for: groups who arrive early and want maximum on-water time
-
-For a GTA family driving up at 8 AM and leaving at 4-5 PM: **half-day morning** is the most-popular pattern. Gets you on the water by 10 AM, off by 2 PM, lunch stop at Lakeview Restaurant in Bewdley, drive home before rush hour.
+The live booking system shows the rental period offered for each boat and date. Current standard hours on HBW's rental page are Monday to Saturday 8:00 am to 5:00 pm and Sunday 9:00 am to 4:00 pm. Multi-day renters may use the boat outside those hours while it remains in their care, subject to the current agreement and working-light requirement after dark.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -22241,7 +22226,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 ## A Sample GTA Day-Trip Itinerary
 
-**8:00 AM**. Leave central Toronto. Stop for coffee on the 401 east.
+**7:45 AM**. Leave central Toronto. Stop for coffee on the 401 east.
 **9:30 AM**. Arrive at HBW (5369 Harris Boat Works Rd, Gores Landing). Park, bathroom, snacks at the office.
 **9:45 AM**. Boat briefing + safety walkthrough.
 **10:00 AM**. On the water. Run east toward Hiawatha or west toward Bewdley.
@@ -22254,15 +22239,13 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 **4:30 PM**. Drive home.
 **6:00 PM**. Back in Toronto.
 
-That's a comfortable, full-feeling, water-focused day with no rush. Total cost (rental + fuel + lunch + gas to get there): typically **$300-$500 for a family of 4** depending on rental size and length.
-
-For comparison: a Muskoka rental day for a family of 4 is typically **$500-$800** by the time you add up rental, longer drive fuel, lunch at lakeside resort. Rice Lake genuinely competes well on cost-per-hour-of-fun.
+Use the live rental rate and add the fuel you actually use. Include your travel, food, fishing-licence, and bait costs rather than relying on a generic family-day estimate.
 
 ---
 
 ## Things to Know About Rice Lake (the Hazards)
 
-The lake is forgiving but not flat-empty water. Two specific things to know:
+Rice Lake is not flat-empty water. Two specific things to know:
 
 **1. The sunken railway.** A 19th-century railway line is submerged about 4 feet below surface across the middle of the lake (between Hiawatha and Harwood). It's claimed many propellers over the decades. **The pre-departure briefing covers this**, we'll show you exactly where on the chartplotter and how to navigate around it. Newer boaters: stay on the south shore until you've crossed it once with us briefing.
 
@@ -22270,21 +22253,15 @@ The lake is forgiving but not flat-empty water. Two specific things to know:
 
 **3. Wind from the west.** Rice Lake's east-west orientation means a stiff west wind builds chop quickly across the open water. Check the morning forecast; if it's blowing 15+ knots from the west, plan a sheltered cove day rather than open-lake cruising.
 
-For everything else, Rice Lake is a forgiving lake. Speed limits, wake rules, and shoreline distance regulations are standard Ontario.
+Outside the mapped hazards, continue to follow Ontario speed, wake, shoreline-distance, and safe-operation rules.
 
 ---
 
 ## Booking. When and How
 
-**Best to book 2-3 weeks ahead** for summer weekends (May long weekend through Labour Day).
+Use **[harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)** for the current fleet calendar and online booking. Availability changes by boat and date.
 
-**1-week ahead is fine** for shoulder-season weekends (May early/late, September).
-
-**Day-of bookings sometimes available** in shoulder season; not in peak summer.
-
-**[harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)**, online booking with the rental fleet calendar. **Phone 905-342-2153** for questions.
-
-**Cancellation:** typical 48-hour notice for a refund. Weather-cancellation policy: severe-weather cancellations refunded; "drizzle" usually not, boats are still safe in light rain.
+**Cancellation:** HBW's current policy allows cancellation at least 7 days before the rental date with the deposit refunded. Cancellations within 24 hours or on the rental date are charged the full rental amount. Harsh-weather cancellations or rescheduling carry no penalty and applied deposits and payments are refunded. Review the current agreement before booking.
 
 ---
 
@@ -22296,7 +22273,7 @@ If you have a great rental day and start thinking about ownership, talk to us be
 - We do pre-purchase inspections on used boats and motors
 - We offer a **trade quote** through our [configurator](https://www.mercuryrepower.ca) that's based on actual Ontario service-data, not Florida blue-book guesswork
 
-The rental experience is a useful gut-check on what kind of boat owner you'd be. Pontoon families often realize they want pontoons. Fishing families realize they want fishing boats. The rental day saves you from buying the wrong boat at the wrong price.
+A rental can be a useful gut-check on what kind of boat owner you'd be. Use the day to evaluate passenger space, fishing room, storage, and cruising comfort before you choose a boat to buy.
 
 ---
 
@@ -22306,68 +22283,65 @@ The itinerary above is the fun math. Here's the money math, all in, so nobody's 
 
 | Line item | What to budget | Notes |
 |---|---|---|
-| Boat rental | Live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) | Varies by boat and day; pontoons book out summer weekends, reserve ahead |
-| Fuel (paid at return) | $15 to $75 fishing, $60 to $100 full cruising day | You pay for what you burn; wind and throttle habit decide it |
+| Boat rental | Live rates at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) | Varies by boat and day; check the current calendar |
+| Fuel (paid at return) | Varies with use | You pay for what you burn; boat, load, wind, distance, and throttle all matter |
 | Damage deposit | $1,000 hold, refunded | Credit card authorization, not a charge |
-| Operator card | One-time | Every HBW rental driver must bring a valid PCOC; it never expires |
-| Bait | $5 a dozen worms ($10 for two) | At our dock; BJ Tackle in Bewdley for everything else |
+| Boating licence | Complete an accredited course before rental day | HBW links to [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); the PCOC itself does not expire |
+| Bait | Check current availability | Bring tackle and any bait you need if it is not available on site |
 | Lunch and treats | Your call | Gores Landing and Bewdley both have options; ice cream stops are mandatory with kids aboard |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+Use the live boat rate plus your own fuel, travel, food, and fishing costs. The Pleasure Craft Operator Card is a one-time credential that does not expire.
 
-Split a pontoon between two families and the per-person cost is one of the cheaper full days out you can buy, with no lineups and a lake instead of a parking lot. The licence is a one-time cost that covers every boating day you'll ever have in Canada.
-
-One planning note that saves money: fuel burn is mostly throttle habit. A day of cruising between anchor stops burns far less than a day of end-to-end laps of the lake. Pick two or three destinations, not ten.
+Fuel use varies with the selected boat, load, wind, distance, and throttle. Plan a route that fits the time and conditions rather than relying on a fixed fuel estimate.
 
 ---
 
 ## Frequently Asked Questions
 
 **How long does it take to drive from Toronto to Rice Lake?**
-Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes.
+Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic. From elsewhere in the GTA, allow more time; summer weekends can push the trip past two hours. Check current routing before departure.
 
 **Do I need a boating licence to rent at HBW?**
-Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day.
+The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation.
 
-**What does a half-day rental cost?**
-Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2× half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing.
+**What does a rental cost?**
+Rates and rental periods vary by boat and date. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for the current price before booking.
 
 **Can we fish from rental boats?**
 Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST.
 
 **What if it rains the day of our rental?**
-Light rain, boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning), we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be.
+HBW's current policy allows cancellation or rescheduling without penalty for harsh weather, with applied deposits and payments refunded. Review the forecast and current agreement rather than assuming a specific type of rain guarantees either departure or cancellation.
 
 **Are kids and pets allowed on rentals?**
-Kids absolutely yes, pontoons are kid-magnets, life jackets provided, the lake is shallow and forgiving. Pets case-by-case; ask when booking. Most pontoons accommodate well-behaved dogs.
+Kids are welcome within the selected boat's posted capacity, and staff fit life jackets at check-in. Ask HBW before booking with a pet because the current terms and suitable boat can vary.
 
 **Where do we eat during a rental day?**
 On the boat (bring a picnic) or at lakeshore restaurants. Lakeview Restaurant in Bewdley (west end of Rice Lake, 5 min from HBW) is the local pick. Many anchorages near restaurants.
 
 **Can we swim from the rental boats?**
-Yes. Pontoons typically have swim ladders. The 16-ft fishing boats don't, but you can swim alongside if you anchor in calm water.
+Check the live equipment listing for the selected boat and ask during orientation. Swim only when the boat is securely anchored in suitable conditions, with the motor off and the driver following the rental agreement.
 
 **Do you offer multi-day rentals?**
-Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day rentals for cottagers staying in the area without their own boat.
+Yes. HBW's current policy allows multi-day rentals to remain at a suitable cottage dock or at HBW while they are in the renter's care. Check the live booking terms for current availability and rates.
 
 ---
 
 **Booking:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How long does it take to drive from Toronto to Rice Lake?", answer: "Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes." },
-      { question: "Do I need a boating licence to rent at HBW?", answer: "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day." },
-      { question: "What does a half-day rental cost?", answer: "Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2\u00d7 half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing." },
+      { question: "How long does it take to drive from Toronto to Rice Lake?", answer: "Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic. From elsewhere in the GTA, allow more time; summer weekends can push the trip past two hours. Check current routing before departure." },
+      { question: "Do I need a boating licence to rent at HBW?", answer: "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation." },
+      { question: "What does a rental cost?", answer: "Rates and rental periods vary by boat and date. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for the current price before booking." },
       { question: "Can we fish from rental boats?", answer: "Yes. The 16-ft ProSport boats are designed for fishing and include a fishfinder. Pontoons can fish too, but they are set up more for cruising and comfort. You need a valid Ontario fishing licence if you are fishing. Fees depend on licence type and residency, so check ontario.ca before you come. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST." },
-      { question: "What if it rains the day of our rental?", answer: "Light rain, boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning), we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be." },
-      { question: "Are kids and pets allowed on rentals?", answer: "Kids absolutely yes, pontoons are kid-magnets, life jackets provided, the lake is shallow and forgiving. Pets case-by-case; ask when booking. Most pontoons accommodate well-behaved dogs." },
+      { question: "What if it rains the day of our rental?", answer: "HBW's current policy allows cancellation or rescheduling without penalty for harsh weather, with applied deposits and payments refunded. Review the forecast and current agreement rather than assuming a specific type of rain guarantees either departure or cancellation." },
+      { question: "Are kids and pets allowed on rentals?", answer: "Kids are welcome within the selected boat's posted capacity, and staff fit life jackets at check-in. Ask HBW before booking with a pet because the current terms and suitable boat can vary." },
       { question: "Where do we eat during a rental day?", answer: "On the boat (bring a picnic) or at lakeshore restaurants. Lakeview Restaurant in Bewdley (west end of Rice Lake, 5 min from HBW) is the local pick. Many anchorages near restaurants." },
-      { question: "Can we swim from the rental boats?", answer: "Yes. Pontoons typically have swim ladders. The 16-ft fishing boats don't, but you can swim alongside if you anchor in calm water." },
-      { question: "Do you offer multi-day rentals?", answer: "Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day rentals for cottagers staying in the area without their own boat." },
+      { question: "Can we swim from the rental boats?", answer: "Check the live equipment listing for the selected boat and ask during orientation. Swim only when the boat is securely anchored in suitable conditions, with the motor off and the driver following the rental agreement." },
+      { question: "Do you offer multi-day rentals?", answer: "Yes. HBW's current policy allows multi-day rentals to remain at a suitable cottage dock or at HBW while they are in the renter's care. Check the live booking terms for current availability and rates." },
     ],
   },
   {
@@ -22571,11 +22545,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "harris-boat-works-since-1947-rice-lake-institution",
     title: 'Harris Boat Works: On Rice Lake Since 1947',
     seoTitle: "Harris Boat Works Since 1947: Rice Lake Institution",
-    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've.",
+    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what staying on the same dock means for the customers who've returned.",
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-05-18",
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-02',
     publishDate: "2026-05-18",
     category: "About HBW",
     readTime: '12 min read',
@@ -22586,9 +22560,9 @@ Harris Boat Works has been on the same Rice Lake dock since 1947, three generati
 
 # Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
-*Last reviewed: 2026-08-01*
+*Last reviewed: 2026-08-02*
 
-The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer. The marina sits on land we've worked for nearly eight decades.
+The simple version: Harris Boat Works has been at [the same dock on Rice Lake](/blog/best-marina-rice-lake-ontario), in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** and are a current Mercury Premier Dealer.
 
 We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
@@ -22626,7 +22600,7 @@ Through the 1950s and early 1960s, outboards started taking over. Light, easier 
 
 ## Becoming a Mercury Dealer, 1965
 
-In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company growing fast, building motors that were lighter and more reliable than the competition. Becoming a Mercury dealer in 1965 meant signing on to a relationship that's now in its 60th year.
+In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the rising power in outboards. Carl Kiekhaefer's company was growing fast, building motors that were lighter and more reliable than the competition. That was the year Harris Boat Works became a Mercury dealer.
 
 **Why Mercury, then and now:**
 
@@ -22636,7 +22610,7 @@ In 1965, [Mercury Marine](https://www.mercurymarine.com/canada/en/) was the risi
 
 We've [stayed Mercury-only as a deliberate choice](/blog/why-harris-boat-works-mercury-dealer). We don't sell Yamaha, Honda, Suzuki, or Tohatsu. **We do one thing. Mercury, and we do it well.** That focus is part of how we earned Premier tier and have kept it.
 
-In 2026, we're celebrating **60 years as a Mercury dealer**. That's a multi-generational relationship most other industries can't match.
+We're proud to be **a Mercury dealer since 1965**. That's a multi-generational relationship most other industries can't match.
 
 ---
 
@@ -22649,7 +22623,7 @@ Specific things a multi-generational family marina knows:
 - **Where the underwater hazards are.** The sunken railway across Rice Lake, we know exactly where it sits, which boats run aground there in which conditions, which hulls handle the channel. We've seen generations of grounding stories.
 - **Which mistakes new boaters make.** First-time pontoon owners typically over-trim or under-trim depending on conditions. We see it every season. We can teach the corrections in 30 seconds.
 - **What the lake does in different weather.** Ice-out timing varies. Wind builds chop differently in spring vs. fall. Spring weed growth peaks at certain weeks. We know when to launch, when to wait, when to call ahead.
-- **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds 60-year customer relationships.
+- **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds relationships across generations.
 
 These aren't things a new dealer can fake. They take time. We have time on Rice Lake.
 
@@ -22723,7 +22697,7 @@ In 2026, HBW operates:
 - **Mercury Certified Repower Centre**, [full-service repower facility for boat owners across Ontario](/blog/mercury-repower-cost-ontario-2026-cad)
 - **Legend Boats Dealer**, selling [Canadian-designed aluminum and pontoon boats](/blog/legend-boats-mercury-power-package-guide-ontario) (designed in Whitefish, Ontario)
 - **Marina Slips**, 49 seasonal slip rentals on Rice Lake
-- **Boat Rentals**, 10-boat fleet (Mercury-powered), including the new 12-person Halo, for [day rentals to GTA visitors and locals](/blog/rice-lake-boat-rental-guide-2026)
+- **Boat Rentals**, current pontoon and fishing-boat lineup for [Rice Lake rentals](/blog/rice-lake-boat-rental-guide-2026)
 - **Winter Storage**, 311+ stored boats per year
 - **Service & Repair**, diagnostic, warranty, repair, and pre-purchase inspections
 - **Boat Launch**, public-paid launch ramp ($20/day, $200/season) used by hundreds of boaters annually
@@ -22744,7 +22718,7 @@ If the fourth generation takes over, HBW continues. If they don't, we'll find a 
 ## Frequently Asked Questions
 
 **How long has Harris Boat Works been in business?**
-Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026.
+Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer.
 
 **Is HBW family-owned?**
 Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business.
@@ -22753,13 +22727,13 @@ Yes, three generations of the Harris family. The current ownership is third-gene
 Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores.
 
 **Where is HBW located?**
-5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto.
+5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic.
 
 **What does HBW sell and service?**
 Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude. Mercury-only.
 
 **How big is HBW?**
-A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, a 10-boat rental fleet, and 311+ winter storage contracts annually.
+A family marina with 49 seasonal slips, 311 winter-storage contracts in the 2025 season, a peak-season team, and a current pontoon and fishing-boat rental lineup. Rental availability changes, so check the live booking system.
 
 **Why has HBW been in business so long?**
 Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year.
@@ -22782,12 +22756,12 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026." },
+      { question: "How long has Harris Boat Works been in business?", answer: "Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer." },
       { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
       { question: "Is HBW a Mercury Premier dealer?", answer: "Yes. Premier is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
-      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
+      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic." },
       { question: "What does HBW sell and service?", answer: "Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude: Mercury-only." },
-      { question: "How big is HBW?", answer: "A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, a 10-boat rental fleet, and 311+ winter storage contracts annually." },
+      { question: "How big is HBW?", answer: "A family marina with 49 seasonal slips, 311 winter-storage contracts in the 2025 season, a peak-season team, and a current pontoon and fishing-boat rental lineup. Rental availability changes, so check the live booking system." },
       { question: "Why has HBW been in business so long?", answer: "Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Premier-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year." },
       { question: "Is HBW still growing?", answer: "Yes, our online repower business via mercuryrepower.ca has grown significantly in recent years. The configurator-based selling model has reached customers across Ontario and beyond. The family marina has expanded its reach without diluting its character." },
       { question: "Do you have CSI awards or other certifications?", answer: "HBW currently holds Mercury Marine **Premier-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Premier, Mercury Certified Repower Center, and Legend Boats authorized dealer." },
@@ -23030,7 +23004,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-bad-used-boats-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-17',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-09',
     publishDate: '2026-02-17',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -23054,12 +23028,12 @@ eyebrow: The real trade-off
 subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
 leftLabel: New Mercury
 leftCriteria:
-  - You want up to 8 total years of factory-backed coverage with optional Mercury Product Protection
+  - You want full Mercury factory warranty (5 + 5 = 10 years possible)
   - You finance and need lender-approved collateral
   - You will own the boat 7+ years and amortize the cost
   - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
   - Resale value matters to you down the line
-leftOutcome: Higher upfront cost, with a standard three-year limited warranty for recreational use and optional Mercury Product Protection for up to eight total years of factory-backed coverage.
+leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Mercury 5+5 covers most failure scenarios.
 leftVariant: recommended
 rightLabel: Used Mercury
 rightCriteria:
@@ -23925,7 +23899,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-03-16',
-    dateModified: '2026-08-02',
+    dateModified: '2026-03-16',
     publishDate: '2026-03-16',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -23937,6 +23911,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-03-16*
 
 > **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
+
+**URL slug:** used-boat-walkaround-inspection-ontario
+
+**Meta description:** A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.
+
+---
 
 Kijiji. Facebook Marketplace. The listing looks clean. The price feels right. The seller says it "runs great." Now you're driving two hours to go look at it.
 
@@ -24144,7 +24124,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aluminum fishing boat with Mercury outboard approaching a wooden dock on Rice Lake during windy conditions.',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-09',
     publishDate: '2026-03-21',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -24161,6 +24141,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-06-09*
 
 > **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
+
+**URL slug:** docking-boat-in-wind-rice-lake
+
+**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, Ontario (in the Kawarthas), without a bow thruster or a meltdown.
+
+---
 
 You know the feeling. You're coming back into Bewdley on a Tuesday afternoon, the southwest wind has built to 15 knots the way it always does by 3 o'clock on Rice Lake, and there are three people watching from the dock. One of them is drinking a beer.
 
@@ -24368,7 +24354,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-09',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -24385,6 +24371,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-06-09*
 
 > **Quick answer:** Pontoon HP sizing depends on tube count, hull length, load, and use case. As a starting framework: 25-40 HP for 16-18 ft small toons, 60-90 HP for 20-22 ft cruisers, 115-150 HP for 22-24 ft loaded family pontoons, 200+ HP for tritoons and watersports. Mercury Command Thrust gearcases add low-RPM torque ideal for pontoons. When in doubt, match closer to the hull's max HP rating, not the minimum.
+
+**URL slug:** pontoon-hp-sizing-decision-tree-ontario
+
+**Meta description:** Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
+
+---
 
 There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to cruise before dark, the motor gives up.
 
@@ -26289,7 +26281,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-08-02",
+    dateModified: "2026-07-24",
     publishDate: "2026-05-10",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -26387,7 +26379,7 @@ Avoid universal shortcuts:
 - Do not turn an annual interval into a rule for every model and serial number
 - Do not assume the battery must be removed
 
-The battery may remain in the boat if the battery is healthy, disconnected, and allowed by the approved storage plan. Battery removal is not a universal requirement. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
+A healthy battery may remain in the boat if it is disconnected and the approved storage plan allows it. The important rule is to prevent parasitic draw; the written work order should state what HBW will do.
 
 For engine-specific requirements, use the owner’s manual for the exact serial number and the approved work order.
 
@@ -26438,6 +26430,50 @@ The current quote can depend on:
 - HST and stated exclusions
 
 Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not budget from an old article range or an assumed package discount.
+
+---
+
+## Related Guides
+
+- [Winter Boat Storage: Shrinkwrap vs Indoor in Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
+- [Winter Storage Near Toronto at HBW](/blog/winter-storage-near-toronto-hbw)
+- [Boat Storage in the Kawartha Lakes](/blog/boat-storage-kawartha-lakes)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury Maintenance Intervals by Engine Family](/blog/mercury-maintenance-intervals-20-100-300-rule)
+
+## FAQs
+
+**Does HBW offer indoor or heated boat storage?**
+
+No. HBW offers outdoor shrinkwrap storage only. We do not offer indoor, heated, climate-controlled, or year-round storage.
+
+**Does HBW pick up or deliver boats for storage?**
+
+No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+
+**Can I access my stored boat during winter?**
+
+No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
+
+**Is winterization included with shrinkwrap?**
+
+Not automatically. Storage, shrinkwrap, winterization, and spring commissioning are separate scopes. The written quote and work order state what is included.
+
+**Can the battery stay in the boat?**
+
+Yes, if the battery is healthy, disconnected, and the approved storage plan allows it. Battery removal is not a universal requirement.
+
+**Is spring commissioning included?**
+
+It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+
+**What is the maximum boat size HBW can store?**
+
+Submit the boat and trailer dimensions before drop-off. HBW confirms current capacity and whether the boat fits the available storage and handling scope; this guide does not promise a fixed size limit.
+
+**What if the boat needs repairs before storage?**
+
+List the concern in the service request. Repairs require assessment and approval separate from the storage contract. HBW repairs Mercury outboards and MerCruiser products.
 
 ---
 
@@ -26581,19 +26617,11 @@ If you're new to launching, this is the basic flow. Most people do it efficientl
 
 For any powered boat in Ontario waters:
 
-**Pleasure Craft Operator Card (PCOC)** for the operator. One-time test, accessible in the boat or on phone.
+**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
-**Valid Pleasure Craft Licence (PCL)** for any boat with a motor 7.5 kW (10 HP) or larger. 2026 PCL changes: lifetime licences converted to 5-year renewals at $24. Check your PCL is current.
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years and the federal service fee is $24, subject to annual inflation updates. Check the current fee and your licence status before launch day.
 
-**Required safety equipment:**
-- One PFD per person (one must be a wearable Type III)
-- Sound-signaling device (whistle, horn)
-- Bailer or manual water pump
-- Anchor or grapnel with line
-- Paddle or oar
-- Navigation lights for sunset operation
-
-Transport Canada publishes the full list, and there are specific extras for larger boats. Make sure you have everything before you launch.
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
 ---
 
@@ -26796,7 +26824,7 @@ As of May 2026, HBW's listed price on the Mercury 9.9 MH EFI was **$2,999 CAD + 
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-**Verify current pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca) or by calling 905-342-2153.** Prices change with model years and availability.
+**Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
 ---
 
@@ -29066,7 +29094,7 @@ whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once the
 
 We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
+Harris Boat Works has served Rice Lake boaters since 1947 and sold and serviced Mercury outboards since 1965. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
 ---
 
@@ -29830,11 +29858,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer Brampton Ontario HBW',
     seoTitle: 'Mercury Dealer for Brampton: Repower from Rice Lake',
     description: 'Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon.',
-    image: '/lovable-uploads/hero-proxs-outside-hbw-shop.webp',
-    imageAlt: 'A new Mercury Pro XS outboard outside Harris Boat Works in Gores Landing, Ontario.',
+    image: '/lovable-uploads/hero-gta-brampton-showroom.png',
+    imageAlt: 'Rows of Mercury outboard motors in a Harris Boat Works showroom, highlighting our status as a Mercury Premier Dealer.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-07-23',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -29870,11 +29898,11 @@ Our quote builder fixes that. Real installed pricing, motor, rigging, and instal
 
 A repower isn't a parts swap. It's a rigging job. The motor, the controls, the throttle and shift cables, the prop selection, the integration with your existing electronics, all of it has to be right for the motor to perform the way Mercury designed it. A repower done hastily or without the right rigging conversation is a repower you'll notice on the water.
 
-The rigging conversation is as important to us as the motor sale.
+HBW has served Rice Lake boaters since 1947 and sold Mercury since 1965. The rigging conversation is as important to us as the motor sale.
 
 ## Mercury Premier, What It Means in Practice
 
-Premier status reflects Mercury service, training, customer-satisfaction, and facility standards. For most standard motor sales, the difference may not be obvious. It matters more on complex repowers, unusual rigs, warranty claims, and technical issues after the sale.
+Premier is Mercury's top dealer tier. It means we carry deeper parts inventory, have more advanced technical training, and hold full warranty authorization. For most standard motor sales, the tier difference won't be visible. For complex repowers, unusual rigs, warranty claims, or technical issues after the sale, it's the difference between a quick resolution and a waiting game.
 
 ---
 
@@ -29945,7 +29973,7 @@ We carry Legend Boats and have used inventory. But if your primary purpose is a 
 
 You see the price before you make the drive. We have the rigging conversation before we order anything. We do the job right. You get on the water with a motor that performs the way it's supposed to.
 
-No fog machine. No runaround.
+No fog machine. No runaround. Since 1947.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -30138,7 +30166,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-gta-burlington-aerial-marina.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-08-02',
+    dateModified: '2026-05-11',
     publishDate: '2026-05-11',
     category: 'Service Area',
     readTime: '4 min',
@@ -30278,7 +30306,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
-      { question: 'Is there a closer Mercury dealer to Burlington?', answer: 'Yes. There is a closer Mercury dealer in the Hamilton area. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.' },
+      { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing." },
       { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling.' },
     ],
   },
@@ -30630,7 +30658,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
-    imageAlt: 'A family cruising on a freshwater lake in a pontoon powered by a Mercury 90 HP Command Thrust FourStroke outboard',
+    imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-07-30',
@@ -30929,7 +30957,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Dealer for Oshawa: 40 Minutes to Rice Lake',
     description: 'Mercury Premier dealer for Oshawa: Harris Boat Works on Rice Lake, 40 minutes via 401 and 115. Repower, sales, parts and winter storage for Durham Region.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
-    imageAlt: 'Family fishing from a freshwater pontoon powered by a Mercury 115 HP FourStroke outboard',
+    imageAlt: 'Official Mercury freshwater photography of a 115 HP FourStroke on a family pontoon',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-07-24',
@@ -32002,7 +32030,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 Insurance covers accidents, theft, weather damage, and liability. Extended warranty covers mechanical and electrical failures from defects in materials or workmanship. They do not overlap.
 
 - **Hit a deadhead and damage your prop shaft?** Insurance.
-- **ECU dies at 4 years old, 200 hours?** Extended warranty (if you bought Premier, see our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario)).
+- **ECU dies at 4 years old, 200 hours?** Mercury Product Protection may apply if you bought an eligible Platinum plan and the failure is covered. See our [warranty guide](/blog/mercury-extended-warranty-platinum-ontario).
 - **Boat stolen from your driveway?** Insurance.
 - **Lower unit gear failure at 3 years old?** Factory warranty (if still active) or extended warranty.
 
@@ -32189,7 +32217,7 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Platinum can reduce the financial shock of an eligible major component failure during the coverage period. Compare the exact plan price with the covered components, exclusions and your ownership horizon instead of assuming every repair will be covered or that the plan is guaranteed to pay for itself.
 
 ## Transferability and Resale Value
 
@@ -32238,7 +32266,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     image: "/lovable-uploads/hero-best-marina-rice-lake-ontario.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-08-02",
+    dateModified: "2026-07-24",
     publishDate: "2026-05-16",
     category: "Rice Lake & Local",
     readTime: "10 min read",
@@ -32398,8 +32426,48 @@ Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-stor
 
 ---
 
-## Source
+## Frequently Asked Questions
 
+### Where is Harris Boat Works?
+
+HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Confirm your appointment or drop-off window before towing.
+
+### How long has Harris Boat Works operated in Gores Landing?
+
+Since 1947, at its Gores Landing location on Rice Lake.
+
+### What engine brands does HBW repair?
+
+HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at [hbw.wiki/service](https://hbw.wiki/service).
+
+### Does HBW pick up or deliver boats?
+
+No. Customers arrange their own drop-off and pickup. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+
+### What storage does HBW offer?
+
+Outdoor winter storage with shrinkwrap only. HBW does not offer indoor, heated, climate-controlled, summer, or year-round storage.
+
+### Can I access my boat during winter?
+
+No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
+
+### Does "full service" mean my boat is automatically ready to launch?
+
+No. Each job follows its written work order. Plan pickup or launch only after HBW confirms the approved work is complete.
+
+### How long is the drive from the GTA?
+
+It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation and confirm the drop-off window before leaving.
+
+---
+
+## Related Guides and Current Booking
+
+- [HBW service intake](https://hbw.wiki/service), current repair scope and service request
+- [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
+- [Outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), current HBW storage scope
+- [Rice Lake launch guide](/blog/rice-lake-boat-launch-guide), launch-planning questions
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
 Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
@@ -32417,7 +32485,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     image: "/lovable-uploads/hero-boat-storage-kawartha-lakes.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-15",
-    dateModified: "2026-08-02",
+    dateModified: "2026-07-24",
     publishDate: "2026-05-15",
     category: "Service & Maintenance",
     readTime: "10 min read",
@@ -32607,6 +32675,50 @@ This guide does not promise:
 - A fixed storage, shrinkwrap, winterization, or transport price
 
 HBW confirms current capacity, timing, and price for the actual boat.
+
+---
+
+## Related Guides
+
+- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
+- [Winter Boat Storage: Shrinkwrap vs Indoor in Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario)
+- [Winter Storage Near Toronto at HBW](/blog/winter-storage-near-toronto-hbw)
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
+- [Mercury Maintenance Intervals by Engine Family](/blog/mercury-maintenance-intervals-20-100-300-rule)
+
+## FAQs
+
+**Does HBW offer indoor or summer boat storage?**
+
+No. HBW offers outdoor winter storage with shrinkwrap only. We do not offer indoor, heated, climate-controlled, summer, or year-round storage.
+
+**Does HBW pick up boats from Kawartha lakes?**
+
+No. Customers arrange their own fall drop-off and spring pickup at Gores Landing. HBW does not pick up, deliver, haul, provide mobile service, coordinate transport, recommend transport providers, or quote transport prices.
+
+**Can I access my boat during winter?**
+
+No. The physical marina is closed December 1 through April 1, with no customer access or on-site service during that period.
+
+**How much does Kawartha boat storage cost?**
+
+Request a current written quote. Pricing depends on the boat, trailer, cover, winterization, installed systems, approved work, spring scope, HST, and stated exclusions. This guide does not publish an unsupported range.
+
+**Is spring commissioning included?**
+
+It is included for HBW winter-storage customers. As of July 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
+
+**Can the battery stay in the boat?**
+
+Yes, if it is healthy, disconnected, and the approved storage plan allows it. Removal is not a universal requirement.
+
+**Can HBW repair a Yamaha, Honda, Suzuki, or another outboard brand?**
+
+No. HBW engine repairs are limited to Mercury and MerCruiser. Confirm any storage or systems-only scope for another brand before drop-off.
+
+**When can I pick up the boat in spring?**
+
+After the marina reopens and HBW confirms that the approved spring scope is complete. Do not plan a launch or towing trip until HBW provides the pickup window.
 
 ---
 
@@ -33281,14 +33393,14 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     imageAlt: 'Transport Canada compliance notice plate on a boat console showing maximum persons, horsepower, and load capacity.',
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-08-02",
+    dateModified: "2026-05-16",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "8 min read",
     keywords: ["boat capacity plate", "capacity plate ontario", "transport canada compliance notice", "boat maximum horsepower", "boat capacity decoder", "boat hin number", "used boat inspection ontario"],
     relatedSlugs: ["used-boat-walkaround-inspection-ontario", "mercury-40-vs-60-hp-outboard-ontario", "outboard-shaft-length-guide", "used-outboard-buying-guide-ontario"],
     faqs: [
-      { question: "Is it legal to exceed the maximum horsepower on the capacity plate?", answer: "The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the plate rating." },
+      { question: "Is it legal to exceed the maximum horsepower on the capacity plate?", answer: "On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or installer will mount a motor that exceeds the plate rating." },
       { question: "What if my plate is illegible or missing?", answer: "For a missing plate, Transport Canada accepts a manufacturer-issued replacement (if the boat builder is still in business) or a marine surveyor's written assessment. For an illegible plate, contact the manufacturer with the HIN and ask for a replacement." },
       { question: "Does the plate cover the trailer too?", answer: "No. The plate is for the boat only. Trailer capacity is a separate rating, marked on the trailer itself (typically on the tongue near the coupler). Trailer overload is a common cause of bearing and tire failure on Ontario highways. Worth checking both." },
       { question: "Are pontoons rated differently than V-hulls?", answer: "The Compliance Notice format is the same, but pontoon ratings tend to be more generous on person count because of the wider, more stable platform. A 22-foot tritoon may be rated for 12-14 adults where a 22-foot V-hull cruiser is rated for 8-10. Always check the actual plate; do not assume." },
@@ -33299,7 +33411,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Quick answer
 
-A Canadian boat capacity plate (called a Compliance Notice by Transport Canada) tells you the maximum number of people, maximum recommended engine horsepower, and maximum total load the boat is rated to carry safely. The numbers are stamped on a riveted plate inside the hull, usually near the helm or transom. If your boat was built before 2010 and is under 6 metres, it may not have one. If it does, follow those limits: exceeding the rated horsepower creates compliance, insurance, liability, safety, and potential warranty problems. Overloading the boat is a real safety problem, not a guideline. This guide walks through every field, explains what is and is not legally enforceable, and covers the three reading mistakes we see most often at our Rice Lake marina.
+A Canadian boat capacity plate (called a Compliance Notice by Transport Canada) tells you the maximum number of people, maximum recommended engine horsepower, and maximum total load the boat is rated to carry safely. The numbers are stamped on a riveted plate inside the hull, usually near the helm or transom. If your boat was built before 2010 and is under 6 metres, it may not have one. If it does, the rules apply: exceeding the rated horsepower can void your insurance and your warranty, and overloading the boat is a real safety problem, not a guideline. This guide walks through every field, explains what is and is not legally enforceable, and covers the three reading mistakes we see most often at our Rice Lake marina.
 
 ## Where to find the plate
 
@@ -33325,7 +33437,7 @@ This is the highest motor power the hull was designed and tested to handle safel
 
 **Important**: this is not a "minimum" or a "you should buy this much." It is a ceiling. Over-powering a hull can cause it to porpoise, plough, or in extreme cases fail at the transom. Under-powering wastes the hull's potential but is rarely dangerous.
 
-This number matters for compliance, insurance, liability, safe handling, and warranty coverage. Mounting a motor that exceeds the rated maximum can give an insurer or manufacturer grounds to deny a related claim, even if the boat seems to handle fine.
+This number is also binding for warranty and insurance purposes. Mounting a motor that exceeds the rated max can void both, even if the boat seems to handle fine. We have seen Ontario insurance claims denied on this exact basis.
 
 ### 3. Maximum gross load (or maximum total weight)
 This is the total weight the boat can safely carry: people, fuel, gear, motor, batteries, coolers, everything that is not the empty hull. Usually expressed in both kilograms and pounds. The number is much larger than just "5 people times 75 kg" because it accounts for fuel weight, motor weight, and typical gear.
@@ -33379,7 +33491,7 @@ When customers come to us at Harris Boat Works for a repower, the capacity plate
 ## FAQ
 
 **Is it legal to exceed the maximum horsepower on the capacity plate?**
-The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the plate rating.
+On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or installer will mount a motor that exceeds the plate rating.
 
 **What if my plate is illegible or missing?**
 For a missing plate, Transport Canada accepts a manufacturer-issued replacement (if the boat builder is still in business) or a marine surveyor's written assessment. For an illegible plate, contact the manufacturer with the HIN and ask for a replacement.
@@ -33768,8 +33880,9 @@ To confirm your specific motor, email your serial number to info@harrisboatworks
 | FourStroke V8 (4.6L) | 175-250 HP | Optional DTS | DTS available factory or as part of repower rigging. |
 | Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
 | Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
-| Verado V8 (250-400 HP) | 250-400 HP | DTS standard | Verado has been DTS-only for the current generation. |
-| Verado V10 / V12 (400-600 HP) | 400-600 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
+| Verado V10 | 350-425 HP | DTS standard | Joystick Piloting requires DTS. |
+| Verado V12 | 600 HP | DTS standard | Joystick Piloting requires DTS. |
 | Avator (electric) | 7.5e-110e | Drive-by-wire native | Throttle is electronic by design, separate platform from DTS. |
 | SeaPro | varies | Mechanical or DTS | Commercial-rated. Match to existing helm setup; HBW will verify. |
 
@@ -34764,8 +34877,8 @@ Harris Boat Works · Mercury Marine Premier Dealer · Mercury dealer since 1965 
     title: 'Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake',
     seoTitle: 'Mercury Dealer Port Hope | Repower & Service from Rice Lake',
     description: 'Harris Boat Works is the closest Mercury Premier dealer for Port Hope, ~30 minutes north via County Road 18.',
-    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
-    imageAlt: 'Aerial view of Harris Boat Works and its Rice Lake marina in Gores Landing, Ontario',
+    image: '/lovable-uploads/hero-mercury-dealer-port-hope.png',
+    imageAlt: 'Man fly-fishing from a boat with a vintage Mercury outboard on a river, highlighting local service for Port Hope anglers.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-06-09',
@@ -35514,7 +35627,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-02',
+    dateModified: '2026-06-09',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
@@ -35525,14 +35638,14 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
       { question: "Is Avator practical as a primary motor on Rice Lake?", answer: "For specific patterns (short-hop cottage use, small boats, quiet operation) yes. For typical full-day Rice Lake fishing patterns, no, gas outboard is still the right answer." },
       { question: "Can I run a Mercury Avator on an HP-restricted Ontario lake?", answer: "Most of the Avator lineup qualifies for HP-restricted lakes. Electric-only restrictions under federal regulations allow electric motors up to 7.5 kW aggregate power for most freshwater lakes. Confirm your specific lake rules before buying." },
       { question: "Does Avator work in cold weather?", answer: "Yes, but battery capacity drops in cold water. Late-season shoulder boating with Avator means meaningfully reduced range. Plan for 70-80% of normal range in October/November conditions." },
-      { question: "What does an Avator setup cost installed?", answer: "Avator is built to order through Mercury Canada, and battery count drives the price. Pricing is coming soon to the online configurator at https://www.mercuryrepower.ca." },
+      { question: "What does an Avator setup cost installed?", answer: "The installed total depends on the Avator model, battery count, charger, controls and mounting. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path." },
     ],
     content: `
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model, battery configuration, hull, load, weather, and throttle. Mercury's published 13-foot test reached about 5 miles at full throttle and up to 34 miles at quarter-throttle. For practical Rice Lake planning on a small car-topper, use roughly 3 to 4 miles at full throttle or 20 to 25 miles at quarter-throttle, then keep a weather and reserve margin. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
+A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
 
 ## What Is the Range of a Mercury Avator Electric Outboard?
 
@@ -35691,7 +35804,7 @@ Both Mercury Avator and Torqeedo make legitimate electric outboards. The decidin
 |---|---|---|
 | Parent company | Mercury Marine (Brunswick) | German, now Yamaha-owned (2024) |
 | 2026 models | 7.5e, 20e, 35e, 75e, 110e | Travel, Cruise, Deep Blue |
-| Power range | 750W-11,000W (~3-30 HP equivalent; rated in watts) | Portable to large commercial |
+| Power range | 0.75-11 kW rated prop-shaft power | Portable to large commercial |
 | Ontario dealers | Hundreds of Mercury dealers, ~within an hour | Concentrated in Toronto/Ottawa; rural hours away |
 | Parts | On shelf at Mercury Premier dealers | Often ordered from Torqeedo Canada |
 | Charging | 110V (portable 3-6 hr; mid overnight; 10+ kWh needs 240V) | Same household charging |
@@ -35710,7 +35823,7 @@ If you want a truly neutral comparison, find a marine specialty shop that carrie
 - Backed by Mercury Marine (Brunswick Corporation), one of the largest outboard manufacturers globally
 - Full integration with Mercury's SmartCraft / VesselView ecosystem
 - Models: 7.5e, 20e, 35e, 75e, 110e (2026 lineup)
-- Power range: 750W to 11,000W (roughly equivalent to 3 HP up to 30 HP in propulsion terms, though Mercury rates by watts not HP)
+- Rated prop-shaft power: 0.75 kW to 11 kW; compare thrust and performance on the exact hull rather than converting to gas horsepower
 - Battery system: integrated (7.5e) or external Power Center / 2,300 Wh packs (larger models)
 - Service through: any Mercury dealer in Canada with electrical service capability
 
@@ -36101,7 +36214,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
       { question: 'Is the Mercury Avator 7.5e powerful enough as a main motor?', answer: 'It can propel a compatible small tender, dinghy, sailboat, or light fishing boat. Boat weight, load, wind, current, required range, shaft length, and mounting determine whether it is appropriate; HBW confirms the fit rather than assigning it by boat length alone.' },
       { question: 'How long does the Mercury Avator 7.5e battery last?', answer: 'Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Those are test results, not a promise for every boat; load, hull, weather, water, and throttle change the result.' },
       { question: 'Can I use the Avator for bass and walleye fishing on Rice Lake?', answer: 'It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.' },
-      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.' },
+      { question: 'How much does the Avator 7.5e cost installed?', answer: 'Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration path. Pickup is at Gores Landing.' },
       { question: 'What charges the Avator battery?', answer: 'The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.' },
       { question: 'Is the Avator covered under Mercury\'s warranty?', answer: 'Warranty coverage is confirmed for the exact motor and battery package when HBW quotes it. Mercury requires the outboard and battery to be registered separately; any promotional coverage applies only while an eligible offer is active.' },
     ],
@@ -36110,7 +36223,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 *Last reviewed: 2026-07-18*
 
-> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; call for a configuration and current price.
+> **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; see the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
 HBW sells gas outboards and is preparing Avator as a build-to-order option. We have no reason to oversell either one. The straight version of the Mercury Avator 7.5e is that it can be very good at a defined small-boat or low-speed job, while range and boat fit must be checked before it is recommended.
 
@@ -36137,7 +36250,7 @@ Lined up against Mercury's small FourStroke portables, the picture is honest.
 | Fuel | Electric, rechargeable | Gasoline | Gasoline |
 | Noise | Near silent | Moderate | Moderate |
 | Maintenance | Minimal, no oil change | Annual service | Annual service |
-| Price (CAD) | Call for the current configured price: 905-342-2153 | See pricing reference | See pricing reference |
+| Price (CAD) | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | See [pricing reference](/pricing-reference) | See [pricing reference](/pricing-reference) |
 | Best use | Silent kicker, tender | Dinghy, kicker | Light tinny |
 | Selection basis | Boat fit, load, route, range, mounting, and charger | Boat fit, load, route, fuel range, and mounting | Boat fit, load, route, fuel range, and mounting |
 
@@ -36190,7 +36303,7 @@ Mercury tested a 7.5e with one 1 kWh battery on a 13-foot, 382-lb boat: about 60
 It may suit quiet, low-speed operation on a compatible boat. HBW would confirm the mounting arrangement, expected range for the intended route, and whether a separate main motor is required.
 
 **How much does the Avator 7.5e cost installed?**
-Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing.
+Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration path. Pickup is at Gores Landing.
 
 **What charges the Avator battery?**
 The 7.5e includes a 110W charger that connects to a standard household outlet, and Mercury offers faster optional chargers. Exact charging time depends on the charger, battery state, and conditions, so HBW confirms the selected package in the quote.
@@ -36305,9 +36418,9 @@ The complete price depends on the exact motor, controls, steering, propeller, tr
 
 ## What about the Mercury Avator on a pontoon?
 
-The Avator 7.5e is a small electric outboard. Useful as a silent kicker on small fishing pontoons for trolling, but not a main motor. Pontoon main propulsion needs sustained torque at 3,500 to 4,500 RPM and the Avator 7.5e is sized for slow-trolling applications.
+The Avator 7.5e is a small electric outboard with 0.75 kW of prop-shaft output. It is intended for compatible small boats, tenders and quiet low-speed use, not as the main motor on a family pontoon. A pontoon setup needs a boat-specific review of displacement, load, speed, route and battery reserve.
 
-Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly 3.5 HP equivalent" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop.
+Mercury rates Avator by prop-shaft output, not by a direct gasoline horsepower figure. The technical specification for the 7.5e is 0.75 kW at the propeller.
 
 If you are building a pontoon repower and you want quiet trolling for walleye or bass, talk to us about pairing a gasoline main motor with a small electric kicker. We rig that combination on Rice Lake fishing pontoons regularly.
 
@@ -36520,7 +36633,7 @@ Two paths. Trade in the whole boat and put the value toward a different package 
 
 ## Ready to do the math on your boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947. Same techs, same shop, since 1947.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right motor for your hull. We are the repower side of Harris Boat Works, a family marina in Gores Landing serving boaters since 1947 and a Mercury dealer since 1965. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -36548,7 +36661,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we w
       { question: 'Do I need both a main motor and a trolling motor?', answer: 'If you fish seriously you will want both. The main motor travels between fishing spots. The trolling motor (gasoline kicker or electric) lets you fish quietly without burning the main motor at idle for hours and without putting unnecessary hours on the big powerhead.' },
       { question: 'Should I pair my Mercury main with a bow electric trolling motor or a kicker?', answer: 'Choose a bow electric for shallow-water precision and spot-locking. Choose a kicker for long trolling days, bigger water, heavy chop, and true get-home backup. Many anglers eventually want both.' },
       { question: 'Can the Mercury Avator 7.5e be used as a kicker?', answer: 'Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.' },
-      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.' },
+      { question: 'How much does it cost to add a kicker to my repower?', answer: 'Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 planning range) for a Mercury 9.9 ProKicker on top of your main repower; use the live quote builder for today\'s total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the Avator page for current availability.' },
       { question: 'Does the kicker need its own fuel tank?', answer: 'Not usually. We plumb the kicker into the boat\'s main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.' },
       { question: 'Will Harris Boat Works rig both motors together?', answer: 'Yes. We install main and kicker, wire the tie-bar linkage for synchronized steering, integrate the fuel system, and water test the combination on Rice Lake before pickup at Gores Landing.' },
     ],
@@ -36572,13 +36685,13 @@ Three options most Rice Lake customers consider. **All prices reflect 2026 model
 |---|---|---|---|---|---|---|
 | Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | $3,000 to $4,500 | Most fishing boats, all-day trolling, big water |
 | Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
-| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | Call for current pricing: 905-342-2153 | Silent finesse fishing |
+| Mercury Avator 7.5e electric | 0.75 kW prop-shaft output | 1 kWh battery | Near-silent | Hours at troll on one pack | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | Silent finesse fishing |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
-The Avator 7.5e is the right pick when silence matters. Walleye fishing in shallow water, bass tournament prep, or any situation where you want zero noise underwater. Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly equivalent to 3.5 HP" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.
+The Avator 7.5e is worth considering when silence matters and the boat, load and route fit its 0.75 kW prop-shaft output and battery range. It is not a gasoline-horsepower substitute on paper; compare the actual speed, range, charging and reserve requirements for your boat. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.
 
 ## When should you choose a bow electric trolling motor instead?
 
@@ -36636,7 +36749,7 @@ Choose a bow electric for shallow-water precision and spot-locking. Choose a kic
 Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolling speed. Great for walleye and bass on Rice Lake where noise spooks fish. Battery dependent: typically several hours at troll on a 1 kWh pack.
 
 **How much does it cost to add a kicker to my repower?**
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.
+Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD as a 2026 planning range for a Mercury 9.9 ProKicker on top of your main repower; use the [live quote builder](/quote/motor-selection) for today's total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the [Avator page](/electric/mercury-avator) for current availability.
 
 **Does the kicker need its own fuel tank?**
 Not usually. We plumb the kicker into the boat's main fuel supply through a water-separating filter with dual outputs: one line feeding the main, one feeding the kicker. No portable red tanks tripping you up in the cockpit. A small portable tank is also an option.
@@ -36648,7 +36761,7 @@ Yes. We install main and kicker, wire the tie-bar linkage for synchronized steer
 
 ## Ready to rig your fishing boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. Same techs, same shop, since 1947.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -36882,7 +36995,7 @@ The serial-number window matters even when the family and horsepower appear on t
 
 There is no responsible way to turn a US or Australian dealer post into an HBW Canadian quote. Currency conversion does not account for the exact eligible product, Canadian program terms, dealer process, or any other work the visit requires.
 
-HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Call **905-342-2153** with a clear photo of the serial-number plate.
+HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 :::mythbuster
 **Myth:** Mercury Boost adds horsepower.
@@ -36972,7 +37085,7 @@ We'll check the serial number against Mercury's current eligibility information 
     faqs: [
       { question: "Is Mercury Boost a horsepower increase?", answer: "No. It is a calibration software upgrade that improves eligible mid-range response. Mercury's five published tests show 5-21% quicker zero-to-top-speed acceleration, while rated horsepower, top speed, maximum RPM, and time to plane remain unchanged." },
       { question: "Does Boost work on my 300R or 400R?", answer: "No. Mercury's June 2026 documentation lists the Racing 150R but not the 200R, 250R, 300R, 400R, or 500R. The 350 HP V10 has separate published eligibility rules; do not generalize that result to other V10 models." },
-      { question: "How much does Boost cost in Canada?", answer: "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate." },
+      { question: "How much does Boost cost in Canada?", answer: "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check." },
       { question: "Did Mercury Boost win an award?", answer: "Yes, the 2026 Miami Innovation Award for advancing outboard engine performance. Specifically for software-based response improvement." },
       { question: "Will Boost void my warranty?", answer: "Mercury's June 2026 instructions state that installing or using Boost does not void the Mercury Marine Limited Warranty. HBW still verifies the exact motor and current warranty status before work is authorized." },
       { question: "Should I wait to buy a new motor until Boost ships factory-installed?", answer: "Buy the correctly rated motor for the boat today. Confirm factory-equipped status from the exact serial number; do not rely on a model-year or build-quarter assumption." }
@@ -36987,7 +37100,7 @@ We'll check the serial number against Mercury's current eligibility information 
     imageAlt: 'Ontario boater sitting in an aluminum fishing boat at a wooden dock at golden hour, Mercury 115 FourStroke outboard on the stern.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: "2026-07-07",
+    dateModified: "2026-08-02",
     publishDate: '2026-05-28',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -37001,7 +37114,7 @@ We'll check the serial number against Mercury's current eligibility information 
 - Gores Landing, ON
 - Quote builder available
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-08-02*
 
 A Mercury or Honda buyer walks into our shop with the same two questions: which motor is actually better, and what does my service look like over the next 10 years? We sell Mercury. We don't sell or service Honda. So this isn't a balanced review, the Mercury section was not written by Switzerland. But we still try to keep the comparisons fair.
 
@@ -37034,7 +37147,7 @@ Honda makes good motors. In specific use cases, Honda is the right call.
 
 **Service network density in our region.** In the Kawarthas, Lake Simcoe basin, and Trent-Severn corridor, Mercury has more certified dealer locations than Honda Marine. Brand loyalty is free. Dealer support is not.
 
-**Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP - 400 HP Verado V8 or V10, 450R, or the V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
+**Lineup breadth above 350 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury runs from 2.5 HP portables through 600 HP Verado V12. If you want anything above 350 HP, Mercury offers the 400 and 425 HP Verado V10, the 450R, and the 600 HP Verado V12. Honda doesn't have an answer. At HBW, FourStroke and Pro XS are our standard stock; Verado and the Racing line are available by special order, not off the shelf.
 
 **Pro XS performance.** Honda has no direct counterpart to Mercury Pro XS. If you fish tournaments or want hole-shot performance on a bass boat, this matters.
 
@@ -37108,7 +37221,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned si
       { question: "Is Mercury more reliable than Honda?", answer: "Both brands build reliable modern outboards. The real-world reliability difference is small. The bigger reliability factor for Ontario owners is local service network access." },
       { question: "Where can I get a Honda Marine outboard serviced near Rice Lake?", answer: "Honda Marine's dealer locator lists two certified dealers within 75 km of HBW - one in the Peterborough area (about 30 km) and one in the Havelock area (about 45 km)." },
       { question: "Is Honda's warranty longer than Mercury's?", answer: "Not in 2026. Honda offers 5 years standard plus 3 years HondaCare = up to 8 years. Mercury offers 3 years standard limited (with 3 years corrosion concurrent) plus up to 5 years Mercury Product Protection (MPP) extended = up to 8 years total. The maximum length is equal; the structure differs." },
-      { question: "Does Mercury have a Honda BF350 equivalent?", answer: "Yes. Mercury 350 Verado V8 is the direct equivalent. Mercury also offers 400 HP Verado V8/V10, 450R, and 600 HP V12, none of which Honda matches." },
+      { question: "Does Mercury have a Honda BF350 equivalent?", answer: "Yes. The Mercury 350 Verado V10 is the direct horsepower equivalent. Mercury also offers 400 and 425 HP Verado V10 models, the 450R, and the 600 HP Verado V12, none of which Honda matches." },
       { question: "Can I switch from Honda to Mercury on my existing boat?", answer: "Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,800 to $3,500 above a same-brand repower because controls, harness, gauges, and prop all change. See our Honda to Mercury Repower Ontario Guide for the full math." }
     ]
   },
@@ -37287,7 +37400,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
+    dateModified: '2026-07-09',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -37300,7 +37413,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
       { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
       { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." },
-      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate states the manufacturer's maximum recommended safe limit for your hull. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 or lower." }
+      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower)." }
     ]
   },
   {
@@ -37591,7 +37704,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   **What we tell customers:** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
 
 - **Myth:** "Verado is supercharged."
-  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-400 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
+  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-425 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
 
 ## Customer language we hear
 
@@ -37829,7 +37942,8 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     title: 'Honda to Mercury Repower: Ontario Guide',
     seoTitle: 'Honda to Mercury Repower Ontario Guide 2026 | Harris Boat Works',
     description: 'Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.',
-    content: `*Last reviewed: 2026-07-09*
+    dateModified: '2026-08-02',
+    content: `*Last reviewed: 2026-08-02*
 
 > **Quick answer:** Switching from Honda to Mercury makes sense for two reasons: Ontario service access, where Mercury has roughly three times Honda's dealer footprint, and lineup match above 60 HP. The brand swap adds $1,800 to $3,500 in rigging for controls, gauges, harness, and prop. Below 25 HP, your Honda kicker is usually worth keeping. Build a quote at mercuryrepower.ca.
 
@@ -37846,7 +37960,7 @@ The Honda-to-Mercury swap is less common than [Yamaha-to-Mercury](/blog/yamaha-t
 
 **Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Premier dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
 
-**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
+**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 and 425 HP Verado V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
 
 **Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Premier dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
 
@@ -37876,7 +37990,7 @@ Honda and Mercury both use different proprietary control architectures. [None of
 | 40-60 HP | $7,000-$10,500 | $1,400-$2,200 | $11,500-$16,000 |
 | 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250 HP (Honda BF250 to Mercury) | [See live pricing](/pricing-reference) | $2,800-$4,200 | Quote the complete installation for the specific boat |
+| 250 HP (Honda BF250 to Mercury) | $24,500-$26,000 | $2,800-$4,200 | $34,000-$43,000 |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -37900,7 +38014,7 @@ We don't sell Honda. We DO try to give honest advice. Here's where Honda is the 
 
 **You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Premier dealers are typically better-stocked.
 
-**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 450 HP, or 600 HP, Mercury (400 HP Verado V8/V10, 450R, 600 HP Verado V12) is the only path.
+**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 425 HP, 450 HP, or 600 HP, Mercury (400 or 425 HP Verado V10, 450R, or 600 HP Verado V12) is the only path.
 
 **You want Joystick Piloting on a multi-engine setup.** Honda's iST joystick exists but Mercury's joystick integration is more mature and works with a broader range of multi-engine configurations.
 
@@ -37973,7 +38087,6 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
     image: '/lovable-uploads/hero-on-water-load-test.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-08-02',
     category: 'Repower Guide',
     readTime: '10 min read',
     keywords: ["Honda to Mercury repower", "Honda to Mercury Ontario", "Honda BF250 Mercury", "brand swap outboard repower", "Mercury repower cost Ontario", "Honda BF dealer Ontario", "Honda vs Mercury Ontario", "Mercury Premier dealer"],
@@ -38700,7 +38813,7 @@ Harris Boat Works: family-owned on Rice Lake since 1947.
       { question: 'Pontoon or tritoon for a family?', answer: 'If you mostly cruise, swim, and tube lightly, a two-tube pontoon with the right power is plenty and costs less. If watersports are a real priority, or you are often out when the wind builds a chop on Rice Lake, the third tube is worth it for the speed, the towing power, and the better ride.' },
       { question: 'How big a pontoon does a family need?', answer: 'For most families, an 18 to 22 foot pontoon hits the sweet spot of space, stability, and cost. Smaller for two or three people on calm days, bigger if you regularly carry a crowd or want serious watersports capability.' },
       { question: 'Is a pontoon a good boat for Rice Lake specifically?', answer: 'For most of what families do here, yes. Rice Lake is calm a lot of the time and a pontoon is ideal for cruising and swimming. On windy afternoons it can get choppy, which is where a tritoon and decent horsepower earn their keep.' },
-      { question: 'What does it cost to power a family pontoon?', answer: 'Pricing depends on the boat and the Mercury motor you choose. Build a real quote at mercuryrepower.ca, or call us at 905-342-2153 and we will spec it to your family and your budget. No upsell to power you do not need.' },
+      { question: 'What does it cost to power a family pontoon?', answer: 'Pricing depends on the boat and the Mercury motor you choose. Use the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection) for the motor, controls, prop, rigging and installation. No upsell to power you do not need.' },
       { question: 'Can I rent a pontoon before I buy one?', answer: 'Yes, and we recommend it. Rent one for a weekend, use it the way your family actually would, and you will know if it is the right boat before you spend a dollar on buying. See our boat rentals at harrisboatworks.ca/rentals.' }
     ],
     content: `# Is a Pontoon Boat Right for Your Family? (Rice Lake Buyer's Guide, 2026)
@@ -38820,7 +38933,7 @@ For most families, an 18 to 22 foot pontoon hits the sweet spot of space, stabil
 For most of what families do here, yes. Rice Lake is calm a lot of the time and a pontoon is ideal for cruising and swimming. On windy afternoons it can get choppy, which is where a tritoon and decent horsepower earn their keep.
 
 **What does it cost to power a family pontoon?**
-Pricing depends on the boat and the Mercury motor you choose. Build a real quote at mercuryrepower.ca, or call us at 905-342-2153 and we will spec it to your family and your budget. No upsell to power you do not need.
+Pricing depends on the boat and the Mercury motor you choose. Use the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection) for the motor, controls, prop, rigging and installation. No upsell to power you do not need.
 
 **Can I rent a pontoon before I buy one?**
 Yes, and we recommend it. Rent one for a weekend, use it the way your family actually would, and you will know if it is the right boat before you spend a dollar on buying. See our [boat rentals](https://harrisboatworks.ca/rentals).
@@ -38850,7 +38963,7 @@ Tell us how your family actually spends a day on the water, who is aboard, wheth
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-29',
-    dateModified: '2026-07-29',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-29',
     category: 'Local Guide',
     readTime: '8 min read',
@@ -38858,14 +38971,14 @@ Tell us how your family actually spends a day on the water, who is aboard, wheth
     relatedSlugs: ['mercury-prokicker-rice-lake-fishing-guide', 'electric-trolling-motor-kicker-guide', 'ontario-boating-season-tips'],
     faqs: [
       { question: 'Is the Trent-Severn Waterway fully open for Canada Day weekend?', answer: 'Yes. The entire Trent-Severn Waterway opened for navigation on May 29, 2026. All locks, channels, and navigational aids from Trenton to Georgian Bay are operational. Rice Lake boaters can lock through in either direction.' },
-      { question: 'Where is the best place to launch a boat on Rice Lake for the long weekend?', answer: 'The Gores Landing public launch is free and has reopened after maintenance. For a less crowded alternative, the Harris Boat Works private ramp is available for $20, with ethanol-free fuel and marina amenities right at the water.' },
+      { question: 'Where can I launch a boat near Gores Landing for the long weekend?', answer: 'The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park. Check the Township waterfront-parks page for current public access and posted notices before you tow there. Harris Boat Works also has a private $20 launch ramp, with ethanol-free fuel and marina amenities at the water.' },
       { question: 'Can I drink alcohol on my boat while watching fireworks on Rice Lake?', answer: 'In Ontario, alcohol can only be consumed on a boat that has permanent sleeping accommodations, a permanent galley, and a permanent head, and only when the vessel is anchored or docked. Open alcohol on a typical fishing boat or pontoon is not legal, even while anchored. Police marine units conduct routine checks on holiday weekends. A sober operator is required at all times.' },
       { question: 'What kind of fuel does Rice Lake marinas offer, and why should I use ethanol-free?', answer: 'Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fuel resists water absorption and phase separation, making it a better choice for marine engines, especially if your boat sits between uses or has an older outboard.' },
       { question: 'Does Harris Boat Works service all brands of outboards?', answer: 'For engine repairs, we only service Mercury and Mercruiser products. You can book service at hbw.wiki/service. For repower quotes, we specialize in Mercury outboards and provide an on-water test for every repower.' },
     ],
     content: `> **Quick answer:** A good Canada Day run on Rice Lake starts early, before launch lines and afternoon traffic build. Check the marine forecast and current local event notices, fuel before you go, carry a fitted PFD for everyone, confirm your navigation lights, keep a sober operator, and allow extra time getting back to the ramp after dark.
 
-If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. The Trent-Severn Waterway is fully open for navigation, the public launch at Gores Landing has reopened, and Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel right at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
+If you're planning to spend Canada Day on the water, Rice Lake delivers prime boating, fishing, and fireworks watching in a single long-weekend package. Check current Trent-Severn navigation notices and public-launch access before you leave; Harris Boat Works provides a private ramp and ethanol-free 89-octane fuel at the marina. Whether you trailer your own boat or rent one locally, a little preparation goes a long way. This guide lays out everything you need to know about launching, fishing, safety, and where to catch the best fireworks from the water, so your Canada Day on Rice Lake is safe, smooth, and memorable.
 
 ## Boating on Rice Lake This Canada Day Weekend
 Rice Lake is one of the most accessible and family-friendly lakes in the Trent-Severn system. The long weekend from June 27 through July 1 consistently brings the busiest boat traffic of the early summer, but the lake's size and shape mean you can always find a quiet cove or a good fishing spot if you know where to look.
@@ -38875,18 +38988,18 @@ The Trent-Severn Waterway opened for full navigation on May 29, meaning all lock
 Early-morning boating tends to offer the calmest water and the least traffic, which is especially valuable if you're teaching new boaters or bringing young kids aboard. By mid-morning, the lake wakes up with skiers, tubers, and anglers sharing the water, so practicing good spatial awareness and keeping a respectful distance from anchored boats goes a long way toward a pleasant day.
 
 ### What's open and what to expect
-All public boat launches around the lake will be busy, but none are closed for construction or repairs. Marinas are fully staffed through the long weekend, though some have reduced hours on Canada Day itself. Harris Boat Works will be open with regular hours Saturday, Sunday, and Monday, but it's wise to top off fuel and grab any last-minute tackle or safety gear early, especially if you plan to be on the water past dinner.
+Public launches around the lake are busiest on holiday weekends. Check the [Township of Hamilton waterfront-parks page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and any posted notices before towing to a public ramp. Marina hours can change on statutory holidays, so confirm current hours before making the drive.
 
 ## Launching Options for the Long Weekend
 Getting your boat in the water on a busy holiday weekend can be the most stressful part of the day, so knowing your options matters.
 
 ### Gores Landing public launch
-The public launch at Gores Landing has fully reopened after seasonal maintenance and is free to use. Be prepared to line up, especially between 9 a.m. and noon. Parking fills quickly, and the lot is not huge, so arriving before 8 a.m. is your best bet. If you have a helper who can park the truck and trailer while you idle offshore, the whole process moves faster for everyone.
+The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park, 5310 Plank Road. Check the [official waterfront-parks page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) for current access, facilities, and posted notices before you tow there. Expect a holiday-weekend line and use a helper to clear the ramp promptly when practical.
 
 ### Harris Boat Works private launch ramp
 For $20, you can use the private launch ramp at Harris Boat Works, right in Gores Landing. The ramp is well-maintained concrete with a gentle slope, suitable for most trailerable fishing boats, runabouts, and pontoons. Pay at the marina office upon arrival. This is often a calmer, faster alternative when the public launch is jammed, and you get the added benefit of walking-distance access to ethanol-free 89-octane fuel, tackle, and cold drinks before you head out. We only have one ramp, so there can still be a short wait during peak times, but it's consistently smoother than the public alternative on Canada Day weekend.
 
-If you don't own a boat but want to be on the water, Harris Boat Works also offers pontoon and fishing boat rentals. Check availability and reserve ahead at harrisboatworks.ca/rentals. Rentals book up quickly for the long weekend, so calling early is the best move.
+If you don't own a boat but want to be on the water, Harris Boat Works also offers pontoon and fishing boat rentals. Check current availability and reserve online at harrisboatworks.ca/rentals.
 
 ## Where to Watch Fireworks from the Water
 Watching the Canada Day fireworks from a boat is the highlight of the weekend for many Rice Lake families. The biggest displays are visible from the main lake, but knowing where to anchor makes the difference between a perfect show and a frustrating night of boat wakes and repositioning.
@@ -38906,7 +39019,7 @@ Rice Lake is a legitimate multi-species fishery, and Canada Day weekend falls ri
 Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tick Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
 
 ### Largemouth and smallmouth bass
-Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. Remember that bass fishing on Rice Lake is catch-and-release only until the regular season opener, which is always the fourth Saturday in June, so the regular season is in effect by Canada Day weekend. Double-check the 2026 FMZ 17 rules for any changes.
+Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. In Fisheries Management Zone 17, the largemouth and smallmouth bass season runs from the third Saturday in June through December 15, so the regular season is open by Canada Day. Check the [current FMZ 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing for current limits and any exceptions.
 
 ### Muskie
 Rice Lake has a healthy muskie population, and the season opens on the first Saturday in June, so it's fully open for the long weekend. Muskies will be transitioning into their summer haunts, hanging around weed edges, rock points, and deeper transitions. Trolling large crankbaits or spinners in 10 to 18 feet of water or casting big rubber baits around any baitfish schools you mark on your electronics are standard approaches. Use heavy fluorocarbon or wire leaders and carry a large-mouth net and proper release tools. The muskie minimum size on Rice Lake is 44 inches in FMZ 17, so most fish you encounter will need to be released.
@@ -38939,6 +39052,11 @@ Rice Lake on Canada Day is about more than just boating. It's morning mist burni
 If you're trailering from out of town, book your accommodations or camping early, because the provincial parks and private campgrounds around the lake fill up. If you're day-tripping, come early, fuel up, and give yourself plenty of time at the ramp. Above all, respect the water, the wildlife, and your fellow boaters, and you'll come away with a weekend worth repeating.
 
 We're a third-generation family marina, this business has been part of Rice Lake since 1947, and we want every family that launches here to have the same love for this lake that we do. Swing by the marina, grab some ethanol-free fuel, and enjoy the best weekend of the summer.
+
+## Official references
+
+- [Township of Hamilton waterfront parks and Gores Landing launch](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/)
+- [Ontario Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 - [Mercury 9.9 ProKicker: Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
 - [Best Marina on Rice Lake, Ontario](/blog/best-marina-rice-lake-ontario)
@@ -39070,7 +39188,7 @@ If you've cleared the intakes and you're still overheating at speed, or you'd ra
     image: '/lovable-uploads/hero-bilge-pump-troubleshooting-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-07-03',
-    dateModified: '2026-08-02',
+    dateModified: '2026-07-03',
     publishDate: '2026-07-03',
     category: 'Service & Troubleshooting',
     readTime: '~11 min read',
@@ -39119,7 +39237,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 866 US GPH, or 14.4 US gal/min)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.

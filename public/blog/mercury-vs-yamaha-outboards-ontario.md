@@ -106,7 +106,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions. T
 - **Yamaha is more reliable than Mercury.**  
   Both brands build reliable modern outboards. Real-world reliability difference is small.
 - **Current Verado is supercharged.**  
-  No. Current Mercury Verado V8 (250-400 HP), V10 (350-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+  No. Current Mercury Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 - **The 2025 Mercury recall is a big deal.**  
   For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
 - **I'll get Yamaha because the warranty is longer.**  

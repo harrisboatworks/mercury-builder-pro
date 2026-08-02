@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-05-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
 category: "Buying Guide"
 date_published: 2026-05-11
-date_modified: 2026-08-02
+date_modified: 2026-05-11
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-05-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 
@@ -51,7 +51,7 @@ Here's how to work through it.
 
 Every boat has a maximum HP rating stamped on the capacity plate, usually located on the transom or near the helm. This is not a suggestion. It's the legal ceiling set by the manufacturer based on hull testing.
 
-**Never exceed it.** Going over the capacity plate creates compliance, insurance, liability, safety, and potential warranty problems. We will not rig a motor that exceeds the plate, full stop.
+**Never exceed it.** Going over the capacity plate voids Mercury warranty coverage, creates insurance exposure, and compromises the safety of the hull. We will not rig a motor that exceeds the plate, full stop.
 
 The capacity plate also shows maximum persons and maximum weight. Those numbers matter too when thinking about loading.
 

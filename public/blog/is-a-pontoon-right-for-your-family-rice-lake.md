@@ -166,7 +166,7 @@ For most of what families do here, yes. Rice Lake is calm a lot of the time and 
 
 ### What does it cost to power a family pontoon?
 
-Pricing depends on the boat and the Mercury motor you choose. Build a real quote at mercuryrepower.ca, or call us at 905-342-2153 and we will spec it to your family and your budget. No upsell to power you do not need.
+Pricing depends on the boat and the Mercury motor you choose. Use the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection) for the motor, controls, prop, rigging and installation. No upsell to power you do not need.
 
 ### Can I rent a pontoon before I buy one?
 

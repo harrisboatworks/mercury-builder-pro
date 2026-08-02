@@ -132,25 +132,6 @@ Si vous soupçonnez un problème du système de refroidissement, prenez rendez-v
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 
-## Questions fréquentes
-
-**L'alarme s'est déclenchée une fois mais le moteur semble bien maintenant. Dois-je l'apporter?**
-Oui. Un événement de surchauffe unique qui s'est résolu lui-même devrait quand même être diagnostiqué.
-
-**À quoi ressemble le jet témoin quand il est normal?**
-Un jet d'eau continu et régulier, pas hésitant ou intermittent, et perceptible à tous les régimes y compris au ralenti.
-
-**Puis-je remplacer la turbine de la pompe à eau moi-même?**
-Sur les plus petits moteurs, c'est une tâche DIY gérable.
-
-**Comment savoir si la turbine est usée sans démonter l'embase?**
-Le comportement du jet témoin est le meilleur indicateur.
-
-**La surchauffe endommage-t-elle le moteur même si je l'arrête rapidement?**
-Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
-
----
-
 ## Liens internes
 
 - [Intervalles d'entretien Mercury](/blog/mercury-maintenance-intervals-20-100-300-rule)

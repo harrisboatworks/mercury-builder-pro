@@ -130,7 +130,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is Harris Boat Works actually selling the Mercury Avator now?",
-        "a": "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Pricing is being finalized, so we're quoting by conversation rather than posting numbers that would be stale in a month. Call 905-342-2153 with your boat and how you use it, and we'll spec the right setup."
+        "a": "Yes. Avator is joining our Mercury lineup as a build-to-order product through Mercury Canada. Mercury Canada pricing is still being finalized, so we do not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability and the configuration path."
       },
       {
         "q": "How far does an Avator go on one charge?",
@@ -340,7 +340,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "renting-vs-owning-boat-ontario-math",
     "title": "Renting vs Owning a Boat in Ontario: The Honest Math (2026)",
-    "description": "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, the five-minute worksheet, and what the spreadsheet misses.",
+    "description": "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses.",
     "category": "Boating Lifestyle",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -365,7 +365,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can renting help me decide what boat to buy?",
-        "a": "It's the best research there is. Rent a fishing boat one weekend and a cruise pontoon the next, and you'll know more about your real preferences than any showroom visit can teach. It's the cheapest way to learn exactly what you want before you spend five figures."
+        "a": "Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase."
       }
     ]
   },
@@ -385,11 +385,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can we rent multiple boats at once on Rice Lake?",
-        "a": "Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in."
+        "a": "Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in."
       },
       {
         "q": "How many people fit on a rental pontoon?",
-        "a": "Capacity varies by boat and it's a hard limit. The new Halo is listed for up to 12 people; other capacities are posted per boat in the booking system. If your headcount exceeds one boat, book two."
+        "a": "Capacity varies by boat and it's a hard limit, posted per boat in the booking system. If your headcount exceeds one boat, book two; we can't overload a boat or host overflow guests on shore."
       },
       {
         "q": "Can our group have a BBQ at the marina?",
@@ -404,7 +404,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "first-time-boat-rental-rice-lake-guide",
     "title": "First Time Renting a Boat? What We Tell Every Renter at Our Dock",
-    "description": "Never driven a boat? Here's the exact orientation we give every first-time renter at our Rice Lake dock: driving, docking, wind, and what to do if something goes wrong.",
+    "description": "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong.",
     "category": "Boating Lifestyle",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -416,27 +416,27 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "Is renting a boat hard if I've never driven one?",
-        "a": "No. A pontoon has one throttle, no brakes, and a walking-pace idle. Our ten-minute dock orientation covers everything, and we don't rush first-timers. The learning curve is roughly \"golf cart,\" not \"airplane.\""
+        "q": "Is renting a boat manageable if I've never driven one?",
+        "a": "A pontoon can be a beginner-friendly option when you stay at idle near the dock, leave extra stopping distance, and follow the dock orientation. Staff review the controls, life jackets, safety gear, and Rice Lake map before departure."
       },
       {
-        "q": "What's the easiest rental boat for a beginner?",
-        "a": "A pontoon, no contest. It's stable, slow to react, forgiving to dock, and has room for the whole crew to spread out. Our 23-ft cruise pontoons are what most first-time groups take out. See the [full fleet guide](/blog/rice-lake-boat-rental-guide-2026)."
+        "q": "Which rental boat should a beginner choose?",
+        "a": "Compare the currently available pontoons in the live booking system and choose one whose posted capacity and equipment fit your group. Staff can review the selected boat's controls during orientation."
       },
       {
         "q": "Do I need a licence for my first rental?",
-        "a": "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete it before rental day; our [licence guide](/blog/boat-rental-licence-ontario-guide) explains the course and check-in requirements."
+        "a": "Yes, whoever drives needs proof of competency. The boating licence course is online and takes about 3 hours; do it the evening before. Non-Canadian visitors complete a renter's checklist waiver instead. Full details in [our licence guide](/blog/boat-rental-licence-ontario-guide)."
       },
       {
         "q": "What happens if I damage the boat?",
-        "a": "Tell us; that's the whole procedure. A $1,000 deposit hold covers assessment, and fender-level bumps are a normal part of everyone's first season. What turns a small thing big is not mentioning it."
+        "a": "If you damage the boat or strike something during the trip, stop operating it and contact HBW immediately, then follow staff instructions. HBW processes a $1,000 damage-deposit authorization at check-in; it is a hold, not a charge. The renter remains responsible for damage under the current agreement, including amount…"
       }
     ]
   },
   {
     "slug": "rice-lake-boat-rental-guide-2026",
     "title": "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
-    "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The 10-boat fleet, including the new 12-person Halo, plus costs, licence rules, and booking.",
+    "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking.",
     "category": "Boating Lifestyle",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -449,15 +449,15 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need a boating licence to rent a boat on Rice Lake?",
-        "a": "Yes. HBW requires the driver to bring a valid Pleasure Craft Operator Card, permanent or temporary, plus photo ID. Passengers don't need one. If you still need your card, complete it before rental day; see our [rental licence guide](/blog/boat-rental-licence-ontario-guide)."
+        "a": "The driver needs proof of competency: a Pleasure Craft Operator Card, or a boating licence you can complete online at myboatcard.com/card/harrisboat. Only the person driving needs it, and non-Canadian residents complete a renter's checklist waiver instead. Details: [our rental licence guide](/blog/boat-rental-licence-…"
       },
       {
         "q": "How much does a Rice Lake boat rental cost?",
-        "a": "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for fuel ($5 to $35 for fishing in a small boat, up to $100 for a full pontoon cruising day) and a $1,000 refundable damage deposit hold."
+        "a": "Rates vary by boat and day, and they're live in the booking system at harrisboatworks.ca/rentals. Budget separately for the fuel you use and a $1,000 refundable damage-deposit authorization."
       },
       {
         "q": "Are life jackets included?",
-        "a": "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included. Missing gear at return comes out of the damage deposit."
+        "a": "Yes. All legally required safety gear comes with the boat, and staff fit life jackets to everyone in your party at check-in, kids included."
       },
       {
         "q": "Can we take the rental boat to another lake?",
@@ -481,15 +481,15 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can I rent a boat in Ontario with no licence at all?",
-        "a": "You can make a reservation, but HBW won't send the boat out until the driver shows a valid Pleasure Craft Operator Card and photo ID. A permanent card or temporary proof after passing the accredited test is fine."
+        "a": "You can book one, but the driver can't operate it without proof of competency. Complete the boating licence online at myboatcard.com/card/harrisboat, or if you're a non-Canadian resident, complete the renter's checklist waiver after reserving."
       },
       {
         "q": "Does everyone in the boat need a licence?",
         "a": "No, just whoever is driving. Passengers of any age need nothing. If two of you want to trade off driving through the day, both drivers need proof of competency."
       },
       {
-        "q": "How fast can I actually get a boating licence?",
-        "a": "The accredited online course takes a few hours, so don't leave it until rental morning. After you pass, you can print temporary proof for check-in while the physical card is mailed to you."
+        "q": "How long should I allow for a boating licence?",
+        "a": "The accredited course and test are online and self-paced, but Transport Canada requires minimum study time. Allow about 3 hours and complete it before rental day; proof of completion is available after you pass and the physical card follows by mail."
       },
       {
         "q": "Is the PCOC valid outside Ontario?",
@@ -1052,7 +1052,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Where is Harris Boat Works located?",
-        "a": "Gores Landing, Ontario, on the south shore of Rice Lake, roughly 90 minutes east of Toronto and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0."
+        "a": "Gores Landing, Ontario, on the south shore of Rice Lake, roughly 1 hour 45 minutes from central Toronto in light traffic and a short drive north of Cobourg and Port Hope. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0."
       }
     ]
   },
@@ -1146,7 +1146,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does Command Thrust cost over the standard gearcase?",
-        "a": "Command Thrust adds a modest amount over the standard gearcase at the same HP. Pricing moves with motor class and prop selection, so ask us for the current adder on your motor or [build a quote](/quote/motor-selection). Call 905-342-2153 for current pricing."
+        "a": "Command Thrust pricing moves with motor class and prop selection. Use the [live pricing reference](/pricing-reference) for current motor prices, then [build a configured quote](/quote/motor-selection) for the complete setup."
       },
       {
         "q": "Will my standard prop fit on a Command Thrust gearcase?",
@@ -2058,7 +2058,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Did Canada really repeal the luxury tax on boats?",
-        "a": "Yes. According to Canada Revenue Agency Luxury Tax Notice LTN5, the luxury tax on subject vessels (boats over $250,000) is no longer payable as of November 5, 2025."
+        "a": "Yes. Canada Revenue Agency Luxury Tax Notice LTN5 confirms that the luxury tax is no longer payable on subject vessels effective November 5, 2025. The amendments were included in Bill C-15, which received Royal Assent on March 26, 2026."
       },
       {
         "q": "Are used boat prices coming down in Ontario?",
@@ -2072,8 +2072,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "boat-rentals-shared-access-booming-2026",
-    "title": "Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us",
-    "description": "Rent or buy a boat in 2026? Real numbers from 346 rentals on Rice Lake, the 10-15 day rule, and an honest rent vs own vs boat club comparison for Ontario.",
+    "title": "Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You",
+    "description": "Rent or buy a boat in Ontario? Compare pay-per-use rentals, boat clubs, and ownership, then use a Rice Lake rental to learn what fits before you buy.",
     "category": "Lifestyle",
     "publishDate": "2026-02-06",
     "keywords": [
@@ -2086,11 +2086,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is it cheaper to rent or buy a boat in Ontario?",
-        "a": "Under 10 days a season, renting is almost always cheaper once you count what ownership really costs beyond the purchase price. At 15+ days, ownership usually wins. Between those thresholds, add up a season of rental fees and compare them against the carrying costs in our ownership cost guide."
+        "a": "There is no universal cutoff. Add up the current rental rate and expected fuel for your realistic number of days, then compare that with insurance, storage, winterizing, maintenance, depreciation, and any payment in our ownership cost guide."
       },
       {
         "q": "How many days a year should I boat to justify buying?",
-        "a": "Roughly 15 or more. Below 10, rentals win on math almost every time. Remember the Ontario season is only about 20 prime weekends, so 15 days means boating nearly every second weekend."
+        "a": "Use your own costs and calendar. The more genuine boating days you expect, the more ownership's fixed costs are spread out; occasional users may find pay-per-use rentals easier to justify."
       },
       {
         "q": "Do I need a licence to rent a boat on Rice Lake?",
@@ -2098,7 +2098,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What boats can you rent at Harris Boat Works?",
-        "a": "A 10-boat Legend fleet: the new 12-person Halo, 23 Cruise pontoons, 24 and 20 Transporters, and 16 ProSport fishing boats, all Mercury-powered and maintained by our own technicians. Book at harrisboatworks.ca/rentals."
+        "a": "The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Check harrisboatworks.ca/rentals for live availability, capacity, equipment, and rates."
       }
     ]
   },
@@ -2189,8 +2189,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "In Mercury's published test of the Avator 7.5e on a 13-foot, 382-lb boat with one 1 kWh battery, it ran about 60 minutes or 5 miles at full throttle, and up to 19 hours or 34 miles at 25% throttle. Real-world range depends on your boat, load, and conditions."
       },
       {
-        "q": "What gas horsepower is each Mercury Avator equivalent to?",
-        "a": "Mercury compares the 7.5e to about 3.5 hp, the 20e to about 5 hp, and the 35e to about 9.9 hp. For the 75e and 110e, Mercury rates prop-shaft output: 7,500 watts converts to 10 hp and 11,000 watts to 15 hp. Instant electric torque means they feel stronger off the line than those numbers suggest."
+        "q": "How is Mercury Avator power rated?",
+        "a": "Mercury rates Avator outboards by prop-shaft power: 0.75 kW for the 7.5e, 2.2 kW for the 20e, 3.7 kW for the 35e, 7.5 kW for the 75e, and 11 kW for the 110e. Thrust, acceleration, range, and runtime still depend on the exact hull, load, propeller, battery setup, weather, and throttle setting."
       },
       {
         "q": "How long does it take to charge a Mercury Avator battery?",
@@ -2198,7 +2198,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a Mercury Avator cost in Canada?",
-        "a": "It depends on the model, battery count, and charger, and batteries are often the biggest part of the price. Avator is a build-to-order product at Harris Boat Works, so call 905-342-2153 for a current, exact price on the setup that fits your boat. Gas Mercury outboards have live pricing in the quote tool at mercuryrepo…"
+        "a": "The total depends on the model, battery count, charger, controls and installation. Mercury Canada pricing is still being finalized, so HBW does not publish a placeholder number. See the [Avator page](/electric/mercury-avator) for current availability; gas Mercury outboards have live pricing in the quote tool at mercur…"
       }
     ]
   },
@@ -2689,7 +2689,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does it take to trailer a boat from Toronto to Rice Lake?",
-        "a": "The drive from downtown Toronto to Rice Lake takes about 90 minutes via Highway 401 east and Highway 115 north, longer on summer Saturday mornings. Without traffic, 90 minutes is realistic. On Friday afternoons during summer, especially before long weekends, traffic can add 30-45 minutes. Budget extra time if leaving…"
+        "a": "The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure."
       },
       {
         "q": "Do I need a special licence to tow a boat trailer in Ontario?",
@@ -3072,11 +3072,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What's the launch fee at Harris Boat Works?",
-        "a": "$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches."
+        "a": "$20 per day or $200 for a seasonal pass (April through November). The seasonal pass breaks even after 10 launches."
       },
       {
         "q": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
-        "a": "You can reserve a boat, but Harris Boat Works requires every rental driver to show a valid Pleasure Craft Operator Card and photo ID before departure. Passengers don't need one. See our [Ontario rental licence guide](/blog/boat-rental-licence-ontario-guide) for the details."
+        "a": "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works. HBW's current policy directs non-Canadian residents to complete a renter checklist waiver after reservation."
       },
       {
         "q": "Is Rice Lake too shallow for a 21-foot pontoon?",
@@ -3526,15 +3526,15 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does it take to drive from Toronto to Rice Lake?",
-        "a": "Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes."
+        "a": "Roughly 1 hour 45 minutes to Gores Landing from central Toronto in light traffic. From elsewhere in the GTA, allow more time; summer weekends can push the trip past two hours. Check current routing before departure."
       },
       {
         "q": "Do I need a boating licence to rent at HBW?",
-        "a": "Yes. HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. A permanent card or temporary proof after passing the accredited test is fine; complete it before rental day."
+        "a": "The driver must bring proof of operator competency. A Pleasure Craft Operator Card works; HBW links to an online course at myboatcard.com/card/harrisboat. Non-Canadian residents complete HBW's renter checklist waiver after reservation."
       },
       {
-        "q": "What does a half-day rental cost?",
-        "a": "Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2× half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing."
+        "q": "What does a rental cost?",
+        "a": "Rates and rental periods vary by boat and date. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for the current price before booking."
       },
       {
         "q": "Can we fish from rental boats?",
@@ -3578,7 +3578,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "harris-boat-works-since-1947-rice-lake-institution",
     "title": "Harris Boat Works: On Rice Lake Since 1947",
-    "description": "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've.",
+    "description": "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what staying on the same dock means for the customers who've returned.",
     "category": "About HBW",
     "publishDate": "2026-05-18",
     "keywords": [
@@ -3592,7 +3592,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long has Harris Boat Works been in business?",
-        "a": "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026."
+        "a": "Family-owned on Rice Lake since 1947, now in the third generation. Harris Boat Works has been a Mercury dealer since 1965 and is a current Mercury Premier Dealer."
       },
       {
         "q": "Is HBW family-owned?",
@@ -3604,7 +3604,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Where is HBW located?",
-        "a": "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto."
+        "a": "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. Roughly 1 hour 45 minutes from central Toronto in light traffic."
       }
     ]
   },
@@ -4588,7 +4588,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is there a closer Mercury dealer to Burlington?",
-        "a": "Yes. There is a closer Mercury dealer in the Hamilton area. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing."
+        "a": "Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing."
       },
       {
         "q": "Can I quote and order remotely?",
@@ -5115,7 +5115,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is it legal to exceed the maximum horsepower on the capacity plate?",
-        "a": "The plate states the manufacturer's maximum recommended safe limit. Exceeding it can create compliance issues, jeopardize insurance coverage or a claim, expose the owner and operator to civil liability, compromise handling, and create warranty problems. No responsible dealer or installer should mount a motor above the…"
+        "a": "On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or instal…"
       },
       {
         "q": "What if my plate is illegible or missing?",
@@ -5726,7 +5726,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does the Avator 7.5e cost installed?",
-        "a": "Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Call 905-342-2153 for the current configured price. Pickup is at Gores Landing."
+        "a": "Avator is build-to-order through Mercury Canada. The motor, integrated battery, charger, controls, mounting, optional spare battery, and installation determine the package. Mercury Canada pricing is still being finalized, so see the [Avator page](/electric/mercury-avator) for current availability and the configuration…"
       }
     ]
   },
@@ -5828,7 +5828,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does it cost to add a kicker to my repower?",
-        "a": "Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153."
+        "a": "Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 planning range) for a Mercury 9.9 ProKicker on top of your main repower; use the live quote builder for today's total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being fina…"
       }
     ]
   },
@@ -5892,7 +5892,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does Boost cost in Canada?",
-        "a": "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate."
+        "a": "HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check."
       },
       {
         "q": "Did Mercury Boost win an award?",
@@ -6349,8 +6349,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "Yes. The entire Trent-Severn Waterway opened for navigation on May 29, 2026. All locks, channels, and navigational aids from Trenton to Georgian Bay are operational. Rice Lake boaters can lock through in either direction."
       },
       {
-        "q": "Where is the best place to launch a boat on Rice Lake for the long weekend?",
-        "a": "The Gores Landing public launch is free and has reopened after maintenance. For a less crowded alternative, the Harris Boat Works private ramp is available for $20, with ethanol-free fuel and marina amenities right at the water."
+        "q": "Where can I launch a boat near Gores Landing for the long weekend?",
+        "a": "The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park. Check the Township waterfront-parks page for current public access and posted notices before you tow there. Harris Boat Works also has a private $20 launch ramp, with ethanol-free fuel and marina amenities at the water."
       },
       {
         "q": "Can I drink alcohol on my boat while watching fireworks on Rice Lake?",

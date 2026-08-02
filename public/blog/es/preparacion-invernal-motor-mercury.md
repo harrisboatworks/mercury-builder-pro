@@ -135,28 +135,6 @@ En Harris Boat Works realizamos más de 584 preparaciones invernales por tempora
 
 ---
 
-## Preguntas frecuentes
-
-**¿Puedo hacer la preparación invernal yo mismo?** 
-Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
-
-**¿Dónde puedo conseguir combustible sin etanol?** 
-Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
-
-**¿Cómo reservo la preparación invernal?** 
-La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
-
-**¿Los pasos son iguales para todos los motores Mercury?** 
-Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
-
-**¿Cuándo es el mejor momento para hacer la preparación invernal?** 
-Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
-
-**¿Cuánto tiempo tarda la preparación invernal?** 
-Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
-
----
-
 ## Contáctenos
 
 **Reservar preparación invernal:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).

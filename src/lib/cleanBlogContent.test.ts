@@ -42,6 +42,25 @@ Answer.
     ).toContain('## Frequently Asked Questions');
   });
 
+  it.each([
+    'Questions fréquentes',
+    'Preguntas frecuentes (FAQ)',
+    '常见问题',
+    '常見問題',
+    '자주 묻는 질문',
+    'FAQ (Mga Madalas Itanong)',
+    'FAQ | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+    'Aksar puchhe jaande sawaal | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+    'اکثر پوچھے جانے والے سوالات | FAQ',
+    'FAQ | अक्सर पूछे जाने वाले सवाल',
+  ])('removes a localized inline FAQ headed %s', (heading) => {
+    const content = `## ${heading}\n\nQuestion and answer.\n\n## Sources\n\n- Source`;
+
+    expect(
+      cleanBlogContent(content, { hasStructuredFaqs: true }),
+    ).toBe('## Sources\n\n- Source');
+  });
+
   it('removes terminal related-guide variants', () => {
     const content = `## Closing
 

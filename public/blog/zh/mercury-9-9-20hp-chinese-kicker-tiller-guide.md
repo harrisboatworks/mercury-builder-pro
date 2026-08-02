@@ -141,22 +141,6 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 
 ---
 
-## 常见问题
-
-**Q：我的12英尺铝船，Capacity Plate写最大10HP，可以装9.9HP吗？**
-A：是的，9.9HP在技术上属于10HP以下，通常符合10HP限制的规定。但具体要确认你的Capacity Plate标示, 如果写的是「最大10HP」或「不超过10HP」，语义可能略有不同。购买前让HBW确认。
-
-**Q：Mercury 9.9HP有ProKicker版本吗？**
-A：Mercury有ProKicker系列，专门为Kicker用途设计，具有特定的Trolling和低速控制功能。具体型号和可用配置请查Mercury当前产品资料，或联络HBW确认当前库存。
-
-**Q：9.9至20HP的服务保养，HBW可以做吗？**
-A：是的。HBW作为Mercury Marine Premier Dealer，提供所有Mercury船外机的保养服务，包括小马力机型。请至 hbw.wiki/service 提交服务申请。
-
-**Q：如果买了20HP发现不够用，可以换成更大的吗？**
-A：可以更换，但必须在船体Capacity Plate允许的范围内。建议一开始选择时就根据你的最大使用情境决定，避免二次更换的成本。
-
----
-
 ## 内部连结
 
 - [40至60马力Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)

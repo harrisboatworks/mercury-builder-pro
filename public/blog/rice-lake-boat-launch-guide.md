@@ -127,19 +127,11 @@ If you're new to launching, this is the basic flow. Most people do it efficientl
 
 For any powered boat in Ontario waters:
 
-**Pleasure Craft Operator Card (PCOC)** for the operator. One-time test, accessible in the boat or on phone.
+**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
-**Valid Pleasure Craft Licence (PCL)** for any boat with a motor 7.5 kW (10 HP) or larger. 2026 PCL changes: lifetime licences converted to 5-year renewals at $24. Check your PCL is current.
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years and the federal service fee is $24, subject to annual inflation updates. Check the current fee and your licence status before launch day.
 
-**Required safety equipment:**
-- One PFD per person (one must be a wearable Type III)
-- Sound-signaling device (whistle, horn)
-- Bailer or manual water pump
-- Anchor or grapnel with line
-- Paddle or oar
-- Navigation lights for sunset operation
-
-Transport Canada publishes the full list, and there are specific extras for larger boats. Make sure you have everything before you launch.
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
 ---
 

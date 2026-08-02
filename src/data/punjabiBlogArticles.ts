@@ -30,7 +30,7 @@ export const punjabiBlogArticles: Wave1Article[] = [
     keywords: ['Ontario fishing license keemat online (Ontario fishing license price online)', 'Toronto de nere fishing spots family layi (fishing spots near Toronto for family)', 'fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)', 'Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)', 'Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)', 'Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)'],
     faqs: [
       { question: '1. Ontario fishing license di keemat kinna hai online?', answer: 'licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।' },
-      { question: '2. Toronto de nere family layi fishing spots kaun se ne?', answer: 'Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। ਸਾਡੀ 10-boat rental fleet ਹੈ, ਜਿਸ ਵਿੱਚ ਨਵੀਂ 12-person Halo pontoon ਵੀ ਹੈ। Ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।' },
+      { question: '2. Toronto de nere family layi fishing spots kaun se ne?', answer: 'Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ ਆਮ ਤੌਰ ’ਤੇ ਲਗਭਗ 90 ਤੋਂ 120 ਮਿੰਟ ਦੀ drive ਹੈ, origin ਅਤੇ traffic ’ਤੇ ਨਿਰਭਰ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rentals ਹਨ; ਮੌਜੂਦਾ listings ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ।' },
       { question: '3. Fishing seasons Ontario vich kiven pata lagge?', answer: 'FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।' },
       { question: '4. Rice Lake te fishing rules limits ki ne?', answer: 'rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit sport licence ਨਾਲੋਂ ਘੱਟ; size limit species ਮੁਤਾਬਕ; slot size (walleye, muskellunge) ’ਵੇਖਣੀ ਪੈਂਦੀ ਹੈ। official summary FMZ 17 section ਵਿੱਚ ਹਰ species ਵੱਖ-ਵੱਖ rules ਦਿੱਤੇ ਹਨ। numbers ਅਗਲੀ trip ਤੋਂ ਪਹਿਲਾਂ official ਸਰੋਤ ਤੋਂ ਜ਼ਰੂਰ check ਕਰੋ।' },
       { question: '5. Brampton ton fishing spot kidhar jaayiye?', answer: 'Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: https://harrisboatworks.ca/rentals।' },
@@ -83,7 +83,7 @@ Rice Lake ’ਤੇ Gores Landing ਆ ਕੇ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’
 licence ਦੀ ਫ਼ੀਸ structure ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ: Outdoors Card ਦੀ ਆਪਣੀ ਫ਼ੀਸ, ਅਤੇ fishing licence (conservation ਜਾਂ sport) ਦੀ ਵੱਖ। ਫ਼ੀਸਾਂ official page ’ਤੇ ਹੀ ਤਾਜ਼ਾ ਰਹਿੰਦੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਦਾ ਅੰਦਾਜ਼ਾ ਨਾ ਲਗਾਓ। ਇਹ ਲਿੰਕ ਖੋਲ੍ਹੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees।
 
 **2. Toronto de nere family layi fishing spots kaun se ne?**  
-Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ 90 ਮਿੰਟ ਦੀ drive ’ਤੇ, ਪਰਿਵਾਰਾਂ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ। ਸਾਡੀ 10-boat rental fleet ਹੈ, ਜਿਸ ਵਿੱਚ ਨਵੀਂ 12-person Halo pontoon ਵੀ ਹੈ। Ethanol-free fuel site ’ਤੇ ਹੈ, ਅਤੇ ਮਾਹੌਲ family-friendly ਹੈ।
+Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ ਆਮ ਤੌਰ ’ਤੇ ਲਗਭਗ 90 ਤੋਂ 120 ਮਿੰਟ ਦੀ drive ਹੈ, origin ਅਤੇ traffic ’ਤੇ ਨਿਰਭਰ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rentals ਹਨ; ਮੌਜੂਦਾ listings ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ।
 
 **3. Fishing seasons Ontario vich kiven pata lagge?**  
 FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: https://www.ontario.ca/document/ontario-fishing-regulations-summary। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।
@@ -117,17 +117,17 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     slug: 'boat-licence-rental-ontario-punjabi-pcoc-faq',
     title: 'Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼ਤੀ ਲਾਇਸੰਸ ਸਵਾਲ-ਜਵਾਬ',
     seoTitle: 'Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼ਤੀ ਲਾਇਸੰਸ ਸਵਾਲ-ਜਵਾਬ',
-    description: 'Ki Ontario vich boat rent karan layi licence chahida? PCOC rules, bina card rental boat kiven chalao, lifejacket rules. Punjabi vich poori jaankari ethe lao.',
+    description: 'Ki Ontario vich boat rent karan layi licence chahida? HBW de PCOC rules, rental safety briefing te lifejacket rules. Punjabi vich poori jaankari ethe lao.',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-02',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario vich boat license kinj banaye (how to get a boat license in Ontario)', 'boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)', 'PCOC course online free Punjabi (PCOC course online free in Punjabi)', 'boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)'],
     faqs: [
       { question: 'Ontario vich boat chalaun lai license kinj banayiye?', answer: 'ਪਹਿਲਾਂ Transport Canada ਦੇ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ ਪ੍ਰਦਾਤਾਵਾਂ ਰਾਹੀਂ online PCOC ਕੋਰਸ ਕਰੋ। exam pass ਕਰੋ, card lifetime ਲਈ ਮਿਲ ਜਾਵੇਗਾ। official list: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters' },
-      { question: 'Je main ik din layi boat rent karan, PCOC deni paini hai?', answer: 'ਨਹੀਂ, temporary rental boat safety checklist ’ਤੇ ਦਸਤਖਤ ਕਰਕੇ boat rent ਲੈ ਸਕਦੇ ਹੋ। Harris Boat Works ਦੀ rental fleet ਲਈ ਸਿੱਧਾ https://harrisboatworks.ca/rentals ’ਤੇ ਜਾਓ, full briefing ਮਿਲੇਗੀ।' },
+      { question: 'Je main ik din layi HBW ton boat rent karan, PCOC deni paini hai?', answer: 'ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ।' },
       { question: 'Kya “boat license” te “boat operator card” different hunde ne?', answer: 'Boat license (PCL) boat ਦੀ registration number ਹੈ; operator card (PCOC) ਤੁਹਾਡੀ training ਦਾ ਸਬੂਤ ਹੈ। ਦੋਵੇਂ ਵਕਤ confuse ਨਾ ਹੋ, official terms PCL ਤੇ PCOC ਯਾਦ ਰੱਖੋ।' },
       { question: 'PCOC course online muft Punjabi vich mil sakda ae?', answer: 'ਮੁਫ਼ਤ ਦਾ ਨਹੀਂ ਪਤਾ, course providers ਕੀਮਤ ਮੰਗਣਗੇ, ਅਤੇ course English ਜਾਂ French ਵਿੱਚ ਹੀ officially available ਹੈ। Punjabi ਵਿੱਚ approved version Transport Canada ਨਹੀਂ ਰੱਖਿਆ। Phone application translation ਨਾਲ study ਆਸਾਨ ਹੋ ਸਕਦਾ ਹੈ।' },
       { question: 'Mere chacha ji apni boat leke Ontario aaye; kya oh bina card de chala sakde?', answer: 'ਨਹੀਂ, motor boat operate ਕਰਨ ਲਈ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ, ਨਹੀਂ ਤਾਂ officer penalty ਲਾ ਸਕਦਾ। Temporary visitor ਵੀ online course ਕੀਤਾ ਜਾ ਸਕਦਾ, ਇਸ ਲਈ planning ਕਰਕੇ ਆਓ।' },
@@ -136,7 +136,7 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     nativeReview: 'pending',
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters'],
-    content: `ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। ਜੇ ਤੁਸੀਂ ਸਾਡੇ ਕੋਲੋਂ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’ਤੇ ਲੈ ਰਹੇ ਹੋ, ਤਾਂ ਇੱਕ ਆਰਜ਼ੀ ਕਿਰਾਏ ਦੀ ਕਿਸ਼ਤੀ ਸੁਰੱਖਿਆ ਜਾਂਚ-ਪੱਤਰ (temporary rental boat safety checklist) ਵੀ ਵਰਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਇਸ ਬਾਰੇ ਥੱਲੇ ਵਿਸਥਾਰ ਨਾਲ ਦੱਸਿਆ ਗਿਆ ਹੈ।
+    content: `ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
 
 
 ਨੋਟ: ਇਹ page ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ ਲਈ ਹੈ, legal advice ਨਹੀਂ। Rules ਬਦਲ ਸਕਦੇ ਹਨ; ਆਖ਼ਰੀ ਗੱਲ ਹਮੇਸ਼ਾ Transport Canada ਦੇ official ਸਫ਼ੇ ਦੀ ਮੰਨੋ: https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc
@@ -149,13 +149,13 @@ PCOC ਇੱਕ ਜੀਵਨ-ਭਰ ਦੀ ਯੋਗਤਾ ਹੈ, ਜੋ ਇਹ 
 
 ਇਹ ਭੁਲੇਖਾ ਬਹੁਤ ਸਾਰੇ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਨੂੰ ਹੁੰਦਾ ਹੈ। PCOC ਵਿਅਕਤੀ ਦੀ ਯੋਗਤਾ ਹੈ: ਇਹ ਦੱਸਦੀ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਕਿਸ਼ਤੀ ਚਲਾਉਣ ਦੀ ਸਿਖਲਾਈ ਮਿਲੀ ਹੈ। PCL (Pleasure Craft Licence) ਖ਼ੁਦ ਕਿਸ਼ਤੀ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਹੈ: ਜਿਵੇਂ ਕਾਰ ਦੀ ਨੰਬਰ ਪਲੇਟ, ਜੋ ਕਿਸ਼ਤੀ ’ਤੇ ਨੰਬਰ ਲਗਾਉਣ ਲਈ ਮਿਲਦੀ ਹੈ। PCL Transport Canada ਤੋਂ ਮੁਫ਼ਤ ਜਾਰੀ ਹੁੰਦੀ ਹੈ, ਜੇ ਕਿਸ਼ਤੀ 10 horsepower (10 HP) ਤੋਂ ਵੱਡੀ ਮੋਟਰ ਫਿੱਟ ਹੋਵੇ। PCOC ਜ਼ਰੂਰੀ ਨਿੱਜੀ ਕਾਰਡ ਹੈ, ਜੋ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’ਤੇ ਲੈਣ ਵਾਲੇ ਤੇ ਮਾਲਕ, ਦੋਹਾਂ ਲਈ ਲਾਜ਼ਮੀ ਹੈ। ਕਈ ਲੋਕ PCOC ਨੂੰ "boat license" ਆਖਦੇ ਹਨ, ਪਰ ਅਧਿਕਾਰਤ ਸ਼ਬਦ PCOC ਹੈ, ਇਹੋ ਵਾਕ police ਵਰਤਦੀ ਹੈ।
 
-## ਬਿਨਾਂ PCOC ਦੇ boat rent ਕਰ ਸਕਦੇ ਹਾਂ? | Can I rent a boat without PCOC?
+## HBW ਤੋਂ boat rent ਕਰਨ ਲਈ PCOC ਚਾਹੀਦੀ ਹੈ? | Do I need a PCOC to rent from HBW?
 
-ਬਿਲਕੁਲ, ਸੁਰੱਖਿਆ ਢਾਂਚੇ ਅੰਦਰ। Ontario ਦਾ ਨਿਯਮ ਕਹਿੰਦਾ ਹੈ: ਕਿਰਾਏ ’ਤੇ ਕਿਸ਼ਤੀ ਦੇਣ ਵਾਲੀ ਕੰਪਨੀ ਆਪਣੇ ਗਾਹਕ ਨੂੰ PCOC ਦੇਖਣ ਦੀ ਬਜਾਏ ਇੱਕ ਆਰਜ਼ੀ ਕਿਰਾਏ ਦੀ ਕਿਸ਼ਤੀ ਸੁਰੱਖਿਆ ਜਾਂਚ-ਪੱਤਰ ’ਤੇ ਦਸਤਖਤ ਕਰਵਾ ਸਕਦੀ ਹੈ। ਇਹ ਜਾਂਚ-ਪੱਤਰ Transport Canada ਦੀ ਮਨਜ਼ੂਰਸ਼ੁਦਾ ਫਾਰਮ ਹੁੰਦੀ ਹੈ। Harris Boat Works ਵਿਖੇ, ਸਾਡਾ 9-ਕਿਸ਼ਤੀਆਂ ਦਾ ਕਿਰਾਏ ਦਾ ਬੇੜਾ ਤੁਹਾਨੂੰ Rice Lake ਦੀ ਸੈਰ ਕਰਨ ਦਾ ਮੌਕਾ ਦਿੰਦਾ ਹੈ, Gores Landing pier ਤੋਂ ਸਿਰਫ਼ ਪਿਕ-ਅੱਪ। ਕਿਰਾਏ ਦੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਸੁਰੱਖਿਆ ਬ੍ਰੀਫ਼ਿੰਗ, ਮੁੱਢਲੀ ਚਲਾਉਣ ਦੀਆਂ ਹਦਾਇਤਾਂ, ਸਾਜ਼ੋ-ਸਾਮਾਨ ਦੀ ਜਾਂਚ, ਤੇ ਜਾਂਚ-ਪੱਤਰ ’ਤੇ ਦਸਤਖਤ ਸ਼ਾਮਲ ਹਨ। ਪਹਿਲੀ ਵਾਰ ਕਿਸ਼ਤੀ ਚਾਲਕਾਂ ਲਈ, ਇਹ ਇੰਤਜ਼ਾਮ ਘਬਰਾਹਟ ਘਟਾਉਂਦਾ ਹੈ। ਕਿਰਾਏ ਦੇ ਪੰਨੇ ’ਤੇ ਵੇਰਵਾ ਵੇਖੋ: https://harrisboatworks.ca/rentals
+ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ। ਕਿਰਾਏ ਦੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਸੁਰੱਖਿਆ briefing, ਮੁੱਢਲੀ ਚਲਾਉਣ ਦੀਆਂ ਹਦਾਇਤਾਂ ਅਤੇ ਸਾਜ਼ੋ-ਸਾਮਾਨ ਦੀ ਜਾਂਚ ਵੀ ਸ਼ਾਮਲ ਹਨ। ਮੌਜੂਦਾ requirements ਅਤੇ availability ਲਈ ਵੇਖੋ: https://harrisboatworks.ca/rentals
 
 ## PCOC online ਕਿਵੇਂ ਬਣਾਈਏ? | How to get PCOC online
 
-Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜੀ ਕੋਰਸ ਪ੍ਰਦਾਤਾ online ਕੋਰਸ ਪੇਸ਼ ਕਰਦੇ ਹਨ। ਪ੍ਰਕਿਰਿਆ ਸੌਖੀ ਹੈ: online ਪੜ੍ਹਾਈ (ਅਧਿਆਏ, ਵੀਡੀਓ, ਕੁਇਜ਼), ਫਿਰ final Transport Canada exam। ਪਾਸ ਹੋਣ ’ਤੇ ਤੁਹਾਨੂੰ temporary PCOC PDF email ਰਾਹੀਂ ਮਿਲਦੀ ਹੈ; permanent card ਬਾਅਦ ਵਿੱਚ ਡਾਕ ਰਾਹੀਂ। ਕੀਮਤ ਕੋਰਸ ਪ੍ਰਦਾਤਾ ਤੈਅ ਕਰਦੇ ਹਨ, ਅਸੀਂ ਸਹੀ ਡਾਲਰ ਦੀ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ। ਅਧਿਕਾਰਤ ਪ੍ਰਵਾਨਤ ਪ੍ਰਦਾਤਾਵਾਂ ਦੀ ਸੂਚੀ ਲਈ TC site ’ਤੇ ਜਾਓ: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters। exam English ਜਾਂ French ਵਿੱਚ ਹੁੰਦਾ ਹੈ, Punjabi version ਅਧਿਕਾਰਤ ਤੌਰ ’ਤੇ ਮੌਜੂਦ ਨਹੀਂ। free online "Punjabi PCOC" ਦੇ ਦਾਅਵਿਆਂ ’ਤੇ ਭਰੋਸਾ ਨਾ ਕਰੋ, ਸੁਰੱਖਿਅਤ official route ਹੈ, translation app phone ’ਤੇ ਖੋਲ੍ਹ ਕੇ study ਕਰਨਾ possible ਹੈ।
+Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜੀ ਕੋਰਸ ਪ੍ਰਦਾਤਾ online ਕੋਰਸ ਪੇਸ਼ ਕਰਦੇ ਹਨ। ਪ੍ਰਕਿਰਿਆ ਸੌਖੀ ਹੈ: online ਪੜ੍ਹਾਈ (ਅਧਿਆਏ, ਵੀਡੀਓ, ਕੁਇਜ਼), ਫਿਰ final Transport Canada exam। ਪਾਸ ਹੋਣ ਤੋਂ ਬਾਅਦ provider ਦੇ temporary proof ਦੀਆਂ ਸ਼ਰਤਾਂ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ ਅਤੇ permanent card ਆਉਣ ’ਤੇ ਅਸਲ card ਨਾਲ ਰੱਖੋ; ਆਮ paper ਜਾਂ electronic PCOC copy ਮਨਜ਼ੂਰ ਨਹੀਂ। ਕੀਮਤ ਕੋਰਸ ਪ੍ਰਦਾਤਾ ਤੈਅ ਕਰਦੇ ਹਨ, ਅਸੀਂ ਸਹੀ ਡਾਲਰ ਦੀ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ। ਅਧਿਕਾਰਤ ਪ੍ਰਵਾਨਤ ਪ੍ਰਦਾਤਾਵਾਂ ਦੀ ਸੂਚੀ ਲਈ TC site ’ਤੇ ਜਾਓ: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters। exam English ਜਾਂ French ਵਿੱਚ ਹੁੰਦਾ ਹੈ, Punjabi version ਅਧਿਕਾਰਤ ਤੌਰ ’ਤੇ ਮੌਜੂਦ ਨਹੀਂ। free online "Punjabi PCOC" ਦੇ ਦਾਅਵਿਆਂ ’ਤੇ ਭਰੋਸਾ ਨਾ ਕਰੋ, ਸੁਰੱਖਿਅਤ official route ਹੈ, translation app phone ’ਤੇ ਖੋਲ੍ਹ ਕੇ study ਕਰਨਾ possible ਹੈ।
 
 ## ਬੱਚੇ ਤੇ supervision: umar ਦੇ rules | Kids and supervision rules
 
@@ -176,8 +176,8 @@ Supervisor ਕੋਲ ਜ਼ਰੂਰੀ valid PCOC ਹੋਣੀ ਚਾਹੀਦ�
 **Q: Ontario vich boat chalaun lai license kinj banayiye?**  
 A: ਪਹਿਲਾਂ Transport Canada ਦੇ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ ਪ੍ਰਦਾਤਾਵਾਂ ਰਾਹੀਂ online PCOC ਕੋਰਸ ਕਰੋ। exam pass ਕਰੋ, card lifetime ਲਈ ਮਿਲ ਜਾਵੇਗਾ। official list: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters
 
-**Q: Je main ik din layi boat rent karan, PCOC deni paini hai?**  
-A: ਨਹੀਂ, temporary rental boat safety checklist ’ਤੇ ਦਸਤਖਤ ਕਰਕੇ boat rent ਲੈ ਸਕਦੇ ਹੋ। Harris Boat Works ਦੀ rental fleet ਲਈ ਸਿੱਧਾ https://harrisboatworks.ca/rentals ’ਤੇ ਜਾਓ, full briefing ਮਿਲੇਗੀ।
+**Q: Je main ik din layi HBW ton boat rent karan, PCOC deni paini hai?**
+A: ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist briefing ਵਜੋਂ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਲੈਂਦੀ।
 
 **Q: Kya “boat license” te “boat operator card” different hunde ne?**  
 A: Boat license (PCL) boat ਦੀ registration number ਹੈ; operator card (PCOC) ਤੁਹਾਡੀ training ਦਾ ਸਬੂਤ ਹੈ। ਦੋਵੇਂ ਵਕਤ confuse ਨਾ ਹੋ, official terms PCL ਤੇ PCOC ਯਾਦ ਰੱਖੋ।

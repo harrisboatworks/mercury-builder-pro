@@ -88,7 +88,7 @@ Tiller motors 20 HP and under are essentially drop-in installs. The motor is the
 
 Once you cross to 25 HP and up, you're into a full project: controls, cables, gauges, prop, and installation labour.
 
-For specific pricing on each model, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us.
+For current pricing on each model, use the [live pricing reference](/pricing-reference) or [build a configured quote](/quote/motor-selection).
 
 ### What Changes the "Cheapest That Works" Answer
 
@@ -187,7 +187,7 @@ Yes. Mercury Repower Financing covers motors of any size, including small portab
 
 ### How long does a small Mercury outboard last?
 
-Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.
+There is no reliable universal lifespan in hours or years. Maintenance, corrosion control, storage, operating load and parts availability all matter. A documented motor that follows its serial-number maintenance schedule is a better bet than one sold on a generic lifetime estimate.
 
 ### What is the cheapest Mercury that can pull a tube?
 

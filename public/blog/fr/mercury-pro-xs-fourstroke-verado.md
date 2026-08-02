@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado.md
-last_updated: 2026-06-08
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS, FourStroke ou Verado : lequel choisir ?"
 description: "Pro XS, FourStroke ou Verado ? Ce qui distingue les trois familles Mercury, et lequel convient à votre bateau. Réponses franches d'un concessionnaire Mercury."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-08-02
 keywords: ["Mercury Pro XS","Mercury FourStroke","Mercury Verado","comparaison moteur Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-06-08  
-**Last updated:** 2026-06-08  
+**Last updated:** 2026-08-02  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
 
@@ -75,7 +75,7 @@ On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. 
 
 **Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153 et on l'adaptera à votre bateau, Verado compris.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Platine Mercury. Gores Landing, Ontario, sur le lac Rice.
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
 ## FAQs
 

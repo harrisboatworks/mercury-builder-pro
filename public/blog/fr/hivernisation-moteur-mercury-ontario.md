@@ -109,25 +109,6 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 
-## Questions fréquentes
-
-**Quand dois-je hiverniser mon moteur Mercury en Ontario?** 
-Entre la mi-octobre et la fin novembre pour la plupart des régions. N'attendez pas la première gelée sévère, les places se remplissent en octobre.
-
-**Puis-je hiverniser moi-même mon moteur Mercury?** 
-Oui, si vous avez l'expérience et les bons produits. Les étapes les plus souvent omises par les propriétaires DIY : le fogging et la vidange d'huile d'engrenage. Ne les sautez pas.
-
-**Pourquoi l'éthanol est-il problématique pour les moteurs marins?** 
-L'éthanol absorbe l'humidité et se sépare du carburant lors d'un stockage prolongé. Ce mélange eau-éthanol peut colmater les injecteurs ou le carburateur et causer de la corrosion interne. Carburant sans éthanol ou stabilisant de qualité, ou idéalement les deux.
-
-**Est-ce que Harris Boat Works offre le service d'hivernisation?** 
-Oui. Nous effectuons 584 hivernisations par année à Gores Landing. Réservez à [hbw.wiki/service](https://hbw.wiki/service) le plus tôt possible, les places se remplissent en octobre.
-
-**Est-ce que je dois enlever ma batterie pour l'hiver?** 
-Absolument. Une batterie marine laissée dans le bateau par temps de gel se décharge et peut subir des dommages permanents. Retirez-la, entreposez-la hors gel, et idéalement mettez-la sur un chargeur de maintien.
-
----
-
 ## Liens internes
 - Guide de pêche sur le lac Rice
 - Permis de conduire une embarcation au Canada

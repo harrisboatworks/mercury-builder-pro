@@ -95,9 +95,9 @@ The complete price depends on the exact motor, controls, steering, propeller, tr
 
 ## What about the Mercury Avator on a pontoon?
 
-The Avator 7.5e is a small electric outboard. Useful as a silent kicker on small fishing pontoons for trolling, but not a main motor. Pontoon main propulsion needs sustained torque at 3,500 to 4,500 RPM and the Avator 7.5e is sized for slow-trolling applications.
+The Avator 7.5e is a small electric outboard with 0.75 kW of prop-shaft output. It is intended for compatible small boats, tenders and quiet low-speed use, not as the main motor on a family pontoon. A pontoon setup needs a boat-specific review of displacement, load, speed, route and battery reserve.
 
-Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly 3.5 HP equivalent" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop.
+Mercury rates Avator by prop-shaft output, not by a direct gasoline horsepower figure. The technical specification for the 7.5e is 0.75 kW at the propeller.
 
 If you are building a pontoon repower and you want quiet trolling for walleye or bass, talk to us about pairing a gasoline main motor with a small electric kicker. We rig that combination on Rice Lake fishing pontoons regularly.
 

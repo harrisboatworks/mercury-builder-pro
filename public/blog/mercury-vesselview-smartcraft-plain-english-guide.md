@@ -98,7 +98,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - **Easier docking.** You can make tiny throttle adjustments, half a notch, that mechanical cables can't reproduce.
 - **No cable wear.** Mechanical cables stretch and corrode over years; electronic signals don't.
 
-DTS is **standard** on the V8 250-400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175-225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
+DTS is **standard** on all current Verado models (V8 250-300 HP, V10 350-425 HP, and V12 600 HP) and is available on selected FourStroke and Pro XS configurations. If you're running a smaller engine, you likely have mechanical throttle and shift, and that's fine. Verify the exact model and serial before planning a control-system change.
 
 Worth retrofitting? Almost never on existing boats. [DTS retrofit involves changing the lever, the cables, the helm wiring](/blog/mercury-dts-retrofit-eligibility-2026), and possibly the engine's computer. New repower? Worth it on V8s.
 

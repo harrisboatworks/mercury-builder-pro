@@ -100,7 +100,7 @@ The serial-number window matters even when the family and horsepower appear on t
 
 There is no responsible way to turn a US or Australian dealer post into an HBW Canadian quote. Currency conversion does not account for the exact eligible product, Canadian program terms, dealer process, or any other work the visit requires.
 
-HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Call **905-342-2153** with a clear photo of the serial-number plate.
+HBW checks the engine family, model code, and serial number first. We then confirm the current Canadian upgrade price and any required shop work before booking. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 **Myth:** Mercury Boost adds horsepower.
 **Reality:** Boost does not add horsepower, top speed, or maximum RPM. It can improve mid-range and zero-to-top-speed acceleration on an eligible motor. Get the price for the exact serial number instead of relying on an online range.
@@ -192,7 +192,7 @@ No. Mercury's June 2026 documentation lists the Racing 150R but not the 200R, 25
 
 ### How much does Boost cost in Canada?
 
-HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms current Canadian pricing after checking the exact engine family, model code, and serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 ### Did Mercury Boost win an award?
 

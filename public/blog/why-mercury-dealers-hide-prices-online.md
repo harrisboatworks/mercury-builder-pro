@@ -159,7 +159,7 @@ Active promotional rates and package incentives are reflected in the live quote 
 
 ### Can I trust online pricing if it's published?
 
-For HBW, yes. Pricing is verified annually after Mercury's July 1 model year change. The configurator pulls live data. We're a Mercury Premier dealer with 60 years of accountability, we don't bait-and-switch on published prices.
+For HBW, yes. Pricing is verified after Mercury's July 1 model-year change, and the configurator uses the current pricing data. We've been a Mercury dealer since 1965, and we don't bait-and-switch on published prices.
 
 ### What about delivery, taxes, and trade-in?
 

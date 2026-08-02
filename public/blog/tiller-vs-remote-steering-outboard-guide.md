@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-07-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Tiller motors suit boats under 16 ft, kicker use, solo fishing. Remote steering works for console boats, family use, and larger setups."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-08-02
+date_modified: 2026-07-09
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-07-09  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 
@@ -198,7 +198,7 @@ Tiller is not harder to learn, it's different. The main adjustment is that tille
 
 ### What's the biggest Mercury motor available in tiller configuration?
 
-Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. For a 16-18ft aluminum V-hull on Rice Lake, the Mercury 60HP EFI FourStroke in tiller with the standard gearcase is the usual choice; Command Thrust is for pontoons and specific workboat applications.
+Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.
 
 ### Can I have both tiller and remote steering on the same outboard motor?
 

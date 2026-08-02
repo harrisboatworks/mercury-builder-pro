@@ -8,7 +8,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-08-01',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
@@ -128,7 +128,7 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 
 Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
 
-**Consejo práctico:** Si usas el bote menos de 30 días al año, la renta puede ser más económica que la propiedad. Nuestras 9 embarcaciones de renta en Harris Boat Works generaron 346 rentals en 2025. Llama o consulta en harrisboatworks.ca para disponibilidad y tarifas.
+**Consejo práctico:** No existe un número universal de días para decidir entre rentar y comprar. Compara la tarifa vigente del bote que usarías con tus costos reales de seguro, almacenamiento, mantenimiento e invernización. Consulta la flota, las tarifas y la disponibilidad actuales y reserva en línea en harrisboatworks.ca/rentals.
 
 ---
 
@@ -197,7 +197,7 @@ harrisboatworks.ca
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-01',
     publishDate: '2026-04-12',
     category: 'Pesca',
     readTime: '12 min',
@@ -296,9 +296,7 @@ Las licencias se compran en línea (ontario.ca), en tiendas de artículos deport
 
 ## Renta de botes en Harris Boat Works
 
-Si no tienes embarcación propia, Harris Boat Works renta botes por día en Rice Lake. Nuestra flota incluye **9 embarcaciones** (pontones de 20, 24 pies, V-hulls de 16 pies), todas equipadas y listas para salir.
-
-En 2025 realizamos **346 rentas** con ingresos brutos de $119,000 CAD, hay demanda real, y en temporada alta los fines de semana se reservan con anticipación.
+Si no tienes embarcación propia, Harris Boat Works renta botes en Rice Lake. La lista actual en línea incluye 20 Transporter, 23 Cruise, 24 Transporter, el pontón Halo y botes 16 ProSport. La disponibilidad, la capacidad, el equipo y las tarifas cambian según el bote y la fecha; consulta y reserva en harrisboatworks.ca/rentals.
 
 También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol (E10) del combustible de gasolinera puede causar separación de fases en sistemas de combustible marinos, nuestro combustible evita ese problema. No enviamos a nuestros clientes a otro lugar por combustible sin etanol.
 

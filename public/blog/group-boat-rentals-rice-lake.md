@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake.md
-last_updated: 2026-07-27
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Day
 description: "Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-07-27
+date_modified: 2026-08-02
 keywords: ["group boat rental rice lake","family reunion boat rental ontario","rent multiple boats","pontoon rental for large group","fishing weekend boat rental kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,15 +24,15 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last updated:** 2026-07-27  
+**Last updated:** 2026-08-02  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 
 # Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out
 
-> **Quick answer:** For groups bigger than one boat's capacity, book two or more boats and run them together; it's a normal summer setup here. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book the fleet at harrisboatworks.ca/rentals.
+> **Quick answer:** For groups bigger than one boat's capacity, check current availability for two or more boats and plan to run them together. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book online at harrisboatworks.ca/rentals.
 
-Every July, some brave soul organizes the family reunion. Twenty-two people, four coolers, one group chat that's been chaos since March.
+Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.
 
 The good news: [a multi-boat day on Rice Lake](/blog/rice-lake-boat-rental-guide-2026) is one of the easiest big-group activities to actually pull off, because the lake does the entertaining and the dock setup is simple.
 
@@ -48,11 +48,11 @@ Family reunions, cottage weekends with two or three families, fishing trips with
 
 ## The Three Rules That Surprise Group Organizers
 
-**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. Twelve people can't "mostly fit" on one pontoon. The fix is simple: book two boats. Groups do it all summer.
+**1. Capacity is per boat, and it's a hard limit.** Every boat has a rated capacity and we hold to it. Twelve people can't "mostly fit" on a boat whose posted capacity is lower. Check each live listing and book enough capacity for the full group.
 
 **2. Everyone on site is on a boat.** We can't host a shore party: no extra people hanging out on the property beyond your boats' capacity while others cruise. If grandma's coming, grandma gets a (great) seat on the pontoon. Plan boat seats for every single person attending.
 
-**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. The online course takes about 3 hours, so get every designated driver through it the week before: [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat), code HARRIS15 for 15% off. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
+**3. Every boat needs its own licensed driver.** One boating licence doesn't cover a convoy. Each boat's driver shows photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat); get every designated driver through it before rental day. Details in [our licence guide](/blog/boat-rental-licence-ontario-guide).
 
 ---
 
@@ -62,12 +62,12 @@ Mix boats by what each sub-group wants to do:
 
 | Group | Boats to book | Why |
 |---|---|---|
-| Big family day (10 to 16) | Two cruise pontoons | Everyone swims, cruises, anchors together for lunch |
-| Fishing weekend (4 to 8) | Two ProSport fishing boats, or one plus a fishing pontoon | Split up, hit different spots, compare catches at dinner |
+| Group above one boat's posted capacity | Enough currently available boats for the full headcount | Everyone swims, cruises, and anchors together for lunch |
+| Fishing weekend | Currently available ProSport or fishing-pontoon options | Match each sub-group to a live listing and posted capacity |
 | Two-family cottage crew | One cruise pontoon + one fishing boat | Anglers leave at 8 am, families launch at 10 |
 | Reunion with elders and toddlers | Cruise pontoons | Stable, shaded, easy boarding, room for the stroller crowd |
 
-Every pontoon has a Bluetooth stereo; every boat carries fitted life jackets for your whole roster, kid sizes included. Live availability for the whole fleet is in the [booking system](https://harrisboatworks.ca/rentals); summer weekends book out, so lock multiple boats in early.
+The live booking system lists the equipment for each pontoon. Every boat carries fitted life jackets for your whole roster, kid sizes included. Check current multi-boat availability in the [booking system](https://harrisboatworks.ca/rentals).
 
 ---
 
@@ -77,7 +77,7 @@ Every pontoon has a Bluetooth stereo; every boat carries fitted life jackets for
 - **Pick a lunch anchorage before you launch.** "Meet at the west end around noon" beats fourteen phone calls from the middle of the lake. Your dock orientation includes a lake map; mark it together.
 - **Convoy through the marked passes.** The old rail causeway between Harwood and Hiawatha hides rock just under the surface, and the buoyed passes are the only way through. Lead boat goes first, everyone follows the same line.
 - **Trade passengers at anchor, not underway.** Kids always want to switch boats. The lunch anchorage is the time.
-- **Agree on a hard return time.** Boats need to be back, unloaded, and cleared by the return time on the agreement, because late returns run $5 a minute, per boat.
+- **Agree on a hard return time.** Boats need to be back, unloaded, and cleared by the return time on the agreement. Late charges follow the current signed rental terms and apply per boat.
 
 ---
 
@@ -99,7 +99,7 @@ For reunions based at a rented cottage, multi-day rentals change the game: keep 
 
 ## What HBW checks before your group leaves the dock
 
-Group send-offs get the same treatment as every rental, multiplied: every boat fuelled and checked that morning, life jackets fitted to every person on your roster (we help sort the kid sizes), safety kits counted per boat, and each driver gets the orientation, the map, and the causeway briefing. We've been launching family gatherings onto this lake since 1947; the ten minutes at the dock is why group days end with plans for next year instead of stories about the rocks.
+Group send-offs follow the current rental process for each boat: life jackets are fitted to every person on the roster, the required safety equipment stays with each boat, and every driver gets the boat orientation, lake map, and causeway briefing. Harris Boat Works has served boaters on Rice Lake since 1947.
 
 ---
 
@@ -108,7 +108,6 @@ Group send-offs get the same treatment as every rental, multiplied: every boat f
 Get your headcount, pick your boats, and get each driver licensed this week. The group chat will doubt you; the photos will vindicate you.
 
 **Book online:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
-**Planning a big group? Text:** [647-952-2153](sms:+16479522153) **or call:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ---
@@ -122,7 +121,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
 
 ### Can we rent multiple boats at once on Rice Lake?
 
-Yes, and groups do it all summer. Book each boat in the [online system](https://harrisboatworks.ca/rentals); reserve early for July and August weekends. Each boat needs its own licensed adult driver with photo ID at check-in.
+Yes, subject to current availability. Book each boat in the [online system](https://harrisboatworks.ca/rentals). Each boat needs its own licensed adult driver with photo ID at check-in.
 
 ### How many people fit on a rental pontoon?
 
@@ -138,7 +137,7 @@ Yes. Multi-day rentals can stay at your cottage dock for the duration, and you c
 
 ### Do we need a licence for every boat we rent?
 
-Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. The online course takes about 3 hours at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat) (HARRIS15 saves 15%). Non-Canadian visitors complete a renter's checklist waiver instead.
+Yes, one licensed driver per boat, each showing photo ID and proof of competency at check-in. An online course is available at [myboatcard.com/card/harrisboat](https://myboatcard.com/card/harrisboat). Non-Canadian visitors complete a renter's checklist waiver instead.
 
 ### Can we bring alcohol for a celebration on the water?
 

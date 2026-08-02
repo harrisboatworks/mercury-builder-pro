@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/catalog.md
-last_updated: 2026-07-30
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -191,7 +191,7 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md)
 - [Ordering Your Mercury: What to Expect](https://www.mercuryrepower.ca/blog/mercury-ordering-process.md)
 - [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md)
-- [Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us](https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md)
+- [Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You](https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md)
 - [Why Mercury Dominates the Outboard Market in 2026](https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md)
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario.md)
 - [Mercury Avator Electric Outboards: Cost & Range (Canada)](https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md)
@@ -386,6 +386,11 @@ Complete AI-readable guide index. Full blog index (HTML) at https://www.mercuryr
 - [安省船主冬季保养和冬储清单：第一次过冬怎么做 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese.md)
 - [多伦多华人第一次租船钓鱼：证件、安全和当天流程 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide.md)
 - [PCOC、PCL、钓鱼证区别：安省新手别搞混 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/pcoc-pcl-fishing-licence-difference-ontario.md)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做 [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/ontario-boat-winterization-guide-chinese.md)
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程 [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide.md)
+- [PCOC、PCL、釣魚證區別：安省新手別搞混 [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario.md)
+- [GTA → 萊斯湖 一日遊地圖（繁體版） [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan.md)
+- [GTA 華人萊斯湖買船完整指南（繁體版） [zh-Hant]](https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide.md)
 - [Guía completa para comprar un bote en Ontario [es]](https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario.md)
 - [Guía de pesca en Rice Lake, Ontario [es]](https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md)
 - [Guía de preparación invernal para motores Mercury en Ontario [es]](https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury.md)

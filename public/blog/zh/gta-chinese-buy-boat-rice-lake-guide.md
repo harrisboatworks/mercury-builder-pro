@@ -151,7 +151,7 @@ whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船�
 
 如果你想深入了解 Pro XS 和 FourStroke 的差别，我们有 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta) 可以参考。
 
-**Legend 浮筒船：** HBW 是安省 Legend 的合作伙伴，Legend 是加拿大本地制造的 pontoon 品牌，配 Mercury 原厂动力。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
+**Legend 浮筒船：** HBW 是 Legend 经销商。Legend 是一家总部位于安大略省 Whitefish 的加拿大公司，船只为加拿大水域设计，并由美国合同制造商生产。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
 
 ---
 
