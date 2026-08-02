@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Brampton Ontario HBW"
 description: "Mercury Premier dealer near Brampton: Harris Boat Works on Rice Lake, 95 minutes northeast. Repower, sales, parts, winter storage for Brampton, Caledon."
 category: "Service Area"
 date_published: 2026-05-11
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["mercury dealer brampton","mercury repower brampton","mercury outboard brampton ontario","boat motor dealer brampton caledon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service Area  
 **Published:** 2026-05-11  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-brampton-ontario-hbw
 
@@ -50,7 +50,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 ## Why Brampton Customers Call Us First
 
-The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.t.
+The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
 
 Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 
@@ -58,11 +58,11 @@ Our quote builder fixes that. Real installed pricing, motor, rigging, and instal
 
 A repower isn't a parts swap. It's a rigging job. The motor, the controls, the throttle and shift cables, the prop selection, the integration with your existing electronics, all of it has to be right for the motor to perform the way Mercury designed it. A repower done hastily or without the right rigging conversation is a repower you'll notice on the water.
 
-We've been doing repowers on Rice Lake since 1947. The rigging conversation is as important to us as the motor sale.
+The rigging conversation is as important to us as the motor sale.
 
 ## Mercury Premier, What It Means in Practice
 
-Premier is Mercury's top dealer tier. It means we carry deeper parts inventory, have more advanced technical training, and hold full warranty authorization. For most standard motor sales, the tier difference won't be visible. For complex repowers, unusual rigs, warranty claims, or technical issues after the sale, it's the difference between a quick resolution and a waiting game.
+Premier status reflects Mercury service, training, customer-satisfaction, and facility standards. For most standard motor sales, the difference may not be obvious. It matters more on complex repowers, unusual rigs, warranty claims, and technical issues after the sale.
 
 ---
 
@@ -114,7 +114,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 You see the price before you make the drive. We have the rigging conversation before we order anything. We do the job right. You get on the water with a motor that performs the way it's supposed to.
 
-No fog machine. No runaround. Since 1947.
+No fog machine. No runaround.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)

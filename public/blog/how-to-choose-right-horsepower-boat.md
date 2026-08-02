@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Boat Horsepower"
 description: "How to pick the right outboard horsepower for your boat: read the capacity plate, aim for 70 to 90 percent of the max, and avoid the underpowering trap."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 
 ---
 
-> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Start with your boat's capacity plate. That number is the manufacturer's maximum recommended safe limit. Exceeding it creates compliance, insurance, liability, safety, and potential warranty problems. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -46,7 +46,7 @@ language: en-CA
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
-Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the legal ceiling.
+Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the manufacturer's maximum recommended safe limit.
 
 ## The one thing most people get wrong on horsepower
 
@@ -72,7 +72,7 @@ Six variables move the right HP for your specific boat:
 
 **Where you launch and run.** Sheltered bays on a small Kawartha lake are different from Lake Ontario open water or a breezy afternoon on Rice Lake. Bigger water punishes underpowering in ways that feel dangerous, not just slow.
 
-**The capacity plate.** This is the legal and warranty-backed ceiling. We will not rig a motor that exceeds it, full stop.
+**The capacity plate.** This is the manufacturer's maximum recommended safe limit. Exceeding it can create compliance, insurance, liability, safety, and warranty problems. We will not rig a motor that exceeds it, full stop.
 
 **How long you plan to keep the boat.** If you're keeping this hull for 15 years, a bigger motor makes more sense than if you're planning to sell in three.
 
@@ -164,7 +164,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 **1. Buying too small to save money.** We've watched customers fight a 9.9 HP on a 16-foot boat that needed a 25. They trade up two seasons later at full price. The savings disappear.
 
-**2. Going over the capacity plate.** A 250 HP on a hull rated for 150 HP is illegal, unsafe, and void of warranty. Mercury won't cover it. Your insurance may not either. The motor also outpowers the hull and feels wrong.
+**2. Going over the capacity plate.** A 250 HP motor does not belong on a hull rated for 150 HP. It exceeds the manufacturer's maximum recommended safe limit, compromises handling, and creates compliance, insurance, liability, and potential warranty problems. We will not rig it.
 
 **3. Buying for one use and ignoring the rest.** "I just need it for fishing" is fine until your kids want to tube next summer. Think through the full use case before you buy.
 

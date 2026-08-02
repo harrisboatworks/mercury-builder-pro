@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Honda to Mercury Repower: Ontario Guide"
 description: "Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Premier dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
 
@@ -72,7 +72,7 @@ Honda and Mercury both use different proprietary control architectures. [None of
 | 40-60 HP | $7,000-$10,500 | $1,400-$2,200 | $11,500-$16,000 |
 | 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
 | 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250 HP (Honda BF250 to Mercury) | $24,500-$26,000 | $2,800-$4,200 | $34,000-$43,000 |
+| 250 HP (Honda BF250 to Mercury) | [See live pricing](/pricing-reference) | $2,800-$4,200 | Quote the complete installation for the specific boat |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人船驾照（PCL）+ 安省钓鱼证完整办理指南"
 description: "多伦多华人办理加拿大 Pleasure Craft Operator Card（PCL）船驾照与安省钓鱼证完整流程：考试、费用、有效期、Rice Lake 钓鱼规则、罚款风险，来自 Harris Boat Works。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-08-02
 keywords: ["PCL 船驾照","加拿大船驾照中文","Pleasure Craft Operator Card 华人","安省钓鱼证","Ontario 钓鱼证 中文","Rice Lake 钓鱼规则","GTA Chinese boating licence"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**Last updated:** 2026-05-15  
+**Last updated:** 2026-08-02  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 
@@ -107,7 +107,7 @@ step5Label: 了解每个湖的鱼种规则
 step5Question: 你是否清楚目标湖的禁渔期, 大小限制和每日限额?
 step5Tip: 莱斯湖, Kawarthas, Lake Simcoe 各有不同规则。每年下载 Ontario Fishing Regulations Summary, 出门前查一遍。
 escalationLabel: 不确定哪些证件适合你?
-escalationBody: 来 HBW 提车时可以一并问清楚。Mandarin 服务可用, 电话 (905) 342-2153。
+escalationBody: 我们专门为华人朋友准备了这些中文指南——因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务，不过别担心——欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 ::
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）
