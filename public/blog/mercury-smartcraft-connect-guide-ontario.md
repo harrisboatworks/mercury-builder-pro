@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury SmartCraft Connect Guide 2026"
-description: "Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows."
+title: "Mercury SmartCraft Connect: Features, App & Installation"
+description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
 date_modified: 2026-08-02
@@ -18,9 +18,9 @@ content_type: blog_article
 language: en-CA
 ---
 
-# Mercury SmartCraft Connect Guide 2026
+# Mercury SmartCraft Connect: Features, App & Installation
 
-> Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows.
+> See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  

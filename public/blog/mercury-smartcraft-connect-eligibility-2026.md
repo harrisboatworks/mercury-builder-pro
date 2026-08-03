@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury SmartCraft Connect Eligibility 2026"
-description: "Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect."
+title: "Will SmartCraft Connect Work With My Mercury? Eligibility Check"
+description: "Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check."
 category: "Mercury Technology"
 date_published: 2026-05-27
 date_modified: 2026-08-02
@@ -18,9 +18,9 @@ content_type: blog_article
 language: en-CA
 ---
 
-# Mercury SmartCraft Connect Eligibility 2026
+# Will SmartCraft Connect Work With My Mercury? Eligibility Check
 
-> Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect.
+> Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check.
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-27  

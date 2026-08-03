@@ -666,8 +666,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-smartcraft-connect-eligibility-2026",
-    "title": "Mercury SmartCraft Connect Eligibility 2026",
-    "description": "Check if your Mercury outboard works with SmartCraft Connect. Covers FourStroke, Pro XS, Verado, SeaPro, 25-30 HP, Avator, and motors that won't connect.",
+    "title": "Will SmartCraft Connect Work With My Mercury? Eligibility Check",
+    "description": "Check SmartCraft Connect compatibility by Mercury engine family and model year, including the motors that need a serial-number check.",
     "category": "Mercury Technology",
     "publishDate": "2026-05-27",
     "keywords": [
@@ -1253,17 +1253,17 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "best-mercury-outboard-rice-lake-fishing",
-    "title": "Best Mercury for Rice Lake Fishing 2026",
-    "description": "A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup.",
+    "title": "Best Mercury Outboard Setup for Rice Lake Fishing",
+    "description": "Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish.",
     "category": "Buying Guide",
     "publishDate": "2026-02-09",
     "keywords": [
-      "rice lake fishing guide",
-      "rice lake walleye",
-      "rice lake fishing regulations 2026",
-      "rice lake muskie",
+      "best mercury outboard rice lake",
+      "rice lake fishing boat setup",
       "mercury 9.9 prokicker walleye",
-      "best mercury outboard rice lake fishing"
+      "rice lake repower",
+      "outboard and kicker setup",
+      "rice lake fishing motor"
     ],
     "faqs": [
       {
@@ -2204,8 +2204,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "2026-rice-lake-fishing-season-outlook",
-    "title": "Rice Lake Ontario Fishing Guide 2026",
-    "description": "An honest 2026 guide to fishing Rice Lake, Ontario: species, seasons, FMZ 17 regulations, top spots and the right boat setup.",
+    "title": "Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions",
+    "description": "Plan a 2026 Rice Lake fishing trip with current FMZ 17 season context, an honest species outlook, local hazards, and seasonal conditions.",
     "category": "Lifestyle",
     "publishDate": "2026-02-06",
     "keywords": [
@@ -2462,8 +2462,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "best-mercury-outboard-lake-ontario-salmon-trout",
-    "title": "Best Mercury for Lake Ontario Salmon",
-    "description": "Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells.",
+    "title": "Best Mercury Outboard for Lake Ontario Salmon & Trout",
+    "description": "Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions.",
     "category": "Fishing & Local",
     "publishDate": "2026-04-22",
     "keywords": [
@@ -2767,8 +2767,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "boat-hull-replacement-vs-repower-decision",
-    "title": "Boat Hull Replacement vs Repower: The Honest Decision (2026)",
-    "description": "For most Ontario boats under 20 years old with a sound, dry hull, repowering wins on cost: a new Mercury delivers 80% of the new-boat experience for half.",
+    "title": "Is Your Boat Hull Worth Repowering? A Structural Checklist",
+    "description": "Check the transom, floor, stringers, hull damage, layout, steering, and rigging before deciding whether an older boat is worth repowering.",
     "category": "Repower",
     "publishDate": "2026-04-29",
     "keywords": [
@@ -2779,19 +2779,19 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "When should I repower my boat instead of buying a new one?",
-        "a": "Repower your boat when the hull is structurally sound and the main problem is an aging or unreliable motor. Specifically: if the transom is firm with no moisture penetration, the floor has no soft spots, the hull's max HP rating supports the motor you want, and the overall boat is in serviceable condition, a repower a…"
+        "a": "Repower when the hull is structurally sound, the boat still fits the owner's use, and the motor is the main problem. Compare complete current written scopes after the transom, floor, stringers, hull, steering, fuel, electrical, rigging, and manufacturer power limit have been assessed."
       },
       {
         "q": "What is the 50% rule in boat repairs?",
-        "a": "The 50% rule is a practical guideline used in marine service: if the cost to repair a boat's hull or structural problems exceeds 50% of the value of an equivalent replacement boat, the economics generally favour buying a new or different boat rather than completing the repair. It's not a hard rule, sentimental value,…"
+        "a": "There is no universal percentage that decides every boat. Compare the complete repair-and-repower scope with a complete replacement quote, then account for the hull's condition, remaining systems, HST, trailer, financing, resale evidence, intended use, and how long you plan to keep it."
       },
       {
         "q": "How do I know if my boat's transom is rotting?",
-        "a": "Signs of transom rot or moisture damage include: a soft, spongy feeling when you press firmly on the transom with your thumb; visible delamination or separation at the transom cap or around hardware holes; motor mount bolts that have shifted, pulled, or allow visible flex when the motor is moved; water that drains fro…"
+        "a": "Visible cracking, separation, corrosion, damaged fastener areas, unexplained moisture, movement at the mounting area, or a soft floor can justify further investigation, but a thumb press or photo is not a complete structural diagnosis. Have the transom and related structure assessed in person before committing to a mo…"
       },
       {
         "q": "Is a 20-year-old boat worth repowering?",
-        "a": "Yes, frequently. A 20-year-old boat with a structurally sound hull, firm transom, no stringer rot, and no major system failures is an excellent repower candidate. Fiberglass and welded aluminum hulls last decades when properly maintained; what wears out is typically the motor, not the hull. A sound 20-year-old hull wi…"
+        "a": "Possibly. Age alone neither approves nor disqualifies a boat. Inspect the transom, floor, stringers or framing, hull, mounting area, steering, fuel system, electrical system, and rigging, then compare the complete scope with the owner's intended use and time horizon."
       }
     ]
   },
@@ -4059,8 +4059,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-smartcraft-connect-guide-ontario",
-    "title": "Mercury SmartCraft Connect Guide 2026",
-    "description": "Mercury SmartCraft Connect Mobile for Ontario boaters: compatibility with 4-strokes 40 hp+ from 2004, install options, and what the Mercury Marine app shows.",
+    "title": "Mercury SmartCraft Connect: Features, App & Installation",
+    "description": "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.",
     "category": "Mercury Outboards",
     "publishDate": "2026-05-09",
     "keywords": [
@@ -4091,7 +4091,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "outdoor-boat-storage-shrinkwrap-rice-lake",
-    "title": "Outdoor Boat Storage Rice Lake",
+    "title": "HBW Outdoor Winter Boat Storage & Shrinkwrap",
     "description": "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter.",
     "category": "Service & Maintenance",
     "publishDate": "2026-05-10",
@@ -4959,8 +4959,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "boat-storage-kawartha-lakes",
-    "title": "Boat Storage Rice Lake Kawarthas",
-    "description": "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization.",
+    "title": "Kawartha Lakes Boat Storage: What to Compare Before Booking",
+    "description": "Compare outdoor, indoor, shrinkwrap, winterization, access, spring scope, and transport terms before choosing Kawartha boat storage.",
     "category": "Service & Maintenance",
     "publishDate": "2026-05-15",
     "keywords": [
@@ -5099,8 +5099,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "how-to-read-boat-capacity-plate-ontario",
-    "title": "How to Read Your Boat's Capacity Plate (Ontario Guide)",
-    "description": "What each field on your boat's capacity plate actually means, what Transport Canada requires, and the three mistakes Ontario boat buyers make most often.",
+    "title": "How to Read a Boat Capacity Plate in Ontario",
+    "description": "Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing.",
     "category": "Buying Guides",
     "publishDate": "2026-05-16",
     "keywords": [
@@ -5114,20 +5114,20 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "Is it legal to exceed the maximum horsepower on the capacity plate?",
-        "a": "On commercial vessels, no. On a personal pleasure craft in Ontario, technically there is no specific federal regulation criminalizing over-powering, but exceeding the rated max can void boat insurance, void motor warranty, and create civil liability if something goes wrong. Practically, no responsible dealer or instal…"
+        "q": "Can I install more horsepower than the compliance notice shows?",
+        "a": "Treat the listed engine power as the manufacturer's maximum recommended safe limit. Transport Canada uses that wording rather than calling it an automatic offence for every pleasure-craft situation. An overpowered setup may still create serious safety, insurance, warranty, financing, resale, and liability problems. Co…"
       },
       {
-        "q": "What if my plate is illegible or missing?",
-        "a": "For a missing plate, Transport Canada accepts a manufacturer-issued replacement (if the boat builder is still in business) or a marine surveyor's written assessment. For an illegible plate, contact the manufacturer with the HIN and ask for a replacement."
+        "q": "What if my compliance notice is illegible or missing?",
+        "a": "Contact the manufacturer or importer first. Transport Canada's 2026 Safe Boating Guide says they are responsible for supplying one for boats built after April 29, 2010. For an older boat whose builder cannot supply one, Transport Canada recommends a naval architect's assessment of safe operating limits. Section 811 al…"
       },
       {
         "q": "Does the plate cover the trailer too?",
-        "a": "No. The plate is for the boat only. Trailer capacity is a separate rating, marked on the trailer itself (typically on the tongue near the coupler). Trailer overload is a common cause of bearing and tire failure on Ontario highways. Worth checking both."
+        "a": "No. A boat compliance notice describes the vessel. The trailer has its own manufacturer ratings and identification. Check both before towing or loading."
       },
       {
         "q": "Are pontoons rated differently than V-hulls?",
-        "a": "The Compliance Notice format is the same, but pontoon ratings tend to be more generous on person count because of the wider, more stable platform. A 22-foot tritoon may be rated for 12-14 adults where a 22-foot V-hull cruiser is rated for 8-10. Always check the actual plate; do not assume."
+        "a": "The notice format follows the same Canadian rules, but the numbers are calculated for the specific model. Never transfer the capacity from a similar-looking pontoon, runabout, or fishing boat. Read the notice on the actual hull."
       }
     ]
   },
@@ -5767,8 +5767,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "repower-vs-new-boat",
-    "title": "Repower vs Buy New Boat: The Honest Math",
-    "description": "Should you repower or buy a new boat? Honest CAD math, hull condition checklist, and Ontario pricing from $11,000 CAD installed.",
+    "title": "Repower vs Buy New Boat: Compare the Total Cost",
+    "description": "Compare a boat repower with buying new using current quotes, HST, trailer and rigging needs, hull condition, financing, and how long you plan to keep it.",
     "category": "Buying Guide",
     "publishDate": "2026-05-25",
     "keywords": [
@@ -5782,7 +5782,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "When does repowering save money compared to buying new?",
-        "a": "Almost always, if the hull is sound. A Mercury repower at $11,000 to $40,000 CAD installed (2026 ranges) is typically a third to a quarter of the cost of a comparable new boat with a new motor. A comparable new package often adds another $25,000 to $50,000 over that. Repower keeps you in the boat you already know."
+        "a": "When the hull is suitable and the complete installed repower quote is lower than the complete replacement package for a boat that meets the same needs. Compare current written totals including HST, trailer, structural work, steering, controls, propeller, gauges, batteries, electronics, financing cost, trade value, and…"
       },
       {
         "q": "When does buying a new boat make more sense?",
@@ -5794,7 +5794,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How long does a Mercury motor last?",
-        "a": "A well-maintained Mercury FourStroke can run 1,500 to 2,500-plus hours of recreational use, which on Ontario seasonal boating means 15 to 25 years for many owners. That is why repower math is so favourable."
+        "a": "There is no honest universal hour or year promise. Service life depends on the engine family, maintenance, installation, load, corrosion, storage, use, and operating history. Use the serial-specific maintenance schedule and inspection evidence rather than a generic lifespan in the financial model."
       }
     ]
   },
@@ -6004,8 +6004,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "lake-ontario-salmon-mercury-setup-guide-2026",
-    "title": "Lake Ontario Salmon Mercury Setup",
-    "description": "Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20.",
+    "title": "Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control",
+    "description": "Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing.",
     "category": "Fishing / Rigging",
     "publishDate": "2026-05-28",
     "keywords": [
@@ -6176,8 +6176,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "repower-horsepower-capacity-plate-guide",
-    "title": "Capacity Plate and Repower HP: What's Allowed",
-    "description": "How to read your boat's capacity plate before a repower: max HP rules, what's legal in Ontario, insurance implications, and smart HP choices.",
+    "title": "How to Choose Repower Horsepower From Your Capacity Plate",
+    "description": "Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing.",
     "category": "Repower",
     "publishDate": "2026-06-06",
     "keywords": [
@@ -6189,16 +6189,16 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "Where is the capacity plate on my boat?",
-        "a": "Every recreational powerboat in Canada built after 1982 is required to have a capacity plate, typically mounted in a visible spot near the helm or transom, on the dash, the gunwale, or the interior transom area. It lists maximum horsepower, maximum weight capacity, and maximum persons capacity."
+        "q": "Where is the compliance notice on my boat?",
+        "a": "Look for a permanently attached Canadian compliance notice visible from the operating position, commonly near the helm, gunwale, or interior transom. On an outboard-powered pleasure craft up to 6 metres, it includes recommended maximum safe engine power, people, and load limits."
       },
       {
-        "q": "Can I put a bigger motor on my boat than the capacity plate says?",
-        "a": "No. The maximum horsepower on the capacity plate is the legal ceiling, not a suggestion. In Canada, exceeding it can void your insurance, create liability exposure, and in some cases violate Transport Canada regulations."
+        "q": "Can I put a bigger motor on my boat than the notice shows?",
+        "a": "Do not treat an existing oversized motor or an internet example as approval. The listed engine power is the manufacturer's recommended maximum safe limit. Exceeding it can create safety, insurance, warranty, liability, financing, and resale problems. Verify the exact hull documentation and policy terms before changing…"
       },
       {
-        "q": "Should I always repower to the maximum rated horsepower?",
-        "a": "Not necessarily. Maximum rated horsepower means the hull was engineered to handle that power, not that it's the right choice for your use, fuel costs, or your hull's actual condition. Transom condition, how you use the boat, and the heavier weight of modern four-strokes all matter. Harris Boat Works matches the motor…"
+        "q": "Should I always repower to the maximum listed horsepower?",
+        "a": "No. The listed maximum is a limit, not a target. Motor weight, transom condition, steering, rigging, typical load, water, performance needs, and the manufacturer's approved range all affect the right choice."
       }
     ]
   },
@@ -6444,7 +6444,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Can I put a 115 hp engine on a boat rated for 90 hp?",
-        "a": "No. Never exceed the maximum horsepower rating on your boat's capacity plate. Doing so is illegal under Canadian regulations, voids your insurance, and creates a serious safety risk. If your boat is rated for a 90 hp maximum, you must choose a 90 hp outboard."
+        "a": "Treat 90 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. Do not use an oversized existing setup as approval. A 115 HP setup can create serious safety, insurance, warranty, liability, financing, and resale problems."
       },
       {
         "q": "Is the Mercury 115 FourStroke just a tuned 90?",
