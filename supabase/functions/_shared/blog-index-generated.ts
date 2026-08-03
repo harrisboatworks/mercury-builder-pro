@@ -2697,7 +2697,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What are the best boat launches on Rice Lake?",
-        "a": "Rice Lake has several launch options, including Gores Landing near Harris Boat Works, Bewdley and Hastings. Facilities, parking and access rules can change, so check the current municipal page and posted signs before towing. Serpent Mounds is not a public launch; Hiawatha First Nation says the site has remained closed…"
+        "a": "Rice Lake has several launch options, including Gores Landing near Harris Boat Works, Bewdley and Hastings. Facilities, parking and access rules can change, so check the [current Township of Hamilton waterfront page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and posted…"
       },
       {
         "q": "How do I prepare my boat trailer before a long drive?",

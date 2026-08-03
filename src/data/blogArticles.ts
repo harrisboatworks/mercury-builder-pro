@@ -16665,7 +16665,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
       },
       {
         question: 'What are the best boat launches on Rice Lake?',
-        answer: 'Rice Lake has several launch options, including Gores Landing near Harris Boat Works, Bewdley and Hastings. Facilities, parking and access rules can change, so check the current municipal page and posted signs before towing. Serpent Mounds is not a public launch; Hiawatha First Nation says the site has remained closed to the public since 2009.'
+        answer: 'Rice Lake has several launch options, including Gores Landing near Harris Boat Works, Bewdley and Hastings. Facilities, parking and access rules can change, so check the [current Township of Hamilton waterfront page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and posted signs before towing. Serpent Mounds is not a public launch; [Hiawatha First Nation says the site has remained closed to the public since 2009](https://www.hiawathafirstnation.com/business-tourism/serpent-mounds/).'
       },
       {
         question: 'How do I prepare my boat trailer before a long drive?',
@@ -16689,7 +16689,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
       },
       {
         question: 'Can I leave my trailer at the boat launch overnight?',
-        answer: 'Do not assume overnight trailer parking is allowed at a public launch. Check the current municipality page and posted signs because parking and seasonal rules can change. At Harris Boat Works, storage or service customers can include trailer-parking needs in the service request before drop-off.'
+        answer: 'Do not assume overnight trailer parking is allowed at a public launch. Check the [current Township of Hamilton waterfront page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and posted signs because parking and seasonal rules can change. At Harris Boat Works, storage or service customers can include trailer-parking needs in the service request before drop-off.'
       },
       {
         question: 'What should I check on my outboard before trailering?',

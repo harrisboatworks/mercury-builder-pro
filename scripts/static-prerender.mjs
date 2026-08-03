@@ -2758,7 +2758,14 @@ function blogArticleSchema(article) {
         { "@type": "Organization", "name": "Mercury Marine" },
         ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
       ],
-      ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
+      ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {}),
+      ...(Array.isArray(article.citations) && article.citations.length > 0 ? {
+        "citation": article.citations.map(citation => ({
+          "@type": "CreativeWork",
+          "name": sanitizeSchemaText(citation.name),
+          "url": citation.url,
+        }))
+      } : {})
   };
 
   const graph = [articleNode, ...(mentionsRiceLake ? [riceLakePlace] : []),

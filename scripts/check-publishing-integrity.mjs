@@ -78,9 +78,10 @@ check(
 check(
   /socialImage\?: string/.test(blogArticles) &&
     /article\.socialImage \|\| article\.image/.test(prerenderScript) &&
+    /Array\.isArray\(article\.citations\)/.test(prerenderScript) &&
     /mercury-oil-capacity-lookup-hbw-social\.png/.test(blogArticles) &&
     /mercury-maintenance-schedule-100-300-hbw-social\.png/.test(blogArticles),
-  'SVG-led blog articles must retain raster social-preview support in source and prerender output.',
+  'Blog prerender output must retain raster social-preview and citation support.',
 );
 check(
   !/hreflang="zh-CA"/.test(prerenderScript),
