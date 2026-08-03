@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario.md
-last_updated: 2026-07-30
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Five Boat Problems That Get Expensive When You Keep Running"
 description: "Five Mercury outboard warning signs Ontario boaters should not run through, plus the safe response and service details that support a sound diagnosis."
 category: "Service"
 date_published: 2026-06-10
-date_modified: 2026-07-30
+date_modified: 2026-08-02
 keywords: ["Mercury service","outboard warning signs","boat repair Ontario","Mercury alarm","outboard vibration"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-06-10  
-**Last updated:** 2026-07-30  
+**Last updated:** 2026-08-02  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
 
@@ -113,7 +113,7 @@ Avoid a shopping list of parts based on forum guesses. â€œReplace the fuel pumpâ
 
 ## What We See at HBW
 
-Our 2025 records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
+The useful pattern is not that every warning has one favourite cause. It is that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed, and when it started.
 
 Around Rice Lake and the Kawarthas, getting those details before the boat reaches Gores Landing can save a lot of backtracking. A clear symptom history helps us test the right system first instead of replacing parts on a guess.
 
@@ -154,7 +154,6 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
 
 ## Sources
 
-- Harris Boat Works 2025 service records: 507 customer-paid service jobs
 - [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
 - [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)

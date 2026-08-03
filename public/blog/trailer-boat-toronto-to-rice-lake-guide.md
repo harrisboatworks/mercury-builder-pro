@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trailering a Boat: Toronto to Rice Lake"
 description: "A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
 category: "How To"
 date_published: 2026-04-26
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** How To  
 **Published:** 2026-04-26  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
 
@@ -195,7 +195,7 @@ It depends on the launch. County-run ramps in Northumberland (Bewdley, Harwood) 
 
 ### What should I check on my outboard before trailering?
 
-Before trailering, ensure the outboard is tilted fully up and the tilt lock engaged to prevent motor bounce on the road. Reinstall the engine flush plug if you flushed the motor. Make sure the motor support bracket or transom saver is in place for trips over an hour, road vibration transmits through the transom, and a transom saver distributes that load across the trailer rather than the transom. If the motor hasn't run yet this season, check our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch. Our spring startup service averages about $511 based on 232 jobs completed last season, it's worth having it done before the first long haul.
+Use the trailering position and support method specified for your exact Mercury model and trailer; do not assume one tilt-lock or transom-saver rule fits every rig. Confirm the engine is secured, steering cannot swing freely, the propeller has road clearance, and any flush plug is reinstalled. If the motor has not run this season, work through our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch.
 
 ## Related guides
 
