@@ -89,7 +89,7 @@ const unsupportedOperationalClaims = [
   {
     label: 'unsupported capacity-plate legal or automatic-coverage claim',
     pattern:
-      /\b(?:capacity plate|compliance notice)[^\n]{0,240}\b(?:legal ceiling|illegal in Canada|illegal under Canadian regulations|(?:voids|invalidates) (?:your |the )?(?:insurance|warranty))\b/i,
+      /\b(?:capacity plate|compliance notice)[^\n]{0,240}\b(?:legal ceiling|illegal(?: in Canada| under Canadian regulations)?|void of warranty|Mercury won['’]?t cover|(?:voids|invalidates) (?:your |the )?(?:insurance|warranty))\b/i,
   },
   {
     label: 'incorrect universal capacity-plate claim',
@@ -124,6 +124,16 @@ const unsupportedOperationalClaims = [
     label: 'closed Serpent Mounds public-launch or parking recommendation',
     pattern:
       /Serpent Mounds[^\n.]{0,160}\b(?:maintained (?:boat )?ramp|day-use fees?|overnight (?:trailer )?parking)\b/i,
+  },
+  {
+    label: 'stale Honda-to-Mercury static price or lineup claim',
+    pattern:
+      /(?:\$24,500\s*(?:-|–)\s*\$26,000|Honda lineup ends at BF250|three times Honda['’]s dealer footprint|need 300\+ HP)/i,
+  },
+  {
+    label: 'contradictory Command Thrust recommendation for an aluminum V-hull',
+    pattern:
+      /60\s*HP EFI Command Thrust[^\n.]{0,100}16\s*(?:-|–)\s*18\s*ft aluminum/i,
   },
 ] as const;
 
@@ -201,6 +211,18 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
   'trailer-boat-toronto-to-rice-lake-guide': [
     /Serpent Mounds is not a public launch/i,
     /remained closed to the public since 2009/i,
+  ],
+  'honda-to-mercury-repower-ontario-guide': [
+    /Honda currently builds through the BF350 V8/i,
+    /live Mercury pricing reference/i,
+    /Above Honda's current 350 HP range/i,
+  ],
+  'tiller-vs-remote-steering-outboard-guide': [
+    /16-18 ft planing aluminum V-hull[\s\S]{0,180}standard gearcase/i,
+  ],
+  'how-to-choose-right-horsepower-boat': [
+    /recommended maximum exceeds the manufacturer's safe engine-power limit/i,
+    /not accurate to describe every pleasure-craft case as an automatic blanket warranty void/i,
   ],
 };
 
