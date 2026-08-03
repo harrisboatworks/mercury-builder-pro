@@ -16,13 +16,13 @@ availability: special_order
 price_cad: 2999
 ---
 
-# Mercury 9.9 MH FourStroke Sale in Ontario
+# Mercury 9.9 MH FourStroke Outboard for Sale in Ontario
 
 **Ontario Price Leader: $2,999 CAD before HST.**
 
 New Mercury 9.9 MH FourStroke, exact model 1A10201LK. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. Available to order at Harris Boat Works in Gores Landing, Ontario.
 
-## Ontario price evidence
+## Mercury 9.9 outboard price in Ontario: $2,999 CAD
 
 At $2,999 CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our August 3, 2026 review. Advertised prices and availability change. Confirm the current written quote before travelling.
 Current Harris Boat Works pricing source: https://www.mercuryrepower.ca/pricing-reference
@@ -77,7 +77,7 @@ Your boat needs a 20-inch long shaft, electric start, remote steering, more than
 
 ## Frequently asked questions
 
-### What is the Mercury 9.9 MH sale price in Ontario?
+### How much is a new Mercury 9.9 outboard in Ontario?
 
 $2,999 CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.
 
@@ -85,9 +85,17 @@ $2,999 CAD before HST for new Mercury model 1A10201LK. Installation, rigging, an
 
 At $2,999 CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our August 3, 2026 review. Advertised prices and availability change, so confirm the current written quote before travelling.
 
+### Where can I buy a new Mercury 9.9 outboard for sale in Ontario?
+
+Harris Boat Works sells this new Mercury 9.9 MH for $2,999 CAD before HST from its Gores Landing, Ontario location. Start the online quote with model 1A10201LK selected or call 905-342-2153 to confirm price and ETA. Buyer pickup is required; the motor is not shipped.
+
 ### What does 9.9 MH mean?
 
 This is the manual-start, tiller-control Mercury 9.9 FourStroke with a 15-inch short shaft. The exact Mercury model number is 1A10201LK.
+
+### Does the Mercury 9.9 MH have EFI, and what does it weigh?
+
+Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and an approximate dry weight of 85 lb for this manual-start, short-shaft tiller configuration.
 
 ### What comes with the motor?
 
@@ -104,10 +112,6 @@ No. Mercury outboards are pickup-only at Harris Boat Works in Gores Landing, Ont
 ### Does $2,999 include HST or installation?
 
 No. The advertised motor price is in Canadian dollars before HST. Installation, rigging, controls, optional accessories, and any boat-specific work are extra.
-
-### How do I buy the Mercury 9.9 MH at this price?
-
-Start the online quote with this exact motor selected or call Harris Boat Works at 905-342-2153. We will confirm price, ETA, pickup requirements, and any installation needs before you commit.
 
 ## Public Quote API
 

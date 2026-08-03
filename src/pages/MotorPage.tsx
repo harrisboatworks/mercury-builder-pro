@@ -16,7 +16,10 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
 import { Mercury99MHSalePage } from '@/components/motors/Mercury99MHSalePage';
-import { buildMercury99MhFaqs } from '@/lib/mercury99MhSaleContent';
+import {
+  MERCURY_99_MH_ALTERNATE_NAMES,
+  buildMercury99MhFaqs,
+} from '@/lib/mercury99MhSaleContent';
 import { resolveMotorAvailability } from '@/lib/motorAvailability';
 import { SITE_URL } from '@/lib/site';
 import speedboatFallback from '@/assets/speedboat-transparent.png';
@@ -322,10 +325,9 @@ export default function MotorPage() {
   const isMercury99MhSale = modelNo === '1A10201LK' && price != null;
 
   if (isMercury99MhSale) {
-    const savings = motor.msrp && motor.msrp > price ? motor.msrp - price : null;
     const saleAvailability = resolveMotorAvailability(motor);
-    const saleTitle = `Mercury 9.9 MH Sale Ontario | ${formatCAD(price)} CAD | Harris Boat Works`;
-    const saleDescription = `Ontario price leader: Mercury 9.9 MH FourStroke model 1A10201LK for ${formatCAD(price)} CAD${savings ? `, save ${formatCAD(savings)} from MSRP` : ''}. Manual start, tiller, 15-inch shaft, battery-free EFI. ${saleAvailability.label}. Pickup in Gores Landing, Ontario.`;
+    const saleTitle = `Mercury 9.9 Outboard for Sale Ontario | ${formatCAD(price)} CAD`;
+    const saleDescription = `New Mercury 9.9 MH FourStroke for sale in Ontario at ${formatCAD(price)} CAD before HST. Manual start, 15-inch short shaft, battery-free EFI. ${saleAvailability.label}.`;
     const faqs = buildMercury99MhFaqs(price, saleAvailability);
     const faqSchema = {
       '@context': 'https://schema.org',
@@ -347,19 +349,20 @@ export default function MotorPage() {
           <title>{saleTitle}</title>
           <link rel="canonical" href={pageUrl} />
           <meta name="description" content={saleDescription} />
-          <meta property="og:title" content={`Mercury 9.9 MH Ontario Sale | ${formatCAD(price)} CAD`} />
+          <meta property="og:title" content={saleTitle} />
           <meta property="og:description" content={saleDescription} />
           <meta property="og:type" content="product" />
           <meta property="og:url" content={pageUrl} />
           <meta property="og:image" content={schemaImage} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={`Mercury 9.9 MH Ontario Sale | ${formatCAD(price)} CAD`} />
+          <meta name="twitter:title" content={saleTitle} />
           <meta name="twitter:description" content={saleDescription} />
           <meta name="twitter:image" content={schemaImage} />
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         </Helmet>
         <MotorPageSEO
           name="Mercury 9.9 MH FourStroke"
+          alternateNames={MERCURY_99_MH_ALTERNATE_NAMES}
           hp={9.9}
           family="FourStroke"
           shaft="15 inch"

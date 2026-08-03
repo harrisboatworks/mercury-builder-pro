@@ -149,10 +149,10 @@ export function Mercury99MHSalePage({
                 </div>
 
                 <h1 className="max-w-2xl font-display text-[42px] font-bold leading-[0.98] tracking-[-0.035em] text-white sm:text-5xl md:text-6xl lg:text-[70px]">
-                  Mercury 9.9 MH FourStroke Sale
+                  Mercury 9.9 MH FourStroke Outboard for Sale
                 </h1>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-white/72 md:text-xl">
-                  The manual-start, 15-inch tiller model Ontario boaters ask us for most, with battery-free EFI and a sale price built to win the comparison.
+                  A new manual-start, 15-inch short-shaft tiller model with battery-free EFI and a clearly published Ontario sale price.
                 </p>
 
                 <div className="mt-7 flex flex-wrap items-end gap-x-5 gap-y-2">
@@ -267,12 +267,12 @@ export function Mercury99MHSalePage({
 
         <section className="mx-auto max-w-[1180px] px-5 py-16 md:px-10 md:py-24 lg:px-12">
           <div className="mx-auto mb-12 max-w-3xl text-center">
-            <div className="text-xs font-bold uppercase tracking-[0.22em] text-repower-mercury-red">A clear motor-only offer</div>
+            <div className="text-xs font-bold uppercase tracking-[0.22em] text-repower-mercury-red">Mercury 9.9 price in Ontario</div>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.025em] text-repower-navy-900 md:text-5xl">
-              Know exactly what the sale includes
+              New Mercury 9.9 MH: {priceLabel} CAD
             </h2>
             <p className="mt-4 text-base leading-relaxed text-repower-navy-900/62 md:text-lg">
-              The price is designed to be easy to compare. Boat-specific installation and optional equipment stay separate until we know what your setup needs.
+              For Ontario buyers comparing the price of a new Mercury 9.9 outboard, this is the exact MH model 1A10201LK. It is the manual-start, short-shaft tiller, not the long-shaft MLH or the dedicated ProKicker. Boat-specific installation and optional equipment stay separate until we know what your setup needs.
             </p>
           </div>
 
@@ -445,7 +445,7 @@ export function Mercury99MHSalePage({
           <div className="mb-9 text-center">
             <div className="text-xs font-bold uppercase tracking-[0.22em] text-repower-mercury-red">Straight answers before you call</div>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.025em] text-repower-navy-900 md:text-5xl">
-              Mercury 9.9 MH sale FAQs
+              Mercury 9.9 price and sale FAQs
             </h2>
           </div>
           <Accordion type="single" collapsible className="rounded-2xl border border-repower-navy-900/10 bg-white px-5 shadow-sm md:px-7">

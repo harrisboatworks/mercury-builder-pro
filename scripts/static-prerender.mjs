@@ -3379,6 +3379,14 @@ function isVerifiedMotorImage(url) {
 
 const MERCURY_99_MH_MODEL_NO = '1A10201LK';
 const MERCURY_99_MH_PRICE_REVIEW_DATE = 'August 3, 2026';
+const MERCURY_99_MH_ALTERNATE_NAMES = [
+  'Mercury 9.9',
+  'Mercury 9.9 outboard',
+  'Mercury 9.9 FourStroke',
+  'Mercury 9.9 EFI',
+  'Mercury 9.9 short shaft tiller',
+  'Mercury 9.9 MH model 1A10201LK',
+];
 
 function resolveMotorAvailability(m) {
   const rawQuantity = m.stock_quantity;
@@ -3422,7 +3430,7 @@ function mercury99MhSaleFaqs(price, availability) {
   }).format(price);
   return [
     {
-      question: 'What is the Mercury 9.9 MH sale price in Ontario?',
+      question: 'How much is a new Mercury 9.9 outboard in Ontario?',
       answer: `${priceLabel} CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
     },
     {
@@ -3430,8 +3438,16 @@ function mercury99MhSaleFaqs(price, availability) {
       answer: `At ${priceLabel} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change, so confirm the current written quote before travelling.`,
     },
     {
+      question: 'Where can I buy a new Mercury 9.9 outboard for sale in Ontario?',
+      answer: `Harris Boat Works sells this new Mercury 9.9 MH for ${priceLabel} CAD before HST from its Gores Landing, Ontario location. Start the online quote with model 1A10201LK selected or call 905-342-2153 to confirm price and ETA. Buyer pickup is required; the motor is not shipped.`,
+    },
+    {
       question: 'What does 9.9 MH mean?',
       answer: 'This is the manual-start, tiller-control Mercury 9.9 FourStroke with a 15-inch short shaft. The exact Mercury model number is 1A10201LK.',
+    },
+    {
+      question: 'Does the Mercury 9.9 MH have EFI, and what does it weigh?',
+      answer: 'Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and an approximate dry weight of 85 lb for this manual-start, short-shaft tiller configuration.',
     },
     {
       question: 'What comes with the motor?',
@@ -3448,10 +3464,6 @@ function mercury99MhSaleFaqs(price, availability) {
     {
       question: `Does ${priceLabel} include HST or installation?`,
       answer: 'No. The advertised motor price is in Canadian dollars before HST. Installation, rigging, controls, optional accessories, and any boat-specific work are extra.',
-    },
-    {
-      question: 'How do I buy the Mercury 9.9 MH at this price?',
-      answer: 'Start the online quote with this exact motor selected or call Harris Boat Works at 905-342-2153. We will confirm price, ETA, pickup requirements, and any installation needs before you commit.',
     },
   ];
 }
@@ -3493,6 +3505,7 @@ function motorPageSchema(m, slug) {
     "@type": "Product",
     "@id": `${url}#product`,
     "name": display,
+    ...(is99MhSale ? { "alternateName": MERCURY_99_MH_ALTERNATE_NAMES } : {}),
     "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Mercury outboard repower quote from Harris Boat Works in Gores Landing, Ontario. Motors are sold for local pickup and/or professional installation only. We do not ship outboard motors. Pickup must be by the buyer in person with valid government photo ID; we do not release motors to couriers or third parties. Motor returns are not accepted. Installation work is guaranteed, and new Mercury motors include the applicable Mercury Marine factory warranty.`,
     "brand": { "@type": "Brand", "name": "Mercury Marine" },
     "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
@@ -3577,7 +3590,7 @@ function mercury99MhSaleNoscript(m, price) {
   const availability = resolveMotorAvailability(m);
   const faqs = mercury99MhSaleFaqs(price, availability);
   return (
-    '<section aria-labelledby="sale-summary"><h2 id="sale-summary">Ontario Price Leader: Mercury 9.9 MH FourStroke</h2>' +
+    `<section aria-labelledby="sale-summary"><h2 id="sale-summary">Mercury 9.9 Outboard Price in Ontario: ${escapeHtml(priceStr)} CAD</h2>` +
     `<p><strong>Special sale price: ${escapeHtml(priceStr)} CAD</strong>${msrp ? ` (MSRP ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(msrp))}; save ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings))}).` : '.'} Price is before HST.</p>` +
     `<p>At ${escapeHtml(priceStr)} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.</p>` +
     `<p>Manual start, tiller control, 15-inch short shaft, battery-free EFI, two-cylinder 209cc FourStroke. ${escapeHtml(availability.label)} at Harris Boat Works in Gores Landing, Ontario.</p>` +
@@ -3594,7 +3607,7 @@ function mercury99MhSaleNoscript(m, price) {
     '<li>Pickup only at Gores Landing, Ontario. No shipping or courier release.</li>' +
     '</ul>' +
     `<p><strong><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this exact Mercury 9.9 MH</a></strong> or <a href="tel:+19053422153">call 905-342-2153</a>.</p>` +
-    '<section aria-labelledby="sale-faq"><h2 id="sale-faq">Mercury 9.9 MH sale FAQs</h2>' +
+    '<section aria-labelledby="sale-faq"><h2 id="sale-faq">Mercury 9.9 price and sale FAQs</h2>' +
     faqs.map((faq) => `<h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p>`).join('') +
     '</section></section>'
   );
@@ -3639,19 +3652,18 @@ const motorPageRoutes = motorRecords
       ? 'In Stock at Harris Boat Works in Gores Landing, Ontario'
       : 'Special Order at Harris Boat Works in Gores Landing, Ontario';
     const title = is99MhSale
-      ? `Mercury 9.9 MH Sale Ontario | ${priceStr} CAD | Harris Boat Works`
+      ? `Mercury 9.9 Outboard for Sale Ontario | ${priceStr} CAD`
       : `Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
 
-    const savings = m.msrp && m.msrp > price ? m.msrp - price : null;
     const description = is99MhSale
-      ? `Ontario price leader: Mercury 9.9 MH FourStroke model 1A10201LK for ${priceStr} CAD${savings ? `, save ${new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings)} from MSRP` : ''}. Manual start, tiller, 15-inch shaft, battery-free EFI. ${saleAvailability.label}. Pickup in Gores Landing, Ontario.`
+      ? `New Mercury 9.9 MH FourStroke for sale in Ontario at ${priceStr} CAD before HST. Manual start, 15-inch short shaft, battery-free EFI. ${saleAvailability.label}.`
       : `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
 
     // Per-motor social preview. Format from SEO batch:
     // "{Motor name} | {Price in CAD} | Harris Boat Works", trimmed if long.
     const priceLabel = price ? `${priceStr} CAD` : 'CAD Pricing';
     const rawOgTitle = is99MhSale
-      ? `Mercury 9.9 MH Ontario Sale | ${priceStr} CAD`
+      ? title
       : `${display} | ${priceLabel} | Harris Boat Works`;
     const ogTitle = rawOgTitle.length > 70 ? `${display} | ${priceLabel}` : rawOgTitle;
     const ogDescription = is99MhSale
@@ -3669,9 +3681,9 @@ const motorPageRoutes = motorRecords
       // never a guessed Mercury URL.
       ...(image ? { ogImage: image } : {}),
       ogType: 'product',
-      h1: is99MhSale ? 'Mercury 9.9 MH FourStroke Sale in Ontario' : display,
+      h1: is99MhSale ? 'Mercury 9.9 MH FourStroke Outboard for Sale in Ontario' : display,
       intro: is99MhSale
-        ? `Ontario Price Leader: Mercury 9.9 MH FourStroke, exact model 1A10201LK, for ${priceStr} CAD before HST. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. ${saleAvailability.label} at Harris Boat Works in Gores Landing, Ontario.`
+        ? `New Mercury 9.9 MH FourStroke outboard, exact model 1A10201LK, for ${priceStr} CAD before HST. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. ${saleAvailability.label} at Harris Boat Works in Gores Landing, Ontario.`
         : `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
       schemas: [motorPageSchema(m, slug)],
       extraNoscript: () => is99MhSale
@@ -6351,13 +6363,13 @@ function motorMarkdown(m) {
     ]);
     const saleLines = [
       front,
-      '# Mercury 9.9 MH FourStroke Sale in Ontario',
+      '# Mercury 9.9 MH FourStroke Outboard for Sale in Ontario',
       '',
       `**Ontario Price Leader: ${priceStr} CAD before HST.**`,
       '',
       `New Mercury 9.9 MH FourStroke, exact model ${MERCURY_99_MH_MODEL_NO}. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. ${saleAvailability.label} at Harris Boat Works in Gores Landing, Ontario.`,
       '',
-      '## Ontario price evidence',
+      `## Mercury 9.9 outboard price in Ontario: ${priceStr} CAD`,
       '',
       `At ${priceStr} CAD, this was the lowest advertised new Ontario dealer price we found for exact model ${MERCURY_99_MH_MODEL_NO} in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.`,
       `Current Harris Boat Works pricing source: ${SITE_URL}/pricing-reference`,

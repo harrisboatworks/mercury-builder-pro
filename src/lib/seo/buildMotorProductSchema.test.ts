@@ -6,6 +6,7 @@ describe('buildMotorProductSchema', () => {
   it('marks a temporarily sold-out sale motor as BackOrder without inventing an expiry date', () => {
     const product = buildMotorProductSchema({
       name: 'Mercury 9.9 MH FourStroke',
+      alternateNames: ['Mercury 9.9', 'Mercury 9.9 outboard', 'Mercury 9.9 EFI'],
       hp: 9.9,
       family: 'FourStroke',
       shaft: '15 inch',
@@ -20,6 +21,7 @@ describe('buildMotorProductSchema', () => {
     });
 
     expect(product.mpn).toBe('1A10201LK');
+    expect(product.alternateName).toEqual(['Mercury 9.9', 'Mercury 9.9 outboard', 'Mercury 9.9 EFI']);
     expect(product.offers).toMatchObject({
       priceCurrency: 'CAD',
       price: '2999',

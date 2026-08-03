@@ -12,6 +12,7 @@ import { SITE_URL } from '@/lib/site';
 
 export interface MotorSchemaInput {
   name: string;                  // model_display / model
+  alternateNames?: string[];
   hp?: number | null;
   family?: string | null;        // FourStroke, Pro XS, ProKicker, SeaPro
   shaft?: string | null;
@@ -35,6 +36,7 @@ export interface MotorSchemaInput {
 export function buildMotorProductSchema(input: MotorSchemaInput): Record<string, unknown> {
   const {
     name,
+    alternateNames,
     hp,
     family,
     shaft,
@@ -85,6 +87,7 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     '@type': 'Product',
     '@id': `${url}#${idSuffix}`,
     name,
+    ...(alternateNames?.length ? { alternateName: alternateNames } : {}),
     description,
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     manufacturer: { '@type': 'Organization', name: 'Mercury Marine' },

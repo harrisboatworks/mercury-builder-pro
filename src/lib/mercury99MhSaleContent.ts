@@ -2,6 +2,15 @@ import type { ResolvedMotorAvailability } from '@/lib/motorAvailability';
 
 export const MERCURY_99_MH_PRICE_REVIEW_DATE = 'August 3, 2026';
 
+export const MERCURY_99_MH_ALTERNATE_NAMES = [
+  'Mercury 9.9',
+  'Mercury 9.9 outboard',
+  'Mercury 9.9 FourStroke',
+  'Mercury 9.9 EFI',
+  'Mercury 9.9 short shaft tiller',
+  'Mercury 9.9 MH model 1A10201LK',
+];
+
 export type Mercury99MhFaq = {
   question: string;
   answer: string;
@@ -22,7 +31,7 @@ export function buildMercury99MhFaqs(
   const priceLabel = formatMercury99MhCAD(price);
   return [
     {
-      question: 'What is the Mercury 9.9 MH sale price in Ontario?',
+      question: 'How much is a new Mercury 9.9 outboard in Ontario?',
       answer: `${priceLabel} CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
     },
     {
@@ -30,8 +39,16 @@ export function buildMercury99MhFaqs(
       answer: `At ${priceLabel} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change, so confirm the current written quote before travelling.`,
     },
     {
+      question: 'Where can I buy a new Mercury 9.9 outboard for sale in Ontario?',
+      answer: `Harris Boat Works sells this new Mercury 9.9 MH for ${priceLabel} CAD before HST from its Gores Landing, Ontario location. Start the online quote with model 1A10201LK selected or call 905-342-2153 to confirm price and ETA. Buyer pickup is required; the motor is not shipped.`,
+    },
+    {
       question: 'What does 9.9 MH mean?',
       answer: 'This is the manual-start, tiller-control Mercury 9.9 FourStroke with a 15-inch short shaft. The exact Mercury model number is 1A10201LK.',
+    },
+    {
+      question: 'Does the Mercury 9.9 MH have EFI, and what does it weigh?',
+      answer: 'Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and an approximate dry weight of 85 lb for this manual-start, short-shaft tiller configuration.',
     },
     {
       question: 'What comes with the motor?',
@@ -48,10 +65,6 @@ export function buildMercury99MhFaqs(
     {
       question: `Does ${priceLabel} include HST or installation?`,
       answer: 'No. The advertised motor price is in Canadian dollars before HST. Installation, rigging, controls, optional accessories, and any boat-specific work are extra.',
-    },
-    {
-      question: 'How do I buy the Mercury 9.9 MH at this price?',
-      answer: 'Start the online quote with this exact motor selected or call Harris Boat Works at 905-342-2153. We will confirm price, ETA, pickup requirements, and any installation needs before you commit.',
     },
   ];
 }

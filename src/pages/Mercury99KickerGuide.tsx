@@ -156,6 +156,7 @@ export default function Mercury99KickerGuide() {
         {
           heading: 'Mercury 9.9 guides',
           cards: [
+            { title: 'Mercury 9.9 MH for Sale in Ontario', description: 'Current price, availability, exact MH specs, and direct quote.', to: '/motors/fourstroke-9-9hp-9-9mh-fourstroke' },
             { title: 'Mercury 9.9 EFI Review (Ontario)', description: 'The everyday 9.9 up close.', to: '/blog/mercury-9-9-efi-review-ontario' },
             { title: 'Mercury ProKicker on Rice Lake: Fishing Guide', description: 'How anglers rig the ProKicker for walleye and musky.', to: '/blog/mercury-prokicker-rice-lake-fishing-guide' },
             { title: 'Mercury 9.9 vs 15 HP Tiller (Ontario)', description: 'Same block, different tune. Which one fits your boat.', to: '/blog/mercury-9-9-vs-15-hp-tiller-ontario' },
