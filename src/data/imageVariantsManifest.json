@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T11:58:13.542Z",
-  "count": 414,
+  "generatedAt": "2026-08-03T02:44:42.589Z",
+  "count": 415,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -68,6 +68,7 @@
     "/lovable-uploads/bilge-pump-sizing-chart",
     "/lovable-uploads/bilge-pump-system-diagram",
     "/lovable-uploads/bilge-pump-troubleshooting-flowchart",
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08",
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07",
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero",
     "/lovable-uploads/boat-winterization-cost-drivers-ontario",
@@ -747,6 +748,11 @@
       640,
       1024,
       1536
+    ],
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08": [
+      640,
+      1024,
+      1600
     ],
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07": [
       640,

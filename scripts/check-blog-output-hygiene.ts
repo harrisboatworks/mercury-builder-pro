@@ -97,6 +97,16 @@ const unsupportedOperationalClaims = [
       /\b(?:every|all) (?:powered |recreational |pleasure )?(?:boats?|powerboats?|hulls?)[^\n.]{0,50}\b(?:has|have|carries|carry|must have|is required to have|are required to have)\b[^\n.]{0,30}\b(?:capacity plate|compliance notice)\b/i,
   },
   {
+    label: 'unsafe tap-test structural clearance',
+    pattern:
+      /\b(?:sound transom[^\n.]{0,100}(?:passes?|clears?)|(?:tap|thunk) test[^\n.]{0,100}(?:passes?|clears?) (?:check|inspection))\b/i,
+  },
+  {
+    label: 'unsupported universal repower percentage threshold',
+    pattern:
+      /\brepower (?:cost|price|quote)[^\n.]{0,100}\b(?:60\s*(?:-|to)\s*70|70\s*(?:-|to)\s*80)\s*%[^\n.]{0,100}\b(?:new boat|replacement boat|new-boat package)\b/i,
+  },
+  {
     label: 'unsupported authorized-dealer warranty-validity claim',
     pattern:
       /\b(?:(?:Mercury |the )?(?:requires?|mandates?)[^\n.]{0,80}(?:authorized )?dealer install(?:ation)?[^\n.]{0,80}(?:warranty|coverage)|(?:DIY|self)[- ]install(?:ation|ing)?[^\n.]{0,80}(?:voids|invalidates)[^\n.]{0,30}(?:Mercury )?warranty|(?:dealer|authorized dealer)[^\n.]{0,50}(?:must|required to) install[^\n.]{0,50}(?:warranty|coverage)[^\n.]{0,20}(?:valid|void))\b/i,
@@ -121,6 +131,7 @@ const editorialIntentChecks = [
   { slug: 'lake-ontario-salmon-mercury-setup-guide-2026', title: /Boat Rigging/i, description: /kicker fit/i },
   { slug: 'boat-hull-replacement-vs-repower-decision', title: /Hull Worth Repowering/i, description: /transom, floor, stringers/i },
   { slug: 'repower-vs-new-boat', title: /Total Cost/i, description: /current quotes/i },
+  { slug: 'mercury-repower-eligibility-guide', title: /Is Your Boat Worth Repowering/i, description: /structure, manufacturer limits, rigging fit/i },
   { slug: 'how-to-read-boat-capacity-plate-ontario', title: /Read a Boat Capacity Plate in Ontario/i, description: /maximum recommended safe horsepower/i },
   { slug: 'repower-horsepower-capacity-plate-guide', title: /Choose Repower Horsepower/i, description: /motor weight/i },
   { slug: 'outdoor-boat-storage-shrinkwrap-rice-lake', title: /HBW Outdoor Winter Boat Storage/i, description: /Harris Boat Works/i },
