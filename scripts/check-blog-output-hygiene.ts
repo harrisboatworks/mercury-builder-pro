@@ -297,7 +297,11 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
   ],
   'gta-chinese-rice-lake-day-trip-plan': [
     /harrisboatworks\.ca\/rentals/i,
-    /每位可能驾驶的人都必须符合 HBW 的 boat operator licence \/ PCOC 要求/i,
+    /HBW 的内部政策更严格/i,
+    /每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件/i,
+    /GTA 多数地区到 Gores Landing 通常约 60–120 分钟/i,
+    /用实时导航/i,
+    /不要把明火、BBQ、酒精、游泳或宠物当成默认允许项目/i,
   ],
   'rice-lake-fishing-guide-toronto-chinese': [
     /walleye（梭鲈／玻璃眼）/i,
@@ -314,6 +318,14 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
 };
 
 const factualCorrectionForbiddenPatterns: Record<string, RegExp[]> = {
+  'gta-chinese-rice-lake-day-trip-plan': [
+    /County Road 18 \/ Bewdley Exit/i,
+    /部分 HBW pontoon 可以预订带便携 BBQ 炉/i,
+    /孩子游泳，大人在船上 BBQ \/ 吃便当 \/ 喝啤酒/i,
+    /HBW 多数租赁价格已含基础油费/i,
+    /大约 20–30 分钟/i,
+    /已经支付的订金和款项会退还/i,
+  ],
   'rice-lake-fishing-guide-toronto-chinese': [
     /Walleye（黄鲈）/i,
     /2 线水泥码头/i,

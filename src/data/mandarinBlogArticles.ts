@@ -2364,16 +2364,16 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
   // ============================================
   {
     slug: 'gta-chinese-rice-lake-day-trip-plan',
-    title: 'GTA 华人 Rice Lake 一日游完整行程规划：从多伦多出发到玩一天',
-    seoTitle: '多伦多 Rice Lake 一日游中文行程规划｜HBW',
-    description: '多伦多华人 Rice Lake 一日游完整行程：出发时间、自驾路线、停车上船流程、船上 4-6 小时安排、午餐补给、返程晚餐路线，由 Harris Boat Works 整理。',
-    image: '/lovable-uploads/hero-mandarin-day-trip.png',
+    title: 'GTA 到 Rice Lake 租船一日游：预订、证件与当天清单',
+    seoTitle: 'GTA 到 Rice Lake 租船一日游中文指南｜HBW',
+    description: '从 GTA 到 Rice Lake 租船的一日游实用指南：在线预订、每位驾驶员证件、实时路线、天气判断、check-in 和安全出发清单。',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
     dateModified: '2026-08-03',
     publishDate: '2026-05-15',
     category: 'mandarin',
-    readTime: '11 分钟',
+    readTime: '8 分钟',
     keywords: [
       '多伦多 Rice Lake 一日游',
       'GTA 华人周末出游',
@@ -2382,249 +2382,129 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
       'Gores Landing 行程',
       'Toronto Chinese day trip Rice Lake',
     ],
-    content: `## 快速答案
+    content: `> **简短答案：** 先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 选日期、船型和时段并完成预订，再用确认单上的报到时间倒推当天行程。每位可能驾驶的人都必须带有效 boat operator licence／PCOC 和带照片身份证件。出发当天重新查路线、天气和租赁条件；不要把博客里的示例当作预订或天气保证。
 
-GTA 华人家庭从多伦多到 Rice Lake 一日游，可以先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 查看当天可订船型、时间和当前价格，再按确认的租赁时段倒推开车、报到和返程时间。不要拿文章里的示例时间当成预订确认；实际报到和返港时间以你的租赁协议为准。
+## 最容易犯的错，不是在保温箱里少放一瓶水
 
----
+而是全家已经坐进车里，才发现没有完成在线预订，或者只有一个人带了驾驶证件。
 
-## 写给"想玩一天，但不想买船"的 GTA 华人家庭
+Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确认驾驶员，最后按当天交通和天气决定怎么走、怎么玩。** Harris Boat Works 位于 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0，团队以英语提供服务；欢迎带会英语的亲友同来或使用手机翻译软件。
 
-最常见的场景：周五晚上群里有人发一句"明天 Rice Lake 谁去？"，星期六早上五个人挤一辆 SUV 出发，到了之后发现没预订船、没带 PFD、午饭还没解决、3 点钟才上船、5 点湖上起风、7 点饿着肚子在 401 上堵车。我们不希望你这样玩。
+## 第一步：先完成在线预订
 
-这篇文章是给已经决定"今年夏天带家人去一次 Rice Lake、不想买船、就想玩一天"的 GTA 华人家庭。我们把整天按时间块拆开，告诉你每一段大概要花多久、要做什么、要带什么。如果你还在纠结"要不要租 pontoon 还是钓鱼船"，请先看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)；如果你需要 PCOC 操作员卡或安省钓鱼证，请看 [证照办理指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)。
+[HBW 租船页面](https://www.harrisboatworks.ca/rentals) 是船型、价格、可订日期和一般 rental times 的当前入口。线上确认才是预订；电话询问、博客示例和维修服务表单都不能替代完成的租赁订单。
 
-Harris Boat Works 是 Rice Lake 上家族经营·1947 年至今 的 Mercury Marine Premier 经销商，地址 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0。我们见过太多 GTA 华人家庭"第一次来"的样子，下面这套节奏是我们整理出来最不踩雷的版本。
+预订后，保存确认邮件或订单页面，并核对：
 
----
+- 报到和返港时间
+- 允许人数与谁会驾驶
+- 当前费用、订金、用油和取消条件
+- 需要自带的物品
+- 当天联络方式和任何特殊说明
 
-## 三个出发时间方案
+这些内容可能随船型、日期和租赁协议改变，所以本文不复制一个很快就会过期的价格表。
 
-不同家庭的作息不一样，我们给三套方案：
+## 第二步：把每位驾驶员的证件一次准备好
 
-| 方案 | 出发时间 | 到达 HBW | 上水时间 | 适合 |
-|---|---|---|---|---|
-| **早鸟型** | 5:00 AM | 6:30 AM | 7:00 AM | 认真钓鱼（早上鱼活跃）、避开周末高速车流 |
-| **标准型** | 7:00 AM | 9:00 AM | 9:30 AM | 多数家庭、整天游船、午餐在船上 |
-| **慢起床型** | 9:00 AM | 11:00 AM | 11:30 AM | 半日游、孩子起不来、下午 + 黄昏 |
+加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
 
-**早鸟型的优点：** 401 完全没堵车，到了以后 marina 安静，鱼咬钩活跃。**缺点：** 全家凌晨 4 点起床，老人和小孩不一定配合。
+**HBW 的内部政策更严格：每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件。** 不要假设到了码头再做一张临时清单就可以代替 HBW 要求的驾驶资格。
 
-**标准型是 90% 家庭的合理选择。** 9 点到达，上船 9:30，午饭 12:30 在船上吃，下午 3:30 返港，时间宽裕。
+如果有人要钓鱼，还要按年龄、居住身份和牌照类型确认自己的[安省钓鱼资格](https://www.ontario.ca/page/fishing-licence)。不开船的乘客不需要因为坐船而办理 PCOC；要驾驶的人则必须在出发前满足 HBW 政策。
 
-**慢起床型适合"放松一下"心态。** 但要注意夏季周末傍晚的雷阵雨概率，建议下午 4:30 之前一定要返港。
+## 第三步：用实时导航，不要背一条“永久正确”的路线
 
----
+GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／115 路况、施工和周末交通都会改变结果。出发当天把 **5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** 放进实时导航，再根据预订确认的报到时间反推离家时间。
 
-![GTA 到 莱斯湖 一日游地图 / GTA to Rice Lake day-trip route map](/lovable-uploads/chinese-gta-to-rice-lake-day-trip.png)
+建议另外留出吃早餐、加油、孩子上洗手间和临时拥堵的余量。开船日已经够刺激，不需要把 401 也当赛道跑。
 
-## 自驾路线（推荐）
+## 第四步：出门前做三次确认
 
-最简单可靠的路线：
+### 前一晚
 
-1. **Highway 401 East** 从多伦多市区出发
-2. 在 **Highway 115 / 35 北向** 出口（Bowmanville/Peterborough 方向）转上 115 北
-3. 走约 25 分钟后，在 **County Road 18 / Bewdley Exit** 下高速
-4. 沿 County Road 18 进入 **Bewdley** 小镇
-5. 沿 Rice Lake 南岸 / **Harris Boat Works Rd** 到达 5369 Harris Boat Works Rd, Gores Landing
+- 再读一次租赁确认与当前协议
+- 确认每位驾驶员的 PCOC／operator licence 和照片 ID
+- 查看 Environment Canada 天气、风和雷暴预报
+- 如果钓鱼，确认当年 FMZ 17 季节、尺寸与限额
 
-**车程参考：**
+### 离家前
 
-- 多伦多市中心：约 90 分钟（无堵车），夏季周五傍晚可能 2 小时以上
-- Markham / Richmond Hill：约 75 分钟
-- Mississauga：约 110 分钟
-- Scarborough / Pickering：约 60–75 分钟
+- 重新查交通和到达时间
+- 确认所有人都知道返港时间
+- 把紧急联系人、HBW 电话和预订资料放在同一部手机里
+- 告诉岸上的亲友你们去哪里、何时回来；Transport Canada 建议出发前留下 trip plan
 
-**沿途加油 / 休息：**
+### 上船前
 
-- **401 上**：Oshawa / Bowmanville 服务区（ONroute）有加油、Tim Hortons、洗手间
-- **115 上**：选项较少，最好在 401 上 ONroute 解决
-- **Bewdley**：小镇有加油站、便利店、Tim Hortons、几家餐厅，是出湖前最后一次补给的合理选择
+- 按确认单的时间和指示报到
+- 完成租赁协议、证件核对和安全讲解
+- 确认安全装备位置、发动机操作、当地危险、联络方式和返港程序
+- 让每个人试穿合身的 lifejacket／PFD；儿童尺码或特殊需求要在预订前确认
 
-**夏季周五下午出发的现实：** 401 东向从市区到 Pickering 一段经常堵，建议要么早出发（午餐前出门），要么晚出发（晚餐后出门，夜宿 Cobourg 第二天直接上船）。
+## 一日游怎么安排，才不会把第一次开船变成耐力赛
 
----
+第一次租船，目标不是“把 Rice Lake 全部跑完”。目标是让驾驶员始终知道自己在哪里、天气在做什么、返港还需要多久。
 
-## 公共交通选项（不推荐，但选项存在）
+### 家庭巡游
 
-实话：**Gores Landing 没有直达的 GO Train 或 VIA Rail。** 如果你必须坐公共交通：
+选择保守范围和舒适速度，按照 HBW 讲解的当地危险与租赁区域行动。需要停船吃午餐时，先确认水深、风、锚泊方法和协议是否允许；不要随意靠私人码头或进入不熟悉的浅水。
 
-- 最近的 GO 站是 **Oshawa GO**，下车后还要约 45 分钟 Uber/Taxi 到 Gores Landing
-- **Cobourg VIA Rail** 也是一个选项，下车后约 30 分钟 Uber 到 HBW
-- 不论哪种方式，**单程公共交通 + 接驳车的总时间和成本通常比直接租车更高**
+### 钓鱼日
 
-如果你 GTA 没车又想来 Rice Lake，更现实的方案是：找会开车的朋友拼车、或在出发当天租一辆 SUV（许多 GTA 租车点周末有 24 小时优惠）。
+先看 [FMZ 17 当前规定](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)，再按天气、船型和经验选择钓点。旧文章里的“黄金时间”或固定点位不是鱼情保证，更不能代替当天法规和安全判断。
 
----
+### 天气改变时
 
-## 到达后流程
+不要等到浪已经让全船人不舒服才回头。风增强、雷声、能见度变差或驾驶员开始没有把握，都是缩短行程并按 HBW 指示返港的理由。[Transport Canada 出发前检查](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/maintaining-safe-pleasure-craft)要求操作者确认天气、当地危险、客人安全说明和 trip plan。
 
-你以为停好车就能上船？还有几步：
+## 带什么：短清单比塞满后备箱更有用
 
-1. **停车**：HBW 有客户停车位，按工作人员指引停好
-2. **办公室 check-in**：报姓名 / 预订号，签租赁协议
-3. **PCOC 操作员卡查验**：每位驾驶员必须出示有效的 boat operator licence / PCOC，详情见 [证照办理指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
-4. **PFD（救生衣）试穿**：HBW 提供成人和儿童尺码，试穿要合身
-5. **码头讲解**：完成办公室手续后，先由驾驶员跟工作人员到船边接受操作和安全说明，再让全体成员登船
-6. **下水出发**
+**证件与预订**
 
-**实际节奏：** 5 个人从车里下来到船开走，**大约 20–30 分钟**。如果你想 9:30 上水，建议 9:00 到达 marina。
+- 每位驾驶员的有效 operator licence／PCOC 和带照片身份证件
+- 租赁确认与当天联络资料
+- 钓鱼者需要的 Outdoors Card／Fishing Licence；若按年龄或身份属于例外，则携带法规要求的政府身份证明
 
----
+**舒适与天气**
 
-## 船上 4-6 小时行程建议
+- 饮用水、简单午餐和不会到处滚的零食
+- 防晒、帽子、太阳镜和轻便防风外套
+- 干燥袋、充电宝、垃圾袋和个人药物
+- 儿童或特殊尺码 PFD 的确认；如自带，须适合使用者并符合加拿大认可要求
 
-Rice Lake 不大不小，4–6 小时可以从容玩一圈。下面 4 个方向供选：
+**不要自行假设**
 
-### A. 家庭休闲游船（适合多数家庭）
+- 不要把明火、BBQ、酒精、游泳或宠物当成默认允许项目
+- 不要根据旧文章猜用油、损坏押金、退款或恶劣天气政策
+- 不要把固定返港时间、停车方式或 check-in 时长当成每次都一样
 
-从 Gores Landing 沿 **南岸西行**，慢速巡游约 1 小时，找一处避风的小湾下锚午餐 1.5 小时，下午 **东行到 Bewdley 一带** 再慢慢转回，傍晚返港。全程不快、不远、不累。
+一切以当前在线订单、租赁协议和现场安全说明为准。操作者保持清醒，是比“午餐拍得好不好看”更重要的安排。
 
-### B. 钓鱼为主（认真钓友）
+## 官方与当前资料
 
-早上钓鱼黄金时段在 7–10 AM。建议 **早鸟型出发**，先到 walleye 常活动的深水区试 2 小时，9–11 AM 移到 bass 区域 casting，午餐在船上简单解决，下午 1–3 PM 视手感继续钓或转去其他点。Rice Lake 钓鱼规则请查 [安省最新钓鱼条例](/blog/zh/gta-chinese-pcl-fishing-licence-guide)。
-
-### C. 游泳 + 午餐（夏天炎热日推荐）
-
-中午 11:30 前出发，找一处水深合适、避风的湾，下锚 2–3 小时，孩子游泳，大人在船上 BBQ / 吃便当 / 喝啤酒。下午 2:30 后慢慢返港。这种安排最适合 6–12 岁孩子的家庭。
-
-### D. 黄昏巡游（夫妻 / 老人陪伴）
-
-下午 3:00 出发，4 小时慢速巡游，沿岸看夕阳和别墅，6–7 PM 返港，傍晚回 Cobourg 吃晚饭。最浪漫，最不累，但要避开雷阵雨预报的日子。
-
-**通用安全提醒：** Rice Lake 风向变化快，夏季午后雷阵雨常见。一旦看到远处云层变深、风速骤增，**立即返港**，不要硬撑。HBW 出发前会告诉你湖上避风的几个常用湾位置。
-
----
-
-## 午餐方案
-
-两种思路：
-
-**方案 1：自带（多数家庭推荐）**
-
-- 出发前在 GTA 准备三明治 / 水果 / 饮料 / 零食
-- 带一个 **大冰袋 + 保温箱**，5 月到 9 月的船上中午会很热
-- 带 **充足饮用水**（每人至少 1.5 L）
-- 带 **遮阳伞或可拆卸 Bimini Top**（HBW 多数 pontoon 自带，但确认一下）
-
-**方案 2：Bewdley 路过买**
-
-进入 Bewdley 时停一下，买现做三明治或便当上船。Bewdley 是个小镇，餐饮选择有限但够用。具体店家请到当地查询，避免推荐已经关门的店。
-
-**方案 3：在船上 BBQ**
-
-部分 HBW pontoon 可以预订带便携 BBQ 炉的版本。预订时确认。带肉、菜、调料、餐具、湿巾。注意防火规定，**严禁在船上扔烟头**。
-
----
-
-## 下午返港 / 离场
-
-返港流程比上船快：
-
-1. 慢速进入 marina 区域，按工作人员指引靠泊
-2. **加油**（如有）：HBW 多数租赁价格已含基础油费，超出部分按当下油价结算
-3. 卸下个人物品、垃圾带走（**Leave No Trace**）
-4. 办公室 check-out，归还 PFD
-5. 全程约 15–20 分钟
-
-**额外推荐：** 如果时间还早（5 PM 前），可以在 **Gores Landing 滨水公园** 散步 15–20 分钟，让孩子下船活动一下、看看 Rice Lake 落日，再上车回程。
-
----
-
-## 晚餐 + 回程路线
-
-三种晚餐策略：
-
-**A. Cobourg 吃晚餐再回家（推荐）**
-
-从 Gores Landing 开车到 Cobourg 约 25–30 分钟。Cobourg 是 401 上的小城，有完整餐饮、Lake Ontario 滨水步道、码头、海滩。下午 5:30–7:00 在 Cobourg 吃晚饭，避开 401 西向 7–8 PM 的回流高峰，晚上 8:30 回到 GTA。
-
-**B. 401 上 ONroute 快餐**
-
-如果赶时间，Bowmanville / Whitby ONroute 有快餐和洗手间，停 20–30 分钟解决。**周日 7–8 PM 401 西向从 Bowmanville 到多伦多东区是一年中最堵的时段之一，做好心理准备。**
-
-**C. 直接回家做饭**
-
-体力还行的话，6 PM 离开 marina，8 PM 到家，自己做饭。但全家在水上玩了一天回家做饭的现实概率不高，建议提前点外卖。
-
----
-
-## 三种家庭类型推荐路线
-
-| 家庭类型 | 推荐方案 | 理由 |
-|---|---|---|
-| **夫妻无小孩** | 慢起床型 + D 黄昏巡游（4 小时）+ Cobourg 晚餐 | 不用早起，浪漫，避开 marina 高峰 |
-| **小家庭（夫妻 + 1–2 个学龄孩子）** | 标准型 + C 游泳午餐（5–6 小时）+ Cobourg 晚餐 | 孩子能游泳能 BBQ 能下船活动，全天饱满 |
-| **三代同堂（老人 + 孩子）** | 标准型 + A 家庭休闲游船（4 小时）+ Gores Landing 短散步 + 直接回家 | 老人不累，孩子有得玩，不抢晚餐黄金时段 |
-
----
-
-## 必带清单
-
-**证件类（操作船 / 钓鱼必备，详见 [证照指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)）：**
-
-- PCOC 操作员卡（操作船的人）
-- 安省 Outdoors Card + Fishing Licence（如果钓鱼）
-- 驾照、健康卡（应急）
-
-**水上安全：**
-
-- PFD（HBW 提供，但如果你有自己穿惯的合身款，建议带上）
-- 防晒霜（SPF 30+ 起）
-- 遮阳帽
-- 太阳镜（最好有偏光）
-- 轻便防风外套（湖上风比岸上凉，5 月和 9 月特别明显）
-
-**饮食 / 补给：**
-
-- 饮用水（每人至少 1.5 L）
-- 午餐 / 零食 / 水果
-- 冰袋 + 保温箱
-- 一次性餐具 + 垃圾袋（带回岸上）
-
-**实用 / 应急：**
-
-- 干燥袋（手机 / 钱包防水）
-- 充电宝（一天足够）
-- 毛巾 / 换洗衣物（孩子游泳后）
-- 基础急救包（创可贴、晕船药、过敏药）
-- 厕纸 / 湿巾
-
----
-
-
-> 相关指南：[Rice Lake 家庭租船钓鱼一日游](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
-
-**相关文章**
-
-租过一次之后，很多 GTA 家庭会开始想：到底该继续租，还是准备买一条适合自己的船？
-
-- [先租后买：GTA 华人家庭买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
-- [6–8 人家庭：pontoon 还是 fishing boat 更合适？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
-- [买二手船避坑清单（GTA 地区适用）](/blog/zh/used-boat-buying-checklist-toronto-chinese)
-- [已经有船但 motor 老了？看 Mercury 船外机 repower 怎么算账](/blog/zh/mercury-repower-guide-gta)
+- [HBW 在线租船与实时可订船型](https://www.harrisboatworks.ca/rentals)
+- [Transport Canada：Rental boats](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/rental-boats)
+- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)
+- [Transport Canada：出发前安全检查](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/maintaining-safe-pleasure-craft)
+- [Ontario：FMZ 17 当前钓鱼规定](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## 下一步
 
-1. **订船**：通过 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 查看实时可订船型并完成预订；不要用维修服务表单订租船
-2. **办证**：如还没有 PCOC 操作员卡或钓鱼证，参考 [证照办理指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
-3. **如果今年试过觉得想买船**：参考 [GTA 华人买船指南](/blog/zh/gta-chinese-buy-boat-rice-lake-guide) 和 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta)
-4. **如果你已经有船想做发动机升级**：到 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在线生成报价
-5. **维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务
+1. 在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 完成预订。
+2. 让每位驾驶员准备好有效 operator licence／PCOC 和带照片身份证件。
+3. 第一次在 Ontario 开船或钓鱼，可先看 [PCOC、PCL 与钓鱼证中文指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)。
+4. 租过几次后想买船，可比较 [pontoon 与 fishing boat](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)；已有船想换 Mercury，则在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价。
 
-水上一日游不需要复杂规划，但需要靠谱的节奏。我们码头见。
-
-地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+计划要认真，行程不必僵硬。湖况不读你的时间表，所以给安全和天气留一点余量。
 `,
     faqs: [
-      { question: '从多伦多出发到 Rice Lake 实际需要多少时间？', answer: 'GTA 出发通常应为单程预留约 90 分钟至 2 小时，但起点、交通、天气和施工都会改变时间。出发当天用实时地图倒推，并以租赁协议上的报到时间为准。' },
+      { question: '从多伦多出发到 Rice Lake 实际需要多少时间？', answer: 'GTA 多数地区通常约 60–120 分钟，但起点、交通和施工会改变结果。出发当天使用实时导航，并按租赁确认的报到时间倒推。' },
       { question: '一日游 4 个人在 HBW 大概什么预算？', answer: '船型、日期和租赁时段都会影响价格。请在 harrisboatworks.ca/rentals 查看当前可订船型和价格，再加上实际用油、餐饮、交通及所需钓鱼证费用。' },
       { question: '必须提前预订吗？现场过去能不能租到船？', answer: 'HBW 租船采用在线预订。请在 harrisboatworks.ca/rentals 查看实时可订船型并完成预订；不要依赖临时到场，也不要使用维修服务表单订租船。' },
       { question: '我没有船的驾驶经验，HBW 会教吗？', answer: '工作人员会完成办公室和码头讲解，但这不是驾驶课程。每位可能驾驶的人都必须符合 HBW 的 boat operator licence / PCOC 要求并出示带照片身份证件。第一次开船的人应在预订前取得资格，并认真听完整个安全和操作说明。' },
-      { question: '如果当天下雨怎么办？会退款吗？', answer: 'HBW 当前政策允许因恶劣天气（例如大风或降雨）取消或改期而不受罚，已经支付的订金和款项会退还。普通取消有不同期限和费用，最终以当前租赁协议及 harrisboatworks.ca/boat-rentals 上的政策为准。' },
-      { question: '可以带宠物上船吗？', answer: 'HBW 当前允许较小的狗或服务犬上租赁船；客户对行为和损坏负责，狗在陆地上必须牵绳。HBW 不提供宠物救生衣，请在预订前阅读当前租赁政策。' },
-      { question: '船上有卫生间吗？孩子需要时怎么办？', answer: '不要假设租赁船上有卫生间。HBW 场地有公共卫生间，可在营业时间向办公室取钥匙；离开码头前让全家先使用，并按确认的租赁时段规划当天行程。' },
-      { question: '一天结束太累不想开车回 GTA，附近有什么住宿推荐？', answer: 'Cobourg、Port Hope 和 Peterborough 都有住宿选择，但空房、价格和车程会变化。先确认租赁返港时间，再用实时地图和预订平台选择当晚住宿；HBW 不代订酒店。' },
+      { question: '如果当天天气不好怎么办？', answer: '先查看当前预报，再按订单中的联络方式与 HBW 确认。退款、改期和恶劣天气处理以当前租赁协议为准；博客不替代你的订单条款。' },
+      { question: '可以带宠物、BBQ 或酒精上船吗？', answer: '不要把这些当成默认允许项目。预订前阅读当前租赁协议，并通过在线订单渠道确认船型对应的限制；操作者必须保持清醒。' },
+      { question: '每位驾驶员都需要 PCOC 吗？', answer: 'HBW 的内部政策要求每位可能驾驶的人出示有效 boat operator licence / PCOC 和带照片身份证件。只有乘坐、不驾驶的人不因乘船本身需要 PCOC。' },
     ],
   },
 
