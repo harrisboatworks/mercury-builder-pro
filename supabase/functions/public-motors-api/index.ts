@@ -67,9 +67,11 @@ Deno.serve(async (req) => {
     const { data, error } = await supabase
       .from('motor_models')
       .select(
-        'id, model, model_display, model_number, family, horsepower, shaft, shaft_code, control_type, motor_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, image_url, hero_image_url, is_brochure'
+        'id, model, model_display, model_number, family, horsepower, shaft, shaft_code, control_type, motor_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, image_url, hero_image_url, is_brochure'
       )
-      .neq('availability', 'Exclude')
+      // PostgreSQL comparisons do not match NULL. Treat NULL as an active,
+      // orderable record while still excluding the explicit Exclude status.
+      .or('availability.is.null,availability.neq.Exclude')
       .order('horsepower', { ascending: true })
       .limit(500);
 
@@ -95,6 +97,10 @@ Deno.serve(async (req) => {
         const family = detectFamily(m.model_display || m.model, m.motor_type, m.family);
         const sellingPrice = resolveSellingPrice(m);
         const slug = slugify(`${family}-${m.horsepower}hp-${m.model_display || m.model}`);
+        const quantity = m.stock_quantity == null ? null : Math.max(0, Number(m.stock_quantity) || 0);
+        const inStock = quantity == null
+          ? !!m.in_stock || (m.availability || '').trim().toLowerCase() === 'in stock'
+          : quantity > 0;
         return {
           id: m.id,
           slug,
@@ -108,8 +114,9 @@ Deno.serve(async (req) => {
           msrp: m.msrp,
           sellingPrice,
           currency: 'CAD',
-          availability: m.availability || (m.in_stock ? 'In Stock' : 'Special Order'),
-          inStock: !!m.in_stock,
+          availability: m.availability || (inStock ? 'In Stock' : 'Special Order'),
+          inStock,
+          stockQuantity: quantity,
           imageUrl: m.hero_image_url || m.image_url || null,
           url: `${SITE_URL}/motors/${slug}`,
         };

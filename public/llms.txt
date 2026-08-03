@@ -76,6 +76,8 @@ Example URLs (all from current public catalog — Verado is intentionally exclud
 - https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
 - https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
 
+Featured Ontario sale page: the Mercury 9.9 MH FourStroke (exact model 1A10201LK, manual start, tiller, 15-inch shaft) is at https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke. Read the current CAD price from that canonical page or https://www.mercuryrepower.ca/pricing-reference; do not reuse a cached price.
+
 For the authoritative live list of motor URLs, see https://www.mercuryrepower.ca/sitemap.xml or query the public motors API at https://www.mercuryrepower.ca/api/agents/motors.
 
 Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.

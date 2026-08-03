@@ -12,6 +12,7 @@ import { SITE_URL } from '@/lib/site';
 
 export interface MotorSchemaInput {
   name: string;                  // model_display / model
+  alternateNames?: string[];
   hp?: number | null;
   family?: string | null;        // FourStroke, Pro XS, ProKicker, SeaPro
   shaft?: string | null;
@@ -22,6 +23,10 @@ export interface MotorSchemaInput {
   /** Pricing-hierarchy-resolved selling price in CAD, or null for price-on-request. */
   priceCAD?: number | null;
   inStock?: boolean;
+  /** Explicit Schema.org Offer availability suffix. Defaults from inStock. */
+  offerAvailability?: 'InStock' | 'BackOrder' | 'PreOrder' | 'InStoreOnly';
+  /** Pass null to omit a date when no genuine offer end date exists. */
+  priceValidUntil?: string | null;
   /** Canonical URL of the page rendering this product (no trailing slash). */
   url: string;
   /** Optional @id discriminator so multiple Product blocks can co-exist on one URL. */
@@ -31,6 +36,7 @@ export interface MotorSchemaInput {
 export function buildMotorProductSchema(input: MotorSchemaInput): Record<string, unknown> {
   const {
     name,
+    alternateNames,
     hp,
     family,
     shaft,
@@ -39,13 +45,16 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     modelNumber,
     image,
     priceCAD,
+    inStock,
+    offerAvailability,
+    priceValidUntil,
     url,
     idSuffix = 'product',
   } = input;
 
-  const validUntil = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000)
-    .toISOString()
-    .split('T')[0];
+  const validUntil = priceValidUntil === undefined
+    ? new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+    : priceValidUntil;
 
   const additionalProperty: Array<Record<string, string>> = [];
   if (hp != null) additionalProperty.push({ '@type': 'PropertyValue', name: 'Horsepower', value: `${hp} HP` });
@@ -78,6 +87,7 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     '@type': 'Product',
     '@id': `${url}#${idSuffix}`,
     name,
+    ...(alternateNames?.length ? { alternateName: alternateNames } : {}),
     description,
     brand: { '@type': 'Brand', name: 'Mercury Marine' },
     manufacturer: { '@type': 'Organization', name: 'Mercury Marine' },
@@ -98,8 +108,8 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
       url,
       priceCurrency: 'CAD',
       price: String(Math.round(priceCAD)),
-      priceValidUntil: validUntil,
-      availability: 'https://schema.org/InStoreOnly',
+      ...(validUntil ? { priceValidUntil: validUntil } : {}),
+      availability: `https://schema.org/${offerAvailability || (inStock ? 'InStock' : 'InStoreOnly')}`,
       itemCondition: 'https://schema.org/NewCondition',
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',

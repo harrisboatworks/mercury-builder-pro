@@ -26640,7 +26640,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Mercury 9.9 EFI outboard on a tiller-steered boat, demonstrating the portable motor's performance on the water.",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-05-10",
+    dateModified: "2026-08-03",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "10 min read",
@@ -26648,7 +26648,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: "Is the Mercury 9.9 MH EFI fuel injected?", answer: "Yes. The Mercury 9.9 MH EFI uses electronic fuel injection. Mercury says the EFI system is designed for easier starts and efficient performance." },
       { question: "Does the manual-start Mercury 9.9 EFI need a battery?", answer: "Mercury says the manual-start 9.9 EFI models do not require a cranking battery because pulling the starter rope charges the electrical system needed for ignition." },
-      { question: "How much does the Mercury 9.9 MH EFI weigh?", answer: "Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight." },
+      { question: "How much does the Mercury 9.9 MH EFI weigh?", answer: "Mercury Canada's exact-SKU listing gives model 1A10201LK a dry weight of 88 lb. Mercury's broader 9.9 family specifications can show lighter figures for other configurations." },
       { question: "What shaft length is the Mercury 9.9 MH EFI?", answer: "The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is right for a short shaft before buying." },
       { question: "What comes with the HBW Mercury 9.9 MH EFI offer?", answer: "As of May 2026, HBW's current offer is " + '$2,999' /* @canonical:dealer:9-9mh-fourstroke */ + " CAD + HST, with no extra charges or setup fees. It includes the 12 L fuel tank and hose, plus free prep." },
       { question: "Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?", answer: "It depends on the boat, load, prop, shaft length, weight distribution, and hull setup. Owner discussions show that even a newer Mercury 9.9 may struggle to plane a heavier 1448-style aluminum boat when the boat has added decking, batteries, and gear." },
@@ -26673,7 +26673,7 @@ Here is what the "MH EFI" means before we go further:
 - **H**, Tiller handle
 - **EFI**, Electronic fuel injection
 
-Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). External 12L / 3.2 gal fuel tank with fuel line.
+Shaft length: 15-inch short shaft. Displacement: 209 cc. External 12L / 3.2 gal fuel tank with fuel line.
 
 ---
 
@@ -26766,8 +26766,8 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Shaft length | 15" short shaft |
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
-| Displacement | 208 cc (12.8 cu in) |
-| Dry weight | Approximately 38 kg (84 lb) |
+| Displacement | 209 cc |
+| Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000, 6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
