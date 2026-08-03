@@ -40,13 +40,13 @@ That's not a dodge; it's the efficient way to buy it. One appointment, one drain
 
 ## Who this is for
 
-You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want a real number before you book anything. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want to know what the quote should account for. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ---
 
 ## What a 100-Hour / Annual Service Actually Includes
 
-Mercury's 100-hour and annual service list for a FourStroke, in plain terms:
+The exact list varies by engine. Depending on the serial-specific schedule, a 100-hour or annual FourStroke service can include:
 
 - Engine oil and filter change
 - Gearcase (lower unit) oil change, with a look at what drains out (milky oil = seal problem caught early)
@@ -132,7 +132,8 @@ Tell us the motor, its hours, and the work you want covered. Submit the request 
 
 ## Sources
 
-- Mercury Marine FourStroke maintenance schedules (your owner's manual is the source of truth for your model)
+- [Mercury Marine: FourStroke Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/four-stroke-maintenance)
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - HBW service and storage intake policy, confirmed August 2, 2026
 
 ## FAQs
@@ -147,7 +148,7 @@ No. They can overlap, which is why Ontario shops often combine them. Scheduled s
 
 ### My motor only ran 40 hours this year. Do I still need the service?
 
-Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because oil degrades and moisture accumulates with time, not just use. Most Kawartha boats are calendar-limited, not hour-limited; that's exactly why the fall service exists.
+Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone.
 
 ### What parts get replaced at a typical annual service?
 

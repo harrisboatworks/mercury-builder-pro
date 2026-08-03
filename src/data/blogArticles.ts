@@ -1549,33 +1549,33 @@ If you're not sure whether your boat is a push boat or a plane boat, send the hu
   },
   {
     slug: "milky-gearcase-oil-meaning-cost-ontario",
-    title: "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)",
-    description: "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance.",
+    title: "Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)",
+    description: "What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next.",
     image: "/lovable-uploads/hero-milky-gearcase-oil.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-27",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
     keywords: ["milky gearcase oil", "water in lower unit oil", "gearcase oil change ontario", "outboard gear oil milky", "lower unit seal replacement cost"],
     faqs: [
       { question: "What does milky gearcase oil mean?", answer: "Water has gotten into your lower unit and emulsified with the gear oil, almost always past a worn prop shaft, driveshaft, or shift shaft seal. It needs a pressure test to locate the leak and a reseal, and the earlier it's caught, the cheaper it stays." },
-      { question: "Can I just change the oil and keep boating?", answer: "For a weekend, maybe. But the leak that let water in is still there, and continued running on emulsified oil wears gears and bearings. In fall it's worse: trapped water freezes and can crack the case. Fix the seal; don't refresh the milkshake." },
+      { question: "Can I just change the oil and keep boating?", answer: "No. Refilling does not identify or repair the source of water intrusion. Mercury warns that water-contaminated lubricant can damage bearings and can freeze inside the gearcase. Have the gearcase inspected before further operation." },
       { question: "How much does a gearcase pressure test cost?", answer: "The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbw.wiki/service." },
       { question: "What causes gearcase seals to fail?", answer: "Fishing line wrapped behind the prop is the classic killer; age, impact, and corrosion do the rest. Pulling the prop periodically to check for line is the cheapest prevention there is, and it's part of every annual service." },
-      { question: "How often should gearcase oil be changed?", answer: "Every 100 hours or annually, whichever comes first, which for most Ontario boats means every fall as part of the winterize-and-service. The change doubles as your yearly water-intrusion check; skipping it means nobody's watching the one gauge that matters." },
+      { question: "How often should gearcase oil be changed?", answer: "Follow the schedule for your exact engine and serial number. Many Mercury FourStroke schedules include gearcase lubricant at the 100-hour or annual service, and fall is a practical time for seasonal Ontario boats because the drained lubricant can be checked before freezing weather." },
       { question: "Is milky oil covered by warranty?", answer: "Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbw.wiki/service." }
     ],
-    content: `# Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)
+    content: `# Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)
 
-*Last reviewed: 2026-07-27*
+*Last reviewed: 2026-08-02*
 
-> **Quick answer:** Milky or coffee-coloured gearcase oil means water is getting into your lower unit, usually past a worn seal. Caught at the annual oil change, it's typically a pressure test and a seal job. Ignored for a season, water can destroy gears and bearings, and gearcases cost thousands. Our shop has pressure-tested 364 gearcases; most started as a milky drain. Book at hbw.wiki/service.
+> **Quick answer:** Milky or coffee-coloured gearcase lubricant can indicate water intrusion. Stop treating it as a routine oil change. A technician needs to identify the source, often with pressure and vacuum testing, then inspect the seals and internal condition before quoting the repair. Mercury warns that water in the lubricant can damage bearings and can freeze inside the gearcase.
 
 There's a ten-second moment in every gearcase oil change that matters more than the oil itself: watching what comes out.
 
-Amber and clean means all good. Dark but oily means it did its job. And milky, like coffee with too much cream, means water got in where water must never be. Across 7,417 gearcase jobs in our system since 2013, that drain-plug moment is where the expensive problems announce themselves cheaply.
+Amber and clean is reassuring. Dark but oily may simply be used lubricant. Milky, creamy, or separated water is different: it is evidence that the gearcase needs inspection, not just a refill. That drain-plug moment is one reason the annual lubricant change matters.
 
 Here's how to read it, what fixing it costs, and why this is the single best argument for the annual service.
 
@@ -1610,16 +1610,16 @@ The magnet on the drain screw is the second tell: fine grey paste is normal wear
 
 ---
 
-## What Fixing It Costs
+## What Changes the Repair Scope
 
-Real talk from our work orders, with the usual caveat that rates are as of summer 2026 and confirmed when you book:
+There is no responsible fixed price from oil colour alone. The scope depends on what the inspection finds:
 
-- **Caught at the annual service:** the drain itself is already part of your winterize-and-service (see the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario) for those all-in numbers). Finding milk adds the diagnostic step, not a crisis.
-- **The pressure test:** the gearcase gets pressurized and vacuum-checked to find which seal leaks. It's careful work, and we've done 364 of them; time and cost are quoted when you book.
-- **The reseal:** parts are modest (seal kits are not the expensive part); the labour depends on which seal and whether the prop shaft or driveshaft has to come out. Quoted per motor once the test points at the culprit.
-- **The ignored case:** water run all season, or frozen over winter, can mean gears, bearings, or a complete gearcase. On common Mercury families that's a four-figure repair that started as a two-figure seal.
+- **Caught during scheduled service:** the lubricant is already being drained, so the abnormal colour is found before the gearcase is refilled.
+- **Pressure and vacuum testing:** this helps identify whether the gearcase is holding pressure and where the sealing problem may be.
+- **Seal repair:** labour changes with the failed seal, the gearcase design, corrosion, and whether a shaft or bearing carrier must be removed.
+- **Internal damage:** water-contaminated lubricant, metal particles, or freeze damage can move the job beyond seals into bearings, gears, or gearcase replacement.
 
-That last line is the entire economics of this post. The annual drain is the cheapest gearcase insurance that exists.
+The useful cost answer comes after the gearcase is identified and tested. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service); HBW confirms the scope before repair work is approved.
 
 ---
 
@@ -1661,7 +1661,7 @@ title: Changing Gear Lube on a Mercury 40-300 HP FourStroke
 
 ## What HBW checks before your gearcase goes back in the water
 
-Every gearcase drain at our shop gets the same eyes: oil colour read before it hits the pan, the drain-screw magnet checked, and anything suspicious written on your file with a recommendation. Milk means a pressure test before refill, because refilling a leaking case just schedules a bigger bill. That discipline across 7,417 gearcase jobs is why our customers' lower units mostly die of old age instead of drowning.
+Every gearcase drain at our shop gets the same basic inspection: lubricant colour before it hits the pan, the drain-screw magnet checked, and anything suspicious recorded with a recommendation. Milky lubricant means the cause should be investigated before the case is simply refilled.
 
 ---
 
@@ -1671,7 +1671,7 @@ Every gearcase drain at our shop gets the same eyes: oil colour read before it h
 Water has gotten into your lower unit and emulsified with the gear oil, almost always past a worn prop shaft, driveshaft, or shift shaft seal. It needs a pressure test to locate the leak and a reseal, and the earlier it's caught, the cheaper it stays.
 
 **Can I just change the oil and keep boating?**
-For a weekend, maybe. But the leak that let water in is still there, and continued running on emulsified oil wears gears and bearings. In fall it's worse: trapped water freezes and can crack the case. Fix the seal; don't refresh the milkshake.
+No. Refilling does not identify or repair the source of water intrusion. Mercury warns that water-contaminated lubricant can damage bearings and can freeze inside the gearcase. Have the gearcase inspected before further operation.
 
 **How much does a gearcase pressure test cost?**
 The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns "there's water in it somewhere" into a precise, priced repair instead of a guess. Start at hbw.wiki/service.
@@ -1680,7 +1680,7 @@ The test pressurizes and vacuum-checks the case to identify which seal leaks; it
 Fishing line wrapped behind the prop is the classic killer; age, impact, and corrosion do the rest. Pulling the prop periodically to check for line is the cheapest prevention there is, and it's part of every annual service.
 
 **How often should gearcase oil be changed?**
-Every 100 hours or annually, whichever comes first, which for most Ontario boats means every fall as part of the winterize-and-service. The change doubles as your yearly water-intrusion check; skipping it means nobody's watching the one gauge that matters.
+Follow the schedule for your exact engine and serial number. Many Mercury FourStroke schedules include gearcase lubricant at the 100-hour or annual service, and fall is a practical time for seasonal Ontario boats because the drained lubricant can be checked before freezing weather.
 
 **Is milky oil covered by warranty?**
 Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at [hbw.wiki/service](https://hbw.wiki/service).
@@ -1699,47 +1699,47 @@ HBW does not diagnose gearcase faults remotely. Include the engine serial number
 **Related guides:**
 - [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
 - [Mercury Water Pump Replacement Cost](/blog/mercury-water-pump-replacement-cost-ontario)
-- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
+- [When to Replace Your Mercury Impeller](/blog/mercury-impeller-replacement-when-they-fail)
 - [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario)
 
 ---
 
 ## Sources
 
-- HBW service records, Rice Lake: 7,417 gearcase jobs and 364 gearcase pressure tests, 2013-2026
 - Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 17 and 24-28
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
 `,
   },
   {
     slug: "mercury-water-pump-replacement-cost-ontario",
-    title: "Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)",
-    description: "What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.",
+    title: "Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)",
+    description: "What changes the cost of a Mercury water pump replacement in Ontario: engine model, impeller versus full kit, corrosion, diagnosis, and labour.",
     image: "/lovable-uploads/hero-mercury-90-shop-shot.png",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-07-02",
+    dateModified: "2026-08-02",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
     keywords: ["mercury water pump replacement cost", "outboard impeller replacement cost ontario", "water pump kit cost mercury", "weak telltale outboard", "outboard water pump service"],
     faqs: [
-      { question: "How much does a Mercury water pump replacement cost in Ontario?", answer: "At our shop the median dedicated job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST; a full kit with housing costs more and is quoted by model. Current rates are confirmed when you book at hbw.wiki/service." },
-      { question: "How often should the water pump be serviced?", answer: "Follow your interval: for most Mercury outboards that's every 300 hours or 3 years for the pump service, with the impeller inspected sooner if the telltale weakens. Our maintenance intervals guide lays out the schedule." },
+      { question: "How much does a Mercury water pump replacement cost in Ontario?", answer: "There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at hbw.wiki/service for a motor-specific scope." },
+      { question: "How often should the water pump be serviced?", answer: "Use the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but schedules vary. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner." },
       { question: "Can I replace just the impeller and skip the kit?", answer: "When the housing liner is smooth and gaskets are healthy, impeller-and-wear-plate is the standard, honest job. Once the liner is scored or the motor has missed intervals, the kit is cheaper than doing the labour twice. We tell you which one your motor actually needs." },
       { question: "Is a weak telltale always the water pump?", answer: "No; the telltale outlet itself clogs with debris easily, and thermostat and poppet issues mimic pump problems. Our overheating at high speed guide walks the checks in order before anyone spends money." },
-      { question: "Can I do the water pump myself?", answer: "Handy owners with a shop manual manage it, and the parts are affordable. The traps are shift-linkage alignment, driveshaft seal damage on reinstall, and torque on the housing. If any of that reads like a foreign language, two hours of shop labour is cheap tuition avoided." },
-      { question: "When's the best time to book it?", answer: "Fall, bundled with your winterize-and-service while the shop's already working on the motor, or early spring before the rush. Mid-July, when everyone's pump fails at once, is the expensive time to need one." }
+      { question: "Can I do the water pump myself?", answer: "Some owners can do it with the correct service manual, tools, and torque specifications. Shift-linkage alignment, driveshaft handling, seal surfaces, and correct kit selection are the common traps. If the engine has overheated or the lower unit is corroded, diagnosis matters more than swapping a part." },
+      { question: "When's the best time to book it?", answer: "Scheduled pump work is easiest to combine with planned maintenance before peak boating season. If the engine is overheating, the alarm sounds, or water flow drops, stop running it and investigate now rather than waiting for a convenient month." }
     ],
-    content: `# Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)
+    content: `# Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)
 
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-08-02*
 
-> **Quick answer:** At our Rice Lake shop, the median dedicated water pump job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST (as of summer 2026, confirmed when you book); full kits with housing run higher by model. It's the cooling system's only moving part and the cheapest insurance an outboard can buy. Book at hbw.wiki/service.
+> **Quick answer:** There is no single Mercury water-pump price. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the engine serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service) so the job can be scoped to the correct Mercury parts and procedure.
 
-Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) answered WHEN water pumps fail, with 766 jobs of evidence. The question people ask next at the counter is simpler: what does it cost to just do it?
+Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and timing. The next question at the counter is simpler: what changes the bill?
 
-Here are the real numbers from 112 dedicated water pump jobs since 2023, plus what's actually inside that bill and when "impeller" quietly becomes "impeller, kit, and thermostat."
+The useful answer starts with what is actually inside the job and when "impeller" becomes "impeller, housing, wear plate, seals, and diagnosis."
 
 ---
 
@@ -1763,24 +1763,23 @@ The water pump lives at the top of your gearcase, driven by the driveshaft. Gett
 
 https://www.youtube.com/watch?v=AQIV2UddocM
 
-*Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). This is the real sequence our techs follow; the video shows why the labour is the cost.*
+*Video: How to Change a Mercury Outboard Water Pump Impeller (PartsVu, 11:47). The sequence shows why access, inspection, alignment, and reassembly are a substantial part of the job.*
 
-That's why the median job runs about 2 hours of labour. The impeller itself is a modest part; the labour of getting there is the job, which is also why doing it "while we're in there" [during other gearcase work](/blog/milky-gearcase-oil-meaning-cost-ontario) saves real money.
+The impeller is only one component. Accessing the pump, checking the housing and wear plate, aligning the shift linkage and driveshaft, and water-testing the result are what separate a complete job from a part swap.
 
 ---
 
-## The Real Numbers
+## What Determines the Cost
 
-From our completed work orders (2023 to present, before HST; as of July 2026, confirmed when you book):
+| Cost factor | Why it matters |
+|---|---|
+| Exact engine, serial number, and gearcase | These identify the correct Mercury parts and service procedure. |
+| Impeller-only versus complete pump kit | A scored housing or worn plate changes the parts list. |
+| Corrosion or seized fasteners | Extra disassembly time may be needed before the lower unit can be serviced safely. |
+| Cooling-system diagnosis | A weak telltale or overheat alarm may come from an obstruction, thermostat, poppet, sensor, or another issue rather than the pump alone. |
+| Related gearcase findings | Milky lubricant, damaged seals, or metal particles create a separate inspection and approval step. |
 
-| Line | Median at our counter | Notes |
-|---|---|---|
-| Labour | ~$210 (about 2 hours) | Drop lower unit, replace pump components, reassemble, test |
-| Pump parts on the median job | ~$76 | Impeller plus gaskets/wear items on the median job |
-| Full pump kit with housing | Higher, by model | Quoted per motor when the liner is scored |
-| Indicative all-in | Labour + parts medians land near $300 | Derived, before HST; V6/V8 and corroded hardware run higher |
-
-What moves it up: a scored housing (full kit instead of impeller-and-plate), seized lower unit bolts on saltwater or neglected motors, a thermostat added while the cooling system is open, and any surprise the [gearcase drain](/blog/milky-gearcase-oil-meaning-cost-ontario) reveals while the unit is off.
+HBW confirms the scope from the serial number and inspection. That is more useful than publishing a single package price that fits some engines and misleads everyone else.
 
 What keeps it down: bundling. If your motor is already in for its [annual winterize-and-service](/blog/mercury-100-hour-service-cost-ontario), the lower unit conversation is already half-done.
 
@@ -1800,7 +1799,7 @@ We put it on your file either way: what we found, what we installed, and when th
 
 ## Common mistakes
 
-- **Waiting for the failure.** An impeller dies of heat in July, not politely in the driveway. The [766-job dataset](/blog/mercury-impeller-replacement-when-they-fail) shows midsummer is exactly when neglected pumps quit.
+- **Waiting for the failure.** Heat, load, weeds, silt, and restricted water flow are harder on a marginal pump than a brief dockside check. Follow the schedule and act on warning signs.
 - **Judging by the telltale alone.** A strong stream is necessary, not sufficient; rubber ages on the calendar even when the stream looks fine. Interval beats vibes.
 - **Running dry "just for a second."** A few seconds without water can take years off an impeller. Muffs on before the key, every time.
 - **Skipping the wear plate and gaskets to save a few dollars.** The labour is the cost; reusing worn sealing parts against fresh rubber is how a two-year job becomes an annual one.
@@ -1809,17 +1808,17 @@ We put it on your file either way: what we found, what we installed, and when th
 
 ## What HBW checks before your motor goes back on the water
 
-Every pump job here ends the same way: reassembled to torque, run on water, telltale verified strong, and the interval noted on your file so the next one is planned instead of discovered. It's a small job done carefully, which is the entire point of it; 112 of them since 2023 and the come-backs are the motors we haven't met yet.
+A completed pump job should include correct reassembly, cooling-flow verification, and a record of what was replaced. The point is not merely to install fresh rubber; it is to restore the cooling system correctly and identify anything else the inspection uncovered.
 
 ---
 
 ## Frequently Asked Questions
 
 **How much does a Mercury water pump replacement cost in Ontario?**
-At our shop the median dedicated job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST; a full kit with housing costs more and is quoted by model. Current rates are confirmed when you book at hbw.wiki/service.
+There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at [hbw.wiki/service](https://hbw.wiki/service) for a motor-specific scope.
 
 **How often should the water pump be serviced?**
-Follow your interval: for most Mercury outboards that's every 300 hours or 3 years for the pump service, with the impeller inspected sooner if the telltale weakens. Our [maintenance intervals guide](/blog/mercury-maintenance-intervals-20-100-300-rule) lays out the schedule.
+Use the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but schedules vary. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner.
 
 **Can I replace just the impeller and skip the kit?**
 When the housing liner is smooth and gaskets are healthy, impeller-and-wear-plate is the standard, honest job. Once the liner is scored or the motor has missed intervals, the kit is cheaper than doing the labour twice. We tell you which one your motor actually needs.
@@ -1828,10 +1827,10 @@ When the housing liner is smooth and gaskets are healthy, impeller-and-wear-plat
 No; the telltale outlet itself clogs with debris easily, and thermostat and poppet issues mimic pump problems. Our [overheating at high speed guide](/blog/mercury-outboard-overheat-high-speed) walks the checks in order before anyone spends money.
 
 **Can I do the water pump myself?**
-Handy owners with a shop manual manage it, and the parts are affordable. The traps are shift-linkage alignment, driveshaft seal damage on reinstall, and torque on the housing. If any of that reads like a foreign language, two hours of shop labour is cheap tuition avoided.
+Some owners can do it with the correct service manual, tools, and torque specifications. Shift-linkage alignment, driveshaft handling, seal surfaces, and correct kit selection are the common traps. If the engine has overheated or the lower unit is corroded, diagnosis matters more than swapping a part.
 
 **When's the best time to book it?**
-Fall, bundled with your winterize-and-service while the shop's already working on the motor, or early spring before the rush. Mid-July, when everyone's pump fails at once, is the expensive time to need one.
+Scheduled pump work is easiest to combine with planned maintenance before peak boating season. If the engine is overheating, the alarm sounds, or water flow drops, stop running it and investigate now rather than waiting for a convenient month.
 
 ---
 
@@ -1844,7 +1843,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 **Related guides:**
-- [When to Replace Your Mercury Impeller: What 766 Jobs Show](/blog/mercury-impeller-replacement-when-they-fail)
+- [When to Replace Your Mercury Impeller](/blog/mercury-impeller-replacement-when-they-fail)
 - [Mercury Outboard Overheating at High Speed](/blog/mercury-outboard-overheat-high-speed)
 - [Milky Gearcase Oil: What It Means and Costs](/blog/milky-gearcase-oil-meaning-cost-ontario)
 - [Mercury 100-Hour Service Cost in Ontario](/blog/mercury-100-hour-service-cost-ontario)
@@ -1853,8 +1852,8 @@ Tell us the motor, the hours, and the last time anyone was in there.
 
 ## Sources
 
-- HBW service records, Rice Lake: 112 dedicated water pump jobs, 2023-2026 (medians before HST)
-- Mercury Marine maintenance schedules (your owner's manual governs your model)
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
 `,
   },
   {
@@ -1872,7 +1871,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
     faqs: [
       { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can scope the right work." },
       { question: "Is the 100-hour service the same as winterization?", answer: "No. They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. The scope varies by engine." },
-      { question: "My motor only ran 40 hours this year. Do I still need the service?", answer: "Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because oil degrades and moisture accumulates with time, not just use. Most Kawartha boats are calendar-limited, not hour-limited; that's exactly why the fall service exists." },
+      { question: "My motor only ran 40 hours this year. Do I still need the service?", answer: "Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone." },
       { question: "What parts get replaced at a typical annual service?", answer: "There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included. HBW scopes the job from the serial number." },
       { question: "Can I skip a year to save money?", answer: "Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed, but the correct interval and parts list come from the Mercury schedule for your motor." },
       { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Fall work is handled first come, first served; there is no need to reserve winterization or storage capacity. Submit hbw.wiki/service about one to two weeks before drop-off, with mid-November as the practical last call before the December 1 closure." }
@@ -1889,13 +1888,13 @@ That's not a dodge; it's the efficient way to buy it. One appointment, one drain
 
 ## Who this is for
 
-You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want a real number before you book anything. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+You own a Mercury FourStroke, you've seen "100-hour service" in the owner's manual or heard it at the dock, and you want to know what the quote should account for. If you're deciding between doing it yourself and paying a shop, this covers that too. The interval rules themselves live in our [Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ---
 
 ## What a 100-Hour / Annual Service Actually Includes
 
-Mercury's 100-hour and annual service list for a FourStroke, in plain terms:
+The exact list varies by engine. Depending on the serial-specific schedule, a 100-hour or annual FourStroke service can include:
 
 - Engine oil and filter change
 - Gearcase (lower unit) oil change, with a look at what drains out (milky oil = seal problem caught early)
@@ -1979,7 +1978,7 @@ There is no honest one-price answer across the Mercury range. Cost depends on th
 They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. Doing both in one fall appointment can avoid duplicate work.
 
 **My motor only ran 40 hours this year. Do I still need the service?**
-Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because oil degrades and moisture accumulates with time, not just use. Most Kawartha boats are calendar-limited, not hour-limited; that's exactly why the fall service exists.
+Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone.
 
 **What parts get replaced at a typical annual service?**
 There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included.
@@ -2010,7 +2009,8 @@ Tell us the motor, its hours, and the work you want covered. Submit the request 
 
 ## Sources
 
-- Mercury Marine FourStroke maintenance schedules (your owner's manual is the source of truth for your model)
+- [Mercury Marine: FourStroke Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/four-stroke-maintenance)
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - HBW service and storage intake policy, confirmed August 2, 2026
 `
   },
@@ -2049,7 +2049,7 @@ Spring commissioning has a reputation as a big-ticket item. At our shop, the sta
 
 ## Who this is for
 
-You've got a boat coming out of winter storage (ours or your backyard) and you want to know what getting it launch-ready actually costs. If you're still deciding how to handle fall service, read this alongside the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario); the two bills are one system.
+You've got a boat coming out of winter storage, at HBW or elsewhere, and you want to know what a launch-ready scope should include. If you're still deciding how to handle fall service, read this alongside the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario); the two visits are connected.
 
 ---
 
@@ -2083,7 +2083,7 @@ The full owner's checklist version, if you want to run it yourself before first 
 
 ---
 
-## The Two Spring Bills (Real Shop Pattern)
+## The Two Spring Scopes
 
 | Your situation | Your spring looks like | HBW spring cost |
 |---|---|---|
@@ -3034,74 +3034,52 @@ Family-owned on Rice Lake since 1947.`
   },
   {
     slug: 'mercury-impeller-replacement-when-they-fail',
-    title: 'When to Replace Your Mercury Impeller: What 766 Jobs Show',
-    description: 'More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs.',
+    title: 'When to Replace a Mercury Impeller: Interval and Warning Signs (2026)',
+    description: 'When to replace a Mercury outboard impeller, which warning signs matter, why weeds and restricted water flow raise risk, and when to stop the engine.',
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     photoSlot: 'hbw-impeller-photo',
     author: 'Jay Harris',
     datePublished: '2026-06-09',
-    dateModified: "2026-07-23",
+    dateModified: "2026-08-02",
     publishDate: '2026-06-09',
     category: 'Service & Troubleshooting',
     readTime: '7 min read',
     keywords: ["mercury impeller replacement","outboard impeller failure symptoms","when to replace boat impeller","weak telltale stream","overheat alarm mercury"],
     faqs: [
-      { question: "How often should a Mercury outboard impeller be replaced?", answer: "Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On Rice Lake, treat that as an outer limit (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for your model and hours, but the warning signs still override the calendar: a weakening telltale stream or an overheat alarm means the impeller's time is up regardless of when it was last done." },
+      { question: "How often should a Mercury outboard impeller be replaced?", answer: "Follow the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but the interval varies by engine. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner." },
       { question: "What are the signs of a failing impeller?", answer: "In the order we see them: a weaker-than-usual telltale stream, an overheat alarm at high throttle while idle seems fine, then an alarm at idle or no stream at all. On weedy water like Rice Lake, always clear the intake first; a weed-wrapped lower unit mimics a dead impeller." },
-      { question: "Can I keep boating if the telltale stream is weak?", answer: "We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not." },
-      { question: "Why do more impellers fail in summer than in spring?", answer: "In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes." },
-      { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test in cold water is the easiest exam an impeller will face all year. It catches a dead pump, but a marginal one with set or cracked vanes can pass in May and let go in July. That's exactly the pattern our 12 years of shop records show." },
-      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "Yes. We stock Mercury and Mercruiser water pump kits in depth, which helps us avoid parts delays on many summer impeller jobs. Book at hbw.wiki/service." }
+      { question: "Can I keep boating if the telltale stream is weak?", answer: "Do not assume a weak stream is harmless. Stop, check the intake for weeds or debris, and follow the owner's manual. If water flow remains abnormal or an overheat alarm sounds, shut the engine down and have the cooling system inspected." },
+      { question: "Why can impeller trouble appear in summer?", answer: "A short spring idle check does not reproduce a long run under load. Warm water, weeds, silt, blocked intakes, and higher engine demand can expose a marginal cooling system. That is why the maintenance schedule and warning signs matter more than one successful dockside test." },
+      { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test can confirm that water is moving, but it cannot guarantee normal cooling under every speed and load. If water pressure drops, the telltale changes, or an overheat alarm sounds, stop and investigate." },
+      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbw.wiki/service." }
     ],
     content: `## Quick answer
 
-The signs of a failing Mercury impeller, in the order we see them: a weakening telltale stream, an overheat alarm at high throttle, then an alarm at idle or no stream at all. In our service records (766 jobs since 2014), June and July beat April and May by about 40 percent. Once the motor is on the bench, the repair is usually straightforward. Book at hbw.wiki/service.
+Follow the maintenance schedule for your exact Mercury engine and serial number. Investigate sooner if the telltale changes, cooling-water pressure drops, or an overheat alarm sounds. Clear weeds or debris from the intake, but do not keep running an engine that still shows weak or absent water flow or an active overheat warning.
 
-Ask ten boaters when impellers fail and nine will say spring. First start of the year, motor's been sitting all winter, rubber's stiff: makes sense. It's also not what our repair orders say.
+A short spring idle test can confirm that water is moving. It cannot guarantee normal cooling during a long summer run under load. Warm water, weeds, silt, a blocked intake, a worn housing, or a marginal impeller can all change what happens when the engine works harder.
 
-We went through every impeller and water pump job in our service records since 2014. There are 766 of them. The busiest months are not April and May. They're June and July, by a wide margin. The impeller that passes a five-minute idle test at the dock in May is not always the impeller that survives a long, hot, weedy July afternoon pulling tubes.
+This guide explains the interval, the warning signs, and the safe order of checks for Rice Lake and Kawartha boating.
 
-This post shows the curve, explains why midsummer is the killer on Rice Lake specifically, and gives you the warning signs in the order we actually see them.
+## Why Problems Often Appear Under Summer Load
 
-## What the Numbers Say
+An impeller is a flexible rubber rotor spinning inside a housing and lubricated by the water it pumps. It needs an open intake, the correct housing clearances, and enough water flow for the engine's operating demand.
 
-![Bar chart showing peak Mercury impeller failures on Rice Lake occur in June and July, based on 766 shop service records.](/lovable-uploads/impeller-failures-by-month-hbw.png)
+A brief idle test is a light-duty check. A long run with people and gear aboard places more demand on the cooling system. Add warm shallow water, weeds around the intake, or abrasive silt and a marginal pump may show symptoms that were not obvious at the dock.
 
-| Month | Impeller / water pump jobs (2014-2026) |
-|---|---|
-| March | 1 |
-| April | 84 |
-| May | 123 |
-| June | **144** |
-| July | **143** |
-| August | 117 |
-| September | 73 |
-| October | 36 |
-| November | 45 |
+## Why Rice Lake Demands Intake Checks
 
-Two things stand out. First, June and July together (287 jobs) beat April and May (207) by about 40 percent. Second, roughly two-thirds of a year's impeller work lands between May and August, when boats are working hardest. The jobs that bring them in are not labelled "routine check" either: the midsummer tickets read "overheating", "[alarm sounding](/blog/mercury-outboard-overheat-alarm-decoder)", and "not pumping water".
+Rice Lake is shallow, warm, and famously weedy. That's good habitat and a reason to pay attention to the cooling-water intake.
 
-One honest note on the data: these are part lines from our repair orders, so they include both impellers replaced because they failed and impellers replaced during other work. The shape of the curve is the point: if spring stiffness were the main killer, April would be the peak. It isn't. Counts are part lines from completed repair orders, January 2014 through the first week of June 2026. The 2026 season is still in progress, so this summer's months are still adding to their totals. Fall counts are small enough that month-to-month wiggle (November edging October, for example) is noise, not signal.
+Weeds can wrap the lower unit and restrict the intake. Sand and silt can also wear pump components. Mercury warns that operating without an adequate water supply, even briefly, can damage the impeller and overheat the engine.
 
-## Why Midsummer Finishes Impellers
-
-An impeller is a rubber star spinning inside a metal housing, lubricated by the water it pumps. Three things age it: heat, load, and anything that interrupts water flow. All three peak in July.
-
-A marginal impeller, one with a little set in the vanes or a few hairline cracks, can pass a spring start-up without complaint. Cold water, light load, short run. The same impeller two months later is pushing cooling water for a full afternoon at cruise, in the warmest water of the year, with the family aboard. That's when the weak vane lets go.
-
-## Why Rice Lake (and the Kawarthas Generally) Eats Impellers
-
-Rice Lake is shallow, warm, and famously weedy. That's why the fishing is good, and it's also why our impeller curve looks the way it does.
-
-Weeds wrap the lower unit and starve the water intake. A choked intake means the impeller runs partially dry, and a rubber impeller running dry destroys itself in seconds, not minutes. By midsummer the weed beds are at full height, exactly when the June-July spike hits. Late summer adds a second hazard: lower water means more sand and silt through the pump, which works like grinding paste on the housing and wear plate.
-
-If you boat the Kawarthas, your impeller lives a harder life than the same part on a deep, cold, clear lake. Treat the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) as a ceiling, not a target. Mercury's schedule calls for [water pump impeller replacement](/blog/mercury-water-pump-replacement-cost-ontario) every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure; on Rice Lake, treat that as an outer limit.
+Use the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) for your exact engine and serial number. Inspect sooner when overheating, reduced water pressure, or abnormal water flow appears.
 
 ## The Warning Signs, in the Order We See Them
 
-1. **The telltale stream weakens.** Still peeing, but lazier than usual. Most people notice and most people keep boating. This is the cheapest moment to act.
-2. **The overheat alarm sounds at high throttle.** The pump keeps up at idle but can't feed the motor under load. See our [beep and alarm codes guide](/blog/mercury-outboard-beeping-codes-guide) for what the patterns mean.
-3. **The alarm sounds at idle, or the stream stops.** The pump is done. Shut down, tilt the motor, check the intake for weeds, and call before running it again. If the motor has overheated badly, see the [overheating emergency guide](/blog/outboard-overheating-emergency-guide).
+1. **The telltale stream weakens.** The stream is only one indicator, but a clear change deserves attention rather than another weekend of hoping.
+2. **The overheat alarm sounds under load.** A cooling problem can appear at higher engine demand even when a brief idle check looked normal. See our [beep and alarm codes guide](/blog/mercury-outboard-beeping-codes-guide) for the safe first response.
+3. **The alarm sounds at idle, or the stream stops.** Shut down, check the intake for weeds or debris, and follow the owner's manual before restarting. If the engine has overheated, see the [overheating emergency guide](/blog/outboard-overheating-emergency-guide).
 
 Not every failure announces itself in this order; a telltale can keep flowing while water pressure is already down, which is why the alarm matters more than the stream. A weed-wrapped intake mimics a dead impeller. On Rice Lake, always clear the lower unit and re-check the stream before assuming the worst.
 
@@ -3109,31 +3087,32 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 
 1. Throttle back to idle immediately.
 2. Check the telltale stream.
-3. Tilt the motor and clear weeds or debris from the water intake.
-4. Re-check the stream. If it is strong again, weeds were likely the problem; head in at low rpm and monitor.
-5. If the stream is still weak or absent, or the alarm continues, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
+3. When safe, tilt the motor and clear visible weeds or debris from the water intake.
+4. Follow the owner's manual before restarting. Do not treat a restored telltale alone as proof that the cooling system is healthy.
+5. If water flow is still weak or absent, the alarm continues, or you are unsure, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What We See at HBW
 
-The midsummer impeller tickets almost never come in as "impeller, please". They come in as "overheating", "alarm going off", or "no water coming out the pee hole", usually on a Friday before a long weekend. The fix itself is straightforward: impeller, or the full water pump kit if the housing and wear plate are scored. We stock Mercury and Mercruiser water pump kits in depth, which helps us avoid parts delays on many summer jobs.
+Cooling-system requests rarely arrive labelled with a confirmed part. Owners report symptoms such as overheating, an alarm, or weak water flow. The diagnosis may lead to an impeller, a complete pump kit when the housing or wear plate is scored, an obstruction, or another cooling-system component.
 
-The pattern we'd love to break: the boater who noticed a weak telltale in June and toughed it out until the alarm ended their August long weekend. The first visit is an hour of shop time. The second can be a powerhead.
+The pattern we'd love to break is the boater who notices a weak telltale, keeps running, and waits for the overheat alarm to settle the argument. Early inspection protects the engine and gives the shop a symptom to diagnose before more damage is added.
 
 ## Common Mistakes
 
 - **Trusting the pee stream alone.** A motor can show a stream and still be running hotter than it should. The stream is one signal, not a clean bill of health.
-- **Running the motor on the trailer without water.** A few dry seconds takes months off an impeller. Use muffs or a tank, every time.
+- **Running the motor without an approved water supply.** Even brief dry operation can damage the impeller. Follow the owner's manual for the correct flushing or test setup.
 - **Replacing the impeller but ignoring a scored housing.** A new impeller in a worn housing pumps poorly and fails early. If the housing or wear plate is scored, do the kit.
 - **Treating the spring check as a season-long guarantee.** It's a snapshot. Heat, weeds, and hours are what the season adds.
 
 ## Sources
 
-- [Mercury Marine - Owner Resources](https://www.mercurymarine.com/canada/en/owners/) - Official maintenance documentation including water pump and impeller service intervals.
-- [Mercury Marine Canada](https://www.mercurymarine.com/canada/en/) - Authorized service dealer network for impeller and lower-unit work.
+- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
+- [Mercury Marine: Preventing Corrosion](https://www.mercurymarine.com/sp/en/parts-and-service/maintenance/maintenance-made-easy/preventing-corrosion)
 
 ## Ready to Get Ahead of It?
 
-If your telltale has gone lazy, or you can't remember which season the impeller was last done, that's reason enough. It's quick work in June and a ruined weekend in August.
+If water flow has changed, an overheat alarm has sounded, or you cannot identify the last pump service in the maintenance record, submit the serial number and symptoms for review.
 
 [Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
 `,
@@ -7365,7 +7344,7 @@ Real-world performance varies with hull, load, prop, mounting height, water cond
 
 ## Quick recommendation
 
-The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a reason: it fits the most common boat (16 to 18 ft aluminum console), the most common use (family fishing, mixed recreational), and the most common hull rating (75 to 115 HP capacity plate). It hits the price-performance sweet spot that the 75 misses on power and the 115 misses on value for lighter use. It is also the motor class that crosses our service bench most often: 526 winterize-and-service jobs on 75 to 115 HP FourStrokes in the last five years, more than any other HP band in the shop.
+The 90 HP FourStroke sits in the useful middle of this group. On many 16 to 18 ft aluminum console boats, it adds loaded planing and acceleration over the 75 without automatically moving the buyer into the price and weight of the 115. The capacity plate, hull, normal load, current rigging, and performance goal still decide whether that middle answer is the right one.
 
 When customers ask "75, 90, or 115?" we usually walk through three things: hull length, typical loading, and use case. The right answer comes out of those three. For most Ontario freshwater customers, the answer is 90. For lighter use on shorter hulls, the 75 is enough. For heavier loading or bigger water, the 115 earns the price difference.
 
@@ -16516,7 +16495,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-trailer-boat-toronto.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-26',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-04-26',
     category: 'How To',
     readTime: '12 min read',
@@ -16714,7 +16693,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
       },
       {
         question: 'What should I check on my outboard before trailering?',
-        answer: 'Before trailering, ensure the outboard is tilted fully up and the tilt lock engaged to prevent motor bounce on the road. Reinstall the engine flush plug if you flushed the motor. Make sure the motor support bracket or transom saver is in place for trips over an hour, road vibration transmits through the transom, and a transom saver distributes that load across the trailer rather than the transom. If the motor hasn\'t run yet this season, check our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch. Our spring startup service averages about $511 based on 232 jobs completed last season, it\'s worth having it done before the first long haul.'
+        answer: 'Use the trailering position and support method specified for your exact Mercury model and trailer; do not assume one tilt-lock or transom-saver rule fits every rig. Confirm the engine is secured, steering cannot swing freely, the propeller has road clearance, and any flush plug is reinstalled. If the motor has not run this season, work through our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch.'
       },
     ]
   },
@@ -16727,7 +16706,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     image: '/lovable-uploads/hero-mercury-wont-start-dockside.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: "2026-07-31",
+    dateModified: "2026-08-02",
     publishDate: '2026-04-27',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -16736,13 +16715,13 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
 
 Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Put in a service request at hbw.wiki/service.
 
-*Last reviewed: 2026-07-30*
+*Last reviewed: 2026-08-02*
 
 ![Mercury outboard won't start: dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
-This guide walks you through what we actually see in our service bay at HBW. We do hundreds of these every spring. Most have one of three or four causes. A handful of them you can fix at the dock in 30 seconds. The rest need our shop.
+This guide walks through the safe diagnostic order we use at HBW. Start with the controls and electrical supply, then fuel and ignition. Some no-starts are simple dockside corrections; others need serial-specific testing and Mercury diagnostic equipment.
 
 [Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
 
@@ -16770,9 +16749,7 @@ If voltage falls sharply, the starter labours, or a cable gets hot, stop and cor
 
 ### Step 2: Fuel quality and quantity
 
-If you stored the boat with E10 gasoline and no stabilizer, your tank is probably the problem. **Phase separation** is what happens when water condenses out of humid air, [mixes with the ethanol in E10 fuel](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), and sinks to the bottom of the tank as a low-octane, non-combustible layer.
-
-Lab estimates say phase separation takes 60-90 days in a sealed tank. In real Ontario boats with leaky caps and some existing water, we routinely see bad, phase-separated fuel in as little as **three weeks**.
+If fuel sat through storage, treat fuel quality as a question rather than assuming it is fine. Ethanol-blended gasoline can absorb water, and enough water can cause [phase separation](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario). The timing is not a fixed number of days; it depends on the fuel, water exposure, tank, temperature, and storage conditions.
 
 **What to check:**
 - Pump a sample from the bottom of the tank into a clear glass jar
@@ -16795,7 +16772,7 @@ If you've ruled out battery and fuel, the next check is ignition. Pull a plug, l
 - **Black and oily:** rich condition or oil consumption
 - **Black and dry (carbon fouled):** plug needs replacement
 
-Mercury uses primarily NGK spark plugs across the FourStroke and Pro XS lineup. We stock the common ones on the shelf.
+Mercury specifies the spark-plug type by engine and serial number. Verify the correct part and gap in the owner's or service manual rather than matching only by horsepower.
 
 ### Step 5: EFI fault code scan (this is us)
 
@@ -16816,23 +16793,20 @@ We compare cylinders with each other and then check the serial-specific Mercury 
 
 ## What we see at HBW
 
-**The walk-in fixes** (30 seconds at the desk): kill switch off, shifter not in neutral, battery switch wrong. Free to fix.
+**Control and power checks:** kill switch, neutral-safety position, battery switch, battery condition, cables, and grounds.
 
-**The 30-minute fixes:** battery replacement, fuel filter, primer bulb, spark plugs.
+**Fuel and ignition checks:** fuel quality, primer bulb, filters, spark plugs, and model-specific ignition tests.
 
-**The half-day fixes:** EFI diagnosis with CDS, VST cleaning, low-pressure fuel pump, crank position sensor, ignition coil.
+**Dealer diagnosis:** Mercury CDS live data, VST and fuel-pressure checks, sensors, coils, compression, or leak-down testing when the earlier steps do not identify the fault.
 
-We pulled our own numbers on this. Since 2013 we have logged 537 no-start and rough-running jobs in our service records. About half traced back to fuel: stale gas, water in the tank, clogged filters. A bit under half were electrical: weak batteries, corroded grounds, tired connections. Roughly a quarter involved spark plugs, and 14 of the 537 were nothing but the kill switch. The buckets overlap (old gas and a fouled plug often arrive together), but the lesson holds: the cheap stuff fails first, which is exactly why the ladder above starts there.
-
-![Bar chart showing Harris Boat Works service data for common Mercury outboard no-start causes in Ontario.](/lovable-uploads/wont-start-causes-hbw.png)
-*Causes across 537 no-start and rough-running jobs in our service records, 2013-2026. Categories overlap; one motor can have old gas and a fouled plug.*
+The ladder is ordered to prevent wasted work. A disabled kill switch, neutral-safety issue, weak battery, poor connection, or contaminated fuel can imitate a more expensive failure. Confirm the basics before replacing parts or assuming the engine computer has failed.
 
 Once the boat is on the bench, many no-start jobs are quick to isolate. Parts availability and the actual cause decide the repair timeline.
 
 ## Common mistakes
 
-- **Starting fluid in an EFI four-stroke.** Ether is for old carbureted tractors, not fuel-injected Mercurys. It washes the cylinders dry and can score them. Never.
-- **Cranking until the starter smokes.** Ten seconds of crank, then rest. Thirty-second crank marathons cook starters and flatten batteries, and now you have two problems.
+- **Using starting fluid without a model-specific procedure.** Do not spray ether into a modern Mercury because an internet forum suggested it. Follow the owner's or service manual.
+- **Cranking continuously.** Long repeated attempts can overheat the starter and flatten the battery. Use the cranking and rest limits in the owner's manual.
 - **Throwing parts at it.** New plugs into a tank of phase-separated gas fouls the new plugs. Diagnose in order: power, fuel, spark. That's the whole ladder above.
 - **"Freshening up" bad gas.** Topping a half tank of separated E10 with fresh fuel doesn't fix it. The water-ethanol layer is still sitting on the pickup. Drain it.
 - **Jump-starting from a running truck.** Voltage spikes and modern engine computers are a bad mix. Charge the battery properly or swap in a good one.
@@ -16853,7 +16827,6 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 - [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
-- HBW service records: 537 no-start and rough-running jobs, 2013-2026
 
 ---
 
@@ -16880,7 +16853,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
       },
       {
         question: 'How fast does E10 fuel go bad in storage?',
-        answer: 'Under lab conditions, 60-90 days sealed. On a real boat with a vented tank and a bit of water already aboard, we\'ve pulled separated fuel three weeks after fill-up. Stabilize at every layup, or skip the problem and run our ethanol-free 89.'
+        answer: 'There is no reliable fixed number of days. Fuel age, ethanol content, water exposure, tank condition, temperature, and storage all matter. If fuel sat through storage or the engine now runs poorly, treat fuel quality as a diagnostic question rather than assuming it is fresh.'
       },
       {
         question: 'Does HBW sell ethanol-free fuel at the dock?',
@@ -16888,15 +16861,15 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
       },
       {
         question: 'Does HBW offer a flat-rate no-start diagnostic?',
-        answer: 'No. Diagnostic time is billed at our standard service rate. Most no-start tickets are resolved within 30 minutes to half a day depending on which step of the ladder the cause is on.'
+        answer: 'No. A no-start is a symptom, not a fixed job. The diagnostic scope depends on the engine, what it does when the key is turned, test results, access, and whether the fault is electrical, fuel, ignition, control, or mechanical.'
       },
       {
         question: 'What\'s the most common EFI fault code on no-start tickets?',
-        answer: 'Usually there isn\'t one, and that\'s the trap. On Mercury EFI 40-115 HP, the scanner shows clean memory because the real culprits, sagging crank voltage, corroded grounds, a tired low-pressure pump, don\'t set codes. Live data through Mercury CDS is what finds them, which is why this step is a shop visit.'
+        answer: 'A stored fault is not guaranteed. Clean fault memory does not rule out low cranking voltage, a poor connection, a fuel-delivery problem, or an intermittent sensor. Mercury CDS live data and serial-specific tests help separate those possibilities.'
       },
       {
         question: 'What is the most common reason a Mercury outboard won\'t start?',
-        answer: 'Fuel, by a nose over electrical. Our own 537-job history since 2013 splits roughly half fuel, just under half electrical, a quarter spark plugs, and 14 lonely kill switches. Cheap stuff first: that\'s not a slogan, it\'s what the data says.'
+        answer: 'There is no universal winner. Start with the kill switch, neutral-safety position, battery switch, battery condition, and connections, then move to fuel and ignition. That order rules out simple causes before parts are replaced or dealer diagnostics begin.'
       }
     ]
   },
@@ -33991,7 +33964,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Marine technician reviewing diagnostic notes, a propeller and test equipment in a service shop",
     author: "Jay Harris",
     datePublished: "2026-06-10",
-    dateModified: '2026-07-30',
+    dateModified: '2026-08-02',
     publishDate: "2026-06-10",
     category: "Service",
     readTime: "~12 min read",
@@ -34092,7 +34065,7 @@ Avoid a shopping list of parts based on forum guesses. â€œReplace the fuel pumpâ
 
 ## What We See at HBW
 
-Our 2025 records show 507 customer-paid service jobs. The useful pattern isn't that every warning has one favourite cause. It's that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed and when it started.
+The useful pattern is not that every warning has one favourite cause. It is that the best intake notes preserve the clues: exact message, RPM, fuel source, battery history, what changed, and when it started.
 
 Around Rice Lake and the Kawarthas, getting those details before the boat reaches Gores Landing can save a lot of backtracking. A clear symptom history helps us test the right system first instead of replacing parts on a guess.
 
@@ -34159,7 +34132,6 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
 
 ## Sources
 
-- Harris Boat Works 2025 service records: 507 customer-paid service jobs
 - [Mercury Marine, Battery Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/battery-basics)
 - [Mercury Marine, Propeller Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/propeller-maintenance)
 - [Mercury Marine, Fuel Basics](https://www.mercurymarine.com/ca/en/lifestyle/dockline/fuel-basics)

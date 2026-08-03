@@ -211,8 +211,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "milky-gearcase-oil-meaning-cost-ontario",
-    "title": "Milky Gearcase Oil: What It Means, What It Costs, and Why Fall Catches It Cheap (2026)",
-    "description": "Milky gearcase oil means water past a seal. What it costs caught early vs late, how to read the drain, and why the annual service is your cheapest gearcase insurance.",
+    "title": "Milky Gearcase Oil Repair Cost in Ontario: Causes and Next Steps (2026)",
+    "description": "What affects milky gearcase oil repair cost in Ontario, what can cause water intrusion, how a technician tests the gearcase, and what to do next.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -229,7 +229,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I just change the oil and keep boating?",
-        "a": "For a weekend, maybe. But the leak that let water in is still there, and continued running on emulsified oil wears gears and bearings. In fall it's worse: trapped water freezes and can crack the case. Fix the seal; don't refresh the milkshake."
+        "a": "No. Refilling does not identify or repair the source of water intrusion. Mercury warns that water-contaminated lubricant can damage bearings and can freeze inside the gearcase. Have the gearcase inspected before further operation."
       },
       {
         "q": "How much does a gearcase pressure test cost?",
@@ -243,8 +243,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-water-pump-replacement-cost-ontario",
-    "title": "Mercury Water Pump Replacement Cost in Ontario: Real Numbers From 112 Jobs (2026)",
-    "description": "What a Mercury water pump replacement really costs in Ontario, from 112 shop jobs: median labour, parts, impeller-only vs full kit, and when to book it.",
+    "title": "Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)",
+    "description": "What changes the cost of a Mercury water pump replacement in Ontario: engine model, impeller versus full kit, corrosion, diagnosis, and labour.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -257,11 +257,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does a Mercury water pump replacement cost in Ontario?",
-        "a": "At our shop the median dedicated job since 2023 billed about $210 in labour (roughly 2 hours) plus about $76 in pump parts, before HST; a full kit with housing costs more and is quoted by model. Current rates are confirmed when you book at hbw.wiki/service."
+        "a": "There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at hbw.wiki/service for a motor-specific scope."
       },
       {
         "q": "How often should the water pump be serviced?",
-        "a": "Follow your interval: for most Mercury outboards that's every 300 hours or 3 years for the pump service, with the impeller inspected sooner if the telltale weakens. Our maintenance intervals guide lays out the schedule."
+        "a": "Use the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but schedules vary. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner."
       },
       {
         "q": "Can I replace just the impeller and skip the kit?",
@@ -297,7 +297,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "My motor only ran 40 hours this year. Do I still need the service?",
-        "a": "Yes. Mercury's schedule is 100 hours OR one year, whichever comes first, because oil degrades and moisture accumulates with time, not just use. Most Kawartha boats are calendar-limited, not hour-limited; that's exactly why the fall service exists."
+        "a": "Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone."
       },
       {
         "q": "What parts get replaced at a typical annual service?",
@@ -308,7 +308,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "spring-commissioning-cost-ontario",
     "title": "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)",
-    "description": "What spring commissioning really costs in Ontario, from 9,540 spring work orders: the flat startup rate, what's included, and why the fall service decides the spring bill.",
+    "description": "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -321,11 +321,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does spring commissioning cost in Ontario?",
-        "a": "For a boat that was winterized and serviced in fall, our flat spring-startup labour was $99 last season (before HST; as of July 2026; confirmed when you book), with parts only as needed. Boats that skipped fall service pay for the deferred service on top, in the busiest month of the year."
+        "a": "At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; the service request confirms the current scope and price."
       },
       {
         "q": "What's included in a spring startup?",
-        "a": "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. It's about an hour on a properly winterized boat."
+        "a": "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check."
       },
       {
         "q": "Do I need spring commissioning if I winterized properly?",
@@ -533,8 +533,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-impeller-replacement-when-they-fail",
-    "title": "When to Replace Your Mercury Impeller: What 766 Jobs Show",
-    "description": "More impellers die in July than April at our Rice Lake shop. 766 replacements since 2014, charted: failure timing, warning signs.",
+    "title": "When to Replace a Mercury Impeller: Interval and Warning Signs (2026)",
+    "description": "When to replace a Mercury outboard impeller, which warning signs matter, why weeds and restricted water flow raise risk, and when to stop the engine.",
     "category": "Service & Troubleshooting",
     "publishDate": "2026-06-09",
     "keywords": [
@@ -547,7 +547,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How often should a Mercury outboard impeller be replaced?",
-        "a": "Mercury's schedule calls for water pump impeller replacement every 300 hours or three years, whichever comes first, and sooner if you see overheating or reduced water pressure. On Rice Lake, treat that as an outer limit (heat, weeds, and silt shorten impeller life). Your operator's manual is the source of truth for yo…"
+        "a": "Follow the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but the interval varies by engine. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner."
       },
       {
         "q": "What are the signs of a failing impeller?",
@@ -555,11 +555,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I keep boating if the telltale stream is weak?",
-        "a": "We wouldn't. A weak stream means reduced cooling, and the gap between a weak stream and an overheat alarm can be one hot afternoon. Clear the water intake of weeds, re-check, and if it is still lazy, get it looked at. The repair is an hour of shop time; cooked powerheads are not."
+        "a": "Do not assume a weak stream is harmless. Stop, check the intake for weeds or debris, and follow the owner's manual. If water flow remains abnormal or an overheat alarm sounds, shut the engine down and have the cooling system inspected."
       },
       {
-        "q": "Why do more impellers fail in summer than in spring?",
-        "a": "In our service records (766 impeller and water pump jobs since 2014), June and July beat April and May by about 40 percent. A marginal impeller can pass a short, cool spring start-up and then fail under midsummer conditions: the warmest water of the year, long runs under load, and weed-choked intakes."
+        "q": "Why can impeller trouble appear in summer?",
+        "a": "A short spring idle check does not reproduce a long run under load. Warm water, weeds, silt, blocked intakes, and higher engine demand can expose a marginal cooling system. That is why the maintenance schedule and warning signs matter more than one successful dockside test."
       }
     ]
   },
@@ -2727,7 +2727,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How fast does E10 fuel go bad in storage?",
-        "a": "Under lab conditions, 60-90 days sealed. On a real boat with a vented tank and a bit of water already aboard, we've pulled separated fuel three weeks after fill-up. Stabilize at every layup, or skip the problem and run our ethanol-free 89."
+        "a": "There is no reliable fixed number of days. Fuel age, ethanol content, water exposure, tank condition, temperature, and storage all matter. If fuel sat through storage or the engine now runs poorly, treat fuel quality as a diagnostic question rather than assuming it is fresh."
       },
       {
         "q": "Does HBW sell ethanol-free fuel at the dock?",

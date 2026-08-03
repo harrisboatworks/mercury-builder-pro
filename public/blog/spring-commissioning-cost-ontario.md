@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service  
 **Published:** 2026-07-02  
-**Last updated:** 2026-08-02
+**Last updated:** 2026-08-02  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario
 
@@ -40,7 +40,7 @@ Spring commissioning has a reputation as a big-ticket item. At our shop, the sta
 
 ## Who this is for
 
-You've got a boat coming out of winter storage (ours or your backyard) and you want to know what getting it launch-ready actually costs. If you're still deciding how to handle fall service, read this alongside the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario); the two bills are one system.
+You've got a boat coming out of winter storage, at HBW or elsewhere, and you want to know what a launch-ready scope should include. If you're still deciding how to handle fall service, read this alongside the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario); the two visits are connected.
 
 ---
 
@@ -74,7 +74,7 @@ The full owner's checklist version, if you want to run it yourself before first 
 
 ---
 
-## The Two Spring Bills (Real Shop Pattern)
+## The Two Spring Scopes
 
 | Your situation | Your spring looks like | HBW spring cost |
 |---|---|---|
@@ -126,7 +126,7 @@ If you are bringing us a boat, submit the service form about one to two weeks be
 
 ### How much does spring commissioning cost in Ontario?
 
-At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; your service request confirms the current scope and price.
+At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; the service request confirms the current scope and price.
 
 ### What's included in a spring startup?
 
@@ -142,19 +142,19 @@ Most of it, yes; our spring checklist walks every step. The shop earns its hour 
 
 ### When should I submit a spring service request?
 
-HBW reopens April 6 and handles service first-come, first-served. If you are bringing us a boat, complete [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so an earlier spring drop-off leaves more time if the check uncovers a repair.
+HBW reopens April 6 and handles service first-come, first-served. If you are bringing us a boat, complete hbw.wiki/service about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so earlier spring drop-offs leave more time if the check uncovers a repair.
 
 ### Why is my neighbour's spring bill higher than mine?
 
-The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) explains that side of the cycle.
+The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the winterization cost guide explains that side of the cycle.
 
 ## Related guides
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 
 ## Next steps
 
@@ -170,3 +170,4 @@ The standard check is the small part. The total rises when the startup also need
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

@@ -108,6 +108,44 @@ const editorialIntentChecks = [
   { slug: 'mercury-100-hour-service-cost-ontario', title: /What's Included/i, description: /when to submit an HBW service request/i },
 ] as const;
 
+const serviceEvidenceSlugs = [
+  // Spring commissioning has its own aggregate methodology note and focused
+  // regression test because its 9,540-job snapshot and $99 scope are verified.
+  'milky-gearcase-oil-meaning-cost-ontario',
+  'mercury-water-pump-replacement-cost-ontario',
+  'mercury-100-hour-service-cost-ontario',
+  'mercury-impeller-replacement-when-they-fail',
+  'trailer-boat-toronto-to-rice-lake-guide',
+  'mercury-outboard-wont-start-troubleshooting',
+] as const;
+
+const unsupportedServiceEvidencePatterns = [
+  {
+    label: 'hardcoded customer-facing service price',
+    pattern:
+      /(?:\b(?:service|repair|diagnostic|labou?r|parts?|startup|winteriz\w*|commission\w*|water pump|impeller|gearcase)\b[^\n.]{0,120}(?:\$\s*\d|\bCAD\s+\d)|(?:\$\s*\d|\bCAD\s+\d)[^\n.]{0,120}\b(?:service|repair|diagnostic|labou?r|parts?|startup|winteriz\w*|commission\w*|water pump|impeller|gearcase)\b|^\|[^\n]*\$\s*\d[^\n]*\$\s*\d)/im,
+  },
+  {
+    label: 'retired unsupported service statistic',
+    pattern:
+      /(?:by about 40 percent|as little as three weeks|phase separation takes 60(?:\s*(?:-|\u2013)\s*|\s+to\s+)90 days)/i,
+  },
+  {
+    label: 'retired unsupported service-data graphic',
+    pattern: /(?:impeller-failures-by-month-hbw|wont-start-causes-hbw)\.png/i,
+  },
+] as const;
+
+const internalServiceCountPattern =
+  /\b\d[\d,]*(?:\.\d+)?(?:[-\s]+[a-z][a-z-]*){0,8}[-\s]+(?:jobs?|work[- ]orders|pressure[- ]tests)\b/gi;
+const internalServiceCountContext =
+  /(?:\bour(?: own)? (?:service |repair )?(?:records?|history|system|data|work orders?|shop|service bench|completed)\b|\b(?:HBW|Harris Boat Works)(?:'s)? (?:service )?(?:records?|history|system|data)\b|\brecords?\b|\bhistory\b|\bdataset\b|\bin our system\b|\bcompleted work orders?\b|\blast (?:season|year)\b|\bshow(?:s|ed)?\b|\btaught\b|\breal numbers\b|\bmore than any\b)/i;
+const verifiedInternalServiceCountExceptions: Record<string, RegExp> = {
+  // Aggregate evidence and row grain are documented in
+  // docs/blog-data-methodology/spring-commissioning-2026-08-02.md.
+  'spring-commissioning-cost-ontario': /^(?:9,540|9,841)\b/,
+};
+
 for (const article of blogArticles) {
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const cleaned = cleanBlogContent(article.content, {
@@ -142,6 +180,28 @@ for (const article of blogArticles) {
       failures.push(`${article.slug}: ${claim.label}`);
     }
   }
+
+  const completeArticleSource = [
+    article.title,
+    article.description,
+    claimSource,
+  ].join('\n');
+  for (const match of completeArticleSource.matchAll(internalServiceCountPattern)) {
+    if (verifiedInternalServiceCountExceptions[article.slug]?.test(match[0])) {
+      continue;
+    }
+    const start = Math.max(0, (match.index || 0) - 180);
+    const end = Math.min(
+      completeArticleSource.length,
+      (match.index || 0) + match[0].length + 180,
+    );
+    const context = completeArticleSource.slice(start, end);
+    if (internalServiceCountContext.test(context)) {
+      failures.push(
+        `${article.slug}: unsupported internal service-count evidence (${match[0]})`,
+      );
+    }
+  }
 }
 
 for (const slug of diagnosticSlugs) {
@@ -171,6 +231,27 @@ for (const intent of editorialIntentChecks) {
   }
 }
 
+for (const slug of serviceEvidenceSlugs) {
+  const article = blogArticles.find((candidate) => candidate.slug === slug);
+  if (!article) {
+    failures.push(`${slug}: service-evidence article is missing`);
+    continue;
+  }
+
+  const evidenceSource = [
+    article.title,
+    article.description,
+    article.content,
+    JSON.stringify(article.faqs || []),
+  ].join('\n');
+
+  for (const check of unsupportedServiceEvidencePatterns) {
+    if (check.pattern.test(evidenceSource)) {
+      failures.push(`${slug}: ${check.label}`);
+    }
+  }
+}
+
 if (failures.length > 0) {
   console.error('Blog output hygiene check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -178,5 +259,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, and ${editorialIntentChecks.length} editorial-intent checks.`,
+  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, and ${serviceEvidenceSlugs.length} service-evidence articles.`,
 );
