@@ -2962,7 +2962,7 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
     image: '/lovable-uploads/hero-ucp-agentic-commerce.png',
     author: 'Jay Harris',
     datePublished: '2026-06-11',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-02',
     publishDate: '2026-06-11',
     category: 'Mercury Technology',
     readTime: '6 min read',
@@ -2975,22 +2975,22 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
       { question: "Why does a 1947 family marina care about an AI standard?", answer: "Because the standard rewards what we already do, plain CAD pricing, no Verado in default inventory, pickup only at Gores Landing. Machine-readable honesty is the same job as in-person honesty, just written in JSON. The same standard runs at Shopify, Target, and Walmart. We just got there first in our corner of the marine world." }
     ],
     relatedSlugs: ['mercury-outboard-financing-ontario-2026', 'ontario-mercury-outboard-price-guide', 'mercury-repower-cost-ontario-2026-cad'],
-    content: `> **Quick answer:** As of June 11, 2026, Harris Boat Works is a live Universal Commerce Protocol (UCP) merchant, verified end-to-end with Shopify\\u2019s official \`ucp-cli\`. AI assistants like ChatGPT and Claude can now discover us, search live Mercury inventory, and build a real CAD quote with HST estimate and trade-in context. The dealer completes every sale with the buyer in person at Gores Landing. Payment is never collected over UCP. To our knowledge, we\\u2019re the first marine dealer doing this. Discovery profile: [/.well-known/ucp](/.well-known/ucp).
+    content: `> **Quick answer:** As of June 11, 2026, Harris Boat Works is a live Universal Commerce Protocol (UCP) merchant, verified end-to-end with Shopify’s official \`ucp-cli\`. AI assistants like ChatGPT and Claude can now discover us, search live Mercury inventory, and build a real CAD quote with HST estimate and trade-in context. The dealer completes every sale with the buyer in person at Gores Landing. Payment is never collected over UCP. To our knowledge, we’re the first marine dealer doing this. Discovery profile: [/.well-known/ucp](/.well-known/ucp).
 
-If you\\u2019ve asked ChatGPT to help you shop in the last six months, you\\u2019ve probably noticed it can do a lot more than it used to. It can compare products, fetch live inventory, and (at a handful of merchants) actually hand you off to checkout. That last part is what changed in April 2026, when a group of the largest retailers on the planet published an open standard for it.
+If you’ve asked ChatGPT to help you shop in the last six months, you’ve probably noticed it can do a lot more than it used to. It can compare products, fetch live inventory, and (at a handful of merchants) actually hand you off to checkout. That last part is what changed in April 2026, when a group of the largest retailers on the planet published an open standard for it.
 
 We turned that standard on at Harris Boat Works today.
 
 ## What UCP is, in plain language
 
-The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant\\u2019s store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
+The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant’s store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
 
-It\\u2019s co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That\\u2019s most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
+It’s co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That’s most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
 
 UCP defines two things merchants care about:
 
 - **A discovery profile**, served at \`/.well-known/ucp\`, that tells the world what your store supports.
-- **A set of capabilities** (catalog search, checkout, fulfillment) with shared schemas, so the assistant doesn\\u2019t have to guess.
+- **A set of capabilities** (catalog search, checkout, fulfillment) with shared schemas, so the assistant doesn’t have to guess.
 
 ## What we shipped
 
@@ -2998,17 +2998,17 @@ A few things, all of them live as of June 11, 2026:
 
 1. **A UCP discovery profile** at [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp), spec version **2026-04-08**.
 2. **Checkout in quote mode** (\`dev.ucp.shopping.checkout\`) and **fulfillment** (\`dev.ucp.shopping.fulfillment\`) capabilities, served at our \`ucp-checkout\` endpoint over **both REST and MCP** transports.
-3. **Verified end-to-end with Shopify\\u2019s official \`ucp-cli\`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
+3. **Verified end-to-end with Shopify’s official \`ucp-cli\`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
 
 \`\`\`bash
 npx -y @shopify/ucp-cli discover www.mercuryrepower.ca
 \`\`\`
 
-To our knowledge, we\\u2019re the first marine dealer in North America with a live UCP profile. Hedged claim, on purpose: standards adoption moves fast, and we\\u2019d rather be honest than first-in-spirit.
+To our knowledge, we’re the first marine dealer in North America with a live UCP profile. Hedged claim, on purpose: standards adoption moves fast, and we’d rather be honest than first-in-spirit.
 
 ## What an AI assistant can actually do here
 
-If you\\u2019re using a UCP-aware assistant (and that list grows weekly), here\\u2019s what works today:
+If you’re using a UCP-aware assistant (and that list grows weekly), here’s what works today:
 
 - **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
 - **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [[Ontario rates and monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026)](/blog/mercury-outboard-financing-ontario-2026) for the underlying numbers).
@@ -3019,24 +3019,24 @@ For the full agent surface (REST APIs, MCP tools, discovery URLs, deep-link temp
 
 ## What it deliberately will NOT do
 
-This is the part most agentic-commerce articles skip, so it\\u2019s the part we want to be loudest about.
+This is the part most agentic-commerce articles skip, so it’s the part we want to be loudest about.
 
 - **No completed sale through UCP.** \`complete_checkout\` returns a quote and a handoff URL. It never places an order.
-- **No payment collection.** We don\\u2019t take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
+- **No payment collection.** We don’t take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
 - **No shipping. No delivery. No courier release.** Pickup only at Gores Landing, Ontario, by the buyer in person with valid government photo ID. Same policy as the rest of the site.
 - **No final price without a human.** The dealer confirms the out-the-door price on every deal, every time. The AI quote is a starting line, not a finish line.
 
-If you\\u2019d expect those guardrails from a 1947 family marina, you\\u2019d be right. UCP just lets us write them down in a format every assistant on the planet can read.
+If you’d expect those guardrails from a 1947 family marina, you’d be right. UCP just lets us write them down in a format every assistant on the planet can read.
 
 ## Why a 1947 family marina cares about this
 
 Two reasons.
 
-**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We\\u2019ve been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
+**The first is moat.** Most of what AI-assisted shopping rewards is what good dealers already do: real prices on the page, clear inventory, honest stock counts, no hidden fees, no "call for price" runaround. We’ve been doing that for a while; UCP just makes it machine-readable. [The dealer who hides his price list](/blog/why-mercury-dealers-hide-prices-online) from humans is going to hide it from agents too, and the agents will notice.
 
-**The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That\\u2019s a future we like.
+**The second is fairness.** The same standard that runs at Target and Walmart now runs at a family marina on Rice Lake. No special access, no enterprise contract, no $50,000-a-year platform. The barrier to being legible to a billion-dollar AI assistant is publishing a JSON file. That’s a future we like.
 
-There is zero hype in any of this. The page you\\u2019re reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn\\u2019t (you still pick up the motor in person; we still confirm the price; we still don\\u2019t ship anywhere).
+There is zero hype in any of this. The page you’re reading is honest about what changed (one JSON file, two capabilities, two transports) and honest about what didn’t (you still pick up the motor in person; we still confirm the price; we still don’t ship anywhere).
 
 ## Google just validated this direction at Google Marketing Live 2026
 
@@ -3046,7 +3046,7 @@ That is the direction we bet on. Harris Boat Works is already live on UCP, which
 
 ## Try it
 
-If you build with assistants, the discovery URL is the place to start: [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp). If you\\u2019re a buyer, the easiest path is still to open [the quote builder](/quote/motor-selection) and click through. Both lead to the same dealer at the same shop.
+If you build with assistants, the discovery URL is the place to start: [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp). If you’re a buyer, the easiest path is still to open [the quote builder](/quote/motor-selection) and click through. Both lead to the same dealer at the same shop.
 
 **Phone:** (905) 342-2153
 **Email:** info@harrisboatworks.ca
@@ -14980,13 +14980,7 @@ The fastest way to estimate a payment is to build a quote using the current rate
     category: 'Fishing & Local',
     readTime: '12 min read',
     keywords: ['best Mercury outboard for Lake Simcoe fishing', 'Lake Simcoe fishing guide 2026', 'Lake Simcoe walleye fishing', 'Lake Simcoe lake trout fishing', 'Lake Simcoe fishing regulations 2026'],
-    content: `- Mercury Premier Dealer
-- Family-owned since 1947
-- Mercury dealer since 1965
-- Gores Landing, ON
-- Quote builder available
-
-*Last reviewed: 2026-06-09*
+    content: `*Last reviewed: 2026-08-02*
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90 to 150 HP Mercury FourStroke main paired with a Mercury 9.9 ProKicker for slow trolling. Pick a hull rated for Simcoe chop - 17 to 19 ft deep-V or modified-V aluminum is our usual recommendation. Build a main-and-kicker package at [mercuryrepower.ca](https://mercuryrepower.ca).
 
@@ -22966,7 +22960,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-bad-used-boats-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-02-17',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -22990,12 +22984,12 @@ eyebrow: The real trade-off
 subhead: Half our customers ask this within the first 10 minutes of walking in. Here's how we actually think about it on the showroom floor.
 leftLabel: New Mercury
 leftCriteria:
-  - You want full Mercury factory warranty (5 + 5 = 10 years possible)
+  - You want Mercury's 3-year factory warranty, with optional Mercury Product Protection available for up to eight total years
   - You finance and need lender-approved collateral
   - You will own the boat 7+ years and amortize the cost
   - You want the latest tech (SmartCraft, joystick, V8/V10 power options)
   - Resale value matters to you down the line
-leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Mercury 5+5 covers most failure scenarios.
+leftOutcome: Higher upfront cost, but lower per-hour cost of ownership over a long run. Factory coverage plus optional Mercury Product Protection can extend protection to eight total years; the written terms and exclusions control.
 leftVariant: recommended
 rightLabel: Used Mercury
 rightCriteria:
@@ -23861,7 +23855,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-03-16',
-    dateModified: '2026-03-16',
+    dateModified: '2026-08-02',
     publishDate: '2026-03-16',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -23873,10 +23867,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-03-16*
 
 > **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
-
-**URL slug:** used-boat-walkaround-inspection-ontario
-
-**Meta description:** A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.
 
 ---
 
@@ -24086,7 +24076,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aluminum fishing boat with Mercury outboard approaching a wooden dock on Rice Lake during windy conditions.',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-03-21',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -24103,10 +24093,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-06-09*
 
 > **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
-
-**URL slug:** docking-boat-in-wind-rice-lake
-
-**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, Ontario (in the Kawarthas), without a bow thruster or a meltdown.
 
 ---
 
@@ -24316,7 +24302,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -24333,10 +24319,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-06-09*
 
 > **Quick answer:** Pontoon HP sizing depends on tube count, hull length, load, and use case. As a starting framework: 25-40 HP for 16-18 ft small toons, 60-90 HP for 20-22 ft cruisers, 115-150 HP for 22-24 ft loaded family pontoons, 200+ HP for tritoons and watersports. Mercury Command Thrust gearcases add low-RPM torque ideal for pontoons. When in doubt, match closer to the hull's max HP rating, not the minimum.
-
-**URL slug:** pontoon-hp-sizing-decision-tree-ontario
-
-**Meta description:** Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
 
 ---
 
@@ -30268,7 +30250,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       { question: 'How far is HBW from Burlington?', answer: 'About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on your part of Burlington.' },
-      { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing." },
+      { question: 'Is there a closer Mercury dealer to Burlington?', answer: "Yes. Burlington-area boaters have closer authorized Mercury options in the Hamilton area. HBW is the Rice Lake option for customers who value Premier-tier Mercury support, an accountable repower process, and transparent online CAD pricing." },
       { question: 'Can I quote and order remotely?', answer: 'Yes. Build the quote at mercuryrepower.ca/quote, confirm by phone or text, then trailer the boat to us at Gores Landing for install and sea-trial. Service is drop-off, we do not pick up, deliver, or arrange hauling.' },
     ],
   },
@@ -35555,7 +35537,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-06-09',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
@@ -35573,7 +35555,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer
 
-A Mercury Avator electric outboard's real-world range on Rice Lake depends on the model and battery configuration, not the marketing range numbers. For the typical cottage use case, short runs from the dock to a fishing spot or a neighbour's dock, the smaller Avator 7.5e on a 13-14 ft car-topper delivers about 5 miles at full throttle or up to 34 miles at quarter-throttle. Larger Avator models (35e, 75e, 110e) with multiple battery packs extend that meaningfully. The honest take: Avator works for short-range Rice Lake cottage applications. It doesn't work for full-day fishing trips that cover the whole lake.
+A Mercury Avator electric outboard's real-world range on Rice Lake depends on the boat, load, weather, throttle setting and battery configuration. Mercury's published 13-foot test reached about 5 miles at full throttle and 34 miles at quarter-throttle. For practical Rice Lake trip planning with a reserve for wind and chop, use roughly 3 to 4 miles at full throttle or 20 to 25 miles at quarter-throttle on a 7.5e with one 1 kWh battery. Larger Avator models with multiple packs extend that meaningfully. The honest take: Avator works for short-range cottage use; it is not the practical choice for a full-day trip covering the lake.
 
 ## What Is the Range of a Mercury Avator Electric Outboard?
 
@@ -37299,7 +37281,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
       { question: "What's the fuel cost difference between 115 and 150?", answer: "At realistic Ontario cottage use of 20 hours per season, fuel cost delta is roughly $140 per year. At heavy use of 100 hours per season, the delta is roughly $700 per year. For most Rice Lake cottage owners, fuel cost is not the deciding factor between 115 and 150. The motor price delta of about $6,900 is more significant." },
       { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust, not 115 or 150. The 60 CT with the larger Command Thrust gearcase has the right blend of low-speed thrust and capacity-plate-appropriate HP for a single-tube pontoon. For tritoons 22 to 24 ft, jump to 150. The 115 is rarely the right pontoon answer." },
-      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower)." }
+      { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. HBW will not rig above the boat manufacturer's maximum recommended horsepower. Doing so creates safety, compliance, insurance, financing, resale, liability, and potential warranty problems. If the plate says 115 HP maximum, the honest answer is 115 HP or lower." }
     ]
   },
   {
@@ -39004,7 +38986,7 @@ If you've cleared the intakes and you're still overheating at speed, or you'd ra
     image: '/lovable-uploads/hero-bilge-pump-troubleshooting-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-07-03',
-    dateModified: '2026-07-03',
+    dateModified: '2026-08-02',
     publishDate: '2026-07-03',
     category: 'Service & Troubleshooting',
     readTime: '~11 min read',
@@ -39053,7 +39035,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 866 US GPH, or 14.4 US gal/min)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.

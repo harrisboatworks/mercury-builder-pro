@@ -223,7 +223,7 @@ For pontoons 18 to 20 ft, the right answer is usually Mercury 60 Command Thrust,
 
 ### Can I run a Mercury 150 on a boat rated up to 115 HP?
 
-No. The capacity plate sets the legal and warranty-backed maximum HP for your hull. Exceeding it creates compliance, insurance, and liability problems, and voids Mercury coverage on installation. We will not quote a motor above your capacity plate. If your plate says 115 max, the honest answer is 115 (or lower).
+No. HBW will not rig above the boat manufacturer's maximum recommended horsepower. Doing so creates safety, compliance, insurance, financing, resale, liability, and potential warranty problems. If the plate says 115 HP maximum, the honest answer is 115 HP or lower.
 
 ## Related guides
 

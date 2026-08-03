@@ -15,6 +15,26 @@ const failures: string[] = [];
 
 const unsupportedOperationalClaims = [
   {
+    label: 'visible raw editorial metadata',
+    pattern: /^\s*\*\*(?:URL slug|Meta description):\*\*/im,
+  },
+  {
+    label: 'double-escaped Unicode artifact',
+    pattern: /\\u[0-9a-f]{4}/i,
+  },
+  {
+    label: 'named competing Mercury dealer',
+    pattern: /DeWildt Marine/i,
+  },
+  {
+    label: 'incorrect bilge-pump conversion',
+    pattern: /0\.91 litres per second[^\n.]{0,80}\b196 GPH\b/i,
+  },
+  {
+    label: 'incorrect stacked warranty arithmetic',
+    pattern: /\b5\s*\+\s*5\s*=\s*10 years\b/i,
+  },
+  {
     label: 'blanket same-day response or fit promise',
     pattern:
       /\b(?:same-day (?:fit check|yes\/no|reply|response|quote|installation|repair)|reply same-day)\b/i,
@@ -147,6 +167,23 @@ const serviceEvidenceExpectations: Record<string, RegExp[]> = {
   ],
 };
 
+const factualCorrectionExpectations: Record<string, RegExp[]> = {
+  'bad-used-boats-to-avoid-ontario': [
+    /Mercury Product Protection available for up to eight total years/i,
+  ],
+  'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026': [
+    /maximum recommended horsepower/i,
+    /potential warranty problems/i,
+  ],
+  'mercury-avator-range-rice-lake-cottage': [
+    /published 13-foot test reached about 5 miles at full throttle and 34 miles at quarter-throttle/i,
+    /practical Rice Lake trip planning[^\n.]{0,160}3 to 4 miles[^\n.]{0,100}20 to 25 miles/i,
+  ],
+  'bilge-pump-troubleshooting-guide': [
+    /0\.91 litres per second \(roughly 866 US GPH, or 14\.4 US gal\/min\)/i,
+  ],
+};
+
 for (const article of blogArticles) {
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const cleaned = cleanBlogContent(article.content, {
@@ -238,6 +275,35 @@ for (const [slug, expectations] of Object.entries(serviceEvidenceExpectations)) 
   }
 }
 
+for (const [slug, expectations] of Object.entries(factualCorrectionExpectations)) {
+  const article = blogArticles.find((candidate) => candidate.slug === slug);
+  if (!article) {
+    failures.push(`${slug}: factual-correction article is missing`);
+    continue;
+  }
+
+  const correctionSource = [
+    article.content,
+    JSON.stringify(article.faqs || []),
+  ].join('\n');
+  for (const expectation of expectations) {
+    if (!expectation.test(correctionSource)) {
+      failures.push(`${slug}: factual correction regressed (${expectation})`);
+    }
+  }
+}
+
+const simcoeArticle = blogArticles.find(
+  (candidate) => candidate.slug === 'best-mercury-outboard-lake-simcoe-walleye-fishing',
+);
+if (!simcoeArticle) {
+  failures.push('best-mercury-outboard-lake-simcoe-walleye-fishing: article is missing');
+} else if (/^\s*-\s*Mercury Premier Dealer\b/i.test(simcoeArticle.content)) {
+  failures.push(
+    'best-mercury-outboard-lake-simcoe-walleye-fishing: raw credibility-anchor list precedes the article',
+  );
+}
+
 if (failures.length > 0) {
   console.error('Blog output hygiene check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -245,5 +311,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, and ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles.`,
+  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
 );
