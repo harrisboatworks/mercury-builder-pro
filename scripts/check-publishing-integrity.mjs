@@ -32,6 +32,7 @@ const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
+const frenchPremierArticle = read('src/pages/blog/FrenchBlogArticle.tsx');
 const parsedVercelConfig = JSON.parse(vercelConfig);
 
 check(
@@ -74,6 +75,18 @@ check(
 check(
   /"source":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario\/index\.html"/.test(vercelConfig),
   'vercel.json must preserve the renamed standalone French Premier article prerender route.',
+);
+check(
+  /\/blog\/fr\/concessionnaire-mercury-premier-ontario/.test(appSource) &&
+    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource),
+  'The hydrated app must own the French Premier URL and must not revive the retired Platinum route.',
+);
+check(
+  /const ARTICLE_PATH = '\/blog\/fr\/concessionnaire-mercury-premier-ontario'/.test(frenchPremierArticle) &&
+    /premier arrivé, premier servi/i.test(frenchPremierArticle) &&
+    /ferme le 1er décembre/i.test(frenchPremierArticle) &&
+    !/Accès prioritaire aux pièces|le niveau le plus élevé|Mercury les envoie chez nous|le prix que vous voyez, c'est le prix/i.test(frenchPremierArticle),
+  'The French Premier article must keep the canonical URL and verified HBW service guidance without unsupported dealer claims.',
 );
 check(
   /socialImage\?: string/.test(blogArticles) &&
