@@ -23,7 +23,7 @@ export interface MotorSchemaInput {
   priceCAD?: number | null;
   inStock?: boolean;
   /** Explicit Schema.org Offer availability suffix. Defaults from inStock. */
-  offerAvailability?: 'InStock' | 'PreOrder' | 'InStoreOnly';
+  offerAvailability?: 'InStock' | 'BackOrder' | 'PreOrder' | 'InStoreOnly';
   /** Pass null to omit a date when no genuine offer end date exists. */
   priceValidUntil?: string | null;
   /** Canonical URL of the page rendering this product (no trailing slash). */

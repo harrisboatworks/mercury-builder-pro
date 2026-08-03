@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { buildMotorProductSchema } from './buildMotorProductSchema';
 
 describe('buildMotorProductSchema', () => {
-  it('marks an orderable sale motor as PreOrder without inventing an expiry date', () => {
+  it('marks a temporarily sold-out sale motor as BackOrder without inventing an expiry date', () => {
     const product = buildMotorProductSchema({
       name: 'Mercury 9.9 MH FourStroke',
       hp: 9.9,
@@ -14,7 +14,7 @@ describe('buildMotorProductSchema', () => {
       modelNumber: '1A10201LK',
       priceCAD: 2999,
       inStock: false,
-      offerAvailability: 'PreOrder',
+      offerAvailability: 'BackOrder',
       priceValidUntil: null,
       url: 'https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke',
     });
@@ -23,7 +23,7 @@ describe('buildMotorProductSchema', () => {
     expect(product.offers).toMatchObject({
       priceCurrency: 'CAD',
       price: '2999',
-      availability: 'https://schema.org/PreOrder',
+      availability: 'https://schema.org/BackOrder',
       itemCondition: 'https://schema.org/NewCondition',
     });
     expect(product.offers).not.toHaveProperty('priceValidUntil');

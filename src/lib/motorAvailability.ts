@@ -10,7 +10,7 @@ export type ResolvedMotorAvailability = {
   label: 'In stock now' | 'Available to order';
   detail: string;
   faqAnswer: string;
-  schemaAvailability: 'InStock' | 'PreOrder';
+  schemaAvailability: 'InStock' | 'BackOrder';
   status: 'in_stock' | 'available_to_order';
 };
 
@@ -53,7 +53,7 @@ export function resolveMotorAvailability(source: MotorAvailabilitySource): Resol
     label: 'Available to order',
     detail: 'Available to order. Confirm the current ETA before travelling.',
     faqAnswer: 'It is available to order. Call or build a quote to confirm the current ETA before travelling to Gores Landing.',
-    schemaAvailability: 'PreOrder',
+    schemaAvailability: 'BackOrder',
     status: 'available_to_order',
   };
 }

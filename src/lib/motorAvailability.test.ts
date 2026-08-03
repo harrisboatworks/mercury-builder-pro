@@ -12,7 +12,7 @@ describe('resolveMotorAvailability', () => {
       inStock: false,
       quantity: 0,
       label: 'Available to order',
-      schemaAvailability: 'PreOrder',
+      schemaAvailability: 'BackOrder',
       status: 'available_to_order',
     });
   });
