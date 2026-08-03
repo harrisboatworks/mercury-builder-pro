@@ -25,6 +25,10 @@ describe('quote funnel UX contract', () => {
     const successSource = read('src/pages/PaymentSuccess.tsx');
     const pdfSource = read('src/components/quote-pdf/ProfessionalQuotePDF.tsx');
     const globalStickySource = read('src/components/quote/GlobalStickyQuoteBar.tsx');
+    const depositDialogSource = read('src/components/quote-builder/DepositInfoDialog.tsx');
+    const motorSelectionFaqSource = read('src/components/quote-builder/MotorSelectionFAQ.tsx');
+    const termsSource = read('src/pages/Terms.tsx');
+    const llmsSource = read('public/llms.txt');
 
     expect(saleSource).toContain("motorOnlyParams.set('intent', 'motor-only')");
     expect(saleSource).toContain('Reserve Your 9.9 — ${depositAmount.toLocaleString()}');
@@ -42,6 +46,12 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('showProgress={!isMotorOnlyExpress}');
     expect(summarySource).toContain('!isMotorOnlyExpress && (');
     expect(summarySource).toContain('motorId: state.motor?.id');
+    expect(saleSource).toContain('Fully refundable until HBW confirms the exact motor, price, availability and ETA');
+    expect(summarySource).toContain('After written approval, it becomes non-refundable and is credited to your final invoice.');
+    expect(depositDialogSource).toContain("depositAmount === 100");
+    expect(depositDialogSource).toContain('you approve the order in writing');
+    expect(motorSelectionFaqSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit');
+    expect(motorSelectionFaqSource).not.toContain('Deposits are fully refundable within 7 days');
     expect(paymentSource).toContain('if (depositAmount === "100")');
     expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
     expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
@@ -65,11 +75,16 @@ describe('quote funnel UX contract', () => {
     expect(supabaseConfig).toContain('[functions.send-deposit-confirmation-email]\nverify_jwt = true');
     expect(successSource).toContain("body: { action: 'verify', sessionId }");
     expect(successSource).toContain("const isDeposit = verification.paymentType === 'motor_deposit'");
+    expect(successSource).toContain('const isMercury99MhReservation = isDeposit && verification.amountPaid === 100');
+    expect(successSource).toContain('Your $100 reservation terms:');
     expect(successSource).toContain("data?.paymentIntentStatus === 'processing'");
     expect(successSource).toContain('if (verificationError || !verification?.verified)');
     expect(successSource).not.toContain('quote PDF attached');
     expect(pdfSource).toContain('reservationRequiresConfirmation');
-    expect(pdfSource).toContain('HBW confirms the exact motor, availability and ETA before ordering.');
+    expect(pdfSource).toContain('It becomes non-refundable and is credited to your final invoice only after you approve the order in writing.');
+    expect(emailSource).toContain('Your $100 reservation terms:');
+    expect(termsSource).toContain('Model-Specific Mercury 9.9 MH Reservation Deposit');
+    expect(llmsSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit');
     expect(globalStickySource).toContain("'/payment-success'");
     expect(globalStickySource).toContain("'/motors/fourstroke-9-9hp-9-9mh-fourstroke'");
     expect(summarySource).not.toContain("status: 'Confirmed'");

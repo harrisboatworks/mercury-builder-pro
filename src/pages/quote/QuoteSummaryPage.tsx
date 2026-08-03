@@ -1126,7 +1126,10 @@ export default function QuoteSummaryPage() {
                         Review the pickup total below, then reserve this exact motor with a ${depositAmount.toLocaleString()} deposit. HBW confirms availability and ETA before anything is ordered.
                       </p>
                       <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
-                        Your deposit is applied to the purchase. Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
+                        The ${depositAmount.toLocaleString()} deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
+                      </p>
+                      <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
+                        Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
                       </p>
                     </div>
                   )}

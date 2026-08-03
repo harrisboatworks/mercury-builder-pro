@@ -53,6 +53,10 @@ export function buildMercury99MhFaqs(
       answer: 'The motor package includes a standard 3-blade aluminum propeller, a 12-litre remote fuel tank, and the applicable Mercury limited warranty, including 3 years for eligible pleasure use. Harris Boat Works completes the warranty registration at pickup.',
     },
     {
+      question: 'Is the $100 reservation deposit refundable?',
+      answer: 'Yes. The $100 deposit is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, the deposit becomes non-refundable and is credited to your final invoice.',
+    },
+    {
       question: 'Is the Mercury 9.9 MH in stock?',
       answer: availability.faqAnswer,
     },

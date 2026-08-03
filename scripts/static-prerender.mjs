@@ -3453,6 +3453,10 @@ function mercury99MhSaleFaqs(price, availability) {
       answer: 'The motor package includes a standard 3-blade aluminum propeller, a 12-litre remote fuel tank, and the applicable Mercury limited warranty, including 3 years for eligible pleasure use. Harris Boat Works completes the warranty registration at pickup.',
     },
     {
+      question: 'Is the $100 reservation deposit refundable?',
+      answer: 'Yes. The $100 deposit is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, the deposit becomes non-refundable and is credited to your final invoice.',
+    },
+    {
       question: 'Is the Mercury 9.9 MH in stock?',
       answer: availability.faqAnswer,
     },
@@ -6423,7 +6427,7 @@ function motorMarkdown(m) {
       `- **Quote builder with this motor selected:** ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
       '- **Phone:** +1-905-342-2153',
       '',
-      'The express reservation path skips installation, trade-in, rigging, battery, and accessory questions. It opens a motor-only summary for model 1A10201LK. The reservation deposit for this 9.9 HP motor is $100 CAD through secure Stripe checkout. Harris Boat Works confirms the motor, availability, ETA, pickup details, and written quote before anything is ordered; the balance is handled after dealer confirmation.',
+      'The express reservation path skips installation, trade-in, rigging, battery, and accessory questions. It opens a motor-only summary for model 1A10201LK. The reservation deposit for this 9.9 HP motor is $100 CAD through secure Stripe checkout. The deposit is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, the deposit becomes non-refundable and is credited to the final invoice.',
       '',
       '## Frequently asked questions',
       '',

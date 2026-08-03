@@ -107,11 +107,15 @@ function createDepositConfirmationEmail(
   const pdfNote = hasPdf
     ? `<p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">A copy of your quote is attached to this email.</p>`
     : "";
+  const reservationPolicy = Number(depositAmount) === 100
+    ? `<div style="margin:18px 0 0 0;padding:14px 16px;border:1px solid #d7dee8;background:#f7f4ee;border-radius:6px;color:#1f2430;font-size:14px;line-height:1.55;"><strong>Your $100 reservation terms:</strong> The deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.</div>`
+    : "";
 
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
     <p style="margin:0 0 14px 0;">We received your reservation deposit${motorPhrase}. Harris Boat Works will confirm availability and ETA with you before any motor is ordered.</p>
     ${detailsCard(rows)}
+    ${reservationPolicy}
     <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What happens next</h2>
     <ol style="margin:0;padding-left:20px;color:#1f2430;">
       <li style="margin:0 0 8px 0;">We call you within one business day to confirm the exact motor, availability, ETA, and any fit questions.</li>

@@ -651,11 +651,13 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     {savedQuoteQrCode ? <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this exact quote</Text> : null}
                     <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>Deposit: ${money(recommendedDeposit).replace('.00', '')} CAD</Text>
                     <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>{quoteData.reservationRequiresConfirmation
-                      ? 'The deposit records your commitment and applies to your final invoice after HBW confirms the exact motor, availability and ETA.'
+                      ? 'Fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing.'
                       : 'The deposit holds the motor and applies to your final invoice.'}</Text>
                   </View>
                 </View>
-                <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>Refundability depends on stock or special-order status and when the order is committed.</Text>
+                <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>{quoteData.reservationRequiresConfirmation
+                  ? 'After written approval, the deposit becomes non-refundable and is credited to your final invoice.'
+                  : 'Refundability depends on stock or special-order status and when the order is committed.'}</Text>
               </View>
             ) : (
               <View style={styles.card}>
@@ -734,7 +736,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         <Text style={[styles.stepsHeader, spaciousLayout ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
         <View style={[styles.steps, spaciousLayout ? styles.stepsSpacious : {}]}>
           <StepCard number="1" title="Reserve" spacious={spaciousLayout}>{quoteData.reservationRequiresConfirmation
-            ? `A $${money(recommendedDeposit).replace('.00', '')} reservation deposit records your commitment. HBW confirms the exact motor, availability and ETA before ordering.`
+            ? `Your $${money(recommendedDeposit).replace('.00', '')} deposit is refundable while HBW confirms the exact motor, price, availability and ETA. It becomes non-refundable and is credited to your final invoice only after you approve the order in writing.`
             : `A $${money(recommendedDeposit).replace('.00', '')} deposit reserves your motor and your place in the schedule.`}</StepCard>
           {quoteData.includesInstallation ? (
             <StepCard number="2" title="We rig and water-test" spacious={spaciousLayout}>Installed, commissioned, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
