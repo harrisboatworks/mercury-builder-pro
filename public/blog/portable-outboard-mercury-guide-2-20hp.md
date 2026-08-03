@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-05-04
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
 description: "Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular."
 category: "Buying Guide"
 date_published: 2026-04-27
-date_modified: 2026-05-04
+date_modified: 2026-08-03
 keywords: ["portable outboard","small boat motor","dinghy motor","mercury portable","tender motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-27  
-**Last updated:** 2026-05-04  
+**Last updated:** 2026-08-03  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp
 
@@ -209,4 +209,3 @@ Yes. Follow the same winterization procedures as larger motors: stabilize fuel, 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
