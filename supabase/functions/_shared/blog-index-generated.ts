@@ -2697,7 +2697,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What are the best boat launches on Rice Lake?",
-        "a": "Rice Lake has several public boat launches. Gores Landing (adjacent to Harris Boat Works on the south shore) is well-maintained and popular with HBW customers. Bewdley, on the southwest, is a county-maintained ramp with ample parking. Harwood is another south-shore option. On the north shore, Hastings (via County Road…"
+        "a": "Rice Lake has several launch options, including Gores Landing near Harris Boat Works, Bewdley and Hastings. Facilities, parking and access rules can change, so check the current municipal page and posted signs before towing. Serpent Mounds is not a public launch; Hiawatha First Nation says the site has remained closed…"
       },
       {
         "q": "How do I prepare my boat trailer before a long drive?",

@@ -120,6 +120,11 @@ const unsupportedOperationalClaims = [
     pattern:
       /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot))\b/i,
   },
+  {
+    label: 'closed Serpent Mounds public-launch or parking recommendation',
+    pattern:
+      /Serpent Mounds[^\n.]{0,160}\b(?:maintained (?:boat )?ramp|day-use fees?|overnight (?:trailer )?parking)\b/i,
+  },
 ] as const;
 
 const editorialIntentChecks = [
@@ -192,6 +197,10 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
   ],
   'bilge-pump-troubleshooting-guide': [
     /0\.91 litres per second \(roughly 866 US GPH, or 14\.4 US gal\/min\)/i,
+  ],
+  'trailer-boat-toronto-to-rice-lake-guide': [
+    /Serpent Mounds is not a public launch/i,
+    /remained closed to the public since 2009/i,
   ],
 };
 

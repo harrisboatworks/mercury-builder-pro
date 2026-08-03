@@ -68,8 +68,19 @@ check(
   'vercel.json must preserve the noindex zh-Hant pilot hub and article SPA routes.',
 );
 check(
-  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario\/index\.html"/.test(vercelConfig),
-  'vercel.json must preserve the standalone French article prerender route.',
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,80}"statusCode":\s*301/.test(vercelConfig),
+  'vercel.json must permanently redirect the retired French Platinum URL to the Premier URL.',
+);
+check(
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario\/index\.html"/.test(vercelConfig),
+  'vercel.json must preserve the renamed standalone French Premier article prerender route.',
+);
+check(
+  /socialImage\?: string/.test(blogArticles) &&
+    /article\.socialImage \|\| article\.image/.test(prerenderScript) &&
+    /mercury-oil-capacity-lookup-hbw-social\.png/.test(blogArticles) &&
+    /mercury-maintenance-schedule-100-300-hbw-social\.png/.test(blogArticles),
+  'SVG-led blog articles must retain raster social-preview support in source and prerender output.',
 );
 check(
   !/hreflang="zh-CA"/.test(prerenderScript),
