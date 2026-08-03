@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-05-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-05-18
+date_modified: 2026-08-02
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last updated:** 2026-05-18  
+**Last updated:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
@@ -93,7 +93,7 @@ If you're unsure whether your lake has a cap, the Ontario [Boating Restrictions 
 
 ## The Capacity Plate Question
 
-Every boat sold in Canada after the late 1970s has a [capacity plate riveted to the transom](/blog/how-to-read-boat-capacity-plate-ontario) or the inside of the gunwale. The plate states the maximum recommended horsepower for the hull. Exceeding it creates real problems: capacity-plate compliance, insurance liability, potential warranty issues, and steering and handling that the hull was never designed for.
+Most powered pleasure craft under 24 metres require a visible Canadian [compliance notice](/blog/how-to-read-boat-capacity-plate-ontario), subject to exceptions. On an outboard-powered pleasure craft up to 6 metres, the notice also states the manufacturer's maximum recommended safe engine power, people, and load limits. Treat those limits as the boundary and confirm the exact hull documentation before choosing between 9.9 and 15 HP.
 
 For the 9.9 vs 15 conversation, the capacity plate matters when:
 

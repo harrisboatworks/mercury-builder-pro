@@ -237,7 +237,7 @@ The best time to plan and order a repower is over the off-season (November throu
 
 ### Can I repower myself or do I need a certified dealer?
 
-You should not attempt a DIY repower if you want to maintain your Mercury warranty and ensure safety. Mercury requires installation by an authorized dealer for the warranty to be valid. Proper transom inspection, shaft length selection, safe rigging of fuel and electrical systems, break-in procedures, and propeller selection all require professional assessment. An improperly rigged motor can be unsafe and voids the warranty. The cost of professional installation is a small part of total repower cost and is worth it for warranty coverage and correct setup.
+A DIY repower carries safety and coverage risk because transom condition, shaft length, controls, steering, fuel, electrical, mounting, and propeller setup all have to match the boat and engine. Mercury warranty coverage is controlled by the current written Canadian terms; damage caused by improper installation or unauthorized modification may be excluded. Confirm the exact warranty and registration requirements before deciding who will install the motor.
 
 ### What's the repower vs. repair decision framework I should use?
 
@@ -247,7 +247,7 @@ The clearest framework compares the repair estimate to the motor's current marke
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 

@@ -66,6 +66,36 @@ const unsupportedOperationalClaims = [
     label: 'unconditional quote-price promise',
     pattern: /\bthe price you see is the price(?: you pay)?\b/i,
   },
+  {
+    label: 'unsupported capacity-plate legal or automatic-coverage claim',
+    pattern:
+      /\b(?:capacity plate|compliance notice)[^\n]{0,240}\b(?:legal ceiling|illegal in Canada|illegal under Canadian regulations|(?:voids|invalidates) (?:your |the )?(?:insurance|warranty))\b/i,
+  },
+  {
+    label: 'incorrect universal capacity-plate claim',
+    pattern:
+      /\b(?:every|all) (?:powered |recreational |pleasure )?(?:boats?|powerboats?|hulls?)[^\n.]{0,50}\b(?:has|have|carries|carry|must have|is required to have|are required to have)\b[^\n.]{0,30}\b(?:capacity plate|compliance notice)\b/i,
+  },
+  {
+    label: 'unsupported authorized-dealer warranty-validity claim',
+    pattern:
+      /\b(?:(?:Mercury |the )?(?:requires?|mandates?)[^\n.]{0,80}(?:authorized )?dealer install(?:ation)?[^\n.]{0,80}(?:warranty|coverage)|(?:DIY|self)[- ]install(?:ation|ing)?[^\n.]{0,80}(?:voids|invalidates)[^\n.]{0,30}(?:Mercury )?warranty|(?:dealer|authorized dealer)[^\n.]{0,50}(?:must|required to) install[^\n.]{0,50}(?:warranty|coverage)[^\n.]{0,20}(?:valid|void))\b/i,
+  },
+] as const;
+
+const editorialIntentChecks = [
+  { slug: 'best-mercury-outboard-rice-lake-fishing', title: /Outboard Setup/i, description: /main motor and kicker/i },
+  { slug: '2026-rice-lake-fishing-season-outlook', title: /Fishing Outlook 2026/i, description: /species outlook/i },
+  { slug: 'mercury-smartcraft-connect-eligibility-2026', title: /Work With My Mercury.*Eligibility Check/i, description: /compatibility by Mercury engine family/i },
+  { slug: 'mercury-smartcraft-connect-guide-ontario', title: /Features, App & Installation/i, description: /what SmartCraft Connect shows/i },
+  { slug: 'best-mercury-outboard-lake-ontario-salmon-trout', title: /Best Mercury Outboard/i, description: /main outboard/i },
+  { slug: 'lake-ontario-salmon-mercury-setup-guide-2026', title: /Boat Rigging/i, description: /kicker fit/i },
+  { slug: 'boat-hull-replacement-vs-repower-decision', title: /Hull Worth Repowering/i, description: /transom, floor, stringers/i },
+  { slug: 'repower-vs-new-boat', title: /Total Cost/i, description: /current quotes/i },
+  { slug: 'how-to-read-boat-capacity-plate-ontario', title: /Read a Boat Capacity Plate in Ontario/i, description: /maximum recommended safe horsepower/i },
+  { slug: 'repower-horsepower-capacity-plate-guide', title: /Choose Repower Horsepower/i, description: /motor weight/i },
+  { slug: 'outdoor-boat-storage-shrinkwrap-rice-lake', title: /HBW Outdoor Winter Boat Storage/i, description: /Harris Boat Works/i },
+  { slug: 'boat-storage-kawartha-lakes', title: /What to Compare Before Booking/i, description: /Compare outdoor, indoor/i },
 ] as const;
 
 for (const article of blogArticles) {
@@ -117,6 +147,20 @@ for (const slug of diagnosticSlugs) {
   }
 }
 
+for (const intent of editorialIntentChecks) {
+  const article = blogArticles.find((candidate) => candidate.slug === intent.slug);
+  if (!article) {
+    failures.push(`${intent.slug}: editorial-intent article is missing`);
+    continue;
+  }
+  if (!intent.title.test(article.title)) {
+    failures.push(`${intent.slug}: title no longer preserves the distinct search intent`);
+  }
+  if (!intent.description.test(article.description)) {
+    failures.push(`${intent.slug}: description no longer preserves the distinct search intent`);
+  }
+}
+
 if (failures.length > 0) {
   console.error('Blog output hygiene check failed:');
   for (const failure of failures) console.error(`- ${failure}`);
@@ -124,5 +168,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, and ${unsupportedOperationalClaims.length} unsupported-claim guards.`,
+  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, and ${editorialIntentChecks.length} editorial-intent checks.`,
 );

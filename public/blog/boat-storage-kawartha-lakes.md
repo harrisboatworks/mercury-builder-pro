@@ -1,30 +1,30 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Boat Storage Rice Lake Kawarthas"
-description: "Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization."
+title: "Kawartha Lakes Boat Storage: What to Compare Before Booking"
+description: "Compare outdoor, indoor, shrinkwrap, winterization, access, spring scope, and transport terms before choosing Kawartha boat storage."
 category: "Service & Maintenance"
 date_published: 2026-05-15
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["boat storage Kawartha Lakes","winter boat storage Rice Lake","boat storage Gores Landing","shrinkwrap storage Kawarthas","boat winterization Ontario","spring commissioning Rice Lake","Harris Boat Works storage","outdoor boat storage Ontario"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Boat Storage Rice Lake Kawarthas
+# Kawartha Lakes Boat Storage: What to Compare Before Booking
 
-> Winter and summer boat storage in the Kawartha Lakes from a Rice Lake Mercury Premier dealer. Shrinkwrap, winterization.
+> Compare outdoor, indoor, shrinkwrap, winterization, access, spring scope, and transport terms before choosing Kawartha boat storage.
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-storage-kawartha-lakes
 

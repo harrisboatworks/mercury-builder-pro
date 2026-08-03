@@ -86,7 +86,7 @@ Honest answer before anything else. Not every hull should get a new motor.
 
 This is the decision that anchors everything else.
 
-**Start with the capacity plate.** Every boat carries a capacity plate that lists the maximum horsepower the hull is rated for. That number is the legal ceiling, not a suggestion for average use. HBW does not overpower a hull.
+**Start with the compliance notice.** On an outboard-powered pleasure craft up to 6 metres, it shows the manufacturer's maximum recommended safe power. Confirm the exact hull documentation, proposed motor weight, transom, steering, and rigging before choosing horsepower. HBW does not use an undocumented oversized setup as the basis for a repower.
 
 **Match the motor to how you actually use the boat,** not how you might use it someday. Three questions move the answer:
 
@@ -307,7 +307,7 @@ October through March. Off-season ordering gets you the best motor availability 
 ## Related guides
 
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 - [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower

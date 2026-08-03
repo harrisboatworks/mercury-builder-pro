@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Lake Ontario Salmon Mercury Setup"
-description: "Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20."
+title: "Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control"
+description: "Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
 date_modified: 2026-08-02
@@ -18,9 +18,9 @@ content_type: blog_article
 language: en-CA
 ---
 
-# Lake Ontario Salmon Mercury Setup
+# Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control
 
-> Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20.
+> Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing.
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
@@ -203,10 +203,10 @@ FMZ 20. Confirm current Lake Ontario regulations directly with the Ontario MNRF 
 
 ## Related guides
 
-- [Best Mercury for Rice Lake Fishing 2026](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 - [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
 
 ## Next steps

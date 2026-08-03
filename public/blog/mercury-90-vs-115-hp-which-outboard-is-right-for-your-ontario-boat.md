@@ -94,7 +94,7 @@ As a third-generation family marina on Rice Lake, our family has been serving On
 
 ### Can I put a 115 hp engine on a boat rated for 90 hp?
 
-No. Never exceed the maximum horsepower rating on your boat's capacity plate. Doing so is illegal under Canadian regulations, voids your insurance, and creates a serious safety risk. If your boat is rated for a 90 hp maximum, you must choose a 90 hp outboard.
+Treat 90 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. Do not use an oversized existing setup as approval. A 115 HP setup can create serious safety, insurance, warranty, liability, financing, and resale problems.
 
 ### Is the Mercury 115 FourStroke just a tuned 90?
 

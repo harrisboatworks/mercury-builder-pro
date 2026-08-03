@@ -64,7 +64,7 @@ Within each HP class, there are configuration options that matter more than most
 
 ## HP selection: how to actually decide
 
-The first rule: **don't exceed your capacity plate**. Your boat's Coast Guard capacity plate lists a maximum horsepower. Going over voids your insurance in most cases and creates real safety risk. We don't repower boats over their capacity rating, and no honest Mercury dealer should.
+The first rule: **start with the exact hull documentation**. On an outboard-powered pleasure craft up to 6 metres, the Canadian compliance notice shows the manufacturer's maximum recommended safe power. Going beyond it can create real safety, insurance, warranty, liability, financing, and resale problems. HBW works from the documented rating and a boat-specific assessment.
 
 Within the legal max, the right HP depends on:
 

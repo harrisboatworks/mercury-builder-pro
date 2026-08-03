@@ -55,7 +55,7 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Rigging, Controls & Fit',
     cards: [
       { title: 'Mercury DTS vs Mechanical Controls', description: 'When digital throttle and shift is worth the rigging cost.', to: '/blog/mercury-dts-vs-mechanical-controls-ontario-repower' },
-      { title: 'Horsepower & Capacity Plate Guide', description: 'Reading the legal HP ceiling on your transom before you spec a motor.', to: '/blog/repower-horsepower-capacity-plate-guide' },
+      { title: 'Horsepower & Capacity Plate Guide', description: 'Use the hull manufacturer\'s maximum recommended safe power, then match the motor to the actual boat.', to: '/blog/repower-horsepower-capacity-plate-guide' },
       { title: 'Pontoon vs Aluminum vs V-Hull Repower Differences', description: 'How hull type changes HP, gearcase, and rigging choices.', to: '/blog/repower-pontoon-aluminum-v-hull-differences' },
     ],
   },

@@ -30,7 +30,7 @@ language: en-CA
 
 ---
 
-> **Quick answer:** Start with your boat's capacity plate, that number is the legal ceiling, and going over it voids your warranty, creates insurance problems, and is unsafe. For most recreational use, aim for 70–90% of the rated maximum. Bigger isn't always better. Underpowering is the more expensive mistake we see every season. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Start with the manufacturer's maximum recommended safe power on the boat's compliance notice, then match the motor to the hull, exact motor weight, normal load, steering, rigging, and use. The printed maximum is a boundary, not a target. Going beyond it creates safety and possible insurance, warranty, liability, financing, and resale problems, so verify the boat and policy documentation rather than relying on a rule of thumb.
 
 ---
 
@@ -46,7 +46,7 @@ language: en-CA
 | Runabout / bowrider 18-22 ft | General | 150-200 HP |
 | Bass boat 17-21 ft | Recreational / tournament | 150 HP / 200-250 HP Pro XS |
 
-Aim for 70-90% of the capacity-plate max (light load 60-70%, heavy load 90-100%). The plate is the legal ceiling.
+Do not use a fixed percentage as a substitute for a boat-specific assessment. Stay within the manufacturer's documented range and choose for the real loaded boat.
 
 ## The one thing most people get wrong on horsepower
 

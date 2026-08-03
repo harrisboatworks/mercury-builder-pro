@@ -7,20 +7,20 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Best Mercury for Rice Lake Fishing 2026"
-description: "A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup."
+title: "Best Mercury Outboard Setup for Rice Lake Fishing"
+description: "Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish."
 category: "Buying Guide"
 date_published: 2026-02-09
 date_modified: 2026-08-02
-keywords: ["rice lake fishing guide","rice lake walleye","rice lake fishing regulations 2026","rice lake muskie","mercury 9.9 prokicker walleye","best mercury outboard rice lake fishing"]
+keywords: ["best mercury outboard rice lake","rice lake fishing boat setup","mercury 9.9 prokicker walleye","rice lake repower","outboard and kicker setup","rice lake fishing motor"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Best Mercury for Rice Lake Fishing 2026
+# Best Mercury Outboard Setup for Rice Lake Fishing
 
-> A local's complete guide to Rice Lake fishing in 2026: species, seasons, FMZ 17 regulations, the sunken railway, and the right Mercury for every setup.
+> Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
@@ -36,15 +36,11 @@ In close to 80 seasons of watching people fish this water, we have learned one t
 
 It is shallow. It is weedy. It runs 32 km east to west with nothing to stop the wind. It has a sunken 19th-century railway across the middle of it, underwater, waiting for your lower unit. And it holds some of the best walleye, muskie, bass, and crappie in Southern Ontario.
 
-This is our home water. This guide is everything we know about fishing it properly: the species, the seasons, the local spots, the 2026 regulations, and the right Mercury for every setup.
+This is our home water. This guide stays focused on the boat: how Rice Lake conditions change main-motor, kicker, propeller, and rigging decisions. For species, seasons, current FMZ 17 rules, and the submerged railway, use the separate [Rice Lake fishing outlook for 2026](/blog/2026-rice-lake-fishing-season-outlook).
 
----
+## The fishing context behind the setup
 
-## 2026 Ontario Fishing Regulations: Rice Lake (FMZ 17)
-
-Rules first, because there is a walleye slot limit that catches people off guard every single season.
-
-Rice Lake sits in Ontario **Fisheries Management Zone 17**. The following are in effect for 2026 under the FMZ 17 variation order.
+The short reference below explains why a Rice Lake fishing boat needs low-speed control, enough reserve power for changing conditions, and a setup that stays within the hull manufacturer's limits. Check Ontario's current rules before fishing; the linked annual outlook is the better page to bookmark for season planning.
 
 | Species | Opens | Closes | Sport limit | Key rule |
 |---|---|---|---|---|
@@ -286,7 +282,7 @@ A 16-18 ft aluminum console with a Mercury 90-115 HP FourStroke on the standard 
 Before we put a motor number in front of anyone, we want to know:
 
 - Hull length, type, and weight
-- Capacity plate HP rating, which is the legal ceiling and one we never exceed
+- Manufacturer's maximum recommended safe power for the exact hull
 - Primary fishery and fishing style (walleye troller, bass run-and-gun, muskie angler)
 - Solo use or family use with full loads
 - Trolling-heavy, or mostly running between spots
@@ -381,8 +377,8 @@ Yes. Father's Day Weekend (June 20-21) and Family Fishing Week (June 27 to July 
 ## Related guides
 
 - [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 
