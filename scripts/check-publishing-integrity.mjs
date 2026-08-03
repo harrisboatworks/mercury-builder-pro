@@ -383,7 +383,7 @@ check(
   'Repower-process article must preserve the drop-off-only logistics boundary.',
 );
 const articleSource = (slug) =>
-  blogArticles.match(new RegExp(`slug: '${slug}',[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+  blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
 const dealerHeroCanon = [
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
@@ -441,6 +441,24 @@ check(
   ),
   'The repower-eligibility guide must not regress to its synthetic hero or unsupported legacy decision cards.',
 );
+const authenticatedServiceHeroCanon = [
+  {
+    slug: 'mercury-water-pump-replacement-cost-ontario',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
+  },
+  {
+    slug: 'mercury-impeller-replacement-when-they-fail',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
+  },
+];
+for (const { slug, image } of authenticatedServiceHeroCanon) {
+  const source = articleSource(slug);
+  check(source.includes(`image: '${image}'`) || source.includes(`image: "${image}"`), `${slug} must keep its authenticated HBW service hero.`);
+  check(
+    !source.includes('/lovable-uploads/hero-mercury-90-shop-shot.png'),
+    `${slug} must not regress to the synthetic Mercury service-bay hero.`,
+  );
+}
 for (const slug of ['mercury-dealer-whitby-ontario-hbw', 'mercury-dealer-oshawa-ontario-hbw']) {
   const source = articleSource(slug);
   check(
