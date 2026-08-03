@@ -72,8 +72,11 @@ Your boat needs a 20-inch long shaft, electric start, remote steering, more than
 ## Build a quote
 
 - **Canonical sale page:** https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
+- **Reserve this 9.9 with a $100 deposit:** https://www.mercuryrepower.ca/quote/motor-selection?motor=e920cfdf-223a-408a-850b-6f112e15c4d7&intent=motor-only
 - **Quote builder with this motor selected:** https://www.mercuryrepower.ca/quote/motor-selection?motor=e920cfdf-223a-408a-850b-6f112e15c4d7
 - **Phone:** +1-905-342-2153
+
+The express reservation path skips installation, trade-in, rigging, battery, and accessory questions. It opens a motor-only summary for model 1A10201LK. The reservation deposit for this 9.9 HP motor is $100 CAD through secure Stripe checkout. Harris Boat Works confirms the motor, availability, ETA, pickup details, and written quote before anything is ordered; the balance is handled after dealer confirmation.
 
 ## Frequently asked questions
 

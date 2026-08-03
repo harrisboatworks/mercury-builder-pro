@@ -9,12 +9,10 @@ const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
+const responseHeaders = { "Content-Type": "application/json" };
 
 interface DepositConfirmationRequest {
+  stripeSessionId?: string;
   customerEmail: string;
   customerName: string;
   customerPhone?: string;
@@ -35,6 +33,21 @@ function logStep(step: string, data?: Record<string, unknown>) {
   console.log(`[DEPOSIT-EMAIL] ${step}`, data ? JSON.stringify(data) : "");
 }
 
+function constantTimeEqual(left: string, right: string): boolean {
+  if (left.length !== right.length) return false;
+  let mismatch = 0;
+  for (let i = 0; i < left.length; i += 1) {
+    mismatch |= left.charCodeAt(i) ^ right.charCodeAt(i);
+  }
+  return mismatch === 0;
+}
+
+function isAuthorizedInternalRequest(req: Request): boolean {
+  if (!supabaseServiceKey) return false;
+  const authorization = req.headers.get("authorization") || "";
+  return constantTimeEqual(authorization, `Bearer ${supabaseServiceKey}`);
+}
+
 function generateReferenceNumber(paymentId?: string): string {
   if (paymentId) return `HBW-${paymentId.slice(-8).toUpperCase()}`;
   return `HBW-${Date.now().toString(36).toUpperCase()}`;
@@ -42,7 +55,7 @@ function generateReferenceNumber(paymentId?: string): string {
 
 function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number }): string {
   if (!motorInfo?.model) return "";
-  return `${motorInfo.year || 2026} ${motorInfo.model}${motorInfo.hp ? ` ${motorInfo.hp}HP` : ""}`;
+  return motorInfo.model;
 }
 
 function toBase64(bytes: Uint8Array): string {
@@ -92,17 +105,17 @@ function createDepositConfirmationEmail(
 
   const motorPhrase = motorLabel ? ` for your ${esc(motorLabel)}` : "";
   const pdfNote = hasPdf
-    ? `<p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">A copy of your quote with the deposit applied is attached to this email.</p>`
+    ? `<p style="margin:16px 0 0 0;font-size:14px;color:#6b7280;">A copy of your quote is attached to this email.</p>`
     : "";
 
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
-    <p style="margin:0 0 14px 0;">We received your deposit${motorPhrase}. Your motor is now reserved.</p>
+    <p style="margin:0 0 14px 0;">We received your reservation deposit${motorPhrase}. Harris Boat Works will confirm availability and ETA with you before any motor is ordered.</p>
     ${detailsCard(rows)}
     <h2 style="margin:28px 0 12px 0;font-size:16px;font-weight:700;color:#1f2430;">What happens next</h2>
     <ol style="margin:0;padding-left:20px;color:#1f2430;">
-      <li style="margin:0 0 8px 0;">We call you within one business day to confirm details and any rigging or fit questions.</li>
-      <li style="margin:0 0 8px 0;">We schedule your install or pickup date with you.</li>
+      <li style="margin:0 0 8px 0;">We call you within one business day to confirm the exact motor, availability, ETA, and any fit questions.</li>
+      <li style="margin:0 0 8px 0;">After those details are confirmed, we arrange the next step with you.</li>
       <li style="margin:0 0 8px 0;">Pickup is at our shop in Gores Landing. Please come in person and bring valid government-issued photo ID.</li>
     </ol>
     ${pdfNote}
@@ -111,8 +124,8 @@ function createDepositConfirmationEmail(
   `;
 
   return buildEmail({
-    preheader: `Deposit received. Your ${motorLabel || "motor"} is reserved.`,
-    heading: "Your deposit is confirmed",
+    preheader: `Reservation deposit received. HBW will confirm ${motorLabel || "the motor"} and ETA.`,
+    heading: "Your reservation deposit is confirmed",
     bodyHtml: body,
     ctaText: quoteUrl ? "View your quote" : undefined,
     ctaUrl: quoteUrl,
@@ -154,14 +167,75 @@ function createAdminNotificationEmail(
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { status: 204, headers: { Allow: "POST, OPTIONS" } });
+  }
+
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { ...responseHeaders, Allow: "POST, OPTIONS" },
+    });
+  }
+
+  if (!isAuthorizedInternalRequest(req)) {
+    logStep("Rejected unauthorized request");
+    return new Response(JSON.stringify({ error: "Unauthorized" }), {
+      status: 401,
+      headers: responseHeaders,
+    });
   }
 
   try {
-    const {
+    const requestBody: DepositConfirmationRequest = await req.json();
+    let {
       customerEmail, customerName, customerPhone, depositAmount,
       paymentId, motorInfo, sendAdminNotification, adminOnly, quotePdfPath, quoteUrl,
-    }: DepositConfirmationRequest = await req.json();
+    } = requestBody;
+
+    if (requestBody.stripeSessionId) {
+      if (!/^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(requestBody.stripeSessionId)) {
+        throw new Error("Invalid Stripe session ID");
+      }
+
+      const { data: depositRecord, error: depositError } = await supabase
+        .from("customer_quotes")
+        .select("customer_name, customer_email, customer_phone, deposit_amount, quote_data")
+        .eq("lead_source", "deposit")
+        .contains("quote_data", { stripe_session_id: requestBody.stripeSessionId })
+        .maybeSingle();
+
+      const quoteData = depositRecord?.quote_data as Record<string, unknown> | null;
+      if (depositError || !depositRecord || quoteData?.payment_status !== "paid") {
+        throw new Error("Paid deposit record not found");
+      }
+
+      customerEmail = depositRecord.customer_email || "";
+      customerName = depositRecord.customer_name || "Customer";
+      customerPhone = depositRecord.customer_phone || "";
+      depositAmount = String(depositRecord.deposit_amount ?? quoteData.deposit_amount ?? "");
+      paymentId = typeof quoteData.stripe_payment_intent === "string"
+        ? quoteData.stripe_payment_intent
+        : "";
+      motorInfo = quoteData.motor_info && typeof quoteData.motor_info === "object"
+        ? quoteData.motor_info as DepositConfirmationRequest["motorInfo"]
+        : undefined;
+      quotePdfPath = typeof quoteData.quote_pdf_path === "string"
+        ? quoteData.quote_pdf_path
+        : undefined;
+      quoteUrl = undefined;
+      sendAdminNotification = true;
+      adminOnly = !customerEmail;
+    } else {
+      // The only legacy call is an internal, admin-only full-quote alert. It
+      // may not send customer mail or read a caller-supplied storage path.
+      if (!adminOnly || !sendAdminNotification || quotePdfPath) {
+        throw new Error("A bound Stripe session is required");
+      }
+    }
+
+    if (!customerName || !depositAmount) {
+      throw new Error("Incomplete payment notification data");
+    }
 
     logStep("Processing deposit emails", { customerEmail, customerName, depositAmount, paymentId });
 
@@ -182,21 +256,24 @@ serve(async (req) => {
         paymentId || "", !!finalPdf, quoteUrl,
       );
       const customerSubject = motorLabel
-        ? `Deposit received: your ${motorLabel} is reserved | Harris Boat Works`
-        : `Deposit received: your motor is reserved | Harris Boat Works`;
+        ? `Reservation deposit received: ${motorLabel} | Harris Boat Works`
+        : `Reservation deposit received | Harris Boat Works`;
 
       const attachments: Array<{ filename: string; content: string }> = [];
       if (finalPdf) attachments.push(finalPdf);
 
       const emailResponse = await resend.emails.send({
         from: "Harris Boat Works <deposits@mercuryrepower.ca>",
-        replyTo: "info@harrisboatworks.ca",
+        reply_to: "info@harrisboatworks.ca",
         to: [customerEmail],
         subject: customerSubject,
         html: emailHtml,
         bcc: ["info@harrisboatworks.ca"],
         ...(attachments.length > 0 ? { attachments } : {}),
       });
+      if (emailResponse.error) {
+        throw new Error(`Customer confirmation email failed: ${emailResponse.error.message}`);
+      }
       logStep("Customer email sent", { id: emailResponse?.data?.id, attachments: attachments.length });
     }
 
@@ -217,18 +294,21 @@ serve(async (req) => {
         html: adminHtml,
         ...(attachments.length > 0 ? { attachments } : {}),
       });
+      if (adminResponse.error) {
+        throw new Error(`Admin deposit email failed: ${adminResponse.error.message}`);
+      }
       logStep("Admin notification sent", { id: adminResponse?.data?.id });
     }
 
     return new Response(JSON.stringify({ success: true, referenceNumber }), {
       status: 200,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      headers: responseHeaders,
     });
   } catch (error: any) {
     logStep("ERROR", { error: error.message });
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      headers: responseHeaders,
     });
   }
 });

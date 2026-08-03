@@ -3605,7 +3605,8 @@ function mercury99MhSaleNoscript(m, price) {
     `<li>${escapeHtml(availability.detail)}</li>` +
     '<li>Pickup only at Gores Landing, Ontario. No shipping or courier release.</li>' +
     '</ul>' +
-    `<p><strong><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this exact Mercury 9.9 MH</a></strong> or <a href="tel:+19053422153">call 905-342-2153</a>.</p>` +
+    `<p><strong><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}&amp;intent=motor-only">Reserve this 9.9 with a $100 CAD deposit</a></strong> — skip installation and options, then review the motor-only total. Harris Boat Works confirms availability and ETA before anything is ordered.</p>` +
+    `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a custom quote with this exact Mercury 9.9 MH</a> or <a href="tel:+19053422153">call 905-342-2153</a>.</p>` +
     '<section aria-labelledby="sale-faq"><h2 id="sale-faq">Mercury 9.9 price and sale FAQs</h2>' +
     faqs.map((faq) => `<h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p>`).join('') +
     '</section></section>'
@@ -6418,8 +6419,11 @@ function motorMarkdown(m) {
       '## Build a quote',
       '',
       `- **Canonical sale page:** ${url}`,
+      `- **Reserve this 9.9 with a $100 deposit:** ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}&intent=motor-only`,
       `- **Quote builder with this motor selected:** ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
       '- **Phone:** +1-905-342-2153',
+      '',
+      'The express reservation path skips installation, trade-in, rigging, battery, and accessory questions. It opens a motor-only summary for model 1A10201LK. The reservation deposit for this 9.9 HP motor is $100 CAD through secure Stripe checkout. Harris Boat Works confirms the motor, availability, ETA, pickup details, and written quote before anything is ordered; the balance is handled after dealer confirmation.',
       '',
       '## Frequently asked questions',
       '',

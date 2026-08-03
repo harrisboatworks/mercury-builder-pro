@@ -300,6 +300,7 @@ export interface QuotePDFProps {
     financingContractTerm?: number;
     savedQuoteQrCode?: string;
     recommendedDepositAmount?: number;
+    reservationRequiresConfirmation?: boolean;
     promotionalFinancingAlternative?: { rate: number; termMonths: number };
     /** @deprecated Use savedQuoteQrCode. */
     financingQrCode?: string;
@@ -649,7 +650,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   <View style={styles.qrCopy}>
                     {savedQuoteQrCode ? <Text style={[styles.qrTitle, spaciousLayout ? styles.qrTitleSpacious : {}]}>Scan to reopen this exact quote</Text> : null}
                     <Text style={[styles.qrDeposit, spaciousLayout ? styles.qrDepositSpacious : {}]}>Deposit: ${money(recommendedDeposit).replace('.00', '')} CAD</Text>
-                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>The deposit holds the motor and applies to your final invoice.</Text>
+                    <Text style={[styles.qrText, spaciousLayout ? styles.qrTextSpacious : {}]}>{quoteData.reservationRequiresConfirmation
+                      ? 'The deposit records your commitment and applies to your final invoice after HBW confirms the exact motor, availability and ETA.'
+                      : 'The deposit holds the motor and applies to your final invoice.'}</Text>
                   </View>
                 </View>
                 <Text style={[styles.reservePolicy, spaciousLayout ? styles.reservePolicySpacious : {}]}>Refundability depends on stock or special-order status and when the order is committed.</Text>
@@ -730,7 +733,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
         <Text style={[styles.stepsHeader, spaciousLayout ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
         <View style={[styles.steps, spaciousLayout ? styles.stepsSpacious : {}]}>
-          <StepCard number="1" title="Reserve" spacious={spaciousLayout}>A ${money(recommendedDeposit).replace('.00', '')} deposit reserves your motor and your place in the schedule.</StepCard>
+          <StepCard number="1" title="Reserve" spacious={spaciousLayout}>{quoteData.reservationRequiresConfirmation
+            ? `A $${money(recommendedDeposit).replace('.00', '')} reservation deposit records your commitment. HBW confirms the exact motor, availability and ETA before ordering.`
+            : `A $${money(recommendedDeposit).replace('.00', '')} deposit reserves your motor and your place in the schedule.`}</StepCard>
           {quoteData.includesInstallation ? (
             <StepCard number="2" title="We rig and water-test" spacious={spaciousLayout}>Installed, commissioned, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
           ) : (

@@ -12,7 +12,9 @@ import { z } from 'zod';
 const depositInfoSchema = z.object({
   name: z.string().trim().min(2, 'Name is required').max(100),
   email: z.string().trim().email('Please enter a valid email').max(255),
-  phone: z.string().trim().min(7, 'Phone number is required').max(30),
+  phone: z.string().trim().min(7, 'Phone number is required').max(20)
+    .regex(/^[0-9+().\s-]+$/, 'Please enter a valid phone number')
+    .refine(value => value.replace(/\D/g, '').length >= 7, 'Phone number must include at least 7 digits'),
 });
 
 export interface DepositCustomerInfo {

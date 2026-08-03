@@ -13,6 +13,69 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('Have HBW Review My Quote');
   });
 
+  it('supports an express motor-only purchase path from the 9.9 MH sale page', () => {
+    const saleSource = read('src/components/motors/Mercury99MHSalePage.tsx');
+    const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    const contextSource = read('src/contexts/QuoteContext.tsx');
+    const paymentSource = read('supabase/functions/create-payment/index.ts');
+    const webhookSource = read('supabase/functions/stripe-webhook/index.ts');
+    const emailSource = read('supabase/functions/send-deposit-confirmation-email/index.ts');
+    const supabaseConfig = read('supabase/config.toml');
+    const successSource = read('src/pages/PaymentSuccess.tsx');
+    const pdfSource = read('src/components/quote-pdf/ProfessionalQuotePDF.tsx');
+    const globalStickySource = read('src/components/quote/GlobalStickyQuoteBar.tsx');
+
+    expect(saleSource).toContain("motorOnlyParams.set('intent', 'motor-only')");
+    expect(saleSource).toContain('Reserve Your 9.9 — ${depositAmount.toLocaleString()}');
+    expect(saleSource).toContain('secure this model with a ${depositAmount.toLocaleString()} reservation deposit');
+    expect(motorSelectionSource).toContain("searchParams.get('intent') === 'motor-only'");
+    expect(motorSelectionSource).toContain('motorId === MERCURY_99_MH_EXPRESS_MOTOR_ID');
+    expect(motorSelectionSource).toContain("type: 'START_MOTOR_ONLY_QUOTE'");
+    expect(contextSource).toContain("purchasePath: 'loose'");
+    expect(contextSource).toContain("selectedPaymentMethod: 'cash_purchase'");
+    expect(contextSource).toContain('motorOnlyExpress: true');
+    expect(contextSource).toContain('suppressAdditionalPromoSavings: true');
+    expect(summarySource).toContain('const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true');
+    expect(summarySource).toContain('const promoSavings = suppressAdditionalPromoSavings');
+    expect(summarySource).toContain('Your motor-only reservation');
+    expect(summarySource).toContain('showProgress={!isMotorOnlyExpress}');
+    expect(summarySource).toContain('!isMotorOnlyExpress && (');
+    expect(summarySource).toContain('motorId: state.motor?.id');
+    expect(paymentSource).toContain('if (depositAmount === "100")');
+    expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
+    expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('Customer information required for deposit');
+    expect(paymentSource).not.toContain('rawBody.motorInfo');
+    expect(paymentSource).not.toContain('rawBody.savedQuoteId');
+    expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(req)');
+    expect(paymentSource).toContain('const origin = paymentOrigin');
+    expect(paymentSource).toContain('action: z.literal("verify")');
+    expect(paymentSource).toContain('phone: z.string().trim().min(7)');
+    expect(webhookSource).toContain('session.payment_status !== "paid"');
+    expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
+    expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
+    expect(webhookSource).toContain('Bound deposit record lookup failed');
+    expect(webhookSource).toContain('Bound quote record lookup failed');
+    expect(webhookSource).toContain('body: { stripeSessionId: session.id }');
+    expect(webhookSource).not.toContain('saved_quotes updated via email fallback');
+    expect(emailSource).toContain('isAuthorizedInternalRequest(req)');
+    expect(emailSource).toContain('Paid deposit record not found');
+    expect(emailSource).toContain('A bound Stripe session is required');
+    expect(supabaseConfig).toContain('[functions.send-deposit-confirmation-email]\nverify_jwt = true');
+    expect(successSource).toContain("body: { action: 'verify', sessionId }");
+    expect(successSource).toContain("const isDeposit = verification.paymentType === 'motor_deposit'");
+    expect(successSource).toContain("data?.paymentIntentStatus === 'processing'");
+    expect(successSource).toContain('if (verificationError || !verification?.verified)');
+    expect(successSource).not.toContain('quote PDF attached');
+    expect(pdfSource).toContain('reservationRequiresConfirmation');
+    expect(pdfSource).toContain('HBW confirms the exact motor, availability and ETA before ordering.');
+    expect(globalStickySource).toContain("'/payment-success'");
+    expect(globalStickySource).toContain("'/motors/fourstroke-9-9hp-9-9mh-fourstroke'");
+    expect(summarySource).not.toContain("status: 'Confirmed'");
+    expect(summarySource).not.toContain('deposit-confirmed PDF');
+  });
+
   it('keeps the mobile HP rail compact, contained, and horizontal', () => {
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
 
