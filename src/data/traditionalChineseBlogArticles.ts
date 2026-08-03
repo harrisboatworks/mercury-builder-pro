@@ -23,7 +23,7 @@ import { BlogArticle } from './blogArticles';
 import zhFirstRentalHero from '@/assets/blog/zh-first-rental-hero.png';
 
 export const ZH_HANT_LANGUAGE_NOTE =
-  '我們專門為華人朋友準備了這些中文指南——因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務，不過別擔心——歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。';
+  '我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。';
 
 // Map zh-Hant slug → native-reviewed Simplified counterpart for reader links.
 export const ZH_HANT_TO_HANS_SLUG: Record<string, string> = {
@@ -217,16 +217,16 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     slug: 'pcoc-pcl-fishing-licence-difference-ontario',
     title: 'PCOC、PCL、釣魚證區別：安省新手別搞混',
     seoTitle: '安省 船牌 繁體 PCOC vs PCL vs 釣魚證',
-    description: '安省新手常把三個證件搞混：PCOC（船隻操作員卡，終身有效，開動力船必須）、PCL（船隻牌照，船身的註冊號，免費，換引擎要更新）、安省釣魚證（獨立系統，由 MNRF 管理）。三者對比表 + 官方申請連結。',
+    description: '安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-08-03',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分鐘',
     keywords: ['安省 船牌', '繁體 PCOC', 'PCL', '船隻操作員卡', '釣魚證'],
-    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是終身有效的「駕駛執照」，只要操作配動力的船就必須有。**PCL**（Pleasure Craft Licence，船隻牌照）是船身上那串字母數字註冊號，**免費**。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管。在 HBW 租船，操作人必須持有有效 PCOC。
+    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；新辦、續期、轉讓或補發需要支付 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
 
 ## 一張表看懂三者區別
 
@@ -236,8 +236,8 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
 | 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
 | 是關於甚麼 | **人**——會不會安全開船 | **船**——船身的註冊號 | **行為**——允不允許釣魚 |
-| 費用 | 考試 + 卡片 $40-$60 不等 | **免費** | 視類型而定 |
-| 有效期 | **終身** | 10 年（到期續期） | Outdoors Card 3 年 |
+| 費用 | 由 Transport Canada 認可提供商決定 | **按 Transport Canada 當前服務費** | 視類型而定 |
+| 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
 | 中文支援 | 視提供商而定（建議查運輸部認可名單） | 英 / 法文 | **有官方繁體中文摘要** |
 | 換引擎要更新嗎 | 不用 | **要**（HP 變化時） | 不影響 |
 
@@ -251,7 +251,8 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## PCL：船隻牌照（船身註冊號）
 
 - **誰必須有：** 配 10 HP（7.5 kW）以上引擎的休閒船船主。
-- **怎麼辦：** [Transport Canada Pleasure Craft Licence 在線申請](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) ——**免費**。
+- **怎麼辦：** 使用 [Transport Canada Pleasure Craft Licensing 官方入口](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。新辦、續期、轉讓或補發需要支付當前服務費；更新資料或取消牌照免費。
+- **有效期：** 新辦或轉讓後的 PCL 有效 5 年。
 - **何時必須更新：** 換引擎（HP 變化時）、賣船給新主、地址變更。
 
 ## 安省釣魚證
@@ -276,12 +277,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 **Q：PCOC 中文考試在哪裡？** 視 Transport Canada 認可提供商而定。請直接查 [認可名單](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 並聯繫提供商。
 
-**Q：換引擎後 PCL 一定要更新嗎？** 要。HP 變化時必須在 Transport Canada 在線更新，仍然免費。
+**Q：換引擎後 PCL 一定要更新嗎？** 引擎資料或 HP 變更時應按 Transport Canada 當前規則更新 PCL 資料；資料更新本身免費。
 
-> 完整簡體版：[/blog/zh/pcoc-pcl-fishing-licence-difference-ontario](/blog/zh/pcoc-pcl-fishing-licence-difference-ontario)
+> 完整簡體版：[/blog/zh/gta-chinese-pcl-fishing-licence-guide](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
 `,
     faqs: [
-      { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是您的「駕駛執照」（人證，終身有效）。PCL 是船的「車牌」（船證，免費，10 HP 以上必須）。兩個都要。' },
+      { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發會收取 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。' },
       { question: '短期租船一定要 PCOC 嗎？', answer: '在 HBW 必須有。操作租賃船隻的人要持有效 PCOC，並完成租船安全檢查清單。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],

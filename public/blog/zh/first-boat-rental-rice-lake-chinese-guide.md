@@ -22,10 +22,10 @@ language: zh-CN
 
 > 多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。
 
-**Category:** mandarin  
-**Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
-**Read time:** 8 分钟  
+**Category:** mandarin
+**Published:** 2026-06-12
+**Last updated:** 2026-08-02
+**Read time:** 8 分钟
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 
 > **简短答案：** 根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。Harris Boat Works 有更严格的政策：每位可能驾驶 HBW 租赁船的人员在办理手续时必须出示有效的 Pleasure Craft Operator Card (PCOC) 和带照片身份证件；该清单不能替代 HBW 要求的 PCOC。
@@ -64,7 +64,7 @@ language: zh-CN
 
 ## 关于 PCOC（船只操作员卡）
 
-根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 Harris Boat Works 有更严格的政策：每位可能驾驶 HBW 租赁船的人员在办理手续时必须出示有效的 PCOC 和带照片身份证件；该清单不能替代 HBW 要求的 PCOC。PCOC 终身有效，请在租船日之前完成。详见我们的 [PCOC、PCL、钓鱼证区别](/blog/zh/pcoc-pcl-fishing-licence-difference-ontario) 完整对比。
+根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 Harris Boat Works 有更严格的政策：每位可能驾驶 HBW 租赁船的人员在办理手续时必须出示有效的 PCOC 和带照片身份证件；该清单不能替代 HBW 要求的 PCOC。PCOC 终身有效，请在租船日之前完成。详见我们的 [PCOC、PCL、钓鱼证完整指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)。
 
 ## 关于安省钓鱼证
 
@@ -88,7 +88,7 @@ language: zh-CN
 ## HBW 的服务说明
 
 ::pull-quote
-quote: 我们专门为华人朋友准备了这些中文指南——因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务，不过别担心——欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+quote: 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 ::
 
 - 地点：Gores Landing, Ontario（莱斯湖南岸）
@@ -98,7 +98,7 @@ quote: 我们专门为华人朋友准备了这些中文指南——因为我们�
 
 ## 相关阅读
 
-- [PCOC、PCL、钓鱼证区别：安省新手别搞混](/blog/zh/pcoc-pcl-fishing-licence-difference-ontario)
+- [PCOC、PCL、钓鱼证完整指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
 - [GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 - [Rice Lake 钓鱼完整攻略：多伦多华人钓友必读](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
 

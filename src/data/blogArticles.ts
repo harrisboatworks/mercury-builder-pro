@@ -56,15 +56,16 @@ const SEASONAL_POSTS: Record<string, number[]> = {
   'winter-repower-planning-guide':        [11, 12, 1, 2],
   'year-end-boat-motor-buying-guide':     [11, 12, 1, 2],
   'mercury-outboard-lineup-ontario':       [10, 11, 12, 1, 2, 6, 7, 8],
-  // Winterization (Sep–Dec)
-  'boat-winterization-cost-ontario-2026':                [9, 10, 11, 12],
-  'diy-mercury-outboard-winterization-guide':            [9, 10, 11, 12],
+  // Winterization (Aug–Dec). Customers commonly begin planning in August;
+  // HBW accepts work first come, first served through the mid-November last call.
+  'boat-winterization-cost-ontario-2026':                [8, 9, 10, 11, 12],
+  'diy-mercury-outboard-winterization-guide':            [8, 9, 10, 11, 12],
 
-  // Winter storage (Sep–Mar)
-  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [9, 10, 11, 12, 1, 2, 3],
-  'outdoor-boat-storage-shrinkwrap-rice-lake':        [9, 10, 11, 12, 1, 2, 3],
-  'winter-storage-near-toronto-hbw':                  [9, 10, 11, 12, 1, 2, 3],
-  'boat-storage-kawartha-lakes':                      [9, 10, 11, 12, 1, 2, 3],
+  // Winter storage (Aug–Mar)
+  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [8, 9, 10, 11, 12, 1, 2, 3],
+  'outdoor-boat-storage-shrinkwrap-rice-lake':        [8, 9, 10, 11, 12, 1, 2, 3],
+  'winter-storage-near-toronto-hbw':                  [8, 9, 10, 11, 12, 1, 2, 3],
+  'boat-storage-kawartha-lakes':                      [8, 9, 10, 11, 12, 1, 2, 3],
   // Spring commissioning & opener (Mar–May)
   'spring-outboard-commissioning-checklist': [3, 4, 5],
   'walleye-opener-boat-prep':                [3, 4, 5],
@@ -15463,12 +15464,8 @@ For Mercury owners, start with Mercury's official guidance and then follow the e
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
 
-## Related Guides and Sources
+## Official Sources
 
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
-- [Mercury Maintenance Intervals](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Outdoor Boat Storage on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 - [Mercury Marine: How to Winterize Your Outboard](https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard)
 - [Mercury Marine: Marine Battery Maintenance](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics)
 `,
@@ -32381,12 +32378,10 @@ It varies with the starting point, traffic, weather, road work, and towing condi
 
 ---
 
-## Related Guides and Current Booking
+## Current Booking and Official Information
 
 - [HBW service intake](https://hbw.wiki/service), current repair scope and service request
 - [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
-- [Outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), current HBW storage scope
-- [Rice Lake launch guide](/blog/rice-lake-boat-launch-guide), launch-planning questions
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
 Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).

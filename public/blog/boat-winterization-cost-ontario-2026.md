@@ -169,12 +169,8 @@ For Mercury owners, start with Mercury's official guidance and then follow the e
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
 
-## Related Guides and Sources
+## Official Sources
 
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide)
-- [Mercury Maintenance Intervals](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Outdoor Boat Storage on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
 - [Mercury Marine: How to Winterize Your Outboard](https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard)
 - [Mercury Marine: Marine Battery Maintenance](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics)
 
@@ -218,10 +214,11 @@ As of July 2026, spring commissioning is included for HBW winter-storage custome
 
 ## Related guides
 
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 - [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
-- [Kawartha Lakes Boat Storage: What to Compare Before Booking](/blog/boat-storage-kawartha-lakes), compare Kawartha Lakes boat storage options
 
 ## Next steps
 

@@ -1,5 +1,11 @@
 import { blogArticles } from '../src/data/blogArticles';
+import { mandarinBlogArticles } from '../src/data/mandarinBlogArticles';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
+
+const contentArticles = [
+  ...blogArticles,
+  ...mandarinBlogArticles,
+];
 
 const diagnosticSlugs = [
   'mercury-outboard-wont-start-troubleshooting',
@@ -121,6 +127,42 @@ const unsupportedOperationalClaims = [
       /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot))\b/i,
   },
   {
+    label: 'incorrect Mandarin winterization or storage reservation pressure',
+    pattern:
+      /(?:(?:9 月中旬|9 月底之前)[^\n。]{0,30}(?:预订|预约)|(?:场地|位置)[^\n。]{0,30}(?:几乎满|订满)|锁定冬储位置|早鸟折扣)/i,
+  },
+  {
+    label: 'false Mandarin-language staff claim',
+    pattern: /(?:师傅|技师|团队)[^\n。]{0,30}(?:会用中文|提供中文服务|用中文解释)/i,
+  },
+  {
+    label: 'incorrect HBW indoor-storage offer in Mandarin',
+    pattern:
+      /HBW[^\n。]{0,140}(?:室内或室外存储|(?<!不)提供室内冬储(?!吗)|室内存储到)/i,
+  },
+  {
+    label: 'incorrect PCL label for the operator card',
+    pattern: /PCL\s*(?:操作员卡|船驾照|操作人卡)/i,
+  },
+  {
+    label: 'unsupported Mandarin winter-storage package price',
+    pattern:
+      /(?:典型 GTA 华人客户全包价|(?:冬储|冬化)[^\n。]{0,80}\$1,500\s*(?:to|[-–])\s*\$2,800)/i,
+  },
+  {
+    label: 'rolling Mandarin HBW heritage count',
+    pattern: /(?:家族经营\s*(?:78|79|80)\s*年|卖船和修引擎已经\s*\d+\s*年)/i,
+  },
+  {
+    label: 'incorrect Mandarin rental booking through the service form',
+    pattern:
+      /(?:(?:订船|租船|预订)[^\n。]{0,160}hbw\.wiki\/service|hbw\.wiki\/service[^\n。]{0,160}(?:订船|租船|预订))/i,
+  },
+  {
+    label: 'unsupported fixed Mandarin rental-orientation duration',
+    pattern: /HBW[^\n。]{0,100}(?:4\s*(?:-|–)\s*6)\s*分钟[^\n。]{0,50}(?:讲解|说明)/i,
+  },
+  {
     label: 'closed Serpent Mounds public-launch or parking recommendation',
     pattern:
       /Serpent Mounds[^\n.]{0,160}\b(?:maintained (?:boat )?ramp|day-use fees?|overnight (?:trailer )?parking)\b/i,
@@ -152,6 +194,7 @@ const editorialIntentChecks = [
   { slug: 'outdoor-boat-storage-shrinkwrap-rice-lake', title: /HBW Outdoor Winter Boat Storage/i, description: /Harris Boat Works/i },
   { slug: 'boat-storage-kawartha-lakes', title: /What to Compare Before Booking/i, description: /Compare outdoor, indoor/i },
   { slug: 'mercury-100-hour-service-cost-ontario', title: /What's Included/i, description: /when to submit an HBW service request/i },
+  { slug: 'gta-chinese-pcl-fishing-licence-guide', title: /PCOC.*PCL.*钓鱼证/i, description: /PCOC.*PCL.*安省钓鱼证/i },
 ] as const;
 
 const unsupportedServiceEvidencePatterns = [
@@ -224,9 +267,41 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /recommended maximum exceeds the manufacturer's safe engine-power limit/i,
     /not accurate to describe every pleasure-craft case as an automatic blanket warranty void/i,
   ],
+  'gta-chinese-rice-lake-winter-storage-complete-guide': [
+    /有空间，不需要提前数月预留位置/i,
+    /计划送船前 1–2 周/i,
+    /11 月中旬是实际的秋季最后接收时间/i,
+    /Lightspeed 记录[\s\S]{0,80}584 次冬化/i,
+    /只提供室外收缩膜冬储/i,
+  ],
+  'gta-chinese-mercury-service-guide': [
+    /没有中文母语的销售或翻译/i,
+    /按先到先办处理/i,
+    /计划送船前 1–2 周/i,
+    /只提供(?:\*\*)?室外收缩膜冬储(?:\*\*)?/i,
+  ],
+  'gta-chinese-pcl-fishing-licence-guide': [
+    /PCOC（Pleasure Craft Operator Card）/i,
+    /新办、续期、转让或补发 PCL[\s\S]{0,40}需要支付当前服务费/i,
+    /HBW 采用更严格的内部政策/i,
+    /18 岁以下或 65 岁及以上/i,
+  ],
+  'gta-chinese-buy-boat-rice-lake-guide': [
+    /HBW 只提供室外收缩膜冬储/i,
+    /Harris Boat Works 自 1947 年起一直由 Harris 家族/i,
+  ],
+  'why-chinese-boaters-choose-harris-boat-works': [
+    /不公布未经核实的族群占比/i,
+    /1965 年[\s\S]{0,80}George Harris/i,
+    /由美国合同制造商生产/i,
+  ],
+  'gta-chinese-rice-lake-day-trip-plan': [
+    /harrisboatworks\.ca\/rentals/i,
+    /每位可能驾驶的人都必须符合 HBW 的 boat operator licence \/ PCOC 要求/i,
+  ],
 };
 
-for (const article of blogArticles) {
+for (const article of contentArticles) {
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
   const cleaned = cleanBlogContent(article.content, {
     hasStructuredFaqs: faqs.length > 0,
@@ -277,7 +352,7 @@ for (const slug of diagnosticSlugs) {
 }
 
 for (const intent of editorialIntentChecks) {
-  const article = blogArticles.find((candidate) => candidate.slug === intent.slug);
+  const article = contentArticles.find((candidate) => candidate.slug === intent.slug);
   if (!article) {
     failures.push(`${intent.slug}: editorial-intent article is missing`);
     continue;
@@ -291,7 +366,7 @@ for (const intent of editorialIntentChecks) {
 }
 
 for (const [slug, expectations] of Object.entries(serviceEvidenceExpectations)) {
-  const article = blogArticles.find((candidate) => candidate.slug === slug);
+  const article = contentArticles.find((candidate) => candidate.slug === slug);
   if (!article) {
     failures.push(`${slug}: service-evidence article is missing`);
     continue;
@@ -318,7 +393,7 @@ for (const [slug, expectations] of Object.entries(serviceEvidenceExpectations)) 
 }
 
 for (const [slug, expectations] of Object.entries(factualCorrectionExpectations)) {
-  const article = blogArticles.find((candidate) => candidate.slug === slug);
+  const article = contentArticles.find((candidate) => candidate.slug === slug);
   if (!article) {
     failures.push(`${slug}: factual-correction article is missing`);
     continue;
@@ -353,5 +428,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
+  `Blog output hygiene check passed for ${contentArticles.length} English and Chinese articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles, and ${Object.keys(factualCorrectionExpectations).length} factual-correction articles.`,
 );
