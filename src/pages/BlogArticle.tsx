@@ -114,13 +114,13 @@ export default function BlogArticle() {
             const linkIsInternal = linkHref.startsWith('/') || /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca|mercury-quote-tool\.lovable\.app)(\/|$)/i.test(linkHref);
             if (linkIsInternal) {
               parts.push(
-                <Link key={keyIndex++} to={linkHref.replace(/^https?:\/\/[^/]+/, '') || '/'} className="text-primary hover:underline">
+                <Link key={keyIndex++} to={linkHref.replace(/^https?:\/\/[^/]+/, '') || '/'} className="break-words text-primary hover:underline">
                   {match[1]}
                 </Link>
               );
             } else {
               parts.push(
-                <a key={keyIndex++} href={linkHref} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <a key={keyIndex++} href={linkHref} target="_blank" rel="noopener noreferrer" className="break-words text-primary hover:underline">
                   {match[1]}
                 </a>
               );
@@ -419,7 +419,7 @@ export default function BlogArticle() {
                   const isDownloadableAsset = /\.(?:pdf|docx?|xlsx?|zip)(?:[?#]|$)/i.test(href);
                   const isCta = title === 'cta';
                   const ctaClass = 'inline-block bg-repower-mercury-red text-white font-semibold px-6 py-3 rounded-lg hover:bg-repower-mercury-red-deep transition no-underline my-4';
-                  const linkClass = isCta ? ctaClass : 'text-primary hover:underline';
+                  const linkClass = isCta ? ctaClass : 'break-words text-primary hover:underline';
                   if (isInternal) {
                     const to = href.startsWith('#') ? href : (href.replace(/^https?:\/\/[^/]+/, '') || '/');
                     // Static downloads must bypass React Router, which otherwise
