@@ -52,6 +52,7 @@ Answer.
     'FAQ | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
     'Aksar puchhe jaande sawaal | ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
     'اکثر پوچھے جانے والے سوالات | FAQ',
+    'کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات | FAQ',
     'FAQ | अक्सर पूछे जाने वाले सवाल',
   ])('removes a localized inline FAQ headed %s', (heading) => {
     const content = `## ${heading}\n\nQuestion and answer.\n\n## Sources\n\n- Source`;

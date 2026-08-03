@@ -55,15 +55,15 @@ const SEASONAL_POSTS: Record<string, number[]> = {
   'winter-repower-planning-guide':        [11, 12, 1, 2],
   'year-end-boat-motor-buying-guide':     [11, 12, 1, 2],
   'mercury-outboard-lineup-ontario':       [10, 11, 12, 1, 2, 6, 7, 8],
-  // Winterization (Sep–Dec)
-  'boat-winterization-cost-ontario-2026':                [9, 10, 11, 12],
-  'diy-mercury-outboard-winterization-guide':            [9, 10, 11, 12],
+  // Winterization (Aug–Dec)
+  'boat-winterization-cost-ontario-2026':                [8, 9, 10, 11, 12],
+  'diy-mercury-outboard-winterization-guide':            [8, 9, 10, 11, 12],
 
-  // Winter storage (Sep–Mar)
-  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [9, 10, 11, 12, 1, 2, 3],
-  'outdoor-boat-storage-shrinkwrap-rice-lake':        [9, 10, 11, 12, 1, 2, 3],
-  'winter-storage-near-toronto-hbw':                  [9, 10, 11, 12, 1, 2, 3],
-  'boat-storage-kawartha-lakes':                      [9, 10, 11, 12, 1, 2, 3],
+  // Winter storage (Aug–Mar)
+  'winter-boat-storage-shrinkwrap-vs-indoor-ontario': [8, 9, 10, 11, 12, 1, 2, 3],
+  'outdoor-boat-storage-shrinkwrap-rice-lake':        [8, 9, 10, 11, 12, 1, 2, 3],
+  'winter-storage-near-toronto-hbw':                  [8, 9, 10, 11, 12, 1, 2, 3],
+  'boat-storage-kawartha-lakes':                      [8, 9, 10, 11, 12, 1, 2, 3],
   // Spring commissioning & opener (Mar–May)
   'spring-outboard-commissioning-checklist': [3, 4, 5],
   'walleye-opener-boat-prep':                [3, 4, 5],
@@ -39015,7 +39015,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (about 865 US GPH)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.
