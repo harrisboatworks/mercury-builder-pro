@@ -2,8 +2,8 @@
 canonical: https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail.md
 last_updated: 2026-08-02
 location: Gores Landing, ON, Canada
-title: "When to Replace a Mercury Impeller: Interval and Warning Signs (2026)"
-description: "When to replace a Mercury outboard impeller, which warning signs matter, why weeds and restricted water flow raise risk, and when to stop the engine."
+title: "When to Replace a Mercury Impeller: 12 Years of Shop Data"
+description: "When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop."
 category: "Service & Troubleshooting"
 date_published: 2026-06-09
 date_modified: 2026-08-02
@@ -13,9 +13,9 @@ content_type: blog_article
 language: en-CA
 ---
 
-# When to Replace a Mercury Impeller: Interval and Warning Signs (2026)
+# When to Replace a Mercury Impeller: 12 Years of Shop Data
 
-> When to replace a Mercury outboard impeller, which warning signs matter, why weeds and restricted water flow raise risk, and when to stop the engine.
+> When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-06-09  
@@ -29,7 +29,25 @@ Follow the maintenance schedule for your exact Mercury engine and serial number.
 
 A short spring idle test can confirm that water is moving. It cannot guarantee normal cooling during a long summer run under load. Warm water, weeds, silt, a blocked intake, a worn housing, or a marginal impeller can all change what happens when the engine works harder.
 
-This guide explains the interval, the warning signs, and the safe order of checks for Rice Lake and Kawartha boating.
+HBW's shop history adds a useful local pattern. The original June 2026 analysis counted **766 impeller and water-pump part lines** on completed repair orders from March 2014 through the first week of June 2026. It did not count 766 unique boats or 766 confirmed failures. That distinction matters, and it makes the data more useful rather than less.
+
+## What 12 Years of Shop Data Show
+
+| Month | Impeller / water-pump part lines in the frozen 766-record snapshot |
+|---|---:|
+| March | 1 |
+| April | 84 |
+| May | 123 |
+| June | **144** |
+| July | **143** |
+| August | 117 |
+| September | 73 |
+| October | 36 |
+| November | 45 |
+
+June and July together account for 287 matching parts records, compared with 207 in April and May, about 39 percent more. The honest interpretation is not "impellers fail 39 percent more often in summer." These are parts records, and they include scheduled replacements during other work. They show that HBW's impeller and pump work has historically landed most heavily once boats are in regular summer use.
+
+An aggregate recheck on August 2, 2026 found **817 matching parts records across 792 distinct repair orders** through July 28, 2026. No customer information was used. The total grew as more jobs closed; the seasonal shape remained consistent with the original snapshot.
 
 ## Why Problems Often Appear Under Summer Load
 
@@ -76,6 +94,7 @@ The pattern we'd love to break is the boater who notices a weak telltale, keeps 
 
 ## Sources
 
+- HBW Lightspeed service-parts history: frozen 766-part-line publication snapshot; aggregate recheck August 2, 2026 (817 matching parts records across 792 distinct repair orders, March 17, 2014 to July 28, 2026; no customer data used)
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
 - [Mercury Marine: Preventing Corrosion](https://www.mercurymarine.com/sp/en/parts-and-service/maintenance/maintenance-made-easy/preventing-corrosion)
@@ -102,7 +121,7 @@ Do not assume a weak stream is harmless. Stop, check the intake for weeds or deb
 
 ### Why can impeller trouble appear in summer?
 
-A short spring idle check does not reproduce a long run under load. Warm water, weeds, silt, blocked intakes, and higher engine demand can expose a marginal cooling system. That is why the maintenance schedule and warning signs matter more than one successful dockside test.
+A short spring idle check does not reproduce a long run under load. In HBW's frozen 766-part-line Lightspeed snapshot, June and July together had 287 matching parts records versus 207 in April and May. Those records include scheduled replacements as well as repairs, so they show when pump work reached the shop, not a failure rate.
 
 ### Does a spring start-up test catch a dying impeller?
 

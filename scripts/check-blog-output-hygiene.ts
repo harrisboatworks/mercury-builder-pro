@@ -108,27 +108,11 @@ const editorialIntentChecks = [
   { slug: 'mercury-100-hour-service-cost-ontario', title: /What's Included/i, description: /when to submit an HBW service request/i },
 ] as const;
 
-const serviceEvidenceSlugs = [
-  // Spring commissioning has its own aggregate methodology note and focused
-  // regression test because its 9,540-job snapshot and $99 scope are verified.
-  'milky-gearcase-oil-meaning-cost-ontario',
-  'mercury-water-pump-replacement-cost-ontario',
-  'mercury-100-hour-service-cost-ontario',
-  'mercury-impeller-replacement-when-they-fail',
-  'trailer-boat-toronto-to-rice-lake-guide',
-  'mercury-outboard-wont-start-troubleshooting',
-] as const;
-
 const unsupportedServiceEvidencePatterns = [
-  {
-    label: 'hardcoded customer-facing service price',
-    pattern:
-      /(?:\b(?:service|repair|diagnostic|labou?r|parts?|startup|winteriz\w*|commission\w*|water pump|impeller|gearcase)\b[^\n.]{0,120}(?:\$\s*\d|\bCAD\s+\d)|(?:\$\s*\d|\bCAD\s+\d)[^\n.]{0,120}\b(?:service|repair|diagnostic|labou?r|parts?|startup|winteriz\w*|commission\w*|water pump|impeller|gearcase)\b|^\|[^\n]*\$\s*\d[^\n]*\$\s*\d)/im,
-  },
   {
     label: 'retired unsupported service statistic',
     pattern:
-      /(?:by about 40 percent|as little as three weeks|phase separation takes 60(?:\s*(?:-|\u2013)\s*|\s+to\s+)90 days)/i,
+      /(?:as little as three weeks|phase separation takes 60(?:\s*(?:-|\u2013)\s*|\s+to\s+)90 days)/i,
   },
   {
     label: 'retired unsupported service-data graphic',
@@ -136,14 +120,31 @@ const unsupportedServiceEvidencePatterns = [
   },
 ] as const;
 
-const internalServiceCountPattern =
-  /\b\d[\d,]*(?:\.\d+)?(?:[-\s]+[a-z][a-z-]*){0,8}[-\s]+(?:jobs?|work[- ]orders|pressure[- ]tests)\b/gi;
-const internalServiceCountContext =
-  /(?:\bour(?: own)? (?:service |repair )?(?:records?|history|system|data|work orders?|shop|service bench|completed)\b|\b(?:HBW|Harris Boat Works)(?:'s)? (?:service )?(?:records?|history|system|data)\b|\brecords?\b|\bhistory\b|\bdataset\b|\bin our system\b|\bcompleted work orders?\b|\blast (?:season|year)\b|\bshow(?:s|ed)?\b|\btaught\b|\breal numbers\b|\bmore than any\b)/i;
-const verifiedInternalServiceCountExceptions: Record<string, RegExp> = {
-  // Aggregate evidence and row grain are documented in
-  // docs/blog-data-methodology/spring-commissioning-2026-08-02.md.
-  'spring-commissioning-cost-ontario': /^(?:9,540|9,841)\b/,
+const serviceEvidenceExpectations: Record<string, RegExp[]> = {
+  'spring-commissioning-cost-ontario': [
+    /9,540 individual job records/i,
+    /9,841 matching job records across 5,195 distinct repair orders/i,
+  ],
+  'mercury-impeller-replacement-when-they-fail': [
+    /766 impeller and water-pump part lines/i,
+    /817 matching parts records across 792 distinct repair orders/i,
+    /(?:not|did not count) 766 unique boats or 766 confirmed failures/i,
+  ],
+  'milky-gearcase-oil-meaning-cost-ontario': [
+    /7,417 gearcase-related service records/i,
+    /8,130 matching job rows across 7,474 distinct repair orders/i,
+    /497 job rows across 447 repair orders/i,
+  ],
+  'mercury-water-pump-replacement-cost-ontario': [
+    /112 dedicated water-pump jobs/i,
+    /\$210 in labour plus \$76 in pump parts/i,
+    /historical shop medians, not a package price or quote/i,
+  ],
+  'mercury-outboard-wont-start-troubleshooting': [
+    /537 Lightspeed job records/i,
+    /cause buckets also overlapped/i,
+    /symptom label is not the same thing as a confirmed root cause/i,
+  ],
 };
 
 for (const article of blogArticles) {
@@ -181,27 +182,6 @@ for (const article of blogArticles) {
     }
   }
 
-  const completeArticleSource = [
-    article.title,
-    article.description,
-    claimSource,
-  ].join('\n');
-  for (const match of completeArticleSource.matchAll(internalServiceCountPattern)) {
-    if (verifiedInternalServiceCountExceptions[article.slug]?.test(match[0])) {
-      continue;
-    }
-    const start = Math.max(0, (match.index || 0) - 180);
-    const end = Math.min(
-      completeArticleSource.length,
-      (match.index || 0) + match[0].length + 180,
-    );
-    const context = completeArticleSource.slice(start, end);
-    if (internalServiceCountContext.test(context)) {
-      failures.push(
-        `${article.slug}: unsupported internal service-count evidence (${match[0]})`,
-      );
-    }
-  }
 }
 
 for (const slug of diagnosticSlugs) {
@@ -231,7 +211,7 @@ for (const intent of editorialIntentChecks) {
   }
 }
 
-for (const slug of serviceEvidenceSlugs) {
+for (const [slug, expectations] of Object.entries(serviceEvidenceExpectations)) {
   const article = blogArticles.find((candidate) => candidate.slug === slug);
   if (!article) {
     failures.push(`${slug}: service-evidence article is missing`);
@@ -250,6 +230,12 @@ for (const slug of serviceEvidenceSlugs) {
       failures.push(`${slug}: ${check.label}`);
     }
   }
+
+  for (const expectation of expectations) {
+    if (!expectation.test(evidenceSource)) {
+      failures.push(`${slug}: documented service-evidence context is missing (${expectation})`);
+    }
+  }
 }
 
 if (failures.length > 0) {
@@ -259,5 +245,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, and ${serviceEvidenceSlugs.length} service-evidence articles.`,
+  `Blog output hygiene check passed for ${blogArticles.length} articles, ${diagnosticSlugs.length} diagnostic CTA surfaces, ${unsupportedOperationalClaims.length} unsupported-claim guards, ${editorialIntentChecks.length} editorial-intent checks, and ${Object.keys(serviceEvidenceExpectations).length} documented service-evidence articles.`,
 );

@@ -33,6 +33,12 @@ It happens at the worst time. Your Mercury sat all winter. The dock is clear, th
 
 This guide walks through the safe diagnostic order we use at HBW. Start with the controls and electrical supply, then fuel and ignition. Some no-starts are simple dockside corrections; others need serial-specific testing and Mercury diagnostic equipment.
 
+## What the 537-Job Snapshot Can and Cannot Tell Us
+
+The original article analysis counted **537 Lightspeed job records** labelled for no-start or rough-running work from 2013 through its 2026 publication snapshot. That is real HBW shop history, with two limits: one repair order can contain more than one job row, and a symptom label is not the same thing as a confirmed root cause.
+
+The old cause buckets also overlapped. A repair order could involve stale fuel, a weak battery and fouled plugs at the same time. We therefore kept the useful 537-job scale but retired the claim that it proves a universal fuel-versus-electrical percentage. The diagnostic ladder below is based on safe testing order, not on pretending every no-start fits one bucket.
+
 [Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
 
 ## The three "stupid easy" things to check first
@@ -137,6 +143,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 - [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
+- HBW Lightspeed service history: frozen 537-job-row no-start and rough-running publication snapshot, 2013-2026 (symptom-labelled records, not unique boats or mutually exclusive root-cause diagnoses; no customer data used)
 
 ---
 
@@ -168,7 +175,7 @@ A stored fault is not guaranteed. Clean fault memory does not rule out low crank
 
 ### What is the most common reason a Mercury outboard won't start?
 
-There is no universal winner. Start with the kill switch, neutral-safety position, battery switch, battery condition, and connections, then move to fuel and ignition. That order rules out simple causes before parts are replaced or dealer diagnostics begin.
+There is no universal winner. HBW's 537-job-row Lightspeed snapshot confirms the shop sees this symptom often, but the historical cause buckets overlapped and do not prove one universal cause. Start with the kill switch, neutral-safety position, battery switch, battery condition and connections, then move to fuel and ignition.
 
 ## Related guides
 
