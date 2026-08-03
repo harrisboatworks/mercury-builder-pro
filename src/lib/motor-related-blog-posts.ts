@@ -202,7 +202,7 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
 
     if (validated.length < 3) {
       const fillers = [
-        'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
+        'fourstroke-vs-pro-xs',
         'outboard-shaft-length-guide',
         'ontario-mercury-outboard-price-guide',
       ].filter((slug) => !deny.has(slug) && !scores.has(slug));
