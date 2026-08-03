@@ -624,7 +624,8 @@ function loadLocations() {
 }
 
 // Load ALL blog articles (including future-dated/scheduled) for sitemap.
-// Returns a minimal shape: slug, publishDate, datePublished, dateModified, image, title.
+// Returns the fields needed to stamp sitemap entries, including the raster
+// social image when an SVG hero is retained for the visible article.
 function loadAllBlogArticlesForSitemap() {
   const dumpScript = `
     import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
@@ -633,6 +634,7 @@ function loadAllBlogArticlesForSitemap() {
       title: a.title,
       seoTitle: a.seoTitle,
       image: a.image,
+      socialImage: a.socialImage || null,
       publishDate: a.publishDate || null,
       datePublished: a.datePublished || null,
       dateModified: a.dateModified || null,
@@ -668,6 +670,7 @@ function loadBlogArticles() {
       seoTitle: a.seoTitle,
       description: getCleanDescription(a),
       image: a.image,
+      socialImage: a.socialImage || null,
       imageAlt: a.imageAlt || null,
       datePublished: a.datePublished,
       dateModified: a.dateModified,
@@ -677,6 +680,10 @@ function loadBlogArticles() {
       readTime: a.readTime || '5 min read',
       content: a.content || '',
       relatedSlugs: a.relatedSlugs || [],
+      citations: (a.citations || []).map(citation => ({
+        name: sanitizeForSchema(citation.name),
+        url: citation.url,
+      })),
       faqs: (a.faqs || [])
         .map(f => ({
           question: sanitizeForSchema(f.question),
