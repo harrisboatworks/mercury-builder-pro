@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "0b65a9cb11b951398871",
+  "sourceVersion": "baf9719ad0688c56388a",
   "count": 202,
   "articles": [
     {
@@ -264,8 +264,8 @@
     },
     {
       "slug": "mercury-100-hour-service-cost-ontario",
-      "title": "Mercury 100-Hour Service Cost in Ontario: What 4,160 Real Work Orders Show (2026)",
-      "description": "Real Ontario numbers for a Mercury 100-hour or annual service, from 4,160 work orders: flat-rate labour by HP class, median parts, and what's included.",
+      "title": "Mercury 100-Hour Service Cost in Ontario: What's Included (2026)",
+      "description": "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit includes, and when to submit an HBW service request.",
       "category": "Service",
       "publishDate": "2026-07-02",
       "keywords": [
@@ -278,7 +278,7 @@
       "faqs": [
         {
           "q": "How much does a Mercury 100-hour service cost in Ontario?",
-          "a": "At our Rice Lake shop, last season's medians ran about $250 all-in for small tillers up to about $440 for a 150 HP FourStroke (labour + typical parts, before HST), done as a fall winterize-and-service. Your parts total depends on your motor's plug count and condition. Current-season pricing is confirmed when you book…"
+          "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can…"
         },
         {
           "q": "Is the 100-hour service the same as winterization?",

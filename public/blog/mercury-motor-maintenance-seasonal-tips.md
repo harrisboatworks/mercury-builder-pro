@@ -28,17 +28,15 @@ language: en-CA
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips
 
-# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
+> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, submit hbw.wiki/service about one to two weeks before your planned drop-off; mid-November is the practical last call.
 
-> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. Book service at hbw.wiki/service.
-
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service).
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbw.wiki/service).
 
 ## Quick recommendation
 
 Most preventable service problems start with skipped maintenance, old fuel, restricted cooling water, or a storage procedure that did not match the engine. A model-specific schedule costs less than guessing after a warning horn or no-start.
 
-The annual maintenance budget for a typical Mercury repower is small compared with a major repair. The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
+The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
 
 We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Use the seasonal cycle below to organize the exact work listed in the manual for your motor.
 
@@ -163,9 +161,9 @@ For exact intervals on your specific motor model, the Mercury owner's manual is 
 - [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
 
-## Ready to book service?
+## Ready to request service?
 
-Spring service slots fill up in March and April. Fall winterization slots fill in October. Booking early gets you the easier appointment slots and your boat is ready when you want it.
+HBW handles fall winterization and outdoor storage first come, first served. You do not need to reserve capacity. Submit the service request about one to two weeks before your planned drop-off; mid-November is the practical last call because HBW closes December 1.
 
 [**Request Service**](https://hbw.wiki/service)
 
@@ -179,7 +177,7 @@ Not sure what your specific motor needs? Put in a service request at [hbw.wiki/s
 
 ---
 
-_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+_Service pricing varies by motor, condition, and work due. HBW confirms the current scope and price from the service request and the exact engine details._
 
 ---
 

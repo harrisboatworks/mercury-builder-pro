@@ -55,7 +55,7 @@ If your motor isn't on this table, send the serial number and we'll check.
 
 ## What SmartCraft Connect actually does
 
-Before checking eligibility it helps to know what you'd be getting. [SmartCraft Connect is Mercury's mobile and cloud connectivity layer](/blog/mercury-smartcraft-connect-guide-ontario) (Mercury's official overview is at [mercurymarine.com/en/us/products/technology/smartcraft-connect](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
+Before checking eligibility it helps to know what you'd be getting. [SmartCraft Connect is Mercury's mobile and cloud connectivity layer](/blog/mercury-smartcraft-connect-guide-ontario) (see [Mercury's official SmartCraft Connect overview](https://www.mercurymarine.com/en/us/products/technology/smartcraft-connect)). Once installed, you get:
 
 - Live engine data on your phone: RPM, fuel flow, hours, water temp, oil pressure, alarms
 - Trip logs and engine hour tracking automatically saved to the cloud
