@@ -54,7 +54,7 @@ When it matters most (a leak at the dock while you're away, a hatch left cracked
 Under Canada's Small Vessel Regulations, a watertight compartment has to have a means of pumping or bailing whenever the boat is in the water. Specifically:
 
 - If the bilge isn't easily visible from the operating position, the boat needs a bilge pumping system or, for vessels 12 metres and under, a permanently installed automatic bilge pump connected to both a running indicator and an overriding manual switch, with both located at the helm
-- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (roughly 196 GPH)
+- An automatic bilge pump must have a minimum capacity of 0.91 litres per second (about 865 US GPH)
 - Smaller boats can legally carry a manual bailer instead, but an automatic pump gives far more protection
 
 That's the legal floor, not a target. On Rice Lake, where boats sit in the water all season and can go unattended for days, a properly sized automatic pump with a working float switch is what we consider the real standard.

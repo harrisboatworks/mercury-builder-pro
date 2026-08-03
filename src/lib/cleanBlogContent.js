@@ -1,5 +1,5 @@
 const FAQ_HEADING_RE =
-  /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
+  /^##\s+(?:(?:Frequently Asked Questions|FAQs?|Common Questions|Aksar puchhe jaande sawaal)\b|(?:Questions fréquentes|Preguntas frecuentes|常见问题|常見問題|자주 묻는 질문|Mga Madalas Itanong|ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ|کشتی کی ونٹرائزیشن اور اسٹوریج کے بارے میں عام سوالات|اکثر پوچھے جانے والے سوالات|अक्सर पूछे जाने वाले सवाल)(?:\s|$|[|(]))/i;
 const INTERNAL_LINKS_HEADING_RE = /^##\s+Internal Links\s*$/i;
 const RELATED_HEADING_RE =
   /^##\s+(?:Related Guides?|Related Posts?|Related Articles?|Related at HBW)\s*$/i;

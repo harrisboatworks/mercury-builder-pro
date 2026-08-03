@@ -39,4 +39,15 @@ describe('Ontario seasonal blog visibility', () => {
       expect(visibleSlugs.has(slug), slug).toBe(true);
     }
   });
+
+  it('keeps the bilge-pump legal minimum in US gallons per hour', () => {
+    const article = getPublishedArticles().find(
+      ({ slug }) => slug === 'bilge-pump-troubleshooting-guide',
+    );
+
+    expect(article?.content).toContain(
+      '0.91 litres per second (about 865 US GPH)',
+    );
+    expect(article?.content).not.toContain('196 GPH');
+  });
 });
