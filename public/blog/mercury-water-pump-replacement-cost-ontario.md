@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)"
-description: "What changes the cost of a Mercury water pump replacement in Ontario: engine model, impeller versus full kit, corrosion, diagnosis, and labour."
+title: "Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)"
+description: "HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote."
 category: "Service"
 date_published: 2026-07-02
 date_modified: 2026-08-02
@@ -18,9 +18,9 @@ content_type: blog_article
 language: en-CA
 ---
 
-# Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)
+# Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)
 
-> What changes the cost of a Mercury water pump replacement in Ontario: engine model, impeller versus full kit, corrosion, diagnosis, and labour.
+> HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote.
 
 **Category:** Service  
 **Published:** 2026-07-02  
@@ -28,13 +28,24 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario
 
-# Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)
+# Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)
 
-> **Quick answer:** There is no single Mercury water-pump price. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the engine serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service) so the job can be scoped to the correct Mercury parts and procedure.
+> **Quick answer:** In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about **$210 in labour plus $76 in pump parts**, before HST. Those are historical shop medians, not a package price or quote. The engine, gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners and any cooling-system diagnosis can change both numbers.
 
 Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and timing. The next question at the counter is simpler: what changes the bill?
 
 The useful answer starts with what is actually inside the job and when "impeller" becomes "impeller, housing, wear plate, seals, and diagnosis."
+
+## What 112 HBW Jobs Billed
+
+| Line in the frozen 2023-July 2026 dataset | Median before HST | What it means |
+|---|---:|---|
+| Labour | About $210 | Access the pump, inspect the components, replace the approved scope, reassemble and test |
+| Pump parts | About $76 | The median parts total; a complete kit with housing can cost more |
+
+The dataset contains dedicated water-pump jobs, not every annual service that happened to include an impeller and not every overheat diagnosis. Medians describe the middle of that historical group. They do not promise that a specific engine will land on either number.
+
+The exact engine serial number still matters. A clean, familiar gearcase needing a routine impeller scope is not the same job as corroded fasteners, a scored housing, a full pump kit, or an engine that has already overheated.
 
 ---
 
@@ -119,6 +130,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
 
 ## Sources
 
+- HBW Lightspeed service history: frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026 (median labour about $210 and median pump parts about $76, before HST; no customer data used)
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
 
@@ -126,7 +138,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
 
 ### How much does a Mercury water pump replacement cost in Ontario?
 
-There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at hbw.wiki/service for a motor-specific scope.
+In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about $210 in labour plus $76 in pump parts, before HST. Those are historical medians, not a package price or quote; the engine, gearcase, kit scope, corrosion and diagnosis can change both numbers.
 
 ### How often should the water pump be serviced?
 

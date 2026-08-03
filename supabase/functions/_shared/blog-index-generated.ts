@@ -243,8 +243,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-water-pump-replacement-cost-ontario",
-    "title": "Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)",
-    "description": "What changes the cost of a Mercury water pump replacement in Ontario: engine model, impeller versus full kit, corrosion, diagnosis, and labour.",
+    "title": "Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)",
+    "description": "HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -257,7 +257,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does a Mercury water pump replacement cost in Ontario?",
-        "a": "There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at hbw.wiki/service for a motor-specific scope."
+        "a": "In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about $210 in labour plus $76 in pump parts, before HST. Those are historical medians, not a package price or quote; the engine, gearcase, kit scope, corrosion and diagnosis can change both numbers."
       },
       {
         "q": "How often should the water pump be serviced?",
@@ -533,8 +533,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-impeller-replacement-when-they-fail",
-    "title": "When to Replace a Mercury Impeller: Interval and Warning Signs (2026)",
-    "description": "When to replace a Mercury outboard impeller, which warning signs matter, why weeds and restricted water flow raise risk, and when to stop the engine.",
+    "title": "When to Replace a Mercury Impeller: 12 Years of Shop Data",
+    "description": "When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop.",
     "category": "Service & Troubleshooting",
     "publishDate": "2026-06-09",
     "keywords": [
@@ -559,7 +559,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Why can impeller trouble appear in summer?",
-        "a": "A short spring idle check does not reproduce a long run under load. Warm water, weeds, silt, blocked intakes, and higher engine demand can expose a marginal cooling system. That is why the maintenance schedule and warning signs matter more than one successful dockside test."
+        "a": "A short spring idle check does not reproduce a long run under load. In HBW's frozen 766-part-line Lightspeed snapshot, June and July together had 287 matching parts records versus 207 in April and May. Those records include scheduled replacements as well as repairs, so they show when pump work reached the shop, not a…"
       }
     ]
   },

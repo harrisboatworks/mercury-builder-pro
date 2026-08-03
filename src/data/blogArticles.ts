@@ -1579,6 +1579,14 @@ Amber and clean is reassuring. Dark but oily may simply be used lubricant. Milky
 
 Here's how to read it, what fixing it costs, and why this is the single best argument for the annual service.
 
+## What the HBW Service Count Actually Measures
+
+The original article analysis reported **7,417 gearcase-related service records** and **364 pressure-test records** in HBW's Lightspeed history from 2013 through its 2026 publication snapshot. Those are shop records, not 7,417 unique boats and not 364 confirmed cases caused by milky oil.
+
+We rechecked the aggregate on August 2, 2026 using a broader, documented text match. The current public service-history view contained **8,130 matching job rows across 7,474 distinct repair orders** from December 4, 2013 through July 29, 2026. Within that set, **497 job rows across 447 repair orders** contained pressure or vacuum language. The recheck corroborates the scale of the original Lightspeed analysis; it does not turn a broad text match into a diagnosis or a failure rate.
+
+That is the useful lesson: HBW has seen thousands of gearcase-related service records, but your repair still depends on what drains out of your gearcase and what a model-specific inspection finds.
+
 ---
 
 ## Who this is for
@@ -1706,6 +1714,7 @@ HBW does not diagnose gearcase faults remotely. Include the engine serial number
 
 ## Sources
 
+- HBW Lightspeed service history: original 7,417 gearcase-record and 364 pressure-test-record publication snapshots; aggregate recheck August 2, 2026 (8,130 matching job rows across 7,474 distinct repair orders; pressure/vacuum language in 497 rows across 447 repair orders; no customer data used)
 - Mercury Marine, 2026 Capacity Guide, publication 8M0243459, pages 17 and 24-28
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine Parts and Lubricants](https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants)
@@ -1713,8 +1722,9 @@ HBW does not diagnose gearcase faults remotely. Include the engine serial number
   },
   {
     slug: "mercury-water-pump-replacement-cost-ontario",
-    title: "Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)",
-    description: "What changes the cost of a Mercury water pump replacement in Ontario: engine model, impeller versus full kit, corrosion, diagnosis, and labour.",
+    title: "Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)",
+    seoTitle: "Mercury Water Pump Replacement Cost Ontario | HBW",
+    description: "HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote.",
     image: "/lovable-uploads/hero-mercury-90-shop-shot.png",
     author: "Jay Harris",
     datePublished: "2026-07-02",
@@ -1724,22 +1734,33 @@ HBW does not diagnose gearcase faults remotely. Include the engine serial number
     readTime: "~7 min read",
     keywords: ["mercury water pump replacement cost", "outboard impeller replacement cost ontario", "water pump kit cost mercury", "weak telltale outboard", "outboard water pump service"],
     faqs: [
-      { question: "How much does a Mercury water pump replacement cost in Ontario?", answer: "There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at hbw.wiki/service for a motor-specific scope." },
+      { question: "How much does a Mercury water pump replacement cost in Ontario?", answer: "In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about $210 in labour plus $76 in pump parts, before HST. Those are historical medians, not a package price or quote; the engine, gearcase, kit scope, corrosion and diagnosis can change both numbers." },
       { question: "How often should the water pump be serviced?", answer: "Use the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but schedules vary. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner." },
       { question: "Can I replace just the impeller and skip the kit?", answer: "When the housing liner is smooth and gaskets are healthy, impeller-and-wear-plate is the standard, honest job. Once the liner is scored or the motor has missed intervals, the kit is cheaper than doing the labour twice. We tell you which one your motor actually needs." },
       { question: "Is a weak telltale always the water pump?", answer: "No; the telltale outlet itself clogs with debris easily, and thermostat and poppet issues mimic pump problems. Our overheating at high speed guide walks the checks in order before anyone spends money." },
       { question: "Can I do the water pump myself?", answer: "Some owners can do it with the correct service manual, tools, and torque specifications. Shift-linkage alignment, driveshaft handling, seal surfaces, and correct kit selection are the common traps. If the engine has overheated or the lower unit is corroded, diagnosis matters more than swapping a part." },
       { question: "When's the best time to book it?", answer: "Scheduled pump work is easiest to combine with planned maintenance before peak boating season. If the engine is overheating, the alarm sounds, or water flow drops, stop running it and investigate now rather than waiting for a convenient month." }
     ],
-    content: `# Mercury Water Pump Replacement Cost in Ontario: What Changes the Price (2026)
+    content: `# Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)
 
 *Last reviewed: 2026-08-02*
 
-> **Quick answer:** There is no single Mercury water-pump price. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the engine serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service) so the job can be scoped to the correct Mercury parts and procedure.
+> **Quick answer:** In HBW's frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026, the median was about **$210 in labour plus $76 in pump parts**, before HST. Those are historical shop medians, not a package price or quote. The engine, gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners and any cooling-system diagnosis can change both numbers.
 
 Our [impeller post](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and timing. The next question at the counter is simpler: what changes the bill?
 
 The useful answer starts with what is actually inside the job and when "impeller" becomes "impeller, housing, wear plate, seals, and diagnosis."
+
+## What 112 HBW Jobs Billed
+
+| Line in the frozen 2023-July 2026 dataset | Median before HST | What it means |
+|---|---:|---|
+| Labour | About $210 | Access the pump, inspect the components, replace the approved scope, reassemble and test |
+| Pump parts | About $76 | The median parts total; a complete kit with housing can cost more |
+
+The dataset contains dedicated water-pump jobs, not every annual service that happened to include an impeller and not every overheat diagnosis. Medians describe the middle of that historical group. They do not promise that a specific engine will land on either number.
+
+The exact engine serial number still matters. A clean, familiar gearcase needing a routine impeller scope is not the same job as corroded fasteners, a scored housing, a full pump kit, or an engine that has already overheated.
 
 ---
 
@@ -1852,6 +1873,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
 
 ## Sources
 
+- HBW Lightspeed service history: frozen review of 112 dedicated water-pump jobs completed from 2023 through July 2026 (median labour about $210 and median pump parts about $76, before HST; no customer data used)
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
 `,
@@ -3034,8 +3056,9 @@ Family-owned on Rice Lake since 1947.`
   },
   {
     slug: 'mercury-impeller-replacement-when-they-fail',
-    title: 'When to Replace a Mercury Impeller: Interval and Warning Signs (2026)',
-    description: 'When to replace a Mercury outboard impeller, which warning signs matter, why weeds and restricted water flow raise risk, and when to stop the engine.',
+    title: 'When to Replace a Mercury Impeller: 12 Years of Shop Data',
+    seoTitle: 'When to Replace a Mercury Impeller | 12 Years of HBW Data',
+    description: 'When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop.',
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     photoSlot: 'hbw-impeller-photo',
     author: 'Jay Harris',
@@ -3049,7 +3072,7 @@ Family-owned on Rice Lake since 1947.`
       { question: "How often should a Mercury outboard impeller be replaced?", answer: "Follow the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but the interval varies by engine. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner." },
       { question: "What are the signs of a failing impeller?", answer: "In the order we see them: a weaker-than-usual telltale stream, an overheat alarm at high throttle while idle seems fine, then an alarm at idle or no stream at all. On weedy water like Rice Lake, always clear the intake first; a weed-wrapped lower unit mimics a dead impeller." },
       { question: "Can I keep boating if the telltale stream is weak?", answer: "Do not assume a weak stream is harmless. Stop, check the intake for weeds or debris, and follow the owner's manual. If water flow remains abnormal or an overheat alarm sounds, shut the engine down and have the cooling system inspected." },
-      { question: "Why can impeller trouble appear in summer?", answer: "A short spring idle check does not reproduce a long run under load. Warm water, weeds, silt, blocked intakes, and higher engine demand can expose a marginal cooling system. That is why the maintenance schedule and warning signs matter more than one successful dockside test." },
+      { question: "Why can impeller trouble appear in summer?", answer: "A short spring idle check does not reproduce a long run under load. In HBW's frozen 766-part-line Lightspeed snapshot, June and July together had 287 matching parts records versus 207 in April and May. Those records include scheduled replacements as well as repairs, so they show when pump work reached the shop, not a failure rate." },
       { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test can confirm that water is moving, but it cannot guarantee normal cooling under every speed and load. If water pressure drops, the telltale changes, or an overheat alarm sounds, stop and investigate." },
       { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbw.wiki/service." }
     ],
@@ -3059,7 +3082,25 @@ Follow the maintenance schedule for your exact Mercury engine and serial number.
 
 A short spring idle test can confirm that water is moving. It cannot guarantee normal cooling during a long summer run under load. Warm water, weeds, silt, a blocked intake, a worn housing, or a marginal impeller can all change what happens when the engine works harder.
 
-This guide explains the interval, the warning signs, and the safe order of checks for Rice Lake and Kawartha boating.
+HBW's shop history adds a useful local pattern. The original June 2026 analysis counted **766 impeller and water-pump part lines** on completed repair orders from March 2014 through the first week of June 2026. It did not count 766 unique boats or 766 confirmed failures. That distinction matters, and it makes the data more useful rather than less.
+
+## What 12 Years of Shop Data Show
+
+| Month | Impeller / water-pump part lines in the frozen 766-record snapshot |
+|---|---:|
+| March | 1 |
+| April | 84 |
+| May | 123 |
+| June | **144** |
+| July | **143** |
+| August | 117 |
+| September | 73 |
+| October | 36 |
+| November | 45 |
+
+June and July together account for 287 matching parts records, compared with 207 in April and May, about 39 percent more. The honest interpretation is not "impellers fail 39 percent more often in summer." These are parts records, and they include scheduled replacements during other work. They show that HBW's impeller and pump work has historically landed most heavily once boats are in regular summer use.
+
+An aggregate recheck on August 2, 2026 found **817 matching parts records across 792 distinct repair orders** through July 28, 2026. No customer information was used. The total grew as more jobs closed; the seasonal shape remained consistent with the original snapshot.
 
 ## Why Problems Often Appear Under Summer Load
 
@@ -3106,6 +3147,7 @@ The pattern we'd love to break is the boater who notices a weak telltale, keeps 
 
 ## Sources
 
+- HBW Lightspeed service-parts history: frozen 766-part-line publication snapshot; aggregate recheck August 2, 2026 (817 matching parts records across 792 distinct repair orders, March 17, 2014 to July 28, 2026; no customer data used)
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - [Mercury Marine maintenance kits](https://www.mercurymarine.com/uk/en/parts-and-service/parts-and-lubricants/maintenance-kits)
 - [Mercury Marine: Preventing Corrosion](https://www.mercurymarine.com/sp/en/parts-and-service/maintenance/maintenance-made-easy/preventing-corrosion)
@@ -16723,6 +16765,12 @@ It happens at the worst time. Your Mercury sat all winter. The dock is clear, th
 
 This guide walks through the safe diagnostic order we use at HBW. Start with the controls and electrical supply, then fuel and ignition. Some no-starts are simple dockside corrections; others need serial-specific testing and Mercury diagnostic equipment.
 
+## What the 537-Job Snapshot Can and Cannot Tell Us
+
+The original article analysis counted **537 Lightspeed job records** labelled for no-start or rough-running work from 2013 through its 2026 publication snapshot. That is real HBW shop history, with two limits: one repair order can contain more than one job row, and a symptom label is not the same thing as a confirmed root cause.
+
+The old cause buckets also overlapped. A repair order could involve stale fuel, a weak battery and fouled plugs at the same time. We therefore kept the useful 537-job scale but retired the claim that it proves a universal fuel-versus-electrical percentage. The diagnostic ladder below is based on safe testing order, not on pretending every no-start fits one bucket.
+
 [Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
 
 ## The three "stupid easy" things to check first
@@ -16827,6 +16875,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 - [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
+- HBW Lightspeed service history: frozen 537-job-row no-start and rough-running publication snapshot, 2013-2026 (symptom-labelled records, not unique boats or mutually exclusive root-cause diagnoses; no customer data used)
 
 ---
 
@@ -16869,7 +16918,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
       },
       {
         question: 'What is the most common reason a Mercury outboard won\'t start?',
-        answer: 'There is no universal winner. Start with the kill switch, neutral-safety position, battery switch, battery condition, and connections, then move to fuel and ignition. That order rules out simple causes before parts are replaced or dealer diagnostics begin.'
+        answer: 'There is no universal winner. HBW\'s 537-job-row Lightspeed snapshot confirms the shop sees this symptom often, but the historical cause buckets overlapped and do not prove one universal cause. Start with the kill switch, neutral-safety position, battery switch, battery condition and connections, then move to fuel and ignition.'
       }
     ]
   },
