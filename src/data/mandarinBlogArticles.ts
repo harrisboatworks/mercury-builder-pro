@@ -151,8 +151,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: 60 to 120 minutes from most GTA areas via 401 + 115
+item5Zh: 从 GTA 多数地区经 401 + 115 高速约 60 到 120 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
