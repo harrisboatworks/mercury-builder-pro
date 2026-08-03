@@ -2388,7 +2388,7 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
 
 而是全家已经坐进车里，才发现没有完成在线预订，或者只有一个人带了驾驶证件。
 
-Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确认驾驶员，最后按当天交通和天气决定怎么走、怎么玩。** Harris Boat Works 位于 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0，团队使用英语服务；欢迎带会英语的亲友同来或使用手机翻译软件。
+Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确认驾驶员，最后按当天交通和天气决定怎么走、怎么玩。** Harris Boat Works 位于 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0，团队以英语提供服务；欢迎带会英语的亲友同来或使用手机翻译软件。
 
 ## 第一步：先完成在线预订
 
@@ -2416,7 +2416,7 @@ Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确�
 
 GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／115 路况、施工和周末交通都会改变结果。出发当天把 **5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** 放进实时导航，再根据预订确认的报到时间反推离家时间。
 
-建议另外留出吃早餐、加油、孩子上洗手间和临时拥堵的余量。开船日已经够刺激，不需要把 401 也开成 qualifying lap。
+建议另外留出吃早餐、加油、孩子上洗手间和临时拥堵的余量。开船日已经够刺激，不需要把 401 也当赛道跑。
 
 ## 第四步：出门前做三次确认
 
@@ -2463,7 +2463,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 - 每位驾驶员的有效 operator licence／PCOC 和带照片身份证件
 - 租赁确认与当天联络资料
-- 钓鱼者需要的 Outdoors Card／Fishing Licence 或合资格身份证明
+- 钓鱼者需要的 Outdoors Card／Fishing Licence；若按年龄或身份属于例外，则携带法规要求的政府身份证明
 
 **舒适与天气**
 
