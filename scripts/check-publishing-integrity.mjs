@@ -422,6 +422,25 @@ for (const { slug, image } of dealerHeroCanon) {
     `${slug} must not regress to a false-branded or unproven generated dealer hero.`,
   );
 }
+const repowerEligibilityArticle = articleSource('mercury-repower-eligibility-guide');
+check(
+  repowerEligibilityArticle.includes(
+    "image: '/lovable-uploads/blog-heroes-2026-07/hero-repair-repower-sell-hbw-real-2026-07.webp'",
+  ),
+  'The repower-eligibility guide must keep its authenticated HBW shop hero.',
+);
+check(
+  repowerEligibilityArticle.includes(
+    '/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08.png',
+  ),
+  'The repower-eligibility guide must keep its claim-bounded five-check visual.',
+);
+check(
+  !/(?:hero-mercury-repower-eligibility-guide|repower-eligibility-5-check-card|repower-eligibility-five-check)/.test(
+    repowerEligibilityArticle,
+  ),
+  'The repower-eligibility guide must not regress to its synthetic hero or unsupported legacy decision cards.',
+);
 for (const slug of ['mercury-dealer-whitby-ontario-hbw', 'mercury-dealer-oshawa-ontario-hbw']) {
   const source = articleSource(slug);
   check(

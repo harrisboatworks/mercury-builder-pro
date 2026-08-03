@@ -1,221 +1,186 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide.md
-last_updated: 2026-07-31
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Repower Eligibility: 5-Check Guide"
-description: "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours."
+title: "Is Your Boat Worth Repowering? 5 Checks Before You Quote"
+description: "Screen your boat for a Mercury repower using five practical checks: structure, manufacturer limits, rigging fit, how you use it, and total project value."
 category: "Repower Decision"
 date_published: 2026-05-27
-date_modified: 2026-07-31
-keywords: ["mercury repower eligibility","is my boat worth repowering","transom inspection","boat capacity plate","mercury repower cost ontario","repower vs buy new","ontario mercury dealer"]
+date_modified: 2026-08-02
+keywords: ["is my boat worth repowering","Mercury repower Ontario","repower eligibility","transom inspection","boat capacity plate","repower vs buy new","Ontario Mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Mercury Repower Eligibility: 5-Check Guide
+# Is Your Boat Worth Repowering? 5 Checks Before You Quote
 
-> Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.
+> Screen your boat for a Mercury repower using five practical checks: structure, manufacturer limits, rigging fit, how you use it, and total project value.
 
 **Category:** Repower Decision  
 **Published:** 2026-05-27  
-**Last updated:** 2026-07-31  
+**Last updated:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide
 
 ## Quick Answer
 
-Most boats are eligible for a Mercury repower if the hull is structurally sound and the motor is the problem. The short version: solid transom, floor that doesn't flex, foam that isn't waterlogged, and a capacity plate that fits a current Mercury, those four put you in the eligible zone. Add a fifth check on cost: if the all-in repower number lands well under what a comparable new boat package would cost, the math usually works. Transom, hull, capacity plate, age-to-hours ratio, cost threshold. Five checks, twenty minutes, and you know where your boat stands.
+A boat is worth considering for a Mercury repower when five things line up: the structure is sound, the manufacturer documentation supports the motor choice, the complete rigging fits, the boat still suits how you use it, and the whole project makes sense beside a comparable replacement boat.
 
-## What "Eligible for Repower" Actually Means
+You can screen those questions at home. You cannot certify a transom, approve horsepower, or finalize an installation from a driveway test or an online quote. HBW inspects the actual boat before accepting a repower.
 
-A boat is a good Mercury repower candidate when the hull is worth more than the motor it currently has. The motor is the expensive moving part. The hull, if sound, is the long-life asset. A repower replaces the expensive worn part on top of a long-life asset that still has decades of service ahead of it.
+![Five checks before a repower: structure, manufacturer limits, rigging fit, how you use the boat, and whole-project value](/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08.png)
 
-Eligibility, as we use it at HBW, is the answer to three questions in plain English:
+## What a Good Repower Candidate Looks Like
 
-1. Is the hull structurally sound enough to justify spending real money on a new motor?
-2. Does the boat's capacity plate accommodate a current Mercury in the HP range you want?
-3. Does the all-in CAD cost of the repower come in well under what a comparable new boat package would cost?
+The best candidate is not simply an old boat with a tired motor. It is a boat whose expensive wear item is the motor while the hull, transom, steering, electrical system, trailer, and layout still justify the investment.
 
-If all three answers are yes, the boat is eligible. If any one is a clear no, the conversation shifts from repower to either hull repair, capacity plate review, or new boat purchase.
+That distinction matters. A new Mercury can transform how a familiar boat starts, idles, charges, steers, and performs. It cannot repair hidden structure, change the manufacturer's limits, or make the wrong layout fit your family.
 
-This page walks through the five checks we do on every repower candidate that comes through HBW. You can do most of them in your driveway in under 20 minutes.
+Use these five checks to decide whether the next conversation should be a repower assessment, a repair-first plan, or a comparison with another boat.
 
-## The 5-Point Hull Eligibility Checklist
+## Check 1: Is the Structure Worth Building On?
 
-### Check 1: Transom Integrity
+Start with the transom, floor, stringers, hull, mounting area, and any previous repairs.
 
-The transom is the back wall of the boat where the motor mounts. It is the single most load-bearing structure on a power boat. A new motor torqued to spec on a soft transom is a problem waiting to happen.
+Warning signs include:
 
-The tap test: with the motor off and the boat dry, tap firmly along the transom from one side to the other with the heel of your fist or a small mallet. A sound transom returns a solid, consistent thunk. A waterlogged transom returns a softer, duller, more hollow sound, especially toward the centre.
+- movement at the transom while the engine is carefully tilted or supported
+- cracks radiating from mounting points or stress areas
+- soft flooring or visible laminate separation
+- persistent water where the bilge should drain dry
+- corrosion, pitting, distorted metal, loose rivets, or cracked welds on an aluminum hull
+- repairs with no records or workmanship you cannot verify
 
-Visible signs of transom failure:
-- Cracks radiating from the motor mounting bolts
-- Soft, spongy feel when you press on the transom from inside the boat
-- Gel coat crazing or stress patterns concentrated near the motor mount
-- Water seeping from the transom at the splash well
-- Bolts that compress or pull when the motor is torqued
+A home walkaround is useful because it can find reasons to stop. It is not proof that hidden structure is sound. Tapping, pressing, or looking at the surface alone cannot clear a cored transom or internal structure for a new engine. When the structure is uncertain, get a qualified marine technician, repair specialist, or surveyor involved before choosing the motor.
 
-Aluminum transoms can also fail, though differently. Check for cracks at the motor mount, corrosion at the splash well, or any visible deflection when the motor is in place.
+## Check 2: What Do the Hull Documents Actually Allow?
 
-If the transom has any of the above, the boat is not eligible for a repower until the transom is repaired or replaced. A transom rebuild can cost $1,500 to $4,000+ depending on the boat and the depth of the damage. If the transom is sound, you are clear on Check 1.
+Photograph the hull serial number and every compliance, conformity, or capacity notice before discussing horsepower.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+Transport Canada distinguishes between the notices:
 
-### Check 2: Hull Waterlogging and Foam Integrity
+- For an outboard-powered boat up to 6 metres, a Canadian capacity label includes recommended maximum safe limits such as engine power, people, and load.
+- Boats longer than 6 metres use a conformity label. It confirms construction compliance but does not use the same capacity-label format.
+- Some older, imported, rebuilt, or privately constructed boats need more documentation before the engine-power question is clear.
 
-Fibreglass boats with foam-filled hulls can take on water through stress cracks, the bilge, deck fittings, or the transom over years. Waterlogged foam adds significant weight, throws off the planing characteristics, and can rot the underlying structure. A new motor on a waterlogged hull will under-perform regardless of horsepower.
+Treat the manufacturer's recommended maximum safe engine power as the limit unless authoritative written documentation for the exact hull says otherwise. An oversized motor already hanging on the boat, a forum answer, or a similar-looking model is not approval.
 
-Quick weight check: if the boat sits noticeably lower in the water than it did when you bought it, or it feels heavy when you trailer it compared to similar boats of the same size, suspect waterlogging.
+If the notice is missing or unreadable, record the hull serial number and contact the builder or importer where possible. Transport Canada explains the notice types and exceptions in its [official compliance-notice guidance](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft).
 
-Visible signs:
-- Soft floor when you walk on it
-- Water in the bilge that does not pump out completely
-- Deck or stringer flex under load
-- Cracks in the gel coat radiating along stress lines
+## Check 3: Does the Complete System Fit?
 
-If the hull is waterlogged, the repair is significant. Foam removal and replacement is a major job. The boat may not be eligible until the underlying water and rot is dealt with.
+Horsepower is only one line in a repower scope. The exact installation also depends on:
 
-Aluminum boats have different failure modes. Look for hairline cracks at rivets, corrosion at seams, leaks at the chines, or any pitting that suggests electrolysis.
+- engine weight and balance
+- transom height and shaft length
+- steering type and condition
+- mechanical or digital controls
+- gauges and engine-data compatibility
+- fuel tank, lines, filtration, and venting
+- battery capacity, cabling, switches, and charging needs
+- available rigging space at the transom and helm
+- propeller family and normal loaded use
 
-### Check 3: Capacity Plate HP Ceiling
+Two engines with the same advertised horsepower can require different controls, steering, electrical work, or mounting decisions. Use the current documentation for the exact motor and serial family. Mercury's [owner resources](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources) are the right starting point for model-specific manuals.
 
-Every Canadian boat manufactured for recreational use must carry a capacity plate (also called a compliance plate). The plate states the maximum horsepower the hull is rated for, along with maximum persons and maximum gross load. The maximum HP is a hard ceiling for repower purposes.
+## Check 4: Does the Boat Still Fit Your Life?
 
-You cannot legally repower a boat above its capacity plate HP rating. Insurance, Transport Canada regulations, and Mercury's own dealer requirements all hold to the plate.
+This is the human check, and it saves people from putting a beautiful new motor on the wrong boat.
 
-The capacity plate is usually mounted on the transom or near the helm. If the plate is missing, illegible, or removed, the boat's eligibility for repower is significantly more complicated. Replacement compliance plates can be obtained through the manufacturer in some cases but require documentation. See [How to Read a Boat Capacity Plate (Ontario)](/blog/how-to-read-boat-capacity-plate-ontario) for the full reference.
+Think about your normal day, not the lightest possible test run:
 
-For the Mercury matching question: confirm the current Mercury lineup has a motor that fits your capacity plate HP rating. Most plates fall within current Mercury's range (2.5 HP to 600 HP), but some older boats are rated for engine specifications that current Mercury motors do not match (very small two-stroke replacements, for example).
+- people, fuel, fishing gear, coolers, batteries, and a kicker if you carry one
+- the water you actually use, including weeds, chop, shallow launches, or long no-wake sections
+- fishing layout, family seating, watersports, cottage hauling, or cruising
+- trailer condition, tow vehicle, storage, and launch access
+- whether the boat will still suit you several seasons from now
 
-### Check 4: Boat Age and Hours Ratio
+If the hull is too small, the layout frustrates everyone, or the trailer and interior are also nearing replacement, a repower may solve the motor problem while leaving the ownership problem untouched.
 
-Age alone is not disqualifying. We regularly repower boats from the 1990s and 2000s where the hull is in good shape and the motor is the failed component. A 2002 Princecraft with a sound transom and a tired Mercury 60 is a perfectly good repower candidate.
+## Check 5: Does the Whole Project Make Sense?
 
-What matters is age relative to hours and storage history. A 20-year-old boat that has been stored indoors and run 50 hours per season is often in better shape than a 10-year-old boat stored outdoors and run hard.
+Compare like with like. A motor-only advertisement is not the same thing as a completed repower, and a bare hull price is not the same thing as a ready-to-use replacement package.
 
-Things that compound age:
-- Outdoor storage with no cover (UV damage to gel coat and upholstery)
-- Saltwater use (different corrosion path)
-- Commercial or charter use (much higher hours)
-- Skipped winterization (freeze damage to fuel system, water systems)
-- Missing maintenance records
+For the existing boat, account for the current motor, controls, steering, gauges, rigging, propeller, installation, tax, and any hull, trailer, electrical, or cosmetic work you already know it needs. For the replacement option, compare a boat with the size, equipment, power, trailer, and use case you would genuinely buy.
 
-Things that mitigate age:
-- Indoor or covered storage
-- Freshwater use only (Rice Lake, Kawarthas, most Ontario lakes)
-- Recreational use only (50 to 150 hours per season)
-- Documented maintenance history
-- Original owner or single subsequent owner with records
+There is no universal percentage that decides this correctly. The answer changes with hull condition, the amount of reusable rigging, the replacement boat being compared, and how long you expect to keep it.
 
-If the boat is over 25 years old, the eligibility conversation also includes parts availability for the rest of the boat: trailer, gauges, interior fittings, fuel tank, and so on. Repowering a 25+ year old hull can make sense, but expect to budget for other refurbishment alongside the motor.
+Use the [live Mercury quote builder](/quote/motor-selection) for a current starting scope, then let the physical inspection turn that starting point into an installable plan.
 
-### Check 5: CAD Cost Threshold
+## How to Read Your Five Results
 
-The financial threshold for repower eligibility is whether the all-in repower number comes in well below the cost of a comparable new boat package.
+| Result | What it means | Next step |
+|---|---|---|
+| **Clear on all five** | The boat is worth an in-person repower assessment. | Gather the identifiers and photos, build a starting quote, and arrange the physical inspection. |
+| **One check is uncertain** | Do not guess. The uncertainty may change the motor, scope, or economics. | Confirm the label, structure, rigging, or repair question before committing. |
+| **Structure or documentation says stop** | The repower is not ready to proceed in its current form. | Repair and document the boat first, or compare it honestly with another hull. |
+| **The boat no longer fits your use** | A new motor would solve the wrong problem. | Price the replacement-boat path before spending on the repower. |
 
-Mercury repowers in Ontario typically run **$11,000 to $40,000 CAD all-in** depending on horsepower, hull, and rigging complexity. The all-in figure includes the motor, rigging, controls, gauges, install labour, and HST. See the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) for current CAD pricing by HP class.
+## What to Send HBW
 
-A comparable new boat package (hull, motor, trailer, standard rigging) costs significantly more than the repower-only figure. If the repower lands well under the new-boat-package number and the hull is sound, the math usually works.
+A useful first review includes:
 
-The detailed break-even calculation lives on a separate page: [Repower vs. Buy New: Canadian Break-Even Math](/blog/repower-vs-new-boat). This page does not duplicate that work; it just confirms that the cost threshold is one of the five eligibility checks.
+1. one photo showing the whole boat and trailer
+2. straight-on photos of the outside and inside of the transom
+3. the hull serial number
+4. every compliance, conformity, or capacity notice
+5. the current motor model and serial label
+6. the steering, controls, helm, battery area, and rigging entry points
+7. a plain-language description of your normal load and how you use the boat
 
-## The Eligibility Decision Table
+Those details let us identify the open questions before anyone assumes the motor fit is simple.
 
-After working through the five checks, drop your results into this table:
+## Ready for the Next Step?
 
-| Check | Strong (eligible) | Borderline | Disqualifying |
-|---|---|---|---|
-| **1. Transom** | Solid tap, no visible cracks or signs of waterlogging | Some softness near the mount, minor surface cracks | Significant softness, structural cracks, gel coat failure at mount |
-| **2. Hull / foam** | Dry bilge, no deck flex, normal floating weight | Some moisture in bilge, minor floor flex | Significant waterlogging, structural rot, deck or stringer failure |
-| **3. Capacity plate** | Plate present and legible, current Mercury fits the rating | Plate missing or partially illegible | Capacity rating outside current Mercury lineup or below useful HP for the boat |
-| **4. Age / hours** | Indoor storage, freshwater, documented maintenance, < 100 hrs/season | Outdoor storage, occasional gaps in records, 100 to 300 hrs/season | Saltwater commercial use, no records, significant freeze damage, > 25 years and tired |
-| **5. Cost** | All-in repower well under new-boat-package cost | Repower cost approaches 60 to 70% of new-boat-package cost | Repower cost approaches or exceeds new-boat-package cost |
+Start with a [live Mercury repower quote](/quote/motor-selection). It is a planning tool, not final installation approval.
 
-**How to read the table:** All five Strong = clear eligible. Most Strong with one or two Borderline = eligible with HBW review of the borderline check before commit. Two or more Disqualifying = the conversation shifts away from repower toward hull repair, professional inspection, or new boat purchase.
+If you want HBW to review the actual boat, complete the [online service check-in](https://hbw.wiki/service) with the photos and identifiers above. The form is not an appointment; our team confirms the next step after reviewing the submission.
 
-slug: repower-eligibility-five-check
-type: diagram
-aspect: 1:1
-description: Mercury repower eligibility: the 5-check process with three colour-coded outcomes (Eligible, Review with HBW, Not a Repower)
-prompt: HBW-designed SVG 5-check. 1080x1080. [STYLE ANCHOR]
-image: /lovable-uploads/repower-eligibility-five-check.svg
-
-## What Disqualifies a Hull from Repower
-
-The hard stops, where repower no longer makes sense:
-
-- **Rotted transom that requires structural rebuild.** A new motor on a rebuilt transom can work, but the rebuild cost moves the financial math significantly. Often the right call at that point is to evaluate the rest of the hull simultaneously.
-- **Waterlogged foam or significant stringer rot.** Foam replacement and stringer work are major fibreglass jobs. If both are required, the math usually pushes toward a different boat.
-- **Hull delamination.** Skin separating from the underlying structure. Usually catastrophic and very expensive to repair properly.
-- **Cracked or perforated aluminum at structural points.** Some aluminum repair is possible. Significant structural damage is not.
-- **Capacity plate ceiling that current Mercury cannot meet.** Rare but possible on some older specialty boats.
-- **Boat that no longer fits how you actually use it.** Not a structural issue, but a use-case mismatch. A new motor on a boat that is the wrong size, wrong layout, or wrong type for what you do is a poor investment.
-
-## HP Matching: What Motor Class Fits Your Capacity Plate
-
-The capacity plate sets the upper limit. Most Ontario repower candidates fit one of these HP classes:
-
-- **9.9 to 25 HP:** Small aluminum tiller fishing boats, dinghies, secondary kicker motors. Mercury 9.9 EFI through 25 EFI in the FourStroke family.
-- **40 to 60 HP:** 14 to 16 foot aluminum console boats, small Princecraft and Lund hulls. Mercury 40 to 60 FourStroke.
-- **75 to 115 HP:** Mid-size aluminum fishing boats (16 to 18 foot), small pontoons, light-duty deep-V hulls. Mercury 75 to 115 FourStroke. The Mercury 90 HP FourStroke is one of HBW's most-installed motors in this class.
-- **150 to 175 HP:** Larger aluminum fishing boats, mid-size pontoons, mid-size fibreglass bowriders. Mercury 150 FourStroke or 150 Pro XS, Mercury 175 FourStroke. Command Thrust gearcase typically called out on pontoons.
-- **200 to 250 HP:** Larger pontoons, fibreglass cruisers, larger deep-V hulls. Mercury 200 to 250 in FourStroke or Pro XS depending on hull.
-- **300 HP:** Heavy pontoons (tritoon, luxury), larger fibreglass cruisers. Mercury 300 FourStroke or 300 Pro XS.
-
-Most repowers stay within the same HP class as the original motor. Some customers move up a class when the original motor was under-powered for the hull. Capacity plate is the absolute ceiling.
-
-Most repower conversations start with the eligibility check. If your boat passes the five checks above, the next step is a live CAD quote at [mercuryrepower.ca](https://mercuryrepower.ca). The configurator handles hull matching, HP class, prop selection, and a real CAD all-in number in under 5 minutes.
-
-If you are unsure on any of the checks, particularly transom integrity or hull condition, book an in-person assessment at [hbw.wiki/service](https://hbw.wiki/service). We will walk through it with you. No charge for the eligibility conversation.
-
-Harris Boat Works, Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
-
-Phone: (905) 342-2153
-Text: (647) 952-2153
+Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on Rice Lake, serving boaters across the Kawarthas, Northumberland, Durham Region, and the eastern GTA.
 
 ## FAQs
 
-### Is my boat eligible for a Mercury repower?
+### Is my boat a good candidate for a Mercury repower?
 
-Most boats are eligible if the hull is structurally sound and the motor is the worn component. The five checks are: transom integrity, hull and foam condition, capacity plate HP rating, age relative to hours and storage history, and cost threshold (repower cost well under a comparable new boat package). If all five are clear, the boat is a strong repower candidate.
+It may be if the structure is sound, the manufacturer documentation supports the proposed motor, the complete rigging fits, the boat still suits your use, and the whole-project cost makes sense. A web article or online quote can screen the idea, but the boat needs an in-person inspection before HBW accepts the installation.
 
-### How do I check if my transom is sound?
+### Can a tap test prove my transom is sound?
 
-Tap the transom firmly with the heel of your fist or a small mallet. A sound transom returns a solid, consistent thunk. A waterlogged transom returns a softer, hollow sound, especially toward the centre. Look also for cracks radiating from the motor mounting bolts, gel coat crazing near the mount, or water seeping from the transom at the splash well. Any of those signs disqualifies the boat until the transom is repaired.
+No. A tap, visual walkaround, and movement check can reveal warning signs, but they cannot certify hidden core, laminate, weld, or fastener condition. If anything is questionable, the next step is a qualified marine technician, repair specialist, or surveyor.
 
-### Can I repower a boat that is over 20 years old?
+### Does every Canadian compliance notice show maximum horsepower?
 
-Yes, if the hull is in good shape. Age alone is not disqualifying. What matters is age relative to hours and storage history. A 20-year-old boat stored indoors and run 50 hours per season can be a perfectly good repower candidate. A 10-year-old boat stored outdoors and run hard may not be. Documented maintenance history and freshwater-only use both extend the eligible age window.
+No. Transport Canada distinguishes capacity labels for boats up to 6 metres from conformity labels for longer boats. An outboard-powered capacity label up to 6 metres includes recommended maximum safe limits such as engine power. Longer boats use a different notice and may require manufacturer documentation for the engine-power decision.
 
-### What HP can I put on my boat for a repower?
+### Can I install more horsepower than the number on the capacity label?
 
-The capacity plate sets the absolute maximum HP for your hull. You cannot legally repower a boat above the capacity plate rating. Insurance, Transport Canada regulations, and Mercury dealer requirements all hold to the plate. Within the plate rating, choose an HP class that matches how you use the boat (fishing, pontoon, watersports, cruising).
+Treat the manufacturer's recommended maximum safe engine power as the limit unless authoritative written documentation for the exact hull says otherwise. Do not use an oversized existing motor, a forum post, or a similar-looking hull as approval.
 
-### How much does a Mercury repower cost in Ontario?
+### Does an older boat automatically fail the repower check?
 
-Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in depending on HP class, hull, and rigging complexity. The all-in figure includes motor, rigging, controls, gauges, install labour, and HST. See the Ontario Mercury Outboard Price Guide for current pricing by HP class.
+No. Calendar age alone does not establish structural condition or project value. Inspect the actual hull, transom, systems, repair history, documentation, and remaining needs instead of using an age cutoff.
 
-### What disqualifies a boat from being a good repower candidate?
+### What should I collect before asking for a repower quote?
 
-Hard stops: rotted transom requiring structural rebuild, waterlogged foam or significant stringer rot, hull delamination, cracked or perforated aluminum at structural points, or a capacity plate rating that current Mercury cannot match. Softer disqualifiers: a boat that no longer fits how you use it, or a repower cost that approaches the cost of a comparable new boat package.
+Bring clear photos of the whole boat, transom, hull serial number, compliance or capacity notice, current engine model and serial label, steering and controls, battery area, helm, and trailer. Also describe your normal passenger load, gear, and how you use the boat.
 
-### Do I need to inspect the boat before getting a repower quote?
+### Is an online repower quote final?
 
-You do not need a formal inspection before requesting a quote. The CAD configurator at mercuryrepower.ca runs in under 5 minutes and gives you the all-in repower number. The hull eligibility check happens at the dealer level before the work commits. If you are not confident in the five checks yourself, book an in-person assessment at HBW. No charge for the eligibility conversation.
+No. It is a useful starting point based on the selections entered. Final fit, scope, parts, labour, and acceptance depend on the exact boat and an in-person inspection.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
 
 ## Next steps
 
