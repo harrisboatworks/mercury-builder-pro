@@ -77,6 +77,24 @@ const FEATURE_CARDS = [
   },
 ];
 
+const OFFICIAL_MERCURY_VIEWS = [
+  {
+    src: '/assets/mercury-9-9-mh/official-front-three-quarter.jpg',
+    alt: 'Official Mercury Marine front three-quarter studio view of the 9.9 FourStroke short-tiller outboard',
+    label: 'Front three-quarter',
+  },
+  {
+    src: '/assets/mercury-9-9-mh/official-port-profile.jpg',
+    alt: 'Official Mercury Marine port-profile studio view of the 9.9 FourStroke short-tiller outboard',
+    label: 'Port profile',
+  },
+  {
+    src: '/assets/mercury-9-9-mh/official-rear-three-quarter.jpg',
+    alt: 'Official Mercury Marine rear three-quarter studio view of the 9.9 FourStroke short-tiller outboard',
+    label: 'Rear three-quarter',
+  },
+];
+
 export function Mercury99MHSalePage({
   display,
   price,
@@ -117,6 +135,12 @@ export function Mercury99MHSalePage({
 
             <div className="grid items-center gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-14">
               <div>
+                <img
+                  src="/assets/mercury-logo-white.png"
+                  alt="Mercury Marine"
+                  className="mb-7 h-auto w-[210px] sm:w-[250px]"
+                  loading="eager"
+                />
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-repower-gold/45 bg-repower-gold/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-repower-gold md:text-xs">
                   <Sparkles className="h-4 w-4" />
                   Ontario Price Leader
@@ -283,6 +307,55 @@ export function Mercury99MHSalePage({
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="official-mercury-gallery" className="relative scroll-mt-20 overflow-hidden border-y border-repower-navy-900/10 bg-[#eef1f4] px-5 py-16 md:px-10 md:py-24 lg:px-12">
+          <div aria-hidden="true" className="absolute -right-24 -top-32 h-80 w-80 rounded-full bg-repower-mercury-red/[0.07] blur-3xl" />
+          <div className="relative mx-auto max-w-[1180px]">
+            <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div className="max-w-3xl">
+                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-repower-mercury-red">
+                  <span className="h-[3px] w-10 bg-repower-mercury-red" />
+                  Official Mercury product gallery
+                </div>
+                <h2 className="mt-4 font-display text-3xl font-bold tracking-[-0.025em] text-repower-navy-900 md:text-5xl">
+                  The 9.9 FourStroke, from every angle
+                </h2>
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-repower-navy-900/62 md:text-lg">
+                  Mercury-supplied studio photography of the standard short-tiller 9.9 FourStroke family shown on this sale page.
+                </p>
+              </div>
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-repower-navy-900/10 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-repower-navy-900/65 shadow-sm">
+                <ShieldCheck className="h-4 w-4 text-repower-mercury-red" />
+                Official Mercury imagery
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 md:grid-rows-2 md:gap-5">
+              {OFFICIAL_MERCURY_VIEWS.map((view, index) => (
+                <figure
+                  key={view.src}
+                  className={`group relative overflow-hidden rounded-2xl border border-repower-navy-900/10 bg-white shadow-[0_16px_50px_rgba(5,14,28,0.08)] ${
+                    index === 0 ? 'md:row-span-2' : ''
+                  }`}
+                >
+                  <div className={`flex items-center justify-center p-6 md:p-8 ${index === 0 ? 'h-[460px] md:h-[620px]' : 'h-[310px] md:h-[300px]'}`}>
+                    <img
+                      src={view.src}
+                      alt={view.alt}
+                      className={`h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.025] ${
+                        index === 0 ? 'max-w-[430px]' : 'max-w-[255px]'
+                      }`}
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="absolute bottom-4 left-4 rounded-full bg-repower-navy-900/92 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm md:text-xs">
+                    {view.label}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
