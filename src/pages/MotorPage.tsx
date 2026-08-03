@@ -15,6 +15,8 @@ import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
+import { Mercury99MHSalePage } from '@/components/motors/Mercury99MHSalePage';
+import { buildMercury99MhFaqs } from '@/lib/mercury99MhSaleContent';
 import { SITE_URL } from '@/lib/site';
 import speedboatFallback from '@/assets/speedboat-transparent.png';
 
@@ -64,6 +66,23 @@ type ManualOverrides = {
   sale_price?: number | string | null;
   base_price?: number | string | null;
 };
+
+interface PublicMotorApiRecord {
+  id: string;
+  slug: string;
+  modelDisplay: string | null;
+  modelNumber: string | null;
+  family: string | null;
+  motorType: string | null;
+  horsepower: number | null;
+  shaftLength: string | null;
+  controlType: string | null;
+  msrp: number | null;
+  sellingPrice: number | null;
+  availability: string | null;
+  inStock: boolean | null;
+  imageUrl: string | null;
+}
 
 function resolveSellingPrice(m: MotorRow): number | null {
   const overrides = (m.manual_overrides || {}) as ManualOverrides;
@@ -166,7 +185,7 @@ export default function MotorPage() {
         .from('motor_models')
         .select(MOTOR_SELECT)
         .eq('model_key', modelKey)
-        .neq('availability', 'Exclude')
+        .or('availability.is.null,availability.neq.Exclude')
         .limit(1)
         .maybeSingle();
 
@@ -176,7 +195,7 @@ export default function MotorPage() {
           .from('motor_models')
           .select(MOTOR_SELECT)
           .ilike('model_key', `%${modelKey}%`)
-          .neq('availability', 'Exclude')
+          .or('availability.is.null,availability.neq.Exclude')
           .limit(1)
           .maybeSingle();
         data = fuzzy;
@@ -186,7 +205,7 @@ export default function MotorPage() {
         const { data: candidates } = await supabase
           .from('motor_models')
           .select(MOTOR_SELECT)
-          .neq('availability', 'Exclude')
+          .or('availability.is.null,availability.neq.Exclude')
           .order('horsepower', { ascending: true })
           .limit(500);
         data = ((candidates || []) as MotorRow[]).find((candidate) => publicMotorSlug(candidate) === slug) || null;
@@ -201,7 +220,7 @@ export default function MotorPage() {
           );
           if (res.ok) {
             const json = await res.json();
-            const match = (json?.motors || []).find((m: any) => m.slug === slug);
+            const match = ((json?.motors || []) as PublicMotorApiRecord[]).find((m) => m.slug === slug);
             if (match) {
               data = {
                 id: match.id,
@@ -218,8 +237,8 @@ export default function MotorPage() {
                 start_type: null,
                 control_type: match.controlType,
                 msrp: match.msrp,
-                sale_price: match.salePrice,
-                dealer_price: match.dealerPrice,
+                sale_price: match.sellingPrice,
+                dealer_price: null,
                 base_price: null,
                 manual_overrides: null,
                 availability: match.availability,
@@ -296,6 +315,70 @@ export default function MotorPage() {
   const inStock = motor.in_stock || motor.availability === 'In Stock';
   const image = motorImageUrl || motor.hero_image_url || motor.image_url || speedboatFallback;
   const schemaImage = toAbsoluteImageUrl(image);
+  const pageUrl = `https://www.mercuryrepower.ca/motors/${slug}`;
+  const isMercury99MhSale = modelNo === '1A10201LK' && price != null;
+
+  if (isMercury99MhSale) {
+    const savings = motor.msrp && motor.msrp > price ? motor.msrp - price : null;
+    const saleTitle = `Mercury 9.9 MH Sale Ontario | ${formatCAD(price)} CAD | Harris Boat Works`;
+    const saleDescription = `Ontario price leader: Mercury 9.9 MH FourStroke model 1A10201LK for ${formatCAD(price)} CAD${savings ? `, save ${formatCAD(savings)} from MSRP` : ''}. Manual start, tiller, 15-inch shaft, battery-free EFI. Available to order. Pickup in Gores Landing, Ontario.`;
+    const faqs = buildMercury99MhFaqs(price);
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    };
+
+    return (
+      <>
+        <Helmet>
+          <title>{saleTitle}</title>
+          <link rel="canonical" href={pageUrl} />
+          <meta name="description" content={saleDescription} />
+          <meta property="og:title" content={`Mercury 9.9 MH Ontario Sale | ${formatCAD(price)} CAD`} />
+          <meta property="og:description" content={saleDescription} />
+          <meta property="og:type" content="product" />
+          <meta property="og:url" content={pageUrl} />
+          <meta property="og:image" content={schemaImage} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`Mercury 9.9 MH Ontario Sale | ${formatCAD(price)} CAD`} />
+          <meta name="twitter:description" content={saleDescription} />
+          <meta name="twitter:image" content={schemaImage} />
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        </Helmet>
+        <MotorPageSEO
+          name="Mercury 9.9 MH FourStroke"
+          hp={9.9}
+          family="FourStroke"
+          shaft="15 inch"
+          startType="Manual"
+          controlType="Tiller"
+          modelNumber="1A10201LK"
+          image={schemaImage}
+          priceCAD={price}
+          inStock={false}
+          offerAvailability="PreOrder"
+          priceValidUntil={null}
+          url={pageUrl}
+        />
+        <Mercury99MHSalePage
+          display="Mercury 9.9 MH FourStroke"
+          price={price}
+          msrp={motor.msrp}
+          image={image}
+          modelId={motor.id}
+        />
+      </>
+    );
+  }
 
   // Title pattern (competitor-parity, city in ranked position for AI answer engines):
   //   Mercury {HP}HP {SHAFT} Shaft, {START} - {MODEL_CODE} {FAMILY} - {In Stock|Special Order} at Harris Boat Works in Gores Landing, Ontario
@@ -322,8 +405,6 @@ export default function MotorPage() {
   const ogDescription = `${display} - ${hp} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${
     price ? `${formatCAD(price)} CAD` : 'Contact for CAD pricing'
   }. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
-  const pageUrl = `https://www.mercuryrepower.ca/motors/${slug}`;
-
   return (
     <>
       <Helmet>

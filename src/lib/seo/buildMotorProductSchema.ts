@@ -22,6 +22,10 @@ export interface MotorSchemaInput {
   /** Pricing-hierarchy-resolved selling price in CAD, or null for price-on-request. */
   priceCAD?: number | null;
   inStock?: boolean;
+  /** Explicit Schema.org Offer availability suffix. Defaults from inStock. */
+  offerAvailability?: 'InStock' | 'PreOrder' | 'InStoreOnly';
+  /** Pass null to omit a date when no genuine offer end date exists. */
+  priceValidUntil?: string | null;
   /** Canonical URL of the page rendering this product (no trailing slash). */
   url: string;
   /** Optional @id discriminator so multiple Product blocks can co-exist on one URL. */
@@ -39,13 +43,16 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     modelNumber,
     image,
     priceCAD,
+    inStock,
+    offerAvailability,
+    priceValidUntil,
     url,
     idSuffix = 'product',
   } = input;
 
-  const validUntil = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000)
-    .toISOString()
-    .split('T')[0];
+  const validUntil = priceValidUntil === undefined
+    ? new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+    : priceValidUntil;
 
   const additionalProperty: Array<Record<string, string>> = [];
   if (hp != null) additionalProperty.push({ '@type': 'PropertyValue', name: 'Horsepower', value: `${hp} HP` });
@@ -98,8 +105,8 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
       url,
       priceCurrency: 'CAD',
       price: String(Math.round(priceCAD)),
-      priceValidUntil: validUntil,
-      availability: 'https://schema.org/InStoreOnly',
+      ...(validUntil ? { priceValidUntil: validUntil } : {}),
+      availability: `https://schema.org/${offerAvailability || (inStock ? 'InStock' : 'InStoreOnly')}`,
       itemCondition: 'https://schema.org/NewCondition',
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',

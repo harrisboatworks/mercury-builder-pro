@@ -720,6 +720,7 @@ function loadBlogArticles() {
 const REQUIRED_CANONICAL_MOTOR_ROUTES = new Map([
   ['1A25411BK', 'fourstroke-25hp-25-elhpt-fourstroke'],
   ['1A25413BK', 'fourstroke-25hp-25-elpt-fourstroke'],
+  ['1A10201LK', 'fourstroke-9-9hp-9-9mh-fourstroke'],
 ]);
 
 function loadRequiredCanonicalMotorRecords() {
@@ -770,7 +771,7 @@ async function fetchAllSupabaseMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
   const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) return { ok: false, data: [], reason: 'no-key' };
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   try {
     const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
     if (!res.ok) return { ok: false, data: [], reason: `${res.status} ${res.statusText}` };
@@ -850,8 +851,25 @@ async function loadMotors() {
   // feed temporarily omits an orderable motor. Supabase and API records still
   // win when they carry the same model_key.
   const byKey = new Map();
+  const supabaseByPartNo = new Map(
+    (sb.ok ? sb.data : [])
+      .filter((m) => m.model_number || m.mercury_model_no)
+      .map((m) => [m.model_number || m.mercury_model_no, m]),
+  );
   for (const m of canonicalMotors) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
+    const source = supabaseByPartNo.get(m.model_number || m.mercury_model_no);
+    const enriched = source
+      ? {
+          ...m,
+          hero_image_url: m.hero_image_url || source.hero_image_url || null,
+          image_url: m.image_url || source.image_url || null,
+          shaft: m.shaft || source.shaft || null,
+          shaft_code: m.shaft_code || source.shaft_code || null,
+          start_type: m.start_type || source.start_type || null,
+          control_type: m.control_type || source.control_type || null,
+        }
+      : m;
+    if (enriched.model_key) byKey.set(String(enriched.model_key).toLowerCase(), enriched);
   }
   for (const m of sb.ok ? sb.data : []) {
     if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
@@ -3357,6 +3375,55 @@ function isVerifiedMotorImage(url) {
   }
 }
 
+const MERCURY_99_MH_MODEL_NO = '1A10201LK';
+const MERCURY_99_MH_PRICE_REVIEW_DATE = 'August 3, 2026';
+
+function isMercury99MhSale(m) {
+  return (m.model_number || m.mercury_model_no || '') === MERCURY_99_MH_MODEL_NO;
+}
+
+function mercury99MhSaleFaqs(price) {
+  const priceLabel = new Intl.NumberFormat('en-CA', {
+    style: 'currency',
+    currency: 'CAD',
+    maximumFractionDigits: 0,
+  }).format(price);
+  return [
+    {
+      question: 'What is the Mercury 9.9 MH sale price in Ontario?',
+      answer: `${priceLabel} CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
+    },
+    {
+      question: 'Is this the lowest advertised Mercury 9.9 MH price in Ontario?',
+      answer: `At ${priceLabel} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change, so confirm the current written quote before travelling.`,
+    },
+    {
+      question: 'What does 9.9 MH mean?',
+      answer: 'This is the manual-start, tiller-control Mercury 9.9 FourStroke with a 15-inch short shaft. The exact Mercury model number is 1A10201LK.',
+    },
+    {
+      question: 'What comes with the motor?',
+      answer: 'The motor package includes the standard 8.5-pitch propeller, a 12-litre remote fuel tank, and the applicable 3-year Mercury factory warranty. Harris Boat Works completes the warranty registration at pickup.',
+    },
+    {
+      question: 'Is the Mercury 9.9 MH in stock?',
+      answer: 'It is available to order. Call or build a quote to confirm the current ETA before travelling to Gores Landing.',
+    },
+    {
+      question: 'Can Harris Boat Works ship this motor?',
+      answer: 'No. Mercury outboards are pickup-only at Harris Boat Works in Gores Landing, Ontario. The buyer must pick up the motor in person; we do not ship or release motors to couriers or third parties.',
+    },
+    {
+      question: `Does ${priceLabel} include HST or installation?`,
+      answer: 'No. The advertised motor price is in Canadian dollars before HST. Installation, rigging, controls, optional accessories, and any boat-specific work are extra.',
+    },
+    {
+      question: 'How do I buy the Mercury 9.9 MH at this price?',
+      answer: 'Start the online quote with this exact motor selected or call Harris Boat Works at 905-342-2153. We will confirm price, ETA, pickup requirements, and any installation needs before you commit.',
+    },
+  ];
+}
+
 function motorPageSchema(m, slug) {
   const url = `${SITE_URL}/motors/${slug}`;
   const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
@@ -3364,6 +3431,10 @@ function motorPageSchema(m, slug) {
   const price = resolveMotorSellingPrice(m);
   const inStock = m.in_stock || m.availability === 'In Stock';
   const modelNo = m.model_number || m.mercury_model_no || null;
+  const is99MhSale = isMercury99MhSale(m) && price;
+  const schemaShaft = is99MhSale ? '15 inch' : (m.shaft_code || m.shaft);
+  const schemaStart = is99MhSale ? 'Manual' : m.start_type;
+  const schemaControl = is99MhSale ? 'Tiller' : m.control_type;
   const rawImage = m.hero_image_url || m.image_url || null;
   // Strict image policy: only include verified image. Otherwise omit.
   const image = isVerifiedMotorImage(rawImage) ? rawImage : null;
@@ -3373,9 +3444,9 @@ function motorPageSchema(m, slug) {
     { "@type": "PropertyValue", "name": "Horsepower", "value": `${m.horsepower} HP` },
     { "@type": "PropertyValue", "name": "Family", "value": `Mercury ${family}` },
   ];
-  if (m.shaft_code || m.shaft) additionalProperty.push({ "@type": "PropertyValue", "name": "Shaft", "value": m.shaft_code || m.shaft });
-  if (m.start_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Start", "value": m.start_type });
-  if (m.control_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Control", "value": m.control_type });
+  if (schemaShaft) additionalProperty.push({ "@type": "PropertyValue", "name": "Shaft", "value": schemaShaft });
+  if (schemaStart) additionalProperty.push({ "@type": "PropertyValue", "name": "Start", "value": schemaStart });
+  if (schemaControl) additionalProperty.push({ "@type": "PropertyValue", "name": "Control", "value": schemaControl });
 
   const display2 = (m.model_display || m.model || '').toLowerCase();
   const familyGroupId =
@@ -3407,8 +3478,8 @@ function motorPageSchema(m, slug) {
       "url": url,
       "priceCurrency": "CAD",
       "price": price,
-      "priceValidUntil": validUntil,
-      "availability": "https://schema.org/InStoreOnly",
+      ...(is99MhSale ? {} : { "priceValidUntil": validUntil }),
+      "availability": is99MhSale ? "https://schema.org/PreOrder" : (inStock ? "https://schema.org/InStock" : "https://schema.org/InStoreOnly"),
       "itemCondition": "https://schema.org/NewCondition",
       "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
       "seller": { "@type": "BoatDealer", "name": "Harris Boat Works", "url": "https://harrisboatworks.ca", "telephone": "+1-905-342-2153", "address": { "@type": "PostalAddress", "streetAddress": "5369 Harris Boat Works Rd", "addressLocality": "Gores Landing", "addressRegion": "ON", "postalCode": "K0K 2E0", "addressCountry": "CA" } },
@@ -3429,23 +3500,70 @@ function motorPageSchema(m, slug) {
   };
   if (image) webPage.primaryImageOfPage = image;
 
+  const graph = [
+    product,
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Mercury Outboards Ontario", "item": `${SITE_URL}/mercury-outboards-ontario` },
+        { "@type": "ListItem", "position": 3, "name": `Mercury ${family}`, "item": `${SITE_URL}/quote/motor-selection?family=${encodeURIComponent(family)}` },
+        { "@type": "ListItem", "position": 4, "name": display, "item": url },
+      ],
+    },
+    webPage,
+  ];
+
+  if (is99MhSale) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      "mainEntity": mercury99MhSaleFaqs(price).map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+      })),
+    });
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      product,
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${url}#breadcrumb`,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
-          { "@type": "ListItem", "position": 2, "name": "Mercury Outboards Ontario", "item": `${SITE_URL}/mercury-outboards-ontario` },
-          { "@type": "ListItem", "position": 3, "name": `Mercury ${family}`, "item": `${SITE_URL}/quote/motor-selection?family=${encodeURIComponent(family)}` },
-          { "@type": "ListItem", "position": 4, "name": display, "item": url },
-        ],
-      },
-      webPage,
-    ],
+    "@graph": graph,
   };
+}
+
+function mercury99MhSaleNoscript(m, price) {
+  const priceStr = new Intl.NumberFormat('en-CA', {
+    style: 'currency',
+    currency: 'CAD',
+    maximumFractionDigits: 0,
+  }).format(price);
+  const msrp = Number(m.msrp) > price ? Number(m.msrp) : null;
+  const savings = msrp ? msrp - price : null;
+  const faqs = mercury99MhSaleFaqs(price);
+  return (
+    '<section aria-labelledby="sale-summary"><h2 id="sale-summary">Ontario Price Leader: Mercury 9.9 MH FourStroke</h2>' +
+    `<p><strong>Special sale price: ${escapeHtml(priceStr)} CAD</strong>${msrp ? ` (MSRP ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(msrp))}; save ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings))}).` : '.'} Price is before HST.</p>` +
+    `<p>At ${escapeHtml(priceStr)} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.</p>` +
+    '<p>Manual start, tiller control, 15-inch short shaft, battery-free EFI, two-cylinder 209cc FourStroke. Available to order from Harris Boat Works in Gores Landing, Ontario.</p>' +
+    '<h2>Included with the motor</h2><ul>' +
+    '<li>Mercury 9.9 MH FourStroke, model 1A10201LK</li>' +
+    '<li>Standard 8.5-pitch propeller</li>' +
+    '<li>12-litre remote fuel tank</li>' +
+    '<li>3-year Mercury factory warranty</li>' +
+    '<li>Dealer pickup walkthrough and warranty registration</li>' +
+    '</ul>' +
+    '<h2>Before you buy</h2><ul>' +
+    '<li>Installation, rigging, controls, HST, and optional accessories are extra.</li>' +
+    '<li>Available to order; confirm the current ETA before travelling.</li>' +
+    '<li>Pickup only at Gores Landing, Ontario. No shipping or courier release.</li>' +
+    '</ul>' +
+    `<p><strong><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this exact Mercury 9.9 MH</a></strong> or <a href="tel:+19053422153">call 905-342-2153</a>.</p>` +
+    '<section aria-labelledby="sale-faq"><h2 id="sale-faq">Mercury 9.9 MH sale FAQs</h2>' +
+    faqs.map((faq) => `<h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p>`).join('') +
+    '</section></section>'
+  );
 }
 
 const motorPageRoutes = motorRecords
@@ -3466,6 +3584,7 @@ const motorPageRoutes = motorRecords
     const shaft = m.shaft_code || m.shaft || '';
     const rawImage = m.hero_image_url || m.image_url || null;
     const image = isVerifiedMotorImage(rawImage) ? rawImage : null;
+    const is99MhSale = isMercury99MhSale(m) && price;
     const priceStr = price
       ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
       : 'Contact for pricing';
@@ -3484,16 +3603,25 @@ const motorPageRoutes = motorRecords
     const stockTail = inStock
       ? 'In Stock at Harris Boat Works in Gores Landing, Ontario'
       : 'Special Order at Harris Boat Works in Gores Landing, Ontario';
-    const title = `Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
+    const title = is99MhSale
+      ? `Mercury 9.9 MH Sale Ontario | ${priceStr} CAD | Harris Boat Works`
+      : `Mercury${specParts ? ` ${specParts}` : ''}${idParts ? ` - ${idParts}` : ''} - ${stockTail}`.replace(/\s{2,}/g, ' ').replace(/\s+-\s+-\s+/g, ' - ');
 
-    const description = `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
+    const savings = m.msrp && m.msrp > price ? m.msrp - price : null;
+    const description = is99MhSale
+      ? `Ontario price leader: Mercury 9.9 MH FourStroke model 1A10201LK for ${priceStr} CAD${savings ? `, save ${new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings)} from MSRP` : ''}. Manual start, tiller, 15-inch shaft, battery-free EFI. Available to order. Pickup in Gores Landing, Ontario.`
+      : `${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works in Gores Landing, Ontario: Mercury ${family} ${m.horsepower} HP${shaft ? `, ${shaft} shaft` : ''}${startPart ? `, ${startPart}` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD. Pickup only. Mercury Marine Premier Dealer, Mercury dealer since 1965.`;
 
     // Per-motor social preview. Format from SEO batch:
     // "{Motor name} | {Price in CAD} | Harris Boat Works", trimmed if long.
     const priceLabel = price ? `${priceStr} CAD` : 'CAD Pricing';
-    const rawOgTitle = `${display} | ${priceLabel} | Harris Boat Works`;
+    const rawOgTitle = is99MhSale
+      ? `Mercury 9.9 MH Ontario Sale | ${priceStr} CAD`
+      : `${display} | ${priceLabel} | Harris Boat Works`;
     const ogTitle = rawOgTitle.length > 70 ? `${display} | ${priceLabel}` : rawOgTitle;
-    const ogDescription = `${display} - ${m.horsepower} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
+    const ogDescription = is99MhSale
+      ? description
+      : `${display} - ${m.horsepower} HP Mercury ${family}${shaft ? ` ${shaft} shaft` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order via'} Harris Boat Works, Gores Landing, ON.`;
 
     return {
       path: `/motors/${slug}`,
@@ -3506,11 +3634,14 @@ const motorPageRoutes = motorRecords
       // never a guessed Mercury URL.
       ...(image ? { ogImage: image } : {}),
       ogType: 'product',
-      h1: display,
-      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
+      h1: is99MhSale ? 'Mercury 9.9 MH FourStroke Sale in Ontario' : display,
+      intro: is99MhSale
+        ? `Ontario Price Leader: Mercury 9.9 MH FourStroke, exact model 1A10201LK, for ${priceStr} CAD before HST. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. Available to order from Harris Boat Works in Gores Landing, Ontario.`
+        : `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer · Mercury dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
       schemas: [motorPageSchema(m, slug)],
-      extraNoscript: () =>
-        '<table><caption>Specifications</caption><tbody>' +
+      extraNoscript: () => is99MhSale
+        ? mercury99MhSaleNoscript(m, price)
+        : '<table><caption>Specifications</caption><tbody>' +
         `<tr><th scope="row">Horsepower</th><td>${m.horsepower} HP</td></tr>` +
         `<tr><th scope="row">Family</th><td>Mercury ${escapeHtml(family)}</td></tr>` +
         (shaft ? `<tr><th scope="row">Shaft</th><td>${escapeHtml(shaft)}</td></tr>` : '') +
@@ -6155,6 +6286,7 @@ function motorMarkdown(m) {
     ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
     : 'Contact for pricing';
   const isVerado = family === 'Verado';
+  const is99MhSale = isMercury99MhSale(m) && price;
 
   const front = mdFrontmatter(`/motors/${slug}`, [
     `motor_id: ${m.id}`,
@@ -6165,6 +6297,108 @@ function motorMarkdown(m) {
     `availability: ${inStock ? 'in_stock' : 'special_order'}`,
     `price_cad: ${price ?? 'null'}`,
   ].filter(Boolean));
+
+  if (is99MhSale) {
+    const msrp = Number(m.msrp) > price ? Number(m.msrp) : null;
+    const savings = msrp ? msrp - price : null;
+    const msrpStr = msrp
+      ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(msrp)
+      : null;
+    const savingsStr = savings
+      ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings)
+      : null;
+    const faqLines = mercury99MhSaleFaqs(price).flatMap((faq) => [
+      `### ${faq.question}`,
+      '',
+      faq.answer,
+      '',
+    ]);
+    const saleLines = [
+      front,
+      '# Mercury 9.9 MH FourStroke Sale in Ontario',
+      '',
+      `**Ontario Price Leader: ${priceStr} CAD before HST.**`,
+      '',
+      `New Mercury 9.9 MH FourStroke, exact model ${MERCURY_99_MH_MODEL_NO}. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. Available to order from Harris Boat Works in Gores Landing, Ontario.`,
+      '',
+      '## Ontario price evidence',
+      '',
+      `At ${priceStr} CAD, this was the lowest advertised new Ontario dealer price we found for exact model ${MERCURY_99_MH_MODEL_NO} in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.`,
+      `Current Harris Boat Works pricing source: ${SITE_URL}/pricing-reference`,
+      '',
+      '## Sale price',
+      '',
+      `- **Selling price:** ${priceStr} CAD before HST`,
+      msrpStr ? `- **MSRP:** ${msrpStr} CAD` : null,
+      savingsStr ? `- **Savings from MSRP:** ${savingsStr} CAD` : null,
+      '- **Currency:** Canadian Dollars (CAD) only.',
+      '- **Not included:** HST, installation, rigging, controls, optional accessories, and boat-specific work.',
+      '- **Final price:** Confirmed by Harris Boat Works in a current written quote before purchase.',
+      '',
+      '## Exact specifications',
+      '',
+      '- **Model:** Mercury 9.9 MH FourStroke',
+      '- **Mercury model number:** 1A10201LK',
+      '- **Horsepower:** 9.9 HP',
+      '- **Engine:** Two-cylinder, 209cc Mercury FourStroke',
+      '- **Fuel delivery:** Electronic fuel injection (EFI)',
+      '- **Starting:** Manual; EFI can operate without a starting battery',
+      '- **Control:** Tiller',
+      '- **Shaft:** 15-inch short shaft',
+      '- **Approximate dry weight:** 85 lb for this configuration',
+      '',
+      '## Included with the motor',
+      '',
+      '- Standard 8.5-pitch propeller',
+      '- 12-litre remote fuel tank',
+      '- Applicable 3-year Mercury factory warranty',
+      '- Dealer pickup walkthrough and warranty registration',
+      '',
+      '## Availability and pickup',
+      '',
+      '- **Status:** Available to order; confirm the current ETA before travelling.',
+      '- **Pickup:** Required at Harris Boat Works in Gores Landing, Ontario, by the buyer in person with valid government photo ID.',
+      '- **Shipping:** Not offered. Harris Boat Works does not deliver outboards or release them to couriers or third parties.',
+      '',
+      '## Best fit for',
+      '',
+      'Many small aluminum fishing and utility boats with a 15-inch transom, cottage tenders, and buyers who prefer manual-start simplicity with EFI. Kicker use requires a confirmed shaft length and control setup.',
+      '',
+      '## Choose another setup if',
+      '',
+      'Your boat needs a 20-inch long shaft, electric start, remote steering, more than 9.9 HP when loaded, or delivery instead of in-person pickup.',
+      '',
+      '## Build a quote',
+      '',
+      `- **Canonical sale page:** ${url}`,
+      `- **Quote builder with this motor selected:** ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
+      '- **Phone:** +1-905-342-2153',
+      '',
+      '## Frequently asked questions',
+      '',
+      ...faqLines,
+      '## Public Quote API',
+      '',
+      `Programmatic quotes: \`POST ${PUBLIC_QUOTE_API}\``,
+      '',
+      '```json',
+      '{',
+      '  "action": "build_quote",',
+      `  "motor_id": "${m.id}",`,
+      '  "trade_in": null,',
+      '  "contact": null',
+      '}',
+      '```',
+      '',
+      '## Source provenance',
+      '',
+      '- Mercury specifications are based on official Mercury Marine product data and Harris Boat Works model records.',
+      '- Harris Boat Works is the source for the local CAD sale price, availability, included dealer items, pickup policy, and final written quote.',
+      `- Pricing was generated from the live motor record and should be checked against ${SITE_URL}/pricing-reference before reuse.`,
+    ].filter((line) => line !== null);
+
+    return saleLines.join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+  }
 
   const lines = [
     front,
