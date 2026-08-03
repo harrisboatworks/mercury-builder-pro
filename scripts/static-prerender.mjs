@@ -2704,6 +2704,10 @@ function promotionsNoscriptSnapshot(now = new Date()) {
 
 function blogArticleSchema(article) {
   const url = `${SITE_URL}/blog/${article.slug}`;
+  const shareImage = article.socialImage || article.image;
+  const absoluteShareImage = shareImage
+    ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
+    : undefined;
   const wordCount = (article.content || '').trim().split(/\s+/).filter(Boolean).length;
   const readTimeMinutes = parseInt(article.readTime, 10) || 5;
   const description = sanitizeSchemaText(article.description);
@@ -2733,7 +2737,7 @@ function blogArticleSchema(article) {
       "@id": `${url}#article`,
       "headline": sanitizeSchemaText(article.title),
       "description": description,
-      "image": `${SITE_URL}${article.image}`,
+      ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
       "author": /troubleshoot|alarm|wont-start|overheating|winterization|smartcraft-alarm|service-cost|electrical/.test(article.slug)
         ? { "@type": "Organization", "name": "Harris Boat Works Service Team", "url": `${SITE_URL}/about/jay-harris`, "parentOrganization": { "@type": "Organization", "name": "Harris Boat Works", "url": "https://harrisboatworks.ca" } }
         : { "@type": "Person", "name": "Jay Harris", "jobTitle": "Owner, Harris Boat Works", "url": `${SITE_URL}/about/jay-harris`, "worksFor": { "@type": "Organization", "name": "Harris Boat Works", "url": "https://harrisboatworks.ca" } },
@@ -2754,7 +2758,14 @@ function blogArticleSchema(article) {
         { "@type": "Organization", "name": "Mercury Marine" },
         ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
       ],
-      ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
+      ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {}),
+      ...(Array.isArray(article.citations) && article.citations.length > 0 ? {
+        "citation": article.citations.map(citation => ({
+          "@type": "CreativeWork",
+          "name": sanitizeSchemaText(citation.name),
+          "url": citation.url,
+        }))
+      } : {})
   };
 
   const graph = [articleNode, ...(mentionsRiceLake ? [riceLakePlace] : []),
@@ -2781,7 +2792,7 @@ function blogArticleSchema(article) {
       "@id": `${url}#howto`,
       "name": sanitizeSchemaText(article.title),
       "description": description,
-      "image": `${SITE_URL}${article.image}`,
+      ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
       "totalTime": article.howToTotalTime || `PT${readTimeMinutes}M`,
       "step": article.howToSteps.map((step, i) => ({
         "@type": "HowToStep",
@@ -3126,7 +3137,11 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   path: `/blog/${article.slug}`,
   title: buildBlogHeadTitle(article.title),
   description: article.description,
-  ogImage: `${SITE_URL}${article.image}`,
+  ogImage: article.socialImage || article.image
+    ? ((article.socialImage || article.image).startsWith('http')
+      ? (article.socialImage || article.image)
+      : `${SITE_URL}${article.socialImage || article.image}`)
+    : undefined,
   ogType: 'article',
   h1: article.title,
   intro: firstParagraph(
@@ -4757,16 +4772,16 @@ const routes = [
     }
   },
   {
-    path: '/blog/fr/concessionnaire-mercury-platinum-ontario',
+    path: '/blog/fr/concessionnaire-mercury-premier-ontario',
     title: 'Concessionnaire Mercury Premier Ontario | Harris Boat Works',
     description: 'Harris Boat Works, concessionnaire Mercury Premier à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury et service pour les plaisanciers francophones.',
     h1: 'Concessionnaire Mercury Premier en Ontario',
     intro: 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing sur le lac Rice. Entreprise familiale depuis 1947 et concessionnaire Mercury depuis 1965.',
     htmlLang: 'fr-CA',
-    schemas: [genericPageSchema('/blog/fr/concessionnaire-mercury-platinum-ontario', 'Concessionnaire Mercury Premier en Ontario', 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, Ontario.')],
+    schemas: [genericPageSchema('/blog/fr/concessionnaire-mercury-premier-ontario', 'Concessionnaire Mercury Premier en Ontario', 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, Ontario.')],
     extraHead: [
-      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/concessionnaire-mercury-platinum-ontario" />`,
-      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/fr/concessionnaire-mercury-platinum-ontario" />`,
+      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/concessionnaire-mercury-premier-ontario" />`,
+      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/fr/concessionnaire-mercury-premier-ontario" />`,
     ].join('\n  '),
   },
   {
@@ -5870,7 +5885,7 @@ const staticSitemapEntries = [
   // Spanish articles live under /blog/ko and /blog/es without a hub).
   { loc: '/zh', priority: 0.7, changefreq: 'monthly' },
   { loc: '/fr', priority: 0.7, changefreq: 'monthly' },
-  { loc: '/blog/fr/concessionnaire-mercury-platinum-ontario', priority: 0.65, changefreq: 'monthly' },
+  { loc: '/blog/fr/concessionnaire-mercury-premier-ontario', priority: 0.65, changefreq: 'monthly' },
   { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
@@ -5930,7 +5945,9 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   priority: 0.7,
   changefreq: 'monthly',
   lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
-  imageUrl: a.image ? (a.image.startsWith('/') ? `${SITE_URL}${a.image}` : a.image) : null,
+  imageUrl: (a.socialImage || a.image)
+    ? ((a.socialImage || a.image).startsWith('/') ? `${SITE_URL}${a.socialImage || a.image}` : (a.socialImage || a.image))
+    : null,
   imageTitle: a.title,
 }));
 

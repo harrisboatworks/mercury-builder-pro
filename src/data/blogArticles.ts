@@ -13,6 +13,7 @@ export interface BlogArticle {
   description: string;
   content: string;
   image?: string;
+  socialImage?: string; // Optional raster image for Open Graph/Twitter/schema while retaining an SVG in-page hero
   imageAlt?: string;
   author: string;
   datePublished: string;
@@ -381,10 +382,11 @@ The next step is our [repair, repower or sell decision guide](/blog/repair-repow
     seoTitle: 'Mercury Outboard Oil Capacity Chart by Model & Year',
     description: 'Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP.',
     image: '/lovable-uploads/mercury-oil-capacity-lookup-hbw.svg',
+    socialImage: '/lovable-uploads/mercury-oil-capacity-lookup-hbw-social.png',
     imageAlt: 'HBW Mercury outboard oil capacity lookup reference showing model, year, crankcase, gearcase and oil filter fields.',
     author: 'Harris Boat Works',
     datePublished: '2026-07-24',
-    dateModified: '2026-07-28',
+    dateModified: '2026-08-02',
     publishDate: '2026-07-24',
     category: 'Service & Maintenance',
     readTime: '12 min read',
@@ -16663,7 +16665,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
       },
       {
         question: 'What are the best boat launches on Rice Lake?',
-        answer: 'Rice Lake has several public boat launches. Gores Landing (adjacent to Harris Boat Works on the south shore) is well-maintained and popular with HBW customers. Bewdley, on the southwest, is a county-maintained ramp with ample parking. Harwood is another south-shore option. On the north shore, Hastings (via County Road 45) is typically less congested than south-shore ramps on peak weekends. Serpent Mounds Provincial Park near Roseneath also has a maintained ramp. All of these get busy on holiday weekends in July and August, arriving before 8:00 a.m. typically avoids the ramp queue.'
+        answer: 'Rice Lake has several launch options, including Gores Landing near Harris Boat Works, Bewdley and Hastings. Facilities, parking and access rules can change, so check the [current Township of Hamilton waterfront page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and posted signs before towing. Serpent Mounds is not a public launch; [Hiawatha First Nation says the site has remained closed to the public since 2009](https://www.hiawathafirstnation.com/business-tourism/serpent-mounds/).'
       },
       {
         question: 'How do I prepare my boat trailer before a long drive?',
@@ -16687,13 +16689,17 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
       },
       {
         question: 'Can I leave my trailer at the boat launch overnight?',
-        answer: 'It depends on the launch. County-run ramps in Northumberland (Bewdley, Harwood) typically allow vehicles and trailers to park overnight, but confirm with local signage, rules change seasonally and overflow parking during peak weekends can mean unofficial lots. Serpent Mounds Provincial Park has day-use fees with limited overnight trailer parking. At Gores Landing, customers using Harris Boat Works for storage or service can arrange secure trailer parking, call us at 905-342-2153 to confirm availability before your trip.'
+        answer: 'Do not assume overnight trailer parking is allowed at a public launch. Check the [current Township of Hamilton waterfront page](https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/) and posted signs because parking and seasonal rules can change. At Harris Boat Works, storage or service customers can include trailer-parking needs in the service request before drop-off.'
       },
       {
         question: 'What should I check on my outboard before trailering?',
         answer: 'Use the trailering position and support method specified for your exact Mercury model and trailer; do not assume one tilt-lock or transom-saver rule fits every rig. Confirm the engine is secured, steering cannot swing freely, the propeller has road clearance, and any flush plug is reinstalled. If the motor has not run this season, work through our [spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) before the first launch.'
       },
-    ]
+    ],
+    citations: [
+      { name: 'Hiawatha First Nation: Serpent Mounds remains closed to the public', url: 'https://www.hiawathafirstnation.com/business-tourism/serpent-mounds/' },
+      { name: 'Township of Hamilton: current waterfront parks and access information', url: 'https://www.hamiltontownship.ca/parks-and-recreation/outdoor-recreation/waterfront-parks/' },
+    ],
   },
   {
     slug: 'mercury-outboard-wont-start-troubleshooting',
@@ -20027,10 +20033,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     seoTitle: 'Mercury Outboard Maintenance Schedule (100 & 300 Hours)',
     description: "Most current Mercury FourStrokes are serviced every 100 hours or annually. Learn what an early check, annual service, and model-specific 300-hour service mean.",
     image: '/lovable-uploads/mercury-maintenance-schedule-100-300-hbw.svg',
+    socialImage: '/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social.png',
     imageAlt: 'Mercury outboard maintenance timeline showing model-specific break-in, an optional dealer check, 100-hour or annual service, and expanded 300-hour service.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-07-30',
+    dateModified: '2026-08-02',
     publishDate: '2026-05-12',
     category: 'Service & Maintenance',
     readTime: '11 min read',

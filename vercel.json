@@ -129,6 +129,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-premier-ontario",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/2026-mercury-model-preview",
       "destination": "/blog/mercury-outboard-lineup-ontario",
       "statusCode": 301
@@ -717,8 +722,8 @@
       "destination": "/blog/fr/index.html"
     },
     {
-      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
-      "destination": "/blog/fr/concessionnaire-mercury-platinum-ontario/index.html"
+      "source": "/blog/fr/concessionnaire-mercury-premier-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-premier-ontario/index.html"
     },
     {
       "source": "/blog/zh-hant",

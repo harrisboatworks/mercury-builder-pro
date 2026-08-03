@@ -331,7 +331,7 @@ export default function BlogArticle() {
                 url={articleUrl}
                 title={article.title}
                 description={cleanDescription}
-                image={article.image}
+                image={article.socialImage || article.image}
                 variant="inline"
                 articleSlug={article.slug}
                 location="header"
@@ -505,7 +505,7 @@ export default function BlogArticle() {
               url={articleUrl}
               title={article.title}
               description={cleanDescription}
-              image={article.image}
+              image={article.socialImage || article.image}
               variant="full"
               articleSlug={article.slug}
               location="footer"

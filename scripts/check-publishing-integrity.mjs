@@ -32,6 +32,7 @@ const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
+const frenchPremierArticle = read('src/pages/blog/FrenchBlogArticle.tsx');
 const parsedVercelConfig = JSON.parse(vercelConfig);
 
 check(
@@ -68,8 +69,32 @@ check(
   'vercel.json must preserve the noindex zh-Hant pilot hub and article SPA routes.',
 );
 check(
-  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario\/index\.html"/.test(vercelConfig),
-  'vercel.json must preserve the standalone French article prerender route.',
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,80}"statusCode":\s*301/.test(vercelConfig),
+  'vercel.json must permanently redirect the retired French Platinum URL to the Premier URL.',
+);
+check(
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario\/index\.html"/.test(vercelConfig),
+  'vercel.json must preserve the renamed standalone French Premier article prerender route.',
+);
+check(
+  /\/blog\/fr\/concessionnaire-mercury-premier-ontario/.test(appSource) &&
+    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource),
+  'The hydrated app must own the French Premier URL and must not revive the retired Platinum route.',
+);
+check(
+  /const ARTICLE_PATH = '\/blog\/fr\/concessionnaire-mercury-premier-ontario'/.test(frenchPremierArticle) &&
+    /premier arrivé, premier servi/i.test(frenchPremierArticle) &&
+    /ferme le 1er décembre/i.test(frenchPremierArticle) &&
+    !/Accès prioritaire aux pièces|le niveau le plus élevé|Mercury les envoie chez nous|le prix que vous voyez, c'est le prix/i.test(frenchPremierArticle),
+  'The French Premier article must keep the canonical URL and verified HBW service guidance without unsupported dealer claims.',
+);
+check(
+  /socialImage\?: string/.test(blogArticles) &&
+    /article\.socialImage \|\| article\.image/.test(prerenderScript) &&
+    /Array\.isArray\(article\.citations\)/.test(prerenderScript) &&
+    /mercury-oil-capacity-lookup-hbw-social\.png/.test(blogArticles) &&
+    /mercury-maintenance-schedule-100-300-hbw-social\.png/.test(blogArticles),
+  'Blog prerender output must retain raster social-preview and citation support.',
 );
 check(
   !/hreflang="zh-CA"/.test(prerenderScript),
