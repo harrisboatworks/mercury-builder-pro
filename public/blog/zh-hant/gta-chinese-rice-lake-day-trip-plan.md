@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan.md
-last_updated: 2026-06-12
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "GTA → 萊斯湖 一日遊地圖（繁體版）"
-description: "從多倫多到萊斯湖的一日遊規劃：駕車路線、租船時間、釣魚熱點、回程時段。完整簡體版內容詳見對應頁面。"
+description: "從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-03
 keywords: ["萊斯湖","一日遊","多倫多","繁體"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,11 +20,11 @@ language: zh-Hant
 
 # GTA → 萊斯湖 一日遊地圖（繁體版）
 
-> 從多倫多到萊斯湖的一日遊規劃：駕車路線、租船時間、釣魚熱點、回程時段。完整簡體版內容詳見對應頁面。
+> 從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。
 
 **Category:** mandarin
 **Published:** 2026-06-12
-**Last updated:** 2026-06-12
+**Last updated:** 2026-08-03
 **Read time:** 5 分鐘
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan
 
@@ -42,7 +42,7 @@ language: zh-Hant
 quote: 我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。
 ::
 
-完整版內容（包括詳細釣魚熱點、午餐推薦、燃油加油站位置）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
+完整版內容（包括預訂方式、出發前的法規與安全檢查，以及租船與自帶船的選擇）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
 
 ## FAQs
 
@@ -64,4 +64,3 @@ quote: 我們專門為華人朋友準備了這些中文指南，因為我們真�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

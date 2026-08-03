@@ -294,11 +294,11 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
   {
     slug: 'gta-chinese-rice-lake-day-trip-plan',
     title: 'GTA → 萊斯湖 一日遊地圖（繁體版）',
-    description: '從多倫多到萊斯湖的一日遊規劃：駕車路線、租船時間、釣魚熱點、回程時段。完整簡體版內容詳見對應頁面。',
+    description: '從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。',
     image: zhFirstRentalHero,
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-08-03',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '5 分鐘',
@@ -317,7 +317,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 quote: ${ZH_HANT_LANGUAGE_NOTE}
 ::
 
-完整版內容（包括詳細釣魚熱點、午餐推薦、燃油加油站位置）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
+完整版內容（包括預訂方式、出發前的法規與安全檢查，以及租船與自帶船的選擇）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
 `,
     faqs: [
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
