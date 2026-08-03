@@ -767,35 +767,35 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-repower-eligibility-guide",
-    "title": "Mercury Repower Eligibility: 5-Check Guide",
-    "description": "Find out if your boat is eligible for a Mercury repower. The 5-check eligibility test: transom, hull, capacity plate, age-to-hours.",
+    "title": "Is Your Boat Worth Repowering? 5 Checks Before You Quote",
+    "description": "Screen your boat for a Mercury repower using five practical checks: structure, manufacturer limits, rigging fit, how you use it, and total project value.",
     "category": "Repower Decision",
     "publishDate": "2026-05-27",
     "keywords": [
-      "mercury repower eligibility",
       "is my boat worth repowering",
+      "Mercury repower Ontario",
+      "repower eligibility",
       "transom inspection",
       "boat capacity plate",
-      "mercury repower cost ontario",
       "repower vs buy new",
-      "ontario mercury dealer"
+      "Ontario Mercury dealer"
     ],
     "faqs": [
       {
-        "q": "Is my boat eligible for a Mercury repower?",
-        "a": "Most boats are eligible if the hull is structurally sound and the motor is the worn component. The five checks are: transom integrity, hull and foam condition, capacity plate HP rating, age relative to hours and storage history, and cost threshold (repower cost well under a comparable new boat package). If all five ar…"
+        "q": "Is my boat a good candidate for a Mercury repower?",
+        "a": "It may be if the structure is sound, the manufacturer documentation supports the proposed motor, the complete rigging fits, the boat still suits your use, and the whole-project cost makes sense. A web article or online quote can screen the idea, but the boat needs an in-person inspection before HBW accepts the install…"
       },
       {
-        "q": "How do I check if my transom is sound?",
-        "a": "Tap the transom firmly with the heel of your fist or a small mallet. A sound transom returns a solid, consistent thunk. A waterlogged transom returns a softer, hollow sound, especially toward the centre. Look also for cracks radiating from the motor mounting bolts, gel coat crazing near the mount, or water seeping fro…"
+        "q": "Can a tap test prove my transom is sound?",
+        "a": "No. A tap, visual walkaround, and movement check can reveal warning signs, but they cannot certify hidden core, laminate, weld, or fastener condition. If anything is questionable, the next step is a qualified marine technician, repair specialist, or surveyor."
       },
       {
-        "q": "Can I repower a boat that is over 20 years old?",
-        "a": "Yes, if the hull is in good shape. Age alone is not disqualifying. What matters is age relative to hours and storage history. A 20-year-old boat stored indoors and run 50 hours per season can be a perfectly good repower candidate. A 10-year-old boat stored outdoors and run hard may not be. Documented maintenance histo…"
+        "q": "Does every Canadian compliance notice show maximum horsepower?",
+        "a": "No. Transport Canada distinguishes capacity labels for boats up to 6 metres from conformity labels for longer boats. An outboard-powered capacity label up to 6 metres includes recommended maximum safe limits such as engine power. Longer boats use a different notice and may require manufacturer documentation for the en…"
       },
       {
-        "q": "What HP can I put on my boat for a repower?",
-        "a": "The capacity plate sets the absolute maximum HP for your hull. You cannot legally repower a boat above the capacity plate rating. Insurance, Transport Canada regulations, and Mercury dealer requirements all hold to the plate. Within the plate rating, choose an HP class that matches how you use the boat (fishing, ponto…"
+        "q": "Can I install more horsepower than the number on the capacity label?",
+        "a": "Treat the manufacturer's recommended maximum safe engine power as the limit unless authoritative written documentation for the exact hull says otherwise. Do not use an oversized existing motor, a forum post, or a similar-looking hull as approval."
       }
     ]
   },
