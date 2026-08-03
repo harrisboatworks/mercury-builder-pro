@@ -125,19 +125,21 @@ ${ZH_LANGUAGE_NOTE}
 
   {
     slug: 'rice-lake-fishing-guide-toronto-chinese',
-    title: 'Rice Lake钓鱼完整攻略：多伦多华人钓友必读',
-    description: 'Rice Lake（赖斯湖）钓鱼完整指南。鱼种、季节、装备、钓点、许可证信息，从多伦多出发仅1.5小时车程。',
+    title: 'Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单',
+    description: '从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。',
     image: '/lovable-uploads/hero-rice-lake-fishing-guide-toronto-chinese.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-01',
+    dateModified: '2026-08-03',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
     keywords: ['Rice Lake钓鱼', '多伦多华人钓鱼', '安大略省钓鱼攻略', 'Rice Lake fishing guide Chinese'],
     content: `## 快速答案
 
-Rice Lake 是大多伦多最近的钓鱼湖之一，距离多伦多市区约 80-90 分钟车程。主要物种包括 walleye（黄鲈）、smallmouth bass（小嘴鲈）和 muskie（梭子鱼）。需要安大略省钓鱼牌照（Outdoor Card + Fishing Licence）。我们建议从 HBW 在 Gores Landing 的公共码头出发，那里有 2 线水泥码头、停车位、洗手间和燃油服务。
+Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标鱼包括 walleye（梭鲈／玻璃眼）、largemouth 和 smallmouth bass（大嘴鲈／小嘴鲈）、muskellunge（muskie）以及 yellow perch（黄鲈）等 panfish。不要把 walleye 和 yellow perch 都翻成“黄鲈”：它们是不同鱼种，季节、尺寸和限额也可能不同。
+
+从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/page/fishing-licence)，再核对天气、下水点和船上安全装备。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
@@ -164,10 +166,10 @@ ctaHref: /quote
 
 Rice Lake 是大多伦多钓友的近距离选择。从多伦多开车：
 
-- **路线：** 401 东向到 Highway 115 北向，然后 County Road 28 北向到 Gores Landing
-- **时间：** 80-90 分钟（不塞车时）
+- **路线：** 通常经 401 东向和 Highway 115；最后一段请按你确认的码头或租船地点导航
+- **时间：** 多数 GTA 地区约 60–120 分钟，周末和施工会明显改变车程
 - **不需要过夜：** 早上去，傍晚回，一天搞定
-- **码头众多：** 4 个主要公共码头可选
+- **下水点要先确认：** 船坡、停车、费用、开放时间和拖车空间会因地点与季节改变
 
 对于住在士嘉堡、烈治文山、北约克、密西沙加的华人钓友，这个距离既能享受真正的内陆湖体验，又不会占用整个周末。
 
@@ -175,7 +177,7 @@ Rice Lake 是大多伦多钓友的近距离选择。从多伦多开车：
 
 ## Rice Lake 的钓鱼物种
 
-### Walleye（黄鲈）
+### Walleye（梭鲈／玻璃眼）
 
 Rice Lake 的招牌鱼。最常见的钓法是 trolling（拖钓），保持每小时 1-2 英里的缓慢速度。最佳季节是 5-6 月和 9-10 月，盛夏时要去深水区夜钓。
 
@@ -185,13 +187,13 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 晚春到初夏的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
 
-### Muskie（梭子鱼）
+### Muskellunge / Muskie（中文俗名不一）
 
 「万一遇到」的大鱼。钓法以拖钓大型拟饵为主。秋季是最佳季节，需要耐心。
 
-### 鲫鱼、鲈鱼、北方狗鱼
+### Panfish、Yellow Perch 与 Northern Pike
 
-混合钓，特别是春季的鲫鱼活动旺盛。
+Rice Lake 也有 yellow perch、crappie、sunfish 和 northern pike。中文俗名在不同地区不统一，执法时看的是官方英文鱼种，所以不确定鱼种就不要留鱼。
 
 ---
 
@@ -199,13 +201,13 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 | 鱼种 | 常见中文称呼 | 大致最佳季节 |
 |------|------------|-------------|
-| Largemouth Bass | 大嘴鲈鱼 | 开钓后至10月 |
-| Smallmouth Bass | 小嘴鲈鱼 | 开钓后至10月 |
-| Walleye | 梭鲈（玻璃眼） | 开钓后至10月，清晨黄昏最佳 |
-| Northern Pike | 白斑狗鱼（梭鱼） | 开钓后至10月 |
-| Crappie | 美洲鲈（黑白条） | 春末至夏初 |
+| Largemouth Bass | 大嘴鲈鱼 | 合法开季后的夏季至秋季 |
+| Smallmouth Bass | 小嘴鲈鱼 | 合法开季后的夏季至秋季 |
+| Walleye | 梭鲈（玻璃眼） | 春季合法开钓后与秋季降温期 |
+| Northern Pike | 北方狗鱼 | 春季至秋季，须先确认合法季节 |
+| Crappie | Crappie（中文俗名不一） | 春末至夏初 |
 | Bluegill / Sunfish | 蓝鳃太阳鱼 | 春末至秋初 |
-| Yellow Perch | 黄鲈 | 全年（冬季冰钓也可） |
+| Yellow Perch | 黄鲈 | 依 FMZ 17 当前合法季节确认 |
 | Carp | 鲤鱼 | 春末至秋初 |
 
 **重要：** Rice Lake属于安大略省FMZ 17（渔业管理区17）。各鱼种的具体开钓日期、尺寸限制和每日数量限制每年可能调整，**请以当年度安大略省官方钓鱼规则（[Ontario fishing regulations](https://www.ontario.ca/page/fishing-regulations) Summary）为准**，不要以本文或社群资讯作为规则判断的依据。
@@ -227,53 +229,37 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 | 项目 | 一般指引 |
 |------|---------|
-| 钓鱼证 | 需要有效的Ontario Fishing Licence和Outdoors Card |
+| 钓鱼资格 | 是否需要购买 Outdoors Card 和 Fishing Licence 取决于年龄、居住身份和牌照类型；一日牌照规则不同 |
 | 各鱼种季节 | 每种鱼不同，请查FMZ 17当年规则 |
-| 尺寸限制 | 各鱼种有最小保留尺寸，不够大的必须放生 |
+| 尺寸限制 | 不同鱼种可能有最小、最大或 slot size；没有一条“所有鱼都要达到同一最小尺寸”的规则 |
 | 每日保留限额 | 依鱼种和钓鱼证类型（Sport / Conservation）不同 |
 | 诱饵管理区 | FMZ 17属于南部诱饵管理区（Southern Bait Management Zone），活饵跨区携带有限制 |
 
-**HBW强调：** 很多新手不知道每种鱼有不同的**尺寸限制**（Minimum Size Limit）, 只有达到规定最小尺寸的鱼才能保留，不够大的必须轻柔放生。被渔业执法人员查到留小鱼会被重罚，这不是可以侥幸的规定。
+**HBW 强调：** 鱼种识别是钓鱼规则的一部分。留鱼前要确认鱼种、开季日期、Sport 或 Conservation 牌照限额、尺寸范围和水域例外。拿不准就轻柔放生，并以 Ontario.ca 的当前规则为准。
 
 ---
 
 ## 需要什么证件？
 
-**安大略钓鱼证**
-- Outdoor Card（一次性，$8.57 加币）
-- Fishing Licence（年费或日费皆可）
-- 在 ontario.ca/fishing 线上购买
+**安大略钓鱼资格**
+- 多数 18–64 岁的 Ontario／Canadian residents 需要有效 Outdoors Card 加 Fishing Licence
+- 18 岁以下或 65 岁及以上的合资格居民通常可用显示姓名和出生日期的政府身份证件作为钓鱼资格证明
+- 一日 Sport Fishing Licence 不要求 Outdoors Card
+- 费用和非加拿大居民规则不同；请看 [Ontario 2026 licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - HBW 不销售钓鱼证
 
 **操作船需要**
-- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)（PCOC）：船主必备
-- [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)（PCL）：船马力 10HP 以上需要
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
+- [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）：主要在加拿大使用、发动机总功率至少 10 HP 的合资格休闲船通常需要；PCL 属于船，不是驾驶员
+- 租 HBW 船时，每位驾驶员都必须出示有效 boat operator licence／PCOC 和带照片身份证件；请以[在线租船页面](https://www.harrisboatworks.ca/rentals)与租赁协议为准
 
 ---
 
-## 从哪里下船？
+## 下水、租船还是自带船？
 
-**Bewdley（湖西侧）**
-- 1 线水泥码头
-- 公共停车场
-- 从多伦多 401 下来最容易找到
+Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和开放状态可能变化。不要根据旧文章认定某个坡道有几条车道、一定能停拖车或一定提供燃油。自带船时，请在出发前向码头经营者或当地政府确认当前条件，并准备备选下水点。
 
-**Roseneath（湖南岸中段）**
-- 1 线码头
-- 停车位较少
-- 比较安静
-
-**Gores Landing（HBW 所在地）**
-- 2 线水泥码头，最宽敞
-- 停车场、洗手间、燃油（HBW 提供）
-- 收费入码头
-- 最适合大多伦多客人
-
-**Hastings（湖东侧）**
-- 1 线码头
-- 连接 [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern)，适合多日水路旅行
-
-对大多数多伦多华人钓友来说，**Gores Landing 是最方便的选择**，设备齐全、容易找、有 HBW 工作人员可以协助。
+如果不想拖船，可先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals)查看当前船型、载客量、价格和可订日期。线上订单确认才算实际预订；文章里的示例时间不代表库存或报到时间。
 
 ---
 
@@ -281,36 +267,34 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 如果你计划在 Rice Lake 认真钓鱼，理想配备是：
 
-**主马达：** Mercury 60-115 HP FourStroke（船 16-19 英尺铝船）
-**Trolling 马达：** Mercury 9.9 ProKicker（拖钓专用）
-**电子设备：** Chartplotter（显示湖底结构，包括沉没铁路位置）
-**安全配备：** 每人一件救生衣、信号哨、锚绳、备用桨
+**主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
+**低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
+**电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[船型和船长查表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
 
-ProKicker 的特点是低速大扭矩，在 1-2 mph 拖钓速度下稳定运作，这正是主马达做不到的。我们强烈建议认真钓 walleye 的客户配备 ProKicker。
+ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
 ---
 
 ## Rice Lake 的特殊危险：沉没铁路
 
-这是 Rice Lake 唯一一个你必须知道的危险。
-
-19 世纪有一条铁路横穿 Rice Lake 中段，已经淹没在水下约 4 英尺深。它已经损坏了超过一个世纪的船底马达。
+Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是湖上唯一危险。浅滩、水草、漂浮物、天气、能见度和其他船只同样需要注意。水位变化时，旧资料写的固定净空可能不再可靠。
 
 - **位置：** 跨越湖中段，南北方向
-- **深度：** 约 4 英尺
-- **解决方案：** 你的 Chartplotter（Navionics、Garmin、C-MAP）会标示出来
+- **水深：** 随地点和当时水位改变，不要依赖单一固定数字
+- **做法：** 使用最新航图和声呐，保持安全速度；不熟悉路线时向当地经营者询问
 
-**如果你还不熟悉湖的中段，过湖时减速到 5-10 mph，直到你能在 Chartplotter 上确认铁路位置。**
+**如果你不熟悉湖的中段，先减速、确认位置和水深，再选择安全路线。电子航图是辅助工具，不能代替观察和判断。**
 
 ---
 
 ## 常见问题
 
-**从多伦多去 Rice Lake 真的需要 80-90 分钟吗？**
-是的，正常交通状况下。周末早上比较顺畅；周末下午回程可能会塞 30-60 分钟。
+**从多伦多去 Rice Lake 需要多久？**
+多数 GTA 地区约 60–120 分钟。请用当天导航结果倒推时间，不要把文章中的车程当保证。
 
 **Rice Lake 适合家庭钓鱼吗？**
-非常适合。湖水较浅、不会太冷、不会浪太大。是 GTA 家庭学习钓鱼的理想湖泊。
+可以很适合，但浅湖仍会因风向和雷暴快速变得颠簸。家庭出发前要查天气，每人配合身 PFD，并为孩子、老人和新手选择保守路线。
 
 **我可以在 HBW 租一艘钓鱼船吗？**
 可以。HBW 在 Rice Lake 提供浮桥船和钓鱼船出租。请在 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 查看当前船型、载客量、价格和可订日期，并在线预订。
@@ -321,8 +305,8 @@ ProKicker 的特点是低速大扭矩，在 1-2 mph 拖钓速度下稳定运作�
 **HBW 有中文服务吗？**
 ${ZH_LANGUAGE_NOTE}
 
-**Rice Lake 周边有餐厅吗？**
-Gores Landing 码头附近有 The Captain's Table。Cobourg 和 Bewdley 也有更多选择。
+**租船需要什么证件？**
+HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片身份证件。当前船型、价格、可订日期和完整政策以在线租船页面为准。
 
 ---
 
@@ -336,10 +320,6 @@ Gores Landing 码头附近有 The Captain's Table。Cobourg 和 Bewdley 也有�
 ---
 
 
-> 相关指南：[安省免鱼牌周末家庭钓鱼指南](/blog/zh/rice-lake-fishing-guide-toronto-chinese)。
-
-> 相关指南：[Rice Lake 钓鱼季节完整指南](/blog/zh/rice-lake-fishing-guide-toronto-chinese)。
-
 **相关文章**
 
 如果这次是先带家人来 Rice Lake 试试水，下面几篇可以接着看：
@@ -348,18 +328,26 @@ Gores Landing 码头附近有 The Captain's Table。Cobourg 和 Bewdley 也有�
 - [从 Toronto 到 Rice Lake：一日钓鱼怎么安排](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 - [PCOC 是什么？第一次租船开船前必须搞清的几件事](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
 
+## 官方来源
+
+- [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
+- [Ontario：Fishing licence 资格](https://www.ontario.ca/page/fishing-licence)
+- [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
+- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
+
 ## 准备出发？
 
-如果你需要 Mercury 马达或维修，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价，或拨打 **905-342-2153** 与我们联络。
+如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbw.wiki/service](https://hbw.wiki/service) 提交船、发动机和症状资料。
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marine Premier 认证船厂 | 自 1947 年`,
     faqs: [
-      { question: 'Rice Lake可以吃到的鱼安全吗？', answer: '大部分鱼是安全食用的。建议查阅安大略省的鱼类食用指南（Guide to Eating Ontario Fish），其中列出了各湖泊各鱼种的建议食用频率。' },
-      { question: '没有船可以钓鱼吗？', answer: '可以。Rice Lake周围有多个岸钓点和码头可以使用。但有船可以到达更多钓点，鱼获会更好。' },
-      { question: '可以在Rice Lake租船吗？', answer: '周围有一些度假村提供船只租赁。建议提前预约，尤其是周末和长假期间。' },
-      { question: '冬季可以冰钓吗？', answer: '可以。Rice Lake是非常受欢迎的冰钓地点。冰面安全厚度时（通常一月至三月），许多人在此冰钓鲈鱼和翻车鱼。' },
+      { question: 'Rice Lake可以吃到的鱼安全吗？', answer: '食用建议取决于水域、鱼种、鱼体大小和食用者类别。留鱼和进食前请查 Ontario 的 Guide to Eating Ontario Fish，不要用“大部分都安全”代替当前建议。' },
+      { question: '没有船可以钓鱼吗？', answer: '可以，但岸钓点的合法进入、停车和开放状态会变化。出发前请向当地政府或经营者确认，不要把私人岸线当作公共入口。' },
+      { question: '可以在Rice Lake租船吗？', answer: '可以。HBW 的在线租船页面会显示当前船型、载客量、价格和可订日期；线上订单确认才算实际预订。' },
+      { question: '冬季可以冰钓吗？', answer: '法规允许的鱼种和季节仍须按 FMZ 17 当年规则确认。HBW 不提供冰况保证；冰面安全必须由当天现场条件和合资格当地信息判断。' },
     ],
   },
   {
@@ -543,81 +531,75 @@ Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
   },
   {
     slug: 'ontario-boating-regulations-zh',
-    title: '安大略船只法规完整指南：PCOC、PCL、安全装备清单 (中文版)',
-    seoTitle: '安大略船只法规完整指南 (中文版)',
-    description: '在安大略驾船需要 PCOC + PCL + 钓鱼证 + 必备安全装备。HBW 不销售证件,本指南教您从 ServiceOntario 和 Transport Canada 自助办理。',
+    title: '安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证',
+    seoTitle: '安省驾船法规中文指南（2026）',
+    description: '分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。',
     image: '/lovable-uploads/hero-ontario-boating-regulations-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-04-12',
+    dateModified: '2026-08-03',
     publishDate: '2026-04-12',
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
-    content: `> **简短答案：** 在安大略驾船需要 [Pleasure Craft Operator Card (PCOC)](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) 船只操作员证 + [Pleasure Craft Licence (PCL)](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) 船只牌照 + 安大略钓鱼证 (如要钓鱼)。船上必须有救生衣、哨子、防水手电、浮力绳。莱斯湖钓鱼用安大略 Fishing Zone 17 (FMZ 17) 法规。HBW 不销售这些证件,需到 ServiceOntario 或网上自行申请。
+    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)。
 
 ## 三大必备证件
 
 ### 1. Pleasure Craft Operator Card (PCOC) 船只操作员证
 
-任何在加拿大水域使用带引擎船只的人都需要这张卡。一次性考试,加币 $50-80。网上在线考试可以做。终身有效,无需续期。加拿大全境通用。
-
-不持卡操作引擎船只罚款最高 $250。湖警 (OPP Marine) 经常在莱斯湖检查这张卡。
+任何操作动力休闲船的人都需要携带合资格的 proof of competency，包括电动马达。PCOC 是最常见的证明；也可能是 1999 年 4 月 1 日前通过加拿大安全课程的证明、指定海事证书，或符合条件的租赁船安全清单。PCOC 本身终身有效。课程语言、费用和上课方式由 Transport Canada 认可提供商决定，请查[当前认可名单](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/boating-safety-courses-across-canada)。
 
 ### 2. Pleasure Craft Licence (PCL) 船只牌照
 
-带 10 马力以上引擎的船只必须有 PCL 牌照。在线由 [Transport Canada](https://tc.canada.ca/en) 申请，**需要支付申请费**（2024 年规则调整后 PCL 不再免费；当前费用以 TC 官网为准）。1-2 周邮寄到家。**有效期 5 年**（2024 年起从 10 年改为 5 年），到期前续约。号码必须贴在船头两侧。
+主要在加拿大使用、一个或多个发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经在 Canadian Register of Vessels 注册。新办、续期、转让和补发需要当前服务费；资料更新或取消免费。新办或转让后的牌照有效 5 年，号码必须按规定显示在船头两侧，并把牌照文件放在船上。请使用 [Transport Canada 当前 PCL 页面](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。
 
-二手船过户后必须重新申请新 PCL ， 这是华人新车主最常忽略的一步。
+买二手船后，买家应在 30 天内申请把现有 PCL 转到自己名下。PCL 号码跟随船只，卖船时不要先取消牌照。
 
 ### 3. 安大略钓鱼证 (如要钓鱼)
 
-加拿大公民 + 永久居民 18 岁以上钓鱼必备。[Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) 网上申请。一年期约 $25-35 (Outdoors Card 一次性 $9 另算)。短期 (1 天/3 天/8 天) 价格更低。必须随身携带,OPP / MNR 会查。
+是否需要购买 Outdoors Card 和 Fishing Licence 取决于年龄、居住身份和牌照类型。多数 18–64 岁的 Ontario／Canadian residents 需要两者；18 岁以下或 65 岁及以上的合资格居民通常可携带显示姓名和出生日期的政府身份证件。一日 Sport Fishing Licence 不需要 Outdoors Card。请看 [Ontario fishing licence](https://www.ontario.ca/page/fishing-licence) 和 [2026 licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 **重要：** HBW 不销售钓鱼证。需要自己在 ontario.ca 网上申请。
 
 ## 船上必备装备清单
 
-Transport Canada 强制以下装备 (按船长不同有细微差别):
+最低装备取决于船型、船长、是否有发动机或燃油设备，以及是否在夜间或低能见度航行。常见项目包括每人一件合身并获认可的 lifejacket／PFD、浮力抛绳、重新登船装置、发声设备、照明、舀水或抽水设备；灭火器、照明、信号弹、指南针和雷达反射器等要求并非对每艘船都完全相同。
 
-| 装备 | 中文 | 要求 |
-|---|---|---|
-| Lifejacket / PFD | 救生衣 | 每人一件,加拿大认证 |
-| Whistle | 哨子 | 一支,可作声光信号 |
-| Waterproof flashlight | 防水手电 | 一支 |
-| Buoyant heaving line | 浮力绳 | 15 米 |
-| Fire extinguisher | 灭火器 | 装机动力船必备 |
+最可靠做法是按自己船的类型和长度查看 [2026 Safe Boating Guide 的装备表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)，并确保装备状态良好、容易取用。只有“船上有”还不够。
 
 ## 莱斯湖钓鱼法规
 
-莱斯湖属于安大略 Fishing Zone 17 (FMZ 17)。常见鱼种限制:
+Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（梭鲈／玻璃眼）、bass、northern pike、muskellunge 和 panfish 各有自己的季节、Sport／Conservation 限额和可能的尺寸范围。不要把旧文章中的固定数字当作当年规则，也不要把 walleye 误认成 yellow perch（黄鲈）。
 
-- **Walleye 黄鲈:** 30-46 cm 不可保留,每天 4 条限额
-- **Bass 黑鲈:** 4 条限额,季节性限制
-- **Northern Pike 北方狗鱼:** 4 条限额
-- **Musky 真鲈:** 1 条限额,91 cm 以上才能保留
-
-法规每年都更新。出钓前查 [Ontario fishing regulations](https://www.ontario.ca/page/fishing-regulations) 最新版。
+出钓当天请查 [FMZ 17 当前规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) 和水域例外；拿不准鱼种或尺寸时就放生。
 
 ## 我们在 HBW 看到的常见问题
 
-每年开春第一波 GTA 华人船主来送春化或买二手船时,我们最常发现的合规问题:
+这些是容易混淆、而且可以在出发前解决的问题：
 
-1. **二手船没换 PCL** ， 上一任车主的牌照号还贴在船头。卖家应该取消,买家应该重新申请。两边都常忽略。
-2. **没带钓鱼证就钓鱼** ， 安大略 OPP 在莱斯湖夏季周末常做随机检查。罚款 $100 起。
-3. **救生衣过期或不合规** ， 加拿大认证标签必须完整。从中国带的救生衣不被加拿大法规承认。
+1. **二手船 PCL 没转名。** 买家应把现有牌照转入自己名下，并把文件放在船上。
+2. **把 PCOC、PCL 和钓鱼证当成同一张证。** 一个管操作员、一个识别船、一个管钓鱼资格。
+3. **只数救生衣，不检查尺寸、认可标签和状态。** 每个人都要有合身装备，且所有必备装备必须容易取用。
 
 ## 常见问题
 
-**Q:PCOC 中文考试有吗?** 有。多家在线培训公司提供中文 PCOC 课程和考试。BOATERexam 是常见选择。
+**Q:PCOC 中文考试有吗?** 可用语言由当前认可提供商决定。请查 Transport Canada 认可名单并直接向提供商确认，不要假定每家都有中文课程。
 
 **Q:HBW 可以代办 PCOC 吗?** 不行。PCOC 是 Transport Canada 颁发的个人证件,必须本人申请考试。
 
-**Q:船只 PCL 牌照能不能转给买家?** 不能。PCL 不可转让。买家需在购船后申请新 PCL。卖家应该取消旧 PCL。
+**Q:船只 PCL 牌照能不能转给买家?** 可以。买家应在购船后 30 天内申请转让，PCL 号码跟随船只；卖船本身不是先取消牌照的理由。
 
-**Q:莱斯湖周边哪里能买钓鱼证?** ontario.ca 网上申请最快。Canadian Tire、Walmart 也有线下售点但效率低。
+**Q:哪里能买钓鱼证?** Ontario.ca 的 Fish and Wildlife Licensing Service、参与的 ServiceOntario 地点和 licence issuer 都可以办理；先确认自己是否需要购买 Outdoors Card。
 
-**Q:船上没有 PCOC 罚款多少?** $250 起。如果违反多项 (无 PCOC + 无 PCL + 无救生衣),累加可达 $1000+。
+**Q:没有携带 PCOC 会怎样?** 执法项目和金额可能更新。Transport Canada 当前 Safe Boating Guide 列出未携带合资格操作证明、未为合资格船只办理 PCL，以及安全装备问题的罚款；出发前按当前版本核对。
+
+## 官方来源
+
+- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
+- [Ontario：Fishing licence 资格](https://www.ontario.ca/page/fishing-licence)
+- [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## 联系我们
 
@@ -634,17 +616,17 @@ Transport Canada 强制以下装备 (按船长不同有细微差别):
 
 ## 相关阅读
 
-本主题完整指南:**[GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)**
+本主题完整指南：[GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 
 同系列:
 - [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)
 `,
     faqs: [
-      { question: 'PCOC考试难吗？', answer: '不难。在线学习材料很全面，考试是多选题形式。大多数人第一次就能通过。建议花几个小时学习后参加考试。' },
-      { question: '中国驾照在加拿大可以开船吗？', answer: '不可以。中国没有与PCOC等同的证件。您需要在加拿大重新考取PCOC。好消息是考试很简单，在线即可完成。' },
+      { question: 'PCOC考试难吗？', answer: '认可课程会讲加拿大水上规则、安全装备和紧急处理。难度因人而异，应完成课程并理解内容，不要只为拿卡背答案。' },
+      { question: '中国汽车驾照在加拿大可以开船吗？', answer: '汽车驾照不是加拿大动力休闲船的操作能力证明。如果持有外国海事证书，请向 Transport Canada 确认是否属于合资格证明；否则通过认可提供商取得 PCOC。' },
       { question: '如果安全装备不齐全会怎样？', answer: '加拿大交通部和RCMP/OPP有权在水上检查任何船只。如果安全装备不齐全，可能面临罚款。更重要的是，安全装备关乎生命安全。' },
-      { question: '需要给船买保险吗？', answer: '虽然法律不强制要求，但强烈建议购买。大多数码头要求有保险。责任保险可以保护您免受高额事故赔偿。' },
+      { question: '需要给船买保险吗？', answer: '保险、融资、码头和存放合同的要求会不同。出发前向保险经纪、贷款方和使用的码头确认所需责任范围与证明。' },
     ],
   },
   {

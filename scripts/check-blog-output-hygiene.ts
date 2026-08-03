@@ -299,6 +299,33 @@ const factualCorrectionExpectations: Record<string, RegExp[]> = {
     /harrisboatworks\.ca\/rentals/i,
     /每位可能驾驶的人都必须符合 HBW 的 boat operator licence \/ PCOC 要求/i,
   ],
+  'rice-lake-fishing-guide-toronto-chinese': [
+    /walleye（梭鲈／玻璃眼）/i,
+    /不要把 walleye 和 yellow perch 都翻成“黄鲈”/i,
+    /下水点要先确认/i,
+    /每位驾驶员都必须出示有效 boat operator licence／PCOC 和带照片身份证件/i,
+  ],
+  'ontario-boating-regulations-zh': [
+    /船上安全装备则按船型、船长和使用条件决定/i,
+    /把现有 PCL 转到自己名下/i,
+    /一日 Sport Fishing Licence 不需要 Outdoors Card/i,
+    /不要把 walleye 误认成 yellow perch（黄鲈）/i,
+  ],
+};
+
+const factualCorrectionForbiddenPatterns: Record<string, RegExp[]> = {
+  'rice-lake-fishing-guide-toronto-chinese': [
+    /Walleye（黄鲈）/i,
+    /2 线水泥码头/i,
+    /30-46 cm/i,
+    /这是 Rice Lake 唯一一个你必须知道的危险/i,
+  ],
+  'ontario-boating-regulations-zh': [
+    /PCL 不可转让/i,
+    /Walleye 黄鲈/i,
+    /从中国带的救生衣不被加拿大法规承认/i,
+    /30-46 cm/i,
+  ],
 };
 
 for (const article of contentArticles) {
@@ -406,6 +433,21 @@ for (const [slug, expectations] of Object.entries(factualCorrectionExpectations)
   for (const expectation of expectations) {
     if (!expectation.test(correctionSource)) {
       failures.push(`${slug}: factual correction regressed (${expectation})`);
+    }
+  }
+}
+
+for (const [slug, forbiddenPatterns] of Object.entries(factualCorrectionForbiddenPatterns)) {
+  const article = contentArticles.find((candidate) => candidate.slug === slug);
+  if (!article) continue;
+
+  const correctionSource = [
+    article.content,
+    JSON.stringify(article.faqs || []),
+  ].join('\n');
+  for (const pattern of forbiddenPatterns) {
+    if (pattern.test(correctionSource)) {
+      failures.push(`${slug}: retired factual claim returned (${pattern})`);
     }
   }
 }
