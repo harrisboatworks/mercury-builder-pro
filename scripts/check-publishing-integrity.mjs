@@ -90,6 +90,8 @@ check(
 );
 check(
   /socialImage\?: string/.test(blogArticles) &&
+    /socialImage:\s*a\.socialImage\s*\|\|\s*null/.test(prerenderScript) &&
+    /citations:\s*\(a\.citations\s*\|\|\s*\[\]\)\.map/.test(prerenderScript) &&
     /article\.socialImage \|\| article\.image/.test(prerenderScript) &&
     /Array\.isArray\(article\.citations\)/.test(prerenderScript) &&
     /mercury-oil-capacity-lookup-hbw-social\.png/.test(blogArticles) &&
