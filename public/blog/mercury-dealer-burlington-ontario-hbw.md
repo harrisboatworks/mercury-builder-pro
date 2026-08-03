@@ -149,7 +149,7 @@ About 110 minutes via QEW / 401 and Highway 115. Roughly 160 km depending on you
 
 ### Is there a closer Mercury dealer to Burlington?
 
-Yes - DeWildt Marine in Hamilton / Hagersville is the closest Mercury dealer to Burlington. HBW is the option for customers who specifically want Premier-tier service and transparent online CAD pricing.
+Yes. Burlington-area boaters have closer authorized Mercury options in the Hamilton area. HBW is the Rice Lake option for customers who value Premier-tier Mercury support, an accountable repower process, and transparent online CAD pricing.
 
 ### Can I quote and order remotely?
 
