@@ -276,7 +276,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-100-hour-service-cost-ontario",
     "title": "Mercury 100-Hour Service Cost in Ontario: What's Included (2026)",
-    "description": "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit can include, and how HBW scopes the work.",
+    "description": "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit includes, and when to submit an HBW service request.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -289,7 +289,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does a Mercury 100-hour service cost in Ontario?",
-        "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service so HBW can scope the correct work."
+        "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can…"
       },
       {
         "q": "Is the 100-hour service the same as winterization?",
@@ -307,8 +307,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "spring-commissioning-cost-ontario",
-    "title": "Spring Boat Commissioning Cost in Ontario: What's Included (2026)",
-    "description": "What shapes spring boat commissioning cost in Ontario, what's included after proper winterization, and which deferred repairs can change the scope.",
+    "title": "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)",
+    "description": "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure.",
     "category": "Service",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -321,11 +321,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does spring commissioning cost in Ontario?",
-        "a": "The cost depends on the boat, engine, storage method, work completed in fall, and anything the spring inspection finds. A properly winterized and serviced boat usually needs a smaller startup scope than one with deferred maintenance, stale fuel, battery trouble, or trailer repairs."
+        "a": "At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; the service request confirms the current scope and price."
       },
       {
         "q": "What's included in a spring startup?",
-        "a": "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. It's about an hour on a properly winterized boat."
+        "a": "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check."
       },
       {
         "q": "Do I need spring commissioning if I winterized properly?",

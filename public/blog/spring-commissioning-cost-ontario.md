@@ -7,8 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Spring Boat Commissioning Cost in Ontario: What's Included (2026)"
-description: "What shapes spring boat commissioning cost in Ontario, what's included after proper winterization, and which deferred repairs can change the scope."
+title: "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)"
+description: "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure."
 category: "Service"
 date_published: 2026-07-02
 date_modified: 2026-08-02
@@ -18,9 +18,9 @@ content_type: blog_article
 language: en-CA
 ---
 
-# Spring Boat Commissioning Cost in Ontario: What's Included (2026)
+# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
 
-> What shapes spring boat commissioning cost in Ontario, what's included after proper winterization, and which deferred repairs can change the scope.
+> HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure.
 
 **Category:** Service  
 **Published:** 2026-07-02  
@@ -28,19 +28,33 @@ language: en-CA
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario
 
-# Spring Boat Commissioning Cost in Ontario: What's Included (2026)
+# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
 
-> **Quick answer:** Spring commissioning does not have one honest package price. The boat, engine, storage method, work completed in fall, and anything found during startup all affect the scope. A properly winterized and serviced boat usually needs fewer spring tasks than one carrying deferred maintenance, stale fuel, battery trouble, or trailer repairs.
+> **Quick answer:** At HBW, the standard spring check is **free for our winter-storage customers** and **$99 labour before HST for everyone else**, with parts only when something needs attention. That pricing was verified August 2, 2026 and is confirmed on your service request. A bigger spring invoice usually means the check uncovered deferred service or a repair, not that routine commissioning itself became expensive.
 
-The biggest dividing line is what happened before storage. A boat that was serviced and winterized correctly should arrive in spring with fewer unknowns than one that sat with overdue maintenance or untreated problems.
+The 9,540 figure is real HBW Lightspeed data, with one important noun attached: **jobs**. It is a frozen count of individual spring-labelled service jobs, not 9,540 unique boats, customers, or repair orders. One repair order can carry separate “Spring Check Boat” and “Spring Check Motor” jobs.
 
-This guide explains both timelines: the serviced boat's spring and the deferred-work boat's spring.
+Spring commissioning has a reputation as a big-ticket item. At our shop, the standard check is deliberately small. The bill grows when spring also has to absorb work that could not be completed in fall. This guide separates those two scopes so you can compare the same job, not two invoices that happen to share the word “spring.”
 
 ---
 
 ## Who this is for
 
 You've got a boat coming out of winter storage, at HBW or elsewhere, and you want to know what a launch-ready scope should include. If you're still deciding how to handle fall service, read this alongside the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario); the two visits are connected.
+
+---
+
+## What the 9,540 count actually measures
+
+We rechecked the number against HBW's privacy-safe Lightspeed service-history view on August 2, 2026:
+
+- **Original article snapshot:** 9,540 individual job records labelled for spring work
+- **Unit being counted:** a service job line, not a unique boat, customer, or repair order
+- **Coverage:** matching spring records begin in 2014 and run through the 2026 publishing period
+- **Live recheck:** the view had grown to 9,841 matching job records across 5,195 distinct repair orders
+- **Why the totals differ:** 3,607 repair orders in the current view contain exactly two spring-labelled jobs, commonly separate boat and motor checks
+
+We kept 9,540 in the title because it is the article's original publication snapshot, not a counter that changes every time another spring job closes. The practical lesson comes from the scope inside those records: spring work is routinely split into boat checks, motor checks, startup, and any separate repair the check reveals.
 
 ---
 
@@ -54,7 +68,7 @@ For a boat that was winterized and serviced in fall, spring startup is a wake-up
 - Look over lines, bilge, lights, and safety gear
 - Confirm the fall recommendations line got addressed
 
-The exact checklist depends on the boat and engine. Parts or extra labour enter the scope only when something needs attention, such as a battery at end of life, a fuel-system concern, overdue maintenance, or a trailer problem.
+That standard scope is why the labour stays small: free for HBW winter-storage customers and $99 before HST for everyone else. Parts and extra work enter the bill only when the check finds something that needs attention: a tired battery, a fuel restriction, overdue annual service, or another repair.
 
 The full owner's checklist version, if you want to run it yourself before first launch, is our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist).
 
@@ -62,38 +76,39 @@ The full owner's checklist version, if you want to run it yourself before first 
 
 ## The Two Spring Scopes
 
-| Your fall | Your spring starting point | What can change the scope |
+| Your situation | Your spring looks like | HBW spring cost |
 |---|---|---|
-| Winterized and serviced in fall | Reconnect, inspect, start, warm, and verify | Battery condition, flagged fall recommendations, or newly discovered wear |
-| Winterized only, with maintenance still due | Startup plus the serial-specific scheduled service | Parts and labour required by the overdue interval |
-| Fall preparation was incomplete or unknown | Inspection and diagnosis before launch readiness can be confirmed | Fuel quality, battery condition, freeze damage, corrosion, seized hardware, or trailer repairs |
+| Stored at HBW for winter | Standard spring check | $0 labour + only-as-needed parts |
+| Properly winterized elsewhere | Standard spring check | $99 labour before HST + only-as-needed parts |
+| Annual service left until spring | Spring check + scheduled maintenance | Standard check + the service and parts due |
+| Fall protection was skipped or a fault appears | Diagnosis and repair | Quoted from what the inspection finds |
 
-That third column is where spring horror stories come from: fuel that sat unstabilized for five months, model-specific internal-protection steps that were skipped, and water that froze where it should not have been. None of it is a spring problem; all of it is a fall decision, compounding.
+The expensive column is not a mysterious “commissioning fee.” It is the standard check plus something else: deferred maintenance, stale-fuel work, a battery, corrosion, freeze damage, or a fault that appeared while the boat sat. Calling all of that “spring commissioning” is how a $99 scope turns into a useless comparison.
 
-One more spring reality: May is our busiest month. Boats that need real work in spring wait in the same line as everyone else's launch prep. Fall-serviced boats skip that line, because their spring visit is quick.
+May is not folklore. Across the current Lightspeed history, 3,712 distinct repair orders closed in May, second only to October's 3,773. A routine check moves quickly; a boat that needs real work joins that same first-come, first-served queue.
 
 ---
 
 ## What Moves a Spring Bill Up
 
-Even on well-kept boats, spring can uncover ordinary storage and age-related issues:
+Even on well-kept boats, spring finds things. The usual suspects in our work orders:
 
-- **Batteries.** The number-one spring part. Left connected all winter (parasitic drain), or simply at end of life. Leave it in the boat, disconnected; it'll usually greet you politely in April.
+- **Batteries.** Battery replacements are among the most common spring part lines. A battery left connected can lose charge to parasitic loads; an old battery may simply reach the end of its life. Stored disconnected, a healthy one is more likely to greet you politely in April.
 - **Fuel.** Unstabilized fuel varnishes. Carbureted small motors are the most sensitive; the fix ranges from a filter to a carb cleaning.
 - **Trailer bearings and lights**, if the boat travels. Cheap in April, stranding in June. See the [trailer maintenance guide](/blog/boat-trailer-maintenance-guide-ontario).
-- **The impeller**, when its serial-specific interval or symptoms call for it. Spring is a sensible time to handle scheduled work before the engine is under summer load.
+- **The impeller**, when its model-specific interval or condition calls for it. Our [impeller service-history guide](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and why a weak cooling system should not be “tested” with the first family weekend.
 
 ---
 
 ## What HBW checks before your boat launches
 
-Spring startup at our shop includes starting and warming the engine where the service setup and conditions allow, checking the cooling stream and controls, and recording anything that still needs attention. The purpose is to turn the fall service record and spring inspection into a clear readiness decision, not to promise that every stored boat needs the same checklist.
+Spring startup at our shop is a real check, not an invoice line with a hopeful name: the motor is started, warmed, and checked, and anything we find is written on the repair order. The spring records show why boat and motor checks are often separate jobs. The fall record tells us what was already handled; the spring check tells us what changed while the boat sat.
 
 ---
 
 ## Ready for Launch Day?
 
-Tell HBW what was completed in fall, what has changed over winter, and when you plan to drop the boat off. A clean history makes the spring scope easier to define.
+If you are bringing us a boat, submit the service form about one to two weeks before your intended drop-off. Work is handled first-come, first-served. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -103,18 +118,19 @@ Tell HBW what was completed in fall, what has changed over winter, and when you 
 
 ## Sources
 
-- [Mercury Marine: How to Prepare Your Boat for Spring](https://www.mercurymarine.com/us/en/lifestyle/dockline/spring-commissioning-how-to-ready-your-boat-for-the-water.html)
-- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- HBW Lightspeed service history: original 9,540-job publication snapshot; aggregate recheck August 2, 2026 (9,841 spring-labelled job records across 5,195 distinct repair orders; no customer data used)
+- HBW spring commissioning price and service-intake policy, verified August 2, 2026
+- [Mercury Marine maintenance guidance](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/whats-in-it-for-you) (your serial-specific owner's manual governs your motor)
 
 ## FAQs
 
 ### How much does spring commissioning cost in Ontario?
 
-The cost depends on the boat, engine, storage method, work completed in fall, and anything the spring inspection finds. A properly winterized and serviced boat usually needs a smaller startup scope than one with deferred maintenance, stale fuel, battery trouble, or trailer repairs.
+At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; the service request confirms the current scope and price.
 
 ### What's included in a spring startup?
 
-Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. It's about an hour on a properly winterized boat.
+Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check.
 
 ### Do I need spring commissioning if I winterized properly?
 
@@ -126,11 +142,11 @@ Most of it, yes; our spring checklist walks every step. The shop earns its hour 
 
 ### When should I submit a spring service request?
 
-Submit the HBW service request before your planned drop-off and include the engine serial number, storage history, fall work, and any symptoms. The form is an online check-in, not a reserved appointment, and complete information helps the shop identify the right starting scope.
+HBW reopens April 6 and handles service first-come, first-served. If you are bringing us a boat, complete hbw.wiki/service about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so earlier spring drop-offs leave more time if the check uncovers a repair.
 
-### Why is my neighbour's spring bill huge and mine isn't?
+### Why is my neighbour's spring bill higher than mine?
 
-Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The winterization cost guide shows what the fall side costs; it's the cheaper side.
+The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the winterization cost guide explains that side of the cycle.
 
 ## Related guides
 

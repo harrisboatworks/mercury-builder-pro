@@ -81,6 +81,15 @@ const unsupportedOperationalClaims = [
     pattern:
       /\b(?:(?:Mercury |the )?(?:requires?|mandates?)[^\n.]{0,80}(?:authorized )?dealer install(?:ation)?[^\n.]{0,80}(?:warranty|coverage)|(?:DIY|self)[- ]install(?:ation|ing)?[^\n.]{0,80}(?:voids|invalidates)[^\n.]{0,30}(?:Mercury )?warranty|(?:dealer|authorized dealer)[^\n.]{0,50}(?:must|required to) install[^\n.]{0,50}(?:warranty|coverage)[^\n.]{0,20}(?:valid|void))\b/i,
   },
+  {
+    label: 'rejected 4,160-work-order service claim',
+    pattern: /\b4,160\s+winterize-and-service work orders\b/i,
+  },
+  {
+    label: 'incorrect HBW winterization or storage reservation pressure',
+    pattern:
+      /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot))\b/i,
+  },
 ] as const;
 
 const editorialIntentChecks = [
@@ -96,13 +105,15 @@ const editorialIntentChecks = [
   { slug: 'repower-horsepower-capacity-plate-guide', title: /Choose Repower Horsepower/i, description: /motor weight/i },
   { slug: 'outdoor-boat-storage-shrinkwrap-rice-lake', title: /HBW Outdoor Winter Boat Storage/i, description: /Harris Boat Works/i },
   { slug: 'boat-storage-kawartha-lakes', title: /What to Compare Before Booking/i, description: /Compare outdoor, indoor/i },
+  { slug: 'mercury-100-hour-service-cost-ontario', title: /What's Included/i, description: /when to submit an HBW service request/i },
 ] as const;
 
 const serviceEvidenceSlugs = [
+  // Spring commissioning has its own aggregate methodology note and focused
+  // regression test because its 9,540-job snapshot and $99 scope are verified.
   'milky-gearcase-oil-meaning-cost-ontario',
   'mercury-water-pump-replacement-cost-ontario',
   'mercury-100-hour-service-cost-ontario',
-  'spring-commissioning-cost-ontario',
   'mercury-impeller-replacement-when-they-fail',
   'trailer-boat-toronto-to-rice-lake-guide',
   'mercury-outboard-wont-start-troubleshooting',
@@ -129,6 +140,11 @@ const internalServiceCountPattern =
   /\b\d[\d,]*(?:\.\d+)?(?:[-\s]+[a-z][a-z-]*){0,8}[-\s]+(?:jobs?|work[- ]orders|pressure[- ]tests)\b/gi;
 const internalServiceCountContext =
   /(?:\bour(?: own)? (?:service |repair )?(?:records?|history|system|data|work orders?|shop|service bench|completed)\b|\b(?:HBW|Harris Boat Works)(?:'s)? (?:service )?(?:records?|history|system|data)\b|\brecords?\b|\bhistory\b|\bdataset\b|\bin our system\b|\bcompleted work orders?\b|\blast (?:season|year)\b|\bshow(?:s|ed)?\b|\btaught\b|\breal numbers\b|\bmore than any\b)/i;
+const verifiedInternalServiceCountExceptions: Record<string, RegExp> = {
+  // Aggregate evidence and row grain are documented in
+  // docs/blog-data-methodology/spring-commissioning-2026-08-02.md.
+  'spring-commissioning-cost-ontario': /^(?:9,540|9,841)\b/,
+};
 
 for (const article of blogArticles) {
   const faqs = Array.isArray(article.faqs) ? article.faqs : [];
@@ -171,6 +187,9 @@ for (const article of blogArticles) {
     claimSource,
   ].join('\n');
   for (const match of completeArticleSource.matchAll(internalServiceCountPattern)) {
+    if (verifiedInternalServiceCountExceptions[article.slug]?.test(match[0])) {
+      continue;
+    }
     const start = Math.max(0, (match.index || 0) - 180);
     const end = Math.min(
       completeArticleSource.length,

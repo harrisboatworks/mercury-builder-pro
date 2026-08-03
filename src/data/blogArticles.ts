@@ -1859,7 +1859,7 @@ Tell us the motor, the hours, and the last time anyone was in there.
   {
     slug: "mercury-100-hour-service-cost-ontario",
     title: "Mercury 100-Hour Service Cost in Ontario: What's Included (2026)",
-    description: "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit can include, and how HBW scopes the work.",
+    description: "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit includes, and when to submit an HBW service request.",
     image: "/lovable-uploads/hero-100-hour-service-cost.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
@@ -1869,22 +1869,18 @@ Tell us the motor, the hours, and the last time anyone was in there.
     readTime: "~8 min read",
     keywords: ["mercury 100 hour service cost", "outboard annual service cost ontario", "mercury service cost", "100 hour service what's included", "boat motor service cost ontario"],
     faqs: [
-      { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service so HBW can scope the correct work." },
+      { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service about one to two weeks before your planned drop-off so HBW can scope the right work." },
       { question: "Is the 100-hour service the same as winterization?", answer: "No. They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. The scope varies by engine." },
       { question: "My motor only ran 40 hours this year. Do I still need the service?", answer: "Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone." },
       { question: "What parts get replaced at a typical annual service?", answer: "There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included. HBW scopes the job from the serial number." },
-      { question: "Can I skip a year to save money?", answer: "Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow contaminated gear lubricant, worn anodes, seized hardware, or fuel-system concerns to go unnoticed." },
-      { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Submit hbw.wiki/service with the serial number, hours, symptoms, and requested work. The form is an online check-in, not a reserved appointment." }
+      { question: "Can I skip a year to save money?", answer: "Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed, but the correct interval and parts list come from the Mercury schedule for your motor." },
+      { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Fall work is handled first come, first served; there is no need to reserve winterization or storage capacity. Submit hbw.wiki/service about one to two weeks before drop-off, with mid-November as the practical last call before the December 1 closure." }
     ],
-    content: `# Mercury 100-Hour Service Cost in Ontario: What's Included (2026)
-
-*Last reviewed: 2026-08-02*
-
-> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details through the [HBW service request](https://hbw.wiki/service) so the shop can identify the correct schedule and scope.
+    content: `> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. At HBW, fall work is first come, first served and there is no need to reserve winterization or storage capacity. Submit the [service request](https://hbw.wiki/service) about one to two weeks before your planned drop-off. Mid-November is the practical last call because the marina closes December 1.
 
 Search "100-hour service cost" and you'll get American answers: year-round boating states, different labour rates, different math.
 
-Here's the Ontario version. Many seasonal boaters reach the annual interval before they reach 100 running hours, so scheduled maintenance is often combined with fall winterization. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, but the owner's manual and schedule for your exact engine and serial number control.
+Here's the Ontario version. Many seasonal boaters reach the annual interval before they reach 100 running hours, so the scheduled service is often combined with fall winterization. Your Mercury owner's manual and the schedule for your exact serial number govern the interval and checklist.
 
 That's not a dodge; it's the efficient way to buy it. One appointment, one drain of the same fluids, one bill.
 
@@ -1925,7 +1921,7 @@ A portable tiller and a large multi-cylinder outboard do not share the same oil 
 
 - **The exact engine and serial number.** This identifies the correct Mercury schedule and parts.
 - **What is due.** A routine annual service is different from a longer-interval service or a water-pump job.
-- **What the inspection finds.** Milky gear lubricant, damaged anodes, seized prop hardware, or a fuel-system concern changes the scope only after it is identified.
+- **What the inspection finds.** Milky gear lube, damaged anodes, seized prop hardware, or a fuel-system concern changes the scope only after it is identified.
 - **Whether fall layup is included.** Annual service and winterization overlap, but they are not identical.
 
 HBW scopes the job from the motor details on the [service request](https://hbw.wiki/service). That is more useful than publishing one package price that fits some engines and misleads everyone else.
@@ -1950,7 +1946,7 @@ Ask any shop for an itemized list before comparing prices. A lower quote may sim
 Plenty of owners handle oil and plugs themselves, and our [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) doesn't gatekeep. The fair framing:
 
 - **DIY saves labour** and costs you the correct tools, supplies, disposal, and time.
-- **The shop adds an inspection layer:** the gear-lubricant check, condition notes, and a documented service record.
+- **The shop adds an inspection layer:** the gear-lube check, condition notes, and a documented service record.
 - **The hybrid** many of our customers run: DIY the mid-season oil change, shop the annual fall service. The motor gets professional eyes once a year and you still save.
 
 What we'd skip: DIYing the gearcase or internal-protection procedure if you cannot follow the exact manual. Those are two areas where a small mistake gets expensive.
@@ -1959,22 +1955,24 @@ What we'd skip: DIYing the gearcase or internal-protection procedure if you cann
 
 ## What HBW checks before your motor goes back on the water
 
-Every winterize-and-service at our shop ends with the technician recording recommendations on your file: what is wearing, what to watch, and what may need attention next season. The point is simple: scheduled fall maintenance gives you time to address a developing issue before launch season.
+Every winterize-and-service at our shop ends with the tech recording recommendations on your file: what is wearing, what to watch, and what may need attention next season. The point is simple: scheduled fall maintenance gives you time to address a developing issue before launch season.
 
 ---
 
-## When to Submit an HBW Service Request
+## When Should You Submit an HBW Service Request?
 
-HBW handles fall work first come, first served; there is no need to reserve winterization or storage capacity in late summer. Submit the [service request](https://hbw.wiki/service) with the serial number, hours, requested work, and planned drop-off. The form is an online check-in, not a reserved appointment.
+You do not need to reserve a winterization slot or storage space months ahead. HBW has capacity, and fall work is handled first come, first served.
 
-HBW is closed December 1 to April 1, so do not leave fall service until the end of November. Spring-only service exists, but scheduled maintenance and winterization are often most efficient when the correct scopes are combined.
+The common practice among our customers, and what we recommend, is to complete the [service request](https://hbw.wiki/service) about **one to two weeks before your planned drop-off**. That gives the team the motor details and requested work before the boat arrives without forcing you to predict your last boating day in August.
+
+HBW is closed December 1 to April 1, so **mid-November is the practical last call** for fall winterization and storage intake.
 
 ---
 
 ## Frequently Asked Questions
 
 **How much does a Mercury 100-hour service cost in Ontario?**
-There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details at [hbw.wiki/service](https://hbw.wiki/service) so HBW can scope the correct work.
+There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details at [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before your planned drop-off so HBW can scope the right work.
 
 **Is the 100-hour service the same as winterization?**
 They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. Doing both in one fall appointment can avoid duplicate work.
@@ -1986,16 +1984,16 @@ Possibly. Mercury says most FourStroke outboards require an oil change annually 
 There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included.
 
 **Can I skip a year to save money?**
-Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow contaminated gear lubricant, worn anodes, seized hardware, or fuel-system concerns to go unnoticed.
+Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed.
 
 **Do you service motors bought somewhere else?**
-Yes. HBW services Mercury outboards regardless of where they were purchased. Submit [hbw.wiki/service](https://hbw.wiki/service) with the serial number, hours, symptoms, and requested work. The form is an online check-in, not a reserved appointment.
+Yes. HBW services Mercury outboards regardless of where they were purchased. Fall work is first come, first served, and there is no need to reserve winterization or storage capacity. Submit [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before drop-off.
 
 ---
 
 ## Ready to Book Your Service?
 
-Tell us the motor and the season you want covered, and we'll handle the rest, recommendations line included.
+Tell us the motor, its hours, and the work you want covered. Submit the request one to two weeks before your planned drop-off; for fall work, mid-November is the practical last call.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -2013,13 +2011,15 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
 
 - [Mercury Marine: FourStroke Maintenance](https://www.mercurymarine.com/ca/en/lifestyle/dockline/four-stroke-maintenance)
 - [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- HBW service and storage intake policy, confirmed August 2, 2026
 `
   },
   {
     slug: "spring-commissioning-cost-ontario",
-    title: "Spring Boat Commissioning Cost in Ontario: What's Included (2026)",
-    description: "What shapes spring boat commissioning cost in Ontario, what's included after proper winterization, and which deferred repairs can change the scope.",
+    title: "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)",
+    description: "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure.",
     image: "/lovable-uploads/hero-spring-commissioning-cost.webp",
+    imageAlt: "A technician checking a Mercury 90 outboard beside covered boats in spring",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-08-02",
@@ -2028,28 +2028,42 @@ Tell us the motor and the season you want covered, and we'll handle the rest, re
     readTime: "~7 min read",
     keywords: ["spring commissioning cost", "boat spring startup cost ontario", "de-winterize boat cost", "spring boat service ontario", "boat launch preparation cost"],
     faqs: [
-      { question: "How much does spring commissioning cost in Ontario?", answer: "The cost depends on the boat, engine, storage method, work completed in fall, and anything the spring inspection finds. A properly winterized and serviced boat usually needs a smaller startup scope than one with deferred maintenance, stale fuel, battery trouble, or trailer repairs." },
-      { question: "What's included in a spring startup?", answer: "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. It's about an hour on a properly winterized boat." },
+      { question: "How much does spring commissioning cost in Ontario?", answer: "At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; the service request confirms the current scope and price." },
+      { question: "What's included in a spring startup?", answer: "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check." },
       { question: "Do I need spring commissioning if I winterized properly?", answer: "The fall work is what makes spring cheap, but the startup still matters: batteries, fuel, and rubber parts all age over five months. An hour of checks before your first family outing is how you find the small problem before it becomes the stranded-Saturday problem." },
       { question: "Can I do spring commissioning myself?", answer: "Most of it, yes; our spring checklist walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes." },
-      { question: "When should I submit a spring service request?", answer: "Submit the HBW service request before your planned drop-off and include the engine serial number, storage history, fall work, and any symptoms. The form is an online check-in, not a reserved appointment, and complete information helps the shop identify the right starting scope." },
-      { question: "Why is my neighbour's spring bill huge and mine isn't?", answer: "Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The winterization cost guide shows what the fall side costs; it's the cheaper side." }
+      { question: "When should I submit a spring service request?", answer: "HBW reopens April 6 and handles service first-come, first-served. If you are bringing us a boat, complete hbw.wiki/service about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so earlier spring drop-offs leave more time if the check uncovers a repair." },
+      { question: "Why is my neighbour's spring bill higher than mine?", answer: "The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the winterization cost guide explains that side of the cycle." }
     ],
-    content: `# Spring Boat Commissioning Cost in Ontario: What's Included (2026)
+    content: `# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
 
 *Last reviewed: 2026-08-02*
 
-> **Quick answer:** Spring commissioning does not have one honest package price. The boat, engine, storage method, work completed in fall, and anything found during startup all affect the scope. A properly winterized and serviced boat usually needs fewer spring tasks than one carrying deferred maintenance, stale fuel, battery trouble, or trailer repairs.
+> **Quick answer:** At HBW, the standard spring check is **free for our winter-storage customers** and **$99 labour before HST for everyone else**, with parts only when something needs attention. That pricing was verified August 2, 2026 and is confirmed on your service request. A bigger spring invoice usually means the check uncovered deferred service or a repair, not that routine commissioning itself became expensive.
 
-The biggest dividing line is what happened before storage. A boat that was serviced and winterized correctly should arrive in spring with fewer unknowns than one that sat with overdue maintenance or untreated problems.
+The 9,540 figure is real HBW Lightspeed data, with one important noun attached: **jobs**. It is a frozen count of individual spring-labelled service jobs, not 9,540 unique boats, customers, or repair orders. One repair order can carry separate “Spring Check Boat” and “Spring Check Motor” jobs.
 
-This guide explains both timelines: the serviced boat's spring and the deferred-work boat's spring.
+Spring commissioning has a reputation as a big-ticket item. At our shop, the standard check is deliberately small. The bill grows when spring also has to absorb work that could not be completed in fall. This guide separates those two scopes so you can compare the same job, not two invoices that happen to share the word “spring.”
 
 ---
 
 ## Who this is for
 
 You've got a boat coming out of winter storage, at HBW or elsewhere, and you want to know what a launch-ready scope should include. If you're still deciding how to handle fall service, read this alongside the [100-hour service cost guide](/blog/mercury-100-hour-service-cost-ontario); the two visits are connected.
+
+---
+
+## What the 9,540 count actually measures
+
+We rechecked the number against HBW's privacy-safe Lightspeed service-history view on August 2, 2026:
+
+- **Original article snapshot:** 9,540 individual job records labelled for spring work
+- **Unit being counted:** a service job line, not a unique boat, customer, or repair order
+- **Coverage:** matching spring records begin in 2014 and run through the 2026 publishing period
+- **Live recheck:** the view had grown to 9,841 matching job records across 5,195 distinct repair orders
+- **Why the totals differ:** 3,607 repair orders in the current view contain exactly two spring-labelled jobs, commonly separate boat and motor checks
+
+We kept 9,540 in the title because it is the article's original publication snapshot, not a counter that changes every time another spring job closes. The practical lesson comes from the scope inside those records: spring work is routinely split into boat checks, motor checks, startup, and any separate repair the check reveals.
 
 ---
 
@@ -2063,7 +2077,7 @@ For a boat that was winterized and serviced in fall, spring startup is a wake-up
 - Look over lines, bilge, lights, and safety gear
 - Confirm the fall recommendations line got addressed
 
-The exact checklist depends on the boat and engine. Parts or extra labour enter the scope only when something needs attention, such as a battery at end of life, a fuel-system concern, overdue maintenance, or a trailer problem.
+That standard scope is why the labour stays small: free for HBW winter-storage customers and $99 before HST for everyone else. Parts and extra work enter the bill only when the check finds something that needs attention: a tired battery, a fuel restriction, overdue annual service, or another repair.
 
 The full owner's checklist version, if you want to run it yourself before first launch, is our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist).
 
@@ -2071,42 +2085,43 @@ The full owner's checklist version, if you want to run it yourself before first 
 
 ## The Two Spring Scopes
 
-| Your fall | Your spring starting point | What can change the scope |
+| Your situation | Your spring looks like | HBW spring cost |
 |---|---|---|
-| Winterized and serviced in fall | Reconnect, inspect, start, warm, and verify | Battery condition, flagged fall recommendations, or newly discovered wear |
-| Winterized only, with maintenance still due | Startup plus the serial-specific scheduled service | Parts and labour required by the overdue interval |
-| Fall preparation was incomplete or unknown | Inspection and diagnosis before launch readiness can be confirmed | Fuel quality, battery condition, freeze damage, corrosion, seized hardware, or trailer repairs |
+| Stored at HBW for winter | Standard spring check | $0 labour + only-as-needed parts |
+| Properly winterized elsewhere | Standard spring check | $99 labour before HST + only-as-needed parts |
+| Annual service left until spring | Spring check + scheduled maintenance | Standard check + the service and parts due |
+| Fall protection was skipped or a fault appears | Diagnosis and repair | Quoted from what the inspection finds |
 
-That third column is where spring horror stories come from: fuel that sat unstabilized for five months, model-specific internal-protection steps that were skipped, and water that froze where it should not have been. None of it is a spring problem; all of it is a fall decision, compounding.
+The expensive column is not a mysterious “commissioning fee.” It is the standard check plus something else: deferred maintenance, stale-fuel work, a battery, corrosion, freeze damage, or a fault that appeared while the boat sat. Calling all of that “spring commissioning” is how a $99 scope turns into a useless comparison.
 
-One more spring reality: May is our busiest month. Boats that need real work in spring wait in the same line as everyone else's launch prep. Fall-serviced boats skip that line, because their spring visit is quick.
+May is not folklore. Across the current Lightspeed history, 3,712 distinct repair orders closed in May, second only to October's 3,773. A routine check moves quickly; a boat that needs real work joins that same first-come, first-served queue.
 
 ---
 
 ## What Moves a Spring Bill Up
 
-Even on well-kept boats, spring can uncover ordinary storage and age-related issues:
+Even on well-kept boats, spring finds things. The usual suspects in our work orders:
 
-- **Batteries.** The number-one spring part. Left connected all winter (parasitic drain), or simply at end of life. Leave it in the boat, disconnected; it'll usually greet you politely in April.
+- **Batteries.** Battery replacements are among the most common spring part lines. A battery left connected can lose charge to parasitic loads; an old battery may simply reach the end of its life. Stored disconnected, a healthy one is more likely to greet you politely in April.
 - **Fuel.** Unstabilized fuel varnishes. Carbureted small motors are the most sensitive; the fix ranges from a filter to a carb cleaning.
 - **Trailer bearings and lights**, if the boat travels. Cheap in April, stranding in June. See the [trailer maintenance guide](/blog/boat-trailer-maintenance-guide-ontario).
-- **The impeller**, when its serial-specific interval or symptoms call for it. Spring is a sensible time to handle scheduled work before the engine is under summer load.
+- **The impeller**, when its model-specific interval or condition calls for it. Our [impeller service-history guide](/blog/mercury-impeller-replacement-when-they-fail) explains the warning signs and why a weak cooling system should not be “tested” with the first family weekend.
 
 ---
 
 ## What HBW checks before your boat launches
 
-Spring startup at our shop includes starting and warming the engine where the service setup and conditions allow, checking the cooling stream and controls, and recording anything that still needs attention. The purpose is to turn the fall service record and spring inspection into a clear readiness decision, not to promise that every stored boat needs the same checklist.
+Spring startup at our shop is a real check, not an invoice line with a hopeful name: the motor is started, warmed, and checked, and anything we find is written on the repair order. The spring records show why boat and motor checks are often separate jobs. The fall record tells us what was already handled; the spring check tells us what changed while the boat sat.
 
 ---
 
 ## Frequently Asked Questions
 
 **How much does spring commissioning cost in Ontario?**
-The cost depends on the boat, engine, storage method, work completed in fall, and anything the spring inspection finds. A properly winterized and serviced boat usually needs a smaller startup scope than one with deferred maintenance, stale fuel, battery trouble, or trailer repairs.
+At HBW, the standard spring check is free for our winter-storage customers and $99 labour before HST for everyone else, with parts only as needed. This pricing was verified August 2, 2026; your service request confirms the current scope and price.
 
 **What's included in a spring startup?**
-Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. It's about an hour on a properly winterized boat.
+Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check.
 
 **Do I need spring commissioning if I winterized properly?**
 The fall work is what makes spring cheap, but the startup still matters: batteries, fuel, and rubber parts all age over five months. An hour of checks before your first family outing is how you find the small problem before it becomes the stranded-Saturday problem.
@@ -2115,16 +2130,16 @@ The fall work is what makes spring cheap, but the startup still matters: batteri
 Most of it, yes; our [spring checklist](/blog/spring-outboard-commissioning-checklist) walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes.
 
 **When should I submit a spring service request?**
-Submit the [HBW service request](https://hbw.wiki/service) before your planned drop-off and include the engine serial number, storage history, fall work, and any symptoms. The form is an online check-in, not a reserved appointment, and complete information helps the shop identify the right starting scope.
+HBW reopens April 6 and handles service first-come, first-served. If you are bringing us a boat, complete [hbw.wiki/service](https://hbw.wiki/service) about one to two weeks before your intended drop-off. May is one of our two heaviest service months, so an earlier spring drop-off leaves more time if the check uncovers a repair.
 
-**Why is my neighbour's spring bill huge and mine isn't?**
-Ask what they did in October. Spring bills are mostly fall decisions arriving with interest: unstabilized fuel, skipped model-specific internal-protection steps, and batteries left connected. The [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) shows what the fall side costs; it's the cheaper side.
+**Why is my neighbour's spring bill higher than mine?**
+The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) explains that side of the cycle.
 
 ---
 
 ## Ready for Launch Day?
 
-Tell HBW what was completed in fall, what has changed over winter, and when you plan to drop the boat off. A clean history makes the spring scope easier to define.
+If you are bringing us a boat, submit the service form about one to two weeks before your intended drop-off. Work is handled first-come, first-served. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -2140,8 +2155,9 @@ Tell HBW what was completed in fall, what has changed over winter, and when you 
 
 ## Sources
 
-- [Mercury Marine: How to Prepare Your Boat for Spring](https://www.mercurymarine.com/us/en/lifestyle/dockline/spring-commissioning-how-to-ready-your-boat-for-the-water.html)
-- [Mercury Marine owner manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
+- HBW Lightspeed service history: original 9,540-job publication snapshot; aggregate recheck August 2, 2026 (9,841 spring-labelled job records across 5,195 distinct repair orders; no customer data used)
+- HBW spring commissioning price and service-intake policy, verified August 2, 2026
+- [Mercury Marine maintenance guidance](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/whats-in-it-for-you) (your serial-specific owner's manual governs your motor)
 `
   },
   {
@@ -5008,19 +5024,15 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
-    content: `# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
+    content: `> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, submit hbw.wiki/service about one to two weeks before your planned drop-off; mid-November is the practical last call.
 
-*Last reviewed: 2026-08-02*
-
-> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. Book service at hbw.wiki/service.
-
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service).
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbw.wiki/service).
 
 ## Quick recommendation
 
 Most preventable service problems start with skipped maintenance, old fuel, restricted cooling water, or a storage procedure that did not match the engine. A model-specific schedule costs less than guessing after a warning horn or no-start.
 
-The annual maintenance budget for a typical Mercury repower is small compared with a major repair. The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
+The useful question is not whether the motor has reached a round number. It is which hour-based and calendar-based items are due for the exact serial number.
 
 We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Use the seasonal cycle below to organize the exact work listed in the manual for your motor.
 
@@ -5147,9 +5159,9 @@ For exact intervals on your specific motor model, the Mercury owner's manual is 
 - [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
 
-## Ready to book service?
+## Ready to request service?
 
-Spring service slots fill up in March and April. Fall winterization slots fill in October. Booking early gets you the easier appointment slots and your boat is ready when you want it.
+HBW handles fall winterization and outdoor storage first come, first served. You do not need to reserve capacity. Submit the service request about one to two weeks before your planned drop-off; mid-November is the practical last call because HBW closes December 1.
 
 [**Request Service**](https://hbw.wiki/service)
 
@@ -5163,7 +5175,7 @@ Not sure what your specific motor needs? Put in a service request at [hbw.wiki/s
 
 ---
 
-_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+_Service pricing varies by motor, condition, and work due. HBW confirms the current scope and price from the service request and the exact engine details._
 
 ---
 
