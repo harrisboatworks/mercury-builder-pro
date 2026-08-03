@@ -22,10 +22,10 @@ language: zh-Hant
 
 > 多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：需要帶甚麼證件、HBW 要求的有效 PCOC、租船安全檢查清單、當天到達流程、安省釣魚證，以及從萬錦或士嘉堡前往 Rice Lake 的路線。
 
-**Category:** mandarin  
-**Published:** 2026-06-12  
-**Last updated:** 2026-08-02  
-**Read time:** 8 分鐘  
+**Category:** mandarin
+**Published:** 2026-06-12
+**Last updated:** 2026-08-02
+**Read time:** 8 分鐘
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide
 
 > **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
@@ -74,7 +74,7 @@ language: zh-Hant
 - **官方頁面（含繁體中文版）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
 ::pull-quote
-quote: 我們專門為華人朋友準備了這些中文指南——因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務，不過別擔心——歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。
+quote: 我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。
 ::
 
 ## FAQs
@@ -89,7 +89,7 @@ quote: 我們專門為華人朋友準備了這些中文指南——因為我們�
 
 ### HBW 有中文服務嗎？
 
-我們專門為華人朋友準備了這些中文指南——因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務，不過別擔心——歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。
+我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。
 
 ## Next steps
 

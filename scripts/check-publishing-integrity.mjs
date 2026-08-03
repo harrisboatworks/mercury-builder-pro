@@ -175,6 +175,25 @@ check(
   ),
   'vercel.json must redirect the observed uppercase /REPOWER variant to /repower.',
 );
+for (const [source, destination] of [
+  [
+    '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario',
+    '/blog/zh/gta-chinese-pcl-fishing-licence-guide',
+  ],
+  [
+    '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario.md',
+    '/blog/zh/gta-chinese-pcl-fishing-licence-guide.md',
+  ],
+]) {
+  check(
+    parsedVercelConfig.redirects?.some((redirect) =>
+      redirect.source === source &&
+      redirect.destination === destination &&
+      redirect.statusCode === 301
+    ),
+    `vercel.json must permanently consolidate ${source} into ${destination}.`,
+  );
+}
 for (const loc of [
   '/mercury-product-protection.md',
   '/mercury-product-protection.json',
