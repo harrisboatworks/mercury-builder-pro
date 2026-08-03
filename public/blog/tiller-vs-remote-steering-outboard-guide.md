@@ -198,7 +198,7 @@ Tiller is not harder to learn, it's different. The main adjustment is that tille
 
 ### What's the biggest Mercury motor available in tiller configuration?
 
-Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.
+Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. On a typical 16-18 ft planing aluminum V-hull, HBW starts with the standard gearcase; Command Thrust is for pontoons, workboats, and special displacement or load cases.
 
 ### Can I have both tiller and remote steering on the same outboard motor?
 

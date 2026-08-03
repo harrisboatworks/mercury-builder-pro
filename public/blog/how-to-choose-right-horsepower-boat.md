@@ -72,7 +72,7 @@ Six variables move the right HP for your specific boat:
 
 **Where you launch and run.** Sheltered bays on a small Kawartha lake are different from Lake Ontario open water or a breezy afternoon on Rice Lake. Bigger water punishes underpowering in ways that feel dangerous, not just slow.
 
-**The capacity plate.** This is the legal and warranty-backed ceiling. We will not rig a motor that exceeds it, full stop.
+**The capacity plate or compliance notice.** Treat the labelled engine-power limit as the ceiling. It is the manufacturer or importer's recommended maximum safe engine power, and HBW will not rig above it.
 
 **How long you plan to keep the boat.** If you're keeping this hull for 15 years, a bigger motor makes more sense than if you're planning to sell in three.
 
@@ -164,7 +164,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 **1. Buying too small to save money.** We've watched customers fight a 9.9 HP on a 16-foot boat that needed a 25. They trade up two seasons later at full price. The savings disappear.
 
-**2. Going over the capacity plate.** A 250 HP on a hull rated for 150 HP is illegal, unsafe, and void of warranty. Mercury won't cover it. Your insurance may not either. The motor also outpowers the hull and feels wrong.
+**2. Going over the capacity plate.** A 250 HP motor on a hull labelled for a 150 HP recommended maximum exceeds the manufacturer's safe engine-power limit. That creates serious handling, transom, insurance, financing, resale, liability, and potential warranty problems. It is not accurate to describe every pleasure-craft case as an automatic blanket warranty void or a single automatic offence. Respect the label and confirm the hull manufacturer's rating before choosing power.
 
 **3. Buying for one use and ignoring the rest.** "I just need it for fishing" is fine until your kids want to tube next summer. Think through the full use case before you buy.
 
@@ -215,7 +215,7 @@ Too little horsepower causes your boat to struggle reaching planing speed, espec
 
 ### Can I exceed my boat's maximum HP rating in Canada?
 
-No. You cannot legally or safely exceed the maximum horsepower rating on your boat's capacity plate. In Canada, the capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating to the plate in accordance with those standards. Exceeding the plate rating is illegal. The hull is engineered for that load limit, running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.
+Do not exceed it. Transport Canada describes the labelled engine power as the manufacturer or importer's recommended maximum safe limit. Going above it can stress the transom, affect stability and handling, and create insurance, financing, resale, liability, and potential warranty problems. It is not accurate to call every pleasure-craft case an automatic stand-alone offence, but HBW will not rig above the labelled limit. If the boat feels underpowered at its rated maximum, the solution is a different hull, not more horsepower.
 
 ### What is the right HP for a fishing boat on Rice Lake or Kawartha Lakes?
 
@@ -259,4 +259,3 @@ To pull a tube with one or two riders, most 16-18 ft boats need a minimum of 75 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
