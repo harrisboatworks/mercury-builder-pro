@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   ArrowRight,
   Award,
@@ -27,6 +27,7 @@ import {
   buildMercury99MhFaqs,
   formatMercury99MhCAD,
 } from '@/lib/mercury99MhSaleContent';
+import { getExpressReservationDeposit } from '@/lib/deposit';
 import type { ResolvedMotorAvailability } from '@/lib/motorAvailability';
 
 const PHONE_DISPLAY = '905-342-2153';
@@ -98,9 +99,30 @@ export function Mercury99MHSalePage({
   modelId,
   availability,
 }: Mercury99MHSalePageProps) {
+  const location = useLocation();
   const priceLabel = formatMercury99MhCAD(price);
   const savings = msrp && msrp > price ? msrp - price : null;
-  const quoteUrl = `/quote/motor-selection?motor=${encodeURIComponent(modelId)}`;
+  const incomingParams = new URLSearchParams(location.search);
+  const quoteParams = new URLSearchParams({ motor: modelId });
+  [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_id',
+    'utm_term',
+    'utm_content',
+    'gclid',
+    'gbraid',
+    'wbraid',
+  ].forEach((key) => {
+    const value = incomingParams.get(key);
+    if (value) quoteParams.set(key, value);
+  });
+  const quoteUrl = `/quote/motor-selection?${quoteParams.toString()}`;
+  const motorOnlyParams = new URLSearchParams(quoteParams);
+  motorOnlyParams.set('intent', 'motor-only');
+  const motorOnlyUrl = `/quote/motor-selection?${motorOnlyParams.toString()}`;
+  const depositAmount = getExpressReservationDeposit(9.9);
   const faqs = buildMercury99MhFaqs(price, availability);
   const availabilityPillClass = availability.inStock
     ? 'border-emerald-600/20 bg-emerald-50 text-emerald-800'
@@ -190,11 +212,11 @@ export function Mercury99MHSalePage({
                         className="h-13 min-h-[52px] flex-1 bg-repower-mercury-red px-5 text-sm font-bold text-white shadow-[0_14px_36px_rgba(200,16,46,0.32)] hover:bg-repower-mercury-red-deep"
                       >
                         <Link
-                          to={quoteUrl}
-                          data-cta="quote-start"
+                          to={motorOnlyUrl}
+                          data-cta="motor-only-buy"
                           data-cta-location="mercury_9_9_mh_sale_hero"
                         >
-                          Get My {priceLabel} Quote
+                          Reserve Your 9.9 — ${depositAmount.toLocaleString()}
                           <ArrowRight className="h-5 w-5" />
                         </Link>
                       </Button>
@@ -215,6 +237,21 @@ export function Mercury99MHSalePage({
                         </a>
                       </Button>
                     </div>
+                    <p className="mt-3 text-xs leading-relaxed text-white/65">
+                      Skip installation and options. Review the motor-only total, then secure this model with a ${depositAmount.toLocaleString()} reservation deposit.
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-white/80">
+                      Fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, the deposit becomes non-refundable and is credited to your final invoice.
+                    </p>
+                    <Link
+                      to={quoteUrl}
+                      data-cta="quote-start"
+                      data-cta-location="mercury_9_9_mh_sale_hero_custom"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-white/80 underline decoration-white/35 underline-offset-4 hover:text-white"
+                    >
+                      Need installation or options? Build a custom quote
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
                   </div>
                 </div>
 
@@ -264,7 +301,7 @@ export function Mercury99MHSalePage({
                 [Award, 'Dealer since 1965', 'Family-owned since 1947'],
                 [BadgeDollarSign, 'Published CAD price', 'Written quote confirmed'],
                 [MapPin, 'Ontario pickup', 'Gores Landing'],
-              ].map(([Icon, title, detail]) => (
+              ].map(([Icon, title, detail]: [typeof ShieldCheck, string, string]) => (
                 <div key={String(title)} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.045] px-4 py-3">
                   <Icon className="h-5 w-5 shrink-0 text-repower-gold" />
                   <div>
@@ -501,18 +538,29 @@ export function Mercury99MHSalePage({
                 <MapPin className="h-4 w-4" /> Gores Landing, Ontario
               </div>
               <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.025em] md:text-5xl">
-                Put the {priceLabel} 9.9 MH on your quote
+                Reserve the {priceLabel} 9.9 MH for ${depositAmount.toLocaleString()}
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
-                Select this exact model online, or call us to confirm ETA and make sure the 15-inch shaft is right for your boat.
+                Jump straight to a motor-only total and reserve this exact model with a ${depositAmount.toLocaleString()} deposit. HBW confirms ETA before anything is ordered.
+              </p>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85">
+                The ${depositAmount.toLocaleString()} deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
               <Button asChild size="lg" className="min-h-[52px] bg-white px-7 font-bold text-repower-mercury-red hover:bg-white/90">
-                <Link to={quoteUrl} data-cta="quote-start" data-cta-location="mercury_9_9_mh_sale_bottom">
-                  Build My Quote <ArrowRight className="h-5 w-5" />
+                <Link to={motorOnlyUrl} data-cta="motor-only-buy" data-cta-location="mercury_9_9_mh_sale_bottom">
+                  Reserve Your 9.9 — ${depositAmount.toLocaleString()} <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
+              <Link
+                to={quoteUrl}
+                data-cta="quote-start"
+                data-cta-location="mercury_9_9_mh_sale_bottom_custom"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-md border border-white/35 px-6 text-sm font-bold text-white transition-colors hover:bg-white/10"
+              >
+                Build Custom Quote <ArrowRight className="h-4 w-4" />
+              </Link>
               <a
                 href={PHONE_HREF}
                 data-cta="phone"
@@ -533,8 +581,8 @@ export function Mercury99MHSalePage({
             <div className="font-display text-xl font-bold tracking-[-0.02em] text-repower-navy-900">{priceLabel} <span className="text-[10px] font-sans tracking-normal text-repower-navy-900/45">CAD</span></div>
           </div>
           <Button asChild size="sm" className="min-h-[44px] bg-repower-mercury-red px-4 font-bold text-white hover:bg-repower-mercury-red-deep">
-            <Link to={quoteUrl} data-cta="quote-start" data-cta-location="mercury_9_9_mh_sale_mobile_sticky">
-              Build Quote <ArrowRight className="h-4 w-4" />
+            <Link to={motorOnlyUrl} data-cta="motor-only-buy" data-cta-location="mercury_9_9_mh_sale_mobile_sticky">
+              Reserve — ${depositAmount.toLocaleString()} <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
           <a
