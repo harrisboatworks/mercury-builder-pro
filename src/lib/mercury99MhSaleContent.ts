@@ -1,3 +1,5 @@
+import type { ResolvedMotorAvailability } from '@/lib/motorAvailability';
+
 export const MERCURY_99_MH_PRICE_REVIEW_DATE = 'August 3, 2026';
 
 export type Mercury99MhFaq = {
@@ -13,7 +15,10 @@ export function formatMercury99MhCAD(value: number): string {
   }).format(value);
 }
 
-export function buildMercury99MhFaqs(price: number): Mercury99MhFaq[] {
+export function buildMercury99MhFaqs(
+  price: number,
+  availability: ResolvedMotorAvailability,
+): Mercury99MhFaq[] {
   const priceLabel = formatMercury99MhCAD(price);
   return [
     {
@@ -34,7 +39,7 @@ export function buildMercury99MhFaqs(price: number): Mercury99MhFaq[] {
     },
     {
       question: 'Is the Mercury 9.9 MH in stock?',
-      answer: 'It is available to order. Call or build a quote to confirm the current ETA before travelling to Gores Landing.',
+      answer: availability.faqAnswer,
     },
     {
       question: 'Can Harris Boat Works ship this motor?',

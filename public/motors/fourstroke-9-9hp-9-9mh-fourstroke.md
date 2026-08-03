@@ -20,7 +20,7 @@ price_cad: 2999
 
 **Ontario Price Leader: $2,999 CAD before HST.**
 
-New Mercury 9.9 MH FourStroke, exact model 1A10201LK. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. Available to order from Harris Boat Works in Gores Landing, Ontario.
+New Mercury 9.9 MH FourStroke, exact model 1A10201LK. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. Available to order at Harris Boat Works in Gores Landing, Ontario.
 
 ## Ontario price evidence
 
@@ -57,7 +57,7 @@ Current Harris Boat Works pricing source: https://www.mercuryrepower.ca/pricing-
 
 ## Availability and pickup
 
-- **Status:** Available to order; confirm the current ETA before travelling.
+- **Status:** Available to order. Confirm the current ETA before travelling.
 - **Pickup:** Required at Harris Boat Works in Gores Landing, Ontario, by the buyer in person with valid government photo ID.
 - **Shipping:** Not offered. Harris Boat Works does not deliver outboards or release them to couriers or third parties.
 

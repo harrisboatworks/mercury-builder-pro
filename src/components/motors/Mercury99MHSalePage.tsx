@@ -27,6 +27,7 @@ import {
   buildMercury99MhFaqs,
   formatMercury99MhCAD,
 } from '@/lib/mercury99MhSaleContent';
+import type { ResolvedMotorAvailability } from '@/lib/motorAvailability';
 
 const PHONE_DISPLAY = '905-342-2153';
 const PHONE_HREF = 'tel:+19053422153';
@@ -37,6 +38,7 @@ interface Mercury99MHSalePageProps {
   msrp: number | null;
   image: string;
   modelId: string;
+  availability: ResolvedMotorAvailability;
 }
 
 const INCLUDED = [
@@ -45,13 +47,6 @@ const INCLUDED = [
   '12-litre remote fuel tank',
   '3-year Mercury factory warranty',
   'Dealer pickup walkthrough and warranty registration',
-];
-
-const BEFORE_YOU_BUY = [
-  'Price is in Canadian dollars before HST',
-  'Installation, rigging, controls, and optional accessories are extra',
-  'Available to order; confirm the current ETA before travelling',
-  'Pickup only in Gores Landing, Ontario; no shipping or courier release',
 ];
 
 const FEATURE_CARDS = [
@@ -101,11 +96,18 @@ export function Mercury99MHSalePage({
   msrp,
   image,
   modelId,
+  availability,
 }: Mercury99MHSalePageProps) {
   const priceLabel = formatMercury99MhCAD(price);
   const savings = msrp && msrp > price ? msrp - price : null;
   const quoteUrl = `/quote/motor-selection?motor=${encodeURIComponent(modelId)}`;
-  const faqs = buildMercury99MhFaqs(price);
+  const faqs = buildMercury99MhFaqs(price, availability);
+  const beforeYouBuy = [
+    'Price is in Canadian dollars before HST',
+    'Installation, rigging, controls, and optional accessories are extra',
+    availability.detail,
+    'Pickup only in Gores Landing, Ontario; no shipping or courier release',
+  ];
 
   return (
     <>
@@ -206,7 +208,7 @@ export function Mercury99MHSalePage({
                 </div>
 
                 <div className="mt-7 flex flex-wrap gap-2 text-xs font-semibold text-white/85 sm:text-sm">
-                  {['Manual start', '15-inch shaft', 'Tiller control', 'Available to order'].map((item) => (
+                  {['Manual start', '15-inch shaft', 'Tiller control', availability.label].map((item) => (
                     <span key={item} className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5">
                       {item}
                     </span>
@@ -300,7 +302,7 @@ export function Mercury99MHSalePage({
                 <h3 className="font-display text-2xl font-bold text-repower-navy-900">Before you buy</h3>
               </div>
               <ul className="space-y-3">
-                {BEFORE_YOU_BUY.map((item) => (
+                {beforeYouBuy.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-repower-navy-900/70 md:text-base">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-repower-mercury-red" />
                     <span>{item}</span>

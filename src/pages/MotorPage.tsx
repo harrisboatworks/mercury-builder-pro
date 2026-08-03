@@ -17,6 +17,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { MotorPageSEO } from '@/components/seo/MotorPageSEO';
 import { Mercury99MHSalePage } from '@/components/motors/Mercury99MHSalePage';
 import { buildMercury99MhFaqs } from '@/lib/mercury99MhSaleContent';
+import { resolveMotorAvailability } from '@/lib/motorAvailability';
 import { SITE_URL } from '@/lib/site';
 import speedboatFallback from '@/assets/speedboat-transparent.png';
 
@@ -81,6 +82,7 @@ interface PublicMotorApiRecord {
   sellingPrice: number | null;
   availability: string | null;
   inStock: boolean | null;
+  stockQuantity?: number | null;
   imageUrl: string | null;
 }
 
@@ -243,6 +245,7 @@ export default function MotorPage() {
                 manual_overrides: null,
                 availability: match.availability,
                 in_stock: match.inStock,
+                stock_quantity: match.stockQuantity ?? null,
                 hero_media_id: null,
                 hero_image_url: match.imageUrl,
                 image_url: match.imageUrl,
@@ -320,9 +323,10 @@ export default function MotorPage() {
 
   if (isMercury99MhSale) {
     const savings = motor.msrp && motor.msrp > price ? motor.msrp - price : null;
+    const saleAvailability = resolveMotorAvailability(motor);
     const saleTitle = `Mercury 9.9 MH Sale Ontario | ${formatCAD(price)} CAD | Harris Boat Works`;
-    const saleDescription = `Ontario price leader: Mercury 9.9 MH FourStroke model 1A10201LK for ${formatCAD(price)} CAD${savings ? `, save ${formatCAD(savings)} from MSRP` : ''}. Manual start, tiller, 15-inch shaft, battery-free EFI. Available to order. Pickup in Gores Landing, Ontario.`;
-    const faqs = buildMercury99MhFaqs(price);
+    const saleDescription = `Ontario price leader: Mercury 9.9 MH FourStroke model 1A10201LK for ${formatCAD(price)} CAD${savings ? `, save ${formatCAD(savings)} from MSRP` : ''}. Manual start, tiller, 15-inch shaft, battery-free EFI. ${saleAvailability.label}. Pickup in Gores Landing, Ontario.`;
+    const faqs = buildMercury99MhFaqs(price, saleAvailability);
     const faqSchema = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -364,8 +368,8 @@ export default function MotorPage() {
           modelNumber="1A10201LK"
           image={schemaImage}
           priceCAD={price}
-          inStock={false}
-          offerAvailability="PreOrder"
+          inStock={saleAvailability.inStock}
+          offerAvailability={saleAvailability.schemaAvailability}
           priceValidUntil={null}
           url={pageUrl}
         />
@@ -375,6 +379,7 @@ export default function MotorPage() {
           msrp={motor.msrp}
           image={image}
           modelId={motor.id}
+          availability={saleAvailability}
         />
       </>
     );
