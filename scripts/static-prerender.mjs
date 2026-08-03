@@ -2210,15 +2210,15 @@ const LINEUP_LANDING_CONFIGS = [
     title: 'Mercury 9.9, 15 & 20 HP Portable Price Canada | HBW',
     description: 'Mercury 9.9, 15 and 20 HP portable outboards with live CAD pricing. Tiller or remote, short or long shaft. Rice Lake Mercury dealer since 1965.',
     h1: 'Mercury 9.9 to 20 HP Portable Outboard Prices in Canada',
-    intro: 'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $3,553 CAD at Harris Boat Works, real prices listed, stock on the floor.',
+    intro: 'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $2,999 CAD at Harris Boat Works, with real prices and model-specific availability.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/uploads/2025-09-22T00-14-12-050Z-Mercury-Marine-9-9HP-Rear-3-4-Port-Short-TillerUp-1718214770881%20(1).jpg',
     productName: 'Mercury 9.9 to 20 HP Portable Outboards',
     productDescription: 'Mercury 9.9, 15, and 20 HP portable and kicker FourStroke outboards. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
-    tableCaption: 'Mercury 9.9 to 20 HP prices: portable and kicker FourStrokes (CAD, May 2026)',
-    tableNote: 'Prices in CAD, current as of May 2026, confirm in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, and a starting battery on electric-start models are not included.',
+    tableCaption: 'Mercury 9.9 to 20 HP prices: portable and kicker FourStrokes (CAD)',
+    tableNote: 'Prices in CAD; confirm current pricing and model-specific availability in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, and a starting battery on electric-start models are not included.',
     configColLabel: 'Start and shaft',
     variants: [
-      { name: '9.9 MH FourStroke', hp: '9.9', config: 'Manual start, 15-inch tiller', msrp: 3875, hbwPrice: 3553, availability: 'InStock', availabilityLabel: 'In stock' },
+      { name: '9.9 MH FourStroke', hp: '9.9', config: 'Manual start, 15-inch tiller', msrp: 3860, hbwPrice: 2999, availability: 'BackOrder', availabilityLabel: 'Available to order' },
       { name: '9.9 ELH FourStroke', hp: '9.9', config: 'Electric start, 20-inch tiller', msrp: 4435, hbwPrice: 4065, availability: 'InStock', availabilityLabel: 'In stock' },
       { name: '9.9 ELHPT Command Thrust ProKicker', hp: '9.9', config: 'Electric, power trim, 20-inch tiller', msrp: 5455, hbwPrice: 5000, availability: 'BackOrder', availabilityLabel: 'To order' },
       { name: '15 MH FourStroke', hp: '15', config: 'Manual start, 15-inch tiller', msrp: 4225, hbwPrice: 3872, availability: 'InStock', availabilityLabel: 'In stock' },
@@ -2234,11 +2234,11 @@ const LINEUP_LANDING_CONFIGS = [
       'Shaft length: a 15-inch (short) shaft suits low transoms, a 20-inch (long) shaft suits standard transoms. Match your transom, or match the motor you are replacing.',
     ],
     faq: [
-      { question: 'What does a Mercury 9.9 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 9.9 HP FourStroke starts at $3,553 CAD for the manual-start 9.9 MH and runs to about $5,000 for the 9.9 Command Thrust ProKicker with electric start and power trim. Prices are CAD, as of May 2026.' },
+      { question: 'What does a Mercury 9.9 HP outboard cost in Canada?', answer: 'At Harris Boat Works, the manual-start 9.9 MH is on sale for $2,999 CAD before HST. Other configurations are priced separately. Confirm the current written quote and model-specific availability before travelling.' },
       { question: 'What is a Mercury ProKicker?', answer: 'A ProKicker is a kicker motor purpose-built for trolling: a Command Thrust gearcase for low-speed thrust, power trim, and wiring that ties into the main motor\u2019s controls. It costs more than a plain portable but it is the right tool when the small motor\u2019s job is trolling a heavier boat.' },
       { question: 'Should I get a 9.9 or a 15 HP kicker?', answer: 'For most trolling use the 9.9 is plenty and is the lighter, simpler choice. Step to the 15 if you are pushing a heavier boat or want a bit more reserve. Tell us your boat and how you fish and we will point you straight.' },
       { question: 'Manual or electric start?', answer: 'Manual start is lighter, simpler, and cheaper. Electric start is worth it if you start the motor often, fish in the cold, or just want the convenience. Both are reliable.' },
-      { question: 'Are these portables in stock?', answer: 'Several of the 9.9, 15, and 20 HP FourStrokes are in stock at Gores Landing, and the ProKicker variants we bring in to order. Confirm current availability in the quote builder.' },
+      { question: 'Are these portables in stock?', answer: 'Availability varies by exact model. The 9.9 MH is currently available to order. Confirm the latest quantity or ETA in the quote builder before travelling to Gores Landing.' },
     ],
     finalCtaHeading: 'Build your portable Mercury quote in two minutes',
   },
@@ -3378,7 +3378,6 @@ function isVerifiedMotorImage(url) {
 }
 
 const MERCURY_99_MH_MODEL_NO = '1A10201LK';
-const MERCURY_99_MH_PRICE_REVIEW_DATE = 'August 3, 2026';
 const MERCURY_99_MH_ALTERNATE_NAMES = [
   'Mercury 9.9',
   'Mercury 9.9 outboard',
@@ -3434,8 +3433,8 @@ function mercury99MhSaleFaqs(price, availability) {
       answer: `${priceLabel} CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
     },
     {
-      question: 'Is this the lowest advertised Mercury 9.9 MH price in Ontario?',
-      answer: `At ${priceLabel} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change, so confirm the current written quote before travelling.`,
+      question: 'Why is this Mercury 9.9 MH a special Ontario sale price?',
+      answer: `The exact model is ${priceLabel} CAD before HST, which is $861 below the $3,860 Mercury MSRP. Advertised prices and availability change, so confirm the current written quote before travelling.`,
     },
     {
       question: 'Where can I buy a new Mercury 9.9 outboard for sale in Ontario?',
@@ -3447,11 +3446,11 @@ function mercury99MhSaleFaqs(price, availability) {
     },
     {
       question: 'Does the Mercury 9.9 MH have EFI, and what does it weigh?',
-      answer: 'Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and an approximate dry weight of 85 lb for this manual-start, short-shaft tiller configuration.',
+      answer: 'Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and a dry weight of 88 lb for this manual-start, short-shaft tiller configuration.',
     },
     {
       question: 'What comes with the motor?',
-      answer: 'The motor package includes the standard 8.5-pitch propeller, a 12-litre remote fuel tank, and the applicable 3-year Mercury factory warranty. Harris Boat Works completes the warranty registration at pickup.',
+      answer: 'The motor package includes a standard 3-blade aluminum propeller, a 12-litre remote fuel tank, and the applicable Mercury limited warranty, including 3 years for eligible pleasure use. Harris Boat Works completes the warranty registration at pickup.',
     },
     {
       question: 'Is the Mercury 9.9 MH in stock?',
@@ -3592,13 +3591,13 @@ function mercury99MhSaleNoscript(m, price) {
   return (
     `<section aria-labelledby="sale-summary"><h2 id="sale-summary">Mercury 9.9 Outboard Price in Ontario: ${escapeHtml(priceStr)} CAD</h2>` +
     `<p><strong>Special sale price: ${escapeHtml(priceStr)} CAD</strong>${msrp ? ` (MSRP ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(msrp))}; save ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings))}).` : '.'} Price is before HST.</p>` +
-    `<p>At ${escapeHtml(priceStr)} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.</p>` +
+    `<p>Exact model 1A10201LK is ${escapeHtml(priceStr)} CAD before HST${savings ? `, saving ${escapeHtml(new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(savings))} from Mercury MSRP` : ''}. Confirm the current written quote and ETA before travelling.</p>` +
     `<p>Manual start, tiller control, 15-inch short shaft, battery-free EFI, two-cylinder 209cc FourStroke. ${escapeHtml(availability.label)} at Harris Boat Works in Gores Landing, Ontario.</p>` +
     '<h2>Included with the motor</h2><ul>' +
     '<li>Mercury 9.9 MH FourStroke, model 1A10201LK</li>' +
-    '<li>Standard 8.5-pitch propeller</li>' +
+    '<li>Standard 3-blade aluminum propeller</li>' +
     '<li>12-litre remote fuel tank</li>' +
-    '<li>3-year Mercury factory warranty</li>' +
+    '<li>Applicable Mercury limited warranty (3 years for eligible pleasure use)</li>' +
     '<li>Dealer pickup walkthrough and warranty registration</li>' +
     '</ul>' +
     '<h2>Before you buy</h2><ul>' +
@@ -6365,13 +6364,13 @@ function motorMarkdown(m) {
       front,
       '# Mercury 9.9 MH FourStroke Outboard for Sale in Ontario',
       '',
-      `**Ontario Price Leader: ${priceStr} CAD before HST.**`,
+      `**Special Ontario sale price: ${priceStr} CAD before HST.**`,
       '',
       `New Mercury 9.9 MH FourStroke, exact model ${MERCURY_99_MH_MODEL_NO}. Manual start, tiller control, 15-inch short shaft, and battery-free EFI. ${saleAvailability.label} at Harris Boat Works in Gores Landing, Ontario.`,
       '',
       `## Mercury 9.9 outboard price in Ontario: ${priceStr} CAD`,
       '',
-      `At ${priceStr} CAD, this was the lowest advertised new Ontario dealer price we found for exact model ${MERCURY_99_MH_MODEL_NO} in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.`,
+      `Exact model ${MERCURY_99_MH_MODEL_NO} is ${priceStr} CAD before HST${savingsStr ? `, saving ${savingsStr} CAD from the ${msrpStr} CAD Mercury MSRP` : ''}. Confirm the current written quote and ETA before travelling.`,
       `Current Harris Boat Works pricing source: ${SITE_URL}/pricing-reference`,
       '',
       '## Sale price',
@@ -6393,13 +6392,13 @@ function motorMarkdown(m) {
       '- **Starting:** Manual; EFI can operate without a starting battery',
       '- **Control:** Tiller',
       '- **Shaft:** 15-inch short shaft',
-      '- **Approximate dry weight:** 85 lb for this configuration',
+      '- **Dry weight:** 88 lb for this exact configuration',
       '',
       '## Included with the motor',
       '',
-      '- Standard 8.5-pitch propeller',
+      '- Standard 3-blade aluminum propeller',
       '- 12-litre remote fuel tank',
-      '- Applicable 3-year Mercury factory warranty',
+      '- Applicable Mercury limited warranty (3 years for eligible pleasure use)',
       '- Dealer pickup walkthrough and warranty registration',
       '',
       '## Availability and pickup',

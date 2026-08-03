@@ -90,7 +90,7 @@ export const PORTABLE_9_20HP: LandingConfig = {
   modelColLabel: 'Model',
   configColLabel: 'Start and shaft',
   variants: [
-    { name: '9.9 MH FourStroke', hp: '9.9', config: 'Manual start, 15-inch tiller', msrp: 3860, hbwPrice: 2999, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A10201LK' },
+    { name: '9.9 MH FourStroke', hp: '9.9', config: 'Manual start, 15-inch tiller', msrp: 3860, hbwPrice: 2999, availability: 'BackOrder', availabilityLabel: 'Available to order', sku: '1A10201LK' },
     { name: '9.9 ELH FourStroke', hp: '9.9', config: 'Electric start, 20-inch tiller', msrp: 4420, hbwPrice: 3399, availability: 'InStock', availabilityLabel: 'In stock', sku: '1A10311LK' },
     { name: '9.9 ELHPT Command Thrust ProKicker', hp: '9.9', config: 'Electric, power trim, 20-inch tiller', msrp: 5430, hbwPrice: 5099, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1A10451LK' },
     { name: '15 MH FourStroke', hp: '15', config: 'Manual start, 15-inch tiller', msrp: 4230, hbwPrice: 3971, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1A15201LK' },

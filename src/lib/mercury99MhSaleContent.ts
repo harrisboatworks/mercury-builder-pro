@@ -1,7 +1,5 @@
 import type { ResolvedMotorAvailability } from '@/lib/motorAvailability';
 
-export const MERCURY_99_MH_PRICE_REVIEW_DATE = 'August 3, 2026';
-
 export const MERCURY_99_MH_ALTERNATE_NAMES = [
   'Mercury 9.9',
   'Mercury 9.9 outboard',
@@ -35,8 +33,8 @@ export function buildMercury99MhFaqs(
       answer: `${priceLabel} CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
     },
     {
-      question: 'Is this the lowest advertised Mercury 9.9 MH price in Ontario?',
-      answer: `At ${priceLabel} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our ${MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change, so confirm the current written quote before travelling.`,
+      question: 'Why is this Mercury 9.9 MH a special Ontario sale price?',
+      answer: `The exact model is ${priceLabel} CAD before HST, which is $861 below the $3,860 Mercury MSRP. Advertised prices and availability change, so confirm the current written quote before travelling.`,
     },
     {
       question: 'Where can I buy a new Mercury 9.9 outboard for sale in Ontario?',
@@ -48,11 +46,11 @@ export function buildMercury99MhFaqs(
     },
     {
       question: 'Does the Mercury 9.9 MH have EFI, and what does it weigh?',
-      answer: 'Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and an approximate dry weight of 85 lb for this manual-start, short-shaft tiller configuration.',
+      answer: 'Yes. Model 1A10201LK has battery-free electronic fuel injection (EFI) and a dry weight of 88 lb for this manual-start, short-shaft tiller configuration.',
     },
     {
       question: 'What comes with the motor?',
-      answer: 'The motor package includes the standard 8.5-pitch propeller, a 12-litre remote fuel tank, and the applicable 3-year Mercury factory warranty. Harris Boat Works completes the warranty registration at pickup.',
+      answer: 'The motor package includes a standard 3-blade aluminum propeller, a 12-litre remote fuel tank, and the applicable Mercury limited warranty, including 3 years for eligible pleasure use. Harris Boat Works completes the warranty registration at pickup.',
     },
     {
       question: 'Is the Mercury 9.9 MH in stock?',

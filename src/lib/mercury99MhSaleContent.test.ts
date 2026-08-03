@@ -18,7 +18,7 @@ describe('Mercury 9.9 MH search-intent content', () => {
     expect(searchableCopy).toContain('How much is a new Mercury 9.9 outboard in Ontario?');
     expect(searchableCopy).toContain('Mercury 9.9 outboard for sale in Ontario');
     expect(searchableCopy).toContain('battery-free electronic fuel injection (EFI)');
-    expect(searchableCopy).toContain('approximate dry weight of 85 lb');
+    expect(searchableCopy).toContain('dry weight of 88 lb');
     expect(searchableCopy).toContain('available to order');
   });
 

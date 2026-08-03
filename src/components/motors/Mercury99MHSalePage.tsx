@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
+  Award,
   BadgeDollarSign,
   Check,
   CircleGauge,
@@ -23,7 +24,6 @@ import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import {
-  MERCURY_99_MH_PRICE_REVIEW_DATE,
   buildMercury99MhFaqs,
   formatMercury99MhCAD,
 } from '@/lib/mercury99MhSaleContent';
@@ -43,9 +43,9 @@ interface Mercury99MHSalePageProps {
 
 const INCLUDED = [
   'Mercury 9.9 MH FourStroke, model 1A10201LK',
-  'Standard 8.5-pitch propeller',
+  'Standard 3-blade aluminum propeller',
   '12-litre remote fuel tank',
-  '3-year Mercury factory warranty',
+  'Applicable Mercury limited warranty (3 years for eligible pleasure use)',
   'Dealer pickup walkthrough and warranty registration',
 ];
 
@@ -63,7 +63,7 @@ const FEATURE_CARDS = [
   {
     icon: CircleGauge,
     title: 'Two-cylinder 209cc power',
-    body: 'Smooth Mercury FourStroke power in an approximately 85 lb dry-weight platform for this configuration.',
+    body: 'Smooth Mercury FourStroke power in an 88 lb dry-weight platform for this exact configuration.',
   },
   {
     icon: PackageCheck,
@@ -102,6 +102,9 @@ export function Mercury99MHSalePage({
   const savings = msrp && msrp > price ? msrp - price : null;
   const quoteUrl = `/quote/motor-selection?motor=${encodeURIComponent(modelId)}`;
   const faqs = buildMercury99MhFaqs(price, availability);
+  const availabilityPillClass = availability.inStock
+    ? 'border-emerald-600/20 bg-emerald-50 text-emerald-800'
+    : 'border-amber-500/25 bg-amber-50 text-amber-900';
   const beforeYouBuy = [
     'Price is in Canadian dollars before HST',
     'Installation, rigging, controls, and optional accessories are extra',
@@ -111,7 +114,7 @@ export function Mercury99MHSalePage({
 
   return (
     <>
-      <article className="min-h-screen bg-repower-paper text-repower-navy-900">
+      <article className="min-h-screen bg-repower-paper pb-[76px] text-repower-navy-900 lg:pb-0">
         <RepowerHeader />
         <div className="pt-[64px] lg:pt-[72px]" />
 
@@ -126,8 +129,8 @@ export function Mercury99MHSalePage({
           />
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
 
-          <div className="relative mx-auto max-w-[1180px] px-5 py-8 md:px-10 md:py-14 lg:px-12 lg:py-20">
-            <nav aria-label="Breadcrumb" className="mb-8 text-xs font-medium text-white/55 md:text-sm">
+          <div className="relative mx-auto max-w-[1180px] px-5 py-7 md:px-10 md:py-11 lg:px-12 lg:py-14">
+            <nav aria-label="Breadcrumb" className="mb-6 text-xs font-medium text-white/55 md:text-sm">
               <Link to="/" className="hover:text-white hover:underline">Home</Link>
               {' / '}
               <Link to="/mercury-outboards-ontario" className="hover:text-white hover:underline">Mercury Outboards</Link>
@@ -135,79 +138,87 @@ export function Mercury99MHSalePage({
               <span aria-current="page" className="text-white/85">9.9 MH Sale</span>
             </nav>
 
-            <div className="grid items-center gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-14">
+            <div className="grid items-center gap-9 lg:grid-cols-[1.04fr_0.96fr] lg:gap-12">
               <div>
                 <img
                   src="/assets/mercury-logo-white.png"
                   alt="Mercury Marine"
-                  className="mb-7 h-auto w-[210px] sm:w-[250px]"
+                  className="mb-5 h-auto w-[200px] sm:w-[230px]"
                   loading="eager"
                 />
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-repower-gold/45 bg-repower-gold/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-repower-gold md:text-xs">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-repower-gold/45 bg-repower-gold/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-repower-gold md:text-xs">
                   <Sparkles className="h-4 w-4" />
-                  Ontario Price Leader
+                  Special Ontario Sale
                 </div>
 
-                <h1 className="max-w-2xl font-display text-[42px] font-bold leading-[0.98] tracking-[-0.035em] text-white sm:text-5xl md:text-6xl lg:text-[70px]">
+                <h1 className="max-w-2xl font-display text-[42px] font-bold leading-[0.98] tracking-[-0.035em] text-white sm:text-5xl md:text-6xl lg:text-[62px]">
                   Mercury 9.9 MH FourStroke Outboard for Sale
                 </h1>
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/72 md:text-xl">
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-white/72 md:text-lg">
                   A new manual-start, 15-inch short-shaft tiller model with battery-free EFI and a clearly published Ontario sale price.
                 </p>
 
-                <div className="mt-7 flex flex-wrap items-end gap-x-5 gap-y-2">
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Special sale price</div>
-                    <div className="mt-1 font-display text-5xl font-bold tracking-[-0.04em] text-white sm:text-6xl">
-                      {priceLabel}
+                <div className="mt-5 lg:grid lg:grid-cols-[auto_1fr] lg:items-end lg:gap-5">
+                  <div className="flex flex-wrap items-end gap-x-5 gap-y-2">
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Special sale price</div>
+                      <div className="mt-1 font-display text-5xl font-bold tracking-[-0.04em] text-white sm:text-6xl">
+                        {priceLabel}
+                      </div>
+                    </div>
+                    <div className="pb-1">
+                      <div className="text-sm font-bold uppercase tracking-[0.16em] text-repower-gold">CAD</div>
+                      {msrp && msrp > price ? (
+                        <div className="mt-1 text-sm text-white/55">
+                          MSRP <span className="line-through">{formatMercury99MhCAD(msrp)}</span>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
-                  <div className="pb-1">
-                    <div className="text-sm font-bold uppercase tracking-[0.16em] text-repower-gold">CAD</div>
-                    {msrp && msrp > price ? (
-                      <div className="mt-1 text-sm text-white/55">
-                        MSRP <span className="line-through">{formatMercury99MhCAD(msrp)}</span>
+
+                  <div className="mt-4 lg:mt-0">
+                    {savings ? (
+                      <div className="mb-3 inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white">
+                        <BadgeDollarSign className="h-5 w-5 text-repower-gold" />
+                        Save {formatMercury99MhCAD(savings)}
                       </div>
                     ) : null}
+                    <div className="flex gap-2">
+                      <Button
+                        asChild
+                        size="lg"
+                        className="h-13 min-h-[52px] flex-1 bg-repower-mercury-red px-5 text-sm font-bold text-white shadow-[0_14px_36px_rgba(200,16,46,0.32)] hover:bg-repower-mercury-red-deep"
+                      >
+                        <Link
+                          to={quoteUrl}
+                          data-cta="quote-start"
+                          data-cta-location="mercury_9_9_mh_sale_hero"
+                        >
+                          Get My {priceLabel} Quote
+                          <ArrowRight className="h-5 w-5" />
+                        </Link>
+                      </Button>
+                      <Button
+                        asChild
+                        size="lg"
+                        variant="outline"
+                        className="h-13 min-h-[52px] border-white/35 bg-transparent px-4 text-sm font-semibold text-white hover:bg-white/10 hover:text-white"
+                      >
+                        <a
+                          href={PHONE_HREF}
+                          aria-label={`Call Harris Boat Works at ${PHONE_DISPLAY}`}
+                          data-cta="phone"
+                          data-cta-location="mercury_9_9_mh_sale_hero"
+                        >
+                          <Phone className="h-5 w-5" />
+                          <span className="hidden xl:inline">Call</span>
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
 
-                {savings ? (
-                  <div className="mt-4 inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white">
-                    <BadgeDollarSign className="h-5 w-5 text-repower-gold" />
-                    Save {formatMercury99MhCAD(savings)} from MSRP
-                  </div>
-                ) : null}
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="h-13 min-h-[52px] bg-repower-mercury-red px-7 text-base font-bold text-white shadow-[0_14px_36px_rgba(200,16,46,0.32)] hover:bg-repower-mercury-red-deep"
-                  >
-                    <Link
-                      to={quoteUrl}
-                      data-cta="quote-start"
-                      data-cta-location="mercury_9_9_mh_sale_hero"
-                    >
-                      Build My {priceLabel} Quote
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="h-13 min-h-[52px] border-white/35 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10 hover:text-white"
-                  >
-                    <a href={PHONE_HREF} data-cta="phone" data-cta-location="mercury_9_9_mh_sale_hero">
-                      <Phone className="h-5 w-5" />
-                      Call {PHONE_DISPLAY}
-                    </a>
-                  </Button>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-2 text-xs font-semibold text-white/85 sm:text-sm">
+                <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-white/85 sm:text-sm">
                   {['Manual start', '15-inch shaft', 'Tiller control', availability.label].map((item) => (
                     <span key={item} className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5">
                       {item}
@@ -219,6 +230,10 @@ export function Mercury99MHSalePage({
               <div className="relative mx-auto w-full max-w-[570px]">
                 <div className="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-white/15 via-white/[0.03] to-repower-mercury-red/20 blur-xl" />
                 <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-gradient-to-br from-white via-[#edf2f7] to-[#d7dee8] p-5 shadow-2xl md:p-8">
+                  <div className={`absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] shadow-sm ${availabilityPillClass}`}>
+                    <span className={`h-2 w-2 rounded-full ${availability.inStock ? 'bg-emerald-600' : 'bg-amber-500'}`} />
+                    {availability.label}
+                  </div>
                   <div className="absolute right-4 top-4 z-10 rounded-full bg-repower-mercury-red px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-lg">
                     {savings ? `Save ${formatMercury99MhCAD(savings)}` : 'Special sale'}
                   </div>
@@ -243,8 +258,25 @@ export function Mercury99MHSalePage({
               </div>
             </div>
 
-            <p className="mt-10 max-w-4xl border-t border-white/10 pt-5 text-xs leading-relaxed text-white/50 md:text-sm">
-              At {priceLabel} CAD, this was the lowest advertised new Ontario dealer price we found for exact model 1A10201LK in our {MERCURY_99_MH_PRICE_REVIEW_DATE} review. Advertised prices and availability change. Confirm the current written quote before travelling.
+            <div className="mt-9 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                [ShieldCheck, 'Mercury Certified', 'Repower Center'],
+                [Award, 'Dealer since 1965', 'Family-owned since 1947'],
+                [BadgeDollarSign, 'Published CAD price', 'Written quote confirmed'],
+                [MapPin, 'Ontario pickup', 'Gores Landing'],
+              ].map(([Icon, title, detail]) => (
+                <div key={String(title)} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.045] px-4 py-3">
+                  <Icon className="h-5 w-5 shrink-0 text-repower-gold" />
+                  <div>
+                    <div className="text-xs font-bold text-white sm:text-sm">{title}</div>
+                    <div className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-white/45">{detail}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 max-w-4xl text-xs leading-relaxed text-white/50 md:text-sm">
+              Exact model 1A10201LK is {priceLabel} CAD before HST{savings ? `, saving ${formatMercury99MhCAD(savings)} from the current Mercury MSRP` : ''}. Confirm the current written quote and ETA before travelling.
             </p>
           </div>
         </section>
@@ -255,7 +287,7 @@ export function Mercury99MHSalePage({
               ['9.9 HP', 'Mercury FourStroke'],
               ['Manual', 'Battery-free start'],
               ['15 inch', 'Short-shaft model'],
-              ['~85 lb', 'Dry weight'],
+              ['88 lb', 'Dry weight'],
             ].map(([value, label]) => (
               <div key={label} className="bg-white px-5 py-6 text-center">
                 <div className="font-display text-2xl font-bold text-repower-navy-900 md:text-3xl">{value}</div>
@@ -494,6 +526,28 @@ export function Mercury99MHSalePage({
         </section>
       </article>
       <SiteFooter />
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-repower-navy-900/10 bg-white/95 px-3 py-2 shadow-[0_-12px_30px_rgba(5,14,28,0.13)] backdrop-blur lg:hidden">
+        <div className="mx-auto flex max-w-xl items-center gap-2">
+          <div className="min-w-0 flex-1 pl-1">
+            <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/45">Mercury 9.9 MH</div>
+            <div className="font-display text-xl font-bold tracking-[-0.02em] text-repower-navy-900">{priceLabel} <span className="text-[10px] font-sans tracking-normal text-repower-navy-900/45">CAD</span></div>
+          </div>
+          <Button asChild size="sm" className="min-h-[44px] bg-repower-mercury-red px-4 font-bold text-white hover:bg-repower-mercury-red-deep">
+            <Link to={quoteUrl} data-cta="quote-start" data-cta-location="mercury_9_9_mh_sale_mobile_sticky">
+              Build Quote <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          <a
+            href={PHONE_HREF}
+            aria-label={`Call Harris Boat Works at ${PHONE_DISPLAY}`}
+            data-cta="phone"
+            data-cta-location="mercury_9_9_mh_sale_mobile_sticky"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-repower-navy-900/15 text-repower-navy-900 transition-colors hover:bg-repower-navy-900/5"
+          >
+            <Phone className="h-5 w-5" />
+          </a>
+        </div>
+      </div>
     </>
   );
 }
