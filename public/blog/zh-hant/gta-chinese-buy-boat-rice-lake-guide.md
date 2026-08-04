@@ -22,10 +22,10 @@ language: zh-Hant
 
 > GTA 華人家庭第一次買船：用途決定船型、新船 vs 二手船、Mercury 引擎選擇、貸款方式、交付前要做的功課。完整簡體版內容詳見對應頁面。
 
-**Category:** mandarin
-**Published:** 2026-06-12
-**Last updated:** 2026-06-12
-**Read time:** 6 分鐘
+**Category:** mandarin  
+**Published:** 2026-06-12  
+**Last updated:** 2026-06-12  
+**Read time:** 6 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide
 
 > 這是繁體中文試行版本（native-review: pending）。完整內容請參閱 [簡體版](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)。

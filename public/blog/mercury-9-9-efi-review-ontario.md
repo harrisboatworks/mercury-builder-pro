@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-03
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last updated:** 2026-08-03  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -46,7 +46,7 @@ Here is what the "MH EFI" means before we go further:
 - **H**, Tiller handle
 - **EFI**, Electronic fuel injection
 
-Shaft length: 15-inch short shaft. Displacement: 208 cc (12.8 cubic inches). External 12L / 3.2 gal fuel tank with fuel line.
+Shaft length: 15-inch short shaft. Displacement: 209 cc. External 12L / 3.2 gal fuel tank with fuel line.
 
 ---
 
@@ -139,8 +139,8 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 | Shaft length | 15" short shaft |
 | Fuel system | Electronic fuel injection |
 | Cylinders | 2-cylinder FourStroke |
-| Displacement | 208 cc (12.8 cu in) |
-| Dry weight | Approximately 38 kg (84 lb) |
+| Displacement | 209 cc |
+| Dry weight | 88 lb for exact model 1A10201LK |
 | Fuel tank | External 12L / 3.2 gal |
 | Full-throttle RPM range | 5,000, 6,000 |
 | Recommended fuel | 87 octane, up to 10% ethanol |
@@ -184,7 +184,7 @@ Mercury says the manual-start 9.9 EFI models do not require a cranking battery b
 
 ### How much does the Mercury 9.9 MH EFI weigh?
 
-Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight.
+Mercury Canada's exact-SKU listing gives model 1A10201LK a dry weight of 88 lb. Mercury's broader 9.9 family specifications can show lighter figures for other configurations.
 
 ### What shaft length is the Mercury 9.9 MH EFI?
 

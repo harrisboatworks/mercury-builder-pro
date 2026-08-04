@@ -22,10 +22,10 @@ language: zh-CN
 
 > 安省船主冬化与室外冬储中文指南：分清发动机冬化和存船，按机型确认项目，并了解 HBW 先到先办、送船前 1 - 2 周提交请求和 11 月中旬最后接收时间。
 
-**Category:** mandarin
-**Published:** 2026-06-12
-**Last updated:** 2026-08-03
-**Read time:** 9 分钟
+**Category:** mandarin  
+**Published:** 2026-06-12  
+**Last updated:** 2026-08-03  
+**Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
 
 > **简短答案：** 安省船只在结冰天气和长期停放前，需要按具体发动机、船上水系统和电瓶方案做好冬化。发动机冬化、收缩膜和室外存船不是同一个项目，最终范围以书面工单为准。HBW 有冬储空间，不需要提前几个月抢位置；所有工作先到先办。通常在计划送船前 **1–2 周**通过 [hbw.wiki/service](https://hbw.wiki/service) 提交请求即可。11 月中旬是实际的秋季最后接收时间，因为实体船厂从 12 月 1 日至 4 月 1 日关闭。

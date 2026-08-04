@@ -2900,7 +2900,10 @@ function firstParagraph(content, fallback) {
   if (!content) return sanitizeSchemaText(fallback);
   const resolvedContent = substituteLiveRateTokens(content);
   // Drop leading H1 heading line so it doesn't duplicate the rendered <h1>.
-  const withoutH1 = stripVisualDirectiveBlocks(String(resolvedContent).replace(/^\s*#\s+.+(?:\r?\n|$)/, ''));
+  let withoutH1 = stripVisualDirectiveBlocks(String(resolvedContent).replace(/^\s*#\s+.+(?:\r?\n|$)/, ''));
+  // Drop a leading Quick answer blockquote: it already renders as its own card
+  // in the article body, so echoing it here duplicates the copy at the top.
+  withoutH1 = withoutH1.replace(/^\s*(?:>[^\n]*(?:\r?\n|$))+/, '');
   const stripped = withoutH1
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/<[^>]*>/g, ' ')
@@ -3184,9 +3187,22 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
   extraNoscript: () => {
     const heroHtml = renderHeroPictureHtml(article.image, article.imageAlt || article.title, article.photoSlot);
     const bylineHtml = renderAuthorBylineHtml(article.author);
-    const bodyHtml = renderArticleBodyHtml(article.content, {
+    const TERMINAL_CTA_SPLIT_SLUGS = new Set(['new-vs-used-pontoon-boats-ontario']);
+    let ctaSource = '';
+    let bodySource = article.content;
+    if (TERMINAL_CTA_SPLIT_SLUGS.has(article.slug)) {
+      const idx = bodySource.search(/\n##\s+Ready to Compare the Complete Package\?/);
+      if (idx !== -1) {
+        ctaSource = bodySource.slice(idx + 1);
+        bodySource = bodySource.slice(0, idx);
+      }
+    }
+    const bodyHtml = renderArticleBodyHtml(bodySource, {
       hasStructuredFaqs: Boolean(article.faqs?.length),
     });
+    const ctaHtml = ctaSource
+      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false })
+      : '';
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
           `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
@@ -3199,7 +3215,7 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
       article.content,
       article.relatedSlugs,
     );
-    return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}${relatedGuidesHtml}`;
+    return `${heroHtml}${bylineHtml}${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}${ctaHtml}${relatedGuidesHtml}`;
   }
 }));
 

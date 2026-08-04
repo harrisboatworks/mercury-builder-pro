@@ -22,10 +22,10 @@ language: zh-Hant
 
 > 從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。
 
-**Category:** mandarin
-**Published:** 2026-06-12
-**Last updated:** 2026-08-03
-**Read time:** 5 分鐘
+**Category:** mandarin  
+**Published:** 2026-06-12  
+**Last updated:** 2026-08-03  
+**Read time:** 5 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan
 
 > 這是繁體中文試行版本（native-review: pending）。完整內容請參閱 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
@@ -64,3 +64,4 @@ quote: 我們專門為華人朋友準備了這些中文指南，因為我們真�
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

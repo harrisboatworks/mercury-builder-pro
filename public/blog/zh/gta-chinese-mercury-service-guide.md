@@ -22,10 +22,10 @@ language: zh-CN
 
 > 多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。
 
-**Category:** mandarin
-**Published:** 2026-05-15
-**Last updated:** 2026-08-03
-**Read time:** 12 分钟
+**Category:** mandarin  
+**Published:** 2026-05-15  
+**Last updated:** 2026-08-03  
+**Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 
 ## 快速答案

@@ -22,10 +22,10 @@ language: zh-Hant
 
 > 安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。
 
-**Category:** mandarin
-**Published:** 2026-06-12
-**Last updated:** 2026-08-03
-**Read time:** 7 分鐘
+**Category:** mandarin  
+**Published:** 2026-06-12  
+**Last updated:** 2026-08-03  
+**Read time:** 7 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 
 > **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；新辦、續期、轉讓或補發需要支付 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。

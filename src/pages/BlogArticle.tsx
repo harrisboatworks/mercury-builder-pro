@@ -61,6 +61,24 @@ export default function BlogArticle() {
     hasStructuredFaqs: Boolean(article.faqs?.length),
   });
   const tocItems = extractHeaders(cleanedContent);
+
+  // Terminal CTA placement: for these posts the closing CTA section must render
+  // AFTER the structured FAQ card (house pattern), not before it. The section is
+  // split out of the body markdown and re-rendered below the FAQ.
+  const TERMINAL_CTA_SPLIT_SLUGS = new Set<string>([
+    'new-vs-used-pontoon-boats-ontario',
+  ]);
+  const terminalCtaSplit = (() => {
+    if (!TERMINAL_CTA_SPLIT_SLUGS.has(article.slug)) {
+      return { body: cleanedContent, cta: '' };
+    }
+    const idx = cleanedContent.search(/\n##\s+Ready to Compare the Complete Package\?/);
+    if (idx === -1) return { body: cleanedContent, cta: '' };
+    return {
+      body: cleanedContent.slice(0, idx).replace(/\n*(?:---\s*)?$/, '\n'),
+      cta: cleanedContent.slice(idx + 1),
+    };
+  })();
   const cleanDescription = getCleanDescription(article);
   const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
 
@@ -386,7 +404,7 @@ export default function BlogArticle() {
                 // Answer blockquote followed by `# Title`, which previously
                 // slipped past the leading-only regex and produced a duplicate
                 // title. The h1 -> h2 override below is a second safety net.
-                let c = cleanedContent.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
+                let c = terminalCtaSplit.body.replace(/(^|\n)\s*#\s+[^\n]+\n+/, '$1');
                 // Live token substitution: {{LIVE_RATE}} -> e.g. "5.48% APR",
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
@@ -493,6 +511,36 @@ export default function BlogArticle() {
               }))}
             />
           )}
+
+          {/* Terminal CTA section, rendered after the FAQ for house-pattern posts. */}
+          {terminalCtaSplit.cta && (
+            <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 blog-article-prose mt-12">
+              <MarkdownSectionCards
+                content={substituteLiveRateTokens(terminalCtaSplit.cta)}
+                markdownComponents={{
+                  h2: ({ node, children, ...props }) => {
+                    const text = String(children);
+                    return <h2 id={slugify(text)} {...props}>{children}</h2>;
+                  },
+                  a: ({ node, href, children, ...props }) => {
+                    if (!href) return <a {...props}>{children}</a>;
+                    const isInternal =
+                      href.startsWith('/') ||
+                      href.startsWith('#') ||
+                      /^https?:\/\/([^/]*\.)?(mercuryrepower\.ca|mercuryquote\.ca)(\/|$)/i.test(href);
+                    const linkClass = 'break-words text-primary hover:underline';
+                    if (isInternal) {
+                      const to = href.startsWith('#') ? href : (href.replace(/^https?:\/\/[^/]+/, '') || '/');
+                      return <Link to={to} className={linkClass}>{children}</Link>;
+                    }
+                    return <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass} {...props}>{children}</a>;
+                  },
+                }}
+              />
+            </div>
+          )}
+
+
 
           {/* Diagnostic articles end the answer with one service-intake path. */}
           {isDiagnostic && (
