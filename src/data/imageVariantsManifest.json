@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-04T14:49:15.173Z",
-  "count": 416,
+  "generatedAt": "2026-08-04T17:58:58.487Z",
+  "count": 418,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -369,6 +369,8 @@
     "/lovable-uploads/mercury-break-in-timeline-hbw",
     "/lovable-uploads/mercury-fourstroke-proxs-verado-comparison",
     "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero",
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social",
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social",
     "/lovable-uploads/mercury-outboard-beep-codes-action-card",
     "/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree",
     "/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart",
@@ -2254,6 +2256,16 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social": [
+      640,
+      1024,
+      1200
     ],
     "/lovable-uploads/mercury-outboard-beep-codes-action-card": [
       640,

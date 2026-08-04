@@ -22,10 +22,10 @@ language: zh-CN
 
 > 多伦多到莱斯湖：Harris Boat Works 室外收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内冬储，不提供取送服务，船坞 12 月 1 日至 4 月 1 日停业。
 
-**Category:** mandarin
-**Published:** 2026-05-16
-**Last updated:** 2026-08-03
-**Read time:** 8 分钟
+**Category:** mandarin  
+**Published:** 2026-05-16  
+**Last updated:** 2026-08-03  
+**Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 
 > **简短答案：** HBW 只提供室外收缩膜冬储。我们有空间，不需要提前数月预留位置。工作按先到先办处理；通常在计划送船前 1–2 周通过 [hbw.wiki/service](https://hbw.wiki/service) 提交完整请求。客户自行送船和取船。11 月中旬是实际的秋季最后接收时间，因为船厂 12 月 1 日关闭。

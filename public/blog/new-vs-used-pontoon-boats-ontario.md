@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "New vs. Used Pontoon Boats in Ontario: What Actually Determines Value"
-description: "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk."
+description: "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy."
 category: "Buying Guide"
 date_published: 2026-08-04
 date_modified: 2026-08-04
@@ -20,7 +20,7 @@ language: en-CA
 
 # New vs. Used Pontoon Boats in Ontario: What Actually Determines Value
 
-> Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk.
+> Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy.
 
 **Category:** Buying Guide  
 **Published:** 2026-08-04  
@@ -166,6 +166,10 @@ Bring us the two listings, serial numbers and your normal passenger load. We wil
 
 **Inventory:** [See current HBW pontoon inventory](https://www.harrisboatworks.ca/search/inventory/type/Pontoons)
 
+**Phone:** 905-342-2153
+
+**Configurator:** [Build a repower quote with live CAD pricing](https://www.mercuryrepower.ca/quote/motor-selection)
+
 ## FAQs
 
 ### Is a used pontoon boat always better value than a new one?
@@ -191,6 +195,14 @@ Yes, when practical and safe. A trailer inspection cannot show cold starting, st
 ### How do I compare two pontoons with different horsepower?
 
 Start with each boat’s capacity label and intended load, then compare tube configuration, boat weight, engine family, gearcase, propeller, rigging and actual test performance. Horsepower alone does not tell you how a pontoon will accelerate or carry people. Our horsepower guide explains the next step.
+
+## Related guides
+
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
 
 ## Next steps
 

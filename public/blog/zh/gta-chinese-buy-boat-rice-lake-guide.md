@@ -22,10 +22,10 @@ language: zh-CN
 
 > 多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。
 
-**Category:** mandarin
-**Published:** 2026-05-15
-**Last updated:** 2026-08-03
-**Read time:** 12 分钟
+**Category:** mandarin  
+**Published:** 2026-05-15  
+**Last updated:** 2026-08-03  
+**Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
 ## 快速答案

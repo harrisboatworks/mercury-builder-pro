@@ -259,3 +259,4 @@ To pull a tube with one or two riders, most 16-18 ft boats need a minimum of 75 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

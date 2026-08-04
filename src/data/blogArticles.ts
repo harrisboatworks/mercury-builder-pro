@@ -140,7 +140,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'new-vs-used-pontoon-boats-ontario',
     title: 'New vs. Used Pontoon Boats in Ontario: What Actually Determines Value',
     seoTitle: 'New vs. Used Pontoon Boats in Ontario: Value Guide',
-    description: 'Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk.',
+    description: 'Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy.',
     image: '/lovable-uploads/hero-new-vs-used-pontoon-ontario.png',
     imageAlt: 'Pontoon boat at an Ontario lake dock in late summer',
     author: 'Jay Harris',
@@ -356,6 +356,10 @@ Start with each boat's capacity label and intended load, then compare tube confi
 Bring us the two listings, serial numbers and your normal passenger load. We will help you identify the questions that matter before you decide.
 
 **Inventory:** [See current HBW pontoon inventory](https://www.harrisboatworks.ca/search/inventory/type/Pontoons)
+
+**Phone:** 905-342-2153
+
+**Configurator:** [Build a repower quote with live CAD pricing](https://www.mercuryrepower.ca/quote/motor-selection)
 `
   },
   {

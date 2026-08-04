@@ -22,10 +22,10 @@ language: zh-CN
 
 > 分清 PCOC 操作员资格、PCL 船只牌照和安省钓鱼证：谁需要、有效期、官方申请入口与 Rice Lake 出发前检查。
 
-**Category:** mandarin
-**Published:** 2026-05-15
-**Last updated:** 2026-08-03
-**Read time:** 11 分钟
+**Category:** mandarin  
+**Published:** 2026-05-15  
+**Last updated:** 2026-08-03  
+**Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 
 ## 快速答案

@@ -22,10 +22,10 @@ language: zh-Hant
 
 > 第一次在安省過冬的船主指南：為什麼必須冬化（結冰會裂缸體）、完整冬化清單、DIY vs 經銷商服務、什麼時候預訂（9-11 月）、HBW 在 Gores Landing 的冬儲服務（12 月 1 日至 4 月 1 日停業）。
 
-**Category:** mandarin
-**Published:** 2026-06-12
-**Last updated:** 2026-08-02
-**Read time:** 9 分鐘
+**Category:** mandarin  
+**Published:** 2026-06-12  
+**Last updated:** 2026-08-02  
+**Read time:** 9 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/ontario-boat-winterization-guide-chinese
 
 > **簡短答案：** 安省冬天會反覆結冰解凍，引擎水道裡殘留的水結冰後會撐裂鋁製缸體——修不好，只能換引擎。完整冬化包括引擎霧化和防凍液、燃油穩定劑、將電池留在船上並斷開連接、機油更換，再加上收縮膜或室內存放。建議 9 月預訂、10 至 11 月送修。HBW 在 Gores Landing 提供冬化和室外收縮膜冬儲，**12 月 1 日至 4 月 1 日停業**——必須在停業前完成。

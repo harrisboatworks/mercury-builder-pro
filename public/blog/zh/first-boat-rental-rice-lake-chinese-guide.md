@@ -22,10 +22,10 @@ language: zh-CN
 
 > 多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。
 
-**Category:** mandarin
-**Published:** 2026-06-12
-**Last updated:** 2026-08-02
-**Read time:** 8 分钟
+**Category:** mandarin  
+**Published:** 2026-06-12  
+**Last updated:** 2026-08-02  
+**Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 
 > **简短答案：** 根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。Harris Boat Works 有更严格的政策：每位可能驾驶 HBW 租赁船的人员在办理手续时必须出示有效的 Pleasure Craft Operator Card (PCOC) 和带照片身份证件；该清单不能替代 HBW 要求的 PCOC。

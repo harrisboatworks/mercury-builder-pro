@@ -22,10 +22,10 @@ language: zh-CN
 
 > 从 GTA 到 Rice Lake 租船的一日游实用指南：在线预订、每位驾驶员证件、实时路线、天气判断、check-in 和安全出发清单。
 
-**Category:** mandarin
-**Published:** 2026-05-15
-**Last updated:** 2026-08-03
-**Read time:** 8 分钟
+**Category:** mandarin  
+**Published:** 2026-05-15  
+**Last updated:** 2026-08-03  
+**Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan
 
 > **简短答案：** 先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 选日期、船型和时段并完成预订，再用确认单上的报到时间倒推当天行程。每位可能驾驶的人都必须带有效 boat operator licence／PCOC 和带照片身份证件。出发当天重新查路线、天气和租赁条件；不要把博客里的示例当作预订或天气保证。
@@ -187,3 +187,4 @@ HBW 的内部政策要求每位可能驾驶的人出示有效 boat operator lice
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

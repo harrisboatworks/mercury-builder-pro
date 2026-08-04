@@ -17,7 +17,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "new-vs-used-pontoon-boats-ontario",
     "title": "New vs. Used Pontoon Boats in Ontario: What Actually Determines Value",
-    "description": "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk.",
+    "description": "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy.",
     "category": "Buying Guide",
     "publishDate": "2026-08-04",
     "keywords": [
