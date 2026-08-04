@@ -5,13 +5,21 @@
     <link>https://www.mercuryrepower.ca/blog</link>
     <description>Expert advice on Mercury outboard motors from Ontario's trusted dealer since 1965. Guides, tips, and industry insights.</description>
     <language>en-ca</language>
-    <lastBuildDate>Thu, 30 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.mercuryrepower.ca/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.mercuryrepower.ca/lovable-uploads/logo-dark.png</url>
       <title>Harris Boat Works Blog</title>
       <link>https://www.mercuryrepower.ca/blog</link>
     </image>
+    <item>
+      <title><![CDATA[New vs. Used Pontoon Boats in Ontario: What Actually Determines Value]]></title>
+      <link>https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario</link>
+      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario</guid>
+      <pubDate>Tue, 04 Aug 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk.]]></description>
+      <category><![CDATA[Buying Guide]]></category>
+    </item>
     <item>
       <title><![CDATA[Mercury Outboard Repair Guide: Troubleshooting and Maintenance]]></title>
       <link>https://www.mercuryrepower.ca/blog/mercury-outboard-repair-guide</link>
@@ -313,7 +321,7 @@
       <link>https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide</link>
       <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide</guid>
       <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.]]></description>
+      <description><![CDATA[Switching from Honda to Mercury in Ontario: rigging compatibility, current pricing paths, trade-in questions, and what changes at the transom.]]></description>
       <category><![CDATA[Repower Guide]]></category>
     </item>
     <item>
@@ -403,14 +411,6 @@
       <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
       <description><![CDATA[Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.]]></description>
       <category><![CDATA[Service & Troubleshooting]]></category>
-    </item>
-    <item>
-      <title><![CDATA[Mercury Propeller Selection Guide 2026]]></title>
-      <link>https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide</link>
-      <guid isPermaLink="true">https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide</guid>
-      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
-      <description><![CDATA[Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.]]></description>
-      <category><![CDATA[Technical Reference]]></category>
     </item>
   </channel>
 </rss>

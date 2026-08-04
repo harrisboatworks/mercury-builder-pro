@@ -1,8 +1,40 @@
 {
   "version": 1,
-  "sourceVersion": "16c4b45d83d29d07ea5f",
-  "count": 202,
+  "sourceVersion": "b6d79197b0a4f19f38b3",
+  "count": 203,
   "articles": [
+    {
+      "slug": "new-vs-used-pontoon-boats-ontario",
+      "title": "New vs. Used Pontoon Boats in Ontario: What Actually Determines Value",
+      "description": "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk.",
+      "category": "Buying Guide",
+      "publishDate": "2026-08-04",
+      "keywords": [
+        "new vs used pontoon boat Ontario",
+        "used pontoon boat inspection",
+        "pontoon boat value",
+        "buying a pontoon in Ontario",
+        "pontoon boat ownership cost"
+      ],
+      "faqs": [
+        {
+          "q": "Is a used pontoon boat always better value than a new one?",
+          "a": "No. A sound used pontoon with clear ownership, service records and an honest on-water test can be excellent value. A neglected one can consume the price gap quickly. Compare the complete package and the cost of making it reliable, legal and suitable for your use, not just the advertised price."
+        },
+        {
+          "q": "What should I inspect first on a used pontoon?",
+          "a": "Start with identity and structure: match the hull identification number and motor serial number to the documents, then inspect the tubes, welds or seams, deck, transom or motor pod, steering, wiring and fuel system. If those basics do not hold up, upholstery and electronics are beside the point."
+        },
+        {
+          "q": "Do I pay tax on a private used boat purchase in Ontario?",
+          "a": "Ontario says 13% Retail Sales Tax generally applies when a boat is purchased privately from someone who is not a GST/HST registrant, unless an exemption applies. Check the current Ontario Ministry of Finance rules for your transaction before setting your budget."
+        },
+        {
+          "q": "Can a Mercury outboard warranty transfer to a used buyer?",
+          "a": "Unexpired Mercury limited warranty coverage may transfer between pleasure-use owners when the product is properly re-registered. Product Protection terms can differ. Verify the motor serial number, remaining coverage, required paperwork and Canadian applicability before treating warranty as part of the boat’s value."
+        }
+      ]
+    },
     {
       "slug": "mercury-outboard-repair-guide",
       "title": "Mercury Outboard Repair Guide: Troubleshooting and Maintenance",
@@ -848,7 +880,7 @@
         },
         {
           "q": "Can I exceed my boat's maximum HP rating in Canada?",
-          "a": "No. You cannot legally or safely exceed the maximum horsepower rating on your boat's capacity plate. In Canada, the capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating to the pl…"
+          "a": "Do not exceed it. Transport Canada describes the labelled engine power as the manufacturer or importer's recommended maximum safe limit. Going above it can stress the transom, affect stability and handling, and create insurance, financing, resale, liability, and potential warranty problems. It is not accurate to call…"
         }
       ]
     },
@@ -4169,7 +4201,7 @@
         },
         {
           "q": "How much does the Mercury 9.9 MH EFI weigh?",
-          "a": "Dealer specifications list the Mercury 9.9 MH EFI around 38 kg (84 lb) dry weight."
+          "a": "Mercury Canada's exact-SKU listing gives model 1A10201LK a dry weight of 88 lb. Mercury's broader 9.9 family specifications can show lighter figures for other configurations."
         },
         {
           "q": "What shaft length is the Mercury 9.9 MH EFI?",
@@ -6064,7 +6096,7 @@
     {
       "slug": "honda-to-mercury-repower-ontario-guide",
       "title": "Honda to Mercury Repower: Ontario Guide",
-      "description": "Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.",
+      "description": "Switching from Honda to Mercury in Ontario: rigging compatibility, current pricing paths, trade-in questions, and what changes at the transom.",
       "category": "Repower Guide",
       "publishDate": "2026-05-28",
       "keywords": [
@@ -6088,7 +6120,7 @@
         },
         {
           "q": "Is Mercury actually more reliable than Honda?",
-          "a": "Honestly, on current models, the reliability gap between Honda and Mercury is small. Both brands build solid four-strokes. The bigger reliability factor is local service network: a motor you can get serviced quickly is a motor that stays running. In most of Ontario outside the GTA, Mercury has the service density adva…"
+          "a": "There is no honest province-wide shortcut here. Both brands build current four-strokes, and the result depends on the exact model, setup, maintenance, use, and local support. Compare the boat fit and the real authorized-service route from where the boat lives instead of treating one badge as a reliability guarantee."
         },
         {
           "q": "Can I keep my Honda kicker and just swap the main motor?",

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-03T02:44:42.589Z",
-  "count": 415,
+  "generatedAt": "2026-08-04T14:49:15.173Z",
+  "count": 416,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -225,6 +225,7 @@
     "/lovable-uploads/hero-mercury-wont-start-troubleshooting",
     "/lovable-uploads/hero-new-immigrant-boat-buying-checklist",
     "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario",
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario",
     "/lovable-uploads/hero-on-water-load-test",
     "/lovable-uploads/hero-ontario-boating-regulations-zh",
     "/lovable-uploads/hero-ontario-mercury-price-guide",
@@ -1530,6 +1531,11 @@
       1920
     ],
     "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario": [
       640,
       1024,
       1920
