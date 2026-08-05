@@ -30,7 +30,7 @@ const BRAND_FROM_PREFIX: Record<string, string> = {
  * Pattern-based heuristics only (no DB lookup).
  */
 export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): DecodeResult {
-  const { brand, year } = ctx;
+  const { brand } = ctx;
   const result: DecodeResult = {
     hp: null,
     stroke: null,
@@ -110,25 +110,17 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
     result.strokeConfidence = 'high';
     result.strokeReasons.push(`Matched "${twoStrokeHit[0]}" → 2-Stroke marker`);
   } else if (/^\d/.test(upper) && result.hp) {
-    // Mercury's model history supports a bounded year-based clue. Applying the
-    // same cutoff to other brands can confidently misclassify their motors.
+    // A year and HP are not enough to distinguish Mercury's overlapping
+    // two-stroke, OptiMax, and FourStroke lineups. Configuration suffixes such
+    // as ELPT describe rigging, not combustion architecture. Fail closed until
+    // the customer supplies an explicit marker or confirms the stroke picker.
     const isMercury = brand?.trim().toLowerCase() === 'mercury';
-    if (isMercury && year && year >= 2007) {
-      result.stroke = '4-Stroke';
-      result.strokeConfidence = 'medium';
-      result.strokeReasons.push(`Bare HP + year ${year} (≥ 2007) → likely 4-Stroke (modern Mercury era)`);
-    } else if (isMercury && year && year < 2000) {
-      result.stroke = '2-Stroke';
-      result.strokeConfidence = 'medium';
-      result.strokeReasons.push(`Bare HP + year ${year} (< 2000) → likely 2-Stroke (Mercury era)`);
-    } else {
-      result.stroke = null;
-      result.strokeConfidence = 'low';
-      result.strokeReasons.push(isMercury
-        ? 'Bare Mercury HP without a decisive year, stroke ambiguous'
-        : 'Bare HP without a brand-specific model marker, stroke ambiguous');
-      result.warnings.push("Stroke unclear from bare HP; enter the full model or add '4S' / '2S'");
-    }
+    result.stroke = null;
+    result.strokeConfidence = 'low';
+    result.strokeReasons.push(isMercury
+      ? 'Mercury HP/configuration text without an explicit architecture marker is ambiguous'
+      : 'Bare HP without a brand-specific model marker is ambiguous');
+    result.warnings.push("Stroke unclear; add '4S' / '2S' / 'OptiMax' or pick the stroke manually");
   }
 
   // ---- Unrecognized ----

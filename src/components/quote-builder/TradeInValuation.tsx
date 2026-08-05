@@ -161,6 +161,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     condition: !tradeInInfo.condition
   };
   const hasMissingFields = Object.values(missingFields).some(Boolean);
+  const modelTextForDecoding = (
+    tradeInInfo.model || (tradeInInfo.horsepower ? String(tradeInInfo.horsepower) : '')
+  ).trim();
+  const currentDecodedModel = decodeTradeInModel(modelTextForDecoding, {
+    brand: tradeInInfo.brand,
+    year: tradeInInfo.year,
+  });
+  const effectiveDecodedStroke = decodeOverride.stroke !== undefined
+    ? decodeOverride.stroke
+    : currentDecodedModel.stroke as '4-Stroke' | '2-Stroke' | 'OptiMax' | null;
+  const effectiveEngineType = strokeToEngineType(effectiveDecodedStroke);
+  const requiresStrokeConfirmation = hasModelOrHp && !effectiveEngineType;
 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
@@ -176,7 +188,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition) {
+    if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || requiresStrokeConfirmation) {
       console.log('Missing required fields');
       return;
     }
@@ -194,7 +206,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       condition: tradeInInfo.condition,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
-      stroke: tradeInInfo.engineType,
+      stroke: effectiveEngineType,
     });
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
@@ -229,13 +241,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
           condition: tradeInInfo.condition,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
-          stroke: tradeInInfo.engineType,
+          stroke: effectiveEngineType,
           name: customerName || undefined,
         })
       : undefined;
 
     onTradeInChange({
       ...tradeInInfo,
+      engineType: effectiveEngineType,
       estimatedValue: finalValue,
       confidenceLevel: tradeEstimate.confidence,
       rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
@@ -416,7 +429,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     onValueChange={(value) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, brand: value });
+                      setDecodeOverride({});
+                      onTradeInChange({ ...tradeInInfo, brand: value, engineType: undefined });
                     }}
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
@@ -454,16 +468,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <TooltipContent side="top" align="start" className="max-w-xs text-xs leading-relaxed">
                           <p className="font-medium mb-1">Why the year matters</p>
                           <p className="font-sans">
-                            For Mercury motors, a bare HP number (like "90") can use the year as a
-                            clue. Other brands still need the full model or an explicit "4S" / "2S".
+                            Year and HP alone cannot distinguish overlapping two-stroke, OptiMax,
+                            and FourStroke lineups. Confirm the architecture before we calculate.
                           </p>
                           <ul className="mt-1 list-disc space-y-0.5 pl-4 font-sans">
-                            <li><span className="font-medium">Mercury, 2007 or newer</span> → likely 4-Stroke</li>
-                            <li><span className="font-medium">Mercury, before 2000</span> → likely 2-Stroke</li>
-                            <li><span className="font-medium">Any uncertainty</span> → add the full model, "4S", or "2S"</li>
+                            <li><span className="font-medium">Explicit FourStroke, 4S, 2S, or OptiMax text</span> → use that architecture</li>
+                            <li><span className="font-medium">ELPT and EFI suffixes</span> → configuration clues, not stroke proof</li>
+                            <li><span className="font-medium">Any uncertainty</span> → pick the stroke under the model field</li>
                           </ul>
                           <p className="mt-1 font-sans">
-                            Picking a year updates the "Based on" reasons under the model field automatically.
+                            We will not show a number until the stroke is confirmed.
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -479,8 +493,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     onChange={(event) => {
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
+                      setDecodeOverride({});
                       const year = Number.parseInt(event.target.value, 10);
-                      onTradeInChange({ ...tradeInInfo, year: Number.isFinite(year) ? year : 0 });
+                      onTradeInChange({
+                        ...tradeInInfo,
+                        year: Number.isFinite(year) ? year : 0,
+                        engineType: undefined,
+                      });
                     }}
                     placeholder="e.g. 2003"
                     aria-describedby={showValidation && missingFields.year ? 'trade-year-error' : undefined}
@@ -518,9 +537,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                   {(() => {
-                    const raw = (tradeInInfo.model || '').trim();
+                    const raw = modelTextForDecoding;
                     if (!raw) return null;
-                    const decoded = decodeTradeInModel(raw, { brand: tradeInInfo.brand, year: tradeInInfo.year });
+                    const decoded = currentDecodedModel;
 
                     // Apply manual overrides
                     const hpOverridden = decodeOverride.hp !== undefined;
@@ -861,7 +880,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               </Collapsible>
 
               {/* Get Estimate button */}
-              {!estimate && !isLoading && !hasMissingFields && (
+              {!estimate && !isLoading && !hasMissingFields && !requiresStrokeConfirmation && (
                 <Button
                   type="button"
                   onClick={handleGetEstimate}

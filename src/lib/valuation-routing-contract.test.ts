@@ -21,11 +21,18 @@ describe('canonical valuation routing contract', () => {
 
   it('fails closed on invalid or conflicting stroke input', () => {
     const adapter = source('supabase/functions/_shared/hbw-valuation.ts');
+    const decoder = source('src/components/quote-builder/tradeInModelDecoder.ts');
+    const form = source('src/components/quote-builder/TradeInValuation.tsx');
 
     expect(adapter).toContain('invalid_stroke');
     expect(adapter).toContain('stroke_model_conflict');
     expect(adapter).toContain('compact === "2stroke"');
     expect(adapter).not.toContain('return "4-stroke"; // default');
+    expect(decoder).not.toContain('year >= 2007');
+    expect(decoder).not.toContain("result.stroke = '4-Stroke';\n      result.strokeConfidence = 'medium'");
+    expect(form).toContain('requiresStrokeConfirmation');
+    expect(form).toContain('stroke: effectiveEngineType');
+    expect(form).not.toContain('stroke: tradeInInfo.engineType');
   });
 
   it('keeps an explicit agent override usable only across upstream outages', () => {
