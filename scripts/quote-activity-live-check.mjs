@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const baseUrl = (process.env.QUOTE_ACTIVITY_BASE_URL || 'https://www.mercuryrepower.ca').replace(/\/$/, '');
+const protectionBypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
 const sessionId = `qa_acceptance_${Date.now()}_${Math.random().toString(16).slice(2)}`;
 const capturedEvents = [];
 const leadRequests = [];
@@ -29,6 +30,18 @@ await context.addInitScript(({ acceptanceSessionId }) => {
 }, { acceptanceSessionId: sessionId });
 
 const page = await context.newPage();
+
+if (protectionBypass) {
+  const baseOrigin = new URL(baseUrl).origin;
+  await page.route(`${baseOrigin}/**`, async (route) => {
+    await route.continue({
+      headers: {
+        ...route.request().headers(),
+        'x-vercel-protection-bypass': protectionBypass,
+      },
+    });
+  });
+}
 
 page.on('console', (message) => {
   if (message.type() === 'error') consoleErrors.push(message.text());
