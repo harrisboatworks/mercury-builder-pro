@@ -47,6 +47,29 @@ describe('decodeTradeInModel — model tokens', () => {
     expect(r.strokeConfidence).toBe('high');
   });
 
+  it('pre-2018 Pro XS resolves automatically to OptiMax', () => {
+    const r = decodeTradeInModel('150 Pro XS', { brand: 'Mercury', year: 2017 });
+    expect(r.hp).toBe(150);
+    expect(r.stroke).toBe('OptiMax');
+    expect(r.strokeConfidence).toBe('high');
+    expect(r.strokeReasons.join(' ')).toMatch(/2017 Pro XS.*OptiMax/i);
+  });
+
+  it('2018 Pro XS resolves automatically to FourStroke', () => {
+    const r = decodeTradeInModel('150 ProXS', { brand: 'Mercury', year: 2018 });
+    expect(r.hp).toBe(150);
+    expect(r.stroke).toBe('4-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+    expect(r.strokeReasons.join(' ')).toMatch(/2018 Pro XS.*FourStroke/i);
+  });
+
+  it('Pro XS without a year asks for the year instead of the stroke', () => {
+    const r = decodeTradeInModel('150 Pro-XS', { brand: 'Mercury' });
+    expect(r.stroke).toBeNull();
+    expect(r.strokeConfidence).toBe('low');
+    expect(r.warnings.some((w) => /Enter the model year/i.test(w))).toBe(true);
+  });
+
   it('"FOURSTROKE 90" → 4-Stroke high', () => {
     const r = decodeTradeInModel('FOURSTROKE 90');
     expect(r.stroke).toBe('4-Stroke');
@@ -248,6 +271,14 @@ describe('decodeTradeInModelFields — persisted quote data', () => {
     expect(decodeTradeInModelFields('2008 90 ELPT', { brand: 'Mercury', year: 2008 })).toEqual({
       horsepower: 90,
       engineType: undefined,
+    });
+    expect(decodeTradeInModelFields('150 Pro XS', { brand: 'Mercury', year: 2017 })).toEqual({
+      horsepower: 150,
+      engineType: 'optimax',
+    });
+    expect(decodeTradeInModelFields('150 Pro XS', { brand: 'Mercury', year: 2018 })).toEqual({
+      horsepower: 150,
+      engineType: '4-stroke',
     });
   });
 
