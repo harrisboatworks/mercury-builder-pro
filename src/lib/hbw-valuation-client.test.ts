@@ -80,4 +80,12 @@ describe('HBW valuation client result contract', () => {
 
     expect(sentBody).toMatchObject({ hp: 115, model: '115 ELPT', stroke: '2-stroke' });
   });
+
+  it.each([400, 422])('classifies HTTP %s as rejected input', async (status) => {
+    const result = await fetchHBWValuationFromInvoker(params, async () => ({
+      data: null,
+      error: { context: { status } },
+    }));
+    expect(result).toEqual({ ok: false, reason: 'input_rejected' });
+  });
 });

@@ -110,7 +110,7 @@ export interface HBWValuationResult extends TradeValueEstimate {
  * service is down is both untrue and alarming — shared/NAT IPs on marina wifi
  * or a busy show day will hit this with no fault of their own.
  */
-export type HBWValuationFailure = 'rate_limited' | 'unavailable';
+export type HBWValuationFailure = 'rate_limited' | 'input_rejected' | 'unavailable';
 export type HBWValuationFetchResult =
   | { ok: true; value: HBWValuationResult }
   | { ok: false; reason: HBWValuationFailure };
@@ -135,7 +135,7 @@ export async function fetchHBWValuationFromInvoker(
   year: number;
   horsepower?: number;
   condition: string;
-  stroke?: string;
+  stroke: string;
   hours?: number;
   model?: string;
   },
@@ -159,13 +159,17 @@ export async function fetchHBWValuationFromInvoker(
 
     if (error) {
       const status = await statusFromInvokeError(error);
-      const reason = status === 429 ? 'rate_limited' : 'unavailable';
+      const reason = status === 429 ? 'rate_limited'
+        : status === 400 || status === 422 ? 'input_rejected'
+        : 'unavailable';
       console.warn(`HBW valuation proxy error (status ${status ?? 'unknown'}):`, error);
       return { ok: false, reason };
     }
     const payload = data as { error?: unknown; code?: string } | null;
     if (!payload || typeof payload !== 'object' || payload.error) {
-      const reason = payload?.code === 'rate_limited' ? 'rate_limited' : 'unavailable';
+      const reason = payload?.code === 'rate_limited' ? 'rate_limited'
+        : payload?.code === 'invalid_input' || payload?.code === 'stroke_required' ? 'input_rejected'
+        : 'unavailable';
       console.warn('HBW valuation proxy returned error payload:', data);
       return { ok: false, reason };
     }
@@ -226,10 +230,9 @@ export function buildHBWReportUrl(params: {
   year: number;
   hp: number;
   condition: string;
-  stroke?: string;
+  stroke: string;
   hours?: number;
   model?: string;
-  name?: string;
 }): string {
   const base = `${CANONICAL_HBW_VALUATION_ORIGIN}/`;
   const query = new URLSearchParams();
@@ -237,10 +240,10 @@ export function buildHBWReportUrl(params: {
   query.set('year', String(params.year));
   query.set('hp', String(params.hp));
   query.set('condition', params.condition);
-  query.set('stroke', params.stroke || '4-stroke');
+  if (!params.stroke?.trim()) throw new Error('Confirmed stroke is required to build a valuation report URL');
+  query.set('stroke', params.stroke);
   if (params.hours) query.set('hours', String(params.hours));
   if (params.model) query.set('model', params.model);
-  if (params.name) query.set('name', params.name);
   query.set('auto', 'true');
   return `${base}?${query.toString()}`;
 }

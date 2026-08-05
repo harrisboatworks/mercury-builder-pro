@@ -9,6 +9,7 @@ import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
 import { useQuote } from '@/contexts/QuoteContext';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
+import { parseTradeInDraft, serializeTradeInDraft } from '@/lib/trade-in-state';
 
 const DRAFT_KEY = 'tradeInValuePage:draft';
 
@@ -29,7 +30,7 @@ function loadDraft(): { data: TradeInInfo; restored: boolean } {
   try {
     const raw = localStorage.getItem(DRAFT_KEY);
     if (!raw) return { data: INITIAL_TRADE_IN, restored: false };
-    const parsed = JSON.parse(raw);
+    const parsed = parseTradeInDraft(raw);
     if (!parsed || typeof parsed !== 'object') return { data: INITIAL_TRADE_IN, restored: false };
     const merged = { ...INITIAL_TRADE_IN, ...parsed } as TradeInInfo;
     // Only count as "restored" if user actually entered something
@@ -60,7 +61,7 @@ export default function TradeInValuePage() {
   useEffect(() => {
     const t = setTimeout(() => {
       try {
-        localStorage.setItem(DRAFT_KEY, JSON.stringify(tradeInInfo));
+        localStorage.setItem(DRAFT_KEY, serializeTradeInDraft(tradeInInfo));
       } catch (e) {
         console.error('Failed to autosave trade-in draft:', e);
       }

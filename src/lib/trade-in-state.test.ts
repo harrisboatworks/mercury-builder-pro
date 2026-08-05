@@ -2,8 +2,11 @@ import { describe, expect, it } from 'vitest';
 import type { BoatInfo } from '@/components/QuoteBuilder';
 import {
   buildInitialTradeInInfo,
+  clearTradeInValuation,
   isSupportedTradeInYear,
+  parseTradeInDraft,
   parseMotorHorsepowerInput,
+  serializeTradeInDraft,
 } from './trade-in-state';
 
 const boatInfo = (
@@ -71,5 +74,40 @@ describe('parseMotorHorsepowerInput', () => {
   it('normalizes empty or invalid values to zero', () => {
     expect(parseMotorHorsepowerInput('')).toBe(0);
     expect(parseMotorHorsepowerInput('-9.9')).toBe(0);
+  });
+});
+
+describe('valuation freshness', () => {
+  const valued = {
+    hasTradeIn: true,
+    brand: 'Mercury',
+    year: 2017,
+    horsepower: 150,
+    model: '150 Pro XS',
+    serialNumber: '',
+    condition: 'good' as const,
+    estimatedValue: 5000,
+    confidenceLevel: 'high' as const,
+    rangeFinalLow: 4500,
+    rangeFinalHigh: 5500,
+    valuationReportUrl: 'https://valuation.mercuryrepower.ca/report',
+  };
+
+  it('clears every price artifact when a price-driving input changes', () => {
+    expect(clearTradeInValuation(valued, { year: 2018 })).toMatchObject({
+      year: 2018,
+      estimatedValue: 0,
+      rangeFinalLow: undefined,
+      rangeFinalHigh: undefined,
+      valuationReportUrl: undefined,
+    });
+  });
+
+  it('keeps a recent draft value but strips a stale or legacy value', () => {
+    const now = 1_800_000_000_000;
+    expect(parseTradeInDraft(serializeTradeInDraft(valued, now - 60_000), now)?.estimatedValue).toBe(5000);
+    expect(parseTradeInDraft(serializeTradeInDraft(valued, now - 31 * 60_000), now)?.estimatedValue).toBe(0);
+    expect(parseTradeInDraft(JSON.stringify(valued), now)?.estimatedValue).toBe(0);
+    expect(parseTradeInDraft(serializeTradeInDraft(valued, now - 25 * 60 * 60_000), now)?.estimatedValue).toBe(0);
   });
 });
