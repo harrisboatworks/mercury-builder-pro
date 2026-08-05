@@ -3,8 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "vite",
+    "test": "vitest run",
     "build": "node scripts/generate-markdown-twins.mjs && node scripts/check-publishing-integrity.mjs && node scripts/generate-rss.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",

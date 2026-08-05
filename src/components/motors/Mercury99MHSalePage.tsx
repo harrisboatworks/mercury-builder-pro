@@ -485,7 +485,7 @@ export function Mercury99MHSalePage({
                     'Buyers who want EFI without adding an electric-start system',
                     'Kicker applications only after shaft length and controls are confirmed',
                   ].map((item) => (
-                    <li key={item} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />{item}</li>
+                    <li key={item} className="flex flex-row items-start gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />{item}</li>
                   ))}
                 </ul>
               </div>

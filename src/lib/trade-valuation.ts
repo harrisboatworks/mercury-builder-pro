@@ -684,10 +684,9 @@ export interface HBWValuationResult extends TradeValueEstimate {
  * or a busy show day will hit this with no fault of their own.
  */
 export type HBWValuationFailure = 'rate_limited' | 'unavailable';
-
-/** Populated by fetchHBWValuation when it returns null, so callers can tell a
- *  throttled visitor apart from a genuine outage. */
-export let lastHBWValuationFailure: HBWValuationFailure = 'unavailable';
+export type HBWValuationFetchResult =
+  | { ok: true; value: HBWValuationResult }
+  | { ok: false; reason: HBWValuationFailure };
 
 /** Pull an HTTP status off a supabase.functions.invoke error, which wraps the
  *  Response rather than exposing the status directly. */
@@ -699,9 +698,78 @@ async function statusFromInvokeError(error: unknown): Promise<number | null> {
 }
 
 /**
- * Fetch a motor valuation from the HBW API.
- * Returns null on any failure; check `lastHBWValuationFailure` for the reason.
+ * Normalize one Supabase Edge Function invocation into an explicit result.
+ * Keeping the failure reason in the return value avoids a shared mutable
+ * module global that concurrent callers could overwrite.
  */
+export async function fetchHBWValuationFromInvoker(
+  params: {
+  brand: string;
+  year: number;
+  horsepower?: number;
+  condition: string;
+  stroke?: string;
+  hours?: number;
+  model?: string;
+  },
+  invoke: (name: string, options: { body: Record<string, unknown> }) => Promise<{ data: unknown; error: unknown }>,
+): Promise<HBWValuationFetchResult> {
+  // Build body with only the fields we have. The Vercel API can decode HP
+  // and stroke from the model code, so omit empty values rather than sending
+  // defaults that would override the decoder.
+  const body: Record<string, unknown> = {
+    brand: params.brand,
+    year: params.year,
+    condition: params.condition,
+  };
+  if (params.horsepower && params.horsepower > 0) body.hp = params.horsepower;
+  if (params.model && params.model.trim()) body.model = params.model.trim();
+  if (params.stroke) body.stroke = params.stroke;
+  if (params.hours !== undefined) body.hours = params.hours;
+
+  try {
+    const { data, error } = await invoke('hbw-valuation-proxy', { body });
+
+    if (error) {
+      const status = await statusFromInvokeError(error);
+      const reason = status === 429 ? 'rate_limited' : 'unavailable';
+      console.warn(`HBW valuation proxy error (status ${status ?? 'unknown'}):`, error);
+      return { ok: false, reason };
+    }
+    const payload = data as { error?: unknown; code?: string } | null;
+    if (!payload || typeof payload !== 'object' || payload.error) {
+      const reason = payload?.code === 'rate_limited' ? 'rate_limited' : 'unavailable';
+      console.warn('HBW valuation proxy returned error payload:', data);
+      return { ok: false, reason };
+    }
+
+    const v = data as HBWValuationResponse;
+    if (typeof v.rangeLow !== 'number' || typeof v.rangeHigh !== 'number') {
+      console.warn('HBW valuation proxy returned unexpected shape:', data);
+      return { ok: false, reason: 'unavailable' };
+    }
+
+    return {
+      ok: true,
+      value: {
+        low: v.rangeLow,
+        high: v.rangeHigh,
+        average: v.wholesale,
+        confidence: v.confidence,
+        source: 'HBW Motor Valuation API',
+        factors: v.factors || [],
+        listingValue: v.listing,
+        hstSavings: v.hstSavings,
+        fromHBW: true,
+      },
+    };
+  } catch (err) {
+    console.warn('HBW valuation API failed:', err);
+    return { ok: false, reason: 'unavailable' };
+  }
+}
+
+/** Fetch a motor valuation from the canonical HBW API through Supabase. */
 export async function fetchHBWValuation(params: {
   brand: string;
   year: number;
@@ -710,63 +778,16 @@ export async function fetchHBWValuation(params: {
   stroke?: string;
   hours?: number;
   model?: string;
-}): Promise<HBWValuationResult | null> {
+}): Promise<HBWValuationFetchResult> {
   try {
     // Lazy import to avoid pulling the supabase client into non-React contexts
     const { supabase } = await import('@/integrations/supabase/client');
-
-    // Build body with only the fields we have. The Vercel API can decode HP
-    // and stroke from the model code, so omit empty values rather than sending
-    // defaults that would override the decoder.
-    const body: Record<string, unknown> = {
-      brand: params.brand,
-      year: params.year,
-      condition: params.condition,
-    };
-    if (params.horsepower && params.horsepower > 0) body.hp = params.horsepower;
-    if (params.model && params.model.trim()) body.model = params.model.trim();
-    if (params.stroke) body.stroke = params.stroke;
-    if (params.hours !== undefined) body.hours = params.hours;
-
-    const { data, error } = await supabase.functions.invoke('hbw-valuation-proxy', {
-      body,
-    });
-
-    if (error) {
-      const status = await statusFromInvokeError(error);
-      lastHBWValuationFailure = status === 429 ? 'rate_limited' : 'unavailable';
-      console.warn(`HBW valuation proxy error (status ${status ?? 'unknown'}):`, error);
-      return null;
-    }
-    const payload = data as { error?: unknown; code?: string } | null;
-    if (!payload || typeof payload !== 'object' || payload.error) {
-      lastHBWValuationFailure = payload?.code === 'rate_limited' ? 'rate_limited' : 'unavailable';
-      console.warn('HBW valuation proxy returned error payload:', data);
-      return null;
-    }
-
-    const v = data as HBWValuationResponse;
-    if (typeof v.rangeLow !== 'number' || typeof v.rangeHigh !== 'number') {
-      lastHBWValuationFailure = 'unavailable';
-      console.warn('HBW valuation proxy returned unexpected shape:', data);
-      return null;
-    }
-
-    return {
-      low: v.rangeLow,
-      high: v.rangeHigh,
-      average: v.wholesale,
-      confidence: v.confidence,
-      source: 'HBW Motor Valuation API',
-      factors: v.factors || [],
-      listingValue: v.listing,
-      hstSavings: v.hstSavings,
-      fromHBW: true,
-    };
+    return await fetchHBWValuationFromInvoker(params, (name, options) =>
+      supabase.functions.invoke(name, options),
+    );
   } catch (err) {
-    lastHBWValuationFailure = 'unavailable';
     console.warn('HBW valuation API failed:', err);
-    return null;
+    return { ok: false, reason: 'unavailable' };
   }
 }
 
