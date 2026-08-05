@@ -82,8 +82,7 @@ export default function TradeInValuePage() {
     // mounted app-wide and already holds hydrated state in memory, so it overwrites
     // any direct write on its next persist and the trade-in is silently lost.
     const promoted: TradeInInfo = { ...tradeInInfo, hasTradeIn: true };
-    dispatch({ type: 'SET_TRADE_IN_INFO', payload: promoted });
-    dispatch({ type: 'SET_HAS_TRADEIN', payload: true });
+    dispatch({ type: 'PROMOTE_TRADE_IN', payload: promoted });
     // Keep the standalone draft. If the customer backs out of the quote flow, their
     // entry is still here; handleClearDraft and the next valuation both replace it.
     navigate('/quote/motor-selection');

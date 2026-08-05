@@ -126,6 +126,7 @@ export type QuoteAction =
   | { type: 'SET_PURCHASE_PATH'; payload: 'loose' | 'installed' }
   | { type: 'SET_BOAT_INFO'; payload: BoatInfo }
   | { type: 'SET_TRADE_IN_INFO'; payload: any }
+  | { type: 'PROMOTE_TRADE_IN'; payload: any }
   | { type: 'SET_FUEL_TANK_CONFIG'; payload: any }
   | { type: 'SET_INSTALL_CONFIG'; payload: any }
   | { type: 'SET_LOOSE_MOTOR_BATTERY'; payload: LooseMotorBattery | null }
@@ -317,6 +318,15 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       return { ...state, boatInfo: action.payload };
     case 'SET_TRADE_IN_INFO':
       return { ...state, tradeInInfo: action.payload };
+    case 'PROMOTE_TRADE_IN':
+      // The standalone estimator hands off both pieces of quote state as one
+      // reducer transition. Persistence can never observe a trade payload
+      // while hasTradein is still false.
+      return {
+        ...state,
+        tradeInInfo: { ...action.payload, hasTradeIn: true },
+        hasTradein: true,
+      };
     case 'SET_FUEL_TANK_CONFIG':
       return { ...state, fuelTankConfig: action.payload };
     case 'SET_INSTALL_CONFIG':

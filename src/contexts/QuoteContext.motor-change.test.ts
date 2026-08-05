@@ -198,6 +198,42 @@ describe('quoteReducer START_MOTOR_ONLY_QUOTE', () => {
   });
 });
 
+describe('quoteReducer PROMOTE_TRADE_IN', () => {
+  it('atomically carries the standalone estimate without replacing unrelated quote state', () => {
+    const existingMotor = motor('motor-a', '90 ELPT', 12000);
+    const state: QuoteState = {
+      ...initialState,
+      motor: existingMotor,
+      customerName: 'Taylor Customer',
+      selectedOptions: [{
+        optionId: 'battery',
+        name: 'Starting battery',
+        price: 250,
+        category: 'electrical',
+        assignmentType: 'available',
+        isIncluded: false,
+      }],
+    };
+    const trade = {
+      hasTradeIn: false,
+      brand: 'Mercury',
+      year: 1998,
+      horsepower: 115,
+      model: '115 ELPT',
+      condition: 'good',
+      estimatedValue: 1600,
+    };
+
+    const promoted = quoteReducer(state, { type: 'PROMOTE_TRADE_IN', payload: trade });
+
+    expect(promoted.tradeInInfo).toEqual({ ...trade, hasTradeIn: true });
+    expect(promoted.hasTradein).toBe(true);
+    expect(promoted.motor).toEqual(existingMotor);
+    expect(promoted.customerName).toBe('Taylor Customer');
+    expect(promoted.selectedOptions).toEqual(state.selectedOptions);
+  });
+});
+
 describe('quoteReducer RESTORE_QUOTE', () => {
   it('restores the authoritative QR/PDF state in one action', () => {
     const savedMotor = motor('motor-a', '90 ELPT', 12000);
