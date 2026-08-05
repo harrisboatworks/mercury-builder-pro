@@ -22,6 +22,7 @@
     "check:lockfile-sync": "node scripts/check-lockfile-sync.mjs",
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
     "check:promo-quote-live": "node scripts/promo-quote-live-check.mjs",
+    "check:quote-activity-live": "node scripts/quote-activity-live-check.mjs",
     "check:chat-voice-knowledge-live": "node scripts/chat-voice-knowledge-live-check.mjs",
     "check:structured-data": "node scripts/check-structured-data.mjs",
     "check:schema-org": "node scripts/validate-schema-org.mjs",
