@@ -23,6 +23,8 @@ export interface TradeInInfo {
   valuationReportUrl?: string;
 }
 
+export const CANONICAL_HBW_VALUATION_ORIGIN = 'https://valuation.mercuryrepower.ca';
+
 export interface TradeValueEstimate {
   low: number;
   high: number;
@@ -139,7 +141,7 @@ export async function fetchHBWValuationFromInvoker(
   },
   invoke: (name: string, options: { body: Record<string, unknown> }) => Promise<{ data: unknown; error: unknown }>,
 ): Promise<HBWValuationFetchResult> {
-  // Build body with only the fields we have. The Vercel API can decode HP
+  // Build body with only the fields we have. The canonical service can decode HP
   // and stroke from the model code, so omit empty values rather than sending
   // defaults that would override the decoder.
   const body: Record<string, unknown> = {
@@ -229,7 +231,7 @@ export function buildHBWReportUrl(params: {
   model?: string;
   name?: string;
 }): string {
-  const base = 'https://hbw-valuation-hbw.vercel.app/';
+  const base = `${CANONICAL_HBW_VALUATION_ORIGIN}/`;
   const query = new URLSearchParams();
   query.set('brand', params.brand);
   query.set('year', String(params.year));
