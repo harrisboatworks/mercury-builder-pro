@@ -94,10 +94,25 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   //   plus brand prefixes that imply 4-stroke (F<digit>, DF<digit>, BF<digit>).
   const fourStrokeHit = upper.match(/\b4[\s-]?S(?:TROKES?)?\b|\bFOUR[\s-]?STROKES?\b|^(?:DF|F|BF)\d/);
   const optiHit = upper.match(/OPTIMAX|OPTI\b/);
+  const proXsHit = upper.match(/\bPRO[\s-]*XS\b/);
   // "2S", "2-S", "2 STROKE", "2-STROKE", "2STROKE", "TWO STROKE", "TWOSTROKE", "TWO-STROKE", or DT<digit>.
   const twoStrokeHit = upper.match(/\b2[\s-]?S(?:TROKES?)?\b|\bTWO[\s-]?STROKES?\b|^DT\d/);
 
-  if (fourStrokeHit) {
+  // HBW intake rule: a Pro XS model name plus year is enough to determine the
+  // architecture. Pre-2018 resolves to OptiMax; 2018+ resolves to FourStroke.
+  // This keeps customers from having to know the combustion platform behind
+  // Mercury's product-line name.
+  if (proXsHit && ctx.year) {
+    const isOptiMax = ctx.year < 2018;
+    result.stroke = isOptiMax ? 'OptiMax' : '4-Stroke';
+    result.strokeConfidence = 'high';
+    result.strokeReasons.push(`${ctx.year} Pro XS automatically resolves to ${isOptiMax ? 'OptiMax' : 'FourStroke'}`);
+  } else if (proXsHit) {
+    result.stroke = null;
+    result.strokeConfidence = 'low';
+    result.strokeReasons.push('Pro XS architecture is determined by model year');
+    result.warnings.push('Enter the model year so Pro XS can resolve automatically to OptiMax or FourStroke');
+  } else if (fourStrokeHit) {
     result.stroke = '4-Stroke';
     result.strokeConfidence = 'high';
     result.strokeReasons.push(`Matched "${fourStrokeHit[0]}" in model text → 4-Stroke marker`);
