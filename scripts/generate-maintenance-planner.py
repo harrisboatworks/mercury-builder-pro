@@ -36,13 +36,40 @@ PALE, LINE, WHITE = HexColor("#F2F6F9"), HexColor("#CFD9E2"), white
 MANUAL_URL = "https://www.mercurymarine.com/ca/en/service-and-support/owners-resources"
 CAPACITY_URL = "https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart"
 SERVICE_URL = "https://hbw.wiki/service"
+FONT_CANDIDATES = (
+    (
+        Path("/System/Library/Fonts/Supplemental"),
+        ("Arial.ttf", "Arial Bold.ttf", "Arial Italic.ttf"),
+    ),
+    (
+        Path("/usr/share/fonts/truetype/liberation2"),
+        (
+            "LiberationSans-Regular.ttf",
+            "LiberationSans-Bold.ttf",
+            "LiberationSans-Italic.ttf",
+        ),
+    ),
+)
 
 
-def setup_fonts():
-    d = Path("/System/Library/Fonts/Supplemental")
-    pdfmetrics.registerFont(TTFont("HBW", str(d / "Arial.ttf")))
-    pdfmetrics.registerFont(TTFont("HBW-Bold", str(d / "Arial Bold.ttf")))
-    pdfmetrics.registerFont(TTFont("HBW-Italic", str(d / "Arial Italic.ttf")))
+def setup_fonts(fonts_dir: Path | None = None):
+    candidates = []
+    if fonts_dir is not None:
+        candidates.extend(
+            (fonts_dir, filenames) for _, filenames in FONT_CANDIDATES
+        )
+    candidates.extend(FONT_CANDIDATES)
+    for directory, filenames in candidates:
+        paths = tuple(directory / filename for filename in filenames)
+        if all(path.is_file() for path in paths):
+            pdfmetrics.registerFont(TTFont("HBW", str(paths[0])))
+            pdfmetrics.registerFont(TTFont("HBW-Bold", str(paths[1])))
+            pdfmetrics.registerFont(TTFont("HBW-Italic", str(paths[2])))
+            return
+    raise FileNotFoundError(
+        "No supported font family found. Pass --fonts-dir containing Arial "
+        "or Liberation Sans regular, bold and italic TTF files."
+    )
 
 
 def image_fit(c, path, x, y, w, h):
@@ -208,7 +235,7 @@ def page_one(c, root, qr):
         "Follow the exact long-term-storage section, often defined as two months or longer.",
         "Treat fresh fuel promptly. Ethanol fuel may require draining depending on the engine and fuel system.",
         "Complete due oil, filter, gear-lube and corrosion-protection work before storage.",
-        "Use the specified drainage position, commonly vertical or full-down, and follow the battery procedure.",
+        "Use the drainage position in the serial-number manual so water is not trapped, and follow the battery procedure.",
     ]
     x, gap, cw, ch = 30, 10, (W - 70) / 2, 169
     ys = [428, 249, 70]
@@ -293,8 +320,8 @@ def page_two(c, root):
     c.showPage()
 
 
-def generate(output, root):
-    setup_fonts()
+def generate(output, root, fonts_dir=None):
+    setup_fonts(fonts_dir)
     output.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(output), pagesize=letter, pageCompression=1)
     c.setTitle("Mercury Outboard Maintenance Planner")
@@ -313,8 +340,17 @@ def main():
     default = root / "public/downloads/mercury-outboard-maintenance-planner-hbw.pdf"
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=default)
+    parser.add_argument(
+        "--fonts-dir",
+        type=Path,
+        help="Directory containing Arial or Liberation Sans TTF files",
+    )
     args = parser.parse_args()
-    generate(args.output.resolve(), root)
+    generate(
+        args.output.resolve(),
+        root,
+        args.fonts_dir.resolve() if args.fonts_dir else None,
+    )
     print(args.output.resolve())
 
 

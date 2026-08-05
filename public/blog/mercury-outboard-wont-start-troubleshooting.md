@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-08-02
+last_updated: 2026-08-04
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
-date_modified: 2026-08-02
+date_modified: 2026-08-04
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last updated:** 2026-08-02  
+**Last updated:** 2026-08-04
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
@@ -39,7 +39,13 @@ The original article analysis counted **537 Lightspeed job records** labelled fo
 
 The old cause buckets also overlapped. A repair order could involve stale fuel, a weak battery and fouled plugs at the same time. We therefore kept the useful 537-job scale but retired the claim that it proves a universal fuel-versus-electrical percentage. The diagnostic ladder below is based on safe testing order, not on pretending every no-start fits one bucket.
 
-[Keep the Mercury Alarm & No-Start Action Card aboard](/downloads/mercury-alarm-no-start-action-card-hbw.pdf) for the first safe checks when a warning or no-start happens away from the dock.
+::cta
+variant: inline
+heading: Keep the Alarm & No-Start Action Card aboard
+body: There is no universal Mercury beep dictionary. Use this one-page card to capture the exact warning and display message, work through safe first checks and record what the shop needs.
+primaryLabel: Download action card (PDF)
+primaryHref: /downloads/mercury-alarm-no-start-action-card-hbw.pdf
+::
 
 ## The three "stupid easy" things to check first
 
@@ -196,4 +202,3 @@ There is no universal winner. HBW's 537-job-row Lightspeed snapshot confirms the
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
 - Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
-

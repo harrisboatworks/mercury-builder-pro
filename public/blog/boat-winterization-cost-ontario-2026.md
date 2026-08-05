@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-07-31
+last_updated: 2026-08-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Winterization Cost Ontario 2026"
 description: "Boat winterization cost in Ontario varies by motor size, hull type, and bundled services. See typical CAD ranges for motor, shrinkwrap."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-07-31
+date_modified: 2026-08-04
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last updated:** 2026-07-31  
+**Last updated:** 2026-08-04
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 
@@ -163,8 +163,6 @@ Stop and request professional service when:
 
 For Mercury owners, start with Mercury's official guidance and then follow the exact manual for the serial number. The related [DIY Mercury outboard winterization guide](/blog/diy-mercury-outboard-winterization-guide) is a decision framework, not a replacement for that manual.
 
-[Print the Fall Storage & Winterization Checklist](/downloads/fall-storage-winterization-checklist-hbw.pdf) before you start so the motor, fuel, battery, and onboard-system checks stay together.
-
 ## Request the Current Scope
 
 Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
@@ -234,4 +232,3 @@ As of July 2026, spring commissioning is included for HBW winter-storage custome
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
