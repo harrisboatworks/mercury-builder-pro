@@ -6,6 +6,7 @@ import { ArrowRight, RotateCcw } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
+import { useQuote } from '@/contexts/QuoteContext';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
 
@@ -46,6 +47,7 @@ export default function TradeInValuePage() {
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(initial.current.data);
   const [showRestored, setShowRestored] = useState(initial.current.restored);
   const navigate = useNavigate();
+  const { dispatch } = useQuote();
 
   // Auto-hide restored banner
   useEffect(() => {
@@ -75,19 +77,15 @@ export default function TradeInValuePage() {
   };
 
   const handleStartQuote = () => {
-    // Store trade-in data so the quote builder can pick it up
-    try {
-      const stored = localStorage.getItem('quoteBuilder');
-      const parsed = stored ? JSON.parse(stored) : { state: {} };
-      parsed.state = { ...parsed.state, tradeInInfo, hasTradein: true };
-      localStorage.setItem('quoteBuilder', JSON.stringify(parsed));
-    } catch (e) {
-      console.error('Failed to persist trade-in to localStorage:', e);
-    }
-    // Clear the standalone draft, it has now been promoted into the quote flow
-    try {
-      localStorage.removeItem(DRAFT_KEY);
-    } catch {}
+    // Hand the trade-in to the quote builder through its own reducer.
+    // Writing localStorage['quoteBuilder'] directly does NOT work: QuoteProvider is
+    // mounted app-wide and already holds hydrated state in memory, so it overwrites
+    // any direct write on its next persist and the trade-in is silently lost.
+    const promoted: TradeInInfo = { ...tradeInInfo, hasTradeIn: true };
+    dispatch({ type: 'SET_TRADE_IN_INFO', payload: promoted });
+    dispatch({ type: 'SET_HAS_TRADEIN', payload: true });
+    // Keep the standalone draft. If the customer backs out of the quote flow, their
+    // entry is still here; handleClearDraft and the next valuation both replace it.
     navigate('/quote/motor-selection');
   };
 
