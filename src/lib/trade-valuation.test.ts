@@ -35,5 +35,12 @@ describe('trade valuation display helpers', () => {
     expect(reportUrl.pathname).toBe('/');
     expect(reportUrl.searchParams.get('stroke')).toBe('proxs');
     expect(reportUrl.searchParams.get('auto')).toBe('true');
+    expect(reportUrl.searchParams.has('name')).toBe(false);
+  });
+
+  it('never guesses four-stroke or places a customer name in the report URL', () => {
+    expect(() => buildHBWReportUrl({
+      brand: 'Mercury', year: 2017, hp: 150, condition: 'good', stroke: '',
+    })).toThrow(/stroke is required/i);
   });
 });

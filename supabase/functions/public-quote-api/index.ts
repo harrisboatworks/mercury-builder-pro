@@ -82,10 +82,10 @@ Deno.serve(async (req) => {
           _window_minutes: 10,
         });
         if (error || data === false) {
-          return rateLimitedResponse(corsHeaders, 60);
+          return rateLimitedResponse(corsHeaders, 600);
         }
       } catch (_e) {
-        return rateLimitedResponse(corsHeaders, 60);
+        return rateLimitedResponse(corsHeaders, 600);
       }
     } else {
       // Read-only actions stay fail-open (a transient DB issue must not
@@ -99,7 +99,7 @@ Deno.serve(async (req) => {
         action: `public_quote_${actionKey}`.slice(0, 128),
         ...actionLimit,
       });
-      if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+      if (!allowed) return rateLimitedResponse(corsHeaders, 600);
     }
 
     switch (action) {

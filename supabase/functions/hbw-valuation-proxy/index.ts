@@ -8,6 +8,7 @@ import {
   ALLOWED_HBW_STROKES,
   fetchCanonicalHbwValuation,
   HbwValuationError,
+  normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
 
 const corsHeaders = {
@@ -40,7 +41,7 @@ Deno.serve(async (req) => {
     maxAttempts: 20,
     windowMinutes: 10,
   });
-  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+  if (!allowed) return rateLimitedResponse(corsHeaders, 600);
 
   let raw: any;
   try {
@@ -55,14 +56,24 @@ Deno.serve(async (req) => {
   const hasHp = raw?.hp !== undefined && raw?.hp !== null && raw?.hp !== "";
   const hp = hasHp ? Number(raw.hp) : undefined;
   const condition = typeof raw?.condition === "string" ? raw.condition.toLowerCase() : "";
-  const hasStroke = typeof raw?.stroke === "string" && raw.stroke.trim().length > 0;
-  const stroke = hasStroke ? raw.stroke.toLowerCase() : undefined;
+  let stroke: string | undefined;
+  try {
+    stroke = normalizeHbwStroke(raw?.stroke);
+  } catch (error) {
+    if (error instanceof HbwValuationError) {
+      return json({ error: error.message, code: error.code }, error.status);
+    }
+    throw error;
+  }
   const hours = raw?.hours === undefined || raw?.hours === null ? undefined : Number(raw.hours);
   const model = typeof raw?.model === "string" && raw.model.trim() ? raw.model.trim() : undefined;
 
   const errors: Record<string, string> = {};
   if (!brand || brand.length > 64) errors.brand = "required (1-64 chars)";
-  if (!Number.isFinite(year) || year < 1950 || year > 2100) errors.year = "required (1950-2100)";
+  const currentYear = new Date().getFullYear();
+  if (!Number.isInteger(year) || year < 1950 || year > currentYear) {
+    errors.year = `required integer (1950-${currentYear})`;
+  }
   if (!model && (hp === undefined || !Number.isFinite(hp) || hp < 1 || hp > 1000)) {
     errors.model = "model code or hp (1-1000) required";
   }
