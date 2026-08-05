@@ -4,6 +4,11 @@
 // browser code so frontend, public-quote-api, and the standalone tool all
 // return identical valuations.
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import {
+  ALLOWED_HBW_STROKES,
+  fetchCanonicalHbwValuation,
+  HbwValuationError,
+} from "../_shared/hbw-valuation.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -12,8 +17,6 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-const HBW_URL = "https://hbw-valuation-hbw.vercel.app/api/motor-valuation";
-const ALLOWED_STROKES = new Set(["4-stroke", "2-stroke", "proxs", "optimax", "etec"]);
 const ALLOWED_CONDITIONS = new Set(["excellent", "good", "fair", "poor"]);
 
 function json(body: unknown, status = 200) {
@@ -38,12 +41,6 @@ Deno.serve(async (req) => {
     windowMinutes: 10,
   });
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);
-
-  const apiKey = Deno.env.get("HBW_API_KEY");
-  if (!apiKey) {
-    console.error("HBW_API_KEY not configured");
-    return json({ error: "Valuation service not configured" }, 500);
-  }
 
   let raw: any;
   try {
@@ -73,7 +70,7 @@ Deno.serve(async (req) => {
     errors.hp = "1-1000";
   }
   if (!ALLOWED_CONDITIONS.has(condition)) errors.condition = "excellent|good|fair|poor";
-  if (stroke !== undefined && !ALLOWED_STROKES.has(stroke)) {
+  if (stroke !== undefined && !ALLOWED_HBW_STROKES.has(stroke)) {
     errors.stroke = "4-stroke|2-stroke|proxs|optimax|etec";
   }
   if (hours !== undefined && (!Number.isFinite(hours) || hours < 0 || hours > 100000)) {
@@ -85,55 +82,25 @@ Deno.serve(async (req) => {
     return json({ error: "Invalid request", details: errors }, 400);
   }
 
-  // Build upstream payload — omit undefined fields so the API's decoder can
-  // infer hp/stroke from the model code when those aren't provided.
-  const upstreamBody: Record<string, unknown> = { brand, year, condition };
-  if (hp !== undefined) upstreamBody.hp = hp;
-  if (stroke !== undefined) upstreamBody.stroke = stroke;
-  if (hours !== undefined) upstreamBody.hours = hours;
-  if (model) upstreamBody.model = model;
-
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 8000);
   try {
-    const upstream = await fetch(HBW_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-API-Key": apiKey,
-      },
-      body: JSON.stringify(upstreamBody),
-      signal: controller.signal,
+    const data = await fetchCanonicalHbwValuation({
+      brand,
+      year,
+      hp,
+      condition,
+      stroke,
+      hours,
+      model,
     });
-    clearTimeout(timer);
-
-    const text = await upstream.text();
-    let data: any = null;
-    try {
-      data = text ? JSON.parse(text) : null;
-    } catch {
-      // pass-through raw text on parse failure
-    }
-
-    if (!upstream.ok) {
-      console.error("HBW upstream error", upstream.status, text);
+    return json(data, 200);
+  } catch (err) {
+    console.error("HBW proxy fetch failed:", err);
+    if (err instanceof HbwValuationError) {
       return json(
-        {
-          error: "Upstream valuation API error",
-          status: upstream.status,
-          details: data ?? text,
-        },
-        upstream.status === 401 || upstream.status === 403 ? 502 : upstream.status,
+        { error: err.message, code: err.code },
+        err.status,
       );
     }
-
-    return json(data ?? {}, 200);
-  } catch (err) {
-    clearTimeout(timer);
-    console.error("HBW proxy fetch failed:", err);
-    return json(
-      { error: "Failed to reach valuation API", message: String(err) },
-      502,
-    );
+    return json({ error: "Failed to reach valuation API" }, 502);
   }
 });
