@@ -12,7 +12,7 @@ import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { decodeTradeInModel, decodeTradeInModelFields, type Confidence, type DecodeResult } from './tradeInModelDecoder';
-import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult } from '@/lib/trade-valuation';
+import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult, type HBWValuationFailure } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
@@ -38,6 +38,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [apiUnavailable, setApiUnavailable] = useState(false);
+  // 'rate_limited' means the visitor ran more estimates than the proxy allows,
+  // not that anything is broken — say so rather than claiming an outage.
+  const [failureReason, setFailureReason] = useState<HBWValuationFailure>('unavailable');
   const [showValidation, setShowValidation] = useState(false);
   const [moreDetailsOpen, setMoreDetailsOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
@@ -181,7 +184,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setIsLoading(true);
     setApiUnavailable(false);
 
-    // Stroke is always inferred by the HBW API from the model code.
+    // Send the decoded or manually confirmed architecture. Configuration
+    // suffixes such as ELPT and EFI do not reliably distinguish two-stroke
+    // from four-stroke motors, so the API must not silently choose for us.
     const hbwResult = await fetchHBWValuation({
       brand: tradeInInfo.brand,
       year: tradeInInfo.year,
@@ -189,19 +194,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       condition: tradeInInfo.condition,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
+      stroke: tradeInInfo.engineType,
     });
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
-    if (hbwResult) {
-      console.log('✅ HBW API returned valuation:', hbwResult);
-      tradeEstimate = hbwResult;
+    if (hbwResult.ok) {
+      console.log('✅ HBW API returned valuation:', hbwResult.value);
+      tradeEstimate = hbwResult.value;
     } else {
       // Live valuation API unreachable. We deliberately do NOT fall back to the
       // local table — it drifts out of sync with the canonical HBW engine
       // (hbw-valuation on Vercel) and quietly shows customers numbers we never
       // quoted. Fail honestly: offer retry + a direct line instead.
-      console.warn('⚠️ HBW valuation API unavailable — showing retry/contact message (no local fallback)');
+      console.warn(`⚠️ HBW valuation unavailable (${hbwResult.reason}) — showing retry/contact message (no local fallback)`);
+      setFailureReason(hbwResult.reason);
       setApiUnavailable(true);
       setEstimate(null);
       setIsLoading(false);
@@ -212,7 +219,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     
     // Update the trade-in info with the rounded median value ($25 increments)
     const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
-    // Build report URL for persistence, let the API decode stroke from model.
+    // Build the report URL with the same confirmed architecture used for the
+    // estimate so the detailed report cannot silently recalculate a new value.
     const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
       ? buildHBWReportUrl({
           brand: tradeInInfo.brand,
@@ -221,6 +229,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
           condition: tradeInInfo.condition,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
+          stroke: tradeInInfo.engineType,
           name: customerName || undefined,
         })
       : undefined;
@@ -877,9 +886,15 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <div className="flex items-start gap-3">
                     <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
                     <div className="space-y-2">
-                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">Live estimate temporarily unavailable</h3>
+                      <h3 className="font-display text-lg font-semibold text-repower-navy-900">
+                        {failureReason === 'rate_limited'
+                          ? "That's a few estimates in a row"
+                          : 'Live estimate temporarily unavailable'}
+                      </h3>
                       <p className="font-sans text-sm leading-relaxed text-repower-navy-900/70">
-                        We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day.
+                        {failureReason === 'rate_limited'
+                          ? "Nothing's broken — we just cap how many estimates run back to back. Wait up to 10 minutes and try again, or send us your motor details and we'll usually reply with a real number within one business day."
+                          : "We couldn't reach our valuation service just now. Try again in a minute — or send us your motor details and we'll usually reply with a real number within one business day."}
                       </p>
                       <p className="font-sans text-sm text-repower-navy-900/70">
                         Call <a href="tel:9053422153" className="underline font-medium">(905) 342-2153</a> or text <a href="sms:6479522153" className="underline font-medium">(647) 952-2153</a>
