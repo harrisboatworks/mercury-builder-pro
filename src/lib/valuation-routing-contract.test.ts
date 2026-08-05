@@ -51,4 +51,17 @@ describe('canonical valuation routing contract', () => {
     expect(client).not.toContain('estimateTradeValue');
     expect(quoteDisplay).not.toContain('estimateTradeValue');
   });
+
+  it('uses the branded canonical origin without removing compatibility aliases', () => {
+    const adapter = source('supabase/functions/_shared/hbw-valuation.ts');
+    const client = source('src/lib/trade-valuation.ts');
+    const architecture = source('docs/valuation-architecture.md');
+
+    expect(adapter).toContain('https://valuation.mercuryrepower.ca/api/motor-valuation');
+    expect(client).toContain("https://valuation.mercuryrepower.ca");
+    expect(adapter).not.toContain('hbw-valuation-hbw.vercel.app');
+    expect(client).not.toContain('hbw-valuation-hbw.vercel.app');
+    expect(architecture).toContain('Compatibility aliases');
+    expect(architecture).toContain('valuation.harrisboatworks.ca');
+  });
 });

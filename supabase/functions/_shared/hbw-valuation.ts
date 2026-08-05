@@ -1,5 +1,5 @@
 const DEFAULT_HBW_VALUATION_URL =
-  "https://hbw-valuation-hbw.vercel.app/api/motor-valuation";
+  "https://valuation.mercuryrepower.ca/api/motor-valuation";
 
 export const ALLOWED_HBW_STROKES = new Set([
   "4-stroke",

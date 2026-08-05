@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
+  buildHBWReportUrl,
+  CANONICAL_HBW_VALUATION_ORIGIN,
   getBrandPenaltyFactor,
   medianRoundedTo25,
   normalizeBrand,
@@ -17,5 +19,21 @@ describe('trade valuation display helpers', () => {
     expect(getBrandPenaltyFactor('Yamaha')).toBe(1);
     expect(getBrandPenaltyFactor('Honda')).toBe(0.8);
     expect(getBrandPenaltyFactor('Johnson')).toBe(0.5);
+  });
+
+  it('builds shareable reports on the branded canonical origin', () => {
+    const reportUrl = new URL(buildHBWReportUrl({
+      brand: 'Mercury',
+      year: 2017,
+      hp: 150,
+      condition: 'good',
+      stroke: 'proxs',
+      model: '150 Pro XS',
+    }));
+
+    expect(reportUrl.origin).toBe(CANONICAL_HBW_VALUATION_ORIGIN);
+    expect(reportUrl.pathname).toBe('/');
+    expect(reportUrl.searchParams.get('stroke')).toBe('proxs');
+    expect(reportUrl.searchParams.get('auto')).toBe('true');
   });
 });
