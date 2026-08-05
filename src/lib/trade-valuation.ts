@@ -677,8 +677,30 @@ export interface HBWValuationResult extends TradeValueEstimate {
 }
 
 /**
+ * Why a valuation call failed. 'rate_limited' is materially different from the
+ * others: nothing is broken, the visitor has simply run more estimates than the
+ * proxy allows in its window (20 per 10 minutes per IP). Telling them the
+ * service is down is both untrue and alarming — shared/NAT IPs on marina wifi
+ * or a busy show day will hit this with no fault of their own.
+ */
+export type HBWValuationFailure = 'rate_limited' | 'unavailable';
+
+/** Populated by fetchHBWValuation when it returns null, so callers can tell a
+ *  throttled visitor apart from a genuine outage. */
+export let lastHBWValuationFailure: HBWValuationFailure = 'unavailable';
+
+/** Pull an HTTP status off a supabase.functions.invoke error, which wraps the
+ *  Response rather than exposing the status directly. */
+async function statusFromInvokeError(error: unknown): Promise<number | null> {
+  const res = (error as { context?: { response?: Response; status?: number } })?.context;
+  if (typeof res?.status === 'number') return res.status;
+  if (res?.response && typeof res.response.status === 'number') return res.response.status;
+  return null;
+}
+
+/**
  * Fetch a motor valuation from the HBW API.
- * Returns null on any failure so the caller can fall back to local math.
+ * Returns null on any failure; check `lastHBWValuationFailure` for the reason.
  */
 export async function fetchHBWValuation(params: {
   brand: string;
@@ -711,16 +733,21 @@ export async function fetchHBWValuation(params: {
     });
 
     if (error) {
-      console.warn('HBW valuation proxy error, using local fallback:', error);
+      const status = await statusFromInvokeError(error);
+      lastHBWValuationFailure = status === 429 ? 'rate_limited' : 'unavailable';
+      console.warn(`HBW valuation proxy error (status ${status ?? 'unknown'}):`, error);
       return null;
     }
-    if (!data || typeof data !== 'object' || (data as any).error) {
+    const payload = data as { error?: unknown; code?: string } | null;
+    if (!payload || typeof payload !== 'object' || payload.error) {
+      lastHBWValuationFailure = payload?.code === 'rate_limited' ? 'rate_limited' : 'unavailable';
       console.warn('HBW valuation proxy returned error payload:', data);
       return null;
     }
 
     const v = data as HBWValuationResponse;
     if (typeof v.rangeLow !== 'number' || typeof v.rangeHigh !== 'number') {
+      lastHBWValuationFailure = 'unavailable';
       console.warn('HBW valuation proxy returned unexpected shape:', data);
       return null;
     }
@@ -737,7 +764,8 @@ export async function fetchHBWValuation(params: {
       fromHBW: true,
     };
   } catch (err) {
-    console.warn('HBW valuation API failed, will use local fallback:', err);
+    lastHBWValuationFailure = 'unavailable';
+    console.warn('HBW valuation API failed:', err);
     return null;
   }
 }
