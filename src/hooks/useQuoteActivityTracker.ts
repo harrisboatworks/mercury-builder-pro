@@ -89,6 +89,7 @@ export function useQuoteActivityTracker() {
 
   const sessionId = useRef(getOrCreateSessionId());
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingEvents = useRef<PendingEvent[]>([]);
   const flushing = useRef(false);
 
   // Track previous values to detect meaningful changes
@@ -107,9 +108,7 @@ export function useQuoteActivityTracker() {
 
   const utmParams = useRef(captureUtmParams());
 
-  const flush = useCallback(async (event: PendingEvent) => {
-    if (flushing.current) return;
-    flushing.current = true;
+  const insertEvent = useCallback(async (event: PendingEvent) => {
     try {
       const utm = utmParams.current;
       await (supabase as any).from('quote_activity_events').insert({
@@ -130,15 +129,40 @@ export function useQuoteActivityTracker() {
       });
     } catch {
       // Silently fail — analytics should never break the app
-    } finally {
-      flushing.current = false;
     }
   }, [user?.id]);
 
+  // Keep events in order. The previous single-slot debounce could overwrite
+  // motor/options/path events, and the in-flight guard could drop the final
+  // submission event entirely during a fast route transition.
+  const drainQueue = useCallback(async () => {
+    if (flushing.current) return;
+    flushing.current = true;
+    try {
+      while (pendingEvents.current.length > 0) {
+        const event = pendingEvents.current.shift();
+        if (event) await insertEvent(event);
+      }
+    } finally {
+      flushing.current = false;
+    }
+  }, [insertEvent]);
+
+  // Immediate callers (the confirmed submission) enqueue before draining;
+  // callers cannot lose an event just because another insert is in flight.
+  const flush = useCallback((event?: PendingEvent) => {
+    if (event) pendingEvents.current.push(event);
+    return drainQueue();
+  }, [drainQueue]);
+
   const scheduleFlush = useCallback((event: PendingEvent) => {
+    pendingEvents.current.push(event);
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => flush(event), DEBOUNCE_MS);
-  }, [flush]);
+    debounceRef.current = setTimeout(() => {
+      debounceRef.current = null;
+      void drainQueue();
+    }, DEBOUNCE_MS);
+  }, [drainQueue]);
 
   // Helper to get current motor info
   const getMotorInfo = useCallback(() => {
