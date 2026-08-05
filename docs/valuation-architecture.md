@@ -27,9 +27,10 @@ canonical motor endpoint.
 
 ## Compatibility aliases
 
-`valuation.harrisboatworks.ca` and the Vercel deployment hostnames remain
-compatibility aliases at the valuation service. Existing bookmarks, saved
-reports, and older integrations therefore continue to work, but new links and
-integrations must use `valuation.mercuryrepower.ca`.
+The Vercel deployment hostnames remain accepted application aliases.
+`valuation.harrisboatworks.ca` remains in the service's trusted-origin allowlist
+for old or staged configurations, but it has no public DNS route and is not a
+supported customer URL. New links and integrations must use
+`valuation.mercuryrepower.ca`.
 
 The Supabase `trade_valuation_brackets` and `trade_valuation_config` tables are retired compatibility data. They are not queried by runtime code and must not be treated as an authoritative source. They remain in the database for rollback/audit safety until a separately approved destructive migration removes them.
