@@ -263,7 +263,7 @@ export default function FrenchLanding() {
         <nav className="mt-8 text-center space-y-2">
           <p className="text-sm font-medium text-foreground mb-3">📖 Articles en français</p>
           <div className="flex flex-col gap-1.5">
-            <Link to="/blog/fr/concessionnaire-mercury-platinum-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Premier en Ontario →</Link>
+            <Link to="/blog/fr/concessionnaire-mercury-premier-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Premier en Ontario →</Link>
             <Link to="/blog/fr/prix-remotorisation-mercury-ontario" className="text-primary hover:underline text-sm">Combien coûte une remotorisation Mercury? →</Link>
             <Link to="/blog/fr/mercury-115-vs-150-hp-comparaison" className="text-primary hover:underline text-sm">Mercury 115 vs 150 HP : Quel moteur choisir? →</Link>
             <Link to="/blog/fr/hivernisation-moteur-mercury-ontario" className="text-primary hover:underline text-sm">Guide d'hivernisation de votre moteur Mercury →</Link>
