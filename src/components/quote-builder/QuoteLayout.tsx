@@ -9,7 +9,6 @@ import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { QuoteProgressStepper } from './QuoteProgressStepper';
-import { useQuoteActivityTracker } from '@/hooks/useQuoteActivityTracker';
 import { useQuote } from '@/contexts/QuoteContext';
 
 interface QuoteLayoutProps {
@@ -33,9 +32,6 @@ export const QuoteLayout = ({
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Track anonymous quote-building activity in the background
-  useQuoteActivityTracker();
 
   return <div className="min-h-screen bg-repower-paper relative">
       {/* Admin Mode Banner */}

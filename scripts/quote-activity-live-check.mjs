@@ -99,21 +99,9 @@ try {
   await page.waitForURL('**/quote/options');
   await page.getByRole('heading', { name: 'Options for your 20 ELHPT FourStroke', exact: true }).waitFor();
 
-  const selectableOption = page.locator(
-    'main [role="checkbox"][aria-checked="false"]:not([aria-disabled="true"])',
-  );
-  const selectableCount = await selectableOption.count();
-  if (selectableCount > 0) {
-    const selectedBefore = await page.locator('main [role="checkbox"][aria-checked="true"]').count();
-    await selectableOption.first().click();
-    await page.waitForFunction(
-      (previousCount) => document.querySelectorAll('main [role="checkbox"][aria-checked="true"]').length > previousCount,
-      selectedBefore,
-    );
-  } else {
-    const selectedCount = await page.locator('main [role="checkbox"][aria-checked="true"]').count();
-    assert.ok(selectedCount > 0, 'expected the options step to contain a selected option');
-  }
+  // This exact motor includes a selected 12 L fuel tank. Leave the option state
+  // untouched so the acceptance measures route-remount replays, not a second
+  // legitimate customer configuration change.
 
   const continueButton = page.getByRole('button', { name: 'Continue', exact: true }).filter({ visible: true });
   assert.equal(await continueButton.count(), 1, 'expected one visible Continue button');
@@ -134,9 +122,14 @@ try {
     await page.waitForTimeout(100);
   }
 
-  const eventOrder = capturedEvents
-    .map((event) => event.event_type)
-    .filter((eventType) => expectedTypes.includes(eventType));
+  const journeyEvents = capturedEvents.filter((event) => expectedTypes.includes(event.event_type));
+  const eventOrder = journeyEvents.map((event) => event.event_type);
+  const eventPaths = journeyEvents.map((event) => event.page_path);
+  const expectedPaths = [
+    '/quote/motor-selection',
+    '/quote/options',
+    '/quote/purchase-path',
+  ];
   const motorIndex = eventOrder.indexOf('motor_selected');
   const optionsIndex = eventOrder.indexOf('options_configured');
   const pathIndex = eventOrder.indexOf('purchase_path_chosen');
@@ -144,6 +137,16 @@ try {
   assert.ok(motorIndex >= 0, `motor_selected missing from ${eventOrder.join(' -> ')}`);
   assert.ok(optionsIndex > motorIndex, `options_configured out of order: ${eventOrder.join(' -> ')}`);
   assert.ok(pathIndex > optionsIndex, `purchase_path_chosen out of order: ${eventOrder.join(' -> ')}`);
+  assert.deepEqual(
+    eventOrder,
+    expectedTypes,
+    `quote route remount replayed activity: ${eventOrder.join(' -> ')}`,
+  );
+  assert.deepEqual(
+    eventPaths,
+    expectedPaths,
+    `quote activity was attributed to later routes: ${eventPaths.join(' -> ')}`,
+  );
   assert.equal(leadRequests.length, 0, 'the acceptance flow must never call submit-quote-lead');
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
 
@@ -152,6 +155,7 @@ try {
     target: baseUrl,
     sessionId,
     eventOrder,
+    eventPaths,
     analyticsWritesIntercepted: capturedEvents.length,
     leadRequests: leadRequests.length,
     consoleErrors,

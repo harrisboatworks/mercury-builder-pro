@@ -30,6 +30,7 @@ import { lazyWithRetry } from "@/lib/lazyWithRetry";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AnalyticsRouter } from "@/components/analytics/AnalyticsRouter";
 import { GlobalCtaTracker } from "@/components/analytics/GlobalCtaTracker";
+import { useQuoteActivityTracker } from "@/hooks/useQuoteActivityTracker";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -216,12 +217,29 @@ function RootRedirect() {
   return <Index />;
 }
 
+function QuoteActivityTracker() {
+  useQuoteActivityTracker();
+  return null;
+}
+
+/**
+ * Keep one tracker instance alive while the customer moves between keyed quote
+ * routes. Mounting it inside each QuoteLayout replays already-populated quote
+ * state whenever the route changes.
+ */
+function QuoteActivityTrackerMount() {
+  const location = useLocation();
+  const isQuoteRoute = location.pathname === "/quote" || location.pathname.startsWith("/quote/");
+  return isQuoteRoute ? <QuoteActivityTracker /> : null;
+}
+
 function AnimatedRoutes() {
   const location = useLocation();
   usePageViewTracker();
   
   return (
     <LazyRouteBoundary>
+      <QuoteActivityTrackerMount />
       <Suspense fallback={<RouteLoader />}>
         <Routes location={location} key={location.pathname}>
         <Route path="/auth" element={<Login />} />

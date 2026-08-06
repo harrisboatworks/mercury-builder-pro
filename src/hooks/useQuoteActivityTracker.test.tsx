@@ -122,6 +122,7 @@ describe('useQuoteActivityTracker queue', () => {
         assignmentType: 'available',
         isIncluded: false,
       }],
+      purchasePath: 'loose-motor',
       completedSteps: [1, 2, 7],
       currentStep: 7,
     });
@@ -135,12 +136,21 @@ describe('useQuoteActivityTracker queue', () => {
       await firstWrite;
     });
 
-    await waitFor(() => expect(trackerHarness.insert).toHaveBeenCalledTimes(3));
+    await waitFor(() => expect(trackerHarness.insert).toHaveBeenCalledTimes(4));
     expect(trackerHarness.insert.mock.calls.map(([payload]) => payload.event_type)).toEqual([
       'motor_selected',
       'options_configured',
+      'purchase_path_chosen',
       'quote_submitted',
     ]);
+
+    trackerHarness.pathname.current = '/quote/trade-in';
+    rerender();
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+    expect(trackerHarness.insert).toHaveBeenCalledTimes(4);
     expect(fetchSpy.mock.calls.some(([input]) => String(input).includes('submit-quote-lead'))).toBe(false);
 
     fetchSpy.mockRestore();
