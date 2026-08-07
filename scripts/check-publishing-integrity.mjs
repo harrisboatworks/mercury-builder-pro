@@ -79,8 +79,9 @@ check(
 check(
   /<Route path="\/blog\/fr\/:slug" element=\{<FrenchBlogArticlePage \/>\}/.test(appSource) &&
     !/FrenchBlogArticle(?:"|'|\))/.test(appSource) &&
-    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource),
-  'The canonical French article router must own the Premier URL without reviving the one-off article or retired Platinum route.',
+    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource) &&
+    !/\/blog\/fr\/concessionnaire-mercury-premier-ontario/.test(prerenderScript),
+  'The canonical French article pipeline must own the Premier URL without reviving a one-off route, duplicate static prerender, or retired Platinum route.',
 );
 check(
   /slug:\s*['"]concessionnaire-mercury-premier-ontario['"]/.test(frenchBlogArticles) &&

@@ -4977,19 +4977,6 @@ const routes = [
     }
   },
   {
-    path: '/blog/fr/concessionnaire-mercury-premier-ontario',
-    title: 'Concessionnaire Mercury Premier Ontario | Harris Boat Works',
-    description: 'Harris Boat Works, concessionnaire Mercury Premier à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury et service pour les plaisanciers francophones.',
-    h1: 'Concessionnaire Mercury Premier en Ontario',
-    intro: 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing sur le lac Rice. Entreprise familiale depuis 1947 et concessionnaire Mercury depuis 1965.',
-    htmlLang: 'fr-CA',
-    schemas: [genericPageSchema('/blog/fr/concessionnaire-mercury-premier-ontario', 'Concessionnaire Mercury Premier en Ontario', 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, Ontario.')],
-    extraHead: [
-      `<link rel="alternate" hreflang="fr-CA" href="${SITE_URL}/blog/fr/concessionnaire-mercury-premier-ontario" />`,
-      `<link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/fr/concessionnaire-mercury-premier-ontario" />`,
-    ].join('\n  '),
-  },
-  {
     path: '/repower/cost',
     title: 'Mercury Repower Cost in Ontario (2026 CAD) | HBW',
     description: 'Mercury repower cost by HP class in Ontario for 2026: portable to 300 HP. Live CAD pricing, install, rigging, trade-in, and financing from Harris Boat Works.',
@@ -6090,7 +6077,6 @@ const staticSitemapEntries = [
   // Spanish articles live under /blog/ko and /blog/es without a hub).
   { loc: '/zh', priority: 0.7, changefreq: 'monthly' },
   { loc: '/fr', priority: 0.7, changefreq: 'monthly' },
-  { loc: '/blog/fr/concessionnaire-mercury-premier-ontario', priority: 0.65, changefreq: 'monthly' },
   { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
