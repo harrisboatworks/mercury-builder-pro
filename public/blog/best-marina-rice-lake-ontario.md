@@ -143,12 +143,10 @@ Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-stor
 
 ---
 
-## Related Guides and Current Booking
+## Current Booking and Official Information
 
 - [HBW service intake](https://hbw.wiki/service), current repair scope and service request
 - [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
-- [Outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), current HBW storage scope
-- [Rice Lake launch guide](/blog/rice-lake-boat-launch-guide), launch-planning questions
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
 Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
@@ -190,10 +188,10 @@ It varies with the starting point, traffic, weather, road work, and towing condi
 ## Related guides
 
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
 - [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
-- [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
 
 ## Next steps
 

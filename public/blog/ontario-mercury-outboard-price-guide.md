@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-06-02
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-06-02
+date_modified: 2026-08-02
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last updated:** 2026-06-02  
+**Last updated:** 2026-08-02  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -69,7 +69,7 @@ Here's what motor-only pricing usually does not include: HST (13% in Ontario), c
 
 Mercury sets a Manufacturer's Suggested Retail Price (MSRP) for every model. Dealer selling prices land at or below that number. HBW publishes both side by side: what Mercury says it's worth, and what we actually charge.
 
-We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at pickup, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." If a Mercury Canada promo is active that lowers the number further, you see it in the configurator the same day.
+We don't publish a fixed discount percentage off MSRP because it varies by motor, season, and any active Mercury Canada promotions. The honest version is: **the dealer price shown in the configurator is the dealer price. That number is the invoice at pickup, before HST, controls, prop, and rigging are added.** No haggle, no "call for our best deal." Active promotion details appear in the configurator after HBW updates them; the dated written quote controls the transaction.
 
 Some dealers post MSRP and call it a "price." We don't.
 
@@ -103,7 +103,7 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 ### Things to know about the mid-range tier
 
-**Command Thrust matters on pontoons.** If you're putting a 60-115 HP motor on a 20-24 ft pontoon, Command Thrust is the right call in almost every case. The premium is $300-$500 over the standard gearcase, and it pays for itself the first weekend the boat planes on the first try with a full load.
+**Command Thrust matters on some pontoons.** On a 60-115 HP pontoon, compare tube count, loaded weight, capacity plate, intended speed, watersports use, and propeller options. The configured price difference changes by motor, and the benefit must be judged on the actual hull rather than a promised payback.
 
 **Pontoon HP sizing reality.** A 20 ft pontoon needs at least 60 HP CT to get up on plane reliably with a normal cottage load. 90 CT is the sweet spot for most. 115 CT is for tritoons or anyone who tows tubes regularly. Underbuying the motor is one of the most common mistakes we see. The capacity plate is the ceiling, not a suggestion.
 
@@ -149,7 +149,7 @@ Three ways to get a real price:
 - **Look up a specific model:** mercuryrepower.ca/pricing-reference, live database with model codes, shaft options, stock status.
 - **Talk to us:** Call 905-342-2153 or submit a service request at hbw.wiki/service.
 
-We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. But we rig every motor in our shop, and every install includes an on-water test on Rice Lake before pickup. No exceptions.
+We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 
 ---
 

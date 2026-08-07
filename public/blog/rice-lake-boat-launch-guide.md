@@ -127,19 +127,11 @@ If you're new to launching, this is the basic flow. Most people do it efficientl
 
 For any powered boat in Ontario waters:
 
-**Pleasure Craft Operator Card (PCOC)** for the operator. One-time test, accessible in the boat or on phone.
+**Valid proof of competency** for the operator. If you use a Pleasure Craft Operator Card, carry the original card on board. Transport Canada does not accept a paper or electronic copy of a PCOC. A temporary card issued by an accredited course provider is valid until the permanent card arrives.
 
-**Valid Pleasure Craft Licence (PCL)** for any boat with a motor 7.5 kW (10 HP) or larger. 2026 PCL changes: lifetime licences converted to 5-year renewals at $24. Check your PCL is current.
+**Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years and the federal service fee is $24, subject to annual inflation updates. Check the current fee and your licence status before launch day.
 
-**Required safety equipment:**
-- One PFD per person (one must be a wearable Type III)
-- Sound-signaling device (whistle, horn)
-- Bailer or manual water pump
-- Anchor or grapnel with line
-- Paddle or oar
-- Navigation lights for sunset operation
-
-Transport Canada publishes the full list, and there are specific extras for larger boats. Make sure you have everything before you launch.
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
 ---
 
@@ -182,14 +174,6 @@ Rice Lake is in Ontario MNR's Fisheries Management Zone 17 (FMZ 17). FMZ 17 rule
 
 ---
 
-## Related reading
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
-- [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-
----
-
 ## Ready to Launch?
 
 If you need a Mercury motor before your next launch, build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
@@ -200,7 +184,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 ---
 
-> Related guide: [Boat trim for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
+> Related guide: [Boat trim for Rice Lake boaters](/blog/how-to-trim-boat-mercury-outboard).
 
 ## Sources
 
@@ -242,6 +226,7 @@ The lake is fine. The ramp area is for launching. If you want to overnight on th
 
 ## Related guides
 
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?

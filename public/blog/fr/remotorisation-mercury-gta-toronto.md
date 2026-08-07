@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-05-13
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-31
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Guide d'achat  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-07-31  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -80,7 +80,7 @@ Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous cou
 - Planifier l'installation
 - Discuter de la logistique de transport (étape suivante)
 
-**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre), plus court hors saison. L'appel téléphonique réserve la place.
+**Délai d'attente pour une remotorisation :** plus long en haute saison (avril à juin, septembre à novembre). L'atelier est fermé du 1er décembre au 1er avril. L'appel téléphonique réserve la place.
 
 ### Étape 3 : Transport du bateau jusqu'à Harris Boat Works (1 jour, varie selon l'approche)
 
@@ -90,7 +90,7 @@ Vous avez trois options pour amener le bateau à Gores Landing :
 
 **Option B. Engager un transporteur de bateaux.** Plusieurs services de transport de bateaux ontariens font la route GTA à Kawartha. Coût typique : 300 $ à 600 $ pour un aller pour un bateau typique de 18 à 22 pieds. Cherchez « boat transport Ontario » ou demandez-nous, nous connaissons les opérateurs. Utile si vous n'avez pas de véhicule de remorquage ou que vous ne voulez pas conduire une remorque.
 
-**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait hors saison sans coût de transport.
+**Option C. Certains clients laissent le bateau chez Harris Boat Works après une saison.** Si vous l'entreposez déjà chez nous pour l'hiver, le bateau est sur place. La remotorisation se fait dès l'ouverture au printemps, sans coût de transport.
 
 La plupart des clients de la GTA choisissent l'option A. Le trajet 401 plus route régionale 18 est simple.
 
@@ -180,7 +180,7 @@ Erreurs que nous voyons chez des plaisanciers de la GTA :
 
 La saison de navigation en Ontario est courte. Le moment de réservation compte :
 
-- **Hiver (décembre à mars)** : idéal. Nous avons du temps en atelier, des pièces disponibles, parfois des prix d'hiver, moteur prêt pour le printemps.
+- **Hiver (décembre à mars)** : idéal pour réserver, pas pour installer. L'atelier est fermé du 1er décembre au 1er avril et aucun travail de service ou de remotorisation n'y est effectué. Réservez en novembre ou tôt au printemps, et le travail commence dès l'ouverture en avril.
 - **Début du printemps (avril)** : encore bon. L'horaire se remplit d'ici la fin avril.
 - **Pleine saison (mai à juin)** : serré. Souvent 3 à 4 semaines d'attente. Possible de mettre à l'eau avec le nouveau moteur en plein été.
 - **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l'installation, généralement pas la peine sauf si votre vieux moteur lâche.

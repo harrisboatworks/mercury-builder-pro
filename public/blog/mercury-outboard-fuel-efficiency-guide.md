@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Fuel Economy: How to Get Better MPG"
 description: "How much fuel does your Mercury outboard burn? Consumption by HP, 2-stroke vs 4-stroke, and the 5 levers that cut fuel burn on Ontario boats."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
@@ -149,7 +149,7 @@ A sudden change in fuel economy is worth investigating. Don't assume it's "just 
 
 ## Getting Your Prop Right at HBW
 
-We test prop pitch on every Mercury repower and new motor install at HBW. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it's worth having it checked. A proper sea trial takes 30-45 minutes and tells you more about your setup than any spec sheet.
+HBW's standard repower handoff includes an on-water setup check on Rice Lake before pickup when safe seasonal conditions allow. If you bought your motor elsewhere, or if your prop was selected years ago for a different boat or load, it is worth having the setup checked. Any alternate acceptance plan is documented with the customer.
 
 For engine repairs, we only service Mercury and Mercruiser.
 
@@ -183,13 +183,6 @@ It varies by motor and hull. Most Mercury FourStrokes have a cruise efficiency r
 
 **Can I improve fuel economy on an older motor?** 
 Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh fuel all help. At some point, an aging motor with worn rings and seals will burn more fuel regardless of tuning. That's when a repower conversation makes sense.
-
----
-
-## Related reading
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting)
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide)
 
 ---
 
@@ -246,7 +239,7 @@ In order of impact: get the prop right so the motor reaches the middle of its ra
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility

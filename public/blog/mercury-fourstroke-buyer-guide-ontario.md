@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario.md
-last_updated: 2026-07-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury FourStroke Buyer Guide for Ontario (2026)"
 description: "Mercury FourStroke buyer guide for Ontario: 2.5-300 hp coverage, HP recommendations by boat, prices, options, install considerations."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-07-18
+date_modified: 2026-08-02
 keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
 
@@ -64,7 +64,7 @@ Within each HP class, there are configuration options that matter more than most
 
 ## HP selection: how to actually decide
 
-The first rule: **don't exceed your capacity plate**. Your boat's Coast Guard capacity plate lists a maximum horsepower. Going over voids your insurance in most cases and creates real safety risk. We don't repower boats over their capacity rating, and no honest Mercury dealer should.
+The first rule: **start with the exact hull documentation**. On an outboard-powered pleasure craft up to 6 metres, the Canadian compliance notice shows the manufacturer's maximum recommended safe power. Going beyond it can create real safety, insurance, warranty, liability, financing, and resale problems. HBW works from the documented rating and a boat-specific assessment.
 
 Within the legal max, the right HP depends on:
 
@@ -205,7 +205,7 @@ Yes, the larger FourStrokes (150+ HP V8) handle ski and wake boats fine. For tou
 
 ### How do I match the prop to a new FourStroke?
 
-Prop matching is part of the install. The right prop depends on hull, weight, intended use, and target RPM range at cruise. We sea-trial every install at HBW and adjust prop pitch as needed.
+The right prop depends on the motor, hull, load, intended use, and target RPM range. When safe seasonal conditions allow, an on-water check can help verify the result. The work order and documented acceptance plan control any prop change and the final scope.
 
 ### Does Mercury warranty come with a new FourStroke?
 

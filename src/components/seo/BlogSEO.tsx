@@ -16,6 +16,10 @@ function getDealerCityFromSlug(slug: string): string | null {
 
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
+  const shareImage = article.socialImage || article.image;
+  const absoluteShareImage = shareImage
+    ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
+    : undefined;
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
   // Head <title> prefers the article's explicit `seoTitle` when provided (so the
@@ -64,7 +68,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "@id": `${url}#article`,
         "headline": sanitizeForSchema(article.title),
         "description": cleanDescription,
-        "image": `${SITE_URL}${article.image}`,
+        ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
         "author": /troubleshoot|alarm|wont-start|overheating|winterization|smartcraft-alarm|service-cost|electrical/.test(article.slug)
           ? {
               "@type": "Organization",
@@ -159,6 +163,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "@id": `${url}#howto`,
         "name": sanitizeForSchema(article.title),
         "description": cleanDescription,
+        ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
         "totalTime": `PT${readTimeMinutes}M`,
         "step": article.howToSteps.map((step, index) => ({
           "@type": "HowToStep",
@@ -286,7 +291,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       {/* Open Graph */}
       <meta property="og:title" content={renderedTitle} />
       <meta property="og:description" content={cleanDescription} />
-      <meta property="og:image" content={`${SITE_URL}${article.image}`} />
+      {absoluteShareImage && <meta property="og:image" content={absoluteShareImage} />}
       <meta property="og:type" content="article" />
       <meta property="og:locale" content="en_CA" />
       <meta property="article:published_time" content={article.datePublished} />
@@ -297,7 +302,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={renderedTitle} />
       <meta name="twitter:description" content={cleanDescription} />
-      <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
+      {absoluteShareImage && <meta name="twitter:image" content={absoluteShareImage} />}
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario.md
-last_updated: 2026-05-13
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme mo
 description: "Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux..."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-05-13
+date_modified: 2026-07-31
 keywords: ["revue Mercury 90 HP","Mercury 90 HP FourStroke","Mercury 90 ELPT Ontario","Mercury 90 CT Command Thrust","90 HP ponton","90 HP bateau aluminium"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: fr-CA
 
 **Category:** Avis produit  
 **Published:** 2026-05-13  
-**Last updated:** 2026-05-13  
+**Last updated:** 2026-07-31  
 **Read time:** 9 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
 
@@ -38,13 +38,13 @@ Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux
 
 Nous vendons plus de moteurs Mercury dans la famille 75 à 115 HP que dans toute autre classe. Et au sein de cette famille, le 90 est là où la plupart des clients aboutissent, non pas parce que c'est l'option la moins chère, mais parce que c'est vraiment le bon choix pour la plupart des bateaux de l'Ontario dans la plage de 16 à 20 pi.
 
-Harris Boat Works vend et entretient des hors-bord Mercury sur le lac Rice depuis 1947. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
+Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un concessionnaire Mercury depuis 1965. Nous sommes une marina familiale de troisième génération et un concessionnaire [Mercury Marine](https://www.mercurymarine.com/canada/en/) certifié Premier. Le 90 FourStroke est un moteur que nous connaissons bien.
 
 ---
 
 ## Ce que la famille 90 HP partage réellement
 
-Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. Mercury a effectué 17 000 heures d'essais en usine sur cette génération avant la mise en marché.
+Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. 
 
 Les différences entre les 90, 100 et 115 sont la calibration, le plafond de RPM et le prix. Il n'y a aucune pénalité de poids en montant. Le 90 ELPT et le 115 ELPT pèsent tous les deux 359 lb.
 
@@ -77,7 +77,7 @@ Croisière, traction d'une chambre à air, baignade, pêche occasionnelle, le 90
 
 ### Remotorisations remplaçant des deux temps de 70 à 90 HP
 
-Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et 20 à 30 % plus efficace en carburant.
+Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et nettement plus économique en carburant.
 
 ---
 
@@ -133,28 +133,6 @@ Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les 
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous ne vendons pas le 75 HP FourStroke. Voici.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
-
-## Questions fréquentes
-
-**Le 90 HP est-il bon pour un ponton de 22 pi?**
-Oui, avec l'embase Command Thrust.
-
-**Le 90 HP FourStroke est-il un Pro XS?**
-Non. Le Pro XS est une calibration différente, plafond de RPM plus haut, embase sport, hole-shot plus agressif.
-
-**La longueur d'arbre est-elle importante?**
-Oui, ce n'est pas optionnel.
-
-**Combien le 90 HP économise-t-il en carburant par rapport à un vieux deux temps?**
-Typiquement 20 à 30 % moins de carburant pour la même journée sur l'eau.
-
-**Le 90 CT est-il le même moteur que le 90 standard?**
-Même tête motrice. Embase différente.
-
-**Puis-je commander un 75 si ma plaque de capacité l'exige?**
-Oui.
-
----
 
 ## Bâtissez une soumission
 

@@ -170,23 +170,6 @@ If you're genuinely unsure between two HP ratings, call us before you build a qu
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Ontario Mercury Outboard Price Guide (2026): Real CAD Prices by HP Tier](/blog/ontario-mercury-outboard-price-guide)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use](/blog/pontoon-hp-sizing-decision-tree-ontario)
-- [Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-
----
-
-## Related reading
-- [Mercury Repower Cost Ontario 2026](/blog/mercury-repower-cost-ontario-2026-cad)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision)
-
----
-
 Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
 
 Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.

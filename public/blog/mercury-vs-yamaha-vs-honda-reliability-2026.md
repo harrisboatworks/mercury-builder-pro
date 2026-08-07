@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-07-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha vs Honda: Reliability 2026"
 description: "Mercury vs Yamaha vs Honda reliability in 2026: real service-shop data, common failure points, parts availability, and which brand holds up on Ontario lakes."
 category: "Buying Guide"
 date_published: 2026-04-24
-date_modified: 2026-07-18
+date_modified: 2026-08-02
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
 
@@ -124,7 +124,7 @@ rightCriteria:
   - Switching brands adds $1,500 to $3,000 in rigging
 rightOutcome: Stay with what works. Reliability follows the relationship.
 rightVariant: alternative
-whenInDoubt: If your current dealer has been slow or quoted parts at 6+ week lead times, the switch usually pays for itself in one repower cycle.
+whenInDoubt: If service access is the problem, compare the actual dealer route, written parts lead time, and complete brand-swap cost before switching.
 ::
 
 ---
@@ -223,7 +223,7 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
-- [Rent or Buy a Boat in 2026? What 346 Rentals on Rice Lake Taught Us](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
+- [Rent or Buy a Boat in 2026? What a Rice Lake Rental Can Teach You](/blog/boat-rentals-shared-access-booming-2026), rental and shared-access trends
 
 ## Next steps
 

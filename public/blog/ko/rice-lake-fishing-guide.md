@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide.md
-last_updated: 2026-04-12
+last_updated: 2026-08-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리�
 description: "Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
 category: "낚시 가이드"
 date_published: 2026-04-12
-date_modified: 2026-04-12
+date_modified: 2026-08-01
 keywords: ["Rice Lake 낚시 가이드","온타리오 낚시","토론토 근처 낚시","Rice Lake fishing guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: ko-KR
 
 **Category:** 낚시 가이드  
 **Published:** 2026-04-12  
-**Last updated:** 2026-04-12  
+**Last updated:** 2026-08-01  
 **Read time:** 10 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
 
@@ -111,7 +111,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ## 실용 정보
 
-**HBW 렌탈 보트:** Rice Lake에 9척 규모의 렌탈 보트 선단 운영. 자기 낚시 장비만 가져오면 당일 출발 가능. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다. 렌탈 예약: [harrisboatworks.ca](https://harrisboatworks.ca)
+**HBW 렌탈 보트:** Rice Lake에서 폰툰과 낚시 보트를 대여합니다. 현재 보트 종류, 정원, 요금, 예약 가능 날짜는 [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)에서 확인하고 온라인으로 예약하세요. 현장에서 **에탄올 무첨가 연료**(ethanol-free fuel)도 판매합니다.
 
 **언어 안내:** HBW 직원들은 영어로 소통합니다. 한국어 서비스는 없지만 한인 낚시객을 환영하며 최선을 다해 도와드립니다.
 
@@ -133,19 +133,6 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 2. 낚시 장비 준비 (HBW는 보트만 대여, 장비는 별도)
 3. 렌탈 보트 예약 ([harrisboatworks.ca](https://harrisboatworks.ca))
 4. 당해 연도 개장 시즌·어종별 크기 제한·어획 한도 확인
-
----
-
-## 자주 묻는 질문
-
-**Rice Lake에서 walleye 낚시 최적 시기는?** 
-5월 둘째 토요일 개장 직후 봄철이 가장 활발합니다. 해 뜨기 전후 2시간이 황금 시간대입니다.
-
-**HBW에서 낚시 장비도 빌릴 수 있나요?** 
-보트만 대여합니다. 낚시 장비는 별도로 준비해오세요.
-
-**Lake Simcoe와 Rice Lake 중 어디가 더 낫나요?** 
-용도에 따라 다릅니다. Walleye를 목표로 한다면 Rice Lake가 더 특화되어 있습니다. Lake Simcoe는 Lake trout와 perch로 더 잘 알려져 있습니다.
 
 ---
 

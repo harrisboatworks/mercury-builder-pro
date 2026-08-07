@@ -154,18 +154,6 @@ For new Legend Boats pontoon packages, call us at 905-342-2153 or visit HBW at 5
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake)
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer\](/blog/best-boats-rice-lake-under-30000)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 ## FAQs
 
 ### What size pontoon is best for Rice Lake cottage use?

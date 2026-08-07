@@ -50,7 +50,7 @@ function pickCTA(category = '', slug = '', variant: CTAVariant = 'banner'): CTAC
     return {
       title: 'Book a boat on Rice Lake',
       description:
-        "Nine boats, live availability, life jackets included. Book online and you're on the water in minutes.",
+        "Live availability, life jackets and safety gear included. Book online to check the current fleet and rates.",
       href: 'https://harrisboatworks.ca/rentals',
       external: true,
       buttonLabel: 'Check Availability',
@@ -141,14 +141,14 @@ export function BlogCTA({ category, slug, variant = 'banner', className = '' }: 
     <aside className={wrapperClass} aria-label="Call to action">
       {variant === 'banner' && <div className="h-px w-12 bg-repower-gold mx-auto mb-6" />}
       <div className={variant === 'banner' ? '' : 'flex-1'}>
-        <h3
+        <p
           className={`font-display font-bold text-repower-navy-900 ${
             variant === 'banner' ? 'text-xl md:text-2xl mb-3' : 'text-lg md:text-xl mb-1'
           }`}
           style={{ letterSpacing: '-0.02em' }}
         >
           {cta.title}
-        </h3>
+        </p>
         <p
           className={`font-sans text-repower-navy-900/70 ${
             variant === 'banner' ? 'mb-6' : 'text-[15px] mb-0'

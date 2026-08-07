@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Aluminum Boats 2026"
 description: "The right Mercury for an aluminum fishing boat depends on hull length. Tiller 9.9-25 HP fits 12-14 ft; 40-60 HP fits 16-18 ft. HBW honest guide."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
@@ -121,7 +121,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 The Mercury 9.9 ProKicker is the standard, long shaft, high-thrust gearcase, purpose-built for fishing applications. We rig kickers as part of most fishing boat repower projects.
 
-The customers who skip the kicker to save money almost always wish they hadn't. The customers who buy a kicker rarely regret it.
+A kicker can be worth the added cost when slow trolling, backup propulsion, or long runs from shore are central to how you use the boat. Compare the configured price, added weight, controls, maintenance, and the actual backup range you need.
 
 ---
 
@@ -133,20 +133,11 @@ heading: Common mistakes on aluminum fishing boat repowers
 - **Skipping the kicker.**  
   Two seasons later, they wish they'd bought it. Buy it once.
 - **Wrong prop.**  
-  A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during the sea trial of every repower.
+  A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. Prop verification follows the motor, hull, rigging, work order, and safe seasonal testing conditions.
 - **You need Command Thrust on a heavier aluminum V-hull.**  
   CT is a pontoon and workboat gearcase; on a V-hull it just adds drag. Standard gearcase is the right call on 14-20 ft aluminum fishing boats, loaded or not.
 - **Buying Pro XS when FourStroke would do.**  
   Pro XS earns the cost on tournament hulls and for anglers who run hard every morning. On typical recreational fishing boats, FourStroke is the better value.
-
----
-
-## Related posts
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide)
-- [Portable Mercury Outboard Guide](/blog/portable-outboard-mercury-guide-2-20hp)
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
 
 ---
 

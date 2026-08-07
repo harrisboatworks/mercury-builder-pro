@@ -178,7 +178,7 @@ The honest math:
 - The motor is under 25 HP (parts cheap, less to fail)
 - You are a commercial or charter user (you are not eligible anyway)
 
-For Ontario boaters who plan to keep their motor 5+ years, Platinum almost always pays for itself if even one major component fails during the coverage period. ECU, fuel injection pump, lower unit gears, or alternator failures alone often exceed the cost of the coverage.
+For Ontario boaters who plan to keep their motor 5+ years, Platinum can reduce the financial shock of an eligible major component failure during the coverage period. Compare the exact plan price with the covered components, exclusions and your ownership horizon instead of assuming every repair will be covered or that the plan is guaranteed to pay for itself.
 
 ## Transferability and Resale Value
 

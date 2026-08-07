@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist.md
-last_updated: 2026-07-09
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Spring Outboard Commissioning Checklist (2026 Ontario)"
 description: "Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical."
 category: "Maintenance"
 date_published: 2026-03-30
-date_modified: 2026-07-09
+date_modified: 2026-07-31
 keywords: ["spring boat commissioning","outboard commissioning","spring boat startup","mercury spring maintenance","boat season prep"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,11 +24,13 @@ language: en-CA
 
 **Category:** Maintenance  
 **Published:** 2026-03-30  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-07-31  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 
 > **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+
+[Print the Spring Launch & First-Run Checklist](/downloads/mercury-spring-launch-first-run-checklist-hbw.pdf) and work through it at the boat.
 
 ---
 
@@ -203,26 +205,6 @@ The spring no-starts that fill our May schedule almost all trace back to the sam
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](/blog/boat-winterization-cost-ontario-2026)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Winterization Cost in Ontario: Real Prices from a Mercury Premier Dealer](/blog/boat-winterization-cost-ontario-2026)
-- [Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)](/blog/diy-mercury-outboard-winterization-guide)
-
----
-
-## Related reading
-- [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Outdoor Boat Storage and Shrinkwrap Guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-
----
-
-> Related guide: [Mercury spring run-up checklist for Ontario](/blog/mercury-outboard-spring-run-up-checklist-ontario).
-
 ## Ready to Book Spring Service?
 
 Grab a spot at **[hbw.wiki/service](https://hbw.wiki/service)**.
@@ -274,8 +256,9 @@ Yes. Ethanol-blended fuel (E10) can cause issues if it wasn't treated before sto
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
 - [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
 
 ## Next steps
 

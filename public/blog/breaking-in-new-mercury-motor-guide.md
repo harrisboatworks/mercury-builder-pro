@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-07-23
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard (10-Hour Guide)"
 description: "Mercury's 10-hour break-in, step by step: throttle guidance, what to avoid, the 100-hour service schedule, and HBW's optional early check. Ontario guide."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-07-23
+date_modified: 2026-07-31
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,15 @@ language: en-CA
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-07-31  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
 ---
 
 > **Quick answer:** Mercury's model-specific break-in procedure generally covers the first 10 hours: vary throttle, avoid long steady-RPM runs, and limit sustained wide-open throttle as your owner's manual directs. For most current FourStrokes, Mercury's first scheduled service is 100 hours or annually. HBW offers an optional early oil-and-filter change around 20 hours as dealer best practice, not a Mercury warranty requirement.
+
+[Download Your New Mercury Owner Guide](/downloads/hbw-your-new-mercury-owner-guide.pdf) and keep it with the paperwork for your motor.
 
 **Mercury's own engine care primer for new owners:**
 
@@ -163,13 +165,6 @@ For repower customers buying a new Mercury at HBW, the break-in applies to the n
 ## Break-in and Mercury warranty
 
 Follow the model-specific break-in procedure in the owner's manual. Mercury says a future engine failure caused by improper break-in may not be covered. HBW's optional 20-hour oil-and-filter change is not a Mercury warranty requirement, and proof of that optional service should not be presented as a condition of coverage.
-
----
-
-## Related posts
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
 
 ---
 

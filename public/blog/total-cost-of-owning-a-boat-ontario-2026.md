@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
@@ -222,9 +222,9 @@ That's why people repower. [A $20,000 Mercury repower on a 15-year-old hull](/bl
 
 A few places HBW's pricing differs from what you'd find elsewhere:
 
-**Ethanol-free fuel.** The premium pays for itself in reduced fuel-system maintenance work and longer engine life. For a heavily-used boat, ethanol-free saves $200-$500/year in service work alone.
+**Ethanol-free fuel.** It can reduce some storage and fuel-system concerns, but the financial result depends on usage, storage, fuel turnover, maintenance, and the motor's approved fuel specification. Do not assume a universal annual saving or longer engine life.
 
-**Transparent quote configurator.** [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you real Mercury pricing in 90 seconds. No "call for a quote" games, no wasted weekends comparing dealer estimates that come back wildly different. The price you see is the price.
+**Transparent quote configurator.** [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you a current Canadian pricing starting point without waiting for a callback. The boat-specific written quote controls the final motor, rigging, labour, tax, trade-in, and financing figures.
 
 **Bundled storage + service.** Drop off in fall for shrinkwrap + winterization, optionally add spring commissioning. One trip, one invoice, no chasing two different vendors for the engine work and the storage.
 
@@ -238,7 +238,7 @@ Boats are not cheap. They are also worth it for the right reasons.
 
 If you're considering ownership and the math above feels manageable, great. Welcome to the lake.
 
-If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+If the math feels stretched, we have **[rentals](/blog/renting-vs-owning-boat-ontario-math)**. HBW's current Rice Lake lineup includes pontoon and fishing-boat options, with live rates and rental periods shown online. [Book and check availability at harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
@@ -263,7 +263,7 @@ Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Mos
 
 ### Why does HBW charge for the launch ramp when others are free?
 
-Two-lane concrete vs. single-lane gravel. 24/7 access vs. dawn-to-dusk. Extended deep ramp usable at low water. Parking, washrooms, fuel, ice, snacks. Courtesy docks. Shelter from prevailing winds. Whether $20/day is worth it depends on how much you value your Saturday morning. The $200 season pass pays for itself by trip 11.
+Compare the current day rate, season-pass price, launch hours, ramp condition, parking, washrooms, fuel, courtesy docks, and wind exposure. Divide the current pass price by the current day rate to find your break-even trip count; confirm both prices with the launch operator before relying on the result.
 
 ### Can I save money by winterizing my boat myself?
 

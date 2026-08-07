@@ -9,7 +9,7 @@ export function BlogIndexSEO() {
       {
         "@type": "CollectionPage",
         "@id": `${SITE_URL}/blog#webpage`,
-        "name": "Mercury Motor Guides & Boating Tips | Harris Boat Works Blog",
+        "name": "Mercury Motor Guides & Boating Tips | Harris Boat Works",
         "description": "Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Family marina on Rice Lake since 1947, helping Ontario boaters.",
         "url": `${SITE_URL}/blog`,
         "isPartOf": {
@@ -50,12 +50,12 @@ export function BlogIndexSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Motor Guides & Boating Tips | Harris Boat Works Blog</title>
+      <title>Mercury Motor Guides & Boating Tips | Harris Boat Works</title>
       <meta name="description" content="Mercury outboard guides, maintenance tips, and repower advice from a family Mercury dealer on Rice Lake, Ontario since 1947. Straight answers." />
       <meta name="keywords" content="mercury outboard tips, boat motor guide, outboard maintenance, mercury dealer blog, boat buying guide ontario" />
       
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Motor Guides & Boating Tips | Harris Boat Works Blog" />
+      <meta property="og:title" content="Mercury Motor Guides & Boating Tips | Harris Boat Works" />
       <meta property="og:description" content="Expert advice on Mercury outboard motors, boat maintenance, and buying guides." />
       <meta property="og:type" content="website" />
       

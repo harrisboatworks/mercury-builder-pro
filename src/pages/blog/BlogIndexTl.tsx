@@ -12,6 +12,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: 'at deretsahang sagot.',
   heroSubhead:
     'Totoong payo mula sa isang family-owned na Mercury dealer sa Rice Lake. Repower, troubleshooting, at pagpili ng tamang outboard — sinulat ng mga taong mismong nag-iinstall nito.',
+  skipLinkLabel: 'Lumaktaw sa nilalaman ng blog',
   searchLabel: 'Maghanap ng gabay',
   searchPlaceholder: 'Maghanap ng gabay, modelo, o paksa…',
   trustItems: [],

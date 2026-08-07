@@ -17,6 +17,7 @@ const strings: BlogHubStrings = {
   heroTitleLine2: 'y respuestas claras.',
   heroSubhead:
     'Consejos prácticos de un concesionario Mercury familiar en Rice Lake. Remotorización, diagnóstico y cómo elegir el fueraborda adecuado, escrito por quienes los instalan.',
+  skipLinkLabel: 'Ir al contenido del blog',
   searchLabel: 'Buscar guías',
   searchPlaceholder: 'Buscar guías, modelos, temas…',
   trustItems: [],

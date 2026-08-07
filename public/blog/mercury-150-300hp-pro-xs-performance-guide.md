@@ -216,7 +216,7 @@ There is no universal top speed. In one official freshwater test, a 150 Pro XS r
 
 ### How much does a Mercury 150 Pro XS cost?
 
-As of July 27, 2026, our pricing reference lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. Build a configured quote or call 905-342-2153.
+Our [live pricing reference](/pricing-reference) lists the current Canadian bare-motor price rather than freezing it inside this article. The installed total depends on the exact SKU, controls, steering, propeller, removal, rigging and boat condition. [Build a configured quote](/quote/motor-selection) for the complete total.
 
 ## Related guides
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-05-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-02
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last updated:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
@@ -34,7 +34,7 @@ language: en-CA
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, about 80 minutes northeast of Toronto. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Public launches at Bewdley, Hastings, Roseneath, and Harris Boat Works in Gores Landing.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works has a private ramp in Gores Landing.
 
 ---
 
@@ -108,7 +108,7 @@ For Rice Lake visitors, this opens up affordable multi-day trips through the Kaw
 
 ## Boat Rentals and Borrowing
 
-If you don't have a boat, you can rent from a few options on Rice Lake. HBW operates a 9-boat rental fleet (Legend boats with Mercury motors). Walk-up and call-ahead rentals available, see [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) or call 905-342-2153.
+If you don't have a boat, HBW offers pontoon and fishing-boat rentals on Rice Lake. The current lineup, live rates, capacity, equipment, and availability are listed at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals); rental bookings are online only.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -118,7 +118,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 ## Safety, The Stuff People Skip
 
-**PFDs.** One per person, accessible, and at least one is a wearable Type III. Required by Transport Canada.
+**PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
 **[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. The 2026 PCL changes converted lifetime licences to 5-year renewals at $24. Check your PCL is current before you launch.
 
@@ -150,15 +150,6 @@ The good news: the lake is small enough that you can learn the hazards in a seas
 
 ---
 
-## Related reading
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [Trent-Severn Waterway Boating Guide 2026](/blog/trent-severn-waterway-boating-guide-2026)
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide)
-- [Trailer Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide)
-
----
-
 ## Ready to Boat Rice Lake?
 
 If you need a Mercury motor or repower, build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
@@ -186,11 +177,11 @@ It runs roughly north-south across the middle of the lake, between Hiawatha (nor
 
 ### What's the launch fee at Harris Boat Works?
 
-$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches.
+$20 per day or $200 for a seasonal pass (April through November). The seasonal pass breaks even after 10 launches.
 
 ### Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?
 
-No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary "rental boat safety checklist", but most full-day rentals (including ours) require a PCOC.
+Not if you may drive an HBW rental. Every person who may drive must show a valid temporary or permanent PCOC plus photo ID at check-in. Passengers do not need one, and the rental checklist does not replace the card at HBW.
 
 ### Is Rice Lake too shallow for a 21-foot pontoon?
 
@@ -206,11 +197,11 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 
 ## Related guides
 
+- [Where to Launch Boat on Rice Lake](/blog/rice-lake-boat-launch-guide), Rice Lake boat launch guide
 - [Rice Lake Boat Rentals from Toronto](/blog/rice-lake-boat-rentals-from-toronto-gta), boat rentals from the GTA to Rice Lake
 - [Canada Day on Rice Lake: Boating Guide](/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend), a local's Canada Day guide
 - [Is a Pontoon Right for Your Family?](/blog/is-a-pontoon-right-for-your-family-rice-lake), is a pontoon right for your family?
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
-- [Boat Trim Explained Rice Lake](/blog/boat-trim-explained-rice-lake-ontario), boat trim explained
 
 ## Next steps
 

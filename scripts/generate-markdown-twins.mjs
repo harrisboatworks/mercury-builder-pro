@@ -2,6 +2,7 @@ import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { cleanBlogContent as cleanLegacyBlogContent } from '../src/lib/cleanBlogContent.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -12,7 +13,13 @@ const PUBLIC_MOTORS_API = 'https://www.mercuryrepower.ca/api/agents/motors';
 const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
-const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
+// Localized corpus loading resolves Vite asset imports across nine languages.
+// A cold CI filesystem can legitimately take longer than 30 seconds.
+const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 120000);
+// Publishable (anon) key is safe to embed and is already committed in the
+// browser client. Sharing it keeps both motor loaders resilient when the
+// public edge function is temporarily unavailable.
+const FALLBACK_SUPABASE_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
 const TSX_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.cmd' : 'tsx');
 const VITE_NODE_BIN = join(ROOT, 'node_modules', '.bin', process.platform === 'win32' ? 'vite-node.cmd' : 'vite-node');
 
@@ -95,6 +102,7 @@ function loadLocalizedBlogArticles() {
     import { frenchBlogArticles } from '../src/data/frenchBlogArticles.ts';
     import { koreanBlogArticles } from '../src/data/koreanBlogArticles.ts';
     import { mandarinBlogArticles } from '../src/data/mandarinBlogArticles.ts';
+    import { traditionalChineseBlogArticles } from '../src/data/traditionalChineseBlogArticles.ts';
     import { spanishBlogArticles } from '../src/data/spanishBlogArticles.ts';
     import { punjabiBlogArticles } from '../src/data/punjabiBlogArticles.ts';
     import { urduBlogArticles } from '../src/data/urduBlogArticles.ts';
@@ -113,6 +121,7 @@ function loadLocalizedBlogArticles() {
       { prefix: 'fr', language: 'fr-CA', articles: clean(frenchBlogArticles) },
       { prefix: 'ko', language: 'ko-KR', articles: clean(koreanBlogArticles) },
       { prefix: 'zh', language: 'zh-CN', articles: clean(mandarinBlogArticles) },
+      { prefix: 'zh-hant', language: 'zh-Hant', articles: clean(traditionalChineseBlogArticles) },
       { prefix: 'es', language: 'es', articles: clean(spanishBlogArticles) },
       { prefix: 'pa', language: 'pa', articles: clean(punjabiBlogArticles) },
       { prefix: 'ur', language: 'ur', articles: clean(urduBlogArticles) },
@@ -138,10 +147,7 @@ function loadLocalizedBlogArticles() {
 // replaced with public-motors-api (which only returns in-stock motors).
 async function loadAllQuoteBuilderMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  // Publishable (anon) key is safe to embed, same key is committed in src/integrations/supabase/client.ts
-  // Fallback ensures Vercel builds succeed even if VITE_SUPABASE_PUBLISHABLE_KEY env var isn't set in the build environment.
-  const FALLBACK_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
   }
@@ -199,14 +205,48 @@ async function loadMotors() {
   }
 
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: public-motors-api unreachable and no publishable Supabase key is available.');
   }
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&availability=neq.Exclude&order=horsepower.asc&limit=500`;
   const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
   if (!res.ok) throw new Error(`[markdown-twins] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
-  return res.json();
+  const rows = await res.json();
+  return (rows || [])
+    .filter((m) => !String(m.model_display || m.model || '').toLowerCase().includes('verado'))
+    .map((m) => {
+      const display = m.model_display || m.model || '';
+      const family = m.family ||
+        (/pro\s*xs|proxs/i.test(display) ? 'Pro XS' :
+          /sea\s*pro|seapro/i.test(display) ? 'SeaPro' :
+            /racing/i.test(display) ? 'Racing' : 'FourStroke');
+      const slug = `${family}-${m.horsepower}hp-${display}`
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      const overrides = m.manual_overrides || {};
+      const sellingPrice = [
+        overrides.sale_price,
+        overrides.base_price,
+        m.sale_price,
+        m.dealer_price,
+        m.msrp,
+        m.base_price,
+      ]
+        .map((value) => typeof value === 'string' ? Number.parseFloat(value) : value)
+        .find((value) => Number.isFinite(value) && value > 0) || null;
+      return {
+        ...m,
+        model_key: slug,
+        model: 'Outboard',
+        model_display: display,
+        mercury_model_no: m.model_number || m.mercury_model_no,
+        family,
+        shaft: m.shaft_code || m.shaft,
+        _resolvedSellingPrice: sellingPrice,
+      };
+    });
 }
 
 function motorSlug(modelKey) {
@@ -287,11 +327,21 @@ function mdFrontmatter(
 // the runtime renderer in src/pages/BlogArticle.tsx so .md twins match
 // what readers see.
 function cleanBlogContent(content, hasFaqs) {
-  let c = String(content || '');
-  c = c.replace(/^[*_\s]*\**\s*Last\s+(?:updated|reviewed)\b[^\n]*$/gim, '');
-  c = c.replace(/^[*_\s]*Language[*_\s:：]+English[*_\s]*$/gim, '');
-  c = c.replace(/^##\s+CTA\s*$/gim, '');
-  c = c.replace(/^(##\s+)Internal Links\s*$/gim, '$1Related reading');
+  let c = cleanLegacyBlogContent(content, {
+    hasStructuredFaqs: hasFaqs,
+  });
+  // Replace the visual MyBoatCard helper with an equivalent text-first block
+  // so the markdown twin keeps the customer guidance and referral disclosure.
+  c = c.replace(
+    /^::boat-card-help(?:\s*\nvariant:\s*full\s*\n::)?\s*$/gim,
+    [
+      '### Before your rental',
+      '',
+      "HBW requires every rental driver to bring a valid Pleasure Craft Operator Card. Passengers don't need one. If you still need yours, complete the Transport Canada-accredited online course through [MyBoatCard](https://myboatcard.com/card/harrisboat) and use code **HARRIS15** to save 15%. We accept the temporary card at check-in.",
+      '',
+      '*Your PCOC is valid for life. HBW may receive a referral fee when you use this link.*',
+    ].join('\n'),
+  );
   // Convert embedded YouTube cards to ordinary links before removing custom
   // directive fences, so text-only twins retain a useful video destination.
   c = c.replace(
@@ -314,12 +364,6 @@ function cleanBlogContent(content, hasFaqs) {
     /^-\s*quote:\s*(.+)\n\s+response:\s*(.+)$/gm,
     '- **"$1"**  \n  $2',
   );
-  if (hasFaqs) {
-    c = c.replace(
-      /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
-      '\n',
-    );
-  }
   return c.replace(/\n{3,}/g, '\n\n').trim();
 }
 
@@ -1198,14 +1242,25 @@ const blogTwinSummaries = [];
 for (const article of blogArticlesAll) {
   const path = `/blog/${article.slug}.md`;
   writePublicMd(path, blogMarkdown(article, blogClusterData));
-  blogTwinSummaries.push({ path, title: article.title });
+  blogTwinSummaries.push({
+    path,
+    title: article.title,
+    isDiagnostic: isDiagnosticBlogArticle(article),
+  });
 }
 
 for (const group of localizedBlogGroups) {
   for (const article of group.articles) {
     const path = `/blog/${group.prefix}/${article.slug}.md`;
     writePublicMd(path, blogMarkdown(article, null, `/blog/${group.prefix}`, group.language));
-    blogTwinSummaries.push({ path, title: `${article.title} [${group.language}]` });
+    verifyPublicMd(path, `${group.language} blog twin`, [
+      `canonical: ${SITE_URL}/blog/${group.prefix}/${article.slug}`,
+    ]);
+    blogTwinSummaries.push({
+      path,
+      title: `${article.title} [${group.language}]`,
+      isDiagnostic: isDiagnosticBlogArticle(article),
+    });
   }
 }
 // Note: previously a curated BLOG_TWIN_SLUGS sanity check ran here. Removed
@@ -1250,7 +1305,8 @@ verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD'
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', '/api/agents/quote']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', 'is_illustrative: true', 'Illustrative planning scenario:', '## Planning takeaway', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
-if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
+const commercialBlogSample = blogTwinSummaries.find(twin => !twin.isDiagnostic);
+if (commercialBlogSample) verifyPublicMd(commercialBlogSample.path, 'sample commercial blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Next steps']);
 for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const relPath = `/blog/${article.slug}.md`;
   const twinText = readFileSync(join(PUBLIC, relPath), 'utf8');

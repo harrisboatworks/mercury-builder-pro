@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-05-10
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke: Buy the 90 Instead?"
 description: "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-05-10
+date_modified: 2026-08-02
 keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last updated:** 2026-05-10  
+**Last updated:** 2026-08-02  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 
@@ -64,7 +64,7 @@ whenInDoubt: We do not stock 75 HP because 90 percent of buyers pick 90 once the
 
 We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
 
-Harris Boat Works has been selling and servicing Mercury outboards on Rice Lake since 1947. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
+Harris Boat Works has served Rice Lake boaters since 1947 and sold and serviced Mercury outboards since 1965. We're a third-generation family marina and a Mercury Marine Premier dealer. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
 ---
 
@@ -168,9 +168,9 @@ Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, d
 
 For most boats and most buyers, yes. Same motor, more headroom, better resale, marginal cost difference. The math is hard to argue with once you see it laid out.
 
-### My capacity plate says 75 HP max. Can I put a 90 on it?
+### My compliance notice says 75 HP max. Can I put a 90 on it?
 
-No. The capacity plate is the legal ceiling. A 90 on a 75-rated hull is overpowering, voids your insurance in most cases, and creates real safety risk. Buy the 75 if the plate says 75. We'll help.
+Do not use an oversized existing setup or an internet example as approval. Treat 75 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. A 90 HP setup can create safety, insurance, warranty, liability, financing, and resale problems.
 
 ### Will a Mercury 75 work on a pontoon?
 

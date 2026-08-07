@@ -50,7 +50,7 @@ If you're the kind of buyer who researches carefully, decides once, and executes
 
 ## Why Brampton Customers Call Us First
 
-The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.t.
+The issue most Brampton-area buyers describe is the same one we hear from across the GTA: no pricing online, or pricing that requires a call to get. They've already researched the motor. They know what they want. They just can't get a number without engaging a salesperson first.
 
 Our quote builder fixes that. Real installed pricing, motor, rigging, and installation, in Canadian dollars, in about three minutes. See the price, think it over, call us if you have questions, drive up when you're ready. Or skim [our published Mercury price list](/pricing-reference) first if you just want a feel for what motors cost.
 
@@ -58,7 +58,7 @@ Our quote builder fixes that. Real installed pricing, motor, rigging, and instal
 
 A repower isn't a parts swap. It's a rigging job. The motor, the controls, the throttle and shift cables, the prop selection, the integration with your existing electronics, all of it has to be right for the motor to perform the way Mercury designed it. A repower done hastily or without the right rigging conversation is a repower you'll notice on the water.
 
-We've been doing repowers on Rice Lake since 1947. The rigging conversation is as important to us as the motor sale.
+HBW has served Rice Lake boaters since 1947 and sold Mercury since 1965. The rigging conversation is as important to us as the motor sale.
 
 ## Mercury Premier, What It Means in Practice
 

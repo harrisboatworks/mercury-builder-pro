@@ -71,6 +71,7 @@ import {
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
+const MERCURY_99_MH_EXPRESS_MOTOR_ID = 'e920cfdf-223a-408a-850b-6f112e15c4d7';
 const DEEP_LINK_MODEL_TARGETS: Record<string, { hp: number; family?: string }> = {
   '150-hp': { hp: 150 },
   '115-pro-xs': { hp: 115, family: 'pro xs' },
@@ -1121,8 +1122,31 @@ if (event.type === 'filter_motors') {
   useEffect(() => {
     const motorId = searchParams.get('motor') || searchParams.get('select');
     if (!motorId || processedMotors.length === 0) return;
+    const isMotorOnlyExpress = searchParams.get('intent') === 'motor-only'
+      && motorId === MERCURY_99_MH_EXPRESS_MOTOR_ID;
     
     const openMotorModal = () => {
+      const targetMotor = processedMotors.find(m => m.id === motorId);
+
+      if (isMotorOnlyExpress) {
+        if (!targetMotor) return false;
+
+        trackClarityMotorSelection({
+          model: targetMotor.model,
+          hp: targetMotor.hp,
+          family: classifyMotorFamily(targetMotor.hp, targetMotor.model, targetMotor.features),
+        });
+        trackEvent('motor_only_express_started', {
+          motor_id: targetMotor.id,
+          motor_model: targetMotor.model,
+          motor_hp: targetMotor.hp,
+          source: 'mercury_9_9_mh_sale',
+        });
+        dispatch({ type: 'START_MOTOR_ONLY_QUOTE', payload: targetMotor });
+        navigate('/quote/summary?intent=motor-only', { replace: true });
+        return true;
+      }
+
       // Try finding group in groupedMotors first
       let targetGroup = groupedMotors.find(g => 
         g.variants.some(v => v.id === motorId)
@@ -1130,7 +1154,6 @@ if (event.type === 'filter_motors') {
       
       // Fallback: construct a temporary group from processedMotors
       if (!targetGroup) {
-        const targetMotor = processedMotors.find(m => m.id === motorId);
         if (!targetMotor) return false;
         
         // Find all motors with same HP to build a proper group
@@ -1169,7 +1192,7 @@ if (event.type === 'filter_motors') {
     }, 150);
     
     return () => clearTimeout(timer);
-  }, [processedMotors, groupedMotors, searchParams, setSearchParams]);
+  }, [processedMotors, groupedMotors, searchParams, setSearchParams, dispatch, navigate]);
   
   // Handle voice:show-motor when processedMotors and groupedMotors are available
   useEffect(() => {

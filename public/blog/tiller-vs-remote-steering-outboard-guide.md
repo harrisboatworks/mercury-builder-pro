@@ -180,14 +180,6 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ---
 
-## Related posts
-- [Portable Mercury Outboard Guide: 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
-
----
-
 ## Ready to choose?
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
@@ -206,7 +198,7 @@ Tiller is not harder to learn, it's different. The main adjustment is that tille
 
 ### What's the biggest Mercury motor available in tiller configuration?
 
-Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. The Mercury 60HP EFI Command Thrust in tiller is a popular choice for 16-18ft aluminum boats on Rice Lake.
+Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used. On a typical 16-18 ft planing aluminum V-hull, HBW starts with the standard gearcase; Command Thrust is for pontoons, workboats, and special displacement or load cases.
 
 ### Can I have both tiller and remote steering on the same outboard motor?
 
@@ -234,11 +226,11 @@ For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI 
 
 ## Related guides
 
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
-- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
 
 ## Next steps
 

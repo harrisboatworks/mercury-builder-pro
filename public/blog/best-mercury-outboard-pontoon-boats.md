@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for a Pontoon: 90 to 115 HP CT (2026)"
 description: "For 18-22 ft pontoons in Ontario, the answer is a Mercury 90-115 HP FourStroke with Command Thrust (CT tops out at 115; 150s run Mercury's big gearcase as standard)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 
@@ -77,7 +77,7 @@ We default to Command Thrust on most pontoon repowers at HBW. Customers who push
 
 **Where you boat.** Sheltered Kawartha bays vs. open water on a big lake vs. running the Trent-Severn system all change the practical HP minimum.
 
-**Capacity plate.** The plate sets the legal ceiling. Pontoons typically rate 90 to 150 HP, or 115 to 200 HP, depending on size and tube configuration. We work within it.
+**Compliance notice.** Use the manufacturer's maximum recommended safe power for the exact pontoon model, then check tube configuration, transom, steering, motor weight, and load. Similar-looking pontoons can carry different ratings.
 
 ---
 
@@ -175,14 +175,6 @@ Mercury Boost is a software calibration that improves mid-range acceleration res
 **The honest pontoon-specific framing:** For a typical two-tube pontoon in the Kawarthas, the right answer is a 90 or 115 Command Thrust FourStroke. For a tritoon or a pontoon used for serious watersports, a 200-300 HP V8 Pro XS with factory Boost (or the dealer-installed Boost calibration on an eligible serial) is the upgrade path. Boost is not a substitute for the right base motor.
 
 For full Boost eligibility detail by motor family and serial range, see our [Mercury Boost software upgrade eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026).
-
----
-
-## Related posts
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
 
 ---
 

@@ -68,4 +68,26 @@ describe('PricingTable financing terms', () => {
     expect(screen.queryByText(/From \$255\/month/i)).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /Apply for Financing/i })).not.toBeInTheDocument();
   });
+
+  it('does not claim a factory rebate when none is applied', () => {
+    render(
+      <PricingTable
+        pricing={{
+          msrp: 3_860,
+          discount: 861,
+          adminDiscount: 0,
+          promoValue: 0,
+          subtotal: 2_999,
+          tax: 389.87,
+          total: 3_388.87,
+          savings: 861,
+        }}
+        selectedPaymentMethod="cash_purchase"
+      />,
+    );
+
+    expect(screen.getByText('Cash purchase selected')).toBeInTheDocument();
+    expect(screen.getByText('No financing is included.')).toBeInTheDocument();
+    expect(screen.queryByText(/rebate remains applied/i)).not.toBeInTheDocument();
+  });
 });

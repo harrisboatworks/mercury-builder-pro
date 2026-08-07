@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-07-23
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury ProKicker for Rice Lake Walleye"
 description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
-date_modified: 2026-07-23
+date_modified: 2026-08-02
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
@@ -131,7 +131,7 @@ A proper ProKicker install on a Rice Lake fishing boat covers:
 
 **Helm integration.** Electric-start models need a key switch and wiring run to the helm. If you want kicker RPM shown on your chartplotter or a SmartCraft display, that is a conversation to have before the install, not after.
 
-**Sea trial.** We run every install on the lake before you take delivery. Trolling-speed testing, fuel-flow confirmation, tiller-reach check. That is how we catch the things that look right on the transom and feel wrong on the water.
+**On-water check.** When safe seasonal conditions allow, the applicable work order can include trolling-speed, fuel-flow, and tiller-reach checks on the lake before pickup. If an on-water check is not possible, the alternate acceptance plan is documented with the customer.
 
 ---
 
@@ -241,8 +241,8 @@ Yes. It is used for trolling on the connecting lakes and as a backup motor on cr
 ## Related guides
 
 - [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Best Mercury for Lake Ontario Salmon](/blog/best-mercury-outboard-lake-ontario-salmon-trout), Lake Ontario salmon and trout setups
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
 

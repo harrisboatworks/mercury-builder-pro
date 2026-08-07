@@ -111,8 +111,6 @@ In some cases, the overheat alarm is triggered by a faulty temperature sensor ra
 - The motor doesn't feel or sound like it's struggling
 - The alarm is intermittent and doesn't correlate with observable symptoms
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-
 Sensor diagnosis requires dealer tools to read temperature sensor values against actual powerhead temperature. If you suspect a sensor issue, this is a professional diagnostic.
 
 ---
@@ -154,29 +152,8 @@ The actual fix at the shop, after the impeller test, is usually a five-minute ho
 
 ---
 
-## Related at HBW
-
-The full topic hub: **[Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Mercury Outboard Beeping Codes: Continuous Beep, Four Beeps, and What to Check](/blog/mercury-outboard-beeping-codes-guide)
-- [Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)](/blog/mercury-motor-maintenance-seasonal-tips)
-
----
-
-## Related reading
-- [Outboard Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide)
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule)
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide)
-
----
-
 **Overheating at idle needs to be looked at before your next run.** 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and Mercruiser.
-
-Phone: 905-342-2153
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---
 
 ## FAQs
@@ -205,7 +182,7 @@ Depends on duration and how you responded. If you got the alarm, throttled to id
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 

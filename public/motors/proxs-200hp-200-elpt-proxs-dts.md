@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs-dts
-last_updated: 2026-07-28
+last_updated: 2026-08-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
+location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-location: Gores Landing, ON, Canada
 motor_id: 62a0ce53-7c17-4589-926a-c44ac4314412
 slug: proxs-200hp-200-elpt-proxs-dts
 family: ProXS

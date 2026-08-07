@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md
-last_updated: 2026-07-28
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Oil Capacity Chart: Model and Year Lookup"
 description: "Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP."
 category: "Service & Maintenance"
 date_published: 2026-07-24
-date_modified: 2026-07-28
+date_modified: 2026-08-02
 keywords: ["Mercury outboard oil capacity chart","Mercury FourStroke oil capacity","Mercury gearcase oil capacity","Mercury outboard oil filter chart","Mercury 90 oil capacity","Mercury 60 gear oil capacity","Mercury outboard oil lookup"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-07-24  
-**Last updated:** 2026-07-28
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 
@@ -273,3 +273,4 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
+

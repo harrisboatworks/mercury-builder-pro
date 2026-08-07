@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide.md
-last_updated: 2026-07-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Honda to Mercury Repower: Ontario Guide"
-description: "Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom."
+description: "Switching from Honda to Mercury in Ontario: rigging compatibility, current pricing paths, trade-in questions, and what changes at the transom."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-07-09
+date_modified: 2026-08-02
 keywords: ["Honda to Mercury repower","Honda to Mercury Ontario","Honda BF250 Mercury","brand swap outboard repower","Mercury repower cost Ontario","Honda BF dealer Ontario","Honda vs Mercury Ontario","Mercury Premier dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -20,35 +20,35 @@ language: en-CA
 
 # Honda to Mercury Repower: Ontario Guide
 
-> Switching from Honda to Mercury in Ontario: rigging compatibility, controls, costs in CAD, trade-in value, and what changes at the transom.
+> Switching from Honda to Mercury in Ontario: rigging compatibility, current pricing paths, trade-in questions, and what changes at the transom.
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-09  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/honda-to-mercury-repower-ontario-guide
 
-> **Quick answer:** Switching from Honda to Mercury makes sense for two reasons: Ontario service access, where Mercury has roughly three times Honda's dealer footprint, and lineup match above 60 HP. The brand swap adds $1,800 to $3,500 in rigging for controls, gauges, harness, and prop. Below 25 HP, your Honda kicker is usually worth keeping. Build a quote at mercuryrepower.ca.
+> **Quick answer:** A Honda-to-Mercury switch is worth comparing when the Mercury product family, local authorized-service route, or rigging plan fits your boat better. It is not an automatic upgrade. Honda currently builds through the BF350 V8; Mercury's Canadian lineup continues above 350 HP. Keep a good Honda kicker if it still does the job. Compare the current motor price and a written installed quote instead of relying on generic ranges.
 
 ## Quick answer
 
-Honda outboards are excellent in the 9.9-50 HP class. Switching to Mercury makes sense for two reasons: Ontario dealer-network access (Mercury has 3x more service points) and HP-class match above 60 HP. Brand swap costs $1,800-$3,500 extra in rigging (controls, gauges, harness, prop). Email info@harrisboatworks.ca with your Honda specs for a same-day side-by-side quote.
+Honda outboards are excellent in the 9.9-50 HP class. A switch to Mercury can make sense when the local authorized-service route or the required Mercury product family fits better. Brand-swap rigging depends on controls, gauges, harness, propeller, steering, and the existing dash, so use a written side-by-side quote rather than a generic range.
 
 Honda BF outboards have a loyal following in Ontario, particularly in the 9.9-50 HP class for small fishing boats and tenders. The motors are quiet, fuel-efficient, and built to a high standard. We don't sell Honda at HBW (we're Mercury Premier), but we respect the brand. This guide is the honest case for switching from Honda to Mercury, where it makes sense, and where it doesn't. Before pricing a brand switch, work through our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) to confirm repower is the right call at all.
 
 ## Why customers switch from Honda to Mercury
 
-The Honda-to-Mercury swap is less common than [Yamaha-to-Mercury](/blog/yamaha-to-mercury-repower-ontario-guide) in Ontario because Honda has a smaller installed base here. The customers who do switch have one of three reasons.
+At HBW, Honda-to-Mercury enquiries are less common than [Yamaha-to-Mercury enquiries](/blog/yamaha-to-mercury-repower-ontario-guide). The Honda owners who do ask us about switching usually have one of three reasons.
 
-**Service network density.** Honda has roughly one-third the Ontario dealer footprint of Mercury. In the GTA proper this isn't a big deal, but in the Kawarthas, Trent-Severn corridor, Bay of Quinte, and rural cottage country, the nearest Honda dealer can be 90+ minutes away. Mercury Premier dealers are typically 30-45 minutes away in the same areas. For mid-season service emergencies, the difference matters.
+**Service access.** Dealer networks change. Use the current [Mercury dealer locator](https://www.mercurymarine.com/ca/en/find-a-dealer) and [Honda Marine dealer locator](https://marine.honda.ca/en/dealerlocator), confirm that the location services the exact model, and compare the real route from where the boat lives. Do not rely on a generic network ratio or drive-time claim.
 
-**HP class match for repowers above 60 HP.** Honda's biggest outboard is the BF350 V8 (350 HP, launched in Canada in 2024). Mercury offers everything from 9.9 portable to 600 HP Verado V12, including the 400 HP Verado V8/V10, the 450R, and the 600 HP V12. If your next repower is above 350 HP or you're moving to a tritoon that wants Pro XS, Mercury has the lineup match Honda can't offer.
+**HP class and engine-family match.** [Honda Marine Canada currently lists the BF350 V8](https://marine.honda.ca/en/drive-by-wire/bf350). Mercury Canada lists FourStroke models through 300 HP, Verado families from 250 to 425 HP, and the 600 HP V12. Above 350 HP, or when the job calls for a Mercury-specific Pro XS or Verado configuration, the available product family can decide the comparison.
 
-**Dealer service experience.** This is subjective, but we hear it: customers who've had a hard time getting Honda service slots in Ontario sometimes switch to Mercury because HBW (and other Premier dealers) have invested in service capacity. Hours-on-the-water lost to service queue is a real cost.
+**Dealer service experience.** This is local and personal. A dependable nearby Honda dealer can be a good reason to stay with Honda. A customer who wants HBW to own the repower and ongoing Mercury service may value that relationship more than the badge comparison. Compare the actual support route, not a province-wide slogan.
 
 ## What changes vs what stays the same
 
-Honda and Mercury both use different proprietary control architectures. [None of the Honda-specific rigging carries over](/blog/what-happens-during-mercury-repower). The cost of switching is in the rigging, not the motor.
+Honda and Mercury use different control and engine-data systems. [Some Honda-specific rigging must be replaced](/blog/what-happens-during-mercury-repower), while some boat-side hardware may stay after inspection. The installed quote has to separate what carries over from what changes.
 
 | Component | Stays the same? | Notes |
 |---|---|---|
@@ -62,43 +62,29 @@ Honda and Mercury both use different proprietary control architectures. [None of
 | Steering | Often | Hydraulic carries over; cable steering may need replacement at higher HP. |
 | Trim tabs, electronics | Yes | Carry over. |
 
-[The cost premium for switching brands](/blog/mercury-repower-cost-ontario-2026-cad) (vs same-brand repower) is roughly $1,800-$3,500 depending on whether you have mechanical or digital controls and how integrated your existing dash is.
+## What a Honda-to-Mercury swap costs in Ontario
 
-## Costs in Ontario (CAD, 2026)
+The motor is only one line of a brand-swap quote. Depending on the boat, the job can also require a control box, cables or DTS harness, gauges or VesselView, a Mercury propeller, steering changes, battery work, removal, installation, and on-water testing when seasonal conditions allow. The Honda model, current rigging, dash, hull, and chosen Mercury package decide which lines apply.
 
-| HP class | Mercury motor (CAD, before tax) | Rigging premium for brand swap | All-in installed (estimate) |
-|---|---|---|---|
-| 9.9-25 HP portable | $2,500-$5,800 | $1,000-$1,500 | $5,500-$9,500 |
-| 40-60 HP | $7,000-$10,500 | $1,400-$2,200 | $11,500-$16,000 |
-| 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
-| 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250 HP (Honda BF250 to Mercury) | $24,500-$26,000 | $2,800-$4,200 | $34,000-$43,000 |
-
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
-
-The brand-swap premium for Honda customers is slightly lower than Yamaha customers because Honda gauges tend to be analog-friendly and integrate slightly more easily with replacement Mercury gauges than Yamaha Command Link does.
-
-For current Ontario CAD pricing on your specific HP class, build a quote at [mercuryrepower.ca](https://mercuryrepower.ca).
+Use the [live Mercury pricing reference](/pricing-reference) for current motor-only prices. Then build a quote or send HBW the Honda cowl plate and helm photos for a written installed proposal. Static tables age badly and cannot tell whether your steering, fuel system, batteries, or instruments can stay.
 
 ## Where Honda genuinely wins (we're honest about this)
 
 We don't sell Honda. We DO try to give honest advice. Here's where Honda is the right call and a switch to Mercury doesn't make sense.
 
-**Small kicker on a fishing boat (9.9-25 HP).** Honda BF9.9, BF15, BF20, BF25 are all excellent kickers. Famously quiet, famously fuel-efficient. If your boat is already rigged for Honda and you're happy with kicker performance, switching to Mercury ProKicker (which IS also excellent) gives you a marginal improvement at a real rigging cost. Stay with Honda.
+**Small kicker on a fishing boat (9.9-25 HP).** Honda BF9.9, BF15, BF20, and BF25 are established small-motor choices. If your boat is already rigged for Honda and you are happy with its kicker performance, switching brands is a new rigging decision, not a guaranteed improvement. Keeping the Honda can be the sensible answer.
 
 **Stable boat-and-motor pairing for cottage daily use.** Honda BF lineup matched to a 16-18 ft aluminum or a small pontoon for cottage cruising is a known-good combo. If you've owned the Honda for 5+ years with zero issues and your usage pattern is stable, the swap is hard to justify.
 
 **Easy local Honda dealer.** If your nearest Honda dealer is reasonable and you have a relationship there, the dealer relationship is worth more than the brand swap. Stay.
 
-**Honda's fuel economy advantage at trolling RPM.** Honda BF motors have a small but real edge in trolling-RPM fuel burn vs equivalent Mercury motors in the 9.9-30 HP class. For full-day trolling applications (Bay of Quinte salmon, slow walleye trolling on Rice Lake), this can add up. Mercury has closed most of the gap but Honda still has a slight edge at very low RPM cruise.
-
 ## Where the switch to Mercury wins
 
-**You need 60+ HP and your nearest Honda dealer is far.** Once you're above 60 HP, the service-network argument starts mattering more because the motor is doing more work and parts inventories at smaller dealers thin out. Mercury Premier dealers are typically better-stocked.
+**The local Mercury support route is better for the boat.** If HBW is the practical service destination and the nearest suitable Honda support is not, that can matter more than a paper specification. Check the current locators and the exact services each dealer provides.
 
-**You're going above 350 HP.** Honda tops out at the BF350 V8 (350 HP, launched in Canada in 2024). If you want 400 HP, 450 HP, or 600 HP, Mercury (400 HP Verado V8/V10, 450R, 600 HP Verado V12) is the only path.
+**You're going above 350 HP.** Honda Marine Canada's current line reaches the BF350 V8. Mercury Canada's current Verado range continues through 400 HP, 425 HP, and 600 HP. That is a real lineup difference, but the hull rating, transom, steering, controls, and use case still decide whether any of those motors belongs on the boat.
 
-**You want Joystick Piloting on a multi-engine setup.** Honda's iST joystick exists but Mercury's joystick integration is more mature and works with a broader range of multi-engine configurations.
+**You want a Mercury SmartCraft or Joystick configuration.** Controls and compatibility are package-specific. If those Mercury systems are part of the goal, quote the entire control and steering package rather than comparing engines alone.
 
 **You want Pro XS performance.** Honda doesn't have a direct Pro XS equivalent. If you're a bass fisherman or runabout owner [wanting Pro XS aggression](/blog/mercury-pro-xs-buyer-guide-ontario), Mercury is the only call.
 
@@ -110,9 +96,9 @@ A few patterns from Honda-to-Mercury conversations specifically.
 
 The first pattern: customers in the 9.9-25 HP range almost always stay with their Honda. The brand premium to switch isn't worth it for kicker applications. We tell them this honestly. Honda makes great small motors. Stay.
 
-The second pattern: customers in the 40-60 HP class are the gray zone. The brand-swap cost is $1,400-$2,200 on top of the motor. The performance delta between current Honda BF50 and Mercury 50 FourStroke is small (within 1-2 MPH top, within 5% fuel burn). The decision usually comes down to local dealer access and personal preference.
+The second pattern: customers in the 40-60 HP class are the gray zone. If the current Honda is healthy and the boat already works, a badge change alone is a weak reason to repower. The decision usually comes down to hull fit, current rigging, local dealer access, and the written side-by-side quote.
 
-The third pattern: customers above 90 HP make the switch more often. Service capacity matters more on bigger motors. Parts inventory matters more. Mercury's Ontario footprint advantage compounds at this HP class.
+The third pattern: on larger repowers, controls, steering, gauges, prop selection, and service ownership become a larger part of the decision. That is where a complete installed proposal is more useful than a motor-only comparison.
 
 The fourth pattern, specific to the Rice Lake / Kawarthas region: cottage owners who've had Honda dealers consolidate or close in their nearest town often switch to Mercury reluctantly. They're not thrilled with the swap cost but the service experience drives the call. We're honest with them that the swap is mostly about dealer access, not motor performance.
 
@@ -128,8 +114,9 @@ The fifth pattern: tournament bass anglers and Pro XS curious customers. The Hon
 | Honda BF40 / BF50 / BF60 | Mercury 40 / 50 / 60 FourStroke (Command Thrust for pontoon) |
 | Honda BF75 / BF90 / BF115 | Mercury 75 / 90 / 115 FourStroke (Command Thrust on pontoon) |
 | Honda BF150 / BF175 / BF200 | Mercury 150 / 175 / 200 FourStroke or Pro XS |
-| Honda BF225 / BF250 | Mercury 225 / 250 FourStroke or Pro XS |
-| (Honda lineup ends at BF250) | Mercury Pro XS 300 / Verado 300+ / Pro XS 400-450R |
+| Honda BF225 / BF250 | Mercury 225 / 250 FourStroke, Pro XS, or Verado depending on the boat |
+| Honda BF350 | Mercury 350 Verado (special-order at HBW); compare the full hull, controls, steering, and use case |
+| Above Honda's current 350 HP range | Special-order Mercury Verado options continue through 425 HP and 600 HP |
 
 Not a one-to-one performance guarantee. Prop and load conditions affect ranking. We dial it in during the quote process.
 
@@ -148,15 +135,15 @@ Not a one-to-one performance guarantee. Prop and load conditions affect ranking.
 
 The honest framework:
 
-- **Stay with Honda:** 9.9-25 HP kicker/portable applications; reliable Honda with low hours; close to a working Honda dealer; fuel-economy-sensitive trolling use case; happy with current setup.
-- **Switch to Mercury:** 60+ HP and remote from Honda service; need 300+ HP; want Pro XS performance; planning Joystick Piloting on multi-engine; current Honda is tired AND closest Honda dealer is far.
+- **Stay with Honda:** 9.9-25 HP kicker or portable applications; a healthy Honda that already fits the boat; a good local Honda dealer relationship; or a setup that is doing the job without a clear reason to change.
+- **Switch to Mercury:** the local Mercury service route is the better fit; you need a Mercury-specific Pro XS, Verado, SmartCraft, or Joystick package; you need an option above Honda's current 350 HP range; or the written installed comparison favours the Mercury repower.
 
-To start a quote at HBW: email cowl plate photos of your Honda + photos of your helm controls and gauges to info@harrisboatworks.ca. We respond same-day with a side-by-side Honda-equivalent Mercury quote, the full installed cost, and an honest assessment of whether the swap is worth it for your specific situation.
+To start a quote at HBW: email cowl plate photos of your Honda plus photos of your helm controls and gauges to info@harrisboatworks.ca. We will review the configuration and prepare a side-by-side Mercury quote or ask for any missing information.
 
 ## Ready to talk Honda-to-Mercury repower?
 
 **Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send Honda cowl plate + helm photos for same-day quote)
+**Email:** info@harrisboatworks.ca (send Honda cowl plate + helm photos for a side-by-side quote)
 **Build a Mercury quote:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marine dealer since 1965, current Premier Dealer.
@@ -167,7 +154,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 
 ### How long does a Honda-to-Mercury swap take at HBW?
 
-Most brand-swap repowers run 3-5 working days once motor and rigging parts are on site. The Honda-specific work (removal of Honda controls, gauges, harness, and prop) takes roughly half a day. The Mercury rigging takes the rest. Spring queue (April-May) runs longer. Book early.
+A brand swap requires removal of the Honda controls, gauges, harness, and prop, then installation and testing of the approved Mercury package. HBW confirms the shop window after reviewing the boat, parts, current capacity, and safe test conditions.
 
 ### Will my Honda prop carry over to the new Mercury?
 
@@ -175,7 +162,7 @@ No. Honda and Mercury propellers are not interchangeable. You need a new Mercury
 
 ### Is Mercury actually more reliable than Honda?
 
-Honestly, on current models, the reliability gap between Honda and Mercury is small. Both brands build solid four-strokes. The bigger reliability factor is local service network: a motor you can get serviced quickly is a motor that stays running. In most of Ontario outside the GTA, Mercury has the service density advantage.
+There is no honest province-wide shortcut here. Both brands build current four-strokes, and the result depends on the exact model, setup, maintenance, use, and local support. Compare the boat fit and the real authorized-service route from where the boat lives instead of treating one badge as a reliability guarantee.
 
 ### Can I keep my Honda kicker and just swap the main motor?
 
@@ -183,15 +170,15 @@ Yes, technically. The kicker is electrically and mechanically independent of the
 
 ### What is the trade-in value of a clean Honda BF90?
 
-Depends on year, hours, condition, and market. We take Honda in trade against Mercury repowers when the math works. Send us serial number, hour count, and condition photos and we will usually quote a trade value within one business day. Honda holds value reasonably well in Ontario but has a smaller used market than Mercury, so trade quotes can run slightly below comparable Mercury.
+It depends on year, hours, condition, configuration, and the current Ontario market. Send the serial number, hour count, and clear condition photos so HBW can assess whether a trade fits the repower proposal.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Mercury Repower Guide: Cost, Timeline & When It's Worth It](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

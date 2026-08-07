@@ -1,30 +1,30 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Best Mercury for Lake Ontario Salmon"
-description: "Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells."
+title: "Best Mercury Outboard for Lake Ontario Salmon & Trout"
+description: "Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions."
 category: "Fishing & Local"
 date_published: 2026-04-22
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Best Mercury for Lake Ontario Salmon
+# Best Mercury Outboard for Lake Ontario Salmon & Trout
 
-> Lake Ontario salmon and trout: best Mercury outboard is 200-300 hp V8 FourStroke or Pro XS on 21-26 ft center console. Big water, big swells.
+> Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions.
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
@@ -143,14 +143,6 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 
 ---
 
-## Related reading
-- [Mercury 9.9 ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist)
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026)
-
----
-
 ## Build Your Lake Ontario Setup
 
 Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, no games.
@@ -184,7 +176,7 @@ Deep-V or modified-V hulls handle Lake Ontario chop best. Center consoles, walka
 
 ### How much HP do I need for a 24-foot Lake Ontario salmon boat?
 
-For typical recreational trolling, 250 to 300 HP V8. For tournament fishing, 300 HP Pro XS V8 or twin engines. Capacity plate sets the legal ceiling.
+The right motor depends on the exact hull rating, loaded weight, configuration, intended use, and whether the boat is designed for singles or twins. Start with the manufacturer documentation and assess the actual boat rather than selecting horsepower from length alone.
 
 ### Should I run twin engines for Lake Ontario?
 
@@ -204,11 +196,11 @@ For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full 
 
 ## Related guides
 
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
 - [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Lake Ontario Salmon Mercury Setup](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
-- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Mercury ProKicker for Rice Lake Walleye](/blog/mercury-prokicker-rice-lake-fishing-guide), Pro Kicker on Rice Lake
 
 ## Next steps
 

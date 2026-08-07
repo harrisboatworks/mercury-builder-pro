@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw.md
-last_updated: 2026-06-07
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer Peterborough HBW"
 description: "Harris Boat Works is the closest Mercury Premier dealer for Peterborough, ~35 minutes south via Highway 28."
 category: "Dealer Locations"
 date_published: 2026-05-17
-date_modified: 2026-06-07
+date_modified: 2026-08-02
 keywords: ["mercury dealer peterborough","peterborough mercury outboard","mercury premier dealer ontario","kawartha mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-17  
-**Last updated:** 2026-06-07  
+**Last updated:** 2026-08-02  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-peterborough-ontario-hbw
 
@@ -83,7 +83,7 @@ Motor pricing: mercuryrepower.ca
 Full Mercury lineup: 2.5 HP portables through 600 HP Verado (Verado is special-order, most Peterborough/Kawartha boats need FourStroke or Pro XS). Honest conversation about what fits your boat and your use case on [the Otonabee, Trent system, or Kawartha lakes](/blog/trent-severn-mercury-dealer-survival-guide-2026).
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, sea trial on Rice Lake before pickup. We don't deliver motors on trailers and hope they run right, every install gets water-tested before it leaves the shop.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, and documented acceptance checks before pickup. When safe seasonal conditions allow, the work order can include an on-water check on Rice Lake; otherwise, HBW documents the alternate acceptance plan with the customer. HBW is pickup-only and does not deliver boats or motors.
 
 **Mercury parts and service**
 Premier-tier parts depth and warranty authorization. SmartCraft diagnostics, full service for current and recent Mercury outboards. For engine repairs, we only service Mercury and Mercruiser.
@@ -98,13 +98,13 @@ mercuryrepower.ca, real Canadian dollars, full configuration. Build a quote befo
 
 Peterborough boaters tend to know boats. The city has a deep boating culture, Trent University boaters, Otonabee day-cruisers, Kawartha cottagers, and a strong fishing community on the Kawartha chain. The call-for-quote runaround frustrates Peterborough buyers more than most because they've usually already done their research before they make the call.
 
-Our quote builder skips that step. The price you see is the price you pay. Three generations of HBW have built this business on returning customers and referrals, not on quota-driven sales tactics.
+Our quote builder skips the call-for-a-starting-price step and shows the current configuration in Canadian dollars. The boat-specific written quote controls the final motor, rigging, labour, tax, trade-in, and financing figures. Three generations of HBW have built this business on returning customers and referrals, not quota-driven sales tactics.
 
 ## What we see at HBW
 
 The most common Peterborough question we get isn't about a specific motor, it's "is repower worth it on my hull?" The honest answer depends on three things: the age of the hull, the cost of the motor proposed, and how many seasons you want out of the package. Our [Repower vs Buy New decision guide](/blog/repower-vs-new-boat) covers the math; the short answer is that for hulls under 15 years old in good structural shape, repower beats new-boat economics in most cases.
 
-For Peterborough customers specifically: the closer service relationship is the under-rated benefit. A repower done at HBW means the dealer who installed the motor is also the one doing your annual maintenance. That's how warranty issues get resolved fast.
+For Peterborough customers, continuity can be useful: the installing dealer can retain the rigging and service history if the owner returns for booked maintenance. Mercury controls warranty coverage and claim decisions, so no article should promise a faster approval or outcome.
 
 ## How to make the drive worth it
 

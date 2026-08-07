@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-05-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2-Stroke vs 4-Stroke Repower: What to Know"
 description: "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and Ontario costs from $11,000 CAD. Pickup at Gores Landing."
 category: "Repower Guides"
 date_published: 2026-05-24
-date_modified: 2026-05-24
+date_modified: 2026-08-02
 keywords: ["2-stroke vs 4-stroke repower","2-stroke to 4-stroke Mercury","Mercury FourStroke repower Ontario","replace 2-stroke outboard","Mercury repower cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Repower Guides  
 **Published:** 2026-05-24  
-**Last updated:** 2026-05-24  
+**Last updated:** 2026-08-02  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 
@@ -100,9 +100,9 @@ Installed at Harris Boat Works on Rice Lake, ballpark CAD by motor HP:
 - 150 HP FourStroke: $18,000 to $21,000
 - 200 HP FourStroke or Pro XS: $21,000 to $28,000
 
-The 75 to 115 HP class is the busy lane in Ontario, and most of those land between $13,000 and $19,000 before HST. Every full repower covers the motor, rigging, controls, propeller, a fuel-system inspection, hauling the old motor away, and a water test on Rice Lake before you pick it up. Pickup only, at Gores Landing. We do not ship motors and we do not deliver.
+Installed totals vary with the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live [Mercury pricing reference](/pricing-reference) and quote builder for a current starting point, then rely on the written installed scope. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer. Pickup only at Gores Landing. HBW does not ship motors or deliver.
 
-We take Mercury 2-stroke trade-ins, and we look at other brands case by case. Fill out the form on our [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw) and you usually get a CAD figure back by email inside one business day. Financing is available on approved credit. The full breakdown by motor class lives in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
+HBW evaluates Mercury 2-stroke trade-ins and other brands case by case. Submit the serial number, hours, condition, and photos through the [trade-in value page](/blog/outboard-trade-in-value-ontario-hbw). Financing is available on approved credit. The full breakdown by motor class lives in our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad).
 
 ## When should you repower instead of repairing the old 2-stroke again?
 
@@ -148,19 +148,19 @@ Usually yes. Old mechanical controls and cables often do not match the modern mo
 
 ### Does Harris Boat Works take my old 2-stroke as trade-in?
 
-We take Mercury 2-stroke trade-ins. We also evaluate other-brand 2-strokes case by case for resale or wholesale. Fill out the trade-in form and we will usually email a CAD figure within one business day.
+HBW evaluates Mercury and other-brand 2-strokes case by case for resale or wholesale. Submit the serial number, hours, condition, and photos. HBW will review the current market and respond when the appraisal is complete.
 
 ### How much does a 2-stroke to 4-stroke repower cost?
 
-Installed at Harris Boat Works, a full repower runs $11,000 to $24,000 CAD for most jobs, depending on horsepower. That includes the motor, rigging, controls, propeller, fuel system inspection, old motor removal, and a water test on Rice Lake before pickup at Gores Landing.
+It depends on the exact motor, controls, steering, rigging, propeller, removal, and boat-specific findings. Use the live Mercury pricing reference and quote builder for a current starting point, then rely on the written installed scope.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: The Honest Math](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 - [When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Mercury Repower Eligibility: 5-Check Guide](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
 
 ## Next steps
 

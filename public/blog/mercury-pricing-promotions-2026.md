@@ -68,7 +68,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-*Prices are motor MSRP only (canonical 2026-06-03); rigging adds $1,500-$3,000+. Mercury Verado is special-order only; call (905) 342-2153 for Verado pricing.*
+*The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
 ### Seasonal Pricing Patterns
 

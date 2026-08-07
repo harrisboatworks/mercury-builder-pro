@@ -1,207 +1,187 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario.md
-last_updated: 2026-05-14
+last_updated: 2026-07-31
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Boat Trailer Maintenance Ontario"
-description: "Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights."
-category: "Maintenance"
-date_published: 2026-05-13
-date_modified: 2026-05-14
-keywords: ["boat trailer maintenance","trailer bearings","boat trailer Ontario","trailer service cost","trailer bearing repack","ST tires","boat trailer brakes","trailer winterization"]
+title: "The Five-Minute Boat-Trailer Check Before Every Trip"
+description: "Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance."
+category: "Service"
+date_published: 2026-05-26
+date_modified: 2026-07-31
+keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Boat Trailer Maintenance Ontario
+# The Five-Minute Boat-Trailer Check Before Every Trip
 
-> Annual boat trailer maintenance checklist for Ontario boaters. Bearings, brakes, tires, lights.
+> Check your boat trailer before every trip: coupler, chains, restraints, tires, wheels and lights, using current Ontario and manufacturer guidance.
 
-**Category:** Maintenance  
-**Published:** 2026-05-13  
-**Last updated:** 2026-05-14  
-**Read time:** ~10 min read  
+**Category:** Service  
+**Published:** 2026-05-26  
+**Last updated:** 2026-07-31  
+**Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 
-## Quick Answer
+# The Five-Minute Boat-Trailer Check Before Every Trip
 
-**Your boat trailer carries the same value as your motor and your boat combined. Skip annual maintenance and you find out the hard way at the worst possible moment, usually mid-launch on a Saturday morning in May.**
+> **Quick answer:** Before every tow, confirm the coupler is fully seated and locked, the safety connections are correct, the boat is restrained at the bow and transom, the tires are sound and set to their specified cold pressure, the wheel hardware is secure, and every required light works. If one safety-critical check fails, don't move the trailer until it's fixed.
 
-- **Bearings**: repack annually OR every 12,000 km; replace at the first sign of grease colour change or play
-- **Brakes**: annual flush + pad inspection; surge or electric, both fail the same way
-- **Tires**: check pressure cold every trip; replace every 5-6 years even if tread looks fine (rubber degrades faster than tread wears)
-- **Lights/wiring**: test before every trip; sealed LED tail lights last 10x longer than standard
-- **Bunks/rollers**: carpet bunks every 4-5 years; rusted bunk brackets are the #1 trailer failure HBW sees
+A boat trailer can look fine from ten feet away and still have a problem that ends the trip before the launch. A partly latched coupler, soft tire, failed signal light or loose strap doesn't need weeks to become serious. It only needs one highway ramp, pothole or hard stop.
 
----
+You don't need a complicated inspection before every outing. You need the same five-minute check every time, plus scheduled maintenance based on the actual trailer, axle, brake and hub manufacturers.
 
-::cost-stack
-heading: What annual trailer service actually costs in Ontario
-eyebrow: Trailer maintenance budget
-subhead: Most trailer problems come from skipped maintenance. Here are the real Ontario shop costs for the 5 things you should be doing once a year on a boat trailer.
-item1Label: Wheel bearing repack
-item1Value: $60 - $120 per axle
-item1Note: Pull, clean, inspect, re-grease both bearings per hub. Single axle is one wheel side per side. Tandem is double. Most-skipped service we see on used trailers.
-item1Accent: true
-item2Label: Bearing buddy or oil-bath inspection
-item2Value: $20 - $40
-item2Note: If your trailer has bearing buddies, top off grease. If it has oil-bath hubs (heavier-duty trailers), check sight glass and oil colour. Milky oil means water intrusion, replace immediately.
-item3Label: Tire replacement
-item3Value: $120 - $250 per tire
-item3Note: Trailer tires age out before they wear out. 5-year rule of thumb in Ontario sun. Look for sidewall cracking. ST-rated marine tires only, not passenger.
-item4Label: Brake service (if equipped)
-item4Value: $150 - $400 per axle
-item4Note: Surge or electric brake systems on heavier trailers need annual inspection. Submerging brakes in lake water shortens life. Most aluminum-fishing-boat trailers don't have brakes; bigger fiberglass and pontoon trailers do.
-item5Label: Lights + wiring + winch strap
-item5Value: $30 - $150
-item5Note: LED bulb replacements, ground wire inspection, winch strap replacement if frayed. Cheap insurance that keeps you legal on the highway.
-totalLabel: Typical annual all-in (single axle, no brakes)
-totalValue: $150 - $350 / year
-caveat: Tandem trailers, braked trailers, and corroded older units cost more. Aluminum trailers in Rice Lake fresh water hold up better than steel in salt-treated road conditions. Book trailer service at /service.
-::
+[Print the Five-Minute Boat Trailer Check](/downloads/five-minute-boat-trailer-check-hbw.pdf) and keep a copy in the tow vehicle.
 
-## Why Most Boaters Skip Trailer Maintenance Until It Fails
+![Six-part five-minute boat-trailer check](/lovable-uploads/lens-cove/inline-lc004-five-minute-trailer-check.svg)
 
-Trailers are easy to ignore. They sit in the driveway most of the year, get pulled out twice for launch and [haul-out](/blog/boat-storage-kawartha-lakes), and seem fine when they are not. But the trailer is the only thing between your $20,000+ boat-and-motor combo and the asphalt at highway speed.
+## The Five-Minute Check
 
-We see three patterns at HBW:
+Walk around the trailer in the same order every time. That's what keeps an easy-to-miss item from being skipped.
 
-1. **The bearing burn-out.** Boat owner trailers a 3-hour drive to a tournament. Hub heats up, bearing seizes, wheel locks, boat drags 200 metres before they can stop. Insurance covers some of it but not the holiday.
-2. **The brake fade.** Surge brakes on a loaded trailer have not been serviced in 5 years. Coming down a hill into a launch ramp, the brakes do not grab. Truck and trailer slide into the lake.
-3. **The tire blow-out.** Trailer tires look fine but were manufactured 8 years ago. UV and ozone degraded the rubber from the inside. 80 km/h on the 401 in July, tire shreds, trailer tracks into the ditch.
+### 1. Coupler, ball and jack
 
-All three are preventable with a 30-minute annual inspection.
+Confirm the coupler is the correct size for the hitch ball, fully lowered onto it, latched and secured. The coupler and ball must also have adequate capacity for the loaded trailer.
 
-## The 6 Things to Check Every Spring
+Raise the tongue jack until it is fully clear and secured for travel. Before relying on the latch, use the tongue jack to apply a small upward load. If the coupler lifts away from the ball, it was not properly seated.
 
-### 1. Wheel Bearings (Most Common Failure Point)
+**Stop the trip** if the coupler will not latch positively, the lock or pin is missing, or any part is bent, cracked or excessively worn.
 
-Bearings are sealed grease cartridges that let the wheels spin freely. Submerging hot bearings in cold lake water creates a vacuum that pulls water into the hub. Once water mixes with grease, corrosion starts immediately.
+### 2. Safety chains and breakaway connection
 
-**Action:**
-- Repack annually (Bearing Buddies make this easy)
-- Replace bearings outright every 4-5 years regardless of appearance
-- Check play with the wheel jacked up, any wiggle means bearings or races are worn
+Ontario's Ministry of Transportation says a trailer needs two separate means of attachment to the tow vehicle. If chains are used, cross them beneath the tongue so they can help support it if the primary connection fails. Keep enough slack for a full turn without letting the chains drag.
 
-**Cost at HBW:** $80-$120 per axle for repack, $250-$350 for full bearing replacement including parts.
+Make sure the hooks are fully engaged and their retainers close. On a braked trailer with a breakaway system, connect its cable to the tow vehicle as directed by the trailer manufacturer, not to a chain that could leave with the trailer.
 
-### 2. Brakes (Surge or Electric)
+### 3. Bow and transom restraints
 
-Most Ontario trailers under 1,134 kg (2,500 lb) gross use surge brakes, the trailer's inertia compresses a hydraulic master cylinder when you brake. Larger trailers use electric brakes controlled from the tow vehicle.
+The winch strap pulls the boat forward, but it should not be the only thing holding the bow down. Confirm the bow safety chain or secondary restraint is attached. At the stern, check both transom straps for cuts, corrosion, damaged hooks and lost tension.
 
-**Action:**
-- Surge: flush the hydraulic line annually with marine-grade brake fluid (DOT 4 or DOT 5)
-- Electric: test the magnet's grab strength annually; replace pads when worn
-- Inspect rotors/drums for rust pitting
+Use the support method specified for your boat, motor and trailer combination. There is no universal transom-saver position that is correct for every rig.
 
-**Cost at HBW:** $150-$250 for surge brake service; $200-$300 for electric brake service.
+### 4. Tires
 
-### 3. Tires and Pressure
+Check pressure while the tires are cold, using the value specified for the installed trailer tire and the trailer maker's instructions. Do not borrow the tow vehicle's door-jamb number and do not invent a lower pressure to soften the ride.
 
-Boat trailer tires (ST-rated) are different from car tires. They have stiffer sidewalls but degrade faster from UV and ozone exposure. The tread can look perfect at 8 years old while the sidewall is structurally compromised.
+Look at the full visible circumference and both sidewalls. Cuts, bulges, exposed cord, significant cracking, objects in the tread or an obviously low tire are stop signs. Confirm the spare is inflated and that you can actually access the tools required to change it.
 
-**Action:**
-- Check cold tire pressure before every trip (target 50-65 PSI depending on size, match the sidewall spec)
-- Replace tires every 5-6 years regardless of tread depth
-- Carry a full-size spare, not a "donut"
-- Check the DOT date code (last 4 digits = week/year of manufacture)
+### 5. Wheels and hubs
 
-### 4. Lights and Wiring
+Look for missing or loose hardware, rust trails around studs, grease where it should not be, a damaged dust cap or signs that a wheel has shifted. Wheel-nut torque and recheck intervals vary, so use the trailer or wheel manufacturer's procedure and a torque wrench.
 
-Trailer lights fail because connectors corrode and constant flexing breaks the wiring inside the harness.
+After the first safe stop on a longer trip, compare the hubs from side to side without touching a hot component. One hub that is markedly hotter than its mate, smells burned or is leaking needs attention. A hand-temperature guess is not a substitute for the maker's inspection procedure.
 
-**Action:**
-- Sealed LED lights with a single connector last 10x longer than standard bulbs
-- Apply dielectric grease to the 4- or 7-pin connector every spring
-- Test every trip, a $10 plug-in tester saves you from a $250 OPP ticket
+### 6. Lights, plug and visible load security
 
-You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+Test running lights, brake lights and both turn signals with the tow vehicle connected. Check the electrical plug and cable for damage and enough slack to turn without dragging.
 
-### 5. Bunks, Rollers, and Frame
+Stand behind the rig and confirm the boat sits squarely, gear inside the boat is secured, the drain plug is handled according to local transport and launch procedures, and nothing can swing into a tire or the road.
 
-The bunks (the carpeted boards your hull rests on) and the rollers degrade slowly until you notice your boat sitting unevenly on the trailer.
+## The Go, Fix or Stop Table
 
-**Action:**
-- Replace carpet on bunks every 4-5 years (worn carpet means direct wood-on-hull contact)
-- Rusted bunk brackets are the #1 trailer failure HBW sees, rinse the trailer after each dip
-- Inspect the frame for cracks at weld points, especially the cross members
+| Item | Go | Fix before moving | Stop and inspect |
+|---|---|---|---|
+| Coupler | Fully seated, latched and secured | Missing lock or pin | Will not seat, bent or visibly cracked |
+| Chains | Crossed, latched and clear of road | Excess slack or poor routing | Broken link, open hook or only one attachment |
+| Restraints | Bow and transom secured | Loose strap | Cut webbing, failed hook or no secondary bow restraint |
+| Tires | Correct cold pressure, no visible damage | Minor pressure correction | Bulge, exposed cord, major crack or persistent loss |
+| Wheels | Hardware present, no movement signs | Torque verification due | Missing hardware, rust trails or visible looseness |
+| Lights | All required functions work | Dirty connector | Brake or signal light fails |
 
-### 6. Winch, Straps, and Safety Chains
+This is a departure check. It isn't permission to postpone maintenance.
 
-The cheapest items on the trailer are usually the most ignored.
+## What Five Minutes Cannot Replace
 
-**Action:**
-- Lubricate winch gears annually
-- Replace winch strap when fraying appears (Ontario sun degrades polyester within 5 years)
-- Inspect safety chains for cracked links, replace at any sign of corrosion
+Trailer systems aren't all built the same. Some hubs are serviceable, some use sealed or oil-bath systems, and brake designs and breakaway systems differ. The correct maintenance work and interval must come from the component maker and the trailer manual.
 
-## Ontario-Specific Considerations
+| System | Scheduled work to confirm |
+|---|---|
+| Tires and wheels | Age, condition, load rating, pressure, torque procedure and spare |
+| Hubs and bearings | System type, lubricant, seals, adjustment and inspection interval |
+| Brakes | Actuator, lines, fluid where applicable, friction components and breakaway system |
+| Coupler and jack | Wear, lubrication points, capacity labels and fasteners |
+| Bunks and rollers | Support, alignment, fasteners, carpet or roller condition |
+| Wiring and lights | Grounds, connectors, sealed lamps and cable routing |
 
-### Road Salt
+If the manual is missing, record the trailer VIN and the axle, coupler and brake-component labels. Those identifiers are more useful than a generic internet schedule.
 
-Ontario uses calcium chloride and sodium chloride on highways from November through April. Even if you do not trailer during salt season, residual salt on the road from before your first spring trip eats into trailer frames within months.
+## Common Shortcuts That Create Trouble
 
-**Action:** Rinse the trailer thoroughly after the first 2-3 spring trips. A garden hose with a sprayer attachment for 5 minutes does the job.
+**Kicking a tire.** It may find a completely flat tire, but it does not measure cold pressure or reveal all structural damage.
 
-### Gravel Launch Ramps
+**Assuming the winch strap secures the boat.** It is one part of the restraint system, not a replacement for a bow safety connection and transom straps.
 
-Many Rice Lake and Kawartha launches have gravel or compacted-dirt access roads. The grit gets into bearings and lights faster than paved ramps. Plan for more frequent bearing maintenance if you launch off gravel weekly.
+**Using a universal torque number.** Stud size, wheel construction and manufacturer procedure matter. Guessing can leave a wheel loose or damage the hardware.
 
-### 401 Highway Speeds
+**Greasing every hub the same way.** Different bearing systems require different procedures. More grease is not automatically better and can damage a seal or contaminate brakes.
 
-Ontario's 100 km/h posted limit means most boaters trailer at 110+ km/h actual. That is at the upper edge of most ST-rated trailer tires' rated speed (typically 105 km/h or 65 mph). Heavy loads + summer heat + actual highway speeds = more frequent tire replacements.
+**Testing the lights alone.** Reflections help, but a second person or a phone recording from a safe stationary position makes the check more reliable.
 
-## When to Bring Your Trailer to HBW
+## A Better Ontario Towing Routine
 
-We service trailers we sell and most major brands. Common reasons customers bring trailers in:
+Do the six checks at home, not in the launch lane. Repeat a shorter walk-around after loading fuel or gear and after the first safe stop. On rough cottage roads, check the restraints again before joining the highway.
 
-- **Annual bearing repack**: fastest service item, usually done while you wait
-- **Brake conversion or upgrade**: surge to electric, or rusted-out brake replacement
-- **Frame repair**: welding cracked cross members or replacing tongue extensions
-- **Bunk replacement**: full carpet and bracket refresh
-- **Pre-purchase inspection**: buying a used boat-and-trailer combo, get the trailer inspected before the deal closes
+Keep the following in the tow vehicle:
 
-Book at [hbw.wiki/service](https://hbw.wiki/service).
+- pressure gauge and the correct inflation source
+- torque wrench and the correct socket
+- jack rated and positioned for the trailer
+- wheel chocks
+- serviceable spare tire
+- replacement fuses or lamps appropriate to the rig
+- reflective vest and warning device
+- trailer manual and roadside-assistance information
 
-## When to Replace vs Repair
+The best checklist is the one you can complete correctly without improvising at the shoulder.
 
-Trailer frames are weldable. Bunks, rollers, lights, and brakes are all replaceable parts. A 15-year-old trailer with a solid frame is usually worth refurbishing if the underlying structure is sound. Once the frame is cracked through, structurally compromised, or seriously rotted, replacement is the only safe option.
+## What We See at HBW
 
-A new mid-size aluminum trailer for a 16-18 ft boat runs $3,000-$5,000 CAD in Ontario. A full refurbishment (bunks, bearings, brakes, lights, tires) on a sound frame is usually $800-$1,500. Math the lifespan honestly.
+A Rice Lake trip can include highway speed, broken county-road pavement, a cottage lane and a steep launch ramp in the same hour. That's why the walk-around belongs at home, not in the launch queue at Gores Landing.
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+The trouble worth catching early is usually ordinary: one loose connection, one soft tire, one strap that looked fine last time. A fixed routine catches those small misses before road speed turns them into a much bigger problem.
 
----
+## Need a Second Set of Eyes?
 
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice Lake.
+If a trailer concern appears while you're preparing the boat for Mercury service, add it to the service request. We'll confirm what's within current shop scope and point you the right way. If the trailer isn't safe to tow, don't bring it down the road for an inspection.
+
+[Start a service request](https://hbw.wiki/service)
+
+## Sources
+
+- [Ontario Ministry of Transportation, Safe and Responsible Driving: Towing](https://www.ontario.ca/document/official-mto-drivers-handbook/towing)
+- [Load Rite Trailers, Owner's Manual](https://www.loadrite.com/wp-content/uploads/2021/07/Owners-Manual.pdf)
+- [Dexter, Light Duty 600 to 8K Complete Service Manual](https://www.dextergroup.com/user_area/content_media/raw/LDServiceManual_Complete_8-17.pdf)
 
 ## FAQs
 
-### How often should I repack trailer bearings?
+### Should boat-trailer tires use the pressure on the tow vehicle door?
 
-Annually for boats that get used 10+ times per season, or every 12,000 km of trailering. If your bearings get submerged in cold water after a hot drive (very common), repack at the end of the season as well.
+No. Use the specification for the installed trailer tire together with the trailer manufacturer’s instructions. Check it cold, before road heat changes the reading.
 
-### Are trailer tires different from car tires?
+### Should safety chains be crossed?
 
-Yes. Special Trailer (ST) tires have stiffer sidewalls and higher load ratings for the same size. Do not substitute passenger car tires. They flex too much and fail at trailer loads.
+Ontario guidance says chains should cross beneath the trailer tongue. They need enough slack for turning, but shouldn’t drag on the road.
 
-### Do I need to register my boat trailer in Ontario?
+### How tight should trailer wheel nuts be?
 
-Yes. All trailers used on Ontario roads must have a permit and license plate from ServiceOntario, regardless of size. Costs about $34 for the permit plus annual sticker.
+Use the torque and recheck procedure published for your trailer, wheel and stud combination. There isn’t one responsible universal value.
 
-### How long do trailer bunks last?
+### Does every trailer need the same bearing service?
 
-5-10 years depending on use. The carpet usually fails first (UV and abrasion), followed by the wood underneath if water gets in. Bunk brackets rust faster on trailers stored outside without covers.
+No. Grease-packed, oil-bath, sealed and other hub systems have different procedures. Identify the components and follow their manuals.
 
-### What is the speed limit when towing a boat trailer in Ontario?
+### Is a transom saver mandatory?
 
-100 km/h on most highways. Trailer tires often have a lower rated speed (typically 105 km/h / 65 mph). Do not push your luck, heat builds quickly at trailer speeds in summer.
+Support requirements vary by boat, outboard and trailer. Follow the instructions for the exact rig instead of copying a universal position from another boat.
+
+### Can I tow if one signal light is out?
+
+Don’t start the trip with a failed required light. Repair the lamp, wiring, connector or ground first.
 
 ## Related guides
 

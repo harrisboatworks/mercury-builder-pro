@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-05-15
+last_updated: 2026-08-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人在 Rice Lake 买船完整指南：从选型到交付"
 description: "多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-05-15
+date_modified: 2026-08-03
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: zh-CN
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**Last updated:** 2026-05-15  
+**Last updated:** 2026-08-03  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
@@ -151,7 +151,7 @@ whenInDoubt: 不会英文又不熟船的华人买家, 强烈建议第一艘船�
 
 如果你想深入了解 Pro XS 和 FourStroke 的差别，我们有 [Mercury Repower GTA 中文指南](/blog/zh/mercury-repower-guide-gta) 可以参考。
 
-**Legend 浮筒船：** HBW 是安省 Legend 的合作伙伴，Legend 是加拿大本地制造的 pontoon 品牌，配 Mercury 原厂动力。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
+**Legend 浮筒船：** HBW 是 Legend 经销商。Legend 是一家总部位于安大略省 Whitefish 的加拿大公司，船只为加拿大水域设计，并由美国合同制造商生产。如果你正在看新 pontoon，可以在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 上先做一份带发动机选项的报价，再来店里看实船。
 
 ---
 
@@ -190,7 +190,7 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 **几个常见方案：**
 
 - **HBW 季节性 slip：** 直接在我们码头租位，5 月到 10 月停在水里，开船就来、用完就走。最省心，适合每周末都来用的家庭。可以参考 [Kawartha Lakes 船只存储指南](/blog/boat-storage-kawartha-lakes)（英文）。
-- **HBW 冬季存储：** 10 月底拉上岸、清洗、换油、防冻、室内或室外存储到次年 4 月。Mercury 发动机的冬季保养我们直接做，不用拖回多伦多。
+- **HBW 冬季存储：** HBW 只提供室外收缩膜冬储，不提供室内或恒温存储。冬化、收缩膜、室外存储和维修的具体范围以当前书面报价为准。客户自行送船和取船；HBW 不提供或安排取送、拖运或上门服务。
 - **自己拖船回家：** 如果你有 SUV 或 pickup truck（拖重达标），可以自己拖。但拖船需要练习，401 上拖一艘 22 尺 pontoon 不是新手友好的体验。
 - **多伦多附近室内存储：** 也有，但费用高，而且你每次用船还是要拖到 Rice Lake 下水。
 
@@ -232,10 +232,10 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
-3. **预约看船：** 中文邮件或电话联系我们，约一个不太忙的工作日下午来看实船，避开周末高峰。
+3. **预约看船：** 通过英文邮件或电话联系我们；欢迎带会英语的亲友同来或使用翻译软件。确认时间后再出发。
 4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
 
-我们家族在 Rice Lake 卖船快 80 年了。我们不是最大的经销商，但我们认识每一位客户。欢迎你带家人过来看看。
+Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -263,11 +263,11 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 
 ### HBW 能用中文沟通吗？
 
-我们专门为华人朋友准备了这些中文指南——因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务，不过别担心——欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 ### 冬季船怎么存放？HBW 提供存储吗？
 
-提供。我们提供冬季存储服务，包括拉船上岸、清洗、换油、防冻处理、室内或室外存储到次年 4 月。Mercury 发动机的冬季保养我们直接做，不用拖回多伦多。
+HBW 只提供室外收缩膜冬储，不提供室内或恒温存储。冬化、收缩膜、室外存储和维修以当前书面报价为准。客户自行送船和取船；请在计划送船前 1–2 周通过 hbw.wiki/service 提交请求。
 
 ### 提车后，发动机保养在哪里做？
 

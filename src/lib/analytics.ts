@@ -382,6 +382,7 @@ export function getPageCategory(pathname: string): PageCategory {
   if (pathname.startsWith('/case-studies')) return 'case_study';
   if (pathname.startsWith('/blog')) return 'blog';
   if (pathname === '/faq' || pathname.endsWith('-faq') || pathname.includes('/faq')) return 'faq';
+  if (pathname === '/pricing-reference' || pathname.startsWith('/pricing-reference/')) return 'money';
   if (pathname.startsWith('/repower') || pathname.startsWith('/mercury')) return 'money';
   return 'other';
 }

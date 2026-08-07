@@ -6,7 +6,8 @@ const EN_STRINGS: BlogHubStrings = {
   heroTitleLine1: 'Boat motor guides',
   heroTitleLine2: '& straight answers.',
   heroSubhead:
-    'Real-world advice from a family Mercury dealer on Rice Lake. Repowers, troubleshooting, and choosing the right outboard — written by the people who rig them.',
+    'Real-world advice from a family Mercury dealer on Rice Lake. Repowers, troubleshooting, and choosing the right outboard. Written by the people who rig them.',
+  skipLinkLabel: 'Skip to blog content',
   searchLabel: 'Search guides',
   searchPlaceholder: 'Search guides, models, topics…',
   trustItems: [
@@ -40,7 +41,7 @@ const EN_STRINGS: BlogHubStrings = {
   clearFilters: 'Clear filters',
   activeFilterLabel: 'Filtered results',
   ctaHeading: 'Ready to price your repower?',
-  ctaSubhead: 'Build a real quote in minutes — pickup only, no pressure.',
+  ctaSubhead: 'Build a real quote in minutes. Pickup only, no pressure.',
   ctaButton: 'Build My Quote',
   ctaPhone: '(905) 342-2153',
   phoneLabel: 'Call Harris Boat Works',

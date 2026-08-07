@@ -126,28 +126,6 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 
 ---
 
-## Preguntas frecuentes
-
-**¿Cuánto cuesta una remotorización Mercury en Ontario?** 
-El costo varía según la potencia del motor, la longitud del árbol, el cableado necesario y la mano de obra. Para obtener un precio preciso para su embarcación, use el configurador en mercuryrepower.ca, disponible en tiempo real, y muestra los precios claramente en dólares canadienses.
-
-**¿Cómo sé si mi casco vale la pena remotorizar?** 
-Haga revisar el casco por un técnico con experiencia. En Harris Boat Works evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos.
-
-**¿Puedo ver botes nuevos en Harris Boat Works?** 
-Sí. Somos concesionarios de Legend Boats. Consulte el inventario en harrisboatworks.ca.
-
-**¿Puedo escribir en español?** 
-Nuestro personal responde en inglés. Puede enviarnos su pregunta y le responderemos en inglés; si lo prefiere, use Google Translate o pídale ayuda a un familiar bilingüe. El configurador de precios en mercuryrepower.ca funciona en cualquier idioma.
-
-**¿Cuánto tiempo tarda una remotorización?** 
-Depende de la disponibilidad del motor y el programa del taller. Una remotorización bien planificada puede realizarse en semanas. La temporada en Ontario es corta, planifique con anticipación.
-
-**¿Trabajan con otros motores además de Mercury?** 
-Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Mercury y Mercruiser.
-
----
-
 ## Contáctenos
 
 **Precio de remotorización en línea:** mercuryrepower.ca, configure su proyecto y vea el costo real en minutos.

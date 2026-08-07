@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-05-11
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
 category: "Buying Guide"
 date_published: 2026-05-11
-date_modified: 2026-05-11
+date_modified: 2026-08-02
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,13 +24,13 @@ language: en-CA
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
-**Last updated:** 2026-05-11  
+**Last updated:** 2026-08-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 
 ---
 
-> **Quick answer:** Start with the capacity plate, that's your legal ceiling and the starting point for every motor sizing conversation. Then match HP to hull weight, typical load, use case, and where you run. We've been matching Mercury motors to Ontario boats since 1965. Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Start with the manufacturer's maximum recommended safe power for the exact hull, then match the motor to hull condition, exact motor weight, normal load, steering, rigging, use, and water. Do not turn the printed maximum or a boat-length chart into an automatic recommendation.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -41,19 +41,19 @@ People tend to arrive at a motor size conversation one of two ways: they've hear
 
 Both approaches miss the point.
 
-The right motor size is the one that matches your hull, your typical load, your use case, and your budget, and stays within the capacity plate ceiling. That's a four-variable problem, not a one-variable one.
+The right motor size matches the exact hull documentation, proposed motor weight, typical load, use, steering, rigging, and budget. That is a boat-specific problem, not a one-variable calculation.
 
 Here's how to work through it.
 
 ---
 
-## Start with the capacity plate, always
+## Start with the compliance notice and hull documentation
 
-Every boat has a maximum HP rating stamped on the capacity plate, usually located on the transom or near the helm. This is not a suggestion. It's the legal ceiling set by the manufacturer based on hull testing.
+On an outboard-powered pleasure craft up to 6 metres, the Canadian compliance notice shows the manufacturer's maximum recommended safe engine power, people, and load limits. It is commonly visible near the operating position.
 
-**Never exceed it.** Going over the capacity plate voids Mercury warranty coverage, creates insurance exposure, and compromises the safety of the hull. We will not rig a motor that exceeds the plate, full stop.
+Treat the engine-power figure as the boundary unless authoritative documentation for the exact hull says otherwise. Going beyond it can create safety, warranty, insurance, liability, financing, and resale problems. HBW works from the documented rating and a boat-specific assessment.
 
-The capacity plate also shows maximum persons and maximum weight. Those numbers matter too when thinking about loading.
+The people and load figures matter too. Transport Canada says the craft reaches capacity when either limit is reached, and difficult conditions can require a lower load.
 
 ---
 
@@ -174,15 +174,6 @@ Bring us your boat info, make, model, year, length, and how you actually use it,
 
 ---
 
-## Related posts
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat)
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs)
-- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats)
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
-
----
-
 ## Ready to size your motor?
 
 Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
@@ -209,11 +200,11 @@ Consider future use within reason. If you're planning to add watersports or more
 
 ## Related guides
 
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
 - [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
 - [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 - [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
-- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-06-09
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Docking a Boat in Wind: Rice Lake Guide"
 description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake."
 category: "Boating Lifestyle"
 date_published: 2026-03-21
-date_modified: 2026-06-09
+date_modified: 2026-08-02
 keywords: ["docking","wind","rice lake","boat handling","single outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,17 +24,13 @@ language: en-CA
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-03-21  
-**Last updated:** 2026-06-09  
+**Last updated:** 2026-08-02  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 
 # Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
 
 > **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
-
-**URL slug:** docking-boat-in-wind-rice-lake
-
-**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, Ontario (in the Kawarthas), without a bow thruster or a meltdown.
 
 ---
 
@@ -221,19 +217,7 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
-> Related guide: [Boat trim explained for Rice Lake boaters](/blog/boat-trim-explained-rice-lake-ontario).
-
-## Related at HBW
-
-The full topic hub: **[Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)](/blog/best-mercury-outboard-rice-lake-fishing)** -- start here if you want the complete picture.
-
-Two related guides in the same cluster:
-- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use)
-- [Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)](/blog/common-pontoon-boat-problems-rice-lake)
-
----
-
-Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+> Related guide: [Boat trim explained for Rice Lake boaters](/blog/how-to-trim-boat-mercury-outboard).
 
 ## FAQs
 

@@ -52,7 +52,7 @@ For a typical 150 HP pontoon owner in 2026, the honest answer is to check eligib
 
 Mercury Boost is an authorized software calibration installed on an eligible motor through Mercury's dealer process. It is not an aftermarket tune or owner-installed download.
 
-Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Call HBW with a photo of the serial-number plate for an eligibility and pricing check.
+Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Send HBW a clear photo of the serial-number plate through the [contact page](/contact) for a written eligibility and price check.
 
 Because warranty coverage depends on the exact product, installation record, and current Mercury terms, HBW confirms warranty treatment for the specific motor before work is authorized.
 
@@ -132,13 +132,6 @@ primaryHref: /pricing-reference
 
 ---
 
-## Related reading
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-for-family-runabouts)
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury Outboard Rigging Costs Ontario](/blog/mercury-outboard-rigging-costs-ontario)
-
----
-
 Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
 
 More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
@@ -179,7 +172,7 @@ Boost follows Mercury's authorized process on an eligible motor. HBW confirms th
 
 ### How much does Mercury Boost cost in Canada?
 
-HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms eligibility and current Canadian pricing from the exact serial number. Do not rely on converted foreign dealer prices or a generic online range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 ### What is the difference between Mercury Boost and re-propping?
 
@@ -199,13 +192,13 @@ Confirm the propeller is correctly sized and pitched before evaluating Boost. An
 
 ### Is Mercury Boost available in Ontario?
 
-Boost is available for eligible motors through Mercury's supported app flow on select configurations or through authorized dealers. Call HBW at 905-342-2153 to confirm the exact model, serial number, software status, boat configuration, and current Canadian price.
+Boost is available for eligible motors through Mercury's supported app flow on select configurations or through authorized dealers. Send the exact model and a clear serial-number-plate photo through the [HBW contact page](/contact) to confirm software status, boat configuration and the current Canadian price in writing.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 

@@ -32,6 +32,7 @@ const homeHubAlternates = read('src/components/seo/homeHubAlternates.tsx');
 const seoPageMetadata = JSON.parse(read('src/data/seoPageMetadata.json'));
 const sitemapGenerator = read('src/utils/generateSitemap.ts');
 const publicSitemap = read('public/sitemap.xml');
+const frenchPremierArticle = read('src/pages/blog/FrenchBlogArticle.tsx');
 const parsedVercelConfig = JSON.parse(vercelConfig);
 
 check(
@@ -68,8 +69,34 @@ check(
   'vercel.json must preserve the noindex zh-Hant pilot hub and article SPA routes.',
 );
 check(
-  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario\/index\.html"/.test(vercelConfig),
-  'vercel.json must preserve the standalone French article prerender route.',
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-platinum-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,80}"statusCode":\s*301/.test(vercelConfig),
+  'vercel.json must permanently redirect the retired French Platinum URL to the Premier URL.',
+);
+check(
+  /"source":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario"[\s\S]{0,160}"destination":\s*"\/blog\/fr\/concessionnaire-mercury-premier-ontario\/index\.html"/.test(vercelConfig),
+  'vercel.json must preserve the renamed standalone French Premier article prerender route.',
+);
+check(
+  /\/blog\/fr\/concessionnaire-mercury-premier-ontario/.test(appSource) &&
+    !/\/blog\/fr\/concessionnaire-mercury-platinum-ontario/.test(appSource),
+  'The hydrated app must own the French Premier URL and must not revive the retired Platinum route.',
+);
+check(
+  /const ARTICLE_PATH = '\/blog\/fr\/concessionnaire-mercury-premier-ontario'/.test(frenchPremierArticle) &&
+    /premier arrivé, premier servi/i.test(frenchPremierArticle) &&
+    /ferme le 1er décembre/i.test(frenchPremierArticle) &&
+    !/Accès prioritaire aux pièces|le niveau le plus élevé|Mercury les envoie chez nous|le prix que vous voyez, c'est le prix/i.test(frenchPremierArticle),
+  'The French Premier article must keep the canonical URL and verified HBW service guidance without unsupported dealer claims.',
+);
+check(
+  /socialImage\?: string/.test(blogArticles) &&
+    /socialImage:\s*a\.socialImage\s*\|\|\s*null/.test(prerenderScript) &&
+    /citations:\s*\(a\.citations\s*\|\|\s*\[\]\)\.map/.test(prerenderScript) &&
+    /article\.socialImage \|\| article\.image/.test(prerenderScript) &&
+    /Array\.isArray\(article\.citations\)/.test(prerenderScript) &&
+    /mercury-oil-capacity-lookup-hbw-social\.png/.test(blogArticles) &&
+    /mercury-maintenance-schedule-100-300-hbw-social\.png/.test(blogArticles),
+  'Blog prerender output must retain raster social-preview and citation support.',
 );
 check(
   !/hreflang="zh-CA"/.test(prerenderScript),
@@ -148,6 +175,25 @@ check(
   ),
   'vercel.json must redirect the observed uppercase /REPOWER variant to /repower.',
 );
+for (const [source, destination] of [
+  [
+    '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario',
+    '/blog/zh/gta-chinese-pcl-fishing-licence-guide',
+  ],
+  [
+    '/blog/zh/pcoc-pcl-fishing-licence-difference-ontario.md',
+    '/blog/zh/gta-chinese-pcl-fishing-licence-guide.md',
+  ],
+]) {
+  check(
+    parsedVercelConfig.redirects?.some((redirect) =>
+      redirect.source === source &&
+      redirect.destination === destination &&
+      redirect.statusCode === 301
+    ),
+    `vercel.json must permanently consolidate ${source} into ${destination}.`,
+  );
+}
 for (const loc of [
   '/mercury-product-protection.md',
   '/mercury-product-protection.json',
@@ -383,7 +429,7 @@ check(
   'Repower-process article must preserve the drop-off-only logistics boundary.',
 );
 const articleSource = (slug) =>
-  blogArticles.match(new RegExp(`slug: '${slug}',[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
+  blogArticles.match(new RegExp(`slug: ['"]${slug}['"],[\\s\\S]*?\\n\\s*},\\n\\s*{\\n\\s*slug: `))?.[0] ?? '';
 const dealerHeroCanon = [
   {
     slug: 'mercury-dealer-markham-ontario-hbw',
@@ -420,6 +466,43 @@ for (const { slug, image } of dealerHeroCanon) {
   check(
     !/(?:hero-gta-(?:mississauga|richmond-hill|vaughan)|hero-mercury-(?:90-shop-shot|dealer-(?:whitby|oshawa)))/.test(source),
     `${slug} must not regress to a false-branded or unproven generated dealer hero.`,
+  );
+}
+const repowerEligibilityArticle = articleSource('mercury-repower-eligibility-guide');
+check(
+  repowerEligibilityArticle.includes(
+    "image: '/lovable-uploads/blog-heroes-2026-07/hero-repair-repower-sell-hbw-real-2026-07.webp'",
+  ),
+  'The repower-eligibility guide must keep its authenticated HBW shop hero.',
+);
+check(
+  repowerEligibilityArticle.includes(
+    '/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08.png',
+  ),
+  'The repower-eligibility guide must keep its claim-bounded five-check visual.',
+);
+check(
+  !/(?:hero-mercury-repower-eligibility-guide|repower-eligibility-5-check-card|repower-eligibility-five-check)/.test(
+    repowerEligibilityArticle,
+  ),
+  'The repower-eligibility guide must not regress to its synthetic hero or unsupported legacy decision cards.',
+);
+const authenticatedServiceHeroCanon = [
+  {
+    slug: 'mercury-water-pump-replacement-cost-ontario',
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
+  },
+  {
+    slug: 'mercury-impeller-replacement-when-they-fail',
+    image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp',
+  },
+];
+for (const { slug, image } of authenticatedServiceHeroCanon) {
+  const source = articleSource(slug);
+  check(source.includes(`image: '${image}'`) || source.includes(`image: "${image}"`), `${slug} must keep its authenticated HBW service hero.`);
+  check(
+    !source.includes('/lovable-uploads/hero-mercury-90-shop-shot.png'),
+    `${slug} must not regress to the synthetic Mercury service-bay hero.`,
   );
 }
 for (const slug of ['mercury-dealer-whitby-ontario-hbw', 'mercury-dealer-oshawa-ontario-hbw']) {

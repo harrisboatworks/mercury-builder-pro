@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 location: Gores Landing, ON, Canada
 title: "Mercury SmartCraft Alarm Codes Ontario"
 description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns."
 category: "Troubleshooting"
 date_published: 2026-02-06
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,7 +19,7 @@ language: en-CA
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
@@ -117,7 +117,7 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 **Email:** info@harrisboatworks.ca  
 **Phone:** 905-342-2153
 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer. The only Mercury dealer on Rice Lake. The largest Mercury and Mercruiser parts inventory in Ontario. Mercury CDS equipped.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, Mercury CDS equipped, with authorized Mercury service directly on Rice Lake.
 
 ## Sources
 
@@ -152,7 +152,7 @@ Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the tellta
 
 ### Are current Mercury Verado V8 and V10 outboards supercharged?
 
-No. Current Verado V8 (250-400 HP), V10 (350-400-450 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+No. Current Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 
 ## Related guides
 

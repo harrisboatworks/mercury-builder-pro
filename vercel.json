@@ -49,6 +49,11 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/boat-trim-explained-rice-lake-ontario",
+      "destination": "/blog/how-to-trim-boat-mercury-outboard",
+      "statusCode": 301
+    },
+    {
       "source": "/REPOWER",
       "destination": "/repower",
       "statusCode": 301
@@ -94,6 +99,16 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/zh/pcoc-pcl-fishing-licence-difference-ontario",
+      "destination": "/blog/zh/gta-chinese-pcl-fishing-licence-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/zh/pcoc-pcl-fishing-licence-difference-ontario.md",
+      "destination": "/blog/zh/gta-chinese-pcl-fishing-licence-guide.md",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/mercury-6-year-warranty-explained",
       "destination": "/promotions",
       "statusCode": 301
@@ -121,6 +136,11 @@
     {
       "source": "/repower-legacy",
       "destination": "/repower",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-premier-ontario",
       "statusCode": 301
     },
     {
@@ -712,8 +732,8 @@
       "destination": "/blog/fr/index.html"
     },
     {
-      "source": "/blog/fr/concessionnaire-mercury-platinum-ontario",
-      "destination": "/blog/fr/concessionnaire-mercury-platinum-ontario/index.html"
+      "source": "/blog/fr/concessionnaire-mercury-premier-ontario",
+      "destination": "/blog/fr/concessionnaire-mercury-premier-ontario/index.html"
     },
     {
       "source": "/blog/zh-hant",
@@ -836,9 +856,14 @@
       "destination": "/agents/index.html"
     },
     {
+      "source": "/resources",
+      "destination": "/resources/index.html"
+    },
+    {
       "source": "/pricing-reference",
       "destination": "/pricing-reference/index.html"
     },
+
     {
       "source": "/pricing-reference.md",
       "destination": "/pricing-reference.md"

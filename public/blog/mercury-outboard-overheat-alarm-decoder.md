@@ -138,15 +138,6 @@ A motor with an overheat alarm is one of the easiest things to diagnose if you b
 
 A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and Mercruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
-## Related at HBW
-
-This page is the SmartCraft Alarm Codes hub. Companion pages in the same diagnostic cluster:
-
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide), the beep-pattern reference that points here for full overheat detail
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), diagnostic flow when the motor doesn't fire
-- [Mercury Outboard Overheating at Idle (Ontario Fix)](/blog/mercury-outboard-overheating-at-idle-fix-ontario), specific to idle-only overheat
-- [Breaking-In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in protocol that prevents some sensor faults
-
 Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and Mercruiser.
 
 Phone: (905) 342-2153
@@ -187,7 +178,7 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 

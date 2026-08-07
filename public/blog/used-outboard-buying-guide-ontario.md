@@ -30,7 +30,7 @@ language: en-CA
 
 > **Quick answer:** Before you pay for any used outboard, do four things: compression-test every cylinder, check the gearcase oil colour, watch the tell-tale stream, and run it on the water. If the seller will not allow those, that is your answer. A dealer pre-purchase inspection is cheap insurance against a costly motor. Book one at hbw.wiki/service.
 
-Harris Boat Works has been a Mercury dealer and service shop on Rice Lake since 1947. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
+Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
 
 A used outboard can be a smart buy. Ontario is the right place to shop for one, too. The Kawarthas and Rice Lake run almost entirely freshwater motors, and freshwater is the best possible starting point. A single saltwater season leaves corrosion you cannot undo.
 

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-27T23:03:18.299Z",
-  "count": 413,
+  "generatedAt": "2026-08-04T17:58:58.487Z",
+  "count": 418,
   "bases": [
     "/lovable-uploads/10d8a150-14cb-4481-b36a-3715fcae9605",
     "/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076",
@@ -68,6 +68,7 @@
     "/lovable-uploads/bilge-pump-sizing-chart",
     "/lovable-uploads/bilge-pump-system-diagram",
     "/lovable-uploads/bilge-pump-troubleshooting-flowchart",
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08",
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07",
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero",
     "/lovable-uploads/boat-winterization-cost-drivers-ontario",
@@ -224,6 +225,7 @@
     "/lovable-uploads/hero-mercury-wont-start-troubleshooting",
     "/lovable-uploads/hero-new-immigrant-boat-buying-checklist",
     "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario",
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario",
     "/lovable-uploads/hero-on-water-load-test",
     "/lovable-uploads/hero-ontario-boating-regulations-zh",
     "/lovable-uploads/hero-ontario-mercury-price-guide",
@@ -340,6 +342,7 @@
     "/lovable-uploads/ko-ontario-boating-licence-regulations-hero",
     "/lovable-uploads/ko-repower-vs-new-boat-hero",
     "/lovable-uploads/ko-rice-lake-fishing-guide-hero",
+    "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8",
     "/lovable-uploads/locations-bewdley-hero",
     "/lovable-uploads/locations-bobcaygeon-hero",
     "/lovable-uploads/locations-bridgenorth-hero",
@@ -366,6 +369,8 @@
     "/lovable-uploads/mercury-break-in-timeline-hbw",
     "/lovable-uploads/mercury-fourstroke-proxs-verado-comparison",
     "/lovable-uploads/mercury-fuel-efficiency-smartcraft-hero",
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social",
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social",
     "/lovable-uploads/mercury-outboard-beep-codes-action-card",
     "/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree",
     "/lovable-uploads/mercury-outboard-wont-start-diagnostic-flowchart",
@@ -746,6 +751,11 @@
       640,
       1024,
       1536
+    ],
+    "/lovable-uploads/blog-graphics-2026-08/repower-fit-five-checks-2026-08": [
+      640,
+      1024,
+      1600
     ],
     "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07": [
       640,
@@ -1527,6 +1537,11 @@
       1024,
       1920
     ],
+    "/lovable-uploads/hero-new-vs-used-pontoon-ontario": [
+      640,
+      1024,
+      1920
+    ],
     "/lovable-uploads/hero-on-water-load-test": [
       640,
       1024,
@@ -2107,6 +2122,11 @@
       1024,
       1920
     ],
+    "/lovable-uploads/lens-cove/LC-003/hero-balanced-mercury-trim-679b68c756e8": [
+      640,
+      1024,
+      1672
+    ],
     "/lovable-uploads/locations-bewdley-hero": [
       640,
       1024,
@@ -2236,6 +2256,16 @@
       640,
       1024,
       1920
+    ],
+    "/lovable-uploads/mercury-maintenance-schedule-100-300-hbw-social": [
+      640,
+      1024,
+      1200
+    ],
+    "/lovable-uploads/mercury-oil-capacity-lookup-hbw-social": [
+      640,
+      1024,
+      1200
     ],
     "/lovable-uploads/mercury-outboard-beep-codes-action-card": [
       640,

@@ -174,12 +174,6 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-## Related Guides
-
-- [Outdoor Boat Storage and Shrinkwrap on Rice Lake](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)
-- [Boat Winterization Cost in Ontario](/blog/boat-winterization-cost-ontario-2026)
-- [Spring Commissioning Cost in Ontario](/blog/spring-commissioning-cost-ontario)
-
 ## FAQs
 
 ### Does HBW offer indoor or heated boat storage?
@@ -215,8 +209,8 @@ It is included for HBW winter-storage customers. As of July 2026, the price for 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
-- [Boat Storage Rice Lake Kawarthas](/blog/boat-storage-kawartha-lakes), boat storage in the Kawarthas
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 
 ## Next steps
 

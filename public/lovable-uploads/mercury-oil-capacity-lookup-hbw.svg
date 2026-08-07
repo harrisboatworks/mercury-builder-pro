@@ -47,8 +47,8 @@
         <text x="34" y="44" font-size="25" font-weight="800">60 HP</text>
         <text x="322" y="34" font-size="22" font-weight="700">2001+ · 996 cc</text>
         <text x="322" y="57" font-size="16" fill="#66788b">standard gearcase</text>
-        <text x="725" y="44" font-size="24" font-weight="800">3.17 qt</text>
-        <text x="935" y="44" font-size="24" font-weight="800">11.5 oz</text>
+        <text x="725" y="44" font-size="24" font-weight="800">3 L (3.17 qt)</text>
+        <text x="935" y="44" font-size="20" font-weight="800">340 mL (11.5 oz)</text>
         <text x="1140" y="44" font-size="23" font-family="Courier New, monospace" font-weight="700">8M0162830</text>
       </g>
       <g transform="translate(0 134)">
@@ -56,8 +56,8 @@
         <text x="34" y="44" font-size="25" font-weight="800">90 HP</text>
         <text x="322" y="34" font-size="22" font-weight="700">2014+ · 2.1 L</text>
         <text x="322" y="57" font-size="16" fill="#66788b">serial 2B094996 and up</text>
-        <text x="725" y="44" font-size="24" font-weight="800">5.5 qt</text>
-        <text x="935" y="44" font-size="24" font-weight="800">27.1 oz</text>
+        <text x="725" y="44" font-size="24" font-weight="800">5.2 L (5.5 qt)</text>
+        <text x="935" y="44" font-size="20" font-weight="800">800 mL (27.1 oz)</text>
         <text x="1140" y="44" font-size="23" font-family="Courier New, monospace" font-weight="700">8M0162830</text>
       </g>
       <g transform="translate(0 204)">
@@ -65,8 +65,8 @@
         <text x="34" y="44" font-size="25" font-weight="800">200-300 HP</text>
         <text x="322" y="34" font-size="22" font-weight="700">2018 · 4.6 L V8</text>
         <text x="322" y="57" font-size="16" fill="#66788b">FourStroke</text>
-        <text x="725" y="44" font-size="24" font-weight="800">7 qt</text>
-        <text x="935" y="44" font-size="24" font-weight="800">24.4 oz</text>
+        <text x="725" y="44" font-size="24" font-weight="800">6.6 L (7 qt)</text>
+        <text x="935" y="44" font-size="20" font-weight="800">720 mL (24.4 oz)</text>
         <text x="1140" y="44" font-size="23" font-family="Courier New, monospace" font-weight="700">8M0176312</text>
       </g>
     </g>

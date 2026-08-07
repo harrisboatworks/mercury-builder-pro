@@ -32,6 +32,7 @@ import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from '
 import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
 import { BlogInlineCTA, type BlogInlineCTAProps } from './BlogInlineCTA';
 import { MercuryCapacityLookup } from './MercuryCapacityLookup';
+import { BoatingCardHelp, type BoatingCardHelpProps } from './BoatingCardHelp';
 
 // ---------------------------------------------------------------------------
 // Special-block preprocessing
@@ -305,6 +306,19 @@ function rewriteWalkaroundLeadCapture(md: string): string {
   );
 }
 
+function rewriteBoatingCardHelp(md: string): string {
+  // Supports a compact bodiless marker and an optional `variant: full` body.
+  let out = md.replace(
+    /^::boat-card-help\s*\n([\s\S]*?)\n::\s*$/gm,
+    (_m, body) => `:::boat-card-help\n${body}\n:::`,
+  );
+  out = out.replace(
+    /^::boat-card-help\s*$/gm,
+    ':::boat-card-help\n\n:::',
+  );
+  return out;
+}
+
 function rewriteMercuryPriceTable(md: string): string {
   // Supports both bodied (`::mercury-price-table\nkey: value\n::`) and
   // bodiless (`::mercury-price-table`) forms. Bodiless => full list.
@@ -376,7 +390,7 @@ function rewriteYouTubeUrlParagraphs(md: string): string {
 function preprocessSpecialBlocks(md: string): string {
   return rewriteCta(rewriteMythbuster(rewriteMythbusterH2(rewriteCustomerVoice(rewriteYouTubeUrlParagraphs(rewriteYouTubeEmbeds(
     rewriteMercuryPriceTable(
-      rewriteWalkaroundLeadCapture(
+      rewriteBoatingCardHelp(rewriteWalkaroundLeadCapture(
         rewritePullQuote(
           rewriteBilingualTrust(
             rewriteCostStack(
@@ -386,7 +400,7 @@ function preprocessSpecialBlocks(md: string): string {
             ),
           ),
         ),
-      ),
+      )),
     ),
   ))))));
 }
@@ -422,7 +436,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'mercury-price-table' | 'mercury-capacity-lookup' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'boat-card-help' | 'mercury-price-table' | 'mercury-capacity-lookup' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -437,10 +451,11 @@ interface RenderChunk {
   customerVoiceProps?: CustomerVoiceProps;
   mythbusterProps?: MythbusterProps;
   ctaProps?: BlogInlineCTAProps;
+  boatingCardProps?: BoatingCardHelpProps;
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|mercury-price-table|mercury-capacity-lookup|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|boat-card-help|mercury-price-table|mercury-capacity-lookup|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -842,6 +857,13 @@ function splitDirectives(md: string): RenderChunk[] {
       if (props) chunks.push({ kind: 'pull-quote', content: '', pullQuoteProps: props });
     } else if (name === 'walkaround-lead-capture') {
       chunks.push({ kind: 'walkaround-lead-capture', content: '' });
+    } else if (name === 'boat-card-help') {
+      const full = /^\s*variant\s*:\s*full\s*$/im.test(body);
+      chunks.push({
+        kind: 'boat-card-help',
+        content: '',
+        boatingCardProps: { variant: full ? 'full' : 'compact' },
+      });
     } else if (name === 'mercury-price-table') {
       const props: MercuryPriceTableProps = {};
       for (const raw of body.split('\n')) {
@@ -933,6 +955,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'walkaround-lead-capture') {
       return <WalkaroundLeadCapture key={`${keyPrefix}-wl-${i}`} />;
+    }
+    if (chunk.kind === 'boat-card-help') {
+      return <BoatingCardHelp key={`${keyPrefix}-bch-${i}`} {...(chunk.boatingCardProps || {})} />;
     }
     if (chunk.kind === 'mercury-price-table') {
       return <MercuryPriceTable key={`${keyPrefix}-mpt-${i}`} {...(chunk.mercuryPriceTableProps || {})} />;

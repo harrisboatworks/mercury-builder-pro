@@ -156,22 +156,6 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 ---
 
-## 常见问题
-
-**Q：我的船Capacity Plate写最大115马力，可以装150吗？**
-A：不可以，也不应该。最大马力标牌是安全设计上限，超过可能影响船体稳定性并导致保险失效。请严格遵守Capacity Plate的标示。
-
-**Q：115和150马力的轴长选择有什么不同？**
-A：轴长（Shaft Length）取决于船的Transom高度，与马力选择无关。请确认你的Transom高度后选择Short（15"）、Long（20"）或Extra Long（25"）。
-
-**Q：二手Mercury 115马力和新的115马力差距大吗？**
-A：差距在保固、磨损程度和保养历史。一台有完整保养纪录的二手Mercury可能很值得，但需要由技师评估。Harris Boat Works可协助评估现有发动机状态。
-
-**Q：我现在的旧发动机是90马力，换115还是150？**
-A：这取决于你的船型和使用方式。如果换发动机的同时想升级动力，建议在 hbw.wiki/service 提交服务申请，让HBW技师评估你的船和使用需求。
-
----
-
 ## 内部连结
 
 - [Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)

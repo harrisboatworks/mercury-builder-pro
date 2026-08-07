@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-07-24
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Toronto to Rice Lake: How HBW Drive-In Service Works"
 description: "Step-by-step guide to towing your boat from the GTA to Harris Boat Works on Rice Lake for Mercury service, repower, or winter storage. Plan your drive-in visit."
 category: "Service & Maintenance"
 date_published: 2026-05-15
-date_modified: 2026-07-24
+date_modified: 2026-08-02
 keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
-**Last updated:** 2026-07-24  
+**Last updated:** 2026-08-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 
@@ -114,7 +114,7 @@ The schedule depends on the job:
 - Repowers depend on the complete motor and rigging package being available
 - Water testing depends on the work and safe operating conditions
 
-A clean repower is normally in the shop for 2 to 5 days after the complete package is ready. Service and diagnostic jobs do not have one universal turnaround.
+Repower timing depends on the approved scope, complete parts package, findings, current shop capacity, and safe test conditions. Service and diagnostic jobs do not have one universal turnaround.
 
 HBW will provide the update for the specific work order.
 
@@ -134,7 +134,7 @@ Wait until HBW confirms:
 
 At handoff, review the work performed, parts or findings, operating instructions, maintenance notes, and any follow-up.
 
-For a repower, HBW completes an on-water test on Rice Lake before pickup.
+For a repower, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer.
 
 ---
 
@@ -184,12 +184,6 @@ Send the boat, motor, serial number, photos, and requested work. HBW will confir
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-## Related Guides
-
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw)
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination)
-- [Boat Service Near Toronto: HBW Reach](/blog/boat-service-near-toronto-hbw-reach)
-
 ## FAQs
 
 ### Do I need an appointment before driving to HBW?
@@ -206,7 +200,7 @@ No. HBW does not pick up, deliver, haul, provide mobile service, coordinate tran
 
 ### How long will HBW keep the boat?
 
-It depends on diagnosis, approval, parts, workload, and required testing. A clean repower is normally 2 to 5 days once the complete package is ready.
+It depends on diagnosis, approval, parts, current shop capacity, and required testing. HBW provides the applicable update for the specific work order rather than a generic turnaround promise.
 
 ### Can HBW work on a stored boat during winter?
 
@@ -223,10 +217,10 @@ Yes. It is included for HBW winter-storage customers. As of July 2026, it is $99
 ## Related guides
 
 - [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
 - [Mercury Dealer Peterborough HBW](/blog/mercury-dealer-peterborough-ontario-hbw), Mercury dealer for Peterborough
-- [Mercury Dealer for Cobourg: 25 Minutes North to Rice Lake](/blog/mercury-dealer-cobourg-ontario-hbw), Mercury dealer for Cobourg
-- [Mercury Dealer for Port Hope: 30 Minutes North to Rice Lake](/blog/mercury-dealer-port-hope-ontario-hbw), Mercury dealer for Port Hope
-- [Mercury Dealer Lindsay Ontario HBW](/blog/mercury-dealer-lindsay-ontario-hbw), Mercury dealer for Lindsay
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026.md
-last_updated: 2026-07-18
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost Software Eligibility 2026"
 description: "Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations."
 category: "Mercury Technology"
 date_published: 2026-04-14
-date_modified: 2026-07-18
+date_modified: 2026-08-02
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: en-CA
 
 **Category:** Mercury Technology  
 **Published:** 2026-04-14  
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 
@@ -135,12 +135,6 @@ For HBW repowers, standard stock conversations usually start with FourStroke and
 
 ---
 
-## Related reading
-- [Mercury SmartCraft Connect Guide Ontario](/blog/mercury-smartcraft-connect-guide-ontario)
-- [Mercury Controls & Rigging Guide Ontario](/blog/mercury-controls-rigging-guide-ontario)
-- [Mercury 115 vs 150 Comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
-- [Mercury Outboard Motor Families Guide](/blog/mercury-outboard-lineup-ontario)
-
 **Check if your Mercury qualifies for Boost.** 
 Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 
 HBW confirms eligibility, quotes the installation, and books the visit. 
@@ -172,7 +166,7 @@ The Mercury Marine App purchase and unlock path is currently limited to select s
 
 ### How much does Mercury Boost cost to install in Canada?
 
-HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Call 905-342-2153 with a photo of the serial-number plate.
+HBW confirms eligibility, the current Canadian upgrade price, and any required shop work from the exact serial number before booking. Do not rely on a converted foreign dealer price or a generic online labour range. Send a clear serial-number-plate photo through the [HBW contact page](/contact) for a written eligibility and price check.
 
 ### How do I find my Mercury outboard serial number?
 
@@ -198,7 +192,7 @@ Do not assume a standard reversal or refund path. Confirm the current purchase, 
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 

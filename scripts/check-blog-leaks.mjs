@@ -133,6 +133,12 @@ const PAREN_YEAR = (before, after) => /\(\s*$/.test(before) && /^\s*\)/.test(aft
 // 6) A source-list citation to HBW's own dated operating data is historical
 // evidence, not a stale customer-facing offer or current-year claim.
 const FIRST_PARTY_DATA_RX = /Boat Works\s*$/i;
+// 7) Explicit first-party records are also dated evidence. Require both an
+// HBW/Our attribution before the year and a records noun after it so a loose
+// current-year marketing claim cannot pass through this exception.
+const FIRST_PARTY_RECORDS_RX = (before, after) =>
+  /(?:\bOur|Harris Boat Works)\s*$/i.test(before) &&
+  /^\s+(?:(?:customer-paid|service|rental|sales|operating)\s+)*records?\b/i.test(after);
 const staleYearLeaks = [];
 
 function extractProseChunks(src) {
@@ -189,6 +195,7 @@ for (const file of BLOG_FILES) {
       if (CJK_YEAR_SUFFIX_RX.test(after)) continue;
       if (PAREN_YEAR(before, after)) continue;
       if (FIRST_PARTY_DATA_RX.test(before) && /^\s+rental operations data\s*\(first-party\)/i.test(after)) continue;
+      if (FIRST_PARTY_RECORDS_RX(before, after)) continue;
       // A year used as a URL path segment identifies a dated source; it is
       // not a stale current-year claim in the surrounding article prose.
       if (/\/$/.test(before) && /^\//.test(after)) continue;

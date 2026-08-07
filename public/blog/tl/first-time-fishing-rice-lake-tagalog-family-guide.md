@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide.md
-last_updated: 2026-06-12
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "First-time fishing sa Rice Lake mula Toronto: Family Guide"
 description: "First-time fishing sa Rice Lake mula Toronto: fishing licence, boat rental, ano ang dadalhin, at mga family tip. Kumpletong Tagalog guide para sa pamilya."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-06-12
+date_modified: 2026-08-02
 keywords: ["bangkang mura sa Ontario (cheap boat in Ontario)","paano bumili ng bangka sa Canada (how to buy a boat in Canada)","magkano ang bangka sa Toronto (how much is a boat in Toronto)","tips sa pagbili ng unang bangka (tips for buying first boat)","fishing license Ontario paano kumuha (fishing license Ontario how to get)","saan mangisda malapit sa Toronto (where to fish near Toronto)","Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)","panahon ng pangingisda sa Ontario (fishing season in Ontario)","magkano fishing license sa Ontario (how much fishing license in Ontario)","pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -24,7 +24,7 @@ language: tl
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Last updated:** 2026-06-12  
+**Last updated:** 2026-08-02  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide
 
@@ -61,7 +61,7 @@ Ang eksaktong bayarin (Outdoors Card plus licence, conservation o sport) ay naka
 
 ## Pangingisda kasama ang pamilya: walang experience? Okay lang!
 
-Hindi ninyo kailangan ng sariling bangka o kahit ng PCOC (Pleasure Craft Operator Card) para makapangisda sa Rice Lake. Sa Harris Boat Works, nagre-rent kami ng 9 na bangka na kumpleto sa safety gear at maaaring gamitin nang walang boat licence, ang kailangan lang ay pakinggan ang aming rental safety checklist at orientation bago kayo lumarga. Ibibigay namin ang lifejackets para sa lahat, kasama ang tamang sukat para sa mga bata. Walang experience sa pagmamando? Tuturuan namin kayo ng basic controls. Mas makakampante kayo.
+Hindi ninyo kailangan ng sariling bangka para makapangisda sa Rice Lake. May pontoon at fishing boat rentals ang Harris Boat Works. Dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Ang mga pasaherong hindi magmamaneho ay hindi kailangan ng PCOC. Ibibigay namin ang lifejackets para sa lahat, kasama ang tamang sukat para sa mga bata. Walang experience sa pagmamando? Tuturuan namin kayo ng basic controls.
 
 Puwede ninyong i-book ang rental boat sa aming [rentals page](https://harrisboatworks.ca/rentals). Tandaan: sarado ang marina mula December 1 hanggang April 1, kaya planuhin ang trip sa pagitan ng tagsibol at taglagas.
 
@@ -107,7 +107,7 @@ Ang Rice Lake ay bahagi ng FMZ 17. Ang bawat uri ng isda ay may sariling season,
 
 ### Kailangan ko ba ng sariling bangka para mangisda sa Rice Lake?
 
-Hindi. May rental fleet ang Harris Boat Works na puwedeng gamitin kahit walang PCOC. Bibigyan namin kayo ng safety checklist at orientation, at may lifejackets para sa lahat, pati kids. Pumunta lang sa aming [rentals page](https://harrisboatworks.ca/rentals).
+Hindi. May pontoon at fishing boat rentals ang Harris Boat Works. Dapat magpakita ng wastong boat operator licence ang driver sa check-in; hindi kailangan ng PCOC ang mga pasaherong hindi magmamaneho. Tingnan ang kasalukuyang availability at requirements sa aming [rentals page](https://harrisboatworks.ca/rentals).
 
 ### Paano kung hindi ako marunong mag-drive ng bangka?
 

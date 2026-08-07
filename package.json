@@ -3,12 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "vite",
+    "test": "vitest run",
     "build": "node scripts/generate-markdown-twins.mjs && node scripts/check-publishing-integrity.mjs && node scripts/generate-rss.mjs && node scripts/generate-canonical-pricing.mjs && node scripts/fetch-google-places-data.mjs && node scripts/sync-agent-facts.mjs && vite build && node scripts/static-prerender.mjs && node scripts/check-structured-data.mjs && node scripts/validate-schema-org.mjs",
     "postbuild": "node scripts/indexnow-ping.mjs",
     "build:dev": "vite build --mode development",
     "check:blog-leaks": "node scripts/check-blog-leaks.mjs",
+    "check:blog-output-hygiene": "tsx scripts/check-blog-output-hygiene.ts",
     "rewrite:agent-urls": "node scripts/rewrite-agent-urls.mjs",
     "check:blog-assets": "node scripts/check-blog-asset-existence.mjs",
     "check:blog-articles": "tsx scripts/validate-blog-articles.ts",
@@ -21,6 +26,7 @@
     "check:lockfile-sync": "node scripts/check-lockfile-sync.mjs",
     "check:responsive-images": "node scripts/check-responsive-images.mjs",
     "check:promo-quote-live": "node scripts/promo-quote-live-check.mjs",
+    "check:quote-activity-live": "node scripts/quote-activity-live-check.mjs",
     "check:chat-voice-knowledge-live": "node scripts/chat-voice-knowledge-live-check.mjs",
     "check:structured-data": "node scripts/check-structured-data.mjs",
     "check:schema-org": "node scripts/validate-schema-org.mjs",
@@ -36,7 +42,7 @@
     "check:rss": "node scripts/generate-rss.mjs --check",
     "build:image-variants-manifest": "node scripts/build-image-variants-manifest.mjs",
     "reconcile:blog-pricing": "node scripts/reconcile-blog-pricing.mjs",
-    "prebuild": "npm run check:lockfile-sync && npm run generate:canonical-pricing && npm run generate:blog-index && npm run generate:product-protection-reference && npm run generate:motor-markdown && npm run rewrite:agent-urls && npm run check:blog-leaks && npm run check:blog-timeline-facts && npm run check:maintenance-surface && npm run check:blog-assets && npm run check:pricing-reference-copy && npm run check:pricing-drift && npm run check:publishing-integrity && npm run generate:responsive-variants && npm run build:image-variants-manifest && npm run check:responsive-images",
+    "prebuild": "npm run check:lockfile-sync && npm run generate:canonical-pricing && npm run generate:blog-index && npm run generate:product-protection-reference && npm run generate:motor-markdown && npm run rewrite:agent-urls && npm run check:blog-leaks && npm run check:blog-output-hygiene && npm run check:blog-timeline-facts && npm run check:maintenance-surface && npm run check:blog-assets && npm run check:pricing-reference-copy && npm run check:pricing-drift && npm run check:publishing-integrity && npm run generate:responsive-variants && npm run build:image-variants-manifest && npm run check:responsive-images",
     "verify:gta-sitemap": "node scripts/verify-gta-sitemap.mjs",
     "prepare": "husky || true",
     "lint": "eslint .",
@@ -78,7 +84,7 @@
     "@supabase/supabase-js": "^2.53.1",
     "@tanstack/react-query": "^5.83.0",
     "@types/dompurify": "^3.2.0",
-    "@vercel/node": "^5.8.1",
+    "@vercel/node": "^5.9.2",
     "base64-js": "1.5.1",
     "buffer": "^6.0.3",
     "canvas-confetti": "^1.9.3",
@@ -145,8 +151,14 @@
     "vite-node": "^1.6.0"
   },
   "overrides": {
-    "undici": "6.28.0",
+    "undici": "^7.25.0",
     "path-to-regexp": "^8.2.0",
-    "minimatch": "^9.0.5"
+    "minimatch": "^9.0.5",
+    "protobufjs": "^7.5.4",
+    "tar": "^7.5.22"
+  },
+  "resolutions": {
+    "protobufjs": "^7.5.4",
+    "tar": "^7.5.22"
   }
 }

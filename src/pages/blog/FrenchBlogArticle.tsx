@@ -3,220 +3,190 @@ import { Link } from 'react-router-dom';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import { ArrowLeft, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, MapPin } from 'lucide-react';
+
+const ARTICLE_PATH = '/blog/fr/concessionnaire-mercury-premier-ontario';
+const MERCURY_DEALER_URL = 'https://www.mercurymarine.com/ca/en/find-a-dealer';
+const MERCURY_WARRANTY_URL = 'https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty';
+
+const faqs = [
+  {
+    question: 'Parlez-vous français chez Harris Boat Works?',
+    answer: "Notre équipe travaille principalement en anglais. Nous publions des guides en français pour rendre l'information plus accessible, mais les échanges de vente et de service se font en anglais. Vous pouvez soumettre un formulaire en français; notre réponse sera en anglais.",
+  },
+  {
+    question: 'Harris Boat Works est-il un concessionnaire Mercury autorisé?',
+    answer: 'Oui. Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing. Mercury recommande de passer par un concessionnaire autorisé pour les moteurs, les pièces, le soutien et le service.',
+  },
+  {
+    question: 'Puis-je faire entretenir mon Mercury chez vous si je ne l\'ai pas acheté chez HBW?',
+    answer: "Soumettez une demande de service avec le modèle, le numéro de série et les symptômes. L'équipe confirmera si le travail entre dans notre champ de service et la marche à suivre.",
+  },
+  {
+    question: 'Comment planifier une hivernisation ou un entreposage?',
+    answer: "HBW prend les travaux selon le principe du premier arrivé, premier servi. Il n'est pas nécessaire de réserver une place des mois à l'avance. Remplissez la demande de service une ou deux semaines avant le dépôt prévu. L'entreprise ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.",
+  },
+  {
+    question: 'Expédiez-vous ou livrez-vous les moteurs?',
+    answer: "Non. Les achats et les projets de remotorisation sont ramassés à l'emplacement de Gores Landing. HBW n'expédie pas et ne livre pas les moteurs.",
+  },
+];
 
 export default function FrenchBlogArticle() {
-  const url = `${SITE_URL}/blog/fr/concessionnaire-mercury-platinum-ontario`;
-  
+  const url = `${SITE_URL}${ARTICLE_PATH}`;
+  const title = 'Concessionnaire Mercury Premier en Ontario';
+  const description = 'Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers de l’Ontario.';
+
   const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Article",
-        "@id": `${url}#article`,
-        "headline": "Concessionnaire Mercury Premier en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works",
-        "description": "Harris Boat Works est concessionnaire Mercury Marine Premier à Gores Landing, Ontario. Prix transparents, techniciens certifiés, service pour plaisanciers francophones du Québec et de l'Ontario.",
-        "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
-        "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
-        "datePublished": "2026-04-12",
-        "dateModified": "2026-04-12",
-        "mainEntityOfPage": url,
-        "inLanguage": "fr-CA",
-        "isAccessibleForFree": true
+        '@type': 'Article',
+        '@id': `${url}#article`,
+        headline: title,
+        description,
+        author: { '@type': 'Organization', name: 'Harris Boat Works', '@id': `${SITE_URL}/#organization` },
+        publisher: { '@type': 'Organization', name: 'Harris Boat Works', '@id': `${SITE_URL}/#organization` },
+        datePublished: '2026-04-12',
+        dateModified: '2026-08-02',
+        mainEntityOfPage: url,
+        inLanguage: 'fr-CA',
+        isAccessibleForFree: true,
+        image: `${SITE_URL}/lovable-uploads/hero-best-mercury-dealer-ontario.png`,
+        citation: [
+          { '@type': 'CreativeWork', name: 'Mercury Marine Canada : Trouver un concessionnaire', url: MERCURY_DEALER_URL },
+          { '@type': 'CreativeWork', name: 'Mercury Marine Canada : Garantie limitée', url: MERCURY_WARRANTY_URL },
+        ],
       },
       {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        "url": url,
-        "inLanguage": "fr-CA",
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-            { "@type": "ListItem", "position": 2, "name": "Français", "item": `${SITE_URL}/fr` },
-            { "@type": "ListItem", "position": 3, "name": "Concessionnaire Mercury Premier", "item": url }
-          ]
-        }
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
       },
       {
-        "@type": "FAQPage",
-        "@id": `${url}#faq`,
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Parlez-vous français chez Harris Boat Works?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Non, notre équipe travaille principalement en anglais. Mais le configurateur en ligne à mercuryrepower.ca n'a pas de barrière linguistique, et le courriel nous permet de gérer les échanges écrits avec soin."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Est-ce que Mercury Canada vous recommande?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui. Harris Boat Works est sur le réseau officiel des concessionnaires Mercury. Quand des clients contactent Mercury Canada dans notre secteur, ils nous sont souvent dirigés directement."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Puis-je faire entretenir mon moteur Mercury chez vous si je viens du Québec?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui. Notre atelier prend en charge les moteurs Mercury et Mercruiser. Soumettez votre demande à l'avance via hbw.wiki/service."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Vos prix sont-ils compétitifs par rapport aux concessionnaires québécois?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nos prix sont transparents et sans frais cachés. Le configurateur à mercuryrepower.ca vous donne nos prix réels en CAD, comparez par vous-même."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Comment fonctionne la garantie Mercury si j'achète chez vous et que je retourne au Québec?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La garantie Mercury est honorée par n'importe quel concessionnaire agréé Mercury en Amérique du Nord. Votre concessionnaire Mercury local au Québec peut gérer votre garantie."
-            }
-          }
-        ]
-      }
-    ]
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blogue en français', item: `${SITE_URL}/blog/fr` },
+          { '@type': 'ListItem', position: 3, name: title, item: url },
+        ],
+      },
+    ],
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="fr">
+    <div className="min-h-screen bg-background" lang="fr-CA">
       <Helmet>
-        <title>Concessionnaire Mercury Premier Ontario | Harris Boat Works</title>
-        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Premier à Gores Landing, Ontario. Prix transparents en ligne, remotorisation Mercury, service pour plaisanciers francophones." />
+        <html lang="fr-CA" />
+        <title>{title} | Harris Boat Works</title>
+        <meta name="description" content={description} />
         <link rel="canonical" href={url} />
         <link rel="alternate" hrefLang="fr-CA" href={url} />
         <link rel="alternate" hrefLang="x-default" href={url} />
-        <meta property="og:title" content="Concessionnaire Mercury Premier en Ontario" />
-        <meta property="og:description" content="Pourquoi les plaisanciers francophones choisissent Harris Boat Works pour leurs moteurs Mercury." />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:locale" content="fr_CA" />
         <meta property="og:type" content="article" />
         <meta property="og:image" content={`${SITE_URL}/lovable-uploads/hero-best-mercury-dealer-ontario.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${SITE_URL}/lovable-uploads/hero-best-mercury-dealer-ontario.png`} />
         <meta property="article:published_time" content="2026-04-12" />
-        <meta property="article:author" content="Harris Boat Works" />
+        <meta property="article:modified_time" content="2026-08-02" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+
       <LuxuryHeader />
 
-      <main className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
-        {/* Back nav */}
-        <nav className="mb-8">
-          <Link to="/fr" className="text-primary hover:underline text-sm flex items-center gap-1">
-            <ArrowLeft className="w-4 h-4" />
-            ← Retour à la page d'accueil en français
+      <main className="container mx-auto max-w-3xl px-4 py-12 md:py-16">
+        <nav className="mb-8" aria-label="Fil d’Ariane">
+          <Link to="/blog/fr" className="flex items-center gap-1 text-sm text-primary hover:underline">
+            <ArrowLeft className="h-4 w-4" />
+            Retour au blogue en français
           </Link>
         </nav>
 
         <article className="prose prose-lg max-w-none text-foreground">
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
-            Concessionnaire Mercury Premier en Ontario : Pourquoi les plaisanciers choisissent Harris Boat Works
-          </h1>
-          <p className="text-muted-foreground text-sm mb-6">Publié par Harris Boat Works | Gores Landing, Ontario</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">Gores Landing, Ontario</p>
+          <h1 className="mb-3 text-3xl font-light text-foreground md:text-4xl">{title}</h1>
+          <p className="mb-8 text-sm text-muted-foreground">Mis à jour le 2 août 2026 · Harris Boat Works</p>
+
           <img
             src="/lovable-uploads/hero-best-mercury-dealer-ontario.webp"
-            alt="Harris Boat Works, concessionnaire Mercury Premier à Gores Landing, Ontario."
-            className="w-full h-64 md:h-80 object-cover rounded-xl mb-8"
+            alt="Harris Boat Works, concessionnaire Mercury Premier à Gores Landing en Ontario"
+            className="mb-8 h-64 w-full rounded-xl object-cover md:h-80"
             loading="eager"
           />
 
-          {/* Quick answer */}
-          <div className="bg-primary/5 rounded-xl p-6 mb-8 not-prose">
-            <h2 className="text-lg font-medium text-foreground mb-2">Réponse rapide</h2>
-            <p className="text-foreground text-sm">
-              Harris Boat Works est concessionnaire <strong>Mercury Marine Premier</strong> à Gores Landing, en Ontario, le niveau le plus élevé du réseau Mercury. On sert les plaisanciers de l'Ontario et du Québec depuis 1947, avec des prix transparents en ligne et une approche franche. Bâtissez votre soumission en temps réel à <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>.
+          <section className="not-prose mb-10 rounded-xl bg-primary/5 p-6" aria-labelledby="reponse-rapide">
+            <h2 id="reponse-rapide" className="mb-2 text-lg font-semibold text-foreground">Réponse rapide</h2>
+            <p className="m-0 leading-relaxed text-foreground">
+              Harris Boat Works est un concessionnaire <strong>Mercury Marine Premier</strong> à Gores Landing, sur le lac Rice. L'entreprise familiale sert les plaisanciers depuis 1947 et travaille avec Mercury depuis 1965. Vous pouvez consulter les prix des moteurs inscrits en dollars canadiens, bâtir une soumission et faire vérifier la compatibilité avant le dépôt du bateau.
             </p>
-          </div>
+          </section>
 
-          <h2>Ce que veut dire « concessionnaire Mercury Premier »</h2>
-          <p>Le réseau de concessionnaires Mercury Marine est divisé en niveaux. Le statut <strong>Premier</strong> est le plus élevé.</p>
-          <p><strong>Accès prioritaire aux pièces.</strong> Un concessionnaire Premier a un accès privilégié à l'inventaire Mercury. Moins d'attente, moins de délais sur l'eau.</p>
-          <p><strong>Techniciens certifiés Mercury.</strong> Notre atelier est staffé de mécaniciens qui ont suivi la formation Mercury officielle.</p>
-          <p><strong>Garanties honorées sans friction.</strong> Votre moteur Mercury est sous garantie? Un concessionnaire Premier traite les réclamations directement avec Mercury.</p>
-          <p><strong>Recommandation directe de Mercury Canada.</strong> Quand un plaisancier contacte Mercury Canada pour trouver un concessionnaire de confiance, Mercury les envoie chez nous.</p>
-
-          <h2>La transparence des prix : fini le « appelez pour un prix »</h2>
+          <h2>Pourquoi les plaisanciers de la région choisissent HBW</h2>
           <p>
-            Si vous avez déjà magasiné un moteur hors-bord au Québec ou en Ontario, vous connaissez la routine : vous demandez le prix, on vous dit d'appeler, un vendeur vous donne un prix vague et commence à « négocier ».
-          </p>
-          <p>Nous, on a choisi de faire autrement.</p>
-          <p>
-            <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> est un configurateur de soumission en temps réel. Vous choisissez votre moteur, vos options, et vous voyez le prix réel, en dollars canadiens, immédiatement. Le prix que vous voyez, c'est le prix. Tout le monde voit le même chiffre.
-          </p>
-
-          <h2>Qu'est-ce qu'une remotorisation (repower)?</h2>
-          <p>
-            On garde votre coque et on remplace le moteur. Si votre embarcation est en bon état mais que le moteur commence à coûter cher en réparations, une remotorisation est presque toujours plus intelligente qu'acheter une nouvelle embarcation.
+            Un bon concessionnaire ne se résume pas à un badge. Il doit donner des réponses claires sur la puissance, le poids, l'arbre, les commandes, l'hélice et le coût du projet. La bonne puissance n'est pas celle qui gagne la discussion à la rampe; c'est celle qui convient à la coque et à son usage réel.
           </p>
           <ul>
-            <li><strong>Votre coque a de la valeur.</strong> Une coque bien entretenue dure des décennies.</li>
-            <li><strong>Le coût est nettement inférieur.</strong> Un moteur Mercury neuf installé coûte une fraction du prix d'une nouvelle embarcation.</li>
-            <li><strong>La technologie a beaucoup évolué.</strong> Plus économe, plus fiable, plus silencieux.</li>
+            <li><strong>Prix en CAD visibles en ligne.</strong> Le configurateur affiche le prix des modèles Mercury inscrits et les options choisies. Les détails de gréage et d'installation sont confirmés selon le bateau.</li>
+            <li><strong>Spécialisation Mercury.</strong> HBW vend les hors-bord Mercury et réalise des projets de remotorisation à son atelier de Gores Landing.</li>
+            <li><strong>Contexte local.</strong> L'équipe travaille quotidiennement avec les bateaux utilisés sur le lac Rice, dans les Kawarthas, à Peterborough, dans Northumberland, Durham et la GTA.</li>
+            <li><strong>Une réponse honnête sur la langue.</strong> Les guides sont offerts en français, mais l'équipe du magasin travaille principalement en anglais.</li>
           </ul>
 
-          <h2>Une marina de famille depuis 1947</h2>
+          <h2>Ce que signifie le statut Mercury pour votre projet</h2>
           <p>
-            Harris Boat Works est une entreprise familiale de troisième génération, fondée en 1947 à Gores Landing, sur le lac Rice. Ça fait 79 ans qu'on sert les mêmes familles, et leurs enfants et petits-enfants.
+            Mercury décrit ses concessionnaires autorisés comme la ressource locale pour l'achat de moteurs, les pièces, le soutien et le service. Harris Boat Works est actuellement un concessionnaire Mercury Marine Premier. Vous pouvez aussi consulter le <a href={MERCURY_DEALER_URL} target="_blank" rel="noopener noreferrer">localisateur officiel de concessionnaires Mercury Canada</a>.
           </p>
           <p>
-            Le lac Rice et les Kawarthas sont à moins de trois heures de Montréal. Pour un plaisancier du Québec ou de l'est de l'Ontario, on est bien situés.
+            Le statut du concessionnaire ne remplace toutefois pas la vérification du bateau. Avant une remotorisation, il faut confirmer la plaque de capacité, le poids sur le tableau arrière, la longueur d'arbre, la direction, les commandes et l'état de la coque. C'est cette vérification qui transforme un moteur neuf en bon projet.
           </p>
 
-          <h2>Comment travailler avec nous en français</h2>
+          <h2>Comment obtenir un prix utile</h2>
           <ol>
-            <li><strong>Bâtissez votre soumission en ligne</strong>, <a href="https://www.mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, aucun échange verbal requis.</li>
-            <li><strong>Envoyez une demande par formulaire</strong>, <a href="https://hbw.wiki/service" className="text-primary hover:underline">hbw.wiki/service</a>, vous pouvez écrire en français.</li>
-            <li><strong>Appelez si vous préférez</strong>, 905-342-2153, on va prendre le temps qu'il faut.</li>
-            <li><strong>Venez nous voir</strong>, une conversation en personne règle bien des choses.</li>
+            <li><strong>Bâtissez une soumission.</strong> Choisissez le moteur et les options dans le configurateur Mercury en ligne.</li>
+            <li><strong>Décrivez le bateau.</strong> La marque, le modèle, l'année, la plaque de capacité et des photos aident l'équipe à vérifier la compatibilité.</li>
+            <li><strong>Faites confirmer le gréage.</strong> Les commandes, la direction, les jauges, l'hélice et le travail requis peuvent changer le total final.</li>
+            <li><strong>Planifiez le dépôt à Gores Landing.</strong> Les moteurs et les projets sont ramassés sur place; HBW n'expédie pas et ne livre pas les moteurs.</li>
           </ol>
+
+          <h2>Service, hivernisation et entreposage</h2>
+          <p>
+            Les travaux sont pris selon le principe du premier arrivé, premier servi. Pour l'hivernisation ou l'entreposage, il n'est pas nécessaire de réserver une place à la fin de l'été. La pratique recommandée est de remplir la <a href="https://hbw.wiki/service">demande de service</a> une ou deux semaines avant le dépôt prévu. Harris Boat Works ferme le 1er décembre; la dernière période pratique est donc la mi-novembre.
+          </p>
+
+          <h2>Garantie Mercury</h2>
+          <p>
+            Les modalités dépendent du produit, de l'usage et de la date d'achat. Consultez la <a href={MERCURY_WARRANTY_URL} target="_blank" rel="noopener noreferrer">garantie limitée Mercury Canada</a> et faites confirmer la couverture applicable à votre moteur. Les programmes promotionnels ou de protection prolongée ne doivent pas être présumés sans vérifier les conditions courantes.
+          </p>
         </article>
 
-        {/* FAQ Section */}
-        <section className="mt-12 mb-12">
-          <h2 className="text-2xl font-light text-foreground mb-6">Questions fréquentes des plaisanciers francophones</h2>
+        <section className="my-12" aria-labelledby="faq-fr">
+          <h2 id="faq-fr" className="mb-6 text-2xl font-light text-foreground">Questions fréquentes</h2>
           <div className="space-y-6">
-            {[
-              { q: "Parlez-vous français chez Harris Boat Works?", a: "Non, on préfère être honnêtes. Mais le configurateur en ligne n'a pas de barrière linguistique, et le courriel nous permet de gérer les échanges écrits avec soin." },
-              { q: "Est-ce que Mercury Canada vous recommande?", a: "Oui. Quand des clients contactent Mercury Canada dans notre secteur, ils nous sont souvent dirigés directement." },
-              { q: "Puis-je faire entretenir mon moteur Mercury chez vous si je viens du Québec?", a: "Oui. Notre atelier prend en charge les moteurs Mercury et Mercruiser. Soumettez votre demande via hbw.wiki/service." },
-              { q: "Vos prix sont-ils compétitifs?", a: "Nos prix sont transparents et sans frais cachés. Le configurateur à mercuryrepower.ca vous donne nos prix réels en CAD, comparez par vous-même." },
-              { q: "Comment fonctionne la garantie si je retourne au Québec?", a: "La garantie Mercury est honorée par n'importe quel concessionnaire agréé Mercury en Amérique du Nord." },
-            ].map(({ q, a }) => (
-              <div key={q} className="border-b border-border pb-4">
-                <h3 className="font-medium text-foreground mb-2">{q}</h3>
-                <p className="text-muted-foreground text-sm">{a}</p>
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-border pb-5">
+                <h3 className="mb-2 font-medium text-foreground">{faq.question}</h3>
+                <p className="m-0 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">Commencez ici</h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/quote/motor-selection"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              Bâtir ma soumission
-            </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              905-342-2153
-            </a>
+        <section className="mb-12 rounded-2xl bg-primary/5 p-8 text-center">
+          <h2 className="mb-3 text-xl font-light text-foreground">Commencez avec les faits de votre bateau</h2>
+          <p className="mx-auto mb-5 max-w-xl text-sm text-muted-foreground">Bâtissez une soumission en CAD ou envoyez les détails de votre bateau pour une vérification de compatibilité.</p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link to="/quote/motor-selection" className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground hover:opacity-90">Bâtir une soumission</Link>
+            <a href="https://hbw.wiki/service" className="inline-flex items-center justify-center rounded-lg border border-primary px-6 py-3 font-medium text-primary hover:bg-primary/5">Demande de service</a>
           </div>
-          <p className="text-sm text-muted-foreground mt-4 flex items-center justify-center gap-1">
-            <MapPin className="w-3 h-3" />
+          <p className="mt-5 flex items-center justify-center gap-1 text-sm text-muted-foreground">
+            <MapPin className="h-3 w-3" />
             5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
           </p>
         </section>

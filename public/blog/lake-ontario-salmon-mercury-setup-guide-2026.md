@@ -1,30 +1,30 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026.md
-last_updated: 2026-07-07
+last_updated: 2026-08-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Lake Ontario Salmon Mercury Setup"
-description: "Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20."
+title: "Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control"
+description: "Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
-date_modified: 2026-07-07
+date_modified: 2026-08-02
 keywords: ["Lake Ontario salmon Mercury setup","Mercury salmon trolling setup","Lake Ontario kicker install","Mercury 9.9 ProKicker","dual battery boat wiring Lake Ontario","Mercury SmartCraft Troll Control","Port Hope Mercury dealer","Cobourg Mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
 ---
 
-# Lake Ontario Salmon Mercury Setup
+# Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control
 
-> Lake Ontario salmon trolling setup: alternator capacity, dual battery wiring, Mercury 9.9 ProKicker, SmartCraft Troll Control. FMZ 20.
+> Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing.
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
-**Last updated:** 2026-07-07  
+**Last updated:** 2026-08-02  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
 
@@ -119,7 +119,7 @@ A separate note for Rice Lake anglers: Rice Lake itself is in FMZ 17, which has 
 
 ## The HBW on-water test
 
-Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
+HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ## Common mistakes (the things we push back on)
 
@@ -136,7 +136,7 @@ Every repower gets an on-water test on Rice Lake before pickup. No exceptions.
   **What we tell customers:** Kicker installation involves transom integrity, tie-bar setup for steering integration, electrical connection to the main battery system, fuel routing, and (sometimes) remote-control integration. We see DIY installations come in for repair routinely. Worth doing right the first time.
 
 - **Myth:** "Verado is supercharged."
-  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-400 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
+  **What we tell customers:** Current Mercury Verado V8 250-300 HP, V10 350-425 HP, and V12 600 HP models are naturally aspirated. The older inline-6 Verado was supercharged but is no longer the current Verado platform.
 
 ## Customer language we hear
 
@@ -163,7 +163,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Build a Mercury quote:** mercuryrepower.ca
 **Service booking:** hbw.wiki/service
 
-Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. 15-20 minutes from Port Hope and Cobourg. The largest Mercury and Mercruiser parts inventory in Ontario on the shelf. That's why local guides and charter operators call us first when they need a part the same day.
+Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 
 **Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153.
 
@@ -203,10 +203,10 @@ FMZ 20. Confirm current Lake Ontario regulations directly with the Ontario MNRF 
 
 ## Related guides
 
-- [Best Mercury for Rice Lake Fishing 2026](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
 - [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 - [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
-- [Rice Lake Ontario Fishing Guide 2026](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
 - [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
 
 ## Next steps

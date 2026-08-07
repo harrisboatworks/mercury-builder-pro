@@ -46,13 +46,13 @@ Three options most Rice Lake customers consider. **All prices reflect 2026 model
 |---|---|---|---|---|---|---|
 | Mercury 9.9 HP ProKicker | 9.9 HP gas | Gasoline | Quiet idle, audible | Unlimited with fuel | $3,000 to $4,500 | Most fishing boats, all-day trolling, big water |
 | Mercury 6 HP FourStroke | 6 HP gas | Gasoline | Quiet idle | Unlimited with fuel | $2,500 to $3,500 | Smaller boats |
-| Mercury Avator 7.5e electric | 750 W output (roughly equivalent thrust to a 3.5 HP gas portable, not a literal HP rating) | 1 kWh battery | Near-silent | Hours at troll on one pack | Call for current pricing: 905-342-2153 | Silent finesse fishing |
+| Mercury Avator 7.5e electric | 0.75 kW prop-shaft output | 1 kWh battery | Near-silent | Hours at troll on one pack | Mercury Canada pricing is being finalized; see the [Avator page](/electric/mercury-avator) | Silent finesse fishing |
 
 _Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The 9.9 ProKicker is the most common choice. It has enough power to push an 18 to 20 foot fishing boat at trolling speed in chop, works as emergency get-home power, and idles smoothly. It runs on the same gasoline as the main motor and can share the tank through a dual-output water separator.
 
-The Avator 7.5e is the right pick when silence matters. Walleye fishing in shallow water, bass tournament prep, or any situation where you want zero noise underwater. Mercury rates the Avator by output power in kilowatts and equivalent thrust, not by a direct gasoline horsepower figure. The "roughly equivalent to 3.5 HP" comparison is a shopping reference, not a literal HP rating. The technical spec is 750 watts at the prop. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.
+The Avator 7.5e is worth considering when silence matters and the boat, load and route fit its 0.75 kW prop-shaft output and battery range. It is not a gasoline-horsepower substitute on paper; compare the actual speed, range, charging and reserve requirements for your boat. Our [Avator 7.5e review](/blog/mercury-avator-7-5e-review) goes deeper on the electric option.
 
 ## When should you choose a bow electric trolling motor instead?
 
@@ -100,7 +100,7 @@ Three patterns from rigging fishing boats every spring on Rice Lake.
 
 ## Ready to rig your fishing boat?
 
-Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. Same techs, same shop, since 1947.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we will match you with the right main and kicker combination. We are the repower side of the Harris Boat Works service team on Rice Lake. The quote, rigging and water test stay with the same shop.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -124,7 +124,7 @@ Yes. The Avator 7.5e mounts on a kicker bracket and runs near-silently at trolli
 
 ### How much does it cost to add a kicker to my repower?
 
-Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 ranges) for a Mercury 9.9 ProKicker on top of your main repower. The Avator electric kicker is built to order through Mercury Canada; battery count drives the price, call for current pricing: 905-342-2153.
+Including motor, bracket, tie-bar linkage, dual fuel routing, and wiring, expect $3,000 to $7,500 CAD (2026 planning range) for a Mercury 9.9 ProKicker on top of your main repower; use the live quote builder for today's total. The Avator electric kicker is build-to-order, and Mercury Canada pricing is still being finalized; see the Avator page for current availability.
 
 ### Does the kicker need its own fuel tank?
 

@@ -150,16 +150,6 @@ Things we see customers do that we wish they would not:
 
 **Trying to fix a prop problem when the actual issue is hull or load.** Boats that ride heavy, take on water, or have a layout that pushes weight backward will under-perform with any prop until the underlying issue is addressed.
 
-## Related at HBW
-
-Other technical reference content in the same cluster:
-
-- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide), measure transom height and decode Mercury shaft codes
-- [Breaking In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), break-in protocol before WOT testing
-- [Mercury 90 HP FourStroke Review (Ontario)](/blog/mercury-90-hp-fourstroke-review-ontario), sample hull-to-motor matching
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), motor selection that drives prop selection
-- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), if you are considering Boost, prop selection may need to be re-confirmed after
-
 Quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) includes a prop selection step. Live CAD pricing, hull matching, and prop family recommendation in under 5 minutes.
 
 If you have a current Mercury setup and the prop is wrong (over-pitched, under-pitched, wrong family for the hull), bring it in for a service visit. We will run the WOT test and recommend the right replacement.
@@ -202,10 +192,10 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 ## Related guides
 
 - [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Ethanol Octane Mercury Fuel Guide](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
 
 ## Next steps
 
